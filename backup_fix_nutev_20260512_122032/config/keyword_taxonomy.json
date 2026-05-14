@@ -1,0 +1,8 @@
+{
+  "workstreams": {
+    "busca1": {"base_terms": ["obesity", "lifestyle medicine"], "themes": ["dietary guidelines", "food processing", "adherence"]},
+    "busca2a": {"base_terms": ["obesity", "diabetes", "hypertension"], "themes": ["clinical guideline", "cardiometabolic risk"]},
+    "busca2b": {"base_terms": ["mediterranean diet", "DASH", "low-carb"], "themes": ["metabolic outcomes", "adherence"]},
+    "a3": {"base_terms": ["nutrition framework", "diet adherence questionnaire"], "themes": ["implementation", "competency"]}
+  }
+}
