@@ -12,6 +12,11 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -e .
+      - name: Install requirements.txt (optional)
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run tests
+        run: PYTHONPATH=src python -m pytest -q nutev_tests -p no:timeout
       - name: Run global watch
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -31,4 +36,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: nutev-global-watch-results
-          path: project_output/09_global_watch
+          path: |
+            project_output/09_global_watch
+            project_output/08_docs/NUTEV_GLOBAL_WATCH_LATEST.md
