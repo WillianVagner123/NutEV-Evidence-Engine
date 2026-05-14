@@ -1,0 +1,546 @@
+1
+Rev Bras Enferm. 2025;78(6): e20240254https://doi.org/10.1590/0034-7167-2024-0254 7of
+ONLINE VERSION ISSN: 1984-0446
+ABSTRACT
+Objectives: to estimate the prevalence of overweight/obesity and identify associated factors 
+among health professionals. Methods: this cross-sectional study included professionals 
+who had worked for at least six months in critical units of nine hospitals in northern Minas 
+Gerais, Brazil. Sociodemographic, occupational, anthropometric, and health condition data 
+were collected. Poisson regression with robust variance was applied to estimate prevalence 
+ratios (PR) using SPSS 20.0. Results: a total of 490 health professionals participated, 65.9% 
+were women, and 49.7% were aged 30–39 years. The prevalence of overweight/obesity was 
+61.8%. Associated factors included age ≥ 30 years, ≥ 5 years working in healthcare, elevated 
+triglycerides, and elevated blood pressure. Conclusions: the prevalence of overweight/
+obesity among health professionals was high and associated with sociodemographic, 
+occupational, and health factors, underscoring the need for support to promote lifestyle 
+changes in this workforce.
+Descriptors: Obesity; Health Personnel; Risk Factors; Epidemiology; Public Health.
+RESUMO
+Objetivos: estimar a prevalência de sobrepeso/obesidade e identificar fatores associados 
+em profissionais de saúde. Métodos: estudo transversal com trabalhadores atuantes há pelo 
+menos seis meses em áreas críticas de nove hospitais no norte de Minas Gerais. Coletaram-
+se informações sociodemográficas, ocupacionais, medidas antropométricas e condições de 
+saúde. A análise utilizou o modelo de Poisson com variância robusta para estimar razões 
+de prevalência, no SPSS 20.0. Resultados: participaram 490 profissionais: 65,9%, mulheres; 
+e 49,7%, com idade entre 30 e 39 anos. Verificou-se que 61,8% apresentavam sobrepeso 
+ou obesidade. Os fatores associados foram idade ≥30 anos, tempo de trabalho na saúde 
+≥5 anos, triglicérides e pressão arterial alterados. Conclusões: há elevada prevalência de 
+sobrepeso/obesidade entre profissionais de saúde, associada a fatores sociodemográficos, 
+ocupacionais e de saúde, sendo necessário oferecer suporte para promover mudanças no 
+estilo de vida desses trabalhadores.
+Descritores: Obesidade; Pessoal de Saúde; Fatores de Risco; Epidemiologia; Saúde Pública.
+RESUMEN
+Objetivos: estimar la prevalencia de sobrepeso/obesidad e identificar los factores asociados 
+en profesionales de la salud. Métodos: estudio transversal con trabajadores con al menos 
+seis meses de antigüedad en áreas críticas de nueve hospitales del norte de Minas Gerais, 
+Brasil. Se recopilaron datos sociodemográficos, ocupacionales, medidas antropométricas 
+y condiciones de salud. El análisis utilizó el modelo de Poisson con varianza robusta para 
+estimar razones de prevalencia, empleando el programa SPSS 20.0. Resultados: participaron 
+490 profesionales: 65,9% mujeres y 49,7% con edades entre 30 y 39 años. Se observó que 
+el 61,8% presentaba sobrepeso u obesidad. Los factores asociados fueron edad ≥30 años, 
+tiempo de trabajo en salud ≥5 años, triglicéridos y presión arterial alterados. Conclusiones: 
+se identificó una elevada prevalencia de sobrepeso/obesidad entre profesionales de la salud, 
+asociada a factores sociodemográficos, ocupacionales y de salud. Es necesario establecer 
+apoyos que favorezcan cambios en el estilo de vida de estos trabajadores.
+Descriptores: Obesidad; Personal de Salud; Factores de Riesgo; Epidemiología; Salud Pública.
+Overweight/obesity among health professionals and associated factors
+Sobrepeso/obesidade em profissionais de saúde e fatores associados
+Sobrepeso/obesidad en profesionales de la salud y factores asociados
+ORIGINAL ARTICLE
+Sirlaine de PinhoI
+ORCID: 0000-0003-0442-9405
+Lucineia de PinhoI
+ORCID: 0000-0002-2947-5806
+Carla Silvana de Oliveira e SilvaI
+ORCID: 0000-0002-0658-9990
+Rene Ferreira da Silva JuniorII
+ORCID: 0000-0002-3462-3930
+Victor Guilherme PereiraII
+ORCID: 0000-0002-8384-385X
+Silvânia Paiva SantosI
+ORCID: 0000-0002-6911-8256
+Maria Alice Moura SoaresI
+ORCID: 0009-0007-8592-354X
+Dulce Aparecida BarbosaIII
+ORCID: 0000-0002-9912-4446
+IUniversidade Estadual de Montes Claros. Montes Claros, 
+Minas Gerais, Brazil.
+IIInstituto Federal de Educação, Ciência e Tecnologia do Sul de 
+Minas Gerais. Machado, Minas Gerais, Brazil.
+IIIUniversidade Federal de São Paulo. São Paulo, 
+São Paulo, Brazil.
+How to cite this article:
+Pinho S, Pinho L, Silva CSO, Silva Junior RF, Pereira VG, 
+Santos SP , et al. Overweight/obesity among 
+health professionals and associated factors. 
+Rev Bras Enferm. 2025;78(6):e20240254. 
+https://doi.org/10.1590/0034-7167-2024-0254
+Corresponding author: 
+Sirlaine de Pinho
+E-mail: sirlainedepinho@yahoo.com.br
+EDITOR IN CHIEF: Antonio José de Almeida Filho
+ASSOCIATE EDITOR: Dulce Barbosa
+Submission: 07-25-2024         Approval: 06-09-2025
+2
+Rev Bras Enferm. 2025;78(6): e20240254 7of
+Overweight/obesity among health professionals and associated factors
+Pinho S, Pinho L, Silva CSO, Silva Junior RF, Pereira VG, Santos SP , et al. 
+INTRODUCTION
+Over the past decades, studies worldwide have described 
+obesity as an epidemic condition with a major public-health 
+impact, ranking as the fifth leading cause of morbidity and mor-
+tality worldwide(1,2). It places a substantial burden on healthcare 
+spending because of its association with other chronic diseases, 
+particularly cardiovascular disease, and has therefore become a 
+priority for public policies(1,2).
+Obesity is considered a chronic, often inflammatory condition 
+characterized by an abnormal or excessive accumulation of adipose 
+tissue (fat). This accumulation results from a long-term energy im-
+balance between the daily calories consumed and expended(2,3). 
+In addition, the World Health Organization (WHO) defines obesity 
+using the body mass index (BMI), the globally used metric for as-
+sessing overweight and obesity. BMI was calculated as BMI = weight 
+(kg) / height (m²); adults with a BMI ≥ 30.0 were classified as obese 
+according to WHO BMI cut-offs (overweight ≥ 25; obesity ≥ 30)(2,4).
+Obesity disrupts metabolic homeostasis and is a precursor to 
+chronic conditions such as hypertension, type 2 diabetes mellitus 
+(T2DM), and chronic kidney disease (CKD); it is also associated with 
+an increased risk of neoplasms, dyslipidemia, and liver disease(5,6). 
+International studies have shown that people living with obesity 
+and chronic conditions are more likely to develop cardiovascular 
+and pulmonary complications; and during the COVID-19 pandemic, 
+obesity was associated with greater odds of severe disease(7–10).
+Because obesity results from multifactorial interactions with 
+heterogeneous pathogenesis, encompassing biological, behav-
+ioral, psychosocial, socioeconomic, and environmental factors, 
+effective treatment is complex, making investment in prevention 
+and early detection of risk factors even more important (1,2,10). It 
+is estimated that more than 650 million people worldwide are 
+living with obesity, highlighting the enormous public-health 
+burden(3). In Brazil, in 2019, the prevalence of adult overweight 
+and obesity was estimated at 61.7% and 26.8%, respectively(11).
+From this perspective, adverse working conditions, such as long 
+working hours, excessive workloads, and prolonged exposure to 
+stressful situations, commonly experienced by health professionals 
+(particularly during the COVID-19 pandemic), may contribute to 
+obesity among workers. These conditions also affect absentee-
+ism and work productivity, with considerable consequences for 
+institutions and society (10,12,13). The work environment shapes 
+dietary habits and physical activity, thereby affecting health and 
+quality of life(13).
+OBJECTIVES
+To estimate the prevalence of overweight/obesity and iden-
+tify factors associated with these conditions among health 
+professionals.
+METHODS
+Ethical aspects 
+This study adhered to national and international ethical guide-
+lines and obtained approval from the Research Ethics Committee 
+of the State University of Montes Claros (CEP-Unimontes). The 
+Informed Consent Form was signed by all participants in the study.
+Study design, period, and setting
+This epidemiological, cross-sectional, analytical study used data 
+from the survey titled Compassion fatigue in health professionals: 
+associated factors. It was conducted with health professionals work-
+ing in critical-care units (oncology, nephrology, neonatal intensive 
+care, and emergency departments) of nine tertiary hospitals in 
+the northern macroregion of Minas Gerais, Brazil. These hospitals 
+provide care through the Brazilian Unified Health System (SUS) 
+and are located in the following municipalities: Montes Claros 
+(Hospital 1 — large; Hospital 2 — large; Hospital 3 — medium), 
+Pirapora (Hospital 4 — medium), Janaúba (Hospital 5 — medium; 
+Hospital 6 — small), Brasília de Minas (Hospital 7 — large), Salinas 
+(Hospital 8 — medium), and Taiobeiras (Hospital 9 — medium).
+The study followed the STROBE (Strengthening the Reporting 
+of Observational Studies in Epidemiology) reporting guidelines(14).
+Population, sample and selection criteria
+The source population comprised 1,378 health profession -
+als working in oncology, nephrology, neonatal intensive care, 
+and emergency departments across the nine tertiary hospitals. 
+Professional categories included nursing assistants/technicians, 
+nurses, pharmacists, physiotherapists, physicians, nutritionists, 
+and psychologists. Sample size was calculated assuming a 50% 
+prevalence (to maximize sample size and given multiple outcomes), 
+a 95% confidence level, 5.0% precision, and finite population 
+correction; an additional 20% was added to account for possible 
+nonresponse and losses, resulting in a minimum required sample 
+size of 450 health professionals. 
+Simple random sampling was used: an exhaustive list of eligible 
+professionals (N = 1,378) was compiled, and the sample was ran-
+domly selected using Excel for Windows®. The inclusion criterion 
+was professionals with more than six months of work experience 
+in the selected departments; the exclusion criteria were profession-
+als on medical leave or on vacation at the time of data collection.
+Study protocol
+Before data collection, authorization was obtained from each 
+hospital. Health professionals were informed about the impor -
+tance of participating in the study. Those who agreed, formal -
+ized by signing the Informed Consent Form (ICF), were enrolled. 
+Data collection was carried out between January 2017 and April 
+2018. A self-administered questionnaire was used to gather so-
+ciodemographic, occupational, and physical-health information. 
+Anthropometric measurements and venous blood samples for 
+biochemical analysis were also obtained. The questionnaire was 
+delivered to participants to be completed at home and included 
+instructions on the return date and on the scheduling of labora-
+tory and anthropometric examinations.
+The investigated variables included sociodemographic char-
+acteristics (sex, age group, and marital status), occupational 
+characteristics (work sector, years working in healthcare, role in 
+3
+Rev Bras Enferm. 2025;78(6): e20240254 7of
+Overweight/obesity among health professionals and associated factors
+Pinho S, Pinho L, Silva CSO, Silva Junior RF, Pereira VG, Santos SP , et al. 
+the unit, and total weekly working hours), and health conditions 
+(body mass index, triglycerides, total cholesterol, high-density 
+lipoprotein [HDL] cholesterol, and blood pressure).
+For anthropometric data collection, BMI was determined using 
+a digital electronic scale (Wiso® W721) and a stadiometer. Partici-
+pants were weighed in their work clothes, standing with arms 
+relaxed alongside their bodies. They were asked to remove their 
+shoes, lab coats, jackets, watches, and other personal items. Height 
+was measured using a portable stadiometer (range 35.0–213.0 
+cm; precision 0.1 cm). During measurement, participants were 
+instructed to stand in the anatomical position, with their feet 
+together and centered on the equipment, their head, buttocks, 
+and heels against the wall, and their face directed forward in the 
+Frankfort plane(15). The stadiometer bar was lowered to the top of 
+the head, and the reading was taken after a normal expiration. For 
+BMI classification, the WHO criteria were adopted: underweight, 
+< 18.5 kg/m²; normal weight, 18.5–24.9 kg/m²; overweight, 
+25.0–29.9 kg/m²; and obesity, ≥ 30.0 kg/m² (16).
+Biochemical variables (total cholesterol, HDL-cholesterol, and 
+triglycerides) were measured from a single venous blood sample 
+collected from the antecubital vein after 12 hours of fasting and 
+analyzed by the enzymatic colorimetric method (LabmaxPlenno®). 
+Reference values followed the Brazilian Guideline on Dyslipid -
+emias and Atherosclerosis Prevention(17), classified as “normal” e 
+“altered” , respectively: total cholesterol (< 190 mg/dL; ≥ 190 mg/
+dL), HDL-cholesterol (> 40 mg/dL; ≤ 40 mg/dL), and triglycerides 
+(< 150 mg/dL; ≥ 150 mg/dL).
+Blood pressure was measured according to the 7th Brazilian 
+Guideline for Arterial Hypertension (18), using a validated auto -
+matic wrist blood pressure monitor (Omron ® HEM-6123). Three 
+measurements were taken on each occasion: at the initial contact 
+during questionnaire delivery and again during anthropometric 
+assessment. For analysis, the mean of the last two readings was 
+considered, with the first discarded. Blood pressure was classified 
+as “normal” for systolic blood pressure (SBP) ≤ 120 mmHg and 
+diastolic blood pressure (DBP) ≤ 80 mmHg; “prehypertension” for 
+SBP 121–139 mmHg or DBP 81–89 mmHg; and “hypertension” 
+for SBP ≥ 140 mmHg or DBP ≥ 90 mmHg. Participants were also 
+classified as hypertensive if they reported regular use of antihy-
+pertensive medication, regardless of measured values. When SBP 
+and DBP fell into different categories, the higher value was used. 
+For analysis, blood pressure was dichotomized into “normal” and 
+“altered” categories (prehypertension and hypertension). 
+Analysis of results and statistics
+The outcome variable, overweight/obesity, was dichotomized 
+into “no” (BMI <25 kg/m²) and “yes” (BMI ≥ 25 kg/m²). The inde-
+pendent variables comprised sociodemographic, occupational, 
+and physical-health characteristics.
+Descriptive analyses of all variables were first performed using 
+absolute and relative frequencies. The prevalence of overweight/
+obesity was estimated with 95% confidence intervals (95% CI). 
+Bivariate analyses were then conducted, followed by multivariable 
+analyses, using Poisson regression with robust variance. Variables 
+with p ≤0.20 in the bivariate analysis were selected for inclusion 
+in the multivariable analysis.
+Multivariable analysis employed a hierarchical Poisson regres-
+sion model with robust variance, adapted from Siqueira et al.(13). 
+The model was structured into three levels of variables: distal 
+(sex, age group, marital status, and having children), intermedi-
+ate (work sector, years working in healthcare, work shift, role in 
+the unit, and total weekly working hours), and proximal (leave 
+of absence, triglycerides, total cholesterol, HDL-cholesterol, 
+blood pressure, stress, and depression). “Sex” and “age” were 
+considered a priori as confounders and were retained in the 
+adjusted model.
+The modeling process began with the inclusion of distal 
+variables. Those with p <0.05 were carried forward to the next 
+block, which included intermediate variables. The same pro -
+cedure was applied to proximal variables. The final model was 
+adjusted for work sector and role in the unit. Only variables 
+with p < 0.05 in the final hierarchical model were presented. 
+Model fit was evaluated using the deviance test. All analyses 
+were conducted using the Statistical Package for the Social 
+Sciences (SPSS), version 20.0.
+RESUL TS
+A total of 490 health professionals participated in the study, of 
+whom 61.8% (95% CI: 57.5–66.1) were classified as overweight/
+obese. The sample was predominantly female (65.9%), aged 
+30–39 years (49.7%), and with a total weekly working hours of 
+up to 44 hours per week (56.5%). Among participants, 14.1% (n 
+= 66) worked in the ICU, 31.6% (n = 148) in nephrology, 22.8% 
+(n = 107) in oncology, and 31.6% (n = 148) in the emergency 
+department. By role, 66.3% (n = 311) were nursing assistants/
+technicians, 15.6% (n = 73) nurses, 8.7% (n = 41) physicians, and 
+9.4% (n = 44) other professionals. Overall, 44.3% (n = 217) of 
+participants had altered total cholesterol, 50.3% (n = 246) altered 
+HDL-cholesterol, 28.8% (n = 141) altered triglycerides, and 36.1% 
+(n = 177) altered blood pressure levels.
+Table 1 presents the results of the bivariate and multivariable 
+analyses, with estimates of crude and adjusted prevalence ratios 
+for overweight/obesity. After model adjustment, regardless of 
+work sector and role in the unit, the variables associated with 
+overweight/obesity were: Distal level — age group (30–39 years, 
+p = 0.018; ≥ 40 years, p < 0.001); Intermediate level — years work-
+ing in healthcare (5–10 years, p = 0.018; 11–15 years, p = 0.007; 
+>15 years, p = 0.034); and Proximal level — altered triglycerides 
+(p = 0.006) and altered blood pressure (p < 0.001).
+DISCUSSION
+This study demonstrated that more than half of health pro -
+fessionals were classified as overweight/obese, an outcome 
+associated with age group, blood pressure, triglycerides, and 
+years working in healthcare. Overweight/obesity among health 
+professionals is a relevant issue, as it compromises quality of 
+life, increases morbidity in this population, and may reduce life 
+expectancy. Individuals with obesity are more likely to develop 
+noncommunicable diseases (NCDs), such as type 2 diabetes 
+mellitus, malignant neoplasms, coronary heart disease, and 
+stroke(19,20).
+4
+Rev Bras Enferm. 2025;78(6): e20240254 7of
+Overweight/obesity among health professionals and associated factors
+Pinho S, Pinho L, Silva CSO, Silva Junior RF, Pereira VG, Santos SP , et al. 
+The high prevalence observed in this study is similar to that 
+reported in a survey of 4,489 government-employed health profes-
+sionals working in health clinics and hospitals across 11 districts 
+on the east coast of Peninsular Malaysia: 33.1% of individuals were 
+overweight and 21.1% were obese(21). Similarly, a study conducted 
+in England estimated obesity prevalence among health profes-
+sionals and found high rates among nurses (25.1%), unregistered 
+care workers (31.9%), and other health professionals (14.4%)(22). 
+In addition, a study involving Family Health Strategy (FHS) teams 
+participating in the Health-Promoting Units program in Montes 
+Claros, northern Minas Gerais, found that 53.5% of professionals 
+were overweight(13).
+The prevalence of overweight/obesity among health profession-
+als was similar to that observed in the general adult population: 
+61.8% among health professionals and 61.4% in the general adult 
+Brazilian population. In a study conducted between 2017 and 2018 
+in 12 European countries (Bulgaria, England, France, Germany, 
+Greece, Ireland, Italy, Latvia, Poland, Portugal, Romania, and Spain), 
+involving 10,810 participants, 48.1% were overweight and 12.6% 
+were obese(23). By contrast, an investigation in Nigeria found that 
+25.0% of individuals were overweight, and 14.3% were obese(24).
+The prevalence of overweight/obesity among health profes-
+sionals may be linked to factors such as irregular and long work-
+ing hours, unhealthy dietary habits, and high stress levels in the 
+workplace, conditions frequently present in this profession. Health 
+professionals are exposed to demanding working conditions, such 
+as heavy workloads, irregular schedules, and extended shifts; 
+which compromise their quality of life and predispose them to 
+unhealthy behaviors, including poor diet and physical inactivity, 
+thereby increasing the risk of overweight and obesity(13,21).
+According to recent evidence, health literacy is regarded as 
+essential for controlling overweight/obesity and fostering the 
+awareness needed to address these condition. The role of health 
+professionals in educating the population is therefore highly 
+Table 1 – Hierarchical multiple model with crude and adjusted prevalence ratios for overweight/obesity according to sociodemographic, occupational, 
+and health characteristics among health professionals, Northern macroregion of Minas Gerais, Brazil, 2017–2018
+Variables crudePR (95% CI) P crudePR (95% CI) P
+Distal level (Sociodemographic)
+Sex
+Male 1.00 - 1.00 -
+Female 0.89 (0.77-1.02) 0.089 0.86(0.77-1.02) 0.086
+Age group
+20–29 years 1.00 - 1.00 -
+30–39 years 1.29 (1.05-1.59) 0.016 1.29 (1.05-1.58) 0.018*
+≥ 40 years 1.47 (1.19-1.83) 0.000 1.47 (1.19-1.82) <0.001*
+Marital status
+Without partner 1.00 - -
+With partner 1.14 (0.98-1.32) 0.086 - -
+                Block  1: Deviance: 282.938; gl=482; p>0.900
+Intermediate level (Occupational)
+Y ears working in healthcare
+≤ 5 years 1.00 - 1.00
+5–10 years 1.44 (1.11-1.88) 0.006 1.40 (1.06-1.85) 0.018*
+11–15 years 1.60 (1.24-2.08) 0.000 1.53 (1.13-2.07) 0.007*
+15 years 1.65 (1.28-2.15) 0.000 1.42 (1.03-1.97) 0.034*
+Total weekly working hours
+≤ 44 h/week 1.00 - -
+45–60 h/week 0.90 (0.75-1.08) 0.240 - -
+≥ 61 h/week 1.21 (1.02-1.43) 0.029 - -
+               Block  2: Deviance: 264.492; gl=451; p>0.900
+Proximal level (Health conditions)
+Total cholesterol
+Normal 1.00 - -
+Altered 1.11(0.97-1.28) 0.143 - -
+HDL-cholesterol
+Normal 1.00 - -
+Altered 0.88 (0.76-1.01) 0.074 - -
+Triglycerides
+Normal 1.00 - 1.00
+Altered 1.25 (1.09-1.43) 0.002 1.21 (1.06-1.40) 0.006*
+Blood pressure
+Normal 1.00 1.00
+Altered 1.46 (1.28-1.66) 0.000 1.34 (1.15-1.55) <0.001*
+               Block  3: Deviance: 256.296; gl=448; p>0.900
+PR – prevalence ratio; CI – confidence interval; *significant at the 0.05 level; **model adjusted for “work sector” and “role in the unit” variables. 
+5
+Rev Bras Enferm. 2025;78(6): e20240254 7of
+Overweight/obesity among health professionals and associated factors
+Pinho S, Pinho L, Silva CSO, Silva Junior RF, Pereira VG, Santos SP , et al. 
+relevant(25). In this context, overweight/obesity among health 
+professionals may undermine their credibility with patients, reduc-
+ing adherence to the guidance provided. Moreover, professionals 
+with obesity often feel less confident about counseling patients 
+on healthy eating and the importance of physical activity(21).
+In the present study, a higher prevalence of overweight/obesity 
+was observed among health professionals aged 30–39 years. These 
+findings are consistent with those of a population-based cohort 
+study in the United Kingdom, which showed that the association 
+between BMI and mortality was stronger in adults younger than 
+50 years(26). Similarly, a study conducted in Recife, the capital of the 
+state of Pernambuco, also found a statistically significant associa-
+tion between overweight/obesity and age group, with a higher 
+prevalence among adults aged 30–39 years, who accounted for 
+27.5% of those classified as obese(27). Decreased physical activity 
+and age-related physiological changes contribute to increased 
+body fat stores, exceeding acceptable anthropometric standards(27).
+Our study showed that overweight/obesity was associated with 
+altered blood pressure and triglycerides. The fat accumulation that 
+occurs in obesity leads to dyslipidemia, characterized by elevated 
+levels of total cholesterol (TC), low-density lipoprotein (LDL) cho-
+lesterol, and triglycerides(28). Overweight/obesity increases adipo-
+kine production, leading to a chronic inflammatory state, which 
+contributes to metabolic complications such as hypertension(29). 
+When overweight/obesity and hypertension coexist, adverse cardiac 
+remodeling occurs, increasing the risk of heart failure(30). In a study 
+conducted in northeastern Minas Gerais, Brazil, with individuals 
+aged 18–88 years, elevated triglyceride levels were identified as a 
+significant risk factor for cardiovascular diseases and, consequently, 
+hypertension(31). Similarly, in an investigation conducted in the 
+Kailuan community in China, both higher triglyceride levels and 
+greater variability in triglyceride indices were independently as-
+sociated with an increased incidence of cardiovascular diseases(32).
+In this study, overweight/obesity was also associated with 
+longer time working in healthcare. A study conducted with health 
+workers in Rio de Janeiro found that 53.5% were overweight (36.7% 
+overweight and 16.8% obese). This finding is consistent with the 
+Malaysian study mentioned earlier, in which 33.1% of health 
+professionals were overweight and 21.1% were obese. Evidence 
+suggests that the longer health professionals are exposed to the 
+exhausting routines inherent in healthcare, the more their lifestyle 
+habits become compromised, leading to irregular and prolonged 
+working hours and unhealthy dietary practices, which predispose 
+them to obesity(13,21).
+Study limitations
+This cross-sectional study has some limitations. Because it 
+provides only a snapshot of exposure and outcome, it does not 
+allow for assessing the temporal relationship between cause and 
+effect. In addition, selection bias and response bias may have 
+affected data collection and, consequently, the accuracy of the 
+results. Furthermore, although the blood pressure monitor used 
+was validated, it may be less precise than devices recommended 
+for epidemiological studies.
+Contributions to the field
+As the global prevalence of overweight/obesity among health 
+professionals has risen rapidly and continuously in recent decades, 
+there is an urgent need to implement strategies, such as adjust-
+ing irregular shifts and long working hours, to support healthier 
+routines and improve these workers’ quality of life. This study is 
+relevant as it identifies the current and potential consequences 
+for health professionals. Physical and psychological impacts lead 
+to reduced quality of life and reduced capacity to work, thereby 
+increasing the incidence of illness. 
+CONCLUSIONS 
+The high prevalence of overweight/obesity among health 
+professionals was associated with sociodemographic, occupa -
+tional, and health-related characteristics, including aging, career 
+duration, and health indicators.
+These findings underscore the importance of implementing 
+programs that encourage regular physical activity and healthy 
+dietary habits to improve quality of life and prevent overweight/
+obesity-related diseases. It is also essential to establish sup -
+port networks that provide continuous assistance to facilitate 
+behavior change. Such initiatives should be complemented by 
+occupational health policies and targeted interventions aimed 
+at promoting a healthier and more balanced work environment. 
+Finally, longitudinal studies with samples from different hospital 
+settings are recommended.
+CONTRIBUTIONS
+Pinho S and Silva CSO contributed to the conception or design 
+of the study/research. Pinho S, Pinho L, Silva Junior RF and Santos 
+SP contributed to the analysis and/or interpretation of data. Pinho 
+S, Pinho L, Silva CSO, Silva Junior RF, Pereira VG, Santos SP , Soares 
+MAM and Barbosa DA contributed to the final review with critical 
+and intellectual participation in the manuscript.
+AVAILABILITY OF DATA AND MATERIAL
+The research data are available only upon request.
+REFERENCES
+1. Jesus JGL, Campos CMS, Scagliusi FB, Burlandy L, Bógus CM. O processo de trabalho na Estratégia Saúde da Família voltado às pessoas com 
+sobrepeso e obesidade em São Paulo. Saúde Debate. 2022;46 (132):175–87. https://doi.org/10.1590/0103-1104202213212
+2. World Health Organization (WHO). Obesity and overweight [Internet]. Geneva: WHO; 2020 [cited 2025 Sep 03]. Available from: https://www.
+who.int/news-room/fact-sheets/detail/obesity-and-overweight
+6
+Rev Bras Enferm. 2025;78(6): e20240254 7of
+Overweight/obesity among health professionals and associated factors
+Pinho S, Pinho L, Silva CSO, Silva Junior RF, Pereira VG, Santos SP , et al. 
+3. Kawai T, Autieri MV, Scalia R. Adipose tissue inflammation and metabolic dysfunction in obesity. Am J Physiol Cell Physiol. 
+2021;320(3):C375-C91. https://doi.org/10.1152/ajpcell.00379.2020 
+4. Al Kibria GM. Prevalence and factors affecting underweight, overweight and obesity using Asian and World Health Organization cutoffs 
+among adults in Nepal: analysis of the demographic and health survey 2016. Obes Res Clin Pract. 2019;13(2):129–36. https://doi.
+org/10.1016/j.orcp.2019.01.006 
+5. Chait A, den Hartigh LJ. Adipose tissue distribution, inflammation and its metabolic consequences, including diabetes and cardiovascular 
+disease. Front Cardiovasc Med. 2020;7:522637. https://doi.org/10.3389/fcvm.2020.00022 
+6. Powell-Wiley TM, Poirier P , Burke LE, Després JP , Gordon-Larsen P , Lavie CJ et al. Obesity and cardiovascular disease: a scientific statement 
+from the American Heart Association. Circulation. 2021;143(21):e984-e1010. https://doi.org/10.1161/CIR.0000000000000973 
+7. Obradovic M, Sudar-Milovanovic E, Soskic S, Essack M, Arya S, Stewart AJ, et al. Leptin and obesity: role and clinical implication. Front 
+Endocrinol. 2021;12:585887. https://doi.org/10.3389/fendo.2021.585887
+8. Dietz W, Santos-Burgoa C. Obesity and its implications for COVID-19 mortality. Obesity. 2020;28(6):1005. https://doi.org/10.1002/oby.22818
+9. Popkin BM, Du S, Green WD, Beck MA, Algaith T, Herbst CH, et al. Individuals with obesity and COVID-19: a global perspective on the 
+epidemiology and biological relationships. Obes Rev. 2020;(11):e13128. https://doi.org/10.1111/obr.13128
+10. Lin X, Li H. Obesity: epidemiology, pathophysiology, and therapeutics. Front Endocrinol. 2021;12:706978. https://doi.org/10.3389/
+fendo.2021.706978 
+11. Instituto Brasileiro de Geografia e Estatística (IBGE). Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD) [Internet]. Rio de Janeiro: 
+IBGE; 2019 [cited 2025 Sep 03]. Available from: https://biblioteca.ibge.gov.br/index.php/biblioteca-catalogo?view=detalhes&id=2101722 
+12. Saulle R, Bernardi M, Chiarini M, Backhaus I, La Torre G. Shift work, overweight and obesity in health professionals: a systematic review and 
+meta-analysis. Clin Ter. 2018;169(4):e189-e197. https://doi.org/10.7417/T.2018.2077
+13. Siqueira FV, Reis DS, Souza RAL, Pinho S, Pinho L. Excesso de peso e fatores associados entre profissionais de saúde da Estratégia Saúde da 
+Família. Cad Saúde Colet. 2019;27(2):138–45. https://doi.org/10.1590/1414-462X201900020167
+14. von Elm E, Altman DG, Egger M, Pocock SJ, Gøtzsche PC, Vandenbroucke JP , et al. Strengthening the Reporting of Observational Studies 
+in Epidemiology (STROBE) statement: guidelines for reporting observational studies. BMJ. 2007;335(7624):806-8. https://doi.org/10.1136/
+bmj.39335.541782.AD 
+15. Harrison GG, Buskirk ER, Carter LJE, Johston FE, Lohman TG, Pollock ML, et al. Skinfold thicknesses and measurement technique. In: Lohman 
+TG, Roche AF, Martorell R, editors. Anthropometric standardization reference manual. Champaign: Human Kinetics Books; 1988, p.55- 70. 
+16. World Health Organization (WHO). Obesity and overweight [Internet]. Geneva: WHO; Updated 2009 [cited 2025 Sep 03]. Available from: 
+http://www.who.int/mediacentre/factsheets/fs311/en/index.html 
+17. Sociedade Brasileira de Cardiologia (SBC). 7ª Diretriz Brasileira de Hipertensão Arterial. Arq Bras Cardiol. 2016;107(supl 3):1-83.  https://doi.
+org/10.5935/abc.20160151 
+18. Sociedade Brasileira de Cardiologia (SBC). Atualização da Diretriz Brasileira de Dislipidemias e Prevenção da Aterosclerose. Arq Bras Cardiol. 
+2017;109(Supl-1):1-76. Available from: https://doi.org/10.5935/abc.20170121  
+19. Soffer S, Zimlichman E, Glicksberg BS, Efros O, Levin MA, Freeman R, et al. Obesity as a mortality risk factor in the medical ward: a case 
+control study. BMC Endocr Disord. 2022;22(1):13. https://doi.org/10.1186/s12902-021-00912-5
+20. Sart G, Bayar Y, Danilina M. Impact of educational attainment and economic globalization on obesity in adult females and males: Empirical 
+evidence from BRICS economies. Front Public Health. 2023;11:1102359. https://doi.org/10.3389/fpubh.2023.1102359 
+21. Kunyahamu MS, Daud A, Jusoh N. Obesity among Health-Care Workers: Which Occupations Are at Higher Risk of Being Obese? Int J Environ 
+Res Public Health. 2021;18(8):4381. https://doi.org/10.3390/ijerph18084381  
+22. Kyle RG, Wills J, Mahoney C, Hoyle L, Kelly M, Atherton IM. Obesity prevalence among healthcare professionals in England: a cross-sectional 
+study using the Health Survey for England. BMJ Open. 2017;7(12):e018498. https://doi.org/10.1136/bmjopen-2017-018498 
+23. Stival C, Lugo A, Odone A, Brandt PA van den, Fernandez E, Tigova O, et al. Prevalence and Correlates of Overweight and Obesity in 12 
+European Countries in 2017–2018. Obesity Facts. 2022;15(5):655–65. https://doi.org/10.1159/000525792 
+24. Adeloye D, Ige-Elegbede JO, Ezejimofor M, Owolabi EO, Ezeigwe N, Omoyele C, et al. Estimating the prevalence of overweight and obesity in 
+Nigeria in 2020: a systematic review and meta-analysis. Ann Med. 2021;53(1):495–507. https://doi.org/10.1080/07853890.2021.1897665 
+25. Chrissini MK, Panagiotakos DB. Health literacy as a determinant of childhood and adult obesity: a systematic review. Int J Adolesc Med 
+Health. 2021;33(3):9-39. https://doi.org/10.1515/ijamh-2020-0275 
+26. Bhaskaran K, Dos-Santos-Silva I, Leon DA, Douglas IJ, Smeeth L. Association of BMI with overall and cause-specific mortality: a population-based 
+cohort study of 3·6 million adults in the UK. Lancet Diabetes Endocrinol. 2018;6(12):944-53. https://doi.org/10.1016/S2213-8587(18)30288-2 
+27. Melo SPSC, Cesse EÂP , Lira PIC, Ferreira LCCN, Rissin A, et al. Sobrepeso, obesidade e fatores associados aos adultos em uma área urbana 
+carente do Nordeste Brasileiro. Rev Bras Epidemiol. 2020;23:e200036. https://doi.org/10.1590/1980-549720200036 
+28. Oliveira GV, Pinto LM, Santos NG, Gross DA, Carvalho LS, Nunes WMS, et al. Correlação da gordura visceral e gordura corporal, com o perfil 
+lipídico de praticantes de hidroginástica. RBONE-Rev Bras Obes Nutr Emagr [Internet]. 2021 [cited 2025 Sep 03];15(97):984-93. Available 
+from:  https://www.rbone.com.br/index.php/rbone/article/view/1342/1175  
+7
+Rev Bras Enferm. 2025;78(6): e20240254 7of
+Overweight/obesity among health professionals and associated factors
+Pinho S, Pinho L, Silva CSO, Silva Junior RF, Pereira VG, Santos SP , et al. 
+29. Oliveira CBC, Brito LA, Freitas MA, Souza MPA, Rêgo JMC, Machado RJDA. Obesidade: inflamação e compostos bioativos. J Health Biol Sci 
+[Internet]. 2020 [cited 2025 Sep 03];8(1):1. Available from: https://docs.bvsalud.org/biblioref/2020/06/1100088/2785-publicado.pdf
+30. Neves MF. Hipertensão na adolescência, uma relação direta com obesidade e resistência à insulina. Arq Bras Cardiol. 2022;118:727-9. https://
+doi.org/10.36660/abc.20220188 
+31. Pimenta AM, Kac G, Gazzinelli A, Corrêa-Oliveira R, Velásquez-Meléndez G. Associação entre obesidade central, triglicérides e hipertensão 
+arterial em uma área rural do Brasil. Arq Bras Cardiol. 2008;90:419-25. https://doi.org/10.1590/S0066-782X2008000600006
+32. Li H, Zuo Y, Qian F, Chen S, Tian X, Wang P , et al. Triglyceride-glucose index variability and incident cardiovascular disease: a prospective 
+cohort study. Cardiovasc Diabetol. 2022;21(1):105. https://doi.org/10.1186/s12933-022-01541-5

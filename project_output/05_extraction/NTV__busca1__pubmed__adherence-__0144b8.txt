@@ -1,0 +1,1247 @@
+Frontiers in Nutrition 01 frontiersin.org
+TYPE Original Research
+PUBLISHED 12 March 2026
+DOI 10.3389/fnut.2026.1757733
+OPEN ACCESS
+EDITED BY
+Lucia Maddaloni,  
+Sapienza University of Rome, Italy
+REVIEWED BY
+Gizem Helvacı,  
+Mehmet Akif Ersoy University, Türkiye
+José Antonio Palma Jacinto,  
+Universidad Veracruzana, Mexico
+*CORRESPONDENCE
+Alba Pardo  
+ apardo@tecnocampus.cat
+RECEIVED 30 November 2025
+REVISED 05 February 2026
+ACCEPTED 10 February 2026
+PUBLISHED 12 March 2026
+CITATION
+Giner MP,  González-Serrano BP, Pardo A, 
+ Aguilar-Martínez A,  Gomez-Donoso C, 
+Ventura PS, Esquius L, 
+Bosque-Prous M and  Bach-Faig A (2026) 
+Adherence to healthy and sustainable 
+diets and health-related behaviors in a 
+Spanish online university setting.
+Front. Nutr. 13:1757733.
+doi: 10.3389/fnut.2026.1757733
+COPYRIGHT
+© 2026 Giner, González-Serrano, Pardo, 
+Aguilar-Martínez, Gomez-Donoso, 
+Ventura, Esquius, Bosque-Prous and 
+Bach-Faig. This is an open-access article 
+distributed under the terms of the 
+Creative Commons Attribution License 
+(CC BY). The use, distribution or 
+reproduction in other forums is 
+permitted, provided the original 
+author(s) and the copyright owner(s) are 
+credited and that the original publication 
+in this journal is cited, in accordance 
+with accepted academic practice. No 
+use, distribution or reproduction is 
+permitted which does not comply with 
+these terms.
+Adherence to healthy and 
+sustainable diets and 
+health-related behaviors in a 
+Spanish online university setting
+Maria Pilar Giner 1,2, Barbara Pilar González-Serrano 1, 
+Alba Pardo 1,3*, Alicia Aguilar-Martínez 4, Clara Gomez-Donoso 1, 
+Paula Sol Ventura 5,6, Laura Esquius 4, Marina Bosque-Prous 7,8 and 
+Anna Bach-Faig 1
+1NUTRALiSS, Faculty of Health Sciences, Open University of Catalonia (UOC), Barcelona, Spain, 2Nestlé 
+Research, Vers-chez-les Blanc, Lausanne, Switzerland, 3High Performance and Health Applied 
+Technology Research Group - (TAARS) TecnoCampus, Department of Health Sciences, Pompeu Fabra 
+University, Mataró, Spain, 4FoodLab Research Group, Faculty of Health Sciences, Open University of 
+Catalonia (UOC), Barcelona, Spain, 5Faculty of Health Sciences, Open University of Catalonia (UOC), 
+Barcelona, Spain, 6Department of Pediatrics, Hospital Universitari Arnau de Vilanova, Lleida, Spain, 
+7Epi4health Research Group, Department of Psychobiology and Methodology of Health Sciences, 
+Universitat Autònoma de Barcelona, Barcelona, Spain, 8CIBER de Epidemiología y Salud Pública 
+(CIBERESP), Madrid, Spain
+Background: Universities represent strategic environments for promoting healthy 
+behaviors. Evaluating dietary quality and sustainability alongside other health-
+related factors is essential for developing health promotion strategies.
+Objective: This study aimed to assess adherence to diets based on the latest 
+Spanish healthy and sustainable dietary guidelines, and to explore associations 
+between diet, health-related behaviors, and sociodemographic characteristics 
+among students and staff at the Open University of Catalonia (UOC).
+Methods: An online cross-sectional survey was conducted during the 2020–2021 
+academic year (n = 2,608; 2,075 students, 533 staff). Data on food intake (via a 
+semi-quantitative food frequency questionnaire), physical activity (PA), sedentary 
+behavior (SB), sleep quality, and emotional well-being were collected. HEAlthy 
+and SUStainable diet index (HEASUS) was computed using a continuous gradient-
+based scoring system for 18 food groups, ranging from −1 (lowest adherence) to 
+10 (highest adherence). Quantile regression models were employed to examine 
+determinants of HEASUS adherence across tertiles, accounting for health-related 
+and sociodemographic covariates.
+Results: Overall, many participants exhibited low PA, insufficient sleep, and ele-
+vated stress. Adherence to healthy and sustainable diet according to HEASUS was 
+moderate (students: 5.9 ± 1.5; staff: 6.2 ± 1.4). Higher PA and active commuting 
+were positively associated with HEASUS, while SB, male gender, and overweight 
+status were inversely associated. Health-related factors showed stronger asso -
+ciations with HEASUS adherence at lower quantiles, indicating that unhealthy 
+behaviors cluster and reinforce each other more strongly among those with 
+poorer dietary adherence. Although females scored slightly higher on HEASUS, 
+they reported greater stress, poorer sleep, and higher SB.
+Conclusion: Our findings underscore the importance of integrated, gender-
+sensitive strategies that jointly address diet quality, PA, sleep, and emotional 
+well-being. Online universities represent an important setting for promoting 
+both health and sustainability, especially through targeted actions that support 
+a plant-rich, nutrient-dense dietary pattern, enhance emotional well-being, and 
+encourage more active daily routines.
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 02 frontiersin.org
+KEYWORDS
+dietary pattern, emotional well-being, health promotion, healthy behaviors, online 
+university, physical activity, university population
+Introduction
+Non-communicable diseases (NCDs) remain one of the leading 
+global health challenges, contributing substantially to morbidity and 
+mortality worldwide ( 2). Modifiable lifestyle factors, including 
+tobacco and alcohol use, physical inactivity, sedentary behavior, 
+unhealthy diets, and insufficient sleep, are major drivers of this burden 
+(3). Unhealthy dietary shifts not only contribute to the rising preva-
+lence of NCDs but also to environmental degradation, underlying the 
+intertwined nature of human and planetary health (4–7).
+Universities represent strategic settings for health promotion, as 
+they bring together students and staff in educational, occupational, 
+and social contexts where long-lasting lifestyle habits are formed (8, 
+9). Universities function simultaneously as workplaces, educational 
+institutions, and centers for knowledge transfer, placing them in a 
+unique position to implement holistic health-promotion policies 
+(10–12). The university community—including both students and 
+staff—is crucial for fostering a supportive environment conducive to 
+health. While most health promotion efforts focus primarily on stu-
+dents (13, 14), the well-being of university staff is equally important 
+for building healthy campuses, particularly in virtual settings such as 
+the Open University of Catalonia (UOC), a pioneer in online learning.
+Evidence indicates that health behaviors can differ between online 
+and traditional in-person university environments. During the COVID-
+19 pandemic, longer periods of online learning were linked to skipping 
+breakfast and increased consumption of sugar-sweetened beverages (15, 
+16). While pandemic restrictions may have intensified these habits, 
+similar lifestyle challenges persist in online and hybrid university con-
+texts. Indeed, factors such as academic workload, stress, financial con-
+straints, and easy access to inexpensive, nutrient-poor foods have 
+historically contributed to unhealthy dietary and lifestyle behaviors in 
+university populations, independent of pandemic conditions (17, 18). 
+Sedentary behavior, emotional distress, and poor sleep often interact, 
+leading to compensatory or disordered eating patterns ( 19, 20). 
+Conversely, healthier behaviors—such as balanced diets, sufficient sleep, 
+and regular physical activity—support better learning outcomes, emo-
+tional well-being, and productivity (21, 22). Together, these findings 
+highlight the relevance of universities—particularly online institutions—
+as strategic settings for the promotion of healthy and sustainable 
+lifestyles.
+In response to these challenges, several initiatives—such as health-
+promoting university networks in Spain and Catalonia—have sought 
+to foster healthier campus environments ( 8, 10, 11). The Catalan 
+Network of Healthy Universities (Xarxa US.cat) (68), which includes 
+the UOC, reflects this commitment. Nonetheless, numerous studies 
+continue to report suboptimal dietary habits among university com-
+munities, including low adherence to the Mediterranean Diet (MD), 
+insufficient fruit and vegetable intake, and high consumption of red 
+and processed meat (19, 23, 24). These patterns frequently co-occur 
+with insufficient PA, prolonged sedentary time, and stress-related 
+behaviors, highlighting the need for integrated evaluations of lifestyle 
+behaviors and diet in university settings (18, 19).
+In addition to health, environmental sustainability has emerged as 
+a key component of modern dietary recommendations, emphasizing 
+dietary patterns that support both human health and environmental 
+GRAPHICAL ABSTRACT
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 03 frontiersin.org
+protection (7, 25). Universities increasingly incorporate sustainability 
+principles into their health-promotion strategies, yet little is known 
+about the extent to which their communities adhere to such dietary 
+patterns. This highlights the importance of evaluating both healthy 
+and sustainable eating behaviors in online university settings.
+Several indices have been developed to evaluate adherence to 
+healthy or sustainable dietary patterns, including the Mediterranean 
+Diet Adherence Screener (MEDAS), the Healthy Eating Index (HEI), 
+and the Planetary Health Diet Index (PHDI) (26–28). While MEDAS 
+focuses on health-related adherence to the MD using simple fre -
+quency-based questions, HEI and PHDI require more detailed dietary 
+data, including portion sizes, nutrient intakes, or linkage to external 
+databases. Moreover, only PHDI explicitly integrates sustainability 
+considerations. Their application in large online university popula-
+tions remains limited.
+Understanding lifestyle behaviors, including dietary patterns, is 
+essential for designing targeted health promotion strategies and 
+informing prioritisation of measures in online university monitoring 
+initiatives. Therefore, this study aimed to examine health-related 
+behavior patterns, including adherence to healthy and sustainable 
+diets and its associations with PA, sedentary behavior, sleep, and emo-
+tional well-being, among students and staff at the UOC, a leading 
+Spanish institution in online higher education.
+Understanding lifestyle behaviors, including dietary patterns, is 
+essential for designing targeted health promotion strategies and 
+informing prioritisation of measures in online university monitoring 
+initiatives. Specifically, this study addressed the following research 
+questions: (1) What is the level of adherence to healthy and sustainable 
+dietary patterns among students and staff of an online university? (2) 
+How health-related behaviors—including physical activity, sedentary 
+behavior, sleep quality, and emotional well-being differ between stu-
+dents and staff, and by gender? (3) How does the levels of dietary 
+adherence differ across sociodemographic and health-related 
+variables?
+Methods
+Study design and participants
+This cross-sectional study was conducted during the 2021–2022 
+academic year within the UOC community, including students 
+(undergraduate, master’s, postgraduate, and doctoral) and university 
+staff (academic, research, administrative, and service personnel) (66). 
+All members of the university community were invited to participate 
+via institutional mailing lists and the virtual campus. The study pro-
+tocol was approved by the Research Ethics Committee of UOC on 22 
+September 2021 (reference number: CE21-TE04). Participation was 
+voluntary and anonymous for research purposes only, and all partici-
+pants provided informed consent prior to completing the question-
+naire. A participant flowchart describing the recruitment process, 
+exclusions, and final analytical sample is presented in Figure 1.
+Data collection and measures
+Data were collected through a structured, self-administered 
+online survey (Qualtrics, Provo, UT, USA) (67) covering six domains: 
+sociodemographic information, health status including body mass 
+index (BMI), physical activity (PA) and sedentary behavior (SB), type 
+of commuting, substance use (tobacco, alcohol and coffee), self-
+reported chronic conditions including migraine, hypertension and 
+diabetes, and emotional well-being. Most items were drawn from vali-
+dated instruments, including the International Physical Activity 
+Questionnaire ( 29) for PA and SB ( 30), the General Health 
+Questionnaire-12 (GHQ-12) for emotional well-being (31–33), and a 
+semi-quantitative food frequency questionnaire (FFQ) in simplified 
+and adapted from the Spanish population (70, 71) for dietary intake. 
+Additional items were adapted from the Catalan Health Survey 
+(ESCA) (34).
+Several variables were recorded to improve group balance and 
+interpretability. Sociodemographic variables included household 
+composition, socioeconomic status, and, for staff, education level. 
+Health status encompassed BMI categories and self-reported chronic 
+conditions, which were grouped as follows: mental health (binary 
+variable coded based on self-reported stress, anxiety, or depression), 
+musculoskeletal disorders, migraines, and other chronic diseases; 
+and functional limitations, based on six disability domains. Diet-
+related variables included self-reported adherence to plant-rich diets 
+(PRD) (Mediterranean, vegetarian, vegan, flexitarian) or Western-
+style diets (WD) (frequent fast food and energy-dense nutrient-poor 
+foods), as well as meal context (social meals, eating alone, or dis -
+tracted eating) and frequency of shared meals. Caffeine intake was 
+categorized according to weekly consumption. Lifestyle behaviors 
+included physical activity (PA) levels, quantified using Metabolic 
+Equivalent of Task (METs) values from the Compendium of Physical 
+Activities (35) and categorized as low, moderate, or high; sedentary 
+behavior, classified according to the Sedentary Behavior Research 
+Network consensus ( 36) as active versus sedentary sitting time; 
+occupational PA for staff; and sleep quality. Substance use covered 
+alcohol (including binge drinking), tobacco, and other substances, 
+with categories reflecting frequency of use. Mental well-being was 
+assessed through GHQ-12, categorized into good, moderate, or 
+poor. The GHQ-12 has been previously validated in the Spanish 
+population, showing good internal consistency (Cronbach’s α > 0.80) 
+and adequate construct validity in both general and working popula-
+tions (37, 38). All detailed definitions and category thresholds are 
+provided in Supplementary material.
+The FFQ assessed the usual intake of 18 major food groups, with 
+frequencies ranging from “more than 3 times/day” to “less than once/
+month” . This dietary intake data was used to assess adherence to the 
+2022 Spanish Agency for Food Safety and Nutrition (AESAN) guide-
+lines (Healthy and Sustainable Dietary Recommendations). Based on 
+the frequency of consumption, participants were classified into infe-
+rior, optimal, or excessive intake categories for each food group. In 
+addition, participants were asked to self-assess how healthy they per-
+ceived their diet to be on a scale from 0 (not healthy at all) to 10 (very 
+healthy).
+HEASUS scoring system
+Existing diet quality indices—such as the Mediterranean Diet 
+Adherence Screener (MEDAS) (28), the Healthy Eating Index (HEI) 
+(27), or the Planetary Health Diet Index (PHDI) (26)—have greatly 
+contributed to assessing diet quality in terms of health and, more 
+recently, sustainability. These indices are often applied to FFQs but 
+typically require detailed dietary information, such as daily gram 
+intakes, servings, or nutrient densities. In contrast, the HEAlthy and 
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 04 frontiersin.org
+SUStainable diet score (HEASUS) was developed based on the Spanish 
+national food-based dietary guidelines (1), conceptually aligned with 
+the EAT-Lancet framework (7), and designed to be applicable to large-
+scale online surveys that rely on broader frequency categories rather 
+than detailed quantitative intake data. Its design provides construct 
+validity by grounding the scoring directly in established national 
+dietary recommendations, while maintaining a pragmatic and scalable 
+structure suitable for large online populations in which detailed quan-
+titative intake data are not available. This methodological approach is 
+consistent with recent frameworks (39) that infer sustainability from 
+the composition and balance of food groups rather than from product 
+origin, acknowledging that food type contributes far more to environ-
+mental impact than transport or geographic source (40, 41).
+HEASUS is a frequency-driven, gradient-based scoring system in 
+which self-reported consumption frequencies of specific food groups are 
+assigned proportional scores. The main food groups include fruits, veg-
+etables, legumes, whole cereals, refined cereals, nuts, white meat, red 
+meat, fish, eggs, and dairy. Each main group contributes a maximum 
+score of 1, with individual components stratified to reflect substitution 
+within the group. For example, cereals are divided into whole and refined 
+types, which together sum 1, with whole grains contributing higher 
+scores. Meat is divided into white and red meat contributing positively 
+up to 1, with red meat scored positively only for low recommended con-
+sumption (≤1–2 times/week - ranging from 0 to 0.25), while white meat 
+contributes progressively from 0 to 0.75 depending on consumption 
+frequency, with higher scores for recommended intake (1–2 times/week) 
+and moderate scores for occasional intake (1–3/month). This stratifica-
+tion allows HEASUS to capture not only absolute intake but also substi-
+tution patterns within food groups, particularly whole vs. refined cereals 
+and white vs. red meat. The scoring ensures that recommended foods 
+contribute more strongly to the index, while limiting the impact of low 
+recommended consumption (e.g., red meat) on the total score.
+Foods and beverages associated with adverse health outcomes or 
+a high environmental impact — such as sugar-sweetened drinks, 
+energy drinks, “light” soft drinks, pastries, fast food, salty snacks, and 
+processed meats — contribute to a penalty score of approximately −1. 
+Individual items are weighted proportionally to their relative impact. 
+Processed meat is assigned a higher absolute weight (−0.4 to +0.4) 
+due to its well-established negative effects (42, 43), while other items 
+are assigned smaller weights ( −0.1 to +0.1). Scores increase with 
+lower consumption, reflecting minimal impact at occasional intake 
+(e.g., ≤1/month) and progressively penalizing frequent consumption 
+(e.g., ≥3/day). Positive scores reflect adherence to recommended 
+consumption frequencies for beneficial foods, while negative scores 
+indicate deviation from recommended patterns in detrimental foods. 
+The total HEASUS score is the sum of all main food groups (maxi-
+mum 9) plus the unhealthy and unsustainable foods and beverages 
+component (maximum ±1), resulting in a theoretical range of −1 to 
++10, with higher values indicating healthier and more sustainable 
+diets. Table 1 provides the complete scoring system for all food 
+groups, including consumption frequency categories, corresponding 
+scores, and the application of negative points for high intake of nutri-
+ent-poor foods, ensuring full reproducibility of the HEASUS index.
+Variables and data handling
+Key sociodemographic and health-related variables were har -
+monized to ensure sufficient sample sizes across categories. 
+FIGURE 1
+Flowchart of participant recruitment, exclusions, and final analytical sample. Minor exclusions due to incomplete questionnaires or implausible values.
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 05 frontiersin.org
+Participants with extreme outliers in BMI or sleep duration 
+(>3 × interquartile range (IQR)) were excluded. Detailed informa -
+tion on variable definitions, categorizations, and data handling 
+procedures is provided in the Supplementary material . Missing 
+data were minimal (<5%) and assumed to be missing at random; 
+listwise deletion was applied.
+Statistical analysis
+Descriptive analyses were conducted separately for students and 
+staff. Categorical variables were compared using Chi-square or Fisher’s 
+exact tests (when expected counts <5), while continuous variables 
+were compared using Kruskal–Wallis tests followed by Dunn’s post-
+hoc tests with Bonferroni correction. Effect sizes were calculated using 
+eta squared ( η2) and interpreted as small (<0.06), moderate 
+(0.06 − 0.14), or large (>0.14). Participants were categorized into ter-
+tiles of HEASUS adherence (low, medium, high). Sex was included as 
+a covariate in all models to account for gender-specific differences in 
+lifestyle and dietary behaviors.
+To identify determinants of HEASUS adherence, multiple model-
+ing strategies were evaluated, including linear, generalized linear, gen-
+eralized additive, and quantile regression (QR) ( 44). Due to the 
+non-normal distribution of HEASUS scores and the presence of outli-
+ers, QR was selected as the primary method. Models were estimated 
+at the 25th, 55th, and 75th percentiles, allowing exploration of associa-
+tions across the distribution of dietary adherence.
+Covariates included in both student and staff models were 
+selected based on prior descriptive and exploratory analyses 
+(Spearman correlations, Kruskal–Wallis tests, and tertile-based 
+comparisons) and included age, gender (excluding “Other”), BMI, 
+self-reported adherence to dietary patterns (PRD and WD), PA, SB, 
+emotional well-being, sleep quality, smoking, alcohol intake, coffee 
+intake, main mode of transport, and type of study program for stu -
+dents or employment role for staff. PA was derived from self-
+reported weekly MET-minutes using the IPAQ scoring protocol, 
+and categorized into low, moderate, and high PA. Student models 
+additionally included meal context (e.g., eating alone or socially), 
+GHQ-12 emotional well-being score, presence of migraine or 
+chronic conditions, satisfaction with interpersonal relationships, 
+type of student (e.g., master, degree), and recent substance use 
+(binary indicator of any use of selected substances in the past 
+month, separate from smoking or caffeine intake); staff models 
+included education level (based on highest qualification attained), 
+self-perceived health, and occupational PA (daily activity level 
+related to work, distinguished from total PA). Variables included in 
+descriptive reporting such as chronic conditions, migraine, and sat -
+isfaction with relationships were also documented in 
+Supplementary materials . Bootstrap resampling ( n = 1,000) was 
+used to estimate robust standard errors and 95% confidence inter -
+vals. Analyses were conducted in R (v4.3.3), with significance set at 
+p < 0.05. Participants were recruited via institutional mailing lists, 
+with all invited individuals given the opportunity to participate.
+TABLE 1 Scoring criteria for the HEAlthy and SUStainable (HEASUS) index according to the main food groups frequency.
+Food group > 3
+day
+2
+day
+1
+day
+3–6
+week
+2
+week
+1
+week
+1–3
+month
+< 1
+month
+Score 
+range
+Main
+  Refined cereals 0.17 0.25 0.17 0.17 0.11 0.11 0.07 0 0–0.25
+  Whole cereals 0.75 0.5 0.5 0.33 0.33 0.22 0.22 0 0–0.75
+  Legumes 1 1 1 1 0.67 0.44 0.3 0 0–1
+  White meat 0 0 0.15 0.33 0.75 0.75 0.75 0.72 0–0.75
+  Red meat 0 0 0 0.05 0.17 0.25 0.25 0.25 0–0.25
+  Fish 0 0.3 0.67 1 0.67 0.44 0.3 0 0–1
+  Eggs 0 0 0.67 1 0.67 0.44 0.3 0.3 0–1
+  Dairy 0 1 1 0.67 0.67 0.44 0.44 0.3 0–1
+  Salad/vegetables 1 0.67 0.44 0.3 0.2 0 0 0 0–1
+  Fruit 1 1 0.67 0.44 0.3 0.2 0 0 0–1
+  Nuts (plain) 0.3 0.44 0.67 1 0.67 0.44 0.3 0 0–1
+High-dense nutrient-poor foods and beverages
+  Sugar-sweetened 
+drinks
+–0.1 −0.08 −0.05 −0.04 −0.02 0.05 0.08 0.1 −0.1 − 0.1
+  Energy drinks –0.1 −0.08 −0.05 −0.04 −0.02 0.05 0.08 0.1 −0.1 − 0.1
+  Light drinks –0.1 −0.08 −0.05 −0.04 −0.02 0.05 0.08 0.1 −0.1 − 0.1
+  Salty snacks –0.1 −0.08 −0.05 −0.04 −0.02 0.05 0.08 0.1 −0.1 − 0.1
+  Pastries –0.1 −0.08 −0.05 −0.04 −0.02 0.05 0.08 0.1 −0.1 − 0.1
+  Fast food –0.1 −0.08 −0.05 −0.04 −0.02 0.05 0.08 0.1 −0.1–0.1
+  Processed meat −0.4 −0.20 −0.13 −0.09 −0.06 0.13 0.2 0.4 −0.4–0.4
+Positive scores indicate desirable intake, negative scores indicate undesirable intake. Intermediate frequencies are assigned proportionally to create a gradient-based score. The total HEASUS 
+score ranges theoretically from −1 to 10.
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 06 frontiersin.org
+Results
+Participant characteristics
+A total of 2,608 participants completed the online survey, includ-
+ing 2,075 students (mean age 35 ± 11 years) and 533 staff (mean age 
+45 ± 9 years), corresponding to response rates of 64% among students 
+and 57% among staff. These participation rates are typical for online 
+surveys in large academic populations (45) and may have been influ-
+enced by survey fatigue during the COVID-19 pandemic. Female 
+participants predominated in both staff and students (70%), and all 
+analyses were stratified by gender. Sociodemographic characteristics 
+and health-related behaviors are summarized in Supplementary Table 1, 
+with further details stratified by physical activity (PA) level in 
+Supplementary Table 2.
+Dietary patterns and HEASUS scores 
+adherence among students and staff
+Overall adherence to healthy and sustainable dietary patterns, as 
+assessed by the HEASUS index, was examined among students and 
+staff, including differences by population group and gender. As shown 
+in Figure 2A, most participants exceeded the recommended intake of 
+processed meats, pastries, fast food, and snacks, while legumes, veg-
+etables, whole grains, fruits, and plain nuts did not meet optimal 
+intake in either population. Overall, there were no significant gender 
+differences, except for vegetables, red meat, sugary drinks, and pro-
+cessed meat, where women were more likely than men to meet recom-
+mendations (vegetables: students p < 0.001, staff p = 0.039; red meat: 
+students p < 0.001, staff p = 0.013; sugary drinks: students p < 0.001, 
+staff p = 0.002; processed meat: students p = 0.098, staff p = 0.009).
+Self-perceived healthy eating habits did not differ significantly by 
+gender (students: women 7.0 ± 1.8 vs. men 6.9 ± 1.6, p = 0.061; staff: 
+women 7.3 ± 1.7 vs. men 6.9 ± 1.6, p = 0.061; 
+Supplementary Tables 1A,B). Self-reported adherence to a plant-rich 
+diet (PRD) was higher among women compared to men (students: 
+79% vs. 71%, p = 0.002; staff: 81% vs. 71%, p = 0.02), whereas adher-
+ence to a Western-style diet (WD) was more common among men 
+(students: p = 0.031; staff: p = 0.44). Figure 2B shows the proportion 
+of participants adhering to PRD and WD in both populations.
+Mean HEASUS scores indicated moderate adherence to healthy 
+and sustainable dietary patterns, with females scoring higher than 
+males (students: 6.1 vs. 5.8, p < 0.001; staff: 6.4 vs. 6.0, p < 0.01). 
+Participants were categorized into tertiles of HEASUS adherence (T1: 
+low, T2: medium, T3: high), and corresponding sociodemographic 
+and health-related characteristics are presented in Table 2 (Full char-
+acteristics, including detailed lifestyle and health indicators, are 
+reported in Supplementary Table 3). The distribution of HEASUS 
+scores across populations is further illustrated in Figure 2C. Higher 
+HEASUS adherence was associated with older age, female sex, and 
+higher educational attainment (p < 0.05 for all). Participants in the 
+highest tertile (T3) reported better self-perceived health, healthier 
+eating habits, and lower prevalence of chronic conditions such as 
+migraine (p < 0.001 in students; p = 0.647 in staff).
+Participants with higher HEASUS scores were also more likely to 
+follow a PRD (from 60% in T1 to 90% in T3, p < 0.001) and less likely 
+to follow a WD (from 18% in T1 to 5% in T3, p < 0.001). This gradient 
+supports the internal validity of the HEASUS index as an indicator of 
+overall diet quality and sustainability.
+Differences in lifestyle behaviors by HEASUS 
+adherence
+This section explores the association between levels of HEASUS 
+adherence and health-related behaviors, including physical activity, 
+sedentary behavior, sleep quality, emotional well-being, and substance 
+use, stratified by population group and gender. The majority of both 
+populations complied with PA recommendations. Males were more 
+likely to engage in high levels of PA: 23% in students (p < 0.002) and 
+17% in staff (p < 0.08), whereas females showed a more balanced dis-
+tribution across “Low” and “Moderate” activity levels. Higher levels of 
+PA were consistently associated with higher HEASUS scores and 
+healthier lifestyle behaviors such as better quality of sleep and emo-
+tional well-being (Table 2; Supplementary Table 2). Among students, 
+HEASUS scores increased progressively across PA levels (5.6 ± 1.1, 
+6.1 ± 1.1, and 6.3 ± 1.1 for low, moderate, and high PA, p < 0.001), 
+accompanied by a gradual reduction in BMI (24.6 ± 5.0, 23.7 ± 4.1, 
+and 23.2 ± 3.6, p < 0.001). Among staff, HEASUS scores and self-
+perceived healthy eating habits also increased with PA, while BMI did 
+not differ significantly across PA levels ( p = 0.83). 
+Supplementary Figure 1  illustrates these relationships, showing 
+decreasing BMI and increasing Metabolic Equivalent of Task (METs) 
+values across HEASUS tertiles. Participants reporting higher PA also 
+perceived their diet as healthier (students p < 0.001; staff p = 0.004) 
+and their general health (students and staff p < 0.001) and sleep qual-
+ity as better (students p < 0.017; staff p = 0.341). Supplementary Figure 2 
+presents correlation patterns among numerical variables, including 
+age, General Health Questionnaire-12 (GHQ-12) scores, self-reported 
+healthy eating habits, hours of sleep, and sitting time per day.
+Average sitting time was slightly higher in male students 
+(7.6 ± 3.3 h) than females (7.3 ± 3.2 h, p = 0.06), with no significant 
+gender differences among staff (Supplementary Table 1). Sitting time 
+decreased progressively across HEASUS tertiles in both populations, 
+with students reporting 7.8 ± 3.4, 7.4 ± 3.2, and 7.0 ± 3.3 h/day in T1, 
+T2, and T3, respectively (p < 0.001), and staff showing a similar but 
+smaller trend (8.3 ± 2.8, 8.1 ± 2.9, 7.9 ± 2.7, p = 0.044). Active com-
+muting (walking or cycling) was more frequent among highly active 
+individuals and increased across HEASUS tertiles in students (T1: 
+20%, T2: 22%, T3: 26%; p = 0.021) and staff (T1: 32%, T2: 35%, T3: 
+40%; p < 0.001). Conversely, sedentary commuting (car or motorbike) 
+was more common among those with lower HEASUS scores.
+Poor emotional well-being (GHQ-12) and poor sleep quality was 
+more prevalent among female students (43% vs. 30.8% males, 
+p < 0.001 for poor GHG12 score and 46% vs. 37% males, p < 0.001 for 
+poor sleep quality), whereas in staff it did not differ. Weekly consump-
+tion of alcohol was more prevalent in males of both populations (27% 
+vs. 14%) females students (p < 0.001) and 41% vs. 25% in female staff 
+(p = 0.001) (Supplementary Table 1).
+Higher HEASUS scores were associated with better emotional well-
+being, healthier lifestyle behaviors, and lower prevalence of substance 
+use, particularly among students. In students, the highest tertile (T3) 
+showed significantly lower prevalence of poor emotional well-being 
+(36% vs. 45% in T1, p = 0.004), fewer chronic mental health conditions 
+(50% vs. 60%, p < 0.001), higher satisfaction with interpersonal relation-
+ships (76% vs. 63%, p < 0.001), and higher self-perceived healthy eating 
+habits (7.9 vs. 5.8, p < 0.001) compared with the lowest tertile. Non-
+smoking status increased across tertiles (T1: 75% vs. T3: 84%, p < 0.001), 
+while occasional or weekly alcohol consumption and past-month sub-
+stance use decreased (substance use: 9% vs. 5%). Students in higher 
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 07 frontiersin.org
+FIGURE 2
+Dietary patterns, food group consumption, and HEASUS score distribution among students and staff. (A) Percentage of participants with optimal, 
+inferior, or excessive intake for key food groups, based on national guidelines. Optimal food groups consumption by gender represented by n (%) of 
+vegetables, read meat, sugar drinks and processed meat. Fisher’s exact test was used for the category Vegetables Chi-square (χ2). (B) Proportion of 
+participants self-reporting adherence to plant-rich diet (PRD), western diet (WD), or neither. (C) Distribution of HEASUS scores, shown by frequencies, 
+with skewness and subgroup comparison by tertiles for student and staff.
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 08 frontiersin.org
+TABLE 2 Distribution of main variables across HEASUS tertiles adherence, separately calculated for each population group.
+A. Students T1
+(N = 696)
+T2
+(N = 695)
+T3
+(N = 684)
+[ALL]
+(N = 2075)
+p value overall
+HEASUS index range ≤ 5.56 5.57–6.54 ≥ 6.55
+HEASUS score (range −1 to 
+10)
+4.8 (± 0.66) 6.1 (± 0.28) 7.2 (± 0.50) 6.0 (± 1.1) –
+Gender 0.014
+  Male 217 (31%) 200 (29%) 158 (23%) 575 (28%)
+  Female 469 (67%) 483 (69%) 511 (75%) 1,463 (71%)
+  Others 10 (1%) 12 (2%) 15 (2%) 37 (2%)
+Age 33 (± 9.7) 36 (± 11) 37 (± 11) 35 (± 11) < 0.001
+Body mass index (BMI) 24 (± 4.7) 24 (± 4.3) 23 (± 3.7) 24 (± 4.3) 0.099
+Student type < 0.001
+  Undergraduate 476 (68%) 458 (66%) 395 (58%) 1,329 (64%)
+  PhD 20 (3%) 17 (2%) 23 (3%) 60 (3%)
+  Master/postgraduate 200 (29%) 220 (32%) 266 (39%) 686 (33%)
+Type of study < 0.001
+  Arts/humanities 142 (20%) 131 (19%) 148 (22%) 421 (20%)
+  Engineering 137 (20%) 112 (16%) 104 (15%) 353 (17%)
+  Health 53 (8%) 58 (8%) 108 (16%) 219 (11%)
+  Social/legal 364 (52%) 394 (57%) 324 (47%) 1,082 (52%)
+Self-perceived health < 0.001
+  Regular or bad 138 (20%) 89 (13%) 75 (11%) 302 (15%)
+  Good 311 (45%) 279 (40%) 250 (37%) 840 (40%)
+  Very good 247 (35%) 327 (47%) 359 (52%) 933 (45%)
+Sleep quality 0.017
+  Regular or bad 332 (48%) 302 (43%) 274 (40%) 908 (44%)
+  Good 225 (32%) 222 (32%) 226 (33%) 673 (32%)
+  Very good 139 (20%) 171 (25%) 184 (27%) 494 (24%)
+Chronic mental health < 0.001
+  No 275 (40%) 348 (50%) 344 (50%) 967 (47%)
+  Ye s 421 (60%) 347 (50%) 340 (50%) 1,108 (53%)
+Migraine (chronic) < 0.001
+  No 480 (69%) 529 (76%) 534 (78%) 1,543 (74%)
+  Ye s 216 (31%) 166 (24%) 150 (22%) 532 (26%)
+Plant rich diet (PRD) < 0.001
+  No 280 (40%) 134 (19%) 71 (10%) 485 (23%)
+  Ye s 416 (60%) 561 (81%) 613 (90%) 1,590 (77%)
+Western diet (WD) < 0.001
+  No 570 (82%) 621 (89%) 651 (95%) 1842 (89%)
+  Ye s 126 (18%) 74 (11%) 33 (5%) 233 (11%)
+Self-perceived healthy eating 
+habits (range 0 to 10)
+5.8 (± 2.1) 7.1 (± 1.7) 7.9 (± 1.6) 6.9 (± 2.0) < 0.001
+Physical activity (PA) level < 0.001
+  Low 236 (34%) 155 (22%) 105 (15%) 496 (24%)
+  Moderate 361 (52%) 419 (60%) 410 (60%) 1,190 (57%)
+  High 99 (14%) 121 (17%) 169 (25%) 389 (19%)
+(Continued)
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 09 frontiersin.org
+TABLE 2 (Continued)
+A. Students T1
+(N = 696)
+T2
+(N = 695)
+T3
+(N = 684)
+[ALL]
+(N = 2075)
+p value overall
+Sitting hours per day 7.8 (± 3.4) 7.4 (± 3.2) 7.0 (± 3.3) 7.4 (± 3.3) < 0.001
+Sedentary behavior (SB) < 0.001
+  Active 398 (57%) 444 (64%) 463 (68%) 1,305 (63%)
+  Sedentary 298 (43%) 251 (36%) 221 (32%) 770 (37%)
+Alcohol consumption 0.022
+  Never 174 (25%) 140 (20%) 174 (25%) 488 (24%)
+  Almost never 203 (29%) 182 (26%) 167 (24%) 552 (27%)
+  Occasionally 198 (28%) 227 (33%) 227 (33%) 652 (31%)
+  Weekly 121 (17%) 146 (21%) 116 (17%) 383 (18%)
+Smoking status < 0.001
+  Non-smoker 521 (75%) 542 (78%) 575 (84%) 1,638 (79%)
+  Occasional smoker 66 (9%) 64 (9%) 62 (9%) 192 (9%)
+  Regular smoker 109 (16%) 89 (13%) 47 (7%) 245 (12%)
+Emotional well-being 
+(GHQ-12)
+0.004
+  Good 77 (11%) 99 (14%) 110 (16%) 286 (14%)
+  Moderate 307 (44%) 331 (48%) 328 (48%) 966 (47%)
+  Poor 312 (45%) 265 (38%) 246 (36%) 823 (40%)
+Tertiles were computed separately based on the HEASUS score distribution within the students population group. Values are presented as mean (SD) for continuous 
+variables and n (%) for categorical variables. p value overall corresponds to global p-values obtained from comparison tests across students tertiles. Chronic mental health 
+condition: binary indicator for having any of the mental conditions (stress, anxiety, depression); Migraine (chronic): binary indicator of self-reported diagnosis of migraine 
+(yes/no) categorized as part of chronic conditions; Test: Kruskal–Wallis (K-W) test used for continuous variables and Chi-square (χ2) for categorical variables. Complete 
+data for all variables are provided in Supplementary Table 1.
+B. Staff T1
+(N = 182)
+T2
+(N = 174)
+T3
+(N = 177)
+[ALL]
+(N = 533)
+p value overall
+HEASUS index range ≤ 5.93 5.94–6.70 ≥ 6.71 – –
+HEASUS score (range −1 
+to 10)
+5.3 (± 0.61) 6.3 (± 0.21) 7.3 (± 0.46) 6.3 (± 0.95)
+–
+Gender < 0.001
+  Male 74 (41%) 52 (30%) 33 (19%) 159 (30%)
+  Female 105 (58%) 122 (70%) 143 (81%) 370 (69%)
+  Others 3 (2%) 0 (0%) 1 (1%) 4 (1%)
+Age 44 (± 8.4) 45 (± 9.4) 45 (± 9.7) 45 (± 9.2) 0.545
+Body mass index (BMI) 24 (± 3.9) 24 (± 3.6) 23 (± 3.6) 24 (± 3.7) 0.461
+Work type < 0.001
+  PAS 127 (70%) 104 (60%) 74 (42%) 305 (57%)
+  PDI 28 (15%) 40 (23%) 48 (27%) 116 (22%)
+  PDC 27 (15%) 30 (17%) 55 (31%) 112 (21%)
+Self-perceived health < 0.001
+  Regular 22 (12%) 9 (5%) 8 (5%) 39 (7%)
+  Good 91 (50%) 89 (51%) 64 (36%) 244 (46%)
+  Very good 69 (38%) 76 (44%) 105 (59%) 250 (47%)
+Sleep quality 0.341
+  Regular or bad 93 (51%) 91 (52%) 86 (49%) 270 (51%)
+(Continued)
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 10 frontiersin.org
+TABLE 2 (Continued)
+B. Staff T1
+(N = 182)
+T2
+(N = 174)
+T3
+(N = 177)
+[ALL]
+(N = 533)
+p value overall
+  Good 13 (7%) 16 (9%) 24 (14%) 53 (10%)
+  Very good 76 (42%) 67 (39%) 67 (38%) 210 (39%)
+Chronic mental health 0.358
+  No 159 (87%) 152 (87%) 162 (92%) 473 (89%)
+  Ye s 23 (13%) 22 (13%) 15 (8%) 60 (11%)
+Migraine (chronic) 0.647
+  No 165 (91%) 161 (93%) 165 (93%) 491 (92%)
+  Ye s 17 (9%) 13 (7%) 12 (7%) 42 (8%)
+Plant rich diet (PRD) < 0.001
+  No 63 (35%) 40 (23%) 13 (7%) 116 (22%)
+  Ye s 119 (65%) 134 (77%) 164 (93%) 417 (78%)
+Western diet (WD) < 0.001
+  No 156 (86%) 168 (97%) 173 (98%) 497 (93%)
+  Ye s 26 (14%) 6 (3%) 4 (2%) 36 (7%)
+Self-perceived healthy 
+eating habits (range 0 to 10)
+6.4 (± 1.8) 7.4 (± 1.4) 7.8 (± 1.6) 7.2 (± 1.7) < 0.001
+Physical activity (PA) level 0.105
+  Low 36 (20%) 24 (14%) 17 (10%) 77 (14%)
+  Moderate 123 (68%) 127 (73%) 136 (77%) 386 (72%)
+  High 23 (13%) 23 (13%) 24 (14%) 70 (13%)
+Sitting hours per day 8.3 (± 2.8) 8.1 (± 2.9) 7.9 (± 2.7) 8.1 (± 2.8) 0.044
+Sedentary behavior (SB) 0.216
+  Active 89 (49%) 82 (47%) 99 (56%) 270 (51%)
+  Sedentary 93 (51%) 92 (53%) 78 (44%) 263 (49%)
+Alcohol consumption 0.205
+  Never 19 (10%) 28 (16%) 29 (16%) 76 (14%)
+  Almost never 28 (15%) 33 (19%) 31 (18%) 92 (17%)
+  Occasionally 68 (37%) 70 (40%) 68 (38%) 206 (39%)
+  Weekly 67 (37%) 43 (25%) 49 (28%) 159 (30%)
+Smoking status 0.011
+  Non-smoker 129 (71%) 143 (82%) 150 (85%) 422 (79%)
+  Occasional smoker 23 (13%) 13 (7%) 15 (8%) 51 (10%)
+  Regular smoker 30 (16%) 18 (10%) 12 (7%) 60 (11%)
+Emotional well-being 
+(GHQ-12)
+0.8
+  Good 15 (8%) 18 (10%) 18 (10%) 51 (10%)
+  Moderate 116 (64%) 107 (61%) 117 (66%) 340 (64%)
+  Poor 51 (28%) 49 (28%) 42 (24%) 142 (27%)
+Tertiles were computed separately based on the HEASUS score distribution within the staff population group. Values are presented as mean (SD) for continuous variables 
+and n (%) for categorical variables. p value overall corresponds to global p-values obtained from comparison tests across staff tertiles. Work type: PAS (Administrative and 
+Service Staff), PDI (Teaching and Research Staff), and PDC (Administrative and Service Staff); Chronic mental health condition: binary indicator for having any of the 
+mental conditions (stress, anxiety, depression); Migraine (chronic): binary indicator of self-reported diagnosis of migraine (yes/no) categorized as part of chronic 
+conditions. Test: Kruskal–Wallis (K-W) test used for continuous variables and Chi-square (χ2) for categorical variables. Complete data for all variables are provided in 
+Supplementary Table 1.
+T1: Low adherence; T2: Medium adherence; T3: High adherence.
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 11 frontiersin.org
+tertiles also reported better sleep quality and slightly higher coffee con-
+sumption. Among staff, higher HEASUS tertiles were significantly asso-
+ciated with greater self-perceived healthy eating habits (6.7 vs. 7.6, 
+p < 0.001) and lower regular smoking prevalence (16% vs. 7%, p = 0.011), 
+whereas emotional well-being, alcohol and substance use, and satisfac-
+tion with relationships showed minimal variation (all p > 0.05).
+Differences in dietary adherence levels across 
+sociodemographic and health-related factors
+To examine how dietary adherence levels differ across sociodemo-
+graphic and health-related variables, quantile regression analyses were 
+conducted. These analysis confirmed and extended the patterns observed 
+across HEASUS tertiles (Table 2), identifying consistent behavioral and 
+demographic determinants of HEASUS adherence. Positive predictors 
+of higher HEASUS scores included self-reported adherence to a PRD 
+(strongest predictor), higher PA levels (particularly among students), 
+enrollment in health-related study programs (students), and active com-
+muting (staff, lower HEASUS quantiles). In contrast, negative predictors 
+included self-reported adherence to a WD, male gender, overweight 
+status, smoking, passive commuting, and low-to-moderate coffee intake. 
+Notably, sleep quality, sedentary time, and meal conviviality (i.e., degree 
+of socialization during meals) were not consistently associated with 
+HEASUS. Analyses were performed using quantile regression at the 
+25th, 55th, and 75th percentiles of HEASUS scores to capture associa-
+tions across the distribution and account for non-normality and outliers 
+(see Supplementary Table 4).
+Discussion
+Dietary patterns and HEASUS adherence in 
+an online university setting
+This study provides a broad characterization of health-related and 
+sustainability behaviors in a large online university population, offer-
+ing insights into lifestyle challenges and opportunities in digital higher 
+education contexts. Overall, dietary pattern reflected moderate adher-
+ence to national dietary recommendations (1), with insufficient intake 
+of plant-rich foods—particularly vegetables, fruits, legumes, and 
+nuts—and excessive consumption of red and processed meats, pas -
+tries, and energy-dense nutrient-poor foods and beverages. These pat-
+terns not only compromise nutritional quality but also contribute to 
+higher environmental footprints, highlighting the dual challenge and 
+opportunity of improving health and planetary health in university 
+populations.
+The HEASUS index was developed based on the AESAN Food-
+Based Dietary Guidelines (FBDGs) (1), and in turn inspired by the 
+EAT-Lancet recommendations for healthy and sustainable diets (7). 
+Its frequency-driven design allows for a culturally adapted, pragmatic 
+assessment suitable for large online populations where detailed quan-
+titative intake data may not be available.
+Quantile regression analyses indicated that lifestyle determinants 
+had a stronger influence on HEASUS adherence among individuals 
+with lower levels of dietary adherence. In particular, physical activity, 
+sedentary behavior, and sleep quality showed the strongest associa-
+tions with HEASUS scores in the lowest adherence quartile (τ = 0.25). 
+This pattern suggests that individuals with poorer dietary adherence 
+may benefit most from targeted lifestyle interventions. Overall, higher 
+HEASUS scores were consistently associated with healthier dietary 
+patterns, greater physical activity, better sleep quality, improved emo-
+tional well-being, and a lower prevalence of risk behaviors such as 
+smoking and frequent alcohol consumption. Together, these findings 
+help identify priority groups for health promotion and sustainability-
+focused interventions.
+Factors health-related behaviors associated 
+with HEASUS adherence
+Higher HEASUS adherence was consistently associated with 
+healthier lifestyle behaviors, including greater physical activity, better 
+sleep quality, improved emotional well-being, and a lower prevalence 
+of risk behaviors. Within this online university population, both life-
+style behaviors and sociodemographic characteristics showed substan-
+tial variability, highlighting the heterogeneous nature of dietary 
+adherence and its associated determinants. Overall, students and staff 
+reported moderate levels of PA, mixed commuting habits, diverse 
+sleep quality, and generally low prevalence of substance use such as 
+smoking or frequent alcohol consumption. These patterns are consis-
+tent with previous research linking dietary behaviors, PA, sleep, and 
+emotional well-being among university students and staff (21, 46–48).
+When stratified by HEASUS adherence, the general patterns were 
+accentuated and differences in gender were evident. Women generally 
+reported higher diet quality (higher HEASUS scores) but also more 
+stress and greater sedentary behavior, consistent with previous find-
+ings on gender differences in diet and physical activity (46, 49). Men 
+displayed higher prevalence of overweight, poorer diet quality, and 
+more frequent substance use, including weekly alcohol use and binge 
+drinking. These findings align with prior evidence on gendered differ-
+ences in health behaviors and highlight the need for gender-sensitive 
+interventions addressing both dietary behaviors and lifestyle stressors 
+in university settings (50, 51, 66). Poor sleep quality and stress were 
+also more frequent among women and those with lower HEASUS 
+scores, supporting previous research on the bidirectional relationship 
+between emotional well-being, sleep, and diet quality ( 52, 53). 
+Additionally, perceived stress has been shown to influence health 
+behaviors, including diet and PA (54).
+Although overall HEASUS adherence was moderate in both 
+groups, staff consistently showed slightly higher scores than students, 
+which may reflect differences in age, work routines, and health 
+awareness. Enrollment in health-related degrees for students, older 
+age, and active commuting were positive predictors of higher 
+HEASUS adherence, while self-reported WD pattern, overweight 
+status, and passive commuting were associated with lower adherence, 
+reinforcing previous literature linking lifestyle, occupation, and 
+knowledge with dietary quality ( 55–57). Among staff, these trends 
+were less pronounced, though a similar pattern of more active com-
+muting and lower sedentary behavior was observed in higher 
+HEASUS tertiles.
+Implications
+Our findings indicate that targeting individuals with the lowest 
+HEASUS adherence can maximize the effectiveness of health promo-
+tion programs, generating cascading benefits across multiple health 
+domains, including physical activity, diet, sleep, and emotional well-
+being. For example, promoting PA not only improves fitness and 
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 12 frontiersin.org
+metabolic health ( 58) but is also associated with healthier dietary 
+choices, better sleep, and enhanced emotional well-being. Online and 
+hybrid university settings offer a unique opportunity to implement 
+scalable interventions—such as digital nudges, gamification, plant-
+based challenges, and real-time dietary feedback—which have been 
+shown to influence health behaviors, including diet, PA, and SB (59, 
+60). Given the observed gender differences in stress, sleep, and SB, 
+gender-responsive strategies are essential. Promoting plant-rich diets 
+(PRD) further supports individual health while contributing to envi-
+ronmental sustainability, linking dietary interventions to broader 
+planetary health goals (5, 7).
+Additionally, the observed dietary patterns have implications 
+beyond individual health. Higher HEASUS adherence, characterized 
+by greater intake of PRD and lower consumption of processed meats 
+and energy-dense nutrient-poor foods, supports principles of plane-
+tary health diets, highlighting the dual benefit of diet modification for 
+both health and environmental sustainability. Comparable indices, 
+such as the Sustainable Healthy Diet Index (SHDI), have similarly 
+integrated health and sustainability considerations in European and 
+North African populations (39). Unlike SHDI, which relies on gram-
+based conversion and detailed intake data, HEASUS is a pragmatic, 
+frequency-based tool for a broader population enabling scalable 
+assessment and intervention planning. Integrating dietary interven-
+tions with active commuting, sleep hygiene, and emotional well-being 
+support could therefore simultaneously promote human and plane-
+tary health in university settings.
+Strengths and limitations
+Key strengths of this study include the application of a culturally 
+adapted, frequency-based dietary index constructed directly from 
+AESAN FBDGs and conceptually aligned with the EAT-Lancet frame-
+work. It simultaneously evaluates lifestyle, health-related behaviors 
+including emotional well-being, and sociodemographic factors in a 
+large online university population.
+Limitations include reliance on self-reported data, which may 
+introduce recall or social desirability bias, and the cross-sectional 
+design, which limits causal inference. The heterogeneity of the popula-
+tion—spanning diverse ages, academic programs, and work roles—
+adds complexity but also enhances generalizability to other online 
+higher education settings.
+Data collection took place one year after the COVID-19 pandemic 
+lockdown in Spain, which may have influenced lifestyle behaviors and 
+mental well-being and should be considered when interpreting the 
+findings. However, many of the structural conditions observed—such 
+as remote learning, flexible schedules, prolonged screen time, and 
+reduced active commuting—remain intrinsic to online university set-
+tings. Therefore, the findings remain highly relevant for understanding 
+lifestyle behaviors in digital higher education environments (61).
+Future directions
+Future research should explore the implementation of targeted, scal-
+able interventions that simultaneously address diet quality, PA, sedentary 
+behavior, sleep, and emotional well-being. Interventions could leverage 
+digital health platforms, gamification, and real-time feedback (62–64) to 
+increase engagement, particularly among those in the lowest HEASUS 
+tertile. Digital nudging interventions have been shown to increase short 
+PA breaks among home-studying students (65). Longitudinal monitor-
+ing of lifestyle behaviors is needed to track changes over time and evalu-
+ate the potential causal effects of health promotion interventions.
+While HEASUS was developed for online university populations 
+in Spain, its pragmatic, frequency-based design enables adaptation to 
+other online cohorts, including adult learners, or remote employees. 
+Such adaptations could facilitate cross-population comparisons of 
+adherence to healthy and sustainable diets. Longitudinal studies are 
+needed to evaluate changes over time and the potential effects of 
+health promotion interventions. Integrating environmental impact 
+assessments, such as life cycle analyses or carbon footprints, would 
+further strengthen the sustainability dimension of dietary 
+interventions.
+Conclusion
+Despite moderate adherence to a healthy and sustainable dietary 
+pattern overall based on HEASUS, substantial gaps exist in levels of 
+PA and emotional well-being. Findings highlight the need for inte-
+grated, gender-sensitive interventions that enhance PRD consump-
+tion, reduce energy-dense nutrient-poor foods, support emotional 
+wellbeing and encourage active daily routines.
+Data availability statement
+The raw data supporting the conclusions of this article will be 
+made available by the authors, without undue reservation.
+Ethics statement
+The studies involving humans were approved by Research Ethics 
+Committee of UOC Ref: CE21-TE04 on 22 September 2021. The stud-
+ies were conducted in accordance with the local legislation and insti-
+tutional requirements. The participants provided their written 
+informed consent to participate in this study.
+Author contributions
+MPG: Writing – original draft, Formal analysis, Software, 
+Methodology, Visualization, Investigation, Data curation, Writing 
+– review & editing. BG-S: Methodology, Writing – review & edit -
+ing. AP: Supervision, Writing – review & editing, Investigation, 
+Project administration, Methodology, Conceptualization. AA-M: 
+Methodology, Writing – review & editing, Conceptualization. 
+CG-D: Supervision, Methodology, Writing – review & edit  ing. PV: 
+Methodology, Writing – review & editing. LE: Methodology, 
+Writing – review & editing. MB: Methodology, Writing – review 
+& editing, Project administration, Investigation. AB-F: Writing 
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 13 frontiersin.org
+– review & editing, Supervision, Project administration, 
+Investigation, Methodology, Conceptualization.
+Funding
+The author(s) declared that financial support was received for this 
+work and/or its publication. The survey and its methodology were 
+defined within the framework of the Interuniversity Survey Working 
+Group, with institutional support from the Public Health Agency of 
+Catalonia (ASPCAT) and the participating universities. Funding was 
+provided to analyze the aggregated data from the full survey, which 
+are not included in the present study.
+Acknowledgments
+This work is part of the framework of the Catalan Network of 
+Healthy Universities (USCAT), with the collaboration of the Public 
+Health Agency of Catalonia (ASPCAT). The authors would like to 
+thank all the participants who voluntarily and anonymously com -
+pleted the survey (students and staff) from the UOC. As well as the 
+coordination group of the interuniversity survey (Lourdes Altés, Anna 
+Bach-Faig, Alba Pardo-Fernández, Marina Bosque-Prous) and inter-
+university survey working group (Lourdes Altés, Anna Bach-Faig, 
+Alba Pardo-Fernández, Ester Colillas-Malet, Helena González-Casals, 
+Josep M. Suelves, Lluís Capdevila, Xavier Isern, Antonio Solanas, Ruth 
+Dolado, M. Mar Bohórquez, Marina Bosque-Prous).
+Conflict of interest
+MPG was employed by Société des Produits Nestlé S.A. However, 
+this research was conducted independently as part of her doctoral stud-
+ies and is unrelated to her professional responsibilities at Nestlé S.A.
+The remaining author(s) declared that this work was conducted 
+in the absence of any commercial or financial relationships that could 
+be construed as a potential conflict of interest.
+Generative AI statement
+The author(s) declared that Generative AI was used in the 
+creation of this manuscript. The authors confirm that generative 
+AI was used only for English language editing and grammar cor -
+rections. All scientific content and conclusions are solely the 
+authors’ responsibility.
+Any alternative text (alt text) provided alongside figures in 
+this article has been generated by Frontiers with the support of 
+artificial intelligence and reasonable efforts have been made to 
+ensure accuracy, including review by the authors wherever pos -
+sible. If you identify any issues, please contact us.
+Publisher’s note
+All claims expressed in this article are solely those of the 
+authors and do not necessarily represent those of their affiliated 
+organizations, or those of the publisher, the editors and the 
+reviewers. Any product that may be evaluated in this article, or 
+claim that may be made by its manufacturer, is not guaranteed or 
+endorsed by the publisher.
+Supplementary material
+The Supplementary material for this article can be found online 
+at: https://www.frontiersin.org/articles/10.3389/fnut.2026.1757733/
+full#supplementary-material
+References
+ 1. AESAN. Dietary guidelines for the Spanish population. Madrid: AESAN (2022).
+ 2. World Health Organization (WHO). Healthy diet [Internet]. Geneva: WHO; (2018). 
+Available online at: https://www.who.int/es/news-room/fact-sheets/detail/healthy-diet 
+[Accessed 18 May 2025]
+ 3. World Health Organization (WHO). Noncommunicable diseases [Internet]. Geneva: 
+WHO; (2018). Available online at: https://www.who.int/es/news-room/fact-sheets/detail/
+noncommunicable-diseases [Accessed 18 May 2025]
+ 4. EAT-Lancet Commission. Food in the Anthropocene: the EAT–lancet commission on 
+healthy diets from sustainable food systems. Lancet. (2019) 393:447–92. doi: 10.1016/
+S0140-6736(18)31788-4
+ 5. Springmann M, Clark M, Mason-D'Croz D, Wiebe K, Bodirsky BL, Lassaletta L, et al. 
+Options for keeping the food system within environmental limits. Nature. (2018) 
+562:519–25. doi: 10.1038/s41586-018-0594-0
+ 6. Tilman D, Clark M. Global diets link environmental sustainability and human health. 
+Nature. (2014) 515:518–22. doi: 10.1038/nature13959
+ 7. Willett W , Rockström J, Loken B, Springmann M, Lang T, Vermeulen S, et al. Food 
+in the Anthropocene: the EAT–lancet commission on healthy diets from sustain -
+able food systems. Lancet. (2019) 393:447–92. doi: 10.1016/S0140-6736(18)31788-4
+ 8. Dooris M, Wills J, Newton J. Theorising healthy settings: a critical discussion with 
+reference to healthy universities. Scand J Public Health . (2014) 42:7–16. doi: 
+10.1177/1403494814544495
+ 9. Mann D, Kwon J, Naughton S, Boylan S, Chan J, Charlton K, et al. Development of the 
+university food environment assessment (Uni-food) tool and process to benchmark the 
+healthiness, equity, and environmental sustainability of university food environments. Int 
+J Environ Res Public Health. (2021) 18:11895. doi: 10.3390/ijerph182211895
+ 10. Castro-Cuesta JY , Montoro-García S, Sánchez-Macarro M, Carmona-Martínez M, 
+Espinoza-Marenco IC, Pérez-Camacho A, et al. Adherence to the Mediterranean diet in 
+first-year university students and its association with lifestyle-related factors: a cross-
+sectional study. Hipertensión y Riesgo Vascular. (2022). doi: 10.1016/j.hipert.2022.09.001
+ 11. Cervera-Burriel F , Serrano-Urrea R, Vico-García C, Milla-Tobarra M, García-
+Meseguer MJ. Eating habits and nutritional assessment in a university population. Nutr 
+Hosp. (2013) 28:438–46. doi: 10.3305/nh.2013.28.2.6303
+ 12. Dooris M, Doherty S, Orme J. "The application of salutogenesis in universities" In: MB 
+Mittelmark, S Sagy, M Eriksson, GF Bauer, JM Pelikan and B Lindströmet al, editors. The 
+handbook of salutogenesis. Cham: Springer (2017). 237–45. doi: 10.1007/978-3-319-04600-6_23
+ 13. Bennasar-Veny M, Y añez AM, Pericas J, Ballester L, Fernandez-Dominguez JC, Tauler 
+P , et al. Cluster analysis of health-related lifestyles in university students. Int J Environ Res 
+Public Health. (2020) 17:1776. doi: 10.3390/ijerph17051776
+ 14. Sánchez-Ojeda MA, Roldán C, Melguizo-Rodríguez L, de Luna-Bertos E. Analysis of 
+the lifestyle of Spanish undergraduate nursing students and comparison with students of 
+other degrees. Int J Environ Res Public Health. (2022) 19:5765. doi: 10.3390/ijerph19095765
+ 15. Chusak C, Tangmongkhonsuk M, Sudjapokinon J, Adisakwattana S. The association 
+between online learning and food consumption and lifestyle behaviors and quality of life 
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 14 frontiersin.org
+in terms of mental health of undergraduate students during COVID-19 restrictions. 
+Nutrients. (2022) 14:890. doi: 10.3390/nu14040890
+ 16. Pung CYY , Tan ST, Tan SS, Tan CX. Eating behaviors among online learning under-
+graduates during the COVID-19 pandemic. Int J Environ Res Public Health . (2021) 
+18:12820. doi: 10.3390/ijerph182312820
+ 17. Hilger-Kolb J, Loerbroks A, Diehl K. Eating behaviour of university students in 
+Germany: dietary intake, barriers to healthy eating and changes in eating behaviour since 
+the time of matriculation. Appetite. (2017) 109:100–7. doi: 10.1016/j.appet.2016.11.016
+ 18. Moreno-Gómez C, Romaguera-Bosch D, Tauler-Riera P , Bennasar-Veny M, Pericas-
+Beltran J, Martinez-Andreu S, et al. Clustering of lifestyle factors in Spanish university 
+students: the relationship between smoking, alcohol consumption, physical activity and 
+diet quality. Public Health Nutr. (2012) 15:2131–9. doi: 10.1017/S1368980012000080
+ 19. Marchena C, Bernabéu E, Iglesias MT. Are adherence to the Mediterranean diet, 
+emotional eating, alcohol intake, and anxiety related in university students in Spain? 
+Nutrients. (2020) 12:2224. doi: 10.3390/nu12082224
+ 20. Ramón-Arbués E, Martínez-Abadía B, Granada-López JM, Echániz-Serrano E, 
+Pellicer-García B, Juárez-Vela R, et al. Conducta alimentaria y su relación con el estrés, la 
+ansiedad, la depresión y el insomnio en estudiantes universitarios. Nutr Hosp. (2019) 
+36:1339–45. doi: 10.20960/nh.02641
+ 21. El Ansari W , Stock C. Is the health and wellbeing of university students associated 
+with their academic performance? Cross-sectional findings from the United Kingdom. 
+Int J Environ Res Public Health. (2010) 7:509–27. doi: 10.3390/ijerph7020509
+ 22.  Chandler MC, Ellison OK, McGowan AL, Fenn KM, Pontifex MB. Physical activity 
+and sleep moderate the relationship between stress and screen time in college-aged adults. 
+J Am Coll Heal. (2022) 70:2077110. doi: 10.1080/07448481.2022.2077110
+ 23. López-Olivares M, Mohatar-Barba M, Fernández-Gómez E, Enrique-Mirón C. 
+Mediterranean diet and the emotional well-being of students of the campus of Melilla 
+(University of Granada). Nutrients. (2020) 12:1826. doi: 10.3390/nu12061826
+ 24. Ramón-Arbués E, Granada-López J-M, Martínez-Abadía B, Echániz-Serrano E, 
+Antón-Solanas I, Jerue BA. Factors related to diet quality: a cross-sectional study of 1055 
+university students. Nutrients. (2021) 13:3512. doi: 10.3390/nu13103512
+ 25. Food and Agriculture Organization, World Health Organization. Sustainable healthy 
+diets: Guiding principles. Rome: FAO/WHO (2019).
+ 26. Cacau L, De Carli E, Baraldi LG, Martini D, Monteiro CA, Sichieri R. Development 
+and validation of an index based on EAT-lancet recommendations: the planetary health 
+diet index. Nutrients. (2021) 13:1698. doi: 10.3390/nu13051698
+ 27. Krebs-Smith SM, Pannucci TE, Subar AF , Kirkpatrick SI, Lerman JL, Tooze JA, et al. 
+Update of the healthy eating index: HEI 2015. J Acad Nutr Diet. (2018) 118:1591–602. doi: 
+10.1016/j.jand.2018.05.021
+ 28. Martínez-González MA, García-Arellano A, Toledo E, Salas-Salvadó J, Buil-Cosiales 
+P , Corella D, et al. A 14-item Mediterranean diet assessment tool and obesity indexes 
+among high-risk subjects: the PREDIMED trial. PLoS One. (2012) 7:e43134. doi: 10.1371/
+journal.pone.0043134
+ 29. International Physical Activity Questionnaire (IPAQ). Guidelines for data processing 
+and analysis of the International Physical Activity Questionnaire (IPAQ) – Short and long 
+forms. (2005). Available online at: https://sites.google.com/site/theipaq/ (Accessed  
+August 19, 2023)
+ 30. Craig CL, Marshall AL, Sjöström M, Bauman AE, Booth ML, Ainsworth BE, et al. 
+International physical activity questionnaire: 12-country reliability and validity. Med Sci 
+Sports Exerc. (2003) 35:1381–95. doi: 10.1249/01.MSS.0000078924.61453.FB
+ 31. Goldberg DP , Gater R, Sartorius N, Ustun TB, Piccinelli M, Gureje O, et al. The valid-
+ity of two versions of the GHQ in the WHO study of mental illness in general health care. 
+Psychol Med. (1997) 27:191–7. doi: 10.1017/s0033291796004242
+ 32. Jackson C. The general health questionnaire. Occup Med. (2007) 57:79. doi: 10.1093/
+occmed/kql169
+ 33. Goldberg D, Blackwell B. Diagnosing mental disorders in primary care: the general 
+health questionnaire (GHQ) and SCL-90-R as screening instruments. Soc Psychiatry 
+Psychiatr Epidemiol. (1999) 34:360–6. doi: 10.1007/s001270050156
+ 34. Departament de Salut de la Generalitat de Catalunya. Enquesta de Salut de Catalunya 
+(ESCA). (2025). Available online at: https://salutweb.gencat.cat/ca/el_departament/esta-
+distiques_sanitaries/enquestes/esca/ [Accessed 18 May 2025].
+ 35. Ainsworth BE, Haskell WL, Herrmann SD, Meckes N, Bassett DR, Tudor-Locke C, 
+et al. Compendium of physical activities: a second update of codes and MET values. Med 
+Sci Sports Exerc. (2011) 43:1575–81. doi: 10.1249/MSS.0b013e31821ece12
+ 36. Tremblay MS, Aubert S, Barnes JD, Saunders TJ, Carson V , Latimer-Cheung AE, et al. 
+Sedentary behavior research network (SBRN) – terminology consensus project process 
+and outcome. Int J Behav Nutr Phys Act. (2017) 14:75. doi: 10.1186/s12966-017-0525-8
+ 37. Rocha KB, Pérez K, Rodríguez-Sanz M, Borrell C, Obiols JE. Propiedades psicomé-
+tricas y valores normativos del General Health Questionnaire (GHQ-12) en población 
+general española. Int J Clin Health Psychol. (2011) 11:125–39.
+ 38. Sánchez-López MP , Dresch V . The 12-item general health questionnaire (GHQ-12): 
+reliability, external validity and factor structure in the Spanish population. Psicothema. 
+(2008) 20:839–43.
+ 39. Matthiessen LE, Philippi Rosane B, Rossi L, Stefanovic L, Średnicka-Tober D, 
+Góralska-Walczak R, et al. Sustainable and healthy diet index (SHDI) unveils regional 
+differences in Europe and northern Africa: findings from the SysOrg study. Eur J Nutr. 
+(2025) 64:275. doi: 10.1007/s00394-025-03793-9
+ 40. Clark M, Tilman D. Comparative analysis of environmental impacts of agricultural 
+production systems, agricultural input efficiency, and food choice. Environ Res Lett. 
+(2017) 12:064016. doi: 10.1088/1748-9326/aa6cd5
+ 41. Poore J, Nemecek T. Reducing food’s environmental impacts through producers and 
+consumers. Science. (2018) 360:987–92. doi: 10.1126/science.aaq0216
+ 42. Hong JY , Kim YJ, Bae S, Kim MK. Associations of daily diet related greenhouse gas 
+emissions with the incidence and mortality of chronic diseases: a systematic review and 
+meta-analysis of epidemiological studies. Epidemiol Health. (2022) 45:e2023011. doi: 
+10.4178/epih.e2023011
+ 43. Oleinikova Y , Maksimovich S, Khadzhibayeva I, Khamedova E, Zhaksylyk A, 
+Alybayeva A. Meat quality, safety, dietetics, environmental impact, and alternatives now 
+and ten years ago: a critical review and perspective. Food Prod Process Nutr. (2025) 7:18. 
+doi: 10.1186/s43014-024-00305-w
+ 44. Koenker R. Quantile Regression. Cambridge: Cambridge University Press (2005).
+ 45. Dillman DA, Smyth JD, Christian LM. Internet, phone, mail, and mixed-mode surveys: 
+The tailored design method . 4th ed. Hoboken, NJ: Wiley (2014).
+ 46. El Ansari W , Adetunji H, Oskrochi R. Food and mental health: relationship between 
+food and perceived stress and depressive symptoms among university students in the 
+United Kingdom. Cent Eur J Public Health. (2014) 22:90–7. doi: 10.21101/cejph.a3941
+ 47. Wang W , Jiang J, Qi L, Zhao F , Wu J, Zhu X, et al. Relationship between mental health, 
+sleep status and screen time among university students during the COVID-19 pandemic: 
+a cross-sectional study. BMJ Open . (2023) 13:e073347. doi: 10.1136/
+bmjopen-2023-073347
+ 48. Richards G, Smith AP . A review of energy drinks and mental health, with a focus on 
+stress, anxiety, and depression. J Psychopharmacol . (2016) 30:1230–40. doi: 
+10.1177/0269881116672632
+ 49. Väänänen A, Kevin MV , Ala-Mursula L, Pentti J, Kivimäki M, Vahtera J. The double 
+burden of and negative spillover between paid and domestic work: associations with 
+health among men and women. J Womens Health (Larchmt). (2004) 13:315–28. doi: 
+10.1300/j013v40n03_01
+ 50. Griffeth LK, Varnado-Sanluis C, Carter KE, et al. Investigating gender differences in 
+health behaviors among university students. Public Health Nutr. (2019) 22:121–9. doi: 
+10.1017/S1368980018002376
+ 51. Ng M, Fleming T, Robinson M, Thomson B, Graetz N, Margono C, et al. Global, 
+regional, and national prevalence of overweight and obesity in children and adults during 
+1980–2013: a systematic analysis. Lancet. (2014) 384:766–81. doi: 10.1016/
+S0140-6736(14)60460-8
+ 52. Chaput JP . Sleep patterns, diet quality, and energy balance. Physiol Behav. (2014) 
+134:86–91. doi: 10.1016/j.physbeh.2013.09.006
+ 53. Huang L, Jiang Y , Sun Z, Wu Y , Y ao C, Y ang L, et al. Healthier dietary patterns are 
+associated with better sleep quality among Shanghai suburban adults: a cross-sectional 
+study. Nutrients. (2024) 16:1165. doi: 10.3390/nu16081165
+ 54. Ng DM, Jeffery RW . Relationships between perceived stress and health behaviors in a 
+sample of working adults. Health Psychol. (2003) 22:638–42. doi: 10.1037/0278-6133.22.6.638
+ 55. Fletcher EA, McNaughton SA, Crawford D, Cleland V , Della Gatta J, Hatt J, et al. 
+Associations between sedentary behaviours and dietary intakes among adolescents. Public 
+Health Nutr. (2018) 21:1115–22. doi: 10.1017/S136898001700372X
+ 56. Zhou J, Chen Y , Ji S, Qu J, Bu Y , Li W , et al. Sleep quality and emotional eating in 
+college students: a moderated mediation model of depression and physical activity levels. 
+J Eating Disorders. (2024) 12:155. doi: 10.1186/s40337-024-01107-8
+ 57. Wardle J, Haase AM, Steptoe A, Nillapun M, Jonwutiwes K, Bellisle F . Gender differ-
+ences in food choice: the contribution of health beliefs and dieting. Ann Behav Med. 
+(2004) 27:107–16. doi: 10.1207/s15324796abm2702_5
+ 58. Warburton DE, Nicol CW , Bredin SS. Health benefits of physical activity: the evi-
+dence. CMAJ. (2006) 174:801–9. doi: 10.1503/cmaj.051351
+ 59. Broadbent J, Poon WL. Self-regulated learning strategies & academic achievement in 
+online higher education learning environments: a systematic review. Internet High Educ. 
+(2015) 27:1–13. doi: 10.1016/j.iheduc.2015.04.007
+ 60. Zhou Q, Jiang J, Yin Z, Fan R. Effect of digital health interventions on college students’ 
+lifestyle Behaviors: systematic review. J Med Internet Res . (2026) 28:e82192. doi: 
+10.2196/82192
+ 61. World Health Organization.WHO guidelines on physical activity and sedentary behav-
+iour. Geneva: World Health Organization (2020).
+ 62. Andreani G, Wongprawmas R, Biasini B, Rosi A, Franchini C, Dolgopolova I, 
+et al. Digital nudging at the university canteen: an online study with students’ food 
+choices in a pre-ordering system. Agric Food Econ . (2024) 12:35. doi: 10.1186/
+s40100-024-00335-5
+ 63. Belogianni K., Ooms A., Lykou A., Nikoletou D., Moir H.J. (2023) ‘ An online game-
+based intervention using quizzes to improve nutrition and physical activity outcomes 
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 15 frontiersin.org
+among university students’ , Health Educ Res, Online ahead of print, 82, 636–650, doi: 
+10.1177/00178969231179032.
+ 64. Ge L, Guan X, Tang L, Zhu Q, Zhong Y , Lan M. The effectiveness of digital nudging 
+in improving dietary quality: a systematic review of randomized controlled trials. BMC 
+Public Health. (2025) 25:2804. doi: 10.1186/s12889-025-24069-1
+ 65. Teuber M, Leyhr D, Moll J, Sudeck G. Nudging digital physical activity breaks for 
+home studying of university students — a randomized controlled trial during the 
+COVID-19 pandemic with daily activity measures. Front Sports Act Living . (2022) 
+4:1024996. doi: 10.3389/fspor.2022.1024996
+ 66. Varela-Mato V , Cancela JM, Ayan C, Martín V , Molina A. Lifestyle and health among 
+Spanish university students: differences by gender and academic discipline. Int J Environ 
+Res Public Health. (2012) 9:2728–41. doi: 10.3390/ijerph9082728
+ 67. Qualtrics Qualtrics survey software Provo, UT Qualtrics (2025) Available online at: 
+https://www.qualtrics.com (Accessed September 17, 2022).
+ 68. Xarxa US.cat. The UAB in the Catalan Network of Healthy Universities 
+[Internet]. Universitat Autònoma de Barcelona. (2026) Available online at: https://
+blogs.uab.cat/xarxauscat/presentacio/  [Accessed 18 May 2025]
+ 69. Borg S, Elinder LS, Thorson A, Kjellgren K, Hagströmer M. Differences in diet and 
+physical activity between men and women in Sweden. Eur J Public Health . (2019) 
+29:674–680. doi: 10.1093/eurpub/ckz049
+ 70. Rodríguez G, Sorlí J, Ortega RM, et al. Development and validation of a semi-quan-
+titative food frequency questionnaire in a Spanish population. Public Health Nutr. (2011) 
+14:2339–45. doi: 10.1017/S1368980011001209
+ 71. González Carrascosa R., Bayo Montó J. L., Meneu Barreira T., García Segovia P ., 
+Martínez-Monzó J. Design of a self-administered online food frequency questionnaire 
+(FFQ) to assess dietary intake among university population Nutrición Hospitalaria, 
+vol. 26, núm. (2011), pp. 1440–1446 Grupo Aula Médica. doi: 10.3305/
+nh.2011.26.6.4376
+Giner et al. 10.3389/fnut.2026.1757733
+Frontiers in Nutrition 16 frontiersin.org
+Glossary
+AESAN - Agency for Food Safety and Nutrition
+AIC - Akaike Information Criterion
+BIC - Bayesian Information Criterion
+BMI - Body Mass Index
+DQI-I - Diet Quality Index–International
+ESCA - US. Cat health commission
+FFQ - Food Frequency Questionnaire
+GAM - Generalized Additive Models
+GDQS - Global Diet Quality Score
+GHQ-12 - General Health Questionnaire-12 item
+GLM - Generalized Linear Models
+HEASUS - HEAlthy and SUStainable Diet Index
+HEI - Healthy Eating Index
+IP AQ - Physical Activity Questionnaire
+IQR - Interquartile range
+LM - Linear Regression
+MEDAS - Mediterranean Diet Adherence Screener
+MET s - Metabolic Equivalent of Task
+PA  - Physical Activity
+PAS  - Administrative and Service Staff
+PDC - Administrative and Service Staff
+PDI - Teaching and Research Staff
+PHDI - Planetary Health Diet Index
+PRD - Plant-Rich Diet
+pseudo-R2 - Pseudo Coefficient of Determination
+QR - Quantile regression
+SB - Sedentary Behavior
+FBDG - Food Based Dietary Guidelines
+UOC - Open University of Catalonia (UOC)
+US. Cat - Catalan Network of Healthy Universities
+WD - Western-style Diet
+β - Regression coefficient
+η2 - Effect sizes (eta squared)
+ρ - Correlation Coefficient
+τ - Quantile

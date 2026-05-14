@@ -1,0 +1,1359 @@
+SYSTEMATIC REVIEW Open Access
+© The Author(s) 2026. Open Access  This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 
+International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you 
+give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the 
+licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the 
+material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or 
+exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit  h t t p  : / /  c r e a  t i  
+v e c  o m m  o n s .  o r  g / l  i c e  n s e s  / b  y - n c - n d / 4 . 0 /.
+Doku et al. BMC Public Health          (2026) 26:584 
+https://doi.org/10.1186/s12889-025-25985-y
+BMC Public Health
+*Correspondence:
+George Adjei
+george.adjei2@ucc.edu.gh
+Full list of author information is available at the end of the article
+Abstract
+Background Sustainable Development Goal (SDG) 3 prioritises the promotion of equitable health outcomes 
+and universal health coverage. In Ghana, there is limited information on the current implementation progress and 
+challenges of the health and health-related SDGs (HHSDGs). The aim of this review was to conduct a situational 
+analysis of the HHSDGs in Ghana whilst providing in-depth and updated literature on their implementation progress 
+and challenges.
+Methods We conducted a scoping review guided by the Arksey and O’Malley framework. The Population, Concept 
+and Context (PCC) framework was used to select literature. Peer-reviewed and grey literature with data collected 
+between September 2015 and October 2022 were used. Exclusion criteria included non-HHSDG topics and studies 
+outside the timeframe. Data were retrieved from Scopus, PubMed, Medline, CINAHL, EBSCOhost and grey literature 
+sources. The process yielded 37 peer-reviewed articles and 14 grey literature records, comprising 11 organisational 
+reports from websites, 2 theses, and 1 blog post. Systematic screening, guided by the PRISMA-ScR, and quality 
+appraisal, using the Mixed Methods Appraisal Tool, were performed. Thematic synthesis was employed for the analysis 
+of the data.
+Results Health and wellbeing (SDG 3), climate change and climate action (SDG 13), gender equality (SDG 5), zero 
+hunger (SDG 2), and clean water and sanitation (SDG 6) were the identified HHSDGs. Mental health emerged as a 
+key HHSDG, although not a stand-alone SDG. Our review indicates that Ghana has made progress in meeting some 
+critical HHSDG targets, with further work needed to meet all targets. Ghana has made important progress toward the 
+HHSDGs, including improvements in infectious disease control, access to clean water, gender equality initiatives, and 
+the adoption of health innovations. Also, Ghana has significantly reduced the prevalence of overweight in children 
+underfive. However, significant gaps remain in maternal and child health, mental health, sanitation, universal health 
+coverage, and food security. These gapsare driven by persistent structural and socioeconomic barriers.
+Conclusions These findings highlight the need for strengthened policies and targeted interventions to accelerate 
+Ghana’s progress toward achieving the HHSDGs by 2030. 
+A scoping review of the health and health-
+related sustainable development goals 
+(HHSDGs) in Ghana: progress and challenges
+David Teye Doku1,2, Yvonne Ayerki Nartey3,4, Obed Cudjoe5, Gladys Akotoaa Sakyi6, Evans Duah7, George Adjei8,9,10*, 
+Ruby Syal11, Fiifi Amoako Johnson1, Frederick Ato Armah12,13 and Zulfiqar Ahmed Bhutta11,14
+Page 2 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+Introduction
+A more comprehensive and ambitious global agenda 
+aimed at achieving the 17 United Nations (UN) Sustain -
+able Development Goals (SDGs) by 2030 [ 1] followed the 
+2000–2015 Millennium Development Goals (MDGs) [ 2]. 
+Generally, these global goals aim to promote global socio-
+economic development and maintain sustainable struc -
+tural ecosystems. However, global attention has shifted 
+away from SDGs in recent years due to the COVID-19 
+pandemic and its effect on global economies, especially 
+those in Sub-Saharan Africa (SSA). In effect, the pan -
+demic exposed the fragilities in global sustainability sys -
+tems and the gaps in the in the interconnectivity of the 
+SDGs [3– 9]. There is a need to realign and refocus to get 
+on track with plans to successfully reach targets. The con-
+cept of health is expressively represented in this global 
+agenda, reinforcing the World Health Organization's 
+(WHO) scope of health to promote complete physical, 
+mental, and social well-being [ 10]. Broadly, the primary 
+health-related SDG (HRSDG), SDG3, promotes the well-
+being of individuals by focusing on key socio-demo -
+graphic and health indicators. This goal addresses global 
+maternal mortality, preventable deaths among newborns 
+and children under five years, preventable epidemics of 
+infectious and non-communicable diseases (NCDs), and 
+substance abuse (SDG 3.1–3.D) [ 11]. In addition, SDG 3 
+seeks to strengthen global health systems and enhance 
+the implementation of intervention programs in high-
+risk settings. Achieving universal health coverage (UHC) 
+and access to equitable and quality health care form the 
+policy basis for attaining this goal [ 12]. Though SDG 3 
+is a stand-alone health goal, its link to other SDGs such 
+as clean water and sanitation (SDG 6), action against cli -
+mate change (SDG 13), quality education (SDG 4), pov -
+erty reduction (SDG 1), gender equality (SDG 5), zero 
+hunger and good nutrition (SDG 2), sustainable, afford -
+able and clean energy (SDG 7), and safer/sustainable 
+cities and communities (SDG 11) cannot be overempha -
+sized. Integrating the health and health-related SDGs 
+(HHSDGs) is crucial for achieving the intended targets 
+and addressing challenges from trade-offs.
+This scoping review provides a baseline national situ -
+ational analysis of the HHSDGs in a Ghanaian context, 
+whilst providing in-depth and updated literature on the 
+implementation progress and challenges of the HHSDGs.
+Methods
+Study framework
+The methodological foundation of this review was built 
+on the framework for evidence synthesis developed by 
+Arksey and O’Malley, 2005 [ 13] and further advanced 
+by Levac et al., 2010 [ 14]. These included five founda -
+tional stages: Identifying the research question (Stage 1), 
+searching for relevant studies (Stage 2), screening and 
+selecting eligible studies (Stage 3), data charting (Stage 4), 
+and collating, summarising, and reporting results (Stage 
+5) [14].
+Research question
+The review aims to address the research question: What 
+progress and challenges are reported regarding the 
+implementation of the various HHSDGs in Ghana?
+Inclusion criteria
+The Population, Concept, and Context (PCC) frame -
+work informed the development of the inclusion criteria 
+for this scoping review. Table 1 which entails the PCC 
+framework illustrates the eligibility of research articles 
+or reports for the review. This reveals the main concepts 
+and contextualises the literature search [ 15]. The review 
+included all peer-reviewed and grey literature records 
+collected between September 2015 and October 2022 on 
+the progress and challenges of HHSDG in Ghana.
+Exclusion criteria
+We excluded published and unpublished studies for 
+which the data collection period was not explicitly stated 
+or fell outside the period from September 2015 to Octo -
+ber 2022. Studies and documents reporting on non-
+HHSDGs were also excluded. Reviews, letters to editors, 
+and records published in languages other than English 
+were also excluded.
+Literature search
+Search strategy
+The Joanna Briggs Institute (JBI) three-phase search 
+strategy was utiliszed in this review [ 15]. The search 
+strategy aimed to find both published and unpublished 
+studies. An initial limited search of Scopus and Cumu -
+lative Index to Nursing and Allied Health Literature 
+(CINAHL) was undertaken, followed by analysis of text 
+words contained in the title and abstract, and of the index 
+terms used to describe the article. A second search was 
+conducted using all identified keywords and index terms 
+across Scopus, PubMed, Medline, and CINAHL. Thirdly, 
+the reference lists of all identified articles and reports that 
+met the inclusion criteria of the review were searched for 
+additional articles or reports. A manual supplementary 
+search (hand search) was also done to identify further rel-
+evant articles or reports that were not captured through 
+automated database searches. We reviewed the reference 
+lists and bibliographies of the records included in the 
+Keywords HHSDGs, HRSDGs, Ghana, LMIC, Mental health, Climate change, Gender equity
+Page 3 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+study to ensure that no important studies were missed. 
+Articles or reports in the English language were consid -
+ered for this review since the official language of Ghana -
+ians is English. Hence, the potential of language bias is 
+limited. Data from studies launched between September 
+2015 and October 2022, following the SDGs, were con -
+sidered for this review.
+Information sources
+The electronic databases searched include Scopus, 
+PubMed, Medline, and CINAHL. Grey literature (unpub-
+lished studies) information sources include the WHO 
+website, UNICEF website, Non-governmental Organisa -
+tions websites, UG space, Google, Google Scholar, and 
+EBSCOhost. The search details have been outlined in 
+Supplementary Table S1.
+Screening and selection of eligible articles
+Following the search, all citations (both published and 
+unpublished data) that met the inclusion criteria for the 
+review were collated and uploaded into EndNote 20 soft -
+ware to de-duplicate citations by automation. All cita -
+tion details were exported to Rayyan Qatar Computing 
+Research Institute (QCRI) review manager for screen -
+ing and selection of articles [ 16]. Following a pilot test, 
+titles and abstracts were screened by two independent 
+reviewers for assessment against the inclusion criteria of 
+the review. We removed additional duplicates through 
+automation and manual comparison of titles. Two inde -
+pendent reviewers also assessed full-text articles that met 
+the inclusion criteria. Reasons were provided for full-text 
+articles that did not meet the inclusion criteria and were 
+excluded. Any disagreements that arose between review -
+ers at any stage of the selection process were resolved 
+through discussion or with the assistance of a third 
+reviewer. The results of the search were reported in full 
+in the Preferred Reporting Items for Systematic Reviews 
+and Meta-Analysis Extension for Scoping Reviews 
+(PRISMA-ScR) flow chart [17].
+Quality appraisal
+All citations that met the inclusion criteria of the review 
+were critically appraised for methodological quality by 
+two independent reviewers. Piloting was conducted 
+using standardised appraisal tools, and any disagree -
+ments between reviewers that arose during the criti -
+cal appraisal process were resolved through discussion 
+or with the assistance of a third reviewer. The quality 
+of the peer-reviewed studies was appraised using the 
+Mixed Methods Appraisal Tool (MMAT) version 2018 
+[18]. For each study, we identified its methodological 
+category (qualitative, quantitative descriptive, quantita -
+tive non-randomised, quantitative randomised, or mixed 
+methods) based on the guidance provided in the MMAT 
+manual. Each study was then appraised using the five cor-
+responding MMAT criteria for its category. For every cri-
+terion met, a score of 20% was assigned, yielding a total 
+possible quality score ranging from 0 to 100%. The overall 
+quality scores were calculated and classified according to 
+the level of quality of evidence as follows: weak (≤ 50%), 
+moderately weak (51–65%), moderately strong (66–79%), 
+or strong (80–100%) [ 18]. The overall quality score of the 
+studies ranged between 20 and 100%. An average overall 
+quality score of 90% was recorded. Thirty-one (31) stud -
+ies had a quality score of 80–100% [ 19– 49]. Three (3) 
+studies scored 60% average [50– 52], whereas the remain-
+ing three studies had an average of 20% [53– 55].
+The quality of the grey records was evaluated using the 
+Authority, Accuracy, Coverage, Objectivity, Date, and 
+Significance (AACODS) evaluation and critical appraisal 
+tool [56]. This tool evaluates the quality of grey informa -
+tion guided by the Authority, Accuracy, Coverage, Objec-
+tivity, Date, and Significance checklists. It was scored 
+90–100% (Excellent quality), 80–89% (Good quality), 
+70–79% (Moderate quality), and below 70% (Poor qual -
+ity) [56]. Of the 14 grey records included in the review, 10 
+had a 90–100% quality score [ 57– 67]. One (1) record had 
+a 40% quality score [68] and the remaining 3 had an aver-
+age of 60% quality score [69– 71].
+Data charting
+The relevant studies included were charted using the 
+following characteristics and domains: author & year of 
+publication, study design, study population, and HHSDG 
+discussed, HHSDG implementation progress, challenges 
+established, and other significant findings.
+Collating, summarizing, and reporting results
+The results were presented according to the Preferred 
+Reporting Items for Systematic Reviews and Meta-Anal -
+ysis Extension for Scoping Reviews (PRISMA-ScR) flow 
+chart [17]. These are shown in Fig. 1.
+Results
+Characteristics of eligible articles
+Supplementary Table S2 describes the eligible peer-
+reviewed studies and grey literature included in the 
+review. The majority of the studies/reports (20) were con-
+ducted at the national level (6 peer-reviewed articles and 
+14 grey literature reports) (Fig.  2) [23, 30, 37, 46, 53, 54, 
+57, 59– 71]. The year of publications ranged from 2017–
+2022 and 2016–2023 among the peer-reviewed articles 
+and grey information respectively (Fig. 3). Most literature 
+Table 1 Population, Concept, and Context (PCC) framework
+Population All populations (individuals of all ages and sexes)
+Concept HHSDG implementation, progress, and bottlenecks
+Context Any geographical setting in Ghana
+Page 4 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+fell under SDG 3 (19 peer-reviewed studies and 10 grey 
+records) [19– 24, 26, 32, 35, 36, 40, 45– 48, 50, 53, 57– 63, 
+65, 67, 68] (Fig.  4). A total of 22 peer-reviewed articles 
+reported on the progress of HHSDG only [ 19, 28– 36, 
+39, 41, 43, 44, 46, 47], 7 reported on the challenges only 
+[20, 23, 24, 37, 38, 40, 52] and 8 reported on both prog -
+ress and challenges [ 21, 25– 27, 42, 45, 48]. Two (2) grey 
+records reported on HHSDG progress only [ 59, 67], 2 
+reported on challenges only [ 69, 70], and 10 reported on 
+both [57, 60– 66, 68, 71].
+Fig. 2 Distribution of eligible peer-reviewed articles by study setting
+ 
+Fig. 1 PRISMA-ScR flow chart of literature search and identification of eligible studies and records
+ 
+Page 5 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+Summary of included reports
+This review summarises the progress achieved and bar -
+riers impeding the advancement of the HHSDGs targets 
+in Ghana. The findings of all included articles are sum -
+marised in Supplementary Tables S3 and S4 (Appen -
+dix 1). A thematic summary of Ghana’s implementation 
+status of the HHSDG, highlighting specific indicators 
+including mental health, climate change, gender equal -
+ity, food and nutrition, water and sanitation, and gen -
+eral health and wellbeing described. Generally, most of 
+the studies included were national-level studies (n = 20) 
+(Fig.  2). As presented in Fig.  4, five (5) HHSDGs were 
+reported in this review, namely SDG 2 (Zero hunger), 
+SDG 3 (Good health and wellbeing), SDG 5 (Gender 
+equality), SDG 6 (Clean water and sanitation), and SDG 
+13 (Climate change). The majority of the studies included 
+in the review reported on SDG 3 (n = 29) of which 19 
+were peer-reviewed articles and 10 were grey reports. 
+Overall, 24 studies reported on the progress of HHSDG 
+implementation in Ghana, and 9 studies focused on the 
+challenges. Furthermore, 18 studies reported on both the 
+progress and challenges of HHSDG in Ghana. These are 
+demonstrated in Fig. 5.
+Discussion
+This scoping review summarizes the literature on the 
+progress of the HHSDGs in Ghana, highlighting mile -
+stones and the challenges hindering their implemen -
+tation. It provides the necessary baseline information 
+to scale up the implementation of HHSDGs in Ghana 
+systematically.
+Fig. 4 Distribution of eligible studies by HHSDG
+ 
+Fig. 3 Distribution of eligible articles by year of publication
+ 
+Page 6 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+Health and wellbeing (SDG 3)
+SDG 3 has been widely documented in Ghana as its 
+implementation seeks to promote good health and well-
+being among populations. Of these documents, several 
+reported on the progress of SDG 3 [ 19, 21, 22, 26, 28, 29, 
+32, 35, 36, 45– 49, 53, 57– 63, 65, 67, 68, 71]. Similarly, 
+others reported on the challenges hindering the suc -
+cessful implementation of SDG 3 in Ghanaian popula -
+tions [20, 24, 40, 45, 48, 49, 57, 60– 63, 65, 68– 71]. These 
+documents reported on Ghana's progress and challenges 
+in implementing SDG 3, particularly in life expectancy, 
+maternal and neonatal health, health technology and 
+innovation, mental health, infectious diseases, healthcare 
+accessibility and universal health coverage, health financ-
+ing, and health insurance.
+Life expectancy
+The current life expectancy at birth in Ghana ranges from 
+55.3 to 66.3 years [ 58, 67], which is lower than the global 
+life expectancy of 71.7  years as of 2022 but exceeds the 
+overall life expectancy in Africa (62 years) [ 72, 73]. This 
+may reflect the health and wealth inequalities in these 
+settings. Arguably, high-income countries have a higher 
+standard of living than developing and poor countries, 
+primarily reflecting access to effective health systems and 
+facilities, as well as fundamental determinants of health, 
+including water, sanitation, and hygiene (WASH) infra -
+structure, health literacy, and psychosocial well-being, 
+among others [74].
+Maternal and neonatal health
+Maternal and neonatal health are paramount in Ghana's 
+healthcare system; hence, a majority of the documents 
+included in this review evaluated their implementation 
+across different indigenous settings [ 36, 57, 59, 60, 63, 
+67]. Overall, these evaluations established Ghana's prog -
+ress in maternal health-seeking behaviours, the use of 
+skilled birth attendants, and antenatal health services [36, 
+57, 60, 63]. SDG 3.2 targets to reduce maternal mortal -
+ity to at least 70 per 100,000 live births, neonatal mor -
+tality to as low as 12 per 1,000 live births, and under -5 
+mortality to at least as low as 25 per 1,000 live births by 
+2030 [ 75]. However, Ghana has stagnated and struggles 
+to meet this target. Specifically, neonatal mortality prev -
+alence in Ghana ranges between 2.8% and 6.1% with an 
+absolute rate of 22.9–27.0 per 1000 live births [ 59, 60, 
+67]. Under-five mortality stands between 44.7 deaths per 
+1000 live births and 61.4 per 1000 live births [ 59, 60, 63, 
+67], and maternal mortality rate stands between 301–
+310 per 10,000 live births [ 57, 59, 60, 63, 67]. The WHO 
+strongly recommends at least 4 antenatal care (ANC) 
+visits, management and delivery by skilled birth atten -
+dants, and receipt of first postnatal care (PNC) within the 
+first 24  h after birth [ 76]. Though Ghana largely meets 
+these requirements [ 57, 60], there are records of health 
+inequalities, poor health-seeking behaviors, and inap -
+propriate sociocultural practices that contribute to these 
+deaths.
+About 93.3% of pregnant women deliver in health facil-
+ities, and 79.9–91.5% utilised the services of skilled birth 
+attendants [ 57, 60]. Also, inappropriate postnatal prac -
+tices such as the use of enemas, cord care with cow dung, 
+and herbal baths, as well as poor health-seeking behav -
+iours of mothers and caregivers, contributed to the rise in 
+neonatal mortalities in some state jurisdictions, particu -
+larly the Upper West region of Ghana [ 36]. Bottlenecks 
+recorded included insufficient healthcare facilities, poor 
+funding of healthcare facilities, and shortage and inequi -
+table distribution of healthcare professionals [57, 60, 63].
+Fig. 5 Distribution of studies on HHSDG Progress and Challenges
+ 
+Page 7 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+Infectious diseases
+A number of the reports demonstrated Ghana's prog -
+ress and challenges in eliminating specific infectious 
+diseases, including HIV/AIDS, Tuberculosis, and 
+malaria [ 47, 57, 59, 60, 63, 67]. New HIV infections 
+declined from 20,323 (2016) to 17,580 (2020), with 
+the rate declining from 0.71 per 1,000 (2016) to 0.57 
+per 1,000 uninfected population (2020). TB incidence 
+declined from 48.5 per 100,000 population (2019) to 
+40.2 per 100,000 population (2020), and malaria inci -
+dence reduced from 341 per 1,000 population (2018) 
+to 186 per 1,000 population (2020) [ 67, 77]. Further -
+more, Ghana's response to the COVID-19 pandemic 
+was widely considered successful, with a swift increase 
+in PCR testing capacity from 2 to 15 sites early on, a 
+Track-Test-Treat strategy, and low case fatality [ 78]. 
+Although progress has been reported [ 47, 57, 59, 60, 
+63], some challenges hinder the implementation of 
+programs aimed at eliminating these diseases [ 57, 60, 
+63]. A study to assess students' knowledge and atti -
+tudes on HIV/AIDS and HIV testing in Ghana dem -
+onstrated good knowledge about HIV/AIDS and HIV 
+testing among the students [ 47]. However, the students 
+demonstrated negative attitudes and feelings toward 
+HIV testing and counseling [ 47]. Also, the national 
+HIV elimination goals require acceleration. Demo -
+graphically, new HIV infections among 0–14 years and 
+15–24 years populations stand at 2.6 and 5.6 per 1000 
+uninfected population respectively [ 60]; new HIV Inci -
+dence in children under five stands at 0.88 per 1000 
+population; new HIV incidence in girls 15–19  years: 
+1.18 per 1000 population and new HIV incidence in 
+boys 15–19 years: 0.1 per 1000 population [ 59]. Like -
+wise, the TB incidence in Ghana stands between 40.2 
+and 143 per 100,000 population [ 60, 63, 67].
+Contrary to the documented progress, the inequitable 
+distribution of health professionals, inadequate health 
+facilities, poor counseling, budgetary incredibility, lack of 
+data on budgetary expenditure, poor data and informa -
+tion management, and the emergence of the COVID-19 
+pandemic stall the goal of eliminating these infectious 
+diseases [60, 63, 69, 70].
+Mental health
+Mental health issues were subtly represented in Ghana’s 
+SDG reports as illustrated in Fig.  5. Three (3) of forty-
+two (42) SDG 3 documents reported on mental health 
+issues [19, 32, 59]. Among persons aged 6–19 years, men -
+tal health disorders stood at 4.2% [ 19], whereas 51.8% of 
+female caregivers aged 15–59 years who provided care to 
+children aged 13 years and younger suffered at least one 
+mental health condition [ 32]. These included depression 
+(25.2%), anxiety (53.3%), stress (9.7%), and comorbidities 
+with all three mental health conditions (8.3%) [ 32]. On 
+the other hand, psychosocial well-being among children 
+aged 36–59 months stood at 68.4% which requires accel -
+eration [59]. Mental health issues are under-represented 
+in Ghana due to the limited literature profiling the prog -
+ress and challenges reported. Generally, the limited infor-
+mation available suggests the need to accelerate mental 
+health care in Ghana.
+Healthcare accessibility and universal health coverage
+Access to healthcare, as a crucial indicator for achiev -
+ing universal health coverage, was adequately evalu -
+ated in this review [ 20, 21, 23, 26, 46, 49]. This review 
+documented physical barriers to accessing healthcare 
+in Ghana, including inadequate healthcare facilities, 
+poor road network, lack of transportation, inacces -
+sibility to ambulances [ 20, 57], and the unequitable 
+distribution of logistics and health personnel [ 23, 57]. 
+This conflicted with WHO's Universal Health Cover -
+age agenda for access to the full range of quality health 
+services, irrespective of the time, period, and duration 
+of access, location or setting, and the patient's socio -
+economic status [ 12]. Also, in this review, the average 
+general service readiness (GSR) index of overall service 
+delivery points in Ghana stood at 83.4%. In contrast, 
+the specific mean GSR of hospitals was 92.8%, health 
+centers/clinics (78.0%), and CHPS compounds (64.3%) 
+[46]. In this study, the lowest GSR index was recorded 
+at service delivery points in rural settings [ 46]. In the 
+Kumasi Metropolis, about 18.5% of vulnerable groups 
+were unable to access primary healthcare over the last 
+12  months [ 79]. In Northern Ghana, essential diag -
+nostic tests were unavailable according to the WHO's 
+Essential Diagnostics List (EDL) [ 21]. Specifically, 
+health centers offered 2 of the 20 tests recommended 
+by WHO for facilities without laboratories, whereas 
+rural laboratories offered 12 of the 72 essential diag -
+nostic tests [ 21]. Other barriers include the high cost 
+of accessing healthcare, transportation challenges, 
+cultural and religious intolerance, and institutional 
+discrepancies such as poor attitudes towards patients, 
+inadequate communication among healthcare workers, 
+and prejudice, among others [ 20, 49].
+Health financing and insurance
+Despite GH ₵3,055.98 million in core expenditure 
+on SDG 3 in 2017 and GH ₵4,402.7 million in budget 
+allocation in 2021 [ 61, 62], there are records of poor 
+financing for some health facilities to boost their read -
+iness and preparedness to provide health services [ 23, 
+26]. At the same time, others blame this on the large 
+disbursement gap by the National Health Insurance 
+Scheme (NHIS) [ 21]. In most studies, inadequate fund -
+ing for healthcare access and poor NHIS coverage were 
+reported [ 26, 45]. NHIS coverage declined from 40% in 
+Page 8 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+2015 to 38.4% in 2016 and to 35.6% in 2017 due to poor 
+funding of the scheme, loss of interest among ben -
+eficiaries, poor education, and poor monitoring and 
+evaluation [ 71]. Studies have evaluated the coverage 
+and effectiveness of the NHIS in Ghana [ 23, 29, 49]. A 
+study conducted in the Ashanti, Northern, and Cen -
+tral regions of Ghana revealed that about 49.9% of the 
+overall out-outpatients paid out-of-pocket for health 
+services rendered, 46.9% of the insured patients still 
+paid out-of-pocket, 42.0% of the insured poorest quin -
+tile paid out-of-pocket, 75% of the insured clients still 
+paid for consultation and 63.2% paid for drugs [ 29]. In 
+addition, 34.9% of insured patients purchased drugs 
+from outside the health facility they visited due to the 
+unavailability of drugs (67.9%) and drugs not covered 
+by the NHIS (20.8%). On average, patients paid GHS 
+33.00 (USD 6.6) out of pocket [ 29]. These were tagged 
+as hidden charges, especially for maternal services, 
+coupled with the non-inclusion of sexual, reproduc -
+tive health, and rights (SRHR) services [ 23]. In another 
+study, NHIS-insured vulnerable populations recounted 
+poor service provision under the scheme [ 45]. Again, 
+the introduction of the capitation policy in Ghana's 
+health insurance negatively influenced maternal health 
+provision [ 35].
+Furthermore, this review summarizes the effect of 
+social intervention programs on access to healthcare 
+in Ghana. For instance, the introduction of the Live -
+lihood Empowerment Against Poverty (LEAP) 1000 
+increased enrolment among marginalised populations 
+in the NHIS [ 28]. The LEAP 1000 program, through 
+its premium waivers, boosted adults' likelihood to 
+enroll in NHIS by 18%, children (20%), and women 
+of reproductive age (25%) [ 28]. However, a study by 
+Agyemang-Duah et al. (2019), found that the LEAP 
+program played a limited role in reducing health pov -
+erty among older people enrolled in the program [ 49]. 
+About 45% of beneficiaries financed their health care 
+mostly with their income [ 49].
+Health technology and innovations
+The use of technology-assisted algorithms and platforms 
+in healthcare systems emerged as a sustainable approach 
+to providing real-time access to healthcare, particularly 
+in marginalsied and hard-to-reach settings in Ghana. In 
+April 2019, Ghana launched a medical drone program 
+to improve Ghana's healthcare supply chain [ 53]. This 
+program employed the services of a global technology 
+company to manage the healthcare supply using artifi -
+cial intelligence (AI)-enhanced, carbon and noise-free 
+medical drones to ensure real-time delivery of essential 
+medicines, blood, and blood products across the country, 
+especially to hard-to-reach indigenous communities [53]. 
+Ultimately, this development aimed to reduce deaths 
+relating to childbirth, accidents, and snakebites that were 
+endemic in these settings.
+Zero hunger (SDG 2)
+Ending hunger and malnutrition
+Hunger and malnutrition are crucial indicators for 
+evaluating the progress of the HHSDGs among target 
+populations in Ghana, especially among children. The 
+overall prevalence of malnutrition among children aged 
+6–59  months ranges from 31.2% to 57.3% [ 80]. This is 
+significantly dependent on the data source used [ 80], 
+including Survey Data from the Ghana Demographic and 
+Health Surveys (GDHS), the Ghana Multiple Indicator 
+Cluster Survey (GMICS), and the emerging Ghana Socio-
+economic Panel Survey (GSPS).
+According to the SDG trackers, Ghana is on track in 
+fighting stunting among children under five years old and 
+has met the global target for overweight among children 
+under five years old; however, acceleration is needed to 
+meet the wasting target [ 57, 59, 60, 63, 67]. Similarly, sig-
+nificant progress has been made in children's nutrition. 
+Childhood undernutrition has declined from 47.3% in 
+1990 to 6.1% in 2019 [ 58, 67]. Exclusive breastfeeding 
+for six months declined in Ghana from 45.7% in 2011 to 
+42.9% in 2017 [63].
+Improving agricultural productivity and food production
+High import duties on agricultural inputs contribute to 
+low agricultural productivity and poor investment [ 60]. 
+However, the government has made progress by investing 
+GH₵₵833.73 million in 2018 and budgeted GH ₵1196.87 
+million for the Agricultural Ministry [ 61, 62]. Also, the 
+Government of Ghana introduced flagship programs 
+such as the Planting for Food and Jobs, Rearing for Food 
+and Jobs, Planting for Exports and Rural Development, 
+Greenhouse villages, One Village One Dam, the Ghana 
+Agricultural Sector Investment Program, and Agricul -
+tural Mechanisation [ 61, 62, 64, 68]. Food insecurity in 
+Ghana stood at 49.5% in 2017, with the Central (70%), 
+Upper West (79%), Northern (80%), and Upper East 
+(80%) regions most affected [57].
+There are reports of scarcity of food commodities. The 
+African Locust Bean population is declining due to an age-
+ing tree population, challenges in caring for saplings until 
+maturity, agricultural changes with increased mechanisa-
+tion and pesticide use, overuse of the trees as a source of 
+firewood, and reduced water availability [34]. Other reports 
+highlight poor farming practices, low level of awareness of 
+improved seeds, particularly hybrid seeds, and technolo -
+gies, and the adoption rate of these technologies especially 
+among the rural farmers, the high cost of seeds, the promise 
+of more yields, poor market access, poor social networks, 
+COVID-19, the absolute control of farmlands and outputs 
+by men and increased population growth as the significant 
+Page 9 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+challenges in fighting hunger and malnutrition in Ghana 
+[38, 52, 57, 61–63, 65].
+However, the Agriculture sector produced more than 
+enough in 2020 (7.4%) than its target (6%) [ 63]. Also, 
+there is evidence of greater reductions in downside risk 
+exposure in farming and higher crop yields through 
+the adoption of climate adaptation strategies such as 
+irrigation, soil conservation, enhanced cropping cal -
+endar management, on-farm performance, and the 
+multi-dimensional poverty index [41].
+Gender equality (SDG 5)
+Gender equality emerged as a major theme across agri -
+culture, health, human rights, education, industry, 
+institutional and governmental representation, and the 
+socioeconomic well-being of marginalised groups, par -
+ticularly women and girls. Although there is a need for 
+acceleration, Ghana has shown commitment to meeting 
+global gender equality targets. This includes launching 
+national gender policies and amending laws to protect 
+women, girls, and boys; and reserving quotas for girls and 
+women in education and in the leadership of government 
+institutions, respectively [ 61– 63]. This commitment 
+aligns with the global goals for achieving gender equality 
+by 2030 [ 81]. In 2013, the Ministry of Gender, Children, 
+and Social Protection replaced the Ministry of Women 
+and Children's Affairs, and the National Gender Policy 
+was adopted and launched in 2015 [ 61]. Also, quota sys -
+tems continue to be implemented at the tertiary level to 
+enrol a certain percentage of females, together with com -
+munity sensitisation dialogues for traditional and reli -
+gious leaders on Child Marriage [ 62]. Ghana enacted and 
+amended gender-related laws, including the Children's 
+Amendment Act, 2016 (Act 937), Ghana Aids Commis -
+sion Act, 2016 (Act 938), Right to Information Act, 2019 
+(Act 989), Land Act, 2020 (Act 1036), and the Real Estate 
+Agency Act, 2020 (Act 1047) to accommodate gender 
+equality [63]. Again, Ghana has seen a significant decline 
+in disparities and abuse against women and children. 
+Evidence shows that rape cases were reduced from 580 
+(2018) to 504 (2019) to 503 (2020) [ 63]. Women's par -
+liamentary seats increased from 12.7% (2016) to 13.8% 
+(2019), women in Metropolitan, Municipal, and Districts 
+Chief Executives (MMDCEs) positions increased from 
+10.3% (2016) to 14.8% (2019) whereas women Ministers 
+of State increased from 10 (20%) in 2018 to 13 (22.4%) in 
+2019 [57, 60, 63, 67]. This falls at the back of the Presiden-
+tial flagship initiative to appoint 30% women for govern -
+ment appointment and all public institutions, including 
+the passage of the Affirmative Action Bill to increase 
+women's participation in decision-making at all levels 
+and ranks [ 64]. Female Supreme Court Judges increased 
+from 26% (2019) to 28% (2020) and 31% (2021) [63].
+However, there is a need for acceleration. Defilement 
+cases declined from 1889 (2018) to 1720 (2019) but 
+increased to 1750 (2020) [ 63]. Child labor among chil -
+dren aged 5–17 years stands at an average of 20.1% inti -
+mate-partner violence and abuse among women and girls 
+15–19 years (23%.) non-intimate-partner sexual violence 
+among women and girls 15–19 years (3%), child marriage 
+stands at 19.3%, female genital mutilation: 2.4%, sexual 
+violence among young women 18–29  years by age 18: 
+10% and children 1–14  years who experienced violence 
+by caregivers: 94% [ 57, 59, 60]. Psychological violence 
+peaked at 24.8% among divorced/separated/widowed 
+women compared to 21.3% among married/cohabiting 
+women [60]. Intimate partner and non-partner violence 
+remains a national issue that needs conscious acceler -
+ated strategies to address. This review suggests the need 
+to relax the bureaucracies in addressing issues related to 
+gender inequalities, to excite the interest of women to 
+take up leadership roles, and to engage in broader stake -
+holder consultation and sensitization to fight cultural and 
+religious practices that still promote child marriage and 
+female genital mutilation [57, 65, 66].
+A study by Lelea et al. (2022) established the margin -
+alisation of women African Locust Bean farmers in the 
+Northern part of Ghana [ 34]. The seeds of the African 
+Locust Bean are considered a women's crop and play a 
+significant cultural and economic role in their lives. How-
+ever, the seeds are mediated by the men and chiefs of the 
+communities, coupled with the skewness and inequality 
+in land ownership, which favors the men [ 34]. Elsewhere, 
+only 20% of cocoa farm operators or managers were 
+women who only own small land sizes compared to that 
+of men (their land holdings are on average half the size 
+of men's), commonly still expected to work on husbands' 
+farms; however, men control all monetary gains of the 
+farm [38].
+A study by Gbagbo  and Nkrumah (2022 assessed the 
+availability and implementation of breastfeeding poli -
+cies and programs in three public universities in Ghana 
+[22]. Though all the Universities included in the study 
+were gender- and child-friendly, none had either a formal 
+breastfeeding and childcare policy and program in place 
+or an immediate policy-guided plan for on-campus facili-
+ties to facilitate exclusive breastfeeding due to financial 
+constraints [22].
+The non-inclusion of some sexual, reproductive health 
+and rights (SRHR) services, including family planning, 
+abortion, and post-abortion services, within the health 
+benefits package, as well as the fragmentation of support 
+services for gender-based violence victims across agen -
+cies, emerged as a significant bottleneck in meeting the 
+SDG 5 goal [23].
+Page 10 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+Clean water and sanitation (SDG 6)
+The United Nations have recognised access to safe and 
+affordable drinking water and sanitation as a human 
+right; hence, SDG target six calls for universal and equi -
+table access to clean water and sanitation [ 1, 82]. Over-
+all, Ghana has made commendable progress in providing 
+households with access to safely managed drinking water, 
+with about a 6% increase from 80% in 2015 to 86% in 
+2020 [57]. This agrees with the global estimate of 74% as 
+of 2020 [ 82]. Specifically, under government- and NGO-
+led rural water projects, interventions boosted access 
+to potable water from 9.9% in 2013 to 17.9% in 2017 
+despite the financial burden [ 60– 62]. As of 2019, about 
+53.6% of schools had access to water, sanitation, and 
+hygiene (WASH) infrastructure [59]. Rural water services 
+increased from 9.9% (2013) to 17.9% (2017) [60].
+The Government of Ghana has demonstrated a commit-
+ment to meeting communities' safe water demands. The 
+Ministry for Water and Sanitation was established in 2017 
+with a core expenditure of GH₵126.9 million to oversee this 
+goal [61]. Again, the government instituted its flagship pro-
+grams, dubbed the "Water for All" program, construction 
+of a fecal sludge management infrastructure, the Commu-
+nity-Led Total Sanitation Program, and the "Toilet for All" 
+Agenda project, under the Ministerial budget allocation of 
+GH₵750.40 million [62]. These programs require a signifi-
+cant financial commitment due to the high implementation 
+costs. According to a survey, the cost of achieving full water 
+coverage in the Bongo, East Gonja, and Wa East commu -
+nities in the Northern part of Ghana was USD 10,342,190, 
+USD 15,828,421, and USD 10,111,616, respectively [ 55]. 
+However, in a household survey, access to an adequate water 
+supply was not necessarily dependent on the physical loca-
+tion of house units, but rather on factors such as the lack of 
+a building permit, financial constraints, rental conditions, 
+administrative procedures, and ill-suited housing arrange-
+ments [83].
+Worryingly, records show that human activities pose 
+significant challenges to the depletion or contamination 
+of waterbodies. According to available evidence, artisanal 
+and small-scale mining methods, including alluvial, sur -
+face/open pit, and underground mining, have negative 
+impacts on water resources [ 39]. In addition, access to 
+household and community sanitation infrastructure is 
+a key indicator in estimating and describing the sanita -
+tion situation in household surveys in Ghana. A study 
+by Foggitt et al. (2019) estimated that 56% of households 
+had at least one toilet facility in the Ashanti region [ 27]. 
+In contrast, other reports reported that between 13.3% 
+and 23.7% had access to basic sanitation services [ 57, 59, 
+60, 67]. However, according to Cobbinah et al. (2020), 
+57.1% had no access to safely managed sanitation infra -
+structure and services [ 42]. Whereas access to house -
+hold toilets increased from 46% in 2010 to 59.3% in 2021, 
+access to public toilets declined from 35% in 2010 to 23% 
+in 2021 [ 63]. Open defecation is a challenge in Ghana, 
+with prevalence ranging from 9.9% to 44.2% [ 19, 51, 57, 
+59, 60], commonly in rural communities (32%) [ 57]. The 
+detrimental effects of poor sanitation on health, such as 
+the outbreak of diarrheal diseases, including cholera and 
+malaria, particularly among children, make SDG 6 a cru -
+cial HHSDG that needs acceleration in Ghana. For exam-
+ple, in 2016, there was a protracted cholera outbreak in 
+the Central Region, affecting 704 individuals between 
+October 2017 and January 2017, and with broken sewage 
+pipes and open defecation observed at the epicentre [84].
+Lack of education and poor information management 
+regarding proper water preservation and sanitation mea -
+sures have been shown to influence negative behavioral 
+perceptions and attitudes among populations. In a qualita-
+tive study conducted in Elmina, some fisher folks were not 
+willing to pay for waste collection services, citing poverty as 
+the main reason [43]. Most of them resort to dumping waste 
+on the street, into drains, the lagoon, and the sea. While the 
+fisher folks were aware that indiscriminate waste disposal 
+led to diseases such as malaria and cholera, they were oblivi-
+ous to its impact on aquatic resources. Also, in a household 
+survey in Accra and Sunyani, tenants frequently dispose of 
+non-fecal matter such as sanitary pads and diapers (38.5%), 
+fabrics/rags (23.2%), toilet rolls (20.8%), and razor/shaving 
+sticks (10.3%) into fecal sludge [25]. These routine practices 
+were influenced by behavioral perceptions such as fear of 
+exposing used sanitary materials for rituals, the use of fab-
+ric as an alternative to toilet rolls, and the desire to conceal 
+aborted pregnancies from the public.
+Sewage treatment systems have been deployed to 
+reduce bacterial contamination of downstream surface 
+waterbodies. For example, in a sewage treatment plant in 
+Accra, there were reductions of 99.9%, 98.8%, and 99.5% 
+in the E. coli, A. hydrophila, and P . aeruginosa concentra-
+tions, respectively, in the effluent at the treatment plant's 
+exit [33]. Also, this reduced antibiotic resistance for tet -
+racycline, ciprofloxacin, cefuroxime, and ceftazidime.
+Climate change and climate action (SDG 13)
+Climate change issues were adequately represented in 
+this review. This covers information management, the 
+use of technology, state interventions, policy interven -
+tions, and agricultural adaptation strategizing.
+Ghana has developed measures to fight climate change. 
+In 2019, Ghana launched an AI-assisted medical drone pro-
+gram with zero-carbon emissions to deliver medical sup -
+plies to remote communities [53]. Ghana produces a total 
+of 42.2–58.56 MtCO2e of greenhouse gases [ 57, 63], with 
+0.5 tCO2/capita from fossil fuel combustion and cement 
+production [67]. In agriculture, Ghana has adopted climate 
+change adaptation strategies such as irrigation, soil conser-
+vation, enhanced cropping calendar management, on-farm 
+Page 11 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+performance, and the multi-dimensional poverty index, 
+which reduced downside risk exposure and increased crop 
+output [41]. Ghana subscribed to a national disaster risk 
+reduction strategy by becoming a member and signatory to 
+the UN Framework Convention on Climate Change [ 57]. 
+Also, Ghana has developed strategic climate change docu-
+ments such as the National Climate Change Policy, National 
+Climate Change Master Plan, Implementation Plan for 
+Nationally Determined Contributions (NDC), Investment 
+& Implementation Plan, National Climate Change Adap -
+tation Strategy, 2016 National Reducing Emissions from 
+Deforestation and Forest Degradation (REDD +) Strategy, 
+2016–2040 National Forestry Plantation Strategy and the 
+2018–2021 Medium-term Development Policy Framework 
+[60, 61]. In addition, climate change has been integrated 
+into the learning curriculum of primary and secondary 
+schools and introduced to public universities to enhance 
+behavioural change [ 60]. In 2021, Ghana launched the 
+updated Nationally Determined Contributions, along with 
+a Climate Change Public Expenditure and Institutional 
+Review. Despite GH₵121.69 million expended in 2017 and 
+GH₵166.20 million allocated to climate change in 2021 [61, 
+62], the review revealed that the majority of government 
+expenditure went into agriculture, water, and sanitation pol-
+icies, rather than on climate action [62, 65].
+Ghana is making good efforts on climate action 
+despite major challenges, including low awareness 
+of climate change among policymakers, poor human 
+institutional capacity, poor or no data on climate 
+change, low prioritisation of climate information ser -
+vices, poor funding, low appreciation of the vulnerabil -
+ity status of various local assemblies, and high budget 
+incredibility [ 37, 57, 66, 69, 70].
+Strengths
+This review provides a broad and systematic overview of 
+Ghana’s progress, offering a holistic picture by including 
+data on both health and health-related SDGs, highlight -
+ing the interplay between health, environment, gender, 
+and economic factors. This study adhered to strict inclu -
+sion criteria and a specific study context. We performed 
+a transparent and reproducible data search that included 
+studies and reports specific to Ghana from online data -
+bases and platforms. The paper identifies key gaps and 
+provides recommendations and future research needs. 
+Furthermore, the country-level focus is timely as we 
+approach the SDG target year 2030, as it provides evi -
+dence to support re-evaluation and alignment of national 
+policies and their translation.
+Limitations
+Though this study employed a comprehensive and sys -
+tematic approach to data extraction, some grey literature 
+may have been inadvertently missed if not uploaded on 
+accessible online databases or repositories. These may have 
+included reports from state institutions, civil society/non-
+governmental organizations (CSOs/NGOs), and universities 
+and could have resulted in publication bias. Additionally, 
+although Ghana is an Anglophone country, it is possible that 
+some relevant publications written in French and pertaining 
+to Ghana were missed, as this review included only English-
+language sources. Furthermore, most of the records in the 
+review failed to establish the real-time progress of HHSDGs 
+in Ghana since the data available were mostly up to the year 
+2020. Finally, this review omitted the optional sixth stage of 
+the Arksey and O’Malley evidence synthesis framework, as 
+enhanced by Levac et al., which involves consultation with 
+relevant stakeholders to refine the research question, inter-
+pret findings, and facilitate knowledge translation. Future 
+studies could address this gap by integrating stakeholder 
+engagement to strengthen the relevance and uptake of 
+findings.
+Implications for future research and recommendations
+This baseline assessment critically examines the progress 
+made and the challenges impeding the implementation of 
+the HHSDGs in Ghana. The findings highlight several key 
+areas that require further investigation to enhance the 
+understanding and effectiveness of HHSDG implementa-
+tion. The identified gaps, recommendations and research 
+needs are summarized in Supplementary Table S5.
+Conclusions
+This scoping review provides a comprehensive overview 
+of Ghana’s progress toward achieving the Health and 
+Health-Related Sustainable Development Goals (HHS -
+DGs), highlighting both notable advancements and per -
+sistent challenges across key sectors. While Ghana has 
+made measurable gains in areas such as infectious disease 
+control, maternal health service utilisaation, access to safe 
+drinking water, gender equality initiatives, and the adop -
+tion of innovative technologies, significant gaps remain 
+in meeting global targets for maternal and child health, 
+mental health, sanitation, universal health coverage, and 
+food security. Structural barriers, including inequitable 
+distribution of health resources, financial constraints, 
+sociocultural practices, and limited data systems, con -
+tinue to impede effective implementation. Overall, the 
+findings underscore the urgent need for strengthened 
+policy commitment, improved financing mechanisms, 
+enhanced data management, and targeted interventions 
+that address regional and socioeconomic disparities. By 
+identifying these gaps and opportunities, this review pro -
+vides an essential evidence base to guide policymakers, 
+practitioners, and stakeholders in accelerating progress 
+toward achieving the HHSDGs in Ghana by 2030.
+Page 12 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+Abbreviations
+AACODS  Authority, Accuracy, Coverage, Objectivity, Date, and 
+Significance
+AI  Artificial Intelligence
+CHPS  Community-based Health Planning and Services
+EDL  Essential Diagnostics List
+GSR  General Service Readiness
+HAART  Highly Active Antiretroviral Therapy
+HHSDGs  Health and Health-related Sustainable Development Goals
+HRSDGs  Health-Related Sustainable Development Goals
+LEAP  Livelihood Empowerment Against Poverty
+MDGs  Millennium Development Goals
+MMDCEs  Metropolitan, Municipal, and District Chief Executives
+MMAT  Mixed Methods Appraisal Tool
+MtCO₂e  Metric tons of Carbon Dioxide equivalent
+NCDs  Non-Communicable Diseases
+NDC  Nationally Determined Contributions
+NHIS  National Health Insurance Scheme
+PCC  Population, Concept, and Context
+PRISMA-ScR  Preferred Reporting Items for Systematic Reviews and Meta-
+Analyses extension for Scoping Reviews
+REDD +   Reducing Emissions from Deforestation and Forest 
+Degradation
+SDG  Sustainable Development Goal
+SRHR  Sexual and Reproductive Health and Rights
+tCO₂/capita  Tons of Carbon Dioxide per Capita
+UHC  Universal Health Coverage
+USD  United States Dollar
+WASH  Water, Sanitation, and Hygiene
+WHO  World Health Organization
+Supplementary Information
+The online version contains supplementary material available at  h t t p  s : /  / d o i  . o  r 
+g /  1 0 .  1 1 8 6  / s  1 2 8 8 9 - 0 2 5 - 2 5 9 8 5 - y.
+Supplementary Material 1.
+Acknowledgements
+Not applicable.
+Authors’ contributions
+DTD contributed to conception, methodology, supervision, writing, revision 
+and direction of the review. ZAB contributed to conception, coordination, 
+supervision and revision of the manuscript. YAN and OC contributed to 
+conception, methodology and writing. FAJ, FAA and GA contributed to 
+writing, methodology and revision of the work. GAS and ED contributed 
+to writing and revision of the manuscript. RS contributed to the direction, 
+coordination and revision of the manuscript. The Authors read and approved 
+the manuscript.
+Funding
+This work was supported by the International Development Research Centre 
+(IDRC) [grant #109839–001], with engagement from the Aga Khan Foundation 
+Canada (AKFC).
+Data availability
+Not applicable.
+Declarations
+Ethics approval and consent to participate
+Not applicable.
+Consent for publication
+Not applicable.
+Competing interests
+The authors declare no competing interests.
+Author details
+1Department of Population and Health, University of Cape Coast, Cape 
+Coast, Ghana
+2Directorate of Research, Innovation and Consultancy, University of Cape 
+Coast, Cape Coast, Ghana
+3Department of Internal Medicine, Cape Coast Teaching Hospital, Cape 
+Coast, Ghana
+4Department of Internal Medicine, University of Cape Coast, Cape Coast, 
+Ghana
+5Department of Medical Laboratory Science, University of Cape Coast, 
+Cape Coast, Ghana
+6Department of Geography and Regional Planning, University of Cape 
+Coast, Cape Coast, Ghana
+7School of Health Systems and Public Health, Faculty of Health, University 
+of Pretoria, Pretoria, South Africa
+8Department of Community Medicine, University of Cape Coast, Cape 
+Coast, Ghana
+9School of Public Health, Faculty of Health and Medical Sciences, Adelaide 
+University, Adelaide, Australia
+10JBI Kintampo Centre for Evidence-Based Research, Kintampo,, Ghana
+11The Hospital for Sick Children (SickKids), Toronto, Canada
+12Directorate of Research, International Programmes and Institutional 
+Advancement, Association of African Universities, Accra, Ghana
+13Department of Environmental Science, College of Agriculture and 
+Natural Sciences, University of Cape Coast, Cape Coast, Ghana
+14The Aga Khan University, Karachi, Pakistan
+Received: 1 December 2024 / Accepted: 10 December 2025
+References
+1. United Nations Development Programme. Sustainable Development Goals | 
+United Nations Development Programme. UNDP . 2022. Available from:  h t t p  s : 
+/  / w w w  . u  n d p  . o r  g / s u  s t  a i n  a b l  e - d e  v e  l o p m e n t - g o a l s. Cited 2022 Oct 25.
+2. World Health Organization. Millennium Development Goals (MDGs). 2018. 
+Available from:  h t t p  s : /  / w w w  . w  h o .  i n t  / n e w  s -  r o o  m / f  a c t -  s h  e e t  s / d  e t a i  l /  m i l  l e n  n i u 
+m  - d  e v e l o p m e n t - g o a l s - ( m d g s). Cited 2022 Oct 25.
+3. United Nations Development Programme. Leaving No One Behind: Impact 
+of COVID-19 on the Sustainable Development Goals (SDGs) | United Nations 
+Development Programme. 2021. Available from:  h t t p  s : /  / w w w  . u  n d p  . o r  g / p u  b 
+l  i c a  t i o  n s / l  e a  v i n  g - n  o - o n  e -  b e h  i n d  - i m p  a c  t - c  o v i  d - 1 9  - s  u s t  a i n  a b l e  - d  e v e l o p m e n 
+t - g o a l s - s d g s. Cited 2022 Nov 15.
+4. Lekagul A, Chattong A, Rueangsom P , Waleewong O, Tangcharoensathien 
+V. Multi-dimensional impacts of Coronavirus disease 2019 pandemic on 
+Sustainable Development Goal achievement. Glob Health. 2022 27;18(1):65.
+5. Wang Q, Huang R. The impact of COVID-19 pandemic on sustainable devel-
+opment goals – a survey. Environ Res. 2021;202:111637.
+6. Ameli M, Shams Esfandabadi Z, Sadeghi S, Ranjbari M, Zanetti MC. COVID-19 
+and Sustainable Development Goals (SDGs): Scenario analysis through fuzzy 
+cognitive map modeling. Gondwana Res. 2022. Available from:  h t t p  s : /  / w w w  . 
+n  c b i  . n l  m . n i  h .  g o v  / p m  c / a r  t i  c l e s / P M C 8 8 1 1 7 0 2 /. Cited 2022 Nov 15.
+7. Shulla K, Voigt BF, Cibian S, Scandone G, Martinez E, Nelkovski F, et al. Effects 
+of COVID-19 on the sustainable development goals (SDGs). Discov Sustain. 
+2021;2(1):15.
+8. Elavarasan RM, Pugazhendhi R, Shafiullah GM, Kumar NM, Arif MT, Jamal T, 
+et al. Impacts of COVID-19 on sustainable development goals and effective 
+approaches to maneuver them in the post-pandemic environment. Environ 
+Sci Pollut Res. 2022;29(23):33957–87.
+9. Shuai C, Zhao B, Chen X, Liu J, Zheng C, Qu S, Zou JP , Xu M. Quantifying the 
+impacts of COVID-19 on Sustainable Development Goals using machine 
+learning models. Fundam Res. 2022. Available from:  h t t p  s : /  / w w w  . s  c i e  n c e  d i r e  
+c t  . c o  m / s  c i e n  c e  / a r  t i c  l e / p  i i  / S 2 6 6 7 3 2 5 8 2 2 0 0 2 8 6 2. Cited 2022 Nov 15.
+10. World Health Organization. Constitution of the World Health Organization. 
+2022. Available from:  h t t p  s : /  / w w w  . w  h o .  i n t  / a b o  u t  / g o  v e r  n a n c  e /  c o n s t i t u t i o n. 
+Cited 2022 Oct 25.
+11. United Nations Sustainable Development Goal 3: Good Health and Well-
+being | United Nations in Ghana. 2022. Available from:  h t t p  s : /  / g h a  n a  . u n  . o r  g / e 
+n  / s  d g s / 3. Cited 2022 Aug 4.
+Page 13 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+12. World Health Organization. Universal Health Coverage. 2022. Available from:  
+h t t p  s : /  / w w w  . w  h o .  i n t  / h e a  l t  h - t  o p i  c s / u  n i  v e r  s a l  - h e a  l t  h - c o v e r a g e. Cited 2022 
+Sept 22.
+13. Arksey H, O’Malley L. Scoping studies: towards a methodological framework. 
+Int J Soc Res Methodol. 2005;8(1):19–32.
+14. Levac D, Colquhoun H, O’Brien KK. Scoping studies: advancing the methodol-
+ogy. Implement Sci. 2010;5(1):69.
+15. Aromataris E, Munn Z, editors. JBI Manual for Evidence Synthesis. JBI; 2020. 
+Available from:  h t t p  s : /  / w i k  i .  j b i  . g l  o b a l  / d  i s p l a y / M A N U A L. Cited 2022 Oct 31.
+16. Rayyan. Rayyan – Intelligent Systematic Review - Rayyan. 2022. Available 
+from: https://www.rayyan.ai/. Cited 2022 Nov 7.
+17. Peters MDJ, Godfrey CM, Khalil H, McInerney P , Parker D, Soares CB. Guid-
+ance for conducting systematic scoping reviews. Int J Evid Based Healthc. 
+2015;13(3):141–6.
+18. Hong QN, Fàbregues S, Bartlett G, Boardman F, Cargo M, Dagenais P , et al. The 
+mixed methods appraisal tool (MMAT) version 2018 for information profes-
+sionals and researchers. Educ Inf. 2018;34(4):285–91.
+19. Kusi-Mensah K, Tamambang R, Bella-Awusah T, Ogunmola S, Afolayan A, 
+Toska E, Hertzog L, Rudgard W, Evans R, Omigbodun O. Accelerating progress 
+towards the sustainable development goals for adolescents in Ghana: a 
+cross-sectional study. Psychol Health Med. 2022. Available from:  h t t p  s : /  / w w w  . 
+s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  3 5 9 9  4 1  0 2 &  d o i  = 1 0 .  1 0  8 0 %  2 f 1  3 5 
+4 8  5 0  6 . 2  0 2 2  . 2 1 0  8 0  8 6 &  p a r  t n e r  I D  = 4 0  & m d  5 = 6 4  e b  4 2 f 1 1 2 7 4 7 7 0 b 1 c d 5 9 4 8 8 e 9 8 0 
+d d 1 1
+20. Acquah-Hagan G, Boateng D, Appiah-Brempong E, Twum P , Atta JA, Agyei-Baf-
+four P . Access Differentials in Primary Healthcare among Vulnerable Populations 
+in a Health Insurance Setting in Kumasi Metropolis, Ghana: A Cross-Sectional 
+Study. Adv Public Health. 2021;2021. Available from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  
+w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  1 2 5 4  9 7  0 6 &  d o i  = 1 0 .  1 1  5 5 %  2 f 2  0 2 1 %  2 f  9 9 1  1 4 3  6 & p a  r 
+t  n e r  I D =  4 0 & m  d 5  = 5 3  5 3 b  a 5 9 a  f c  4 3 d 6 f a 0 b 4 6 f 5 d 7 4 4 d b 7 b f
+21. Abrokwah R, Aggire-Tettey EM, Naami A. Accessing healthcare in Ghana: chal-
+lenges encountered and strategies adopted by persons with disabilities in 
+Accra. Disability, CBR & Inclusive Development. 2020;31(1):120–41.
+22. Ward CL, Guo MZ, Amukele TK, Abdul-Karim A, Schroeder LF. Availability 
+and prices of WHO essential diagnostics in laboratories in west Africa: a 
+landscape survey of diagnostic testing in northern Ghana. J Appl Lab Med. 
+2021;6(1):51–62.
+23. Seidu AA, Darteh EKM, Agbaglo E, Dadzie LK, Ahinkorah BO, Ameyaw EK, et 
+al. Barriers to accessing healthcare among women in Ghana: a multilevel 
+modelling. BMC Public Health. 2020;20(1):1916.
+24. Gbagbo FY, Nkrumah J. Breastfeeding-friendly policies and programs in three 
+public Universities in Ghana. Int Breastfeed J . 2022;17(1). Available from:  h t t p  
+s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  2 8 0 7  3 0  8 7 &  d o i  = 1 0 .  1 1  
+8 6 %  2 f s  1 3 0 0  6 -  0 2 2  - 0 0  4 6 8 -  7 &  p a r  t n e  r I D =  4 0  & m d  5 = 4  4 9 9 4  c b  5 5 1 1 8 e 6 2 1 0 8 2 3 a 0 7 
+5 d d 0 6 8 0 9 f
+25. Akazili J, Kanmiki EW, Anaseba D, Govender V, Danhoundo G, Koduah A. 
+Challenges and facilitators to the provision of sexual, reproductive health 
+and rights services in Ghana. Sex Reprod Health Matters. 2020;28(2). Available 
+from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 0  9 6 3 6  8 3  1 3 &  
+d o i  = 1 0 .  1 0  8 0 %  2 f 2  6 4 1 0  3 9  7 . 2  0 2 0  . 1 8 4  6 2  4 7 &  p a r  t n e r  I D  = 4 0  & m d  5 = 7 5  d 2  e d 9 2 0 2 c 
+5 d 8 c 5 9 3 0 3 0 5 9 6 e f b f 7 3 4 5
+26. Assan A, Takian A, Aikins M, Akbarisari A. Challenges to achieving universal 
+health coverage through community-based health planning and services 
+delivery approach: A qualitative study in Ghana. BMJ Open. 2019;9(2). Avail-
+able from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 0  6 2 0 8  3 3  
+8 8 &  d o i  = 1 0 .  1 1  3 6 %  2 f b  m j o p  e n  - 2 0  1 8 -  0 2 4 8  4 5  & p a  r t n  e r I D  = 4  0 & m  d 5 =  4 4 9 3  8 5  8 7 2 
+2 4 7 6 7 1 a c 3 b 3 9 9 b 9 f 7 8 9 8 e 5 d
+27. Quarshie AM, Gyasi SF, Kuranchie FA, Awuah E, Darteh E. Conceptual behav-
+iour underpinning the occurrence of nonfaecal matter in faecal sludge in 
+some urban communities, Ghana. J Environ Public Health. 2021;2021:1–10.
+28. Sheff MC, Bawah AA, Asuming PO, Kyei P , Kushitor M, Phillips JF, Kachur SP . 
+Evaluating health service coverage in Ghana’s Volta Region using a modified 
+Tanahashi model. Glob Health Action. 2020;13(1). Available from:  h t t p  s : /  / w w 
+w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 0  8 1 7 3  6 2  9 8 &  d o i  = 1 0 .  1 0  8 0 %  2 f 1  
+6 5 4 9  7 1  6 . 2  0 2 0  . 1 7 3  2 6  6 4 &  p a r  t n e r  I D  = 4 0  & m d  5 = 7 2  1 4  0 1 3 6 a b e 2 1 4 0 c 6 4 b 2 c f 8 f 2 3 
+e 0 8 e d e
+29. Foggitt E, Cawood S, Evans B, Acheampong P . Experiences of shared sanita-
+tion – towards a better understanding of access, exclusion and ‘toilet mobil-
+ity’ in low-income urban areas. J Water Sanit Hyg Dev. 2019;9(3):581–90.
+30. Gudu W, Addo B. Factors associated with utilization of skilled service delivery 
+among women in rural Northern Ghana: a cross sectional study. BMC Preg-
+nancy Childbirth. 2017;17(1):159.
+31. Otieno P , Angeles G, Quiñones S, van Halsema V, Novignon J, Palermo T, 
+the LEAP 1000 Evaluation Team, Palermo T, de Groot R, Valli E, Osei-Akoto I, 
+Adamba C, K. Darko J, Darko Osei R, Dompae F, Yaw N, Handa S, Barrington 
+C, Abdoulayi S, Angeles G, Chakrabarti A, Otchere F, J. Akaligaung A, Aborigo 
+R. Health services availability and readiness moderate cash transfer impacts 
+on health insurance enrolment: evidence from the LEAP 1000 cash transfer 
+program in Ghana. BMC Health Serv Res. 2022;22(1):599.
+32. Akweongo P , Aikins M, Wyss K, Salari P , Tediosi F. Insured clients out-of-pocket 
+payments for health care under the national health insurance scheme in 
+Ghana. BMC Health Serv Res. 2021;21(1):440.
+33. Odonkor ST, Dei EN, Sallar AM. Knowledge, attitude, and adaptation to 
+climate change in Ghana. Sci World J. 2020;2020. Available from:  h t t p  s : /  / w w w  
+. s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 0  9 7 6 7  6 0  4 6 &  d o i  = 1 0 .  1 1  5 5 %  2 f 2  0 
+2 0 %  2 f  3 1 6  7 3 1  7 & p a  r t  n e r  I D =  4 0 & m  d 5  = c 5  8 b 8  f 5 6 b  3 5  e 8 ff   2 b a 6 2 f 3 5 8 a 5 7 d 7 7 9 6
+34. Kuwornu JP , Amoyaw J, Manyanga T, Cooper EJ, Donkoh E, Nkrumah A. 
+Measuring the overall burden of early childhood malnutrition in Ghana: 
+a comparison of estimates from multiple data sources. Int J Health Policy 
+Manag. 2022;11(7):1035–46.
+35. Adjei G, Darteh EKM, Nettey OEA, Doku DT. Neonatal mortality in the central 
+districts of Ghana: analysis of community and composition factors. BMC 
+Public Health. 2021;21(1):173.
+36. Nanewortor BM, Saah FI, Appiah PK, Amu H, Kissah-Korsah K. Nutritional 
+status and associated factors among people living with HIV/AIDS in Ghana: 
+cross-sectional study of highly active antiretroviral therapy clients. BMC Nutr. 
+2021;7(1):14.
+37. Amu H, Osei E, Kofie P , Owusu R, Bosoka SA, Konlan KD, Kim E, Orish VN, 
+Maalman RSE, Manu E, Parbey PA, Saah FI, Mumuni H, Appiah PK, Komesuor J, 
+Ayanore MA, Amenuvegbe GK, Kim S, Jung H, Adjuik M, Tarkang EE, Alhassan 
+RK, Donkor ES, Zottor FB, Kweku M, Amuna P , Kim SY, Gyapong JO. Prevalence 
+and predictors of depression, anxiety, and stress among adults in Ghana: A 
+community-based cross-sectional study. PLoS ONE. 2021;16(10 October). 
+Available from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  1 6 
+8 7  9 6  6 7 &  d o i  = 1 0 .  1 3  7 1 %  2 f   o u r n  a l  . p o  n e .  0 2 5 8  1 0  5 & p  a r t  n e r I  D =  4 0 &  m d 5  = b 5 ff    6  e 5 
+b 1 b a 4 3 2 d f 4 3 8 8 8 f 8 3 7 b 4 1 3 5 5 0
+38. Adomako LAB, Yirenya-Tawiah D, Nukpezah D, Abrahamya A, Labi AK, Grigoryan 
+R, Ahmed H, Owusu-Danquah J, Annang TY, Banu RA, Osei-Atweneboana MY, 
+Timire C, Tweya H, Ackon SED, Nartey E, Zachariah R. Reduced bacterial counts 
+from a sewage treatment plant but increased counts and antibiotic resistance 
+in the recipient stream in accra, ghana—a cross-sectional study. Trop Med Infect 
+Dis. 2021;6(2). Available from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 
+-  s 2  . 0 -  8 5 1  0 6 9 3  8 3  1 8 &  d o i  = 1 0 .  3 3  9 0 %  2 f t  r o p i  c a  l m e  d 6 0  2 0 0 7  9 &  p a r  t n e  r I D =  4 0  & m d  5 = 
+1  2 c 9 7  c a  8 e b 2 f b d e 1 0 e c f 8 d f 3 ff   f 6 a 8 0 1
+39. Kpodotsi A, Baku EA, Adams JH, Alaba O. Socioeconomic inequalities in 
+access and use of skilled birth attendants during childbirth in Ghana: a 
+decomposition analysis. BMC Pregnancy Childbirth. 2021;21(1). Available 
+from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  2 2 0 6  5 3  1 2 &  
+d o i  = 1 0 .  1 1  8 6 %  2 f s  1 2 8 8  4 -  0 2 1  - 0 4  2 9 0 -  7 &  p a r  t n e  r I D =  4 0  & m d  5 = a  8 d 5 7  1 0  6 7 0 0 b c 1 
+c d 7 3 e f 6 5 6 e 4 9 c 6 2 3 b 2
+40. Johnson FA. Spatiotemporal clustering and correlates of childhood stunting 
+in Ghana: Analysis of the fixed and nonlinear associative effects of socio-
+demographic and socio-ecological factors. PLoS ONE. 2022;17(2 February). 
+Available from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  2 4 
+1 7  6 5  5 8 &  d o i  = 1 0 .  1 3  7 1 %  2 f   o u r n  a l  . p o  n e .  0 2 6 3  7 2  6 & p  a r t  n e r I  D =  4 0 &  m d 5  = a 1 f  1 d  3 
+e c 0 5 1 f 4 6 4 d 0 c c f 6 3 1 0 5 e 4 0 8 5 d b
+41. Lelea MA, Konlan LM, Ziblila RC, Thiele LE, Amo-Aidoo A, Kaufmann B. Strate-
+gies to Promote Sustainable Development: The Gendered Importance of 
+Addressing Diminishing African Locust Bean (Parkia biglobosa) Resources 
+in Northern Ghana’s Agro-Ecological Landscape. Sustain Switz. 2022;14(18). 
+Available from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  3 8 
+7 4  6 7  3 1 &  d o i  = 1 0 .  3 3  9 0 %  2 f s  u 1 4 1  8 1  1 3 0  2 & p  a r t n  e r  I D =  4 0 &  m d 5 =  d 5  1 b a d d 9 8 c 2 0 9 
+6 f 7 3 0 2 f 5 3 5 0 e f e 4 a b 4 f
+42. Doku DT. Survival analysis of neonatal mortality in Ghana using three 
+population-based surveys. Arch Public Health. 2022;80(1):21.
+43. Yambah JK, Mensah KA, Kuunibe N, Laar K, Atinga RA, Ofori Boateng M, 
+Opoku D, Quentin W. The effect of the capitation policy withdrawal on 
+maternal health service provision in Ashanti Region, Ghana: an interrupted 
+time series analysis. Glob Health Res Policy. 2022;7(1). Available from:  h t t p  s : /  / 
+w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  4 0 2 3  1 2  7 6 &  d o i  = 1 0 .  1 1  8 6 
+%  2 f s  4 1 2 5  6 -  0 2 2  - 0 0  2 7 1 -  1 &  p a r  t n e  r I D =  4 0  & m d  5 = 4  6 2 0 7  8 7  8 5 b 6 f 9 0 d 4 5 7 a f 4 5 f 7 d 8 
+a 1 b 5 5 c
+44. Tette EMA, Nuertey BD, Azusong EA, Gandau NB. The profile, health seeking 
+behavior, referral patterns, and outcome of outborn neonates admitted to 
+Page 14 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+a district and regional hospital in the Upper West Region of Ghana: a cross-
+sectional study. Child Basel Switz. 2020;7(2):E15.
+45. Antwi-Agyei P , Dougill AJ, Doku-Marfo J, Abaidoo RC. Understanding climate 
+services for enhancing resilient agricultural systems in Anglophone West 
+Africa: The case of Ghana. Clim Serv. 2021;22. Available from:  h t t p  s : /  / w w w  . s  c o 
+p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  0 3 1 3  0 5  7 0 &  d o i  = 1 0 .  1 0  1 6 %  2 f   . c l i  s e  r . 
+2  0 2 1  . 1 0 0  2 1  8 & p  a r t  n e r I  D =  4 0 &  m d 5  = c e a  6 3  d 9 e f 9 3 d 0 f e 7 f 0 8 a 6 e 4 d 9 d e 8 0 1 0 6
+46. Friedman R, Hirons MA, Boyd E. Vulnerability of Ghanaian women cocoa 
+farmers to climate change: a typology. Clim Dev. 2019;11(5):446–58.
+47. Arthur-Holmes F, Abrefa Busia K, Yakovleva N, Vazquez-Brust DA. Artisanal 
+and small-scale mining methods and the Sustainable Development 
+Goal 6: perceived implications for clean water supply. Environ Sci Policy. 
+2022;137:205–15.
+48. Ofosu B, Ofori D, Ntumy M, Asah-Opoku K, Boafor T. Assessing the functional-
+ity of an emergency obstetric referral system and continuum of care among 
+public healthcare facilities in a low resource setting: an application of process 
+mapping approach. BMC Health Serv Res. 2021;21(1):402.
+49. Bassoumah B, Adam AM, Adokiya MN. Challenges to the utilization of 
+Community-based Health Planning and Services: the views of stakeholders in 
+Yendi Municipality, Ghana. BMC Health Serv Res. 2021;21(1). Available from:  h 
+t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  1 8 9 8  7 2  0 8 &  d o i  = 1 0 .  
+1 1  8 6 %  2 f s  1 2 9 1  3 -  0 2 1  - 0 7  2 4 9 -  8 &  p a r  t n e  r I D =  4 0  & m d  5 = a  9 6 ff    7 5  2 3 9 3 7 5 0 a 8 c 6 3 e 1 5 
+2 f 8 8 2 d 6 b 0 5
+50. Issahaku G, Abdul-Rahaman A, Amikuzuno J. Climate change adaptation 
+strategies, farm performance and poverty reduction among smallholder 
+farming households in Ghana. Clim Dev. 2021;13(8):736–47.
+51. Cobbinah PB, Kosoe EA, Diawuo F. Environmental planning crisis in urban 
+Ghana: local responses to nature’s call. Sci Total Environ. 2020;701:134898.
+52. Agyemang-Duah W, Mensah CM, Peprah P , Arthur F, Abalo EM. Facilita-
+tors of and barriers to the use of healthcare services from a user and 
+provider perspective in Ejisu-Juaben municipality, Ghana. J Public Health. 
+2019;27(2):133–42.
+53. Mensah J. Fisherfolk’s Perception of and Attitude to Solid Waste Disposal: 
+Implications for Health, Aquatic Resources, and Sustainable Development. J 
+Environ Public Health. 2021;2021. Available from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  
+w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  0 4 9 2  3 7  1 1 &  d o i  = 1 0 .  1 1  5 5 %  2 f 2  0 2 1 %  2 f  8 8 5  3 6 6  9 
+& p a  r t  n e r  I D =  4 0 & m  d 5  = 9 f  1 9 6  8 a e b  f 6  8 6 f 5 3 b 5 3 8 9 5 b 8 6 8 a 5 2 3 4 f
+54. Doherty B. Gender equality and women’s empowerment through fair trade 
+social enterprise: Case of divine chocolate and Kuapa Kokoo [Internet]. 
+Contemp. Issues. Entrep. Res. Emerald Group Publishing Ltd.; 2018. p. 151. 
+(Contemporary Issues in Entrepreneurship Research; vol. 8). Available from:  h t 
+t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 0  6 5 4 8  6 3  1 8 &  d o i  = 1 0 .  1 
+1  0 8 %  2 f S  2 0 4 0  - 7  2 4 6  2 0 1  8 0 0 0  0 0  0 8 0  1 4 &  p a r t  n e  r I D  = 4 0  & m d 5  = 4  a b b 6 c 5 8 0 9 1 2 0 d 
+c 4 0 a c 3 7 2 8 2 0 5 4 9 f 7 2 f.
+55. Ablo AD, Yekple EE. Urban water stress and poor sanitation in Ghana: percep-
+tion and experiences of residents in the Ashaiman municipality. GeoJournal. 
+2018;83(3):583–94.
+56. Umar S, Fusheini A, Ayanore MA. The shared experiences of insured members 
+and the uninsured in health care access and utilization under Ghana’s 
+national health insurance scheme: evidence from the Hohoe Municipality. 
+PLoS One. 2020;15(12):1–21.
+57. Ayanore M, Asampong R, Akazili J, Awoonor-Williams JK, Akweongo P . Sub-
+national variations in general service readiness of primary health care facili-
+ties in Ghana: health policy and equity implications towards the attainment 
+of universal health coverage. PLoS One. 2022;17(6):1–17.
+58. Babayara MNK, Addo B. Risk Factors for Child Mortality in the Kassena-Nan-
+kana District of Northern Ghana: A Cross-Sectional Study Using Population-
+Based Data. Scientifica. 2018;1–7.
+59. Takramah WK, Aheto JMK. Predictive model and determinants of odds of 
+neonates dying within 28 days of life in Ghana. Health Sci Rep. 2021;4(1). 
+Available from:  h t t p  s : /  / w w w  . s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  0 2 
+0 4  9 4  0 7 &  d o i  = 1 0 .  1 0  0 2 %  2 f h  s r 2 .  2 4  8 & p  a r t  n e r I  D =  4 0 &  m d 5  = e 9 ff    5  e e f 7 0 1 b 0 2 c 6 e 1 
+d 3 9 d 0 6 7 9 a d 5 a a 5
+60. Mensah J, Tachie BY, Potakey HMD. Open defecation near a world heritage 
+site: causes and implication for sustainable tourism and heritage manage-
+ment. J Cult Herit Manag Sustain Dev. 2021; Available from:  h t t p  s : /  / w w w  . s  c o 
+p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  1 3 7 9  0 9  3 2 &  d o i  = 1 0 .  1 1  0 8 %  2 f J  C H M S  
+D -  1 1 -  2 0 2  0 - 0 1  6 4  & p a  r t n  e r I D  = 4  0 & m  d 5 =  d 6 4 d  7 3  7 e 7 c 0 3 9 b d 0 ff   2 a 8 c c 3 7 f 5 f 2 7 3 6
+61. Kwarteng AB, Skokova Y, Agyemang-Duah W. Knowledge and attitudes on 
+HIV/AIDS and HIV testing among basic school students in Tamale Metropolis, 
+Ghana. J Public Health. 2020;28(2):181–9.
+62. Amankwaa G, Abass K, Gyasi RM. In-school adolescents’ knowledge, access to 
+and use of sexual and reproductive health services in Metropolitan Kumasi. 
+Ghana J Public Health Ger. 2018;26(4):443–51.
+63. Abubakari SW, Oppong FB, Wiru K, Manu G, Apraku EA, Abukari M, et al. Open 
+defecation and attainment of Sustainable Development Goal Six: evidence 
+from Kintampo Surveillance System, Ghana. Ghana Med J. 2021;55(4):273–7.
+64. Agyemang-Duah W, Peprah C, Arthur-Holmes F. Prevalence and patterns of 
+health care use among poor older people under the livelihood empower-
+ment against poverty program in the Atwima Nwabiagya district of Ghana. 
+Gerontol Geriatr Med. 2019;5:2333721419855455.
+65. Quarshie PT, Antwi-Agyei P , Suh NN, Fraser EDG. Tackling post-COVID-19 
+pandemic food crises through the adoption of improved maize seeds and 
+technologies by smallholder farmers: The case of Ejura Sekyeredumase in 
+Ghana. Front Sustain Food Syst. 2022;6. Available from:  h t t p  s : /  / w w w  . s  c o p  u s .  c 
+o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  4 0 0 7  4 7  4 8 &  d o i  = 1 0 .  3 3  8 9 %  2 ff    s u f s  . 2  0 2 2  . 8 
+0  4 9 8 4  & p  a r t  n e r  I D = 4  0 &  m d 5  = 5 b  3 6 a 4  2 2  e 6 e d 5 4 e 7 d 0 f 2 9 a d b 5 5 3 2 2 0 9 5
+66. Damoah IS, Ayakwah A, Tingbani I. Artificial intelligence (AI)-enhanced medi-
+cal drones in the healthcare supply chain (HSC) for sustainability develop-
+ment: A case study. J Clean Prod. 2021;328. Available from:  h t t p  s : /  / w w w  . s  c o p  
+u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 1  1 9 5 9  6 9  9 4 &  d o i  = 1 0 .  1 0  1 6 %  2 f   . j c l  e p  r o .  
+2 0 2  1 . 1 2  9 5  9 8 &  p a r  t n e r  I D  = 4 0  & m d  5 = 7 d  6 6  c 2 0 1 1 1 6 3 1 b 4 a 4 7 d 4 6 f b 0 f 6 1 d 8 a b 5
+67. Doherty B. Gender equality and women’s empowerment through fair trade 
+social enterprise: Case of divine chocolate and Kuapa Kokoo. Contemp. 
+Issues. Entrep. Res. Emerald Group Publishing Ltd.; 2018. 151 p. (Contempo-
+rary Issues in Entrepreneurship Research; vol. 8). Available from:  h t t p  s : /  / w w w  . 
+s  c o p  u s .  c o m /  i n  w a r  d / r  e c o r  d .  u r i  ? e i  d = 2 -  s 2  . 0 -  8 5 0  6 5 4 8  6 3  1 8 &  d o i  = 1 0 .  1 1  0 8 %  2 f S  2 0 
+4 0  - 7  2 4 6  2 0 1  8 0 0 0  0 0  0 8 0  1 4 &  p a r t  n e  r I D  = 4 0  & m d 5  = 4  a b b 6 c 5 8 0 9 1 2 0 d c 4 0 a c 3 7 2 8 2 
+0 5 4 9 f 7 2 f
+68. Kumasi TC, Nyarko KB, Antwi-Agyei P . Universal water service delivery: 
+insights on what it takes from Ghana. World Water Policy. 2022;8(1):9–30.
+69. Tyndall J, Tyndall J. AACODS checklist. Flinders Univ. 2010; Available from:  h t t 
+p  s : /  / f a c  . fl    i n  d e r  s . e d  u .  a u /  d s p  a c e /  a p  i / c  o r e  / b i t  s t  r e a  m s /  e 9 4 a  9 6  e b -  0 3 3  4 - 4 3  0 0  - 8 8  
+8 0 -  c 8 3 6  d 4  d 9 a 6 7 6 / c o n t e n t
+70. National Development Planning Commission. 2020 SDGs Report: Ghana. 
+Ghana: National Development Planning Commission; 2020:98. Available 
+from:  h t t p  s : /  / n d p  c .  g o v  . g h  / m e d  i a  / 2 0  2 0 _  S D G s  _ R  e p o r t - F i n a l . p d f. Cited 2023 
+Jan 28.
+71. Fondazione Eni Enrico Mattei. Assessing Ghana’s Position in Achieving the 
+SDGs and the Implications of the Paris Agreement. Corso Magenta 63, Milano 
+– Italia: Fondazione Eni Enrico Mattei; 2017:33. Available from:  h t t p  s : /  / f e e  m -  m 
+e d  i a .  s 3 . e  u -  c e n  t r a  l - 1 .  a m  a z o  n a w  s . c o  m /  w p -  c o n  t e n t  / u  p l o  a d s  / 2 0 1  7 -  1 2 -  2 0 -  c a m p  
+a g  n o l  o b o  s e l l  o -  s d g s d e fi   n i t i v o . p d f. Cited 2023 Jan 28.
+72. Government of Ghana . Ghana: Voluntary National Review on the Implemen-
+tation of the 2030 Agenda for Sustainable Development. Ghana: Government 
+of Ghana; 2019:127. Available from:  h t t p  s : /  / g h a  n a  . u n  . o r  g / e n  / 1  9 1 5  5 - g  h a n a  - v  o 
+l u  n t a  r y - n  a t  i o n  a l -  r e v i  e w  - r e  p o r  t - i m  p l  e m e  n t a  t i o n  - 2  0 3 0  - a g  e n d a  - s  u s t a i n a b l e - d e 
+v e l o p m e n t # : ~ : t e x t = T h e % 2 0 G h a n a % 2 0 V o l u n t a r y % 2 0 N a t i o n a l % 2 0 R e v i e w , a s % 
+2 0 o p p o r t u n i t i e s % 2 0 t o % 2 0 b e % 2 0 e x p l o r e d. Cited 2023 Jan 28.
+73. Ministry of Finance. Ghana’s SDG Budget Baseline Report 2018. Ghana: Minis-
+try of Finance; 2018:27. Available from:  h t t p  s : /  / m o f  e p  . g o  v . g  h / s i  t e  s / d  e f a  u l t /  fi    l e 
+s / n e w s / G h a n a ' s - S D G - B u d g e t - B a s e l i n e - R e p o r t - A u g - 0 9 - 1 8 . p d f. Cited 2023 Jan 
+28.
+74. Ministry of Finance. Ghana’s 2021 SDGs Budget Report. Ghana: Ministry of 
+Finance; 2021:75. Available from:  h t t p  s : /  / m o f  e p  . g o  v . g  h / s i  t e  s / d  e f a  u l t /  fi    l e s  / r e  p 
+o r t  s /  e c o  n o m  i c / 2  0 2  1 - G h a n a - S D G - R e p o r t . p d f. Cited 2023 Jan 28.
+75. National Development Planning Commission. Ghana’s 2022 Voluntary 
+National Review Report on the Implementation of the 2030 Agenda for Sus-
+tainable Development. Ghana: National Development Planning Commission; 
+2022:168. Available from:  h t t p  s : /  / g h a  n a  . u n  . o r  g / e n  / 1  9 5 6  4 0 -  g h a n  a -  2 0 2  2 - v  o l u n  
+t a  r y -  n a t  i o n a  l -  r e v  i e w  - r e p  o r  t - i  m p l  e m e n  t a  t i o  n - 2  0 3 0 -  a g  e n d a - s u s t a i n a b l e. Cited 
+2023 Jan 28.
+76. Anaafo D. Tracking the Progress on the Localization of the SDGs: Lessons 
+for the West African Sub-region from Ghanaian Local Governments. Accra, 
+Ghana: Good Governance Africa West African Regional Office (GGA – WARO) 
+The Paragon, 3rd Floor Master Bannor Street / 9th Lane, Osu Behind the Trust 
+Hospital, Osu-Accra; 2021:91. Available from:  h t t p  s : /  / w w w  . a  f r i  c a p  o r t a  l .  o r g  / d o  
+c u m e  n t  s / 2  1 6 7  2 / L o  c a  l i z  a t i  o n - o  f -  t h e - S D G s - i n - G h a n a . p d f. Cited 2023 Jan 28.
+77. Forkuo DE. Mainstreaming Sustainable Development Goals (SDGs) into Local 
+Development Planning: A Comparative Study of Adentan and Lankwanta-
+nang- Madina Municipal Assemblies. [Master’s thesis]. [Ghana]: University of 
+Ghana; 2019. Available from:  h t t p  s : /  / u g s  p a  c e .  u g .  e d u .  g h  / b i  t s t  r e a m  / h  a n d  l e /  1 
+2 3 4  5 6  7 8 9  / 3 5  8 2 4 /  M a  i n s  t r e  a m i n  g %  2 0 S  u s t  a i n a  b l  e % 2 0 D e v e l o p m e n t % 2 0 G o a l s 
+Page 15 of 15
+Doku et al. BMC Public Health          (2026) 26:584 
+% 2 0 ( S D G S ) % 2 0 i n t o % 2 0 L o c a l % 2 0 D e v e l o p m e n t % 2 0 P l a n n i n g % 2 0 A % 2 0 C o m p 
+a r a t i v e % 2 0 S t u d y % 2 0 o f % 2 0 A d e n t a n % 2 0 a n d % 2 0 L a n k w a n t a n a n g - % 2 0 M a d i n a 
+% 2 0 M u n i c i p a l % 2 0 A s s e m b l i e s . p d f ? s e q u e n c e = 1 & i s A l l o w e d = y. Cited 2023 Jan 
+23.
+78. Civil Society Platform Ghana. Progress on the SDGS: Telling the Ghanaian 
+story through the lens of citizens . Ghana: Civil Society Platform Ghana; 
+2019:91. Available from:  h t t p  s : /  / a c t  i o  n 4 s  d . o  r g / w  p -  c o n  t e n  t / u p  l o  a d s  / 2 0  1 9 / 1  0 /  
+V N R  - S h  a d o w  - R  e p o  r t -  f r o m  - t  h e -  G h a  n a - C  S O  s - P  l a t  f o r m  - o  n - S D G s - J u n e - 2 0 1 9 . p d 
+f. Cited 2023 Jan 28.
+79. Sachs J, Kroll C, Lafortune G, Fuller G, Woelm F. Sustainable Development 
+Report 2022. 1st ed. University Printing House, Cambridge CB2 8BS, United 
+Kingdom: Cambridge University Press; 2022. Available from:  h t t p  s : /  / w w w  . c  a 
+m b  r i d  g e . o  r g  / c o  r e /  p r o d  u c  t / i  d e n  t i fi    e r  / 9 7  8 1 0  0 9 2 1  0 0  5 8 / t y p e / b o o k. Cited 2023 
+Jan 28.
+80. Ankiilu M. Is Ghana on Track to Meet the Sustainable Development Goals? 
+[Internet]. African Eye Report. 2022. Available from:  h t t p  s : /  / a f r  i c  a n e  y e r  e p o r  t .  
+c o m  / i s  - g h a  n a  - o n  - t r  a c k -  t o  - m e  e t -  t h e -  s u  s t a  i n a  b l e -  d e  v e l o p m e n t - g o a l s /. Cited 
+2023 Jan 23.
+81. International Budget Partnership. Ghana: Budget Credibility and the Sustain-
+able Development Goals - Publications. International Budget Partnership. 
+2022. Available from:  h t t p  s : /  / i n t  e r  n a t  i o n  a l b u  d g  e t .  o r g  / p u b  l i  c a t  i o n  s / g h  a n  a - b  u 
+d g  e t - c  r e  d i b  i l i  t y - a  n d  - t h  e - s  u s t a  i n  a b l e - d e v e l o p m e n t - g o a l s /. Cited 2023 Jan 23.
+82. Akologo SZ. Bringing the Sustainable Development Goals (SDGs) to Life 
+in Ghana: An assessment report on Implementation status. Ghana: Caritas 
+Ghana; 2016:54. Available from:  h t t p  s : /  / w w w  . c  a r i  t a s  - g h a  n a  . o r  g / w  p - c o  n t  e n t  / 
+u p  l o a d  s /  2 0 1  8 / 0  6 / B r  i n  g i n  g - S  D G s -  t o  - l i  f e -  i n - G  h a  n a -  A - C  a r i t  a s  - G h a n a - A s s e s s m e 
+n t - R e p o r t . p d f. Cited 2023 Jan 28.
+83. Blaboe NA. ASSESSING SDG 3: ACHIEVING UNIVERSAL HEALTH COVERAGE IN 
+GHANA [Masters thesis]. [Ghana]: University of Ghana; 2019. Available from:  h 
+t t p  s : /  / u g s  p a  c e .  u g .  e d u .  g h  / h a  n d l  e / 1 2  3 4  5 6 7 8 9 / 3 3 6 7 1. Cited 2023 Jan 28.
+84. World Economic Forum. Global life expectancy is changing around the 
+world. World Economic Forum. 2023. Available from:  h t t p s :   /  / w w  w .  w e f  o r u   m . o   
+r g  / a g  e n  d  a / 2   0 2  3  / 0  2 / c  h a  r  t e  d  - h  o w  -  l i f  e -  e x p  e c  t  a  n c  y -  i s - c h  a n g i n g  - a r o  u n d - t h e - w 
+o r l d /. Cited 2023 May 2.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.

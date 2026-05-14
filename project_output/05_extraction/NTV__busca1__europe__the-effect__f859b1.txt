@@ -1,0 +1,1693 @@
+STUDY PROTOCOL Open Access
+© The Author(s) 2025. Open Access  This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 
+International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you 
+give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the 
+licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the 
+material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or 
+exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit  h t t p  : / /  c r e a  t i  
+v e c  o m m  o n s .  o r  g / l  i c e  n s e s  / b  y - n c - n d / 4 . 0 /.
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+https://doi.org/10.1186/s12937-025-01270-x
+Nutrition Journal
+*Correspondence:
+Reza Rezvani
+Reza.Rezvani.rr@gmail.com; RezvaniR@mums.ac.ir
+Full list of author information is available at the end of the article
+Abstract
+Background Heart failure is a complex clinical syndrome characterized by structural and/or functional abnormalities 
+that impair cardiac output, leading to alterations in cardiac biomarkers, metabolic disturbances, and gut dysbiosis. 
+Lifestyle interventions, particularly dietary strategies such as time-restricted eating (TRE) and healthy diets like 
+the sustainable diet (SD), along with probiotic supplementation, have been proposed as key components in the 
+management of heart failure. Thus, the present study aims to evaluate the effects of co-administration of SD and TRE, 
+either alone or in combination with Lactobacillus plantarum 299v supplementation, compared to control group, on 
+cardiovascular function in overweight or obese patients with heart failure with reduced ejection fraction.
+Methods We will conduct a randomized, double-blind, placebo-controlled, three-arm clinical trial over 60 days. 
+Participants will be randomly assigned in a 1:1:1 ratio to one of three groups for 60 days: (A) co-administration of SD 
+and TRE with probiotic supplementation (n = 25); (B) co-administration of SD and TRE with placebo supplementation 
+(n = 25); and (C) control group with placebo supplementation (n = 25), serving as the control group. The primary 
+outcomes will be changes in N-terminal pro-B-type natriuretic peptide and left ventricular ejection fraction. 
+Secondary outcomes will include changes in fasting blood glucose, lipid profile, liver and kidney function markers, 
+anthropometric indices, arterial stiffness, electrocardiogram indices, echocardiographic indices, sleep quality, appetite, 
+energy intake, quality of life, exercise tolerance, and Zonulin and Trimethylamine N-oxide as gut-related biomarkers. 
+All outcomes of this study will be evaluated before and after the intervention.
+Discussion We hypothesize that the co-administration of SD and 10-hour TRE, either alone or in combination 
+with probiotic supplementation, will result in weight loss and improvements in metabolic, hormonal, and 
+The effect of a sustainable diet and time-
+restricted eating and probiotic in heart failure 
+with reduced ejection fraction patients: study 
+protocol for a randomized, double-blind, 
+and placebo-controlled trial
+Pegah Rahbarinejad1,2, Sara Amini3, Asma Afshari1, Seyyed Reza Sobhani4, Kayvan Sadri5, Golnaz Ranjbar1,  
+Majid Khadem Rezaiyan6, Farveh Vakilian3, Mohammad Hadi Eskandari7 and Reza Rezvani1,8*
+Page 2 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+Introduction
+Heart Failure (HF)
+ HF is a complex, life-threatening clinical syndrome char-
+acterized by structural and/or functional cardiac abnor -
+malities (inability to fill and/or pump blood) that impair 
+cardiac output, resulting in inadequate circulation at nor-
+mal physiological pressure [ 1]. The global prevalence of 
+HF is estimated to be 64.3 million people [ 2]. According 
+to the most recent guidelines [2, 3], HF is classified based 
+on left ventricular ejection fraction (LVEF) into three 
+phenotypes: reduced (HFrEF, ≤ 40%), mildly reduced 
+(HFmrEF, 41–49%), and preserved (HFpEF, ≥ 50%), 
+with HFrEF accounts for approximately half of all HF 
+cases. N-terminal pro-B-type natriuretic peptide (NT-
+proBNP) is an inactive and stable amino acid fragment 
+associated with LVEF, secreted by cardiac myocytes in 
+response to neurohormonal stimulation, transmural wall 
+stress, inflammation, and ischemia [ 3, 4]. Elevated lev -
+els of NT-proBNP indicate left ventricular remodeling, 
+which is associated with major adverse cardiovascular 
+events (MACE), reduced quality of life, an increased risk 
+of rehospitalization, and higher cardiovascular mortality 
+rates [5].
+Modified EAT-Lancet diet
+Overweight and obesity, characterized by excessive fat 
+accumulation [ 6], are common comorbidities that play 
+a critical role in the pathogenesis of HF through hemo -
+dynamic and morphological cardiac changes [ 7, 8]. Life-
+style interventions, particularly dietary modifications and 
+physical activity, are the cornerstone of any obesity man -
+agement program, especially among HF patients [ 9, 10]. 
+To date, extensive evidence has highlighted the benefits 
+of “heart-healthy” dietary patterns, such as the Mediter -
+ranean diet (Med diet), the Indo-Mediterranean diet, 
+and the Dietary Approaches to Stop Hypertension diet 
+(DASH), all of which have been consistently proven to be 
+cardioprotective [11– 19]. Additionally, diet has a signifi -
+cant influence on both human health and the well-being 
+of the planet [ 20]. The EAT-Lancet Commission pro -
+posed the EAT-Lancet universal healthy reference diet in 
+2019 as a “Sustainable Diet (SD)” , which not only prevents 
+diet-related diseases but also promotes environmental 
+sustainability [20]. The SD emphasizes the consumption 
+of whole grains, vegetables, fruits, legumes, nuts, and 
+fish, along with moderate amounts of dairy and poultry, 
+while limiting the intake of red meat, tubers and starchy 
+vegetables, processed and prepackaged foods, added fats, 
+and sugars [21]. Higher adherence to SD has been associ-
+ated with a reduced risk of HF [21].
+Time-Restricted Eating (TRE)
+In addition to dietary interventions, the timing of food 
+consumption has been found to play a promising role in 
+cardiometabolic health, independent of weight loss [ 22]. 
+Intermittent fasting (IF) is a well-tolerated eating pattern 
+involving periods of voluntary abstinence from calories, 
+alternated with periods of calorie consumption [ 22]. Fur-
+thermore, IF can promote a metabolic switch by increas -
+ing the utilization of ketone bodies (KBs) during fasting 
+in highly metabolically active organs, such as the heart 
+[23]. IF is a general term for various dietary modalities, 
+including periodic prolonged fasting (e.g., fasting for 2–7 
+days), alternate-day fasting (ADF) (fasting day alternated 
+with ad libitum consumption day), the 5:2 fasting regi -
+men (fasting for 2 days per week), religious fasting (e.g., 
+Ramadan), and TRE (which limits daily food consump -
+tion to a window of 4–12 h, followed by a fasting window 
+of 12–20 h per day) [ 22, 24]. There is still a knowledge 
+gap regarding the optimal dietary intervention for 
+improving HF. Given this, the combination of TRE with 
+distinct dietary interventions (namly, SD) may improve 
+and reverse cardiovascular events among HFrEF patients 
+who are overweight or obese.
+Gut hypothesis and Gut-Heart Axis (GHA)
+On the other hand, the “gut hypothesis” of HF proposed 
+that the microbial composition of the gut plays a crucial 
+role in the pathogenesis of HF [ 25]. Recent studies have 
+shown that dysbiosis of the gut microbiota increases the 
+production of trimethylamine-N-oxide (TMAO), a key 
+metabolite generated by the gut microbiota from dietary 
+choline, betaine, and L-carnitine [ 25, 26]. Elevated 
+TMAO levels are associated with increased NT-proBNP 
+levels, greater severity of left ventricular dysfunction, left 
+ventricular dilation, poor functional status (as defined 
+by the New York Heart Association [NYHA] classifica -
+tion), and adverse clinical outcomes among HF patients 
+echocardiographic markers in overweight and obese patients with heart failure with reduced ejection fraction 
+compared to control individuals.
+Ethical aspects The present trial received approval from the Medical Ethics Committee of Mashhad University of 
+Medical Sciences, Mashhad, Iran (IR.MUMS.REC.1402.259; approved on December 16, 2023).
+Trial registration Iranian Registry of Clinical Trials (IRCT), IRCT20231225060520N1. Registered 23 January 2024,  h t t p  s : 
+/  / i r c  t .  b e h  d a s  h t . g  o v  . i r / t r i a l / 7 4 7 4 3.
+Keywords Sustainable diet, Time-restricted eating, Probiotics, Heart failure
+Page 3 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+[27]. Modifying gut microbiota with probiotics may offer 
+a novel and promising approach for the prevention and 
+treatment of cardiac remodeling [28].
+Probiotics
+Long-term treatment with Lactobacillus helveticus (L. 
+helveticus) has been shown to effectively reduce systolic 
+and diastolic blood pressure in patients with hyperten -
+sion [ 29]. Additionally, administration of L. plantarum 
+299v ( Lp299v) improves endothelium-dependent vaso -
+dilation and reduces systemic inflammation in patients 
+with stable coronary artery disease (CAD) [ 30]. More -
+over, probiotic-fermented purple sweet potato yogurt 
+(PSPY) (containing L. acidophilus ; L. delbrueckii ; and 
+L. gasseri ) demonstrated an inhibitory effect on cardiac 
+hypertrophy in 6-week-old mice [31]. The findings of pre-
+vious studies on the effects of probiotic administration in 
+HF have been contradictory. For instance, Shoaei Matin 
+et al. reported a favorable effect of multi-strain synbiotic 
+therapy on NT-proBNP levels in HFrEF patients [ 27]. 
+Moreover, L. rhamnosus GR-1 attenuates HF in rats [ 32]. 
+However, another study found no significant difference 
+between the consumption of probiotic-enriched yogurt 
+and regular yogurt in HF patients [33].
+Rationale and aim of the study
+Probiotics have been recognized as an innovative strat -
+egy to enhance the effectiveness of dietary interventions 
+for both weight management and clinical improvements 
+[34]. It should also be noted that the selection of Lp299v 
+is based on preclinical and clinical evidence demonstrat -
+ing its gastrointestinal survival, adherence to the intesti -
+nal epithelium, contribution to gut health, and beneficial 
+effects on iron absorption, immune function, and car -
+diovascular outcomes [ 30, 32, 35, 36]. To the best of our 
+knowledge, no clinical trial has investigated the effects of 
+co-administration of SD and TRE with probiotic supple -
+mentation in HF patients with obesity or overweight. 
+Therefore, the present study aims to assess the effects 
+of co-administration of SD and TRE, either alone or in 
+combination with Lp299v supplementation, compared to 
+control group, on anthropometric indices, clinical signs, 
+echocardiographic parameters, arterial function, and bio-
+chemical markers in overweight or obese HFrEF patients. 
+In fact, in our study, the combination of diet and Lp299v 
+may synergistically exert favorable effects on nutritional 
+and inflammatory biomarkers, and clinical outcomes.
+Subjects and methods
+Study design
+This placebo-controlled, three-parallel-arm, random -
+ized, double-blind clinical trial is designed to investigate 
+the effects of co-administration of SD and TRE, either 
+alone or in combination with Lp299v supplementation, 
+compared to control group, on cardiovascular func -
+tion in patients with HFrEF. As a double-blind study, the 
+experts responsible for examining patients and measur -
+ing laboratory data will be blinded to the intervention 
+agents and group assignments. The study was approved 
+by the Medical Ethics Committee of Mashhad University 
+of Medical Sciences (IR.MUMS.REC.1402.259; approved 
+on December 16, 2023). Additionally, the study protocol 
+has been registered with the Iranian Registry of Clinical 
+Trials (IRCT20231225060520N1; registered on January 
+23, 2024). This trial will be conducted at Imam Reza Hos-
+pital, Mashhad, Iran. Written informed consent will be 
+obtained from all participants before their involvement in 
+the study. The study protocol was prepared in accordance 
+with the Standard Protocol Items: Recommendations 
+for Interventional Trials (SPIRIT) 2025 checklist (Addi -
+tional file 1). The study flow chart for enrolment, alloca -
+tion, follow up, and analysis is presented in Fig.  1. The 
+SPIRIT diagram for the trial schedule is shown in Fig.  2. 
+Any amendments to the study protocol regarding patient 
+safety, benefits, protocol deviations, or unintentional 
+modifications that do not affect participants’ rights, study 
+risk or benefit, data integrity, or overall safety and wel -
+fare will be implemented after review and approval by the 
+Department of Clinical Nutrition and the Medical Ethics 
+Committee of Mashhad University of Medical Sciences 
+(MUMS), before the study’s initiation. Any changes to 
+the study protocol will also be submitted to the Nutrition 
+Journal ( h t t p  s : /  / n u t  r i  t i o  n j .  b i o m  e d  c e n t r a l . c o m /).
+Study duration
+The follow-up period will be 60 days. The 60-day dura -
+tion is set based on evidence from prior nutritional 
+interventions in HF patients [ 37– 39], validation of NT-
+proBNP as a surrogate endpoint within this timeframe 
+[40, 41], alignment with routine clinical care, and consid -
+erations of feasibility and adherence to the intervention.
+Study setting
+Participants will be recruited from the Cardiac Outpa -
+tient Clinic at Imam Reza Hospital, affiliated with Mash -
+had University of Medical Sciences. Selection will include 
+HFrEF patients who have been previously diagnosed by 
+an expert cardiologist based on both echocardiographic 
+indices (LVEF) and the NYHA classification (II and III). 
+Patients expressing interest will be invited to undergo the 
+screening process.
+Study participants and enrollment
+Before recruitment, an experienced cardiologist spe -
+cializing in the diagnosis of HFrEF will identify eligible 
+patients based on LVEF and the NYHA functional class. 
+Following diagnosis, eligible patients with HFrEF will 
+be referred to the researcher responsible for patient 
+Page 4 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+selection and enrollment. After receiving a detailed 
+explanation of the study, patients who provide informed 
+consent and meet the inclusion criteria will be enrolled 
+in the study.
+Inclusion criteria
+The inclusion criteria are as follows: men and women 
+aged 30 to 75 years with an LVEF ≤ 40% (as diagnosed by 
+a cardiologist), who have received standard treatments 
+for HF for at least one month, are classified in NYHA 
+functional class II or III by a cardiologist, and have a BMI 
+between 25 and 35 kg/m².
+Non-entry criteria
+Patients will not be eligible if they meet any of the fol -
+lowing criteria: have experienced an acute cardiac event 
+within the last month; have an intolerance to probiotic 
+supplementation; have an active inflammatory or infec -
+tious disease at the time of enrollment; have chronic kid -
+ney disease (eGFR ≤ 30 mL/min/1.73 m²) or are receiving 
+renal replacement therapy (dialysis); have liver failure or 
+cirrhosis (Child–Pugh class C); have gastrointestinal dis -
+eases (e.g., short bowel syndrome, inflammatory bowel 
+disease) or conditions that affect probiotic absorption 
+(e.g., ileostomy); have cancer; are candidates for cardiac 
+surgery during the study period; are taking antibiotics at 
+the time of enrollment (but may be eligible if treatment is 
+stopped and the patient recovers after one month); con -
+sume fermented products or foods containing probiotics; 
+are unable to fast; are night shift workers; are drug abus -
+ers; are on a special or prescribed diet for any reason; 
+are receiving antidiabetic therapy with sulfonylureas or 
+insulin; are participating in other interventional studies; 
+are pregnant or breastfeeding; are reluctant or mentally 
+unprepared to participate in the study.
+Baseline eligibility criteria
+Participants will be eligible if they do not meet any of the 
+following criteria: have received antibiotics for at least 
+one month before the intervention; known allergy to the 
+probiotic; current use of prohibited supplements/medi -
+cations (take nutritional supplements or any medication 
+affecting weight, appetite, carbohydrate, or lipid metabo -
+lism during the study); and unstable HF therapy.
+Post-randomization discontinuation criteria
+Post-randomization discontinuation criteria will be: 
+starting antibiotics during the intervention; protocol-
+defined poor adherence (i.e., consuming less than 80% 
+of the supplements during the study period); adverse 
+reaction to the supplement; systolic blood pressure < 90 
+mmHg [42]; or disturbances in serum electrolyte levels.
+Fig. 1 Study flow chart. SD, Sustainable diet; TRE, Time-restricted eating
+ 
+Page 5 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+Fig. 2 SPIRIT diagram of the recommended content for the schedule of enrolment, intervention, and assessments. Abbreviations: NC, neck circumfer -
+ence; WC, waist circumference; HC, hip circumference; MAC, mid-arm circumference
+ 
+Page 6 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+Study interventions
+Participants will be randomly assigned to one of three 
+groups (with an allocation ratio of 1:1:1) for 60 days. The 
+study groups include: (A) co-administration of SD and 
+TRE with probiotic supplementation; (B) co-administra -
+tion of SD and TRE with placebo supplementation; and 
+(C) a control group with placebo supplementation as the 
+control. In this study, a 14:10 TRE regimen will be imple -
+mented, with a 14-hour fasting window followed by a 
+10-hour eating window. During the eating window, par -
+ticipants will be instructed to follow the SD diet, which 
+will be tailored to each individual by a dietitian. Partici -
+pants will select one of the following time ranges for their 
+eating period: [ 1] from 9:00 AM to 7:00 PM daily; [ 2] 
+from 10:00 AM to 8:00 PM daily; or [ 3] from 11:00 AM 
+to 9:00 PM daily. The fasting period will be from 7:00 PM 
+to 9:00 AM the following day, from 8:00 PM to 10:00 AM, 
+or from 9:00 PM to 11:00 AM, respectively. During the 
+14-hour fasting period, participants will only be allowed 
+to drink water, tea, black coffee (without sugar or milk), 
+or any other calorie-free beverage.
+SD will be designed based on the EAT-Lancet diet, as 
+follows;
+(1) Definition of EAT-Lancet diet
+ Food systems have the potential to promote human 
+health and support environmental sustainability; 
+however, they are currently threatening both. 
+With the growing global population, providing 
+healthy diets through sustainable food systems is 
+increasingly challenging. Over 820 million people 
+suffer from food insufficiency, and many others 
+adopt unhealthy eating patterns that contribute 
+to diet-related obesity and non-communicable 
+diseases (NCDs), such as diabetes, stroke, HF, and 
+premature death. Given the above, the global burden 
+of NCDs is expected to worsen. At the same time, 
+the environmental impact of food production—on 
+greenhouse gas emissions (GHGE), nitrogen and 
+phosphorus pollution, biodiversity loss, and water 
+and land use—will further destabilize the Earth’s 
+system [20].
+ To ensure alignment with the UN Sustainable 
+Development Goals (SDGs) and the Paris 
+Agreement, the EAT-Lancet Commission convened 
+19 commissioners and 18 coauthors from 16 
+countries in 2019, representing diverse fields such 
+as human health, agriculture, political science, 
+and environmental sustainability. The goal was to 
+develop global scientific targets based on the best 
+available evidence for healthy diets and sustainable 
+food production. The proposed reference diet 
+primarily consists of vegetables, fruits, whole grains, 
+legumes, nuts, and unsaturated oils, with a moderate 
+amount of seafood and poultry, and minimal to 
+no red meat, processed meat, added sugar, refined 
+grains, and starchy vegetables. The global average 
+intake of healthy foods is substantially lower than 
+the reference diet, while overconsumption of 
+unhealthy foods continues to rise. The widespread 
+adoption of the reference dietary pattern would yield 
+significant health benefits, including a substantial 
+reduction in total mortality. Moreover, achieving 
+healthy diets through sustainable food systems for 
+all will require substantial shifts towards healthier 
+dietary patterns, significant reductions in food 
+losses and waste, and major improvements in food 
+production practices [20].
+(2) Definition of EAT-Lancet diet index
+ The food components in the EAT-Lancet diet index 
+[43] are based on the EAT-Lancet diet introduced 
+by Willett et al. in 2019 [20]. The index was 
+previously validated by Stubbendorff et al., based 
+on its association with mortality [43]. The food 
+components of the EAT-Lancet diet are categorized 
+as either “emphasized foods” or “limited foods, ” 
+as described in previous accounts of the diet [20, 
+43]. Emphasized foods include vegetables, fruits, 
+unsaturated oils, legumes, whole grains, nuts, and 
+fish. Limited foods consist of beef and lamb, pork, 
+poultry, eggs, dairy, potatoes, and added sugar [20, 
+43]. Table 1 provides detailed information about the 
+14 components of the EAT-Lancet diet.
+(3) Calculation of energy and macronutrient 
+distribution
+ First, the basal metabolic rate (BMR) of each patient 
+will be calculated individually using the Mifflin-St 
+Jeor equation as follows:
+ 
+BM R f or men (kcal/day)
+= 10 × weight(kg)+6 .25× height(cm)
+− 5 × age(year)+5
+ 
+BM R f or women (kcal/day)
+= 10 × weight(kg)+6 .25× height(cm)
+− 5 × age(year)− 161
+ Second, the total energy expenditure (TEE) for each 
+individual will be calculated based on their physical 
+activity level (PAL) and the thermic effect of food 
+(TEF). TEF typically accounts for 10% of TEE.
+Physical Activity Level (PAL) is categorized into different 
+levels based on daily activity intensity:
+  • Sedentary (1.2): Little to no physical activity
+  • Lightly active (1.375): Light exercise or sports 1–3 
+days per week
+Page 7 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+  • Moderately active (1.55): Moderate exercise or 
+sports 3–5 days per week
+  • Very active (1.725): Hard exercise or sports 6–7 
+days per week
+  • Super active (1.9): Very intense exercise, physical 
+job, or training twice a day
+ TEE (kcal/day)= BMR × P AL × TEF
+ Third, this daily caloric requirement will be 
+divided into seven meals, including three main 
+meals and four snacks, with a macronutrient ratio 
+of 50% carbohydrates, 35% fat, and 15% protein. 
+Additionally, these meals will adhere to the EAT-
+Lancet diet index. A dietitian will carry out all of the 
+above-mentioned steps.
+(4) Food intake conversion
+ In the study by Stubbendorff et al., the 14 food 
+components in the EAT-Lancet index are presented 
+in grams per day [43]. Target and reference values 
+from the EAT-Lancet diet were presented based on 
+an energy intake of 2500 kcal, expressed in grams. 
+For lower calorie levels, we will calculate the ratio. 
+For instance, in the SD with 2000 kcal, we will divide 
+2000 by 2500 to obtain the ratio of 2000 kcal SD 
+to 2500 kcal SD. This ratio will then be multiplied 
+by the target grams for each food component in 
+the 2500 kcal EAT-Lancet diet. Finally, based on 
+the calculated grams, the 2000 kcal EAT-Lancet 
+diet will be prepared. For other calorie levels, the 
+steps mentioned above will be applied. Since pork 
+is forbidden in Iran based on Islamic religious 
+teachings, it has been replaced with lean red meat 
+in the design of a SD. Furthermore, in this study, we 
+use the term “SD” as a substitute for the EAT-Lancet 
+diet, with both terms being equivalent. Table 2 
+presents detailed information about the SD.
+(5) Preparing the individualized food menu and 
+providing detailed explanations to participants
+ Iranian dietary preferences will be taken into 
+account when preparing individualized food menus 
+based on the SD. Additionally, to develop a SD 
+menu, we will incorporate multicultural dietary 
+models, including the Indo-Mediterranean and 
+HEART diets, both of which are rich in antioxidant 
+components [14– 17]. Individualized menus will 
+be designed based on these principles, and the 
+intervention will be implemented using a culturally 
+adapted EAT-Lancet framework (modified EAT-
+Lancet Diet). Additionally, in designing the SD diet, 
+we pay particular attention to biodiversity, namely 
+both inter- and intra-food group diversity, in terms 
+of the variety of plant and animal species.
+ In the SD menu, whole grains will be emphasized 
+(e.g., incorporating 50% wheat porridge into 
+wheat flour for bread preparation), while refined 
+grains will be completely excluded. To reduce the 
+glycemic index, the addition of bran to rice prior 
+to consumption will be considered, along with 
+planning combinations of rice with different types of 
+legumes. These measures are in line with reducing 
+the glycemic index, improving biodiversity, and 
+lowering carbon emissions. Moreover, to ensure 
+palatability, commonly used spices in Iranian cuisine 
+will be recommended for incorporation into main 
+meals.
+Table 1 Criteria for the EAT-Lancet index
+Food component in EAT-Lancet diet index1 Target intake Reference interval2 3 points 2 points 1 point 0 points
+Emphasized intake
+Vegetables 300 200–600 > 300 200–300 100–200 < 100
+Fruits 200 100–300 > 200 100–200 50–100 < 50
+Unsaturated oils 40 20–80 > 40 20–40 10–20 < 10
+Legumes 75 0–150 > 75 37.5–75 18.75–37.5 < 18.75
+Nuts 50 0–100 > 50 25–50 12.5–25 < 12.5
+Whole grains 232 > 232 116–233 58–116 < 58
+Fish 28 0–100 > 28 14–28 −714 < 7
+Limited intake
+Beef and lamb 7 0–14 < 7 7–14 14–28 > 28
+Pork 7 0–14 < 7 7–14 14–28 > 28
+Poultry 29 0–58 < 29 29–58 58–116 > 116
+Eggs 13 0–25 < 13 13–25 25–50 > 50
+Dairy 250 0–500 < 250 250–500 500–1000 > 1000
+Potatoes 50 0–100 < 50 50–100 100–200 > 200
+Added sugar 31 0–31 < 31 31–62 62–124 > 124
+This table was adapted from “Development of an EAT-Lancet index and its relation to mortality in a Swedish population”
+1Food components in the index are based on the EAT-Lancet diet as grams per day
+2Target and reference values from the EAT-Lancet diet, based on an energy intake of 2500 kcal, expressed in grams
+Page 8 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+ The energy and nutrient content of food items will 
+be analyzed using the Iranian Food Composition 
+Table (FCT). USDA FCT may be used only in 
+case of those foods, for which Iranian data is not 
+available.
+ After preparing the individualized food menu, the 
+researcher will provide a thorough explanation 
+to the participants to ensure understanding and 
+maximize adherence to the dietary intervention. 
+Additionally, to enhance flexibility, cultural 
+acceptability, and adherence to the dietary plan, 
+twelve characteristics of a healthy diet will be 
+emphasized.
+Randomization and blinding
+Randomization will be performed before participant allo-
+cation. A stratified permuted block randomization (with 
+a fixed block size of n = 4) will be conducted using com -
+puter-generated random numbers by the study method -
+ologist through the online website  (   h t t p : / / w w w . s e a l d e n v e 
+l o p e . c o m     ) . In this method, eligible participants who meet 
+the study inclusion criteria will be randomly allocated 
+to one of three groups, with stratification by BMI (25–
+30  kg/m² and 30–35  kg/m²): SD + TRE with a probiotic 
+supplement, SD + TRE with a placebo, and control group 
+with a placebo. Random allocation will be based on a ran-
+dom number list, with the letters A, B, and C assigned to 
+an equal number of participants in the list (the allocation 
+ratio is 1:1:1 for groups A, B, and C).
+In this study, for the first time in Iran, we will innovate 
+by producing a specific probiotic, Lp299v, for HF patients 
+with a therapeutic dose of 1.4 × 10¹⁰ colony-forming units 
+(CFU) per capsule. Both placebo and probiotic supple -
+ments will be produced by Pardis Roshd Company (Shi -
+raz, Iran). The packages of the capsules and the capsules 
+will be identical in terms of color, flavor, and taste to 
+conceal the intervention and placebo groups. The pack -
+ages will then be placed in pharmaceutical polyethylene 
+bottles and assigned a special code. The codes for both 
+placebo and probiotic supplements will be retained by 
+the company until the end of the study, ensuring blind -
+ing for researchers, laboratory staff, outcome assessors, 
+and patients. However, no blinding will be implemented 
+Table 2 Food component of SD and conversion of 2500Kcal SD to 2000 Kcal SD
+Calculation of Energy (based on Mifflin-St Jeor) and scaling factor: 
+BM R f or men (kcal/day) = 10 × weight(kg)+6 .25 × height(cm) − 5 × age (year)+5
+BM R f or women (kcal/day) = 10 × weight(kg)+6 .25 × height(cm) − 5 × age (year) − 161
+T EE (kcal/day)= BMR × P AL × T EF
+Scaling f actor = T EE / 2500
+Food component 
+of SD 1
+2500 Kcal Conversion of 2500 
+Kcal to 2000 Kcal 3
+2000 Kcal
+Target intake Reference 
+interval 2
+Target intake Reference 
+interval
+Emphasized intake Scaling factor = 0.8
+Vegetables (g) 300 200–600 300 (g) × 0.8 = 240 (g) 240 160–480
+Fruits (g) 200 100–300 200 (g) × 0.8 = 160 (g) 160 80–240
+Unsaturated oils (g) 40 20–80 40 (g) × 0.8 = 32 (g) 32 16–64
+Legumes (g) 75 0–150 75 (g) × 0.8 = 60 (g) 60 0–120
+Nuts (g) 50 0–100 50 (g) × 0.8 = 40 (g) 40 0–80
+Whole grains (g) 232 232 (g) × 0.8 = 186 (g) 186
+Fish (g) 28 0–100 28 (g) × 0.8 = 22.4 (g) 22.4 0–80
+Limited intake
+Beef and lamb (g)2 14 0–28 14 (g) × 0.8 = 11.2 (g) 11.2 0–22.4.4
+Processed/pre-
+served meat
+0 0 0 (g) × 0.8 = 0 (g) 0 0
+Poultry (g) 29 0–58 29 (g) × 0.8 = 23.3 (g) 23.3 0–46.4.4
+Eggs (g) 13 0–25 13 (g) × 0.8 = 10.4 (g) 10.4 0–20
+Dairy (g) 250 0–500 250 (g) × 0.8 = 200 (g) 200 0–400
+Potatoes (g) 50 0–100 50 (g) × 0.8 = 40 (g) 40 0–80
+Added sugar (g) 31 0–31 31 (g) × 0.8 = 24.8 (g) 24.8 0–24.8.8
+Abbreviations : BMR Basal metabolic rate, TEE Total energy expenditure, PAL Physical activity level, TEF Thermic effect of food
+1Food component of SD presented as gram per day based on Malmö Diet and Cancer Study
+2Since Iranians, due to being Muslim, consider pork forbidden based on Islamic religious teachings, in the design of a sustainable diet, pork has been replaced with 
+lean red meat
+3To convert the 2500 Kcal EAT-Lancet diet to other calorie levels (e.g., 1800 kcal, 2000 kcal, 3000 kcal), we need to scale the recommended food groups proportionally. 
+The EAT-Lancet diet provides target intake levels for different food groups, and adjusting them based on a new calorie intake requires maintaining the same 
+macronutrient and food group distribution [For example, 2000 divided by 2500 equals 0.8 (scaling factor)
+Page 9 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+concerning the dietary intervention (SD + TRE or control 
+group). We do not anticipate the need for unblinding; 
+however, if necessary, the trial manager, data coordina -
+tor, and implementation support facilitators will have 
+access to group allocations, and any unblinding will be 
+documented.
+Supplement administration
+During the study period, participants will take two pro -
+biotic or placebo supplement capsules daily—one an 
+hour after breakfast and the other two hours after dinner, 
+accompanied by a glass of water. Each probiotic capsule 
+contains 1.4 × 10¹⁰ CFU of Lactobacillus plantarum 299v 
+(Lp299v), along with Avicel®, magnesium stearate, and 
+colloidal silica. The placebo capsule contains croscarmel-
+lose, Avicel®, mannitol, colloidal silica, and flavoring, but 
+no probiotic.
+Probiotic selection rationale
+Among the diverse probiotic genera commonly utilized 
+in dietary supplements and functional foods, Lactoba-
+cillus represents one of the most extensively studied 
+and clinically relevant groups. For instance, a preclinical 
+study demonstrated that administration of L. rhamnosus 
+GR-1 attenuates myocardial hypertrophy and HF fol -
+lowing myocardial infarction, suggesting that probiotics 
+may hold promise as a potential therapeutic strategy for 
+improving HF (probiotic-mediated cardiac improvement) 
+[32]. While several species are adapted to specific eco -
+logical niches, L. plantarum  is widely distributed across 
+dairy products, meat, fermented foods, and vegetables. 
+The strain Lp299v is recognized as safe and has been 
+applied in both food and pharmaceutical contexts, with 
+reported health benefits in a range of conditions, includ -
+ing neurodegenerative and metabolic disorders, cancer, 
+urogenital and hepatic diseases, anemia, and hyperten -
+sion [35, 36].
+Given the broad cardiovascular therapeutic potential 
+of probiotics [ 35], it is important to elucidate the strain-
+specific benefits and characteristics of Lp299v in the 
+context of HFrEF. However, evidence-based guidance 
+regarding the optimal strain and dosage of probiotic sup -
+plementation in patients with HFrEF is currently lack -
+ing. Therefore, we selected this specific strain of Lp299v 
+and its dosing regimen based on previously mentioned 
+studies [32, 35, 36] and also the study that demonstrated 
+the favorable impact of Lp299v supplementation on 
+improved vascular endothelial function, reduced circu -
+lating levels of interleukins 8 and 12, and increased pro -
+pionic acid production among men with stable coronary 
+artery disease (CAD) [30].
+Adherence to the intervention
+All participants will receive weekly telephone calls and be 
+scheduled for monthly meetings with the research team 
+during the intervention. These calls and meetings will 
+ensure comprehension of the recommendations, encour -
+age adherence, and remind participants of the study 
+protocol. Furthermore, all participants (intervention 
+groups) will receive detailed written and oral instruc -
+tions for the interventions. Participants in the SD + TRE 
+with probiotic supplementation group and the SD + TRE 
+with placebo group will receive a diet plan for each meal 
+and snack tailored to their daily energy requirements. 
+Participants in the control group does not receive, nor 
+have reemphasis on, verbal advice regarding food intake, 
+in order to allow measurable differences in adherence 
+between the intervention and control groups. Monitoring 
+and follow-up procedures will be consistent among all 
+participants, regardless of group allocation.
+As mentioned above, there are no differences between 
+patients in each intervention group or the control group 
+in terms of monitoring and follow-up. All participants 
+will be provided with the researcher’s contact number 
+and encouraged to reach out with any questions. Simi -
+larly, the researcher will contact participants to assess 
+compliance with the personalized diet (intervention 
+groups), track the consumption of intervention capsules 
+(all groups), through phone conversations.
+Participants will receive standardized daily remind -
+ers through instant messages, clearly indicating the pre -
+scribed start and end times of their eating window (SD 
++ TRE with probiotic supplementation group and SD + 
+TRE with placebo group). To ensure adherence, dietary 
+monitoring will be carried out through structured daily 
+interactions between the researcher and each participant, 
+primarily conducted via scheduled telephone calls. These 
+interactions will allow the researcher to provide guid -
+ance, address potential challenges, and verify compliance 
+with the dietary protocol. Participants will be considered 
+non-compliant if they miss more than two consecutive 
+phone sessions, consume ≥ 3 inappropriate meals (e.g., 
+consumption of fast foods, simple sugars exceeding the 
+recommended allowance in the prescribed diet, animal 
+fats/saturated fats, organ meats, processed meat prod -
+ucts, or bread made from refined white flour), or fail to 
+follow the respective diet instructions ≥ 3 times a week 
+for more than two consecutive weeks. Participants dem -
+onstrated a high compliance rate (> 90%), defined as con-
+sumption of more than 85% of the prescribed menu [ 44, 
+45]. A 3-day, 24-hour dietary recall will be collected from 
+participants on days 0, 30, and 60 to confirm compliance, 
+too.
+Furthermore, capsule count will be done in the con -
+tainers supplied to patients, during each visit to find out 
+the adherence of probiotics.
+Page 10 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+Outcomes
+Primary outcomes
+The primary outcomes of this study will be the mea -
+surement of NT-proBNP and LVEF. NT-proBNP 
+concentrations will be determined using an electro -
+chemiluminescence immunoassay (Elecsys® proBNP 
+II, Roche Diagnostics). The ECLIA method will be per -
+formed on the automated cobas e 411 immunoassay ana -
+lyzer. A predefined acceptable coefficient of variation 
+(CV) of < 5% will be applied to ensure the precision of the 
+assay.
+Secondary outcomes
+  – Cardiometabolic biomarkers will include complete 
+blood count (CBC), fasting blood glucose (FBS), 
+lipid profile (total cholesterol [TC], low-density 
+lipoprotein cholesterol [LDL-c], high-density 
+lipoprotein cholesterol [HDL-c], and triglycerides 
+[TG]), liver function markers (aspartate 
+aminotransferase [AST], alanine aminotransferase 
+[ALT], bilirubin total, bilirubin direct, and alkaline 
+phosphatase [ALP]), kidney function markers 
+(creatinine [Cr], and urea), uric acid, sodium (Na), 
+potassium (K), albumin (Alb), zonulin, TMAO, and 
+cardiac troponin.
+  – Anthropometric indices will encompass weight 
+(W), height (H), body mass index (BMI), waist 
+circumference (WC), hip circumference (HC), waist-
+to-hip ratio (WHR), neck circumference (NC), body 
+shape index (ABSI), mid-arm circumference (MAC), 
+fat-free mass (FFM), fat mass (FM), and body water 
+(BW).
+  – Arterial and additional echocardiographic indices 
+will contain arterial stiffness (pulse wave velocity 
+[PWV], augmentation index [AI], brachial systolic 
+pressure [BSP], brachial diastolic pressure [BDP], 
+brachial pulse pressure [BPP], aortic systolic pressure 
+[ASP], aortic diastolic pressure [ADP], aortic 
+pulse pressure [APP], aortic augmented pressure 
+[AAP], heart rate [HR], systolic blood pressure 
+[SBP], and diastolic blood pressure [DBP]), and 
+echocardiographic indices (left ventricular end-
+diastolic volume [LVEDV], left ventricular end-
+systolic volume [LVESV], diastolic dysfunction [DD], 
+and the ratio of early diastolic mitral inflow velocity 
+to early diastolic mitral annulus velocity [E/e’ ratio]).
+  – Functional and patient-reported outcomes will 
+incorporate sleep quality, appetite, energy intake, 
+quality of life, DASS-21, and exercise tolerance 
+(measured via the 2-minute step test).
+All of the above outcomes will be evaluated both before 
+and after the intervention. Furthermore, endpoint 
+collection will be conducted by third-party assessors who 
+are blinded to group allocation.
+Cardiac troponin, FBS, lipid profiles, creatinine, echo -
+cardiographic indices, and body weight will be prespeci -
+fied as key secondary outcomes. Additionally, zonulin 
+and TMAO will be assessed as exploratory endpoints.
+Measurements and assessments
+Demographic characteristics Demographic charac -
+teristics of patients, including age, level of education, 
+occupation, marital status, duration of disease diagnosis, 
+sleep time (time to sleep and time to wake up), alcohol 
+consumption, smoking history, use of nutritional supple -
+ments, use of herbal medicines, and history of various dis-
+eases, will be collected at baseline using a checklist during 
+an interview.
+Nutritional assessment To assess food intake, a 3-day, 
+24-hour dietary recall (including two working days and 
+one weekend day) will be obtained through an interview 
+with a trained nutritionist. Participants will be asked to 
+accurately describe their consumption of food, alcoholic, 
+and non-alcoholic beverages over the previous three days 
+(two working days and one weekend day). The interviewer 
+will inquire about meal times, types, and serving sizes 
+of food, as well as the ingredients of the consumed food 
+items. Additionally, dietitians would use food measures, 
+food portions and food models to assess food intakes. The 
+24-hour dietary recall for the first day will be completed 
+during the first visit, and the trained nutritionist will con-
+duct the second and third recalls via phone. The 24-hour 
+dietary recalls will be collected on a monthly basis. After 
+each recall, the dietary data will be reviewed by a nutrition 
+expert. Dietary intake will be analyzed using Nutritionist 
+IV software (First Databank, San Bruno, CA, USA), modi-
+fied for Iranian foods.
+Physical activity assessment We will assess physical 
+activity using the long-form International Physical Activ -
+ity Questionnaire (IPAQ) through face-to-face inter -
+views. The validity and reliability of the IPAQ have been 
+previously established in the Iranian population [ 46]. The 
+IPAQ evaluates habitual physical activity (PA) over the 
+past seven days and consists of 27 items across four PA 
+domains: occupational (7 items), transportation (6 items), 
+household/gardening (6 items), and leisure-time activities 
+(6 items). Additionally, it includes two questions about 
+the time spent sitting, serving as an indicator of seden -
+tary behavior. The questionnaire records the number of 
+days per week and the duration per day spent walking, 
+as well as engaging in moderate- and vigorous-intensity 
+activities across all four domains. To improve accuracy, 
+culturally relevant examples of moderate- and vigorous-
+Page 11 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+intensity activities are provided. IPAQ data are converted 
+into metabolic equivalent (MET) scores (MET-min/
+week) by multiplying the time spent on each activity by 
+its corresponding MET value. One MET represents the 
+energy expenditure at rest, approximately 3.5 ml O₂/kg/
+min in adults. Based on the IPAQ scoring system, physi -
+cal activity levels are categorized into three groups: inac -
+tive, minimally active, and health-enhancing physically 
+active. Additionally, sufficient vigorous activity is defined 
+as engaging in vigorous-intensity exercise for at least 20 
+min per day on three or more days per week. Similarly, 
+sufficient moderate and walking activities are defined as 
+performing moderate-intensity exercise or walking for at 
+least 30 min per day on five or more days per week [47].
+Quality of life assessment In the present study, we will 
+use the reliable and validated Minnesota Living with 
+Heart Failure Questionnaire (MLHFQ) to assess how HF 
+impacts various aspects of a patient’s life [48]. This ques-
+tionnaire focuses on six domains: signs and symptoms, 
+social well-being, physical activity, sexual health, work, 
+and emotional well-being. The MLHFQ is a self-report 
+instrument that employs a Likert-type response scale, 
+allowing respondents to indicate the level of agreement or 
+impact they experience. The scale ranges from 0 (indicat-
+ing no effect on quality of life) to 5 (indicating the highest 
+level of influence on quality of life). In this context, higher 
+scores indicate poorer quality of life, suggesting that the 
+individual is experiencing significant challenges related to 
+their health condition.
+Appetite assessment Appetite will be assessed using 
+the original version of the Council on Nutrition Appe -
+tite Questionnaire (CNAQ), developed by Wilson et al. 
+[49]. This questionnaire demonstrates strong psycho -
+metric properties and is suitable for measuring appetite 
+in patients with HF [50]. The CNAQ includes eight items 
+that evaluate different aspects of appetite: general appe -
+tite (item 1), satiety (item 2), hunger (item 3), taste per -
+ception (items 4 and 5), quantity of food intake (item 6), 
+nausea (item 7), and mood (item 8). Each item is rated 
+on a five-point Likert scale [ 1– 5], with total scores rang -
+ing from 8 to 40. Lower scores indicate reduced appetite, 
+and a CNAQ score of ≤ 28 suggests poor appetite and an 
+increased risk of significant weight loss over six months. A 
+shorter version of the questionnaire, the Simplified Nutri-
+tional Appetite Questionnaire (SNAQ), includes four 
+items from the CNAQ (items 1, 2, 4, and 6) and yields a 
+total score ranging from 4 to 20. A SNAQ score of ≤ 14 
+also indicates poor appetite and a risk of notable weight 
+loss within six months [ 49]. Both the CNAQ and SNAQ 
+will be used in the present study.
+Depression, anxiety, and stress assessment The DASS-
+21 (Depression, Anxiety, and Stress Scale) questionnaire 
+[51] will be used to quickly detect potential risks related 
+to the severity of core symptoms of depression, anxiety, 
+and stress. The questionnaire consists of 21 items and is 
+a shortened version of the DASS-42. Each scale measures 
+specific characteristics, as outlined below:
+  • The depression scale evaluates emotional and 
+cognitive symptoms such as dysphoria, anhedonia, 
+hopelessness, self-deprecation, a lack of interest 
+or engagement in life, and an overall sense of life 
+devaluation.
+  • The anxiety scale assesses signs of autonomic 
+arousal, situational anxiety, and subjective 
+experiences of anxiousness.
+  • The stress scale evaluates symptoms of chronic, 
+non-specific arousal, including difficulty relaxing, 
+heightened nervous tension, and tendencies to 
+become easily upset, irritable, overreactive, or 
+impatient.
+Each item is rated on a 4-point Likert scale, reflecting the 
+extent to which the statement applied to the respondent 
+over the past week:
+  • 0 = Did not apply to me at all (never).
+  • 1 = Applied to me to some degree or some of the 
+time (sometimes).
+  • 2 = Applied to me to a considerable degree or a good 
+part of the time (often).
+  • 3 = Applied to me very much or most of the time 
+(almost always).
+Each of the three DASS-21 scales contains seven items, 
+which are divided into subscales with similar content. 
+Scores for depression, anxiety, and stress are calculated 
+by summing the scores of the relevant items:
+  • D (depression), including: 3, 5, 10, 13, 16, 17, and 21.
+  • A (anxiety), including: 2, 4, 7, 9, 15, 19, and 20.
+  • S (stress), including: 1, 6, 8, 11, 12, 14, and 18.
+To calculate the final score, each DASS-21 subscale 
+score must be multiplied by 2. The resulting scores for 
+depression, anxiety, and stress are then categorized into 
+five severity levels: normal, mild, moderate, severe, and 
+extremely severe, as follows:
+  • “Normal” is defined as D: 0–9, A: 0–7, S: 0–14.
+  • “Mild” severity is defined as D: 10–13, A: 8–9, S: 
+15–18.
+  • “Moderate” severity is defined as D: 14–20, A: 10–14, 
+S: 19–25.
+Page 12 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+  • “Severe” is defined as D: 21–27, A: 15–19, S: 26–33.
+  • “Extremely severe” is defined as D: 28+, A: 20+, S: 
+34+.
+Sleep quality assessment Sleep disturbance will be 
+assessed using the reliable and validated Pittsburgh Sleep 
+Quality Index (PSQI), developed by Buysse et al. in 1989 
+[52]. The questionnaire comprises 18 items that contrib -
+ute to the scoring of seven components: subjective sleep 
+quality, sleep latency, sleep duration, habitual sleep effi -
+ciency, sleep disturbances, use of sleep medication, and 
+daytime dysfunction. The total PSQI score ranges from 0 
+to 21, with higher scores indicating poorer sleep quality. 
+A score of ≤ 5 reflects good sleep quality, whereas a score 
+> 5 denotes poor sleep quality.
+Anthropometric assessment The body weight of the 
+participants will be assessed using a bioelectrical imped -
+ance analyzer (BIA; InBody 770; Smitch Pte Ltd; USA) to 
+the nearest 100 g while wearing light clothing and stand -
+ing barefoot. Height will be measured with a stadiometer 
+to the nearest 0.5 cm, with the subject standing barefoot 
+and with shoulders in normal alignment. BMI will be cal -
+culated as weight (in kilograms) divided by the square of 
+height (in meters). Waist, hip, and neck, as well as mid-
+arm circumference (MAC), will be measured to the near -
+est 0.5  cm using a measuring tape, over light clothing, 
+without applying pressure. The body shape index (ABSI) 
+will be calculated as follows: (WC)/(BMI²/³ × Height¹/²).
+Body composition assessment Body fat mass (FM) and 
+fat-free mass (FFM) will be measured using a bioelectri -
+cal impedance analyzer (BIA; InBody 770; Smitch Pte Ltd; 
+USA). During measurement, participants will remove 
+their shoes and socks, wear light clothing, and stand with 
+the soles of their feet in contact with the foot electrodes 
+while holding the hand electrodes in their bare hands.
+Clinical assessment
+NYHA classification  In the present study, the NYHA 
+classification will be assessed at baseline and after the 
+60-day intervention by a cardiologist. The cardiologist 
+assigns participants to one of four functional classes, 
+ranging from no physical limitation during activity (class 
+I) to symptoms present at rest (class IV). Participants with 
+an NYHA classification of class II or III at the study’s start 
+will be included.
+Edema The cardiologist will assess edema using the pit -
+ting test, which involves gently pressing a finger on the 
+medial malleolus, the bony portion of the tibia, and the 
+dorsum of the foot for 5 to 15 s. After releasing the pres -
+sure, a dimple (pit) will appear in the skin, indicating the 
+presence and extent of edema. The edema grading scale 
+measures the rebound after the pitting test and is as fol -
+lows: Grade 1: immediate rebound with a 2 mm pit (+ 1); 
+Grade 2: rebound in less than 15 s with a 3 to 4 mm pit 
+(+ 2); Grade 3: rebound greater than 15 s but less than 60 s 
+with a 5 to 6 mm pit (+ 3); and Grade 4: rebound between 
+2 and 3 min with an 8 mm pit (+ 4).
+Concomitant HF medication documentation
+HF medications will be recorded in detail at baseline as 
+concomitant medications, and any changes (including 
+dosage reduction or removal of drugs) during the trial 
+will be documented. Reduction or discontinuation of 
+medication due to the intervention will be considered a 
+marker of its efficacy. Additionally, we focus adherence 
+monitoring on the probiotic/placebo and dietary inter -
+vention, not on routine medical therapy.
+Biochemical assessment
+For biochemical assessment, 10 mL of venous blood will 
+be drawn after 11–13 h of overnight fasting and trans -
+ferred to the research laboratory for analysis. The serum 
+will be separated from the blood samples by centrifu -
+gation at 3500 rpm for 10 min at 25 °C, then moved to 
+sterile microtubes and stored at − 20 °C until analysis. 
+The following parameters will be measured: CBC, FBS, 
+TC, LDL-c, HDL-c, TG, AST, ALT, UA, Cr, BUN, Na, K, 
+Alb, total and direct bilirubin (Bili D, T), ALP , and NT-
+proBNP . Any remaining samples will be stored at − 80 °C 
+for future use at Mashhad University of Medical Sciences.
+Arterial stiffness assessment
+An ultrasound evaluation of the carotid artery will be 
+performed in the supine position, with the head turned 
+45° away from the side being scanned. Pulse wave veloc -
+ity (PWV) and blood pressure measurements will be con-
+ducted using the Sphygmocor XCEL device on the right 
+side of each participant. Blood pressure will be measured 
+after at least 15 min of rest on the right upper arm. Addi -
+tionally, the augmentation index (AIx), central blood 
+pressure (cBP), and heart rate (HR) will be measured 
+according to the manufacturer’s guidelines for pulse wave 
+analysis. Since AIx is inherently dependent on heart rate, 
+the AIx75, which standardizes AIx to a heart rate of 75 
+beats per minute, will also be used. Furthermore, arterial 
+stiffness will be assessed using a tonometer at the femo -
+ral and carotid arteries to calculate carotid-femoral PWV. 
+PWV will be examined using electrocardiogram-gated 
+left carotid and radial waveforms (applanation tonom -
+etry) measured sequentially with the stepwise method. 
+The travel distance of the pulse wave will be calculated 
+as the distance from the suprasternal notch to the femo -
+ral artery and from the suprasternal notch to the carotid 
+artery, using a flexible tape measure. Measurements will 
+be performed at least twice, and the mean PWV will be 
+Page 13 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+used in the analysis. PWV will be measured at baseline 
+and the end of the intervention.
+Electrocardiogram (ECG)
+All ECGs will be performed in accordance with the stan -
+dard operating procedure. In brief, patients will be in a 
+resting, supine position for at least 5 min before the 
+ECG is recorded, with the electrodes placed in the stan -
+dard anatomical positions. During the measurements, 
+patients will be instructed to remain still and relaxed. The 
+recorded 12-lead ECGs will be analyzed using a medical 
+ECONET device. The PR interval will be measured as the 
+time from the beginning of the P wave to the beginning 
+of the QRS complex; the QT interval will be calculated 
+from the beginning of the QRS complex to the end of the 
+T wave; and the Tp-e interval will be measured from the 
+peak to the end of the T wave. The QTc interval will be 
+calculated using Bazett’s formula [QTc = QT/√(RR inter -
+val)]. P wave dispersion will be calculated as the abso -
+lute difference between the maximum and minimum P 
+wave durations, QT dispersion as the absolute difference 
+between the maximum and minimum QT intervals, and 
+T wave dispersion as the absolute difference between the 
+maximum and minimum T wave durations. The frontal 
+QRS-T angle will be calculated as the absolute difference 
+between the QRS axis (ventricular depolarization) and T 
+axis (ventricular repolarization). If the result is greater 
+than 180°, it will be corrected by subtracting it from 360°. 
+Additionally, the QRS duration will be measured.
+Echocardiography assessment
+Echocardiography will be performed to evaluate the 
+mechanisms related to standard cardiac structure and 
+function assessment. Transthoracic cardiac ultrasound 
+will be conducted using a Samsung Medison SonoAce 
+R7 Ultrasound Machine. A single expert cardiologist 
+will be blinded to intervention/control groups and per -
+form all measurements, and all images will be analyzed 
+by one operator who is blinded to the groups, too. The 
+parameters to be measured include: LVEF, left ventricu -
+lar end-diastolic volume (LVEDV), left ventricular end-
+systolic volume (LVESV), diastolic dysfunction (DD), and 
+the ratio of early diastolic mitral inflow velocity to early 
+diastolic mitral annulus velocity (E/e’ ratio), as a marker 
+of left ventricular diastolic pressure.
+Exercise tolerance assessment
+In the present study, exercise tolerance of the participants 
+will be assessed using the 2-Minute Step Test (2MST). To 
+perform the 2MST, the number of steps completed in 
+place within two minutes will be recorded. Upon hearing 
+the “start” command, participants will begin marching in 
+place, raising their knees to the appropriate height (mid -
+way between the patella and iliac crest). Participants will 
+be instructed to complete as many steps as possible while 
+ensuring their knees reach the predefined height within 
+a two-minute time frame. Before the actual test, par -
+ticipants will be allowed to practice a few steps to refine 
+their technique and confirm their ability to complete the 
+task. For safety, participants will be allowed to hold onto 
+a stable table to maintain balance during the test. Par -
+ticipants are free to march at their own pace, with the 
+option to slow down or pause if necessary, before resum -
+ing until the test is completed. The researcher will record 
+the number of completed steps, inform participants of 
+the remaining time, and encourage them to achieve their 
+best possible performance. The final test result will be 
+the number of steps in which the right knee reaches or 
+exceeds the predefined height [53].
+To facilitate a large number of assessments—includ -
+ing anthropometric measurements, biochemical tests, 
+echocardiography, arterial stiffness, ECG, physical func -
+tion evaluations, and multiple questionnaires—these 
+procedures will be coordinated with participants’ routine 
+clinical care visits, such as cardiology follow-ups, echo -
+cardiography appointments, and scheduled blood tests. 
+This strategy minimizes additional visits, travel, and time 
+burden, thereby enhancing recruitment feasibility, adher-
+ence to the intervention, and would also strengthen the 
+trial’s pragmatic relevance.
+Sample size
+To the best of our knowledge, no similar study has exam-
+ined the effect of a diet supplemented with probiotics on 
+NT-proBNP levels and LVEF in HF patients. We calcu -
+lated the sample size based on both primary outcomes, 
+and the larger estimate was determined as the final sam -
+ple size. Therefore, the final sample size was calculated 
+based on the study by Giuseppe Cocco and David Chu, 
+which reported mean ± SD values for NT-proBNP of 
+1537 ± 377 (pg/ml) and 1853 ± 354 (pg/ml) in the inter -
+vention (Calorie-restricted diet) and control groups, 
+respectively [ 54]. The Sample size was calculated using 
+G*Power (v3.1), assuming a mean difference of −316 pg/
+ml in NT-proBNP , a = 0.05, power = 80%, and expected 
+20% dropout rate, yielding 25 participants per group, 
+based on the following equation:
+ n =
+(
+z
+1−
+α
+2
++ z1−β
+) 2
+(
+S2
+1 + S2
+2
+)
+∆ 2
+The calculated sample size was 25 participants in each 
+group. This sample size is designed to detect a signifi -
+cant reduction in NT-proBNP in the leading intervention 
+group (co-administration of SD + TRE with probiotic sup-
+plementation) compared to the placebo group at the end 
+Page 14 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+of the 60-day intervention period. Additionally, we define 
+a clinically relevant > 20% reduction in NT-proBNP levels 
+and/or a > 6.7% increase in LVEF as the basis for power -
+ing our study.
+Data management
+Data will be collected at baseline, mid-study, and post-
+intervention phases. Participant information will be 
+recorded using case report forms (CRFs). Once collected, 
+the data will be entered and managed in an electronic 
+database. Three data collectors will be responsible for 
+gathering the clinical raw data, which will then be sub -
+mitted to the project supervisor for approval. All docu -
+mentation will be securely stored in a locked drawer, 
+accessible only to the principal investigator. Each form 
+will contain a unique identification number for each par -
+ticipant, without any personally identifiable information. 
+A clinical trial monitor will periodically oversee the study 
+to ensure patient rights and well-being are protected, 
+protocol adherence is maintained, ethical standards and 
+regulations are followed, essential documentation is 
+available, and collected data are accurately recorded. One 
+of the investigators will be responsible for verifying data 
+coding, security, and storage. Additionally, she will con -
+duct a double-check of data entry and values to ensure 
+accuracy. If a participant reports an adverse event, fur -
+ther information will be required to assess the need for 
+exclusion from the trial. In such cases, unblinding may be 
+permitted based on the criteria set by the Medical Ethics 
+Committee. Mashhad University of Medical Sciences will 
+oversee the ethical review of the data. Participants who 
+discontinue the study or deviate from the protocol will 
+receive a summary of all outcome data. Missing data will 
+be addressed using modern imputation methods for han -
+dling dropouts.
+Data monitoring and oversight
+Given the minimal risk associated with the interven -
+tion and measurement procedures, this trial is classified 
+as low-risk. To ensure participant safety, an indepen -
+dent Safety Officer—who is independent from the study 
+team and the clinical care of participants—will oversee 
+safety monitoring of the study. Safety assessments will 
+be conducted at baseline, 30 days, and 60 days by the 
+independent Safety Officer. In accordance with institu -
+tional ethics regulations, the researcher will document 
+all adverse effects, as well as any participant-reported 
+complaints associated with the use of the intervention. 
+The adverse effects will then be shared with a team of 
+researchers and physicians. The Ethics Committee will 
+be informed about the adverse effects and will decide 
+whether to discontinue the intervention for the partici -
+pant or stop the study in terms of serious adverse effects 
+or repeated adverse effects in participants.
+Statistical analysis
+All analyses will be conducted using the Intention-to-
+Treat (ITT) method. Thus, all participants who entered 
+the study (regardless of whether they completed the 
+60-day study period) will be included in the analysis. 
+Missing data will be replaced by multiple imputations. 
+Statistical analyses will be performed using the Statistical 
+Package for the Social Sciences (SPSS) software, Version 
+24 (SPSS Inc., Chicago, IL, USA). A Q-Q plot and the 
+Shapiro-Wilk test will be applied to assess the normality 
+of the continuous variables. Also, continuous variables 
+will be presented as mean ± SD or median (25–75 inter -
+quartile range) for normally distributed or skewed data, 
+respectively, and categorical variables will be presented 
+as percentages. Additionally, the chi-square test will 
+be used to compare categorical variables. The One-way 
+ANOVA or Kruskal-Wallis test will be applied to com -
+pare continuous variables between groups. In contrast, 
+the paired sample t-test or Wilcoxon rank-sum test will 
+be used for within-group comparisons. To compare dif -
+ferences in primary and secondary outcomes between 
+the three study groups at the end of the trial and adjust 
+for potential confounders, the mixed linear effects model 
+will be applied. Furthermore, between-group differences 
+will be assessed by ANCOVA adjusting for baseline val -
+ues. Additionally, we plan to use regression models to 
+adjust for potential confounding variables that may dif -
+fer across the three groups. In addition, subgroup analy -
+ses will be conducted based on diabetic status and BMI 
+(if heterogeneity exists). To correct for multiple com -
+parisons (among the predefined secondary outcomes) 
+and reduce the risk of Type I error, p-values will be cal -
+culated using the Bonferroni method (Bonferroni correc -
+tion). Moreover, A Per-Protocol (PP) analysis will also be 
+undertaken to complement and contrast the Intent-to-
+Treat (ITT) results, and will serve as a sensitivity analysis. 
+Statistical significance will be defined as p-values < 0.05.
+Consent
+This study explicitly state that the informed consent pro -
+cess will be conducted in compliance with Good Clinical 
+Practice (GCP) guidelines. This will include confirmation 
+that participants will receive adequate verbal and written 
+information about the study, have the opportunity to ask 
+questions, and provide voluntary written consent before 
+any study-specific procedures are undertaken.
+Biological specimens will also be collected for storage 
+during this trial.
+Discussion
+HF represents a significant public health challenge, with 
+high morbidity and mortality rates [ 7]. Overweight and 
+obesity can be seen as a “perfect storm” for cardiovascu -
+lar disease (CVD), serving as a leading cause of HF [ 55]. 
+Page 15 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+Furthermore, due to its metabolic and inflammatory 
+abnormalities associated with obesity, obesity further 
+complicates HF treatment, particularly in patients with 
+HFrEF [ 56, 57]. Additionally, disruptions in circadian 
+rhythm, poor diet, intestinal microbial dysbiosis, and 
+fluctuations in NT-proBNP levels can play pivotal roles 
+in the pathogenesis of HF. Moreover, the function of the 
+gut is fundamentally altered in patients with HF. Dimin -
+ished intestinal blood flow, resulting from decreased 
+cardiac output, correlates with both the aggravation of 
+gut dysbiosis and the severity of HF [ 58]. These findings 
+have emerged GHA, defined as a bidirectional connec -
+tion between gut microbiota and cardiovascular health 
+[59], as a key area of research for diagnosing and treat -
+ing the HF population [ 58]. While the management of 
+both HF and obesity is interconnected on multiple levels, 
+most recent HF clinical trials have focused on medica -
+tions and devices and neglected lifestyle modifications, 
+dietary interventions, or the modification of intestinal 
+microbiota [ 57, 60]. To the best of our knowledge, no 
+clinical trial has examined the effect of combining an 
+IF diet with probiotic supplementation in patients with 
+HFrEF. We hypothesized that the co-administration of 
+SD + 10-hour TRE, alone or in combination with probi -
+otic supplementation, in overweight and obese patients 
+with HFrEF would lead to weight loss and improvements 
+in metabolic, hormonal, and echocardiographic markers 
+compared to control individuals.
+A growing body of research has demonstrated that diet 
+has a significant influence on the GHA, a key factor in 
+determining cardiovascular health [ 61, 62]. For example, 
+previous studies have demonstrated the favorable effects 
+of IF as an intervention strategy, including the restora -
+tion of gene expression involved in the body’s circadian 
+clock [ 63], improvement in intestinal microbial compo -
+sition, regulation of metabolism [ 63], as well as reduc -
+tions in blood pressure [ 64], body weight [ 64], body fat 
+index [64], fasting blood glucose [ 65], and lipid oxidation 
+[65], as well as a reduction in insulin resistance [ 66]. In 
+addition, IF improves walking speed [ 67], mental and 
+physical function [ 67], and sleep quality, while reducing 
+inflammation markers such as TNF-α and IL-1β [65]. The 
+INTERFAST-MI Trial, conducted among patients with 
+ST-segment elevation myocardial infarction (STEMI), 
+revealed that TRE (8:16) was safe and improved left 
+ventricular (LV) function over 4 weeks, with further 
+improvements observed up to 6 months post-myocardial 
+infarction (MI) [ 42]. Compared with a diet without a 
+fixed fasting regimen, TRE also reduced diastolic blood 
+pressure and BMI [ 42]. In the mentioned study, TRE 
+reduced serum NT-proBNP concentrations compared to 
+the control group, but this difference was not statistically 
+significant [42].
+In addition to the timing of eating, the types of food 
+consumed have received considerable attention in recent 
+studies. Frequent consumption of ultra-processed foods 
+is associated with excessive calorie intake, weight gain, 
+metabolic syndrome, cancer, and cardiovascular dis -
+eases [ 68]. High-fat diets, on the other hand, are linked 
+to changes in the composition of gut microbiota towards 
+the predominance of pro-inflammatory bacteria to 
+beneficial bacteria [ 61]. In contrast, diets rich in fiber, 
+plant-based foods, and prebiotics promote the growth of 
+beneficial gut bacteria, such as Lactobacilli spp., which 
+have been associated with positive cardiovascular out -
+comes [ 69]. Furthermore, gut bacteria function as a 
+metabolic organ, influencing the host’s metabolism and 
+energy balance [70]. The health outcomes of a diet, along 
+with its low environmental impact, affordability, acces -
+sibility, and alignment with socio-cultural preferences, 
+should all be considered [ 71, 72]. Due to these factors, a 
+SD—similar to the Mediterranean diet but with a stron -
+ger focus on environmental impact—would be the best 
+choice for intervention programs aimed at promoting 
+sustainable behaviors [ 73]. SD is linked to the prolifera -
+tion of butyrate-producing bacteria, such as Akkerman-
+sia muciniphila, in the gut microbiota that are associated 
+with anti-inflammatory effects, improved regulation of 
+glucose and lipid profiles, increased glucose sensitivity, 
+reduced insulin resistance, and regulation of blood pres -
+sure [71, 74].
+In a previous study, supplementation with Saccharo-
+myces boulardii improved LVEF among HF patients [ 75]. 
+To the best of our knowledge, only one study examined 
+the effect of synbiotic therapy on NT-proBNP levels in 
+HF patients. This study found that 10 weeks of daily syn -
+biotic administration significantly reduced NT-proBNP 
+levels; however, no significant differences were observed 
+in high-sensitivity C-reactive protein (hsCRP) levels or 
+blood pressure values [ 27]. Other benefits of probiot -
+ics in terms of improving cardiometabolic health can be 
+exerted through supporting weight management, partic -
+ularly when combined with IF or other calorie-restricted/
+healthy diets. If successful, this intervention may provide 
+nutritionists in clinical settings with a new eating pattern 
+(SD + TRE), either alone or in combination with probi -
+otic supplements, as a safe and effective treatment for 
+patients with HF.
+Limitations
+The limitations of this study are addressed as follows: 
+First, while double-blinding is feasible and implemented 
+for the probiotic versus control groups, blinding par -
+ticipants to the dietary intervention (SD + TRE) is inher -
+ently unfeasible. Second, this is a single-center study 
+with an estimated sample size, which may limit the gen -
+eralizability of the findings. Nevertheless, generating 
+Page 16 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+proof-of-concept data is clinically and ethically essential 
+before planning larger-scale interventions. Should the 
+results from this study prove promising, a multicenter 
+trial will be planned to validate the findings. Third, due 
+to financial and practical limitations, 16  S rRNA analy -
+sis is not possible to perform, limiting our ability to fully 
+characterize gut microbiota composition. Fourth, due to 
+the lack of evidence from studies with similar interven -
+tions and patient populations, the study duration is set at 
+60 days. This decision was based on findings from previ -
+ous studies—which, although not directly related to the 
+intervention or patient population—along with consid -
+eration of the common duration of lifestyle modification 
+studies to enhance patient adherence. Consequently, it is 
+possible that changes in some outcomes, may not reach 
+clinical significance within this timeframe. Fifth, adher -
+ence to the TRE schedule may pose a challenge; to miti -
+gate this, participants will receive regular reminders via 
+phone calls and instant messages indicating the start and 
+end times of their eating window. Finally, loss to follow-
+up is anticipated across all three study groups; to address 
+this, a 20% dropout rate has been incorporated into the 
+sample size calculation.
+Trial status
+Iranian Registry of Clinical Trials 
+IRCT20231225060520N1 (URL:  h t t p  s : /  / i r c  t .  b e h  d a s  h t . g  o 
+v  . i r / t r i a l / 7 4 7 4 3). Registered 23 January 2024. The  r e c r u i t 
+m e n t started on April 4, 2025, and is expected to be com-
+pleted by February 4, 2026.
+Abbreviations
+HF  Heart failure
+HFrEF  Heart Failure with reduced ejection fraction
+EF  Ejection fraction
+LVEF  Left ventricular ejection fraction
+NYHA  New York Heart Association
+SD  Sustainable diet
+Lp299v  Lactobacillus plantarum 299v
+IF  Intermittent fasting
+TRE  Time-restricted eating
+SCFA  Short-chain fatty acids
+TMAO  Trimethylamine N-oxide
+CFU  Colony-forming unit
+BMI  Body mass index
+hsCRP  High-sensitivity C-reactive protein
+NT-proBNP  N-terminal pro-B-type natriuretic peptide
+GHA  Gut-Heart Axis
+Supplementary Information
+The online version contains supplementary material available at  h t t p s :   /  / d o  i .  o r  
+g  /  1 0  . 1 1   8 6  / s 1 2  9 3 7 -  0 2 5 - 0  1 2 7 0 - x.
+Supplementary Material 1.
+Acknowledgements
+This study is a protocol for a Ph.D. thesis, which was approved by the School 
+of Medicine, Department of Nutrition, Mashhad University of Medical 
+Sciences (MUMS), Mashhad, Iran (approval number: IR.MUMS.REC.1402.259; 
+approved on December 16, 2023). Mashhad University of Medical Sciences 
+is acknowledged for its support in designing the study. We would like to 
+thank Pardis Roshd Company (Shiraz, Iran) for providing us with probiotic 
+supplementation and placebo capsules. The sponsor played no part in the 
+study design, collection, management, analysis, and interpretation of data, 
+writing of the report, or the decision to submit the report for publication.
+Dissemination policy
+The trial results will be communicated to participants, healthcare 
+professionals, and the general public through trial registry entry, a plain 
+language summary, and publication in scientific journals.
+Ancillary and post-trial care
+Since participants are at minimal risk during the intervention and 
+measurement protocols, this trial is classified as low-risk. Nevertheless, in case 
+of any harm resulting from participation in the trial, participants will receive 
+appropriate medical care, and compensation will be provided in accordance 
+with ethical and legal regulations. Post-trial care will also be offered if needed.
+Authors’ contributions
+P .R., A.A., SR.S., K.S., M.KR., MH.E., and R.R. conceived and designed the study. 
+P .R., S.A., and F.V. contributed to data collection and assembly. P .R. and G.R. 
+wrote the manuscript. All authors read and approved the final manuscript.
+Funding
+This research will be funded by the Vice Chancellor’s Office for Research 
+and Technology at Mashhad University of Medical Sciences (MUMS), and 
+all study stages, including the design of the study, collection, analysis, 
+and interpretation of data, and writing of the manuscript, will be under its 
+supervision.
+The Vice Chancellor of Research and Technology is the sponsor of this 
+trial (The Vice Chancellor of Research and Technology, Ghareshi Building, 
+Daneshgah Ave., Mashhad, Iran).
+Data availability
+The datasets collected and analyzed during the present study are not publicly 
+accessible due to ethical concerns; however, the corresponding author may 
+provide the datasets upon reasonable request.
+Declarations
+Ethics approval and consent to participate
+The current trial received approval from the Medical Ethics Committee 
+of Mashhad University of Medical Sciences, Mashhad, Iran (IR.MUMS.
+REC.1402.259; approved on December 16, 2023). Prior to participation in 
+the research project, participants will be asked to provide written informed 
+consent. Consent for Publication: It is optional for patients to participate in 
+the current trial after reading the terms and conditions in the Supplementary 
+Information. A new consent form will be collected from the participants if we 
+need to use additional information from the collected data.
+Competing interests
+The authors declare no competing interests.
+Pardis Roshd Company (Shiraz, Iran) had no role. The funder of the study had 
+no role in study design, data collection, data analysis, data interpretation, 
+management, the writing of the report, or the decision to submit the report 
+for publication.
+Author details
+1Department of Nutrition, Faculty of Medicine, Mashhad University of 
+Medical Sciences, Mashhad, Iran
+2Student Research Committee, Mashhad University of Medical Sciences, 
+Mashhad, Iran
+3Imam Reza Hospital, Mashhad University of Medical Sciences, Mashhad, 
+Iran
+4Department of Community Nutrition, School of Nutritional Sciences and 
+Dietetics, Tehran University of Medical Sciences, Tehran, Iran
+5Nuclear Medicine Research Center, Mashhad University of Medical 
+Sciences, Mashhad, Iran
+6Department of Community Medicine, Faculty of Medicine, Mashhad 
+University of Medical Sciences, Mashhad, Iran
+Page 17 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+7Department of Food Science and Technology, Shiraz University, Shiraz, 
+Iran
+8Deputy of Education of the Nutrition Department, Faculty of Medicine, 
+Azadi Square, Mashhad University of Medical Sciences, Campus of the 
+University, Mashhad 9177948564, Iran
+Received: 15 July 2025 / Accepted: 3 December 2025
+References
+1. Savarese G, Becher PM, Lund LH, Seferovic P , Rosano GM, Coats AJ. Global 
+burden of heart failure: a comprehensive and updated review of epidemiol-
+ogy. Cardiovasc Res. 2022;118(17):3272–87.
+2. Bozkurt B, Ahmad T, Alexander K, Baker WL, Bosak K, Breathett K, et al. 
+HF STATS 2024: heart failure epidemiology and outcomes statistics an 
+updated 2024 report from the heart failure society of America. J Card Fail. 
+2025;31(1):66–116.
+3. Bozkurt B, Coats AJ, Tsutsui H, Abdelhamid M, Adamopoulos S, Albert N, et 
+al. Universal definition and classification of heart failure: a report of the heart 
+failure society of America, heart failure association of the European society 
+of cardiology, Japanese heart failure society and writing committee of the 
+universal definition of heart failure. J Card Fail. 2021;27(4):387–413.
+4. Lund LH, Pitt B, Metra M. Left ventricular ejection fraction as the primary 
+heart failure phenotyping parameter. Eur J Heart Fail. 2022;24(7):1158–61.
+5. York MK, Gupta DK, Reynolds CF, Farber-Eger E, Wells QS, Bachmann KN, et al. 
+B-type natriuretic peptide levels and mortality in patients with and without 
+heart failure. J Am Coll Cardiol. 2018;71(19):2079–88.
+6. World Health Organization. Obesity: preventing and managing the global 
+epidemic. Report of a WHO consultation. World Health Organ Tech Rep Ser. 
+2000;894:i–xii, 1-253.
+7. Lembo M, Strisciuglio T, Fonderico C, Mancusi C, Izzo R, Trimarco V, et al. Obe-
+sity: the perfect storm for heart failure. ESC Heart Fail. 2024;11(4):1841–60.
+8. Lee KS, Park D-I, Lee J, Oh O, Kim N, Nam G. Relationship between comorbid-
+ity and health outcomes in patients with heart failure: a systematic review 
+and meta-analysis. BMC Cardiovasc Disord. 2023;23(1):498.
+9. Visco V, Izzo C, Bonadies D, Di Feo F, Caliendo G, Loria F, et al. Interventions to 
+address cardiovascular risk in obese patients: many hands make light work. J 
+Cardiovasc Dev Dis. 2023;10(8):327.
+10. Lee VY, Houston L, Perkovic A, Barraclough JY, Sweeting A, Yu J, et al. The 
+effect of weight loss through lifestyle interventions in patients with heart fail-
+ure with preserved ejection fraction—a systematic review and meta-analysis 
+of randomised controlled trials. Heart Lung Circ. 2024;33(2):197–208.
+11. Diab A, Dastmalchi LN, Gulati M, Michos ED. A heart-healthy diet for cardio-
+vascular disease prevention: where are we now? Vasc Health Risk Manag. 
+2023:237–53.
+12. Wickman BE, Enkhmaa B, Ridberg R, Romero E, Cadeiras M, Meyers F, et al. 
+Dietary management of heart failure: DASH diet and precision nutrition 
+perspectives. Nutrients. 2021;13(12):4424.
+13. Camafort M, Park S-M, Kang S-M. Lifestyle modification in heart failure 
+management: are we using evidence-based recommendations in real world 
+practice? Int J Heart Fail. 2023;5(1):21.
+14. Singh RB, Dubnov G, Niaz MA, Ghosh S, Singh R, Rastogi SS, et al. Effect of an 
+Indo-Mediterranean diet on progression of coronary artery disease in high 
+risk patients (Indo-Mediterranean Diet Heart Study): a randomised single-
+blind trial. Lancet. 2002;360(9344):1455–61.
+15. Singh RB, Fedacko J, Fatima G, Magomedova A, Watanabe S, Elkilany G. Why 
+and how the Indo-Mediterranean diet May be superior to other diets: the 
+role of antioxidants in the diet. Nutrients. 2022;14(4):898.
+16. Singh RB, Nabavizadeh F, Fedacko J, Pella D, Vanova N, Jakabcin P , et al. 
+Dietary approaches to stop hypertension via Indo-Mediterranean foods, May 
+be superior to DASH diet intervention. Nutrients. 2022;15(1):46.
+17. Singh RB, Fedacko J, Pella D, Fatima G, Elkilany G, Moshiri M, et al. High 
+exogenous antioxidant, restorative treatment (heart) for prevention of the six 
+stages of heart failure: the heart diet. Antioxidants. 2022;11(8):1464.
+18. Mohammadifard N, Rahimlou M, Amani-Beni R, Darouei B, Zarepur E, 
+Haghighatdoost F, et al. Mediterranean diet and prime diet quality score are 
+associated with reduced risk of premature coronary artery disease in Iran: a 
+multi-centric case-control study. Sci Rep. 2025;15(1):11385.
+19. Bagheri M, Nouri M, Homayounfar R, Akhlaghi M. Association between 
+adherence to the mediterranean diet with cardiometabolic risk 
+factors: a cross-sectional study on PERSIAN cohort study in Fasa. Sci Rep. 
+2023;13(1):14870.
+20. Willett W, Rockström J, Loken B, Springmann M, Lang T, Vermeulen S, et al. 
+Food in the anthropocene: the EAT–Lancet commission on healthy diets 
+from sustainable food systems. Lancet. 2019;393(10170):447–92.
+21. Zhang S, Marken I, Stubbendorff A, Ericson U, Qi L, Sonestedt E, et al. The EAT-
+Lancet diet index, plasma proteins, and risk of heart failure in a population-
+based cohort. JACC Heart Fail. 2024;12(7):1197–208.
+22. Adafer R, Messaadi W, Meddahi M, Patey A, Haderbache A, Bayen S, et al. Food 
+timing, circadian rhythm and chrononutrition: a systematic review of time-
+restricted eating’s effects on human health. Nutrients. 2020;12(12):3770.
+23. Garza-González S, Nieblas B, Solbes-Gochicoa MM, Altamirano J, García N. 
+Intermittent fasting as possible treatment for heart failure. Curr Vasc Pharma-
+col. 2022;20(3):260–71.
+24. Small S, Iglesies-Grau J, Gariepy C, Wilkinson M, Taub P , Kirkham A. Time-
+restricted eating: a novel dietary strategy for cardiac rehabilitation. Can J 
+Cardiol. 2023;39(11):S384–94.
+25. Matacchione G, Piacenza F, Pimpini L, Rosati Y, Marcozzi S. The role of the 
+gut microbiota in the onset and progression of heart failure: insights into 
+epigenetic mechanisms and aging. Clin Epigenetics. 2024;16(1):175.
+26. Lupu VV, Adam Raileanu A, Mihai CM, Morariu ID, Lupu A, Starcea IM, et al. 
+The implication of the gut microbiome in heart failure. Cells. 2023;12(8):1158.
+27. Shoaei Matin S, Shidfar F, Naderi N, Amin A, Hosseini-Baharanchi FS, Dehnad 
+A. The effect of synbiotic consumption on serum NTproBNP , hsCRP and blood 
+pressure in patients with chronic heart failure: a randomized, triple-blind, 
+controlled trial. Front Nutr. 2022;8:822498.
+28. Moludi J, Alizadeh M, Davari M, Golmohammadi A, Maleki V. The efficacy and 
+safety of probiotics intervention in attenuating cardiac remodeling following 
+myocardial infraction: literature review and study protocol for a random-
+ized, double-blinded, placebo controlled trial. Contemp Clin Trials Commun. 
+2019;15:100364.
+29. Jauhiainen T, Rönnback M, Vapaatalo H, Wuolle K, Kautiainen H, Groop 
+P , et al. Long-term intervention with Lactobacillus helveticus fermented 
+milk reduces augmentation index in hypertensive subjects. Eur J Clin Nutr. 
+2010;64(4):424–31.
+30. Hofeld BC, Puppala VK, Tyagi S, Ahn KW, Anger A, Jia S, et al. Lactobacillus 
+plantarum 299v probiotic supplementation in men with stable coronary 
+artery disease suppresses systemic inflammation. Sci Rep. 2021;11(1):3972.
+31. Lin P-P , Hsieh Y-M, Kuo W-W, Lin Y-M, Yeh Y-L, Lin C-C, et al. Probiotic-
+fermented purple sweet potato yogurt activates compensatory IGF-IR/PI3K/
+Akt survival pathways and attenuates cardiac apoptosis in the hearts of 
+spontaneously hypertensive rats. Int J Mol Med. 2013;32(6):1319–28.
+32. Gan XT, Ettinger G, Huang CX, Burton JP , Haist JV, Rajapurohitam V, et al. 
+Probiotic administration attenuates myocardial hypertrophy and heart failure 
+after myocardial infarction in the rat. Circ Heart Fail. 2014;7(3):491–9.
+33. Pourrajab B, Naderi N, Janani L, Mofid V, Hajahmadi M, Dehnad A, et al. 
+Comparison of probiotic yogurt and ordinary yogurt consumption on 
+serum Pentraxin3, NT-proBNP , oxLDL, and ApoB100 in patients with chronic 
+heart failure: a randomized, triple-blind, controlled trial. Food Funct. 
+2020;11(11):10000–10.
+34. Álvarez-Arraño V, Martín-Peláez S. Effects of probiotics and synbiotics on 
+weight loss in subjects with overweight or obesity: a systematic review. 
+Nutrients. 2021;13(10):3627.
+35. Aljohani A, Rashwan N, Vasani S, Alkhawashki A, Wu TT, Lu X et al. The health 
+benefits of probiotic Lactiplantibacillus plantarum: a systematic review and 
+meta-analysis. Probiotics Antimicrob Proteins. 2024:1–20.
+36. Neverovskyi A, Chernyavskyi V, Shypulin V, Hvozdetska L, Tishchenko V, 
+Nechypurenko T, et al. Probiotic Lactobacillus plantarum May reduce cardio-
+vascular risk: an experimental study. ARYA Atheroscler. 2021;17(4):1.
+37. Fabricio CG, Tanaka DM, de Souza Gentil JR, Amato CAF, Marques F, Schwartz-
+mann PV, et al. A normal sodium diet preserves serum sodium levels during 
+treatment of acute decompensated heart failure: a prospective, blind and 
+randomized trial. Clin Nutr ESPEN. 2019;32:145–52.
+38. Hassanzadeh-Makoui R, Jamei M, Hassanzadeh-Makoui M, Khederlou H. 
+Effects of vitamin D on left ventricular ejection fraction in patients with 
+systolic heart failure: a double-blind randomized clinical trial. Int J Endocrinol 
+Metab. 2020;18(3):e103528.
+39. Salmani M, Alipoor E, Navid H, Farahbakhsh P , Yaseri M, Imani H. Effect of 
+l-arginine on cardiac reverse remodeling and quality of life in patients with 
+heart failure. Clin Nutr. 2021;40(5):3037–44.
+Page 18 of 18
+Rahbarinejad et al. Nutrition Journal           (2026) 25:15 
+40. Schmitt W, Rühs H, Burghaus R, Diedrich C, Duwal S, Eissing T, et al. NT-
+proBNP qualifies as a surrogate for clinical end points in heart failure. Clin 
+Pharmacol Ther. 2021;110(2):498–507.
+41. Pascual-Figal DA, Domingo M, Casas T, Gich I, Ordonez-Llanos J, Martínez P , et 
+al. Usefulness of clinical and NT-proBNP monitoring for prognostic guidance 
+in destabilized heart failure outpatients. Eur Heart J. 2008;29(8):1011–8.
+42. Dutzmann J, Kefalianakis Z, Kahles F, Daniel J-M, Gufler H, Wohlgemuth WA, 
+et al. Intermittent fasting after ST-segment–elevation myocardial infarction 
+improves left ventricular function: the randomized controlled INTERFAST-MI 
+trial. Circ Heart Fail. 2024;17(5):e010936.
+43. Stubbendorff A, Sonestedt E, Ramne S, Drake I, Hallström E, Ericson U. Devel-
+opment of an EAT-Lancet index and its relation to mortality in a Swedish 
+population. Am J Clin Nutr. 2022;115(3):705–16.
+44. Arciero PJ, Edmonds R, He F, Ward E, Gumpricht E, Mohr A, et al. Protein-
+pacing caloric-restriction enhances body composition similarly in obese 
+men and women during weight loss and sustains efficacy during long-term 
+weight maintenance. Nutrients. 2016;8(8):476.
+45. Zuo L, He F, Tinsley GM, Pannell BK, Ward E, Arciero PJ. Comparison of 
+high-protein, intermittent fasting low-calorie diet and heart healthy diet for 
+vascular health of the obese. Front Physiol. 2016;7:209013.
+46. Moghaddam MB, Aghdam FB, Jafarabadi MA, Allahverdipour H, Nikookheslat 
+SD, Safarpour S. The Iranian version of international physical activity question-
+naire (IPAQ) in iran: content and construct validity, factor structure, internal 
+consistency and stability. World Appl Sci J. 2012;18(8):1073–80.
+47. Vasheghani-Farahani A, Tahmasbi M, Asheri H, Ashraf H, Nedjat S, Kordi R. The 
+Persian, last 7-day, long form of the international physical activity question-
+naire: translation and validation study. Asian J Sports Med. 2011;2(2):106.
+48. Heravi-Karimooi M, Bandari R, Eskandari S, Semnani S, Rejeh N, Montazeri 
+A. Validation study of the Iranian version of Minnesota Living With Heart 
+Failure Questionnaire (MLHF‐Q): a cross‐sectional study. Health Sci Rep. 
+2025;8(2):e70396.
+49. Wilson M-MG, Thomas DR, Rubenstein LZ, Chibnall JT, Anderson S, Baxi A, et 
+al. Appetite assessment: simple appetite questionnaire predicts weight loss 
+in community-dwelling adults and nursing home residents. Am J Clin Nutr. 
+2005;82(5):1074–81.
+50. Andreae C, Strömberg A, Sawatzky R, Årestedt K. Psychometric evaluation 
+of two appetite questionnaires in patients with heart failure. J Card Fail. 
+2015;21(12):954–8.
+51. Lovibond PF, Lovibond SH. Depression anxiety and stress scales. Behav Res 
+Ther. 1995.
+52. Buysse DJ, Reynolds IIICF, Monk TH, Berman SR, Kupfer DJ. The Pittsburgh 
+Sleep Quality Index: a new instrument for psychiatric practice and research. 
+Psychiatry Res. 1989;28(2):193–213.
+53. Węgrzynowska-Teodorczyk K, Mozdzanowska D, Josiak K, Siennicka A, Nowa-
+kowska K, Banasiak W, et al. Could the two-minute step test be an alternative 
+to the six-minute walk test for patients with systolic heart failure? Eur J Prev 
+Cardiol. 2016;23(12):1307–13.
+54. Cocco G, Chu D. Weight reduction decreases NT-proBNP levels in obsese 
+coronary patients with chronic diastolic heart failure. Arch Med Sci. 
+2007;3(2):112–6.
+55. Bui AL, Horwich TB, Fonarow GC. Epidemiology and risk profile of heart 
+failure. Nat Rev Cardiol. 2011;8(1):30–41.
+56. Stenholm S, Harris TB, Rantanen T, Visser M, Kritchevsky SB, Ferrucci L. 
+Sarcopenic obesity: definition, cause and consequences. Curr Opin Clin Nutr 
+Metab Care. 2008;11(6):693–700.
+57. Vest AR, Schauer PR, Rodgers JE, Sanderson E, LaChute CL, Seltz J, et al. 
+Obesity and weight loss strategies for patients with heart failure. JACC: Heart 
+Failure. 2024;12(9):1509–27.
+58. Zhao S, Dan L, Huang R, Shen Z, Huang D, Wu P et al. Decoding the impact of 
+gut microbiota on heart failure. Genes Dis. 2025:101592.
+59. Shariff S, Huey AKS, Soni NP , Yahia A, Hammoud D, Nazir A, et al. Unlocking 
+the gut-heart axis: exploring the role of gut microbiota in cardiovascular 
+health and disease. Ann Med Surg (Lond). 2024;86(5):2752–8.
+60. Khan MS, Khan F, Fonarow GC, Sreenivasan J, Greene SJ, Khan SU, et al. 
+Dietary interventions and nutritional supplements for heart failure: a system-
+atic appraisal and evidence map. Eur J Heart Fail. 2021;23(9):1468–76.
+61. Sharifi-Rad J, Rodrigues CF, Sharopov F, Docea AO, Can Karaca A, Sharifi-Rad 
+M, et al. Diet, lifestyle and cardiovascular diseases: linking pathophysiology 
+to cardioprotective effects of natural bioactive compounds. Int J Environ Res 
+Public Health. 2020;17(7):2326.
+62. Ebong IA, Goff Jr DC, Rodriguez CJ, Chen H, Bertoni AG. Mechanisms of heart 
+failure in obesity. Obes Res Clin Pract. 2014;8(6):e540–8.
+63. Jamshed H, Beyl RA, Della Manna DL, Yang ES, Ravussin E, Peterson CM. 
+Early time-restricted feeding improves 24-hour glucose levels and affects 
+markers of the circadian clock, aging, and autophagy in humans. Nutrients. 
+2019;11(6):1234.
+64. Wilkinson MJ, Manoogian EN, Zadourian A, Lo H, Fakhouri S, Shoghi A, et al. 
+Ten-hour time-restricted eating reduces weight, blood pressure, and athero-
+genic lipids in patients with metabolic syndrome. Cell Metab. 2020;31(1):92-
+104. e5.
+65. Moro T, Tinsley G, Bianco A, Marcolin G, Pacelli QF, Battaglia G, et al. Effects of 
+eight weeks of time-restricted feeding (16/8) on basal metabolism, maximal 
+strength, body composition, inflammation, and cardiovascular risk factors in 
+resistance-trained males. J Transl Med. 2016;14:1–10.
+66. Sutton EF, Beyl R, Early KS, Cefalu WT, Ravussin E, Peterson CM. Early time-
+restricted feeding improves insulin sensitivity, blood pressure, and oxidative 
+stress even without weight loss in men with prediabetes. Cell Metab. 
+2018;27(6):1212-21. e3.
+67. Anton SD, Lee SA, Donahoo WT, McLaren C, Manini T, Leeuwenburgh C, et 
+al. The effects of time restricted feeding on overweight, older adults: a pilot 
+study. Nutrients. 2019;11(7):1500.
+68. Babalola OO, Akinnusi E, Ottu PO, Bridget K, Oyubu G, Ajiboye SA et al. The 
+impact of ultra-processed foods on cardiovascular diseases and cancer: 
+epidemiological and mechanistic insights. Asp Mol Med. 2025:100072.
+69. Tomova A, Bukovsky I, Rembert E, Yonas W, Alwarith J, Barnard ND, et al. 
+The effects of vegetarian and vegan diets on gut microbiota. Front Nutr. 
+2019;6:447652.
+70. Rowland I, Gibson G, Heinken A, Scott K, Swann J, Thiele I, et al. Gut micro-
+biota functions: metabolism of nutrients and other food components. Eur J 
+Nutr. 2018;57:1–24.
+71. Lares-Michel M, Housni FE, Reyes-Castillo Z, Huertas JR, Aguilera-Cer-
+vantes VG, Michel-Nava RM. Sustainable-psycho-nutritional intervention 
+programme for a sustainable diet (the ‘NutriSOS’study) and its effects on 
+eating behaviour, diet quality, nutritional status, physical activity, metabolic 
+biomarkers, gut microbiota and water and carbon footprints in Mexican 
+population: study protocol of an mHealth randomised controlled trial. Br J 
+Nutr. 2023;130(10):1823–38.
+72. Apalowo O, Adegoye G, Obuotor T. Exploring the functional roles of sustain-
+able dietary patterns on gut microbiota composition and optimal health. 
+Bioact Compd Health Dis. 2024;7(2):110–30.
+73. Cahill LE, Hummel SL. Eating to prevent both heart and planetary failure: the 
+EAT-lancet diet. JACC Heart Fail; 2024. pp. 1209–11.
+74. Santiago-Torres M, Kratz M, Lampe JW, Tapsoba JDD, Breymeyer KL, Levy L, 
+et al. Metabolic responses to a traditional Mexican diet compared with a 
+commonly consumed US diet in women of Mexican descent: a randomized 
+crossover feeding trial. Am J Clin Nutr. 2016;103(2):366–74.
+75. Awoyemi A, Mayerhofer C, Felix AS, Hov JR, Moscavitch SD, Lappegård KT 
+et al. Rifaximin or Saccharomyces boulardii in heart failure with reduced 
+ejection fraction: results from the randomized GutHeart trial. EBioMedicine. 
+2021;70.
+Publisher’s note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.

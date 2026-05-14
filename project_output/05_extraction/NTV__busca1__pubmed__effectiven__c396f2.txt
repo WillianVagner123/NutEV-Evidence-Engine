@@ -1,0 +1,122 @@
+Appendix 1 
+Searching Strategies 
+1. PubMed
+Searching 
+Strategy 
+(("Prediabetes"[Mesh]) OR ((prediabetic OR impaired glucose tolerance OR borderline 
+diabetes OR early stage diabetes OR prediabetic state OR prediabetes OR pre-
+diabetes OR pre diabetes OR prevention of type 2 diabetes OR diabetes prevention 
+OR risk of Type 2 Diabetes OR impaired glucose regulation OR anti-diabetic OR risk of 
+diabetes OR delay type 2 diabetes OR incident diabetes)) 
+AND 
+((Telescopic OR Telemedicine OR Technology-Based OR telecare OR App-Based OR 
+Mobile OR remote intervention OR Internet-Based OR Internet-facilitated OR internet-
+delivered OR mobile phone messaging OR short messaging service OR text messages 
+OR text messaging service OR text messaging OR sms OR mobile technology OR 
+Telecare OR Telehealth OR telephone OR e-health OR m-health tools OR Technology-
+Based OR web-based OR Assistive technologies OR Digital OR Smartphone)) 
+Filter 
+Applied 
+· Results by Year: 2005-2025
+· Text availability: Full text
+· Article language: English
+2. MEDLINE (via Ebscohost)
+Searching 
+Strategy 
+(MH(Prediabetes) OR (prediabetic OR impaired glucose tolerance OR borderline 
+diabetes OR early stage diabetes OR prediabetic state OR prediabetes OR pre-
+diabetes OR pre diabetes OR prevention of type 2 diabetes OR diabetes prevention 
+OR risk of Type 2 Diabetes OR impaired glucose regulation OR anti-diabetic OR risk of 
+diabetes OR delay type 2 diabetes OR incident diabetes)) 
+AND 
+((Telescopic OR Telemedicine OR Technology-Based OR telecare OR App-Based OR 
+Mobile OR remote intervention OR Internet-Based OR Internet-facilitated OR internet-
+delivered OR mobile phone messaging OR short messaging service OR text messages 
+OR text messaging service OR text messaging OR sms OR mobile technology OR 
+Telecare OR Telehealth OR telephone OR e-health OR m-health tools OR Technology-
+Based OR web-based OR Assistive technologies OR Digital OR Smartphone)) 
+Filter 
+Applied 
+· Date of Publication: 2005-2025
+· Source types: Academic Journals
+· Language: English
+3. CINAHL (via Ebscohost)
+Searching 
+Strategy 
+((MH(Prediabetes) OR (prediabetic OR impaired glucose tolerance OR borderline 
+diabetes OR early stage diabetes OR prediabetic state OR prediabetes OR pre-
+diabetes OR pre diabetes OR prevention of type 2 diabetes OR diabetes prevention 
+OR risk of Type 2 Diabetes OR impaired glucose regulation OR anti-diabetic OR risk of 
+diabetes OR delay type 2 diabetes OR incident diabetes)) 
+AND 
+((Telescopic OR Telemedicine OR Technology-Based OR telecare OR App-Based OR 
+Mobile OR remote intervention OR Internet-Based OR Internet-facilitated OR internet-
+delivered OR mobile phone messaging OR short messaging service OR text messages 
+OR text messaging service OR text messaging OR sms OR mobile technology OR 
+Telecare OR Telehealth OR telephone OR e-health OR m-health tools OR Technology-
+Based OR web-based OR Assistive technologies OR Digital OR Smartphone)) 
+Filter 
+Applied 
+· Date of Publication: 2005-2025
+· Source types: Academic Journals
+· Language: English
+4. EMBASE
+Searching 
+Strategy 
+((prediabetic OR impaired glucose tolerance OR borderline diabetes OR early stage 
+diabetes OR prediabetic state OR prediabetes OR pre-diabetes OR pre diabetes OR 
+prevention of type 2 diabetes OR diabetes prevention OR risk of Type 2 Diabetes OR 
+impaired glucose regulation OR anti-diabetic OR risk of diabetes OR delay type 2 
+diabetes OR incident diabetes)) 
+AND 
+((Telescopic OR Telemedicine OR Technology-Based OR telecare OR App-Based OR 
+Mobile OR remote intervention OR Internet-Based OR Internet-facilitated OR internet-
+delivered OR mobile phone messaging OR short messaging service OR text messages 
+OR text messaging service OR text messaging OR sms OR mobile technology OR 
+Telecare OR Telehealth OR telephone OR e-health OR m-health tools OR Technology-
+Based OR web-based OR Assistive technologies OR Digital OR Smartphone)) 
+Filter 
+Applied 
+· Publication Year: 2005-2025
+· Age: Adult (18-64 years), Aged (65+ years), Very elderly (80+ years)
+· Publication type: Article
+5. Cochrane Central Register of Controlled Trials (CENTRAL)
+Searching 
+Strategy 
+((MeSH descriptor: [Prediabetes] explode all trees) OR prediabetic OR impaired 
+glucose tolerance OR borderline diabetes OR early stage diabetes OR prediabetic 
+state OR prediabetes OR pre-diabetes OR pre diabetes OR prevention of type 2 
+diabetes OR diabetes prevention OR risk of Type 2 Diabetes OR impaired glucose 
+regulation OR anti-diabetic OR risk of diabetes OR delay type 2 diabetes OR incident 
+diabetes)) 
+AND 
+((Telescopic OR Telemedicine OR Technology-Based OR telecare OR App-Based OR 
+Mobile OR remote intervention OR Internet-Based OR Internet-facilitated OR internet-
+delivered OR mobile phone messaging OR short messaging service OR text messages 
+OR text messaging service OR text messaging OR sms OR mobile technology OR 
+Telecare OR Telehealth OR telephone OR e-health OR m-health tools OR Technology-
+Based OR web-based OR Assistive technologies OR Digital OR Smartphone)) 
+Filter 
+Applied 
+· Original publication year: 2005-2025
+· Trials
+6. Web of Science
+Searching 
+Strategy 
+((prediabetic OR impaired glucose tolerance OR borderline diabetes OR early stage 
+diabetes OR prediabetic state OR prediabetes OR pre-diabetes OR pre diabetes OR 
+prevention of type 2 diabetes OR diabetes prevention OR risk of Type 2 Diabetes OR 
+impaired glucose regulation OR anti-diabetic OR risk of diabetes OR delay type 2 
+diabetes OR incident diabetes)) 
+AND 
+((Telescopic OR Telemedicine OR Technology-Based OR telecare OR App-Based OR 
+Mobile OR remote intervention OR Internet-Based OR Internet-facilitated OR internet-
+delivered OR mobile phone messaging OR short messaging service OR text messages 
+OR text messaging service OR text messaging OR sms OR mobile technology OR 
+Telecare OR Telehealth OR telephone OR e-health OR m-health tools OR Technology-
+Based OR web-based OR Assistive technologies OR Digital OR Smartphone)) 
+Filter 
+Applied 
+· Publication Year: 2005-202 5
+· Document Types: Article
+· Languages: English

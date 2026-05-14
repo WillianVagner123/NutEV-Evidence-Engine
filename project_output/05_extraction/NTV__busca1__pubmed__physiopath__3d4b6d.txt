@@ -1,0 +1,792 @@
+SLEEP BREATHING PHYSIOLOGY AND DISORDERS • REVIEW
+Sleep and Breathing          (2026) 30:101 
+https://doi.org/10.1007/s11325-026-03631-0
+Abbreviations
+ AHI   Apnoea-Hypopnea Index
+BDI   Beck Depression Inventory
+ BDI-1A   Beck Depression Inventory-1A
+ BDTD   Brazilian Digital Library of Theses 
+and Dissertations
+BIC   Behavioral Insomnia of Childhood
+BIS   Bergen Insomnia Scale
+BMI   Body Mass Index
+ C1/C2   Cohort 1/Cohort 2
+ CES-D   Centre for Epidemiological Studies 
+Depression Scale
+CI   Chronic Insomnia
+ COMISA   Comorbid Insomnia and Sleep 
+Apnoea
+CPC   Cardiopulmonary Coupling
+ DeCS   Health Sciences Descriptors
+  Ervin Cotrik
+e254575@dac.unicamp.br
+Janete Hernandes
+janetecapel@gmail.com
+Viviane Castro
+viviane.di@gmail.com
+Edilson Zancanella
+zancaedi@gmail.com
+1 Postgraduate Program in Medical Sciences; Sleep Disorders 
+Service of the Division of Otolaryngology, Head and Neck, 
+University of Campinas - UNICAMP, São Paulo, Brasil
+2 Department of Sleep Medicine Research, Instituto de 
+Pesquisa Capel Castro, Goiânia, Goiás, Brasil
+Abstract
+Purpose To ascertain the physiopathological correlations of insomnia and obstructive sleep apnoea (Comorbid Insomnia 
+and Sleep Apnoea (COMISA).
+Methods Systematic review and meta-analysis, with searches in PubMed, Embase, Web of Science, Scopus, Cochrane, and 
+grey literature, including physiopathological characteristics and prevalence of COMISA in observational studies. The meta-
+analysis employed the I² and Cochran’s Q tests, as well as the random effects method, and the results were presented in forest 
+plots. The risk of bias was assessed using the Joanna Briggs Institute Critical Appraisal tools.
+Results Sixteen studies were selected, with a prevalence of 30% for COMISA, 39% among ages 18–40, 42% in European 
+countries, and an average Body Mass Index (BMI) of 28.55 (± 1.12). Patients with COMISA have higher Apnoea-Hypopnea 
+Index (AHI), lower minimum oxygen saturation, higher micro-arousal index, longer wake time after sleep onset Wake Time 
+After Sleep Onset (WASO), lower sleep efficiency, longer sleep latency, and possibly shorter Rapid Eye Movement (REM) 
+sleep duration.
+Conclusion The physiopathology of COMISA involves compromised sleep architecture and a complex interaction of mech-
+anisms related to central arousal, sleep fragmentation, neurobiological changes, and a more severe profile of clinical and 
+psychiatric comorbidities, with additive or synergistic consequences of the isolated disorders, requiring a comprehensive and 
+personalized diagnostic and therapeutic approach.
+PROSPERO Registry number: CRD420251038279.
+Keywords COMISA · Insomnia · Obstructive sleep apnoea · Physiopathology
+Received: 4 November 2025 / Revised: 19 January 2026 / Accepted: 18 February 2026
+© The Author(s) 2026
+Physiopathological correlations of comorbid insomnia and sleep 
+apnoea (comisa) – a systematic review and meta-analysis
+Ervin Cotrik1  · Janete Hernandes2 · Viviane Castro2 · Edilson Zancanella1
+1 3
+
+Sleep and Breathing          (2026) 30:101 
+ DIMS-F   Difficulty Initiating/Maintaining 
+Sleep in the presence of daytime 
+Fatigue
+ DSM-IV   Diagnostic and Statistical Manual of 
+Mental Disorders-Fourth Edition
+ECG   Electrocardiogram
+EEG   Electroencephalogram
+ESS   Epworth Sleepiness Scale
+F   Female
+FQ  Fatigue Questionnaire
+ GAD-7   Generalized Anxiety Disorder 
+Screener
+ GER   Gastroesophageal Reflux
+ GMV   Gray Matter V olume
+ GRADE   Grading of Recommendations Assess-
+ment, Development and Evaluation
+ HAMA   Hamilton Anxiety Scale
+ HAMD   Hamilton Depression Scale
+ ICSD-2/ ICSD-3   International Classification of Sleep 
+Disorders
+ IGI/ISI   Insomnia Severity Index
+INS   Insomnia
+ISI   Insomnia Severity Index
+M   Male
+ MeSH   Medical Subject Headings
+ MFI   Multidimensional Fatigue Inventory
+NC   Normal Controls
+ ODI   Oxygen Desaturation Index
+ OR   Odds Ratio
+ OSA   Obstructive Sleep Apnoea
+ OSA/OSA-I   Obstructive Sleep Apnoea / Obstruc-
+tive Sleep Apnoea and Insomnia
+ OSA   Obstructive Sleep Apnoea Syndrome
+ PCL-5   PTSD Checklist for DSM-5
+ PHQ-9   Patient Health Questionnaire-9
+ PPG   Photoplethysmography
+ PPI   Psychophysiological Insomnia
+ PRISMA   Preferred Reporting Items for Sys-
+tematic Reviews and Meta-Analyses
+ PSG   Polysomnography
+ PSQI   Pittsburgh Sleep Quality Index
+ REI   Respiratory Event Index
+ REM   Rapid Eye Movement
+ RL   Restless Legs
+ SA   Sleep Apnoea
+ SAI   Sleep Apnoea Indicator
+ SD   Standard Deviation
+ SDB   Sleep-Disordered Breathing
+ SE   Sleep Efficiency
+ SOL   Sleep Onset Latency
+ SpO2   Peripheral Oxygen Saturation
+ SQI   Sleep Quality Index
+SSM   Sleep State Misperception
+ Structural MRI   Structural Magnetic Resonance 
+Imaging
+TST   Total Sleep Time
+WASO   Wake Time After Sleep Onset
+ Wrist-PPG   Photoplethysmography/accelerometry
+Introduction
+Sleep disorders encompass a broad spectrum of patholo -
+gies that significantly impair quality of life and overall 
+well-being. Among the sleep-related dysfunctions with the 
+greatest epidemiological relevance, insomnia and obstruc -
+tive sleep apnoea syndrome (OSA) stand out. The co-occur-
+rence of these two prevalent disorders forms a complex 
+clinical entity known as COMISA (comorbid insomnia and 
+obstructive sleep apnoea) [ 1].
+In this context, current data indicate that chronic insom -
+nia has a prevalence ranging from 10% to 40% of the 
+population, increasing the risk of psychiatric disorders, 
+deteriorating quality of life, and reducing work produc -
+tivity, thereby constituting a major public health concern. 
+Insomnia is characterized by persistent difficulties in ini -
+tiating or maintaining sleep, accompanied by significant 
+impairments in daytime functioning. When these symp -
+toms occur at least three nights per week for a period of 
+three months or longer, and are associated with substantial 
+distress or functional impairment, the diagnosis of chronic 
+insomnia is established [ 2–4].
+Similarly, OSA is defined by the recurrent occurrence 
+of partial or complete collapses of the upper airway during 
+sleep, leading to oxygen desaturation, micro-arousals, and 
+sleep fragmentation. Isolated sleep apnoea is characterized 
+by an apnoea-hypopnea index (AHI) ≥ 5 events per hour on 
+overnight polysomnography, with a reduction in nasal air -
+flow amplitude greater than 90% and lasting at least 10 s per 
+event. The prevalence of OSA is also notably high, affecting 
+between 9% and 38% of the adult population [5, 6].
+Advancing in conceptualization, the concept of COMISA 
+was first described by Guilleminault and colleagues in 
+1973; however, it has only gained progressive recognition 
+within the global scientific community over the past two 
+decades. COMISA is a condition characterized by bidirec -
+tional pathophysiological interactions. In contrast to earlier 
+terminology, the term COMISA was introduced to unify 
+nomenclature and accurately convey the comorbid nature 
+of this clinical entity [ 1, 7]. Initially, insomnia was consid-
+ered secondary to OSA; however, recent evidence indicates 
+a bidirectional and causal relationship between the two con-
+ditions, whereby each disorder can trigger, perpetuate, or 
+exacerbate the other [ 8]. Recent epidemiological studies 
+1 3
+  101  Page 2 of 14
+Sleep and Breathing          (2026) 30:101 
+have reported a significant increase in COMISA prevalence 
+within the general population, reaching 22.95% after an 
+eight-year follow-up in longitudinal research [9]. It is note-
+worthy that COMISA prevalence is even higher in certain 
+specific populations, such as military personnel (38.2–88%) 
+and trauma victims (52%) [10].
+Current evidence shows that approximately 30–40% of 
+patients with OSA exhibit significant insomnia symptoms, 
+while 30–50% of individuals with chronic insomnia meet 
+diagnostic criteria for OSA [ 11]. The pathophysiology of 
+COMISA involves complex and interconnected mecha -
+nisms. A reduced arousal threshold and hyperexcitability 
+may predispose individuals to this comorbid condition [12]. 
+Repetitive awakenings triggered by OSA can lead to the 
+development of maintenance insomnia, whereas insomnia – 
+through increased cortical excitability and frequent awaken-
+ings – may exacerbate ventilatory instability and contribute 
+to the pathogenesis of OSA [13]. This bidirectional relation-
+ship creates a vicious cycle that perpetuates both conditions.
+Additionally, the clinical manifestations of COMISA dif-
+fer significantly from those observed in isolated disorders. 
+Individuals with COMISA experience greater sleep disrup -
+tion, poorer quality of life, unfavorable functional outcomes, 
+and a higher prevalence of psychiatric comorbidities [ 14]. 
+Objectively, these patients exhibit reduced total sleep time, 
+increased sleep onset latency, decreased sleep efficiency, 
+and prolonged wake time after sleep onset [15].
+This systematic review and meta-analysis addresses 
+the increasing prevalence of COMISA and the associated 
+challenges in its clinical management, aiming to clarify its 
+specific pathophysiological correlations. Despite the recog-
+nized importance of this condition, a significant gap persists 
+in the scientific understanding of its specific pathophysi -
+ological correlations.
+The novelty of this study resides in its systematic and 
+comprehensive approach to the pathophysiological interac -
+tions between comorbid insomnia and sleep apnoea, offering 
+a critical synthesis of the current literature and identifying 
+future directions for research and clinical practice within 
+this key domain of sleep medicine.
+The objective of this systematic review was to exam -
+ine the pathophysiological correlation of insomnia and 
+obstructive sleep apnoea (COMISA). The specific aims 
+were to identify the clinical characteristics of patients with 
+COMISA; to determine the prevalence of COMISA in the 
+general population by age, geographic region, and Body 
+Mass Index (BMI); and to compare polysomnographic indi-
+cators among patients with COMISA, isolated sleep apnoea, 
+and isolated insomnia.
+Method
+Systematic review, with its protocol registered on the pro -
+spective registry site CRD420251038279. Structured in 
+accordance with the guidelines of the Preferred Report -
+ing Items for Systematic Reviews and Meta-Analyses 
+(PRISMA) 2020 checklist.
+Eligibility criteria
+We selected studies according to the following eligibility 
+criteria: patients of any age, regardless of sex, from any 
+geographic region; diagnosed with insomnia and obstruc -
+tive sleep apnoea (COMISA); with or without a comparison 
+group; reporting outcomes related to COMISA character -
+istics, prevalence, and associations; any study design, with 
+no restrictions on publication date or language. Litera -
+ture reviews, letters, editorials, protocols, and conference 
+abstracts were excluded.
+Sources of information
+We searched PubMed, Embase, Web of Science, Scopus, 
+and Cochrane. The Brazilian Digital Library of Theses and 
+Dissertations (BDTD) and the artificial intelligence tool 
+Research Rabbit were employed for gray literature. Data -
+base searches were conducted in January 2025, with no lan-
+guage restrictions applied. The complete list of terms used 
+in each database is available in Table 1 (Supplementary 
+Material).
+Procedures and data collection
+We selected keywords and search terms using Health Sci -
+ences Descriptors (DeCS), Medical Subject Headings 
+(MeSH), and Emtree. The following terms were included: 
+COMISA OR Co-morbid insomnia and sleep apnoea OR 
+Comorbid insomnia and sleep apnoea AND pathophysiol -
+ogy. Three independent reviewers participated in all stages 
+and phases of the systematic review process.
+We conducted the review in three phases. In the first 
+phase, articles were retrieved from the databases (Iden -
+tification). In the second phase, duplicate articles were 
+identified, and inclusion and exclusion criteria were 
+applied through screening of titles and abstracts (Screen -
+ing). In the third phase, data were extracted from the 
+selected studies (Inclusion). All these phases are illus -
+trated in a flow diagram presented in the Results section 
+of this study.
+1 3
+Page 3 of 14   101 
+Sleep and Breathing          (2026) 30:101 
+matter was performed using instruments based on the 
+criteria of the International Classification of Sleep Dis -
+orders (ICSD-2/3) and/or DSM-IV , as shown in Supple -
+mentary Material 3.
+Risk of bias analysis
+As shown in Supplementary Material 4, eight studies were 
+classified as having a low risk of bias and, consequently, 
+high quality, while eight studies were evaluated as having 
+a moderate risk of bias, indicating moderate quality. For 
+cross-sectional studies, the items with lower ratings were 
+mainly related to question 5 and question 6. In the case-
+control study, the items with lower ratings were question 1, 
+question 2 and question 3.
+Meta-analysis
+For the construction of the meta-analysis, COMISA event 
+frequencies were used to determine prevalence in the stud -
+ied general population, age group, geographic region, and 
+BMI. The random-effects model was applied to all data 
+analyses due to the high heterogeneity among studies.
+For the first analysis (COMISA prevalence), all 16 stud-
+ies were included, and the results indicate a prevalence of 
+30% for COMISA in the studied population (95% Confi -
+dence Interval (CI): 0.19 to 0.44, p < 0.05; I² = 99%), as 
+illustrated in Fig. 2.
+For the age-group analysis, three subgroups were cre -
+ated: mean age above 40 years [9, 16, 18, 21–28], mean age 
+between 18 and 40 years [17, 19], and children and adoles-
+cents [ 29]. The results indicate a COMISA prevalence of 
+33% in the population over 40 years (95% CI: 0.19 to 0.51, 
+p < 0.05; I² = 99%), 39% in the population aged 18 to 40 
+years (95% CI: 0.30 to 0.49, p > 0.05; I² = 26%), and 12% in 
+the population of children and adolescents (95% CI: 0.06 to 
+0.22, p < 0.05; I² = 89%), as shown in Figs. 3 and 4, and 5.
+For the geographic region analysis, three subgroups 
+were created: European countries [ 20–22, 28], Asian 
+countries [ 16, 18, 23, 24, 27, 29], and American countries 
+[9, 17, 19, 26]. The results indicate a COMISA prevalence 
+of 42% in European countries (95% CI: 0.09 to 0.85, 
+p < 0.05; I² = 99%); 31% in Asian countries (95% CI: 0.14 
+to 0.57, p < 0.05; I² = 99%); and 35% in American coun -
+tries (95% CI: 0.19 to 0.55, p < 0.05; I² = 98%), as shown 
+in Figs. 6 and 7, and 8.
+An analysis of COMISA prevalence was conducted spe-
+cifically for Brazil [2, 9] and the United States [17, 26]. The 
+results indicate a prevalence of 37% for COMISA in the 
+United States (95% CI: 0.15 to 0.67, p < 0.05; I² = 99%) and 
+20% in Brazil (95% CI: 0.18 to 0.22, p > 0.05; I² = 0%), as 
+shown in Figs. 9 and 10.
+Data analysis
+After a full-text review of the articles, we confirmed the fea-
+sibility of conducting a meta-analysis. We assessed hetero -
+geneity using the I² statistic based on Cochran’s Q test. We 
+presented the results in forest plots. We employed Compre-
+hensive Meta-Analysis (Version 4.0.000) and Cochrane’s 
+Review Manager (RevMan, Version 5.4.1) for the analy -
+ses. A p-value < 0.05 indicated statistical significance for all 
+tests. We performed an analysis of the strength of evidence 
+using the GRADE approach (The Grading of Recommenda-
+tions Assessment, Development and Evaluation).
+Risk of bias analysis
+To assess the risk of bias in the selected studies, we applied 
+the Joanna Briggs Institute tools for observational studies. 
+We considered studies that met 80% of the items as ‘high’ 
+quality with a low risk of bias. We classified those meet -
+ing between 60% and 79% of the items as ‘moderate’ qual-
+ity with a moderate risk of bias, while we regarded studies 
+meeting fewer than 59% of the items as ‘low’ quality with 
+a high risk of bias.
+Results
+Initially, 249 records were identified in the databases. 
+Thirty-eight duplicates were excluded, leaving 211 for the 
+next phase. During the title screening, 110 records were 
+excluded, and 81 were excluded during the abstract screen-
+ing for not meeting the inclusion criteria, resulting in 20 
+studies. After full-text review, 4 studies were excluded, 
+leaving 16 studies for the systematic review and meta-anal-
+ysis. No records were found through manual search.
+Therefore, 16 studies were selected for qualitative data 
+synthesis, as shown in Fig. 1 and Supplementary Material 1.
+Examining the study characteristics, the selected stud -
+ies included more than 9,700 participants across a total 
+of sixteen observational studies. The mean age of partici -
+pants was 42.56 years. Based on five studies [ 16–20] that 
+reported sample size (N), mean BMI, and Standard Devia -
+tion (SD), the combined weighted mean BMI was approxi -
+mately 30.79 kg/m², with a combined standard deviation 
+of approximately 6.79 kg/m². The studies were conducted 
+in various countries, including Portugal, Brazil, the United 
+States, Iran, India, China, Mexico, the Netherlands, Israel, 
+Norway, South Korea, Iceland, and Australia, as shown in 
+Supplementary Material 2.
+The assessment of Obstructive Sleep Apnoea and 
+Insomnia (COMISA), sleepiness, fatigue, mood dis -
+orders, depression, anxiety, sleep, breathing, and gray 
+1 3
+  101  Page 4 of 14
+Sleep and Breathing          (2026) 30:101 
+The studies by Pan et al., 2024 [ 18], Subramanian et al., 
+2021 [26], Bjorvatn 2014 [22], Hilmisson 2019 [20], Luci-
+ano 2024 [9], and Lang (2017) [ 25] were excluded for not 
+presenting results in accordance with the criteria established 
+for this meta-analysis.
+Figure 13 displays the studies that presented polysom -
+nography indicators in patients with COMISA and isolated 
+OSA. The results show that there is a small statistically sig-
+nificant difference between the COMISA and OSA groups, 
+MD = −1.24 (95% CI: −2.19 to −0.29, p < 0.05, I² = 94%), 
+which can also be observed in the following polysomnog -
+raphy indicators: AHI: MD = −7.28 (95% CI: −11.88 to 
+−2.68, p < 0.05, I² = 88%); Arousal Index: MD = 2.74 (95% 
+CI: 0.47 to 5.00, p < 0.05, I² = 45%), Sleep Efficiency: MD 
+= −4.04 (95% CI: −4.73 to −3.35, p < 0.05, I² = 67%) and 
+Sleep Latency: MD = 3.05 (95% CI: 0.63 to 5.47, p < 0.05, 
+I² = 66%), except for SpO₂: MD = 0.62 (95% CI: −0.52 to 
+In the sex-based analysis, the results indicate a preva -
+lence of 59% of COMISA in the male population (95% CI: 
+0.51–0.66, p < 0.05; I² = 87%), as shown in Fig. 11. In the 
+analysis by Body Mass Index (BMI), the findings indicated 
+an average BMI of 28.55 (± 1.12) among participants with 
+COMISA (95% CI: 26.34 to 30.76; p < 0.05; I² = 98%), as 
+illustrated in Fig. 12.
+For the meta-analysis involving polysomnograpy indi -
+cators, 09 studies were used [16, 17, 19, 21, 23, 24, 27–29]. 
+To allow standardized comparative analysis, all variables 
+originally described as Median (P25-P75) were converted 
+to the format Mean (± estimated SD). The transformation 
+was carried out based on the valid approximation for sym -
+metric distributions, where: SD ≈ (P75 - P25)/1.35. This 
+factor (1.35) represents the typical width of the interquar -
+tile range in a standard normal distribution, as shown in 
+Supplementary Material 5.
+Fig. 1 Flow diagram (PRISMA, 
+2020)
+ 
+1 3
+Page 5 of 14   101 
+Sleep and Breathing          (2026) 30:101 
+polysomnography indicators: AHI: MD = 16.07 (95% CI: 
+8.56 to 23.57, p < 0.05, I² = 97%), Minimum SpO₂: MD 
+= −5.79 (95% CI: −8.94 to −2.63, p < 0.05, I² = 83%), 
+Microarousal Index: MD = 5.21 (95% CI: 1.20 to 9.23, 
+p < 0.05, I² = 95%), except for Arousal Index: MD = 0.67 
+(95% CI: −5.65 to 6.98, p > 0.05, I² = 85%); Sleep Effi -
+ciency: MD = −1.99 (95% CI: −4.60 to 0.62, p > 0.05, 
+I² = 69%); Sleep Latency: MD = −3.86 (95% CI: −9.13 
+to 1.41, p > 0.05, I² = 68%) and REM Sleep Duration: 
+MD = 0.49 (95% CI: −0.89 to 1.87, p > 0.05, I² = 39%), 
+which did not show statistically significant differences 
+between the groups. For the polysomnography indicators 
+1.76, p > 0.05, I² = 0%); Microarousal Index: MD = −0.91 
+(95% CI: −2.13 to 0.30, p > 0.05, I² = 35%) and REM Sleep 
+Duration: MD = −0.61 (95% CI: −1.44 to 0.22, p > 0.05, I² 
+= 34%), which did not show statistically significant differ -
+ences between the groups. For the Arousal Index and Sleep 
+Latency, the higher means are on the COMISA group.
+Figure 14 shows the studies that presented poly -
+somnography indicators in patients with COMISA 
+and isolated insomnia. The results show that there 
+is a small statistically significant difference between 
+groups: MD = 2.52 (95% CI: 0.67 to 4.36, p < 0.05, I² 
+= 99%), which can also be observed in the following 
+Fig. 3 Prevalence of COMISA among participants over 40 years
+ 
+Fig. 2 COMISA Prevalence among participants in the selected studies
+ 
+1 3
+  101  Page 6 of 14
+Sleep and Breathing          (2026) 30:101 
+Fig. 6 Prevalence of COMISA in 
+European countries
+ 
+Fig. 5 Prevalence of COMISA 
+among children and adolescent 
+participants
+ 
+Fig. 4 Prevalence of COMISA 
+among participants aged 18 to 
+40 years
+ 
+1 3
+Page 7 of 14   101 
+Sleep and Breathing          (2026) 30:101 
+Fig. 9 Prevalence of COMISA in 
+the USA
+ 
+Fig. 8 Prevalence of COMISA in 
+American countries
+ 
+Fig. 7 Prevalence of COMISA in 
+Asian countries
+ 
+1 3
+  101  Page 8 of 14
+Sleep and Breathing          (2026) 30:101 
+Fig. 12 Average BMI in COMISA
+ 
+Fig. 11 Prevalence of COMISA in men
+ 
+Fig. 10 Prevalence of COMISA 
+in Brazil
+ 
+1 3
+Page 9 of 14   101 
+Sleep and Breathing          (2026) 30:101 
+ 
+1 3
+  101  Page 10 of 14
+Sleep and Breathing          (2026) 30:101 
+more severe sleep phenotype and a worse overall prognosis 
+for COMISA. This leads to shorter Total Sleep Time (TST), 
+lower Sleep Efficiency (SE), longer Sleep Onset Latency 
+(SOL), frequent nocturnal awakenings due to obstructive 
+events or nocturia, and lighter sleep compared to patients 
+who have only OSA or isolated insomnia [9, 28, 30].
+Sleep fragmentation induced by OSA, combined with the 
+low arousal threshold characteristic of insomnia, can lead 
+to prolonged and more variable awakenings throughout the 
+night in patients with COMISA; a finding that may not be 
+as evident in single-night polysomnography but becomes 
+clearer in multi-night measurements [21, 28].
+In patients with COMISA, there is a greater average 
+duration of awakenings and a higher number of awaken -
+ings lasting 5 min or more (WKN ≥ 5 min), resulting in an 
+extended WASO that includes only these longer awakenings 
+(WASO ≥ 5 min), compared to patients with OSA alone [22, 
+29]. Changes in sleep stages are also observed, such as an 
+increase in N1/N2 sleep at the expense of N3 [23, 27].
+Sleep state misperception (SSM) is common in patients 
+with COMISA, contributing to the subjective perception of 
+poor sleep quality even when objective measures may be 
+less severe [24, 25, 29].
+The discrepancy between objective polysomnography 
+findings and subjective reports of poor sleep in COMISA 
+suggests a qualitative impairment of sleep microstructure 
+not captured by conventional metrics. Studies indicate 
+that the mistaken perception of sleep state may be related 
+to alterations in slow-wave activity and an increase in the 
+power of fast frequencies (beta and gamma) during NREM 
+sleep. In COMISA, this intrusion of wakefulness into sleep 
+may be amplified by intermittent hypoxia, which promotes 
+an altered pattern of functional brain connectivity, result -
+ing in sleep that, although present in the recordings, is pro -
+cessed by the patient as an unsatisfactory and fragmented 
+state of wakefulness [9, 19, 23, 24].
+The meta-analysis on overall COMISA prevalence is 
+consistent with the data presented by Luciano et al. [9]. 
+COMISA prevalence generally increases with age [ 16, 
+27]. However, in children, the presentation may differ; 
+for example, daytime sleepiness may be less prominent, 
+and sleep problems may manifest as hyperactive daytime 
+behavior [29].
+Furthermore, the meta-analysis by geographic region 
+revealed lower prevalence rates in Brazil. This may be 
+related to the fact that the study by Cruz et al., 2022, included 
+in the meta-analysis, was conducted with children and ado-
+lescents, populations with lower COMISA prevalence com-
+pared to other groups. The highest prevalence of COMISA 
+patients was observed in European countries, aligning with 
+the findings of Zhang et al. [ 11], where the highest preva -
+lence rates were found in European and American countries.
+AHI and Microarousal Index, the higher means are on the 
+COMISA group.
+The grading of recommendations assessment, 
+development and evaluation - GRADE
+The strength of the evidence for the analysis conducted 
+between COMISA and isolated Obstructive Sleep Apnoea 
+was considered high for the polysomnography indicators 
+AHI and Arousal Index. For the other indicators, it was con-
+sidered Moderate, as shown in Supplementary Material 6.
+The strength of the evidence for the analysis conducted 
+between COMISA and isolated Insomnia was consid -
+ered high for the polysomnography indicator AHI. For the 
+Microarousal Index and REM Sleep Duration indicators, it 
+was considered Moderate. As for the other indicators, it was 
+considered low as shown in Supplementary Material 7.
+Discussion
+The combination of characteristics of OSA with comor -
+bid insomnia (COMISA) results in a deterioration of sleep 
+architecture, particularly when compared to isolated comor-
+bid insomnia [9, 17, 23, 27].
+In general, when analyzing the polysomnography 
+data, we observe small differences among COMISA, 
+isolated OSA, and isolated comorbid Insomnia, with 
+particular emphasis on AHI. Although the macroarchi -
+tecture of sleep (sleep stages, total time) may appear 
+similar between groups in Polysomnography (PSG), the 
+Apnoea-Hypopnea Index (AHI) emerges as the main 
+clinical and pathophysiological indicator for differen -
+tiating these groups. For patients with COMISA, AHI 
+represents the OSA component that interacts bidirection -
+ally with insomnia, potentially exacerbating it and lead -
+ing to frequent awakenings following obstructive events. 
+OSA worsens insomnia because respiratory events (mea -
+sured by the AHI) force the brain to wake up to resume 
+breathing, which leads to the development of mainte -
+nance insomnia, and insomnia worsens OSA because 
+the state of cortical hyperalertness and sleep fragmenta -
+tion typical of insomnia can lower the arousal threshold 
+(the patient wakes up before even completing an effec -
+tive respiratory maneuver), which increases ventilatory 
+instability and, consequently, can increase the number of 
+events recorded in the AHI [ 21, 24].
+As observed, the relationship between OSA and insomnia 
+is bidirectional, meaning that the symptoms of one condi -
+tion can exacerbate or predispose to the other, resulting in a 
+Fig. 13 Polysomnography Indicators in patients with COMISA and 
+isolated Obstructive Sleep Apnoea (OSA)
+1 3
+Page 11 of 14   101 
+Sleep and Breathing          (2026) 30:101 
+ 
+1 3
+  101  Page 12 of 14
+Sleep and Breathing          (2026) 30:101 
+Conclusion
+The pathophysiology of COMISA goes beyond the mere 
+sum of two disorders, requiring a comprehensive and per -
+sonalized diagnostic and therapeutic approach.
+The objective of this systematic review was to exam -
+ine the pathophysiological correlations of insomnia and 
+obstructive sleep apnoea (COMISA). Differences are par -
+ticularly evident in the indicators AHI, Minimum SpO₂, 
+Microarousal Index, Arousal Index, Sleep Efficiency, and 
+Sleep Latency, which show greater impairment in patient 
+groups with COMISA. Prevalence remains very similar to 
+that already reported in the literature, around 30% of the 
+general population studied.
+Supplementary Information  The online version contains 
+supplementary material available at  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 0 7  / s 1  1 3 2 5 - 0 
+2 6 - 0 3 6 3 1 - 0.
+Author Contributions EC and EZ conceived the idea and played key 
+roles in the literature search and data processing, as well as in writing 
+and reviewing the manuscript. JH and VC contributed equally to writ-
+ing and reviewing the manuscript.
+Funding The Article Processing Charge (APC) for the publication 
+of this research was funded by the Coordenação de Aperfeiçoamen -
+to de Pessoal de Nível Superior - Brasil (CAPES) (ROR identifier: 
+00x0ma614). There was no funding for the execution of this study.
+Data availability  The data supporting the results of this study are 
+available from the corresponding author upon reasonable request at 
+cotrikpsiquiatria@gmail.com.
+Declarations
+Ethical approval This article does not contain any studies involving 
+human participants conducted by any of the authors.
+Informed consent Not applicable.
+Conflict of interest The authors declare no conflicts of interest.
+Open Access   This article is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits use, sharing, 
+adaptation, distribution and reproduction in any medium or format, 
+as long as you give appropriate credit to the original author(s) and the 
+source, provide a link to the Creative Commons licence, and indicate 
+if changes were made. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless 
+indicated otherwise in a credit line to the material. If material is not 
+included in the article’s Creative Commons licence and your intended 
+use is not permitted by statutory regulation or exceeds the permitted 
+use, you will need to obtain permission directly from the copyright 
+holder. To view a copy of this licence, visit  h t t p  : / /  c r e a  t i  v e c  o m m o  n s .  o 
+r g  / l i c e n s e s / b y / 4 . 0 /.
+The prevalence of Comorbid Insomnia and OSA 
+(COMISA) shows significant regional variations, reach -
+ing a higher percentage in European countries. These 
+data demonstrate that the distribution of the condition 
+is influenced by geographic location, which may reflect 
+ethnic and genetic disparities, as well as sociocul -
+tural and environmental variations in the perception of 
+insomnia [ 2, 16, 24]. Although the results were based on 
+adjusted statistical models, it is possible that these fac -
+tors are influencing the results, which is a limitation of 
+the study [ 2, 16, 24].
+The weighted mean BMI of 30.79 kg/m² in our sample 
+indicates a predominantly obese population. While obesity 
+is a primary driver of OSA through mechanical airway col-
+lapse, it can also contribute to central sleep apnoea and obe-
+sity hypoventilation syndrome, potentially confounding the 
+AHI results. Future studies should stratify COMISA patients 
+by BMI to isolate the specific neurobiological interactions 
+from obesity-related mechanical effects [9, 18, 22, 24].
+From a clinical standpoint, identifying specific patho -
+physiological phenotypes in COMISA is crucial to over -
+coming the historically low rates of CPAP adherence. The 
+integration of Cognitive-Behavioral Therapy for Insomnia 
+(CBT-I) before or concurrently with the initiation of apnoea 
+treatment should not be seen merely as an adjunct treatment, 
+but as a necessary pathophysiological intervention to stabi -
+lize the arousal threshold and reduce hyperarousal, facilitat-
+ing acceptance of positive pressure therapy. This reinforces 
+the need for a personalized and integrated therapeutic 
+approach, such as the combination of Cognitive Behavioral 
+Therapy for Insomnia (CBT-I) and continuous positive air -
+way pressure (CPAP), since treating only one component 
+may not be sufficient to mitigate the overall health risks to 
+the patient [8, 13, 16, 17, 21, 26].
+The inclusion of the studies by Mysliwiec et al. [17] and 
+Khazaie et al. [ 16] constitutes a limitation of this review 
+due to the presence of shift workers in their samples, 
+which introduces significant confounding variables into the 
+COMISA analysis. Shift work is a known factor in precipi -
+tating and perpetuating sleep disorders through circadian 
+misalignment and chronic sleep deprivation, elements that 
+can artificially mimic or exacerbate insomnia symptoms and 
+the severity of obstructive sleep apnoea.
+New studies are needed to compare the main polysom -
+nographic indicators and verify whether the results remain 
+consistent regarding the COMISA, isolated Apnoea, and 
+isolated Insomnia groups.
+Fig. 14 Polysomnography Indicators in patients with COMISA and 
+isolated Insomnia
+1 3
+Page 13 of 14   101 
+Sleep and Breathing          (2026) 30:101 
+associations in a sleep clinic population. Sleep Breath 28:2693–
+2700.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 0 7  / s 1  1 3 2 5 - 0 2 4 - 0 3 1 0 2 - 4
+17. Mysliwiec V , Brock MS, Pruiksma KE, Straud CL, Taylor DJ, 
+Hansen S et al (2022) A comprehensive evaluation of insomnia, 
+obstructive sleep apnoea and comorbid insomnia and obstructive 
+sleep apnoea in US military personnel. Sleep 45(12):1–13.  h t t p  s : 
+/  / d o i  . o  r g /  1 0 . 1  0 9 3  / s l  e e p / z s a c 2 0 3
+18. Pan L, Li H, Guo J, Ma C, Li L, Zhan W et al (2024) Expanded 
+gray matter atrophy with severity stages of adult comorbid insom-
+nia and sleep apnoea. Sleep Med 124:191–200.  h t t p  s : /  / d o i  . o  r g /  1 0 . 
+1  0 1 6  / j .  s l e e p . 2 0 2 4 . 0 9 . 0 2 7
+19. Páramo-Brando AM, Durán P, del Río-Portilla IY , Poblano A, 
+Haro R (2019) Differences in electroencephalographic spectra 
+during pre-sleep wakefulness, N1, and R sleep between comorbid 
+insomnia and obstructive sleep apnoea. Sleep Breath 24:267–275.  
+h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 0 7  / s 1  1 3 2 5 - 0 1 9 - 0 1 9 5 1 - y
+20. Hilmisson H, Sveinsdottir E, Lange N, Magnusdottir S (2019) 
+Insomnia symptoms in primary care: a prospective study focusing 
+on prevalence of undiagnosed co-morbid sleep disordered breath-
+ing. Eur J Intern Med 63:19–26.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / j .  e j i m . 2 0 
+1 9 . 0 1 . 0 1 1
+21. Wulterkens BM, Den Teuling NGP, Hermans LWA, Asin J, Duis 
+N, Overeem S et al (2024) Multi-night home assessment of sleep 
+structure in OSA with and without insomnia. Sleep Med 117:152–
+61.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / j .  s l e e p . 2 0 2 4 . 0 3 . 0 3 1
+22. Bjorvatn B, Pallesen S, Grønli J, Sivertsen B, Lehmann S (2014) 
+Prevalence and correlates of insomnia and excessive sleepiness 
+in adults with obstructive sleep apnoea symptoms. Percept Mot 
+Skills Phys Dev Meas 118(2):571–86.  h t t p  s : /  / d o i  . o  r g /  1 0 . 2  4 6 6  / 1 5  
+. 0 6 . P M S . 1 1 8 k 2 0 w 3
+23. Choi SJ, Suh S, Ong J, Joo EY (2016) Sleep misperception in 
+chronic insomnia patients with obstructive sleep apnoea syn -
+drome: implications for clinical assessment. J Clin Sleep Med 
+12(11):1517–25.  h t t p  s : /  / d o i  . o  r g /  1 0 . 5  6 6 4  / j c  s m . 6 2 8 0
+24. Kundu K, Sharma G, Saini LK, Gupta R (2022) Polysomno -
+graphic characteristics of the patients having chronic insomnia 
+and obstructive sleep apnoea: evidence for paradoxical insomnia 
+and comorbid insomnia with OSA (COMISA). Indian J Psychol 
+Med 44(4):384–91.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  1 7 7  / 0 2  5 3 7 1 7 6 2 1 1 0 4 8 3 2 2
+25. Lang CJ, Appleton SL, Vakulin A et al (2017) Co-morbid OSA 
+and insomnia increases depression prevalence and severity in 
+men. Respirology 22(7):1407–15.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  1 1 1  / r e  s p . 1 
+3 0 6 4
+26. Subramanian S, Hesselbacher SE, Nye P, Aiyer AA, Surani SR 
+(2021) Comorbid insomnia and sleep apnoea: characterization of 
+the syndrome and understanding its associations with comorbid 
+sleep conditions. Sleep Breath 25(4):1995–2000.  h t t p  s : /  / d o i  . o  r g /  
+1 0 . 1  0 0 7  / s 1  1 3 2 5 - 0 2 1 - 0 2 3 3 1 - 1
+27. Wu M, Xue P, Yan J, Benedict C (2024) Association between age 
+and comorbid insomnia and sleep apnea. Sleep Med 124:659–
+661.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / j .  s l e e p . 2 0 2 4 . 1 1 . 0 1 1
+28. Wulterkens BM, Hermans LWA, Fonseca P et al (2023) Sleep 
+structure in patients with COMISA compared to OSA and insom-
+nia. J Clin Sleep Med 19(6):1093–103.  h t t p  s : /  / d o i  . o  r g /  1 0 . 5  6 6 4  / j c  
+s m . 1 0 5 0 0
+29. Yelov L, Reiter J, Cruz MM, Gileles-Hillel A (2023) The asso -
+ciation of obstructive sleep apnoea and behavioral insomnia in 
+children ages 10 and under. J Clin Sleep Med 20(2):245–251.  h t t 
+p s :   /  / d o  i . o  r  g  /  1 0  . 5 6   6 4 /  j  c s m . 1 0 8 3 4
+Publisher’s note Springer Nature remains neutral with regard to juris-
+dictional claims in published maps and institutional affiliations.
+References
+1. Brock MS, Foster SN, Motamedi V , Mysliwiec V (2018) 
+COMISA (Comorbid insomnia and sleep apnoea): a practical 
+approach. Curr Sleep Med Rep 4:255–267
+2. Cruz MM, Kryger MH, Morin CM, Palombini L, Salles C, Gozal 
+D (2022) Comorbid Insomnia and Sleep Apnoea: mechanisms 
+and implications of an underrecognized and misinterpreted sleep 
+disorder. Sleep Med 84:283–288.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / j .  s l e e p . 
+2 0 2 1 . 0 5 . 0 4 3
+3. American Academy of Sleep Medicine (2014) International Clas-
+sification of Sleep Disorders, Third Edition (ICSD-3). American 
+Academy of Sleep Medicine, Darien, IL
+4. McNamara S, Spurling BC, Bollu PC (2025) Chronic Insomnia. 
+StatPearls [Internet]. StatPearls Publishing, Treasure Island (FL)
+5. Eckert DJ, White DP, Jordan AS, Malhotra A, Wellman A (2013) 
+Defining phenotypic causes of obstructive sleep apnoea. Identi -
+fication of novel therapeutic targets. Am J Respir Crit Care Med 
+188(8):996–1004
+6. Benjafield A V , Ayas NT, Eastwood PR et al (2019) Estimation of 
+the global prevalence and burden of obstructive sleep apnoea: a 
+literature-based analysis. Lancet Respir Med 7(8):687–698.  h t t p  s 
+: /  / d o i  . o  r g /  1 0 . 1  0 1 6  / S 2  2 1 3 - 2 6 0 0 ( 1 9 ) 3 0 1 9 8 - 5
+7. - Guilleminault C, Eldridge FL, Dement WC (1973) Insomnia 
+with sleep apnoea: a new syndrome. Science 181(4102):856–858.  
+h t t p  s : /  / d o i  . o  r g /  1 0 . 1  1 2 6  / s c  i e n c e . 1 8 1 . 4 1 0 2 . 8 5 6
+8. Sweetman A, Lack L, Catcheside PG, Antic NA, Chai-Coetzer 
+CL, Smith SS, Douglas JÁ, McEvoy RD (2017) Developing a 
+successful treatment for co-morbid insomnia and sleep apnoea. 
+Sleep Med Rev 33:28–38.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / j .  s m r v . 2 0 1 6 . 0 
+4 . 0 0 4
+9. Luciano YM, Porcacchia AS, Tufik S, Andersen ML, Pires GN 
+(2024) Prevalence and incidence of co-morbid insomnia and 
+sleep apnoea (Comisa) in São Paulo, Brazil. Chest 165(4):1004–
+1008.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / j .  c h e s t . 2 0 2 3 . 1 1 . 4 7 2
+10. Mysliwiec V , Brock MS, Creamer JL, O’Reilly BM, Germain A, 
+Roth BJ (2018) Trauma associated sleep disorder: a parasomnia 
+induced by trauma. Sleep Med Rev 37:94–104.  h t t p  s : /  / d o i  . o  r g /  1 0 
+. 1  0 1 6  / j .  s m r v . 2 0 1 7 . 0 1 . 0 0 4
+11. Zhang Y , Ren R, Lei F, Zhou J, Zhangb J, Wing Y-K, Sanford LD, 
+Tang X (2019) Worldwide and regional prevalence rates of co-
+occurrence of insomnia and insomnia symptoms with obstructive 
+sleep apnoea: A systematic review and meta-analysis. Sleep Med 
+Rev 45:1–17.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / j .  s m r v . 2 0 1 9 . 0 1 . 0 0 4
+12. Eckert DJ, Younes MK (2014) Arousal from sleep: implications 
+for obstructive sleep apnoea pathogenesis and treatment. J Appl 
+Physiol 116(3):302–313.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  1 5 2  / j a  p p l  p h y  s i o l  . 0  1 
+1 4 1 . 2 0 1 3
+13. Carberry JC, Amatoury J, Eckert DJ (2018) Personalized man -
+agement approach for OSA. Chest 153(3):744–755.  h t t p  s : /  / d o i  . o  r 
+g /  1 0 . 1  0 1 6  / j .  c h e s t . 2 0 1 7 . 0 6 . 0 1 1
+14. Krakow B, Melendrez D, Ferreira E, Clark J, Warner TD, Sisley 
+B, Sklar D (2001) Prevalence of insomnia symptoms in patients 
+with sleep-disordered breathing. Chest 120(6):1923–1929.  h t t p  s : /  
+/ d o i  . o  r g /  1 0 . 1  3 7 8  / c h  e s t . 1 2 0 . 6 . 1 9 2 3
+15. Li Y , Zhang X, Winkelman JW, Redline S, Hu FB, Stampfer M, 
+Ma J, Gao X (2014) Association between insomnia symptoms 
+and mortality: a prospective s tudy of U.S. men. Circulation 
+129(7):737–746.  h t t p  s : /  / p u b  m e  d . n  c b i .  n l m  . n i  h . g o v / 2 4 2 2 6 8 0 7 /
+16. Khazaie H, Aghazadeh M, Zakiei A, Maazinezhad S, Taval -
+laie A, Moghbel B et al (2024) Co-morbid Insomnia and Sleep 
+Apnoea (COMISA) in a large sample of Iranian: prevalence and 
+1 3
+  101  Page 14 of 14

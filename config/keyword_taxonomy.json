@@ -1,0 +1,854 @@
+{
+  "version": "2026-04-v3",
+  "global": {
+    "lifestyle_medicine_pillars": {
+      "nutrition": [
+        "lifestyle medicine",
+        "medicina do estilo de vida",
+        "healthy lifestyle",
+        "estilo de vida saudável",
+        "optimal nutrition",
+        "nutrição ótima",
+        "nutrition",
+        "nutrição"
+      ],
+      "physical_activity": [
+        "physical activity",
+        "exercise",
+        "movement",
+        "atividade física",
+        "exercício",
+        "sedentary",
+        "sedentário"
+      ],
+      "sleep_stress_social": [
+        "sleep",
+        "sleep quality",
+        "circadian",
+        "stress",
+        "mindfulness",
+        "social connection",
+        "social support",
+        "sono",
+        "qualidade do sono",
+        "ritmo circadiano",
+        "estresse",
+        "atenção plena",
+        "conexões sociais",
+        "suporte social",
+        "comensalidade",
+        "shared meals",
+        "family meals",
+        "commensality"
+      ],
+      "substances": [
+        "smoking cessation",
+        "alcohol",
+        "substance use",
+        "tabaco",
+        "tabagismo",
+        "álcool"
+      ]
+    },
+    "diet_patterns": {
+      "core": [
+        "dietary pattern",
+        "dietary patterns",
+        "eating pattern",
+        "padrão alimentar",
+        "padrões alimentares",
+        "healthy diet",
+        "healthy eating",
+        "alimentação saudável",
+        "dieta saudável"
+      ],
+      "guidelines": [
+        "food-based dietary guideline",
+        "food based dietary guidelines",
+        "dietary guideline",
+        "dietary guidelines",
+        "food guide",
+        "nutrition guideline",
+        "guia alimentar",
+        "diretrizes alimentares",
+        "guías alimentarias",
+        "guia de alimentação",
+        "healthy eating recommendation"
+      ],
+      "mediterranean": [
+        "mediterranean diet",
+        "mediterranean dietary pattern",
+        "dieta mediterrânea",
+        "padrão mediterrâneo"
+      ],
+      "dash": [
+        "dash diet",
+        "dietary approaches to stop hypertension",
+        "dieta dash"
+      ],
+      "mind": [
+        "mind diet",
+        "dieta mind"
+      ],
+      "plant_based": [
+        "plant-based diet",
+        "plant based diet",
+        "whole-food plant-based",
+        "whole food plant based",
+        "vegetarian diet",
+        "vegan diet",
+        "based on plants",
+        "dieta baseada em vegetais",
+        "dieta plant-based",
+        "dieta vegetariana",
+        "dieta vegana"
+      ],
+      "eat_lancet": [
+        "eat-lancet",
+        "planetary health diet",
+        "dieta planetária",
+        "planetary diet"
+      ],
+      "portfolio_nordic": [
+        "portfolio diet",
+        "new nordic diet",
+        "nordic diet",
+        "dieta portfolio",
+        "dieta nórdica"
+      ],
+      "processing": [
+        "ultra-processed",
+        "ultra processed",
+        "processed food",
+        "minimally processed",
+        "ultraprocessado",
+        "ultraprocessados",
+        "processamento de alimentos",
+        "minimamente processado",
+        "nova classification",
+        "classificação nova"
+      ]
+    },
+    "nutrition_domains": {
+      "energy": [
+        "energy intake",
+        "energy density",
+        "energy balance",
+        "calorie",
+        "calories",
+        "kcal",
+        "ingestão energética",
+        "densidade energética",
+        "equilíbrio energético",
+        "quilocalorias",
+        "calorias"
+      ],
+      "carbohydrates": [
+        "carbohydrate",
+        "carbohydrates",
+        "glycemic index",
+        "glycaemic index",
+        "glycemic load",
+        "glycaemic load",
+        "whole grain",
+        "whole grains",
+        "refined grain",
+        "fiber",
+        "fibre",
+        "resistant starch",
+        "carboidrato",
+        "carboidratos",
+        "índice glicêmico",
+        "carga glicêmica",
+        "grãos integrais",
+        "grão integral",
+        "fibra",
+        "fibras",
+        "amido resistente",
+        "açúcar adicionado",
+        "added sugar"
+      ],
+      "proteins": [
+        "protein",
+        "proteins",
+        "lean protein",
+        "plant protein",
+        "animal protein",
+        "legumes",
+        "beans",
+        "fish",
+        "poultry",
+        "dairy",
+        "egg",
+        "eggs",
+        "proteína",
+        "proteínas",
+        "proteína magra",
+        "proteína vegetal",
+        "leguminosas",
+        "feijão",
+        "peixe",
+        "aves",
+        "laticínios",
+        "ovos"
+      ],
+      "fats": [
+        "fat",
+        "fats",
+        "lipid",
+        "lipids",
+        "saturated fat",
+        "trans fat",
+        "unsaturated fat",
+        "monounsaturated",
+        "polyunsaturated",
+        "omega-3",
+        "omega-6",
+        "olive oil",
+        "gordura",
+        "gorduras",
+        "lipídio",
+        "lipídios",
+        "gordura saturada",
+        "gordura trans",
+        "gordura insaturada",
+        "monoinsaturada",
+        "poli-insaturada",
+        "ômega-3",
+        "ômega-6",
+        "azeite de oliva"
+      ],
+      "fiber_matrix_micros": [
+        "food matrix",
+        "nutrient density",
+        "micronutrient",
+        "potassium",
+        "magnesium",
+        "folate",
+        "calcium",
+        "iron",
+        "sodium",
+        "polyphenol",
+        "carotenoid",
+        "phytosterol",
+        "matriz alimentar",
+        "densidade nutricional",
+        "micronutriente",
+        "potássio",
+        "magnésio",
+        "folato",
+        "cálcio",
+        "ferro",
+        "sódio",
+        "polifenol",
+        "carotenoide",
+        "fitoesterol"
+      ],
+      "food_groups": [
+        "vegetables",
+        "fruits",
+        "legumes",
+        "nuts",
+        "seeds",
+        "whole grains",
+        "tubers",
+        "hortaliças",
+        "verduras",
+        "legumes",
+        "frutas",
+        "oleaginosas",
+        "sementes",
+        "tubérculos"
+      ],
+      "culinary_labeling": [
+        "culinary medicine",
+        "cooking skills",
+        "home cooking",
+        "meal planning",
+        "food label",
+        "nutrition label",
+        "front-of-pack",
+        "shopping",
+        "food literacy",
+        "medicina culinária",
+        "habilidades culinárias",
+        "cozinhar em casa",
+        "planejamento de refeições",
+        "rotulagem",
+        "rótulo",
+        "rótulos",
+        "compras",
+        "literacia alimentar",
+        "letramento alimentar"
+      ]
+    },
+    "implementation_behavior": {
+      "adherence": [
+        "adherence",
+        "compliance",
+        "patient compliance",
+        "acceptability",
+        "feasibility",
+        "implementation",
+        "implementation science",
+        "barrier",
+        "barriers",
+        "facilitator",
+        "facilitators",
+        "adesão",
+        "aderência",
+        "aceitabilidade",
+        "viabilidade",
+        "implementação",
+        "ciência da implementação",
+        "barreira",
+        "barreiras",
+        "facilitador",
+        "facilitadores"
+      ],
+      "behavioral": [
+        "behavior change",
+        "self-monitoring",
+        "self efficacy",
+        "self-efficacy",
+        "habit",
+        "habits",
+        "food agency",
+        "decision making",
+        "goal setting",
+        "motivational interviewing",
+        "persuasive message",
+        "mudança de comportamento",
+        "automonitoramento",
+        "autoeficácia",
+        "hábitos",
+        "agência alimentar",
+        "tomada de decisão",
+        "definição de metas",
+        "entrevista motivacional",
+        "mensagem persuasiva"
+      ],
+      "contextual": [
+        "food environment",
+        "food access",
+        "cost of food",
+        "time constraint",
+        "household",
+        "domestic organization",
+        "social environment",
+        "meal context",
+        "work routine",
+        "environmental determinant",
+        "ambiente alimentar",
+        "acesso a alimentos",
+        "custo dos alimentos",
+        "falta de tempo",
+        "organização doméstica",
+        "ambiente social",
+        "contexto da refeição",
+        "rotina de trabalho",
+        "determinante ambiental",
+        "cultura alimentar"
+      ],
+      "commensality": [
+        "shared meals",
+        "family meals",
+        "social eating",
+        "commensality",
+        "eat together",
+        "refeições compartilhadas",
+        "refeições em família",
+        "comensalidade",
+        "comer junto"
+      ]
+    },
+    "document_types": {
+      "guidelines": [
+        "guideline",
+        "guidelines",
+        "clinical practice guideline",
+        "practice guideline",
+        "guidance",
+        "scientific statement",
+        "statement",
+        "consensus",
+        "position statement",
+        "diretriz",
+        "diretrizes",
+        "consenso",
+        "posicionamento",
+        "declaração científica",
+        "recomendação"
+      ],
+      "reviews": [
+        "systematic review",
+        "scoping review",
+        "integrative review",
+        "umbrella review",
+        "meta-analysis",
+        "revisão sistemática",
+        "revisão de escopo",
+        "revisão integrativa",
+        "metanálise",
+        "metaanálise"
+      ],
+      "trials": [
+        "randomized controlled trial",
+        "controlled trial",
+        "pragmatic trial",
+        "pilot study",
+        "feasibility study",
+        "ensaio clínico randomizado",
+        "ensaio controlado",
+        "estudo piloto",
+        "estudo de viabilidade"
+      ],
+      "grey": [
+        "technical report",
+        "policy brief",
+        "white paper",
+        "manual",
+        "framework",
+        "report",
+        "toolkit",
+        "relatório técnico",
+        "nota técnica",
+        "manual",
+        "framework",
+        "relatório",
+        "guia"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "obesity",
+      "obese",
+      "overweight",
+      "clinical obesity",
+      "body mass index",
+      "bmi",
+      "waist circumference",
+      "obesidade",
+      "obeso",
+      "sobrepeso",
+      "obesidade clínica",
+      "índice de massa corporal",
+      "imc",
+      "circunferência da cintura",
+      "adiposidade"
+    ],
+    "diabetes": [
+      "diabetes",
+      "type 2 diabetes",
+      "t2d",
+      "diabetes mellitus",
+      "glycemia",
+      "glycaemia",
+      "glucose",
+      "insulin resistance",
+      "diabetes tipo 2",
+      "glicemia",
+      "glicose",
+      "resistência à insulina",
+      "hemoglobina glicada"
+    ],
+    "hypertension": [
+      "hypertension",
+      "blood pressure",
+      "systolic",
+      "diastolic",
+      "hipertensão",
+      "pressão arterial",
+      "pressão sistólica",
+      "pressão diastólica"
+    ],
+    "dyslipidemia": [
+      "dyslipidemia",
+      "cholesterol",
+      "ldl",
+      "hdl",
+      "triglyceride",
+      "apolipoprotein b",
+      "dislipidemia",
+      "colesterol",
+      "triglicerídeos",
+      "apolipoproteína b"
+    ],
+    "cvd": [
+      "cardiovascular disease",
+      "coronary artery disease",
+      "coronary heart disease",
+      "ascvd",
+      "cardiometabolic risk",
+      "risco cardiovascular",
+      "doença cardiovascular",
+      "doença arterial coronariana",
+      "doença coronariana",
+      "risco cardiometabólico"
+    ],
+    "metabolic_syndrome": [
+      "metabolic syndrome",
+      "central obesity",
+      "síndrome metabólica",
+      "obesidade central"
+    ],
+    "fatty_liver": [
+      "fatty liver",
+      "nafld",
+      "masld",
+      "esteatose hepática",
+      "doença hepática gordurosa"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "body weight",
+      "weight loss",
+      "weight management",
+      "body composition",
+      "fat mass",
+      "waist circumference",
+      "peso corporal",
+      "perda de peso",
+      "manejo do peso",
+      "composição corporal",
+      "massa gorda",
+      "circunferência da cintura"
+    ],
+    "glycemia": [
+      "glucose",
+      "fasting glucose",
+      "postprandial glucose",
+      "hba1c",
+      "glycemic control",
+      "insulin",
+      "insulin resistance",
+      "glicose",
+      "glicemia de jejum",
+      "glicose pós-prandial",
+      "hemoglobina glicada",
+      "controle glicêmico",
+      "insulina"
+    ],
+    "pressure": [
+      "blood pressure",
+      "systolic blood pressure",
+      "diastolic blood pressure",
+      "pressão arterial",
+      "pressão sistólica",
+      "pressão diastólica"
+    ],
+    "lipids": [
+      "ldl-c",
+      "hdl-c",
+      "non-hdl",
+      "triglycerides",
+      "cholesterol",
+      "apo b",
+      "colesterol ldl",
+      "colesterol hdl",
+      "triglicerídeos",
+      "colesterol não hdl",
+      "apo b"
+    ],
+    "inflammation": [
+      "inflammation",
+      "c-reactive protein",
+      "crp",
+      "endothelial function",
+      "oxidative stress",
+      "inflamação",
+      "proteína c reativa",
+      "função endotelial",
+      "estresse oxidativo"
+    ],
+    "diet_quality_adherence": [
+      "diet quality",
+      "healthy eating index",
+      "adherence",
+      "acceptability",
+      "feasibility",
+      "food literacy",
+      "qualidade da dieta",
+      "healthy eating index",
+      "adesão",
+      "aceitabilidade",
+      "viabilidade",
+      "literacia alimentar"
+    ],
+    "behavioral": [
+      "self efficacy",
+      "self-efficacy",
+      "habit",
+      "motivation",
+      "cooking confidence",
+      "meal planning",
+      "autoeficácia",
+      "hábito",
+      "motivação",
+      "confiança culinária",
+      "planejamento de refeições"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "title": "Food guidelines e literatura cinza para obesidade não clínica na MEV",
+      "research_question": "Quais parâmetros nutricionais, elementos comportamentais e variáveis contextuais compõem as diretrizes alimentares e a literatura cinzenta relevantes para um protocolo dietético de Nutrição do Estilo de Vida em adultos com obesidade não clínica?",
+      "population_terms": [
+        "adult",
+        "adults",
+        "adult population",
+        "community adults",
+        "adulto",
+        "adultos",
+        "população adulta"
+      ],
+      "condition_terms": [
+        "obesity",
+        "obese",
+        "obesidade",
+        "obeso",
+        "overweight",
+        "sobrepeso"
+      ],
+      "clinical_keys": [
+        "obesity"
+      ],
+      "document_type_keys": [
+        "guidelines",
+        "grey",
+        "reviews"
+      ],
+      "priority_outcomes": [
+        "anthropometry",
+        "diet_quality_adherence"
+      ],
+      "focus_blocks": [
+        "lifestyle_medicine_pillars",
+        "diet_patterns",
+        "nutrition_domains",
+        "implementation_behavior",
+        "document_types"
+      ],
+      "source_priority": [
+        "official_web",
+        "google_cse",
+        "ddg_web",
+        "pubmed",
+        "europepmc",
+        "openalex",
+        "crossref",
+        "doaj"
+      ],
+      "web_query_hints": [
+        "food guideline",
+        "guia alimentar",
+        "grey literature",
+        "technical report",
+        "policy brief"
+      ]
+    },
+    "busca2a": {
+      "title": "Diretrizes e consensos clínicos para obesidade com comorbidades",
+      "research_question": "Quais recomendações dietéticas e variáveis clínicas aparecem com maior convergência em diretrizes, consensos e scientific statements sobre obesidade com diabetes, hipertensão, dislipidemia, DAC, risco cardiovascular e síndrome metabólica na perspectiva da Medicina do Estilo de Vida?",
+      "population_terms": [
+        "adult",
+        "adults",
+        "adulto",
+        "adultos"
+      ],
+      "condition_terms": [
+        "obesity",
+        "obesidade",
+        "diabetes",
+        "hipertensão",
+        "hypertension",
+        "dyslipidemia",
+        "dislipidemia",
+        "cardiovascular risk",
+        "risco cardiovascular"
+      ],
+      "clinical_keys": [
+        "obesity",
+        "diabetes",
+        "hypertension",
+        "dyslipidemia",
+        "cvd",
+        "metabolic_syndrome",
+        "fatty_liver"
+      ],
+      "document_type_keys": [
+        "guidelines",
+        "grey",
+        "reviews"
+      ],
+      "priority_outcomes": [
+        "anthropometry",
+        "glycemia",
+        "pressure",
+        "lipids",
+        "inflammation",
+        "diet_quality_adherence"
+      ],
+      "focus_blocks": [
+        "lifestyle_medicine_pillars",
+        "diet_patterns",
+        "nutrition_domains",
+        "implementation_behavior",
+        "document_types"
+      ],
+      "source_priority": [
+        "official_web",
+        "google_cse",
+        "pubmed",
+        "europepmc",
+        "ddg_web",
+        "openalex",
+        "crossref",
+        "doaj"
+      ],
+      "web_query_hints": [
+        "clinical practice guideline",
+        "consensus",
+        "scientific statement",
+        "society guideline",
+        "diretriz clínica",
+        "consenso"
+      ]
+    },
+    "busca2b": {
+      "title": "Intervenções dietéticas, adesão e desfechos metabólicos",
+      "research_question": "Quais intervenções dietéticas e estratégias de implementação em Medicina do Estilo de Vida apresentam maior adesão e melhores desfechos metabólicos em adultos com obesidade e risco cardiometabólico?",
+      "population_terms": [
+        "adult",
+        "adults",
+        "adulto",
+        "adultos",
+        "cardiometabolic risk",
+        "risco cardiometabólico"
+      ],
+      "condition_terms": [
+        "obesity",
+        "obesidade",
+        "diabetes",
+        "hypertension",
+        "hipertensão",
+        "dyslipidemia",
+        "dislipidemia"
+      ],
+      "clinical_keys": [
+        "obesity",
+        "diabetes",
+        "hypertension",
+        "dyslipidemia",
+        "cvd",
+        "metabolic_syndrome"
+      ],
+      "document_type_keys": [
+        "trials",
+        "reviews",
+        "guidelines"
+      ],
+      "priority_outcomes": [
+        "anthropometry",
+        "glycemia",
+        "pressure",
+        "lipids",
+        "inflammation",
+        "diet_quality_adherence",
+        "behavioral"
+      ],
+      "focus_blocks": [
+        "lifestyle_medicine_pillars",
+        "diet_patterns",
+        "nutrition_domains",
+        "implementation_behavior",
+        "document_types"
+      ],
+      "source_priority": [
+        "pubmed",
+        "europepmc",
+        "google_cse",
+        "ddg_web",
+        "openalex",
+        "crossref",
+        "doaj",
+        "official_web"
+      ],
+      "web_query_hints": [
+        "randomized trial",
+        "feasibility",
+        "pilot",
+        "implementation",
+        "culinary medicine",
+        "food literacy"
+      ]
+    },
+    "artigo3_framework": {
+      "title": "Framework, pirâmide, competências e instrumento de adesão NutEV",
+      "research_question": "Como integrar padrões alimentares, competências alimentares, comensalidade, fatores contextuais e pilares da Medicina do Estilo de Vida em um framework operacional, uma pirâmide comportamental e um instrumento de adesão para a Dieta NutEV?",
+      "population_terms": [
+        "adult",
+        "adults",
+        "adulto",
+        "adultos",
+        "lifestyle medicine",
+        "medicina do estilo de vida"
+      ],
+      "condition_terms": [
+        "diet quality",
+        "food literacy",
+        "culinary medicine",
+        "commensality",
+        "adherence",
+        "implementation"
+      ],
+      "clinical_keys": [
+        "obesity",
+        "diabetes",
+        "hypertension",
+        "cvd",
+        "metabolic_syndrome"
+      ],
+      "document_type_keys": [
+        "reviews",
+        "trials",
+        "grey",
+        "guidelines"
+      ],
+      "priority_outcomes": [
+        "diet_quality_adherence",
+        "behavioral",
+        "anthropometry"
+      ],
+      "focus_blocks": [
+        "lifestyle_medicine_pillars",
+        "diet_patterns",
+        "nutrition_domains",
+        "implementation_behavior",
+        "document_types"
+      ],
+      "source_priority": [
+        "google_cse",
+        "ddg_web",
+        "pubmed",
+        "europepmc",
+        "openalex",
+        "crossref",
+        "doaj",
+        "official_web"
+      ],
+      "web_query_hints": [
+        "framework",
+        "questionnaire",
+        "index",
+        "food literacy instrument",
+        "culinary skills instrument",
+        "commensality",
+        "questionário",
+        "índice"
+      ]
+    }
+  }
+}

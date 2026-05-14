@@ -1,0 +1,1 @@
+Próximos passos: revisão humana, refinamento de regras e síntese final de tese.

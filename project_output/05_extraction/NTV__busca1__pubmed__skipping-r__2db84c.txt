@@ -1,0 +1,1109 @@
+Ferrero et al. Trials          (2026) 27:362  
+https://doi.org/10.1186/s13063-026-09752-x
+STUDY PROTOCOL Open Access
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+Trials
+Skipping rope and pamphlet intervention 
+to promote physical activity among young 
+adolescents in South Africa: study protocol 
+for a randomized controlled trial
+Elisabetta Ferrero1, Jabulani Ncayiyana2, Sphindile Machanyangwa2, Uttara Partap1, Sachin Shinde1, 
+Shraddha Bajaria3, Nathan Sivewright4, Christine Neumann5, Mary Mwanyika Sando3, Michael Laxy4, 
+Till Bärnighausen5, Wafaie Fawzi1,6,7 and Jacob Burns4*   
+Abstract 
+Background The World Health Organization (WHO) recommends that adolescents engage in at least 60 min of mod-
+erate-to-vigorous physical activity (MVPA) daily across the week to support healthy growth and development. Despite 
+this guideline, physical inactivity is prevalent among adolescents in South Africa. This is concerning given the increas-
+ing burden of overweight and obesity. While nutrition is a critical driver of these conditions, physical activity repre-
+sents a complementary and scalable strategy to improve overall adolescent health. This study aims to assess the effect 
+of providing a skipping rope and an informational pamphlet to adolescents aged 10–14 years in South Africa on their 
+physical activity intentions and behaviors.
+Methods This study is a two-arm parallel-group, individual 1:1, unblinded randomized trial, nested within the Design 
+and Evaluation of Adolescent Health Interventions and Policies in Sub-Saharan Africa (DASH) project. The interven-
+tion consists of providing adolescents 10–14 years old in a community setting in South Africa with a skipping rope 
+and a pamphlet with general instructions for rope skipping and messages emphasizing the importance of regular 
+physical activity. About 700 adolescent boys and girls are enrolled as part of this study. The intervention was admin-
+istered during the first wave of data collection for the DASH study, or baseline, and outcomes will be assessed 
+at both baseline and endline (12 months), during the second wave of data collection for DASH. As a primary outcome, 
+the trial will test whether providing skipping ropes and pamphlets to intervention participants will increase their 
+amount of weekly MVPA over 12 months, compared to participants in the control group, who will receive no materi-
+als. Secondary outcomes will be intention to do physical activity, assessed toward the end of the baseline interview, 
+and meeting the WHO recommendations for physical activity, assessed at endline. The physical activity questionnaire 
+was developed from the Physical Activity Questionnaires for Adolescents.
+Discussion Improving physical activity behaviors and reducing sedentary time among adolescents are critical for fos-
+tering healthy lifestyles into adulthood. Assessing the effectiveness of this intervention to enhance physical activity 
+intention and behaviors in South Africa is particularly important given the increasing burden of overweight and obesity.
+*Correspondence:
+Jacob Burns
+jacob.burns@tum.de
+Full list of author information is available at the end of the article
+Page 2 of 13Ferrero et al. Trials          (2026) 27:362 
+Trial registration ClinicalTrials.gov NCT06516549. Registered on July 17th 2024. https:// clini caltr ials. gov/ study/ 
+NCT06 516549.
+Keywords Physical activity, Skipping rope, Informational pamphlet, Young adolescents, Community, South Africa
+Administrative information
+Title {1} Skipping rope and pamphlet 
+intervention to promote physical activity 
+among young adolescents in South 
+Africa: study protocol for a randomized 
+controlled trial
+Trial registration {2a and 2b} NCT06516549
+Protocol version {4} April 18th 2026
+Version 4
+Funding {4} German Federal Ministry of Education 
+and Research (BMBF)
+Author details {5a} 1Department of Global Health 
+and Population, Harvard T. H. Chan 
+School of Public Health, Boston, 
+Massachusetts, USA
+2 School of Nursing and Public Health, 
+University of KwaZulu-Natal, Durban, 
+South Africa
+3 Africa Academy for Public Health, 
+Tanzania
+4 Technical University of Munich, 
+Germany
+5 Heidelberg Institute of Global 
+Health, Heidelberg University Hospital, 
+Heidelberg, Germany
+6 Department of Nutrition, Harvard T. H. 
+Chan School of Public Health, Boston, 
+Massachusetts, USA
+7 Department of Epidemiology, Harvard 
+T. H. Chan School of Public Health, 
+Boston, Massachusetts, USA
+Name and contact 
+information for the trial 
+sponsor {5b}
+University of KwaZulu-Natal
+Role of sponsor {5c} The study sponsor has oversight 
+over study activities, 
+including recruitment and data 
+collection and management. The 
+sponsor will work with the collaborators 
+for data analysis and interpretation, 
+and for writing and publishing the report
+Introduction
+Background and rationale {6a}
+Adolescence, spanning ages 10–19  years, is a critical 
+developmental period marked by significant physical, 
+psychological, and social changes. During this time, 
+adolescents have unique health and nutrition needs and 
+are particularly vulnerable due to hormonal changes 
+and growth spurts [1]. It is also a phase when behaviors 
+can easily be influenced and modified, making it an 
+opportune time to address behaviors that impact 
+long-term health and well-being [2]. With adolescents 
+comprising about 16% of the world population and 
+23% of the population in sub-Saharan Africa (SSA) 
+[3], addressing their health needs is critical to ensure 
+their present well-being, as well as foster healthier life 
+trajectories.
+Physical activity is a key lifestyle behavior of a healthy 
+life. Research shows that regular physical activity 
+improves several physical and mental health outcomes 
+among adolescents, including muscular strength and 
+flexibility, body composition, bone density, cardiovascular 
+health, mood, sleep quality, academic performance, and 
+social behaviors [4, 5]. The World Health Organization 
+(WHO) recommends at least 60  min of moderate-to-
+vigorous physical activity (MVPA) daily across the week 
+for adolescents, with vigorous activities at least 3 days 
+per week, while minimizing sedentary time [6]. MVPA 
+can include brisk walking, jogging, and cycling, while 
+vigorous activities include running, swimming, aerobic 
+dancing, and jumping rope.
+In SSA, adolescents tend to be inactive, with about 
+82–90% of adolescents reporting low physical activity 
+levels in recent surveys [7]. In South Africa, a significant 
+proportion of adolescents fail to meet the physical 
+activity recommendations, with about 93% of males and 
+95% of females recently reporting low physical activity 
+outside of school or sports clubs [8], and only 50% of 
+children and adolescents meeting the recommended 1 h 
+of MVPA per day [9]. This widespread physical inactivity 
+among adolescents poses a significant public health 
+threat in South Africa, where about 21% of adolescents 
+are overweight and obese [10].
+Skipping, or jumping rope, is a simple physical activity 
+that engages the whole body and can contribute to 
+MVPA depending on pace and skill level, and can be 
+easily promoted among adolescents. It has been shown 
+to improve cardiorespiratory fitness and bone density 
+[11, 12], and is a popular type of physical activity and 
+recreational tool among youth in many SSA countries, 
+including South Africa [13]. A randomized controlled 
+trial from China conducted with middle school students 
+found that providing a 12-week jump-rope intervention 
+as an afterschool program was associated with significant 
+improvements in muscle strength, bone mineral density, 
+and flexibility [11]. Additionally, a recent randomized 
+controlled trial from Saudi Arabia, recruiting adolescents 
+aged 12–18 with obesity from both schools and 
+Page 3 of 13
+Ferrero et al. Trials          (2026) 27:362 
+ 
+community settings, found that jumping rope was 
+associated with a significant reduction in BMI, an 
+increase in lean body mass, and improvements in muscle 
+tone [14].
+While there is substantial evidence of short-term 
+positive and successful implementation of skipping 
+rope in schools [11, 12, 15– 17], fewer studies have 
+explored the effect of skipping rope through commu -
+nity settings outside of school, such as religious and 
+youth centers, and little is known about the effect of 
+longer-term interventions, especially in South Africa. 
+Additionally, to our knowledge, there is limited evi -
+dence on skipping rope interventions specifically 
+targeting younger adolescents (aged 10–14  years) in 
+South Africa and other SSA settings. The many physi -
+cal, social, emotional, and cognitive changes that 
+influence decisions and behaviors among younger ado -
+lescents make this age period especially important to 
+shape healthy behaviors early on [18].
+To address these gaps, a randomized controlled trial is 
+being implemented to promote physical activity among 
+adolescents aged 10–14 in a community setting in South 
+Africa. The intervention involves providing adolescents 
+with a skipping rope and an informational pamphlet on 
+rope skipping and the benefits of physical activity, as pam-
+phlets have been successfully utilized in previous research 
+to promote physical activity among adolescents [19] and 
+can be easily distributed to all participants. The study will 
+provide important evidence on the benefits of this inter -
+vention for both in- and out-of-school adolescents. The 
+trial will assess changes in physical activity intentions 
+and behaviors over 12  months. The trial is part of the 
+Design and Evaluation of Adolescent Health Interventions 
+and Policies in Sub-Saharan Africa (DASH) project [20], 
+aimed at boosting adolescent health in the SSA region 
+through rigorous population-based intervention and pol -
+icy research. Specifically, it will be nested within the lon -
+gitudinal data collection activities of DASH and will thus 
+be less resource-intensive compared to traditional inter -
+vention trials.
+Objectives {7}
+The study aims to investigate the effect of providing 
+a skipping rope and an informational pamphlet with 
+physical activity information (intervention group) on 
+physical activity intentions and behaviors among young 
+adolescents in South Africa, compared to not providing 
+these materials (control group). We hypothesize that 
+providing the skipping rope and the informational 
+pamphlet about physical activity to adolescents may 
+be more effective in improving their levels of MVPA at 
+12  months after baseline assessment, compared to not 
+providing these materials. The secondary hypotheses are 
+that providing the intervention will also a) increase the 
+number of adolescents who intend to engage in physical 
+activity over the 7 days following the interview, at baseline 
+assessment; and b) increase the proportion of adolescents 
+who meet the WHO MVPA recommendations at 
+12  months after baseline assessment, compared to not 
+providing these materials.
+Trial design {8}
+This study is a two-arm parallel-group, individual 1:1, 
+unblinded randomized trial nested within the DASH 
+cohort study [20, 21], i.e., a “randomized trial-within-
+cohort. ” Wave 1 of the DASH cohort study, which 
+took place between October 2024 and February 2025, 
+served as the trial baseline. The intervention (skipping 
+rope and pamphlet) was provided towards the end of 
+the baseline interview, after all skipping rope-related 
+outcome questions had been completed and before the 
+question on intention to engage in physical activity was 
+asked. Wave 2 of the DASH cohort study, 12  months 
+after, will serve as the trial endline. Changes in intention 
+to do physical activity will be assessed at baseline, while 
+changes in physical activity behaviors will be assessed at 
+endline. The trial is based on a superiority framework, 
+as it will test the superiority of providing the skipping 
+rope and pamphlet to adolescents for physical activity, 
+compared to not providing the materials.
+This intervention is based on the Theory of Planned 
+Behavior, which suggests that a person’s health behavior 
+is determined by their intention to perform the behavior 
+[22]. This theory assumes that three types of beliefs affect 
+a specific behavior, which in this intervention would be 
+physical activity: attitude toward physical activity, per -
+ceived attitudes of peers and influences toward physical 
+activity, and perceived ability to do physical activity. The 
+intervention is also based on the Health Action Process 
+Approach [23], which proposes that behavior change fol -
+lows a motivational phase, forming intentions, and a 
+volitional phase made of planning and acting. The moti -
+vational phase is influenced by task self-efficacy, out -
+come expectancies, and risk perception [23]. Within this 
+framework, the intervention aims to potentially influence 
+adolescents’ attitudes toward physical activity, outcome 
+expectancies, and self-efficacy through the provision of 
+information and a low-cost skipping rope, thereby sup -
+porting intentions and engagement in physical activity. 
+Figure 1 illustrates how these two theoretical frameworks 
+are used to structure and interpret the potential pathways 
+of influence in the intervention.
+Page 4 of 13Ferrero et al. Trials          (2026) 27:362 
+Methods: participants, interventions, 
+and outcomes
+Study setting {9}
+This trial is embedded within the DASH cohort study 
+[20], through the Umlazi Health and Demographic 
+Surveillance System (HDSS), also called USINGA 
+(Umlazi Surveillance Initiative to Nurture Grassroots 
+Action), in Durban, South Africa. This HDSS operates 
+as a standardized and comprehensive field-based 
+information system and research platform. It collects 
+prospective data from entire populations, including 
+adolescents, at both individual and household levels, 
+from communities facing developmental constraints. 
+The USINGA HDSS covers two wards with a combined 
+population of 80,550 individuals residing in 21,012 
+households of formal dwellings and 7698 households of 
+informal dwellings. The HDSS is divided into 3 zones 
+with each zone further divided into 5 blocks [24]. As 
+part of the DASH cohort study, a random sample of 
+2000 individuals aged 10–24 was drawn from one ward 
+of the USINGA HDSS. After the initial sampling of 
+2000 adolescents, resampling occurred until a full 2000 
+participants were included in the DASH cohort study. 
+Of these 2000 individuals, all those aged 10–14 were 
+invited to participate in this randomized trial.
+Eligibility criteria {10}
+Inclusion criteria
+Inclusion criteria for this study are as follows:
+• Study participant is between ages 10 and 14 years;
+• Given minors will be enrolled (i.e., less than 
+18  years of age): one of the parents or a guardian 
+provides written informed consent;
+• The minor participant provides informed assent; 
+and,
+• Study participant is a resident of the study area and 
+intends to stay in the study area for the duration of 
+the study.
+Exclusion criteria
+The following exclusion criteria are applied to the study:
+• Participants who do not meet the above-listed 
+criteria;
+• Participants with physical disabilities that, based on 
+individual assessment and available information, 
+would make participation in moderate physical 
+activity unsafe or not feasible;
+• Those participants whose capacity to make 
+meaningful decisions is in question because they are 
+“cognitively impaired”;
+Fig. 1 Theoretical framework for skipping rope intervention
+Page 5 of 13
+Ferrero et al. Trials          (2026) 27:362 
+ 
+• Individuals with communication difficulties; and, 
+• Study participants who report suicidal behaviors dur-
+ing baseline data collection.
+Who will take informed consent? {26a}
+Trained fieldworkers obtained informed consent from all 
+individuals. For all minors, informed consent from one of 
+the parents or a guardian and informed assent from the 
+individual were required. The confidentiality of participants’ 
+information was clearly described in the consent script. The 
+consent script explained that no personal identifiers will be 
+used, and participation is completely voluntary. The script 
+specified that an individual may refuse to participate or dis-
+continue the study at any point without penalty, and with-
+out influence on any aspect of their lives. It will also discuss 
+the risks and benefits of their participation in the study. It 
+was made clear to individuals that they may ask questions 
+about the study and their participation at any time.
+Additional consent provisions for collection and use 
+of participant data and biological specimens {26b}
+NA: There are currently no plans to collect and use data 
+and specimens in ancillary studies.
+Interventions
+Explanation for the choice of comparators {6b}
+The intervention group received a skipping rope and 
+an informational pamphlet with instructions on how to 
+use the skipping rope and information on the benefits 
+of physical activity. The control group received no 
+intervention. No intervention was selected for the control 
+group, as there is no clear minimum level of “standard 
+care” that can be delivered for interventions related to 
+physical activity. Furthermore, the research team was 
+interested in understanding the effect of providing simple 
+resources for physical activity over and above currently 
+available resources in the community.
+Intervention description {11a}
+The intervention consists of a skipping rope provided to 
+participants, along with a pamphlet containing informa -
+tion on how to use the skipping rope and general infor -
+mation about physical activity guidelines. The ropes are 
+procured locally through the University of KwaZulu-
+Natal (UKZN). The pamphlet is trifold and provides 
+instructions to skip rope, such as “Ensure the rope 
+reaches nearly up to your shoulders when folded in half, 
+step over the rope, so that it hangs behind you, swing 
+the rope over your head, and, when the rope is coming 
+towards the top of your feet, hop over it. ”
+Given that skipping rope is generally considered MVPA 
+once a basic level of proficiency is achieved, and that 
+the duration of skipping from previous interventions 
+ranged substantially, including from 15 min once a week 
+[16] to 45 min three times a week [11, 14], the pamphlet 
+provides instructions to start skipping for 10–15  min 
+every other day, and then 10–15  min every day once it 
+becomes easier, to also prevent potential injuries due to 
+over-exercising [25]. In addition to skipping rope, the 
+pamphlet encourages adolescents to do physical activity 
+for at least 60  min per day and provides examples of 
+other activities, warm-ups, and cool-downs, along with 
+information on the benefits of physical activity and 
+skipping rope. The pamphlet can be accessed through 
+Additional file 1.
+Wave 1 of the DASH cohort study will serve as the trial 
+baseline. The provision of a rope and an informational 
+pamphlet to the intervention group happened toward the 
+end of the baseline interview. The fieldworker conducting 
+the survey interview provided each participant in the 
+intervention group with a rope and pamphlet and read 
+a short script explaining how to use the rope, outlining 
+the main benefits of physical activity for adolescents, 
+and asking participants to read the pamphlet in their 
+own time. On the other hand, the control group did 
+not receive any intervention. Because this trial presents 
+risks for contamination between intervention and 
+control groups, fieldworkers instructed participants not 
+to share their rope with others. In order to monitor any 
+potential contamination, during endline, participants 
+in the intervention group will be asked if they used the 
+rope alone or with friends, and participants in the control 
+group will be asked if a friend or neighbor shared a rope 
+with them.
+Criteria for discontinuing or modifying allocated 
+interventions {11b}
+Participants may voluntarily withdraw from this trial 
+at any time without providing a reason, in accordance 
+with ethical guidelines. Additionally, if the participant 
+discontinues the overall DASH cohort study, within 
+which this trial is nested, the participant will also be 
+withdrawn from the trial.
+Strategies to improve adherence to interventions {11c}
+To improve adherence to the intervention, fieldworkers 
+provided participants in the intervention arm with 
+instructions on how to use the skipping rope, allowing 
+them time to practice and get comfortable skipping. 
+Fieldworkers also explained the health benefits associated 
+with physical activity and distributed a pamphlet 
+reinforcing key messages on the importance of physical 
+activity and the specific benefits of skipping rope.
+Page 6 of 13Ferrero et al. Trials          (2026) 27:362 
+Relevant concomitant care permitted or prohibited 
+during the trial {11d}
+NA: Any concomitant care will not interfere with the 
+trial.
+Provisions for post‑trial care {30}
+NA: Post-trial care will not be provided as part of this trial.
+Outcomes {12}
+The primary outcome will be total duration of MVPA 
+per week (minutes of MVPA/week), measured at endline 
+assessment (12 months after baseline). This has been 
+chosen as the primary outcome, because the WHO 
+recommends that adolescents engage in at least 60  min 
+of MVPA daily, in addition to incorporating vigorous-
+intensity aerobic activities at least 3 days per week [6]. 
+At baseline and endline, participants are asked about 
+the duration and frequency of MVPA they engaged in 
+throughout the week preceding the interview, in- and 
+out-of-school. Relevant questions have been readapted 
+from the Physical Activity Questionnaire for Adolescents 
+(PAQ-A) [26], and the International Physical Activity 
+Questionnaire for Adolescents (IPAQ-A) [27]. The 
+duration of MVPA both in- and out-of-school will then 
+be calculated by multiplying the minutes of MVPA 
+reported for the most recent day of physical activity by 
+the number of days MVPA was performed. To determine 
+the total weekly duration of MVPA for each participant, 
+the duration in minutes of MVPA performed in-school 
+and out-of-school will be summed.
+Secondary outcomes will be (a) intention to do 
+physical activity in the coming week, compared to the 7 
+days preceding the interview, between the intervention 
+and control groups, measured at baseline after the 
+intervention materials are provided; and (b) meeting 
+the WHO MVPA recommendations (> = 420  min/
+week) over the 7 days preceding the interview at 
+endline. Finally, at endline, the trial will assess the 
+following process outcomes: (a) whether participants in 
+the intervention group have been using the rope alone 
+or with friends; and (b) whether a friend or neighbor 
+shared a skipping rope with participants in the control 
+group. This will allow the investigators to identify any 
+potential contamination.
+Participant timeline {13}
+The skipping rope intervention was administered by 
+fieldworkers during the first round of data collection in 
+the DASH cohort study (Wave 1 of DASH in 2024) and 
+took approximately 10  min. Baseline outcome assess -
+ment will occur during this first round of data collec -
+tion; endline outcome assessment will occur during 
+the second round of data collection (Wave 2 of DASH), 
+approximately 12  months later. Table  1 shows the 
+study’s timeline.
+Sample size {14}
+For the overall DASH cohort study, a random sample of 
+2000 individuals aged 10–24 was drawn from existing 
+population sampling frames created and maintained by 
+the Umlazi HDSS in South Africa. Within DASH, after 
+the initial sampling of 2000, resampling occurred until 
+a full 2000 participants were included in the DASH 
+cohort study. Of the 2000 individuals who consented 
+to participate in the overall DASH study, all those aged 
+10–14 were included in this randomized trial.
+Power calculation
+We anticipate having 700 participants enrolled 
+throughout the duration of the study (1:1 ratio between 
+intervention and control groups). To calculate the 
+statistical power for our intervention trial, we used a 
+Stata menu-driven command to estimate power based 
+on various scenarios for the changes in the primary 
+outcome, total minutes of MVPA/week.
+The total minutes of MVPA per week are based on previous 
+research on physical activity for adolescents in South Africa 
+and a few other countries [28–36]. Based on such research, 
+the following assumptions were considered:
+• Minutes of MVPA per week among adolescents in 
+South Africa vary significantly. To be conservative, 
+we assumed a baseline value of 250  min/week 
+of MVPA across boys and girls, with a standard 
+deviation (SD) of 160 min/week [28].
+• 15% loss to follow-up [37, 38].
+Based on these assumptions, the study will have 80% 
+power to detect a minimum difference of 33.9 min/week 
+in MVPA between the intervention and comparison arms 
+(Table 2).
+Recruitment {15}
+In the USINGA HDSS site, male and female residents 
+aged 10–24  years were recruited for the overall DASH 
+cohort study through household-based random sam -
+pling. The site used a sampling strategy that covered 
+Ward 1. The sample was stratified by age and gender, 
+with random selection used to ensure representative cov-
+erage of the community. Specifically for this trial, those 
+participants of the DASH cohort study aged 10–14 who 
+met the eligibility criteria were recruited. For the con -
+sent process, fieldworkers visited the selected house -
+holds for 10–14  years old adolescents, who, by South 
+African law, are considered minors. Written consent was 
+Page 7 of 13
+Ferrero et al. Trials          (2026) 27:362 
+ 
+obtained from a parent/guardian and if the parent/guard-
+ian consented, assent was obtained from the adolescent. 
+The interview for data collection was conducted in the 
+absence of a parent/guardian to ensure privacy.
+Assignment of interventions: allocation
+Sequence generation {16a}
+As described above, this trial is nested within the DASH 
+cohort study, which uses existing population sampling 
+frames in its sampling strategy. Using a pre-defined list 
+of participants for the study based on the information 
+from the HDSS system, researchers used statistical com -
+puting software to define a random allocation sequence 
+for all participants potentially eligible for this trial (i.e., 
+those aged 10–14  years). This will be a simple 1:1 ran -
+dom allocation. The fieldworkers and others responsible 
+for implementing the study in the community were not 
+involved in the sequence generation.
+Table 1 Study timeline for the skipping rope intervention
+Table 2 Power calculation for MVPA outcome (n = 700 participants, 350 participants in each arm)
+The table shows that with a power of 80%, 350 participants in each arm will yield a minimum detectable difference of 33.9 min/week between the intervention and 
+control groups at endline, with a baseline mean value of 250 min/week of MVPA and an SD of 160 min/week. The number of participants per arm may vary slightly
+Baseline mean Standard deviation Minimum detectable difference in 
+mean
+Number of participants in each 
+arm
+Expected 
+power
+250 160 43.7 350 95%
+250 160 39.3 350 90%
+250 160 36.3 350 85%
+250 160 33.9 350 80%
+250 160 31.9 350 75%
+Page 8 of 13Ferrero et al. Trials          (2026) 27:362 
+Concealment mechanism {16b}
+The allocation was not concealed. However, all 
+fieldworkers were instructed of the importance of treating 
+the participant as indicated by the allocation sequence 
+(i.e., implementing the intervention or control condition) 
+and were prompted on the tool used for data collection 
+to confirm that they have done so. Additionally, given 
+that, in principle, all participants of the DASH cohort 
+study between the ages of 10–14 years are eligible for the 
+trial, this lack of concealment is very unlikely to lead to 
+selective enrollment. The assignment to study arms was 
+pre-decided by a researcher or group of researchers who 
+are not involved in field implementation and was not 
+decided by the fieldworkers.
+Implementation {16c}
+The sequence was generated by researchers at the 
+Technical University of Munich (TUM) in Germany, 
+who are involved in the DASH cohort study but are not 
+involved in the concrete implementation of this trial. 
+The allocation was pre-loaded into the Open Data Kit 
+(ODK) Collect software, which is used within the DASH 
+cohort study for tablet-based digital data collection. This 
+pre-loading ensured that the group assignment for each 
+individual was correctly programmed on the tablet. It 
+also ensured that this group assignment was clear to 
+the fieldworker leading the data collection interview. 
+The eligibility criteria were assessed by this fieldworker 
+through standardized questions in the DASH cohort 
+study survey. For each participant meeting the eligibility 
+criteria, the fieldworker was walked through all steps of 
+introducing and providing the intervention as well as 
+assessing the outcome through instructions and scripts 
+provided automatically on the tablet.
+Assignment of interventions: blinding
+Who will be blinded {17a}
+Given the nature of the overall DASH cohort study and 
+of this intervention, blinding is not possible. Intervention 
+implementation and outcome assessment, both under -
+taken by the fieldworker, will be standardized within 
+the tablet-based collection, using concrete instructions 
+and scripts. The study analyst will be blinded until after 
+completion of data analysis. The process of blinding will 
+be undertaken by the Africa Academy for Public Health 
+(AAPH), an independent organization registered in Tan -
+zania and dedicated to addressing public health priority 
+challenges in SSA, that will securely provide the data to 
+the analyst.
+Procedure for unblinding if needed {17b}
+The analyst will be unblinded after completion of 
+analyses, to allow researchers to evaluate the results 
+of the trial more thoroughly by providing transparent 
+insights into how the intervention performed.
+Data collection and management
+Plans for assessment and collection of outcomes {18a}
+As previously stated, baseline data collection for this trial 
+happened as part of Wave 1 data collection of the DASH 
+cohort study, between October 2024 and February 2025, 
+while endline data collection will happen during Wave 2 
+data collection of the DASH cohort study, approximately 
+12  months after baseline. In order to measure MVPA 
+and other physical activity outcomes described in the 
+outcomes section, a physical activity questionnaire was 
+developed by readapting questions from the Physical 
+Activity Questionnaire for Adolescents (PAQ-A) [26], 
+and the International Physical Activity Questionnaire for 
+Adolescents (IPAQ-A) [27]. The questionnaire was then 
+added to the overall DASH cohort study annual survey, 
+which assesses a variety of health domains, including 
+nutrition and physical activity, mental health, and sexual 
+and reproductive health. Regarding physical activity, the 
+questionnaire asks adolescents whether they engaged in 
+any MVPA over the 7 days preceding the interview. If 
+participants respond “yes, ” they are asked how many days 
+they participated in MVPA and the duration of MVPA 
+on the last day. These questions cover both in-school and 
+out-of-school physical activity.
+The measure for intention to do physical activity is 
+based on the Health Action Process Approach model 
+[39] and is also embedded in the overall DASH ques -
+tionnaire. It is a categorical variable asking if partici -
+pants intend to change the amount of PA they will do in 
+the coming week, compared to the 7 days preceding the 
+interview. Participants can state whether they intend 
+to do more PA, the same amount, or less. At baseline, 
+all questions related to skipping rope outcomes were 
+asked prior to providing the rope and pamphlet to par -
+ticipants during the interview, except the question on 
+intention to do physical activity, which was asked after 
+provision of the materials. The study questionnaire is 
+available upon request.
+Plans to promote participant retention and complete 
+follow‑up {18b}
+The fieldworkers provided participants with clear 
+and detailed information on study goals, procedures, 
+and benefits linked to participation, to increase their 
+understanding of the benefits of physical activity and, in 
+turn, their interest in skipping ropes. Participants do not 
+receive incentives for participation or reminders during 
+the 12-month study period.
+Page 9 of 13
+Ferrero et al. Trials          (2026) 27:362 
+ 
+Data management {19}
+All data are collected using electronic data collection 
+forms on secure tablets and uploaded to a secure AAPH 
+study server at UKZN, which is password-protected and 
+encrypted, and can only be accessed by authorized per -
+sonnel. Data sharing between institutions follows estab -
+lished secure protocols including encrypted file transfer 
+and de-identification procedures. The data collection 
+forms include validations to check the data. Only author -
+ized study team members are granted access to electronic 
+information about study participants by the study princi -
+pal investigator (PI). Authorized team members regularly 
+review data quality and integrity during the data collec -
+tion process. As part of the implementation of the DASH 
+cohort study, the study team at UKZN has access to iden-
+tifiable data. For this trial, however, collaborators in the 
+larger study team will only use the de-identified dataset 
+processed and provided for the purpose of analysis and 
+transmitted through secure means.
+Confidentiality {27}
+All electronically collected data are automatically 
+uploaded to a secure AAPH server at UKZN. Data is 
+entered into electronic forms on secure tablets used 
+by authorized study personnel. Participant identifiable 
+information is stored separately from the rest of the 
+participant data, and a key linking the two is stored in a 
+separate third location at the site. The identifiable data is 
+only accessible by the study team in South Africa. Data 
+received by other teams will be de-identified and stored 
+in an appropriate secure data storage space.
+Plans for collection, laboratory evaluation and storage 
+of biological specimens for genetic or molecular analysis 
+in this trial/future use {33}
+NA: No biological specimens will be collected, evaluated, 
+or stored for this trial.
+Statistical methods
+Statistical methods for primary and secondary outcomes 
+{20a}
+All statistical analyses will be conducted using Stata 
+statistical software [40]. We will follow the CONSORT 
+guidelines for reporting trial results [41].
+Descriptive analysis
+Socio-demographic characteristics of participants at 
+baseline as well as at endline assessment will be compared 
+between the two arms. The characteristics will be 
+summarized using mean and standard deviation, median 
+and interquartile range, or counts and proportions as 
+appropriate. A simple eyeballing technique will be used 
+to identify any imbalance in the two arms at baseline, and 
+any potential imbalance will be addressed in the analysis. 
+Descriptive analysis will also be used to describe process 
+indicators.
+Effectiveness analysis
+The primary analysis will be intention-to-treat at the end 
+of the trial. We aim to assess the effect of the treatment 
+allocation (provision of skipping rope and informational 
+pamphlet vs. control) on primary and secondary 
+outcomes. For this, we will use linear regression models 
+to analyze the difference in duration of MVPA per week 
+between control and intervention groups at endline. 
+In such a linear regression model, the coefficient of 
+interest can be interpreted directly, i.e., in this analysis, 
+it will yield the difference between the two groups in 
+the number of minutes of MVPA per week. We will use 
+logistic regressions for categorical secondary outcomes, 
+including intention to do physical activity, and will report 
+odds ratios. We will adjust for sex and other covariates 
+that might not be balanced at baseline, as appropriate. A 
+detailed statistical plan is included in the Supplementary 
+Information (Additional file 2) as part of this protocol.
+Interim analyses {21b}
+NA: No interim analyses will be conducted.
+Methods for additional analyses (e.g., subgroup analyses) 
+{20b}
+We will also conduct an analysis of outcomes stratified 
+by sex, to assess whether the intervention has a different 
+impact among boys versus girls. If appropriate, we 
+might also stratify analyses by other physical, social, and 
+emotional factors that might affect physical activity, such 
+as BMI, depression, or anxiety. However, given that the 
+study will not be well-powered to detect such an effect, 
+this will be considered as exploratory.
+Methods in analysis to handle protocol non‑adherence 
+and any statistical methods to handle missing data {20c}
+The research team will debrief with the fieldworkers 
+to assess the extent to which they implemented the 
+intervention as prompted by ODK and will closely 
+monitor the completeness of data. In the case of missing 
+values, the team will evaluate the number and type 
+Page 10 of 13Ferrero et al. Trials          (2026) 27:362 
+of missing data and will describe why data is missing. 
+In case less than 10% of data will be missing, we will 
+create a “missing” category for dichotomous variables. If 
+more than 10% of data will be missing, we will perform 
+multiple imputations (starting with approximately 20 
+imputations), and will use auxiliary variables that may 
+include core socio-demographic variables, or variables 
+linked to household and family, behavior and lifestyle, 
+and anthropometry.
+Plans to give access to the full protocol, participant 
+level‑data and statistical code {31c}
+There are ethical concerns about data privacy and 
+confidentiality that require careful consideration before 
+sharing individual-level data as the trial is embedded 
+with the large DASH project. The final decision to make 
+the data and codes available will lie with the DASH 
+Investigators and participating institutions.
+Oversight and monitoring
+Composition of the coordinating center and trial steering 
+committee {5d}
+The main coordinating center for the trial is UKZN, in 
+South Africa. Researchers at UKZN are working closely 
+with fieldworkers and collaborators at the USINGA HDSS 
+site to coordinate study activities, including recruitment 
+and data collection. Collaborators at TUM, Heidelberg 
+University, AAPH, and Harvard University will provide 
+support regarding study design and data analysis. All 
+teams will communicate regularly throughout the project 
+to monitor study progress and ensure the integrity and 
+confidentiality of data.
+Composition of the data monitoring committee, its role 
+and reporting structure {21a}
+NA: No data monitoring committee is formed for the 
+trial. The teams at UKZN and AAPH will primarily be 
+responsible for data monitoring.
+Adverse event reporting and harms {22}
+In the unlikely scenario that an adverse event occurs, such 
+as a physical injury related to skipping rope, it would be 
+identified by the field team either throughout the study 
+or during the endline survey. In order to monitor adverse 
+events during the study, participants were instructed to 
+report any issues to the research team, whose contact 
+could be found on the consent forms. The event would 
+then be reported to the site PI, who would in turn notify 
+the PIs at other institutions, according to Good Clinical 
+Practice guidelines. The investigators will submit a written 
+notification of adverse events to the relevant Institutional 
+Review Boards (IRBs) of Heidelberg University and UKZN. 
+All adverse events will be documented with details of onset, 
+duration, severity, outcome, and assessment of relatedness 
+to the study intervention.
+Frequency and plans for auditing trial conduct {23}
+NA: There is no plan for auditing trial conduct.
+Plans for communicating important protocol amendments 
+to relevant parties (e.g., trial participants, ethical 
+committees) {25}
+In case of important protocol amendments, these will be 
+communicated to the IRBs at Heidelberg University and 
+UKZN in a timely manner.
+Dissemination plans {31a}
+We will publish peer-reviewed articles on the study 
+results and disseminate our findings at scientific meetings 
+and conferences. Additionally, we will disseminate the 
+results to stakeholders, including adolescents, their 
+parents, policy makers, and funding agencies.
+Discussion
+Physical activity is a critical component of a healthy 
+lifestyle for adolescents, providing many benefits related 
+to cardiovascular health, bone strength, flexibility, social 
+and psychological well-being, and cognitive abilities 
+[5]. Nevertheless, with the recent increase in sedentary 
+lifestyles, adolescents in South Africa tend to be largely 
+physically inactive [31]. This trial is a two-arm parallel-
+group, individual 1:1, unblinded randomized trial with 
+the objective to test whether the provision of simple 
+physical activity equipment and information on physical 
+activity (intervention group) can improve physical 
+activity-related intentions and behaviors, compared 
+to no intervention (control group). Specifically, the 
+primary objective of the trial is to test whether providing 
+a skipping rope and informational pamphlet with 
+information on the benefits of physical activity will 
+increase the total amount of weekly MVPA done by 
+adolescents, compared to not providing these materials.
+The trial’s results will guide future research on physi -
+cal activity and inform public health initiatives on physical 
+activity in South Africa and other SSA countries. Addi -
+tionally, the findings will hold significant implications for 
+policymakers, particularly due to the low costs associated 
+with providing skipping ropes and informational pam -
+phlets. Skipping ropes are widely regarded as an accessible 
+means of promoting physical activity among adolescents 
+in South Africa. If the trial demonstrates positive out -
+comes in enhancing physical activity levels, policymakers 
+should consider implementing this strategy across com -
+munities and schools. This could include ensuring that 
+skipping ropes become a widely available tool in schools 
+Page 11 of 13
+Ferrero et al. Trials          (2026) 27:362 
+ 
+or community-based platforms, such as religious or youth 
+centers, so that adolescents can have continued access to 
+them throughout their youth, with potential for building 
+life-long healthy physical activity habits.
+This trial has several strengths. Traditionally, physi -
+cal activity interventions in South Africa have focused 
+on schools [42– 45], often neglecting vulnerable out-of-
+school adolescents. In contrast, this trial will be imple -
+mented at the community level, effectively reaching both 
+in-school and out-of-school adolescents. Furthermore, 
+the trial will gather physical activity data from multiple 
+settings in South Africa—in-school vs. out-of-school—
+offering valuable insights into differences in activity levels 
+across these environments. The approach will be non-
+invasive, requiring only the provision of simple, low-cost 
+equipment and information. However, the trial also has 
+some limitations. Firstly, physical activity data will be self-
+reported rather than objectively measured, which may 
+impact the reliability of the results. To enhance accuracy, 
+participants will only be asked to recall their physical 
+activity over the week leading up to the interviews. Addi -
+tionally, given the nature and timeline of the DASH study, 
+outcome measurements are only possible at baseline and 
+12 months after that, not allowing for outcome measure -
+ments in between waves, or after 12 months.
+This skipping rope intervention will provide valu -
+able insights into low-cost strategies to improve physical 
+activity levels of adolescents in South Africa. If results 
+show benefits associated with the skipping rope and 
+pamphlet, policy makers should consider implement -
+ing such an intervention in communities and schools at 
+large, as well as in other SSA countries.
+Trial status
+Protocol version number 1, November 19th 2024.
+Protocol version number 2, August 14th 2025.
+Protocol version number 3, October 8th 2025.
+Protocol version number 4, April 18th 2026.
+Study recruitment begun on October 1 st 2024 and ended 
+on February 28th 2025.
+Abbreviations
+DASH  Design and Evaluation of Adolescent Health Interventions and 
+Policies in Sub-Saharan Africa
+MVPA  Moderate-to-vigorous physical activity
+WHO  World Health Organization
+HDSS  Health and Demographic Surveillance System
+USINGA  Umlazi Surveillance Initiative to Nurture Grassroots Action
+PAQ-A  Physical Activity Questionnaire for Adolescents
+IPAQ-A  International Physical Activity Questionnaire for Adolescents
+ODK  Open Data Kit
+IRB  Institutional Review Board
+UKZN  University of Kwazulu-Natal
+AAPH  Africa Academy for Public Health
+Supplementary Information
+The online version contains supplementary material available at https:// doi. 
+org/ 10. 1186/ s13063- 026- 09752-x.
+Additional file 1. Informational Pamphlet on Skipping Rope and Physical 
+Activity, Word document.
+Additional file 2. Statistical Analysis Plan, Word document.
+Additional file 3. Model Consent Form, PDF document.
+Additional file 4. Ethical Approval Document from UKZN, PDF document.
+Additional file 5. Funding Documentation, PDF document.
+Acknowledgements
+We would like to extend our gratitude to our partners at the USINGA HDSS site 
+for their unwavering support of this project. We also appreciate the dedication 
+and hard work of the research assistants and field investigators involved in 
+recruitment and data collection. Additionally, we are thankful to all the DASH 
+Network partners for their ongoing collaboration and support.
+Authors’ contributions {31b}
+JN is the Principal Investigator. EF developed the study protocol and the 
+following drafts of this manuscript. JB, UP , SS, JN, SB, CN and SM revised and 
+contributed to the study protocol and the manuscript. All authors read and 
+approved the final manuscript.
+Funding {4}
+Open Access funding enabled and organized by Projekt DEAL. This trial is 
+funded by the German Federal Ministry of Education and Research (BMBF) in 
+part under funding code 01KA2219B and 01KA2219A and is registered at Clini-
+calTrials.gov (NCT06516549). The funder had no role in the design, conduct, or 
+reporting of the trial.
+Data availability {29}
+Study forms will be available upon request. There are ethical concerns about 
+data privacy and confidentiality that require careful consideration before 
+sharing individual-level data as the trial is embedded with the large DASH 
+project. The final decision to make the data and codes available will lie with 
+the DASH Investigators and participating institutions.
+Declarations
+Ethics approval and consent to participate {24}
+The Biomedical Research Ethics Committee (BREC) of UKZN 
+(BREC/00006459/2023) (Additional file 4) and the Ethics Committee at 
+Heidelberg University provided ethical approval of the study protocol, 
+and ethical approval will be renewed annually. Written informed consent 
+to participate was obtained from all survey participants. In the case of 
+participants under 18 years of age, written informed assent was obtained from 
+participants along with written informed consent of one parent or guardian.
+Consent for publication {32}
+A model consent is provided in the Supplementary Information (Additional 
+file 3).
+Competing interests {28}
+The authors declare that they have no competing interests.
+Author details
+1 Department of Global Health and Population, Harvard T. H. Chan School 
+of Public Health, Boston, USA. 2 School of Nursing and Public Health, University 
+of KwaZulu-Natal, Durban, South Africa. 3 Africa Academy for Public Health, 
+Dar Es Salaam, Tanzania. 4 Technical University of Munich, Munich, Germany. 
+5 Heidelberg Institute of Global Health, Heidelberg University Hospital, 
+Heidelberg, Germany. 6 Department of Nutrition, Harvard T. H. Chan School 
+of Public Health, Boston, USA. 7 Department of Epidemiology, Harvard T. H. 
+Chan School of Public Health, Boston, USA. 
+Page 12 of 13Ferrero et al. Trials          (2026) 27:362 
+Received: 21 November 2024   Accepted: 24 April 2026
+References
+ 1. Hargreaves D, Mates E, Menon P , Alderman H, Devakumar D, Fawzi W, 
+et al. Strategies and interventions for healthy adolescent growth, nutri-
+tion, and development. Lancet. 2022. https:// doi. org/ 10. 1016/ S0140- 
+6736(21) 01593-2. Elsevier B.V.; PubMed PMID: 34856192.
+ 2. Patton GC, Sawyer SM, Santelli JS, Ross DA, Afifi R, Allen NB, et al. Our 
+future: a Lancet commission on adolescent health and wellbeing. Lancet. 
+2016. https:// doi. org/ 10. 1016/ S0140- 6736(16) 00579-1. Lancet Publishing 
+Group.
+ 3. United Nations. World Population Prospects - Population Division. 2022. 
+Available from: https:// popul ation. un. org/ wpp/ Downl oad/ Stand ard/ 
+Popul ation/. Cited 23 June 2024.
+ 4. Kumar B, Robinson R, Till S. Physical activity and health in adolescence. 
+Clin Med (Lond). 2015;15(3):267–72. https:// doi. org/ 10. 7861/ clinm edici 
+ne. 15-3- 267. PMID: 26031978; PMCID: PMC4953112.
+ 5. Archer T. Health Benefits of Physical Exercise for Children and Adoles-
+cents. J Nov Physiother. 2014;04(02). https:// doi. org/ 10. 4172/ 2165- 7025. 
+10002 03.
+ 6. WHO. Physical activity. 2024. Available from: https:// www. who. int/ news- 
+room/ fact- sheets/ detail/ physi cal- activ ity. Cited 23 Jun 2025.
+ 7. Berhane Y, Canavan CR, Darling AM, Sudfeld CR, Vuai S, Adanu R, et al. The 
+age of opportunity: prevalence of key risk factors among adolescents 
+10–19 years of age in nine communities in sub-Saharan Africa. Trop Med 
+Int Health. 2020;25(1):15–32. https:// doi. org/ 10. 1111/ tmi. 13339.
+ 8. Micklesfield LK, Hanson SK, Lobelo F, Cunningham SA, Hartman TJ, Norris 
+SA, et al. Adolescent physical activity, sedentary behavior and sleep in 
+relation to body composition at age 18 years in urban South Africa, Birth-
+to-Twenty+ Cohort. BMC Pediatr. 2021;21(1):30. https:// doi. org/ 10. 1186/ 
+s12887- 020- 02451-9.
+ 9. Draper CE, Tomaz SA, Bassett SH, Burnett C, Christie CJ, Cozett C, et al. 
+Results from South Africa’s 2018 report card on physical activity for chil-
+dren and youth. J Phys Act Health. 2018;15(2):S406–18. https:// doi. org/ 10. 
+1123/ JPAH. 2018- 0517.
+ 10. Nwosu E, Fismen AS, Helleve A, Hongoro C, Sewpaul R, Reddy P , et al. 
+Trends in prevalence of overweight and obesity among South African 
+and European adolescents: a comparative outlook. BMC Public Health. 
+2022. https:// doi. org/ 10. 1186/ s12889- 022- 14724-2. PubMed PMID: 
+36474229.
+ 11. Yang X, Lee J, Gu X, Zhang X, Zhang T. Physical fitness promotion among 
+adolescents: effects of a jump rope-based physical activity afterschool 
+program. Children. 2020;7(8). https:// doi. org/ 10. 3390/ child ren70 80095.
+ 12. Zhao Q, Wang Y, Niu Y, Liu S. Jumping rope improves the physical fitness 
+of preadolescents aged 10-12 years: a meta-analysis. J Sports Sci Med. 
+2023;22(2):367–80. https:// doi. org/ 10. 52082/ jssm. 2023. 367.
+ 13. Visagie M, Coetzee D, Pienaar AE. Suid-Afrikaanse Tydskrif vir Navorsing in 
+Sport. South African Journal for Research in Sport, Physical Education and 
+Recreation. 2017;39(1):199–217.
+ 14. Saleh Alhajri A. Effect of Diet versus Skipping Rope Exercise on 
+Body Composition and Insulin Sensitivity in Obese Adolescents. 
+2024;7:8. https:// doi. org/ 10. 63278/ jicrcr. vi. 1292.
+ 15. Veena Kirthika S, Lakshmanan R, Padmanabhan K, Sudhakar S, Senthil Sel-
+vam P . The effect of skipping rope exercise on physical and cardiovascular 
+fitness among collegiate males. Res J Pharm Technol. 2019;12(10):4831–5. 
+https:// doi. org/ 10. 5958/ 0974- 360X. 2019. 00836.9.
+ 16. Ha AS, Lonsdale C, Ng JYY, Lubans DR. A school-based rope skipping 
+program for adolescents: results of a randomized trial. Prev Med (Baltim). 
+2017;101:188–94. https:// doi. org/ 10. 1016/j. ypmed. 2017. 06. 001.
+ 17. Huang F, Song Y, Zhao Y, Han Y, Fang Q. Fitness promotion in a jump rope-
+based homework intervention for middle school students: a randomized 
+controlled trial. Front Psychol. 2022;13. https:// doi. org/ 10. 3389/ fpsyg. 
+2022. 912635.
+ 18. Shinde S, Noor RA, Mwanyika-Sando M, Moshabela M, Tadesse AW, 
+Sherfi H, et al. Adolescent health and well-being in sub-Saharan Africa: 
+Strengthening knowledge base and research capacity through a collabo-
+rative multi-country school-based study. Matern Child Nutr. 2023. https:// 
+doi. org/ 10. 1111/ mcn. 13411. PubMed PMID: 36999967.
+ 19. Fathi A, Tavakoli R, Jalili Z, Abbaszadeh A, Elahi JH. The effect of an educa-
+tional intervention on physical activity of adolescent girls: a quasi-experi-
+mental study. Cardiovasc Endocrinol Metab. 2025 Sep 1;14(3). https:// doi. 
+org/ 10. 1097/ XCE. 00000 00000 000337.
+ 20. Heidelberg University. DASH: Research Network for Design and Evalu-
+ation of Adolescent Health Interventions and Policies in Sub-Saharan 
+Africa. Available from: https:// www. klini kum. uni- heide lberg. de/ heide 
+lberg er- insti tut- fuer- global- health/ groups- proje cts/ resea rch- proje cts/ 
+dash. Cited 30 Aug 2024.
+ 21. Todorovic N, Ranisavljev M, Korovljev D, Mauti J, Neumann C, Mboya I, 
+et al. Promoting adolescent and youth health through physical activity 
+initiatives and interventions in Sub-Saharan Africa: the ARISE-NUTRINT 
+and DASH initiatives. Int J Public Health. 2025. https:// doi. org/ 10. 3389/ 
+ijph. 2025. 16086 09. PubMed PMID: 41089386.
+ 22. Godin G, Kok G, Laval U, Gerjo Kok C. The Theory of Planned Behavior: A 
+Review of Its Applications to Health-related Behaviors. 1996.
+ 23. Schwarzer R, Luszczynska A. How to overcome health-compro-
+mising behaviors: the health action process approach. Eur Psychol. 
+2008;13(2):141–51. https:// doi. org/ 10. 1027/ 1016- 9040. 13.2. 141.
+ 24. South African Population Research Infrastructure Network (SAPRIN). Avail-
+able from: https:// saprin. mrc. ac. za/ usinga. html. Cited 4 Jun 2024. 
+ 25. Moran J, Liew B, Ramirez-Campillo R, Granacher U, Negra Y, Chaabene H. 
+The effects of plyometric jump training on lower-limb stiffness in healthy 
+individuals: a meta-analytical comparison. J Sport Health Sci. 2023:236-45. 
+https:// doi. org/ 10. 1016/j. jshs. 2021. 05. 005. PubMed PMID: 34033984.
+ 26. Kowalski KC, Crocker PRE, Donen RM, Honours B. The Physical Activity Ques-
+tionnaire for Older Children (PAQ-C) and Adolescents (PAQ-A) Manual. 2004.
+ 27. Ottevaere C, Huybrechts I, De Bourdeaudhuij I, Sjöström M, Ruiz JR, 
+Ortega FB, et al. Comparison of the IPAQ-A and Actigraph in relation to 
+VO2max among European adolescents: the HELENA study. J Sci Med 
+Sport. 2011;14(4):317–24. https:// doi. org/ 10. 1016/j. jsams. 2011. 02. 008.
+ 28. Wushe SN, Moss SJ, Monyeki MA. Objectively determined habitual physi-
+cal activity in South African adolescents: the PAHL study. BMC Public 
+Health. 2014;14(1):471. https:// doi. org/ 10. 1186/ 1471- 2458- 14- 471.
+ 29. Corder K, Brown HE, Schiff A, Van Sluijs EMF. Feasibility study and pilot 
+cluster-randomised controlled trial of the GoActive intervention aiming 
+to promote physical activity among adolescents: outcomes and lessons 
+learnt. BMJ Open. 2016;6. https:// doi. org/ 10. 1136/ bmjop en- 2016.
+ 30. Neto AS, Dos Santos GC, Da Silva JM, Correa RC, Da Mata LBF, De O. 
+Barbosa R, et al. Improving physical activity behaviors, physical fitness, 
+cardiometabolic and mental health in adolescents - ActTeens Program: 
+a protocol for a randomized controlled trial. PLoS ONE. 2022. https:// doi. 
+org/ 10. 1371/ journ al. pone. 02726 29. PubMed PMID: 35944003.
+ 31. Healthy Active Kids South Africa - Report Card. 2022. https:// www. activ 
+eheal thyki ds. org/ wp- conte nt/ uploa ds/ 2024/ 05/ south- africa- report- card- 
+short- form- 2022. pdf. Accessed 23 June 2024.
+ 32. Dolley D, Du Randt R, Pühse U, Gerber M, Bosma J, Aerts A, et al. Relation-
+ship between body mass index and physical activity among children 
+from low-income communities in Gqeberha, South Africa: a cross-sec-
+tional study. Int J Environ Res Public Health. 2023;20(2):1428. https:// doi. 
+org/ 10. 3390/ ijerp h2002 1428.
+ 33. Mcveigh J, Meiring R. Physical activity and sedentary behavior in an eth-
+nically diverse group of South African school children. ©Journal of Sports 
+Science and Medicine. 2014. Available from: http:// www. jssm. org.
+ 34. Hanson SK, Munthali RJ, Micklesfield LK, Lobelo F, Cunningham SA, Hartman 
+TJ, et al. Longitudinal patterns of physical activity, sedentary behavior and sleep 
+in urban South African adolescents, Birth-To-Twenty Plus cohort. BMC Pediatr. 
+2019;19(1):241. https:// doi. org/ 10. 1186/ s12887- 019- 1619-z.
+ 35. Micklesfield LK, Pedro TM, Kahn K, Kinsman J, Pettifor JM, Tollman S, et al. 
+Physical activity and sedentary behavior among adolescents in rural 
+South Africa: levels, patterns and correlates. 2014. Available from: http:// 
+www. biome dcent ral. com/ 1471- 2458/ 14/ 40.
+ 36. Jemmott JB, Zhang J, Jemmott LS, Icard LD, Ngwane Z, Makiwane M, et al. 
+Intervention increases physical activity and healthful diet among South 
+African adolescents over 54 months: a randomized controlled trial. J Adolesc 
+Health. 2019;65(1):139–46. https:// doi. org/ 10. 1016/j. jadoh ealth. 2019. 01. 027.
+ 37. Mwakilasa MT, Amour M, Chombo S, Rugemalila J, Balandya E, Mmbaga 
+BT, et al. Retrospective cohort study of predictors of loss to follow up 
+among adolescents and young adults living with HIV on ART in Dar es 
+Salaam, Tanzania, 2015–2019. BMC Infect Dis. 2025;25(1):11157-1. https:// 
+doi. org/ 10. 1186/ s12879- 025- 11157-1.
+Page 13 of 13
+Ferrero et al. Trials          (2026) 27:362 
+ 
+ 38. Leshargie CT, Demant D, Burrowes S, Frawley J. The proportion of loss to 
+follow-up from antiretroviral therapy (ART) and its association with age 
+among adolescents living with HIV in sub-Saharan Africa: a systematic 
+review and meta-analysis. PLoS One. 2022;(8):0272906. https:// doi. org/ 10. 
+1371/ journ al. pone. 02729 06.
+ 39. Schwarzer R, Schüz B, Ziegelmann JP , Lippke S, Luszczynska A, Scholz 
+U. Adoption and maintenance of four health behaviors: theory-guided 
+longitudinal studies on dental flossing, seat belt use, dietary behavior, 
+and physical activity. Annals of Behavioral Medicine. 2007;33(2):156–66. 
+https:// doi. org/ 10. 1007/ BF028 79897.
+ 40. Stata. New in Stata 18. Available from: https:// www. stata. com/ new- in- 
+stata/. Cited 2 Sep 2024.
+ 41. Cuschieri S. The CONSORT statement. Saudi J Anaesth. 2019. https:// doi. 
+org/ 10. 4103/ sja. SJA_ 559_ 18. Wolters Kluwer Medknow Publications.
+ 42. Müller I, Schindler C, Adams L, Endes K, Gall S, Gerber M, et al. Effect of 
+a multidimensional physical activity intervention on body mass index, 
+skinfolds and fitness in South African children: results from a cluster-ran-
+domised controlled trial. Int J Environ Res Public Health. 2019;16(2):0232. 
+https:// doi. org/ 10. 3390/ ijerp h1602 0232.
+ 43. Zimu PM, Van Heerden HJ, Grace JM. Nyakaza-Move-for-Health: a cultur-
+ally tailored physical activity intervention for adolescents in South Africa 
+using the Intervention Mapping Protocol. J Prim Care Community Health. 
+2024;15:15. https:// doi. org/ 10. 1177/ 21501 31924 12788 49.
+ 44. Kinsman J, Norris SA, Kahn K, Twine R, Riggle K, Edin K, et al. A model for 
+promoting physical activity among rural South African adolescent girls. 
+Glob Health Action. 2015;8:28790. https:// doi. org/ 10. 3402/ gha. v8. 28790.
+ 45. Adom T, De Villiers A, Puoane T, Kengne AP . School-based interventions 
+targeting nutrition and physical activity, and body weight status of 
+African children: A systematic review. Nutrients. MDPI AG; 2020. https:// 
+doi. org/ 10. 3390/ nu120 10095. PubMed PMID: 31905832.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.

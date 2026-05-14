@@ -1,0 +1,2731 @@
+ARTICLE IN PRESS
+Article in Press
+Randomized trial of carbonated water 
+consumption on snacking behavior, alcohol 
+intake, and health indices in healthy Japanese 
+adults
+Scientific Reports
+Received: 1 November 2025
+Accepted: 28 April 2026
+Cite this article as: Hashimoto H., 
+Mizuno S., Nishikawara T. et al. 
+Randomized trial of carbonated water 
+consumption on snacking behavior, 
+alcohol intake, and health indices 
+in healthy Japanese adults. Sci Rep 
+(2026). https://doi.org/10.1038/
+s41598-026-51479-x
+Hideki Hashimoto, Seiichi Mizuno, Tadashi Nishikawara, Soichi Yoneda & Atsushi 
+Nagazumi
+We are providing an unedited version of this manuscript to give early access to its 
+findings. Before final publication, the manuscript will undergo further editing. Please 
+note there may be errors present which affect the content, and all legal disclaimers 
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer 
+Review reports will publish with the final article.
+https://doi.org/10.1038/s41598-026-51479-x
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International 
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit 
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do 
+not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the 
+article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain 
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+1 
+ 
+Randomized trial of carbonated water consumption on snacking behavior, alcohol intake,  and health indices in healthy 
+Japanese adults 
+ 
+Hideki Hashimoto 1) Seiichi Mizuno 1)Tadashi Nishikawara 2) Soichi Yoneda 3) Atsushi Nagazumi 4) 
+ 
+1)Asahi Soft Drinks Corporation 2) Macromill, Inc.3) Mibyou Life Science Corporation4) Kanauchi Medical Clinic 
+ 
+ 
+Corresponding author: 
+Hideki Hashimoto, Ph.D (hideki.hashimoto@asahiinryo.co.jp), ORCID:https://orcid.org/0009-0001-4019-
+9988 
+  
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+2 
+ 
+ 
+ABSTRACT 
+Lifestyle-related diseases associated with obesity remain a major public health concern in Japan, in which eating and drinking habits 
+play a critical role. Energy -free carbonated water has been suggested to  promote sensations of fullness and may serve as a low-
+caloric alternative to caloric foods or alcoholic beverages; however, evidence regarding its sustained effects on habitual behaviors 
+and objective health indices is limited. In this randomized, open-label, placebo-controlled, parallel-group trial, 46 healthy Japanese 
+adults (aged 20–64 years; body mass index BMI, kg/m², 23.0–<30.0) were allocated to consume either carbonated water (4.3 ± 0.1 g 
+carbon dioxide per 500 g/day) or non -carbonated water once daily for 12 weeks; 45 participants completed the study (carbonated, 
+n = 22; placebo, n = 23). Changes from baseline in snacking frequency, alcohol intake, anthropometric measurements, and blood  
+biochemical parameters were compared between groups.  Compared with the placebo group, the carbonated water group showed 
+a greater reduction in snacking frequency (times/week) at week 4 (mean difference −1.39; 95% confidence interval CI −2.82 to -
+0.28; P = 0.018) and week 12 (−1.49; 95%  CI −2.93 to −0.05; P = 0.049). Alcohol intake (g/week) was also reduced at week 12 
+(−24.44; 95% CI −44.02 to −4.86; P = 0.019). At week 12, modest decreases were observed in body weight and body mass index 
+(BMI) compared with placebo (body weight: −0.72 kg; 95% CI −1.37 to −0.07; P = 0.036; BMI: −0.26 kg/m²; 95% CI −0.50 to 
+−0.02; P = 0.037). In addition, liver -related enzymes showed favorable changes at week 12, including lower aspartate 
+aminotransferase (AST) (−4.05 U/L; 95% CI −7.57 to −0.53; P = 0.034) and alanine aminotransferase ( ALT) (−9.47 U/L; 95% CI 
+−18.01 to −0.93; P = 0.026).  No study beverage –related adverse events were observed.  These findings suggest that daily 
+consumption of carbonated water may be associated with favorable changes in snacking and alcohol consumption behaviors and 
+modest improvements in selected anthropometric and liver-related indices. Given the exploratory nature of the analyses and multiple 
+outcomes without multiplicity adjustment, findings should be interpreted cautiously. 
+ 
+ 
+KEYWORDS 
+carbonated water, snacking behavior, alcohol intake, body mass index, liver enzymes 
+  
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+3 
+ 
+Introduction 
+ 
+The prevalence of lifestyle-related diseases, including obesity, diabetes, hypertension, and dyslipidemia, has increased in Japan due 
+to population aging and westernization of dietary and lifestyle habits. In parallel, the incidence of cardiovascular diseases such as 
+angina pectoris and myocardial infarction has also risen. According to the  Vital Statistics for FY2022 published by Ministry of 
+Health, Labour and Welfare (MHLW), heart disease and cerebrovascular disease are the second and fourth leading causes of deat h 
+in Japan, respectively, together accounting for 21.6% of all deaths [1]. Atherosclerosis is considered a common underlying pathology 
+in many of these conditions, highlighting the importance of lifestyle modification for both prevention and progression of lifestyle-
+related diseases.  
+In response to this public health challenge, the Japanese government has promoted nationwide health policies based on the Health 
+Promotion Act. Following the "Second National Health Promotion Movement in the 21st Century (Healthy Japan 21: Phase II)"  
+implemented from 2013 to 2023, the "Third National Health Promotion Movement in the 21st Century (Healthy Japan 21 (Phase 
+III))" was launched in 2024. This initiative continues to emphasize the improvement of dietary habits, alcohol consumption, and 
+physical activity as central strategies for preventing the onset and worsening of lifestyle-related diseases [2]. 
+Despite these efforts, metabolic syndrome remains highly prevalent. According to the FY2022 report on Specific Health Checkups, 
+16.7% of individuals were classified as having metabolic syndrome, and an additional 12.4% were categorized as having  pre-
+metabolic syndrome. Among adults aged 40–74 years, approximately 15.07 million individuals are estimated to require lifestyle 
+improvement, including  8.65 million with metabolic syndrome and 6.42 million people with pre-metabolic syndrome [3].  
+Metabolic syndrome is closely associated with obesity -related lipid abnormalities and liver d ysfunction [4], indicating that even 
+individuals without overt disease may already exhibit early metabolic and hepatic changes. Therefore, early lifestyle interventions 
+targeting dietary and drinking behaviors are crucial to prevent progression to clinically manifest disease.   
+Unhealthy lifestyle behaviors, particularly physical inactivity, frequent snacking, excessive caloric intake , and excessive alcohol 
+consumption, are widely recognized as major contributors to metabolic syndrome and related disorders. Accordingly, maintaining 
+a balanced diet and optimizing alcohol consumption are widely recommended as effective preventive strategies [5–7]. However, 
+sustaining long-term behavioral change remains challenging, and simple, low -burden interventions that easily incorporated into 
+daily life are needed. 
+In recent years , attention has been drawn to the potential role of energy-free carbonated water as a behavioral intervention. 
+Carbonated water is commonly consumed as a non -caloric beverage and has been reported to induce sensations of fullness and 
+refreshment through gastric distension and sensory stimulation. Experimental studies suggest that carbonated water may influence 
+appetite, gastric motility, and sensory-specific satiety, thereby potentially reducing food and alcohol cravings [8, 9]. Nevertheless, 
+evidence regarding whether habitual, long-term consumption of carbonated water leads to meaningful changes in real-world eating 
+and drinking behaviors and objective health parameters remains limited. 
+Therefore, the present study aimed to investigate the effect of continuous daily consumption of carbonated water on snacking 
+frequency, alcohol intake, and dietary behavior , as well as the associated changes in anthropometric measurements and blood 
+biochemical parameters, in healthy Japanese adult men and women with habitual snacking and drinking behaviors. We hypothesized 
+that consumption of carbonated water would improve eating and drinking habits and consequently lead to favorable changes in body 
+weight and selected metabolic and liver-related biomarkers. 
+ 
+Methods 
+ 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+4 
+ 
+1. Ethical considerations 
+This study was  approved by the Non-Profit Organization Mibyou Research Ethics Review Committee (IRB number: 16000008, 
+December 6, 2024) . The study protocol was prospectively registered in the University Hospital Medical Information Network 
+Clinical Trial Registry (UMIN study ID: UMIN 000053167). All procedures were conducted in accordance with the Declaration of 
+Helsinki (revised in 2013) and the Ethical Guidelines for Life Sciences and Medical Research Involving Human Subjects (partially 
+revised in 2023). Prior to participation, all individuals received a detailed explanation of the study objectives, procedures, potential 
+risks, and benefits. Written informed consent was obtained from all participants before enrollment. 
+ 
+2. Participants 
+2.1 Recruitment and screening 
+Participants were recruited from the public through a commercial research panel and participated as paid volunteers. All candidates 
+underwent a screening process, including a medical questionnaire and baseline assessments, prior to enrollment. Individuals who 
+met all inclusion criteria and none of the exclusion criteria were enrolled in the study. 
+2.2 Inclusion criteria 
+Participants were required to meet all the following criteria at the time of informed consent. 
+(1) Japanese m en or women aged 20 –64 years old ; (2) Apparently healthy individuals not receiving any medical treatment  for 
+chronic disease; (3) Body mass index (BMI) ≥ 23.0 kg/m2 and < 30.0 kg/m2; (4) Habitual consumption of unsweetened carbonated 
+water ≤ 500 ml per week; (5) Habitual snacking between meals or at night and consumption sweetened beverages at least twice per 
+week; (6) Habitual alcohol consumption at least once per week ; (7) Ability to visit the designated  study facility laboratory and 
+complete all required records and questionnaires; (8) Provision of written informed consent after receiving a full explanation of the 
+study;  
+2.3 Exclusion criteria 
+Individuals meeting any of the following criteria were excluded:  
+(1) Presence of diagnosed medical conditions requiring ongoing treatment;  (2) Known drug or food allergies ; (3) History of 
+hypersensitivity reactions to the test food; (4) Pregnancy and lactation; (5) Blood donation exceeding 200 ml within 1 month or 400 
+ml within 3 months prior to consent; (6) Habitual alcohol consumption exceeding 60 g of alcohol per day; (7) Habitual smoking of 
+more than 20 cigarettes per day; (8) Regular engagement in high-intensity resistance or strength training (≥ 5 session per week); (9) 
+Inability to refrain from consuming food for specified health use, functional foods, or other health -related supplements during the 
+study period; (10) Inability to consume the test food according to the study protocol; (11) Current participation in other clinical trial, 
+clinical research study, or drug trial;(12) Any other condition judged by the study physician to make the individua l unsuitable for 
+participation. 
+ 
+3. Test foods 
+The test food was commercially available unsweetened carbonated water (product name: Wilkinson Tansan), manufactured by Asahi 
+Soft Drinks Co., Ltd . (Tokyo, Japan). The placebo was non -carbonated water, also manufactured by Asahi Soft Drinks Co., Ltd., 
+and provided in the same polyethylene terephthalate (PET) bottle format.  Both the carbonated and non -carbonated waters were 
+commercially available products and were identical in volume, packaging material, and manufacturer, differing only in the presence 
+or absence of carbonation. The carbonated water contained 4.3 ± 0.1 g of carbon dioxide per 500g. Participants were instructed to  
+consume 500g of the assigned beverage once daily for 12 weeks. All beverages were stored at room temperature under light-shielded 
+conditions in accordance with the manufacturer ’s recommendations. The best -before date of the beverages used in this study was 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+5 
+ 
+July 8, 2024, ensuring product quality and stability throughou t the intervention period. Beverages were distributed to participants 
+within the designated. 
+ 
+4. Study design 
+The study was designed as a randomized, open -label, placebo-controlled, parallel-group trial to evaluate the effect of continuous 
+consumption of carbonated water on eating and drinking behaviors and health examination indices. A total of 46 eligible participants 
+were randomly allocated in a 1:1 ratio to either the test food group (carbonated water) or the placebo groups (non-carbonated water). 
+Randomization was performed using a computer-generated stratified block randomization method, with by age, sex, and body mass 
+index (BMI) at baseline to ensure balance between groups. Blinding of participants was not feasible because carbonation produces 
+distinct sensory characteristics, including effervescence and oral stimulation, which are readily perceptible. Therefore, an open-label 
+design was adopted. To minimize potential bias associated with the lack of blinding, objective outcome measures such as 
+anthropometric measurements and biochemical parameters were included as key endpoints.  Participants in both groups were 
+instructed to consume 500 g of the assigned beverage once daily for 12 weeks. They were asked to maintain their usual diet, physical 
+activity, and lifestyle habits throughout the study period. No specific dietary or exercise interventions were imposed. However, 
+participants were instructed to refrain from consuming unsweetened carbonated water other than the test food  during the study 
+period. The primary outcome was the between-group difference in changes from baseline in snacking frequency and alcohol intake, 
+assessed using dietary journals. Secondary outcomes included anthropometric measures (body weight, BMI, and blood pressure) 
+and blood biochemical parameters. 
+ 
+ 
+5. Items of assessment 
+(1) Values of dietary journal analysis 
+The participants were asked to record all food and beverage consumption for 1 week in their dietary journals at baseline and 4, 8, 
+and 12 weeks from the start of consumption of the test foods (baseline). Dietary journals were evaluated for calorific value (energy) 
+and the three macronutrients (proteins, carbohydrates, and lipids) at each interval by a registered dietitian using the Nutri ent 
+Calculator Healthy Maker Pro 501 (Mushroomsoft, Co., Ltd.). 
+(2) Snacking and drinking habits 
+Daily questionnaires were administered on the frequency of snacking and alcohol consumption from 2 weeks before baseline until 
+12 weeks after the start of consumption. The survey was completed online in real time using a web-based lifestyle journal. Snacking 
+frequency was defined as the number of times some food was consumed in addition to breakfast, lunch, and din ner. The amount of 
+alcohol consumed was converted into pure alcohol equivalent, and the average value per week during each period was used to 
+evaluate parameters at various intervals. 
+(3) Physical measurements  
+Physical measurements were conducted at baseline and 4, 8, and 12 weeks after the start of the intervention. All measurements were 
+performed at the designated study facility trained staff using standardized procedures. Body weight was measured using a calibrated 
+digital scale, with participants wearing light indoor clothing and no shoes. Height was measured at baseline using a stadiometer, and 
+body mass index ( BMI) was calculated as body weight (kg) divided by height squared (m²). Blood pressure was measured in the 
+seated position after a rest p eriod of at least 5 minutes.  Measurements were taken on the upper  arm using an automated 
+sphygmomanometer. Two consecutive readings were obtained at each time point, and the average of the two measurements was 
+used for analysis. All physical measurements w ere conducted at approximately the same time of day for each participant across 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+6 
+ 
+study visits whenever possible. Participants were instructed to refrain from vigorous physical activity and alcohol consumpti on on 
+the day prior to measurement. 
+ 
+(4) Blood test 
+Blood samples were collected at baseline and at 4, 8, and 12 weeks after the start of the intervention. Participants were instructed to 
+fast for at least 8 hours prior to blood collection and to abstain from alcohol consumption on the day before sampling. Venous blood 
+samples were obtained by qualified medical laboratory (SRL, Inc., Tokyo, Japan) and were performed using standardized laboratory 
+procedures and quality-controlled automated clinical chemistry analyzers in accordance with routine clinical testing protocols. The 
+following blood parameters were assessed at each time point: triglycerides, total cholesterol, low -density lipoprotein cholesterol, 
+high-density lipoprotein cholesterol, phospholipids, fasting blood glucose, glycated hemoglobin (NGSP), aspartate transaminase 
+(AST), alanine transaminase (ALT), gamma-glutamyl transferase, alkaline phosphatase, lactate dehydrogenase, total bilirubin, total 
+protein, albumin, uric acid, urea nitrogen, creatinine, sodium, chlorine, potassium, calcium, magnesiu m, and serum iron . Serum 
+AST and ALT were measured using Sikarikit AST and Sikarikit ALT reagents (Kanto Chemical Co., Inc, Japan) on an automated 
+analyzer (JCA-BM8000 series; JEOL Ltd., Japan) according to the JSCC standardized method. 
+ 
+(5) Safety evaluation 
+Adverse events and side effects that occurred from baseline to 12 weeks after consumption were tabulated for the individuals who 
+had consumed the test food at least once. Adverse events were defined as all undesirable or unintended injuries and diseases, or 
+signs of them, that occurred to the individual, whether or not causally related to the test food or the tests performed in the study. 
+Among adverse events, side effects were defined as those for which the study investigator determined that a causal relationship with 
+the test food could not be completely ruled out. 
+ 
+6. Statistical analysis 
+Statistical analyses were performed using IBM SPSS Statistics (ver 29.0.2.0; IBM Corp., Armonk, NY , USA). Continuous variables 
+are presented as mean ± standard deviation (SD). All statistical tests were two-tailed, and the significance level was set at P < 0.05. 
+Changes from baseline at each time point （4, 8, 12  weeks ） were calculated for each outcome variable. Between-group 
+comparisons of changes from baseline were conducted using an independent two-sample t-test, while within-group comparisons 
+relative to baseline were assessed using a one-sample t-test. For each outcome, the between-group mean difference in change from 
+baseline was reported  together with the exact two -sided P value and the corresponding 95% confidence interval (CI). CIs were 
+calculated using the t  distribution based on the standard error of the difference between group mean changes. As this was an 
+exploratory study with multiple outcomes and no adjustment for multiplicity, the results should be interpreted cautiously. No formal 
+sample size calculation was performed prior to study initiation. As a supplementary descriptive analysis, standardized effect sizes 
+(Cohen’s d) were calculated post hoc for the primary outcomes (snacking frequency and alcohol intake) to aid interpretation 
+of the magnitude of between-group differences. These effect size estimates were not used for hypothesis testing and should 
+be interpreted cautiously. 
+ 
+ 
+Results 
+ 
+1. Participants and groups included in the analysis 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+7 
+ 
+The flow from participant inclusion to analysis is shown in Figure 1. Of the 46 individuals included, 45 completed the study; one 
+dropped out during the study period for reasons unrelated to the study. The 22 participants in the test food group and 23 in the 
+placebo group who completed the study were thus included in the analysis. 
+ 
+2. Values of dietary journal analysis 
+Table 1 shows the analysis of the dietary journals. In terms of changes in values of the dietary journal analysis, the carbonated water 
+group showed a slight decrease (P = 0.096) in carbohydrate consumption compared to the non-carbonated water group at 12 weeks, 
+while the analysis of snacks only showed a slight decrease (P = 0.067) at 12 weeks. However, there were no significant differences 
+between the test food groups for all items. 
+ 
+3. Snacking and drinking habits 
+Aggregate results for frequency of snacks and amount of alcohol consumed are shown in Table 2. Compared with the non-carbonated 
+water group, the carbonated water group showed a greater reduction in snacking frequency at week 4 (between -group mean 
+difference in change: −1.39 times/week; 95% CI -2.82 to -0.28; P = 0.018), corresponding to a moderate-to-large standardized effect 
+size (Cohen’s d = 0.73). A similar effect was observed at week 12  (mean difference −1.49; 95% CI −2.93 to −0.05; P = 0.049 ; 
+Cohen’s d = 0.61). Alcohol intake was also significantly reduced at week 12 in the carbonated water group (mean difference −24.44 
+g/week; 95% CI −44.02 to −4.86; P = 0.019), with a moderate standardized effect size (Cohen’s d = 0.73)  
+ 
+4. Physical measurements 
+The results of the physical measurements are shown in Table 3.  At week 12, body weight and BMI decreased modestly in the 
+carbonated water group compared with the non-carbonated water group (body weight: −0.72 kg; 95% CI −1.37 to −0.07; P = 0.036; 
+BMI: −0.26 kg/m²; 95% CI −0.50 to −0.02; P = 0.037). 
+ 
+5. Blood test 
+The results of the blood test parameters are shown in Table 4. At week 12, liver enzymes decreased in the carbonated water group 
+compared with placebo, including AST (−4.05 U/L; 95% CI −7.57 to −0.53; P = 0.034) and ALT (−9.47 U/L; 95% CI −18.01 to 
+−0.93; P = 0.026). Triglycerides showed a trend toward reduction at weeks 8 and 12 (P = 0.083 and 0.074, respectively). 
+ 
+6. Safety assessment 
+During the study period, adverse events were identified in six individuals in the test food group (26.1% incidence) and  eight 
+individuals in the placebo group (34.8% incidence). The adverse events identified were transient or seasonal, such as menstrual 
+cramps, headaches, cold symptoms, and hay fever, and were judged by the study investigators to have no causal relationshi p to the 
+study foods, suggesting good safety of the test food. 
+ 
+Discussion 
+ 
+This randomized, open -label, placebo-controlled, parallel-group study investigated the effects of 12 weeks of continuous 
+consumption of carbonated water on eating and drinking behaviors and selected health examination indices in healthy 
+Japanese adults with habitual snacking and drinking behaviors. The primary finding of this exploratory study was a reduction 
+in snacking frequency in the carbonated water group compared with the placebo group. In addition, modest changes were 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+8 
+ 
+observed in alcohol consumption, body weight, body mass index, and selected blood biochemical parameters, including liver-
+related enzymes. 
+The observed reduction in snacking frequency suggests that habitual c onsumption of carbonated water may support changes in 
+eating behavior. Previous experimental studies have shown that ingestion of carbonated water can induce gastric distension due to 
+both liquid volume and carbon dioxide release, which may enhance sensati ons of fullness and suppress appetite through reduced 
+gastric motility [8, 9]. Although the present study did not directly assess appetite, gastric motility, or satiety -related hormones, the 
+sustained decrease in snacking frequency observed over the interv ention period is consistent with these proposed physiological 
+mechanisms. In addition, the refreshing sensory properties of carbonated water may contribute to temporary stress relief or 
+substitution for other caloric beverages, which could indirectly influence eating and drinking behaviors. 
+In this study, reductions in alcohol consumption were also observed in the carbonated water group at 12 weeks. One possible 
+explanation is that carbonated water served as a non -caloric alternative beverage, reducing oppo rtunities for alcohol intake. 
+Behavioral substitution is a commonly employed strategy in lifestyle interventions, and the ease of incorporating carbonated water 
+into daily routines may represent a practical advantage. However, because alcohol intake was se lf-reported, these findings should 
+be interpreted cautiously. 
+Modest decreases in body weight and BMI were observed in the carbonated water group compared with the placebo group at 12 
+weeks. These changes are likely secondary to alterations in eating and d rinking behaviors rather than a direct metabolic effect of 
+carbonated water itself. Weight reduction associated with improvements in dietary habits has been well documented [10], and even 
+small reductions in body weight may contribute to favorable metaboli c changes. Consistent with this interpretation, changes in 
+triglycerides and liver-related enzymes (AST and ALT) were modest and remained within clinically normal ranges. These findings 
+suggest potential improvements in metabolic and hepatic load rather than clinically therapeutic effects. 
+Several limitations of this study should be acknowledged. First, the study employed an open-label design because blinding was not 
+feasible due to the perceptible sensory characteristics of carbonation. Although objective outcomes such as body weight and blood 
+biochemical parameters were included, the lack of blinding may have influenced self -reported behavioral outcomes. Second, 
+snacking frequency and alcohol intake were assessed using self -reported questionnaires, which a re subject to recall and reporting 
+bias. Third, physical activity levels were not quantitatively assessed, and although participants were instructed to maintain  their 
+usual activity patterns, unmeasured changes in physical activity may have influenced the results. 
+In addition, this study was exploratory in nature and was not powered to detect small effect sizes. No formal sample size calculation 
+was performed prior to study initiation, and multiple outcomes were analyzed without adjustment for multiplicity.  Therefore, 
+findings showing marginal statistical significance should be interpreted with caution. Furthermore, the study population cons isted 
+of healthy Japanese adults with specific BMI ranges and habitual snacking and drinking behaviors, which limits the generalizability 
+of the findings to other populations, including individuals with diagnosed metabolic diseases.  
+Despite these limitations, this study has several strengths. It evaluated the effects of a commercially available, energy-free beverage 
+that can be easily incorporated into daily life, enhancing the real -world relevance of the findings. The inclusion of both behavioral 
+outcomes and objective health examination indices provides complementary perspectives on lifestyle -related changes. Taken 
+together, the results suggest that continuous consumption of carbonated water may support healthier eating and drinking behaviors 
+and contribute to modest improvements in selected health indicators in healthy adults.  
+Further studies with larger sample sizes, longer follow-up periods, objective assessments of physical activity and dietary intake, and 
+more rigorous control of confounding factors are warranted to confirm these findings and to clarify the mechanisms underlying  the 
+observed behavioral changes. 
+ 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+9 
+ 
+Conclusion 
+ 
+This exploratory randomized study suggests that continuous consumption of carbonated water may support favorable changes in 
+eating and drinking behaviors, particularly reducing snacking frequency, in healthy adults with habitual sna cking and drinking 
+behaviors. Modest improvements in body weight, body mass index, and selected blood biochemical parameters were also observed; 
+however, these changes are likely secondary to behavioral modifications rather than direct physiological effects of carbonated water. 
+Because this study employed an open- label design, relied partly on self-reported behavioral data, and was conducted with a limited 
+sample size without formal power calculation, the findings should be interpreted with caution. The results do not establish causality 
+but indicate a potential role for carbonated water as an easy implementable, energy-free beverage within daily life. Further well-
+powered, long-term studies incorporating objective assessments of dietary intake, physical activity, and appetite-related mechanisms 
+are needed to confirm these findings and clarify the underlying pathways through which carbonated water consumption may 
+influence eating and drinking behaviors. 
+ 
+Statements and declarations 
+ 
+Funding 
+This study was funded by Asahi Soft Drinks Co., Ltd. 
+ 
+Conflicts of interest 
+The research expenses and test foods for this study were provided by Asahi Soft Drinks Co., Ltd. Third -party organization Mibyou 
+Life Science Co. was commissioned to conduct this study under appropriate management on registered subjects of Macromill, Inc. 
+As for the authors, Hideki Hashimoto and Seiichi Mizuno are employees of Asahi Soft Drinks Co., Ltd,  Soichi Yoneda is an 
+employee of Mibyou Life Science Co. , and Atsushi Nagazumi is the director of the medical corporation Ryoshukai Kanauchi 
+Medical Clinic and was commissioned by Mibyou Life Science Co. to conduct this study as the investigator. Tadashi Nishikawara  
+is an employee of Macromill, Inc. and was commissioned by Asahi Soft Drinks Co., Ltd. to recruit subjects. 
+ 
+ 
+References 
+ 
+1. Ministry of health, labour and welfare, summary of 2022 vital statistics ( fixed number). 
+https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei22/index.html 
+2. Ministry of health, labour and welfare healthy japan 21 ( phase III) . 
+https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kenkounippon21_00006.html 
+3. Ministry of health, labour and welfare: status of implementation of specific health checkups and specific health guidance in 
+fy2022. https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_00045.html 
+4. Yamada, C., Inabe, F., Mitsuhashi, T., Hiratsuka, N., Araida, N., Takahashi, E. Liver function as an indicator for the diagnosis of 
+metabolic syndrome and its development. Ningen Dokku 26, 29-36 (2011) 
+5. Shin, A., Lim, SY., Sung, J., Shin, HR., Kim, J. Dietary intake, eating habits, and metabolic syndrome in Korean men. J Am Diet 
+Assoc 109, 633-640 (2009) 
+6. Bianchi, C., Penno, G., Daniele, G., Benzi, L., Del Prato , S., Miccoli, R. Optimizing management of metabolic syndrome to 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+10 
+ 
+reduce risk: focus on life-style. Intern Emerg Med 3, 87-98. (2008) 
+7. Makiko, T. The current status of alcohol liver disease. Acta Hepatol Jpn 59, 312-318. (2018) 
+8. Wakisaka, S., Nagai, H., Mura, E., Matsumoto, T., Moritani, T., Nagai, N. The effects of carbonated water upon gastric and cardiac 
+activities and fullness in healthy young women. J Nutr Sci Vitaminol 58, 333-338. 
+9. Mura, E., Taniguchi, A., Komai, N., Nagai, M., Moriya, T., Nagai, N. Effects of carbonated water drinking on sensory -specific 
+satiation and gastric motility in humans. The 67th Annual Meeting of the Japanese Society of Nutrition and Food Science (2013) 
+10. Kishimoto, H., Noto, Y., Ohkawara, K., Nakata, Y. Effects of exercise and diet on body weight control. Jpn J Health Educ 
+Promot 14, 15-22 (2012) 
+  
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+11 
+ 
+Figure caption 
+Figure 1: Participant follow-up flowchart 
+ 
+   Evaluation of eligibility (n = 57)    
+              
+         Excluded (n 
+= 11) 
+  
+           
+              
+   Randomization (n = 46)    
+               
+                        
+Test food group (n = 23)     Placebo group (n = 23) 
+               
+Start test food consumption (n = 
+23) 
+    Start placebo consumption 
+(n = 23) 
+               
+   Declined (n 
+= 1) 
+         
+            
+               
+End test food consumption (n = 
+22) 
+    End placebo consumption (n 
+= 23) 
+               
+               
+Participants of efficacy analysis (n 
+= 22) 
+Participants of safety analysis (n = 
+23) 
+    Participants of efficacy 
+analysis (n = 23) 
+Participants of safety 
+analysis (n = 23) 
+    
+             
+ 
+Figure 1 
+ 
+ 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+12 
+ 
+ 
+Tables 
+Table 1. Values of dietary journal analysis 
+(Units) Mean difference P-value
+Calorific value Baseline 13312.2 ± 2053.8 12493.4 ± 2470.1 ― ― ― ― ―
+(kcal/week) 4 wks. 13378.1 ± 2621.3 12466.6 ± 2639.3 65.9 ± 2162.1 −26.9 ± 1722.8 92.8 -1088.21 to 1273.81 0.874
+8 wks. 12636.8 ± 1776 12054 ± 2462.9 −675.5 ± 1534.7 −439.5 ± 1781.4 -236.0 -1234.58 to 762.58 0.637
+12 wks. 12450.3 ± 1680.8* 12307.6 ± 2347.9 −861.9 ± 1775.6 −185.8 ± 1931.4 -676.1 -1790.80 to 438.60 0.229
+Protein Baseline 402.6 ± 77.8 387.4 ± 79.5 ― ― ― ― ―
+(g/week) 4 wks. 411.2 ± 97.7 383.4 ± 72.2 8.6 ± 88.8 −4.0 ± 64.1 12.60 -34.31 to 59.51 0.586
+8 wks. 393.8 ± 62.9 374.2 ± 79.9 −8.8 ± 69.9 −13.2 ± 72.7 4.40 -38.47 to 47.27 0.835
+12 wks. 385.1 ± 63.1 385.0 ± 92.1 −17.5 ± 81.2 −2.3 ± 82.6 -15.20 -64.45 to 34.05 0.539
+Carbohydrates Baseline 1864.6 ± 377.8 1806.9 ± 380.5 ― ― ― ― ―
+(g/week) 4 wks. 1826.0 ± 389.7 1761.5 ± 366 −38.6 ± 271.1 −45.4 ± 227.6 6.80 -144.23 to 157.83 0.927
+8 wks. 1719.1 ± 310.0* 1664.2 ± 355.2* −145.5 ± 231.7 −142.7 ± 261.6 -2.80 -151.23 to 145.63 0.970
+12 wks. 1669.6 ± 332.1* 1740.1 ± 303.8 −195.1 ± 258 −66.8 ± 248.1 -128.3 -280.61 to 24.01 0.096
+Lipids Baseline 431.3 ± 81.4 382.7 ± 117.0 ― ― ― ― ―
+(g/week) 4 wks. 444.9 ± 131.6 389.6 ± 105.9 13.6 ± 129.6 6.8 ± 69.5 6.80 -56.77 to 70.37 0.830
+8 wks. 422.1 ± 71.7 396.3 ± 117.5 −9.2 ± 77.6 13.6 ± 93.1 -22.80 -74.27 to 28.67 0.378
+12 wks. 431.0 ± 90.2 388.9 ± 109.3 −0.3 ± 111.4 6.2 ± 102.3 -6.50 -70.91 to 57.91 0.839
+Snack only:
+calorific value Baseline 1708.3 ± 1153.5 1617 ± 1155.0 ― ― ― ― ―
+(kcal/week) 4 wks. 2076.8 ± 1734.7 1745 ± 1246.0 368.5 ± 1090.4 128.0 ± 858.3 240.5 -352.50 to 833.50 0.414
+8 wks. 1538.2 ± 1317.7 1456.6 ± 1046.2 −170.1 ± 764.8 −160.4 ± 690.5 -9.70 -448.66 to 429.26 0.964
+12 wks. 1434.3 ± 1136.9 1597.7 ± 907.8 −274.0 ± 867.9 −19.3 ± 666.3 -254.70 -722.58 to 213.18 0.274
+Snacks only:
+Protein Baseline 29.9 ± 25.9 28.4 ± 21.6 ― ― ― ― ―
+(g/week) 4 wks. 35.4 ± 28.9 35.7 ± 28.4 5.5 ± 16.3 7.3 ± 20.1 -1.80 -12.79 to 9.19 0.733
+8 wks. 24.0 ± 20.3 23.9 ± 19.1 −5.9 ± 17.3 −4.5 ± 16.8 -1.40 -11.66 to 8.86 0.782
+12 wks. 23.3 ± 20.7 25.4 ± 16.7 −6.7 ± 17.5 −3.1 ± 14.4 -3.60 -13.27 to 6.07 0.453
+Snacks only:
+Carbohydrates Baseline 245.2 ± 159.7 236.6 ± 191.5 ― ― ― ― ―
+(g/week) 4 wks. 284.3 ± 259.7 237.6 ± 183.5 39.1 ± 158.6 1.0 ± 111 38.1 -44.89 to 121.09 0.354
+8 wks. 198.0 ± 175.4 207.9 ± 187.4 −47.1 ± 122.7 −28.6 ± 114.3 -18.5 -89.90 to 52.9 0.603
+12 wks. 179.9 ± 149.7* 232.9 ± 166.1 −65.3 ± 124.3 −3.7 ± 93.9 -61.6 -128.24 to 5.04 0.067
+Snack only:
+Lipids Baseline 57.5 ± 50.8 51.1 ± 40.4 ― ― ― ― ―
+(g/week) 4 wks. 75.5 ± 70.5 58.5 ± 44.3 18.0 ± 51.0 7.4 ± 34.2 10.60 -15.76 to 36.96 0.416
+8 wks. 54.8 ± 65.5 47.0 ± 32.9 −2.7 ± 35.7 −4.1 ± 27.6 1.40 -17.89 to 20.69 0.885
+12 wks. 58.6 ± 55.1 52.0 ± 33.7 1.1 ± 34.9 0.9 ± 33.6 0.20 -20.41 to 20.81 0.984
+Values are m ean ±  standard deviation
+*P < 0.05 vs. baseline within group
+M ean difference = change from  baseline (Test food group −  Placebo group)
+95%  CI calculated using W elch’s t m ethod (n = 22 vs. 23)
+― ―
+― ―
+Items Weeks Measured values Change from baseline
+Intergroup comparison
+95%CI 
+― ―
+― ―
+― ―
+― ―
+― ―
+― ―
+Carbonated water group Non-carbonated water  group Carbonated water group Non-carbonated water  group
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+13 
+ 
+Table 2: Snacking and drinking habits 
+ 
+  
+(Units) Mean difference P-value
+Body
+weight Baseline 68.57 ± 9.10 68.83 ± 9.62 ― ―
+(kg) 4 wks. 69.30 ± 9.07* 69.10 ± 9.63 0.73 ± 1.08 0.28 ± 1.23 0.45 -0.22 to 1.12 0.201
+8 wks. 68.85 ± 9.01 69.22 ± 9.35 0.28 ± 1.15 0.40 ± 1.12 -0.12 -0.80 to 0.56 0.728
+12 wks. 68.45 ± 9.27 69.42 ± 9.44* −0.12 ± 1.25 0.60 ± 0.96 -0.72 -1.37 to -0.07 0.036
+Body mass
+index Baseline 25.26 ± 1.49 25.33 ± 1.38 ― ―
+(kg/m2) 4 wks. 25.55 ± 1.52* 25.43 ± 1.32 0.29 ± 0.42 0.10 ± 0.43 0.19 -0.05 to 0.43 0.134
+8 wks. 25.39 ± 1.57 25.48 ± 1.28 0.12 ± 0.43 0.15 ± 0.38 -0.03 -0.26 to 0.20 0.836
+12 wks. 25.22 ± 1.63 25.55 ± 1.32* −0.04 ± 0.46 0.22 ± 0.36 -0.26 -0.50 to -0.02 0.037
+Systolic
+blood
+pressure
+Baseline 121.68 ± 10.65 127.65 ± 12.12 ― ―
+(mmHg) 4 wks. 121.59 ± 10.34 127.74 ± 9.79 −0.09 ± 9.84 0.09 ± 11.87 -0.18 -6.73 to 6.37 0.957
+8 wks. 119.95 ± 9.70 126.35 ± 11.88 −1.73 ± 8.57 −1.30 ± 11.63 -0.43 -6.56 to 5.70 0.891
+12 wks. 120.50 ± 11.63 125.17 ± 14.16 −1.18 ± 11.67 −2.48 ± 11.30 1.30 -5.61 to 8.21 0.707
+Diastolic
+blood
+pressure
+Baseline 81.41 ± 8.97 84.65 ± 10.10 ― ―
+(mmHg) 4 wks. 81.82 ± 8.42 82.96 ± 10.39 0.41 ± 9.28 −1.70 ± 7.23 2.11 -2.92 to 7.14 0.399
+8 wks. 79.23 ± 10.9 81.3 ± 10.92 −2.18 ± 7.61 −3.35 ± 8.44 1.17 -3.66 to 6.00 0.629
+12 wks. 78.77 ± 10.75 81.96 ± 9.21 −2.64 ± 6.50 −2.70 ± 8.00 0.06 -4.32 to 4.44 0.978
+Values are m ean ±  standard deviation
+*P < 0.05 vs. baseline within group
+M ean difference = change from  baseline (Test food group −  Placebo group)
+95%  CI calculated using W elch’s t m ethod (n = 22 vs. 23)
+Items Measured values
+Change from baseline
+Weeks
+Intergroup comparison
+Carbonated water group Non-carbonated water  group Carbonated water group Non-carbonated water  group
+― ― ―
+― ― ―
+95% CI 
+― ― ―
+― ― ―
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+14 
+ 
+Table 3. Results of physical measurements 
+  
+(Units) Mean difference P-value
+Body
+weight Baseline 68.57 ± 9.10 68.83 ± 9.62 ― ―
+(kg) 4 wks. 69.30 ± 9.07* 69.10 ± 9.63 0.73 ± 1.08 0.28 ± 1.23 0.45 -0.22 to 1.12 0.201
+8 wks. 68.85 ± 9.01 69.22 ± 9.35 0.28 ± 1.15 0.40 ± 1.12 -0.12 -0.80 to 0.56 0.728
+12 wks. 68.45 ± 9.27 69.42 ± 9.44* −0.12 ± 1.25 0.60 ± 0.96 -0.72 -1.37 to -0.07 0.036
+Body mass
+index Baseline 25.26 ± 1.49 25.33 ± 1.38 ― ―
+(kg/m2) 4 wks. 25.55 ± 1.52* 25.43 ± 1.32 0.29 ± 0.42 0.10 ± 0.43 0.19 -0.05 to 0.43 0.134
+8 wks. 25.39 ± 1.57 25.48 ± 1.28 0.12 ± 0.43 0.15 ± 0.38 -0.03 -0.26 to 0.20 0.836
+12 wks. 25.22 ± 1.63 25.55 ± 1.32* −0.04 ± 0.46 0.22 ± 0.36 -0.26 -0.50 to -0.02 0.037
+Systolic
+blood
+pressure
+Baseline 121.68 ± 10.65 127.65 ± 12.12 ― ―
+(mmHg) 4 wks. 121.59 ± 10.34 127.74 ± 9.79 −0.09 ± 9.84 0.09 ± 11.87 -0.18 -6.73 to 6.37 0.957
+8 wks. 119.95 ± 9.70 126.35 ± 11.88 −1.73 ± 8.57 −1.30 ± 11.63 -0.43 -6.56 to 5.70 0.891
+12 wks. 120.50 ± 11.63 125.17 ± 14.16 −1.18 ± 11.67 −2.48 ± 11.30 1.30 -5.61 to 8.21 0.707
+Diastolic
+blood
+pressure
+Baseline 81.41 ± 8.97 84.65 ± 10.10 ― ―
+(mmHg) 4 wks. 81.82 ± 8.42 82.96 ± 10.39 0.41 ± 9.28 −1.70 ± 7.23 2.11 -2.92 to 7.14 0.399
+8 wks. 79.23 ± 10.9 81.3 ± 10.92 −2.18 ± 7.61 −3.35 ± 8.44 1.17 -3.66 to 6.00 0.629
+12 wks. 78.77 ± 10.75 81.96 ± 9.21 −2.64 ± 6.50 −2.70 ± 8.00 0.06 -4.32 to 4.44 0.978
+Values are m ean ±  standard deviation
+*P < 0.05 vs. baseline within group
+M ean difference = change from  baseline (Test food group −  Placebo group)
+95%  CI calculated using W elch’s t m ethod (n = 22 vs. 23)
+Items Measured values
+Change from baseline
+Weeks
+Intergroup comparison
+Carbonated water group Non-carbonated water  group Carbonated water group Non-carbonated water  group
+― ― ―
+― ― ―
+95% CI 
+― ― ―
+― ― ―
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+15 
+ 
+Table 4: Blood test results 
+ 
+ 
+ 
+ 
+Items
+(Units) Mean difference P-value
+Triglyceri
+des Baseline 102.59 ± 45.08 106.96 ± 58.34 ― ―
+(md/dl) 4 wks. 113.68 ± 56.57 116.39 ± 59.49 11.09 ± 31 9.43 ± 42.41 1.66 -20.65 to 23.97 0.882
+8 wks. 91.68 ± 40.64 129.74 ± 69.37 -10.91 ± 52.3 22.78 ± 72.9 -33.69 -71.79 to 4.41 0.083
+12 wks. 102.45 ± 48.57 127.17 ± 58.88* -0.14 ± 25.7 20.22 ± 45.64 -20.36 -42.65 to 1.93 0.074
+Total
+cholesterol Baseline 199.82 ± 28.63 217.04 ± 26.93 ― ―
+(md/dl) 4 wks. 202.41 ± 31.82 224.61 ± 39.01 2.59 ± 26.28 7.57 ± 23.02 -4.98 -20.57 to 10.61 0.503
+8 wks. 198 ± 31.07 218.48 ± 31.83 -1.82 ± 30.02 1.43 ± 15.41 -3.25 -16.55 to 10.05 0.653
+12 wks. 200.95 ± 32.47 218.83 ± 31.78 1.14 ± 25.09 1.78 ± 15.89 -0.64 -12.3 to 11.02 0.918
+Low-
+density
+lipoprotein
+cholesterol
+Baseline 118.82 ± 22.39 133.74 ± 23.79 ― ―
+(md/dl) 4 wks. 125.09 ± 30.45 140.26 ± 34.58 6.27 ± 20.81 6.52 ± 20.85 -0.25 -12.45 to 11.95 0.968
+8 wks. 120.95 ± 25.99 135.04 ± 30.11 2.14 ± 20.03 1.30 ± 14.93 0.84 -10.35 to 12.03 0.875
+12 wks. 121.64 ± 28.27 134.65 ± 26.77 2.82 ± 17.83 0.91 ± 12.15 1.91 -7.36 to 11.18 0.676
+High-
+density
+lipoprotein
+cholesterol
+Baseline 59.86 ± 15.75 61.87 ± 13.19 ― ―
+(md/dl) 4 wks. 58.68 ± 13.12 62.22 ± 15.64 -1.18 ± 9.67 0.35 ± 5.65 -1.53 -6.11 to 3.05 0.518
+8 wks. 59.91 ± 13.26 60.57 ± 13.4 0.05 ± 11.2 -1.30 ± 5.89 1.35 -3.49 to 6.19 0.619
+12 wks. 60.32 ± 13.65 60.65 ± 12.07 0.45 ± 8.95 -1.22 ± 5.44 1.67 -1.37 to 4.71 0.451
+Phospholip
+ids Baseline 200.68 ± 25.02 214 ± 20.3 ― ―
+(mg/dL) 4 wks. 209.68 ± 25.6 225.04 ± 28.69* 9.00 ± 24.89 11.04 ± 18.1 -2.04 -15.37 to 11.29 0.754
+8 wks. 201.23 ± 27.79 222.26 ± 20.43* 0.55 ± 29.92 8.26 ± 17.2 -7.71 -22.51 to 7.09 0.299
+12 wks. 204 ± 28.62 221.52 ± 23.62* 3.32 ± 22.06 7.52 ± 14.43 -4.2 -15.66 to 7.26 0.451
+Measured values
+Change from baseline
+Weeks
+Intergroup comparison
+Carbonated water group Non-carbonated water  group Carbonated water group Non-carbonated water  group 95% CI 
+― ― ―
+― ― ―
+― ― ―
+― ― ―
+― ― ―
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+16 
+ 
+ 
+Fasting
+blood
+sugar
+Baseline 88.73 ± 6.41 91.52 ± 8.8 ― ―
+(mg/dL) 4 wks. 88.55 ± 9.92 90.83 ± 9.6 -0.18 ± 8.69 -0.70 ± 6.93 0.52 -4.35 to 5.39 0.827
+8 wks. 88.77 ± 5.64 92.52 ± 10.62 0.05 ± 5.71 1.00 ± 7.25 -0.95 -4.67 to 2.77 0.627
+12 wks. 89.18 ± 8.17 90.70 ± 8.73 0.45 ± 5.81 -0.83 ± 5.35 1.28 -2.12 to 4.68 0.446
+Glycated
+hemoglobi
+n
+Baseline 5.25 ± 0.23 5.36 ± 0.31 ― ―
+(%) 4 wks. 5.35 ± 0.17* 5.43 ± 0.26 0.11 ± 0.13 0.07 ± 0.21 0.04 -0.05 to 0.13 0.451
+8 wks. 5.35 ± 0.17* 5.42 ± 0.28 0.10 ± 0.17 0.06 ± 0.15 0.04 -0.05 to 0.13 0.411
+12 wks. 5.42 ± 0.20* 5.47 ± 0.29* 0.18 ± 0.15 0.11 ± 0.16 0.07 -0.02 to 0.16 0.146
+Aspartate
+transamina
+se
+Baseline 24.82 ± 8.33 22.91 ± 4.48 ― ―
+(U/L) 4 wks. 23.41 ± 7.87 23.00 ± 6.79 -1.41 ± 7.46 0.09 ± 6.34 -1.50 -5.68 to 2.68 0.472
+8 wks. 21.55 ± 5.08* 22.09 ± 7.24 -3.27 ± 7.26 -0.83 ± 5.89 -2.44 -5.56 to 0.68 0.220
+12 wks. 19.77 ± 3.45* 21.91 ± 5.62 -5.05 ± 7.94 -1.00 ± 3.86 -4.05 -7.57 to -0.53 0.034
+Alanine
+transaminas
+e
+Baseline 28.59 ± 18.44 23.78 ± 11.69 ― ―
+(U/L) 4 wks. 26.18 ± 15.01 24.78 ± 14.25 -2.41 ± 16.05 1.00 ± 6.30 -3.41 -10.93 to 4.11 0.349
+8 wks. 21.59 ± 9.12 25.09 ± 20.52 -7.00 ± 16.37 1.30 ± 12.67 -8.30 -17.15 to 0.55 0.063
+12 wks. 19.77 ± 8.55* 24.43 ± 15.03 -8.82 ± 18.08 0.65 ± 7.64 -9.47 -18.01 to -0.93 0.026
+Gamma-
+glutamyl
+transferase
+Baseline 28.45 ± 14.73 30.57 ± 17.36 ― ―
+(U/L) 4 wks. 27.27 ± 12.43 31.65 ± 17.99 -1.18 ± 4.49 1.09 ± 6.47 -2.27 -5.77 to 1.23 0.181
+8 wks. 25.27 ± 12.26* 28.61 ± 17.2 -3.18 ± 6.88 -1.96 ± 10.94 -1.22 -6.77 to 4.33 0.657
+12 wks. 24.45 ± 11.69* 29.83 ± 16.82 -4.00 ± 6.91 -0.74 ± 6.80 -3.26 -7.38 to 0.86 0.118
+Alkaline
+phosphatas
+e
+Baseline 61.64 ± 17.38 66.30 ± 16.82 ― ―
+(U/L) 4 wks. 61.5 ± 15.78 66.13 ± 17.72 -0.14 ± 3.81 -0.17 ± 6.18 0.03 -3.06 to 3.12 0.981
+8 wks. 59.18 ± 17 65.26 ± 15.41 -2.45 ± 5.62 -1.04 ± 9.17 -1.41 -5.98 to 3.16 0.539
+12 wks. 60.36 ± 16.86 66.09 ± 16.28 -1.27 ± 9.99 -0.22 ± 6.98 -1.05 -6.27 to 4.17 0.682
+Lactate
+dehydroge
+nase
+Baseline 185 ± 33.04 183.48 ± 24.25 ― ―
+(U/L) 4 wks. 180.77 ± 35.37 183.65 ± 23.12 -4.23 ± 15.33 0.17 ± 12.93 -4.40 -13.24 to 4.44 0.303
+8 wks. 187.41 ± 41.45 182.83 ± 27.63 2.41 ± 18.36 -0.65 ± 17.83 3.06 -8.00 to 14.12 0.573
+12 wks. 187.18 ± 40.51 182.39 ± 24.84 2.18 ± 19.78 -1.09 ± 9.63 3.27 -6.41 to 12.95 0.489
+― ― ―
+― ― ―
+― ― ―
+― ― ―
+― ― ―
+― ― ―
+― ― ―
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+17 
+ 
+ 
+Total
+bilirubin Baseline 0.73 ± 0.28 0.78 ± 0.29 ― ―
+(mg/dL) 4 wks. 0.65 ± 0.32 0.76 ± 0.35 -0.07 ± 0.24 -0.03 ± 0.33 -0.04 -0.22 to 0.14 0.594
+8 wks. 0.72 ± 0.32 0.68 ± 0.22* -0.01 ± 0.26 -0.10 ± 0.22 0.09 -0.06 to 0.24 0.211
+12 wks. 0.77 ± 0.41 0.73 ± 0.28 0.04 ± 0.31 -0.06 ± 0.28 0.10 -0.08 to 0.28 0.276
+Total
+protein Baseline 7.25 ± 0.44 7.24 ± 0.32 ― ―
+(g/dL) 4 wks. 7.2 ± 0.32 7.33 ± 0.42 -0.05 ± 0.31 0.09 ± 0.33 -0.14 -0.33 to 0.05 0.175
+8 wks. 7.12 ± 0.36 7.20 ± 0.3 -0.12 ± 0.37 -0.05 ± 0.22 -0.07 -0.26 to 0.12 0.411
+12 wks. 7.15 ± 0.35 7.20 ± 0.29 -0.09 ± 0.32 -0.04 ± 0.29 -0.05 -0.23 to 0.13 0.604
+Albumin Baseline 4.34 ± 0.35 4.41 ± 0.32 ― ―
+(g/dL) 4 wks. 4.35 ± 0.3 4.46 ± 0.36 0.01 ± 0.25 0.05 ± 0.2 -0.04 -0.18 to 0.10 0.524
+8 wks. 4.36 ± 0.26 4.42 ± 0.30 0.02 ± 0.3 0.01 ± 0.15 0.01 -0.14 to 0.16 0.942
+12 wks. 4.36 ± 0.3 4.39 ± 0.27 0.02 ± 0.21 -0.02 ± 0.17 0.04 -0.08 to 0.16 0.435
+Uric acid Baseline 5.11 ± 1.09 5.63 ± 1.36 ― ―
+(mg/dL) 4 wks. 5.33 ± 1.24 5.64 ± 1.36 0.22 ± 0.76 0.01 ± 0.64 0.21 -0.20 to 0.62 0.321
+8 wks. 5.25 ± 1.26 5.58 ± 1.4 0.14 ± 0.74 -0.05 ± 0.57 0.19 -0.19 to 0.57 0.355
+12 wks. 5.25 ± 1.23 5.52 ± 1.55 0.14 ± 0.61 -0.11 ± 0.61 0.25 -0.12 to 0.62 0.179
+Urea
+nitrogen Baseline 13.5 ± 3.02 12.53 ± 2.62 ― ―
+(mg/dL) 4 wks. 13.8 ± 3.07 12.57 ± 3.15 0.30 ± 3.07 0.03 ± 2.93 0.27 -1.53 to 2.07 0.772
+8 wks. 13.05 ± 3.07 13.22 ± 2.95 -0.46 ± 2.99 0.69 ± 2.26 -1.15 2.77 to 0.47 0.153
+12 wks. 13.37 ± 3.17 12.41 ± 3.20 -0.14 ± 2.77 -0.12 ± 2.38 -0.02 -1.57 to 1.53 0.980
+Creatinine Baseline 0.78 ± 0.16 0.77 ± 0.18 ― ―
+(mg/dL) 4 wks. 0.8 ± 0.18 0.77 ± 0.18 0.02 ± 0.05 0.00 ± 0.04 0.02 -0.01 to 0.05 0.142
+8 wks. 0.8 ± 0.17 0.77 ± 0.17 0.02 ± 0.04 0.00 ± 0.04 0.02 -0.01 to 0.05 0.252
+12 wks. 0.8 ± 0.18 0.76 ± 0.16 0.02 ± 0.05 -0.01 ± 0.04 0.03 0.00 to 0.06 0.027
+Sodium Baseline 140.91 ± 1.41 141.26 ± 1.60 ― ―
+(mEq/L) 4 wks. 140.41 ± 1.79 139.87 ± 2.10* -0.5 ± 1.44 -1.39 ± 1.67 0.89 -0.04 to 1.82 0.062
+8 wks. 140.82 ± 1.68 140.61 ± 1.44 -0.09 ± 1.48 -0.65 ± 1.82 0.56 -0.47 to 1.59 0.264
+12 wks. 141.45 ± 2.42 141.04 ± 1.94 0.55 ± 1.63 -0.22 ± 1.62 0.77 -0.19 to 1.73 0.122
+Chlorine Baseline 102.95 ± 1.76 102.96 ± 1.87 ― ―
+(mEq/L) 4 wks. 103.64 ± 1.99 102.39 ± 2.02 0.68 ± 1.64 -0.57 ± 2.00 1.25 0.14 to 2.36 0.028
+8 wks. 103.77 ± 1.90* 102.65 ± 1.80 0.82 ± 1.84 -0.30 ± 1.92 1.12 -0.02 to 2.26 0.052
+12 wks. 103.86 ± 1.70* 102.61 ± 1.85 0.91 ± 1.69 -0.35 ± 2.04 1.26 0.13 to 2.39 0.030
+―
+―
+―
+―
+―
+―
+―
+―
+― ―
+― ―
+― ―
+― ―
+― ―
+― ―
+― ―
+― ―
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+18 
+ 
+ 
+ 
+Items 
+ 
+Wee
+ks 
+ 
+Measured values 
+ Change from baseline 
+       Intergroup comparison 
+(Units)     
+Carbonated 
+water group 
+  
+Non-carbonated 
+water  group  
+ Carbonated 
+water group 
+  
+Non-carbonated 
+water  group  
+  
+Mean 
+difference 
+95%CI  
+P-
+valu
+e 
+Calorific value  Basel
+ine 
+ 1331
+2.2 
+± 
+2053.
+8 
+ 12493.4 ± 2470.1  ―  ―  ― ― ― ― ― 
+Potassium Baseline 4.37 ± 0.42 4.24 ± 0.36 ― ―
+(mEq/L) 4 wks. 4.82 ± 0.43* 4.70 ± 0.50* 0.45 ± 0.43 0.46 ± 0.46 -0.01 -0.27 to 0.25 0.908
+8 wks. 4.29 ± 0.4 4.11 ± 0.36 -0.08 ± 0.47 -0.13 ± 0.30 0.05 -0.17 to 0.27 0.708
+12 wks. 4.15 ± 0.5 4.00 ± 0.36* -0.23 ± 0.56 -0.23 ± 0.33 0.00 -0.26 to 0.26 0.957
+Calcium Baseline 9.23 ± 0.31 9.31 ± 0.35 ― ―
+(mEq/L) 4 wks. 9.16 ± 0.38 9.30 ± 0.31 -0.07 ± 0.27 -0.01 ± 0.29 -0.06 -0.23 to 0.11 0.482
+8 wks. 9.04 ± 0.33* 9.16 ± 0.27* -0.20 ± 0.25 -0.15 ± 0.27 -0.05 -0.20 to 0.10 0.583
+12 wks. 9.10 ± 0.38* 9.17 ± 0.27* -0.13 ± 0.28 -0.14 ± 0.28 0.01 -0.16 to 0.18 0.848
+Magnesiu
+m Baseline 2.33 ± 0.13 2.39 ± 0.15 ― ―
+(mEq/L) 4 wks. 2.36 ± 0.13 2.40 ± 0.17 0.03 ± 0.12 0.01 ± 0.14 0.02 -0.05 to 0.09 0.564
+8 wks. 2.30 ± 0.15 2.31 ± 0.14* -0.04 ± 0.14 -0.08 ± 0.14 0.04 -0.04 to 0.12 0.280
+12 wks. 2.39 ± 0.12* 2.39 ± 0.14 0.06 ± 0.12 0.00 ± 0.13 0.06 -0.01 to 0.13 0.094
+Serum iron Baseline 105.14 ± 47.08 120.04 ± 52.74 ― ―
+(µg/dL) 4 wks. 93.73 ± 35.56 119.17 ± 35.04 -11.41 ± 44.09 -0.87 ± 58.79 -10.54 -41.28 to 20.20 0.501
+8 wks. 102.27 ± 45.63 105.09 ± 25.44 -2.86 ± 59.06 -14.96 ± 62.14 12.10 -24.45 to 48.65 0.507
+12 wks. 105.73 ± 39.4 110.43 ± 39.86 0.59 ± 44.38 -9.61 ± 49.53 10.20 -17.55 to 37.95 0.472
+Values are m ean ±  standard deviation
+*P < 0.05 vs. baseline within group
+M ean difference = change from  baseline (Test food group −  Placebo group)
+95%  CI calculated using W elch’s t m ethod (n = 22 vs. 23)
+―
+―
+―
+―
+― ―
+― ―
+― ―
+― ―
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+19 
+ 
+(kcal/week)  4 
+wks. 
+ 1337
+8.1 
+± 
+2621.
+3 
+ 12466.6 ± 2639.3  65.9 ± 
+2162.
+1 
+ −26.9 ± 1722.8  92.8 
+-
+1088.
+21 
+t
+o 
+1273
+.81 
+0.87
+4 
+  8 
+wks. 
+ 1263
+6.8 
+± 1776  12054 ± 2462.9  −675.
+5 
+± 
+1534.
+7 
+ −439.5 ± 1781.4  -236.0 
+-
+1234.
+58 
+t
+o 
+762.
+58 
+0.63
+7 
+    
+12 
+wks. 
+  
+1245
+0.3 
+± 
+1680.
+8* 
+  12307.6 ± 2347.9   
+−861.
+9 
+± 
+1775.
+6 
+  −185.8 ± 1931.4   -676.1 
+-
+1790.
+80 
+t
+o 
+438.
+60 
+0.22
+9 
+Protein  Basel
+ine 
+ 402.6 ± 77.8  387.4 ± 79.5  ―  ―  ― ― ― ― ― 
+(g/week)  4 
+wks. 
+ 411.2 ± 97.7  383.4 ± 72.2  8.6 ± 88.8  −4.0 ± 64.1  12.60 
+-
+34.31 
+t
+o 
+59.5
+1 
+0.58
+6 
+  8 
+wks. 
+ 393.8 ± 62.9  374.2 ± 79.9  −8.8 ± 69.9  −13.2 ± 72.7  4.40 
+-
+38.47 
+t
+o 
+47.2
+7 
+0.83
+5 
+    
+12 
+wks. 
+  385.1 ± 63.1   385.0 ± 92.1   −17.5 ± 81.2   −2.3 ± 82.6   -15.20 
+-
+64.45 
+t
+o 
+34.0
+5 
+0.53
+9 
+Carbohydrates  Basel
+ine 
+ 1864.
+6 
+± 377.8  1806.9 ± 380.5  ―  ―  ― ― ― ― ― 
+(g/week)  4 
+wks. 
+ 1826.
+0 
+± 389.7  1761.5 ± 366  −38.6 ± 271.1  −45.4 ± 227.6  6.80 
+-
+144.2
+3 
+t
+o 
+157.
+83 
+0.92
+7 
+  8 
+wks. 
+ 1719.
+1 
+± 
+310.0
+* 
+ 1664.2 ± 355.2*  −145.
+5 
+± 231.7  −142.7 ± 261.6  -2.80 
+-
+151.2
+3 
+t
+o 
+145.
+63 
+0.97
+0 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+20 
+ 
+    
+12 
+wks. 
+  
+1669.
+6 
+± 
+332.1
+* 
+  1740.1 ± 303.8   
+−195.
+1 
+± 258   −66.8 ± 248.1   -128.3 
+-
+280.6
+1 
+t
+o 
+24.0
+1 
+0.09
+6 
+Lipids  Basel
+ine 
+ 431.3 ± 81.4  382.7 ± 117.0  ―  ―  ― ― ― ― ― 
+(g/week)  4 
+wks. 
+ 444.9 ± 131.6  389.6 ± 105.9  13.6 ± 129.6  6.8 ± 69.5  6.80 
+-
+56.77 
+t
+o 
+70.3
+7 
+0.83
+0 
+  8 
+wks. 
+ 422.1 ± 71.7  396.3 ± 117.5  −9.2 ± 77.6  13.6 ± 93.1  -22.80 
+-
+74.27 
+t
+o 
+28.6
+7 
+0.37
+8 
+    
+12 
+wks. 
+  431.0 ± 90.2   388.9 ± 109.3   −0.3 ± 111.4   6.2 ± 102.3   -6.50 
+-
+70.91 
+t
+o 
+57.9
+1 
+0.83
+9 
+Snack only: 
+calorific value 
+ Basel
+ine 
+ 1708.
+3 
+± 
+1153.
+5 
+ 1617 ± 1155.0  ―  ―  ― ― ― ― ― 
+(kcal/week)  4 
+wks. 
+ 2076.
+8 
+± 
+1734.
+7 
+ 1745 ± 1246.0  368.5 ± 
+1090.
+4 
+ 128.0 ± 858.3  240.5 
+-
+352.5
+0 
+t
+o 
+833.
+50 
+0.41
+4 
+  8 
+wks. 
+ 1538.
+2 
+± 
+1317.
+7 
+ 1456.6 ± 1046.2  −170.
+1 
+± 764.8  −160.4 ± 690.5  -9.70 
+-
+448.6
+6 
+t
+o 
+429.
+26 
+0.96
+4 
+    
+12 
+wks. 
+  
+1434.
+3 
+± 
+1136.
+9 
+  1597.7 ± 907.8   
+−274.
+0 
+± 867.9   −19.3 ± 666.3   -254.70 
+-
+722.5
+8 
+t
+o 
+213.
+18 
+0.27
+4 
+Snacks only: 
+Protein 
+ Basel
+ine 
+ 29.9 ± 25.9  28.4 ± 21.6  ―  ―  ― ― ― ― ― 
+(g/week)  4 
+wks. 
+ 35.4 ± 28.9  35.7 ± 28.4  5.5 ± 16.3  7.3 ± 20.1  -1.80 
+-
+12.79 
+t
+o 
+9.19 
+0.73
+3 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+21 
+ 
+  8 
+wks. 
+ 24.0 ± 20.3  23.9 ± 19.1  −5.9 ± 17.3  −4.5 ± 16.8  -1.40 
+-
+11.66 
+t
+o 
+8.86 
+0.78
+2 
+    
+12 
+wks. 
+  23.3 ± 20.7   25.4 ± 16.7   −6.7 ± 17.5   −3.1 ± 14.4   -3.60 
+-
+13.27 
+t
+o 
+6.07 
+0.45
+3 
+Snacks only: 
+Carbohydrates 
+ Basel
+ine 
+ 245.2 ± 159.7  236.6 ± 191.5  ―  ―  ― ― ― ― ― 
+(g/week)  4 
+wks. 
+ 284.3 ± 259.7  237.6 ± 183.5  39.1 ± 158.6  1.0 ± 111  38.1 
+-
+44.89 
+t
+o 
+121.
+09 
+0.35
+4 
+  8 
+wks. 
+ 198.0 ± 175.4  207.9 ± 187.4  −47.1 ± 122.7  −28.6 ± 114.3  -18.5 
+-
+89.90 
+t
+o 
+52.9 
+0.60
+3 
+    
+12 
+wks. 
+  179.9 ± 
+149.7
+* 
+  232.9 ± 166.1   −65.3 ± 124.3   −3.7 ± 93.9   -61.6 
+-
+128.2
+4 
+t
+o 
+5.04 
+0.06
+7 
+Snack only: 
+Lipids 
+ Basel
+ine 
+ 57.5 ± 50.8  51.1 ± 40.4  ―  ―  ― ― ― ― ― 
+(g/week)  4 
+wks. 
+ 75.5 ± 70.5  58.5 ± 44.3  18.0 ± 51.0  7.4 ± 34.2  10.60 
+-
+15.76 
+t
+o 
+36.9
+6 
+0.41
+6 
+  8 
+wks. 
+ 54.8 ± 65.5  47.0 ± 32.9  −2.7 ± 35.7  −4.1 ± 27.6  1.40 
+-
+17.89 
+t
+o 
+20.6
+9 
+0.88
+5 
+    
+12 
+wks. 
+  58.6 ± 55.1   52.0 ± 33.7   1.1 ± 34.9   0.9 ± 33.6   0.20 
+-
+20.41 
+t
+o 
+20.8
+1 
+0.98
+4 
+Values are mean ± standard 
+deviation 
+                     
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+22 
+ 
+*P < 0.05 vs. baseline within 
+group 
+                     
+Mean difference = change from baseline (Carbonated water group−Non-
+carbonated water  group)  
+              
+95% CI calculated using Welch’s t 
+method (n = 22 vs. 23) 
+                   
+ 
+Items 
+   
+Measured values 
+ Change from baseline 
+  
+Week
+s 
+     Intergroup comparison 
+(Units)     
+Carbonated water 
+group 
+  
+Non-carbonated water  
+group 
+ Carbonated water 
+group 
+  
+Non-carbonated water  
+group 
+ Mean 
+difference 
+95% CI  
+P-
+valu
+e 
+Body weight  Baseli
+ne 
+ 68.57 ± 9.10  68.83 ± 9.62  ―  ―  ― ― ― 
+(kg)  4 wks.  69.30 ± 9.07*  69.10 ± 9.63  0.73 ± 1.08  0.28 ± 1.23  0.45 
+-
+0.2
+2 
+t
+o 
+1.
+12 
+0.20
+1 
+  8 wks.  68.85 ± 9.01  69.22 ± 9.35  0.28 ± 1.15  0.40 ± 1.12  -0.12 
+-
+0.8
+0 
+t
+o 
+0.
+56 
+0.72
+8 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+23 
+ 
+    
+12 
+wks. 
+  68.45 ± 9.27   69.42 ± 9.44*   −0.12 ± 1.25   0.60 ± 0.96   -0.72 
+-
+1.3
+7 
+t
+o 
+-
+0.
+07 
+0.03
+6 
+Body mass 
+index 
+ Baseli
+ne 
+ 25.26 ± 1.49  25.33 ± 1.38  ―  ―  ― ― ― 
+(kg/m2)  4 wks.  25.55 ± 1.52*  25.43 ± 1.32  0.29 ± 0.42  0.10 ± 0.43  0.19 
+-
+0.0
+5 
+t
+o 
+0.
+43 
+0.13
+4 
+  8 wks.  25.39 ± 1.57  25.48 ± 1.28  0.12 ± 0.43  0.15 ± 0.38  -0.03 
+-
+0.2
+6 
+t
+o 
+0.
+20 
+0.83
+6 
+    
+12 
+wks. 
+  25.22 ± 1.63   25.55 ± 1.32*   −0.04 ± 0.46   0.22 ± 0.36   -0.26 
+-
+0.5
+0 
+t
+o 
+-
+0.
+02 
+0.03
+7 
+Systolic 
+blood 
+pressure 
+ Baseli
+ne 
+ 121.68 ± 10.65  127.65 ± 12.12  ―  ―  ― ― ― 
+(mmHg)  4 wks.  121.59 ± 10.34  127.74 ± 9.79  −0.09 ± 9.84  0.09 ± 11.87  -0.18 
+-
+6.7
+3 
+t
+o 
+6.
+37 
+0.95
+7 
+  8 wks.  119.95 ± 9.70  126.35 ± 11.88  −1.73 ± 8.57  −1.30 ± 11.63  -0.43 
+-
+6.5
+6 
+t
+o 
+5.
+70 
+0.89
+1 
+    
+12 
+wks. 
+  120.50 ± 11.63   125.17 ± 14.16   −1.18 ± 11.67   −2.48 ± 11.30   1.30 
+-
+5.6
+1 
+t
+o 
+8.
+21 
+0.70
+7 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+24 
+ 
+Diastolic 
+blood 
+pressure 
+ Baseli
+ne 
+ 81.41 ± 8.97  84.65 ± 10.10  ―  ―  ― ― ― 
+(mmHg)  4 wks.  81.82 ± 8.42  82.96 ± 10.39  0.41 ± 9.28  −1.70 ± 7.23  2.11 
+-
+2.9
+2 
+t
+o 
+7.
+14 
+0.39
+9 
+  8 wks.  79.23 ± 10.9  81.3 ± 10.92  −2.18 ± 7.61  −3.35 ± 8.44  1.17 
+-
+3.6
+6 
+t
+o 
+6.
+00 
+0.62
+9 
+    
+12 
+wks. 
+  78.77 ± 10.75   81.96 ± 9.21   −2.64 ± 6.50   −2.70 ± 8.00   0.06 
+-
+4.3
+2 
+t
+o 
+4.
+44 
+0.97
+8 
+Values are mean ± standard 
+deviation 
+                    
+*P < 0.05 vs. baseline within group                     
+Mean difference = change from baseline (Carbonated water group−Non-
+carbonated water  group)  
+              
+95% CI calculated using Welch’s t method (n = 
+22 vs. 23) 
+                  
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+25 
+ 
+ 
+ 
+Items 
+ 
+Week
+s 
+ 
+Measured values 
+ Change from baseline 
+       Intergroup comparison 
+(Units)     
+Carbonated water 
+group 
+  
+Non-carbonated water  
+group 
+ Carbonated water 
+group 
+  
+Non-carbonated water  
+group 
+  
+Mean 
+difference 
+95% CI  
+P-
+valu
+e 
+Frequency of 
+snacks 
+ Basel
+ine 
+ 8.07 ± 6.23  7.50 ± 5.79  ―  ―  ― ― ― 
+(times/week)  4 
+wks. 
+ 6.80 ± 5.31*  7.62 ± 5.91  −1.27 ± 1.88  0.12 ± 1.93  -1.39 
+−2.8
+2 
+t
+o 
+ -
+0.2
+8 
+0.01
+8 
+  8 
+wks. 
+ 6.75 ± 5.53*  7.63 ± 5.72  −1.32 ± 2.63  0.13 ± 2.25  −1.45 
+−3.0
+1 
+t
+o 
+ 0.1
+1 
+0.05
+3 
+ 
+ 12 
+wks. 
+ 6.82 ± 5.38*  7.74 ± 5.98  −1.25 ± 2.49  0.24 ± 2.44 
+ 
+−1.49 
+−2.9
+3 
+t
+o 
+ −0.
+05 
+0.04
+9     
+Amount of 
+alcohol 
+consumed: 
+Alcohol 
+equivalent 
+ Basel
+ine 
+ 68.0
+0 
+± 48.82  56.93 ± 56.36  ―  ―  ― ― ― 
+(g/week)  4 
+wks. 
+ 65.4
+5 
+± 48.67  60.99 ± 52.11  −2.55 ± 
+21.1
+5 
+ 4.06 ± 28.17  −6.61 
+−22.
+96 
+t
+o 
+ 9.7
+4 
+0.38
+0 
+ 
+ 8 
+wks. 
+ 63.0
+0 
+± 47.04  64.23 ± 49.30  −5.00 ± 
+25.6
+8 
+ 7.31 ± 37.65 
+ 
+−12.31 
+−33.
+41 
+t
+o 
+ 8.7
+9 
+0.20
+9   
+       
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+26 
+ 
+  
+12 
+wks. 
+52.6
+4 
+± 
+42.66
+* 
+66.01 ± 55.31 
+−15.3
+6 
+± 
+30.7
+9 
+9.08 ± 36.12   −24.44 
+−44.
+02  
+t
+o 
+ −4.
+86 
+0.01
+9 
+Values are mean ± standard 
+deviation 
+                     
+*P < 0.05 vs. baseline within 
+group 
+                     
+Mean difference = change from baseline (Carbonated water group−Non-
+carbonated water  group)  
+              
+95% CI calculated using Welch’s t method (n = 
+22 vs. 23) 
+                  
+ 
+ 
+    
+Measured values 
+ Change from baseline 
+Items  
+Week
+s 
+     Intergroup comparison 
+(Units)     
+Carbonated water 
+group 
+  
+Non-carbonated water  
+group 
+ Carbonated water 
+group 
+  
+Non-carbonated water  
+group 
+ Mean 
+difference 
+95% CI  
+P-
+valu
+e 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+27 
+ 
+Triglycerides  Basel
+ine 
+ 102.5
+9 
+± 45.08  106.96 ± 58.34  ―  ―  ― ― ― 
+(md/dl)  4 
+wks. 
+ 113.6
+8 
+± 56.57  116.39 ± 59.49  11.09 ± 31  9.43 ± 42.41  1.66 
+-
+20.6
+5 
+t
+o 
+23.
+97 
+0.88
+2 
+  8 
+wks. 
+ 91.68 ± 40.64  129.74 ± 69.37  -
+10.91 
+± 52.3  22.78 ± 72.9  -33.69 
+-
+71.7
+9 
+t
+o 
+4.4
+1 
+0.08
+3 
+    
+12 
+wks. 
+  
+102.4
+5 
+± 48.57   127.17 ± 58.88*   -0.14 ± 25.7   20.22 ± 45.64   -20.36 
+-
+42.6
+5 
+t
+o 
+1.9
+3 
+0.07
+4 
+Total cholesterol  Basel
+ine 
+ 199.8
+2 
+± 28.63  217.04 ± 26.93  ―  ―  ― ― ― 
+(md/dl)  4 
+wks. 
+ 202.4
+1 
+± 31.82  224.61 ± 39.01  2.59 ± 
+26.2
+8 
+ 7.57 ± 23.02  -4.98 
+-
+20.5
+7 
+t
+o 
+10.
+61 
+0.50
+3 
+  8 
+wks. 
+ 198 ± 31.07  218.48 ± 31.83  -1.82 ± 
+30.0
+2 
+ 1.43 ± 15.41  -3.25 
+-
+16.5
+5 
+t
+o 
+10.
+05 
+0.65
+3 
+    
+12 
+wks. 
+  
+200.9
+5 
+± 32.47   218.83 ± 31.78   1.14 ± 
+25.0
+9 
+  1.78 ± 15.89   -0.64 
+-
+12.3 
+t
+o 
+11.
+02 
+0.91
+8 
+Low-density 
+lipoprotein 
+cholesterol 
+ Basel
+ine 
+ 118.8
+2 
+± 22.39  133.74 ± 23.79  ―  ―  ― ― ― 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+28 
+ 
+(md/dl)  4 
+wks. 
+ 125.0
+9 
+± 30.45  140.26 ± 34.58  6.27 ± 
+20.8
+1 
+ 6.52 ± 20.85  -0.25 
+-
+12.4
+5 
+t
+o 
+11.
+95 
+0.96
+8 
+  8 
+wks. 
+ 120.9
+5 
+± 25.99  135.04 ± 30.11  2.14 ± 
+20.0
+3 
+ 1.30 ± 14.93  0.84 
+-
+10.3
+5 
+t
+o 
+12.
+03 
+0.87
+5 
+    
+12 
+wks. 
+  
+121.6
+4 
+± 28.27   134.65 ± 26.77   2.82 ± 
+17.8
+3 
+  0.91 ± 12.15   1.91 
+-
+7.36 
+t
+o 
+11.
+18 
+0.67
+6 
+High-density 
+lipoprotein 
+cholesterol 
+ Basel
+ine 
+ 59.86 ± 15.75  61.87 ± 13.19  ―  ―  ― ― ― 
+(md/dl)  4 
+wks. 
+ 58.68 ± 13.12  62.22 ± 15.64  -1.18 ± 9.67  0.35 ± 5.65  -1.53 
+-
+6.11 
+t
+o 
+3.0
+5 
+0.51
+8 
+  8 
+wks. 
+ 59.91 ± 13.26  60.57 ± 13.4  0.05 ± 11.2  -1.30 ± 5.89  1.35 
+-
+3.4
+9 
+t
+o 
+6.1
+9 
+0.61
+9 
+    
+12 
+wks. 
+  60.32 ± 13.65   60.65 ± 12.07   0.45 ± 8.95   -1.22 ± 5.44   1.67 
+-
+1.37 
+t
+o 
+4.7
+1 
+0.45
+1 
+Phospholipids  Basel
+ine 
+ 200.6
+8 
+± 25.02  214 ± 20.3  ―  ―  ― ― ― 
+(mg/dL)  4 
+wks. 
+ 209.6
+8 
+± 25.6  225.04 ± 28.69*  9.00 ± 
+24.8
+9 
+ 11.04 ± 18.1  -2.04 
+-
+15.3
+7 
+t
+o 
+11.
+29 
+0.75
+4 
+  8 
+wks. 
+ 201.2
+3 
+± 27.79  222.26 ± 20.43*  0.55 ± 
+29.9
+2 
+ 8.26 ± 17.2  -7.71 
+-
+22.5
+1 
+t
+o 
+7.0
+9 
+0.29
+9 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+29 
+ 
+    
+12 
+wks. 
+  204 ± 28.62   221.52 ± 23.62*   3.32 ± 
+22.0
+6 
+  7.52 ± 14.43   -4.2 
+-
+15.6
+6 
+t
+o 
+7.2
+6 
+0.45
+1 
+Fasting blood 
+sugar 
+ Basel
+ine 
+ 88.73 ± 6.41  91.52 ± 8.8  ―  ―  ― ― ― 
+(mg/dL)  4 
+wks. 
+ 88.55 ± 9.92  90.83 ± 9.6  -0.18 ± 8.69  -0.70 ± 6.93  0.52 
+-
+4.35 
+t
+o 
+5.3
+9 
+0.82
+7 
+  8 
+wks. 
+ 88.77 ± 5.64  92.52 ± 10.62  0.05 ± 5.71  1.00 ± 7.25  -0.95 
+-
+4.67 
+t
+o 
+2.7
+7 
+0.62
+7 
+    
+12 
+wks. 
+  89.18 ± 8.17   90.70 ± 8.73   0.45 ± 5.81   -0.83 ± 5.35   1.28 
+-
+2.12 
+t
+o 
+4.6
+8 
+0.44
+6 
+Glycated 
+hemoglobin 
+ Basel
+ine 
+ 5.25 ± 0.23  5.36 ± 0.31  ―  ―  ― ― ― 
+(%)  4 
+wks. 
+ 5.35 ± 0.17*  5.43 ± 0.26  0.11 ± 0.13  0.07 ± 0.21  0.04 
+-
+0.05 
+t
+o 
+0.1
+3 
+0.45
+1 
+  8 
+wks. 
+ 5.35 ± 0.17*  5.42 ± 0.28  0.10 ± 0.17  0.06 ± 0.15  0.04 
+-
+0.05 
+t
+o 
+0.1
+3 
+0.41
+1 
+    
+12 
+wks. 
+  5.42 ± 0.20*   5.47 ± 0.29*   0.18 ± 0.15   0.11 ± 0.16   0.07 
+-
+0.02 
+t
+o 
+0.1
+6 
+0.14
+6 
+Aspartate 
+transaminase 
+ Basel
+ine 
+ 24.82 ± 8.33  22.91 ± 4.48  ―  ―  ― ― ― 
+(U/L)  4 
+wks. 
+ 23.41 ± 7.87  23.00 ± 6.79  -1.41 ± 7.46  0.09 ± 6.34  -1.50 
+-
+5.68 
+t
+o 
+2.6
+8 
+0.47
+2 
+  8 
+wks. 
+ 21.55 ± 5.08*  22.09 ± 7.24  -3.27 ± 7.26  -0.83 ± 5.89  -2.44 
+-
+5.56 
+t
+o 
+0.6
+8 
+0.22
+0 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+30 
+ 
+    
+12 
+wks. 
+  19.77 ± 3.45*   21.91 ± 5.62   -5.05 ± 7.94   -1.00 ± 3.86   -4.05 
+-
+7.57 
+t
+o 
+-
+0.5
+3 
+0.03
+4 
+Alanine 
+transaminase 
+ Basel
+ine 
+ 28.59 ± 18.44  23.78 ± 11.69  ―  ―  ― ― ― 
+(U/L)  4 
+wks. 
+ 26.18 ± 15.01  24.78 ± 14.25  -2.41 ± 
+16.0
+5 
+ 1.00 ± 6.30  -3.41 
+-
+10.9
+3 
+t
+o 
+4.1
+1 
+0.34
+9 
+  8 
+wks. 
+ 21.59 ± 9.12  25.09 ± 20.52  -7.00 ± 
+16.3
+7 
+ 1.30 ± 12.67  -8.30 
+-
+17.1
+5 
+t
+o 
+0.5
+5 
+0.06
+3 
+    
+12 
+wks. 
+  19.77 ± 8.55*   24.43 ± 15.03   -8.82 ± 
+18.0
+8 
+  0.65 ± 7.64   -9.47 
+-
+18.0
+1 
+t
+o 
+-
+0.9
+3 
+0.02
+6 
+Gamma-
+glutamyl 
+transferase 
+ Basel
+ine 
+ 28.45 ± 14.73  30.57 ± 17.36  ―  ―  ― ― ― 
+(U/L)  4 
+wks. 
+ 27.27 ± 12.43  31.65 ± 17.99  -1.18 ± 4.49  1.09 ± 6.47  -2.27 
+-
+5.77 
+t
+o 
+1.2
+3 
+0.18
+1 
+  8 
+wks. 
+ 25.27 ± 
+12.26
+* 
+ 28.61 ± 17.2  -3.18 ± 6.88  -1.96 ± 10.94  -1.22 
+-
+6.77 
+t
+o 
+4.3
+3 
+0.65
+7 
+    
+12 
+wks. 
+  24.45 ± 
+11.69
+* 
+  29.83 ± 16.82   -4.00 ± 6.91   -0.74 ± 6.80   -3.26 
+-
+7.38 
+t
+o 
+0.8
+6 
+0.11
+8 
+Alkaline 
+phosphatase 
+ Basel
+ine 
+ 61.64 ± 17.38  66.30 ± 16.82  ―  ―  ― ― ― 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+31 
+ 
+(U/L)  4 
+wks. 
+ 61.5 ± 15.78  66.13 ± 17.72  -0.14 ± 3.81  -0.17 ± 6.18  0.03 
+-
+3.06 
+t
+o 
+3.1
+2 
+0.98
+1 
+  8 
+wks. 
+ 59.18 ± 17  65.26 ± 15.41  -2.45 ± 5.62  -1.04 ± 9.17  -1.41 
+-
+5.98 
+t
+o 
+3.1
+6 
+0.53
+9 
+    
+12 
+wks. 
+  60.36 ± 16.86   66.09 ± 16.28   -1.27 ± 9.99   -0.22 ± 6.98   -1.05 
+-
+6.27 
+t
+o 
+4.1
+7 
+0.68
+2 
+Lactate 
+dehydrogenase 
+ Basel
+ine 
+ 185 ± 33.04  183.48 ± 24.25  ―  ―  ― ― ― 
+(U/L)  4 
+wks. 
+ 180.7
+7 
+± 35.37  183.65 ± 23.12  -4.23 ± 
+15.3
+3 
+ 0.17 ± 12.93  -4.40 
+-
+13.2
+4 
+t
+o 
+4.4
+4 
+0.30
+3 
+  8 
+wks. 
+ 187.4
+1 
+± 41.45  182.83 ± 27.63  2.41 ± 
+18.3
+6 
+ -0.65 ± 17.83  3.06 
+-
+8.00 
+t
+o 
+14.
+12 
+0.57
+3 
+    
+12 
+wks. 
+  
+187.1
+8 
+± 40.51   182.39 ± 24.84   2.18 ± 
+19.7
+8 
+  -1.09 ± 9.63   3.27 
+-
+6.41 
+t
+o 
+12.
+95 
+0.48
+9 
+Total bilirubin  Basel
+ine 
+ 0.73 ± 0.28  0.78 ± 0.29  ―  ―  ― ― ― 
+(mg/dL)  4 
+wks. 
+ 0.65 ± 0.32  0.76 ± 0.35  -0.07 ± 0.24  -0.03 ± 0.33  -0.04 
+-
+0.22 
+t
+o 
+0.1
+4 
+0.59
+4 
+  8 
+wks. 
+ 0.72 ± 0.32  0.68 ± 0.22*  -0.01 ± 0.26  -0.10 ± 0.22  0.09 
+-
+0.06 
+t
+o 
+0.2
+4 
+0.21
+1 
+    
+12 
+wks. 
+  0.77 ± 0.41   0.73 ± 0.28   0.04 ± 0.31   -0.06 ± 0.28   0.10 
+-
+0.08 
+t
+o 
+0.2
+8 
+0.27
+6 
+Total protein  Basel
+ine 
+ 7.25 ± 0.44  7.24 ± 0.32  ―  ―  ― ― ― 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+32 
+ 
+(g/dL)  4 
+wks. 
+ 7.2 ± 0.32  7.33 ± 0.42  -0.05 ± 0.31  0.09 ± 0.33  -0.14 
+-
+0.33 
+t
+o 
+0.0
+5 
+0.17
+5 
+  8 
+wks. 
+ 7.12 ± 0.36  7.20 ± 0.3  -0.12 ± 0.37  -0.05 ± 0.22  -0.07 
+-
+0.26 
+t
+o 
+0.1
+2 
+0.41
+1 
+    
+12 
+wks. 
+  7.15 ± 0.35   7.20 ± 0.29   -0.09 ± 0.32   -0.04 ± 0.29   -0.05 
+-
+0.23 
+t
+o 
+0.1
+3 
+0.60
+4 
+Albumin  Basel
+ine 
+ 4.34 ± 0.35  4.41 ± 0.32  ―  ―  ― ― ― 
+(g/dL)  4 
+wks. 
+ 4.35 ± 0.3  4.46 ± 0.36  0.01 ± 0.25  0.05 ± 0.2  -0.04 
+-
+0.18 
+t
+o 
+0.1
+0 
+0.52
+4 
+  8 
+wks. 
+ 4.36 ± 0.26  4.42 ± 0.30  0.02 ± 0.3  0.01 ± 0.15  0.01 
+-
+0.14 
+t
+o 
+0.1
+6 
+0.94
+2 
+    
+12 
+wks. 
+  4.36 ± 0.3   4.39 ± 0.27   0.02 ± 0.21   -0.02 ± 0.17   0.04 
+-
+0.08 
+t
+o 
+0.1
+6 
+0.43
+5 
+Uric acid  Basel
+ine 
+ 5.11 ± 1.09  5.63 ± 1.36  ―  ―  ― ― ― 
+(mg/dL)  4 
+wks. 
+ 5.33 ± 1.24  5.64 ± 1.36  0.22 ± 0.76  0.01 ± 0.64  0.21 
+-
+0.20 
+t
+o 
+0.6
+2 
+0.32
+1 
+  8 
+wks. 
+ 5.25 ± 1.26  5.58 ± 1.4  0.14 ± 0.74  -0.05 ± 0.57  0.19 
+-
+0.19 
+t
+o 
+0.5
+7 
+0.35
+5 
+    
+12 
+wks. 
+  5.25 ± 1.23   5.52 ± 1.55   0.14 ± 0.61   -0.11 ± 0.61   0.25 
+-
+0.12 
+t
+o 
+0.6
+2 
+0.17
+9 
+Urea nitrogen  Basel
+ine 
+ 13.5 ± 3.02  12.53 ± 2.62  ―  ―  ― ― ― 
+(mg/dL)  4 
+wks. 
+ 13.8 ± 3.07  12.57 ± 3.15  0.30 ± 3.07  0.03 ± 2.93  0.27 
+-
+1.53 
+t
+o 
+2.0
+7 
+0.77
+2 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+33 
+ 
+  8 
+wks. 
+ 13.05 ± 3.07  13.22 ± 2.95  -0.46 ± 2.99  0.69 ± 2.26  -1.15 2.77 
+t
+o 
+0.4
+7 
+0.15
+3 
+    
+12 
+wks. 
+  13.37 ± 3.17   12.41 ± 3.20   -0.14 ± 2.77   -0.12 ± 2.38   -0.02 
+-
+1.57 
+t
+o 
+1.5
+3 
+0.98
+0 
+Creatinine  Basel
+ine 
+ 0.78 ± 0.16  0.77 ± 0.18  ―  ―  ― ― ― 
+(mg/dL)  4 
+wks. 
+ 0.8 ± 0.18  0.77 ± 0.18  0.02 ± 0.05  0.00 ± 0.04  0.02 
+-
+0.01 
+t
+o 
+0.0
+5 
+0.14
+2 
+  8 
+wks. 
+ 0.8 ± 0.17  0.77 ± 0.17  0.02 ± 0.04  0.00 ± 0.04  0.02 
+-
+0.01 
+t
+o 
+0.0
+5 
+0.25
+2 
+    
+12 
+wks. 
+  0.8 ± 0.18   0.76 ± 0.16   0.02 ± 0.05   -0.01 ± 0.04   0.03 0.00 
+t
+o 
+0.0
+6 
+0.02
+7 
+Sodium  Basel
+ine 
+ 140.9
+1 
+± 1.41  141.26 ± 1.60  ―  ―  ― ― ― 
+(mEq/L)  4 
+wks. 
+ 140.4
+1 
+± 1.79  139.87 ± 2.10*  -0.5 ± 1.44  -1.39 ± 1.67  0.89 
+-
+0.04 
+t
+o 
+1.8
+2 
+0.06
+2 
+  8 
+wks. 
+ 140.8
+2 
+± 1.68  140.61 ± 1.44  -0.09 ± 1.48  -0.65 ± 1.82  0.56 
+-
+0.47 
+t
+o 
+1.5
+9 
+0.26
+4 
+    
+12 
+wks. 
+  
+141.4
+5 
+± 2.42   141.04 ± 1.94   0.55 ± 1.63   -0.22 ± 1.62   0.77 
+-
+0.19 
+t
+o 
+1.7
+3 
+0.12
+2 
+Chlorine  Basel
+ine 
+ 102.9
+5 
+± 1.76  102.96 ± 1.87  ―  ―  ― ― ― 
+(mEq/L)  4 
+wks. 
+ 103.6
+4 
+± 1.99  102.39 ± 2.02  0.68 ± 1.64  -0.57 ± 2.00  1.25 0.14 
+t
+o 
+2.3
+6 
+0.02
+8 
+  8 
+wks. 
+ 103.7
+7 
+± 1.90*  102.65 ± 1.80  0.82 ± 1.84  -0.30 ± 1.92  1.12 
+-
+0.02 
+t
+o 
+2.2
+6 
+0.05
+2 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+34 
+ 
+    
+12 
+wks. 
+  
+103.8
+6 
+± 1.70*   102.61 ± 1.85   0.91 ± 1.69   -0.35 ± 2.04   1.26 0.13 
+t
+o 
+2.3
+9 
+0.03
+0 
+Potassium  Basel
+ine 
+ 4.37 ± 0.42  4.24 ± 0.36  ―  ―  ― ― ― 
+(mEq/L)  4 
+wks. 
+ 4.82 ± 0.43*  4.70 ± 0.50*  0.45 ± 0.43  0.46 ± 0.46  -0.01 
+-
+0.27 
+t
+o 
+0.2
+5 
+0.90
+8 
+  8 
+wks. 
+ 4.29 ± 0.4  4.11 ± 0.36  -0.08 ± 0.47  -0.13 ± 0.30  0.05 
+-
+0.17 
+t
+o 
+0.2
+7 
+0.70
+8 
+    
+12 
+wks. 
+  4.15 ± 0.5   4.00 ± 0.36*   -0.23 ± 0.56   -0.23 ± 0.33   0.00 
+-
+0.26 
+t
+o 
+0.2
+6 
+0.95
+7 
+Calcium  Basel
+ine 
+ 9.23 ± 0.31  9.31 ± 0.35  ―  ―  ― ― ― 
+(mEq/L)  4 
+wks. 
+ 9.16 ± 0.38  9.30 ± 0.31  -0.07 ± 0.27  -0.01 ± 0.29  -0.06 
+-
+0.23 
+t
+o 
+0.1
+1 
+0.48
+2 
+  8 
+wks. 
+ 9.04 ± 0.33*  9.16 ± 0.27*  -0.20 ± 0.25  -0.15 ± 0.27  -0.05 
+-
+0.20 
+t
+o 
+0.1
+0 
+0.58
+3 
+    
+12 
+wks. 
+  9.10 ± 0.38*   9.17 ± 0.27*   -0.13 ± 0.28   -0.14 ± 0.28   0.01 
+-
+0.16 
+t
+o 
+0.1
+8 
+0.84
+8 
+Magnesium  Basel
+ine 
+ 2.33 ± 0.13  2.39 ± 0.15  ―  ―  ― ― ― 
+(mEq/L)  4 
+wks. 
+ 2.36 ± 0.13  2.40 ± 0.17  0.03 ± 0.12  0.01 ± 0.14  0.02 
+-
+0.05 
+t
+o 
+0.0
+9 
+0.56
+4 
+  8 
+wks. 
+ 2.30 ± 0.15  2.31 ± 0.14*  -0.04 ± 0.14  -0.08 ± 0.14  0.04 
+-
+0.04 
+t
+o 
+0.1
+2 
+0.28
+0 
+    
+12 
+wks. 
+  2.39 ± 0.12*   2.39 ± 0.14   0.06 ± 0.12   0.00 ± 0.13   0.06 
+-
+0.01 
+t
+o 
+0.1
+3 
+0.09
+4 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+35 
+ 
+Serum iron  Basel
+ine 
+ 105.1
+4 
+± 47.08  120.04 ± 52.74  ―  ―  ― ― ― 
+(µg/dL)  4 
+wks. 
+ 93.73 ± 35.56  119.17 ± 35.04  -
+11.41 
+± 
+44.0
+9 
+ -0.87 ± 58.79  -10.54 
+-
+41.2
+8 
+t
+o 
+20.
+20 
+0.50
+1 
+  8 
+wks. 
+ 102.2
+7 
+± 45.63  105.09 ± 25.44  -2.86 ± 
+59.0
+6 
+ -14.96 ± 62.14  12.10 
+-
+24.4
+5 
+t
+o 
+48.
+65 
+0.50
+7 
+    
+12 
+wks. 
+  
+105.7
+3 
+± 39.4   110.43 ± 39.86   0.59 ± 
+44.3
+8 
+  -9.61 ± 49.53   10.20 
+-
+17.5
+5 
+t
+o 
+37.
+95 
+0.47
+2 
+Values are mean ± standard 
+deviation 
+                    
+*P < 0.05 vs. baseline within group                     
+Mean difference = change from baseline (Carbonated water group−Non-
+carbonated water  group)  
+              
+95% CI calculated using Welch’s t method (n = 
+22 vs. 23) 
+                  
+ 
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+36 
+ 
+ 
+ARTICLE IN PRESS
+ARTICLE IN PRESS

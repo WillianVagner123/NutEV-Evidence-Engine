@@ -1,0 +1,881 @@
+RESEARCH Open Access
+© The Author(s) 2025. Open Access  This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 
+International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you 
+give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the 
+licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the 
+material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or 
+exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit  h t t p  : / /  c r e a  t i  
+v e c  o m m  o n s .  o r  g / l  i c e  n s e s  / b  y - n c - n d / 4 . 0 /.
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+https://doi.org/10.1186/s12889-025-24384-7
+Introduction
+Climate change and environmental pollution are com -
+plex issues with many facets. Environmental education 
+is the most effective approach to mitigating environ -
+mental challenges, which can help raise environmen -
+tally conscious individuals [ 1]. According to Roth (1992), 
+an environmentally literate individual is someone who 
+can understand the relationship between ecological and 
+societal systems, believes in the integrity of human and 
+nature, is conscious of the environmental implications 
+of technological advancements and knows that he/she 
+can learn about the environment throughout his/her life. 
+BMC Public Health
+*Correspondence:
+Gizem Özata-Uyar
+gizemozata91@gmail.com
+1Faculty of Health Sciences, Department of Nutrition and Dietetics, 
+Kırıkkale University, Kırıkkale, Turkey
+2Faculty of Health Sciences, Department of Nutrition and Dietetics, 
+Erzurum Technical University, Erzurum, Turkey
+3Kulu Faculty of Health Sciences, Department of Nutrition and Dietetics, 
+Selcuk University, Konya, Turkey
+Abstract
+Aim This study aimed to evaluate the relationship between environmental literacy, sustainable food literacy, and 
+adherence to the Mediterranean diet (MD) in adults.
+Method Data were collected via a web-based questionnaire created using Google Forms between April and August 
+2024 in Erzurum, Turkey. A total of 394 adults participated through snowball sampling. The questionnaire included 
+sections on demographic information, anthropometric measurements, the Environmental Literacy Scale for Adults 
+(ELSA), the Sustainable Food Literacy Scale (SFLS), and the Mediterranean Diet Adherence Screener (MEDAS).
+Results 38.6% of the participants were found to adhere to the Mediterranean Diet (MD). Married participants were 
+more likely to have adhered to the MD than single ones (odds ratio [OR]:0.41, p = 0.006). Adherence to the MD was 
+associated with higher education duration (OR = 1.05, p = 0.011), a higher SFLS total score (OR = 1.01, p = 0.025), and a 
+higher ELSA score (OR = 1.04, p = 0.004).
+Conclusion The MD is a sustainable dietary model that enhances health and is environmentally friendly. For this 
+reason, it may be possible to direct society towards healthier and less environmentally damaging food choices 
+through training to increase individuals’ sustainable literacy and environmental literacy levels.
+Keywords Mediterranean diet, Environmental literacy, Sustainable food literacy, Diet quality, Adults
+Adherence to the mediterranean diet 
+in adults: the role of environmental 
+and sustainable food literacy
+Gizem Özata-Uyar1* , Serkan Aslan2 , Ayşe Çamli2 , Merve Arslan2 , Osman Bozkurt3  and  
+Betül Kocaadam-Bozkurt2
+Page 2 of 9
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+Knowledge, attitudes, behaviours, and awareness are the 
+four core components of environmental literacy [2].
+Our planet is suffering from the rapid growth of the 
+world’s population, increased food consumption, and 
+changing dietary habits. This underscores the urgent 
+need to promote food systems that are not only nutri -
+tious but also sustainable. Accordingly, the world should 
+adopt an adequate, balanced, nutritious, sustainable diet 
+that enhances food security, promotes local or seasonal 
+agricultural production, and exhibits a minimal environ -
+mental footprint [ 3]. One of the most widely recognized 
+dietary patterns that aligns with these principles is the 
+Mediterranean dietary pattern, recognized for its numer -
+ous health advantages and its low environmental impact 
+[4]. The Mediterranean diet (MD) focuses on the intake 
+of natural and domestic species, with seasonal, local 
+goods and traditional cooking methods significantly con -
+tributing to biodiversity preservation and environmental 
+sustainability [5].
+The Food and Agriculture Organisation (FAO) stated 
+that to achieve sustainable nutrition, consumer behaviour 
+must change and strategies that positively impact human 
+health and ecosystems should be promoted to facilitate 
+the transition from existing food systems [ 6]. Similarly, 
+the World Health Organization’s 2030 Sustainability 
+goals include improving food security and enhancing 
+nutrition, providing sustainable food production systems, 
+protecting the environment, and taking measures against 
+the climate crisis [7]. In this context, it is essential to cre -
+ate food literacy initiatives that will provide people with 
+the knowledge and skills they need to understand food 
+systems, make informed dietary choices, and develop 
+healthy eating behaviours. By equipping individuals with 
+these competencies, food literacy can improve personal 
+health and well-being and enhance the sustainability of 
+agricultural frameworks and the safeguarding of ecologi -
+cal systems [8].
+Prospective and large sample studies have demon -
+strated that sustainable eating practices are linked to 
+less negative environmental effects [ 9– 11]. However, 
+studies exploring the relationship between sustainable 
+eating practices and food literacy remain limited. Cur -
+rent data indicates that food and nutrition literacy can 
+provide the knowledge necessary to understand the 
+factors dietary habits and their environmental conse -
+quences [ 12, 13]. Nevertheless, the literature review 
+revealed that no research has examined the potential 
+relationship between the degree of adherence to the 
+MD and the level of environmental and food literacy. It 
+is essential to understand this relationship since it may 
+influence both public policy and academic studies. By 
+investigating the connection between environmental 
+literacy, sustainable food literacy, and adherence to the 
+MD, this study aims to provide insights that can guide 
+future educational programs, policies, and research 
+initiatives to promote environmental sustainability 
+and healthy eating. Thus, the purpose of this study is 
+to assess the relationship between adult adherence to 
+the MD, environmental literacy, and sustainable food 
+literacy.
+Materials and methods
+Study design and participants
+This descriptive and cross-sectional study recruited 
+394 adults who consented to participate in Erzurum, 
+Turkey. The data for this study were collected through 
+a web-based questionnaire created using Google 
+Forms. The online questionnaire was disseminated 
+via various social media channels such as Twitter, 
+Facebook, WhatsApp, and Instagram. Data collec -
+tion was carried out between April and August 2024. 
+A snowball sampling method was employed to recruit 
+participants. Individuals who voluntarily agreed to 
+participate by selecting the “I consent to participate 
+in this study voluntarily” option at the beginning of 
+the form and who completed the questionnaire in full 
+were included in the final sample. Inclusion criteria 
+for the study were: being between 18 and 65 years of 
+age, not having any diagnosed chronic illnesses, psy -
+chological or eating disorders, not following a special 
+diet, and providing informed consent to participate. 
+Participants were excluded if they were pregnant or 
+breastfeeding, did not meet the age criteria, or were 
+adhering to a special dietary pattern. A total of 457 
+individuals initially accessed the online survey. How -
+ever, based on the predefined exclusion criteria, 63 
+participants were excluded from the study: 30 due to 
+incomplete responses, 15 due to chronic illnesses, 8 
+due to a history of psychological disorders, and 10 due 
+to following a special diet. As a result, the final analy -
+sis was conducted with a sample of 394 participants.
+The research was conducted with “Ethics Committee 
+Approval” from the Erzurum Technical University Eth -
+ics Committee (Meeting Number: 03, Decision Number: 
+17, 2024). The study was carried out following the princi-
+ples outlined in the Helsinki Declaration. Informed con -
+sent was obtained electronically at the beginning of the 
+questionnaire.
+Data collection
+ Several measures were used to evaluate the relation -
+ship between environmental literacy, sustainable food 
+literacy, Mediterranean diet adherence, and variables 
+such as age, gender, education, marital status, and BMI. 
+The questionnaire form comprised a general informa -
+tion form, anthropometric measurements, dietary habits, 
+the Environmental Literacy Scale for Adults (ELSA), the 
+Page 3 of 9
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+Sustainable Food Literacy Scale (SFLS), and the Mediter -
+ranean Diet Adherence Screener (MEDAS).
+Socio-demographic characteristics and anthropometric 
+measurements
+The socio-demographic characteristics, including age 
+(in years), gender (male/female), years of education, and 
+marital status (single or married) were questioned.
+The participants self-reported their height (cm) and 
+body weight (kg). The body mass index (BMI) was calcu -
+lated by dividing body weight by the square of height and 
+assessed according to the World Health Organization’s 
+BMI categorisation [14].
+Environmental literacy scale for adults
+The Environmental Literacy Scale for Adults (ELSA) was 
+created by Atabek-Yiğit et al. (2014) to assess the environ-
+mental literacy levels of adults [1]. There are 20 items and 
+three subscales on the scale: Environmental conscious -
+ness level (3, 10, 11, 12, 13, 15, 16, 17, 19), Environmental 
+anxiety level (1, 2, 4, 5, 7, 8), and Environmental aware -
+ness level (6, 9, 14, 18, 20). Responses to the questions are 
+provided on a Likert scale, with options ranging from “1” 
+Strongly Agree, “2” Agree, “3” Undecided, “4” Disagree, 
+to “5” Strongly Disagree. Items 4 and 16 are scored in the 
+opposite direction.
+All items are scored between 1 and 5, and the scale 
+has a lowest possible score of 20 and a maximum score 
+of 100. High scores on the test indicated high environ -
+mental literacy levels, whereas low scores indicated low 
+environmental literacy levels in individuals. The scale’s 
+Cronbach’s alpha was 0.881. The Cronbach’s alpha val -
+ues for the Environmental Consciousness, Anxiety, and 
+Awareness subscales were 0.807, 0.765, and 0.715 [1].
+Sustainable food literacy scale
+The Sustainable Food Literacy Scale was developed by 
+Teng and Chih (2022) with an emphasis on environmen -
+tal sustainability and is intended to be used to assess 
+people’s tendencies to adopt sustainable diets [15]. Kubi-
+lay and Yüksel (2023) researched the validity, reliability, 
+and adaptation of the scale in Turkish [ 16]. The scale has 
+26 items and a five-factor (Sustainable Food Knowledge 
+1, Sustainable Food Knowledge 2, Cooking and Kitchen 
+Skills, Attitudes and Intentions for Action, and Action 
+Strategies). Response options for the questions are mea -
+sured on a Likert scale, ranging from (“1” strongly dis -
+agree, “2” disagree, “3” slightly disagree, “4” undecided, 
+“5” slightly agree, “6” agree, and “7” strongly agree). There 
+is no reverse item on the scale. The scores for each item 
+range from 1 to 7. As the score increases, the level of sus -
+tainable food literacy increases. Cronbach’s alpha value of 
+the scale was determined as 0.941 [16].
+Mediterranean diet adherence screener
+Schröder et al. (2011) developed the Mediterranean 
+Diet Adherence Scale (MEDAS) to measure adherence 
+to the MD [ 17]. Pehlivanoglu et al. (2020) conducted 
+the scale’s validity, reliability, and Turkish adapta -
+tion [ 18]. There are 14 items on the scale. The scale 
+is used to evaluate the type of oil used in meals, the 
+daily intake of olive oil, portion sizes of fruits and veg -
+etables, and the consumption of margarine, butter, and 
+red meat. It also examines the weekly intake of wine, 
+legumes, fish and seafood, nuts, cakes, and tomato 
+sauce with olive oil, in addition to whether there is 
+a preference for white meat over red meat. The final 
+score is determined by taking 1 or 0 points for each 
+question based on the amount of consumption. The 
+range of MEDAS scores is 0 to 14, with 7 points indi -
+cating adherence to the MD. The Cronbach’s alpha 
+value for the scale was 0.829 [ 18].
+Statistical analysis
+SPSS version 23.0 software (IBM Corpn, Armonk, 
+NY, USA) was used to analyze the data. Kolmogorov-
+Smirnov tests, Skewness and Kurtosis, and visual anal -
+ysis (histogram and probability graphs) were used to 
+evaluate the data to see if they were normally distrib -
+uted. While frequency (n) and percentage (%) were uti -
+lized to represent categorical variables, the mean (X¯) 
+and standard deviation (SD) were used for continuous 
+variables. For comparisons between two independent 
+groups, the Independent Samples t-test was used for 
+normally distributed data, while the Mann–Whit -
+ney U test was employed for non-normally distrib -
+uted data. In cases involving more than two groups, 
+the Kruskal–Wallis H test was used. Categorical vari -
+ables were analyzed using the Chi-square test. Pear -
+son correlation analysis was used for the relationship 
+between variables. A binary logistic regression analy -
+sis was conducted to evaluate the effect of factors on 
+non-adherence vs. adherence to the MD and calcu -
+late the odds ratio (OR) and 95% confidence interval 
+(CI). Non-adherence (code-0) vs. adherence to the 
+MD (code-1) was used as the dependent variable, age 
+(years), education duration (years), SFLS total score, 
+ELSA score, gender (men-reference group vs. women), 
+marital status (Single vs. Married- reference group), 
+and BMI classification (underweight-reference group, 
+normal weight, overweight/obese) were used as inde -
+pendent variables. The fit of the logistic regression 
+model was evaluated with the Hosmer–Lemeshow 
+test [ 19]. The threshold for statistical significance was 
+determined at p < 0.05.
+The G*Power (version 3.1.9.7, Universitat Düssel -
+dorf, Düsseldorf, Germany) was utilized for post-hoc 
+power analysis following the study, employing the point 
+Page 4 of 9
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+biserial correlation model, with a two-tailed effect size 
+of |ρ|=0.24, α error probability of 0.05, and a determined 
+power (1-ß error probability) of 99%.
+Results
+The general characteristics of the individuals are 
+given in Table  1. Accordingly, 85.0% of the individu -
+als were female, and 15.0% were male. The mean age 
+was 23.4 ± 6.12 years, and the duration of education was 
+14.4 ± 2.81 years, 67.3% were in the normal BMI range, 
+and 22.8% were overweight/obese. The mean MEDAS 
+score of the individuals was 6.1 ± 1.91, and 38.6% of them 
+were found to adhere to the MD (≥ 7 scores). The Sus -
+tainable Food Literacy Scale total score was 141.6 ± 19.62. 
+The Environmental Literacy Scale score was 82.4 ± 8.35 
+(Table 1).
+The results showed that women had a higher ELSA 
+score (82.9 ± 7.73) than men (79.5 ± 10.87) ( p = 0.025). 
+The bachelor/master degree group had a higher MEDAS 
+score ( p = 0.023) than the secondary/high school group. 
+According to educational status and BMI classification, 
+there was no significant difference in the ELSA scores 
+(p > 0.05). However, a significant difference was observed 
+in the MEDAS scores based on educational status: par -
+ticipants with a Bachelor or Master degree had higher 
+MEDAS scores compared to those with only secondary 
+or high school education (p = 0.023). No significant differ-
+ence in MEDAS scores was found across BMI classifica -
+tions (p > 0.05) (Table 2).
+Table 3 shows the distribution of the SFLS total score 
+and its subcomponents by gender, education status, and 
+BMI classification. The total SFLS score and subcom -
+ponents were statistically higher in women than men 
+(p < 0.05). However, no significant difference was found 
+according to education status and BMI classification 
+(p > 0.05).
+The factors associated with the participant’s adher -
+ence to the MD are presented in Table  4. Accordingly, 
+the results indicated that the mean age ( p = 0.007), total 
+score of SFLS ( p = 0.029), the SFLS’ subcomponent food 
+skills (p = 0.001), and the ELSA score ( p = 0.005) were sig-
+nificantly higher among participants adhering to the MD 
+compared to those who were not.
+The relationships among some variables, the SFLS, 
+ELSA, and MEDAS, are shown in Table  5. SFLS total 
+score was positively associated with all subcomponents 
+of SFLS ( p < 0.001), ELSA (p < 0.001), and MEDAS score 
+(p < 0.05). A positive relationship was also found between 
+all subcomponents of SFLS and ELSA ( p < 0.001). 
+MEDAS scores show a positive correlation with food 
+skills ( p < 0.001) and action intent and action strategies 
+(p < 0.05), which are subcomponents of SFLS. Also, a sig -
+nificant positive relationship was observed between the 
+ELSA score and MEDAS (p < 0.05).
+A binary logistic regression analysis was conducted 
+to identify factors associated with adherence to the 
+MD (Table  6). Age was positively associated with MD 
+(OR = 1.05, 95% CI: 1.01–1.09, p = 0.005). Similarly, edu-
+cation duration was positively associated with adherence 
+Table 1 General characteristics of the participants (n:394)
+Variables n %
+Gender
+ Male 59 15.0
+ Female 335 85.0
+Marital status
+ Single 349 88.6
+ Married 45 11.4
+Education status
+ Secondary/High school 112 28.4
+ Bachelor/Master degree 282 71.6
+BMI classification
+ Underweight 39 9.9
+ Normal weight 265 67.3
+ Overweight/Obese 90 22.8
+MEDAS classification
+ No adherence (< 7) 242 61.4
+ Adherence (≥ 7) 152 38.6
+x ± SS
+Age (years) 23.4 ± 6.12
+Education duration (years) 14.4 ± 2.81
+BMI (kg/m2) 22.8 ± 3.90
+SFLS total score 141.6 ± 19.62
+ Sustainable food knowledge 48.1 ± 8.31
+ Food skills 34.0 ± 5.45
+ Attitudes 21.7 ± 3.91
+ Action intent and action strategies 37.8 ± 6.41
+ELSA score 82.4 ± 8.35
+MEDAS score 6.1 ± 1.91
+BMI Body mass index, SFLS Sustainable food literacy scale, ELSA Enviromental 
+literacy scale, MEDAS The Mediterranean Diet Adherence Scale
+Table 2 The ELSA and MEDAS total scores according to gender, 
+education and BMI classification
+ELSA score p MEDAS score p
+Gender
+ Male 79.5 ± 10.87 0.025γ 6.3 ± 1.75 0.293 γ
+ Female 82.9 ± 7.73 6.1 ± 1.94
+Education status γ
+ Secondary/High school 82.4 ± 8.46 0.871γ 5.9 ± 1.90 0.023γ
+ Bachelor/Master degree 82.5 ± 8.14 6.4 ± 1.91
+BMI classification
+ Underweight 81.0 ± 9.31 0.086* 5.6 ± 1.90 0.368*
+ Normal weight 82.1 ± 8.21 6.1 ± 1.92
+ Overweight/Obese 84.0 ± 8.21 6.2 ± 1.89
+BMI Body mass index, ELSA Enviromental literacy scale, MEDAS The 
+Mediterranean Diet Adherence Scale
+γ Independent sample t-test
+* Kruskal Wallis H-test
+The statistically significant p values are shown in bold
+Page 5 of 9
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+to MD (OR = 1.05, 95% CI: 1.01–1.10, p = 0.011). Mari-
+tal status was also significant, with married individuals 
+demonstrating significantly greater adherence to the MD 
+compared to single participants (OR = 0.41, 95% CI: 0.22–
+0.78, p = 0.006). Additionally, greater adherence was asso-
+ciated with a higher total SFLS score (OR = 1.01, 95% CI: 
+1.00–1.02, p = 0.025) and a higher ELSA score (OR = 1.04, 
+95% CI: 1.01–1.07, p = 0.004).
+Discussion
+The results of the current study suggest that participants’ 
+educational status is associated with adherence to the 
+MD, and that Environmental Literacy and Sustainable 
+Food Literacy scores are higher in women than in men. 
+Additionally, differences in age, SFLS total score, and 
+ELSA total score were observed between participants 
+who adhered to the MD and those who did not. Upon 
+further evaluation of factors influencing MD adherence, 
+variables such as marital status, education duration, 
+and ELSA and SFLS scores were identified significant 
+variables.
+In this study, women demonstrated significantly higher 
+ELSA scores than men (Table  2). This finding is consis -
+tent with the prior investigation by Akçay and Şengül, 
+who reported that female students had better environ -
+mental literacy levels than males [ 20]. Another study 
+found no significant relationship between gender differ -
+ences and ELSA total score. However, the score obtained 
+from the environmental awareness subscale was found to 
+be significantly higher in women [ 21]. These results sug-
+gest a potential gender-based difference in environmental 
+consciousness, which might influence broader sustain -
+able practices.
+No significant association was found between edu -
+cational status and ELSA scores in this study (Table  2). 
+Similarly, a study conducted among students reported 
+no statistically significant difference in environmental 
+literacy among grade levels [ 20]. In contrast, another 
+study found that participants who were members of envi-
+ronmental groups and had greater educational attain -
+ment also had higher levels of environmental awareness 
+[21]. This result is consistent with previous studies that 
+suggested women might become more involved in 
+Table 3 The SFLS total and subcomponents scores according to gender, education status, and BMI classification
+SFLS total 
+score
+p Sustain-
+able food 
+knowledge
+p Food 
+skills
+p Attitudes p Action 
+intent and 
+action 
+strategies
+p
+Gender
+ Male 131.2 ± 22.95 < 0.001γ 45.3 ± 9.28 0.014γ 30.5 ± 7.10 0.025£ 20.4 ± 4.25 0.011γ 34.9 ± 8.12 0.003γ
+ Female 143.4 ± 18.41 48.6 ± 8.04 34.6 ± 4.86 21.9 ± 3.81 38.4 ± 5.93
+Education status
+ Secondary/High school 142.7 ± 18.42 0.463 γ 48.6 ± 8.36 0.432 γ 34.4 ± 5.36 0.342 γ 21.7 ± 3.93 0.998 γ 38.0 ± 6.16 0.734 γ
+ Bachelor/Master degree 141.1 ± 20.09 47.9 ± 8.30 33.8 ± 5.48 21.7 ± 3.91 37.8 ± 6.51
+BMI classification
+ Underweight 142.5 ± 22.45 0.698* 49.2 ± 8.36 0.231* 33.3 ± 5.52 0.161* 22.2 ± 4.01 0.231* 37.8 ± 7.12 0.792*
+ Normal weight 141.5 ± 17.88 47.8 ± 7.82 33.9 ± 5.15 21.8 ± 3.68 38.0 ± 6.07
+ Overweight/Obese 141.4 ± 23.17 48.5 ± 9.62 34.6 ± 6.21 21.0 ± 4.46 37.3 ± 7.08
+BMI: Body mass index, SFLS: Sustainable food literacy scale
+γ Independent Sample t-test
+£ Mann-Whitney U test
+* Kruskal Wallis H test
+The statistically significant p values are shown in bold
+Table 4 Evaluation of some parameters according to individuals’ 
+adhere to the MD
+Mediterranean Diet Adherence 
+Scale
+No adher-
+ence to MD 
+(< 7)
+Adherence 
+to MD (≥ 7)
+p
+Age (years) 22.6 ± 5.27 24.4 ± 7.15 0.007γ
+Gender (n,%)
+Male 37 (15.3) 22 (14.5) 0.892α
+Female 205 (84.7) 130 (85.5)
+Education duration (years) 14.1 ± 2.35 14.7 ± 3.40 0.069 γ
+BMI (kg/m2) 22.7 ± 3.59 23.0 ± 4.35 0.414 γ
+SFLS total score 139.8 ± 18.17 144.4 ± 21.50 0.029γ
+Sustainable food knowledge 47.6 ± 7.87 48.8 ± 8.95 0.196 γ
+Food skills 33.2 ± 5.25 35.2 ± 5.55 0.001γ
+Attitudes 21.5 ± 3.83 22.0 ± 4.02 0.149 γ
+Action intent and action 
+strategies
+37.5 ± 6.25 38.4 ± 6.64 0.171 γ
+ELSA total score 81.4 ± 7.80 84.0 ± 8.98 0.005γ
+BMI: Body mass index, SFLS: Sustainable food literacy scale, ELSA: Enviromental 
+literacy scale, MEDAS: The Mediterranean Diet Adherence Scale
+γ Independent Sample t-test
+α  Chi-square test
+The statistically significant p values are shown in bold
+Page 6 of 9
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+household food procurement, improving their food liter -
+acy [22]. Similarly, in this study, both the SFLS total score 
+and subcomponents were significantly higher among 
+female participants, consistent with the findings of Kubi -
+lay et al. [ 16]. In one study, female participants reported 
+consuming more foods classified as sustainable. How -
+ever, researchers emphasize that factors such as cultural 
+affiliations or taste limit the intake of some sustainable 
+foods, such as tofu [ 23]. In our study findings, despite 
+higher SFLS/ELSA in women, no gender difference was 
+seen in MEDAS scores. This results may be due to the 
+broader scope of sustainable diets (including Mediter -
+ranean, vegetarian, Nordic, plant-based, etc.) [ 24] com -
+pared to the Mediterranean diet model. Additionally, 
+females tend to report stronger food knowledge and 
+more positive attitudes towards sustainable diets; this 
+apparent contradiction may indicate that these factors 
+do not always translate into measurable dietary adher -
+ence in everyday life. Common home food surroundings, 
+cultural influences, and social conventions may mitigate 
+gender-based disparities in real dietary behaviour. Unex -
+pectedly, there was no significant difference in SFLS 
+scores by educational attainment. Given that the majority 
+of participants were young and university-educated, this 
+could be because the sample was homogeneous. In these 
+groups, media exposure or personal interests may have 
+a greater impact on food literacy than formal education. 
+These findings suggest that sustainable nutrition may be 
+affected by multidimensional factors (environmental and 
+individual) in addition to educational status.
+The study conducted by Teng and Chih stated that 
+sustainable food knowledge is significantly associated 
+with education, although the strength of this relation -
+ship is very weak [ 15]. In line with this, sustainable food 
+literacy levels were significantly lower among individu -
+als with a high school education compared to those with 
+university and postgraduate qualifications [ 16]. However, 
+another study showed that education level did not signifi-
+cantly affect sustainable food literacy level [ 13]. Similarly, 
+our study did not demonstrate a statistically significant 
+Table 5 Correlation (r) of SFLS, ELSA, and MEDAS
+SFLS 
+total 
+score
+Sustain-
+able food 
+knowledge
+Food 
+skills
+Attitudes Action 
+intent and 
+action 
+strategies
+ELSA 
+score
+MEDAS 
+score
+Age (year) Education 
+duration
+BMI
+SFLS total score -
+Sustainable food knowledge 0.873*
+Food skills 0.773* 0.582*
+Attitudes 0.746* 0.536* 0.446*
+Action intent and action 
+strategies
+0.817* 0.555* 0.490* 0.599*
+ELSA score 0.533* 0.421* 0.474* 0.333* 0.478*
+MEDAS score 0.134β 0.086 0.186* 0.049 0.112β 0.160*
+Age (year) −0.001 −0.014 0.104 β −0.126 β −0.021 0.133β 0.165*
+Education duration 0.111β 0.100 β 0.097 0.093 −0.071 0.058 0.158β 0.109 β
+BMI −0.073 −0.056 −0.015 −0.131 β −0.059 0.052 0.052 0.363* 0.018
+SFLS: Sustainable food literacy scale, ELSA: Enviromental literacy scale, MEDAS: The Mediterranean Diet Adherence Scale, BMI: body mass index
+Pearson correlation coefficients
+*p < 0.001, β p < 0.05
+Table 6 Logistic regression model for the odds of having non-adherence vs. adherence to the MD
+β SE OR (95% Cl) p
+Age (year) 0.048 0.017 1.05 (1.01–1.09) 0.005
+Gender Male*
+Female 0.064 0.292 1.07 (0.60–1.88) 0.825
+Education duration (years) 0.053 0.021 1.05 (1.01–1.10) 0.011
+Marital status Single −0.885 0.322 0.41 (0.22–0.78) 0.006
+Married*
+BMI classification Underweight*
+Normal weight 0.111 0.357 1.11 (0.55–2.24) 0.756
+Overweight/Obese 0.174 0.397 1.19 (0.55–2.59) 0.661
+SFLS total score 0.012 0.005 1.01 (1.00-1.02) 0.025
+ELSA score 0.038 0.013 1.04 (1.01–1.07) 0.004
+*Reference group, Values in bold indicate significant at p < 0.05
+Page 7 of 9
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+relationship between SFLS scores and educational levels 
+(Table 3). The inconsistency in these findings may stem 
+from differing study populations and the complexity of 
+sustainable food literacy, which an array of socioeco -
+nomic and cultural determinants can shape.
+Obesity is a sustainable development problem that 
+is too comprehensive to be evaluated solely regarding 
+health [25]. However, it appears that sustainable dietary 
+models play a crucial role in mitigating the prevalence of 
+obesity [26– 28]. Our study found no significant associa -
+tion between SFLS scores and BMI values. This finding 
+contrasts with the growing body of evidence suggesting 
+that sustainable dietary models, such as the Mediter -
+ranean Diet (MD), can reduce the obesity risk [ 29]. One 
+possible explanation for the absence of a significant asso -
+ciation in our study is the limited number of participants 
+classified as obese, which could have reduced the statisti -
+cal power to detect such a relationship (Table 3).
+MD is widely recognized as a sustainable diet due to its 
+environmental benefits [ 4, 30]. One of its key features is 
+the reduction in meat consumption, which studies have 
+shown to have a less negative impact on the environ -
+ment [31]. For instance, a study with over 6000 partici -
+pants showed that participants who adhered more to the 
+MD resulted in lower dietary CO 2 emissions than those 
+who did not [ 32]. In another study, greater adherence to 
+the MD is correlated with a decreased ecological foot -
+print [33]. In a study by Rosi et al., a low correlation was 
+observed between the students’ compliance with the MD 
+and their total carbon and ecological footprints [ 34]. In 
+this study, consistent with the literature, it was found that 
+environmental literacy and sustainable nutrition knowl -
+edge and attitudes increased depending on compliance 
+with the MD.
+Education status also emerged as a significant factor 
+in adherence to the MD in our study. Participants with 
+higher education levels exhibited greater adherence, 
+consistent with other studies that have identified a posi -
+tive correlation between education duration and MD 
+adherence [ 35, 36]. In this study, education duration 
+was among the factors affecting adherence to the MD 
+(Tables 5 and 6). In addition, a significant difference was 
+found between the MEDAS score and education levels of 
+the participants categorized as Secondary School/High 
+School and Bachelor/Master degree (Table  2). Higher 
+education may facilitate greater awareness and imple -
+mentation of dietary practices that promote health and 
+sustainability.
+Studies have shown that compliance with the MD is 
+affected by age, gender, and marital status factors [ 37–
+41]. A research investigation involving university staff  
+revealed a significant positive association between com -
+pliance with the MD and age [38]. In another study, com-
+pliance with the MD according to age was higher in the 
+elderly than in the young. Researchers attribute this to 
+the fact that older individulas do not have a job, which 
+facilitates cooking and eating at home easier [39]. A study 
+conducted in Ireland with individuals over 50 years found 
+a positive relationship between increasing age and female 
+gender and compliance with the MD [ 40]. Similarly, in 
+a cohort study found that compliance with the MD was 
+lower among individuals younger 49 years and higher 
+in individuals over 62 years [ 41]. In this study, age was 
+among the factors affecting adherence to the MD, and a 
+positive relationship was found between age and adher -
+ence to the MD (Tables 4, 5 and 6).
+Numerous studies have demonstrated that adher -
+ence to MD is higher in women than men [ 36, 42, 43]. 
+For instance, in a study of 1,333 adults, women had sig -
+nificantly higher MEDAS scores than men [ 42]. Simi -
+larly, research by Mieziene et al. in Lithuania found that 
+women scored higher on MEDAS than men [ 36], and a 
+study examining MD compliance during the COVID-19 
+pandemic also observed the same pattern [ 43]. However, 
+a study conducted among university students found no 
+significant gender difference in MEDAS scores [ 44]. In 
+contrast to these studies, the present study revealed no 
+statistically significant difference between males and 
+females regarding MEDAS scores (Tables  4 and 6). The 
+divergence may be attributed to the specific characteris -
+tics of our study population and the tools used to mea -
+sure adherence, which may yield different outcomes 
+depending on their sensitivity to gender differences.
+Lastly, marital status was found to influence MD adher-
+ence in our study, with participants who lived alone 
+exhibiting greater adherence than those in relationships. 
+This result is consistent with research by Apostolaki et al., 
+which also found a link between marital status and MD 
+adherence [37]. However, another study did not show any 
+relationship between age, gender, marital status and, MD 
+adherence [45]. In a study, MD adherence was assessed 
+using different tools in the same population. The influ -
+ence of gender and age variables on adherence to the MD 
+exhibited considerable variability. Therefore, the effect of 
+the measurement tools used to determine the effect of 
+factors such as gender, age, and marital status should be 
+considered [46]. In the present study demonstrated that 
+marital status was among the factors affecting compli -
+ance with the MD (Table 6).
+Strengths and limitations
+The research possesses several notable strengths. It rep -
+resents one of the pioneering investigations evaluating 
+the constructs of environmental literacy, sustainable food 
+literacy, and adherence to the Mediterranean Diet (MD) 
+among adults. Furthermore, the study identified sig -
+nificant associations between adherence to the MD and 
+being married, having higher sustainable food literacy, 
+Page 8 of 9
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+and higher environmental literacy. These results promote 
+our knowledge of the potential relationships between 
+sociocultural and demographic characteristics and sus -
+tainable and healthful eating habits. The research has 
+several limitations: it employed a cross-sectional design, 
+which implies that although it was unable to establish a 
+causal relationship, it was nonetheless employed to eval -
+uate the interrelations among the measured variables. 
+Secondly, the self-reporting via online snowball sampling 
+methodology was selected for data collection, which 
+introduces the possibility of self-report biases and inac -
+curacies in reporting [ 47]. Thirdly, although we included 
+male and female adults between 19 and 64 in the study, 
+the sample may not be representative because it mainly 
+consisted of younger adults and women. Finally, the indi -
+viduals’ self-reported data included measurements of the 
+participants’ height and body weight, which may have 
+affected the accuracy of BMI.
+Conclusion
+In conclusion, this study identified significant associa -
+tions between adherence to the Mediterranean Diet and 
+factors such as longer education duration, higher sus -
+tainable food literacy, higher environmental literacy, 
+and marital status. These findings suggest that certain 
+sociodemographic and literacy-related factors may influ -
+ence MD adherence in young adults. Nonetheless, the 
+results highlight the potential value of promoting sus -
+tainable and environmental literacy in supporting health-
+ier dietary patterns. Future studies with more diverse and 
+representative samples are recommended to validate and 
+extend these findings.
+Author contributions
+GOU: conceptualization, methodology, formal analysis, writing–original draft, 
+writing–review, and editing. SA: data curation, methodology, writing–original 
+draft, writing–review, and editing AÇ, MA: data curation, writing–original draft, 
+writing–review, and editing. OB, BKB: conceptualization, data curation, formal 
+analysis, writing–review, and editing. The authors have approved the final 
+version submitted.
+Funding
+None.
+Data availability
+The datasets generated and/or analyzed during the current study are available 
+from the corresponding author upon reasonable request.
+Declarations
+Ethics approval and consent to participate
+The research was conducted with “Ethics Committee Approval” from the 
+Erzurum Technical University Ethics Committee (Meeting Number: 03, 
+Decision Number: 17, 2024). The study was carried out following the principles 
+outlined in the Helsinki Declaration. Informed consent was given by each 
+participants.
+Consent for publication
+Not applicable.
+Competing interests
+The authors declare no competing interests.
+Received: 5 April 2025 / Accepted: 8 August 2025
+References
+1. Atabek-Yiğit E, Köklükaya N, Yavuz M, Demirhan E. Development and 
+validation of environmental literacy scale for adults (ELSA). J Baltic Sci Educ. 
+2014;13(3):425.
+2. Koç H. K Karatekin 2013 Coğrafya öğretmen Adaylarinin Çevre Okuryazarlik 
+Düzeylerinin çeşitli değişkenler Açisindan incelenmesi. Marmara Coğrafya 
+Dergisi 28 139–74.
+3. Alsaffar AA. Sustainable diets: the interaction between food industry, nutri-
+tion, health and the environment. Food Sci Technol Int. 2016;22(2):102–11.
+4. Dernini S, Berry EM, Serra-Majem L, La Vecchia C, Capone R, Medina FX, 
+Aranceta-Bartrina J, Belahsen R, Burlingame B, Calabrese G, et al. Med Diet 
+4.0: the Mediterranean diet with four sustainable benefits. Public Health Nutr. 
+2017;20(7):1322–30.
+5. Kiani AK, Medori MC, Bonetti G, Aquilanti B, Velluti V, Matera G, Iaconelli A, 
+Stuppia L, Connelly ST, Herbst KL, et al. Modern vision of the mediterranean 
+diet. J Prev Med Hyg. 2022;63(2 Suppl 3):E36–43.
+6. The State of Food Security and Nutrition in the World. 2020. Transforming 
+food systems for affordable healthy diets. [ h t t p  s : /  / o p e  n k  n o w  l e d  g e . f  a o  . o r  g / i  t e 
+m s  / 0  8 c 5  9 2 f  2 - 1 9  6 2  - 4 e  1 a -  a 5 4 1  - 6  9 5 f 9 4 0 4 b 2 6 d].
+7. Sustainable Development Goals. [ h t t p s :   /  / w w  w .  w h  o  . i  n  t / e  u r  o  p e  / a b   o u t   - u  s  /  o u r 
+-   w o r  k /  s u s  t a i   n a b  l e  - d e v e l o  p m e n t - g o a l s]
+8. Pendergast D, Dewhurst Y. Home economics and food literacy: an interna-
+tional investigation. Int J Home Econ. 2012;5(2):245–63.
+9. Strid A, Johansson I, Bianchi M, Sonesson U, Hallström E, Lindahl B, Winkvist A. 
+Diets benefiting health and climate relate to longevity in Northern Sweden. 
+Am J Clin Nutr. 2021;114(2):515–29.
+10. Willett W, Rockström J, Loken B, Springmann M, Lang T, Vermeulen S, Garnett 
+T, Tilman D, DeClerck F, Wood A, et al. Food in the anthropocene: the EAT-
+Lancet commission on healthy diets from sustainable food systems. Lancet. 
+2019;393(10170):447–92.
+11. Martínez-González MA, Gea A, Ruiz-Canela M. The mediterranean diet and 
+cardiovascular health. Circ Res. 2019;124(5):779–98.
+12. Renwick K, Smith MG. The political action of food literacy: A scoping review. J 
+Family Consumer Sci. 2020;112(1):14–22.
+13. Gréa Krause C, Beer-Borst S, Sommerhalder K, Hayoz S, Abel T. A short food 
+literacy questionnaire (SFLQ) for adults: findings from a Swiss validation study. 
+Appetite. 2018;120:275–80.
+14. Consultation W. Obesity: preventing and managing the global epidemic. 
+World Health Organ Tech Rep Ser. 2000;894:1–253.
+15. Teng C-C, Chih C. Sustainable food literacy: A measure to promote sustain-
+able diet practices. Sustainable Prod Consum. 2022;30:776–86.
+16. Kubilay MN, Yüksel A. Validity and reliability study of the Turkish adaptation 
+of the sustainable food literacy scale. Gümüşhane Üniversitesi Sağlık Bilimleri 
+Dergisi. 2023;12(4):1562–70.
+17. Schröder H, Fitó M, Estruch R, Martínez-González MA, Corella D, Salas-Salvadó 
+J, Lamuela-Raventós R, Ros E, Salaverría I, Fiol M, et al. A short screener is valid 
+for assessing mediterranean diet adherence among older Spanish men and 
+women. J Nutr. 2011;141(6):1140–5.
+18. PEHLİVANOĞLU EFÖ, BALCIOĞLU H, ÜNLÜOĞLU İ. Akdeniz Diyeti Bağlılık 
+ölçeği’nin türkçe’ye Uyarlanması geçerlilik ve güvenilirliği. Osmangazi Tıp 
+Dergisi. 2020;42(2):160–4.
+19. Hosmer DW, Lemeshow S, Sturdivant RX. Applied logistic regression. Hobo-
+ken. In.: NJ: John Wiley & Sons; 2000.
+20. Akçay S, Şengül H. A study on environmental literacy of middle school 
+students. Ahmet Keleşoğlu Eğitim Fakültesi Dergisi. 2023;5(1):139–69.
+21. Dağal M, Fırat Kılıç H. Environmental Literacy Levels of Nursing Students: A 
+Descriptive Study. Turkiye Klinikleri J Nurs Sci. 2023;15(3):698–705.
+22. Sarıyer ET, Can B, Yıldırım G, Gören AN. Sürdürülebilir Gıda Okuryazarlığında 
+cinsiyet Etkisinin değerlendirilmesi. Toros Univ J Food Nutr Gastronomy. 
+2023;2(2):151–8.
+23. Lombardo M. Assessing gender and age differences in the adoption of 
+sustainable diets: insights from an intervention of the mediterranean diet. 
+Sustainability. 2025;17(5):1962.
+Page 9 of 9
+Özata-Uyar et al. BMC Public Health         (2025) 25:4171 
+24. Jones AD, Hoey L, Blesh J, Miller L, Green A, Shapiro LF. A systematic review of 
+the measurement of sustainable diets. Adv Nutr. 2016;7(4):641–64.
+25. Prescott MP , Ben Hassen T, El Bilali H. Obesity and sustainability. In., vol. 10: 
+Frontiers Media SA; 2023: 1235036.
+26. Jung S, Young HA, Simmens SJ, Braffett BH, Ogden CL. The cross-sectional 
+association between a sustainable diet index and obesity among US adults. 
+Obesity. 2023;31(7):1962–71.
+27. Cacau LT, Benseñor IM, Goulart AC, Cardoso LO, Lotufo PA, Moreno LA, Mar-
+chioni DM. Adherence to the planetary health diet index and obesity indica-
+tors in the Brazilian longitudinal study of adult health (ELSA-Brasil). Nutrients. 
+2021;13(11):3691.
+28. Seconda L, Egnell M, Julia C, Touvier M, Hercberg S, Pointereau P , Lairon D, 
+Allès B, Kesse-Guyot E. Association between sustainable dietary patterns and 
+body weight, overweight, and obesity risk in the NutriNet-Santé prospective 
+cohort. Am J Clin Nutr. 2020;112(1):138–49.
+29. Reger C, Leitzmann MF, Rohrmann S, Kühn T, Sedlmeier AM, Jochem C. Sus-
+tainable diets and risk of overweight and obesity: A systematic review and 
+meta-analysis. Obes Rev. 2024;25(5):e13707.
+30. Donini LM, Dernini S, Lairon D, Serra-Majem L, Amiot M-J, Del Balzo V, Giusti 
+A-M, Burlingame B, Belahsen R, Maiani G. A consensus proposal for nutritional 
+indicators to assess the sustainability of a healthy diet: the mediterranean 
+diet as a case study. Front Nutr. 2016;3:37.
+31. Rust NA, Ridding L, Ward C, Clark B, Kehoe L, Dora M, Whittingham MJ, 
+McGowan P , Chaudhary A, Reynolds CJ. How to transition to reduced-meat 
+diets that benefit people and the planet. Sci Total Environ. 2020;718:137208.
+32. García S, Bouzas C, Mateos D, Pastor R, Álvarez L, Rubín M, Martínez-González 
+MÁ, Salas-Salvadó J, Corella D, Goday A. Carbon dioxide (CO2) emissions and 
+adherence to mediterranean diet in an adult population: the mediterranean 
+diet index as a pollution level index. Environ Health. 2023;22(1):1.
+33. Álvarez-Álvarez L, Vitelli-Storelli F, Rubín-García M, Martín-Sánchez V, García 
+Fernández C, Carvalho C, Araújo J, Ramos E. Environmental impact of the diet 
+of young Portuguese and its relationship with adherence to the Mediterra-
+nean Diet. Eur J Nutr. 2024;1–9.
+34. Rosi A, Biasini B, Donati M, Ricci C, Scazzina F. Adherence to the mediterra-
+nean diet and environmental impact of the diet on primary school children 
+living in Parma (Italy). Int J Environ Res Public Health. 2020;17(17):6105.
+35. Bottcher MR, Marincic PZ, Nahay KL, Baerlocher BE, Willis AW, Park J, Gaillard 
+P , Greene MW. Nutrition knowledge and mediterranean diet adherence in 
+the Southeast united states: validation of a field-based survey instrument. 
+Appetite. 2017;111:166–76.
+36. Mieziene B, Emeljanovas A, Fatkulina N, Stukas R. Dietary pattern and its 
+correlates among Lithuanian young adults: mediterranean diet approach. 
+Nutrients. 2020;12(7):2025.
+37. Apostolaki I, Pepa A, Magriplis E, Malisova O, Kapsokefalou M. Mediterranean 
+diet adherence, social capital and health related quality of life in the older 
+adults of crete, greece: the MINOA study. Mediterranean J Nutr Metabolism. 
+2020;13(2):149–61.
+38. Caparello G, Galluccio A, Giordano C, Lofaro D, Barone I, Morelli C, Sisci D, 
+Catalano S, Ando S, Bonofiglio D. Adherence to the mediterranean diet 
+pattern among university staff: A cross-sectional web-based epidemiological 
+study in Southern Italy. Int J Food Sci Nutr. 2020;71(5):581–92.
+39. León-Muñoz LM, Guallar-Castillón P , Graciani A, López-García E, Mesas 
+AE, Aguilera MT, Banegas JR, Rodríguez-Artalejo F. Adherence to the 
+mediterranean diet pattern has declined in Spanish adults, 3. J Nutr. 
+2012;142(10):1843–50.
+40. Norton C, Clarke E, Marcos-Pardo PJ, Tierney A. Mediterranean diet in older 
+Irish adults: prevalence, patterns, predictors and pertinence. Nutrients. 
+2024;16(16):2615.
+41. Patino-Alonso MC, Recio-Rodríguez JI, Belio JFM, Colominas-Garrido R, Lema-
+Bartolomé J, Arranz AG, Agudo-Conde C, Gomez-Marcos MA, García-Ortiz L, 
+Group E. Factors associated with adherence to the mediterranean diet in the 
+adult population. J Acad Nutr Dietetics. 2014;114(4):583–9.
+42. Kocaadam-Bozkurt B, Bozkurt O. Relationship between adherence to 
+the mediterranean diet, sustainable and healthy eating behaviors, and 
+awareness of reducing the ecological footprint. Int J Environ Health Res. 
+2023;33(4):430–40.
+43. Gumus D, Topal GG, Sevim S, Kizil M. Adherence to mediterranean diet and 
+dietary changes according to the fear of COVID-19 during the pandemic: a 
+cross-sectional study. J Nutritional Sci. 2023;12:e56.
+44. Cobo-Cuenca AI, Garrido-Miguel M, Soriano-Cano A, Ferri-Morales A, 
+Martínez-Vizcaíno V, Martín-Espinosa NM. Adherence to the mediterranean 
+diet and its association with body composition and physical fitness in Span-
+ish university students. Nutrients. 2019;11(11):2830.
+45. Marventano S, Godos J, Platania A, Galvano F, Mistretta A, Grosso G. Mediter-
+ranean diet adherence in the mediterranean healthy eating, aging and 
+lifestyle (MEAL) study cohort. Int J Food Sci Nutr. 2018;69(1):100–7.
+46. Marques-Vidal P , Waeber G, Vollenweider P , Bochud M, Stringhini S, Guessous 
+I. Sociodemographic and behavioural determinants of a healthy diet in 
+Switzerland. Annals Nutr Metabolism. 2015;67(2):87–95.
+47. Fadnes LT, Taube A, Tylleskär T. How to identify information bias due to self-
+reporting in epidemiological research. Internet J Epidemiol. 2009;7(2):28–38.
+Publisher’s note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.

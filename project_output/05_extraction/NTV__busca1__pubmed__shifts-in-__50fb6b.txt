@@ -1,0 +1,597 @@
+RAPID COMMUNICATION
+Journal of Endocrinological Investigation
+https://doi.org/10.1007/s40618-026-02883-7
+BMI has long been used as a practical and scalable sur -
+rogate to predict excess adiposity; however, BMI does not 
+necessarily indicate the impact of excess adiposity on an 
+individual, and BMI’s association with health risk, perhaps 
+particularly when BMI is in the overweight category, can be 
+inconsistent and varies with age, sex, and ethnicity [ 3–6]. 
+Additionally, the utility of BMI alone to assess health risk is 
+limited in the context of weight reduction interventions and 
+among individuals where central adiposity predominates 
+Introduction
+Obesity, a well-established contributor to morbidity and 
+mortality, is a global epidemic that requires scalable 
+approaches for disease diagnosis, treatment, and monitoring 
+[1, 2]. For decades, obesity management clinical guidelines 
+have recommended assessing health risk using anthropo -
+metric measures such as body mass index (BMI) and waist 
+circumference.
+Hui Wang was an employee of Eli Lilly and Company during the 
+study period.
+Extended author information available on the last page of the article
+Abstract
+Objective To evaluate shifts in waist-to-height ratio (WHtR) categories among adults with obesity or overweight, with or 
+without prediabetes, treated with tirzepatide in the SURMOUNT-1 study.
+Methods This post hoc analysis included 2,538 participants from the SURMOUNT-1 Phase 3, double-blind, randomized, 
+placebo-controlled trial. Adults with BMI ≥ 30 or ≥ 27 kg/m² and at least one obesity-related complication (ORC), exclud -
+ing diabetes, were randomized to receive once-weekly tirzepatide (5, 10, or 15 mg) or placebo, alongside a reduced-calorie 
+diet and increased physical activity. Participants were grouped by baseline WHtR (≤ 0.49, > 0.49 to ≤ 0.59, > 0.59) according 
+to the National Institute for Health and Care Excellence (NICE) framework. Participants with prediabetes at baseline had 
+additional follow-up data beyond week 72, and shifts in their WHtR categories at week 176 were also included. Change from 
+baseline in WHtR was analyzed using a mixed model for repeated measures (MMRM). Shift tables were used to summarize 
+changes from baseline to post-baseline WHtR category levels.
+Results At baseline, 89.8% of participants had a WHtR > 0.59, 10.1% had > 0.49 to ≤ 0.59, and 0.1% had ≤ 0.49. After 72 
+weeks of tirzepatide (10/15 mg), 16.7% of participants achieved a WHtR ≤ 0.49, and 54.7% improved their baseline WHtR 
+category compared to 9.6% with placebo. At 176 weeks, among participants with prediabetes, 12.2% achieved WHtR ≤ 0.49, 
+and 46.4% improved their category with tirzepatide versus 9.3% with placebo.
+Conclusions Tirzepatide treatment was associated with sustained improvements in WHtR categories, with a greater pro -
+portion of participants shifting to a better WHtR category compared to participants treated with placebo. Improved WHtR 
+may be suggestive of lower future cardiometabolic risk. Further analyses of this nature will enhance the understanding and 
+application of WHtR in obesity management across diverse populations.
+Keywords Body mass index · Cardiometabolic risk · Obesity · Waist circumference · Waist-to-height ratio · 
+SURMOUNT-1 · Tirzepatide
+Received: 19 January 2026 / Accepted: 1 April 2026
+© The Author(s) 2026
+Shifts in waist-to-height ratio categories within tirzepatide groups: a 
+post-hoc analysis of SURMOUNT-1
+Naveed Sattar1 · Beverly G. Tchang2 · Royce P . Vincent3,4 · Hui Wang5 · Madhumita Murphy5 · Julia P . Dunn5 ·  
+Georgios K. Dimitriadis5 · Julia Fraseur Brumm5
+1 3
+
+Journal of Endocrinological Investigation
+[7]. Treatment algorithms based on practical anthropometric 
+measures, such as BMI and waist circumference, are used to 
+guide risk prediction and intervention strategies to recom -
+mend medications for obesity management [8]. For individ-
+uals with a BMI of 25.0–29.9 kg/m², lifestyle interventions 
+are recommended. Additionally, pharmacotherapy may be 
+considered if co-morbidities are present and treatment goals 
+are not achieved with lifestyle modifications alone [ 8–10]. 
+For BMI 30.0–34.9 kg/m², drug therapy may be added, espe-
+cially if presence of abdominal obesity, or if obesity related 
+complications are present. At BMI 35.0–39.9 kg/m², surgery 
+is considered alongside drug therapy and lifestyle changes 
+if comorbidities are present, and for BMI > 40.0 kg/m², all 
+three approaches – lifestyle, drug therapy, and surgery are 
+advised [11]. However, using measures that combine BMI 
+and waist circumference can be limited by variability across 
+populations and a lack of standardization, which ultimately 
+restricts their application in clinical settings [12–14].
+The National Institute for Health and Care Excellence 
+(NICE) has recommended using BMI as a measure of over-
+weight and obesity but has also recommended that results be 
+interpreted with caution. For adults with a BMI < 35 kg/m2, 
+NICE guidelines recommend using the waist circumference 
+to height ratio (WHtR) in addition to BMI as a practical 
+estimate of central adiposity, and with better discriminatory 
+and predictive power for cardiometabolic disease outcomes 
+such as type 2 diabetes than BMI alone [15]. Since changes 
+in WHtR have not been shown to predict lower risk inde -
+pendent of change in BMI, the combination of BMI and 
+WHtR may be used to assess and predict health risks [16].
+Similarly, the European Association for the Study of 
+Obesity (EASO) has published a framework for diagnosing, 
+staging, and managing obesity that more accurately reflects 
+obesity as an adiposity-based chronic disease [ 10]. The 
+EASO framework uses anthropometric components such 
+as BMI and WHtR alongside clinical components of obe -
+sity (medical, functional, and mental domains) to diagnose 
+and manage obesity. This framework includes individuals 
+with lower BMI (≥ 25–30 kg/m 2) and increased abdominal 
+fat accumulation and ORCs within the definition of obesity 
+[10]. Additionally, it is recommended that waist circumfer-
+ence be measured in those with a BMI below 35 kg/m 2 to 
+help identify visceral adiposity and assess increased cardio-
+metabolic disease risk [17, 18].
+Given the recent importance placed on anthropometric 
+measures of obesity beyond BMI, WHtR has emerged as 
+a potential, evidence-based tool for diagnosing and treat -
+ing obesity, as well as serving as a tool to better assess a 
+multitude of health risks [16]. The recommendations for the 
+utility of WHtR are supported by many years of evidence, 
+including studies in diverse populations, and its use is being 
+considered in clinical practice, not only for diagnosing 
+obesity but also for assessing comorbid health risks [ 14, 
+16, 19–22]. In fact, the need for additional measurements 
+is subverted by deriving WHtR from waist circumference 
+and BMI data. Since WHtR is non-invasive and affordable, 
+it can be a key tool in the early identification and interven -
+tion for those with obesity or overweight and ORCs [ 23]. 
+However, little data exist on changes in WHtR with newer 
+approved medications for weight loss.
+The SURMOUNT-1 study evaluated the efficacy and 
+safety of tirzepatide in adults with obesity or overweight 
+who did not have diabetes and showed that tirzepatide led 
+to substantial and sustained reductions in body weight [24]. 
+The current post hoc analysis of SURMOUNT-1 evalu -
+ated WHtR shifts from baseline, at the primary 72-week 
+endpoint, and in the prediabetes subgroup at the 176-week 
+endpoint.
+Methods
+Study design
+The SURMOUNT-1 study design has been previously pub-
+lished [24, 25]. Briefly, SURMOUNT-1 was a Phase 3, dou-
+ble-blind, randomized, controlled trial that included adults 
+with a BMI ≥ 30 or ≥ 27 and at least one ORC, exclud -
+ing diabetes. Participants were randomly assigned 1:1:1:1 
+to receive once-weekly subcutaneous tirzepatide (5 mg, 
+10 mg, 15 mg) or placebo, alongside lifestyle intervention. 
+Treatment duration was determined by prediabetes status 
+at baseline; those with obesity and without prediabetes at 
+baseline were enrolled in the study for 72 weeks, while 
+those with obesity and prediabetes at baseline continued in 
+the extension study involving a total of 176 weeks of treat -
+ment [ 24]. Prediabetes was defined by the presence of at 
+least two abnormal values among glycated hemoglobin 
+(HbA1c), fasting glucose, and 2-hour oral glucose tolerance 
+test (OGTT) [25].
+Key measures and analyses
+This post hoc analysis included 2538 participants who had 
+a baseline WHtR measurement, of whom 1,032 had predia-
+betes at baseline. Participants randomized to tirzepatide 10 
+mg and 15 mg were pooled (tirzepatide 10/15 mg) for the 
+purposes of this analysis. Waist circumference was mea -
+sured in the horizontal plane at the midpoint between the 
+lower margin of the last palpable rib and the top of the iliac 
+crest. WHtR was calculated as waist circumference (in cm) 
+divided by height (in cm), and participants were grouped 
+based on their WHtR at baseline: ≤0.49, > 0.49 to ≤ 0.59, 
+and > 0.59, with values exactly at the threshold classified 
+1 3
+Journal of Endocrinological Investigation
+country, and sex. Prediabetes status at randomization was 
+also included as a covariate to the model applied to overall 
+population for the Week 72 endpoint. Visit was treated as a 
+categorical variable. An unstructured covariance matrix was 
+used to model within-subject errors. Shift tables were used 
+to summarize changes from baseline to post-baseline WHtR 
+category levels. Baseline category was defined using the last 
+non-missing assessment prior to the first dose of study treat-
+ment. Post-baseline category was defined as the last non-
+missing assessment recorded during the treatment period. 
+Participants without a post-baseline WHtR assessment were 
+retained in the analysis and categorized as “missing” in 
+the shift tables. Shift tables present the cross-classification 
+of baseline and post-baseline categories. Analyses were 
+descriptive in nature, and no formal hypothesis testing was 
+performed for category-shift endpoints.
+into the lower (healthier) category. These categories are 
+aligned with the NICE framework, which defines healthy 
+central adiposity as a WHtR of 0.4 to 0.49, increased central 
+adiposity as 0.5 to 0.59, and high central adiposity as 0.6 or 
+more [15]. The shifts from these baseline WHtR categories 
+to a participant’s category at Week 72 and Week 176 were 
+analysed using the efficacy analysis set (the intention-to-
+treat population).
+Change from baseline in WHtR was analyzed using a 
+mixed model for repeated measures (MMRM), with change 
+from baseline at each scheduled post-baseline visit during 
+the treatment period as the dependent variable. The analysis 
+population included all subjects with a non-missing baseline 
+value and at least one non-missing post-baseline assessment 
+of WHtR. The model included fixed effects for baseline 
+WHtR, treatment, visit, treatment-by-visit interaction, 
+Table 1 WHtR shift tables from baseline to Week 72 and Week 176
+Baseline results 
+Baseline All 
+participants 
+Categories,  
+n (%) 
+≤0.59* 
+(N=258) 
+>0.59*
+(N=2280) 
+Total  
+(N=2538) 
+≤0.492  (0.8) 02  (0.1)
+>0.49 to ≤0.592 56 (99.2)0 256 (10.1)
+>0.59 0    2280 (100.0) 2280 (89.8)
+Post-baseline results at Week 72 in all participants 
+Week 72 
+Treatment Baseline 
+Result 
+≤0.49 
+ n (%) 
+>0.49 to ≤0.59 
+ n (%) 
+>0.59 
+ n (%) 
+Missing 
+ n (%) 
+Total 
+ n (%) 
+Placebo 
+(N=643) 
+≤0.49 1 (0.2) 0 (0.0) 0 (0.0) 0 (0.0) 1 (0.2)#
+>0.49 to ≤0.59 4 (0.6) 45 (7.0) 11 (1.7) 1  (0.2) 61 (9.5) 
+>0.59 0 (0.0) 58 (9.0) 515 (80.1) 8  (1.2) 5 81 (90.4) 
+Total 5 (0.8) 103 (16.0) 526 (81.8) 9  (1.4) 6 43 (100.0) 
+Tirzepatide 
+10/15 mg 
+(N=1266) 
+≤0.49 0 (0.0) 0 (0.0) 0 (0.0) 0 (0.0) 0 (0.0) 
+>0.49 to ≤0.59 70 (5.5) 58 (4.6) 3 (0.2) 2 (0.2) 133 (10.5) 
+>0.59 142 (11.2) 480 (37.9) 501 (39.6) 1 0 (0.8) 1133 (89.5) 
+Total 212 (16.7) 538 (42.5) 5 04 (39.8) 1 2 (0.9) 1266 (100.0) 
+Post-baseline results at Week 176 in participants with prediabetes at baseline
+Week 
+176 
+Placebo 
+(N=270) 
+≤0.49 0 (0.0) 0 (0.0) 0 (0.0) 0 (0.0) 0 (0.0) 
+>0.49 to ≤0.59 2 (0.7) 10 (3.7) 5 (1.9) 1 (0.4) 18 (6.7) 
+>0.59 0 (0.0) 23 (8.5) 223 (82.6) 6  (2.2) 2 52 (93.3) 
+Total 2 (0.7) 33 (12.2) 228 (84.4) 7  (2.6) 2 70 (100.0) 
+Tirzepatide 
+10/15 mg 
+(N=515) 
+≤0.49 0 (0.0) 0 (0.0) 0 (0.0) 0 (0.0) 0 (0.0) 
+>0.49 to ≤0.59 15 (2.9) 20 (3.9) 1 (0.2) 1 (0.2) 37 (7.2) 
+>0.59 48 (9.3) 176 (34.2) 249 (48.3) 5  (1.0) 4 78 (92.8) 
+Total 63 (12.2) 196 (38.1) 2 50 (48.5) 6 (1.2) 515 (100.0) 
+Number and percentage of participants at each WHtR category and baseline, Week 72, and Week 176. Participants who improved WHtR cat -
+egories are highlighted in green, those who maintained WHtR categories are in yellow, and those who worsened are in red
+The postbaseline category was defined as the last non-missing WHtR assessment recorded during the treatment period at the respective time 
+point (Week 72 or Week 176)
+*WHtR was grouped into three categories: ≤0.49, > 0.49 and ≤0.59, and >0.59. Due to the small numbers of ≤0.49 category at baseline, the 
+combined category of ≤0.59 and >0.59 is reported at baseline
+#One participant with a WHtR of ≤0.49 was part of the tirzepatide 5 mg treatment group
+n, number of participants in the analysis (subset) population; N, total number of participants; WHtR, waist-to-height ratio
+1 3
+Journal of Endocrinological Investigation
+of those treated with 10 or 15 mg of tirzepatide improved 
+WHtR categories compared to 9.3% of participants treated 
+with placebo. Additionally, fewer participants treated with 
+10 mg or 15 mg worsened (W72: 0.2%, W176: 0.2%) com-
+pared with those treated with placebo (W72: 1.7%, W176: 
+1.9%).
+Tirzepatide 5 mg also showed improvement over pla -
+cebo, with 44.9% of participants improving WHtR catego -
+ries at Week 72 compared to 9.6% with placebo. Among 
+participants with prediabetes, 38.9% achieved at least one 
+categorical improvement at Week 176 versus 9.3% with pla-
+cebo (Online resource: Figure S1).
+Conclusions
+Treatment with tirzepatide was associated with over half of 
+the participants achieving an improvement in WHtR clas -
+sification compared to less than 10% with placebo at week 
+72. This benefit was sustained at week 176 in participants 
+with prediabetes who received treatment with tirzepatide, 
+as 46.4% of participants experienced an improvement in 
+WHtR classification, compared to 9.3% with placebo. In 
+this post hoc analysis, tirzepatide treatment was associ -
+ated with meaningful improvements in WHtR categories 
+relative to placebo. Incorporating WHtR into the clinical 
+diagnosis of excess adiposity and the treatment of obesity 
+may provide a practical tool that better draws attention to 
+Results
+At Week 72, the least squares mean (SE) change from base-
+line in WHtR was − 0.09 (0.003) in participants treated with 
+5 mg tirzepatide and − 0.12 (0.002) in participants treated 
+with 10 or 15 mg tirzepatide, compared to −0.02 (0.003) in 
+the placebo group (Online Resource: Table S1). At Week 
+176, which included only those participants with predia -
+betes at baseline, the change from baseline in WHtR was 
+− 0.08 (0.005) and − 0.12 (0.003) in participants treated with 
+5 mg tirzepatide and 10 or 15 mg tirzepatide, respectively, 
+compared to −0.01 (0.005) in the placebo group at Week 
+176.
+At baseline, 2 participants (0.1%) had a WHtR ≤ 0.49, 
+while 256 participants (10.1%) had a WHtR > 0.49 but 
+≤ 0.59, and 2280 participants (89.8%) had a baseline 
+WHtR > 0.59. The majority of participants were classified 
+as being at high risk at baseline based on WHtR. After 72 
+weeks of treatment with 10 or 15 mg tirzepatide, 212 par -
+ticipants (16.7%) had a WHtR ≤ 0.49, and at 176 weeks, 63 
+participants (12.2%) had a WHtR ≤ 0.49 (Table 1).
+Following treatment with tirzepatide, over half of the par-
+ticipants improved WHtR categories, as seen in Fig. 1. At 
+Week 72, 54.7% of participants treated with 10 mg or 15 mg 
+tirzepatide improved WHtR categories compared with 9.6% 
+of participants treated with placebo, and 17% achieved a 
+normal WHtR compared to just 0.6% with placebo. At Week 
+176, among participants with prediabetes at baseline, 46.4% 
+Fig. 1 WHtR shifts from baseline in participants treated with 10 or 
+15 mg tirzepatide. Week 72 shows post-baseline results in all par -
+ticipants. Week 176 shows post-baseline results in participants with 
+prediabetes at baseline. Percentage of participants who shifted or 
+maintained WHtR categories at Week 72 and Week 176 as compared 
+with baseline. Categories may not sum to 100% due to missing data. 
+n, number of participants in the analysis (subset) population; N, total 
+number of participants;WHtR, waist-to-height ratio
+ 
+1 3
+Journal of Endocrinological Investigation
+related to the accuracy or integrity of any part of the work are appro -
+priately investigated and resolved. Julia Fraseur Brumm: conception 
+of the work, analysis of data for the work, interpretation of data for the 
+work, drafting of the work, critical review of the work for important 
+intellectual content, and participated sufficiently in the work to agree 
+to be accountable for all aspects of the work in ensuring that questions 
+related to the accuracy or integrity of any part of the work are appro -
+priately investigated and resolved. All authors gave final approval of 
+the work to be published.
+Funding This study was funded by Eli Lilly and Company.
+Data availability  Lilly provides access to all individual participant 
+data collected during the trial, after anonymization, with the excep -
+tion of pharmacokinetic or genetic data. Data are available to request 
+6 months after the indication studied has been approved in the US and 
+EU and after primary publication acceptance, whichever is later. No 
+expiration date of data requests is currently set once data are made 
+available. Access is provided after a proposal has been approved by 
+an independent review committee identified for this purpose and after 
+receipt of a signed data sharing agreement. Data and documents, 
+including the study protocol, statistical analysis plan, clinical study 
+report, blank or annotated case report forms, will be provided in a 
+secure data-sharing environment. For details on submitting a request, 
+see the instructions provided at www.vivli.org.
+Declarations
+Conflict of interest Naveed Sattar received grants, consulting fees and 
+honoraria from Astra Zeneca, Boehringer Ingelheim, Novartis and 
+Roche and consulting fees from AbbVie, Amgen, Carmot Therapeu -
+tics, Eli Lilly, Gan & Lee, GlaxoSmithKline, Hanmi Pharmaceuticals, 
+Kailera, Mass Medicines, Menarini-Ricerche, Metsera, Novo Nordisk, 
+Pfizer, Regeneron, and Verdiva Bio. He has also received honoraria 
+from AbbVie, Amgen, Eli Lilly, Novo Nordisk, and UCB Pharma. He 
+serves as the Chair of the HM Government Office for Life Sciences’ 
+Obesity Healthcare Programme. Beverly G. Tchang received consult-
+ing fees from Kailera and participated on the advisory boards of Wake 
+Forest DSMB, Johns Hopkins University DSMB, Novo Nordisk, Ro -
+man Health Ventures, Skye Bioscience, Amgen, Eli Lilly and Com -
+pany, Boehringer Ingelheim, Pfizer, and Circadian Care. She serves as 
+a board member of Tri-state Obesity Society and The Obesity Society 
+and has received stock options from Roman Health Ventures. Royce 
+P. Vincent has received grants from Recordati, Novo Nordisk and No-
+vartis Pharma AG. Madhumita Murphy, Julia P. Dunn, Georgios K. 
+Dimitriadis and Julia Fraseur Brumm are employees and shareholders 
+of Eli Lilly and Company. Hui Wang was an employee of Eli Lilly and 
+Company during the course of the study.
+Ethics approval and consent to participate  This study was conducted 
+in accordance with the ethical principles of Good Clinical Practice and 
+the Declaration of Helsinki and its guidelines. An independent ethics 
+committee or institutional review board approved the SURMOUNT-1 
+protocol. The original SURMOUNT-1 participant consent covered the 
+analyses in this study.
+Consent for publication  Not applicable.
+Open Access   This article is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits use, sharing, 
+adaptation, distribution and reproduction in any medium or format, 
+as long as you give appropriate credit to the original author(s) and the 
+source, provide a link to the Creative Commons licence, and indicate 
+if changes were made. The images or other third party material in this 
+future health improvements, though long-term cardiometa -
+bolic outcome data would be needed to best direct treatment 
+goals. The observed changes in WHtR are consistent with 
+previous evidence demonstrating clinically meaningful and 
+sustained weight reduction with tirzepatide [ 24]. However, 
+the long-term WHtR findings at Week 176 were derived 
+exclusively from participants with prediabetes at baseline 
+and should not be extrapolated to the full SURMOUNT-1 
+cohort, of which about 60% did not have prediabetes. Future 
+investigations should consider reporting rates of BMI and 
+WHtR improvements according to ethnic subgroups to pro-
+vide additional information on the relative utility of each 
+anthropometric measure. Additional studies are important to 
+elucidate the health impact of WHtR, particularly in relation 
+to changes induced by potent therapeutic interventions.
+Supplementary Information  The online version contains 
+supplementary material available at  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 0 7  / s 4  0 6 1 8 - 0 
+2 6 - 0 2 8 8 3 - 7.
+Acknowledgements The authors thank the participants, the study 
+teams, and the investigators who cared for them. The authors acknowl-
+edge Xiaojuan Mi of TechData Service Company for providing statisti-
+cal peer review support. Writing and editorial assistance were provided 
+by Jess O’Hagan and Aswathi R Hegde (Eli Lilly and Company).
+Author contributions Naveed Sattar: Design of the work, interpreta -
+tion of data for the work, drafting of the work, critical review of the 
+work for important intellectual content, and participated sufficiently in 
+the work to agree to be accountable for all aspects of the work in ensur-
+ing that questions related to the accuracy or integrity of any part of the 
+work are appropriately investigated and resolved. Beverly G. Tchang: 
+interpretation of data for the work, critical review of the work for im -
+portant intellectual content, and participated sufficiently in the work 
+to agree to be accountable for all aspects of the work in ensuring that 
+questions related to the accuracy or integrity of any part of the work 
+are appropriately investigated and resolved. Royce P. Vincent: inter-
+pretation of data for the work, critical review of the work for important 
+intellectual content, and participated sufficiently in the work to agree 
+to be accountable for all aspects of the work in ensuring that ques -
+tions related to the accuracy or integrity of any part of the work are 
+appropriately investigated and resolved. Hui Wang: analysis of data 
+for the work, interpretation of data for the work, critical review of the 
+work for important intellectual content, and participated sufficiently 
+in the work to agree to be accountable for all aspects of the work in 
+ensuring that questions related to the accuracy or integrity of any part 
+of the work are appropriately investigated and resolved. Madhumita 
+Murphy: analysis of data for the work, critical review of the work for 
+important intellectual content, and participated sufficiently in the work 
+to agree to be accountable for all aspects of the work in ensuring that 
+questions related to the accuracy or integrity of any part of the work 
+are appropriately investigated and resolved. Julia P. Dunn: conception 
+of the work, interpretation of data for the work, critical review of the 
+work for important intellectual content, and participated sufficiently 
+in the work to agree to be accountable for all aspects of the work in 
+ensuring that questions related to the accuracy or integrity of any part 
+of the work are appropriately investigated and resolved. Georgios K. 
+Dimitriadis: conception of the work, design of the work, interpretation 
+of data for the work, critical review of the work for important intel -
+lectual content, and participated sufficiently in the work to agree to 
+be accountable for all aspects of the work in ensuring that questions 
+1 3
+Journal of Endocrinological Investigation
+12. Janssen I, Katzmarzyk PT, Ross R (2002) Body mass index, 
+waist circumference, and health risk: evidence in support of cur -
+rent National Institutes of Health guidelines. Arch Intern Med 
+162:2074–2079.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 0 1  / a r  c h i n t e . 1 6 2 . 1 8 . 2 0 7 4
+13. Itani L, El Ghoch M (2024) Waist-to-height ratio cut-off points 
+for central obesity in individuals with overweight across different 
+ethnic groups in NHANES 2011–2018. Nutrients.  h t t p  s : /  / d o i  . o  r g /  
+1 0 . 3  3 9 0  / n u  1 6 2 2 3 8 3 8
+14. Ashwell M, Gibson S (2016) Waist-to-height ratio as an indica -
+tor of “early health risk”: simpler and more predictive than using 
+a “matrix” based on BMI and waist circumference. BMJ Open 
+6:e010159.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  1 3 6  / b m  j o p e n - 2 0 1 5 - 0 1 0 1 5 9
+15. NICE, CfPHEa C (2006) NCCfP Obesity: the prevention, identi-
+fication, assessment and management of overweight and obesity 
+in adults and children [Internet]
+16. Ashwell M, Gunn P, Gibson S (2012) Waist-to-height ratio is a 
+better screening tool than waist circumference and BMI for adult 
+cardiometabolic risk factors: systematic review and meta-analy -
+sis. Obes Rev 13:275–286.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  1 1 1  / j .  1 4 6  7 - 7  8 9 X .  2 
+0  1 1 . 0 0 9 5 2 . x
+17. Kushner R (2025) Is Waist Size Measurement the New Obesity 
+Care Vital Sign?  h t t p  s : /  / d r r  o b  e r t  k u s h  n e r  . c o  m / i  s - w  a i s t  - s  i z e  - m e a  s u 
+r  e m e  n t -  t h e  - n e w  - o  b e s i t y - c a r e - v i t a l - s i g n /
+18. Rubino F, Cummings DE, Eckel RH, Cohen RV , Wilding JPH, 
+Brown WA, Stanford FC, Batterham RL, Farooqi IS, Farpour-
+Lambert NJ, le Roux CW, Sattar N, Baur LA, Morrison KM, 
+Misra A, Kadowaki T, Tham KW, Sumithran P, Garvey WT, Kir-
+wan JP, Fernandez-Real JM, Corkey BE, Toplak H, Kokkinos A, 
+Kushner RF, Branca F, Valabhji J, Bluher M, Bornstein SR, Grill 
+HJ, Ravussin E, Gregg E, Al Busaidi NB, Alfaris NF, Al Ozairi 
+E, Carlsson LMS, Clement K, Despres JP, Dixon JB, Galea G, 
+Kaplan LM, Laferrere B, Laville M, Lim S, Luna Fuentes JR, 
+Mooney VM, Nadglowski J Jr., Urudinachi A, Olszanecka-
+Glinianowicz M, Pan A, Pattou F, Schauer PR, Tschop MH, van 
+der Merwe MT, Vettor R, Mingrone G (2025) Definition and 
+diagnostic criteria of clinical obesity. Lancet Diabetes Endocrinol 
+13:221–262.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / S 2  2 1 3 - 8 5 8 7 ( 2 4 ) 0 0 3 1 6 - 4
+19. Boonpor J, Parra-Soto S, Talebi A, Zhou Z, Carrasco-Marin F, 
+Petermann-Rocha F, Welsh P, Pell JP, Sattar N, Gill JMR, Gray 
+SR, Celis-Morales C, Ho FK (2023) Associations and predictive 
+performance of 11 anthropometric measures with incident type 2 
+diabetes: a prospective cohort study from the UK Biobank. Obes 
+(Silver Spring) 31:2648–2657.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 0 2  / o b  y . 2 3 8 4 9
+20. Kazlauskaite R, Avery-Mamer EF, Li H, Chataut CP, Janssen 
+I, Powell LH, Kravitz HM (2017) Race/ethnic comparisons of 
+waist-to-height ratio for cardiometabolic screening: the study of 
+women’s health across the nation. Am J Hum Biol.  h t t p  s : /  / d o i  . o  r g 
+/  1 0 . 1  0 0 2  / a j  h b . 2 2 9 0 9
+21. Ke JF, Wang JW, Lu JX, Zhang ZH, Liu Y , Li LX (2022) Waist-
+to-height ratio has a stronger association with cardiovascular 
+risks than waist circumference, waist-hip ratio and body mass 
+index in type 2 diabetes. Diabetes Res Clin Pract 183:109151.  h t t 
+p  s : /  / d o i  . o  r g /  1 0 . 1  0 1 6  / j .  d i a  b r e  s . 2 0  2 1  . 1 0 9 1 5 1
+22. Prasad DS, Kabir Z, Suganthy JP, Dash AK, Das BC (2013) 
+Appropriate anthropometric indices to identify cardiometabolic 
+risk in South Asians. WHO South-East Asia J Public Health 
+2:142–148.  h t t p  s : /  / d o i  . o  r g /  1 0 . 4  1 0 3  / 2 2  2 4 - 3 1 5 1 . 2 0 6 7 6 0
+23. Abdi Dezfouli R, Mohammadian Khonsari N, Hosseinpour A, 
+Asadi S, Ejtahed HS, Qorbani M (2023) Waist to height ratio as 
+a simple tool for predicting mortality: a systematic review and 
+meta-analysis. Int J Obes (Lond) 47:1286–1301.  h t t p  s : /  / d o i  . o  r g /  1 
+0 . 1  0 3 8  / s 4  1 3 6 6 - 0 2 3 - 0 1 3 8 8 - 0
+article are included in the article’s Creative Commons licence, unless 
+indicated otherwise in a credit line to the material. If material is not 
+included in the article’s Creative Commons licence and your intended 
+use is not permitted by statutory regulation or exceeds the permitted 
+use, you will need to obtain permission directly from the copyright 
+holder. To view a copy of this licence, visit  h t t p  : / /  c r e a  t i  v e c  o m m o  n s .  o 
+r g  / l i c e n s e s / b y / 4 . 0 /.
+References
+1. World Obesity Federation World Obesity Atlas 2024
+2. Jayedi A, Soltani S, Zargar MS, Khan TA, Shab-Bidar S (2020) 
+Central fatness and risk of all cause mortality: systematic review 
+and dose-response meta-analysis of 72 prospective cohort stud -
+ies. BMJ 370:m3324.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  1 3 6  / b m  j . m 3 3 2 4
+3. Sweatt K, Garvey WT, Martins C (2024) Strengths and limita -
+tions of BMI in the diagnosis of obesity: what is the path forward? 
+Curr Obes Rep 13:584–595.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 0 7  / s 1  3 6 7 9 - 0 2 4 
+- 0 0 5 8 0 - 1
+4. Tanne JH (2023) Obesity: avoid using BMI alone when evaluat -
+ing patients, say US doctors’ leaders. BMJ p1400.  h t t p  s : /  / d o i  . o  r g /  
+1 0 . 1  1 3 6  / b m  j . p 1 4 0 0
+5. Ho F, Pentti J, Kivimaki M, Sattar N (2025) Waist, waist-height-
+ratio vs body mass index and the risks of multiple diseases: a 
+cohort study with replication. medRxiv.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  1 0 1  / 2 
+0  2 5 . 1 0 . 1 6 . 2 5 3 3 8 1 5 2
+6. Gonzalez MC, Correia M, Heymsfield SB (2017) A requiem 
+for BMI in the clinical setting. Curr Opin Clin Nutr Metab Care 
+20:314–321.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 9 7  / M C  O . 0 0 0 0 0 0 0 0 0 0 0 0 0 3 9 5
+7. Chin GC, Potter AW, Friedl KE (2024) Body mass index is 
+a barrier to obesity treatment. Front Endocrinol (Lausanne) 
+15:1444568.  h t t p  s : /  / d o i  . o  r g /  1 0 . 3  3 8 9  / f e  n d o . 2 0 2 4 . 1 4 4 4 5 6 8
+8. Nadolsky K, Garvey WT, Agarwal M, Bonnecaze A, Burguera B, 
+Chaplin MD, Griebeler ML, Harris SR, Schellinger JN, Simonetti 
+J, Srinath R, Yumuk V (2025) American Association of Clinical 
+Endocrinology consensus statement: algorithm for the evaluation 
+and treatment of adults with obesity/adiposity-based chronic dis-
+ease – 2025 update. Endocr Pract 31:1351–1394.  h t t p  s : /  / d o i  . o  r g /  1 
+0 . 1  0 1 6  / j .  e p r a c . 2 0 2 5 . 0 7 . 0 1 7
+9. Wharton S, Lau DCW, Vallis M, Sharma AM, Biertho L, Camp-
+bell-Scherer D, Adamo K, Alberga A, Bell R, Boulé N, Boyling E, 
+Brown J, Calam B, Clarke C, Crowshoe L, Divalentino D, Forhan 
+M, Freedhoff Y , Gagner M, Glazer S, Grand C, Green M, Hahn 
+M, Hawa R, Henderson R, Hong D, Hung P, Janssen I, Jacklin 
+K, Johnson-Stoklossa C, Kemp A, Kirk S, Kuk J, Langlois MF, 
+Lear S, McInnes A, Macklin D, Naji L, Manjoo P, Morin MP, 
+Nerenberg K, Patton I, Pedersen S, Pereira L, Piccinini-Vallis H, 
+Poddar M, Poirier P, Prud’homme D, Salas XR, Rueda-Clausen 
+C, Russell-Mayhew S, Shiau J, Sherifali D, Sievenpiper J, Socka-
+lingam S, Taylor V , Toth E, Twells L, Tytus R, Walji S, Walker L, 
+Wicklum S (2020) Obesity in adults: a clinical practice guideline. 
+CMAJ 192:E875-e891.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  5 0 3  / c m  a j . 1 9 1 7 0 7
+10. Busetto L, Dicker D, Frühbeck G, Halford JCG, Sbraccia P, 
+Yumuk V , Goossens GH (2024) A new framework for the diag -
+nosis, staging and management of obesity in adults. Nat Med 
+30:2395–2399.  h t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 3 8  / s 4  1 5 9 1 - 0 2 4 - 0 3 0 9 5 - 3
+11. Tsigos C, Hainer V , Basdevant A, Finer N, Fried M, Mathus-
+Vliegen E, Micic D, Maislos M, Roman G, Schutz Y , Toplak H, 
+Zahorska-Markiewicz B (2008) Management of obesity in adults: 
+European clinical practice guidelines. Obes Facts 1:106–116.  h t t p  
+s : /  / d o i  . o  r g /  1 0 . 1  1 5 9  / 0 0  0 1 2 6 8 2 2
+1 3
+Journal of Endocrinological Investigation
+(2022) Tirzepatide once weekly for the treatment of obesity. N 
+Engl J Med 387:205–216.  h t t p s :   /  / d o  i . o  r  g  /  1 0  . 1 0   5 6 /  N E J M o a 2 2 0 6 
+0 3 8
+Publisher’s note Springer Nature remains neutral with regard to juris-
+dictional claims in published maps and institutional affiliations.
+24. Jastreboff AM, le Roux CW, Stefanski A, Aronne LJ, Halpern B, 
+Wharton S, Wilding JPH, Perreault L, Zhang S, Battula R, Bunck 
+MC, Ahmad NN, Jouravskaya I (2025) Tirzepatide for obesity 
+treatment and diabetes prevention. N Engl J Med 392:958–971.  h 
+t t p  s : /  / d o i  . o  r g /  1 0 . 1  0 5 6  / N E  J M o a 2 4 1 0 8 1 9
+25. Jastreboff AM, Aronne LJ, Ahmad NN, Wharton S, Connery L, 
+Alves B, Kiyosue A, Zhang S, Liu B, Bunck MC, Stefanski A 
+Authors and Affiliations
+Naveed Sattar1 · Beverly G. Tchang2 · Royce P . Vincent3,4 · Hui Wang5 · Madhumita Murphy5 · Julia P . Dunn5 · 
+Georgios K. Dimitriadis5 · Julia Fraseur Brumm5
+  Julia Fraseur Brumm
+fraseur_julia@lilly.com
+Naveed Sattar
+Naveed.Sattar@glasgow.ac.uk
+Beverly G. Tchang
+bgt9001@med.cornell.edu
+Royce P. Vincent
+royce.vincent@nhs.net
+Hui Wang
+hwang@fcrinstitute.org
+Madhumita Murphy
+murphy_madhumita@lilly.com
+Julia P. Dunn
+dunn_julia@lilly.com
+Georgios K. Dimitriadis
+georgios.dimitriadis@lilly.com
+1 School of Cardiovascular and Metabolic Health, University 
+of Glasgow, Glasgow, UK
+2 Department of Medicine, Division of Endocrinology, 
+Diabetes and Metabolism, Comprehensive Weight Control 
+Center, Weill Cornell Medicine, New York, USA
+3 King’s College Hospital NHS Foundation Trust, London, UK
+4 Faculty of Life Sciences and Medicine, King’s College 
+London, London, UK
+5 Eli Lilly and Company, Indianapolis, IN, USA
+1 3

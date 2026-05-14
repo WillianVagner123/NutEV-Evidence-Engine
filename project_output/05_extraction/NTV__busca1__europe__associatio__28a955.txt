@@ -1,0 +1,568 @@
+REVIEW
+Association Between Body Composition and Risk 
+of Type 2 Diabetes Mellitus: A Systematic Review 
+and Meta-Analysis
+Xinrui Cao
+ , Guoli Shen
+ , Ting Sun
+Department of Nursing, The Second Affiliated Hospital of Zhejiang University School of Medicine, Hangzhou, People’s Republic of China
+Correspondence: Ting Sun, Department of Nursing, The Second Affiliated Hospital of Zhejiang University School of Medicine, Hangzhou, People’s 
+Republic of China, Email 1195037@zju.edu.cn
+Background: Although being overweight or obese is a significant risk factor for type 2 diabetes mellitus (T2DM), conventional 
+measures like body weight and body mass index have limitations in distinguishing between muscle and fat. Body composition metrics 
+have superior value in explaining metabolic heterogeneity.
+Objective: This study conducted the systematic review and meta-analysis to investigate the relationship between body composition 
+(fat/muscle-related indicators) and T2DM.
+Methods: We conducted a systematic search of eight databases to identify observational studies reporting the relationship between 
+body composition and T2DM up to July 31, 2025. To pool effect sizes, random/fixed-effects models were employed. Subgroup and 
+sensitivity analyses explored heterogeneity sources. Study quality was assessed via the Agency for Healthcare Research and Quality 
+and Newcastle-Ottawa Scale tools.
+Results: A total of 36 studies with 2,614,625 participants were included. Fat-related analyses demonstrated that leg fat mass reduces 
+T2DM risk (OR = 0.54 [0.46, 0.63], P < 0.0001), while body fat mass (OR = 2.36 [1.39, 4.02], P < 0.0001), trunk fat mass (OR = 1.35 
+[1.12, 1.62], P < 0.0001), visceral fat area (OR = 3.18 [1.28, 7.89], P < 0.0001), body fat percentage (OR = 1.67 [1.31, 2.14], P < 
+0.0001), and fat mass index (OR = 1.17 [1.08, 1.27], P < 0.0001) increase the risk. Muscle-related analyses indicated that lower 
+skeletal muscle mass index is a risk element for T2DM (OR = 1.46 [1.17, 1.82], P = 0.0007), while lean mass changes showed no 
+significant association.
+Conclusion: The results concluded that T2DM is associated with both abnormal fat/muscle mass and imbalanced fat distribution. Our 
+findings highlighted that based on the results of body composition assessment, we can identify high-risk populations and develop 
+personalized interventions to optimize T2DM prevention strategies.
+Keywords: type 2 diabetes mellitus, body composition, observational study, meta-analysis
+Introduction
+Overweight and obesity are characterized by excessive body fat accumulation.1 The number of people with overweight and 
+obesity globally has increased rapidly in recent years, and it is projected to exceed 50% by 2025.2 The rising trend has been 
+paralleled by a proportional increase in the incidence of type 2 diabetes mellitus (T2DM).3 In 2024, the 11th edition of the IDF 
+Diabetes Atlas reported that about 589 million adults worldwide were living with T2DM. By 2050, projections indicate that 
+this figure will rise to 853 million, with T2DM accounting for over 90% of all cases of diabetes.4 Diabetes-related healthcare 
+expenditures have surpassed one trillion dollars for the first time and continue to rise.5 Overweight and obesity, together with 
+genetic predisposition, unhealthy lifestyle behaviors (eg, physical inactivity and poor diet), and socioeconomic factors, are 
+well-established risk factors for T2DM, collectively contributing to the escalating global burden.6,7
+Weight management is essential to prevent and treat T2DM. A significant dose-response relationship has been 
+observed, with each 1% body weight reduction associated with a 2.74% increase in partial diabetic remission probability 
+and a 2.17% increase in complete diabetic remission probability.8 Although body mass index (BMI) and body weight are 
+Diabetes, Metabolic Syndrome and Obesity 2026:19 598731                                                   1
+© 2026 Cao et al. This work is published and licensed by Dove Medical Press Limited. The full terms of this license are available at https://www.dovepress.com/terms.php 
+and incorporate the Creative Commons Attribution – Non Commercial (unported, v4.0) License (http://creativecommons.org/licenses/by-nc/4.0/). By accessing the work 
+you hereby accept the Terms. Non-commercial uses of the work are permitted without any further permission from Dove Medical Press Limited, provided the work is properly attributed. For 
+permission for commercial use of this work, please see paragraphs 4.2 and 5 of our Terms (https://www.dovepress.com/terms.php).
+Diabetes, Metabolic Syndrome and Obesity                                       
+Open Access Full T ext Article
+https://doi.org/10.2147/DMSO.S598731
+Received: 25 January 2026
+Accepted: 6 April 2026
+Published: 20 April 2026
+Diabetes, Metabolic Syndrome and Obesity downloaded from https://www.dovepress.com/
+For personal use only.
+simple measures commonly used for obesity screening, they cannot distinguish between muscle and fat tissue. 9 
+Meanwhile, BMI can lead to the misclassification of obesity across populations with varying body compositions and 
+metabolic risks, and its application can give rise to the “obesity paradox” observed when assessing disease risk. 10
+This review focuses on body composition as a modifiable factor that can be directly targeted in clinical and public 
+health interventions, thereby offering actionable guidance for weight management and metabolic risk reduction. 
+Specifically, body composition indicators can be assessed through multiple technologies such as dual-energy X-ray 
+absorptiometry (DXA), bioelectrical impedance analysis (BIA), magnetic resonance imaging (MRI), computed tomo -
+graphy (CT), predictive equations, and the hydrodensitometry weighing method to allow for the capture of individual 
+variations in metabolic heterogeneity. This approach precisely identifies specific conditions like sarcopenic obesity, 
+avoiding biases associated with an excessive focus on weight loss alone. Multiple body composition metrics can reflect 
+body fat quality, fat percentage, fat distribution, and muscle composition in detail. 11
+Recently, a growing number of studies have noted the significance of body composition changes in the onset and 
+progression of T2DM. However, due to variations in indicators, measurement methods, and research conclusions, the 
+relationship between specific body composition indicators and T2DM remains unclear. To provide precise evidence for 
+weight management strategies for patients with T2DM, we intend to conduct a systematic review and meta-analysis to 
+thoroughly assess the influence of fat and muscle-related indicators measured by various methods on the risk of T2DM.
+Materials and Methods
+This systematic review and meta-analysis investigated the impact of body composition on the risk of T2DM in 
+accordance with the Cochrane Handbook for Systematic Reviews. Additionally, we followed the Preferred Reporting 
+Items for Systematic Reviews and Meta-Analyses (PRISMA) and the Meta-analysis of Observational Studies in 
+Epidemiology report guideline (MOOSE) while reporting this review, 12,13 (Supplementary Tables S1 and S2). We 
+registered it in PROSPERO (CRD420251080770).
+Literature Search
+We systematically searched the literature, including PubMed, Embase, Cochrane Library, Web of Science, Scopus, China 
+National Knowledge Infrastructure (CNKI), Wanfang Data Knowledge Service Platform, and China Science and 
+Technology Journal Database (VIP), from the establishment of the database to July 31, 2025. Search strategies for 
+each database combined subject headings with free-text terms: (“Diabetes Mellitus, Type 2”[Mesh] OR “Diabetes 
+Mellitus, Noninsulin Dependent”[Title/Abstract] OR “Diabetes Mellitus, Adult-Onset”[Title/Abstract]) AND (“Body 
+Composition”[Mesh] OR “body fat mass”[Title/Abstract] OR “trunk fat mass”[Title/Abstract] OR “leg fat mass”[Title/ 
+Abstract] OR “body fat percentage”[Title/Abstract] OR “visceral fat mass”[Title/Abstract] OR “skeletal muscle 
+mass”[Title/Abstract]). Supplementary Table S3 details the specific search strategy. To ensure comprehensiveness, we 
+manually identified potentially eligible studies by reviewing review articles in relevant fields and checking the references 
+lists of included literature.
+Study Selection
+After duplicates were removed, the literature screening process was conducted in two stages. First, two researchers (CXR 
+and SGL) individually scanned the title and abstract of each study against the inclusion criteria. Then, they read the entire 
+article in the remaining studies to judge whether they satisfied the criteria. The senior author (ST) was consulted to settle 
+any possible disputes. All of the above steps were performed in EndNote X9 software.
+Inclusion and Exclusion Criteria
+The inclusion criteria were based on the PICOS (Participants, Intervention, Comparability, Outcomes, Study Design) 
+framework recommended by the PRISMA guidelines: (1) Participants: patients with T2DM (age ≥ 18 years). (2) 
+Exposures: body composition indicators related to body fat and muscle mass measured using methods such as BIA, 
+DXA, CT, MRI, and predictive equations. (3) Outcomes: the prevalence or occurrence of T2DM. Additionally, we 
+included research that revealed hazard ratios (HR), relative risks (RR), or odds ratios (OR) adjusted for relevant 
+https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2026:19 2
+Cao et al                                                                                                                                                                             
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+confounding factors, along with 95% confidence intervals (CI). (4) Study design: observational studies, including cohort 
+studies, case-control studies, and cross-sectional studies.
+The exclusion criteria were as follows: (1) We did not include gestational diabetes patients and type 1 diabetes 
+mellitus individuals due to significant differences in the pathological mechanisms, and prediabetes was not included, as it 
+represented a reversible state of metabolic instability rather than a definitive disease endpoint. (2) publications in 
+languages other than English or Chinese; (3) literature of the following types: conference abstracts, clinical trials, 
+reviews, meta-analyses, and animal studies; (4) duplicated publications; (5) studies with incomplete data where multiple 
+attempts to contact the study authors were unsuccessful.
+When multiple articles involved the same cohort population, we selected the one with the most complete information. 
+For our study, we only used the most recently published data.
+Data Extraction
+Authors, publication year, location, design, sample size, number of T2DM cases, body composition measurement tools, 
+body composition indicators, adjustment factors, and OR/RR/HR values with 95% CI were extracted from each study by 
+two researchers (CXR and SGL) independently. Different opinions were handled by consulting the senior researcher 
+(ST). Additionally, we prioritized the effect estimates from the most fully adjusted model reported in each study.
+Quality Assessment
+The quality of the included cross-sectional studies was assessed based on the Agency for Healthcare Research and 
+Quality (AHRQ) criteria, consisting of 11 items. 14 For each of the 11 items, a study received 1 point if the criterion was 
+met, and 0 points otherwise. The studies were categorized into low level (0–3 points), medium level (4–7 points), and 
+high level (8–11 points) according to their scores. The quality of cohort studies was evaluated using the Newcastle- 
+Ottawa Scale (NOS).15 This evaluation was based on the selection of the exposed and unexposed cohorts, comparability, 
+and outcome. Ultimately, studies were categorized into three levels: low quality (1–3 stars), medium quality (4–6 stars), 
+and high quality (7–9 stars). Two researchers (CXR and SGL) conducted the quality assessments independently and 
+resolved any discrepancies by consulting the senior author (ST).
+Statistical Analysis
+A quantitative synthesis was performed when two or more independent studies reported the effect size of the same body 
+composition indicator. Given the generally low incidence of T2DM in the cohort studies included in this research, HRs 
+and RRs were treated as ORs during data merging.
+In this meta-analysis, we processed the effect sizes based on the variable types of the body composition indicators. 
+For continuous variables, we first extracted the effect size representing the risk per unit change. If a study reported the 
+effect size per standard deviation (SD) change, we converted this estimate to the effect size per unit change. For 
+categorical variables, we directly included the effect size if the indicator was dichotomized. When studies provided effect 
+sizes across three or more categories, we combined them into a single estimate. Subsequently, all effect sizes were first 
+converted to their logarithmic forms and standard errors, then weighted and pooled using the generic inverse variance 
+method. Finally, the effects of each study and the comprehensive results were visualized using a forest plot.
+Research heterogeneity was analyzed by the Cochrane Q test and the I 2 index. The fixed-effects model was applied 
+when I2 ≤ 50% and P ≥ 0.05, whereas the random-effects model was applied when I 2 > 50% and P < 0.05. For studies 
+providing subgroup data, we conducted the subgroup analysis (study type, body composition measurement method, 
+gender, and region) to identify possible heterogeneity. The sensitivity analysis was conducted by successively eliminating 
+individual studies to examine the impact of each study on the aggregate estimate.
+We evaluated publication bias by plotting a funnel plot when the meta-analysis included ≥ 10 studies. Egger’s test and 
+Begg’s test were employed to verify the funnel plot’s symmetry. Additionally, to address the potential impact of 
+publication bias on the overall effect size, the trim-and-fill technique was used.
+Diabetes, Metabolic Syndrome and Obesity 2026:19                                                                          https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                       3
+Cao et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+We used R 4.4.3 software (meta and metafor packages) for all statistical analyses. Statistical significance was defined 
+as P < 0.05. If the conditions for quantitative synthesis were not met, we proceeded with a descriptive analysis of the 
+research results.
+Results
+Study Selection
+Figure 1 displays the literature selection process and outcomes. This flow diagram shows the standard procedure from 
+database retrieval to the final inclusion of studies in the research. A total of 19,044 records were retrieved. There were 
+4,675 duplicate records among them. An initial screening was conducted by looking at the titles and abstracts and finding 
+684 appropriate records. After reviewing the full text, we removed 157 articles that failed to address body composition; 
+229 studies that did not include participants who met the criteria for T2DM; 141 articles that lacked the appropriate 
+statistical analysis and extracted data; 106 articles that were not observational studies; and 17 articles that were not 
+available in full text. Additionally, we conducted a manual search using the snowball method and identified four relevant 
+references, two of which did not examine the impact of body composition on T2DM. Ultimately, we included 36 articles 
+in the review.
+Information on Selected Studies
+Supplementary Table S4 presents comprehensive information on the included studies. Our review included 20 cohort 
+studies16–35 and 16 cross-sectional studies, 36–51 involving 2,614,625 participants. All studies were original research 
+published from 2003 to 2025. 21 publications were carried out in Asia (9 in Korea, 17,18,23,24,29,30,32,43,47 7 in 
+China,26,31,36,39,40,46,51 4 in Japan, 33,35,37,50 and 1 in Malaysia 48), 11 in North America (8 in the United 
+States,16,20,22,25,28,34,41,42 2 in Mexico, 45,49 and 1 in Canada 19), 3 in Europe (2 in the United Kingdom 27,44 and 1 in 
+Germany38), and 1 in Peru in South America. 21 All studies adjusted for covariates during regression analysis, with most 
+Figure 1 PRISMA flow diagram for the selection of included studies.
+https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2026:19 4
+Cao et al                                                                                                                                                                             
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+adjusting for baseline factors, lifestyle habits, blood biochemical indicators, and other chronic diseases. 19 studies used 
+BIA,16,17,20,21,23,24,26,27,29,30,32,38,40,45,46,48–51 6 studies used DXA, 28,33,34,42,43,47 2 studies were based on CT scans, 22,37 1 
+study was based on MRI, 39 7 studies were based on validated predictive equations, 18,25,31,35,36,41,44 and 1 study used the 
+hydrodensitometry weighing method for body composition measurement. 19 The diagnostic criteria for T2DM primarily 
+included random blood glucose, two-hour postprandial blood glucose, or two-hour post-oral glucose tolerance test results 
+≥ 11.1 mmol/L, fasting blood glucose ≥ 7.0 mmol/L, hemoglobin A1c (HbA1c) ≥ 6.5%, physician-diagnosed diabetes, 
+self-reported diagnosis of diabetes, and use of insulin or anti-diabetic medications.
+Study Quality Evaluation
+Supplementary Tables S5 and S6 display the evaluation outcomes of the selected publications. The quality of all 
+publications ranged from moderate (12/36)31–34,44–51 to high (24/36).16–30,35–43 No significant risk of bias was associated 
+with any of the studies. Consequently, the meta-analysis incorporated all 36 investigations.
+Results of Meta-Analysis
+Body Fat Percentage (BF%)
+BF% is defined as the proportion of body fat mass relative to total body mass. There were nine observational studies 
+(three cross-sectional studies and six cohort studies) with 308,815 participants. 19,24,26,29,31,35,44–46 According to the 
+random-effects model analysis, we found that the higher BF% was linked to higher odds of T2DM prevalence (OR = 
+1.67 [1.31, 2.14], P < 0.0001) ( Figure 2A ). Subgroup results from cohort studies further validated that high BF% 
+constituted a risk factor for T2DM (OR = 1.57 [1.20, 2.05], P < 0.0001) ( Supplementary Table S7 ). Other subgroup 
+analysis results were revealed in Supplementary Tables S8–S10, but these subgroups did not differ significantly from one 
+another. Sensitivity analysis validated the robustness of the outcomes (pooled OR range: 1.53–1.81) ( Supplementary 
+Figure S1a). After exclusion of Hong et al 2017, heterogeneity decreased to I 2 = 67.2%, and the pooled OR was 1.75 
+(95% CI: 1.42–2.14, P = 0.0004), identifying it as a major source of heterogeneity ( Supplementary Figure S1b). Funnel 
+plot symmetry tests along with Egger’s test (P = 0.0056) and Begg’s test (P = 0.0204) suggested possible publication bias 
+(Supplementary Figure S1c ). After adjusting for six additional studies using the trim-and-fill method, the effect size 
+weakened and lost statistical significance (OR = 1.26 [0.92, 1.71]), indicating that the influence of small-sample research 
+may have led to the initial results being exaggerated.
+According to random-effects model analysis, we found a dose-response relationship between BF% and T2DM (OR = 
+1.10 [1.08, 1.12], P < 0.0001) ( Figure 2B ).16,20,21,25,31,35,38 The subgroup results from cohort studies indicated that 
+T2DM risk increased by 10% for each unit rise in BF% (OR = 1.10 [1.07, 1.13], P < 0.0001) (Supplementary Table S7). 
+Subgroup analysis also demonstrated that body composition measurement methods were the primary source of hetero -
+geneity (P = 0.0007) (Supplementary Table S8). Studies using the BIA method showed lower heterogeneity (OR = 1.07 
+[1.06, 1.09], I 2 = 41.6%, Pheterogeneity = 0.1278), while the predictive equation method showed significant heterogeneity 
+(OR = 1.13 [1.10, 1.16], I 2 = 80.3%, Pheterogeneity = 0.0001). Regional differences also represented a potential source of 
+heterogeneity: Europe subgroup results were most consistent (I 2 = 30.4%), while North America exhibited extremely 
+high heterogeneity (I 2 = 95.3%) ( Supplementary Table S10). There were no significant differences between the gender 
+subgroups ( Supplementary Table S9 ). Sensitivity analysis validated the robustness of the results (pooled OR range: 
+1.09–1.10) ( Supplementary Figure S2a ). The funnel plot symmetry tests and the Egger’s test ( P = 0.0039) suggested 
+possible publication bias ( Supplementary Figure S2b ). After imputing six additional studies using the trim-and-fill 
+method, the adjusted effect size increased to OR = 1.14 (95% CI: 1.11–1.17), indicating that the original analysis may 
+have slightly underestimated the effect due to the excluded studies with partially positive results.
+Body Fat Mass (BFM)
+BFM is defined as the absolute weight of adipose tissue in the human body. There were three cohort studies with 113,251 
+participants.25,31,35 Random-effects model analysis indicated that the higher the BFM, the higher the incidence of T2DM 
+(OR = 2.36 [1.39, 4.02], P < 0.0001) (Figure 3A). There was no significant difference between the gender subgroups (P > 
+0.05) ( Supplementary Table S9 ). Sensitivity analysis found Tang et al 2024 (M) as the key source of heterogeneity 
+Diabetes, Metabolic Syndrome and Obesity 2026:19                                                                          https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                       5
+Cao et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+(Supplementary Figure S3a ). After exclusion, the results showed OR = 2.90 (95% CI: 1.84–4.56, I 2 = 57.1%, and 
+Pheterogeneity = 0.0534) ( Supplementary Figure S3b ).
+Meta-analysis results indicated that each kilogram (kg) increment in BFM was positively correlated with the risk of 
+T2DM (OR = 1.04 [1.02, 1.07], P < 0.0001) ( Figure 3B ).25,31,35,38,43,49 The subgroup results from cohort studies 
+Figure 2 The association between body fat percentage (BF%) and T2DM. ( A) Qhigh vs Qlow. (B) For every increase of 1 unit. The pooled effect estimates, represented by 
+the diamond, are displayed in bold.
+https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2026:19 6
+Cao et al                                                                                                                                                                             
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+indicated that the probability of T2DM rose by 6% for an additional 1 kg in BFM (OR = 1.06 [1.03, 1.09], P < 0.0001) 
+(Supplementary Table S7). Subgroup analysis revealed that body composition measurement method and region were the 
+primary sources of heterogeneity ( P < 0.0001) (Supplementary Tables S8 and S10). Subgroup analysis by gender failed 
+to explain heterogeneity ( Supplementary Table S9 ). Sensitivity analysis results validated the robustness of findings 
+(pooled OR range: 1.04–1.05) ( Supplementary Figure S4a ).
+Trunk Fat Mass (TFM)
+TFM refers to the sum of subcutaneous fat and visceral fat within the trunk region, including the chest, abdomen, and 
+back. There were two cross-sectional studies with 14,510 participants. 43,47 The random-effects model showed that an 
+additional 1 kg in trunk fat mass correlated with higher probabilities of T2DM prevalence (OR = 1.35 [1.12, 1.62], P < 
+0.0001) (Figure 4). Subgroup analysis by gender indicated no significant difference in effect size ( Supplementary Table 
+S9). Excluding Chi et al 2019 (W) reduced heterogeneity to 69.4%, and the pooled OR = 1.23 (95% CI: 1.10–1.39, P = 
+0.0383), suggesting it may be the primary source of heterogeneity ( Supplementary Figure S5a and b).
+Figure 3 The association between body fat mass (BFM) and T2DM. (A) Qhigh vs Qlow. (B) For every increase of 1 unit. The pooled effect estimates, represented by the 
+diamond, are displayed in bold.
+Diabetes, Metabolic Syndrome and Obesity 2026:19                                                                          https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                       7
+Cao et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Leg Fat Mass (LFM)
+LFM refers to the absolute fat weight in both lower limbs. There were two cross-sectional studies with 14,510 participants.43,47 
+The random-effects model showed that an additional 1 kg in leg fat mass correlated with significantly lower probabilities of 
+T2DM prevalence (OR = 0.54 [0.46, 0.63], P < 0.0001) (Figure 5). Sensitivity analysis and subgroup analysis results were 
+presented in Supplementary Figure S6a and Table S9. Excluding Chi et al 2019 (M) reduced heterogeneity to 73.2%, with the 
+pooled OR = 0.50 (95% CI: 0.44–0.57, P = 0.0241) (Supplementary Figure S6b). However, heterogeneity remained high and 
+needed further study.
+Fat Mass Index (FMI)
+FMI is defined as the ratio of fat mass to the square of height, which eliminates the influence of height on fat quantity. 
+There were four observational studies (three cohort studies and one cross-sectional study) with 1,731,984 
+participants.18,25,32,41 According to the random-effects model, the pooled OR was 1.17 (95% CI: 1.08–1.27, P < 
+0.0001) (Figure 6). The results from cohort studies further validated that each unit increment of FMI was linked to an 
+18% increase in the risk of T2DM (OR = 1.18 [1.08, 1.30], P < 0.0001), and subgroup analysis results were presented in 
+Supplementary Tables S7 –S10. Sensitivity analysis validated the stability of the results (pooled OR range: 1.13–1.19) 
+(Supplementary Figure S7a ), but the heterogeneity of its effect size should be interpreted with caution.
+Visceral Fat Area (VFA)
+VFA is defined as the cross-sectional area of visceral fat tissue measured in a specific abdominal cross-sectional image. It 
+specifically refers to fat located around the visceral organs within the abdominal cavity. There were two observational 
+studies (one cross-sectional study and one cohort study) involving 12,789 participants. 17,37 The random-effects model 
+analysis revealed that higher VFA was linked to increased odds of T2DM (OR = 3.18 [1.28, 7.89], P < 0.0001) 
+(Figure 7). Subgroup analysis by gender failed to resolve heterogeneity ( Supplementary Table S9). Sensitivity analysis 
+found Kim et al 2022 (W) as the primary source of heterogeneity ( Supplementary Figure S8a ). After removing this 
+Figure 4 The association between trunk fat mass (TFM) (for every increase of 1 unit) and T2DM. The pooled effect estimates, represented by the diamond, are displayed in 
+bold.
+Figure 5 The association between leg fat mass (LFM) (for every increase of 1 unit) and T2DM. The pooled effect estimates, represented by the diamond, are displayed in 
+bold.
+https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2026:19 8
+Cao et al                                                                                                                                                                             
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+outlier, heterogeneity significantly decreased (I2 = 35.3%), with the pooled OR = 1.99 (95% CI: 1.49–2.64, P = 0.2132) 
+(Supplementary Figure S8b ).
+The meta-analysis results suggested that the dose-response association between VFA and T2DM was not significant 
+and required further investigation ( Supplementary Figures S9a –c and Table S9).39,40,46,50
+Lean Mass (LM)
+LM refers to the weight remaining after subtracting fat mass from total body weight. We also analyzed the impact of LM on 
+T2DM incidence. The outcomes indicated that statistical significance remained unclear. The dose-response relationship between 
+LM and T2DM required additional research to confirm (Supplementary Table S7, S9 and S10, and Figure S10a and b).31,34,35,49
+Skeletal Muscle Mass Index (SMI)
+SMI is defined as the percentage of skeletal muscle mass relative to total body mass. This systematic review examined 
+the association between SMI and T2DM, incorporating two cohort studies and one cross-sectional study with 248,751 
+participants.29,30,36 According to the random-effects model, the pooled OR was 1.46 (95% CI: 1.17–1.82, P = 0.0007) 
+(Figure 8A ). The subgroup results from cohort studies further validated that low SMI was a significant predictor of 
+T2DM (OR = 1.56 [1.18, 2.06], P = 0.0005) ( Supplementary Table S7). Sensitivity analysis revealed that heterogeneity 
+significantly decreased to an acceptable level after excluding the Hong et al 2017 (W) study (I 2 = 48.1%, Pheterogeneity = 
+0.1456), and the effect size remained robust (OR = 1.26 [1.17, 1.36], P = 0.1456) ( Supplementary Figure S11a and b).
+According to two cohort studies, the random-effects model showed that the probability of T2DM rose by 8% for each 
+unit decrease in SMI (OR = 1.08 [1.04, 1.11], P < 0.0001) (Figure 8B).29,30 Sensitivity analysis revealed that excluding 
+Hong et al 2017 (M) significantly reduced heterogeneity (I 2 = 65.1%, Pheterogeneity = 0.0903), while the effect size 
+remained stable (OR = 1.06 [1.04, 1.08], P = 0.0903) ( Supplementary Figure S12a and b).
+Figure 6 The association between fat mass index (FMI) (for every increase of 1 unit) and T2DM. The pooled effect estimates, represented by the diamond, are displayed in 
+bold.
+Figure 7 The association between visceral fat area (VFA) (Q high vs Qlow) and T2DM. The pooled effect estimates, represented by the diamond, are displayed in bold.
+Diabetes, Metabolic Syndrome and Obesity 2026:19                                                                          https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                       9
+Cao et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Descriptive Systematic Review
+Eight studies have also shown the correlation between body composition and T2DM. However, due to heterogeneity in 
+indicator measurement methods, unit conversions, and statistical models, meta-analysis was not feasible. Kim et al 
+confirmed that appendicular skeletal muscle mass index (ASMMI) and lean body mass index (LBMI) had a protective 
+effect against T2DM, while body fat mass index (BFMI) increased T2DM risk. 18 Higher fat-to-muscle mass ratio 
+increased the incidence of T2DM. 27 Increased trunk fat percentage was linked to higher T2DM risk, while increased leg 
+fat percentage showed a protective effect. 33 Son et al indicated that for each unit decrease in muscle mass index, T2DM 
+risk increased by 35%. 23 Phase angle (PhA) exhibited a significant dose-response protective effect in men, but the 
+relationship was not statistically significant for women.48 Both studies indicated that higher visceral adipose tissue (V AT) 
+was associated with increased T2DM risk, but since Granados et al did not provide standard deviation data, standardized 
+effect size conversion could not be performed. 22,38 Overall, the evidence supported that muscle mass, regional fat 
+distribution, and fat-muscle interaction indicators might have important clinical predictive value.
+Discussion
+This study focused on a comprehensive assessment of regional fat distribution (such as trunk fat, leg fat, and visceral fat), 
+aiming to address gaps in the existing evidence. Fat-related indicators (BF%, BFM, TFM, FMI, and VFA) were all 
+positively correlated with T2DM risk, but increased leg fat mass significantly decreased the risk. Previous large-scale 
+studies also confirmed that higher BF% or VFA increased T2DM risk, consistent with our findings. 52,53 Muscle-related 
+analyses showed that low SMI is an independent predictor of T2DM, while LM has no significant association. Tang et al 
+discovered a U-shaped relationship between LM and T2DM. 35 The heterogeneity in findings stems mainly from 
+differences in sample characteristics and analytical approaches. Moreover, many studies overlooked the critical con -
+founding effect of the interaction between adiposity and lean mass, thereby compromising the validity of their results.
+Anatomical differences in fat distribution sites can produce opposing metabolic effects. Visceral fat directly interferes 
+with insulin signaling and reduces adiponectin secretion by releasing pro-inflammatory cytokines such as tumor necrosis 
+factor-α (TNF-α) and interleukin-6 (IL-6), ultimately inducing insulin resistance. 40,54,55 In contrast, subcutaneous fat in 
+the legs, due to its reduced lipolysis rate and strong free fatty acid storage capacity, can reduce ectopic lipid deposition 
+and maintain lower inflammation levels, thereby improving metabolic homeostasis.56,57 As the primary insulin-dependent 
+Figure 8 The association between skeletal muscle mass index (SMI) and T2DM. ( A) Q low vs Q high. ( B) For every decrease of 1 unit. The pooled effect estimates, 
+represented by the diamond, are displayed in bold.
+https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2026:19 10
+Cao et al                                                                                                                                                                             
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+organ for glucose uptake (accounting for 80–90% of postprandial glucose disposal), skeletal muscle directly weakens 
+glucose storage capacity when its mass decreases. 55 Additionally, dysregulation of myokines (such as irisin and IL-6) 
+may further exacerbate insulin resistance by regulating lipolysis and inflammatory responses. 58–60
+The NOS/AHRQ criteria were used to evaluate the quality of selected studies, and the results indicated moderate to 
+high quality. Notably, to clarify the relationship between T2DM and body composition, we performed the study-type 
+subgroup analysis to distinguish between cross-sectional and cohort studies, with a particular focus on the results 
+obtained from the cohort study subgroup. However, this study observed significant heterogeneity across most body 
+composition metrics. There are many ways to measure body composition; therefore, caution is warranted when 
+comparing results obtained from different measurement methods. Imaging methods (DXA, MRI, and CT) provide 
+precise tissue distribution data with minimal error, leading to stable estimates and narrow confidence intervals. 61 
+Although BIA is convenient and widely used, its results are susceptible to hydration and device-specific factors, 
+which introduce variability.62 Prediction equations based on variables like age and BMI are population-specific; applying 
+them to other cohorts may reduce their validity. 11 This methodological variability likely accounts for the higher 
+heterogeneity, inflated effect sizes, and wider confidence intervals associated with prediction equations.
+Additionally, differences in statistical models may constitute a source of internal heterogeneity. All included studies 
+controlled for age, and most studies also adjusted for consistent core confounders, such as BMI, sex, and key clinical 
+biomarkers (including lipid profile and blood pressure). Notably, most studies additionally adjusted for genetic suscept -
+ibility (family history of diabetes), socioeconomic factors (educational attainment, income level), and lifestyle factors 
+(smoking, alcohol intake, dietary habits, and physical activity patterns). Subgroup analysis results further suggested that 
+demographic factors such as gender and region contributed to inconsistencies in baseline body composition character -
+istics and threshold definitions. The observed heterogeneity across different populations can be partially attributed to 
+interactions between environmental exposures and genetic background. For example, dietary patterns characterized by 
+high salt and carbohydrate intake, as well as substantial meat consumption, are prevalent in many Asian populations. 
+Consequently, compared to Africans and Europeans with the same BMI levels, Asians typically exhibit lower muscle 
+mass and a more pronounced central obesity pattern, making them more susceptible to T2DM. 63 Moreover, genetic 
+variations, including differences in adipokine regulation or muscle fiber composition, may further modulate these 
+associations. From a clinical perspective, although genetic susceptibility and environmental determinants cannot be 
+directly altered at the individual level, body composition provides evidence for directly implementable interventions to 
+reduce the risk of T2DM.
+The findings of our study suggest that healthcare professionals should routinely measure body composition in clinical 
+practice to assess metabolic status. In terms of nutritional intervention, different body composition outcomes require 
+various energy intakes and dietary patterns. 64,65 For exercise plans, aerobic training aids in fat loss, while resistance 
+training promotes muscle gain. 66,67 Furthermore, for individuals at high risk of diabetes (such as those with a family 
+history of the disease or unhealthy lifestyle habits), implementing precise assessments and personalized interventions 
+aimed at reducing fat and increasing muscle mass can help reduce the future burden of T2DM. 10,68 Future studies should 
+conduct multicenter, prospective, large-scale cohort studies incorporating longitudinal body composition tracking data 
+and fully accounting for the interactions between muscle and fat to further elucidate the influence of body composition on 
+T2DM development. Furthermore, standardized methodologies for assessing body composition should be instituted, 
+cross-technology measurement protocols should be formulated, and a consensus on threshold values for these indicators 
+must be achieved.
+Nonetheless, this study has specific limitations. First, 16 cross-sectional surveys were included, which cannot 
+establish a causal relationship between body composition and T2DM. Second, due to resource constraints, this study 
+only included English and Chinese literature, potentially overlooking regional evidence and introducing a risk of 
+selection bias. Third, the majority of the included studies were conducted in Asia. The generalizability of these 
+conclusions to other ethnic populations requires further validation. Additionally, the results of the publication bias 
+test suggested the potential publication bias. Finally, all studies were observational and thus susceptible to 
+confounding.
+Diabetes, Metabolic Syndrome and Obesity 2026:19                                                                          https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                      11
+Cao et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Conclusions
+Our study demonstrated a suggestive correlation between abnormal body composition and T2DM risk. While leg fat 
+mass had a protective effect, the increased visceral fat area and trunk fat mass greatly raised T2DM risk. Additionally, the 
+loss of muscle mass was an independent risk factor. Although genetic and environmental factors also influence T2DM 
+development, body composition represents a modifiable and clinically actionable determinant. Focusing on fat and 
+muscle distribution allows for targeted interventions that can be implemented directly to reduce risk, providing practical 
+guidance beyond non-modifiable or long-term environmental influences. By monitoring and analyzing body composition, 
+patients can be provided with personalized weight management intervention plans to reduce the incidence of T2DM.
+Data Sharing Statement
+Data sharing is not applicable to this article as no new data were created or analyzed in this study.
+Author Contributions
+Xinrui Cao: Conceptualization, Formal analysis, Data curation, Investigation, Visualization, Writing-original draft, 
+Writing-review & editing. Guoli Shen: Investigation, Data curation, Validation, Writing-review & editing. Ting Sun: 
+Conceptualization, Funding acquisition, Project administration, Supervision, Writing-review & editing. All authors gave 
+final approval of the version to be published; have agreed on the journal to which the article has been submitted; and 
+agree to be accountable for all aspects of the work.
+Funding
+This study was supported by the Key Project of the Co-construction Program of Zhejiang Provincial Administration of 
+Traditional Chinese Medicine. (Grant number: GZY-ZJ-KJ-23077).
+Disclosure
+The authors declared no conflict of interest.
+References
+1. World Health Organization. Obesity and overweight. Available from: https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight. 
+Accessed January 2, 2026.
+2. Ng M, Gakidou E, Lo J, et al. Global, regional, and national prevalence of adult overweight and obesity, 1990–2021, with forecasts to 2050: 
+a forecasting study for the Global Burden of Disease Study 2021. Lancet. 2025;405(10481):813–838. doi:10.1016/s0140-6736(25)00355-1
+3. Klein S, Gastaldelli A, Yki-Järvinen H, Scherer PE. Why Does Obesity Cause Diabetes? Cell Metab . 2022;34(1):11–20. doi:10.1016/j. 
+cmet.2021.12.012
+4. Magliano DJ, Boyko EJ. IDF Diabetes Atlas . 11th edn ed. Brussels, Belgium: International Diabetes Federation; 2025.
+5. The Lancet. Diabetes: a defining disease of the 21st century. Lancet. 2023;401(10394):2087. doi:10.1016/s0140-6736(23)01296-5
+6. Gong JY , Sajjadi SF, Motala AA, Shaw JE, Magliano DJ. Variation in type 2 diabetes prevalence across different populations: the key drivers. 
+Diabetologia. 2025;68(11):2327–2339. doi:10.1007/s00125-025-06478-4
+7. Ercegović V , Džimbeg M, Gelemanović A. Genetic Susceptibility of Type 2 Diabetes and Metabolic Syndrome. Diabetology. 2025;6(2). 
+doi:10.3390/diabetology6020011
+8. Kanbour S, Ageeb RA, Malik RA, Abu-Raddad LJ. Impact of bodyweight loss on type 2 diabetes remission: a systematic review and 
+meta-regression analysis of randomised controlled trials. Lancet Diabetes Endocrinol . 2025;13(4):294–306. doi:10.1016/s2213-8587(24)00346-2
+9. Lingvay I, Cohen RV , Roux CWL, Sumithran P. Obesity in adults. Lancet. 2024;404(10456):972–987. doi:10.1016/s0140-6736(24)01210-8
+10. American Diabetes Association Professional Practice CommitteeElSayed NA, McCoy RG, Aleppo G, et al. 8. Obesity and Weight Management for 
+the Prevention and Treatment of Type 2 Diabetes: standards of Care in Diabetes–2025. Diabetes Care . 2025;48(Supplement_1):S167–S180. 
+doi:10.2337/dc25-S008
+11. Sneed NM, Morrison SA. Body Composition Methods in Adults with Type 2 Diabetes or at Risk for T2D: a Clinical Review. Curr Diab Rep . 
+2021;21(5):14. doi:10.1007/s11892-021-01381-9
+12. Page MJ, McKenzie JE, Bossuyt PM, et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ. 2021:372: 
+n71. doi:10.1136/bmj.n71
+13. Brooke BS, Schwartz TA, Pawlik TM. MOOSE Reporting Guidelines for Meta-analyses of Observational Studies. JAMA Surg . 2021;156 
+(8):787–788. doi:10.1001/jamasurg.2021.0522
+14. Rostom A, Dubé C, Cranney A, et al. Celiac Disease. Rockville (MD): Agency for Healthcare Research and Quality (US); 2004.
+15. Stang A. Critical evaluation of the Newcastle-Ottawa scale for the assessment of the quality of nonrandomized studies in meta-analyses. Eur 
+J Epidemiol. 2010;25(9):603–605. doi:10.1007/s10654-010-9491-z
+https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2026:19 12
+Cao et al                                                                                                                                                                             
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+16. Ley SH, Harris SB, Mamakeesick M, et al. Metabolic syndrome and its components as predictors of incident type 2 diabetes mellitus in an 
+Aboriginal community. CMAJ. 2009;180(6):617–624. doi:10.1503/cmaj.080972
+17. Kim EH, Kim HK, Lee MJ, et al. Sex Differences of Visceral Fat Area and Visceral-to-Subcutaneous Fat Ratio for the Risk of Incident Type 2 
+Diabetes Mellitus. Diabetes Metab J . 2022;46(3):486–498. doi:10.4093/dmj.2021.0095
+18. Kim HJ, Lee HW, Kang MK, Leem GH, Kim MH, Song TJ. Association of Body Composition Changes with the Development of Diabetes 
+Mellitus: a Nation-Wide Population Study. Diabetes Metab J . 2024;48(6):1093–1104. doi:10.4093/dmj.2023.0243
+19. Chul LD, Sui X, Church TS, Lee IM, Blair SN. Associations of Cardiorespiratory Fitness and Obesity With Risks of Impaired Fasting Glucose and 
+Type 2 Diabetes in Men. Diabetes Care. 2009;32(2):257–262. doi:10.2337/dc08-1377
+20. Tulloch-Reid MK, Williams DE, Looker HC, Hanson RL, Knowler WC. Do Measures of Body Fat Distribution Provide Information on the Risk of 
+Type 2 Diabetes in Addition to Measures of General Obesity? Diabetes Care. 2003;26(9):2556–2561. doi:10.2337/diacare.26.9.2556
+21. Zafra-Tanaka JH, Miranda JJ, Gilman RH, Checkley W, Smeeth L, Bernabe-Ortiz A. Obesity markers for the prediction of incident type 2 diabetes 
+mellitus in resource-poor settings: the CRONICAS Cohort Study. Diabetes Res Clin Pract . 2020;170:108494. doi:10.1016/j.diabres.2020.108494
+22. Granados A, Gebremariam A, Gidding SS, et al. Association of Abdominal Muscle Composition with Prediabetes and Diabetes: the CARDIA 
+Study. Diabetes Obesity Metab . 2018;21(2):267. doi:10.1111/dom.13513
+23. Son JW, Lee SS, Kim SR, et al. Low muscle mass and risk of type 2 diabetes in middle-aged and older adults: findings from the KoGES. 
+Diabetologia. 2017;60(5):865–872. doi:10.1007/s00125-016-4196-9
+24. Park SK, Ryoo JH, Oh CM, Choi JM, Jung JY . Longitudinally evaluated the relationship between body fat percentage and the risk for type 2 
+diabetes mellitus: korean Genome and Epidemiology Study (KoGES). Eur J Endocrinol . 2018;178(5):513–521. doi:10.1530/EJE-17-0868
+25. Lee DH, Keum N, Hu FB, et al. Comparison of the association of predicted fat mass, body mass index, and other obesity indicators with type 2 
+diabetes risk: two large prospective studies in US men and women. Eur J Epidemiol . 2018;33(11):1113–1123. doi:10.1007/s10654-018-0433-5
+26. Zhang S, Jiang H, Wang L, et al. Longitudinal relationship between body fat percentage and risk of type 2 diabetes in Chinese adults: evidence from 
+the China Health and Nutrition Survey. Front Public Health. 2022;10:1032130. doi:10.3389/fpubh.2022.1032130
+27. Wang N, Sun Y , Zhang H, et al. Total and regional fat-to-muscle mass ratio measured by bioelectrical impedance and risk of incident type 2 
+diabetes. J Cachexia Sarcopenia Muscle . 2021;12(6):2154–2162. doi:10.1002/jcsm.12822
+28. Haines MS, Leong A, Porneala BC, et al. More appendicular lean mass relative to body mass index is associated with lower incident diabetes in 
+middle-aged adults in the CARDIA study. Nutr Metab Cardiovasc Dis . 2023;33(1):105–111. doi:10.1016/j.numecd.2022.09.017
+29. Hong S, Chang Y , Jung HS, Yun KE, Shin H, Ryu S. Relative muscle mass and the risk of incident type 2 diabetes: a cohort study. PLoS One. 
+2017;12(11):e0188650. doi:10.1371/journal.pone.0188650
+30. Jun JE, Lee SE, Lee YB, et al. Low Skeletal Muscle Mass Accompanied by Abdominal Obesity Additively Increases the Risk of Incident Type 2 
+Diabetes. J Clin Endocrinol Metab . 2023;108(5):1173–1180. doi:10.1210/clinem/dgac662
+31. Liu L, Ban C, Jia S, Chen X, He S. Association of predicted fat mass, predicted lean mass and predicted percent fat with diabetes mellitus in 
+Chinese population: a 15-year prospective cohort. BMJ Open. 2022;12(6):e058162. doi:10.1136/bmjopen-2021-058162
+32. Kim HK, Lee MJ, Kim EH, et al. Longitudinal Changes of Body Composition Phenotypes and Their Association with Incident Type 2 Diabetes 
+Mellitus during a 5-Year Follow-up in Koreans. Diabetes Metab J . 2019;43(5):627–639. doi:10.4093/dmj.2018.0141
+33. Tatsukawa Y , Misumi M, Kim YM, et al. Body composition and development of diabetes: a 15-year follow-up study in a Japanese population. Eur 
+J Clin Nutr. 2018;72(3):374–380. doi:10.1038/s41430-017-0077-7
+34. Larsen BA, Wassel CL, Kritchevsky SB, et al. Association of Muscle Mass, Area, and Strength With Incident Diabetes in Older Adults: the Health 
+ABC Study. J Clin Endocrinol Metab . 2016;101(4):1847–1855. doi:10.1210/jc.2015-3643
+35. Tang J, Cai X, Liu A, Yu N, Wang S. Association between predicted fat mass, predicted lean mass, predicted percent fat and type 2 diabetes 
+mellitus in Japanese adults: a retrospective study. BMC Endocr Disord . 2024;24:48. doi:10.1186/s12902-024-01579-4
+36. He YY , Jin ML, Chang J, Fang XY , He KL, Wang XJ. The relationship between muscle mass, muscle strength and diabetes in middle-aged and 
+elderly Chinese community residents. Chin J Mult Organ Dis Elderly . 2023;22(8):561–566. doi:10.11915/j.issn.1671-5403.2023.08.118
+37. Yokokawa H, Fukuda H, Saita M, et al. An association between visceral or subcutaneous fat accumulation and diabetes mellitus among Japanese 
+subjects. Diabetol Metab Syndr. 2021;13:44. doi:10.1186/s13098-021-00646-3
+38. Bibi S, Naeem M, Schipf S, et al. Body composition markers are more strongly associated with type 2 diabetes than inflammatory markers— 
+Results from the study of health in Pomerania. Eur J Clin Invest . 2025;55(4):e70005. doi:10.1111/eci.70005
+39. An Q, Zhang QH, Wang Y , et al. Association between type 2 diabetes mellitus and body composition based on MRI fat fraction mapping. Front 
+Public Health. 2024;12:1332346. doi:10.3389/fpubh.2024.1332346
+40. Lv X, Zhou W, Sun J, et al. Visceral adiposity is significantly associated with type 2 diabetes in middle-aged and elderly Chinese women: a 
+cross-sectional study. J Diabet. 2017;9(10):920–928. doi:10.1111/1753-0407.12499
+41. Liu D, Lei YL, Zhang L, et al. Associations of the fat-free mass index and the fat mass index with the risk of developing diabetes and prediabetes in 
+US adults: a nationally representative cross-sectional study. Lipids Health Dis . 2024;23(1):383. doi:10.1186/s12944-024-02370-z
+42. Haines MS, Leong A, Porneala BC, Meigs JB, Miller KK. Association between muscle mass and diabetes prevalence independent of body fat 
+distribution in adults under 50 years old. Nutr Diabetes. 2022;12(1):29. doi:10.1038/s41387-022-00204-4
+43. Chi JH, Shin MS, Lee BJ. Association of type 2 diabetes with anthropometrics, bone mineral density, and body composition in a large-scale 
+screening study of Korean adults. PLoS One. 2019;14(7):e0220077. doi:10.1371/journal.pone.0220077
+44. Han TS, Al-Gindan YY , Govan L, Hankey CR, Lean MEJ. Associations of BMI, waist circumference, body fat, and skeletal muscle with type 2 
+diabetes in adults. Acta Diabetol. 2019;56(8):947–954. doi:10.1007/s00592-019-01328-3
+45. Escobedo-de la Peña J, Fernández-Ramos MT, Ramírez-Hernández JA, González-Figueroa E, Champagne B. Body Fat Percentage Rather than 
+Body Mass Index Related to the High Occurrence of Type 2 Diabetes. Archiv Med Res. 2020;51(6):564–571. doi:10.1016/j.arcmed.2020.05.010
+46. Chen Y , He D, Yang T, et al. Relationship between body composition indicators and risk of type 2 diabetes mellitus in Chinese adults. BMC Public 
+Health. 2020;20(1):452. doi:10.1186/s12889-020-08552-5
+47. Choi SI, Chung D, Lim JS, et al. Relationship between Regional Body Fat Distribution and Diabetes Mellitus: 2008 to 2010 Korean National 
+Health and Nutrition Examination Surveys. Diabetes Metab J . 2017;41(1):51–59. doi:10.4093/dmj.2017.41.1.51
+48. Mat S, Tan MP, Mohktar MS, Kamaruzzaman SB, Ibrahim F. Phase angle and diabetes in community-dwelling older adults: cross-sectional analysis 
+from the Malaysian elders longitudinal research (MELoR) study. Eur J Clin Nutr . 2022;76(5):680–684. doi:10.1038/s41430-021-01020-2
+Diabetes, Metabolic Syndrome and Obesity 2026:19                                                                          https://doi.org/10.2147/DMSO.S598731                                                                                                                                                                                                                                                                                                                                                                                                      13
+Cao et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+49. Gamboa-Gómez CI, Simental-Mendía LE, Rodríguez-Morán M, Guerrero-Romero F. The fat-to-lean mass ratio, a novel anthropometric index, is 
+associated to glucose metabolic disorders. Eur J Internal Med . 2019;63:74–78. doi:10.1016/j.ejim.2019.03.017
+50. Chiba I, Lee S, Bae S, Makino K, Shinkai Y , Shimada H. Visceral fat accumulation is associated with risk of diabetes in community-dwelling 
+Japanese older adults. Geriatrics Gerontol Int . 2021;21(3):306–312. doi:10.1111/ggi.14131
+51. Cheng J, Wang X, Gan S, et al. Association of Appendicular Skeletal Muscle to Trunk Fat Ratio with Type 2 Diabetes Mellitus in Older Adults. 
+Gerontology. 2021;68(2):192–199. doi:10.1159/000516076
+52. Jayedi A, Soltani S, Motlagh SZ, et al. Anthropometric and adiposity indicators and risk of type 2 diabetes: systematic review and dose-response 
+meta-analysis of cohort studies. BMJ. 2022;376:e067516. doi:10.1136/bmj-2021-067516
+53. Gupta P, Lanca C, Gan ATL, et al. The Association between Body Composition using Dual energy X-ray Absorptiometry and Type-2 Diabetes: 
+a Systematic Review and Meta-Analysis of Observational studies. Sci Rep. 2019;9(1):12634. doi:10.1038/s41598-019-49162-5
+54. Wang Q, Zheng D, Liu J, Fang L, Li Q. Skeletal muscle mass to visceral fat area ratio is an important determinant associated with type 2 diabetes 
+and metabolic syndrome. Diabetes Metab Syndr Obes . 2019;12:1399–1407. doi:10.2147/DMSO.S211529
+55. Merz KE, Thurmond DC. Role of Skeletal Muscle in Insulin Resistance and Glucose Uptake. Compr Physiol. 2020;10(3):785–809. doi:10.1002/ 
+cphy.c190029
+56. Alser M, Naja K, Elrayess MA. Mechanisms of body fat distribution and gluteal-femoral fat protection against metabolic disorders. Front Nutr. 
+2024;11:1368966. doi:10.3389/fnut.2024.1368966
+57. Goodpaster BH, Thaete FL, Kelley DE. Thigh adipose tissue distribution is associated with insulin resistance in obesity and in type 2 diabetes 
+mellitus. The American Journal of Clinical Nutrition . 2000;71(4):885–892. doi:10.1093/ajcn/71.4.885
+58. Pedersen BK, Febbraio MA. Muscles, exercise and obesity: skeletal muscle as a secretory organ. Nat Rev Endocrinol . 2012;8(8):457–465. 
+doi:10.1038/nrendo.2012.49
+59. Kelley DE, Goodpaster B, Wing RR, Simoneau JA. Skeletal muscle fatty acid metabolism in association with insulin resistance, obesity, and weight 
+loss. Am J Physiol Endocrinol Metab . 1999;277(6):E1130–E1141. doi:10.1152/ajpendo.1999.277.6.E1130
+60. Sylow L, Tokarz VL, Richter EA, Klip A. The many actions of insulin in skeletal muscle, the paramount tissue determining glycemia. Cell Metab. 
+2021;33(4):758–780. doi:10.1016/j.cmet.2021.03.020
+61. Son JW, Han BD, Bennett JP, Heymsfield S, Lim S. Development and clinical application of bioelectrical impedance analysis method for body 
+composition assessment. Obesity Rev. 2025;26(1):e13844. doi:10.1111/obr.13844
+62. Sbrignadello S, Göbl C, Tura A. Bioelectrical Impedance Analysis for the Assessment of Body Composition in Sarcopenia and Type 2 Diabetes. 
+Nutrients. 2022;14(9):1864. doi:10.3390/nu14091864
+63. Jia W, Chan JC, Wong TY , Fisher EB. Diabetes in China: epidemiology, pathophysiology and multi-omics. Nat Metab . 2025;7(1):16–34. 
+doi:10.1038/s42255-024-01190-w
+64. Khalafi M, Habibi Maleki A, Symonds ME, Rosenkranz SK, Rohani H, Ehsanifar M. The effects of intermittent fasting on body composition and 
+cardiometabolic health in adults with prediabetes or type 2 diabetes: a systematic review and meta-analysis. Diabetes Obesity Metab . 2024;26 
+(9):3830–3841. doi:10.1111/dom.15730
+65. Aragon AA, Schoenfeld BJ, Wildman R, et al. International society of sports nutrition position stand: diets and body composition. J Int Soc Sports 
+Nutr. 2017;14:16. doi:10.1186/s12970-017-0174-y
+66. Khalafi M, Habibi Maleki A, Sakhaei MH, et al. The effects of exercise training on body composition in postmenopausal women: a systematic 
+review and meta-analysis. Front Endocrinol. 2023;14:1183765. doi:10.3389/fendo.2023.1183765
+67. Kanaley JA, Colberg SR, Corcoran MH, et al. Exercise/Physical Activity in Individuals with Type 2 Diabetes: a Consensus Statement from the 
+American College of Sports Medicine. Med Sci Sports Exerc . 2022;54(2):353–368. doi:10.1249/MSS.0000000000002800
+68. Garvey WT, Mechanick JI, Brett EM, et al. American Association of Clinical Endocrinologists and American College of Endocrinology 
+Comprehensive Clinical Practice Guidelines For Medical Care of Patients with Obesity. Endocr Pract. 2016;22:1–203. doi:10.4158/EP161365.GL
+Diabetes, Metabolic Syndrome and Obesity                                                                                 
+Publish your work in this journal 
+Diabetes, Metabolic Syndrome and Obesity is an international, peer-reviewed open-access journal committed to the rapid publication of the 
+latest laboratory and clinical findings in the fields of diabetes, metabolic syndrome and obesity research. Original research, review, case reports, 
+hypothesis formation, expert opinion and commentaries are all considered for publication. The manuscript management system is completely 
+online and includes a very quick and fair peer-review system, which is all easy to use. Visit http://www.dovepress.com/testimonials.php to 
+read real quotes from published authors.  
+Submit your manuscript here: https://www.dovepress.com/diabetes-metabolic-syndrome-and-obesity-journal
+Diabetes, Metabolic Syndrome and Obesity 2026:19 14
+Cao et al                                                                                                                                                                             
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)

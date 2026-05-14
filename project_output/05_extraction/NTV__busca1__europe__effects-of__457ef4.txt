@@ -1,0 +1,1960 @@
+2021 
+Anthropometry 
+Proc
+ 
+edures Manual 
+May 2021 
+
+Table of Contents 
+Chapters Page 
+1 Overview of Anthropometry ............................................................................  1-1 
+1.1 Background of Anthropometric Measurements ...............................  1-1 
+1.2 Purpose of Anthropometrics ..............................................................  1-1 
+1.3 Importance of Anthropometric Data  ................................................  1-2 
+1.4 Overview of NHANES Anthropometry Examination ...................  1-4 
+1.5 Role of Anthropometric Examiner and Recorder ...........................  1-5 
+References ............................................................................................................  1-6 
+2 Equipment ...........................................................................................................  2-1 
+2.1 Description of the Body Measurement Room in the MEC ...........  2-1 
+2.2 Equipment and Supplies ......................................................................  2-1 
+2.2.1 Equipment  .............................................................................  2-1 
+2.2.2 Supplies ..................................................................................  2-5 
+2.3 Equipment Care and Maintenance .....................................................  2-8 
+2.4 Equipment Malfunctions .....................................................................  2-9 
+2.5 Setup Procedures ...................................................................................  2- 10 
+2.5.1 Calibration Weights ..............................................................  2- 10 
+2.5.2 Digital Weight Scale .............................................................  2- 10 
+2.5.3 Portable Scale ........................................................................  2- 10 
+2.5.4 Sitting Box .............................................................................  2- 11 
+2.5.5 Stadiometer ............................................................................  2- 11 
+2.5.6 Infantometer ..........................................................................  2- 11 
+2.5.7 Knee Caliper ..........................................................................  2- 11 
+2.5.8 Measurement Tapes and Ruler ...........................................  2- 12 
+2.5.9 Supplies ..................................................................................  2- 12 
+2.6 Teardown Procedures ..........................................................................  2- 12 
+2.6.1 Calibration Weights ..............................................................  2- 12 
+2.6.2 Digital Weight Scale .............................................................  2- 13 
+2.6.3 Portable Scale ........................................................................  2- 13 
+2.6.4 Sitting Box .............................................................................  2- 13 
+2.6.5 Stadiometer ............................................................................  2- 13 
+2.6.6 Infantometer ..........................................................................  2- 13 
+2.6.7 Knee Caliper ..........................................................................  2- 14 
+   
+ iii Anthropometry Procedures 2021  
+Contents (continued) 
+Chapters Page 
+2.6.8 Measurement Tapes and Ruler ...........................................  2- 14 
+2.6.9 Supplies ..................................................................................  2- 14 
+3 Examination Protocol ........................................................................................  3-1 
+3.1 Eligibility Criteria ..................................................................................  3-1 
+3.2 Pre-Examination Procedures ..............................................................  3-1 
+3.3 General Guidelines for Measuring and Recording ...........................  3-2 
+3.4 Examination Procedures ......................................................................  3-3 
+3.4.1 Recumbent Length ...............................................................  3-3 
+3.4.2 Head Circumference ............................................................  3-5 
+3.4.3 Standing Height ....................................................................  3-6 
+3.4.4 Weight ....................................................................................  3-9 
+3.4.5 Upper Leg Length ................................................................  3- 10 
+3.4.6 Upper Arm Length ...............................................................  3- 13 
+3.4.7 Arm Circumference ..............................................................  3- 17 
+3.4.8 Abdominal (Waist) Circumference ....................................  3- 19 
+3.4.9 Hip (Buttocks) Circumference ............................................  3- 21 
+3.5 Special Considerations ..........................................................................  3- 22 
+3.5.1 SPs in Street Clothes ............................................................  3- 22 
+3.5.2 Children ..................................................................................  3- 22 
+3.5.3 SPs in Wheelchairs................................................................  3- 23 
+3.5.4 Amputees ...............................................................................  3- 23 
+3.5.5 Comprehension or Language Difficulties .........................  3- 24 
+3.6 Post-Examination Procedures .............................................................  3- 25 
+4 ISIS Data Entry ...................................................................................................  4-1 
+4.1 General Screen Information ................................................................  4-1 
+4.2 Stature Screen ........................................................................................  4-3 
+4.2.1 Height Correction .................................................................  4-6 
+4.2.2 Stature Comments ................................................................  4-7 
+   
+ iv Anthropometry Procedures 2021  
+Contents (continued) 
+Chapters Page 
+4.3 Weight Screen ........................................................................................  4-8 
+4.3.1 Weight Comments ................................................................  4- 10 
+4.3.2 Tare and Reset .......................................................................  4- 11 
+4.4 Sitting Measures Screen ........................................................................  4- 11 
+4.5 Upper Arm Length Screen ..................................................................  4- 12 
+4.6 Circumference Measures Screen .........................................................  4- 13 
+4.7 SP Information Screen .........................................................................  4- 15 
+4.8 Amputations Screen ..............................................................................  4- 16 
+4.9 Anthropometry Component Status Screen .......................................  4- 18 
+5 Quality Control ...................................................................................................  5-1 
+5.1 Introduction to Quality Control for Anthropometry ......................  5-1 
+5.2 Equipment Calibrations .......................................................................  5-1 
+5.2.1 Digital Weight Scale .............................................................  5-4 
+5.2.2 Portable Scales.......................................................................  5-8 
+5.2.3 Stadiometer ............................................................................  5-9 
+5.2.4 Infantometer ..........................................................................  5- 10 
+5.2.5 Equipment Swap ...................................................................  5- 11 
+5.3 ISIS Examination Screens....................................................................  5- 12 
+5.4 Observations, Replication, and Review .............................................  5- 13 
+Appendixes 
+A Body Measures Recording Form ......................................................................  A-1 
+B Procedures for Conducting Anthropometry Gold Standard 
+Replicate Examinations .....................................................................................  B-1 
+Tables 
+3-1 Body measurements by age category ...............................................................  3-1 
+5-1 Anthropometry equipment calibrations ..........................................................  5-2 
+   
+ v Anthropometry Procedures 2021  
+Contents (continued) 
+Exhibits Page 
+2-1 Infantometer ........................................................................................................  2-3 
+2-2 Digital weight scale—uncovered ......................................................................  2-3 
+2-3 Digital scale measurement device .....................................................................  2-3 
+2-4 Portable scale .......................................................................................................  2-4 
+2-5 Calibration weights .............................................................................................  2-4 
+2-6 Stadiometer headpiece and digital measurement device ...............................  2-4 
+2-7 Stadiometer calibration rod ...............................................................................  2-4 
+2-8 Sitting box ............................................................................................................  2-5 
+2-9 Children’s changing table ...................................................................................  2-5 
+2-10 Knee caliper, tape measures, and ruler ............................................................  2-5 
+2-11 Anthropometry supplies (1) ..............................................................................  2-7 
+2-12 Anthropometry supplies (2) ..............................................................................  2-8 
+3-1 Recumbent length head position ......................................................................  3-4 
+3-2 Recumbent length feet position........................................................................  3-4 
+3-3 Head circumference tape position ...................................................................  3-5 
+3-4 Standing height position ....................................................................................  3-7 
+3-5 Frankfort horizontal plane ................................................................................  3-8 
+3-6 Upper leg length measurement position .........................................................  3- 11 
+3-7 Knee caliper positioned on edges of patella ...................................................  3- 12 
+3-8 Upper leg length mark .......................................................................................  3- 13 
+3-9 Upper leg length tape position..........................................................................  3- 13 
+3-10 SP position for upper arm length and midpoint ............................................  3- 14 
+   
+ vi Anthropometry Procedures 2021  
+Contents (continued) 
+Exhibits Page 
+3-11 Upper arm bony landmarks ..............................................................................  3- 15 
+3-12 Marking spine extending from acromion process .........................................  3- 15 
+3-13 Marking upper arm length midpoint ................................................................  3- 16 
+3-14 Infant upper arm length .....................................................................................  3- 16 
+3-15 CORRECT tape placement for upper arm length .........................................  3- 17 
+3-16 INCORRECT tape placement for upper arm length ...................................  3- 17 
+3-17 Adult arm circumference ...................................................................................  3- 18 
+3-18 Infant arm circumference ..................................................................................  3- 19 
+3-19 Waist circumference mark .................................................................................  3- 20 
+3-20 .Measuring tape position for waist circumference .........................................  3- 20 
+3-21 Measuring tape position for hip (buttocks) circumference ..........................  3- 21 
+4-1 Login SP screen ..................................................................................................  4-1 
+4-2 ISIS screen characteristics .................................................................................  4-2 
+4-3 Edit Check box ...................................................................................................  4-3 
+4-4 Stature screen—SPs 0 -6 months ......................................................................  4-4 
+4-5 Stature screen—SPs 7 -23 months ....................................................................  4-5 
+4-6 Stature screen—SPs 24-47 months ..................................................................  4-5 
+4-7 Stature screen—SPs 4 years and older ............................................................  4-6 
+4-8 Stature screen—height correction  ....................................................................  4-7 
+4-9 Stature screen—recumbent length blank comments .....................................  4-8 
+4-10 Stature screen—standing height value comments .........................................  4-8 
+4-11 Weight screen ......................................................................................................  4-9 
+   
+ vii Anthropometry Procedures 2021  
+Contents (continued) 
+Exhibits Page 
+4-12 Weight screen—lb/kg warning message .........................................................  4-9 
+4-13 Weight screen—comments list  .........................................................................  4- 10 
+4-14 Weight screen—tare and reset functions ........................................................  4- 11 
+4-15 Sitting Measures screen ......................................................................................  4- 12 
+4-16 Upper Arm Length screen.................................................................................  4- 13 
+4-17 Circumference Measures screen—arm circumference  
+(SPs 2-23 months) ..............................................................................................  4- 14 
+4-18 Circumference Measures screen—arm and waist circumference 
+(SPs 24 months to 11 years) ..............................................................................  4- 14 
+4-19 Circumference Measures screen—arm, waist, and hip 
+circumference (SPs 12 years and older) ...........................................................  4- 15 
+4-20 SP Information s creen .......................................................................................  4- 16 
+4-21 Amputations screens ..........................................................................................  4- 17 
+4-22 Anthropometry Component Status screen—Complete  ...............................  4- 18 
+4-23 Anthropometry Component Status screen—Partial  .....................................  4- 19 
+   
+ viii Anthropometry Procedures 2021  
+1. Overview of Anthropometry 
+1.1 Background of Anthropometric Measurements 
+Anthropometry is the study of the measurement of the human body in terms of the dimensions of 
+bone, muscle, and adipose (fat) tissue. The word “anthropometry” is derived from the Greek word 
+“anthropo” meaning “human” and the Greek word “metron” meaning “measure.” The field of 
+anthropometry encompasses a variety of human body measurements. Weight, stature (standing 
+height), recumbent length, skinfold thicknesses, circumferences (head, waist, limb), limb lengths, and 
+breadths (shoulder, wrist) are examples of anthropometric measures. 
+Several indexes and ratios can be derived from anthropometric measurements. Perhaps the most 
+well-known indicator of body fat is the body mass index or “BMI.” BMI values are calculated for 
+National Health and Nutrition Examination Survey (NHANES) participants using measured height 
+and weight values as follows: weight (kilograms)/height squared (meters). The BMI is used to assess 
+weight status in children and adolescents as well as adults. For children and adolescents, cutoff 
+criteria are based on the gender-specific BMI-for-age growth charts: underweight (BMI values < 5th 
+percentile); healthy weight (BMI values 5th-84th percentiles); overweight (BMI values 85th-94th 
+percentiles); and obesity (BMI values ≥ 95th percentile) (Barlow, 2007). For adults, cutoff criteria are 
+fixed: underweight (BMI values < 18.5); normal weight (BMI values 18.5-24.9); overweight (BMI 
+values 25.0-29.9); obese— Class I (BMI values 30.0-34.9); obese—Class II (BMI values 35.0- 39.9); 
+and extremely obese—Class III (BMI values > 40.0) (National Institutes of Health , 1998). The 
+NHANES BMI results are used to track weight trends in the U.S. population. The National 
+Institutes of Health, Centers for Disease Control and Prevention (CDC), and many other research 
+groups have reported on the health risks associated with overweight and obesity using NHANES 
+interview and health examination data. 
+1.2 Purpose of Anthropometrics 
+The purpose of the NHANES anthropometry component is to collect high-quality body 
+measurement data using standardized examination procedures and calibrated equipment. Accurate 
+data are fundamental to the evaluation of anthropometric trends over time. It is crucial for 
+researchers to know that the differences evident between NHANES surveys reflect true differences 
+   
+ 1-1 Anthropometry Procedures 2021  
+in the NHANES body measurement values rather than technologist and protocol variability and/or 
+measurement error. In order to ensure the collection of high-quality data, NHANES staff are trained 
+to follow standardized examination protocols, to calibrate equipment according to a prescribed 
+schedule and method, and to measure and record the survey data with precision. Additionally, 
+retraining sessions, gold standard examinations performed by expert examiners and field 
+observations, are conducted on a regular basis to reinforce the importance of measurement precision 
+and standardized data collection methodology. 
+1.3 Importance of Anthropometric Data 
+Anthropometry is a key component of nutrition status assessment in children and adults. The 
+National Center for Health Statistics (NCHS) has included the anthropometry data collection in its 
+examination surveys since 1960. The NHANES anthropometry data have been used to track growth 
+and weight trends in the U.S. population for more than 40 years (Flegal et al., 2002; Flegal et al., 
+2010; Ogden et al., 2002; Ogden et al., 2016). The anthropometric data for infants and children 
+reflect general health status and dietary adequacy and are used to track trends in growth and 
+development over time. The CDC has used NHANES data to produce national reference standards 
+or “growth charts.” These CDC growth charts are used extensively by pediatricians and researchers 
+in the U.S. and abroad (Kuczmarski et al., 2002). A description of the history and statistical 
+methodology that was used to develop the latest growth charts can be found at the CDC website: 
+http://www.cdc.gov/growthcharts/
+. The highly publicized NHANES data trends showing increases 
+in overweight and obesity among U.S. children and adolescents unde rscore the importance of 
+NHANES to provide continuous health data (Ogden et al., 2002). Although previous data show that 
+the overall rates of obesity have plateaued or even declined among children 2-5 years of age 
+(Ogden et al., 2016), the most recent analyses of NHANES data indicate that the prevalence of 
+obesity among adults has moved further away from the Healthy People 2020 goal of 30.5 percent  
+(Hales et al., 2020; Ogden et al., 2020). Obesity remains a major public health problem. It is 
+important to continue to track the prevalence of obesity among U.S. adults and children. 
+The NHANES anthropometric data are used to evaluate health and dietary status, disease risk, and 
+body composition changes that occur over the adult lifespan. Researchers in diverse health 
+disciplines including cardiovascular health, gerontology, nutrition, and occupational health use 
+anthropometric data to examine health status and health care utilization trends in U.S. adults. 
+   
+ 1-2 Anthropometry Procedures 2021  
+Current U.S. demographic trends project significant growth among race/ethnic subgroups and 
+adults 75 years and older. These trends are reflected in the NHANES sample, which includes a large 
+proportion of adults 60 years and older, African Americans, and Hispanics. Racial and ethnic 
+minorities are more likely to be medically underserved compared to non-Hispanic Whites in terms 
+of having a regular source of health care, health insurance, and access to preventive health services. 
+Valuable health information on population groups that might not be reflected in other health 
+reporting systems is routinely collected in surveys sponsored by the National Center for Health 
+Statistics. 
+With respect to the “graying” U.S. population, the “baby boomer” generation has reached or is 
+approaching retirement age. What will their quality of life be like during their “golden years?” How 
+much health care will older persons need to maintain their health? What types of health conditions 
+will be more prevalent among older Americans? Functional status and general well-being are 
+inevitably linked to weight status. An analysis of the NHANES 1999-2002 data using BMI criteria 
+indicated that overweight and obese individuals were more likely to report fair or poor health (rather 
+than good or excellent health), activity limitations, and more health provider visits per year 
+compared to normal weight adults (McDowell et al., 2006). More recent analysis of the NHANES 
+2013-2016 data indicated that prevalence of obesity and severity of obesity was greater among adults 
+living in a nonmetropolitan statistical area compared with adults living in large metropolitan 
+statistical areas (Hales, 2018).     
+The NHANES circumference measures assess subcutaneous and visceral fat tissue. Reports based 
+on NHANES data showed increasing mid-arm circumference measurements in children and adults 
+(Ostchega et al., 2005; Ostchega et al., 2006). These data have been used to formulate guidelines for 
+health practitioners regarding the selection of blood pressure cuff sizes for children and adults. In 
+addition, the NHANES waist circumference data are widely used to assess cardiovascular disease 
+risk. Specifically, individuals who have large deposits of abdominal fat tissue are at increased risk for 
+hypertension, adult-onset diabetes mellitus, cardiovascular disease, gallstones, arthritis, and some 
+forms of cancer. The NHANES sagittal abdominal diameter measures provide the first national 
+population reference data across various demographic groups (Fryar et al., 2016). Sagittal abdominal 
+diameter was associated with dysglycemia independently of waist circumference or BMI (Kahn et al., 
+2014). 
+   
+ 1-3 Anthropometry Procedures 2021  
+Although much of the attention in today’s popular media is on overweight and obesity, NHANES 
+data can also be used to track trends in underweight. Underweight may occur due to a variety of 
+factors, such as poor nutrition and eating habits, substance abuse, chronic illness, medication 
+therapy, surgical procedures, and other health problems. 
+NHANES is the only health examination study that produces national estimates for the U.S. 
+population—all ages and all sizes. NCHS continues to publish reports based on the NHANES 
+anthropometry data. The most recent national reference data for children and adults based on 
+NHANES 2015-2018 are available through the CDC website at the following link: 
+https://www.cdc.gov/nchs/data/series/sr_03/sr03-046-508.pdf. The NHANES body measures 
+examination data files are also publicly available and may be downloaded from the NHANES 
+website: htt
+ps://www.cdc.gov/nchs/nhanes/. The Questionnaires, Datasets, and Related 
+Documentation page lists all the survey cycles from the most recent to most historic. The Procedure 
+Manuals page for each survey cycle offers access to the NHANES anthropometric procedures 
+training manuals used for each NHANES. The NHANES III Anthropometric Procedures video is 
+also available through the CDC website at the following link: 
+https://wwwn.cdc.gov/Nchs/Nhanes/Nhanes3/AnthropometricVideos.aspx
+. Lastly, hyperlinks for 
+data, questionnaires, and manuals for each NHANES survey are also provided on the NHANES 
+website. 
+1.4 Overview of NHANES Anthropometry Examination 
+The NHANES anthropometry or body measures examination is conducted in trailer 1 of the mobile 
+examination center (MEC). All NHANES study participants or sample persons (SPs) are eligible for 
+the anthropometry examination component. Specific measurements are completed dependent on 
+the age of the participant. The complete set of measurements includes weight, height, upper leg and 
+arm lengths, and waist, arm, and hip circumferences. The anthropometry examination protocol and 
+procedures are described in Chapter 3, Examination Protocol. Two health technologists (one is an 
+examiner and another is a recorder) work as a team to collect the anthropometry data. Examination 
+results are saved to the study database using the Integrated Survey Information System (ISIS) 
+anthropometry computer application. Funding for the anthropometry examination component is 
+provided solely by NCHS. 
+   
+ 1-4 Anthropometry Procedures 2021  
+1.5 Role of Anthropometric Examiner and Recorder 
+The anthropometry component is staffed by trained health technologists. The NHANES health 
+technologists may serve as examiners or recorders for this component. When two health 
+technologists are assigned by the MEC coordinator to the anthropometry room, the technologist 
+assigned as the examiner should complete the entire examination. 
+The examiner will position the participant, take all measurements, and tell the recorder the 
+measurement values to record as described in Chapter 3, Examination Protocol. The recorder will 
+enter the examination results in the ISIS anthropometry application. The ISIS module is 
+programmed to present the anthropometry data entry screens in the correct sequence based on the 
+age of the participant. The ISIS interface is also preprogrammed with age- and gender-specific edit 
+ranges for each measurement, based on previous NHANES data. This feature is designed to reduce 
+data entry errors that may result from either incorrect measurement or data entry errors. Chapter 4 
+describes the quality control features of the ISIS anthropometry application. If a recorded value falls 
+outside the preprogrammed edit range, the ISIS system will alert the recorder that the recorded value 
+is unusual. The recorder should always ask the examiner to verify the measurement value before 
+proceeding to the next measurement. If a measurement or recording error was made, the recorder 
+will enter the correct value; if the original value is correct, the value is retained. Since NHANES 
+includes participants of all shapes, sizes, and body builds, some unusual values are legitimate; 
+however, measurement and recording errors do occasionally occur. Therefore, teamwork between 
+the examiner and recorder is essential in order to measure and record accurate data. 
+Another important duty of the recorder is to help the examiner position the participants during their 
+examination. In this role the recorder also alerts the examiner if the respondent needs to be 
+repositioned. For example, when the waist circumference is determined, the recorder checks that the 
+tape measure lies parallel to the floor and snug but without compressing the skin. Also, the recorder 
+participates in taking recumbent length measurements on infants and young children. Assistance is 
+needed because several body sites must be aligned to obtain an accurate measurement. Lastly, the 
+recorder marks body sites that are measured by the examiner and hands equipment and supplies to 
+the examiner when needed. 
+   
+ 1-5 Anthropometry Procedures 2021  
+References 
+Barlow, S.E. and the Expert Committee. Expert committee recommendations regarding the 
+prevention, assessment, and treatment of child and adolescent overweight and obesity: 
+summary report. Pediatrics. 2007;120(6):S164-92. 
+Flegal, K.M., Carroll, M.D., Ogden, C.L., and Johnson, C.L. Prevalence and trends in obesity among 
+U.S. adults, 1999-2000. JAMA. 2002;288(14):1723-27. 
+Flegal, K.M., Carroll, M.D., Ogden, C.L., and Curtin, L.R. Prevalence and trends in obesity among 
+U.S. adults, 1999-2008. JAMA. 2010;303(3):235-41. 
+Fryar, C.D., Gu, Q., Ogden, C.L., and Flegal, K.M. 
+Anthropometric reference data for children and 
+adults: United States, 2011–2014. Vital Health Stat 3. 2016;(39):1-46 National Center for 
+Health Statistics. Available at: 
+http://www.cdc.gov/nchs/data/series/sr_03/sr03_039.pdf. 
+Ac
+cessed August 12, 2016. 
+H
+ales, C.M., Carroll, M.D., Fryar, C.D., and Ogden, C.L. Prevalence of obesity and severity obesity 
+among adults: United States, 2017-2018. NCHS Data Brief, No 360. Hyattsville, MD: National 
+Center for Health Statistics. 2020. 
+Hales, C.M., Fryar, C.D., Carroll, M.D., Freedman, D.S., Aoki, Y., and Ogden, C.L. Differences in 
+obesity prevalence by demographic characteristics and urbanization level among adults in the 
+United States, 2013-2016. JAMA. 2018;319(23):2419-2429. 
+Kahn, H.S., Gu, Q., Bullard, K.M., Freedman, D. S., Ahluwalia, N., and Ogden, C.L. Population 
+distribution of the sagittal abdominal diameter (SAD) from a representative sample of US 
+adults: comparison of SAD, waist circumference and body mass index for identifying 
+dysglycemia. PLoS One. 2014:9(10):e108707. 
+Kuczmarski, R.J., Ogden, C.L., Guo, S.S., Grummer-Strawn, L.M., Flegal, K.M., Mei, Z., Wei, R., 
+Curtin, L.R., Roche, A.F., and Johnson, C.L. 2000 CDC Growth Charts for the United States: 
+Methods and development. Vital Health Stat 11. 2002;(246):1-190. 
+McDowell, M.A., Hughes, J.P., and Borrud, L.G. Health characteristics of U.S. adults by body mass 
+index category: Results from NHANES 1999-2002. Public Health Rep. 2006;121(1):67-73. 
+National Institutes of Health. 
+Clinical guidelines on the identification, evaluation, and treatment of overweight 
+and obesity in adults—The Evidence Report . NIH Publication No. 98-4083. 1998. Available at: 
+ht
+tp://www.nhlbi.nih.gov/files/docs/guidelines/ob_gdlns.pdf. Ac
+cessed October 12, 2015. 
+Ogden, C.L., Fleg al, K.M., Carroll, M.D., and Johnson, C.L. Prevalence and trends in overweight 
+among U.S. children and adolescents, 1999-2000. JAMA. 2002;288(14):1728-32. 
+Ogden, C.L., Carroll, M.D., Lawman H.G., Fryar C.D., Kruszon-Moran D., Kit B.K., and Flegal, 
+K.M. Trends in obesity prevalence among children and adolescents in the United States, 1988-
+1994 through 2013-2014. JAMA. 2016;315(21):2292-9. 
+   
+ 1-6 Anthropometry Procedures 2021  
+Ogden, C.L., Fryar, C.D., Martin, C.B., Freedman, D.S., Carroll, M.D., Gu, Q., and Hales, C.M. 
+Trends in obesity prevalence by race and Hispanic origin-1999-2000 to 2017-2018. JAMA. 
+2020;324(12):1208-1210. 
+Ostchega, Y., Dillon, C., Carroll, M., Prineas, R.J., and McDowell, M. U.S. demographic trends in 
+mid-arm circumference and recommended blood pressure cuffs: 1988-2002. J Hum Hypertens. 
+2005;19(11):885-91. 
+Ostchega, Y., Dillon C., Prineas, R.J., McDowell, M., and Carroll, M. Tables for the selection of 
+correct blood pressure cuff size based on self-reported height and weight and estimating 
+equations for mid-arm circumference: Data from the U.S. National Health and Nutrition 
+Examination Survey. J Hum Hypertens. 2006;20(1):15-22. 
+   
+ 1-7 Anthropometry Procedures 2021  
+2. Equipment 
+2.1 Description of the Body Measurement Room in the MEC 
+The body measurement room is located in trailer 1 of the MEC. The room is equipped with unique 
+features designed to facilitate accurate and efficient measurement, including wall mirrors to facilitate 
+waist circumference measurements; a custom-built box where survey participants (SPs) can sit for 
+the upper leg length measurement and a digital scale that is housed in an opening in the floor. 
+Additionally, the digital floor scale, stadiometer, and infantometer are linked electronically to the 
+NHANES Integrated Survey Information System (ISIS) for quick and accurate data entry. 
+2.2 Equipment and Supplies 
+A brief description of the anthropometry component equipment and supplies is provided below. In 
+addition, Exhibits 2-1 to 2-11 display photographs of these items for reference. At the beginning 
+and end of each stand, the health technologist will take an inventory of all component-specific 
+equipment and supplies. Any needed items should be noted on the inventory sheet, reported to the 
+chief technologist and MEC manager, and documented in the Unusual Field Occurrence or UFO 
+system (refer to UFO Utility Manual for details). 
+2.2.1 Equipment 
+• Infantometer: The infantometer is used to measure the recumbent length of SPs 
+from birth through age 47 months. A digital measurement device 
+is connected to the acrylic foot piece and interfaces directly with 
+the ISIS anthropometry application.  
+• Head circumference 
+tape: 
+Maximal head circumference of SPs from birth through age 
+6 months is measured using a plastic measuring tape. The 
+measurement end is inserted into a slot at the zero end of the 
+tape. 
+• Stadiometer:  The stadiometer is used to measure stature in SPs aged 2 years 
+and older. A digital measurement device is connected to the 
+acrylic headpiece and interfaces directly with the ISIS 
+anthropometry application. 
+   
+ 2-1 Anthropometry Procedures 2021  
+• Height adjustment 
+ruler:  
+A 15-centimeter (cm) plastic ruler is used to correct stature 
+measurements when SPs have hair styles that interfere with the 
+stadiometer headpiece placement, or when they are unwilling to 
+remove their shoes. The recorder enters the height correction 
+factor in ISIS, which automatically calculates an adjusted height 
+value. 
+• Stadiometer calibration 
+rod:  
+A 100-cm metal rod is used to calibrate the stadiometer at the 
+beginning of a stand and on a daily basis. When not in use, the 
+rod is stored in the holding grips on the side of the stadiometer. 
+• Digital weight scale:  The digital weight scale used to weigh SPs is built into the exam 
+room floor. This high-performance instrument is linked directly 
+to the ISIS anthropometry application. The maximum capacity of 
+the digital weight scale is 600 pounds. 
+• Portable scales:  Two portable scales are available in each MEC for use in the 
+event of a malfunction of the digital weight scale, or if an SP’s 
+weight exceeds the digital scale capacity. Each scale has a 
+maximum capacity of 440 pounds. Four AA batteries are used to 
+power each scale. 
+• Calibration weights:  Each MEC has a set of fifteen 10-kilogram (kg) weights. The 
+weights are used to calibrate the portable scales at the beginning 
+of a stand and to calibrate the digital weight scale daily and at the 
+beginning, middle, and end of a stand. When not in use, the 
+weights are stored on a sliding tray in the exam room cabinet. 
+• Sitting box:  A blue rectangular box is used as a seat for the SP during the 
+upper leg length measurement. Also, some children may need to 
+stand on the box while the health technologist takes their body 
+measurements. 
+• Knee caliper:  A metal, sliding caliper is used to mark the distal end of the femur 
+in the determination of the upper leg length. When not in use, the 
+caliper is stored in a protective case in the cabinet drawer. 
+Two knee calipers are available in each MEC. 
+• Steel measuring tape:  A retractable steel measuring tape is used to take length and 
+circumference measurements. 
+• Children’s changing 
+table: 
+Changing table with safety rails that enclose all 4 sides. The table is 
+used to lay the child and remove his/her clothing. This table meets 
+or exceeds government and ASTM (American Society for Testing 
+and Materials) safety standards 
+Exhibits 2-1 to 2-10 show photos of the anthropometry equipment. 
+   
+ 2-2 Anthropometry Procedures 2021  
+Exhibit 2-1. Infantometer 
+Exhibit 2-2. Digital weight scale—
+uncovered 
+E xhibit 2-3. Digital scale measurement 
+device 
+   
+ 2-3 Anthropometry Procedures 2021  
+Exhibit 2-4. Portable scale 
+ E xhibit 2-5. Calibration weights 
+Exhibit 2-6. Stadiometer headpiece and 
+digital measurement device 
+E xhibit 2-7. Stadiometer calibration rod 
+   
+ 2-4 Anthropometry Procedures 2021  
+Exhibit 2-8. Sitting box 
+ E xhibit 2-9. Children’s changing table 
+Exhibit 2-10. Knee caliper, tape measures, and ruler 
+2.2.2 Supplies 
+• Black/white cosmetic 
+pencil: 
+The examiner and recorder make all body marks on the SP using 
+a wax-based cosmetic pencil. The health tech will use an 
+appropriate color so that the markings are clearly visible on the 
+SP’s skin. 
+• Drop dispenser: A small dropper bottle is used to dispense baby oil to remove the 
+cosmetic pencil marks. 
+   
+ 2-5 Anthropometry Procedures 2021  
+• Baby oil: Baby oil is supplied on each MEC for removing cosmetic pencil 
+marks from the SP’s skin. A small drop dispenser holds the oil for 
+use during exams. Refills are obtained from a larger bottle of baby 
+oil that is stored in the cabinet drawer. 
+• Absorbent pad (Chux):  A clean Chux pad is laid on the infantometer before each use. 
+The pads may also be placed beneath an infant while the guardian 
+removes the child’s clothing in preparation for taking 
+measurements. 
+• Alcohol wipes: Prepackaged alcohol wipes will be used daily by the technologist 
+to clean the surface of equipment such as the knee calipers and 
+tape measures. 
+• Batteries:  Two types of batteries—CR123 and AA. The CR123 batteries are 
+used to power the digital measurement devices for the 
+stadiometer and infantometer. The AA batteries are used to 
+power the portable scales. Both types of batteries are removed at 
+the end of a stand and replaced at the beginning of a stand. 
+• Disinfectant wipes: A container of disinfectant wipes is provided in each MEC for 
+cleaning the surface area of the infantometer, sitting box, and 
+other areas that require cleaning as needed. 
+• Blunt-edge scissors: Stainless steel, blunt-edge scissors are used by the technologist to 
+cut the SP gown pants and shirt in preparation for leg and arm 
+measurements. 
+• Cotton cloth:  A cotton cloth is supplied in each MEC for wiping the surface of 
+the aluminum track and digital measurement device of the 
+stadiometer and infantometer. 
+• Gauze pads: Each MEC has a supply of 2x2 inch gauze pads. The pads are 
+used to wipe off cosmetic pencil marks with baby oil. 
+• Masking tape: At the end of the anthropometry exam, the technologist tapes the 
+exam gowns to afford privacy to the SP. 
+• Paper: A white roll of paper will be used to cover the table before SPs lie 
+down. 
+• Sanitizing wipes: A container of sanitizing wipes is provided for cleaning the 
+surface area of the exam table and the abdominal caliper. 
+   
+ 2-6 Anthropometry Procedures 2021  
+• Screwdrivers:  Two screwdrivers—a flat and a Phillips head—are used to open 
+the digital measurement device of the stadiometer and 
+infantometer when changing the batteries. The screwdrivers are 
+also used to adjust screws on the measurement column and digital 
+measurement device of the stadiometer and infantometer. Both 
+screwdrivers are stored in the cabinet drawers. 
+• Sewing machine oil: A 4-oz bottle of all-purpose, sewing machine oil is supplied in 
+each MEC. The oil is used to lubricate the aluminum track of the 
+stadiometer and infantometer when sliding the head/foot piece 
+becomes difficult. 
+• Scrub brush: A black hand brush is kept on each MEC for cleaning heavily 
+soiled areas as needed. 
+• Weight tray bolt: A bolt is used to secure the weight tray in place during travel 
+between stands. During a stand, the bolt is taped to the inside of 
+the exam room cabinet for easy access. The bolts may vary by 
+MEC. 
+Exhibits 2-11 and 2-12 show photos of the anthropometry supplies. 
+Exhibit 2-11. Anthropometry supplies (1) 
+   
+ 2-7 Anthropometry Procedures 2021  
+Exhibit 2-12. Anthropometry supplies (2) 
+2.3 Equipment Care and Maintenance 
+Follow the procedures below to ensure that the anthropometry equipment functions properly and 
+remains hygienic throughout the stand. 
+S tart of Stand and Daily 
+• Clean the surface of the knee calipers and tape measures with disinfectant wipes. 
+• Clean the white area of the infantometer and sitting box with bleach disinfectant wipes. 
+Use paper towels or the scrub brush if necessary. 
+Note: The Formula 409 cleaner that is generally supplied on each MEC can be used to 
+remove dirt, but it is not suitable for use as a disinfectant. 
+• Clean the acrylic area of the head/foot piece of the stadiometer and infantometer with 
+alcohol wipes. 
+• Clean the digital measurement device of the stadiometer and infantometer with a dry 
+cloth or paper towel.  
+   
+ 2-8 Anthropometry Procedures 2021  
+Note: Do not allow any fluid to drip into the housing of the digital measurement 
+device. 
+• Check that the head/foot piece of the stadiometer and infantometer slides smoothly 
+along the measurement column. Clean the aluminum track with a damp cloth or paper 
+towel. As needed, lubricate the track with sewing machine oil—place a few drops of the 
+oil along the track and then slide the head/foot piece up and down the column. 
+2.4 Equipment Malfunctions 
+All equipment malfunctions or repair needs must be reported promptly to the technologist in charge 
+of body measures, MEC manager, and home office component specialist. If the issue is computer 
+related and cannot be resolved by the health technologist and/or MEC manager, please contact the 
+home office ISIS support staff. 
+Equipment issues should be documented in the Unusual Field Occurrence (UFO) system and 
+Equipment Tracking System (ETS) as appropriate (refer to the UFO Utility Manual and ETS User 
+Guide for details). The component specialist will contact the equipment manufacturer for assistance. 
+A complete set of backup anthropometry equipment is kept at the home office for training and ISIS 
+testing purposes. Some backup equipment for the anthropometry component is kept in each MEC 
+for use until the malfunctioning equipment can be repaired or replaced. Specifically, two portable 
+scales will serve as substitutes for the digital weight scale; spare knee calipers are kept in the cabinet. 
+The ISIS anthropometry software application can be used in a manual data entry mode. This feature 
+is especially valuable in the event that the stadiometer, infantometer, or digital weight scale fails to 
+transfer data directly to ISIS. If the ISIS system fails to capture one or more data points, the 
+examiner should complete a UFO, including the SP ID, the missing values, and a description of the 
+problem encountered during the exam. 
+If ISIS is completely unavailable for use during a session, the examiner can still perform the 
+component. The recorder should record all measurements on the Body Measures Recording Form 
+(see Appendix A). Several copies of the form should be kept in the cabinet drawer. MEC staff can 
+obtain additional copies in the Blank Forms Directory on the MEC staff lounge computer or via an 
+email request to the home office component specialist. Recorders should print all hard-copy form 
+data legibly. The Body Measures Recording Form can be faxed or mailed to the home office. The 
+   
+ 2-9 Anthropometry Procedures 2021  
+component specialist will then complete a Back-End-Edit-Request (BEER) to add the data to the 
+study database. 
+2.5 Setup Procedures 
+The following procedures describe how to set up the anthropometry equipment and supplies at the 
+start of a stand. 
+2.5.1 Calibration Weights 
+• Remove the weight tray bolt to allow the tray to slide freely. Tape the bolt to the inside 
+of the cabinet for easy access. Place the unfinished bumper board at the back of the 
+weight tray. 
+• Use the weights to calibrate the digital weight scale and portable scales (see Chapter 5, 
+Quality Control, Section 5.2, Equipment Calibrations). 
+2.5.2 Digital Weight Scale 
+• Remove the cover from the scale. 
+• Calibrate the scale using the calibration weights (see Chapter 5, Quality Control, 
+Section 5.2, Equipment Calibrations). 
+• Return the cover to the scale. 
+2.5.3 Portable Scale 
+• Remove the wooden stick from the cabinet drawer handles and place it in the 
+anthropometry storage container. 
+• Remove the two portable scales from the cabinet drawers. 
+• Reconnect or replace the four AA batteries in each scale. 
+• Calibrate the portable scales using the calibration weights (see Chapter 5, Quality 
+Control, Section 5.2, Equipment Calibrations). 
+• Return the portable scales to the cabinet drawers. 
+   
+ 2-10 Anthropometry Procedures 2021  
+2.5.4 Sitting Box 
+• Remove the bungee cord from around the sitting box and store the strap in the 
+anthropometry storage container. 
+• Leave the sitting box against the corner wall where the mirrors are located. 
+• Raise the seat located beside the sitting box. 
+2.5.5 Stadiometer 
+• Replace the CR123 battery in the digital measurement device for the stadiometer. 
+• Calibrate the stadiometer using the100-cm calibration rod (see Chapter 5, Quality 
+Control, Section 5.2, Equipment Calibrations). When not in use, the rod should be kept 
+in the holding grips on the side of the stadiometer. 
+• Slide the head piece of the stadiometer to the top of the measurement column. 
+2.5.6 Infantometer 
+• Remove the bungee cord from the infantometer and store it in the anthropometry 
+storage container. 
+• Remove the barcode wand and padding from between the foot piece and the 
+headboard. Store the padding in the cabinet drawers. 
+• Replace the CR123 battery in the digital measurement device of the infantometer.  
+• Calibrate the infantometer (see Chapter 5, Quality Control, Section 5.2, Equipment 
+Calibrations). 
+Note: When calibrated, the result should read 0.0 cm.  
+• Slide the foot piece of the infantometer to the left end of the measurement column. 
+2.5.7 Knee Caliper 
+• If not already done, remove the wooden brace from the cabinet drawers and place it in 
+the anthropometry storage container. 
+• Remove one knee caliper from the cabinet drawers and place it on a wall hook. 
+   
+ 2-11 Anthropometry Procedures 2021  
+2.5.8 Measurement Tapes and Ruler 
+• If not already done, remove the wooden brace from the cabinet drawers and place it in 
+the anthropometry storage container. 
+• Remove the insertion tape from the cabinet drawers and place it on a wall hook or in 
+the wall bin beside the computer terminal. 
+• Remove the steel measuring tape and height adjustment ruler from the cabinet drawers 
+and ensure that they are accessible. 
+2.5.9 Supplies 
+• If not already done, remove the wooden brace from the cabinet drawers and place it in 
+the anthropometry storage container. 
+• Ensure that the following supplies are accessible: cosmetic pencils, drop dispenser filled 
+with baby oil, gauze pads, masking tape, and Chux pads. 
+• Ensure that the following additional supplies are available: alcohol wipes, cotton cloth, 
+disinfectant wipes, scrub brush, sewing machine oil, hex key set, and screwdrivers. 
+• Remove the bungee cord and designated soft padding from the computer monitor and 
+store this in the anthropometry storage container. 
+• Ensure that a small trash can is available in the room. 
+2.6 Teardown Procedures 
+At the end of the stand, follow the procedures described below to pack up the anthropometry 
+equipment for travel to the next stand. The anthropometry storage container will need to be 
+retrieved from the MEC belly compartment and brought to the exam room. 
+2.6.1 Calibration Weights 
+• Use the weights to calibrate the digital weight scale (see Chapter 5, Quality Control, 
+Section 5.2, Equipment Calibrations). 
+• Place the unfinished bumper board at the front of the weight tray and replace the bolt 
+to secure the weight tray in place for travel. 
+   
+ 2-12 Anthropometry Procedures 2021  
+2.6.2 Digital Weight Scale 
+• Calibrate the scale using the calibration weights (see Chapter 5, Quality Control, 
+Section 5.2, Equipment Calibrations). 
+• Place the cover on the scale. 
+2.6.3 Portable Scale 
+• Disconnect the batteries. 
+• Leave the scales in the cabinet drawers. 
+2.6.4 Sitting Box 
+• Slide the sitting box against the corner wall where the mirrors are located.  
+Note: The facility and equipment specialist will remove and store the mirror from the 
+exit door wall. 
+• Remove a bungee cord from the anthropometry storage container and place the strap 
+around two legs of the box. Attach the ends of the strap to the designated wall hooks. 
+• Lower the folding seat located beside the sitting box. 
+2.6.5 Stadiometer 
+• Remove the CR123 battery from the digital measurement device.  
+• Check that the screws at the top of the measurement column are secured. If necessary, 
+tighten the screws using the Phillips head screwdriver. 
+• Loosely bungee cord the stadiometer to the wall hooks with the strap under the acrylic 
+mount. In this way the stadiometer is secure without stressing the mounts. 
+2.6.6 Infantometer 
+• Remove a strap and padding from the anthropometry storage container. 
+• Remove the CR123 battery from the digital measurement device of the infantometer.  
+• Slide the foot piece to the right end of the measurement column. 
+   
+ 2-13 Anthropometry Procedures 2021  
+• Place a bungee cord around the metal base of the foot piece and attach the ends of the 
+strap to the hooks on the headboard. 
+• Wrap the barcode wand in the padding and insert this between the foot piece and the 
+headboard. 
+2.6.7 Knee Caliper 
+• Place the knee caliper in the cabinet drawers. 
+2.6.8 Measurement Tapes and Ruler 
+• Place the plastic insertion tape, steel measuring tape, and height adjustment ruler in the 
+cabinet drawers. 
+2.6.9 Supplies 
+• Place the following supplies in the cabinet drawers: cosmetic pencils, drop dispenser 
+filled with baby oil, gauze pads, masking tape, Chux pads, blunt-edge scissors, and 
+alcohol wipes. 
+• To avoid spillage during travel, ensure that the large refill bottle of baby oil is upright 
+and in a plastic bag in the cabinet drawer. 
+• Ensure that the following additional supplies remain stored in the cabinet drawers: 
+cotton cloth, bleach disinfectant wipes, scrub brush, sewing machine oil, hex key set, 
+and screwdrivers. 
+• Strap the computer keyboard, mouse, and wand to the padded monitor using a bungee 
+cord. Mice and wands can also be tucked into the cozy pockets. Make sure the cord is 
+tight enough around the monitor to hold the hardware in place without stressing it. 
+Enclose the computer monitor in the designated soft padding, and strap a bungee cord 
+loosely around this to hold it in place without stressing the hardware. 
+• Remove the wooden brace from the anthropometry storage container and insert it in 
+the cabinet drawer handles. 
+• Discard any trash in the room. 
+   
+ 2-14 Anthropometry Procedures 2021  
+   
+ 3-1 Anthropometry Procedures 2021  
+3. Examination Protocol 
+3.1 Eligibility Criteria 
+All NHANES survey participants (SPs) are eligible for the anthropometry or body measurement 
+component in the mobile examination center (MEC). The anthropometry protocol requires specific 
+measurements depending on the age of the SP. Table 3-1 lists the required measurements by age 
+category. 
+Table 3-1. Body measurements by age category 
+Birth+ 2 months+ 2 years+ 8 years+ 12 years+ 
+Recumbent length Recumbent length Recumbent length 
+(through 47 months) 
+  
+Head 
+circumference 
+Head circumference 
+(through 6 months) 
+   
+  
+Standing height Standing height Standing height 
+Weight Weight Weight Weight Weight    
+Upper leg length Upper leg length  
+Upper arm length Upper arm length Upper arm length Upper arm length  
+Arm circumference Arm circumference Arm circumference Arm circumference   
+Waist circumference Waist 
+circumference 
+Waist 
+circumference 
+    
+Hip circumference 
+3.2 Pre-Examination Procedures 
+If possible, prepare the room for the examination before the SP enters the room. The recorder will 
+confirm that all supplies needed for the exam are available and accessible: cosmetic pencil, gauze 
+pads, baby oil, masking tape strips, scissors, steel measuring tape, head circumference tape, and 
+absorbent Chux pads. 
+When the SP enters the room, introduce yourself and the recorder and close the exam room curtain. 
+The examiner or recorder will open the anthropometry component in the Integrated Survey 
+Information System (ISIS), log the SP into ISIS, and direct the SP to the stadiometer. The 
+anthropometry component requires no formal or standard script. However, the examiner will 
+provide a brief introduction to the examination, such as: 
+“In this room we will take a number of body measurements such as height 
+and weight. We will also measure the length of your arm and leg, and take 
+some circumference measurements.” 
+   
+ 3-2 Anthropometry Procedures 2021  
+Important: Prior to initiating the first measurement ask the SP to remove any items from his or 
+her pockets. Set these and other belongings on the infantometer. 
+3.3 General Guidelines for Measuring and Recording 
+Follow the guidelines below when taking anthropometric measurements and subsequently recording 
+the data into ISIS: 
+• Always Tell the SP What you are Going to Do Before you Do It. Explain what you 
+are doing and why, such as when locating the leg tendon in the groin area to measure 
+the upper leg length; or before adjusting the pants down to measure the waist 
+circumference. Do not comment about the SP’s body in any way. Maintain 
+professionalism at all times. 
+• Measure the Right Side of the Body. If the SP has a physical disability or abnormality 
+on the right side, the examiner should still attempt to measure the right side. Only take 
+measurements on the left side when the SP has a cast, prosthesis, or amputation on the 
+appropriate right limb; or for some other reason the measurement cannot be taken 
+accurately on the right side. If a measurements is obtained on the left side, submit an 
+Unusual Field Occurrence (UFO) as documentation (refer to the UFO Utility Manual 
+and Equipment Tracking System User Guide for details). 
+• Turn the SP in the Direction needed for a Given Measure. This promotes 
+efficiency during the examination by saving time and avoiding unnecessary movement 
+on the part of the examiner. In other words, do not move yourself around the SP. 
+• Position the Zero End of the Measuring Tape Below the Measurement Value. 
+With respect to circumference measures, do not take any measurement readings with 
+the zero end of the tape placed above the section of the tape with the result. 
+• Avoid Parallax when Taking Measurement Readings. Parallax describes the 
+phenomenon where an observer reads a different value on a measuring device depending 
+on the angle from which it is viewed. Parallax is a common cause of data error especially 
+for measurements obtained using the measurement tape. The examiner should read the 
+measurement with his or her line of sight directly in front of the value rather than at an 
+angle or from even slightly off to the side. 
+• Record all Measurements to the Nearest Tenth of a Centimeter (0.1 Cm). For 
+quality control purposes, the computer will read each number aloud immediately 
+following data entry. ISIS will also alert the recorder to any values that are outside a 
+predetermined limit. This warning serves as an alert for possible data entry and 
+measurement errors. Always verify the result before advancing to the next measure. 
+   
+ 3-3 Anthropometry Procedures 2021  
+3.4 Examination Procedures 
+This section describes the anthropometry examination procedures. As previously shown in 
+Table 3-1, the protocol includes a total of nine body measures. Exam staff will collect a minimum of 
+three and a maximum of seven measures, depending on the age of the participant. 
+3.4.1 Recumbent Length 
+The anthropometry protocol requires a stature measurement in the form of recumbent length for all 
+children less than 4 years of age (birth to 47 months). Recumbent length is measured using an 
+infantometer with a fixed head piece and horizontal backboard, and an adjustable foot piece. 
+1. Position the SP. Lay the child on a Chux pad on the infantometer with the feet toward 
+the foot piece and the head against the fixed head piece. If the child is not wearing a 
+MEC examination gown, ask the parent or guardian to remove the child’s clothes 
+except for diapers or underpants. The parent can use the changing table in the room to 
+remove the child’s clothes. Place a Chux pad on top of the changing table and ask the 
+parent or guardian to use it to remove the child’s clothes. 
+Placing infants and small children in a recumbent position often generates a sense of 
+insecurity and consequently invokes a crying response. To help comfort the child, the 
+parent or guardian should be encouraged to stand between the examiner and recorder, 
+make eye contact, and talk to the child throughout the procedure. 
+The recorder supports the child’s head while the examiner positions the feet and 
+ensures that the head lies in the Frankfort horizontal plane described in Section 3.4.3. 
+Apply gentle traction to bring the top of the head in contact with the fixed head piece. 
+Secure the child’s head in the proper alignment by lightly cupping the palms of your 
+hands over the ears (Exhibit 3-1). Align the child’s legs by placing one hand gently but 
+with mild pressure over the knees. With the other hand, slide the foot piece to rest 
+firmly at the child’s heels (Exhibit 3-2). The toes must point directly upward with both 
+soles of the feet flexed perpendicular against the acrylic foot piece. To encourage the 
+child to flex the feet, run the tip of your finger down the inside of the foot. 
+Note: If you are unable to achieve both legs outstretched in the correct position, make 
+certain at least one leg is straight with the foot flexed against the foot piece. However, 
+only position with one leg as an exception for extremely fussy children, making sure 
+that the child’s body remains straight in the infantometer. 
+2. Capture the Result. When the child is correctly positioned, click the “Get” button on 
+the screen to capture the result in ISIS. Release the child’s feet as you hold the foot 
+piece in position. Wait for the computer to repeat the measurement aloud. After 
+verifying the correct value, have the parent or guardian remove the child from the 
+   
+ 3-4 Anthropometry Procedures 2021  
+infantometer. Slide the foot piece to the end of the measurement column in preparation 
+for the next participant. 
+In the event of a power outage or if the infantometer malfunctions, position the child as 
+described above and obtain the recumbent length using the tape measure mounted on 
+the right side of the measurement table. Call the result to the recorder, who will 
+manually enter this number in the appropriate ISIS field. 
+Exhibit 3-1. Recumbent length head position 
+Exhibit 3-2. Recumbent length feet position 
+
+   
+ 3-5 Anthropometry Procedures 2021  
+3.4.2 Head Circumference 
+The circumference of the head is measured on children from birth through 6 months of age. Follow 
+the steps below to obtain the head circumference measurement: 
+1. Position the SP. Instruct the parent or guardian to stand holding the child over the 
+parent’s left shoulder or else sit on the blue box with the child in the parent’s lap. Ask 
+the parent to remove any of the child’s hair ornaments or braids. 
+2. Take the Measurement. Place the head circumference tape around the child’s head so 
+that the tape lies across the frontal bones of the skull; slightly above the eyebrows; 
+perpendicular to the long axis of the face; above the ears; and over the occipital 
+prominence at the back of the head (Exhibit 3-3). Move the tape up and down over the 
+back of the head to locate the maximal circumference. Tighten the insertion tape so that 
+it fits snugly around the head and compresses the hair and underlying soft tissues. 
+Measure the circumference to the nearest 0.1 cm. Since the head circumference tape 
+shows both centimeters and inches, check that you take the measurement using the 
+metric scale. 
+3. Record the Result. Call the result to the recorder, who will enter this number on the 
+ISIS screen. Remove the head circumference tape. Proceed to the next measure for SPs 
+in this age group (birth through 6 months), the upper arm length. 
+Exhibit 3-3. Head circumference tape position 
+
+   
+ 3-6 Anthropometry Procedures 2021  
+3.4.3 Standing Height 
+Standing height is an assessment of maximum vertical size. This stature measurement is collected on 
+all SPs aged 2 years and older who are able to stand unassisted. Standing height is measured using a 
+stadiometer with a fixed vertical backboard and an adjustable head piece. 
+1. Position the SP. Direct the SP to the stadiometer platform. Ask him or her to remove 
+any hair ornaments, jewelry, buns, or braids from the top of the head. Exhibit 3-4 
+depicts the correct position for the measurement of standing height. First, have the SP 
+stand up straight against the backboard with the body weight evenly distributed and 
+both feet flat on the platform. Instruct the SP to stand with the heels together and 
+toes apart. The toes should point slightly outward at approximately a 60ºangle. Check 
+that the back of the head, shoulder blades, buttocks, and heels make contact with 
+the backboard (Exhibit 3-4). 
+Note: Depending on the overall body conformation of the individual, all four contact 
+points—head, shoulders, buttocks, and heels—may not touch the stadiometer 
+backboard. For example, elderly SPs may frequently have kyphosis, a forward 
+curvature of the spine that appears as a hump at the upper back. In particular, dowager’s 
+hump is a form of kyphosis that creates a hump at the back of the neck. Additionally, 
+some overweight SPs cannot stand straight while touching all four contact points to the 
+backboard. In such instances it is important to obtain the best measurement possible 
+according to the protocol. If you cannot ensure that the SP’s trunk remains vertical 
+above the waist, the arms and shoulders are relaxed, and the head lies in the Frankfort 
+plane, then call “NS” to the recorder who will capture the measurement and add the 
+“Not Straight” comment beside the appropriate stature measure in ISIS. 
+   
+ 3-7 Anthropometry Procedures 2021  
+Exhibit 3-4. Standing height position 
+2. Second, align the head in the Frankfort horizontal plane. The head is in the Frankfort 
+plane when the horizontal line from the ear canal to the lower border of the orbit of 
+the eye is parallel to the floor and perpendicular to the vertical backboard (Exhibit 3-5). 
+Many people will assume this position naturally, but for some SPs the examiner may 
+need to gently tilt the head up or down to achieve the proper alignment. Instruct the SP 
+to look straight ahead. 
+Next, lower the stadiometer head piece so that it rests firmly on top of the participant’s 
+head, with sufficient pressure to compress the hair. Instruct the SP to stand as tall as 
+possible, take a deep breath, and hold this position. The act of taking a deep breath 
+helps straighten the spine to yield a more consistent and reproducible stature 
+measurement. Notice that the inhalation will cause the head piece to rise slightly. 
+Note: Some SPs have hair styles such as a barrette, bun, or braid that will interfere with 
+the placement of the stadiometer head piece. Other SPs may refuse to remove their 
+shoes for the height measurement. In these cases, while the SP remains positioned on 
+the stadiometer platform, the examiner will measure the hair piece and/or the shoe heel 
+   
+ 3-8 Anthropometry Procedures 2021  
+with the 15-cm height adjustment ruler. The recorder will enter this number in the 
+Height Correction Above/Below Waist field on the screen. ISIS will use this correction 
+factor to automatically calculate an adjusted height value. 
+3. Capture the Result. While the SP is correctly positioned and holding the breath, call 
+“Get” to the recorder, who will click the Get button on the ISIS screen to capture the 
+result. Tell the SP to release the breath as you hold the head piece in position. Wait for 
+the computer to repeat the measurement aloud. After verifying the correct value, have 
+the SP relax and step away from the stadiometer. Slide the head piece to the top of the 
+measurement column and secure it in place with the brake lever, in preparation for the 
+next participant. 
+Note: In the event of a power outage or if the stadiometer malfunctions, slide the head 
+piece to the top of the measurement column and obtain the height using the tape 
+measure mounted on the right side of the measurement column. Call the result to the 
+recorder, who will manually enter this number in the appropriate ISIS field. 
+Exhibit 3-5. Frankfort horizontal plane 
+
+   
+ 3-9 Anthropometry Procedures 2021  
+3.4.4 Weight 
+Participants will be weighed in kilograms using a digital weight scale. At the end of the examination, 
+ISIS will display the weight in both kilograms and pounds for the recorder to share with the SP if he 
+or she wants to know the result. Participants should wear the standard MEC examination gown, 
+which consists of a disposable shirt, pants, and slippers. SPs should wear only underpants beneath 
+the gown. Infants should wear only diapers. The procedures for obtaining the weight measurement 
+are as follows: 
+1. Position the SP. After the examiner briefly introduces the exam to the SP, the recorder 
+will direct the SP to stand in the center of the scale platform, hands at sides, and looking 
+straight ahead. 
+2. Capture the Result. After the SP is correctly positioned and the readout on the digital 
+measurement device becomes stable, the recorder will click the “Get Weight” button on 
+the screen to capture the result into ISIS. 
+In addition, exam staff should follow the procedures described below when applicable: 
+• Small Children. Infants and toddlers who cannot stand alone on the scale will be 
+weighed with the assistance of an adult. The parent, guardian, or the examiner will stand 
+alone on the scale while the recorder clicks the Tare button on the ISIS screen. This 
+sets the scale readout to zero. The child is then handed to the adult on the scale. In this 
+way the scale will read only the child’s weight. The recorder will click Get Weight to 
+transfer this result to ISIS, and Reset to undo the tare setting. 
+• Casts or Prostheses. If you successfully obtained the weight, but the SP had a cast or 
+medical prostheses, add the Medical Appliance (MA) code in ISIS. 
+• Street Clothes. If you successfully obtained the weight but the SP wore street clothes 
+instead of the MEC examination gown, add the Clothing (CL) code in ISIS. Do not use 
+this code for infants wearing diapers, a one-piece garment, or a T-shirt. 
+Weight data collected with the SP wearing shoes on the scale will be considered invalid. 
+Therefore, if the SP wears shoes to the exam ask him or her to remove them before 
+stepping on the scale. If the SP refuses to remove his or her shoes in order to step on 
+the scale, code the weight measure as Could Not Obtain (CNO). 
+• Portable Scales. Each MEC has two portable scales that are kept in the cabinet 
+drawers. Turn on the scale on by pressing the On button, and position the SP on the 
+portable scale in the same manner as for the digital weight scale. Call the weight to the 
+recorder, who will manually enter the number into the Weight field on the ISIS screen. 
+Use the portable scales in the following situations: 
+   
+ 3-10 Anthropometry Procedures 2021  
+• If the Examinee Weighs More Than 600 lb (note that the digital weight scale can 
+accurately weigh up to a maximum of 600 lb), obtain the weight using two portable 
+scales: 
+– Have the SP stand with one foot on each portable scale. 
+– Combine the two results to approximate the weight. 
+– Manually enter the total in the Weight field on the screen. 
+– If the SP exceeds the capacity of both portable scales (440 lb each), code the 
+weight measure as Exceeds Capacity (EC) in ISIS. 
+Or, if the digital weight scale malfunctions or in the event of a power outage, 
+obtain the weight using two portable scales. 
+3.4.5 Upper Leg Length 
+Following the weight and height measures, the length of the upper leg will be collected on 
+participants aged 8 years and older. This section describes the procedures to obtain the upper leg 
+length measurement: 
+1. Position the SP. Ask the SP to sit on the blue box with the right knee bent at a 90o 
+angle (Exhibit 3-6). Tell the SP that you are going to cut the right sleeve and pant leg of 
+the examination gown. Assure him or her that you will tape these areas closed at the end 
+of the exam. Using the blunt-edge scissors, cut the right sleeve to the edge of the 
+shoulder and the pant leg to the edge of the pocket. 
+   
+ 3-11 Anthropometry Procedures 2021  
+Exhibit 3-6. Upper leg length measurement position 
+2. Mark the Measurement Site. Hand the scissors to the recorder in exchange for the 
+knee caliper. Position the knee caliper as if you were measuring the breadth of the 
+patella (Exhibit 3-7). At the distal end of the femur place the caliper blades on either 
+side of the patella, not to be confused with the femoral condyles. The horizontal bar of 
+the caliper should touch or lie close to the anterior surface of the thigh, proximal to the 
+patella. Try to position the caliper as vertical as possible, but it may need to sit 
+somewhat slanted or at an angle depending on the SP. With a cosmetic pencil, mark a 
+line along the proximal border of the patella on the anterior surface of the thigh. Use 
+the edge of the horizontal bar of the caliper as a guide. 
+   
+ 3-12 Anthropometry Procedures 2021  
+Exhibit 3-7. Knee caliper positioned on edges of patella 
+3. Take the Measurement. Instruct the SP to sit up straight and tell him or her what you 
+will do next. For example, say that you are going to locate the muscle tendon where the 
+leg meets the rest of the body (Exhibit 3-8). Place the zero end of the steel measuring 
+tape at the inguinal crease, just below the anterior superior iliac spine (Exhibit 3-9). 
+Depending on the SP, the examiner may need to lift folds of fat tissue in order to locate 
+this crease. Check that the zero end of the tape is properly positioned: place your thumb 
+firmly over the zero end of the tape and ask the SP to lift the thigh slightly off the box. 
+If the tape is in the correct position at the inguinal crease, you will feel a definite 
+tightening of the tendon. Apply sufficient pressure on the zero end to make certain 
+that the zero end is on the tendon in the crease. Pull the pant leg slightly to smooth 
+out any gathers. Ask the SP to relax the right leg and remind him or her to sit up 
+straight. Starting from the inguinal crease, extend the tape down the anterior midline of 
+the thigh to the cosmetic pencil mark. Take the measurement to the nearest 0.1 cm. 
+4. Record the Result. Call the result to the recorder, who will enter this number on the 
+ISIS screen. Instruct the SP to come off the box, stand on the floor, and turn to face 
+away from you. 
+   
+ 3-13 Anthropometry Procedures 2021  
+Exhibit 3-8. Upper leg length mark 
+ Exhibit 3-9. Upper leg length tape position 
+3.4.6 Upper Arm Length 
+In this study, the length of the upper arm is measured to obtain reliable arm circumference 
+(Section 3.4.7). Exam staff will measure the upper arm length on participants aged 2 months and 
+older. 
+1. Position the SP. Direct the SP to turn away from you. Ask him or her to stand upright 
+with the weight evenly distributed on both feet; the right arm bent 90º at the elbow, 
+and the right palm facing up. Demonstrate the correct position if necessary 
+(Exhibit 3-10). 
+   
+ 3-14 Anthropometry Procedures 2021  
+Exhibit 3-10. SP position for upper arm length and midpoint 
+2. Mark the Measurement Site. Locate the end of the spine of the right scapula by 
+following the scapula out to the arm until it makes a sharp V-turn to the front of the 
+body (Exhibit 3-11). Using the cosmetic pencil, make a horizontal line on the 
+uppermost edge of the posterior border of the spine extending from the acromion 
+process (see Exhibit 3-12). 
+   
+ 3-15 Anthropometry Procedures 2021  
+Exhibit 3-11. Upper arm bony landmarks 
+Exhibit 3-12. Marking spine extending from acromion process 
+3. Take the Measurement. Hold the zero end of the measuring tape at this mark and 
+extend the tape down the center of the posterior surface of the arm to the tip of the 
+olecranon process, the bony part of the mid-elbow (Exhibit 3-13). Exhibit 3-14 shows 
+the measurement on an infant. 
+Note: Some SPs with large arms have a lot of sagging fat and flesh near the elbow. If 
+the arm length is obtained by bringing the tape down the back of the arm and around 
+   
+ 3-16 Anthropometry Procedures 2021  
+this extra flesh to the tip of the olecranon process, then call “BE” to the recorder who 
+will record the measurement and add the “Bowing Effect” comment beside the Upper 
+Arm Length measurement in ISIS. 
+Exhibit 3-13. Marking upper arm length midpoint 
+Exhibit 3-14. Infant upper arm length 
+Important: 
+The tape must be centered on the posterior surface of the arm. 
+Exhibit 3-15 shows the correct placement of the measuring tape centered on the 
+posterior surface of the arm, whereas Exhibit 3-16 shows the measuring tape placed 
+incorrectly. 
+   
+ 3-17 Anthropometry Procedures 2021  
+Exhibit 3-15. CORRECT tape placement for 
+upper arm length 
+Exhibit 3-16. INCORRECT tape placement for 
+upper arm length 
+4. Record the Result. Call the result to the recorder, who will enter this number on the 
+ISIS screen. Keep the measuring tape in position. 
+Mark the Midpoint. After the recorder enters the result, the application will divide the 
+value in half to calculate the midpoint of the measured length. A computer-generated 
+voice will repeat the measurement aloud and call out the midpoint. While the examiner 
+holds the tape in place, the recorder will make a horizontal mark at the midpoint and 
+cross this mark with a perpendicular line centered on the posterior surface of the arm 
+(see Exhibit 3-13). This mark defines the site at which the arm circumference will be 
+measured. Thus the examiner may need to remove the tape to allow the recorder to 
+complete the appropriate cross mark. Finally, tell the SP to relax the right arm. Proceed 
+to the arm circumference measure. 
+3.4.7 Arm Circumference 
+The anthropometry protocol calls for three circumference measures: arm circumference on 
+participants 2 months and older, abdominal or waist circumference on participants 2 years and older, 
+and hip or buttocks circumference on participants 12 years and older. The arm circumference is 
+measured on the right arm at the level of the upper arm mid-point mark. The examiner makes this 
+   
+ 3-18 Anthropometry Procedures 2021  
+mark on the posterior surface of the arm immediately after measuring the upper arm length. The 
+procedures for making the mid-arm circumference mark are explained in Section 3.4.6, Upper Arm 
+Length, shown earlier. This section describes the procedures for measuring the arm circumference: 
+1. Position the SP. Ask the SP to turn so that you stand facing his or her right side. 
+Have the participant stand upright with the weight evenly distributed on both feet, the 
+shoulders relaxed, and the right arm hanging loosely at the sides. Flexing or tightening 
+the arm muscles will yield an inaccurate measurement. 
+2. Take the Measurement. Continue to stand facing the right side of the SP. Do not 
+stand behind the SP for this measurement. Wrap the measuring tape around the arm at 
+the level of the upper arm mid-point mark. Position the tape perpendicular to the long 
+axis of the upper arm. Pull the two ends of the overlapping tape together so that the 
+zero end sits below the measurement value and the result lies on the lateral aspect of the 
+arm (not the posterior surface). Check that the tape fits snugly around the arm but does 
+not compress the skin. Exhibits 3-17 and 3-18 show the arm circumference 
+measurement on an adult and infant, respectively. Take the measurement to the nearest 
+0.1 cm. 
+3. Record the Result. Call the result to the recorder, who will enter this number on the 
+ISIS screen. Remove the tape measure. Proceed to the next circumference measure. 
+Exhibit 3-17. Adult arm circumference 
+
+   
+ 3-19 Anthropometry Procedures 2021  
+Exhibit 3-18. Infant arm circumference 
+3.4.8 Abdominal (Waist) Circumference 
+The second circumference measure consists of the abdominal or waist circumference. Exam staff 
+will collect the waist circumference on participants aged 2 years and older. Follow the procedures 
+below to obtain this measure: 
+1. Position the SP. Instruct the SP to gather the shirt gown above the waist and clip it on 
+the front so it will not interfere with the measurements. Instruct the participant to cross 
+his or her arms and place his or her hands on opposite shoulders. Demonstrate the 
+desired position of the arms. It may help to tell SPs to think of giving themselves a hug. 
+Feel the SP’s right and left iliac crest and, if necessary, lower the waistband of the pants 
+and underclothing to expose the iliac crest. Again, always tell the SP what you are going 
+to do before you do it. 
+2. Mark the Measurement Site. Stand on the participant’s right side. Palpate the hip area 
+to locate the right ilium of the pelvis. With the cosmetic pencil draw a horizontal line 
+just above the uppermost lateral border of the right ilium. Cross this mark at the 
+midaxillary line, which extends from the armpit down the side of the torso. 
+Note: If it is difficult to find the iliac crest, such as on SPs with larger waists, then begin 
+inferior to the midaxillary line (toward the SP’s front) and palpate the ilium upward to 
+the midaxillary line until you find the uppermost part of the bone. Exhibit 3-19 shows 
+the measurement site correctly marked for the waist circumference. 
+3. Take the Measurement. Extend the measuring tape around the waist. Position the 
+tape in a horizontal plane at the level of the measurement mark (Exhibit 3-20). Use the 
+   
+ 3-20 Anthropometry Procedures 2021  
+wall mirror to ensure the horizontal alignment of the tape. While the examiner remains 
+on the SP’s right side, the recorder will come around to the SP’s left side to check the 
+placement of the tape. Check that the tape sits parallel to the floor and lies snug but 
+does not compress the skin. Always position the zero end of the tape below the section 
+containing the measurement value. Take the measurement to the nearest 0.1 cm at the 
+end of the SP’s normal expiration. 
+4. Record the Result. Call the result to the recorder, who will enter this number on the 
+ISIS screen. Remove the tape measure and erase the cosmetic pencil mark from the SP’s 
+skin with a few drops of baby oil on a piece of gauze. 
+Exhibit 3-19. Waist circumference mark 
+Exhibit 3-20. Measuring tape position for waist circumference 
+
+   
+ 3-21 Anthropometry Procedures 2021  
+3.4.9 Hip (Buttocks) Circumference 
+The last circumference measure consists of the hip or buttocks circumference. Exam staff will 
+collect the hip circumference on participants aged 12 years and older. Follow the procedures below 
+to obtain this measure: 
+1. Position the SP. If you have not done so already, instruct the SP to gather the shirt 
+gown above the waist and clip it on the front so it will not interfere with the 
+measurements. Instruct the participant to cross his or her arms and place his or her 
+hands on opposite shoulders. Demonstrate the desired position of the arms. It may help 
+to tell SPs to think of giving themselves a hug. If necessary, ask the SP to raise the 
+waistband of his or her pants to smooth out any gathers. 
+2. Take the Measurement. The recorder stands in from of the SP and gathers the side 
+seams of the exam pants and makes a fold. The recorder holds the folded sides of the 
+pants snugly; this minimizes the amount of material included in the measurement and 
+helps to define the maximum protuberance of the buttocks when viewed in profile. The 
+examiner squats on the right side of the SP and positions the tape in a horizontal plane 
+(Exhibit 3-21). Use the wall mirror to ensure the horizontal alignment of the tape. While 
+the examiner remains on the SP’s right side, the recorder will release the folds and come 
+around to the SP’s left side to check the placement of the tape. Check that the tape sits 
+parallel to the floor and lies snug. Always position the zero end of the tape below the 
+section containing the measurement value. Take the measurement to the nearest 0.1 cm 
+at the end of the SP’s normal expiration. 
+3. Record the Result. Call the result to the recorder, who will enter this number on the 
+ISIS screen. 
+Exhibit 3-21. Measuring tape position for hip (buttocks) circumference 
+
+   
+ 3-22 Anthropometry Procedures 2021  
+3.5 Special Considerations 
+Obtaining complete and accurate body measurement data can be more challenging under some 
+circumstances. The following situations may require certain modifications to the procedures that 
+would be followed under routine conditions. 
+3.5.1 SPs in Street Clothes 
+Some SPs refuse to change into the shirt and/or pants provided to them as part of the standard 
+survey examination gown. If a participant enters the exam room wearing his or her street clothes, 
+complete as many anthropometric measurements as possible. For example, the weight and height 
+measures can easily be obtained. Exam staff can also collect the upper arm length and arm 
+circumference if the SP has a loose fitting or sleeveless shirt. For infants, ask the parent or guardian 
+to undress the child leaving only the diaper and T-shirt. 
+Perform the weight measurement procedures described in Section 3.4.4 with the following caveats: 
+• Shoes. Ask the SP to remove his or her shoes before stepping on the scale. If the SP 
+refuses to remove the shoes in order to step on the scale, code Could Not Obtain 
+(CNO) for the weight measure in ISIS. Weight data collected with the SP wearing 
+shoes on the scale will be considered invalid. 
+• Clothes. On the ISIS screen select Clothes (CL) from the Comments box beside the 
+Weight field. This code indicates that the SP wore street clothes while standing on the 
+scale. Do not use the CL code for infants wearing diapers or a T-shirt. 
+• Medical Appliance. If you successfully obtained the weight but the SP wore a medical 
+appliance that could not be removed, such as a cast or prosthesis, add the Medical 
+Appliance (MA) code from the ISIS Comments box. 
+3.5.2 Children 
+The procedures for performing anthropometric measures on children must take into account their 
+smaller size as well as extra safety precautions: 
+• Weight. When an infant or toddler SP cannot stand unassisted on the digital weight 
+scale, collect the weight following the Tare procedures described in Section 4.3.2. In 
+ISIS be sure to select the Clothes (CL) code beside the weight field for a child wearing 
+street clothes but not for an infant wearing a diaper and T-shirt. 
+   
+ 3-23 Anthropometry Procedures 2021  
+• Recumbent Length. Exam staff must carefully hold small children on the 
+infantometer at all times because they can quickly flip themselves over or easily fall. 
+Move the screen cursor to the GET button before positioning the child, in order to 
+capture the measurement immediately after the child assumes the correct position. 
+• Upper Arm Length and Circumferences. For toddlers and small children up to 
+roughly 6 or 7 years of age, the examiner may opt to stand the child on the blue sitting 
+box. In this position the examiner can better control the child’s movements and take 
+measurements at eye level for data accuracy. Ensure that the box sits against the wall 
+and ask the child to hold the safety bar for balance. If the child cannot stand alone on 
+the box, take the measurements with the child sitting in the parent’s lap. Ask parents to 
+place infants over their left shoulder. 
+3.5.3 SPs in Wheelchairs 
+Provided the SP is willing and able to participate, exam staff should attempt to collect the following 
+subset of anthropometric measurements on SPs who are in wheelchairs: 
+• Upper arm length; and 
+• Arm circumference. 
+To prepare the SP for these measurements, direct him or her to the right side of the wheelchair so 
+that the arm of the chair does not restrict the right arm. Ensure that the SP can extend the right arm 
+without interference from the chair. As with ambulatory participants, DO NOT try to lift the 
+SP or bear his or her weight in order to facilitate the examination protocol. 
+3.5.4 Amputees 
+For SPs who have any part of a limb on the right side amputated, collect the required measurement 
+data on the SP’s left side. For example, if the SP has part of his or her right arm missing, obtain the 
+upper arm length measurement and mark the midpoint on the left arm. Measure the arm 
+circumference on the left arm as well. Enter CNO in the Comment box only if both arms are 
+amputated or for some other reason you cannot obtain these three measurements. If a measurement 
+is obtained on the left side, submit an Unusual Field Occurrence (UFO) entry as documentation 
+(refer to the UFO Utility Manual and Equipment Tracking System User Guide for details). 
+During the exam, carefully observe whether the SP has any amputations. For data quality purposes it 
+is important to take amputations into account, for example in relation to the measured weight. The 
+   
+ 3-24 Anthropometry Procedures 2021  
+anthropometry protocol does not require the examiner or recorder to ask the SP outright if he or 
+she has any amputations. Amputations may be obvious on many SPs, especially amputations of the 
+arms and the leg that is measured as part of the exam. However, if the exam staff has doubts or 
+difficulty determining this information based on observation alone, then ask the SP directly: “Do 
+you have any amputations?” 
+Record all amputation-related information on the ISIS Amputations screen prior to finishing the 
+exam. Specifically, ISIS will ask you to record whether or not the SP has any amputations. If so, ISIS 
+will prompt you to record more details: the particular extremity or extremities affected (i.e., upper or 
+lower, right or left) and where the amputation lies (i.e., above or below the elbow or knee). 
+3.5.5 Comprehension or Language Difficulties 
+Some SPs may have difficulty understanding the examination instructions. Exam staff should use 
+extreme caution when attempting to conduct the anthropometry component on these participants. 
+If the SP cannot understand your instructions due to a developmental disability or other type of 
+physical or mental impairment, ask if a family member or friend accompanied the SP to the MEC 
+who can help explain your directions to the SP. Regardless, if you believe the SP cannot 
+comprehend well enough for you to safely and accurately carry out the examination protocol, then 
+on the ISIS screen code the appropriate measure(s) as Could Not Obtain (CNO) and select 
+“Communication Problem” as the reason for the Partial or Not Done exam status. 
+For many SPs, language barriers are a common cause of difficulty in understanding examination 
+instructions. For Spanish-speaking SPs, if the examiner and the recorder are not English-Spanish 
+bilingual, a Spanish interpreter will be assigned to interpret for the SP and the examiner during the 
+exam. In most cases the coordinator will assign a bilingual health tech either as an examiner or as a 
+recorder to conduct the component with a non-bilingual health tech.  If the SP speaks a language 
+other than English or Spanish, arrangements will be made ahead of the anthropometry exam to 
+identify an appropriate interpreter. Nevertheless, as in the case of other forms of comprehension 
+difficulties, if you cannot safely and accurately perform the exam on the SP, then code the affected 
+measure(s) as Could Not Obtain (CNO) on the ISIS screen and select “Communication Problem” 
+as the reason for the Partial or Not Done exam status. See the NHANES Interpretation Guidelines for 
+   
+ 3-25 Anthropometry Procedures 2021  
+procedures related to the interpretation of MEC examination components and working with 
+interpreters. 
+3.6 Post-Examination Procedures 
+At the end of the examination remove any remaining cosmetic pencil marks from the SP’s skin with 
+a few drops of baby oil on a piece of gauze. Tape the SP’s pant leg and sleeve where they were cut 
+during the exam. The recorder will assist the examiner as follows: hand the gauze pads with baby oil 
+and strips of masking tape to the examiner; return the SP’s jewelry, wallet, purse, or other belongings 
+that may have been set aside; and put away equipment and supplies in preparation for the next 
+examination. 
+To end the component, the recorder will click the Finish button on the ISIS screen. This signals the 
+coordinator to make the next assignment for that SP. Do not click Finish until the SP is 
+completely ready to be escorted out of the room. Wait for a message from the coordinator 
+indicating where to direct the SP. Thank the SP for participating and accompany him or her to the 
+next exam room or to the reception area. 
+   
+ 4-1 Anthropometry Procedures 2021  
+4. ISIS Data Entry 
+4.1 General Screen Information 
+When the coordinator assigns a survey participant (SP) to the Anthropometry or Body Measures 
+room, a communication dialog box will appear on the Integrated Survey Information System (ISIS) 
+computer screen. This will inform you that an SP has been assigned to this component. Click the 
+Close button to remove the dialog box from the screen. 
+To begin the examination, click the “Login SP” icon, the first icon on the left in the standard 
+toolbar. ISIS will present a dialog box that asks for the name and password of the examiner and the 
+recorder. Wand the barcode on the SP’s identification bracelet or type the SP’s ID number to log 
+the SP into the component. This will activate a dialog box (Exhibit 4-1) containing descriptive 
+information about the SP (i.e., name, SP ID, age, etc.). Verify that the correct participant name 
+appears on the screen. Contact the coordinator and MEC manager for assistance if the information 
+in ISIS appears incorrect. Otherwise, click OK to initiate the examination. 
+Exhibit 4-1. Login SP screen 
+
+   
+ 4-2 Anthropometry Procedures 2021  
+All ISIS screens have similar characteristics. As shown below (Exhibit 4-2), at the very top of the 
+screen is a title bar containing the component name (Anthropometry Subsystem), stand number, 
+session number, and session date and time. Below this are the menu bar and standard toolbar icons, 
+which provide software application commands and shortcuts. Under the standard toolbar sits a 
+second title bar that identifies the examination component (Body Measures), stand number, session 
+number, and session date and time. Below the second title bar are the SP ID, name, age, gender, and 
+current date and time. The component screen name lies in the upper left of the main window area. 
+Exhibit 4-2. ISIS screen characteristics 
+1st Title Bar 
+Menu Bar 
+Scr
+Standard Toolbar 
+een Name. 
+V
+2nd Title Bar 
+CR Buttons 
+Large Arrow 
+Close Exam 
+ Finish 
+At the bot
+tom left corner of the screen is the ISIS screen number and a set of arrow buttons for 
+navigating the screens: The far left button moves to the first screen and the far right button moves 
+to the last screen. Directly beside the screen number, the left button moves to the previous screen 
+and the right button moves to the next screen. At the bottom right corner of the screen is a large 
+arrow. Always click on the large arrow to advance to the next screen. 
+In the middle of the bottom of the screen are two buttons: Close Exam and Finish. Clicking 
+Close Exam will delete any data captured on the current screen, terminate the exam, and code the 
+   
+ 4-3 Anthropometry Procedures 2021  
+exam status as Partial or Not Done. NEVER click the Close Exam button unless the exam 
+must be discontinued and there is no other appropriate means to exit the application. Click 
+the Finish button at the end of an exam. This sends a signal to the coordinator that the SP is 
+available for the next assignment. 
+As you proceed through the examination, certain ISIS entries will activate an Edit Check box 
+(Exhibit 4-3). This window appears if the recorder enters a number that ISIS determines to be out 
+of the acceptable range. Specifically, ISIS identifies numeric data entries as out of range as those that 
+are less than the 1st percentile or greater than the 99th percentile for the SP’s age and gender. In 
+these cases, the Edit Check box will present the message, “Check that measure.” ISIS will also 
+identify numeric data entries that exceed the capacity of the equipment, and display an Edit Check 
+box with the message “The Measurement exceeded the device limitation.” The recorder must 
+prompt the examiner to review the measurement for accuracy and follow his or her 
+instructions before proceeding with the exam. 
+Exhibit 4-3. Edit Check box 
+4.2 Stature Screen 
+The next screen in the ISIS anthropometry application is the Stature screen (Exhibit 4-4 through 
+Exhibit 4-7). In accordance with the anthropometry protocol, the screen will reflect different 
+measurement fields depending on the age of the SP: 
+1. SPs aged 0-6 months: Recumbent length and head circumference (Exhibit 4-4); 
+2. SPs aged 7-23 months: Recumbent length (Exhibit 4-5); 
+   
+ 4-4 Anthropometry Procedures 2021  
+3. SPs aged 24-47 months: Recumbent length and standing height (Exhibit 4-6); and 
+4. SPs aged 4 years and older: Standing height (Exhibit 4-7). 
+Click the Get button to transfer the recumbent length and standing height measurement directly 
+from the infantometer and stadiometer, respectively, to ISIS. These measurements may also be 
+manually entered. The head circumference measurement can only be entered manually. After each 
+measure is successfully captured in ISIS, a computer-generated voice will repeat the number aloud. 
+Always verify that this is the correct number. 
+Exhibit 4-4. Stature screen— SPs 0-6 months 
+
+   
+ 4-5 Anthropometry Procedures 2021  
+Exhibit 4-5. Stature screen— SPs 7-23 months 
+Exhibit 4-6. Stature screen— SPs 24-47 months 
+
+   
+ 4-6 Anthropometry Procedures 2021  
+Exhibit 4-7. Stature screen— SPs 4 years and older 
+4.2.1 Height Correction 
+The top portion of the Stature screen offers two fields for Height Correction: Above Waist and 
+Below Waist (Exhibit 4-8). Using the designated height adjustment ruler, the exam staff will make 
+corrections to the SP’s height in two cases: 
+1. Above Waist. The SP refuses (or is unable) to remove a hairpiece such as a barrette, 
+bun, or braids that would otherwise prevent an accurate stature measurement. The 
+technologist measures the hairpiece with the ruler and the recorder enters this number 
+in the Height Correction: Above Waist field. 
+2. Below Waist. The SP refuses (or is unable) to remove his or her shoes for the stature 
+measurement. The technologist measures the height of the shoe heel with the ruler and 
+the recorder enters this number in the Height Correction: Below Waist field. 
+The Stature screen also displays two columns associated with corrections to the recumbent length 
+and standing height measurements: 
+1. Measured. The uncorrected height measurement captured or entered into ISIS from 
+the infantometer or stadiometer. 
+2. Adjusted. The adjusted height measurement, taking into account the height correction. 
+ISIS automatically calculates the adjusted height by subtracting the height correction 
+number entered in the Above Waist and/or Below Waist field from the uncorrected 
+height measurement value. 
+   
+ 4-7 Anthropometry Procedures 2021  
+Exhibit 4-8. Stature screen—h eight correction 
+4.2.2 Stature Comments 
+Beside the Measured and Adjusted columns is a Comments column for specific notes regarding 
+recumbent length and standing height measurements. The Comment box provides the following 
+codes in a drop-down list: EC, CNO, and NS. 
+1. EC = Exceeds Capacity. Select EC if you cannot capture or manually enter the height 
+because the SP is too tall or long to be measured by the stadiometer or infantometer, 
+respectively. 
+2. CNO = Could Not Obtain. Select CNO if you cannot obtain the stature 
+measurement for a reason other than EC. 
+3. NS = Not Straight. Select NS to code an inaccurate stature measurement if the SP’s 
+posture was not straight. 
+The drop-down list changes depending on whether or not a value is entered. Specifically, if the 
+height and/or length value is missing or zero, the drop-down list will provide the options CNO or 
+EC (Exhibit 4-9). When a non-zero value is entered in the height and/or length, the drop-down list 
+will consist of only NS (Exhibit 4-10). 
+   
+ 4-8 Anthropometry Procedures 2021  
+Exhibit 4-9. Stature screen—r ecumbent length blank comments 
+Exhibit 4-10. Stature screen—s tanding height value comments 
+4.3 Weight Screen 
+The second Data Entry screen is the Weight screen (Exhibit 4-11). Weight in kilograms is collected 
+on all SPs. 
+   
+ 4-9 Anthropometry Procedures 2021  
+Exhibit 4-11. Weight screen 
+When y
+ou open this screen, the cursor will automatically appear in the Weight field. After the SP 
+steps on the digital weight scale and the weight appears on the measurement device, click the 
+Get Weight button on the screen. ISIS will capture the SP’s weight directly from the scale and 
+display the number in the Weight field. 
+If the digital weight scale was set to pounds (lb) instead of kilograms (kg), when you click 
+Get Weight, ISIS will present a warning message asking you to change the display to kg and click 
+Get Weight again (Exhibit 4-12). In this case, click OK to the warning message, change the scale 
+setting to kg, and retry capturing the weight into ISIS. 
+Exhibit 4-12. Weight screen—lb/ kg warning message 
+
+   
+ 4-10 Anthropometry Procedures 2021  
+4.3.1 Weight Comments 
+Beside the Weight field, a Comments box provides the following codes in a drop-down list: EC, 
+CNO, CL, and MA (Exhibit 4-13). 
+1. EC = Exceeds Capacity. Select EC if you cannot capture or manually enter the 
+weight because (1) the SP exceeds the capacity of the digital weight scale; and (2) the SP 
+exceeds the capacity of two portable scales when standing with one foot on each scale. 
+2. CNO = Could Not Obtain. Select CNO if you cannot obtain the weight for a reason 
+other than EC. 
+3. CL = Clothing. Select CL if you successfully obtained the weight, but the SP wore 
+street clothes instead of the standard MEC shirt and pant gown. Do not select CL for 
+infants wearing diapers or a T-shirt. 
+Note: If the SP wears shoes to the exam, ask him or her to remove them before 
+stepping on the scale. If the SP refuses to remove the shoes in order to step on the 
+scale, code the weight as CNO. Weight data collected with the SP wearing shoes on the 
+scale will be considered invalid. 
+4. MA = Medical Appliance. Select MA if you successfully obtained the weight but the 
+SP wore a medical appliance that could not be removed, such as a cast or prosthesis. 
+Exhibit 4-13. Weight screen—c omments list 
+
+   
+ 4-11 Anthropometry Procedures 2021  
+4.3.2 Tare and Reset 
+Use the Tare and Reset scale functions on the Weight screen when an infant or toddler SP cannot 
+stand unassisted on the digital weight scale. In these cases an adult will assist in weighing the child. 
+First, either the child’s guardian or the examiner will stand alone on the scale while the recorder 
+clicks the Tare button on the screen. This sets the reading on the scale measurement device to zero. 
+Next, the child is handed to the person on the scale. The measurement device will now read only the 
+weight of the child. As soon as the scale measures this weight, the recorder will click Get Weight to 
+transfer the number to ISIS. After the child’s weight is successfully captured on the screen, the 
+recorder will click Reset to undo the tare function (Exhibit 4-14). 
+Following the Weight screen, the recorder will manually enter the remaining anthropometry 
+measurements into ISIS. 
+Exhibit 4-14. Weight screen—t are and reset functions 
+4.4 Sitting Measures Screen 
+The next screen is titled Sitting Measures (Exhibit 4-15). This screen displays the Upper Leg Length 
+measure, which is collected on SPs aged 8 years and older. After the recorder enters the upper leg 
+length, ISIS will repeat the number aloud for confirmation. 
+   
+ 4-12 Anthropometry Procedures 2021  
+If you cannot obtain the measure for some reason, e.g., SP refusal or physical limitation, select 
+CNO (Could Not Obtain) from the Comment box located beside the measurement field. 
+Exhibit 4-15. Sitting Measures screen 
+4.5 Upper Arm Length Screen 
+Following Upper Leg Length is the Upper Arm Length screen (Exhibit 4-16). This screen is 
+displayed for all SPs aged 2 months and older. After the recorder enters the upper arm length, ISIS 
+will call out both the number entered and the midpoint of this measurement. The Comment box 
+provides the following codes in a drop-down list: CNO and BE. 
+1. CNO = Could Not Obtain. Select CNO if you cannot obtain the measure for some 
+reason, e.g., SP refusal or physical limitation. 
+2. BE = Bowing Effect. Select BE if you successfully obtained the upper arm length but 
+the measurement was obtained by bringing the tape down the back of the arm and 
+around extra flesh to the tip of the olecranon process. 
+   
+ 4-13 Anthropometry Procedures 2021  
+Exhibit 4-16. Upper Arm Length screen 
+4.6 Circumference Measures Screen 
+Following Upper Arm Length is the Circumference Measures screen (Exhibit 4-17 through 
+Exhibit 4-19). This screen contains up to three measures: Arm, Waist, and Hip Circumference. The 
+current anthropometry protocol requires the arm circumference measure for SPs beginning at 
+2 months of age, waist circumference measure for SPs beginning at 2 years of age, and the hip 
+circumference measure for SPs beginning at 12 years of age. After the recorder enters each 
+measurement, ISIS will repeat the number aloud for confirmation. 
+The Circumference Measures screen will reflect different measurement fields depending on the age 
+of the SP. 
+1. SPs aged 2-23 months: Arm circumference (Exhibit 4-17); 
+2. SPs aged 24 months-11 years: Arm and waist circumference (Exhibit 4-18); and 
+3. SPs aged 12 years and older have three measures: arm circumference, waist 
+circumference and hip circumference (Exhibit 4-19). 
+   
+ 4-14 Anthropometry Procedures 2021  
+Exhibit 4-17. Circumference Measures screen—a rm circumference (SPs 2-23 months) 
+Exhibit 4-18. Circumference Measures screen—a rm and waist circumference (SPs 24 months to 
+11 years) 
+
+   
+ 4-15 Anthropometry Procedures 2021  
+Exhibit 4-19. Circumference Measures screen—a rm, waist, and hip circumference (SPs 12 years 
+and older) 
+To move the screen cursor from one measurement field to the next, press Enter or Tab on the 
+keyboard or click the cursor on the desired field. After the recorder enters each measurement, ISIS 
+will repeat the number aloud for confirmation. If you cannot obtain the measure for some reason, 
+for example, SP refusal or physical limitation, select CNO (Could Not Obtain) from the 
+corresponding Comment box. 
+4.7 SP Information Screen 
+Following the measurement screens, ISIS will present the SP Information screen (Exhibit 4-20), 
+which offers the question, “Do you want to know your height and weight?” The recorder will read 
+the question to the SP and click the Yes or the No radio button. This will trigger the following 
+responses: 
+1. Yes. ISIS will show two boxes: Weight in both pounds and kilograms, and height in 
+both English and metric equivalents. 
+2. No. ISIS will be ready to advance to the next screen. 
+   
+ 4-16 Anthropometry Procedures 2021  
+Exhibit 4-20. SP Information screen 
+4.8 Amputations Screen 
+The Amputations screen (Exhibit 4-21) is an observation screen for the exam staff to complete 
+without asking the SP directly. The recorder will mark the appropriate Yes or No radio button 
+beside “Amputations?” This will trigger the following responses: 
+1. Amputations: Yes. ISIS will add four questions to the screen, which the recorder must 
+answer by clicking Yes, No, or Could Not Obtain for each: 
+– Upper right extremity? 
+– Upper left extremity? 
+– Lower right extremity? 
+– Lower left extremity? 
+2. Upper Extremities: Yes. Clicking Yes to either of the upper extremities will prompt 
+ISIS to add two more questions: Above Elbow? Below Elbow? The recorder must mark 
+the Yes or No radio buttons beside each. 
+3. Lower Extremities: Yes. Clicking Yes to either of the lower extremities will prompt 
+ISIS to add two more questions: Above Knee? Below Knee? The recorder must mark 
+the Yes or No radio buttons beside each. 
+4. Amputations: No. ISIS will be ready to advance to the next screen.  
+   
+ 4-17 Anthropometry Procedures 2021  
+Exhibit 4-21. Amputations screens 
+
+   
+ 4-18 Anthropometry Procedures 2021  
+4.9 Anthropometry Component Status Screen 
+The Anthropometry (Body Measurement) Component Status (Exhibits 4-22 and 4-23) marks the 
+final ISIS screen. The purpose of this screen is to document the overall status of the anthropometry 
+examination: Complete, Partial, and Not Done. As with all other MEC exam components, ISIS 
+will automatically default to one of these codes. 
+• Complete. All required measures were captured in ISIS. 
+• Partial. One or more required measures were NOT captured in ISIS. 
+• Not Done. No required measures were captured in ISIS. 
+Exhibit 4-22. Anthropometry Component Status screen—C omplete 
+
+   
+ 4-19 Anthropometry Procedures 2021  
+Exhibit 4-23. Anthropometry Component Status screen—P artial 
+For Partial and Not Done exams, use the drop-down menu beside the Comments box to select 
+from a list of reasons that include safety exclusion; SP refusal; no time; physical limitation; 
+communication problem; equipment failure; SP ill/emergency; interrupted; and other, specify. If you 
+choose the “other, specify” comment you must enter a description. Be as brief as possible. Only 
+select “other, specify” if the comment does not fit into one of the defined comments.  
+The following are some common scenarios regarding reasons for Partial status exams: 
+• Partial Status Example #1. If Could Not Obtain (CNO) or Exceeds Capacity (EC) 
+was entered for one of the measures because it was physically impossible for the 
+examiner to obtain the measurement, then ISIS will code the exam status as Partial and 
+the recorder should code the reason as physical limitation. 
+• Partial Status Example #2. If CNO was entered for one of the measures because the 
+SP refused to allow the examiner to obtain the measurement, then ISIS will code the 
+exam status as Partial and the recorder should code the reason as SP Refusal. 
+Lastly, click Finish to end the examination. Wait for a message from the coordinator indicating 
+where to direct the SP. Thank the SP for participating and escort him or her to the next exam room 
+or to the coordinator.
+5. Quality Control 
+5.1 Introduction to Quality Control for Anthropometry 
+Quality control (QC) procedures ensure the collection and documentation of accurate, reliable data. 
+The NHANES anthropometry data are among the most widely used data collected in the study. 
+Your role as an examiner or recorder is crucial to the success of this component. The 
+anthropometry protocol requires the examiner and recorder to work together as a team (see 
+Chapter 3, Examination Protocol). 
+In anthropometrics, the most common errors involve body positioning, locating and marking body 
+landmarks, reading measurement results, and recording examination results in ISIS. The methods 
+used in NHANES were developed to minimize interexaminer variability, reduce error, and ensure 
+data quality. In addition to the standardized examination protocol, the anthropometry component 
+incorporates specific quality control procedures. 
+5.2 Equipment Calibrations 
+Routine calibrations of the anthropometry equipment ensure that the equipment produces accurate 
+measures. The following pieces of equipment require calibration at specific points during a stand: 
+digital weight scale, portable scales, stadiometer, and infantometer. Table 5-1 summarizes the 
+calibration schedule and requirements for these equipment pieces. 
+Sections 5.2.1−5.2.5 detail the required calibration procedures for the equipment listed in Table 5-1. 
+The technologist will record the results of all calibrations on the ISIS screen titled, “Body Measures 
+Quality Control Checks.” To access this screen, select the quality control option from the main 
+Utilities menu. The Body Measures Quality Control Checks dialog box (Exhibit 5-1) contains 
+individual tabs designated for the start of stand, daily, middle of stand, end of stand, and equipment 
+swap calibration procedures. 
+   
+ 5-1 Anthropometry Procedures 2021  
+Table 5-1. Anthropometry equipment calibrations 
+Calibration 
+sch edule  Equipment Calibration req uirements 
+Start of stand 
+Digital weight scale 
+Portable scales 
+Stadiometer 
+Infantometer 
+15 10- kg weights, acceptable range: 149.85 – 150.15 kg 
+11 10- kg weights, acceptable range: 109.50 – 110.50 kg 
+100- cm rod 
+Foot piece to headboard, 0.0 cm 
+Daily 
+Dig
+ital weight scale 
+Portable scales 
+Stadiometer 
+Infantometer 
+5 10-kg weights, acceptable range: 49.70 – 50.30 kg 
+5 10-kg weights, acceptable range: 49.70 – 50.30 kg 
+100-cm rod 
+Foot piece to headboard, 0.0 cm 
+Mid-st and  Digital weight scale 15 10 -kg weights, acceptable range: 149.85 – 150.15 kg 
+End of st and  Digital weight scale 15 10-kg weights, acceptable range: 149.85 – 150.15 kg 
+Exhibit 5-1. Body Measures Quality Control Checks box 
+T
+o exit the Body Measures Quality Control Checks dialog box, click OK. If any required procedures 
+are not checked as done, ISIS will present a pop-up reminder window to indicate that not all of the 
+quality control (QC) items were done (Exhibit 5-2). 
+   
+ 5-2 Anthropometry Procedures 2021  
+Exhibit 5-2. Not all QC Done message box 
+T
+o return to the QC dialog box, click “Cancel,” perform the required procedure(s), and check the 
+corresponding “Done” box. If it is time to perform Middle of Stand QC, when you attempt to exit 
+the QC dialog box, ISIS will present a similar pop-up window that includes a reminder to perform 
+the mid-stand QC procedure, Calibrate Scale – Full (Exhibit 5-3). 
+Exhibit 5-3. Time to do Mid-Stand QC message box 
+F
+inally, if you need to exit the Body Measures QC utility without completing all of the required 
+procedures listed in the QC dialog box, click OK to close the dialog box and click OK to close the 
+pop-up reminder window. ISIS will then return you to the main component screen. 
+   
+ 5-3 Anthropometry Procedures 2021  
+5.2.1 Digital Weight Scale 
+Full calibration of the digital weight scale is required at the start, middle, and end of a stand. In 
+addition, a rough calibration must be done daily prior to the first exam session. 
+F ull Calibration: Start, Middle, End of Stand 
+• Carefully place all 15 of the 10-kilogram (kg) calibration weights on the scale. To ensure 
+an accurate measurement reading, the weights must be placed evenly distributed over 
+the center area of the scale. 
+• Click on the appropriate tab (i.e., Start of Stand, Middle of Stand, or End of Stand) in 
+the ISIS QC Checks dialog box (Exhibit 5-4). 
+Exhibit 5-4. Digital weight scale full calibration 
+• C
+lick the “Done” box beside “Calibrate Scale – Full” to capture the value directly into 
+ISIS under the Result field. 
+• The acceptable calibration weight range for 15 10-kg calibration weights on the digital 
+weight scale is 149.85 – 150.15 kg. 
+• If the result falls outside the acceptable range, notify the chief technologist, MEC 
+manager, and home office component specialist to have the scale recalibrated by the 
+NCHS engineer or a service representative. Document the issue in the Unusual Field 
+Occurrence (UFO) system. 
+• If the scale is recalibrated at a later date, record the new calibration results under the 
+Equipment Swap tab of the QC Checks dialog box (see Section 5.2.5.). 
+   
+ 5-4 Anthropometry Procedures 2021  
+R ough Calibration: Daily 
+• Carefully place 5 of the 10-kg calibration weights on the scale. To ensure an accurate 
+measurement reading, the weights must be placed evenly distributed over the center 
+area of the scale. 
+• Click on the Daily tab in the ISIS QC Checks dialog box (Exhibit 5-5). 
+Exhibit 5-5. Digital weight scale daily calibration 
+• C
+lick the “Done” box beside “Calibrate Scale – Daily Weight Check” to capture the 
+value directly into ISIS under the Result field. 
+• The acceptable calibration weight range for 5 10-kg calibration weights on the digital 
+weight scale is 49.70 – 50.30 kg. 
+• If the result falls outside the acceptable range, perform the full calibration procedures 
+described above to determine if the scale remains out of calibration. If the result lies 
+within the acceptable range for the full calibration, repeat the daily calibration 
+procedures with the 5 weights. If the result still lies outside the acceptable range, notify 
+the chief technologist, MEC manager, and home office component specialist to have 
+the scale recalibrated by the NCHS engineer or a service representative. Document the 
+issue in the UFO system. 
+• If the scale is recalibrated at a later date, record the new calibration results under the 
+Equipment Swap tab of the QC Checks dialog box (see Section 5.2.5). 
+5.2.1.1 Digital Measurement Device: Pounds (lb) vs. Kilograms (kg) 
+The measurement device for the digital weight scale is situated on the wall below the computer 
+monitor (Exhibit 5-6). 
+   
+ 5-5 Anthropometry Procedures 2021  
+Exhibit 5-6. Digital scale measurement device 
+T
+he device contains a row of five buttons. The second button from the left has two arrows that 
+toggle the display from pound to kilogram units. Above this button is the weighing display that 
+shows the weight unit as “kg” or “lb.” Keep the display toggled to kg at all times. 
+If the digital measurement device is set to pounds instead of kilograms, when you click Done to 
+capture the full or daily scale calibration reading into ISIS, the following warning message will 
+appear (Exhibits 5-7 to 5-10). 
+Exhibit 5-7. Digital weight scale full calibration— scale set to lb. 
+   
+ 5-6 Anthropometry Procedures 2021  
+Exhibit 5-8. Digital weight scale daily calibration— scale set to lb. 
+C
+lick OK to this message. Next, the following error message will appear: 
+Exhibit 5-9. Digital weight scale full calibration— lb. setting error message 
+Exhibit 5-10. Digital weight scale daily calibration— lb. setting error message 
+C
+lick OK to this message to uncheck the “Done” box beside the corresponding “Calibrate Scale – 
+Full” or “Calibrate Scale – Daily Weight Check” QC item. 
+   
+ 5-7 Anthropometry Procedures 2021  
+Change the setting on the digital measurement device to kilograms and retry capturing the kg value 
+into ISIS. 
+5.2.2 Portable Scales 
+C alibration: Start of Stand 
+• Place the portable scale on the floor and activate it by lightly touching the surface with 
+your foot. 
+• Verify that the scale is set to measure weight in kilograms by checking the switch on the 
+back of the scale. 
+• Wait for the display to read 0.0. 
+• Carefully place 11 of the 10-kg weights on the scale. 
+• Click on the Start of Stand tab in the ISIS QC Checks dialog box (Exhibit 5-11). 
+Exhibit 5-11. Portable scales calibration 
+• C
+lick the “Done” box beside “Calibrate Backup Scale 1 – Full.” 
+• When the scale display has stabilized, record the value in the Result field. 
+• Record the manufacturer serial number in the Comment field. 
+• The acceptable calibration weight range for 11 10-kg calibration weights on the portable 
+scale is 109.50 – 110.50 kg. 
+   
+ 5-8 Anthropometry Procedures 2021  
+• If the result falls outside the acceptable range, inform the chief technologist, MEC 
+manager, and home office component specialist in order to have the scale replaced. 
+Document the issue in the UFO system. 
+• Follow the above calibration procedures for the second portable scale, under “Calibrate 
+Backup Scale 2 – Full.” 
+• If either scale is replaced at a later date, record the calibration results under the 
+Equipment Swap tab of the QC Checks dialog box. 
+5.2.3 Stadiometer 
+C alibration: Start of Stand, Daily 
+• Place one end of the 100-cm calibration rod on the stadiometer base. 
+• Lower the stadiometer head piece to rest firmly against the top end of the calibration 
+rod. Ensure that the rod stands perpendicular to the base. 
+• Check the result displayed on the digital measurement device. When calibrated, the 
+result should read 100.0 cm. 
+• Click on the appropriate tab (i.e., Start of Stand or Daily) in the ISIS QC Checks dialog 
+box (Exhibit 5-12). 
+Exhibit 5-12. Stadiometer calibration: In calibration 
+• C
+lick the “Done” box beside “Calibrate Stadiometer” to capture the value directly into 
+ISIS under the Result field. 
+   
+ 5-9 Anthropometry Procedures 2021  
+• If the digital measurement device result was not 100.0 cm, recalibrate the device by 
+pressing the + or – button until the display reads 100.0 cm. Record “Recalibrated to 
+100.0” in the Comment field (Exhibit 5-13). 
+Exhibit 5-13. Stadiometer calibration: Out of calibration— recalibrated 
+5.2.4 Infantometer 
+C alibration: Start of Stand, Daily 
+• Slide the foot piece as far as it will go toward the headboard of the infantometer. 
+• Check the result displayed on the digital measurement device, the result in all three 
+MECs should read 0.0 cm. 
+• Click on the appropriate tab (i.e., Start of Stand or Daily) in the ISIS QC Checks dialog 
+box (Exhibit 5-14). 
+• Click the “Done” box beside “Calibrate Infantometer” to capture the value directly into 
+ISIS under the Result field. 
+   
+ 5-10 Anthropometry Procedures 2021  
+Exhibit 5-14. Infantometer calibration: In calibration 
+• I
+f the digital measurement device result was not 0.0 cm, recalibrate the device by 
+pressing the Datum Key or the + or the – button until the display reads 0.0 cm. Record 
+“Recalibrated to 0.0” in the Comment field (Exhibit 5-15). 
+Exhibit 5-15. Infantometer calibration: Out of calibration— recalibrated 
+5.2.5 Equipment Swap 
+If any equipment requires recalibration or replacement outside of the regularly scheduled 
+calibrations (i.e., start of stand, daily, or middle of stand), record the new calibrations under the 
+Equipment Swap tab of the ISIS Body Measures Quality Control Checks screen. 
+• Click the Equipment Swap tab in the Quality Control Checks dialog box (Exhibit 5-16). 
+• Click the “Done” box beside the equipment piece that will be recalibrated or replaced. 
+• For each equipment piece(s) to be recalibrated or replaced, complete the Result and/or 
+Comment field with the new calibration information in accordance with the calibration 
+procedures described in Sections 5.2.1 to 5.2.4. 
+   
+ 5-11 Anthropometry Procedures 2021  
+• When you are finished entering the new calibrations, click OK to exit the QC screen. 
+• ISIS will automatically save the equipment swap information permanently to the study 
+database. However, similar to the daily QC process, when the tech opens a new session 
+the Equipment Swap tab will appear blank, as shown in Exhibit 5-16. This means ISIS 
+is ready for additional calibrations to be entered if necessary. 
+Exhibit 5-16. Equipment Swap screen 
+5.3 ISIS Examination Screens 
+The ISIS Anthropometry Examination screens are designed to be user friendly and at the same time 
+ensure the collection of accurate data. Quality control features of the ISIS anthropometry 
+application include: 
+• The weight, length, and height measurement data are transmitted directly from the 
+equipment into ISIS by clicking the Get button. 
+• The application will not permit advancement to the next screen unless a number or a 
+comment is entered in every required field. 
+• When the application advances to the next screen, the cursor will automatically appear 
+in the appropriate field awaiting data entry. 
+• Each measurement number entered is verified using a computer-generated voice that 
+repeats the measure aloud immediately following data capture. 
+• The risk of measurement and recording errors is reduced through the use of 
+preprogrammed edit ranges. For example, if data captured in ISIS does not fall within 
+the 1st or 99th percentile based on the NHANES 1999-2010 data set, an “out of range” 
+message will appear on the screen. Although some data collected (i.e., from very small 
+   
+ 5-12 Anthropometry Procedures 2021  
+or very large survey participants may truly fall outside of the “normal” ranges, the 
+examiner and recorder must always verify the measurement if prompted by ISIS. 
+• Data entry errors are also minimized by limits set on the placement of decimal points 
+and the number of digits entered. For instance, if the number entered for a 
+measurement exceeds the allowable digits, ISIS will not permit the number to be 
+entered. 
+5.4 Observations, Replication, and Review 
+A consulting anthropometry expert will visit each MEC team twice per year at minimum. These 
+visits will serve to verify that the anthropometry protocol is being implemented properly and 
+consistently. While at the MEC, the expert will meet with the technologists to review any problems 
+variations in the standard procedures. Following the site visit, the consultant will summarize all of 
+the issues encountered during the visit in a final report to Westat. The Westat component specialist 
+will forward a copy of the consultant’s Site Visit Report to the appropriate NCHS project officer. 
+Besides the observation of anthropometry examinations, a critical function of the body measures 
+consultant is to serve as the “gold standard” anthropometry examiner. In this role, the consultant 
+will conduct a repeat anthropometry examination on each survey participant immediately following 
+the examination performed by the technologist. These gold standard replicate exams will be used to 
+compare measurements between the expert consultant and the individual technologists. Gold 
+standard examinations thus constitute an essential aspect of quality control for the anthropometry 
+component. Appendix B explains the procedures for conducting anthropometry gold standard 
+replicate examinations. 
+In addition to observations and gold standard exams completed by the anthropometry consultant, 
+NCHS personnel and Westat component staff will visit the MEC teams at regular intervals to 
+observe anthropometry examinations. To further monitor the quality of data collection, Westat 
+component staff will generate reports from the ISIS intraweb. The number of anthropometry 
+examinations and examination times: cumulative and sorted by session, by age group, and by 
+technologist, as well as the reason for not done and partial examinations, will be analyzed for each 
+stand. 
+   
+ 5-13 Anthropometry Procedures 2021  
+Finally, retraining sessions will be arranged by the Westat component specialist in coordination with 
+the NCHS project officer and the anthropometry consultant when major protocol changes are 
+introduced, or when a lack of standardization is observed among the technologists. 
+   
+ 5-14 Anthropometry Procedures 2021  
+Appendix A 
+Body Measures Recording Form
+ 
+    A-1 Anthropometry Procedures 2021  
+Appendix A 
+Body Measures Recording Form 
+SP ID: ______________ Stand #:________ Session/Date:______________ 
+Examiner: _______________________ Recorder:__________________ 
+MEASURES 
+BIRTH + 
+2MO+ 
+7MO+ 
+2YR+ 
+4YR+ 
+8YR+ 
+12YR+ 
+(BMXWT) Weight        
+(BMXRECUM) Recumbent Length        
+(BMXHEAD) Head Circumference        
+(BMXHT) Height        
+(BMXHTCRA) Ht Correction: Above Waist        
+(BMXHTCRB) Ht Correction: Below Waist        
+(BMXLEG) Leg Length        
+(BMXARML) Upper Arm Length        
+Mid-point of Upper Arm Length        
+(BMXARMC) Arm Circumference        
+(BMXWAIST) Waist Circumference        
+(BMXHIP) Hip Circumference        
+(BMXAMP) Amputations? If Yes (circle all that apply): 
+(BMXUREXT) Upper R Extremity? Yes No 
+(BMXUPREL) Upper R. Above/Below Elbow? Above Below 
+(BMXULEXT) Upper L Extremity? Yes No 
+(BMXUPLEL) Upper L Above/Below Elbow? Above Below 
+(BMXLOREX) Lower R Extremity? Yes No 
+(BMXLORKN) Lower R. Above/Below Knee? Above Below 
+(BMXLLEXT) Lower L Extremity? Yes No 
+(BMXLLKNE) Lower L. Above/Below Knee? Above Below 
+Key: N/A
+Appendix B 
+Procedures for Conducting Anthropometry 
+Gold Standard Replicate Examinations
+Appendix B 
+Procedures for Conducting Anthropometry Gold 
+Standard Replicate Examinations 
+Gold standard examinations are an essential quality control measure for the anthropometry 
+component. These replicate exams are used to compare differences in measurement results obtained 
+by the expert consultant to those obtained by the individual technologists. Below are instructions for 
+conducting gold standard replicate examinations at the MEC. 
+At the start of the session during which gold standard replicate exams will be conducted, activate the 
+Gold Standard software application: 
+• In the ISIS Anthropometry application, under the Utilities menu, go to “Gold 
+Standard.” 
+• Click on “Gold Standard” so that a check mark appears beside it, indicating the 
+application is on. 
+• If rebooting the computer becomes necessary during a session, the Gold Standard 
+application must be reactivated. 
+To use the Gold Standard application, the technologists should conduct exams as usual, with one 
+person examining and a second person recording. Following the primary examination, the Gold 
+Standard recruitment screen will appear with two questions: 
+1. Do you want to conduct a gold standard examination on this SP? 
+2. Does the SP consent to a gold standard examination? 
+If a gold standard examination will not be conducted at this time, answer “No” to the first question; 
+the second question will remain deactivated. If “Yes” is answered to the first question, ISIS will 
+activate the second question. In order to repeat the examination, verbal consent must then be 
+obtained from the SP: 
+“In order to ensure the high quality of our data we sometimes repeat the 
+exam. Would you mind if we repeat the exam?” 
+If the SP does not give consent, or if for some other reason a gold standard exam will not be 
+conducted at this time, simply advance to the next screen, the status screen, and end the gold 
+standard exam. If the SP gives consent, enter “Yes” to the second recruitment question and select 
+the appropriate name under the Gold Standard Examiner and Gold Standard Recorder drop-downs. 
+   
+ B-1 Anthropometry Procedures 2021  
+For the gold standard exam, the anthropometry consultant will serve as the examiner and the 
+original examiner should record for the gold standard exam. If this is not possible, the recorder from 
+the primary exam can continue to record for the gold standard exam. In preparation for the gold 
+standard exam, the cosmetic pencil marks should be erased completely prior to the gold standard 
+exam. 
+In ISIS the gold standard application screens are identical to the primary exam screens, except that 
+the SP information screen and amputation questions will not appear. Also, the status of gold 
+standard exams will always default to “Complete” regardless of whether the actual status of this 
+section was partial or not done. This is designed to prevent the status of the gold standard section 
+from affecting the overall status of the component. 
+The ISIS anthropometry application is also designed with the capability to provide the results of 
+gold standard examinations as compared to the results obtained in the primary examination. This 
+allows the gold standard examiner and the MEC staff to review and discuss on the spot any relevant 
+measurement errors or discrepancies. Gold standard comparison reports can be generated from ISIS 
+in two ways: 
+1. ISIS anthropometry application: In the main menu bar, under the tab entitled “Reports” 
+select “Gold Standard.” Then choose the desired results by Stand, Session, and/or 
+SP(s). 
+2. ISIS Intraweb: Select MEC Operations, Operations Reports, Anthropometry Gold 
+Standard Report. Then choose the desired results by Stand, Session, and/or SP(s). 
+The gold standard reports include the results obtained for individual SPs as well as a display of the 
+absolute and percent difference between the values obtained by the gold standard examiner 
+compared to the technologist. The major difference between generating the report from the 
+application vs. the Intraweb is that the Intraweb report additionally offers a cumulative summary of 
+the number of gold standard examinations performed for each examiner. 
+Finally, ensuring that SPs complete their primary exams at the MEC remains a top priority. If 
+conducting gold standard replicate exams will impede the flow of SPs through the MEC, the 
+anthropometry consultant can instead observe the primary exams or act as the recorder. By freeing 
+up other staff, this may allow replicate exams to resume. Communication among all members of the 
+MEC team will promote a smooth work flow to this end. 
+   
+ B-2 Anthropometry Procedures 2021

@@ -1,0 +1,1579 @@
+ARTICLE IN PRESS
+Article in Press
+Population-based screening for cardiovascular 
+diseases and type 2 diabetes risk among migrant 
+origin and ethnic minority groups in Europe: a 
+scoping review
+BMC Public Health
+Received: 11 November 2025
+Accepted: 8 April 2026
+Cite this article as: Lehtola S.M.H., 
+Monnet F., Tolonen H. et al. Population-
+based screening for cardiovascular 
+diseases and type 2 diabetes risk among 
+migrant origin and ethnic minority 
+groups in Europe: a scoping review. 
+BMC Public Health (2026). https://doi.
+org/10.1186/s12889-026-27380-7
+Sinna M. H. Lehtola, Fanny Monnet, Hanna Tolonen, Hanna M. Elonheimo, Jelka 
+Zaletel, Josefien Olmen, Petra Šter, Jerneja Farkas & Natalia Skogberg
+We are providing an unedited version of this manuscript to give early access to its 
+findings. Before final publication, the manuscript will undergo further editing. Please 
+note there may be errors present which affect the content, and all legal disclaimers 
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer 
+Review reports will publish with the final article.
+https://doi.org/10.1186/s12889-026-27380-7
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International 
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit 
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do 
+not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the 
+article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain 
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+Population-based screening for cardiovascular diseases and type 2 
+diabetes risk among migrant origin and ethnic minority groups in 
+Europe: a scoping review
+Authors: Sinna M. H. Lehtola1†*, ORCID: 0009-0008-8692-5966; Fanny Monnet 2†, 
+0000-0002-4983-9486; Hanna Tolonen3, 0000-0003-3121-4303; Hanna M. Elonheimo1, 
+0000-0003-4441-3432; Jelka Zaletel4, 0000-0002-2884-9669; Josefien van Olmen5,6,7, 
+0000-0001-9724-1887; Petra Šter4, Jerneja Farkas4, 0009-0001-6042-5743; Natalia 
+Skogberg8, 0000-0002-8829-4159
+† These authors contributed equally to this work and share first authorship 
+ 
+1 Finnish Institute for Health and Welfare (THL), Department of Public Health, Helsinki, 
+Finland  
+2 Centre for Population, Family & Health, Department of Sociology, University of 
+Antwerp, Antwerp, Belgium   
+3 Finnish Institute for Health and Welfare (THL), Helsinki, Finland 
+4 National Institute of Public Health (NIJZ), Ljubljana, Slovenia 
+5 Primary and Interdisciplinary Care Antwerp (ELIZA), Department of Family Medicine 
+and Population Health, University of Antwerp, Antwerp, Belgium 
+6 Centre for Research in Health System Performance (CRiHSP), Yong Loo Lin School of 
+Medicine, Singapore, Singapore
+7 National University of Singapore, Department of Family Medicine (DFM), National 
+University Health System, Singapore, Singapore
+8 Finnish Institute for Health and Welfare (THL), Department of Healthcare and Social 
+Welfare, Helsinki, Finland
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+*Corresponding Author: Sinna M. H. Lehtola, Finnish Institute for Health and Welfare 
+(THL), Department of Public Health, P.O. Box 30, FI-00271 Helsinki, Finland, 
++358505273228, Email: sinna.lehtola(at)thl.fi
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Abstract
+Introduction Although some migrant origin groups in Europe show elevated risk for 
+cardiovascular diseases (CVDs) and type 2 diabetes (T2D), information is sparse and 
+fragmented. This study examines availability and possibilities for harmonization of 
+health examination survey (HES) data on major determinants of CVD and T2D among 
+migrant origin and ethnic minority groups in EU Member states and EU4Health 
+associated countries (Norway, Iceland, Ukraine, Moldova, Montenegro).
+Methods We conducted a scoping review, following PRISMA-ScR in PubMed and Web of 
+Science, supplemented by targeted grey literature searches of national health 
+institutes, to identify HESs covering core risk factors for CVD and T2D among migrant 
+origin and ethnic minority groups, older than 18 years and living in EU Member states 
+and selected associated countries. Studies were published between 2014 and 2026. 
+Altogether 2537 peer-reviewed records and 348 grey literature reports were screened. 
+Following full-text screening, 57 peer-reviewed papers were included. 
+Results In total, 24 individual HESs in 10 countries were identified. The majority (n=38, 
+67%) of the surveys were conducted in the Netherlands or Sweden. None of the HESs 
+used nationally representative samples, having been conducted regionally. There was 
+notable heterogeneity in how persons with a migration background and ethnic 
+minorities were defined and grouped. Reported risk factors included obesity, 
+hypertension, hypercholesterolemia, and hyperglycemia. Measurement methods of 
+these risk factors varied by the migrant origin group and country where the study was 
+conducted.
+Conclusion: We did not identify any eligible publications on CVD or T2D risk factors in 
+migrant origin or ethnic minority groups in 69% of EU Member States/selected 
+associated countries, indicating substantial knowledge gaps among these population 
+groups in Europe. The heterogeneity in measurement methods makes cross-country 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+comparison and data harmonization challenging. Data availability and cross-country 
+comparability should be improved to support effective evidence-based health promotion 
+and prevention measures.
+Key words: ethnicity, cardiovascular diseases, type 2 diabetes, risk factors, health 
+examination survey
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+ Key Messages 
+What is already known on this topic 
+￿National health examination surveys (HESs) are important tools for monitoring 
+cardiovascular diseases (CVDs) and type 2 diabetes (T2D).
+What this study adds
+￿This study identified major gaps in the availability of HES data on measured risk 
+factors for CVD and T2D among migrant origin and ethnic minority groups and 
+indigenous people across EU Member states and selected associated countries. 
+￿Major methodological heterogeneity was observed in how migrant origin and 
+ethnic minority groups were defined, as well as in how key CVD and T2D risk 
+factors (obesity, hypertension, hypercholesterolemia, and hyperglycemia) were 
+measured. 
+How this study might affect research, practice or policy 
+￿This study underlines the need for nationally representative data, standardized 
+definitions, and uniform methods to support evidence-based policy and practice 
+and enable cross-country comparisons.
+￿Based on our findings, we recommend coordinated guidance at the European 
+level on improving data availability and inclusion of migrant origin and ethnic 
+minority groups and indigenous people in population-based screening initiatives.
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Introduction
+Cardiovascular diseases (CVDs) and type 2 diabetes (T2D) are among the leading 
+causes of morbidity and mortality globally [1]. Common modifiable behavioral risk 
+factors include smoking, excess alcohol use, unhealthy diet, and low physical activity 
+[2,3]. Moreover, physiological risk factors encompass high systolic blood pressure (SBP), 
+high body-mass index (BMI), and high low-density lipoprotein (LDL) cholesterol levels 
+[3]. Diabetes is also a common comorbidity of CVDs, as well as a major risk factor for 
+CVDs, resulting in higher CVD morbidity and mortality in people with T2D [4]. Early 
+identification of high-risk individuals for preventive care is essential [5]. 
+In recent decades, high-income countries (HICs) in Europe have become increasingly 
+culturally and ethnically diverse. As a result, societies now include longstanding ethnic 
+minorities, indigenous people, and a growing population of migrant origin, reshaping 
+demographics, and social structures [6]. In this review, we define ethnic minorities as 
+individuals of migrant origin as well as other cultural and linguistic minority groups, such 
+as the Roma population. Indigenous people refer to populations that have inhabited the 
+given country or region at the time of conquest, colonization, or establishment of current 
+state borders. In the European Union (EU), the Sámi people are the only indigenous 
+group [7]. Migrant-origin groups include individuals who have migrated across national 
+borders, as well as their descendants. Although there has been significant progress in 
+CVD and T2D risk management, diagnostics and treatment across Europe over recent 
+decades, the benefits have not been distributed equally across different population 
+groups [3]. Studies have shown significant variations in CVD and T2D incidence, 
+prevalence, and mortality between persons of migrant origin and ethnic minority 
+groups, and indigenous people as compared to majority populations. For example, 
+stroke is more prevalent among people of sub-Saharan African origin than among 
+majority populations [8], and T2D occurs 10–20 years earlier in many migrant-origin 
+groups [9]. Migrant origin groups also face a higher risk of delayed diagnosis, 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+contributing to more severe disease progression [10]. To address these inequities, more 
+detailed information on the distribution of risk factors within and between ethnic 
+minority groups are needed. Such data support better-targeted prevention strategies, 
+resource allocation, and equitable healthcare provision [11]. Robust and inclusive 
+screening initiatives are also essential for early detection and improved prevention [12].
+National health examination surveys (HESs) provide key information on the prevalence 
+of risk factors for CVD and T2D, essential for identifying high-risk groups and planning 
+health promotion measures both at risk group and population level [13]. Over the past 
+decade, 12 EU Member States, including the UK, have conducted national HESs to collect 
+essential objective data, such as blood pressure, anthropometric measurements and 
+biological samples, complementing self-reported information from health interviews and 
+registers [13–15]. These surveys are considered highly externally valid due to their 
+randomized, representative sampling methods [16]. Compared to self-reported data, 
+HESs substantially reduce reporting bias and measurement error by applying 
+standardized protocols and calibrated instruments, thereby improving reliability and 
+comparability across populations and over time [15,16].  The inclusion of biological 
+samples further enhances the capacity to identify biomarkers and undiagnosed 
+conditions, positioning HESs as a methodological gold standard for population health 
+monitoring [17].
+Despite their strengths, existing HESs vary in terms of target populations and types of 
+measurements [18], and most do not systematically include migrant origin and ethnic 
+minority groups, who are often at higher risk for CVD and T2D. This exclusion limits the 
+ability to monitor health disparities and develop equitable prevention strategies. 
+Moreover, there is a lack of research critically examining the methodological challenges 
+of using HES data in this context, particularly regarding data availability, 
+representativeness, and cross-country comparability. These gaps hinder a nuanced 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+understanding of risk factor distribution and challenge efforts to formulate cross-
+nationally consistent public health responses.
+Recent reviews have examined cardiometabolic health among migrant and ethnic 
+minority populations in Europe; however, they have not evaluated the availability, 
+quality, or comparability of data needed to monitor these disparities. Earlier work 
+pointed to major gaps and inconsistencies in ethnically relevant CVD and diabetes data, 
+including variation in how ethnicity and health outcomes were defined and recorded 
+[19]. More recent reviews have summarized cardiometabolic patterns among migrant 
+populations, yet they do not assess the underlying data infrastructure, nor whether 
+existing data sources can support cross-country comparisons [11,20–22]. Therefore, the 
+aim of this scoping review is to identify and describe studies that have explored the use 
+of HES data on key risk factors for CVD and T2D among migrant-origin, ethnic minority, 
+and indigenous people in Europe.
+Methods
+Design
+We carried out a scoping review following Levac and colleagues’ update of Arksey & 
+O’Malley’s methodological framework [23]. This framework includes five main 
+stages: (1) identifying the research questions; (2) identifying relevant studies; (3) study 
+selection; (4) charting the data; and (5) collecting, summarizing, and reporting results. 
+We followed the PRISMA-ScR guidelines [24].
+Identifying the Research Questions
+The following research questions were identified: (1) Which countries in Europe have 
+conducted a HES covering key risk factors for CVD and T2D among migrant origin and 
+ethnic minority groups, and indigenous people? In this review, we defined Europe as the 
+EU Member States and the EU4Health-associated countries (Norway, Iceland, Ukraine, 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Moldova, Montenegro), as HESs are predominantly implemented and coordinated within 
+the EU and EU4Health framework; (2) How are these HESs designed?; (3) How are 
+migrant origin and ethnic minority groups, and indigenous people identified within these 
+HESs; and (4) How is data collected within these HESs?.
+Search strategy and Eligibility Criteria: Identifying Relevant Studies
+Literature searches were conducted in PubMed and Web of Science on September 2, 
+2024, and updated on February 12, 2026, according to a predetermined search strategy 
+(see Additional file 1). We used Boolean operators and modified our search strategy 
+according to the database. We used a combination of keywords for ‘migrant’, 
+‘immigrant’ and ‘ethnic minority’, as well as search terms for selected risk factors for 
+CVD and T2D (i.e. obesity, hypertension, hypercholesterolemia, and hyperglycemia). 
+Additional file 2 provides an overview of all keywords and search terms used in this 
+scoping review. We anticipated that the term ‘health examination survey’ may only be 
+discussed in the full-text of articles, and that other terms may have been used to 
+describe it. As such, this keyword was excluded from our search strategy to allow for a 
+more thorough search of all the studies published in the field. Consequently, this 
+information was assessed during the title, abstract, and full-text screening.
+To reduce publication bias and identify relevant national health reports not indexed in 
+bibliographic databases, we extended our search to grey literature on February 12, 
+2026. We conducted targeted website searches of National Public Health Institutes and 
+Ministries of Health across the included European countries (e.g. Robert Koch Institute 
+in Germany, Sciensano in Belgium, Finnish Institute for Health and Welfare (THL) in 
+Finland). These searches were performed using Google Advanced Search operators (e.g. 
+site:gov.xx and filetype: pdf) combined with native-language keywords for migrants and 
+selected risk factors (see Additional file 1). To minimize the influence of personalized 
+search algorithms and ensure reproducibility, these searches were performed using a 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+computer with a clean browser (deleted cookies and history) and without being logged 
+into a Google account. Additionally, to manage potentially overwhelming volume of 
+search engine results, we screened a maximum of 10 pages (approximately 100 hits) 
+for each search combination. 
+Studies and grey literature files were included if they: 
+￿reported outcomes measured within an HES
+￿used at least one of the core physical measurements and biological samples of 
+national HESs (i.e. height, weight, blood pressure, and blood samples)
+￿investigated at least one of the selected risk factors for CVD and T2D, that were 
+obesity, hypertension, hypercholesterolemia, and hyperglycemia
+￿were based in at least one of the 27 European Member States or the associated 
+non-EU countries of the EU4Health Programme (Norway, Iceland, Ukraine, 
+Moldova, Montenegro)
+￿were specifically designed to assess risk factors among migrant origin and ethnic 
+minority groups or indigenous people
+￿included participants older than 18 years old and living in Europe
+￿were in English or one of the official languages of the countries included
+￿were published between 2014 and 2026.
+Studies and grey literature files were excluded if they:
+￿involved participants already diagnosed with CVD or T2D
+￿focused on gestational diabetes
+￿reported on outcomes measured solely through interviews or register data
+￿did not have a reference group of majority population in the same region or 
+country of origin
+The above exclusion criteria were applied to maintain focus on prevention and risk 
+factors among migrant origin and ethnic minority groups or indigenous people within 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+comparable contexts. To ensure comparability within a common HES context, we 
+included only studies that reported data for migrant origin, ethnic minority, or 
+Indigenous groups alongside a majority-population reference group from the same 
+region and HES. An internal comparator allowed assessment of whether sampling 
+strategies, measurement procedures, and fieldwork protocols were applied consistently 
+across groups, thereby reducing confounding from cross-survey or cross-regional 
+variation. Without such a reference, observed differences may reflect methodological or 
+contextual differences rather than true group-specific patterns. This criterion therefore 
+ensured that included studies provided a meaningful basis for comparison and allowed 
+the evaluation of whether HESs were designed to capture minority populations relative 
+to the local majority groups. In addition, we concentrated specifically on physiological 
+risk factors for CVD and T2D, as these indicators are measured objectively and 
+consistently within Health Examination Survey (HES) frameworks. HES studies provide 
+standardized biometric data (such as blood pressure, lipid levels, glucose metabolism 
+markers, and anthropometric measurements) which enable reliable cross study 
+comparison and reduce heterogeneity. Focusing on risk factors that HES data can assess 
+robustly also minimized variability arising from self-reported behavioral or psychosocial 
+measures, which are less comparable across countries and surveys. 
+Study selection
+All database search results were imported in Zotero and deduplicated before screening. 
+The remaining references were then uploaded into Rayyan QCRI, a web-tool facilitating 
+collaborations on systematic and scoping reviews [25]. Two reviewers (SMHL and FM) 
+independently screened all titles and abstracts against the inclusion and exclusion 
+criteria. The full texts of the remaining studies were screened based on the eligibility 
+criteria by SMHL and FM. Differences in interpretations were resolved by discussion 
+between the reviewers. Hand searches were conducted after the initial literature search 
+to identify additional relevant studies. This process involved systematically reviewing 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+the reference lists of all studies that met the inclusion criteria and screening these 
+citations to identify additional eligible studies. Relevant studies identified through this 
+manual process were subsequently included following the same criteria. For grey 
+literature files, we first manually assessed titles, executive summaries, and table of 
+contents to determine if the document potentially constituted a HES relevant to our 
+target group. Documents deemed potentially relevant were then retrieved for full 
+screening. This full-text assessment employed a two-step verification process. Given the 
+complexity and length of national health reports, the initial screening of these 
+documents was facilitated by an AI-powered document analysis tool (NotebookLM, 
+Google). Specific prompts were used to screen the full-texts in accordance with the 
+eligibility criteria. Documents flagged as potentially relevant by the AI tool were then 
+manually verified in full by two reviewers (SMHL and FM) to confirm inclusion. Any 
+uncertainty was resolved through discussion between the reviewers. 
+Charting the data
+The two reviewers (SMHL and FM) independently extracted the data of the included 
+records using a standardized data extraction spreadsheet in Microsoft Excel (see 
+Additional file 3). Both reviewers assessed the complete data extraction spreadsheet, 
+and any disagreement was resolved through discussion between them.
+Collating, summarizing, and reporting the results
+The synthesis of the charted data was conducted on two levels. Initially, a numerical 
+analysis was performed to assess the scope, characteristics, and distribution of the 
+studies included in the review. This involved generating tables and charts to visualize 
+the distribution of studies by geographic location, study design, migrant origin and 
+ethnic minority groups, indigenous people, and majority populations included in the 
+studies. These insights guided the identification of key research gaps. Subsequently, 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+the textual data, organized in Excel, were thematically categorized based on risk factors 
+for CVD and T2D.
+Results
+The database search yielded a total of 2400 publications. After removing duplicates, 
+2062 titles and abstracts were screened leaving 70 articles for full-text screening. A 
+total of 49 publications that met the eligibility criteria were included. Additionally, hand 
+searches resulted in the further inclusion of six publications. The update of our database 
+search yielded 534 publications. A total of 475 studies were screened by title and 
+abstract, and 11 full-texts were screened. The updated search resulted in the inclusion 
+of two publications. Finally, the extended grey literature search identified 348 records 
+from targeted websites. However, following screening, no grey literature reports were 
+included. The main reasons for exclusion were incorrect outcomes, lack of migrant origin 
+groups/ethnic minorities inclusion, or not meeting the criteria of a HES. Thus, the 
+complete search resulted in a final total of 57 peer-reviewed articles included in the 
+scoping review [26–82]. Figure 1 presents the PRISMA flowchart.
+Figure 1. here.
+Figure 1: PRISMA flowchart of the search and review process
+Overview of health examination surveys in EU Member States and associated 
+countries and study characteristics
+In total, data from 24 individual HESs was used. The HESs were spread throughout ten 
+different countries (see Figure 2). Most of the studies were conducted in the Netherlands 
+(n=17), using The Healthy Life in an Urban Setting (HELIUS) study [26–40], the SUNSET 
+study [41], or the Amsterdam Health Monitor study [42]. Twelve studies were conducted 
+in Sweden, using data from the impact of Migration and Ethnicity on Diabetes In Malmö 
+(MEDIM) study [52–59], the 4D Diabetes Project [61,62] and two other cohorts [60]. 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Other studies were conducted in Norway (n = 5), using the SAMINOR 1 and 2 studies 
+[64–67] and the cohort of Norway [68]; Finland (n = 4), using data from the Migrant 
+Health and Wellbeing (Maamu) study [69–72]; Italy (n = 3), using the Chinese in Prato 
+(CHIP) study [74,75] and another cohort study [73]; and Slovakia (n = 3), using the 
+HepaMeta study [76–78]. One cohort study in each following country was conducted: 
+Estonia [79], Portugal [80], Bulgaria [81], and Germany [82]. Moreover, 9 studies used 
+data from the Research on Obesity and Diabetes among African Migrants (RODAM) 
+study which was conducted in the Netherlands, Germany, UK, and Ghana [43–51]. None 
+of the HESs employed nationally representative samples, as all were regionally 
+conducted in recurring locations.
+Figure 2. here.
+Figure 2: Overview of the EU Member States and associated countries (n=10) using 
+data from HES studies (n=24)
+The participant characteristics varied widely across the included studies, with sample 
+sizes ranging from small groups (e.g., 60 Roma individuals in selected settlements in 
+Bulgaria [81]) to large cohorts e.g., over 3,000 Ghanaian participants across Europe 
+[43,48], or over 4,000 Sámi people in Norway [67]. Gender distribution and mean age 
+were diverse, with male participation being between 30-60%, and average age ranging 
+from 30 to 60 years. An overview of the study and participant characteristics is 
+presented in Table 1, and in more detail in Additional file 4.
+Inclusion of people of migrant origin and ethnic minority groups, and 
+indigenous people
+The studies were focusing either on persons of migrant origin (n=49) [26–63,68–
+75,79,80,82], ethnic minority groups (n = 4) [76–78,81], and indigenous people (n=4) 
+[64–67]. Eight studies included migrants from broad regions: the European Union [82], 
+Central-Eastern Europe [60,73], Southern and Western Europe [60], North America [60], 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Central and Southern America [73], Africa [61,62], North Africa and Sub-Saharan Africa 
+[73], the Middle-East [60–62], South Asia [68], Asia [61,62,73], or ’other country‘ 
+[60,79,82]. On the other hand, 41 studies defined more precisely the group to be 
+included: African Surinamese [26–32,35–41], South Asian Surinamese [26–38,41], 
+Somalian [69–72], Ghanaian [26–40,43–51], Cape Verdean [80], Moroccan [26–38,42], 
+Turkish [26–38,42,63], Kurdish [69–72], Iraqi [52–59,63], Chinese [74,75], Finnish [60], 
+Danish [60],  or Russian [69–72,79,82]. In one study, participants also had the option to 
+not specify their migration background [82]. The ethnic minority groups that were 
+included across four studies were Roma [76–78,81]. The indigenous Sámi people were 
+also included in four studies [64–67].
+Migrant origin and ethnic minority groups, and indigenous people were defined 
+differently across the studies. Eighteen solely included first generation migrants, i.e. 
+being born abroad with at least one parent being born abroad [52–59,68–75,80,82]. 
+Nineteen studies included first- and second-generation migrants (i.e. being born in the 
+country of residence with both parents being born abroad) [26–40,42,61–63]. 
+Additionally, some studies had extra criteria, such as a minimum length of residence in 
+the country of migration to be eligible to participate in the study (n=5) [69–72,80], or 
+the requirement of speaking their mother tongue (n=1) [82]. Eighteen studies asked 
+participants to report whether they identified as migrants (i.e. self-identification) and 
+used it to define migrant origin groups either as the sole criterion [41] or as a 
+complement to one of the criteria explained above [26–40,42,63]. Finally, two studies 
+did not describe how they defined migrant origin groups [60,79]. For ethnic minority 
+groups, three studies identified the study population through local community workers 
+[76–78]. For indigenous people, four studies used self-reported ethnic background, in 
+combination with the requirement of speaking the language by themselves, or their 
+parent or grandparent [64–67]. Migrant origin or ethnic minority groups, or indigenous 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+people were compared to either the majority population (n=47) [26–42,52–79,81,82] or 
+the population in the country of origin (n=10) [43–51,80].
+Table 1. here.
+Measurements of risk factors for CVDs and T2D
+In total, 33 studies investigated all risk factors targeted within this review, i.e. obesity, 
+hypertension, hypercholesterolemia, and hyperglycemia [26–28,30,32–35,41–43,45–
+47,50–54,56–59,63,66,69,70,74–77,79,82]. Additionally, 13 studies examined three out 
+of the four risk factors [29,31,36,37,44,49,55,61,62,67,68,73,81], whereas nine studies 
+examined two risk factors [38–40,48,64,65,70,71,78]. Two studies investigated a single 
+risk factor [60,80]. These risk factors were measured and defined using different 
+methods, explained in more detail below, and in Figure 3 and Table 2. Additional file 5 
+provides a summary of all risk factors and methods used per study.
+Figure 3. here.
+Figure 3: Overview of the collected data to measure the selected risk factors
+Obesity
+Obesity was investigated in 89.5% (n=51) of studies [26–28,30,32–61,63–67,69–
+77,79,81,82] with different types of anthropometric data, which are shown in Figure 3. 
+The most common data collected were weight [26–28,30,32–38,41–61,63–65,69–77,79] 
+and height [26–28,30,32–38,41–61,63–65,69–77,79,82] in 45 and 46 studies 
+respectively, followed by waist circumference (WC) in 40 studies [28,32,33,36–
+39,41,43–50,52–61,63–67,70–72,74–77,79,82]. Hip circumference was measured in 20 
+studies [28,35,37–39,41,44–49,60,70–72,74–77]. A few studies also measured body 
+composition (n=5) [35,38,39,60,82], the sagittal abdominal diameter (n=1) [60] and 
+arm, thigh, and calf circumference (n=1) [35]. Two studies did not describe which 
+anthropometric data was collected [40,81]. Obesity was defined using eight different 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+indicators, the body mass index (BMI), being the most used. Table 2 provides an 
+overview of the range of cut-off values used to interpret these indicators and assess 
+obesity in the included studies.
+Hypertension
+Blood pressure was measured in 80.7% (n=46) of the studies [26–37,40–47,50–59,61–
+63,66–70,73–77,79,80,82]. One study additionally measured resting heart rate [41]. 
+Hypertension was defined at least by one of the following factors (see Figure 3): systolic 
+blood pressure (SBP) (n=29) [26–28,36,37,40–42,44,50,52–59,67–70,73–77,79,82], 
+diastolic blood pressure (DBP) (n=29) [26–28,36,37,40–42,44,50,52–59,67–70,73–
+77,79,82], being on antihypertensive therapy (n=21) [26–28,36,37,40–
+42,44,50,58,59,67–70,73–75,79,82], or having a previous diagnosis of hypertension 
+(n=12) [42,52–59,73–75]. However, 17 studies did not describe the criteria used to 
+define hypertension [29–35,43,45–47,51,61–63,66,80]. Table 2 provides the detailed 
+cut-off values mentioned in different studies to assess hypertension.
+Hypercholesterolemia
+Hypercholesterolemia was measured in 73.7% (n=42) of the studies [26–35,42,43,45–
+47,49–54,56–59,61–63,66–70,73–79,81,82]. Most of the studies measured cholesterol 
+from fasting blood samples (n=35) [26–35,43,45–47,49–54,56–59,62,69,70,74–
+79,81,82], while five studies used non-fasting blood samples [42,66–68,73] and two did 
+not specify the type of the blood sample used [61,63]. The length of the fast was 
+reported either lasting overnight (n=11) [30,31,34,50,74–79,81], or between 8 to 12 
+hours (n=11) [27,28,43,45,49,52–54,56,57,70]. Some studies did not specify the length 
+of the fast (n=13) [26,29,32,33,35,46,47,51,58,59,62,69,82]. Venous blood samples 
+were used in 14 studies [27,43,47,49,51,61,68–70,76–79,81] and capillary blood 
+samples in two studies [74,75]. Blood serum was used for laboratory analysis in six 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+studies [52,59,62,66–68] and plasma in 13 studies [26,28,35,49,50,53,54,56–
+58,63,76,77].
+Hypercholesterolemia was identified by measuring the concentrations of total 
+cholesterol (TC) [26–32,34,35,42,43,45–47,49–54,56,57,59,61–63,66–70,73–79,81,82], 
+high density lipoprotein (HDL) [27–35,42,45–47,49,50,52–54,56–59,61–63,66–70,76–
+79,81,82], low density lipoprotein (LDL) cholesterol [27,28,30,35,45,46,49,52–54,56–
+59,62,63,69,70,73,76–79,81,82], and triglycerides (TG) [28,30–33,35,46,49,53,54,56–
+58,62,63,66–70,74–79,81,82]. A few studies also measured lipoprotein(a) [79], 
+apolipoprotein A-1 [79], and apolipoprotein B-100 [76,77,79]. Furthermore, 18 studies 
+reported the use of lipid-lowering medication [28–34,42,46,51,53,58,59,68,76–79] and 
+one diagnosis of hypercholesterolemia [79]. Figure 3 provides a visual overview of the 
+data collected. Many studies did not indicate which thresholds were used to define 
+hypercholesterolemia. For those that did report thresholds, Table 2 provides an 
+overview of the wide variety of cut-off values used for defining hypercholesterolemia.
+Hyperglycemia
+Hyperglycemia was measured in 87.7% (n=50) of studies [26–39,41–59,62–66,68–
+72,74–79,81,82]. Most studies reported the use of fasting blood samples (n=44) [26–
+36,38,39,41,43–59,63,69–72,74–79,81,82], whereas five studies used non-fasting blood 
+samples [42,64–66,68]. Moreover, two studies did not report whether the blood samples 
+were drawn from fasting or non-fasting samples [37,62]. The length of the fast was 
+reported either lasting between 8 to 14 hours (n=18) [27,28,36,43–45,48,49,52–58,70–
+72], or overnight (n=12) [30,31,34,50,63,74–79,81]. The remaining studies did not 
+specify the length of the fast (n=14) [26,29,32,33,35,38,39,41,46,47,51,59,69,82]. 
+Venous blood samples were used in 28 studies [27,38,39,43,44,47–49,51,54–59,63–
+65,68–72,76–79,81] and capillary blood samples were used in six studies 
+[52,53,62,63,74,75]. Other studies did not specify the origin of the blood sample. Serum 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+was analyzed in 11 studies [52–55,59,68,70–72,78,81] and plasma in 26 studies 
+[26,28,35,36,39,41,46–51,53–58,63–65,70–72,76,77].
+Many different measures and cut-off values were used across studies in defining 
+hyperglycemia (which were used as proxy for T2D) (see Table 2). Moreover, Figure 3 
+provides a visual overview of the methods used. Hyperglycemia was identified by 
+measuring blood glucose concentration [26–36,38,39,41–59,63–65,68–72,74–79,81,82], 
+performing an oral glucose tolerance test (OGTT) [52–59,62,63,82], or measuring 
+glycated hemoglobin (HbA1c) [28,35,38,39,41,42,46–48,52–54,56,59,62,63,65,66,70–
+72,82]. Finally, previous diagnosis of T2D and use of medication (including insulin) were 
+also reported in 40 [27,29–31,34,35,37–39,41–48,50,52–59,62–66,68–72,76–79] and 32 
+studies [27–29,31–39,42–48,50,53,55–59,69,71,72,74,75,82], respectively.
+Table 2. Overview of indicators and cut-off values for obesity, hypertension, 
+hypercholesterolemia, and hyperglycemia
+Definition 
+method 
+Cut-off values N References 
+Obesity 
+Body Mass Index 25 to ≤ 30 kg/m² (overweight), ≥ 30 
+kg/m² (obesity) 
+ 45 [26–28,30,33,34,36–
+38,40–61,64,65,69–
+77,79,81,82]
+≥ 102 cm (male (m)), ≥ 88 cm 
+(female (f)) 
+10 [36,41,43,52,66,67,70
+–72,82]
+Waist 
+Circumference
+≥ 94 cm (m), ≥ 80 cm (f) 10 [38,47,53–59,79]
+Waist-to-hip ratio ≥ 0.9 (m), ≥ 0.85 (f) 19  [28,37–39,44,46–
+49,60,64,65,70–72,74–
+77]
+Waist-to-height 
+ratio
+0.50–0.59 (overweight), ≥ 0.60 
+(obesity) 
+8 [33,47,49,70–
+72,74,75]
+Body fat 
+percentage 
+≥ 25% (m), ≥ 35% (f) 1 [39]
+Relative fat mass N/A 2 [47,49]
+Body shape index N/A 2 [47,49]
+Waist–hip-height 
+ratio 
+N/A 1 [60] 
+Hypertension 
+Systolic blood 
+pressure
+≥140 mmHg 29 [26–28,36,37,40–
+42,44,50,52–59,67–
+70,73–77,79,82]
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Diastolic blood 
+pressure
+≥90 mmHg 29 [26–28,36,37,40–
+42,44,50,52–59,67–
+70,73–77,79,82]
+Hypercholesterolemia 
+≥5.0 mmol/L 3 [49,70,79]Total 
+cholesterol (TC) >5.2 mmol/L (≥200 mg/dL) 3 [81]
+≥6.2 mmol/L (≥240 mg/dL) 2 [74,75]
+1.16–1.54 mmol/L (m), 1.29–1.54 
+mmol/L (f) 
+1 [62]
+<1.03 mmol/L (m), <1.29 mmol/L 
+(f) (<40 mg/dL (m), <50 mg/dL (f))
+8 [76–79]
+<1.0 mmol/L (m), <1.3 mmol/L (f) 1 [53]
+High Density 
+Lipoprotein (HDL) 
+<1.0 mmol/L (m), <1.2 mmol/L (f) 2 [49,70]
+≥1.7 mmol/L (≥150mg/dL) 13 [32,33,46]Triglyceride (TG) 
+≥2.26 mmol/L (≥200 mg/dL) 2 [74,75]
+>2.5 mmol/L 1 [62]
+2.59–4.13 mmol/L (m & f) 1 [62]
+≥3 mmol/L 2 [49,79] 
+Low Density 
+Lipoprotein (LDL) 
+≥160 mg/dL) 1 [46]
+TC/HDL-C ratio  >5 3 [42,50,81] 
+TG/HDL-C ratio  - 2 [49,81]
+Apolipoprotein A-1 <1.04 g/L (m), <1.08 g/L (f) 1 [79]
+Apolipoprotein B-
+100 
+>1.33 g/L (m), >1.17 g/L (f) 1 [79]
+Lipoprotein (a)  >0.3 g/L 1 [79]
+Hyperglycemia 
+Normal Glucose 
+Tolerance 
+<6.1 mmol/L 2 [54,56] 
+Fasting plasma 
+glucose (FPG) 
+≥ 7.0 mmol/L (≥126 mg/dL) 31 [27–29,31,34–
+36,38,39,41,43–
+48,50,52–
+59,69,72,74,75,79,82] 
+≥5.6 mmol/L (100 mg/dL) 6 [32,33,53,76–78] 
+5.6–6.9 mmol/L 2 [43,46]
+5.7–6.9 mmol/L 1 [41]
+>6.0 mmol/L 2 [70,71]
+>6.0 to <7.0 mmol/L 1 [63]
+≥6.1 mmol/L 2 [81,82] 
+Impaired fasting 
+glucose (IFG)
+≥ 6.1 to < 7.0 mmol/L 7 [52–56,58,59] 
+>11.0 mmol/L 1 [42]Non-fasting blood 
+glucose 
+concentration 
+≥7.5 mmol/L 2 [64,65]
+Non-fasting blood 
+glucose 
+concentration 
+2-h plasma glucose ≥ 11.1 mmol/L 9 [52–56,58,59,63,82] 
+2-h plasma glucose 
+≥ 7.8 and <11.1 mmol/L 8 [52–56,58,59,63] 
+Impaired glucose 
+tolerance (IGT) 
+≥8.9mmol/L <12.2mmol/L 1 [63]
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Fasting plasma glucose
+<7.0 mmol/L 3 [52,58,63] 
+<6.1 mmol/L 4 [54–56,59]
+≥6.5% (≥48 mmol/mol) 8 [28,39,42,47,65,66,72,
+82] 
+<7 % (53 mmol/mol) 1 [46]
+Glycated 
+hemoglobin 
+(HbA1c) 
+≥6 % (≥42 mmol/mol) 2 [70,71] 
+Discussion
+In this scoping review, we examined 57 articles and identified 24 HESs covering key risk 
+factors for CVD and T2D among migrant origin and ethnic minority groups in ten 
+European countries (the Netherlands, Sweden, Norway, Finland, Italy, Slovakia, Estonia, 
+Portugal, Bulgaria, and Germany). All of these HES were regional, and no nationally 
+representative HESs were identified. This regional concentration of HESs targeting 
+migrant origin and ethnic minority groups likely reflects their urban clustering, enabling 
+efficient survey logistics but potentially compromising national representativeness.
+Design, populations studied, and definitions of migrant origin and ethnic minority 
+groups, and indigenous people varied across the HES.  We also found substantial 
+heterogeneity in whether included key risk factors for CVD and T2D (obesity, 
+hypertension, hypercholesterolemia, and hyperglycemia) were assessed and how these 
+were measured and defined, which complicates comparability across studies. Despite 
+the clear public health importance of CVD and T2D, our findings suggest a lack of 
+standardized, inclusive, and coordinated efforts to monitor these conditions among 
+migrant origin and ethnic minority groups, and indigenous people at the national level.
+Fragmented HES efforts among migrant origin and ethnic minority groups 
+Previous research has shown the crucial role of HESs in generating high-quality data 
+that supports early detection, prevention strategies, and informed policymaking at the 
+national level [16,17,83]. However, as many as 67% (n=38) of the included studies were 
+conducted in the Netherlands and Sweden, including the largest scale Dutch studies 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+HELIUS and RODAM. In contrast, many other European countries had conducted only a 
+single HES involving persons of migrant origin or ethnic minority groups, or none. This 
+uneven distribution highlights significant geographic disparities in the implementation 
+of population-based screening efforts. Notably, countries such as Germany, France, or 
+Spain host some of the largest and most diverse migrant populations in Europe, 
+reflecting broader demographic shifts across the continent [84]. To address this 
+imbalance, future public health research should prioritize expanding HES coverage in 
+underrepresented regions, particularly those with substantial migrant origin and ethnic 
+minority groups. This includes allocating funding, building local research capacity, and 
+fostering cross-country collaboration to ensure that health data collection reflects the 
+diversity of Europe’s population.
+Inconsistent definitions of migrant origin groups and ethnicity 
+A key finding of this review is the significant variation in how migrant origin, ethnic 
+minority groups, and indigenous populations are defined and identified across HESs. 
+This reflects both a lack of conceptual and methodological standardization across 
+Europe and differences in the availability of migration and ethnicity related data in 
+population registers commonly used for sampling. Such variation is further shaped by 
+national legal frameworks, which determine what types of data can be collected and 
+accessed for these purposes. Definitions ranged from country of birth and self-reported 
+status to administrative data and community-based identification. Some studies also 
+lacked clarity on how migrant origin groups or ethnicity were defined. This variability 
+reflects broader challenges documented in the literature. Different data sources, such 
+as country of birth, self-identified ethnicity, language, or religious beliefs, are often used 
+as proxies for migrant origin groups, but each comes with important limitations. For 
+instance, country of birth becomes an increasingly crude measure over time, 
+particularly for second- or third-generation migrants, while nationality or citizenship may 
+not reflect cultural identity or health-related behaviors [85–88].
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Ethnicity itself implies shared origins, culture, customs, language, or religion [89], yet 
+these dimensions are difficult to capture consistently and meaningfully in HESs. 
+Moreover, the relationship between migrant origin groups and disease risk is complex 
+and shaped by multiple factors across the life course. These include genetic 
+predispositions, early-life exposure to poverty, malnutrition, or infection, cultural 
+practices maintained after migration, and the quality of care and structural conditions 
+encountered in the host countries [6,8].  Second-generation individuals (i.e. those born 
+in the host country to migrant parents) can still face elevated risks for T2D and CVDs 
+[11]. This raises important questions about how long and on what basis people should 
+be classified as belonging to a migrant origin group. Researchers increasingly call for 
+more reflexive, inclusive approaches that avoid rigid stigmatizing categories and 
+instead reflect lived experiences and structural factors [90,91]. Nevertheless, without a 
+shared understanding of what constitutes ‘migrant origin’ or ‘ethnicity’, it becomes 
+difficult to interpret differences between population groups.
+Heterogeneity in risk factor measurement and diagnostic criteria 
+There was substantial heterogeneity in the methods used to measure and define the 
+four selected CVD and T2D risk factors (i.e. obesity, hypertension, 
+hypercholesterolemia, and hyperglycemia). Studies varied in indicators, diagnostic 
+thresholds, and sample types, leading to a lack of consistency and transparency. These 
+methodological differences can result in risk misestimation, missed diagnoses, or 
+inappropriate follow-up, potentially leading to unequal access to preventive care, 
+delayed treatment, and inefficient resource allocation. Previous studies have 
+highlighted the need for harmonization of measurement protocols in HESs to enable 
+valid cross-country comparisons and support coordinated public health action at the 
+European level [17,83,92]. Our findings reaffirm this need but also extend it by 
+highlighting a critical gap: existing calls for harmonization rarely address how 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+standardized methods should be adapted or applied in the context of population 
+diversity.
+Implications and future directions
+It is crucial that HESs reflect the full diversity of the population, including persons of 
+migrant origin and ethnic minority groups, who are often underrepresented in routine 
+data systems [85]. Given that these populations may comprise a small share of national 
+sampling frames, representativeness requires deliberate design choices, including 
+targeted oversampling or dedicated supplementary sampling.  In this regard, migrant 
+origin ethnic minority groups, and indigenous people should be integrated as a 
+supplementary sample in national HESs, rather than in smaller regional HESs specifically 
+focused on these groups. The supplementary sample has to be large enough to conduct 
+meaningful sub-group analyses. Such an approach could increase analytic power and 
+improve the precision of subgroup estimates across Europe. Importantly, it must be kept 
+in mind that one-size-fits-all approach does not equal to successful integration. There 
+should be flexibility acknowledging diverse knowledge systems and cultural norms when 
+designing the questionnaires and health examination protocols. Potential barriers to 
+participation should be considered, and recruitment methods may need to be adapted 
+to support the participation rate. Thus, our findings underscore the urgent need for 
+coordinated guidance at the European level on how to include those people in 
+population-based screening initiatives.
+This review shows the inconsistent identification, inclusion of migrant origin or ethnic 
+minority groups, and risk factors assessment across Europe, adding complexity to this 
+issue. While harmonizing definitions and measurement protocols is essential, it is 
+equally important to develop practical guidelines for the inclusion of migration 
+background and ethnicity in HESs. Such guidance should specify which dimensions of 
+diversity need to be examined, provide methodological recommendations on how to 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+sample for diversity within HESs, and establish consistent definitions for cross-country 
+minorities, such as those of ‘migrant origin’ or ‘ethnic minorities’. Including these 
+dimensions in HESs is not only justified by the known disparities in CVD and T2D risk 
+[6], but also necessary for designing effective, equitable interventions.
+Future research should examine how HESs can further serve as a general tool to identify 
+gaps in healthcare, thereby informing the design of targeted approaches to reach high-
+risk groups. Ultimately, greater consistency in representing migrant origin and ethnic 
+minority groups in health monitoring systems is essential to ensure that efforts 
+effectively reach high-risk groups and help reduce health inequalities across Europe. 
+Moreover, although this review focused exclusively on HES-based measurement 
+approaches, several European countries maintain high-quality national registers with 
+migration-stratified cardiometabolic data. Integrating insights from these register 
+systems with HES findings offers an important avenue for future research and could 
+provide a more comprehensive understanding of cardiometabolic health across diverse 
+populations. Finally, future reviews could extend this work by incorporating behavioral, 
+environmental, socioeconomic, and structural determinants (such as air pollution, traffic 
+noise, neighborhood deprivation, green space availability) alongside physiological risk 
+factors and clinical outcomes to capture the full complexity of cardiometabolic health in 
+migrant-origin groups and ethnic minorities. 
+Strengths and limitations
+A key strength of this study is the use of a transparent and rigorous scoping review 
+methodology, which enabled a systematic and structured overview of HESs targeting 
+persons of migrant origin and ethnic minority groups in Europe. The review process 
+followed established guidelines, ensuring clarity and reproducibility. To maximize 
+comprehensiveness and mitigate publication bias, our search strategy encompassed 
+two major academic databases and an extensive multilingual grey literature search of 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+national public health websites. Although this grey literature search yielded no eligible 
+reports, it clearly highlighted the scarcity of HES data for migrant origin groups and 
+ethnic minorities, pointing to a substantial gap in publicly accessible health examination 
+information for these populations. It also revealed structural challenges: many 
+documents lacked sufficient methodological detail to verify HES eligibility, did not report 
+usable migrant/ethnicity identifiers, or were non-HES reports (e.g., interview surveys, 
+dashboards) without standardized examination measures. Nonetheless, some 
+limitations should be considered. The retrieval of grey literature remains subject to 
+opaque search engine algorithms. Furthermore, some relevant information and data 
+may exist within national health institutes but remain unpublished or restricted for 
+internal government use.  
+A further limitation of this review is its exclusive focus on physiological risk factors. 
+Although this approach elucidates underlying biological mechanisms, it potentially 
+narrows the scope of risk assessment by omitting behavioral, environmental, and 
+socioeconomic factors that are critical and modifiable contributors to the development 
+of CVD and T2D. This is particularly relevant for migrant origin populations, who often 
+undergo acculturation-related changes in diet and physical activity that elevate 
+cardiometabolic risk [93]. Environmental and structural factors such as air pollution, 
+traffic-related- noise, and neighborhood disadvantage further contribute to this risk and 
+disproportionately affect these groups [94].
+Finally, the definition of European countries was based on the EU4Health Programme 
+(2021-2027), which may not fully reflect the diversity of health monitoring practices 
+across the broader European region. Despite these considerations, the review offers a 
+robust and informative overview of current practices and gaps in the monitoring of 
+cardiometabolic risk among migrant origin and ethnic minority groups, and indigenous 
+people. 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Conclusion
+This scoping review reveals substantial gaps in monitoring CVD and T2D risk factors 
+among migrant origin and ethnic minority groups and indigenous people in EU Member 
+States and associated countries. While several regional HESs exist, the lack of nationally 
+representative data, standardized definitions, and consistent methods hampers reliable 
+cross-country comparisons. The heterogeneity in risk factor assessment and defining 
+target populations complicates data harmonization and limits policy relevance. To 
+support equitable and effective health promotion and disease prevention strategies, 
+improved data availability, methodological alignment, and coordinated European efforts 
+are essential. Developing shared guidelines for the inclusion and assessment of migrant 
+origin and ethnic minority groups and indigenous people in health surveillance systems 
+will be essential to better address the growing burden of CVD and T2D in increasingly 
+diverse European societies.
+Declarations
+Ethics approval: Not applicable.
+Consent to participate: Not applicable.
+Consent for publication: Not applicable.
+Availability of data and materials: The datasets generated and/or analyzed during 
+the current study are not publicly available but are available from the corresponding 
+author on reasonable request.
+Competing interests: None declared.
+Funding: This study is part of JACARDI - Joint Action on Cardiovascular Disease and 
+Diabetes. JACARDI has received funding from the EU4Health Programme 2021-2027 
+under Grant Agreement 101126953. Views and opinions expressed are however those 
+of the author(s) only and do not necessarily reflect those of the European Union or the 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+European Health and Digital Executive Agency (HaDEA). Neither the European Union 
+nor the granting authority can be held responsible for them.
+Authors’ contributions: Activities undertaken by the authors were as follows: 
+establishment of research questions and methods: SMHL, FM, HT, HME, JZ, JvO, and 
+NS; development of search strategy: SMHL, FM, HT, HME, JZ, and NS; database search 
+and record screening: SMHL and FM; extraction of primary studies included in this 
+review: SMHL and FM; interpretation of results: SMHL and FM; initial drafting of the 
+manuscript: SMHL and FM; critical revision of the manuscript: SMHL, FM, HT, HME, JZ, 
+JvO, PS, JF, and NS. 
+Acknowledgements: We thank the scientific board of JACARDI for their input on the 
+first draft.
+List of abbreviations
+BMI: Body mass index
+CVD: Cardiovascular disease
+DBP: Diastolic blood pressure
+EU: European Union 
+FPG: Fasting plasma glucose
+HbA1c: Glycated hemoglobin
+HDL: High Density Lipoprotein
+HES: health examination survey
+IFG: Impaired fasting glucose
+IGT: Impaired glucose tolerance
+LDL: Low Density Lipoprotein
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+OGTT: oral glucose tolerance test
+SBP: Systolic blood pressure
+TC: Total Cholesterol
+TG: Triglyceride
+T2D: Type two diabetes
+WC: waist circumference
+Supplementary Information
+Additional file 1
+Additional file 2
+Additional file 3
+Additional file 4
+Additional file 5
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+References 
+1. World Health Organization. Cardiovascular Diseases. [Internet]. 2024 [cited 2024 
+Nov 21]. https://www.who.int/health-topics/cardiovascular-diseases#tab=tab_1. 
+Accessed 21 Nov 2024
+2. Roth GA, Mensah GA, Johnson CO, Addolorato G, Ammirati E, Baddour LM, et al. 
+Global Burden of Cardiovascular Diseases and Risk Factors, 1990–2019: Update From 
+the GBD 2019 Study. J Am Coll Cardiol [Internet]. 2020;76:2982–3021. 
+https://doi.org/https://doi.org/10.1016/j.jacc.2020.11.010
+3. Timmis A, Aboyans V, Vardas P, Townsend N, Torbica A, Kavousi M, et al. European 
+Society of Cardiology: the 2023 Atlas of Cardiovascular Disease Statistics. Eur Heart J 
+[Internet]. 2024;45:4019–62. https://doi.org/10.1093/eurheartj/ehae466
+4. Leon BM, Maddox TM. Diabetes and cardiovascular disease: Epidemiology, biological 
+mechanisms, treatment recommendations and future research. World J Diabetes. 
+Baishideng Publishing Group Inc.; 2015;6:1246. 
+https://doi.org/10.4239/wjd.v6.i13.1246
+5. Yusuf S, Joseph P, Rangarajan S, Islam S, Mente A, Hystad P, et al. Modifiable risk 
+factors, cardiovascular disease, and mortality in 155 722 individuals from 21 high-
+income, middle-income, and low-income countries (PURE): a prospective cohort study. 
+The Lancet [Internet]. Elsevier; 2020;395:795–808. https://doi.org/10.1016/S0140-
+6736(19)32008-2
+6. Agyemang C, van den Born B-J. Non-communicable diseases in migrants: an expert 
+review. J Travel Med [Internet]. 2019;26:tay107. https://doi.org/10.1093/jtm/tay107
+7. Sarivaara E, Maatta K, Uusiautti S. Who is indigenous? Definitions of indigeneity. Eur 
+Sci J. European Scientific Journal; 2013; 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+8. Meeks KAC, Freitas-Da-Silva D, Adeyemo A, Beune EJAJ, Modesti PA, Stronks K, et al. 
+Disparities in type 2 diabetes prevalence among ethnic minority groups resident in 
+Europe: a systematic review and meta-analysis. Intern Emerg Med [Internet]. 
+2016;11:327–40. https://doi.org/10.1007/s11739-015-1302-9
+9. Snijder MB, Agyemang C, Peters RJ, Stronks K, Ujcic-Voortman JK, van Valkengoed 
+IGM. Case finding and medical treatment of type 2 diabetes among different ethnic 
+minority groups: the HELIUS study. J Diabetes Res. Wiley Online Library; 
+2017;2017:9896849. 
+10. Sarkar U, Bibbins-Domingo K. Achieving Diagnostic Equity in Cardiovascular 
+Disease. JAMA [Internet]. 2022;328:827–8. https://doi.org/10.1001/jama.2022.14424
+11. Agyemang C, van der Linden EL, Chilunga F, van den Born BH. International 
+Migration and Cardiovascular Health: Unraveling the Disease Burden Among Migrants 
+to North America and Europe. J Am Heart Assoc [Internet]. Wiley; 2024;13:e030228. 
+https://doi.org/10.1161/JAHA.123.030228
+12. Campostrini S. Monitoring Migrants’ Health Risk Factors for Noncommunicable 
+Diseases [Internet]. Oxford University Press; 2022. 
+https://doi.org/10.1093/acrefore/9780190632366.013.14
+13. European Health Examination Survey. National HESs conducted between 2000-
+2021 and known plans for 2022-2030 [Internet]. 2021 [cited 2025 May 13]. 
+https://ehes.info/national/national_hes_status.htm. Accessed 13 May 2025
+14. Maukonen M, Männistö S, Tolonen H. A comparison of measured versus self-
+reported anthropometrics for assessing obesity in adults: a literature review. Scand J 
+Public Health [Internet]. SAGE Publications Ltd STM; 2018;46:565–79. 
+https://doi.org/10.1177/1403494818761971
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+15. Tolonen H, Koponen P, Al-kerwi A, Capkova N, Giampaoli S, Mindell J, et al. 
+European health examination surveys – a tool for collecting objective information 
+about the health of the population. Archives of Public Health [Internet]. 2018;76:38. 
+https://doi.org/10.1186/s13690-018-0282-4
+16. Margozzini P, Tolonen H, Bernabe-Ortiz A, Cuschieri S, Donfrancesco C, Palmieri L, 
+et al. National health examination surveys; a source of critical data. Bull World Health 
+Organ. 2024;102:588. 
+17. Tolonen H, Koponen P, Mindell J, Männistö S, Kuulasmaa K. European Health 
+Examination Survey—towards a sustainable monitoring system. Eur J Public Health 
+[Internet]. 2014;24:338–44. https://doi.org/10.1093/eurpub/ckt107
+18. Mindell JS, Giampaoli S, Goesswald A, Kamtsiuris P, Mann C, Männistö S, et al. 
+Sample selection, recruitment and participation rates in health examination surveys in 
+Europe - experience from seven national surveys. BMC Med Res Methodol. BioMed 
+Central; 2015;15. https://doi.org/10.1186/s12874-015-0072-4
+19. Rafnsson SB, Bhopal RS. Large-scale epidemiological data on cardiovascular 
+diseases and diabetes in migrant and ethnic minority groups in Europe. Eur J Public 
+Health [Internet]. 2009;19:484–91. https://doi.org/10.1093/eurpub/ckp073
+20. Sagastume D, Siero I, Mertens E, Peñalvo JL. Cardiometabolic Profile and Outcomes 
+in Migrant Populations: A Review of Comparative Evidence from Migrants in Europe in 
+Relation to Their Country of Origin. Curr Cardiol Rep [Internet]. 2022;24:1799–810. 
+https://doi.org/10.1007/s11886-022-01802-5
+21. Beulens JWJ, Reichelt F, Remmelzwaal S, Rutters F, Strooij B, Harms P, et al. Type 2 
+diabetes complications in ethnic minority compared with European host populations: a 
+systematic review and meta-analysis. BMJ Open Diabetes Res Care [Internet]. 
+2024;12:e004345. https://doi.org/10.1136/bmjdrc-2024-004345
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+22. Agyemang C, van den Born B-J. Cardiovascular health and disease in migrant 
+populations: a call to action. Nat Rev Cardiol [Internet]. 2022;19:1–2. 
+https://doi.org/10.1038/s41569-021-00644-y
+23. Arksey H, O’Malley L. Scoping studies: towards a methodological framework. Int J 
+Soc Res Methodol [Internet]. Routledge; 2005;8:19–32. 
+https://doi.org/10.1080/1364557032000119616
+24. Tricco AC, Lillie E, Zarin W, O’Brien KK, Colquhoun H, Levac D, et al. PRISMA 
+Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation. Ann Intern 
+Med [Internet]. American College of Physicians; 2018;169:467–73. 
+https://doi.org/10.7326/M18-0850
+25. Ouzzani M, Hammady H, Fedorowicz Z, Elmagarmid A. Rayyan—A web and mobile 
+app for systematic reviews. Systematic Reviews, 5 (1), Article 210. 2016. 
+26. Agyemang C, Kieft S, Snijder MB, Beune EJ, van den Born B-J, Brewster LM, et al. 
+Hypertension control in a large multi-ethnic cohort in Amsterdam, The Netherlands: 
+The HELIUS study. Int J Cardiol [Internet]. 2015;183:180–9. 
+https://doi.org/https://doi.org/10.1016/j.ijcard.2015.01.061
+27. Bouwmeester TA, Vriend EMC, Galenkamp H, Westerhof BE, Collard D, van den 
+Born B-JH. Autonomic cardiac control independently predicts incident hypertension 
+and systolic blood pressure in a multi-ethnic population: the HELIUS study. Eur J Prev 
+Cardiol [Internet]. 2025;zwaf011. https://doi.org/10.1093/eurjpc/zwaf011
+28. Gazzola K, Snijder MB, Hovingh GK, Stroes ESG, Peters RJG, van den Born B-JH. 
+Ethnic differences in plasma lipid levels in a large multiethnic cohort: The HELIUS 
+study. J Clin Lipidol [Internet]. 2018;12:1217-1224.e1. 
+https://doi.org/https://doi.org/10.1016/j.jacl.2018.06.015
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+29. Perini W, Snijder MB, Peters RJG, Kunst AE. Ethnic disparities in estimated 
+cardiovascular disease risk in Amsterdam, the Netherlands. Netherlands Heart Journal 
+[Internet]. 2018;26:252–62. https://doi.org/10.1007/s12471-018-1107-3
+30. Perini W, Agyemang C, Snijder MB, Peters RJG, Kunst AE. Ethnic disparities in 
+treatment rates for hypertension and dyslipidemia: an analysis by different treatment 
+indications: the Healthy Life in an Urban Setting study. J Hypertens [Internet]. 2018;36. 
+https://journals.lww.com/jhypertension/fulltext/2018/07000/ethnic_disparities_in_treat
+ment_rates_for.17.aspx
+31. Perini W, Snijder MB, Peters RJ, Kunst AE, van Valkengoed IG. Estimation of 
+cardiovascular risk based on total cholesterol versus total cholesterol/high-density 
+lipoprotein within different ethnic groups: The HELIUS study. Eur J Prev Cardiol 
+[Internet]. 2019;26:1888–96. https://doi.org/10.1177/2047487319853354
+32. Perini W, Kunst AE, Snijder MB, Peters RJG, van Valkengoed IGM. Ethnic differences 
+in metabolic cardiovascular risk among normal weight individuals: Implications for 
+cardiovascular risk screening. The HELIUS study. Nutrition, Metabolism and 
+Cardiovascular Diseases [Internet]. 2019;29:15–22. 
+https://doi.org/https://doi.org/10.1016/j.numecd.2018.09.004
+33. Perini W, van Valkengoed IGM, Snijder MB, Peters RJG, Kunst AE. The contribution 
+of obesity to the population burden of high metabolic cardiovascular risk among 
+different ethnic groups. The HELIUS study. Eur J Public Health [Internet]. 2020;30:322–
+7. https://doi.org/10.1093/eurpub/ckz190
+34. Perini W, Snijder MB, Agyemang C, Peters RJG, Kunst AE, van Valkengoed IGM. 
+Eligibility for cardiovascular risk screening among different ethnic groups: The HELIUS 
+study. Eur J Prev Cardiol [Internet]. 2020;27:1204–11. 
+https://doi.org/10.1177/2047487319866284
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+35. Snijder MB, Galenkamp H, Prins M, Derks EM, Peters RJG, Zwinderman AH, et al. 
+Cohort profile: the Healthy Life in an Urban Setting (HELIUS) study in Amsterdam, The 
+Netherlands. BMJ Open [Internet]. 2017;7:e017873. https://doi.org/10.1136/bmjopen-
+2017-017873
+36. van der Linden EL, Collard D, Beune EJAJ, Nieuwkerk PT, Galenkamp H, Haafkens 
+JA, et al. Determinants of suboptimal blood pressure control in a multi-ethnic 
+population: The Healthy Life in an Urban Setting (HELIUS) study. The Journal of Clinical 
+Hypertension [Internet]. John Wiley & Sons, Ltd; 2021;23:1068–76. 
+https://doi.org/https://doi.org/10.1111/jch.14202
+37. van Laer SD, Snijder MB, Agyemang C, Peters RJG, van den Born B-JH. Ethnic 
+differences in hypertension prevalence and contributing determinants – the HELIUS 
+study. Eur J Prev Cardiol [Internet]. 2018;25:1914–22. 
+https://doi.org/10.1177/2047487318803241
+38. Zethof M, Mosterd CM, Collard D, Galenkamp H, Agyemang C, Nieuwdorp M, et al. 
+Differences in Body Composition Convey a Similar Risk of Type 2 Diabetes Among 
+Different Ethnic Groups With Disparate Cardiometabolic Risk—The HELIUS Study. 
+Diabetes Care [Internet]. 2021;44:1692–8. https://doi.org/10.2337/dc21-0230
+39. Meeks KAC, Stronks K, Beune EJAJ, Adeyemo A, Henneman P, Mannens MMAM, et 
+al. Prevalence of type 2 diabetes and its association with measures of body 
+composition among African residents in the Netherlands – The HELIUS study. Diabetes 
+Res Clin Pract [Internet]. 2015;110:137–46. 
+https://doi.org/https://doi.org/10.1016/j.diabres.2015.09.017
+40. van Apeldoorn JAN, Jansen L, Hoevenaar-Blom MP, Harskamp RE, Galenkamp H, 
+van den Born B-JH, et al. Antihypertensive Medication Category Prescriptions and 
+Blood Pressure Control in African Surinamese and Ghanaian Migrants with 
+Hypertension in Amsterdam, The Netherlands: The HELIUS Study. High Blood Pressure 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+& Cardiovascular Prevention [Internet]. 2025;32:69–77. 
+https://doi.org/10.1007/s40292-024-00690-w
+41. Admiraal WM, Holleman F, Snijder MB, Peters RJG, Brewster LM, Hoekstra JBL, et al. 
+Ethnic disparities in the association of impaired fasting glucose with the 10-year 
+cumulative incidence of type 2 diabetes. Diabetes Res Clin Pract [Internet]. 
+2014;103:127–32. https://doi.org/https://doi.org/10.1016/j.diabres.2013.10.014
+42. Hartog L, van Rooijen MS, Ujčič-Voortman J, Prins M, van Valkengoed IGM. Ethnic 
+differences in infectious burden and the association with metabolic risk factors for 
+cardiovascular disease: a cross-sectional analysis. BMC Public Health [Internet]. 
+2018;18:276. https://doi.org/10.1186/s12889-018-5162-x
+43. Agyemang C, Meeks K, Beune E, Owusu-Dabo E, Mockenhaupt FP, Addo J, et al. 
+Obesity and type 2 diabetes in sub-Saharan Africans – Is the burden in today’s Africa 
+similar to African migrants in Europe? The RODAM study. BMC Med [Internet]. 
+2016;14:166. https://doi.org/10.1186/s12916-016-0709-0
+44. Beune E, Nieuwkerk P, Stronks K, Meeks K, Schulze MB, Mockenhaupt FP, et al. 
+Medication non-adherence and blood pressure control among hypertensive migrant 
+and non-migrant populations of sub-Saharan African origin: the RODAM study. J Hum 
+Hypertens [Internet]. 2019;33:131–48. https://doi.org/10.1038/s41371-018-0120-8
+45. Boateng D, Agyemang C, Beune E, Meeks K, Smeeth L, Schulze M, et al. Migration 
+and Cardiovascular Disease Risk Among Ghanaian Populations in Europe: Circ 
+Cardiovasc Qual Outcomes [Internet]. American Heart Association; 2017;10:e004013. 
+https://doi.org/10.1161/CIRCOUTCOMES.117.004013
+46. Chilunga FP, Henneman P, Meeks KA, Beune E, Requena-Méndez A, Smeeth L, et 
+al. Prevalence and determinants of type 2 diabetes among lean African migrants and 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+non-migrants: The RODAM study. J Glob Health [Internet]. 2019;9. 
+https://doi.org/10.7189/jogh.09.020426
+47. Commodore-Mensah Y, Agyemang C, Aboagye JA, Echouffo-Tcheugui JB, Beune E, 
+Smeeth L, et al. Obesity and cardiovascular disease risk among Africans residing in 
+Europe and Africa: the RODAM study. Obes Res Clin Pract [Internet]. 2020;14:151–7. 
+https://doi.org/https://doi.org/10.1016/j.orcp.2020.01.007
+48. Darko SN, Meeks KAC, Owiredu WKBA, Laing EF, Boateng D, Beune E, et al. 
+Anthropometric indices and their cut-off points in relation to type 2 diabetes among 
+Ghanaian migrants and non-migrants: The RODAM study. Diabetes Res Clin Pract 
+[Internet]. 2021;173:108687. 
+https://doi.org/https://doi.org/10.1016/j.diabres.2021.108687
+49. van der Linden E, Meeks K, Beune E, de-Graft Aikins A, Addo J, Owusu-Dabo E, et 
+al. Dyslipidaemia among Ghanaian migrants in three European countries and their 
+compatriots in rural and urban Ghana: The RODAM study. Atherosclerosis [Internet]. 
+2019;284:83–91. https://doi.org/https://doi.org/10.1016/j.atherosclerosis.2019.02.030
+50. van der Linden EL, Meeks KAC, Klipstein-Grobusch K, Bahendeka S, Beune EJAJ, 
+van den Born B-JH, et al. Hypertension determinants among Ghanaians differ 
+according to location of residence: RODAM study. J Hypertens [Internet]. 2022;40. 
+https://journals.lww.com/jhypertension/fulltext/2022/05000/hypertension_determinant
+s_among_ghanaians_differ.22.aspx
+51. van Nieuwenhuizen B, Zafarmand MH, Beune E, Meeks K, Aikins A de-G, Addo J, et 
+al. Ideal cardiovascular health among Ghanaian populations in three European 
+countries and rural and urban Ghana: the RODAM study. Intern Emerg Med [Internet]. 
+2018;13:845–56. https://doi.org/10.1007/s11739-018-1846-6
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+52. Al-Majdoub M, Spégel P, Bennet L. Metabolite profiling paradoxically reveals 
+favorable levels of lipids, markers of oxidative stress and unsaturated fatty acids in a 
+diabetes susceptible group of Middle Eastern immigrants. Acta Diabetol [Internet]. 
+2020;57:597–603. https://doi.org/10.1007/s00592-019-01464-w
+53. Bennet L, Nilsson PM. Country of birth modifies the associations of body mass and 
+hemoglobin A1c with office blood pressure in Middle Eastern immigrants and native 
+Swedes. J Hypertens [Internet]. 2014;32. 
+https://journals.lww.com/jhypertension/fulltext/2014/12000/country_of_birth_modifies_
+the_associations_of_body.13.aspx
+54. Bennet L, Groop L, Franks PW. Ethnic differences in the contribution of insulin 
+action and secretion to type 2 diabetes in immigrants from the Middle East compared 
+to native Swedes. Diabetes Res Clin Pract [Internet]. 2014;105:79–87. 
+https://doi.org/https://doi.org/10.1016/j.diabres.2014.04.025
+55. Bennet L, Groop L, Lindblad U, Agardh C-D, Franks PW. Ethnicity is an independent 
+risk indicator when estimating diabetes risk with FINDRISC scores: A cross sectional 
+study comparing immigrants from the Middle East and native Swedes. Prim Care 
+Diabetes [Internet]. 2014;8:231–8. 
+https://doi.org/https://doi.org/10.1016/j.pcd.2014.01.002
+56. Bennet L, Lindblad U, Franks PW. A family history of diabetes determines poorer 
+glycaemic control and younger age of diabetes onset in immigrants from the Middle 
+East compared with native Swedes. Diabetes Metab [Internet]. 2015;41:45–54. 
+https://doi.org/https://doi.org/10.1016/j.diabet.2014.08.003
+57. Bennet L, Stenkula K, Cushman SW, Brismar K. BMI and waist circumference cut-
+offs for corresponding levels of insulin sensitivity in a Middle Eastern immigrant versus 
+a native Swedish population – the MEDIM population based study. BMC Public Health 
+[Internet]. 2016;16:1242. https://doi.org/10.1186/s12889-016-3892-1
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+58. Dhaher NF, Pikkemaat M, Shaat N, Nilsson A, Bennet L. Cancer, cardiovascular 
+disease, and all-cause mortality in Iraqi- and Swedish-born individuals in Sweden: the 
+MEDIM cohort study. Sci Rep [Internet]. 2023;13:6129. https://doi.org/10.1038/s41598-
+023-33379-6
+59. Pikkemaat M, Larsson Lönn S, Bennet L. Insulin action and secretion independent 
+of traditional risk factors predict new-onset type 2 diabetes in Iraqi and Swedish born 
+citizens – The MEDIM cohort study. Diabetes Metab Res Rev [Internet]. John Wiley & 
+Sons, Ltd; 2022;38:e3509. https://doi.org/https://doi.org/10.1002/dmrr.3509
+60. Carlsson AC, Wändell P, Riserus U, Ärnlöv J, Borné Y, Engström G, et al. Differences 
+in anthropometric measures in immigrants and Swedish-born individuals: Results from 
+two community-based cohort studies. Prev Med (Baltim) [Internet]. 2014;69:151–6. 
+https://doi.org/https://doi.org/10.1016/j.ypmed.2014.09.020
+61. Saleh M, Salminen H, Taloyan M. The estimated 10-year risk of first-onset 
+cardiovascular disease in Swedish-born and non-Swedish-born primary healthcare 
+patients. BMC Primary Care [Internet]. 2024;25:198. https://doi.org/10.1186/s12875-
+024-02446-w
+62. Taloyan M, Wågström V, Steiner KH, Yarbakht D, Östenson C-G, Salminen H. 
+Comparison of Framingham 10-year cardiovascular risks in Sweden- and foreign-born 
+primary health care patients in Sweden. BMC Public Health [Internet]. 2023;23:543. 
+https://doi.org/10.1186/s12889-023-15449-6
+63. Hellgren M, Hjörleifsdottir Steiner K, Bennet L. Haemoglobin A1c as a screening 
+tool for type 2 diabetes and prediabetes in populations of Swedish and Middle-East 
+ancestry. Prim Care Diabetes [Internet]. 2017;11:337–43. 
+https://doi.org/https://doi.org/10.1016/j.pcd.2017.04.008
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+64. Naseribafrouei A, Eliassen BM, Melhus M, Svartberg J, Broderstad AR. The 
+prevalence of diabetes mellitus among Sami and non-Sami inhabitants of Northern 
+Norway - The SAMINOR 1 Survey (2003-2004) and the SAMINOR 2 Clinical Survey 
+(2012-2014). Rural Remote Health. James Cook University; 2018;18. 
+https://doi.org/10.22605/RRH4623
+65. Naseribafrouei A, Eliassen BM, Melhus M, Svartberg J, Broderstad AR. Estimated 8-
+year cumulative incidence of diabetes mellitus among Sami and non-Sami inhabitants 
+of Northern Norway - The SAMINOR Study. BMC Endocr Disord [Internet]. 2019;19:66. 
+https://doi.org/10.1186/s12902-019-0399-7
+66. Siri SRA, Braaten T, Jacobsen BK, Melhus M, Eliassen B-M. Distribution of risk 
+factors for cardiovascular disease and the estimated 10-year risk of acute myocardial 
+infarction or cerebral stroke in Sami and non-Sami populations: The SAMINOR 2 
+Clinical Survey. Scand J Public Health [Internet]. SAGE Publications Ltd STM; 
+2018;46:638–46. https://doi.org/10.1177/1403494818773534
+67. Siri SRA, Eliassen BM, Jacobsen BK, Melhus M, Broderstad AR, Michalsen VL, et al. 
+Changes in conventional cardiovascular risk factors and the estimated 10-year risk of 
+acute myocardial infarction or cerebral stroke in Sami and non-Sami populations in 
+two population-based cross-sectional surveys: the SAMINOR Study. BMJ Open 
+[Internet]. 2019;9:e028939. https://doi.org/10.1136/bmjopen-2019-028939
+68. Rabanal KS, Meyer HE, Tell GS, Igland J, Pylypchuk R, Mehta S, et al. Can 
+traditional risk factors explain the higher risk of cardiovascular disease in South Asians 
+compared to Europeans in Norway and New Zealand? Two cohort studies. BMJ Open 
+[Internet]. 2017;7:e016819. https://doi.org/10.1136/bmjopen-2017-016819
+69. Etchi DT, Lilja E, Koponen P, Laatikainen T. Disparities in treatment of diabetes and 
+hypertension among groups of foreign origin and the general Finnish population. Eur J 
+Public Health [Internet]. 2019;29:894–9. https://doi.org/10.1093/eurpub/ckz045
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+70. Skogberg N, Laatikainen T, Koskinen S, Vartiainen E, Jula A, Leiviskä J, et al. 
+Cardiovascular risk factors among Russian, Somali and Kurdish migrants in comparison 
+with the general Finnish population. Eur J Public Health [Internet]. 2016;26:667–73. 
+https://doi.org/10.1093/eurpub/ckw041
+71. Skogberg N, Laatikainen T, Lundqvist A, Lilja E, Härkänen T, Koponen P. Which 
+anthropometric measures best indicate type 2 diabetes among Russian, Somali and 
+Kurdish origin migrants in Finland? A cross-sectional study. BMJ Open [Internet]. 
+2018;8:e019166. https://doi.org/10.1136/bmjopen-2017-019166
+72. Skogberg N, Laatikainen T, Lilja E, Lundqvist A, Härkänen T, Koponen P. The 
+association between anthropometric measures and glycated haemoglobin (HbA1c) is 
+different in Russian, Somali and Kurdish origin migrants compared with the general 
+population in Finland: a cross-sectional population-based study. BMC Public Health 
+[Internet]. 2019;19:391. https://doi.org/10.1186/s12889-019-6698-0
+73. Dalla Zuanna T, Batzella E, Pitter G, Russo F, Spadea T, Canova C. Adult first-
+generation immigrants and cardiovascular risk factors in the Veneto Region, Northeast 
+Italy. Front Public Health [Internet]. 2023;11. 
+https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2023.956146
+74. Modesti PA, Castellani S, Calabrese M, Malandrino D, Zhao D. Comparison of type 2 
+diabetes prevalence in Chinese migrants vs Caucasians and new perspectives for 
+screening of cerebrovascular disease in Chinese: A proof of concept study. Diabetes 
+Res Clin Pract [Internet]. Elsevier; 2017;130:196–203. 
+https://doi.org/10.1016/j.diabres.2017.05.023
+75. Modesti PA, Calabrese M, Marzotti I, Bing H, Malandrino D, Boddi M, et al. 
+Prevalence, Awareness, Treatment, and Control of Hypertension among Chinese First-
+Generation Migrants and Italians in Prato, Italy: The CHIP Study. Int J Hypertens 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+[Internet]. John Wiley & Sons, Ltd; 2017;2017:6402085. 
+https://doi.org/https://doi.org/10.1155/2017/6402085
+76. Fedacko J, Pella D, Jarcuska P, Siegfried L, Janicko M, Veseliny E, et al. Clinical and 
+Biochemical Determinants of Metabolic Syndrome among Roma and Non-Roma 
+Subjects in the Eastern Part of Slovakia. Cent Eur J Public Health [Internet]. 
+2014;22:S75–80. https://cejph.szu.cz/artkey/cjp-201488-0014.php
+77. Fedacko J, Pella D, Jarcuska P, Siegfried L, Janicko M, Veseliny E, et al. Prevalence 
+of Cardiovascular Risk Factors in Relation to Metabolic Syndrome in the Roma 
+Population Compared with the Non-Roma Population in the Eastern Part of Slovakia. 
+Cent Eur J Public Health [Internet]. 2014;22:S69–74. https://cejph.szu.cz/artkey/cjp-
+201488-0013.php
+78. Hubkova B, Maslankova J, Stupak M, Guzy J, Kovacova A, Pella D, et al. Assessment 
+of Clinical Biochemical Parameters in Roma Minority Residing in Eastern Slovakia 
+Compared with the Majority Population. Cent Eur J Public Health [Internet]. 
+2014;22:S12–7. https://cejph.szu.cz/artkey/cjp-201488-0003.php
+79. Kaldmäe M, Zemtsovskaja G, Abina J, Land T, Viigimaa M. Prevalence of 
+cardiovascular disease risk factors in Tallinn, Estonia. Medicina (B Aires) [Internet]. 
+2017;53:268–76. https://doi.org/https://doi.org/10.1016/j.medici.2017.07.002
+80. Tavares L, Calhau C, Polónia J. Assessment of cardiovascular risk and social 
+framework of Cape Verdean university students studying in Portugal. Revista 
+Portuguesa de Cardiologia [Internet]. 2018;37:577–82. 
+https://doi.org/https://doi.org/10.1016/j.repc.2017.09.027
+81. Delcheva G, Stankova T, Stefanova K, Bivolarska A. Assessment of health status 
+and cardiovascular risk factors in a Roma population sample from South Bulgaria. Cent 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Eur J Public Health [Internet]. 2023;31:115–9. https://cejph.szu.cz/artkey/cjp-202302-
+0006.php
+82. Morbach C, Gelbrich G, Tiffe T, Eichner F, Wagner M, Heuschmann PU, et al. 
+Variations in cardiovascular risk factors in people with and without migration 
+background in Germany &#x2013; Results from the STAAB cohort study. Int J Cardiol 
+[Internet]. Elsevier; 2019;286:186–9. https://doi.org/10.1016/j.ijcard.2018.10.098
+83. Tolonen H, Kuulasmaa K, Koponen P. Health examination surveys - added value for 
+health interview surveys, availability and comparability in Europe: Hanna Tolonen. Eur 
+J Public Health [Internet]. 2015;25:ckv173.050. 
+https://doi.org/10.1093/eurpub/ckv173.050
+84. International Organization for Migration (IOM). Migration and Migrants: Regional 
+Dimensions and Developments. In: Mcauliffe M, Triandafyllidou A, editors. World 
+Migration Report 2022. Geneva: IOM; 2021. 
+85. Mathur R, Rentsch CT, Venkataraman K, Fatumo S, Jobe M, Angkurawaranon C, et 
+al. How do we collect good-quality data on race and ethnicity and address the trust 
+gap? The Lancet [Internet]. Elsevier; 2022;400:2028–30. 
+https://doi.org/10.1016/S0140-6736(22)02490-4
+86. Rafnsson SB, Bhopal RS. Large-scale epidemiological data on cardiovascular 
+diseases and diabetes in migrant and ethnic minority groups in Europe. The European 
+Journal of Public Health. Oxford University Press; 2009;19:484–91. 
+87. Stronks K, Kulu-Glasgow I, Agyemang C. The utility of ‘country of birth’for the 
+classification of ethnic groups in health research: the Dutch experience. Ethn Health. 
+Taylor & Francis; 2009;14:255–69. 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+88. Stronks K, Kunst AE. The complex interrelationship between ethnic and socio-
+economic inequalities in health. J Public Health (Bangkok). Oxford University Press; 
+2009;31:324–5. 
+89. Montesi L, Caletti MT, Marchesini G. Diabetes in migrants and ethnic minorities in a 
+changing world. World J Diabetes. 2016;7:34. 
+90. Chimienti M, Guichard E, Bolzman C, Le Goff J-M. How can we categorise 
+‘nationality’ and ‘second generation’ in surveys without (re)producing stigmatisation? 
+Comp Migr Stud [Internet]. 2021;9:29. https://doi.org/10.1186/s40878-021-00237-1
+91. Onarheim KH, Wickramage K, Ingleby D, Subramani S, Miljeteig I. Adopting an 
+ethical approach to migration health policy, practice and research. BMJ Glob Health 
+[Internet]. 2021;6:e006425. https://doi.org/10.1136/bmjgh-2021-006425
+92. Tolonen H. Building a sustainable network of health examination surveys through 
+training and mutual learning. Eur J Public Health [Internet]. 2019;29:ckz185.739. 
+https://doi.org/10.1093/eurpub/ckz185.739
+93. Varre JV, Dustin M, Van Vliet S. Dietary transformations and health implications in 
+migrant populations: a global perspective. Front Nutr [Internet]. 2025;Volume 12-
+2025. 
+https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2025.1623556
+94. Raaschou-Nielsen O, Poulsen AH, Ketzel M, Frohn LM, Roswall N, Hvidtfeldt UA, et 
+al. Cardiometabolic Health Effects of Air Pollution, Noise, Green Space, and 
+Socioeconomic Status: The HERMES Study. Research Report 222. Boston, 
+Massachusetts; 2024 Dec. 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Table 1: Characteristics of included studies
+HES dataset Author, year Design Migrant origin/ 
+ethnic minority 
+group / 
+indigenous 
+people
+Migrant status 
+definition
+Majority 
+group
+Netherlands, Amsterdam (regional)
+The Healthy Life in 
+an Urban Setting 
+(HELIUS) 
+Agyemang (2015) [26] 
+Bouwmeester (2025) [27]
+Gazzola (2018) [28]
+Perini (2018a) [29]
+Perini (2018b) [30] 
+Perini (2019a) [31]
+Perini (2019b) [32] 
+Perini (2020a) [33] 
+Perini (2020b) [34]
+Snijder (2017) [35]
+Van der Linden (2021) 
+[36]
+Van Laer (2018) [37]
+Zethof (2021) [38]
+Cohort 
+study
+South-Asian 
+Surinamese 
+African Surinamese 
+Ghanaian 
+Turkish 
+Moroccan
+First and second-
+generation 
+migrants 
+Self-identification 
+Dutch 
+The Healthy Life in 
+an Urban Setting 
+(HELIUS)
+Meeks (2015) [39]
+Van Apeldoorn (2025) 
+[40]
+Cohort 
+study
+African Surinamese 
+Ghanaian 
+First and second-
+generation 
+migrants 
+Dutch 
+The SUNSET study Admiraal (2014) [41] Cross-
+sectional 
+study
+South-Asian 
+Surinamese 
+African Surinamese 
+Self-identification Dutch
+The population-
+based Amsterdam 
+Health Monitor
+Hartog (2018) [42] Cross-
+sectional 
+study
+Turkish 
+Moroccan
+First generation 
+migrants 
+Dutch 
+International: Netherlands (Amsterdam), Germany (Berlin), UK (London), Ghana (Ashanti region) (all regional)
+The Research on 
+Obesity and 
+Diabetes among 
+Agyemang (2016) [43]
+Beune (2019) [44] 
+Boateng (2017) [45] 
+Cross-
+sectional 
+study  
+Ghanaian in 
+Amsterdam, Berlin, 
+and London 
+First and second-
+generation 
+migrants 
+Ghanaian in 
+rural Ghana 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+African Migrants 
+(RODAM) study  
+Chilunga (2019) [46]
+Commodore-Mensah 
+(2020)[47]
+Darko (2021) [48]
+Van der Linden (2019) 
+[49] 
+Van der Linden (2022) 
+[50]
+Van Nieuwenhuizen 
+(2018) [51]
+identified through 
+population 
+registers for 
+migrant groups, 
+foreign embassies 
+and association’s 
+lists
+and urban 
+Ghana 
+Sweden, Malmö (regional)
+The population-
+based MEDIM study
+Al-Majdoub (2020) [52]
+Bennet (2014a) [53] 
+Bennet (2014b) [54]
+Bennet (2014c) [55]
+Bennet (2015) [56]
+Bennet (2016) [57]
+Dhaher (2023) [58]
+Pikkemaat (2022) [59]
+Cross-
+sectional 
+study
+Iraqi First generation 
+migrants 
+Swedish
+Sweden, Stockholm (regional)
+Main study 
+population: the 
+cohort of 60-year-
+old men and 
+women
+Replication cohort: 
+Malmö Diet and 
+Cancer cohort 
+(MDC)
+Carlsson (2014) [60] Cohort 
+study
+Finnish
+Danish 
+Eastern European 
+South-Western 
+European/
+North American 
+Middle Eastern
+Other 
+First generation 
+migrants
+Swedish
+4D Diabetes 
+Project: Screening 
+and Treatment of 
+Prediabetes and 
+Diabetes in Primary 
+Care
+Saleh (2024) [61]
+Taloyan (2023) [62]
+Pilot study Foreign-born: 
+African
+Middle Eastern
+Asian
+First generation 
+migrant 
+Swedish
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Sweden, Malmö, Skövde, Vara, and Stockholm (regional)
+The MEDIM study
+The follow-up of 
+the Skaraborg 
+Project 
+The Flemingsberg 
+study
+The 4-D screening 
+program
+Hellgren (2017) [63] Cross-
+sectional 
+study
+Middle Eastern First generation 
+migrants 
+Swedish 
+Norway, Northern and Middle Norway (regional)
+SAMINOR 1 and/or 
+SAMINOR 2 
+Naseribafrouei (2018) 
+[64]
+Naseribafrouei (2019) 
+[65]
+Siri (2018) [66]
+Siri (2019) [67]
+Cross-
+sectional 
+study
+Sami Self-identification 
+and speaking a 
+Sami language, or 
+having a parent or 
+grandparent 
+speaking a Sami 
+language
+non-Sami 
+Norway, Oslo (regional)
+The Cohort of 
+Norway (CONOR)
+Rabanal (2017) [68] Cross-
+sectional 
+study
+South Asian First generation 
+migrant 
+Norwegian
+Finland, Helsinki, Espoo, Vantaa, Turku, Tampere and Vaasa (regional)
+Migrant Health and 
+Wellbeing Study 
+(Maamu)
+Etchi (2019) [69]
+Skogberg (2016) [70]
+Skogberg (2018) [71]
+Skogberg (2019) [72]
+Cross-
+sectional 
+study
+Russian 
+Somali 
+Kurdish 
+First generation 
+migrants that 
+resided in Finland 
+for at least 1 year
+Finnish  
+Italy, Veneto region (regional)
+N/A Dalla Zuanna (2023) [73] Cohort 
+study
+Central-Eastern 
+European
+Central and 
+Southern American
+North African
+Sub-Saharan 
+African
+Asian
+First generation 
+migrants 
+Italian
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Italy, Prato (regional)
+The Chinese in 
+Prato (CHIP)
+Modesti (2017a) [74]
+Modesti (2017b) [75]
+Cross-
+sectional 
+study
+Chinese First generation 
+migrants 
+Italian
+Slovakia, Eastern Slovakia (regional)
+The population-
+based HepaMeta 
+study
+Fedačko (2014a) [76]
+Fedačko (2014b) [77]
+Hubková (2014) [78]
+Cross-
+sectional 
+study
+Roma  Selected 
+settlements, 
+reached via local 
+Roma community 
+workers
+Non-Roma:
+￿In the 
+vicinity of 
+Roma 
+community
+￿Outside the 
+area of 
+Roma 
+community 
+Estonia, Tallin (regional) 
+N/A Kaldmäe (2017) [79] Cross-
+sectional 
+study
+Russian
+Other 
+Unknown Estonian 
+Portugal, Universities (regional) Cape Verde, Universities (regional)
+N/A Tavares (2018) [80] Cross-
+sectional 
+study
+Cape Verdean First generation 
+migrants 
+(students) living 
+in Portugal at 
+least 12 months
+Cape Verdean 
+in Cape Verde
+Portuguese 
+Caucasian in 
+Portugal 
+Bulgaria, South Bulgaria (regional)
+N/A Delcheva (2023) [81] Cross-
+sectional 
+study
+Roma not known non-Roma
+Germany, Würzburg (regional)
+Characteristics and 
+Course of Heart 
+Failure Stages A-B 
+and Determinants 
+of 
+Morbach (2019) [82] Cohort 
+Study
+EU country
+Russian
+Other
+Did not specify
+First generation 
+migrants who 
+speak their native 
+language
+German 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+Progression (STAA
+B) 
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS
+ACCEPTED MANUSCRIPT
+ARTICLE IN PRESSARTICLE IN PRESS

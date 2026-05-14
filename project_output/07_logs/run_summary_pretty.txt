@@ -1,0 +1,5 @@
+workstreams: ['busca1']
+records: 1235
+downloads_ok: 142
+downloads_failed: 163
+ocr_docs: 0

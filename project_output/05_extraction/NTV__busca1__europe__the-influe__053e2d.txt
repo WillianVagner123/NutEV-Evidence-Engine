@@ -1,0 +1,438 @@
+Comunicação Breve
+Araújo et al. CoDAS 2025;37(5):e20240042 DOI: 10.1590/2317-1782/e20240042pt 1/5
+ISSN 2317-1782 (Online version)
+Este é um artigo publicado em acesso aberto (Open Access) sob a licença Creative Commons Attribution  
+(https://creativecommons.org/licenses/by/4.0/), que permite uso, distribuição e reprodução em qualquer meio, sem 
+restrições desde que o trabalho original seja corretamente citado.
+A influência dos hábitos de vida na 
+percepção de sintomas vestibulares de 
+pacientes com insuficiência cardíaca
+The influence of lifestyle habits on the 
+perception of vestibular  
+symptoms in patients with heart failure
+Francisca Luiza Kennia Lopes Araújo1 
+Gizele Francisco Ferreira do Nascimento1,2 
+Elisângela Aparecida da Silva Lizzi3 
+Rosiane Viana Zuza Diniz4 
+José Diniz Júnior5 
+Erika Barioni Mantello1,6 
+Descritores
+Insuficiência Cardíaca
+Tontura
+Qualidade de Vida
+Estilo de Vida Saudável
+Avaliação do Impacto na Saúde
+Keywords
+Heart Failure
+Dizziness
+Quality of Life
+Healthy Lifestyle
+Health Impact Assessment
+Endereço para correspondência: 
+Francisca Luiza Kennia Lopes Araújo 
+Departamento de Fonoaudiologia, 
+Universidade Federal do Rio Grande 
+– UFRN 
+Rua General Cordeiro de Faria, s/n, 
+Petrópolis, Natal (RN), Brasil, CEP: 
+59012-570. 
+E-mail: kennialuiza1@gmail.com
+Recebido em: Fevereiro 10, 2024
+Aceito em: Janeiro 24, 2025
+Editor: Vanessa Veis Ribeiro.
+Estudo realizado no Hospital Universitário Onofre Lopes – HUOL, Universidade Federal do Rio Grande do 
+Norte – UFRN - Natal (RN), Brasil.
+1 Programa Associado de Pós-graduação em Fonoaudiologia – PPGFon, Universidade Federal do Rio Grande 
+do Norte – UFRN - Natal (RN), Brasil.
+2 Centro de Educação e Pesquisa em Saúde Anita Garibaldi, Instituto Santos Dumont – ISD - Macaíba (RN), Brasil.
+3 Departamento de Matemática, Universidade Tecnológica Federal do Paraná – UTFPR - Cornélio Procópio 
+(PR), Brasil.
+4 Ambulatório de Cardiologia, Departamento de Clínica Médica, Universidade Federal do Rio Grande do Norte – 
+UFRN - Natal (RN), Brasil.
+5 Ambulatório de Otoneurologia, Departamento de Cirurgia, Universidade Federal do Rio Grande do Norte – 
+UFRN - Natal (RN), Brasil.
+6 Curso de Fonoaudiologia, Departamento de Ciências da Saúde, Faculdade de Medicina de Ribeirão Preto – 
+FMRP, Universidade de São Paulo – USP - Ribeirão Preto (SP), Brasil.
+Fonte de financiamento: PIBIC-UFRN (INICIAÇÃO CIENTÍFICA) (EDITAL 1/2021).
+Conflito de interesses: nada a declarar.
+Disponibilidade de Dados: Os dados de pesquisa não estão disponíveis.
+RESUMO
+Objetivo: verificar se os hábitos de vida exercem influência na autopercepção dos sintomas cardiológicos e da tontura 
+em pacientes com insuficiência cardíaca (IC). Método: estudo transversal, retrospectivo e analítico, aprovado pelo 
+Comitê de Ética em Pesquisa (parecer nº 4.462.519), no qual foi realizado o estudo de 34 prontuários de pacientes com 
+diagnóstico funcional de disfunção vestibular periférica, acompanhados em um ambulatório de cardiologia. Foram 
+levantados dados sobre gênero, idade, índice de massa corporal (IMC) e hábitos de vida como: tabagismo, etilismo, 
+acompanhamento nutricional e prática regular de atividade física. Também foram analisados os escores dos questionários 
+Dizziness Handicap Inventory (DHI) e Minnesota Living with Heart Failure Questionnaire (MLHFQ). Os dados foram 
+submetidos à análise estatística inferencial, por meio da análise de variância (ANOV A). Resultados: A média de idade 
+dos pacientes foi de 55,9 anos, com predomínio do gênero masculino (79.41%). Observou-se diferença estatística 
+entre os escores dos aspectos emocionais e totais, do DHI, com o hábito etilismo e ainda, do aspecto emocional do 
+MLHFQ com a manutenção da dieta equilibrada. A prática regular de atividade física apresentou diferença estatística 
+quando comparada com o impacto emocional, do DHI e do MLHFQ, bem como com os escores totais do MLHFQ. 
+Conclusão: Hábitos de vida prejudiciais, como o etilismo, a alimentação inadequada e o sedentarismo, impactaram 
+negativamente a qualidade de vida e a autopercepção dos sintomas cardiológicos e vestibulares em pacientes com 
+IC que apresentavam tontura.
+ABSTRACT
+Purpose: To determine whether lifestyle habits influence the self-perception of cardiac symptoms and dizziness 
+in patients with heart failure. Methods: This is a cross-sectional, retrospective, analytical study approved by the 
+Research Ethics Committee (approval no. 4,462,519). The study analyzed 34 medical records of patients with a 
+functional diagnosis of peripheral vestibular dysfunction, followed up at a cardiology outpatient clinic, collecting data 
+on sex, age, body mass index, and lifestyle habits such as smoking, alcohol consumption, nutritional monitoring, and 
+regular physical activity. It also analyzed scores from the Dizziness Handicap Inventory (DHI) and the Minnesota 
+Living with Heart Failure Questionnaire (MLHFQ). The data were subjected to inferential statistical analysis 
+using analysis of variance (ANOV A). Results: The patients’ mean age was 55.9 years, with a predominance of 
+males (79.41%). Statistical differences were observed between the DHI emotional and total scores and alcohol 
+consumption, and between the MLHFQ emotional scores and balanced diet. Regular physical activity differed 
+statistically from the DHI and MLHFQ emotional impact and the total MLHFQ scores. Conclusion: Harmful 
+lifestyle habits such as alcohol consumption, poor diet, and a sedentary lifestyle negatively impacted the quality 
+of life and self-perception of cardiological and vestibular symptoms in patients with heart failure and dizziness.
+Araújo et al. CoDAS 2025;37(5):e20240042 DOI: 10.1590/2317-1782/e20240042pt 2/5
+INTRODUÇÃO
+A cardiopatia refere-se a uma anormalidade estrutural significativa 
+no coração ou de grandes vasos intratorácicos(1). A insuficiência 
+cardíaca (IC), por sua vez, é um tipo específico de cardiopatia 
+causada por um funcionamento inadequado do coração ou danos 
+em sua estrutura, resultando em uma incapacidade do órgão em 
+desempenhar adequadamente funções, como o enchimento ou a 
+ejeção ventricular, levando a um débito cardíaco reduzido e/ou 
+pressão intracardíaca elevada(1,2).
+No Brasil, a IC apresenta altas taxas de incidência, afetando, 
+aproximadamente, dois milhões de indivíduos, com cerca de 240 mil 
+novos casos diagnosticados anualmente(3,4). Seus sintomas incluem 
+fadiga, alterações no padrão respiratório e frequência cardíaca e 
+alterações cocleovestibulares, como zumbido, tontura e vertigem. 
+Além disso, a IC muitas vezes está associada a comorbidades como 
+hipertensão arterial sistêmica (HAS) e diabetes mellitus (DM)(5,6).
+Além dos sintomas e comorbidades associadas, alguns hábitos 
+nocivos de vida podem agravar as doenças cardiovasculares (DCVs). 
+Como por exemplo, o uso crônico de álcool, cigarro, uma dieta 
+inadequada e o sedentarismo, que aumentam o risco de doenças 
+como o infarto agudo do miocárdio (IAM), aterosclerose, isquemias 
+e até mesmo predispõe o surgimento da IC, além de também estarem 
+associados com o surgimento de sintomas otoneurológicos(5-8).
+A avaliação clínica da função vestibular, bem como o uso de 
+medidas de autorrelato reportadas pelo paciente é recomendada 
+para todos os indivíduos que apresentem algum tipo de queixa 
+otoneurológica, com o intuito de diagnosticar a causa e monitorar o 
+progresso do quadro clínico durante o tratamento e, ainda, investigar 
+o prejuízo na qualidade de vida (QV) com relação aos sintomas 
+apresentados, que podem afetar o bem-estar do indivíduo e agravar 
+a IC nestes casos(8).
+Assim, o objetivo deste estudo foi verificar se os hábitos de vida 
+exercem influência na autopercepção dos sintomas cardiológicos e 
+da tontura, em pacientes com IC.
+MÉTODO
+O presente estudo, aprovado pelo Comitê de Ética e Pesquisa 
+do Hospital Universitário Onofre Lopes (HUOL) da Universidade 
+Federal do Rio Grande do Norte (UFRN) com o parecer número 
+4.462.519, foi delineado como documental, transversal, retrospectivo 
+e analítico. A casuística preliminar foi obtida por meio da análise do 
+prontuário de pacientes encaminhados pelo ambulatório de cardiologia 
+do HUOL e atendidos no projeto de extensão Equilíbrio, ligado ao 
+Laboratório de Audição e Equilíbrio (LAEQ), do Departamento de 
+Fonoaudiologia da UFRN, entre maio de 2019 e janeiro de 2020. A 
+análise dos dados ocorreu entre janeiro e abril de 2021.
+Os critérios de inclusão selecionados foram de pacientes com 
+diagnóstico médico de IC que apresentassem queixa de tontura 
+ou vertigem, além de diagnóstico médico de disfunção vestibular 
+periférica a partir de avaliação clínica otoneurológica e instrumental, 
+por meio do teste de impulso cefálico por vídeo. Para o prontuário ser 
+selecionado, era necessária a presença do Termo de Consentimento 
+Livre e Esclarecido (TCLE) devidamente assinado, assim como o 
+Termo de Compromisso para Uso de Dados (TCUD). Foram excluídos 
+prontuários de pacientes com doenças crônicas degenerativas ou 
+afecções no sistema nervoso central, aqueles com diagnóstico prévio 
+de disfunção vestibular anterior à IC e prontuários com informações 
+incompletas na anamnese ou nos questionários utilizados.
+Foram incluídos 34 prontuários no estudo e coletadas informações 
+da anamnese, incluindo gênero, idade, índice de massa corporal 
+(IMC), hábitos de vida (etilismo e tabagismo), hábitos alimentares 
+(dieta e acompanhamento nutricional), prática de atividade física e 
+os escores dos questionários Dizziness Handicap Inventory (DHI) e 
+Minnesota Living with Heart Failure Questionnaire (MLHFQ)(9,10).
+Em relação ao IMC, o mesmo foi utilizado para avaliar 
+o estado antropométrico, bem como a composição corporal 
+populacional, sendo assim os valores de referência utilizados 
+foram: baixo peso (<18,5 kg/m2), normal ou eutrófico (18,5 kg/m2 - 
+24,9 kg/m2), sobrepeso (25,0 kg/m² - 29,9 kg/mg²), obesidade classe I  
+(30,0 kg/m² - 34,9 kg/m²), obesidade classe II (35,0 kg/m² - 39,9 kg/m²) 
+e obesidade classe III (≥ 40,0 kg/m2)(11).
+O questionário Dizziness Handicap Inventory (DHI) avalia a 
+autopercepção das incapacidades causadas pela tontura na qualidade 
+de vida, nas dimensões física, emocional e funcional. Composto 
+por 25 questões, com pontuações de “sim” (quatro pontos), “às 
+vezes” (dois pontos) e “não” (zero ponto), podendo o escore total 
+variar de zero a 100 pontos. Uma pontuação mais próxima de 100 
+indica maior impacto da tontura na QV(9). Para análise quantitativa 
+dos escores obtidos no DHI, o handicap da tontura foi categorizado 
+como leve (zero a 30 pontos), moderado (31 a 60 pontos) e grave 
+(61 a 100 pontos)(9).
+O Minnesota Living with Heart Failure Questionnaire (MLHFQ) 
+consiste em um questionário de 21 perguntas que abordam as 
+limitações frequentemente associadas à interferência da IC na QV 
+de seus portadores(10). As respostas variam de “zero” a “cinco”, sendo 
+“zero” indicativo de ausência de limitações e “cinco” representando 
+limitação máxima. As perguntas englobam uma dimensão física 
+(de 1 a 7, 12 e 13) relacionado principalmente à dispneia e fadiga, 
+uma dimensão emocional (de 17 a 21) e outras questões (números 
+8, 9, 10, 11, 14, 15 e 16) que, somadas às anteriores, compõem o 
+escore total(10).
+Os dados foram submetidos à análise estatística descritiva e 
+inferencial. Foi realizada a comparação dos resultados entre as 
+variáveis gênero, idade, os valores de IMC, hábitos vida (etilismo 
+e tabagismo), dieta, acompanhamento nutricional e a prática regular 
+de atividade física com os escores obtidos nos questionários DHI e 
+MLHQ, a fim de investigar se os pacientes que apresentavam tais 
+hábitos teriam piores resultados nos questionários realizados. Para 
+essa análise, empregou-se a análise de variância (ANOV A) e foi 
+adotado um nível de significância de 5% (p <0,05).
+RESULTADOS
+A amostra foi composta por 27 pacientes do gênero masculino 
+(79,41%) e sete do gênero feminino (20,59%). A faixa etária variou 
+entre 32 e 82 anos, com média de idade de 55,9 anos.
+Com relação ao IMC, a média obtida da amostra foi de 
+29,12kg/m2 (sobrepeso). Porém, analisando individualmente, 
+pode-se observar que 18 pacientes (52,94%) possuíam IMC 
+adequado para a idade (eutrofia) e 16 (47,06%) alterados, 
+sendo oito (50%) com sobrepeso, três (18,7%) com obesidade  
+classe I, dois (12,5%) com baixo peso, dois (12,5%) com obesidade 
+classe II e um, (6,25%) com obesidade classe III.
+Com relação aos hábitos de vida, observou-se a presença do 
+etilismo entre 26 pacientes (76,47%), tabagismo entre 20 (58,82%) e 
+Araújo et al. CoDAS 2025;37(5):e20240042 DOI: 10.1590/2317-1782/e20240042pt 3/5
+manutenção de dieta equilibrada entre 22 (64,72%), em comparação a 
+oito não etilistas (23,53%), 14 (41,18%) não tabagistas e 12 (35,29%) 
+pacientes que seguiam uma dieta inadequada.
+O acompanhamento nutricional e a prática regular de atividade 
+física eram realizados, respectivamente, por 19 (55,88%) e 
+18 (52,94%) dos pacientes, enquanto 15 (44,12%) não possuíam 
+este acompanhamento e 16 (47,06%) não realizavam atividade 
+física com regularidade.
+Na Figura 1, são apresentados os valores de média, mediana e 
+desvio padrão dos escores das dimensões física, emocional, funcional 
+e total do DHI, além dos escores das dimensões emocionais, físicas 
+e outras questões do MLHFQ. Ambos os instrumentos destacam 
+que a dimensão mais afetada foi a física e as médias dos escores 
+totais ficaram abaixo de 30 pontos, indicando um leve prejuízo 
+ocasionado pelos sintomas vestibulares na qualidade de vida, por 
+meio do DHI, assim como um leve impacto causado pela IC, a 
+partir do MLHFQ.
+Quando analisadas as variáveis gênero, idade, IMC e tabagismo, 
+não foram encontradas diferenças estatísticas com os escores obtidos 
+no DHI e MLHQ (p>0,05).
+Em relação ao etilismo e DHI, observou-se diferença estatística 
+entre o consumo de álcool com o escore total (p=0,0223) e com a 
+dimensão emocional (p=0,0344). Não foi observada diferença entre 
+o etilismo com as demais variáveis analisadas no estudo (p>0,05).
+O hábito de manter uma dieta equilibrada apresentou diferença 
+estatística quando comparado o escore da dimensão emocional 
+avaliado no MLHFQ (p=0,365), porém o mesmo não foi observado 
+com os outros escores avaliados pelo mesmo questionário e também 
+com os escores do DHI (p>0,05).
+Quanto ao acompanhamento nutricional, identificou-se diferença 
+estatística com os escores da dimensão emocional do DHI (p= 0,0356) 
+e, com os aspectos emocionais (p=0,0249) e gerais (p=0,0062), do 
+MLHFQ. Nos demais aspectos analisados pelos questionários, não 
+se observou influência do acompanhamento nutricional (p>0,05).
+Constatou-se, ainda, diferença entre a prática regular de atividade 
+física exclusivamente com os escores da dimensão emocional 
+do questionário do MLHFQ (p= 0,0448), o que não ocorreu nos 
+demais escores avaliados pelo DHI e do MLHFQ (físicos e 
+gerais) (p > 0.05). A Tabela 1 descreve os valores estatisticamente 
+significantes obtidos por meio do Teste Anova Two Way.
+Legenda: DHI: Dizziness Handicap Inventory; MLHFQ : Minnesota Living with Heart Failure Questionnaire
+Figura 1. Caracterização das medidas descritivas básicas dos escores obtidos nos questionários DHI e MLHFQ na amostra estudada
+Tabela 1. Distribuição das variáveis hábitos de vida (que apresentaram diferença estatística) comparadas com os escores obtidos nas dimensões 
+avaliadas pelos questionários DHI e MLHFQ, por meio do Teste ANOVA Two Way, na amostra estudada
+Variáveis Efeito Estimativa da dif. Valor de p Intervalo de confiança (95%)
+Média das Variáveis 
+Comparadas
+NÃO SIM
+Etilismo DHI – EM -4,716666667 0,0344* -9,065119655 -0,368213678 1,20 5,92
+Dieta equilibrada MLHFQ – EM 4,575757576 0,0365* 0,304585834 8,846929318 8,67 4,09
+Acompanhamento 
+Nutricional
+DHI – EM 4,301754386 0,0356* -0,01290251 0,36456918 6,93 2,63
+MLHFQ – EM 4,701754386 0,0249* 0,633942185 8,769566587 8,33 3,63
+MLHFQ – GE 6,733333333 0,0062* 2,051741301 11,414925366 11,73 5,00
+Prática Regular 
+de atividade física
+MLHFQ – EM 4,215277778 0,0448* 0,103425917 8,327129639 7,94 3,72
+*Valor significativo (p < 0,05) – Teste ANOVA Two Way
+Legenda: MLHFQ EM = Minnesota Living with Heart Failure Questionnaire escore da dimensão emocional; MLHFQ GE = Minnesota Living with Heart Failure 
+Questionnaire escore da dimensão geral; DHI EM = Dizziness Handicap Inventory escore da dimensão emocional; Estimativa da dif. = estimativa da diferença.
+Araújo et al. CoDAS 2025;37(5):e20240042 DOI: 10.1590/2317-1782/e20240042pt 4/5
+DISCUSSÃO
+A relação entre as DCVs e as alterações de origem vestibular 
+ainda é controversa na literatura. Um estudo destaca a relação do 
+aumento da frequência cardíaca com a hipótese do surgimento da 
+tontura em pacientes com fibrilação atrial, porém, o mecanismo 
+que desencadeia os sintomas vestibulares desses pacientes ainda 
+não é completamente estabelecido(12).
+A amostra do estudo foi predominantemente composta 
+pelo gênero masculino, com uma média de idade de 59 anos 
+e 4 meses. A literatura destaca que a IC é comum em homens, 
+sendo atribuída a eles um pior prognóstico, com menores taxas 
+de sobrevivência em comparação com mulheres com o mesmo 
+diagnóstico(13). Tal fato pode ser explicado pela menor expectativa 
+de vida e maior incidência de fatores de risco, como etilismo e 
+tabagismo, entre a população masculina.
+Em relação à idade, a média da amostra aproxima-se à encontrada 
+em um estudo anterior, no qual identificaram o início dos sinais 
+e sintomas da IC a partir da sexta década de vida(13). No entanto, 
+é importante observar que os participantes deste estudo foram 
+selecionados por conveniência e, no momento da coleta, eram 
+acompanhados em um ambulatório especializado em doenças 
+cardiovasculares, o que justificou a presença de pacientes mais 
+jovens do que a média geral de idade dos estudos anteriores.
+Um estudo(6) identificou a obesidade como fator de risco 
+para a IC, devido ao possível impacto do acúmulo de gordura 
+nos vasos sanguíneos para o funcionamento do coração e na 
+intensificação dos sintomas. No entanto, não foi observada relação 
+dessa variável com os aspectos avaliados nos questionários 
+estudados, provavelmente devido à predominância de sujeitos 
+com IMC eutrófico.
+No que diz respeito aos hábitos de vida, o etilismo mostrou 
+diferença estatística nos escores obtidos nas dimensões emocional 
+e total do DHI. O consumo excessivo de álcool pode causar 
+ou intensificar sintomas vestibulares, afetando o suprimento 
+sanguíneo para a orelha interna e a densidade da endolinfa, 
+independentemente de estar associado a condições vestibulares ou 
+cardíacas(6). Além disso, o consumo nocivo do álcool intensifica 
+sua ação inibitória sobre o sistema nervoso central (SNC) e a 
+regulação do sistema de estresse, o que impacta o hormônio 
+liberador de corticotrofina e a redução dos níveis de serotonina, 
+diminuindo as sensações de prazer e bem-estar(6). Esses prejuízos, 
+quando relacionados aos sintomas vestibulares, podem explicar 
+a associação observada entre o impacto emocional e o escore 
+total do DHI na QV neste estudo.
+Observou-se que a maioria dos pacientes analisados mantinha 
+uma dieta equilibrada e recebia acompanhamento nutricional. Essa 
+tendência pode ser explicada pelo fato desses pacientes serem 
+acompanhados em um ambulatório cardiológico, com uma equipe 
+multidisciplinar, que inclui nutricionistas e outros profissionais 
+de saúde, proporcionando orientações e avaliações regulares(7).
+Além disso, constatou-se uma relação entre um maior 
+impacto emocional na QV em pacientes cardiopatas com 
+queixas vestibulares e a ausência de uma dieta equilibrada 
+e de acompanhamento nutricional (7). Estudos relatam que a 
+manutenção de uma dieta adequada, com acompanhamento 
+nutricional, pode contribuir para a redução dos sintomas 
+vestibulares associados a problemas cardíacos, uma vez que o 
+consumo excessivo de alimentos ricos em cafeína, açúcar, sal 
+e gorduras pode desencadear ou agravar esses sintomas, além 
+de interferir nas questões emocionais envolvidas no quadro 
+clínico da doença(7,14).
+A relação entre a prática regular de atividade física e o escore 
+da dimensão emocional, associado aos sintomas cardiovasculares 
+no MLHFQ, reforça a importância dos exercícios regulares, 
+conforme sugerido por estudo anterior(13) , o qual indicou que a 
+prática regular de atividade física pode reduzir sintomas como 
+tontura, além de contribuir para a redução e controle de fatores de 
+risco de DCVs, como HAS, diabetes e dislipidemia. A atividade 
+física também desempenha um papel na produção dos hormônios 
+endorfina e serotonina, de forma a contribuir para uma maior 
+disposição e saúde geral(13). Em contrapartida, o sedentarismo 
+intensifica todas as comorbidades e sintomas associados às DCVs, 
+interferindo diretamente nas atividades diárias e no bem-estar.
+Apesar de ter sido observada diferença significativa entre 
+os questionários utilizados com variáveis analisadas, a análise 
+descritiva não revelou um impacto expressivo na QV dos 
+pacientes. A média dos escores do MLHFQ indicou um impacto 
+leve na QV , que pode ser explicada pelo fato de os pacientes 
+estarem sob acompanhamento médico especializado, em um 
+ambulatório de referência, o que reduz a gravidade da doença 
+de base e das comorbidades associadas a ela(2,8).
+Quanto ao handicap leve encontrado no DHI, pode ser 
+interpretado como resultado da familiarização dos pacientes com 
+os diversos sinais e sintomas associados à IC. Assim, acredita-se 
+que pacientes com uma doença sistêmica, como a IC, podem sentir 
+menos desconforto em relação aos sintomas vestibulares, mesmo 
+que esses limitem sua participação social, quando comparados a 
+pacientes com disfunções vestibulares agudas(8,14,15).
+Dentre os aspectos analisados, o escore da dimensão 
+física exibiu maior acometimento, em ambos os questionários 
+aplicados, isso demonstra que apesar da familiarização e do 
+menor incômodo com os sintomas cardiológicos e vestibulares, 
+estes estão presentes e, interferem na realização, com plenitude, 
+das atividades cotidianas destes indivíduos.
+O estudo apresentou como limitação o número reduzido da 
+amostra e a falta de controle sobre algumas variáveis, dado que 
+pacientes com cardiopatias utilizam diversas medicações que 
+podem causar sintomas adversos. No entanto, o estudo permitiu 
+identificar que certos hábitos prejudiciais à vida, em pacientes 
+com IC, podem influenciar no impacto dos sintomas vestibulares 
+e cardíacos na QV . Recomenda-se a realização de estudos futuros 
+com maior amostra para aprimorar a compreensão do diagnóstico 
+e tratamento das disfunções vestibulares relacionadas às DCVs.
+CONCLUSÃO
+Concluiu-se que, neste estudo, os hábitos de vida, como 
+o etilismo, a dieta inadequada e o sedentarismo, exerceram 
+influência negativa na autopercepção dos sintomas cardiológicos 
+e da tontura em pacientes com insuficiência cardíaca e hipofunção 
+vestibular. Quando associados, esses fatores influenciaram 
+negativamente na qualidade de vida, sobretudo em aspectos 
+físicos e emocionais.
+Araújo et al. CoDAS 2025;37(5):e20240042 DOI: 10.1590/2317-1782/e20240042pt 5/5
+REFERÊNCIAS
+1. Rohde LEP, Montera MW, Bocchi EA, Clausell NO, Albuquerque DC, Rassi 
+S, et al. Diretriz Brasileira de Insuficiência Cardíaca Crônica e Aguda. Arq Bras 
+Cardiol. 2018;111(3):436-539. http://doi.org/10.5935/abc.20180190. PMid:30379264.
+2. da Silva JM, Fioresi M, Sipolatti WGR, Zerbinato VA S, Bringuente 
+MEO, Primo CC. Sinais, sintomas e indicadores prevalentes em pacientes 
+cardiopatas e suas implicações para o cuidado de enfermagem. Res Soc 
+Dev. 2021;4(2):1-16. http://doi.org/10.33448/rsd-v10i2.11979 .
+3. Nascimento BR, Brant LSC, de Oliveira GMM, Malachias MVB, Reis GMA, 
+Texeira RA, et al. Epidemiologia das doenças cardiovasculares nos países de 
+língua portuguesa: dados da carga global de doenças, 1990 a 2016. Arq Bras 
+Cardiol. 2018;(6):500-11. http://doi.org/10.5935/abc.20180098. PMid:30226906.
+4. Gioli LP, Marcondes FGB, Bernardez SP, Bacal F, Fernandes F, Mansur 
+AJ, et al. Predictors of one-year out comes in chronic heart failure: the 
+portrait of a middle income country. BMC Cardiovasc Disord. 2019;9(1):1-
+7. http://doi.org/10.1186/s12872-019-1226-9 . PMid:30606129.
+5. Slivnick J, Lampert BC. Hypertension and heart failure. Heart Fail Clin. 
+2019;15(4):531-41. http://doi.org/10.1016/j.hfc.2019.06.007. PMid:31472888.
+6. Grubb AF, Greene SJ, Fudim M, Dewald T, Mentz RJ. Drugs of 
+abuse and heart failure. J Card Fail. 2021;27(11):1260-75. http://
+doi.org/10.1016/j.cardfail.2021.05.023 . PMid:34133967.
+7. Fernandes M, de Almeida MR, Costa V. Papel do nutricionista numa 
+dieta restrita em FODMAPs. Acta Portuguesa de Nutrição. 2020;23:50-3. 
+http://doi.org/10.21011/apn.2020.2310 .
+8. Nascimento GFF, Diniz J Jr, Diniz RVZ, Hyppolito MA, Mantello EB. 
+Efeito da idade no equilíbrio corporal e nos resultados do vídeo teste do 
+impulso cefálico em pacientes com insuficiência cardíaca. Audiol Commun 
+Res. 2023;28:e2780. http://doi.org/10.1590/2317-6431r-2023-278pt .
+9. Castro ASO, Gazzola JM, Natour J, Ganança FF. Versão brasileira do 
+Dizziness Handicap Inventory. Pro Fono. 2007;19(1):97-104. http://
+doi.org/10.1590/S0104-56872007000100011 .
+10. Carvalho VO, Guimarães GV, Carraca D, Bacal F, Bocchi EA. Validação 
+da versão em português do Minnesota Living with Heart Failure 
+Questionnaire. Arq Bras Cardiol. 2009;28(1):39-44. http://doi.org/10.1590/
+S0066-782X2009000700008 . PMid:19838469.
+11. DATASUS. SISV AN - Notas Técnicas [Internet]. Brasília: Ministério da Saúde; 
+2024 [citado em 2024 Jan 10]. Disponível em: http://tabnet.datasus.gov.br/
+cgi-win/SISV AN/CNV/notas_sisvan.html#:~:text=Valores%20de%20
+IMC%20abaixo%20de
+12. Whitney SL, Wrisley DM, Brown KE, Furman JM. Is perception of handicap 
+related to functional performance in persons with vestibular dysfunction? 
+Otol Neurotol. 2004;25(2):139-43. http://doi.org/10.1097/00129492-
+200403000-00010 . PMid:15021773.
+13. Alves LS, Bocchi EA, Chizzola PR, Castro RE, Salemi VMC, de Melo 
+MDT, et al. Exercise training in heart failure with reduced ejection 
+fraction and permanent atrial fibrillation: a randomized clinical trial. Heart 
+Rhythm. 2022;19(7):1058-66. http://doi.org/10.1016/j.hrthm.2022.03.1217 . 
+PMid:35331961.
+14. Hussain K, Murdin L, Schilder AGM. Restriction of salt, caffeine and 
+alcohol intake for the treatment of Ménière’s disease or syndrome. Cochrane 
+Database Syst Rev. 2018;31(12):CD012173. http://doi.org/10.1002/14651858.
+CD012173.pub2 . PMid:30596397.
+15. Viana PAS, Carneiro JD No, Novais CT, Guimarães IF, Lopes YS, 
+Reis BC. Perfil de pacientes internados para tratamento de insuficiência 
+cardíaca descompensada. SANARE Rev Pol Pub. 2018;30(1):15-23. 
+http://doi.org/10.36925/sanare.v17i1.1218 .
+Contribuição dos autores
+FLKLA: coleta e interpretação dos dados, redação do manuscrito; GFFN: 
+coleta, interpretação dos dados e correção da redação do manuscrito; EASL: 
+análise dos dados; RVZD: coleta dos dados; JDJ: coleta dos dados; EBM: 
+concepção do estudo e orientação de todas as etapas do trabalho, interpretação 
+dos dados e supervisão na redação do manuscrito.

@@ -1,0 +1,221 @@
+Concordance with World Cancer Research Fund/American Institute for Cancer Research (WCRF/AICR) guidelines for cancer prevention and obesity-related cancer risk in the Framingham Offspring cohort (1991–2008) | Cancer Causes & Control | Springer Nature Link
+Concordance with World Cancer Research Fund/American Institute for Cancer Research (WCRF/AICR) guidelines for cancer prevention and obesity-related cancer risk in the Framingham Offspring cohort (1991–2008)
+Abstract
+Purpose
+Methods
+Results
+Conclusions
+Access this article
+Subscribe and save
+Buy Now
+Similar content being viewed by others
+Different operationalizations of the 2018 WCRF/AICR cancer prevention recommendations and risk of cancer
+Associations between an obesity-related dietary pattern and incidence of overall and site-specific cancers: a prospective cohort study
+Cancer survivors’ adherence to the American cancer society and American institute of cancer research dietary guidelines in Lebanon
+Explore related subjects
+References
+Acknowledgments
+Conflict of interest
+Author information
+Authors and Affiliations
+Corresponding author
+Rights and permissions
+About this article
+Cite this article
+Share this article
+Keywords
+Access this article
+Subscribe and save
+Buy Now
+Search
+Navigation
+Footer Navigation
+Discover content
+Publish with us
+Products and services
+Our brands
+Corporate Navigation
+Advertisement
+Home
+Cancer Causes & Control
+Article
+Original Paper
+Published: 06 January 2015
+Volume 26 , pages 277–286, ( 2015 )
+Cite this article
+Nour Makarem 1 ,
+Yong Lin 2 , 3 ,
+Elisa V. Bandera 2 , 3 ,
+Paul F. Jacques 4 &
+…
+Niyati Parekh 1 , 5
+2636 Accesses
+2636 Accesses
+85 Citations
+85 Citations
+117 Altmetric
+117 Altmetric
+14 Mentions
+14 Mentions
+Explore all metrics
+Explore all metrics
+This prospective cohort study evaluates associations between healthful behaviors consistent with WCRF/AICR cancer prevention guidelines and obesity-related cancer risk, as a third of cancers are estimated to be preventable.
+The study sample consisted of adults from the Framingham Offspring cohort ( n = 2,983). From 1991 to 2008, 480 incident doctor-diagnosed obesity-related cancers were identified. Data on diet, measured by a food frequency questionnaire, anthropometric measures, and self-reported physical activity, collected in 1991 was used to construct a 7-component score based on recommendations for body fatness, physical activity, foods that promote weight gain, plant foods, animal foods, alcohol, and food preservation, processing, and preparation. Multivariable Cox regression models were used to estimate associations between the computed score, its components, and subcomponents in relation to obesity-related cancer risk.
+The overall score was not associated with obesity-related cancer risk after adjusting for age, sex, smoking, energy, and preexisting conditions (HR 0.94, 95 % CI 0.86–1.02). When score components were evaluated separately, for every unit increment in the alcohol score, there was 29 % lower risk of obesity-related cancers (HR 0.71, 95 % CI 0.51–0.99) and 49–71 % reduced risk of breast, prostate, and colorectal cancers. Every unit increment in the subcomponent score for non-starchy plant foods (fruits, vegetables, and legumes) among participants who consume starchy vegetables was associated with 66 % reduced risk of colorectal cancer (HR 0.44, 95 % CI 0.22–0.88).
+Lower alcohol consumption and a plant-based diet consistent with the cancer prevention guidelines were associated with reduced risk of obesity-related cancers in this population.
+This is a preview of subscription content, log in via an institution to check access.
+Starting from 10 chapters or articles per month
+Access and download chapters and articles from more than 300k books and 2,500 journals
+Cancel anytime
+Price includes VAT (Brazil)
+Instant access to the full article PDF.
+Institutional subscriptions
+Cancer Prevention
+Cancer Screening
+Disease prevention
+Obesity
+Nutrition
+Risk Factors
+Cancer Prevention Strategies and Lifestyle Interventions
+Silverberg E, Boring C, Squires T (2008) Cancer statistics 1990. CA Cancer J Clin 40(1):9–26
+Silverberg E, Boring C, Squires T (2008) Cancer statistics 1990. CA Cancer J Clin 40(1):9–26
+Siegel R, Ma J, Zou Z, Jemal A (2014) Cancer statistics, 2014. CA Cancer J Clin 64(1):9–29 Article PubMed Google Scholar
+Siegel R, Ma J, Zou Z, Jemal A (2014) Cancer statistics, 2014. CA Cancer J Clin 64(1):9–29
+Article PubMed Google Scholar
+World Cancer Research Fund and American Institute for Cancer Research (2007) Food, nutrition and the prevention of cancer: a global perspective. American Institute of Cancer Research, Washington Google Scholar
+World Cancer Research Fund and American Institute for Cancer Research (2007) Food, nutrition and the prevention of cancer: a global perspective. American Institute of Cancer Research, Washington
+Google Scholar
+World Cancer Research Fund and American Institute for Cancer Research (1997) Food, nutrition and the prevention of cancer: a global perspective. American Institute of Cancer Research, Washington Google Scholar
+World Cancer Research Fund and American Institute for Cancer Research (1997) Food, nutrition and the prevention of cancer: a global perspective. American Institute of Cancer Research, Washington
+Google Scholar
+Cerhan JR, Potter JD, Gilmore JM, Janney CA, Kushi LH, Lazovich D et al (2004) Adherence to the AICR cancer prevention recommendations and subsequent morbidity and mortality in the Iowa women’s health study cohort. Cancer Epidemiol Biomark Prev 13(7):1114–1120 Google Scholar
+Cerhan JR, Potter JD, Gilmore JM, Janney CA, Kushi LH, Lazovich D et al (2004) Adherence to the AICR cancer prevention recommendations and subsequent morbidity and mortality in the Iowa women’s health study cohort. Cancer Epidemiol Biomark Prev 13(7):1114–1120
+Google Scholar
+Hastert TA, Beresford SA, Patterson RE, Kristal AR, White E (2013) Adherence to WCRF/AICR cancer prevention recommendations and risk of post-menopausal breast cancer. Cancer Epidemiol Biomark Prev 22:1498–1508 Article Google Scholar
+Hastert TA, Beresford SA, Patterson RE, Kristal AR, White E (2013) Adherence to WCRF/AICR cancer prevention recommendations and risk of post-menopausal breast cancer. Cancer Epidemiol Biomark Prev 22:1498–1508
+Article Google Scholar
+Romaguera D, Vergnaud A, Peeters PH, van Gils CH, Chan DS, Ferrari P et al (2012) Is concordance with World Cancer Research Fund/American Institute for Cancer Research guidelines for cancer prevention related to subsequent risk of cancer? Results from the EPIC study. Am J Clin Nutr 96(1):150–163 Article CAS PubMed Google Scholar
+Romaguera D, Vergnaud A, Peeters PH, van Gils CH, Chan DS, Ferrari P et al (2012) Is concordance with World Cancer Research Fund/American Institute for Cancer Research guidelines for cancer prevention related to subsequent risk of cancer? Results from the EPIC study. Am J Clin Nutr 96(1):150–163
+Article CAS PubMed Google Scholar
+Vergnaud A, Romaguera D, Peeters PH, van Gils CH, Chan DS, Romieu I et al (2013) Adherence to the World Cancer Research Fund/American Institute for Cancer Research guidelines and risk of death in Europe: results from the European prospective investigation into nutrition and cancer cohort study. Am J Clin Nutr 97(5):1107–1120 Article CAS PubMed Google Scholar
+Vergnaud A, Romaguera D, Peeters PH, van Gils CH, Chan DS, Romieu I et al (2013) Adherence to the World Cancer Research Fund/American Institute for Cancer Research guidelines and risk of death in Europe: results from the European prospective investigation into nutrition and cancer cohort study. Am J Clin Nutr 97(5):1107–1120
+Article CAS PubMed Google Scholar
+Dawber TR, Meadors GF, Moore FE Jr (1951) Epidemiological approaches to heart disease: the Framingham study. Am J Public Health Nations Health 41(3):279–281 Article CAS PubMed Central PubMed Google Scholar
+Dawber TR, Meadors GF, Moore FE Jr (1951) Epidemiological approaches to heart disease: the Framingham study. Am J Public Health Nations Health 41(3):279–281
+Article CAS PubMed Central PubMed Google Scholar
+Feinleib M, Kannel WB, Garrison RJ, McNamara PM, Castelli WP (1975) The Framingham offspring study. Design and preliminary data. Prev Med 4(4):518–525 Article CAS PubMed Google Scholar
+Feinleib M, Kannel WB, Garrison RJ, McNamara PM, Castelli WP (1975) The Framingham offspring study. Design and preliminary data. Prev Med 4(4):518–525
+Article CAS PubMed Google Scholar
+Larson M, Atwood L, Benjamin E, Cupples LA, D’Agostino R, Fox C et al (2007) Framingham heart study 100 K project: genome-wide associations for cardiovascular disease outcomes. BMC Med Genet 8(Suppl 1):S5 Article PubMed Central PubMed Google Scholar
+Larson M, Atwood L, Benjamin E, Cupples LA, D’Agostino R, Fox C et al (2007) Framingham heart study 100 K project: genome-wide associations for cardiovascular disease outcomes. BMC Med Genet 8(Suppl 1):S5
+Article PubMed Central PubMed Google Scholar
+Rimm EB, Giovannucci EL, Stampfer MJ, Colditz GA, Litin LB, Willett WC (1992) Reproducibility and validity of an expanded self-administered semiquantitative food frequency questionnaire among male health professionals. Am J Epidemiol 135(10):1114–1126 CAS PubMed Google Scholar
+Rimm EB, Giovannucci EL, Stampfer MJ, Colditz GA, Litin LB, Willett WC (1992) Reproducibility and validity of an expanded self-administered semiquantitative food frequency questionnaire among male health professionals. Am J Epidemiol 135(10):1114–1126
+CAS PubMed Google Scholar
+Jonker JT, De Laet C, Franco OH, Peeters A, Mackenbach J, Nusselder WJ (2006) Physical activity and life expectancy with and without diabetes life table analysis of the Framingham heart study. Diabetes Care 29(1):38–43 Article PubMed Google Scholar
+Jonker JT, De Laet C, Franco OH, Peeters A, Mackenbach J, Nusselder WJ (2006) Physical activity and life expectancy with and without diabetes life table analysis of the Framingham heart study. Diabetes Care 29(1):38–43
+Article PubMed Google Scholar
+Kannel WB, Sorlie P (1979) Some health benefits of physical activity: the Framingham study. Arch Intern Med 139(8):857 Article CAS PubMed Google Scholar
+Kannel WB, Sorlie P (1979) Some health benefits of physical activity: the Framingham study. Arch Intern Med 139(8):857
+Article CAS PubMed Google Scholar
+American Cancer Society (2014) Does body weight affect cancer? http://www.cancer.org/cancer/cancercauses/dietandphysicalactivity/bodyweightandcancerrisk/body-weight-and-cancer-risk-effects . Accessed 10 Nov 2014
+American Cancer Society (2014) Does body weight affect cancer? http://www.cancer.org/cancer/cancercauses/dietandphysicalactivity/bodyweightandcancerrisk/body-weight-and-cancer-risk-effects . Accessed 10 Nov 2014
+National Cancer Institute (2014) Obesity and cancer risk. http://www.cancer.gov/cancertopics/factsheet/Risk/obesity . Accessed 10 Nov 2014
+National Cancer Institute (2014) Obesity and cancer risk. http://www.cancer.gov/cancertopics/factsheet/Risk/obesity . Accessed 10 Nov 2014
+Thomson CA, McCullough ML, Wertheim BC, Chlebowski RT, Martinez ME, Stefanick ML et al (2014) Nutrition and physical activity cancer prevention guidelines, cancer risk, and mortality in the women’s health initiative. Cancer Prev Res 7(1):42–53 Article Google Scholar
+Thomson CA, McCullough ML, Wertheim BC, Chlebowski RT, Martinez ME, Stefanick ML et al (2014) Nutrition and physical activity cancer prevention guidelines, cancer risk, and mortality in the women’s health initiative. Cancer Prev Res 7(1):42–53
+Article Google Scholar
+Pope S, Kritchevsky S, Morris M, Block G, Tylavsky F, Lee J et al (2007) Cognitive ability is associated with suspected reporting errors on food frequency questionnaires. J Nutr Health Aging 11(1):55–58 CAS PubMed Google Scholar
+Pope S, Kritchevsky S, Morris M, Block G, Tylavsky F, Lee J et al (2007) Cognitive ability is associated with suspected reporting errors on food frequency questionnaires. J Nutr Health Aging 11(1):55–58
+CAS PubMed Google Scholar
+Schatzkin A, Kipnis V, Carroll RJ, Midthune D, Subar AF, Bingham S et al (2003) A comparison of a food frequency questionnaire with a 24-hour recall for use in an epidemiological cohort study: results from the biomarker-based observing protein and energy nutrition (OPEN) study. Int J Epidemiol 32(6):1054–1062 Article PubMed Google Scholar
+Schatzkin A, Kipnis V, Carroll RJ, Midthune D, Subar AF, Bingham S et al (2003) A comparison of a food frequency questionnaire with a 24-hour recall for use in an epidemiological cohort study: results from the biomarker-based observing protein and energy nutrition (OPEN) study. Int J Epidemiol 32(6):1054–1062
+Article PubMed Google Scholar
+Download references
+This research was supported by the American Cancer Society Research Scholar Grant (#RSG-12-005-01-CNE) awarded to Niyati Parekh, PhD RD. The Framingham Heart Study is conducted and supported by the National Heart, Lung, and Blood Institute (NHLBI) in collaboration with Boston University (Contract No. N01-HC-25195). Funding support for the Framingham Food Frequency Questionnaire datasets was provided by ARS Contract #53-3k06-5-10, ARS Agreement #’s 58-1950-9-001, 58-1950-4-401, and 58-1950-7-707. This manuscript was not prepared in collaboration with investigators of the Framingham Heart Study and does not necessarily reflect the opinions or views of the Framingham Heart Study, Boston University, or NHLBI.
+The American Cancer Society did not have a role in study design, collection, analysis, and interpretation of data; writing the report; and the decision to submit the report for publication. The authors have no conflicts of interest to report.
+Department of Nutrition, Food Studies and Public Health Steinhardt School, New York University, 411 LaFayette Street, 5th Floor, Room 542, New York, NY, 10003, USA Nour Makarem & Niyati Parekh
+Department of Nutrition, Food Studies and Public Health Steinhardt School, New York University, 411 LaFayette Street, 5th Floor, Room 542, New York, NY, 10003, USA
+Nour Makarem & Niyati Parekh
+Rutgers School of Public Health, Rutgers The State University of New Jersey, 683 Hoes Lane West, Piscataway, NJ, 08854, USA Yong Lin & Elisa V. Bandera
+Rutgers School of Public Health, Rutgers The State University of New Jersey, 683 Hoes Lane West, Piscataway, NJ, 08854, USA
+Yong Lin & Elisa V. Bandera
+Rutgers Cancer Institute of New Jersey, 195 Little Albany Street, New Brunswick, NJ, 08903-2681, USA Yong Lin & Elisa V. Bandera
+Rutgers Cancer Institute of New Jersey, 195 Little Albany Street, New Brunswick, NJ, 08903-2681, USA
+Yong Lin & Elisa V. Bandera
+Jean Mayer USDA Human Nutrition Research Center on Aging, Friedman School of Nutrition Science and Policy, Tufts University, 711 Washington Street, Boston, MA, 02111, USA Paul F. Jacques
+Jean Mayer USDA Human Nutrition Research Center on Aging, Friedman School of Nutrition Science and Policy, Tufts University, 711 Washington Street, Boston, MA, 02111, USA
+Paul F. Jacques
+Department of Population Health, NYU Langone School of Medicine, 227 East 30th Street, 7th Floor, New York, NY, 10016, USA Niyati Parekh
+Department of Population Health, NYU Langone School of Medicine, 227 East 30th Street, 7th Floor, New York, NY, 10016, USA
+Niyati Parekh
+Nour Makarem View author publications Search author on: PubMed Google Scholar
+Search author on: PubMed Google Scholar
+Yong Lin View author publications Search author on: PubMed Google Scholar
+Search author on: PubMed Google Scholar
+Elisa V. Bandera View author publications Search author on: PubMed Google Scholar
+Search author on: PubMed Google Scholar
+Paul F. Jacques View author publications Search author on: PubMed Google Scholar
+Search author on: PubMed Google Scholar
+Niyati Parekh View author publications Search author on: PubMed Google Scholar
+Search author on: PubMed Google Scholar
+Correspondence to Niyati Parekh .
+Reprints and permissions
+Makarem, N., Lin, Y., Bandera, E.V. et al. Concordance with World Cancer Research Fund/American Institute for Cancer Research (WCRF/AICR) guidelines for cancer prevention and obesity-related cancer risk in the Framingham Offspring cohort (1991–2008). Cancer Causes Control 26 , 277–286 (2015). https://doi.org/10.1007/s10552-014-0509-9
+Download citation
+Received : 21 July 2014
+Received : 21 July 2014
+Accepted : 04 December 2014
+Accepted : 04 December 2014
+Published : 06 January 2015
+Published : 06 January 2015
+Issue date : February 2015
+Issue date : February 2015
+DOI : https://doi.org/10.1007/s10552-014-0509-9
+DOI : https://doi.org/10.1007/s10552-014-0509-9
+Anyone you share the following link with will be able to read this content:
+Sorry, a shareable link is not currently available for this article.
+
+Provided by the Springer Nature SharedIt content-sharing initiative
+Healthful behaviors
+American Institute for Cancer Research
+Cancer prevention guidelines
+Cancer
+Framingham Heart Study
+Starting from 10 chapters or articles per month
+Access and download chapters and articles from more than 300k books and 2,500 journals
+Cancel anytime
+Price includes VAT (Brazil)
+Instant access to the full article PDF.
+Institutional subscriptions
+Advertisement
+Find a journal
+Publish with us
+Track your research
+Journals A-Z
+Books A-Z
+Journal finder
+Publish your research
+Language editing
+Open access publishing
+Our products
+Librarians
+Societies
+Partners and advertisers
+Springer
+Nature Portfolio
+BMC
+Palgrave Macmillan
+Apress
+Discover
+Your privacy choices/Manage cookies
+Your US state privacy rights
+Accessibility statement
+Terms and conditions
+Privacy policy
+Help and support
+Legal notice
+Cancel contracts here
+177.133.252.111
+Not affiliated
+© 2026 Springer Nature

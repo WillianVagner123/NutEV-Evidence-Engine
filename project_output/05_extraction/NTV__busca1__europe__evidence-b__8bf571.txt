@@ -1,0 +1,979 @@
+REVIEW
+Evidence-Based Synthesis for Practice: Lifestyle 
+Interventions in Type 2 Diabetes with Obesity
+Huan Wang
+ *, Fei Chen*, Qiongdan Zhang, Juan Chen, Wenjie Zhang, Lixue Fang
+ , Piao Xiong
+Department of Endocrinology, Deyang People’s Hospital, Deyang, Sichuan, People’s Republic of China
+*These authors contributed equally to this work 
+Correspondence: Fei Chen, Department of Endocrinology, Deyang People’s Hospital, No. 173 Section 1, Taishan North Road, Jingyang District, 
+Deyang City, Sichuan Province, 618000, People’s Republic of China, Email chenfeizmc@sina.com
+Purpose: This systematic evidence synthesis evaluates lifestyle interventions for type 2 diabetes with obesity, providing clinical 
+guidance based on rigorously appraised Chinese and international evidence to support healthcare decision-making.
+Methods: Two researchers independently conducted systematic searches across multiple databases including CNKI, Wanfang, 
+PubMed and Cochrane Library. Using standardized protocols, they extracted and synthesized evidence from qualifying publications, 
+with all included studies undergoing dual quality assessment through AGREE II and AMSTAR-2. Discrepancies were resolved 
+through consensus discussion involving a third senior researcher.
+Results: The analysis incorporated thirteen high-quality evidence sources: six clinical guidelines comprising two Chinese and four 
+international publications, three systematic reviews, three expert consensuses and one clinical decision framework. These yielded 
+thirty-eight distinct evidence statements addressing five essential domains: the necessity of lifestyle intervention, assessment and 
+monitoring approaches, multidisciplinary care coordination, multidimensional lifestyle components including nutrition, physical 
+activity, stress management, sleep optimization and social support, along with long-term follow-up systems. Twenty-nine recommen -
+dations represented the highest grade of evidence, with demonstrated outcomes including clinically significant weight loss (5–15% of 
+body weight) associated with improved metabolic control, diabetes remission in patients achieving ≥15kg weight reduction, and 
+reduced reliance on glucose-lowering medications.
+Conclusion: This evidence synthesis provides healthcare systems with thirty-eight clinically validated recommendations for imple -
+menting lifestyle interventions. The findings support real-world application by standardizing protocols, training clinicians, and 
+adapting patient education while maintaining fidelity to evidence-based core components and allowing necessary local adaptations 
+to meet diverse patient needs across different healthcare settings.
+Keywords: type 2 diabetes, obesity, lifestyle interventions, evidence-based care, evidence summary
+Introduction
+Obesity has emerged as one of the most significant public health challenges of the twenty-first century, representing 
+a complex chronic metabolic disorder with increasing global prevalence.Current projections from The World Obesity 
+Report 2025 indicate that by 2030, approximately 3 billion adults (50% of the global adult population) will be affected by 
+overweight or obesity. 1 This epidemic shows particular severity in China, where recent data demonstrate that adult 
+overweight and obesity rates have already exceeded 50% and are predicted to reach 61% by 2030 - the largest absolute 
+burden worldwide. 2 The rising prevalence of obesity directly contributes to increasing rates of type 2 diabetes (T2D) 
+through a well-established bidirectional pathophysiological mechanism involving insulin resistance, β-cell dysfunction, 
+hepatic glucose overproduction, and hyperinsulinemia. 3,4
+The clinical consequences of comorbid obesity in T2D are particularly grave, significantly elevating risks for chronic 
+renal disease, obstructive sleep apnea(OSA), microvascular complications, and cardiovascular events compared to T2D 
+alone.5,6 In recognition of these risks, leading professional societies including the ADA and EASD have established 
+Diabetes, Metabolic Syndrome and Obesity 2025:18 3671–3686                                         3671
+© 2025 Wang et al. This work is published and licensed by Dove Medical Press Limited. The full terms of this license are available at https://www.dovepress.com/terms. 
+php and incorporate the Creative Commons Attribution – Non Commercial (unported, v4.0) License (http://creativecommons.org/licenses/by-nc/4.0/). By accessing the 
+work you hereby accept the Terms. Non-commercial uses of the work are permitted without any further permission from Dove Medical Press Limited, provided the work is properly attributed. For 
+permission for commercial use of this work, please see paragraphs 4.2 and 5 of our Terms (https://www.dovepress.com/terms.php).
+Diabetes, Metabolic Syndrome and Obesity                                       
+Open Access Full T ext Article
+Received: 21 July 2025
+Accepted: 18 September 2025
+Published: 30 September 2025
+Diabetes, Metabolic Syndrome and Obesity downloaded from https://www.dovepress.com/
+For personal use only.
+lifestyle interventions as first-line therapy in their most recent consensus guidelines, emphasizing patient-centered 
+comprehensive management approaches. 7
+While pharmacological options exist, lifestyle modification remains the cornerstone of treatment for T2D and 
+obesity.8 Evidence-supported lifestyle interventions encompassing nutritional optimization, physical activity, and beha -
+vioral modifications demonstrate consistent benefits for both weight management and glycemic control. However, the 
+growing proliferation of clinical guidelines and systematic reviews has created unintended challenges for practitioners. 
+Despite the availability of multiple high-quality recommendations, substantial variations in methodological approaches 
+and focus areas complicate the derivation of consolidated clinical guidance.
+This study addresses this critical gap through a best evidence synthesis methodology that systematically identifies core 
+intervention components with consistent evidentiary support across major guidelines, rigorously evaluates evidence strength 
+using standardized criteria, and transforms these findings into clinically actionable recommendations. The resulting frame-
+work aims to empower healthcare providers with an evidence-based yet flexible approach that accommodates individual 
+patient characteristics and diverse clinical contexts while maintaining fidelity to established evidence standards.
+Materials and Methods
+Question Identification
+To create evidence-based inquiries, the clinical questions were organized using the PIPOST methodology. P (Population): 
+T2D and obesity in adults. I (Intervention): Lifestyle changes (such as blood glucose monitoring, nutrition, exercise, and 
+health education). P (Professional): Patients with T2D and obesity, family members, and healthcare professionals 
+(clinicians, nurses). O (Outcome): Glycemic control (reduction of glycated hemoglobin, fasting glucose), weight loss, 
+cardiovascular risk factors, adherence rates, and the probability of diabetes remission were important measures. 
+S (Setting):Community health facilities and hospitals. T (Evidence Type): Expert consensus statements, systematic 
+reviews, meta-analyses, clinical practice guidelines, and evidence summaries.
+Search Strategy
+The “6S” evidence resource model states that evidence retrieval is done in a top-down manner. BMJ Best Practice, Up To Date, 
+National Institute of Health and Clinical Excellence (NICE), National Guideline Clearinghouse, Guideline International 
+Network, Scottish Intercollegiate Guidelines Network, Registered Nurses’ Association of Ontario, Chinese Medlive Guideline 
+Network (CMGN), Australian JBI Evidence-Based Health Care Database, Cochrane Library, PubMed, CINAHL, Embase, Web 
+of Science, China Biology Medicine, China Knowledge Resource Integrated Database (CNKI), Wanfang, VIP, Grey literature, 
+including websites of professional and governmental organizations, China’s significant doctoral/master’s thesis full-text data-
+base, Baidu academic database, Yi Mai Tong, and Google Scholar were among the databases searched.
+Medical Subject Headings (MeSH) and free-text phrases were used to create the search terms. Three main elements 
+made up the search strategy: the first concentrated on type 2 diabetes and obesity, the second on lifestyle therapies, and 
+the third on the categories of evidence. (“type 2 diabetes” OR “T2D” OR “diabetes mellitus type 2”) AND (“obesity” OR 
+“obese” OR “body mass index” OR “BMI”) AND (“lifestyle intervention” OR “medical nutrition therapy” OR 
+“exercis*” OR “physical activity” OR “behavior therapy” OR “weight management” OR “diet” OR “caloric restriction” 
+OR “energy intake”) AND (“guideline” OR “practice guideline” OR “systematic review” OR “meta-analys*” OR 
+“evidence summary” OR “best practice” OR “consensus*”). The literature from the database’s creation until 
+August 15, 2025, was included in the search.
+Literature Inclusion and Exclusion Criteria
+The criteria for inclusion and exclusion from the literature were as follows: (i) studies of adults with T2D and obesity. (ii) 
+Lifestyle intervention studies (eg, diet, exercise, behavioral therapy, or multidisciplinary management) for patients with 
+T2D and obesity; (iii) Expert intervention studies for patients with T2D and obesity; (iii) Literature type:expert consensus 
+statement, clinical guideline, best practice recommendation, summary of evidence,or systematic review; (iv) Publication 
+in Chinese or English. Exclusion criteria were as follows: (i) pregnant patients; (ii) type of literature, including meeting 
+https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2025:18 3672
+Wang et al                                                                                                                                                                           
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+abstracts, guideline interpretations, study recommendations, or outdated guidelines that have been superseded; and (iii) 
+studies with low methodological quality, limited data, or no full text.
+Study Selection and Data Extraction
+The obtained literature was evaluated by two reviewers separately based on the inclusion and exclusion criteria. Any 
+disagreement would be settled by consulting a third author or by discussion until a consensus was formed. Following 
+a standardized data extraction form, the same reviewers then separately extracted the data while being blind to one another’s 
+procedures. The study characteristics—the name and institution of the first author, the year, the source, the type of evidence, 
+and the article’s topic were included in the data.
+Literature Quality Evaluation Criteria
+Guideline
+The Appraisal of Guidelines for Research and Evaluation from 2017 (AGREE II) was applied.9 Each of the 23 items in the 
+six fields on the tool is scored on a 7-point scale, where one represents complete disagreement and seven represents entire 
+agreement. Each field’s score is the total of all the item scores in that field, expressed as a percentage of the field’s maximum 
+potential score. Based on their scores, the recommendations were separated into three levels: Grade B (recommended after 
+some adjustments and improvements), with a score of 30% to 60% in ≥ 3 fields; Grade C (not recommended), with a score 
+of < 30% in ≥ 3 fields; and Grade A (may be directly recommended without change), with a score of ≥ 60% in all six fields.
+Systematic Reviews
+The 2017 AMSTAR-2 was employed.10 It consists of sixteen items that are assessed as partial yes, no, or yes. The overall 
+quality was taken into consideration when deciding whether to include it.
+Expert Consensus
+The 2016 JBI expert opinions and expert consensus articles quality rating methods were used to assess expert consensus.11
+Clinical Decision Making
+The Critical Appraisal for Summaries of Evidence (CASE) was used as an evaluation technique. 12
+Literature Quality Evaluation Process
+Two or more researchers with training in evidence-based practice and professional experience in endocrinology and 
+diabetes care independently conducted the literature quality evaluation. The assessors chose the right appraisal instru -
+ments based on the kind of literature. Disagreements were settled by debate or by seeking advice from a third senior 
+researcher, who ultimately made the decision.
+To ensure a transparent and hierarchical approach to evidence synthesis, a pre-defined decision-making framework 
+was applied. This framework explicitly prioritized evidence types based on the accepted hierarchy of evidence. 
+Systematic reviews and meta-analyses were accorded the highest level of influence on the summary findings. Expert 
+consensus was valued for providing practical insights and guidance in areas where higher-level evidence was lacking; 
+however, its recommendations were never used to override or contradict the findings of high-quality systematic reviews. 
+In cases of discrepancy, the following precedence was enforced: 1) findings from systematic reviews of randomized 
+controlled trials, 2) recommendations from high-quality clinical guidelines, and 3) expert consensus statements. This 
+approach ensured that the final synthesis was grounded in the most robust evidence available.
+This study followed the guidelines of giving precedence to the most recent, authoritative literature in the field of 
+managing T2D and obesity, as well as favoring higher-quality evidence when there were discrepancies between the 
+results drawn from various sources of information.
+Evidence Extraction, Summarization and Level
+A third researcher verified the evidence after two researchers separately extracted and manufactured it. When evidence from 
+different sources had complementary or consistent conclusions, a combined or general expression was used. However, if 
+Diabetes, Metabolic Syndrome and Obesity 2025:18                                                                          https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                   3673
+Wang et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+there were conflicting evidence from different sources, the principles of evidence-based priority, high-quality evidence 
+priority, and latest published authoritative literature priority were followed. The evidence was first categorized into Levels 1 
+through 5 using the Australian JBI Evidence Hierarchy (2014 version).13 The highest rating was given to evidence backed by 
+several studies with differing grades. Additionally, using the JBI 2014 evidence grading method in conjunction with the JBI 
+FAME framework (Feasibility, Appropriateness, Meaningfulness, and Effectiveness), the study team assessed the recom -
+mendations’ strength (strong recommendation [Grade A] or poor recommendation [Grade B]).
+Results
+General Characteristics of the Included Literature
+Through the retrieval of 1307 related literatures, 13 literatures were finally included, including 6 guidelines, 3 systematic 
+reviews, 3 expert consensuses and 1 clinical decision. Among them, 247 duplicate literatures were excluded, 956 articles 
+were excluded after reading the title and abstract, and 73 articles were excluded after reading the full text. Figure 1 
+describes the literature screening process, and Table 1 lists the basic attributes of the included literature.
+Figure 1 Flow diagram of literature search. 
+Notes: PRISMA figure was adapted from Page MJ, McKenzie JE, Bossuyt PM et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews BMJ 
+2021; 372:n71 doi:10.1136/bmj.n71. Creative Commons. 14 
+Abbreviations: GIN,Guidelines International Network;NICE,National Institute for Health and Care Excellence;SIGN,Scottish Intercollegiate Guidelines Network;CNKI, 
+China National Knowledge Infrastructure;CBM,China Biology Medicine;CMJD,China Medical Journal Network.
+https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2025:18 3674
+Wang et al                                                                                                                                                                           
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Quality Evaluation Results of the Included Literature
+Quality Evaluation Results of the Guidelines
+This study includes six guidelines. 15–20 With a recommendation level of A, all guidelines were deemed high-quality and 
+attained ≥60% standardization across all areas. Table 2 displays the comprehensive evaluation results.
+Quality Evaluation Results of Systematic Reviews
+Three systematic reviews with good overall quality were included. Table 3 displays the findings of the quality 
+evaluation.21–23 Two of the included reviews did not have a pre-registered protocol, which is considered a critical 
+methodological weakness according to the AMSTAR-2 criteria. Nevertheless, these reviews were retained due to their 
+overall methodological rigor and the relevance of their findings. In the evidence synthesis process, greater weight was 
+given to the review that had a pre-registered protocol, consistent with our weight-of-evidence approach to developing the 
+primary recommendations.
+T able 1 General Information of the Included Literature (N=13)
+Included Literature Year Literature 
+Sources
+T ype of 
+Evidence
+Title Primary Evidence Focus
+National Center of 
+Gerontology et al15
+2024 CNKI Guideline Guideline for exercise therapy of type 2 diabetes 
+mellitus in China (2024)
+Exercise Therapy as a key component in 
+T2DM management
+Diabetes Prevention and 
+Control Committee of 
+Chinese Preventive 
+Medicine Association16
+2025 Wanfang Guideline Chinese diabetes behavior and lifestyle 
+intervention guidelines (2024)
+Behavioral and Lifestyle Interventions 
+including diet, physical activity, and health 
+education
+National Institute for 
+Health and Care 
+Excellence17
+2025 NICE Guideline Overweight and obesity management Comprehensive Interventions including 
+diet, exercise, and behavioral therapy for 
+T2DM patients with obesity
+International Diabetes 
+Federation18
+2025 PubMed Guideline IDF Global Clinical Practice Recommendations for 
+Managing Type 2 Diabetes-2025.
+Integrated Diabetes Care encompassing 
+glycemic control, weight management
+Rosenfeld, RM et al 19 2025 Web of 
+Science
+Guideline Lifestyle Interventions for Treatment and 
+Remission of Type 2 Diabetes and Prediabetes in 
+Adults: A Clinical Practice Guideline From the 
+American College of Lifestyle Medicine
+Lifestyle Interventions (nutrition, physical 
+activity, stress management, sleep, social 
+support) as first-line management for 
+T2DM and obesity
+American Diabetes 
+Association Professional 
+Practice Committee20
+2025 PubMed Guideline 8. Obesity and Weight Management for the 
+Prevention and Treatment of Type 2 Diabetes: 
+Standards of Care in Diabetes-2025
+Comprehensive Management Strategies 
+including medical nutrition therapy, 
+increased physical activity for T2DM 
+patients with obesity
+Churuangsuk C et al 21 2022 Web of 
+Science
+Systematic 
+Review
+Diets for Weight Management in Adults with Type 
+2 Diabetes: An Umbrella Review of Published 
+Meta-Analyses and Systematic Review of Trials of 
+Diets for Diabetes Remission
+Dietary Interventions for weight 
+management and diabetes remission in 
+T2DM patients
+Gostoli S et al 22 2024 Web of 
+Science
+Systematic 
+Review
+Behavioral Lifestyle Interventions for Weight Loss 
+in Overweight or Obese Patients with Type 2 
+Diabetes: A Systematic Review of the Literature
+Behavioral Lifestyle Interventions for 
+weight loss in T2DM patients with 
+overweight/obesity
+Liu, R. Y et al23 2024 Wanfang Systematic 
+Review
+Study on the health effects of exercise combined 
+with dietary intervention in obese individuals with 
+type 2 diabetes mellitus
+Exercise Combined with Dietary 
+Intervention for improving health 
+outcomes in obese T2DM patients
+Kanaley JA et al 24 2022 PubMed Expert 
+Consensus
+Exercise/Physical Activity in Individuals with Type 2 
+Diabetes: A Consensus Statement from the 
+American College of Sports Medicine
+Exercise/Physical Activity 
+recommendations for T2DM management
+Davies MJ et al7 2022 PubMed Expert 
+Consensus
+Management of Hyperglycemia in Type 2 Diabetes, 
+2022. A Consensus Report by the American 
+Diabetes Association (ADA) and the European 
+Association for the Study of Diabetes (EASD).
+Hyperglycemia Management strategies 
+including lifestyle modifications and 
+pharmacotherapy in T2DM
+Yang, Y et al25 2024 CNKI Expert 
+Consensus
+Expert consensus on weight management in 
+patients with diabetes mellitus (2024)
+Weight Management Strategies for 
+diabetic patients, focusing on personalized 
+goals and comprehensive approaches
+Delahanty LM26 2025 Up T o Date Clinical 
+decision 
+making
+Medical Nutrition Therapy for Type 2 Diabetes 
+Mellitus
+Medical Nutrition Therapy as 
+a cornerstone of T2DM management, 
+emphasizing individualized dietary plans
+Abbreviations: CNKI, China National Knowledge Infrastructure;NICE, the National Institute for Health and Care Excellence.
+Diabetes, Metabolic Syndrome and Obesity 2025:18                                                                          https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                   3675
+Wang et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Quality Evaluation Results of Expert Consensuses
+Three expert consensus reports had good overall quality and were both included. Table 4 displays the findings of the 
+quality assessment.7,24,25
+T able 2 Methodological Quality Evaluation Results of the Guidelines (N=6)
+Included Literature Percentage of Field Standardisation % ≥60% 
+Field 
+Number
+≥30% 
+Field 
+Number
+Recommendation 
+Level
+Scopes 
+and 
+Objects
+Participant Rigour of 
+the 
+Guidelines
+Clarity of 
+Guidelines
+Application 
+of 
+Guidelines
+Independence 
+of the Guide
+Overall 
+Score
+National Center of 
+Gerontology et al15
+94.44% 66.67% 75.00% 94.44% 66.67% 83.33% 80.09% 6 6 A
+Diabetes Prevention and 
+Control Committee of 
+Chinese Preventive 
+Medicine Association16
+77.78% 77.78% 62.50% 83.33% 79.16% 66.67 74.54% 6 6 A
+National Institute for 
+Health and Care 
+Excellence17
+77.78% 72.22% 79.17% 83.33% 75.00% 83.33% 78.47% 6 6 A
+International Diabetes 
+Federation18
+94.44% 77.78% 83.33% 83.33% 75.00% 83.33% 82.87% 6 6 A
+Rosenfeld, RM. et al 19 77.78% 72.22% 79.17% 83.33% 75.00% 83.33% 78.47% 6 6 A
+American Diabetes 
+Association Professional 
+Practice Committee20
+85.71% 71.43% 83.93% 85.71% 75.00% 85.71% 81.25% 6 6 A
+T able 3 Quality Evaluation Results of the Included Systematic Reviews (N=3)
+Items10 Churuangsuk 
+C et al21
+Gostoli 
+S et al22
+Liu, 
+R. Y et al23
+1. Did the research questions and inclusion criteria for the review include the components of PICO? Yes Yes Yes
+2. Did the report of the review contain an explicit statement that the review methods were established prior to the 
+conduct of the review and did the report justify any significant deviations from the protocol?
+Yes No No
+3. Did the review authors explain their selection of the study designs for inclusion in the review? Yes Yes Yes
+4. Did the review authors use a comprehensive literature search strategy? Yes Yes Yes
+5. Did the review authors perform study selection in duplicate? Yes Yes Yes
+6. Did the review authors perform data extraction in duplicate? Yes Yes Yes
+7. Did the review authors provide a list of excluded studies and justify the exclusions? Yes Yes Yes
+8. Did the review authors describe the included studies in adequate detail? Yes Yes Yes
+9. Did the review authors use a satisfactory technique for assessing the risk of bias (RoB) in individual studies that 
+were included in the review?
+Yes Yes Yes
+10. Did the review authors report on the sources of funding for the studies included in the review? Yes No No
+11. If meta-analysis was performed, did the review authors use appropriate methods for statistical combination of 
+results?
+Yes Yes Yes
+12. If meta-analysis was performed, did the review authors assess the potential impact of RoB in individual studies on 
+the results of the meta-analysis or other evidence synthesis?
+Yes Yes Yes
+13. Did the review authors account for RoB in primary studies when interpreting/discussing the results of the review? Yes Yes Yes
+14. Did the review authors provide a satisfactory explanation for, and discussion of, any heterogeneity observed in the 
+results of the review?
+Yes Yes Yes
+15. If they performed quantitative synthesis did the review authors carry out an adequate investigation of publication 
+bias (small study bias) and discuss its likely impact on the results of the review?
+Yes Yes Yes
+16. Did the review authors report any potential sources of conflict of interest, including any funding they received for 
+conducting the review?
+Yes Yes Yes
+Number of Items Evaluated as “Yes” (Number) 16 14 14
+Overall evaluation Included Included Included
+Note: Bold denotes Yes rated item counts per study and inclusion status.
+https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2025:18 3676
+Wang et al                                                                                                                                                                           
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Quality Evaluation Results of Clinical Decision Making
+This study includes one clinical decision-making process. Ratings of “partially yes” were given to the evidence synthesis 
+by Delahanty.26 For both “whether evidence was systematically searched” and “whether potential bias was avoided”, 
+while “yes” was given to all other evaluation criteria. It was provided and had good overall quality.
+Summary of the Evidence
+Based on the induction and integration of evidence from the included literature, 38 best-practice evidence statements 
+were ultimately synthesized. These were categorized into five key aspects: (1) lifestyle interventions, (2) assessment and 
+monitoring, (3) multidisciplinary management, (4) multidimensional lifestyle intervention system, and (5) long-term 
+follow-up. The complete set of evidence items is presented in Table 5.
+T able 4 Expert Consensus Quality Evaluation (N=3)
+Items Kanaley 
+JA et al24
+Davies 
+MJ et al7
+Yang, 
+Y et al25
+1. Is the opinion source clearly identified? Yes Yes Yes
+2. Does the opinion source have standing in the field of expertise? Yes Yes Yes
+3. Are the relevant population interests the central focus of the opinion Yes Yes Yes
+4. Is the stated position the result of an analytical process, and is there logic in the opinion expressed? Yes Yes Yes
+5. Is there reference to the extant literature? Yes Yes Yes
+6. Is any incongruence with the literature/sources logically defended? Yes Unclear Yes
+Number of Items Evaluated as “Yes” (Number) 6 5 6
+Overall evaluation Included Included Included
+Note: Bold denotes Yes rated item counts per study and inclusion status.
+T able 5 Best Evidence Summary for Lifestyle Interventions in Type 2 Diabetes with Comorbid Obesity
+Category Evidence Content Evidence 
+Level
+Recommendation 
+Level
+Traffic Light 
+Indicator
+The necessity of lifestyle intervention
+1. Weight management should be a primary treatment goal alongside glycemic 
+management in T2D with overweight/obesity. Aim for 5–15% weight loss for disease- 
+modifying effects and possible remission. 7,18–20,25
+Level 1 A
+2. Any magnitude of weight loss is beneficial. Weight loss of 3–7% improves glycemia and 
+cardiovascular risk factors.20
+Level 1 A
+3. Lifestyle changes can prevent T2D progression. Metabolic markers (glycated 
+hemoglobin, blood pressure, lipids) improve significantly with 5–15% weight loss.7,18–20,25
+Level 1 A
+Assessment and monitoring
+4. Measure height/weight for BMI calculation. Perform additional measurements (waist 
+circumference, waist-to-hip/height ratio) if BMI is indeterminant. 7,20
+Level 5 B
+5. All individuals should have regular physical examinations to screen for overweight and 
+obesity, with BMI serving as the main indicator (≥25 kg/m2, with a lower cutoff point for 
+Asian populations). T o establish a complete evaluation, this should be paired with visceral 
+fat, body fat percentage, waist circumference, and waist-to-hip ratio. This is especially 
+important when the BMI is between 25 and 40 kg/m², as this is when screening for 
+abdominal obesity should be prioritized. 15–18,22,23,25
+Level 5 A
+6. Monitor anthropometric measurements annually (quarterly during active treatment). 
+Track weight/BMI, waist circumference, body fat%, glycated hemoglobin (3–6 monthly), 
+fasting and postprandial blood glucose, lipids, blood pressure, and renal function. 15–26
+Level 5 B
+7. Measure muscle mass in sarcopenia patients. Relax control targets for elderly patients 
+appropriately.25
+Level 5 B
+8. T o facilitate dynamic monitoring and maximize management results, we advise utilizing 
+digital technologies including continuous glucose monitoring (CGM), wearable 
+technology (such as activity trackers), and health management applications. 15,16,22,24
+Level 1 A
+(Continued)
+Diabetes, Metabolic Syndrome and Obesity 2025:18                                                                          https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                   3677
+Wang et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+T able 5 (Continued). 
+Category Evidence Content Evidence 
+Level
+Recommendation 
+Level
+Traffic Light 
+Indicator
+Multidisciplinary management
+9. When it comes to improving weight and metabolic markers, the “patient-centered 
+multidisciplinary collaborative care model”—which involves physicians, dietitians, nurses, 
+psychologists, and others—is more successful than individual approaches. 17,18,20,22,25
+Level 1 A
+10. Long-term weight maintenance programs should be delivered by an interprofessional 
+team with appropriate training and experience. 20
+Level 1 A
+11. A professional team’s diabetes self-management education and support (DSMES) can 
+greatly enhance clinical results. In addition to employing smart health tools to accomplish 
+data-linked monitoring, all patients should obtain DSMES in order to develop the self- 
+management abilities they need.7,16
+Level 5 A
+Multidimensional lifestyle intervention system
+Nutrition 12. Provide individualized Medical Nutrition Therapy (MNT) through qualified teams, 
+considering personal preferences and nutritional needs. 7,16,19,20,24–26
+Level 5 A
+13. Use nutritional plans that create a maintainable energy deficit (500–750 kcal/day) for 
+weight loss, regardless of macronutrient composition. 7,20
+Level 1 A
+14. Multiple evidence-based dietary patterns are effective. Focus on identifying healthy 
+eating habits that are feasible and sustainable. 7,15,16,18,19,25,26
+Level 1 A
+15. High-fiber foods should be the main source of carbohydrates, unsaturated fats 
+(<10%) and trans fats (<1%) should be used in place of fats, and plant-based sources of 
+protein should be prioritized (up to 0.8 g/kg/day for people with poor renal function). 
+Foods that are overly processed should be avoided. 25,26
+Level 5 A
+16. In people with T2D, the Mediterranean diet pattern can dramatically improve lipid 
+profiles and blood glucose control while lowering the likelihood of the disease 
+worsening.16,26
+Level 1 A
+17. In the short run (6 months), time-restricted eating (eg, 16:8 mode) and intermittent 
+low-calorie diets (eg, 5:2 mode) can effectively lower weight and glycated hemoglobin; 
+however, people on insulin or sulfonylurea medications should exercise caution due to 
+the risk of hypoglycemia.22,24,26
+Level 1 B
+18. Although low-carb diets work well in the short term, they may raise the risk of 
+cardiovascular disease over time. Because they can cause ketosis, very low-carb diets 
+and ketogenic diets should be taken carefully. 17,22,24
+Level 5 B
+19. Although a high-protein diet (protein energy ratio > 20%) can improve blood sugar 
+regulation, decrease body fat, and promote satiety, it is not recommended for people 
+with chronic kidney disease (CKD). 16,21,26
+Level 1 B
+20. Note that very low-calorie diets need to be monitored by a professional. 18,23,26 Level 1 A
+Physical 
+activity
+21. A medical evaluation should be performed before exercising, taking into account the 
+patient’s cardiovascular risk, exercise intensity, and past exercise habits. Elderly patients 
+need to have their fall risk assessed further. 15,16,22,24
+Level 5 A
+22. Exercise should be avoided if there are acute metabolic abnormalities (eg, blood 
+glucose >250 mg/dL with ketosis or >300 mg/dL without ketosis), cardiovascular disease 
+symptoms, or diabetic sequelae (eg, proliferative retinopathy). 15,16
+Level 5 A
+23. The FITT -VP principles (frequency, intensity, time, type, total volume, and 
+progression) should serve as the foundation for exercise prescriptions. These principles 
+should incorporate resistance, flexibility, balance, and aerobic training, as well as the 
+ideas of safety, steady progression, and individualization. 15,16,24
+Level 1 A
+24. It is advised to perform aerobic exercise (150–300 min/week of moderate- to 
+vigorous-intensity, spread over 3–7 days) supplemented with resistance training (2–3 
+times/week on non-consecutive days) and flexibility/balance training (2–3 times/ 
+week).7,15,16,19,24,25
+Level 1 A
+25. Minimize extended sitting, avoid lengthy sitting after meals, and get up every 
+30 minutes for three minutes of exercise. 7,17,24
+Level 5 A
+26. As the baseline intensity, moderate-intensity aerobic exercise (40–59% of maximum 
+oxygen uptake/heart rate reserve or 50–70% of maximum heart rate) is advised. People 
+who are physically fit can advance to high intensity (60–89%). It is advised to use 50–85% 
+of the 1RM load for resistance training. 15–17,19,24,25
+Level 1 A
+27. It is advised that each resistance training session last 15–20 minutes (1–3 sets, 10–15 
+repetitions per set) and each aerobic exercise session last 30–60 minutes, totaling 
+≥150 minutes per week. Blood sugar regulation can be maximized by exercising forty- 
+five minutes after eating. 15–17,19,24,25
+Level 1 A
+(Continued)
+https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2025:18 3678
+Wang et al                                                                                                                                                                           
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Discussion
+The Cornerstone of Treating People with T2D and Obesity is Lifestyle Interventions
+It is commonly acknowledged that lifestyle interventions are the cornerstone of diabetes mellitus (DM) prevention, 
+treatment, and long-term control. Numerous excellent studies have unequivocally shown that lifestyle interventions not 
+only help postpone or avoid the onset of T2D, 19 but they also considerably enhance patients’ metabolic indices. Weight 
+reduction is a significant indicator for lifestyle interventions to achieve DM remission, as demonstrated by the DIRECT 
+study, which revealed that 86% of patients who dropped more than 15 kg of weight obtained DM remission. 27,28 
+Furthermore, lifestyle interventions can successfully lower blood pressure and cholesterol, which lowers the risk of 
+cardiovascular disease.These results imply that lifestyle intervention plays an indispensable role in the treatment of 
+patients with T2D and obesity. It may have long-term health benefits, such as fewer problems and a lighter healthcare 
+burden, in addition to improving patients’ short-term metabolic indices. As a result, a key tactic in the treatment of people 
+with T2D and obesity should be lifestyle intervention.
+However, the longer-term follow-up data introduces a critical nuance. While the landmark 1-year results showed 46% 
+of participants achieved remission, the 5-year data reveals that this rate attenuated to only 13% of the original 
+intervention group, even though it remained significantly higher than the control group (34% vs 12% among those 
+still in follow-up). 29 Despite the sustained relative benefit, this decline underscores a pivotal limitation and the central 
+challenge in the field: while intensive dietary intervention is powerfully efficacious in trials, maintaining the substantial 
+T able 5 (Continued). 
+Category Evidence Content Evidence 
+Level
+Recommendation 
+Level
+Traffic Light 
+Indicator
+28. People with peripheral neuropathy should engage in non-weight-bearing activities, 
+such as cycling or swimming. People who have retinal lesions should stay out of inverted 
+situations and vigorous exercise. People with sarcopenia should do more traditional 
+ethnic activities (like Tai Chi) and resistance training. 15,16,24,25
+Level 1 A
+29. The idea behind progressive exercise is to “start at low intensity and gradually 
+increase”. Every two to four weeks, increase the duration or intensity by 5 to 10%. Pay 
+special attention to your blood sugar levels and any signs of exhaustion. 15,16,24
+Level 5 A
+Stress 
+management
+30. It is advised to refer patients with severe anxiety and depression, intervene with high- 
+risk individuals, and perform routine psychological assessments. 16,17,19,24
+Level 5 A
+Sleep 31. A target of 7–8 hours of sleep per night is recommended for optimal metabolic 
+health. Both insufficient (<6h) and prolonged (>9h) sleep are associated with adverse 
+outcomes including worsened glycemic control (elevated glycated hemoglobin), insulin 
+resistance, and increased cardiovascular risk. 7,16,19,25
+Level 1 A
+32. Sleep quality is equally important. Screen for and manage sleep disorders (eg, 
+obstructive sleep apnea, which is highly prevalent in T2D), as they significantly impair 
+sleep architecture and glucose metabolism. 7,16,25
+Level 1 A
+Social support 33. Peer groups and family support are examples of positive social ties that can raise 
+glycated hemoglobin levels and enhance behavioral compliance. 19
+Level 1 A
+34. Use person-centered, nonjudgmental language (eg, “person with diabetes” or 
+“healthy weight”) to foster collaboration and avoid stigma. Emphasize the promotion of 
+“healthy behaviors” rather than focusing solely on weight loss. 17,19,20
+Level 5 B
+Avoidance of 
+risky 
+substances
+35. Give up smoking, cut back on alcohol, and avoid recreational drug use. 7,16,19,24,26 Level 1 A
+Long-term follow-up
+36. Create a phased follow-up strategy with shorter intervals for high-risk patients. 
+Undertake decision cycles regularly (at least 1–2 times/year). 7,25
+Level 5 B
+37. Provide long-term (≥1 year) maintenance programs with monthly contact, frequent 
+self-monitoring (weekly weight checks), and support for regular physical activity 
+(200–300 min/week).20
+Level 1 A
+38. Provide long-term monitoring and ongoing support with continued interventions for 
+individuals who have achieved weight loss goals to evaluate effectiveness and facilitate 
+weight maintenance.20
+Level 5 B
+Notes: 
+ (Green): Strong recommendation; 
+ (Yellow): Moderate recommendation; 
+ (Red): Weak recommendation.
+Diabetes, Metabolic Syndrome and Obesity 2025:18                                                                          https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                   3679
+Wang et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+weight loss required for lasting remission is exceedingly difficult in the long term, highlighting a significant efficacy- 
+effectiveness gap. Nevertheless, a more optimistic and equally important finding is that among the minority who 
+successfully maintained an average weight loss of 8.9 kg at 5 years, 26% of those in remission at 2 years sustained it. 
+This stark contrast fuels the ongoing debate about predicting long-term responders and shifts the clinical focus from mere 
+initial efficacy to strategies for sustaining weight loss and identifying which patients are most likely to achieve permanent 
+remission.
+Assessment and Monitoring as the Foundation for Tailored Action
+Early screening identifies high-risk patients and is the first step in weight loss. 17 Body mass index (BMI, lower cut-off 
+point for Asians) and waist circumference are used to screen high-risk patients, focusing on abdominal obesity in those 
+with a BMI of 25–40 kg/m². 17,19 Although BMI remains a widely adopted screening indicator due to its simplicity, 
+substantial evidence suggests that it is inadequate in assessing cardiometabolic risk, particularly among diverse ethnic 
+groups. International guidelines, such as those from NICE, recommend lowering BMI cut-offs (overweight: ≥23 kg/m²; 
+Obesity: ≥27.5 kg/m²), reflecting an increased risk of central obesity at lower BMI values. These international 
+recommendations were compared and contrasted with country-specific standards, such as the Chinese criteria (over -
+weight: ≥24 kg/m²; obesity: ≥28 kg/m²), which are based on large-scale domestic epidemiological studies. These criteria 
+were based on large-scale domestic epidemiological studies. A developing consensus urges the integration of central 
+obesity indicators, such as waist circumference to height ratio, with BMI to enhance risk stratification and enable more 
+personalized intervention strategies.
+The evidence shows that ≥10% weight loss is the target for DM remission, and individualized interventions are 
+carried out,It is critical to recognize that even modest weight loss of 3–5% provides significant advantages, including 
+reduction of cardiovascular risk factors and improved glycemic control, which may help attenuate the progression of 
+T2D. An initial weight loss goal of 5–7% is commonly recommended in clinical practice as it produces notable metabolic 
+improvements and is considered cost-effective. However, for disease-modifying benefits such as enhanced cardioprotec -
+tion and increased likelihood of diabetes remission, a greater weight loss of 10–15% or more is frequently necessary. This 
+hierarchical structure enables clinicians to establish customized goals that balance long-term sustainability, patient 
+feasibility, and optimal health benefits. 7,18–20,25
+In addition, we need to establish a monitoring system that includes metabolic indicators and body composition. 
+Muscle mass is assessed in patients with sarcopenia, and the criteria for the elderly are relaxed. 18,25 To achieve long-term 
+maintenance of weight reduction and blood glucose control, intelligent tools are used to assess intervention progress, 
+monitor blood glucose and weight indicators, and dynamically adapt the strategy. 30 To ensure the safety and efficacy of 
+the weight loss program, it should be highlighted that the key to weight loss in patients with T2D and obesity is early 
+identification, early initiation of lifestyle intervention, and regular evaluation of metabolic indicators and physical 
+function during the weight loss process.However, the implementation of such intensive monitoring faces practical 
+challenges, including variable patient adherence to self-monitoring, the cost and accessibility of advanced body 
+composition analyzers, and the need for healthcare systems to support the frequent data review and intervention 
+adjustments required.31
+One of the Fundamental Management Models is Multidisciplinary Management
+When managing T2D and obesity, the multidisciplinary team (MDT) paradigm is quite helpful. A group of multi -
+disciplinary experts from endocrinology, nutrition, sports medicine, psychology, and other fields create a personalized, 
+all-inclusive management plan through frequent consultations, encompassing the fundamentals of medication therapy, 
+medical nutrition therapy, exercise prescription, and behavioral intervention.This model is based on the patient- 
+centeredness principle.Research has demonstrated that, in comparison to traditional management models, MDT based 
+weight loss management programs can effectively improve patients’ quality of life, self-management skills (such as 
+dietary control, physical activity), and glycemic control. In addition to optimizing metabolic markers, this integrated 
+intervention paradigm offers patients all-encompassing health support. 17,18
+https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2025:18 3680
+Wang et al                                                                                                                                                                           
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Despite its proven benefits, the MDT model’s widespread adoption is often limited by significant barriers such as high 
+operational costs, logistical complexities in coordinating care across different specialties, and reimbursement challenges 
+within healthcare systems. 32
+Using a Multidimensional Lifestyle Intervention System as a First Line of Defense
+As a first-line management tool, the multifaceted lifestyle intervention system consists of six lifestyle pillars: nutrition, 
+physical activity, stress management, sleep, social support and avoidance of risky substances. 19 Each of these pillars will 
+be discussed below.
+Nutrition
+A professional team should create and administer medical nutrition therapy (MNT), a key intervention for managing DM 
+and obesity, with an emphasis on individualization. MNT can considerably lower glycated hemoglobin and aid in the 
+prevention, treatment, and postponement of consequences from diabetes mellitus, according to studies. 33 MNT has been 
+demonstrated to enhance weight-related risk factors such as hypertension, DM, hyperlipidemia, and quality of life. 34,35 
+Data also consistently suggest that MNT has an impact on weight reduction, BMI, and waist circumference. Studies have 
+shown that short-term interventions can improve metabolism, reduce body mass, ameliorate insulin resistance and 
+metabolic disorders, and improve heart and brain function.
+The academic community currently widely emphasizes that there does not exist a universally applicable “best” diet 
+plan.The choice must be individualized, weighing short-term efficacy against long-term sustainability and safety, under 
+professional supervision.For instance, while low-carbohydrate diets often yield rapid short-term glycemic improvements, 
+concerns remain regarding their long-term effects on lipid profiles and renal function, and evidence on their cardiovas -
+cular outcomes is less robust than that for the Mediterranean diet. 36,37 Very low-calorie diets (VLCDs) achieve rapid 
+weight loss but pose significant challenges for long-term maintenance. 38 Therefore,the selection of a specific diet should 
+be conducted under expert supervision, and changes in blood lipids, kidney function, and visceral fat should be 
+monitored to avoid negative effects.
+There are certain consensuses and differences between different guidelines in terms of dietary recommendations for 
+patients with T2D and obesity. Organizations such as the Chinese Preventive Medicine Association, NICE, and the 
+ACLM emphasize plant-based and Mediterranean-style diets that are rich in whole foods, high in fiber, and minimally 
+processed. In contrast, the IDF supports the short-term use of VLCDs, citing strong trial data such as DiRECT, which 
+demonstrates potential for rapid metabolic improvement and diabetes remission. On the other hand, NICE and ADA/ 
+EASD advise against overly restrictive approaches, advocating instead for flexible nutrition programs based on individual 
+energy needs rather than fixed macronutrient composition. This divergence essentially reflects the different focuses of 
+different guidelines on highly structured dietary interventions and sustainable, adaptive dietary patterns.
+Physical Activity
+For individuals with T2D and obesity, exercise and nutritional changes are an efficient way to change their lifestyle. 
+These changes can greatly lower blood glucose levels, waist circumference, and BMI. 23 For exercise parameters with 
+a high source of evidence rating, aerobic exercise (at least 150–300 minutes) and 2–3 sessions of resistance training per 
+week are recommended 3–7 days per week. 1,2,17,19,24,25 Aerobic mixed with resistance exercise is better than single 
+exercise modalities for improving glycated hemoglobin, cardiorespiratory fitness, and weight loss in T2D patients, 
+according to extensive research. 39,40 Clinical promotion is, however, limited by the limitations of the current evidence, 
+which include a small sample size, a short cycle length, an uncertain intensity-effect relationship, and poor long-term 
+patient compliance. These limitations lead to inconsistent findings across studies, particularly regarding the optimal 
+exercise “dose” for different patient subgroups and the magnitude of its independent contribution when combined with 
+dietary changes.In order to improve the science and long-term compliance and through behavioral interventions, we must 
+concentrate on developing personalized exercise prescriptions in the future. These developments, along with wearable 
+device monitoring and multidisciplinary collaboration, will help to achieve the long-term metabolic benefits of exercise 
+interventions.
+Diabetes, Metabolic Syndrome and Obesity 2025:18                                                                          https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                   3681
+Wang et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+Stress Management
+In patients with T2D and obesity, chronic stress exposure is strongly associated with both metabolic dysregulation and 
+impaired mental health. 41 Clinical guidelines recommend the use of brief screening instruments such as the Perceived 
+Stress Scale (PSS, 4 items), Patient Health Questionnaire (PHQ, 2 items), and Generalized Anxiety Disorder scale (GAD, 
+2 items) for routine assessment. 42–44 Studies have shown that stress management interventions including cognitive 
+behavioral therapy and regular physical activity can enhance self-management behavior, reduce BMI and glycated 
+hemoglobin levels, and improve anxiety and depression symptoms. 41,45,46 It should be noted, however, that the benefits 
+of stress management on glycemic outcomes are often indirect and variable compared to core lifestyle interventions such 
+as nutrition and exercise, as they primarily operate through complex behavioral and psychological pathways. 47 
+Nonetheless, stress management remains a clinically relevant component of holistic care for adults with T2D and obesity 
+and should be integrated into individualized treatment regimens.
+Sleep
+In recent years, sleep disorders have become an important and modifiable risk factor for this population.Guidelines 
+recommend 6–9 hours of sleep per night, as shorter duration is associated with adverse outcomes including increased risk 
+of T2D, obesity, hypertension, cardiovascular disease, and mortality. 19 Sleep deprivation (<6 hours per night) and 
+circadian disruption can exacerbate hyperglycemia through reduced insulin sensitivity, increased appetite, and elevated 
+glucose levels. 48,49 However, there are subtle differences in the optimal sleep duration management across different 
+guidelines. The ACLM and Chinese guidelines allow for up to 9 hours of sleep, while the ADA/EASD recommends no 
+more than 8 hours because of the observed association with negative glucose metabolism outcomes. This inconsistency 
+indicates a lack of high-quality evidence to define the relationship between prolonged sleep and glycemic health in obese 
+diabetic populations. Prior to further research, clinical recommendations should emphasize consistent, high-quality sleep 
+within a 7–8 hour range, with additional attention to individual sleep quality and OSA screening.
+Evidence suggests that OSA is a key interference factor that is estimated to increase the risk of diabetes by 63% and 
+lead to insulin resistance independent of obesity, and its risk is associated with the severity of nocturnal hypoxia.50,51 It is 
+worth noting that OSA affects more than 50% of diabetic patients and further impairs blood glucose control through sleep 
+fragmentation and hypoxia. 52 Therefore, clinicians should actively screen and manage sleep disorders, such as OSA, 
+support the adoption of healthy sleep habits, and include sleep quality as part of comprehensive diabetes care. However, 
+it should be noted that while observational data are consistent and mechanistic pathways are well-elucidated, the 
+evidence from randomized controlled trials (RCTs) demonstrating that sleep therapy directly improves glycemic out -
+comes in established T2D is still evolving. This suggests that sleep interventions may be most effective as part of 
+a multimodal strategy rather than a standalone solution.
+Social Support
+Peer groups and family support are critical components of positive social ties that enhance behavioral adherence and, 
+consequently, glycemic control. 19 The mechanisms through which they operate, however, are distinct and should be 
+evaluated precisely.Peer groups are structured programs where individuals with T2D share experiences, set collective 
+goals, and provide mutual accountability. Their effectiveness is quantitatively measured through session attendance rates, 
+group participation levels, and improvements in group cohesion scores using validated scales, which correlate with 
+enhanced behavioral adherence and glycated hemoglobin reduction.53 These measures provide objective evidence linking 
+peer support to improved outcomes.
+Family support covers many aspects, including emotional encouragement, such as praise for the efforts of family 
+members to achieve their goals; there are also instrumental help, such as preparing healthy meals for the family, 
+participating in sports activities together.For the level and quality of this kind of family support, objective measurement 
+should be carried out with the help of verified psychological measurement tools. The Diabetes Family Behavior Scale 
+(DFBC) is recommended, which can quantify the frequency of supportive behaviors and hindrance behaviors directly 
+related to diabetes management.t. 54 This evaluation can then inform the provision of tailored diabetes self-management 
+education and support (DSMES), which is crucial for empowering all patients. 20 Evidence confirms that high-intensity 
+https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2025:18 3682
+Wang et al                                                                                                                                                                           
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+engagement with DSMES (eg, >10 hours over 6–12 months) is associated with significantly lower glycated hemoglobin 
+and mortality rates.This dose-response relationship strengthens the recommendation for universal access by moving from 
+principle to evidence-based practice.55 A key challenge, however, lies in the equitable access and uptake of these support 
+programs, which can be hindered by socioeconomic factors, cultural barriers, and lack of referral infrastructure, 
+potentially limiting their real-world impact.Thus, the critical issue shifts from efficacy (which is established) to 
+effectiveness and implementation in diverse healthcare settings.
+Avoidance of Risky Substances
+The management of recreational substances (eg, alcohol, marijuana, and tobacco) introduces another layer of complexity, 
+as they can detrimentally affect general health and directly impair diabetes management.56 These substances can decrease 
+glycaemic control, raise the risk of diabetes-related complications, and interfere with the metabolism of glycaemic drugs. 
+This is particularly nuanced for tobacco use: while quitting smoking improves insulin sensitivity and long-term 
+glycaemic control, clinicians must be aware that the cessation process itself can cause transient glycaemic fluctuations, 
+often attributable to post-cessation weight gain.57,58 Therefore, smoking cessation counseling for patients with T2D must 
+be integrated with concurrent, proactive weight management strategies to mitigate this risk and achieve net benefit.
+A Quality Control Measure for the Treatment of T2D and Obesity is Long-T erm 
+Follow-Up
+Regular follow-up is necessary for high-risk patients (such as those who use insulin or have concomitant cardiovascular 
+disease) in order to closely evaluate treatment outcomes and adverse medication responses. Research has demonstrated 
+that tracking weight and waist circumference once a week during the first three months of weight loss is a useful way to 
+evaluate the impact of the intervention. After six months, this can be changed to a monthly follow-up. 7,25 In addition to 
+enabling prompt treatment plan modifications, a staged follow-up program enhances patient compliance by routine 
+evaluation, which is especially crucial for sustaining long-term weight loss.Rather than inherent drawbacks, the main 
+limitation of this proposed follow-up schedule is its potential rigidity. The evidence supports the value of frequent 
+monitoring but does not preclude the need for personalization. Therefore, in practical application, the follow-up 
+programme should be flexibly adjusted according to the individual patient’s situation and weight maintenance effect, 
+and combined with other interventions to improve the weight loss effect and patient adherence.This tailored approach 
+addresses the concern of individual differences without dismissing the strong evidence for structured follow-up.
+Conclusion
+In conclusion, this evidence synthesis establishes that comprehensive, multidisciplinary lifestyle intervention serves as 
+the cornerstone of management for T2D and obesity. Our analysis, structured around five core themes including 
+necessity, assessment and monitoring, multidisciplinary management, a multidimensional system, and long-term follow- 
+up, demonstrates that interventions built on the six pillars of nutrition, physical activity, stress management, sleep, social 
+support, and avoidance of risky substances are of paramount clinical significance. The most important findings confirm 
+that such structured strategies yield sustained improvements in glycemic control, such as glycated hemoglobin reduction, 
+promote clinically meaningful weight loss, reduce cardiovascular risk factors, and enhance overall quality of life. These 
+outcomes collectively surpass conventional glucose-centric approaches.
+The synthesis incorporated evidence of varying methodological quality, which was addressed through a weight-of- 
+evidence methodology. This allowed our strongest recommendations to be grounded in the most rigorous reviews, while 
+less robust studies provided contextual insight and helped identify future research priorities.
+Crucially, implementing these findings requires individualized consideration of patient preferences, metabolic phe -
+notypes, and psychosocial circumstances. Tools such as shared decision-making aids, digital health platforms, and 
+validated psychosocial assessments can support personalized application. For practical implementation, we recommend 
+integrated training for multidisciplinary care teams focused on the core pillars, along with the incorporation of structured 
+lifestyle goal-setting into routine clinical workflows.Future research should focus on practical, real-world studies that test 
+how well these lifestyle interventions work in routine clinical practice, especially over the long term. Key priorities 
+Diabetes, Metabolic Syndrome and Obesity 2025:18                                                                          https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                   3683
+Wang et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+include finding effective ways to maintain patient progress, comparing different dietary approaches in typical community 
+settings, and adapting programs for underserved groups using available local resources. Ultimately, sustaining outcomes 
+hinges on integrating evidence-based lifestyle management into coordinated, patient-centered chronic care systems.
+Data Sharing Statement
+Data sharing is not applicable to this article as no data were created or analysed in this study.
+Acknowledgments
+The writers would like to express their gratitude to each and every co-author for their invaluable contributions to this 
+work. Their knowledge and commitment were crucial to finishing this paper. We truly value the helpful criticism from the 
+anonymous reviewers, whose perceptive recommendations greatly improved the caliber of this work.
+Author Contributions
+The individual contributions of authors to this work are as follows, in accordance with the CRediT taxonomy:
+Huan Wang: Conceptualization, Methodology, Writing - original draft, Writing - review & editing
+Fei Chen (Corresponding Author): Supervision, Project administration, Funding acquisition, Writing - review & editing
+Qiongdan Zhang: Data curation, Formal analysis, Visualization,Writing - review & editing
+Juan Chen: Investigation, Resources, Validation, Writing - review & editing
+Wenjie Zhang: Methodology, Software, Writing - review & editing
+Lixue Fang: Investigation, Resources, Data curation, Writing - review & editing
+Piao Xiong: Formal analysis, Visualization, Writing - original draft, Writing - review & editing
+All authors have read and agreed to the published version of the manuscript; agreed on the journal to which the article 
+has been submitted; and agree to be accountable for all aspects of the work.
+Funding
+No funding was received.
+Disclosure
+The author report no conflicts of interest in this work.
+References
+1. World Obesity Federation. World Obesity Atlas 2025 . London: World Obesity Federation; 2025.
+2. Zeng Q, Xu J, Mu X, et al. Safety issues of tirzepatide (pancreatitis and gallbladder or biliary disease) in type 2 diabetes and obesity: a systematic 
+review and meta-analysis. Front Endocrinol. 2023;14:1214334. doi:10.3389/fendo.2023.1214334
+3. International Diabetes Federation. IDF Diabetes Atlas . 10th ed. Brussels: IDF; 2022.
+4. Ruze R, Liu T, Zou X, et al. Obesity and type 2 diabetes mellitus: connections in epidemiology, pathogenesis, and treatments. Front Endocrinol. 
+2023;14:1161521. doi:10.3389/fendo.2023.1161521
+5. Lanting SM, Way K, Sabag A, et al. Degree of adiposity and obesity severity is associated with cutaneous microvascular dysfunction in type 2 
+diabetes. Microvasc Res. 2021;136:104149. doi:10.1016/j.mvr.2021.104149
+6. Laukkanen JA, Kurl S, V outilainen A, et al. Cardiorespiratory fitness, inflammation, and risk of sudden cardiac death in middle-aged men. Am 
+J Cardiol. 2022;174:166–171. doi:10.1016/j.amjcard.2022.03.032
+7. Davies MJ, Aroda VR, Collins BS, et al. Management of hyperglycemia in type 2 diabetes, 2022. A consensus report by the American Diabetes 
+Association (ADA) and the European Association for the Study of Diabetes (EASD). Diabetes Care. 2022;45(11):2753–2786. doi:10.2337/dci22- 
+0034
+8. Lingvay I, Sumithran P, Cohen RV , et al. Obesity management as a primary treatment goal for type 2 diabetes: time to reframe the conversation. 
+Lancet. 2022;399(10322):394–405. doi:(21)01919-X",1,0,0>10.1016/S0140-6736(21)01919-X
+9. AGREE Next Steps Consortium. AGREE II Users’ Manual; 2017. Available from: https://www.agreetrust.org/. Accessed July 1, 2024.
+10. Shea BJ, Reeves BC, Wells G, et al. AMSTAR 2: a critical appraisal tool for systematic reviews. BMJ. 2017;358:j4008. doi:10.1136/bmj.j4008
+11. Aromataris E, Fernandez R, Godfrey CM, et al. Summarizing systematic reviews: methodological development, conduct and reporting of an 
+umbrella review approach. Int J Evid Based Healthc . 2015;13(3):132–140. doi:10.1097/XEB.0000000000000055
+12. Foster MJ, Shurtz S. Critical appraisal of summaries of evidence for evidence-based medicine. J Med Libr Assoc . 2013;101(3):192–198. 
+doi:10.3163/1536-5050.101.3.008
+13. Joanna Briggs Institute Levels of Evidence and Grades of Recommendation Working Party. Supporting document for the Joanna Briggs Institute 
+levels of evidence and grades of recommendation. Joanna Briggs Institute; 2014. Available from: https://joannabriggs.org/. Accessed July 1, 2024.
+https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                                                  Diabetes, Metabolic Syndrome and Obesity 2025:18 3684
+Wang et al                                                                                                                                                                           
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+14. Page MJ, McKenzie JE, Bossuyt PM, et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ. 2021;372: 
+n71. doi:10.1136/bmj.n71
+15. National Center of Gerontology, Chinese Diabetes Society, China Sport Science Society. Guideline for exercise therapy of type 2 diabetes mellitus 
+in China (2024). Chin J Sports Med . 2024;43(6):419–451. doi:10.3969/j.issn.1000-6710.2024.06.001
+16. Diabetes Prevention and Control Committee of Chinese Preventive Medicine Association. Chinese diabetes behavior and lifestyle intervention 
+guidelines(2024). Chin General Practice . 2025;28(7):777–796. doi:10.12114/j.issn.1007-9572.2024.0548
+17. National Institute for Health and Care Excellence. Overweight and obesity management (NG246). NICE; 2025. Available from: https://www.nice. 
+org.uk/guidance/ng246. Accessed July 1, 2024.
+18. International Diabetes Federation. IDF clinical practice recommendations for type 2 diabetes 2025. IDF; 2025. https://idf.org/what-we-do/educa 
+tion/idf-clinical-practice-recommendations-for-type-2-diabetes-2025/. Accessed July 1, 2024.
+19. Rosenfeld RM, Grega ML, Karlsen MC, et al. Lifestyle interventions for treatment and remission of type 2 diabetes and prediabetes in adults: 
+a clinical practice guideline from the American College of Lifestyle Medicine. Am J Lifestyle Med . 2025;19(2 Suppl):10S–131S. doi:10.1177/ 
+15598276251325488
+20. American Diabetes Association Professional Practice Committee. 8. Obesity and weight management for the prevention and treatment of type 2 
+diabetes: standards of care in diabetes-2025. Diabetes Care. 2025;48(1 Suppl 1):S167–S180. doi:S008",1,0,0>10.2337/dc25-S008
+21. Churuangsuk C, Hall J, Reynolds A, et al. Diets for weight management in adults with type 2 diabetes: an umbrella review of published 
+meta-analyses and systematic review of trials of diets for diabetes remission. Diabetologia. 2022;65(1):14–36. doi:10.1007/s00125-021-05577-2
+22. Gostoli S, Raimondi G, Popa AP, et al. Behavioral lifestyle interventions for weight loss in overweight or obese patients with type 2 diabetes: 
+a systematic review of the literature. Curr Obes Rep . 2024;13(2):224–241. doi:10.1007/s13679-024-00552-5
+23. Liu RY , Dong CY , Huang ZY , et al. Study on the health effects of exercise combined with dietary intervention in obese individuals with type 2 
+diabetes mellitus. Chin Prev Med. 2024;25(4):436–444. doi:10.16506/j.1009-6639.2024.04.008
+24. Kanaley JA, Colberg SR, Corcoran MH, et al. Exercise/physical activity in individuals with type 2 diabetes: a consensus statement from the 
+American College of Sports Medicine. Med Sci Sports Exerc . 2022;54(2):353–368. doi:10.1249/MSS.0000000000002800
+25. Yang Y , Chen Y , Zhang H, et al. Expert consensus on weight management in patients with diabetes mellitus(2024). Chin J Diabetes Mellitus . 
+2024;16(9):959–971. doi:10.3760/cma.j.cn115791-20240731-00396
+26. Delahanty LM. Medical nutrition therapy for type 2 diabetes mellitus. UpToDate; 2025. Available from: https://www.uptodate.com. Accessed July 
+1, 2024.
+27. Lean M, Leslie WS, Barnes AC, et al. Durability of a primary care-led weight management intervention for remission of type 2 diabetes. Lancet 
+Diabetes Endocrinol. 2019;7(5):344–355. doi:(19)30068-3",1,0,0>10.1016/S2213-8587(19)30068-3
+28. Wing RR, Lang W, Wadden TA, et al. Benefits of modest weight loss in overweight/obese individuals with type 2 diabetes. Diabetes Care. 2011;34 
+(7):1481–1486. doi:10.2337/dc10-2415
+29. Lean ME, Leslie WS, Barnes AC, et al. 5-year follow-up of the randomised Diabetes Remission Clinical Trial (DiRECT) of continued support for 
+weight loss maintenance in the UK: an extension study. Lancet Diabetes Endocrinol . 2024;12(6):e17. doi:(24)00128-1",1,0,0>10.1016/S2213- 
+8587(24)00128-1
+30. St-Jules DE, Hu L, Woolf K, et al. Technology-supported counseling for behavior changes in type 2 diabetes. J Ren Nutr . 2023;33(1):35–44. 
+doi:10.1053/j.jrn.2022.08.003
+31. Ge HY , Li XY , Jin LL, Wu QQ, Kong LP. Study on adherence to self-monitoring of blood glucose and its influencing factors in elderly patients with 
+type 2 diabetes mellitus. Chin J Health Stat . 2022;39(5):717–720. doi:10.3969/j.issn.1002-3674.2022.05.017
+32. Mao YQ, Kang DD, Zhang BW, Xiao JW, Ma WJ. Research progress of multidisciplinary team diagnosis and treatment model in China and abroad. 
+Chinese Hospitals. 2022;26(3):18–21. doi:10.19660/j.issn.1671-0592.2022.3.05
+33. Han Y , Ye X, Li X, et al. Online vs conventional weight loss program in type 2 diabetes. Int J Nurs Pract . 2023;29(1):e13126. doi:10.1111/ 
+ijn.13126
+34. Powers MA, Bardsley JK, Cypress M, et al. Diabetes self-management education and support. J Acad Nutr Diet . 2021;121(4):773–788.e9. 
+doi:10.1016/j.jand.2020.04.020
+35. Morgan-Bathke M, Baxter SD, Halliday TM, et al. Dietitian-provided weight management interventions. J Acad Nutr Diet . 2023;123(11):1621– 
+1661.e25. doi:10.1016/j.jand.2022.03.014
+36. Huo R, Du T, Xu Y , et al. Mediterranean-style diet in type 2 diabetes. Eur J Clin Nutr . 2015;69(11):1200–1208. doi:10.1038/ejcn.2014.243
+37. Caprio M, Infante M, Moriconi E, et al. Very-low-calorie ketogenic diet in metabolic diseases. J Endocrinol Invest . 2019;42(11):1365–1386. 
+doi:10.1007/s40618-019-01061-2
+38. Sellahewa L, Khan C, Lakkunarajah S, Idris I. A systematic review of evidence on the use of very low calorie diets in people with diabetes. Curr 
+Diabetes Rev. 2017;13(1):35–46. doi:10.2174/1573399812666151005123431
+39. Bennasar-Veny M, Malih N, Galmes-Panades AM, et al. Effect of physical activity on glycemic control in prediabetes. Front Endocrinol . 
+2023;14:1233312. doi:10.3389/fendo.2023.1233312
+40. Huang L, Fang Y , Tang L. Exercise interventions for glycemic control in prediabetes. BMC Endocr Disord. 2021;21(1):181. doi:10.1186/s12902- 
+021-00846-y
+41. Eshete A, Mohammed S, Deresse T, et al. Stress management training for blood glucose control. Diabetol Metab Syndr. 2018;10:39. doi:10.1186/ 
+s13098-018-0342-5
+42. Lee EH. Psychometric evidence of the perceived stress scale. Asian Nurs Res . 2012;6(4):121–127. doi:10.1016/j.anr.2012.08.004
+43. Kroenke K, Spitzer RL, Williams JB. Validity of a two-item depression screener. Med Care . 2003;41(11):1284–1292. doi:10.1097/01. 
+MLR.0000093487.78664.3c
+44. Sapra A, Bhandari P, Sharma S, et al. Using GAD-2 and GAD-7 in primary care. Cureus. 2020;12(5):e8224. doi:10.7759/cureus.8224
+45. Abbas Q, Latif S, Habib HA, et al. Cognitive behavior therapy for diabetes distress. BMC Psychiatry. 2023;23(1):86. doi:10.1186/s12888-023- 
+04546-w
+46. Zamani-Alavijeh F, Araban M, Koohestani HR, et al. Stress management in type 2 diabetes. Diabetol Metab Syndr . 2018;10:39. doi:10.1186/ 
+s13098-018-0342-5
+Diabetes, Metabolic Syndrome and Obesity 2025:18                                                                          https://doi.org/10.2147/DMSO.S550776                                                                                                                                                                                                                                                                                                                                                                                                   3685
+Wang et al
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)
+47. Zamani-Alavijeh F, Araban M, Koohestani HR, Karimy M. The effectiveness of stress management training on blood glucose control in patients 
+with type 2 diabetes. Diabetol Metab Syndr. 2018;10:39. doi:10.1186/s13098-018-0342-5
+48. Schipper SBJ, Van Veen MM, Elders PJM, et al. Sleep disorders in type 2 diabetes. Diabetologia. 2021;64(11):2367–2377. doi:10.1007/s00125- 
+021-05541-0
+49. Azharuddin M, Kapur P, Adil M, et al. Sleep and glycemic control in Asians with diabetes. Clin Epidemiol Glob Health . 2020;8(3):967–975. 
+doi:10.1016/j.cegh.2020.03.006
+50. Borel AL, Monneret D, Tamisier R, et al. The severity of nocturnal hypoxia but not abdominal adiposity is associated with insulin resistance in 
+non-obese men with sleep apnea. PLoS One. 2013;8(8):e71000. doi:10.1371/journal.pone.0071000
+51. Lindberg E, Theorell-Haglöw J, Svensson M, Gislason T, Berne C, Janson C. Sleep apnea and glucose metabolism: a long-term follow-up in a 
+community-based sample. Chest. 2012;142(4):935–942. doi:10.1378/chest.11-1844
+52. International Diabetes Federation. IDF consensus statement on sleep apnoea and type 2 diabetes; 2024. Available from: https://idf.org/. Accessed 
+July 1, 2024.
+53. Werner JJ, Ufholz K, Yamajala P. Recent findings on the effectiveness of peer support for patients with type 2 diabetes. Curr Cardiovasc Risk Rep. 
+2024;18:65–79. doi:10.1007/s12170-024-00737-6
+54. Glasgow RE, Toobert DJ. Social environment and regimen adherence among type II diabetic patients. Diabetes Care . 1988;11(5):377–386. 
+doi:10.2337/diacare.11.5.377
+55. American Diabetes Association. Standards of medical care in diabetes-2021. Clin Diabetes. 2021;39(1):14–43. doi:as01",1,0,0>10.2337/cd21-as01
+56. Alshahrani A, Fathelrahman AI, Ashour AM, et al. Smoking cessation impacts on glycemic control. Lat Am J Pharm . 2022;41(12):2446–2452.
+57. Pezzuto A, Ricci A, D’Ascanio M, et al. Benefits of smoking cessation. Int J Chron Obstruct Pulmon Dis. 2023;18:2861–2865. doi:10.2147/COPD. 
+S423148
+58. Bush T, Lovejoy JC, Deprey M, et al. Tobacco cessation effects on weight and diabetes risk. Obesity. 2016;24(9):1834–1841. doi:10.1002/ 
+oby.21582
+Diabetes, Metabolic Syndrome and Obesity                                                                                 
+Publish your work in this journal 
+Diabetes, Metabolic Syndrome and Obesity is an international, peer-reviewed open-access journal committed to the rapid publication of the 
+latest laboratory and clinical findings in the fields of diabetes, metabolic syndrome and obesity research. Original research, review, case reports, 
+hypothesis formation, expert opinion and commentaries are all considered for publication. The manuscript management system is completely 
+online and includes a very quick and fair peer-review system, which is all easy to use. Visit http://www.dovepress.com/testimonials.php to 
+read real quotes from published authors.  
+Submit your manuscript here: https://www.dovepress.com/diabetes-metabolic-syndrome-and-obesity-journal
+Diabetes, Metabolic Syndrome and Obesity 2025:18 3686
+Wang et al                                                                                                                                                                           
+Powered by TCPDF (www.tcpdf.org)
+Powered by TCPDF (www.tcpdf.org)

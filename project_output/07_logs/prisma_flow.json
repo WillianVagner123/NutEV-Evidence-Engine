@@ -1,0 +1,13 @@
+{
+  "registros_identificados": 1235,
+  "duplicados_removidos": 47,
+  "registros_triados": 1188,
+  "registros_excluidos": 1046,
+  "docs_texto_extraido": 142,
+  "docs_analisados": 1235,
+  "docs_priorizados": 954,
+  "class_evidence_table": 392,
+  "class_protocol_rule": 93,
+  "class_questionnaire_item_candidate": 179,
+  "class_framework_component": 82
+}

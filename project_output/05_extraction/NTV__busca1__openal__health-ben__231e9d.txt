@@ -1,0 +1,1176 @@
+P
+hysical inactivity is a modifiable risk factor for cardio-
+vascular disease and a widening variety of other chronic
+diseases, including diabetes mellitus, cancer (colon and
+breast), obesity, hypertension, bone and joint diseases (osteo-
+porosis and osteoarthritis), and depression.
+1–14 The prevalence
+of physical inactivity (among 51% of adult Canadians) is
+higher than that of all other modifiable risk factors.
+15 In this
+article we review the current evidence relating to physical activ-
+ity in the primary and secondary prevention of premature
+death from any cause, cardiovascular disease, diabetes, some
+cancers and osteoporosis. We also discuss the evidence relat-
+ing to physical fitness and musculoskeletal fitness and briefly
+describe the independent effects of frequency and intensity of
+physical activity. (A glossary of terms related to the topic ap-
+pears in Appendix 1). In a companion paper, to be published
+in the Mar. 28 issue, we will review how to evaluate the health-
+related physical fitness and activity levels of patients and will
+provide exercise recommendations for health.
+Several authors have attempted to summarize the evidence
+in systematic reviews and meta-analyses. These evaluations
+are often overlapping (reviewing the same evidence). Some of
+the most commonly cited cohorts have been described in dif-
+ferent studies over time as more data accumulate (see Appen-
+dix 2, available online at www.cmaj.ca/cgi/content/full/174/6
+/801/DC1). In this review, we searched the literature using the
+key words “physical activity,” “health,” “health status,” “fit -
+ness,” “exercise,” “chronic disease,” “mortality” and disease-
+specific terms (e.g., “cardiovascular disease,” “cancer,” “dia-
+betes” and “osteoporosis”). Using our best judgment, we se-
+lected individual studies that were frequently included in sys-
+tematic reviews, consensus statements and meta-analyses
+and considered them as examples of the best evidence avail-
+able. We also have included important new findings regard-
+ing the relation between physical activity and fitness and all-
+cause and cardiovascular-related mortality.
+All-cause and cardiovascular-related death
+Primary prevention
+Since the seminal work of Morris and colleagues in the
+1950s16,17 and the early work of Paffenbarger and colleagues
+in the 1970s, 18,19 there have been numerous long-term
+prospective follow-up studies (mainly involving men but
+more recently women also) that have assessed the relative risk
+of death from any cause and from specific diseases (e.g., car-
+ciovascular disease) associated with physical inactivity.
+6,20–26
+Both men and women who reported increased levels of
+physical activity and fitness were found to have reductions in
+relative risk (by about 20%–35%
+27,28) of death (see Appendix
+2, available at www.cmaj.ca/cgi/content/full/174/6/801/DC1).
+For example, in a study involving healthy middle-aged men
+and women followed up for 8 years, the lowest quintiles of
+physical fitness, as measured on an exercise treadmill, were
+associated with an increased risk of death from any cause
+compared with the top quintile for fitness (relative risk
+among men 3.4, 95% confidence interval [CI] 2.0 to 5.8, and
+among women 4.7, 95% CI 2.2 to 9.8).
+7
+Recent investigations have revealed even greater reductions
+in the risk of death from any cause and from cardiovascular
+disease. For instance, being fit or active was associated with a
+greater than 50% reduction in risk.
+29 Furthermore, an increase
+in energy expenditure from physical activity of 1000kcal (4200
+kJ) per week or an increase in physical fitness of 1 MET (meta-
+bolic equivalent) was associated with a mortality benefit of
+about 20%. Physically inactive middle-aged women (engaging
+in less than 1 hour of exercise per week) experienced a 52% in-
+crease in all-cause mortality, a doubling of cardiovascular-
+related mortality and a 29% increase in cancer-related mortality
+compared with physically active women.
+30 These relative risks
+are similar to those for hypertension, hypercholesterolemia
+and obesity, and they approach those associated with moderate
+cigarette smoking. Moreover, it appears that people who are fit
+CMAJ • March 14, 2006 • 174(6)     |      801
+© 2006 CMA Media Inc. or its licensors
+DOI:10.1503/cmaj.051351
+Darren E.R. Warburton, Crystal Whitney Nicol, Shannon S.D. Bredin
+Health benefits of physical activity: the evidence
+Review
+The primary purpose of this narrative review was to evaluate
+the current literature and to provide further insight into the
+role physical inactivity plays in the development of chronic dis-
+ease and premature death. We confirm that there is irrefutable
+evidence of the effectiveness of regular physical activity in the
+primary and secondary prevention of several chronic diseases
+(e.g., cardiovascular disease, diabetes, cancer, hypertension,
+obesity, depression and osteoporosis) and premature death.
+We also reveal that the current Health Canada physical activity
+guidelines are sufficient to elicit health benefits, especially in
+previously sedentary people. There appears to be a linear rela-
+tion between physical activity and health status, such that a
+further increase in physical activity and fitness will lead to addi-
+tional improvements in health status.
+Abstract
+CMAJ 2006;174(6):801-9
+ 
+yet have other risk factors for cardiovascular disease (see Fig. 1)
+may be at lower risk of premature death than people who are
+sedentary with no risk factors for cardiovascular disease.31–33
+An increase in physical fitness will reduce the risk of pre-
+mature death, and a decrease in physical fitness will increase
+the risk.
+34–37 The effect appears to be graded,34,35 such that even
+small improvements in physical fitness are associated with a
+significant reduction in risk (Fig. 2). In one study, 35 partici-
+pants with the highest levels of physical fitness at baseline and
+who maintained or improved their physical fitness over a pro-
+longed period had the lowest risk of premature death (Fig. 2).
+Modest enhancements in physical fitness in previously seden-
+tary people have been associated with large improvements in
+health status.
+38 For instance, in another study, people who
+went from unfit to fit over a 5-year period had a reduction of
+44% in the relative risk of death compared with people who re-
+mained unfit.
+36
+A recent systematic review of the literature regarding pri-
+mary prevention in women39 revealed that there was a graded
+inverse relation between physical activity and the risk of car-
+diovascular-related death, with the most active women having
+a relative risk of 0.67 (95% CI 0.52 to 0.85) compared with
+the least active group. These protective effects were seen with
+as little as 
+1 hour of walking per week.
+In summary, observational studies provide compelling evi-
+dence that regular physical activity and a high fitness level are
+associated with a reduced risk of premature death from any
+cause and from cardiovascular disease in particular among
+asymptomatic men and women. Furthermore, a dose–
+response relation appears to exist, such that people who have
+the highest levels of physical activity and fitness are at lowest
+risk of premature death (as discussed later).
+Secondary prevention of cardiovascular disease
+The benefits of physical activity and fitness extend to patients
+with established cardiovascular disease.40,41 This is important
+because, for a long time, rest and physical inactivity had been
+recommended for patients with heart disease. Unlike studies
+of primary prevention, many studies of secondary prevention
+are RCTs (see Appendix 2, available at www.cmaj.ca/cgi
+/content/full/174/6/801/DC1). Several systematic reviews have
+clearly shown the importance of engaging in regular exercise
+to attenuate or reverse the disease process in patients with car-
+diovascular disease. For instance,  a systematic review and
+meta-analysis of 48 clinical trials
+5 revealed that, compared
+with usual care, cardiac rehabilitation significantly reduced
+the incidence of premature death from any cause and from
+cardiovascular disease in particular. An energy expenditure of
+about 1600 kcal (6720 kJ) per week has been found to be effec-
+tive in halting the progression of coronary artery disease, and
+an energy expenditure of about 2200 kcal (9240 kJ) per week
+has been shown to be associated with plaque reduction in pa-
+tients with heart disease.
+42,43 Low-intensity exercise training
+(e.g., exercise at less than 45% of maximum aerobic power)
+has also been associated with an improvement in health status
+among patients with cardiovascular disease.
+44
+However, the minimum training intensity rec -
+ommended for patients with heart disease is gen-
+erally 45% of heart rate reserve.
+43
+In summary, regular physical activity is clearly
+effective in the secondary prevention of cardiovas-
+cular disease and is effective in attenuating the
+risk of premature death among men and women.
+Diabetes mellitus
+Primary prevention
+Both aerobic and resistance types of exercise have
+been shown to be associated with a decreased risk
+of type 2 diabetes.
+9,10,45–48 In a large prospective
+study,46 each increase of 500 kcal (2100 kJ) in en-
+ergy expenditure per week was associated with a
+decreased incidence of type 2 diabetes of 6% (rela-
+tive risk 0.94, 95% CI –0.90 to 0.98)). This benefit
+was particularly evident among people at high risk
+of diabetes (i.e., those with a high body mass
+index), a finding that has been supported by sev-
+eral other investigators.
+47,49 For instance, among
+21 271 male physicians, those who reported week-
+ly physical activity sufficient to cause a sweat had a
+reduced incidence of type 2 diabetes.47 Moderately
+intense levels of physical activity (≥ 5.5 METs for
+at least 40 minutes per week) and of cardiovascu-
+lar fitness (>31 mL oxygen per kilogram per min-
+CMAJ • March 14, 2006 • 174(6)     |      802
+Review
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+4.0
+Hypertension COPD Diabetes Smoking B MIT C
+Relative risk of death
+> 8 METs (n = 2743) 
+ 5–8 METs (n = 1885) 
+ < 5 METs (n 1585) 
+Fig. 1: Relative risks of death from any cause among participants with various risk
+factors (e.g., history of hypertension, chronic obstructive pulmonary disease
+[COPD], diabetes, smoking, elevated body mass index [BMI ≥ 30] and high total
+cholesterol level [TC ≥ 5.70 mmol/L) who achieved an exercise capacity of less than
+5 METs (metabolic equivalents) or 5–8 METs, as compared with participants whose
+exercise capacity was more than 8 METs. Error bars represent 95% confidence in-
+tervals. Adapted, with permission, from Myers et al
+38 (N Engl J Med 2002;346:793-
+801). Copyright ©2002 Massachusetts Medical Society. All rights reserved.
+ute) have also been shown to be protective against the develop-
+ment of type 2 diabetes in middle-aged men, 48 with an even
+greater effect among those at high risk of diabetes.
+Several investigators have reported a reduced incidence of
+type 2 diabetes among high-risk people (e.g., those who are
+overweight) after lifestyle interventions.
+50,51 A review of RCTs on
+the topic52 concluded that modest weight loss through diet and
+exercise reduced the incidence of the disease among high-risk
+people by about 40%–60% over 3–4 years. In one of the RCTs,
+53
+a lifestyle intervention that included moderate physical activity
+for at least 150 minutes per week was found to be more effective
+than metformin alone in reducing the incidence of diabetes. It
+showed that only 7 people would need to be “treated” with the
+lifestyle intervention to prevent a single case of diabetes over a 3-
+year period, compared with 14 people given metformin.
+53
+In summary, increasing research supports the importance
+of regular physical activity for the primary prevention of type
+2 diabetes. Further research is warranted to uncover the ideal
+methods (e.g., resistance v. aerobic training) and intensity
+levels of exercise.
+Secondary prevention
+Exercise interventions are also effective in the management of
+diabetes. One prospective cohort study showed that walking at
+least 2 hours per week was associated with a reduction in the
+incidence of premature death of 39%–54% from any cause and
+of 34%–53% from cardiovascular disease among patients with
+diabetes.
+49 Moreover, walking that led to moderate increases in
+heart and breathing rates was associated with significant re -
+ductions in all-cause mortality (hazard rate ratio 0.57, 95% CI
+0.41 to 0.80) and cardiovascular-related mortality (hazard rate
+ratio 0.69, 95% CI 0.43 to 1.09).
+49 In another cohort study,54
+physically inactive men with established type 2 diabetes had a
+1.7-fold increased risk of premature death compared with
+physically active men with type 2 diabetes. This difference has
+also been observed among people with metabolic syndrome.
+55
+Several clinical trials have been conducted on the topic.56–63
+Both aerobic and resistance training have been shown to be of
+benefit for the control of diabetes; however, resistance training
+may have greater benefits for glycemic control than aerobic
+training may have.58 A meta-analysis of 14 controlled trials (11
+randomized) revealed that exercise interventions resulted in a
+small but clinically and statistically significant reduction in gly-
+cosylated hemoglobin (0.66%) compared with no exercise in-
+tervention;
+64 in most of the trials, participants in both the exer-
+cise and control groups were treated concurrently with oral
+hypoglycemic agents. This level of change is similar to that ob-
+served in studies comparing intensive glucose-lowering ther-
+apy with conventional treatments, a change that is known to be
+associated with a 42% reduction in diabetes-related mortality.
+64
+In summary, exercise interventions for patients with dia-
+betes are beneficial in improving glucose homeostasis. Pros-
+pective studies with adequate follow-up show a strong associ-
+ation between exercise and reduced rates of death from any
+cause and from diabetes in particular. Future research will
+need to concentrate on examining the effects of dose (inten -
+sity and frequency of exercise).
+Cancer
+Primary prevention
+Several seminal reviews have been published regarding the re-
+lation between cancer and routine physical activity65–67 (see Ap-
+pendix 2, available at www.cmaj.ca/cgi/content/full/174/6
+/801/DC1). Of the available literature (including over 100 epi-
+demiologic studies65), it appears that routine physical activity,
+whether as part of a job or as a leisure activity, is associated
+with reductions in the incidence of specific cancers, in particu-
+lar colon and breast cancer. 67–71 A systematic review of epi -
+demiologic studies revealed that moderate physical activity
+(> 4.5 METs [equivalent to mowing the lawn]) was associated
+with a greater protective effect than activities of less intensity.
+65
+Physically active men and women exhibited a 30%–40% reduc-
+tion in the relative risk of colon cancer, and physically active
+women a 20%–30% reduction in the relative risk of breast can-
+cer compared with their inactive counterparts.
+65
+In summary, there is compelling evidence that routine
+physical activity is associated with reductions in the incidence
+of specific cancers, in particular breast and colon cancer.
+Secondary prevention
+There is a paucity of information regarding the effectiveness of
+physical activity in preventing death from cancer or from any
+cause in patients with cancer. An early (5.5-year) follow-up
+study involving women with breast cancer revealed little associ-
+CMAJ • March 14, 2006 • 174(6)     |      803
+Review
+Q1 Q2 Q3 Q4 
+Q1 (PF2/PF1)
+Q2 (PF2/PF1)
+Q3 (PF2/PF1)
+Q4 (PF2/PF1)
+0
+5
+10 
+15 
+20 
+25 
+30 
+Baseline fitness quartile
+13-yr all-cause mortality
+(N = 357 events)
+Change in physical
+fitness quartile
+Fig. 2: Relation between changes in physical fitness and
+changes in mortality over time. Participants were evaluated at
+baseline (PF1) and again 13 years later (PF2). The ratio of
+PF2/PF1 
+× 100 was calculated to evaluate changes in physical
+fitness over the study period compared with fitness level at
+baseline. For this figure, participants were grouped according
+to fitness quartiles (Q1 = least fit, Q4 = most fit) for the baseline
+evaluation and to quartiles for change in fitness from baseline
+to 13-year follow-up (Q1 PF2/PF1 = least change, Q4 PF2/PF1 =
+most change). Adapted, with permission, from Erikssen et al
+35
+(Lancet 1998;352:759-62).
+ation between total recreational physical activity and the risk of
+death from breast cancer;72 however, the study had some im-
+portant limitations.73 Two recent follow-up studies involving
+cancer patients (breast and colon cancer) revealed that in-
+creased self-reported physical activity was associated with a de-
+creased recurrence of cancer and risk of death from cancer.
+74,75
+One investigation74 revealed a reduction of 26%–40% in the rel-
+ative risk of cancer-related death and recurrence of breast can-
+cer among the most active women compared with the least ac-
+tive. Other studies have shown similar associations.
+75,76 There
+are ongoing efforts to try to understand the mechanism of this
+survival effect, including the effects of exercise on the effective-
+ness of chemotherapy.
+77 Regular physical activity has also been
+shown to be associated with an improvement in overall quality
+of life and health status of patients with cancer.
+78–82
+In summary, regular physical activity appears to confer a
+health benefit to patients with established cancer. However,
+further research is warranted to examine its role in the sec-
+ondary prevention of cancer. In particular, large RCTs evalu-
+ating the effectiveness of an exercise intervention are required
+to fully elucidate the importance of regular physical activity
+for the health status of patients with cancer.
+Osteoporosis
+Primary prevention
+Weight-bearing exercise, especially resistance exercise, ap-
+pears to have the greatest effects on bone mineral density. In
+one review,
+10 several cross-sectional reports revealed that
+people who did resistance training had increased bone min-
+eral density compared with those who did not do such train-
+ing. Furthermore, athletes who engaged in high-impact
+sports tended to have increased bone mineral density com-
+pared with athletes who engaged in low-impact sports.
+10
+Numerous longitudinal studies have examined the effects
+of exercise training on bone health in children, adolescents,
+and young, middle-aged and older adults (see relevant re-
+views
+83–86 and Appendix 2, available at www.cmaj.ca/cgi
+/content/full/174/6/801/DC1). Although the numbers of stud-
+ies and total participants examined are relatively small com -
+pared with those in the cardiovascular literature, there is
+compelling evidence that routine physical activity, especially
+weight-bearing and impact exercise, prevents bone loss as-
+sociated with aging. In a meta-analysis of RCTs, exercise
+training programs were found to prevent or reverse almost
+1% of bone loss per year in the lumbar spine and femoral
+neck in both pre- and postmenopausal women.
+87 Exercise
+training appears to significantly reduce the risk and number
+of falls.
+88–92
+The risk and incidence of fractures is also reduced among
+active people. 93–95 Among 3262 healthy men (mean age 44
+years) followed for 21 years,96 intense physical activity at base-
+line was associated with a reduced incidence of hip fracture
+(hazard ratio 0.38, 95% CI 0.16 to 0.91). This observation
+supports findings from an earlier investigation in which frac-
+ture rates were lower among people who performed more
+weight-bearing activities than among sedentary people.
+97
+In summary, routine physical activity appears to be impor-
+tant in preventing loss of bone mineral density and osteoporo-
+sis, particularly in postmenopausal women. The benefits clearly
+outweigh the potential risks, particularly in older people.
+Secondary prevention
+Preliminary evidence from an RCT indicates that exercise
+training is effective in improving bone density in older women
+(75–85 years of age) with low bone mineral density.98 In this 6-
+month RCT, 98 women were randomly assigned to participate
+in resistance training (
+n = 32), agility training ( n = 34) or
+stretching (sham exercise, n = 32). Agility training resulted in
+a significant increase in cortical bone density by 0.5% (stan-
+dard error of the mean [SEM] 0.2%) at the tibial shaft, and
+resistance training resulted in a significant increase in cortical
+bone density by 1.4% (SEM 0.6%) at the radial shaft; the
+stretching group experienced losses in cortical bone density.
+98
+Furthermore, a study involving early postmenopausal osteo-
+penic women revealed that a 2-year intensive training program
+was effective in attenuating the rate of bone loss.99
+In summary, preliminary evidence indicates that regular
+physical activity is an effective secondary preventive strategy
+for the maintenance of bone health and the fight against
+osteoporosis.
+Physical activity or physical fitness?
+Physical fitness refers to a physiologic state of well-being that
+allows one to meet the demands of daily living or that pro -
+vides the basis for sport performance, or both. Health-related
+physical fitness involves the components of physical fitness
+related to health status, including cardiovascular fitness,
+musculoskeletal fitness, body composition and metabolism.
+In large epidemiologic investigations, physical activity and
+physical fitness are often used interchangeably, with fitness
+commonly being treated as a more accurate (albeit indirect)
+measure of physical activity than self-report.
+100
+Physical fitness appears to be similar to physical activity in
+its relation to morbidity and mortality2,34 but is more strongly
+predictive of health outcomes than physical activity. 6,29,100
+Most analyses have shown a reduction of at least 50% in mor-
+tality among highly fit people compared with low-fit people
+(see Appendix 2, available at www.cmaj.ca/cgi/content/full
+/174/6/801/DC1).
+29
+Nonetheless, both physical activity and fitness are strong
+predictors of risk of death.29 To obtain accurate estimates of
+physical activity, many fitness consultants rely on primary
+(criterion and “gold”) standards for the measurement of en-
+ergy expenditure, such as direct observation of movement or,
+in the laboratory, the doubly labelled water technique or indi-
+rect calorimetry.
+101 On a practical basis, however, measures of
+physical activity and energy expenditure are obtained by using
+heart rate monitors and motion sensors (pedometers and ac-
+celerometers). These devices will be briefly reviewed in the
+companion article in the Mar. 28 issue.
+The assessment of physical fitness is often not feasible or
+practical in large population-based investigations. Fortu -
+CMAJ • March 14, 2006 • 174(6)     |      804
+Review
+nately such studies have consistently shown an inverse gradi-
+ent of health risk across self-reported physical activity groups.
+From a public health perspective, Blair and colleagues 6 have
+argued that it is preferable to encourage people to become
+more physically active rather than to become physically fit,
+since, as they stated, sedentary people will likely achieve the
+latter if they do the former.
+Musculoskeletal fitness: a paradigm shift
+Improvements in indicators of health status can occur as a re-
+sult of increasing physical activity levels in the absence of
+changes in aerobic fitness. This is particularly evident in el-
+derly populations, where regular physical activity can lead to
+reductions in risk factors for chronic disease and disabil-
+ity
+3,9,10 without markedly changing traditional physiologic
+performance markers (e.g., cardiac output and oxidative po-
+tential).
+3 Furthermore, routine physical activity can improve
+musculoskeletal fitness.9,10 There is increasing evidence that
+enhanced musculoskeletal fitness is associated with an im-
+provement in overall health status and a reduction in the risk
+of chronic disease and disability.
+9,10 This research has led to a
+shift in focus in research related to the health benefits of ac-
+tivities that tax the musculoskeletal system.
+Musculoskeletal fitness appears to be particularly impor-
+tant for elderly people and their ability to maintain functional
+independence. In fact, many activities of daily living do not
+require a large aerobic output but depend on one or more of
+the musculoskeletal fitness components.
+9,10 As previously
+stated,10 “Many healthy elderly people may be at or near the
+functional threshold for dependence, wherein they are in
+jeopardy of losing the capacity to carry out the activities of
+daily living. With further worsening of musculoskeletal fit-
+ness, an individual may lose the capacity to perform daily ac-
+tivities, such as getting out of a chair or climbing stairs.” This
+represents a cycle of decline, where reduced musculoskeletal
+fitness leads to inactivity and further dependence. As illus -
+trated in Fig. 3, improvements in musculoskeletal function
+have an enormous potential for delaying or eliminating the
+onset of disability, dependence and chronic disease.
+9,10 For
+instance, previous longitudinal investigations have revealed
+that people with high levels of muscular strength have fewer
+functional limitations102,103 and lower incidences of chronic
+diseases such as diabetes, stroke, arthritis, coronary artery
+disease and pulmonary disorders.
+103
+Two recent systematic reviews 9,10 have revealed that en-
+hanced musculoskeletal fitness is positively associated with
+functional independence, mobility, glucose homeostasis,
+bone health, psychological well-being and overall quality of
+life and is negatively associated with the risk of falls, illness
+and premature death. Interventions that improve musculo-
+skeletal fitness appear to be particularly important for im-
+proving the health status of frail elderly people (who have a
+low musculoskeletal reserve).
+9,10 This research has revealed
+clearly the importance of engaging in activities that tax the
+musculoskeletal system and is supported by findings from a
+recent epidemiologic investigation.
+104 This evidence provides
+direct support for the recent recommendation that resistance
+training and flexibility exercises be performed at least twice a
+week to maintain functional status, promote lifelong physical
+activity and enhance overall quality of life.3,105
+How much physical activity is enough?
+It is apparent that physical activity is essential in the preven-
+tion of chronic disease and premature death. 14 However,
+doubt remains over the optimal “volume” (frequency, dura-
+tion and intensity of exercise) and the minimum volume for
+health benefits, in particular the effects of intensity (e.g.,
+moderate v. vigorous) on health status. There is evidence that
+intensity of physical activity is inversely and linearly associ-
+ated with mortality.
+14 Early work by Paffenbarger and associ-
+ates 106 revealed that regular physical activity (expending
+> 2000 kcal [8400 kJ] per week) was associated with an aver-
+age increase in life expectancy of 1 to 2 years by the age of 80
+and that the benefits were linear even at lower levels of energy
+expenditure. Subsequent studies have shown that an average
+energy expenditure of about 1000 kcal (4200 kJ) per week is
+associated with a 20%–30% reduction in all-cause mortal -
+ity.
+14,106,107 Currently, most health and fitness organizations
+and professionals advocate a minimum volume of exercise
+that expends 1000 kcal (4200 kJ) per week and acknowledge
+the added benefits of higher energy expenditures.
+Recently, investigators have postulated that even lower
+levels of weekly energy expenditure may be associated with
+health benefits.
+107–109 A volume of exercise that is about half
+of what is currently recommended may be sufficient, 14 par-
+ticularly for people who are extremely deconditioned or are
+frail and elderly.
+6 Future research is required to determine
+whether expending as little as 500 kcal (2100 kJ) per week
+CMAJ • March 14, 2006 • 174(6)     |      805
+Review
+Musculoskeletal fitness
+10 20 30 40 50 60 70 80 
+Disability 
+Independent living 
+0 100 
+Threshold for dependence
+Age, yr
+Fig. 3: Theoretical relation between musculoskeletal fitness and
+independent living across a person’s lifespan. As a person ages,
+his or her musculoskeletal fitness (i.e., muscular strength, mus-
+cular endurance, muscular power or flexibility) declines, such
+that a small impairment may result in disability. Many elderly
+people currently live near or below the functional threshold for
+dependence. High levels of (or improvements in) musculoskele-
+tal fitness will enhance the capacity to meet the demands of
+everyday life and allow a person to maintain functional inde -
+pendence for a greater period.9,10
+offers health benefits. If so, then previously sedentary people
+may be more likely to engage in physical activity and main-
+tain an active lifestyle.
+The dose–response relation between physical activity and
+health status outlined above generally relates to cardiovascu-
+lar disease and premature death from any cause. However,
+the same may hold true for other activity-associated health
+benefits. For instance, as mentioned earlier, moderately in-
+tense levels of exercise (
+≥ 5.5 METs for at least 40 minutes
+per week) and of cardiovascular fitness (> 31 mL oxygen per
+kilogram per minute) are effective preventive strategies
+against type 2 diabetes.
+48 In patients with type 2 diabetes,
+walking more than 2 hours per week has also been shown to
+reduce the risk of premature death.
+49
+With respect to cancer, a review of the literature revealed
+that moderate physical activity (> 4.5 METs) for about 30–60
+minutes per day had a greater protective effect against colon
+and breast cancer than activities of low intensity.
+67 The great-
+est benefit for reducing the incidence of breast cancer was ob-
+served among women who engaged in 7 or more hours of
+moderate-to-vigorous activity per week. 110 Among patients
+with established cancer, physical activity equivalent to walk-
+ing 1 or more hours per week was associated with improved
+survival compared with no exercise.
+74 The greatest benefit
+was observed among cancer survivors who performed exer-
+cise equivalent to 3–5 hours per week at an average pace.
+74
+With respect to osteoporosis, the dose–response relation
+of physical activity is less clear. However, osteogenic adapta-
+tions appear to be load-dependent and site-specific.
+9,10,111 Ac-
+cordingly, physical activities that require impact or significant
+loading are therefore advocated for optimal bone health.
+Running distances of up to 15–20 miles (24–32 km) per week
+has been associated with the accrual or maintenance of bone
+mineral density, but longer distances may be associated with
+reduced bone mineral density.
+112
+How does physical activity and fitness
+lead to improved health outcomes?
+Several biological mechanisms may be responsible for the re-
+duction in the risk of chronic disease and premature death
+associated with routine physical activity. For instance, routine
+physical activity has been shown to improve body composition
+(e.g., through reduced abdominal adiposity and improved
+weight control),
+9,10,113–116 enhance lipid lipoprotein profiles
+(e.g., through reduced triglyceride levels, increased high-
+density lipoprotein [HDL] cholesterol levels and decreased
+low-density lipoprotein [LDL]-to-HDL ratios),
+9,10,117–123improve
+glucose homeostasis and insulin sensitivity,3,9,10,124–126 reduce
+blood pressure, 127–130 improve autonomic tone, 131,132 reduce
+systemic inflammation;133 decrease blood coagulation, 134,135
+improve coronary blood flow,136 augment cardiac function137,138
+and enhance endothelial function.139–142 Chronic inflammation,
+as indicated by elevated circulating levels of inflammatory
+mediators such as C-reactive protein, has been shown to be
+strongly associated with most of the chronic diseases whose
+prevention has benefited from exercise. Recent RCTs have
+shown that exercise training may cause marked reductions in
+C-reactive protein levels.
+143 Each of these factors may explain
+directly or indirectly the reduced incidence of chronic disease
+and premature death among people who engage in routine
+physical activity.
+Routine physical activity is also associated with improved
+psychological well-being (e.g., through reduced stress, anxi-
+ety and depression
+9,10,144). Psychological well-being is particu-
+larly important for the prevention and management of cardio-
+vascular disease, but it also has important implications for
+the prevention and management of other chronic diseases
+such as diabetes, osteoporosis, hypertension, obesity, cancer
+and depression.
+Changes in endothelial function may be a particularly im-
+portant adaptation to routine physical activity. Endothelial
+dysfunction has been observed with aging, smoking and mul-
+tiple chronic disease states, including coronary artery disease,
+congestive heart failure, stroke, type 2 diabetes, hypertension,
+hypercholesterolemia and obesity.
+116 Regular aerobic activity
+has been found to improve vascular function in adults inde-
+pendent of changes in other risk factors 142,145 and has been
+said to result in a shear-stress–mediated improvement in en-
+dothelial function,
+116 which confers a health benefit to a num-
+ber of disease states.146
+Although most research into the mechanisms of how
+physical activity and fitness improve health outcomes has
+dealt with the relation between cardiovascular disease and
+physical activity, researchers have also evaluated the primary
+mechanisms responsible for decreases in the risk and severity
+of individual disease states. In fact, despite the adaptations
+that are of global benefit for multiple disease states, physical
+activity also results in specific adaptations that affect individ-
+ual disease states. For instance, in type 2 diabetes, adapta-
+tions that affect glucose homeostasis are of great importance.
+As reviewed by Ivy,
+147 a series of changes (independent of
+changes in body mass64) occur as a result of regular physical
+activity, including increased glycogen synthase 148 and hexo-
+kinase activity,149 increased GLUT-4 protein and mRNA ex-
+pression,148,150 and improved muscle capillary density (result-
+ing in improved glucose delivery to the muscle).149 A series of
+mechanisms may explain the 46% reduction in cancer rates
+observed with regular physical activity,66 including reductions
+in fat stores,66 increased energy expenditure offsetting a high-
+fat diet,66 activity-related changes in sex hormone levels, im-
+mune function, insulin and insulin-like growth factors, free-
+radical generation,
+151 and direct effects on the tumour.151
+The majority of proposed mechanisms have been dis-
+cussed in the context of chronic adaptations brought about by
+routine physical activity. However, researchers have recently
+examined the importance of acute changes in risk factors for
+chronic disease.
+152 An excellent review of the topic by Thomp-
+son and colleagues revealed that acute, dynamic exercise may
+result in transient changes in the form of reductions in
+triglyceride levels, increases in HDL cholesterol level, de-
+creases in blood pressure (for 12–16 hours), reductions in in-
+sulin resistance and improvements in glucose control.
+152
+These acute changes indicate the important role individual
+exercise sessions have on health status.
+CMAJ • March 14, 2006 • 174(6)     |      806
+Review
+Summary
+There is incontrovertible evidence that regular physical activity
+contributes to the primary and secondary prevention of several
+chronic diseases and is associated with a reduced risk of pre-
+mature death. There appears to be a graded linear relation be-
+tween the volume of physical activity and health status, such
+that the most physically active people are at the lowest risk.
+However, the greatest improvements in health status are seen
+when people who are least fit become physically active. The
+current activity guidelines promoted by Health Canada appear
+to be sufficient to reduce health risk. People who engage in
+exercise at levels above those recommended in the guidelines
+are likely to gain further health benefits. Health promotion
+programs should target people of all ages, since the risk of
+chronic disease starts in childhood and increases with age.
+In the next issue, we will review how to evaluate the health-
+related physical fitness and activity levels of patients and will
+provide exercise recommendations for health.
+REFERENCES
+1. Bouchard C, Shephard RJ. Physical activity fitness and health: the model and key
+concepts. In: Bouchard C, Shephard RJ, Stephens T, editors. Physical activity fit-
+ness and health: International proceedings and consensus statement. Champaign
+(IL): Human Kinetics; 1994. p. 77-88.
+2. Blair SN, Brodney S. Effects of physical inactivity and obesity on morbidity and mor-
+tality: current evidence and research issues. Med Sci Sports Exerc1999;31:S646-62.
+3. American College of Sports Medicine. Position stand: Exercise and physical activity
+for older adults. Med Sci Sports Exerc1998;30:992-1008.
+4. McAuley E. Physical activity and psychosocial outcomes. In: Bouchard C, Shephard
+RJ, Stephens T, editors. Physical activity, fitness and health: the consensus knowl-
+edge. Champaign (IL): Human Kinetics; 1994. p. 551-68.
+5. Taylor RS, Brown A, Ebrahim S, et al. Exercise-based rehabilitation for patients
+with coronary heart disease: systematic review and meta-analysis of randomized
+controlled trials. Am J Med 2004;116:682-92.
+6. Blair SN, Cheng Y, Holder JS. Is physical activity or physical fitness more important in
+defining health benefits? [discussion S419-20]. Med Sci Sports Exerc2001;33:S379-99.
+7. Blair SN, Kohl HW, Paffenbarger RS Jr, et al. Physical fitness and all-cause mortal-
+ity. A prospective study of healthy men and women. JAMA 1989;262:2395-401.
+8. Paffenbarger RS Jr, Hyde RT, Hsieh CC, et al. Physical activity, other life-style pat-
+terns, cardiovascular disease and longevity. Acta Med Scand Suppl1986;711:85-91.
+9. Warburton DE, Gledhill N, Quinney A. Musculoskeletal fitness and health. Can J
+Appl Physiol2001;26:217-37.
+10. Warburton DE, Gledhill N, Quinney A. The effects of changes in musculoskeletal
+fitness on health. Can J Appl Physiol2001;26:161-216.
+11. U.S. Department of Health and Human Services. Healthy people 2000: national
+health promotion and disease prevention objectives. In. Washington: US Depart-
+ment of Health and Human Services; 1991.
+12. Puett DW, Griffin MR. Published trials of nonmedicinal and noninvasive therapies
+for hip and knee osteoarthritis. Ann Intern Med1994;121:133-40.
+13. Shephard RJ. Absolute versus relative intensity of physical activity in a dose–
+response context. [discussion S419-20]. Med Sci Sports Exerc2001;33:S400-18.
+14. Lee IM, Skerrett PJ. Physical activity and all-cause mortality: What is the dose–
+response relation? [discussion S493-4]. Med Sci Sports Exerc2001;33:S459-71.
+15. Canadian Community Health Survey. Ottawa:  Statistics Canada; 2002/03.
+16. Morris JN, Heady JA, Raffle PA, et al. Coronary heart-disease and physical activity
+of work. Lancet 1953;265:1111-20.
+17. Morris JN, Heady JA. Mortality in relation to the physical activity of work: a prelimi-
+nary note on experience in middle age. Br J Ind Med 1953;10:245-54.
+18. Paffenbarger RS Jr, Brand RJ, Sholtz RI, et al. Energy expenditure, cigarette smok-
+ing, and blood pressure level as related to death from specific diseases. Am J Epi-
+demiol 1978;108:12-8.
+19. Paffenbarger RS, Hale WE. Work activity and coronary heart mortality. N Engl J
+Med 1975;292:545-50.
+20. Kohl HW III. Physical activity and cardiovascular disease: evidence for a dose re-
+sponse. [discussion S493-4]. Med Sci Sports Exerc2001;33:S472-83.
+21. Berlin JA, Colditz GA. A meta-analysis of physical activity in the prevention of coro-
+nary heart disease. Am J Epidemiol 1990;132:612-28.
+22. Powell KE, Thompson PD, Caspersen CJ, et al. Physical activity and the incidence
+of coronary heart disease. Annu Rev Public Health1987;8:253-87.
+23. Lee IM, Hsieh CC, Paffenbarger RS Jr. Exercise intensity and longevity in men. The
+Harvard Alumni Health Study. JAMA 1995;273:1179-84.
+24. Wannamethee SG, Shaper AG, Walker M. Changes in physical activity, mortality,
+and incidence of coronary heart disease in older men. Lancet 1998;351:1603-8.
+25. Lee IM, Paffenbarger RS Jr. Associations of light, moderate, and vigorous intensity
+physical activity with longevity. The Harvard Alumni Health Study. Am J Epidemiol
+2000;151:293-9.
+26. Oguma Y, Sesso HD, Paffenbarger RS Jr, et al. Physical activity and all cause mor-
+tality in women: a review of the evidence. Br J Sports Med2002;36:162-72.
+27. Macera CA, Hootman JM, Sniezek JE. Major public health benefits of physical
+activity. Arthritis Rheum2003;49:122-8.
+28. Macera CA, Powell KE. Population attributable risk: implications of physical activ-
+ity dose. [discussion 640-1]. Med Sci Sports Exerc2001;33:S635-9.
+29. Myers J, Kaykha A, George S, et al. Fitness versus physical activity patterns in
+predicting mortality in men. Am J Med 2004;117:912-8.
+30. Hu FB, Willett WC, Li T, et al. Adiposity as compared with physical activity in pre-
+dicting mortality among women. N Engl J Med2004;351:2694-703.
+31. Blair SN, Kampert JB, Kohl HW III, et al. Influences of cardiorespiratory fitness
+and other precursors on cardiovascular disease and all-cause mortality in men and
+women. JAMA 1996;276:205-10.
+32. Wessel TR, Arant CB, Olson MB, et al. Relationship of physical fitness vs body
+mass index with coronary artery disease and cardiovascular events in women.
+JAMA 2004;292:1179-87.
+33. Katzmarzyk PT, Church TS, Blair SN. Cardiorespiratory fitness attenuates the
+effects of the metabolic syndrome on all-cause and cardiovascular disease mortal-
+ity in men. Arch Intern Med2004;164:1092-7.
+34. Erikssen G. Physical fitness and changes in mortality: the survival of the fittest.
+Sports Med2001;31:571-6.
+35. Erikssen G, Liestol K, Bjornholt J, et al. Changes in physical fitness and changes in
+mortality. Lancet 1998;352:759-62.
+36. Blair SN, Kohl HW III, Barlow CE, et al. Changes in physical fitness and all-cause
+mortality. A prospective study of healthy and unhealthy men. JAMA 1995;273:1093-8.
+37. Bijnen FC, Feskens EJ, Caspersen CJ, et al. Baseline and previous physical activity
+in relation to mortality in elderly men: the Zutphen Elderly Study. Am J Epidemiol
+1999;150:1289-96.
+38. Myers J, Prakash M, Froelicher V, et al. Exercise capacity and mortality among men
+referred for exercise testing. N Engl J Med2002;346:793-801.
+39. Oguma Y, Shinoda-Tagawa T. Physical activity decreases cardiovascular disease
+risk in women: review and meta-analysis. Am J Prev Med2004;26:407-18.
+40. Wannamethee SG, Shaper AG, Walker M. Physical activity and mortality in older
+men with diagnosed coronary heart disease. Circulation2000;102:1358-63.
+41. Jolliffe JA, Rees K, Taylor RS, et al. Exercise-based rehabilitation for coronary heart
+disease. Cochrane Database Syst Rev2001;(1):CD001800.
+42. Hambrecht R, Niebauer J, Marburger C, et al. Various intensities of leisure time physi-
+cal activity in patients with coronary artery disease: effects on cardiorespiratory fitness
+and progression of coronary atherosclerotic lesions. J Am Coll Cardiol1993;22:468-77.
+43. Franklin BA, Swain DP, Shephard RJ. New insights in the prescription of exercise
+for coronary patients. J Cardiovasc Nurs2003;18:116-23.
+44. Blumenthal JA, Rejeski WJ, Walsh-Riddle M, et al. Comparison of high- and low-
+intensity exercise training early after acute myocardial infarction. Am J Cardiol
+1988;61:26-30.
+45. Helmrich SP, Ragland DR, Paffenbarger RS Jr. Prevention of non-insulin-depend-
+ent diabetes mellitus with physical activity. Med Sci Sports Exerc1994;26:824-30.
+46. Helmrich SP, Ragland DR, Leung RW, et al. Physical activity and reduced occur-
+rence of non-insulin-dependent diabetes mellitus. N Engl J Med1991;325:147-52.
+47. Manson JE, Nathan DM, Krolewski AS, et al. A prospective study of exercise and
+incidence of diabetes among US male physicians. JAMA 1992;268:63-7.
+48. Lynch J, Helmrich SP, Lakka TA, et al. Moderately intense physical activities and
+high levels of cardiorespiratory fitness reduce the risk of non-insulin-dependent
+diabetes mellitus in middle-aged men. 
+Arch Intern Med1996;156:1307-14.
+49. Gregg EW, Gerzoff RB, Caspersen CJ, et al. Relationship of walking to mortality
+among US adults with diabetes. Arch Intern Med2003;163:1440-7.
+50. Tuomilehto J, Lindstrom J, Eriksson JG, et al. Prevention of type 2 diabetes melli-
+tus by changes in lifestyle among subjects with impaired glucose tolerance. N Engl
+J Med 2001;344:1343-50.
+51. Laaksonen DE, Lindstrom J, Lakka TA, et al. Physical activity in the prevention of
+type 2 diabetes: the finnish diabetes prevention study. Diabetes 2005;54:158-65.
+CMAJ • March 14, 2006 • 174(6)     |      807
+Review
+This article has been peer reviewed.
+Competing interests:None declared.
+Contributors:Darren Warburton was responsible for the conception of the re-
+view and the writing of the manuscript. Shannon Bredin provided assistance
+with the writing of the manuscript and background research. Crystal Whitney
+Nicol provided assistance with background research. All of the authors criti-
+cally reviewed the article for intellectual content and approved the final version.
+Acknowledgements:This research was supported by the Michael Smith Foun-
+dation for Health Research, the Canadian Institutes of Health Research, the
+Canada Foundation for Innovation and the BC Knowledge Development Fund.
+From the School of Human Kinetics, University of British Columbia (War-
+burton, Nicol, Bredin), and the Healthy Heart Program, St. Paul’s Hospital
+(Warburton, Nicol), Vancouver, BC
+52. Williamson DF, Vinicor F, Bowman BA. Primary prevention of type 2 diabetes mel-
+litus by lifestyle intervention: implications for health policy. Ann Intern Med
+2004;140:951-7.
+53. Knowler WC, Barrett-Connor E, Fowler SE, et al. Reduction in the incidence of type 2
+diabetes with lifestyle intervention or metformin. N Engl J Med2002;346:393-403.
+54. Wei M, Gibbons LW, Kampert JB, et al. Low cardiorespiratory fitness and physical
+inactivity as predictors of mortality in men with type 2 diabetes. Ann Intern Med
+2000;132:605-11.
+55. Katzmarzyk PT, Church TS, Janssen I, et al. Metabolic syndrome, obesity, and
+mortality: impact of cardiorespiratory fitness. Diabetes Care2005;28:391-7.
+56. Agurs-Collins TD, Kumanyika SK, Ten Have TR, et al. A randomized controlled
+trial of weight reduction and exercise for diabetes management in older African-
+American subjects. Diabetes Care1997;20:1503-11.
+57. Dunstan DW, Daly RM, Owen N, et al. High-intensity resistance training improves
+glycemic control in older patients with type 2 diabetes. Diabetes Care2002;25:1729-36.
+58. Dunstan DW, Daly RM, Owen N, et al. Home-based resistance training is not suffi-
+cient to maintain improved glycemic control following supervised training in older
+individuals with type 2 diabetes. Diabetes Care2005;28:3-9.
+59. Dunstan DW, Mori TA, Puddey IB, et al. The independent and combined effects of
+aerobic exercise and dietary fish intake on serum lipids and glycemic control in
+NIDDM. A randomized controlled study. 
+Diabetes Care1997;20:913-21.
+60. Cauza E, Hanusch-Enserer U, Strasser B, et al. The relative benefits of endurance
+and strength training on the metabolic factors and muscle function of people with
+type 2 diabetes mellitus. Arch Phys Med Rehabil2005;86:1527-33.
+61. Holten MK, Zacho M, Gaster M, et al. Strength training increases insulin-mediated
+glucose uptake, GLUT4 content, and insulin signaling in skeletal muscle in pa -
+tients with type 2 diabetes. Diabetes 2004;53:294-305.
+62. Honkola A, Forsen T, Eriksson J. Resistance training improves the metabolic pro-
+file in individuals with type 2 diabetes. Acta Diabetol1997;34:245-8.
+63. Hsia J, Wu L, Allen C, et al. Physical activity and diabetes risk in postmenopausal
+women. Am J Prev Med 2005;28:19-25.
+64. Boule NG, Haddad E, Kenny GP, et al. Effects of exercise on glycemic control and
+body mass in type 2 diabetes mellitus: a meta-analysis of controlled clinical trials.
+JAMA 2001;286:1218-27.
+65. Lee IM. Physical activity and cancer prevention — data from epidemiologic studies.
+Med Sci Sports Exerc2003;35:1823-7.
+66. Shephard RJ, Futcher R. Physical activity and cancer: How may protection be maxi-
+mized? Crit Rev Oncog1997;8:219-72.
+67. Thune I, Furberg AS. Physical activity and cancer risk: dose-response and cancer, all
+sites and site-specific. [discussion S609-10]. Med Sci Sports Exerc2001;33:S530-50.
+68. Paffenbarger RS Jr, Lee IM, Wing AL. The influence of physical activity on the inci-
+dence of site-specific cancers in college alumni. Adv Exp Med Biol1992;322:7-15.
+69. Wannamethee G, Shaper AG, Macfarlane PW. Heart rate, physical activity, and
+mortality from cancer and other noncardiovascular diseases. Am J Epidemiol1993;
+137:735-48.
+70. Kampert JB, Blair SN, Barlow CE, et al. Physical activity, physical fitness, and all-
+cause and cancer mortality: a prospective study of men and women. Ann Epi-
+demiol 1996;6:452-7.
+71. Sesso HD, Paffenbarger RS Jr, Lee IM. Physical activity and breast cancer risk in the
+College Alumni Health Study (United States). Cancer Causes Control1998;9:433-9.
+72. Rohan TE, Fu W, Hiller JE. Physical activity and survival from breast cancer. Eur J
+Cancer Prev1995;4:419-24.
+73. Courneya KS, Jones LW, Fairey AS, et al. Physical activity in cancer survivors: impli-
+cations for recurrence and mortality. Cancer Therapy2004;2:1-12.
+74. Holmes MD, Chen WY, Feskanich D, et al. Physical activity and survival after breast
+cancer diagnosis. JAMA 2005;293:2479-86.
+75. Haydon AM, Macinnis R, English D, et al The effect of physical activity and body
+size on survival after diagnosis with colorectal cancer. Gut 2005;1:62-7.
+76. Cunningham AJ, Edmonds CV, Jenkins GP, et al. A randomized controlled trial of
+the effects of group psychological therapy on survival in women with metastatic
+breast cancer. Psychooncology1998;7:508-17.
+77. Jones LW, Eves ND, Courneya KS, et al. Effects of exercise training on antitumor
+efficacy of doxorubicin in MDA-MB-231 breast cancer xenografts. Clin Cancer Res
+2005;11:6695-8.
+78. Adamsen L, Midtgaard J, Rorth M, et al. Feasibility, physical capacity, and health
+benefits of a multidimensional exercise program for cancer patients undergoing
+chemotherapy. Support Care Cancer2003;11:707-16.
+79. McKenzie DC. Abreast in a boat — a race against breast cancer. CMAJ 1998;159(4):
+376-8.
+80. McKenzie DC, Kalda AL. Effect of upper extremity exercise on secondary lym-
+phedema in breast cancer patients: a pilot study. J Clin Oncol2003;21:463-6.
+81. Segal RJ, Reid RD, Courneya KS, et al. Resistance exercise in men receiving andro-
+gen deprivation therapy for prostate cancer. J Clin Oncol2003;21:1653-9.
+82. Galvao DA, Newton RU. Review of exercise intervention studies in cancer patients.
+J Clin Oncol2005;23:899-909.
+83. Berard A, Bravo G, Gauthier P. Meta-analysis of the effectiveness of physical activity for
+the prevention of bone loss in postmenopausal women. Osteoporos Int1997;7:331-7.
+84. Kelley GA. Exercise and regional bone mineral density in postmenopausal women:
+a meta-analytic review of randomized trials. Am J Phys Med Rehabil1998;77:76-87.
+85. Kelley G. Aerobic exercise and lumbar spine bone mineral density in post -
+menopausal women: a meta-analysis. J Am Geriatr Soc1998;46:143-52.
+86. Bonaiuti D, Shea B, Iovine R, et al. Exercise for preventing and treating osteoporo-
+sis in postmenopausal women. Cochrane Database Syst Rev2002;(3):CD000333.
+87. Wolff I, van Croonenborg JJ, Kemper HC, et al. The effect of exercise training pro-
+grams on bone mass: a meta-analysis of published controlled trials in pre- and
+postmenopausal women. Osteoporos Int1999;9:1-12.
+88. Tinetti ME, Baker DI, McAvay G, et al. A multifactorial intervention to reduce the risk of
+falling among elderly people living in the community. N Engl J Med1994;331:821-7.
+89. Wolf SL, Barnhart HX, Kutner NG, et al. Reducing frailty and falls in older per-
+sons: an investigation of Tai Chi and computerized balance training. Atlanta
+FICSIT Group. Frailty and Injuries: Cooperative Studies of Intervention Tech-
+niques. J Am Geriatr Soc1996;44:489-97.
+90. Carter ND, Khan KM, Petit MA, et al. Results of a 10 week community based strength
+and balance training programme to reduce fall risk factors: a randomised controlled
+trial in 65–75 year old women with osteoporosis. Br J Sports Med2001;35:348-51.
+91. Liu-Ambrose T, Khan KM, Eng JJ, et al. Resistance and agility training reduce fall
+risk in women aged 75 to 85 with low bone mass: a 6-month randomized, con-
+trolled trial. J Am Geriatr Soc2004;52:657-65.
+92. Shaw JM, Snow CM. Weighted vest exercise improves indices of fall risk in older
+women. J Gerontol A Biol Sci Med Sci1998;53:M53-8.
+93. Gregg EW, Pereira MA, Caspersen CJ. Physical activity, falls, and fractures among older
+adults: a review of the epidemiologic evidence. J Am Geriatr Soc2000;48:883-93.
+94. Stevens JA, Powell KE, Smith SM, et al. Physical activity, functional limitations, and
+the risk of fall-related fractures in community-dwelling elderly. Ann Epidemiol
+1997;7:54-61.
+95. Carter ND, Kannus P, Khan KM. Exercise in the prevention of falls in older people:
+a systematic literature review examining the rationale and the evidence. Sports Med
+2001;31:427-38.
+96. Kujala UM, Kaprio J, Kannus P, et al. Physical activity and osteoporotic hip fracture
+risk in men. Arch Intern Med2000;160:705-8.
+97. Joakimsen RM, Fonnebo V, Magnus JH, et al. The Tromso Study: physical activity
+and the incidence of fractures in a middle-aged population. J Bone Miner Res
+1998;13:1149-57.
+98. Liu-Ambrose TY, Khan KM, Eng JJ, et al. Both resistance and agility training in-
+crease cortical bone density in 75- to 85-year-old women with low bone mass: a 6-
+month randomized controlled trial. J Clin Densitom2004;7:390-8.
+99. Kemmler W, Lauber D, Weineck J, et al. Benefits of 2 years of intense exercise on
+bone density, physical fitness, and blood lipids in early postmenopausal osteo-
+penic women: results of the Erlangen Fitness Osteoporosis Prevention Study
+(EFOPS). 
+Arch Intern Med2004;164:1084-91.
+100. Williams PT. Physical fitness and activity as separate heart disease risk factors: a
+meta-analysis. Med Sci Sports Exerc2001;33:754-61.
+101. Sirard JR, Pate RR. Physical activity assessment in children and adolescents. Sports
+Med 2001;31:439-54.
+102. Brill PA, Macera CA, Davis DR, et al. Muscular strength and physical function. Med
+Sci Sports Exerc2000;32:412-6.
+103. Rantanen T, Masaki K, Foley D, et al. Grip strength changes over 27 yr in Japanese-
+American men. J Appl Physiol1998;85:2047-53.
+104. Katzmarzyk PT, Craig CL. Musculoskeletal fitness and risk of mortality. Med Sci
+Sports Exerc2002;34:740-4.
+105. Blair SN, LaMonte MJ, Nichaman MZ. The evolution of physical activity recom-
+mendations: How much is enough? Am J Clin Nutr2004;79:913S-20S.
+106. Paffenbarger RS Jr, Hyde RT, Wing AL, et al. Physical activity, all-cause mortality,
+and longevity of college alumni. N Engl J Med1986;314:605-13.
+107. Paffenbarger RS Jr, Hyde RT, Wing AL, et al. The association of changes in physi-
+cal-activity level and other lifestyle characteristics with mortality among men. N
+Engl J Med1993;328:538-45.
+108. Kushi LH, Fee RM, Folsom AR, et al. Physical activity and mortality in post -
+menopausal women. JAMA 1997;277:1287-92.
+109. Leon AS, Connett J, Jacobs DR Jr., et al. Leisure-time physical activity levels and
+risk of coronary heart disease and death. The Multiple Risk Factor Intervention
+Trial. JAMA 1987;258:2388-95.
+110. Rockhill B, Willett WC, Hunter DJ, et al. A prospective study of recreational physi-
+cal activity and breast cancer risk. Arch Intern Med1999;159:2290-6.
+111. Kerr D, Morton A, Dick I, et al. Exercise effects on bone mass in postmenopausal
+women are site-specific and load-dependent. J Bone Miner Res1996;11:218-25.
+112. Brown JP, Josse RG. 2002 clinical practice guidelines for the diagnosis and man-
+agement of osteoporosis in Canada [published errata in CMAJ 2003;168(4):400,
+2003;168(6):676 and 2003;168(5):544]. CMAJ 2002;167(10 Suppl):S1-34.
+113. Seidell JC, Cigolini M, Deslypere JP, et al. Body fat distribution in relation to physi-
+cal activity and smoking habits in 38-year-old European men. The European Fat
+Distribution Study. Am J Epidemiol1991;133:257-65.
+114. Tremblay A, Despres JP, Leblanc C, et al. Effect of intensity of physical activity on
+body fatness and fat distribution. Am J Clin Nutr1990;51:153-7.
+115. Slattery ML, McDonald A, Bild DE, et al. Associations of body fat and its distribu-
+tion with dietary intake, physical activity, alcohol, and smoking in blacks and
+whites. Am J Clin Nutr1992;55:943-9.
+116. Maiorana A, O’Driscoll G, Taylor R, et al. Exercise and the nitric oxide vasodilator
+system. Sports Med2003;33:1013-35.
+117. Berg A, Halle M, Franz I, et al. Physical activity and lipoprotein metabolism: epi-
+demiological evidence and clinical trials. Eur J Med Res1997;2:259-64.
+118. Halle M, Berg A, von Stein T, et al. Lipoprotein(a) in endurance athletes, power
+athletes, and sedentary controls. Med Sci Sports Exerc1996;28:962-6.
+119. O’Connor GT, Hennekens CH, Willett WC, et al. Physical exercise and reduced
+risk of nonfatal myocardial infarction. Am J Epidemiol1995;142:1147-56.
+120. DuRant RH, Baranowski T, Rhodes T, et al. Association among serum lipid and
+lipoprotein concentrations and physical activity, physical fitness, and body compo-
+sition in young children. J Pediatr 1993;123:185-92.
+CMAJ • March 14, 2006 • 174(6)     |      808
+Review
+121. Tell GS, Vellar OD. Physical fitness, physical activity, and cardiovascular disease
+risk factors in adolescents: the Oslo Youth Study. Prev Med 1988;17:12-24.
+122. Taimela S, Viikari JS, Porkka KV, et al. Lipoprotein (a) levels in children and young
+adults: the influence of physical activity. The Cardiovascular Risk in Young Finns
+Study. Acta Paediatr1994;83:1258-63.
+123. Brenes G, Dearwater S, Shapera R, et al. High density lipoprotein cholesterol con-
+centrations in physically active and sedentary spinal cord injured patients. Arch
+Phys Med Rehabil1986;67:445-50.
+124. Wallberg-Henriksson H, Rincon J, Zierath JR. Exercise in the management of non-
+insulin-dependent diabetes mellitus. Sports Med 1998;25:25-35.
+125. Young JC. Exercise prescription for individuals with metabolic disorders. Practical
+considerations. Sports Med 1995;19:43-54.
+126. Kelley DE, Goodpaster BH. Effects of physical activity on insulin action and glu-
+cose tolerance in obesity. Med Sci Sports Exerc1999;31:S619-23.
+127. Blair SN, Goodyear NN, Gibbons LW, et al. Physical fitness and incidence of hy-
+pertension in healthy normotensive men and women. JAMA 1984;252:487-90.
+128. American College of Sports Medicine. Position stand: Physical activity, physical fit-
+ness, and hypertension. Med Sci Sports Exerc1993;25:i-x.
+129. Paffenbarger RS Jr, Jung DL, Leung RW, et al. Physical activity and hypertension:
+an epidemiological view. Ann Med 1991;23:319-27.
+130. Paffenbarger RS Jr, Wing AL, Hyde RT, et al. Physical activity and incidence of
+hypertension in college alumni. Am J Epidemiol 1983;117:245-57.
+131. Adamopoulos S, Piepoli M, McCance A, et al. Comparison of different methods for
+assessing sympathovagal balance in chronic congestive heart failure secondary to
+coronary artery disease. Am J Cardiol 1992;70:1576-82.
+132. Tiukinhoy S, Beohar N, Hsie M. Improvement in heart rate recovery after cardiac
+rehabilitation. J Cardiopulm Rehabil2003;23:84-7.
+133. Adamopoulos S, Parissis J, Kroupis C, et al. Physical training reduces peripheral mark-
+ers of inflammation in patients with chronic heart failure. Eur Heart J2001;22:791-7.
+134. Physical activity and cardiovascular health. NIH Consensus Development Panel on
+Physical Activity and Cardiovascular Health. JAMA 1996;276:241-6.
+135. Rauramaa R, Salonen JT, Seppanen K, et al. Inhibition of platelet aggregability by
+moderate-intensity physical exercise: a randomized clinical trial in overweight
+men. Circulation1986;74:939-44.
+136. Hambrecht R, Wolf A, Gielen S, et al. Effect of exercise on coronary endothelial
+function in patients with coronary artery disease. N Engl J Med2000;342:454-60.
+137. Warburton DER, Gledhill N, Jamnik V, et al. Induced hypervolemia, cardiac func-
+tion, VO2max and performance of elite cyclists. Med Sci Sports Exerc1999;31:800-8.
+138. Warburton DE, Haykowsky MJ, Quinney HA, et al. Blood volume expansion and
+cardiorespiratory function: effects of training modality. Med Sci Sports Exerc
+2004;36:991-1000.
+139. Gokce N, Vita JA, Bader DS, et al. Effect of exercise on upper and lower extremity en-
+dothelial function in patients with coronary artery disease. Am J Cardiol2002;90:124-7.
+140. Kobayashi N, Tsuruya Y, Iwasawa T, et al. Exercise training in patients with
+chronic heart failure improves endothelial function predominantly in the trained
+extremities. Circ J 2003;67:505-10.
+141. Hambrecht R, Gielen S, Linke A, et al. Effects of exercise training on left ventricu-
+lar function and peripheral resistance in patients with chronic heart failure: a ran-
+domized trial. JAMA 2000;283:3095-101.
+142. McGavock J, Mandic S, Lewanczuk R, et al. Cardiovascular adaptations to exercise
+training in postmenopausal women with type 2 diabetes mellitus. Cardiovasc Dia-
+betol 2004;3:3.
+143. Nicklas BJ, You T, Pahor M. Behavioural treatments for chronic systemic inflam-
+mation: effects of dietary weight loss and exercise training [review]. CMAJ 2005;
+172(9):1199-209.
+144. Dunn AL, Trivedi MH, O’Neal HA. Physical activity dose–response effects on outcomes
+of depression and anxiety. [discussion 609-10]. Med Sci Sports Exerc2001;33:S587-97.
+145. Ferreira I, Twisk JW, Stehouwer CD, et al. Longitudinal changes in VO2max: associa-
+tions with carotid IMT and arterial stiffness. Med Sci Sports Exerc2003;35:1670-8.
+146. Laughlin MH, Joseph B. Wolfe Memorial lecture. Physical activity in prevention
+and treatment of coronary disease: the battle line is in exercise vascular cell biol-
+ogy. Med Sci Sports Exerc2004;36:352-62.
+147. Ivy JL. Role of exercise training in the prevention and treatment of insulin resist-
+ance and non-insulin-dependent diabetes mellitus. Sports Med1997;24:321-36.
+148. Christ-Roberts CY, Pratipanawatr T, Pratipanawatr W, et al. Exercise training in -
+creases glycogen synthase activity and GLUT4 expression but not insulin signaling in
+overweight nondiabetic and type 2 diabetic subjects. Metabolism2004;53:1233-42.
+149. Mandroukas K, Krotkiewski M, Hedberg M, et al. Physical training in obese wo-
+men. Effects of muscle morphology, biochemistry and function. Eur J Appl Physiol
+Occup Physiol 1984;52:355-61.
+150. Dela F, Ploug T, Handberg A, et al. Physical training increases muscle GLUT4 pro-
+tein and mRNA in patients with NIDDM. Diabetes 1994;43:862-5.
+151. Westerlind KC. Physical activity and cancer prevention — mechanisms. Med Sci
+Sports Exerc2003;35:1834-40.
+152. Thompson PD, Crouse SF, Goodpaster B, et al. The acute versus the chronic
+response to exercise. [discussion S452-3]. Med Sci Sports Exerc2001;33:S438-45.
+CMAJ • March 14, 2006 • 174(6)     |      809
+Review
+Correspondence to:Dr. Darren E.R. Warburton, Cardiovascular
+Physiology and Rehabilitation Laboratory, University of British
+Columbia, Unit II, Osborne Centre, 6108 Thunderbird Blvd.,
+Vancouver BC  V6T 1Z3; fax 604 822-9451; darren.warburton@ubc.ca
+Appendix 1: A glossary of commonly used terms 
+Active daily living: The implementation of physical activity 
+as an integral and meaningful part of daily living 
+Activities of daily living: The activities one engages in 
+during daily life 
+Aerobic training: An exercise program that incorporates 
+activities that are rhythmic in nature, using large muscle 
+groups at moderate intensities for 3 to 5 days per week 
+Cardiovascular fitness: The ability to transport and use 
+oxygen during prolonged, strenuous exercise or work. 
+It reflects the combined efficiency of the lungs, heart, 
+vascular system and exercising muscles in the transport 
+and use of oxygen 
+Exercise: Structured and repetitive physical activity 
+designed to maintain or improve physical fitness 
+Health-related physical fitness: The components of physical 
+fitness that are related to health status, including 
+cardiovascular fitness, musculoskeletal fitness, body 
+composition and metabolism 
+Heart rate reserve: The difference between the maximum 
+heart rate (predicted or determined directly) and the resting 
+heart rate (HRmax — HRrest)
+% heart rate reserve: This formula takes into account the 
+resting and maximum heart rates to provide an appropriate 
+target heart rate (or range) for training: 
+Training heart rate = ([HRmax — HRrest] × 40%–85%) + HRrest 
+Maximum aerobic power: The maximum amount of oxygen 
+that can be transported and used by the working muscles; 
+also known as maximal oxygen consumption (VO2max)
+Metabolic equivalent (MET): An estimate of one’s resting 
+metabolic rate while sitting quietly (1 MET = 3.5 mL oxygen 
+per kilogram per minute, or 1 kcal [4.2 kJ] per kilogram 
+per hour) 
+Musculoskeletal fitness: The fitness of the musculoskeletal 
+system, encompassing muscular strength, muscular 
+endurance, muscular power, flexibility, back fitness and 
+bone health 
+Physical activity: All leisure and non-leisure body 
+movements resulting in an increased energy output from 
+the resting condition 
+Physical fitness: A physiologic state of well-being that 
+allows one to meet the demands of daily living or that 
+provides the basis for sport performance, or both 
+Quality of life: An overall satisfaction and happiness with 
+life. It includes the facets of physiologic, emotional, 
+functional and spiritual well-being 
+Resistance training: An exercise program that uses 
+repeated, progressive contractions of specific muscle groups 
+to increase muscle strength, endurance or power 
+VO2 reserve: The difference between the maximum and 
+resting oxygen consumption (VO2max — VO2rest)
+% VO2 reserve: This formula takes into account the resting 
+and maximum oxygen consumption to provide an appropriate 
+level (or range) for training: 
+Training VO2 = ([VO2max — VO2rest] × 40%–85%) + VO2rest

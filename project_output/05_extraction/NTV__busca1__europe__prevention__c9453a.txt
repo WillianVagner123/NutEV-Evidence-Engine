@@ -1,0 +1,1629 @@
+REVIEW Open Access
+© The Author(s) 2025. Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, 
+sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and 
+the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included 
+in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will 
+need to obtain permission directly from the copyright holder. To view a copy of this licence, visit  h t t p  : / /  c r e a  t i  v e c  o m m  o n s .  o r  g / l i c e n s e s / b y / 4 . 0 /.
+Scheit et al. Journal of Occupational Medicine and Toxicology           (2025) 20:32 
+https://doi.org/10.1186/s12995-025-00480-7
+Journal of Occupational 
+Medicine and Toxicology
+*Correspondence:
+Lorenz Scheit
+lorenzscheit@bundeswehr.org
+Full list of author information is available at the end of the article
+Abstract
+Background Overweight and obesity have a negative impact on health and have a detrimental effect on the 
+operational readiness of soldiers. Different prevention and intervention measures against obesity include diet, 
+physical activity, education, coaching or medication or a combination of several aspects have been investigated. This 
+review systematically assesses the effectiveness of lifestyle, dietary, educational, and pharmacological interventions on 
+weight, body composition, and military readiness in active-duty personnel.
+Methods We carried out a systematic review based on the Preferred Reporting Items for Systematic Reviews and 
+Meta-Analyses (PRISMA) guidelines. A search was conducted in various electronic databases from 2000 to July 2024. 
+The search strategy combined three concepts: military population, outcome terms, interventions or programs. For the 
+review, 21 articles met the inclusion criteria (total n = 1696). Where possible, the effect size (ES) was calculated.
+Results In studies that only examined exercise, minor effects were reported, e.g. a reduction in weight (-0.5 kg), 
+Body Mass Index (BMI) (-0.3 kg/m²), waist circumference (-0.1 cm) and body fat percentage (-1.1%) without relevant 
+statistical ES. Studies with nutritional programs reported low to moderate ES. Combined programs including 
+dietary and exercise countermeasures showed to be more effective than programs based on diet or exercise alone. 
+Combined programs with exercise and educational methods showed a moderate to large effect size (ES 0.6–1.3) for 
+weight reduction. Pharmacological treatment for reducing fat intake resulted in a larger effect sizes for weight loss. 
+The greatest efficacy (ES > 1.0) was observed for a combined intervention program consisting of lifestyle changing 
+components based on individually tailored cognitive behavioral therapies, psychoeducation, exercise and nutritional 
+interventions.
+Conclusions Effective countermeasure for reducing body weight found in this study were combined interventions, 
+like education on lifestyle changes, dietary habits and promotion of physical activity in military personnel, as well as 
+by ketogenic dietary interventions combined with physical activity and followed by pharmacological intervention 
+approaches. Combined interventions appear promising in some studies, but future evaluations may focus on 
+combinations of physical activity and exercise with new pharmaceutical approaches like Semaglutide or Bimagrumab 
+medication in the long term for military personnel due to probable favorable body composition adaptations and 
+military readiness.
+Prevention and intervention against obesity 
+and overweight in the military: a systematic 
+review
+Lorenz Scheit1* , Lisa Baustert1 and Jan Schröder2
+Page 2 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+Introduction
+The steadily increasing prevalence of overweight and 
+obesity in European and other industrialized nations over 
+the past few years represents a growing challenge not 
+only for healthcare systems. In 2007, it was shown that 
+more than 50% of the European population was already 
+overweight or obese [ 1]. In Germany, the proportion of 
+obesity rose from 16.2 to 22.5% in males and from 16.2 to 
+23.3% in females between 1985 and 2002 [ 2]. This devel-
+opment in society as a whole does not stop at the pro -
+fessional group of soldiers. A recent prevalence study of 
+more than 40,000 soldiers in the German Armed Forces 
+from 2018 to 2022 showed that 18% of all soldiers were 
+obese [3]. It is particularly important for soldiers to have 
+a high level of mental and physical health and physical fit-
+ness due to their professional role of combat participants. 
+Good physical fitness is the basic prerequisite for the 
+efficient operational readiness of armed forces. Increas -
+ing tendencies towards obesity have an opposite impact. 
+Irrespective of the relevance of high physical readiness, 
+obesity and overweight are independent risk factors for 
+metabolic and cardio-circulatory diseases. Current data 
+show that cardiometabolic risk doubles in obese grade 
+1 people (BMI > 30) and even increases tenfold in obese 
+grade 2 people (BMI > 35) [ 4]. Prevention and interven -
+tion measures to prevent or reduce overweight and obe -
+sity refer to very different strategies such as various diets, 
+physical activities (strength training, aerobic training or 
+high-intensity interval training - HIIT), behavioral inter -
+vention or drug treatment [ 5– 8]. Successful prevention 
+and intervention measures, especially for the relevant 
+occupational group of soldiers, are in the focus of inter -
+national research, as the relevance for military readiness 
+is of great importance for social security. To the best of 
+the authors’ knowledge, a systematic survey of preven -
+tion and intervention measures against overweight and 
+obesity in the specific environment of military person -
+nel has not yet been carried out. This systematic review 
+examines the results of international prevention and 
+intervention studies on overweight and obesity in sol -
+diers. The aim of this study is to record previously inves -
+tigated prevention and intervention measures against 
+obesity and to assess the effect of these measures on 
+body composition and fitness outcomes in military per -
+sonnel. Based on these findings, successful intervention 
+programs for military personnel can be further adopted 
+and developed to reduce or stop the trend of increasing 
+prevalence of obesity hampering military readiness.
+Materials and methods
+This systematic review was conducted on the basis of the 
+Preferred Reporting Items for Systematic Reviews and 
+Meta-Analyses (PRISMA) guidelines [9]. A PICO scheme 
+(population, intervention, control, outcome) was created 
+to present the key concepts of the topic and to structure 
+the literature search. The review was registered at PROS -
+PERO review database in accordance with the PRIMSA 
+2020 checklist in a timely manner on 15 December 2024, 
+prior to the start of data analysis (Registration Number: 
+CRD42024622560). This systematic review was not cre -
+ated as a meta-analysis, due to the heterogeneity of the 
+studies in study designs, populations, interventions, and 
+outcomes (e.g., BMI vs. waist circumference, or the rate 
+of 5% body weight loss), as well as due to a lack of system-
+atically reported standard deviations or confidence inter -
+vals in absolute changes or correspondingly reported 
+effect sizes.
+Search strategy and inclusion criteria
+An electronic search was conducted on 16th July 2024 
+in four online databases (CINAHL, Livio, PubMed and 
+Web of Science). It included studies from the beginning 
+of 2000 to July 2024. The search strategy combined three 
+concepts: [1] military population [ 2], outcome terms [ 3], 
+interventions or programs. The search strategy adapted 
+in each data base were reviewed by all authors and is 
+shown in Table 1. There was no restriction regarding the 
+language. The search results were managed with a biblio -
+graphic tool (Zotero).
+Selection process
+The data was further analyzed in accordance with the 
+PRISMA flow-diagram (Figure 1). The search yielded 
+1696 studies. The first step was to remove the duplicates. 
+Screening was then carried out first by title, then by 
+abstract and finally by evaluation of the full texts.
+Based on the previously created PICO scheme, the 
+inclusion of studies was carried out according to the fol -
+lowing points:
+  • Population: Studies were included if all participants 
+were active military personnel over 18 years of age 
+or if the results of these were reported separately 
+from others. Studies with veterans, family members 
+of soldiers or civilians were excluded. In addition, 
+studies with pregnant women or postpartum 
+mothers were excluded.
+  • Intervention: All countermeasures, both weight 
+gain prevention and weight loss interventions, were 
+included.
+Keywords Obesity, Overweight, Prevention, Military, Waist circumference, BMI
+Page 3 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+  • Control: Studies were included both with and 
+without a control group.
+  • Outcome: Studies were included, if intervention 
+related changes of any body-constitution parameters 
+were reported such as body weight, body fat or body 
+mass index.
+Risk of bias
+To assess the quality assurance, the 2013 National Heart, 
+Lung, and Blood Institute (NHLBI) Quality Assessment 
+Tool for Observational Cohort and Cross-Sectional Stud-
+ies (  h t t p  s : /  / w w w  . n  h l b  i . n  i h . g  o v  / h e  a l t  h t o p  i c  s / s  t u d  y - q u  a l  i t 
+y - a s s e s s m e n t - t o o l s, accessed on 30 April 2025) was used 
+[9]. The tool was generated by the NHLBI to check the 
+internal validity of the proven studies. By answering 14 
+questions, the reviewer identifies a possible risk of bias. 
+The quality score determined was used to classify the 
+study quality according to the NHLBI Quality Rating” 
+(Good, Fair, or Poor) with a maximum of 14 points that 
+may be achieved here.
+The PEDro-Scale was used to determine the risk of bias 
+for randomized controlled trials. It consists of 11 items of 
+which 10 items are used to classify the PEDro score. Total 
+PEDro scores of 0–3 are considered ‘poor’ , 4–5 ‘fair’ , 6–8 
+‘good’ , and 9–10 ‘excellent [10].
+Content data analysis
+In order to structure the effectiveness of the various 
+approaches, we tried to extract the original effect sizes of 
+the respective interventions, in the case they were given 
+by the authors. If not, we tried to calculate effect sizes 
+retrospectively from reported means and standard devia -
+tions or mean changes e.g. pre-post-counts, if applicable, 
+using an Excel macro leading to Cohen’s d [11].
+In general, effect sizes for mean differences of two 
+groups are deemed to demonstrate small (≥ 0.2), moder-
+ate (≥ 0.5) or large (≥ 0.8) effects [12].
+The studies showed different types of intervention, 
+leading us to form groups according to corresponding 
+main topics such as diet, exercise and medication, or 
+combinations of these categories.
+Results
+Search strategy
+Our systematic research identified 1269 original articles 
+of which 21 studies were deemed to be suitable accord -
+ing to our inclusion criteria. For detailed reasons for any 
+study exclusion see the PRISMA flow-chart illustration 
+(Fig. 1). An overview about the evaluated studies in this 
+review can be found in Table 2.
+Study quality (risk of bias)
+The methodological quality was checked using the 
+PEDro-Scale for randomized controlled trials (RCTs) and 
+the NHLBI tool for observational or case-control studies 
+according to the respective study design.
+The non-randomized trials demonstrated a range of 
+methodological quality from poor (three times 6–8 pts.), 
+or moderate (eight times 9–10 pts.) to good (one time 
+11 pts.), meaning an acceptable quality status with no 
+emerging risks of bias. The RCTs demonstrated PEDro 
+scores ranging from 5 to 8 points indicating a fair (seven 
+times 5–6 pts.) or good (twice 7–8 pts.) quality meaning 
+an overall acceptable bias (Table 2).
+Intervention related effects on body weight or 
+composition parameters
+Over all, the literature review identified different 
+approaches to improve body constitution parameters in 
+military personnel. These ranged from physical activity 
+monitoring programs [ 13, 14] to dietary programs alone 
+[15] or in combination with physical activity [16], to edu-
+cational or coaching programs [ 17, 18], to other differ -
+ent combined programs or pharmaceutical treatments 
+including investigations with nutritional supplements 
+[18, 19]. Some consecutive life-style modification stud -
+ies were applied in the German Armed Forces [ 20– 23] 
+(Table 2).
+Physical activity monitoring programs
+Exercise only Cederberg et al. examined the effects of an 
+intensive and progressive endurance and strength training 
+intervention over 6 to 12 months in a large scaled sample 
+Table 1 Search strategy and identified sources
+Data Base Key Words Re-
+sults
+CINAHL (“Military Personnel“[MeSH Terms] OR “armed 
+forces” OR “army” OR “Bundeswehr”) AND (“Inter-
+vention” OR “prevention” OR “counter measures” OR 
+“diet therapy“[MeSH Terms] OR “exercise“[MeSH 
+Terms]) AND (“Overweight“[MeSH Terms] OR “obe-
+sity” OR “Body Weight” OR “BMI”) NOT (pregnant)
+45
+LIVIO (“Military Personnel“[MeSH Terms] OR “armed 
+forces” OR “army” OR “Bundeswehr”) AND (“Inter-
+vention” OR “prevention” OR “counter measures” OR 
+“diet therapy“[MeSH Terms] OR “exercise“[MeSH 
+Terms]) AND (“Overweight“[MeSH Terms] OR “obe-
+sity” OR “Body Weight” OR “BMI”) NOT (pregnant)
+129
+PubMed (“Military Personnel“[MeSH Terms] OR “armed 
+forces” OR “army” OR “Bundeswehr”) AND (“Inter-
+vention” OR “prevention” OR “counter measures” OR 
+“diet therapy“[MeSH Terms] OR “exercise“[MeSH 
+Terms]) AND (“Overweight“[MeSH Terms] OR “obe-
+sity” OR “Body Weight” OR “BMI”) NOT (pregnant)
+897
+Web of 
+Science
+ALL=((“Military Personnel“[MeSH Terms] OR “armed 
+forces” OR “army” OR “Bundeswehr”) AND (“Inter-
+vention” OR “prevention” OR “counter measures” OR 
+“diet therapy“[MeSH Terms] OR “exercise“[MeSH 
+Terms]) AND (“Overweight“[MeSH Terms] OR “obe-
+sity” OR “Body Weight” OR “BMI”) NOT (pregnant))
+625
+Page 4 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+Fig. 1 PRISMA 2020 flow diagram [9]
+ 
+Page 5 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+Interven-tion 
+type
+Study Population Duration Absolute Change (AC) Effect size (ES) Risk 
+of 
+bias
+Exercise
+(approx. 16 h/
+week intens. 
+exercising)
+Ceder-berg 
+(2011) [13]
+Finland
+n = 1476 (conscripts, 100% males)
+age 19.3 (19–28)
+BMI 23.9 (16.3–46)
+weight 75.1 (47.2–140.0) kg
+52 weeks 
+(follow-up)
+weight − 0.4 (± 5.2) kg
+BMI − 0.3 (± 1.7)
+waist − 0.10 (± 5.8) cm
+BF% −1.1 (± 4.6)
+ES not reported
+(not calculable)
+NHLBI 
+11/14
+Exercise
+(basic military 
+training)
+Vantarakis 
+et al. (2022) 
+[14]
+Greece
+n = 185
+(82.7% males)
+Conscripts, Navy freshmen
+BMI 23.2 (± 2.6)
+weight 72.6 (± 9.1)
+10 weeks
+(94 intense 
+sessions)
+AC not reported #
+weight − 1.8 kg
+BMI − 0.6
+BF% −1.4%
+ES not reported
+(calculated as:
+weight 1.29
+BMI 1.30
+BF% 0.60, 
+moderate to 
+large)
+NHLBI 
+9/14
+Diet
+(low carb vs. low 
+fat)
+Zinn et al. 
+(2017) [15]
+New Zeeland
+n = 41 (76% males)
+BMI Ø 30 kg/m²
+age Ø 40
+low carb n = 21
+low fat n = 20
+12 weeks AC not reported #
+low carb (n = 14):
+weight − 5.3 kg
+waist − 4.8 cm
+low fat (n = 12):
+weight − 2.0 kg
+waist − 3.3 cm
+favoring low 
+carb:
+weight
+0.39
+waist
+0.21 (small)
+PEDro 
+5/11
+Diet
+(synbiotic suppl.)
+Parastouei
+(2022) [16]
+Iran
+n = 60 (58% males)
+verum (n = 30)
+age 42.3 (± 1.5)
+BMI 32.5 (± 0.9)
+placebo (n = 30)
+age 40.6 (± 1.1)
+BMI 31.6 (± 0.8)
+8 weeks AC not reported #
+verum: BMI − 0.6
+placebo: BMI + 0.1
+BMI eta²p
+0.001 for inter-
+action (trivial)
+PEDro 
+8/11
+Life-Style-Coach-
+ing
+(LIFE* program)
+Bowles
+(2006) [17]
+USA
+n (starters) = 93 (59.1% males)
+n (completers) = 53 (63.6% males)
+BMI 31.9 (± 2.7) (males)
+BMI 29.9 (± 3.5) (females)
+52 weeks AC not reported #
+BMI − 1.5 (males)
+weight ≈ −4.8 kg (males)
+BMI − 2.4 (females)
+weight ≈ −6.3 kg (females)
+ES not reported
+(calculated 
+as 1.18–1.39, 
+large)
+NHLBI 
+8/14
+Life-Style-Coach-
+ing
+(BUND$)
+Brandes 
+(2007) [18]
+Germany
+n = 11
+(Bundeswehr
+obesity intervention program, course ST 
+010)
+24 months weight − 4.3 kg
+BMI − 1.3
+waist − 3.7 cm
+SD not reported
+ES not reported
+(not calculable)
+NHLBI 
+10/14
+Life-Style-Coach-
+ing
+(internet use)
+Hunter 
+(2008) [19]
+USA
+Total n = 446
+(50% males)
+age EXP 33.5 (± 7.4)
+Usual care (CON) 34.4 (± 7.2)
+21 weeks EXP
+weight − 1.3 (± 4.1) kg
+BMI − 0.5 (± 1.4)
+waist − 2.1 (± 4.3) cm
+≥ 5% body weight loss: 
+22.6%
+ES not reported
+(not calculable)
+PEDro 
+7/11
+Life-Style-Coach-
+ing
+(energy uptake 
+diaries)
+Shay et al. 
+(2009) [20]
+USA
+n = 39 after drop-out (59% males)
+age 35.3(± 9.3)
+BMI 33.0 (± 3.4)
+waist ≈ 104.1 (± 11.2) cm
+body fat% (BF%) 34.9 (± 7.3)
+12 weeks
+after ShipShape
+no differences between 
+diaries
+weight − 2,8 (± 3.9) kg
+waist ≈ −5.6 (± 5.6) cm
+BF% −1.6 (± 2.6)
+ES not reported
+(not calculable)
+PEDro 
+6/11
+Life-Style-Coach-
+ing
+(web site 
+planners)
+Stewart et 
+al. (2011) 
+[21]
+USA
+n = 2417
+(68.8% males)
+males (n = 1473)
+age 32.3 (± 8.1)
+BMI 28.9 (± 3.7)
+females (n = 755)
+age 30.9 (± 8.5)
+BMI 26.8 (± 4.0)
+approx. 150 
+weeks
+Phase 1: 25 
+months
+Phase 2: 37 
+months
+AC not reported
+≥ 5% body weight loss: 
+12%
+ES not reported
+(not calculable)
+NHLBI 
+8/14
+Table 2 Summary of evaluated studies
+Page 6 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+Interven-tion 
+type
+Study Population Duration Absolute Change (AC) Effect size (ES) Risk 
+of 
+bias
+Life-Style-Coach-
+ing
+(behavior class 4 h 
+“Be Well”)
+Webber et 
+al. (2012) 
+[22]
+USA
+n = 276 (77% males)
+Air-Force members
+age 19–51 (29 ± 6.9)
+BMI 27.9 (± 3.9) (males)
+BMI 25.2 (± 3.3) (females)
+≈ 11 weeks
+(1–29)
+AC not reported #
+BMI − 0.2 (males)
+waist 0.75 cm (males)
+BMI − 0.2 (females)
+waist 0.25 cm (females)
+ES not reported
+(calculated as 
+< 0.1, trivial)
+NHLBI 
+10/14
+Life-Style-Coach-
+ing
+(BUND$)
+Sammito
+(2012) [23]
+Germany
+inhouse: n = 425
+BMI 33.7 (± 3.6)
+weight 108.6 (± 14.1)
+out-patient: n = 625
+BMI 33.8 (± 4.2)
+weight 109.3 (± 15.6)
+24 months
+(measures 12 
+months due to 
+60% drop out)
+weight − 4.4 kg (inhouse)
+weight − 7.0 kg
+(out-patient)
+SD not reported
+≥ 5% body weight loss: 
+28,7%
+ES not reported
+(not calculable)
+NHLBI 
+6/14
+Life-Style-Coach-
+ing
+(BUND$)
+Sammito
+(2013) [24]
+Germany
+n = 665
+age 40 (± 9.4)
+BMI 33.8 (± 4.2)
+weight 109.8 (± 16.5)
+24 months
+(measures 12 
+months due to 
+80% drop out)
+AC not reported #
+weight − 3.1 kg
+BMI − 0.9
+waist − 3.1 cm
+≥ 5% body weight loss: 
+12,2%
+ES not reported
+(not calculable)
+NHLBI 
+10/14
+Life-Style-Coach-
+ing
+(BUND$)
+Sammito
+(2016) [25]
+Germany
+n = 334
+age 43.5 (± 6.9)
+BMI 33.4 (± 3.6)
+weight 107.4 (± 13.8) kg
+24 months BMI − 1.0 (± 2.0)
+weight − 3.4 (± 6.6) kg
+waist − 3.8 (± 6.4) cm
+≥ 5% body weight loss: 
+27,5%
+ES not reported
+(not calculable)
+NHLBI 
+9/14
+Life-Style-Coach-
+ing
+(distance based, 
+counselor vs. 
+self-paced)
+Krukowski 
+et al.
+(2018) [26]
+USA
+n = 248
+(49.2% males)
+age 34.6 (± 7.5)
+weight 88 kg (± 14.3)
+overweight 43.5%
+obesity 56.5%
+52 weeks Counselor initiated:
+weight − 1.9 kg (± 4.1)
+waist − 2.7 cm (± 6.5)
+≥ 5% body weight loss: 
+29.5%
+Self-paced:
+weight − 0.1 kg (± 3.8)
+waist − 1.7 cm (± 8.1)
+≥ 5% body weight loss: 
+15.6%
+ES not reported
+(not calculable)
+PEDro 
+5/11
+Life-Style-Coach-
+ing
+(PA pro-motion, 7 
+sessions)
+Sanaeina-
+sab et al.
+(2020) [27]
+Iran
+n = 84 (100% males)
+age 31.0 (± 7)
+BMI 29.0 (± 3.5)
+12 weeks AC not reported #
+BMI: EXP − 1.0 vs. CON − 0.3
+EXP-BMI
+0.54 
+(moderate)
+PEDro 
+6/11
+Life-Style-Coach-
+ing
+(mHealth, SAM 
+use)
+Gorny et al. 
+(2022) [28]
+Singapore
+n = 167
+(100% males)
+completers n = 29 (18%)
+age 21–25
+21 weeks
+following 
+weight loss 
+program
+preliminary weight- loss 
+after program:
+−15.6 (± 4.1) kg
+weight re-gain after: +5.3 
+(± 4.5) kg
+ES not reported
+(not calculable)
+NHLBI 
+8/14
+combined 
+programs:
+Life-Style-Coach-
+ing (non-pers.) & 
+low intens. PA
+Robbins et 
+al. (2006) 
+[29]
+USA
+n = 68,591
+BMI 24.0–29.9
+EXP n = 3,502 (87% males)
+age 31.0
+CON n = 65,089
+(90% males)
+age 30.4
+52 weeks weight-loss
+Women:
+EXP ≈ −0.01 kg
+CON ≈ + 0.36 kg
+Senior Airmen:
+EXP ≈ −0.32 kg
+CON ≈ + 0.27 kg
+all other males
+EXP ≈ + 1.3 kg
+CON: ≈ +1.1 kg
+SD not reported
+ES not reported
+(not calculable)
+NHLBI 
+9/14
+Table 2 (continued) 
+Page 7 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+of Finnish military personnel (n = 1112, BMI ranging from 
+normal to obese) [ 13]. They reported a high significant 
+effect on body composition parameters as well as other 
+cardiovascular disease (CVD) risk factors, without report-
+ing any effect sizes or absolute post-test measures. They 
+highlighted exercise associated fitness improvements to 
+be correlated to CVD risk improvements. Weight changes 
+of in average − 0.5 kg (± 5.2) or BMI changes of −0.3 kg/m² 
+(± 1.7) or waist circumference changes of + 0.1 cm (± 5.5), 
+and moreover fat mass or body fat percentage reductions 
+of −1.3 kg (± 4.7) or −1,1% (± 4.6), respectively, with stan-
+dard deviations not underpinning general and system -
+atic positive exercise effects on body composition after 
+6 to 12 months intensive exercising in terms of absolute 
+improvements.
+In the framework of an initial fitness and condition -
+ing program for officer candidates (Greek naval cadets, 
+young and healthy, normal-weight BMI 23.3 kg/m²), 
+intensive exercising (5 sessions per week: circuit strength 
+and aerobic conditioning including team sports, swim -
+ming and obstacle running) for 10 weeks led to signifi -
+cant fitness improvements on the one hand and positive 
+body composition changes (body mass – 1.8 kg, BMI−0.6 
+kg/m², body fat percentage −1,4%) on the other hand [13]. 
+The corresponding moderate to large effect sizes of either 
+ES = 1.29, or ES = 1.30, and ES = 0.60, respectively, were 
+calculated retrospectively from the reported t-values 
+[11]. However, these effects were observed in a normal 
+weight population of military freshmen and should not 
+be confused with the effects of body composition train -
+ing effects in overweight or obese military personnel.
+Dietary programs
+Diet (low-fat or low-carb)  In their comparative study, 
+Zinn et al. demonstrated that a twelve-week dietary inter-
+vention (low-carb vs. low-fat) was effective to reduce 
+waist circumference and body weight. Low-carb led to 
+a weight loss of −5.5 kg in average, and a reduced waist 
+circumference of −4.8 cm, while a low-fat diet led to a 
+decrease of −2.0 kg and − 3.3 cm. Thus, dietary effects 
+within the investigated New Zealand military person -
+nel were in favor of the low-carb diet in terms of body 
+weight (−3.6 kg) and the waist circumference (−1.5 cm) 
+with small effect sizes being likely clinically beneficial for 
+Interven-tion 
+type
+Study Population Duration Absolute Change (AC) Effect size (ES) Risk 
+of 
+bias
+combined:
+Life-Style-
+Coaching & diet 
+(meal-replace.)
+Smith et al. 
+(2010) [30]
+USA
+n = 113
+(67.3% males)
+EDU alone n = 56
+BMI 33.1 (± 2.9)
+meal-replacement & EDU n = 57
+BMI 33.1 (± 3.0)
+EDU alone
+BMI − 1.1 (± 1.1)
+weight − 0.8 (± 2.6) kg
+meal-replacement
+BMI − 1.2 (± 1.0)
+weight − 2.0 (± 3.2) kg
+ES not reported
+(calculated 
+as 0.21–0.24, 
+small)
+PEDro 
+5/11
+combined:
+Life-Style-Coach-
+ing & pharma-
+ceuticals (Orlistat)
+Smith et al. 
+(2012) [31]
+USA
+n = 435 (75% males)
+completers:
+Orlistat & EDU n = 35
+BMI 33.2 (± 3.1)
+placebo & EDU n = 22
+BMI 33.5 (± 3.8)
+Orlistat
+BMI − 1.1 (± 1.7)
+weight − 3.1 (± 4.7) kg
+placebo
+BMI − 1.0 (± 1.7)
+weight − 3.1 (± 5.2) kg
+ES not reported
+(calculated as 
+weight 0.19
+BMI 0.33, small)
+PEDro 
+6/11
+combined 
+programs:
+Life-Style-Coach-
+ing & diet (herbal 
+suppl.) following 
+MOVE! §
+McCarthy 
+et al. (2017) 
+[32]
+USA
+n = 435
+(73.4% males)
+age 30 (± 8)
+12 weeks Coaching groups:
+weight − 2,8 kg
+BMI − 0.65
+waist − 1.3 cm
+BF% −1.0%
+SD not reported
+weight 0.07
+BMI 0.10
+waist 0.06
+BF% 0.11
+(trivial)
+PEDro 
+6/11
+combined 
+programs:
+exercise & diet 
+(keto-genic vs. 
+mixed)
+LaFountain 
+et al. (2019) 
+[33]
+Finland
+n = 29 after drop-out (86.2% males)
+ketogenic
+age 27.4 (± 6.8)
+BMI 27.9 (± 2.9)
+mixed diet
+age 26.4 (± 9.0)
+BMI 24.9 (± 2.4)
+12 weeks Ketogenic diet (n = 15):
+weight − 7,7 kg
+BF% −5.1
+mixed diet (n = 14):
+weight − 0,1 kg
+BF% −0.7
+SD not reported
+ES not reported
+(not calculable)
+NHLBI 
+10/14
+AC Absolute changes, BMI Body mass index (kg/m²), BF% Body fat percentage, BUND$ Bundeswehr obesity intervention program, CON Control group, EDU Education, 
+ES Effect size (regularly Cohen’s d if not specified otherwise), EXP Experimental group, LIFE* Multi-professional team, intensive wellness program (life-style, readiness, 
+fitness, eating), MOVE! § US Army weight loss program, PA Physical activity, SAM step activity monitor, ShipShape Navy weight loss program
+#estimated from reported pre and post means, ≈ equal to
+Table 2 (continued) 
+Page 8 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+weight loss (ES = 0.39) and probably beneficial for waist 
+circumference reduction (ES = 0.21) [15].
+Diet in form of supplements  Parastouei et al. reported 
+the effects of a double-blinded, placebo-controlled trial 
+using a synbiotic nutritional supplement (defined as 
+combined pro- and pre-biotic microbial influencing lac -
+tobacillus mix) on body composition parameters, beside 
+others, in a sample of military personnel suffering from a 
+metabolic syndrome (n = 30 per group, BMI about 32 kg/
+m²) [ 24]. The authors reported age-adjusted large effect 
+sizes (Cohen’s d > 0.8) between groups (verum vs. placebo) 
+after the 8 weeks intervention on the BMI. In fact, the 
+BMI and the waist circumference showed reductions of in 
+average − 0.65 kg/m² (BMI) and − 2.64 cm (waist circum -
+ference) in the experimental group. These data were not 
+directly reported by the original source authors. Thus, this 
+had to be calculated by the authors of this review based on 
+pre- and post-mean values. This resulted in the inability to 
+calculate effect sizes within groups due to the lack of data.
+Diet in the sense of meal-replacement  In the frame -
+work of the US Army ‘Weigh to Stay’ education-based pro-
+gram, Smith et al. evaluated probable favorable effects of 
+a meal-replacement (Slim-Fast, 2 meals per day, 6 months 
+maximally or the achievement of pre-set body composi -
+tion goals) [ 17]. The participants in the “Weigh to Stay” 
+program lost − 2.7 (± 4.4) kg (BMI: −0.1 ± 3.6). The par -
+ticipants who additionally replaced meals lost − 3.8 (± 3.5) 
+kg (BMI: −1.1 ± 4.8). Fat mass was reduced by −2.7 (± 3.2) 
+kg or −2.9 (± 2.5) kg, respectively. There were no statisti -
+cally significant differences between ‘Weigh to Stay’ only 
+and the additional meal-replacement groups. Effect sizes 
+were not reported, but reconstructed They showed to be 
+small (ES = 0.21 and 0.24) for weight loss, and moderate 
+(ES = 0.66 and 0.50) for fat mass reduction [11].
+Combination of dietary programs and physical activity 
+monitoring
+Physical activity (PA) promotion using wearable 
+technology In their mixed-methods study, Gorny et al. 
+investigated the use and barriers of a mHealth approach 
+(wearable technologies, wrist-worn step and heart rate 
+tracker). The study investigated the promotion of physical 
+activity during a 21-weeks-follow-up of the National Step 
+Challenge (NSC) observation after a preceding 5-months 
+weight-loss intervention for military personnel (Singapore 
+Armed Forces, males, BMI > 27 kg/m²) [ 25]. The preced-
+ing weight-loss was about − 15.6 (± 4.1) kg. Weight regains 
+at the end of the follow-up NSC intervention compared to 
+the end of the weight-loss program was about + 5.3 (± 4.5) 
+kg. This was accompanied by a decrease in tracker use 
+from immediately after the first week (47%) to the twenty-
+first week (17%). Sustained users showed a slightly lower 
+regain (+ 4.9 kg) than short-term users (+ 5.7 kg). PA (ini-
+tially 10,576 steps per day) did not change significantly 
+during the NSC observation period. Thus, the wearable 
+tracker use showed not to be effective to prevent weight 
+regain. Effect sizes were not reported and could not be 
+calculated retrospectively.
+Diet and exercise  LaFountain et al. investigated effects 
+of a 12 weeks combined exercise and dietary interven -
+tion in a small sample of 15 (Exercise) and 14 (Control) 
+overweight but in the majority not obese US military 
+personnel (BMI 27.9 ± 2.9 kg/m²). They revealed positive 
+body composition changes in favor of an ad libidum keto-
+genic diet in comparison to an unchanged mixed diet. The 
+ketogenic diet achieved a weight loss of −7.7 kg (−3.5 to 
+−13.6 kg), a body fat percentage reduction of −5.1% (−0.5 
+to −9.6%), a fat-mass reduction of −5.9 kg, and a loss of 
+visceral fat-mass (−561.3 cm³) meaning a 43.7% visceral 
+fat loss (3.0 to −66.3%), while the mixed diet remained 
+almost unchanged in their body composition. Effect sizes 
+were not reported by the authors and could not be calcu -
+lated retrospectively from pre-post changes due to a lack 
+of data reporting. The changes in body composition were 
+meaningful high. Physical performance achievements 
+after the exercise program were not significantly differ -
+ently between both groups [16].
+Short-term lifestyle intervention In a sample of US Air 
+Force members who failed to meet the US Air Force fit -
+ness assessment (211 males, 65 females), a single 4-hours 
+lifestyle intervention (“Be Well” Course, including healthy 
+nutrition and exercise benefits topics) was evaluated 
+by Webber et al. 2021 with respect to fitness and body 
+composition outcomes [ 26]. Along with significant fit -
+ness test improvements, BMI and waist circumference 
+decreases were observed in males (BMI − 0.20 ± 1.02 kg/
+m² ES = 0.05, waist − 0.3 ± 1.23 inches equal to −0.76 ± 3.12 
+cm ES = 0.09) and in females (BMI − 0.20 ± 0.87 kg/m² 
+ES = 0.06, waist − 0.85 ± 1.67 inches equal to −2.16 ± 4.24 
+cm ES = 0.04), respectively. Effect sizes were calculated 
+retrospectively leading to Cohen’s d values of smaller than 
+0.1, meaning a trivial effect size, only [11].
+Educational and coaching programs
+Education booklet and weekly emails for weight gain 
+prevention/weight loss  Targeting annual weight-gain 
+prevention (educational booklet with information and 
+weekly motivation and compliance emails including phys-
+ical activity and dietary recommendations) was evaluated 
+without in-person contact in a large-scaled ( n = 3,502) 
+and controlled trial ( n = 65,089) sample of US Air Force 
+members showing a pre-overweight and pre-obese sta -
+tus (baseline age about 31 years, about 12% females, BMI 
+from 24.0 to 29.9 kg/m²) [14]. Robbins et al. reported dif -
+Page 9 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+ferences for subgroup-analyses with a small weight loss 
+for women (equal to −0.01 kg compared to + 0.36 kg 
+within controls), and with a comparably small weight loss 
+(equal to −0.32 kg compared to + 0.27 kg within controls) 
+for Senior Airmen (pay grade E-4), but with weight gains 
+in all other males (equal to + 1.3 kg compared to + 1.1 kg 
+within controls) after 12 months. Standard deviations, 
+any other confidence intervals or effect sizes were not 
+reported, and could not be calculated retrospectively due 
+to lacking data.
+Education internet-based for weight gain prevention/
+weight loss  Targeting weight-gain prevention, beside 
+weight-loss, was evaluated over a 6-months RCT using 
+an internet-based behavioral treatment (including moti -
+vation calls after 4 and 8 weeks) compared to usual care 
+[27]. The authors emphasize that weight-gain prevention 
+was successful, although 42% of participants demon -
+strated weight-gains (60% within the controls). For the 
+experimental group, weight loss was − 1.3 kg (± 4.1), BMI 
+decreased by −0.5 kg/m² (± 1.4), percent body fat deceased 
+by −0.4% (± 3.1), and waist circumference showed a reduc-
+tion of −2.1 cm (± 4.3), which was rated as a small effect 
+in favor of the internet-based program. Statistical effect 
+sizes were not reported and could also not be calculated 
+retrospectively.
+Education internet-based for weight loss with or with-
+out using promotion program Stewart et al. conducted 
+an internet-based weight loss education program (includ-
+ing ‘food planer’ , ‘exercise planer’ , and ‘lifestyle planer’ 
+components) with or without an additional tool promot -
+ing the web-site use and found that the study goal – achiev-
+ing a self-reported weight loss of at least 5% compared to 
+baseline weight – was met better the more frequently the 
+use of the promotion tool was (r = −0.21, p < 0.0001) [28]. 
+In average, 12% of the total of the participants achieved a 
+5% weight loss at any time during the intervention. Unfor-
+tunately, baseline weight or weight after the end of the 
+intervention or any effect sizes were not reported, and 
+could not be calculated either due to lacking data.
+Preferred type of daily diary/adherence and BC param-
+eters Using one’s preferred type of daily diary (paper, 
+PDA, web-based) influences the use of a daily diary in 
+favor of using the preferred method (food-intake: 62.2% 
+vs. 43.4% and exercising: 60.6% vs. 31.2%) in a sample of 
+active duty military members being at least overweight 
+but in average obese (BMI ≥ 25 kg/m², baseline BMI 
+33 ± 3.5 kg/m²) [29]. But changes of body weight or com -
+position did not differ between these comparison groups 
+after 12 weeks showing decreases in weight (−2.7 ± 3.9 kg), 
+body fat percentage (−1,6 ± 2.6%), and waist circumfer -
+ence (−2.2 ± 2.2 inch equal to −5.6 ± 5.6 cm) referring to 
+the total sample (n = 39, 95% males). Effect sizes were not 
+reported and could not be calculated retrospectively.
+Other combined programs
+Coaching (plus herbal supplement)  McCarthy et al. 
+explored additional body composition modification 
+effects of a specific controlled coaching program (Nurse 
+Health Coaching) with or without a placebo-controlled 
+herbal supplement application after a completed weight 
+loss US Army program (MOVE!) [ 18]. The authors deter-
+mined statistical effect sizes for body composition changes 
+in favor of the Nursing program groups compared to the 
+waiting control group. At the end of this 12-week inter -
+vention, effect sizes in favor of Nurse Coaching ranged 
+from 0.07 to 0.11 (Cohen’s d) with absolute values for 
+Coaching group improvements of in average − 2,0 kg, for 
+weight loss, −0.65 kg/m² for BMI and − 1.3 cm for waist 
+circumference, as well as −1.0% for body fat percentage, 
+respectively.
+PA promotion/education  Sanaeinasab et al. observed 
+significantly better outcomes for their experimental 
+group. It was compared to the controls after 7 educational 
+sessions promoting weight management due to increas -
+ing general physical activity (PA) [ 30]. Self-reported PA 
+increased by about + 57% (ES = 0.57) and BMI (ES = 0.54) 
+decreased by about − 3.5% after 12 weeks. This means a 
+moderate effect size for their overweight to obese sample 
+(BMI 29.0 ± 3.5 kg/m²).
+Complex life-style-change-program  As a combination 
+of cognitive-behavioral, psychoeducational, exercise, and 
+nutritional principles, a life-style wellness program (out -
+patient, group treatment) was evaluated among US mili -
+tary personnel typically demonstrating an overweight or 
+obese body constitution status (BMI about 30.5 kg/m²) 
+[31]. The program began with an intense week (phase 1: 
+individually tailored programs including exercising, nutri-
+tional education and life-style behavior leading to a better 
+self-awareness and decision-making cycles) followed by a 
+1-year follow-up (phase 2: ongoing group-sessions). The 
+life-style program resulted in significant weight losses of 
+about 11 and 14 lbs (equal to −4.9 kg and − 6.4 kg) for 
+males and females, respectively and accordingly to BMI 
+reductions of about − 2 kg/m² predominantly during the 
+first 6 months of the observation. Effect sizes (Cohen’s d) 
+for these improvements were calculated retrospectively 
+and ranged from 1.18 to 1.39, meaning large effects [11].
+Another intensive lifestyle intervention program (Fit 
+Blue) aimed to translate the US Army ‘Look AHEAD’ 
+weight loss program under conditions of distance-based 
+counselor-initiated or self-paced program conditions 
+[32]. The complex lifestyle intervention consisted of indi-
+vidualized and progressive exercise prescription videos, 
+Page 10 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+educational and motivational sessions, daily weight mon -
+itoring displayed in a web-based tool, meal-replacement 
+offers or dietary meal plans including a food scale showed 
+better outcomes for the counselor initiated than for the 
+self-paced option after 4 months (weight loss phase: 
+−3.2 ± 3.4 kg and 29.8% participants with ≥ 5% weight 
+loss vs. −0.6 ± 2.9 kg and 10.5% participants with ≥ 5% 
+weight loss) and 12 months (sustainability of weight loss: 
+−1.9 ± 4.1 kg and 29.5% participants with ≥ 5% weight loss 
+vs. −0.1 ± 3.8 kg and 15.6% participants with ≥ 5% weight 
+loss) in overweight (43.5%) or obese (56.5%) military per -
+sonnel. Effect sizes were not reported and retrospective 
+calculations were not applicable.
+Among obese German Army soldiers (n = 1090, BMI 
+33.8 ± 4.0) a complex but somehow more simply struc -
+tured weight loss program including individualized 
+endurance exercise prescriptions and health risk fac -
+tor awareness with dietary counseling suffered from an 
+enormous drop-out rate (about 60%), and led to weight 
+losses of in average 7 kg (out-patient study arm) or 4.4 
+kg (course-based study arm) [ 21]. Effect sizes were not 
+reported and could not be calculated retrospectively, 
+but the authors concluded that program goals of 5% or 
+10% body weight loss rates were not achieved. Results of 
+the out-patient study arm (n = 665) were reported sepa -
+rately (after one year: body weight − 3.1 kg, BMI − 0.9 kg/
+m², waist circumference − 3.1 cm) without effect sizes 
+but highlighting that 12.2% and 8.4% of participants 
+achieved a 5% body or 10% weight loss, respectively, 
+and the course-based study results arm were published 
+separately, again [ 22]. Drop-out was described as 46.1% 
+and only a small number of 27.5% of the completing par -
+ticipants showed a weight loss of ≥ 5% body weight with 
+statistically significant but absolutely too small effects of 
+about − 4 kg weight loss and − 4 cm waist circumference 
+[23].
+Pharmacological treatment plus fat-reduction-
+diet For the uptake of fat energy absorption reduc -
+ing medication (3 pills à 60 mg Orlistat per day over 6 
+months) while maintaining a fat-reduction-diet Smith 
+et al. found placebo-controlled effects in a clinical trial 
+including obese US Army soldiers (BMI > 30 kg/m²) with 
+trivial to small effect sizes (Cohen’s d from 0.02 to 0.37) 
+[19]. Orlistat led to a body weight reduction of −3.1 (± 4.7) 
+kg (ES = 0.19), to a fat mass reduction of −2.5 (± 3.9) kg 
+(ES = 0.37), to a fat-free mass reduction of −0.3 (± 2.8) 
+kg (ES = 0.02), and a BMI reduction of −1.1 (± 1.7) kg/m² 
+(ES = 0.33) in a per-protocol-analysis. The effect sizes were 
+calculated retrospectively [ 11]. Placebo – representing in 
+fact a fat-reduction-diet condition – led to a comparable 
+weight loss and BMI change, but a smaller fat mass and 
+greater fat-free mass loss.
+Discussion
+This review aimed to identify weight management 
+approaches in military personnel environments targeting 
+weight-loss and weight-gain prevention as countermea -
+sures against widespread overweight and obesity among 
+members of the Armed Forces potentially hampering 
+their military readiness and physical health state. In order 
+to compare the effectiveness, literature findings shall be 
+discussed beginning with exercise only interventions, 
+diet only interventions and combined interventions. 
+The order of the discussed studies is according to their 
+ranking of reported or retrospectively calculated statisti -
+cal effect sizes (ES) for body composition improvements 
+from smaller to larger ES.
+The two studies with exercise only interventions were 
+described by Cederberg et al. [ 13] and Vantarakis et al. 
+[33].Almost negligible body composition improvements 
+were found for a progressive endurance and strength 
+training covering a six to twelve months intervention in 
+normal weight to obese military personnel [Cederberg 
+et al., 2011] [ 13]. These exercise only induced effects of 
+weight (−0.5 kg), BMI (−0.3 kg/m²), waist circumfer -
+ence (−0.1 cm), and body fat percentage (−1.1%) reduc -
+tions were reported without statistical ES, but decreases 
+remained far from those described for endurance train -
+ing induced effects in the general population, as reported 
+in a meta-analysis for example for waist circumference 
+reductions (−3.2 cm (95% −3.6 to −2.6)) [ 34]. Exercise 
+only effects on weight loss were described in an earlier 
+meta-analysis as being about 2.9 (± 0.4) kg in short-term 
+interventions in the general population, which was even 
+more than in military personnel environments [ 13, 35]. 
+In contrast, the above-mentioned body fat percentage 
+changes (−1.1%) were almost comparable to resistance 
+training only effects (−1.6%), as reported for the general 
+population in another meta-analysis, while a combined 
+strength and endurance training led to larger body fat 
+percentage decreases (−2.3%), and in combination with 
+caloric restriction, body fat percentage decreases (−3.8%) 
+were even more pronounced [36].
+Moderate to large ES (0.6 − 1.3) were retrospectively 
+calculated for an intensive exercise program leading to 
+meaningful fat mass percentage decreases (1,6%) and 
+weight-losses (1.8 kg), but these effects referred to a 
+normal-weight sample of cadets at the beginning of their 
+military service – meaning at the transition from civilian 
+to military in-duty lifestyle conditions at the Greek Navy 
+– with the primary target to improve their physical fit -
+ness [ 33]. As such, these achievements were not really 
+good comparable to study results dealing with obese mil -
+itary personnel seeking for weight reductions.
+Two dietary interventions were described by Zinn et al. 
+[15] and Parastouei et al. [24].
+Page 11 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+Dietary approaches were somewhat more promising. A 
+low-carb diet achieved a favorable weight-loss (−5.5 kg) 
+and waist circumference reduction (−4.8 cm) compared 
+to a low-fat diet (−2.0 kg and 3.3 cm) [ 15]. Both, low-
+carb and low-fat diets achieved better benefits than any 
+other above-mentioned intervention. Although statistical 
+ES were not reported for the separate diet variants, low-
+carb weight reductions were somewhat in the range of 
+short-term results (−12.2 to −0.3 kg) reported in a review 
+article dealing with the general obese population either 
+with or without diabetes mellitus type II or even another 
+meta-analysis describing BMI reductions of about − 2 kg/
+m² (6%) after dietary counseling in the general population 
+[37, 38]. The favorable low-carb effect on body weight 
+was described as being likely clinically beneficial com -
+pared to low-fat; the low-carb effect on waist circumfer -
+ence was described as being probably clinically beneficial 
+compared to low-fat as highlighted by the authors [15].
+Meal-replacement strategies (twice a day formula 
+diet, Slim-Fast) did not reveal additional advantages in 
+weight loss or fat mass reduction compared to an edu -
+cation-based program alone (Weigh to Stay, US Army), 
+although the authors reported effects in favor of an addi -
+tional meal-replacement, if an intent-to-treat analysis 
+was applied [Smith et al., 2010] [ 17]. But retrospectively 
+calculated effect sizes were only small for widely varying 
+weight-losses of about three to four kilo grams, or prob -
+ably moderate for fat mass reductions of about three kilo 
+grams after six months either varying widely. BMI reduc -
+tions associated with formula diet usage of about one kilo 
+gram per square meter were slightly higher than due to 
+the application of synbiotic (microbiome) supplements 
+[24].
+The following studies described combined interven -
+tions in the order of ascending effect sizes (trivial < 0.2, 
+small ≥ 0.2, moderate ≥ 0.5 and large ≥ 0.8).Only trivial 
+ES were assessed for a single (4 h) educational lifestyle 
+changing approach in Air Force members not meet -
+ing fitness recommendations by Webber at al. in 2012, 
+although this punctual short-term intervention was 
+reported to be effective as a countermeasure by the 
+authors [26]. Actually, ES were modest (< 0.10) for BMI 
+reductions of about 0.2 kilo grams or waist circumference 
+reductions for males and females of in average 0.8 cm and 
+2.2 cm, respectively, after a period of two to three months 
+(interquartile range).
+Low ES were also determined for additional body 
+composition improvements in favor of a Nurse Health 
+Coaching program compared to controls, which were 
+documented after a 12-week program after a preceding 
+US Army weight loss standard program (MOVE!-study) 
+[18].
+Despite ES were not reported and the study goal 
+focused more on weight gain prevention than on body 
+composition improvements, another educational 
+approach should be discussed as probably not being 
+favorable. Robbins et al. claimed for their booklet and 
+motivation email-based intervention also a success -
+ful weight gain prevention effect, because a normally 
+expected annual weight gain of about a half to one kilo -
+gram (+ 0.45 to 0.9 kg) was not observed in their total 
+sample [ 14]. In this study, weight losses were achieved 
+minimally only in women (−0.01 kg) and in a minor -
+ity of male Senior Airmen (−0.32 kg), but the majority 
+of other male Air Force members gained body weight 
+(+ 1.3 kg) after twelve months, exceeding the regularly 
+expected weight gain of less than one kilo grams. Thus, 
+the effectiveness of educational and motivation promot -
+ing approach may remain a matter of debate.
+Somehow similar, internet-based behavioral educa -
+tion effects targeting weight gain preventions appear to 
+be ambiguous, although the authors concluded that their 
+approach to promote weight-gain prevention was suc -
+cessful due to a lower rate of 42% weight-gainers com -
+pared to 60% within their controls [ 27]. ES were also not 
+reported and could not be assessed retrospectively, but 
+weight-loss effects after six months were rather small or 
+even negligible and individually varying widely (weight 
+− 1.3 ± 4.1 kg, BMI − 0.5 ± 1.4 kg/m², BF% −0.4 ± 3.1%). 
+Thus, the authors’ interpretations of success may also 
+remain a matter of debate.
+Although ES were not reported and not retrospec -
+tively applicable, the use of wearable technologies (fitness 
+trackers) to promote physical activity after a successful 
+weight loss program showed to be not effective to prevent 
+weight regain, which actually was about five kilo grams 
+after 21 weeks follow-up, although the higher adherence 
+to use the trackers was accompanied by slightly smaller 
+regains [25].
+Somehow as an add-on to web-based approaches, 
+Stewart et al. found that an additional tool to promote 
+the use of internet-based educational programs including 
+‘food planer’ , ‘exercise planer’ , and ‘lifestyle planer’ com-
+ponents led to better weight loss results [ 28]. But nei -
+ther baseline nor follow-up body weight measures were 
+reported, except the success rate of about 12% of the par-
+ticipants having achieved a 5% body weight loss. Accord -
+ingly, it was not easily possible to rate the effectiveness 
+of this weight loss program approach in absolute num -
+bers or even effect sizes. Probably, a comparison with a 
+double-blinded placebo-controlled clinical trial among 
+the general, overweight or obese population allows an 
+interpretation [8]. Wilding et al. found weight loss rates 
+(≥ 5% body weight reduction) in their controls (BMI ≥ 30 
+kg/m², lifestyle intervention program beside a placebo-
+pharmaceutical treatment) of 31.5%, and a body weight 
+loss of 10% or more in 12% of these participants. This 
+would enable us to resume the above-mentioned lifestyle 
+Page 12 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+program effect of 12% of the participants achieving a 5% 
+body weight loss as being markedly smaller compared to 
+12% of lifestyle-program participants (study population 
+controls) achieving a 10% body weight loss [8, 28].
+Using a daily diary for food-uptake and exercising may 
+be a more favorable approach to achieve a systematic 
+weight loss, as reported by Shay et al., while the type of 
+a used diary did affect the adherence, but not the amount 
+of weight loss or body fat percentage and waist circum -
+ference decreases [29]. Despite larger positive body com -
+position changes – compared to any above-mentioned 
+approaches – the individuals’ changes varied markedly, 
+and the authors themselves concluded that body compo -
+sition changes did not reach a clinically meaningful level.
+In comparison to military personnel, larger effects for 
+dietary or diet and exercise combinations were observed 
+in the general population. Diet only weight loss effects 
+(−10.7 ± 0.5 kg) showed to be much larger than exercise 
+only effects (−2.9 ± 0.4 kg), but the combination of diet 
+and exercise was even a little better (−11.0 ± 0.6 kg) in 
+short-term (< 6 months) interventions, although these 
+effects shrank a little over time (−8.6 ± 0.8 kg) [35].
+Larger effects were observed for pharmaceutical 
+approaches. Facing the effectiveness for body weight 
+decreases induced by pharmaceutical products reducing 
+the fat-energy uptake (Orlistat), weight loss in an obese 
+sample of military personnel of about three kilograms 
+was effective but a little less pronounced than in the large 
+scaled obese sample in the general population, which was 
+reported as being about five and a half kilograms after a 
+six months medication period based on meta-analytical 
+data [19, 39]. But Wilding et al. reports compared to the 
+body weight reduction effects of about fifteen kilo grams 
+after subcutaneous injections of Semaglutide (2.4 mg/
+week) – a glucagon-like peptid-1 receptor-agonist, oral 
+fat-absorption reducing pharmaceutical effects appear to 
+be minor but still meaningful [8].
+At least moderate ES of larger than 0.5 were assessed 
+for a promotion of physical activity (increases of more 
+than 50%) accompanied by BMI improvements (3.5%) in 
+an obese sample of military personnel after a 12 weeks 
+educational program, which showed to have larger ES 
+than reported for short-term behavioral changing tech -
+niques promoting either physical activity and healthy eat-
+ing (ES 0.37 CI 0,26–0.48) in a meta-regression analysis 
+for the general population [30, 40].
+Without reported statistical ES, but demonstrating 
+the greatest values for body composition improvements, 
+an ad libitum ketogenic diet combined with exercising 
+revealed an average weight loss of almost eight kilo grams 
+accompanied by percent body fat reductions of in aver -
+age 5% in overweight but not obese military personnel 
+[16]. These results were comparable to those identified 
+in a review article covering ketogenic diets in the general 
+population describing even larger weight losses of in 
+average almost nine kilo grams [41].
+The largest ES (> 1.0) for observed weight-losses pre -
+dominantly during the first six months of the observation 
+period (BMI − 2 kg/m² for both sexes, weight loss males 
+− 4.9 kg and females − 6.4 kg) were calculated retrospec -
+tively by Bowles et al. for a complex lifestyle changing 
+program consisting of a combination of individually tai -
+lored cognitive-behavioral, psychoeducational, exercise, 
+and nutritional principles with ongoing sessions for a 
+follow-up of one year, which was leading to a better self-
+awareness and decision-making cycles [31]. A weight loss 
+of 7.7 kg in ketogenic diets is clinically meaningful but 
+limited by small samples.
+Also, a complex lifestyle changing program, but a little 
+less effective for clinical weight loss after a four months 
+weight loss (−3.2 kg) or a twelve months sustainability 
+phase (−1.9 kg) compared to Bowles et al. was reported 
+by Krukowski et al., unfortunately without reporting 
+statistical ES [ 32]. But the results of distance-based and 
+counselor-initiated interventions were described as a 
+promising approach for obese US military personnel. For 
+the general population, Baillot et al. conducted a meta-
+analysis and found shot-term (up to six months) and 
+prolonged (more than six months) weight loss effects 
+of either − 7.2 [CI −8.88 to −5.52] kg and of −11.33 [CI 
+−13.07 to −9.59] kg [ 42]. This underpinned that com -
+prehensive complex combinations of lifestyle changes 
+in combination with exercise promotion and dietary 
+measures were the most effective interventions over 
+the short or a prolonged time frame compared to other 
+approaches, although those applications in the military 
+environment were less effective compared to the general 
+population, which was apparent especially in a longer 
+time frame, where general population results demon -
+strated larger weight losses, while military personnel 
+showed a weight regain apparent as smaller weight losses 
+[21– 23, 31, 32].
+Applications of complex individualized exercise pre -
+scription., health-risk associated lifestyle modifications 
+and nutrition habits counseling among the German 
+Armed Forces (Bundeswehr, only one data set reported 
+in three consecutive publications) did not achieve self-
+set program goals of at least 50% of participants dem -
+onstrating a 5% or 10% body-weight loss after 18 to 24 
+months [21]. Results for a subsample (out-patient study 
+arm) of these data published originally in German lan -
+guage were published separately either without giving 
+ES. Weight losses within the remaining sample after high 
+drop-out rates of about 3.1 kg and waist circumference 
+reductions of about 3.1 cm after one year were deemed 
+to be no more than moderate [ 22]. And the other study 
+arm data (course-based) were published separately either 
+– again emphasizing the high drop-out rate of almost 
+Page 13 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+50% with only 27% achieving a body weight loss of at 
+least 5% meaning that the program was less successful 
+than expected, These results did not meet expectations 
+due to high dropout rates and modest weight loss [ 23]. 
+In order to improve the military fitness and operational 
+readiness of military personnel, combined interven -
+tion programs should be integrated into service opera -
+tions. Annual fitness training in conjunction with health 
+checks before and after deployment could potentially 
+provide promising approaches here. Stress in the work -
+place and readiness duties reduce the opportunities for 
+adequate physical activity during the diverse professional 
+obligations of routine operations. Official guidelines for 
+interventions through policy recommendations, such as 
+regular wellness activities for soldiers with elevated BMI, 
+could bring about possible improvements in this area. To 
+evaluate the effect of pharmaceutical interventions future 
+RCTs should evaluate for example Semaglutide in mili -
+tary populations.
+Limitations
+There are some limitations in our study. One limita -
+tion that complicates the interpretation of our results 
+relates to the statistical effect size, which was not con -
+sistently reported by the authors of the original sources 
+and in some cases could not be calculated retrospectively. 
+This was hampering our objective to determine a rank -
+ing order of a suggested effectiveness of overweight and 
+obesity countermeasures in military personnel environ -
+ments. In those cases, we considered the absolute mean 
+changes of reported body constitution parameters as an 
+alternative option for the intended ranking of counter -
+measures, but in these cases, we had to accept a potential 
+bias due to statistical basic requirements. Another limita-
+tion is the start of a preliminary literature search on July 
+16.2024. After refining the study protocol, we started the 
+registration in PROSPERO on December 15, 2024. Fur -
+ther limitations are a potential publication bias, as pre -
+dominantly positive findings may suggest bias (e.g. funnel 
+plot analysis was not feasible). Due to hand search some 
+studies were found that have no doi or internet source 
+(e.g. Brandes et al.) [ 20]. The absence of control groups 
+in some studies reduce the quality of significance. Some 
+studies reported about a high dropout rate up to 60%, like 
+Sammito et al. [ 21, 22] and the connected impact and a 
+reduced generalizability. There are additionally some spe-
+cific barriers to meta-analysis (e.g. varying outcomes like 
+BMI vs. waist circumference). Standard deviation was 
+not specified in all studies used. Different dropout rates 
+in the available studies could also influence the estimated 
+ES, as only those study participants who successfully 
+completed the study were taken into account. Overall, 
+there is little ES data available from the studies.
+Conclusions
+The present results show that combined lifestyle inter -
+ventions involving behavioral changes, physical activity, 
+and nutrition-based interventions have the greatest effect 
+size in military personnel compared to single interven -
+tions. Combined interventions appear promising but 
+require further validation due to study heterogeneity. Sin-
+gle interventions involving exclusively dietary measures, 
+nutritional replacement products (formula diets), exer -
+cise interventions, and behavioral interventions showed 
+lower effect sizes in terms of their impact on weight loss 
+in overweight and, in particular, obese military person -
+nel. Regardless of weight reduction, the effect of inter -
+ventions on physical fitness should not be ignored, which 
+was not specified in these studies, as the specific nature 
+of military work requires a high level of readiness. High-
+quality RCTs are needed to confirm efficacy in military 
+settings and in addition, studies should be conducted on 
+long-term sustainability or interventions tailored to mili -
+tary roles. Future research could likely include the pro -
+motion of training and physical activity in combination 
+with new pharmaceutical approaches (e.g., semaglutide 
+or bimagrumab).
+Abbreviations
+BMI  Body mass index
+CCT  Clinical controlled trial
+CI  Confidence interval
+CVD  Cardiovascular disease
+ES  Effect size
+HIIT  High intensity interval training
+mHealth  Mobile Health
+n  Number
+NHLBI  National Heart Lung and Blood Institute
+RCT  Randomized controlled trial
+Supplementary information
+The online version contains supplementary material available at  h t t p  s : /  / d o i  . o  r 
+g /  1 0 .  1 1 8 6  / s  1 2 9 9 5 - 0 2 5 - 0 0 4 8 0 - 7.
+Supplementary Material 1. Appendix A Study table with list of all included 
+studies
+Authors’ contributions
+Conceptualization, LS, LB, JS, methodology, LS, LB, JS; software, LS, LB, JS; 
+validation and formal analysis, LS, LB, JS; investigation and resources, LB; data 
+curation, LS, LB, JS; writing—original draft preparation, LS, LB, JS; writing—
+review and editing, LS, LB, JS; visualization, LB, JS; supervision LS, JS, all authors 
+have read and agreed to the published version of the manuscript.
+Funding
+This research received no external funding.
+Data availability
+No datasets were generated or analysed during the current study.
+Declarations
+Ethics approval and consent to participate
+not applicable.
+Page 14 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+Consent for publication
+Not applicable.
+Competing interests
+The authors declare no competing interests.
+Author details
+1Department I–Internal Medicine, Bundeswehr Hospital Hamburg, 
+Lesserstr. 180, Hamburg 22049, Germany
+2Department of Sports Medicine, Faculty for Psychology and Human 
+Movement Science, Institute for Human Movement Science, University of 
+Hamburg, Turmweg 2, Hamburg 20148, Germany
+Received: 20 June 2025 / Accepted: 26 August 2025
+References
+1. Hyde R. Europe battles with obesity. Lancet. 2008;371(9631):2160–1.
+2. Helmert U, Strube H. Die entwicklung der adipositas in Deutschland Im 
+zeitraum von 1985 Bis 2002. Gesundheitswesen. 2004;66(07):409–15.
+3. Scheit L, Schröder J, Will S, Reer R, Hoffmann MA. Prevalence of obesity and 
+associated health risks in soldiers of the German armed forces. J Occup Med 
+Toxicol. 2024;19(1):12.
+4. Kivimäki M, Kuosma E, Ferrie JE, Luukkonen R, Nyberg ST, Alfredsson L, et al. 
+Overweight, obesity, and risk of cardiometabolic multimorbidity: pooled 
+analysis of individual-level data for 120 813 adults from 16 cohort studies 
+from the USA and Europe. Lancet Public Health. 2017;2(6):e277–85.
+5. Shai I, Schwarzfuchs D, Henkin Y, Shahar DR, Witkow S, Greenberg I, et al. 
+Weight loss with a low-carbohydrate, Mediterranean, or low-fat diet. N Engl J 
+Med. 2008;359(3):229–41.
+6. Van Baak MA, Pramono A, Battista F, Beaulieu K, Blundell JE, Busetto L, et al. 
+Effect of different types of regular exercise on physical fitness in adults with 
+overweight or obesity: systematic review and meta-analyses. Obes Rev. 
+2021;22(S4):e13239.
+7. Teixeira PJ, Marques MM. Health behavior change for obesity management. 
+Obes Facts. 2017;10(6):666–73.
+8. Wilding JPH, Batterham RL, Calanna S, Davies M, Van Gaal LF, Lingvay I, et al. 
+Once-weekly semaglutide in adults with overweight or obesity. N Engl J Med. 
+2021;384(11):989–1002.
+9. Page MJ, McKenzie JE, Bossuyt PM, Boutron I, Hoffmann TC, Mulrow CD et al. 
+The PRISMA 2020 statement: an updated guideline for reporting systematic 
+reviews. BMJ. 2021;71.
+10. Cashin AG, McAuley JH. Clinimetrics: physiotherapy evidence database 
+(PEDro) scale. J Physiother. 2020;66(1):59.
+11. Lakens D. Calculating and reporting effect sizes to facilitate cumulative sci-
+ence: a practical primer for t-tests and ANOVAs. Front Psychol. 2013;4:863.
+12. Sullivan GM, Feinn R. Using effect size-or why the P value is not enough. J 
+Grad Med Educ. 2012;4(3):279–82.
+13. Cederberg H, Mikkola I, Jokelainen J, Laakso M, Härkönen P , Ikäheimo T, et al. 
+Exercise during military training improves cardiovascular risk factors in young 
+men. Atherosclerosis. 2011;216(2):489–95.
+14. Robbins AS, Chao SY, Baumgartner N, Runyan CN, Oordt MS, Fonseca VP . A 
+low-intensity intervention to prevent annual weight gain in active duty air 
+force members. Mil Med. 2006;171(6):556–61.
+15. Zinn C, McPhee J, Harris N, Williden M, Prendergast K, Schofield G. A 12-week 
+low-carbohydrate, high-fat diet improves metabolic health outcomes over a 
+control diet in a randomised controlled trial with overweight defence force 
+personnel. Appl Physiol Nutr Metab. 2017;42(11):1158–64.
+16. LaFountain RA, Miller VJ, Barnhart EC, Hyde PN, Crabtree CD, McSwiney FT, 
+et al. Extended ketogenic diet and physical training intervention in military 
+personnel. Mil Med. 2019;184(9–10):e538–47.
+17. Smith TJ, Sigrist LD, Bathalon GP , McGraw S, Karl JP , Young AJ. Efficacy of a 
+meal-replacement program for promoting blood lipid changes and weight 
+and body fat loss in US army soldiers. J Am Diet Assoc. 2010;110(2):268–73.
+18. McCarthy MS, Elshaw EB, Szekely BM, Hobbs C. A randomized controlled 
+trial of nurse coaching vs. herbal supplementation for weight reduction in 
+soldiers. Mil Med. 2017;182(S1):274–80.
+19. Smith TJ, Crombie A, Sanders LF, Sigrist LD, Bathalon GP , McGraw S, et al. Effi-
+cacy of orlistat 60 mg on weight loss and body fat mass in US army soldiers. J 
+Acad Nutr Diet. 2012;112(4):533–40.
+20. Brandes M. Bestimmung des Aktivitätsniveaus adipöser Soldaten im Rahmen 
+des Adipositas-Interventionsprogramms der Bundeswehr. Bundesmin. d. 
+Verteidigung vertreten durch Sanitätsamt d. Bundeswehr, Dez. I 2.3; 2007. 
+Bonn. (Forschungsbericht aus der Wehrmedizin; [20]07,7). 
+21. Sammito S. Das Adipositas-Interventionsprogramm der Bundeswehr. Adi-
+positas - Ursachen Folgeerkrankungen Ther. 2012;06(01):52–4.
+22. Sammito S. Obesity intervention during a work health promotion: the obesity 
+intervention program of the German military forces. J Occup Environ Med. 
+2013;55(7):728–31.
+23. Sammito S. Results of a course based obesity intervention program during 
+work. Work. 2016;53(3):661–7.
+24. Parastouei K, Saeidipoor S, Sepandi M, Abbaszadeh S, Taghdir M. Effects of 
+synbiotic supplementation on the components of metabolic syndrome 
+in military personnel: a double-blind randomised controlled trial. BMJ Mil 
+Health. 2022;168(5):362–7.
+25. Gorny AW, Chee WCD, Müller-Riemenschneider F. Active use and engage-
+ment in an mHealth initiative among young men with obesity: mixed 
+methods study. JMIR Form Res. 2022;6(1):e33798.
+26. Webber BJ, Nelson MS, Gildengorin V. Indicators of sequential fitness assess-
+ment failures for Travis air force base airmen who attend the be well course. 
+Mil Med. 2012;177(3):302–7.
+27. Hunter CM, Peterson AL, Alvarez LM, Poston WC, Brundige AR, Haddock CK, et 
+al. Weight management using the internet a randomized controlled trial. Am 
+J Prev Med. 2008;34(2):119–26.
+28. Stewart T, Allen HH, Bathalon RH, Ryan G, Newton DH, Williamson RL. 
+H.E.A.L.T.H.: efficacy of an internet/population-based behavioral weight man-
+agement program for the U.S. Army. J Diabetes Sci Technol. 2011;5(1):178–87.
+29. Shay LE, Seibert D, Watts D, Sbrocco T, Pagliara C. Adherence and weight loss 
+outcomes associated with food-exercise diary preference in a military weight 
+management program. Eat Behav. 2009;10(4):220–7.
+30. Sanaeinasab H, Saffari M, Dashtaki MA, Pakpour AH, Karimi Zarchi A, O’Garo 
+KGN, et al. A theory of planned Behavior-Based program to increase physical 
+activity in overweight/obese military personnel: A randomised controlled 
+trial. Appl Psychol Health Well-Being. 2020;12(1):101–24.
+31. Bowles SV, Picano J, Epperly T, Myer S. The LIFE program: a wellness approach 
+to weight loss. Mil Med. 2006;171(11):1089–94.
+32. Krukowski RA, Hare ME, Talcott GW, Gladney LA, Johnson KC, Richey 
+PA, et al. Dissemination of the look AHEAD intensive lifestyle interven-
+tion in the United States military: a randomized controlled trial. Obesity. 
+2018;26(10):1558–65.
+33. Vantarakis A, Vezos N, Karakatsanis K, Grivas G, Oikonomou T, Argyratou AD, 
+et al. The effects of exercise during a 10-Week basic military training program 
+on the physical fitness and the body composition of the Greek naval cadets. 
+Mil Med. 2022;187(11–12):e1396–402.
+34. Armstrong A, Jungbluth Rodriguez K, Sabag A, Mavros Y, Parker HM, Keating 
+SE, et al. Effect of aerobic exercise on waist circumference in adults with 
+overweight or obesity: a systematic review and meta-analysis. Obes Rev. 
+2022;23(8):e13446.
+35. Miller WC, Koceja DM, Hamilton EJ. A meta-analysis of the past 25 years of 
+weight loss research using diet, exercise or diet plus exercise intervention. Int 
+J Obes. 1997;21(10):941–7.
+36. Lopez P , Taaffe DR, Galvão DA, Newton RU, Nonemacher ER, Wendt VM, et 
+al. Resistance training effectiveness on body composition and body weight 
+outcomes in individuals with overweight and obesity across the lifespan: A 
+systematic review and meta-analysis. Obes Rev. 2022;23(5):e13428.
+37. Naude CE, Brand A, Schoonees A, Nguyen KA, Chaplin M, Volmink J. Low-
+carbohydrate versus balanced-carbohydrate diets for reducing weight and 
+cardiovascular risk. Cochrane Public Health Group, Cochrane Heart Group, 
+editors. Cochrane Database Syst Rev [Internet]. 2022 Jan 28 [cited 2025 Mar 
+17];2022(1). Available from:  h t t p  s : /  / d o i  . o  r g /  1 0 .  1 0 0 2  / 1  4 6 5  1 8 5  8 . C D  0 1  3 3 3 4 . p u b 
+2
+38. Dansinger ML, Tatsioni A, Wong JB, Chung M, Balk EM. Meta-analysis: 
+the effect of dietary counseling for weight loss. Ann Intern Med. 
+2007;147(1):41–50.
+39. Siebenhofer A, Winterholer S, Jeitler K, Horvath K, Berghold A, Krenn C 
+Long-term effects of weight-reducing drugs in people with hypertension. 
+Cochrane Hypertension Group, et al. editors. Cochrane Database Syst Rev 
+[Internet]. 2021 Jan 17 [cited 2025 Mar 17];2021(1). Available from:  h t t p s :   /  / d o  i 
+.  o r  g  /  1 0  . 1 0   0 2  / 1 4  6 5 1   8 5 8  . C  D 0 0 7  6 5 4 . p u b 5
+40. Samdal GB, Eide GE, Barth T, Williams G, Meland E. Effective behaviour change 
+techniques for physical activity and healthy eating in overweight and obese 
+Page 15 of 15
+Scheit et al. Journal of Occupational Medicine and Toxicology            (2025) 20:32 
+adults; systematic review and meta-regression analyses. Int J Behav Nutr Phys 
+Act. 2017;14(1):42.
+41. Yuan X, Wang J, Yang S, Gao M, Cao L, Li X, et al. Effect of the ketogenic diet 
+on glycemic control, insulin resistance, and lipid metabolism in patients with 
+T2DM: a systematic review and meta-analysis. Nutr Diabetes. 2020;10(1):38.
+42. Baillot A, Romain AJ, Boisvert-Vigneault K, Audet M, Baillargeon JP , Dionne 
+IJ, et al. Effects of lifestyle interventions that include a physical activity 
+component in class II and III obese individuals: a systematic review and meta-
+analysis. PLoS One. 2015;10(4):e0119017.
+Publisher’s note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.

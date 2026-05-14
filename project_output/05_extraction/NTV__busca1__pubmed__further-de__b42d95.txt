@@ -1,0 +1,928 @@
+ARTICLE IN PRESS
+Article in Press
+Further development and (cost-)effectiveness of 
+the Smarter Pregnancy lifestyle program tailored 
+for pregnant women with obesity (HYGEIA trial)
+BMC Pregnancy and Childbirth
+Received: 14 December 2025
+Accepted: 28 April 2026
+Cite this article as: Rousian M., Bruin R.J., 
+Anker-de Visser E.J. et al. Further 
+development and (cost-)effectiveness 
+of the Smarter Pregnancy lifestyle 
+program tailored for pregnant women 
+with obesity (HYGEIA trial). BMC 
+Pregnancy Childbirth (2026). https://doi.
+org/10.1186/s12884-026-09196-w
+Melek Rousian, Rianne J Bruin, Elizabeth J Anker-de Visser, Marten J Poley, Ageeth N 
+Schonewille-Rosman, Pam ten Broeke, Caroline A Figueroa, Pieter Jeekel, Isabelle N 
+Fabbricotti, Régine PM Steegers-Theunissen &  HYGEIA consortium 
+We are providing an unedited version of this manuscript to give early access to its 
+findings. Before final publication, the manuscript will undergo further editing. Please 
+note there may be errors present which affect the content, and all legal disclaimers 
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer 
+Review reports will publish with the final article.
+https://doi.org/10.1186/s12884-026-09196-w
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International 
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit 
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do 
+not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the 
+article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain 
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+TITLE PAGE
+Further development and (cost-)effectiveness of the Smarter Pregnancy lifestyle 
+program tailored for pregnant women with obesity (HYGEIA trial)
+Melek Rousian1, Rianne J de Bruin1, Elizabeth J Anker-de Visser2, Marten J Poley2,3, 
+Ageeth N Schonewille-Rosman 1,4, Pam ten Broeke 5, Caroline Figueroa 6, Pieter 
+Jeekel7, Isabelle N Fabbricotti2, Régine PM Steegers-Theunissen1. On behalf of the 
+HYGEIA consortium
+1 Department of Obstetrics and Gynaecology, Erasmus MC, University Medical 
+Centre Rotterdam, PO Box 2040, 3000 CA, Rotterdam, The Netherlands 
+2 Erasmus School of Health Policy & Management, Erasmus University Rotterdam, 
+PO Box 1738, 3000 DR, Rotterdam, The Netherlands
+3 Department of Paediatric Surgery, Sophia Children’s Hospital, Erasmus MC, 
+University Medical Centre Rotterdam, Rotterdam, The Netherlands
+4 Department of Healthcare studies, Rotterdam University of Applied Sciences, PO 
+Box 25035, 3001 HA Rotterdam, The Netherlands
+5 Department of Health, Medical and Neuropsychology, Faculty of Social and 
+Behavioural Sciences, Leiden University, Leiden, The Netherlands 
+6 Faculty of Technology, Policy and Management, Delft University of Technology, 
+Delft, The Netherlands
+7 PCA Zorg&ICT BV, Rotterdam, The Netherlands
+Correspondence:
+Dr. M. Rousian, MD, PhD 
+Department of Obstetrics and Gynaecology 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Erasmus MC, University Medical Centre 
+Wytemaweg 80, 3015 CN Rotterdam, The Netherlands, Room Ee2269 
+Phone: +31 10 7038254  
+Email: m.rousian@erasmusmc.nl 
+ORCID: 0000-0002-3008-2567
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ABSTRACT
+Background: Maternal obesity affects approximately 16% of pregnancies 
+worldwide and is a major concern for public health. This condition is associated 
+with elevated risks of adverse outcomes, such as gestational diabetes, 
+hypertensive disorders of pregnancy, and cardiovascular and metabolic disease 
+(CVMD) during the life course. Our long-term experience with the (cost-)effective 
+web-based Smarter Pregnancy coaching program is promising to mitigate these 
+risks and improve lifestyle behaviours as well as maternal and neonatal health 
+outcomes. 
+Here our aim is to describe the rationale and study protocol for a randomised 
+controlled trial (RCT) to investigate the clinical and cost-effectiveness, and 
+implementation potential of Smarter Pregnancy Plus (SP+) from early pregnancy 
+onwards in women with obesity. 
+Methods: The HYGEIA study is designed as a multicentre, two-armed RCT. A total 
+of 930 women with a body mass index ≥30 kg/m² and a singleton pregnancy of 
+≤14 weeks gestation will be recruited and randomised 1:1 to the intervention 
+(n=465) and control group (n=465). The intervention group will receive six months 
+of digital lifestyle coaching via the SP+ application, supported by at least one video 
+consultation. SP+ is an extended, co-designed and tailored app version for 
+pregnant women with obesity based on the validated SP program. It provides 
+evidence-based coaching on nutrition, physical activity, mental health, folic acid 
+and vitamin D supplement use, and smoking and alcohol cessation. The control 
+group will receive usual care. Data will be collected through validated 
+questionnaires, electronic medical records, financial records, and qualitative 
+stakeholder sessions, guided by the Non adoption, Abandonment, Scale-up, Spread 
+and Sustainability (NASSS)-framework. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+The primary outcome is the incidence of maternal CVMD during pregnancy, 
+assessed using a composite measure that includes gestational diabetes, 
+hypertensive disorders of pregnancy, and worsening of pre-existing hypertension 
+or diabetes. Secondary outcomes include changes in lifestyle behaviours, maternal 
+and neonatal outcomes, quality of life, and cost-effectiveness. Tertiary outcomes 
+involve patient satisfaction, provider feasibility and a roadmap for nationwide 
+implementation. 
+Discussion: The HYGEIA study will provide evidence on the clinical impact, cost-
+effectiveness, and implementation potential of SP+ as a digital lifestyle 
+intervention for pregnant women with obesity. If successful, SP+ could further 
+enhance routine obstetric care and contribute to improving maternal and neonatal 
+health while reducing healthcare costs.  
+Trial registration Dutch Trial Registration number NL-OMON57196 (URL: 
+https://onderzoekmetmensen.nl/nl/node/57196/pdf), date of registration 19-12-
+2024. 
+Keywords (3-10): Pregnancy, Obesity, Lifestyle, Intervention, Cardiovascular, 
+Nutrition, Physical activity, Mental Health, Smarter Pregnancy, mHealth 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+BACKGROUND
+Maternal obesity presents a growing public health challenge, affecting 
+approximately 16% of all pregnancies worldwide, equivalent to an estimated 39 
+million pregnancies annually[1]. Obesity during pregnancy is associated with 
+significantly increased risks of adverse maternal and neonatal outcomes, including 
+gestational diabetes (GDM), hypertensive disorders of pregnancy (HDP) and long-
+term cardiovascular and metabolic diseases (CVMD) in both mothers and 
+children[2-6]. Physiological adaptations during pregnancy, such as increased blood 
+volume and heart rate, act as a cardiovascular stress test and may amplify existing 
+risk factors like obesity. As a result, one in four women with obesity develops at 
+least one CVMD-related complication during pregnancy[4]. These complications 
+contribute not only to maternal morbidity and lifelong increased risk of non-
+communicable diseases – with a two- to tenfold higher risk of developing chronic 
+CVMD within ten years after pregnancy – but also place a considerable burden on 
+healthcare and society[4, 7, 8]. Given the substantial societal costs of obesity and 
+cardiovascular diseases, estimated at €79 billion and €8.3 billion, respectively, 
+annually in the Netherlands, there is an urgent need for effective preventative 
+interventions to improve pregnancy outcomes and long-term health 
+trajectories[9].
+Unhealthy lifestyles and adverse living environment are important risk factors for 
+obesity and CVMD, making tailored lifestyle interventions a promising strategy to 
+reduce risks before and during pregnancy. However, implementing personalised 
+lifestyle care into routine obstetric practice remains limited and challenging[10]. 
+Effective interventions must be known, evidence-based, tailored and accessible to 
+women with varying levels of health and digital literacy, and seamlessly 
+incorporated into existing care pathways without increasing the workload of 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+healthcare providers (HCPs). Furthermore, sustainable adoption requires early 
+involvement of HCPs, insurers, and policymakers, along with evidence of cost-
+effectiveness and implementation feasibility.
+Digital solutions, particularly mobile applications, offer unique potential for 
+accessible and tailored lifestyle support on a large scale. Mobile apps can provide 
+personalised, scalable, and continuous coaching, support self-management, and 
+help overcome time and resource constraints in clinical practice. Since 2011 
+Steegers-Theunissen and colleagues have gained extensive experience with 
+Smarter Pregnancy, a web-based lifestyle coaching program that has been 
+developed and used by thousands of (pre)pregnant women (and partner)[11-21]. 
+Internal and external validity have been demonstrated using cohort and 
+randomised controlled trial designs in different patient groups and general 
+populations both in The Netherlands and United Kingdom. These studies have 
+shown significant improvements ranging from 30-70% in vegetable and fruit intake 
+and folic acid supplement use. Clinical effectiveness has been shown for higher 
+pregnancy rates in both natural and Assisted Reproductive Technology 
+pregnancies, embryonic growth, and a slightly lower maternal blood pressure. The 
+program has been recognised in one of the highest categories with regard to  
+clinical  and cost-effectiveness by the Dutch National Health Care Institute[11, 13, 
+15, 16, 22]. So far the effects on other pregnancy outcomes have not yet been 
+studied and subgroup analyses showed lower effectiveness in (pre)pregnant 
+women with obesity[11,15]. Moreover, its broader impact on healthcare costs, 
+quality of life, and the feasibility of large-scale implementation requires further 
+investigation. 
+To address these limitations, the web-based Smarter Pregnancy 4.0 has been 
+further developed into the Smarter Pregnancy Plus (SP+) app tailored for pregnant 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+women with obesity. The mobile app format was selected to improve accessibility, 
+usability, and sustained engagement throughout pregnancy.
+We hypothesise that SP+ will support sustainable lifestyle behavioural changes 
+that contribute to the secondary prevention of CVMD and other obesity-related 
+pregnancy complications. It will demonstrate good value for money as well as high 
+acceptability and implementation among both pregnant women with obesity and 
+their HCPs. The HYGEIA-trial, named after the Greek goddess of health and 
+prevention, aims to evaluate the clinical and cost-effectiveness, and 
+implementation potential of SP+ in a real-world healthcare context. In this article, 
+we describe the study protocol of HYGEIA, in accordance with the SPIRIT (Standard 
+Protocol Items: Recommendations for Interventional Trials) 2025 guideline[23].
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+METHODS/DESIGN
+Aim 
+The primary aim of this randomised controlled trial (RCT) is to evaluate the 
+effectiveness of SP+ in reducing the incidence of cardiovascular and metabolic 
+complications or diseases (CVMD).
+Secondary aims are: first, to determine the effectiveness on other adverse 
+maternal and neonatal health outcomes; second, to evaluate the cost-
+effectiveness of SP+; and third, to develop a scalable framework for nationwide 
+implementation and reimbursement of SP+. 
+Study design 
+The HYGEIA-study is a multicentre, two-arm RCT amongst 930 pregnant women 
+with obesity. Participants will be randomised 1:1 to either the intervention (n=465) 
+or control (n=465) group. 
+Study population 
+To be eligible to participate, women must meet the following criteria:
+- Pre-pregnancy or first trimester body mass index (BMI) of ≥30 kg/m2, as 
+classified by the World Health Organization criteria for adults[24]; 
+- Singleton pregnancy up to 14+0 weeks of gestation at study entry;
+- Aged 18 years or older;
+- Sufficient understanding of the Dutch or English language;
+- Access to a smartphone and/or tablet.
+Women will be excluded in case of a non-viable pregnancy, inability to provide 
+informed consent or insufficient understanding of the Dutch or English language. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Partners of women randomised to the intervention group will be offered the 
+opportunity to use SP+ as well, to support the women’s intrinsic and extrinsic 
+motivation through involvement of their close living environment. Partner 
+participation is voluntary and limited to app use; they will not be actively studied 
+or required to complete study questionnaires. To be eligible, partners must be at 
+least 18 years of age, have sufficient understanding of the Dutch or English 
+language and provide written informed consent. 
+Recruitment and randomization
+Eligible participants will be recruited from March 2025 onwards within primary, 
+secondary and tertiary obstetric care settings. Participants receiving care in the 
+primary care setting will be recruited through midwifery practices across the 
+country and by a private information platform called www.zwangerenportaal.nl. 
+This platform is connected to the digital medical system of >50% of the midwifery 
+practices in The Netherlands, enabling to reach women in a large part of the 
+country. Participants receiving care in the secondary care setting, will be recruited 
+in collaboration with the participating hospitals IJsselland Hospital in Capelle aan 
+den IJssel, and Reinier de Graaf Gasthuis in Delft, The Netherlands. Other 
+secondary care setting hospitals in the country will contribute by handing out 
+leaflets. Finally, participants receiving care in tertiary care setting will be recruited 
+through the initiating academic hospital, Erasmus MC, University Medical Centre, 
+Rotterdam, The Netherlands. HCPs of participants will receive confirmation of 
+participation after their patient gets enrolled. 
+Eligible participants will receive a study leaflet either in person or by email, 
+containing detailed information about the study. They will be asked for permission 
+to be contacted by a member of the research team and offered the option to self-
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+register via the study website[25]. If permission is granted or if participants self-
+register, they will be contacted by phone and be counselled by a member of the 
+research team in accordance with the ‘Good Clinical Practice’ guidelines[26]. After 
+oral consent, digital written informed consent will be obtained through Validsign. 
+Following consent, participants will be enrolled and randomised in an electronic 
+data capture system (Castor) using block randomization stratified by site (block 
+sizes 4, 6, 8). This online randomization software is always available. Due to the 
+nature of the intervention, this will not be a blinded study. 
+Study procedures
+Participation lasts 12 months (52 weeks). Within this period, the control group will 
+receive 12 months of standard obstetric care, which should include standard 
+information on lifestyle provided by their HCP.  The intervention group will receive 
+6 months of the intervention on top of standard obstetric care, followed by 6 
+months of standard obstetric care. Figure 1 shows an overview of the study design.
+The intervention 
+The intervention consists of access to the SP+ mobile application for 6 months and 
+one or two video consultations with a lifestyle coach, depending on the 
+participants’ preference. SP+ is available in Dutch and English for both Apple and 
+Android users and was developed in co-creation with pregnant women with obesity 
+and HCPs using focus groups and interviews, addressing their specific needs and 
+preferences. SP+ incorporates key enhancements: supportive and non-
+stigmatizing language; a customisable interface; a read-aloud functionality; and 
+new modules on mental health, physical activity, and behaviour change support. 
+Results of these sessions will be published separately. SP+ provides personalised 
+lifestyle coaching on the most important lifestyle domains – healthy nutrition 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+(fruits, vegetables, fish, whole-wheat products, snacks, meals, and sugar-
+sweetened beverages), physical activity, mental health (stress and sleep), folic 
+acid and vitamin D supplement use, alcohol abstinence, smoking cessation, and 
+obesity-related risks. The coaching provided in SP+ is based on Prochaska and 
+Diclemente’s transtheoretical model, Bandura’s social cognitive theory for self-
+efficacy and Fogg’s behaviour model[27-29]. In addition, for nutrition, physical 
+activity, and mental health intervention techniques to foster habit formation were 
+implemented, including goal setting, increasing knowledge, and implementation 
+intentions[30]. The content of the personalised coaching is based on a baseline 
+screening on personal conditions, nutrition and lifestyle and monitoring 
+questionnaires at 6, 12, 18, and 26 weeks. At these time points, participants are 
+invited to complete a short questionnaire to monitor the change in their nutrition 
+and lifestyle. Results from the questionnaires are compared with previous 
+responses and visualised to show progress. Participants receive tailored feedback 
+adapted to their answers. In between these questionnaires, the tailored coaching 
+includes a maximum of three push messages per week containing tips, 
+recommendations, motivational messages, recipes, and additional questions 
+addressing behaviour. The application provides the option to personalise these 
+push messages with regards to frequency, timing and content. The application is 
+subdivided into several lifestyle modules, all offering additional functionalities and 
+support such as a habit tracker (to set and track personal goals and 
+implementation intentions), physical exercises, a pedometer, mental health 
+exercises and a mood diary tracker, as shown in Figure 2. The interface is 
+customizable according to the participants’ wishes and personal goals. 
+Furthermore, SP+ offers a read-aloud feature to ensure accessibility for individuals 
+with lower language proficiency. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Finally, coaching through the mobile application will be supplemented by one or 
+two video consultations with a lifestyle coach, during which additional coaching is 
+provided, and potential questions are answered. The first video consultation will 
+be planned shortly after inclusion, at T=3 weeks. A second consultation is optional 
+and will be planned according to the participant’s wishes at T=18 weeks. 
+Participating partners receive a separate app, personalised according to their 
+lifestyle and goals. 
+Outcome measurements 
+An overview of all assessed outcomes can be found in Table 1 (Additional file 1). 
+The primary composite outcome used for the effectiveness is the incidence of 
+CVMD during the 12 months study period, including gestational diabetes, HDP 
+(pregnancy induced hypertension, preeclampsia, HELLP syndrome), and the 
+aggravation of pre-existing chronic hypertension or type I or II diabetes. 
+Pregnancy-induced hypertension, preeclampsia and HELLP syndrome will be 
+defined according to the American College of Obstetricians and Gynaecologists 
+(ACOG) definitions[31]. Aggravation of chronic hypertension is defined as 
+progression to superimposed preeclampsia or hypertension without medication 
+evolving to requirement of medication. Gestational diabetes is defined as an 
+abnormal 75 grams oral glucose tolerance test (OGTT) (fasting glucose >6.0 
+mmol/L, 2-hour post intake glucose >7.8 mmol/L)[32]. Aggravation of chronic 
+diabetes mellitus is defined as diabetes without medication progressing to 
+requirement of medication.  
+Secondary outcomes include maternal and neonatal outcomes and cost-
+effectiveness. Maternal outcomes that will be assessed include lifestyle risk score 
+(LRS) change at 6 and 12 months, gestational weight gain, mode of delivery, 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+induction of labour, premature rupture of membranes, perineal trauma, 
+postpartum haemorrhage, blood pressure patterns, quality of life, mental health 
+and patient reported outcome- and experience measures (PROMs and PREMs)[14, 
+15]. All complications assessed in the primary outcome will also be assessed 
+individually regarding the incidence, severity and need for medication. The 
+cardiovascular health risk will be assessed using the life’s simple 7 or life’s 
+essential 8, health metrics developed by the American Heart Association to help 
+people understand and improve their cardiovascular health, and provide a practical 
+framework for preventing heart disease, stroke and other chronic illness[33]. As an 
+additional secondary outcome, we will assess the extent to which specific 
+behaviours become habitual, as this will provide important insights on the 
+sustainability of the intervention effects beyond the scope of the intervention.
+Neonatal outcomes that will be assessed include large for gestational age (>p90), 
+small for gestational age (<p10), foetal growth restriction (<p10), congenital 
+anomalies (detected until 6 months after delivery), preterm birth (<37 weeks 
+gestational age), gestational age at delivery, perinatal mortality, shoulder 
+dystocia, Apgar scores and NICU admission (up to 6 months after delivery).
+The cost-effectiveness analysis will be conducted from a societal perspective. The 
+evaluation will make a comparison between the intervention and control group by 
+identifying, measuring and valuing the costs and patient outcomes of both 
+treatment strategies. The time horizon of the analysis will be the 12-months study 
+period. Established methods for economic evaluations in healthcare will be 
+applied[34-36]. The following costs will be calculated, covering both medical and 
+non-medical costs: 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+- Medical costs, collected from electronic hospital files, patient files and the 
+iMTA Medical Consumption Questionnaire (MCQ)[37]. This includes the costs 
+of hospital admissions, medications, laboratory costs, diagnostic imaging, 
+outpatient visits, maternity care, home care use, visits to the general 
+practitioner, etcetera.
+- Productivity costs related to both paid and unpaid work, collected from the 
+iMTA Productivity Cost Questionnaire (PCQ)[38].
+- Intervention costs associated with delivering the SP+ intervention (i.e., all 
+costs made for guiding and coaching the women), partly obtained through 
+interviews and/or observations.
+Regarding the patient outcomes, the cost-effectiveness analysis will look at the 
+occurrence of CVMD within 12 months, health-related quality of life (comprising 
+both physical and mental health dimensions), and quality-adjusted life years 
+(QALYs). The calculation of QALYs will be based on the EQ-5D-5L questionnaire[39, 
+40]. This is a generic, preference-based quality of life measure, comprising 5 
+dimensions of health (mobility, self-care, usual activities, pain/discomfort and 
+anxiety/depression), that allows for the calculation of QALYs.
+Tertiary outcomes involve user satisfaction, provider feasibility and a roadmap for 
+reimbursement and implementation. Provider feasibility will be assessed using the 
+Measurement Instrument for Determinants of Innovation (MIDI) and Non-adoption, 
+Abandonment, Scale-up, Spread, and Sustainability (NASSS)-Framework. 
+Roadmaps for reimbursement and implementation will be developed together with 
+the HYGEIA consortium, healthcare insurers, policy makers, HCPs, and patients 
+using qualitative focus groups and interviews.
+Data collection
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Questionnaires
+Participants of both groups will receive several questionnaires, as listed below and 
+in figure 3. Lifestyle behaviours will be assessed in both groups at T=0 weeks, 
+T=12 weeks, T=26 weeks and T=52 weeks, by calculating and comparing the 
+extensively validated and recognised LRS of Smarter Pregnancy[15] (see 
+Additional file 2 for the questionnaire).
+Information on background characteristics, vulnerability, medical history, obstetric 
+history and current pregnancy will be collected through a baseline survey (T=0 
+weeks). Information on pregnancy course will be collected at 36 weeks of 
+pregnancy (approximately T=26 weeks) and follow-up (T=52 weeks). Information 
+on delivery outcomes will be collected at follow-up (T=52 weeks) (see Additional 
+file 3 for the questionnaires).
+Validated questionnaires will be used to collect information on mental health 
+quality of life (MHQoL)[41], PROMs and PREMs (ICHOM Pregnancy and 
+Childbirth)[42], and habit formation (SRBAI)[43]. Together with the questionnaire 
+used for the cost-effectiveness analysis, these questionnaires will be administered 
+at baseline (T=0 weeks), 36 weeks of pregnancy (approximately T=26 weeks) and 
+end of follow-up (T=52 weeks). App usability and satisfaction will be assessed at 
+36 weeks pregnancy (approximately T=26 weeks) within the intervention group, 
+using the validated mHealth App Usability Questionnaire (MAUQ)[44]. The total 
+duration for completing the questionnaires is estimated at 20 minutes at T=0, 
+T=26 and T=52 weeks and 5 minutes at T=12.  
+Follow-up
+Baseline characteristics and clinical outcomes will be extracted from electronic 
+medical records or charts at T=52 weeks. HCPs will be asked to collect at least the 
+following key data: 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+- OGTT (mmol/L) between 24- and 28-weeks’ gestation.
+- HbA1C levels (mmol/mol) in the first trimester and recurrent if participant 
+develops gestational diabetes or has chronic diabetes mellitus.
+- Blood pressure measurements (mmHg) at every antenatal and postpartum 
+visit, measured on the left arm. 
+- Weight (kilograms) at the first antenatal visit, between 20-24 weeks, 
+between 30-32 weeks and around the estimated due date.  
+- Foetal biometry parameters (biparietal diameter, head circumference, 
+abdominal circumference, femur length, estimated foetal weight) at 30- 
+and 34-weeks’ gestation or 32- and 36-weeks’ gestation. 
+Other key data to be collected from medical records and charts include medical 
+history, obstetric history, information on current pregnancy, pregnancy course and 
+delivery, adverse pregnancy outcomes, laboratory results, prenatal screening 
+results, and healthcare consumption and utilisation and associated costs.
+Statistics
+Sample size
+The sample size calculation is based on our primary outcome, the prevalence of 
+CVMD during the study period of 12 months. Assuming a 25% cumulative incidence 
+of CMVD, we aim to achieve a 40% reduction in the intervention group (to 15%), 
+and a 4% reduction in the control group (to 24%). Using a Chi-square test with 
+continuity correction at a 0.05 significance level, 465 participants per group (total 
+of 930) are required to achieve 80% power, accounting for a 30% dropout rate. 
+This dropout estimate aligns with previous Smarter Pregnancy studies[11, 15]. The 
+expected reduction of CVMD is supported by a meta-analysis from our group, 
+showing lifestyle interventions reduce HDP by nearly 50%[45].
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Data-analysis
+The effectiveness of the intervention will be analysed using the intention-to-treat 
+principle. Data will be analysed using IBM SPSS Statistics for Windows and R for 
+Windows. General and baseline characteristics will be compared between groups. 
+A post-hoc analysis will assess whether BMI differs significantly between groups at 
+baseline. Participant flow, including group sizes and attrition at each time point, 
+will be illustrated in a flowchart.
+The primary composite outcome measure will be evaluated using multiple linear 
+regression. For CVMD incidence, two participant groups will be defined: CVMD 
+absent or stable, and CVMD occurrence or worsening. To assess intervention 
+effects over time, repeated measurements and constrained longitudinal analysis 
+will be used to evaluate interactions with key variables (e.g., age, vulnerability, 
+ethnicity, socioeconomic status). Additionally, Generalised Estimating Equations 
+(GEE) will be applied to examine time-based effects and their interaction with the 
+intervention.
+Potential confounders include age, education level, geographic origin, 
+vulnerability, and parity. 
+Secondary maternal and neonatal outcomes will be analysed using linear 
+regression for continuous variables and logistic regression for dichotomous 
+variables. For blood pressure patterns, longitudinal analysis will be conducted 
+using linear mixed modelling. A subgroup analysis within the intervention group 
+will assess the impact of participating with versus without a partner. A subgroup 
+analysis may compare participants with high versus low satisfaction scores.
+Budget impact and cost-effectiveness outcomes will be analysed for the entire 
+pathway, and where relevant according to subgroups of participants (based on 
+diversity criteria). Budget impact and cost-effectiveness outcomes will be analysed 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+for each participant, subgroup of participants (based on diversity criteria), and for 
+the entire pathway. For the budget impact analysis, total costs will be calculated, 
+followed by two analyses: 1) The cost difference between care as usual (control 
+group) and the digital lifestyle healthcare path (intervention group) and 2) the 
+proportion of costs funded by different reimbursement schemes that are used in 
+The Netherlands. To determine cost-effectiveness, incremental cost-effectiveness 
+ratios (ICERs) will be calculated, expressing the cost per unit of health benefit 
+gained. These will be reported as incremental costs per case of CVMD prevented 
+and incremental gained. Otherwise, the evaluation will focus on dominance of one 
+strategy over the other with respect to lower cost and greater effect. Sensitivity 
+analyses will be performed, where relevant, to assess the robustness of the results 
+to key assumptions.
+To support sustainable implementation, data from interviews and focus groups will 
+be systematically analysed using the dimensions of the NASSS-framework. This will 
+enable the identification of key barriers, facilitators, and contextual conditions that 
+influence the successful implementation and long-term adoption of the 
+intervention. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+DISCUSSION
+The HYGEIA study seeks to address the urgent need for accessible, scalable and 
+sustainable strategies to support pregnant women with obesity in adopting 
+healthier lifestyle behaviours. This is critical in reducing the increasing prevalence 
+of maternal obesity and its associated risks, including gestational diabetes, HDP, 
+and long-term non-communicable diseases affecting both mother and child[2-6, 
+46, 47]. SP+ offers a promising approach to achieve such changes through 
+personalised digital lifestyle support that empowers both women and their partners 
+to make long-term lifestyle improvements. 
+Despite the evidence on (cost-)effectiveness, structured lifestyle care remains 
+limited in routine obstetric care. Time constraints, inconsistent counselling, lack of 
+continuity, fear of stigma, and limited tailoring for high-risk populations such as 
+women with obesity often hamper implementation[48-50]. In recent years, digital 
+interventions have emerged as a promising approach to overcome these barriers. 
+However, previous studies investigating digital lifestyle interventions during 
+pregnancy have shown mixed results. While some trials have demonstrated 
+improvements in dietary quality, physical activity, and gestational weight gain, 
+others have failed to show meaningful effects[51-53]. These inconsistencies may 
+be due to variability in study design (including small sample sizes), population 
+characteristics, intervention intensity, theoretical underpinning, and user 
+engagement. Additionally, interventions often face challenges with real-world 
+implementation and scalability. 
+Smarter Pregnancy Plus is a further development of Smarter Pregnancy 4.0 to 
+address these issues. It has been tailored to the lived experience, preferences, and 
+literacy levels of the target group, including features such as read-aloud 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+functionality, visual support, and multi-language availability. Furthermore, SP+ 
+incorporates features to support inclusive, sustained, and theory-based behaviour 
+change. It targets a broader set of health behaviours and is guided by multiple 
+behaviour change theories[27-30], including a specific focus on habit formation, as 
+habits are widely recognised as a promising pathway for not only the initiation but 
+also long-term maintenance of health behaviour change[54]. This theoretical 
+foundation is operationalised in SP+ through personalised digital coaching, goal 
+setting, education on habits, and implementation intentions to support habit 
+formation and self-management. 
+A key aspect of SP+ is that conform the other Smarter Pregnancy programmes the 
+focus is not on reducing body weight as a primary target, but instead to promote 
+healthy lifestyle changes, that benefit body weight and subsequent health of both 
+mothers and children. This aligns with international guidelines that discourage 
+weight loss during pregnancy due to potential risks[55, 56]. Overemphasising 
+weight can also lead to stigma and negative affect engagement and psychological 
+wellbeing[57]. By focusing on lifestyle behaviours, rather than weight, the study 
+follows behaviour change frameworks[58, 59] and evidence showing that such 
+interventions can improve metabolic outcomes, reduce gestational diabetes and 
+hypertensive disorders, and support both maternal and neonatal health, all while 
+offering non-stigmatizing care[60-63].
+A major strength of the HYGEIA study is its comprehensive design. In addition to 
+evaluating clinical effectiveness, the study includes an economic evaluation from 
+a societal perspective. This is essential, given the high and rising healthcare and 
+societal costs associated with maternal obesity and its long-term consequences[9]. 
+By generating evidence on both health outcomes and cost-effectiveness, the study 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+aims to support potential reimbursement of SP+ within the Dutch basic health 
+insurance package and its integration into national obstetric care pathways. 
+Moreover, assessing habit formation on certain lifestyle behaviours as a secondary 
+outcome will provide important insights on the sustainability of the intervention 
+effects beyond the scope of the intervention.
+The RCT design allows us to establish causal relationships between the 
+intervention and health outcomes, providing a robust and reliable assessment of 
+its effectiveness. To enhance generalisability, participants will be recruited across 
+primary, secondary, and tertiary care settings. Digital data collection methods, 
+including validated questionnaires and linkage with routine clinical and national 
+registry data, will ensure high data quality while reducing information bias.
+Implementation is a central objective of the HYGEIA study. Alongside evaluating 
+(cost-)effectiveness, we actively collaborate with key stakeholders, including 
+patients, HCPs, insurers, policymakers, the Ministry of Health, and others to lay the 
+groundwork for sustainable implementation in routine care.
+Nonetheless, the HYGEIA study faces several challenges. Recruiting and retaining 
+a sufficiently large and diverse sample of pregnant women with obesity may be 
+difficult due to time constraints, pregnancy-related discomfort, and potential 
+stigma. Although multiple recruitment settings improve generalisability, selective 
+participation and attrition remain possible. The extensive set of outcomes, while 
+essential for a comprehensive evaluation, may increase participant burden; digital 
+reminders and user-friendly materials are included to support engagement.
+Reliance on routine medical and registry data may introduce variability in data 
+completeness, and the multifaceted nature of SP+ will limit identification of which 
+specific components drive effects. The study is therefore designed to evaluate the 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+overall effectiveness and feasibility of an integrated digital lifestyle intervention 
+rather than individual mechanisms.
+Finally, successful implementation depends on HCP engagement, workflow 
+integration, and users’ digital access and literacy. Co-creation with end users, 
+HCPs, and policymakers aims to mitigate these barriers. 
+Conclusion
+By using available expertise and knowledge from the web-based Smarter 
+Pregnancy programmes, we further developed the SP+ app as a co-designed, 
+theory-informed, and digitally delivered lifestyle coaching program, an 
+intervention tailored to pregnant women with obesity. The HYGEIA trial aims to 
+generate robust evidence on its clinical and (cost-)effectiveness, and 
+implementation potential. In doing so, it addresses key knowledge gaps and 
+implementation barriers identified in earlier research. If effective, SP+ has the 
+potential to be a scalable and sustainable component of routine obstetric care, 
+contributing to improved maternal and child health outcomes and a reduction in 
+the long-term burden of obesity-related disease.
+Figures and Table
+Figure 1: Overview of the study design, including enrolment and study 
+participation.
+Figure 2: Overview of the Smarter Pregnancy Plus mobile application.
+Figure 3: Overview of data collection.
+Blue = intervention and control group; pink = only intervention group.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Table 1. Additional files 1 to 3 including:
+1. Outcome measurements assessed within the HYGEIA study 
+2. Lifestyle screening survey
+3. Baseline and follow-up survey
+List of abbreviations
+BMI: body mass index
+CVMD: cardiovascular and metabolic diseases
+EQ-5D-5L: EuroQol-5D-5L questionnaire
+GDM: gestational diabetes mellitus
+GEE: Generalised Estimating Equations
+HCPs: healthcare providers
+HDP: hypertensive disorders of pregnancy
+ICER: incremental cost-effectiveness ratios
+ICHOM: international consortium for health outcomes measurement
+LRS: lifestyle risk score
+MAUQ: mHealth app usability questionnaire
+MCQ: medical costs questionnaire
+MIDI: Measurement Instrument for Determinants of Innovation
+MhQoL: mental health quality of life questionnaire
+NASSS: Non-adoption, Abandonment, Scale-up, Spread, and Sustainability
+NICU: neonatal intensive care unit
+OGTT: oral glucose tolerance test
+PCQ: productivity costs questionnaire
+PREM: patient-reported experience measurements
+PROM: patient-reported outcome measurements
+QALY: quality-adjusted life year
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+RCT: randomised controlled trial
+SP+: Smarter Pregnancy Plus
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+DECLARATIONS
+Ethics approval and consent to participate
+This study was approved by the Medical Ethics Committee of the Erasmus MC, 
+University Medical Centre, Rotterdam, the Netherlands under reference number 
+NL87213.078.24. Approval by the boards of management for the participating 
+hospitals was obtained. All participants will provide informed consent prior to 
+enrolment.
+Consent for publication
+Not applicable.
+Availability of data and materials
+The study protocol, statistical analysis plan, data management and monitoring 
+procedures are available upon request.  The full dataset generated and analysed 
+during the study will be made available upon reasonable request after publication 
+of the main results. 
+Competing interests
+The authors declare that they have no competing interests. 
+Funding
+This study is funded by the Dutch Organisation for knowledge and innovation in 
+health, healthcare and well-being (ZonMw), grant number 10930012310005. The 
+funding body has no role in study design, data collection, analysis, interpretation 
+of data, or in writing the manuscript. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Author’s contributions
+MR, workpackage leader of the trial, contributed to the design and initiated writing 
+of the protocol of the trial. Together with RB the first version of this manuscript has 
+been written. RB also contributed to the design of the trial. RST initiated and is 
+principle investigator of the HYGEIA project, contributed to SP+ also as developer 
+of the web-based Smarter Pregnancy applications, design of the trial, and revised 
+multiple versions of the manuscript. IF and MP designed the cost-effectiveness 
+analysis and budget impact analysis and drafted that section of the manuscript. 
+EA, ASR, CF, PB, PJ contributed to designing the trial and revised the manuscript. 
+All authors read and approved the final version of the manuscript.
+Acknowledgments
+The authors want to thank all women and healthcare providers for their valuable 
+input in the co-design of SP+. We also thank all participating healthcare providers 
+from different (prenatal) care organizations contributing to the recruitment of 
+participants. Additionally, we thank the entire HYGEIA-consortium for their input 
+and contributions, in particular KG van der Kooy and K de Jonge. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+REFERENCES
+1. Kent L, McGirr M, Eastwood KA: Global trends in prevalence of 
+maternal overweight and obesity: A systematic review and 
+meta-analysis of routinely collected data retrospective 
+cohorts. Int J Popul Data Sci 2024, 9(2):2401.
+2. Santos S, Voerman E, Amiano P, Barros H, Beilin LJ, Bergstrom A, 
+Charles MA, Chatzi L, Chevrier C, Chrousos GP et al: Impact of 
+maternal body mass index and gestational weight gain on 
+pregnancy complications: an individual participant data 
+meta-analysis of European, North American and Australian 
+cohorts. BJOG 2019, 126(8):984-995.
+3. Marchi J, Berg M, Dencker A, Olander EK, Begley C: Risks 
+associated with obesity in pregnancy, for the mother and 
+baby: a systematic review of reviews. Obes Rev 2015, 
+16(8):621-638.
+4. Lisonkova S, Muraca GM, Potts J, Liauw J, Chan WS, Skoll A, Lim KI: 
+Association Between Prepregnancy Body Mass Index and 
+Severe Maternal Morbidity. JAMA 2017, 318(18):1777-1786.
+5. Magnusson A, Laivuori H, Loft A, Oldereid NB, Pinborg A, Petzold M, 
+Romundstad LB, Soderstrom-Anttila V, Bergh C: The Association 
+Between High Birth Weight and Long-Term Outcomes-
+Implications for Assisted Reproductive Technologies: A 
+Systematic Review and Meta-Analysis. Front Pediatr 2021, 
+9:675775.
+6. Johnsson IW, Haglund B, Ahlsson F, Gustafsson J: A high birth 
+weight is associated with increased risk of type 2 diabetes 
+and obesity. Pediatr Obes 2015, 10(2):77-83.
+7. Stuart JJ, Tanz LJ, Rimm EB, Spiegelman D, Missmer SA, Mukamal KJ, 
+Rexrode KM, Rich-Edwards JW: Cardiovascular Risk Factors 
+Mediate the Long-Term Maternal Risk Associated With 
+Hypertensive Disorders of Pregnancy. J Am Coll Cardiol 2022, 
+79(19):1901-1913.
+8. Grandi SM, Filion KB, Yoon S, Ayele HT, Doyle CM, Hutcheon JA, 
+Smith GN, Gore GC, Ray JG, Nerenberg K, Platt RW: Cardiovascular 
+Disease-Related Morbidity and Mortality in Women With a 
+History of Pregnancy Complications. Circulation 2019, 
+139(8):1069-1079.
+9.Zorguitgaven: kerncijfers 
+[https://opendata.cbs.nl/statline/#/CBS/nl/dataset/84047NED/table?d
+l=9470C]
+10. van Zundert SKM, van Rossem L, Schoenmakers S, Steegers-
+Theunissen RPM: Lifestyle care for transformation of medical 
+care using an early life course approach. Reprod Biomed Online 
+2022, 45(5):847-850.
+11. Van Dijk MR, Huijgen NA, Willemsen SP, Laven JS, Steegers EA, 
+Steegers-Theunissen RP: Impact of an mHealth Platform for 
+Pregnancy on Nutrition and Lifestyle of the Reproductive 
+Population: A Survey. JMIR Mhealth Uhealth 2016, 4(2):e53.
+12. Van Dijk MR, Koster MP, Rosman AN, Steegers-Theunissen RP: 
+Opportunities of mHealth in Preconception Care: Preferences 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+and Experiences of Patients and Health Care Providers and 
+Other Involved Professionals. JMIR Mhealth Uhealth 2017, 
+5(8):e123.
+13. van Dijk MR, Koster MPH, Oostingh EC, Willemsen SP, Steegers EAP, 
+Steegers-Theunissen RPM: A Mobile App Lifestyle Intervention 
+to Improve Healthy Nutrition in Women Before and During 
+Early Pregnancy: Single-Center Randomized Controlled Trial. 
+J Med Internet Res 2020, 22(5):e15773.
+14. van Dijk MR, Koster MPH, Willemsen SP, Huijgen NA, Laven JSE, 
+Steegers-Theunissen RPM: Healthy preconception nutrition and 
+lifestyle using personalized mobile health coaching is 
+associated with enhanced pregnancy chance. Reprod Biomed 
+Online 2017, 35(4):453-460.
+15. Oostingh EC, Koster MPH, van Dijk MR, Willemsen SP, Broekmans 
+FJM, Hoek A, Goddijn M, Klijn NF, van Santbrink EJP, Steegers EAP et 
+al: First effective mHealth nutrition and lifestyle coaching 
+program for subfertile couples undergoing in vitro 
+fertilization treatment: a single-blinded multicenter 
+randomized controlled trial. Fertil Steril 2020, 114(5):945-954.
+16. Oostingh EC, Ophuis RH, Koster MP, Polinder S, Lingsma HF, Laven 
+JS, Steegers-Theunissen RP: Mobile Health Coaching on 
+Nutrition and Lifestyle Behaviors for Subfertile Couples 
+Using the Smarter Pregnancy Program: Model-Based Cost-
+Effectiveness Analysis. JMIR Mhealth Uhealth 2019, 7(10):e13935.
+17. Hojeij B, Schoenmakers S, Van Mullem I, Willemsen SP, Dinnyes A, 
+Sinclair KD, Rousian M, Steegers-Theunissen RPM: Smarter 
+Pregnancy Coaching and Maternal Blood Pressure. Am J Prev 
+Med 2025, 68(3):455-464.
+18. Hojeij B, Schoenmakers S, Willemsen S, van Rossem L, Dinnyes A, 
+Rousian M, Steegers-Theunissen RP: The Effect of an eHealth 
+Coaching Program (Smarter Pregnancy) on Attitudes and 
+Practices Toward Periconception Lifestyle Behaviors in 
+Women Attempting Pregnancy: Prospective Study. J Med 
+Internet Res 2023, 25:e39321.
+19. van der Windt M, Schoenmakers S, van der Kleij RM, van Rossem L, 
+Steegers-Theunissen RP: Implementation of effective blended 
+periconception lifestyle care in a tertiary hospital in the 
+Netherlands: a cross-sectional study on determinants and 
+patient satisfaction. BMJ Open 2022, 12(12):e061088.
+20. van der Windt M, van Zundert SKM, Schoenmakers S, van Rossem L, 
+Steegers-Theunissen RPM: Prototyping of a Digital Life Course 
+Care Platform for Preconception and Pregnancy Care: Pilot 
+Feasibility and Acceptability Study. J Med Internet Res 2023, 
+25:e37537.
+21. Ng KYB, Steegers-Theunissen R, Willemsen S, Wellstead S, Cheong 
+Y, Macklon N: Smartphone-based lifestyle coaching modifies 
+behaviours in women with subfertility or recurrent 
+miscarriage: a randomized controlled trial. Reprod Biomed 
+Online 2021, 43(1):111-119.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+22. Steegers-Theunissen R, Hoek A, Groen H, Bos A, van den Dool G, 
+Schoonenberg M, Smeenk J, Creutzberg E, Vecht L, Starmans L, 
+Laven J: Pre-Conception Interventions for Subfertile Couples 
+Undergoing Assisted Reproductive Technology Treatment: 
+Modeling Analysis. JMIR Mhealth Uhealth 2020, 8(11):e19570.
+23. Hrobjartsson A, Boutron I, Hopewell S, Moher D, Schulz KF, Collins 
+GS, Tunn R, Aggarwal R, Berkwits M, Berlin JA et al: SPIRIT 2025 
+explanation and elaboration: updated guideline for protocols 
+of randomised trials. BMJ 2025, 389:e081660.
+24. Organization WH: Obesity: preventing and managing the global 
+epidemic. In. Geneva: WHO Technical Report Series. ; 2000.
+25.Join HYGEIA – a lifestyle study for pregnant women! 
+[https://www.slimmerzwangeronderzoek.nl/en/register]
+26. (ICH). ICfHoTRfPfHU: ICH Harmonised Guideline: Integrated 
+Addendum to ICH E6(R1): Guideline for Good Clinical Practice 
+E6(R2). In. Geneva; 2016.
+27. Bandura A: Health promotion by social cognitive means. Health 
+Educ Behav 2004, 31(2):143-164.
+28. Prochaska JO, Velicer WF: The transtheoretical model of health 
+behavior change. Am J Health Promot 1997, 12(1):38-48.
+29. Fogg BJ: A behavior model for persuasive design. . Proceedings 
+of the 4th International Conference on Persuasive Technology, ACM 
+2009:1-7.
+30. Gardner B, Rebar AL: Habit Formation and Behavior Change. 
+Oxford Research Encyclopedia of Psychology 2019.
+31. ACOG: Gestational Hypertension and Preeclampsia: ACOG 
+Practice Bulletin, Number 222. Obstet Gynecol 2020, 
+135(6):e237-e260.
+32. (NVOG) NVvOeG: Diabetes mellitus en zwangerschap (3.0). In . 
+Utrecht; 2018.
+33. Lloyd-Jones DM, Allen NB, Anderson CAM, Black T, Brewer LC, 
+Foraker RE, Grandner MA, Lavretsky H, Perak AM, Sharma G et al: 
+Life's Essential 8: Updating and Enhancing the American 
+Heart Association's Construct of Cardiovascular Health: A 
+Presidential Advisory From the American Heart Association. 
+Circulation 2022, 146(5):e18-e43.
+34. Sanders GD, Neumann PJ, Basu A, Brock DW, Feeny D, Krahn M, 
+Kuntz KM, Meltzer DO, Owens DK, Prosser LA et al: 
+Recommendations for Conduct, Methodological Practices, 
+and Reporting of Cost-effectiveness Analyses: Second Panel 
+on Cost-Effectiveness in Health and Medicine. JAMA 2016, 
+316(10):1093-1103.
+35. Institute NHC: Guidelines for economic evaluations of health 
+care. 2024 updated edition [in Dutch]. In. Diemen: National 
+Health Care Institute; 2024.
+36. Institute. NHC: Costing manual for economic evaluations in 
+health care: methods and reference prices. 2024 updated 
+edition [in Dutch]. In. Diemen: National Health Care Institute; 
+2024.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+37. Bouwmans CAM, Roijen LH, Koopmanschap MA, Krol MW, Severens 
+JL, Brouwer W, Institute for Medical Technology Assessment P, 
+Health Research G, Institute for Medical Technology A: Medical 
+consumption questionnaire: Institute for Medical Technology 
+Assessment, Erasmus Universiteit Rotterdam; 2013.
+38. Bouwmans C, Krol M, Severens H, Koopmanschap M, Brouwer W, 
+Hakkaart-van Roijen L: The iMTA Productivity Cost 
+Questionnaire: A Standardized Instrument for Measuring and 
+Valuing Health-Related Productivity Losses. Value Health 2015, 
+18(6):753-758.
+39. Versteegh MM, Vermeulen KM, Evers SMAA, de Wit GA, Prenger R, 
+Stolk EA: Dutch Tariff for the Five-Level Version of EQ-5D. 
+Value Health 2016, 19(4):343-352.
+40. Herdman M, Gudex C, Lloyd A, Janssen M, Kind P, Parkin D, Bonsel G, 
+Badia X: Development and preliminary testing of the new 
+five-level version of EQ-5D (EQ-5D-5L). Qual Life Res 2011, 
+20(10):1727-1736.
+41. van Krugten FCW, Busschbach JJV, Versteegh MM, Hakkaart-van 
+Roijen L, Brouwer WBF: The Mental Health Quality of Life 
+Questionnaire (MHQoL): development and first psychometric 
+evaluation of a new measure to assess quality of life in 
+people with mental health problems. Qual Life Res 2022, 
+31(2):633-643.
+42. Nijagal MA, Wissig S, Stowell C, Olson E, Amer-Wahlin I, Bonsel G, 
+Brooks A, Coleman M, Devi Karalasingam S, Duffy JMN et al: 
+Standardized outcome measures for pregnancy and 
+childbirth, an ICHOM proposal. BMC Health Serv Res 2018, 
+18(1):953.
+43. Gardner B, Abraham C, Lally P, de Bruijn GJ: Towards parsimony in 
+habit measurement: testing the convergent and predictive 
+validity of an automaticity subscale of the Self-Report Habit 
+Index. Int J Behav Nutr Phys Act 2012, 9:102.
+44. Zhou L, Bao J, Setiawan IMA, Saptono A, Parmanto B: The mHealth 
+App Usability Questionnaire (MAUQ): Development and 
+Validation Study. JMIR Mhealth Uhealth 2019, 7(4):e11500.
+45. Schenkelaars N, Rousian M, Hoek J, Schoenmakers S, Willemsen S, 
+Steegers-Theunissen R: Preconceptional maternal weight loss 
+and hypertensive disorders in pregnancy: a systematic 
+review and meta-analysis. Eur J Clin Nutr 2021, 75(12):1684-
+1697.
+46. Muktabhant B, Lawrie TA, Lumbiganon P, Laopaiboon M: Diet or 
+exercise, or both, for preventing excessive weight gain in 
+pregnancy. Cochrane Database Syst Rev 2015, 2015(6):CD007145.
+47. Craemer KA, Sampene E, Safdar N, Antony KM, Wautlet CK: 
+Nutrition and Exercise Strategies to Prevent Excessive 
+Pregnancy Weight Gain: A Meta-analysis. AJP Rep 2019, 
+9(1):e92-e120.
+48. Vasilevski V, Mekonnen A, Peeters A, Chapman A, Naughton S, Yuen 
+E, Ananthapavan J, Holmes-Truscott E, Willcox J, Graham K, Sweet L: 
+Healthcare related barriers and enablers for weight 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+management among pregnant women with overweight and 
+obesity: a rapid scoping review. BMC Pregnancy Childbirth 2025, 
+25(1):252.
+49. Campbell F, Johnson M, Messina J, Guillaume L, Goyder E: 
+Behavioural interventions for weight management in 
+pregnancy: a systematic review of quantitative and 
+qualitative data. BMC Public Health 2011, 11:491.
+50. Sui Z, Turnbull D, Dodd J: Enablers of and barriers to making 
+healthy change during pregnancy in overweight and obese 
+women. Australas Med J 2013, 6(11):565-577.
+51. Rhodes A, Smith AD, Chadwick P, Croker H, Llewellyn CH: 
+Exclusively Digital Health Interventions Targeting Diet, 
+Physical Activity, and Weight Gain in Pregnant Women: 
+Systematic Review and Meta-Analysis. JMIR Mhealth Uhealth 
+2020, 8(7):e18255.
+52. Lau Y, Klainin-Yobas P, Htun TP, Wong SN, Tan KL, Ho-Lim ST, Chi C, 
+Tsai C, Ong KW, Shorey S, Tam WSW: Electronic-based lifestyle 
+interventions in overweight or obese perinatal women: a 
+systematic review and meta-analysis. Obes Rev 2017, 
+18(9):1071-1087.
+53. Overdijkink SB, Velu AV, Rosman AN, van Beukering MD, Kok M, 
+Steegers-Theunissen RP: The Usability and Effectiveness of 
+Mobile Health Technology-Based Lifestyle and Medical 
+Intervention Apps Supporting Health Care During Pregnancy: 
+Systematic Review. JMIR Mhealth Uhealth 2018, 6(4):e109.
+54. Albarracín D, Fayaz-Farkhad B, Granados Samayoa JA: 
+Determinants of behaviour and their efficacy as targets of 
+behavioural change interventions. Nature Reviews Psychology 
+2024, 3(6):377-392.
+55. Gynecologists ACoOa: Obesity in Pregnancy: ACOG Practice 
+Bulletin, Number 230. Obstetrics & Gynecology 2021, 
+137(6):e128-e144.
+56.Antenatal care: Recommendations — Healthy eating, 
+physical activity and weight management during pregnancy 
+[https://www.nice.org.uk/guidance/ng247/chapter/Recommendations
+#healthy-eating-physical-activity-and-weight-management-during-
+pregnancy]
+57. Sasidharan H, Bhatt A, Mishra M: Pregnancy and weight gain: a 
+scoping review of women's perceptions and experiences with 
+stigma. BMC Pregnancy Childbirth 2025, 25(1):541.
+58. Bartholomew LK, Parcel GS, Kok G, Gottlieb NH: Planning health 
+promotion programs: An intervention mapping approach, 
+2nd ed. Hoboken, NJ, US: Jossey-Bass/Wiley; 2006.
+59. Michie S, Atkins L, West R: The Behaviour Change Wheel: A 
+Guide to Designing Interventions: Silverback; 2014.
+60. Meander L, Lindqvist M, Mogren I, Sandlund J, West CE, Domellof M: 
+Physical activity and sedentary time during pregnancy and 
+associations with maternal and fetal health outcomes: an 
+epidemiological study. BMC Pregnancy Childbirth 2021, 
+21(1):166.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+61. Oteng-Ntim E, Varma R, Croker H, Poston L, Doyle P: Lifestyle 
+interventions for overweight and obese pregnant women to 
+improve pregnancy outcome: systematic review and meta-
+analysis. BMC Med 2012, 10:47.
+62. Tieu J, Shepherd E, Middleton P, Crowther CA: Dietary advice 
+interventions in pregnancy for preventing gestational 
+diabetes mellitus. Cochrane Database Syst Rev 2017, 
+1(1):CD006674.
+63. Teede HJ, Bailey C, Moran LJ, Bahri Khomami M, Enticott J, Ranasinha 
+S, Rogozinska E, Skouteris H, Boyle JA, Thangaratinam S, Harrison 
+CL: Association of Antenatal Diet and Physical Activity-Based 
+Interventions With Gestational Weight Gain and Pregnancy 
+Outcomes: A Systematic Review and Meta-analysis. JAMA 
+Intern Med 2022, 182(2):106-114.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS

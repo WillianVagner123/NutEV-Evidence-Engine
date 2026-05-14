@@ -1,0 +1,518 @@
+ARTICLE IN PRESS
+Article in Press
+Geographic disparities and methodological 
+quality of type 2 diabetes prediction models: 
+a systematic review and meta-analysis of 97 
+models
+BMC Endocrine Disorders
+Received: 26 February 2026
+Accepted: 29 April 2026
+Cite this article as: Queiroz S., 
+Gadelha J.G. & Husain N. Geographic 
+disparities and methodological quality 
+of type 2 diabetes prediction models: 
+a systematic review and meta-analysis 
+of 97 models. BMC Endocr Disord 
+(2026). https://doi.org/10.1186/
+s12902-026-02301-2
+Suelen Queiroz, Júlia Gonçalves Gadelha & Noor Husain
+We are providing an unedited version of this manuscript to give early access to its 
+findings. Before final publication, the manuscript will undergo further editing. Please 
+note there may be errors present which affect the content, and all legal disclaimers 
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer 
+Review reports will publish with the final article.
+https://doi.org/10.1186/s12902-026-02301-2
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International 
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit 
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do 
+not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the 
+article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain 
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+Geographic Disparities and Methodological Quality of Type 2 
+Diabetes Prediction Models: A Systematic Review and Meta-
+Analysis of 97 Models
+Authors: Suelen Queiroz¹, Júlia Gonçalves Gadelha², Noor Husain³
+Affiliations:
+¹ Ponta Grossa State University, Ponta Grossa, Paraná, 84030-900, Brazil
+² Afya Faculty of Medical Sciences of Paraíba, João Pessoa, Paraíba, Brazil
+³ Department of Pharmacology, Himalaya Medical College & Hospital, 
+Chiksi, Paliganj, Patna, Bihar, India
+Corresponding Author: Suelen Queiroz
+Ponta Grossa State University (UEPG)
+Av. General Carlos Cavalcanti, 4748
+Ponta Grossa, Paraná, 84030-900, Brazil
+Email: 21186140@uepg.br
+Abstract
+Importance: Accurate risk prediction is essential for targeted prevention 
+of type 2 diabetes mellitus (T2DM). However, the global applicability and 
+methodological rigor of existing prediction models remain uncertain.
+Objective: To systematically review and meta-analyze the geographic 
+distribution, methodological quality, and predictive performance of all 
+published T2DM risk prediction models.
+Data Sources: PubMed, Embase, Web of Science, Cochrane Library, CNKI, 
+WanFang, and VIP were searched from inception to December 2025 
+(eAppendix S1 in the Supplement).
+Study Selection: Studies that developed or validated a multivariable 
+prediction model for incident T2DM in general adult populations and 
+reported at least one performance measure.
+Data Extraction and Synthesis: Two reviewers independently extracted 
+data and assessed risk of bias using the PROBAST tool. A random-effects 
+meta-analysis was used to pool C-statistics. Heterogeneity was explored 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+via subgroup analyses and meta-regression. The study followed TRIPOD-
+SRMA and PRISMA reporting guidelines.
+Main Outcomes and Measures: The primary outcome was the geographic 
+origin of models. Secondary outcomes included pooled measures of 
+discrimination (C-statistic/AUC) stratified by region and an overall 
+assessment of methodological quality (PROBAST).
+Results: A total of 65 studies comprising 97 distinct prediction models 
+were included (eTable 1). Geographic distribution was highly skewed, with 
+70.1% of models developed in Asian populations (China: 47.4%; Japan: 
+13.4%; South Korea: 9.3%), while only 7.2% originated from the US and 
+4.1% from Europe. Logistic regression was used in 97.9% of models. 
+External validation was performed for only 21 models (21.6%). According 
+to PROBAST, 91.8% of models were at high risk of bias (eTable 2), 
+primarily due to inadequate handling of missing data, lack of external 
+validation, and poor calibration reporting. Meta-analysis revealed wide 
+variation in discrimination by geographic region (eTable 7). US-based 
+models achieved the highest pooled AUC (0.97; 95% CI, 0.94–0.99), but 
+this finding is likely influenced by overfitting, small sample bias, and 
+publication bias (see Discussion). European models showed a pooled AUC 
+of 0.84 (0.81–0.87), while Chinese models showed the lowest performance 
+(AUC, 0.79; 0.76–0.82). Due to very high heterogeneity (I² > 80% in most 
+regions), these pooled estimates should be interpreted as descriptive 
+summaries rather than precise estimates of true regional performance. 
+Performance was lowest in prediabetic cohorts (AUC, 0.72; 0.68–0.76); 
+however, this finding is preliminary due to the limited number of models 
+and high heterogeneity. Funnel plot asymmetry suggested potential 
+publication bias (Egger's test p=0.03); The most frequently included 
+predictors were age (69.1%), body mass index (64.9%), family history of 
+diabetes (44.3%), and waist circumference (39.2%) (eFigure 4 and eTable 
+3).
+Conclusions and Relevance: T2DM prediction models exhibit striking 
+geographic inequity and poor methodological quality, with over 90% at 
+high risk of bias. The substantial variation in performance by region and 
+the lack of external validation critically limit their global clinical utility. 
+These findings underscore an urgent need for rigorous external validation 
+in diverse populations and de novo model development in under-
+represented regions, guided by PROBAST and TRIPOD standards.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+1. Introduction
+Type 2 diabetes mellitus (T2DM) affects an estimated 537 million adults 
+worldwide, with projections exceeding 783 million by 2045 [1]. Early 
+identification of at-risk individuals is essential for targeted prevention, yet 
+universal biochemical screening remains impractical in most settings [2]. 
+Over the past two decades, numerous multivariable prediction models 
+have been developed to identify high-risk individuals using readily 
+available clinical and demographic variables [3,4].
+A 2012 systematic review by Abbasi et al. identified 25 prediction models 
+and found that fewer than one-quarter had undergone external validation 
+[5]. More recently, our updated review encompassing 65 studies and 97 
+models reveals that while methodological approaches have evolved, 
+critical gaps persist [6]. However, a comprehensive analysis of geographic 
+disparities in model development and performance has been lacking. 
+Understanding whether prediction models are transportable across 
+populations is crucial for global health equity; if models developed in one 
+region perform poorly in another, their clinical utility is severely limited.
+This systematic review and meta-analysis aimed to: (1) characterize the 
+geographic distribution of all published T2DM prediction models; (2) 
+evaluate their methodological quality using the PROBAST tool; (3) meta-
+analyze model discrimination by geographic origin and population type; 
+and (4) identify the most frequently included predictors to inform future 
+research and practice.
+2. Methods
+2.1 Study Design and Registration
+This systematic review and meta-analysis was conducted following the 
+TRIPOD-SRMA [7] and PRISMA 2020 [8] statements. The protocol was 
+prospectively registered on PROSPERO (CRD420261322116).
+2.2 Search Strategy
+We systematically searched PubMed, Embase, Web of Science, Cochrane 
+Library, CNKI, WanFang, and VIP from database inception through 
+December 2025. The search strategy combined terms for diabetes, 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+prediction models, and risk scores, adapted from prior reviews (eAppendix 
+S1).
+2.3 Eligibility Criteria
+We included studies that developed, validated, or updated a multivariable 
+prediction model for incident T2DM using cohort, nested case-control, or 
+case-cohort designs, and reported at least one performance measure. We 
+excluded cross-sectional studies, studies restricted to gestational or type 
+1 diabetes, models using only genetic or specialized biomarkers, 
+conference abstracts, editorials, and narrative reviews.
+2.4 Study Selection and Data Extraction
+Two reviewers independently screened titles, abstracts, and full texts. 
+Data extraction, following the CHARMS-PF checklist [9], included: first 
+author, year, country, study design, sample size, number of events, model 
+type, predictors, and performance measures (C-statistic/AUC, calibration) 
+(eTable 1).
+2.5 Risk of Bias Assessment
+Methodological quality was assessed independently by two reviewers 
+using the PROBAST tool [10,11], which evaluates risk of bias and 
+applicability across four domains: participants, predictors, outcome, and 
+analysis. Each domain and the overall model were rated as low, high, or 
+unclear risk of bias (eTable 2).
+2.6 Statistical Analysis
+For the primary meta-analysis, to avoid within-study dependence, we 
+selected one primary model per study (the basic model with the best-
+reported discrimination, or the most complete model if no basic model was 
+available), resulting in 65 independent models. Sensitivity analyses using 
+all 97 models (with cluster-robust variance estimation) yielded consistent 
+results (eMethods). We performed a random‑effects meta‑analysis using 
+the inverse‑variance method to pool C‑statistics (AUCs). AUCs were 
+transformed using the logit function [log(AUC/(1‑AUC))] to stabilize 
+variance. Standard errors were derived from reported 95% confidence 
+intervals; when confidence intervals were not reported, we imputed the 
+mean standard error from studies that did report them. Sensitivity 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+analyses excluding imputed values did not materially change the results 
+(eMethods) [12].
+Heterogeneity was quantified using the I² statistic. Subgroup analyses 
+were conducted by geographic origin (eTable 7), population type, and 
+validation status (eTable 4). Meta‑regression was also used to explore the 
+impact of continuous covariates (year, sample size, events per variable). 
+Publication bias was assessed using funnel plots (Figure 4), Egger’s 
+regression test. All analyses were performed using R version 4.1.0 (meta 
+and metafor packages). Detailed statistical methods are provided in 
+eMethods.
+3. Results
+3.1 Study Selection and Characteristics
+The systematic search yielded 15,796 unique records. After removal of 
+duplicates and screening, 65 studies met inclusion criteria, containing 97 
+distinct prediction models (Figure 1). Table 1 summarizes the 
+characteristics of the included models. Detailed characteristics of each 
+included study are provided in eTable 1. The first 10 of the 97 individual 
+prediction models are shown in eTable 5 (see Supplementary Material). 
+Figure 1. PRISMA 2020 Flow Diagram
+.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Figure 1. PRISMA 2020 flow diagram of study selection. A total of 15,796 
+records were identified through database searching (PubMed: 3,847; 
+Embase: 4,231; Scopus: 3,456; Web of Science: 2,892; Cochrane Library: 
+312; CNKI: 412; WanFang: 386; VIP: 260). After removal of duplicates, 
+10,908 records were screened, and 165 full-text articles were assessed for 
+eligibility. Sixty-five studies comprising 97 distinct prediction models met 
+inclusion criteria and were included in the systematic review and meta-
+analysis.
+The geographic distribution was highly skewed, with 70.1% of models 
+developed in Asian populations, predominantly China (47.4%), Japan 
+(13.4%), and South Korea (9.3%). Only 7.2% originated from the US and 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+4.1% from Europe. The geographic distribution of the included models is 
+shown in Figure 3. Logistic regression was the dominant method (97.9%), 
+and external validation had been performed for only 21 models (21.6%).
+Table 1. Characteristics of the 97 Included Prediction Models
+Characteristic Number of Models 
+(n=97)
+Percentage
+Geographic origin
+China 46 47.4%
+Japan 13 13.4%
+South Korea 9 9.3%
+USA 7 7.2%
+India 6 6.2%
+Europe 4 4.1%
+Brazil 2 2.1%
+Other 10 10.3%
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Model type
+Logistic regression 95 97.9%
+Cox regression 1 1.0%
+Machine learning 1 1.0%
+Predictor type
+Basic (non-invasive only) 58 59.8%
+Extended (includes 
+biomarkers)
+39 40.2%
+Validation status
+Internal validation only 76 78.4%
+External validation 
+performed
+21 21.6%
+3.2 Risk of Bias and Methodological Quality
+According to the PROBAST assessment, 91.8% of models (89/97) were 
+rated as having a high overall risk of bias (eTable 2). The primary drivers 
+of high bias were in the Analysis domain (83.5% high risk), largely due to 
+inadequate handling of missing data, lack of external validation, and poor 
+reporting of calibration. Domain‑level analysis showed that the 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Participants domain contributed high risk in 49.5% of models, the 
+Predictors domain in 39.2%, and the Outcome domain in 42.3% (Table 2). 
+Figure 2 summarizes the risk of bias assessment across the 97 models. 
+Detailed PROBAST assessments for each study are provided in eTable 2. 
+Applicability concerns were high for 84.5% of models.
+Table 2. PROBAST Risk of Bias Assessment (n=97 models)
+Domain Low Risk High Risk Unclear
+Participants 42 (43.3%) 48 (49.5%) 7 (7.2%)
+Predictors 51 (52.6%) 38 (39.2%) 8 (8.2%)
+Outcome 47 (48.5%) 41 (42.3%) 9 (9.3%)
+Analysis 12 (12.4%) 81 (83.5%) 4 (4.1%)
+Overall 8 (8.2%) 89 (91.8%) 0 (0%)
+Figure 2. Risk of Bias Assessment (PROBAST)
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Figure 2. Risk of Bias Assessment (PROBAST). PROBAST assessment of 
+the 97 included prediction models. Overall, 91.8% of models were rated as 
+high risk of bias, primarily due to inadequate handling of missing data 
+(Analysis domain), lack of external validation, and poor calibration 
+reporting. Only 8.2% of models were considered low risk of bias. 
+Applicability concerns were high for 84.5% of models, reflecting the 
+mismatch between development populations and intended target 
+populations.
+3.3 Model Performance by Geographic Region
+Meta-analysis revealed substantial variation in discrimination by 
+geographic origin (eTable 7). US-based models achieved the highest 
+pooled AUC (0.97; 95% CI, 0.94–0.99), followed by European models (0.84; 
+0.81–0.87). Chinese models showed significantly lower performance (AUC, 
+0.79; 0.76–0.82; meta‑regression p<0.001 for comparison with US). 
+Models from Japan and other Asian countries showed intermediate 
+performance (AUC, 0.82–0.85) (Figure 5). Due to very high heterogeneity 
+(I² > 80% in most regions), these pooled estimates should be interpreted 
+as descriptive summaries rather than precise estimates of true regional 
+performance. Performance was lowest in prediabetic cohorts (pooled AUC, 
+0.72; 95% CI, 0.68–0.76) compared to general population cohorts (AUC, 
+0.80; 0.78–0.82) — but this finding is based on only 19 models with 
+substantial heterogeneity, so definitive conclusions await further external 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+validation studies. Complete subgroup analysis results are presented in 
+eTable 4.
+Figure 3. Geographic Origin of Type 2 Diabetes Prediction Models (n=97)
+Figure 3. Geographic Origin of Type 2 Diabetes Prediction Models (n=97). 
+Geographic distribution of 97 T2DM prediction models identified in the 
+systematic review. The majority (70.1%) were developed in Asian 
+populations, with China accounting for 47.4% of all models. Only 7.2% 
+originated from the USA and 4.1% from Europe. Brazil contributed 2.1% 
+of models. This striking geographic inequity raises concerns about the 
+generalizability of existing models to diverse global populations..
+3.4 Comparison of Modeling Approaches
+Only one machine learning model and one Cox regression model were 
+identified among the 97 models, precluding a robust comparison. The 
+single machine learning model reported an AUC of 0.86 (95% CI, 0.82–
+0.90), which was within the range of logistic regression models from the 
+same region. Given the extreme scarcity of non‑logistic models, no 
+meaningful statistical comparison could be performed.
+3.5 Meta‑Regression Results
+Univariable meta‑regression (eTable 6) showed that year of publication 
+(β=0.002, p=0.68), log‑sample size (β=0.01, p=0.54), and events per 
+variable (β=0.003, p=0.82) were not significantly associated with model 
+discrimination. Inclusion of biomarkers was significantly associated with 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+higher AUC (β=0.05, p=0.01). US-based models showed significantly 
+higher AUC compared to Asian models (β=0.18, p<0.001), but this finding 
+is likely influenced by overfitting and small sample bias (see Discussion). 
+Thus, none of the continuous covariates explained the substantial 
+heterogeneity across models.
+3.6 Publication Bias
+Funnel plot asymmetry (Figure 4) suggested potential publication bias 
+favoring studies reporting higher AUCs (Egger's test p=0.03), indicating 
+that models with poor discrimination may be systematically under-
+reported.
+Figure 4. Funnel Plot for Publication Bias Assessment
+Figure 4. Funnel Plot for Publication Bias Assessment. Funnel plot of 
+standard error against C-statistic (AUC) for all included models. 
+Asymmetry (Egger's test p=0.03) suggests potential publication bias, with 
+a paucity of small studies reporting low AUCs. This may lead to 
+overestimation of average model performance in meta-analyses.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+3.7 Most Frequent Predictors
+Across all models, the most frequently included predictors were age 
+(69.1%), body mass index (BMI, 64.9%), family history of diabetes (44.3%), 
+and waist circumference (39.2%) (eFigure 4). In extended models that 
+included biomarkers, fasting glucose (59.0%) and triglycerides (38.5%) 
+were common. A complete list of all predictors and their frequencies is 
+provided in eTable 3.
+Figure 5. Model Performance (AUC) by Geographic Region
+Figure 5. Model Performance (AUC) by Geographic Region. Pooled 
+discrimination (C-statistic/AUC) of T2DM prediction models stratified by 
+geographic origin. USA-based models significantly outperformed all others 
+(AUC 0.97), while Chinese models showed the lowest performance (AUC 
+0.79). Error bars represent 95% confidence intervals. The number of 
+models per region is indicated in parentheses.
+4. Discussion
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+4.1 Principal Findings
+This systematic review and meta-analysis of 97 T2DM prediction models 
+yields three principal findings. First, there is a striking geographic inequity 
+in model development. Over 70% of all published models were developed 
+in Asian populations, with minimal representation from the US, Europe, 
+and virtually none from Latin America, Africa, or the Middle East. This 
+distribution does not reflect the global burden of diabetes, which is 
+increasingly concentrated in low- and middle-income countries [1], and 
+raises serious concerns about the global applicability of existing models.
+Second, methodological quality is poor. Consistent with previous reviews 
+[5,6], we found that 91.8% of models are at high risk of bias according to 
+PROBAST criteria (eTable 2), and only 21.6% have undergone any form of 
+external validation. The predominant issues — inadequate handling of 
+missing data, lack of calibration reporting, and failure to validate 
+externally — are preventable and should be addressed by strict adherence 
+to established guidelines [10,11].
+Third, substantial geographic variation in model performance exists, but 
+its interpretation is complex (eTable 7). The significantly higher pooled 
+AUCs for US-based models (0.97) compared to those from China (0.79) or 
+Europe (0.84) must be interpreted with great caution. Such extremely high 
+AUC values are unusual in clinical prediction models and likely reflect 
+overfitting, small sample bias (many US models were developed in small 
+cohorts), and/or selective reporting of positive results rather than true 
+superior predictive performance. Furthermore, the high heterogeneity (I² 
+> 80%) across regions indicates that the pooled AUCs may not be directly 
+comparable as measures of true regional performance. The consistently 
+low performance in prediabetic cohorts (AUC, 0.72) provides preliminary 
+evidence that existing models have limited utility for identifying 
+progression from prediabetes to diabetes, but this finding is based on only 
+19 models with substantial heterogeneity, so definitive conclusions await 
+further external validation studies.
+4.2 Comparison with Previous Reviews
+Our findings extend those of Abbasi et al. [5] and Li et al. [6] by providing 
+the first comprehensive analysis of geographic disparities in T2DM 
+prediction modeling. While Li et al. reported that 97.9% of models used 
+logistic regression and that external validation was limited, they did not 
+systematically analyze performance by geographic origin or conduct 
+PROBAST assessments stratified by region. Our analysis reveals that the 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+problem is not merely one of poor methodology, but also of 
+representational bias — the global evidence base for diabetes risk 
+prediction is overwhelmingly derived from Asian populations, yet the 
+applicability of these models to other regions remains unknown.
+4.3 Implications for Research and Practice
+These findings have several important implications. For researchers, the 
+priority must shift from developing new models to rigorously validating 
+existing ones in diverse populations. External validation studies should be 
+planned and reported according to TRIPOD guidelines [7], with particular 
+attention to calibration, not just discrimination [13].
+For clinicians and guideline developers, caution is warranted when 
+applying any T2DM prediction model to populations different from its 
+development cohort. The poor performance in prediabetic populations 
+suggests, albeit preliminarily, that existing models should not be used to 
+guide decisions about diabetes prevention interventions in this group 
+without local validation.
+For policymakers in under-represented regions, these findings underscore 
+the urgent need for local model development or rigorous external 
+validation. Brazil, for example, contributes only 2.1% of published models 
+despite having the world's largest public primary care system [14].
+4.4 Strengths and Limitations
+Strengths of this review include a comprehensive search of seven 
+databases without language restrictions, rigorous PROBAST assessment 
+by two independent reviewers (eTable 2), and a meta-analysis of 
+discrimination stratified by geographic origin with detailed subgroup 
+analyses (eTable 4 and eTable 7).
+Limitations include the following: (1) We could not meta-analyze 
+calibration due to inconsistent reporting; (2) The inclusion of multiple 
+models from the same study could lead to non‑independence; we 
+addressed this by using a primary model per study in the main analysis, 
+but some uncertainty remains; (3) Mixing development AUCs (which are 
+optimistically biased) with internal and external validation AUCs may have 
+inflated the pooled estimates; (4) The extremely high heterogeneity (I² > 
+80%) limits the interpretability of pooled AUCs as precise estimates; (5) 
+Potential residual confounding in cross-regional AUC comparisons due to 
+differences in study design; (6) The lack of individual participant data to 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+enable head-to-head model comparisons. Detailed discussion of 
+methodological considerations is provided in eMethods.
+5. Conclusions
+This systematic review of 97 T2DM prediction models reveals striking 
+geographic inequity, poor methodological quality, and limited external 
+validation. Over 70% of models were developed in Asian populations, with 
+minimal representation from regions bearing the highest future diabetes 
+burden. More than 90% of models are at high risk of bias, and fewer than 
+one-quarter have been externally validated. The substantial variation in 
+performance by region (eTable 7) and the poor performance in prediabetic 
+populations critically limit the global clinical utility of current models, 
+although high heterogeneity tempers the precision of these estimates. 
+These findings call for an urgent reorientation of diabetes prediction 
+research toward rigorous external validation in diverse populations, 
+adherence to PROBAST and TRIPOD guidelines, and de novo model 
+development in under-represented regions. Without such efforts, the 
+promise of personalized diabetes prevention will remain unrealized for the 
+majority of the world's population.
+Abbreviations 
+T2DM: Type 2 diabetes mellitus; AUC: Area under the curve; PROBAST: 
+Prediction model Risk Of Bias Assessment Tool; TRIPOD: Transparent 
+Reporting of a multivariable prediction model for Individual Prognosis Or 
+Diagnosis; PRISMA: Preferred Reporting Items for Systematic Reviews 
+and Meta-Analyses; BMI: Body mass index; EPV: Events per variable; 
+REML: Restricted maximum likelihood.
+Declarations
+Ethics approval and consent to participate: Not applicable. This study 
+is a systematic review and meta-analysis of published data; no ethical 
+approval or participant consent was required.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Consent for publication: Not applicable. No individual person’s data are 
+presented.
+Availability of data and materials: All data generated or analyzed 
+during this study are included in this published article and its 
+supplementary information files (eTables 1–7, eFigures 1–4, eAppendix S1, 
+eMethods, eReferences). The analytical code is available from the 
+corresponding author upon reasonable request.
+Competing interests: The authors declare that they have no competing 
+interests.
+Funding: This research received no specific grant from any funding 
+agency in the public, commercial, or not-for-profit sectors.
+Authors’ contributions: SQ: Conceptualization, data acquisition, 
+analysis, interpretation, drafting, supervision. JGG: Data acquisition, 
+critical revision, administrative/technical support. NH: Data analysis, 
+statistical analysis, critical revision. All authors read and approved the 
+final manuscript.
+Acknowledgements: The authors thank the journal editors for their 
+guidance. No compensation was received for these contributions.
+Trial registration: Not applicable.
+Clinical trial number: Not applicable. 
+References
+1.International Diabetes Federation. IDF Diabetes Atlas . 10th ed. 
+Brussels, Belgium: International Diabetes Federation; 2021.
+2.World Health Organization. Use of Glycated Haemoglobin (HbA1c) 
+in the Diagnosis of Diabetes Mellitus . Geneva, Switzerland: World 
+Health Organization; 2011.
+3.Noble D, Mathur R, Dent T, Meads C, Greenhalgh T. Risk models and 
+scores for type 2 diabetes: systematic review. BMJ. 2011;343:d7163.
+4.Collins GS, Mallett S, Omar O, Yu LM. Developing risk prediction 
+models for type 2 diabetes: a systematic review of methodology and 
+reporting. BMC Med. 2011;9:103.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+5.Abbasi A, Peelen LM, Corpeleijn E, et al. Prediction models for risk 
+of developing type 2 diabetes: systematic literature search and 
+independent external validation study. BMJ. 2012;345:e5900.
+6.Li M, Tan A, Song L, et al. Performance of diabetes risk prediction 
+models: a systematic review and meta-analysis. Endocr Connect . 
+2025;14(11):e250353.
+7.Collins GS, Reitsma JB, Altman DG, Moons KGM. Transparent 
+reporting of a multivariable prediction model for individual 
+prognosis or diagnosis (TRIPOD): the TRIPOD statement. BMJ. 
+2015;350:g7594.
+8.Page MJ, McKenzie JE, Bossuyt PM, et al. The PRISMA 2020 
+statement: an updated guideline for reporting systematic reviews. 
+BMJ. 2021;372:n71.
+9.Moons KGM, de Groot JAH, Bouwmeester W, et al. Critical appraisal 
+and data extraction for systematic reviews of prediction modelling 
+studies: the CHARMS checklist. PLoS Med. 2014;11(10):e1001744.
+10.Wolff RF, Moons KGM, Riley RD, et al. PROBAST: a tool to assess the 
+risk of bias and applicability of prediction model studies. Ann Intern 
+Med. 2019;170(1):51-58.
+11.Moons KGM, Damen JAA, Kaul T, et al. PROBAST+AI: an updated 
+quality, risk of bias, and applicability assessment tool for prediction 
+models using regression or artificial intelligence methods. BMJ. 
+2025;388:e082505.
+12.Steyerberg EW. Clinical Prediction Models: A Practical Approach to 
+Development, Validation, and Updating. 2nd ed. Cham, Switzerland: 
+Springer; 2019.
+13.Macinko J, Harris MJ. Brazil's family health strategy — delivering 
+community-based primary care in a universal health system. N Engl 
+J Med. 2015;372(23):2177-2181.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS

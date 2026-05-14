@@ -1,0 +1,1170 @@
+Dehnavi et al. BMC Public Health         (2025) 25:1865  
+https://doi.org/10.1186/s12889-025-23054-y
+RESEARCH Open Access
+© The Author(s) 2025. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 
+International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long 
+as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if 
+you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or 
+parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated 
+otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not 
+permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To 
+view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+BMC Public Health
+Adherence to planetary health diet 
+index in relation to dietary diversity score 
+and anthropometric indices among Iranian 
+older adults
+Maryam Karim Dehnavi1, Razieh Tabaeifard1, Hanieh Abbasi1, Parisa Nezhad Hajian1, 
+Ahmadreza Dorosty Motlagh1, Nick Bellissimo2 and Leila Azadbakht1,3* 
+Abstract 
+Background Ensuring a nutritious and sustainable diet for an expanding population presents a formidable chal-
+lenge. In response to this pressing issue, the EAT-Lancet Commission has proposed a sustainable diet framework. 
+This study aimed to investigate the relationship between Planetary Health Diet (PHDI), Dietary Diversity Score (DDS), 
+and anthropometric indices among Iranian elders.
+Methods In this cross-sectional study, 398 participants aged ≥ 60 y were included. Dietary data was collected 
+using a validated 168-item food frequency questionnaire and the DDS was computed based on five distinct food 
+groups. Anthropometric measurements were conducted by standard protocol to derive relevant indices. Binary 
+logistic and linear regression models, adjusted for potential confounders, were employed to analyze the association 
+between adherence to PHDI and outcomes of interest using SPSS version 26.
+Result Subjects had a mean age of 63.28 years (SD = 3.58), ranging from 60 to 84 years, of whom 50% were females. 
+PHDI was categorized into tertiles, with 34.7% of individuals in the highest tertile. Highest adherence to PHDI, com-
+pared to the lowest, was found to be inversely associated with a lower probability of high BMI (OR: 0.31, 95% CI: 0.17, 
+0.56), WC (OR: 0.53, 95% CI: 0.32, 0.90), and BRI (OR: 0.43, 95% CI: 0.25, 0.75) in fully adjusted models. Additionally, every 
+10-point increase in PHDI was linked to a 38%, 25%, and 28% decrease in odds of high BMI, WC, and BRI, respec-
+tively, after adjustments for potential confounders. Notably, no significant associations were observed between PHDI 
+and other anthropometric indices or DDS in the fully adjusted model.
+Conclusion In conclusion, this study reveals a negative association between adherence to EAT-Lancet recommenda-
+tions (PHDI) and unfavorable anthropometric measures in Iranian older adults. These findings suggest that promoting 
+diets aligned with the EAT-Lancet guidelines may support healthier aging and help prevent obesity-related health 
+risks. Further, prospective studies are needed to confirm these results and inform public health strategies.
+Keywords EAT-Lancet Commission, Planetary Health Diet Index, Dietary diversity, Anthropometric indices
+*Correspondence:
+Leila Azadbakht
+azadbakhtleila@gmail.com
+Full list of author information is available at the end of the article
+Page 2 of 14Dehnavi et al. BMC Public Health         (2025) 25:1865 
+Introduction
+The rate of climate change and its impact on human 
+health are intensifying, demanding immediate solutions 
+across diverse sectors, including the food system [1, 2]. 
+According to the Food and Agriculture Organization 
+and the World Health Organization (WHO), sustain -
+able healthy diets are a “dietary patterns that promote 
+all aspects of an individual’s health and wellbeing; have 
+low environmental pressure and impact; are accessible, 
+affordable, safe and equitable; and are culturally accept -
+able” [3]. A global transformation of the food system is 
+urgently needed to achieve the goals of the Sustainable 
+Development Agenda [4]. Following this idea, the EAT-
+Lancet Commission proposed the"Planetary Health 
+Diet"[4]. This reference diet is designed to have a smaller 
+environmental footprint while also promoting health 
+and is renowned for its nutritional balance. In order to 
+evaluate adherence to the Planetary Health Diet, Cacau 
+et  al. devised the Planetary Health Diet Index (PHDI) 
+[5]. PHDI was linked to improved overall dietary qual -
+ity and reduced greenhouse gas emissions [5]. The index 
+could offer valuable insights into the degree to which the 
+diets of different populations adhere to the Planetary 
+Health Diet. Examining the adherence of populations to 
+the Planetary Health Diet will aid in identifying potential 
+dietary adjustments that could enhance the sustainability 
+of the food system [6].
+In recent years, a rise in life expectancy coupled with 
+declining fertility and birth rates has led to a growing pro-
+portion of elderly individuals within the general population 
+worldwide [7]. By 2050, it is estimated that Iran’s popula-
+tion of individuals aged 60 and above will reach 26 mil -
+lion [8]. Older adults have a higher risk of obesity due to 
+age-related metabolic changes and reduced physical activ-
+ity [9], which can adversely affect both health and environ-
+mental sustainability [10]. Also, it has been documented 
+that older adults tend to have a monotonous diet, which is 
+nutritionally inadequate and can cause diet related chronic 
+diseases [11]. Based on the findings of the EAT-Lancet 
+report, adherence to the guidelines for a nutritious and 
+environmentally sustainable diet could potentially avert 
+11 million deaths each year by reducing the occurrence of 
+obesity and non-communicable diseases like cardiovascu-
+lar disease, cancer, and diabetes [12]. Moreover, increased 
+dietary diversity has been shown to be protective against 
+declines in various aspects of healthy aging, particularly 
+physical functions, among middle-aged and older adults 
+[13]. Dietary diversity, which could potentially enhance 
+health outcomes by influencing body fat distribution [14], 
+can also serve as an indicator of the nutritional adequacy 
+and overall quality of one’s diet through the Dietary Diver-
+sity Score (DDS) [15]. Hence, we aimed to investigate the 
+relationship between Planetary Health Diet adherence and 
+dietary diversity.
+The association between EAT-Lancet recommendations 
+and various health outcomes has been widely investigated. 
+Also, it has previously been shown that PHDI is linked to 
+obesity indicators [16]. However, the extent to which the 
+Iranian population adheres to EAT-Lancet recommenda-
+tions remain unclear. Given the increasing elderly popula-
+tion and the significance of advocating for a sustainable and 
+healthy diet in Iran, our study aimed to assess the adher -
+ence of the elderly population to the Planetary Health Diet 
+Index. Additionally, we sought to investigate the asso -
+ciation between adherence to this index and both dietary 
+diversity score and anthropometric indices.
+Methods
+Study population and design
+This research is a cross-sectional investigation carried out 
+on 398 elderly individuals residing in Tehran. The par -
+ticipants were recruited from urban healthcare centers of 
+Tehran University of Medical Sciences between October 
+2022 and May 2023, using the simple random sampling 
+method. Individuals aged 60 and older, who self-reported 
+the absence of chronic illnesses, were not using specific 
+medications and were not changing their usual diet as a 
+result of disease or per dietitian recommendation, were 
+enrolled in our investigation. Abdominal obesity was the 
+main dependent variable used to calculate study sample 
+size (as the largest sample size would be obtained using this 
+variable) [17]. We used the formula for comparing two pro-
+portions, as described by Fleiss in Statistical Methods for 
+Rates and Proportions [18]. A total sample size of 396 par-
+ticipants was calculated. Considering potential dropouts, a 
+minimum of 400 individuals were selected from the target 
+population for the study.
+Page 3 of 14
+Dehnavi et al. BMC Public Health         (2025) 25:1865 
+ 
+The approval for this study was granted by the Tehran 
+University of Medical Sciences Research Ethics Commit -
+tee under the reference number IR.TUMS.MEDICINE.
+REC.1401.588, in adherence to the principles outlined in 
+the Helsinki Declaration. Every participant in the study 
+willingly provided written informed consent.
+Dietary data
+The dietary intake of participants was collected using a 
+validated and reliable semi-quantitative 168-item Food 
+Frequency Questionnaire (FFQ) [ 19, 20]. Participants 
+were asked to recall the frequency and consumption 
+amount of each food item over the previous year. These 
+details were obtained through a face-to-face interview 
+administered by a proficient and expert researcher. The 
+FFQ included a comprehensive list of food items, each 
+accompanied by standardized serving sizes, enabling 
+participants to report their consumption frequency 
+on a daily, weekly, monthly, or yearly basis. Taking into 
+account the designated portion size and consumption 
+frequency for each food item, all foods were computed 
+on a daily scale and subsequently converted to grams 
+per day using household measures [ 21]. Nutrient values, 
+encompassing energy and other nutritional components 
+for each item, were calculated utilizing Nutritionist 4 
+software (First Databank, Hearst Corp., San Bruno, CA, 
+USA), which had been tailored for the analysis of Iranian 
+foods.
+Calculation of PHDI
+The EAT-Lancet Commission on"Healthy Diets from 
+Sustainable Food Systems"put forth a model diet known 
+as the"Planetary Health Diet,"intending to promote both 
+human health and environmental sustainability. The 
+Planetary Health Diet Index (PHDI) was derived from 
+the recommendations that were presented in the refer -
+ence diet suggested by the EAT-Lancet Commission [ 4]. 
+The method used to calculate the PHDI was developed 
+m = 275
+4 1 + 1 + 2 × (1 + 0.32)
+275 × 0.32|0.42 − 0.0.26|
+2∼=300=n1
+n2 = (300 × 0.32)2 ∼= 396 = n1
+by Cacau et  al. [ 22]. The PHDI consists of 16 compo -
+nents, and the maximum achievable score is 150. A 
+higher PHDI score reflects a higher level of adherence 
+to the Planetary Health Diet. The PHDI utilized the rec -
+ommended intake ranges and midpoints outlined in the 
+2500 kcal/d reference Planetary Health Diet [ 4]. Subse -
+quently, these values were converted into the percentage 
+of calories contributed by each food group to the overall 
+diet. Food groups were categorized into adequacy, opti -
+mum, ratio, and moderation groups. This classification 
+considered both the overall nutritional value of the foods 
+for a generally healthful diet and their estimated environ-
+mental impacts [6]. Each food within the adequacy, opti -
+mum, and moderation categories is assigned a potential 
+score of up to 10. Meanwhile, components in the ratio 
+are assigned a maximum score of 5 to avoid overvaluing 
+a specific dietary aspect during the assessment process.
+Adequacy components, including nuts and peanuts, 
+legumes, fruits, vegetables, and whole cereals, represent 
+food groups where zero intake indicates lower dietary 
+quality. However, intakes equal to or above the reference 
+value are associated with a low probability of negative 
+health or environmental impact. In the case of adequacy 
+components, scores increase in direct proportion to 
+intake until the recommended level is reached, with no 
+deductions for surpassing this level (Table 1).
+Optimum components, including eggs, fish and sea -
+food, tubers and potatoes, dairy, and unsaturated oils, are 
+characterized by a specific minimum intake level repre -
+sented by midpoint values, which is favored over non-
+consumption. Nevertheless, approaching or exceeding an 
+upper limit may gradually undermine both the sustain -
+ability and quality of the diet.
+In the case of optimum components, scores are raised 
+proportionally until reaching the desired intake level, and 
+deductions are made proportionally until reaching the 
+maximum intake level (Table 1).
+The two ratio components within the PHDI signify the 
+compositional distribution of dark green vegetables and 
+red and orange vegetables relative to the total vegetable 
+intake. These components align with the recommenda -
+tions of EAT-Lancet, emphasizing the importance of 
+diverse vegetable consumption. Values for these compo -
+nents were determined by calculating the ratios of energy 
+intake from dark green vegetables to the total vegetable 
+intake (multiplied by 100) and the ratio of energy intake 
+Page 4 of 14Dehnavi et al. BMC Public Health         (2025) 25:1865 
+from red and orange vegetables to the total vegetable 
+intake (multiplied by 100). Scores ranged from 0% to the 
+cutoff point, incrementally earning 0 to 5 points, while 
+values surpassing the cutoff point received inversely 
+scored points (Table 1).
+Moderation components in the PHDI include red 
+meat, chicken and substitutes, animal fats, and added 
+sugars. Positive health and environmental impacts are 
+more likely at low or nearly absent intake levels. Scor -
+ing for these components operates as follows: zero intake 
+receives a maximum of 10 points, while an intake exceed-
+ing the upper limit scores 0 points. Intakes ranging from 
+0% to the upper limit are inversely scored, incrementally 
+earning 0 to 10 points (Table 1).
+Assessment of dietary diversity score (DDS)
+The method employed for calculating the DDS follows 
+the approach initially devised by Kant et al. [15]. Five food 
+groups, comprised of bread and grains, vegetables, fruits, 
+meats, and dairy, were taken into account. The selection 
+of the five major food groups—grains, vegetables, fruits, 
+meats, and dairy—was based on their fundamental role 
+in achieving a balanced and diverse diet, as emphasized 
+by dietary guidelines, such as the USDA Food Guide 
+Pyramid and the Iranian dietary guidelines [23]. Similar 
+classifications have been widely used in dietary diversity 
+research [24]. The subgroups were initially defined based 
+on Kant et  al. [15] and later adapted based on Farhangi 
+et  al. [25] to better reflect Iranian dietary patterns. We 
+further refined this classification by reassigning legumes 
+and nuts from the vegetable group to the protein group, 
+aligning with the PHDI and previous studies that catego -
+rized these foods as protein sources [11]. This adjustment 
+ensures that individuals consuming only plant-based 
+proteins receive an appropriate dietary diversity score. 
+Food subgroups were defined accordingly: the bread and 
+grain group were subdivided into five subgroups (refined 
+bread, whole bread, macaroni, whole cereal/corn flake, 
+rice), the vegetable group was divided into six subgroups 
+(tomato, yellow vegetables, starchy vegetables, potato, 
+green vegetables, other vegetables), fruits were catego -
+rized into two subgroups (citrus fruit/berries and fruit/
+fruit juice), the meat group comprised six subgroups (red 
+meat, poultry, egg, fish, legumes, nuts), while three sub -
+groups were designated for the dairy group (milk, yogurt, 
+and cheese). To be considered a consumer of a particular 
+Table 1 Planetary health diet index components, standards for scoring (caloric densities), and corresponding point values
+Page 5 of 14
+Dehnavi et al. BMC Public Health         (2025) 25:1865 
+ 
+food group, individuals must consume at least half a serv-
+ing within a day, as per the quantity criteria outlined by 
+the USDA food guide pyramid. Each food group was 
+assigned a maximum score of 2. Consequently, the over -
+all DDS ranged from 0 to 10 [25].
+Assessment of anthropometric measures
+Participant height and body weight were assessed by 
+a skilled researcher. Body weight was assessed with the 
+participant barefoot and wearing lightweight clothing, 
+using a Seca model digital scale with a precision of 0.1 kg. 
+The height measurement was obtained as the individual 
+stood without shoes, aligning their head, buttocks, and 
+heels against the wall, and looking straight ahead hori -
+zontally. This measurement was conducted using a tape 
+measure with an accuracy of 0.1 cm. Waist circumference 
+(WC) was measured at the midpoint between the lower 
+rib margin and the iliac crest, using a non-stretchable 
+measuring tape with a precision of 0.1 cm. Hip circum -
+ference was measured by placing a non-stretchable tape 
+measure with a precision of 0.1 cm around the widest 
+part of the hips.
+Anthropometric indices
+Anthropometric indices such as body mass index (BMI) 
+and waist-to-height ratio (WHtR) can be readily com -
+puted. BMI was estimated by dividing body weight by 
+the square of height (kg/m2). A Body Shape Index (ABSI) 
+offers a practical representation of the heightened risk 
+associated with elevated WC, complementing both BMI 
+and other established risk factors and estimated using 
+this formula: ABSI = WC/(BMI 2/3 ×  Height1/2). Further-
+more, the Body Roundness Index (BRI) exhibits compa -
+rable or superior performance in predicting components 
+of metabolic syndrome compared to both BMI and WC. 
+BRI is calculated using the formula: BRI = 364.2–365.5 
+× (1 – [WC/2π] 2/[0.5 × height)2]½ [26]. The Conicity 
+Index (CI) was developed as a measure to evaluate the 
+distribution of body fat as an indicator of obesity and 
+chronic disease. It was calculated using the formula: (WC 
+(m))/(0.109 × √(body weight (kg))/(height (m))) [27]. The 
+Abdominal Volume Index (AVI) was obtained using the 
+formula AVI = (2 (wc)2+0.7 (wc-hip)2)/1000.
+Assessment of other variables
+Demographic details and lifestyle information was col -
+lected using structured questionnaires. Each partici -
+pant was interviewed regarding the following variables 
+using a sociodemographic questionnaire: gender, age, 
+marital status (single or married), educational attain -
+ment (below high school, high school and above), and 
+income (≤ 20 million rials (≤ $476), 20 to 60 million 
+rials ($476 to $1,429), and ≥ 60 million rials (≥ $1,429)). 
+Educational level was assessed based on the number of 
+completed school years. Lifestyle data included smoking 
+habits. Participants were specifically asked about their 
+smoking status, indicating whether they were smokers or 
+non-smokers.
+The International Physical Activity Questionnaire 
+(IPAQ), used to evaluate the physical activity levels of the 
+elderly, has undergone validation and reliability assess -
+ments in 12 countries up to the year 2000, including in 
+Iran. [28, 29]. The final results of this assessment con -
+firm the effectiveness of the questionnaire as a suitable 
+tool for measuring physical activity in diverse contexts 
+and languages. Consisting of seven inquiries, this survey 
+evaluates the frequency and duration of an individual’s 
+involvement in physical activities. Participants reported 
+their engagement levels in four categories over the past 
+week: 1) intense activity; 2) moderate activity; 3) walking; 
+and 4) sitting. To precisely calculate Metabolic Equiva -
+lent of Task (MET) per minute, the duration of physical 
+activity was expressed in minutes. The total MET per 
+minute for each person throughout a week was used to 
+ascertain total weekly physical activity.
+Statistical analysis
+Initially, the percentage of calories from all 16 food 
+groups proposed by EAT-Lancet was calculated. Sub -
+sequently, the PHDI score was computed as discussed 
+previously. Participants were categorized based on the 
+tertiles of their PHDI scores.Participants were catego -
+rized into tertiles of PHDI to ensure adequate sample 
+size in each group, maintaining statistical power for 
+comparisons.
+Continuous variables were reported as mean and 
+standard deviation (SD), whereas categorical vari -
+ables were presented as numbers and percentages. To 
+evaluate differences in both qualitative and quantitative 
+variables across PHDI tertiles, the Chi-square test and 
+Analysis of Variance (ANOVA) were utilized, respec -
+tively. Adjustments for energy, gender, age, and the 
+participants’nutrient intake was examined across PHDI 
+tertiles. The information is conveyed as mean with corre-
+sponding standard errors (SE), and the analysis was per -
+formed using Analysis of Covariance (ANCOVA).
+We have assessed the normality of residuals using the 
+Kolmogorov–Smirnov test and Q-Q plots, confirming 
+that the distribution was normal. Multivariable binary 
+logistic regression methods were utilized to investigate 
+the relation between DDS, BMI, WC, BRI, ABSI, CI, and 
+AVI with PHDI in both crude and adjusted models. We 
+considered ABSI, BRI and AVI cut-off points to be 0.08, 
+5.20, and 17.30, respectively, based on a previous study in 
+Page 6 of 14Dehnavi et al. BMC Public Health         (2025) 25:1865 
+the Iranian population [30]. Given the strong association 
+between a waist circumference (WC) above 95 cm and 
+cardiovascular disease (CVD), the cut-off point for WC 
+was established at 95 cm [31]. Also, BMI above 27.5 kg/
+m2 was considered as BMI cut-off point since in various 
+Asian populations, further benchmarks for public health 
+intervention were identified, with a BMI of 27.5 kg/m 2 
+or above serving as a critical indicator of high-risk status 
+[32]. For CI and dietary diversity score, participants were 
+categorized into tertiles. As there are no predefined cut-
+off points for these two variables, we considered the last 
+tertiles as the outcome of interest.
+The adjusted model included following confounders: 
+age, gender, energy intake, physical activity, marital sta -
+tus, socio-economic status, household size, smoking sta -
+tus, and supplement intake. BMI was further adjusted 
+when DDS was considered as the dependent variable. 
+Odds ratios and 95% confidence intervals were com -
+puted using the first tertile of PHDI as the reference. In 
+the multivariable logistic regression models, PHDI ter -
+tiles were treated as ordinal variables to assess the trend 
+across these tertiles. We also used a linear regression 
+approach for examining the relation between PHDI and 
+DDS. In the linear regression analysis, both exposure 
+(PHDI) and outcome (DDS) were treated as continuous 
+variables. Adjustments were made for age, gender, energy 
+intake, physical activity, marital status, socio-economic 
+status, household size, smoking status, supplement intake 
+and BMI. Additionally, multicollinearity was assessed, 
+and all variance inflation factor (VIF) values were below 
+5, indicating no significant multicollinearity concerns.
+The analyses were carried out using SPSS version 26 
+(IBM Corp, Armonk, NY, USA), and statistical signifi -
+cance was determined for P-values below 0.05.
+Result
+A total of 1,100 elderly individuals were initially con -
+tacted. Among them, 387 did not meet the inclusion cri -
+teria, leaving 713 eligible individuals. Of these, 313 did 
+not attend the interview, resulting in a final sample of 400 
+participants. Therefore, the participation rate, calculated 
+based on those who met the inclusion criteria, was 56.1%.
+A sample of 398 participants, constituting an equal dis -
+tribution of men and women (50% each) were included in 
+this study. The participants had a mean (SD) age of 63.28 
+(3.58) ranging from 60 to 84 years and an average (SD) 
+weight of 76.43 (10.39) kg. PHDI yielded an average score 
+of 56.6, with individual scores ranging from 27 to 82.
+Table  2 presents the characteristics of study partici -
+pants across PHDI tertiles. In contrast to the first ter -
+tile, individuals in the third tertile were more likely to 
+be female (56.50% vs. 40.30%). Also, they were less likely 
+to be married (87.1% vs. 74.6%). Participants in the top 
+tertile of PHDI displayed relatively lower BMI (28.16 
+± 4.36 vs. 29.97 ± 4.35) kg/m 2 and waist circumference 
+(96.86 ± 10.47 vs. 100.66 ± 1.81) cm than those in the 
+bottom tertile. No other significant differences were 
+observed across PHDI tertiles in terms of participants’ 
+characteristics.
+Table 2 General characteristics of participants across tertiles of  PHDI1 (Planetary Health Diet Index)
+1 Data are presented as mean ± SD or n (%)
+2 Obtained from the ANOVA for continuous variables and Chi-square test for categorical variables
+Abbreviation: PHDI Planetary Health Diet Index, BMI Body Mass Index, SES Socioeconomic Status
+PHDI tertiles P-value2
+53 ≥ T1
+(n = 139)
+53 < T2 < 61
+(n = 121)
+T3 ≥ 61
+(n = 128)
+Age (years) 63.07 ± 3.40 63.23 ± 3.85 63.55 ± 3.44 0.53
+Gender (women) (percent) 40.30 53.70 56.50 0.01
+Weight (kg) 80.43 ± 10.46 76.14 ± 9.56 72.65 ± 9.58  < 0.001
+BMI (kg/m2) 29.97 ± 4.35 29.33 ± 4.01 28.16 ± 4.36 0.002
+Waist circumference (cm) 100.66 ± 11.80 97.02 ± 10.46 96.86 ± 10.47 0.006
+Hip circumference (cm) 107.83 ± 10.28 107.81 ± 9.65 106.38 ± 10.16 0.39
+Education (high school and above) (percent) 36.7 40.5 46.4 0.25
+Smoking status (yes) (percent) 21.6 20.7 20.3 0.96
+Physical activity (600 MET.min/wk ≤) (percent) 48.2 57.9 50.0 0.26
+Supplementation use (yes) (percent) 26.6 37.2 38.4 0.07
+Marital status (married) (percent) 87.1 76.9 74.6 0.02
+Number of family members (> 2) (percent) 48.2 57.9 53.6 0.20
+Socioeconomic status (last tertile) (percent) 28.7 35.5 32.6 0.57
+Page 7 of 14
+Dehnavi et al. BMC Public Health         (2025) 25:1865 
+ 
+Dietary intakes of participants across tertiles of PHDI 
+are demonstrated in Table  3. The average (SD) total 
+daily energy intake was 2194.81 (668.89) kcal. Notably, 
+participants in the third tertile of the PHDI exhibited a 
+significantly higher energy intake compared to those 
+in the first tertile. Examining PHDI components, there 
+was a significant decrease in the consumption of red 
+meat, chicken, eggs, starchy vegetables, animal oil, and 
+Table 3 PHDI components, food and nutrient items across tertiles of PHDI
+1 Obtained from ANCOVA
+All values are means ± standard error (SE); energy, protein, carbohydrate and fat are adjusted for age and gender; all other values are adjusted for age, gender and 
+energy intake
+Abbreviation: PHDI Planetary Health Diet Index
+PHDI tertiles P-value1
+53 ≥ T1
+(n = 139)
+53 < T2 < 61
+(n = 121)
+T3 ≥ 61
+(n = 128)
+Energy (kcal) 55.38 ± 2069.45 2281.10 ± 58.97 2245.42 ± 55.40 0.01
+PHDI components
+ Red meat (gram/day) 38.66 ± 1.80 32.00 ± 1.91 27.87 ± 1.79  < 0.001
+ Nuts (gram/day) 5.13 ± 1.17 6.54 ± 1.24 13.56 ± 1.17  < 0.001
+ Legumes (gram/day) 17.77 ± 1.04 23.61 ± 1.69 22.14 ± 1.03  < 0.001
+ Chicken and poultry (gram/day) 28.94 ± 1.59 23.96 ± 1.69 18.58 ± 1.58  < 0.001
+ Fish and sea food (gram/day) 2.34 ± 0.42 2.92 ± 0.45 5.17 ± 0.42  < 0.001
+ Egg (gram/day) 35.10 ± 1.98 29.33 ± 2.10 21.97 ± 1.97  < 0.001
+ Fruits (gram/day) 323.45 ± 14.23 344.39 ± 15.09 389.82 ± 14.16  < 0.001
+ Vegetables (gram/day) 295.64 ± 13.43 336.26 ± 14.25 380.09 ± 13.36  < 0.001
+ Whole cereal (gram/day) 39.98 ± 4.55 61.87 ± 4.82 79.24 ± 4.52  < 0.001
+ Starchy vegetables (gram/day) 45.22 ± 1.71 38.58 ± 1.82 34.00 ± 1.70  < 0.001
+ Dairy (gram/day) 284.96 ± 16.76 269.67 ± 17.77 242.75 ± 16.67 0.20
+ Vegetable oil (gram/day) 10.49 ± 0.56 12.53 ± 0.60 12.96 ± 0.56 0.01
+ Animal oil (gram/day) 14.03 ± 8.12 15.95 ± 15.12 12.05 ± 9.15 0. 01
+ Added sugar (gram/day) 51.04 ± 2.62 40.65 ± 2.85 35.91 ± 2.67  < 0.001
+ Dark/Green vegetables (gram/day) 32.87 ± 2.19 51.20 ± 2.33 51.85 ± 2.18  < 0.001
+ Red/Orange vegetables (gram/day) 109.39 ± 7.34 116.12 ± 7.79 131.93 ± 7.30 0.08
+Macronutrients
+ Protein (percent of total calories) 12.74 ± 0.18 12.74 ± 0.20 12.39 ± 0.18 0.33
+ Carbohydrate (percent of total calories) 61.69 ± 0.55 63.31 ± 0.58 64.81 ± 0.55  < 0.001
+ Total fat (percent of total calories) 27.43 ± 0.55 27.42 ± 0.58 25.28 ± 0.55 0.01
+ Saturated fat (percent of total calories) 22.87 ± 0.57 21.49 ± 0.61 18.24 ± 0.57  < 0.001
+ W3 (gram/day) 0.40 ± 0.01 0.38 ± 0.01 0.41 ± 0.01 0.65
+ Total fiber (gram/day) 16.53 ± 0.38 18.51 ± 0.40 20.33 ± 0.38  < 0.001
+Micronutrients
+ Calcium (mg/day) 789.98 ± 23.29 802.01 ± 24.70 779.79 ± 23.17 0.80
+ Iron (mg/day) 140 ± 0.22 15.83 ± 0.24 16.48 ± 0.22  < 0.001
+ Magnesium (mg/day) 232.69 ± 4.74 242.47 ± 5.03 248.32 ± 4.72 0.07
+ Zinc (mg/day) 7.42 ± 0.14 7.39 ± 0.15 7.09 ± 0.14 0.22
+ Vitamin A (IU/day) 1173.8 ± 59.93 1205.94 ± 63.57 1272.93 ± 89.62 0.49
+ Vitamin E (mg/day) 13.95 ± 0.49 15.10 ± 0.52 15.75 ± 0.49 0.03
+ Vitamin C (mg/day) 126.22 ± 4.94 135.22 ± 5.24 153.20 ± 4.92 0.001
+ Vitamin K (mg/day) 121.63 ± 4.76 125.84 ± 5.05 132.24 ± 4.74 0.28
+ Vitamin B12 (mg/day) 3.08 ± 0.10 2.93 ± 0.11 2.73 ± 0.10 0.08
+ Vitamin B9 (mg/day) 295.33 ± 10.92 294.51 ± 11.58 304.94 ± 10.86 0.70
+ Riboflavin (mg/day) 1.84 ± 0.05 1.76 ± 0.05 1.70 ± 0.05 0.17
+ Niacin (mg/day) 20.62 ± 0.48 20.74 ± 0.51 21.18 ± 0.48 0.69
+Page 8 of 14Dehnavi et al. BMC Public Health         (2025) 25:1865 
+added sugar across PHDI tertiles, whereas the intake of 
+nuts, legumes, fish, fruits, vegetables, whole cereals, veg -
+etable oil, and dark-green vegetables showed significant 
+increases. Regarding macronutrient intake, individuals in 
+the highest PHDI tertile displayed a significantly greater 
+consumption of carbohydrates and total fiber, coupled 
+with lower intake of total fat and saturated fat. Further -
+more, subjects in the highest PHDI tertile had signifi -
+cantly higher intakes of iron, vitamin E, and vitamin C. 
+No other significant differences were found.
+Within the study population, the prevalence of obe -
+sity or overweight was 63.8%. Abdominal obesity was 
+observed in 57.8% of individuals. Moreover, 64.3%, 
+59.5%, and 69.3% of participants exhibited an unfavora -
+ble ABSI, BRI, and AVI, respectively. As illustrated in 
+Table 4, individuals in the highest tertile of PHDI exhib -
+ited a lower prevalence of obesity/overweight (57.2% 
+versus 71.2%; p = 0.05) and abdominal obesity (58.0% ver-
+sus 70.5%; p < 0.04) when compared to those in the low -
+est category. Differences were not significant for other 
+anthropometric indices.
+The multivariable-adjusted ORs for DDS are detailed in 
+Table 5. Notably, no significant association was identified 
+between DDS and PHDI categories in either crude (OR: 
+1.27, 95% CI: 0.76, 2.12) or maximally-adjusted (OR: 1.12, 
+95% CI: 0.60, 2.09) models. Considering each 10-point 
+increase in PHDI, a significant positive association was 
+observed with DDS (OR: 1.28, 95% CI: 1.02, 1.60). How -
+ever, after accounting for potential confounders, this 
+association did not retain statistically significant (OR: 
+1.24, 95% CI: 0.94, 1.64).
+The association between each 10-point increase 
+in PHDI and dietary diversity score components, as 
+revealed by linear regression analysis, is delineated in 
+Table  6. Significant direct associations were observed 
+between every 10-point increase in PHDI and the scores 
+of dietary diversity for grains (β: 0.04, 95% CI: 0.01, 0.07), 
+vegetables (β: 0.03, 95% CI: 0.00, 0.06), and fruits (β: 0.02, 
+95% CI: 0.01, 0.03) in the adjusted model. Conversely, an 
+inverse significant relationship was noted between every 
+10-point increase in PHDI and the protein dietary diver -
+sity score in the adjusted model (β: −0.03, 95% CI: −0.07, 
+−0.00). However, there was no significant relationship 
+between every 10-point increase in PHDI and the total 
+dietary diversity score in the adjusted model (β: 0.03, 95% 
+CI: −0.04, 0.12).
+Table  7 presents the multivariable-adjusted ORs for 
+anthropometry indices across categories of PHDI. When 
+compared to the lowest tertile, individuals in the high -
+est tertile of PHDI demonstrated a 69% reduction in 
+the odds of obesity/overweight after adjusting for all 
+potential confounders (OR: 0.31, 95% CI: 0.17, 0.56). 
+Table 4 Prevalence of metabolic risk factors and higher dietary 
+diversity score among the tertiles of PHDI
+1 obtained from Chi-square
+Cut-off values: Body mass index (BMI) ≥ 27.5, waist circumference (WC) ≥ 95, 
+abdominal volume index (AVI) ≥ 3.17, body roundness index (BRI) ≥ 5.20, body 
+shape index (ABSI) ≥ 0.08, conicity Index (CI): placement in the third tertile of 
+dietary diversity is reported as the dependent variable
+Abbreviation: PHDI Planetary Health Diet Index, BMI Body Mass Index, WC Waist 
+Circumference, DDS Dietary Diversity Score, CI Conicity Index, AVI Abdominal 
+Volume Index, BRI Body Roundness Index, ABSI A Body Shape Index
+PHDI tertiles P-value1
+53 ≥ T1
+(n = 139)
+53 < T2 < 61
+(n = 121)
+T3 ≥ 61
+(n = 128)
+BMI 71.2 62.8 57.2 0.05
+WC 70.5 57.9 58.0 0.04
+DDS 25.8 37.2 34.1 0.3
+CI 35.3 28.9 34.8 0.4
+AVI 67.6 71.1 69.6 0.8
+BRI 66.2 57.9 54.3 0.10
+ABSI 62.6 58.7 71.0 0.10
+Table 5 Odds ratio and 95% confidence intervals (CIs) of higher dietary diversity score in tertiles of PHDI
+1 Obtained from Binary logistic regression
+2 Odds ratio for placement in the third tertile of dietary diversity is reported as the dependent variable
+Model 1: Adjusted for age, gender, energy intake, physical activity, marital status, socio-economic status, household size, smoking status, and supplement intake
+Model 2: Further adjusted for body mass index (BMI)
+Abbreviation: PHDI Planetary Health Diet Index, DDS Dietary Diversity Score
+PHDI tertiles Ptrend
+1 Every 10 points of PHDI
+53 ≥ T1
+(n = 139)
+53 < T2 < 61
+(n = 121)
+T3 ≥ 61
+(n = 128)
+DDS2
+ Crude 1.00 1.46 (0.87–2.46) 1.27 (0.76–2.12) 0.35 1.28 (1.02–1.60)
+ Model 1 1.00 1.19 (0.64–2.20) 1.10 (0.60–2.01) 0.76 1.22 (0.93–1.60)
+ Model 2 1.00 1.20 (0.60–2.23) 1.12 (0.60–2.09) 0.76 1.24 (0.94–1.64)
+Page 9 of 14
+Dehnavi et al. BMC Public Health         (2025) 25:1865 
+ 
+The likelihood of abdominal obesity was also 47% lower 
+in the third tertile of PHDI, compared to the first tertile, 
+in the adjusted model (OR: 0.53, 95% CI: 0.32, 0.90). Par -
+ticipants in the highest PHDI tertile exhibited a lower 
+odds ratio of high BRI after controlling confounders (OR: 
+0.43, 95% CI: 0.25, 0.75). In the adjusted model, every 
+10-point increase in PHDI was inversely associated with 
+odds ratios of higher BMI (OR: 0.62, 95% CI: 0.48, 0.81), 
+waist circumference (OR: 0.75, 95% CI: 0.59, 0.94), and 
+BRI (OR: 0.72, 95% CI: 0.56, 0.91). A significant trend was 
+observed for BMI, WC and BRI across tertiles of PHDI in 
+both crude and adjusted models. In the adjusted model, 
+individuals in the highest tertile of PHDI exhibited 
+increased odds ratios for CI (1.04, 95% CI: 0.62–1.75) and 
+ABSI (1.66, 95% CI: 0.97–2.86), while displaying lower 
+odds for AVI (0.94, 95% CI: 0.54–1.65) compared to those 
+in the lowest tertile. However, none of these associations 
+were statistically significant.
+Discussion
+This study is the first to investigate the association 
+between how a dietary index assesses adherence to 
+EAT-Lancet recommendations and dietary diversity and 
+anthropometric indices in the Iranian population. As 
+a result, an inverse association was identified between 
+adherence to planetary health diet recommendations, as 
+evaluated by PHDI, and anthropometric indices such as 
+BMI, WC, and BRI. This implies that a greater adherence 
+to EAT-Lancet recommendations is linked to a lower 
+likelihood of being overweight or obese. Both conditions 
+are significant factors associated with other chronic dis -
+eases, including diabetes and cardiovascular diseases, 
+particularly in older adults. However, we observed no 
+relationship between PHDI and dietary diversity score as 
+well as other anthropometric indices after considering all 
+confounders.
+According to the findings of the current study, it was 
+observed that our population achieved only half of the 
+possible points of PHDI (ranging from 0 to 150 points, 
+with a mean score of 56.6 points). indicating a relatively 
+low adherence to the recommendations of the"healthy 
+and sustainable"dietary pattern. A possible reason for 
+this observation could be due to a shift towards a West -
+ern dietary pattern and increase of red meat consump -
+tion in the past 30 years in Iran because of an increase 
+in living standards and the efficiency of food production 
+[33]. Moreover, it has been shown that in the Middle East 
+region, there has been a decline in the contribution of 
+grains and fruits to energy intake, while the contribution 
+of oil and meat to the overall diet has increased in the 
+last 45 years [34]. However, it is noteworthy that there 
+has been a recent decrease in red meat consumption, 
+which can be attributed to economic crises and the rise 
+in food prices [35]. The findings of this study highlight 
+that the intake of grains and nuts falls significantly below 
+the EAT-Lancet recommendations. While, not only do 
+legumes act as a sustainable substitute for red meat, but 
+their favorable effects on soil quality, biodiversity, and 
+soil enrichment through nitrogen fixation are particu -
+larly noteworthy [36]. In accordance with our results, a 
+systematic review examining the present dietary habits 
+in Iran and the essential adjustments for shifting towards 
+a more environmentally friendly diet found that having 
+a sustainable dietary pattern includes a lower consump -
+tion of red meat, eggs, sweets, and refined grains and an 
+increased intake of whole grains and legumes [37].
+Previous studies exploring the relationship between 
+EAT-Lancet recommendations and obesity indicators 
+align with our findings. One study conducted on the Bra -
+zilian adult population revealed that there is an inverse 
+relationship between adherence to planetary health 
+diet recommendations, evaluated by PHDI, and risk of 
+obesity, overweight and abdominal obesity [16]. In an 
+examination involving a representative sample of 11,506 
+Mexican adults aged 20 to 59 years, encompassing both 
+genders, Shamah-Levy et al. observed a diminished prev -
+alence of excess weight and obesity among individuals 
+Table 6 The relationship between Each 10 point of PHDI and 
+dietary diversity score and sub-scores
+1 Obtained from linear regression
+2 Adjusted for age, gender, energy intake, physical activity, marital status, socio-
+economic status, household size, smoking status, supplement intake and BMI
+Abbreviation: PHDI Planetary Health Diet Index, DDS Dietary Diversity Score
+Dietary diversity 
+sub-scores
+Each 10 point of PHDI
+β 1 CI P R2
+Grain DDS
+ Crude 0.04 0.01–0.07 0.002 0.02
+  Adjusted 2 0.04 0.01–0.07 0.002 0.14
+Vegetable DDS
+ Crude 0.04 0.01–0.07 0.006 0.01
+ Adjusted 0.03 0.00–0.06 0.03 0.25
+Fruit DDS
+ Crude 0.03 0.02–0.04 < 0.001 0.05
+ Adjusted 0.02 0.01–0.03 < 0.001 0.27
+Protein DDS
+ Crude −0.02 −0.05–0.01 0.2 0.003
+ Adjusted −0.03 −0.07– −0.00 0.02 0.20
+Dairy DDS
+ Crude −0.01 −0.06–0.03 0.56 0.001
+ Adjusted −0.02 −0.07–0.02 0.27 0.10
+Total DDS
+ Crude 0.09 −0.003–0.1 0.05 0.009
+ Adjusted 0.03 −0.04–0.12 0.34 0.35
+Page 10 of 14Dehnavi et al. BMC Public Health         (2025) 25:1865 
+with a higher adherence to EAT-Lancet recommenda -
+tions, which was evaluated by a 13-component index 
+[38]. The European Prospective Investigation into Cancer 
+and Nutrition (EPIC)-Oxford study, found a BMI reduc -
+tion of 1.4 kg/m 2 in individuals scoring ≥ 12 points on 
+the EAT-Lancet diet using a binary index among partici -
+pants in the UK [39]. Several studies have also explored 
+the association between adherence to EAT-Lancet rec -
+ommendations and different health outcomes. A meta-
+analysis of clinical studies revealed that adherence to 
+EAT-Lancet recommendations is associated with lower 
+risk of diabetes, CVDs and mortality [40].
+There is limited research on the association between 
+PHDI and health outcomes in low- and middle-income 
+countries. A study on 6,465 Iranian adults from the 
+PERSIAN cohort found that higher PHDI adherence 
+was linked to better diet quality, lower environmental 
+impacts, and reduced risk of metabolic syndrome [41]. 
+Similarly, a case–control study on 71 colorectal cancer 
+patients and 142 controls in Tehran showed an inverse 
+relationship between higher PHDI scores and colorectal 
+cancer odds [42]. Additionally, studies on plant-based 
+diets have shown associations with obesity-related out -
+comes. For instance, a study on 6,833 Iranian households 
+identified dietary patterns linked to variations in BMI 
+[43]. Our findings contribute to this growing evidence, 
+highlighting the link between PHDI and health outcomes.
+One of the characteristics of a sustainable diet involves 
+eating a variety of foods, such as diverse fruits and veg -
+etables, to help protect biodiversity [4, 44]. Biodiver -
+sity impacts the nutritional richness of dietary patterns. 
+Preserving biodiversity can contribute to maintaining 
+a diverse range of agricultural products, enhancing the 
+resilience of food systems, and increasing the variety of 
+foods consumed on a larger scale [45]. Even some indices 
+designed to assess the sustainability and health of dietary 
+patterns utilized diversity scores as a component [46]. 
+Previous studies have also demonstrated a significant 
+relationship between dietary diversity and diet quality 
+in various age groups, particularly in the elderly [47–49]. 
+This implies that assessing dietary diversity serves as an 
+effective criterion for measuring the adequacy of a diet in 
+terms of receiving various nutrients [11].
+Table 7 Odds ratio and 95% confidence intervals (CIs) of metabolic risk factors in tertiles of PHDI
+1 Obtained from Binary logistic regression
+Adjusted: for age, gender, energy intake, physical activity, marital status, socio-economic status, household size, smoking status, and supplement intake
+Cut-off values: Body mass index (BMI) ≥ 27.5, waist circumference (WC) ≥ 95, abdominal volume index (AVI) ≥ 3.17, body roundness index (BRI) ≥ 5.20, body shape 
+index (ABSI) ≥ 0.08; conicity Index (CI): placement in the third tertile of dietary diversity is reported as the dependent variable
+PHDI tertiles Ptrend
+1 Every 10 points of PHDI
+53 ≥ T1
+(n = 139)
+53 < T2 < 61
+(n = 121)
+T3 ≥ 61
+(n = 128)
+BMI
+ Crude 1.00 0.68 (0.40–1.14) 0.54 (0.32–0.89) 0.01 0.78 (0.62–0.97)
+ Adjusted 1.00 0.44 (0.24–0.80) 0.31 (0.17–0.56)  < 0.001 0.62 (0.48–0.81)
+WC
+ Crude 1.00 0.57 (0.34–0.95) 0.57 (0.35–0.94) 0.03 0.77 (0.62–0.96)
+ Adjusted 1.00 0.53 (0.31–0.91) 0.53 (0.32–0.90) 0.02 0.75 (0.59–0.94)
+CI
+ Crude 1.00 0.74 (0.44–1.26) 0.98 (0.59–1.60) 0.90 1.07 (0.86–1.33)
+ Adjusted 1.00 0.79 (0.46–1.36) 1.04 (0.62–1.75) 0.81 1.10 (0.88–1.39)
+AVI
+ Crude 1.00 1.17 (0.69–1.90) 1.09 (0.65–1.81) 0.72 1.03 (0.82–1.29)
+ Adjusted 1.00 1.13 (0.63–2.01) 0.94 (0.54–1.65) 0.81 0.95 (0.74–1.21)
+BRI
+ Crude 1.00 0.70 (0.42–1.16) 0.60 (0.37–0.98) 0.04 0.82 (0.66–1.01)
+ Adjusted 1.00 0.52 (0.30–0.92) 0.43 (0.25–0.75) 0.003 0.72 (0.56–0.91)
+ABSI
+ Crude 1.00 0.84 (0.51–1.41) 1.43 (0.86–2.37) 0.10 1.17 (0.94–1.45)
+ Adjusted 1.00 0.91 (0.53–1.56) 1.66 (0.97–2.86) 0.06 1.25 (0.99–1.57)
+Page 11 of 14
+Dehnavi et al. BMC Public Health         (2025) 25:1865 
+ 
+The findings of our study revealed that an increase in 
+the PHDI score in the unadjusted model correlates with 
+an increase in the dietary diversity score. Nevertheless, 
+this association loses significance upon adjusting for 
+confounding variables. The EAT-Lancet diet includes a 
+wide range of food groups, inherently promoting dietary 
+diversity. However, it does not explicitly incorporate a 
+scoring system that directly quantifies dietary diversity 
+as an independent component. As a result, PHDI may 
+not fully capture variations in dietary diversity. Addition -
+ally, dietary diversity is influenced by multiple factors, 
+including socioeconomic status, cultural dietary habits, 
+and food availability, which could have confounded the 
+relationship between PHDI and dietary diversity. This 
+implies that confounding variables, given their potential 
+connection with dietary diversity, may play a significant 
+role in the relationship between a healthy and sustain -
+able dietary pattern and dietary diversity. One of these 
+confounding factors is the socioeconomic status (SES). 
+Previous studies have demonstrated a close relationship 
+between dietary diversity in elderly individuals and their 
+SES [ 50]. For example, it has been demonstrated that 
+higher education levels and better economic status are 
+associated with higher DDS and a healthier diet among 
+the elderly [51]. Moreover, a cross-sectional study dem -
+onstrated a direct association between dietary diversity 
+score and higher education, higher well-being index, and 
+urban living [52]. Furthermore, previous studies have 
+reported that a higher socioeconomic status can mitigate 
+the declining trend in dietary diversity with increasing 
+age [53].
+Additionally, our findings revealed that for every 
+10-point increase in the PHDI, there was a correspond -
+ing increase in the DDS for grains, vegetables, and fruits, 
+along with a decrease in the DDS for protein. This finding 
+can explain the absence of an association between PHDI 
+and total DDS, indicating that the positive correlation 
+observed for mentioned components may be counterbal -
+anced by negative correlation in protein DDS, leading to 
+an overall neutral effect on the total DDS. The protein 
+DDS comprises six food subgroups, with four of them 
+representing animal protein sources (red meat, poultry, 
+fish, and egg). As individuals align their dietary patterns 
+more closely with the PHDI, which encourages a reduced 
+emphasis on animal-based proteins, this shift contributes 
+to the observed decrease in the protein DDS.
+Our study has several strengths. The present study is 
+the first to examine the adherence to the EAT-Lancet 
+dietary pattern in Iran and its association with dietary 
+diversity, and anthropometric indices. Another nota -
+ble strength of this study lies in the application of the 
+PHDI to evaluate adherence to the EAT-Lancet dietary 
+pattern. The scoring system employed in this approach 
+is scaled, distinguishing it from other scoring systems 
+that are binary [39, 54]. Research suggests that uti -
+lizing this scoring method can yield more nuanced 
+distinctions in the levels of adherence to a dietary pat -
+tern within a community [55]. Additionally, this scor -
+ing method, grounded in caloric density, allows us to 
+observe an association that is independent of energy 
+intake. However, there are some limitations worth 
+mentioning. Firstly, this study used a cross-sectional 
+analysis, allowing us to identify associations but not 
+establish causation. Secondly, food consumption was 
+evaluated through a FFQ, which has some limitations, 
+including a finite food list and potential dietary mis -
+reporting bias. Thirdly, the study population is limited 
+to older adults from Tehran, which may not represent 
+the broader Iranian population or other regions with 
+different dietary habits and socioeconomic conditions. 
+Moreover, most participants in the study were from the 
+south of Tehran, representing middle and low socio -
+economic statuses. Hence, it’s important to be cautious 
+when applying these findings to other populations. 
+Finally, the mean age of elderly participants was on the 
+younger side, which may limit the generalizability to 
+older individuals. This bias may stem from our inclu -
+sion criteria, which excluded individuals with chronic 
+illnesses, medications, or diet changes—conditions 
+more common in the older elderly population.
+Adopting the Planetary Health Diet in countries like 
+Iran faces challenges due to economic and cultural fac -
+tors. Healthier diets are often more expensive, which 
+can be a significant barrier in low- and middle-income 
+settings [56, 57]. Also, the affordability of the EAT-Lan -
+cet diet has been shown to be challenging in low- and 
+middle-income countries making it inaccessible for 
+many in these regions [58]. Culturally, Iranian cuisine 
+is rich in carbohydrates, with foods like rice and bread 
+being staples, making it difficult to shift toward plant-
+based options [59]. To overcome these barriers, pro -
+moting locally grown, affordable plant-based foods and 
+educating the public on the health and environmental 
+benefits of the PHD can help. Additionally, incorporat -
+ing PHD principles into familiar dishes may encourage 
+greater acceptance.
+In summary, our study demonstrates an inverse 
+association between adherence to EAT-Lancet recom -
+mendations and anthropometric indices such as BMI, 
+WC and BRI, suggesting a lower likelihood of being 
+overweight or obese in the Iranian population. These 
+findings indicate that adhering to the healthy and sus -
+tainable diet guidelines outlined by EAT-Lancet yields 
+positive health outcomes by reducing the possibility 
+Page 12 of 14Dehnavi et al. BMC Public Health         (2025) 25:1865 
+of overweight or obesity, which can lead to morbidi -
+ties like diabetes and hypertension especially in older 
+adults. Moreover, given the observed low adherence 
+among the study participants, there is an opportunity 
+for public policies to formulate guidelines and recom -
+mendations, placing a specific emphasis on the propos -
+als outlined by the EAT-Lancet Commission. Further 
+prospective studies considering a more diverse popu -
+lation are needed to confirm these results and inform 
+public health strategies.
+Abbreviations
+PHD  Planetary Health Diet Index
+USDA  U.S. Department of Agriculture
+FI  Food insecurity
+DV  Daily value
+FDA  Food and Drug Administration
+BMI  Body Mass Index
+WC  Waist Circumference
+WHO  World Health Organization
+ABSI  A Body Shape Index
+BRI  Body Roundness Index
+CI  Conicity Index
+IPAQ  International Physical Activity Questionnaire
+SES  Socioeconomic status
+NHANES  National Health and Nutrition Examination Survey
+HEI  Health Eating Index
+Disclosure statement
+None of the authors had any personal or financial conflicts of interest.
+Authors’ contributions
+LA, ADM and MKD designed the study. MKD carried out the sampling. MKD, 
+PNH and HA carried out interviews, extracted data from the medical records 
+and imported the data for analysis. MKD performed the statistical analyses. 
+MKD and RT drafted the manuscript. LA and ADM read and commented on 
+the manuscript. NB reviewed and edited the manuscript. LA supervised the 
+study. The final manuscript was approved by all the authors.
+Funding
+This research was supported by Tehran University of Medical Sciences, Tehran, 
+Iran (no: IR.TUMS.MEDICINE.REC.1401.588).
+Data availability
+No datasets were generated or analysed during the current study.
+Declarations
+Ethics approval and consent to participate
+The approval for this study was granted by the Tehran University of Medical 
+Sciences Research Ethics Committee under the reference number IR.TUMS.
+MEDICINE.REC.1401.588, in adherence to the principles outlined in the Helsinki 
+Declaration. Every participant in the study willingly provided written informed 
+consent.
+Consent for publication
+Not Applicable.
+Competing interests
+The authors declare no competing interests.
+Author details
+1 Department of Community Nutrition, School of Nutritional Sciences 
+and Dietetics, Tehran University of Medical Sciences, P .O Box 14155-6117, 
+Tehran, Iran. 2 School of Nutrition, Toronto Metropolitan University, Toronto, 
+Canada. 3 Diabetic Research Center, Endocrine and Metabolism Clinical Sci-
+ences Institute, Tehran University of Medical Sciences, Tehran, Iran. 
+Received: 17 December 2024   Accepted: 6 May 2025
+References
+ 1. Masson-Delmotte V, Zhai P , Pirani A, Connors SL, Péan C, Berger S, Climate 
+change, et al. the physical science basis. Contribution of working group I 
+to the sixth assessment report of the intergovernmental panel on climate 
+change. 2021;2021:2.
+ 2. Fanzo J, Bellows AL, Spiker ML, Thorne-Lyman AL, Bloem MW. The impor-
+tance of food systems and the environment for nutrition. Am J Clin Nutr. 
+2021;113(1):7–16.
+ 3. Organization WH. Sustainable healthy diets: guiding principles. Rome: 
+Food & agriculture organization of the United Nations; 2019.
+ 4. Willett W, Rockström J, Loken B, Springmann M, Lang T, Vermeulen S, et al. 
+Food in the Anthropocene: the EAT-Lancet Commission on healthy diets 
+from sustainable food systems. Lancet. 2019;393(10170):447–92.
+ 5. Cacau LT, De Carli E, de Carvalho AM, Lotufo PA, Moreno LA, Bensenor 
+IM, Marchioni DM. Development and validation of an index based on 
+EAT-Lancet recommendations: The Planetary Health Diet Index. Nutrients. 
+2021;13(5):1698.
+ 6. Parker MK, Misyak SA, Gohlke JM, Hedrick VE. Cross-sectional measure-
+ment of adherence to a proposed sustainable and healthy dietary pattern 
+among United States adults using the newly developed Planetary Health 
+Diet Index for the United States. Am J Clin Nutr. 2023;118(6):1113–22.
+ 7. Pourebrahim F, Omidvar N, Rezazadeh A, Eini-Zinab H, Shirani P , Ghodsi 
+D. Food security and its association with socioeconomic status and 
+dietary diversity in free-living older people in Tehran, Iran. BMC Geriatrics. 
+2024;24(1):128. https:// doi. org/ 10. 1186/ s12877- 024- 04705-y.
+ 8. Sheykhi MT. General review of the sociological challenges and prospects 
+of population in Iran–A sociological study of quality of life. Journal of 
+Social Sciences. 2006;12(1):21–32.
+ 9. Mathus-Vliegen EM. Obesity and the Elderly. J Clin Gastroenterol. 
+2012;46(7):533–44.
+ 10. Kocaadam-Bozkurt B, Bozkurt O. Relationship between adherence to 
+the Mediterranean diet, sustainable and healthy eating behaviors, and 
+awareness of reducing the ecological footprint. Int J Environ Health Res. 
+2023;33(4):430–40.
+ 11. Cano-Ibáñez N, Gea A, Martínez-González MA, Salas-Salvadó J, Corella D, 
+Zomeño MD, et al. Dietary Diversity and Nutritional Adequacy among an 
+Older Spanish Population with Metabolic Syndrome in the PREDIMED-
+Plus Study: A Cross-Sectional Analysis. Nutrients. 2019;11(5).
+ 12. Willett W, Rockström J, Loken B, Springmann M, Lang T, Vermeulen S, et al. 
+Food in the Anthropocene: the EAT–Lancet Commission on healthy diets 
+from sustainable food systems. The lancet. 2019;393(10170):447–92.
+ 13. Hsiao F-Y, Peng L-N, Lee W-J, Chen L-K. Higher dietary diversity and better 
+healthy aging: A 4-year study of community-dwelling middle-aged and 
+older adults from the Taiwan Longitudinal Study of Aging. Exp Gerontol. 
+2022;168: 111929.
+ 14. Nachvak SM, Abdollahzad H, Mostafai R, Moradi S, Pasdar Y, Rezaei 
+M, Esksndari S. Dietary Diversity Score and Its Related Factors among 
+Employees of Kermanshah University of Medical Sciences. Clin Nutr Res. 
+2017;6(4):247–55.
+ 15. Kant AK, Schatzkin A, Harris TB, Ziegler RG, Block G. Dietary diversity 
+and subsequent mortality in the First National Health and Nutrition 
+Examination Survey Epidemiologic Follow-up Study. Am J Clin Nutr. 
+1993;57(3):434–40.
+ 16. Cacau LT, Benseñor IM, Goulart AC, Cardoso LO, Lotufo PA, Moreno LA, 
+Marchioni DM. Adherence to the Planetary Health Diet Index and obesity 
+indicators in the Brazilian Longitudinal Study of Adult Health (ELSA-Brasil). 
+Nutrients. 2021;13(11):3691. https:// doi. org/ 10. 3390/ nu131 13691.
+ 17. Azadbakht L, Mohammadifard N, Akhavanzanjani M, Taheri M, Golshahi J, 
+Haghighatdoost F. The association between dietary glycemic index, gly-
+cemic load and diet quality indices in Iranian adults: results from Isfahan 
+Healthy Heart Program. Int J Food Sci Nutr. 2016;67(2):161–9.
+ 18. Fleiss JL, Levin B, Paik MC. Statistical methods for rates and propor-
+tions. Hoboken: Wiley; 2013.
+Page 13 of 14
+Dehnavi et al. BMC Public Health         (2025) 25:1865 
+ 
+ 19. Mirmiran P , Esfahani FH, Mehrabi Y, Hedayati M, Azizi F. Reliability and rela-
+tive validity of an FFQ for nutrients in the Tehran lipid and glucose study. 
+Public Health Nutr. 2010;13(5):654–62.
+ 20. Esfahani FH, Asghari G, Mirmiran P , Azizi F. Reproducibility and rela-
+tive validity of food group intake in a food frequency questionnaire 
+developed for the Tehran Lipid and Glucose Study. J Epidemiol. 
+2010;20(2):150–8.
+ 21. Ghafarpour M, Houshiar-Rad A, Kianfar H, Ghaffarpour M. The manual for 
+household measures, cooking yields factors and edible portion of food. 
+Tehran: Keshavarzi Press; 1999.
+ 22. Cacau LT, De Carli E, de Carvalho AM, Lotufo PA, Moreno LA, Bensenor 
+IM, Marchioni DM. Development and validation of an index based on 
+EAT-Lancet recommendations: The Planetary Health Diet Index. Nutrients. 
+2021;13(5):1698. https:// doi. org/ 10. 3390/ nu130 51698.
+ 23. Safavi SM, Omidvar N, Djazayery A, Minaei M, Hooshiarrad A, Shei-
+koleslam R. Development of Food-Based Dietary Guidelines for Iran: A 
+Preliminary Report. Ann Nutr Metab. 2007;51:32–5.
+ 24. Salehi-Abargouei A, Akbari F, Bellissimo N, Azadbakht L. Dietary diversity 
+score and obesity: a systematic review and meta-analysis of observa-
+tional studies. Eur J Clin Nutr. 2016;70(1):1–9.
+ 25. Farhangi MA, Jahangiry L. Dietary diversity score is associated with car-
+diovascular risk factors and serum adiponectin concentrations in patients 
+with metabolic syndrome. BMC Cardiovasc Disord. 2018;18(1):68.
+ 26. Stefanescu A, Revilla L, Lopez T, Sanchez SE, Williams MA, Gelaye B. 
+Using A Body Shape Index (ABSI) and Body Roundness Index (BRI) to 
+predict risk of metabolic syndrome in Peruvian adults. J Int Med Res. 
+2020;48(1):0300060519848854.
+ 27. Nkwana MR, Monyeki KD, Lebelo SL. Body roundness index, a body shape 
+index, conicity index, and their association with nutritional status and car-
+diovascular risk factors in South African rural young adults. Int J Environ 
+Res Public Health. 2021;18(1):281.
+ 28. Craig CL, Marshall AL, Sjöström M, Bauman AE, Booth ML, Ainsworth BE, 
+et al. International physical activity questionnaire: 12-country reliability 
+and validity. Med Sci Sports Exerc. 2003;35(8):1381–95.
+ 29. Vasheghani-Farahani A, Tahmasbi M, Asheri H, Ashraf H, Nedjat S, Kordi 
+R. The Persian, last 7-day, long form of the International Physical Activity 
+Questionnaire: translation and validation study. Asian J Sports Med. 
+2011;2(2):106.
+ 30. Hozhabrnia A, Jambarsang S, Namayandeh SM. Cut-off values of 
+obesity indices to predict coronary heart disease incidence by time-
+dependent receiver operating characteristic curve analysis in 10-year 
+follow-up in study of Yazd Healthy Heart Cohort. Iran ARYA Atheroscler. 
+2022;18(3):1–10.
+ 31. Heshmat R, Khashayar P , Meybodi HR, Homami MR, Larijani B. The 
+appropriate waist circumference cut-off for Iranian population. Acta Med 
+Indones. 2010;42(4):209–15.
+ 32. WHO Expert Consultation. Appropriate body-mass index for Asian popu-
+lations and its implications for policy and intervention strategies. Lancet. 
+2004;363(9403):157–63. https:// doi. org/ 10. 1016/ S0140- 6736(03) 15268-3.
+ 33. Pingali P . Westernization of Asian Diets and the Transformation of 
+Food Systems: Implications for research and policy. Food Policy. 
+2007;32:281–98.
+ 34. Comparison of trends in dietary pattern in Iran. Middle Eastern and North 
+African countries from 1961 to 2005. Pajoohandeh. 2011;16(1):1–10.
+ 35. Sobhani SR, Eini-Zinab H, Rezazadeh A. Assessing the Changes in Iranian 
+Household Food Basket Using National Household Budget and Expendi-
+ture Survey Data, 1991–2017. Int J Prev Med. 2021;12:148.
+ 36. Meena RS, Das A, Yadav G, Lal R. Legumes for Soil Health and Sustainable 
+Management. 2018.
+ 37. Sobhani SR, Omidvar N, Abdollahi Z, Al Jawaldeh A. Shifting to a sustain-
+able dietary pattern in Iranian population: Current evidence and future 
+directions. Front Nutr. 2021;8:789692. https:// doi. org/ 10. 3389/ fnut. 2021. 
+789692.
+ 38. Shamah-Levy T, Gaona-Pineda EB, Mundo-Rosas V, Méndez Gómez-
+Humarán I, Rodríguez-Ramírez S. Asociación de un índice de dieta 
+saludable y sostenible con sobrepeso y obesidad en adultos mexicanos 
+[Association of a healthy and sustainable dietary index and overweight 
+and obesity in Mexican adults]. Salud Pública de México. 2020;62(6):745–
+53. https:// doi. org/ 10. 21149/ 11829.
+ 39. Knuppel A, Papier K, Key TJ, Travis RC. EAT-Lancet score and major health 
+outcomes: the EPIC-Oxford study. Lancet. 2019;394(10194):213–4.
+ 40. Berthy F, Brunin J, Allès B, Fezeu LK, Touvier M, Hercberg S, et al. Associa-
+tion between adherence to the EAT-Lancet diet and risk of cancer and 
+cardiovascular outcomes in the prospective NutriNet-Santé cohort. Am J 
+Clin Nutr. 2022;116(4):980–91.
+ 41. Shojaei S, Dehnavi Z, Irankhah K, Fatemi SF, Sobhani SR. Adherence 
+to the planetary health diet index and metabolic syndrome: cross-
+sectional results from the PERSIAN cohort study. BMC Public Health. 
+2024;24(1):2988.
+ 42. Mohammadi F, Alijani S, Abdollahi N, Mashoufi A, Nouri M, Soltanii M, 
+et al. The association between Planetary Health Diet Index and the risk of 
+colorectal cancer: a case-control study. Sci Rep. 2024;14(1):26546.
+ 43. Ebrahimi S, Leech RM, McNaughton SA, Abdollahi M, Houshiarrad A, 
+Livingstone KM. Dietary patterns derived using principal component 
+analysis and associations with sociodemographic characteristics and 
+overweight and obesity: A cross-sectional analysis of Iranian adults. Front 
+Nutr. 2023;10:1091555. https:// doi. org/ 10. 3389/ fnut. 2023. 10915 55.
+ 44. El Bilali H, O’Kane G, Capone R, Berry E, Dernini S. Exploring Relationships 
+between Biodiversity and Dietary Diversity in the Mediterranean Region: 
+Preliminary Insights from a Literature Review. American Journal of Food 
+and Nutrition. 2017;5:1–9.
+ 45. Lourme-Ruiz A, Dury S, Martin-Prével Y. Linkages between dietary diver-
+sity and indicators of agricultural biodiversity in Burkina Faso. Food Secur. 
+13(2):329–49. https:// doi. org/ 10. 1007/ s12571- 020- 01137-5.
+ 46. Seconda L, Baudry J, Pointereau P , Lacour C, Langevin B, Hercberg S, et al. 
+Development and validation of an individual sustainable diet index in the 
+NutriNet-Santé study cohort. Br J Nutr. 2019;121(10):1166–77.
+ 47. Foote JA, Murphy SP , Wilkens LR, Basiotis PP , Carlson A. Dietary variety 
+increases the probability of nutrient adequacy among adults. J Nutr. 
+2004;134(7):1779–85.
+ 48. Moursi MM, Arimond M, Dewey KG, Trèche S, Ruel MT, Delpeuch F. 
+Dietary diversity is a good predictor of the micronutrient density 
+of the diet of 6- to 23-month-old children in Madagascar. J Nutr. 
+2008;138(12):2448–53.
+ 49. Kong W, Jiang T, Ning Y, Guo Y, Liu H, Lyu X, Li M. Dietary diversity, diet 
+quality, and oxidative stress in older adults. Geriatr Nurs. 2022;48:158–63.
+ 50. Chalermsri C, Herzig van Wees S, Ziaei S, Ekström EC, Muangpaisan W, 
+Rahman SM. Exploring the experience and determinants of the food 
+choices and eating practices of elderly Thai people: A qualitative study. 
+Nutrients. 2020;12(11):3497. https:// doi. org/ 10. 3390/ nu121 13497.
+ 51. Yu Y, Cao N, He A, Jiang J. Age and cohort trends of the impact of socio-
+economic status on dietary diversity among Chinese older adults from 
+the perspective of urban-rural differences: A prospective cohort study 
+based on CLHLS 2002–2018. Front Nutr. 2022;9:1020364. https:// doi. org/ 
+10. 3389/ fnut. 2022. 10203 64.
+ 52. Chalermsri C, Rahman SM, Ekström E-C, Muangpaisan W, Aekplakorn W, 
+Satheannopakao W, Ziaei S. Socio-demographic characteristics associ-
+ated with the dietary diversity of Thai community-dwelling older people: 
+results from the national health examination survey. BMC Public Health. 
+2022;22(1):377.
+ 53. Hong L, Yun Z. Socio-Economic Status and Patterns of Lifestyle of the 
+Older Adults in China: Convergence at Lower Levels While Divergence at 
+Higher Levels. Population Research. 2021;45(3):114–28.
+ 54. Trijsburg L, Talsma EF, Crispim SP , Garrett J, Kennedy G, de Vries JHM, Brou-
+wer ID. Method for the development of WISH, a globally applicable index 
+for healthy diets from sustainable food systems. Nutrients. 2020;13(1):93. 
+https:// doi. org/ 10. 3390/ nu130 10093.
+ 55. Burggraf C, Teuber R, Brosig S, Meier T. Review of a priori dietary 
+quality indices in relation to their construction criteria. Nutr Rev. 
+2018;76(10):747–64.
+ 56. Cade J, Upmeier H, Calvert C, Greenwood D. Costs of a healthy diet: 
+analysis from the UK Women’s Cohort Study. Public Health Nutr. 
+1999;2(4):505–12.
+ 57. Darmon N, Drewnowski A. Contribution of food prices and diet cost to 
+socioeconomic disparities in diet quality and health: a systematic review 
+and analysis. Nutr Rev. 2015;73(10):643–60.
+Page 14 of 14Dehnavi et al. BMC Public Health         (2025) 25:1865 
+ 58. Hirvonen K, Bai Y, Headey D, Masters WA. Affordability of the EAT–
+<em>Lancet</em> reference diet: a global analysis. Lancet Glob Health. 
+2020;8(1):e59–66.
+ 59. Bahreynian M, Esmaillzadeh A. Quantity and Quality of Carbohydrate 
+Intake in Iran: A Target for Nutritional Intervention. Arch Iran Med. 
+2012;15:648–9.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in pub-
+lished maps and institutional affiliations.

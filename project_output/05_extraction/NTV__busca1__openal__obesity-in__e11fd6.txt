@@ -1,0 +1,1664 @@
+© 2020 Joule Inc. or its licensors   CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 E875
+O
+besity is a complex chronic disease in which abnormal 
+or excess body fat (adiposity) impairs health, 
+increases the risk of long-term medical complications 
+and reduces lifespan. 1 Epidemiologic studies define obesity 
+using the body mass index (BMI;  weight/height 2), which can 
+stratify obesity-related health risks at the population level. 
+Obesity is operationally defined as a BMI exceeding 30 kg/m 2 
+and is subclassified into class 1 (30–34.9), class 2 (35–39.9) and 
+class  3 (≥   40). At the population level, health complications 
+from excess body fat increase as BMI increases. 2 At the individ-
+ual level, complications occur because of excess adiposity, 
+location and distribution of adiposity and many other factors, 
+including environmental, genetic, biologic and socioeconomic 
+factors (Box 1). 11
+Over the past 3 decades, the prevalence of obesity has steadily 
+increased throughout the world,12 and in Canada, it has increased 
+threefold since 1985.13 Importantly, severe obesity has increased 
+more than fourfold and, in 2016, affected an estimated 1.9 million 
+Canadian adults.13
+Obesity has become a major public health issue that 
+increases health care costs 14,15 and negatively affects physical 
+and psychological health. 16 People with obesity experience per-
+vasive weight bias and stigma, which contributes (independent 
+of weight or BMI) to increased morbidity and mortality.17
+Obesity is caused by the complex interplay of multiple 
+genetic, metabolic, behavioural and environmental factors, with 
+the latter thought to be the proximate cause of the substantial 
+GUIDELINE
+Obesity in adults: a clinical practice guideline
+Sean Wharton MD, David C.W. Lau MD PhD, Michael Vallis PhD RPsych, Arya M. Sharma MD PhD,  
+Laurent Biertho MD, Denise Campbell-Scherer MD PhD, Kristi Adamo PhD, Angela Alberga PhD,  
+Rhonda Bell PhD, Normand Boulé PhD, Elaine Boyling PhD, Jennifer Brown RD MSc, Betty Calam MD,  
+Carol Clarke RD MHSc, Lindsay Crowshoe MD, Dennis Divalentino MD, Mary Forhan OT PhD, Yoni Freedhoff MD, 
+Michel Gagner MD, Stephen Glazer MD, Cindy Grand MPH, Michael Green MD MPH, Margaret Hahn MD PhD, 
+Raed Hawa MD MSc, Rita Henderson PhD, Dennis Hong MD, Pam Hung MScOT BSc, Ian Janssen PhD,  
+Kristen Jacklin PhD, Carlene Johnson-Stoklossa RD MSc, Amy Kemp BKin BA, Sara Kirk PhD, Jennifer Kuk PhD, 
+Marie-France Langlois MD, Scott Lear PhD, Ashley McInnes PhD, David Macklin MD, Leen Naji MD,  
+Priya Manjoo MD, Marie-Philippe Morin MD, Kara Nerenberg MD MSc, Ian Patton PhD, Sue Pedersen MD,  
+Leticia Pereira PhD, Helena Piccinini-Vallis MD PhD, Megha Poddar MD, Paul Poirier MD, Denis Prud’homme MD MSc, 
+Ximena Ramos Salas PhD, Christian Rueda-Clausen MD PhD, Shelly Russell-Mayhew PhD RPsych, Judy Shiau MD, 
+Diana Sherifali RN PhD, John Sievenpiper MD PhD, Sanjeev Sockalingam MD MHPE, Valerie Taylor MD PhD, 
+Ellen Toth MD, Laurie Twells PhD, Richard Tytus MD, Shahebina Walji MD, Leah Walker BA RCT, Sonja Wicklum MD 
+n Cite as: CMAJ 2020 August 4;192:E875-91. doi: 10.1503/cmaj.191707
+This article is available in French at www.cmaj.ca/lookup/suppl/doi:10.1503/cmaj.191707/-/DC1
+CMAJ Podcasts: author interview at https://www.cmaj.ca/lookup/doi/10.1503/cmaj.191707/tab-related-content
+KEY POINTS
+• Obesity is a prevalent, complex, progressive and relapsing 
+chronic disease, characterized by abnormal or excessive body 
+fat (adiposity), that impairs health.
+• People living with obesity face substantial bias and stigma, 
+which contribute to increased morbidity and mortality 
+independent of weight or body mass index.
+• This guideline update reflects substantial advances in the 
+epidemiology, determinants, pathophysiology, assessment, 
+prevention and treatment of obesity, and shifts the focus of 
+obesity management toward improving patient-centred health 
+outcomes, rather than weight loss alone.
+• Obesity care should be based on evidence-based principles of 
+chronic disease management, must validate patients’ lived 
+experiences, move beyond simplistic approaches of “eat less, 
+move more,” and address the root drivers of obesity.
+• People living with obesity should have access to evidence-informed 
+interventions, including medical nutrition therapy, physical activity, 
+psychological interventions, pharmacotherapy and surgery.
+CPD
+GUIDELINE
+E876 CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 
+rise in the prevalence of obesity.18,19 A better understanding of the 
+biological underpinnings of this disease has emerged in recent 
+years.19 The brain plays a central role in energy homeostasis by 
+regulating food intake and energy expenditure (Box 2).24
+Decreased food intake and increased physical activity lead to a 
+negative energy balance and trigger a cascade of metabolic and 
+neurohormonal adaptive mechanisms. 25,26 Therapies that target 
+these alterations in neurohormonal mechanisms can become 
+effective tools in the long-term management of obesity.27
+Novel approaches to diagnose and assess obesity in clinical 
+practice have been proposed.11,18,19,28 Although BMI is widely used 
+to assess and classify obesity (adiposity), it is not an accurate tool 
+for identifying adiposity-related complications.19 Waist circumfer-
+ence has been independently associated with an increase in car-
+diovascular risk, but it is not a good predictor of visceral adipose 
+tissue on an individual basis. 29 Integration of both BMI and waist 
+circumference in clinical assessment may identify the higher-risk 
+phenotype of obesity better than either BMI or waist circumfer-
+ence alone, particularly in those individuals with lower BMI.30,31 In 
+addition to BMI and waist circumference measurements, a com-
+prehensive history to identify the root causes of obesity, appropri-
+ate physical examination and relevant laboratory investigations 
+will help to identify those who will benefit from treatment.32
+The Edmonton obesity staging system has been proposed to 
+guide clinical decisions from the obesity assessment and at each 
+BMI category (Appendix 1, available at www.cmaj.ca/lookup/
+suppl/doi:10.1503/cmaj.191707/-/DC2). 28 This 5-stage system of 
+obesity classification considers metabolic, physical and psycho-
+logical parameters to determine the optimal obesity treatment. 
+In population studies, it has been shown to be a better predictor 
+of all-cause mortality when compared with BMI or waist circum-
+ference measurements alone.33,34
+There is a recognition that obesity management should be 
+about improved health and well-being, and not just weight 
+loss. 34–36  Because the existing literature is based mainly on 
+weight-loss outcomes, several recommendations in this guide-
+line are weight-loss centred. However, more research is needed 
+to shift the focus of obesity management toward improving 
+patient-centred health outcomes, rather than weight loss alone.
+Despite growing evidence that obesity is a serious chronic 
+disease, it is not effectively managed within our current health 
+system. 37,38 Canadian health professionals feel ill equipped to 
+support people living with obesity. 39–41  Biased beliefs about 
+obesity also affect the level and quality of health care that 
+patients with obesity receive. 42 The dominant cultural narrative 
+regarding obesity fuels assumptions about personal 
+irresponsibility and lack of willpower and casts blame and shame 
+upon people living with obesity. 41 Importantly, obesity stigma 
+negatively influences the level and quality of care for people 
+living with obesity.42
+With increased knowledge of the disease state and better 
+approaches to assess and manage obesity, it is timely to update 
+the 2006 Canadian clinical practice guideline. 43 The goal of this 
+update is to disseminate to primary care practitioners evidence-
+informed options for assessing and treating people living with 
+obesity. Importantly, this guideline incorporates the perspectives 
+of people with lived experience and of interprofessional primary 
+care providers with those of experts on obesity management, and 
+researchers. This article is a summary of the full guideline, which 
+is available online (http://obesitycanada.ca/guidelines/).
+Scope
+The target users for this guideline are primary health care pro-
+fessionals. The guideline may also be used by policy-makers 
+and people affected by obesity and their families. The guide-
+line is focused on obesity in adults. The recommendations are 
+intended to serve as a guide for health care providers; clinical 
+discretion should be used by all who adopt these recommen-
+dations. Resource limitations and individual patient prefer-
+ences may make it difficult to put every recommendation into 
+practice, but the guideline is intended to improve the standard 
+of, and access to, care for individuals with obesity in all regions 
+of Canada.
+Box 1: Complications of obesity
+Adipose tissue not only influences the central regulation of energy 
+homeostasis, but excessive adiposity can also become 
+dysfunctional and predispose the individual to the development of 
+many medical complications, such as:
+• Type 2 diabetes3
+• Gallbladder disease4
+• Nonalcoholic fatty liver disease5
+• Gout6
+Excess and ectopic body fat are important sources of 
+adipocytokines and inflammatory mediators that can alter glucose 
+and fat metabolism, leading to increased cardiometabolic and 
+cancer risks, and thereby reducing disease-free duration and life 
+expectancy by 6 to 14 years.1,7,8 It is estimated that 20% of all 
+cancers can be attributed to obesity, independent of diet.9 Obesity 
+increases the risk of the following cancers:10
+• Colon (both sexes)
+• Kidney (both sexes)
+• Esophagus (both sexes)
+• Endometrium (women)
+• Postmenopausal breast (women)
+Box 2: Appetite regulation20–23
+• The control of appetite is complex and involves the integration 
+of the central neural circuits including the hypothalamus 
+(homeostatic control), the mesolimbic system (hedonic control) 
+and the frontal lobe (executive control).
+• The crosstalk between homeostatic and hedonic eating is 
+influenced by mediators from adipose tissue, the pancreas, gut 
+and other organs.
+• Cognitive functions in the prefrontal cortex exert executive 
+control on food choices and the decision to eat. The 
+interconnectivity of these neural networks drives eating 
+behaviour and has been shown to be altered in obesity.
+1  ASK 
+ PERMISSION 
+  “Would it be all right 
+  if we discussed 
+  your weight?” 
+  Asking permission
+  •  Shows compassion and empathy
+  •  Builds patient–provider trust 
+AGREE ON GOALS
+Collaborate on a personalized, 
+sustainable action plan 
+4
+ ASSIST WITH DRIVERS   
+ AND BARRIERS 5
+OBESITY 
+IN ADULTS 
+A clinical practice guideline
+ ▼ health  ▼ quality of life  ▼ lifespan
+BMI IS NOT AN ACCURATE 
+TOOL FOR IDENTIFYING 
+OBESITY-RELATED 
+COMPLICATIONS
+People with obesity 
+experience weight bias 
+and stigma
+Psychological
+•  Cognitive approach 
+ to behaviour change
+•  Manage sleep, 
+ time and stress
+•  Psychotherapy if  
+ appropriate
+Medications
+•  For weight loss 
+ and to help   
+ maintain weight 
+ loss 
+Bariatric 
+surgery
+•  Surgeon–patient  
+ discussion
+ ADVISE ON 
+ MANAGEMENT
+Medical nutrition therapy
+•  Personalized counselling by a registered 
+ dietitian with a focus on healthy food choices  
+ and evidence-based nutrition therapy
+Exercise
+•  30-60 min of moderate to vigorous activity   
+ most days 
+3
+THE PATIENT JOURNEY IN OBESITY MANAGEMENT
+increased complications 
+and mortality independent 
+of weight or BMI
+ASSESS THEIR STORY 
+•  Goals that matter to the patient
+•  Obesity classification 
+ (BMI and waist circumference)
+•  Disease severity 
+ (Edmonton Obesity Staging System)
+2
+Treating the root 
+causes of weight gain 
+is the foundation of 
+obesity management
+Focus on 
+patient-centred 
+health outcomes
+versus 
+weight loss alone
+4M
+Social milieuMental
+MetabolicMechanical
+ Obesity  complex disease in which abnormal or excess 
+body fat impairs health
+Effects: 
+ Weight bias  thinking that people with 
+obesity do not have enough willpower 
+or are not cooperative 
+ Stigma  acting 
+on weight-biased 
+beliefs
+Obesity-visual-nologos-print-E.pdf   1   2020-07-23   12:21 PM
+GUIDELINE
+E878 CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 
+Recommendations
+This clinical practice guideline informs the arc of the patient jour-
+ney and clinical management approach in the primary care set-
+ting. The guideline recommendations are shown in Table 1.
+A complete description of the recommendations and support-
+ing evidence are available in the 19 chapters of the full guideline 
+(http://obesitycanada.ca/guidelines/). This synopsis outlines a dis-
+cussion of the guiding principles that the executive committee 
+determined as important for advancing clinical practice in Canada.
+There are 5 steps in the patient arc to guide a health care pro-
+vider in the care of people living with obesity. Each step is out-
+lined below with highlights of the relevant recommendations 
+and a discussion of supporting evidence.
+1.  Recognition of obesity as a chronic disease by health care 
+providers, who should ask the patient permission to offer 
+advice and help treat this disease in an unbiased manner.
+2.  Assessment of an individual living with obesity, using appro-
+priate measurements, and identifying the root causes, com-
+plications and barriers to obesity treatment.
+3.  Discussion of the core treatment options (medical nutrition 
+therapy and physical activity) and adjunctive therapies that 
+may be required, including psychological, pharmacologic and 
+surgical interventions.
+4.  Agreement with the person living with obesity regarding goals 
+of therapy, focusing mainly on the value that the person 
+derives from health-based interventions.
+5.  Engagement by health care providers with the person with 
+obesity in continued follow-up and reassessments, and encour-
+agement of advocacy to improve care for this chronic disease.
+Step 1: Recognition of obesity as a chronic disease and 
+obtaining patient permission
+Primary care providers should recognize and treat obesity as a 
+chronic disease, caused by abnormal or excess body fat accumu-
+lation (adiposity), which impairs health, with increased risk of 
+premature morbidity and mortality.1,2,18,44–47
+Obesity is a complex and heterogeneous chronic disease that 
+does not present in the same way in all patients and that 
+requires individualized treatment and long-term support like any 
+other complex chronic disease.
+Weight bias in health care settings can reduce the quality of care 
+for patients living with obesity. 42 A key to reducing weight bias, 
+stigma and discrimination in health care settings is for health care 
+providers to be aware of their own attitudes and behaviours toward 
+individuals living with obesity.48 This can be achieved by complet-
+ing a self-assessment tool, like the Implicit Association Test, for 
+weight bias.49 A full description and supporting evidence for weight 
+bias recommendations are available online (http://obesitycanada .
+ca/guidelines/) in the chapter titled “Reducing weight bias in obes-
+ity management, practice and policy.” 
+Health care providers should not assume that all patients liv-
+ing with obesity are prepared to initiate obesity management. 
+Health care providers should ask the patient permission to dis-
+cuss obesity, and if the patient permits, then a discussion on 
+treatment can begin.50,51
+Step 2: Assessment
+Primary care clinicians should promote a holistic approach to 
+health with a focus on health behaviours in all patients and 
+address the root causes of weight gain with care to avoid stigma-
+tizing and overly simplistic narratives.
+Direct measurement of height, weight and waist circumfer-
+ence and calculation of BMI should be included in routine phys-
+ical examination for all adults. Although BMI has its limitations, it 
+remains a valuable tool for screening purposes and for popula -
+tion health indices. 52 For persons with increased BMI (between 
+25 mg/m 2 and 34.9 mg/m 2), waist circumference should be regu-
+larly measured to identify individuals with increased visceral adi-
+posity and adiposity-related health risks.53
+Root causes of obesity include biological factors such as 
+genetics, epigenetics, neurohormonal mechanisms, associated 
+chronic diseases and obesogenic medications, sociocultural 
+practices and beliefs, social determinants of health, built 
+en vironment, individual life experiences like adverse childhood 
+experiences, and psychological factors such as mood, anxiety, 
+binge-eating disorder, attention-deficit/hyperactivity disorder, 
+self-worth and identity. 50 Working with people to understand 
+their context and culture, and integrate their root causes, allows 
+for the development of personalized plans. These plans can be 
+integrated into long-term therapeutic relationships with chronic 
+disease follow-up of obesity and related comorbidities, including 
+addressing the root causes of obesity such as existing conditions 
+and obesogenic medications.
+We recommend obtaining a comprehensive history to identify 
+these root causes of weight gain, as well as physical, mental and 
+psychosocial barriers. Physical examination, laboratory, 
+diagnostic imaging and other investigations should be carried 
+out based on clinical judgment. We also recommend measuring 
+blood pressure in both arms and obtaining fasting glucose or gly-
+cated hemoglobin values and a lipid panel to determine cardio-
+metabolic risk, and when indicated, alanine aminotransferase to 
+screen for nonalcoholic fatty liver disease.
+Step 3: Discussion of treatment options
+Adults living with obesity should receive individualized care 
+plans that address their root causes of obesity and that provide 
+support for behavioural change (e.g., nutrition, physical activity) 
+and adjunctive therapies, which may include psychological, 
+pharmacologic and surgical interventions.
+Nutrition and exercise
+All individuals, regardless of body size or composition, would 
+benefit from adopting a healthy, well-balanced eating pattern 
+and engaging in regular physical activity. Aerobic activity (30–
+60 min) on most days of the week can lead to a small amount of 
+weight and fat loss, improvement in cardiometabolic param-
+eters, and weight maintenance after weight loss.54
+Weight loss and weight-loss maintenance require a long-term 
+reduction in caloric intake. Long-term adherence to a healthy 
+eating pattern that is personalized to meet individual values and 
+preferences, while fulfilling nutritional needs and treatment 
+goals, is an important element of managing health and weight.
+GUIDELINE
+ CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 E879
+Medical nutrition therapy is a foundation for chronic disease 
+management, including obesity management.55,56 However, med-
+ical nutrition therapy should not be used in isolation in obesity 
+management, as sustaining weight loss may be difficult long 
+term because of compensatory mechanisms in the brain that 
+promote positive caloric intake by increasing hunger and ulti -
+mately causing weight gain. 57,58 Instead, medical nutrition ther -
+apy, in combination with other interventions (psychological, 
+pharmacologic, surgical), should be tailored to meet an individ-
+ual’s health-related or weight-related outcomes.56,59
+The weight loss achieved with health behavioural changes is 
+usually 3%–5% of body weight, which can result in meaningful 
+improvement in obesity-related comorbidities. 60 The amount of 
+weight loss varies substantially among individuals, depending 
+on biological and psychosocial factors and not simply on indi-
+vidual effort.
+Table 1 (part 1 of 5): Recommendations on management of obesity in adults* 
+Recommendations
+Category of evidence 
+and strength of 
+recommendation†
+Reducing weight bias in obesity management, practice and policy 
+1 Health care providers should assess their own attitudes and beliefs regarding obesity and consider how their attitudes 
+and beliefs may influence care delivery.
+Level 1a, grade A
+2 Health care providers may recognize that internalized weight bias (bias toward oneself) in people living with obesity 
+can affect behavioural and health outcomes.
+Level 2a, grade B
+3 Health care providers should avoid using judgmental words (level 1a, grade A), images (level 2b, grade B) and practices 
+(level 2a, grade B) when working with patients living with obesity.
+See recommendation
+4 We recommend that health care providers avoid making assumptions that an ailment or complaint a patient presents 
+with is related to their body weight.
+Level 3, grade C
+Epidemiology of adult obesity
+5 Health care providers can recognize and treat obesity as a chronic disease, caused by abnormal or excess body fat 
+accumulation (adiposity), which impairs health, with increased risk of premature morbidity and mortality.
+Level 2b, grade B
+6 The development of evidence-informed strategies at the health system and policy levels can be directed at managing 
+obesity in adults.
+Level 2b, grade B
+7 Continued longitudinal national and regional surveillance of obesity that includes self-reported and measured data 
+(i.e., height, weight, waist circumference) may be collected on a regular basis.
+Level 2b, grade B
+Enabling participation in activities of daily living for people living with obesity
+8 We recommend that health care providers ask people living with obesity if they have concerns about managing self-care 
+activities, such as bathing, getting dressed, bowel and bladder management, skin and wound care, and foot care.
+Level 3, grade C
+9 We recommend that health care providers assess fall risk in people living with obesity, as this could interfere with their 
+ability and interest in participating in physical activity.
+Level 3, grade C
+Assessment of people living with obesity
+10 We suggest that health care providers involved in screening, assessing and managing people living with obesity use the 
+5As framework (see Appendix 2‡) to initiate the discussion by asking for their permission and assessing their readiness to 
+begin treatment.
+Level 4, grade D 
+(consensus)
+11 Health care providers can measure height, weight and calculate the BMI in all adults (level 2a, grade B), and measure 
+waist circumference in individuals with a BMI 25–35 kg/m2 (level 2b, grade B).
+See recommendation
+12 We suggest that a comprehensive history to identify root causes of weight gain as well as complications of obesity and 
+potential barriers to treatment be included in the assessment.
+Level 4, grade D
+13 We recommend measuring blood pressure in both arms, fasting glucose or glycated hemoglobin and lipid profile to 
+determine cardiometabolic risk and, where appropriate, AL T to screen for nonalcoholic fatty liver disease in people 
+living with obesity.
+Level 3, grade D
+14 We suggest that health care providers consider using the Edmonton Obesity Staging System (see Appendix 1)§ to 
+determine the severity of obesity and guide clinical decision-making.
+Level 4, grade D
+The role of mental health in obesity management
+15 We recommend regular monitoring of weight, glucose and lipid profile in people with a mental health diagnosis and 
+who are taking medications associated with weight gain.
+Level 3, grade C
+16 Health care providers may consider both efficacy and effects on body weight when choosing psychiatric medications. Level 2a, grade B
+17 Metformin and psychological treatment such as cognitive behavioural therapy should be considered for prevention of weight 
+gain in people with severe mental illness who are treated with antipsychotic medications associated with weight gain.
+Level 1a, grade A
+18 Health care providers should consider lisdexamfetamine and topiramate as an adjunct to psychological treatment to 
+reduce eating pathology and weight in people with overweight or obesity and binge-eating disorder.
+Level 1a, grade A
+GUIDELINE
+E880 CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 
+Table 1 (part 2 of 5): Recommendations on management of obesity in adults* 
+Recommendations
+Category of evidence 
+and strength of 
+recommendation†
+Medical nutrition therapy in obesity management
+19 We suggest that nutrition recommendations for adults of all body sizes be personalized to meet individual values, 
+preferences and treatment goals to support a dietary approach that is safe, effective, nutritionally adequate, culturally 
+acceptable and affordable for long-term adherence.
+Level 4, grade D
+20 Adults living with obesity should receive individualized medical nutrition therapy provided by a registered dietitian 
+(when available) to improve weight outcomes (body weight, BMI), waist circumference, glycemic control, established 
+lipid, and blood pressure targets. 
+Level 1a, grade A
+21 Adults living with obesity and impaired glucose tolerance (prediabetes) or type 2 diabetes may receive medical 
+nutrition therapy provided by a registered dietitian (when available) to reduce body weight and waist circumference 
+and improve glycemic control and blood pressure.
+Level 2a, grade B
+22 Adults living with obesity can consider any of multiple medical nutrition therapies to improve health-related outcomes, choosing 
+the dietary patterns and food-based approaches that support their best long-term adherence. (Full recommendation and 
+category and level of evidence available in the chapter titled “Medical nutrition therapy in obesity management. ”)
+See recommendation
+23 Adults living with obesity and impaired glucose tolerance (prediabetes) should consider intensive behavioural interventions 
+that target a 5%–7% weight loss, to improve glycemic control, blood pressure and blood lipid targets (level 1a, grade A) and 
+reduce the incidence of type 2 diabetes (level 1a, grade A), microvascular complications (retinopathy, nephropathy and 
+neuropathy) (level 1a, grade B), and cardiovascular and all-cause mortality (level 1a, grade B).
+See recommendation
+24 Adults living with obesity and type 2 diabetes should consider intensive lifestyle interventions that target a 7%–15% 
+weight loss, to increase the remission of type 2 diabetes and reduce the incidence of nephropathy, obstructive sleep 
+apnea and depression.
+Level 1a, grade A
+25 We recommend a nondieting approach to improve quality of life, psychological outcomes (general well-being, body image 
+perceptions), cardiovascular outcomes, body weight, physical activity, cognitive restraint and eating behaviours.
+Level 3, grade C
+Physical activity in obesity management
+26 Aerobic physical activity (30–60 minutes of moderate to vigorous intensity most days of the week) can be considered for 
+adults who want to:
+• Achieve small amounts of body weight and fat loss (level 2a, grade B)
+• Achieve reduction in abdominal visceral fat (level 1a, grade A) and ectopic fat, such as liver and heart fat (level 1a, grade A), 
+even in the absence of weight loss
+• Favour weight maintenance after weight loss (level 2a, grade B)
+• Favour the maintenance of fat-free mass during weight loss (level 2a, grade B)
+• Increase cardiorespiratory fitness (level 2a, grade B) and mobility (level 2a, grade B).
+See recommendation
+27 For adults living with overweight or obesity, resistance training may promote weight maintenance or modest increases 
+in muscle mass or fat-free mass and mobility.
+Level 2a, grade B
+28 Increasing exercise intensity, including high-intensity interval training, can achieve greater increases in cardiorespiratory fitness 
+and reduce the amount of time required to achieve benefits similar to those from moderate-intensity aerobic activity.
+Level 2a, grade B
+29 Regular physical activity, with and without weight loss, can improve many cardiometabolic risk factors in adults who 
+have overweight or obesity, including hyperglycemia and insulin sensitivity (level 2b, grade B), high blood pressure 
+(level 1a, grade B) and dyslipidemia (level 2a, grade B).
+See recommendation
+30 Regular physical activity can improve health-related quality of life, mood disorders (i.e., depression, anxiety) and body 
+image in adults living with overweight or obesity.
+Level 2b, grade B
+Effective psychological and behavioural interventions in obesity management
+31 Multicomponent psychological interventions (combining behaviour modification [goal-setting, self-monitoring, 
+problem-solving], cognitive therapy [reframing] and values-based strategies to alter diet and activity) should be 
+incorporated into care plans for weight loss, and improved health status and quality of life (level 1a, grade A) in a manner 
+that promotes adherence, confidence and intrinsic motivation (level 1b, grade A).
+See recommendation
+32 Health care providers should provide longitudinal care with consistent messaging to people living with obesity in order to 
+support the development of confidence in overcoming barriers (self-efficacy) and intrinsic motivation (personal, meaningful 
+reasons to change), to encourage the patient to set and sequence health goals that are realistic and achievable, to 
+self-monitor behaviour and to analyze setbacks using problem-solving and adaptive thinking (cognitive reframing), 
+including clarifying and reflecting on values-based behaviours.
+Level 1a, grade A
+33 Health care providers should ask people living with obesity for permission to educate them that success in obesity 
+management is related to improved health, function and quality of life resulting from achievable behavioural goals and 
+not on the amount of weight loss. 
+Level 1a, grade A
+34 Health care providers should provide follow-up sessions consistent with repetition and relevance to support the 
+development of self-efficacy and intrinsic motivation. (Full recommendation is available in the chapter titled “Effective 
+psychological and behavioural interventions in obesity management. ”)
+Level 1a, grade A
+GUIDELINE
+ CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 E881
+Table 1 (part 3 of 5): Recommendations on management of obesity in adults* 
+Recommendations
+Category of evidence 
+and strength of 
+recommendation†
+Pharmacotherapy in obesity management
+35 Pharmacotherapy for weight loss can be used for persons with BMI ≥ 30 kg/m2 or BMI ≥ 27 kg/m 2 with adiposity-related 
+complications, in conjunction with medical nutrition therapy, physical activity and psychological interventions 
+(liraglutide 3.0 mg, naltrexone-bupropion combination, orlistat).
+Level 2a, grade B
+36 Pharmacotherapy may be used to maintain weight loss that has been achieved by health behaviour changes, and to 
+prevent weight regain (liraglutide 3.0 mg or orlistat).
+Level 2a, grade B
+37 For people living with type 2 diabetes and a BMI ≥ 27 kg/m2, pharmacotherapy can be used in conjunction with health 
+behaviour changes for weight loss and improvement in glycemic control: liraglutide 3.0 mg (level 1a, grade A), 
+naltrexone-bupropion combination (level 2a, grade B), orlistat (level 2a, grade B).
+See recommendation
+38 We recommend pharmacotherapy in conjunction with health behaviour changes for people living with prediabetes and 
+overweight or obesity (BMI ≥ 27 kg/m2) to delay or prevent type 2 diabetes (liraglutide 3.0 mg; orlistat).
+Level 2a, grade B
+39 We do not suggest the use of prescription or over-the-counter medications other than those approved for weight management.Level 4, grade D 
+(consensus)
+40 For people living with overweight or obesity who require pharmacotherapy for other health conditions, we suggest 
+choosing drugs that are not associated with weight gain.
+Level 4, grade D 
+(consensus)
+Bariatric surgery: selection and preoperative workup
+41 We suggest that a comprehensive medical and nutritional evaluation be completed and nutrient deficiencies corrected 
+in candidates for bariatric surgery.
+Level 4, grade D
+42 Preoperative smoking cessation can minimize perioperative and postoperative complications. Level 2a, grade B
+43 We suggest screening for and treatment of obstructive sleep apnea in people seeking bariatric surgery. Level 4, grade D
+Bariatric surgery: surgical options and outcomes
+44 Bariatric surgery can be considered for people with BMI ≥ 40 kg/m2 or BMI ≥ 35 kg/m 2 with at least 1 adiposity-related 
+disease (level 4, grade D, consensus) to:
+• Reduce long-term overall mortality (level 2b, grade B) 
+• Induce significantly better long-term weight loss compared with medical management alone (level 1a, grade A)
+• Induce control and remission of type 2 diabetes, in combination with best medical management, over best medical 
+management alone (level 2a, grade B) 
+• Significantly improve quality of life (level 3, grade C)
+• Induce long-term remission of most adiposity-related diseases, including dyslipidemia (level 3, grade C), hypertension 
+(level 3, grade C), liver steatosis and nonalcoholic steatohepatitis (level 3, grade C).
+See recommendation
+45 Bariatric surgery should be considered in patients with poorly controlled type 2 diabetes and class I obesity (BMI 
+between 30 and 35 kg/m2) despite optimal medical management.
+Level 1a, grade A
+46 Bariatric surgery may be considered for weight loss and/or to control adiposity-related diseases in persons with class 1 
+obesity, in whom optimal medical and behavioural management has been insufficient to produce significant weight loss.
+Level 2a, grade B
+47 We suggest that the choice of bariatric procedure (sleeve gastrectomy, gastric bypass or duodenal switch) be decided 
+according to the patient’s need, in collaboration with an experienced interprofessional team.
+Level 4, grade D 
+(consensus)
+48 We suggest that adjustable gastric banding not be offered owing to unacceptable complications and long-term failure. Level 4, grade D
+49 We suggest that single anastomosis gastric bypass not be routinely offered, owing to long-term complications in 
+comparison with Roux-en-Y gastric bypass.
+Level 4, grade D
+Bariatric surgery: postoperative management
+50 Health care providers can encourage persons who have undergone bariatric surgery to participate in and maximize 
+their access to behavioural interventions and allied health services at a bariatric surgical centre.
+Level 2a, grade B
+51 We suggest that bariatric surgical centres communicate a comprehensive care plan to primary care providers for patients 
+who are discharged, including bariatric procedure, emergency contact numbers, annual blood tests required, long-term 
+vitamin and minerals supplements, medications and behavioural interventions, as well as when to refer back.
+Level 4, grade D 
+(consensus)
+52 We suggest that after a patient has been discharged from the bariatric surgical centre, primary care providers conduct 
+annual review of the following: weight, nutritional intake, activity, adherence to multivitamin and mineral supplements, 
+assessment of comorbidities and laboratory tests to assess and treat for nutritional deficiencies as required.
+Level 4, grade D 
+(consensus)
+53 We suggest that primary care providers consider referral back to the bariatric surgical centre or to a local specialist for 
+technical or gastrointestinal symptoms, nutritional issues, pregnancy, psychological support, weight regain or other 
+medical issues related to bariatric surgery, as described in the chapter titled “Bariatric surgery: postoperative management.
+Level 4, grade D 
+(consensus)
+54 We suggest that bariatric surgical centres provide follow-up and appropriate laboratory tests at regular intervals 
+postsurgery with access to appropriate health care professionals (dietitian, nurse, social worker, bariatric physician, 
+surgeon, psychologist or psychiatrist) until discharge is deemed appropriate for the patient.
+Level 4, grade D 
+(consensus)
+GUIDELINE
+E882 CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 
+Table 1 (part 4 of 5: Recommendations on management of obesity in adults* 
+Recommendations
+Category of evidence 
+and strength of 
+recommendation†
+Primary care and primary health care in obesity management
+55 We recommend that primary care clinicians identify people with overweight and obesity, and initiate patient-centred, 
+health-focused conversations with them.
+Level 3, grade C
+56 We recommend that health care providers ensure they ask people for their permission before discussing weight or 
+taking anthropometric measurements.
+Level 3, grade C
+57 Primary care interventions should be used to increase health literacy in individuals’ knowledge and skill about weight 
+management as an effective intervention to manage weight.
+Level 1a, grade A
+58 Primary care clinicians should refer persons with overweight or obesity to primary care multicomponent programs 
+with personalized obesity management strategies as an effective way to support obesity management.
+Level 1b, grade B
+59 Primary care clinicians can use collaborative deliberation with motivational interviewing to tailor action plans to 
+individuals’ life context in a way that is manageable and sustainable to support improved physical and emotional 
+health, and weight management.
+Level 2b, grade C
+60 Interventions that target a specific ethnic group should consider the diversity of psychological and social practices 
+with regard to excess weight, food and physical activity, as well as socioeconomic circumstances, as they may differ 
+across and within different ethnic groups.
+Level 1b, grade B
+61 Longitudinal primary care interventions should focus on incremental, personalized, small behaviour changes (the 
+“small change approach”) to be effective in supporting people to manage their weight.
+Level 1b, grade B
+62 Primary care multicomponent programs should consider personalized obesity management strategies as an effective 
+way to support people living with obesity.
+Level 1b, grade B
+63 Primary care interventions that are behaviour based (nutrition, exercise, lifestyle), alone or in combination with 
+pharmacotherapy, should be used to manage overweight and obesity.
+Level 1a, grade A
+64 Group-based diet and physical activity sessions informed by the Diabetes Prevention Program and the Look AHEAD 
+(Action for Health in Diabetes) programs should be used as an effective management option for adults with 
+overweight and obesity.
+Level 1b, grade A
+65 Interventions that use technology to increase reach to larger numbers of people asynchronously should be a 
+potentially viable lower cost intervention in a community-based setting.
+Level 1b, grade B
+66 Educators of undergraduate, graduate and continuing education programs for primary health care professionals 
+should provide courses and clinical experiences to address the gaps in skills, knowledge of the evidence, and attitudes 
+necessary to confidently and effectively support people living with obesity.
+Level 1a, grade A
+Commercial products and programs in obesity management
+67 For adults living with overweight or obesity, the following commercial programs should achieve mild to moderate 
+weight loss in the short or medium term, compared with usual care or education:
+• WW (formerly Weight Watchers) (level 1a, grade A)
+• Optifast (level 1b, grade B)
+• Jenny Craig (level 1b, grade B)
+• Nutrisystem (level 1b, grade B)
+See recommendation
+68 Optifast, Jenny Craig, WW (formerly Weight Watchers) and Nutrisystem should achieve a mild reduction of glycated 
+hemoglobin values over a short-term period compared with usual counselling in adults with obesity and type 2 
+diabetes.
+Level 1b, grade B
+69 We do not recommend the use of over-the-counter commercial weight-loss products for obesity management, owing 
+to lack of evidence.
+Level 4, grade D
+70 We do not suggest that commercial weight-loss programs be used for improvement in blood pressure and lipid control 
+in adults living with obesity. 
+Level 4, grade D
+Emerging technologies and virtual medicine in obesity management
+71 Implementation of management strategies can be delivered through Web-based platforms (e.g., online education on 
+medical nutrition therapy and physical activity) or mobile devices (e.g., daily weight reporting through a smartphone 
+application) in the management of obesity.
+Level 2a, grade B
+72 We suggest that health care providers incorporate individualized feedback and follow-up (e.g., personalized 
+coaching or feedback via phone or email) into technology-based management strategies to improve weight-loss 
+outcomes.
+Level 4, grade D
+73 The use of wearable activity tracking technology should be part of a comprehensive strategy for weight 
+management.
+Level 1a, grade A
+GUIDELINE
+ CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 E883
+Table 1 (part 5 of 5): Recommendations on management of obesity in adults* 
+Recommendations
+Category of evidence 
+and strength of 
+recommendation†
+Weight management over the reproductive years for adult women living with obesity
+74 We recommend that primary care providers discuss weight-management targets specific to the reproductive years 
+with adult women with obesity: preconception weight loss (level 3, grade C); gestational weight gain of 5 kg to 9 kg 
+over the entire pregnancy (level 4, grade D); postpartum weight loss of — at minimum — gestational weight gain (level 
+3, grade C) to reduce the risk of adverse outcomes in the current or in a future pregnancy.
+See recommendation
+75 Primary care providers should offer behaviour change interventions including both nutrition and physical activity to 
+adult women with obesity who are considering a pregnancy (level 3, grade C), who are pregnant (level 2a, grade B) 
+and who are postpartum (level 1a, grade A) in order to achieve weight targets.
+See recommendation
+76 We recommend that primary care providers encourage and support pregnant women with obesity to consume foods 
+consistent with a healthy dietary pattern in order to meet their target gestational weight gain.
+Level 3, grade C
+77 We recommend that primary care providers encourage and support pregnant women with obesity who do not have 
+contraindications to exercise during pregnancy  to engage in at least 150 minutes per week of moderate intensity 
+physical activity, to assist in the management of gestational weight gain.
+Level 3, grade C
+78 Health care providers should not prescribe metformin for gestational weight gain in pregnant women with obesity 
+(level 1b, grade A). We suggest that weight-management medications not be used during pregnancy or breastfeeding 
+(level 4, grade D).
+See recommendation
+79 We recommend that women with obesity be offered additional breastfeeding support because of decreased rates of 
+initiation and continuation.
+Level 3, grade C
+Obesity management and Indigenous Peoples
+80 We suggest that health care providers for Indigenous people living with obesity:
+• Engage with the patient’s social realities.
+• Validate the patient’s experiences of stress and systemic disadvantage influencing poor health and obesity, 
+exploring elements of their environment where reduced stress could shift behaviours.
+• Advocate for access to obesity-management resources within publicly funded health care systems, recognizing that 
+resources beyond may be unaffordable and unattainable for many.
+• Help patients recognize that good health is attainable, and they are entitled to it.
+• Negotiate small, attainable steps relevant to the patient’s context. 
+• Address resistance, seeming apathy and paralysis in patients and providers.
+• Self-reflect on anti-Indigenous sentiment common within health care systems, exploring patient motivations and 
+mental health (e.g., trauma, grief) as alternative understandings of causes and solutions to their health problems. 
+Explore one’s own potential for bias influenced by systemic racism.
+• Expect patient mistrust in health systems; reposition themselves as a helper to the patient instead of as an expert, 
+which may stir resistance and be a barrier to patients’ wellness.
+• When resistance, seeming apathy and paralysis are encountered, explore patient mental and emotional health 
+needs, which have unique drivers and presentations in many Indigenous contexts.
+• Build complex knowledge by healing relationships.
+• Build patient knowledge and capacity for obesity self-management through longitudinal explorations of co-
+occurring health, social, environmental and cultural factors. Strive to build relationships that incorporate healing 
+from multigenerational trauma that, owing to residential schools and child welfare system involvement, may more 
+frequently include sexual abuse.
+• Build their own knowledge regarding the health legacy of colonization — including ongoing experiences of 
+anti-Indigenous discrimination within systems and wider society — to facilitate relationships built on mutual 
+understanding.
+• Ensure knowledge provided is congruent with the patient’s perspectives and educational level, and is learner 
+centred, including potential for patient anticipation of racism or unequal treatment.
+• Connect to behaviour, the body and Indigenous ways of knowing, doing and being.
+• Elicit and incorporate the patient’s individual and community-based concepts of health and healthy behaviours in 
+relation to body size, activity and food preferences (e.g., preference for or scarce access to land-based foods and 
+activities).
+• Deeply engage in learning of common values and principles regarding communication and knowledge-sharing in 
+Indigenous contexts (e.g., relationalism, noninterference).
+Level 4, grade D 
+(consensus)
+Note: AL T = alanine aminotransferase, BMI = body mass index.
+*A complete description of the recommendations and supporting evidence is available at http://obesitycanada.ca/guidelines/. Table 3 provides definitions for the actionable verbs 
+used in these recommendations. 
+†For the classification scheme for category of evidence and strength of evidence, see Box 3.
+‡Appendix 2 is available at www.cmaj.ca/lookup/suppl/doi:10.1503/cmaj.191707/-/DC2.
+§See Appendix 1. 
+GUIDELINE
+E884 CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 
+The weight at which the body stabilizes when engaging in 
+healthy behaviours can be referred to as the “best weight”; this 
+may not be an “ideal” weight on the BMI scale. Achieving an 
+“ideal” BMI may be very difficult. If further weight loss is needed 
+to improve health and well-being beyond what can be achieved 
+with behavioural modification, then more intensive pharmaco-
+logic and surgical therapeutic options can be considered.
+Psychological and behavioural interventions
+All health interventions such as healthy eating and physical activ-
+ity strategies, medication adherence or surgery preparation and 
+adjustment approaches rest on behaviour change. 61 Psycho-
+logical and behavioural interventions are the “how to” of change. 
+They empower the clinician to guide the patient toward recom-
+mended behaviours that can be sustained over time. 60 A full 
+description of psychological and behavioural interventions and 
+supporting evidence are available online (http://obesitycanada.
+ca/guidelines/) in the chapter titled “Effective psychological and 
+behavioural interventions in obesity management.”
+Pharmacotherapy
+We recommend adjunctive pharmacotherapy for weight loss 
+and weight-loss maintenance for individuals with BMI ≥  30 kg/m2 
+or BMI ≥  27 kg/m 2 with adiposity-related complications, to sup-
+port medical nutrition therapy, physical activity and psycho-
+logical interventions. Options include liraglutide 3.0 mg, 
+ naltrexone-bupropion combination and orlistat. Pharmacother-
+apy augments the magnitude of weight loss beyond that which 
+health behaviour changes can achieve alone and is important in 
+the prevention of weight regain. 62–66  A full description and sup-
+porting evidence are available online (http://obesitycanada.ca  /
+guidelines/) in the chapter titled “Pharmacotherapy in obesity 
+management.” 
+Bariatric surgery
+Bariatric surgery may be considered for people with 
+BMI  ≥ 40 kg/m 2 or BMI ≥  35 kg/m 2 with at least 1 obesity-related 
+disease. The decision regarding the type of surgery should be 
+made in collaboration with a multidisciplinary team, balancing 
+the patient’s expectations, medical condition, and expected ben-
+efits and risks of the surgery. A full description and supporting evi-
+dence are available online (http://obesitycanada.ca/guidelines/) 
+in the chapters titled “Bariatric surgery: selection and preopera-
+tive workup,” “Bariatric surgery: options and outcomes” and 
+“Bariatric surgery: postoperative management.”
+Step 4: Agreement regarding goals of therapy
+Because obesity is a chronic disease, managing it in the long 
+term involves patient–provider collaboration. 67 Health care pro-
+viders should talk with their patients and agree on realistic 
+expectations, person-centred treatments and sustainable goals 
+for behaviour change and health outcomes.68
+Helpful actions in primary care consultations to mitigate anti-
+fat stigma include explicitly acknowledging the multiple determi-
+nants of weight-disrupting stereotypes of personal failure or suc-
+cess attached to body composition; focusing on behavioural 
+interventions to improve overall health; and redefining success 
+as healthy behaviour change regardless of body size or weight.69
+As this disease is chronic in nature, the treatment plan must 
+be long term. Health care providers and patients should design 
+and agree on a personalized action plan that is practical and sus-
+tainable and addresses the drivers of weight gain.70
+Step 5: Follow-up and advocacy
+There is a need to advocate for more effective care for people liv-
+ing with obesity. This includes improving the education and life-
+long learning of health care providers to be able to deliver effec-
+tive, evidence-based obesity care. We also need to support 
+allocation of health care resources to improve access to effective 
+behavioural, pharmacologic and surgical therapeutic options.
+There are substantial barriers affecting access to obesity care 
+in Canada, including a profound lack of interdisciplinary obesity 
+management programs, a lack of adequate access to health care 
+providers with expertise in obesity, long wait times for referrals 
+and surgery, and the high costs of some treatments.,37,71–73 In gen-
+eral, health care professionals are poorly prepared to treat obes-
+ity.74 None of the anti-obesity medications available in Canada is 
+listed as a benefit on any provincial or territorial formulary and 
+none is covered under any provincial public drug benefit or phar-
+macare program.71 Wait times for bariatric surgery in Canada are 
+the longest of any surgically treatable condition. 37,71 Although 
+access to bariatric surgery has increased in some parts of Canada, 
+it is still limited in most provinces and nonexistent in the 3 terri-
+tories.37,71,75 Patients referred to bariatric surgery can wait as long 
+as 8 years before meeting a specialist or receiving the surgery.
+The lack of access to obesity treatments is contributing to rising 
+levels of severe obesity in Canada.46 Canadians affected by obesity 
+are left to navigate a complex landscape of weight-loss products 
+and services, many of which lack a scientific rationale and openly 
+promote unrealistic and unsustainable weight-loss goals.76
+Methods
+Composition of participating groups
+Obesity Canada and the Canadian Association of Bariatric Phys-
+icians and Surgeons assembled an executive committee and 
+steering committee with broad expertise and geographic repre-
+sentation. The executive committee (comprising 2 co-chairs 
+[S.W., D.C.W.L.], a primary care physician [D.C.-S.], a psychologist 
+[M.V.], a bariatric surgeon [L.B.] and a nephrologist [A.M.S.]) pro-
+vided overall vision and oversight for the guideline process.
+The steering committee (n  = 16) consisted of some lead 
+authors of each chapter and a person living with obesity; this 
+committee identified additional researchers (chapter leads and 
+authors) to write each chapter. The executive committee and 
+steering committee met in person in April 2017 and December 
+2017 and at least monthly by phone.
+Chapter leads and chapter authors (n  = 60) were selected 
+based on their expertise in clinical practice and research in the 
+field of obesity medicine. The number of chapter authors per 
+chapter ranged from 2 to 4. Some chapter leads identified addi-
+tional authors to participate in writing each chapter.
+GUIDELINE
+ CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 E885
+We engaged people living with obesity (n = 7) through partici-
+pation of the Public Engagement Committee of Obesity Canada. 
+One member of the Public Engagement Committee (I.P.) was 
+assigned to the steering committee for this guideline. The Public 
+Engagement Committee met by phone once per month. We 
+obtained contributions from committee members through 
+online surveys, focus groups and individual conversations.
+We engaged Indigenous community members through a 
+focus group ( n = 14). Additionally, we obtained the insights of 
+health care providers working with Indigenous communities via 
+a consensus-building process between these clinicians and chap-
+ter authors, carried out over the spring of 2019, which further 
+grounded evidence in clinical practice. Details are available 
+online (http://obesitycanada.ca/guidelines/) in the chapter titled 
+“Obesity management with Indigenous Peoples.”
+Obesity Canada staff, consultants and volunteers (n = 15) pro-
+vided administrative support and project coordination for the 
+guideline development process. Table 2 outlines the guideline 
+development process and the responsibilities of each group of 
+participants.
+Selection of priority topics
+The executive committee conducted a mind-mapping exercise to 
+identify the scope of the guideline and the broad sections and 
+chapters (April–June 2017). 79 A total of 19 different sections and 
+chapters were prioritized. The steering committee developed PI/
+PECOT (Population, Intervention or Exposure, Comparison, Out-
+come, Time) questions for each chapter at an in-person meeting 
+on Dec. 15–16, 2017, resulting in 179 questions to guide the 
+literature search. All clinical questions were developed with the 
+assistance of the McMaster Evidence Review and Synthesis Team 
+(MERST; previously the McMaster Evidence-Based Practice Cen-
+tre) in the appropriate format (e.g., PICO [T] for therapeutics and 
+treatments, PEO for qualitative questions).
+Literature review and quality assessment
+The McMaster Evidence Review and Synthesis Team supported 
+the guideline development through literature searches based 
+on the PI/PECOT questions for each chapter. A health sciences 
+librarian, based at McMaster Health Sciences Library (Hamil-
+ton, Ont.), used this information to create search strategies for 
+the MEDLINE and Embase databases. The searches were for 
+peer-reviewed and published literature in the English lan-
+guage; the search dates were January 2006 to June 2018. 
+There were 14  searches that mapped directly to the chapters 
+and another 7 searches that helped provide context for various 
+chapters. Search strategies are available on the obesity guide-
+line webpage (http://obesitycanada.ca/guidelines/). Once a 
+search was conducted, the results were uploaded to EndNote, 
+where the duplicates were removed and the final set of cita-
+tions was uploaded to DistillerSR software for selection and 
+review. 80 In addition to the electronic searches, the chapter 
+authors identified additional citations and added them to the 
+main search results.
+Two reviewers completed screening of article titles and 
+abstracts and independently selected studies for possible inclu-
+sion. Any citation that was selected for inclusion by either 
+reviewer was moved to full-text review. One or more authors of 
+Table 2: Summary of guideline development process
+Activity Responsible group
+• Mind-mapping exercise to identify the scope of the guideline and the broad sections and 
+chapters (19 chapters)
+Executive committee
+• Develop research questions (PICO[T]) for each chapter Steering committee
+• Conduct literature search77 MERST
+• Load results of the literature search into the Distiller Systematic Review software program MERST
+• Conduct critical appraisal of all papers77 Chapter leads
+• Review results of critical appraisal and assign evidence grades to each paper using 
+AGREE II tool 78
+MERST
+• Develop reports with graded evidence MERST
+• Develop recommendations based on the highest level of evidence and expert consensus Steering Committee with chapter leads and authors 
+• Review recommendations to ensure fidelity with the evidence (only for recommendations 
+using grade A–C level evidence)
+MERST
+• Review recommendations to ensure fidelity with the evidence and relevance to primary 
+care health care professionals
+Executive committee
+• Revise recommendations based on feedback from the executive committee and MERST Steering committee with chapter leads
+• Review and approve final recommendations Executive committee
+• External review of recommendations to assess relevance and feasibility Family physicians and people living with obesity
+• External peer review of chapters Experts in each area
+Note: AGREE = Appraisal of Guidelines for Research and Evaluation, MERST = McMaster Evidence Review and Synthesis Team; PICO(T) = Population, Intervention, Comparison, 
+Outcome, Time.
+GUIDELINE
+E886 CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 
+the relevant chapter conducted reviews of full-text articles for 
+relevancy. Selected citations were then assessed for their meth-
+odological quality using the Shekelle approach. 77,81 Each citation 
+was categorized into prevention, treatment, evaluation of diag-
+nostic properties or prognosis. Once that selection was made, 
+the appropriate methods worksheet was displayed in the 
+Distiller SR platform, from which the methodological questions 
+were answered and a level of evidence generated based on the 
+type and quality of the study. The levels of evidence informed the 
+strength of the recommendations and were generated from the 
+methods worksheets (Box 3).77
+Development of recommendations
+Recommendations were formulated by the steering committee, 
+chapter leads and chapter authors based on the highest level of 
+evidence available (Box 3).77 Chapter leads and authors reviewed 
+the type and strength of the available evidence (level) and added 
+the study reference that provided the highest level of evidence 
+for the specific recommendation.
+Recognizing the importance of qualitative research in 
+addressing questions pertinent to the care of people living with 
+obesity, content experts in qualitative research (S.K., X.R.S., 
+D.C.S., L.C., S.R.M.) were involved in the review of all materials 
+informing these recommendations. Consensus appraisal of evi-
+dence quality by reviewers with expertise in qualitative methods 
+informed the level of evidence in these recommendations.
+Some grade D recommendations were formulated based on 
+expert committee reports, opinions or clinical experience of 
+respected authorities, and referenced accordingly; other grade D 
+recommendations formulated by chapter authors were noted 
+with “Consensus” after the grade D.
+Chapter authors used a standardized terminology to make 
+the recommendation more specific. The actionable verbs used 
+for each of the recommendations were informed by the literature 
+(Table 3).82–84
+We used an iterative process to finalize the recommenda-
+tions. Methodologists from MERST provided an independent 
+review of recommendations that had a grade between A and C, 
+for which they examined the clarity of wording and the fidelity of 
+the recommendations with the evidence. Two methodologists (a 
+primary and secondary reviewer) reviewed each recommenda-
+tion, using checklists as a guide for assigning levels of evidence 
+to each citation. The methodologists met, discussed and reached 
+consensus on grading the recommendations, and reported their 
+suggestions regarding revisions to the wording or grading to the 
+executive committee. Chapter leads edited the recommenda-
+tions based on the MERST review process.
+The executive committee voted on each recommendation, to 
+ensure consensus. If a recommendation did not reach 100% 
+agreement, the executive committee discussed the recommen-
+dation in depth until consensus was achieved. The chapter leads 
+subsequently modified the wording of this recommendation, as 
+required, and the executive committee approved the newly 
+worded recommendation. The executive committee provided 
+final approval of all the recommendations. All the recommenda-
+tions included in this guideline achieved 100% agreement.
+External review
+External reviewers (primary care health care professionals and 
+people living with obesity [ n = 7]) reviewed the recommenda-
+tions for relevance and feasibility. We made some modifica-
+tions to reflect language and the context of the primary care 
+setting. A separate external peer review was conducted for each 
+chapter.
+Management of competing interests
+Funding came from the Canadian Institutes of Health Research  
+Strategic Patient-Oriented Research initiative, Obesity Canada’s 
+Fund for Obesity Collaboration and Unified Strategies (FOCUS)
+initiative, the Canadian Association of Bariatric Physicians and 
+Surgeons, and in-kind support from the scientific and profes-
+sional volunteers engaged in the process. The views of the fund-
+ing body have not influenced the content of the guideline. All 
+committee members (executive and steering committees), chap-
+ter leads and chapter authors were volunteers and not remuner-
+ated for their services.
+Table 3: Definitions of actionable verbs used in the 
+recommendations82–84
+Grade level Suggested terms
+Level 1, grade A recommendations Use the term “should”
+Level 2, grade B recommendations Use the terms “may” or “can”
+Level 3, grade C recommendations Use the term “recommend”
+Level 4, grade D and consensus 
+recommendations
+Use the term “suggest”
+Box 3: Classification schemes77     
+Category of evidence
+• Level 1a: Evidence from meta-analysis of randomized 
+controlled trials (RCTs)
+• Level 1b: Evidence from at least 1 RCT
+• Level 2a: Evidence from at least 1 controlled study without 
+randomization
+• Level 3: Evidence from nonexperimental descriptive studies, 
+such as comparative studies, correlation studies and case–
+control studies
+• Level 4: Evidence from expert committee reports or opinions or 
+clinical experience of respected authorities, or both
+Strength of recommendation
+• Grade A: Directly based on level 1 evidence
+• Grade B: Directly based on level 2 evidence or extrapolated 
+recommendation from category 1 evidence
+• Grade C: Directly based on level 3 evidence or extrapolated 
+recommendation from level 1 or 2 evidence
+• Grade D: Directly based on level 4 evidence or extrapolated 
+recommendation from level 1, 2 or 3 evidence
+Adapted with permission from BMJ Publishing Group Limited. Shekelle PG, Woolf 
+SH, Eccles M, et al. Developing clinical guidelines. West J Med 1999;170:348-51.
+GUIDELINE
+ CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 E887
+The executive committee developed and managed the com-
+peting interest policy and procedures for mitigating bias. The 
+policy and disclosures of competing interest are available on the 
+guideline website. All participants were required to disclose 
+potential competing interests. We maintained detailed compet-
+ing interest declarations throughout the process for all members 
+of the steering and executive committees, as well as the partici-
+pating methodologists from MERST. We used the International 
+Committee of Medical Journal Editors’ disclosure form, with the 
+addition of government funding sources.
+Individuals with relevant disclosures were not excluded from 
+conducting the critical appraisals or voting on recommenda-
+tions. However, the executive committee asked individuals with 
+direct competing interests to abstain from voting in the areas in 
+which they had the conflict. Any discussion regarding off-label 
+use of drugs included the caveat that the use was off label.
+As mentioned earlier, methodologists from MERST who had no 
+competing interests reviewed and graded78 each included study to 
+ensure the evidence had been appropriately assessed. They also 
+reviewed the recommendations (graded between A and C) to ensure 
+that recommendations were aligned with the evidence. Finally, we 
+conducted an external review process to assess the feasibility of the 
+recommendations and evaluate for the presence of bias.
+Implementation
+Obesity Canada and the Canadian Association of Bariatric Sur-
+geons and Physicians have created a joint guideline website 
+(http://obesitycanada.ca/guidelines) that hosts the full guideline; 
+interim updates; a quick reference guide; key messages; health 
+care provider tools, slide kits, videos and webinars; and resources 
+for people living with obesity and their support systems, in English 
+and French. The guideline will be hosted on the website as a living 
+document. Each chapter lead will monitor evidence related to this 
+guideline and will collaborate with the executive committee to 
+update the recommendations if new evidence becomes available 
+that could influence the recommendations. A framework for 
+implementation (5As Framework) is available in Appendix 2.
+More than 10 years after the release of the first Canadian 
+obes ity guideline in 2006, access to obesity care remains an issue 
+in Canada.37,71 Obesity is not officially recognized as a chronic dis-
+ease by the federal, provincial and territorial, and municipal gov-
+ernments, despite declarations by the Canadian Medical Associa-
+tion 85  and the World Health Organization. 86  The lack of 
+recognition of obesity as a chronic disease by public and private 
+payers, health systems, the public and media has a trickle-down 
+effect on access to treatment. 72 Obesity continues to be treated 
+as a self-inflicted condition, which affects the type of interven-
+tions and approaches that are implemented by governments or 
+covered by health benefit plans.87
+Implementation of this guideline will require targeted policy 
+action, as well as advocacy efforts and engagement from people 
+living with obesity, their families and health care providers. 
+Canadian organizations have come together to change the narra-
+tive regarding obesity in Canada, to eliminate weight bias and 
+obesity stigma, and to change the way health care systems and 
+policies approach obesity. 88 This guideline will be used to assist 
+in advocacy efforts to federal and provincial governments to 
+improve the care of individuals with obesity.
+Other guidelines
+In 2006, the first evidence-based Canadian clinical practice guide-
+line on the prevention and management of obesity in adults and 
+children was released.43 In 2015, the Canadian Task Force on Pre-
+ventive Health Care, in collaboration with scientific staff of the 
+Public Health Agency of Canada and the McMaster Evidence 
+Review and Synthesis Centre, released a set of recommendations 
+for prevention of weight gain and use of behavioural and pharma-
+cologic interventions to manage overweight and obesity in adults 
+in primary care. 89 This guideline was not designed to “apply to 
+people with BMI of 40 or greater, who may benefit from special -
+ized bariatric programs” and reviewed only intervention trials 
+conducted in settings generalizable to Canadian primary care. 
+The guideline also did not include surgical treatments.
+Gaps in knowledge
+The recommendations in this guideline are informed by the best 
+level of evidence available in 2020. We acknowledge that ongo-
+ing research will continue to inform and advance obesity 
+management.90,91
+Current treatment options, apart from surgical intervention, 
+rarely yield sustained weight loss beyond 20%, and for some 
+people living with obesity, this level of weight loss may be inade-
+quate for the resolution or improvement of many adiposity-
+related medical complications. There is a need for more treat-
+ment options to meet the needs of people with obesity. Weight 
+regain continues to be a challenge for many patients who have 
+received treatment.92
+Conclusion
+Obesity is a prevalent, complex chronic disease that affects a 
+large number of adults in Canada and globally, and yet only a 
+small fraction of people living with obesity who could benefit 
+from treatment have access to care. This updated evidence-
+informed guideline is an attempt to enhance access and care by 
+people living with obesity through recognition among health care 
+providers that obesity requires long-term treatment. The newer 
+insights into appetite regulation and the pathophysiology of 
+obesity have opened new avenues for treating this chronic 
+disease. Reducing weight bias and stigma, understanding the root 
+causes of obesity, and promoting and supporting patient-centred 
+behavioural interventions and appropriate treatment by health 
+care providers — preferably with the support of interdisciplinary 
+care teams — will raise the standards of care and improve the 
+well-being of people living with obesity. Dissemination and 
+implementation of this guideline are integral components of our 
+goals to address this prevalent chronic disease. Much more effort 
+is needed to close the gaps in knowledge through obesity 
+research, education, prevention and treatment.
+GUIDELINE
+E888 CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 
+References
+ 1. Prospective Studies Collaboration; Whitlock G, Lewington S, Sherliker P, et al. 
+Body-mass index and cause-specific mortality in 900 000 adults: collaborative 
+analyses of 57 prospective studies. Lancet 2009;373:1083-96.
+ 2. Global BMI Mortality Collaboration; Di Angelantonio E, Bhupathiraju ShN, Wormser 
+D, et al. Body-mass index and all-cause mortality: Individual-participant-data 
+meta-analysis of 239 prospective studies in four continents. Lancet 2016;388: 
+776-86.
+ 3. Abdullah A, Peeters A, de Courten M, et al. The magnitude of association 
+between overweight and obesity and the risk of diabetes: a meta-analysis of 
+prospective cohort studies. Diabetes Res Clin Pract 2010;89:309-19.
+ 4. Aune D, Norat T, Vatten LJ. Body mass index, abdominal fatness and the risk of 
+gallbladder disease. Eur J Epidemiol 2015;30:1009-19.
+ 5. Longo M, Zatterale F, Naderi J, et al. Adipose tissue dysfunction as determi-
+nant of obesity-associated metabolic complications.  Int J Mol Sci 2019;20: 
+E2358.
+ 6. Aune D, Norat T, Vatten LJ. Body mass index and the risk of gout: A systematic 
+review and dose–response meta-analysis of prospective studies. Eur J Nutr  
+2014;53:1591-601.
+ 7. Fontaine KR, Redden DT, Wang C, et al. Years of life lost due to obesity. JAMA 
+2003;289:187-93.
+ 8. Grover SA, Kaouache M, Rempel P, et al. Years of life lost and healthy life-years 
+lost from diabetes and cardiovascular disease in overweight and obese people: 
+a modelling study. Lancet Diabetes Endocrinol 2015;3:114-22.
+ 9. Wolin KY, Carson K, Colditz GA. Obesity and cancer. Oncologist 2010;15:556-65.
+10. Ackerman SE, Blackburn OA, Marchildon F, et al. Insights into the link between 
+obesity and cancer. Curr Obes Rep 2017;6:195-203.
+11. Sharma AM. M, M, M & M: a mnemonic for assessing obesity. Obes Rev 2010;11: 
+808-9.
+12. NCD Risk Factor Collaboration (NCD-RisC). Worldwide trends in body-mass 
+index, underweight, overweight, and obesity from 1975 to 2016: a pooled 
+analy sis of 2416 population-based measurement studies in 128·9 million chil-
+dren, adolescents, and adults. Lancet 2017;390:2627-42.
+13. Obesity in Canada — Snapshot. Ottawa: Public Health Agency of Canada; 2009. 
+Available: www.canada.ca/en/public-health/services/reports-publications/
+obesity-canada-snapshot.html (accessed 2020 May 22).
+14. Obesity in Canada — Health and economic implications. Ottawa: Public 
+Health Agency of Canada; modified 2011 June 23. Available: www.canada.ca/en 
+/public -health /services/health-promotion/healthy-living/obesity-canada/health 
+-economic -implications.html (accessed 2020 May 22).
+15. Anis AH, Zhang W, Bansback N, et al. Obesity and overweight in Canada: an 
+updated cost-of-illness study. Obes Rev 2010;11:31-40.
+16. Guh DP, Zhang W, Bansback N, et al. The incidence of co-morbidities related to 
+obesity and overweight: a systematic review and meta-analysis. BMC Public 
+Health 2009;9:88.
+17. Sutin AR, Stephan Y, Terracciano A. Weight discrimination and risk of mortality. 
+Psychol Sci 2015;26:1803-11.
+18. Mechanick JI, Hurley DL, Garvey WT. Adiposity-based chronic disease as a new 
+diagnostic term: the American Association of Clinical Endocrinologists and 
+American College Of Endocrinology position statement. Endocr Pract 2017;23: 
+372-8.
+19. Garvey WT, Mechanick JI. Proposal for a scientifically correct and medically 
+actionable disease classification system (ICD) for obesity. Obesity (Silver Spring) 
+2020;28:484-92.
+20. Cedernaes J, Huang W, Ramsey KM, et al. Transcriptional basis for rhythmic 
+control of hunger and metabolism within the AgRP neuron. Cell Metab 2019;29: 
+1078-91.e5.
+21. Fasshauer M, Blüher M. Adipokines in health and disease. Trends Pharmacol Sci 
+2015;36:461-70.
+22. Secher A, Jelsing J, Baquero AF, et al. The arcuate nucleus mediates GLP-1 
+receptor agonist liraglutide-dependent weight loss. J Clin Invest 2014;124: 
+4473-88.
+23. Sternson SM, Eiselt A-K. Three pillars for the neural control of appetite. Annu 
+Rev Physiol 2017;79:401-23.
+24. Hill JO. Understanding and addressing the epidemic of obesity: an energy balance 
+perspective. Endocr Rev 2006;27:750-61.
+25. Mebel DM, Wong JC, Dong YJ, et al. Insulin in the ventral tegmental area reduces 
+hedonic feeding and suppresses dopamine concentration via increased reuptake. 
+Eur J Neurosci 2012;36:2336-46.
+26. Bliss ES, Whiteside E. The gut-brain axis, the human gut microbiota and their 
+integration in the development of obesity. Front Physiol 2018;9:900.
+27. van Bloemendaal L, Veltman DJ, Ten Kulve JS, et al. Brain reward-system activa-
+tion in response to anticipation and consumption of palatable food is altered by 
+glucagon-like peptide-1 receptor activation in humans. Diabetes Obes Metab  
+2015;17:878-86.
+28. Sharma AM, Kushner RF. A proposed clinical staging system for obesity. Int J 
+Obes (Lond) 2009;33:289-95.
+29. Grundy SM, Neeland IJ, Turer AT, et al.  Waist circumference as measure of 
+abdominal fat compartments. J Obes 2013;2013:454285.
+30. Ross R, Neeland IJ, Yamashita S, et al. Waist circumference as a vital sign in 
+clinical practice: a Consensus Statement from the IAS and ICCR Working Group 
+on Visceral Obesity. Nat Rev Endocrinol 2020;16:177-89.
+31. Neeland IJ, Ross R, Després J-P, et al. ; International Atherosclerosis Society ; 
+International Chair on Cardiometabolic Risk Working Group on Visceral Obesity. 
+Visceral and ectopic fat, atherosclerosis, and cardiometabolic disease: a position 
+statement. Lancet Diabetes Endocrinol 2019;7:715-25.
+32. Hruby A, Hu FB. The epidemiology of obesity: a big picture. Pharmacoeconomics 
+2015;33:673-89.
+33. Padwal RS, Pajewski NM, Allison DB, et al. Using the Edmonton obesity staging 
+system to predict mortality in a population-representative cohort of people 
+with overweight and obesity. CMAJ 2011;183:E1059-66.
+34. Canning KL, Brown RE, Wharton S, et al. Edmonton Obesity Staging System 
+prevalence and association with weight loss in a publicly funded referral-
+based obesity clinic. J Obes 2015;2015:619734.
+35. Kuk JL, Ardern CI, Church TS, et al. Edmonton Obesity Staging System: associ-
+ation with weight history and mortality risk. Appl Physiol Nutr Metab 2011;36: 
+570-6.
+36. Ogunleye A, Osunlana A, Asselin J, et al.  The 5As team intervention: bridging 
+the knowledge gap in obesity management among primary care practitioners 
+[published erratum in BMC Res Notes 2016;9:164]. BMC Res Notes 2015;8:810.
+37. Report card on access to obesity treatment for adults in Canada 2017. Edmonton: 
+Obesity Canada; 2017.
+38. Block JP, DeSalvo KB, Fisher WP. Are physicians equipped to address the obesity 
+epidemic? Knowledge and attitudes of internal medicine residents. Prev Med  
+2003;36:669-75.
+39. Janke EA, Ramirez ML, Haltzman B, et al. Patient’s experience with comorbidity 
+management in primary care: a qualitative study of comorbid pain and obesity. 
+Prim Health Care Res Dev 2016;17:33-41.
+40. Greener J, Douglas F, van Teijlingen E. More of the same? Conflicting perspectives 
+of obesity causation and intervention amongst overweight people, health profes-
+sionals and policy makers. Soc Sci Med 2010;70:1042-9.
+41. Kirk SFL, Price SL, Penney TL, et al. Blame, shame, and lack of support: a multi-
+level study on obesity management. Qual Health Res 2014;24:790-800.
+42. Alberga AS, Edache IY, Forhan M, et al. Weight bias and health care utilization: a scop-
+ing review. Prim Health Care Res Dev 2019;20:e116. doi: 10.1017/S1463423619000227.
+43. Lau DCW, Douketis JD, Morrison KM, et al.; Obesity Canada Clinical Practice 
+Guidelines Expert Panel. 2006 Canadian clinical practice guidelines on the 
+management and prevention of obesity in adults and children [summary].  
+CMAJ 2007;176(Suppl):S1-13.
+44. Obesity and overweight. Geneva: World Health Organization; 2020. Available: 
+www.who.int/news-room/fact-sheets/detail/obesity-and-overweight (accessed 
+2020 May 22).
+45. Table 13-10-0096-20: Body mass index, overweight or obese, self-reported, 
+adult, age groups (18 years and older). Ottawa: Statistics Canada.
+GUIDELINE
+ CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 E889
+46. Twells LK, Gregory DM, Reddigan J, et al. Current and predicted prevalence of 
+obesity in Canada: a trend analysis. CMAJ Open 2014;2:E18-26.
+47. Hall KD, Heymsfield SB, Kemnitz JW, et al. Energy balance and its components: 
+implications for body weight regulation. Am J Clin Nutr 2012;95:989-94.
+48. Lee M, Ata RN, Brannick MT. Malleability of weight-biased attitudes and beliefs: a 
+meta-analysis of weight bias reduction interventions. Body Image 2014;11:251-9.
+49. Project Implicit. 2011. Available: https://implicit.harvard.edu/implicit/ (accessed 
+2020 May 22).
+50. Luig T, Anderson R, Sharma AM, et al. Personalizing obesity assessment and 
+care planning in primary care: patient experience and health outcomes in 
+everyday life and health. Clin Obes 2018;8:411-23.
+51. Vallis M, Piccinini-Vallis H, Sharma AM, et al. Clinical review: modified 5 As: minimal 
+intervention for obesity counseling in primary care. Can Fam Physician  2013; 
+59:27-31.
+52. Sharma AM, Campbell-Scherer  D. Redefining obesity: beyond the numbers.  
+Obesity (Silver Spring) 2017;25:660-1.
+53. Camhi SM, Bray GA, Bouchard C, et al. The relationship of waist circumference 
+and BMI to visceral, subcutaneous, and total body fat: sex and race differences. 
+Obesity (Silver Spring) 2011;19:402-8.
+54. Mabire L, Mani R, Liu L, et al. The influence of age, sex and body mass index on the 
+effectiveness of brisk walking for obesity management in adults: a systematic 
+review and meta-analysis. J Phys Act Health 2017;14:389-407.
+55. Raynor HA, Davidson PG, Burns H, et al. Medical nutrition therapy and weight 
+loss questions for the evidence analysis library prevention of type 2 diabetes 
+project: systematic reviews. J Acad Nutr Diet 2017;117:1578-611.
+56. Raynor HA, Champagne CM. Position of the Academy of Nutrition and Dietetics: 
+interventions for the treatment of overweight and obesity in adults. J Acad Nutr 
+Diet 2016;116:129-47.
+57. Sumithran  P, Prendergast  LA, Delbridge  E, et al.  Long-term persistence of 
+hormonal adaptations to weight loss. N Engl J Med 2011;365:1597-604.
+58. Rosenbaum M, Hirsch J, Gallagher DA, et al. Long-term persistence of adaptive 
+thermogenesis in subjects who have maintained a reduced body weight. Am J 
+Clin Nutr 2008;88:906-12.
+59. Koliaki C, Spinos T, Spinou M, et al. Defining the optimal dietary approach for 
+safe, effective and sustainable weight loss in overweight and obese adults.  
+Healthcare (Basel) 2018;6:E73.
+60. Look AHEAD Research Group. Eight-year weight losses with an intensive life-
+style intervention: the look AHEAD study. Obesity (Silver Spring) 2014;22:5-13.
+61. Vallis M. Are behavioural interventions doomed to fail? Challenges to self-
+management support in chronic Diseases. Can J Diabetes 2015;39:330-4.
+62. Wadden TA, Hollander P, Klein S, et al.; NN8022-1923 Investigators. Weight 
+maintenance and additional weight loss with liraglutide after low-calorie-diet-
+induced weight loss : the SCALE Maintenance randomized study.  Int J Obes 
+(Lond) 2013;37:1443-51.
+63. Greenway FL, Fujioka K, Plodkowski RA, et al.; COR-I Study Group. Effect of nal-
+trexone plus bupropion on weight loss in overweight and obese adults (COR-I): 
+a multicentre, randomised, double-blind, placebo-controlled, phase 3 trial.  
+Lancet 2010;376:595-605.
+64. Pi-Sunyer X, Astrup A, Fujioka K, et al.; SCALE Obesity and Prediabetes NN8022-
+1839 Study Group. A randomized, controlled trial of 3.0 mg of liraglutide in 
+weight management. N Engl J Med 2015;373:11-22.
+65. Richelsen B, Tonstad S, Rossner S, et al. Effect of orlistat on weight regain and 
+cardiovascular risk factors following a very-low-energy diet in abdominally 
+obese patients:a 3-year randomized, placebo-controlled study. Diabetes Care 
+2007;30:27-32.
+66. Rucker D, Padwal R, Li SK, et al. Long term pharmacotherapy for obesity and 
+overweight: updated meta-analysis [published erratum in BMJ 2007;335:0-a].  
+BMJ 2007;335:1194-9.
+67. American Association of Diabetes Educators . Addressing obesity via diabetes 
+self-management education and training. Diabetes Educ 2012;38:151-4.
+68. Kaly P, Orellana S, Torrella T, et al. Unrealistic weight loss expectations in 
+candidates for bariatric surgery. Surg Obes Relat Dis 2008;4:6-10.
+69. Sharma M. Behavioural interventions for preventing and treating obesity in 
+adults. Obes Rev 2007;8:441-9.
+70. Byrne NM, Meerkin JD, Laukkanen R, et al. Weight loss strategies for obese 
+adults: personalized weight management program vs. standard care. Obesity 
+(Silver Spring) 2006;14:1777-88.
+71. Report card on access to obesity treatment for adults in Canada 2019. Edmonton: 
+Obesity Canada; 2019.
+72. Sharma AM, Ramos Salas X. Obesity prevention and management strategies in 
+Canada: shifting paradigms and putting people first. Curr Obes Rep 2018;7:89-96.
+73. Forhan M, Ramos Salas X. Inequities in healthcare: a review of bias and discrimi-
+nation in obesity treatment. Can J Diabetes 2013;37:205-9.
+74. Dietz WH, Baur LA, Hall K, et al. Management of obesity: improvement of health-
+care training and systems for prevention and care. Lancet 2015;385:2521-33.
+75. Sharma AM. Inequalities in access to bariatric surgery in Canada. CMAJ 
+2016;188:317-8.
+76. Freedhoff Y, Sharma AM. “Lose 40 pounds in 4 weeks”: regulating commercial 
+weight-loss programs. CMAJ 2009;180:367-8.
+77. Shekelle PG, Woolf SH, Eccles M, et al. Developing clinical guidelines. West J 
+Med 1999;170:348-51.
+78. Brouwers MC, Kho ME, Browman GP, et al.; AGREE Next Steps Consortium. 
+AGREE II: advancing guideline development, reporting and evaluation in health 
+care. CMAJ 2010;182:E839-42.
+79. Crandall B, Klein G, Hoffman RR. Working minds: a practitioner’s guide to cognitive 
+task analysis. Cambridge (MA): MIT Press; 2006.
+80. DistillerSR enterprise plan. Ottawa: Evidence Partners: Available: www.
+evidencepartners.com/products/distillersr-systematic-review-software/ (accessed 
+2020 May 22).
+81. Shekelle P, Woolf S, Grimshaw JM, et al. Developing clinical practice guidelines: 
+reviewing, reporting, and publishing guidelines; updating guidelines; and the 
+emerging issues of enhancing guideline implementability and accounting for 
+comorbid conditions in guideline development. Implement Sci 2012;7:62.
+82. Guyatt GH, Cooke DJ, Jaeschke R, et al. Grades of recommendation for anti-
+thrombotic agents: American College of Chest Physicians Evidence-Based Clinical 
+Practice Guidelines (8th Edition). Chest 2008;133(Suppl):123S-31S.
+83. Badesch DB, Abman SH, Simonneau G, et al. Medical therapy for pulmonary 
+arterial hypertension: updated ACCP evidence-based clinical practice guidelines. 
+Chest 2007;131:1917-28.
+84. Rosenfeld RM, Shiffman RN. Clinical practice guideline development manual: a 
+quality-driven approach for translating evidence into action. Otolaryngol Head 
+Neck Surg 2009;140(Suppl 1):S1-43.
+85. Obesity as a chronic medical disease [policy]. Ottawa: Canadian Medical Asso-
+ciation; 2015, reviewed 2019 Mar. 3. Available: https://policybase.cma.ca/en/
+permalink/policy11700 (accessed 2020 May 22).
+86. Obesity: preventing and managing the global epidemic — Report of a WHO Con-
+sultation (WHO Technical Report Series 894). Geneva: World Health Organiza-
+tion; 2000.
+87. Ramos Salas X, Forhan M, Caulfield T, et al. A critical analysis of obesity prevention 
+policies and strategies. Can J Public Health 2018;108:e598-608.
+88. Canadian Obesity Advocacy Network (COAN). Edmonton: Obesity Canada. 
+Available: https://obesitycanada.ca/coan (accessed 2020 May 22).
+89. Brauer P, Gorber SC, Shaw E; Canadian Task Force on Preventive Health Care. 
+Recommendations for prevention of weight gain and use of behavioural and 
+pharmacologic interventions to manage overweight and obesity in adults in 
+primary care. CMAJ 2015;187:184-95.
+90. Jastreboff AM, Kotz CM, Kahan S, et al. Obesity as a disease: the Obesity Society 
+2018 position statement. Obesity (Silver Spring) 2019;27:7-9.
+91. Park B-y, Byeon K, Lee MJ, et al. The orbitofrontal cortex functionally links 
+obesity and white matter hyperintensities. Sci Rep 2020;10:2930.
+92. Look AHEAD Research Group; Wing RR, Bolin P, Brancati FL, et al. Cardiovascular 
+effects of intensive lifestyle intervention in type 2 diabetes. N Engl J Med  
+2013;369:145-54.
+GUIDELINE
+E890 CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 
+Competing interests: Sean Wharton reports receiving honoraria and 
+travel expenses and has participated in academic advisory boards for 
+Novo Nordisk, Bausch Health, Eli Lilly and Janssen. Sean Wharton is also 
+the medical director of a medical clinic specializing in weight manage-
+ment and diabetes. David Lau reports receiving grants and research 
+support from AstraZeneca, Novo Nordisk and the Canadian Institutes of 
+Health Research (CIHR); speaker bureau fees from AstraZeneca, Bausch 
+Health, Boehringer Ingelheim, Diabetes Canada, Eli Lilly, Merck and 
+Novo Nordisk; and consulting fees from Amgen, AstraZeneca, Bausch 
+Health, Boehringer Ingelheim, Gilead, HLS Therapeutics, Janssen, Eli 
+Lilly and Novo Nordisk. Michael Vallis is a member of advisory boards for 
+Novo Nordisk, Bausch Health and LifeScan. Michael Vallis has also re-
+ceived consulting fees from Bausch Health, LifeScan, Novo Nordisk and 
+Sanofi, and speaking fees from Novo Nordisk, Sanofi, Bausch Health, 
+Abbott and AbbVie. Arya Sharma reports receiving speaker’s bureau and 
+consulting fees from Novo Nordisk, Bausch Pharmaceuticals and Astra-
+Zeneca. Laurent Biertho reports receiving grants from Johnson and 
+Johnson and Medtronic, and is a member of advisory boards for Novo 
+Nordisk and Bausch Health, outside the submitted work. Denise 
+Campbell- Scherer has no personal financial relationships, but reports 
+receiving research funding from the following sources in the past 
+3 years: Novo Nordisk Alberta Diabetes Fund (NOVAD), a peer-reviewed 
+grant that is a partnership between the University Hospital Foundation, 
+Novo Nordisk and Alberta Innovates joint funders; Alberta Innovates 
+Health Solutions (Cancer Prevention Research Opportunity and Collab-
+orative Research and Innovation Opportunities competitions), CIHR 
+(Strategy for Patient-Oriented Research and Knowledge-to-Action com-
+petitions); Northern Alberta Family Medicine Fund; and the Alberta 
+Cancer Prevention and Legacy Fund. She also reports receiving know-
+ledge transfer funding from the following sources in the past 3 years: an 
+unrestricted education grant from Obesity Canada, funded by Novo 
+Nordisk Global; a Worldwide University Network Meeting Grant; an 
+Agency for Healthcare Research and Quality R13 grant for a Healthcare 
+Effectiveness and Outcomes Research; and a Physician Learning Pro -
+gram grant from Alberta Health and the Alberta Medical Association. 
+Angela Alberga reports receiving the following grants: the Santé Award 
+from Fonds de Recherche du Quebec, the  Mitacs Accelerate Grant, and 
+the Concordia University Start-up Team Grant, outside the submitted 
+work. Jennifer Brown reports receiving nonfinancial support from Novo 
+Nordisk, and personal fees from Bausch Health, Dietitians of Canada, 
+Obesity Canada and the Canadian Association of Bariatric Physicians & 
+Surgeons. Yoni Freedhoff is the co-owner of the Bariatric Medical Insti-
+tute and Constant Health, which provide weight management services; 
+Constant Health has received a grant from Novo Nordisk. Yoni Freedhoff 
+is also the author of The Diet Fix: Why Diets Fail and How to Make Yours 
+Work published by Crown Publishing Group, and receives royalties for 
+the book. In addition, he is the sole author of the Weighty Matters blog 
+and a column for Medscape and many other op-eds and articles in 
+which he has publicly expressed opinions about the treatment, manage-
+ment and prevention of obesity. Yoni Freedhoff also regularly speaks on 
+topics related to obesity and receives honoraria and travel costs and ex-
+penses for same. Michel Gagner reports receiving speaker honoraria 
+from Ethicon, WL Gore and Medtronic; consulting fees from Novo Nord-
+isk, Bausch Health and Lexington Medical; and holds stock options with 
+Lexington Medical. Margaret Hahn reports receiving consulting fees 
+from Alkermes. Marie-France Langlois reports receiving personal fees 
+from Novo Nordisk, Valeant, Merck Canada, Sanofi, Eli Lilly and 
+Boehringer Ingelheim; a grant from Merck Canada; and other fees from 
+AstraZeneca and from TIMI (Thrombolysis in Myocardial Infarction) 
+Study Group for diabetes clinical research as a principal investigator, all 
+outside the submitted work. David Macklin reports receiving personal 
+fees from Novo Nordisk and Bausch Health, outside the submitted work. 
+Priya Manjoo reports receiving personal fees from Novo Nordisk, Bausch 
+Health and Sanofi; and grants from Boehringer Ingelheim, Sanofi and 
+AstraZeneca, outside the submitted work. Marie-Philippe Morin reports 
+receiving speaker honoraria from Novo Nordisk, Bausch Health, Eli Lilly, 
+Boehringer Ingelheim, Nestlé Health Science, Janssen and AstraZeneca; 
+research subvention from Novo Nordisk and Sanofi; and consultation 
+honoraria from Novo Nordisk, Bausch Health, Eli Lilly, Boehringer Ingel-
+heim, Janssen and AstraZeneca. Sue Pedersen reports receiving 
+personal fees from Novo Nordisk, Bausch Health, Janssen, Eli Lilly, 
+Merck, AstraZeneca, Boehringer Ingelheim, Sanofi, Pfizer; grants from 
+Eli Lilly, AstraZeneca, Boehringer Ingelheim and Sanofi; and nonfinan-
+cial support from Novo Nordisk, Bausch Health, Janssen, Eli Lilly, 
+AstraZeneca, Boehringer Ingelheim and Sanofi, outside the submitted 
+work. Megha Poddar reports receiving honoraria for continuing medical 
+education (CME) from Novo Nordisk, Bausch Health, Boehringer 
+Ingelheim, Eli Lilly, Jenssen, Merck, the Canadian Collaborative Re-
+search Network and the Antibody Network; education grants from Novo 
+Nordisk and Bausch Health; fees for mentorship from Novo Nordisk; 
+fees for membership of advisory boards from Novo Nordisk and Bausch 
+Health; and a quality improvement project grant from Boehringer 
+Ingelheim. Paul Poirier reports receiving fees for consulting and con-
+tinuing medical education from AstraZeneca, Boehringer Ingelheim, 
+Janssen, Eli Lilly, Novo Nordisk, Valeant and Bausch Health, outside the 
+submitted work. Judy Shiau reports receiving personal fees from Novo 
+Nordisk and Bausch Health, outside the submitted work. Diana Sherifali 
+reports receiving consulting fees for advice regarding chronic disease 
+and diabetes management from Merck, and a grant from Obesity Can-
+ada to support the literature review process, during the conduct of the 
+study. John Sievenpiper reports receiving grants from CIHR, the Nutri-
+tion Trialists Fund at the University of Toronto, the International Nut 
+and Dried Fruit Council Foundation, the Tate & Lyle Nutritional Research 
+Fund at the University of Toronto, the American Society for Nutrition, 
+the Glycemic Control and Cardiovascular Disease in Type 2 Diabetes 
+Fund at the University of Toronto, the National Dried Fruit Trade Associ-
+ation, PSI Graham Farquharson Knowledge Translation Fellowship, the 
+Diabetes Canada Clinician Scientist award, the Banting & Best Diabetes 
+Centre Sun Life Financial New Investigator Award, the Canada Founda-
+tion for Innovation, and the Ministry of Research and Innovation’s 
+Ontario Research Fund. Dr. Sievenpiper has received personal fees from 
+Perkins Coie LLP, Tate & Lyle, Dairy Farmers of Canada, Pepsi Co, Food-
+Minds LLC, European Fruit Juice Association, International Sweeteners 
+Association, Nestlé Health Science, Canadian Society for Endocrinology 
+and Metabolism, GI Foundation, Pulse Canada, Wirtschaftliche Vereini-
+gung Zucker e.V., Abbott, Biofortis, the European Food Safety Authority, 
+the  Physicians Committee for Responsible Medicine, the Soy Nutrition 
+Institute and the Comité Européen des Fabricants de Sucre. 
+Dr. Sievenpiper has received nonfinancial support from Tate & Lyle, 
+PepsiCo, FoodMinds LLC, European Fruit Juice Association, Interna -
+tional Sweeteners Association, Nestlé Health Science, Wirtschaftliche 
+Vereinigung Zucker e.V., Abbott, Biofortis, the European Food Safety Au-
+thority and the  Physicians Committee for Responsible Medicine, 
+Kellogg Canada, American Peanut Council, Barilla, Unilever, Unico 
+Primo, Loblaw Companies, WhiteWave Foods, Quaker, California Walnut 
+Commission, Almond Board of California, outside the submitted work. 
+Dr. Sievenpiper is a member of the International Carbohydrate Quality 
+Consortium and the Clinical Practice Guidelines Expert Committees of 
+Diabetes Canada, European Association for the Study of Diabetes, Can-
+adian Cardiovascular Society, and Obesity Canada, and holds 
+appointments as an Executive Board Member of the Diabetes and Nutri-
+tion Study Group of the European Association for the Study of Diabetes, 
+and as Director of the Toronto 3D Knowledge Synthesis and Clinical  Trials 
+Foundation. He is also an unpaid scientific adviser for the Program in 
+Food Safety, Nutrition and Regulatory Affairs and the Carbohydrates 
+Committee of the International Life Science Institute North America. He 
+has a spousal relationship with an employee of Anheuser-Busch InBev. 
+Sanjeev Sockalingam reports receiving honoraria from Bausch Health 
+Canada within the last 36  months. Valerie Taylor reports receiving 
+speaker fees from Sunovion. Shahebina Walji reports receiving consulting 
+GUIDELINE
+ CMAJ  |  AUGUST 4, 2020  |  VOLUME 192  |  ISSUE 31 E891
+or advisory board fees from Novo Nordisk, Bausch Health and Takeda and 
+speaker’s bureau fees from Novo Nordisk and Bausch Health. Shahebina 
+Walji also reports selling Optifast Meal replacements through a weight 
+management centre Optifast is a product produced and sold by Nestlé. 
+No other competing interests were declared. 
+This article has been peer reviewed.
+Affiliations: Departments of Medicine (Wharton), Endocrinology and 
+Metabolism (Poddar, Sherifali), Family Medicine (Naji, Tytus) and Health 
+Research Methods, Evidence and Impact Canada (Naji), McMaster Uni-
+versity, Hamilton, Ont; The Wharton Medical Clinic (Wharton, Poddar), 
+Hamilton, Ont.; Departments of Medicine (Lau, Nerenberg) and Family 
+Medicine (Boyling, Henderson, McInnes, Walji, Wicklum), Cumming 
+School of Medicine, University of Calgary, Calgary, Alta.; Julia McFarlane 
+Diabetes Research Centre and Libin Cardiovascular Institute of Alberta 
+(Lau), Calgary, Alta.; Department of Family Medicine (Vallis, Piccinini-
+Vallis), Dalhousie University, Halifax, NS; Departments of Medicine 
+(Sharma, Toth), Family Medicine (Campbell-Scherer, Kemp), Agricul-
+tural, Food and Nutritional Science (Bell, Pereira), Physical Education 
+and Recreation (Boulé), and Occupational Therapy (Forhan), University 
+of Alberta, Edmonton, Alta.; Adult Bariatric Specialty Clinic (Sharma), 
+Royal Alexandra Hospital, Edmonton, Alta.; Obesity Canada (Sharma, 
+Patton, Ramos Salas), Edmonton, Alta.; Department of Surgery 
+(Biertho), Laval University, Quebec, Que.; School of Human Kinetics 
+(Adamo, Prud’homme), University of Ottawa, Ottawa, Ont.; Department 
+of Health, Kinesiology & Applied Physiology (Alberga), Concordia Uni-
+versity, Montréal, Que.; Bariatric Centre of Excellence (Brown), The 
+Ottawa Hospital, Ottawa, Ont.; Departments of Family Practice (Calam) 
+and Endocrinology (Manjoo), University of British Columbia, Vancouver, 
+BC; UBC Family Practice Residency Program (Calam) and Pfizer/ Heart 
+and Stroke Foundation Chair in Cardiovascular Prevention Research 
+(Lear), St. Paul’s Hospital, Vancouver, BC; nutrition consultant (Clarke), 
+Hamilton, Ont.; Indigenous Health Dialogue (Crowshoe), Health Sci-
+ences Centre, University of Calgary, Calgary, Alta.; Main East Medical 
+Associates (Divalentino), Hamilton, Ont.; Bariatric Medical Institute 
+(Freedhoff), Ottawa, Ont.; Department of Family Medicine (Freedhoff) 
+and Division of Endocrinology and Metabolism (Shiau), Department of 
+Medicine, University of Ottawa, Ottawa, Ont.; Herbert Wertheim School 
+of Medicine (Gagner), Florida International University, Miami, Fla.; Hôpi-
+tal du Sacre Coeur de Montréal (Gagner), Montréal, Que.; Humber River 
+Hospital (Glazer), Toronto, Ont.; Division of Endocrinology and Metab-
+olism (Glazer), Queen’s University, Kingston, Ont.; Departments of Inter-
+nal Medicine (Glazer), Psychiatry (Hawa, Sockalingam), Family and 
+Community Medicine (Macklin) and Nutritional Sciences (Sievenpiper), 
+University of Toronto, Toronto, Ont.; Alberta Health Services (Grand, 
+Hung, Johnson-Stoklossa), Edmonton, Alta.; Departments of Family 
+Medicine and Public Health Sciences and Policy Studies (Green), 
+Queen’s University, Kingston, Ont.; Kingston Health Sciences Centre 
+(Green), Kingston, Ont.; Providence Care Hospital (Green), Kingston, 
+Ont.; Centre for Addiction and Mental Health (Hahn, Sockalingam), 
+Toronto, Ont.; University Health Network (Hawa, Sockalingam), 
+Toronto, Ont.; Division of General Surgery (Hong), McMaster University, 
+Hamilton, Ont.; Department of Family Medicine and Biobehavioral 
+Health (Jacklin), University of Minnesota Medical School Duluth Cam -
+pus, Duluth, Minn.; School of Kinesiology and Health Studies (Janssen), 
+Queen’s University, Kingston, Ont.; School of Health and Human Perfor-
+mance (Kirk), Dalhousie University, Halifax, NS; School of Kinesiology 
+and Health Science (Wharton, Kuk), York University, Toronto, Ont.; Divi-
+sion of Endocrinology (Langlois), Université de Sherbrooke, Sherbrooke, 
+Que.; Centre intégré universitaire de santé et de services sociaux de 
+l’Estrie - Centre hospitalier universitaire de Sherbrooke (Langlois), Sher-
+brooke, Que.; School of Kinesiology (Lear), Simon Fraser University, 
+Vancouver, BC; Medcan Clinic (Macklin), Toronto, Ont.; Cardiometabolic 
+Collaborative Clinic (Manjoo), Vancouver Island Health Authority, Victo-
+ria, BC; Institut universitaire de cardiologie et de pneumologie de Qué-
+bec (Morin, Poirier), Laval University, Québec, Que.; Foothills Medical 
+Centre (Nerenberg), Calgary, Alta.; C-ENDO Diabetes & Endocrinology 
+Clinic (Pedersen), Calgary, Alta.; LMC Diabetes and Endocrinology 
+ (Poddar), Toronto, Ont.; Department of Medicine (Rueda-Clausen), Uni-
+versity of Saskatchewan, Regina, Sask.; Regina General Hospital (Rueda-
+Clausen), Regina, Sask.; Education Psychology (Russell-Mayhew), Werk-
+lund School of Education, University of Calgary, Calgary, Alta.; LEAF 
+Weight Management Clinic (Shiau), Ottawa, Ont.; Heather M. Arthur 
+Population Health Research Institute/Hamilton Health Sciences Chair in 
+Interprofessional Health Research, School of Nursing (Sherifali), McMas-
+ter University, Hamilton, Ont.; Division of Endocrinology & Metabolism 
+(Sievenpiper), St. Michael’s Hospital, Toronto, Ont.; Department of 
+Psych iatry (Taylor), University of Calgary, Calgary, Alta.; School of Phar-
+macy (Twells), Memorial University, St. John’s, NL; Steelcity Medical 
+Clinic (Tytus), Hamilton, Ont.; Calgary Weight Management Centre 
+(Walji), Calgary, Alta.; School of Population and Public Health (Walker), 
+University of British Columbia, Vancouver, BC; Centre for Excellence in 
+Indigenous Health (Walker), University of British Columbia, Vancouver, 
+BC.; O’Brien Institute of Public Health (Wicklum), University of Calgary, 
+Calgary, Alta.
+Contributors: All of the authors contributed to the conception and 
+design of the work and the acquisition, analysis, and interpretation of 
+data. All of the authors drafted the manuscript, revised it critically for 
+important intellectual content, gave final approval of the version to be 
+published and agreed to be accountable for all aspects of the work.  
+Funding: Funding for this initiative was provided by Obesity Canada, 
+the Canadian Association of Bariatric Physicians and Surgeons, and the 
+Canadian Institutes of Health Research through a Strategy for Patient-
+Oriented Research grant, with no participants or authors receiving any 
+personal funding for their creation.
+Acknowledgements: The authors thank Obesity Canada staff members 
+Dawn Hatanaka, Nicole Pearce, Brad Hussey, Robert Fullerton and Patti 
+Whitefoot-Bobier for their coordinating support as well as their contri-
+butions for the development of the Obesity Guidelines website, online 
+resources, tables and figures. The authors also thank members of the 
+Obesity Canada Public Engagement Committee (Lisa Schaffer, Candace 
+Vilhan, Kelly Moen, Doug Earle, Brenndon Goodman), who contributed 
+to the creation of the research questions and reviewed key messages for 
+individuals living with obesity and recommendations for health care 
+providers. The authors also thank McMaster Evidence Review and Syn-
+thesis Team (MERST) member Donna Fitzpatrick, who played a critical 
+role in developing the methods needed for the guideline; and thank the 
+reviewers whose comments helped to improve the chapters and this 
+manuscript. The authors thank Barbara Kermode-Scott and Brad 
+Hussey for editing the guidelines, Elham Kamran and Rubin Pooni for 
+research assistance, and Jordan Tate from the Physician Learning Pro-
+gram at the University of Alberta for designing the 5As framework for 
+the guideline.
+Correspondence to: Sean Wharton, sean.wharton@utoronto.ca

@@ -1,0 +1,1029 @@
+doi • 10.1590/S2237-96222024v34e20240287.en
+Epidemiol Serv Saude. 2025:34;e20240287
+10 anos do
+Guia Alimentar para 
+a População Brasileira
+ORIGINAL ARTICLE
+Mariana Souza Lopes1 , Vitória Marli Serafim Moreira Silva2 , Nathália Luíza Ferreira3 , Maria Cecília Ramos de Carvalho2 , 
+Patrícia Pinheiro de Freitas4 , Aline Cristine Souza Lopes2 
+1Universidade Federal da Paraíba, João Pessoa, Paraíba, Brazil
+2Universidade Federal de Minas Gerais, Belo Horizonte, Minas Gerais, Brazil
+3Universidade Federal de Lavras, Lavras, Minas Gerais, Brazil
+4Universidade Federal dos Vales do Jequitinhonha e Mucuri, Diamantina, Minas Gerais, Brazil
+Adherence to dietary practices recommended by the Dietary 
+Guidelines for the Brazilian Population among people with obesity: 
+baseline of a community trial carried out at the Health Fitness 
+Program in Belo Horizonte, Brazil, 2022-2023
+Abstract
+Objective: To analyze sociodemographic and health factors associated with high levels of adherence to dietary practices recommended 
+by the Dietary Guidelines for the Brazilian Population among people with obesity taking part in the Health Fitness Program in Belo 
+Horizonte, Minas Gerais, Brazil. Methods: This is a cross-sectional study with a representative sample of Health Fitness Program 
+participants with obesity who were ≥20 years old. Sociodemographic and health data were collected, and the adherence to the 
+Dietary Guidelines scale was assessed, classified as: low (<32 points), medium (32-41 points) and high (>41 points). Multivariate 
+logistic regression was performed. Results: In all, 1,109 individuals participated, the majority of whom were women (92.5%) and had 
+at least one chronic disease (85.8%). The majority self-rated their health status as very good/good (62.2%), 62.8% had hypertension 
+and 68.0% had Class 1 Obesity. 46.0% had good levels of adherence to the Dietary Guidelines. After adjustment, high levels of 
+adherence were associated with being elderly (odds ratio [OR] 1.47; 95%CI 1.1; 2.0), having higher income (OR 0.58; 95%CI 0.41; 
+0.81) and better self-rated health (regular: OR 0.73; 95%CI 0.55; 0.96; poor/very poor: OR 0.26; 95%CI 0.13; 0.52). Conclusion: 
+High levels of adherence to the Dietary Guidelines were associated with stage of life, better income and positive self-rated health, 
+highlighting the need to target efforts towards adults and vulnerable groups
+Keywords: Observational Studies; Food Guides; Obesity; Sociodemographic Factors; Primary Health Care.
+10.1590/S2237-96222024v34e20240287.en
+2025:34;e20240287
+Lopes MS
+Ethical aspects
+This research respected ethical principles, having obtained the following approval data:
+Research Ethics Committee Opinion number Approval date
+Universidade Federal de Minas Gerais
+36395320.7.0000.5149; 17/5/2021
+42654421.1.0000.5149 17/5/2021
+Prefeitura Municipal de Belo Horizonte
+36395320.7.3001.5140; 17/4/2023
+42654421.1.3001.5140 10/8/2023
+Informed Consent Form Obtained from all participants prior to data collection.
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+2
+Introduction
+The principles and recommendations for adequate 
+and healthy eating for Brazilians are presented in 
+the Dietary Guidelines for the Brazilian Population , an 
+internationally recognized document. The Dietary 
+Guidelines assumptions are the right to health and 
+adequate food, and the multiple determinants of eating 
+practices (1). Its principles consider food items and 
+their combinations, as well as the cultural and social 
+dimensions of eating practices. Furthermore, they take 
+into consideration interdependence between food and 
+food systems, valuing different forms of knowledge 
+when formulating dietary recommendations (1).
+As the basis for its recommendations on an adequate 
+and healthy diet, the Dietary Guidelines recommend the 
+golden rule “Always prefer unprocessed or minimally 
+processed foods and culinary preparations to ultra-
+processed foods”, in addition to its covering eating 
+habits and commensality (1). This perspective is 
+innovative and moves forward with the implementation 
+of health, food and nutrition policies (2,3).
+Several different materials have been developed in 
+order to support the implementation of the Dietary 
+Guidelines within the Brazilian National Health System 
+(Sistema Único de Saúde - SUS). Standing out among 
+them is the “How do you rate what you eat” test, which 
+assesses, in a multidimensional and qualitative way, 
+adherence to the Dietary Guidelines recommendations 
+(4). Studies conducted with adults and elderly 
+individuals identified significant association between 
+sociodemographic characteristics and adherence to 
+the Dietary Guidelines (5,6). However, they did not 
+explore this adherence among individuals with obesity 
+and who were users of Primary Health Care services.
+Primary Health Care is a privileged setting for 
+implementing the Dietary Guidelines as it encompasses 
+health promotion, health maintenance and health 
+recovery actions, in addition to its proximity to the 
+community and ability to reach the population (7). 
+However, with regard to specific groups, such as 
+people with obesity, it is recommended that the Dietary 
+Guidelines suggested approaches be adapted. 
+According to the Clinical Protocol and Therapeutic 
+Guidelines for Adult Overweight and Obesity (Protocolo 
+Clínico e Diretrizes Terapêuticas de Sobrepeso e Obesidade 
+em Adultos), care of people with obesity must include 
+promotion of appropriate and healthy food choices 
+(8). However, to achieve this, it is necessary to 
+investigate eating practices and propose actions that 
+go beyond consumption of food groups and nutrients, 
+encompassing ways of eating and commensality, among 
+other eating practices (1). As such, this article aimed to 
+analyze sociodemographic and health factors associated 
+with high adherence to dietary practices recommended 
+by the Dietary Guidelines among people with obesity 
+taking part in the Health Fitness Program ( Programa 
+Academia da Saúde) in Belo Horizonte, state of Minas 
+Gerais, Brazil.
+  Methods
+Study design
+ This is a cross-sectional, Screening and Baseline 
+study of two Randomized Controlled Community 
+Trials (Ensaios Comunitários Controlados Randomizados 
+- ECCR) conducted with people with obesity taking 
+part in the Health Fitness Program in Belo Horizonte, 
+Minas Gerais, between May 2022 and June 2023, with 
+the Screening and Baseline stages being carried out 
+from May to October 2022. The ECCR were carried 
+out simultaneously to evaluate the effectiveness of 
+collective nutritional interventions for the management 
+of obesity among Health Fitness Program participants, 
+according to the severity of their obesity (9).
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+3
+Setting
+Belo Horizonte is the capital of the state of Minas 
+Gerais and has approximately 2.3 million inhabitants, 
+making it the sixth most populous city in Brazil and a 
+national reference in Primary Health Care organization 
+(10).
+The Health Fitness Program is a Brazilian Primary 
+Health Care health promotion service, in existence 
+since 2011. It offers physical exercise/activity; actions 
+to promote adequate and healthy eating, community 
+mobilization, healthy lifestyles, among others (11). 
+In Belo Horizonte, the service offers regular physical 
+exercise, guided by Physical Education professionals, 
+for people aged ≥18 years old joining the service on 
+spontaneous demand or referred by municipal health 
+services. Currently, the Program operates in more 
+than 80 units in the municipality, distributed across 
+nine administrative regions, serving around 15,000 
+users (12).
+Study size
+A unified sampling process was carried out for the 
+ECCRs through simple random sampling stratified by 
+the nine regions of the municipality. The sampling 
+plan was prepared by an external statistician, without 
+involvement of the researchers. Health Fitness Program 
+units that operate in the morning (main operating shift), 
+that had not carried out nutritional interventions to 
+manage obesity in the last two years and that had a 
+Physical Education professional during the research 
+period were considered eligible (9).
+The sample calculation took into consideration 20% 
+prevalence of Class I obesity (Body Mass Index – BMI 
+30-35kg/m²), a 5% difference in the participants’ body 
+weight between the intervention allocation groups, 
+and an additional 35.0% for possible losses, estimated 
+from previous studies. The final sample consisted of 
+5,652 individuals distributed across 59 units of the 
+Health Fitness Program, being representative of the 
+health service in the city, with 95.0% confidence and 
+<2.8% margin of error (9).
+Participants
+Invitations to take part in Screening were made, at 
+the selected Health Fitness Program units (n=59), to 
+all their service users aged ≥20 years old who took 
+part in Health Fitness Program activities (participation 
+in at least one class in the previous month), excluding 
+pregnant women and individuals with cognitive 
+difficulties that would prevent them from answering 
+the questionnaire (9).
+After taking part in the Screening, individuals who 
+were obese (BMI≥30kg/m²); who wished and had 
+availability to participate in groups lasting six months 
+or more; as well as readiness to make changes in order 
+to reduce their weight, according to the stages of 
+change “preparation with high self-efficacy”, “action” 
+or “maintain changes” proposed by the Transtheoretical 
+Model (7), were eligible to participate in the next 
+stage of the study, namely the Baseline (n=1,427). 
+In the Baseline, all those who answered the “How 
+do you rate what you eat?” test (9), which was the 
+response variable of this study, were included. Eighteen 
+participants did not answer the test completely and 
+were excluded. Therefore, after applying the study’s 
+inclusion and exclusion criteria, the final sample was 
+composed of 1,109 individuals with obesity, interest/
+availability to participate in the following stages of the 
+research, prepared to reduce their body weight and who 
+answered the “How do you rate what you eat?” test.
+Data sources and measurement
+Data collection was carried out in two stages: 
+Screening and Baseline. During Screening, an 
+anthropometric assessment was carried out and 
+sociodemographic variables, desire and time to 
+participate in groups, readiness to make changes 
+in order to reduce weight, reported morbidity, self-
+rated health and participation in the Health Fitness 
+Program were investigated. In the Baseline, carried 
+out immediately after the Screening, the “How do you 
+rate what you eat?” test was administered, having been 
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+4
+validated for the Brazilian population with reliability 
+(intraclass correlation coefficient 0.82) (4).
+Body weight (kg) was measured in a single take 
+using digital weighing scales with a maximum capacity 
+of 200kg; and height (cm) assessed with the aid of 
+a portable stadiometer, with a scale from 0.35m to 
+2.13m. Both measurements were carried out in the 
+Screening stage (9).
+The instruments used were based on national and 
+international surveys, the research group’s previous 
+experience and validated questionnaires. The interviews 
+were carried out face-to-face, using tablets. Data 
+were collected using the free Epicollect5 application 
+and underwnet consistency analysis. In the event of 
+application instability, data collection was carried out 
+using a printed questionnaire, with subsequent input 
+and consistency analysis (9).
+Data collection was carried out during the Health 
+Fitness Program’s opening hours and interviews were 
+scheduled according to the service users’ availability. 
+The team of interviewers included health professionals 
+and undergraduates, supervised by nutritionists and 
+a general supervisor, with support from the research 
+coordinators (9).
+Variables
+Outcome variable: adherence to dietary practices 
+recommended by the Dietary Guidelines
+A 24-item multidimensional scale was used to 
+measure adherence to the Dietary Guidelines. The scale 
+had been previously evaluated by convergent validity 
+and invariance analysis for sex, age and schooling and 
+adequate results subgroups (13). The scale comprises 
+four dimensions: planning, household organization, 
+eating habits and food choice. Each item is followed 
+by a Likert scale with the following response options: 
+strongly disagree; disagree; agree; strongly agree. Values  
+from 0 to 3 are assigned to each item, with the score 
+being computed by the sum of the responses, which 
+can vary from 0 to 72. The first 13 items of the scale are 
+aligned with the Dietary Guidelines recommendations 
+and scored so that the answer “strongly agree” is given 
+3 points. The final 11 items are contrary to Gudie’s 
+recommendations, being scored inversely, whereby 
+the answer “strongly disagree” is given 3 points (13).
+The following cutoff points were used to classify 
+adherence to the Dietary Guidelines recommendations: 
+low (up to 31 points), medium (32-41 points) and high 
+adherence (>41 points) (15). The “low adherence” and 
+“medium adherence” categories were grouped together 
+in the multivariate analysis.
+Explanatory variables of main interest
+The sociodemographic variables investigated were: 
+sex (male; female), stage of life (adult: 20-59 years; 
+elderly: ≥60 years), schooling (years), monthly per capita 
+income tertile and marital status (has a partner; does 
+not have a partner). Per capita income was obtained 
+by taking total family income divided by the number 
+of people living in the household. 
+In relation to health, the following were investigated: 
+self-rated health (very good/good; regular; poor/very 
+poor), length of time in the Health Fitness Program 
+(years) and reported morbidities (cardiovascular 
+disease, dyslipidemia, sleep apnea, joint diseases, Type 
+2 diabetes, hypertension, liver disease and mental 
+illness). The prevalence rates of hypertension and Type 
+2 diabetes (yes; no) were presented both separately and 
+also together with other comorbidities according to the 
+number of chronic diseases (0; 1; 2; 3 or more). Length 
+of time in the Program was obtained by subtracting 
+the Screening interview date from the Program entry 
+date, obtained from health service records. 
+BMI (weight/height²) was used to diagnose 
+obesity, categorized in accordance with World Health 
+Organization guidelines. Severe obesity (yes; no) was 
+identified by adapting the criteria of Ordinance No. 
+424/2013 for bariatric surgery, whereby severe obesity 
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+5
+is considered to be: BMI ≥40 kg/m²; and BMI >35 kg/
+m² with Type 2 diabetes and/or hypertension, sleep 
+apnea or joint diseases (7).
+Readiness for obesity treatment was analyzed 
+according to Obesity Management Group Stratification, 
+as proposed in the “Guidelines on a Collective Approach 
+to Obesity Management in the SUS” ( Instrutivo de 
+Abordagem Coletiva para o Manejo da Obesidade no SUS) 
+(7). This form of stratification proposes that readiness 
+to make changes in order to treat obesity should be 
+assessed by the availability and desire to participate 
+in groups, and by the stages of behavior change and 
+self-efficacy for weight reduction, according to the 
+Transtheoretical Model. The stages of change were 
+evaluated based on an algorithm proposed by the 
+Ministry of Health, containing reciprocally exclusive 
+responses aimed at identifying the individual’s intention 
+to start making changes in order to reduce their 
+weight and the time elapsed since the beginning of 
+the changes. Self-efficacy consists of the confidence 
+that the individual has to carry out and maintain the 
+behavior change, being measured by a validated scale 
+containing three questions with the following answer 
+options: “not at all confident”; “not very confident”; 
+“moderately confident”; “very confident”; “completely 
+confident”. High self-efficacy was considered to be the 
+presence of at least two questions assessed as very 
+confident or completely confident (15,7).
+Individuals who were ready to make changes in 
+order to reduce weight were considered to be those 
+in the “preparation with high self-efficacy”, “action” or 
+“maintain changes” stages (7). 
+Bias
+In order to guarantee data control and quality, and 
+adequate internal validity of the study, the entire team 
+was trained in advance for data collection, under the 
+supervision of a health professional, in addition to 
+having manuals and field logistics to guide the data 
+collection activities (9).
+Statistical methods
+In order to verify association between the 
+participants’ characteristics and degree of adherence 
+to the dietary practices recommended by the Dietary 
+Guidelines, we used Pearson’s Chi-square statistical 
+test for categorical variables and the Kruskal-Wallis 
+statistical test for numerical variables. 
+In order to assess the relationship between high 
+adherence to the Dietary Guidelines (yes; no) and 
+the participants’ sociodemographic and health 
+characteristics, we used multivariate logistic regression, 
+with estimates of odds ratios (OR) and respective 95% 
+confidence intervals (95%CI). The model was adjusted 
+for sex.
+The analyses were performed using STATA/SE, with 
+a 5% significance level.
+Results
+Of the 1,109 individuals eligible for the study, the 
+majority were women (92.5%), elderly (56.1%) and 
+with more than three years of participation in the 
+Health Fitness Program (66.5%). Regarding health 
+conditions, the majority rated their health as very good/
+good (62.2%), 62.8% had hypertension and 68.0% had 
+Class I obesity (Table 1).
+The final score on the Dietary Guidelines adherence 
+scale ranged from 14 to 66 points, with a median of 41 
+points (data not shown). The prevalence rate for high 
+adherence was 46.0%, while for medium adherence it 
+was 37.7% and for low adherence it was 16.3% (data 
+not shown).
+Figure 1 shows dietary practices that are aligned 
+with the Dietary Guidelines, while Figure 2 shows 
+those that are not. The highest prevalence of positive 
+dietary practices was found for taking part in preparing 
+food at home 91,1% (81.9% - strongly agree + 9.2% - 
+agree) (Figure 1), while the highest prevalence of 
+negative practices was found for drinking coffee or 
+tea sweetened with sugar (53.4%) (Figure 2).
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+6
+Table 1. Sociodemographic, health and nutritional status characteristics according to degree of adherence to dietary practices 
+recommended by the Dietary Guidelines among people with obesity taking part in the Health Fitness Program. Belo Horizonte, 
+2022-2023 (n=1,109)
+Variables T otal Sample n=1109 
+(100%)
+Adherence to the Dietary Guidelines for the Brazilian Population
+p-valueHigh 
+n=510
+Medium 
+n=418
+Low 
+n=181
+Sex
+0.404aMale 7.5 7.3 8.6 5.5
+Female 92.5 92.7 91.4 94.5
+Stage of life
+<0.001aAdult 43.9 35.5 45.5 64.1
+Elderly 56.1 64.5 54.5 35.9
+Marital status
+0.671aHas a partner 56.0 56.9 54.3 57.5
+Does not have a partner 44.0 43.1 45.7 42.5
+Schoolingc; median (P25-P75)f 8.0 (4.0-11.0) 9.0 (4.0-11.0) 8.0 (4.0-11.0) 8.0 (4.0-11.0) 0.298b
+Monthly income per capita in BRL (tertiles) 
+<0.001a1st tertile (BRL 57-BRL 606) 36.0 29.4 39.5 46.4
+2nd tertile (BRL 625-BRL 1,212) 38.0 39.4 36.1 38.7
+3rd tertile (BRL 1,250-BRL 10,000) 26.0 31.2 24.4 14.9
+Professional occupation
+<0.001a
+Housewife 30.2 28.8 30.4 33.7
+Retired 36.2 41.8 34.9 23.2
+Unemployed 4.3 2.6 5.0 7.7
+Other 29.3 26.9 29.7 35.4
+Self-rated health d
+<0.001a
+Good/very good 62.2 68.0 58.6 54.1
+Regular 32.4 29.6 34.6 35.4
+Poor/very poor 5.4 2.4 6.7 10.5
+Hypertension 62.8 64.8 63.9 54.7 0.045a
+Type 2 diabetes 29.9 32.7 29.7 22.2 0.030a
+Number of chronic diseases; median (P25-P75) f 2.0 (1.0-3.0) 2.0  (1.0-3.0) 2.0 (1.0-3.0) 2.0 (1.0-3.0) 0.325b
+None 14.2 12.3 15.3 17.1
+0.366a
+1 25.2 26.5 23.7 24.9
+2 25.7 25.9 24.2 28.7
+>3 34.9 35.3 36.8 29.3
+Obesity class
+0.083a
+I 68.0 72.1 64.0 66.0
+II 24.8 22.2 27.0 26.8
+III 7.2 5.7 9.0 7.2
+Severe obesity 
+0.230aNot severe 86.0 87.5 85.9 82.3
+Severe 14.0 12.5 14.1 17.7
+Readiness to treat obesity
+0.496aYes 62.2 65.5 62.2 58.6
+No 37.8 36.5 37.8 41.4
+Length of time in the Health Fitness Program (years)e
+0.003a
+1st tertile (0-2.8) 33.5 29.2 34.4 43.4
+2nd tertile (2.9-4.6) 33.2 33.3 32.9 33.5
+3rd tertile (4.7-16.5) 33.3 37.5 32.7 23.1
+aPearson’s Chi-square test; bKruskal-Wallis test; c4 data missing; d2 data missing; e49 data missing fP25=Percentile 25; P75=Percentile 75.
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+7
+The sociodemographic and health characteristics 
+associated with high adherence to the Dietary 
+Guidelines recommendations were: stage of life, 
+income, self-rated health, self-reported hypertension 
+and Type II diabetes and length of time participating 
+in the Health Fitness Saúde Program (p-value<0.050) 
+(Table 1).
+Distribution of the scale items according to high 
+adherence to the Dietary Guidelines (yes; no) (Figure 
+3) showed low prevalence in both groups for “use 
+of wholemeal flour” (15.3% and 6.5%, respectively), 
+“buying food at open-air markets or street markets” 
+(17.6% and 7.7%, in that order) and “varying bean intake 
+by using other legumes” (8.8% and 2.2%, respectively); 
+and greater difference between the groups in relation 
+to eating “meals at work/study desk” (74.3% and 34.2%, 
+in that order). Regarding the dimensions of the scale, 
+greater differences were identified for meal planning 
+(3A), and smaller ones for eating habits (3C). 
+In the multivariate model adjusted for sex, we found 
+that elderly individuals were 47.0% more likely to have 
+high adherence to the Dietary Guidelines (OR 1.47; 
+95%CI 1.1; 2.0). On the other hand, those in the first 
+income tertile had lower odds of adherence (OR 0.58; 
+95%CI 0.41; 0.81), as did those who self-rated their 
+health as regular (OR 0.73; 95%CI 0 55; 0.96) and 
+poor/very poor (OR 0.26; 95%CI 0.13; 0.52) (Table 2).
+Discussion
+Almost half of the Health Fitness Program 
+participants with obesity showed high adherence to 
+the dietary practices recommended by the Dietary 
+Guidelines, with the odds being higher among elderly 
+individuals, with higher income and better self-rated 
+health. The most prevalent eating practices aligned 
+with the Dietary Guidelines recommendations were 
+eating while sitting at the table and taking part in meal 
+preparation; and among the least prevalent, replacing 
+beans with other legumes, using whole wheat flour 
+and the habit of eating breakfast.
+Prevalence of high adherence to the Dietary 
+Guidelines recommendations found by us was higher 
+than the prevalence found by (23%) by Gabe & Jaime 
+(14), when investigating a convenience sample of 
+Brazilian macro-regions. This difference may be related 
+to the participants in this study taking part in a health 
+promotion service, which aims to promote healthy 
+lifestyles, including adequate and healthy eating (16).
+Despite the positive results, the Dietary Guidelines 
+recommendations need to be intensified among 
+individuals with low and medium adherence. When 
+considering that adherence to appropriate and 
+healthy eating practices is influenced by individual and 
+environmental factors, it is crucial that obstacles to their 
+being adopted, and the possible means to overcome 
+them (1) are addressed through structural interventions 
+and food and nutrition education. As such, analysis of 
+the dimensions of the scale can contribute to identifying 
+priorities for intervention. In this study, the planning 
+dimension was the weakest among individuals with low 
+adherence to the Dietary Guidelines, highlighting the 
+importance of working on aspects related to buying food, 
+the weekly menu and sharing household activities, which 
+can even contribute to reducing the effects of lack of 
+time, this being one of the main obstacles highlighted by 
+the Dietary Guidelines (1). It is also necessary to work 
+on the relevance of involvement with meals eaten at 
+home, eating breakfast and sitting at the table  (1). 
+Additionally, we identified reduced use of wholemeal 
+flour, buying food at open-air markets and diversifying 
+intaken of legumes beyond beans alone. Both aspects 
+may be related to participants having lower income and 
+the local food culture, which does not favor such eating 
+habits. However, the importance of consuming other 
+foods rich in fiber, such as fruit and vegetables, and 
+continuing to consume beans as the main component 
+of the legume group can be reinforced, with the aim 
+of promoting an adequate and healthy diet.
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+8
+39.7%
+61.3%
+72.0%
+35.0%
+42.0%
+35.9%
+24.6%
+15.7%
+10.7%
+50.7%
+40.6%
+4.1%
+16.4%
+27.5%
+22.9%
+18.0%
+22.3%
+21.6%
+29.4%
+25.1%
+34.7%
+23.2%
+26.1%
+21.5%
+4.8%
+20.4%
+11.6%
+5.2%
+4.7%
+13.6%
+12.8%
+13.8%
+19.2%
+21.2%
+16.1%
+11.0%
+12.4%
+9.2%
+10.5%
+21.2%
+10.5%
+5.2%
+29.1%
+25.5%
+20.9%
+31.1%
+28.4%
+49.9%
+12.3%
+25.5%
+81.9%
+52.7%
+I usually eat fruit for breakfast
+At home we usually use whole wheat flour
+I usually vary my intake of beans by using peas, lentils or chickpeas instead
+I usually plan the meals I will eat that day
+I usually carry some food with me in case I feel hungry throughout the day
+When I choose fruit and vegetables, I give preference to organic ones
+When I choose fruit and vegetables, I give preference to those that are produced locally
+When I have small snacks during the day, I usually eat fruit or nuts
+I try to eat meals calmly
+I usually buy food at open-air markets or street markets
+At home we share the tasks involved in preparing and eating meals
+At home I usually take part in preparing food
+I usually eat my meals sitting at the table
+Strongly disagree Disagree Agree Strongly agree
+Figure 1. Prevalence of items on the scale of adherence to eating practices aligned with the recommendations of the Dietary Guidelines among people with obesity taking part 
+in the Health Fitness Program. Belo Horizonte, 2022-2023 (n=1,109)
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+9
+29.3%
+38.9%
+77.5%
+56.4%
+33.3%
+51.1%
+40.4%
+29.1%
+40.8%
+53.3%
+27.9%
+29.5%
+20.1%
+12.6%
+23.0%
+13.3%
+38.6%
+46.5%
+27.8%
+51.5%
+33.0%
+48.5%
+17.5%
+15.9%
+4.9%
+12.3%
+9.0%
+7.4%
+7.6%
+20.2%
+5.2%
+6.8%
+11.5%
+23.7%
+25.2%
+5.0%
+8.3%
+44.4%
+2.9%
+5.5%
+22.9%
+2.5%
+6,.%
+12.1%
+I usually skip at least one of my main meals (lunch and dinner)
+I usually eat my meals sitting on the living room sofa or in bed
+I usually eat meals at my work or study desk
+I take advantage of meal times to solve other things and end up not eating
+When I drink coffee or tea, I usually add sugar
+I usually eat sandwiches, snacks or pizza, instead of main lunch or dinner meals
+I usually drink soda
+I have a habit of eating snacks between meals
+I usually go to fast-food restaurants or snack bars
+I usually drink industrialized juices, such as boxed, powdered, bottled or canned juices
+I usually eat candies, chocolates and other sweets
+Strongly disagree Disagree Agree Strongly agree
+Figure 2. Prevalence of items on the scale of adherence to eating practices not aligned with the recommendations of the Dietary Guidelines among people with obesity taking part in 
+the Health Fitness Program. Belo Horizonte, 2022-2023 (n=1,109)
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+10
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+Fruit/nuts for snacks*
+Locally produced FV*
+Organic FV*
+Have food with me in case I get hungry*
+Plan the day's meals*
+Vary types of legumes*
+Use whole meal flour*
+Eat fruit for breakfast*
+Eat meals at the table*
+Eat meals calmly*
+Help prepare meals*
+Prepare/eat meals together*
+Buy food at markets*
+Do other activities at meals times**
+Eat meals at work/study desk**
+Eat meals on sofa/in bed**
+Skip main meals**
+Eat candies/chocolate/sweets**
+Drink industrialized juices**
+Eat in fast-food restaurants**
+Eat snacks between meals**
+Drink soda**
+Eat snacks instead of main meals**
+Add sugar to coffee/tea**
+High Not high
+Figure 3. Prevalence of items on the scale of adherence to dietary practices recommended* and not recommended** 
+by the Dietary Guidelines, according to their dimensions, among people with obesity taking part in the Health 
+Fitness Program, Belo Horizonte, 2022-2023 (n=1,109)
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+Fruit/nuts for snacks
+Locally produced fruit and veg.
+Organic fruit and veg.
+Take food in case gets hungry
+Plan the day's meals
+Vary types of legumes
+Use wholemeal flour
+Eat fruit at breakfast
+3A. Prevalence of the planning items of the adherence scale for dietary practices recommended by the Dietary 
+Guidelines, according to their dimensions, among people with obesity taking part in the Health Fitness Program. 
+Belo Horizonte, 2022-2023 (n=1,109)
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+11
+          
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+Eat meals sitting at the table
+Eat meals calmly
+Take part in preparing mealsShare preparing/eating meals
+Buy food at street markets
+High Not high
+3B. Prevalence of the domestic organization items of the adherence scale for dietary practices recommended 
+by the Dietary Guidelines, according to their dimensions, among people with obesity taking part in the Health 
+Fitness Program. Belo Horizonte, 2022-2023 (n=1,109)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+Other activities at meal times
+Eat meals at work/study desk
+Eat meals on sofa/in bed
+Skip main meals
+3C. Prevalence of the ways of eating items of the adherence scale for dietary practices not recommended by the 
+Dietary Guidelines, according to their dimensions, among people with obesity taking part in the Health Fitness 
+Program. Belo Horizonte, 2022-2023 (n=1,109)
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+12
+0
+10
+20
+30
+40
+50
+60
+70
+Eat sweets/chocolate/candies
+Drink industrialized juice
+Use fast food restaurants
+“Nibble” between mealsDrink soft drinks
+Have snacks instead of
+lunch/dinner
+Sweeten coffee/tea with sugar
+3D. Prevalence of the ways of eating items of the adherence scale for dietary practices not recommended** by 
+the Dietary Guidelines, according to their dimensions, among people with obesity taking part in the Health Fitness 
+Program. Belo Horizonte, 2022-2023 (n=1,109)
+High adherence to the Dietary Guidelines 
+recommendations was associated with stage of life, 
+as also found by Gabe & Jaime (14). This relationship 
+may be linked to the ways of living taken on as age 
+increases and also greater prevalence of diseases that 
+require greater care with nutrition and health (17-19). 
+Furthermore, elderly individuals, in general, have more 
+time available to dedicate to buying/preparing food 
+and using their culinary skills (19).
+Another factor we found to be associated with high 
+adherence to the Dietary Guidelines recommendations 
+was family income, this being an important determinant 
+of access to adequate and healthy food (20-21). In 
+this study, we found that users in the first income 
+tertile had lower odds of high adherence to the Dietary 
+Guidelines recommendations. Considering that the 
+areas surrounding the Health Fitness Program units 
+in Belo Horizonte are characterized by lower density 
+of establishments that sell healthy foods, limited 
+purchasing power and access limitations can be 
+additional difficulties to adherence (22-23). Higher 
+income is associated with greater food purchasing 
+power, especially given the increasing cost of 
+unprocessed and minimally processed foods in Brazil 
+(24). Furthermore, it contributes to overcoming the 
+limited supply of these foods in local commerce, by 
+facilitating physical access to foods with better quality 
+and price in other regions (25).
+High adherence to the Dietary Guidelines 
+recommendations was also greater among participants 
+with good/very good self-rated health. As it is a health 
+promotion service, participation in the Program may 
+result in adoption of healthier behaviors and greater 
+readiness to do so, resulting in more positive self-rated 
+health and, consequently, people seeking to make 
+changes in their diet (26).
+Despite its results, this study has limitations that 
+must be considered. Conducting it in a Primary Health 
+Care promotion service, despite being a potential, 
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+13
+may also limit its results being inferred in relation to 
+the general population. Program users may be more 
+exposed to dietary guidance provided by nutritionists 
+or other health professionals, in addition to mostly 
+being women (26). Such aspects may have an impact 
+on adherence to the Dietary Guidelines considering 
+that women and individuals more exposed to health 
+guidelines tend to adopt healthier behaviors when 
+compared to their counterparts. However, 76% of 
+the Brazilian population is covered by Primary Health 
+Care (27), and Brazil currently has 3,437 Health Fitness 
+Program units (28). Another possible limitation was the 
+Table 2. Sex-adjusted association between sociodemographic and health characteristics, and high adherence to 
+dietary practices recommended by the Dietary Guidelines, among people with obesity taking part in the Health 
+Fitness Program. Belo Horizonte, 2022-2023 (n=1,109)
+Variables OR (95%CI) p-value
+Stage of life
+Adult Reference -
+Elderly 1.47 (1.10; 2.00) 0.013
+Professional occupation
+Housewife Reference -
+Retired 1.05 (0.75; 1.48) 0.773
+Unemployed 0.67 (0.33; 1.34) 0.252
+Other 0.93 (0.66; -1.44) 0.648
+Monthly per capita income
+1st tertile (BRL 57-606) Reference -
+2nd tertile (BRL 625-BRL 1,212) 0.75 (0.54; 1.04) 0.085
+3rd tertile (BRL 1,250-BRL 10,000) 0.58 (0.41; 0.81) 0.002
+Hypertension
+No Reference -
+Yes 0.99 (0.75; 1.30) 0.094
+Type 2 diabetes
+No Reference -
+Yes 1.31 (0.99; 1.75) 0.062
+Self-rated health
+Good/very good Reference -
+Regular 0.73 (0.55; 0.96) <0.001
+Poor/very poor 0.26 (0.13; 0.52) 0.013
+Length of time in the Health Fitness Program
+1st tertile (0-2.8) Reference -
+2nd tertile (2.9-4.6) 0.87 (0.64; 1.18) 0.359
+3rd tertile (4.7-16.5) 0.80 (0.59; 1.12) 0.210
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+14
+assessment of adherence based on self-rating (Likert 
+scale), which may be subject to information and social 
+desirability bias. In order to minimize these biases, we 
+used a scale validated for the Brazilian population (13).
+Notwithstanding, it is noteworthy that this is the first 
+study to analyze the degree of adherence to practices 
+recommended by the Dietary Guidelines among SUS 
+users with obesity, generating important contributions 
+to the body of evidence. The use of a validated tool, 
+which measures different dimensions of adequate 
+and healthy eating, in a representative sample of a 
+public health service, is equally innovative, allowing a 
+comprehensive assessment of the eating practices of 
+participants in an important Brazilian Primary Health 
+Care service. Therefore, the potential of this study to 
+contribute to the improvement of actions to implement 
+the Dietary Guidelines in Primary Health Care stands 
+out, especially among people with obesity.
+In conclusion, stage of life, better income and 
+positive self-rated health were factors associated with 
+high adherence to dietary practices recommended by 
+the Dietary Guidelines among people with obesity 
+participating in the Health Fitness Program in Belo 
+Horizonte. These results highlight the need to target 
+efforts towards the development of actions to promote 
+adequate and healthy eating, based on the Dietary 
+Guidelines, among adults and those belonging to 
+vulnerable groups.
+Correspondence: Aline Cristine Souza Lopes 
+ alinelopesenf@gmail.com
+Received: 22/8/2024 Approved: 16/12/2024
+Peer reviews:  doi•10.1590/S2237-96222024v34e20240287.a 
+10.1590/S2237-96222024v34e20240287.b
+Editor-in-chief: Jorge Otávio Maia Barreto 
+Scientific editor: Everton Nunes da Silva 
+Associate editor: Julicristie Machado de Oliveira 
+Peer review administrator: Izabela Fulone 
+Peer reviewers: Tatiana Sadalla Colles , 
+Raysa Alvarez 
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+15
+References
+1. Ministério da Saúde (BR). Guia alimentar para a população brasileira. 2. ed. Brasília: Ministério da Saúde, 
+2014. 156 p.
+2. Ministério da Saúde (BR). Secretaria de Vigilância em Saúde Departamento de Vigilância de Doenças e 
+Agravos Não Transmissíveis e Promoção da Saúde. Política Nacional de Promoção da Saúde. Anexo I da 
+Portaria de Consolidação nº 2, de 28 de setembro de 2017, que consolida as normas sobre as políticas 
+nacionais de saúde do SUS. Brasília: Ministério da Saúde; 2018. 42p.
+3. Ministério da Saúde (BR). Secretaria de Atenção à Saúde. Departamento de Atenção Básica. Política 
+Nacional de Alimentação e Nutrição. 1. ed. Brasília: Ministério da Saúde; 2012. 86p.
+4. Gabe KT, Jaime PC. Development and testing of a scale to evaluate diet according to the recommendations 
+of the Dietary Guidelines for the Brazilian Population. Public Health Nutrition. 2019;22(5):785–96. 
+5. Magalhães ACO, Marques CG, Lucin GA, Nakamoto FP, Tufik S, Thomatieli-Santos RV, et al. The relationship 
+between sleep- and circadian rhythm-related parameters with dietary practices and food intake of sedentary 
+adults: a cross-sectional study. Sleep Biol. Rhythms. 2024; 22:113–124. 
+6. Gabe KT, Costa CS, Dos Santos FS, Souza TN, Jaime PC. Is the adherence to the food practices 
+recommended by the dietary guidelines for the Brazilian population associated with diet quality?. Appetite. 
+2023; 190. 
+Conflict of interest
+None to declare.
+Use of generative artificial intelligence
+Not used.
+Funding
+National Council for Scientific and Technological Development (Process 442877/2020-0; 302451/2022-
+6; ACSL research productivity grant); Coordination for the Improvement of Higher Education Personnel 
+(Funding Code 001), Ministry of Health (TED - 63/2019) and Minas Gerais Research Support Foundation 
+(APQ 00303-22).
+Authorship credit
+MSL: Conceptualization, Formal analysis, Investigation, Methodology, Project administration, Writing - 
+original draft, Writing - review & editing. VMSMS: Investigation, Writing - original draft, Writing - review 
+& editing. NLF: Formal analysis, Project administration, Writing - original draft, Writing - review & editing. 
+MCRC: Investigation, Writing - original draft, Writing - review & editing. PPF: Data curation, Investigation, 
+Methodology, Project administration, Supervision, Writing - original draft, Writing - review & editing. ACSL: 
+Conceptualization, Data curation, Formal analysis, Funding acquisition, Investigation, Methodology, Project 
+administration, Writing - original draft, Writing - review & editing.
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+16
+7. Ministério da Saúde (BR). Instrutivo de Abordagem Coletiva para o Manejo da Obesidade no Sistema Único 
+de Saúde. Universidade Federal de Minas Gerais. Brasília: Ministério da Saúde, 2021. 150 p. 
+8. Ministério da Saúde (BR). Secretaria De Ciência, Tecnologia, Inovação E Insumos Estratégicos. Protocolo 
+Clínico e Diretrizes Terapêuticas do Sobrepeso e Obesidade em Adultos. Brasília: Ministério da Saúde; 2020. 
+391p.
+9. Freitas PP, Lopes MS, Araujo JR, Cunha RB, Duarte CK. Lopes ACS. Protocol of Randomized Controlled 
+Community Trial (RCCT) for obesity management in Brazilian primary health care. BMC Health Services 
+Researchh, (2024) 24:1197. 
+10. Alves JA, Gibson CL. States and Capitals of Health: Multilevel Health Governance in Brazil. Latin American 
+Politics and Society. 2019;61(1):54-77. 
+11. Ministério da Saúde (Brasil). Cartilha Informativa: Academia da Saúde [Internet]. Brasília, 2014b. [Citado 
+em 06 ago. 2024] Disponível em: http:/ /bvsms.saude.gov.br/bvs/publicacoes/academia_saude_cartilha.pdf.  
+12. Prefeitura Municipal de Belo Horizonte. Academia da Cidade [Internet]; 2024. [Cited 07 Ago 2024]. 
+Available from: https:/ /prefeitura.pbh.gov.br/saude/informacoes/atencao-a-saude/promocao-da-saude/
+academia-da-cidade.  
+13. Gabe KT, Jaime PC. Convergent validity and invariance analysis of a scale to measure adherence to eating 
+practices recommended by the Dietary Guidelines for the Brazilian Population. Rev Bras Epidemiol. 2022; 25. 
+14. Santos TSSS, Carvalho MCR, Duarte CK, Jaime PC, Lopes ACS. Medida do equilíbrio de decisões para 
+redução do peso corporal entre pessoas com sobrepeso ou obesidade: uma revisão sistemática. DEMETRA: 
+Alimentação, Nutrição & Saude. 2023;18:1-28. 
+15. Gabe KT, Costa CS, Santos FS, Souza TN, Jaime PC. Práticas alimentares segundo o Guia alimentar para a 
+população brasileira: fatores associados entre brasileiros adultos, 2018. Epidemiol Serv Saude. 2020;29(1). 
+16. Ministério da Saúde (BR). Monitoramento do Programa Academia da Saúde: Ciclo 2019. Brasília: 
+Ministério da Saúde; 2022. 70p.
+17. Martins AL da C, Bertin RL, Calao KMFN, Medeiros CO. Habilidades culinárias de idosos praticantes de 
+atividades físicas aquáticas. RSD. 2020;9(2). 
+18. Silva SRDA, Araújo KMST, Xavier MLA, Silva ALO. Representações Sociais Da Alimentação Saudável Para 
+Pessoa Idosa: Uma Revisão Integrativa: Representações Sociais Da Alimentação Saudável Para Pessoa Idosa. 
+Rev Enferm. Atual In Derme. 2024;98(1). 
+19. Mills S, White M, Brown H, Wrieden W, Kwasnicka D, Halligan J, et al. Health and social determinants and 
+outcomes of home cooking: A systematic review of observational studies. Appetite. 2017;111:116-34. 
+20. Santin F, Gabe KT, Levy RB, Jaime PC. Food consumption markers and associated factors in Brazil: 
+distribution and evolution, Brazilian National Health Survey, 2013 and 2019. Cad Saúde Publica. 2022;38(1). 
+21. Oliveira N, Santin F, Paraizo TR, Sampaio JP, Moura Nunes, Canella DS. Baixa variedade na disponibilidade 
+domiciliar de frutas e hortaliças no Brasil: Dados das POF 2008-2009 e 2017-2018. Cienc Saude Coletiva. 
+2021; 26(11):5805-16. 
+22. Lopes MS, Martiniano MO, De Freitas PP, Carvalho MCR, Sales DM, Lopes ACS. Comércio de alimentos 
+para consumo imediato no entorno do Programa Academia da Saúde: uma análise segundo desigualdades. 
+Cienc. saude coletiva. 2022;27(08):3283-94.  
+23. Menezes MC, Costa BVL, Oliveira CL, Lopes ACS. Local food environment and fruit and vegetable 
+consumption: An ecological study. Preventive Medicine Reports. 2017;5:13-20.  
+24. Andrade GC, Caldeira TCM, Mais LA, Bortoletto AP, Claro RM. Food price trends during the COVID-19 
+pandemic in Brazil. PLoS One. 2024;9(5). 
+25. Marquezine TC, Vandevijvere S, Swinburn B; Mackay S, Claro RM. Differences in the cost and 
+environmental impact between the current diet in Brazil and healthy and sustainable diets: a modeling study. 
+Nutrition Journal. 2024;23(71). 
+ 
+Epidemiol Serv Saude. 2025:34;e20240287Lopes MS et al.
+ORIGINAL ARTICLE
+17
+26. Mendonça RD, Lopes MS, Carvalho MCR, De Freiras PP, Lopes ACS. Adherence to healthy lifestyle in the 
+Programa Academia da Saúde. Revista Brasileira de Atividade Física e Saúde. 2020:5.  
+27. Instituto de Estudos para Políticas de Saúde (IEPS). Cobertura da Atenção Básica, 2021. 
+[Cited 16 Jul 2024]. Available from: https:/ /iepsdata.org.br/visualizations?chart=1&indicator=cob_
+ab&state=S%C3%A3o%20Paulo&id_estado=35&year=em%202021&granularity=vizReg . 
+28. Ministério da Saúde (BR). DATASUS. Tabnet. Brasília, DF: Ministério da Saúde, 2022. [Cited 17 jul 2024]. 
+Available from: https:/ /datasus.saude.gov.br/informacoes-de-saude-tabnet/.
+Adherencia a las prácticas dietéticas recomendadas por la Guía Alimentaria para la Población Brasileña 
+entre personas con obesidad: línea base de un ensayo comunitario realizado en el Programa Gimnasio 
+de la Salud en Belo Horizonte, 2022-2023
+Resumen
+Objetivo: Analizar los factores sociodemográficos y de salud asociados con la alta adherencia a las prácticas dietéticas recomendadas 
+por la Guía Alimentaria para la Población Brasileña entre usuarios con obesidad participantes del Programa Gimnasio de la Salud en 
+Belo Horizonte, Minas Gerais, Brasil. Métodos: Estudio transversal en una muestra representativa del Programa Gimnasio de la 
+Salud con participantes con obesidad y edad ≥20 años. Se recogieron datos sociodemográficos y de salud y se evaluó la adherencia 
+a la escala de la Guía Alimentaria, clasificada en: baja (<32 puntos), media (32-41 puntos) y alta (>41 puntos). Se realizó regresión 
+logística multivariada. Resultados: Participaron 1.109 personas, la mayoría mujeres (92,5%) y que padecían alguna enfermedad 
+crónica (85,8%). En cuanto a las condiciones de salud, la mayoría clasificó su salud como muy buena/buena (62,2%), el 62,8% 
+tenía hipertensión y el 68,0% obesidad clase I. La alta adherencia a la Guía Alimentaria fue del 46,0%. Después del ajuste, la alta 
+adherencia se asoció con ser mayor ([ odds ratio-OR], OR 1,47; IC95% 1,1; 2,0), tener mayores ingresos (OR 0,58; IC95% 0,41; 
+0,81) y una mejor autopercepción de salud (regular: OR 0,73; IC95% 0,55; 0,96; pobre/muy pobre: OR 0,26; IC95% 0,13; 0,52). 
+Conclusión: La alta adherencia a la Guía Alimentaria se asoció con etapa de vida, mejores ingresos y autopercepción positiva de la 
+salud, destacando la necesidad de dirigir esfuerzos hacia los adultos y grupos vulnerables.
+Palabras clave: Estudios Observacionales; Guías Alimentarias; Obesidad; Factores Sociodemográficos; Atención Primaria de Salud.
+Adesão às práticas alimentares recomendadas pelo Guia Alimentar para a População Brasileira entre 
+pessoas com obesidade: linha de base de ensaio comunitário realizado no Programa Academia da 
+Saúde de Belo Horizonte, 2022-2023
+Resumo
+Objetivo: Analisar os fatores sociodemográficos e de saúde associados à alta adesão às práticas alimentares recomendadas pelo 
+Guia Alimentar para População Brasileira entre usuários com obesidade do Programa Academia da Saúde de Belo Horizonte, Minas 
+Gerais. Métodos: Estudo transversal em amostra representativa do Programa Academia da Saúde com participantes com obesidade 
+e idade ≥20 anos. Coletou-se dados sociodemográficos e de saúde, e aplicou a escala de adesão ao Guia Alimentar, classificada em: 
+baixa (<32 pontos), média (32-41 pontos) e alta (>41 pontos). Realizou-se regressão logística multivariada. Resultados: Participaram 
+1.109 indivíduos, sendo a maioria mulheres (92,5%) e com alguma doença crônica (85,8%). Quanto às condições de saúde, a maioria 
+avaliou sua saúde como muito boa/boa (62,2%), 62,8% possuíam Hipertensão e 68,0% obesidade I.  Alta adesão ao Guia Alimentar 
+foi de 46,0%. Após ajuste, a alta adesão foi associada a ser idoso [razão de chances (odds ratio, OR 1,47; IC95% 1,1; 2,0), ter maior 
+renda (OR 0,58; IC95% 0,41; 0,81) e melhor percepção de saúde (regular: OR 0,73; IC95% 0,55; 0,96; ruim/muito ruim: OR 0,26; 
+IC95% 0,13; 0,52). Conclusão: A alta adesão ao Guia foi associada à fase da vida, melhor renda e autoavaliação positiva da saúde, 
+evidenciando a necessidade de direcionar esforços para adultos e grupos vulneráveis. 
+Palavras-chave: Estudos Observacionais; Guias Alimentares; Obesidade; Fatores Sociodemográficos; Atenção Primária à Saúde.

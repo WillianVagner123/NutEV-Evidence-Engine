@@ -1,0 +1,1160 @@
+ARTICLE IN PRESS
+Article in Press
+Association of serum Wnt1-inducible signaling 
+pathway protein 1 (WISP1) levels with 
+osteoarthritis and obesity-related inflammation 
+in obese adults
+Scientific Reports
+Received: 20 February 2026
+Accepted: 6 May 2026
+Cite this article as: Yilmaz O., Erinc O., 
+Kocak S. et al. Association of serum 
+Wnt1-inducible signaling pathway 
+protein 1 (WISP1) levels with 
+osteoarthritis and obesity-related 
+inflammation in obese adults. Sci 
+Rep (2026). https://doi.org/10.1038/
+s41598-026-52502-x
+Ozgur Yilmaz, Osman Erinc, Soner Kocak, Ozan Cemal Icacan, Murvet Algemi, Sengul 
+Aydin Yoldemir & Murat Akarsu
+We are providing an unedited version of this manuscript to give early access to its 
+findings. Before final publication, the manuscript will undergo further editing. Please 
+note there may be errors present which affect the content, and all legal disclaimers 
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer 
+Review reports will publish with the final article.
+https://doi.org/10.1038/s41598-026-52502-x
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International 
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit 
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do 
+not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the 
+article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain 
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+Serum Wnt1-Inducible Signaling Pathway Protein 1 (WISP1) Levels 
+and Osteoarthritis in Obese Adults: Insight into the Inflammatory 
+Link Between Obesity and Osteoarthritis Association of Serum Wnt1-
+Inducible Signaling Pathway Protein 1 (WISP1) Levels with 
+Osteoarthritis and Obesity-Related Inflammation in Obese Adults
+Ozgur Yilmaz1*, Osman Erinc1, Soner Kocak2, Ozan Cemal Icacan3, Murvet 
+Algemi4, Sengul Aydin Yoldemir1, Murat Akarsu1
+Affiliations:
+1Department of Internal Medicine, Kanuni Sultan Suleyman Training and 
+Research Hospital, Istanbul, Türkiye
+2Department of Orthopedics and Traumatology, Kanuni Sultan Suleyman 
+Training and Research Hospital, Istanbul, Türkiye
+3Department of Rheumatology, Kanuni Sultan Suleyman Training and 
+Research Hospital, Istanbul, Türkiye
+4Department of Clinical Biochemistry, Kanuni Sultan Suleyman Training and 
+Research Hospital, Istanbul, Türkiye
+Short Title: Serum WISP1 and Osteoarthritis in Obesity
+Authors:
+Ozgur Yilmaz, M.D.
+dr_ozguryilmaz@hotmail.com
+ORCID no: 0009-0000-4976-4771
+Osman Erinc, Assoc. Prof., M.D.
+doctorerinc@gmail.com
+ORCID no: 0000-0002-8676-0136
+Soner Kocak, M.D.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+dr.sonerkocak@gmail.com
+ORCID no: 000-0002-1607-5432
+Cemal Ozan Icacan, M.D.
+ozancemalicacan@gmail.com
+ORCID no: 0000-0002-1054-5034
+Murvet Algemi, M.D.
+algemimurvet@gmail.com
+ORCID no: 0000 0001 5117 528x
+Sengul Aydin Yoldemir, Assoc. Prof., M.D.
+sengulaydinn@gmail.com
+ORCID no: 0000-0003-4236-1181
+Murat Akarsu, Prof., M.D.
+muratakarsu79@gmail.com
+ORCID no: 0000-0002-2675-4252
+*Corresponding Author:
+Ozgur Yilmaz, M.D.
+E-mail: dr_ozguryilmaz@hotmail.com
+Kanuni Sultan Suleyman Training and Research Hospital, Istanbul, Turkey
+Abstract
+Background: Osteoarthritis (OA) is increasingly recognized as a 
+metabolically influenced inflammatory disease, particularly in the context of 
+obesity. Wnt1-inducible signaling pathway protein 1 (WISP1), a downstream 
+mediator of Wnt/β-catenin signaling, has been implicated in adipose tissue 
+inflammation and cartilage remodeling; however, clinical data regarding 
+circulating serum WISP1 levels in obesity-associated OA remain limited. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+This study aimed to investigate the relationship between serum WISP1 
+concentrations and OA status in obese adults. Methods: This cross-
+sectional study included 180 participants classified into three groups: 
+healthy non-obese controls (n = 60), obese individuals without OA (n = 60), 
+and obese individuals with OA (n = 60). Clinical, anthropometric, metabolic, 
+and inflammatory parameters were recorded. Serum WISP1 concentrations 
+were measured using enzyme-linked immunosorbent assay (ELISA). Group 
+comparisons, correlation analyses, logistic regression models, and receiver 
+operating characteristic (ROC) analyses were performed. Results: Serum 
+WISP1 concentrations differed significantly among groups, showing a 
+stepwise increase from healthy controls to obese OA (–) and obese OA (+) 
+participants (p < 0.001). WISP1 remained independently associated with 
+osteoarthritis among obese individuals after adjustment for age, sex, body 
+mass index, HOMA-IR, diuretic use and C-reactive protein (OR = 1.003; 
+95% CI: 1.001–1.005). Although obese participants demonstrated adverse 
+metabolic and inflammatory profiles compared with controls, most 
+metabolic parameters did not distinguish OA subgroups within obesity. ROC 
+analysis demonstrated strong good discriminatory performance of WISP1 
+for distinguishing obese OA (+) from versus healthy controls (AUC = 0.980) 
+and moderate discrimination between obese OA (+) and obese OA (–) 
+groups (AUC = 0.807, 95% CI: 0.727–0.879, p < 0.001). Conclusions: 
+Serum WISP1 concentrations are elevated in obese individuals with 
+osteoarthritis and are independently associated with OA status beyond 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+conventional measures of adiposity and systemic inflammation. These 
+findings support a potential role of suggest that WISP1 may serve as a 
+potential biomarker associated with metabolic–inflammatory processes 
+reflecting metabolic–inflammatory processes in obesity-associated 
+osteoarthritis. Given the cross-sectional nature of the study, the observed 
+findings should be interpreted as associations, and causal relationships 
+cannot be inferred. Further longitudinal and externally validated studies are 
+needed to clarify its clinical utility and biological significance. Keywords: 
+osteoarthritis; obesity; WISP1; adipokine; inflammation.
+Introduction
+Osteoarthritis (OA) is the most prevalent degenerative joint disorder 
+worldwide and represents a leading cause of chronic pain, disability, and 
+reduced quality of life among aging populations (1). Pathologically, OA is 
+characterized by progressive articular cartilage loss, subchondral bone 
+remodeling, osteophyte formation, and varying degrees of synovial 
+inflammation, ultimately resulting in impaired joint function (2). In parallel 
+with global demographic aging and the rising prevalence of obesity, the 
+overall burden of OA is projected to increase substantially in the coming 
+decades (3). Although historically regarded as a consequence of mechanical 
+“wear and tear,” OA is now widely recognized as a complex, multifactorial 
+disease in which biomechanical, metabolic, and inflammatory factors interact 
+to drive structural joint deterioration (4).
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Obesity is among the most influential modifiable risk factors for OA. 
+Beyond increasing mechanical loading on weight-bearing joints, adipose 
+tissue functions as a metabolically active endocrine organ that secretes 
+adipokines and pro-inflammatory mediators capable of influencing cartilage 
+and synovial biology (5). Elevated circulating levels of cytokines such as 
+interleukin-6 (IL-6) and tumor necrosis factor-alpha (TNF-α) have been 
+associated with synovial inflammation and cartilage degradation in OA (6). 
+Moreover, increased expression of leptin and its functional receptor (Ob-Rb) 
+has been demonstrated in osteoarthritic cartilage, suggesting a role for 
+adipokine-mediated modulation of matrix turnover (7). These observations 
+have contributed to the concept of “metabolic OA,” wherein obesity-related 
+low-grade systemic inflammation synergizes with mechanical stress to 
+exacerbate structural joint damage (8).
+Recent investigations have increasingly emphasized the inflammatory 
+component of OA, suggesting that its role extends beyond a secondary 
+response to structural damage. Synovial tissue frequently exhibits 
+macrophage and T-lymphocyte activation, and synovitis has been associated 
+with structural progression and pain severity (9). Pro-inflammatory cytokines 
+and chemokines stimulate the production of catabolic enzymes, particularly 
+matrix metalloproteinases (MMPs) and aggrecanases (notably ADAMTS-4 
+and ADAMTS-5), thereby accelerating degradation of type II collagen and 
+aggrecan (10). These processes contribute to a self-perpetuating cycle of 
+matrix breakdown, cellular stress, and impaired repair capacity (11).
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Within this inflammatory-metabolic framework, the Wnt/β-catenin 
+signaling pathway has emerged as a key regulator of cartilage homeostasis. 
+Physiological Wnt activity is essential for cartilage development; however, 
+dysregulated activation promotes chondrocyte hypertrophy, catabolic 
+enzyme expression and osteophyte formation in OA (12). Experimental 
+studies demonstrate that excessive Wnt signaling accelerates cartilage 
+degeneration, whereas its inhibition mitigates structural damage, 
+underscoring its relevance in OA progression (13).
+Wnt1-inducible signaling pathway protein 1 (WISP1) is a matricellular 
+protein and downstream effector of Wnt/β-catenin signaling. As CCN4, a 
+member of the CCN family of matricellular proteins, WISP1 interacts with 
+extracellular matrix components and cell-surface receptors to regulate 
+cellular proliferation, fibrosis, and tissue remodeling (14). In human 
+osteoarthritic cartilage, WISP1 expression is increased in lesioned regions 
+compared with preserved areas and is associated with disease-related 
+alterations in DNA methylation. In vitro studies indicate that WISP1 exposure 
+in chondrocytes reduces extracellular matrix synthesis while enhancing 
+expression of matrix-degrading enzymes such as MMPs and ADAMTS (15). 
+Furthermore, Wisp1-deficient mice develop attenuated cartilage 
+degeneration following experimental OA induction, supporting its 
+involvement in structural joint pathology (16).
+Beyond its role in joint tissues, WISP1 has also been characterized as 
+an adipokine linked to obesity and metabolic dysfunction. Increased WISP1 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+expression in adipose tissue of obese individuals correlates with markers of 
+inflammation and insulin resistance (17). Serum WISP1 concentrations have 
+been associated with body mass index (BMI) and metabolic parameters in 
+human cohorts (17-20), and experimental studies demonstrate that WISP1 
+can interfere with insulin signaling pathways and modulate inflammatory 
+cascades (18). These findings position WISP1 at the intersection of adiposity, 
+insulin resistance, and low-grade systemic inflammation.
+Despite accumulating experimental and tissue-level evidence 
+implicating WISP1 in cartilage remodeling and metabolic inflammation, 
+clinical data regarding serum WISP1 concentrations in OA remain scarce. 
+Most available studies have focused on intra-articular expression or 
+experimental models, whereas the relationship between systemic WISP1 
+levels and OA status in well-characterized obese populations has not been 
+adequately examined. It therefore remains unclear whether elevated serum 
+WISP1 reflects adiposity-related metabolic activation alone or is also 
+associated with OA at the systemic level.
+Therefore, the present study aimed to evaluate serum WISP1 
+concentrations in obese individuals with and without OA and to explore their 
+association with clinical and inflammatory parameters. By addressing the gap 
+between experimental findings and serum biomarker data, this study seeks 
+to clarify the potential relevance of WISP1 within the metabolic–inflammatory 
+framework of obesity-associated osteoarthritis.
+Materials and Methods
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Study Design
+This single-center, cross-sectional observational study was conducted 
+at the Department of Internal Medicine, Kanuni Sultan Suleyman Training 
+and Research Hospital. The study protocol was reviewed and approved by the 
+Institutional Clinical Research Ethics Committee (approval date: 20 February 
+2025; decision no: E-80929729-000-269138296) and was performed in 
+accordance with the Declaration of Helsinki. Written informed consent was 
+obtained from all participants prior to enrollment. An a priori power analysis 
+was conducted using G*Power software (version 3.1.9.2; Heinrich Heine 
+University, Düsseldorf, Germany). Based on variance estimates derived from 
+a pilot subset and assuming a one-way ANOVA (fixed effects, omnibus), the 
+effect size was calculated as Cohen’s f = 0.31. With a significance level (α) of 
+0.05, statistical power (1−β) set at 0.95, and three study groups, the minimum 
+required total sample size was 164 participants. A total of 180 individuals 
+were ultimately included, exceeding the calculated requirement.
+Study Population
+A total of 180 participants aged 18–80 years were consecutively 
+recruited during the study period. Participants were categorized into three 
+predefined groups (n = 60 per group) according to BMI and OA status: Group 
+1, healthy non-obese controls (HC); Group 2, obese individuals without OA 
+[obese OA (-)]; and Group 3, obese individuals with OA [obese OA (+)]. Groups 
+were frequency-balanced with respect to age and sex distribution. Obesity 
+was defined according to World Health Organization criteria as BMI ≥30 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+kg/m² (21). Anthropometric measurements were obtained under 
+standardized conditions using calibrated equipment. The diagnosis of OAwas 
+established based on compatible clinical symptoms and radiographic 
+findings, including joint space narrowing, osteophyte formation, and 
+subchondral sclerosis, in accordance with contemporary American College of 
+Rheumatology clinical classification frameworks for symptomatic OA (22). 
+Radiographic severity was graded using the Kellgren–Lawrence 
+classification, in and only patients with knee definite radiographic OA (grade 
+≥2) , where a grade ≥2 was considered indicative of definite radiographic OA 
+(23), although the overall diagnosis was based on combined clinical and 
+radiographic assessment were included in the OA group (23). All participants 
+presenting with musculoskeletal complaints were evaluated by an 
+experienced orthopedic specialist. Radiographs were assessed by the same 
+orthopedist, and in cases of diagnostic uncertainty, images were 
+independently reviewed by a second orthopedist to reach consensus. 
+Laboratory personnel were blinded to clinical group allocation.
+Exclusion Criteria
+Exclusion criteria included secondary arthritis (rheumatoid arthritis, 
+gout, psoriatic arthritis, post-traumatic arthritis), prior major joint surgery, 
+congenital musculoskeletal abnormalities, severe systemic disease (advanced 
+hepatic, renal, or cardiac failure), active malignancy, diagnosed diabetes 
+mellitus, chronic inflammatory or autoimmune disorders, long-term systemic 
+corticosteroid or immunosuppressive therapy, untreated endocrine 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+disorders, active infection, pregnancy or lactation, and inability to provide 
+informed consent.
+Data Collection
+Demographic data (age, sex, family history), comorbidities, and 
+medication use were recorded from electronic medical records. Body weight 
+and height were measured using standardized calibrated devices, and BMI 
+was calculated as weight (kg) divided by height squared (m²). Body 
+composition analysis was performed using a multi-frequency bioelectrical 
+impedance analyzer (Tanita MC-780MA, Tokyo, Japan), providing 
+measurements of total body fat percentage, visceral fat index, fat-free mass, 
+and skeletal muscle mass. All measurements were conducted in the morning 
+following an overnight fast of at least 8 hours. Participants were instructed 
+to avoid caffeine and strenuous physical activity for 24 hours prior to 
+assessment. Measurements were performed by the same trained operator 
+according to manufacturer guidelines. Blood pressure was measured in the 
+seated position after a minimum of 10 minutes of rest. Two readings were 
+obtained and averaged for analysis.
+Sample Collection
+Fasting venous blood samples were collected between 08:00 and 09:00 
+a.m. after an overnight fast of 8–10 hours. Samples were drawn into plain 
+tubes, centrifuged at 4°C (relative centrifugal force equivalent to 
+approximately 3000 × g) for 10 minutes, and serum aliquots were stored at 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+−80°C until analysis. All samples were thawed once and analyzed in batch 
+during a single analytical session to minimize inter-assay variability. 
+Laboratory staff were blinded to group allocation. Routine biochemical 
+parameters including fasting plasma glucose, serum creatinine, alanine 
+aminotransferase (ALT), albumin, total cholesterol, triglycerides, high-
+density lipoprotein-cholesterol (HDLc), and low-density lipoprotein-
+cholesterol (LDLc) were measured using enzymatic colorimetric methods on 
+an automated analyzer (Roche Cobas 8000 c702; Roche Diagnostics, 
+Mannheim, Germany). High-sensitivity C-reactive protein (hsCRP) was 
+measured using an immunoturbidimetric assay on the same platform.
+Measurement of Serum WISP1 Levels
+Serum WISP1 concentrations were measured as the primary biomarker using 
+a double-antibody sandwich enzyme-linked immunosorbent assay (ELISA) kit 
+(Human WISP1 ELISA Kit, Sunred Biological Technology Co., Shanghai, 
+China; Catalog No. 201-12-2360) according to the manufacturer’s 
+instructions. Samples and standards were analyzed in duplicate. Optical 
+density was measured at 450 nm using a calibrated microplate reader 
+(BioTek ELx808, Winooski, VT, USA), and mean values were used for 
+statistical analysis. The assay sensitivity was 20.2 pg/mL, with a measurable 
+range of 22–6000 pg/mL. Serum WISP1 concentrations were expressed in 
+pg/mL. The intra-assay and inter-assay coefficients of variation were <10% 
+and <12%, respectively. Repeated freeze–thaw cycles were avoided to 
+preserve analyte stability. All samples were analyzed in duplicate within a 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+single analytical batch during the same experimental session to minimize 
+variability.
+Statistical Analysis
+Statistical analyses were performed using IBM SPSS Statistics version 
+26.0 (IBM Corp., Armonk, NY, USA). Normality of continuous variables was 
+assessed using the Kolmogorov–Smirnov test. Normally distributed variables 
+were expressed as mean ± standard deviation (SD), and non-normally 
+distributed variables as median (interquartile range, Q1–Q3). Categorical 
+variables were reported as frequencies and percentages. Group comparisons 
+were performed using one-way ANOVA for normally distributed variables and 
+the Kruskal–Wallis test for non-normally distributed variables. Post hoc 
+comparisons were conducted using Bonferroni correction (ANOVA) or Mann–
+Whitney U test (Kruskal–Wallis). Categorical variables were analyzed using 
+Pearson’s chi-square test. The distribution of serum WISP1 levels across 
+groups was visually presented using boxplots generated in Python (version 
+3.13, 64-bit) with seaborn and matplotlib libraries. Spearman’s rank 
+correlation analysis was used to assess associations between serum WISP1 
+and clinical/laboratory variables. Univariate and multivariable binary logistic 
+regression analyses were conducted to identify factors independently 
+associated with OA among obese participants. Univariate and multivariable 
+binary logistic regression analyses were performed to identify factors 
+independently associated with OA among obese participants. In the 
+multivariable model, age, gender, BMI, CRP, HOMA-IR, diuretic use, and 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+serum WISP1 concentration were entered simultaneously based on their 
+clinical and biological relevance. Model fit was assessed using the Omnibus 
+test, Hosmer–Lemeshow goodness-of-fit test, and pseudo-R² statistics. In the 
+binary logistic regression analysis, 60 outcome events were included, 
+corresponding to an events per variable ratio of approximately 8.6. Variables 
+significant in univariate analysis were entered simultaneously into 
+multivariable models. Model fit was evaluated using the Omnibus test and 
+pseudo-R² statistics. Multicollinearity was assessed using tolerance and 
+variance inflation factor (VIF) values. Adjusted odds ratios (ORs) with 95% 
+confidence intervals (CIs) were reported. Multinomial logistic regression 
+analysis was performed to determine independent variables differentiating 
+HC, obese OA (–), and obese OA (+), with HC as the reference category. 
+Receiver operating characteristic (ROC) curve analysis was used to evaluate 
+the discriminatory performance of serum WISP1. The area under the curve 
+(AUC) with 95% CIs was calculated, and the optimal cut-off value was 
+determined using the Youden index. Sensitivity, specificity, positive 
+predictive value (PPV), and negative predictive value (NPV) were reported. A 
+p value <0.05 was considered statistically significant.
+Results
+A total of 180 individuals were included in the study, comprising 60 
+healthy non-obese controls, 60 obese individuals without OA, and 60 obese 
+individuals with OA. The median age of the study population was 54 years. Of 
+the participants, 152 (84.4%) were female and 28 (15.6%) were male. Within 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+the OA group, 44 patients had knee OA, and 16 had non-knee OA. Among 
+patients with knee OA, 13 (29.5%) were classified as Kellgren–Lawrence 
+grade 2, 24 (54.5%) as grade 3, and 7 (15.9%) as grade 4.
+Significant differences were observed in anthropometric and body 
+composition parameters. BMI, waist circumference, waist-to-hip ratio, 
+muscle mass, visceral fat level, and fat-free mass index were significantly 
+higher in both obese OA (–) and obese OA (+) groups compared with HC (all 
+p < 0.001), with no significant difference between the two obese groups. Body 
+fat percentage was significantly highest in the obese OA (+) group, lower in 
+the obese OA (–) group, and lowest in HC (p < 0.001).
+FPG, HOMA-IR, total cholesterol, LDLc, ALT, and triglyceride levels 
+were higher in both obese groups than in healthy controls (all p < 0.001), 
+whereas no significant differences were observed between obese OA (–) and 
+obese OA (+). HDLc levels were lower in the obese OA (–) group than in 
+controls (p = 0.007), with no significant difference between the two obese 
+groups (Table 1).
+Inflammatory markers showed a distinct pattern. CRP levels were 
+lowest in controls, higher in obese OA (–), and highest in obese OA (+) (p < 
+0.001). Erythrocyte sedimentation rate was significantly higher in obese OA 
+(+) compared with both obese OA (–) and HC (p < 0.001). White blood cell 
+counts were significantly elevated in both obese groups compared with HC 
+(p < 0.001), with no significant difference between obese OA (–) and obese 
+OA (+). The detailed results are summarized in Table 1.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Serum WISP1 concentrations differed significantly among the study 
+groups (p < 0.001). Median WISP1 levels were lowest in healthy controls 
+(258.5 pg/mL), significantly higher in obese OA (–) participants (385.0 
+pg/mL), and highest in obese OA (+) individuals (525 pg/mL). Pairwise 
+comparisons demonstrated that WISP1 concentrations were significantly 
+elevated in both obese groups compared with controls, and were further 
+significantly increased in obese OA (+) compared with obese OA (–) (all p < 
+0.001). The distribution of serum WISP1 concentrations across the three 
+groups is illustrated in Figure 1.
+When obese OA (+) participants were stratified according to OA 
+localization, serum WISP1 concentrations remained significantly different 
+across groups (p < 0.001). Median WISP1 levels were lowest in healthy 
+controls (258.5 pg/mL), and significantly higher in both obese patients with 
+knee OA (506 pg/mL) and those with non-knee OA (554 pg/mL). Pairwise 
+comparisons demonstrated that both OA subgroups exhibited significantly 
+elevated WISP1 concentrations compared with controls (all p < 0.001), 
+whereas no significant difference was observed between knee and non-knee 
+OA. Detailed subgroup data are presented in Table 2.
+Spearman correlation analysis revealed a significant positive 
+association between serum WISP1 concentrations and total cholesterol levels 
+in healthy controls (ρ = 0.285, p = 0.028). In the obese OA (–) group, serum 
+WISP1 concentrations were positively correlated with BMI (ρ = 0.289, p = 
+0.025). No other significant correlations were observed between serum 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+WISP1 concentrations and clinical, anthropometric, metabolic, or 
+inflammatory parameters in any of the study groups.
+In univariate logistic regression analysis, serum WISP1 concentration 
+was significantly associated with the presence of OA among obese individuals 
+(p = 0.001). Each 1 pg/mL one-unit increase in serum WISP1 concentration 
+level was associated with a 1.003-fold increase in the odds of OA (OR = 1.003; 
+95% CI: 1.001–1.004). In the multivariable logistic regression model, the 
+overall model was statistically significant (χ² = 32.572 39.000, p < 0.001). 
+The explanatory power of the model was moderate, with a Cox & Snell R² of 
+0.238 0.277 and a Nagelkerke R² of 0.317 0.370. No evidence of 
+multicollinearity was detected (all tolerance values > 0.20 and VIF < 5). After 
+adjustment for age, sex, BMI, HOMA-IR, diuretic use and CRP, serum WISP1 
+concentration remained independently associated with OA (p < 0.001). Each 
+1 pg/mL one-unit increase in serum WISP1 was associated with a 1.003-fold 
+increase in the odds of OA (OR = 1.003; 95% CI: 1.001–1.005) (Table 3). The 
+detailed results of both the univariate and multivariable logistic regression 
+analyses are presented in Table 3.
+Multinomial logistic regression analysis was conducted using the 
+healthy control group as the reference category. The overall model was 
+statistically significant (likelihood ratio χ² = 228.255, p < 0.001), with 
+pseudo-R² values of 0.719 (Cox–Snell), 0.808 (Nagelkerke), and 0.577 
+(McFadden). Compared with healthy controls, serum WISP1 concentration 
+was independently associated with both the obese OA (–) and obese OA (+) 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+groups (both p < 0.001 obese OA (–): OR = 1.025, 95% CI: 1.011–1.039, p < 
+0.001; obese OA (+): OR = 1.028, 95% CI: 1.014–1.042, p < 0.001 ). HOMA-
+IR and CRP levels were also independently associated with group 
+classification in both comparisons (all p < 0.05 HOMA-IR: OR = 11.902, 95% 
+CI: 1.775–79.801, p = 0.011; OR = 10.563, 95% CI: 1.575–70.837, p = 0.015; 
+CRP: OR = 3.925, 95% CI: 1.642–9.382, p = 0.002; OR = 4.284, 95% CI: 
+1.788–10.263, p = 0.001), whereas age was not significantly associated. 
+Detailed regression coefficients and 95% confidence intervals are presented 
+in Table 4.
+ROC curve analysis was performed to evaluate the discriminatory 
+performance of serum WISP1 concentrations for identifying obese individuals 
+with OA. Separate ROC analyses were conducted for obese OA (+) versus 
+obese OA (–) and for obese OA (+) versus HC. When obese OA (+) patients 
+were compared with healthy controls, serum WISP1 concentrations 
+demonstrated discriminatory performance, with an AUC of 0.980. A cut-off 
+value of 401 pg/mL yielded 91.7% sensitivity and 93.3% specificity, with PPV 
+of 93.2% and NPV of 91.8% (Figure 2). As shown in Figure 3 2, serum WISP1 
+levels differentiated obese OA (+) patients from obese OA (–) individuals with 
+an AUC of 0.807 (95% CI: 0.727–0.879, p < 0.001). The optimal cut-off value 
+identified by the Youden index was 472 pg/mL, corresponding to 75.0% 
+sensitivity and 81.7% specificity. The PPV and NPV were 80.4% and 76.6%, 
+respectively.
+Discussion
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Serum WISP1 concentrations differed significantly across groups, being 
+lowest in healthy controls, intermediate in obese individuals without OA, and 
+highest in obese individuals with OA. This stepwise pattern is biologically 
+plausible and consistent with previous literature. Murahovschi et al. (17) 
+demonstrated increased WISP1 expression in adipose tissue in obesity, 
+linking it to inflammatory activation and insulin resistance–related metabolic 
+processes, while Mirr et al. (24) reported elevated circulating WISP1 levels 
+associated with metabolic dysfunction. In the context of OA, Blom et al. (25) 
+showed that Wnt pathway activation is associated with increased WISP1 
+expression and cartilage degeneration, and van den Bosch et al. (15) 
+documented WISP1 overexpression in damaged osteoarthritic cartilage, 
+including epigenetic regulation. Together, these findings provide a coherent 
+framework in which the higher serum WISP1 levels observed in obese 
+individuals with OA may be associated with reflect the coexistence 
+convergence of metabolic activation and structural joint remodeling. Most 
+prior evidence is derived from tissue-based or experimental studies, whereas 
+the present analysis evaluates systemic serum concentrations. Therefore, 
+serum WISP1 should not be interpreted as a direct surrogate of intra-
+articular expression but rather as a marker potentially associated with 
+reflecting integrated metabolic and joint-related processes.
+Subgroup analysis showed no significant difference in serum WISP1 between 
+knee and non-knee OA, suggesting that the association is not confined to 
+weight-bearing joints. Griffin et al. (26) emphasized that obesity-related OA 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+involves metabolic mechanisms beyond mechanical load, while Zhuo et al. 
+(27) and Courties et al. (28) highlighted interactions between metabolic 
+disturbances and joint tissues across multiple compartments. Similarly, 
+Conde et al. (29) and Pottie et al. (30) demonstrated systemic effects of 
+adipose-derived factors and complex metabolic–inflammatory pathways in 
+OA. Within this context, the lack of localization-specific variation in WISP1 
+levels supports a systemic metabolic–inflammatory contribution across 
+multiple joint compartments, although subgroup size and phenotypic 
+heterogeneity warrant cautious interpretation.
+Anthropometric findings support the interpretation of serum WISP1 levels. 
+As expected, obese participants exhibited higher BMI and central adiposity 
+compared with controls, consistent with established links between excess 
+adiposity and OA risk (26–28). However, these measures did not clearly 
+differentiate obese OA (+) from OA (–) individuals, suggesting that body mass 
+alone may not determine OA status within obesity. This dissociation is 
+consistent with prior work emphasizing metabolic and inflammatory 
+alterations beyond mechanical load (29,30).
+Compared with healthy controls, obese participants exhibited an 
+adverse lipid profile characterized by higher LDLc and triglyceride levels and 
+lower HDLc. However, lipid parameters did not significantly differ between 
+obese OA (+) and obese OA (–) individuals, and triglyceride levels were 
+numerically higher in the obese OA (–) group. This finding, in which 
+triglyceride levels were higher in obese OA (–) individuals compared to those 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+with OA, may be explained by treatment-related factors, particularly the more 
+frequent use of lipid-lowering therapies among patients with established OA 
+due to greater healthcare utilization or comorbidity burden. In addition, 
+differences in metabolic profiles or disease-related alterations not fully 
+captured by conventional lipid parameters may also contribute to this 
+observation. Therefore, this finding should be interpreted with caution.
+Taken together with these observations, Tthese findings suggest that 
+dyslipidemia alone may not account for OA status within obesity. Zhuo et al. 
+(27) and Courties et al. (28) identified lipid abnormalities as components of 
+metabolic disturbances associated with OA. At the tissue level, Akagi et al. 
+(31) demonstrated oxLDL and LOX-1 expression in articular cartilage, linking 
+oxLDL to inflammatory signaling and catabolic activity, while Lee et al. (32) 
+reported accelerated cartilage damage in experimental models. Within this 
+framework, the lipid alterations observed in the present cohort are consistent 
+with a metabolically altered environment in obesity; however, their limited 
+discriminatory capacity between obese OA subgroups suggests that 
+dyslipidemia may represent a background metabolic feature rather than a 
+sole determinant of OA status.
+Similarly, glycemic parameters were higher in obese participants but 
+did not differentiate OA subgroups. Verzijl et al. (33) demonstrated that 
+hyperglycemia promotes advanced glycation end-product accumulation in 
+cartilage, while Schett et al. (34) and Khor et al. (35) reported associations 
+between type 2 diabetes and OA outcomes, with heterogeneity and partial 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+mediation by obesity. These findings suggest that the glycemic alterations 
+observed in the present cohort are consistent with a metabolically altered 
+environment, although they do not independently define OA status.
+Systemic inflammatory markers, including CRP and ESR, were elevated 
+in obese OA (+), aligning with prior evidence linking low-grade inflammation 
+to OA progression. Spector et al. (36) reported elevated CRP levels in early 
+OA associated with disease progression, and Shadyab et al. (37) confirmed 
+prospective associations between CRP and radiographic knee OA 
+progression. Notably, serum WISP1 remained independently associated with 
+OA after adjustment for CRP in multivariable models. Based on previous 
+studies demonstrating the involvement of WISP1 in obesity-related 
+inflammatory activation and cartilage remodeling pathways (15,17,25), this 
+finding should be interpreted with caution the persistence of its association 
+after CRP adjustment suggests that WISP1 may reflect biological processes 
+not fully represented by conventional acute-phase markers.
+Correlation analyses showed limited and inconsistent associations 
+between WISP1 and individual metabolic variables, suggesting that serum 
+WISP1 cannot be explained by isolated indices such as adiposity, lipid 
+parameters, or CRP. Rather than reflecting a single biochemical marker, 
+WISP1 may represent more integrated biological processes, although 
+subgroup heterogeneity and sample size may have limited detection of 
+weaker associations.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Binary logistic regression demonstrated that serum WISP1 remained 
+independently associated with OA among obese individuals after adjustment 
+for covariates included in the multivariable model BMI and CRP. Because 
+BMI reflects overall adiposity and CRP represents generalized systemic 
+inflammation, the persistence of this association suggests that the 
+relationship between WISP1 and osteoarthritis is not fully accounted for by 
+mechanical load or classical acute-phase activity. This finding is consistent 
+with prior mechanistic evidence (15,17,25). Within this framework, the 
+independent association observed in the present model indicates supports 
+the interpretation that serum WISP1 is associated with OA independently of 
+age, gender, HOMA-IR, diuretic use, BMI and CRP within the limits of the 
+model may reflect biological processes extending beyond conventional 
+measures of adiposity and systemic inflammation. Although the odds ratio per 
+1 pg/mL increase in serum WISP1 appears numerically small, this reflects the 
+scale of measurement. Importantly, when considered across a broader range, 
+a 100 pg/mL increase corresponds to an approximately 35% increase in the 
+odds of OA, suggesting that the cumulative effect of WISP1 may be clinically 
+meaningful.
+In the multivariable model, HOMA-IR and diuretic use were also 
+independently associated with OA. The inverse association observed for 
+HOMA-IR after adjustment, despite its non-significant effect in univariate 
+analysis, may reflect interactions or redistribution of shared variance among 
+metabolic covariates within the model rather than a direct protective 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+relationship, particularly given prior evidence linking WISP1-related 
+pathways to insulin resistance (17). In contrast, the association between 
+diuretic use and OA is likely to reflect underlying clinical characteristics or 
+comorbidity patterns within the study population rather than a direct effect 
+of the medication itself.
+Multinomial logistic regression showed that higher serum WISP1 
+concentrations were independently associated with both obese groups 
+compared with healthy controls, with stronger effects in obese OA (+). 
+Although HOMA-IR and CRP showed larger effect sizes consistent with their 
+roles in group differentiation, the association of WISP1 persisted after 
+adjustment. This finding suggests that the relationship between serum WISP1 
+and OA status is not fully accounted for by conventional indicators of 
+metabolic dysfunction or low-grade inflammation. Given that CRP is a non-
+specific acute-phase reactant, the persistence of this association indicates 
+that it is not explained by CRP within the model. However, this finding should 
+be interpreted strictly as a statistical association and does not imply distinct 
+underlying biological mechanisms. These findings are consistent with studies 
+showing that systemic metabolic disturbances, including insulin resistance 
+and dyslipidemia, contribute to osteoarthritis beyond mechanical loading 
+(27–28). Although WISP1 was not specifically examined, the present results 
+align with this framework without implying causality. However, the relatively 
+high pseudo-R² values observed in the multinomial model should be 
+interpreted with caution, as they may reflect model-specific characteristics 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+and potential overfitting, particularly in the context of the sample size and 
+number of predictors.
+ROC analysis demonstrated discriminatory capacity of serum WISP1 
+concentrations for identifying obese individuals with OA. In comparisons 
+between obese OA (+) patients and healthy controls, the AUC was 0.980, with 
+a cut-off value of 401 pg/mL providing high sensitivity and specificity. When 
+obese OA (+) patients were compared with obese OA (–) individuals, WISP1 
+demonstrated good discriminative performance discrimination was moderate 
+(AUC = 0.807), supporting its ability to distinguish between these clinically 
+relevant groups the Youden index identified an optimal cut-off of 472 pg/mL 
+with balanced sensitivity and specificity. The Youden index identified an 
+optimal cut-off value of 472 pg/mL, with a reasonable balance between 
+sensitivity and specificity. As emphasized Bay-Jensen et al. (38), in their 
+comprehensive review of soluble biomarkers in osteoarthritis, emphasized 
+that discrimination observed in cross-sectional internal datasets should be 
+interpreted cautiously, as it may reflect overlapping often reflects combined 
+metabolic and inflammatory differences contrasts between groups rather 
+than disease-specific predictive performance capacity. In the present study, 
+separation between obese OA (+) and healthy controls likely captures 
+broader differences in adiposity-related inflammation, whereas 
+discrimination within the obese cohort may more directly reflect 
+osteoarthritis-related biological variation. Accordingly Therefore, while the 
+these ROC findings suggest that support potential utility of WISP1 may have 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+potential utility in phenotypic stratification within obese individuals, the 
+clinical implications of this observation they do not support diagnostic 
+application they should not be interpreted with caution as evidence of 
+diagnostic sufficiency. External validation, prospective studies longitudinal 
+outcome prediction, and comparison against with established biomarkers are 
+warranted to further clarify its potential role would be necessary before 
+considering application.
+Several limitations should be acknowledged. The cross-sectional design 
+of the present study does not allow causal inference and limits precludes 
+temporal inference interpretation; therefore, it cannot be determined 
+whether elevated serum WISP1 levels precede OA development or reflect 
+established structural and metabolic alterations. Serum WISP1 has not been 
+extensively characterized in obese OA phenotypes, and analyses were 
+conducted in a single cohort without external validation. OA classification 
+was based on clinical and radiographic criteria without advanced 
+inflammatory phenotyping, limiting characterization of disease 
+heterogeneity. In addition, patient reported outcome measures, such as pain 
+severity and functional status, were not assessed, which limits the ability to 
+directly relate serum WISP1 concentrations to clinical manifestations of OA. 
+Although multivariable models adjusted for major confounders, residual 
+confounding from visceral adiposity, medication use, physical activity, and 
+other metabolic factors cannot be excluded. In particular, the use of 
+osteoarthritis-related medications, including non-steroidal anti-inflammatory 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+drugs, intra-articular corticosteroids, and other analgesics, was not 
+systematically recorded or controlled for, and their potential effects on 
+systemic inflammatory markers and circulating WISP1 levels cannot be 
+excluded. In addition, intra-assay coefficient of variation values and extended 
+analytical validation parameters were not assessed, which may represent a 
+limitation.
+Serum measurements do not identify the primary tissue source of 
+WISP1; circulating levels may originate from multiple tissues, including 
+adipose tissue, synovium, and articular cartilage, all of which have been 
+implicated in OA and metabolic inflammation. Therefore, serum WISP1 
+should be interpreted as reflecting integrated systemic activity rather than 
+tissue-specific expression. Future studies incorporating synovial fluid 
+analysis, tissue-level expression profiling, and paired systemic local 
+measurements are warranted to clarify the relative contribution of these 
+sources and the absence of synovial fluid assessment limits interpretation of 
+systemic versus intra-articular contributions. In addition, the single-center 
+design and subgroup sample sizes may restrict generalizability. The study 
+population was predominantly female; therefore, the findings should be 
+interpreted in the context of a female-predominant cohort. Finally, ROC 
+findings reflect internal discrimination and require independent validation 
+before clinical applicability can be considered.
+In conclusion, serum WISP1 concentrations were higher in obese 
+individuals with OA compared with both obese individuals without OA and 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+healthy controls. This association remained statistically significant after 
+adjustment for covariates included in the multivariable model, supporting the 
+robustness of the observed relationship within the limits of the analysis BMI 
+and CRP, indicating independence from these measured covariates within the 
+present model. These findings suggest that support an association between 
+serum WISP1 may serve as a potential marker associated with and obesity-
+related OA within a metabolic–inflammatory context. The observed ROC 
+performance suggests that WISP1 may have potential for phenotypic 
+stratification in obese populations, although its diagnostic utility cannot be 
+inferred from cross-sectional data. Further studies are needed to clarify its 
+biological relevance, longitudinal predictive value, and potential as a 
+biomarker in obesity-associated OA.
+Author Contributions
+O.Y. conceived and designed the study, performed the statistical 
+analyses, interpreted the data, and drafted the manuscript. O.E. contributed 
+to study design, patient recruitment, and clinical data acquisition. S.K. 
+performed orthopedic evaluations and radiographic assessments. C.O.I. 
+conducted rheumatologic assessments and contributed to diagnostic 
+confirmation of osteoarthritis cases. M.A. was responsible for laboratory 
+analyses and biomarker measurements. S.A.Y. contributed to data 
+management and methodological support. M.Ak. supervised the study, 
+contributed to conceptual development. All authors contributed to drafting, 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+reviewing and finalizing the manuscript. All authors have read and agreed 
+to the published version of the manuscript.
+Institutional Review Board Statement
+This study was conducted in accordance with the ethical principles 
+outlined in the Declaration of Helsinki. The Local Ethics Committee of Kanuni 
+Sultan Suleyman Training and Research Hospital approved the study 
+(decision date: 20.02.2025, number: E-80929729-000-269138296).
+Funding
+No funding was received for conducting this study.
+Conflicts of interest
+The authors declare no conflicts of interest.
+Data availability statement
+The datasets used and analyzed in this study are available from the 
+corresponding authors upon reasonable request.
+References
+1. Hunter DJ, Bierma-Zeinstra S. Osteoarthritis. Lancet. 
+2019;393(10182):1745-59.
+2. Martel-Pelletier J, Barr AJ, Cicuttini FM, Conaghan PG, Cooper C, 
+Goldring MB, et al. Osteoarthritis. Nat Rev Dis Primers. 2016;2:16072.
+3. Safiri S, Kolahi AA, Smith E, Hill C, Bettampadi D, Mansournia MA, et al. 
+Global, regional and national burden of osteoarthritis 1990-2017: a 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+systematic analysis of the Global Burden of Disease Study 2017. Ann Rheum 
+Dis. 2020;79(6):819-28.
+4. Robinson WH, Lepus CM, Wang Q, Raghu H, Mao R, Lindstrom TM, et al. 
+Low-grade inflammation as a key mediator of the pathogenesis of 
+osteoarthritis. Nat Rev Rheumatol. 2016;12(10):580-92.
+5. Collins KH, Lenz KL, Pollitt EN, Ferguson D, Hutson I, Springer LE, et al. 
+Adipose tissue is a critical regulator of osteoarthritis. Proc Natl Acad Sci U 
+S A. 2021;118(1):e2021096118.
+6. Stannus O, Jones G, Cicuttini F, Parameswaran V, Quinn S, Burgess J, et 
+al. Circulating levels of IL-6 and TNF-α are associated with knee 
+radiographic osteoarthritis and knee cartilage loss in older adults. 
+Osteoarthritis Cartilage. 2010;18(11):1441-7.
+7. Simopoulou T, Malizos KN, Iliopoulos D, Stefanou N, Papatheodorou L, 
+Ioannou M, et al. Differential expression of leptin and leptin's receptor 
+isoform (Ob-Rb) mRNA between advanced and minimally affected 
+osteoarthritic cartilage; effect on cartilage metabolism. Osteoarthritis 
+Cartilage. 2007;15(8):872-83.
+8. Batushansky A, Zhu S, Komaravolu RK, South S, Mehta-D'souza P, Griffin 
+TM. Fundamentals of OA. An initiative of Osteoarthritis and Cartilage. 
+Obesity and metabolic factors in OA. Osteoarthritis Cartilage. 
+2022;30(4):501-15.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+9. Sanchez-Lopez E, Coras R, Torres A, Lane NE, Guma M. Synovial 
+inflammation in osteoarthritis progression. Nat Rev Rheumatol. 
+2022;18(5):258-75.
+10. Houard X, Goldring MB, Berenbaum F. Homeostatic mechanisms in 
+articular cartilage and role of inflammation in osteoarthritis. Curr 
+Rheumatol Rep. 2013;15(11):375.
+11. Liu-Bryan R, Terkeltaub R. Emerging regulators of the inflammatory 
+process in osteoarthritis. Nat Rev Rheumatol. 2015;11(1):35-44.
+12. Usami Y, Gunawardena AT, Iwamoto M, Enomoto-Iwamoto M. Wnt 
+signaling in cartilage development and diseases: lessons from animal 
+studies. Lab Invest. 2016;96(2):186-96.
+13. Zhu M, Tang D, Wu Q, Hao S, Chen M, Xie C, et al. Activation of beta-
+catenin signaling in articular chondrocytes leads to osteoarthritis-like 
+phenotype in adult beta-catenin conditional activation mice. J Bone Miner 
+Res. 2009;24(1):12-21.
+14. Jun JI, Lau LF. Taking aim at the extracellular matrix: CCN proteins as 
+emerging therapeutic targets. Nat Rev Drug Discov. 2011;10(12):945-63.
+15. van den Bosch MHJ, Ramos YFM, den Hollander W, Bomer N, Nelissen 
+RGHH, Bovée JVMG, et al. Increased WISP1 expression in human 
+osteoarthritic articular cartilage is epigenetically regulated and decreases 
+cartilage matrix production. Rheumatology (Oxford). 2019;58(6):1065-74.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+16. van den Bosch MH, Blom AB, Kram V, Maeda A, Sikka S, Gabet Y, et al. 
+WISP1/CCN4 aggravates cartilage degeneration in experimental 
+osteoarthritis. Osteoarthritis Cartilage. 2017;25(11):1900-11.
+17. Murahovschi V, Pivovarova O, Ilkavets I, Dmitrieva RM, Döcke S, 
+Keyhani-Nejad F, et al. WISP1 is a novel adipokine linked to inflammation in 
+obesity. Diabetes. 2015;64(3):856-66.
+18. Hörbelt T, Tacke C, Markova M, Herzfeld de Wiza D, Van de Velde F, 
+Bekaert M, et al. The novel adipokine WISP1 associates with insulin 
+resistance and impairs insulin action in human myotubes and mouse 
+hepatocytes. Diabetologia. 2018;61(9):2054-65.
+19. Tacke C, Aleksandrova K, Rehfeldt M, Murahovschi V, Markova M, 
+Kemper M, et al. Assessment of circulating Wnt1 inducible signalling 
+pathway protein 1 (WISP-1)/CCN4 as a novel biomarker of obesity. J Cell 
+Commun Signal. 2018;12(3):539-48.
+20. Liu L, Hu J, Yang L, Wang N, Liu Y, Wei X, et al. Association of 
+WISP1/CCN4 with Risk of Overweight and Gestational Diabetes Mellitus in 
+Chinese Pregnant Women. Dis Markers. 2020;2020:4934206.
+21. Nuttall FQ. Body Mass Index: Obesity, BMI, and Health: A Critical 
+Review. Nutr Today. 2015;50(3):117-28.
+22. Altman R, Asch E, Bloch D, Bole G, Borenstein D, Brandt K, et al. 
+Development of criteria for the classification and reporting of osteoarthritis. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Classification of osteoarthritis of the knee. Diagnostic and Therapeutic 
+Criteria Committee of the American Rheumatism Association. Arthritis 
+Rheum. 1986;29(8):1039-49.
+23. Kohn MD, Sassoon AA, Fernando ND. Classifications in Brief: Kellgren-
+Lawrence Classification of Osteoarthritis. Clin Orthop Relat Res. 
+2016;474(8):1886-93.
+24. Mirr M, Owecki M. An Update to the WISP-1/CCN4 Role in Obesity, 
+Insulin Resistance and Diabetes. Medicina (Kaunas). 2021;57(2):100.
+25. Blom AB, Brockbank SMV, van Lent PLEM, van Beuningen HM, Geurts 
+J, Takahashi N, et al. Involvement of Wnt signaling pathway in experimental 
+and human osteoarthritis: prominent role of WISP1. Arthritis Rheum. 
+2009;60(2):501–12.
+26. Griffin TM, Guilak F. The role of mechanical loading in the onset and 
+progression of osteoarthritis. Exerc Sport Sci Rev. 2005;33(4):195–200.
+27. Zhuo Q, Yang W, Chen J, Wang Y. Metabolic syndrome meets 
+osteoarthritis. Nat Rev Rheumatol. 2012;8(12):729-37.
+28. Courties A, Sellam J, Berenbaum F. Metabolic syndrome-associated 
+osteoarthritis. Curr Opin Rheumatol. 2017;29(2):214-22.
+29. Conde J, Scotece M, Gómez R, Lopez V, Gómez-Reino JJ, Gualillo O. 
+Adipokines and osteoarthritis: novel molecules involved in the pathogenesis 
+and progression of disease. Arthritis. 2011;2011:203901.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+30. Pottie P, Presle N, Terlain B, Netter P, Mainard D, Berenbaum F. 
+Obesity and osteoarthritis: more complex than predicted! Ann Rheum Dis. 
+2006;65(11):1403-5.
+31. Akagi M, Kanata S, Mori S, Itabe H, Sawamura T, Hamanishi C. Possible 
+involvement of the oxidized low-density lipoprotein/lectin-like oxidized low-
+density lipoprotein receptor-1 system in pathogenesis and progression of 
+human osteoarthritis. Osteoarthritis Cartilage. 2007;15(3):281-90.
+32. Lee JS, Kim YH, Jhun J, Na HS, Um IG, Choi JW, et al. Oxidized LDL 
+Accelerates Cartilage Destruction and Inflammatory Chondrocyte Death in 
+Osteoarthritis by Disrupting the TFEB-Regulated Autophagy-Lysosome 
+Pathway. Immune Netw. 2024;24(3):e15.
+33. Verzijl N, DeGroot J, Ben ZC, Brau-Benjamin O, Maroudas A, Bank RA, 
+et al. Crosslinking by advanced glycation end products increases the 
+stiffness of the collagen network in human articular cartilage: a possible 
+mechanism through which age is a risk factor for osteoarthritis. Arthritis 
+Rheum. 2002;46(1):114-23.
+34. Schett G, Kleyer A, Perricone C, Sahinbegovic E, Iagnocco A, Zwerina J, 
+et al. Diabetes is an independent predictor for severe osteoarthritis: results 
+from a longitudinal cohort study. Diabetes Care. 2013;36(2):403-9.
+35. Khor A, Ma CA, Hong C, Hui LL, Leung YY. Diabetes mellitus is not a 
+risk factor for osteoarthritis. RMD Open. 2020;6(1):e001030.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+36. Spector TD, Hart DJ, Nandra D, Doyle DV, Mackillop N, Gallimore JR, et 
+al. Low-level increases in serum C-reactive protein are present in early 
+osteoarthritis of the knee and predict progressive disease. Arthritis Rheum. 
+1997;40(4):723-7.
+37. Shadyab AH, Terkeltaub R, Kooperberg C, Reiner A, Eaton CB, Jackson 
+RD, et al. Prospective associations of C-reactive protein (CRP) levels and 
+CRP genetic risk scores with risk of total knee and hip replacement for 
+osteoarthritis in a diverse cohort. Osteoarthritis Cartilage. 2018;26(8):1038-
+44.
+38. Bay-Jensen AC, Reker D, Kjelgaard-Petersen CF, Mobasheri A, Karsdal 
+MA, Ladel C, et al. Osteoarthritis year in review 2015: soluble biomarkers 
+and the BIPED criteria. Osteoarthritis Cartilage. 2016;24(1):9-20.
+Table 1. Comparison of demographic, anthropometric and metabolic parameters 
+among study groups.
+Parameters
+Healthy 
+Control
+(n = 60)
+Obese OA (-) 
+(n = 60)
+Obese OA (+) 
+(n = 60)
+p
+Age, year 54 (48–57.5) 54 (47–58) 52.5 (48–56) 0.574¶
+Female sex, n (%) 46 (76.7) 51 (85) 55 (91.7) 0.076†
+Body mass index, 
+kg/m²
+22 (21–23) 41 (39–42.2) 40 (37.3–43.5) <0.001¶a
+Waist 
+circumference, cm 
+82 (80–84) 116 (108–121) 115.7 (112–121) <0.001¶a
+Waist-to-hip ratio 0.82 (0.81–
+0.83)
+1.00 (0.98–
+1.03)
+1.01 (0.96–1.05) <0.001¶a
+Body fat 
+percentage, (%)
+23.8 (22.6–
+24.4)
+46 (43.1–50.6) 50.6 (46.9–51.5) <0.001¶d
+Skeletal muscle 
+mass, kg
+25.1 (24.8–
+25.4)
+28 (25.8–31.2) 26.9 (24.9–30.9) <0.001¶a
+Visceral fat level 6 (6–7) 21 (19–24) 22 (21–24) <0.001¶a
+Fat-free mass index 17.5 (17.4–
+17.7)
+20.1 (19.4–
+21.6)
+20.3 (19.4–21.6) <0.001¶a
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Kellgren-Lawrence 
+grade (0/2/3/4), n 
+(%)
+– – 13 (21.7 29.5) / 
+13 24 (21.7 
+54.5) / 24 7 (40 
+15.9) / 10 (16.7)
+–
+OA duration, year – – 4 (2–6.5) –
+Hypertension, n (%) – 25 (41.7) 29 (48.3) 0.463†
+Dyslipidemia, n (%) – 29 (48.3) 30 (50) 0.855†
+Medication, n (%) – 44 (73.3) 42 (70) 0.685†
+  Lipid lowering 29 (48.3) 30 (50) 0.855†
+  ACEI/ARB 18 (30) 12 (20) 0.292†
+  Ca++ channel 
+blocker
+14 (23.3) 16 (26.7) 0.833†
+  Beta blocker 7 (11.7) 4 (6.7) 0.529‡
+  Diuretic 4 (6.7) 18 (30) 0.002‡
+Leukocyte, 10³/µL 7.17 ± 1.28 9.01 ± 1.57 8.62 ± 1.51 <0.001fa
+Glucose, mg/dL 86 (81–91) 102 (89–109) 98 (91–107) <0.001¶a
+HOMA-IR 1.8 (1.3–2.1) 6.85 (3.3–11) 5 (2.5–7.99) <0.001¶a
+Creatinine, mg/dL 0.73 ± 0.13 0.77 ± 0.14 0.77 ± 0.16 0.210f
+Total cholesterol, 
+mg/dL
+157 (133–179) 193.5 (168–
+224)
+207 (183–229) <0.001¶a
+Triglycerides, mg/dL 111.5 (77–
+132)
+178 (144–214) 129.5 (107–182) <0.001¶a
+HDLc, mg/dL 53 (44–59.5) 44 (39–50) 49 (41–55) 0.007¶b
+LDLc, mg/dL 112 (91–121) 129 (104–140) 131 (116–154) <0.001¶a
+ALT, U/L 13 (11–17) 17 (13–23) 15 (12–20) <0.001¶a
+CRP, mg/L 2.1 (1.7–2.8) 4.1 (2.6–6.4) 6.5 (4.4–7.3) <0.001¶d
+ESR, mm/h 11 (6.5–15.5) 11 (6–15) 16.5 (13–22) <0.001¶c
+OA, osteoarthritis; ACEI/ARB, angiotensin-converting enzyme inhibitor/angiotensin II 
+receptor blocker; HOMA-IR, homeostatic model assessment of insulin resistance; HDLc, 
+high-density lipoprotein cholesterol; LDLc, low-density lipoprotein cholesterol; ALT, alanine 
+aminotransferase; CRP, C-reactive protein; ESR, erythrocyte sedimentation rate. Data are 
+presented as mean ± standard deviation (SD), median (interquartile range, Q1–Q3), or 
+number (percentage), as appropriate. †Pearson’s chi-square test; f one-way analysis of 
+variance (ANOVA); ¶Kruskal–Wallis H test. Pairwise comparisons were performed using the 
+Mann–Whitney U test following a significant Kruskal–Wallis test and Bonferroni-adjusted 
+post hoc analysis following one-way ANOVA. a: HC < Obese OA (–) and Obese OA (+); b: 
+Obese OA (–) < HC; c: Obese OA (+) > Obese OA (–) and HC; d: Obese OA (+) > Obese OA 
+(–) > HC. A p value < 0.05 was considered statistically significant.
+Table 2. Comparison of serum WISP1 levels among healthy controls, knee 
+osteoarthritis, and non-knee osteoarthritis groups.
+Healthy 
+Control
+(n = 60)
+Knee OA (+) 
+(n = 44)
+Non-knee OA 
+(+) 
+(n = 16)
+p 
+WISP1, 
+pg/mL
+258.5 (211.5–
+285.5)
+506 (468.5–
+1151)
+554 (475.5–
+1106)
+<0.001¶a
+Data are presented as median (interquartile range, Q1–Q3). ¶ Kruskal–Wallis H test. Pairwise 
+comparisons were performed using the Mann–Whitney U test following a significant Kruskal–
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Wallis test. a: HC < Knee OA (+) and Non-knee OA (+). A p value < 0.05 was considered 
+statistically significant.
+Table 3. Univariate and multivariable binary logistic regression analysis of factors 
+associated with osteoarthritis in obese adults.
+β, regression coefficient; OR, odds ratio; CI, confidence interval; BMI, body mass index; CRP, 
+C-reactive protein; HOMA-IR, homeostasis model assessment of insulin resistance. Binary 
+logistic regression analysis was performed. In the univariate analyses, separate regression 
+models were constructed for each independent variable. In the multivariable analysis, 
+variables were entered simultaneously into a single model. Model fit was assessed using the 
+Hosmer–Lemeshow goodness-of-fit test, and the model demonstrated an adequate fit (p = 
+0.314). A p value < 0.05 was considered statistically significant.
+Table 4: Multinomial logistic regression analysis comparing obese OA (–) and 
+obese OA (+) groups with healthy controls.
+Variable Obese OA (–) vs HC Obese OA (+) vs HC
+β p OR 95% CI β p OR 95% CI 
+Age 0.01
+4
+0.787 1.015 0.914–
+1.127
+0.02
+6
+0.639 1.026 0.922–
+1.142
+WISP1 0.02
+5
+<0.0
+01
+1.025 1.011–
+1.039
+0.02
+8
+<0.0
+01
+1.028 1.014–
+1.042
+HOMA-IR 2.47
+7
+0.011 11.90
+2
+1.775–
+79.801
+2.35
+7
+0.015 10.56
+3
+1.575–
+70.837
+CRP 1.36
+7
+0.002 3.925 1.642–
+9.382
+1.45
+5
+0.001 4.284 1.788–
+10.263
+OA, osteoarthritis; HC, healthy control; β, regression coefficient; CI, confidence interval; 
+BMI, body mass index; CRP, C-reactive protein. In the multinomial logistic regression 
+analysis, the healthy control group was used as the reference category. Results are 
+Variable Univariate Model Multivariable Model
+β p OR 95% CI β p OR 95% CI
+Age −0.0
+09
+0.656 0.99
+1
+0.951–
+1.032
+0.014 0.57
+2
+1.01
+4
+0.967–
+1.063
+Gender 0.663 0.261 1.94
+1
+0.610–
+6.178
+0.767 0.28
+6
+2.15
+4
+0.525–
+8.835
+BMI −0.0
+26
+0.615 0.97
+4
+0.881–
+1.078
+0.015 0.81
+2
+1.01
+5
+0.897–
+1.149
+WISP1 0.003 0.001 1.00
+3
+1.001–
+1.004
+0.003 <0.0
+01
+1.00
+3
+1.001–
+1.005
+CRP
+HOMA-IR
+Diuretic 
+use
+0.062
+-
+0.058
+1.792
+0.289
+0.118
+0.002
+1.06
+4
+0.94
+3
+6.00
+0
+0.949–
+1.193
+0.877-
+1.015
+1.890-
+19.043
+0.080
+-
+0.111
+1.523
+0.23
+2
+0.02
+0
+0.01
+8
+1.08
+3
+0.89
+5
+4.58
+5
+0.950–
+1.236
+0.815-
+0.983
+1.299-
+16.186
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+presented as β coefficients, odds ratios (OR) values, and 95% confidence intervals (CI). A p 
+value < 0.05 was considered statistically significant.
+Figure 1. Distribution of serum WISP1 levels among healthy controls, obese 
+individuals without osteoarthritis, and obese individuals with osteoarthritis. The box 
+plots represent the median and interquartile range (IQR), and individual 
+measurements are presented as jittered scatter points.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 
+Figure 2 3. Receiver operating characteristic curve demonstrating the 
+discriminative performance of serum WISP1 levels in distinguishing obese 
+individuals without osteoarthritis from obese individuals with osteoarthritis. The 
+area under the curve (AUC) was 0.807, with a 95% confidence interval of 0.727–
+0.879. TPR, true positive rate; FPR, false positive rate; PPV, positive predictive 
+value; NPV, negative predictive value.
+Table captions and figure legends
+Table 1. Comparison of demographic, anthropometric and metabolic parameters 
+among study groups.
+Table 2. Comparison of serum WISP1 levels among healthy controls, knee 
+osteoarthritis, and non-knee osteoarthritis groups.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+Table 3. Univariate and multivariable binary logistic regression analysis of factors 
+associated with osteoarthritis in obese adults.
+Table 4: Multinomial logistic regression analysis comparing obese OA (–) and 
+obese OA (+) groups with healthy controls.
+Figure 1. Distribution of serum WISP1 levels among healthy controls, obese 
+individuals without osteoarthritis, and obese individuals with osteoarthritis. The box 
+plots represent the median and interquartile range (IQR), and individual 
+measurements are presented as jittered scatter points.
+Figure 2 3. Receiver operating characteristic curve demonstrating the 
+discriminative performance of serum WISP1 levels in distinguishing obese 
+individuals without osteoarthritis from obese individuals with osteoarthritis. The 
+area under the curve (AUC) was 0.807, with a 95% confidence interval of 0.727–
+0.879. TPR, true positive rate; FPR, false positive rate; PPV, positive predictive 
+value; NPV, negative predictive value.
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS

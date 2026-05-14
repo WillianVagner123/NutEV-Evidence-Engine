@@ -1,0 +1,271 @@
+Aligning Sleep Patterns with Educational... | F1000Research
+Aligning Sleep Patterns with Educational Schedules in Iran: Policy Recommendations for Enhancing Health and Academic Success
+Abstract
+Keywords
+Revised Amendments from Version 1
+Introduction
+Policy outcomes and implications
+Actionable recommendations
+Mandate evidence-based start times
+Enforce an evening activity curfew
+Integrate comprehensive sleep hygiene education
+Address social jetlag and sleep consistency
+Limitations of the analysis
+Conclusions/Discussion
+Data availability
+Acknowledgments
+References
+Comments on this article Comments (0)
+Open Peer Review
+Comments on this article Comments (0)
+Open Peer Review
+Reviewer Report
+Reviewer Report
+Reviewer Report
+Reviewer Report
+Reviewer Report
+Competing Interests Policy
+Stay Updated
+Competing Interests Policy
+How to cite this report
+
+Browse
+Gateways & Collections
+How to Publish Submit your Research My Submissions Article Guidelines Article Guidelines (New Versions) Open Data, Software and Code Guidelines Open Data and Accessible Source Materials Guidelines (HSS) Open Data, Software and Code Guidelines (PSE) Prepublication Checks Production Process Posters and Slides Guidelines Document Guidelines Article Processing Charges Peer Review Finding Article Reviewers
+Submit your Research
+My Submissions
+Article Guidelines
+Article Guidelines (New Versions)
+Open Data, Software and Code Guidelines
+Open Data and Accessible Source Materials Guidelines (HSS)
+Open Data, Software and Code Guidelines (PSE)
+Prepublication Checks
+Production Process
+Posters and Slides Guidelines
+Document Guidelines
+Article Processing Charges
+Peer Review
+Finding Article Reviewers
+About How it Works For Reviewers Our Advisors Policies Glossary FAQs For Developers Newsroom Contact
+How it Works
+For Reviewers
+Our Advisors
+Policies
+Glossary
+FAQs
+For Developers
+Newsroom
+Contact
+My Research Submissions Content and Tracking Alerts My Details
+Submissions
+Content and Tracking Alerts
+My Details
+Sign In
+Ali Zakiei Roles: Conceptualization, Writing – Original Draft Preparation Arash Ziapour Roles: Writing – Original Draft Preparation Mohammad-Taher Moradi Roles: Conceptualization, Writing – Review & Editing Habibolah Khazaie Roles: Conceptualization, Supervision, Writing – Review & Editing
+This policy brief examines the significant misalignment between the biological sleep patterns of students and the early start times of most educational institutions, specifically within the context of the Iranian educational system. Chronic sleep deprivation in this population is associated with detrimental effects on academic performance, mental and physical health, and interpersonal relationships.
+Compelling evidence indicates that early school schedules, dictated by historical and economic factors rather than student biology, force adolescents and young adults into a state of chronic sleep deficit. This has clear impacts, including impaired cognitive function, increased risks of obesity and cardiometabolic disease, and academic burnout. Studies confirm that delaying start times is an effective intervention to reduce these problems.
+This brief recommends systematic changes, including later school and university start times, the integration of sleep hygiene education into curricula, strict limits on late-evening activities, and the use of flexible learning models. Supporting these structural changes, systems for monitoring student well-being and educating families are also advised.
+Aligning educational schedules with biological sleep needs is a critical public health intervention. Comprehensive strategies that combine schedule adjustments, education, and support services offer the greatest benefit for student health and academic success. Future research should focus on pilot implementations and socio-economic barriers specific to Iran to ensure equitable implementation.
+Sleep, Education, Children, Adolescent Health, School Start Times, Circadian Rhythms, Academic Performance, Policy Analysis
+Update Text (Version 2): This revised version addresses reviewer comments by: (1) clarifying the Iranian focus in title, introduction, and throughout; (2) providing explicit evidence-based justification for the 8:30 AM start time citing AAP (2014) and Yip et al. (2022); (3) acknowledging the 9:00 PM activity cutoff as a logical derivation requiring further research; (4) adding statistical context to obesity risks (AORs, CIs, age definitions); (5) incorporating discussion of age-related sleep differences and social jetlag; (6) broadening sleep hygiene education to include multiple barriers (socioeconomic status, screen time); (7) completing and verifying all references; and (8) softening causal language throughout. All reviewer comments were addressed point-by-point.
+To read any peer review reports and author responses for this article, follow the "read" links in the Open Peer Review table.
+Sleep is recognized as a vital and structured process that follows a regular, cyclical pattern each night. This organized sequence of events ensures the optimal restoration of both physical and mental functions. 1 Indeed, sleep plays a crucial role in human psychological and physical health and is a key factor in regulating emotion, cognition, psychosocial development, and physical growth. 2 Inappropriate sleep patterns constitute a serious risk factor for poor physical health 3 and significantly diminish quality of life. 4 It is essential for individuals to maintain proper sleep schedules and obtain sufficient sleep, as sleep insufficiency impairs daily functioning and incurs substantial human, social, and economic costs. 5 Since sleep timing is a critical aspect, 6 sleep should occur within an appropriate temporal framework.
+Healthy sleep necessitates several conditions, including adequate duration, satisfactory quality, appropriate timing, and consistent regularity. It also depends on the absence of sleep disorders. 7 However, healthy sleep, or sleep hygiene, often receives insufficient attention today, and school and university schedules frequently disregard student sleep patterns in their educational planning. 8 The scale of the issue is significant, with studies indicating that a considerable portion (e.g., over 60% in some epidemiological studies) of the student population exhibits poor sleep hygiene and insufficient sleep quantity. 9
+In Iran, schools typically commence between 7:30 and 8:00 AM, and no national policy currently requires consideration of student sleep biology in scheduling decisions. Iranian studies have documented that a substantial proportion of students exhibit poor sleep hygiene and insufficient sleep duration, 8 , 9 and that poor sleep quality is associated with academic burnout. 10 However, no published research has examined the effects of delayed school start times in Iranian schools. This policy brief therefore synthesizes international evidence and proposes recommendations specifically for the Iranian educational system, while identifying critical gaps that require local investigation.
+This policy brief is evidence-informed policy synthesis of the international current scientific literature on adolescent sleep, circadian rhythms, and school start times, with the objective of applying this evidence to the Iranian educational context. We prioritized evidence from authoritative policy statements (e.g., American Academy of Pediatrics, 2014), 11 meta-analyses, 12 and systematic reviews, 13 and integrated these with epidemiological data on sleep patterns among Iranian students. 8 – 10
+A fundamental conflict exists between the rigid schedules of educational institutions and the biological clocks of students. Despite compelling evidence on adolescent sleep needs, school start times are often dictated by history and logistics, not student physiology. 14 This conflict is exacerbated by modern lifestyles that push bedtimes later, while long commutes and early class times force students to wake prematurely. This misalignment between educational schedules and circadian rhythms exposes students to the well-documented consequences of chronic sleep deprivation, thereby putting at risk their health, safety, and academic performance. Research has shown that sleep problems during the educational years are linked to broader psychosocial challenges, underscoring the multifaceted impact of sleep on student well-being. 9
+The core problem lies in the direct impact of early start times on sleep duration and quality. Early classes force students to wake earlier, which, even with unchanged bedtimes, truncates total sleep time and leads to a cumulative sleep deficit. This forced sleep restriction is associated with significant issues, including academic burnout and declined academic performance. 10 , 15 The consequences, however, extend far beyond the classroom, demonstrating measurable physiological consequences. Inadequate sleep is linked to poorer diet quality, decreased insulin sensitivity, and hyperglycemia. 16 The scale of this impact is staggering. In adolescents, very short sleep (<7 hours) can increase the odds of obesity by 69% (adjusted odds ratio [AOR] = 1.69; 95% CI: 1.39–2.05) and elevated waist circumference by 49% (AOR = 1.49; 95% CI: 1.28–1.73). 17 This study defined adolescents as individuals aged 10–19 years. This significantly elevates their long-term risk for type 2 diabetes and cardiovascular disease. While these correlational data are compelling, we must also consider confounding factors like academic stress and familial pressures.
+Revising school start times is therefore an evidence-based necessity, not just an optional adjustment. It is crucial for protecting student well-being and educational productivity. The core of the issue is chronobiological: when early schedules conflict with students’ innate circadian rhythms, the resulting sleep deficit directly undermines their academic performance, mental health, and behavior. Empirical evidence demonstrates the solution. Results from a systematic review indicated that delaying school start times significantly increases students’ nightly sleep duration by at least 30 minutes, primarily due to a later wake-up time. 18 Also, this policy change is associated with improved school attendance, reduced tardiness, decreased daytime sleepiness, and enhanced academic performance. 18 These findings highlight the need to reevaluate school timing policies. It is now widely argued that delayed start times allow students to experience more and better-quality sleep, leading to reduced daytime sleepiness, improved cognitive and academic performance, 19 , 20 and better overall physical and mental health. 11 , 12 Successful implementation, however, requires a multi-systemic approach that considers potential conflicts with parental work schedules and the pervasive culture of intensive extracurricular commitments. In general, flexibility in the educational schedule could be proposed as a practical and acceptable alternative to a fixed later start time, provided that students are encouraged to adhere to a consistent sleep schedule. 21
+Based on the analysis of policy outcomes and implications, we propose the following coordinated actions for educational policymakers and institutions.
+Consider adopting a national guideline recommending that schools aim for start times no earlier than 8:30 AM, beginning with pilot implementations in selected provinces. The American Academy of Pediatrics (2014) 11 explicitly recommends this threshold to allow adolescents the opportunity to achieve 8.5–9.5 hours of sleep. 11 This is supported by meta-analytic evidence 12 demonstrating that start times within the 8:30–8:59 AM window are associated with significantly longer sleep duration (effect size = 0.184, p < 0.05) and better overall sleep (effect size = 0.316, p < 0.05) compared with earlier start times.
+Extracurricular and academic activities should be scheduled to conclude by 9:00 PM. The American Academy of Pediatrics (2014) 11 states that the average teenager has difficulty falling asleep before 11:00 PM and requires 8.5–9.5 hours of sleep. 11 Finishing activities by 9:00 PM allows approximately two hours for commuting, evening meals, hygiene, and time to wind down before sleep, a period consistent with healthy sleep hygiene principles. 11 This facilitates a bedtime near 11:00 PM, which is necessary to achieve the recommended 8.5–9.5 hours of sleep before an 8:30 AM start. 11 While direct empirical evidence validating this specific 9:00 PM cutoff in adolescent populations is currently lacking, it represents a logical derivation from established pediatric sleep recommendations and allows for the pre-sleep routines essential for healthy sleep onset.
+This education should include specific, practical strategies for managing digital device use before bedtime and addressing academic stress, both of which have been identified as factors influencing insufficient sleep and poor sleep timing in adolescents. 11 Additionally, emerging evidence suggests that maladaptive personality traits, particularly negative affectivity, disinhibition, and psychoticism, are associated with poor sleep hygiene behaviors (e.g., nighttime mobile phone use, late bedtime) and insufficient sleep duration in young adult populations. 8 While factors such as socioeconomic status may play a role, current evidence from adolescent-specific research, remains limited. 12 To support these efforts, systems for monitoring student sleep patterns and well-being should be established to allow for counseling and early intervention for those at risk of sleep deprivation or disorders. The educational message should promote healthy sleep patterns by emphasizing that sleep regularity, alongside duration, is critical for academic success and general health.
+Students and faculty should be informed about the benefits of maintaining a consistent sleep-wake schedule across the entire week, including weekends, to stabilize circadian rhythms and mitigate the effects of social jetlag. A systematic review by Chaput et al. (2020) found that social jetlag is associated with adverse health outcomes, whereas weekend catch-up sleep is associated with better health in adult populations. 13 Although these findings need to be confirmed in adolescent cohorts, they highlight the importance of reducing circadian misalignment in students.
+Additionally, we must educate families to guide lifestyle modifications that support healthy sleep at home. Finally, schools should create inherent system flexibility by exploring blended or online learning models. These formats can grant students autonomy over their schedules, allowing them to prioritize sleep without compromising academic responsibilities.
+While our recommendations are grounded in evidence, we acknowledge several limitations.
+First, this policy brief applies evidence primarily from North American and European studies to the Iranian context. Direct empirical data on the effects of delayed school start times in Iran are currently lacking. Cultural attitudes toward sleep, parental work schedules, transportation infrastructure, school system logistics, and extracurricular activity patterns may differ substantially from the settings in which most studies were conducted. Pilot implementations and context-specific research are urgently needed before national-scale policy adoption can be recommended with confidence.
+Second, the specific start time (8:30 AM) is supported by AAP policy and meta-analytic evidence, but the proposed activity cutoff (9:00 PM) is a logical derivation rather than an empirically validated threshold. Further research is needed to identify optimal scheduling parameters across different school levels and cultural contexts.
+Third, our reliance on observational studies, which show correlation rather than proven causation. Future research must also address the limited data within specific socio-cultural contexts, such as Iran, to ensure these policies are equitably implemented.
+Aligning educational schedules with student sleep biology is a critical public health intervention. Thoughtfully planned curricula and supportive policies can significantly improve students’ mental sharpness, overall health, and academic performance. To achieve this, the body clocks of adolescents and young adults must be a primary factor in setting school start times and daily schedules. The circadian phase delay is most pronounced during adolescence, making later school start times a critical, evidence-based intervention for middle and high school students. 11 , 12 Research consistently shows that start times of 8:30 AM or later are associated with improved sleep duration, better academic performance, enhanced mental health, and reduced health and safety risks in this population. 11 , 12 While delaying start times for older students is strongly supported, the impact on elementary school students is less direct. They often retain earlier start times due to logistical considerations (e.g., busing, childcare) and differing sleep biology. However, this aspect of scheduling is based on practical trade-offs rather than a robust body of comparative research. 11 , 12 This alignment is plausibly expected to reduce long-term risk of cardiometabolic diseases, although longitudinal intervention data in the Iranian context are lacking. The most substantial benefits for student health and academic performance will likely arise from comprehensive approaches that integrate schedule adjustments, targeted education, and robust student support services.
+No data are associated with this article.
+The authors thank Dr. Dhahbi Wissem and Dr. Mikaela Irene Fudolig for their detailed and constructive peer review. Their critiques regarding evidence justification, scope clarification, and recommendation specificity substantially strengthened this policy brief. The authors used an artificial intelligence tool exclusively for language editing, polishing, and grammatical accuracy checks. The intellectual content, analysis, and conclusions of this work are entirely the author’s own.
+1. Khan MA, Al-Jahdali H: The consequences of sleep deprivation on cognitive performance. Neurosciences Journal. 2023; 28 (2): 91–99. PubMed Abstract | Publisher Full Text | Free Full Text
+2. Khazaie H, Zakiei A, McCall WV, et al. : Relationship between sleep problems and self-injury: a systematic review. Behav. Sleep Med. 2021; 19 (5): 689–704. PubMed Abstract | Publisher Full Text
+3. Fortier-Brochu É, Beaulieu-Bonneau S, Ivers H, et al. : Relations between sleep, fatigue, and health-related quality of life in individuals with insomnia. J. Psychosom. Res. 2010; 69 (5): 475–483. PubMed Abstract | Publisher Full Text | Free Full Text
+4. Ishak WW, Bagot K, Thomas S, et al. : Quality of life in patients suffering from insomnia. Innov. Clin. Neurosci. 2012; 9 (10): 13–26. PubMed Abstract
+5. Durmer JS, Dinges DF: Neurocognitive consequences of sleep deprivation. Semin. Neurol. 2005; 25 : 117–129. Publisher Full Text
+6. Wang L, Li J, Du Y, et al. : The relationship between sleep onset time and cardiometabolic biomarkers in Chinese communities: a cross-sectional study. BMC Public Health. 2020; 20 (1): 374. PubMed Abstract | Publisher Full Text | Free Full Text
+7. Panel CCWatson NF, Badr MS, et al. : Recommended amount of sleep for a healthy adult: a joint consensus statement of the American Academy of Sleep Medicine and Sleep Research Society. J. Clin. Sleep Med. 2015; 11 (6): 591–592.
+8. Zakiei A, Khazaie H, Komasi S: The role of the DSM-5 maladaptive personality traits in adherence to sleep hygiene behaviors and sleep duration. Sci. Rep. 2025; 15 (1): 16196. PubMed Abstract | Publisher Full Text | Free Full Text
+9. Khazaie H, Zakiei A, Rezaei M, et al. : Sleep pattern, common bedtime problems, and related factors among first-grade students: Epidemiology and predictors. Clinical Epidemiology and Global Health. 2019 Dec 1; 7 (4): 546–551. Publisher Full Text
+10. Zakiei A, Khazaie H, Azadi M, et al. : The mechanism of sleep quality’s effect on academic burnout: examining the mediating role of perceived stress. BMC Med. Educ. 2025; 25 (1): 1018. PubMed Abstract | Publisher Full Text | Free Full Text
+11. American Academy of Pediatrics: School start times for adolescents. Pediatrics. 2014; 134 (3):642–649. Publisher Full Text
+12. Yip T, Wang Y, Xie M, et al. : School start times and adolescent sleep: A meta-analytic review. J. Youth Adolesc. 2022; 51 :1175–1190.
+13. Chaput JP, Dutil C, Featherstone R, et al. : Sleep timing, sleep consistency, and health in adults: a systematic review. Appl. Physiol. Nutr. Metab. 2020; 45 (10):S232–S247. PubMed Abstract | Publisher Full Text
+14. Wahlstrom K: Changing times: Findings from the first longitudinal study of later high school start times. NASSP Bulletin. 2002; 86 (633):3–21. Publisher Full Text
+15. Alshahrani SM, Alzuabi HA, Alkalthem DH, et al. : Sleep patterns and quality during summer and academic year among female university students. Neurosciences (Riyadh). 2024; 29 (4): 252–261. PubMed Abstract | Publisher Full Text | Free Full Text
+16. Gohil A, Hannon TS: Poor Sleep and Obesity: Concurrent Epidemics in Adolescent Youth. Front. Endocrinol. 2018; 9 : 364. PubMed Abstract | Publisher Full Text | Free Full Text
+17. Seo SH, Shim YS: Association of Sleep Duration with Obesity and Cardiometabolic Risk Factors in Children and Adolescents: A Population-Based Study. Sci. Rep. 2019; 9 : 9463. PubMed Abstract | Publisher Full Text | Free Full Text
+18. Wheaton AG, Chapman DP, Croft JB: School start times, sleep, behavioral, health, and academic outcomes: a review of the literature. J. Sch. Health. 2016; 86 (5): 363–381. PubMed Abstract | Publisher Full Text | Free Full Text
+19. Albqoor MA, Shaheen AM: Sleep quality, sleep latency, and sleep duration: a national comparative study of university students in Jordan. Sleep Breath. 2021; 25 (2): 1147–1154. PubMed Abstract | Publisher Full Text
+20. Dunster GP, de la Iglesia L , Ben-Hamo M, et al. : Sleepmore in Seattle: Later school start times are associated with more sleep and better performance in high school students. Sci. Adv. 2018; 4 (12): eaau6200. PubMed Abstract | Publisher Full Text | Free Full Text
+21. Winnebeck EC, Vuori-Brodowski MT, Biller AM, et al. : Later school start times in a flexible system improve teenage sleep. Sleep. 2020; 43 (6). PubMed Abstract | Publisher Full Text
+Ali Zakiei Roles: Conceptualization, Writing – Original Draft Preparation Arash Ziapour Roles: Writing – Original Draft Preparation Mohammad-Taher Moradi Roles: Conceptualization, Writing – Review & Editing Habibolah Khazaie Roles: Conceptualization, Supervision, Writing – Review & Editing
+The title of the revised manuscript looks appropriate. However, to make it closer to the domain of chronobiology, the title should read somewhat like this: “Circadian Alignment of School Schedules in Iran: Implications for Student Health and
+The title of the revised manuscript looks appropriate. However, to make it closer to the domain of chronobiology, the title should read somewhat like this: “Circadian Alignment of School Schedules in Iran: Implications for Student Health and Achievement,” or maybe “Circadian Misalignment Between School Schedules and Adolescent Sleep in Iran: Policy Implications for Health and Academic Performance.”
+The recommended opening and closing times for the Iranian Schools are not convincing. Why should they end their activity at 21:00 or 22:00? To the best of my knowledge, the Tehran International School opens at 07:00 and closes at 17:00. Another School, Iranzamin School, opens at 08:00 and closes at 15:00.
+Further, 1 MIN READ (May 13, 2025) published in IRANWIRE reveals that Iran’s Education Ministry announced that Iranian schools should begin at 06:00 in order to implement energy-saving measures. It further added that a single-shift school should operate between 06:00 and 13:00. In a 2-shift school, the first shift and the second shift should operate between 06:00-09:30, and 10:00-13:00, respectively.
+In light of this scenario the recommended policy looks challenging for implementation. The authors did not discuss these aspects adequately.
+The authors also did not discuss adequately the possible effect of school timings on the adolescent students with different chronotypes.
+The text of the policy brief in its revised version is iterative in many places. The authors should revise the text of the policy brief. The literature review also appears to be inadequate. They should have given examples of the countries where the delay of school start time has been implemented. It has also been known that both too little and too much sleep are harmful.
+Having said all this, the attempt of the authors to frame a policy brief addressing Circadian Misalignment Between School Schedules and Adolescent Sleep in Iran is worthwhile.
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader? Partly
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader?
+Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature? Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature?
+Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments? No
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments?
+No
+Competing Interests: No competing interests were disclosed.
+Reviewer Expertise: Chronobiology
+Respond or Comment
+COMMENT ON THIS REPORT
+Competing Interests: No competing interests were disclosed.
+Reviewer Expertise: computational social science
+Respond or Comment
+COMMENT ON THIS REPORT
+Competing Interests: No competing interests were disclosed.
+Reviewer Expertise: Sports medicine and Reahbilitation
+Respond or Comment
+COMMENT ON THIS REPORT
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader? Partly
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader?
+Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature? Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature?
+Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments? Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments?
+Partly
+Competing Interests: No competing interests were disclosed.
+Reviewer Expertise: Sports medicine and Reahbilitation
+Respond or Comment
+COMMENT ON THIS REPORT
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader? Partly
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader?
+Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature? Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature?
+Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments? Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments?
+Partly
+Competing Interests: No competing interests were disclosed.
+Reviewer Expertise: computational social science
+Respond or Comment
+COMMENT ON THIS REPORT
+Alongside their report, reviewers assign a status to the article:
+Mikaela Irene Fudolig , The University of Adelaide School of Mathematical Sciences, Adelaide, Australia
+Dhahbi Wissem , University of Jendouba,, Kef, Tunisia
+Atanu Kumar Pati , Kalinga Institute of Social Sciences, Bhubaneswar, India
+All Comments (0)
+14 Mar 2026 | for Version 2
+Alongside their report, reviewers assign a status to the article:
+The title of the revised manuscript looks appropriate. However, to make it closer to the domain of chronobiology, the title should read somewhat like this: “Circadian Alignment of School Schedules in Iran: Implications for Student Health and Achievement,” or maybe “Circadian Misalignment Between School Schedules and Adolescent Sleep in Iran: Policy Implications for Health and Academic Performance.”
+The recommended opening and closing times for the Iranian Schools are not convincing. Why should they end their activity at 21:00 or 22:00? To the best of my knowledge, the Tehran International School opens at 07:00 and closes at 17:00. Another School, Iranzamin School, opens at 08:00 and closes at 15:00.
+Further, 1 MIN READ (May 13, 2025) published in IRANWIRE reveals that Iran’s Education Ministry announced that Iranian schools should begin at 06:00 in order to implement energy-saving measures. It further added that a single-shift school should operate between 06:00 and 13:00. In a 2-shift school, the first shift and the second shift should operate between 06:00-09:30, and 10:00-13:00, respectively.
+In light of this scenario the recommended policy looks challenging for implementation. The authors did not discuss these aspects adequately.
+The authors also did not discuss adequately the possible effect of school timings on the adolescent students with different chronotypes.
+The text of the policy brief in its revised version is iterative in many places. The authors should revise the text of the policy brief. The literature review also appears to be inadequate. They should have given examples of the countries where the delay of school start time has been implemented. It has also been known that both too little and too much sleep are harmful.
+Having said all this, the attempt of the authors to frame a policy brief addressing Circadian Misalignment Between School Schedules and Adolescent Sleep in Iran is worthwhile.
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader? Partly
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader?
+Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature? Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature?
+Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments? No
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments?
+No
+No competing interests were disclosed.
+Chronobiology
+I confirm that I have read this submission and believe that I have an appropriate level of expertise to state that I do not consider it to be of an acceptable scientific standard, for reasons outlined above.
+10 Mar 2026 | for Version 2
+Alongside their report, reviewers assign a status to the article:
+No competing interests were disclosed.
+computational social science
+I confirm that I have read this submission and believe that I have an appropriate level of expertise to confirm that it is of an acceptable scientific standard.
+04 Mar 2026 | for Version 2
+Alongside their report, reviewers assign a status to the article:
+No competing interests were disclosed.
+Sports medicine and Reahbilitation
+I confirm that I have read this submission and believe that I have an appropriate level of expertise to confirm that it is of an acceptable scientific standard.
+12 Jan 2026 | for Version 1
+Alongside their report, reviewers assign a status to the article:
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader? Partly
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader?
+Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature? Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature?
+Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments? Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments?
+Partly
+No competing interests were disclosed.
+Sports medicine and Reahbilitation
+I confirm that I have read this submission and believe that I have an appropriate level of expertise to state that I do not consider it to be of an acceptable scientific standard, for reasons outlined above.
+12 Jan 2026 | for Version 1
+Alongside their report, reviewers assign a status to the article:
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader? Partly
+Does the paper provide a comprehensive overview of the policy and the context of its implementation in a way which is accessible to a general reader?
+Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature? Partly
+Is the discussion on the implications clearly and accurately presented and does it cite the current literature?
+Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments? Partly
+Are the recommendations made clear, balanced, and justified on the basis of the presented arguments?
+Partly
+No competing interests were disclosed.
+computational social science
+I confirm that I have read this submission and believe that I have an appropriate level of expertise to confirm that it is of an acceptable scientific standard, however I have significant reservations, as outlined above.
+Provide sufficient details of any financial or non-financial competing interests to enable users to assess whether your comments might lead a reasonable person to question your impartiality. Consider the following examples, but note that this is not an exhaustive list:
+Within the past 4 years, you have held joint grants, published or collaborated with any of the authors of the selected paper.
+You have a close personal relationship (e.g. parent, spouse, sibling, or domestic partner) with any of the authors.
+You are a close professional associate of any of the authors (e.g. scientific mentor, recent student).
+You work at the same institute as any of the authors.
+You hope/expect to benefit (e.g. favour or employment) as a result of your submission.
+You are an Editor for the journal in which the article is published.
+You expect to receive, or in the past 4 years have received, any of the following from any commercial organisation that may gain financially from your submission: a salary, fees, funding, reimbursements.
+You expect to receive, or in the past 4 years have received, shared grant support or other funding with any of the authors.
+You hold, or are currently applying for, any patents or significant stocks/shares relating to the subject matter of the paper you are commenting on.
+Sign up for content alerts and receive a weekly or monthly email with all newly published articles
+Register with F1000Research
+Already registered? Sign in
+Not now, thanks
+All commenters must hold a formal affiliation as per our Policies . The information that you give us will be displayed next to your comment.
+User comments must be in English, comprehensible and relevant to the article under discussion. We reserve the right to remove any comments that we consider to be inappropriate, offensive or otherwise in breach of the User Comment Terms and Conditions . Commenters must not use a comment for personal attacks. When criticisms of the article are based on unpublished data, the data should be made available.
+Please disclose any competing interests that might be construed to influence your judgment of the article's or peer review report's validity or importance.
+Provide sufficient details of any financial or non-financial competing interests to enable users to assess whether your comments might lead a reasonable person to question your impartiality. Consider the following examples, but note that this is not an exhaustive list:
+Within the past 4 years, you have held joint grants, published or collaborated with any of the authors of the selected paper.
+You have a close personal relationship (e.g. parent, spouse, sibling, or domestic partner) with any of the authors.
+You are a close professional associate of any of the authors (e.g. scientific mentor, recent student).
+You work at the same institute as any of the authors.
+You hope/expect to benefit (e.g. favour or employment) as a result of your submission.
+You are an Editor for the journal in which the article is published.
+You expect to receive, or in the past 4 years have received, any of the following from any commercial organisation that may gain financially from your submission: a salary, fees, funding, reimbursements.
+You expect to receive, or in the past 4 years have received, shared grant support or other funding with any of the authors.
+You hold, or are currently applying for, any patents or significant stocks/shares relating to the subject matter of the paper you are commenting on.
+An innovative open access publishing platform offering rapid publication and open peer review, whilst supporting data deposition and sharing.
+Follow us
+© 2012-2026 F1000 Research Ltd. ISSN 2046-1402 | Legal | Partner of Research4Life • CrossRef • ORCID • FAIRSharing
+The email address should be the one you originally registered with F1000.
+You registered with F1000 via Google, so we cannot reset your password.
+To sign in, please click here .
+If you still need help with your Google account password, please click here .
+You registered with F1000 via Facebook, so we cannot reset your password.
+To sign in, please click here .
+If you still need help with your Facebook account password, please click here .
+If your email address is registered with us, we will email you instructions to reset your password.
+If you think you should have received this email but it has not arrived, please check your spam filters and/or contact for further assistance.

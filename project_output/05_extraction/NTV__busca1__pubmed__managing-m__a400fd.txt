@@ -1,0 +1,1051 @@
+Managing metabolic syndrome
+in bipolar disorder:
+multidisciplinary monitoring and
+treatment strategies
+Jorge C. Correia1,2*, Helene Richard-Lepouriel3,4,
+Anne Chalut-Carpentier 5 and Zoltan Pataky1,2
+1Unit of Therapeutic Patient Education, WHO Collaborating Centre, Service of Primary Care Medicine,
+Geneva University Hospitals, Geneva, Switzerland, 2Faculty Diabetes Centre, Faculty of Medicine,
+University of Geneva, Geneva, Switzerland, 3Mood Disorder and Anxiety Unit, Psychiatric Specialties
+Service, Department of Psychiatry, Geneva University Hospitals, Geneva, Switzerland, 4Department of
+Psychiatry, University of Geneva, Geneva, Switzerland, 5Centre Me´ tabolique Nutrition et Mouvement,
+Geneva, Switzerland
+Background: Bipolar disorder (BD) is a chronic psychiatric illness associated with
+high rates of medical comorbidities, among which metabolic syndrome (MetS) is
+particularly prevalent and consequential. Affecting nearly half of individuals with
+BD, MetS compounds the risk of cardiovascular disease, type 2 diabetes, and
+premature mortality, while also undermining psychiatric stability and cognitive
+functioning. Despite these outcomes, metabolic health remains underrecognized
+and undertreated in psychiatric care.
+Objective: This narrative review aims to examine the bidirectional relationship
+between BD and metabolic syndrome and to highlight multidisciplinary strategies
+for metabolic monitoring and clinical management in this population.
+Methods: A targeted literature search was conducted using PubMed (2000 –
+2025), covering studies on the epidemiology, behavioral and biological
+mechanisms, pharmacologic and lifesty le interventions, and clinical care
+integration related to BD and MetS. The review followed established quality
+guidance for narrative synthesis and was structured using the Population –
+Concept–Context framework to improve transparency in the selection and
+synthesis of the literature.
+Results: The comorbidity between BD and MetS is shaped by multiple interacting
+factors, including shared be havioral risk factors, in ﬂammatory pathways,
+hypothalamic –pituitary–adrenal (HPA) axis dysregulation, and the metabolic
+effects of psychotropic medications. While pharmacological treatment remains
+essential for mood stabilization, systematic metabolic monitoring is crucial to
+mitigate treatment-related risks. Evidence supports the central role of lifestyle
+interventions, including nutritional strategies and physical activity in reducing
+cardiometabolic risk. Emerging therapeutic approaches such as GLP-1 receptor
+agonists and ketogenic metabolic therapy show potential bene ﬁts but require
+c a r e f u lc l i n i c a li n t e g r a t i o n .I ns e l e c t ed individuals with severe or refractory
+obesity, bariatric surgery may be considered. Therapeutic patient education
+(TPE) represents the cornerstone of care by supporting self-management,
+treatment adherence, and shared decision-making.
+Frontiers in Psychiatry frontiersin.org01
+OPEN ACCESS
+EDITED BY
+Nuno Madeira,
+University of Coimbra, Portugal
+REVIEWED BY
+Zoltan Sarnyai,
+James Cook University, Australia
+Kelvin C. Y. Leung,
+The University of Sydney, Australia
+*CORRESPONDENCE
+Jorge C. Correia
+jorgecesar.correia@hug.ch
+RECEIVED 05 September 2025
+REVISED 23 March 2026
+ACCEPTED 25 March 2026
+PUBLISHED 22 April 2026
+CITATION
+Correia JC, Richard-Lepouriel H,
+Chalut-Carpentier A and Pataky Z (2026)
+Managing metabolic syndrome in bipolar
+disorder: multidisciplinary monitoring
+and treatment strategies.
+Front. Psychiatry 17:1699908.
+doi: 10.3389/fpsyt.2026.1699908
+COPYRIGHT
+© 2026 Correia, Richard-Lepouriel,
+Chalut-Carpentier and Pataky. This is an
+open-access article distributed under the
+terms of the Creative Commons
+Attribution License (CC BY).The use,
+distribution or reproduction in other
+forums is permitted, provided the
+original author(s) and the copyright
+owner(s) are credited and that the
+original publication in this journal is
+cited, in accordance with accepted
+academic practice. No use, distribution
+or reproduction is permitted which does
+not comply with these terms.
+TYPE Review
+PUBLISHED 22 April 2026
+DOI 10.3389/fpsyt.2026.1699908
+Conclusion: Addressing the dual burden of BD and MetS requires a
+multidisciplinary and patient-cent ered approach integrating metabolic
+monitoring, lifestyle interventions, pharmacological strategies, and therapeutic
+patient education. Strengthening collaboration between psychiatry, primary
+care, and metabolic specialists is essential to reduce cardiometabolic risk and
+improve long-term health outcomes in this vulnerable population.
+KEYWORDS
+bipolar disorder, in ﬂammation, integrated care, lifestyle intervention, metabolic
+syndrome, psychotropic medications, therapeutic education
+1 Introduction
+Bipolar disorder (BD) is a chronic, relapsing psychiatric illness
+characterized by recurrent episodes of mania or hypomania and
+depression, interspersed with periods of euthymia. It affects ap-
+proximately 1 –2% of the global population, with onset typically in
+late adolescence or early adulthood ( 1, 2). The disorder is associated
+with substantial functional impairment, elevated suicide risk, and
+increased medical comorbidity, contributing to a 10 –20 year re-
+duction in life expectancy on average ( 3–5).
+Among the most clinically signi ﬁcant medical comorbidities is
+metabolic syndrome (MetS), a cluster of interrelated cardiometabolic
+abnormalities that includes abdom inal obesity, hyperglycemia,
+elevated blood pressure, hypertriglyceridemia, and reduced HDL
+cholesterol (6, 7). When present, MetS confers a markedly increased
+risk of developing type 2 diabetes mellitus, cardiovascular disease, and
+premature death (8). It affects roughly 25% of the general population,
+but prevalence estimates rise to 40 –50% among individuals
+with BD, highlighting a substantial cardiometabolic burden in this
+population (9–11).
+This high comorbidity has profound consequences. The pre-
+sence of MetS in people living with bipolar disorder (PlwBD) has
+been associated with greater cognitive impairment, lower treatment
+response, poorer quality of life, and increased rates of hospitaliza-
+tion and mortality (12–14). Multiple factors likely contribute to this
+association, including behavioral factors such as irregular eating
+patterns, low physical activity, substance use, and sleep disruption
+(15). Compounding these risks are the iatrogenic effects of psycho-
+tropic medications, particularly second-generation antipsychotics
+and mood stabilizers, which can induce weight gain and metabolic
+dysregulation ( 16–18).
+Despite this, metabolic health is often under-monitored and
+undertreated in psychiatric settings ( 19). This gap in care re ﬂects
+fragmented service delivery and limited integration between psy-
+chiatric and somatic health care, despite increasing awareness of the
+complex interactions between mental and physical health ( 20).
+The goal of this narrative review is to synthesize current
+evidence on the pathophysiological mechanisms that link BD and
+MetS and to discuss practical strategies for metabolic monitoring
+and multidisciplinary management. By drawing on research across
+psychiatry, endocrinology, nutrition, and behavioral science, this
+review aims to support a more integrated model of care for this
+vulnerable population.
+2 Methodological approach
+This article was conducted as a narrative review aimed at
+synthesizing current evidence on the relationship between bipolar
+disorder (BD) and metabolic syndrome (MetS), with a particular
+focus on mechanisms underlying their co-occurrence and on
+clinical strategies for monitoring and management.
+To structure the review, we followed the Population –Concept–
+Context (PCC) framework recommended by the Joanna Briggs
+Institute (JBI) for narrative and scoping reviews ( 21).
+ Population: people living with bipolar disorder (PlwBD).
+ Concept: metabolic syndrome and related cardiometabolic
+disturbances, including obe sity, insulin resistance,
+and dyslipidemia.
+ Context: clinical monitoring, lifestyle interventions, phar-
+macological treatments, and multidisciplinary care strategies
+relevant to psychiatric and metabolic health.
+A targeted literature search was conducted using the PubMed
+database, covering publications from January 2000 to June 2025.
+PubMed was selected due to its comprehensive coverage of bio-
+medical and psychiatric literature and its indexing of major clinical
+and translational research in psychiatry and metabolic medicine.
+The search strategy combined keywords and Medical Subject
+Headings (MeSH) across several thematic domains:
+ Psychiatric conditions: “bipolar disorder”, “mood disorder”.
+ Metabolic health: “metabolic syndrome ”, “obesity”, “insulin
+resistance”, “cardiometabolic risk ”.
+ Biological mechanisms: “inﬂammation”, “cytokines”, “HPA
+axis”, “genetic polymorphisms ”.
+ Treatment-related factors: “antipsychotics”, “weight gain ”,
+“GLP-1 receptor agonists ”, “ketogenic diet ”, “bariat-
+ric surgery ”.
+ Lifestyle interventions: “diet”, “physical activity”, “therapeu-
+tic patient education ”
+Eligible studies included peer-reviewed human studies, such as
+observational studies, clinical trials, systematic reviews, and meta-
+analyses addressing the association between BD and metabolic
+health or interventions targeting metabolic risk in this population.
+Studies were excluded if they:
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org02
+ involved only animal models,
+ did not speci ﬁcally address bipolar disorder or meta-
+bolic outcomes,
+ or consisted solely of conference abstracts without full data.
+Titles and abstracts were screened for relevance, followed by
+full-text review when necessary to ensure alignment with the
+PCC framework.
+Although this review was not conducted as a systematic review, we
+sought to enhance transparency andmethodological rigor by adhering
+to the SANRA (Scale for the Assessment of Narrative Review Articles)
+guidelines (22), which assess narrative reviews across six domains
+including justiﬁcation of the review ’s importance, literature search
+transparency, referencing quality, and scientiﬁc reasoning.
+A summary of the literature search approach is presented
+in Table 1 .
+3 Results
+3.1 Bidirectional relationship underlying the
+comorbidity
+3.1.1 Shared behavioral and clinical pathways
+The association between BD and MetS is increasingly recognized as
+bidirectional. Several behavioral and clinical mechanisms may contrib-
+ute to this relationship. On one hand, individuals with BD may have a
+higher likelihood of developing metabolic disturbancesdue to a com-
+bination of lifestyle-related factors, such as physical inactivity, emo-
+tional eating, smoking, and disrupted sleep patterns, exacerbated
+during mood episodes (23–25). In addition, long-term use of certain
+psychotropic medications, especially second-generation antipsychotics
+and mood stabilizers, is associated withweight gain, insulin resistance,
+and lipid abnormalities (18, 26–28).
+On the other hand, the presence of MetS may negatively
+inﬂuence the clinical course of BD. Metabolic abnormalities, in-
+cluding insulin resistance and systemic in ﬂammation, have been
+associated with increased severity and frequency of mood episodes,
+cognitive dysfunction, and reduced treatment response ( 29–33).
+Evidence suggests that MetS may interfere with neuroplasticity and
+neurotransmitter systems, which could contribute to worsening
+psychiatric symptoms (30, 34). Together, these mechanisms suggest
+the existence of a reinforcing relationship between metabolic and
+psychiatric processes, highlighting the importance of early detection
+and integrated management strategies.
+3.1.2 In ﬂammatory mechanisms
+Chronic low-grade inﬂammation is increasingly recognized as a
+biological link between BD and MetS (32, 33, 35, 36). PlwBD exhibit
+elevated levels of pro-in ﬂammatory cytokines, including interleu-
+kin-1 (IL-1), interleukin 6 (IL-6), tumor necrosis factor-alpha
+(TNF-a), and high-sensitivity C-reactive protein (hs-CRP), even
+during euthymic states ( 32, 36). These in ﬂammatory markers have
+also been implicated in insulin resistance, a key driver of MetS ( 33).
+These cytokines can cross the blood-brain barrier and activate
+microglial cells, leading to neuroinﬂammation. This has been linked
+to altered glutamate neurotransmission and excitotoxicity ( 37–39)
+as well as dysregulation of monoamines (dopamine, serotonin,
+norepinephrine) ( 35, 40, 41) and reduced neurotrophic support,
+particularly decreased BDNF, a key molecule for synaptic plasticity
+and neuronal survival ( 41–43). Low BDNF is a robust biomarker in
+BD and is particularly low during depressive and manic phases.
+Together, these in ﬂammatory processes may contribute both to
+mood dysregulation and to metabolic disturbances, reinforcing the
+biological links between BD and MetS.
+3.1.3 HPA axis dysregulation and cortisol
+Another important biological pathway linking BD and MetS
+involves dysregulation of the hypothalamic –pituitary –adrenal
+(HPA) axis. Elevated cortisol levels are frequently observed in
+individuals with BD and have been associated with mood instability,
+cognitive impairment, and reductions in hippocampal volume ( 44,
+45). These neurotoxic effects may contribute to both affective
+symptomatology and impaired emotion regulation ( 46). In parallel,
+sustained hyperactivation of the HPA axis plays a critical role in the
+development of MetS. Chronic cortisol elevation promotes central
+adiposity, increases hepatic gluconeogenesis, and induces insulin
+resistance, all of which are key components of the MetS ( 47).
+Additionally, cortisol in ﬂuences lipid metabolism and blood pres-
+sure regulation, further aggravating dyslipidemia and hyperten-
+sion (47).
+Taken together, HPA axis dysregulation represents a shared
+neuroendocrine pathway linking chronic stress, metabolic dysfunc-
+tion, and mood disorder progression.
+TABLE 1 Literature identi ﬁcation strategy used in the narrative review.
+Step Description
+Database searched PubMed
+Time period 2000 –June 2025
+Population People living with bipolar disorder
+Concept Metabolic syndrome and cardiometabolic risk
+Context Monitoring, lifestyle interventions, pharmacological and surgical management
+Study types included Clinical trials, observational studies, systematic reviews, meta-analyses
+Exclusion criteria Animal studies, non-relevant metabolic outcomes, conference abstracts
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org03
+3.1.4 Metabolic effects of psychotropic
+medications
+Pharmacological treatment remains essential in the manage-
+ment of BD, yet many psychotropic agents, particularly second-
+generation antipsychotics and certain mood stabilizers, are associ-
+ated with signi ﬁcant metabolic side effects. These include weight
+gain, insulin resistance, dyslipidemia, and increased risk of type 2
+diabetes, all of which contribute to the development or worsening of
+MetS ( 27, 48–50).
+Second-generation antipsychotics such as olanzapine and
+clozapine have been consistently associated with the greatest
+metabolic burden (51–53). These medications may increase appetite
+by antagonizing histamine H1 and serotonin 5-HT2C receptors,
+interfere with glucose metabolism, and promote central fat accu-
+mulation through dysregulation of hypothalamic signaling and
+activation of the endocannabinoid system ( 54). Additionally,
+these agents may impair insulin sensitivity independently of
+weight gain.
+Mood stabilizers also impact metabolic function. Valproate, for
+instance, has been associated with increased adiposity and altered
+lipid proﬁles (55). Although lithium treatment has been associated
+with altered thyroid function, current evidence suggests that these
+changes are often subclinical and not directly responsible for
+metabolic disturbances or signi ﬁcant weight gain. In fact, lithium
+may be metabolically neutral or even protective compared to other
+mood stabilizers ( 56). Even some antidepressants —especially
+tricyclics—have been linked to weight gain and insulin resistance
+(57–59).
+Given the chronic nature of BD and the long-term use of these
+medications, clinicians must carefully balance psychiatric ef ﬁcacy
+with metabolic safety. Systematic metabolic monitoring and careful
+selection of medications with lower cardiometabolic risk proﬁles are
+therefore essential components of comprehensive care.
+3.1.5 Genetic variation and antipsychotic-induced
+weight gain
+While early research suggested that polymorphisms in the FTO
+gene commonly linked to obesity in the general population might
+contribute to metabolic side effects in PlwBD treated with
+antipsychotics ( 60), more recent studies have not consistently
+supported this association. In particular, investigations into the
+rs9939609 variant have shown no signi ﬁcant correlation with body
+mass index (BMI), waist circumference, or lipid abnormalities in
+people with schizophrenia or BD undergoing psychotropic treat-
+ment (61–63). These ﬁndings suggest that the contribution of FTO
+polymorphisms to antipsychotic-related metabolic disturbances
+may be limited. Instead, emerging research points toward the
+involvement of other pathways, including genes regulating insulin
+signaling, in ﬂammatory responses, and mitochondrial function,
+which may offer more promising insights into the shared vulner-
+ability between BD and metabolic disturbances ( 64–68).
+Although genetic susceptibility may in ﬂuence individual re-
+sponses to psychotropic medications, current evidence remains
+insufﬁcient to support routine genetic screening in clinical practice.
+Further research is needed to clarify the complex genetic architec-
+ture underlying metabolic risk in people living with BD.
+A summary of the bidirectional link between BD and MetS is
+shown in Figure 1 .
+Bipolar disorder and metabolic syndrome frequently co-occur and
+share multiple behavioral, biological, and treatment-related pathways.
+Lifestyle factors, psychotropic medications, and metabolic abnormali-
+ties are associated with increased cardiometabolic risk in people living
+with bipolar disorder. Conversely, metabolic disturbances such as
+insulin resistance, systemic in ﬂammation, and neuroendocrine
+dysregulation have been associated with mood instability and cognitive
+impairment. Together, these interconnected processes may contribute
+to the reciprocal relationship between psychiatric and metabolic health.
+FIGURE 1
+Bidirectional associations between bipolar disorder and metabolic syndrome.
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org04
+3.2 Metabolic monitoring and management
+of metabolic syndrome in bipolar disorder
+3.2.1 Challenges and gaps in guideline integration
+for bipolar and metabolic comorbidity
+Despite the well-established bidirectional relationship between
+serious mental illness and cardiometabolic disease, integration of
+care remains limited. A recent guideline review by Silverstein et al.,
+2024 found that management recommendations are far more
+frequently included in psychiatric guidelines than psychiatric guid-
+ance appears in cardiovascular guidelines ( 69). Notably, European
+psychiatric societies, such as NICE and BAP, provide more com-
+prehensive recommendations for baseline and ongoing monitoring
+of cardiometabolic risk such as blood pressure, weight, glycemic
+control, lipid pro ﬁles, and ECG, than their American counter-
+parts ( 69).
+Conversely, cardiovascular guidelines —particularly those from
+American societies rarely incl ude recommendations regarding
+psychiatric comorbidities ( 69). This lack of reciprocity re ﬂects
+persisting gaps in awareness among cardiovascular professionals
+regarding the impact of psychiatric disorders, including BD, on
+cardiometabolic outcomes.
+However, developing truly comprehensive guidelines for BD is
+challenging due to the disorder ’s heterogeneity, the sheer volume of
+treatment modalities (pharmaco logical, psychosocial), and the
+predominance of fragmented, expert-opinion –based evidence com-
+plicate synthesis into uniﬁed algorithms (69). Applying this critique
+to metabolic –psychiatric comorbidity underscores the dif ﬁculty of
+formulating integrated guidance that simultaneously addresses both
+psychiatric stability and cardiometabolic risk. Strengthening col-
+laboration between psychiatry, primary care, and metabolic spe-
+cialists therefore represents a key priority for improving long-term
+outcomes in this population.
+3.2.2 Metabolic monitoring
+Given the elevated risk of cardiometabolic complications in
+individuals with BD, systematic and regular metabolic monitoring
+is essential. Clinical guidelines recommend routine assessments of
+weight, body mass index (BMI), waist circumference, blood pres-
+sure, fasting glucose, and lipid pro ﬁles in all PlwBD receiving
+psychotropic medications, particularly those at higher metabolic
+risk ( 70).
+Monitoring should ideally begin before initiation of pharmaco-
+logical treatment and continue regularly thereafter. For most
+parameters, assessments should be conducted at baseline, 3
+months, and then every 6 to 12 months, depending on individual
+risk and treatment type ( 70, 71). For example:
+ Weight, BMI, and waist circumference should be measured
+at each psychiatric follow-up.
+ Blood pressure should be assessed at least annually or more
+frequently in hypertensive individuals.
+ Fasting plasma glucose and lipid panel should be monitored
+every 6 to 12 months.
+Regular monitoring of metabolic parameters should be com-
+plemented by treatment-speci ﬁc safety assessments that may also
+have metabolic relevance. Thyroid function should be checked
+periodically in people with bipolar disorder and comorbid meta-
+bolic syndrome, as thyroid dysfunction contributes to weight
+ﬂuctuations, obesity, and worsening metabolic risk. This is partic-
+ularly important in patients receiving lithium, which is known to
+affect thyroid physiology. In addition, renal function should be
+assessed regularly in lithium-treated patients, as chronic kidney
+impairment may further complicate metabolic management.
+For patients receiving valproate, hepatic function and platelet
+counts should be monitored periodically to detect potential hepa-
+totoxicity or thrombocytopenia. While platelet monitoring is re-
+quired primarily for treatment safety, hepatic assessment is relevant
+both to detect valproate-induced hepatotoxicity and to screen for
+metabolic dysfunction –associated steatotic liver disease (MASLD),
+a frequent complication of obesity and metabolic syndrome. This
+highlights the importance of integrating metabolic screening into
+routine psychiatric follow-up.
+3.2.3 Nutritional Interventions in bipolar disorder
+with metabolic syndrome
+Nutritional strategies are fundamental to the management of
+MetS in individuals with BD. A 2022 systematic review by Gabriel
+et al. synthesized ﬁndings from 60 studies and demonstrated that
+dietary quality in ﬂuences both mood stability and cardiometabolic
+health ( 72). Speci ﬁcally, higher intake of omega-3 fatty acids,
+particularly EPA and DHA, was associated with reduced depressive
+symptoms and improved in ﬂammatory pro ﬁles ( 72). Similarly,
+micronutrients such as folate, zinc, and coenzyme Q10 were
+linked to improved mood and potential bene ﬁts for mitochondrial
+and metabolic function ( 72). Probiotics also showed promise, likely
+through modulation of the gut-brain axis and systemic in ﬂamma-
+tion (72).
+Beyond individual nutrients, broader dietary patterns —notably
+those resembling the Mediterranean or DASH diets —were associ-
+ated with better mood outcomes, lower rates of MetS, and reduced
+cardiovascular risk. These diets emphasize fruits, vegetables, whole
+grains, ﬁsh, and healthy fats, while limiting processed foods, added
+sugars, and saturated fats ( 72).
+Importantly, the review underlined that whole-diet approaches
+may yield greater bene ﬁts than isolated supplementation due to
+synergistic effects on metabolic and neuropsychiatric pathways (72).
+These ﬁndings support the integration of structured, evidence-
+based dietary counseling into multidisciplinary treatment plans
+for PlwBD, particularly those at risk of or living with MetS.
+In addition to conventional approaches, emerging evidence
+supports the potential utility of the ketogenic metabolic therapy
+(KMT): a very low-carbohydrate, high-fat dietary intervention that
+induces a state of nutritional ketosis ( 73–75).
+KMT has been an evidence-based treatment for drug-resistant
+epilepsy for more than a century, with multiple randomized trials
+and meta-analyses demonstrating its ef ﬁcacy in reducing seizure
+frequency in both pediatric and adult populations ( 76–78). Interest
+in its potential psychiatric applications has grown in recent years
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org05
+due to its effects on neuronal excitability, mitochondrial function,
+and neuroin ﬂammation—mechanisms that are also implicated in
+the pathophysiology of bipolar disorder. Several pilot studies and
+clinical observations have suggested that KMT may be feasible and
+potentially bene ﬁcial in individuals with bipolar disorder. For
+example, a recent pilot study reported that adherence to a ketogenic
+metabolic intervention for six to eight weeks was associated with
+reductions in depressive and manic symptoms, improvements in
+insulin sensitivity, and favorable changes in cerebral energy metab-
+olism measured using magnetic resonance spectroscopy ( 79).
+Participants demonstrated improved metabolic activity in the
+anterior cingulate cortex, suggesting a potential neurometabolic
+effect of ketosis on mood regulation.
+Mechanistically, ketogenic metabolic therapy has been pro-
+posed to i) enhance mitochondrial biogenesis and energy ef ﬁciency,
+ii) reduce oxidative stress and systemic in ﬂammation, iii) modulate
+glutamatergic neurotransmission and iv) increase BDNF expression
+and neuroplasticity.
+While these ﬁndings are promising, current evidence remains
+limited, as most available studies are small, short-term, and fre-
+quently uncontrolled ( 79–82). Adherence to KMT can also be
+challenging, particularly during depressive episodes characterized
+by low motivation or disorganized eating behaviors. Furthermore,
+potential adverse effects —including gastrointestinal symptoms,
+micronutrient de ﬁciencies, and changes in lipid pro ﬁles—require
+careful monitoring and medical supervision.
+Importantly, ketogenic metabolic therapy should not be con-
+sidered a stand-alone intervention in the management of bipolar
+disorder with metabolic syndrome. Its safe and effective implemen-
+tation requires integration into a multidisciplinary treatment frame-
+work that includes psychiatric monitoring, nutritional supervision,
+and lifestyle interventions.
+First, individualized nutrit ional assessment is necessary to
+determine whether KMT is appropriate for a given patient, taking
+into account metabolic status, comorbidities, and readiness for
+dietary change. Psychiatric stability should also be evaluated
+before initiating this intervention.
+Second, continuous monitoring is essential. This includes
+periodic evaluation of ketone levels, lipid pro ﬁles, renal and hepatic
+function, and psychiatric symptoms. Dietary changes may alter
+medication metabolism, necessitating close collaboration between
+psychiatrists, dietitians, and primary care clinicians.
+Finally, structured follow-up and behavioral support are critical
+for sustaining adherence. Behavioral coaching, motivational inter-
+viewing, digital health tools, and psychoeducation may all facilitate
+long-term adherence and reduce relapse risk. Family involvement
+may further support successful implementation.
+3.2.4 Physical activity promotion in bipolar
+disorder with metabolic syndrome
+Regular physical activity is a key component in the management
+of MetS ( 83) and has additional bene ﬁts for mood stabilization,
+cognitive functioning, and overall well-being in individuals with BD
+(76). Despite these advantages, levels of physical activity remain
+signiﬁcantly lower in this population compared to the general
+public, due to motivational de ﬁcits, fatigue, fear of triggering
+mood episodes, and lack of tailored programs ( 77).
+To be effective, physical activity interventions must be struc-
+tured, progressive, and individualized. Moderate-intensity aerobic
+exercises—such as brisk walking, cycling, or swimming—performed
+at least 150 minutes per week are recommended, in line with WHO
+guidelines. Resistance training may also be beneﬁcial, particularly in
+addressing sarcopenic obesity and improving insulin sensitivity.
+Behavioral strategies such as goal setting, activity tracking with
+wearable devices, and motivational interviewing can improve en-
+gagement and adherence. Group sessions, peer support, and inte-
+gration into psychosocial rehabilitation programs further increase
+feasibility and impact. Importantly, exercise prescriptions should be
+developed in collaboration with physiotherapists or exercise spe-
+cialists familiar with psychiatric conditions, to ensure safety and
+promote long-term sustainability ( 78).
+By addressing both physical and mental health goals, exercise-
+based interventions contribute not only to metabolic risk reduction
+but also to improved mood regulation, sleep quality, and func-
+tional recovery.
+3.2.5 Emerging treatments: GLP-1 receptor
+agonists
+Glucagon-like peptide-1 receptor agonists (GLP-1 RAs), orig-
+inally developed for the treatment of type 2 diabetes, have shown
+promising results in addressing obesity and metabolic complica-
+tions in psychiatric populations ( 79, 80). These agents promote
+glucose-dependent insulin secretion, delay gastric emptying, and
+enhance satiety, resulting in signi ﬁcant weight loss and improve-
+ments in glycemic control ( 80).
+In the context of BD, small-scale studies and case series have
+demonstrated that GLP-1 RAs such as liraglutide and semaglutide
+may mitigate antipsychotic-induced weight gain and metabolic
+dysregulation, particularly in PlwBD resistant to lifestyle interven-
+tions or metformin therapy ( 81, 82, 84, 85). Notably, a randomized
+controlled trial in individuals with severe mental illness treated with
+clozapine or olanzapine reported that adjunctive liraglutide therapy
+led to signi ﬁcant reductions in body weight and HbA1c over 16
+weeks, without destabilizing psychiatric symptoms ( 86).
+Beyond metabolic bene ﬁts, preliminary evidence suggests po-
+tential neuroprotective and anti-in ﬂammatory properties of GLP-1
+RAs, which may confer additional advantages for mood regulation
+and cognitive function ( 80), though more research is needed to
+conﬁrm these effects in bipolar populations.
+GLP-1 RAs are generally well-tolerated, with gastrointestinal
+symptoms being the most common side effects. However, they
+should never be used as a stand-alone solution. For sustained
+beneﬁt, GLP-1 RAs must be embedded in a comprehensive life-
+style-oriented care plan, including tailored nutritional guidance,
+physical activity support, and TPE. Their effectiveness depends not
+only on pharmacologic mechanisms but also on behavioral engage-
+ment and long-term adherence, which require multidisciplinary
+coordination and patient empowerment.
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org06
+3.2.6 Bariatric surgery: a consideration for severe
+obesity in bipolar disorder
+Bariatric surgery is an effective intervention for individuals with
+severe obesity and comorbid MetS, leading to substantial and
+sustained weight loss, remission of type 2 diabetes, and reduction
+in cardiovascular risk (87). In the general population, it is associated
+with signi ﬁcant improvements in quality of life and long-term
+survival. Its role in PlwBD, however, has traditionally been met
+with caution due to concerns over psychiatric instability and
+adherence to postoperative care.
+A large prospective study found that approximately two-thirds
+of bariatric surgery candidates met criteria for a lifetime DSM-IV
+Axis I psychiatric disorder, and nearly 40% met criteria for a current
+diagnosis at the time of preoperative assessment ( 88). Mood
+disorders, including BD, were among the most common conditions
+identiﬁed (88). These ﬁndings highlight that psychiatric comorbid-
+ity is not uncommon among surgical candidates, and that BD in
+itself should not be viewed as an exclusion criterion. Importantly,
+authors also observed that when i ndividuals with psychiatric
+comorbidities received comprehensive psychological support, they
+achieved postoperative outcomes —including weight loss and func-
+tional improvement —comparable to those without psychiatric
+diagnoses ( 88). Rates of psychiatric decompensation following
+surgery were also relatively low, reinforcing the feasibility of
+bariatric interventions in this population when delivered within a
+structured, supportive care model.
+Friedman et al. further clari ﬁed this picture: of bipolar-spec-
+trum PlwBD seeking bariatric surgery, 57% received psychological
+approval, and 48% underwent the procedure ( 89). Those selected
+for surgery generally had fewer prior psychiatric hospitalizations.
+Although follow-up attendance declined beyond two years, weight
+loss outcomes at 12-month and longer-term follow-up were
+comparable to matched controls without BD, demonstrating dura-
+ble metabolic bene ﬁt without increased risk of psychiatric deterio-
+ration ( 89). These results are in alignment with more recent
+studies (90).
+Eligibility for surgery should follow standard criteria (e.g., BMI
+≥35 kg/m2 or ≥30 kg/m2 with comorbidities) ( 91), but additional
+emphasis must be placed on mental health stability, medication
+adherence, and availability of long-term psychiatric and nutritional
+support. Preoperative evaluations should include a comprehensive
+psychiatric assessment to ensure mood stability and readiness for
+the behavioral demands of the procedure. Postoperative care must
+be integrated into a multidisciplinary framework to address both
+physical and psychological needs, including monitoring for poten-
+tial mood ﬂuctuations and ensuring nutritional adequacy.
+3.2.7 Therapeutic patient education and patient-
+centered care
+Therapeutic Patient Education (TPE) plays a pivotal role in
+empowering individuals BD and MetS to manage both mental and
+physical health actively. TPE extends beyond imparting informa-
+tion—it encompasses enhancing self-management abilities, foster-
+ing autonomy, and strengthening coping strategies within a
+comprehensive, biopsychosocial framework ( 92).
+A recent systematic review of TPE in severe mental illness was
+conducted, identifying 44 programs across diagnoses including BD
+(93). While outcomes varied, several trials reported signi ﬁcant
+improvements in symptom control, self-ef ﬁcacy, and everyday
+functioning ( 93). Notably, psychoeducational programs tailored to
+BD have consistently demonstrated enhanced treatment adherence,
+reduced relapse rates, and improved quality of life ( 93). For
+example, Lequimener-de Lorgeril et al. (2019) observed increased
+self-esteem and trends toward better quality-of-life scores following
+FIGURE 2
+Multidisciplinary management of metabolic syndrome in people living with bipolar disorder.
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org07
+an eight-session bipolar-speci ﬁc TPE program ( 94). These ﬁndings
+are supported by multiple randomized controlled trials indicating
+that psychoeducation decreases hospitalization and increases time
+to relapse in PlwBD ( 95).
+Central to TPE ’s success is a patient-centered, collaborative
+approach that respects individual preferences, tailors content to
+readiness and lived experience, and integrates peer support ( 92).
+This approach promotes empowerment, hope, and connectedness
+among participants, core elements of recovery. Peer involvement
+enriches the learning environment, reducing stigma and modeling
+effective coping strategies. Given the chronic, ﬂuctuating course of
+both BD and MetS, TPE delivered through a sustained, multidisci-
+plinary framework, incorporating psychiatry, nutrition, behavioral
+therapy, and primary care, enables patients to become active,
+informed partners in their health.
+In essence, TPE fosters therapeutic alliance, improves engage-
+ment, and bridges the gap between clinical recommendations and
+real-world self-management. By nurturing patient agency and
+reinforcing skills across behavioral, medical, and psychological
+domains, TPE directly contributes to improved treatment adher-
+ence, mood stability, and long-term metabolic health.
+The different axes for managing MetS in PlwBD are summa-
+rized in Figure 2 .
+Management of metabolic syndrome in bipolar disorder re-
+quires a patient-centered and multidisciplinary approach. Core
+domains include systematic metabolic monitoring, lifestyle inter-
+ventions (nutrition and physical activity), pharmacological strate-
+gies such as GLP-1 receptor agonists, and therapeutic patient
+education to support self-management and treatment adherence.
+In selected patients with severe or refractory obesity, advanced
+metabolic therapies such as bariatric surgery or ketogenic metabolic
+therapy may be considered within specialized care pathways.
+4 Limitations and implications
+This narrative review has several limitations. First, the literature
+search was restricted to a single database (PubMed). Although this
+database provides broad coverage of biomedical and psychiatric
+research, the exclusion of other sources (e.g., Embase, PsycINFO,
+Cochrane) may have limited the comprehensiveness of the review
+and introduced selection bias.
+Second, as a narrative review, this work does not follow a fully
+systematic methodology. Despit e efforts to enhance rigor and
+transparency, including the use of the SANRA framework, the
+selection and synthesis of studies may be subject to author inter-
+pretation and do not provide quantitative estimates of effect.
+Third, the evidence supporting several emerging interventions
+—such as ketogenic metabolic therapy, GLP-1 receptor agonists in
+psychiatric populations, and bariatric surgery in individuals with
+bipolar disorder remains limited. Available studies are often char-
+acterized by small sample sizes ,s h o r tf o l l o w - u pp e r i o d s ,a n d
+methodological heterogeneity, limiting the strength and generaliz-
+ability of conclusions.
+These limitations have important clinical implications. Lifestyle
+interventions remain the cornerstone of cardiometabolic risk reduc-
+tion and should be systematically implemented. Pharmacological and
+surgical strategies should be considered as adjunctive options within a
+structured, multidisciplinary care framework.
+Future research should prioritize well-designed longitudinal
+and interventional studies in bipolar populations, as well as the
+development of integrated clinical guidelines bridging psychiatric
+and metabolic care.
+5 Conclusion
+The coexistence of BD and MetS represents a complex and
+clinically signi ﬁcant challenge, driven by shared biological path-
+ways, adverse effects of psychotropic medications, and behavioral
+vulnerabilities. This comorbidity not only heightens the risk of
+cardiovascular morbidity and mortality but also compromises
+psychiatric stability, cognitive function, and overall quality of life.
+Effective management requires a proactive, multidisciplinary
+approach that integrates psychiatric care with metabolic monitor-
+ing, lifestyle interventions, and TPE. Emerging strategies, including
+GLP-1 receptor agonists and bariatric surgery in selected patients,
+may further enhance treatment options when embedded within this
+broader care model. Ultimately, improving outcomes in this pop-
+ulation will depend on strengthening collaboration across disci-
+plines and embedding cardio metabolic prevention and
+management into routine psychiatric care. Such an approach
+holds the potential to reduce health disparities and support sus-
+tained recovery in people living with bipolar disorder.
+Author contributions
+JC: Methodology, Writing – original draft, Conceptualization,
+Writing – review & editing, Validation, Formal analysis. HR-L:
+Validation, Writing – review & editing. AC-C: Validation, Writing
+– review & editing. ZP: Supervision, Writing – review & edit-
+ing, Validation.
+Funding
+The author(s) declared that ﬁnancial support was received for
+this work and/or its publication. This work was supported by the
+Swiss National Science Foundation (SNSF) through the BRIDGE
+Discovery Grant No. 501100001711-10004965, awarded to Prof.
+Zoltan Pataky. The article processing charges (APC) were funded by
+this grant.
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org08
+Conﬂict of interest
+The author(s) declared that this work was conducted in the
+absence of any commercial or ﬁnancial relationships that could be
+construed as a potential con ﬂict of interest.
+Generative AI statement
+The author(s) declared that generative AI was used in the creation
+of this manuscript. Arti ﬁcial intelligence–assisted tools (ChatGPT,
+OpenAI) were used to support the visual design of Figures 1, 2 for
+illustrative purposes. The conceptual framework, scientiﬁc content, and
+ﬁgure structure were developed and validated by the authors. The
+ﬁgures were subsequently reviewed, edited, andﬁnalized by the authors
+to ensure accuracy and consistency with the manuscript.
+Any alternative text (alt text) provided alongside ﬁgures in this
+article has been generated by Frontiers with the support of arti ﬁcial
+intelligence and reasonable e fforts have been made to ensure
+accuracy, including review by the authors wherever possible. If
+you identify any issues, please contact us.
+Publisher’s note
+All claims expressed in this article are solely those of the authors
+and do not necessarily represent those of their af ﬁliated organiza-
+tions, or those of the publisher, the editors and the reviewers. Any
+product that may be evaluated in this article, or claim that may be
+made by its manufacturer, is not guaranteed or endorsed by
+the publisher.
+References
+1. Grande I, Berk M, Birmaher B, Vieta E. Bipolar disorder. Lancet. (2016) 387:1561 –
+72. doi: 10.1016/S0140-6736(15)00241-X
+2. Merikangas KR, Jin R, He JP, Kessler RC, Lee S, Sampson NA, et al. Prevalence and
+correlates of bipolar spectrum disorder in the world mental health survey initiative.
+Arch Gen Psychiatry . (2011) 68:241 –51. doi: 10.1001/archgenpsychiatry.2011.12
+3. Hayes JF, Marston L, Walters K, King MB, Osborn DPJ. Mortality gap for people
+with bipolar disorder and schizophrenia: UK-based cohort study 2000-2014. Br J
+Psychiatry J Ment Sci . (2017) 211:175 –81. doi: 10.1192/bjp.bp.117.202606
+4. Laursen TM. Life expectancy among persons with schizophrenia or bipolar affective
+disorder. Schizophr Res . (2011) 131:101 –4. doi: 10.1016/j.schres.2011.06.008
+5. Walker ER, McGee RE, Druss BG. Mortality in mental disorders and global disease
+burden implications: a systematic review and meta-analysis. JAMA Psychiatry . (2015)
+72:334–41. doi: 10.1001/jamapsychiatry.2014.2502
+6. Alberti KGMM, Eckel RH, Grundy SM, Zimmet PZ, Cleeman JI, Donato KA, et al.
+Harmonizing the metabolic syndrome: a joint interim statement of the International
+Diabetes Federation Task Force on Epidemiology and Prevention; National Heart, Lung,
+and Blood Institute; American Heart Association; World Heart Federation; International
+Atherosclerosis Society; and International Association for the Study of Obesity.
+Circulation. (2009) 120:1640–5. doi: 10.1161/CIRCULATIONAHA.109.192644
+7. Grundy SM. Metabolic syndrome update. Trends Cardiovasc Med . (2016) 26:364 –
+73. doi: 10.1016/j.tcm.2015.10.004
+8. Mottillo S, Filion KB, Genest J, Joseph L, Pilote L, Poirier P, et al. The metabolic
+syndrome and cardiovascular risk a systematic review and meta-analysis. J Am Coll
+Cardiol. (2010) 56:1113 –32. doi: 10.1016/j.jacc.2010.05.034
+9. Vancampfort D, Correll CU, Galling B, Probst M, De Hert M, Ward PB, et al.
+Diabetes mellitus in people with schizophrenia, bipolar disorder and major depressive
+disorder: a systematic review and large scale meta-analysis. World Psychiatry Off J
+World Psychiatr Assoc WPA . (2016) 15:166 –74. doi: 10.1002/wps.20309
+10. McIntyre RS, Soczynska JK, Konarski JZ, Kennedy SH. The effect of antidepres-
+sants on lipid homeostasis: a cardiac safety concern? Expert Opin Drug Saf . (2006)
+5:523–37. doi: 10.1517/14740338.5.4.523
+11. Calkin C, van de Velde C, R ů žičkováM, Slaney C, Garnham J, Hajek T, et al. Can
+body mass index help predict outcome in patients with bipolar disorder? Bipolar
+Disord. (2009) 11:650 –6. doi: 10.1111/j.1399-5618.2009.00730.x
+12. Depp CA, Mausbach BT, Harmell AL, Savla GN, Bowie CR, Harvey PD, et al. Meta-
+analysis of the association between cognitive abilities and everyday functioning in bipolar
+disorder.Bipolar Disord. (2012) 14:217–26. doi: 10.1111/j.1399-5618.2012.01011.x
+13. Vancampfort D, Firth J, Schuch F, Rosenbaum S, De Hert M, Mugisha J, et al.
+Physical activity and sedentary behavior in people with bipolar disorder: A systematic
+review and meta-analysis. JA f f e c tD i s o r d. (2016) 201:145 –52. doi: 10.1016/
+j.jad.2016.05.020
+14. Kilbourne AM, Rofey DL, McCarthy JF, Post EP, Welsh D, Blow FC. Nutrition and
+exercise behavior among patients with bipolar disorder. Bipolar Disord. (2007) 9:443 –
+52. doi: 10.1111/j.1399-5618.2007.00386.x
+15. Simjanoski M, Patel S, Boni RD, Balanza ́
+-Martı́nez V, Frey BN, Minuzzi L, et al.
+Lifestyle interventions for bipolar disorders: A systematic review and meta-analysis.
+Neurosci Biobehav Rev . (2023) 152:105257. doi: 10.1016/j.neubiorev.2023.105257
+16. McIntyre RS, Soczynska JK, Cha DS, Woldeyohannes HO, Dale RS, Alsuwaidan
+MT, et al. The prevalence and illness characteristics of DSM-5-de ﬁned « mixed feature
+speciﬁer » in adults with major depressive disorder and bipolar disorder: Results from
+the International Mood Disorders Collaborative Project. JA f f e c tD i s o r d.( 2 0 1 5 )
+172:259–64. doi: 10.1016/j.jad.2014.09.026
+1 7 .D eH e r tM ,D e t r a u xJ ,v a nW i n k e lR ,Y uW ,C o r r e l lC U .M e t a b o l i ca n d
+cardiovascular adverse effects associated with antipsychotic drugs. Nat Rev
+Endocrinol. (2011) 8:114 –26. doi: 10.1038/nrendo.2011.156
+18. Correll CU, Lencz T, Malhotra AK. Antipsychotic drugs and obesity. Trends Mol
+Med. (2011) 17:97 –107. doi: 10.1016/j.molmed.2010.10.010
+19. Mitchell AJ, Lord O, Malone D. Differences in the prescribing of medication for
+physical disorders in individuals with v. without mental illness: meta-analysis. Br J
+Psychiatry J Ment Sci . (2012) 201:435 –43. doi: 10.1192/bjp.bp.111.094532
+20. De Hert M, Correll CU, Bobes J, Cetkovich-Bakmas M, Cohen D, Asai I, et al.
+Physical illness in patients with severe mental disorders. I. Prevalence, impact of
+medications and disparities in health care. World Psychiatry Off J World Psychiatr Assoc
+WPA. (2011) 10:52 –77. doi: 10.1002/j.2051-5545.2011.tb00014.x
+21. Peters MDJ, Marnie C, Tricco AC, Pollock D, Munn Z, Alexander L, et al. Updated
+methodological guidance for the conduct of scoping reviews. JBI Evid Synth . (2020)
+18:2119–26.
+22. Baethge C, Goldbeck-Wood S, Mertens S. SANRA —a scale for the quality
+assessment of narrative review articles. Res Integr Peer Rev . (2019) 4:5. doi: 10.1186/
+s41073-019-0064-8
+23. Ferns G. Cause, consequence or coincidence: The relationship between psychiatric
+disease and metabolic syndrome. Transl Metab Syndr Res. (2018) 1:23–38. doi: 10.1016/
+j.tmsr.2018.04.003
+24. Charles EF, Lambert CG, Kerner B. Bipolar disorder and diabetes mellitus:
+evidence for disease-modifying effects and treatment implications. Int J Bipolar
+Disord. (2016) 4:13. doi: 10.1186/s40345-016-0054 –4
+25. Vancampfort D, Mitchell AJ, De Hert M, Sienaert P, Probst M, Buys R, et al.
+Prevalence and predictors of type 2 diabetes mellitus in people with bipolar disorder: a
+systematic review and meta-analysis. J Clin Psychiatry. (2015) 76:1490–9. doi: 10.4088/
+JCP.14r09635
+26. Correll CU, Manu P, Olshanskiy V, Napolitano B, Kane JM, Malhotra AK.
+Cardiometabolic risk of second-generation antipsychotic medications during ﬁrst-
+time use in children and adolescents. JAMA. (2009) 302:1765 –73. doi: 10.1001/
+jama.2009.1549
+27. Mazereel V, Detraux J, Vancampfort D, van Winkel R, De Hert M. Impact of
+psychotropic medication effects on obesity and the metabolic syndrome in people with
+serious mental illness. Front Endocrinol . (2020) 11:573479. doi: 10.3389/
+fendo.2020.573479
+28. Carli M, Kolachalam S, Longoni B, Pintaudi A, Baldini M, Aringhieri S, et al.
+Atypical antipsychotics and metabolic syndrome: from molecular mechanisms to
+clinical differences. Pharmaceuticals
+. (2021) 14:3. doi: 10.3390/ph14030238
+29. McIntyre RS, Cha DS, Soczynska JK, Woldeyohannes HO, Gallaugher LA, Kudlow
+P, et al. Cognitive de ﬁcits and functional outcomes in major depressive disorder:
+determinants, substrates, and treatment interventions. Depress Anxiety. (2013) 30:515–
+27. doi: 10.1002/da.22063
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org09
+30. Khayachi A, Nunes A, Alda M, Rouleau GA. The overlooked role of metabolic
+disorders in bipolar disorder. Neurosci Biobehav Rev . (2025) 174:106203. doi: 10.1016/
+j.neubiorev.2025.106203
+31. Calkin C, McClelland C, Cairns K, Kamintsky L, Friedman A. Insulin resistance
+and blood-brain barrier dysfunction underlie neuroprogression in bipolar disorder.
+Front Psychiatry . (2021) 12:636174. doi: 10.3389/fpsyt.2021.636174
+32. Benedetti F, Aggio V, Pratesi ML, Greco G, Furlan R. Neuroin ﬂammation in
+bipolar depression. Front Psychiatry . (2020) 11:71. doi: 10.3389/fpsyt.2020.00071
+33. Sharma AN, Bauer IE, Sanches M, Galvez JF, Zunta-Soares GB, Quevedo J, et al.
+Common biological mechanisms between bipolar disorder and type 2 diabetes: Focus
+on in ﬂammation. Prog Neuro-Psychopharmacol Biol Psychiatry . (2014) 54:289 –98.
+doi: 10.1016/j.pnpbp.2014.06.005
+34. Zouridis S, Nasir AB, Aspichueta P, Syn WK. The link between metabolic
+syndrome and the brain. Digestion. (2025) 106:203 –11. doi: 10.1159/000541696
+35. Muneer A. Bipolar disorder: role of in ﬂammation and the development of disease
+biomarkers. Psychiatry Investig . (2016) 13:18 –33. doi: 10.4306/pi.2016.13.1.18
+36. Rosenblat JD, Gregory JM, Flor-Henry S, McIntyre RS. Chapter 25 - inﬂammation in
+bipolar disorder. In: Baune BT, editor. Inﬂammation and immunity in depression .
+Fribourg, Switzerland: Academic Press (2018). p. 445 –54. Available online at: https://
+www.sciencedirect.com/science/article/pii/B9780128110737000258. doi: 10.1016/B978-0-
+12-811073-7.00025-8
+37. Haroon E, Miller AH, Sanacora G. In ﬂammation, glutamate, and glia: A trio of
+trouble in mood disorders. Neuropsychopharmacology . (2017) 42:193 –215.
+doi: 10.1038/npp.2016.199
+38. King S, Jelen LA, Horne CM, Cleare A, Pariante CM, Young AH, et al.
+Inﬂammation, glutamate, and cognition in bipolar disorder type II: A proof of concept
+study. Front Psychiatry . (2019) 10:66. doi: 10.3389/fpsyt.2019.00066
+39. McGrath T, Baskerville R, Rogero M, Castell L. Emerging evidence for the
+widespread role of glutamatergic dysfunction in neuropsychiatric diseases. Nutrients.
+(2022) 14:5. doi: 10.3390/nu14050917
+40. van den Ameele S, Fuchs D, Coppens V, de Boer P, Timmers M, Sabbe B, et al.
+Markers of in ﬂammation and monoamine metabolism indicate accelerated aging in
+bipolar disorder. Front Psychiatry . (2018) 9:250. doi: 10.3389/fpsyt.2018.00250
+41. Poletti S, Mazza MG, Benedetti F. In ﬂammatory mediators in major depression and
+bipolar disorder. Transl Psychiatry. (2024) 14:247. doi: 10.1038/s41398-024-02921-z
+42. Bauer IE, Pascoe MC, Wollenhaupt -Aguiar B, Kapczinski F, Soares JC.
+Inﬂammatory mediators of cognitive impairment in bipolar disorder. J Psychiatr Res .
+(2014) 56:18 –27. doi: 10.1016/j.jpsychires.2014.04.017
+43. Saitoh K, Sugusabesan S, Lajnef M, Lamy A, Boukouaci W, Wu CL, et al. Circulating
+levels of brain-derived neurotrophic factor (BDNF) in patients with bipolar disorders may
+be in ﬂuenced by mitochondrial dysfunction, in ﬂammation, and history of childhood
+trauma.
+J Affect Disord Rep. (2024) 16:100754. doi: 10.1016/j.jadr.2024.100754
+44. Dziurkowska E, Wesolowski M. Cortisol as a biomarker of mental disorder
+severity. J Clin Med . (2021) 10:5204. doi: 10.3390/jcm10215204
+45. van den Berg MT, Wester VL, Vreeker A, Koenders MA, Boks MP, van Rossum
+EFC, et al. Higher cortisol levels may proceed a manic episode and are related to disease
+severity in patients with bipolar disorder. Psychoneuroendocrinology .( 2 0 2 0 )
+119:104658. doi: 10.1016/j.psyneuen.2020.104658
+46. Sanches M, Bauer IE, Galvez JF, Zunta-Soares GB, Soares JC. The management of
+cognitive impairment in bipolar disorder: current status and perspectives. Am J Ther .
+(2015) 22:477 –86. doi: 10.1097/MJT.0000000000000120
+47. Gianotti L, Belcastro S, D ’Agnano S, Tassone F. The stress axis in obesity and
+diabetes mellitus: an update. Endocrines. (2021) 2:3. doi: 10.3390/endocrines2030031
+48. Correll CU, Detraux J, De Lepeleire J, De Hert M. Effects of antipsychotics,
+antidepressants and mood stabilizers on risk for physical diseases in people with
+schizophrenia, depression and bipolar disorder. World Psychiatry Off J World Psychiatr
+Assoc WPA . (2015) 14:119 –36. doi: 10.1002/wps.20204
+49. Abosi O, Lopes S, Schmitz S, Fiedorowicz JG. Cardiometabolic effects of psycho-
+tropic medications. Horm Mol Biol Clin Investig . (2018) 36:/j/hmbci.2018.36.issue –1/
+hmbci-2017-0065/hmbci-2017-0065.xml. doi: 10.1515/hmbci-2017 –0065
+50. Scheen AJ. Metabolic disorders induced by psychotropic drugs. Ann Endocrinol .
+(2023) 84:357 –63. doi: 10.1016/j.ando.2023.03.006. 65th International Meeting of
+Clinical Endocrinology - Henri - Pierre Klotz : Iatrogenic Endocrinopathies.
+51. Pillinger T, McCutcheon RA, Vano L, Mizuno Y, Arumuham A, Hindley G, et al.
+Comparative effects of 18 antipsychotics on metabolic function in patients with
+schizophrenia, predictors of metabolic dysregulation, and association with psychopa-
+thology: a systematic review and network meta-analysis. Lancet Psychiatry . (2020)
+7:64–77. doi: 10.1016/S2215-0366(19)30416-X
+52. Mortimer KRH, Katshu MZUH, Chakrabarti L. Second-generation antipsychotics
+and metabolic syndrome: a role for mitochondria. Front Psychiatry. (2023) 14:1257460.
+doi: 10.3389/fpsyt.2023.1257460
+53. Akinola PS, Tardif I, Leclerc J. Antipsychotic-induced metabolic syndrome: a
+review. Metab Syndr Relat Disord . (2023) 21:294 –305. doi: 10.1089/met.2023.0003
+54. Reynolds GP, McGowan OO. Mechanisms underlying metabolic disturbances
+associated with psychosis and antipsychotic drug treatment. J Psychopharmacol Oxf
+Engl. (2017) 31:1430 –6. doi: 10.1177/0269881117722987
+55. Shnayder NA, Grechkina VV, Tre ﬁlova VV, Efremov IS, Dontceva EA, Narodova
+EA, et al. Valproate-induced metabolic syndrome. Biomedicines. (2023) 11:1499.
+doi: 10.3390/biomedicines11051499
+56. Gomes-da-Costa S, Marx W, Corponi F, Anmella G, Murru A, Pons-Cabrera MT,
+et al. Lithium therapy and weight change in people with bipolar disorder: a systematic
+review and meta-analysis. Neurosci Biobehav Rev . (2022) 134:104266. doi: 10.1016/
+j.neubiorev.2021.07.011
+57. Meshkat S, Duffy SF, Tassone VK, Lin Q, Pang HYM, Jung H, et al. Increased odds
+of metabolic syndrome among adults with depressive symptoms or antidepressant use.
+Transl Psychiatry . (2025) 15:68. doi: 10.1038/s41398-025-03289-4
+58. Alruwaili NS, Al-Kuraishy HM, Al-Gareeb AI, Albuhadily AK, Ragab AE, Alenazi
+AA, et al. Antidepressants and type 2 diabetes: highways to knowns and unknowns.
+Diabetol Metab Syndr . (2023) 15:179. doi: 10.1186/s13098-023-01149-z
+59. Chokka P, Tancer M, Yeragani VK. Metabolic syndrome: relevance to antidepres-
+sant treatment. J Psychiatry Neurosci . (2006) 31:414. doi: 10.1139/jpn.0648
+60. Reynolds GP. Pharmacogenetic aspects of antipsychotic drug-induced weight gain
+- a critical review. Clin Psychopharmacol Neurosci . (2012) 10:71 –7. doi: 10.9758/
+cpn.2012.10.2.71
+61. Boiko AS, Pozhidaev IV, Paderina DZ, Bocharova AV, Mednova IA, Fedorenko
+OY, et al. Search for possible associations of FTO gene polymorphic variants with
+metabolic syndrome, obesity and body mass index in schizophrenia patients.
+Pharmacogenomics Pers Med . (2021) 14:1123 –31. doi: 10.2147/PGPM.S327353
+62. Shing EC, Tiwari AK, Brandl EJ, Zai CC, Lieberman JA, Meltzer HY, et al. Fat
+mass- and obesity-associated (FTO) gene and antipsychotic-induced weight gain: an
+association study. Neuropsychobiology. (2014) 69:59 –63. doi: 10.1159/000356231
+63. Fonseca A, Abreu GM, Zembrzuski VM, Junior MC, Carneiro JRI, Neto JFN, et al.
+The association of the fat mass and obesity-associated gene (FTO) rs9939609
+polymorphism and the severe obesity in a Brazilian population. Diabetes Metab
+Syndr Obes . (2019) 12:667 –84. doi: 10.2147/DMSO.S199542
+64. Brandl EJ, Frydrychowicz C, Tiwari AK, Lett TAP, Kitzrow W, Büttner S, et al.
+Association study of polymorphisms in leptin and leptin receptor genes with antipsy-
+chotic-induced body weight gain. Prog Neuro-Psychopharmacol Biol Psychiatry . (2012)
+38:134–41. doi: 10.1016/j.pnpbp.2012.03.001
+65. Puangpetch A, Srisawasdi P, Unaharassamee W, Jiratjintana N, Vanavanan S,
+Punprasit S, et al. Association between polymorphisms of LEP, LEPR, DRD2, HTR2A
+and HTR2C genes and risperidone- or clozapine-induced hyperglycemia.
+Pharmacogenomics Pers Med . (2019) 12:155 –66. doi: 10.2147/PGPM.S210770
+66. Jimeno N, Velasco-Gonzalez V, Fierro I, Duran M, Carvajal A. Association of CNR1 and
+INSIG2 polymorphisms with antipsychotics-induced weight gain: a prospective nested case–
+control study.Sci Rep. (2021) 11:15304. doi: 10.1038/s41598-021-94700-9
+67. Maciukiewicz M, Tiwari AK, Zai CC, Gorbovskaya I, Laughlin CP, Nurmi EL, et al.
+Genome-wide association study on antipsychotic-induced weight gain in Europeans and
+African-Americans.Schizophr Res.( 2 0 1 9 )2 1 2 : 2 0 4–12. doi: 10.1016/j.schres.2019.07.022
+68. Li N, Cao T, Wu X, Tang M, Xiang D, Cai H. Progress in genetic polymorphisms
+related to lipid disturbances induced by atypical antipsychotic drugs. Front Pharmacol.
+(2020) 10:1669. doi: 10.3389/fphar.2019.01669
+69. Delli Colli M, Greenway KT, Goldfarb M. Cross-disciplinary cardiovascular and
+psychiatric recommendations: a systematic review of clinical guidelines. Int J Psychiatry
+Med. (2025), 00912174251348996. doi: 10.1177/00912174251348996
+70. De Hert M, Dekker JM, Wood D, Kahl KG, Holt RIG, Möller HJ. Cardiovascular
+disease and diabetes in people with severe mental illness position statement from the
+European Psychiatric Association (EPA), supported by the European Association for
+the Study of Diabetes (EASD) and the European Society of Cardiology (ESC). Eur
+Psychiatry J Assoc Eur Psychiatr . (2009) 24:412 –24. doi: 10.1016/j.eurpsy.2009.01.005
+71. Needham N, Kamenska ́I, Meadowcroft B, Brown R, Grossi H. Metabolic
+dysfunction in severe mental illness: updates on prevalence, aetiology and treatment
+options. BJPsych Adv. (2024), 1 –10. doi: 10.1192/bja.2024.52
+72. Gabriel FC, Oliveira M, Martella BDM, Berk M, Brietzke E, Jacka FN, et al.
+Nutrition and bipolar disorder: a systematic review. Nutr Neurosci . (2023) 26:637 –51.
+doi: 10.1080/1028415X.2022.2077031
+73. Campbell IH, Needham N, Grossi H, Kamenska I, Luz S, Sheehan S, et al. A pilot
+study of a ketogenic diet in bipolar disorder: clinical, metabolic and magnetic resonance
+spectroscopy ﬁndings. BJPsych Open . (2025) 11:e34. doi: 10.1192/bjo.2024.841
+74. Palmer CM. The ketogenic diet and metabolic treatments for neuropsychiatric
+disorders. BJPsych Open. (2025) 11:e94. doi: 10.1192/bjo.2025.50
+7 5 . S e t h iS ,W a k e h a mD ,K e t t e rT ,H o o s h m a n dF ,B j o r n s t a dJ ,R i c h a r d sB ,e ta l .K e t o g e n i c
+diet intervention on metabolic and psychiatric health in bipolar and schizophrenia: a pilot
+trial. Psychiatry Res. (2024) 335:115866. doi: 10.1016/j.psychres.2024.115866
+76. Hearing C, Chang W, Szuhany K, Deckersbach T, Nierenberg A, Sylvia L. Physical
+exercise for treatment of mood disorders: a critical review. Curr Behav Neurosci Rep .
+(2016) 3:350 –
+9. doi: 10.1007/s40473-016-0089-y
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org10
+77. McCartan CJ, Yap J, Firth J, Stubbs B, Tully MA, Best P, et al. Factors that in ﬂuence
+participation in physical activity for people with bipolar disorder: a synthesis of
+qualitative evidence. Cochrane Database Syst Rev . (2020) 2020:CD013557.
+doi: 10.1002/14651858.CD013557
+78. Stubbs B, Vancampfort D, Hallgren M, Firth J, Veronese N, Solmi M, et al. EPA
+guidance on physical activity as a treatment for severe mental illness: a meta-review of
+the evidence and position statement from the European Psychiatric Association (EPA),
+supported by the International Organization of Physical Therapists in Mental Health
+(IOPTMH). Eur Psychiatry J Assoc Eur Psychiatr . (2018) 54:124 –44. doi: 10.1016/
+j.eurpsy.2018.07.004
+79. Gunturu S. The potential role of GLP-1 agonists in psychiatric disorders: a
+paradigm shift in mental health treatment. Indian J Psychol Med . (2024) 46:193 –5.
+doi: 10.1177/02537176241246744
+80. Drucker DJ. GLP-1-based therapies for diabetes, obesity and beyond. Nat Rev Drug
+Discov. (2025), 1 –20. doi: 10.1038/s41573-025-01183-8
+81. Prasad F, De R, Korann V, Chintoh AF, Remington G, Ebdrup BH, et al.
+Semaglutide for the treatment of antipsychotic-associated weight gain in patients not
+responding to metformin – ac a s es e r i e s .Ther Adv Psychopharmacol . (2023)
+13:20451253231165169. doi: 10.1177/20451253231165169
+82. Campforts B, Drukker M, van Amelsvoort T, Bak M. Management of obesity with
+semaglutide or metformin in patients with antipsychotic-induced weight gain (MOSA):
+a non-randomised open-label pilot study. BMC Psychiatry. (2024) 24:865. doi: 10.1186/
+s12888-024-06317-7
+83. Chomiuk T, Niezgoda N, Mamcarz A, S ́liżD. Physical activity in metabolic
+syndrome. Front Physiol . (2024) 15:1365761. doi: 10.3389/fphys.2024.1365761
+84. Lee K, Abraham S, Cleaver R. A systematic review of licensed weight-loss medications
+in treating antipsychotic-induced weight gain and obesity in schizophrenia and psychosis.
+Gen Hosp Psychiatry. (2022) 78:58–67. doi: 10.1016/j.genhosppsych.2022.07.006
+85. Siskind D, Hahn M, Correll CU, Fink-Jensen A, Russell AW, Bak N, et al.
+Glucagon-like peptide-1 receptor agonists for antipsychotic-associated cardio-meta-
+bolic risk factors: a systematic review and individual participant data meta-analysis.
+Diabetes Obes Metab . (2019) 21:293 –302. doi: 10.1111/dom.13522
+86. Larsen JR, Vedtofte L, Jakobsen MSL, Jespersen HR, Jakobsen MI, Svensson CK, et al.
+Effect of liraglutide treatment on prediabetes and overweight or obesity in clozapine- or
+olanzapine-treated patients with schizophrenia spectrum disorder: a randomized clinical
+trial. JAMA Psychiatry. (2017) 74:719–28. doi: 10.1001/jamapsychiatry.2017.1220
+87. Arterburn DE, Telem DA, Kushner RF, Courcoulas AP. Beneﬁts and risks of bariatric
+surgery in adults: a review. JAMA. (2020) 324:879–87. doi: 10.1001/jama.2020.12567
+88. Kalarchian MA, Marcus MD, Levine MD, Courcoulas AP, Pilkonis PA, Ringham RM,
+et al. Psychiatric disorders among bariatric surgery candidates: relationship to obesity and
+functional health status.Am J Psychiatry. (2007) 164:328–34. doi: 10.1176/ajp.2007.164.2.328
+89. Friedman KE, Applegate K, Portenier D, McVay M. Bariatric surgery in patients
+with bipolar spectrum disorders: selection factors, post-operative visit attendance, and
+weight outcomes. Surg Obes Relat Dis Off J Am Soc Bariatr Surg . (2017) 13:643 –51.
+doi: 10.1016/j.soard.2016.10.009
+90. Lüscher A, Vionnet N, Amiguet M, Chartoumpekis D, Mantziari S, Frantz J, et al.
+Impact of preoperative psychiatric pro ﬁle in bariatric surgery on long-term weight
+outcome. Obes Surg . (2023) 33:2072 –82. doi: 10.1007/s11695-023-06595-2
+9 1 . E i s e n b e r gD ,S h i k o r aS A ,A a r t sE ,A m i n i a nA ,A n g r i s a n iL ,C o h e nR V ,e ta l .2 0 2 2
+American Society of Metabolic and Bariatric Surgery (ASMBS) and International Federation
+for the Surgery of Obesity and Metabolic Disorders (IFSO) indications for metabolic and
+bariatric surgery.Obes Surg
+.( 2 0 2 3 )3 3 : 3–14. doi: 10.1007/s11695-022-06332–1
+92. Therapeutic patient education: an introductory guide. Available online at: https://
+www.who.int/europe/publications/i/item/9789289060219 (Accessed July 18, 2025).
+93. Waqas A, Correia JC, Ahmad M, Akhtar TN, Meraj H, Angelakis I, et al.
+Therapeutic patient education for severe mental disorders: a systematic review. Glob
+Ment Health Camb Engl . (2024) 11:e78. doi: 10.1017/gmh.2024.68
+94. Lequimener-de Lorgeril V, Chirio-Espitalier M, Grall-Bronnec M. In ﬂuence of a
+therapeutic patient education (TPE) program on quality of life in bipolar disorder:
+preliminary results. L’Encephale. (2019) 45:127 –32. doi: 10.1016/j.encep.2018.04.001
+95. Duval M, Harscoët YA, Jupille J, Grall-Bronnec M, Moret L, Chirio-Espitalier M.
+Patients’ perspectives of the effects of a group-based therapeutic patient education
+program for bipolar disorder: a qualitative analysis. BMC Psychiatry . (2022) 22:626.
+doi: 10.1186/s12888-022-04241 –2
+Correia et al. 10.3389/fpsyt.2026.1699908
+Frontiers in Psychiatry frontiersin.org11

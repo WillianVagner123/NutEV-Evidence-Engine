@@ -1,0 +1,2202 @@
+REVIEW
+p
+ublished: 14 December 2015
+doi: 10.3389/fpsyg.2015.01849
+Frontiers in Psychology | www.frontiersin.org 1 D ecember 2015 | Volume 6 | Article 1849
+Edited by:
+A
+drian Meule,
+University of Salzburg, Austria
+Reviewed by:
+Simone Munsch,
+University of Fribourg, Switzerland
+Alison Tovar,
+University of Rhode Island, USA
+*Correspondence:
+Netalie Shloim
+netalieshalom1977@gmail.com
+Specialty section:
+This article was submitted to
+Eating Behavior,
+a section of the journal
+Frontiers in Psychology
+Received: 29 July 2015
+Accepted: 14 November 2015
+Published: 14 December 2015
+Citation:
+Shloim N, Edelson LR, Martin N and
+Hetherington MM (2015) Parenting
+Styles, Feeding Styles, Feeding
+Practices, and Weight Status in 4–12
+Year-Old Children: A Systematic
+Review of the Literature.
+Front. Psychol. 6:1849.
+doi: 10.3389/fpsyg.2015.01849
+Parenting Styles, Feeding Styles,
+Feeding Practices, and Weight Status
+in 4–12 Year-Old Children: A
+Systematic Review of the Literature
+Netalie Shloim 1*, Lisa R. Edelson 2, Nathalie Martin 2 and Marion M. Hetherington 1
+1 Biopsychology Group: Human Nutrition, School of Psychology, Institute of Psychological Sciences, University of Leeds,
+Leeds, UK, 2 Behavior and Perception, Nestlé Research Center, Lausanne, Switzerland
+Childhood is a critical period in the development of obesity. Eating patterns established
+early in life track into later life. Therefore, parental approaches to feeding in their general
+parenting style, feeding styles, and speciﬁc feeding practices will have a profound impact
+on how children eat and grow. A systematic research review following PRISMA guidelines
+was conducted to identify, discuss and integrate recent research investigating the
+relationship between parenting styles, feeding styles, feeding practices, and body mass
+index (BMI) in children. Medline (Ovid), PsycINFO, Web of Science, and Food Science and
+T echnology Abstracts were systematically searched using sensitive search strategies.
+Studies were limited to papers published in English between 2010 and February 2015
+with participants aged 4–12 years old with outcomes including obesity, change in weight,
+or BMI. The search yielded 31 relevant quantitative peer-reviewed papers meeting all
+inclusion criteria: seven longitudinal, 23 cross-sectional, one randomized control trial.
+Associations between parenting style and child BMI were strongest and most consistent
+within the longitudinal studies. Uninvolved, indulgent or highly protective parenting was
+associated with higher child BMI, whereas authoritative parenting was associated with
+a healthy BMI. Similarly for feeding styles, indulgent feeding was consistently associated
+with risk of obesity within cross-sectional studies. Speciﬁc feeding practices such as
+restriction and pressure to eat were linked to BMI, especially within cross-sectional
+studies. Where child traits were measured, the feeding practice appeared to be
+responsive to the child, therefore restriction was applied to children with a high BMI and
+pressure to eat applied to children with a lower BMI. Behaviors and styles that are speciﬁc
+to the feeding context are consistently associated with child BMI. However, since obesity
+emerges over time, it is through longitudinal, carefully measured (through questionnaire
+and observation) studies which take account of child appetite and temperament that the
+association between parenting style, feeding style, speciﬁc feeding practices, and child
+obesity will be understood.
+Keywords: parenting styles, feeding styles, feeding practices, obesity, children
+Shloim et al. Parenting, Feeding and Obesity Status
+INTRODUCTION
+Childhood obesity has become a major global health challeng e.
+In developed nations, approximately 24% of children and
+adolescents are overweight or obese and in developing countr ies,
+rates have reached 13% (from 8% in 1980;
+Ng et al., 2014). While
+obesity rates may have leveled oﬀ or declined in some nations
+(
+Ogden et al., 2014), prevalence remains high. Obese children are
+likely to become obese adults and are at higher risk of develo ping
+a range of chronic diseases such as cardiovascular disease (CVD),
+type 2 diabetes and cancer ( Lloyd et al., 2012 ). Therefore, it
+is important to understand the factors which inﬂuence obesit y
+development in order to guide future research, interventions, and
+policy.
+Obesity is caused by the chronic mismatch between
+energy intake and expenditure, with food intake in excess of
+requirements increasing body mass index (BMI). This chronic
+imbalance is inﬂuenced by gene-environment interactions
+(
+Hetherington and Cecil, 2010 ). Some of these factors, including
+candidate genes, socio-economic status (SES), exercise, sedentary
+behavior, and sleep are well established ( Hetherington and
+Cecil, 2010; Craigie et al., 2011; Hart et al., 2011; Wang et a l.,
+2011; Ho et al., 2012; Magee and Hale, 2012 ). The interaction
+between parents and their children is crucial since this is
+when intake and activity patterns are established. In turn,
+these inﬂuence children’s growth patterns and risk of becomi ng
+overweight. It is important to understand the interplay betwe en
+parenting, the food environment, and child weight outcomes.
+The current review examines the speciﬁc modiﬁable aspects of
+parent-child interactions (parenting/feeding styles and fe eding
+practices) and their associations with child BMI. Modiﬁable
+aspects are of interest because this permits consideration offuture
+interventions to prevent or treat obesity.
+Parents are important agents through which food preferences
+and intake patterns are set, via both direct and indirect inﬂuences,
+from controlling the child’s intake to passively modeling a healthy
+or unhealthy diet (
+Birch and Fisher, 1998; Brown and Ogden,
+2004; Cooke et al., 2004; Clark et al., 2007; Beydoun and Wang ,
+2009; Larsen et al., 2015 ). In the present review, the focus is
+parenting or feeding styles and speciﬁc feeding practices whic h
+might inﬂuence child BMI.
+Parenting style is a general behavioral construct which
+sets the emotional context within which parents and children
+interact. These have often been characterized as having at
+least two dimensions: demandingness (how much control
+parents exercise) and responsiveness (warmth and acceptance
+in response to their children’s needs). Within this deﬁnitio n,
+there are four types of parenting styles, varying along these
+two dimensions: (1) authoritative parenting, associated with a
+high level of demandingness and rules with high responsivene ss
+to the child; (2) authoritarian parenting linked to high
+demandingness but low responsiveness characterized by rules but
+with less inﬂuence from the child’s needs; (3) indulgent parenting
+combining low demandingness and high responsiveness with
+few rules but high engagement with the child’s needs; and
+(4) uninvolved parenting which is associated with both
+low demandingness and low responsiveness. An authoritative
+parenting style is generally associated with the most positive
+child outcomes, such as higher school performance (
+Maccoby
+and Martin, 1983; Darling and Steinberg, 1993 ) and with a more
+positive home food environment ( Johnson et al., 2012).
+Feeding styles may be viewed as a sub-category of parenting
+styles that are speciﬁc to mealtimes and therefore the same
+dimensions of demandingness and responsiveness are applied in
+the feeding context (
+Hughes et al., 2005; Ventura and Birch, 2008;
+Blissett, 2011). Thus, with an authoritative feeding style, parents
+actively encourage their child to eat but achieve this throug h
+supportive behaviors including rules explained in a sensitive w ay
+whereas with an authoritarian feeding style, parents encourage
+eating through parent-centric rules ( Figure 1).
+Feeding practices refer to the speciﬁc goal-directed behaviors
+used by parents to directly inﬂuence their children’s eating .
+This might include attempts to increase or decrease intake
+of certain foods. Common feeding practices include: modelin g
+eating behaviors, restricting certain types of food, pressur ing
+children to eat, rewarding positive behaviors with food, and
+availability of food at home. A more comprehensive list of speciﬁc
+feeding practices can be found in
+Gevers et al. (2014).
+Given the complexity of the family meal structure, parenting
+style, feeding style, and feeding practices are deﬁned within broad
+constructs to simplify research and to promote understanding .
+The general ways in which parents interact with their childre n
+(parenting style) and particularly during meals and snack tim es
+(feeding style) may inﬂuence parents’ choice of feeding pract ices
+or the outcomes of these practices ( Stang and Loth, 2011; Collins
+et al., 2014; Larsen et al., 2015 ). The interaction between parents
+and children at the family meal is bi-directional and inform ed
+by a number of diﬀerent environmental factors (e.g., income
+and culture), parental attributes (beliefs, attitudes, beha viors),
+and child characteristics (temperament, eating traits and l earned
+behaviors). These additional factors will be taken into acc ount in
+the current review, where available.
+The present systematic review was undertaken to identify,
+discuss, and integrate recent research exploring the speciﬁc
+parenting styles, feeding styles, and feeding practices whic h
+increase or decrease the risk of childhood obesity in childr en
+aged 4–12 years old. The search was limited to studies publish ed
+in the last 5 years to provide an update since the reviews
+on parenting/feeding styles published by
+Vollmer and Mobley
+(2013) and on feeding practices by Hurley et al. (2011) cover
+only articles published up until 2012 and 2009, respectively.
+Another goal of the current review was to identify the gaps in t he
+existing literature so that recommendations for future res earch
+and interventions can be made. The review structure was base d
+on the Preferred Reporting Items for Systematic Reviews and
+Meta-Analyses guidance (PRISMA,
+Moher et al., 2009).
+METHODS
+A systematic search was conducted to identify relevant stud ies
+investigating associations between parenting styles, feed ing
+styles, feeding practices, and obesity/overweight in 4–12 y ear-
+old children. The search was conducted using Medline (Ovid),
+Frontiers in Psychology | www.frontiersin.org 2 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+FIGURE 1 | Summary of the parental feeding styles adapted from typ ological approach to parenting developed by Hughes et al. (2005) .
+PsycINFO, Web of Science, and Food Science and Technology
+Abstracts. The search strategy (the comprehensive search strategy
+is available from the authors upon request) addressed key
+search terms for obesity, parenting styles, and feeding beha viors
+(including styles and practices). More speciﬁcally, literatu re
+searches were conducted using a combination of the following
+key terms: parenting (style), feeding (style, practices, beh aviors),
+and weight-related keywords: eating, diet, (over)weight, obesity,
+BMI. Age-related terms such as child were not included in the
+search phase to avoid missing studies that used unusual terms
+(e.g., third graders) or that did not include age terms in the title of
+the paper. Nevertheless, studies were limited by child age at alater
+stage. The ﬁnal search was limited to papers published in Englis h
+between 2010 and February 2015, a period of just over 5 years,
+permitting recent and timely evidence to be included within t he
+search. Studies were included in the review if the mean age of
+the participants was between 4 and 12 years old and therefore
+studies with participants with an overlapping age range but with
+a mean age of <4 or >12 were excluded. For longitudinal or
+intervention studies, the sample age at baseline was used. Thi s
+age group provided a broad base to explore risk within a time of
+childhood when there is more independence than during infancy
+and pre-school but with a greater dependence on families for
+most meal occasions than adolescents or young adults. Studie s of
+children with co-morbidity such as eating disorders, diabet es or
+other diseases were excluded. Studies in which the outcome w as
+not child BMI or change in weight were excluded as well. Four
+review papers (
+Thompson, 2010; Hurley et al., 2011; Sleddens
+et al., 2011; Vollmer and Mobley, 2013 ) were identiﬁed and are
+addressed in the discussion of this paper. Titles and abstracts were
+screened for relevance and content. If the abstract did not provide
+suﬃcient data, the entire paper was read to determine whether i t
+met the inclusion criteria. Publications which included mu ltiple
+age groups or which addressed several independent measures
+Frontiers in Psychology | www.frontiersin.org 3 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+were fully read but only ﬁndings that met the inclusion crite ria
+are addressed in this review. The included papers ( N = 31) were
+then summarized in a table covering the main characteristic s of
+each paper (Table 1).
+Papers were coded and scored ( Table 1) for quality using an
+adapted rating scale (Moore, 2012). The scale contained 11 items
+such as: Is the study clear in what it seeks to do? (Is the purpose
+of the study discussed; Are the hypotheses presented; Are the
+outcomes to be measured clearly stated); Were the measures used
+valid and reliable? Each item was scored on a Likert scale usi ng
+values of 0 = no; 1 = partly, and 2 = yes. The process resulted in
+each paper being given a total score to reﬂect quality.
+The ﬁrst author scored all of the papers and remaining three
+co-authors scored a random sample of 10 papers, resulting in 84%
+of the papers being scored for quality by at least two researche rs.
+For papers with disagreements of more than three points on
+quality ratings, an additional independent researcher then scored
+the papers until an agreement was reached by re-reading the
+paper and extracting relevant data to support the scores. Scores
+which were oﬀ by 1–2 points were averaged. Finally, an inter-
+rater reliability coeﬃcient was calculated. The ﬁndings in dicated
+a high level of agreement (single measures interclass corre lations
+by use of a one way random eﬀects model, r = 0.85, p <
+0.0001). Overall the papers included in this review exceeded
+a reasonable quality threshold, and most used measured BMI
+alongside validated measures of parenting/feeding style an d/or
+feeding practices.
+RESUL TS
+The initial search identiﬁed 2662 papers. Two hundred and ﬁfty -
+nine papers were removed due to duplication. Two thousand two
+hundred and sixty-ﬁve papers were excluded upon review of title
+and abstracts, mostly due to studies with participants outsid e the
+speciﬁed age range. This was expected as the word “child” was
+not used in our search to avoid missing research using alternative
+terms such as pre-adolescents, pre-schoolers, etc. Full text papers
+were reviewed for 135 studies of which 100 were excluded. The se
+were excluded on the basis of the outcome measure, the age range
+or the absence of relevant behaviors (see Figure 2). The process
+resulted in 35 papers for inclusion in this review. Four papers
+were reviews (
+Thompson, 2010; Hurley et al., 2011; Sleddens
+et al., 2011; Vollmer and Mobley, 2013 ) and were therefore
+not addressed in the results section but only in the discussi on.
+While most papers addressed the role of feeding practices, it
+was diﬃcult at times to ascertain whether the authors had use d
+the conventional deﬁnitions for each of the three domains of
+interest. For example, it has been reported by
+Blissett (2011)
+that inconsistencies in the use of these deﬁnitions is proble matic,
+with terms such as feeding style confused with feeding practi ce,
+so there are times when terms are not clearly conceptualized
+or they are used synonymously. Therefore, within this revie w
+the authors’ use of the construct has been applied but where
+deﬁnitions overlap or are used interchangeably, this is noted. Due
+to the variety of measures used and potential lack of precision, the
+eﬀect sizes are not reported in the current review.
+Overall Study Characteristics
+The papers identiﬁed by the review process produced a range
+of sample sizes including relatively small ( n = 69,
+Olvera and
+Power, 2010 ) to large scale studies like that of Jansen et al.
+(2012) with 4987 children. The age range covered 2–18 years
+within the papers, but the focus of this review was 4–12 years
+representing school age and the age most likely to be inﬂuenced
+by parenting and the home environment. Studies focused on
+mostly mothers and their interactions with their children w ith
+only one study addressing the diﬀerences between maternal an d
+paternal feeding practices (
+Tschann et al., 2013 ). Most were
+conducted in the USA ( n = 15), others were conducted in
+Australia (4), the UK (4; one of which had a German comparison
+group), the Netherlands (4), Malaysia (2), Brazil (1), and Tur key
+(1). Studies were ethnically and economically diverse, but few
+were suﬃciently powered to assess the speciﬁc contribution of
+ethnic diﬀerences to the association between parenting and ch ild
+BMI. All but one of the studies included both boys and girls; the
+exception was
+Rollins et al. (2014) with a girl-only sample. Only
+one study addressed both parents’ and children’s perceptions o f
+parenting styles ( Taylor et al., 2011 ). The main characteristics of
+the papers revealed by the review process such as sample size,
+country of origin, age range, design, measurements used, and
+main ﬁndings are presented in Table 1.
+Parenting Styles
+Characteristics of the Studies
+The search revealed six papers addressing parenting styles. Th ree
+were longitudinal studies (
+Olvera and Power, 2010; Rodenburg
+et al., 2012; Hancock et al., 2014 ); and three were cross-sectional
+(Hennessy et al., 2010; Rodenburg et al., 2011; Taylor et al., 2011).
+Instruments Used
+Of the six studies investigating parenting style, four diﬀere nt
+instruments were used: the Parenting Dimensions Inventory was
+used in two studies (
+Hennessy et al., 2010; Olvera and Power,
+2010), the Authoritative Parenting Index was used by one (Taylor
+et al., 2011), a Dutch translation of a parenting style measure was
+used by the same group in two papers ( Rodenburg et al., 2011,
+2012), and the protective parenting measure was applied in one
+study (Hancock et al., 2014).
+Findings
+In all three longitudinal studies identiﬁed since 2010, pare nting
+style was signiﬁcantly associated with child weight.
+Olvera and
+Power (2010) investigated the change in weight from baseline
+to follow-up (3 years later) in Mexican-American children
+and their mothers. These authors found that when controllin g
+for initial weight status, children whose mothers followed a n
+indulgent or uninvolved parenting style at baseline were more
+likely to become overweight than children of authoritarian or
+authoritative mothers. In the study by
+Rodenburg et al. (2012)
+the potential interaction eﬀect between parenting style and
+child appetite traits were examined from baseline to 1 year
+follow-up. In this study, food approach traits such as food
+responsiveness and enjoyment of food predicted a higher child
+BMI z-score and all food avoidance traits predicted a lower chi ld
+Frontiers in Psychology | www.frontiersin.org 4 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+TABLE 1 | Characteristics of the papers identiﬁed in the revi ew.
+Parenting Styles Country Sample size;
+mean (SD) or
+age range of
+children in
+years
+Study
+design
+Validated questionnaires Other
+measures
+Main ﬁndings Scores
+Hancock et al., 2014 Australia 2596 parents and
+children; 4–5
+Longitudinal Protective parenting
+measure
+Child weight and
+height;
+demographics
+Protectiveness at age 6–7
+not associated with weight
+at any age. No association
+between maternal
+protectiveness at age 8–9
+and overweight/obesity at
+age 4–5, 6–7 or 8–9 years.
+Greater maternal
+protectiveness at age 8–9
+was associated with
+children being overweight or
+obese at ages 10–11
+17
+Olvera and Power, 2010 USA 69 mothers and
+children; 6.7(1.3)
+Longitudinal:
+3 year
+follow-up
+PDI Child and parent
+weight and
+height;
+demographics
+Indulgent mothers were
+more likely to have
+overweight children in a 3
+year follow up compared to
+authoritative or authoritarian
+mothers
+18
+Rodenburg et al., 2011 Netherlands 1665 parents and
+children; 8–9
+Cross-
+sectional
+Home Environment Survey
+(HES); FFQ; Dutch Youth
+Health Care questionnaire;
+Parenting scales (
+Steinberg
+et al., 1989 ; Dutch
+translation)
+Child and parent
+weight and
+height;
+demographics
+Rejecting parenting style
+was associated with
+increased child BMI
+20
+Rodenburg et al., 2012 Netherlands 1275 parents and
+children; 8.2(0.5)
+Longitudinal CEBQ; FFQ; Parenting
+scales (Steinberg et al.,
+1989; Dutch translation)
+Child’ s weight
+and height.
+Authoritative parenting was
+positively associated with
+fruit consumption of fussy
+eaters. Neglecting parenting
+showed a positive
+association with child’ s
+weight
+20
+FEEDING STYLES
+Frankel et al., 2014 USA 296 parents and
+children; 4.4(0.7)
+Cross-
+sectional
+CFSQ; CEBQ Child and parent
+weight and
+height
+Indulgent feeding style was
+negatively associated with
+satiety responsiveness and
+positively associated with
+enjoyment of food and BMI
+18
+Hennessy et al., 2010 USA 99 parents and
+children; 9(1.5)
+Cross-
+sectional
+PDI-S; CFSQ; CFQ Child’ s weight
+and height;
+demographics.
+Feeding style, rather than
+parenting style correlated
+with child BMI. Indulgent
+feeding style was
+associated with a higher
+child BMI z-score; feeding
+style moderated the link
+between restriction and
+child BMI z-score
+18
+Hughes et al., 2011 USA 177 parents and
+children; 4.4(0.7)
+Cross-
+sectional
+with
+repeated
+behavioral
+observations
+CFSQ Child’ s weight
+and height;
+demographics;
+Home
+Observation
+Coding System;
+Feeding
+Behavior Coding
+Parents with indulgent
+feeding styles made fewer
+demands on their children
+to eat during dinner and
+showed lower levels of
+negative affect and
+intrusiveness. Hispanic boys
+with indulgent parents had
+19
+(Continued)
+Frontiers in Psychology | www.frontiersin.org 5 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+TABLE 1 | Continued
+Parenting Styles Country Sample size;
+mean (SD) or
+age range of
+children in
+years
+Study
+design
+Validated questionnaires Other
+measures
+Main ﬁndings Scores
+System (FBCS) signiﬁcantly higher BMI z
+scores compared to
+Hispanic boys in the other
+three feeding style groups.
+No differences in any other
+ethinic group
+T ovar et al., 2012 USA 383 mothers and
+children; 6.2(2.7)
+Cross-
+sectional
+baseline data
+from a RCT
+CFSQ; Centre for
+Epidemiologic Studies
+Depression Scale (CES-D);
+Perceived Stress Scale
+(PSS)
+Parent and child
+weight and
+height;
+demographics
+Feeding styles signiﬁcantly
+differed by child BMI
+z-score. Indulgent feeding
+style was associated with a
+higher child weight
+16
+Yilmaz et al., 2013 Turkey 380 parents and
+children; 5–7
+Cross-
+sectional
+PFSQ Child weight and
+height;
+demographics;
+visual scale of
+child body shape
+Misperception of child
+weight was common (42%).
+Emotional feeding and
+encouragement to eat were
+lower in children perceived
+to be overweight. Emotional
+feeding and permissive
+control were lower in
+children correctly
+categorized as overweight
+11
+FEEDING PRACTICES
+Blissett and Bennett,
+2013
+UK and
+Germany
+171 families;
+2–12
+Cross-
+sectional and
+cross-
+cultural
+comparison
+CFPQ; CEBQ; Dutch Eating
+Behavior Questionnaire
+(DEBQ)
+Parent’ s and
+child weight and
+height;
+demographics
+Black Afro-Caribbean (BAC)
+families in the UK followed a
+more restrictive feeding
+regime. White German
+parents used the lowest
+levels of pressure to eat.
+Parental restriction was
+positively associated with
+child BMI in BAC families
+only
+17
+Campbell et al., 2010 Australia 392 parents and
+children; 5–6,
+10–12
+Longitudinal:
+3 year
+follow-up
+CFQ (Restriction) Parent’ s and
+child’ s weight
+and height;
+demographics
+Higher baseline restriction
+scores were associated with
+lower BMI z-scores at 3
+year follow up in the
+younger (5–6 years) but not
+older (10–12 years) children
+16
+Cardel et al., 2012 USA 267 children;
+7–12
+Cross
+sectional
+CFQ Child’ s weight
+and height;
+Pubertal status;
+Genetic
+admixture;
+Socioeconomic
+status
+Parental restriction was a
+signiﬁcant predictor of
+child’ s BMI. Parental
+pressure to eat was
+negatively associated with
+child BMI
+21
+Costa et al., 2011 Brazil 110 parents and
+children; 6–10
+Cross
+sectional
+CFQ; The Brazil Economic
+Classiﬁcation Criterion
+Child weight and
+height
+Boys were more likely to be
+overweight or obese than
+girls; high child BMI was
+associated with higher
+perceived weight, concern,
+monitoring and restriction.
+Pressure to eat was
+inversely associated with
+child BMI
+14
+(Continued)
+Frontiers in Psychology | www.frontiersin.org 6 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+TABLE 1 | Continued
+Parenting Styles Country Sample size;
+mean (SD) or
+age range of
+children in
+years
+Study
+design
+Validated questionnaires Other
+measures
+Main ﬁndings Scores
+Dev et al., 2013 USA 329 parents and
+children; 2–5
+Cross-
+sectional
+data from a
+longitudinal
+study
+CFQ;Three Factor Eating
+Questionnaire (TFEQ);
+Eating Attitudes T est (EAT)
+Child weight and
+height; 22
+previously
+identiﬁed risk
+factors for
+obesity.
+Restriction linked to greater
+likelihood to have an
+overweight/obese child
+13
+Gubbels et al., 2011 Netherlands 2021 mothers
+and children; 5–7
+Longitudinal CFQ; FFQ Parent and
+child’ s weight
+and height;
+child’ s energy
+balance-related
+parenting
+practices; child’ s
+dietary intake,
+activity behavior;
+demographics
+Restriction of unhealthy
+food was positively
+associated with child’ s BMI;
+monitoring a child’ s diet was
+positively associated with
+children’ s diet quality
+15
+Holland et al., 2014 USA 170 parents and
+children; 7–11
+Cross-
+sectional
+comparison
+from RCT
+CFQ; Barratt Demographics
+Questionnaire
+Child’ s weight
+and height; Child
+dietary intake
+Lower levels of restrictive
+feeding were associated
+with lower child BMI-Z
+scores following intervention
+17
+Lee and Keller, 2012 Netherlands 4987 parents and
+children; 4
+Cross-
+sectional
+CEBQ; CFQ Parent and child
+weight and
+height
+Parents’ Pressure to Eat
+was negatively related to
+child BMI
+15
+Jansen et al., 2012 USA 77 parents and
+children; 4.1(0.9)
+Cross-
+sectional
+CFQ Parent and child
+weight and
+height;
+demographics
+Child BMI was positively
+associated with parental
+concern about child weight
+and with lower perceived
+responsibility for feeding
+21
+Lee and Keller, 2012 USA 175 parents and
+children; 4–6
+Cross-
+sectional
+CFQ Child’ s weight
+and height; test
+meals served in
+a lab
+Pressure to eat was
+negatively associated with
+child BMI z score
+15
+Manan et al., 2012 Malaysia 175 mothers and
+children; 7–8
+Cross-
+sectional
+CFQ Child weight and
+height;
+demographics
+Pressure to eat among
+parents of overweight and
+obese children was
+signiﬁcantly lower compared
+to healthy weight children.
+Food restriction was
+positively associated with
+child’ s BMI
+16
+Marshall et al., 2011 Australia 93 parents and
+children; 7.6(2.9)
+Cross-
+sectional
+comparison
+from
+baseline
+measures
+from an RCT
+General Nutrition
+Knowledge Questionnaire;
+CFQ; Family Food
+Environment questionnaire
+(FFEQ); CFPQ
+Child and parent
+weight and
+height;
+demographics;
+24-hour recalls
+for child’ s diet
+Greater use of a combined
+guide-and-reward construct
+and higher levels of concern
+for their child’ s intake were
+signiﬁcantly associated with
+lower child BMI-Z scores
+15
+Murashima et al., 2012 USA 330 mothers and
+children; 4.2(0.6)
+Cross-
+sectional
+Parental control over child
+feeding; the Block Food
+Screener (BFS);
+Child and parent
+weight and
+height
+Directive control predicted
+lower child BMI; Mothers’
+nondirective control was
+20
+(Continued)
+Frontiers in Psychology | www.frontiersin.org 7 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+TABLE 1 | Continued
+Parenting Styles Country Sample size;
+mean (SD) or
+age range of
+children in
+years
+Study
+design
+Validated questionnaires Other
+measures
+Main ﬁndings Scores
+associated with intake of
+lower energy density and
+higher nutrient dense foods
+Noor et al., 2012 Malaysia 204 parents and
+children; 9–12
+Cross-
+sectional
+CFQ (Malay version) Child weight and
+height
+Higher restriction associated
+with higher BMI; low SES
+associated with low BMI
+15
+Rollins et al., 2014 USA 180 mothers and
+daughters;
+5.4(0.4)
+Longitudinal CFQ; Restricted Access
+Questionnaire (RAQ)
+Child weight and
+height
+Limiting or restricting snacks
+was associated with eating
+in the absence of hunger
+(EAH) at 5 years; Low
+inhibitory control girls had
+greater increases in EAH
+and BMI from 5 to 7 years
+17
+T aylor et al., 2011 Australia 175 parents and
+children; 9.2(1.1)
+Cross-
+sectional
+Authoritative Parenting
+Index (API); CFPQ; Parental
+activity-related practices;
+Child Nutrition
+Questionnaire (CNQ:
+preference for fruit and
+vegetable subscales);
+Children’ s Attraction to
+Physical Activity
+Questionnaire (CAPA)
+Parent and child
+weight and
+height;
+parent-reported
+child diet and
+physical activity;
+child’ s
+preference for
+non-core foods;
+parents’ level of
+education.
+General parenting style was
+not associated with child
+BMI. Parental food
+restriction was associated
+with higher BMI whereas
+pressure to eat was
+associated with lower BMI
+20
+T schann et al., 2013 USA Parents of 174
+Mexican
+American children
+(quantitative);
+n = 35 parents
+(qualitative); 8–10
+Cross-
+sectional and
+qualitative
+Parental Feeding Practices
+(PFP)
+Parent and child
+weight and
+height;
+Sociodemographic
+information
+Mothers and fathers differed
+in their use of feeding
+practices. Higher maternal
+positive involvement in
+feeding was associated with
+lower child BMI. Parental
+pressure to eat was
+associated with lower child
+BMI, parental restriction with
+higher child BMI. Fathers
+using food to control
+behavior had children with
+lower BMI
+11
+Webber et al., 2010a UK 213 mothers and
+children; 7–9
+Cross-
+sectional
+analysis of
+baseline data
+from
+longitudinal
+study
+CEBQ; CFQ Child weight and
+height; FMI; WC;
+demographics
+Maternal restriction was
+associated with food
+responsiveness. Pressure to
+eat was associated with
+satiety responsiveness,
+slowness of eating, and
+fussiness. All effects were
+independent of child BMI
+20
+Webber et al., 2010b UK 213 parents and
+children; 7–9
+Cross-
+sectional
+analysis of
+baseline data
+from
+longitudinal
+study
+CFQ Child weight and
+height; FMI; WC;
+demographics;
+maternal
+perception of
+weight and
+concern about
+overweight
+Higher BMI was associated
+with lower ‘pressure to eat’
+and higher ‘restriction’
+scores. Maternal concern
+about overweight mediated
+the association between
+child adiposity and
+restriction
+20
+(Continued)
+Frontiers in Psychology | www.frontiersin.org 8 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+TABLE 1 | Continued
+Parenting Styles Country Sample size;
+mean (SD) or
+age range of
+children in
+years
+Study
+design
+Validated questionnaires Other
+measures
+Main ﬁndings Scores
+Webber et al., 2010c UK 213 parents and
+children; 7–9
+Longitudinal CFQ Child weight and
+height; FMI; WC
+No longitudinal association
+between child feeding
+practices at baseline and
+change in child adiposity.
+Higher child BMI at baseline
+was associated with smaller
+decrease in food monitoring
+and larger decrease in
+pressure to eat at follow-up
+19
+Wehrly et al., 2014 USA 243 parents and
+children; 4–6
+Cross-
+sectional and
+cross-
+cultural
+comparison
+CFQ Child weight and
+height;
+demographics
+Pressure to eat negatively
+associated with BMI.
+Restriction positively
+correlated with perceived
+weight
+19
+Zhang and McIntosh,
+2011
+USA 312 parents and
+children; 11.9(2.2)
+Cross-
+sectional
+Child weight and
+height;
+interviews about
+parental control
+over child
+feeding
+Parental encouragement to
+eat enough was associated
+with a lower child BMI and
+helping children to eat a
+healthy diet was associated
+with a higher BMI
+15
+Abbreviations: BMI, Body Mass Index; CEBQ, Child Eating Behavior Question naire; CFQ, Child Feeding Questionnaire; CFSQ, Caregiver’s Fee ding Styles Questionnaire; CFPQ,
+Comprehensive Feeding Practices Questionnaire; FFQ, Food Frequen cy Questionnaire; FMI, Fat Mass Index; PDI(-S), Parenting Dimensi on Inventory(-Short Form); PFSQ, Parental
+Feeding Style Questionnaire; WC, Waist Circumference.
+BMI. An uninvolved (“neglectful”) parenting style ampliﬁed the
+relationship between food approach traits and a higher BMI
+z-score. This illustrates the importance of considering chi ld
+characteristics as well as parenting styles when assessing o besity
+risk. Within the Australian longitudinal cohort where prote ctive
+parenting was used to predict BMI over a period of 5 years (data
+collected three times), high maternal protectiveness measu red at
+4–5 years old was not signiﬁcantly associated with weight un til
+children reached the ages of 10–11 years (
+Hancock et al., 2014 ).
+By this time, protectiveness was associated with a higher odd s
+ratio of the child being overweight or obese. This suggests that the
+eﬀects of some parenting styles may emerge later in childhood.
+Among the three cross-sectional studies, parenting style wa s a
+signiﬁcant predictor of child BMI in only one, large scale study of
+9 year-old children (n = 1275; Rodenburg et al., 2011) and failed
+to reach signiﬁcance in the other two smaller studies ( Hennessy
+et al., 2010; Taylor et al., 2011). Child BMI z-score was associated
+with a more rejecting parenting style which is described as lo w
+support, low behavioral control but high psychological contro l
+(Rodenburg et al., 2011 ). The study by Hennessy et al. (2010) of
+91 families with 9 year-old children reported a modest association
+between parenting style and feeding style; but only feeding s tyle
+was linked to child BMI z-score (see next section). Although t he
+study by Taylor et al. (2011) of 7–11 year old children ( n = 175)
+found no association between parent-reported parenting style s
+and child BMI, child-perceived parenting style was signiﬁcant ly
+associated with diet and activity. In this case, when childr en
+perceived parents to be more demanding and responsive, which
+could be considered a proxy for authoritative parenting, they
+showed healthier weight-related attitudes such as liking f or fruit
+and vegetables and appreciation of physical activity. The potential
+for a moderating role of the child’s perception of parenting sty le
+is worthy of further consideration.
+Overall, only the longitudinal studies showed that parenting
+style was consistently associated with child BMI; the cross-
+sectional studies were more mixed in their ﬁndings, perhaps
+attributable to smaller sample sizes. It can be concluded
+from the stronger evidence extracted from longitudinal stu dies
+that parenting style is associated with child BMI over time
+and these eﬀects may be inﬂuenced by child age and eating
+traits.
+Feeding Styles
+Characteristics of the Studies
+In total, ﬁve papers investigated feeding style and its associ ation
+with child BMI and they all used a cross-sectional design
+(
+Hennessy et al., 2010; Hughes et al., 2011; Tovar et al., 2012 ;
+Yilmaz et al., 2013; Frankel et al., 2014 ).
+Instruments Used
+Most studies (
+Hennessy et al., 2010; Hughes et al., 2011;
+Tovar et al., 2012; Frankel et al., 2014 )measured feeding style
+using the Caregiver Feeding Style Questionnaire (CFSQ; Hughes
+et al., 2005 . One study ( Hughes et al., 2011 ) cross-validated
+Frontiers in Psychology | www.frontiersin.org 9 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+FIGURE 2 | Flow diagram study selection process for review. *T wo articles addressed parenting style and feeding particl es. **One article addressed feeding style
+and parenting style.
+its ﬁndings from the CFSQ with ﬁndings from observational
+measurements made at three dinner meals, using the Feeding
+Behavior Coding System (FBCS;
+Hughes et al., 2007 ), an
+observational checklist that documents speciﬁc feeding prac tices
+and their frequency of occurrence. This study had a high quali ty
+rating as it allowed comparison of parents’ self-reported data
+with observed behaviors.
+Yilmaz et al. (2013) used the Parental
+Feeding Style Questionnaire (Wardle et al., 2002) which measures
+instrumental feeding, emotional feeding, encouragement t o eat
+and control over eating. In addition, the validated Turkish
+version of the PFSQ divided the control scale into two subsca les:
+strict control (parent decides when/what/how much child
+should eat) and permissive control (allowing child to make
+these decisions).
+Findings
+In three of the ﬁve cross-sectional studies, indulgent feedi ng
+styles were associated with higher weight or BMI z-scores
+Frontiers in Psychology | www.frontiersin.org 10 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+(Hennessy et al., 2010; Tovar et al., 2012; Frankel et al., 201 4).
+Where both parenting styles and feeding styles were evaluate d in
+the same families it was found that the indulgent feeding style
+was associated with child BMI, but not parenting style (Hennessy
+et al., 2010).
+Mothers of Turkish 5–7 year-olds who perceived their
+child to be overweight reported less use of emotional feeding
+styles or encouragement to eat on the Parental Feeding Style
+Questionnaire (PFSQ;
+Wardle et al., 2002; Özçetin et al., 2010;
+Yilmaz et al., 2013 ). This suggests that parental perception
+of child’s weight may inﬂuence their use of feeding styles or
+practices.
+Within a sample of African American and Hispanic American
+families, an indulgent feeding style was associated with lo wer
+satiety responsiveness, higher enjoyment of food, and a high er
+BMI in the children (
+Frankel et al., 2014 ). The study by Hughes
+et al. (2011) found that Hispanic boys with indulgent parents had
+signiﬁcantly higher BMI z-scores compared to Hispanic boys in
+the other three feeding style groups (authoritative, author itarian,
+and uninvolved), but this association was not seen in Hispani c
+girls or in African American children. The importance of
+gender and ethnic diﬀerences in determining the relationshi p
+between feeding style and child BMI are evident.
+Tovar et al.
+(2012) studied feeding styles among recent immigrants to the
+USA. They found that among Haitian, Brazilian, and Latina
+women, authoritarian and indulgent feeding styles were the most
+common. Similar to ﬁndings from studies in non-immigrant
+populations, the indulgent feeding style was positively assoc iated
+with a high child BMI z-score across this diverse sample.
+Overall, these ﬁndings illustrate the more consistent
+relationship between feeding style and risk of obesity compa red
+to more general measures of parenting style.
+Feeding Practices
+Characteristics of the Studies
+Most of the papers identiﬁed in this review investigated feedin g
+practices. Seventeen studies were cross-sectional (
+Hennessy et al.,
+2010; Webber et al., 2010a,b; Costa et al., 2011; Marshall et al.,
+2011; Taylor et al., 2011; Zhang and McIntosh, 2011; Cardel et al.,
+2012; Jansen et al., 2012; Lee and Keller, 2012; Murashima et a l.,
+2012; Manan et al., 2012; Noor et al., 2012; Blissett and Benn ett,
+2013; Dev et al., 2013; Tschann et al., 2013; Wehrly et al., 201 4);
+four were longitudinal ( Campbell et al., 2010; Webber et al.,
+2010c; Gubbels et al., 2011; Rollins et al., 2014 ); and one was a
+randomized control trial (Karp et al., 2014).
+Instruments Used
+The Child Feeding Questionnaire (CFQ) developed by
+Birch
+et al. (2001) was the most commonly used measure to assess
+feeding practices and was used in 18 of the 22 empirical studies
+(
+Campbell et al., 2010; Hennessy et al., 2010; Webber et al.,
+2010a,b,c; Costa et al., 2011; Gubbels et al., 2011; Marshal l et al.,
+2011; Cardel et al., 2012; Jansen et al., 2012; Lee and Keller, 2012;
+Manan et al., 2012; Noor et al., 2012; Dev et al., 2013; Hollan d
+et al., 2014; Karp et al., 2014; Rollins et al., 2014; Wehrly et a l.,
+2014).
+In one study ( Marshall et al., 2011 ) the CFQ was used as
+part of a larger parenting questionnaire which also included
+the Comprehensive Feeding Practices Questionnaires (CFPQ;
+Musher-Eizenman and Holub, 2007 ) and the Family Food
+Environment questionnaire (Campbell et al., 2006 ). Both studies
+by Blissett and Bennett (2013) and Taylor et al. (2011) used the
+CFPQ whereas Tschann et al. (2013) used the Parental Feeding
+Practices questionnaire, which was adapted from items taken
+from several validated parental feeding practice measures such as
+the CFPQ and CFQ. In each case, the measures included scores
+for monitoring, restriction and pressuring to eat.
+Murashima et al. (2012) used a questionnaire they had
+developed (Parental Control over Child Feeding; Murashima
+et al., 2011 ) assessing diﬀerent types of control applied to child
+feeding situations. The study by Zhang and McIntosh (2011)
+assessed feeding practices such as encouraging adequate int ake,
+keeping track of types of foods eaten and building healthy
+habits using telephone-based interviews. One study also asked
+children to report on the extent to which their mother control led
+access to snack foods (
+Rollins et al., 2014 ). Hughes et al.
+(2011) complemented self-report measures from the CFSQ by
+observational measures as mentioned above.
+Restriction/Control Feeding
+Of the original research studies, 14 observed a signiﬁcant
+association between restrictive/controlling feeding and high child
+BMI, although this was more strongly evidenced within the
+cross-sectional studies (see Table 2). Within these studies, one
+study found the association was speciﬁc to girls with low
+inhibitory control (
+Rollins et al., 2014 ) and one study had mixed
+ﬁndings showing positive associations in some subgroups base d
+on ethnicity ( Blissett and Bennett, 2013 ). One study showed a
+negative association between restriction and BMI in younger, but
+not older, children (Campbell et al., 2010 ). Four studies reported
+no associations with weight (see Table 2).
+The four longitudinal studies were equivocal about whether
+restriction and controlling feeding practices were associa ted with
+obesity risk. Two studies found no longitudinal associatio ns
+between restriction and change in BMI ( Webber et al., 2010c;
+Gubbels et al., 2011 ). In the study by Campbell et al. (2010)
+baseline restrictive feeding was not associated with basel ine BMI
+in younger (5–6 years) or older (10–12 years) children. Howev er,
+when the younger children were measured at the 3 year follow-
+up, parents who were more restrictive at baseline had children
+who gained less weight over time. It was suggested that restriction
+can have protective eﬀects against unhealthy weight gain in
+younger, but not older, children (
+Campbell et al., 2010 ). This
+supports the idea that some feeding practices such as setting
+limits in early life may reduce obesity risk but this practice h as
+less of an eﬀect on older children.
+Taking child appetite characteristics into account, the
+longitudinal study by
+Rollins et al. (2014) examined controlling
+feeding practices including restricting access to snacks an d
+change in weight over 3 years. In this study four feeding
+proﬁles were identiﬁed according to the type of limit-setting o r
+restriction reported by mothers: (1) unlimited access to sna cks;
+(2) sets limits and does not restrict snacks; (3) sets limits and
+Frontiers in Psychology | www.frontiersin.org 11 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+TABLE 2 | The associations between parenting styles, feeding styles and feeding practices with child’s weight status.
+Year and author Parenting style (P)/Feeding style (F) Feeding practices
+Indulgent Authoritative Authoritarian Uninvolved Other R estriction Pressure Monitoring Other
+Campbell et al., 2010 − ˆ
+Hennessy et al., 2010 P0 P0 P0 P0 − − 0
+Olvera and Power, 2010 P+ P− P− P0
+Webber et al., 2010a 0 0 0
+Webber et al., 2010b 0 0
+Webber et al., 2010c 0 0
+Costa et al., 2011 + 0 0
+Gubbels et al., 2011 + − −
+Hughes et al., 2011 F+# F0 F0 F0
+Marshall et al., 2011 0 a
+Rodenburg et al., 2011 P− P+
+T aylor et al., 2011 b + − 0
+Zhang and McIntosh, 2011 0 0
+Cardel et al., 2012 + −
+Jansen et al., 2012 + − 0
+Lee and Keller, 2012 −
+Manan et al., 2012 + − 0
+Murashima et al., 2012 +
+Noor et al., 2012 + − 0
+Rodenburg et al., 2012 P0 P0 P0 P0
+T ovar et al., 2012 F+
+Blissett and Bennett, 2013 + 0 0
+Dev et al., 2013 + 0 0
+T schann et al., 2013 + − −
+Yilmaz et al., 2013 c
+Frankel et al., 2014 F+ F+
+Hancock et al., 2014 d
+Holland et al., 2014 + − −
+Karp et al., 2014 + − 0
+Rollins et al., 2014 +%
+Wehrly et al., 2014 + −
+0, No association/differences found.
++, positive association with child BMI.
+−, inverse association with child BMI; grayed out cell indicates tha t association was not tested.
+ˆHigher baseline restriction scores were associated with lower BMI z-scores at 3 year follow up in 5–6 year-old, but not in 10–12 year-old, childr en.
+#Positive association only in Hispanic boys, but not other groups.
+%In children with low inhibitory control.
+aRewarding feeding styles was associated with lower BMI.
+bResponsive and demanding parenting style dimensions were not associa ted with child BMI.
+cEmotional feeding and encouragement to eat were lower in children perceived to be overweight.
+dGreater maternal protectiveness at age 8–9 (but not at 6–7) was associ ated with children being overweight or obese at ages 10–11.
+restricts high fat/sugar snacks; (4) sets limits and restri cts all
+snacks. The girls whose mothers restricted all snacks showe d
+higher levels of eating in the absence of hunger (EAH) at 5
+years. The girls with low inhibitory control and high levels
+of approach (strong temperamental anticipation of expected
+reward) were heavier than those with high control and low
+approach. In addition, girls with low inhibitory control whos e
+mothers provided unlimited access to snacks or restricted al l
+snacks gained the most weight and increased EAH between 5 and
+7 years. This study is important in illustrating that charact eristics
+of the child are essential in understanding the links betwee n
+child BMI and feeding practices; also the study demonstrates the
+nuanced relationship between restriction and child BMI. On t he
+one hand, restricting all snacks was associated with EAH, an d
+typically this behavior increases the risk of later obesity. On the
+other hand, both extremes of limit setting (restricts all sn acks or
+free access to snacks) did not produce the desired moderating
+eﬀect on BMI in girls with low inhibitory control.
+Of the cross-sectional studies, 12 found that restrictive feeding
+was linked to child overweight and obesity (see Table 2). Thus,
+the higher the child BMI, the greater the reported level of
+restrictive feeding practice. Higher levels of restrictive feeding
+Frontiers in Psychology | www.frontiersin.org 12 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+have also been associated with maternal perceptions that the child
+has a large appetite ( Webber et al., 2010a ) or concerns about
+child overweight ( Webber et al., 2010b ), which may mediate the
+association between child adiposity and restriction (Webber et al.,
+2010b). This suggests that parents may use restriction in response
+to the child’s perceived weight status or appetite.
+Maternal concern about child overweight was also associate d
+with a linear increase in restriction across weight groups, a nd
+this maternal concern about overweight mediated the association
+between child adiposity and restriction ( Webber et al., 2010b ),
+suggesting that parents use restriction in response to child’ s
+perceived weight status. In another study with a large cohort of
+children, Jansen et al. (2012) reported signiﬁcant cross-sectional
+associations between restrictive feeding and child weight . Noor
+et al. (2012) , in a study of Malay children, also found that
+parents of overweight children controlled their child’s int ake by
+restricting amount of food given. This suggests that restri ction is
+applied to heavier children across diﬀerent contexts and cultures.
+Where diﬀerent groups have been studied within a single
+study, it is also interesting to note that restrictive practi ces may
+diﬀer by sub-group. For example, Cardel et al. (2012) reported
+signiﬁcantly higher levels of restrictive feeding in Hispan ic
+American parents compared to European American or African
+American parents. In another study, higher restrictive feed ing
+practices were associated with higher child weight, only for
+British Black Afro Caribbean (BAC) but not for white British
+(WB) or German (WG) families (
+Blissett and Bennett, 2013 ).
+In this instance, restrictive feeding practices were also li nked
+with child eating traits. BAC parents reported that their chil dren
+showed the highest food approach behaviors; in turn, higher food
+approach was associated with higher child BMI in both BAC and
+WG groups. Parents may therefore apply restriction as a means to
+control eating behavior in their children with high food approach
+tendencies.
+Wehrly et al. (2014) examined two distinct dimensions of
+control in an ethnically and economically diverse group of
+American children: restriction of unhealthy foods and press ure
+to eat healthy foods. They found these feeding practices were
+positively correlated with each other and each was independently
+associated with child BMI and body fatness. Although it seems
+surprising that restriction and pressure are positively corre lated
+when typically they are inversely correlated, this can be explained
+by pressure or encouragement to consume healthy foods while
+limiting or restricting access to unhealthy foods in childr en who
+are overweight. Thus, the correspondence between the two relates
+to diﬀerent ways to obtain the same outcome, namely healthy
+eating. In addition, they found that parental perception of chi ld
+overweight was linked to the use of restriction. These ﬁndin gs
+conﬁrm those by
+Webber et al. (2010b) that parental perception
+of child weight status is an important determinant of feeding
+practices.
+Feeding practices such as restriction are subject to parental
+perception of their child’s weight and are modiﬁable. This was
+demonstrated in the trial by
+Holland et al. (2014) who conducted
+a 16-session family-based behavioral weight loss treatmen t with
+families of 7–11 year old children. Across the time of the
+trial, restrictive feeding practices decreased at the same t ime as
+weight loss. During the period of the intervention, as childr en
+lost weight, and reduced their total energy intake, parents
+reported a decrease in their concern about their child’s weig ht
+and an increase in perceived responsibility for quantity and
+quality of the child’s diet. Children decreased the percentag e
+of total energy intake from fat and increased energy from
+protein. They reduced intake of sugars and increased intake o f
+fruits and vegetables. Mediational analyses found a signiﬁc ant
+mediating eﬀect of selective dietary changes between the cha nge
+in restrictive feeding and change in child BMI. This suggests that
+selective restriction (high fat foods, total energy intake ) helped
+to promote a healthier BMI in this study. The trial had no
+control group, therefore caution must be applied to the results
+of this study. But the suggestion is made that limit setting, rather
+than excessive restriction, was eﬀective in weight loss for t hese
+children.
+Across the four longitudinal studies, restrictive feeding
+practices were not consistently related to weight change ove r
+time. One found weight gain was more related to child inhibit ory
+control than restriction (
+Rollins et al., 2014 ) and one showed
+a protective eﬀect of restriction applied to younger children.
+Within cross-sectional studies, a consistent ﬁnding across studies
+and cultures was that restriction was associated with a high child
+BMI, suggesting the possibility of reverse causality. In othe r
+words, the restrictions imposed by parents could be a response to
+child eating traits and weight status, rather than a causal f actor
+in developing overweight, although this was not found in the
+one study that explored this possible relationship longitudi nally
+(
+Webber et al., 2010c).
+Pressure to Eat
+Pressure to eat is a practice parents may use to encourage or cajole
+their child to eat enough food. Pressure to eat was associate d
+with lower child BMI in 11 cross-sectional studies (
+Hennessy
+et al., 2010; Webber et al., 2010b; Costa et al., 2011; Taylor e t al.,
+2011; Cardel et al., 2012; Jansen et al., 2012; Lee and Keller, 2012;
+Manan et al., 2012; Noor et al., 2012; Tschann et al., 2013; Wehrly
+et al., 2014 ), one longitudinal ( Gubbels et al., 2011 ), and one
+part of a RCT ( Karp et al., 2014 ). No association was found in
+another of the longitudinal studies ( Webber et al., 2010c ). In
+the longitudinal study which did ﬁnd an eﬀect ( Gubbels et al.,
+2011) the authors adapted the pressure to eat scale to speciﬁcally
+investigate “stimulation of healthy intake” and found that this
+variable was signiﬁcantly concurrently associated with hi gher
+child BMI z-score at age 5 and predicted a healthy BMI at age
+7. Therefore, parents encouraged heavier children to accept more
+healthy foods in their diets at age 5 and this improved BMI by age
+7 (
+Gubbels et al., 2011).
+Although there were studies ﬁnding no associations between
+parental pressure to eat and child weight ( Blissett and Bennett,
+2013; Holland et al., 2014 ), ﬁndings from the remaining seven
+studies generally suggested that pressure to eat was associat ed
+with a low child BMI. This pattern was also seen in non-Western
+cultures with two studies of children in Malaysia ﬁnding tha t
+parents of heavier children were less likely to pressure their c hild
+to eat than parents of children with a normal (
+Manan et al., 2012)
+or low BMI (Noor et al., 2012).
+In another study involving an ethnically and economically
+diverse sample, pressure to eat diﬀered by parental ethnicity and
+Frontiers in Psychology | www.frontiersin.org 13 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+by family income ( Wehrly et al., 2014 ). As such, White Non-
+Hispanic parents reported lower pressure to eat compared to
+White Hispanic, Black, and Asian parents. In addition, household
+monthly income was inversely related to pressure to eat, paren ts’
+perceptions of child weight status, and child BMI. Similarly, while
+Blissett and Bennett (2013) reported ethnic diﬀerences in feeding
+practices, such that White German parents reported lower level s
+of pressure to eat compared to White British and Black Afro-
+Caribbean mothers, this was not linked to weight. Pressure t o eat
+might also vary by parental gender, with one study (
+Tschann et al.,
+2013) ﬁnding that fathers reported higher levels of pressure to eat
+compared to mothers.
+Webber et al. (2010a) reported that characteristics of the
+child’s appetite were associated cross-sectionally with feed ing
+practices applied by parents. Thus, children who were described
+as fussy or as slow eaters had parents who reported higher level s
+of pressure to eat, and those with high enjoyment of eating
+had lower pressure to eat. But these eﬀects were independent of
+child BMI. Exploring the possibility that parents reacted to chi ld
+characteristics longitudinally, it was found that higher b aseline
+BMI predicted a greater decrease in pressure to eat over time
+(
+Webber et al., 2010c).
+Monitoring Child Intake
+Among 17 papers investigating the associations between
+monitoring and weight, most studies ( n = 14) found no link
+between monitoring intake and child BMI (see Table 2). In fact,
+some forms of monitoring child intake may protect against
+obesity.
+Of two longitudinal studies, one found no relationship
+between monitoring and child weight (
+Webber et al., 2010c), but
+the other found that parental monitoring of child intake at 5 years
+of age was associated with lower weight and better diet qualit y at
+age 7 (Gubbels et al., 2011).
+One study examined a wide variety of feeding practices as
+part of a larger RCT to identify the role of learning and co-
+participation in eating decisions on child BMI (
+Marshall et al.,
+2011). The authors explored diﬀerent factors emerging from an
+exploratory factor analysis and included a factor on trackin g and
+talking about food which includes monitoring intake of high fat
+foods, sweet, and savory snacks, discussing the importance o f
+health, the nutritional value of foods, and encouraging int ake
+of healthy foods before unhealthy foods. Another factor, na med
+“guide and reward” included parental eﬀorts to regulate their
+child’s intake such as guiding intake away from favorite or “ junk”
+foods; ensuring that their child does not eat too many sweets and
+oﬀering favored foods as rewards for good behavior. This fact or
+with a monitoring item was signiﬁcantly associated with hig h
+child BMI, but because this factor included so many variables it is
+diﬃcult to draw speciﬁc conclusions about monitoring. Conce rn
+about poor intake was inversely related to child BMI.
+Ethnic diﬀerences in parental feeding practices were found by
+Blissett and Bennett (2013) . In this study Black Afro Caribbean
+parents reported the lowest levels of monitoring (and highest
+restriction) compared to White British and German parents.
+Exploring potential bi-directional relationships, a longitudinal
+study reported that a high baseline child BMI was associated
+with a lower decrease in the use of monitoring over time
+(
+Webber et al., 2010c ). This maintenance of monitoring levels
+in response to a high child BMI could be related to the child’s
+tendency to overeat (
+Webber et al., 2010a ). It has been argued
+that monitoring might be protective against overweight (Gubbels
+et al., 2011 ), and that this response by parents can be beneﬁcial.
+If parents are concerned about child overweight and overeati ng,
+then monitoring is an obvious surveillance strategy.
+Positive Involvement
+The concept of “positive involvement” encompasses several
+“protective elements, ” deﬁned by
+Tschann et al. (2013) as
+parents limiting foods high in energy content, providing smal l,
+appropriate servings of food, and asking children about what
+they ate. This construct incorporates restriction of speciﬁc foods,
+limiting portion size and monitoring intake. Parental positiv e
+involvement was signiﬁcantly correlated with pressure to ea t
+and restriction of amount of food. Maternal (but not paternal )
+positive involvement was associated with a lower child BMI
+(
+Tschann et al., 2013). These results conﬁrm that some aspects of
+restriction and monitoring may be considered protective agai nst
+overweight and supports the proposal that structure and support
+may beneﬁt children; however, it is not known which of the
+elements within positive involvement are responsible for the
+protective eﬀects.
+DISCUSSION
+The primary objective of the current review was to identify
+modiﬁable parental behaviors associated with overweight an d
+obesity in children aged 4–12 years. Overall in this age grou p, the
+evidence suggests that the indulgent and uninvolved parentin g
+and feeding styles were associated with a higher child BMI.
+Associations between parenting style and child BMI were
+strongest and most consistent within the longitudinal stud ies;
+whereas for speciﬁc feeding practices such as restriction and
+pressure to eat, these were linked to BMI most strongly within
+cross-sectional studies. Measures of feeding style were mor e
+consistently related to the risk of obesity than were more gen eral
+measures of parenting style. Few studies identiﬁed protectiv e
+feeding practices, but in one case, monitoring was linked wit h
+lower BMI in a longitudinal context (
+Gubbels et al., 2011 )
+and positive involvement in one cross-sectional study ( Tschann
+et al., 2013 ). In addition, studies highlighted the importance of
+child characteristics such as inhibitory control or eating traits,
+ethnicity, age, and socioeconomic status as moderating fac tors in
+the relationship with child BMI.
+Parenting Styles
+Indulgent or uninvolved parenting was generally linked to higher
+child BMI (e.g.,
+Hughes et al., 2008; Olvera and Power, 2010 ).
+These ﬁndings are consistent with previous literature as the se
+groups were evaluated in comparison to the authoritative style .
+In support, Sleddens et al.’s (2011) review of the literature notes
+that authoritative parenting produced healthier children (healthy
+eating, active lifestyles, and lower child BMI); whilst indulge nt
+feeding was associated with more negative health outcomes. This
+Frontiers in Psychology | www.frontiersin.org 14 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+was also consistent with the review by Vollmer and Mobley
+(2013), who also found the authoritative style to be protective
+against obesity. It should be noted that the literature in fa vor of
+the authoritative parenting style has been so consistent, ac ross
+a number of child outcomes, that many of the recent papers on
+parenting/feeding style used this style as the “reference” g roup.
+Whereas, an authoritative parenting style combines expectat ions
+about adherence to a healthy diet and sets limits on certain
+foods, an indulgent style sets few expectations and gives chi ldren
+greater freedom to choose what is eaten. Previous research h as
+also linked authoritative parenting to healthy diets (e.g.,
+Kremers
+et al., 2003; De Bourdeaudhuij et al., 2008 ). A recent review by
+Collins et al. (2014) explored the relationship between parenting
+styles and its associations with feeding practices. Although in this
+review, child weight was not a primary outcome, the authors
+suggested that an authoritative parenting style was associa ted
+with parental monitoring of child food intake (which has been
+previously associated with healthy eating, and thus lower ch ild
+BMI).
+Given the importance of these observations for promoting
+authoritative parenting, there is a clear need to use consist ent
+measures of parenting styles across studies. In the present review,
+four diﬀerent measurement tools were identiﬁed across the
+six studies to investigate parenting style and a wide range of
+deﬁnitions was applied. Consensus in deﬁnition, concepts and
+measurements will lead to greater consensus in study outcom es,
+as suggested by
+Blissett (2011).
+Feeding Styles
+Mixed ﬁndings were identiﬁed for feeding styles. Authoritat ive
+feeding styles were protective against the risk of obesity an d were
+associated with a higher consumption of fruit and vegetables
+(
+Rodenburg et al., 2012 ) but not weight. Authoritative feeding
+styles with clear rules and boundaries promoted a healthy BMI
+(
+Rodenburg et al., 2012 ). However, only cross-sectional studies
+were found in this search, and this limits the conclusions wh ich
+can be drawn about feeding styles over time. Similar to parent ing
+styles, indulgent feeding styles were also associated with risk
+of overweight and obesity, a ﬁnding which was consistent wit h
+previous reviews ( Hurley et al., 2011; Vollmer and Mobley,
+2013).
+Evidence of ethnic diﬀerences and their associations with
+diﬀerent feeding styles was reported. As such, Tovar et al. (2012)
+noted that feeding styles signiﬁcantly diﬀered by child BMI z-
+score and by ethnic group. The association between feeding
+style and child weight was also found to vary between childre n
+of diﬀerent genders or ethnicity (e.g.,
+Hughes et al., 2011 ).
+Therefore, many family factors such as culture, ethnic grou p,
+gender, or SES might moderate the eﬀect of feeding styles on child
+weight.
+Feeding Practices
+Speciﬁc feeding practices were linked to child BMI across a
+number of studies, supporting existing observations of these
+relationships (e.g.,
+Faith et al., 2004 ). Among the studies in
+the current review, restrictive/controlling feeding pract ices were
+generally linked to higher child BMI, whereas pressure to eat
+was associated with lower child BMI. Interestingly, restric tion
+and pressure to eat were positively correlated with one another
+when restriction was speciﬁcally applied to unhealthy foods
+and pressure to eat on healthy foods (
+Wehrly et al., 2014 ).
+In this case, both behaviors were directed at children with a
+high BMI, and may have been two practices used to guide
+children toward the goal of healthier eating. Whether this i s
+eﬀective is not yet evident. What is clear is that within each of
+these constructs, the distinction must be made between nega tive
+and positive consequences. Excessive restriction or strict limit
+setting can be linked to parental eﬀorts to prevent overeating
+compared with more positive and eﬀective limits placed on
+intake (such as appropriate portion sizes) which serve to guide
+healthy food intake. Similarly, pressuring children to eat w hen
+they are not hungry (potentially reducing the child’s abilit y to
+self-regulate intake) should be considered distinct from posit ive
+encouragement to eat certain healthy foods as part of guiding
+choice and providing appropriate “structure” (
+Grolnick and
+Pomerantz, 2009).
+Hurley et al. (2011) reviewed the literature regarding
+two practices related to responsive feeding ﬁnding positive
+associations between nonresponsive feeding and child weigh t
+in 24/31 papers. The integrative review by
+Thompson (2010)
+identiﬁed 18 papers addressing feeding practices and childhoo d
+obesity in pre-school children. In this review, it was found t hat
+culture, parental education and parents’ own eating behavior s
+were all signiﬁcantly associated with child weight. In parti cular,
+risk of obesity was associated with how parents controlled
+and modiﬁed their children’s eating, conﬁrming the relationship
+between pressure to eat and low child BMI and between
+restriction and high child BMI.
+Cross-sectional studies provide a snapshot but fail to take
+account of how parents respond to their children over time
+and how this evolves as children grow. The cause and eﬀect
+direction is not known. It is feasible that restriction is appli ed
+to children with high food approach tendencies (e.g.,
+Webber
+et al., 2010b). Similarly, parents may pressure children to eat who
+are fussy or who seem to be undereating ( Webber et al., 2010b ).
+Encouragement to eat a healthy diet and monitoring intake
+to ensure children are eating well could be protective against
+obesity, and may be applied more generally by parents, regardless
+of the child’s weight status. This was illustrated by
+Gubbels
+et al. (2011) where monitoring children’s intake and stimulating
+healthy food choices at age 5 years predicted a healthier child BMI
+at age 7 years.
+A few large-scale longitudinal studies have explored the
+reciprocal relationship between feeding practices and weight. The
+analyses by Webber et al. (2010c) , revealed evidence of a child
+responsive model of parenting. Pressure to eat was applied in
+response to children who had a lower BMI and monitoring was
+maintained at a higher level for children with higher BMI. The
+argument for a child responsive model in determining feeding
+practices is persuasive. It may explain the consistent ﬁnding
+of associations between child weight status and parents’ use
+of speciﬁc feeding practices. Parents may respond diﬀerently
+to individual children within their own family, taking chil d
+characteristics, and eating behaviors into account.
+Jansen et al.
+Frontiers in Psychology | www.frontiersin.org 15 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+(2014) further explored the directionality of the relationship
+between feeding practices (using the CFQ at age 4 years)
+and child BMI longitudinally (ages 2, 4, and 6 years). They
+demonstrated that child BMI at 2 years of age predicted parents’
+use of restriction and pressure to eat (but not monitoring) at age
+4. Such behaviors also predicted changes in BMI at 6 years old.
+Although the associations were reciprocal, a stronger assoc iation
+was observed for parental response to the child’s weight.
+Gerards and Kremers (2015) identiﬁed a link between parental
+behavior (parenting styles and food parenting practices) and
+children’s weight-related outcomes. They suggest that gen eral
+parenting style may moderate the impact of feeding practices on
+children’s nutrition behaviors. Feeding practices should t herefore
+be considered in the context of both what the child eats (cont ent
+of the meal), the atmosphere provided by parents, and the eating
+traits expressed by children. Early work on this topic is beginning
+to emerge, with studies exploring how caregivers both react t o
+and inﬂuence children’s behavior (
+Tovar et al., 2015).
+It is also important to account for moderators such as child
+age, parent gender, family income, ethnic group, and family
+eating behaviors (e.g., parental involvement in child’s eat ing, e.g.,
+Tschann et al., 2013), when addressing feeding practices. Gender
+of the parent might moderate the eﬀect of feeding practices on
+child’s weight and ethnic groups may reveal diﬀerences in feeding
+practices (
+Blissett and Bennett, 2013 ). There are several possible
+reasons for these reported diﬀerences. It is possible that the
+higher frequency of use of behaviors, larger variation in re ported
+behavior, or simply sample size diﬀerences between groups might
+result in diﬀerent statistical outcomes. On the other hand, i t is
+also possible that parents from diﬀerent cultural backgrounds
+may use similar parenting practices to achieve diﬀerent goals:
+some parents may use restriction for weight control or health ,
+whereas others may aim to limit the amount of food consumed
+so that foods will last longer when budgets are constrained. These
+diﬀerences could therefore reﬂect diﬀerences in aﬄuence rath er
+than culture (
+Tovar et al., 2013 ). Future cross-cultural research
+could explore these motivational factors in greater detail.
+In summary, speciﬁc feeding practices are linked to the risk of
+overweight and obesity. In particular, restricting food int ake has
+been associated with higher child BMI. As previously mentioned,
+these practices may be used in response to the child’s behavior . In
+either case, the use of certain feeding practices might be sub ject
+to additional considerations such as ethnicity, socioecon omic
+status, age, and gender. Thus, it is possible that the ways in
+which researchers refer to these common feeding practices ma sk
+the complexity of the parent-child interaction and the variou s
+strategies parents may use with their children to inﬂuence ea ting
+behavior (
+Tovar et al., 2013 ). This complex interaction between
+parent and child traits may explain why the use of feeding
+practices may diﬀer even between siblings living in the same
+household (
+Saelens et al., 2000; Farrow et al., 2009 ).
+Limitations
+The search applied in this review only identiﬁed peer-reviewed
+papers published in English. It is possible that relevant studie s in
+other languages, as part of a thesis, or in journals not indexe d in
+the databases searched may not have been identiﬁed.
+A limitation of the present review was the lack of studies which
+investigated feeding practices such as modeling, use of rewar ds,
+instrumental, and emotional feeding (see
+Gevers et al., 2014 for
+a more complete list). A possible explanation for this is the rigi d
+criteria applied for the review which excluded papers where body
+weight of the child was not one of the main outcomes of the study.
+Therefore, a range of studies have investigated diﬀerent fee ding
+practices, but if measured BMI was not provided then these were
+not included here.
+A signiﬁcant limitation identiﬁed in this review is the lack of
+consensus among researchers, ﬁrstly in applying the deﬁnition s
+of the constructs and in identifying “gold standard” measur es
+for assessing parenting and feeding behaviors. Parenting st yles,
+feeding styles, and feeding practices were conceptualized in
+the literature via a range of deﬁnitions and thus the ability
+to draw conclusions across such diverse ways of measuring
+each element as it links to child weight is challenging.
+Blissett
+(2011) reports that the literature has been clouded by the
+various ways concepts are deﬁned or applied, it is therefore
+important to ensure that standard, agreed deﬁnitions are used
+in this ﬁeld. Similarly,
+V aughn et al. (2013) identiﬁed 71
+instruments to measure feeding practices, with some having
+better reliability and validity than others. The authors hi ghlight
+that although many measures are similar in content, they var y
+enough to make it diﬃcult to compare results across studies.
+For this reason, a reliable, validated “gold standard” meas ure for
+assessing feeding practices would facilitate future researc h in this
+ﬁeld.
+Since ﬁndings from the studies in this review are based almos t
+entirely on parent-report, there is a risk of biased or inaccur ate
+outcomes, with parents potentially misreporting their behavior s
+due to lack of awareness, social desirability bias, or diﬀere nces in
+use of rather subjective scales (e.g., diﬀerences in interpre tation
+of how much is “often”). Further, a recent review by
+Bergmeier
+et al. (2015) found that across several observational studies,
+parents’ reports of their feeding practices on a questionnaire
+were not correlated with the frequency of practices observed. The
+most commonly used questionnaire assessing feeding practices in
+the studies reviewed was the CFQ. Although this questionnai re
+has been previously validated, it addresses parental perception s
+of how they feed their children and does not provide direct
+measures of these behaviors. Some of the questions may asses s
+parents’ attitudes more than their actual behaviors. For exa mple,
+items such as “If I did not guide or regulate my child’s eating ,
+she would eat too much of her favorite foods” or “I have to
+be especially careful to make sure my child eats enough” are
+perhaps measuring parents’ concern about child weight more
+than the frequency with which parents are using a particular
+feeding practice (restriction or pressure to eat, respectively, in the
+examples above). This may explain why scores on these scales
+are so well correlated with child weight status, but may not
+accurately reﬂect the parents’ mealtime behavior, and there fore
+the actual association between feeding practices and child weight.
+A heavy reliance on self-report measures may underpin cross-
+cultural diﬀerences in studies, due to potential diﬀerences in
+participant response style. In such circumstances, observati onal
+studies would be particularly valuable.
+Frontiers in Psychology | www.frontiersin.org 16 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+Since many of the studies were cross-sectional, the ability
+to attribute causality to the ﬁndings is limited Gerards and
+Kremers, 2015 . Since a child’s development is shaped by the
+reciprocal interactions between parent and child ( Sleddens et al.,
+2011; Skouteris et al., 2012 ), recognizing that parents may be
+responding to child attributes could be valuable in designin g
+bi-directional longitudinal studies.
+Another limitation is the wide range of ages we addressed
+(4–12 years). It is possible that some feeding practices may have a
+larger impact at particular periods of child development, whereas
+they may have diﬀerent eﬀects at other time points. For example,
+young children may beneﬁt from restriction (
+Campbell et al.,
+2010) and an authoritative parenting ( Vereecken et al., 2004 )
+simply as they require more guidance, whereas as the child
+ages, such practices may cease to be beneﬁcial as the child’s
+autonomy increases (
+Savage et al., 2007 ). Furthermore, little is
+known about the stability of feeding styles and practices ove r
+time. Parenting and feeding styles measured within a cross-
+sectional study provide some insight into a limited period, bu t
+this cannot be assumed to be static. It is likely that parents a djust
+their approach to feeding as children develop and as they adopt
+diﬀerent eating habits through experience within and beyond the
+family setting. This provides further support for the need for
+more longitudinal studies in this area.
+Finally, this systematic review addressed the importance of
+modiﬁable factors, namely parenting styles and feeding practices,
+on children’s body weight. Although theoretically feeding styles
+may be more diﬃcult to modify than individual feeding practices,
+there is no evidence thus far to prove that feeding styles are
+stable and set. In contrast, the ﬁndings that mothers with
+higher education levels have diﬀerent feeding styles compare d
+to less educated mothers (e.g.,
+Saxton et al., 2009 ) suggests
+that environmental factors, potentially including educati onal
+interventions, could inﬂuence parents’ feeding styles. Fut ure
+research could explore if and how feeding styles can be modiﬁe d
+through intervention.
+Future Work
+One of the key messages from this review is that the ways in
+which parents feed their children may be inﬂuenced by child
+characteristics such as food approach or avoidance tendencie s.
+However, most studies to date have been conducted cross-
+sectionally, making it diﬃcult to draw conclusions about th e
+directionality of the associations between feeding practic es
+and child characteristics. Longitudinal studies are requi red to
+ascertain the long term, reciprocal nature of parenting, feed ing
+styles, practices, and child characteristics on child BMI. St udies
+which include measures of child appetitive traits, temperamen t
+as well as parental eating behaviors are important so that
+parenting and feeding styles are understood within the broad er
+context of the parent-child interaction. Therefore, develo ping
+measures to assess both child and parent eating behaviors and
+mealtime interaction is crucial for future research. By bet ter
+understanding the roles of feeding styles and feeding practi ces
+and their interactions with other family factors, clinician s will be
+better able to counsel families in adopting appropriate feeding
+practices.
+Most of the studies have relied on parent report of
+their feeding practices and direct observation has been
+mostly restricted to small scale laboratory-based studies . The
+development of new technologies for collecting video data
+through the internet may present opportunities for researcher s
+to ﬁlm meals in more natural settings. User-friendly webcams or
+smartphone cameras used during family meal occasions provide
+a novel platform to complement questionnaire studies to assess
+parental styles, feeding styles, and feeding practices in the home
+or other more natural environments.
+Culture, ethnicity and SES have been associated with
+parenting and feeding behaviors (
+Tovar et al., 2013 ), however,
+only a limited number of studies have included participants fr om
+diverse backgrounds. As levels of obesity are inversely ass ociated
+with SES, it is crucial to include more families from less aﬄu ent
+populations. At the same time, research conducted in diverse
+cultures and varying locations will enhance our understand ing
+of the risk of obesity globally.
+Finally, as much of the research focuses on mothers’
+interactions with children during mealtimes, studies of fa thers
+are warranted to identify gender diﬀerences in parenting, feeding
+styles, and practices (
+Tschann et al., 2013; Khandpur et al.,
+2014). Similarly the role of other carers in the child’s life is
+also important to consider. With many children raised in dual-
+career or single-parent households, the mother is not necessar ily
+the primary caregiver who is providing the child’s meals and
+these other caregivers may be important targets for future
+interventions.
+To conclude, parenting styles, feeding styles, and parenting
+practices have been associated with child BMI. Protective
+eﬀects of authoritative parenting and feeding styles might oc cur
+as a function of the limit setting, structure, and guidance
+applied in feeding situations; the limits are used to assist
+children in learning about food and setting the foundation f or
+healthy eating.
+Grolnick and Pomerantz (2009) propose that
+parents who set limits rather than providing free access to
+foods at home are oﬀering children guidance and structure.
+Children may need this level of support and guidance to
+facilitate the formation of healthy eating habits. Speciﬁc fee ding
+practices may be used in response to child appetite and
+temperament; and so child eating traits should be measured in
+future research. Finally, interventions which are built ar ound
+authoritative parenting, setting limits, and guiding intake
+toward healthier foods may help to prevent overweight and
+obesity.
+FUNDING
+Award number RG.PSYC.103988 to University of Leeds from
+Nestec SA, Nestlé, Vevey, Switzerland. Support for postdoctoral
+training in systematic research reviews for Dr. Netalie Shl oim.
+Frontiers in Psychology | www.frontiersin.org 17 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+REFERENCES
+Bergmeier, H., Skouteris, H., and Hetherington, M. (2015). Systema tic research
+review of observational approaches used to evaluate mother-child me altime
+interactions during preschool years. Am. J. Clin. Nutr. 101, 7–15. doi:
+10.3945/ajcn.114.092114
+Beydoun, M. A., and Wang, Y. (2009). Parent-child dietary intak e resemblance in
+the United States: evidence from a large representative survey. Soc. Sci. Med. 68,
+2137–2144 doi: 10.1016/j.socscimed.2009.03.029
+Birch, L. L., and Fisher, J. O. (1998). Development of eating beh aviors among
+children and adolescents. Pediatrics 101(Suppl. 2), 539–549.
+Birch, L. L., Fisher, J. O., Grimm-Thomas, K., Markey, C. N., Sawye r, R.,
+and Johnson, S. L. (2001). Conﬁrmatory factor analysis of the Chi ld
+Feeding Questionnaire: a measure of parental attitudes, beliefs a nd practices
+about child feeding and obesity proneness. Appetite 36, 201–210. doi:
+10.1006/appe.2001.0398
+Blissett, J. (2011). Relationships between parenting style, feed ing style and feeding
+practices and fruit and vegetable consumption in early childhood. Appetite 57,
+826–831. doi: 10.1016/j.appet.2011.05.318
+Blissett, J., and Bennett, C. (2013). Cultural diﬀerences in parental feeding practices
+and children’s eating behaviours and their relationships with ch ild BMI:
+a comparison of Black Afro-Caribbean, White British and White German
+samples. Eur. J. Clin. Nutr. 67, 180–184. doi: 10.1038/ejcn.2012.198
+Brown, R., and Ogden, J. (2004). Children’s eating attitudes an d behaviour: a study
+of the modelling and control theories of parental inﬂuence. Health Educ. Res.
+19, 261–271. doi: 10.1093/her/cyg040
+Campbell, K., Andrianopoulos, N., Hesketh, K., Ball, K., Crawford, D., Bre nnan,
+L., et al. (2010). Parental use of restrictive feeding practices an d child
+BMI z-score. A 3-year prospective cohort study. Appetite 55, 84–88. doi:
+10.1016/j.appet.2010.04.006
+Campbell, K. J., Crawford, D. A., and Ball, K. (2006). Family food environment and
+dietary behaviors likely to promote fatness in 5–6 year-old children. Int. J. Obes.
+30, 1272–1280. doi: 10.1038/sj.ijo.0803266
+Cardel, M., Willig, A. L., Dulin-Keita, A., Casazza, K., Beasley, T . M., and
+Fernández, J. R. (2012). Parental feeding practices and socioeconomic status are
+associated with child adiposity in a multi-ethnic sample of children.Appetite 58,
+347–353. doi: 10.1016/j.appet.2011.11.005
+Clark, H. R., Goyder, E., Bissell, P., Blank, L., and Peters, J. (2007). How do parents’
+child-feeding behaviours inﬂuence child weight? Implications f or childhood
+obesity policy. J. Public Health 29, 132–141. doi: 10.1093/pubmed/fdm012
+Collins, C., Duncanson, K., and Burrows, T. (2014). A systematic re view
+investigating associations between parenting style and child feeding behaviours.
+J. Hum. Nutr. Diet. 27, 557–568. doi: 10.1111/jhn.12192
+Cooke, L. J., Wardle, J., Gibson, E. L., Sapochnik, M., Sheiham, A ., and Lawson,
+M. (2004). Demographic, familial and trait predictors of fruit and veg etable
+consumption by pre-school children. Public Health Nutr. 7, 295–302. doi:
+10.1079/phn2003527
+Costa, F. S., Pino, D. L. D., and Friedman, R. (2011). Caregivers ’ attitudes and
+practices: inﬂuence on childhood body weight. J. Biosoc. Sci. 43, 369–378. doi:
+10.1017/S0021932011000022
+Craigie, A. M., Lake, A. A., Kelly, S. A., Adamson, A. J., and Mathe rs, J. C.
+(2011). Tracking of obesity-related behaviours from childhood t o adulthood: a
+systematic review. Maturitas 70, 266–284. doi: 10.1016/j.maturitas.2011.08.005
+Darling, N., and Steinberg, L. (1993). Parenting style as contex t: an integrative
+model. Psychol. Bull. 113, 487–496. doi: 10.1037/0033-2909.113.3.487
+De Bourdeaudhuij, I., te Velde, S., Brug, J., Due, P., Wind, M., S andvik, C.,
+et al. (2008). Personal, social and environmental predictors of da ily fruit and
+vegetable intake in 11-year-old children in nine European countrie s. Eur. J.
+Clin. Nutr. 62, 834–841. doi: 10.1038/sj.ejcn.1602794
+Dev, D. A., McBride, B. A., Fiese, B. H., Jones, B. L., Cho, H., and Behalf Of
+The Strong Kids Research Team (2013). Risk factors for overwei ght/obesity
+in preschool children: an ecological approach. Child. Obes. 9, 399–408. doi:
+10.1089/chi.2012.0150
+Faith, M. S., Scanlon, K. S., Birch, L. L., Francis, L. A., and Sh erry, B.
+(2004). Parent −child feeding strategies and their relationships to child
+eating and weight status. Obes. Res. 12, 1711–1722. doi: 10.1038/oby.
+2004.212
+Farrow, C. V., Galloway, A. T., and Fraser, K. (2009). Sibling eating behaviours and
+diﬀerential child feeding practices reported by parents. Appetite 52, 307–312.
+doi: 10.1016/j.appet.2008.10.009
+Frankel, L. A., O’Connor, T. M., Chen, T. A., Nicklas, T., Power, T. G., and
+Hughes, S. O. (2014). Parents’ perceptions of preschool children’s a bility
+to regulate eating. Feeding style diﬀerences. Appetite 76, 166–174. doi:
+10.1016/j.appet.2014.01.077
+Gerards, S. M. P. L., and Kremers, S. P. J. (2015). The role of food paren ting skills
+and the home food environment in children’s weight gain and obesit y. Curr.
+Obes. Rep. 4, 30–36. doi: 10.1007/s13679-015-0139-x
+Gevers, D. W. M., Kremers, S. P. J., de Vries, N. K., and van Assema,
+P. (2014). Clarifying concepts of food parenting practices. A Delphi
+study with an application to snacking behavior. Appetite 79, 51–57. doi:
+10.1016/j.appet.2014.04.002
+Grolnick, W. S., and Pomerantz, E. M. (2009). Issues and challenges in studying
+parental control: toward a new conceptualization. Child Dev. Perspect. 3,
+165–170. doi: 10.1111/j.1750-8606.2009.00099.x
+Gubbels, J. S., Kremers, S. P., Staﬂeu, A., de Vries, S. I., Goldboh m, R. A.,
+Dagnelie, P. C., et al. (2011). Association between parenting prac tices and
+children’s dietary intake, activity behavior and development of b ody mass
+index: the KOALA Birth Cohort Study. Int. J. Behav. Nutr. Phys. Act. 8:18. doi:
+10.1186/1479-5868-8-18
+Hancock, K. J., Lawrence, D., and Zubrick, S. R. (2014). Higher ma ternal
+protectiveness is associated with higher odds of child overweig ht and
+obesity: a longitudinal Australian study. PLoS ONE 9:e100686. doi:
+10.1371/journal.pone.0100686
+Hart, C. N., Cairns, A., and Jelalian, E. (2011). Sleep and obesity in
+children and adolescents. Pediatr. Clin. North Am. 58, 715–733. doi:
+10.1016/j.pcl.2011.03.007
+Hennessy, E., Hughes, S. O., Goldberg, J. P., Hyatt, R. R., and Eco nomos,
+C. D. (2010). Parent behavior and child weight status among a
+diverse group of underserved rural families. Appetite 54, 369–377. doi:
+10.1016/j.appet.2010.01.004
+Hetherington, M. M., and Cecil, J. E. (2010). Gene-environment in teractions in
+obesity. Forum Nutr. 63, 195–203. doi: 10.1159/000264407
+Ho, M., Garnett, S. P., Baur, L., Burrows, T., Stewart, L., Neve, M. , et al. (2012).
+Eﬀectiveness of lifestyle interventions in child obesity: sys tematic review with
+meta-analysis. Pediatrics 130, e1647–e1671. doi: 10.1542/peds.2012-1176
+Holland, J. C., Kolko, R. P., Stein, R. I., Welch, R. R., Perri, M. G., S chechtman,
+K. B., et al. (2014). Modiﬁcations in parent feeding practices and child diet
+during family −based behavioral treatment improve child zBMI. Obesity 22,
+E119–E126. doi: 10.1002/oby.20708
+Hughes, S. O., Patrick, H., Power, T. G., Fisher, J. O., Anderson , C. B.,
+and Nicklas, T. A. (2007). The impact of child care providers’ feedin g
+on children’s food consumption. J. Dev. Behav. Pediatr. 28, 100–107. doi:
+10.1097/01.DBP.0000267561.34199.a9
+Hughes, S. O., Power, T. G., Fisher, J. O., Mueller, S., and Nickla s, T. A. (2005).
+Revisiting a neglected construct: parenting styles in a child-fee ding context.
+Appetite 44, 83–92. doi: 10.1016/j.appet.2004.08.007
+Hughes, S. O., Power, T. G., Papaioannou, M. A., Cross, M. B., Nic klas, T. A., Hall,
+S. K., et al. (2011). Emotional climate, feeding practices, and fee ding styles: an
+observational analysis of the dinner meal in Head Start families. Int. J. Behav.
+Nutr. Phys. Act. 8:60. doi: 10.1186/1479-5868-8-60
+Hughes, S. O., Shewchuk, R. M., Baskin, M. L., Nicklas, T. A., an d Qu, H. (2008).
+Indulgent feeding style and children’s weight status in preschool. J. Dev. Behav.
+Pediatr. 29, 403–410. doi: 10.1097/DBP.0b013e318182a976
+Hurley, K. M., Cross, M. B., and Hughes, S. O. (2011). A systematic rev iew of
+responsive feeding and child obesity in high-income countries. J. Nutr. 141,
+495–501. doi: 10.3945/jn.110.130047
+Jansen, P. W., Roza, S. J., Jaddoe, V. W., Mackenbach, J. D., R aat, H., Hofman, A.,
+et al. (2012). Children’s eating behavior, feeding practices of pa rents and weight
+problems in early childhood: results from the population-based Generation R
+Study. Int. J. Behav. Nutr. Phys. Act. 9, 130–130. doi: 10.1186/1479-5868-9-130
+Jansen, P. W., Tharner, A., van der Ende, J., Wake, M., Raat, H., Hofman,
+A., et al. (2014). Feeding practices and child weight: is the asso ciation
+bidrectional in preschool children? Am. J. Clin. Nutr. 100, 1329–1336. doi:
+10.3945/ajcn.114.088922
+Frontiers in Psychology | www.frontiersin.org 18 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+Johnson, R., Welk, G., Saint-Maurice, P. F., and Ihmels, M. (2012 ). Parenting
+styles and home obesogenic environments. Int. J. Environ. Res. Public Health
+9, 1411–1426. doi: 10.3390/ijerph9041411
+Karp, S. M., Barry, K. M., Gesell, S. B., Po’e, E. K., Dietrich, M. S., a nd Barkin,
+S. L. (2014). Parental feeding patterns and child weight status f or Latino
+preschoolers. Obes. Res. Clin. Pract. 8, e88–e97. doi: 10.1016/j.orcp.2012.08.193
+Khandpur, N., Blaine, R. E., Fisher, J. O., and Davison, K. K. (2 014). Fathers’
+child feeding practices: a review of the evidence. Appetite 78, 110–121. doi:
+10.1016/j.appet.2014.03.015
+Kremers, S. P., Brug, J., de Vries, H., and Engels, R. C. (2003). Paren ting style
+and adolescent fruit consumption. Appetite 41, 43–50. doi: 10.1016/s0195-
+6663(03)00038-2
+Larsen, J. K., Hermans, R. C., Sleddens, E. F., Engels, R. C., Fishe r, J. O., and
+Kremers, S. S. (2015). How parental dietary behavior and food parenti ng
+practices aﬀect children’s dietary behavior. Interacting sources of inﬂuence?
+Appetite 89, 246–257. doi: 10.1016/j.appet.2015.02.012
+Lee, H., and Keller, K. L. (2012). Children who are pressured to eat at ho me
+consume fewer high-fat foods in laboratory test meals. J. Acad. Nutr. Diet. 112,
+271–275. doi: 10.1016/j.jada.2011.10.021
+Lloyd, L. J., Langley-Evans, S. C., and McMullen, S. (2012). Child hood obesity and
+risk of the adult metabolic syndrome: a systematic review. Int. J. Obes. 36, 1–11.
+doi: 10.1038/ijo.2011.186
+Maccoby, E., and Martin, J. (1983). “Socialization in the cont ext of the family:
+parent–child interaction, ” in Handbook of Child Psychology, ed P. H. Mussen
+(New York, NY: Wiley), 1–101.
+Magee, L., and Hale, L. (2012). Longitudinal associations be tween sleep duration
+and subsequent weight gain: a systematic review. Sleep Med. Rev. 16, 231–241.
+doi: 10.1016/j.smrv.2011.05.005
+Manan, W. M. W. A., Norazawati, A. K., and Lee Y. Y. (2012). Overw eight
+and obesity among Malay primary school children in Kota Bharu, Kelantan :
+parental beliefs, attitudes and child feeding practices. Mal. J. Nutr. 18,
+27–36.
+Marshall, S., Golley, R., and Hendrie, G. (2011). Expanding the unde rstanding
+of how parenting inﬂuences the dietary intake and weight status of children:
+a cross −sectional study. Nutr. Diet. 68, 127–133. doi: 10.1111/j.1747-
+0080.2011.01512.x
+Moher, D., Liberati, A., Tetzlaﬀ, J., and Altman, D. G. (2009). Pre ferred reporting
+items for systematic reviews and meta-analyses: the PRISMA state ment. Ann.
+Intern. Med. 151, 264–269. doi: 10.7326/0003-4819-151-4-200908180-0 0135
+Moore, C. L. (2012). The Caring Experience of Staﬀ Carers Working with
+Adults with Learning Disability and Dementia . DClinPsy Thesis, University of
+Liverpool, Available from Hydra. (Accessed 13 February, 2014).
+Murashima, M., Hoerr, S. L., Hughes, S. O., and Kaplowitz, S. (2011).Conﬁrmatory
+factor analysis of a questionnaire measuring control in parental fe eding
+practices in mothers of Head Start children. Appetite 56, 594–601. doi: 10.1016/
+j.appet.2011.01.031
+Murashima, M., Hoerr, S. L., Hughes, S. O., Kattelmann, K. K., and Phi llips, B. W.
+(2012). Maternal parenting behaviors during childhood relate to we ight status
+and fruit and vegetable intake of college students. J. Nutr. Educ. Behav. 44,
+556–563. doi: 10.1016/j.jneb.2011.05.008
+Musher-Eizenman, D., and Holub, S. (2007). Comprehensive feeding practices
+questionnaire: validation of a new measure of parental feeding pract ices.
+J. Pediatr. Psychol. 32, 960–972. doi: 10.1093/jpepsy/jsm037
+Ng, M., Fleming, T., Robinson, M., Thomson, B., Graetz, N., Margo no, C., et al.
+(2014). Global, regional, and national prevalence of overweight and obesity
+in children and adults during 1980–2013: a systematic analysis for the Global
+Burden of Disease Study 2013. Lancet 384, 766–781. doi: 10.1016/S0140-
+6736(14)60460-8
+Noor, A. M., Leelavathi, M., Shamsul, A. S., Hizlinda, T., Khairani , O., and
+Fatimah, A. (2012). Parental concerns and control in feeding of 9 to 12-year-
+old children in a primary school in Kuala Lumpur, Malaysia.Malays. J. Nutr. 18,
+47–55.
+Ogden, C. L., Carroll, M. D., Kit, B. K., and Flegal, K. M. (2014). Prev alence
+of childhood and adult obesity in the United States, 2011-2012. JAMA 311,
+806–814. doi: 10.1001/jama.2014.732
+Olvera, N., and Power, T. G. (2010). Brief report: parenting styles and obesity
+in Mexican American children: a longitudinal study. J. Pediatr. Psychol. 35,
+243–249. doi: 10.1093/jpepsy/jsp071
+Özçetin, M., Yilmaz, R., Erkorkmaz, Ü., and Esmeray, H. (2010). Reliabi lity and
+validity study of parental feeding style questionnaire. Turk Pediatri Ars. 45,
+124–131. doi: 10.4274/tpa.45.124
+Rodenburg, G., Kremers, S. P., Oenema, A., and van de Mheen, D. (2 011).
+Psychological control by parents is associated with a higher chi ld weight. Int.
+J. Pediatr. Obes. 6, 442–449. doi: 10.3109/17477166.2011.590203
+Rodenburg, G., Kremers, S. P., Oenema, A., and van de Mheen, D.
+(2012). Associations of children’s appetitive traits with weigh t and dietary
+behaviours in the context of general parenting. PLoS ONE 7:e50642. doi:
+10.1371/journal.pone.0050642
+Rollins, B. Y., Loken, E., Savage, J. S., and Birch, L. L. (2014) . Maternal controlling
+feeding practices and girls’ inhibitory control interact to predict changes in BMI
+and eating in the absence of hunger from 5 to 7 y.Am. J. Clin. Nutr. 99, 249–257.
+doi: 10.3945/ajcn.113.063545
+Saelens, B. E., Ernst, M. M., and Epstein, L. H. (2000). Maternal ch ild feeding
+practices and obesity: a discordant sibling analysis. Int. J. Eat. Disord. 27,
+459–463. doi: 10.1002/(SICI)1098-108X(200005)27:4 <459::AID-EAT11>3.0.
+CO;2-C
+Savage, J. S., Fisher, J. O., and Birch, L. L. (2007). Parental inﬂuence on
+eating behavior: conception to adolescence. J. Law Med. Ethics 35, 22. doi:
+10.1111/j.1748-720X.2007.00111.x
+Saxton, J., Carnell, S., van Jaarsveld, C. H., and Wardle, J. (2009). Maternal
+education is associated with feeding style. J. Am. Diet. Assoc. 109, 894–898. doi:
+10.1016/j.jada.2009.02.010
+Skouteris, H., McCabe, M., Ricciardelli, L. A., Milgrom, J., Baur, L. A.,
+Aksan, N., et al. (2012). Parent–child interactions and obesity prevention: a
+systematic review of the literature. Early Child Dev. Care 182, 153–174. doi:
+10.1080/03004430.2010.548606
+Sleddens, E. F., Gerards, S. M., Thijs, C., Vries, N. K., and Kremers , S. P. (2011).
+General parenting, childhood overweight and obesity −inducing behaviors: a
+review. Int. J. Pediatr. Obes. 6, e12–e27. doi: 10.3109/17477166.2011.566339
+Stang, J., and Loth, K. A. (2011). Parenting style and child feed ing practices:
+potential mitigating factors in the etiology of childhood obesi ty. J. Am. Diet.
+Assoc. 111, 1301–1305. doi: 10.1016/j.jada.2011.06.010
+Steinberg, L., Elmen, J. D., and Mounts, N. S. (1989). Authorita tive parenting,
+psychosocial maturity, and academic success among adolescents. Child Dev. 60,
+1424–1436. doi: 10.2307/1130932
+Taylor, A., Wilson, C., Slater, A., and Mohr, P. (2011). Parent-a nd child-reported
+parenting. Associations with child weight-related outcomes. Appetite 57,
+700–706. doi: 10.1016/j.appet.2011.08.014
+Thompson, M. E. (2010). Parental feeding and childhood obesity i n preschool-age
+children: recent ﬁndings from the literature. Issues Compr. Pediatr. Nurs. 33,
+205–267. doi: 10.3109/01460862.2010.530057
+Tovar, A., Hennessy, E., Pirie, A., Must, A., Gute, D. M., Hyatt, R. R., et al.
+(2012). Feeding styles and child weight status among recent immigrant mother-
+child dyads. Int. J. Behav. Nutr. Phys. Act. 9, 62–69. doi: 10.1186/1479-
+5868-9-62
+Tovar, A., Must, A., Metayer, N., Gute, D. M., Pirie, A., Hyatt, R. R., et al.
+(2013). Immigrating to the US: what Brazilian, Latin American and Hai tian
+women have to say about changes to their lifestyle that may be asso ciated
+with obesity. J. Immigr. Minor. Health , 15, 357–364. doi: 10.1007/s10903-012-
+9665-8
+Tovar, A., V aughn, A., and Ward, D. (2015). “Children’s inﬂuenc e on home child
+care provider’s feeding practices: exploring bi-directional inﬂuen ces ISBNPA, ”
+in Conference Proceedings (Edinburgh).
+Tschann, J. M., Gregorich, S. E., Penilla, C., Pasch, L. A., de Groa t, C. L., Flores,
+E., et al. (2013). Parental feeding practices in Mexican American f amilies:
+initial test of an expanded measure. Int. J. Behav. Nutr. Phys. Act. 10:6. doi:
+10.1186/1479-5868-10-6
+V aughn, A. E., Tabak, R. G., Bryant, M. J., and Ward, D. S. (2013) . Measuring
+parent food practices: a systematic review of existing measures and examination
+of instruments. Int. J. Behav. Nutr. Phys. Act. 10:61. doi: 10.1186/1479-586
+8-10-61
+Ventura, A. K., and Birch, L. L. (2008). Does parenting aﬀect chi ldren’s eating and
+weight status? Int. J. Behav. Nutr. Phys. Act. 5:15. doi: 10.1186/1479-5868-5-15
+Vereecken, C. A., Keukelier, E., and Maes, L. (2004). Inﬂuence of mother’s
+educational level on food parenting practices and food habits of young children.
+Appetite 43, 93–103. doi: 10.1016/j.appet.2004.04.002
+Frontiers in Psychology | www.frontiersin.org 19 December 2015 | Volume 6 | Article 1849
+Shloim et al. Parenting, Feeding and Obesity Status
+Vollmer, R. L., and Mobley, A. R. (2013). Parenting styles, feeding
+styles, and their inﬂuence on child obesogenic behaviors and
+body weight. A review. Appetite 71, 232–241. doi: 10.1016/j.appet.
+2013.08.015
+Wang, Y., Beydoun, M. A., Li, J., Liu, Y., and Moreno, L. A. (201 1). Do children
+and their parents eat a similar diet? Resemblance in child and parental dietary
+intake: systematic review and meta-analysis. J. Epidemiol. Community Health
+65, 177–189. doi: 10.1136/jech.2009.095901
+Wardle, J., Sanderson, S., Guthrie, C. A., Rapoport, L., and Plomin, R . (2002).
+Parental feeding style and the inter −generational transmission of obesity risk.
+Obes. Res. 10, 453–462. doi: 10.1038/oby.2002.63
+Webber, L., Cooke, L., Hill, C., and Wardle, J. (2010a). Associati ons between
+children’s appetitive traits and maternal feeding practices. J. Am. Diet. Assoc.
+110, 1718–1722. doi: 10.1016/j.jada.2010.08.007
+Webber, L., Cooke, L., Hill, C., and Wardle, J. (2010b). Child adipos ity and
+maternal feeding practices: a longitudinal analysis. Am. J. Clin. Nutr. 92,
+1423–1428. doi: 10.3945/ajcn.2010.30112
+Webber, L., Hill, C., Cooke, L., Carnell, S., and Wardle, J. (2010c). A ssociations
+between child weight and maternal feeding styles are mediated by
+maternal perceptions and concerns. Eur. J. Clin. Nutr. 64, 259–265. doi:
+10.1038/ejcn.2009.146
+Wehrly, S. E., Bonilla, C., Perez, M., and Liew, J. (2014). Controllin g
+parental feeding practices and child body composition in ethnically
+and economically diverse preschool children. Appetite 73, 163–171. doi:
+10.1016/j.appet.2013.11.009
+Yilmaz, R., Erkorkmaz, Ü., Özçetin, M., and Karaaslan, E. (2013). How d oes
+parents’ visual perception of their child’s weight status aﬀect t heir feeding style.
+Nutr. Hosp. 28, 741–746. doi: 10.3305/nh.2013.28.3.6358
+Zhang, L., and McIntosh, W. A. (2011). Children’s weight statu s and maternal
+and paternal feeding practices. J. Child Health Care 15, 389–400. doi:
+10.1177/1367493511414448
+Conﬂict of Interest Statement: The authors declare that the research was
+conducted in the absence of any commercial or ﬁnancial relations hips that could
+be construed as a potential conﬂict of interest.
+Copyright © 2015 Shloim, Edelson, Martin and Hetherington. This is an open-access
+article distributed under the terms of the Creative Commons Attribution License (CC
+BY). The use, distribution or reproduction in other forums is permitted, provided the
+original author(s) or licensor are credited and that the ori ginal publication in this
+journal is cited, in accordance with accepted academic prac tice. No use, distribution
+or reproduction is permitted which does not comply with thes e terms.
+Frontiers in Psychology | www.frontiersin.org 20 December 2015 | Volume 6 | Article 1849

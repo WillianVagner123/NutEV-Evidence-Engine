@@ -1,0 +1,728 @@
+Obesity-related differences in 
+amygdala and hippocampal volume 
+and metabolism before and after a 
+placebo-controlled antidepressant 
+trial in major depressive disorder
+Karen Lin1,2, Karin Hasegawa3, Vindhya Rapelli4, Jie Yang5, Ramin V. Parsey6 & 
+Christine DeLorenzo6,7
+This study examined the association between obesity, measured by waist circumference (WC) and 
+Body Mass Index (BMI), and neurobiology of the treatment/placebo response in depression. 85 
+participants (56 females, 29 males) with Major Depressive Disorder (MDD) were imaged using PET/
+MRI before and after a double-blind, randomized escitalopram trial. Analyses were pooled across 
+interventions to investigate primary imaging associations. Linear mixed models examined associations 
+between obesity measures and amygdala and hippocampal volume and metabolism. Preintervention 
+obesity was significantly positively associated with amygdala and hippocampus volume, but not 
+metabolism. Successful treatment is often associated with an increase in volume and a reduction 
+in metabolism in these regions. However, greater WC and BMI were associated with decreases in 
+amygdala volume following treatment/placebo. And greater BMI was associated with increases in 
+amygdala and hippocampus metabolism following treatment/placebo. Importantly, however, these 
+neurobiological changes were not associated with differential improvement in depression severity. 
+Overall, this multimodal study shows obesity-related factors are associated with intervention-related 
+neurobiological changes in MDD; however, additional research is needed to clarify whether these 
+alterations correspond to meaningful variation in symptom improvement.
+According to the World Health Organization (WHO), depression is the most common mental illness, affecting 
+280 million individuals worldwide1. Contributing to depression’s impact, there is broad variation in antidepressant 
+therapy response,2leading to unresolved depression, impairing an individual’s quality of life and heightening 
+mortality3. One factor that has been associated with poor treatment outcomes is obesity 2. For example, obese 
+individuals demonstrate unfavorable treatment outcomes including resistance to selective serotonin reuptake 
+inhibitors (SSRIs)4–6..
+The amygdala and hippocampus are implicated in the biology of major depressive disorder (MDD), in 
+antidepressant treatment response, and in obesity7, and therefore may be involved in associations between obesity 
+and response to treatment in MDD. Numerous studies report smaller hippocampal volume in depression8–17and 
+generally smaller amygdala volumes18–21, though transient enlargement of the amygdala during the first episode 
+of depression may occur 22,23with decreased volume in subsequent years 24. Functionally, greater depression 
+severity has been associated with lower hippocampal metabolism25and elevated amygdala activity26–30..
+Comparable patterns are observed in obesity, with smaller hippocampal volume 31–34and mixed findings 
+for the amygdala – some studies show reduced gray matter 35,36, while others link greater adiposity 37 or poor 
+dietary impulse control 38to larger amygdala volumes. Nonetheless, diets high in fat or ultra-processed foods 
+are consistently associated with reduced hippocampal and amygdala volumes39,40. Functionally, greater visceral 
+adiposity and future weight gain is associated with increased amygdala activity 41. Hippocampal metabolism 
+1Center for Neurointestinal Health, Massachusetts General Hospital, Boston, MA, USA. 2Division of Nutritional 
+Sciences, Cornell University, Ithaca, NY, USA. 3Department of Applied Mathematics and Statistics, Stony Brook 
+University, New York, NY, USA. 4Stony Brook University, New York, NY, USA. 5Department of Family, Population 
+& Preventive Medicine, Stony Brook University, New York, NY, USA. 6Department of Psychiatry and Behavioral 
+Health, Stony Brook University, Stony Brook, NY, USA. 7Department of Biomedical Engineering, Stony Brook 
+University, Stony Brook, NY, USA. email: karenlin1290@gmail.com
+OPEN
+Scientific Reports |        (2026) 16:10979 1| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports
+
+may also be elevated in obesity, as suggested by diminished hippocampal glucose utilization following bariatric 
+surgery42..
+Altered brain volumes and activity in both depressed and obese individuals may be attributed to numerous 
+factors, including altered hypothalamic-pituitary-adrenal (HPA) axis function. HPA axis activity could be 
+influenced through multiple pathways, including inflammation, reported in both depression43–45 and obesity46,47, 
+increased glucocorticoids, potentially through increased stressful life events reported in depression 48,49 or 
+increased adipose tissue in obesity50, and reduced brain-derived neurotrophic factor (BDNF) which is lower in 
+depression51and obesity52,53..
+Antidepressants have been shown to increase hippocampus and amygdala volume21,54and decrease amygdala 
+and hippocampus activation 28,55–57. These changes have been associated with antidepressant response 58,59. 
+However the neurobiological mechanisms that have been proposed to underlie treatment-related changes 
+-- normalizing HPA activity, lowering glucocorticoid levels 60, or increasing production of BDNF , supporting 
+neurogenesis in the hippocampus61,62 and amygdala21– may be associated with obesity level.
+We therefore examine: (1) the relationship between obesity and intervention outcome. We hypothesize that 
+greater preintervention waist circumference will be associated with reduced depression improvement following 
+intervention, pooling escitalopram and placebo arms.
+To examine potential neurobiological mechanisms, we assess: (2) the association between waist circumference 
+and amygdala and hippocampal volume and metabolism before intervention. And, (3) the association between 
+waist circumference and amygdala and hippocampal volume and metabolism changes with intervention, 
+pooling escitalopram and placebo arms. Although metabolic changes can occur more rapidly than structural 
+changes63,64, both have been reported with antidepressant treatment and each may be associated with treatment 
+response; therefore both are examined in this work.
+We hypothesize that, in depressed individuals, preintervention waist circumference is negatively associated 
+with hippocampus and amygdala volume and positively associated with amygdala and hippocampus 
+metabolism. As the effects of obesity may be associated with neurobiological response to treatment, we further 
+hypothesize that greater preintervention waist circumference will be associated with a smaller percent increase 
+in hippocampus and amygdala volume and a smaller reduction in amygdala and hippocampus metabolism 
+following intervention. Our primary analyses use continuous measures of waist circumference; however, 
+to further contextualize these findings, we also examined discrete waist circumference categories defined by 
+metabolic risk.
+Obesity is typically assessed through body mass index (BMI). However abdominal obesity, also known as 
+central or visceral obesity, assessed by waist circumference, has shown a stronger association with depression than 
+BMI65,66. This is possibly due to differences in the type of adipose tissue near the abdomen. White adipose tissue 
+(W AT) can be divided into two subdivisions, visceral or subcutaneous, with distinct structural and metabolic 
+characteristics67. Visceral W AT exhibits greater metabolic activity, produces higher systemic inflammation 
+and has direct access to the portal circulation, unlike subcutaneous W AT 65,68. In addition to depression, the 
+accumulation of visceral W AT is associated with metabolic disorders, including dyslipidemia, hypertension 
+and insulin resistance, and cardiovascular disease 67,69. Therefore, waist circumference is used as the primary 
+assessment of obesity in this study. However, following the 2025 Lancet Commission recommendation to use 
+multiple anthropometric measures70, we also consider BMI in exploratory analyses.
+Methods
+The study “ Advancing Personalized Antidepressant Treatment Using PET/MRI” is registered on ClinicalTrials.
+gov (NCT02623205, date of registration is 01/05/2015) and approved by the Institutional Review Board of Stony 
+Brook University (see CONSORT diagram in71).
+Participants
+All participants were assessed via the Structured Clinical Interview for DSM-IV (SCID-IV) and were verified by 
+a trained rater as having been diagnosed with MDD, in a current major depressive episode, with a score of 22 or 
+higher on the Montgomery–Åsberg Depression Rating Scale72(MADRS). Inclusion criteria consisted of: 18 years 
+old or older and the ability to sign informed consent. All participants provided written informed consent prior 
+to participation, and all procedures were conducted in accordance with relevant guidelines and regulations. 
+Potential participants were excluded if they had a lifetime history of bipolar disorder, a significant active 
+physical illness (including metabolic disorder), significant neurological deficits, current psychosis, or a high 
+potential for excessive substance use during the study period (including substance/alcohol dependence within 6 
+months and abuse within two months, excluding nicotine). Additional exclusion criteria included participants 
+receiving successful antidepressant treatment, who had electroconvulsive therapy within six months, medical 
+contraindications to escitalopram (study drug), such as failed escitalopram therapy of appropriate dose and 
+duration in the past, or contraindications to MRI or positron emission tomography (PET) imaging, such as 
+pregnancy or breastfeeding.
+Data from this cohort has been previously examined, to predict intervention response from preintervention 
+measures71,73–75, to examine functional changes with intervention 71,76,77, effects of intervention on brain 
+structure77, as well as the association between neurobiology and fatigue 78 social anhedonia 79 and childhood 
+trauma80. None have examined obesity.
+Study design
+Height, weight and waist circumference were measured at the participant screening visit. All participants were 
+antidepressant medication-free for three weeks prior to the study. For those who entered the study on ineffective 
+medication, washout was completed over a maximum of four weeks before the three-week psychotropic 
+Scientific Reports |        (2026) 16:10979 2| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+medication free period. Simultaneous PET/MRI imaging was acquired on a 3 T Siemens Biograph mMR 
+(Siemens, Erlangen, Germany) with a 12-channel head coil for 60 min in both the pre and post intervention 
+session (average time between scans: 59.6 ± 8.8 days). The Hamilton Depression Rating Scale (HAM-D-17) was 
+assessed within approximately one week of imaging. Treatment/placebo was initiated following preintervention 
+imaging. Through a double-blind design, participants were randomized to placebo or escitalopram. Analyses 
+were conducted pooling escitalopram and placebo arms, with intervention type included as a covariate.
+Magnetic resonance imaging (MRI)
+A magnetization-prepared rapid gradient-echo (MP-RAGE) T1-weighted structural image was acquired, 
+simultaneously with the PET imaging, with the following parameters: TR=2300ms, TE = 3.24ms, flip angle = 9 
+degrees, IPAT GRAPPA factor 2, FOV=223 × 210 × 195  mm, bandwidth = 220  Hz/Px, echo spacing = 7.8ms, 
+voxel size = 0.87 × 0.87 × 0.87 mm. T1 structural images were processed through the segmentation pipeline of 
+Freesurfer 5.3.0 ( http://surfer.nmr.mgh.harvard.edu)to automatically extract the amygdala and hippocampus 
+from the Desikan-Killiany atlas81,82..
+Positron emission tomography (PET)
+Up to 185 MBq of 2-[18F]-fluorodeoxyglucose (FDG) were injected intravenously and emission data was acquired 
+for 60 min on a Siemens Biograph mMR. Raw listmode PET data were reconstructed offline using Siemens’ e7 
+Tools software and a CT-like Boson MR-based attenuation map83,84. Frames were corrected for motion85and co-
+registered to the MRI. The regional delineations were transferred to the PET images through the co-registration. 
+Metabolic rate of glucose uptake (MRGlu) was estimated from the Patlak graphical using the time activity curve 
+while correcting for blood glucose and the lumped constant, using Simultaneous Estimation and a single venous 
+sample, as previously described71..
+Statistical analysis
+As described above, this study examines: (1) the relationship between preintervention waist circumference and 
+intervention (escitalopram/placebo) outcome, (2) the association between preintervention waist circumference 
+and amygdala and hippocampal volume and metabolism before intervention, and (3) the association between 
+waist circumference and amygdala and hippocampal volume and metabolism changes with intervention.
+In a prior study of this cohort, neurobiological changes during the intervention period, quantified by FDG-
+PET, were not different across interventions (escitalopram/placebo) 71,in accordance with a previous study of 
+brain metabolism, in which consistent metabolic changes were observed in depressed participants in response 
+to fluoxetine and placebo86. It has been hypothesized that this common brain biological response may be due to 
+placebo-induced activation of neurotransmission 87, and could explain the similar response rates 88–90 between 
+SSRI and placebo. For these reasons, the escitalopram and placebo subgroups were examined together, with 
+intervention type included as a covariate.
+Model 1: Multiple linear regression models were utilized to examine the relationship between preintervention 
+waist circumference and Hamilton Depression Rating Scale score as well as change in this score with treatment/
+placebo after controlling for sex and age.
+Here, preintervention waist circumference was treated as a predictor, and depression score, or change in 
+depression score, was treated as an outcome in the models.
+Model 2: Linear mixed models were used to examine the association between continuous values of 
+preintervention waist circumference and:
+• preintervention amygdala and hippocampus volume after controlling for sex, age, age2(to account for nonlin-
+ear effects) and preintervention total brain volume,
+• preintervention amygdala and hippocampus metabolism after controlling for sex, age, and age2.
+Here, preintervention waist circumference was treated as a predictor, and preintervention brain measure was 
+treated as an outcome in the models.
+To shed light on Model 2 results, linear mixed models were also used to examine differences in the variables 
+listed above across discrete levels of waist circumference, grouped by metabolic risk. For this analysis, participants 
+were grouped into three categories: low risk (≤ 94 cm for males and ≤ 80 cm for females), increased risk (> 94 to 
+102 cm for males and > 80 to 88 cm for females) and substantially increased risk (> 102 cm for males and > 88 cm 
+for females)91..
+Model 3: Similar linear mixed models were used to examine the association between preintervention waist 
+circumference and:
+• percent change in amygdala or hippocampal volume, controlling for intervention (escitalopram/placebo) 
+type.
+•  percent change in amygdala or hippocampal metabolism, controlling for intervention (escitalopram/place -
+bo) type.
+Here, preintervention waist circumference was treated as a predictor, and percent change in the brain measure 
+was treated as an outcome in the models.
+Percent difference, calculated using postintervention value minus preintervention value divided by 
+preintervention value, was used as an outcome in order to normalize post-intervention outcomes to each 
+individual’s preintervention values, be consistent with the study hypotheses, which focus on relative change from 
+Scientific Reports |        (2026) 16:10979 3| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+preintervention values rather than absolute differences with intervention and because, with only two timepoints 
+(pre and post), modeling timepoint as a factor is often equivalent to analyzing change scores.
+To shed light on Model 3 results, linear mixed models were also used to examine differences in the variables 
+listed above across discrete levels of waist circumference, grouped by metabolic risk.
+As an exploratory analysis, Models 1–3 were repeated with BMI instead of waist circumference. For this 
+analysis, participants were grouped into four categories: underweight (< 18.5 lb/in2), healthy weight (18.5 to 25 
+lb/in2), overweight (25 to 30 lb/in2) and obese (> 30 lb/in2)92.
+For each linear mixed model, a covariance structure was utilized to model the correlated measures from 
+the amygdala and hippocampus. Final dependence structure was chosen from Compound Symmetry and 
+Unstructured based on the Akaike Information Criteria (AIC). For each result, p-values from Type III T-test for 
+testing the significance of the pairwise difference (noted with a single asterisk in Tables  4 and 5), and p-values 
+from Type III F-test for testing the significance of an interaction term (noted with a double asterisk in Tables 4 
+and 5) were reported in addition to the estimated coefficients or difference and 95% confidence intervals.
+Variable N Levels Tota l
+Hamilton Depression Rating Scale (HAM-D) Scores
+Preintervention HAM-D Score 85 18.00 ± 5.00
+Postintervention HAM-D Score 78 10.00 ± 9.00
+% Change in HAM-D Score 78 −44.44 ± 44.59
+Preintervention Brain Measures
+Preintervention total AMY volume (mm3) 85 3183.20 ± 542.50
+Preintervention total HIP volume (mm3) 84 8494.30 ± 1100.35
+Preintervention total AMY metabolism
+(mg/min*100 ml) 73 3.14 ± 0.66
+Preintervention total HIP metabolism (mg/min*100 ml) 73 3.49 ± 0.69
+Postintervention Brain Measures
+Postintervention total AMY volume (mm3) 76 3227.00 ± 482.00
+Postintervention total HIP volume (mm3) 76 8517.00 ± 1044.00
+Postintervention total AMY metabolism (mg/min*100 ml) 72 3.06 ± 0.55
+Postintervention total HIP metabolism (mg/min*100 ml) 72 3.34 ± 0.63
+% Change in Brain Measures
+% Change in AMY Volume 76 0.92 ± 9.19
+% Change in HIP Volume 75 −0.49 ± 3.61
+% Change in AMY Metabolism 62 −1.26 ± 22.46
+% Change in HIP Metabolism 62 −3.76 ± 22.09
+Table 2. Participant depression severity and brain measures before and after placebo-controlled intervention. 
+analyses were conducted pooling escitalopram and placebo arms. AMY: amygdala; BMI: body mass index; 
+HIP: hippocampus. Note: For continuous variables, median and interquartile range were reported.
+ 
+Variable N Levels Tota l
+Sex 85
+Female 56 (65.88%)
+Male 29 (34.12%)
+Age 85 23.60 ± 13.10
+Medication Status 85
+Naïve 45 (52.94%)
+Previously medicated 40 (47.06%)
+BMI (lb/in2) 84 25.45 ± 8.13
+BMI Category 84
+Underweight 5 (5.95%)
+Healthy weight 34 (40.48%)
+Overweight 22 (26.19%)
+Obese 23 (27.38%)
+Waist circumference (in) 76 34.00 ± 7.00
+Waist circumference Category 76
+Low risk 35 (46.05%)
+Increased risk 14 (18.42%)
+Substantially increased risk 27 (35.53%)
+Table 1. Preintervention participant demographics. Note: For categorical variables, percentages across the 
+levels were reported. For continuous variables, median and interquartile range were reported.
+ 
+Scientific Reports |        (2026) 16:10979 4| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+Results
+Of the 85 participants who received preintervention imaging, 12 participants’ PET measures were not used 
+because they exhibited a > 20% change in glucose during the preintervention imaging (n = 11) or due to diagnosis 
+of diabetes ( n = 1, removed from all PET analyses). The Freesurfer delineation of the hippocampus from one 
+participant’s preintervention MRI was misaligned and therefore was not used in the volumetric analysis. 
+Additionally, 12 participants’ postintervention PET measures were not used because the participants did not 
+complete the protocol ( n = 7), or complete postintervention imaging ( n = 2, 1 completed MRI only) or they 
+exhibited a > 20% change in glucose during the postintervention PET imaging (n = 3). (Note: as one participant 
+exhibited a > 20% change in glucose during the imaging both pre and post intervention, this left 62 participants 
+with useable pre-and post-PET imaging.) Of the 77 participants receiving postintervention MRI imaging, one 
+participant’s MRI measures could not be used due to excessive motion. In addition, 9 participants had missing 
+waist circumference measurements, and one participant had missing weight information preventing BMI 
+calculations. For three participants, self-reported weight was used instead of that measured at screening.
+Participant information is provided in Tables 1 and 2.
+Visualization of study results
+For ease of reference, a visualization of study results is provided in Table  3. These results are explained in 
+subsequent sections.
+Relationship between Waist Circumference or BMI and Depression Severity.
+As indicated by the blank cells in Table  3, neither preintervention waist circumference (p-value = 0.8471) 
+nor BMI (p-value = 0.1144) was significantly associated with preintervention Hamilton Depression Rating 
+Scale (HAM-D) scores. Similarly, neither preintervention waist circumference (p-value = 0.6640) nor BMI 
+(p-value = 0.1793) was significantly associated with percent change in HAM-D scores with treatment/placebo.
+A p-value less than 0.025 was considered as statistically significant in order to account for the two models 
+considering neurobiological variables (Models 2 and 3). No correction was applied to the exploratory analyses. 
+All the statistical analyses were performed using SAS 9.4 (SAS Institute Inc., Cary, NC).
+There were also no significant differences in preintervention HAM-D scores or percent change in HAM-D 
+scores across waist circumference risk categories or BMI categories (all p-values > 0.05).
+Table 3. Visualization of study results. The first column indicates the outcome variable examined. Depression 
+severity was assessed by the Hamilton Depression Rating Scale. The colored cells indicate that the outcome 
+variable was significantly related to the continuous measure of depression severity, waist circumference or body 
+mass index. Green indicates a positive association while red indicates a negative association. The text within 
+the cells in columns 2 and 3 specifies the categorical comparisons that reached significance. Blank cells indicate 
+no significant continuous or categorical differences. * These results should be interpreted with caution, as only 
+four participants classified as underweight had usable pre- and post-intervention metabolic data.
+ 
+Scientific Reports |        (2026) 16:10979 5| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+There was no effect of intervention type on any of these associations.
+Relationship between Waist Circumference or BMI and Preintervention Brain Volume.
+A significant positive association was found between preintervention waist circumference and preintervention 
+amygdala volume (Table 4, p-value = 0.016) but not with preintervention hippocampus volume (Table 4).
+The discrete analysis provides additional insight into these associations, showing preintervention amygdala 
+and hippocampus volumes were significantly different across some preintervention waist circumference 
+categories (Table 5: amygdala: low vs. substantially increased risk: p-value = 0.002; increased vs. substantially 
+increased risk: p-value = 0.001; hippocampus: increased risk vs. substantially increased risk: p-value = 0.018).
+In the uncorrected exploratory analysis, significant positive associations were found between preintervention 
+BMI and both preintervention amygdala (Table 4, p-value = 0.015) and hippocampus (Table 4, p-value = 0.022) 
+volumes.
+Similar to the continuous analysis, preintervention amygdala and hippocampus volumes were significantly 
+different across some preintervention BMI categories (Table  5: amygdala: healthy vs. obese: p-value = 0.013; 
+overweight vs. obese: p-value = 0.027; hippocampus: healthy vs. obese: p-value = 0.022).
+Relationship between Waist Circumference or BMI and Preintervention Brain Metabolism.
+Table 5. Significant associations between categories of obesity and brain measures. AMY: amygdala; BMI: 
+body mass index; HIP: hippocampus.
+ 
+Table 4. Associations between obesity and brain measures. AMY: amygdala; BMI: body mass index; HIP: 
+hippocampus; Med: Medication --examining whether outcome differed in those receiving escitalopram vs. 
+placebo.
+ 
+Scientific Reports |        (2026) 16:10979 6| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+Neither preintervention waist circumference nor BMI were significantly associated with preintervention 
+amygdala or hippocampus metabolism (Table 4).
+Similar to the continuous analysis, there were no significant differences in preintervention amygdala and 
+hippocampus metabolism across waist circumference or BMI categories.
+Relationship between Waist Circumference or BMI and Percent Change in Brain Volume with Treatment/
+Placebo.
+A significant negative association was found between preintervention waist circumference and the percent 
+change in amygdala volume with treatment/placebo (Table  4; Fig.  1A, p-value = 0.006) but not with percent 
+change in hippocampus volume with treatment/placebo (Table 4; Fig. 1A).
+The discrete analysis provides additional insight into these associations showing percent change in amygdala 
+volume was significantly different across preintervention waist circumference categories when compared to the 
+substantially increased risk category (Table  5: low vs. substantially increased risk: p-value = 0.003; increased 
+vs. substantially increased risk: p-value = 0.0001). There were no significant differences in percent change in 
+hippocampus volume across waist circumference categories.
+Similarly, in the uncorrected exploratory analysis, a significant negative association was found between 
+preintervention BMI and the percent change in amygdala volume with treatment/placebo (Table  4; Fig.  1B, 
+p-value = 0.043) but not with percent change in hippocampus volume with intervention (Table 4; Fig. 1B).
+Similar to the continuous analysis, percent change in amygdala volume was significantly different across some 
+preintervention BMI categories when compared to the obese category (Table 5: healthy vs. obese: p-value = 0.029; 
+overweight vs. obese: p-value = 0.003). There were no significant differences in percent change in hippocampus 
+volume across BMI categories.
+There was no effect of intervention type on any of these associations (Table 4).
+Relationship between Waist Circumference or BMI and Percent Change in Metabolism with Intervention.
+Preintervention waist circumference was not significantly associated with percent change in amygdala or 
+hippocampus metabolism with treatment/placebo (Table 4; Fig. 1C).
+Fig. 1. Associations Between Waist Circumference (A and C) and Body Mass Index (BMI, B and D) and 
+Percent Change in Brain Region Volume (A and B) and Metabolism (C and D) with intervention. Raw values 
+are presented. Solid circles indicate escitalopram treatment and open circles indicate placebo. Regression lines 
+are shown for each brain region. In A and C, based on waist circumference values in males: red- substantially 
+increased risk; yellow – increased risk; green: low risk. The dashed line denotes the cutoff for females: red - 
+between increased and substantially increased risk; green- denotes the cutoff between low and increased risk. 
+In B and D, based on BMI: red – obese; yellow – overweight; green: healthy weight; lavender- underweight.
+ 
+Scientific Reports |        (2026) 16:10979 7| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+Similar to the continuous analysis, percent change in amygdala and hippocampus metabolism was also not 
+significantly different across categories of preintervention waist circumference (Table 5).
+In the uncorrected exploratory analysis, significant positive associations were found between BMI and both 
+percent change in amygdala (Table 4; Fig. 1D, p-value = 0.005) and hippocampus (Table 4; Fig. 1D, p-value = 0.006) 
+metabolism with treatment/placebo.
+The discrete analysis provides additional insight into these associations, showing percent change in 
+metabolism was only significantly different across BMI-defined categories of underweight vs. obese individuals 
+(Table 5: amygdala: p-value = 0.018; hippocampus: p-value = 0.038). Notably, the underweight group included 
+only four participants with usable pre- and post-intervention metabolic data.
+There was no effect of intervention type on any of these associations (Table 5).
+Discussion
+In this study, two anthropometric measures were used to evaluate body composition or adiposity in relation to 
+neurobiology in individuals with MDD before and after intervention. Waist circumference, measuring visceral 
+fat, is one among five diagnostic criteria for diagnosing metabolic syndrome 93,94. However, BMI is associated 
+with body fat and a measure that is well-established in the literature for measuring obesity due to its practicality 
+and ease of collection.
+While waist circumference and BMI showed similar relationships to brain biology in this work (Table 5), an 
+exception was percent change in metabolism with intervention/placebo, which only differed across exploratory 
+BMI measures. However, analysis treating BMI as a categorical variable provides insight into this association, 
+suggesting it was driven by difference between the underweight participants and the obese participants. Given 
+the size of this subgroup ( n = 4, Fig. 1D), this finding is hypothesis-generating only, and should be interpreted 
+with caution and confirmed in a larger sample. However, this is consistent with the fact that waist circumference 
+does not categorize underweight individuals (e.g., large green area in Fig. 1A and C compared to Fig. 1B and D) 
+and is generally not a measure of overall obesity, but rather metabolic disease and risk95–97..
+Relationship between Waist circumference or BMI and preintervention neurobiology
+Contrary to our hypothesis, but consistent with a prior study37, a positive association between obesity measures 
+and preintervention amygdala volume was found. Examining preintervention amygdala volume differences 
+across obesity categories in Tables 2 and 5 suggests that this correlation may be driven by individuals with higher 
+waist circumference or BMI.
+The association between obesity measures and hippocampal volume was not as strong, suggesting 
+hippocampal differences may only be observable over specific ranges of obesity measures.
+Notably, the associations between waist circumference or BMI and brain volume exist even though no 
+association between waist circumference or BMI and depression severity was found, suggesting that depression 
+severity did not confound these relationships.
+Neither preintervention waist circumference nor BMI was associated with metabolism (hippocampus or 
+amygdala). This lack of correlation may indicate that baseline metabolism is not as strongly correlated to obesity 
+as changes in metabolism are (described in the next section).
+Treatment/placebo response
+Though this study involved both escitalopram and placebo, the percent change in volume and metabolism were 
+not significantly different across interventions (Table 4). Accordingly, and consistent with prior analyses of this 
+cohort71, intervention arms were pooled for analyses. However, this approach represents an important limitation 
+(as noted below). Combining escitalopram and placebo groups constrains the ability to draw conclusions 
+about antidepressant-specific mechanisms and may obscure subtle differential drug effects. Moreover, while 
+shared metabolic changes could reflect placebo-related neurobiological processes, this interpretation cannot be 
+definitively established within the current design and should be considered cautiously.
+Importantly, consistent with other studies 98,99, there was significant variability in intervention response 
+across the cohort (for both treatment and placebo, see standard deviation in percent change in the Hamilton 
+Depression Rating Scale, Table 1). Likely relatedly, there was significant variation in the neurobiological response 
+to the interventions (Table 1), which has also been reported100–103. The purpose of this study is to understand the 
+association between obesity and this variability.
+Despite observing associations between obesity and neurobiological changes with treatment/placebo 
+(described below), we did not observe a significant relationship between obesity and percent change in 
+Hamilton Depression Rating Scale score following intervention. Although brain volumetric and metabolic 
+measures (e.g., amygdala and hippocampal changes) represent direct, quantifiable indices of intervention-
+related neuroplasticity, whereas clinical symptom scales capture a composite of psychological, social, behavioral, 
+and biological influences 104,105, the absence of a detectable differential clinical response in this sample limits 
+the immediate translational implications of these findings. Accordingly, while neuroimaging measures may 
+be sensitive to subtle obesity-related variation in brain processes, it remains unclear whether these differences 
+meaningfully influence symptomatic improvement. Future studies, ideally with larger samples and integrated 
+assessments of inflammatory markers, adiposity indices, and neuroimaging measures, will be needed to clarify 
+whether obesity-related biological factors shape clinically relevant intervention mechanisms.
+Relationship between Waist circumference or BMI and percent change in neurobiology with 
+treatment/placebo
+Both preintervention waist circumference and BMI showed a significant negative association with percent change 
+in amygdala volume. Every 1 in increase in waist circumference or 1 lb/in2 increase in BMI, was associated with 
+Scientific Reports |        (2026) 16:10979 8| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+a 0.38% or a 0.26%, respectively, decrease in percent change in amygdala volume with treatment/placebo. In 
+fact, past 37.29 (Fig. 1A) in, which is the border of increased risk for males and substantially increased risk for 
+females, or 30.63 lb/in 2 (Fig.  1B), which is the obese range, the regression fit line suggests the percent change 
+in amygdala volume with treatment/placebo becomes negative. When combined with the categorical analyses 
+(examining percent change in amygdala volume across obesity categories), results indicate that intervention-
+related changes in amygdala volume are associated with obesity severity.
+No significant relationship between waist circumference or BMI and percent change in hippocampal volume 
+with treatment/placebo was found. This highlights both that obesity/intervention interactions may be region 
+specific and the importance of the amygdala in this interaction.
+When examining the relationship between obesity measures and metabolic changes with treatment/placebo, 
+the percent change in metabolism from negative (expected with successful treatment) to positive occurs at 41.50 
+in (substantially increased risk) or 29.77 lb/in2 (obese range is > 30) for the hippocampus and 40.90 in or 28.46 
+lb/in2 for the amygdala, though the significant relationships were observed only using BMI. Further, every 1 lb/
+in2 increase was associated with a 1.03% or a 0.99% increase in percent change in amygdala or hippocampus 
+metabolism, respectively. Across the range of BMIs in this study (14.2–41.2 lb/in 2), this would correspond to a 
+significant (27–28%) difference in amygdala or hippocampal metabolism.
+Limitations
+While waist circumference and BMI are non-invasive, cost-effective and easy to measure, the cutoffs and 
+categorization of individuals do not sufficiently capture the nuance of individual body composition, especially 
+for individuals at the margin between two categories. The gold standard for assessing body composition, the 
+dual-energy x-ray absorptiometry (DXA), was not utilized in this study and could be a potential limitation.
+In addition, diet quality, physical activity, sleep patterns, and stress exposure, all of which are associated 
+with both obesity and brain structure/function, were not quantified in this study. These factors may partially 
+mediate or confound the observed relationships between adiposity and neurobiological outcomes and should be 
+incorporated into future studies to improve model specificity.
+It is also important to note that the relatively young median age of participants in this study, 23.6 years, 
+substantially limits the generalizability of the findings to the broader population. As such, these results should 
+not be assumed to extend to midlife or geriatric populations, in whom metabolic burden, illness chronicity, and 
+treatment exposure may interact differently with brain structure and function. However, this younger cohort 
+remains an important group to investigate as the observed obesity-related associations may reflect early stage or 
+developmentally specific features that differ from patterns in later-life depression. Whether modifying obesity 
+at this age would alter treatment-related neurobiological changes or clinical outcomes remains unknown and 
+warrants future investigation.
+Importantly, although this study included both escitalopram and placebo arms, the intervention groups were 
+pooled due to the absence of significant between-group differences. This approach precludes conclusions about 
+SSRI-specific mechanisms. Accordingly, the findings should be interpreted as reflecting intervention-associated 
+brain changes in MDD more generally, rather than antidepressant-specific associations. Future studies directly 
+comparing active treatments and placebo, as well as different antidepressant classes, will be necessary to 
+determine the specificity of obesity-related associations with neurobiological changes during treatment.
+The inter-individual variability in functional changes with treatment/placebo was high in the sample. As this 
+has been observed in previous studies100,101, it is likely reflective of meaningful biological heterogeneity. However, 
+this should be examined in future studies. In addition, as the study only assessed volume and metabolism, it 
+cannot determine the mechanisms underlying differences in these measures.
+In this study, approximately half of the participants were previously medicated (Table 1), which could influence 
+preintervention brain volume or metabolism, as well as intervention-related changes in these measures. When 
+prior medication exposure (exposed vs. naïve) was included as a covariate (data not shown), the interpretation 
+of the results did not change materially. However, inclusion of more detailed measures of prior medication 
+exposure (e.g., timing and class) as covariates may be informative.
+Conclusion
+This multimodal PET/MRI study found that obesity is associated with altered limbic structure and metabolism 
+in MDD, both prior to and during treatment/placebo. While greater obesity was linked to larger preintervention 
+amygdala volume and altered intervention-related changes in amygdala volume and metabolism, no significant 
+association was observed between obesity and differential improvement in depressive symptoms. Accordingly, 
+further research in larger and more age-diverse samples, with designs that isolate pharmacologic mechanisms, 
+will be necessary to clarify the clinical and mechanistic significance of these observed associations.
+Data availability
+The datasets used and/or analysed during the current study available from the corresponding author on reason-
+able request.
+Received: 18 October 2025; Accepted: 2 March 2026
+References
+ 1. Depressive disorder (depression).  h t t p s :  / / w w w .  w h o . i n  t / n e w s  - r o o m  / f a c t -  s h e e t s  / d e t a i  l / d e p r e s s i o n
+Scientific Reports |        (2026) 16:10979 9| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+ 2. Woo, Y . S., Seo, H. J., McIntyre, R. S. & Bahk, W . M. Obesity and its potential effects on antidepressant treatment outcomes in 
+patients with depressive disorders: A literature review. Int. J. Mol. Sci. https://doi.org/10.3390/ijms17010080 (2016).
+ 3. Gilman, S. E. et al. Depression and mortality in a longitudinal study: 1952–2011. CMAJ 189(42), E1304–E1310.  h t t p s : / / d o i . o r g / 1 
+0 . 1 5 0 3 / c m a j . 1 7 0 1 2 5     (2017).
+ 4. Kloiber, S. et al. Overweight and obesity affect treatment response in major depression. Biol. Psychiatry. 62(4), 321–6.  h t t p s : / / d o i 
+. o r g / 1 0 . 1 0 1 6 / j . b i o p s y c h . 2 0 0 6 . 1 0 . 0 0 1     (2007).
+ 5. Lin, C. H., Chen, C. C., Wong, J. & McIntyre, R. S. Both body weight and BMI predicts improvement in symptom and functioning 
+for patients with major depressive disorder. J. Affect. Disord. 161, 123–6. https://doi.org/10.1016/j.jad.2014.02.039 (2014).
+ 6. Luppino, F . S. et al. Overweight, obesity, and depression: A systematic review and meta-analysis of longitudinal studies. Arch. Gen. 
+Psychiatry. 67(3), 220–9. https://doi.org/10.1001/archgenpsychiatry.2010.2 (2010).
+ 7. Richter-Levin, G. & Akirav, I. Amygdala-hippocampus dynamic interaction in relation to memory. Mol. Neurobiol. 22(1–3), 
+11–20. https://doi.org/10.1385/MN:22:1-3:011 (2000).
+ 8. Maller, J. J., Daskalakis, Z. J. & Fitzgerald, P . B. Hippocampal volumetrics in depression: The importance of the posterior tail. 
+Hippocampus 17(11), 1023–7. https://doi.org/10.1002/hipo.20339 (2007).
+ 9. Neumeister, A. et al. Reduced hippocampal volume in unmedicated, remitted patients with major depression versus control 
+subjects. Biol. Psychiatry. 57(8), 935–7. https://doi.org/10.1016/j.biopsych.2005.01.016 (2005).
+ 10. Amico, F . et al. Structural MRI correlates for vulnerability and resilience to major depressive disorder. J. Psychiatry. Neurosci. 
+36(1), 15–22. https://doi.org/10.1503/jpn.090186 (2011).
+ 11. Malykhin, N. V ., Carter, R., Seres, P . & Coupland, N. J. Structural changes in the hippocampus in major depressive disorder: 
+Contributions of disease and treatment. J. Psychiatry Neurosci. 35(5), 337–43. https://doi.org/10.1503/jpn.100002 (2010).
+ 12. Arnone, D. et al. Computational meta-analysis of statistical parametric maps in major depression. Hum. Brain Mapp. 37(4), 
+1393–404. https://doi.org/10.1002/hbm.23108 (2016).
+ 13. Videbech, P . & Ravnkilde, B. Hippocampal volume and depression: A meta-analysis of MRI studies. Am. J. Psychiatry. 161(11), 
+1957–1966. https://doi.org/10.1176/appi.ajp.161.11.1957 (2004).
+ 14. Jaworska, N. et al. Subgenual anterior cingulate cortex and hippocampal volumes in depressed youth: The role of comorbidity and 
+age. J. Affect Disord. 190, 726–732. https://doi.org/10.1016/j.jad.2015.10.064 (2016).
+ 15. Merz, E. C., He, X., Noble, K. G., Pediatric Imaging, N. & Genetics, S. Anxiety, depression, impulsivity, and brain structure in 
+children and adolescents. Neuroimage Clin. 20, 243–251. https://doi.org/10.1016/j.nicl.2018.07.020 (2018).
+ 16. Belleau, E. L., Treadway, M. T. & Pizzagalli, D. A. The impact of stress and major depressive disorder on hippocampal and medial 
+prefrontal cortex morphology. Biol. Psychiatry. 85(6), 443–453. https://doi.org/10.1016/j.biopsych.2018.09.031 (2019).
+ 17. McKinnon, M. C., Yucel, K., Nazarov, A. & MacQueen, G. M. A meta-analysis examining clinical predictors of hippocampal 
+volume in patients with major depressive disorder. J. Psychiatry Neurosci. 34(1), 41–54 (2009).
+ 18. Zackova, L., Jani, M., Brazdil, M., Nikolova, Y . S. & Mareckova, K. Cognitive impairment and depression: Meta-analysis of 
+structural magnetic resonance imaging studies. Neuroimage Clin. 32, 102830. https://doi.org/10.1016/j.nicl.2021.102830 (2021).
+ 19. Zhang, H. et al. Brain gray matter alterations in first episodes of depression: A meta-analysis of whole-brain studies. Neurosci 
+Biobehav Rev 60, 43–50. https://doi.org/10.1016/j.neubiorev.2015.10.011 (2016).
+ 20. Sacher, J. et al. Mapping the depressed brain: A meta-analysis of structural and functional alterations in major depressive disorder. 
+J. Affect. Disord. 140(2), 142–8. https://doi.org/10.1016/j.jad.2011.08.001 (2012).
+ 21. Hamilton, J. P ., Siemer, M. & Gotlib, I. H. Amygdala volume in major depressive disorder: A meta-analysis of magnetic resonance 
+imaging studies. Mol. Psychiatry 13(11), 993–1000. https://doi.org/10.1038/mp.2008.57 (2008).
+ 22. Frodl, T. et al. Enlargement of the amygdala in patients with a first episode of major depression. Biol. Psychiatry 51(9), 708–14. 
+https://doi.org/10.1016/s0006-3223(01)01359-2 (2002).
+ 23. van Eijndhoven, P . et al. Amygdala volume marks the acute state in the early course of depression. Biol. Psychiatry 65(9), 812–8. 
+https://doi.org/10.1016/j.biopsych.2008.10.027 (2009).
+ 24. Lange, C. & Irle, E. Enlarged amygdala volume and reduced hippocampal volume in young women with major depression. 
+Psychol Med Aug. 34 (6), 1059–1064. https://doi.org/10.1017/s0033291703001806 (2004).
+ 25. Saxena, S. et al. Cerebral metabolism in major depression and obsessive-compulsive disorder occurring separately and 
+concurrently. Biol. Psychiatry 50(3), 159–70. https://doi.org/10.1016/s0006-3223(01)01123-4 (2001).
+ 26. Trifu, S. C., Trifu, A. C., Aluas, E., Tataru, M. A. & Costea, R. V . Brain changes in depression. Rom. J. Morphol. Embryol. 61(2), 
+361–370. https://doi.org/10.47162/RJME.61.2.06 (2020).
+ 27. Drevets, W . C. et al. Glucose metabolism in the amygdala in depression: Relationship to diagnostic subtype and plasma cortisol 
+levels. Pharmacol. Biochem. Behav. 71(3), 431–47. https://doi.org/10.1016/s0091-3057(01)00687-6 (2002).
+ 28. Drevets, W . C. Prefrontal cortical-amygdalar metabolism in major depression. Ann. N. Y. Acad. Sci. 877, 614–37.  h t t p s : / / d o i . o r g / 
+1 0 . 1 1 1 1 / j . 1 7 4 9 - 6 6 3 2 . 1 9 9 9 . t b 0 9 2 9 2 . x     (1999).
+ 29. Drevets, W . C., Bogers, W . & Raichle, M. E. Functional anatomical correlates of antidepressant drug treatment assessed using PET 
+measures of regional glucose metabolism. Eur. Neuropsychopharmacol. 12(6), 527–44.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / s 0 9 2 4 - 9 7 7 x ( 0 2 ) 0 0 
+1 0 2 - 5     (2002).
+ 30. Grogans, S. E., Fox, A. S. & Shackman, A. J. The amygdala and depression: A sober reconsideration. Am. J. Psychiatry 179(7), 
+454–457. https://doi.org/10.1176/appi.ajp.20220412 (2022).
+ 31. Raji, C. A. et al. Brain structure and obesity. Hum. Brain Mapp. 31(3), 353–64. https://doi.org/10.1002/hbm.20870 (2010).
+ 32. Jagust, W ., Harvey, D., Mungas, D. & Haan, M. Central obesity and the aging brain. Arch. Neurol. 62(10), 1545–8.  h t t p s : / / d o i . o r g 
+/ 1 0 . 1 0 0 1 / a r c h n e u r . 6 2 . 1 0 . 1 5 4 5     (2005).
+ 33. Bobb, J. F ., Schwartz, B. S., Davatzikos, C. & Caffo, B. Cross-sectional and longitudinal association of body mass index and brain 
+volume. Hum. Brain Mapp. 35(1), 75–88. https://doi.org/10.1002/hbm.22159 (2014).
+ 34. Hidese, S. et al. Association of obesity with cognitive function and brain structure in patients with major depressive disorder. J. 
+Affect. Disord. 225, 188–194. https://doi.org/10.1016/j.jad.2017.08.028 (2018).
+ 35. Shott, M. E. et al. Orbitofrontal cortex volume and brain reward response in obesity. Int J Obes (Lond) 39(2), 214–21.  h t t p s : / / d o i . 
+o r g / 1 0 . 1 0 3 8 / i j o . 2 0 1 4 . 1 2 1     (2015).
+ 36. Jiang, F . et al. Obesity is associated with decreased gray matter volume in children: a longitudinal study. Cereb Cortex Mar. 21 (7), 
+3674–3682. https://doi.org/10.1093/cercor/bhac300 (2023).
+ 37. Perlaki, G. et al. Volumetric gray matter measures of amygdala and accumbens in childhood overweight/obesity. PLoS One  
+13(10), e0205331. https://doi.org/10.1371/journal.pone.0205331 (2018).
+ 38. Kim, M. S. et al. Prefrontal cortex and amygdala subregion morphology are associated with obesity and dietary self-control in 
+children and adolescents. Front. Hum. Neurosci. 14, 563415. https://doi.org/10.3389/fnhum.2020.563415 (2020).
+ 39. Murata, Y . et al. A high fat diet-induced decrease in hippocampal newly-born neurons of male mice is exacerbated by mild 
+psychological stress using a Communication Box. J. Affect. Disord.  209, 209–216. https://doi.org/10.1016/j.jad.2016.11.046 
+(2017).
+ 40. Contreras-Rodriguez, O. et al. Consumption of ultra-processed foods is associated with depression, mesocorticolimbic volume, 
+and inflammation. J. Affect. Disord. 335, 340–348. https://doi.org/10.1016/j.jad.2023.05.009 (2023).
+ 41. Ishai, A. et al. Amygdalar metabolic activity independently associates with progression of visceral adiposity. J. Clin. Endocrinol. 
+Metab. 104(4), 1029–1038. https://doi.org/10.1210/jc.2018-01456 (2019).
+Scientific Reports |        (2026) 16:10979 10| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+ 42. Dardano, A. et al. Brain effect of bariatric surgery in people with obesity. Int J Obes (Lond) 46(9), 1671–1677.  h t t p s : / / d o i . o r g / 1 0 . 
+1 0 3 8 / s 4 1 3 6 6 - 0 2 2 - 0 1 1 6 2 - 8     (2022).
+ 43. Bay-Richter, C. et al. A role for inflammatory metabolites as modulators of the glutamate N-methyl-D-aspartate receptor in 
+depression and suicidality. Brain Behav. Immun Jan. 43, 110–117. https://doi.org/10.1016/j.bbi.2014.07.012 (2015).
+ 44. Haapakoski, R., Mathieu, J., Ebmeier, K. P ., Alenius, H. & Kivimaki, M. Cumulative meta-analysis of interleukins 6 and 1beta, 
+tumour necrosis factor alpha and C-reactive protein in patients with major depressive disorder. Brain Behav Immun 49, 206–215. 
+https://doi.org/10.1016/j.bbi.2015.06.001 (2015).
+ 45. Sasayama, D. et al. Increased cerebrospinal fluid interleukin-6 levels in patients with schizophrenia and those with major 
+depressive disorder. J Psychiatr Res Mar. 47 (3), 401–406. https://doi.org/10.1016/j.jpsychires.2012.12.001 (2013).
+ 46. Miller, A. A. & Spencer, S. J. Obesity and neuroinflammation: a pathway to cognitive impairment. Brain Behav. Immun Nov. 42, 
+10–21. https://doi.org/10.1016/j.bbi.2014.04.001 (2014).
+ 47. Lee, T. H. & Y au, S. Y . From obesity to hippocampal neurodegeneration: Pathogenesis and non-pharmacological interventions. 
+Int. J. Mol. Sci. https://doi.org/10.3390/ijms22010201 (2020).
+ 48. Hammen, C. Stress generation in depression: Reflections on origins, research, and future directions. J. Clin. Psychol. 62(9), 1065–
+1082. https://doi.org/10.1002/jclp.20293 (2006).
+ 49. Conrad, C. D. Chronic stress-induced hippocampal vulnerability: the glucocorticoid vulnerability hypothesis. Rev. Neurosci. 19 
+(6), 395–411. https://doi.org/10.1515/revneuro.2008.19.6.395 (2008).
+ 50. Akalestou, E., Genser, L. & Rutter, G. A. Glucocorticoid Metabolism in Obesity and Following Weight Loss. Front. Endocrinol. 
+(Lausanne). 11, 59. https://doi.org/10.3389/fendo.2020.00059 (2020).
+ 51. Carniel, B. P . & da Rocha, N. S. Brain-derived neurotrophic factor (BDNF) and inflammatory markers: Perspectives for the 
+management of depression. Prog Neuropsychopharmacol. Biol. Psychiatry Jun. 8, 108:110151.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . p n p b p . 2 0 2 
+0 . 1 1 0 1 5 1     (2021).
+ 52. Wang, C., Chan, J. S., Ren, L. & Y an, J. H. Obesity Reduces Cognitive and Motor Functions across the Lifespan. Neural Plast. 2016, 
+2473081. https://doi.org/10.1155/2016/2473081 (2016).
+ 53. Amadio, P . et al. Brain-Derived Neurotrophic Factor and Extracellular Vesicle-Derived miRNAs in an Italian Cohort of 
+Individuals With Obesity: A Key to Explain the Link Between Depression and Atherothrombosis. Front. Cardiovasc. Med. 9, 
+906483. https://doi.org/10.3389/fcvm.2022.906483 (2022).
+ 54. Tai, H. H. et al. Treatment-Specific Hippocampal Subfield Volume Changes With Antidepressant Medication or Cognitive-
+Behavior Therapy in Treatment-Naive Depression. Front. Psychiatry. 12, 718539. https://doi.org/10.3389/fpsyt.2021.718539 
+(2021).
+ 55. Bellani, M., Dusi, N., Y eh, P . H., Soares, J. C. & Brambilla, P . The effects of antidepressants on human brain as detected by imaging 
+studies. Focus on major depression. Prog Neuropsychopharmacol. Biol. Psychiatry Aug. 15 (7), 1544–1552.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 
+6 / j . p n p b p . 2 0 1 0 . 1 1 . 0 4 0     (2011).
+ 56. Cremers, H., Lee, R., Keedy, S., Phan, K. L. & Coccaro, E. Effects of Escitalopram administration on face processing in intermittent 
+explosive disorder: An fMRI study. Neuropsychopharmacology 41(2), 590–597. https://doi.org/10.1038/npp.2015.187 (2016).
+ 57. Kennedy, S. H. et al. Changes in regional brain glucose metabolism measured with positron emission tomography after paroxetine 
+treatment of major depression. Am J. Psychiatry Jun. 158 (6), 899–905. https://doi.org/10.1176/appi.ajp.158.6.899 (2001).
+ 58. Phillips, J. L., Batten, L. A., Tremblay, P ., Aldosary, F . & Blier, P . A prospective, longitudinal study of the effect of remission on 
+cortical thickness and hippocampal volume in patients with treatment-resistant depression. Int. J. Neuropsychopharmacol.  h t t p s : 
+/ / d o i . o r g / 1 0 . 1 0 9 3 / i j n p / p y v 0 3 7     (2015).
+ 59. Li, C. T. et al. Structural and cognitive deficits in remitting and non-remitting recurrent depression: a voxel-based morphometric 
+study. Neuroimage Mar. 50 (1), 347–356. https://doi.org/10.1016/j.neuroimage.2009.11.021 (2010).
+ 60. Mason, B. L. & Pariante, C. M. The effects of antidepressants on the hypothalamic-pituitary-adrenal axis. Drug News Perspect Dec. 
+19 (10), 603–608. https://doi.org/10.1358/dnp.2006.19.10.1068007 (2006).
+ 61. Yu, H. & Chen, Z. Y . The role of BDNF in depression on the basis of its location in the neural circuitry. Acta Pharmacol. Sin. 32(1), 
+3–11. https://doi.org/10.1038/aps.2010.184 (2011).
+ 62. Lee, S. H., Paz-Filho, G., Mastronardi, C., Licinio, J. & Wong, M. L. Is increased antidepressant exposure a contributory factor to 
+the obesity pandemic?. Transl. Psychiatry. 6(3), e759. https://doi.org/10.1038/tp.2016.25 (2016).
+ 63. Marzola, P ., Melzer, T., Pavesi, E., Gil-Mohapel, J. & Brocardo, P . S. Exploring the role of neuroplasticity in development, aging, 
+and neurodegeneration. Brain Sci. https://doi.org/10.3390/brainsci13121610 (2023).
+ 64. Camandola, S. & Mattson, M. P . Brain metabolism in health, aging, and neurodegeneration. EMBO J. 36(11), 1474–1492.  h t t p s : / 
+/ d o i . o r g / 1 0 . 1 5 2 5 2 / e m b j . 2 0 1 6 9 5 8 1 0     (2017).
+ 65. Xu, Q., Anderson, D. & Lurie-Beck, J. The relationship between abdominal obesity and depression in the general population: A 
+systematic review and meta-analysis. Obes. Res. Clin. Pract. 5(4), e267-360. https://doi.org/10.1016/j.orcp.2011.04.007 (2011).
+ 66. Mouchti, S., Orliacq, J., Reeves, G. & Chen, Z. Assessment of correlation between conventional anthropometric and imaging-
+derived measures of body fat composition: A systematic literature review and meta-analysis of observational studies. BMC Med. 
+Imaging. 23(1), 127. https://doi.org/10.1186/s12880-023-01063-w (2023).
+ 67. Foster, M. T. & Pagliassotti, M. J. Metabolic alterations following visceral fat removal and expansion: Beyond anatomic location. 
+Adipocyte 1(4), 192–199. https://doi.org/10.4161/adip.21756 (2012).
+ 68. Shoelson, S. E., Herrero, L. & Naaz, A. Obesity, inflammation, and insulin resistance. Gastroenterology 132(6), 2169–80.  h t t p s : / / d 
+o i . o r g / 1 0 . 1 0 5 3 / j . g a s t r o . 2 0 0 7 . 0 3 . 0 5 9     (2007).
+ 69. Lee, J. I. et al. Association between visceral adipose tissue and major depressive disorder across the lifespan: A scoping review. 
+Bipolar Disord Jun. 24 (4), 375–391. https://doi.org/10.1111/bdi.13130 (2022).
+ 70. Rubino, F . et al. Definition and diagnostic criteria of clinical obesity. Lancet Diabetes Endocrinol. 13(3), 221–262.  h t t p s : / / d o i . o r g / 
+1 0 . 1 0 1 6 / S 2 2 1 3 - 8 5 8 7 ( 2 4 ) 0 0 3 1 6 - 4     (2025).
+ 71. Hill, K. R. et al. Measuring brain glucose metabolism in order to predict response to antidepressant or placebo: A randomized 
+clinical trial. Neuroimage Clin. 32, 102858. https://doi.org/10.1016/j.nicl.2021.102858 (2021).
+ 72. Montgomery, S. A. & Asberg, M. A new depression scale designed to be sensitive to change. Br. J. Psychiatry 134, 382–9.  h t t p s : / / 
+d o i . o r g / 1 0 . 1 1 9 2 / b j p . 1 3 4 . 4 . 3 8 2     (1979).
+ 73. Ali, F . Z. et al. Gradient boosting decision-tree-based algorithm with neuroimaging for personalized treatment in depression. 
+Neurosci. Inform. https://doi.org/10.1016/j.neuri.2022.100110 (2022).
+ 74. Ali, F . Z., Parsey, R. V ., Lin, S., Schwartz, J. & DeLorenzo, C. Circadian rhythm biomarker from wearable device data is related to 
+concurrent antidepressant treatment response. npj Digit. Med. 6(1), 81. https://doi.org/10.1038/s41746-023-00827-6 (2023).
+ 75. Dai, F . et al. Lack of association between pretreatment glutamate/GABA and major depressive disorder treatment response. 
+Transl. Psychiatry 15(1), 71. https://doi.org/10.1038/s41398-025-03292-9 (2025).
+ 76. Narayan, G. A. et al. Does the change in glutamate to GABA ratio correlate with change in depression severity? A randomized, 
+double-blind clinical trial. Mol. Psychiatry 27(9), 3833–3841. https://doi.org/10.1038/s41380-022-01730-4 (2022).
+ 77. Lin, K. et al. Investigating the relationship between hippocampus/dentate gyrus volume and hypothalamus metabolism in 
+participants with major depressive disorder. Sci. Rep. 14(1), 10622. https://doi.org/10.1038/s41598-024-61519-z (2024).
+ 78. Batheja, S. et al. Fatigue in major depression is linked to depression severity, not sleep duration or anterior cingulate cortex 
+neurochemistry. J. Affect. Disord. 121076. https://doi.org/10.1016/j.jad.2025.121076 (2026).
+Scientific Reports |        (2026) 16:10979 11| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+ 79. Donnelly, B. M. et al. Orbitofrontal and striatal metabolism, volume, thickness and structural connectivity in relation to social 
+anhedonia in depression: A multimodal study. Neuroimage Clin. 41, 103553. https://doi.org/10.1016/j.nicl.2023.103553 (2024).
+ 80. Jones, J. S., Goldstein, S. J. & Wang, J. Evaluation of brain structure and metabolism in currently depressed adults with a history 
+of childhood trauma. Transl. Psychiatry 12(1), 392. https://doi.org/10.1038/s41398-022-02153-z (2022).
+ 81. Desikan, R. S. et al. An automated labeling system for subdividing the human cerebral cortex on MRI scans into gyral based 
+regions of interest. Neuroimage 31(3), 968–80. https://doi.org/10.1016/j.neuroimage.2006.01.021 (2006).
+ 82. Iglesias, J. E. et al. A computational atlas of the hippocampal formation using ex vivo, ultra-high resolution MRI: Application to 
+adaptive segmentation of in vivo MRI. Neuroimage https://doi.org/10.1016/j.neuroimage.2015.04.042 (2015).
+ 83. Izquierdo-Garcia, D. et al. An SPM8-based approach for attenuation correction combining segmentation and nonrigid template 
+formation: Application to simultaneous PET/MR brain imaging. J. Nucl. Med. 55(11), 1825–30.  h t t p s : / / d o i . o r g / 1 0 . 2 9 6 7 / j n u m e d . 
+1 1 3 . 1 3 6 3 4 1     (2014).
+ 84. Ladefoged, C. N. et al. A multi-centre evaluation of eleven clinically feasible brain PET/MRI attenuation correction techniques 
+using a large cohort of patients. Neuroimage 147, 346–359. https://doi.org/10.1016/j.neuroimage.2016.12.010 (2017).
+ 85. Pillai, R. L. I. et al. Will imaging individual raphe nuclei in males with major depressive disorder enhance diagnostic sensitivity 
+and specificity?. Depress. Anxiety 35(5), 411–420. https://doi.org/10.1002/da.22721 (2018).
+ 86. Mayberg, H. S. et al. The functional neuroanatomy of the placebo effect. Am. J. Psychiatry 159(5), 728–37.  h t t p s : / / d o i . o r g / 1 0 . 1 1 7 
+6 / a p p i . a j p . 1 5 9 . 5 . 7 2 8     (2002).
+ 87. Pecina, M. et al. Association between placebo-activated neural systems and antidepressant responses: Neurochemistry of placebo 
+effects in Major Depression. JAMA Psychiatry 72(11), 1087–94. https://doi.org/10.1001/jamapsychiatry.2015.1335 (2015).
+ 88. Khan, A., Bhat, A., Kolts, R., Thrase, M. E. & Brown, W . Why has the antidepressant-placebo difference in antidepressant clinical 
+trials diminished over the past three decades? CNS Neurosci. Ther. 16 (4), 217–226.  h t t p s : / / d o i . o r g / 1 0 . 1 1 1 1 / j . 1 7 5 5 - 5 9 4 9 . 2 0 1 0 . 0 0 1 
+5 1 . x     (2010).
+ 89. Kirsch, I. Antidepressants and the placebo effect. Z. Psychol. 222(3), 128–134. https://doi.org/10.1027/2151-2604/a000176 (2014).
+ 90. Walsh, B. T., Seidman, S. N., Sysko, R. & Gould, M. Placebo response in studies of major depression: Variable, substantial, and 
+growing. JAMA 287(14), 1840–7. https://doi.org/10.1001/jama.287.14.1840 (2002).
+ 91. Safety NaF . Waist Circumference and waist-hip ratio: report of a WHO expert consultation. (2011).
+ 92. CDC, Adult, B. M. I. & Categories Updated March 19, Accessed Dec 28, 2024. (2024).  h t t p s :   /  / w w  w . c d  c . g  o v / b  m  i / a d  u  l t - c a l  c u l a  t  o r  
+/ b m  i - c a t e g o  r i e s . h t m l
+ 93. Huang, P . L. A comprehensive definition for metabolic syndrome. Dis. Model. Mech. 2(5–6), 231–7.  h t t p s : / / d o i . o r g / 1 0 . 1 2 4 2 / d m m 
+. 0 0 1 1 8 0     (2009).
+ 94. Song, J. Amygdala activity and amygdala-hippocampus connectivity: Metabolic diseases, dementia, and neuropsychiatric issues. 
+Biomed. Pharmacother. 162, 114647. https://doi.org/10.1016/j.biopha.2023.114647 (2023).
+ 95. Shen, W . et al. Waist circumference correlates with metabolic syndrome indicators better than percentage fat. Obesity 14(4), 
+727–36. https://doi.org/10.1038/oby.2006.83 (2006).
+ 96. Turcato, E. et al. Waist circumference and abdominal sagittal diameter as surrogates of body fat distribution in the elderly: Their 
+relation with cardiovascular risk factors. Int. J. Obes. Relat. Metab. Disord. 24(8), 1005–10. https://doi.org/10.1038/sj.ijo.0801352 
+(2000).
+ 97. Visscher, T. L. et al. A comparison of body mass index, waist-hip ratio and waist circumference as predictors of all-cause mortality 
+among the elderly: The Rotterdam study. Int. J. Obes. Relat. Metab. Disord. 25(11), 1730–5. https://doi.org/10.1038/sj.ijo.0801787 
+(2001).
+ 98. Machado, M., Iskedjian, M., Ruiz, I. & Einarson, T. R. Remission, dropouts, and adverse drug reaction rates in major depressive 
+disorder: A meta-analysis of head-to-head trials. Curr. Med. Res. Opin. 22(9), 1825–37.  h t t p s : / / d o i . o r g / 1 0 . 1 1 8 5 / 0 3 0 0 7 9 9 0 6 X 1 3 2 4 
+1 5     (2006).
+ 99. Kaymaz, N., van Os, J., Loonen, A. J. & Nolen, W . A. Evidence that patients with single versus recurrent depressive episodes are 
+differentially sensitive to treatment discontinuation: A meta-analysis of placebo-controlled randomized trials. J. Clin. Psychiatry 
+69(9), 1423–36. https://doi.org/10.4088/jcp.v69n0910 (2008).
+ 100. van der Wijk, G. et al. One size does not fit all: Notable individual variation in brain activity correlates of antidepressant treatment 
+response. Front. Psychiatry 15, 1358018. https://doi.org/10.3389/fpsyt.2024.1358018 (2024).
+ 101. Shao, J. et al. Capturing the individual deviations from normative models of brain structure for depression diagnosis and 
+treatment. Biol. Psychiatry 95(5), 403–413. https://doi.org/10.1016/j.biopsych.2023.08.005 (2024).
+ 102. Preskorn, S. H. Prediction of individual response to antidepressants and antipsychotics: An integrated concept. Dialogues Clin. 
+Neurosci. 16(4), 545–54. https://doi.org/10.31887/DCNS.2014.16.4/spreskorn (2014).
+ 103. Kariis, H. M. et al. Genetic influences on antidepressant side effects: A CYP2C19 gene variation and polygenic risk study in the 
+Estonian biobank. Eur. J. Hum. Genet. 33(10), 1376–1385. https://doi.org/10.1038/s41431-025-01894-x (2025).
+ 104. Tang, H. et al. Association of psychosocial factors and biological pathways identified from rare-variant analysis with longitudinal 
+trajectories of treatment response in major depressive disorder. BMC Psychiatry 25(1), 505.  h t t p s : / / d o i . o r g / 1 0 . 1 1 8 6 / s 1 2 8 8 8 - 0 2 5 - 0 
+6 8 9 5 - 0     (2025).
+ 105. Bosworth, H. B., Voils, C. I., Potter, G. G. & Steffens, D. C. The effects of antidepressant medication adherence as well as 
+psychosocial and clinical factors on depression outcome among older adults. Int. J. Geriatr. Psychiatry 23(2), 129–34.  h t t p s : / / d o i . 
+o r g / 1 0 . 1 0 0 2 / g p s . 1 8 5 2     (2008).
+Acknowledgements
+We acknowledge the support from the Biostatistical Consulting Core at the School of Medicine, Stony Brook 
+University. We would also like to thank the clinical team, integral to participant coordination, screening and 
+symptom scale rating: Juhayer Alam, Kate Bartolotta, Dr. Y ashar Y ousefzadeh Fard, Michala Godstrey, Qurat-ul-
+ain Gulamhussein, Nichole Hoehn, Dan Holzmacher, Dr. Sridhar Kadiyala, Dr. Laura Kunkel, Dr. Lucian Manu, 
+Colleen Oliva, Jennifer Rubinstein, Nehal Vadhan.
+Author contributions
+CD and RVP received funding for the study and conducted the study. CD and KL wrote the article. KH and JY 
+performed the statistical analysis. VR assisted with writing the introduction.
+Funding
+This work was supported by the National Institute of Mental Health (R01MH104512); the Brain & Behavior 
+Foundation; The Dana Foundation; and The New Y ork State Faculty Development Grant.
+Scientific Reports |        (2026) 16:10979 12| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/
+Declarations
+Competing interests
+The authors declare no competing interests.
+Additional information
+Correspondence and requests for materials should be addressed to K.L.
+Reprints and permissions information is available at www.nature.com/reprints.
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give 
+appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and 
+indicate if changes were made. The images or other third party material in this article are included in the article’s 
+Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included 
+in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or 
+exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy 
+of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+This is a U.S. Government work and not under copyright protection in the US; foreign copyright protection 
+may apply 2026 
+Scientific Reports |        (2026) 16:10979 13| https://doi.org/10.1038/s41598-026-43078-7
+www.nature.com/scientificreports/

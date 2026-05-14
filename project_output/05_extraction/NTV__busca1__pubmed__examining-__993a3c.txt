@@ -1,0 +1,1618 @@
+CONSORT-EHEALTH (V 1.6.1) -
+Submission/Publication Form
+The CONSORT-EHEALTH checklist is intended for authors of randomized trials evaluating 
+web-based and Internet-based applications/interventions, including mobile interventions, 
+electronic games (incl multiplayer games), social media, certain telehealth applications, 
+and other interactive and/or networked electronic applications. Some of the items (e.g. all 
+subitems under item 5 - description of the intervention) may also be applicable for other 
+study designs.
+The goal of the CONSORT EHEALTH checklist and guideline is to be 
+a) a guide for reporting for authors of RCTs, 
+b) to form a basis for appraisal of an ehealth trial (in terms of validity)
+CONSORT-EHEALTH items/subitems are MANDATORY reporting items for studies 
+published in the Journal of Medical Internet Research and other journals / scientific 
+societies endorsing the checklist.
+Items numbered 1., 2., 3., 4a., 4b etc are original CONSORT or CONSORT-NPT (non-
+pharmacologic treatment) items. 
+Items with Roman numerals (i., ii, iii, iv etc.) are CONSORT-EHEALTH 
+extensions/clarifications.
+As the CONSORT-EHEALTH checklist is still considered in a formative stage, we would ask 
+that you also RATE ON A SCALE OF 1-5 how important/useful you feel each item is FOR 
+THE PURPOSE OF THE CHECKLIST and reporting guideline (optional).
+Mandatory reporting items are marked with a red *. 
+In the textboxes, either copy & paste the relevant sections from your manuscript into this 
+form - please include any quotes from your manuscript in QUOTATION MARKS, 
+or answer directly by providing additional information not in the manuscript, or elaborating 
+on why the item was not relevant for this study. 
+YOUR ANSWERS WILL BE PUBLISHED AS  A SUPPLEMENTARY FILE TO YOUR 
+PUBLICATION IN JMIR AND ARE CONSIDERED PART OF YOUR PUBLICATION (IF 
+ACCEPTED). 
+Please fill in these questions diligently. Information will not be copyedited, so please use 
+proper spelling and grammar, use correct capitalization, and avoid abbreviations.
+DO NOT FORGET TO SAVE AS PDF _AND_ CLICK THE SUBMIT BUTTON SO YOUR 
+ANSWERS ARE IN OUR DATABASE !!!
+Citation Suggestion (if you append the pdf as Appendix we suggest to cite this paper in the 
+caption):
+Eysenbach G, CONSORT-EHEALTH Group
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 1/64
+CONSORT-EHEALTH: Improving and Standardizing Evaluation Reports of Web-based and 
+Mobile Health Interventions
+J Med Internet Res 2011;13(4):e126
+URL: http://www.jmir.org/2011/4/e126/
+doi: 10.2196/jmir.1923
+PMID: 22209829
+hannahecabre@gmail.com Switch account
+Not shared
+Draft saved
+* Indicates required question
+Your name*
+First Last
+Hannah Cabre
+Primary Aﬃliation (short), City, Country*
+University of Toronto, Toronto, Canada
+Pennington Biomedical Research Center, Baton
+Your e-mail address*
+abc@gmail.com
+hannah.cabre@pbrc.edu
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 2/64
+Title of your manuscript*
+Provide the (draft) title of your manuscript.
+Examining the Impact of a Co-Developed Multicomponent Mobile e-Health Lifestyle 
+Intervention on Physical Activity and its Association with Gestational Weight Gain in 
+Underserved Women: A State-Wide Randomized Controlled Trial
+Name of your App/Software/Intervention*
+If there is a short and a long/alternate name, write the short name first and add the long
+name in brackets.
+SmartMoms in WIC
+Evaluated Version (if any)
+e.g. "V1",  "Release 2017-03-01", "Version 2.0.27913"
+Your answer
+Language(s)*
+What language is the intervention/app in? If multiple languages are available, separate by
+comma (e.g. "English, French")
+English 
+URL of your Intervention Website or App
+e.g. a direct link to the mobile app on app in appstore (itunes, Google Play), or URL of the
+website. If the intervention is a DVD or hardware, you can also link to an Amazon page.
+Your answer
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 3/64
+access is free and open
+access only for special usergroups, not open
+access is open to everyone, but requires payment/subscription/in-app purchases
+app/intervention no longer accessible
+Other:
+URL of an image/screenshot (optional)
+Your answer
+Accessibility*
+Can an enduser access the intervention presently?
+Primary Medical Indication/Disease/Condition*
+e.g. "Stress", "Diabetes", or define the target group in brackets after the condition, e.g.
+"Autism (Parents of children with)", "Alzheimers (Informal Caregivers of)"
+Gestational Weight Gain
+Primary Outcomes measured in trial*
+comma-separated list of primary outcomes reported in the trial
+Gestational Weight Gain
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 4/64
+Approximately Daily
+Approximately Weekly
+Approximately Monthly
+Approximately Yearly
+"as needed"
+Other:
+Secondary/other outcomes
+Are there any other outcomes the intervention is expected to affect?
+Physical Activity, Sedentary Time 
+Recommended "Dose"*
+What do the instructions for users say on how often the app should be used?
+There was no app but the intervention was delivered remotely from a m
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 5/64
+unknown / not evaluated
+0-10%
+11-20%
+21-30%
+31-40%
+41-50%
+51-60%
+61-70%
+71%-80%
+81-90%
+91-100%
+Other:
+yes: all primary outcomes were significantly better in intervention group vs control
+partly: SOME primary outcomes were significantly better in intervention group vs 
+control
+no statistically significant difference between control and intervention
+potentially harmful: control was significantly better than intervention in one or more 
+outcomes
+inconclusive: more research is needed
+Other:
+Approx. Percentage of Users (starters) still using the app as recommended after
+3 months
+*
+Overall, was the app/intervention effective?*
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 6/64
+not submitted yet - in early draft status
+not submitted yet - in late draft status, just before submission
+submitted to a journal but not reviewed yet
+submitted to a journal and after receiving initial reviewer comments
+submitted to a journal and accepted, but not published yet
+published
+Other:
+not submitted yet / unclear where I will submit this
+Journal of Medical Internet Research (JMIR)
+JMIR mHealth and UHealth
+JMIR Serious Games
+JMIR Mental Health
+JMIR Public Health
+JMIR Formative Research
+Other JMIR sister journal
+Other:
+Article Preparation Status/Stage*
+At which stage in your article preparation are you currently (at the time you fill in this form)
+Journal*
+ If you already know where you will submit this paper (or if it is already submitted), please
+provide the journal name (if it is not JMIR, provide the journal name under "other")
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 7/64
+Pilot/feasibility
+Fully powered
+no ms number (yet) / not (yet) submitted to / published in JMIR
+Other:
+TITLE AND ABSTRACT
+1a) TITLE: Identiﬁcation as a randomized trial in the title
+yes
+Other:
+Is this a full powered effectiveness trial or a pilot/feasibility trial?*
+Manuscript tracking number*
+If this is a JMIR submission, please provide the manuscript tracking number under "other"
+(The ms tracking number can be found in the submission acknowledgement email, or
+when you login as author in JMIR. If the paper is already published in JMIR, then the ms
+tracking number is the four-digit number at the end of the DOI, to be found at the bottom of
+each published article in JMIR)
+73962
+1a) Does your paper address CONSORT item 1a?*
+I.e does the title contain the phrase "Randomized Controlled Trial"? (if not, explain the
+reason under "other")
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 8/64
+subitem not at all important
+1 2 3 4 5
+essential
+subitem not at all important
+1 2 3 4 5
+essential
+1a-i) Identify the mode of delivery in the title
+Identify the mode of delivery. Preferably use “web-based” and/or “mobile” and/or
+“electronic game” in the title. Avoid ambiguous terms like “online”, “virtual”, “interactive”.
+Use “Internet-based” only if Intervention includes non-web-based Internet components (e.g.
+email), use “computer-based” or “electronic” only if offline products are used. Use “virtual”
+only in the context of “virtual reality” (3-D worlds). Use “online” only in the context of “online
+support groups”. Complement or substitute product names with broader terms for the
+class of products (such as “mobile” or “smart phone” instead of “iphone”), especially if the
+application runs on different platforms.
+Clear selection
+Does your paper address subitem 1a-i?*
+Copy and paste relevant sections from manuscript title (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Multicomponent Mobile e-Health Lifestyle Intervention" 
+1a-ii) Non-web-based components or important co-interventions in title
+Mention non-web-based components or important co-interventions in title, if any (e.g.,
+“with telephone support”).
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2Z… 9/64
+subitem not at all important
+1 2 3 4 5
+essential
+1b) ABSTRACT: Structured summary of trial design, methods, results, and
+conclusions
+NPT extension: Description of experimental treatment, comparator, care providers, centers, 
+and blinding status.
+Does your paper address subitem 1a-ii?
+Copy and paste relevant sections from manuscript title (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+The intervention was delivered by mobile phone but there were in person outcome clinic 
+visits
+1a-iii) Primary condition or target group in the title
+Mention primary condition or target group in the title, if any (e.g., “for children with Type I
+Diabetes”) Example: A Web-based and Mobile Intervention with Telephone Support for
+Children with Type I Diabetes: Randomized Controlled Trial
+Clear selection
+Does your paper address subitem 1a-iii?*
+Copy and paste relevant sections from manuscript title (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Underserved Women" is the target group in the title
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 10/64
+subitem not at all important
+1 2 3 4 5
+essential
+subitem not at all important
+1 2 3 4 5
+essential
+1b-i) Key features/functionalities/components of the intervention and comparator
+in the METHODS section of the ABSTRACT
+Mention key features/functionalities/components of the intervention and comparator in
+the abstract. If possible, also mention theories and principles used for designing the site.
+Keep in mind the needs of systematic reviewers and indexers by including important
+synonyms. (Note: Only report in the abstract what the main paper is reporting. If this
+information is missing from the main body of text, consider adding it)
+Clear selection
+Does your paper address subitem 1b-i?*
+Copy and paste relevant sections from the manuscript abstract (include quotes in
+quotation marks "like this"  to indicate direct quotes from your manuscript), or elaborate on
+this item by providing additional information not in the ms, or briefly explain why the item is
+not applicable/relevant for your study
+"The multicomponent mobile intervention included daily weighing, step tracking with an 
+activity monitor, physical activity and diet counseling, weekly exercise videos with study-
+provided equipment, health coach interactions, and social support via a private Facebook 
+group." 
+1b-ii) Level of human involvement in the METHODS section of the ABSTRACT
+Clarify the level of human involvement in the abstract, e.g., use phrases like “fully
+automated” vs. “therapist/nurse/care provider/physician-assisted” (mention number and
+expertise of providers involved, if any). (Note: Only report in the abstract what the main
+paper is reporting. If this information is missing from the main body of text, consider
+adding it)
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 11/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 1b-ii?
+Copy and paste relevant sections from the manuscript abstract (include quotes in
+quotation marks "like this"  to indicate direct quotes from your manuscript), or elaborate on
+this item by providing additional information not in the ms, or briefly explain why the item is
+not applicable/relevant for your study
+"health coach interactions"
+1b-iii) Open vs. closed, web-based (self-assessment) vs. face-to-face assessments
+in the METHODS section of the ABSTRACT
+Mention how participants were recruited (online vs. offline), e.g., from an open access
+website or from a clinic or a closed online user group (closed usergroup trial), and clarify if
+this was a purely web-based trial, or there were face-to-face components (as part of the
+intervention or for assessment).  Clearly say if outcomes were self-assessed through
+questionnaires (as common in web-based trials). Note: In traditional offline trials, an open
+trial (open-label trial) is a type of clinical trial in which both the researchers and
+participants know which treatment is being administered. To avoid confusion, use
+“blinded” or “unblinded” to indicated the level of blinding instead of “open”, as “open” in
+web-based trials usually refers to “open access” (i.e. participants can self-enrol). (Note:
+Only report in the abstract what the main paper is reporting. If this information is missing
+from the main body of text, consider adding it)
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 12/64
+subitem not at all important
+1 2 3 4 5
+essential 
+Does your paper address subitem 1b-iii?
+Copy and paste relevant sections from the manuscript abstract (include quotes in
+quotation marks "like this"  to indicate direct quotes from your manuscript), or elaborate on
+this item by providing additional information not in the ms, or briefly explain why the item is
+not applicable/relevant for your study
+"351 pregnant women were recruited from the Louisiana Special Supplemental Nutrition 
+program for Women, Infants, and Children (WIC) clinics and were randomly assigned to a 
+multicomponent mobile e-Health intervention for GWG management (N=179) or Usual Care 
+(N=172; standard in-person WIC care) prior to 16 weeks gestation" 
+1b-iv) RESULTS section in abstract must contain use data
+Report number of participants enrolled/assessed in each group, the use/uptake of the
+intervention (e.g., attrition/adherence metrics, use over time, number of logins etc.), in
+addition to primary/secondary outcomes. (Note: Only report in the abstract what the main
+paper is reporting. If this information is missing from the main body of text, consider
+adding it)
+Clear selection
+Does your paper address subitem 1b-iv?
+Copy and paste relevant sections from the manuscript abstract (include quotes in
+quotation marks "like this"  to indicate direct quotes from your manuscript), or elaborate on
+this item by providing additional information not in the ms, or briefly explain why the item is
+not applicable/relevant for your study
+"351 pregnant women were recruited from the Louisiana Special Supplemental Nutrition 
+program for Women, Infants, and Children (WIC) clinics and were randomly assigned to a 
+multicomponent mobile e-Health intervention for GWG management (N=179) or Usual Care 
+(N=172; standard in-person WIC care) prior to 16 weeks gestation."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 13/64
+subitem not at all important
+1 2 3 4 5
+essential
+INTRODUCTION
+2a) In INTRODUCTION: Scientiﬁc background and explanation of rationale
+1b-v) CONCLUSIONS/DISCUSSION in abstract for negative trials
+Conclusions/Discussions in abstract for negative trials: Discuss the primary outcome - if
+the trial is negative (primary outcome not changed), and the intervention was not used,
+discuss whether negative results are attributable to lack of uptake and discuss reasons.
+(Note: Only report in the abstract what the main paper is reporting. If this information is
+missing from the main body of text, consider adding it)
+Clear selection
+Does your paper address subitem 1b-v?
+Copy and paste relevant sections from the manuscript abstract (include quotes in
+quotation marks "like this"  to indicate direct quotes from your manuscript), or elaborate on
+this item by providing additional information not in the ms, or briefly explain why the item is
+not applicable/relevant for your study
+"A decrease in physical activity duration was observed in both groups across pregnancy. The 
+Intervention Group reported an increase in sports participation across pregnancy compared 
+to the Usual Care Group (adjusted effect estimate [95% confidence interval]: +4 MET-
+hours/week [2; 7], p=0.002). There were no associations between physical activity or 
+sedentary time measures and GWG." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 14/64
+subitem not at all important
+1 2 3 4 5
+essential
+subitem not at all important
+1 2 3 4 5
+essential
+2a-i) Problem and the type of system/solution
+Describe the problem and the type of system/solution that is object of the study: intended
+as stand-alone intervention vs. incorporated in broader health care program? Intended for a
+particular patient population? Goals of the intervention, e.g., being more cost-effective to
+other interventions, replace or complement other solutions? (Note: Details about the
+intervention are provided in “Methods” under 5)
+Clear selection
+Does your paper address subitem 2a-i?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Yes, this is addressed in the introduction
+2a-ii) Scientiﬁc background, rationale: What is known about the (type of) system
+Scientific background, rationale: What is known about the (type of) system that is the
+object of the study (be sure to discuss the use of similar systems for other
+conditions/diagnoses, if appropiate), motivation for the study, i.e. what are the reasons for
+and what is the context for this specific study, from which stakeholder viewpoint is the
+study performed, potential impact of findings [2]. Briefly justify the choice of the
+comparator.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 15/64
+2b) In INTRODUCTION: Speciﬁc objectives or hypotheses
+METHODS
+3a) Description of trial design (such as parallel, factorial) including allocation ratio
+Does your paper address subitem 2a-ii?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Yes, this is addressed in the introduction
+Does your paper address CONSORT subitem 2b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Given the known health benefits of engaging in regular physical activity and decreasing 
+sedentary time, the objective of this pre-specified secondary analysis was to 1) examine the 
+impact of this pragmatic, multicomponent lifestyle intervention on physical activity and 
+sedentary time, and 2) explore associations between changes in physical activity and 
+sedentary time and GWG."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 16/64
+3b) Important changes to methods after trial commencement (such as eligibility
+criteria), with reasons
+Does your paper address CONSORT subitem 3a?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"This is a secondary analysis of a randomized controlled trial in pregnant women enrolled in 
+Louisiana WIC that was designed to test the effectiveness of a remotely delivered behavior 
+modification program to promote appropriate weight gain during pregnancy as 
+recommended by the 2009 National Academy of Medicine (NAM) GWG per week guidelines 
+(NCT04028843)."
+Does your paper address CONSORT subitem 3b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The COVID-19 pandemic caused a five-month recruitment pause. To meet the December 
+2023 enrollment deadline, investigators adjusted the sample size to detect a 16% difference 
+in appropriate weight gain with 80% power, requiring at least 330 participants while 
+maintaining power for secondary outcomes and BMI subgroup analyses." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 17/64
+subitem not at all important
+1 2 3 4 5
+essential
+4a) Eligibility criteria for participants
+3b-i) Bug ﬁxes, Downtimes, Content Changes
+Bug fixes, Downtimes, Content Changes: ehealth systems are often dynamic systems. A
+description of changes to methods therefore also includes important changes made on
+the intervention or comparator during the trial (e.g., major bug fixes or changes in the
+functionality or content) (5-iii) and other “unexpected events” that may have influenced
+study design such as staff changes, system failures/downtimes, etc. [2].
+Clear selection
+Does your paper address subitem 3b-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Not applicable to the study. We did not use an app. 
+Does your paper address CONSORT subitem 4a?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+This information is located under the "participants" section of the manuscript
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 18/64
+subitem not at all important
+1 2 3 4 5
+essential
+subitem not at all important
+1 2 3 4 5
+essential
+4a-i) Computer / Internet literacy
+Computer / Internet literacy is often an implicit “de facto” eligibility criterion - this should be
+explicitly clarified.
+Clear selection
+Does your paper address subitem 4a-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Pregnant women receiving WIC benefits who owned a smartphone with internet access 
+were introduced to the trial in-clinic or via phone or text by the clinic study staff." 
+4a-ii) Open vs. closed, web-based vs. face-to-face assessments:
+Open vs. closed, web-based vs. face-to-face assessments: Mention how participants were
+recruited (online vs. offline), e.g., from an open access website or from a clinic, and clarify
+if this was a purely web-based trial, or there were face-to-face components (as part of the
+intervention or for assessment), i.e., to what degree got the study team to know the
+participant. In online-only trials, clarify if participants were quasi-anonymous and whether
+having multiple identities was possible or whether technical or logistical measures (e.g.,
+cookies, email confirmation, phone calls) were used to detect/prevent these.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 19/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 4a-ii?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Pregnant women receiving WIC benefits who owned a smartphone with internet access 
+were introduced to the trial in-clinic or via phone or text by the clinic study staff."
+4a-iii) Information giving during recruitment
+Information given during recruitment. Specify how participants were briefed for
+recruitment and in the informed consent procedures (e.g., publish the informed consent
+documentation as appendix, see also item X26), as this information may have an effect on
+user self-selection, user expectation and may also bias results.
+Clear selection
+Does your paper address subitem 4a-iii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Interested participants participated in a phone screening call to receive more information 
+about the study and be assessed for eligibility. If participants wished to proceed, an in-
+person screening visit was scheduled by the clinic staff to review the study consent form 
+and confirm eligibility. Participants were randomized (1:1, parallel-arm) by their assigned 
+health coach after the completion of the first outcome visit to either the Healthy Beginnings 
+mobile e-health intervention in addition to WIC services (Intervention Group) or usual WIC 
+Nutrition only (Usual Care Group), with randomization stratified by body mass index (BMI: 
+normal weight, overweight, obesity) and Louisiana Department of Health (LDH) region."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 20/64
+4b) Settings and locations where the data were collected
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address CONSORT subitem 4b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"31 WIC clinics across Louisiana"
+4b-i) Report if outcomes were (self-)assessed through online questionnaires
+Clearly report if outcomes were (self-)assessed through online questionnaires (as
+common in web-based trials) or otherwise.
+Clear selection
+Does your paper address subitem 4b-i?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Participants self-monitored their body weight daily on a cellular network connected scale 
+and their physical activity data with an activity tracker (Fitbit). Participants were contacted 
+weekly by a health coach for one-on-one virtual check-ins though an online messaging 
+platform where participants received personalized feedback on health behaviors related to 
+physical activity and diet. Additionally, social interactions were encouraged in a private 
+Facebook group where tailored videos promoting evidence-based behavioral habits were 
+posted."
+"Participant-reported physical activity and sedentary time was collected with the PPAQ."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 21/64
+subitem not at all important
+1 2 3 4 5
+essential
+5) The interventions for each group with suﬃcient details to allow replication,
+including how and when they were actually administered
+subitem not at all important
+1 2 3 4 5
+essential 
+4b-ii) Report how institutional aﬃliations are displayed
+Report how institutional affiliations are displayed to potential participants [on ehealth
+media], as affiliations with prestigious hospitals or universities may affect volunteer rates,
+use, and reactions with regards to an intervention.(Not a required item – describe only if
+this may bias results)
+Clear selection
+Does your paper address subitem 4b-ii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"All marketing materials demonstrated affiliation with Pennington Biomedical Research 
+Center and WIC."
+5-i) Mention names, credential, aﬃliations of the developers, sponsors, and owners
+Mention names, credential, affiliations of the developers, sponsors, and owners [6] (if
+authors/evaluators are owners or developer of the software, this needs to be declared in a
+“Conflict of interest” section or mentioned elsewhere in the manuscript).
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 22/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 5-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+This is not applicable to the current study.
+5-ii) Describe the history/development process
+Describe the history/development process of the application and previous formative
+evaluations (e.g., focus groups, usability testing), as these will have an impact on
+adoption/use rates and help with interpreting results.
+Clear selection
+Does your paper address subitem 5-ii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+This was discussed in the protocol paper and the primary outcome manuscript. "A detailed 
+report of the study design detailing how the study was co-developed with community 
+stakeholders and CONSORT diagram have previously been described."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 23/64
+subitem not at all important
+1 2 3 4 5
+essential
+subitem not at all important
+1 2 3 4 5
+essential
+5-iii) Revisions and updating
+Revisions and updating. Clearly mention the date and/or version number of the
+application/intervention (and comparator, if applicable) evaluated, or describe whether the
+intervention underwent major changes during the evaluation process, or whether the
+development and/or content was “frozen” during the trial. Describe dynamic components
+such as news feeds or changing content which may have an impact on the replicability of
+the intervention (for unexpected events see item 3b).
+Clear selection
+Does your paper address subitem 5-iii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Not applicable to the present trial
+5-iv) Quality assurance methods
+Provide information on quality assurance methods to ensure accuracy and quality of
+information provided [1], if applicable.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 24/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 5-iv?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Quality assurance methods included a data safety and monitoring plan, double data entry 
+for outcomes, chart auditing, and regular checks for missing data."
+5-v) Ensure replicability by publishing the source code, and/or providing
+screenshots/screen-capture video, and/or providing ﬂowcharts of the algorithms
+used
+Ensure replicability by publishing the source code, and/or providing screenshots/screen-
+capture video, and/or providing flowcharts of the algorithms used. Replicability (i.e., other
+researchers should in principle be able to replicate the study) is a hallmark of scientific
+reporting.
+Clear selection
+Does your paper address subitem 5-v?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Detailed information is provided in the published protocol paper in JMIR doi: 10.2196/18211
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 25/64
+subitem not at all important
+1 2 3 4 5
+essential
+subitem not at all important
+1 2 3 4 5
+essential
+5-vi) Digital preservation
+Digital preservation: Provide the URL of the application, but as the intervention is likely to
+change or disappear over the course of the years; also make sure the intervention is
+archived (Internet Archive, webcitation.org, and/or publishing the source code or
+screenshots/videos alongside the article). As pages behind login screens cannot be
+archived, consider creating demo pages which are accessible without login.
+Clear selection
+Does your paper address subitem 5-vi?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Not applicable to the present trial
+5-vii) Access
+Access: Describe how participants accessed the application, in what setting/context, if
+they had to pay (or were paid) or not, whether they had to be a member of specific group. If
+known, describe how participants obtained “access to the platform and Internet” [1]. To
+ensure access for editors/reviewers/readers, consider to provide a “backdoor” login
+account or demo mode for reviewers/readers to explore the application (also important for
+archiving purposes, see vi).
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 26/64
+Does your paper address subitem 5-vii?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"In brief, the Intervention Group received an intensive mobile e-health behavior modification 
+program that targeted healthy GWG. Participants self-monitored their body weight daily on a 
+cellular network connected scale and their physical activity data with an activity tracker 
+(Fitbit). Participants were contacted weekly by a health coach for one-on-one virtual check-
+ins though an online messaging platform where participants received personalized 
+feedback on health behaviors related to physical activity and diet. Additionally, social 
+interactions were encouraged in a private Facebook group where tailored videos promoting 
+evidence-based behavioral habits were posted. Participants received a weekly ‘exercise of 
+the week’ clip within the closed Facebook group, and access to eight live exercise sessions 
+that featured pregnant women with likeness to the participant population. Exercise videos 
+featured exercise equipment (yoga mats, dumbbells, resistance bands) that was provided to 
+the participants upon enrollment into the study. Specifically, the physical activity component 
+of the intervention promoted moderate-intensity physical activity of 150 minutes per week, 
+as recommended during pregnancy. The focus of the physical activity component was to 
+reduce sedentary time through increasing lifestyle activities (e.g., reaching 5,000-10,000 
+steps per day), such as taking the stairs instead of the elevator, actively commuting (e.g., 
+walking or cycling) whenever possible, and replacing sedentary activities with more active 
+options. Health coach feedback was individually tailored to each participants’ environment 
+and goals. Physical activity data derived from Fitbit and daily weights derived from the 
+smart scaler were monitored ~weekly by the participants’ health coaches." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 27/64
+subitem not at all important
+1 2 3 4 5
+essential
+5-viii) Mode of delivery, features/functionalities/components of the intervention
+and comparator, and the theoretical framework
+Describe mode of delivery, features/functionalities/components of the intervention and
+comparator, and the theoretical framework [6] used to design them (instructional strategy
+[1], behaviour change techniques, persuasive features, etc., see e.g., [7, 8] for terminology).
+This includes an in-depth description of the content (including where it is coming from and
+who developed it) [1],” whether [and how] it is tailored to individual circumstances and
+allows users to track their progress and receive feedback” [6]. This also includes a
+description of communication delivery channels and – if computer-mediated
+communication is a component – whether communication was synchronous or
+asynchronous [6]. It also includes information on presentation strategies [1], including
+page design principles, average amount of text on pages, presence of hyperlinks to other
+resources, etc. [1].
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 28/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 5-viii?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"In brief, the Intervention Group received an intensive mobile e-health behavior modification 
+program that targeted healthy GWG. Participants self-monitored their body weight daily on a 
+cellular network connected scale and their physical activity data with an activity tracker 
+(Fitbit). Participants were contacted weekly by a health coach for one-on-one virtual check-
+ins though an online messaging platform where participants received personalized 
+feedback on health behaviors related to physical activity and diet. Additionally, social 
+interactions were encouraged in a private Facebook group where tailored videos promoting 
+evidence-based behavioral habits were posted. Participants received a weekly ‘exercise of 
+the week’ clip within the closed Facebook group, and access to eight live exercise sessions 
+that featured pregnant women with likeness to the participant population. Exercise videos 
+featured exercise equipment (yoga mats, dumbbells, resistance bands) that was provided to 
+the participants upon enrollment into the study. Specifically, the physical activity component 
+of the intervention promoted moderate-intensity physical activity of 150 minutes per week, 
+as recommended during pregnancy. The focus of the physical activity component was to 
+reduce sedentary time through increasing lifestyle activities (e.g., reaching 5,000-10,000 
+steps per day), such as taking the stairs instead of the elevator, actively commuting (e.g., 
+walking or cycling) whenever possible, and replacing sedentary activities with more active 
+options. Health coach feedback was individually tailored to each participants’ environment 
+and goals. Physical activity data derived from Fitbit and daily weights derived from the 
+smart scaler were monitored ~weekly by the participants’ health coaches." 
+5-ix) Describe use parameters
+Describe use parameters (e.g., intended “doses” and optimal timing for use). Clarify what
+instructions or recommendations were given to the user, e.g., regarding timing, frequency,
+heaviness of use, if any, or was the intervention used ad libitum.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 29/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 5-ix?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"In brief, the Intervention Group received an intensive mobile e-health behavior modification 
+program that targeted healthy GWG. Participants self-monitored their body weight daily on a 
+cellular network connected scale and their physical activity data with an activity tracker 
+(Fitbit). Participants were contacted weekly by a health coach for one-on-one virtual on an 
+online messaging platform where they received personalized feedback on health behaviors 
+related to physical activity and diet. Additionally, social interactions were encouraged in a 
+private Facebook group where tailored videos promoting evidence-based behavioral habits 
+were posted. Participants received a weekly ‘exercise of the week’ clip within the closed 
+Facebook group, and access to eight live exercise sessions that featured pregnant women 
+with likeness to the participant population. Exercise videos featured exercise equipment 
+(yoga mats, dumbbells, resistance bands) that was provided to the participants upon 
+enrollment into the study. Specifically, the physical activity component of the intervention 
+promoted moderate-intensity physical activity of 150 minutes per week, as recommended 
+during pregnancy. The focus of the physical activity component was to reduce sedentary 
+time through increasing lifestyle activities (e.g., reaching 5,000-10,000 steps per day), such 
+as taking the stairs instead of the elevator, actively commuting (e.g., walking or cycling) 
+whenever possible, and replacing sedentary activities with more active options. Health 
+coach feedback was individually tailored to each participants’ environment and goals. 
+Physical activity data derived from Fitbit were monitored ~weekly by the participants’ health 
+coaches." 
+5-x) Clarify the level of human involvement
+Clarify the level of human involvement (care providers or health professionals, also
+technical assistance) in the e-intervention or as co-intervention (detail number and
+expertise of professionals involved, if any, as well as “type of assistance offered, the timing
+and frequency of the support, how it is initiated, and the medium by which the assistance
+is delivered”. It may be necessary to distinguish between the level of human involvement
+required for the trial, and the level of human involvement required for a routine application
+outside of a RCT setting (discuss under item 21 – generalizability).
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 30/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 5-x?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Both  groups received all aspects of the Louisiana WIC program. However, health 
+professionals at WIC did not aid with the mobile e-health intervention offered by the study. 
+The mobile e-health intervention was provided in addition to standard of care from WIC."
+5-xi) Report any prompts/reminders used
+Report any prompts/reminders used: Clarify if there were prompts (letters, emails, phone
+calls, SMS) to use the application, what triggered them, frequency etc. It may be necessary
+to distinguish between the level of prompts/reminders required for the trial, and the level of
+prompts/reminders for a routine application outside of a RCT setting (discuss under item
+21 – generalizability).
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 31/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 5-xi?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Participants self-monitored their body weight daily on a cellular network connected scale 
+and their physical activity data with an activity tracker (Fitbit). Participants were contacted 
+weekly by a health coach for one-on-one virtual on an online messaging platform where they 
+received personalized feedback on health behaviors related to physical activity and diet. 
+Additionally, social interactions were encouraged in a private Facebook group where tailored 
+videos promoting evidence-based behavioral habits were posted. Participants received a 
+weekly ‘exercise of the week’ clip within the closed Facebook group, and access to eight live 
+exercise sessions that featured pregnant women with likeness to the participant 
+population." 
+5-xii) Describe any co-interventions (incl. training/support)
+Describe any co-interventions (incl. training/support): Clearly state any interventions that
+are provided in addition to the targeted eHealth intervention, as ehealth intervention may
+not be designed as stand-alone intervention. This includes training sessions and support
+[1]. It may be necessary to distinguish between the level of training required for the trial,
+and the level of training for a routine application outside of a RCT setting (discuss under
+item 21 – generalizability.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 32/64
+6a) Completely deﬁned pre-speciﬁed primary and secondary outcome measures,
+including how and when they were assessed
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 5-xii?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Health coaches had college degrees in nutrition, kinesiology, or psychology and followed a 
+treatment manual under the supervision of trial investigators. Intervention fidelity was 
+maintained through the manual and weekly case conferences.
+Does your paper address CONSORT subitem 6a?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+This manuscript is a secondary data analysis. The primary paper reports all CONSORT 
+information  https://doi.org/10.1101/2025.01.29.25321347
+6a-i) Online questionnaires: describe if they were validated for online use and apply
+CHERRIES items to describe how the questionnaires were designed/deployed
+If outcomes were obtained through online questionnaires, describe if they were validated
+for online use and apply CHERRIES items to describe how the questionnaires were
+designed/deployed [9].
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 33/64
+subitem not at all important
+1 2 3 4 5
+essential 
+Does your paper address subitem 6a-i?
+Copy and paste relevant sections from manuscript text
+The information is provided under the sub-heading "Movement Context" in the methods 
+section.
+6a-ii) Describe whether and how “use” (including intensity of use/dosage) was
+deﬁned/measured/monitored
+Describe whether and how “use” (including intensity of use/dosage) was
+defined/measured/monitored (logins, logfile analysis, etc.). Use/adoption metrics are
+important process outcomes that should be reported in any ehealth trial.
+Clear selection
+Does your paper address subitem 6a-ii?
+Copy and paste relevant sections from manuscript text
+"Physical activity data derived from Fitbit and daily weights derived from the smart scaler 
+were monitored ~weekly by the participants’ health coaches." 
+"Participants in the Intervention Group demonstrated engagement with the physical activity 
+component of the intervention. Fitbit data were available from 149 (83%) participants in the 
+Intervention Group. Of the 149 participants, more than half (56%) recorded their steps at 
+least 3 days per week, with over 40% recording their step count on more than 5 days per 
+week on average."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 34/64
+subitem not at all important
+1 2 3 4 5
+essential
+6b) Any changes to trial outcomes after the trial commenced, with reasons
+7a) How sample size was determined
+NPT: When applicable, details of whether and how the clustering by care provides or 
+centers was addressed
+6a-iii) Describe whether, how, and when qualitative feedback from participants was
+obtained
+Describe whether, how, and when qualitative feedback from participants was obtained
+(e.g., through emails, feedback forms, interviews, focus groups).
+Clear selection
+Does your paper address subitem 6a-iii?
+Copy and paste relevant sections from manuscript text
+"Participants were contacted weekly by a health coach for one-on-one virtual on an online 
+messaging platform where they received personalized feedback on health behaviors related 
+to physical activity and diet."
+Does your paper address CONSORT subitem 6b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The COVID-19 pandemic caused a five-month recruitment halt. To meet the December 2023 
+enrollment deadline, the overall sample size was adjusted downward as previously 
+described." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 35/64
+subitem not at all important
+1 2 3 4 5
+essential
+7b) When applicable, explanation of any interim analyses and stopping guidelines
+7a-i) Describe whether and how expected attrition was taken into account when
+calculating the sample size
+Describe whether and how expected attrition was taken into account when calculating the
+sample size.
+Clear selection
+Does your paper address subitem 7a-i?
+Copy and paste relevant sections from manuscript title (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The COVID-19 pandemic caused a five-month recruitment halt. To meet the December 2023 
+enrollment deadline, the overall sample size was adjusted downward as previously 
+described."
+Does your paper address CONSORT subitem 7b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Not applicable since this was a secondary analysis 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 36/64
+8a) Method used to generate the random allocation sequence
+NPT: When applicable, how care providers were allocated to each trial group
+8b) Type of randomisation; details of any restriction (such as blocking and block
+size)
+9) Mechanism used to implement the random allocation sequence (such as
+sequentially numbered containers), describing any steps taken to conceal the
+sequence until interventions were assigned
+Does your paper address CONSORT subitem 8a?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The randomization allocation sequence was concealed to intervention staff prior to group 
+assignment and the trial adhered to a single-blind design with clinic staff and health 
+coaches kept separate." 
+Does your paper address CONSORT subitem 8b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Participants were randomized after the completion of the first outcome visit to either the 
+parallel-arm Healthy Beginnings mobile e-health intervention in addition to WIC services 
+(Intervention Group) or usual WIC Nutrition only (Usual Care Group), with randomization 
+stratified by body mass index (BMI: normal weight, overweight, obesity) and Louisiana 
+Department of Health (LDH) region." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 37/64
+10) Who generated the random allocation sequence, who enrolled participants, and
+who assigned participants to interventions
+11a) If done, who was blinded after assignment to interventions (for example,
+participants, care providers, those assessing outcomes) and how
+NPT: Whether or not administering co-interventions were blinded to group assignment
+Does your paper address CONSORT subitem 9?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The randomization allocation sequence was concealed to intervention staff prior to group 
+assignment and the trial adhered to a single-blind design with clinic staff and health 
+coaches kept separate."
+Does your paper address CONSORT subitem 10?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Interested participants participated in a phone screening call to receive more information 
+about the study and be assessed for eligibility. If participants wished to proceed, an in-
+person screening visit was scheduled by the clinic staff to review the study consent form 
+and confirm eligibility. Participants were randomized (1:1, parallel-arm) by their assigned 
+health coach after the completion of the first outcome visit to either the Healthy Beginnings 
+mobile e-health intervention in addition to WIC services (Intervention Group) or usual WIC 
+Nutrition only (Usual Care Group), with randomization stratified by body mass index (BMI: 
+normal weight, overweight, obesity) and Louisiana Department of Health (LDH) region." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 38/64
+subitem not at all important
+1 2 3 4 5
+essential
+subitem not at all important
+1 2 3 4 5
+essential
+11a-i) Specify who was blinded, and who wasn’t
+Specify who was blinded, and who wasn’t. Usually, in web-based trials it is not possible to
+blind the participants [1, 3] (this should be clearly acknowledged), but it may be possible to
+blind outcome assessors, those doing data analysis or those administering co-
+interventions (if any).
+Clear selection
+Does your paper address subitem 11a-i?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The randomization allocation sequence was concealed to intervention staff prior to group 
+assignment and the trial adhered to a single-blind design with clinic staff and health 
+coaches kept separate." 
+11a-ii) Discuss e.g., whether participants knew which intervention was the
+“intervention of interest” and which one was the “comparator”
+Informed consent procedures (4a-ii) can create biases and certain expectations - discuss
+e.g., whether participants knew which intervention was the “intervention of interest” and
+which one was the “comparator”.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 39/64
+11b) If relevant, description of the similarity of interventions
+(this item is usually not relevant for ehealth trials as it refers to similarity of a placebo or 
+sham intervention to a active medication/intervention)
+12a) Statistical methods used to compare groups for primary and secondary
+outcomes
+NPT: When applicable, details of whether and how the clustering by care providers or 
+centers was addressed
+Does your paper address subitem 11a-ii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Participants were informed of the two groups prior to randomization.
+Does your paper address CONSORT subitem 11b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+This information is provided under the "treatment groups" section of the methods.
+Does your paper address CONSORT subitem 12a?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+This information is provided under the "statistical analysis" section of the methods.
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 40/64
+subitem not at all important
+1 2 3 4 5
+essential
+12b) Methods for additional analyses, such as subgroup analyses and adjusted
+analyses
+12a-i) Imputation techniques to deal with attrition / missing values
+Imputation techniques to deal with attrition / missing values: Not all participants will use
+the intervention/comparator as intended and attrition is typically high in ehealth trials.
+Specify how participants who did not use the application or dropped out from the trial were
+treated in the statistical analysis (a complete case analysis is strongly discouraged, and
+simple imputation techniques such as LOCF may also be problematic [4]).
+Clear selection
+Does your paper address subitem 12a-i?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Of the 351 enrolled participants, 7% (N = 25) participants were excluded from this analysis 
+due to missing accelerometry data at both time points (i.e., neither early nor late pregnancy 
+accelerometry was available), and an additional 4% (n = 13) were excluded due to an 
+inadequate number (i.e.,   3) of valid days at either time point. Overall, 89% (n = 313) of 
+participants had ≥  3 valid days for at least one time point, with 84% (n = 294) and 48% (n = 
+168) having at least three valid days at the early and late pregnancy time points, 
+respectively."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 41/64
+X26) REB/IRB Approval and Ethical Considerations [recommended as subheading
+under "Methods"] (not a CONSORT item)
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address CONSORT subitem 12b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+This information is provided under the "statistical analysis" section of the methods.
+X26-i) Comment on ethics committee approval
+Clear selection
+Does your paper address subitem X26-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+The study was monitored by the Institutional Review Boards at Pennington Biomedical 
+Research Center and LDH, and participants provided informed consent prior to study 
+procedures. 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 42/64
+subitem not at all important
+1 2 3 4 5
+essential 
+subitem not at all important
+1 2 3 4 5
+essential 
+x26-ii) Outline informed consent procedures
+Outline informed consent procedures e.g., if consent was obtained offline or online (how?
+Checkbox, etc.?), and what information was provided (see 4a-ii). See [6] for some items to
+be included in informed consent documents.
+Clear selection
+Does your paper address subitem X26-ii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Interested participants participated in a phone screening call to receive more information 
+about the study and be assessed for eligibility. If participants wished to proceed, an in-
+person screening visit was scheduled by the clinic staff to review the study consent form 
+and confirm eligibility." 
+X26-iii) Safety and security procedures
+Safety and security procedures, incl. privacy considerations, and any steps taken to reduce
+the likelihood or detection of harm (e.g., education and training, availability of a hotline)
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 43/64
+RESULTS
+13a) For each group, the numbers of participants who were randomly assigned,
+received intended treatment, and were analysed for the primary outcome
+NPT: The number of care providers or centers performing the intervention in each group 
+and the number of patients treated by each care provider in each center
+13b) For each group, losses and exclusions after randomisation, together with
+reasons
+Does your paper address subitem X26-iii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Not applicable to the present manuscript
+Does your paper address CONSORT subitem 13a?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Information can be found in Table 1. 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 44/64
+subitem not at all important
+1 2 3 4 5
+essential
+14a) Dates deﬁning the periods of recruitment and follow-up
+Does your paper address CONSORT subitem 13b? (NOTE: Preferably, this is
+shown in a CONSORT ﬂow diagram)
+*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Of the 351 enrolled participants, 7% (N = 25) participants were excluded from this analysis 
+due to missing accelerometry data at both time points (i.e., neither early nor late pregnancy 
+accelerometry was available), and an additional 4% (n = 13) were excluded due to an 
+inadequate number (i.e.,   3) of valid days at either time point. Overall, 89% (n = 313) of 
+participants had ≥  3 valid days for at least one time point, with 84% (n = 294) and 48% (n = 
+168) having at least three valid days at the early and late pregnancy time points, 
+respectively."
+13b-i) Attrition diagram
+Strongly recommended: An attrition diagram (e.g., proportion of participants still logging in
+or using the intervention/comparator in each group plotted over time, similar to a survival
+curve) or other figures or tables demonstrating usage/dose/engagement.
+Clear selection
+Does your paper address subitem 13b-i?
+Copy and paste relevant sections from the manuscript or cite the figure number if
+applicable (include quotes in quotation marks "like this"  to indicate direct quotes from
+your manuscript), or elaborate on this item by providing additional information not in the
+ms, or briefly explain why the item is not applicable/relevant for your study
+Attrition can be found in the primary paper. 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 45/64
+subitem not at all important
+1 2 3 4 5
+essential
+14b) Why the trial ended or was stopped (early)
+Does your paper address CONSORT subitem 14a?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Briefly, recruitment took place from July 2019 to December 2023 at 31 WIC clinics across 
+Louisiana, selected by size and location."
+14a-i) Indicate if critical “secular events” fell into the study period
+Indicate if critical “secular events” fell into the study period, e.g., significant changes in
+Internet resources available or “changes in computer hardware or Internet delivery
+resources”
+Clear selection
+Does your paper address subitem 14a-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The COVID-19 pandemic caused a five-month recruitment halt. To meet the December 2023 
+enrollment deadline, the overall sample size was adjusted downward as previously 
+described." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 46/64
+15) A table showing baseline demographic and clinical characteristics for each
+group
+NPT: When applicable, a description of care providers (case volume, qualification, 
+expertise, etc.) and centers (volume) in each group
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address CONSORT subitem 14b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Not applicable to the present trial. 
+Does your paper address CONSORT subitem 15?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Information can be found in Table 1
+15-i) Report demographics associated with digital divide issues
+In ehealth trials it is particularly important to report demographics associated with digital
+divide issues, such as age, education, gender, social-economic status,
+computer/Internet/ehealth literacy of the participants, if known.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 47/64
+16) For each group, number of participants (denominator) included in each
+analysis and whether the analysis was by original assigned groups
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 15-i?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+This information was provided in Table 1 for the current secondary analysis 
+16-i) Report multiple “denominators” and provide deﬁnitions
+Report multiple “denominators” and provide definitions: Report N’s (and effect sizes)
+“across a range of study participation [and use] thresholds” [1], e.g., N exposed, N
+consented, N used more than x times, N used more than y weeks, N participants “used” the
+intervention/comparator at specific pre-defined time points of interest (in absolute and
+relative numbers per group). Always clearly define “use” of the intervention.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 48/64
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 16-i?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Of the 351 enrolled participants, 7% (N = 25) participants were excluded from this analysis 
+due to missing accelerometry data at both time points (i.e., neither early nor late pregnancy 
+accelerometry was available), and an additional 4% (n = 13) were excluded due to an 
+inadequate number (i.e.,   3) of valid days at either time point. Overall, 89% (n = 313) of 
+participants had ≥  3 valid days for at least one time point, with 84% (n = 294) and 48% (n = 
+168) having at least three valid days at the early and late pregnancy time points, 
+respectively."
+16-ii) Primary analysis should be intent-to-treat
+Primary analysis should be intent-to-treat, secondary analyses could include comparing
+only “users”, with the appropriate caveats that this is no longer a randomized sample (see
+18-i).
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 49/64
+17a) For each primary and secondary outcome, results for each group, and the
+estimated effect size and its precision (such as 95% conﬁdence interval)
+Does your paper address subitem 16-ii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Physical activity data were analyzed using a linear mixed model including fixed effects for 
+time (early and late pregnancy) and group (Intervention Group, Usual Care) as well as the 
+interaction, and a random effect for participant. The model was adjusted for BMI category 
+(normal weight, overweight, obesity) at randomization. Model-derived estimated marginal 
+means alongside corresponding 95% confidence intervals as well as within- and between-
+group effect estimates with associated confidence intervals and p-values are reported. The 
+main effect of interest is the between-group effect estimate. Furthermore, the treatment 
+heterogeneity across the different BMI categories was explored via a three-way interaction 
+including time, group, and BMI category, with custom comparisons exploring intervention 
+effects on physical activity within and between BMI categories (Supplemental Table 1)." 
+Does your paper address CONSORT subitem 17a?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Model-derived estimated marginal means alongside corresponding 95% confidence 
+intervals as well as within- and between-group effect estimates with associated confidence 
+intervals and p-values are reported."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 50/64
+subitem not at all important
+1 2 3 4 5
+essential 
+17b) For binary outcomes, presentation of both absolute and relative effect sizes is
+recommended
+17a-i) Presentation of process outcomes such as metrics of use and intensity of
+use
+In addition to primary/secondary (clinical) outcomes, the presentation of process
+outcomes such as metrics of use and intensity of use (dose, exposure) and their
+operational definitions is critical. This does not only refer to metrics of attrition (13-b)
+(often a binary variable), but also to more continuous exposure metrics such as “average
+session length”. These must be accompanied by a technical description how a metric like a
+“session” is defined (e.g., timeout after idle time) [1] (report under item 6a).
+Clear selection
+Does your paper address subitem 17a-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Participants in the Intervention Group demonstrated engagement with the physical activity 
+component of the intervention. Fitbit data were available from 149 (83%) participants in the 
+Intervention Group. Of the 149 participants, more than half (56%) recorded their steps at 
+least 3 days per week, with over 40% recording their step count on more than 5 days per 
+week on average. On average, participants achieved their step goal of 5,000 and 10,000 
+steps per day on 39 ± 26% and 8 ± 13%, respectively, of the days that they recorded steps. 
+Participants took an average of 4560 ± 2168 steps per day across the intervention period, 
+which was consistent between the second (4785 ± 2293) and third (4602 ± 2231) 
+trimesters."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 51/64
+18) Results of any other analyses performed, including subgroup analyses and
+adjusted analyses, distinguishing pre-speciﬁed from exploratory
+Does your paper address CONSORT subitem 17b?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+The present analysis had no statistical testing on binary outcomes.
+Does your paper address CONSORT subitem 18?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"To examine the effect of changes in physical activity on GWG outcomes (study-observed 
+GWG, weekly GWG, and GWG guideline attainment), we used data from all participants 
+collapsed across intervention groups (i.e., independent of randomization assignment). 
+These analyses used a linear model including a fixed effect for the change across the 
+intervention period in both MVPA and inactivity (adjusting for each other in the same model) 
+as measured via Actigraph and adjustments for BMI category at randomization, parity 
+(categorically defined as nulliparous vs non-nulliparous), and gestational age at enrolment. 
+Effects are presented as regression coefficients (study-observed GWG, weekly GWG) or 
+odds ratios (GWG guideline attainment) for each predictor with 95% confidence intervals 
+and corresponding p-values." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 52/64
+subitem not at all important
+1 2 3 4 5
+essential
+19) All important harms or unintended effects in each group
+(for specific guidance see CONSORT for harms)
+18-i) Subgroup analysis of comparing only users
+A subgroup analysis of comparing only users is not uncommon in ehealth trials, but if
+done, it must be stressed that this is a self-selected sample and no longer an unbiased
+sample from a randomized trial (see 16-iii).
+Clear selection
+Does your paper address subitem 18-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Not applicable to the present manuscript.
+Does your paper address CONSORT subitem 19?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+There were no harms or unintended effects in each group
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 53/64
+subitem not at all important
+1 2 3 4 5
+essential
+subitem not at all important
+1 2 3 4 5
+essential
+19-i) Include privacy breaches, technical problems
+Include privacy breaches, technical problems. This does not only include physical “harm” to
+participants, but also incidents such as perceived or real privacy breaches [1], technical
+problems, and other unexpected/unintended incidents. “Unintended effects” also includes
+unintended positive effects [2].
+Clear selection
+Does your paper address subitem 19-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Your answer
+19-ii) Include qualitative feedback from participants or observations from
+staff/researchers
+Include qualitative feedback from participants or observations from staff/researchers, if
+available, on strengths and shortcomings of the application, especially if they point to
+unintended/unexpected effects or uses. This includes (if available) reasons for why people
+did or did not use the application as intended by the developers.
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 54/64
+DISCUSSION
+22) Interpretation consistent with results, balancing beneﬁts and harms, and
+considering other relevant evidence
+NPT: In addition, take into account the choice of the comparator, lack of or partial blinding, 
+and unequal expertise of care providers or centers in each group
+subitem not at all important
+1 2 3 4 5
+essential
+Does your paper address subitem 19-ii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Your answer
+22-i) Restate study questions and summarize the answers suggested by the data,
+starting with primary outcomes and process outcomes (use)
+Restate study questions and summarize the answers suggested by the data, starting with
+primary outcomes and process outcomes (use).
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 55/64
+subitem not at all important
+1 2 3 4 5
+essential
+20) Trial limitations, addressing sources of potential bias, imprecision, and, if
+relevant, multiplicity of analyses
+Does your paper address subitem 22-i?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Results are presented for each outcome variable as "baseline," "change within groups," and 
+Change between groups."
+22-ii) Highlight unanswered new questions, suggest future research
+Highlight unanswered new questions, suggest future research.
+Clear selection
+Does your paper address subitem 22-ii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Our intervention provided items to assist utilization of their existing physical environment 
+(e.g., equipment, home-based exercise videos) and social environment (e.g., Facebook 
+group). However, larger policy, systems, and large-scale environmental factors may be 
+needed to maintain or increase physical activity in economically disadvantaged 
+populations."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 56/64
+subitem not at all important
+1 2 3 4 5
+essential
+21) Generalisability (external validity, applicability) of the trial ﬁndings
+NPT: External validity of the trial findings according to the intervention, comparators, 
+patients, and care providers or centers involved in the trial
+20-i) Typical limitations in ehealth trials
+Typical limitations in ehealth trials: Participants in ehealth trials are rarely blinded. Ehealth
+trials often look at a multiplicity of outcomes, increasing risk for a Type I error. Discuss
+biases due to non-use of the intervention/usability issues, biases through informed
+consent procedures, unexpected events.
+Clear selection
+Does your paper address subitem 20-i?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Yet, our study has limitations related to study conduct, movement behavior assessment, 
+and varying interaction levels with the intervention. First, our study was conducted during 
+the COVID-19 pandemic, which may have negatively influenced physical activity habits in our 
+population. Second, the self-report physical activity method may be biased based on 
+participant perception of their daily activities and their health literacy. However, the use of 
+the Actigraph as a device measure of physical activity strengthens the current methodology, 
+and using self-report and device-based measures is considered the best practice for holistic 
+evaluation of physical activity. Even so, there is no consensus on processing data from 
+wrist-worn devices, definition of valid days, or use of cut-points/threshold considerations, 
+though we used methods and analysis software aligning with previous research."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 57/64
+subitem not at all important
+1 2 3 4 5
+essential
+21-i) Generalizability to other populations
+Generalizability to other populations: In particular, discuss generalizability to a general
+Internet population, outside of a RCT setting, and general patient population, including
+applicability of the study results for other organizations
+Clear selection
+Does your paper address subitem 21-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"Possible reasons we did not see an effect of change in MVPA or movement behaviors on 
+GWG in the present study may be due to greater physical demands from home chores, 
+family responsibilities, and physically intensive jobs, rather than structured exercise, in this 
+population. Additionally, other lifestyle interventions in socioeconomically disadvantaged 
+individuals have cited barriers to success such as unsafe neighborhoods limiting the ability 
+to exercise, time demands of occupation, and lack of access to exercise equipment. Our 
+intervention provided items to assist utilization of their existing physical environment (e.g., 
+equipment, home-based exercise videos) and social environment (e.g., Facebook group). 
+However, larger policy, systems, and large-scale environmental factors may be needed to 
+maintain or increase physical activity in economically disadvantaged populations."
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 58/64
+subitem not at all important
+1 2 3 4 5
+essential
+OTHER INFORMATION
+23) Registration number and name of trial registry
+21-ii) Discuss if there were elements in the RCT that would be different in a routine
+application setting
+Discuss if there were elements in the RCT that would be different in a routine application
+setting (e.g., prompts/reminders, more human involvement, training sessions or other co-
+interventions) and what impact the omission of these elements could have on use,
+adoption, or outcomes if the intervention is applied outside of a RCT setting.
+Clear selection
+Does your paper address subitem 21-ii?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Your answer
+Does your paper address CONSORT subitem 23?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+Clinical Trial Registration: NCT04028843
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 59/64
+24) Where the full trial protocol can be accessed, if available
+25) Sources of funding and other support (such as supply of drugs), role of funders
+X27) Conﬂicts of Interest (not a CONSORT item)
+Does your paper address CONSORT subitem 24?*
+Cite a Multimedia Appendix, other reference, or copy and paste relevant sections from the
+manuscript (include quotes in quotation marks "like this"  to indicate direct quotes from
+your manuscript), or elaborate on this item by providing additional information not in the
+ms, or briefly explain why the item is not applicable/relevant for your study
+Full trial protocol is available in JMIR Research Protocols doi: 10.2196/18211
+Does your paper address CONSORT subitem 25?*
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The authors would like to thank the Louisiana Department of Health, Louisiana Women’s, 
+Infants and Children’s program staff for their support and the participants for their time and 
+effort. This research was supported by funding from the National Institute of Nursing 
+Research (5R01NR017644), the Louisiana/Pennington Nutrition and Obesity Research 
+Center (NORC; P30DK072476), the Louisiana Clinical and Translational Sciences Center 
+(U54 GM104940) and postdoctoral fellowship grants to EWF (F32HD108022), CLK 
+(K99HD107158, P20GM144269), HEC (T32DK064584), and EKW (F32HL176217)." 
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 60/64
+subitem not at all important
+1 2 3 4 5
+essential
+About the CONSORT EHEALTH checklist
+yes, major changes
+yes, minor changes
+no
+X27-i) State the relation of the study team towards the system being evaluated
+In addition to the usual declaration of interests (financial or otherwise), also state the
+relation of the study team towards the system being evaluated, i.e., state if the
+authors/evaluators are distinct from or identical with the developers/sponsors of the
+intervention.
+Clear selection
+Does your paper address subitem X27-i?
+Copy and paste relevant sections from the manuscript (include quotes in quotation marks
+"like this"  to indicate direct quotes from your manuscript), or elaborate on this item by
+providing additional information not in the ms, or briefly explain why the item is not
+applicable/relevant for your study
+"The authors declare no conflicts of interest."
+As a result of using this checklist, did you make changes in your manuscript?*
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 61/64
+yes
+no
+Other:
+yes
+no
+Other:
+What were the most important changes you made as a result of using this
+checklist?
+Added recruitment information
+How much time did you spend on going through the checklist INCLUDING making
+changes in your manuscript
+*
+It took approximately 3 hours
+As a result of using this checklist, do you think your manuscript has improved?*
+Would you like to become involved in the CONSORT EHEALTH group?
+This would involve for example becoming involved in participating in a workshop and
+writing an "Explanation and Elaboration" document
+Clear selection
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 62/64
+STOP - Save this form as PDF before you click submit
+To generate a record that you filled in this form, we recommend to generate a PDF of this 
+page (on a Mac, simply select "print" and then select "print as PDF") before you submit it. 
+When you submit your (revised) paper to JMIR, please upload the PDF as supplementary 
+file. 
+Don't worry if some text in the textboxes is cut off, as we still have the complete 
+information in our database. Thank you!
+Final step: Click submit !
+Click submit so we have your answers in our database! 
+Never submit passwords through Google Forms.
+This content is neither created nor endorsed by Google. - Terms of Service - Privacy Policy
+Does this form look suspicious? Report
+Any other comments or questions on CONSORT EHEALTH
+There should be more information in the author guidelines regarding the CONSORT EHealth 
+requirements. 
+S ubm it Clear form
+ 
+F o r m s
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 63/64
+3/19/25, 2:01 PM CONSORT-EHEALTH (V 1.6.1) - Submission/Publication Form
+https://docs.google.com/forms/d/e/1FAIpQLSfZBSUp1bwOc_OimqcS64RdfIAFvmrTSkZQL2-3O8O9hrL5Sw/viewform?hl=en_US&formkey=dGlKd2… 64/64

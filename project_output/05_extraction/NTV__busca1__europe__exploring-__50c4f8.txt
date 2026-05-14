@@ -1,0 +1,1301 @@
+TYPE Original Research
+PUBLISHED 12 December 2025
+DOI 10.3389/fnut.2025.1689298
+OPEN ACCESS
+EDITED BY
+Aleksandra S. Kristo,
+University of Alabama, United States
+REVIEWED BY
+Soﬁ G. Julien,
+Holy Spirit University of Kaslik, Lebanon
+Pablo Prieto-González,
+Prince Sultan University, Saudi Arabia
+*CORRESPONDENCE
+Ana Zaragoza-Marti
+ana.zaragoza@ua.es
+RECEIVED 20 August 2025
+REVISED 16 November 2025
+ACCEPTED 25 November 2025
+PUBLISHED 12 December 2025
+CITATION
+Martin-Llaguno I, Saval-Calvo M,
+Florez-Martin M, Martin-Manchado L and
+Zaragoza-Marti A (2025) Exploring nutrient
+intake and Mediterranean diet adherence
+across BMI categories in a Spanish adult
+population. Front. Nutr. 12:1689298.
+doi: 10.3389/fnut.2025.1689298
+COPYRIGHT
+© 2025 Martin-Llaguno, Saval-Calvo,
+Florez-Martin, Martin-Manchado and
+Zaragoza-Marti. This is an open-access article
+distributed under the terms of theCreative
+Commons Attribution License (CC BY).T h e
+use, distribution or reproduction in other
+forums is permitted, provided the original
+author(s) and the copyright owner(s) are
+credited and that the original publication in
+this journal is cited, in accordance with
+accepted academic practice. No use,
+distribution or reproduction is permitted
+which does not comply with these terms.
+Exploring nutrient intake and
+Mediterranean diet adherence
+across BMI categories in a
+Spanish adult population
+Iciar Martin-Llaguno1, Marcelo Saval-Calvo2,
+Maria Florez-Martin3, Laura Martin-Manchado4 and
+Ana Zaragoza-Marti4,5*
+1Department of Analytical Chemistry, Nutrition and Bromatology, University of Alicante, Sant Vicent
+del Raspeig, Spain,2Department of Computer Technology, University of Alicante, Sant Vicent del
+Raspeig, Spain,3Division of Surgery and Interventional Sciences, University College London, London,
+United Kingdom,4Department of Nursing, Faculty of Health Sciences, University of Alicante, Sant
+Vicent del Raspeig, Spain,5Alicante Institute for Health and Biomedical Research (ISABIAL), Alicante,
+Spain
+Introduction: Obesity is often associated with excessive energy intake, yet
+individuals with obesity may also present with micronutrient inadequacies. This
+study examined dietary compliance and nutrient adequacy across Body Mass
+Index (BMI) categories in a sample of Spanish adults living in a Mediterranean
+context, and explored how adherence to the Mediterranean diet relates to BMI.
+Methods: Across-sectionalstudywasconductedbetweenSeptember2020and
+June 2021 among 167 adults classiﬁed as normal weight (n = 38), overweight
+(n = 47), or obese (n = 82). Participants meeting exclusion criteria such as
+pregnancy, endocrine disorders, or psychiatric illness were omitted. Dietary
+intake was assessed using a validated food frequency questionnaire speciﬁc to
+theMediterraneanpopulation,complementedby3-daydietaryrecords.Nutrient
+adequacy was determined using European Food Safety Authority (EFSA) Dietary
+Reference Values, and adherence to the Mediterranean diet was measured with
+the 14-item MEDAS questionnaire.
+Results: Vitamin D and iodine inadequacy were highly prevalent across all BMI
+groups (96.41% and 74.85%, respectively). While unadjusted analyses suggested
+lower intakes of ﬁber, potassium, zinc, folate, and vitamins A, B1, C, and E in
+obese compared with normal-weight participants, these differences were not
+statistically signiﬁcant after correction for multiple comparisons (false discovery
+rate q = 0.05). Small effect sizes (ε
+2 = 0.03–0.05) indicated consistent but
+modest trends toward lower micronutrient intake with increasing BMI. Average
+energy intake exceeded recommendations in all groups. Higher adherence to
+the Mediterranean diet was more common among normal-weight individuals
+and was inversely associated with BMI after adjusting for sex, educational level,
+labor status, physical activity, and energy intake.
+Discussion: In this Mediterranean sample, obesity was not explained by
+total energy intake alone. Although differences in speciﬁc nutrient intakes
+did not remain statistically signiﬁcant after adjustment, trends suggest lower
+dietaryqualityamongindividualswithobesity.Promotingnutrient-densedietary
+patterns such as the Mediterranean diet may support healthier weight status.
+KEYWORDS
+dietary compliance, nutritional deﬁciencies, nutritional adequacy, obesity,
+Mediterraneandiet
+Frontiersin Nutrition 01 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+1 Introduction
+Obesity is a chronic, multifactorial disease characterized by
+excessive adipose tissue accumulation, recently reaﬃrmed as such
+by the World Health Organization (WHO) (1). Its prevalence
+has risen sharply over the past three decades, with more than
+1.9 billion adults currently classiﬁed as overweight and over 650
+million as obese (2–4). In Europe, overweight and obesity have
+reached epidemic proportions, aﬀecting nearly 60% of adults in
+the WHO European Region (1). Projections suggest that obesity
+prevalence will peak between 2026 and 2054, with the United
+StatesandtheUnitedKingdomexpectedtoreachthehighestlevels
+ﬁrst, followed by similar trends across other European nations (5).
+Comparable upwardtrends have alsobeen observed inAsia andin
+the Middle East and North Africa (MENA) region, where obesity
+prevalence has risen rapidly in recent decades, reaching some of
+the highest levels worldwide (6–8). In Spain, national data from
+2016reportedanobesityprevalenceof21.6%amongadults( 9,10),
+and estimates from the Organization for Economic Co-operation
+and Development (OECD) indicated that 53% of the population
+wasoverweight( 11).Forecastspredictafurther16%increaseinthe
+overweightpopulationby2030( 12).
+Obesity is a well-established risk factor for numerous non-
+communicable diseases (13, 14), including type 2 diabetes (15),
+hypertension, cardiovascular disease (16–19), stroke and transient
+ischemic attack ( 20), musculoskeletal disorders, and several
+cancers (16, 18, 21). Its population-level impact extends beyond
+morbidity: overweight and obesity account for roughly 7% of
+total years lived with disability (YLDs) in the WHO European
+Region(1),withcomparableglobalpatterns( 22,23).Economically,
+obesity imposes a substantial burden on health systems. In an
+analysis of 161 countries, overweight and obesity represented a
+major share of healthcare expenditure, largely due to increased
+inpatient,outpatient,andmedicationcostscomparedwithnormal-
+weightindividuals( 24).
+Alongside these health and economic consequences, obesity
+increasingly exempliﬁes a paradox of excessive energy intake
+combined with nutritional inadequacy. Diets rich in ultra-
+processed, energy-dense foods often provide surplus calories while
+remaining poor in essential vitamins and minerals. Moreover,
+obesity-related metabolic changes, including chronic low-grade
+inﬂammation and altered storage or bioavailability of fat-soluble
+micronutrients, may further impair nutrient utilization. These
+mechanisms help explain why individuals with obesity can present
+bothovernutritionandmicronutrientdeﬁciencies.
+Although a sustained imbalance between energy intake
+and expenditure remains a primary driver of weight gain,
+obesity is now recognized as an independent contributor to
+cardiometabolic disease risk ( 1, 25). Increasing evidence also
+highlights the importance of diet quality in obesity development
+and progression. Individuals with obesity frequently exhibit
+suboptimal macronutrient proﬁles and inadequate micronutrient
+intakedespitehighcaloricconsumption( 26–30).Empiricalstudies
+from Spain, Chile, France, and the United States have reported
+deﬁciencies in folate, vitamins D, B12, A, C, and E, as well as
+minerals such as iron, zinc, magnesium, calcium, and copper
+among adults with obesity ( 30–
+33). These inadequacies may
+arise from dietary patterns characteristic of obesity but may also
+contribute to increased adiposity and systemic inﬂammation (26,
+34–38).
+Understanding nutrient requirements in this population is
+essential, as current Dietary Reference Values (DRVs) are based
+on healthy, normal-weight adults (39–42). and may not accurately
+reﬂect the metabolic and physiological needs of individuals with
+overweight or obesity. Furthermore, much of the existing evidence
+relies on serum biomarkers or dietary self-reports, limiting its
+generalizabilitytothewiderpopulation( 26,28–31,43).
+To date, research on dietary adequacy in Mediterranean
+adults has primarily focused on overall population averages or
+speciﬁc clinical subgroups, with limited attention to diﬀerences by
+body weight status. Large national studies such as ANIBES (44),
+PREDIMED-Plus (45, 46), and ATTICA (47) have characterized
+Mediterranean dietary patterns and nutrient intakes but have
+not systematically compared micronutrient adequacy across BMI
+categories. Although associations between obesity and nutrient
+intake have been investigated in other contexts (48, 49), no study
+has jointly examined quantitative nutrient intake, Mediterranean
+diet adherence, and anthropometric parameters in a Spanish
+Mediterraneanadultpopulation.
+The rationale for this study stems from the need to better
+understand how nutrient adequacy and dietary quality vary
+across BMI categories within Mediterranean populations, where
+diet composition and adherence to the Mediterranean Diet may
+inﬂuencenutritionalstatusandmetabolichealth.Despiteextensive
+research on obesity and diet, few studies have examined these
+relationships in Spanish adults using region-speciﬁc, validated
+dietaryassessmenttools.
+To address this gap, the present study, conducted within
+the framework of the ongoing Tech4Diet project on 4D
+modeling and visualization of the human body, aimed to
+investigate dietary intake, nutrient adequacy, and adherence to
+the Mediterranean Diet across BMI categories in a Spanish
+Mediterraneanadultpopulation.Thespeciﬁcobjectiveswereto:(1)
+assesscompliancewiththeEuropeanFoodSafetyAuthority(EFSA)
+Dietary Reference Values (DRVs) for macro- and micronutrients
+across BMI groups ( 42); (2) identify nutrient inadequacies
+associated with overweight and obesity; and (3) determine the
+association between adherence to the Mediterranean Diet and
+BMIstatus.
+2 Materials and methods
+2.1 Study design and setting
+This cross-sectional observational study was conducted
+between September 2020 and June 2021 as part of theTech4Diet
+project, hosted within theTech4D: Improving Obesity Treatment
+platform (https://tech4d.ua.es/en/tech4diet.html) at the University
+of Alicante, Spain. All measurements and interviews were carried
+out at the ALINUA facility, a health center aﬃliated with the
+FacultyofHealthSciences.ThestudyadheredtotheStrengthening
+theReportingofObservationalStudiesinEpidemiology(STROBE)
+guidelinesforcross-sectionalstudies.
+Frontiersin Nutrition 02 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+2.2 Participants
+2.2.1 Eligibility criteria
+Participants were eligible if they were adults ( ≥18 years),
+residing in Spain, able to read and write Spanish, and willing to
+provide informed consent. Individuals were excluded if they were
+pregnant or breastfeeding; had participated in supervised dietary
+or nutritional treatment within the previous year; had endocrine,
+metabolic, or systemic disorders (e.g., thyroid, pituitary, adrenal
+dysfunction, diabetes, or metabolic syndrome); used chronic
+medication known to aﬀect appetite, weight, or metabolism
+(e.g., corticosteroids, antipsychotics, thyroid hormones); had
+neurological conditions (e.g., stroke, Parkinson’s disease);
+experienced a traumatic brain injury with loss of consciousness
+for more than 30 min; or had severe psychiatric disorders
+as deﬁned by DSM-IV-TR (50) or were receiving psychiatric
+treatment, due to the inﬂuence of psychotropic medication on diet
+andmetabolism.
+2.2.2 Recruitment and sample size
+Participants were recruited through public announcements
+on the Tech4D: Improving Obesity Treatment website, which is
+hosted by the University of Alicante but publicly accessible.
+Additionally, posters were displayed in all health centers across
+the city of Alicante to promote the study and provide a link
+for individuals interested in participating. Recruitment occurred
+between September–November 2020 for overweight and obese
+participants, and June 2021 for the normal-weight group, due to
+pandemic-relatedlogisticalconstraints.
+Atotalof171individualsexpressedinterest,ofwhomfourwere
+excluded due to endocrine–metabolic disorders. The ﬁnal sample
+comprised 167 adults (38 normal weight, 47 overweight, and 82
+obese). The required sample size was determined usingG*Power
+3.1, a free and publicly available statistical software program for
+power analysis. The analysis indicated that at least 35 participants
+per group were needed to detect a medium eﬀect size (f = 0.25)
+with80%powerandasigniﬁcancelevelof α=0.05.
+2.3 Study variables
+2.3.1 Exposure and outcome variables
+The main exposure variable was BMI category. Participants
+werecategorizedintothreegroupsaccordingtotheirBMI,basedon
+WHOcriteria:individualswithaBMIbetween18.5and24.9kg/m 2
+were classiﬁed as having normal weight; those with a BMI between
+25.0 and 29.9 kg/m2 were classiﬁed as overweight; and individuals
+with a BMI equal to or greater than 30.0 kg/m2 were classiﬁed
+as having obesity. Primary outcome variables included nutrient
+intake, nutrient adequacy, and adherence to the Mediterranean
+Diet(MD).Secondaryoutcomesincludedanthropometric,clinical,
+andphysicalactivitymeasures.
+Confounders included sex, age, and physical activity, which
+wereadjustedforindescriptiveandinferentialanalyses.
+2.4 Data sources and measurement
+2.4.1 Sociodemographic and lifestyle data
+Sociodemographic data (age, sex, education level, employment
+status, marital status) and lifestyle information (physical activity)
+were collected through structured face-to-face interviews
+administered by a trained dietitian using a standardized
+questionnaire developed for the Tech4Diet project. Responses
+were entered into a coded database and veriﬁed for completeness
+byasecondresearcher.
+2.4.2 Anthropometric and clinical measurements
+Allanthropometricandclinicalmeasurementswereperformed
+during a single morning session after a 12-h overnight fast,
+following international protocols (51). Participants were barefoot,
+wearing light clothing, and were instructed to avoid caﬀeine,
+alcohol,andvigorousphysicalactivityduringthefastingperiod.
+Anthropometry and Body Composition: Weight and body
+composition, body fat and visceral fat, were measured using
+a TANITA MC-780MA P analyser (precision 0.1 kg). Height
+was measured using a SECA 213 stadiometer to the nearest
+0.1 cm. Waist and hip circumferences were measured using a
+non-stretchable SECA 201 tape following WHO guidelines (52).
+Waist circumference (WC) was taken at the midpoint between
+the lowest rib and the iliac crest, with participants standing
+erect and breathing normally. Hip circumference (HC) was
+measured at the widest point over the buttocks. Waist-to-hip
+ratio (WHR) and waist-to-height ratio (WHtR) were calculated
+as WC/HC and WC/height (cm), respectively. WHR> 0.90 in
+men or > 0.85 in women and WHtR > 0.5 were considered
+elevated (53). A 3D optical scanner captured surface geometry for
+bodyvolumeestimation.
+Clinical Parameters: Blood pressure was measured in a seated
+position using a calibrated OMRON monitor after 5 min of rest.
+Two readings were taken 1–2 min apart, and the mean value was
+used. Elevated blood pressure was deﬁned as≥130/85 mmHg (54,
+55). Capillary blood samples were collected immediately afterward
+to measure fasting glucose, cholesterol, and triglycerides using
+the Accutrend
+R⃝ Plus (Roche Diagnostics). Fasting glucose≥110
+mg/dL indicated elevated glycaemia, consistent with WHO
+guidelines(56).
+2.4.3 Physical activity assessment
+Physical activity was assessed using the validated short form of
+the International Physical Activity Questionnaire (IPAQ-SF) (57).
+Frequency (days/week) and duration (minutes/day) of walking,
+moderate, and vigorous activities were recorded, converted to
+MET-min/week(3.3,4.0,and8.0METs,respectively),andclassiﬁed
+into low (<600 MET-min/week), moderate (600–3,000), or high
+(>3,000)categoriesperIPAQscoringguidelines.
+2.4.4 Dietary assessment
+To analyse the spectrum of foods consumed by this sample
+of Mediterranean Spanish population, we used a validated food
+Frontiersin Nutrition 03 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+frequency questionnaire (FFQ) used in this Mediterranean region
+survey. FFQs are widely used for reasons of eﬃciency in studies
+that involve diet as one of the elements considered ( 58–61).
+Additionally,a3-day24hfoodrecordwasincluded,twoweekdays
+and one weekend day to obtain a full picture of the food intake
+throughouttheweek.
+Assessment of dietary intake was performed on an individual
+basis by a skilled clinical dietitian, who administered a 93 items
+FFQ to evaluate individual’s diet (62). The questionnaire included
+ninefoodandbeveragegroups:dairyproducts,eggs,meatandmeat
+products, ﬁsh, vegetables and legumes, fruits, cereals and starchy
+foods, fats and oils, sweets, drinks, and precooked ready meals. It
+also collected information on the type of fat used for cooking or
+dressing (e.g., olive oil, margarine), frequency of pan-fried food
+consumption, use of dietary supplements, and recent changes in
+diet.Participantsreportedhowoftentheyconsumedeachfooditem
+duringtwoseasonalperiods(summerandwinter)overtheprevious
+year.Participantsselectedoneofninepossiblefrequencycategories
+for each food item, ranging from: (1) never or less than once per
+month; (2) one to three times per month; (3) once per week; (4)
+two to four times per week; (5) ﬁve to six times per week; (6) once
+per day; (7) two to three times per day; (8) four to ﬁve times per
+day;and(9)sixormoretimesperday.
+Additionally, to determine the portion sizes, a life-size
+photographicalbumwasusedtodisplaydiﬀerentdishes,whichwas
+shown to the participant so that they could compare the portion
+theyusuallyeatwiththeoneshowninthephotograph,takingthose
+portionsastheunitofmeasurement( 63).
+Frequencies of consumption were converted into daily intake
+values. These were multiplied by the standard portion size
+in grams, corrected for edible fractions and cooking weight
+changes, and transformed into nutrient intakes using the Mataix
+Verdú Spanish Food Composition Tables (64). When data were
+unavailable, complementary Spanish or international sources were
+consulted(65,66).Nutrientdatawereenteredandprocessedusing
+customExcelspreadsheetslinkedtofoodcodesfromthedatabase.
+Micronutrient and macronutrient intakes were compared
+to the Dietary Reference Values established by the European
+Food Safety Authority (EFSA) (42). Energy requirements were
+adjustedindividuallybasedonsex,age,andphysicalactivitylevels.
+Macronutrient adequacy was assessed using EFSA’s Acceptable
+Macronutrient Distribution Ranges (AMDRs): 20–35% of energy
+from fats (target: 27.5%), and 45–60% from carbohydrates (target:
+57.5%). Protein requirements were calculated as 0.83 g/kg of
+body weight per day, following EFSA and Spanish national
+guidelines (41, 42, 67). These thresholds represent average intake
+levelssuﬃcienttomeetthenutritionalneedsofhealthyindividuals
+bylifestageandsexgroup.
+To assess adherence to the Mediterranean Diet (MD), the
+Mediterranean Diet Adherence Screener (MEDAS) questionnaire
+was administered. This 14-item tool, developed and validated
+by the PREDIMED research group speciﬁcally for the Spanish
+population, has shown reliability in measuring MD adherence
+levels (68, 69). Each question in the MEDAS is scored as either+1
+forresponsesfavorabletoMDguidelinesor0forthosethatarenot.
+The total adherence score is calculated by summing the individual
+scores across all 14 items, thereby providing an overall adherence
+level. Total scores ranged from 0 to 14. A score of 9 or higher
+wasconsideredhighadherence,whilescoresbelow9indicatedlow
+adherence.
+2.5 Bias control and data quality
+To minimize information bias, all measurements were taken
+by trained personnel following standardized procedures. Dietary
+data were reviewed for completeness and cross-checked with 3-
+day records. Implausible dietary energy intakes (<500 or >4,000
+kcal/day) were rechecked and conﬁrmed. Anthropometric and
+clinicalmeasuresweredouble-checkedforconsistency.
+2.6 Statistical analysis
+Statistical analyses were conducted using IBM R⃝ SPSSR⃝
+Statistics v27 (IBM Corp., Armonk, NY, USA) and Python 3.6
+(Python Software Foundation, Beaverton, OR, USA). Descriptive
+statistics were used to summarize the sample characteristics.
+Continuousvariableswereexpressedasmean ±standarddeviation
+(SD) for normally distributed data. Categorical variables were
+presentedasfrequenciesandpercentages.
+Normality of continuous variables was assessed using the
+Shapiro–Wilk test, and homogeneity of variances was evaluated
+with Levene’s test. Between-group comparisons were performed
+using one-way analysis of variance (ANOVA) or the Kruskal–
+Wallis test, followed by Tukey’s HSD or Bonferroni-adjustedpost-
+hoctests as appropriate. Associations between categorical variables
+were analyzed using the Chi-square test with Cramer’s V to
+assesseﬀectstrength.Formultiplemicronutrientcomparisons,the
+Benjamini–Hochberg false discovery rate (FDR) procedure (q =
+0.05) was applied to adjustp-values. Eﬀect sizes (partialη
+2, ϵ2,
+and Cohen’sd) with 95% conﬁdence intervals were reported to
+complementsigniﬁcancetesting.
+A multiple linear regression model was used to examine the
+association between adherence to the Mediterranean diet and
+BMI. The model included age, sex, education level, employment
+status, physical activity category and total energy intake as
+covariates. Before running the main model, assumptions of
+linearity, independence and homoscedasticity were assessed.
+Homoscedasticity was evaluated using the White test, with
+no evidence of heteroscedasticity detected; therefore, standard
+ordinary least squares estimates were retained. Multicollinearity
+was examined through variance inﬂation factors (VIF), which
+wereallbelow1.20,indicatingnocollinearityconcerns.Regression
+coeﬃcients (B), standard errors, conﬁdence intervals andp-values
+werereported.
+2.7 Ethical considerations
+The study was approved by the Ethics Committees of
+the University of Alicante and ISABIAL (reference CEIm:
+180380) and conducted in accordance with the Declaration of
+Helsinki. All participants provided written informed consent.
+The research was supported by the Spanish Ministry of
+Frontiersin Nutrition 04 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+TABLE 1 Sociodemographic characteristics by BMI category.
+Variable Category Normal weight Overweight Obese p-value
+(n = 38) (n = 47) (n = 82)
+Sex Male 17(25.8%) 19(28.8%) 30(45.5%) 0.689
+Female 21(20.8%) 28(27.7%) 52(51.5%)
+Age (years) Mean(SD) 42.84(9.64) 46.38(9.59) 47.93(8.98) 0.653
+Maritalstatus Single 8(25.8%) 11(35.5%) 12(38.7%) 0.546
+Married 25(21.7%) 33(28.7%) 57(49.6%)
+Divorced 5(26.3%) 3(15.8%) 11(57.9%)
+Other 0(0.0%) 0(0.0%) 2(100%)
+Employmentstatus Employed(FT/PT) 36(24.3%) 45(30.4%) 67(45.3%) 0.073
+Unemployed/other 2(13.3%) 2(13.3%) 15(75.7%)
+Educationallevel Nostudies/primary 2(13.3%) 4(26.7%) 9(60.0%) 0.007
+Secondary 11(18.0%) 10(16.4%) 40(65.6%)
+University 25(27.5%) 33(36.3%) 33(36.3%)
+Valuesareshownasfrequency(percentage).FT,Full-time;PT,Part-time;SD,StandardDeviation.
+Science and Innovation through projects TIN2017-89069-R
+andPID2020-119144RB100.
+3 Results
+3.1 Sociodemographic characteristics
+Sociodemographic data for the 167 participants are
+summarized in Table1. The sample included both male and
+female adults, with no statistically signiﬁcant diﬀerences in sex
+distribution across BMI categories (p = 0.689). The participants’
+mean age was 46.3± 9.5 years (range= 22–67 years), with no
+signiﬁcant diﬀerences in age distribution across BMI categories
+(p=0.653).
+Most sociodemographic variables, including age and
+employment status, did not diﬀer signiﬁcantly between groups.
+However, educational level showed a statistically signiﬁcant
+variationacrossBMIcategories( p=0.007).
+Among participants with normal weight, 13.3% had
+only primary education or no formal education, 18.0% had
+completed secondary education, and 27.5% held a university
+degree. In contrast, participants with overweight and obesity
+showed higher proportions of secondary education (16.4% and
+65.6%, respectively) and similar rates of university education
+(both36.3%).
+3.2 Anthropometric and clinical
+characteristics
+As shown in Table2, signiﬁcant diﬀerences were observed
+across BMI categories for most anthropometric, clinical, and
+dietary variables. Large eﬀect sizes (η2 > 0.14) were found for
+all body composition indicators, including waist circumference,
+hip circumference, waist-to-hip ratio, body fat percentage, and
+visceral fat rating (p < 0.001 for all). Mean waist circumference
+increased from 75.3 cm in the normal-weight group to 109.4
+cm in participants with obesity, while visceral fat ratings rose
+sharply from 3.98 to 12.95, reﬂecting substantial changes in
+centraladiposity.
+Systolic and diastolic blood pressure also diﬀered signiﬁcantly
+among groups (p < 0.001), showing medium to large eﬀect
+sizes (η
+2 = 0.19 and 0.25, respectively). Post-hoc comparisons
+indicated that individuals with normal weight had signiﬁcantly
+lower blood pressure values than those classiﬁed as overweight or
+obese.Incontrast,nosigniﬁcantdiﬀerenceswereobservedbetween
+overweightandobeseparticipantsforeithermeasure( p > 0.05).
+Metabolic parameters such as fasting glucose, total cholesterol,
+and triglycerides did not vary signiﬁcantly across BMI categories
+(p > 0.10), with small or very small eﬀect sizes (η
+2 < 0.03).
+This suggests that, in this sample, changes in adiposity were more
+strongly reﬂected in anthropometric and hemodynamic measures
+thaninfastingbiochemicalindicators.
+3.3 Cardiometabolic indicators and
+physical activity
+Tables2, 3 present the cardiometabolic indicators and physical
+activity levels across BMI categories. High blood pressure was
+strongly associated with BMI classiﬁcation (p < 0.001, Cramer’s
+V = 0.374, large eﬀect). The prevalence of elevated blood pressure
+increased from 10.5% in normal-weight participants to 40.4%
+in those with overweight and 57.3% among individuals with
+obesity, indicating a clear gradient in hypertension risk with
+increasingadiposity.
+Waist-to-height ratio (WHtR), a recognized marker of
+cardiometabolic risk, showed a very large eﬀect size (V = 0.725).
+Nearly all participants with obesity (98.8%) had WHtR values
+greater than 0.5, compared with 76.6% of overweight and only
+18.4%ofnormal-weightparticipants.TheseresultsconﬁrmWHtR’s
+strong predictive value for central adiposity and related health
+risks(52,53).
+Frontiersin Nutrition 05 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+TABLE 2 Anthropometric, clinical, and dietary characteristics of the sample by BMI category.
+Variable Normal weight Overweight Obesity p-value η2 Interpretation
+(n = 38) (n = 47) (n = 82)
+Waistcircumference(cm) 75.33±7.21 92.86±7.34 109.37±12.95 < 0.001 0.63 Large
+Hipcircumference(cm) 95.13±5.08 105.74±6.23 120.39±9.26 < 0.001 0.65 Large
+Waist-to-hipratio(WHR) 0.79±0.05a 0.88±0.06 0.91±0.10 < 0.001 0.56 Large
+Bodyfat(%) 30.19±9.01a 39.09±10.10 39.27±6.24 < 0.001 0.56 Large
+Visceralfat(rating) 3.98±2.49a 8.95±3.71 12.95±3.60 < 0.001 0.46 Large
+Glucose(mg/dL) 79.08±21.13 82.40±19.09 87.96±27.19 0.138 0.03 Small
+Cholesterol(mg/dL) 198.74±40.35 212.65±45.00 205.70±32.69 0.240 0.02 Small
+Triglycerides(mg/dL) 202.63±37.45 215.23±40.15 211.15±50.01 0.408 0.01 Verysmall
+Systolicbloodpressure(mmHg) 110.69±15.38a 126.91±17.39 125.53±12.85 < 0.001 0.19 Large
+Diastolicbloodpressure(mmHg) 71.71±7.56a 80.28±9.63 85.71±9.85 < 0.001 0.25 Large
+Mediterraneandietadherence(MEDAS) 8.74±1.96a 7.13±2.11 6.54±2.24 < 0.001 0.143 Large
+Valuesarepresentedasmean ±SD.SD,standarddeviation;WHR,waist-to-hipratio.Superscript a indicatessigniﬁcantdiﬀerencecomparedtooverweightandobesegroupsin post-hocanalysis
+(p < 0.05).Eﬀectsizeswerecalculatedusing η2 andinterpretedasfollows:verysmall( <0.01),small(0.01–0.06),medium(0.06–0.14),large( >0.14).
+TABLE 3 Descriptive health parameters andMediterranean diet adherence of the sample by weight group.
+Variable Category Normal weight Overweight Obese p-value Cramer’s V Interpretation
+(n = 38) (n = 47) (n = 82)
+Highbloodpressure No 34(89.5%) 28(59.6%) 35(42.7%) < 0.001 0.374 Large
+Yes 4(10.5%) 19(40.4%) 47(57.3%)
+Physicalactivity Low 2(5.3%) 13(27.7%) 50(61.1%) < 0.001 0.290 Moderate
+Moderate 6(14.6%) 11(23.4%) 14(17.1%)
+High 30(80.0%) 23(48.9%) 18(21.9%)
+Waist-to-heightratio(WHtR) ≤0.5 31(81.6%) 11(23.4%) 1(1.2%) < 0.001 0.725 Verylarge
+> 0.5 7(18.4%) 36(76.6%) 81(98.8%)
+Highfastingbloodglucose No 37(97.3%) 44(93.6%) 71(86.6%) 0.012 0.159 Notsigniﬁcant
+Yes 1(2.7%) 3(6.4%) 11(13.3%)
+MediterraneanDietadherence No 24(63.2%) 42(89.4%) 72(87.8%) 0.001 0.280 Moderate
+Yes 14(36.8%) 5(10.6%) 10(12.2%)
+Values are shown as frequency (percentage). WHtR, waist-to-height ratio. Signiﬁcant diﬀerences based on Chi-square tests atp < 0.05. Eﬀect sizes were calculated using Cramer’s V and
+interpretedas:0–0.10 =Verysmall/Notsigniﬁcant,0.11–0.30 =Moderate,0.31–0.50 =Large, > 0.50=Verylarge.
+ForMediterraneandietadherence:“Yes”indicatesparticipantsscoring ≥9ontheMEDASquestionnaire(highadherence),and“No”indicatesparticipantsscoring < 9(lowadherence).
+Fasting glucose levels displayed a weaker association with
+BMI (p = 0.012, Cramer’s V= 0.159). Elevated fasting glucose
+(≥ 110 mg/dL) was observed in 13.3% of obese participants,
+compared with 6.4% of those overweight and 2.7% of normal-
+weight individuals. Although the overall eﬀect size was small,
+the pattern suggests an increased likelihood of impaired glucose
+regulationwithhigherBMI.
+Physical activity level, assessed using the IPAQ short form,
+diﬀered signiﬁcantly across groups (p < 0.001, Cramer’s V=
+0.290, moderate eﬀect). Among normal-weight participants,
+80.0% reported high physical activity, compared with 48.9%
+in the overweight and only 21.9% in the obese group.
+Conversely, low activity levels were reported by 61.1% of
+participants with obesity. These ﬁndings align with the
+inverse association between physical inactivity and obesity
+risk.
+Together, these results indicate that higher BMI is consistently
+linked with increased cardiometabolic risk and less favorable
+lifestylebehaviors,includinglowerphysicalactivity.
+3.4 Adherence to the Mediterranean diet
+Adherence to the Mediterranean Diet (MD), as measured by
+theMEDASscore,diﬀeredsigniﬁcantlyacrossBMIcategories( p <
+0.001). As shown inTable2, mean MEDAS scores were highest
+amongnormal-weightparticipants(8.74 ±1.96),followedbythose
+who were overweight (7.13± 2.11) and those with obesity (6.54
+± 2.24), indicating progressively lower adherence with increasing
+BMI. Participants were classiﬁed as having high MD adherence if
+theyscored9oraboveontheMEDASquestionnaire.
+Frontiersin Nutrition 06 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+TABLE 4 Multiple linear regression model examining predictors of BMI.
+Predictor B SE t p 95% CI Std.β VIF
+Constant –3.722 8.010 –0.465 0.643 [–19.553,12.109] – –
+Age (years) 0.064 0.048 1.331 0.185 [–0.031,0.159] 0.10 1.021
+MEDAS(14-item) –0.634 0.197 –3.215 0.002 [–1.023,-0.244] –0.26 1.038
+Sex 0.340 0.931 0.368 0.713 [-1.498,2.178] 0.03 1.180
+Educationlevel –2.452 0.724 –3.385 0.001 [–3.882,–1.022] –0.25 1.180
+Employmentstatus 1.296 1.126 1.151 0.255 [–0.925,3.518] 0.09 1.052
+Physicalactivity –4.962 1.172 –4.234 <0.001 [–7.271,–2.654] –0.37 1.077
+Energyintake(kcal/day) 0.001 0.001 1.800 0.074 [0.000,0.003] 0.14 1.036
+B, unstandardised regression coeﬃcient; SE, standard error; CI, conﬁdence interval. BMI expressed in kg/m2. Statistical signiﬁcance was set atp < 0.05. All categorical predictors were
+dummy-codedaccordingtothedataset.Standardizedcoeﬃcients( β)indicatetherelativestrengthofeachpredictor.VIFvalues < 2indicateabsenceofmulticollinearity.
+Among those with high adherence (n = 29), 48.3% were in
+the normal-weight group, 17.2% were overweight, and 34.5% had
+obesity. Conversely, among those with low adherence (MEDAS
+score < 9; n = 138), only 17.4% were normal weight, while 30.4%
+and 52.2% were overweight and obese, respectively. This pattern
+demonstrates an inverse relationship between adherence to the
+MediterraneanDietandBMIclassiﬁcation.
+Tables4, 5 summarize the multivariable regression model
+assessing factors independently associated with BMI. The model
+was statistically signiﬁcant, F(7,159) = 9.512, p < 0.001,
+explaining 29.5% of the variance in IMC (R
+2 = 0.295; adjusted
+R2 = 0.264).AdherencetotheMediterraneandietwasasigniﬁcant
+independent predictor of IMC ( B =− 0.634, SE = 0.197,
+p = 0.002), indicating that higher adherence was associated with
+lower IMC after adjustment for all covariates. Physical activity was
+also strongly associated with IMC (B =− 4.962, p < 0.001),
+with more active individuals showing markedly lower IMC values.
+Higher education level was associated with lower IMC (B =
+−2.452, p = 0.001). Age, sex, employment status and total energy
+intake were not signiﬁcant predictors in the adjusted model. No
+multicollinearitywasdetected,withallVIFvaluesbelow1.20.
+Taken together, these results indicate that greater adherence to
+theMediterraneanDiet,highereducationlevel,andhigherphysical
+activity are independently linked to lower BMI, supporting the
+combinedinﬂuenceofdietquality,lifestyle,andsociodemographic
+factorsonbodyweightwithinthisMediterraneanpopulation.
+3.5 Nutrient intake
+3.5.1 Descriptive nutrient intake by BMI category
+Table6 presents the mean daily intake of energy,
+macronutrients, and micronutrients across BMI-deﬁned groups.
+Nosigniﬁcantdiﬀerenceswerefoundintotalenergyintakeamong
+normal-weight, overweight, and obese participants (p = 0.15).
+However, several dietary components showed unadjusted
+diﬀerences across BMI categories. Protein and ﬁber intake were
+lower in the obese group compared with overweight or normal-
+weight participants (Kruskal–Wallis p = 0.010 and p = 0.024,
+respectively), with Bonferroni-adjusted pairwise tests conﬁrming
+lowervaluesfortheobesegroup.
+TABLE 5 Summary of model ﬁt indices, diagnostic tests, and assumption
+checks for the multiple linear regression predicting BMI.
+Statistic / diagnostic Value
+Modelsigniﬁcance(ANOVA) F(7,159) = 9.512, p < 0.001
+R2 0.295
+Adjusted R2 0.264
+Whitetestforheteroscedasticity Non-signiﬁcant
+Multicollinearity(VIF) 1.021–1.180
+Strongestpredictor Physicalactivity( β=−0.37)
+Mediterraneandieteﬀect B =−0.634, p = 0.002
+Secondarysigniﬁcantpredictor Educationlevel( B =−2.452, p = 0.001)
+Non-signiﬁcantcovariates Age,sex,employment,energyintake
+Unadjusted analyses also revealed between-group variation in
+several micronutrients, including zinc (p = 0.011), potassium
+(p = 0.040), selenium ( p = 0.014), and iodine ( p =
+0.015), as well as in vitamin B1, vitamin B6, folate, vitamin
+C, vitamin A, and vitamin E ( p < 0.05 for all). However,
+after applying the Benjamini–Hochberg false discovery rate (FDR)
+correction ( q = 0.05) for multiple comparisons, none of
+these diﬀerences remained statistically signiﬁcant (FDR-adjusted
+p > 0.05).
+Although statistical signiﬁcance was lost after adjustment,
+small eﬀect sizes (ε
+2 = 0.03–0.05) were observed for several
+nutrients(protein,ﬁber,potassium,zinc,selenium,iodine,vitamins
+A, B1, B6, C, E, and folate), suggesting modest yet consistent
+diﬀerences in nutrient intake by BMI category. These ﬁndings
+indicate that, despite comparable total energy intake, individuals
+with obesity may consume diets of lower nutrient density,
+underscoring the potential importance of food quality over
+quantityinweightmanagement.
+3.5.2 Compliance with recommended daily
+intake of energy, vitamins, and minerals
+Table7 presents overall compliance with DRVs and compares
+these values across BMI categories. Mean energy intake exceeded
+Frontiersin Nutrition 07 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+TABLE 6 Mean daily intake of energy, macronutrients, and micronutrients by BMI category.
+Variable All Normal weight 95% CI Overweight 95% CI Obese 95% CI p-
+value
+(KW)
+p-
+value
+FDR
+ϵ2 Interpretation
+Energy(kcal) 2388.54±774.92 2303.78±783.04 2046.40–2561.16 2523.31±743.86 2304.90–2741.72 2350.57±788.02 2177.42–2523.72 0.15 0.31 0.01 Verysmall
+Protein(g) 113.04±43.00 105.35±37.32 93.08–117.62 123.02±33.96 113.05–132.99 110.88±49.13 100.08–121.68 0.01 0.21 0.04 Small
+Lipids(g) 98.79±39.34 95.81±34.51 84.47–107.15 101.09±32.17 91.64–110.54 98.85±45.08 88.94–108.76 0.48 0.57 0.00 Verysmall
+Carbohydrates(g) 266.09±93.05 259.85±111.55 223.18–296.52 283.71±99.14 254.60–312.82 258.89±78.95 241.54–276.24 0.24 0.31 0.01 Verysmall
+Fiber(g) 36.09±16.53 38.72±19.03 32.46–44.98 40.44±17.95 35.17–45.71 32.39±13.54 29.41–35.37 0.02 0.14 0.03 Small
+Sodium(mg) 3792.19±1410.98 3405.07±1287.22 2981.97–3828.17 4096.90±1343.62 3702.40–4491.40 3796.93±1474.35 3472.98–4120.88 0.07 0.21 0.02 Small
+Potassium(mg) 4585.34±2022.71 5002.22±2304.85 4244.63–5759.81 4795.91±2026.14 4201.01–5390.81 4190.22±1754.15 3804.79–4575.65 0.04 0.18 0.03 Small
+Calcium(mg) 1241.93±640.44 1181.54±544.77 1002.48–1360.60 1345.38±507.50 1196.37–1494.39 1210.63±741.51 1047.70–1373.56 0.07 0.21 0.02 Small
+Magnesium(mg) 558.47±224.76 527.93±231.00 452.00–603.86 606.65±220.85 541.81–671.49 545.01±222.45 496.13–593.89 0.11 0.26 0.02 Small
+Iron(mg) 23.79±9.39 21.04±9.17 18.03–24.05 24.85±9.12 22.17–27.53 23.59±9.72 21.45–25.73 0.14 0.28 0.01 Small
+Zinc(mg) 11.62±4.31 11.36±4.03 10.04–12.68 12.66±3.56 11.61–13.71 11.14±4.74 10.10–12.18 0.01 0.21 0.04 Small
+Selenium( μg) 86.16±33.53 76.82±28.83 67.34–86.30 94.26±31.47 85.02–103.50 85.84±35.82 77.97–93.71 0.01 0.21 0.04 Small
+Iodine( μg) 122.74±70.00 114.37±43.86 99.95–128.79 137.78±46.12 124.24–151.32 117.99±53.39 106.26–129.72 0.02 0.14 0.04 Small
+VitaminB1(mg) 1.93±0.74 1.91±0.70 1.68–2.14 2.15±0.79 1.92–2.38 1.82±0.72 1.66–1.98 0.03 0.18 0.03 Small
+VitaminB2(mg) 2.99±1.98 2.74±1.38 2.29–3.19 3.27±2.27 2.60–3.94 2.93±2.03 2.48–3.38 0.33 0.57 0.00 Verysmall
+VitaminB6(mg) 3.26±1.43 2.99±1.26 2.58–3.40 3.61±1.63 3.13–4.09 3.14±1.44 2.82–3.46 0.04 0.18 0.03 Small
+Vitamin B12 (μg) 12.02±10.21 7.92±1.91 7.29–8.55 11.91±2.88 11.06–12.76 13.02±3.41 12.27–13.77 0.82 0.82 0.00 Verysmall
+Folate( μg) 514.01±260.47 565.19±262.08 479.05–651.33 577.95±269.86 498.72–657.18 453.64±242.94 400.26–507.02 0.01 0.21 0.05 Small
+Vitamin C (μg) 268.87±168.52 300.91±168.45 245.54–356.28 310.55±162.86 262.73–358.37 228.74±140.07 197.96–259.52 0.01 0.21 0.05 Small
+Vitamin A (μg) 1829.50±1103.50 2013.69±377.64 1889.56–2137.82 2031.55±1241.66 1666.98–2396.12 1628.35±1050.17 1397.60–1859.10 0.02 0.14 0.04 Small
+Vitamin D (μg) 7.41±4.39 8.23±5.29 6.49–9.97 7.43±3.99 6.26–8.60 7.02±4.13 6.11–7.93 0.77 0.82 0.00 Verysmall
+Vitamin E (mg) 16.78±7.62 19.01±9.16 16.00–22.02 17.56±6.52 15.65–19.47 15.69±6.00 14.37–17.01 0.03 0.18 0.03 Small
+Omega-6(%) 23.82±18.73 20.06±11.85 16.17–23.95 22.95±13.90 18.87–27.03 25.66±23.08 20.59–30.73 0.22 0.28 0.01 Verysmall
+Omega-3(%) 2.62±1.07 2.60±1.17 2.22–2.98 2.66±0.95 2.38–2.94 2.60±1.10 2.36–2.84 0.77 0.82 0.00 Verysmall
+Valuesarepresentedasmean ±SD.KW,Kruskal–Wallistest;FDR,falsediscoveryrateadjustedusingtheBenjamini–Hochbergmethod.Eﬀectsize ε2 isshownwithinterpretation:0–0.10 =Verysmall/Notsigniﬁcant,0.11–0.30 =Small,0.31–0.50 =Medium, > 0.50
+=Large/Verylarge.Units:kcal,kilocalories/day;g,grams/day;mg,milligrams/day; μg,micrograms/day;%,percentageoftotalenergy.
+Frontiersin Nutrition 08 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+TABLE 7 Compliance with recommended daily intake of energy, macronutrients, andmicronutrients by BMI category.
+Nutrient All
+(Mean±SD)
+Below all
+(%)
+Normal
+Weight
+Below
+NW
+(%)
+Overweight Below
+OW
+Obese Below
+OB
+(%) (%)
+Energy(kcal) 108.07±37.81 45.51% 101.26±34.52 55.26% 114.05±37.66 38.30% 107.79±39.21 45.12%
+Protein(g) 168.75±70.64 16.77% 203.41±67.82 5.26% 195.41±60.80 6.38% 137.42±63.68 28.05%
+Lipids(g) 146.44±61.71 17.96% 138.11±49.24 15.79% 149.50±52.40 17.02% 148.54±71.38 19.51%
+Carbohydrates(g) 91.72±34.63 70.06% 87.15±39.31 78.95% 97.80±37.99 65.96% 90.35±30.00 68.29%
+Fiber(g) 144.37±66.11 26.35% 154.90±76.11 26.32% 161.74±71.80 19.15% 129.54±54.17 30.49%
+Sodium(mg) 189.61±70.55 8.38% 170.25±64.36 15.79% 204.84±67.18 4.26% 189.85±73.72 7.32%
+Potassium(mg) 131.01±57.79 32.93% 142.92±69.81 26.32% 144.27±61.20 25.53% 117.89±46.35 40.24%
+Calcium(mg) 130.73±67.41 32.93% 124.37±57.34 36.84% 141.62±53.42 21.28% 127.43±78.05 37.80%
+Magnesium(mg) 176.01±73.61 13.17% 163.75±70.35 18.42% 190.55±73.25 4.26% 173.36±74.82 15.85%
+Iron(mg) 177.89±77.58 8.98% 176.96±88.50 15.79% 194.63±78.45 6.38% 168.72±70.80 7.32%
+Zinc(mg) 115.02±45.85 38.92% 110.02±37.80 36.84% 124.72±38.57 23.40% 111.79±52.28 48.78%
+Selenium( μg) 123.09±47.90 32.34% 109.74±41.18 44.74% 134.66±44.96 19.15% 122.63±51.17 34.15%
+Iodine( μg) 81.82±33.34 74.85% 76.25±29.24 84.21% 91.86±30.75 61.70% 78.66±35.59 78.05%
+VitaminB1(mg) 201.62±83.40 5.99% 194.13±70.83 2.63% 224.07±91.02 4.26% 192.23±82.77 8.54%
+VitaminB2(mg) 186.96±123.44 20.96% 171.03±86.25 23.68% 203.84±141.86 10.64% 184.66±126.93 25.61%
+VitaminB6(mg) 199.30±88.47 5.99% 200.23±76.79 7.89% 221.31±92.86 2.13% 186.25±89.43 7.32%
+Vitamin B12 (μg) 300.44±155.23 2.99% 319.87±197.94 7.89% 297.76±121.60 2.13% 292.96±151.16 1.22%
+Folate( μg) 155.76±78.93 22.75% 171.27±79.42 21.05% 175.14±81.77 10.64% 137.47±73.62 30.49%
+Vitamin C (μg) 268.79±171.66 11.38% 297.10±169.59 7.89% 311.15±199.45 4.26% 231.39±147.76 17.07%
+Vitamin A (μg) 267.57±165.10 9.58% 288.49±132.55 5.26% 296.31±187.71 4.26% 241.39±162.64 14.63%
+Vitamin D (μg) 49.41±29.24 96.41% 54.87±35.29 97.37% 49.55±26.63 93.62% 46.80±27.55 97.56%
+Vitamin E (mg) 143.48±65.54 26.35% 160.32±75.18 18.42% 150.80±64.65 25.53% 131.48±59.49 30.49%
+Omega-6(%) 241.48±187.91 9.58% 194.38±102.11 7.89% 234.05±148.15 17.02% 267.56±231.03 6.10%
+Omega-3(%) 213.06±90.59 6.59% 203.53±88.04 5.26% 217.00±83.14 6.38% 215.22±96.41 7.32%
+Values are expressed as mean % of DRI± SD and percentage of individuals below recommendations. DRI, Dietary Reference Intake. Units: kcal, kilocalories/day; g, grams/day; mg,
+milligrams/day; μg, micrograms/day. “Below” columns refer to the percentage of individuals whose intake was below the recommended levels. NW, Normal weight; OW, Overweight; OB,
+Obesity.
+recommendations (108.07%), yet 45.51% of the full sample
+consumed less than the recommended levels. This imbalance
+was most marked in the normal-weight group, where 55.26% of
+individuals fell below requirements, compared with 38.30% of the
+overweightgroupand45.12%ofthosewithobesity.
+For macronutrients, the total sample showed moderate rates
+of inadequacy for protein (16.77%) and ﬁber (26.35%). These
+proportions increased within the obesity group, where 28.05% did
+not meet protein recommendations and 30.49% fell below ﬁber
+intake guidelines, compared with lower inadequacy ﬁgures in the
+normal-weightandoverweightgroups.
+Micronutrient inadequacy was widespread across the
+full sample, particularly for iodine (74.85%) and vitamin D
+(96.41%). These deﬁciencies were evident across all BMI strata,
+although iodine inadequacy ranged from 61.70% in overweight
+individuals to 84.21% in normal-weight participants and
+78.05% in those with obesity. Vitamin D inadequacy remained
+uniformly high across all categories, but was highest among
+individuals with obesity, where more than 97% did not meet
+recommendedintakes.
+Additional micronutrients showed a gradient of worsening
+adequacywithincreasingBMI.Forexample,potassiuminadequacy
+(32.93% in the full sample) reached 40.24% among individuals
+with obesity. Zinc inadequacy was also more common in this
+group(48.78%)comparedwiththetotalsample(38.92%).Asimilar
+pattern was observed for folate, where inadequacy increased from
+21.05% in normal-weight participants to 30.49% in those with
+obesity. Vitamins A, C, and E showed higher inadequacy rates in
+individualswithobesitythaninthepopulationasawhole.
+In contrast, overweight individuals exhibited relatively better
+adequacy for some nutrients. Calcium inadequacy aﬀected only
+21.28%ofthisgroupcomparedwith32.93%ofthefullsample,and
+magnesium inadequacy was also lowest among those overweight
+(4.26%vs.13.17%overall).
+Across all BMI categories, intake of omega-3 and omega-6
+fatty acids exceeded recommendations for most participants,
+Frontiersin Nutrition 09 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+with inadequacy rates below 10% and minimal variation
+betweengroups.
+Overall, data indicates that while certain inadequacies,
+particularly vitamin D and iodine, are pervasive, many
+micronutrient deﬁciencies become more pronounced with
+increasing BMI. These ﬁndings illustrate a pattern of high energy
+intake coexisting with suboptimal micronutrient intake, especially
+amongindividualswithobesity.
+4 Discussion
+This study examined dietary intake, nutrient adequacy, and
+adherence to the Mediterranean Diet in adults from a Spanish
+Mediterranean population, stratiﬁed by BMI category. Total
+energy intake did not diﬀer signiﬁcantly between normal-weight,
+overweight, and obese participants, although all groups exceeded
+EFSA energy recommendations on average. Obese individuals
+reported lower intakes of several key nutrients, particularly ﬁber,
+potassium, zinc, folate, and vitamins A, B1, C, and E, compared
+with normal-weight participants, suggesting potential diﬀerences
+indietaryqualityacrossBMIcategories.
+Compared to other investigations, the present sample showed
+noimportantdiﬀerencesbetweenoverweightandobeseindividuals
+regarding adherence to recommended intakes. This discrepancy
+may reﬂect underreporting among individuals with obesity, a
+well-known bias inﬂuenced by social desirability and weight
+stigma (70), the inclusion of misreporters in dietary analyses (71),
+and methodological limits of self-reported energy intake (72).
+Similar patterns were observed across most nutrients, with
+overweight participants consistently reporting higher intakes
+than those with obesity. Discrepancies between reported and
+recommended nutrient intakes have also been identiﬁed in other
+European cohorts (73). Evidence from clinical samples indicates
+that obese individuals underreport energy intake more often than
+normal-weight adults, although diﬀerences diminish when weight
+is stable or attitudes toward dieting are considered ( 74, 75).
+Studies inmedically supervised populationshave alsodocumented
+inconsistencies in reported intake among individuals with obesity,
+underscoring the need for caution when interpreting self-reported
+dietarydata( 76).
+Theanalysisofabroadsetofnutrientswasdesignedtocapture
+overall dietary patterns, and all comparisons were adjusted for
+multiple testing using the Benjamini–Hochberg FDR procedure.
+As a result, the observed associations should be interpreted as
+exploratorybutstatisticallyrobust,providinghypothesesforfuture
+conﬁrmatoryresearch.
+Vitamin D and iodine intake were markedly inadequate across
+allBMIgroups,withover96%ofparticipantsbelowrecommended
+levels for vitamin D and 74% for iodine. This mirrors European
+data showing widespread vitamin D insuﬃciency, including in
+Mediterranean regions (77). Adults with obesity often have lower
+serum 25(OH)D despite adequate or high energy intake (26).
+Low vitamin D status has also been associated with inﬂammation,
+insulin resistance, and increased cardiometabolic risk ( 78).
+Broader evidence from European cohorts further indicates that
+micronutrientinadequacies,particularlyofvitaminD,arecommon
+even in energy-suﬃcient diets ( 79). These ﬁndings highlight
+ongoing public health concerns regarding micronutrient adequacy
+amongadultswithexcessbodyweightinMediterraneansettings.
+Adherence to the Mediterranean Diet was signiﬁcantly
+associatedwithBMIclassiﬁcation,withnormal-weightparticipants
+reporting the highest scores. The multivariable regression model
+showed that higher MD adherence was independently associated
+withlowerBMI.Educationallevelalsoshowedasigniﬁcantinverse
+association with BMI, supporting previous evidence that higher
+education may inﬂuence nutritional awareness, food choices, and
+overall lifestyle behaviors (80, 81). Physical activity shows a clear
+association with weight status. Our ﬁndings reveal a statistically
+signiﬁcant relationship between physical activity levels and weight
+classiﬁcation (p < 0.001), indicating that lower physical activity
+is consistently linked to higher weight categories. This support
+previous research that insuﬃcient physical activity may contribute
+to energy imbalance and adiposity, reinforcing the importance
+of promoting active lifestyles in public health strategies aimed
+at obesity prevention ( 82, 83). In contrast, sex, employment
+status, age, and energy intake were not signiﬁcant predictors.
+These ﬁndings align with large-scale evidence showing that
+Mediterranean-style dietary patterns are associated with healthier
+weight and metabolic outcomes. Several studies have shown that
+MD adherence is inversely related to BMI (84, 85). Consistent
+associations between MD adherence, healthier metabolic proﬁles,
+and reduced obesity risk have been reported across observational
+and interventional studies (86, 87). Other works have linked
+MD adherence to improved weight and nutrient proﬁles in
+Mediterranean adults (45, 88), and these beneﬁts appear stronger
+whencombinedwithregularphysicalactivity( 89).
+Certain methodological considerations should be noted when
+interpreting these ﬁndings. The cross-sectional design restricts
+causal inference, but it remains appropriate for identifying
+associations and generating hypotheses to guide future research.
+The use of validated dietary assessment tools, administered by
+a qualiﬁed dietitian, helped ensure data quality, although, as in
+all studies based on self-reported intake, some degree of recall
+or reporting bias cannot be completely excluded. Recruitment
+through university-aﬃliated and online channels may have
+resulted in a sample with somewhat higher education or health
+awareness; however, broad inclusion criteria and community-level
+dissemination helped achieve participant diversity. Data collection
+took place in diﬀerent seasons, which may have inﬂuenced food
+availability, though this eﬀect was minimized by the FFQ’s design,
+which captures annual consumption across summer and winter
+periods. Finally, while the sample size was modest, it was suﬃcient
+for detecting medium eﬀect sizes and for meeting the study’s
+exploratoryobjectiveswithinaMediterraneanadultpopulation.
+Despitetheselimitations,theﬁndingsoﬀervaluableinsightinto
+the relationship between BMI, nutrient adequacy, and adherence
+to the Mediterranean Diet. Although total energy intake was
+similar across groups, qualitative dietary diﬀerences emerged,
+indicating that nutrient density rather than caloric quantity may
+play a more important role in weight regulation. The strong
+and independent associations of MD adherence, educational
+attainment, and physical activity with BMI suggest that both
+lifestyleandsocioeconomicfactorscontributetodietaryqualityand
+Frontiersin Nutrition 10 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+weight status. These ﬁndings reinforce the view that public health
+strategies should integrate nutrition education with initiatives
+promotingactivelifestyles.
+The widespread inadequacy of vitamin D and iodine
+intake highlights the need for targeted interventions addressing
+micronutrient insuﬃciencies in Mediterranean populations.
+However, the associations observed here should be considered
+preliminary, serving as a foundation for hypothesis generation.
+Future longitudinal and interventional research is required to
+conﬁrm causal pathways and to evaluate whether improving
+adherence to the Mediterranean Diet or correcting micronutrient
+deﬁciencies has measurable eﬀects on obesity prevention and
+metabolichealth.
+The study sample, while regionally focused and not nationally
+representative, reﬂects dietary behaviors characteristic of
+Mediterranean adults and thus provides meaningful insight
+into diet–weight relationships within this context. The use of
+validated questionnaires and standardized procedures enhances
+the comparability and reproducibility of results with other
+Mediterranean-basedstudies.Althoughcautioniswarrantedwhen
+extrapolating ﬁndings beyond this regional setting due to cultural
+and dietary variations, the study oﬀers a valuable contribution
+to understanding how Mediterranean dietary patterns relate to
+nutritionaladequacyandbodycomposition.
+Future research involving larger and multi-center cohorts
+would allow assessment of th ese associations across broader
+demographic and geographic contexts. Nonetheless, the present
+exploratory analysis adds to the evidence linking adherence to the
+Mediterranean Diet and suﬃcient nutrient intake with healthier
+weight proﬁles, underscoring the combined inﬂuence of diet
+quality, physical activity, and education as modiﬁable factors in
+metabolichealth.
+5 Conclusions
+Although our sample did not show statistically signiﬁcant
+diﬀerences between BMI groups in meeting EFSA nutritional
+recommendations after application of the Benjamini–Hochberg
+false discovery rate procedure, it remains essential to assess
+the nutritional quality of the diet rather than focusing solely
+on total energy intake. In this study, vitamin D and iodine
+were the most consistently inadequate nutrients across all BMI
+categories, with deﬁciencies most pronounced among individuals
+with obesity. The analysis of DRV compliance also showed
+that micronutrient inadequacy was widespread and, for several
+nutrients, tended to worsen with increasing BMI. While vitamin
+D and iodine inadequacy aﬀected nearly all participants, other
+nutrients,includingpotassium,zinc,folate,andvitaminsA,C,and
+E, showed higher rates of inadequacy among those with obesity.
+These ﬁndings indicate that high energy intake can coexist with
+poorer micronutrient proﬁles, particularly in the obese group.
+Overall, these results underscore the need to prioritize nutrient
+density and dietary quality in nutritional guidance and to monitor
+keymicronutrientsmorecloselyinpopulation-basedstrategies
+In this sample, higher adherence to the Mediterranean Diet
+was observed among normal-weight participants. This association
+remained signiﬁcant after adjustment for major covariates and
+alignswithpreviouslongitudinalandinterventionalstudieslinking
+Mediterranean dietary patterns to healthier weight trajectories
+and improved metabolic outcomes. However, given the cross-
+sectional nature of the data, these associations must be interpreted
+as descriptive rather than causal. Further prospective and
+experimental studies are needed to clarify whether Mediterranean
+Dietadherencedirectlyinﬂuencesobesityrisk.
+As previously noted by other authors (90), current dietary
+recommendationsarelargelyderivedfromhealthy,normal-weight
+populations and may not fully account for the physiological and
+metabolic needs of individuals with overweight or obesity. The
+present ﬁndings provide exploratory support for this perspective,
+showing diﬀerences in nutrient adequacy and dietary quality
+across BMI categories. These results contribute to understanding
+diet–weight relationships in Mediterranean populations, and they
+reinforce the need for continued research to develop more tailored
+and evidence-based nutritional recommendations for diverse
+populationgroups.
+Data availability statement
+The datasets presented in this article are not readily available
+because the approval by the ethics committees do not allow the
+sharing of the datasets. Requests to access the datasets should be
+directedto ana.zaragoza@ua.es.
+Ethics statement
+The studies involving humans were approved by Ethics
+CommitteeoftheUniversityofAlicanteandtheEthicsCommittee
+of the Instituto de Investigación Sanitaria y Biomédica de Alicante
+(ISABIAL), under approval reference CEIm: 180380. The studies
+were conducted in accordance with the local legislation and
+institutional requirements. The participants provided their written
+informedconsenttoparticipateinthisstudy.
+Author contributions
+IM-L: Conceptualization, Data curation, Formal analysis,
+Methodology, Visualization, Writing – original draft, Writing
+– review & editing. MS-C: Funding acquisition, Project
+administration, Writing – review & editing. MF-M: Formal
+analysis, Visualization, Writing – review & editing. LM-M: Formal
+analysis, Writing – review & editing. AZ-M: Conceptualization,
+Funding acquisition, Methodology, Project administration,
+Resources,Supervision,Writing–review&editing.
+Funding
+The author(s) declare that ﬁnancial support was received
+for the research and/or publication of this article. This
+research was partially funded by the Spanish State Research
+Agency (AEI) (Grant PID2023-149562OB-I00 funded by
+MICIU/AEI/10.13039/501100011033andbyERDF/EU).
+Frontiersin Nutrition 11 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+Conﬂict of interest
+The authors declare that the research was conducted in the
+absence of any commercial or ﬁnancial relationships that could be
+construedasapotentialconﬂictofinterest.
+Generative AI statement
+The author(s) declare that Gen AI was used in the
+creation of this manuscript. Generative AI was used to
+reﬁne the English language of the manuscript. All outputs
+were carefully reviewed by the author(s) to ensure that the
+scientiﬁc content and original meaning of the research were
+fullypreserved.
+Any alternative text (alt text) provided alongside ﬁgures in
+this article has been generated by Frontiers with the support of
+artiﬁcial intelligence and reasonable eﬀorts have been made to
+ensureaccuracy,includingreviewbytheauthorswhereverpossible.
+Ifyouidentifyanyissues,pleasecontactus.
+Publisher’s note
+All claims expressed in this article are solely those of the
+authors and do not necessarily represent those of their aﬃliated
+organizations, or those of the publisher, the editors and the
+reviewers. Any product that may be evaluated in this article, or
+claim that may be made by its manufacturer, is not guaranteed or
+endorsedbythepublisher.
+References
+1. WHO Regional Oﬃce for Europe.WHO European Regional Obesity Report 2022.
+Copenhagen:WorldHealthOrganization(2022).
+2. Jaacks LM, Vandevijvere S, Pan A, McGowan CJ, Wallace C, Imamura F, et al.
+The obesity transition: stages of the global epidemic.Lancet Diab Endocrinol. (2019)
+7:231–40.doi:10.1016/S2213-8587(19)30026-9
+3. Phelps NH, Singleton RK, Zhou B, Heap RA, Mishra A, Bennett JE, et al.
+Worldwide trends in underweight and obesity from 1990 to 2022: a pooled analysis
+of 3663 population-representative studies with 222 million children, adolescents, and
+adults. Lancet.(2024)403:1027–50.doi:10.1016/S0140-6736(23)02750-2
+4. World Health Organization. Obesity and Overweight (2024). Available online
+at: https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight
+(AccessedMay04,2025).
+5. Janssen F, Bardoutsos A, Vidra N. Obesity prevalence in the long-term
+future in 18 European countries and in the USA. Obes Facts . (2020) 13:514–27.
+doi:10.1159/000511023
+6. Okati-Aliabad H, Ansari-Moghaddam A, Kargar S, Jabbari N. Prevalence of
+obesity and overweight among adults in the Middle East countries from 2000
+to 2020: a systematic review and meta-analysis. J Obes . (2022) 2022:8074837.
+doi:10.1155/2022/8074837
+7. Tham KW, Abdul Ghani R, Cua SC, Deerochanawong C, Fojas M, Hocking S,
+etal.ObesityinSouthandSoutheastAsia—anewconsensusoncareandmanagement.
+Obes Rev.(2023)24:e13520.doi:10.1111/obr.13520
+8. NejadghaderiSA,GriegerJA,KaramzadN,KolahiAA,SullmanMJ,SaﬁriS,etal.
+Burden of diseases attributable to excess body weight in the Middle East and North
+Africaregion,1990-2019. Sci Rep.(2023)13:20338.doi:10.1038/s41598-023-46702-y
+9. Caixàs A, Villaró M, Arraiza C, Montalvá JC, Lecube A, Fernández-García JM,
+et al. Documento de consenso de la Sociedad Española de Obesidad (SEEDO) y
+de la Sociedad Española de Médicos de Atención Primaria (SEMERGEN) sobre la
+continuidadasistencialenobesidadentreAtenciónPrimariayUnidadesEspecializadas
+Hospitalarias2019. Med Clín.(2020)155:267–e1.doi:10.1016/j.medcli.2019.10.014
+10. Aranceta-Bartrina J, Pérez-Rodrigo C, Alberdi-Aresti G, Ramos-Carrera N,
+Lázaro-Masedo S. Prevalence of general obesity and abdominal obesity in the Spanish
+adultpopulation(aged25-64years)2014-2015:theENPEstudy. Rev Española Cardiol.
+(2016)69:579–87.doi:10.1016/j.rec.2016.02.009
+11. Cecchini M, Vuik S. The Heavy Burden of Obesity: The Economics of
+Prevention.OECDPublishing(2019).p.16–39.
+12. Hernáez Á, Zomeño MD, Dégano IR, Pérez-Fernández S, Goday A, Vila J, et al.
+Excess weight in Spain: current situation, projections for 2030 and estimated direct
+extra cost for the Spanish health system.Rev Española Cardiol . (2019) 72:916–24.
+doi:10.1016/j.rec.2018.10.010
+13. The GBD. 2015 Obesity Collaborators Health eﬀects of overweight and
+obesity in 195 countries over 25 years. NE n g lJM e d . (2017) 377:13–27.
+doi:10.1056/NEJMoa1614362
+14. World Health Organization. Obesity: Preventing and Managing the Global
+Epidemic: Report of a WHO Consultation.Geneva:WHO(2000).
+15. ShaiI,JiangR,MansonJE,StampferMJ,WillettWC,ColditzGA,etal.Ethnicity,
+obesity, and risk of type 2 diabetes in women: a 20-year follow-up study.Diab Care.
+(2006)29:1585–90.doi:10.2337/dc06-0057
+1 6 .D eL u i sD ,S a g r a d oM G ,C o n d eR ,A l l e rR ,I z a o l aO .d el aF u e n t eB ,e ta l .
+Relation of resistin levels with cardiovascular risk factors, insulin resistance and
+inﬂammation in naïve diabetes obese patients.Diab Res Clin Pract . (2010) 89:110–4.
+doi:10.1016/j.diabres.2010.03.031
+17. Pischon T, Boeing H, Hoﬀmann K, Bergmann M, Schulze MB, Overvad K, et al.
+General and abdominal adiposity and risk of death in Europe.NE n g lJM e d. (2008)
+359:2105–20.doi:10.1056/NEJMoa0801891
+18. Avery CL, Howard AG, Nichols HB. Comparison of 20-year obesity-associated
+cancer mortality trends with heart disease mortality trends in the US.JAMA Netw
+Open.(2021)4:e218356.doi:10.1001/jamanetworkopen.2021.8356
+19. Lavie CJ, Milani RV, Ventura HO. Obesity and cardiovascular disease: risk
+factor, paradox, and impact of weight loss.J Am Coll Cardiol . (2009) 53:1925–32.
+doi:10.1016/j.jacc.2008.12.068
+20. Winter Y, Rohrmann S, Linseisen J, Lanczik O, Ringleb PA, Hebebrand J, et al.
+Contributionofobesityandabdominalfatmasstoriskofstrokeandtransientischemic
+attacks. Stroke.(2008)39:3145–51.doi:10.1161/STROKEAHA.108.523001
+2 1 .C a oQ ,Y uS ,X i o n gW ,L iY ,L iH ,L iJ ,e ta l .W a i s t - h i pr a t i oa sap r e d i c t o ro f
+myocardial infarction risk: a systematic review and meta-analysis.Medicine
+. (2018)
+97:e11639.doi:10.1097/MD.0000000000011639
+22. Dai H, Alsalhe TA, ChalghafN, Riccò M, Bragazzi NL, Wu J. The global burden
+of disease attributable to high body mass index in 195 countries and territories, 1990-
+2017:ananalysisoftheGlobalBurdenofDiseaseStudy. PLoS Med.(2020)17:e1003198.
+doi:10.1371/journal.pmed.1003198
+23. Ng M, Gakidou E, Lo J, Abate YH, Abbafati C, Abbas N, et al. Global, regional,
+and national prevalence of adult overweight and obesity, 1990-2021, with forecasts to
+2050: a forecasting study for the Global Burden of Disease Study 2021.Lancet. (2025)
+405:813–38.doi:10.1016/S0140-6736(25)00355-1
+24. Okunogbe A, Nugent R, Spencer G, Powis J, Ralston J, Wilding J. Economic
+impactsofoverweightandobesity:currentandfutureestimatesfor161countries. BMJ
+Glob Health.(2022)7:e009773.doi:10.1136/bmjgh-2022-009773
+25. BalakrishnanVS.Europe’sobesityburdenontherise:WHOreport. Lancet Diab
+Endocrinol.(2022)10:488.doi:10.1016/S2213-8587(22)00165-6
+26. Astrup A, Bügel S. Overfed but undernourished: recognizing nutritional
+inadequacies/deﬁciencies in patients with overweight or obesity.Int J Obes . (2019)
+43:219–32.doi:10.1038/s41366-018-0143-9
+27. Kobyli´nska M, Antosik K, Decyk A, Kurowska K. Malnutrition in obesity: is it
+possible? Obes Facts.(2022)15:19–25.doi:10.1159/000519503
+28. Xanthakos SA. Nutritional deﬁciencies in obesity and after bariatric surgery.
+Pediatr Clin North Am.(2009)56:1105.doi:10.1016/j.pcl.2009.07.002
+29. Steenackers N, Vandewynckel S, Boedt T, Deleus E, Hoekx S, Lannoo M, et al.
+Compliance and patients’ perspectives towards nutritional supplementation following
+bariatricsurgery. Obes Surg.(2022)32:1804–13.doi:10.1007/s11695-022-06047-3
+30. Sánchez A, Rojas P, Basﬁ-Fer K, Carrasco F, Inostroza J, Codoceo J, et al.
+Micronutrient deﬁciencies in morbidly obese women prior to bariatric surgery.Obes
+Surg.(2016)26:361–8.doi:10.1007/s11695-015-1773-9
+31. de Luis DA, Pacheco D, Izaola O, Terroba MC, Cuellar L, Cabezas G.
+Micronutrient status in morbidly obese women before bariatric surgery.Surg Obes
+Relat Dis.(2013)9:323–7.doi:10.1016/j.soard.2011.09.015
+Frontiersin Nutrition 12 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+32. Lefebvre P, Letois F, Sultan A, Nocca D, Mura T, Galtier F. Nutrient deﬁciencies
+inpatientswithobesityconsideringbariatricsurgery:across-sectionalstudy. Surg Obes
+Relat Dis.(2014)10:540–6.doi:10.1016/j.soard.2013.10.003
+33. Agarwal S, Reider C, Brooks JR, Fulgoni III VL. Comparison of prevalence
+of inadequate nutrient intake based on body weight status of adults in the United
+States: an analysis of NHANES 2001-2008. J Am Coll Nutr . (2015) 34:126–34.
+doi:10.1080/07315724.2014.901196
+34. Johnson VR, Washington TB, Chhabria S, Wang EHC, Czepiel K, Reyes KJC,
+et al. Food as medicine for obesity treatment and management.Clin Ther. (2022)
+44:671–81.doi:10.1016/j.clinthera.2022.05.001
+35. Ottaviano K, Zaman JA. Diet and inﬂammation in obesity: prevention and
+management.In: Inﬂammation and Obesity.London;SanDiego,CA;Cambridge,MA;
+Oxford:Elsevier(2023).p.213–31.doi:10.1016/B978-0-323-90960-0.00015-1
+36. Lyons CL, Kennedy EB, Roche HM. Metabolic inﬂammation-diﬀerential
+modulationbydietaryconstituents. Nutrients.(2016)8:247.doi:10.3390/nu8050247
+37. RamallalR,ToledoE.Martínez JA,ShivappaN,HéJR,Martínez-González MA,
+etal.Inﬂammatorypotentialofdiet,weightgain,andincidenceofoverweight/obesity:
+theSUNcohort. Obesity.(2017)25:997–1005.doi:10.1002/oby.21833
+38. Abdurahman AA, Azadbakhat L, Rasouli M, Chamari M, Qorbani M,
+Dorosty AR. Association of dietary inﬂammatory index with metabolic proﬁle in
+metabolically healthy and unhealthy obese people. Nutr Dietet . (2019) 76:192–8.
+doi:10.1111/1747-0080.12482
+39. ArijaV,PérezC,MartínezdeVitoriaE,OrtegaRM,Serra-MajemL,RibasL,etal.
+Valoresdereferenciadeingestadietéticaydeantropometríaenestudiospoblacionales.
+Rev Esp Nutr Com.(2015)21(Supl.1):157–67.doi:10.14642/RENC.2015.21.sup1.5062
+40. López García E, Bretón Lesmes I, Díaz Perales A, Moreno V, Puy Portillo
+Baquedano M, Rivas Velasco AM, et al. Informe del Comité Cientíﬁco de la Agencia
+Española de Seguridad Alimentaria y Nutrición (AESAN) sobre recomendaciones
+dietéticassosteniblesyrecomendacionesdeactividadfísicaparalapoblaciónespañola.
+Rev Comité Cientíﬁco de la AESAN.(2022)36:11–70.
+41. EFSA Panel on Dietetic Products, Nutrition, and Allergies (NDA). Scientiﬁc
+opiniononprinciplesforderivingandapplyingdietaryreferenceValues. EFSA J.(2010)
+8:1458.doi:10.2903/j.efsa.2010.1458
+42. EuropeanFoodSafetyAuthority.Dietaryreferencevaluesfornutrientssummary
+report.EFSASupportPublic.(2017)14:e15121E.doi:10.2903/sp.efsa.2017.e15121
+43. EuropeanFoodSafetyAuthority.GuidanceontheEUmenumethodology. EFSA
+J.(2014)12:3944.doi:10.2903/j.efsa.2014.3944
+44. Olza J. Martínez de Victoria E, Aranceta-Bartrina J, González-Gross M, Ortega
+RM, Serra-Majem L, et al. Adequacy of critical nutrients aﬀecting the quality of the
+SpanishdietintheANIBESstudy. Nutrients.(2019)11:2328.doi:10.3390/nu11102328
+45. Cano-Ibáñez N, Gea A, Ruiz-Canela M, Corella D, Salas-Salvadó J, Schröder H,
+et al. Diet quality and nutrient density in subjects with metabolic syndrome: inﬂuence
+of socioeconomic status and lifestyle factors. A cross-sectional assessment in the
+PREDIMED-Plusstudy. Clin Nutr.(2020)39:1161–73.doi:10.1016/j.clnu.2019.04.032
+46. del Mar Bibiloni M, Bouzas C, Abbate M, Martínez-González MA, Corella D,
+Salas-SalvadóJ,etal.NutrientadequacyanddietqualityinaMediterraneanpopulation
+with metabolic syndrome: a cross-sectional study. Clin Nutr . (2020) 39:853–61.
+doi:10.1016/j.clnu.2019.03.018
+47. Yannakoulia M, Panagiotakos D, Pitsavos C, Skoumas Y, Stafanadis C. Eating
+patterns may mediate the association between marital status, body mass index, and
+blood cholesterol levels in apparently healthy men and women from the ATTICA
+study. Soc Sci Med.(2008)66:2230–9.doi:10.1016/j.socscimed.2008.01.051
+48. Lin SP, Fang HY Li MC. Relationship between overweight and obesity and
+insuﬃcient micronutrient intake: a nationwide study in Taiwan.JN u t rS c i. (2023)
+12:e48.doi:10.1017/jns.2023.31
+49. Gomez-Donoso C. Martínez-González MÁ, Martínez JA, Sayon-Orea C, de la
+Fuente-Arrillaga C, Bes-Rastrollo M. Adherence to dietary guidelines for the Spanish
+population and risk of overweight/obesity in the SUN cohort.PLoS ONE . (2019)
+14:e0226565.doi:10.1371/journal.pone.0226565
+50. Segal DL. Diagnostic and statistical manual of mental disorders (DSM-IV-TR).
+In: The Corsini Encyclopedia of Psychology. John Wiley & Sons, Ltd. (2010). p. 1–3.
+doi:10.1002/9780470479216.corpsy0271
+51. O’Connor H, Slater G. Use of anthropometric techniques in dietetic practice.
+Nutrition & Dietetics.(2010)67:62–4.doi:10.1111/j.1747-0080.2010.01420.x
+52. World Health Organization.Waist Circumference and Waist–Hip Ratio: Report
+of a WHO Expert Consultation.Geneva:WHO(2011).
+53. Busetto L, Dicker D. Frühbeck G, Halford JC, Sbraccia P, Yumuk V, et al. A new
+framework for the diagnosis, staging and management of obesity in adults.Nat Med.
+(2024)30:2395–9.doi:10.1038/s41591-024-03095-3
+54. Williams B, Mancia G, Spiering W, Agabiti Rosei E, Azizi M, Burnier M,
+et al. (2018). ESC/ESH Guidelines for the management of arterial hypertension: the
+Task Force for the management of arterial hypertension of the European Society of
+Cardiology(ESC)andtheEuropeanSocietyofHypertension(ESH). Eur Heart J.(2018)
+39:3021–104.doi:10.1097/HJH.0000000000001961
+55. de Arriba de la Fuente G, Tocora DGG, Sevillano BH, del Valle KMP. Protocolo
+diagnósticoytratamientodelahipertensiónenelsíndromemetabólicoyenladiabetes
+mellitus tipo 2. Med - Programa Formación Médica Continuada Acreditado . (2019)
+12:4800–3.doi:10.1016/j.med.2019.06.008
+56. World Health Organization, International Diabetes Federation. Deﬁnition
+and Diagnosis of Diabetes Mellitus and Intermediate Hyperglycaemia: Report of a
+WHO/IDFConsultation.Geneva:WorldHealthOrganization(2006).
+57. Craig CL, Marshall AL. Sjöström M, Bauman AE, Booth ML, Ainsworth
+BE, et al. International physical activity questionnaire: 12-country reliability and
+validity. Med Sci Sports Exerc. (2003) 35:1381–95. doi: 10.1249/01.MSS.0000078924.61
+453.FB
+58. Telleria-Aramburu N, Alegria-Lertxundi I, Arroyo-Izaga M. Adaptation,
+validation and reproducibility of a short FFQ to assess food group intake in the
+population resident in the Basque country (Spain). Public Health Nutr . (2021)
+24:436–48.doi:10.1017/S1368980020001822
+59. Notario-Barandiaran L, Freire C. García-de-la Hera M, Compañ-Gabucio LM,
+Torres-Collado L, González-Palacios S, et al. Reproducibility and validity of a food
+frequency questionnaire for dietary assessment in adolescents in a self-reported way.
+Nutrients.(2020)12:2081.doi:10.3390/nu12072081
+60. Vioque J. Navarrete-Muñoz EM, Gimenez-Monzó D, García-de-la Hera M,
+Granado F, Young IS, et al. Reproducibility and validity of a food frequency
+questionnaireamongpregnantwomeninaMediterraneanarea. Nutr J.(2013)12:1–9.
+doi:10.1186/1475-2891-12-26
+61. Marsall M, Engelmann G, Teufel M. Bäuerle A. Exploring the applicability of
+general dietary recommendations for people aﬀected by obesity.Nutrients. (2023)
+15:1604.doi:10.3390/nu15071604
+62. Vioque López J. Validez de la evaluación de la ingesta dietética. In: Serra-Majem
+L, Aranceta-Barcina J, editors.Nutrición y salud Pública: Métodos, Bases Cientíﬁcas y
+Aplicaciones.Barcelona:ElsevierMasson(2006).p.199–210.
+63. Agencia Española de Seguridad Alimentaria y Nutrición, Demométrica, S L. Atlas
+Fotográﬁco ENALIA.Granada(2013).
+64. Mataix Verdú J.T abla de composición de alimentos.Q u i n t aE d i c i ó n .G r a n a d a :
+EditorialUniversidaddeGranada(2009).
+65. U S Department of Agriculture: Agricultural Research Service.USDA FoodData
+Central.Madrid(2025).Availableonlineat: https://fdc.nal.usda.gov/(AccessedMay04,
+2025).
+66. Carbajal Azcona Á.Manual de nutrición y dietética . Universidad Complutense
+Madrid(2013).
+67. CallejaCA,HurtadoMMC.DaschnerÁ,EscámezPSF,AbuínCMF,PonsRMG,
+et al. Informe del Comité Cientíﬁco de la Agencia Española de Seguridad Alimentaria
+y Nutrición (AESAN) sobre Ingestas Nutricionales de Referencia para la población
+española. Rev Comité Cientíﬁco de la AESAN.(2019)29:43–68.
+68. Martínez-González M, Fernández-Jarne E, Serrano-Martínez M, Wright M,
+Gomez-Gracia E. Development of a short dietary intake questionnaire for the
+quantitative estimation of adherence to a cardioprotective Mediterranean diet.Eur J
+Clin Nutr.(2004)58:1550–2.doi:10.1038/sj.ejcn.1602004
+69. Tourlouki E, Polychronopoulos E, Zeimbekis A, Tsakountakis N, Bountziouka
+V, Lioliou E, et al. The ‘secrets’ of the long livers in Mediterranean islands: the MEDIS
+study. Eur J Public Health.(2010)20:659–64.doi:10.1093/eurpub/ckp192
+70. Howes EM, Parker MK, Misyak SA, DiFeliceantonio AG, Davy BM, Brown
+LEC, et al. The impact of weight bias and stigma on the 24 h dietary recall
+process in adults with overweight and obesity: a pilot study.Nutrients. (2024) 16:191.
+doi:10.3390/nu16020191
+71. Malinowska AM, Mlodzik-Czyzewska MA, Chmurzynska A. Dietary patterns
+associated with obesity and overweight: when should misreporters be included in
+analysis? Nutrition.(2020)70:110605.doi:10.1016/j.nut.2019.110605
+72. Westerterp KR, Goris AH. Validity of the assessment of dietary intake:
+problems of misreporting. Curr Opin Clin Nutr Metab Care . (2002) 5:489–93.
+doi:10.1097/00075197-200209000-00006
+73. Olza J, Aranceta-Bartrina J. González-Gross M, Ortega RM, Serra-Majem L,
+Varela-Moreiras G, et al. Reported dietary intake, disparity between the reported
+consumption and the level needed for adequacy and food sources of calcium,
+phosphorus, magnesium and vitamin D in the Spanish population: ﬁndings from the
+ANIBESstudy. Nutrients.(2017)9:168.doi:10.3390/nu9020168
+74. Tooze JA, Subar AF, Thompson FE, Troiano R, Schatzkin A, Kipnis V.
+Psychosocialpredictorsofenergyunderreportinginalargedoublylabeledwaterstudy.
+Am J Clin Nutr.(2004)79:795–804.doi:10.1093/ajcn/79.5.795
+75. Johansson L, Solvoll K, Bjorneboe GEA, Drevon CA. Under-and overreporting
+ofenergyintakerelatedtoweightstatusandlifestyleinanationwidesample. Am J Clin
+Nutr.(1998)68:266–74.doi:10.1093/ajcn/68.2.266
+76.
+,Serban CL, Sima A, Hogea CM. Chiri ,t˘a-Emandi A, Perva IT, Vlad A,
+et al. Assessment of nutritional intakes in individuals with obesity under medical
+supervision: a cross-sectional study.Int J Environ Res Public Health . (2019) 16:3036.
+doi:10.3390/ijerph16173036
+Frontiersin Nutrition 13 frontiersin.org
+Martin-Llaguno et al. 10.3389/fnut.2025.1689298
+77. Cashman KD, Dowling KG. Škrabáková Z, Gonzalez-Gross M, Valtueña J, De
+Henauw S, et al. Vitamin D deﬁciency in Europe: pandemic?Am J Clin Nutr . (2016)
+103:1033–44.doi:10.3945/ajcn.115.120873
+78. KarampelaI,SakelliouA,VallianouN,ChristodoulatosGS,MagkosF,Dalamaga
+M. Vitamin D and obesity: current evidence and controversies.Curr Obes Rep. (2021)
+10:162–80.doi:10.1007/s13679-021-00433-1
+79. Savastano S, Barrea L, Savanelli MC, Nappi F, Di Somma C, Orio F, et al. Low
+vitamin D status and obesity: role of nutritionist.Rev Endocr Metab Disord . (2017)
+18:215–25.doi:10.1007/s11154-017-9410-7
+80. Kim TJ, Roesler NM. von dem Knesebeck O. Causation or selection-
+examining the relation between education and overweight/obesity in prospective
+observationalstudies:ameta-analysis. Obes Rev.(2017)18:660–72.doi:10.1111/obr.12
+537
+81. Witkam R, Gwinnutt JM, Humphreys J, Gandrup J, Cooper R, Verstappen
+SM. Do associations between education and obesity vary depending on the measure
+of obesity used? A systematic literature review and meta-analysis SSM-population.
+Health.(2021)15:100884.doi:10.1016/j.ssmph.2021.100884
+82. Elagizi A, Kachur S, Carbone S, Lavie CJ, Blair SN, A. review of obesity,
+physical activity, and cardiovascular disease. Curr Obes Rep . (2020) 9:571–81.
+doi:10.1007/s13679-020-00403-z
+8 3 .C u r r a nF ,D a v i sM E ,M u r p h yK ,T e r s i g n iN ,K i n gA ,N g oN ,e ta l .C o r r e l a t e so f
+physicalactivityandsedentarybehaviorinadultslivingwithoverweightandobesity:a
+systematicreview. Obes Rev.(2023)24:e13615.doi:10.1111/obr.13615
+84. DamigouE,GeorgoulisM,ChrysohoouC,BarkasF,VlachopoulouE,Adamidis
+PS, et al. Mediterranean-type diet adherence and body mass index through 20 years
+of follow-up: results from the ATTICA cohort study (2002-2022).Nutrients. (2024)
+16:1128.doi:10.3390/nu16081128
+85. Poulimeneas D, Anastasiou CA, Santos I, Hill JO, Panagiotakos DB,
+Yannakoulia M. Exploring the relationship between the Mediterranean diet and
+weight loss maintenance: the MedWeight study. Br J Nutr . (2020) 124:874–80.
+doi:10.1017/S0007114520001798
+86. Guasch-Ferré M, Willett WC. The Mediterranean diet and health: a
+comprehensiveoverview. J Intern Med.(2021)290:549–66.doi:10.1111/joim.13333
+87. Lotﬁ K, Saneei P, Hajhashemy Z, Esmaillzadeh A. Adherence to the
+Mediterranean diet, ﬁve-year weight change, and risk of overweight and obesity: a
+systematic review and dose-response meta-analysis of prospective cohort studies.Adv
+Nutr.(2022)13:152–66.doi:10.1093/advances/nmab092
+88. Muscogiuri G, Verde L, Sulu C, Katsiki N, Hassapidou M, Frias-Toral E, et al.
+Mediterraneandietandobesity-relateddisorders:whatistheevidence? Curr Obes Rep.
+(2022)11:287–304.doi:10.1007/s13679-022-00481-1
+89. DominguezLJ,VeroneseN,DiBellaG,CusumanoC,ParisiA,TagliaferriF,etal.
+Mediterraneandietinthemanagementandpreventionofobesity. Exp Gerontol.(2023)
+174:112121.doi:10.1016/j.exger.2023.112121
+90. MartínezJA,CámaraM,GinerRM,GonzálezE,LópezE,MañesJ,etal.Ingestas
+nutricionales de referencia (INR) de minerales y vitaminas para la población española
+(2019):e202203034. Rev Española Salud Pública.(2022)96:6.
+Frontiersin Nutrition 14 frontiersin.org

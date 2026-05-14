@@ -1,0 +1,954 @@
+MINI REVIEW
+Heart Failure Reviews           (2026) 31:54 
+https://doi.org/10.1007/s10741-026-10629-z
+HFpEF phenotype is increasingly recognised, characterised 
+by congestion, exercise intolerance and high symptom bur -
+den often in the context of type 2 diabetes, hypertension, 
+dyslipidaemia and obstructive sleep apnoea [4, 5].
+Clinically, HFpEF is characterised by disproportionate 
+exertional dyspnoea, exercise intolerance, systemic conges-
+tion and a high comorbidity burden, and these features are 
+often accentuated in patients with obesity [ 4, 6]. Visceral 
+and ectopic fat accumulation, skeletal muscle fat infiltra -
+tion, and increased pericardial restraint have all been linked 
+in observational and mechanistic studies to reduced cardio-
+pulmonary and peripheral reserve. This may explain why 
+symptoms and congestion are particularly prominent in 
+obesity-related HFpEF, supporting the view that this phe -
+notype behaves as a systemic cardiometabolic syndrome 
+rather than a purely cardiac disorder [4, 7].
+Obesity promotes HFpEF through combined haemo -
+dynamic and metabolic mechanisms. The haemodynamic 
+mechanisms include expansion of adipose tissue, increasing 
+circulating volume and cardiac output, leading to chronic 
+Obesity-related HFpEF: a multiorgan 
+perspective
+Obesity is a major driver of cardiometabolic disease and has 
+contributed to the rising prevalence of heart failure with pre-
+served ejection fraction (HFpEF) [ 1–3]. An obesity-related 
+  Masliza Mahmod
+masliza.mahmod@cardiov.ox.ac.uk
+  Malgorzata Wamil
+malgorzata.wamil@wrh.ox.ac.uk
+1 Division of Cardiovascular Medicine, Radcliffe Department 
+of Medicine, University of Oxford, Oxford, UK
+2 Perspectum Ltd, Oxford, UK
+3 Deep Medicine, Nuffield Department of Women’s & 
+Reproductive Health, University of Oxford, Oxford, UK
+4 Cardiology Department, Great Western Hospital NHS Trust, 
+Swindon, UK
+5 Mayo Clinic Healthcare, London, UK
+Abstract
+Obesity-related heart failure with preserved ejection fraction (HFpEF) is increasingly recognised as a multiorgan car -
+dio–renal–hepatic–metabolic (CRHM) syndrome. Obesity promotes HFpEF through metabolic dysfunction, systemic 
+inflammation, haemodynamic overload and ectopic adiposity. Increased visceral and epicardial fat has been linked with 
+downstream involvement of the heart, liver and kidneys, resulting in a distinct phenotype with high symptom burden and 
+functional limitation. Incretin based therapies such as glucagon-like peptide-1 receptor agonist (GLP-1 RA) are growing 
+in popularity in CRHM conditions owing to positive effects on glycaemia, weight loss and systemic inflammation, leading 
+to reduced adverse clinical outcomes. In obesity-related HFpEF, emerging data suggest GLP-1 RA and glucose-dependent 
+insulinotropic polypeptide (GIP)/GLP-1 agonists (also called incretin-based therapies) improve symptoms, exercise capac -
+ity, congestion, and reduce heart failure events, while also leading to reduced ectopic fat depositions in multiple organs 
+and favourable cardiac remodelling. Incretin-based, weight-directed therapies therefore represent a promising strategy for 
+a therapeutically challenging HFpEF phenotype. Future clinical trials incorporating multiorgan imaging endpoints across 
+the heart, liver, adipose tissue and kidneys are needed to clarify the mechanisms of benefit and to better define the role 
+of weight-reduction therapies in obesity-related HFpEF.
+Keywords GLP-1 receptor agonists · Dual incretin agonists · Heart failure with preserved ejection fraction (HFpEF) · 
+Obesity · Multiorgan imaging · Magnetic resonance imaging (MRI)
+Received: 27 January 2026 / Revised: 10 March 2026 / Accepted: 6 April 2026
+© The Author(s) 2026
+Reframing obesity-related HFpEF as a multiorgan syndrome: incretin-
+based therapies and imaging endpoints
+Masliza Mahmod1,2 · Andrea Dennis2 · Jie Lian3 · Caitlin Langford2 · Kazem Rahimi3 · Malgorzata Wamil3,4,5
+1 3
+
+Heart Failure Reviews           (2026) 31:54 
+elevations in preload and afterload. Over time, these favour 
+left ventricular hypertrophy, reduced chamber distensibility 
+and elevated filling pressures [ 4, 5]. These haemodynamic 
+changes are particularly important because they create the 
+physiological substrate for the development of symptoms 
+and congestion. Although patients with the obese HFpEF 
+phenotype often have higher left-sided filling pressures, 
+especially during exercise, pulmonary congestion typically 
+occurs at substantially higher wedge pressures and in the 
+presence of additional haemodynamic abnormalities; thus, 
+elevated filling pressures are necessary but not sufficient for 
+acute decompensation [6]. Central obesity further increases 
+intra-abdominal and intrathoracic pressures, limiting lung 
+expansion and venous return and worsening exertional dys-
+pnoea [5].
+The metabolic mechanism of obese HFpEF is primarily 
+related to increased fat depots both in and surrounding the 
+vital organs. Visceral adiposity is the fat stored within the 
+abdomen and is a defining feature of cardiometabolic dis -
+ease. Ectopic fat refers to fat stored within the organs. In 
+the heart, epicardial adipose tissue (EAT) is a metabolically 
+active visceral fat depot between the myocardium and vis -
+ceral pericardium [ 8, 9]. It is contiguous with the myocar -
+dium and coronary arteries and acts as a local source of free 
+fatty acids and pro-inflammatory mediators [ 9]. Increased 
+EAT volume is linked to coronary atherosclerosis, atrial 
+fibrillation and HF [ 8, 9]. In HFpEF, a higher EAT burden 
+may be associated with worse diastolic function, higher 
+filling pressures, and greater congestion [ 4, 9]. Pericardial 
+adipose tissue (PAT), located external to the fibrous peri -
+cardium, is less tightly coupled to the myocardium but cor -
+relates with systemic inflammation and cardiometabolic risk 
+[8, 9]. Together, EAT and PAT, in the context of visceral adi-
+posity, are thought to contribute to concentric remodelling, 
+augment pericardial restraint, and may increase susceptibil-
+ity to elevated filing pressures and pulmonary congestion, 
+although these links are largely based on observational and 
+mechanistic data [5].
+Obesity-related HFpEF rarely occurs in isolation. Vis -
+ceral adiposity is a common feature of HFpEF as well as 
+metabolic dysfunction–associated steatotic liver disease 
+(MASLD), chronic kidney disease and skeletal muscle dys-
+function [1, 2]. Within the heart, the obesity-related HFpEF 
+phenotype is characterised by concentric LV remodelling, 
+left atrial enlargement and dysfunction, and impaired pul -
+monary vascular reserve, features that may contribute to 
+exertional intolerance and pulmonary congestion despite 
+preserved ejection fraction [ 4]. Many of these conditions 
+occur concurrently, whilst each will have its own specific 
+mechanism that leads to poor quality of life. For instance, 
+in MASLD, hepatic steatosis results in chronic inflamma -
+tion and subsequent fibrosis [ 10]. Peri-renal fat is closely 
+related to chronic kidney disease (CKD) [11], which results 
+in progressive loss of estimated glomerular filtration rate, 
+reinforcing neurohumoral activation and sodium retention 
+[5]. Obesity related muscle fat infiltration is a major cause 
+of sarcopenia, which is characterised by loss of muscle 
+strength and functions caused by microvascular abnormali -
+ties that limit oxygen delivery and utilisation in skeletal 
+muscles [ 12, 13]. These extracardiac changes contribute 
+to exertional intolerance, fluid retention and poor quality 
+of life. Obesity-related HFpEF is therefore best viewed as 
+a multiorgan cardio–renal–hepatic–metabolic syndrome 
+(CRHM) rather than a purely cardiac disorder [ 4, 5]. This 
+multiorgan construct also inherently favours imaging-based 
+phenotyping, because modern multimodality imaging can 
+quantify cardiac, hepatic, adipose and renal involvement in 
+parallel.
+Glucagon-like peptide-1 receptor agonist (GLP-1 RA) 
+therapy and dual incretin agonists provide a mechanistically 
+attractive approach for obesity-related HFpEF. GLP-1 RAs 
+reduce appetite and energy intake, slow gastric emptying and 
+improve glycaemic control, blood pressure and atherogenic 
+lipids, leading to sustained weight loss and lower haemody-
+namic and metabolic load [ 14–17]. Dual incretin agonists, 
+which also activate the glucose-dependent insulinotropic 
+polypeptide receptor, achieve greater weight loss and larger 
+reductions in visceral fat and inflammatory markers than 
+GLP-1 RA monotherapy [17, 18]. Beyond weight loss and 
+glycaemic control, incretin-based therapies reduce ectopic 
+fat (particularly liver and epicardial/pericardial depots), 
+improve markers of steatohepatitis, and slow chronic kidney 
+disease progression, supporting their potential as multior -
+gan treatments in obesity-related HFpEF [18–20].
+From the available evidence, a pragmatic way to organise 
+reported multiorgan effects is to distinguish three partially 
+overlapping domains, each assessable with prespecified 
+imaging and biomarker endpoints in clinical trials. First, 
+weight-dependent effects reflect total mass reduction and 
+are expected to improve functional capacity and haemody -
+namic load, for example, improvements in 6-minute walk 
+distance and Kansas City Cardiomyopathy Questionnaire 
+clinical summary score (KCCQ-CSS), reductions in con -
+gestion and haemodynamic surrogates, and lower blood 
+pressure. Second, changes in adipose tissue distribution and 
+ectopic fat are best captured as changes in visceral and organ 
+fat depots, including reductions in visceral adipose tissue, 
+epicardial and hepatic fat, skeletal muscle fat infiltration, 
+and liver injury or fibrosis surrogates. Third, potentially 
+weight-independent pathways include anti-inflammatory 
+and endothelial mechanisms and renal sodium-handling 
+effects, which may contribute to haemodynamic unloading 
+beyond weight loss, with trial endpoints such as reductions 
+in hsCRP and other inflammatory markers, improvements 
+1 3
+   54  Page 2 of 9
+Heart Failure Reviews           (2026) 31:54 
+in vascular function surrogates, lower albuminuria and renal 
+injury biomarkers, and modest blood-pressure lowering. 
+Framing obesity-related HFpEF in this way supports the 
+design of adequately powered RCTs with prespecified mul-
+tiorgan endpoints to disentangle mechanisms and attribute 
+benefits beyond weight loss alone.
+HFpEF-specific trials of incretin-based 
+therapies
+Major GLP-1 RA and GIP/GLP-1 dual agonist trials across 
+obesity and obesity-associated HFpEF are summarised in 
+Table 1, including both cardiovascular outcome trials and 
+dedicated HFpEF–obesity studies.
+Semaglutide has been evaluated directly in obesity-
+related HFpEF in STEP-HFpEF and STEP-HFpEF DM [24, 
+25]. These trials enrolled adults with symptomatic HFpEF, 
+left ventricular ejection fraction (LVEF) ≥ 45%, body-mass 
+index ≥ 30 kg/m² and elevated natriuretic peptides. STEP-
+HFpEF included patients with or without type 2 diabetes, 
+whereas STEP-HFpEF DM required type 2 diabetes. In both 
+trials, the dual primary endpoints were change in KCCQ-
+CSS and percentage change in body weight at 52 weeks; 
+HF outcomes were prespecified secondary or exploratory 
+endpoints, and the studies were not powered for HF event 
+reduction [24, 25]. In each trial, semaglutide 2.4 mg once 
+weekly, added to standard care, improved KCCQ-CSS 
+and six-minute walk distance compared with placebo, and 
+reduced N-terminal pro-B-type natriuretic peptide and body 
+weight. Heart failure (HF) hospitalisations and urgent HF 
+visits were numerically lower with semaglutide, although 
+the studies were not powered to detect differences in the HF 
+outcomes. Gastrointestinal adverse events, mainly nausea 
+and diarrhoea, were more frequent with semaglutide but 
+were usually mild to moderate and rarely led to discontinu-
+ation [24, 25].
+Tirzepatide, a dual GIP/GLP-1 RA, was tested in SUM -
+MIT, which randomised patients with symptomatic HFpEF. 
+SUMMIT randomised adults with symptomatic HFpEF, 
+LVEF ≥ 50%, body-mass index ≥ 30 kg/m² and elevated 
+natriuretic peptides, with or without type 2 diabetes [ 26]. 
+Over a median follow-up of around two years, tirzepatide 
+reduced the co-primary composite of cardiovascular death 
+or worsening HF (HF hospitalisation or urgent HF visit 
+requiring intravenous therapy) and improved KCCQ-CSS 
+at 52 weeks, with additional gains in 6-minute walk dis -
+tance, weight loss, inflammatory markers and systolic blood 
+pressure versus placebo. In the SUMMIT CMR substudy, 
+tirzepatide reduced left ventricular mass and paracardiac 
+(epicardial plus pericardial) fat volume at 52 weeks com -
+pared with placebo, with preserved LVEF and cardiac 
+output [ 27]. Taken together, these findings are consistent 
+with reverse concentric remodelling and reduced pericardial 
+restraint and may reflect associations between weight/fat 
+reduction and favourable cardiac and adipose-tissue remod-
+elling in obesity-related HFpEF.
+Although gastrointestinal adverse events predominate in 
+STEP-HFpEF [ 24, 25] and SUMMIT [ 26], HFpEF popu -
+lations warrant closer attention to volume status and renal 
+vulnerability, particularly in those receiving loop diuretics 
+and/or SGLT2 inhibitors, not necessarily included in those 
+trials. During initiation and up-titration, patients should 
+be counselled to maintain oral intake and to report dizzi -
+ness, symptomatic hypotension, or rapid weight loss sug -
+gestive of relative hypovolaemia; diuretic dose may need 
+review if congestion improves while intake falls. A prag -
+matic approach is to check renal function and electrolytes at 
+baseline and after escalation in higher-risk patients, and to 
+provide “sick-day” advice, temporarily withholding therapy 
+during significant intercurrent illness and restarting once 
+hydration and renal function are stable, often with slower 
+re-titration. These measures align with contemporary car -
+diovascular weight-management guidance and the toler -
+ability profile reported in HFpEF trials [ 24, 25]. Clinicians 
+should also counsel patients regarding symptoms of gall -
+bladder disease or pancreatitis, which should prompt inter -
+ruption and evaluation.
+Overall, the HFpEF–obesity trials to date establish 
+improvements in symptoms, functional capacity and con -
+gestion, with more robust evidence for reduction in HF 
+events currently available only for tirzepatide in SUMMIT, 
+while effects on mortality, long-term durability of ben -
+efit and generalisability beyond obese HFpEF phenotypes 
+remain unproven [24–26].
+Multiorgan Incretin Trials Beyond the Heart
+Non-cardiac incretin trials complement the HFpEF studies 
+and reinforce the view of obesity-related HFpEF as part of 
+a broader CRHM syndrome (Fig. 1). Selected non-cardiac 
+incretin trials with prespecified multiorgan endpoints – 
+including liver histology or liver fat, kidney outcomes and 
+body-composition measures – are summarised in Table 2, 
+focusing on randomised phase 2–3 studies of GLP-1 RA 
+and GIP/GLP-1 agonist therapy in obesity, MASLD/MASH 
+(previously known as NASLD/NASH) and chronic kidney 
+disease.
+In the liver, the phase 2 semaglutide trial in biopsy-
+confirmed non-alcoholic steatohepatitis (NASH, currently 
+known as MASH) demonstrated higher rates of steato -
+hepatitis resolution than placebo, along with substantial 
+weight loss and reductions in liver enzymes and liver fat 
+content [19]. MRI-based semaglutide trials in MASLD have 
+1 3
+Page 3 of 9    54 
+Heart Failure Reviews           (2026) 31:54 
+Table 1 Major GLP-1 receptor agonist and dual incretin trials in obesity and obesity-related HFpEF
+Trial Population Intervention vs. placebo Key findings
+Non-HFpEF CV-obesity trials
+LEADER [21] T2D with established CVD or 
+high CV risk
+Liraglutide 1.8 mg once 
+daily vs. placebo
+13% relative reduction in MACE; HF hospitalisation neutral; established GLP-1 RA as cardioprotective 
+beyond glucose lowering
+SUSTAIN-6 [22] T2D with high CV risk Semaglutide 0.5/1.0 mg 
+once weekly vs. placebo
+26% relative reduction in MACE; HF outcomes exploratory/neutral; supports CV benefit of semaglutide in 
+high-risk T2D
+REWIND [23] Broad T2D population (majority 
+without established CVD)
+Dulaglutide 1.5 mg once 
+weekly vs. placebo
+12% relative reduction in MACE in a broad T2D population; HF hospitalisations not significantly reduced 
+but no safety concern
+STEP-1 [17] Overweight/obesity without 
+diabetes
+Semaglutide 2.4 mg 
+once weekly vs. 
+placebo + lifestyle
+~ 15% mean weight loss; reduced waist circumference and hsCRP; provides weight-loss rationale for sema-
+glutide in obesity
+SELECT [16] Overweight/obesity with estab-
+lished atherosclerotic CVD, no 
+diabetes
+Semaglutide 2.4 mg once 
+weekly vs. placebo
+20% relative reduction in MACE in obesity without diabetes; secondary analyses showed fewer HF events; 
+positions semaglutide as cardiometabolic therapy in obesity
+SURMOUNT-1 
+[18]
+Obesity/overweight without 
+diabetes
+Tirzepatide 5/10/15 mg 
+once weekly vs. placebo
+Up to ~ 20% weight loss; marked reductions in waist circumference and hsCRP; establishes dual GIP/GLP-1 
+agonism as potent weight-loss strategy relevant to obese HFpEF
+HFpEF-obesity trials
+STEP-HFpEF 
+[24]
+Symptomatic HFpEF 
+(LVEF ≥ 45%), BMI ≥ 30 kg/m², 
+without T2D
+Semaglutide 2.4 mg once 
+weekly vs. placebo for 52 
+weeks
+Dual primary endpoints: change in KCCQ-CSS and body weight. Improved KCCQ-CSS, 6MWD, NT-
+proBNP and weight vs. placebo; HF hospitalisations/urgent HF visits numerically fewer with semaglutide 
+(trial not powered for HF events). Gastrointestinal adverse events (mainly nausea and diarrhoea) were more 
+frequent with semaglutide but generally mild–to–moderate and dose-dependent.
+STEP-HFpEF 
+DM [25]
+Symptomatic HFpEF 
+(LVEF ≥ 45%), BMI ≥ 30 kg/m², 
+with T2D
+Semaglutide 2.4 mg once 
+weekly vs. placebo for 52 
+weeks
+Dual primary endpoints: change in KCCQ-CSS and body weight. Similar improvements in KCCQ-CSS, 
+6MWD and weight to STEP-HFpEF; HF hospitalisation/urgent HF visits numerically fewer with semaglu-
+tide (trial not powered for HF events). Gastrointestinal adverse events (mainly nausea and diarrhoea) were 
+more frequent with semaglutide but generally mild–to–moderate and dose-dependent.
+SUMMIT [26] Symptomatic HFpEF 
+(LVEF ≥ 50%), BMI ≥ 30 kg/m²
+Tirzepatide (titrated up to 
+15 mg once weekly) vs. 
+placebo, median follow-up 
+~ 2 years
+Co-primary endpoints CV death or worsening HF (HF hospitalisation or urgent HF visit requiring IV ther-
+apy) and KCCQ-CSS. Reduced composite of CV death or worsening HF (driven mainly by fewer worsening 
+HF events); improved KCCQ-CSS, 6MWD, weight, hsCRP and systolic BP vs. placebo. Gastrointestinal 
+adverse events were common but usually mild–to–moderate and manageable with gradual dose escalation.
+SUMMIT CMR 
+substudy [27]
+SUMMIT participants with 
+analysable CMR at baseline and 
+52 weeks
+Tirzepatide vs. placebo Reduced LV mass and paracardiac (epicardial + pericardial) fat volume vs. placebo; preserved LVEF and 
+cardiac output; may suggest benefit related to structural remodelling and reduced paracardiac adiposity
+Abbreviations: 6MWD, six-minute walk distance; BMI, body-mass index; BP, blood pressure; CMR, cardiovascular magnetic resonance; CVD, cardiovascular disease; DM, diabetes mellitus; 
+GIP, glucose-dependent insulinotropic polypeptide; GLP-1, glucagon-like peptide-1; HF, heart failure; HFpEF, heart failure with preserved ejection fraction; hsCRP, high-sensitivity C-reactive 
+protein; KCCQ-CSS, Kansas City Cardiomyopathy Questionnaire clinical summary score; LVEF, left ventricular ejection fraction; MACE, major adverse cardiovascular events; NT-proBNP, 
+N-terminal pro-B-type natriuretic peptide; T2D, type 2 diabetes. Across these HFpEF trials, safety profiles were consistent with known GLP-1 receptor agonist and dual incretin therapy, with 
+gastrointestinal adverse events the most frequent treatment-related side effects and no new safety signals reported
+1 3
+   54  Page 4 of 9
+Heart Failure Reviews           (2026) 31:54 
+the European Union, the Committee for Medicinal Products 
+for Human Use at the European Medicines Agency (EMA) 
+has recommended conditional marketing authorisation for 
+semaglutide (Kayshild) for non-cirrhotic MASH with fibro-
+sis, reflecting an expedited pathway requiring additional 
+post-authorisation data [32]. The phase 2 trial of tirzepatide 
+in metabolic steatohepatitis with stage 2–3 fibrosis (SYN -
+ERGY-NASH) has also reported high rates of steatohepa -
+titis resolution without worsening of fibrosis, supporting 
+its recent progression to Phase 3. Together, these results 
+support the application of dual incretin agonism as a liver-
+targeted therapy [29].
+In the kidney, the FLOW trial established once-weekly 
+semaglutide as the first GLP-1 RA with dedicated kid -
+ney outcome data, reducing a composite of major kidney 
+events and cardiovascular death and slowing the decline in 
+shown reductions in liver fat measured by MRI–proton den-
+sity fat fraction (MRI-PDFF), even when liver stiffness is 
+unchanged, supporting MRI-PDFF as a quantitative liver-
+fat endpoint [ 28]. The phase 3 ESSENCE trial extended 
+these findings by showing that once-weekly semaglutide 
+2.4 mg achieved higher rates of MASH resolution and fibro-
+sis improvement than placebo in patients with stage 2–3 
+fibrosis, alongside substantial weight loss and metabolic 
+benefits [30]. On the basis of ESSENCE, semaglutide has 
+now received regulatory approval for MASH with fibrosis 
+in some regions, providing a precedent for liver-directed 
+indications in MASLD/MASH [ 30]. In the United States, 
+semaglutide 2.4 mg (Wegovy) received FDA accelerated 
+approval for adults with non-cirrhotic MASH with moder -
+ate-to-advanced fibrosis, with continued approval contin -
+gent on confirmatory evidence of clinical benefit [ 31]. In 
+Fig. 1  Central illustration: Incretin-based therapy with multiorgan 
+effects and imaging/clinical endpoints in heart, liver, kidneys and adi-
+pose/body composition. Core clinical endpoints  for obesity-related 
+HFpEF trials include HF events and congestion, major renal events 
+and cardiovascular death, symptoms/quality of life (KCCQ-CSS), 
+functional capacity (6MWD), body weight and central adiposity, 
+MASH resolution and liver fibrosis, and renal function (eGFR and 
+albuminuria). Core imaging endpoints  include LV mass, visceral 
+and epicardial/pericardial fat volumes, and liver fat and fibroinflam -
+mation (MRI-PDFF and cT1). Exploratory endpoints shown in the 
+panels (e.g. LA function, myocardial strain, T1/ECV , whole-body/
+body-composition MRI, liver stiffness and renal structural/perfusion 
+imaging) are primarily used for phenotyping and mechanistic substud-
+ies rather than as primary trial endpoints. Arrow symbols (↑/↓) indicate 
+the direction of change from baseline to follow-up where trial results 
+are available. Bullets without arrows denote exploratory measures 
+for which treatment effects are not summarised here. Abbreviations: 
+6MWD, six-minute walk distance; CMR, cardiovascular magnetic 
+resonance; CV , cardiovascular; DXA, dual-energy X-ray absorpti -
+ometry; EAT, epicardial adipose tissue; ECV , extracellular volume; 
+eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like pep-
+tide-1; GIP, glucose-dependent insulinotropic polypeptide; HF, heart 
+failure; HFpEF, heart failure with preserved ejection fraction; KCCQ, 
+Kansas City Cardiomyopathy Questionnaire; LA, left atrium; LV , left 
+ventricle; MASH, metabolic dysfunction–associated steatohepatitis; 
+MRI-PDFF, MRI-derived proton density fat fraction; NT-proBNP, 
+N-terminal pro-B-type natriuretic peptide; PAT, pericardial adipose 
+tissue; RA, receptor agonist; cT1, iron-corrected T1.
+ 
+1 3
+Page 5 of 9    54 
+Heart Failure Reviews           (2026) 31:54 
+Body-composition substudies from obesity programmes 
+such as STEP-1 and SURMOUNT-1 show that semaglutide 
+and tirzepatide reduce visceral fat and waist circumference 
+to a greater extent than would be expected with parallel 
+improvements in inflammatory and metabolic markers [ 17, 
+18]. In SUMMIT CMR, reductions in paracardiac (epicar -
+dial and pericardial) fat were documented directly [27].
+Collectively, these multiorgan data support the concept 
+that incretin-based therapies act across the liver, kidney and 
+adipose tissues, providing a rationale for incorporating mul-
+tiorgan imaging and biomarker endpoints in obesity-related 
+HFpEF trials.
+Multiorgan imaging endpoints in obesity-
+related HFpEF
+As obesity-related HFpEF is increasingly viewed as a 
+multiorgan syndrome, imaging endpoints should extend 
+beyond conventional measures of left ventricular struc -
+ture and function [ 1, 4, 5], (Fig. 1). In this context, multi -
+organ imaging serves not only for descriptive phenotyping 
+but also for mechanistic insight and as potential surrogate 
+endpoints for therapeutic response across cardiac, hepatic, 
+adipose and renal systems. Echocardiography remains the 
+first-line imaging modality for HFpEF diagnosis alongside 
+clinical assessment, but image quality is often suboptimal 
+in individuals with a high body mass index, and assessment 
+is largely confined to cardiac structure and haemodynamics 
+rather than extracardiac organ involvement [3]. From a car-
+diovascular perspective, core cardiac imaging endpoints in 
+obese HFpEF include LV volumes and mass, ejection frac -
+tion, left atrial volumes and phasic function, indices of dia -
+stolic function and global longitudinal strain, together with 
+quantitative assessment of EAT and PAT volumes, which 
+are commonly used as surrogate markers of haemodynamic 
+load, congestion risk and symptom burden.
+Cardiovascular magnetic resonance (CMR) offers highly 
+reproducible quantification of ventricular volumes, mass 
+and ejection fraction and is well suited to mechanistic and 
+phase 2 studies, with established multicentre reproducibility 
+and standardised protocols that make it a scalable endpoint 
+for larger trials [3]. Of particular relevance to obesity-related 
+HFpEF, CMR can directly quantify epicardial and pericar -
+dial adipose tissue volumes and, in some centres, myocar -
+dial triglyceride content, allowing integrated assessment of 
+cardiac structure, function and ectopic fat in a single exami-
+nation [8, 27]. For phase 2/2b mechanistic trials in obese 
+HFpEF, a pragmatic core CMR set would include LV vol -
+umes and mass, left atrial volumes and phasic function, and 
+global longitudinal strain, where available, and quantitative 
+EAT/PAT volumes, with the direction of benefit expected to 
+estimated glomerular filtration rate in patients with type 2 
+diabetes and chronic kidney disease [20]. These findings are 
+highly relevant to obesity-related HFpEF, where albumin -
+uric nephropathy and chronic kidney disease are common 
+and contribute to congestion, neurohumoral activation and 
+adverse prognosis.
+Table 2 Non-cardiac incretin trials with liver, kidney and adipose end-
+points
+Trial Population Interven-
+tion vs. 
+placebo
+Key findings
+Semaglu-
+tide NASH 
+phase 2 
+[19]
+Adults with 
+biopsy-
+confirmed 
+MASH (previ-
+ously termed 
+NASH) and 
+fibrosis
+Semaglu-
+tide (once 
+daily) vs. 
+placebo
+Higher rates of MASH 
+resolution without 
+worsening of fibrosis; 
+substantial weight loss; 
+reductions in liver fat and 
+liver enzymes, supporting 
+histology and liver fat as 
+endpoints
+Sema-
+glutide 
+NAFLD 
+MRI-PDFF 
+trial [28]
+Adults with 
+MASLD 
+(previously 
+termed 
+NAFLD)
+Semaglu-
+tide vs. 
+placebo
+Reduction in liver fat 
+measured by MRI-PDFF, 
+often without major 
+change in stiffness; 
+demonstrates MRI-PDFF 
+as a sensitive quantitative 
+liver-fat endpoint
+SYNERGY-
+NASH 
+(tirzepatide) 
+[29]
+Adults with 
+metabolic 
+MASH (previ-
+ously termed 
+NASH) and 
+stage 2–3 
+fibrosis
+Tirzepa-
+tide vs. 
+placebo
+High rates of MASH 
+resolution without 
+worsening of fibrosis; 
+improvements in non-
+invasive fibrosis markers; 
+supports dual incretin 
+agonism as a liver-tar-
+geted therapy
+FLOW 
+(Semaglu-
+tide kidney 
+outcomes) 
+[20]
+Type 2 
+diabetes with 
+chronic kid-
+ney disease
+Sema-
+glutide 
+1.0 mg 
+once 
+weekly 
+vs. 
+placebo
+Reduced composite of 
+major adverse kidney 
+events and cardiovascular 
+death; slower decline in 
+eGFR and lower albu-
+minuria; supports eGFR 
+slope and albuminuria as 
+renal endpoints within 
+hierarchical multiorgan 
+endpoint frameworks
+ESSENCE 
+(sema-
+glutide in 
+MASH) 
+[30]
+Adults with 
+biopsy-con-
+firmed MASH 
+and stage 2–3 
+fibrosis
+Sema-
+glutide 
+2.4 mg 
+once 
+weekly 
+vs. 
+placebo
+Higher rates of MASH 
+resolution and fibrosis 
+improvement versus 
+placebo, with substantial 
+weight loss and metabolic 
+benefits; reinforces sema-
+glutide as a liver- and 
+metabolically directed 
+therapy suitable for mul-
+tiorgan endpoint trials
+Terminology for metabolic liver disease has been updated from 
+NAFLD/NASH to MASLD/MASH but legacy terms NAFLD and 
+NASH are retained only where they form part of original trial names. 
+abbreviations: CKD, chronic kidney disease; EGFR, estimated glo -
+merular filtration rate; MASLD, metabolic dysfunction–associated 
+steatotic liver disease; MASH, metabolic dysfunction–associated 
+steatohepatitis; MRI-PDFF, mri-derived proton density fat fraction
+1 3
+   54  Page 6 of 9
+Heart Failure Reviews           (2026) 31:54 
+volumes, MRI-PDFF and liver fibroinflammation surro -
+gates [34]. Feasibility in severely obese HFpEF populations 
+can be enhanced by limiting scan time, patient-tailored posi-
+tioning, and adopting a tiered imaging strategy in which all 
+participants undergo core sequences while more intensive 
+multiorgan protocols are reserved for predefined substudies 
+to minimise missing data and participant burden [35, 36].
+Current position in guidelines and future 
+directions
+Obesity-related HFpEF is increasingly recognised as a dis -
+tinct phenotype, yet current HF guidelines have not incor -
+porated GLP-1 receptor agonists or dual incretin agonists 
+as recommended HF therapies, reflecting the evolving evi -
+dence base [ 3–5]. The 2023 European Society of Cardiol -
+ogy Focused Update strengthened recommendations for 
+SGLT2 inhibitors in HFpEF (Class I, Level A), support -
+ing SGLT2 inhibition as foundational disease-modifying 
+therapy across the HFpEF spectrum, alongside diuretics for 
+symptomatic congestion relief and systematic optimisation 
+of key comorbidities such as hypertension, atrial fibrillation 
+and coronary artery disease [ 37]. Within this framework, 
+incretin-based agents are best positioned as adjunctive, phe-
+notype-targeted therapies in patients with obesity-related 
+HFpEF, implemented primarily to address upstream driv -
+ers such as adiposity, insulin resistance, systemic inflam -
+mation and multi-organ dysfunction rather than as core HF 
+therapies per se [ 37]. This positioning is consistent with 
+contemporary American College of Cardiology consensus 
+guidance on medical weight management in cardiovascu -
+lar practice, which outlines multidisciplinary pathways for 
+patient selection, initiation and dose escalation, monitoring, 
+and adverse-event mitigation — issues that are particularly 
+relevant in HF populations (for example volume status, 
+renal function, gastrointestinal intolerance and preservation 
+of lean mass during weight loss) [38].
+Regulatory indications for incretin-based treatments 
+now include chronic weight management in people with 
+obesity and, in some regions, cardiovascular risk reduc -
+tion in obesity without diabetes, with additional evidence 
+supporting their use in chronic kidney disease and steato -
+hepatitis [16–20, 29, 30]. STEP-HFpEF, STEP-HFpEF DM 
+and SUMMIT provide proof of concept that semaglutide 
+and tirzepatide can improve symptoms and exercise capac -
+ity in obesity-related HFpEF and, in the case of tirzepatide, 
+reduce HF events and may favourably remodel the heart and 
+paracardiac fat [25–27]. However, longer-term HF-specific 
+data on mortality, durability of benefit, adherence and cost-
+effectiveness are still needed before guideline recommenda-
+tions are likely to change [3, 5].
+be reductions in LV mass, LA size, EAT/PAT and improved 
+strain, although minimal clinically important changes for 
+these measures in obese HFpEF have not yet been estab -
+lished (no universally accepted thresholds).
+For extracardiac organs, MRI–proton density fat fraction 
+(MRI-PDFF) provides a quantitative measure of hepatic ste-
+atosis, is sensitive to change over time, and is well-suited as 
+a secondary endpoint in incretin trials that include HFpEF 
+patients [19, 28]. Multiparametric liver MRI (such as iron-
+corrected T1 [cT1]) provides non-invasive surrogates of 
+hepatic fibroinflammation and can be acquired in the same 
+session as CMR. Abdominal MRI or CT scan can quantify 
+visceral and subcutaneous fat depots, while dual-energy 
+X-ray absorptiometry provides complementary information 
+on total and regional fat and lean mass; abdominal MRI has 
+the advantage of avoiding both contrast and ionising radia -
+tion, whilst also being able to be acquired in the same scan-
+ning session as other organs [ 28, 29]. Taken together, for 
+phase 2/2b mechanistic trials in obese HFpEF, a practical 
+multiorgan MRI endpoint set would include liver fat burden 
+assessed by MRI-PDFF, a liver fibroinflammation surrogate 
+such as iron-corrected T1 (cT1), and a measure of central 
+adiposity (for example, abdominal MRI–derived visceral 
+fat volume or DXA-derived regional fat mass). These end -
+points map directly onto the weight-dependent, ectopic-fat 
+and weight-independent pathways outlined above and are 
+primarily interpreted as directional changes, as universally 
+accepted minimal clinically important thresholds for these 
+measures in obese HFpEF have not yet been defined.
+Renal imaging is less established in HFpEF trials. Rou -
+tine renal endpoints – estimated glomerular filtration rate, 
+creatinine and albuminuria – remain fundamental and are 
+likely to be the primary renal measures in most studies 
+[20]. More advanced renal MRI techniques (for example, 
+perfusion or diffusion imaging) can characterise renal 
+structure and microcirculation more directly but are likely 
+to be confined to mechanistic substudies. One example is 
+the REMODEL trial in type 2 diabetes and chronic kidney 
+disease, which uses multiparametric renal MRI together 
+with kidney biopsies and biomarkers to investigate the 
+renal mechanisms of semaglutide, with full results still 
+awaited [33].
+Experience from multiorgan cardiometabolic imaging 
+programmes suggests that harmonised “heart–liver–fat” 
+MRI protocols are feasible. A single session can combine 
+cine CMR, myocardial T1 and T2 mapping, epicardial and 
+pericardial fat quantification, MRI-PDFF and cT1 [ 8, 27–
+29]. For multicentre phase 2/2b studies, reproducibility can 
+be optimised by using standardised acquisition protocols 
+across vendors, central training and accreditation, phantom-
+based calibration where available, and blinded core-labora-
+tory analysis for key endpoints such as LV mass, EAT/PAT 
+1 3
+Page 7 of 9    54 
+Heart Failure Reviews           (2026) 31:54 
+Conclusion
+Obesity-related HFpEF should be reframed as an adipos -
+ity-driven, multiorgan cardio–renal–hepatic–metabolic 
+syndrome that is not optimally addressed by conventional 
+HF therapies. GLP-1 receptor agonist and dual incretin 
+agonist therapies produce substantial weight and visceral 
+fat loss, improve metabolic and inflammatory profiles, and 
+exert favourable multiorgan effects, and these changes may 
+be accompanied by improvements in symptoms, exercise 
+capacity, and, in selected trials, fewer HF events.
+Although not yet guideline-endorsed as HF drugs, incre-
+tin-based, weight-directed treatments are emerging as key 
+components of the management of obesity-related HFpEF. 
+Future randomised trials should integrate multiorgan car -
+diac, hepatic, adipose and renal imaging with clinical end -
+points to help define the role of incretin therapies in this 
+multiorgan disease phenotype.
+Acknowledgements We acknowledge Servier Medical Art  (   h t t p s : / / s 
+m a r t . s e r v i e r . c o m     ) for providing illustrations adapted in Fig. 1, which 
+are licensed under the Creative Commons Attribution 4.0 International 
+licence.
+(CC BY 4.0: h t t p  s : /  / c r e  a t  i v e  c o m m  o n s  . o r  g / l i c e n s e s / b y / 4 . 0 /).
+Author contributions  MW conceived the idea for the review. MM 
+drafted the initial version of the manuscript and designed the central 
+figure. JL substantially edited and adapted the figure illustrations in 
+collaboration with MW. All authors (MM, AD, JL, CL, KR and MW) 
+contributed to critical revision of the manuscript and approved the final 
+version.
+Funding No specific funding was received for this work.
+Data availability No datasets were generated or analysed during the 
+current study.
+Declarations
+Competing interests Competing interest: MM, AD and CL are em -
+ployees of Perspectum, a company that develops medical imaging 
+devices. MM also holds a Visiting Professorship at the University 
+of Oxford. The remaining authors declare that they have no known 
+competing financial interests or personal relationships that could have 
+influenced the work reported in this paper. To minimise institutional 
+bias, all imaging recommendations in this narrative review are based 
+on vendor-neutral, widely adopted CMR, liver MRI and body-compo-
+sition techniques, and we have cited standard measurement methods 
+where available. No proprietary imaging sequences, software plat -
+forms or commercial services from Perspectum or any other vendor 
+are named or promoted in the manuscript.
+Open Access   This article is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits use, sharing, 
+adaptation, distribution and reproduction in any medium or format, 
+as long as you give appropriate credit to the original author(s) and the 
+source, provide a link to the Creative Commons licence, and indicate 
+if changes were made. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless 
+Key implementation considerations
+The durability of benefit, particularly after treatment dis -
+continuation, has not been established, and real-world toler-
+ability in symptomatic HFpEF may be less favourable than 
+in general obesity cohorts, given older age, multimorbidity, 
+fluid overload and polypharmacy. Mechanistic attribution 
+also remains unresolved: improvements in symptoms and 
+exercise capacity may reflect differing contributions from 
+increased physical activity/fitness, decongestion, haemody-
+namic unloading, and true reverse remodelling. In addition, 
+apparent treatment effects may be modified or confounded 
+by concurrent optimisation of background HF and comor -
+bidity therapies (including diuretic adjustment and initia -
+tion of disease-modifying agents). Finally, the translational 
+impact will be shaped by cost-effectiveness and equitable 
+access, with substantial variation in reimbursement and ser-
+vice delivery across health systems.
+Future phase 2b–3 trials should deliberately target the 
+obesity-related HFpEF phenotype, combining criteria for 
+HFpEF, obesity and central adiposity. A practical enrich -
+ment approach would combine BMI ≥ 30 kg/m² with a 
+sex-specific waist circumference threshold and at least one 
+marker of ectopic or central fat burden (e.g. imaging-derived 
+visceral fat volume, elevated epicardial or paracardiac fat, 
+or non-invasive evidence of MASLD) to select patients 
+in whom adiposity-driven multiorgan dysfunction is most 
+likely. Such enrichment would be expected to increase the 
+signal for changes in LV mass, left atrial function, EAT/
+PAT burden, liver fat and fibroinflammation, and visceral 
+adiposity, thereby improving the efficiency of phase 2/2b 
+mechanistic studies. These enrichment criteria and mecha -
+nistic hypotheses are applicable to the obese HFpEF pheno-
+type with central and ectopic adiposity, as in STEP-HFpEF 
+and SUMMIT, and should not be extrapolated to lean or 
+non-obese HFpEF phenotypes. A typical design would ran-
+domise such patients to GLP-1 RA or dual incretin therapy 
+versus placebo on top of guideline-directed HF treatment, 
+with a cardiovascular-driven primary endpoint [ 5, 24–26]. 
+Prespecified imaging substudies incorporating harmonised 
+“heart–liver–fat” MRI to quantify changes in left ventricular 
+mass, left atrial function, epicardial and pericardial fat, liver 
+fat, fibroinflammation and abdominal visceral fat, alongside 
+renal endpoints and biomarker panels, may be particularly 
+informative [8, 19, 20, 27–29]. These studies will be nec -
+essary to define the role of incretin-based, weight-directed 
+therapies in routine care and to establish a broader frame -
+work for evaluating other multiorgan interventions in obe -
+sity-related HFpEF. Combining these imaging markers with 
+clinical endpoints would help establish whether multiorgan 
+imaging changes can serve as surrogate or supportive end -
+points for clinical benefit.
+1 3
+   54  Page 8 of 9
+Heart Failure Reviews           (2026) 31:54 
+20. Perkovic V et al (2024) Effects of Semaglutide on Chronic Kid -
+ney Disease in Patients with Type 2 Diabetes. N Engl J Med 
+391(2):109–121
+21. Marso SP et al (2016) Liraglutide and Cardiovascular Outcomes 
+in Type 2 Diabetes. N Engl J Med 375(4):311–322
+22. Marso SP et al (2016) Semaglutide and Cardiovascular Out -
+comes in Patients with Type 2 Diabetes. N Engl J Med 
+375(19):1834–1844
+23. Gerstein HC et al (2019) Dulaglutide and cardiovascular out -
+comes in type 2 diabetes (REWIND): a double-blind, randomised 
+placebo-controlled trial. Lancet 394(10193):121–130
+24. Kosiborod MN et al (2023) Semaglutide in Patients with Heart 
+Failure with Preserved Ejection Fraction and Obesity. N Engl J 
+Med 389(12):1069–1084
+25. Davies MJ et al (2025) Semaglutide in obesity-related heart failure 
+with preserved ejection fraction and type 2 diabetes across base -
+line HbA(1c) levels (STEP-HFpEF DM): a prespecified analysis of 
+heart failure and metabolic outcomes from a randomised, placebo-
+controlled trial. Lancet Diabetes Endocrinol 13(3):196–209
+26. Packer M et al (2025) Tirzepatide for Heart Failure with Preserved 
+Ejection Fraction and Obesity. N Engl J Med 392(5):427–437
+27. Kramer CM et al (2025) Tirzepatide Reduces LV Mass and Para-
+cardiac Adipose Tissue in Obesity-Related Heart Failure: SUM -
+MIT CMR Substudy. J Am Coll Cardiol 85(7):699–706
+28. Flint A et al (2021) Randomised clinical trial: semaglutide versus 
+placebo reduced liver steatosis but not liver stiffness in subjects 
+with non-alcoholic fatty liver disease assessed by magnetic reso -
+nance imaging. Aliment Pharmacol Ther 54(9):1150–1161
+29. Loomba R et al (2024) Tirzepatide for Metabolic Dysfunction-
+Associated Steatohepatitis with Liver Fibrosis. N Engl J Med 
+391(4):299–310
+30. Sanyal AJ et al (2025) Phase 3 Trial of Semaglutide in Meta -
+bolic Dysfunction-Associated Steatohepatitis. N Engl J Med 
+392(21):2089–2099
+31. Food US, Administration D (2025) FDA Approves Treatment for 
+Serious Liver Disease Known as ‘MASH’. [cited 2026; Available 
+from:  h t t p  s : /  / w w w  . f  d a .  g o v /  d r u  g s /  n e w  s - e  v e n t  s -  h u m  a n - d  r u g  s / f  d a 
+-  a p p  r o v e  s -  t r e  a t m e  n t -  s e r  i o u  s - l  i v e r  - d  i s e a s e - k n o w n - m a s h
+32. European Medicines Agency. Kayshild (semaglutide) (2025) 
+[cited 2026; Available from:  h t t p s :   /  / w w  w . e  m  a  . e u r  o  p a  .  e  u  /  e n / m  e d i  
+c i   n e s / h  u m a n /  E P A R / k a y s h i l d
+33. Pruijm M et al (2026) REMODELing mechanistic trials for kid -
+ney disease: a multimodal, tissue-centered approach to under -
+stand the renal mechanism of action of semaglutide. Kidney Int 
+109(1):6–16
+34. Kramer CM et al (2020) Standardized cardiovascular magnetic 
+resonance imaging (CMR) protocols: 2020 update. J Cardiovasc 
+Magn Reson 22(1):17
+35. Shah RV et al (2014) Vasodilator stress perfusion CMR imag -
+ing is feasible and prognostic in obese patients. JACC Cardiovasc 
+Imaging 7(5):462–472
+36. Doeblin P, Kelle S (2021) Cardiac magnetic resonance imag -
+ing: the echo of the obese? Eur Heart J Cardiovasc Imaging 
+22(5):528–529
+37. McDonagh TA et al (2023) 2023 focused update of the 2021 ESC 
+guidelines for the diagnosis and treatment of acute and chronic 
+heart failure. Eur Heart J 44(37):3627–3639
+38. Gilbert O et al (2025) 2025 concise clinical guidance: an ACC 
+expert consensus statement on medical weight management for 
+optimization of cardiovascular health: a report of the American 
+College of Cardiology solution set oversight committee. J Am 
+Coll Cardiol 86(7):536–555
+Publisher’s note Springer Nature remains neutral with regard to juris-
+dictional claims in published maps and institutional affiliations.
+indicated otherwise in a credit line to the material. If material is not 
+included in the article’s Creative Commons licence and your intended 
+use is not permitted by statutory regulation or exceeds the permitted 
+use, you will need to obtain permission directly from the copyright 
+holder. To view a copy of this licence, visit  h t t p  : / /  c r e a  t i  v e c  o m m o  n s .  o 
+r g  / l i c e n s e s / b y / 4 . 0 /.
+References
+1. Neeland IJ et al (2019) Visceral and ectopic fat, atherosclerosis, 
+and cardiometabolic disease: a position statement. Lancet Diabe-
+tes Endocrinol 7(9):715–725
+2. Guh DP et al (2009) The incidence of co-morbidities related to 
+obesity and overweight: a systematic review and meta-analysis. 
+BMC Public Health 9:88
+3. McDonagh T.A. et al (2021) 2021 ESC Guidelines for the diag -
+nosis and treatment of acute and chronic heart failure: Devel -
+oped by the Task Force for the diagnosis and treatment of acute 
+and chronic heart failure of the European Society of Cardiology 
+(ESC) With the special contribution of the Heart Failure Associa-
+tion (HFA) of the ESC. Eur Heart J 42(36):3599–3726
+4. Obokata M et al (2017) Evidence Supporting the Existence of a 
+Distinct Obese Phenotype of Heart Failure With Preserved Ejec -
+tion Fraction. Circulation 136(1):6–19
+5. Packer M, Kitzman DW (2018) Obesity-related heart failure with 
+a preserved ejection fraction: the mechanistic rationale for com -
+bining inhibitors of aldosterone, neprilysin, and sodium-glucose 
+cotransporter-2. JACC Heart Fail 6(8):633–639
+6. Reddy YNV et al (2019) The haemodynamic basis of lung con -
+gestion during exercise in heart failure with preserved ejection 
+fraction. Eur Heart J 40(45):3721–3730
+7. Packer M (2018) Epicardial adipose tissue may mediate deleteri-
+ous effects of obesity and inflammation on the myocardium. J Am 
+Coll Cardiol 71(20):2360–2372
+8. Khidr SS et al (2025) Cardiac magnetic resonance quantified 
+epicardial fat volume is associated with complex coronary artery 
+disease among diabetics. Cardiovasc Diabetol 24(1):64
+9. Packer M (2018) Derangements in adrenergic-adipokine signalling 
+establish a neurohormonal basis for obesity-related heart failure 
+with a preserved ejection fraction. Eur J Heart Fail 20(5):873–878
+10. Huang DQ et al (2025) Metabolic dysfunction-associated stea -
+totic liver disease in adults. Nat Rev Dis Primers 11(1):14
+11. Kang P et al (2025) Perirenal Fat and Chronic Kidney Disease: A 
+Systematic Review and Meta-Analysis. Kidney Blood Press Res 
+50(1):240–248
+12. Wang L, Valencak TG, Shan T (2024) Fat infiltration in skeletal 
+muscle: Influential triggers and regulatory mechanism. iScience 
+27(3):109221
+13. Hope DCD, Tan TM (2024) Skeletal muscle loss and sarcopenia 
+in obesity pharmacotherapy. Nat Rev Endocrinol 20(12):695–696
+14. Holst JJ (2007) The physiology of glucagon-like peptide 1. 
+Physiol Rev 87(4):1409–1439
+15. Drucker DJ (2018) Mechanisms of action and therapeutic appli -
+cation of glucagon-like peptide-1. Cell Metab 27(4):740–756
+16. Lincoff AM et al (2023) Semaglutide and Cardiovascu -
+lar Outcomes in Obesity without Diabetes. N Engl J Med 
+389(24):2221–2232
+17. Wilding JPH et al (2021) Once-Weekly Semaglutide in Adults 
+with Overweight or Obesity. N Engl J Med 384(11):989–1002
+18. Jastreboff AM et al (2022) Tirzepatide Once Weekly for the Treat-
+ment of Obesity. N Engl J Med 387(3):205–216
+19. Newsome PN et al (2021) A Placebo-Controlled Trial of Subcu -
+taneous Semaglutide in Nonalcoholic Steatohepatitis. N Engl J 
+Med 384(12):1113–1124
+1 3
+Page 9 of 9    54

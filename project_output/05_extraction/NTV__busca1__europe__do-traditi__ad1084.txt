@@ -1,0 +1,1091 @@
+RESEARCH Open Access
+© The Author(s) 2026. Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, 
+sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and 
+the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included 
+in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will 
+need to obtain permission directly from the copyright holder. To view a copy of this licence, visit  h t t p  : / /  c r e a  t i  v e c  o m m  o n s .  o r  g / l i c e n s e s / b y / 4 . 0 /.
+Farboud et al. BMC Complementary Medicine and Therapies           (2026) 26:92 
+https://doi.org/10.1186/s12906-026-05289-3
+BMC Complementary 
+Medicine and Therapies
+†Elham Haghjoo and Mohammad Ariya contributed equally to this 
+work.
+*Correspondence:
+Elham Haghjoo
+E_Haghjoo_56@yahoo.com
+Mohammad Ariya
+ariya.mohammad1987@yahoo.com
+Full list of author information is available at the end of the article
+Abstract
+Background Obesity in adolescents is a critical health concern linked to severe adulthood conditions; therefore, this 
+randomized controlled trial compared the relative effectiveness of a modern dietary approach versus a traditional 
+Iranian medicine-based diet for weight management.
+Methods Following simple randomization (stratified by gender and school type), 93 junior high school students 
+were assigned to either a modern diet (300–500 kcal/day deficit, n = 41) or a traditional Iranian diet (qualitative 
+humoral-based, n = 52) for 90 days. Dietary adherence was assessed using a 10-point Visual Analog Scale (VAS). 
+Baseline demographic, anthropometric, and unhealthy eating pattern data were recorded.
+Results Over 90 days, the modern diet group achieved a statistically significant decrease in BMI (mean change: 
+-0.31 kg/m²; P = 0.032) and waist circumference (P < 0.001). Conversely, the traditional Iranian diet group showed a 
+significant increase in weight and BMI (mean change: +0.74 kg/m²; P < 0.001). Between-group differences for BMI 
+change were highly significant favoring the modern diet (P < 0.001). Dietary adherence and feasibility scores improved 
+in the modern group (P = 0.033) but decreased in the traditional group (P = 0.001).
+Conclusions These findings suggest that the modern dietary approach was more effective for weight loss in this 
+student population, likely due to better adherence influenced by greater public knowledge and accessibility of 
+information, alongside healthier dietary pattern shifts.
+Trial registration The study is registered with the Iranian Registry of Clinical Trials (IRCT20230610058442N1 dated 
+September 10, 2023).
+Do traditional medicine-based diets lead 
+to greater weight loss than modern diets 
+in overweight and obese students? A 
+randomized controlled trial
+Mohsen Farboud1 , Elham Haghjoo2*†, Mohammad Mehdi Naghizadeh3, Somayeh Abolghasemi3,4, 
+Maryam Moradi3,4, Fatemeh Zarepour5, Fatemeh Heidarinejad4 and Mohammad Ariya3,4,6*†
+Page 2 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+Introduction
+Obesity has emerged as a critical global health concern, 
+particularly in developing nations where prevalence 
+often exceeds that of developed countries [ 1]. Address -
+ing this issue among adolescents is vital, as excess weight 
+during these formative years is strongly linked to irre -
+versible physical and mental health consequences [ 2]. 
+Moreover, if left unmanaged, adolescent obesity can lead 
+to long-term, potentially irreversible consequences for 
+both physical and mental health [ 3]. Therefore, effective 
+management during adolescence is essential to prevent 
+chronic adult conditions, such as type 2 diabetes and car-
+diovascular disease, while significantly reducing the risk 
+of premature mortality and long-term disability [2, 3].
+Research indicates that lifestyle interventions (com -
+prising dietary changes, increased physical activity, and 
+behavioural modification) are the first-line treatment for 
+managing overweight and obesity in adolescents [ 4, 5]. 
+Among these, structured dietary interventions that focus 
+on modifying eating patterns and controlling caloric 
+intake play a pivotal role [6]. Nutrition professionals often 
+implement these strategies to design age-appropriate, 
+sustainable meal plans for adolescents, aiming to curb 
+the rising prevalence of obesity during this critical devel -
+opmental stage [6, 7]. Modern dietary plans, often devel -
+oped by nutrition professionals, are designed not only to 
+support weight loss or maintenance but also to promote 
+healthier eating habits by encouraging the consumption 
+of nutrient-dense foods and reducing the intake of ultra-
+processed and harmful items [6, 8].
+On the other hand, some studies suggest that dietary 
+approaches rooted in traditional medicine may offer 
+greater effectiveness in promoting weight loss compared 
+to certain modern diets. These traditional regimens often 
+emphasize holistic principles, natural ingredients, and 
+long-term balance, which may contribute to better adher-
+ence and metabolic outcomes in some individuals [ 9, 10]. 
+Among various traditional medical systems, Iranian tra -
+ditional medicine offers particularly comprehensive and 
+influential dietary guidelines, which have been utilized 
+for centuries in managing body weight and promoting 
+overall health [ 11]. Indeed, Iranian traditional medicine 
+proposes a variety of strategies for the management of 
+overweight and obesity, which, if appropriately imple -
+mented, may contribute to mitigating the prevalence of 
+these conditions among school-aged students [12, 13].
+Despite a limited number of studies exploring the dif -
+ferences between modern dietary approaches and the 
+recommendations of Iranian traditional medicine for pro-
+moting weight loss [ 12, 14], no research has specifically 
+compared these two dietary patterns among students to 
+date. The existing gap in scientific knowledge lies in the 
+lack of research specifically comparing the effectiveness 
+of calorie-controlled modern protocols with traditional 
+Iranian medicine-based diets in a student population. 
+This comparison is essential to determine whether quali -
+tative traditional principles can achieve comparable out -
+comes to quantitative modern restrictions. Therefore, 
+this study aims to evaluate and compare the effectiveness 
+of these two distinct dietary patterns in reducing weight 
+among overweight and obese Iranian students.
+Methods
+Study design and participants
+This randomized controlled trial (RCT) employed a 
+parallel-group, pre-test–post-test design. The trial was 
+conducted without any deviations from the pre-specified 
+protocol, outcomes, or analysis plan, and with no involve-
+ment from students, teachers, or family members of 
+participants in its design, conduct, or reporting. A CON -
+SORT flow diagram illustrating the study procedure is 
+provided in Supplementary Fig. 1. The study population 
+comprised secondary school students (both male and 
+female), aged 13–16 years, as the target population. This 
+age group was selected because these students are at an 
+age where they possess a basic understanding of dietary 
+habits, yet are not under the intense academic pressure 
+experienced by students in higher grades who are prepar-
+ing for university entrance examinations, pressures that 
+might hinder adherence to dietary interventions. The 
+study was conducted in the city of Fasa, located in Fars 
+Province in southwestern Iran. According to the most 
+recent census data, Fasa has a population of approxi -
+mately 250,000 residents [15].
+Notably, the study protocol followed the principles 
+of the Declaration of Helsinki and received approval 
+from the Ethics Committee of Fasa University of Medi -
+cal Sciences (Approval Code: IR.FUMS.REC.1402.064). 
+As the participants were minors (aged 13–16 years), 
+written informed consent to participate was obtained 
+from their parents or legal guardians. Additionally, 
+all student participants provided their written assent 
+to participate. Furthermore, the study was registered 
+with the Iranian Registry of Clinical Trials (IRCTID: 
+IRCT20230610058442N1) on 10/09/2023.
+Sampling method and school selection
+In this study, sampling was conducted from both Health-
+Promoting Schools and regular Schools in 2023–2024. 
+Health-Promoting Schools are institutions that adopt a 
+Keywords Obesity, Overweight, Students, Weight loss, Iranian traditional medicine, Modern diets, Dietary 
+interventions
+Page 3 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+comprehensive approach to enhance the health of stu -
+dents, staff, and families by fostering healthy learning 
+environments, implementing health-oriented policies, 
+and engaging the local community [16].
+For the sampling process, schools were identified using 
+the official registry of the Fasa Department of Education. 
+Within each group, one-quarter of the schools were cho -
+sen from among the Health-Promoting Schools. In total, 
+four schools met the eligibility criteria and were included. 
+From each selected school, eligible students were ran -
+domly chosen to participate in the study. The selected 
+students were then randomly assigned to one of two 
+dietary intervention groups: (1) a modern diet plan tai -
+lored to caloric intake and supervised by a nutritionist, or 
+(2) a traditional Iranian medicine-based dietary plan for 
+weight reduction, overseen by a specialist in traditional 
+Iranian medicine. Participants received no concomitant 
+care for the duration of the study.
+Modern diet planning framework by a nutritionist
+Dietary planning for adolescents requires a thorough 
+evaluation of their nutritional status, physical growth, 
+and lifestyle habits [ 6, 17]. In this process, nutrition -
+ists begin the assessment by examining anthropometric 
+measurements such as height, weight, and BMI, using 
+age- and sex-specific growth charts to determine the 
+individual’s nutritional condition [6, 18].
+Energy needs for adolescents are determined by age, 
+sex, level of physical activity, and their growth spurt stage 
+[6, 17, 19]. Generally, adolescents within this age range 
+require a higher caloric intake than younger children due 
+to their rapid physical development and increased muscle 
+mass [20]. Moderately active boys aged 13 to 16 typically 
+need about 2,400 to 2,800 kilocalories daily, whereas girls 
+of the same age and activity level require approximately 
+2,000 to 2,200 kilocalories per day [ 6, 19]. These values 
+can vary based on whether the adolescent leads a seden -
+tary, moderately active, or highly active lifestyle [ 6, 17]. 
+Notably, the modern diet was designed to induce a mod -
+erate energy deficit (approximately 300–500 kcal/day) 
+relative to the participant’s total daily energy expenditure, 
+based on WHO growth standards and standard clinical 
+guidelines for adolescent weight management [6, 18].
+The suggested macronutrient distribution for adoles -
+cents indicates that 45 to 65% of total energy should be 
+derived from carbohydrates, 10 to 30% from proteins, 
+and 25 to 35% from fats, with a focus on incorporating 
+unsaturated fats [ 6, 19]. A well-structured dietary plan 
+also should include three main meals and two to three 
+snacks daily to ensure adequate energy and nutrient 
+intake for growth and cognitive function [ 6, 19]. Break-
+fast, recognized as a crucial meal, plays a significant role 
+in enhancing concentration and academic performance 
+and should feature protein sources, dairy products, and 
+whole grains [ 6, 20]. Moreover, the dietary plan should 
+emphasize nutrient-rich whole foods and healthy fats 
+while limiting processed and sugary items to support 
+optimal metabolic and cognitive health [ 6]. In this study, 
+the dietary plan developed by nutrition specialists is 
+referred to as the “Modern Diet” A sample one-day diet 
+for this group is provided in Supplementary Table 1.
+Traditional Iranian diet planning framework by Iranian 
+traditional medicine practitioner
+The dietary planning method in Iranian traditional 
+medicine is rooted in humoral theory, which classifies 
+individuals and foods based on their inherent qualities—
+hot, cold, moist, and dry—and aims to maintain balance 
+among these temperaments to promote health [ 12– 14, 
+21]. According to traditional scholars, food exerts signifi -
+cant effects on various organs of the body, and depend -
+ing on its qualitative temperament and interaction with 
+bodily systems, it can produce either beneficial or harm -
+ful outcomes [ 14, 21]. This approach considers not only 
+the nutritional content of food but also its qualitative 
+effects on the body, digestion, and temperament [ 12, 13]. 
+These effects are believed to influence not only physical 
+health but also psychological well-being. Therefore, care -
+ful selection of food and beverages is considered essential 
+to prevent disturbances in mental and emotional equilib -
+rium [13].
+In traditional Iranian medicine, personalized nutri -
+tion is emphasized, where dietary recommendations 
+are tailored to an individual’s mizaj (temperament), age, 
+season, and lifestyle [ 14, 21]. Indeed, Mizaj was assessed 
+clinically by a qualified Persian Medicine specialist using 
+traditional indices from Avicenna’s Canon (e.g., pulse 
+diagnosis, physical signs, symptomatic history). This 
+clinical assessment serves as the gold standard for classi -
+fication into categories (e.g., warm-dry, cold-moist) [ 22]. 
+For example, individuals with a warm and dry tempera -
+ment are advised to consume foods with cold and moist 
+qualities to restore balance [ 21]. The dietary regimen in 
+traditional Iranian medicine places individuals within a 
+structured and health-oriented framework for a specific 
+period, encouraging disciplined eating habits [ 14, 21]. 
+This approach to health preservation emphasizes prin -
+ciples such as proper hydration practices, avoidance of 
+incompatible food combinations, sleep hygiene, regu -
+lar physical activity, emotional regulation (e.g., manag -
+ing anger and fear), exposure to clean air, and thorough 
+mastication of food [ 12– 14, 21]. Moreover, meal timing 
+and food combinations are also critical components. 
+traditional Iranian medicine recommends consuming 
+the heaviest meal at midday and avoiding incompat -
+ible food combinations, such as fish with dairy, which 
+are believed to disrupt digestion and humoral bal -
+ance [ 12, 14]. Indeed, the protocol explicitly prohibited 
+Page 4 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+‘incompatible’ food combinations, particularly the co-
+consumption of fish and yogurt. In Persian Medicine, dis-
+tinct rules regarding ‘Oral Food’ dictate that foods with 
+similar cold tempers must not be consumed simultane -
+ously. Since both fish and yogurt are classified as having 
+a ‘cold temper, ’ their combination is believed to induce 
+mal-temperament (Soo-e-mizaj) [23]. Unlike the modern 
+diet, the traditional Iranian diet was implemented as an 
+ad libitum protocol and did not impose a specific quan -
+titative caloric restriction. This methodological decision 
+was made to ensure fidelity to the traditional reference 
+texts, which emphasize qualitative food balance and sati -
+ety cues over quantitative energy calculation. Instead, it 
+focused on qualitative changes. In this study, the dietary 
+plan developed by Iranian traditional medicine practi -
+tioners is referred to as the ‘Traditional Iranian Diet. ’ An 
+example of this plan is provided in the appendix (Supple -
+mentary Table 2).
+Demographic and anthropometric measurements
+A demographic checklist was used to collect data on 
+participants’ age, gender, history of previous weight loss 
+diets, type of school (health-promoting vs. regular), and 
+family size. Anthropometric measurements—including 
+weight, height, body mass index (BMI), and waist cir -
+cumference (WC)—were recorded by trained personnel 
+at baseline and subsequently on days 30, 60, and 90 fol -
+lowing the intervention. Weight was measured in kilo -
+grams using a Seca digital scale (Model 874, Germany) 
+with participants wearing minimal clothing and no shoes. 
+Height was measured in centimetres without shoes, with 
+participants standing upright. BMI was calculated by 
+dividing weight (kg) by height squared (m²).
+According to the World Health Organization (WHO), 
+overweight and obesity in adolescents aged 5–19 years 
+are defined using BMI-for-age Z-scores: overweight is 
+classified as a BMI greater than + 1 standard deviation 
+(equivalent to a BMI of 25 kg/m² at age 19), and obesity 
+is defined as a BMI greater than + 2 standard deviations 
+(equivalent to a BMI of 30 kg/m² at age 19) [6, 18].
+Assessment of dietary adherence score, feasibility, and 
+family cooperation
+In the present study, Visual Analog Scales (VAS) were 
+employed to assess dietary adherence score, the feasibil -
+ity score of following dietary patterns, and the level of 
+family cooperation. The VAS is a simple scale ranging 
+from 1 to 10, where 1 indicates “no adherence/feasibility” 
+and 10 indicates “complete adherence/feasibility. Partici -
+pants were asked to respond to these items on days 30, 
+60, and 90 following the initiation of the dietary interven-
+tion. For each question, students were instructed to select 
+a number between 1 and 10 that best represented their 
+experience. While VAS provides a subjective estimate of 
+compliance, it was selected for its feasibility in this ado -
+lescent population; limitations regarding its subjectivity 
+are acknowledged in the discussion.
+Assessment of unhealthy dietary patterns, appetite levels, 
+meal skipping, and physical activity
+To evaluate appetite levels, the present study utilized 
+the 8-item Council of Nutrition Appetite Question -
+naire (CNAQ). Responses on the CNAQ are scored on 
+a 5-point Likert scale ranging from A to E (A = 1, B = 
+2, C = 3, D = 4, E = 5), yielding a total score between 8 
+(minimum) and 40 (maximum) [ 24]. The psychometric 
+properties of the CNAQ have been validated in the pre -
+vious study, demonstrating significant correlations with 
+the total score and subdomains of the Appetite, Hunger, 
+and Sensory Perception (AHSP) questionnaire [ 25]. The 
+CNAQ has shown acceptable internal consistency, with a 
+Cronbach’s alpha of 0.72 [24].
+Physical activity was assessed using a brief question -
+naire comprising three items that evaluate the frequency, 
+intensity, and duration of physical activity [26]. The prod-
+uct of these three components yields a composite physi -
+cal activity score, ranging from below 20 (indicative of a 
+sedentary lifestyle) to above 81 (indicative of a very active 
+lifestyle) [ 26]. This instrument has been validated in a 
+previous study [25].
+To assess the effectiveness of the dietary intervention 
+on unhealthy eating patterns, the frequency of consump -
+tion of junk food (e.g., chips, puffs), fast food, and soft 
+drinks was recorded weekly. These data were collected 
+both prior to the dietary intervention and again at 90 
+days post-intervention. Additionally, the frequency of all 
+meal and snack skipping was assessed at baseline and on 
+day 90.
+Inclusion and exclusion criteria
+Participants were eligible for this study if they were 
+first secondary school students, aged 13–16 years, and 
+classified as overweight or obese. The exclusion crite -
+ria included lack of consent to participate in the study, 
+severe physical or psychological impairments that would 
+prevent the individual from responding to study instru -
+ments, and the presence of psychiatric disorders such 
+as psychosis or conditions that impair memory, such as 
+Alzheimer’s disease. Additional exclusion criteria encom-
+passed adherence to special diets (e.g., vegetarianism), 
+extreme physical disabilities that hinder participation, 
+gastrointestinal disorders such as celiac disease, auto -
+immune diseases such as multiple sclerosis, and various 
+forms of cancer.
+Assessment of adverse effects (Harms)
+Throughout the 90-day intervention, we systematically 
+monitored participants for adverse effects. In weekly 
+Page 5 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+follow-up sessions, a nutritionist (modern diet) or a Tra -
+ditional Iranian Medicine specialist (traditional diet) 
+documented any reported issues, such as gastrointesti -
+nal discomfort, fatigue, or food intolerance. Each event 
+was classified by severity (mild, moderate, or severe) and 
+assessed for its likely relationship to the dietary interven -
+tion. No serious or life-threatening adverse events were 
+reported.
+Sample size calculation
+Based on a previous study comparing the effects of a 
+modern diet and traditional Iranian medicine, the maxi -
+mum reported standard deviation (SD) of BMI was 1.32, 
+and the mean reduction in BMI following the interven -
+tion was reported to be 1.62 units [ 12]. The required 
+sample size was calculated using the following formula:
+d =1 S =1 .32
+α =0 /05 Z1=1 .96
+β =0 .1 Z2=1 .28
+  
+ 
+n = 2S2
+d2 +( Z1+ Z2)2
+ n ≈ 37
+The estimated sample size for each group was deter -
+mined to be 37 participants. T o account for potential 
+attrition, 40 participants were recruited into each group.
+Blinding and randomization procedures
+Eligible students were randomly assigned to the modern 
+diet group or traditional Iranian diet group using sim -
+ple randomization, stratified by gender and school type 
+(health-promoting vs. regular). The allocation sequence 
+was generated using a computer-based random number 
+generator. Allocation was concealed using sealed, opaque 
+envelopes prepared by an independent researcher not 
+involved in recruitment. This method ensured that nei -
+ther the participants nor the enrolling researchers could 
+predict the assignment.
+Statistical methods
+Independent t-tests were used to compare quantitative 
+variables, while chi-square tests were employed for the 
+comparison of categorical variables. To assess within-
+group differences over time, repeated measures analy -
+sis of variance (RM-ANOVA) and paired t-tests were 
+employed, while the McNemar test was used for cate -
+gorical variables. Analysis of covariance (ANCOVA) was 
+applied to compare outcomes across groups at different 
+measurement points. All statistical analyses were per -
+formed using SPSS software, version 22 ( P < 0.05). Due 
+to the low-risk nature of the interventions, no interim 
+analyses or stopping rules were planned, and the study 
+was conducted to completion without interruption.
+Results
+Ninety-three first-grade junior high school students (48 
+boys and 45 girls) participated in the study. All of these 
+students completed the intervention, and no participants 
+withdrew from the study. Although the initial recruit -
+ment target was 40 participants per group, high vol -
+unteer interest and the ethical inclusion of all eligible 
+candidates during the recruitment period resulted in the 
+enrolment and randomization of 93 students. As no par -
+ticipants withdrew (0% attrition), the final sample size 
+(n = 93) exceeded the pre-specified minimum, yielding a 
+post-hoc statistical power greater than 90%.
+The mean age was 13.56 ± 0.09 years for boys and 
+13.80 ± 0.1 years for girls ( P = 0.72). Forty-one students 
+received a modern diet from an expert nutritionist, 
+while 52 students followed a traditional Iranian diet pre -
+scribed by an Iranian traditional medicine practitioner. 
+It is important to note that participants were allocated 
+using simple randomization, which naturally resulted in 
+unequal group sizes ( n = 41 Modern vs. n = 52 Tradi -
+tional). As supported by methodological guidelines [ 27], 
+this approach prioritizes allocation concealment and 
+unpredictability over numerical equality. Our initial com-
+parison confirmed that this imbalance did not result in 
+significant baseline differences between groups (Table 1).
+In this regard, baseline comparisons using indepen -
+dent t-tests and chi-square analyses indicated no statis -
+tically significant differences between the two groups in 
+terms of gender distribution ( P = 0.726), history of previ -
+ous weight loss diets ( P = 0.565), type of school (health-
+promoting vs. regular; P = 0.668), family size ( P = 0.085), 
+height ( P = 0.378), or weight ( P = 0.760). Moreover, the 
+Shapiro–Wilk test was applied to all variables in the study 
+to assess the normality of the distribution of quantitative 
+data. The results indicated that the distribution of all con-
+tinuous variables was normal.
+Table 1; Fig.  1 illustrate the anthropometric changes 
+during the two dietary interventions. Crucially, the 
+between-group analysis (ANCOVA) revealed statistically 
+significant differences in outcomes. Regarding weight, 
+participants in the modern diet group demonstrated a 
+slight yet consistent reduction over time, though this 
+trend was not statistically significant ( P = 0.089). In con-
+trast, the traditional Iranian diet group exhibited a sta -
+tistically significant weight increase by day 90 ( P < 0.001), 
+with between-group differences becoming significant at 
+day 60 (P = 0.024) and day 90 (P = 0.001). A similar pattern 
+was observed in BMI, where the modern diet group expe-
+rienced a modest but statistically significant decrease 
+(P = 0.032). Conversely, the traditional Iranian diet group 
+showed a significant increase ( P < 0.001), resulting in a 
+Page 6 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+highly significant between-group difference favoring the 
+modern diet (P < 0.001).
+On the other hand, WC decreased significantly in the 
+modern diet group ( P < 0.001), while changes in the tra -
+ditional Iranian diet group were not statistically signifi -
+cant ( P = 0.161). Between-group comparisons confirmed 
+the superiority of the Modern Diet, showing significant 
+differences at day 30 ( P = 0.020) and day 90 ( P = 0.039) 
+(Table 1; Fig. 1).
+According to Table 2, dietary adherence score improved 
+modestly in the modern diet ( P = 0.033). However, this 
+trend was reversed in the traditional Iranian diet group 
+(P = 0.001), leading to a significant between-group dif -
+ference in adherence by the end of the study ( P < 0.001). 
+Dietary feasibility was consistently rated higher in the 
+modern diet group across all time points ( P < 0.001). 
+While this index showed a significant increase for the 
+modern diet during the intervention ( P = 0.009), it exhib-
+ited a significant decrease for the traditional Iranian diet 
+(P < 0.001). Family cooperation scores followed the same 
+trend, with between-group analysis showing significantly 
+higher cooperation in the Modern group (P = 0.030).
+Regarding changes in the unhealthy dietary patterns, 
+both groups significantly reduced their consumption of 
+junk food over the 90 days, though the modern diet was 
+significantly more effective (Between-group P = 0.015). 
+Fast food consumption and drinking soda decreased 
+significantly only in the modern diet group ( P < 0.001 and 
+0.002, respectively). Appetite levels, as measured by the 
+CNAQ, declined significantly in both groups ( P < 0.001), 
+but notably, there were no significant between-group dif-
+ferences in appetite reduction (Table 3).
+Meal-skipping behaviours also showed notable changes 
+(Table  4). Skipping breakfast significantly decreased in 
+the modern diet group ( P = 0.007), while skipping snacks 
+decreased significantly only in the traditional Iranian diet 
+group ( P = 0.001). However, regarding physical activity 
+levels, no significant difference was observed between the 
+two groups (P = 0.285).
+Discussion
+This study, for the first time, directly compared the effec-
+tiveness of a modern dietary regimen with a diet based 
+on traditional Iranian medicine principles for weight 
+loss among Iranian students. Our findings indicate a 
+clear divergence in outcomes between the two dietary 
+approaches. Participants adhering to the modern diet 
+exhibited reductions in body weight, WC, and BMI 
+over the intervention period. In contrast, participants 
+assigned to the diet supervised by an Iranian medicine 
+specialist experienced a significant increase in both body 
+weight and BMI. Although the absolute reduction in BMI 
+in the modern diet group was modest, it holds clinical 
+significance when viewed against the backdrop of ado -
+lescent development [ 28]. In the context of puberty and 
+growth spurts, where the natural physiological trajectory 
+often involves weight gain, the stabilization and slight 
+reduction of BMI in the modern diet group represents a 
+positive deviation from the upward trend observed in the 
+traditional diet group.
+Moreover, these results suggest that, at least in the con-
+text of this study, the modern dietary approach was more 
+effective in promoting weight loss, while the traditional 
+Iranian medicine diet, as implemented, did not lead to 
+favourable anthropometric changes. However, it is criti -
+cal to interpret these findings within the context of the 
+study design: the modern group followed a strictly quan -
+titative, energy-restricted protocol, while the traditional 
+group followed a qualitative regimen focused on humoral 
+balance rather than caloric deficit.
+The effectiveness of Iranian traditional versus mod -
+ern diets for weight loss remains inconsistent across 
+studies. While some research supports modern dietary 
+approaches, emphasizing reduced energy density and 
+improved diet quality for obesity management [ 14, 29], 
+others indicate that Iranian traditional methods can be 
+more effective [ 12, 21]. Comparatively, research from 
+other countries also yields mixed results. For example, 
+a randomized controlled trial showed that a traditional 
+Korean dietary pattern could be as effective as mod -
+ern diets for weight reduction [ 30]. However, systematic 
+Table 1 Changes in anthropometric measures over 90 days in 
+response to two dietary interventions
+Variable Modern Diet
+(n = 41) 
+Traditional 
+Iranian Diet 
+(n = 52)
+P-value
+Mean SD Mean SD
+Weight (kg)
+ Baseline 83.68 13.49 84.53 13.06 0.760
+ Day 30 83.41 13.26 84.51 13.51 0.535
+ Day 60 83.18 13.24 85.75 13.44 0.024
+ Day 90 83.00 13.17 86.37 13.70 0.001
+ P-value within groups 0.089 < 0.001
+WC (cm)
+ Baseline 101.59 7.87 100.96 9.87 0.742
+ Day 30 99.70 8.56 100.93 10.45 0.020
+ Day 60 99.10 8.51 100.64 10.18 0.073
+ Day 90 98.32 8.55 100.41 10.81 0.039
+ P-value within groups < 0.001 0.161
+BMI (kg/m2)
+ Baseline 31.08 3.77 31.83 3.64 0.333
+ Day 30 30.93 3.49 31.93 3.81 0.154
+ Day 60 30.84 3.42 32.34 3.70 0.003
+ Day 90 30.77 3.47 32.57 3.82 < 0.001
+ P-value within groups 0.032 < 0.001
+WC waist circumference, BMI Body mass index. P-value: Between group 
+comparison (independent t-test for baseline, ANCOVA for other measurement 
+times). P-value within groups (RM-ANOVA)
+P < 0.05 are in bold
+Page 7 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+Table 2 Dietary adherence, feasibility, and family cooperation 
+scores across intervention periods
+Variable Modern Diet
+(n = 41) 
+Traditional 
+Iranian Diet 
+(n = 52)
+P-value
+Mean SD Mean SD
+Dietary Adherence Score (1–10)
+ Day 30 4.73 3.17 6.81 2.28 < 0.001
+ Day 60 5.02 2.96 5.48 2.98 0.051
+ Day 90 5.49 2.63 5.62 2.47 0.056
+ P-value within groups 0.033 0.001
+Dietary Feasibility Score (1–10)
+ Day 30 8.85 1.51 7.54 2.00 < 0.001
+ Day 60 9.07 1.40 6.58 2.82 < 0.001
+ Day 90 9.20 1.40 6.25 2.45 < 0.001
+ P-value within groups 0.009 < 0.001
+Family Cooperation Score (1–10)
+ Day 30 7.41 2.98 8.46 2.43 0.065
+ Day 60 7.68 3.03 7.77 3.07 0.008
+ Day 90 7.68 2.94 7.69 3.23 0.017
+ P-value within groups 0.021 0.022
+P-value: Between group comparison (independent t-test for baseline, ANCOVA 
+for other measurement times). P-value within groups (RM-ANOVA)
+P < 0.05 are in bold
+Table 3 Changes in the unhealthy dietary patterns and appetite 
+levels in response to dietary interventions
+Variable Modern Diet
+(n = 41) 
+Traditional 
+Iranian Diet 
+(n = 52)
+P-
+val-
+ue1
+Mean SD Mean SD
+Consumption of junk food (chips, pufs, etc.) per week
+ Baseline 2.66 2.25 2.35 2.54 0.538
+ Day 90 1.51 2.16 1.46 1.72 0.051
+ P-value within groups 0.015 0.006
+Consumption of fast food (per week)
+ Baseline 1.66 2.02 1.06 1.65 0.118
+ Day 90 0.61 0.95 0.81 1.05 0.118
+ P-value within groups < 0.001 0.304
+Drinking soda/soft drinks (per week)
+ Baseline 2.56 2.66 2.13 2.38 0.417
+ Day 90 1.12 1.72 1.60 1.76 0.105
+ P-value within groups 0.002 0.095
+Appetite Level (According to CNAQ)
+ Baseline 30.85 3.52 30.11 3.9 0.351
+ Day 90 28.6 1.98 28.32 2.5 0.559
+ P-value within groups < 0.001 < 0.001
+CNAQ Council of Nutrition Appetite Questionnaire. P-value1: Between group 
+comparison (independent t test for baseline, ANCOVA for day 90). P-value 
+within groups (paired t test)
+P < 0.05 are in bold
+Fig. 1 Trends in Weight, BMI, Waist Circumference, and Dietary Adherence Over Time by Diet Group. A: BMI changes following 3 months of Modern and 
+Traditional Iranian Dietary interventions; B: Waist circumference changes following 3 months of Modern and Traditional Iranian Dietary interventions; C: 
+Weight changes following 3 months of Modern and Traditional Iranian Dietary interventions; D: Dietary Adherence Score changes following 3 months of 
+Modern and Traditional Iranian Dietary interventions. BMI: Body mass index
+ 
+Page 8 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+reviews on traditional Chinese medicine often report 
+inconclusive or mixed evidence, indicating that the effec -
+tiveness of traditional approaches varies significantly 
+depending on the specific diet and its implementation 
+[31, 32].
+The observed discrepancy in weight loss outcomes may 
+be largely attributable to variations in public knowledge 
+and information accessibility. A key factor contributing 
+to this difference is the pervasive and readily available 
+information on modern diets compared to the relatively 
+limited public understanding of diets based on tradi -
+tional medicine principles. Modern dietary guidelines 
+and weight loss strategies are extensively disseminated 
+through various channels, including educational text -
+books, mainstream media (television, magazines), and 
+especially contemporary social media platforms [ 33, 34]. 
+This widespread availability of information, often pre -
+sented in an accessible and easily digestible format, has 
+likely fostered greater familiarity and adherence to mod -
+ern dietary approaches among the general public, includ -
+ing students and their families [33, 35].
+Conversely, diets rooted in traditional medicine, such 
+as the traditional Iranian diet, are often based on com -
+plex concepts like “Mizaj” (temperament) and specific 
+food classifications that require nuanced understanding 
+and often individualized guidance [ 36, 37]. The public’s 
+knowledge of these intricate principles may be limited, 
+and practical, easy-to-follow resources might be scarce 
+compared to the wealth of information available for 
+modern diets [ 37, 38]. Therefore, the lack of widespread 
+and clear educational materials on the traditional Iranian 
+diet, coupled with the dominant presence of modern 
+dietary information, likely plays a significant role in the 
+observed differential effectiveness.
+However, information accessibility is not the sole 
+driver; differences in dietary structure, cultural adapt -
+ability, and individual preferences also played critical 
+roles. The traditional diet relies heavily on energy-dense 
+staples like rice (Chelow) and bread (Sangak); without 
+the strict portion control inherent in the modern diet, 
+this structure can inadvertently promote a caloric sur -
+plus. Socio-culturally, the strict traditional rules regard -
+ing food combinations (e.g., avoiding fish with yogurt) 
+and specific meal timings often clash with the fast-paced, 
+convenience-oriented lifestyle of modern adolescents, 
+reducing the diet’s feasibility. Furthermore, individual 
+preferences for the high palatability of modern foods may 
+create a psychological barrier to sustaining the more sub-
+tle, whole-food-based traditional regimen.
+This lack of readily accessible and understandable 
+information about the traditional medicine diet, in con -
+trast to the pervasive availability of modern dietary 
+guidelines, is strikingly reflected in the adherence pat -
+terns observed in our study. In the present investiga -
+tion, we found that although dietary adherence, dietary 
+feasibility, and family cooperation scores for the modern 
+medicine diet increased significantly from before to after 
+the intervention, all of these indicators decreased sig -
+nificantly in the traditional Iranian medicine diet group. 
+These results may suggest that the lack of knowledge 
+among students and their parents about the intricacies 
+and practical application of the traditional Iranian diet 
+was a major barrier. Furthermore, this decline suggests 
+‘diet fatigue’ driven by the complexity of the intervention. 
+Unlike the modern diet, the traditional protocol required 
+strict adherence to specific rules regarding food combi -
+nations and meal timings. While initial enthusiasm may 
+have driven high compliance in the first month (the ‘nov-
+elty effect’), the restrictiveness and lack of convenience of 
+these traditional rules likely hindered long-term sustain -
+ability compared to the more flexible modern approach.
+Our findings align with existing research: nutritional 
+knowledge is key to dietary adherence [39, 40]. For exam-
+ple, a review of studies on university students showed 
+that better nutrition knowledge often leads to healthier 
+eating habits [ 39]. Similarly, an Iranian study found that 
+adults with a better understanding of modern healthy 
+lifestyle guidelines were more likely to adhere to them, 
+which was linked to a lower risk of metabolic syndrome 
+[41]. Our results highlight the need for specific educa -
+tional programs and accessible resources to promote tra -
+ditional diets, as historical knowledge alone isn’t enough 
+for practical adherence today.
+Table 4 Meal skipping and physical activity patterns before and 
+after dietary interventions
+Variable Modern Diet
+(n = 41) 
+Traditional 
+Iranian Diet 
+(n = 52)
+P-
+value
+N % N %
+Skipping Breakfast
+ Baseline 16 39.0% 10 19.2% 0.035
+ Day 90 5 12.2% 13 25.0% 0.121
+ P-value within groups 0.007 0.508
+Skipping Other Meals (Lunch & Dinner)
+ Baseline 3 7.3% 7 13.5% 0.341
+ Day 90 1 2.4% 10 20.4% 0.010
+ P-value within groups 0.652 0.375
+Skipping Snacks (Morning, Afternoon & Evening Snacks)
+ Baseline 21 51.2% 40 76.9% 0.010
+ Day 90 14 34.1% 21 42.8% 0.399
+ P-value within groups 0.230 0.001
+Physical Activity (Sedentary /Inactive)
+ Baseline 25 61.0% 33 64.7% 0.713
+ Day 90 29 70.7% 29 59.2% 0.254
+ P-value within groups 0.344 0.678
+P-value: Between group comparison (chi-square test). P-value within groups 
+(McNemar test)
+P < 0.05 are in bold
+Page 9 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+Beyond differences in knowledge and adherence, our 
+study further revealed that the modern diet was more 
+effective in fostering healthier eating habits among stu -
+dents, leading to significant reductions in unhealthy food 
+consumption, such as junk food, fast food, and soda. This 
+positive shift in dietary choices, which was observed to 
+be more pronounced in the modern diet group, likely 
+contributed substantially to the observed decreases in 
+weight, WC, and BMI during the intervention. Addition -
+ally, adherence to the modern diet was associated with a 
+significant reduction in breakfast skipping, a habit fre -
+quently linked to poorer dietary quality and potential 
+weight gain [ 39, 42]. While both diets showed a slight 
+decrease in overall appetite, the modern diet resulted in 
+a more substantial reduction in students’ appetite during 
+the intervention. Taken together, these behavioural and 
+physiological changes-improved food choices, increased 
+breakfast consumption, and greater appetite control-
+collectively explain the favourable anthropometric out -
+comes in the modern diet group and, conversely, the 
+observed weight increase in the traditional Iranian medi -
+cine group. Moreover, while poor adherence to the tra -
+ditional Iranian medicine was a factor, the nature of the 
+diet likely contributed. Traditional staples, as mentioned 
+earlier, are energy-dense. In other words, because the tra-
+ditional protocol focused on qualitative humoral balance 
+without setting a specific calorie limit, participants may 
+have reached a caloric surplus while consuming tradi -
+tional staples such as rice and bread, which are naturally 
+energy-dense. Consequently, the observed weight gain 
+in this group should be interpreted as a methodological 
+outcome of an ad libitum implementation in an adoles -
+cent population, rather than a definitive lack of efficacy of 
+the traditional diet itself.
+These findings align with other research on dietary 
+interventions. Studies consistently demonstrate that 
+interventions promoting healthier food choices, includ -
+ing reduced consumption of processed foods and sugary 
+beverages, are effective strategies for weight manage -
+ment [ 43]. For instance, a systematic review on school-
+based interventions indicated that programs focusing 
+on healthy eating and environmental changes were most 
+effective in improving dietary behaviour and anthropom -
+etry among young people [ 44]. Furthermore, the reduc -
+tion in breakfast skipping observed in our modern diet 
+group is often associated with improved weight outcomes 
+and overall dietary quality in various populations, partic -
+ularly among children and adolescents [ 39, 42, 45]. The 
+greater appetite suppression noted in the modern diet 
+group could also be a critical factor, as effective appetite 
+control is fundamental for sustained caloric reduction 
+and weight loss [46].
+As noted in the protocol description, the primary 
+objective of the traditional Iranian regimen is often to 
+establish disciplined habits and support gastrointesti -
+nal health rather than serving as a strictly hypocaloric 
+weight-loss tool [ 23]. While it resulted in weight gain 
+in this specific population, its emphasis on whole foods 
+and specific food combinations may offer metabolic or 
+digestive benefits for other populations. Future strategies 
+should consider integrating these holistic principles with 
+modern caloric restriction to optimize both weight man -
+agement and overall well-being [47].
+Despite its novel comparative design, this study has 
+several limitations that warrant consideration. First, the 
+absence of a ‘no-intervention’ control group limits our 
+ability to isolate the specific effects of the dietary inter -
+ventions from the natural growth patterns of adolescents 
+or the ‘participation effect’ . Given that adolescence is a 
+period of rapid growth where weight gain is physiologi -
+cally expected, the lack of a non-intervention control 
+means we cannot definitively determine the extent to 
+which the weight gain in the Traditional group was due 
+to the diet itself versus natural growth. Second, while 
+participants were blinded to the parallel group’s specific 
+protocol and allocation was concealed using sealed enve -
+lopes, a double-blind design was not feasible due to the 
+distinct nature of the interventions. While double-blind -
+ing is the theoretical gold standard, it is often impracti -
+cal in behavioral dietary interventions where the provider 
+must actively teach the specific protocol. Consequently, 
+the intervention providers (Nutritionists vs. Traditional 
+Medicine specialists) were not blinded to the therapy 
+they were administering, which may have introduced 
+an implementation bias through mechanisms such as 
+unconscious enthusiasm or differing levels of engage -
+ment during counseling. We recommend that future 
+studies address this limitation by adopting more realis -
+tic blinding strategies, such as the blinding of outcome 
+assessors. Moreover, the study’s generalizability may 
+be limited as it was conducted solely among first-grade 
+junior high school students in Fasa, Iran. In addition, 
+the assessment of secondary outcomes including dietary 
+adherence, feasibility, and family cooperation relied on 
+VAS. While practical, these self-reported measures are 
+subjective and susceptible to recall and social desirability 
+biases. We recommend future studies incorporate objec -
+tive compliance markers, such as food diaries or urinary 
+biomarkers, to enhance objectivity. Finally, the study 
+duration of 90 days, while sufficient to observe initial 
+changes, might not be long enough to assess long-term 
+adherence or sustained weight management outcomes 
+for either dietary approach.
+Conclusion
+To the best of our knowledge, this randomized controlled 
+trial is among the first to directly compare the effec -
+tiveness of a modern dietary pattern to a diet based on 
+Page 10 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+traditional Iranian medicine principles for weight loss 
+among Iranian students. Our findings indicate that the 
+Modern Diet intervention was associated with supe -
+rior weight management outcomes in this cohort. This 
+observed superiority appears to be largely driven by 
+the intervention’s quantitative caloric restriction and 
+the structured professional supervision provided by a 
+nutritionist. Conversely, the traditional Iranian diet, 
+implemented as an ad libitum protocol without specific 
+energy limits, was associated with an increase in body 
+weight and BMI. This outcome should be interpreted as 
+a reflection of the methodological absence of quantita -
+tive energy control rather than a definitive lack of efficacy 
+of traditional dietary principles themselves. Addition -
+ally, differences in outcomes may potentially be influ -
+enced by factors such as public familiarity with modern 
+guidelines and information accessibility, which likely 
+facilitated better adherence in the Modern group. The 
+Modern intervention was also linked to positive shifts 
+in dietary behaviors, including reduced consumption of 
+energy-dense snacks and decreased breakfast skipping. 
+Therefore, while the traditional Iranian diet offered holis-
+tic value, future applications for obesity management 
+should likely integrate traditional qualitative principles 
+with modern quantitative caloric restriction to ensure 
+effectiveness. Ultimately, for rapid weight control in ado -
+lescents, modern structured interventions appear more 
+effective, highlighting the need for adapted guidelines if 
+traditional approaches are to be implemented in contem-
+porary obesogenic environments.
+Supplementary Information
+The online version contains supplementary material available at  h t t p  s : /  / d o i  . o  r 
+g /  1 0 .  1 1 8 6  / s  1 2 9 0 6 - 0 2 6 - 0 5 2 8 9 - 3.
+Supplementary Material 1.
+Acknowledgements
+The authors would like to acknowledge and thank all those who participated 
+patiently in this research, as well as Fasa University of Medical Sciences, for 
+their support of this study.
+Authors’ contributions
+Conceptualization: MA Methodology: MA, MF, EHSoftware: MMN, MF 
+Validation: MF, SAFormal analysis: MMN, MF Investigation: MA, SA, MM, FZ, 
+FHResources: MA, MF Data curation: MA, SA, MM, FZ, FHWriting (original draft 
+preparation): MF Writing (review and editing): MAVisualization: MMN, MA 
+Supervision: MA, EHProject administration: MA, EH Funding acquisition: MA, 
+MF, MMN.
+Funding
+None.
+Data availability
+The data underpinning this study&apos;s findings can be obtained from the 
+corresponding author following a reasonable request.
+Declarations
+Ethics approval and consent to participate
+The study protocol followed the principles of the Helsinki Declaration and 
+received approval from the Ethics Committee of Fasa University of Medical 
+Sciences (Approval Code: IR.FUMS.REC.1402.064). All participants voluntarily 
+took part after written informed consent was obtained from their parents 
+or legal guardians and were informed of their right to withdraw at any time. 
+They were assured that their data would remain confidential and would be 
+used solely for research purposes, with results reported in aggregate form. 
+The study was also registered with the Iranian Registry of Clinical Trials (IRCTID: 
+IRCT20230610058442N1). The trial protocol and statistical analysis plan can be 
+accessed at  h t t p s :   /  / i r c  t  . b e  h d a s  h  t .  g   o v .  i r / t r  i a l / 7 1 7 6 9.
+Consent for publication
+Not applicable.
+Competing interests
+The authors declare no competing interests.
+Author details
+1Department of Public Health, School of Health, Fasa University of 
+Medical Sciences, Fasa, Iran
+2Department of Persian Medicine, Fasa University of Medical Sciences, 
+Fasa, Iran
+3Noncommunicable Diseases Research Center, Fasa University of Medical 
+Sciences, Fasa, Iran
+4Department of Nutrition, Fasa University of Medical Sciences, Fasa, Iran
+5School of Public Health, Kerman University of Medical Sciences, Kerman, 
+Iran
+6School of Health Sciences, Western Sydney University, Campbelltown, 
+Australia
+Received: 16 July 2025 / Accepted: 2 February 2026
+References
+1. Phelps NH, Singleton RK, Zhou B, Heap RA, Mishra A, Bennett JE, et al. 
+Worldwide trends in underweight and obesity from 1990 to 2022: a pooled 
+analysis of 3663 population-representative studies with 222 million children, 
+adolescents, and adults. The Lancet. 2024;403(10431):1027–50.
+2. Horesh A, Tsur AM, Bardugo A, Twig G. Adolescent and childhood obesity and 
+excess morbidity and mortality in young adulthood—A systematic review. 
+Curr Obes Rep. 2021;10:301–10.
+3. Weihrauch-Blüher S, Wiegand S. Risk factors and implications of childhood 
+obesity. Curr Obes Rep. 2018;7:254–9.
+4. Psaltopoulou T, Tzanninis S, Ntanasis-Stathopoulos I, Panotopoulos G, Kos-
+topoulou M, Tzanninis I-G, et al. Prevention and treatment of childhood and 
+adolescent obesity: A systematic review of meta-analyses. World J Pediatr. 
+2019;15:350–81.
+5. Alman KL, Lister NB, Garnett SP , Gow ML, Aldwell K, Jebeile H. Dietetic 
+management of obesity and severe obesity in children and adolescents: A 
+scoping review of guidelines. Obes Rev. 2021;22:e13132.
+6. Raymond JL, Morrow K. Krause and mahan’s food and the nutrition care 
+process e-book. Elsevier Health Sciences; 2020.
+7. Sarwer DB, Butryn ML, Forman E, Bradley LE. Lifestyle modification for the 
+treatment of obesity. The ASMBS Textbook of Bariatric Surgery: Volume 2: 
+Integrated Health: Springer; 2014. p. 147–55.
+8. Jani S, Bradley A. Weight loss diets, fads, and trends. Curr Obes Rep. 
+2024;13:71–6.
+9. Lee B, Yang C, Yim MH. Real-world evidence of characteristics and factors 
+influencing herbal medicine use for weight loss in adults. Front Pharmacol. 
+2024;15:1437032.
+10. Morris KC, Puoane T. Why traditional diets are more relevant than ever today. 
+South Afr J Clin Nutr. 2024;37:197–9.
+11. Bashiri M, Eghbalian F, Yousefsani BS, Mahroozade S. Non-pharmacological 
+recommendation for obesity management in Persian medicine: obesity 
+management in Persian medicine. Galen Med J. 2024;13:e3077–3077.
+12. Hamidnia L, Nematy M, Salari R, Taghipour A, Motavasselian M. Compar-
+ing the efficacy of therapeutic packages in Persian medicine with classical 
+Page 11 of 11
+Farboud et al. BMC Complementary Medicine and Therapies            (2026) 26:92 
+medicine in overweight patients: a randomized clinical trial. Electron Physi-
+cian. 2018;10:6892.
+13. Hamidnia L, Nematy M, Taghipour A, Javan R, Salari R, Mahjour M, et al. Life 
+style management of pediatric obesity based on traditional Persian medicine: 
+a narrative review. J Pediatr Perspect. 2018;6:7759–68.
+14. Ghasemi M, Eskandari Z. Comparison of Six weeks of Iranian Traditional Medi-
+cine with Modern Medicine along with Combined Exercise on Body Weight 
+Loss and Serum Lipid Profile in Obese Women. Complementary Medicine 
+Journal. 2023;13(2):50–60.
+15. Ariya M, Shahraki HR, Farjam M, Ehrampoush E, Bahramali E, Homayounfar R, 
+et al. Dietary inflammatory index and metabolic syndrome in Iranian popula-
+tion (Fasa Persian cohort Study). Sci Rep. 2020;10:16762.
+16. Honkala S. World health organization approaches for surveys of health 
+behaviour among schoolchildren and for health-promoting schools. Med 
+Principles Pract. 2014;23:24–31.
+17. Gibson RS. Principles of nutritional assessment. Oxford University Press; 2005.
+18. Group WMGRS, de Onis M. WHO child growth standards based on length/
+height, weight and age. Acta Paediatr. 2006;95:76–85.
+19. Trumbo P , Schlicker S, Yates AA, Poos M. Dietary reference intakes for energy, 
+carbohdrate, fiber, fat, fatty acids, cholesterol, protein and amino acids. J Acad 
+Nutr Dietetics. 2002;102:1621.
+20. Story M, Neumark-Sztainer D, French S. Individual and environmental influ-
+ences on adolescent eating behaviors. J Am Diet Assoc. 2002;102:S40–51.
+21. Akhtari E. Management of fattiness with a lifestyle educational program 
+designed based on traditional Persian medicine: A case series. Traditional 
+Integr Med. 2020;5:198–204.
+22. Mojahedi M, Naseri M, Majdzadeh R, Keshavarz M, Ebadini M, Nazem E, 
+et al. Reliability and validity assessment of Mizaj questionnaire: a novel 
+self-report scale in Iranian traditional medicine. Iran Red Crescent Med J. 
+2014;16:e15924.
+23. Zeinalian M, Eshaghi M, Hadian M, Naji H, Marandi SMM, Asgary S. Eight 
+essential foods in Iranian traditional medicine and their role in health promo-
+tion and well-being. Int J Prev Med. 2017;8:2.
+24. Wilson M-MG, Thomas DR, Rubenstein LZ, Chibnall JT, Anderson S, Baxi A, et 
+al. Appetite assessment: simple appetite questionnaire predicts weight loss 
+in community-dwelling adults and nursing home residents. Am J Clin Nutr. 
+2005;82:1074–81.
+25. Ariya M, Esmaeilinezhad Z, Naghizadeh MM, Dindarloo MM, Karimi F, Kaveh 
+F, et al. The barriers to whole-grain consumption among Iranian students. Sci 
+Rep. 2022;12:15224.
+26. Radu L-E, Făgăraş S-P , Vanvu G. Physical activity index of female university 
+students. Procedia-Social Behav Sci. 2015;191:1763–6.
+27. Schulz KF, Grimes DA. Unequal group sizes in randomised trials: guarding 
+against guessing. Lancet. 2002;359:966–70.
+28. Barlow SE, Committee E. Expert committee recommendations regarding the 
+prevention, assessment, and treatment of child and adolescent overweight 
+and obesity: summary report. Pediatrics. 2007;120:S164–92.
+29. Adeola OL, Agudosi GM, Akueme NT, Okobi OE, Akinyemi FB, Ononiwu UO, 
+et al. The effectiveness of nutritional strategies in the treatment and manage-
+ment of obesity: A systematic review. Cureus. 2023;15:e45518.
+30. Kim S-A, Shin S, Ha K, Hwang Y, Park Y-H, Kang M-S, et al. Effect of a balanced 
+Korean diet on metabolic risk factors among overweight/obese Korean 
+adults: A randomized controlled trial. Eur J Nutr. 2020;59:3023–35.
+31. Niu J, Li B, Zhang Q, Chen G, Papadaki A. Exploring the traditional Chinese 
+diet and its association with health status—a systematic review. Nutr Rev. 
+2025;83:e237–56.
+32. Li Y, Huang Z, Luan Z, Xu S, Zhang Y, Wu L, et al. Efficient evidence selection 
+for systematic reviews in traditional Chinese medicine. BMC Med Res Meth-
+odol. 2025;25:10.
+33. Koen N. Social media and nutrition (mis) information: navigating the maze. 
+South African J Clin Nutr. 2023;36: I–II-I–II.
+34. Story M, Nanney MS, Schwartz MB. Schools and obesity prevention: creating 
+school environments and policies to promote healthy eating and physical 
+activity. Milbank Q. 2009;87:71–100.
+35. Sharif-Nia H, Sivarajan Froelicher E, Gorgulu O, Osborne JW, Błachnio A, 
+Rezazadeh Fazeli A, et al. The relationship among positive body image, 
+body esteem, and eating attitude in Iranian population. Front Psychol. 
+2024;15:1304555.
+36. Borhani M, Khoshzaban F, Jodeiri B, Naseri M, Kamalinejad M. Diet and food 
+in Iranian traditional medicine: hints for further research. Int J Prev Med. 
+2014;5:1480.
+37. Rumi Y, Mohammadi-Farsani G, Riahi SM, Hashemi-Dizaji S, Mehrabani M, 
+Mokaberinejad R. The effect of a diet based on Iranian traditional (Persian) 
+medicine versus a diet based on modern medicine on the birth weight of 
+neonates with the history of asymmetric intrauterine growth restriction: a 
+randomized clinical trial. Middle East J Family Med. 2018;7:212.
+38. Floor W. From Quasi-vegetarians to Quasi-carnivores: the changing diet of 
+Iranians. Iran Stud. 2021;54:931–46.
+39. O’Leary M, Mooney E, McCloat A. The relationship between nutrition knowl-
+edge and dietary intake of university students: A scoping review. Dietetics. 
+2025;4:16.
+40. Elmskini FZ, Bouh A, Labyad A, Elghoulam N, Iraqi H, Mehdad S, et al. 
+Increased nutrition knowledge and adherence to the mediterranean diet are 
+associated with lower body mass index and better self-rated general health 
+among university students. Hum Nutr Metabolism. 2024;35:200240.
+41. Jowshan M-R, Pourjavid A, Amirkhizi F, Hosseini M-H, Zolghadrpour M-A, 
+Hamedi-Shahraki S, et al. Adherence to combined healthy lifestyle and odds 
+of metabolic syndrome in Iranian adults: the PERSIAN dena cohort study. Sci 
+Rep. 2025;15:5164.
+42. Ricotti R, Caputo M, Monzani A, Pigni S, Antoniotti V, Bellone S, et al. Breakfast 
+skipping, weight, cardiometabolic risk, and nutrition quality in children and 
+adolescents: A systematic review of randomized controlled and intervention 
+longitudinal trials. Nutrients. 2021;13:3331.
+43. Chew HSJ, Rajasegaran NN, Chng S. Effectiveness of interactive technology-
+assisted interventions on promoting healthy food choices: a scoping review 
+and meta-analysis. Br J Nutr. 2023;130:1250–9.
+44. Chaudhary A, Sudzina F, Mikkelsen BE. Promoting healthy eating among 
+young people—a review of the evidence of the impact of school-based 
+interventions. Nutrients. 2020;12:2894.
+45. Wang K, Niu Y, Lu Z, Duo B, Effah CY, Guan L. The effect of breakfast on 
+childhood obesity: A systematic review and meta-analysis. Front Nutr. 
+2023;10:1222536.
+46. Sari AFP , Pamungkasari EP , Dewi YLR. Relationship of appetite, body image, 
+and energy intake with body mass index in undergraduate students in 
+Surakarta. Disease Prev Public Health J. 2022;16:1.
+47. Mozaffarpour S, Shirafkan H, Taghavi M, Mirzapor M. Investigating the 
+difference between principals of Iranian traditional medicine and modern 
+medicine for providing a model for integrated medicine. 2014.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.

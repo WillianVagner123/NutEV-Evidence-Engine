@@ -1,0 +1,146 @@
+Tiago Senra e Rafael Silva, 2017 1 
+Sugestões para preparação de vídeo aula 
+com uso de Screencast 
+ 
+ 
+Apresentação 
+ 
+ Screencast é o registro (gravação) da saída do vídeo gerado por 
+computador em atividade. Pode ou não conter o áudio integrado. 
+ Você precisará de: 
+ Computador com entrada de áudio, microfone; 
+ Webcam (apenas se desejar que o rosto do expositor aparece no vídeo); 
+ Software correspondente ao tipo de vídeo que se deseja criar, 
+considerando grau de sofisticação da apresentação e domínio do usuário 
+na ferramenta. 
+Abaixo apresentamos algumas opções considerando a criação de vídeos 
+mais simples, dando preferencia aos recursos gratuitos. 
+ 
+Para Mac 
+ Na app store (acesso direto pelo  dock da área de trabalho), você encontra 
+diversas opções buscando por screen capture: 
+ 
+ 
+ 
+ 
+ 
+Tiago Senra e Rafael Silva, 2017 2 
+                                        
+Clique e veja as atribuições  escolhendo a que melhor lhe atende. Note que os 
+gratuitos normalmente limitam o tempo de gravação ou colocam marcas d’água. 
+O uso da webcam, podendo gravar a própria face durante a apresentação , 
+também é bastante limitado, mas existem softwares abaixo de 30 dólares. 
+ 
+Abaixo apresentamos o Quick T ime P layer, ferramenta já presente no 
+sistema do mac, que grava a tela com áudio de seu microfone. Este program a fica 
+devendo a captura da webcam, mas é possível tentar o recurso de abrir a imagem 
+da web cam e mini mizá-la em uma área da tela, seguindo com a apresentação  
+(abrir a imagem da web cam diretamente por seu software ou outro que utilize o 
+recurso da câmera). 
+ 
+No dock, clique no ícone do Quick Time Player, ou busque por seu nome 
+no finder ou spotlight (ícone lupa no canto superior direito). O programa abrirá 
+primeiro uma pasta de arquivos (imagem abaixo), feche esta pasta, pois você não 
+irá reproduzir um arquivo, mas fazer nova gravação. 
+ 
+ 
+Tiago Senra e Rafael Silva, 2017 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Vá ao menu do Quick Time Player  no canto superior esquerdo e clique em  
+Arquivo, depois Nova gravação de tela. 
+ 
+ 
+ 
+Tiago Senra e Rafael Silva, 2017 4 
+A janela que se abrirá apresenta uma barra de volume, que é para o alto 
+falante, deixe no zero ou você ouvirá o som da própria voz por eles, causando 
+eco. Ao lado do botão vermelho para iniciar a gravação , há uma seta para opções. 
+Clique e ajuste a entrada de áudio que deseja (normalmente “microfone”, na 
+imagem não aparece assim, pois o computador utilizado aqui não tem 
+microfone), deixe “mostrar cliques do mouse na gravação”, se desejar fazer 
+apontamentos com o cursor, destacando pontos de sua apresentação. 
+ 
+ 
+Ao clicar no botão vermelho e iniciar a gravação, o programa lhe 
+perguntará se deseja gravar a tela inteira ou apenas parte, você ness e momento 
+pode arrastar o cursor  do mouse ou trackpad e seleciona r uma área, ou clicar 
+para gravar a tela toda. Caso grave a tela toda (recomendável), lembre -se de 
+desligar aplicativos que mandam mensagens para a tela como whatsapp. 
+Por fim, clique no ícone círculo com quadrado preto que ficará no canto 
+superior direito (imagem abaixo) para pagar a gravação. Neste momento o vídeo 
+abrirá, ao clicar para fechar ele perguntará onde deseja salvar (caso não o faça 
+pelo menu: com o vídeo aberto, Arquivo, Salvar). 
+ 
+ 
+Tiago Senra e Rafael Silva, 2017 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Caso deseje gravar a imagem do próprio rosto durante a  apresentação ou 
+no início desta e não consiga por sua webcam utilizando o quick time (conforme 
+mencionado anteriormente, executar a imagem da câmera em um programa e 
+gravar a tela com o Quick Time, pois ele não tem essa gravação da webcam como 
+recurso), seguem sugestões de softwares pagos. 
+ Screenflow: produzido pela Telestream, é uma das 
+ferramentas favoritas dos produtores de screencast do 
+mundo. A licença custa USD110,00. Exclusivo para MAC, há 
+muitos recursos. Disponível em: 
+https://www.telestream.net/screenflow/overview.htm 
+ O Snapz Pro tem características semelhantes ao QuickTime 
+Player, é amplamente utilizado por desenvolvedores. Sua 
+licença custa USD65,00. Disponível em: 
+http://www.ambrosiasw.com/utilities/snapzprox/ 
+ O IShowU, da Shinywhitebox é uma plataforma em evolução. 
+Faltam recursos em comparação aos anteriores, mas sua 
+licença é de menor custo, USD30,00. Ele permite gravar com 
+a webcam, edição e outras ferramentas de softwares mais 
+caros. Disponível em: https://shinywhitebox.com/ishowu 
+ 
+ 
+ 
+Tiago Senra e Rafael Silva, 2017 6 
+Para usuários de Windows 
+ Existem mais programas gratuitos para Windows que gravam também a 
+webcam, por isso indicaremos diretamente estes softwares. 
+ O Expression Encoder pode ser baixado diretamente no site da 
+Microsoft, gratuitamente. Permite gravar tanto a tela como a webcam, e 
+você ainda tem as algumas opções básicas de edição depois que a 
+gravação estiver concluída. 
+O fluxo de trabalho é menos óbvio que alguns outros aplicativos. Primeiro 
+você vai gravar o vídeo e enviá-lo para um aplicativo de editor separado, 
+mas uma vez entendido o fluxo não apresenta dificuldades. 
+ aTube Catcher é provavelmente o programa  gratuito mais recomendado 
+pelos usuários desse tipo de aplicativo. É gratuito e baixado diretamente 
+do site do desenvolvedor, sendo seguro. Possui o recurso de gravação da 
+webcam e vários outros. 
+Disponível em: https://atube-catcher.br.uptodown.com/windows 
+E confira tutorial desde a instalação do programa até sua utilização 
+em: https://www.youtube.com/watch?v=1NPNM_pU_Uk 
+ 
+ 
+Tiago Senra e Rafael Silva, 2017 7 
+Basicamente (veja imagem acima) , ao abrir o program a você irá 
+selecionar “Screen Record” e lá es colher as opções: selecionar qual  áudio 
+gravar (microfone), escolher o formato de saída do vídeo (o youtube 
+reconhece a maioria, se fal har pode converter no próprio programa) , 
+escolher a pasta para salvar o víde o final, etc. Dica: selecione “Use Hot 
+Keys”, ele indicará um comando do teclado para iniciar e parar o vídeo, 
+para que você não precise abrir o programa para finalizar sua 
+apresentação (o que faria que a tela aparecesse na gravação). Você 
+também deve sele cionar “Cursor Record”  para que o cursor do mouse 
+apareça, caso você deseje utilizar para apontamentos.

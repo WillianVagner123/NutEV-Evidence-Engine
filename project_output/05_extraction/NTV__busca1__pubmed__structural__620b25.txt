@@ -1,0 +1,1204 @@
+Journal of Racial and Ethnic Health Disparities
+https://doi.org/10.1007/s40615-026-02990-4
+  Abbey N. Collins
+acollin2@ncsu.edu
+1 Department of Psychology, North Carolina State University, 
+Campus Box 7650, Raleigh, NC 27695-7650, USA
+Abstract
+Background Consistent overconsumption of high-sugar food and beverages (HSFB)–defined as consuming more than 25 g 
+of added sugars per day [ 1]–is a health risk factor for Black young adult women in the United States. A diet high in added 
+sugar can increase women’s likelihood of developing chronic conditions, like obesity, for which they are already at a high 
+risk. Research often focuses on individual-level contributors to this eating behavior; however, studies infrequently consider 
+how structural barriers may affect individuals’ eating habits.
+Purpose The current study examines whether experiencing more structural barriers to accessing perceived healthy food is 
+associated with amount of consumption of HSFB and if this association is mediated by one individual-level factor - internal 
+health locus of control.
+Methods Data come from 504 Black young adult women (Mage= 24.7, 98.4% cisgender) who completed questionnaires via 
+an online survey.
+Results Experiencing more structural barriers to accessing perceived healthy food was associated with more consumption 
+of HSFBs (β = 0.05, p = .013, 95% CI = 0.01, 0.09). Specifically, the availability of fast food near where women lived, dif -
+ficulties accessing transportation to purchase healthy foods, and the cost of food or grocery delivery are associated with more 
+HSFB consumption. Internal health locus of control did not mediate the association between barriers and consumption (95% 
+CI = -0.01, 0.02).
+Conclusions More research is needed to assess the mechanisms linking structural barriers and HSFB consumption. Address-
+ing contextual factors, like structural barriers, may be a critical step to equitably improve eating behaviors for Black young 
+adult women.
+Keywords Black · Young adult · Women · Structural barriers · Health locus of control · Diet
+Received: 11 March 2025 / Revised: 19 March 2026 / Accepted: 14 April 2026
+© The Author(s) 2026
+Structural Barriers to Healthy Food and High-Sugar Consumption 
+in Black Young Adult Women: The Mediating Role of Internal Health 
+Locus of Control
+Abbey N. Collins1  · Vanessa V. Volpe1
+[3]. Young adulthood is a period in which excess amounts 
+of added sugars (i.e., over 25 g per day for women; [ 1]) 
+are consumed [4]. This is inclusive of high-sugar foods and 
+beverages such as desserts, sweet snacks, coffee, tea, and 
+sugar-sweetened beverages [1]. Consumption of high-sugar 
+foods and beverages can increase the risk of overweight 
+or obesity [ 5]. The association between consumption of 
+high-sugar foods and beverages and obesity is complex, 
+entailing a combination of biological, psychological, and 
+environmental factors [6]. Nevertheless, there is often a bias 
+that those who engage in unhealthy eating are individually 
+responsible for their behavior and their ability to improve is 
+solely a function of their own volition [6].
+Approximately four out of five Black adult women in the 
+United States have overweight (classified as a body mass 
+index of 25.0–30.0) or obesity (body mass index of 30.0 
+or greater), which can increase their risk for chronic condi -
+tions such as diabetes and heart disease [2]. Early in the life-
+course, Black young adult women have a higher prevalence 
+of overweight and obesity compared to Black young adult 
+men and young adults from other racial and ethnic groups 
+1 3
+Journal of Racial and Ethnic Health Disparities
+For Black young adult women, the consumption of high-
+sugar foods and beverages can increase their risk of devel -
+oping or worsening conditions like obesity, heart disease, 
+diabetes, and chronic kidney disease, all of which dispro -
+portionately affect this group [ 7–9]. This vulnerability is 
+especially salient during young adulthood, a highly transi -
+tional period of life encompassing milestones like attending 
+college, entering the workforce, establishing close relation-
+ships, and starting a family [ 10]. For Black young adults, 
+this developmental stage can lead to inconsistent access to 
+high-fiber foods, including fruits, vegetables, and whole 
+grains, and greater consumption of prepackaged and pro -
+cessed foods that contain added sugars [ 11, 12]. Research 
+has shown that while sugar intake has generally declined 
+since the 2000s [ 13, 14], it remains elevated among Black 
+women and young adults [15, 16]. This suggests that Black 
+young adult women may have a greater likelihood of con -
+suming high-sugar food and beverages. Given that young 
+adulthood is a critical developmental period for establishing 
+lifelong health behaviors [17, 18], it is necessary to identify 
+factors driving high-sugar food and beverage consumption 
+for Black young adult women to clairify areas to intervene 
+early and prevent the early onset of chronic diseases.
+Structural barriers to accessing perceived healthy food 
+may affect Black young adult women’s ability to engage in 
+healthy eating. We define structural barriers as rooted in dis-
+proportionate inequities Black people face due to societal 
+marginalization [19]. Structural barriers pose impediments 
+to access and consumption of safe and nutritious food, 
+specifically perceived healthy food, meaning that what is 
+considered “safe and nutritious food” may vary by person. 
+Structural barriers can include limited or uncertain access to 
+adequate food (food insecurity) [ 20] or disproportionately 
+fewer grocery stores in one’s neighborhood but an over -
+saturation of fast-food restaurants and convenience stores 
+[21]. Additionally, high costs associated with purchasing 
+healthier food [22] or having fewer fresh food options avail-
+able at the nearest grocery stores, supermarkets, or conve -
+nience stores [ 23] can be barriers. Lack of availability of 
+healthy food, consumption of readily accessible nutrient-
+poor energy-dense foods [24], and limited knowledge, time, 
+and financial resources are also common [ 25]. These barri-
+ers can all lead to unhealthy eating, which can encompass 
+eating behaviors like high consumption of sugar-sweetened 
+beverages and foods high in added sugar [26–30].
+Black young adult women may be disproportionately 
+affected by structural barriers to accessing perceived 
+healthy food, which may lead them to consume high-sugar 
+foods and beverages. However, existing literature on struc -
+tural barriers and consumption of high-sugar foods and 
+beverages is limited in two notable ways. First, many exist-
+ing studies examine only one or two structural barriers to 
+accessing healthy food, with a preponderance of research on 
+food insecurity [20, 21, 28, 29, 31–34]. Second, associations 
+between structural barriers to accessing perceived healthy 
+food and their consequences largely have been examined 
+for Black adults writ large or older Black women, and 
+there is a paucity of investigations specific to Black young 
+adult women (i.e., at the intersection of race, gender, and 
+age). Black people experience greater structural barriers to 
+accessing healthy food compared to other racial and ethnic 
+groups [20, 32], and research with older Black adult women 
+suggests that they are particularly at risk for food insecurity 
+[35, 36]. Although not specific to Black women, research 
+with Black young adults indicates that structural barriers 
+to accessing healthy food is a prominent issue for this age 
+group [28, 31, 37, 38]. In one of the few studies with Black 
+young adult women, 22% of the sample reported being food 
+insecure [34]. In the current study, we fill gaps in the litera-
+ture by examining the associations between a wider range of 
+structural barriers and consumption of high-sugar food and 
+beverages. We examine these associations specifically for 
+Black young adult women, who may be at disproportionate 
+risk of consumption of high-sugar food and beverages [5].
+The food-insecurity obesity paradox states that people 
+experiencing food insecurity, particularly women, face an 
+elevated risk of having overweight or obesity [34, 35]. This 
+is because individuals experiencing food insecurity may 
+alternate between periods of hunger and consumption of 
+nutrient-poor energy-dense foods (e.g., high-fat, high-sugar, 
+high-calorie foods), which typically cost less than healthier 
+options like lean meats, vegetables, and fruits [24]. Accord-
+ing to this theory, increased energy intake may be an adap -
+tive response to threats to food security [ 25]. When Black 
+young adult women experience barriers to accessing food, 
+specifically healthy food, this may increase their consump -
+tion of less nutritious food options. Therefore, in accordance 
+with the food-insecurity obesity paradox, we predict that 
+more structural barriers to accessing perceived healthy food 
+will be associated with more consumption of high-sugar 
+foods and beverages for Black young adult women [25, 35].
+One individual-level factor that may explain the asso -
+ciation between structural barriers to accessing perceived 
+healthy food and consumption of high-sugar foods and bev-
+erages is internal health locus of control, which is defined 
+as an individual’s belief that they can control their health 
+and that their health is contingent on their own actions and 
+behaviors [39–41]. Black young adult women who experi -
+ence structural barriers may especially feel that they won’t 
+succeed no matter what effort they put in to make healthy 
+choices because of these barriers beyond their control. 
+Although research on internal health locus of control has 
+largely failed to consider the role of structural barriers, some 
+research does support the hypothesis that experiencing more 
+1 3
+Journal of Racial and Ethnic Health Disparities
+barriers may reduce internal health locus of control. For 
+instance, food insecurity is associated with less self-efficacy 
+for healthy eating [ 42–44]. In turn, individuals with low 
+internal health locus of control and the related construct of 
+self-efficacy are less likely to engage in unhealthy behaviors 
+[45, 46]. Lower internal health locus of control or self-effi -
+cacy has been associated with consuming a diet low in fruit 
+and vegetables [ 46] and high in fat and excess sugars [ 45, 
+47], including more consumption of sugar-sweetened bever-
+ages and sugary snacks in samples of adolescents and young 
+adults [48, 49]. However, the majority of this research is not 
+specific to Black young adult women and largely focuses on 
+the singular structural barrier of food insecurity. Therefore, 
+we aim to examine whether Black young adult women who 
+face more structural barriers to accessing perceived healthy 
+food subsequently experience lower internal health locus 
+of control and in turn, consume more high-sugar foods and 
+beverages.
+In the current study, we aim to examine if internal health 
+locus of control explains the association between structural 
+barriers to accessing perceived healthy food and consump -
+tion of high-sugar food and beverages. We hypothesized that 
+experiencing more structural barriers to accessing perceived 
+healthy food would be associated with more consumption of 
+high-sugar food and beverages (i.e., total effect; Hypothesis 1).
+We propose a significant indirect effect of internal health 
+locus of control on high-sweet foods and beverages, such 
+that the association between structural barriers to accessing 
+perceived health food and consumption of high-sugar foods 
+and beverages will be partially mediated through internal 
+health locus of control (i.e., indirect effect; Hypothesis 2). 
+We predicted that experiencing more structural barriers to 
+accessing perceived healthy food would be associated with 
+lower internal health locus of control (i.e., direct effect; 
+Hypothesis 3) and that lower health locus of control would 
+be associated with more consumption of high-sugar food 
+and beverages (i.e., direct effect; Hypothesis 4).
+Methods
+Participants
+Data come from a larger study of the health of 504 Black 
+young adult women from the United States ( Mage = 24.70, 
+SDage = 4.90). Only Black women (with ethnic identi -
+ties across the African diaspora; see Table 1) between the 
+ages of 18 and 35 who resided in the United States were 
+eligible to participate. The majority of participants identi -
+fied their Black ethnic background as African American 
+(74.40%) and almost all participants identified as cisgender 
+women (98.40%). More than half of the participants were 
+not currently students (54.20%) and the sample’s average 
+household income was between $45,000 and $54,999. Less 
+than 1% (0.60%, n = 3) of participants reported being diag -
+nosed with diabetes.
+Procedure
+The larger study (conducted from September to November 
+2021) was approved by Institutional Review Board at North 
+Carolina State University. Participants were recruited from 
+across the United States using the online research crowd -
+sourcing platform Prolific, which has been cited as the only 
+online behavioral research platform that provides quality 
+participant responses high in attention, comprehension, and 
+honesty [50]. Potential participants who meet eligibility cri-
+teria and are enrolled in Prolific’s participant panel received 
+information about the study. They then accessed the link to 
+an online Qualtrics survey via the Prolific platform. After 
+completing electronic informed consent via this survey, par-
+ticipants re-answered eligibility questions. If participants 
+were eligible, they completed a series of questionnaires that 
+were presented in a randomized order. In accordance with 
+best practices [51], the survey included a mix of types of bot 
+Table 1 Demographic characteristics of participants (N = 504)
+Variable Mean (SD) or 
+Median
+Per-
+cent
+Age 24.7 (4.9)
+Gender identity
+Cisgender woman 98.4%
+Nonbinary 1.6%
+Black ethnicity
+African American 75.2%
+Caribbean Black 11.5%
+Afro-Latinx 1.6%
+African 6.9%
+Multiracial 4.8%
+Born in US 96.4%
+Student status
+Not currently a student 54.2%
+Yes, college student 37.1%
+Yes, graduate student 8.7%
+Household Income $45,000 - $54,999
+Parental Education Bachelor’s degree
+COVID Past-Impact (Potential range 
+1–6)
+1.06 (1.42)
+Region
+Northeast 16.5%
+Midwest 13.5%
+South 60.9%
+West 9.1%
+Either M (SD), Median, or % is reported, depending on type of vari -
+able. Household income and parental education are both categorical 
+variables. To be more parsimonious, the mean levels of these vari -
+ables are presented instead of being tabulated
+1 3
+Journal of Racial and Ethnic Health Disparities
+screening tools to ensure data quality and participants were 
+notified at the outset that failure on any of these screening 
+tools would result in removal of their data from the study 
+and no compensation. Question-based screening tools 
+included ReCAPTCHA and two instructional manipulation 
+check questions (i.e., question is about favorite color but 
+asked to enter the word “table” in the text box; given infor-
+mation about trains and asked to select the letter of the train 
+that goes north from a series of multiple choice options). In 
+addition, we used data-based screening tools including (1) 
+consistency in responding to sociodemographic questions in 
+the survey and in a prior Prolific screener, (2) open-ended 
+response flags for nonsensical and identical qualitative 
+responses to five open-ended questions on the survey. Par -
+ticipants who failed the ReCAPTCHA (n = 2; <0.5% of orig-
+inal responses), instructional manipulation check questions 
+(n = 4; <0.8% of original responses), or whose open-ended 
+responses were flagged (n = 2; <0.5% of original responses) 
+were not included in the study and were not compensated for 
+their participation. Participants with discrepancies between 
+their sociodemographic Prolific screener questions and our 
+sociodemographic screener questions (n = 1; <0.2% of origi-
+nal responses) were exited from the survey before complet-
+ing any of the study materials. Following completion of the 
+survey, participants were compensated $9.50 US per hour.
+Measures
+Structural Barriers to Accessing Perceived Healthy Eating
+Self-reported access to perceived healthy eating was mea -
+sured using nine items developed for the current study. 
+Although there are questionnaires that examine access to 
+healthy food, they are conducted predominantly with older 
+adult populations. Therefore, we used the existing body 
+of literature on structural barriers to accessing perceived 
+healthy eating [ 23, 52] to develop our own measure that 
+included items about access, especially relevant to young 
+adults during the study collection period (e.g., use of tech -
+nology for food delivery, COVID-19 precautions). Partici -
+pants were asked to report the extent to which structural 
+factors impacted their ability to eat healthy foods in the past 
+month on a seven-point Likert-type scale from 0 ( not at all 
+impactful) to 6 (extremely impactful). It is important to note 
+that this measure assesses participants’ reports of barriers 
+to accessing perceived healthy eating, meaning it does not 
+assess objective healthy eating.
+Before proceeding with use, we wanted to assess whether 
+the items followed a unidemensional factor structure, since 
+previous literature (e.g., Caspi et al., [53]) suggests that there 
+are five dimensions of food access. Initial items included 
+eight pre-formulated structural factors and one open-ended 
+item that was recoded. These items included: (1) the cost 
+of healthy foods, (2) the availability of healthy food near 
+where I live, (3) the quality (e.g., freshness, variety, season-
+ality) of healthy foods near where I live, (4) the availability 
+of fast food near where I live, (5) the number of options 
+available for places to purchase healthy foods near where I 
+live, (6) difficulties accessing transportation to get to places 
+to purchase healthy foods, (7) concerns about the safety of 
+going out to purchase healthy foods during COVID-19,1 (8) 
+the cost of food delivery or grocery delivery, and (9) some-
+thing else we haven’t considered. Open-ended responses to 
+item nine were examined and central themes were derived 
+to either create a new item or re-code responses into a preex-
+isting item. This generated one new item, which was called 
+“lack of material resources” and included structural barriers 
+like “storage for healthy foods” and “access to a kitchen.” 
+Since it was not feasible to collect a new sample to do an 
+exploratory factor analysis (EFA) and confirmatory fac -
+tor analysis (CFA), we used the split sample strategy (see 
+Cudeck & Browne [54]), to conduct the EFA with a random 
+sample of ~ 50% of the cases (n = 248). Then, we conducted 
+the CFA with the full sample. After conducting the EFA and 
+CFA, two items were removed (see Supplemental Appen -
+dix). A total mean score was calculated from the remaining 
+eight items such that a higher score indicates having more 
+structural barriers to accessing perceived healthy food. The 
+internal consistency of the measure in the current sample 
+was acceptable (Cronbach’s α = 0.84).
+Internal Health Locus of Control
+The internal health locus of control subscale of the Multidi-
+mensional Health Locus of Control scale was used to assess 
+participants’ feelings of control over their health [ 41]. Par-
+ticipants rated their agreement with six items on a six-point 
+Likert-type scale from 1 ( strongly disagree) to 6 ( strongly 
+agree). An example item is “If I get sick, it is my own 
+behavior which determines how soon I get well again.” The 
+total subscale score was created by averaging items, such 
+that higher scores indicate a greater internal health locus of 
+control. The internal consistency of the measure in the cur -
+rent sample was acceptable (Cronbach’s α = 0.72).
+Consumption of High-Sugar Foods and Beverages
+Participant’s average consumption of high-sugar food and 
+beverages was measured using one item from the diet sub -
+scale of the Diabetes Self-Care Activities measure, which 
+was modified for non-diabetic populations [ 55]. While this 
+1  This item was added because the survey was conducted when many 
+COVID-19 restrictions were still in place.
+1 3
+Journal of Racial and Ethnic Health Disparities
+measure has not been formally validated in samples of Black 
+women / young adult women, several studies have used this 
+measure in predominantly Black samples [e.g., 56–60]. Par-
+ticipants indicated what approximate percentage of their 
+meals during the past week “included sweets and desserts 
+such as pie, cake, jelly, soft drinks (regular, not diet drinks), 
+cookies?” on a Likert-type scale with response options 
+including: 0 (no high-sweet foods; 0% ), 1 (25%), 2 (50%), 
+3 (75%), 4 ( all of meals; 100% ). Higher scores indicated 
+greater consumption of high-sugar food and beverages.
+Covariates
+Sociodemographic factors can impact Black young adult 
+women’s access to healthy food and subsequent consump -
+tion of high-sugar food and beverages [ 61]. Therefore, we 
+measured seven potential covariates. We considered age 
+and student status because in young adults who attend uni -
+versity, consumption of high-fat and high-sugar foods are 
+greater in younger young adults who attend university [62]. 
+Participants entered a number for their age and indicated if 
+they were currently a student using the following options: 
+No (coded as 0) and Yes (undergraduate or graduate student; 
+coded as 1). We also measured household income and paren-
+tal education as proxies of socioeconomic status. As over half 
+of our sample was under 24 years old and this age group is 
+still not fully independent, often relying on their parents for 
+financial support [63], we used a parental index of education 
+as an additional proxy for socioeconomic status. As house -
+hold income can impact diet choices [29], participants indi-
+cated their total annual household income from a range of 
+presented amounts in $10,000 increments from 1 ($25,000) 
+to 10 (Over $100,000). We also measured parental educa -
+tion (i.e., highest level of education completed by parents 
+or guardians) because it is a predictor of nutrition-related 
+health risk in Black young adult women [ 64]. Participants 
+selected their parental education from eight categories, with 
+options ranging from “Less than high school” to “Doctoral 
+or professional degree.” The experience of living through 
+the COVID-19 pandemic disproportionately impacted 
+Black communities. Specifically, the pandemic affected 
+food access and affordability in Black communities, increas-
+ing the likelihood of high-sugar consumption [ 33]. There-
+fore, participants indicated the degree to which COVID-19 
+impacted their health negatively in the past month on a six-
+point Likert-type scale from 1 (Not at all) to 6 (Extremely).
+Data Analytic Plan
+A power analysis using Monte Carlo simulation for a mediation 
+model [65] using a confidence level of 95%, 10,000 replications, 
+and moderate correlations between variables (r = .20) indicated 
+that 96% power to detect an effect for the most complex model 
+parameter (i.e., the indirect effect) was achieved with a sample 
+size of 504. There were no missing data.
+We first ran descriptive statistics to describe sample 
+characteristics and used preliminary analyses to determine 
+which of our variables needed to be included as sociode -
+mographic covariates in the serial mediation. We examined 
+seven potential sociodemographic covariates in our analy -
+sis (age, student status, household income, parent educa -
+tion, COVID-19 impact). Bivariate correlations, one-way 
+ANOV As, and chi-squares were run to assess which should 
+be included in our final models. To be included as a covari-
+ate, the variable had to be significantly associated (defined 
+as p<.05) with both a predictor and an outcome variable, 
+to appropriately reduce confounding of primary statisti -
+cal associations of interest [ 66]. The final covariates that 
+met this criterion and were therefore included in our model 
+were age and household income.
+To answer our substantive research questions, we con -
+ducted a Poisson regression mediation model with maxi -
+mum likelihood estimation using Mplus version 8.3 [ 67]. 
+In these analyses, the structural barriers to accessing per -
+ceived healthy food (predictor) and internal health locus of 
+control (mediator) were both modeled as continuous, and 
+consumption of high-sugar foods and beverages (outcome) 
+was modeled as a count variable. A Poisson regression was 
+the most appropriate test considering our outcome variable 
+type. In line with previous research, we tested for overdis -
+persion to ensure that using a standard Poisson regression 
+model was most appropriate versus an overdispersed Pois -
+son regression model or negative binomial regression [ 68]. 
+We first graphed the outcome variable, which appeared to be 
+fairly normally distributed. Then, we conducted the model 
+as a Poisson regression and as a negative binomial regres -
+sion and compared the AIC values [69]. The Poisson regres-
+sion model had the lowest AIC values and was therefore 
+retained. Additionally, in the negative binomial regression 
+model, the dispersion parameter had a coefficient of zero 
+which indicates that the model is better estimated using 
+Poisson regression. To assess whether each hypothesis was 
+supported or not supported we examined p-values to see if 
+they were below our predetermined significance value of 
+0.05, which would indicate that the hypothesis was sup -
+ported. We also examined 95% confidence intervals to see 
+if they did not contain zero, which would also indicate that 
+the hypothesis was supported. To assess mediation, we used 
+the Monte Carlo method with 20,000 repetitions. From this 
+simulation [70], we estimated a 95% confidence interval for 
+the indirect effect (i.e., the product of the a and b paths). The 
+indirect effect was deemed significant if it did not include 0.
+1 3
+Journal of Racial and Ethnic Health Disparities
+Results
+Descriptive Statistics and Preliminary Analyses
+Table 2 presents descriptive statistics and correlations 
+among the study variables. On average, participants reported 
+that between 25% and 50% of their meals contained high-
+sugar food and beverages within the past week. Women in 
+our sample were moderately impacted by structural barri -
+ers to perceived healthy eating ( M = 3.33, SD = 1.64) and 
+reported fairly high levels of internal health locus of control 
+(M = 4.37, SD = 0.80).
+Mediation
+Table 3 reports the direct, indirect, and total effects of the 
+mediation paths in the model. Approximately 2% of the 
+variance in consumption of high-sugar food and beverages 
+was explained by structural barriers to perceived healthy eat-
+ing, internal health locus of control, and covariates (Pseudo 
+R2 = 0.02). The confidence interval for the model indirect 
+effect included zero (95% CI = −0.01, 0.002), indicating that 
+mediation was not supported.
+Hypothesis 1
+In support of hypothesis 1, the association between struc -
+tural barriers to accessing perceived healthy food on con -
+sumption of high-sugar food and beverages was significant. 
+For every 1-unit increase in structural barriers to perceived 
+healthy eating, the log of the expected count of high-sugar 
+foods and beverage consumption increased by 0.05 units 
+(β = 0.05, p =.013, 95% CI = 0.01, 0.09). In other words, 
+experiencing more structural barriers to perceived healthy 
+food is associated with a significantly greater proportion of 
+consumption of high-sugar foods and beverages.
+Hypothesis 2
+Contrary to hypothesis 2, the associations between structural 
+barriers to accessing perceived healthy food and internal 
+health locus of control (β = 0.04, p =.070, 95% CI = −0.003, 
+0.08) and between internal health locus of control and con -
+sumption of high-sugar food and beverages ( β = −0.02, p 
+=.742, 95% CI = −0.10, 0.07) were each nonsignificant.
+Sensitivity analysis
+To get more detailed insight into the specific structural bar-
+riers that led to increased high-sugar food and beverage con-
+sumption, a Spearman’s correlation was conducted between 
+each of the structural barrier items and the high-sugar food 
+and beverage outcome. Results revealed a positive weak cor-
+relation between high-sugar food and beverage consump -
+tion and the availability of fast food near where participants 
+lived (rs=0.19, p<.001), difficulties accessing transportation 
+to purchase healthy foods (rs=0.15, p=.001), and the cost of 
+food delivery or grocery delivery (rs=0.13, p=.003).
+Discussion
+The central contributions of the current study include: 
+examination of the association between structural bar -
+riers to accessing perceived healthy foods in consump -
+tion of high-sugar foods and beverages, and testing one 
+Table 2 Descriptive statistics and intercorrelations among study vari -
+ables
+1 2 3 4 5
+1. Age --
+2. Household Income 0.04 --
+3. Internal Health 
+Locus of Control
+0.11* 0.02 --
+4. Structural Barriers 
+to Accessing Perceived 
+Healthy Food
+− 0.12** − 0.19** 0.07 --
+5. High-sugar Food 
+Consumption
+− 0.14** − 0.13** − 0.02 0.15** --
+M 24.72 3.57 4.37 3.48 1.36
+SD 4.89 2.85 0.80 1.79 1.00
+Range 18–35 0–8 1–6 0–7 0–4
+Mean (M), standard deviation (SD), and range only presented for 
+continuous and count variables. Range indicates the minimum and 
+maximum potential values for scale scores and the observed values 
+for age. *p<.05. ** p <.01
+Table 3  Direct, indirect, and total effects of structural barriers to 
+accessing perceived healthy foods on high-sugar food and beverage 
+consumption through internal health locus of control (N = 504)
+Direct effects 𝛽 95% CI IRR R2
+Outcome: IHLC 0.02
+Age 0.12 [0.04, 0.19]** 1.04
+SBHF 0.08 [0.01, 0.16] 1.02
+Outcome: HSFB 0.01
+Age − 0.09 [−0.15, − 0.04]** 0.98
+Household income − 0.08 [−0.13, − 0.02]* 0.97
+SBHF 0.09 [0.03, 0.14]* 1.05
+IHLC − 0.08 [−0.07, − 0.05] 0.99
+Indirect effect
+SBHF → IHLC → HSFB − 0.01 [−0.01, 0.01] –
+Total effect
+Outcome: HSFB
+SBHF 0.51 [0.23, 0.77]* –
+𝛽 = estimated Poisson regression coefficients; IRR = Incidence Rate 
+Ratio; IHLC= Internal Health Locus of Control; SBHF= Structural 
+barriers to accessing perceived healthy foods; HSFB = high-sugar 
+food and beverages consumption . * p<.05. ** p <.01
+1 3
+Journal of Racial and Ethnic Health Disparities
+potential process in this association, specifically for Black 
+young adult women. In support of our first hypothesis, 
+Black young adult women who faced more structural bar -
+riers to accessing perceived healthy food reported greater 
+high-sugar food and beverage consumption. Sensitivity 
+analyses revealed that in this sample, the structural barri -
+ers experienced that led to increased high-sugar food and 
+beverage consumption were availability of fast food near 
+where women lived, difficulty accessing transportation to 
+purchase healthy food, and the cost of food and grocery 
+delivery. This aligns with work showing that facing struc -
+tural disadvantage–such as living in a food swamp or food 
+apartheid [ 35], experiencing difficulty affording food [ 23, 
+26, 71], and finding transportation to purchase healthy food 
+[30, 72]–is associated with limited access to healthier food 
+options. Having to navigate such barriers may lead Black 
+young adult women to select convenient, time-saving, and 
+cost-effective foods [ 26], many of which are more pro -
+cessed and higher in added sugar [ 73]. When considering 
+the life demands during young adulthood (e.g., school, 
+work, caretaking, etc.), selecting the more convenient and 
+cost-effective option is less stressful than trying to purchase 
+healthier options that may exceed what is feasible finan -
+cially and timewise [ 26]. Another reason that experiencing 
+greater structural barriers may be associated with greater 
+high-sugar food and beverage consumption is that Black 
+young adult women may use high-sugar foods to cope with 
+the psychosocial stress of these barriers. Stress eating is 
+the consumption of energy-rich foods high in sugar and 
+fat in response to negative stimuli or affect [ 74], and is a 
+common coping mechanism in which Black young adult 
+women engage when experiencing stress [ 75–77]. Taken 
+together, our findings indicate that structural barriers to 
+access to perceived healthy food may be associated with 
+the nutritional choices of Black young adult women, even 
+among those who only faced a relatively moderate number 
+of barriers. Our results suggest that these barriers may be 
+associated with less healthy eating even among those who 
+do not experience significant barriers like food insecurity.
+Contrary to our second hypothesis, internal health locus 
+of control did not explain the association between struc -
+tural barriers to accessing perceived healthy food and 
+high-sugar food and beverage consumption. Health locus 
+of control theory would suggest that external factors like 
+structural barriers would impact one’s internal sense of 
+control [78], however, a paucity of empirical studies have 
+examined this proposition, and even fewer have consid -
+ered multiple structural barriers for Black young adult 
+women. It may be that Black women use adaptive and pro -
+active coping strategies to combat any reduction in sense 
+of control in the face of structural disadvantages. Adaptive 
+coping strategies are generally action-oriented and include 
+thoughts and behaviors that aim to resolve stressors [ 79], 
+and proactive coping strategies are those that are leveraged 
+in anticipation of future stressors [ 80]. For Black young 
+adult women, factors such as the superwoman schema, 
+awareness of inequity in society, and leveraging social 
+support may be ways they proactively cope with barri -
+ers and do so in an adaptive way for them. Superwoman 
+schema includes a perceived obligation to project strength 
+and succeed despite limited resources [ 81]. Some Black 
+young adult women may recognize structural barriers they 
+face but may take on a superwoman role, reframing these 
+barriers to emphasize their own strength and focus on cre -
+ating their own success to cope with the circumstances 
+and confront life adversity [ 82]. When Black young adult 
+women expect that they will experience greater structural 
+barriers rooted in inequities in society, perhaps the mere 
+presence of these barriers in their life may not limit their 
+own sense of control because they do not internalize these 
+as individual shortcomings but instead recognize them as 
+societal flaws.
+Another possible explanation is that Black young adult 
+women facing barriers to healthy food access may also 
+receive some degree of instrumental social support from 
+family, friends, and community members to overcome 
+these barriers. If they can successfully navigate any indi -
+vidual barriers they face, their own sense of internal health 
+locus of control may not be affected. An important consid -
+eration is that women reported fairly low levels of impact 
+from COVID-19, which was assessed as a covariate in this 
+investigation. Because some of the structural barriers were 
+tailored to COVID-19, this may indicate that they did not 
+feel like COVID-19 imposed additional barriers. More -
+over, our sample reported low levels of percieved structural 
+barriers altogether, which suggests that they may not have 
+perceived salient structural barriers to accessing healthy 
+food, in general. Therefore, internal health locus of control 
+may not be a reason why barriers increase high-sugar food 
+and beverage consumption. It may be that if Black young 
+adult women do not perceive these barriers as particularly 
+salient, internal health locus of control naturally plays less 
+of a role in guiding their consumption of high-sugar foods 
+and beverages. When barriers are experienced (e.g., the 
+cost of purchasing healthy food or food delivery) women 
+may feel that these external constraints inevitably dictate 
+what they can access and consume, thereby mitigating the 
+influence of thier own internal sense of control. It should 
+be noted that the predictors in the model explained a small 
+amount of variance in the outcome, suggesting that future 
+research should continue assessing various structural barri -
+ers to accessing healthy food, specifically relevant to Black 
+young adult women, that may affect consumption of high-
+sugar foods and beverages.
+1 3
+Journal of Racial and Ethnic Health Disparities
+Limitations and Future Directions
+Several limitations and constraints on the generalizability 
+of the current study should be noted. As data are from a 
+cross-sectional correlational study, causal claims cannot 
+be made. The use of mediation with cross-sectional data is 
+not ideal. However, scholars suggest that the use of media -
+tion is appropriate for theory-driven foundational work 
+for which associations are not currently known and more 
+information is needed before moving to a more costly and 
+time-consuming experimental or longitudinal design [ 83]. 
+The current investigation is an example of this foundational 
+work, which is necessary basic research for early-phase 
+intervention development and testing. Nearly all Black 
+young adult women in our study were cisgender and Black 
+women with other marginalized gender identities (e.g., non-
+binary, transgender) may face additional structural barriers 
+to healthy eating, so these results are not expected to rep -
+licate beyond cisgender Black women. We utilized a non-
+probability national sample and participants were recruited 
+online. Although the majority of young adults are online, the 
+results may not generalize to all Black young adults across 
+the United States, and some who may face greater barri -
+ers to access and health may not be fully represented in our 
+sample. The majority of participants lived in the South, but 
+we do not have data on the degree of urbanicity of the places 
+where they resided. Urbanicity may impact structural bar -
+riers to healthy eating, for instance, the degree of access to 
+certain grocery stores or the time it takes to secure healthy 
+food. Therefore, we cannot guarantee that the results of this 
+study will replicate across different regions or would not 
+further differ by urbanicity.
+Some limitations arise from the measurement of struc -
+tural barriers and high-sugar foods and beverages. A novel 
+measure of structural barriers was used because of a lack 
+of preexisting measures that were both sufficiently short 
+and applicable to assess this construct in our target popu -
+lation. However, this measure didn’t capture the length of 
+time participants had experienced each structural barrier 
+or the stressfulness of each barrier. Therefore, future work 
+should consider testing the moderating role of barrier dura -
+tion and stress and how this may illuminate further nuance 
+in the role of internal health locus of control. Next, the mea-
+sure of high-sugar food and beverage consumption was a 
+single-item indicator of the construct and only asked about 
+consumption during meals, rather than between meals (e.g., 
+as snacks). It may be that we are missing a primary eat -
+ing context in which consumption of high-sugar food and 
+beverages occurs. Data from NHANES 2015–2018 reveals 
+that among US adults ( ≥ 20 years) mean calorie intake was 
+highest during snacking (e.g., desserts, sweets, salty snacks, 
+sugar-sweetened beverages) among high added sugar 
+consumers, which corresponded to 43% of calories from 
+added sugars [4]. This is followed by dinner (23.5%), lunch 
+(18.7%), and then breakfast (15%). Since our item focuses 
+on consumption across meals, our estimate of high-sugar 
+food and beverage consumption may be more conservative 
+as it is not diasaggragated by meals and does not explicity 
+focus on snacking where the bulk of consumption is. Addi -
+tionally, our measure relies on participant’s interpretation of 
+what constitutes high-sugar (e.g., just beverages or added 
+sugars during cooking) and meals (e.g., all three meals 
+or just one meal). This may mean that participants likely 
+reported based on the most salient sources or occasions of 
+their high-sugar food and beverage consumption.
+However, by using a measure that captures the quantity 
+of consumption, which is expressed in terms of a percent -
+age of meals rather than in grams or other nutritional intake 
+values, this allows participants to more easily recall their 
+approximate intake. Additionally, as this item assesses con-
+sumption over seven days, it gives a more general sense 
+of high-sugar food and beverage consumption rather than 
+over just 24-hours which could be unrepresentative of par -
+ticipant’s typical consumption patterns. This measure was 
+the only one available in the larger study and was selected 
+because it offered a time-efficient way to get a general 
+sense of nutrition. Given that we examined our research 
+questions among a non-clinical sample, this measure pro -
+vides a useful baseline of meal-time consumption and can 
+be used as a starting point for further nutrition research. 
+Future investigations should prioritize measures that rely 
+less on long-term recall and are less prone to potential bias 
+such as daily diary methods or leveraging the use of bio -
+markers like urinary sucrose [ 84] and isotope ratios [ 85]. 
+Studies should also focus on providing a more granular 
+understanding of added sugar consumption separately for 
+foods, beverages, meals, and snacks. This will be critical 
+to accurately assess the added sugar consumption in Black 
+young adult women.
+The current investigation did not measure food insecurity 
+in the current study and therefore was not able to account for 
+this as a covariate. Experiencing food insecurity may have 
+also been associated with women’s consumption of high-
+sugar foods and beverages and could have magnified their 
+expercience with the structural barriers. Therefore, future 
+research should include food insecurity to assess how many 
+women were food insecure and control for this when assess-
+ing the extent to which structural barriers affect consump -
+tion of high-sugar food and beverage consumption.
+Implications
+Black women are disproportionately at risk for negative 
+health consequences associated with unhealthy eating [ 2] 
+1 3
+Journal of Racial and Ethnic Health Disparities
+and young adults consume high amounts of high-sugar 
+food and beverages [ 5]. Yet there is a paucity of research 
+on structural barriers, internal health locus of control, and 
+high-sugar foods and beverages at the intersection of race, 
+gender, and age, despite the necessity of this specificity for 
+tailored intervention efforts. This study adds to the body 
+of literature examining how structural factors may contrib -
+ute to health behaviors for Black young adult women. Our 
+results suggest that structural-level factors are associated 
+with Black women’s consumption behaviors even relatively 
+early in the life-course during young adulthood. Research -
+ers can use this information to examine the environmental, 
+psychological, and biological contexts in which structural 
+barriers during young adulthood do and do not translate 
+into health risk for Black women later in life. Focusing 
+solely on individual-level attitudes necessary for behavior 
+change may not go far enough to engender health equity for 
+this population. As a first step, behavioral medicine prac -
+titioners could employ screenings for structural barriers 
+to healthy food access alongside nutrition assessments for 
+Black young adult women. New behavioral medicine inter-
+ventions can be designed or existing interventions modi -
+fied to account for or address structural barriers, which may 
+require interdisciplinary collaboration (e.g., implementa -
+tion science). Policy at local and national levels should 
+be enacted to focus on mitigating these structural barriers, 
+and ensure that they are being ameliorated equitably for 
+disproportionately impacted populations. Taken together, 
+identifying structural barriers to health behaviors for mar -
+ginalized racial, ethnic, and gender populations remains an 
+important priority for a behavioral medicine grounded in 
+health equity.
+Supplementary Information The online version contains supplementary 
+material available at  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 0 7 / s 4 0 6 1 5 - 0 2 6 - 0 2 9 9 0 - 4     .  
+Acknowledgements The data used in this study was from an investiga-
+tion funded by a Grant-in-Aid from the Society for the Psychological 
+Study of Social Issues (SPSSI) awarded to Dr. Vanessa V . V olpe (PI). 
+The funder had no role in conceptualizing the research, study design 
+and conduct, collection, management, analysis, and interpretation of 
+data, writing and review of the manuscript, or the decision to submit 
+the article for publication. We would like to thank all the participants 
+who generously dedicated their time and effort to contribute to this 
+research study. We greatly appreciate their willingness to share their 
+experiences and insights, which have played a crucial role in advanc -
+ing our understanding of the experiences of Black young adult women.
+Author Contributions Abbey N. Collins: (Conceptualization [Lead]; 
+Data Curation [Lead]; Formal Analysis [Lead]; Methodology [Equal]; 
+Software [Lead]; Visualization [Lead]; Writing-original draft [Lead])
+Data Availability  De-identified data may be made available for 
+research purposes by contacting the first author via email and complet-
+ing a data use agreement.
+Declarations
+Ethics Approval All procedures performed to collect data for this study 
+were in accordance with the ethical standards of the institutional and/
+or national research committee and with the 1964 Helsinki Declaration 
+and its later amendments or comparable ethical standards. The larger 
+study was approved by Institutional Review Board at North Carolina 
+State University. Since the investigation is a secondary data analysis, 
+additional IRB approval was not needed.
+Consent to Participate Informed consent was obtained electronically 
+from all individual participants included in the study.
+Conflict of interest The author(s) declared no potential conflicts of in-
+terest with respect to the research, authorship, and/or publication of 
+this article.
+Transparency Statements Neither the analysis plan or the study were 
+formally preregistered. De-identified data from this study are not 
+available in a public archive. De-identified data from this study will be 
+made available (as allowable according to institutional IRB standards) 
+by emailing the corresponding author. Analytic code used to conduct 
+the analyses presented in this study are not available in a public ar -
+chive. They may be available by emailing the corresponding author. 
+Materials used to conduct the study are not publicly available.
+Open Access   This article is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits use, sharing, 
+adaptation, distribution and reproduction in any medium or format, 
+as long as you give appropriate credit to the original author(s) and the 
+source, provide a link to the Creative Commons licence, and indicate 
+if changes were made. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless 
+indicated otherwise in a credit line to the material. If material is not 
+included in the article’s Creative Commons licence and your intended 
+use is not permitted by statutory regulation or exceeds the permitted 
+use, you will need to obtain permission directly from the copyright 
+holder. To view a copy of this licence, visit  h t t  p : / /  c r e  a t i  v e c o m m o n s . o 
+r g / l i c e n s e s / b y / 4 . 0 /     .  
+References
+1. American Heart Association. (2024). How much sugar is too 
+much? Accessed 19 July  2 0 2 5 .    h t t  p s : /  / w  w w .  h e a r  t . o  r g /  e n /  h e a  l t h y  - l  
+i v i n g / h e a l t h y - e a t i n g / e a t - s m a r t / s u g a r / h o w - m u c h - s u g a r - i s - t o o - m u 
+c h       
+2. U.S. Department of Health and Human Services Office of Minor-
+ity Health. Obesity and African Americans. Office of Minority 
+Health. Published 2022. Accessed 19 July 2023.  h t t  p s : /  / m i  n o r  i t y  h 
+e a  l t h .  h h  s . g o v / o m h / b r o w s e . a s p x ? l v l = 4 & l v l i d = 2 5       
+3. Aggarwal R, Yeh RW, Joynt Maddox KE, Wadhera RK. Car -
+diovascular risk factor prevalence, treatment, and control in 
+US adults aged 20 to 44 years, 2009 to March 2020. JAMA. 
+2023;329(11):899–909. https:/ /doi.or g/10.10 01/ja ma.2023.2307.
+4. Lee SH, Zhao L, Park S, et al. High added sugars intake among 
+US adults: characteristics, eating occasions, and top sources, 
+2015–2018. Nutrients. 2023;15(2):265.  h t t  p s : /  / d o  i . o  r g / 1 0 . 3 3 9 0 / n 
+u 1 5 0 2 0 2 6 5     .   
+5. Pereira MA. Sugar-sweetened and artificially-sweetened bever -
+ages in relation to obesity risk. Adv Nutr. 2014;5(6):797–808. 
+https:/ /doi.or g/10.39 45/an .114.007062.
+1 3
+Journal of Racial and Ethnic Health Disparities
+6. Short SE, Mollborn S. Social determinants and health behaviors: 
+conceptual frames and empirical advances. Curr Opin Psychol. 
+2015;5:78–84. https:/ /doi.or g/10.10 16/j. copsyc.2015.05.002.
+7. Endy EJ, Yi SY , Steffen BT, et al. Added sugar intake is associated 
+with weight gain and risk of developing obesity over 30 years: The 
+CARDIA study. Nutr Metab Cardiovasc Dis. 2024;34(2):466–74. 
+https:/ /doi.or g/10.10 16/j. numecd.2023.10.022.
+8. Johnson RK, Appel LJ, Brands M, et al. Dietary sugars intake and 
+cardiovascular health: a scientific statement from the American 
+Heart Association. Circulation. 2009;120(11):1011–20.  h t t  p s : /  / d o  
+i . o  r g / 1 0 . 1 1 6 1 / C I R C U L A T I O N A H A . 1 0 9 . 1 9 2 6 2 7     .   
+9. Saab KR, Kendrick J, Yracheta JM, Lanaspa MA, Pollard M, 
+Johnson RJ. New insights on the risk for cardiovascular disease in 
+African Americans: The role of added sugars. J Am Soc Nephrol. 
+2015;26(2):247. https:/ /doi.or g/10.16 81/AS N.2014040393.
+10. Arnett JJ. Emerging adulthood: A theory of development from the 
+late teens through the twenties. Am Psychol. 2000;55(5):469–80. 
+https:/ /doi.or g/10.10 37/00 03-066X.55.5.469.
+11. Cowan-Pyle AE, Bailey RL, Gao J, et al. Dietary quality and diet-
+related factors among emerging adults (18–23 y) in the United 
+States are a cause for concern: National Health and Nutrition 
+Examination Survey 2015–2018. J Nutr. 2024;154(8):2524–33. 
+https:/ /doi.or g/10.10 16/j. tjnut.2024.06.015.
+12. Powell PK, Durham J, Lawler S. Food choices of young adults 
+in the United States of America: a scoping review. Adv Nutr. 
+2019;10(3):479–88. https:/ /doi.or g/10.10 93/ad vances/nmy116.
+13. Rehm CD, Peñalvo JL, Afshin A, Mozaffarian D. Dietary intake 
+among US adults, 1999–2012. JAMA. 2016;315(23):2542–53. 
+https:/ /doi.or g/10.10 01/ja ma.2016.7491.
+14. Vercammen KA, Moran AJ, Soto MJ, Kennedy-Shaffer L, Bleich 
+SN. Decreasing trends in heavy sugar-sweetened beverage con -
+sumption in the United States, 2003 to 2016. J Acad Nutr Diet. 
+2020;120(12):1974-e19855.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 1 6 / j . j a n d . 2 0 2 0 . 
+0 7 . 0 1 2     .   
+15. Ervin RB, Ogden CL. Consumption of added sugars among U.S. 
+adults, 2005–2010. NCHS Data Brief. 2013;122:1–8.
+16. Vatavuk-Serrati G, Frank SM, Ng SW, Taillie LS. Trends in sugar 
+from packaged foods and beverages purchased by US households 
+between 2002 and 2020. J Acad Nutr Diet. 2024;124(4):481-494.
+e1. https:/ /doi.or g/10.10 16/j. jand.2023.10.011.
+17. Dunn JE, Liu K, Greenland P, Hilner JE, Jacobs DR. Seven-year 
+tracking of dietary factors in young adults: the CARDIA study. 
+Am J Prev Med. 2000;18(1):38–45.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 1 6 / s 0 7 4 
+9 - 3 7 9 7 ( 9 9 ) 0 0 1 1 4 - 2     .   
+18. Nelson MC, Story M, Larson NI, Neumark-Sztainer D, Lytle 
+LA. Emerging adulthood and college-aged youth: an overlooked 
+age for weight-related behavior change. Obesity Silver Spring. 
+2008;16(10):2205–11. https:/ /doi.or g/10.10 38/ob y.2008.365.
+19. Vilar-Compte M, Burrola-Méndez S, Lozano-Marrufo A, et al. 
+Urban poverty and nutrition challenges associated with accessi -
+bility to a healthy diet: a global systematic literature review. Int J 
+Equity Health. 2021;20(1):40.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 1 8 6 / s 1 2 9 3 9 - 0 2 
+0 - 0 1 3 3 0 - 0     .   
+20. Dennard E, Kristjansson E, Tchangalova N, Totton S, Winham 
+D, O’Connor A. Food insecurity among African Americans in the 
+United States: a scoping review. PLoS One. 2022;17(9):e0274434. 
+https:/ /doi.or g/10.13 71/jo urnal.pone.0274434.
+21. Cooksey-Stowers K, Schwartz MB, Brownell KD. Food swamps 
+predict obesity rates better than food deserts in the United States. 
+Int J Environ Res Public Health. 2017;14(11):1366.  h t t  p s : /  / d o  i . o  r 
+g / 1 0 . 3 3 9 0 / i j e r p h 1 4 1 1 1 3 6 6     .   
+22. Roy R, Kelly B, Rangan A, Allman-Farinelli M. Food environ -
+ment interventions to improve the dietary behavior of young 
+adults in tertiary education settings: a systematic literature review. 
+J Acad Nutr Diet. 2015;115(10):1647-e16811.  h t t  p s : /  / d o  i . o  r g / 1 0 . 
+1 0 1 6 / j . j a n d . 2 0 1 5 . 0 6 . 3 8 0     .   
+23. Zenk SN, Odoms-Young AM, Dallas C, et al. “You have to hunt 
+for the fruits, the vegetables”: environmental barriers and adap -
+tive strategies to acquire food in a low-income African American 
+neighborhood. Health Educ Behav. 2011;38(3):282–92.  h t t  p s : /  / d 
+o  i . o  r g / 1 0 . 1 1 7 7 / 1 0 9 0 1 9 8 1 1 0 3 7 2 8 7 7     .   
+24. Drewnowski A, Specter SE. Poverty and obesity: the role of 
+energy density and energy costs. Am J Clin Nutr. 2004;79(1):6–
+16. https:/ /doi.or g/10.10 93/aj cn/79.1.6.
+25. Dhurandhar EJ. The food-insecurity obesity paradox: a resource 
+scarcity hypothesis. Physiol Behav. 2016;162:88–92.  h t t  p s : /  / d o  i . 
+o  r g / 1 0 . 1 0 1 6 / j . p h y s b e h . 2 0 1 6 . 0 4 . 0 2 5     .   
+26. Antin TM, Hunt G. Food choice as a multidimensional experience: 
+a qualitative study with young African American women. Appetite. 
+2012;58(3):856–63.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 1 6 / j . a p p e t . 2 0 1 2 . 0 1 . 0 2 1     .   
+27. Cena H, Calder PC. Defining a healthy diet: evidence for the role 
+of contemporary dietary patterns in health and disease. Nutrients. 
+2020;12(2):334. https:/ /doi.or g/10.33 90/nu 12020334.
+28. Larson N, Laska MN, Neumark-Sztainer D. Food insecurity, diet 
+quality, home food availability, and health risk behaviors among 
+emerging adults: findings from the EAT 2010–2018 study. Am J 
+Public Health. 2020;110(9):1422–8.  h t t  p s : /  / d o  i . o  r g / 1 0 . 2 1 0 5 / A J P 
+H . 2 0 2 0 . 3 0 5 7 8 3     .   
+29. Leung CW, Epel ES, Ritchie LD, Crawford PB, Laraia BA. Food 
+insecurity is inversely associated with diet quality of lower-
+income adults. J Acad Nutr Diet. 2014;114(12):1943–e19532. 
+https:/ /doi.or g/10.10 16/j. jand.2014.06.353.
+30. Wolfson JA, Ramsing R, Richardson CR, Palmer A. Barriers to 
+healthy food access: associations with household income and 
+cooking behavior. Prev Med Rep. 2019;13:298–305.  h t t  p s : /  / d o  i . o  
+r g / 1 0 . 1 0 1 6 / j . p m e d r . 2 0 1 9 . 0 1 . 0 2 3     .   
+31. Duke NN, Campbell SD, Sauls DL, et al. Prevalence of food inse-
+curity among students attending four Historically Black Colleges 
+and Universities. J Am Coll Health. 2023;71(1):87–93.  h t t  p s : /  / d o  
+i . o  r g / 1 0 . 1 0 8 0 / 0 7 4 4 8 4 8 1 . 2 0 2 1 . 1 8 7 7 1 4 4     .   
+32. Dubowitz T, Ghosh-Dastidar M, Cohen DA, et al. Diet and per -
+ceptions change with supermarket introduction in a food desert, 
+but not because of supermarket use. Health Aff (Millwood). 
+2015;34(11):1858–68. https:/ /doi.or g/10.13 77/hl thaff.2015.0667.
+33. Dubowitz T, Dastidar MG, Troxel WM, et al. Food insecurity in 
+a low-income, predominantly African American cohort following 
+the COVID-19 pandemic. Am J Public Health. 2021;111(3):494–
+7. https:/ /doi.or g/10.21 05/AJ PH.2020.306041.
+34. Gooding HC, Walls CE, Richmond TK. Food insecurity and 
+increased BMI in young adult women. Obesity Silver Spring. 
+2012;20(9):1896–901. https:/ /doi.or g/10.10 38/ob y.2011.233.
+35. Cooksey-Stowers K, Jiang Q, Atoloye A, Lucan S, Gans K. 
+Racial differences in perceived food swamp and food desert expo-
+sure and disparities in self-reported dietary habits. Int J Environ 
+Res Public Health. 2020;17(19):7143.  h t t  p s : /  / d o  i . o  r g / 1 0 . 3 3 9 0 / i j e 
+r p h 1 7 1 9 7 1 4 3     .   
+36. Hernandez DC, Reesor L, Murillo R. Gender disparities in the food 
+insecurity-overweight and food insecurity-obesity paradox among 
+low-income older adults. J Acad Nutr Diet. 2017;117(7):1087–
+96. https:/ /doi.or g/10.10 16/j. jand.2017.01.014.
+37. Alexander R, Wade J, McElroy A, et al. From proximity concerns 
+to constant snacking: narratives of food access and consumption 
+patterns before and during the COVID-19 pandemic. J Am Coll 
+Health. 2024;72(6):1727–33.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 8 0 / 0 7 4 4 8 4 8 1 . 2 
+0 2 2 . 2 0 8 9 8 4 5     .   
+38. United States Department of Agriculture. (2023). Food Access 
+Research Atlas. United States Department of Agriculture Eco -
+nomic Research Service.  h t t  p s : /  / w w  w . e  r s .  u s d  a . g o  v /  d a t a - p r o d u c t 
+s / f o o d - a c c e s s - r e s e a r c h - a t l a s /       
+39. Rotter JB. Generalized expectancies for internal versus external 
+control of reinforcement. Psychol Monogr. 1966;80(1):1–28. 
+https:/ /doi.or g/10.10 37/h0 092976.
+1 3
+Journal of Racial and Ethnic Health Disparities
+40. Wallston KA. Hocus-Pocus, the focus isn’t strictly on locus: Rot-
+ter’s social learning theory modified for health. Cogn Ther Res. 
+1992;16:183–99. https:/ /doi.or g/10.10 07/BF 01173488.
+41. Wallston KA, Wallston BS, DeVellis R. Development of the Mul-
+tidimensional Health Locus of Control (MHLC) scales. Health 
+Educ Monogr. 1978;6(2):160–70.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 1 7 7 / 1 0 9 0 1 
+9 8 1 7 8 0 0 6 0 0 1 0 7     .   
+42. Kamimura A, Jess A, Trinh HN, et al. Food insecurity associ -
+ated with self-efficacy and acculturation. Popul Health Manag. 
+2017;20(1):66–73. https:/ /doi.or g/10.10 89/po p.2015.0179.
+43. Martin KS, Colantonio AG, Picho K, Boyle KE. Self-efficacy is 
+associated with increased food security in novel food pantry pro-
+gram. SSM Popul Health. 2016;2:62–7.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 1 6 / j . 
+s s m p h . 2 0 1 6 . 0 1 . 0 0 5     .   
+44. Ranjit N, Macias S, Hoelscher D. Factors related to poor 
+diet quality in food insecure populations. Transl Behav Med. 
+2020;10(6):1297–305. https:/ /doi.or g/10.10 93/tb m/ibaa028.
+45. Cobb-Clark DA. Locus of control and the labor market. IZA J Labor 
+Econ. 2015;4:3. https:/ /doi.or g/10.11 86/s4 0172-014-0017-x.
+46. Marr J, Wilcox S. Self-efficacy and social support mediate the 
+relationship between internal health locus of control and health 
+behaviors in college students. Am J Health Educ. 2015;46(3):122–
+31. https:/ /doi.or g/10.10 80/19 325037.2015.1023477.
+47. Naughton P, McCarthy M, McCarthy S. Acting to self-regulate 
+unhealthy eating habits: an investigation into the effects of habit, 
+hedonic hunger and self-regulation on sugar consumption from 
+confectionery foods. Food Qual Prefer. 2015;46:173–83.  h t t  p s : /  / d 
+o  i . o  r g / 1 0 . 1 0 1 6 / j . f o o d q u a l . 2 0 1 5 . 0 8 . 0 0 1     .   
+48. Bruce MA, Beech BM, Thorpe RJ Jr, Mincey K, Griffith DM. 
+Racial and gender disparities in sugar consumption change effi -
+cacy among first-year college students. Appetite. 2017;109:33–9. 
+https:/ /doi.or g/10.10 16/j. appet.2016.11.017.
+49. Fajarini IA, Matsuzaki M, Ruggiero CF, et al. Low healthy diet 
+self-efficacy and intentions associated with high sweet snacks and 
+sugar sweetened beverages consumption among African Ameri -
+can adolescents recruited from low-income neighborhoods in 
+Baltimore. Nutrients. 2021;13(12):4516.  h t t  p s : /  / d o  i . o  r g / 1 0 . 3 3 9 0 
+/ n u 1 3 1 2 4 5 1 6     .   
+50. Peer E, Rothschild D, Gordon A, Evernden Z, Damer E. Data 
+quality of platforms and panels for online behavioral research. 
+Behav Res Methods. 2022;54(4):1643–62.  h t t  p s : /  / d o  i . o  r g / 1 0 . 3 7 5 
+8 / s 1 3 4 2 8 - 0 2 1 - 0 1 6 9 4 - 3     .   
+51. Simone M, Cascalheira CJ, Pierce BG. A quasi-experimental 
+study examining the efficacy of multimodal bot screening tools 
+and recommendations to preserve data integrity in online psycho-
+logical research. Am Psychol. 2024;79(7):956–69.  h t t  p s : /  / d o  i . o  r g 
+/ 1 0 . 1 0 3 7 / a m p 0 0 0 1 1 8 3     .   
+52. Richards Adams IK, Figueroa W, Hatsu I, et al. An examination 
+of demographic and psychosocial factors, barriers to healthy eat-
+ing, and diet quality among African American adults. Nutrients. 
+2019;11(3):519. https:/ /doi.or g/10.33 90/nu 11030519.
+53. Caspi CE, Sorensen G, Subramanian SV , Kawachi I. The local 
+food environment and diet: a systematic review. Health Place. 
+2012;18(5):1172–87.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 1 6 / j . h e a l t h p l a c e . 2 0 1 2 . 
+0 5 . 0 0 6     .   
+54. Cudeck R, Browne MW. Cross-validation of covariance struc -
+tures. Multivariate Behav Res. 1983;18(2):147–67.  h t t  p s : /  / d o  i . o  
+r g / 1 0 . 1 2 0 7 / s 1 5 3 2 7 9 0 6 m b r 1 8 0 2 _ 2     .   
+55. Toobert DJ, Hampson SE, Glasgow RE. The summary of diabetes 
+self-care activities measure: results from 7 studies and a revised 
+scale. Diabetes Care. 2000;23(7):943–50.  h t t  p s : /  / d o  i . o  r g / 1 0 . 2 3 3 7 
+/ d i a c a r e . 2 3 . 7 . 9 4 3     .   
+56. Hernandez R, Ruggiero L, Prohaska TR, et al. A cross-sectional 
+study of depressive symptoms and diabetes self-care in African 
+Americans and Hispanics/Latinos with diabetes: The role of 
+self-efficacy. Diabetes Educ. 2016;42(4):452–61.  h t t  p s : /  / d o  i . o  r g 
+/ 1 0 . 1 1 7 7 / 0 1 4 5 7 2 1 7 1 6 6 5 4 0 0 8     .   
+57. Moody JG. Spiritual self-care practices, diabetes knowledge, and 
+diabetes self-care practices for African Americans. J Holist Nurs. 
+2025;43(1):38–48. https:/ /doi.or g/10.11 77/08 980101241296402.
+58. Neblett DA, McCoy TP, Kennedy-Malone L, Wallace DC, Mor -
+rison SD. Self-care of diabetes and diabetes distress in Non-His -
+panic Black adults with type 2 diabetes. Sci Diabetes Self Manag 
+Care. 2024;50(3):222–34.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 1 7 7 / 2 6 3 5 0 1 0 6 2 4 1 2 
+4 9 1 5 7     .   
+59. Park JH, Sherman LD, Smith ML, Patterson MS, Prochnow T. 
+The association between Health Belief Model components and 
+self-care practices among Black/African American men with 
+Type 2 Diabetes. Int J Environ Res Public Health. 2025.  h t t  p s : /  / d 
+o  i . o  r g / 1 0 . 3 3 9 0 / i j e r p h 2 2 0 3 0 4 1 4     .   
+60. Tang TS, Brown MB, Funnell MM, Anderson RM. Social sup -
+port, quality of life, and self-care behaviors among African Amer-
+icans with type 2 diabetes. Diabetes Educ. 2008;34(2):266–76. 
+https:/ /doi.or g/10.11 77/01 45721708315680.
+61. Nelson Laska M, Larson NI, Neumark-Sztainer D, Story M. 
+Dietary patterns and home food availability during emerging 
+adulthood: do they differ by living situation? Public Health Nutr. 
+2010;13(2):222–8. https:/ /doi.or g/10.10 17/S1 368980009990760.
+62. Roy R, Kelly B, Rangan A, Allman-Farinelli M. Food environ -
+ment interventions to improve the dietary behavior of young 
+adults in tertiary education settings: A systematic literature 
+review. J Acad Nutr Diet. 2015;115(10):1647-e811.  h t t  p s : /  / d o  i . o  r 
+g / 1 0 . 1 0 1 6 / j . j a n d . 2 0 1 5 . 0 6 . 3 8 0     .   
+63. Zissimopoulos J, Thunell J, Mudrazija S. Parental income and 
+wealth loss and transfers to their young adult children. J Fam 
+Econ Issues. 2020;41(2):316–31.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 0 7 / s 1 0 8 3 
+4 - 0 1 9 - 0 9 6 4 5 - z     .   
+64. Robinson WR, Gordon-Larsen P, Kaufman JS, Suchindran CM, 
+Stevens J. The female-male disparity in obesity prevalence among 
+Black American young adults: contributions of sociodemo -
+graphic characteristics of the childhood family. Am J Clin Nutr. 
+2009;89(4):1204–12. https:/ /doi.or g/10.39 45/aj cn.2007.25751.
+65. Schoemann AM, Boulton AJ, Short SD. Determining power and 
+sample size for simple and complex mediation models. Soc Psy -
+chol Personal Sci. 2017;8(4):379–86.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 1 7 7 / 1 9 4 
+8 5 5 0 6 1 7 7 1 5 0 6 8     .   
+66. Bernerth JB, Aguinis H. A critical review and best-practice 
+recommendations for control variable usage. Pers Psychol. 
+2016;69(1):229–83. https:/ /doi.or g/10.11 11/pe ps.12103.
+67. Muthén LK, Muthén BO. (1998– 2017). Mplus user’s guide. 
+Muthén & Muthén.
+68. Long JS. Regression models for categorical and limited depen -
+dent variables. Thousand Oaks, CA: Sage Publications, Inc; 
+1997.
+69. Coxe S, West SG, Aiken LS. The analysis of count data: a gentle 
+introduction to Poisson regression and its alternatives. J Pers 
+Assess. 2009;91(2):121–36.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 8 0 / 0 0 2 2 3 8 9 0 8 0 
+2 6 3 4 1 7 5     .   
+70. Selig JP, Preacher KJ. June. Monte Carlo method for assessing 
+mediation: An interactive tool for creating confidence intervals 
+for indirect effects [Computer software]. Available from  h t t p : / / q u 
+a n t p s y . o r g /     . Accessibility verified 2008.
+71. Ghosh-Dastidar B, Cohen D, Hunter G, et al. Distance to 
+store, food prices, and obesity in urban food deserts. Am J 
+Prev Med. 2014;47(5):587–95.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 1 6 / j . a m e 
+p r e . 2 0 1 4 . 0 7 . 0 0 5     .   
+72. Koosis AO, Hill AB, Whaley M, Beavers AW. “I shouldn’t have 
+to drive to the suburbs”: grocery store access, transportation, and 
+food security in Detroit during the COVID-19 pandemic. Nutri -
+ents. 2025. https:/ /doi.or g/10.33 90/nu 17152441.
+1 3
+Journal of Racial and Ethnic Health Disparities
+73. Gearhardt AN, Yokum S, Orr PT, Stice E, Corbin WR, Brownell 
+KD. Neural correlates of food addiction. Arch Gen Psychiatry. 
+2011;68(8):808–16.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 0 1 / a r c h g e n p s y c h i a t r y . 2 
+0 1 1 . 3 2     .   
+74. Gibson EL. The psychobiology of comfort eating: implications 
+for neuropharmacological interventions. Behav Pharmacol. 
+2012;23(5–6):442–60.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 9 7 / F B P . 0 b 0 1 3 e 3 2 8 3 
+5 7 b d 4 e     .   
+75. Longmire-Avital B, McQueen C. Exploring a relationship 
+between race-related stress and emotional eating for collegiate 
+Black American women. Women Health. 2019;59(3):240–51. 
+https:/ /doi.or g/10.10 80/03 630242.2018.1478361.
+76. Pickett S, Burchenal CA, Haber L, Batten K, Phillips E. Under -
+standing and effectively addressing disparities in obesity: A 
+systematic review of the psychological determinants of emo -
+tional eating behaviours among Black women. Obes Rev. 
+2020;21(6):e13010. https:/ /doi.or g/10.11 11/ob r.13010.
+77. V olpe VV , Ross JM, Collins A, et al. Gendered racial microag -
+gressions and emotional eating for Black young adult women: 
+The mediating roles of superwoman schema and self-compas -
+sion. Psychol Women Q. 2023;48(1):93–107.  h t t  p s : /  / d o  i . o  r g / 1 0 . 
+1 1 7 7 / 0 3 6 1 6 8 4 3 2 3 1 1 8 2 9 1 3     .   
+78. Pieterse AL, Carter RT. An exploratory investigation of the rela-
+tionship between racism, racial identity, perceptions of health, 
+and health locus of control among black American women. J 
+Health Care Poor Underserved. 2010;21(1):334–48.  h t t  p s : /  / d o  i . 
+o  r g / 1 0 . 1 3 5 3 / h p u . 0 . 0 2 4 4     .   
+79. Nielsen MB, Knardahl S. Coping strategies: a prospective study 
+of patterns, stability, and relationships with psychological dis -
+tress. Scand J Psychol. 2014;55(2):142–50.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 1 1 
+1 / s j o p . 1 2 1 0 3     .   
+80. Aspinwall LG, Taylor SE. A stitch in time: self-regulation and 
+proactive coping. Psychol Bull. 1997;121(3):417–36.  h t t  p s : /  / d o  i . 
+o  r g / 1 0 . 1 0 3 7 / 0 0 3 3 - 2 9 0 9 . 1 2 1 . 3 . 4 1 7     .   
+81. Woods-Giscombe C, Robinson MN, Carthon D, Devane-Johnson 
+S, Corbie-Smith G. Superwoman Schema, Stigma, Spirituality, 
+and Culturally Sensitive Providers: Factors Influencing African 
+American Women’s Use of Mental Health Services. J Best Pract 
+Health Prof Divers. 2016;9(1):1124–44.
+82. Woods-Giscombe CL, Allen AM, Black AR, Steed TC, Li Y , 
+Lackey C. The Giscombe Superwoman Schema Questionnaire: 
+Psychometric properties and associations with mental health 
+and health behaviors in African American Women. Issues Ment 
+Health Nurs. 2019;40(8):672–81.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 8 0 / 0 1 6 1 2 8 
+4 0 . 2 0 1 9 . 1 5 8 4 6 5 4     .   
+83. Shrout PE. Commentary: Mediation analysis, causal process, and 
+cross-sectional data. Multivariate Behav Res. 2011;46(5):852–
+60. https:/ /doi.or g/10.10 80/00 273171.2011.606718.
+84. Tasevska N, Palma-Duran SA, Sagi-Kiss V , et al. Urinary sucrose 
+and fructose from spot urine may be used as a predictive bio -
+marker of total sugar intake-findings from a controlled feeding 
+study. J Nutr. 2023;153(6):1816–24.  h t t  p s : /  / d o  i . o  r g / 1 0 . 1 0 1 6 / j . t j n 
+u t . 2 0 2 3 . 0 4 . 0 0 2     .   
+85. Tripicchio GL, Smethers AD, Johnson JJ, et al. The Carbon 
+isotope ratio as an objective biomarker of added sugar intake: 
+A scoping review of current evidence in human nutrition. Adv 
+Nutr. 2024;15(9):100281.  h t t    p  s :  /  / d   o  i .  o r  g / 1 0 . 1 0 1 6 / j . a d v n u t . 2 0 2 4 
+. 1 0 0 2 8 1     .   
+Publisher’s Note Springer Nature remains neutral with regard to juris-
+dictional claims in published maps and institutional affiliations.

@@ -1,0 +1,1231 @@
+Lansink et al. 
+Implementation Science Communications            (2026) 7:84  
+https://doi.org/10.1186/s43058-026-00904-3
+SYSTEMATIC REVIEW Open Access
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 
+International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long 
+as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if 
+you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or 
+parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated 
+otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not 
+permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To 
+view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+Implementation Science
+Communications
+Barriers and facilitators for implementation 
+of lifestyle related blended care interventions 
+for overweight, obesity and type 2 diabetes 
+mellitus: a scoping review
+Chiara Lansink1,2*  , Anouk Middelweerd1, Gozewijn Dirk Laverman1,2 and Nienke Beerlage-de Jong3 
+Abstract 
+Background Blended care, referring to the combination of digital health interventions (DHI) with in-person care, 
+has proven cost-effective in promoting healthy behaviours, especially for lifestyle related conditions like type 2 diabe-
+tes mellitus. However, despite positive results, many interventions fail during the clinical implementation. A successful 
+implementation of blended care interventions requires a systematic approach including appropriate implementation 
+strategies that address relevant barriers and facilitators. Therefore, this study explores barriers and facilitators for imple-
+mentation of lifestyle related blended care interventions for weight management and type 2 diabetes mellitus.
+Methods Following PRISMA-ScR guidelines, a scoping review was conducted using PubMed, Scopus, and Web of Sci-
+ence, covering studies from January 1, 2000, to February 4, 2025. The search included terms related to ‘overweight,’ 
+‘obesity,’ ‘diabetes mellitus type 2’ , ‘eHealth’ , ‘blended care’ , ‘setting’ and ‘implementation’ . Studies were included if they 
+focused on lifestyle changes (e.g. weight loss, physical activity, or self-management) and reported barriers or facilita-
+tors for implementing blended care, defined in this review as the integration of DHI with at least one in-person care-
+focused interaction between a health care provider and an adult patient. No risk of bias assessment was performed. 
+Data were extracted on study characteristics, participants demographics, DHI delivery methods, and implementation 
+barriers and facilitators. Data was analysed using a narrative synthesis structured by the Consolidated Framework 
+for Implementation Research (CFIR).
+Results From 1329 screened studies, nine met the inclusion criteria. The findings indicate that implementation chal-
+lenges cluster around financial constraints, increased workload for healthcare providers, and disparities in digital skills, 
+which collectively limit the feasibility and sustained use of blended DHIs. The other way around, successful implemen-
+tation is supported by adequate training, user-centred design, and strong alignment with existing clinical workflows. 
+Tailoring interventions to organisational context and ensuring regulatory compliance further strengthen adoption.
+Conclusions Blended DHIs offer opportunities to enhance personalization, patient involvement, and continu-
+ity of care. However, their sustainable implementation requires addressing these overarching barrier and facilitator 
+domains rather than isolated factors: Healthcare organisations can act to reduce organisational burden by providing 
+sufficient resources, policymakers can support regulatory alignment, developers can prioritize user-centred design, 
+and healthcare professionals can integrate blended care intro routine practice and support patients in its use.
+*Correspondence:
+Chiara Lansink
+c.i.lansink@utwente.nl
+Full list of author information is available at the end of the article
+Page 2 of 14Lansink et al. Implementation Science Communications            (2026) 7:84 
+Keywords Implementation science, Blended care, Digital health, EHealth
+promoting healthy behaviours and achieving weight 
+loss goals [17, 18]. These innovative, cost-effective tools 
+may enhance self-management and help reduce health -
+care costs [11, 13, 19, 20]. However, stand-alone DHI 
+may be less effective compared to a combination of 
+digital approaches with at least one in-person visit [11, 
+21– 25]. Such blended care, which integrates eHealth 
+with in-person interactions, combines the benefits of 
+digital tools with traditional care, potentially improv -
+ing healthcare quality, efficiency and patient satisfac -
+tion [13, 25, 26]. While several systematic reviews 
+have found promising outcomes of digital and eHealth 
+interventions targeting physical activity, healthy diet or 
+improving self-management in adults [27– 31], studies 
+that explicitly examine blended care remain scarce [25]. 
+The few reviews that include blended elements typically 
+do so as part of broader eHealth or lifestyle interven -
+tions, rather than evaluating blended care as a distinct 
+approach [32, 33]. For this study we defined blended 
+care as a digital health intervention combined with at 
+least one in-person instance between health care pro -
+vider and patient.
+To optimize the effect of blended care, effective imple -
+mentation of DHI in a blended care setting is essential to 
+fully realize their benefits. However, implementing these 
+innovations in healthcare is difficult and they often do 
+not last in the long term [34]. Research suggests that the 
+success of implementing DHI depends on a combina -
+tion of organisational, technological, and human factors. 
+These factors function as determinants that may posi -
+tively or negatively influence implementation outcomes. 
+Challenges such as financial constraints and difficul -
+ties integrating interventions into routine care pathways 
+can hinder adoption, reduce patient engagement, and 
+ultimately limit the effectiveness of these interventions 
+[35– 37]. Such challenges may reduce uptake and threaten 
+long-term sustainability. Furthermore, implementation 
+strategies are often underreported, limiting their practical 
+application [38]. To better understand these factors, the 
+Consolidated Framework for Implementation Research 
+(CFIR) provides a useful structure and is applied in this 
+review [39]. CFIR provides a comprehensive frame -
+work for identifying determinants that influence imple -
+mentation processes and outcomes. Previous reviews 
+have explored the barriers and facilitators to adopting 
+and implementing DHI among healthcare professionals 
+[40– 42]. These reviews shows that the adoption of DHI is 
+mainly influenced by perceived usefulness and ease of use, 
+with limited knowledge of eHealth being a major barrier. 
+Contributions to the literature
+• By structuring findings using the Consolidated 
+Framework for Implementation Research (CFIR), 
+This study provides a comprehensive perspective on 
+the implementation of blended care interventions.
+• Unlike already existing studies focusing more on the 
+effectiveness of blended care, this study contributes 
+by identifying specific barriers and facilitators for 
+its implementation. Identified barriers include high 
+costs, integration issues and challenges related to 
+user-friendliness, while factors include the applica -
+tion of user-centred design approaches and personal -
+ized care strategies.
+• This study identifies the need for consistent terminol -
+ogy and clear definitions of blended care to improve 
+comparability, knowledge transfer and allow for cross 
+comparisons.
+Introduction
+Diabetes Mellitus type 2 (T2DM) is one of the four 
+major non-communicable diseases [1 ]. In 2021, the 
+global prevalence of diabetes among individuals 
+aged 20 to 79 reached 536.6 million and is expected 
+to increase to 783.2 million by 2045 [2 , 3]. Individu -
+als with overweight and obesity are at a higher risk of 
+developing type 2 diabetes [4 ]. As the number of people 
+living with overweight and obesity continues to grow, 
+so too are associated healthcare costs [5 ].
+Lifestyle factors, like diet and physical activity, are key 
+in managing and even reversing T2DM [6 , 7]. However, 
+adopting and maintaining a healthy lifestyle is chal -
+lenging for many individuals, partly because of differ -
+ent levels of motivation and self-management skills [8 , 
+9]. For people with T2DM, these challenges are further 
+compounded by the broader demands of self-manage -
+ment, which includes not only making lifestyle changes 
+but also adhering to medication and monitoring blood 
+glucose levels [10– 12]. Effective self-management helps 
+individuals take control of their health, manage symp -
+toms, and improve their quality of life [13– 15]. Yet, 
+despite clinical guidelines emphasising lifestyle change 
+as the first step in treatment, existing programs, such 
+as combined lifestyle interventions, often lack sufficient 
+support to facilitate sustainable lifestyle changes [16].
+The rapid growth of interactive digital health inter -
+ventions (DHI), including smartphone apps for track -
+ing diet and physical activity, has proven effective in 
+Page 3 of 14
+Lansink et al. Implementation Science Communications            (2026) 7:84 
+ 
+In addition, good alignment with work processes, end-
+user involvement, and collaboration between healthcare 
+professionals and IT specialists are important factors. 
+Although these reviews provide valuable insights into the 
+broader implementation of digital health, they do not spe-
+cifically examine how DHIs are combined with in-person 
+care. Consequently, explicit evidence on how blended care 
+is implemented in practice remains limited.
+This review aims to bridge this gap by identifying key 
+barriers and facilitators influencing the implementa -
+tion outcomes of blended care interventions for lifestyle 
+management in adults with overweight, obesity and/or 
+T2DM. By synthesizing the results, the aim is to optimize 
+healthcare delivery, enhance patient outcomes and sup -
+port sustainable lifestyle changes.
+Methods
+Protocol and registration
+This review has been conducted in accordance with the 
+Preferred Reporting for Systematic Reviews and Meta-
+Analysis Extension for Scoping Reviews guidelines, using 
+the PRISMA-ScR checklist [43]. No formal protocol was 
+registered for this review.
+Eligibility criteria
+The inclusion criteria for articles were as follows: (1) the 
+publication must be in English or Dutch; (2) participants 
+must be healthcare professionals directly involved in the 
+care for patients with overweight, obesity and/or T2DM; 
+and/or (3) participants must be adults (> 18  years) with 
+T2DM and/or obesity/overweight. Participants may pre -
+sent with a combination of metabolic syndrome criteria 
+or cardiovascular risk factors. Studies were eligible if they 
+included healthcare professionals, adult patients or both; 
+(4) the publication must be a peer-reviewed scientific 
+journal article or conference paper; (5) the intervention 
+must be aimed at lifestyle changes such as weight loss or 
+increasing physical activity or improving self-manage -
+ment; (6) the study must focus on barriers or facilitators 
+for implementing blended care, defined in this review as 
+the integration of a DHI with at least one instance of in-
+person care between health care provider and patient. The 
+exclusion criteria included the following: (1) participants 
+with co-morbidities that are not related to metabolic syn-
+drome or cardiovascular risk factors; (2) participants with 
+serious mental illness; (3) participants who are pregnant; 
+and (4) participants with substance addiction.
+Information sources and search strategy
+A search was performed for articles between 1 st of Janu-
+ary 2000 and the date of search (4th February 2025), on 
+PubMed, Scopus, and Web of Science. These databases 
+were selected because together they cover the fields most 
+relevant to this review, including public health, techno -
+logical, and implementation research related to blended 
+care. The key words that were used for the search were 
+‘overweight, ’ ‘obesity, ’ diabetes mellitus type 2’ , eHealth’ , 
+‘blended care’ , ‘setting’ and ‘implementation’ . The com-
+plete electronic search strategy for the PubMed database 
+is detailed in Additional file  1. To ensure consistency 
+among all databases, the same search strategy was 
+applied for the three databases, PubMed, Scopus, and 
+Web of Science. All searches were restricted to articles 
+published in English or Dutch. Only journal articles, con-
+ference papers, and meta-analyses were included, with all 
+other publication types excluded.
+Selection of studies
+Duplicates were removed through Covidence [44], 
+and the first author manually removed the remaining 
+duplicates. The first author (CL) screened the titles and 
+abstracts of all publications, while a second author (NB) 
+independently screened 20% of these titles and abstracts. 
+Initial agreement during title and abstract screening was 
+limited (Cohen’s kappa, κ = 0.29), reflecting variability in 
+the interpretation of the term ‘blended care. ’ Discrepan-
+cies were discussed to clarify the inclusion criteria and 
+improve consistency. A similar procedure was applied 
+to full-text screening, with initial agreement also limited 
+(Cohen’s kappa, κ = 0.26) but improved through discus -
+sion and refinement of the criteria, ensuring reliability in 
+the final selection of studies. A revised inter-rater agree -
+ment was not calculated, as its purpose in this context 
+was to identify discrepancies rather than to quantify final 
+agreement. For this study we defined blended care as a 
+digital health intervention combined with at least one 
+in-person instance between health care provider and 
+patient.
+Data charting process
+The standard Covidence data extraction template was 
+adapted for the purpose of this scoping review. The 
+adapted extraction form was pilot tested with three 
+studies, based on which the form was modified to its 
+definitive version. The extracted data covered: (1) Study 
+characteristics (e.g. publication type); (2) general study 
+and participants characteristics (e.g. study design, coun -
+try); (3) mode of intervention delivery intervention if 
+applicable (e.g. delivery platform); (4) qualitative data 
+methods (e.g. interview type); (5) evaluation results (e.g. 
+barriers and facilitators; and (6) other information (e.g. 
+key conclusion of study authors). The data extraction 
+was conducted by CL and then checked for accuracy and 
+completeness by NB. Any discrepancies were resolved 
+through consultation and consensus.
+Page 4 of 14Lansink et al. Implementation Science Communications            (2026) 7:84 
+Synthesis of results
+In line with the exploratory nature of this review, no for -
+mal risk of bias assessment was performed. Given the 
+predominantly qualitative nature of the included studies, 
+findings were synthesized using a narrative approach. For 
+consistency in reporting, the term digital health interven-
+tion (DHI) was used throughout this scoping review to 
+specifically refer to the digital component of the blended-
+care interventions included. To identify the implementa -
+tion determinants in a structured and systematic way, the 
+Consolidated Framework for Implementation Research 
+(CFIR) was used. Given the complexity of implementing 
+digital health interventions, a framework that systemati -
+cally addresses contextual, organisational, and individual 
+influences was considered most appropriate. CFIR con -
+sisted of five domains that can influence implementation. 
+These domains include innovation (e.g. innovation type 
+and adaptable components), outer setting (e.g. external 
+influences), inner setting (e.g. influences within the set -
+ting), individuals (e.g. characteristics and roles of the 
+individuals involved) and implementation (e.g. activi -
+ties and strategies used to implement the innovation) 
+[39]. This framework provides a systematic method for 
+understanding how different components interact and 
+influence the overall success of DHI implementations. 
+Relevant sentences addressing barriers and facilitators in 
+the included studies were coded deductively according to 
+the five CFIR domains and their constructs. Coding was 
+conducted by CL and discussed with a second reviewer 
+(NB), with any discrepancies or uncertainties resolved 
+through discussion and consensus. No inductive cod -
+ing was performed, as all relevant factors were captured 
+within the existing CFIR framework.
+Results
+Search results
+The search terms resulted in 2637 articles from three 
+databases. Of these, 1105 (41.9%) were duplicates and 
+were removed. There was initially a relatively low consen-
+sus for the first 10% of the data. However, after discussing 
+the discrepancies, particularly those arising from varying 
+interpretations of terms, agreement improved consid -
+erably. After screening titles and abstracts, 179 articles 
+were selected for full-text reviews. Of these, 170 articles 
+were excluded, predominantly because they did not have 
+an in-person component. Eventually, nine studies were 
+included in this scoping review (Fig. 1).
+Study characteristics
+The included studies were conducted across six differ -
+ent countries; Sweden (n = 2) [45, 46], Spain (n = 2) [47, 
+48], United Kingdom (n = 2) [38, 49], United States (n = 1) 
+[50], Australia (n = 1) [51], the Netherlands (n = 1) [52].
+Most studies (n = 4) focused on both healthcare pro -
+fessionals and patients [45, 48–50], while two focused 
+solely on healthcare professionals [51, 52]. Two studies 
+included a broad range of health professionals, including 
+GPs, nurses, healthcare assistants, administrative staff, 
+and regional healthcare directors [38, 45]. Three studies 
+included individuals at high risk of developing T2DM, 
+based on the Finnish Diabetes Risk Score (FINDRISC) 
+[46–48]. Of these, one study included participants with 
+T2DM, pre-diabetes, and high-risk individuals [46], 
+another focused on primary care professionals and high-
+risk patients [48], and the third included only high-risk 
+participants [47].
+The DHIs evaluated across these studies varied in 
+focus and implementation. Two studies [47, 48] assessed 
+the same DHI, the DE-PLAN program, implemented in 
+different Spanish regions; this intervention centred on 
+education and structured contact between healthcare 
+professionals and patients. Another study [52] evaluated 
+a DHI offering individualised coaching and remote moni-
+toring through telephone consultations. Two studies [46, 
+50] focused on communication-enhancing DHIs such as 
+video consultations to facilitate patient-provider interac -
+tion. One study [49] investigated a remote monitoring 
+intervention tracking health indicators, and another [38] 
+explored an education-focused DHI aimed at improv -
+ing diabetes and lifestyle knowledge among patients. 
+Finally, two studies out of nine in this review used Theo -
+ries, Models or Frameworks (TMF) to guide their imple -
+mentation processes; Reach, Effectiveness, Adoption, 
+Implementation, Maintenance (RE-AIM) [47] and Nor -
+malization Process Theory (NPT) [38].
+A summary of the study characteristics is presented in 
+Table 1, while the full table can be found in Supplemen -
+tary Table 1, Additional file 2.
+A total of six studies [45– 50] described patients’ per -
+spective on the implementation of blended care for life -
+style interventions in the area of T2DM, overweight/
+obesity or high risk of developing T2DM. Additionally, 
+8 studies [38, 46– 51] described the perspective of the 
+healthcare professional. All studies were conducted 
+within a primary care setting and primarily high -
+lighted barriers rather than facilitators to successful 
+implementation. Seven studies [38, 46– 50, 52] focused 
+specifically on barriers to implementing a specific 
+intervention while two studies [45, 51] focused on bar -
+riers and facilitators more generally in the development 
+of a blended care intervention. While, studies referred 
+to telemedicine [50], web-based interventions [38, 52], 
+virtual health [47, 48], telemonitoring [49], eHealth 
+services [45], telephone facilitated intervention [46] or 
+mobile health applications [51]. Although none of the 
+studies identified the intervention as blended care, all 
+Page 5 of 14
+Lansink et al. Implementation Science Communications            (2026) 7:84 
+ 
+studies implemented a DHI alongside in-person care. 
+Among the studies focusing on a specific intervention, 
+some combined the DHI with usual care [38, 47, 49, 52], 
+while others [46, 48, 50] incorporated group sessions; 
+including 2 sessions [46], 16 sessions [48], or 8 sessions 
+[50]. Two [45, 51] additional studies focused on general 
+barriers and facilitators of blended care rather than a 
+specific intervention.
+Consolidated framework for implementation research
+The results of this review are summarized according to 
+the domains of the consolidated framework for imple -
+mentation research (CFIR) [39]. Additional file 3 provides 
+a table for easy understanding of the identified factors for 
+implementing DHI in blended healthcare using the CFIR 
+framework.
+Innovation domain
+Several studies have identified key requirements within 
+the innovation domain that can contribute to success -
+ful adoption and integration in healthcare [45, 46, 49, 51, 
+52]. In terms of relative advantage, GPs generally recog -
+nized that DHIs can enhance personalized care [45, 46, 
+51, 52] and support patient safety between consultations. 
+Features like notifications and reminders were seen as 
+having the potential to encourage more active patients’ 
+engagement [51]. Other values attributes included visual 
+orientation, ease of use, and the constant availability for 
+Fig. 1 PRISMA flowchart illustrates stages of the literature search
+Page 6 of 14Lansink et al. Implementation Science Communications            (2026) 7:84 
+Table 1 Summary of the characteristics of the included studies
+Author and year (ref) Country Study design Participants Target eHealth tool Frequency face to 
+face care
+Theories, Models or 
+Frameworks (TMF) 
+used
+Ayre, 2019
+[51]
+Australia Qualitative (semi-struc-
+tured interviews)
+25 primary care physi-
+cians
+Self-management 
+(medication adher-
+ence, physical activity, 
+healthy diet and weight 
+management)
+Mobile health applica-
+tion
+N/A N/A
+Brown, 2020 [50] United States Pre-post intervention 
+study
+86 obesity patients & 7 
+clinics
+Weight loss Telemedicine 8 group sessions N/A
+ Costa-Pinel, 2018 [48] Spain Mixed method 1458 patients of high 
+risk of developing 
+diabetes based on FIN-
+DRISC > 11 and/or pre-
+diabetes diagnosis 
+& 305 primary care 
+professionals
+Lifestyle, physical 
+activity and nutritional 
+intervention
+Virtual health program 16 group sessions N/A
+Hanley, 2015 [49] United Kingdom Qualitative (semi-struc-
+tured interviews)
+23 T2DM patients & 10 
+primary care profession-
+als (4 GPs and 6 nurses)
+Physical activity, reduc-
+ing salt in the diet 
+and weight control
+Telemonitoring Usual care N/A
+Ross, 2018
+[38]
+United Kingdom Qualitative (semi-struc-
+tured interviews)
+21 health professionals 
+(GPs, practice nurses, 
+diabetes specialist 
+nurses, health care 
+assistants, administra-
+tive and reception staff, 
+practice managers 
+and commissioners 
+of care)
+Medical management 
+(e.g. eating health-
+ily, exercising more, 
+and stopping or cut-
+ting down smoking 
+and drinking alcohol), 
+education, lifestyle 
+changes, emotional 
+management, 
+and social support
+Web-based interven-
+tion
+Usual care Normalization process 
+Theory (NPT)
+Sánchez, 2016 [47] Spain Observational descrip-
+tive process study
+454 patients of high risk 
+of developing T2DM 
+based on FINDRISC 
+score ≥ 14) and 634 
+control patients
+Lifestyle. physical 
+activity and nutritional 
+intervention
+Virtual health program Usual care Reach, Effectiveness, 
+Adoption, Implemen-
+tation, Maintenance 
+(RE-AIM)
+Schimmer, 2019 [45] Sweden User-centred design 
+approach
+26 participants 
+(patients, spouses, dia-
+betes specialist nurses, 
+physician and regional 
+primary care director, 
+researchers and system 
+developers
+Self-management 
+(physical activity 
+and diet)
+E-health service N/A N/A
+Timm, 2021
+[46]
+Sweden Explanatory sequential 
+mixed methods
+Facilitators and 72 
+T2DM, pre-diabetes 
+or at high-risk of devel-
+oping diabetes based 
+on (> 13/25 FINDRISC) 
+patients
+Self-management (life-
+style behaviour, physi-
+cal activity, and diet)
+Telephone facilitated 
+intervention
+2 group sessions N/A
+Page 7 of 14
+Lansink et al. Implementation Science Communications            (2026) 7:84 
+ 
+N/A Not Applicable
+Table 1 (continued)
+Author and year (ref) Country Study design Participants Target eHealth tool Frequency face to 
+face care
+Theories, Models or 
+Frameworks (TMF) 
+used
+ Vonken, 2023 [52] Netherlands Qualitative (semi-struc-
+tured interviews)
+16 GPs Self-management 
+(physical activity, 
+unhealthy snack intake, 
+medication adherence, 
+and smoking)
+Web-based interven-
+tion
+Usual care N/A
+Page 8 of 14Lansink et al. Implementation Science Communications            (2026) 7:84 
+home monitoring [52]. Adaptability emerged as another 
+construct, with integration into existing healthcare sys -
+tems emphasized as important for practical implemen -
+tation [51, 52]. In contrast, complexity was identified 
+as a barrier. Reported challenges included complicated 
+interfaces [45] and language related challenges in under -
+standing educational content and participating in inter -
+vention meetings, sometimes requiring support from 
+family members [46]. However, despite concerns about 
+complexity, DHIs were largely viewed as a valuable com -
+plement to in-person care [51]. Finally, trialability func -
+tioned as a facilitator. Both patients [49] and healthcare 
+professionals [49, 52] valued the opportunity to test DHIs 
+before committing long-term, highlighting that perceived 
+effectiveness, user experience, and patient involvement 
+all play central roles in adoption decisions [52].
+Outer setting domain
+Although the outer setting was not frequently mentioned 
+in the studies [51, 52], several themes suggest that exter -
+nal factors influence implementation of DHIs. Several 
+outer setting barriers emerged. Liability concerns and 
+perceived obligations to respond promptly to patient data 
+were mentioned [51], reflecting the moral and legal pres -
+sures that influence clinical decision-making. Regulatory 
+requirements, particularly regarding data protection, 
+were also aligning with policies and laws highlighting the 
+broader challenge of aligning digital interventions with 
+legal regulations [52]. Financing related issues further 
+complicated implementation. Uncertainty about reim -
+bursement procedures and the risk of uncompensated 
+work were reported [51]. In contrast, some external fac -
+tors functioned as facilitators. Support from larger organ-
+isations was seen as an important facilitator for adoption, 
+reflecting the relevance of partnerships and connections. 
+Additionally, lack of reimbursement was not perceived as 
+a limiting factor by some professionals [52], suggesting 
+that financial barriers may be context dependent rather 
+than universally limiting.
+Inner setting domain
+Healthcare professionals encountered a variety of chal -
+lenges from the inner setting, when using DHI for 
+patients [38, 45, 48–52]. Several barriers were identi -
+fied. A major concern was that a patient monitoring app 
+might create a false sense of security, as patients might 
+think their doctor is constantly checking their data [51]. 
+Professionals perceived that DHIs could either chal -
+lenge the doctor–patient relationship. Although some 
+professionals indicated that DHI could improve com -
+munication [52], the majority believed that face-to-face 
+care remained essential for tailoring information to the 
+patient and ensuring understanding [51, 52]. Workload 
+was another important factor. Increased workload was 
+described as a barrier to implementation [48, 49]. How-
+ever, under certain conditions workload was perceived 
+as acceptable, as others considered a temporary rise in 
+workload acceptable during the learning phase [51]. This 
+suggests that workload may be function as a facilitator 
+when it supports adaptation and learning, but becomes 
+a barrier when the increase is substantial or prolonged. 
+To minimize this barrier and enhance compatibility, it is 
+therefore important that DHI be integrated with existing 
+workflows, systems, and processes [38, 51, 52].
+In addition, available resources barriers were reported. 
+Concerns about adoption costs [49, 52], were intertwined 
+with practical issues such as limited staff, insufficient 
+space and unstable internet connections [50]. Imple -
+mentation was further complicated by role uncertainty, 
+highlighting that clear definition of staff responsibilities 
+is crucial for smooth adoption and to prevent procedural 
+barriers [38], which align with structural characteristics. 
+Several facilitators were also identified within the inner 
+setting. Access to knowledge and information, particu -
+larly though training of healthcare professionals was seen 
+as essential [38] and described in several studies [46–48]. 
+However, in practice, training needs to be relevant and 
+of sufficient duration. Long online modules with limited 
+follow-up acted as a barriers, as they hindered healthcare 
+professionals from fully engaging with the technology 
+[45, 46].
+Individuals’ domain
+The roles and characteristics of individuals can influence 
+the implementation of digital health innovations [47–49, 
+51, 52]. Adoption was hindered by digital divide related 
+barriers. These occurred at both patient and system lev -
+els, including limited digital skills and health literacy as 
+well as technological accessibility, especially for elderly 
+patients [51, 52], reflecting capability constraints. Profes -
+sionals noted that DHI tended to motivate more already 
+independent patients, while vulnerable patients required 
+additional support [51], indicating that DHI may inad -
+vertently increase inequalities if additional guidance is 
+not provided Personalized care remained essential, as 
+online options were often perceived as impersonal [52] 
+and less effective in ensuring patient understanding 
+[51]. Patient preferences also influenced engagement, 
+for example, many participants favoured group-based 
+interventions over individual or mixed formats [47] In 
+contrast, several facilitators were also described. DHI 
+were appreciated for enhancing patient autonomy and 
+supporting remote care [52]. In addition, knowing 
+that healthcare professionals could see their self-mon -
+itoring data motivated behaviour change by patients 
+through a sense of supportive oversight [49]. Successful 
+Page 9 of 14
+Lansink et al. Implementation Science Communications            (2026) 7:84 
+ 
+implementation also depended on the involvement and 
+support of key stakeholders. Healthcare profession -
+als acted as innovation deliverers, while managers and 
+supervisors supported them as implementation leads 
+or mid-level leaders. Active involvement of both groups 
+functioned as a facilitator, whereas lack of involvement 
+posing a major barrier [48]. Highlighting that healthcare 
+professionals.
+Implementation process domain
+Several studies have reported barriers and facilitators of 
+the implementation process [38, 47, 48, 52]. Two of the 
+included studies applied implementation frameworks to 
+guide the process, namely Reach, Effectiveness, Adop -
+tion, Implementation, Maintenance (RE-AIM) [47] and 
+Normalization Process Theory (NPT) [38], reflecting 
+structured approaches to planning and assessing con -
+text. Key challenges include discontinuity of initial efforts 
+and limited sustained commitment from professionals, 
+which can impede integration [48]. For example, in the 
+HeLP-Diabetes intervention, professionals recognized 
+the value of the program but struggled to allocate suffi -
+cient time and effort for its effective implementation [38], 
+indicating that perceived value alone was insufficient to 
+ensure sustained engagement In contrast, multiple facili -
+tators were described. Providing healthcare professionals 
+with opportunities to reflect on the intervention’s value 
+through patient feedback was perceived to potentially 
+increase their engagement [38], corresponding to reflect -
+ing and evaluating implementation Moreover, involv -
+ing patients in decisions regarding the use of DHIs can 
+enhance compatibility with user needs and preferences 
+[52], thereby facilitating alignment with the needs of 
+innovation recipients Finally, early and iterative imple -
+mentation, preferably before developing the development 
+phase, can promote adoption, allowing end users to be 
+involved at an early stage [38], illustrating the impor -
+tance of small implementation cycles (doing) and ongo -
+ing adapting.
+Discussion
+This study aimed to provide a comprehensive overview 
+of the barriers and facilitators involved in implementing 
+blended care interventions for lifestyle management in 
+adults with overweight, or T2DM.
+It is notable that the term “blended care” was not 
+always explicitly used in the included studies, but all 
+included a combination of a form of DHI with at least one 
+physical appointment between a healthcare professionals 
+and an adult patient. This variability in terminology con -
+tributed to the initially low inter-rater reliability during 
+study selection, which was resolved through discussion 
+and consensus. No clear differences were found between 
+countries regarding the implementation of these DHIs. 
+Importantly, the absence of a standardized definition of 
+“blended care” may in itself constitute an implementa -
+tion barrier. Rather than constituting a direct barrier in 
+clinical practice, the lack of a standardized definition 
+primarily complicates the accumulation and transfer 
+of implementation knowledge. When terminology var -
+ies, evidence becomes fragmented, making it more dif -
+ficult to develop theoretically informed and empirically 
+grounded implementation strategies. This highlights the 
+importance of using consistent terminology and clear 
+definitions when describing DHIs and blended care. Uni -
+form language would improve comparability between 
+studies, support knowledge transfer, and help address 
+shared implementation challenges across different con -
+texts. Moreover, it is notable that all of the included stud-
+ies were conducted in primary care, and none focused on 
+secondary care. This may reflect the current emphasis on 
+prevention and early intervention for T2DM in primary 
+care but also raises questions about the applicability and 
+integration of DHIs in more specialized or hospital-based 
+care settings. The DHIs examined serve different roles 
+within blended-care settings, including education, coach-
+ing, remote monitoring, and communication with health-
+care professionals. These varying functions influence 
+patient engagement and the interpretation of outcomes. 
+For example, coaching and monitoring interventions 
+often require active patient involvement and continuous 
+provider support, whereas communication tools may pri-
+marily facilitate access and interaction. Recognising these 
+distinct functions is key to tailoring implementation 
+strategies and ensuring effective integration of DHIs into 
+existing care pathways.
+Unlike recent reviews focusing more on the effec -
+tiveness of DHI [18, 53–56], this study contributes by 
+identifying specific barriers and facilitators for its imple -
+mentation. However, interestingly, most of the included 
+studies focused on the effectiveness and design features 
+of the interventions, while implementation-related 
+aspects were often not reported. This implies that imple -
+mentation to date still does not receive the attention it 
+deserves. By structuring findings using CFIR, this study 
+provides a comprehensive perspective on the implemen -
+tation of blended care interventions. The results were 
+synthesized narratively, which provided a descriptive 
+overview of facilitators and barriers but does not quan -
+tify the prevalence of specific factors. After all, early 
+consideration of implementation increases the chances 
+of developing an intervention that can be more widely 
+applied and sustained in practice [57]. In line with ear -
+lier implications of the study by Lee [58] and Ahmed 
+[40], results of the current review suggest that successful 
+Page 10 of 14Lansink et al. Implementation Science Communications            (2026) 7:84 
+adoption of DHI technologies requires active involve -
+ment of both patients and healthcare professionals in the 
+development and implementation stages [38]. Impor -
+tantly, to strengthen the evidence base, future trials and 
+evaluations should prospectively include implementa -
+tion outcomes to reflect alignment of implementation 
+strategies and adopt standardized reporting frameworks 
+to allow cross-comparisons between studies. This will 
+improve transparency, enable knowledge transfer, and 
+provide actionable insights into the factors that influence 
+implementation.
+To support structured thinking on implementation, 
+theories, models and frameworks (TMF) such as the 
+CFIR [39] and Non-adoption, Abandonment, Scale-up, 
+Spread and Sustainability (NASSS) [59], RE-AIM [60] 
+or NPT [61] offer valuable guidance for the implemen -
+tation process. They provide a structured approach to 
+understanding the factors that influence implementation 
+outcomes [62], including the involvement of end users. 
+The use of CFIR allowed us to capture the complexity 
+inherent to digital health implementation by systemati -
+cally identifying determinants across contextual, organi -
+sational, and individuals levels. However, the current 
+scoping review found that only two studies reported on 
+applying a TMF to guide their implementation. This is 
+in line with a recent review [63] that found that only 23 
+studies out of 252 studies reported using an implemen -
+tation science TMF, which underscores the gap between 
+theory and practice. Adopting an iterative approach, 
+guided by frameworks, ensures the strategy is all-encom -
+passing and can adapt to emerging needs and challenges, 
+ensuring a more effective and responsive implementation 
+process. For example, what is the most suitable strategy 
+for implementation will depend on the specific needs 
+of the target population and the specific context of the 
+implementation setting [38, 64]. Using TMFs in this way 
+can support the early identification of such needs and 
+contextual preconditions [65]. For example, healthcare 
+professionals working in teams may benefit more from 
+strategies tailored to collaborative environments [66].
+For successful implementation, it is important to 
+address personal characteristics of the target group. For 
+example, the GPs in this review assumed that older age 
+is a barrier to using DHI. Interestingly, a study by Her -
+manus [67] showed that older people have a higher 
+behavioural intention to use DHI. Nevertheless, the 
+authors of that study also noted that older people use 
+DHI less than younger people, which could be explained 
+by the lack of digital skills among older people. Similarly, 
+the National Institute for Public Health and the Envi -
+ronment (RIVM) confirmed that digital divide among 
+Dutch elderly remains a concern [68]. These findings 
+suggest that implementation strategies should focus not 
+on excluding older adults, but on strengthening digital 
+literacy and providing tailored support to facilitate DHI 
+uptake. At the same time, healthcare professionals rec -
+ognize the benefits of DHIs, especially in its potential 
+to personalize patient care [45, 46, 52]. They emphasize 
+that in-person care remains essential for maintaining the 
+patient-doctor relationship [51, 52, 69], but suggest that 
+DHI could actually strengthen this patient-doctor rela -
+tion by creating a sense of accessibility [51]. This further 
+supports the value of integrating DHI into traditional 
+care. This seems to particularly hold true for individu -
+als with lower digital literacy. A blended care approach 
+ensures that individuals who struggle with digital tools 
+still receive adequate support while benefiting from the 
+advantages of DHI [70].
+Next, organisational considerations must be taken into 
+consideration for maintaining patient engagement in self-
+monitoring DHIs, which remains a challenging part of 
+implementation [71]. Patient experiences with DHI were 
+mixed, as they reflected both potential benefits and chal -
+lenges. While self-monitoring data can empower indi -
+viduals, it can also be perceived as burdensome [72] and 
+leading to negative emotional responses to glucose fluc -
+tuations [73]. This raises broader concerns about the psy-
+chological impact of continuous monitoring. For some, 
+the belief that their healthcare professionals monitors 
+their data serves as a motivating factor for adherence [41]. 
+However, this reliance also raises ethical and legal ques -
+tions regarding professional liability and the responsibil -
+ity to intervene in cases of abnormal readings [51]. These 
+complexities highlight the need for clear guidelines defin-
+ing roles, responsibilities [41] and data security [40, 41].
+In addition to that, from an organisational perspective, 
+DHIs must integrate seamlessly with existing healthcare 
+systems [51, 52] to enable sustainable implementation. 
+This includes for example, embedding DHIs within elec -
+tronic health records, aligning them with routine clinical 
+workflows, and addressing reimbursement mechanisms. 
+Successfully integrating blended care into routine prac -
+tice can improve quality of care and contribute to a more 
+personalized care system.
+To overcome some of the identified implementation 
+barriers and harness facilitators, it is highly advisable to 
+invest in in-person training for healthcare professionals, 
+ideally delivered before and during initial implementa -
+tion with follow-up sessions as needed [38, 45, 64]. How-
+ever, the effectiveness of training depends also on factors 
+such as content, duration and facilitation of the training 
+[74] and its attainability may be hindered by its associ -
+ated costs [40]. A more structured approach to organ -
+izing efficient training, tailored to the specific needs of 
+both professionals and patients, can support and improve 
+sustainability of a blended care process.
+Page 11 of 14
+Lansink et al. Implementation Science Communications            (2026) 7:84 
+ 
+In summary, this scoping review provides guidance 
+for structured thinking about and concrete steps to take 
+to optimize implementation of lifestyle related blended 
+care for patients with obesity, overweight and/or T2DM. 
+In considering concrete steps to take, using TMFs can 
+support researchers and developers in making sure they 
+address all relevant topics for implementation and ena -
+bles cross-comparisons between implementation factors 
+and processes in different projects. Furthermore, reduc -
+ing organisational burden, ensuring usability through 
+user-centred design, and embedding blended care within 
+routine workflows and regulatory structures, together 
+can strengthen long-term adoption.
+Limitations
+As with any scientific study, this study faced some limita-
+tions. The main one being the relatively low agreement 
+between the first and second screeners for the initial 
+10% of the data. This discrepancy was attributable to the 
+initially unclear interpretation of blended care and was 
+resolved after discussions that led to the extended defini -
+tion of blended care as described in the methods section. 
+In addition, given the explorative nature of this paper, 
+the authors placed emphasis on scoping the breadth of 
+this field of study, rather than evaluating the quality of 
+its data. In line with that, another potential limitation of 
+this scoping review is its reliance on a narrative summary, 
+which inherently involves subjective interpretations. 
+Efforts were made to reduce bias by using a structured 
+extraction form and regularly discussing interpretations 
+with the second reviewer. Finally, all included articles 
+unintentionally focused exclusively on primary care set -
+tings. This may limit the generalizability of the findings 
+to other healthcare settings, such as secondary or tertiary 
+care. Therefore, further research into other healthcare 
+settings is needed.
+Conclusion
+Blended care and digital health interventions offer oppor-
+tunities to enhance personalisation, patient involvement, 
+and continuity of care. However, challenges such as high 
+implementation costs, workflow integration issues, and 
+the digital divide highlight that sustainable implementa -
+tion requires addressing overarching domains rather than 
+isolated factors.
+At the same time, there is a notable gap in the litera -
+ture on real world implementation, with most studies 
+focusing on effectiveness. This underscores the impor -
+tance of developing strategies that support adoption and 
+sustainability, while ensuring uniform terminology and 
+understanding of blended care and DHIs. Healthcare 
+organisations can reduce organisational burden, policy -
+makers can support regulatory alignment, developers can 
+prioritize user-centred design, and healthcare profession-
+als can integrate DHI into routine practice and support 
+patients in its use. Ultimately, successful integration of 
+DHIs depends on critical evaluation and, where neces -
+sary, redesign of care workflows to ensure DHI are mean-
+ingfully embedded in blended care.
+Abbreviations
+CFIR  Consolidated Framework for Implementation Research
+DHI  Digital Health Intervention
+GP  General Practitioner
+NASSS  Non-adoption, abandonment, scale-up, spread and sustainability
+NPT  Normalization Process Theory
+RE-AIM  Reach, Effectiveness, Adoption, Implementation, Maintenance
+T2DM  Type 2 Diabetes Mellitus
+Supplementary Information
+The online version contains supplementary material available at https:// doi. 
+org/ 10. 1186/ s43058- 026- 00904-3.
+Additional file 1.
+Additional file 2.
+Additional file 3.
+Additional file 4.
+Acknowledgements
+The authors utilized OpenAI’s ChatGPT 4.0 (2024) for language verification, 
+sentence structure suggestions, and overall readability enhancement.
+Authors’ contributions
+All authors (C.L, A.M., G.D.L., and N.B.) contributed to the development of 
+the study. In collaboration with an information specialist from the Univer-
+sity of Twente, all authors formulated the search query. Data collection was 
+conducted by C.L. and N.B., while C.L. was responsible for data extraction. C.L. 
+drafted the initial manuscript, after which all authors (C.L, A.M., G.D.L., and 
+N.B.) provided critical revisions and contributed to its finalization. All authors 
+(C.L, A.M., G.D.L., and N.B.) read and approved the published version of the 
+manuscript.
+Funding
+This project was funded by the Dutch Diabetes Research Foundation, project 
+number 2022.30.001. The funder was not involved in the design, collection, 
+analysis, or interpretation of the data, in the writing of the manuscript, or in 
+the decision to publish this manuscript.
+Data availability
+The datasets used and/or analysed during the current study are available from 
+the corresponding author on reasonable request.
+Declarations
+Ethics approval and consent to participate
+Not applicable.
+Consent for publication
+Not applicable.
+Competing interests
+The authors declare that they have no competing interests.
+Author details
+1 Department of Biomedical Signals and Systems, University of Twente, 
+Enschede, The Netherlands. 2 Department of Internal Medicine/Nephrology, 
+Ziekenhuisgroep Twente, Almelo, The Netherlands. 3 Section of Psychology, 
+Health and Technology, University of Twente, Enschede, The Netherlands. 
+Page 12 of 14Lansink et al. Implementation Science Communications            (2026) 7:84 
+Received: 14 August 2025   Accepted: 9 March 2026
+References
+ 1. Noncommunicable diseases. Available from: https:// www. who. int/ news- 
+room/ fact- sheets/ detail/ nonco mmuni cable- disea ses. Accessed 23 Feb 
+2026.
+ 2. Sun H, Saeedi P , Karuranga S, Pinkepank M, Ogurtsova K, Duncan BB, et al. 
+IDF diabetes atlas: global, regional and country-level diabetes prevalence 
+estimates for 2021 and projections for 2045. Diabetes Res Clin Pract. 
+2022;1:109119. https:// doi. org/ 10. 1016/j. diabr es. 2021. 109119.
+ 3. IDF Diabetes Atlas | Global Diabetes Data & Statistics. Available from: 
+https:// diabe tesat las. org/. Accessed 23 Feb 2026.
+ 4. Statistiek CB voor de. Meer obesitas en diabetes bij volwassenen met 
+armoederisico. Cent Bur Voor Stat. 2022. Available from: https:// www. cbs. 
+nl/ nl- nl/ nieuws/ 2022/ 40/ meer- obesi tas- en- diabe tes- bij- volwa ssenen- 
+met- armoe deris ico. Aaccessed 23 Feb 2026.
+ 5. Hecker J, Freijer K, Hiligsmann M, Evers SMAA. Burden of disease study 
+of overweight and obesity; the societal impact in terms of cost-of-illness 
+and health-related quality of life. BMC Public Health. 2022;7(1):46. https:// 
+doi. org/ 10. 1186/ s12889- 021- 12449-2.
+ 6. Chen L, Pei J-H, Kuang J, Chen H-M, Chen Z, Li Z-W, et al. Effect of lifestyle 
+intervention in patients with type 2 diabetes: a meta-analysis. Metabo-
+lism. 2015;64(2):338–47. PMID:25467842.
+ 7. Knowler WC, Barrett-Connor E, Fowler SE, Hamman RF, Lachin JM, Walker 
+EA, Nathan DM, Diabetes Prevention Program Research Group. Reduc-
+tion in the incidence of type 2 diabetes with lifestyle intervention or 
+metformin. N Engl J Med 2002 Feb 7;346(6):393–403. PMID:11832527.
+ 8. Kelly MP , Barker M. Why is changing health-related behaviour so difficult? 
+Public Health. 2016;136:109–16. PMID:27184821.
+ 9. Vollenbroek-Hutten M, Goolkate T, Lankheet M, Hegeman JH (Han), 
+Laverman GD, Beijum B-J van. Insufficient Behavioral Change Skill 
+Hampers Adoption of Ehealth Services. 2026. p. 119–125. Available from: 
+https:// www. scite press. org/ Link. aspx? doi= 10. 5220/ 00066 75501 190125. 
+Accessed 23 Feb 2026.
+ 10. Öberg U, Isaksson U, Jutterström L, Orre CJ, Hörnsten Å. Perceptions of 
+Persons With Type 2 Diabetes Treated in Swedish Primary Health Care: 
+Qualitative Study on Using eHealth Services for Self-Management Sup-
+port. JMIR Diabetes. 2018;3(1):e7. PMID:30291075.
+ 11. Huygens MWJ, Vermeulen J, Swinkels ICS, Friele RD, van Schayck OCP , 
+de Witte LP . Expectations and needs of patients with a chronic disease 
+toward self-management and eHealth for self-management purposes. 
+BMC Health Serv Res. 2016;8(16):232. PMID:27391471.
+ 12. Yang Y, Lee EY, Kim H-S, Lee S-H, Yoon K-H, Cho J-H. Effect of a Mobile 
+Phone-Based Glucose-Monitoring and Feedback System for Type 2 
+Diabetes Management in Multiple Primary Care Clinic Settings: Cluster 
+Randomized Controlled Trial. JMIR MHealth UHealth. 2020;8(2):e16266. 
+PMID:32130172.
+ 13. Talboom-Kamp EPWA, Verdijk NA, Kasteleyn MJ, Numans ME, Chavannes 
+NH. From chronic disease management to person-centered eHealth; a 
+review on the necessity for blended care. Clin eHealth. 2018;1(1):3–7. 
+https:// doi. org/ 10. 1016/j. ceh. 2018. 01. 001.
+ 14. Dennis SM, Harris M, Lloyd J, Powell Davies G, Faruqi N, Zwar N. Do peo-
+ple with existing chronic conditions benefit from telephone coaching? 
+A rapid review. Aust Health Rev Publ Aust Hosp Assoc. 2013;37(3):381–8. 
+PMID:23701944.
+ 15. Wagner EH, Austin BT, Davis C, Hindmarsh M, Schaefer J, Bonomi A. 
+Improving chronic illness care: translating evidence into action. Health 
+Aff (Millwood) Project Hope. 2001;20(6):64–78. PMID:11816692.
+ 16. Witkamp R, Navis G, Boer J, Plat J, Assendelft P , Vries J de, et al. Kennis-
+synthese voeding als behandeling van chronische ziekten. Wageningen 
+Universiteit; 2017; Available from: https:// resea rch. wur. nl/ en/ publi catio 
+ns/ kenni ssynt hese- voedi ng- als- behan deling- van- chron ische- ziekt en/. 
+Accessed 23 Feb 2026.
+ 17. Raber M, Liao Y, Rara A, Schembre SM, Krause KJ, Strong L, et al. A system-
+atic review of the use of dietary self-monitoring in behavioural weight 
+loss interventions: delivery, intensity and effectiveness. Public Health 
+Nutr. 2021;24(17):5885–913. PMID:34412727.
+ 18. Singh B, Ahmed M, Staiano AE, Gough C, Petersen J, Vandelanotte C, et al. 
+A systematic umbrella review and meta-meta-analysis of eHealth and 
+mHealth interventions for improving lifestyle behaviours. NPJ Digit Med. 
+2024;7(1):179. PMID:38969775.
+ 19. Boels AM, Rutten G, Zuithoff N, de Wit A, Vos R. Effectiveness of 
+diabetes self-management education via a smartphone application 
+in insulin treated type 2 diabetes patients - design of a randomised 
+controlled trial (’TRIGGER study’). BMC Endocr Disord. 2018;18(1):74. 
+PMID:30348142.
+ 20. Vigersky RA. An overview of management issues in adult patients with 
+type 2 diabetes mellitus. J Diabetes Sci Technol. 2011;5(2):245–50. 
+PMID:21527089.
+ 21. Lyles CR, Harris LT, Le T, Flowers J, Tufano J, Britt D, et al. Qualitative evalu-
+ation of a mobile phone and web-based collaborative care intervention 
+for patients with type 2 diabetes. Diabetes Technol Ther. 2011;13(5):563–
+9. PMID:21406018.
+ 22. Walthouwer MJL, Oenema A, Soetens K, Lechner L, de Vries H. Implemen-
+tation of web-based interventions by Dutch occupational health centers. 
+Health Promot Int. 2017;32(5):818–30. PMID:27020573.
+ 23. van Beurden SB, Simmons SI, Tang JCH, Mewse AJ, Abraham C, Greaves 
+CJ. Informing the development of online weight management interven-
+tions: a qualitative investigation of primary care patient perceptions. BMC 
+Obes. 2018;5:7. PMID:29449953.
+ 24. Odnoletkova I, Buysse H, Nobels F, Goderis G, Aertgeerts B, Annemans L, 
+et al. Patient and provider acceptance of telecoaching in type 2 diabetes: 
+a mixed-method study embedded in a randomised clinical trial. BMC 
+Med Inform Decis Mak. 2016;16(1):142. PMID:27825340.
+ 25. Hohberg V, Fuchs R, Gerber M, Künzler D, Paganini S, Faude O. Blended 
+Care Interventions to Promote Physical Activity: A Systematic Review 
+of Randomized Controlled Trials. Sports Med - Open. 2022;8(1):100. 
+PMID:35907158.
+ 26. van der Kleij RMJJ, Kasteleyn MJ, Meijer E, Bonten TN, Houwink EJF, 
+Teichert M, et al. SERIES: eHealth in primary care. Part 1: Concepts, 
+conditions and challenges. Eur J Gen Pract. 2019;25(4):179–189. 
+PMID:31597502.
+ 27. Zhang M, Wang W, Li M, Sheng H, Zhai Y. Efficacy of Mobile Health 
+Applications to Improve Physical Activity and Sedentary Behavior: A 
+Systematic Review and Meta-Analysis for Physically Inactive Individuals. 
+Int J Environ Res Public Health. 2022;19(8):4905. PMID:35457775.
+ 28. Romeo A, Edney S, Plotnikoff R, Curtis R, Ryan J, Sanders I, et al. Can 
+Smartphone Apps Increase Physical Activity? Systematic Review and 
+Meta-Analysis. J Med Internet Res. 2019;21(3):e12053. PMID:30888321.
+ 29. Villinger K, Wahl DR, Boeing H, Schupp HT, Renner B. The effectiveness of 
+app-based mobile interventions on nutrition behaviours and nutrition-
+related health outcomes: a systematic review and meta-analysis. Obes 
+Rev. 2019;20(10):1465–84. PMID:31353783.
+ 30. Wu Y, Yao X, Vespasiani G, Nicolucci A, Dong Y, Kwong J, et al. Mobile 
+app-based interventions to support diabetes self-management: a 
+systematic review of randomized controlled trials to identify functions 
+associated with glycemic efficacy. JMIR Mhealth Uhealth. 2017;5(14):e35. 
+PMID:28292740.
+ 31. Duan Y, Shang B, Liang W, Du G, Yang M, Rhodes RE. Effects of eHealth-
+based multiple health behavior change interventions on physical 
+activity, healthy diet, and weight in people with noncommunicable 
+diseases: systematic review and meta-analysis. J Med Internet Res. 
+2021;23(22):e23786. PMID:33616534.
+ 32. Wang J, Cai C, Padhye N, Orlander P , Zare M. A behavioral lifestyle inter-
+vention enhanced with multiple-behavior self-monitoring using mobile 
+and connected tools for underserved individuals with type 2 diabetes 
+and comorbid overweight or obesity: pilot comparative effectiveness 
+trial. JMIR Mhealth Uhealth. 2018;6(10):e92. PMID:29636320.
+ 33. Geurts KAM, Woodcock-Nekeman S, Hummel M, Dietvorst CAW, van Ros-
+sum EFC, Berk KA. The effect of including eHealth in dietary interventions 
+for patients with type 2 diabetes with overweight or obesity: a systematic 
+review. Nutrients. 2023;15(29):3776. PMID:37686808.
+ 34. Greenhalgh T, Shaw S, Wherton J, Vijayaraghavan S, Morris J, Bhattacharya 
+S, et al. Real-world implementation of video outpatient consultations at 
+macro, meso, and micro levels: mixed-method study. J Med Internet Res. 
+2018;20(17):e150. PMID:29625956.
+Page 13 of 14
+Lansink et al. Implementation Science Communications            (2026) 7:84 
+ 
+ 35. Ross J, Stevenson F, Lau R, Murray E. Factors that influence the implemen-
+tation of e-health: a systematic review of systematic reviews (an update). 
+Implement Sci. 2016;11(26):146. PMID:27782832.
+ 36. Weik L, Fehring L, Mortsiefer A, Meister S. Understanding inherent influ-
+encing factors to digital health adoption in general practices through a 
+mixed-methods analysis. NPJ Digit Med. 2024;7(27):47. PMID:38413767.
+ 37. Berardi C, Antonini M, Jordan Z, Wechtler H, Paolucci F, Hinwood M. 
+Barriers and facilitators to the implementation of digital technologies in 
+mental health systems: a qualitative systematic review to inform a policy 
+framework. BMC Health Serv Res. 2024;24(26):243. PMID:38408938.
+ 38. Ross J, Stevenson F, Dack C, Pal K, May C, Michie S, et al. Develop-
+ing an implementation strategy for a digital health intervention: an 
+example in routine healthcare. BMC Health Serv Res. 2018;18(19):794. 
+PMID:30340639.
+ 39. Damschroder LJ, Reardon CM, Widerquist MAO, Lowery J. The updated 
+consolidated framework for implementation research based on user 
+feedback. Implement Sci. 2022;17(1):29. https:// doi. org/ 10. 1186/ 
+s13012- 022- 01245-0.
+ 40. Ahmed B, Dannhauser T, Philip N. A systematic review of reviews to iden-
+tify key research opportunities within the field of eHealth implementa-
+tion. J Telemed Telecare. 2019;25(5):276–85. PMID:29703127.
+ 41. Li J, Talaei-Khoei A, Seale H, Ray P , MacIntyre CR. Health Care Provider 
+Adoption of eHealth: Systematic Literature Review. Interact J Med Res. 
+2013;2(1):e7. PMID:23608679.
+ 42. Schreiweis B, Pobiruchin M, Strotbaum V, Suleder J, Wiesner M, Bergh 
+B. Barriers and Facilitators to the Implementation of eHealth Services: 
+Systematic Literature Analysis. J Med Internet Res. 2019;21(11):e14197. 
+PMID:31755869.
+ 43. Tricco AC, Lillie E, Zarin W, O’Brien KK, Colquhoun H, Levac D, et al. 
+PRISMA extension for scoping reviews (PRISMA-ScR): checklist and expla-
+nation. Ann Intern Med. 2018;169(7):2–473. PMID:30178033.
+ 44. Covidence - Better systematic review management. Covidence. Available 
+from: https:// www. covid ence. org/. Accessed 23 Feb 2026.
+ 45. Schimmer R, Orre C, Öberg U, Danielsson K, Hörnsten Å. Digital 
+Person-Centered Self-Management Support for People With Type 2 
+Diabetes: Qualitative Study Exploring Design Challenges. JMIR Diabetes. 
+2019;4(3):e10702. PMID:31538941.
+ 46. Timm L, Karlsson I, Sidney Annerstedt K, Absetz P , Forsberg BC, Dai-
+vadanam M, et al. Intervention Fidelity Focusing on Interaction between 
+Participants and Facilitators in a Telephone-Delivered Health Coaching 
+Intervention for the Prevention and Management of Type 2 Diabetes. 
+Nutrients. 2021;13(11):3862. PMID:34836116.
+ 47. Sánchez A, Silvestre C, Campo N, Grandes G. Type-2 diabetes primary 
+prevention program implemented in routine primary care: a process 
+evaluation study. Trials. 2016;20(1):254. PMID:27206733.
+ 48. Costa-Pinel B, Mestre-Miravet S, Barrio-Torrell F, Cabré-Vila J-J, Cos-
+Claramunt X, Aguilar-Sanz S, et al. Implementation of the DP-TRANSFERS 
+project in Catalonia: a translational method to improve diabetes screen-
+ing and prevention in primary care. PLoS ONE. 2018;13(3):e0194005. 
+PMID:29543842.
+ 49. Hanley J, Fairbrother P , McCloughan L, Pagliari C, Paterson M, Pinnock 
+H, et al. Qualitative study of telemonitoring of blood glucose and 
+blood pressure in type 2 diabetes. BMJ Open. 2015;5(12):e008896. 
+PMID:26700275.
+ 50. Brown JD, Hales S, Evans TE, Turner T, Sword DO, O’Neil PM, et al. Descrip-
+tion, utilisation and results from a telehealth primary care weight man-
+agement intervention for adults with obesity in South Carolina. J Telemed 
+Telecare. 2020;26(1–2):28–35. PMID:30045661.
+ 51. Ayre J, Bonner C, Bramwell S, McClelland S, Jayaballa R, Maberly G, 
+et al. Factors for Supporting Primary Care Physician Engagement 
+With Patient Apps for Type 2 Diabetes Self-Management That Link to 
+Primary Care: Interview Study. JMIR MHealth UHealth. 2019;7(1):e11885. 
+PMID:30664468.
+ 52. Vonken L, Hussein H, Crutzen R, Vluggen S. Perceptions of Dutch general 
+practitioners towards eHealth for patients with type-2 diabetes: a qualita-
+tive study. Fam Pract. 2023;40(1):9–97. PMID:35751556.
+ 53. Suhlrie L, Ayyagari R, Mba C, Olsson K, Torres-Aparcana H, James S, et al. 
+The effectiveness of telemedicine in the prevention of type 2 diabetes 
+mellitus: a systematic review and meta-analysis of interventions. Diabetes 
+Metab Syndr. 2025;19(5):103252. PMID:40527161.
+ 54. Xue H, Zhang L, Shi Y, Zhang H, Zhang C, Liu Y, et al. The effectiveness 
+of digital health intervention on glycemic control and physical activity 
+in patients with type 2 diabetes: a systematic review and meta-analysis. 
+Front Digit Health. 2025;7:1630588. PMID:40799285.
+ 55. Xiao Y, Wang Z, Zhang L, Xie N, Chen F, Song Z, et al. Effectiveness of 
+Digital Diabetes Management Technology on Blood Glucose in Patients 
+With Type 2 Diabetes at Home: Systematic Review and Meta-Analysis. J 
+Med Internet Res. 2025;3(27):e66441. PMID:40053775.
+ 56. Dat TV, Binh V, Hoang TM, Tu VL, Luyen PD, Anh LTK. The effectiveness of 
+telemedicine in the management of type 2 diabetes: A systematic review. 
+SAGE Open Med. 2024;12:20503121241271850. PMID:39263639.
+ 57. Skivington K, Matthews L, Simpson SA, Craig P , Baird J, Blazeby JM, et al. 
+A new framework for developing and evaluating complex interventions: 
+update of Medical Research Council guidance. BMJ Clinical research ed. 
+2021;30:n2061. PMID:34593508.
+ 58. Lee EW, McCloud RF, Viswanath K. Designing Effective eHealth 
+Interventions for Underserved Groups: Five Lessons From a Decade 
+of eHealth Intervention Design and Deployment. J Med Internet Res. 
+2022;24(1):e25419. PMID:34994700.
+ 59. Greenhalgh T, Wherton J, Papoutsi C, Lynch J, Hughes G, A’Court C, et al. 
+Beyond Adoption: A New Framework for Theorizing and Evaluating 
+Nonadoption, Abandonment, and Challenges to the Scale-Up, Spread, 
+and Sustainability of Health and Care Technologies. J Med Internet Res. 
+2017;19(11):e367. PMID:29092808.
+ 60. RE-AIM – Home – Reach Effectiveness Adoption Implementation Mainte -
+nance. Available from: https:// re- aim. org/. Accessed 23 Feb 2026.
+ 61. Murray E, Treweek S, Pope C, MacFarlane A, Ballini L, Dowrick C, et al. 
+Normalisation process theory: a framework for developing, evaluating 
+and implementing complex interventions. BMC Med. 2010;20(8):63. 
+PMID:20961442.
+ 62. Nilsen P . Making sense of implementation theories, models and frame-
+works. Implement Sci IS. 2015;21(10):53. PMID:25895742.
+ 63. Pong C, Tseng RMWW, Tham YC, Lum E. Current Implementation of 
+Digital Health in Chronic Disease Management: Scoping Review. J Med 
+Internet Res. 2024;12(26):e53576. PMID:39666972.
+ 64. Kirkland EB, Johnson E, Bays C, Marsden J, Verdin R, Ford D, et al. Diabetes 
+Remote Monitoring Program Implementation: A Mixed Methods Analysis 
+of Delivery Strategies. Barriers and Facilitators Telemed Rep. 2023;4(1):30–
+43. PMID:36950477.
+ 65. eHealth Research Theory and Development: A Multidisciplinary 
+Approach. Routledge CRC Press. Available from: https:// www. routl edge. 
+com/ eHeal th- Resea rch- Theory- and- Devel opment- A- Multi disci plina ry- 
+Appro ach/ Kip- Beerl age- deJong- vanGe mert- Pijnen- Sande rman- Kelde 
+rs/p/ book/ 97810 32295 237. Accessed 23 Feb 2026.
+ 66. Cassidy CE, Harrison MB, Godfrey C, Nincic V, Khan PA, Oakley P , et al. 
+Use and effects of implementation strategies for practice guidelines 
+in nursing: a systematic review. Implement Sci IS. 2021;16(1):102. 
+PMID:34863220.
+ 67. van de Werken HA, Rohrbach PJ, Bolman CAW. Explaining intention and 
+use of Mhealth with the unified theory of acceptance and use of technol-
+ogy. Acta Psychol (Amst). 2025;254:104819. PMID:39985833.
+ 68. Digitale zorg | RIVM. Available from: https:// www. rivm. nl/ digit alezo rg. 
+Accessed 23 Feb 2026.
+ 69. Lie SS, Karlsen B, Graue M, Oftedal B. The influence of an eHealth inter-
+vention for adults with type 2 diabetes on the patient-nurse relationship: 
+a qualitative study. Scand J Caring Sci. 2019;33(3):741–9. PMID:30866066.
+ 70. Van Tuyl L, Keuper J, Standaar L, Alblas E, Keij B. Toegankelijkheid 
+van digitale zorg: signalen uit de e-healthmonitor 2023. TSG Tijdschr 
+Voor Gezondheidswet. 2025;103(S1):3–7. https:// doi. org/ 10. 1007/ 
+s12508- 025- 00451-7.
+ 71. Patel ML, Wakayama LN, Bennett GG. Self-monitoring via digital health 
+in weight loss interventions: a systematic review among adults with 
+overweight or obesity. Obesity. 2021;29(3):478–99. PMID:33624440.
+ 72. Torbjørnsen A, Ribu L, Rønnevig M, Grøttland A, Helseth S. Users’ accept-
+ability of a mobile application for persons with type 2 diabetes: a qualita-
+tive study. BMC Health Serv Res. 2019;6(1):641. PMID:31492176.
+Page 14 of 14Lansink et al. Implementation Science Communications            (2026) 7:84 
+ 73. Perceived needs for supported self-management of type 2 diabetes: a 
+qualitative investigation of the potential for a web-based intervention 
+- UQ eSpace. Available from: https:// espace. libra ry. uq. edu. au/ view/ UQ: 
+325934. Accessed 23 Feb 2026.
+ 74. Varsi C, Solberg Nes L, Kristjansdottir OB, Kelders SM, Stenberg U, Zangi 
+HA, et al. Implementation Strategies to Enhance the Implementation of 
+eHealth Programs for Patients With Chronic Illnesses: Realist Systematic 
+Review. J Med Internet Res. 2019;21(9):e14255. PMID:31573934.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in pub-
+lished maps and institutional affiliations.

@@ -1,0 +1,1002 @@
+Hypertension Research
+https://doi.org/10.1038/s41440-026-02652-2
+REVIEW ARTICLE
+Physical activity and hypertension amongst HIV-positive and HIV-
+negative populations in rural South Africa
+Benjamin Zebita Mayasi 1 ●
+Peter Asaga Mac 2
+Received: 18 November 2025 / Revised: 7 February 2026 / Accepted: 26 March 2026
+© The Author(s) 2026. This article is published with open access
+Abstract
+Hypertension represents a major public health challenge in sub-Saharan Africa, characterised by substantial underdiagnosis and
+inadequate management. This secondary analysis of cross-sectional survey data examined the association between physical
+activity patterns and hypertension prevalence amongst HIV-positive and HIV-negative populations in rural South African
+communities. Data were drawn from the ongoing Agincourt Health and Socio-Demographic Surveillance System Site (AHDSS),
+collected between August 2022 and May 2023, involving 4,436 participants aged≥ 15 years. Physical activity was assessed using
+the Global Physical Activity Questionnaire (GPAQ) within the WHO STEPwise framework, and blood pressure was measured
+using an automated digital device (OMRON R6 wrist monitor). Statistical analyses employed chi-squared tests, two-samplet tests,
+and multivariable logistic regression models adjusting for demographic, anthropometric, metabolic, and behavioural confounders.
+Moderate physical activity was associated with lower odds of hypertension irrespective of HIV serostatus, supporting the
+integration of physical activity counselling into HIV care and primary healthcare services in resource-limited settings (adjusted
+OR = 0.74, 95% CI: 0.56–0.99, p = 0.043). Hypertension prevalence was 40.4% overall. HIV-positive males demonstrated higher
+prevalence (60.2%) compared with HIV-negative males (46.9%, p < 0.001). HIV-positive status was independently associated
+with increased odds of hypertension (adjusted OR= 1.45, 95% CI: 1.18–1.78). Age, male sex, obesity, elevated waist-hip ratio,
+and current alcohol consumption showed signiﬁcant positive associations with hypertension. Moderate physical activity provides
+protective beneﬁts against hypertension irrespective of HIV serostatus, supporting the integration of physical activity counselling
+into HIV care and primary healthcare services in resource-limited settings.
+Keywords HIV/AIDSHypertension
+●
+Physical Activity
+●
+South Africa
+●
+Cardiovascular Disease
+●
+Sub-Saharan Africa
+Introduction
+Hypertension, de ﬁn e da sp e r s i s t e n t l ye l e v a t e da r t e r i a l
+blood pressure, constitutes a leading modi ﬁable risk factor
+for cardiovascular morbidity and mortality globally [ 1]. In
+sub-Saharan Africa, the burden of hypertension is
+escalating rapidly owing to urbanisation, epidemiological
+transition, and lifestyle changes, with prevalence estimates
+ranging from 20 to 50% across populations [ 1, 2]. Within
+South Africa, hypertension is a n established risk factor for
+myocardial infarction, cerebr ovascular accidents, chronic
+kidney disease, and retinopathy, and remains inadequately
+diagnosed and treated across communities [ 2, 3].
+Hypertension frequently coexists with additional risk
+factors for chronic diseases of lifestyle, including diabetes
+mellitus, obesity, and physic al inactivity. These inter-
+relationships between hypertension and other chronic
+disease risk factors, combined with the diverse organ
+systems affected by uncontrolled hypertension, generate a
+complex clinical picture with substantial population health
+implications [ 4–7].
+Physical activity has demonstrated consistent protective
+effects against hypertension through multiple physiological
+mechanisms, including enhancement of endothelial func-
+tion, reduction of systemic vascular resistance, attenuation
+* Peter Asaga Mac
+pasaga123x@gmail.com
+peter.asaga.mac@uniklinik-freiburg.de
+1 School of Public Health, University of the Witwatersrand,
+Johannesburg, South Africa
+2 Institute for Infection Prevention and Control, Medical Center,
+Faculty of Medicine, University of Freiburg, Breisacher Str. 115B,
+Freiburg 79106, Germany
+Supplementary information The online version contains
+supplementary material available at https://doi.org/10.1038/s41440-
+026-02652-2.
+1234567890();,:
+1234567890();,:
+of sympathetic nervous system activity, and improvement
+of insulin sensitivity [ 3, 4, 8]. In the context of HIV
+infection, these mechanisms assume particular importance,
+as HIV-positive individuals experience chronic immune
+activation, systemic in ﬂammation, and endothelial dys-
+function that independently promote hypertension [ 9–11].
+Furthermore, antiretroviral therapy (ART) may induce
+metabolic disturbances including lipodystrophy and insulin
+resistance, which further elevate cardiovascular risk
+[12, 13]. Physical activity may attenuate these pathological
+processes, though population-based evidence examining
+physical activity –hypertension associations strati ﬁed by
+HIV serostatus remains limited, particularly in rural African
+settings [ 5, 14, 15].
+Whilst several large-scale studies have examined
+HIV–hypertension associations across sub-Saharan Africa,
+including the H3Africa AWI-Gen study [ 5], meta-analyses
+by Bigna et al. [ 16] and Davis et al. [ 17], and regional
+investigations in East and Southern Africa [ 18–24], few
+have incorporated domain-speci ﬁc physical activity analysis
+using metabolic equivalent of task (MET)-based
+quantiﬁcation. Understanding these associations in rural
+populations, where physical activity patterns differ sub-
+stantially from urban settings, is essential for developing
+context-appropriate preventive strategies.
+We hypothesised that higher levels of physical activity
+would be inversely associated with hypertension pre-
+valence, and that this protective association would persist
+regardless of HIV serostatus. This secondary analysis of
+cross-sectional survey data therefore examined physical
+activity patterns and their association with hypertension
+prevalence amongst HIV-positive and HIV-negative popu-
+lations in rural South Africa, utilising data from the Agin-
+court Health and Socio-Demographic Surveillance System.
+Methods
+Ethical considerations
+The primary study received approval from the University
+of the Witwatersrand Human Research Ethics Committee
+B. Z. Mayasi, P. A. Mac
+Graphical Abstract
+Visual summary of key ﬁndings. Physical activity and hypertension amongst HIV-positive and HIV-negative populations in
+rural South Africa: moderate physical activity provides protective bene ﬁts against hypertension regardless of HIV status
+
+(HREC clearance certi ﬁcate number M10458) and the
+Mpumalanga Provincial Research and Ethics Committee.
+This secondary analysis was approved by the University
+of the Witwatersrand Human Research Ethics Committee
+(clearance certi ﬁcate number M140917). Permission to
+utilise the data was obtained from the Agincourt Health
+and Socio-Demographic Surveillance Site. Written
+informed consent was obtained from all participants
+aged ≥ 18 years. For participants aged 15 –17 years, both
+parental written consent and participant verbal assent were
+obtained. The study was conducted in accordance with the
+Declaration of Helsinki.
+Study design and setting
+We conducted a secondary analysis of cross-sectional sur-
+vey data from the Agincourt Health and Socio-
+Demographic Surveillance System Site (AHDSS), col-
+lected over 10 months from August 2022 to May 2023. The
+AHDSS monitors approximately 90,000 individuals resid-
+ing in 15,500 households across 27 villages and is operated
+by the Medical Research Council (MRC)/Wits Rural Public
+Health and Health Transitions Research Unit. The surveil-
+lance site is situated in the Bushbuckridge sub-district of
+Ehlanzeni in Mpumalanga Province, northeastern South
+Africa. The AHDSS has recorded vital events, migration
+patterns, marital status, educational attainment, employment
+status, and socioeconomic indicators within this population
+since 1992 [ 25].
+Study population and sampling
+The study population comprised all individuals partici-
+pating in the AHDSS survey conducted between August
+2022 and May 2023, totalling 4436 participants (1716
+males and 2720 females, comprising both HIV-positive
+and HIV-negative individuals). Inclusion criteria speci ﬁed
+age ≥ 15 years and permanent residence status according to
+the 2009 census round. The survey incorporated an
+oversample of 280 adults aged > 50 years from a previous
+investigation (the 2006 Study on Global Ageing and Adult
+Health, SAGE).
+The primary survey utilised a sampling frame of 7662
+individuals from a population of 34,413 based on the 2009
+HDSS census round. All sampled individuals were visited
+by trained ﬁeld interviewers pro ﬁcient in the research pro-
+tocol, HIV counselling, and dried blood spot collection
+procedures, with up to three home visits attempted. Sam-
+pling weights were not available for this secondary analysis;
+accordingly, prevalence estimates should be interpreted in
+the context of the sampling design rather than as
+population-representative ﬁgures.
+Data collection procedures
+Home interviews (approximately 45 min duration) incor-
+porated a chronic disease risk factor questionnaire, anthro-
+pometric measurements including height, weight, waist and
+hip circumference, blood pressure assessment, point-of-care
+lipid and glucose analysis, and dried blood spot collections
+for HIV testing.
+Physical activity assessment
+Physical activity was assessed using the Global Physical
+Activity Questionnaire (GPAQ), a validated instrument
+developed by the World Health Organization for population
+surveillance within the WHO STEPwise approach to
+chronic disease risk factor surveillance [ 26, 27]. The GPAQ
+captures self-reported physical activity across three
+domains: occupational (vigorous and moderate), travel-
+related (walking or cycling), and recreational (vigorous),
+over a typical week. Metabolic equivalent of task (MET)
+values were assigned as follows: vigorous activities = 8.0
+METs, moderate activities and travel-related activities = 4.0
+METs [ 26] (Supplementary Table S1). Total physical
+activity volume was calculated as MET-minutes per week
+by multiplying the MET value by duration (minutes) and
+frequency (days per week) for each domain. Participants
+were subsequently strati ﬁed into quintiles of total MET-
+minutes/week for dose –response analysis (Supplementary
+Table S2). Activity levels were additionally classi ﬁed as
+low (<600 MET-minutes/week), moderate (600 –2999
+MET-minutes/week), and high ( ≥3,000 MET-minutes/
+week) following WHO recommendations [ 26, 28].
+Blood pressure measurement and classi ﬁcation
+Blood pressure was measured thrice on the right arm of
+seated participants using an automated digital recording
+instrument (OMRON R6 Wrist Blood Pressure Monitor,
+model HEM-6221-E; Omron Healthcare Co., Kyoto,
+Japan). Participants were seated for a minimum of ﬁve
+minutes prior to measurement, with the wrist positioned at
+heart level as per manufacturer instructions. Measurements
+were conducted in a quiet environment at ambient room
+temperature (20 –25 °C) by trained ﬁeld workers who had
+completed standardised blood pressure measurement train-
+ing. The cuff size accommodated wrist circumferences of
+13.5–21.5 cm. The mean of the second and third systolic
+blood pressure (SBP) and diastolic blood pressure (DBP)
+measurements was utilised for analysis. Full measurement
+protocol details, including device speci ﬁcations, ﬁeld
+worker training, and known limitations of wrist-based
+devices, are provided in Supplementary Section 2.
+Physical activity and hypertension amongst HIV-positive and HIV-negative populations in rural South. . .
+Blood pressure was classi ﬁed following World Health
+Organization standards [ 29, 30]. Normotension was de ﬁned
+as SBP < 120 mmHg and DBP < 80 mmHg. Elevated blood
+pressure was de ﬁned as SBP 120 –139 mmHg and/or DBP
+80–89 mmHg. Hypertension was de ﬁned as SBP ≥ 140
+mmHg and/or DBP ≥ 90 mmHg, or current use of anti-
+hypertensive medication. Participants were classi ﬁed as
+hypertensive or non-hypertensive for the primary analysis.
+HIV status ascertainment
+Informed consent was obtained prior to HIV testing. Dried
+blood spots were analysed using screening assay Vir-
+onostika Uniform 11 (Biomerieux, France), with positive
+results con ﬁrmed using the SD Bioline HIV ELISA test. In
+cases of discordant results, a third assay was performed to
+determine ﬁnal serostatus following WHO criteria [ 8].
+Assessment of potential confounders
+Anthropometric measurements including BMI (weight/
+height²) and waist-to-hip ratio (WHR) were obtained whilst
+participants wore light clothing without footwear. Elevated
+blood glucose and lipid concentrations were measured at
+each visit. Demographic variables including sex, age, mar-
+ital status, and educational attainment, alongside beha-
+vioural factors including smoking status and alcohol
+consumption, and medical history including chronic dis-
+eases, were assessed via questionnaire.
+Statistical analysis
+All data cleaning and statistical analyses were performed
+using Stata version 13 (StataCorp, College Station, Texas,
+USA). The initial sample comprised 4504 participants; 68
+(1.5%) were excluded owing to >20% missing data on key
+variables, yielding a ﬁnal analytical sample of 4436.
+Comparison of included and excluded participants revealed
+no statistically signi ﬁcant differences in age, sex, HIV sta-
+tus, or BMI (Supplementary Table S3). Little ’s MCAR test
+(p = 0.23) suggested data were missing completely at ran-
+dom, supporting complete case analysis.
+Smoking status and alcohol consumption were cate-
+gorised as never, past, or current. Body mass index was
+categorised as underweight (<18.5 kg/m²), normal weight
+(18.5–24.9 kg/m²), overweight (25.0 –29.9 kg/m²), and
+obese ( ≥30.0 kg/m²). Educational attainment was cate-
+gorised as none, primary, secondary, or tertiary.
+Descriptive statistics are presented as frequencies and
+percentages for categorical variables and means with stan-
+dard deviations for continuous variables. Chi-squared tests
+examined associations between categorical variables, and
+two-sample t-tests compared continuous variables between
+groups. Bivariate and multivariable logistic regression
+models examined associations between physical activity
+and hypertension. Covariates demonstrating p < 0.20 in
+bivariate analysis, plus age and sex regardless of p-value,
+were included in multivariable models. Multicollinearity
+was assessed using variance in ﬂation factors (maximum
+VIF = 4.2). Model ﬁt was evaluated using the
+Hosmer–Lemeshow goodness-of-ﬁt test (p = 0.42) and area
+under the receiver operating characteristic curve (AUC =
+0.78, 95% CI: 0.76 –0.79). Interaction terms between HIV
+status and physical activity were tested but did not improve
+model ﬁt (all p > 0.10). The precision of effect estimates
+was assessed through 95% con ﬁdence intervals. Detailed
+statistical methods, power calculations, and sensitivity
+analyses are presented in the Supplementary Materials.
+Results
+Baseline characteristics
+Table 1 presents baseline characteristics strati ﬁed by
+hypertension status. Amongst participants with hyperten-
+sion (n = 1793), 775 (43.2%) were male and 1018 (56.8%)
+were female. Amongst non-hypertensive participants
+(n = 2643), 932 (35.3%) were male and 1711 (64.7%) were
+female, with a statistically signi ﬁcant sex distribution dif-
+ferences (p < 0.001). Mean age was signi ﬁcantly higher
+amongst hypertensive participants (51.8 ± 17.2 years)
+compared with non-hypertensive participants (36.1 ± 16.4
+years, p < 0.001). HIV-positive status was observed in
+25.0% (n = 1108) of the study population.
+Socio-demographic characteristics
+Table 2 presents socio-demographic characteristics of the
+study population (N = 4436). Females comprised 61.3%
+(n = 2720) and males 38.7% (n = 1716) of participants.
+Hypertension prevalence was signi ﬁcantly higher amongst
+males (45.4%) compared with females (37.9%) (p < 0.001).
+Hypertension prevalence increased progressively with age,
+with the highest prevalence observed in participants aged
+≥70 years (62.3%, p < 0.001). Although prevalence
+increased with age overall, the proportion observed in the
+youngest age category in the age-strati ﬁed table should be
+interpreted cautiously, as single-occasion blood pressure
+measurement and transient physiological elevations may
+overestimate hypertension in younger participants.
+Educational attainment dis tribution revealed 24.0%
+(n = 1063) with no formal education, 17.5% (n = 775) with
+primary education, 55.0% (n= 2439) with secondary education,
+and 3.6% (n = 159) with tertiary education. Hypertension pre-
+valence was highest amongst those without formal education
+B. Z. Mayasi, P. A. Mac
+Table 1 Baseline characteristics
+of study participants by
+hypertension status
+Characteristic Total (N = 4436) Hypertension
+(n = 1793)
+Non-hypertensive
+(n = 2643)
+P-value
+n (%) n (%) n (%)
+Sex <0.001
+Male 1716 (38.7) 775 (43.2) 932 (35.3)
+Female 2720 (61.3) 1018 (56.8) 1711 (64.7)
+Age (years),
+mean ± SD
+42.3 ± 18.6 51.8 ± 17.2 36.1 ± 16.4 <0.001
+BMI (kg/m²),
+mean ± SD
+24.8 ± 6.2 26.4 ± 6.8 23.7 ± 5.6 <0.001
+HIV Status <0.001
+Negative 3327 (75.0) 1434 (80.0) 1893 (71.6)
+Positive 1108 (25.0) 359 (20.0) 750 (28.4)
+P values from chi-squared tests for categorical variables and independent-samples t tests for continuous
+variables. Non-hypertensive de ﬁned as SBP < 140 mmHg and DBP < 90 mmHg without antihypertensive
+medication
+BMI body mass index, SD standard deviation, HTN hypertension
+Table 2 Socio-demographic
+characteristics and hypertension
+prevalence
+Variable Total N Total % HTN n HTN % P value P-trend
+Sex <0.001
+Male 1716 38.7 779 45.4
+Female 2720 61.3 1031 37.9
+Age group (years) <0.001
+15–19 502 11.3 122 24.3
+20–29 858 19.3 172 20.1
+30–39 811 18.3 270 33.3
+40–49 645 14.5 318 49.3
+50–59 553 12.5 299 54.1
+60–69 390 8.8 237 60.8
+≥70 521 11.7 325 62.3 <0.001
+Educational Attainment <0.001
+None 1063 24.0 591 55.6
+Primary 775 17.5 340 43.9
+Secondary 2439 55.0 810 33.2
+Tertiary 159 3.6 52 32.7 <0.001
+BMI Category (kg/m²) <0.001
+Underweight (<18.5) 312 7.4 104 33.3
+Normal (18.5 –24.9) 2053 48.5 705 34.3
+Overweight (25.0 –29.9) 1023 24.2 480 46.9
+Obese ( ≥30.0) 844 19.9 450 53.3 <0.001
+Alcohol Consumption <0.001
+Never 2512 56.6 960 38.2
+Past 1049 23.7 431 41.1
+Current 874 19.7 420 48.1
+Percentages calculated as column percentages for Total % and as prevalence (proportion with hypertension
+within each stratum) for HTN %. P values from chi-squared tests. P-trend calculated using the
+Cochran–Armitage test for trend across ordered categories
+HTN hypertension, BMI body mass index
+Physical activity and hypertension amongst HIV-positive and HIV-negative populations in rural South. . .
+(55.6%, p < 0.001). Body mass index distribution showed 7.4%
+(n = 312) underweight, 48.5% (n = 2053) normal weight,
+24.2% (n = 1023) overweight, and 19.9% (n = 844) obese.
+Hypertension prevalence increased progressively with BMI
+category, reaching 53.3% amon gst obese participants (p for
+trend <0.001). Current alcohol consumption was associated with
+48.1% hypertension prevalence compared with 38.2% amongst
+never-consumers (p < 0.001).
+Physical activity patterns by HIV status
+Table 3 presents physical activity patterns stratiﬁed by HIV
+serostatus (Fig.1). Amongst 4435 participants with HIV results,
+75.0% (n = 3327) were HIV-negative and 25.0% (n = 1108)
+were HIV-positive. Vigorous re creational activities showed
+80.3% HIV-negative participants amongst active individuals
+and 26.2% HIV-positive amongst inactive participants, indi-
+Table 3 Physical activity
+patterns strati ﬁed by HIV
+serostatus
+Physical activity
+domain
+Activity
+status
+Total N HIV-
+Negative n
+HIV-
+Negative %
+HIV-
+Positive n
+HIV-
+Positive %
+P value
+Overall Sample — 4435 3327 75.0 1108 25.0 —
+Vigorous
+Occupational
+Active 2847 2100 73.8 747 26.2 0.007
+Inactive 1588 1227 77.3 361 22.7
+Moderate
+Occupational
+Active 2121 1576 74.3 545 25.7 0.276
+Inactive 2314 1751 75.7 563 24.3
+Travel-Related Active 3124 2327 74.5 797 25.5 0.198
+Inactive 1311 1000 76.3 311 23.7
+Vigorous
+Recreational
+Active 817 656 80.3 161 19.7 <0.001
+Inactive 3618 2671 73.8 947 26.2
+Percentages represent the proportion of each activity status group by HIV serostatus. Active status de ﬁned as
+engaging in the speci ﬁed activity domain during a typical week; Inactive de ﬁned as not engaging in the
+activity. Physical activity assessed using the GPAQ within the WHO STEPwise framework [ 26]. P values
+from chi-squared tests comparing HIV-negative and HIV-positive distributions within each domain
+HIV − HIV-negative, HIV + HIV-positive, GPAQ Global Physical Activity Questionnaire, MET metabolic
+equivalent of task
+Fig. 1 Physical activity levels by
+HIV status. Bar chart showing
+the distribution of low,
+moderate, and high physical
+activity levels amongst HIV-
+negative and HIV-positive
+participants. Error bars represent
+95% con ﬁdence intervals
+B. Z. Mayasi, P. A. Mac
+cating a higher inactivity rate in vigorous recreational pursuits
+amongst HIV-positive participants.
+Hypertension prevalence by HIV status
+Table 4 presents hypertension prevalence strati ﬁed by HIV
+serostatus and demographic characteristics. HIV-positive
+males showed highest hypertension prevalence (60.2%)
+compared with HIV-negative males (46.9%, p < 0.001).
+Figure 2 illustrates hypertension prevalence by BMI cate-
+gory and HIV status, revealed a steeper gradient in hyper-
+tension prevalence across BMI categories amongst HIV-
+negative participants. Statistically signi ﬁcant associations
+(p < 0.05) were observed between hypertension and sex, age
+group, BMI, alcohol consumption, and smoking status in
+both HIV-positive and HIV-negative groups.
+Physical activity and hypertension: regression
+analysis
+Table 5 presents univariate and multivariate analyses of
+physical activity domains and hypertension. In univariate
+analysis, moderate occupational activity showed a statisti-
+cally signi ﬁcant positive association (OR = 1.37, 95% CI:
+1.14–1.65, p = 0.001), which was attenuated and became
+non-signiﬁcant after multivariate adjustment (OR = 1.10,
+95% CI: 0.89 –1.36, p = 0.368). This reversal in direction is
+consistent with confounding, likely by age and sex: older
+Table 4 Hypertension prevalence strati ﬁed by HIV serostatus and demographic characteristics
+Characteristic HIV − n (%) HIV − HTN % HIV + n (%) HIV + HTN % Overall HTN % P value P-trend
+Sex <0.001
+Male 1355 (79.0) 46.9 361 (21.0) 60.2 49.7
+Female 1972 (72.5) 41.1 748 (27.5) 29.6 37.9
+Age (years) <0.001
+15–19 483 (96.2) 24.3 19 (3.8) 26.3 24.3
+20–24 425 (91.4) 18.6 40 (8.6) 15.0 18.3
+25–29 329 (83.7) 21.0 64 (16.3) 23.4 21.4
+30–34 318 (76.6) 30.5 97 (23.4) 26.8 29.6
+35–39 283 (71.5) 42.0 113 (28.5) 20.4 35.9
+40–44 194 (64.0) 48.5 109 (36.0) 38.5 44.9
+45–49 235 (68.7) 52.8 107 (31.3) 47.7 51.2
+50–54 222 (70.9) 54.5 91 (29.1) 51.6 53.7
+55–59 169 (70.4) 57.4 71 (29.6) 52.1 55.8
+60–64 141 (71.9) 58.9 55 (28.1) 56.4 58.2
+65–69 142 (73.2) 61.3 52 (26.8) 59.6 60.8
+≥70 386 (74.1) 63.1 135 (25.9) 60.7 62.3 <0.001
+BMI (kg/m²) <0.001
+Underweight (<18.5) 230 (73.7) 28.5 82 (26.3) 31.8 33.3
+Normal (18.5 –24.9) 1506 (73.4) 32.1 547 (26.6) 35.6 34.3
+Overweight (25 –29.9) 762 (74.5) 47.8 261 (25.5) 44.2 46.9
+Obese ( ≥30) 625 (74.1) 55.2 219 (25.9) 48.9 53.3 <0.001
+Education <0.001
+None 801 (75.4) 55.6 262 (24.6) 55.3 55.6
+Primary 569 (73.4) 43.9 206 (26.6) 44.2 43.9
+Secondary 1827 (74.9) 33.2 612 (25.1) 33.5 33.2
+Tertiary 130 (81.8) 32.3 29 (18.2) 34.5 32.7 <0.001
+Percentages in n (%) columns represent the distribution of HIV serostatus within each demographic stratum. HTN % columns show the
+percentage of participants with hypertension within each HIV-serostatus subgroup. Overall HTN % shows combined hypertension prevalence
+across both HIV groups within each stratum. P-values from chi-squared tests. P-trend calculated using the Cochran –Armitage test for trend
+across ordered categories. Note: HIV-positive female HTN prevalence (29.6%) represents age-unadjusted prevalence across all age strata
+within this subgroup; the lower value compared with HIV-negative females (41.1%) re ﬂects the younger age distribution of HIV-positive women
+in this cohort
+HTN hypertension, HIV − HIV-negative, HIV + HIV-positive, BMI body mass index, WHR waist-to-hip ratio
+Physical activity and hypertension amongst HIV-positive and HIV-negative populations in rural South. . .
+and male participants, who had higher hypertension pre-
+valence, were more likely to engage in moderate occupa-
+tional activity. After adjustment for these confounders, the
+underlying protective effect of moderate physical activity
+became apparent.
+Total physical activity volume (MET-minutes/week)
+revealed a protective association, with univariate OR =
+0.63 (95% CI: 0.48 –0.82, p = 0.001) and multivariate
+OR = 0.44 (95% CI: 0.23 –0.85, p = 0.015), indicating a
+protective effect against hyp ertension. Quintile analysis
+Fig. 2 Hypertension prevalence
+by BMI category and HIV
+status. Grouped bar chart
+demonstrating hypertension
+prevalence across body mass
+index categories, strati ﬁed by
+HIV serostatus. Error bars
+represent 95% con ﬁdence
+intervals. Dashed trend lines
+illustrate the gradient in
+hypertension prevalence across
+BMI categories for each HIV
+group
+Table 5 Univariate and
+multivariate logistic regression
+analysis of physical activity
+domains and hypertension
+Physical activity domain Univariate OR 95% CI P value Adjusted
+† OR 95% CI P value
+Vigorous Occupational
+Activity
+1.04 0.89 –1.20 0.626 0.98 0.81 –1.18 0.823
+Moderate Occupational
+Activity
+1.37 1.14 –1.65 0.001 1.10 0.89 –1.36 0.368
+Travel-Related Physical
+Activity
+1.08 0.87 –1.34 0.468 1.05 0.82 –1.35 0.686
+Vigorous Recreational
+Activity
+1.72 1.41 –2.09 0.001 1.87 1.13 –3.08 0.013
+Total Physical Activity
+Volume
+0.63 0.48 –0.82 0.001 0.44 0.23 –0.85 0.015
+Total Physical Activity
+Quintiles
+0.001 0.137 ‡
+Quintile 1 (lowest) 1.00 Reference — 1.00 Reference —
+Quintile 2 0.89 0.70 –1.14 0.354 0.92 0.70 –1.21 0.558
+Quintile 3 0.76 0.59 –0.98 0.034 0.85 0.63 –1.14 0.273
+Quintile 4 0.68 0.52 –0.88 0.003 0.79 0.58 –1.08 0.140
+Quintile 5 (highest) 0.61 0.47 –0.80 <0.001 0.73 0.53 –1.00 0.051
+Reference category for all binary physical activity variables is “Inactive”. †Multivariate models adjusted for
+age, sex, BMI, HIV status, alcohol consumption, smoking status, and educational attainment. ‡P-value for
+trend across quintiles (Cochran –Armitage test). Total physical activity volume (MET-minutes/week)
+represents the combined metabolic equivalent of task minutes per week across all activity domains
+(occupational vigorous/moderate, travel-related, and recreational), calculated as: MET value × duration
+(minutes) × frequency (days/week) [ 26]
+OR odds ratio, CI conﬁdence interval, MET metabolic equivalent of task, GPAQ Global Physical Activity
+Questionnaire.
+B. Z. Mayasi, P. A. Mac
+showed a trend towards protection in higher activity
+quintiles in univariate analysis (p for trend =0.001), which
+was attenuated in multivariate analysis (p for
+trend=0.137).
+Multivariable analysis including confounders
+Table 6 presents comprehensive multivariable analysis
+incorporating all potential confounders (Fig. 3). Moderate
+physical activity was association (adjusted OR = 0.74, 95%
+CI: 0.56 –0.99, p = 0.043), whilst vigorous recreational
+activities showed a non-signi ﬁcant protective trend (adjus-
+ted OR = 0.58, 95% CI: 0.27 –1.22, p = 0.151) after full
+covariate adjustment.
+Male sex group showed a positive association with
+hypertension (adjusted OR = 2.15, 95% CI: 1.67 –2.77,
+p < 0.001). Age showed a positive association (adjusted
+OR = 1.02 per year, 95% CI: 1.02 –1.03, p < 0.001). Body
+mass index revealed a positive association (adjusted
+OR = 1.09 per unit, 95% CI: 1.07 –1.11, p < 0.001). Cur-
+rent alcohol consumption showed a strong positive asso-
+ciation (adjusted OR = 1.59, 95% CI: 1.21 –2.09,
+p = 0.001). Elevated waist-to-hip ratio was associated
+with increased odds of hypertension (adjusted OR = 1.40,
+95% CI: 1.12 –1.75, p = 0.004). HIV-positive status was
+independently associated with increased odds of hyper-
+tension (adjusted OR = 1.45, 95% CI: 1.18 –1.78,
+p < 0.001).
+Discussion
+This secondary analysis of cross-sectional data from the
+AHDSS indicates that moderate physical activity is inde-
+pendently associated with lower odds of hypertension in a
+rural South African population, irrespective of HIV
+Table 6 Comprehensive
+multivariable logistic regression
+analysis of factors associated
+with hypertension
+Variable Univariate OR 95% CI P value Adjusted OR 95% CI P value
+Physical Activity
+Moderate physical activity 1.37 1.14 –1.65 0.001 0.74 0.56 –0.99 0.043
+Vigorous recreational activity 1.72 1.41 –2.09 0.001 0.58 0.27 –1.22 0.151
+Demographics
+Male sex 1.81 1.53 –2.14 <0.001 2.15 1.67 –2.77 <0.001
+Age (per year increase) 1.05 1.04 –1.05 <0.001 1.02 1.02 –1.03 <0.001
+Marital Status (vs. Single)
+In relationship 1.42 1.13 –1.79 0.003 1.21 0.88 –1.65 0.235
+Unknown 2.09 1.72 –2.54 <0.001 1.09 0.82 –1.47 0.534
+Education (vs. None)
+Primary 0.58 0.47 –0.71 <0.001 0.92 0.70 –1.20 0.530
+Secondary 0.34 0.29 –0.40 <0.001 0.84 0.66 –1.07 0.156
+Tertiary 0.36 0.25 –0.53 <0.001 0.78 0.48 –1.27 0.317
+Anthropometric Measures
+BMI (per kg/m² increase) 1.12 1.10 –1.13 <0.001 1.09 1.07 –1.11 <0.001
+Overweight (BMI 25 –29.9) 1.69 1.43 –2.00 <0.001 1.82 1.47 –2.26 <0.001
+Obese (BMI ≥ 30) 2.19 1.83 –2.63 <0.001 2.35 1.87 –2.94 <0.001
+Elevated WHR 2.24 1.89 –2.65 <0.001 1.40 1.12 –1.75 0.004
+Lifestyle Factors
+Alcohol: Past (vs. Never) 1.13 0.96 –1.34 0.148 1.00 0.79 –1.24 0.943
+Alcohol: Current (vs. Never) 1.51 1.26 –1.80 <0.001 1.59 1.21 –2.09 0.001
+Smoking: Past (vs. Never) 1.18 0.94 –1.48 0.159 0.89 0.66 –1.20 0.433
+Smoking: Current (vs. Never) 1.06 0.86 –1.31 0.590 0.92 0.68 –1.24 0.572
+HIV Status
+HIV-positive (vs. HIV-
+negative)
+0.61 0.51 –0.73 <0.001 1.45 1.18 –1.78 <0.001
+Adjusted model includes all variables listed in the table simultaneously. Reference categories: Inactive (for
+physical activity), Female (for sex), Single (for marital status), None (for educational attainment), Never (for
+alcohol and smoking), HIV-negative (for HIV status), Normal WHR (for waist-to-hip ratio). Model
+diagnostics: AUC = 0.78 (95% CI: 0.76 –0.79); Hosmer –Lemeshow test p = 0.42; Overall classi ﬁcation
+accuracy = 73.2%
+OR odds ratio, CI conﬁdence interval, BMI body mass index, WHR waist-to-hip ratio
+Physical activity and hypertension amongst HIV-positive and HIV-negative populations in rural South. . .
+serostatus. The study further con ﬁrms the high burden of
+hypertension (40.4%) and the independent association
+between HIV-positive status and hypertension in this setting.
+An unexpected ﬁnding warrants careful interpretation: vig-
+orous recreational physical activity was associated with positive
+hypertension in univariate analysis (OR= 1.72), which reversed
+to a non-signi ﬁcant protective trend in fully adjusted models
+(OR = 0.58). This reversal is consistent with confounding by
+socioeconomic status and health-seeking behaviour, whereby
+participants engaging in vigo rous recreational activities may
+represent a higher socioeconomic stratum with greater hyper-
+tension awareness and diagnosis rates [5, 31]. After adjustment
+for age, BMI, and other cardiovascular risk factors, the phy-
+siological protective effects o f vigorous activity emerged,
+although the wide conﬁdence interval (0.27–1.22) and loss of
+statistical signiﬁcance indicate insufﬁcient statistical power for
+this subgroup or residual confounding. Theseﬁndings should be
+interpreted cautiously, and futu re studies should incorporate
+objective physical activity measurement to disentangle these
+relationships.
+Physical activity and hypertension
+Our ﬁndings revealed a statistically signi ﬁcant associations
+between physical activity and hypertension in rural South
+African communities, consistent with studies conducted in
+other world regions [ 3, 4, 32–34]. The protective in ﬂuence
+of moderate physical activity on hypertension prevention
+(adjusted OR = 0.74, 95% CI: 0.56 –0.99) supports physical
+activity promotion as a viable hypertension prevention
+strategy. Interestingly, vigorous recreational activities
+showed a non-signi ﬁcant association in fully adjusted
+models, possibly re ﬂecting complex interactions with other
+health behaviours or reverse causation [ 32–36].
+Hypertension in rural South Africa
+Hypertension prevalence in our study (40.4% overall) is
+consistent with contemporary population-based surveys in
+South Africa. The South African Demographic and Health
+Survey (SADHS 2016) reported age-standardised hyper-
+tension prevalence of 46% amongst adults aged ≥ 15 years
+[37], whilst Schutte et al. (2021) documented prevalence
+estimates of 35 –55% across diverse South African settings
+[15]. Our ﬁndings align with these estimates and con ﬁrm
+hypertension as a substantial public health challenge in rural
+South Africa, particularly given the limited access to diag-
+nosis and treatment in this setting.
+Advanced age constitutes an established risk factor for
+cardiovascular disease [ 38, 39], consistent with our ﬁndings
+of progressive hypertension prevalence increases with age.
+Male sex was strongly associated with hypertension
+(adjusted OR = 2.15), consistent with established sex dif-
+ferences in cardiovascular risk.
+HIV and hypertension
+The elevated hypertension prevalence amongst HIV-
+positive participants, particularly males (60.2% vs. 46.9%
+in HIV-negative males), likely re ﬂects multiple interacting
+Fig. 3 Risk factors associated
+with hypertension (multivariable
+logistic regression). Forest plot
+displaying adjusted odds ratios
+with 95% con ﬁdence intervals
+for each covariate in the ﬁnal
+multivariable model. Red
+diamonds indicate statistically
+signiﬁcant associations
+(p < 0.05); grey diamonds
+indicate non-signi ﬁcant
+associations. The dashed vertical
+line represents the null value
+(OR = 1.0)
+B. Z. Mayasi, P. A. Mac
+mechanisms: (1) HIV-induced chronic immune activation
+and systemic in ﬂammation contribute to endothelial dys-
+function and arterial stiffness [ 9–11]; (2) ART-related
+metabolic effects, including lipodystrophy and insulin
+resistance, further elevate cardiovascular risk [ 12, 13]; (3)
+HIV-associated nephropathy and drug-related nephrotoxi-
+city may compromise renal function, activating the
+renin–angiotensin–aldosterone system [ 9, 18, 23]; and (4)
+sex-speciﬁc interactions between HIV infection, ART
+effects, and traditional cardiovascular risk factors may
+underlie the particularly elevated prevalence in HIV-
+positive males [ 7, 21, 24]. Our ﬁnding of 45% increased
+odds of hypertension amongst HIV-positive individuals
+aligns with meta-analyses across sub-Saharan Africa
+[16, 17, 40, 41], and comparable studies from Tanzania
+[18, 23], Uganda [ 19, 22], Kenya [ 42], and Malawi [ 42].
+However, the absence of ART data in our study precludes
+deﬁnitive conclusions regarding the speci ﬁc contribution of
+therapy-related versus infection-related mechanisms.
+Study limitations
+This study has several limitations that warrant consideration.
+First, the cross-sectional design precludes causal inference,
+and observed associations may be in ﬂuenced by reverse
+causation, particularly where behavioural changes follow a
+diagnosis of hypertension. Second, physical activity was
+assessed through self-report using the GPAQ, physical
+activity was self-reported, misclassi ﬁcation of activity levels
+is possible and may have attenuated the observed associa-
+tions, which is susceptible to recall bias and social desirability
+bias, although systematic validation studies showed reason-
+able correlation with objective measures (r = 0.45–0.65 for
+moderate-to-vigorous activity) [ 26, 27]. A comprehensive
+assessment of potential biases is provided in Supplementary
+Section 7. Third, blood pressure was measured using a wrist-
+based device (OMRON R6, HEM-6221-E), which may
+produce readings that differ from validated upper-arm devi-
+ces [43]. Wrist monitors are sensitive to positioning and may
+overestimate or underestimate blood pressure if the wrist is
+not maintained at heart level; however, our ﬁeld protocol
+required standardised positioning. Furthermore, blood pres-
+sure was measured on a single occasion, which may lead to
+misclassiﬁcation of some individuals; such error would
+probably attenuate rather than exaggerate the associations
+observed [ 43]. Sensitivity analyses using alternative blood
+pressure de ﬁnitions and borderline reclassi ﬁcation yielded
+consistent results (Supplementary Table S4).
+Fourth, although we adjusted for a broad range of covariates,
+residual confounding from unmeasured factors, including diet-
+ary patterns, psychosocial stre ss, and genetic predisposition,
+cannot be excluded. Fifth, the absence of antiretroviral therapy
+data (including regimen, duration, adherence, CD4 count, and
+viral load) limits our ability to disentangle the independent
+contributions of HIV infectio n from ART-related metabolic
+effects on hypertension risk. Sixth, sampling weights were not
+available for this secondary analysis, and the use of a
+2009 sampling frame may introdu ce selection bias. Accord-
+ingly, prevalence estimates should be interpreted with caution
+and may not be generalisable to the broader South African
+population. Finally, the study population was drawn from a
+single rural South African se tting, which may constrain gen-
+eralisability to other contexts.
+Notwithstanding these limitations, our primaryﬁnding of a
+protective association betweenmoderate physical activity and
+hypertension was robust across multiple se nsitivity analyses,
+including HIV-stratiﬁed models, exclusion of antihypertensive
+medication users, alternative blood pressure de ﬁnitions, and
+borderline reclassiﬁcation (Supplementary Table S5). These
+ﬁndings should therefore be interpreted as context-speciﬁca n d
+hypothesis-generating rather than broadly generalisable to all
+South African or sub-Saharan African populations.
+Clinical and public health implications
+Our ﬁndings support urgent integration of cardiovascular risk
+assessment into HIV care platforms [ 42, 44, 45]. The
+observed association between moderate physical activity and
+lower odds of hypertension, consistent across HIV serostatus,
+supports consideration of physical activity promotion as a
+cost-effective intervention strategy [ 28, 34]. Healthcare sys-
+tems must prepare for the double burden of communicable
+and non-communicable diseases through task-shifting
+approaches and integrated care models [ 31, 44, 46, 47].
+Conclusions
+Hypertension demonstrates high prevalence amongst HIV-
+positive and HIV-negative adults in rural South Africa, with
+HIV-positive status ind ependently associated with increased
+odds of hypertension. Moderate physical activity provides sig-
+niﬁcant protective beneﬁts against hypertension irrespective of
+HIV serostatus. These ﬁndings support the integration of
+structured physical activity counselling into HIV care and pri-
+mary healthcare platforms in resource-limited settings. Large-
+scale prospective cohort studies incorporating objective physical
+activity measurement and deta iled ART data are needed to
+conﬁrm the protective associa t i o no b s e r v e di nt h i sc r o s s -
+sectional analysis and to elucidate the mechanisms underlying
+HIV-associated hypertension.
+Data availability
+The data underlying this study are available from the
+Agincourt Health and Socio-Demographic Surveillance Site
+Physical activity and hypertension amongst HIV-positive and HIV-negative populations in rural South. . .
+(www.agincourt.co.za) upon reasonable request and with
+appropriate ethical approval. Statistical analysis code (Stata
+do-ﬁles) is available from the corresponding author upon
+request.
+Acknowledgements The authors express gratitude to the Agincourt
+Health and Socio-Demographic Surveillance Site and the University of
+the Witwatersrand for their support and provision of data access.
+Author contributions BZM designed the project, collected data, con-
+ducted statistical analyses, and wrote the initial manuscript draft. PAM
+supervised the entire research process and manuscript development
+and contributed to manuscript writing. All authors read and approved
+the ﬁnal manuscript for submission.
+Funding This work was supported in part by the WHO/TDR (World
+Health Organization Special Programme for Research and Training in
+Tropical Diseases) training grants, 2014. The funding body had no role in
+study design, data collection, analysis, interpretation, or manuscript pre-
+paration. Open Access funding enabled and organized by Projekt DEAL.
+Compliance with ethical standards
+Conﬂict of interest The authors declare no competing interests.
+STROBE Statement This study is reported in accordance with the
+Strengthening the Reporting of Observational Studies in Epidemiology
+(STROBE) guidelines for cross-sectional studies. A completed
+STROBE checklist is provided as a supplementary ﬁle.
+Publisher’s note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional af ﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as
+long as you give appropriate credit to the original author(s) and the
+source, provide a link to the Creative Commons licence, and indicate if
+changes were made. The images or other third party material in this
+article are included in the article's Creative Commons licence, unless
+indicated otherwise in a credit line to the material. If material is not
+included in the article's Creative Commons licence and your intended
+use is not permitted by statutory regulation or exceeds the permitted
+use, you will need to obtain permission directly from the copyright
+holder. To view a copy of this licence, visit http://creativecommons.
+org/licenses/by/4.0/.
+References
+1. Mills KT, Stefanescu A, He J. The global epidemiology of
+hypertension. Nat Rev Nephrol. 2020;16:223 –37.
+2. NCD Risk Factor Collaboration (NCD-RisC). Worldwide trends
+in hypertension prevalence and progress in treatment and control
+from 1990 to 2019. Lancet. 2021;398:957 –80.
+3. Börjesson M, Onerup A, Lundqvist S, Dahlöf B. Physical activity
+and exercise lower blood pressure in individuals with hyperten-
+sion: narrative review of 27 RCTs. Br J Sports Med.
+2016;50:356–61.
+4. Cornelissen VA, Smart NA. Exercise training for blood pressure:
+a systematic review and meta-analysis. J Am Heart Assoc.
+2013;2:e004473.
+5. Gómez-Olivé FX, Ali SA, Made F, Kyobutungi C, Nonterah E,
+Micklesﬁeld L, et al. Regional and sex differences in the pre-
+valence and awareness of hypertension: an H3Africa AWI-Gen
+study across 6 sites in sub-Saharan Africa. Glob Heart.
+2017;12:81–90.
+6. Thorogood M, Connor M, Tollman S, Lewando Hundt G, Fowkes
+G, Marsh J. A cross-sectional study of vascular risk factors in a
+rural South African population: data from the Southern African
+Stroke Prevention Initiative (SASPI). BMC Public Health.
+2007;7:326.
+7. Sliwa K, Carrington MJ, Becker A, Thienemann F, Ntsekhe M,
+Stewart S. Contribution of the human immunode ﬁciency virus/
+acquired immunode ﬁciency syndrome epidemic to de novo pre-
+sentations of heart disease in the Heart of Soweto Study cohort.
+Eur Heart J. 2012;33:866 –74.
+8. Diaz KM, Shimbo D. Physical activity and the prevention of
+hypertension. Curr Hypertens Rep. 2013;15:659 –68.
+9. Fahme SA, Bloom ﬁeld GS, Peck R. Hypertension in HIV-infected
+adults: novel pathophysiologic mechanisms. Hypertension.
+2018;72:44–55.
+10. Hsue PY, Deeks SG, Hunt PW. Immunologic basis of cardio-
+vascular disease in HIV-infected adults. J Infect Dis.
+2012;205:S375–S382.
+11. Triant VA, Lee H, Hadigan C, Grinspoon SK. Increased acute
+myocardial infarction rates and cardiovascular risk factors among
+patients with human immunode ﬁciency virus disease. J Clin
+Endocrinol Metab. 2007;92:2506 –12.
+12. Dillon DG, Gurdasani D, Riha J, Ekoru K, Asiki G, Mayanja BN,
+et al. Association of HIV and ART with cardiometabolic traits in
+sub-Saharan Africa: a systematic review and meta-analysis. Int J
+Epidemiol. 2013;42:1754 –71.
+13. Dimala CA, Blencowe H, Choukem SP. The association between
+antiretroviral therapy and selected cardiovascular disease risk
+factors in sub-Saharan Africa: a systematic review and meta-
+analysis. PLoS One. 2018;13:e0201404.
+14. Peer N, Steyn K, Lombard C, Lambert EV, Vythilingum B, Levitt
+NS. Rising diabetes prevalence among urban-dwelling black
+South Africans. PLoS One. 2012;7:e43336.
+15. Schutte AE, Srinivasapura Venkateshmurthy N, Mohan S, Prab-
+hakaran D. Hypertension in low- and middle-income countries.
+Circ Res. 2021;128:808 –26.
+16. Bigna JJ, Ndoadoumgue AL, Nansseu JR, Tochie JN, Nyaga UF,
+Nkeck JR, et al. Global burden of hypertension among people
+living with HIV in the era of increased life expectancy: a sys-
+tematic review and meta-analysis. J Hypertens. 2020;38:1659 –68.
+17. Davis K, Perez-Guzman P, Hoyer A, Brinks R, Gregg E, Althoff
+KN, et al. Association between HIV infection and hypertension: a
+global systematic review and meta-analysis of cross-sectional
+studies. BMC Med. 2021;19:105.
+18. Peck RN, Shedafa R, Kalluvya S, Downs JA, Todd J, Suthan-
+thiran M, et al. Hypertension, kidney disease, HIV and anti-
+retroviral therapy among Tanzanian adults: a cross-sectional
+study. BMC Med. 2014;12:125.
+19. Kazooba P, Kasamba I, Mayanja BN, Lutaakome J, Namakoola I,
+Salome T, et al. Cardiometabolic risk among HIV-POSITIVE
+Ugandan adults: prevalence, predictors and effect of long-term
+antiretroviral therapy. Pan Afr Med J. 2017;27:40.
+20. Kagaruki GB, Mayige MT, Ngadaya ES, Kimaro GD, Kalinga
+AK, Kilale AM, et al. Magnitude and risk factors of non-
+communicable diseases among people living with HIV in Tan-
+zania: a cross sectional study from Mbeya and Dar es Salaam
+regions. BMC Public Health. 2014;14:904.
+21. Brennan AT, Jamieson L, Crowther NJ, Fox MP, George JA,
+Berry KM, et al. Prevalence, incidence, predictors, treatment, and
+control of hypertension among HIV-positive adults on
+B. Z. Mayasi, P. A. Mac
+antiretroviral treatment in public sector treatment programs in
+South Africa. PLoS One. 2018;13:e0204020.
+22. Okello S, Kanyesigye M, Muyindike WR, Annex BH, Hunt PW,
+Haneuse S, et al. Incidence and predictors of hypertension in
+adults with HIV-initiating antiretroviral therapy in south-western
+Uganda. J Hypertens. 2015;33:2039 –45.
+23. Rodríguez-Arbolí E, Mwamelo K, Kalinjuma AV, Furrer H, Hatz
+C, Tanner M, et al. Incidence and risk factors for hypertension
+among HIV patients in rural Tanzania – a prospective cohort
+study. PLoS One. 2017;12:e0172089.
+24. Mutemwa M, Peer N, de Villiers A, Mukasa B, Matsha TE, Mills
+EJ, et al. Prevalence, detection, treatment, and control of hyper-
+tension in human immunode ﬁciency virus (HIV)-infected patients
+attending HIV clinics in the Western Cape Province, South Africa.
+Med (Balt). 2018;97:e12121.
+25. Kahn K, Collinson MA, Gómez-Olivé FX, Mokoena O, Twine R,
+Mee P, et al. Pro ﬁle: Agincourt health and socio-demographic
+surveillance system. Int J Epidemiol. 2012;41:988 –1001.
+26. WHO STEPS Surveillance Manual The WHO STEPwise
+approach to chronic disease risk factor surveillance. Geneva:
+World Health Organization; 2005.
+27. Craig CL, Marshall AL, Sjöström M, Bauman AE, Booth ML,
+Ainsworth BE, et al. International physical activity questionnaire:
+12-country reliability and validity. Med Sci Sports Exerc.
+2003;35:1381–95.
+28. Bull FC, Al-Ansari SS, Biddle S, Borodulin K, Buman MP,
+Cardon G, et al. World Health Organization 2020 guidelines on
+physical activity and sedentary behaviour. Br J Sports Med.
+2020;54:1451–62.
+29. Chobanian AV, Bakris GL, Black HR, Cushman WC, Green LA,
+Izzo JL Jr, et al. The Seventh Report of the Joint National
+Committee on Prevention, Detection, Evaluation, and Treatment
+of High Blood Pressure: the JNC 7 report. JAMA.
+2003;289:2560–72.
+30. Williams B, Mancia G, Spiering W, Agabiti Rosei E, Azizi M,
+Burnier M, et al. 2018 ESC/ESH Guidelines for the management
+of arterial hypertension. Eur Heart J. 2018;39:3021 –104.
+31. Mudie K, Jin MM, Tan K, Kendall L, Addo J, Dos-Santos-Silva I,
+et al. Non-communicable diseases in sub-Saharan Africa: a
+scoping review of large cohort studies. J Glob Health.
+2019;9:020409.
+32. Huai P, Xun H, Reilly KH, Wang Y, Ma W, Xi B. Physical
+activity and risk of hypertension: a meta-analysis of prospective
+cohort studies. Hypertension. 2013;62:1021 –6.
+33. Liu X, Zhang D, Liu Y, Sun X, Han C, Wang B, et al. Dose-
+response association between physical activity and incident
+hypertension: a systematic review and meta-analysis of cohort
+studies. Hypertension. 2017;69:813 –20.
+3 4 . L e a rS A ,H uW ,R a n g a r a j a nS ,G a s e v i cD ,L e o n gD ,I q b a lR ,e ta l .T h e
+effect of physical activity on mortality and cardiovascular disease in 130
+000 people from 17 high-income, m iddle-income, and low-income
+countries: the PURE study. Lancet. 2017;390:2643–54.
+35. Bakker EA, Sui X, Brellenthin AG, Lee DC. Physical activity and
+ﬁtness for the prevention of hypertension. Curr Opin Cardiol.
+2018;33:394–401.
+36. Pescatello LS, Buchner DM, Jakicic JM, Powell KE, Kraus WE,
+Bloodgood B, et al. Physical activity to prevent and treat hypertension:
+a systematic review. Med Sci Sports Exerc. 2019;51:1314–23.
+37. National Department of Health (NDoH), Statistics South Africa
+(Stats SA), South African Medical Research Council (SAMRC),
+ICF. South Africa Demographic and Health Survey 2016. Pre-
+toria: NDoH, Stats SA, SAMRC, ICF; 2019.
+38. Lloyd-Sherlock P, Beard J, Minicuci N, Ebrahim S, Chatterji S.
+Hypertension among older adults in low- and middle-income countries:
+prevalence, awareness and control. Int J Epidemiol. 2014;43:116–28.
+39. Joseph P, Leong D, McKee M, Anand SS, Schwalm JD, Teo K,
+et al. Reducing the global burden of cardiovascular disease, part 1:
+the epidemiology and risk factors. Circ Res. 2017;121:677 –94.
+40. Xu Y, Chen X, Wang K. Global prevalence of hypertension
+among people living with HIV: a systematic review and meta-
+analysis. J Am Soc Hypertens. 2017;11:530 –40.
+41. Nduka CU, Stranges S, Sarki AM, Kimani PK, Uthman OA. Evi-
+dence of increased blood pressure and hypertension risk among
+people living with HIV on antiretroviral therapy: a systematic
+review with meta-analysis. J Hum Hypertens. 2016;30:355 –62.
+4 2 . D i v a l aO H ,A m b e r b i rA ,I s m a i lZ ,B e y e n eT ,G a r o n eD ,P f a f fC ,e ta l .
+The burden of hypertension, diabetesmellitus, and cardiovascular risk
+factors among adult Malawians in HIV care: consequences for inte-
+grated services. BMC Public Health. 2016;16:1243.
+43. Stergiou GS, Palatini P, Parati G, O'Brien E, Januszewicz A,
+Lurbe E, et al. 2021 European Society of Hypertension practice
+guidelines for of ﬁce and out-of-of ﬁce blood pressure measure-
+ment. J Hypertens. 2021;39:1293 –302.
+44. Bloom ﬁeld GS, Khazanie P, Morris A, Rabadán-Diehl C, Benjamin
+LA, Murdoch D, et al. HIV and noncommunicable cardiovascular
+and pulmonary diseases in low- and middle-income countries in the
+ART era: what we know and best directions for future research. J
+Acquir Immune De ﬁc Syndr. 2014;67:S40–S53.
+45. Feinstein MJ, Hsue PY, Benjamin LA, Bloom ﬁeld GS, Currier JS,
+Freiberg MS, et al. Characteristics, prevention, and management of
+cardiovascular disease in people living with HIV: a scienti ﬁc
+statement from the American Heart Association. Circulation.
+2019;140:e98–e124.
+46. So-Armah K, Benjamin LA, Bloom ﬁeld GS, Feinstein MJ, Hsue
+P, Njuguna B, et al. HIV and cardiovascular disease. Lancet HIV.
+2020;7:e279–e293.
+47. Shah ASV, Stelzle D, Lee KK, Beck EJ, Alam S, Clifford S, et al.
+Global burden of atherosclerotic cardiovascular disease in people
+living with HIV: systematic review and meta-analysis. Circula-
+tion. 2018;138:1100 –12.
+Physical activity and hypertension amongst HIV-positive and HIV-negative populations in rural South. . .

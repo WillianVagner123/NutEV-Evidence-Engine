@@ -1,0 +1,588 @@
+Cad. Saúde Pública 2026; 42:e00131825
+Environmental health during extreme heat: 
+challenges for the practice of safe physical 
+activity in childhood and adolescence  
+Saúde ambiental em tempos de calor extremo: 
+desafios para a prática de atividade física segura 
+na infância e adolescência
+Salud ambiental en épocas de calor extremo: 
+retos para la práctica segura de actividad  
+física en la infancia y la adolescencia
+Fábio de Freitas 1
+Caroline Fogagnolo 2
+Raquel Lima Dornfeld 3
+Marcia Regina Vitolo 1
+Maria Ângela Antônio 1
+Maria Ângela Bellomo Brandão 1
+Correspondence
+F. Freitas
+Universidade Estadual de Campinas.
+Rua Tessália Vieira de Camargo 126, Campinas, SP
+13083-887, Brasil.
+f211272@dac.unicamp.br
+1 Universidade Estadual de Campinas, Campinas, Brasil.
+2 Faculdade de Medicina de Ribeirão Preto, Universidade de  
+São Paulo, Ribeirão Preto, Brasil.
+3 Universidade Federal do Triângulo Mineiro, Uberaba, Brasil.
+doi: 10.1590/0102-311XEN131825
+Abstract
+This essay discusses evidence and evidence-based strategies to ensure the 
+safety, well-being, and continuity of physical activity for children and ado -
+lescents during extreme heat. It emphasizes the adaptation of environments, 
+professional training, and equity in public policies. High temperatures and 
+sedentary behaviors are not isolated challenges, and they create a critical sce -
+nario for the health of children and adolescents when combined, with impacts 
+ranging from thermal regulation to mental health, motor behavior, and risk 
+of obesity. The increasing frequency of extreme heatwaves imposes additional 
+barriers to the safe practice of physical activity among this population, further 
+exacerbating preexisting inequalities. Intense heat increases the risk of de -
+hydration, heat exhaustion, and cognitive impairments, particularly in chil -
+dren, who show lower heat dissipation efficiency due to specific physiologi -
+cal characteristics. Exposure to high temperatures reduces outdoor physical 
+activity, contributing to the worsening of sedentary behavior and pediatric 
+obesity. In this context, adaptive strategies become urgent. Key measures in -
+clude rescheduling physical activity to cooler times of the day, promoting and 
+ensuring adequate hydration, creating shaded and green outdoor spaces, and 
+strengthening public policies aimed at mitigating environmental impacts on 
+children’s health. Additionally, training education professionals and adapting 
+school infrastructure are essential to ensure safer and health-promoting envi-
+ronments in the face of climate change.
+Physical Activity; Climate Changes; Children; Adolescents; Obesity
+ESSAY
+This article is published in Open Access under the Creative Commons 
+Attribution license, which allows use, distribution, and reproduction in 
+any medium, without restrictions, as long as the original work is correctly 
+cited.
+Freitas F et al.
+2
+Cad. Saúde Pública 2026; 42:e00131825
+Introduction
+Extreme weather events, especially heat waves, have become a growing concern on a global  
+scale 1,2. Previous projections showing that global warming would reach 1.5 ºC above pre-industrial 
+levels between 2030 and 2052 have been surpassed by recent weather events 3. Data from the World 
+Meteorological Organization (WMO) and the Copernicus Climate Change Service confirm that 2024 
+marked the first time the global average temperature temporarily exceeded the 1.5ºC threshold 4. The 
+persistence of heat waves has direct and cumulative implications on human health, amplifying their 
+adverse effects 5.
+Extreme heat has been identified as a new type of environmental stress, making it even more 
+challenging to engage in regular physical activity, particularly among vulnerable populations 6. The 
+COVID-19 pandemic created a similar situation: the closure of schools and restrictions on the 
+use of outdoor spaces led to a sharp decline in physical activity levels and an increase in sedentary  
+behavior 7. However, while the pandemic represented a temporary event, the effects of climate change 
+tend to be progressive and long-lasting.
+Climate simulations indicate that the duration of heat waves could quadruple by the 2050s, 
+which reinforces the urgency of multisectoral adaptive strategies in the face of environmental and  
+public health risks 8.
+An increase in ambient temperature has been associated with a reduction in the practice of 
+outdoor physical activity, regardless of age, gender, race, body mass index (BMI), or length of day. 
+It is estimated that for every increase of 1 ºC, there is an average reduction of five minutes a day in 
+moderate to vigorous physical activity 9,10. Such decline contributes to the strengthening of a cycle of 
+sedentary activities, characterized by increased screen time and less participation in physically active 
+behaviors, a pattern associated with worsening sleep quality, increased chronic stress, and a higher 
+risk of metabolic dysfunctions 11. Changes in weather patterns also seem to affect the quality of food, 
+which can further exacerbate metabolic and cardiovascular impacts 12.
+During heat waves, there is an increase in hospital admissions for causes related to children’s men-
+tal health, which suggests that prolonged exposure to high temperatures can compromise emotional 
+regulation and make it challenging to use self-regulation strategies in this age group 13.
+Heat waves pose an increasing challenge for children and adolescents participating in physical 
+activity, as excessive heat acts as a barrier and requires specific adjustments to mitigate their adverse 
+effects on health and well-being 14. This situation illustrates how rising temperatures directly influence 
+the routines and habits of this group, particularly regarding motor behavior and outdoor exposure 15.
+A concrete example of this change is observed in the measures adopted by schools during heat 
+waves, such as the temporary suspension of physical education classes held outdoors 16. These measu-
+res are designed to protect students from the risks associated with prolonged exposure to intense heat, 
+including dehydration, thermal exhaustion, and exacerbation of preexisting medical conditions 17.
+Given the increasing frequency and severity of heat waves, a critical question arises: how to ensure 
+the safe practice of physical activity for children in high-temperature contexts? In this scenario, this 
+study aimed to discuss evidence and evidence-based strategies that ensure the safety, well-being, and 
+continuity of physical activity for children during extreme heat, with an emphasis on adapting envi -
+ronments, professional training, and equity in public policies.
+Heat stress and child health
+The increase in global temperature, associated with the intensification of extreme weather events 
+such as heat waves, exposes children and adolescents to an increasing risk of heat stress 18. Prolonged 
+exposure to intense heat can compromise physical and mental well-being, negatively affect cognitive 
+performance, and increase the occurrence of heat-related health problems such as dehydration, ther-
+mal exhaustion, and heat stroke 19,20.
+In environments with high temperatures, the body’s thermal balance is often compromised dur-
+ing physical activity, as the production of metabolic heat can exceed the thermal dissipation capacity. 
+This imbalance results in elevated core and skin temperatures triggering a series of compensatory 
+ENVIRONMENTAL HEALTH DURING EXTREME HEAT
+3
+Cad. Saúde Pública 2026; 42:e00131825
+physiological responses 21,22. Among these, peripheral vasodilation, increased heart rate, and stroke 
+volume stand out, culminating in higher cardiac output and the activation of sweat glands as a ther -
+moregulatory mechanism 23.
+The main mechanisms of thermoregulation involve heat loss via radiation, convection, and evapo-
+ration. The progressive increase in body temperature imposes an increasing demand on the cardio -
+vascular system, leading to a reduction in stroke volume and a compensatory increase in heart rate to 
+maintain tissue perfusion and blood homeostasis 24.
+Children have morphophysiological particularities that make them more vulnerable to heat 
+stress compared to adults 23,25. Among these characteristics, the lower total muscle mass, which 
+limits the production of efficient energy for thermoregulatory mechanisms, and the higher ratio 
+between body surface area and body mass favor heat gain in environments where air temperature  
+exceeds skin temperature 25.
+Moreover, children tend to rely more on “dry” thermal dissipation mechanisms, such as conduc-
+tion and convection, than on evaporation, which is considered the most efficient means of compen -
+sating for thermal stress 26,27. This physiological limitation results in lower sweat rates and lower heat 
+dissipation efficiency, favoring greater thermal retention compared to adults 28.
+These differences contribute to an increased risk of hyperthermia in children, which are more 
+susceptible to extreme heat 23. There is also the reduced awareness of lower body temperature, 
+which makes it difficult to perceive thermal discomfort and leads to the spontaneous adoption of 
+protective behaviors. In this context, caregivers have a crucial role in regulating heat exposure and  
+ensuring safe environments 27.
+Heat stress also imposes functional consequences, affecting neuromuscular and cognitive per -
+formance. The diversion of blood flow from the brain to the skin compromises fine motor func -
+tion, impairs movements precision, and slows down motor responses, increasing the risk of inju -
+ries and accidents during physical activity 29,30. Notably, prolonged exposure to heat compromises 
+short-term memory, diminishes concentration, and promotes behavioral changes, such as irrita -
+bility and impulsivity. Such effects have direct implications on school and sports performance of  
+children and adolescents 31.
+Challenges of exercising in hot environments
+Physical activity is essential in managing obesity, whether in childhood or adolescence, contributing 
+not only to weight reduction but also to the prevention of metabolic, cardiovascular, and psychologi-
+cal comorbidities. Regular physical activity is also associated with enhanced emotional well-being, 
+increased self-esteem, and improved social integration 32.
+According to the guidelines of the World Health Organization (WHO), children and adolescents 
+should perform at least 60 minutes of moderate to vigorous physical activity daily. However, levels of 
+adherence to this recommendation remain critically low: it is estimated that 85% of girls and 78% of 
+boys do not reach this minimum level of movement 33. A study conducted in Sweden found that on 
+warmer days, 5-year-olds had a significant decline in outdoor physical activity levels 27. The thermal 
+impact proved to be decisive for sedentary behaviors, with a tendency to seek shade and rest as an 
+adaptive response to the heat-generated discomfort. Under such conditions, the environment, which 
+should foster movement and well-being, functions as a significant barrier to the regular practice of 
+physical activity among children and adolescents. In these contexts, the external space ceases to fulfill 
+its role as a health promoter. It begins to impose restrictions on bodily movement, with greater weight 
+falling on the most vulnerable populations 34.
+Given this scenario, it is urgent to rethink the design of urban and school spaces. The creation 
+of green and shaded areas encourages active play and provides thermal comfort and can be a viable 
+strategy to mitigate the effects of heat on physical activity. Simple interventions, such as planting trees 
+in schoolyards or installing shading structures, have shown potential to maintain children’s physical 
+activity even during high temperatures 27.
+In this sense, extreme heat, combined with the scarcity of adequate and accessible spaces for 
+movement, constitutes a significant barrier to promote child health. This scenario is also associated 
+Freitas F et al.
+4
+Cad. Saúde Pública 2026; 42:e00131825
+with higher rates of obesity and the expansion of environmental and social inequities 35. Ensuring 
+outdoor environments that combine thermal safety and movement opportunities is therefore a stra-
+tegic and urgent measure to address the contemporary challenges posed by climate change on the 
+health of new generations.
+Impacts of heat and obesity in childhood and adolescence
+Childhood obesity is one of the most significant global public health challenges, resulting from a 
+complex interaction between genetic, behavioral, and environmental factors 36. Climate change, par-
+ticularly the rise in global average temperatures and the intensification of heat waves, emerges as an 
+additional environmental factor in this multifaceted scenario that negatively affects physical activity 
+levels among children and adolescents, thereby promoting the progression of obesity 24.
+The very condition of obesity can amplify the effects of heat stress. Children with overweight 
+have greater heat production and retention due to the physiological properties of adipose tissue, 
+which include lower water content and lower conduction and thermal dissipation capacity compared 
+to muscle tissue, thereby favoring body’s temperature accumulation 37,38. Such thermal imbalance 
+imposes an additional burden on the cardiovascular system, especially under intense heat, increasing 
+the risk of acute physiological complications 39.
+Cardiorespiratory fitness can act as a protective factor, attenuating the effects of heat stress. Ele-
+vated levels of physical fitness in adults are associated with better core temperature control, greater 
+efficiency in sweating mechanisms, and more effective regulation of cerebral blood flow during heat 
+exposure 40,41. However, evidence on these effects in children and adolescents is still scarce. Given 
+the trend of increasing global temperatures and reducing levels of physical activity in this population, 
+the ability of young people to adapt physiologically to the new climate scenario remains uncertain.
+The development and maintenance of adequate physical activity levels and cardiorespirato -
+ry fitness may represent a key strategy for mitigating the impacts of heat stress and increasing 
+children’s resilience in the face of climate change. Understanding this relationship is essential to 
+guide public policies and more effective preventive interventions aimed at promoting healthy habits  
+during childhood 24.
+Strategies for safe physical activity in high temperatures
+Rethinking the way physical activity is planned and conducted is essential, especially during high 
+temperatures 23. Professionals who work directly with this public, such as physical education teachers, 
+must be appropriately trained to identify early signs of thermal exhaustion. Among the most common 
+symptoms are pallor, intense facial flushing, dizziness, headache, nausea, chills, as well as changes 
+in mood and mental status 18. The prompt identification of these signs is essential to prevent more 
+severe complications and ensure the safety of children during physical activity in hot environments.
+Physical educators and professionals who work with children and adolescents must be able to 
+implement specific safety protocols, ranging from adapting physical effort to broader preventive 
+measures. There are indispensable strategies, such as: modifying practice schedules, prioritizing 
+cooler periods of the day, reducing exercise intensity, and progressively adapting to effort. The use of 
+light clothing, which favors heat dissipation, should also be encouraged 42.
+Another critical aspect is maintaining proper hydration, before, during, and after activities. Hypo-
+hydration, which is characterized by reduced water availability in the body due to excessive fluid and 
+electrolyte loss, is a common condition under heat stress and can compromise both performance and 
+physical safety. To prevent it, regular water intake is recommended throughout the practice: approxi-
+mately 100 to 250mL every 20 minutes for children between 9 and 12 years old, and between 1 and 
+1.5 liters per hour for adolescents, provided they are previously hydrated 30.
+ENVIRONMENTAL HEALTH DURING EXTREME HEAT
+5
+Cad. Saúde Pública 2026; 42:e00131825
+Public policies and mitigation initiatives
+Extreme weather events tend to exacerbate health inequalities, particularly in low-income communi-
+ties, where existing structural barriers to outdoor physical activity include lack of safety, absence of 
+green spaces, and scarcity of adequate facilities. The prevalence of pediatric obesity is often higher in 
+these areas, and extreme heat shows another obstacle, further discouraging physical activity 35.
+Mitigating the effects of climate change requires not only actions aimed at reducing greenhouse 
+gas emissions, but also the strengthening of adaptive strategies. The analysis of the 2024 Europe 
+report of the Lancet Countdown on health and climate change underscores that epidemiological 
+surveillance and educational strategies are essential to mitigate health risks associated with extreme 
+heat 43. Among these, the expansion of green infrastructure, such as urban afforestation and vegeta -
+tion in public areas, and the formulation of public policies focused on reducing the vulnerability of 
+exposed populations stand out, particularly for children living in areas most affected by heat waves 44. 
+Adaptation strategies, such as readjusting physical activity schedules for cooler periods, are essential, 
+however, equity must be considered, since this flexibility of time can be a privilege, not being acces -
+sible to all children and adolescents 43.
+These urban interventions play a dual role: they promote environmental sustainability and 
+improve air quality, and favor the practice of physical activity, contributing to the prevention of 
+childhood obesity 45. At the same time, it is crucial to expand access to covered sports courts, particu-
+larly in school and community contexts, ensuring environments are minimally protected from direct 
+exposure to intense heat 46.
+The adaptation of urban and school infrastructure should not be treated as a privilege, but as a 
+commitment to health equity 47. Ensuring that all children, have access to safe conditions for move -
+ment and play, regardless of their family income or where they live, should be at the heart of policy 
+and urban planning decisions.
+Therefore, promoting safe environments for physical activity in adverse weather conditions is a 
+matter of logistical adaptation and of protecting the health and rights of children. This responsibility 
+requires well-prepared professionals, adequate infrastructure, and public policies aligned with the 
+new environmental reality.
+Freitas F et al.
+6
+Cad. Saúde Pública 2026; 42:e00131825
+Contributors
+F. Freitas contributed with the study conception 
+and writing; and approved the final version. C. 
+Fogagnolo contributed with the study conception 
+and writing; and approved the final version. R. L. 
+Dornfeld contributed with the critical review; and 
+approved the final version. M. R. Vitolo contrib -
+uted with the critical review; and approved the final 
+version. M. A. Antônio contributed with the criti -
+cal review; and approved the final version. M. A. B. 
+Brandão contributed with the critical review; and 
+approved the final version.
+Additional information
+ORCID: Fábio de Freitas (0000-0002-5368-1503); 
+Caroline Fogagnolo (0000-0003-3058-5153); 
+Raquel Lima Dornfeld (0000-0002-2771-7402); 
+Marcia Regina Vitolo (0000-0001-9137-3854); 
+Maria Ângela Antônio (0000-0002-7290-7950); 
+Maria Ângela Bellomo Brandão (0000-0002-1145-
+2606).
+Data availability
+Not applicable.
+Acknowledgments
+This study was supported by the Brazilian Coordi -
+nation for the Improvement of Higher Education 
+Personnel (CAPES; Finance code 001).
+References
+1. Baldwin JW, Dessy JB, Vecchi GA, Oppen -
+heimer M. Temporally compound heat wave 
+events and global warming: an emerging haz -
+ard. Earths Future 2019; 7:411-27.
+2. Ebi KL, Capon A, Berry P, Broderick C, de 
+Dear R, Havenith G, et al. Hot weather and 
+heat extremes: health risks. Lancet 2021; 
+398:698-708.
+3. Masson-Delmotte V, Pörtner HO, Skea J, Zhai 
+P, Roberts D, Shukla PR, et al., editors. Climate 
+change and land: an IPCC special report on 
+climate change, desertification, land degrada -
+tion, sustainable land management, food se -
+curity, and greenhouse gas fluxes in terrestrial 
+ecosystems. Geneva: Intergovernmental Panel 
+on Climate Change; 2019.
+4. Copernicus. 2024 is the first year to exceed 
+1.5ºC above pre-industrial level. https://cli  
+mate.copernicus.eu/copernicus-2024-first-
+year-exceed-15degc-above-pre-industrial-lev  
+el (accessed on 20/Aug/2025).
+5. Ebi KL, Vanos J, Baldwin JW, Bell JE, Hondula 
+DM, Errett NA, et al. Extreme weather and 
+climate change: population health and health 
+system implications. Annu Rev Public Health 
+2020; 42:293-315.
+6. Zisis E, Hakimi S, Lee EY. Climate change, 
+24-hour movement behaviors, and health: a 
+mini umbrella review. Glob Health Res Policy 
+2021; 6:15.
+7. Sá CSC, Pombo A, Luz C, Rodrigues LP, Cor -
+dovil R. COVID-19 social isolation in Bra -
+zil: effects on the physical activity routine of 
+families with children. Rev Paul Pediatr 2020; 
+39:e2020159.
+8. Han Q, Sun S, Liu Z, Xu W, Shi P. Accelerated 
+exacerbation of global extreme heatwaves un -
+der warming scenarios. Int J Climatol 2022; 
+42:5430-41.
+9. Jia P, Dai S, Rohli KE, Rohli RV, Ma Y, Yu C, et 
+al. Natural environment and childhood obe -
+sity: a systematic review. Obes Rev 2021; 22 
+Suppl 1:e13097.
+10. Edwards NM, Myer GD, Kalkwarf HJ, Woo 
+JG, Khoury PR, Hewett TE, et al. Outdoor 
+temperature, precipitation, and wind speed af-
+fect physical activity levels in children: a longi-
+tudinal cohort study. J Phys Act Health 2015; 
+12:1074-81.
+11. Poitras VJ, Gray CE, Borghese MM, Carson V, 
+Chaput JP, Janssen I, et al. Systematic review 
+of the relationships between objectively mea -
+sured physical activity and health indicators in 
+school-aged children and youth. Appl Physiol 
+Nutr Metab 2016; 41(6 Suppl 3):S197-239.
+12. Sheffield PE, Galvez MP. U.S. childhood obe -
+sity and climate change: moving toward shared 
+environmental health solutions. Environ Jus -
+tice 2009; 2:207-14.
+ENVIRONMENTAL HEALTH DURING EXTREME HEAT
+7
+Cad. Saúde Pública 2026; 42:e00131825
+13. Niu L, Girma B, Liu B, Schinasi LH, Clough -
+erty JE, Sheffield P. Temperature and mental 
+health-related emergency department and 
+hospital encounters among children, adoles -
+cents and young adults. Epidemiol Psychiatr 
+Sci 2023; 32:e22.
+14. Proulx K, Daelmans B, Baltag V, Banati P. Cli -
+mate change impacts on child and adolescent 
+health and well-being: a narrative review. J 
+Glob Health 2024; 14:04061.
+15. Lee EY, Park S, Kim YB, Lee M, Lim H, Ross-
+White A, et al. Exploring the interplay between 
+climate change, 24-hour movement behavior, 
+and health: a systematic review. J Phys Act 
+Health 2024; 21:1227-45.
+16. United Nations Children’s Fund. Learning in-
+terrupted: global snapshot of climate-related 
+school disruptions in 2024. https://www.uni  
+cef.org/reports/learning-interrupted-global-
+snapshot-2024 (accessed on 30/Aug/2025).
+17. Grundstein AJ, Williams CA. Heat exposure 
+and the general public: health impacts, risk 
+communication, and mitigation measures. 
+In: Hosokawa Y, editor. Human health and 
+physical activity during heat exposure. Cham: 
+Springer; 2018. p. 29-43.
+18. Bergeron MF, DiLaura Devore C, Rice SG. 
+Climatic heat stress and exercising children 
+and adolescents. Pediatrics 2011; 128:e741-7.
+19. Helldén D, Andersson C, Nilsson M, Ebi KL, 
+Friberg P, Alfvén T. Climate change and child 
+health: a scoping review and an expanded 
+conceptual framework. Lancet Planet Health 
+2021; 5:e164-75.
+20. World Health Organization. Quantita -
+tive risk assessment of the effects of climate 
+change on selected causes of death, 2030s and 
+2050s. https://www.who.int/publications/i/
+item/9789241507691 (accessed on 04/
+May/2025).
+21. Johnson JM, Kellogg DL. Thermoregulatory 
+and thermal control in the human cutane -
+ous circulation. Front Biosci (Schol Ed) 2010; 
+2:825-53.
+22. Johnson JM, Minson CT, Kellogg DL. Cuta -
+neous vasodilator and vasoconstrictor mech -
+anisms in temperature regulation. Compr 
+Physiol 2014;4:33-89.
+23. Azan A, Nyimbili S, Babayode OO, Bershteyn 
+A. Exceeding the limits of paediatric heat 
+stress tolerance: the risk of losing a generation 
+to climate inaction. BMJ Paediatr Open 2025; 
+9:e002883.
+24. Morrison SA. Moving in a hotter world: main-
+taining adequate childhood fitness as a climate 
+change countermeasure. Temperature (Austin) 
+2023; 10:179-97.
+25. Vanos JK. Children’s health and vulnerability 
+in outdoor microclimates: a comprehensive 
+review. Environ Int 2015; 76:1-15.
+26. Notley SR, Akerman AP, Meade RD, McGarr 
+GW, Kenny GP. Exercise thermoregulation in 
+prepubertal children: a brief methodological re-
+view. Med Sci Sports Exerc 2020; 52:2412-22.
+27. Wallenberg N, Lindberg F, Thorsson S, Jung -
+malm J, Fröberg A, Raustorp A, et al. The ef -
+fects of warm weather on children’s outdoor 
+heat stress and physical activity in a preschool 
+yard in Gothenburg, Sweden. Int J Biometeo -
+rol 2023; 67:1927-40.
+28. Falk B, Dotan R. Children’s thermoregulation 
+during exercise in the heat – a revisit. Appl 
+Physiol Nutr Metab 2008; 33:420-7.
+29. Assari S, Zare H. Extreme heat exposure and 
+adolescent cognitive function. Open J Neuro -
+sci 2025; 3:1247.
+30. Périard JD, Eijsvogels TMH, Daanen HAM. 
+Exercise under heat stress: thermoregula -
+tion, hydration, performance implications, 
+and mitigation strategies. Physiol Rev 2021;  
+101:1873-979.
+31. Rony MKK, Alamgir HM. High temperatures 
+on mental health: recognizing the association 
+and the need for proactive strategies – a per -
+spective. Health Sci Rep 2023; 6:e1729.
+32. da Silva JA, da Silva KS, da Costa BGG, Lopes 
+MVV, Salmon J. Movimente program: effec -
+tiveness and moderators of a cluster-random -
+ized controlled trial on self-reported physical 
+activity among Brazilian adolescents. BMC 
+Public Health 2025; 25:1017.
+33. World Health Organization. Global status re -
+port on physical activity 2022. https://www.
+who.int/teams/health-promotion/physical-
+activity/global-status-report-on-physical-ac  
+tivity-2022 (accessed on 04/May/2025).
+34. Tucker P, Gilliland J. The effect of season and 
+weather on physical activity: a systematic re -
+view. Public Health 2007; 121:909-22.
+35. Tu L, Marzouk S, Dowdell KN, Stanford FC. 
+Reimagining urban spaces: green spaces, obe -
+sity, and health resilience in an era of extreme 
+heat. J Urban Health 2024; 101:344-8.
+36. Karnik S, Kanekar A. Childhood obesity: a 
+global public health crisis. In: Hassan A, editor. 
+School nutrition and activity: impacts on well-
+being. Oakville: Apple Academic Press; 2015. 
+p. 3-15.
+37. Dougherty KA, Chow M, Kenney W. Respons-
+es of lean and obese boys to repeated summer 
+exercise in the heat bouts. Med Sci Sports Ex -
+erc 2009; 41:279-89.
+38. Dervis S, Coombs GB, Chaseling GK, Filingeri 
+D, Smoljanic J, Jay O. A comparison of ther -
+moregulatory responses to exercise between 
+mass-matched groups with large differences in 
+body fat. J Appl Physiol 2016; 120:615-23.
+39. Dehghan H, Mortazavi S, Jafari M, Maracy M. 
+Cardiac strain comparison between workers 
+with normal weight and overweight in the hot 
+humid weather of the Persian Gulf region. J 
+Educ Health Promot 2013; 2:48.
+40. Bailey DM, Marley CJ, Brugniaux JV, Hodson 
+D, New KJ, Ogoh S, et al. Elevated aerobic fit -
+ness sustained throughout the adult lifespan is 
+associated with improved cerebral hemody -
+namics. Stroke 2013; 44:3235-8.
+Freitas F et al.
+8
+Cad. Saúde Pública 2026; 42:e00131825
+41. Ravanelli N, Gagnon D, Imbeault P, Jay O. A 
+retrospective analysis to determine if exercise 
+training‐induced thermoregulatory adapta -
+tions are mediated by increased fitness or heat 
+acclimation. Exp Physiol 2021; 106:282-9.
+42. Bytomski JR, Squire DL. Heat illness in chil -
+dren. Curr Sports Med Rep 2003; 2:320-4.
+43. van Daalen KR, Tonne C, Semenza JC, Rock -
+löv J, Markandya A, Dasandi N, et al. The 2024 
+Europe report of the Lancet Countdown on 
+health and climate change: unprecedented 
+warming demands unprecedented action. Lan-
+cet Public Health 2024; 9:e495-522.
+44. La Rosa D, Pappalardo V. Policies and planning 
+of urban green infrastructure and sustainable 
+urban drainage systems. In: Catalano C, An -
+dreucci MB, Guarino R, Bretzel F, Leone M, 
+Pasta S, editors. Urban services to ecosystems. 
+Cham: Springer; 2021. p. 297-316. (Future 
+City, 17).
+45. Tzoulas K, Korpela K, Venn S, Yli-Pelkonen 
+V, Kaźmierczak A, Niemela J, et al. Promoting 
+ecosystem and human health in urban areas 
+using green infrastructure: a literature review. 
+Landsc Urban Plan 2007; 81:167-78.
+46. Shortridge A, Walker VI W, White DD, Guard-
+aro MM, Hondula DM, Vanos JK. HeatReady 
+schools: a novel approach to enhance adaptive 
+capacity to heat through school community 
+experiences, risks, and perceptions. Clim Risk 
+Manag 2022; 36:100437.
+47. Kenny GP, Tetzlaff EJ, Journeay WS, Hender -
+son SB, O’Connor FK. Indoor overheating: a 
+review of vulnerabilities, causes, and strategies 
+to prevent adverse human health outcomes 
+during extreme heat events. Temperature 
+(Austin) 2024; 11:203-46.
+ENVIRONMENTAL HEALTH DURING EXTREME HEAT
+9
+Cad. Saúde Pública 2026; 42:e00131825
+Resumo
+Este ensaio discute evidências e estratégias ba -
+seadas em evidências para garantir a segurança, 
+o bem-estar e a continuidade da atividade física 
+para crianças e adolescentes em contextos de ca -
+lor extremo. Enfatiza a adaptação dos ambientes, 
+a formação profissional e a equidade nas políticas 
+públicas. Altas temperaturas e comportamentos 
+sedentários não são desafios isolados. Quando 
+combinados, criam um cenário crítico para a saú -
+de de crianças e adolescentes, com impactos que 
+vão desde a regulação térmica até a saúde men -
+tal, o comportamento motor e o risco de obesidade. 
+A frequência crescente de ondas de calor extremo 
+impõe barreiras adicionais à prática de atividade 
+física segura nessa população, exacerbando ainda 
+mais as desigualdades pré-existentes. O calor in -
+tenso aumenta o risco de desidratação, exaustão 
+pelo calor e comprometimentos cognitivos, parti -
+cularmente em crianças, que apresentam menor 
+eficiência de dissipação de calor devido a caracte -
+rísticas fisiológicas específicas. A exposição a altas 
+temperaturas reduz a atividade física ao ar livre, 
+contribuindo para o agravamento do comporta -
+mento sedentário e da obesidade pediátrica. Nesse 
+contexto, estratégias adaptativas tornam-se ur -
+gentes. Medidas-chave incluem a reprogramação 
+da atividade física para horários mais frescos do 
+dia, a promoção e garantia de hidratação adequa -
+da, a criação de espaços ao ar livre com sombra e 
+vegetação, e o fortalecimento de políticas públicas 
+voltadas à mitigação dos impactos ambientais na 
+saúde das crianças. Além disso, a capacitação de 
+profissionais da educação e a adaptação da in -
+fraestrutura escolar são essenciais para garantir 
+ambientes mais seguros e saudáveis   diante das 
+mudanças climáticas.
+Atividade Física; Mudanças Climáticas; 
+Crianças; Adolescentes; Obesidade
+Resumen
+Este artículo analiza las pruebas y las estrategias 
+basadas en pruebas para garantizar la seguridad, 
+el bienestar y la continuidad de la actividad física 
+de los niños y adolescentes en contextos de calor 
+extremo. Destaca la importancia de la adaptación 
+de los entornos, la formación profesional y la equi-
+dad en las políticas públicas. Las altas temperatu -
+ras y los comportamientos sedentarios no son retos 
+aislados. Cuando se combinan, crean un escena -
+rio crítico para la salud de los niños y adolescen -
+tes, con repercusiones que van desde la regulación 
+térmica hasta la salud mental, el comportamiento 
+motor y el riesgo de obesidad. La creciente fre -
+cuencia de las olas de calor extremo impone barre-
+ras adicionales a la práctica segura de la actividad 
+física entre esta población, lo que agrava aún más 
+las desigualdades preexistentes. El calor intenso 
+aumenta el riesgo de deshidratación, agotamien -
+to por calor y daños cognitivos, especialmente en 
+los niños, que presentan una menor eficiencia en 
+la disipación del calor debido a sus características 
+fisiológicas específicas. La exposición a altas tem -
+peraturas reduce la actividad física al aire libre, 
+lo que contribuye al empeoramiento del sedenta -
+rismo y la obesidad infantil. En este contexto, las 
+estrategias de adaptación se vuelven urgentes. Las 
+medidas clave incluyen reprogramar la actividad 
+física para las horas más frescas del día, promover 
+y garantizar una hidratación adecuada, crear es -
+pacios al aire libre con sombra y vegetación, y for-
+talecer las políticas públicas destinadas a mitigar 
+los impactos ambientales en la salud de los niños. 
+Además, la formación de los profesionales de la 
+educación y la adaptación de la infraestructura es-
+colar son esenciales para garantizar entornos más 
+seguros y que promuevan la salud frente al cambio 
+climático.
+Actividad Física; Cambios Climáticos; Niños; 
+Adolescentes; Obesidad
+Submitted on 02/Jul/2025
+Final version resubmitted on 11/Sep/2025
+Approved on 04/Oct/2025
+Evaluation coordinator:
+Editor-in-Chief Marilia Sá Carvalho
+(0000-0002-9566-0284)

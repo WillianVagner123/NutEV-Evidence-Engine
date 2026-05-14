@@ -1,0 +1,1593 @@
+ARTICLE IN PRESS
+Article in Press
+We are providing an unedited version of this manuscript to give early access to its 
+findings. Before final publication, the manuscript will undergo further editing. Please 
+note there may be errors present which affect the content, and all legal disclaimers 
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer 
+Review reports will publish with the final article.
+Cite this article as: Melville, H.,
+Jebeile, H., Libesman, S. et al.  A
+systematic mapping review of
+individual participant factors
+related to eating disorder risk
+collected in behavioural weight
+management trials. Eat Weight
+Disord (2026).
+https://doi.org/10.1007/s4051
+9-026-01866-0
+©The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits
+use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original
+author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third
+party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the
+material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this
+licence, visit http://creativecommons.org/licenses/by/4.0/
+A systematic mapping review of individual
+participant factors related to eating disorder
+risk collected in behavioural weight management
+trials
+Eating and Weight Disorders - Studies on Anorexia, Bulimia and Obesity
+https://doi.org/10.1007/s40519-026-01866-0
+Received: 22 Jan 2026
+Accepted: 03 May 2026
+Hannah Melville, Hiba Jebeile, Sol Libesman, Sarah Garnett, Kylie Hunter, Isabelle
+Jardine, Rabia Khalid, Sasha Lorien, Jonathan Williams, Louise Baur, Anna Seidler &
+Natalie Lister
+ARTICLE IN PRESS
+Title:
+A systematic mapping review of individual participant factors related 
+to eating disorder risk collected in behavioural weight management 
+trials
+Author names:
+Hannah Melville1,2, Hiba Jebeile1,2, Sol Libesman3, Sarah P. Garnett1, 
+Kylie E. Hunter3, Isabelle R. Jardine1,2, Rabia Khalid1,2, Sasha J. 
+Lorien1,2, Jonathan G. Williams3, Louise A. Baur1, 2, Anna L. Seidler3, 4, 
+Natalie B. Lister1,2 
+On behalf of the EDIT Collaboration
+Affiliations:
+1Children’s Hospital Westmead Clinical School, The University of 
+Sydney, Sydney, New South Wales, Australia
+2Charles Perkins Centre, The University of Sydney, Sydney, New South 
+Wales, Australia
+3NHMRC Clinical Trials Centre, Faculty of Medicine and Health, The 
+University of Sydney, Sydney, New South Wales, Australia
+4German Centre for Child and Adolescent Health, University Medicine 
+Rostock (Universitätsmedizin Rostock), University of Rostock, Rostock, 
+Germany
+Corresponding author: 
+Ms Hannah Melville
+Email address: Hannah.melville@sydney.edu.au 
+Postal address:
+Level 6, Block K
+Westmead Hospital
+176 Hawkesbury Road
+Westmead, New South Wales, Australia, 2145
+1            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Acknowledgements
+Members of the EDIT Collaboration—Study team: Natalie B. 
+Lister, Hiba Jebeile, Anna L. Seidler, Brittany J. Johnson, Rabia Khalid, 
+Hannah Melville, Sol Libesman, Isabelle R. Jardine, Sasha J. Lorien, 
+Ruth Tredinnick, Caitlin M. McMaster, Kylie E. Hunter. 
+Scientific and Stakeholder Advisory Panel: Amy L. Ahern, Lisa 
+Askie, Louise A. Baur, Caroline Braet, Kelly Cooper, Genevieve 
+Dammery, Sarah P. Garnett, Rebecca Golley, Alicia M. Grunseit, Faith 
+A. N. Heeren, Andrew J. Hill, Rebecca A. Jones, Theodore K. Kyle, 
+Sarah Maguire, Dasha Nicholls, Susan J. Paxton, Milan K. Piya, Fiona 
+Quigley, Molly Robbins, Amanda Sainsbury, Katharine Steinbeck, 
+Denise E. Wilfley, Jacqlyn Yourell. Trial representatives: Rachel D. 
+Barnes, Melanie K. Bean, Kristine Beaulieu, Maxine Bonham, Kerri 
+Boutelle, Caroline Braet, Braulio Branco, Simona Calugi, Michelle I. 
+Cardel, Kelly M. Carpenter, Hoi Lun Cheng, Riccardo Dalle Grave , 
+Katherine Darling, Brenda Davy, Marcelo Demarzo, Aimee L. Dordevic, 
+Dawn M. Eichen, Leonard H. Epstein, Andrea B. Goldschmidt, Amy 
+Gross, Faith A. N. Heeren, Anja Hilbert, Katrijn Houben, Erica M. 
+Howes, Elissa Jelalian, Natalie B. Lister, Mara C. Lofrano Prado, Corby 
+Martin, Anne McTiernan, Janell Mensinger, Tiffany Naets, Dasha 
+Nicholls, Carly Pacanowski, Stephanie Partridge, Wagner L. Prado, 
+Sofia M. Ramalho, Jaythani Raman, Hollie A. Raynor, Kyung E. Rhee, 
+Elizabeth Rieger, Eric Robinson, Amanda Sainsbury, Vera Salvo, Brian 
+M. Shelley, Nancy E. Sherwood, Sharon A. Simpson, Hanna F. 
+Skjakodegard, Evelyn Smith, Yngvild Sørebø Danielsen, Richard I. 
+Stein, Marian Tanofsky-Kraff, Rachael W. Taylor, Annelies Van Eyck, 
+Krista A. Varady, Alaina P. Vidmar, Victoria Whitelock, Denise E. 
+Wilfley, Jack Yanovski.
+2            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Abstract
+Purpose: To identify which factors potentially relevant to eating 
+disorder risk were collected by trials included in the Eating Disorders 
+In weight-related Therapy (EDIT) Collaboration.
+Methods: Databases were systematically searched to March 2022, 
+and clinical trial registries to May 2022, to identify behavioural weight 
+management randomised controlled trials assessing eating disorder 
+risk in adolescents (10-18 years) and adults (≥19 years) with 
+overweight/obesity.  Individual participant data were requested from 
+eligible trials across 11 domains (demographics, anthropometry, 
+medical history, history of dieting and weight loss attempts, mental 
+health, personality, psychosocial health, sleep quality, weight stigma, 
+eating behaviours, cardiometabolic health), including 58 participant 
+factors identified through a consensus study as relevant to eating 
+disorder risk. Trial data were mapped and summarised descriptively. 
+Results: We identified 106 eligible trials, of which 46 (20 adolescent, 
+26 adult) individual participant datasets were provided. Adolescent 
+and adult datasets both included factors across a median (range) of 6 
+(4-9) domains. There was broad coverage across demographics, 
+medical history, anthropometry, mental health, psychosocial health 
+and eating behaviours, where each domain was included in >50% of 
+datasets. Each of the remaining domains were included in ≤50% of 
+datasets.
+Conclusion:  Trials collected many diverse factors potentially 
+relevant to eating disorder risk. Further exploration is needed within 
+underrepresented domains, such as weight stigma, to better 
+understand their contribution to eating disorder risk within 
+behavioural weight management.
+Keywords: behavioural weight management, obesity, eating 
+disorders, mapping review, individual participant data
+3            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Level of Evidence: Level V, Opinions of respected authorities, based 
+on descriptive studies, narrative reviews, clinical experience, or 
+reports of expert committees.
+Introduction
+Behavioural weight management is integral within obesity treatment 
+interventions in both adolescents and adults. (1-3)  Individuals may 
+present for obesity interventions with undiagnosed eating disorders or 
+disordered eating. A 2025 systematic review estimated that, in adults 
+presenting for obesity treatment, 14% present with binge eating 
+disorder and 26% with self-reported moderate binge eating. (4) 
+Behavioural weight management interventions are commonly used to 
+improve weight outcomes in adolescents (5, 6) and adults (7, 8) . 
+However, there are concerns about some weight management 
+strategies such as dieting and other weight control behaviours, due to 
+their shared risk factors with eating disorders. (9-11) Recent 
+systematic reviews and meta-analyses have found eating disorder 
+risk improves or remains unchanged for most adolescents and adults 
+following weight management interventions. (8, 12-16) A small subset 
+of individuals, however, may experience poor eating disorder 
+outcomes during or following behavioural weight management 
+interventions. (14, 15)  Given this, eating disorder development within 
+behavioural weight management is a serious and important safety 
+concern. There is currently an evidence gap in understanding who 
+may develop eating disorders, and how, during weight management 
+interventions.
+In 2021, the Eating Disorders In weight-related Therapy (EDIT) 
+Collaboration (hereon referred to as EDIT) was formed to address this 
+evidence gap. This international collaboration uses individual 
+participant data meta-analyses and intervention deconstruction to 
+understand the individual level interaction between behavioural 
+4            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+weight management interventions and eating disorder risk. (17, 18) 
+To achieve this, a list of individual participant factors potentially 
+relevant to change in eating disorder risk during behavioural weight 
+management interventions was developed. These factors were based 
+on previous literature and stakeholder consultation (17, 19), and were 
+used to inform the data collection process from trialists. 
+While eating disorder risk factors are generally well established (20), 
+our previous scoping review found key eating disorder risk factors 
+such as childhood abuse and trauma were not considered in models 
+of eating disorder development for people with obesity. (21) Further, 
+there was a lack of longitudinal evidence on risk factors within a 
+weight management context. (21) In order to comprehensively assess 
+eating disorder risk during obesity treatment and inform future 
+analysis, there is first a need to systematically map (22) availability of 
+factors and highlight areas of research paucity. Therefore, the 
+primary aim of this systematic mapping review was to identify which 
+factors potentially relevant to eating disorder risk were collected by 
+behavioural weight management trials included in the EDIT 
+Collaboration. The secondary aim was to identify critical research 
+gaps to guide future data collection and enable further exploration of 
+eating disorder risk within behavioural weight management 
+interventions.
+Methods
+This systematic mapping review was based on a protocol for a 
+systematic review and individual participant data meta-analysis which 
+aims to evaluate individual eating disorder risk during behavioural 
+weight management. (17)  The protocol was prospectively registered 
+on PROSPERO (CRD42021265340). A systematic mapping review was 
+selected as this method applies a rigorous approach to identifying and 
+describing evidence and evidence gaps in a broad topic. (22) This 
+5            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+mapping review expands the original protocol’s scope to summarise 
+the factors potentially relevant to eating disorder risk collected by 
+eligible behavioural weight management trials. This review follows the 
+Preferred Reporting Items for Systematic Reviews (PRISMA). (23)
+Eligibility criteria
+Randomised controlled trials eligible for inclusion in EDIT were 
+identified through a systematic search as previously described. (17) In 
+brief, eligible trials were behavioural weight management 
+interventions aiming to improve a weight-related outcome in either 
+adolescents (10 to 18 years at baseline) or adults (≥19 years at 
+baseline) with overweight or obesity as reported by trialists, or 
+defined as body mass index (BMI) z-score >1 or BMI ≥85th percentile 
+in adolescents, and BMI >25 kg/m2 in adults. Eligible trials were 
+required to collect at least one eating disorder symptom or behaviour 
+using a clinical interview or validated questionnaire at baseline and 
+post-intervention and/or follow up.  
+Information sources
+Electronic databases (MEDLINE, Embase, PsycINFO and Scopus) were 
+searched to March 2022 and clinical trial registries (ClinicalTrials.gov 
+and the WHO International Clinical Trials Registry Platform) to May 
+2022, with additional handsearching of relevant sources. Eligible 
+trialists were invited by email to join EDIT and share de-identified 
+individual participant data. 
+Selection process
+Identified studies were uploaded to Covidence (24) for title and 
+abstract and full text screening. Screening was independently 
+conducted in duplicate with conflicts resolved by discussion or a third 
+reviewer. Clinical trial registry records were screened by one 
+reviewer, with uncertainties resolved by a second reviewer. (25) 
+6            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Identifying individual participant factors
+A consensus process was used to identify all individual participant 
+factors (n) potentially relevant to change in eating disorder risk in the 
+context of weight management interventions. The findings of the 
+consensus study have been previously published. (19) In brief, factors 
+were first derived from the literature and through consultation 
+workshops with the EDIT Scientific and Stakeholder Advisory Panels. 
+An international online survey then rated factors for relevance, and 
+captured any relevant factors not already identified. The resulting 
+factors (n=58) deemed potentially relevant to change in eating 
+disorder risk during weight management were collated, and grouped 
+thematically into 11 different domains including; demographics 
+(n=14), anthropometry (n=4),  medical and family history (n=7), 
+history of dieting and weight loss attempts (n=3), mental health 
+(n=6), personality traits (n=1), psychosocial health (n=4), sleep 
+quality (n=1), weight stigma (n=3), eating behaviours (n=10), and 
+cardiometabolic health (n=5). As specified in the eligibility criteria, all 
+included trials collected data using validated eating disorder 
+measures. 
+Data collection process
+For each of the 58 participant factors, data were requested from 
+eligible trials who agreed to join EDIT. Data from each trial were 
+mapped against the EDIT variable list. For each variable, the details of 
+measurement and reporting were recorded e.g., name of 
+questionnaire and scoring. This process was completed independently 
+by one researcher and checked by a second. Trialists were contacted 
+to query any unclear, incomplete or missing information and details 
+were updated accordingly.
+7            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Synthesis methods
+A narrative summary of studies was conducted according to the 
+Synthesis Without Meta-analysis (SWIM) guidelines. (26) Factors were 
+summarised using descriptive statistics including counts and 
+percentages. To visualise the co-occurrence of collected domains, 
+UpSet graphs were developed with R version 4.4.2 (2024-10-31) (27) 
+using the UpSetR (28) statistical package.
+Results
+From 14,880 records screened, 106 trials were eligible and invited to 
+join EDIT. From these, 56 trials agreed to join EDIT and 42 (20 
+adolescent (29-59) and 22 adult (60-99) trials) shared individual 
+participant data. Four adolescent trials included parent/caregiver 
+dyad data which were then integrated with other adult trials to form 
+26 adult datasets (k) in total (Figure 1). Most trials (n) were conducted 
+in United States (n=23), followed by Australia (n=7) and the United 
+Kingdom (n=3). Trials were completed in a variety of settings 
+including university (n=16), hospital outpatient (n=10) and primary 
+care (n=4). See Supplementary Table 1 for summarised trial 
+information including participant enrolment dates, and the individual 
+participant factors collected per trial. 
+Eating disorder symptoms and behaviours
+Consistent with the eligibility criteria, all datasets provided data on 
+eating disorder symptoms or behaviours. In adolescents, most 
+datasets provided data on global eating disorder-related symptoms 
+(k=16), followed by eating disorder behaviours or episodes (k=9), and 
+binge eating-related symptoms (k=4). In adult datasets, binge eating-
+related symptoms (k=14) were most commonly provided, followed by 
+global eating disorder-related symptoms (k=13), and eating disorder 
+behaviours or episodes (k=12). Further information on eating disorder 
+symptoms and behaviours can be found in Table 1. 
+8            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Factors and domains potentially related to eating disorder risk
+Of the 11 domains, both adolescent and adult datasets included 
+factors across a median (range) of six (4-9) domains. See Table 2 for 
+the summary of all available adolescent and adult individual 
+participant factors with descriptions, showing the number of total 
+datasets that included each factor. The domains of demographics, 
+medical and family history, anthropometry, mental health, 
+psychosocial health and eating behaviours, were included by >50% of 
+datasets. Some domains were underrepresented, meaning factors 
+within a domain were less frequently measured, in both adolescents 
+and adults. The domains included by ≤50% of datasets were history 
+of dieting and weight loss attempts, personality traits, sleep quality, 
+weight stigma, and cardiometabolic health. Tabulated results for 
+adolescent and adult datasets with median (range) of included factors 
+per dataset for each domain can be found in Supplementary Table 2.  
+Across the 20 adolescent datasets, there were 17 unique 
+combinations of domains reported, as shown in Figure 2a. Across the 
+26 adult datasets, there were 15 unique combinations of domains 
+reported, as shown in Figure 2b. One domain combination was found 
+across five adult datasets (69, 74, 87, 91, 99). Domains included in 
+this combination were demographics, medical and family history, 
+anthropometry, mental health, eating behaviours and psychosocial 
+health. 
+Demographics
+All adolescent (k=20/20) and adult (k=26/26) datasets included 
+factors within the demographics domain. Out of 14 factors, the 
+median number (range) of factors per dataset was 7 (2-10) in 
+adolescents and 6 (2-9) in adults. All adolescent (k=20/20) and adult 
+(k=26/26) datasets included sex at birth or self-reported gender. 
+9            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Across adolescents and adults, datasets included various measures of 
+social determinants of health such as education status (k=16/20; 
+k=19/26), household income (k=7/20; k=10/26), support (k=8/20; 
+k=7/26), and socio-economic status (k=9/20; k=5/26).
+Anthropometry
+All adolescent (k=20/20) and most adult (k=25/26) datasets included 
+factors within the anthropometry domain. Out of four factors, the 
+median number of factors per dataset was 3 (2-4) in adolescents and 
+3 (2-4) in adults. Weight and height were included by all 20 
+adolescent datasets and half (k=10/20) reported adiposity e.g. body 
+fat percentage.  Similarly, in adults most (k=25/26) datasets included 
+weight and height, and half included adiposity (k=13/26). 
+Medical and family history 
+Most adolescent (k=17/20) and all adult (k=26/26) datasets included 
+factors within the medical and family history domain. Out of seven 
+factors, the median number of factors per dataset was 3 (1-5) for 
+adolescents and 2 (1-5) for adults. In adolescents, the most frequently 
+included factors were medical history (k=13/20), family medical 
+history (k=11/20), and medication history (k=10/20). In adult 
+datasets, the most commonly included factors were medication 
+history (k=21/26), medical history (k=19/26) and eating disorder 
+history (k=15/26). Few included data on life events which may 
+influence body weight (adolescent k=1/20; adult k=3/26) and age of 
+obesity onset (adolescent k=1/20; adult k=1/26).
+History of dieting and weight loss attempts
+Less than half of adolescent (k=6/20) and adult (k=7/26) datasets 
+included factors on history of dieting and previous weight loss 
+attempts. Out of three factors, the median number of factors per 
+dataset was 3 (2-3) in adolescents and 2 (1-3) for adult datasets. Few 
+10            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+adolescent trials (k=3/20) included data on prior weight loss attempts 
+e.g., dieting or pharmacotherapy, and few adult trials (k=2/26) 
+included data on dieting duration.  
+Mental health
+Almost all adolescent (k=19/20) and adult (k=23/26) datasets 
+included factors within the mental health domain. Out of six factors, 
+the median numbers of factors per dataset was 2 (1-4) in adolescents 
+and 2 (1-5) in adults. Depression (adolescent k=19/20; adult 
+k=19/26) and anxiety symptoms (k=11/20; k=15/26) were most 
+frequently included. Other aspects of mental health were less 
+frequently included, for example, history of trauma (adolescent 
+k=0/20; adults k=2/26), self-harm and suicidality (adolescents 
+k=2/20; adults k=3/26) and mental health diagnoses e.g.  depression 
+or anxiety (adolescents k=1/20; adults k=7/26).  
+Personality traits
+Three adult dataset (k=3/26) assessed personality traits, the single 
+factor, with no data available for adolescents. 
+Psychosocial health
+Most adolescent (k=15/20) and adult (k=17/26) datasets included 
+factors within the psychosocial health domain. Out of four factors, the 
+median number of factors per dataset was 2 (1-3) in adolescents and 
+1 (1-4) in adults. Within adolescents, body dissatisfaction was the 
+most frequently included factor (k=10/20), followed by quality of life 
+(k=8/20). Within adult datasets, stress was the most commonly 
+included factor (k=11/26), followed by quality of life (k=8/26). 
+Sleep quality
+Few adolescent (k=2/20) and adult (k=6/26) datasets included sleep 
+quality, the single factor in this domain. 
+11            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Weight stigma
+Few adolescent datasets (k=4/20) included factors related to the 
+experience of weight stigma. Out of three factors, the median number 
+of factors per dataset being 1 (1-2). No data were available for adults. 
+Eating behaviours
+Half of adolescent (k=10/20) and most adult (k=23/26) datasets 
+included factors within the eating behaviours domain. Out of ten 
+factors, the median number of factors per dataset was 3 (1-4) for 
+adolescents and 2 (1-5) for adults. In adolescents, emotional eating 
+was the most frequently included factor (k=8/20), followed by 
+external eating (k=5/20) and dietary restraint when assessed with an 
+eating behaviour measure (rather than an eating disorder measure) 
+(k=5/20). In adults, dietary restraint was the most included factor 
+(k=14/26), followed by disinhibition related to eating (k=11/26) and 
+external eating (k=7/26).
+Cardiometabolic health
+Less than half of adolescent (k=8/20) and half of adult (k=13/26) 
+datasets included factors in the cardiometabolic health domain. Out 
+of five factors, the median number of factors per dataset was 5 (1-5) 
+for adolescents and 4 (1-5) for adults. The most frequently included 
+factors in adolescents and adults were blood pressure (k=6/20; 
+k=12/26) and blood lipids (k=6/20; k=11/26). 
+Discussion 
+This review mapped the available individual participant factors 
+relevant to eating disorder risk, as identified in the EDIT consensus 
+study, across 42 behavioural weight management trials. (17, 19)  A 
+key strength and finding from this review was that all trials collected 
+factors across multiple and unique combinations of domains, 
+12            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+demonstrating widespread coverage of physical and psychosocial 
+health.  Some domains, however, were underrepresented in both 
+adolescents and adults, including history of dieting and weight loss 
+attempts, and the experience of weight stigma. The results from this 
+mapping review identified strengths of the current evidence base, as 
+well as research gaps which need to be addressed to fully understand 
+eating disorder risk within behavioural weight management. 
+Almost all trials collected and provided data on anthropometry, which 
+was expected, given BMI or overweight/obesity status were eligibility 
+criteria. Our findings demonstrate that EDIT trials commonly collected 
+and provided data on mental health, psychosocial health and eating 
+behaviours. This is likely also a reflection of EDIT’s eligibility criteria, 
+which required reporting of eating disorder outcomes. There were 
+many unique combinations of domains collected by trials. However, 
+the domains of demographics, anthropometry, medical and family 
+history, mental health, eating behaviours and psychosocial health 
+were the most common combination in both adolescents and adults. 
+Our previous scoping review of eating disorder development 
+pathways in people with obesity identified some risk factors were 
+infrequently considered, particularly in adolescents. These included 
+dietary restraint, loss of control eating, emotional eating, body 
+dissatisfaction, and self-esteem. (21) In contrast, this mapping review 
+found domains representing these factors were measured in more 
+than 50% of trials, suggesting consideration of holistic health beyond 
+anthropometric measures. Importantly, this highlights data 
+availability for future examination of the potential role of these factors 
+when considering eating disorder development pathways in the 
+context of weight management interventions. 
+Although many trials in this review were found to collect data across 
+mental health, psychosocial health and eating behaviours, concerns 
+13            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+have been raised that these outcomes are not routinely and 
+consistently assessed in obesity clinical trials. (100-102) Previous 
+systematic reviews have reported the effect of behavioural weight 
+management on these outcomes and emphasised the need to 
+measure and report them. (100, 102-108) It is suggested that lack of 
+resources, expertise and capacity may be contributing to the paucity 
+of data. (101) Further, when these outcomes are measured, there is 
+significant inconsistency in their reporting and the assessment tools 
+used. (100-102, 109) Such variability impacts the reliability of 
+evidence synthesis, thereby reducing statistical power for meta-
+analyses. For example, a 2021 meta-analysis in adults reported 
+insufficient evidence on the impact of behavioural weight 
+interventions on select outcomes at intervention end. (102) This, 
+along with infrequent outcome measurement across obesity clinical 
+trials, indicates there are ongoing challenges to evidence synthesis 
+which limit contribution to the evidence base. 
+This review highlighted some underrepresented domains in 
+behavioural weight management trials. One such domain is weight 
+stigma, which was identified in the EDIT consensus study (19) as an 
+important factor to consider in our understanding of eating disorder 
+risk.  A 2025 scoping review of 46 studies identified weight stigma as 
+a common construct within eating disorder development pathways. 
+(21) We speculate this research gap may be due to multiple reasons. 
+Firstly, there is no clear guidance for trialists on which aspect of 
+weight stigma to measure e.g., internalised weight stigma or 
+experience of weight stigma from the environment, and how to 
+assess these experiences. A 2021 systematic review reported on 18 
+different weight stigma measures, finding most focused on 
+internalised weight stigma, and were graded as very low or low 
+quality. (110) The measurement of weight stigma, both internalised 
+and experienced, is important as its impact on health is largely 
+14            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+missing within the literature. (111) Further research is needed to 
+explore the role of weight stigma in relation to eating disorder risk, as 
+well as on health outcomes more broadly.  Secondly, weight stigma 
+may be considered or addressed in a trial without a specific 
+measurement. This was demonstrated in EDIT adolescent trials which 
+specifically included strategies to address weight stigma such as 
+education to increase resilience to weight stigma. (112) Further, 
+efforts to address weight stigma may not always be protocolised or 
+documented, but part of routine clinical care. For example, using 
+person-first language and having access to appropriate medical 
+equipment are good clinical practice but rarely documented. (113) 
+This review revealed few trials collected data related to the history of 
+dieting and weight loss attempts. Previous dieting attempts have 
+been identified as a potential early indicator of eating disorder risk. 
+(114) For example, a 5-year longitudinal study in adolescents 
+(n=2,516) found dieting with the intention to lose weight was 
+significantly associated with binge eating in both females and males. 
+(115) However, a 2016 review highlighted the ongoing difficulty in 
+defining dieting history and a weight loss attempt, and suggested 
+dietary restriction can be associated with both positive and negative 
+outcomes during behavioural weight management interventions, 
+depending on the individual. (116) To our knowledge, there are 
+limited validated assessment tools to report previous dieting history 
+and weight loss attempts. (117) The Weight and Lifestyle Inventory 
+has been used to assess dieting and weight loss history in adults 
+within clinical practice however, it has not been formally validated. 
+(118) Another tool is the Making Weight Inventory which assesses 
+extreme weight control behaviours used to meet a weight 
+requirement, although this tool has only been validated within the 
+military population and refers to behaviours linked to eating disorder 
+pathology such as purging and fasting. (119) Taken together, unclear 
+15            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+definitions coupled with limited assessment tools have created 
+barriers in ongoing research in this area.  
+Strengths and limits
+This mapping review used a systematic approach which enabled the 
+identification of key strengths and gaps within the current evidence 
+base. The results provide a broad overview of the factors collected by 
+behavioural weight management trials within EDIT, which included 
+information beyond primary outcomes as well as unpublished data. 
+There were also limitations. EDIT trials included in this review may not 
+be representative of all behavioural weight management 
+interventions as they have assessed eating disorder risk at multiple 
+timepoints. Thus, EDIT trials were designed by investigators cognisant 
+of mental health, and this may have further influenced domains 
+included in trials. Trials collected data using a variety of different 
+assessment tools, standardised and more consistent measures may 
+facilitate future evidence synthesis. Further, trials in this review were 
+all conducted in upper-middle- or high-income countries, meaning 
+results may not be generalisable to all countries. This may also 
+indicate some wider health research disparities that should be 
+addressed in future studies. Finally, this mapping review only 
+described included factors from EDIT trials and does not infer factor 
+importance or priority when considering eating disorder risk in 
+behavioural weight management. 
+What is already known on this subject?
+Eating disorder development during behavioural weight management 
+is an important safety consideration. Yet, factors potentially related to 
+eating disorder risk collected by trials have not been described.
+What this study adds? 
+16            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+All identified trials collected factors across multiple and unique 
+combinations of domains, demonstrating widespread coverage of 
+physical and psychosocial health.  Some key areas important to our 
+understanding of eating disorder risk were underrepresented such as 
+weight stigma and history of dieting and weight loss attempts. This 
+mapping review provides insight into future research priorities within 
+eating disorder risk and obesity.
+Conclusion 
+This systematic mapping review found EDIT trials collected diverse 
+individual factors across many domains potentially relevant to eating 
+disorder risk, with over half providing data across mental health, 
+psychosocial health and eating behaviours. Some key areas that are 
+important to our understanding of eating disorder risk were 
+underrepresented such as weight stigma and history of dieting and 
+previous weight loss attempts. Importantly, the data availability 
+outlined in this review will inform future analysis and understanding 
+of the potential role of risk factors within eating disorder development 
+pathways in weight management interventions. 
+17            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+References
+1. National Institute for Health and Care Excellence. 
+Overweight and obesity: clinical assessment and management 
+2025. Available from: https://www.nice.org.uk/guidance/ng246.
+2. Obesity Canada and Canadian Association of Bariatric 
+Physicians and Surgeons. Canadian adult obesity clinical 
+practice guideline. Edmonton, AB: Obesity Canada; 2020.
+3. Hampl S, Hassink S, Skinner A, Armstrong S, Barlow S, 
+Bolling C, et al. Clinical practice guideline for the evaluation and 
+treatment of children and adolescents with obesity. Pediatrics. 
+2023;151(2):e2022060640. https://doi.org/10.1542/peds.2022-
+060640
+4. Melville H, Lister NB, Libesman S, Seidler AL, Cheng HY, 
+Kwan YL, et al. The prevalence of eating disorders and 
+disordered eating in adults seeking obesity treatment: a 
+systematic review with meta-analyses. Int J Eat Disord. 2025. 
+https://doi.org/10.1002/eat.24483
+5. Ho M, Garnett SP, Baur L, Burrows T, Stewart L, Neve M, 
+Collins C. Effectiveness of lifestyle interventions in child obesity: 
+systematic review with meta-analysis. Pediatrics. 
+2012;130(6):e1647-e71. https://doi.org/10.1542/peds.2012-1176
+6. Al‐Khudairy L, Loveman E, Colquitt JL, Mead E, Johnson RE, 
+Fraser H, et al. Diet, physical activity and behavioural 
+interventions for the treatment of overweight or obese 
+adolescents aged 12 to 17 years. Cochrane Database Syst Rev. 
+2017(6). https://doi.org/10.1002/14651858.CD012691
+7. Madigan CD, Graham HE, Sturgiss E, Kettle VE, Gokal K, 
+Biddle G, et al. Effectiveness of weight management 
+interventions for adults delivered in primary care: systematic 
+review and meta-analysis of randomised controlled trials. BMJ. 
+2022;377. https://doi.org/10.1136/bmj-2021-069719
+8. Tsompanaki E, Koutoukidis DA, Wren G, Tong H, 
+Theodoulou A, Wang D, et al. The impact of weight loss 
+interventions on disordered eating symptoms in people with 
+overweight and obesity: a systematic review and meta-analysis. 
+eClinicalMedicine. 2025;80. 
+https://doi.org/10.1016/j.eclinm.2024.103049
+9. Haines J, Neumark-Sztainer D. Prevention of obesity and 
+eating disorders: a consideration of shared risk factors. Health 
+Educ Res. 2006;21(6):770-82. https://doi.org/10.1093/her/cyl094
+10. Rancourt D, McCullough MB. Overlap in eating disorders 
+and obesity in adolescence. Curr Diab Rep. 2015;15(10):78. 
+https://doi.org/10.1007/s11892-015-0645-y
+18            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+11. Lister NB, Baur LA, Paxton SJ, Jebeile H. Contextualising 
+eating disorder concerns for paediatric obesity treatment. Curr 
+Obes Rep. 2021;10(3):322-31. https://doi.org/10.1007/s13679-
+021-00440-2
+12. Da Luz F, Hay P, Gibson AA, Touyz SW, Swinbourne JM, 
+Roekenes JA, Sainsbury A. Does severe dietary energy restriction 
+increase binge eating in overweight or obese individuals? A 
+systematic review. Obes Rev. 2015;16(8):652-65. 
+https://doi.org/10.1111/obr.12295
+13. House ET, Gow ML, Lister NB, Baur LA, Garnett SP, Paxton 
+SJ, Jebeile H. Pediatric weight management, dietary restraint, 
+dieting, and eating disorder risk: a systematic review. Nutr Rev. 
+2021;79(10):1114-33. https://doi.org/10.1093/nutrit/nuaa127
+14. Jebeile H, Gow ML, Baur LA, Garnett SP, Paxton SJ, Lister 
+NB. Treatment of obesity, with a dietary component, and eating 
+disorder risk in children and adolescents: a systematic review 
+with meta-analysis. Obes Rev. 2019;20(9):1287-98. 
+https://doi.org/10.1111/obr.12866
+15. Jebeile H, Libesman S, Melville H, Low-wah T, Dammery G, 
+Seidler AL, et al. Eating disorder risk during behavioral weight 
+management in adults with overweight or obesity: a systematic 
+review with meta-analysis. Obes Rev. 2023;24(6):e13561. 
+https://doi.org/10.1111/obr.13561
+16. Peckmezian T, Hay P. A systematic review and narrative 
+synthesis of interventions for uncomplicated obesity: weight 
+loss, well-being and impact on eating disorders. J Eat Disord. 
+2017;5. https://doi.org/10.1186/s40337-017-0143-5
+17. Jebeile H, Lister NB, Libesman S, Hunter KE, McMaster CM, 
+Johnson BJ, et al. Eating disorders in weight-related therapy 
+(EDIT): Protocol for a systematic review with individual 
+participant data meta-analysis of eating disorder risk in 
+behavioural weight management. PLoS ONE. 
+2023;18(7):e0282401. 
+https://doi.org/10.1371/journal.pone.0282401
+18. Lister NB, Baur LA, Paxton SJ, Garnett SP, Ahern AL, Wilfley 
+DE, et al. Eating Disorders In weight-related Therapy (EDIT) 
+Collaboration: rationale and study design. Nutr Res Rev. 
+2024;37(1):32-42. https://doi.org/10.1017/S0954422423000045
+19. Jebeile H, McMaster CM, Johnson BJ, Garnett SP, Paxton SJ, 
+Seidler AL, et al. Identifying factors which influence eating 
+disorder risk during behavioral weight management: a 
+consensus study. Nutrients. 2023;15(5):1085. 
+https://doi.org/10.3390/nu15051085
+19            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+20. Barakat S, McLean SA, Bryant E, Le A, Marks P, Aouad P, et 
+al. Risk factors for eating disorders: findings from a rapid review. 
+Journal of Eating Disorders. 2023;11(1):8. 
+https://doi.org/10.1186/s40337-022-00717-4
+21. Khalid R, Lister NB, Paxton SJ, Maguire S, Libesman S, 
+Seidler AL, et al. Potential pathways to the onset and 
+development of eating disorders in people with overweight and 
+obesity: a scoping review. Obes Rev. 2025;26(1):e13840. 
+https://doi.org/10.1111/obr.13840
+22. Campbell F, Tricco AC, Munn Z, Pollock D, Saran A, Sutton 
+A, et al. Mapping reviews, scoping reviews, and evidence and 
+gap maps (EGMs): the same but different- the "Big Picture" 
+review family. Syst Rev. 2023;12(1):45. 10.1186/s13643-023-
+02178-5
+23. Page MJ, McKenzie JE, Bossuyt PM, Boutron I, Hoffmann TC, 
+Mulrow CD, et al. The PRISMA 2020 statement: an updated 
+guideline for reporting systematic reviews. BMJ. 2021;372. 
+https://doi.org/10.1136/bmj.n71
+24. Covidence. Covidence systematic review software 
+Melbourne, Australia: Veritas Health Innovation; n.d. [Available 
+from: www.covidence.org.
+25. Hunter KE, Webster AC, Page MJ, Willson M, McDonald S, 
+Berber S, et al. Searching clinical trials registers: guide for 
+systematic reviewers. BMJ. 2022;377:e068791. 
+https://doi.org/10.1136/bmj-2021-068791
+26. Campbell M, McKenzie JE, Sowden A, Katikireddi SV, 
+Brennan SE, Ellis S, et al. Synthesis without meta-analysis 
+(SWiM) in systematic reviews: reporting guideline. BMJ. 
+2020;368. https://doi.org/10.1136/bmj.l6890
+27. R Core Team. R: A Language and Environment for 
+Statistical Computing2025. Available from: https://www.R-
+project.org/.
+28. Conway JR, Lex A, Gehlenborg N. UpSetR: an R package for 
+the visualization of intersecting sets and their properties. 
+Bioinformatics. 2017;33(18):2938-40. 
+https://doi.org/10.1093/bioinformatics/btx364
+29. Bonham MP, Dordevic AL, Ware RS, Brennan L, Truby H. 
+Evaluation of a commercially delivered weight management 
+program for adolescents. J Pediatr. 2017;185:73-80. e3. 
+https://doi.org/10.1016/j.jpeds.2017.01.042
+30. Dordevic AL, Bonham MP, Ware RS, Brennan L, Truby H. 
+Study protocol: evaluation of ‘JenMe’, a commercially-delivered 
+weight management program for adolescents: a randomised 
+20            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+controlled trial. BMC Public Health. 2015;15:1-8. 
+https://doi.org/10.1186/s12889-015-1923-y
+31. Croker H, Viner RM, Nicholls D, Haroun D, Chadwick P, 
+Edwards C, et al. Family-based behavioural treatment of 
+childhood obesity in a UK National Health Service setting: 
+randomized controlled trial. Int J Obes. 2012;36(1):16-26. 
+https://doi.org/10.1038/ijo.2011.182
+32. Lister NB, Baur LA, House ET, Alexander S, Brown J, Collins 
+CE, et al. Intermittent energy restriction for adolescents with 
+obesity: the Fast Track to Health randomized clinical trial. JAMA 
+Pediatr. 2024;178(10):1006-16. 
+https://doi.org/10.1001/jamapediatrics.2024.2869
+33. Lister NB, Jebeile H, Truby H, Garnett SP, Varady KA, 
+Cowell CT, et al. Fast track to health - intermittent energy 
+restriction in adolescents with obesity. A randomised controlled 
+trial study protocol. Obes Res Clin Pract. 2020;14(1):80-90. 
+https://doi.org/10.1016/j.orcp.2019.11.005
+34. Jebeile H, Baur LA, Kwok C, Alexander S, Brown J, Collins 
+CE, et al. Symptoms of depression, eating disorders, and binge 
+eating in adolescents with obesity: the Fast Track to Health 
+randomized clinical trial. JAMA Pediatr. 2024;178(10):996-1005. 
+https://doi.org/10.1001/jamapediatrics.2024.2851
+35. Vermeiren E, Naets T, Van Eyck A, Vervoort L, Ysebaert M, 
+Baeck N, et al. Improving treatment outcome in children with 
+obesity by an online self-control training: a randomized 
+controlled trial. Front Pediatr. 2021;9. 
+https://doi.org/10.3389/fped.2021.794256
+36. Naets T, Vervoort L, Ysebaert M, Van Eyck A, Verhulst S, 
+Bruyndonckx L, et al. WELCOME: improving WEight controL and 
+CO-Morbidities in children with obesity via Executive function 
+training: study protocol for a randomized controlled trial. BMC 
+Public Health. 2018;18:1-10. https://doi.org/10.1186/s12889-
+018-5950-3
+37. Doyle AC, Goldschmidt A, Huang C, Winzelberg AJ, Taylor 
+CB, Wilfley DE. Reduction of overweight and eating disorder 
+symptoms via the Internet in adolescents: a randomized 
+controlled trial. J Adolesc Health. 2008;43(2):172-9. 
+https://doi.org/10.1016/j.jadohealth.2008.01.011
+38. Jelalian E, Mehlenbeck R, Lloyd-Richardson E, Birmaher V, 
+Wing R. ‘Adventure therapy’ combined with cognitive-behavioral 
+treatment for overweight adolescents. Int J Obes. 2006;30(1):31-
+9. https://doi.org/10.1038/sj.ijo.0803069
+39. Epstein LH, Paluch RA, Saelens BE, Ernst MM, Wilfley DE. 
+Changes in eating disorder symptoms with pediatric obesity 
+21            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+treatment. J Pediatr. 2001;139(1):58-65. 
+https://doi.org/10.1067/mpd.2001.115022
+40. Wilfley DE, Stein RI, Saelens BE, Mockus DS, Matt GE, 
+Hayden-Wade HA, et al. Efficacy of maintenance treatment 
+approaches for childhood overweight: a randomized controlled 
+trial. JAMA. 2007;298(14):1661-73. 
+https://doi.org/10.1001/jama.298.14.1661
+41. Goldschmidt AB, Best JR, Stein RI, Saelens BE, Epstein LH, 
+Wilfley DE. Predictors of child weight loss and maintenance 
+among family-based treatment completers. J Consult Clin 
+Psychol. 2014;82(6):1140. https://doi.org/10.1037/a0037169
+42. Shomaker LB, Tanofsky‐Kraff M, Matherne CE, Mehari RD, 
+Olsen CH, Marwitz SE, et al. A randomized, comparative pilot 
+trial of family‐based interpersonal psychotherapy for reducing 
+psychosocial symptoms, disordered‐eating, and excess weight 
+gain in at‐risk preadolescents with loss‐of‐control‐eating. Int J 
+Eat Disord. 2017;50(9):1084-94. 
+https://doi.org/10.1002/eat.22741
+43. Vidmar AP, Naguib M, Raymond JK, Salvy SJ, Hegedus E, 
+Wee CP, Goran MI. Time-limited eating and continuous glucose 
+monitoring in adolescents with obesity: a pilot study. Nutrients. 
+2021;13(11):3697. https://doi.org/10.3390/nu13113697
+44. Vidmar AP, Goran MI, Naguib M, Fink C, Wee CP, Hegedus 
+E, et al. Time limited eating in adolescents with obesity (time 
+LEAd): study protocol. Contemp Clin Trials. 2020;95:106082. 
+https://doi.org/10.1016/j.cct.2020.106082
+45. Ramalho S, Saint-Maurice PF, Silva D, Mansilha HF, Silva C, 
+Gonçalves S, et al. APOLO-Teens, a web-based intervention for 
+treatment-seeking adolescents with overweight or obesity: study 
+protocol and baseline characterization of a Portuguese sample. 
+Eat Weight Disord. 2020;25:453-63. 
+https://doi.org/10.1007/s40519-018-0623-x
+46. Skjåkødegård HF, Conlon RPK, Hystad SW, Roelants M, 
+Olsson SJG, Frisk B, et al. Family-based treatment of children 
+with severe obesity in a public healthcare setting: results from a 
+randomized controlled trial. Clin Obes. 2022;12(3):e12513. 
+https://doi.org/10.1111/cob.12513
+47. Skjåkødegård HF, Danielsen YS, Morken M, Linde S-RF, 
+Kolko RP, Balantekin KN, et al. Study protocol: a randomized 
+controlled trial evaluating the effect of family-based behavioral 
+treatment of childhood and adolescent obesity–The FABO-study. 
+BMC Public Health. 2016;16:1-9. https://doi.org/10.1186/s12889-
+016-3755-9
+22            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+48. Jelalian E, Evans EW, Rancourt D, Ranzenhofer L, Taylor N, 
+Hart C, et al. JOIN for ME: testing a scalable weight control 
+intervention for adolescents. Child Obes. 2020;16(3):192-203. 
+https://doi.org/10.1089/chi.2019.0053
+49. Darling KE, Rancourt D, Evans EW, Ranzenhofer LM, 
+Jelalian E. Adolescent weight management intervention in a 
+nonclinical setting: changes in eating-related cognitions and 
+depressive symptoms. J Dev Behav Pediatr. 2021;42(7):579-87. 
+https://doi.org/10.1097/DBP.0000000000000929
+50. Braet C, Tanghe A, Decaluwé V, Moens E, Rosseel Y. 
+Inpatient treatment for children with obesity: weight loss, 
+psychological well-being, and eating behavior. J Pediatr Psychol. 
+2004;29(7):519-29. 10.1093/jpepsy/jsh054
+51. Lofrano-Prado MC, Donato Junior J, Lambertucci AC, 
+Lambertucci RH, Malik N, Ritti-Dias RM, et al. Recreational 
+physical activity improves adherence and dropout in a non-
+intensive behavioral intervention for adolescents with obesity. 
+Research Quarterly for Exercise and Sport. 2022;93(4):659-69. 
+10.1080/02701367.2021.1893259
+52. Bean MK, LaRose JG, Raynor HA, Adams EL, Evans RK, 
+Farthing S, et al. The role of parents in adolescent obesity 
+treatment: results of the TEENS+ randomized clinical pilot trial. 
+Pediatr Obes. 2022;17(3):e12858. 
+https://doi.org/10.1111/ijpo.12858
+53. Raynor HA, Mazzeo SE, LaRose JG, Adams EL, Thornton LM, 
+Caccavale LJ, Bean MK. Effect of a high-intensity dietary 
+intervention on changes in dietary intake and eating pathology 
+during a multicomponent adolescent obesity intervention. 
+Nutrients. 2021;13(6):1850. https://doi.org/10.3390/nu13061850
+54. Newsome FA, Cardel MI, Chi X, Lee AM, Miller D, Menon S, 
+et al. Wellness achieved through changing habits: a randomized 
+controlled trial of an acceptance-based intervention for 
+adolescent girls with overweight or obesity. Child Obes. 
+2023;19(8):525-34. https://doi.org/10.1089/chi.2022.0116
+55. Vidmar AP, Salvy SJ, Wee CP, Pretlow R, Fox DS, Yee JK, et 
+al. An addiction‐based digital weight loss intervention: a 
+multi‐centre randomized controlled trial. Pediatr Obes. 
+2023;18(3):e12990. https://doi.org/10.1111/ijpo.12990
+56. Vidmar AP, Salvy SJ, Pretlow R, Mittelman SD, Wee CP, Fink 
+C, et al. An addiction-based mobile health weight loss 
+intervention: protocol of a randomized controlled trial. 
+Contemporary Clinical Trials. 2019;78:11-9. 
+10.1016/j.cct.2019.01.008
+23            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+57. Mehlenbeck RS, Jelalian E, Lloyd‐Richardson EE, Hart CN. 
+Effects of behavioral weight control intervention on binge eating 
+symptoms among overweight adolescents. Psychol Sch. 
+2009;46(8):776-86. https://doi.org/10.1002/pits.20416
+58. Jelalian E, Lloyd-Richardson EE, Mehlenbeck RS, Hart CN, 
+Flynn-O'Brien K, Kaplan J, et al. Behavioral weight control 
+treatment with supervised exercise or peer-enhanced adventure 
+for overweight adolescents. J Pediatr. 2010;157(6):923-8. e1. 
+https://doi.org/10.1016/j.jpeds.2010.05.047
+59. Wilfley DE, Saelens BE, Stein RI, Best JR, Kolko RP, 
+Schechtman KB, et al. Dose, content, and mediators of family-
+based treatment for childhood obesity: a multisite randomized 
+clinical trial. JAMA Pediatr. 2017;171(12):1151-9. 
+https://doi.org/10.1001/jamapediatrics.2017.2960
+60. Seimon RV, Wild-Taylor AL, Keating SE, McClintock S, 
+Harper C, Gibson AA, et al. Effect of weight loss via severe vs 
+moderate energy restriction on lean mass and body composition 
+among postmenopausal women with obesity: the TEMPO diet 
+randomized clinical trial. JAMA Netw Open. 
+2019;2(10):e1913733-e. 
+https://doi.org/10.1001/jamanetworkopen.2019.13733
+61. Seimon RV, Gibson AA, Harper C, Keating SE, Johnson NA, 
+Da Luz FQ, et al. Rationale and protocol for a randomized 
+controlled trial comparing fast versus slow weight loss in 
+postmenopausal women with obesity—the TEMPO Diet Trial. 
+Healthcare. 2018;6(3):85. 
+https://doi.org/10.3390/healthcare6030085
+62. Seimon RV, Wild-Taylor AL, McClintock S, Harper C, Gibson 
+AA, Johnson NA, et al. 3-Year effect of weight loss via severe 
+versus moderate energy restriction on body composition among 
+postmenopausal women with obesity-the TEMPO Diet Trial. 
+Heliyon. 2020;6(6). 
+https://doi.org/10.1016/j.heliyon.2020.e04007
+63. Williamson DA, Martin CK, Anton SD, York-Crowe E, Han H, 
+Redman L, Ravussin E. Is caloric restriction associated with 
+development of eating-disorder symptoms? Results from the 
+CALERIE trial. Health Psychol. 2008;27(1S):S32. 
+https://doi.org/10.1037/0278-6133.27.1.S32
+64. Heilbronn LK, De Jonge L, Frisard MI, DeLany JP, Larson-
+Meyer DE, Rood J, et al. Effect of 6-month calorie restriction on 
+biomarkers of longevity, metabolic adaptation, and oxidative 
+stress in overweight individuals: a randomized controlled trial. 
+JAMA. 2006;295(13):1539-48. 
+https://doi.org/10.1001/jama.295.13.1539.
+24            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+65. Anton S, Martin C, Redman L, York-Crowe E, Heilbronn L, 
+Han H, et al. Psychosocial and behavioral pre-treatment 
+predictors of weight loss outcomes. Eat Weight Disord. 
+2008;13:30-7. https://doi.org/10.1007/BF03327782
+66. Barnes RD, White MA, Martino S, Grilo CM. A randomized 
+controlled trial comparing scalable weight loss treatments in 
+primary care. Obesity. 2014;22(12):2508-16. 
+https://doi.org/10.1002/oby.20889
+67. Barnes RD, Ivezaj V, Martino S, Pittman BP, Grilo CM. Back 
+to basics? No weight loss from motivational interviewing 
+compared to nutrition psychoeducation at one‐year follow‐up. 
+Obesity. 2017;25(12):2074-8. https://doi.org/10.1002/oby.21972
+68. Beaulieu K, Casanova N, Oustric P, Turicchi J, Gibbons C, 
+Hopkins M, et al. Matched weight loss through intermittent or 
+continuous energy restriction does not lead to compensatory 
+increases in appetite and eating behavior in a randomized 
+controlled trial in women with overweight and obesity. The 
+Journal of nutrition. 2020;150(3):623-33. 10.1093/jn/nxz296
+69. Carpenter KM, Vickerman KA, Salmon EE, Javitz HS, Epel 
+ES, Lovejoy JC. A randomized pilot study of a phone-based 
+mindfulness and weight loss program. Behav Med. 
+2019;45(4):271-81. 
+https://doi.org/10.1080/08964289.2017.1384359
+70. Griffin H, Cheng H, O'Connor H, Rooney K, Petocz P, 
+Steinbeck K. Higher protein diet for weight management in 
+young overweight women: a 12‐month randomized controlled 
+trial. Diabetes Obes Metab. 2013;15(6):572-5. 
+https://doi.org/10.1111/dom.12056
+71. Cheng HL, Griffin H, Claes B-E, Petocz P, Steinbeck K, 
+Rooney K, O’Connor H. Influence of dietary macronutrient 
+composition on eating behaviour and self-perception in young 
+women undergoing weight management. Eat Weight Disord. 
+2014;19:241-7. https://doi.org/10.1007/s40519-014-0110-y
+72. Boutelle KN, Eichen DM, Peterson CB, Strong DR, Kang-Sim 
+D-JE, Rock CL, Marcus BH. Effect of a novel intervention 
+targeting appetitive traits on body mass index among adults 
+with overweight or obesity: a randomized clinical trial. JAMA 
+Netw Open. 2022;5(5):e2212354-e. 
+https://doi.org/10.1001/jamanetworkopen.2022.12354
+73. Boutelle KN, Eichen DM, Peterson CB, Strong DR, Rock CL, 
+Marcus BH. Design of the PACIFIC study: a randomized 
+controlled trial evaluating a novel treatment for adults with 
+overweight and obesity. Contemp Clin Trials. 2019;84:105824. 
+https://doi.org/10.1016/j.cct.2019.105824
+25            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+74. Boutelle KN, Pasquale EK, Strong DR, Eichen DM, Peterson 
+CB. Reduction in eating disorder symptoms among adults in 
+different weight loss interventions. Eat Behav. 2023;51:101787. 
+https://doi.org/10.1016/j.eatbeh.2023.101787
+75. Salvo V, Curado DF, Sanudo A, Kristeller J, Schveitzer MC, 
+Favarato ML, et al. Comparative effectiveness of mindfulness 
+and mindful eating programmes among low-income overweight 
+women in primary health care: A randomised controlled 
+pragmatic study with psychological, biochemical, and 
+anthropometric outcomes. Appetite. 2022;177:106131. 
+10.1016/j.appet.2022.106131
+76. Salvo V, Kristeller J, Montero Marin J, Sanudo A, Lourenço 
+BH, Schveitzer MC, et al. Mindfulness as a complementary 
+intervention in the treatment of overweight and obesity in 
+primary health care: study protocol for a randomised controlled 
+trial. Trials. 2018;19(1):277. https://doi.org/10.1186/s13063-018-
+2639-y
+77. Dalle Grave R, Calugi S, Gavasso I, El Ghoch M, Marchesini 
+G. A randomized trial of energy‐restricted high‐protein versus 
+high‐carbohydrate, low‐fat diet in morbid obesity. Obesity. 
+2013;21(9):1774-81. https://doi.org/10.1002/oby.20320
+78. Dassen FC, Houben K, Van Breukelen GJ, Jansen A. 
+Gamified working memory training in overweight individuals 
+reduces food intake but not body weight. Appetite. 2018;124:89-
+98. https://doi.org/10.1016/j.appet.2017.05.009
+79. Jospe MR, Roy M, Brown RC, Williams SM, Osborne HR, 
+Meredith‐Jones KA, et al. The effect of different types of 
+monitoring strategies on weight loss: a randomized controlled 
+trial. Obesity. 2017;25(9):1490-8. 
+https://doi.org/10.1002/oby.21898
+80. Taylor RW, Roy M, Jospe MR, Osborne HR, Meredith-Jones 
+KJ, Williams SM, Brown RC. Determining how best to support 
+overweight adults to adhere to lifestyle change: protocol for the 
+SWIFT study. BMC Public Health. 2015;15:1-11. 
+https://doi.org/10.1186/s12889-015-2205-4
+81. Jospe MR, Brown RC, Williams S, Roy M, Meredith‐Jones K, 
+Taylor R. Self‐monitoring has no adverse effect on disordered 
+eating in adults seeking treatment for obesity. Obes Sci Pract. 
+2018;4(3):283-8. https://doi.org/10.1002/osp4.168
+82. Raynor HA, Steeves EA, Hecht J, Fava JL, Wing RR. Limiting 
+variety in non-nutrient-dense, energy-dense foods during a 
+lifestyle intervention: a randomized controlled trial. Am J Clin 
+Nutr. 2012;95(6):1305-14. 
+https://doi.org/10.3945/ajcn.111.031153
+26            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+83. LaRose JG, Fava JL, Steeves EA, Hecht J, Wing RR, Raynor 
+HA. Daily self-weighing within a lifestyle intervention: impact on 
+disordered eating symptoms. Health Psychol. 2014;33(3):297. 
+https://doi.org/10.1037/a0034218
+84. Imayama I, Alfano CM, Kong A, Foster-Schubert KE, Bain 
+CE, Xiao L, et al. Dietary weight loss and exercise interventions 
+effects on quality of life in overweight/obese postmenopausal 
+women: a randomized controlled trial. Int J Behav Nutr Phys Act. 
+2011;8:1-12. https://doi.org/10.1186/1479-5868-8-118
+85. Mason C, de Dieu Tapsoba J, Duggan C, Wang C-Y, Alfano 
+CM, McTiernan A. Eating behaviors and weight loss outcomes in 
+a 12-month randomized trial of diet and/or exercise intervention 
+in postmenopausal women. Int J Behav Nutr Phys Act. 
+2019;16:1-11. https://doi.org/10.1186/s12966-019-0887-1
+86. Raman J, Hay P, Tchanturia K, Smith E. A randomised 
+controlled trial of manualized cognitive remediation therapy in 
+adult obesity. Appetite. 2018;123:269-79. 
+10.1016/j.appet.2017.12.023
+87. Raman J, Hay P, Smith E. Manualised Cognitive 
+Remediation Therapy for adult obesity: study protocol for a 
+randomised controlled trial. Trials. 2014;15:1-9. 
+https://doi.org/10.1186/1745-6215-15-426
+88. Rieger E, Treasure J, Murray K, Caterson I. The use of 
+support people to improve the weight-related and psychological 
+outcomes of adults with obesity: A randomised controlled trial. 
+Behaviour Research and Therapy. 2017;94:48-59. 
+10.1016/j.brat.2017.04.012
+89. Rieger E, Treasure J, Swinbourne J, Adam B, Manns C, 
+Caterson I. The effectiveness of including support people in a 
+cognitive behavioural weight loss maintenance programme for 
+obese adults: study rationale and design. Clin Obes. 
+2014;4(2):77-90. https://doi.org/10.1111/cob.12042
+90. Smith BW, Shelley BM, Sloan AL, Colleran K, Erickson K. A 
+preliminary randomized controlled trial of a mindful eating 
+intervention for post-menopausal obese women. Mindfulness. 
+2018;9:836-49. https://doi.org/10.1007/s12671-017-0824-9
+91. Smith E, Whittingham C. Cognitive remediation therapy 
+plus behavioural weight loss compared to behavioural weight 
+loss alone for obesity: study protocol for a randomised controlled 
+trial. Trials. 2017;18:1-7. https://doi.org/10.1186/s13063-017-
+1778-x
+92. Martin CK, Johnson WD, Myers CA, Apolzan JW, Earnest CP, 
+Thomas DM, et al. Effect of different doses of supervised 
+exercise on food intake, metabolism, and non-exercise physical 
+27            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+activity: the E-MECHANIC randomized controlled trial. Am J Clin 
+Nutr. 2019;110(3):583-92. https://doi.org/10.1093/ajcn/nqz054
+93. Myers CA, Johnson WD, Earnest CP, Rood JC, Tudor-Locke 
+C, Johannsen NM, et al. Examination of mechanisms (E-
+MECHANIC) of exercise-induced weight compensation: study 
+protocol for a randomized controlled trial. Trials. 2014;15:1-12. 
+https://doi.org/10.1186/1745-6215-15-212
+94. Sherwood NE, Crain AL, Martinson BC, Hayes MG, Anderson 
+JD, Clausen JM, et al. Keep it off: a phone-based intervention for 
+long-term weight-loss maintenance. Contemp Clin Trials. 
+2011;32(4):551-60. https://doi.org/10.1016/j.cct.2011.03.011
+95. Pacanowski CR, Senso MM, Oriogun K, Crain AL, Sherwood 
+NE. Binge eating behavior and weight loss maintenance over a 
+2‐year period. J Obes. 2014;2014(1):249315. 
+https://doi.org/10.1155/2014/249315
+96. Sherwood NE, Crain AL, Martinson BC, Anderson CP, Hayes 
+MG, Anderson JD, et al. Enhancing long-term weight loss 
+maintenance: two-year results from the Keep It Off randomised 
+controlled trial. Prev Med. 2013;56(3-4):171-7. 
+https://doi.org/10.1016/j.ypmed.2012.12.014
+97. Whitelock V, Kersbergen I, Higgs S, Aveyard P, Halford JC, 
+Robinson E. A smartphone based attentive eating intervention 
+for energy intake and weight loss: results from a randomised 
+controlled trial. BMC Public Health. 2019;19:1-11. 
+https://doi.org/10.1186/s12889-019-6923-x
+98. Lin S, Cienfuegos S, Ezpeleta M, Gabel K, Pavlou V, Mulas 
+A, et al. Time-restricted eating without calorie counting for 
+weight loss in a racially diverse population: a randomized 
+controlled trial. Ann Intern Med. 2023;176(7):885-95. 
+https://doi.org/10.7326/M23-0052
+99. Eichen DM. Novel Executive Function Training for Obesity 
+Study Protocol [PDF] 2021 [updated 12/07/2021. Available from: 
+https://cdn.clinicaltrials.gov/large-
+docs/96/NCT03724396/Prot_SAP_000.pdf.
+100. Goetz IA, Sutter C, Abraham T, Kanu C, Boye KS, Symonds 
+T. The evaluation of clinical outcomes assessments and digital 
+health technologies in clinical trials for obesity. J Patient-Rep 
+Outcomes. 2025;9(1):23. https://doi.org/10.1186/s41687-025-
+00841-0
+101. Alberga AS, Sacco S, Booij L. Overlooked outcomes in 
+pediatric obesity management—unintended consequences. JAMA 
+Pediatr. 2023;177(10):997-8. 
+https://doi.org/10.1001/jamapediatrics.2023.2190
+28            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+102. Jones RA, Lawlor ER, Birch JM, Patel MI, Werneck AO, Hoare 
+E, et al. The impact of adult behavioural weight management 
+interventions on mental health: a systematic review and meta-
+analysis. Obes Rev. 2021;22(4):e13150. 
+https://doi.org/10.1111/obr.13150
+103. Baumann H, Singh B, Staiano AE, Gough C, Ahmed M, 
+Fiedler J, et al. Effectiveness of mHealth interventions targeting 
+physical activity, sedentary behaviour, sleep or nutrition on 
+emotional, behavioural and eating disorders in adolescents: a 
+systematic review and meta-analysis. Front Digit Health. 
+2025;Volume 7 - 2025. 
+https://doi.org/10.3389/fdgth.2025.1593677
+104. Colombo PE, Wickramarachchi M, Lakshmi A, Kudlek L, 
+Ahern A, Tait S, et al. The impact of behavioral weight 
+management interventions on eating behavior traits in children 
+with overweight or obesity: systematic review and meta-
+analysis. Obes Rev. 2025;26(1):e13839. 
+https://doi.org/10.1111/obr.13839
+105. Jacob A, Moullec G, Lavoie KL, Laurin C, Cowan T, Tisshaw 
+C, et al. Impact of cognitive-behavioral interventions on weight 
+loss and psychological outcomes: a meta-analysis. Health 
+Psychol. 2018;37(5):417-32. 
+https://doi.org/10.1037/hea0000576
+106. Murray M, Dordevic AL, Bonham MP. Systematic review 
+and meta-analysis: the impact of multicomponent weight 
+management interventions on self-esteem in overweight and 
+obese adolescents. J Pediatr Psychol. 2017;42(4):379-94. 
+https://doi.org/10.1093/jpepsy/jsw101
+107. Murray M, Pearson JL, Dordevic AL, Bonham MP. The 
+impact of multicomponent weight management interventions on 
+quality of life in adolescents affected by overweight or obesity: a 
+meta-analysis of randomized controlled trials. Obes Rev. 
+2019;20(2):278-89. https://doi.org/10.1111/obr.12774
+108. Kwok C, Sacco S, Lister NB, Alberga AS, Baur LA, Booji L, et 
+al. Changes in psychosocial outcomes reported in behavioural 
+intervention trials for children and adolescents with overweight 
+and obesity: A scoping review. Childhood Obesity. in press. 
+https://doi.org/10.1177/21532176261418755
+109. Sacco S, Booji L, Kwok C, Carrière K, Hall K, Baluyot T, et al. 
+Psychosocial outcomes reported in randomized behavioral 
+intervention trials for children and adolescents with overweight 
+and obesity: A scoping review. Childhood Obesity. in press. 
+https://doi.org/10.1177/21532176251408689
+29            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+110. Papadopoulos S, de la Piedad Garcia X, Brennan L. 
+Evaluation of the psychometric properties of self‐reported 
+weight stigma measures: a systematic literature review. Obes 
+Rev. 2021;22(8):e13267. https://doi.org/10.1111/obr.13267
+111. Talumaa B, Brown A, Batterham RL, Kalea AZ. Effective 
+strategies in ending weight stigma in healthcare. Obes Rev. 
+2022;23(10):e13494. https://doi.org/10.1111/obr.13494
+112. Lister NB, Khalid R, Jardine IR, Pryde S, Melville H, Seidler 
+AL, et al. Components of Adolescent Behavioural Interventions 
+With Eating Disorder Outcomes: Systematic Review With 
+Intervention Mapping. Pediatric Obesity. 2026;21(1):e70074. 
+https://doi.org/10.1111/ijpo.70074
+113. International Society of Behavioral Nutrition and Physical 
+Activity. ISBNPA 2025 Abstract Book. Auckland, New Zealand: 
+ISPNPA; 2025. Available from: 
+https://www.outdoorplaycanada.ca/wp-
+content/uploads/2025/06/ISBNPA2025-Abstract-Book.pdf.
+114. Stice E, Presnell K. Dieting and the eating disorders. In: 
+Agras WS, editor. The Oxford Handbook of Eating Disorders. 
+Oxford Library of Psychology. Oxford: Oxford University Press; 
+2010. p. 148-79.
+115. Neumark-Sztainer D, Wall M, Guo J, Story M, Haines J, 
+Eisenberg M. Obesity, disordered eating, and eating disorders in 
+a longitudinal study of adolescents: how do dieters fare 5 years 
+later? J Am Diet Assoc. 2006;106(4):559-68. 
+https://doi.org/10.1016/j.jada.2006.01.003
+116. Schaumberg K, Anderson DA, Anderson LM, Reilly EE, 
+Gorrell S. Dietary restraint: what's the harm? A review of the 
+relationship between dietary restraint, weight trajectory and the 
+development of eating pathology. Clin Obes. 2016;6(2):89-100. 
+https://doi.org/10.1111/cob.12134
+117. Jebeile H, House ET, Baur LA, Kwok C, Collins CE, Garnett 
+SP, Lister NB. Dieting practices of adolescents seeking obesity 
+treatment. Nutrients. 2025;17(19):3100. 
+https://doi.org/10.3390/nu17193100
+118. Wadden TA, Foster GD. Weight and lifestyle inventory 
+(WALI). Obes Res. 2006;14:99S-118S. 
+https://doi.org/10.1038/oby.2006.289
+119. Masheb RM, Kutz AM, Marsh AG, Min KM, Ruser CB, 
+Dorflinger LM. “Making weight” during military service is related 
+to binge eating and eating pathology for veterans later in life. 
+Eating and Weight Disorders - Studies on Anorexia, Bulimia and 
+Obesity. 2019;24(6):1063-70. https://doi.org/10.1007/s40519-
+019-00766-w 
+30            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Statements & Declarations
+Funding
+The EDIT Collaboration is funded by a National Health and Medical 
+Research Council (NHMRC) Ideas Grant (#2002310). HM is supported 
+by a University of Sydney Postgraduate Award (#SC3231) and a 
+Postgraduate Research Scholarship in Eating Disorders In weight-
+related Therapy (EDIT) Collaboration (#SC4099). HJ is supported by 
+an NHMRC Emerging Leadership (EL1) Investigator Grant (#2017139). 
+RK is supported by an NHMRC Postgraduate scholarship (#2022284) 
+and a Douglas Burrows Chair of Paediatrics bequest, The University of 
+Sydney. IRJ and SJL are supported by a Douglas Burrows Chair of 
+Paediatrics bequest, The University of Sydney. ALS is supported by an 
+NHMRC Emerging Leadership (EL1) Investigator Grant (#2009432). 
+LAB is in receipts of an NHMRC Leadership (L3) Investigator Grant 
+(#2009035). NBL is supported by NHMRC, Peter Doherty Early Career 
+Fellowship (#1145748), and salary support from an NHMRC grant 
+(#2009035).
+The funders had no role in the design and conduct of the study; 
+collection, management, analysis, and interpretation of the data; 
+preparation, review, or approval of the manuscript; and decision to 
+submit the manuscript for publication.
+Competing Interests
+LAB has received honoraria for speaking in forums organized by Novo 
+Nordisk in relation to management of adolescent obesity and the 
+ACTION-Teens study which is sponsored by Novo Nordisk. ACTION-
+Teens is a multi-country on-line study of attitudes toward and 
+perceptions of obesity held by adolescents living with obesity, their 
+parents and health care professionals; LAB is the Australian lead of 
+the study. Other authors have no conflicts of interest to declare.
+31            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Author Contributions
+HM, HJ, ALS, and NBL conceptualised the study. Methodology was 
+developed by HM, HJ, SL, SPG, KEH, RK, JW, LAB, ALS, and NBL. HM 
+conducted the formal analysis. Investigation was completed by HM, 
+IRJ, SJL, and RK. Data curation was conducted by HM, SL, IRJ, SJL, and 
+HJ. HM drafted the original manuscript. All authors (HM, HJ, SL, SPG, 
+KEH, IRJ, RK, SJL, JW, LAB, ALS, and NBL) contributed to the review 
+and editing of the manuscript. Visualisation was completed by HM. 
+Supervision was provided by HJ, SL, ALS, LAB, and NBL. Project 
+administration was managed by HM, HJ, IRJ, and SJL. Funding 
+acquisition was led by NBL, HJ, LAB, SPG, and ALS. All authors have 
+read and approved the final manuscript.
+Data Availability 
+The authors confirm that the data supporting the findings of this 
+study are available within the article and in online supplementary file. 
+Further enquiries can be directed to the corresponding author.
+Ethics Approval 
+Ethics approval was obtained from University of Sydney Human 
+Research Ethics Committee (project number: 2022/079).
+32            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Table 1 Number of collected and provided eating disorder symptoms and behaviours including descriptions, 
+questionnaires or tools, by domain for adolescent and adult datasets
+Eating disorder 
+symptoms or 
+behaviours
+Description
+Validated questionnaires or assessment tools
+Number of 
+adolescent 
+datasets 
+(total = 
+20)
+Number 
+of adult 
+datasets 
+(total = 
+26)
+Eating disorder 
+diagnosis
+Clinical diagnosis/ assessment of any eating disorder including binge 
+eating disorder, anorexia nervosa, bulimia nervosa, and other specified 
+feeding or eating disorder (OSFED) (not by validated questionnaire)
+2 6
+Global eating 
+disorder-related 
+symptoms
+Overall presence of global eating disorder-related symptoms, including 
+attitudes, cognitions, and/or behaviours
+Eating Disorder Examination (EDE), Eating Disorder Examination 
+Questionnaire (EDE-Q), Eating Attitudes Test (EAT), Kids Eating 
+Disorder Survey (KEDS), and youth versions
+16 13
+Binge eating-
+related 
+symptoms
+Binge eating-symptoms and behaviours (continuous scores)
+Binge Eating Scale (BES), Multidimensional Assessment of Eating 
+Disorder Symptoms (MAEDS) binge eating subscale, Bulimic 
+Investigation Test of Edinburgh (BITE)
+4 14
+Presence/absence 
+of binge eating
+Participants self-report binge eating
+Eating Disorder Diagnostic Scale (EDDS), Binge-Eating Disorder 
+Screener (BEDS)
+2 2
+Eating disorder 
+behaviours or 
+episodes
+Purging, laxative misuse, diuretic misuse, excessive exercise, loss of 
+control and binge-eating symptoms and episodes
+Eating Disorder Examination (EDE), Eating Disorder Examination 
+Questionnaire (EDE-Q), Loss of Control Eating Scale (LOC-ED), 
+Questionnaire on Eating and Weight (QEWP), and youth versions
+9 12
+33            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Table 2 Number of collected and provided factors, including descriptions, questionnaires or tools, by domain 
+for adolescent and adult datasets
+Factor Description 
+Questionnaires or assessment tools 
+Number of 
+adolescen
+t datasets 
+(total = 
+20)
+Number 
+of adult 
+datasets 
+(total = 
+26)
+Demographics
+Age Age at the time of enrolment 20 26
+Sex/gender Sex/gender – defined as either sex at birth or self-report gender 20 26
+Race/ethnicity Self-report race or ethnicity of participant (or parents if not available 
+for adolescent)
+16 20
+Language status Primary language spoken at home, language proficiency 4 5
+Family structure Household number of adults, household number of children, 
+household total number of people
+12 5
+Household income Total household income, equivalised household income 7 10
+Partner status Partner status of adult participant or parent/carer of adolescent 10 17
+Education status Highest education level of the adult participant or of the parent/carer 
+of the adolescent participant
+16 19
+Employment status Employment status of the adult participant or of the parent/carer of 
+the adolescent participant
+11 13
+Socio-economic 
+status 
+Socio-economic index of area /position
+Hollingshead index, Barratt Simplified Measure of Social Status
+9 5
+Food insecurity Family history of or current food insecurity 0 0
+Health literacy Health literacy of the participant 0 0
+Parenting Parenting style, feeding style/practices (adolescent trials only) 3 N/A
+Support General social or peer support (adolescent trials only), health 
+behaviour specific social or peer support
+Medical Outcomes Study Social Support Survey, Social Support for 
+Eating/Exercise Habits Survey, Network Support for Healthy 
+Behaviours Interview
+8 7
+34            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Anthropometry
+Weight Weight (kg) 20 25
+Height Height (cm) 20 25
+Waist 
+circumference
+Waist circumference (cm) 8 13
+Adiposity Body fat percentage
+Dual-energy X-ray absorptiometry (DEXA), Bioelectrical Impedance 
+Analysis (BIA), air-displacement plethysmography (BODPOD) 
+10 13
+Medical and family history
+Puberty or 
+menopause
+Puberty stage (adolescent trials only), puberty timing (adolescent 
+trials only), age at onset of menopause (adult trials only)
+4 2
+Medical history History of type 2 diabetes mellitus, type 1 diabetes mellitus, bariatric 
+surgery, cardiometabolic disease, mental illness, other relevant 
+medical history such as obstructive sleep apnoea (adult trials only)
+13 19
+Eating disorder 
+history
+History of eating disorders, history of eating disorder treatment 5 15
+Family medical 
+history
+Family history of obesity, diet-related chronic disease, type 2 
+diabetes mellitus, bariatric surgery, eating disorders
+11 2
+Medication history Current medication history (any medication), weight-related 
+medication history
+10 21
+Age of obesity 
+onset
+Age of onset of obesity 1 1
+Life events which 
+may impact upon 
+body weight
+Prior life events which may impact upon body weight e.g., 
+pregnancy, smoking cessation
+1 3
+History of dieting and weight loss attempts
+Prior weight loss 
+attempts
+Number of prior weight loss attempts, total weight lost achieved 3 6
+Type of prior 
+weight loss 
+attempts
+Prior weight loss attempt using diet, weight-loss pharmacotherapy, 
+other method, or method unclear
+6 6
+35            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Dieting duration Any previous dieting (adolescent trials only), number of dieting 
+attempts, age of onset of dieting
+6 2
+Mental health
+Mental health 
+diagnoses 
+Diagnosed by clinical interview/assessment/medical history (not by 
+validated questionnaire)
+1 7
+History of trauma History of trauma 0 2
+Addiction, 
+substance/smoking 
+use 
+Addiction (general) (adolescent trials only), alcohol abuse (adult trials 
+only), smoking status (adult trials only), drug abuse (adult trials only)
+Clinical interview, Alcohol and Health Questionnaire
+4 12
+Self-harm and 
+suicidality 
+Self-harm, suicide attempt/ideation
+Beck Depression Inventory (BDI), Patient Health Questionnaire-9 
+(PHQ-9), Suicidality Assessment, Children’s Depression Inventory, 
+Centre for Epidemiologic Studies Depression Scale Revised-10
+2 3
+Depression 
+symptoms
+Symptoms of depression
+Children’s Depression Inventory (CDI, CDI-2), Child Behaviour Check 
+List (CBCL) – withdrawn/depressed subscale or internalising score 
+(where no withdrawn/depressed subscale available), Centre for 
+Epidemiologic Studies Depression Scale (CESDR-10), Depression, 
+Anxiety and Stress Scale (DASS, DASS-21) – depression subscale, The 
+Reynolds Adolescent Depression Scale (RADS), Short Mood and 
+Feelings Questionnaire (SMFW), Youth Self Report (YSR) – 
+internalising score, Beck Depression Inventory (BDI, BDI-II), Patient 
+Health Questionnaire (PHQ-2, PHQ-9), Hospital Anxiety and 
+Depression Scale – depression subscale, Multiaxial Assessment of 
+Eating Disorder Symptoms (MAEDS) – depression subscale, Brief 
+Symptom Inventory – depression subscale, The Symptom Checklist-
+90 (SCL90) – depression subscale
+19 19
+Anxiety symptoms Symptoms of anxiety
+Child Behaviour Check List (CBCL) – anxious/depressed subscale, 
+State-Trait Anxiety Inventory for Children (STAIC), Depression, 
+Anxiety and Stress Scale (DASS, DASS-21) – anxiety subscale, Youth 
+Self Report (YSR) – anxious/depressed subscale or internalising scale 
+11 15
+36            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+(where no anxious/depressed subscale available), Short Scale 
+Anxiety Sensitivity Index (ASI-3), Screen for Child Anxiety Related 
+Emotional Disorders (SCARED), General Anxiety Disorder (GAD-7), 
+Hospital Anxiety and Depression Scale – anxiety subscale, Beck 
+Anxiety Inventory (BAI), Brief Symptom Inventory – anxiety subscale, 
+The Symptom Checklist-90 (SCL90) – anxiety subscale
+Personality traits
+Personality traits Personality traits
+Ten-Item Personality Inventory (TIPI), Big Five Inventory (44 items)
+0 2
+Psychosocial health
+Self-esteem Self-esteem
+Self-Perception Profile for Children/Adolescents (SPPC/SPPA), Harter 
+Self Perception Profile for Adults (SPPA) – global self-worth subscale, 
+Rosenberg Self-Esteem Scale (RSE)
+8 3
+Body 
+dissatisfaction
+Body dissatisfaction
+Self-Perception Profile for Children/Adolescents (SPPC/SPPA) – 
+physical appearance subscale, Body Appreciation Scale (BAS), Body 
+Esteem Scale for Adolescents and Adults, Body Shape Questionnaire 
+(BSQ), Body Uneasiness Test-A (BUT-A), Body Morphe Assessment 
+2.0
+10 5
+Quality of life Quality of life
+Pediatric Quality of Life Inventory (PedsQL), RAND Health Survey (SF-
+36, SF-12, SF-36 with only vitality, bodily pain, mental and general 
+health subscales), RAND 12-Item health survey, The World Health 
+Organization Quality of Life Brief Version (WHOQOL-BREF), The 
+Impact of Weight on Quality of Life-Lite (IWQOL-Lite), The Impact of 
+Weight on Quality of Life-Kids (IWQOL-Kids), Quality of Life 
+Enjoyment and Satisfaction Questionnaire.
+8 8
+Stress Stress
+Depression, Anxiety and Stress Scale (DASS, DASS-21) – stress 
+subscale, The Perceived Stress Scale (PSS, different versions used), 
+Cohen Perceived Stress Scale
+6 11
+37            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Sleep quality
+Sleep quality Sleep quality
+Questionnaires include: The Pittsburgh Sleep Quality Index (PSQI), 
+Women's Health Initiative Insomnia Rating Scale (WHIIRS)
+2 6
+Weight stigma
+Weight bias Weight-bias internalisation
+Weight Bias Internalisation Scale
+2 0
+Weight-related 
+bullying
+Weight-related bullying
+Perceived weight discrimination scale (adapted from the Everyday 
+Discrimination Scale), Perception of Teasing Scale (POTS), 
+Appearance Teasing Inventory (ATI) 
+3 0
+Weight talk Weight talk (peer or family) 0 0
+Eating behaviours
+Dietary restraint Dietary restraint measured using validated eating behaviour 
+measures
+Dutch Eating Behaviour Questionnaire (DEBQ) – restraint subscale, 
+Three Factor Eating Questionnaire (TFEQ, TFEQ-R21, TFEQ-R18) – 
+dietary restraint subscale, Eating Inventory – cognitive restraint 
+subscale
+5 14
+Disinhibition Disinhibition related to eating
+Three Factor Eating Questionnaire (TFEQ, TFEQ-R21 or TFEQ-R18) – 
+disinhibition/uncontrolled eating subscale, Mindful Eating 
+Questionnaire – disinhibition subscale, Eating Inventory – disinhibition 
+subscale
+1 11
+Impulsivity Impulsivity related to eating
+Child Eating Behaviour Questionnaire (CEBQ) – responsiveness to 
+food subscale, UPPS-P Impulsive Behavior Scale – negative urgency 
+scale, Short form of the UPPS-P Impulsive Behavior Scale (S-UPPS-P)
+3 2
+Emotional eating Emotional eating
+Emotional Eating Scale for Children (EES-C), Dutch Eating Behaviour 
+Questionnaire – emotional eating subscale, Child Eating Behavior 
+Questionnaire (CEBQ) – emotional over- and under-eating subscales, 
+8 6
+38            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Three Factor Eating Questionnaire (TFEQ-R21, TFEQ-R18) – emotional 
+eating subscale
+Self-efficacy 
+towards eating
+Self-efficacy towards eating
+Child Dietary Self-Efficacy Scale (CDSS), Eating Self-Efficacy Scale 
+(ESES), Weight Efficacy Lifestyle Questionnaire (WEL), The 
+Eating/Exercise Habits Confidence Survey (EHCS)
+2 4
+Night eating Night eating 0 0
+Grazing Grazing
+Repetitive Eating Questionnaire (Rep(eat)-Q), The Grazing 
+Questionnaire
+1 2
+External eating External eating/ food responsiveness
+Eating in Absence of Hunger (EAH) – external eating subscale, Dutch 
+Eating Behaviour Questionnaire (DEBQ) – external eating subscale
+5 7
+Secret eating Secret eating 0 0
+Food rules Food rules, narrow range/limited food choices or acceptability 
+Multiaxial Assessment of Eating Disorder Symptoms (MAEDS) – 
+avoidance of forbidden foods subscale, Child Behaviour Checklist 
+Questionnaire (CEBQ) – fussiness subscale
+2 3
+Cardiometabolic health
+Blood pressure Systolic blood pressure, diastolic blood pressure 6 12
+Blood lipids Total cholesterol, high-density lipoprotein cholesterol, triglycerides 6 11
+Insulin and glucose Insulin and glucose 6 11
+C-reactive protein C-reactive protein 5 8
+Liver enzymes Aspartate aminotransferase (AST), alanine aminotransferase (ALT), 
+gamma-glutamyl transferase (GGT)
+6 5
+39            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Fig 1 PRISMA flow diagram 
+ 
+40            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Fig 2a Frequency of combination of domains for adolescent datasets
+ 
+The lower panel lists the 
+domains of individual participant factors included in 20 adolescent datasets. The horizontal bar chart (bottom 
+left) shows the number of datasets including each domain. The connected black dots (bottom right) represent 
+the combination of domains within datasets. The vertical bar chart shows the number of datasets with each 
+combination of domains represented by the connected black dots. i.e. the combination of demographics, 
+anthropometry, mental health, medical and family history, psychosocial and history of dieting and weight loss 
+attempt domains is shown in the first bar on the vertical bar chart and was included in two datasets. 
+41            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+Fig 2b Frequency of combination of domains for adult datasets
+ 
+The lower panel 
+lists the domains of individual participant factors included in 26 adult datasets. The horizontal bar chart 
+(bottom left) shows the number of datasets including each domain. The connected black dots (bottom right) 
+represent the combination of domains within datasets. The vertical bar chart shows the number of datasets 
+with each combination of domains represented by the connected black dots. i.e. the combination of 
+42            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+demographics, medical and family history, anthropometry, mental health, eating behaviours and psychosocial 
+domains is shown in the first bar on the vertical bar chart and was included in five datasets.
+43            
+ACCEPTED MANUSCRIPTARTICLE IN PRESS

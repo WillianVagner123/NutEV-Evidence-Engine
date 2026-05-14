@@ -1,0 +1,817 @@
+ORIGINAL ARTICLE
+A within-trial cost-effectiveness analysis of primary care referral to
+a commercial provider for weight loss treatment, relative to
+standard care—an international randomised controlled trial
+NR Fuller 1, S Colagiuri 1, D Schoﬁeld 2, AD Olson 3, R Shrestha 2, C Holzapfel 4, SB Wolfenstetter 5, R Holle 5, AL Ahern 3, H Hauner 4,6,
+SA Jebb 3,6 and ID Caterson 1
+BACKGROUND: Due to the high prevalence of overweight and obesity there is a need to identify cost-effective approaches for
+weight loss in primary care and community settings.
+OBJECTIVE: We evaluated the cost effectiveness of two weight loss programmes of 1-year duration, either standard care (SC) as
+deﬁned by national guidelines, or a commercial provider (Weight Watchers) (CP).
+DESIGN: This analysis was based on a randomised controlled trial of 772 adults (87% female; age 47.4 ±12.9 years; body mass index
+31.4±2.6 kg m
+/C0 2) recruited by health professionals in primary care in Australia, United Kingdom and Germany. Both a health sector
+and societal perspective were adopted to calculate the cost per kilogram of weight loss and the ICER, expressed as the cost per
+quality adjusted life year (QALY).
+RESULTS: The cost per kilogram of weight loss was USD122, 90 and 180 for the CP in Australia, the United Kingdom and Germany,
+respectively. For SC the cost was USD138, 151 and 133, respectively. From a health-sector perspective, the ICER for the CP relative to
+SC was USD18 266, 12 100 and 40 933 for Australia, the United Kingdom and Germany, respectively. Corresponding societal ICER
+ﬁgures were USD31 663, 24 996 and 51 571.
+CONCLUSION: The CP was a cost-effective approach from a health funder and societal perspective. Despite participants in the CP
+group attending two to three times more meetings than the SC group, the CP was still cost effective even including these added
+patient travel costs. This study indicates that it is cost effective for general practitioners (GPs) to refer overweight and obese
+patients to a CP, which may be better value than expending public funds on GP visits to manage this problem.
+International Journal of Obesity (2013) 37, 828–834; doi:10.1038/ijo.2012.139; published online 28 August 2012
+Keywords: cost effectiveness; commercial provider; standard care; weight loss
+INTRODUCTION
+The prevalence of overweight and obesity is placing a substantial
+burden on health-care resources, even in developed countries.
+1
+Overweight and obesity accounts for 44% of the global burden of
+type 2 diabetes mellitus, 23% of ischaemic heart disease and
+7–41% of certain cancers. 2 Therefore obesity management
+programmes that are both efﬁcacious and cost effective are
+needed. Policy makers are increasingly seeking evidence of the
+cost effectiveness of interventions. It is important to know
+whether it is more cost effective to support and fund
+programmes already in place or subsidise others (including
+extant commercial weight loss programmes).
+A partnership between primary-care providers and commercial
+organisations may be a practical approach, whereby participants
+can beneﬁt from early lifestyle intervention for weight manage-
+ment. Observational data
+3,4 show that this approach has the
+potential to deliver weight management programmes at the
+necessary scale in a community setting and at potentially
+relatively low cost. Our recent 12-month randomised controlled
+trial (RCT) involving three countries (Australia, the United Kingdom
+and Germany) showed referral to a commercial weight-loss
+community intervention programme (Weight Watchers—
+commercial provider (CP)) produced greater weight loss com-
+pared with standard care (SC).
+5 Similar efﬁcacy of this CP has been
+demonstrated in other RCTs. 6,7 However, the cost effectiveness of
+CPs over SC has not been estimated. We calculated this using data
+from the above trial.
+5 Previous estimates of the cost of the CP have
+been done, but were small scale and used limited data. 8
+Our aim was to evaluate the cost effectiveness of a CP
+compared with conventional SC for both weight loss and quality
+of life (QOL). A societal perspective was also adopted as we have
+previously reported that those attending the CP had more
+frequent visits,
+5 which may have contributed to the success of
+the CP.
+1The Boden Institute of Obesity, Nutrition, Exercise & Eating Disorders, The University of Sydney, Sydney, Australia; 2NHMRC Clinical Trials Centre and School of Public Health, The
+University of Sydney, Sydney, Australia; 3MRC Human Nutrition Research, Cambridge, UK; 4Else Kroener-Fresenius-Centre for Nutritional Medicine, Faculty of Medicine, Technische
+Universita¨tM u¨ nchen, Munich, Germany and 5Helmholtz Zentrum Mu¨ nchen, German Research Centre for Environmental Health, Institute of Health Economics and Health Care
+Management (IGM), Neuherberg, Germany. Correspondence: Professor ID Caterson, The Boden Institute of Obesity, Nutrition, Exercise & Eating Disor ders, The University of
+Sydney, 92-94 Parramatta Road, Camperdown, Sydney, NSW, 2006, Australia.
+E-mail: ian.caterson@sydney.edu.au
+6These authors contributed equally to this work.
+Received 30 January 2012; revised 26 June 2012; accepted 30 July 2012; published online 28 August 2012
+International Journal of Obesity (2013) 37, 828–834
+& 2013 Macmillan Publishers Limited All rights reserved 0307-0565/13
+www.nature.com/ijo
+METHODS
+Clinical trial
+This cost-effectiveness analysis used data from an RCT whereby over-
+weight and obese adults were randomised to receive 12-month access to a
+CP or SC by a primary-care provider in Australia, the United Kingdom and
+Germany. Participants were recruited by their general practitioners (GPs)
+and randomised to one of the two groups. A full list of inclusion and
+exclusion criteria, as well as a description of the two intervention groups
+are in the report of the primary ﬁndings from the study.
+5 All participants
+were aged X18 years with a body mass index of 27–35 kg m /C0 2, and had at
+least one risk factor for obesity-related disease. Participants randomised to
+the CP group received vouchers to attend a weekly community CP
+meeting. Those randomised to SC received weight-loss advice delivered by
+a GP/primary care professional at their local medical practice. The
+frequency of these SC visits was at the discretion of the GP and the
+participant. The frequency of such visits was recorded, with GP visits only
+being counted for SC. GPs and primary-care professionals were provided
+with and encouraged to use relevant national clinical guidelines for weight
+management.
+5
+Health economic evaluation
+A health-care funder and societal perspective was adopted for the cost-
+effectiveness evaluation and included direct health costs to the govern-
+ment or patient arising from costs of intervention delivery and costs to
+patients for participation.
+Costing data
+Commercial programme. The costing for the CP group was based on a
+monthly payment plan, which included unlimited access to meetings and
+online electronic web tools. The cost of the referral visit to the CP was also
+included in the costing.
+Standard care. For SC, the cost applied was that of a consultation lasting
+20 minutes or less with a GP. In the United Kingdom, all consults provided
+in the SC group were by a nurse.
+Valuation of costs
+The cost of the CP for each country was sourced directly from Weight
+Watchers International, Inc. (New York, NY, USA). Unit costs for all other
+intervention and conventional resources were obtained from the relevant
+governments/health-care authorities (Table 1). Costs were estimated for
+patient travel to attend either CP or SC consultations. This was based on
+the assumption that patients travelled within a 10-km radius to their
+intervention. The number of participant visits to either the CP or SC was
+recorded throughout the 1-year study.
+Opportunity costs of employment were not considered because
+participants could attend their intervention outside working hours, during
+their lunch break, or on weekends. Childcare costs were not considered as
+children of any age are welcome at the CP meetings and can accompany
+their parent to an SC visit.
+Australia. In Australia, medical care is priced by the Medicare Beneﬁts
+Schedule (MBS) and Pharmaceutical Beneﬁts Scheme (PBS). Professional
+attendances were considered as ‘Group A1—general practitioner atten-
+dances to which no other item applies (level B)’—MBS item 23.
+United Kingdom . The cost of a GP referral and nurse consultation were
+calculated according to the Personal Social Services Research Unit
+(PSSRU).
+10
+Germany. The costs of a primary-care visit were calculated from 2007–
+2008 data (later data not available) and indexed using the geometric mean
+of the increase of GP costs 2007–2008,
+11 according to the Working Group
+‘Methods in Health Economic Evaluation’. 18
+Outcomes measured and statistical analyses
+Weight loss and change in QOL were measured. While in Germany,
+bodyweight (in light clothes without shoes) was measured in GP practices
+with standard scales, in the other countries measurements were with a
+Tanita BC-418 segmental body composition analyser (Tanita Corporation of
+America, Arlington Heights, IL, USA). Participants were weighed on six
+occasions over 12 months (baseline, month 2, 4, 6, 9 and 12)
+and completed the Impact of Weight on Quality of Life Questionnaire-
+Lite (IWQOL-Lite)
+19,20 on three occasions (baseline, months 6 and 12).
+All participants who completed a baseline assessment were included in
+an intention to treat analysis using last-observation carried forward. A
+utility score was derived using the algorithm described by Brazier et al.21 A
+completers only analysis was performed to calculate mean weight loss and
+change in utility score between groups but was not used in the cost-
+effectiveness calculations.
+Outcomes were analysed by linear regression with ﬁxed effects for
+continuous normal data; intervention group (CP vs SC) and baseline
+measurement were used as the ﬁxed effects.
+Cost-effectiveness analysis
+The cost-effectiveness analysis was performed for each country separately,
+incorporating differences of the cost of the commercial intervention,
+medical consultation fee structure, salary structures and other costing
+data.
+22 An incremental cost-effectiveness ratio (ICER) was calculated giving
+the net costs of CP relative to SC. The ICER represents the additional
+expenditure required to generate an additional unit of beneﬁt, and was
+expressed as the cost per QALY. QALYs were calculated from the IWQOL-
+Lite results. A preference based single index was estimated for each
+country
+21 to provide country speciﬁc ICERs. This formula was used to
+calculate cost per QALY.
+ICER ¼ Cost of CP /C0 Cost of SC
+Difference in QALYs
+An analysis was also performed to calculate the cost per kilogram of weight
+loss.
+Sensitivity analysis
+One-way sensitivity analyses were performed for the Australian site to
+include medication costs. An average costing for each subject was calculated
+in 3-month time periods so an annual cost could be estimated. Drug costs
+were obtained from the 2011 PBS pricing index—‘dispensed price for
+maximum quantity’ and units were based on the subject’s self-reported data.
+All medications and dosages prescribed were collected at each of the
+individual subject’s visits. The difference in total medication costs between
+CP and SC, plus the costs of implementing the intervention, divided by the
+difference in QALYs, gave an additional cost-effectiveness ratio.
+A further sensitivity analysis was performed including referral to allied
+health professionals in the SC group. An assumption was made that a
+proportion of GPs in the SC group referred their patients to a dietitian and/
+or psychologist for speciﬁc advice. A 1.1% referral rate for six consults over
+a 1-year time period has been applied, which was the probability of
+referral to an allied health professional during a GP visit in Australia in
+2009–2010.
+23
+Scenario analysis
+As the CP costs sourced in Table 1 reﬂect commercial pricing decisions and
+are ﬁnancial costs, the programme costs were re-evaluated according to
+opportunity costs. The CP is identical across countries and the cost to
+deliver the intervention is similar. The cost-effectiveness consequences of
+reducing programme costs in all countries to the equivalent of the Weight
+Watchers NHS referral scheme (GBP 45 for 12 sessions
+4) was examined.
+This is based on an attendance of 36 CP sessions per year (GBP 135–12
+session cost multiplied by 3). The Weight Watchers NHS referral scheme
+was used as it is an existing system.
+RESULTS
+Clinical trial results
+Baseline characteristics . Baseline characteristics of participants
+have been reported previously. 5 The mean (s.d.) age of subjects
+was 47.4 (12.9) years, the mean body mass index was 31.4 (2.6)
+kg m
+/C0 2, and 87% were females; 6.5% had type 2 diabetes.
+Weight loss . Both treatment groups lost weight but mean 12-
+month weight loss was signiﬁcantly greater for CP than SC in all
+three countries (CP: /C0 5.1±0.3 kg vs SC: /C0 2.3±0.2 kg;
+Po0.0001).
+5 Table 2 shows the mean weight loss per participant
+and country.
+Cost effectiveness of weight loss treatments
+NR Fuller et al
+829
+& 2013 Macmillan Publishers Limited International Journal of Obesity (2013) 828 – 834
+Quality of life . Seven hundred seventy-two participants com-
+menced the study. However, only 744 participants completed an
+IWQOL-Lite questionnaire at the initial baseline visit. Of this latter
+group, 12 participants were excluded owing to incomplete
+questionnaires. A further 73 participants were excluded owing
+to missing data when the algorithm was applied for conversion to
+utility scores, leaving 659 participants who could be included in
+the intention to treat analysis. Four hundred forty-four participants
+completed the 12-month study. There was a signiﬁcantly greater
+change in utility for CP than SC in Australia and the United
+Kingdom but not in Germany. A 0.021 and 0.015 improvement in
+utility score for the CP relative to SC was found in Australia and the
+United Kingdom, respectively, and a 0.009 improvement in utility
+score for the CP relative to SC was evident in Germany. When
+analysing completers only, there was a signiﬁcantly greater
+change in utility for the CP than SC in Australia and Germany
+but not in the United Kingdom (owing to the small sample size)
+(Table 3). From a pooled analysis of all three countries the greater
+change in utility for CP than SC remained signiﬁcant (results not
+shown).
+Intervention costs
+Australia. The average number of visits for each participant
+attending the CP or their GP was 33.0 and 10.7, respectively. Unit
+costs were summed for each resource measurement to obtain a
+total cost for each intervention (Table 1). The annual cost per
+patient was AUD 754 and AUD 373 for CP and SC, respectively.
+When including patient travel, the annual cost was AUD 1170 and
+AUD 508 for the respective programmes.
+United Kingdom . The average number of visits for each patient
+attending the CP or their GP was 36.4 and 13.3, respectively. The
+annual cost per patient was GBP 269 and GBP 160 for CP and SC,
+Table 1. CP and SC group costs and sources
+Resource Unit cost (local currency) Unit cost (USD) Average
+number of
+visits over
+12 months
+12-month
+cost (USD)
+Source
+CP
+WW attendance
+Australia $59.95 AUD per month $60.55 33.0 $726.60 www.weightwatchers.com.au
+United Kingdom d12.95 GBP per 1st
+month then d19.99 per
+month
+$21.24/1st month
+then $32.78
+36.4 $381.86 www.weightwatchers.co.uk
+Germany h39 EUR per month $55.38 23.1 $664.56 www.weightwatchers.de
+Primary-care referral
+Australia $34.90 per participant $35.25 1.0 $35.25 MBS 9—Item 23
+United Kingdom d36 per participant $59.04 1.0 $59.04 PSSRU 10
+Germany h19.17 per participant a $27.22 1.0 $27.22 Kassena ¨rztliche
+Bundesvereinigung11
+Medication
+Australia (Figure 1) $445.70 for 12 months $450.16 $450.16 PBS 12
+Patient travel
+Australia $12.60 per round trip $12.73 36.4 $419.96 ATO 13
+United Kingdom d5.00 per round trip $8.20 36.4 $298.48 PSSRU, 10 HMRC14–16
+Germany h6.00 per round trip $8.52 23.1 $196.81
+SC
+General Practitioner consult
+Australia $34.90 $35.25 10.7 $377.16 MBS 9—Item 23
+United Kingdom (Nurse) d12 $19.68 13.3 $261.74 PSSRU 10
+Germany h19.17a $27.22 11.3 $307.60 Kassena ¨rztliche
+Bundesvereinigung11
+Dietetic/psychology consult
+Australia $59.90 $60.50 0.066 $3.99 MBS 9—Items 10 954/10968
+United Kingdom d57.5 $94.30 0.066 $6.22 PSSRU 10
+Germany h60 $85.20 0.066 $5.62 Schulungs-Gemeinschaft
+Mu¨ nchen Ost e.V 17
+Medication
+Australia (Figure 1) $500.60 for 12 months $505.61 $505.61 PBS 12
+Patient travel
+Australia $12.60 per round trip $12.73 10.7 $137.01 ATO 13
+United Kingdom d5.00 per round trip $8.20 13.3 $109.60 PSSRU, 10 HMRC14–16
+Germany h6.00 per round trip $8.52 11.3 $96.84
+Abbreviations: ABS, Australian Bureau of Statistics; ATO, Australian Taxation Ofﬁce; AUD, Australian dollar; CP , commercial provider; EUR, Euro; GBP , Great
+Britain pound; MBS, Medicare Beneﬁts Schedule; ONS, Ofﬁce for National Statistics; PBS, Pharmaceutical Beneﬁts Scheme; PSSRU UK, Personal Social S ervices
+Research Unit; SC, standard care. At the time of writing (early 2011), 1 AUD was 1.01 USD; 1 GBP was 1.64 USD; 1 EUR was 1.42 USD according to XE currency
+exchange (http://www.xe.com). aFor Germany, a general GP visit was calculated as GPs are not able to charge a fee for weight-loss advice.
+Cost effectiveness of weight loss treatments
+NR Fuller et al
+830
+International Journal of Obesity (2013) 828 – 834 & 2013 Macmillan Publishers Limited
+respectively. Including patient travel, costs were GBP 451 and GBP
+226 for the respective programmes.
+Germany. The average number of visits for each patient
+attending the CP or their GP was 23.1 and 11.3, respectively.
+The annual cost per patient was EUR 487 and EUR 217 for CP and
+SC, respectively. Including patient travel, costs were EUR 626 and
+EUR 284 for the respective programmes.
+Cost effectiveness
+Australia. The cost per kilogram of weight loss was AUD 121 and
+AUD 137 for the CP and SC, respectively. The ICER for the CP
+relative to SC was AUD 18 085 (Table 4).
+United Kingdom . The cost per kilogram of weight loss was GBP
+55 and GBP 92 for the CP and SC, respectively. The ICER for the CP
+relative to SC was GBP 7378 (Table 4).
+Germany. The cost per kilogram of weight loss was EUR 127 and
+EUR 94 for the CP and SC, respectively. The ICER for the CP relative
+to SC was EUR 28 826 (Table 4).
+Sensitivity analysis
+While not reaching statistical signiﬁcance, the average medication
+cost per patient increased during the 12-month study period for
+the SC group (Figure 1). Medication costs remained the same for
+the CP group. The mean number of prescriptions was 1.9 per
+patient. These were for hypertension, cardiovascular disease,
+dyslipidemia, diabetes mellitus, thyroid disease, reﬂux, arthritis
+and musculoskeletal disease, and other conditions. No outliers
+who may have had the capacity to overwhelm any trends were
+evident. The highest costs were associated with proton pump
+inhibitors, cardiovascular disease and dyslipidemia.
+When medications were included, the annual cost per patient
+was AUD 1200 and AUD 874 for the CP and SC, respectively. With
+patient travel, programme costs were AUD 1616 and AUD 1009 for
+respective interventions. Including medication costs resulted in a
+decrease in the ICER for the CP relative to SC to AUD 15 522.
+Including the costs associated with referral to a health
+professional decreased the ICER to AUD 17 901, GBP 7117, and
+EUR 28 403.
+Scenario analysis
+If programme costs in Australia and Germany are equated to the
+UK Weight Watchers NHS referral scheme, the ICER for the CP
+relative to SC becomes dominant (more health beneﬁt at a lower
+cost) in both countries. In the United Kingdom, the ICER is lowered
+to GBP 655. The cost per kilogram of weight loss for the CP
+becomes AUD 41, GBP 35 and EUR 46.
+DISCUSSION
+This analysis shows the CP is a cost-effective option, over 1 year,
+for weight management in persons within a body mass index
+range of 27–35 kg m
+/C0 2. While the SC group also achieved a
+signiﬁcant weight loss over this period in all three countries, the
+trial results may not reﬂect routine practice. Therefore this CP may
+be an effective programme for primary-care providers to refer
+patients. The efﬁcacy of the CP may be in part attributable to the
+shared care approach as the subject was initially referred by their
+GP.
+24
+In Australia and the United Kingdom, the cost per kilogram of
+weight loss was lower for the CP than SC. In Germany, the cost per
+kilogram of weight loss was lower for SC. It is difﬁcult to compare
+these data with other weight loss studies because of different
+costing methodologies used. Previous lifestyle intervention
+studies did not include indirect costs such as patient travel and
+vary in terms of duration of outcomes, reporting costs from USD
+61
+25 to USD 133 per kilogram of weight loss, 26 and USD 6.40 27 to
+USD 48 per pound lost. 28 In contrast there is data of a programme
+with only AUD 7.30 per kilogram of weight loss. 29 When we
+adjusted for the CP ﬁnancial costs based on commercial pricing
+decisions, and costed according to economic prices, the cost per
+114.1
+110.9 110.0 114.2 110.6*112.0
+117.5 120.9
+130.5 131.7
+0
+20
+40
+60
+80
+100
+120
+140
+Month
+-3-0
+Month
+0-3
+Month
+3-6
+Month
+6-9
+Month
+9-12
+Cost AUD per patient
+Month
+WW
+GP
+*p=0.20
+Figure 1. Mean medication cost in AUD per patient by group for
+each 3-month time period.
+Table 2. Mean weight loss (kg) between baseline and month 12 per participant, treatment group and country (using LOCF , and completers only)
+CP s.d. N SC s.d. NP
+Mean Mean Coefﬁcient b
+Australia
+LOCF /C0 6.21 6.53 120 /C0 2.72 4.93 123 /C0 3.49 o0.0001
+CCa /C0 7.75 6.48 78 /C0 4.20 5.11 63 /C0 3.55 0.001
+United Kingdom
+LOCF /C0 4.91 5.10 91 /C0 1.73 3.13 87 /C0 3.18 o0.0001
+CCa /C0 7.52 5.28 27 /C0 4.46 3.97 17 /C0 3.06 0.047
+Germany
+LOCF /C0 3.84 6.58 107 /C0 2.31 4.35 131 /C0 1.53 0.033
+CCa /C0 5.40 7.01 71 /C0 2.71 5.00 88 /C0 2.69 0.005
+Abbreviations: CP , commercial provider; LOCF , last-observation carried forward; SC, standard care. aComplete case. bCoefﬁcient is the change in weight (kg) for
+CP compared with SC.
+Cost effectiveness of weight loss treatments
+NR Fuller et al
+831
+& 2013 Macmillan Publishers Limited International Journal of Obesity (2013) 828 – 834
+kilogram of weight loss was lower for the CP compared with SC in
+all three countries.
+As the cost per kilogram of weight loss is not commonly used
+by decision makers, a cost per QALY gained was also calculated.
+As an example of health resources used by this demographic
+group, medication usage was estimated for the Australian sample.
+When medications and their usage were included, the cost per
+QALY was lowered. Regardless of this, and using the commonly
+accepted threshold of o$50 000 per QALY,
+30,31 the CP proved to
+be cost effective from both a health sector and societal
+perspective in Australia.
+In the United Kingdom, the ICER level that the National Institute
+of Health and Clinical Excellence has adopted is GBP 20–30 000
+per QALY gained.
+32 Using this standard our results show the CP in
+the United Kingdom is a cost-effective programme from both
+health care and societal perspectives.
+In Germany, obesity is not considered a disease in the health-
+care system. Therefore, obesity treatment is usually not under-
+taken in primary care. Comparing with cost-effective thresholds
+for pharmaceutical and surgical interventions in Europe
+(oh50 000),
+33 the CP is again cost effective when both
+perspectives were adopted.
+The cost disparity of the CP and SC between countries had a
+large effect on the outcome, indicating that the results (cost per
+kilogram of weight loss and cost per QALY gained) are sensitive to
+the costs of the programme. In the United Kingdom, the cost
+to attend the CP was the lowest. When the CP costs were lowered
+to this value, the ICER for the CP relative to SC becomes dominant
+(more health beneﬁt at a lower cost) in both Australia and
+Germany. Therefore the CP generated a better health outcome
+and cost less than SC. In the United Kingdom, this lowers the ICER
+to GBP 655.
+It is possible that the SC group would have higher rates of
+referral to allied health due to greater contact with their GP. While
+attempting to compensate for such associated allied health costs
+in the SC group by applying a 1.1% referral rate,
+23 the only data
+available relate to the general population rather than speciﬁcally
+for an overweight and obese population, for which the referral
+rate is likely to be higher. Including costs associated with referral
+to allied health decreased the ICER in each country. As the CP
+subjects were not allowed to participant in other weight-loss
+programmes or seek other assistance for weight loss, these
+associated costs were not included for the CP group.
+The cost of this early prevention approach targeting overweight
+and obese adults is low compared with the cost associated with
+the burden of type 2 diabetes. The average annual cost per person
+with type 2 diabetes in 2003 was AUD 5360
+34 but prevention and
+intervention costs do vary considerably. 35 As shown by previous
+lifestyle interventions, the degree of weight loss in the current
+study reduces the risk of type 2 diabetes in those at high risk.
+36
+Despite weight regain being common, a so-called ‘metabolic
+memory effect’ has been shown in Diabetes Treatment and
+Prevention Outcome Studies
+36,37 and it could be anticipated that
+such metabolic beneﬁt would occur with the weight loss achieved
+in this trial. Therefore, adopting cost-effective weight
+management programmes as demonstrated in this study, and
+an intervention that has the capacity to be large scale (CP), may be
+an effective way to reduce the prevalence of obesity associated
+diseases such as type 2 diabetes and their costs.
+While a key strength of this analysis allows us to draw on the
+results of a RCT to perform a within-trial cost, it also acts as a
+limitation as the cost-effectiveness analysis is restricted to a 1-year
+time period. Importantly, the QALY metric is not all that applicable
+over a 1-year time horizon; however, it has been used in this study
+for demonstration purposes so that results can be compared with
+cost-effectiveness thresholds.
+Another key strength of this study was the use of the societal
+perspective to take into consideration all intervention costs. This
+follows the recommended approach for cost-effectiveness ana-
+lyses.
+38 However, as the available data from the RCT did not
+enable us to capture several cost-offsets including reduced rates
+of obesity-related disease, frequency of hospitalisations averted or
+Table 3. Change in utility scores (quality of life) between baseline and
+month 12 for CP compared with SC (using LOCF , and completers only)
+Analysis by
+country
+Coefﬁcient (to 3
+decimal places) a
+95%
+Conﬁdence
+Interval
+PN
+LOCF
+Australia 0.021 0.006 0.037 0.006 243
+United
+Kingdom
+0.015 0.001 0.028 0.033 178
+Germany 0.009 -0.006 0.024 0.222 238
+Completers Only
+Australia 0.023 0.003 0.044 0.027 141
+United
+Kingdom
+0.020 -0.025 0.064 0.382 44
+Germany 0.021 0.001 0.040 0.039 159
+Abbreviations: CP , commercial provider; LOCF , last-observation carried
+forward; SC, standard care. aCoefﬁcient is the change in utility score for CP
+compared with SC.
+Table 4. Costs per kilogram of weight loss per group and country and ICERs (cost per QAL Y) for the CP compared with SC from both a health-care
+funder and societal perspective
+Country Cost per kilogram of
+weight loss—excluding
+time and travel
+Cost per kilogram of
+weight loss—including
+time and travel
+Excluding travel Including travel
+WW SC WW SC ICER 95% CI ICER 95% CI
+Australia (AUD) $121 $137 $188 $187 $18 085 $10 239, $68 041 $31 349 $17 723, $115 290
+(USD) $122 $138 $190 $189 $18 266 $10 342, $68 721 $31 663 $17 900, $116 443
+United Kingdom (GBP) d55 d92 d92 d131 d7378 d3851, d42 698 d15 242 d7986, d89 286
+(USD) $90 $151 $151 $215 $12 100 $6316, $70 025 $24 996 $13 098, $146 429
+Germany (EUR) h127 h94 h163 h127 h28 826 h10 890, Dominated h36 318 h13 561 Dominated
+(USD) $180 $133 $231 $180 $40 933 $15 464, Dominated $51 571 $19 257, Dominated
+Abbreviations: AUD, Australian dollar; EUR, Euro; GBP , Great Britain pound; ICER, incremental cost-effectiveness ratio; SC, standard care. At the time of writing
+(early 2011), 1 AUD was 1.01 USD; 1 GBP was 1.64 USD; 1 EUR was 1.42 USD according to XE currency exchange (http://www.xe.com).
+Cost effectiveness of weight loss treatments
+NR Fuller et al
+832
+International Journal of Obesity (2013) 828 – 834 & 2013 Macmillan Publishers Limited
+reduction in sick leave, the true cost effectiveness of the
+intervention programme may have been underestimated.
+While it was assumed that no patient required time off from
+work to attend the CP or GP consultations, this information was
+not speciﬁcally captured. A large beneﬁt of the CP and GP consults
+is that they are available out of work hours, at lunchtimes and on
+weekends, minimising the opportunity costs of employment. An
+assumption may also be made that a percentage of patients are
+commenced on other weight loss assistance therapies by their GP
+in a SC real life setting, but such treatments were not included in
+our analysis. The limitations of the trial design meant that other
+costs such as food products endorsed by the CP and out of
+pocked expenses for the SC group (for example, allied health
+professional consultations) were ignored.
+For the Australian sensitivity analysis medications were grouped
+together and it was not possible to determine whether there was
+a change in costs relating to obesity or disease-speciﬁc drugs.
+However, as reported by the Counterweight Programme in the
+United Kingdom, the range of prescribing areas being affected by
+obesity was greater than expected.
+39 An increased prescription
+rate was found for categories such as gastrointestinal, infections,
+skin conditions, antihistamines, hypnotics, and drugs used in the
+treatment of nausea and vertigo. Most clinicians would not
+typically associate these with obesity.
+39 Therefore, there is a wide
+range of clinical conditions for which obesity is a contributory
+factor.
+In Australia, despite the GP-treated (SC) group showing an
+increase in mean medication prescription over the 12-month
+period, it did not reach signiﬁcance. This may reﬂect better control
+of risk factors by GPs as SC patients were required to see their
+primary-care professional on a more regular basis. However,
+despite this increase in prescriptions, they had no better control of
+risk factors for obesity-related conditions at the end of the 12-
+month study. Patients in the CP group had signiﬁcantly greater
+total to HDL cholesterol ratio than in the SC group and serum
+insulin was lower, and weaker evidence existed of improvements
+in glucose, and HDL and LDL cholesterol. Small reductions in
+blood pressure were noted for both treatment groups.
+5 All these
+improvements may be related to, or inﬂuenced by, degree of
+weight loss. As the patients were overweight or obese with one or
+more additional risk factors for obesity-related disease, a slightly
+higher average number of medication scripts per person may be
+expected, and consequently a higher mean medication cost per
+patient. Results from a random Australian community sample of
+3015 respondents with a mean age of 45.3 years found that 1411
+(46.8%) were taking one or more prescribed medications.
+40 In this
+trial, it was 1.9 prescribed medications per patient.
+Missing data were dealt with from an intention to treat
+perspective using last-observation carried forward. Despite a
+mixed model or multiple imputation approach now being
+commonly used to deal with missing data,
+41 the last-observation
+carried forward method was adopted as it was more conservative
+than the mixed model results previously reported in an interim
+analysis for weight loss of this RCT.
+42 This would imply a higher
+cost per kilogram of weight loss for the CP relative to SC.
+The models by which IWQOL-Lite values are transformed into
+utilities has its weaknesses, and such a mapping exercise is second
+preference compared with the direct use of the EuroQoL Europe
+or the AQoL Australia, for example. But, the IWQOL-Lite is an
+obesity-speciﬁc measure of QOL sensitive to obesity-related QOL
+effects, and it performs well in terms of conventional psycho-
+metric criteria in obese populations.
+19,43,44 Despite the concerns
+with this mapping approach, it is possible to produce a robust
+model for predicting SF-6D index values from the IWQOL-Lite. 21
+It has been argued that there is too much reliance on health
+professionals such as GPs to treat overweight and obesity. 45 This is
+in part because GPs do not have additional or alternative
+resources to manage this issue beyond a standard GP
+consultation. The ability to be able to refer to cost-effective
+commercial programmes may assist. However, due to the out of
+pocket cost it may still be beyond the ﬁnancial reach of a
+substantial proportion of the population, particularly those who
+need it most.
+46 Thus, governments could consider funding cost-
+effective commercial programmes in preference to GP visits for
+managing overweight and obesity. In Australia, for example, the
+addition of items to Medicare and private health insurance,
+providing ﬁnancial incentives to better treatment, could help
+support individuals in changing their lifestyle behaviours.
+45
+This study provides data from three different countries and
+consistent results. The cost per kilogram of weight loss was lower for
+the CP versus SC in Australia and the United Kingdom. When
+adjusting for the CP ﬁnancial costs based on commercial pricing
+decisions, and costing according to economic prices, the cost per
+kilogram of weight loss was lower for the CP compared with SC in all
+three countries. The CP is cost effective when assessed by the
+commonly accepted threshold of a cost o$50 000 per QALY.
+Importantly, despite participants in the CP group attending on
+average three meetings per month in the United Kingdom and
+Australia, and two meetings per month in Germany, compared with
+only one appointment per month for the SC group, the CP remained
+cost effective when including these added patient travel costs.
+CONFLICT OF INTEREST
+NRF and IDC have received research grants for other clinical trials funded by Sanoﬁ-
+Aventis, Allergan, Eli Lilly and Novo Nordisk. IDC was a board member for the SCOUT
+trial, and currently for the EXSCEL trial, and has received payment for lectures from
+iNova Pharmaceuticals, Eisai Pharmaceuticals, Pﬁzer Australia and Servier Labora-
+tories (Australia). SAJ has received research grants for other clinical trials from Sanoﬁ-
+Aventis and Coca Cola, and is a member of the Tanita Medical Advisory Board and
+receives a fee for nutrition articles and lectures for Rosemary Conley Enterprises. HH
+is on the Advisory Board for Weight Watchers International and has received
+payment for lectures from Sara Lee, Novartis, Sanoﬁ-Aventis and Bristol-Myers
+Squibb.
+ACKNOWLEDGEMENTS
+We acknowledge the assistance of Namson Lau, Crystal Lee, Colman Taylor, Toby
+Gould and Hannah Verry who provided critical analysis of the draft paper; James
+Geroﬁ for his mathematical expertise; Stephan Jacob for his guidance and assistance
+relating to the German health care system; and to the rest of the team who
+contributed to the acquisition of data and recruitment of study participants (Annie
+Simpson, Suzanne Pearson, Louise Aston, Julia Stoll), and study design (Ulrike
+Amann-Gassner, Adrian Mander).
+AUTHOR CONTRIBUTIONS
+The author’s responsibilities were as followsNRF: acquisition of data, analysis and
+interpretation of data, and writing of the paper. SC, DS: critical review and writing of the
+paper. ADO, RS: analysis of data. CH, SBW, RH: health economic contribution for German
+speciﬁc data and critical review of the paper; ALA: health economic contribution for UK
+speciﬁc data and critical review of the paper. SAJ, HH: study design and conception,
+obtained funding and critical review of the paper. IDC: study design and conception,
+obtained funding and writing the paper. All authors read and approved the ﬁnal paper.
+TRIAL REGISTRATION
+This study is registered with the International Standard Register of Clinical Trials,
+ISRCTN 85485463.
+ROLE OF THE FUNDING SOURCE
+This study was investigator-initiated but funded by Weight Watchers International
+through a grant to the Medical Research Council (United Kingdom). The funders had
+no role in study design, data collection and analysis, decision to publish, or
+preparation of the paper.
+Cost effectiveness of weight loss treatments
+NR Fuller et al
+833
+& 2013 Macmillan Publishers Limited International Journal of Obesity (2013) 828 – 834
+REFERENCES
+1 WHO. Obesity: preventing and managing the global epidemic. Report of a WHO
+consultation.: World Health Organisation , 2000.
+2 WHO. Global health risks: mortality and burden of disease attributable to selected
+major risksWorld Health Organization, 2009, Contract No.: ISBN 978 92 4 156387 1.
+3 Lavin JH, Avery A, Whitehead SM, Rees E, Parsons J, Bagnall T et al. Feasibility and
+beneﬁts of implementing a Slimming on Referral service in primary care using a
+commercial weight management partner. Public Health 2006; 120: 872–881.
+4 Ahern AL, Olson AD, Aston LM, Jebb SA. Weight Watchers on prescription: An
+observational study of weight change among adults referred to Weight Watchers
+by the NHS. BMC Public Health 2011; 11: 434.
+5 Jebb SA, Ahern AL, Olson AD, Aston LM, Holzapfel C, Stoll J et al. Primary care
+referral to a commercial provider for weight loss treatment versus standard care: a
+randomised controlled trial. Lancet 2011; 8: 61344–61345.
+6 Heshka S, Anderson JW, Atkinson RL, Greenway FL, Hill JO, Phinney SD et al.
+Weight loss with self-help compared with a structured commercial program—a
+randomized trial. JAMA 2003; 289: 1792–1798.
+7 Jolly K, Lewis A, Beach J, Denley J, Adab P, Deeks JJ et al. A randomised controlled
+trial to compare a range of commercial or primary care led weight reduction
+programmes with a minimal intervention control for weight loss in obesity: the
+Lighten Up trial. BMJ 2011; 343: d6500.
+8 Cobiac L, Vos T, Veerman L. Cost-effectiveness of Weight Watchers and the
+Lighten Up to a Healthy Lifestyle program. Aust NZJ Public Health 2010; 34:
+240–247.
+9 DoHA. Medicare Beneﬁts Schedule Book. Department of Health and Ageing,
+Australian Government; 2010 (cited 18 January 2011); Available from: http://
+www.health.gov.au/internet/mbsonline/publishing.nsf/Content/Downloads-201011.
+10 PSSRU. Unit Costs of Health and Social Care. Personal Social Services Research
+Unit, United Kingdom; 2010 (20 February cited 2011); available from: http://
+www.pssru.ac.uk.
+11 Kassena¨rztliche Bundesvereinigung (The National Association of Statutory Health
+Insurance Physicians). Grunddaten zur vertragsa¨rztlichen Versorgung 2009, Berlin
+2010 Contract No.: Tabelle II.1.
+12 DoHA. Pharmaceutical Beneﬁts Scheme. Department of Health and Ageing,
+Australian Government; 2011 (cited 02 February 2011); available from: http://
+www.pbs.gov.au/pbs/home.
+13 ATO. Claiming a deduction for car expenses using the cents per kilometre
+method. Canberra: Australian Taxation Ofﬁce, Australian Government; 2009–10
+(cited 25 February 2011); available from: http://www.ato.gov.au/individuals/
+content.asp?doc ¼ /content/33874.htm.
+14 HMRC. Travel—mileage and fuel allowances. HM Revenue & Customs UK; 2010/11
+(cited 17th September 2011); available from: http://www.hmrc.gov.uk/rates/
+travel.htm.
+15 Leitsatz zum Urteil des Zweiten Senats vom 9. Dezember 2008 (2008).
+16 Suche nach Arzt oder Psychotherapeut (database on the internet) 2011, Available
+from http://arztsuche.kvb.de/cargo/app/erweiterteSuche.htm?apvOnly=true.
+17 Schulungs-Gemeinschaft Mu ¨ nchen Ost e.V. Individuelle Erna ¨hrungsberatung
+Munich: Schulungs-Gemeinschaft Mu ¨ nchen Ost e.V., 2010, (updated 05/2011;
+cited 2011); available from: http://www.schulung-muenchen-ost.de/11.html.
+18 Krauth C, Hessel F, Hansmeier T, Wasem J, Seitz R, Schweikert B. Empirical stan-
+dard costs for health economic evaluation in Germany—a proposal by the
+working group methods in health economic evaluation [in German]. Gesund-
+heitswesen 2005; 67: 736–746.
+19 Kolotkin RL, Crosby RD, Kosloski KD, Williams GR. Development of a brief measure
+to assess quality of life in obesity. Obes Res 2001; 9: 102–111.
+20 Mueller A, Holzapfel C, Hauner H, Crosby RD, Engel SG, Muhlhans B et al. Psycho-
+metric Evaluation of the German Version of the Impact of Weight on Quality of Life-
+Lite (IWQOL-Lite) Questionnaire. Exp Clin Endocrin Diabetes
+2011; 119:6 9 – 7 4 .
+21 Brazier JE, Kolotkin RL, Crosby RD, Williams GR. Estimating a preference-based
+single index for the Impact of Weight on Quality of Life-Lite (IWQOL-lite) instru-
+ment from the SF-6D. Value Health 2004; 7: 490–498.
+22 Carter R, Moodie M, Markwick A, Magnus A, Vos T, Swinburn B et al. Assessing
+Cost-Effectiveness in Obesity (ACE-Obesity): an overview of the ACE approach,
+economic methods and cost results. BMC Public Health 2009; 9: 419.
+23 Britt H, Miller GC, Charles J, Henderson J, Bayram C, Pan Y et al. General practice
+activity in Australia. BEACH Bettering the Evaluation And Care of Health 2009-10
+2009-10.
+24 Richman RM, Webster P, Salgo AR, Mira M, Steinbeck KS, Caterson ID. A Shared
+Care approach in obesity management: he general practitioner and a hospital
+based service. Int J Obes 1996; 20: 413–419.
+25 Gustafson A, Khavjou O, Stearns SC, Keyserling TC, Gizlice Z, Lindsley S et al. Cost-
+effectiveness of a behavioral weight loss intervention for low-income women: The
+Weight-Wise Program. Prev Med 2009; 49: 390–395.
+26 Sherwood NE, Jeffery RW, Pronk NP, Boucher JL, Hanson A, Boyle R et al. Mail and
+phone interventions for weight loss in a managed-care setting: weigh-to-be
+2-year outcomes. Int J Obes 2006; 30: 1565–1573.
+27 Brownell KD, Stunkard AJ, McKeon PE. Weight reduction at the work site: a pro-
+mise partially fulﬁlled. Am J Psychiatry 1985; 142: 47–52.
+28 Katz DL, Chan W, Gonzalez M, Larson D, Nawaz H, Abdulrahman M et al. Technical
+skills for weight loss: Preliminary data from a randomized trial. Prev Med 2002; 34:
+608–615.
+29 Pritchard DA, Hyndman J, Taba F. Nutritional counselling in general practice: a
+cost effective analysis. J Epidemiol Community Health 1999; 53: 311–316.
+30 Laupacis A, Feeny D, Detsky AS, Tugwell PX. How attractive does a new tech-
+nology have to be to warrant adoption and utilization—tentative guidelines for
+using clinical and economic evaulations. Can Med Assoc J 1992; 146: 473–481.
+31 Salem L, Jensen CC, Flum DR. Are bariatric surgical outcomes worth their cost? A
+systematic review. J Am Coll Surg 2005; 200: 270–278.
+32 Appleby J, Devlin N, Parkin D, Buxton M, Chalkidou K. Searching for cost effec-
+tiveness thresholds in the NHS. Health Policy 2009; 91: 239–245.
+33 Neovius M, Narbro K. Cost-effectiveness of pharmacological anti-obesity treat-
+ments: a systematic review. Int J Obes 2008; 32: 1752–1763.
+34 Colagiuri S, Colagiuri R, Conway B, Grainger D, Davey P. DiabCo$t Australia:
+assessing the burden of Type 2 Diabetes in Australia, Diabetes Australia. Canberra
+December, 2003.
+35 Li R, Zhang P, Barker LE, Chowdhury FM, Zhang XP. Cost-effectiveness of inter-
+ventions to prevent and control diabetes mellitus: a systematic review. Diabetes
+Care 2010; 33: 1872–1894.
+36 Lindstrom J, Ilanne-Parikka P, Peltonen M, Aunola S, Eriksson JG, Hemio K
+et al.
+Sustained reduction in the incidence of type 2 diabetes by lifestyle intervention:
+follow-up of the Finnish Diabetes Prevention Study. Lancet 2006; 368: 1673–1679.
+37 Bray GA, Chatellier A, Duncan C, Greenway FL, Levy E, Ryan DH et al. 10-year
+follow-up of diabetes incidence and weight loss in the Diabetes Prevention
+Program Outcomes Study. Lancet 2009; 374: 1677–1686.
+38 Russell LB, Gold MR, Siegel JE, Daniels N, Weinstein MC. The role of cost-effec-
+tiveness analysis in health and medicine. JAMA 1996; 276: 1172–1177.
+39 Gibbs H, Broom J, Brown F, Laws R, Reckless J, Noble P et al. The impact of obesity
+on drug prescribing in primary care. Br J Gen Pract 2005; 55: 743–749.
+40 Goldney RD, Fisher LJ. Use of prescribed medications in a South Australian
+community sample. Med J Aust 2005; 183: 251–253.
+41 Elobeid MA, Padilla MA, McVie T, Thomas O, Brock DW, Musser B et al. Missing
+data in randomized clinical trials for weight loss: scope of the problem, state of
+the ﬁeld, and performance of statistical methods. PLoS ONE 2009; 4: e6624.
+42 Olson AD, Jackson D, Seaman SR, Jebb SA, Mander AP. Missing data in weight loss
+randomised controlled trials. In Astrup A (ed). 18th European Congress on Obesity
+(ECO 2011) . Obesity Reviews: Instanbul, Turkey, 2011 p106.
+43 Kolotkin RL, Crosby RD, Williams GR, Hartley GG, Nicol S. The relationship between
+health-related quality of life and weight loss. Obes Res 2001; 9: 564–571.
+44 Kolotkin RL, Crosby RD, Williams GR. Health-related quality of life varies among
+obese sub-groups. Obes Res 2002; 10: 748–756.
+45 Kouris-Blazos A, Wahlqvist ML. Health economics of weight management: evi-
+dence and cost. Asia Pac J Clin Nutr 2007; 16: 329–338.
+46 Tsai AG, Wadden TA. Systematic review: an evaluation of major commercial
+weight loss programs in the United States. Ann Intern Med 2005; 142: 56–66.
+This work is licensed under the Creative Commons Attribution-
+NonCommercial-No Derivative Works 3.0 Unported License. To view a
+copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/
+Cost effectiveness of weight loss treatments
+NR Fuller et al
+834
+International Journal of Obesity (2013) 828 – 834 & 2013 Macmillan Publishers Limited

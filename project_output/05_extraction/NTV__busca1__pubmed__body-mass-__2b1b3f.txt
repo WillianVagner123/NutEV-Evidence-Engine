@@ -1,0 +1,1047 @@
+ARTICLE IN PRESS
+Article in Press
+Body mass index, physical activity, and 
+epigenetic aging: a cross-population study
+Clinical Epigenetics
+Received: 24 January 2026
+Accepted: 22 April 2026
+Cite this article as: Zhou B., Wu D., 
+Chen S. et al. Body mass index, physical 
+activity, and epigenetic aging: a 
+cross-population study. Clin Epigenet 
+(2026). https://doi.org/10.1186/
+s13148-026-02149-2
+Bojun Zhou, Dongzhe Wu, Shuting Chen, Shiyan Zhang, Xiaochuan Ge, Jiaming Li, 
+Lianghao Zhu, Shijie Zhou, Ninghao Chang, Biao Zhou, Lei Zhang & Hua Meng
+We are providing an unedited version of this manuscript to give early access to its 
+findings. Before final publication, the manuscript will undergo further editing. Please 
+note there may be errors present which affect the content, and all legal disclaimers 
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer 
+Review reports will publish with the final article.
+https://doi.org/10.1186/s13148-026-02149-2
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International 
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit 
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do 
+not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the 
+article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain 
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ 1 
+Body Mass Index, Physical Activity, and Epigenetic Aging: A Cross -
+Population Study 
+Bojun Zhou, 1,2†, Dongzhe Wu 2†, Shuting Chen 3†, Shiyan Zhang 1,2, Xiaochuan Ge 1,2, 
+Jiaming Li2, Lianghao Zhu5, Shijie Zhou6, Ninghao Chang7, Biao Zhou1*, Lei Zhang4*, 
+Hua  Meng1* 
+1Department of Exercise Physiology, Beijing Sport University; 2Department of General 
+Surgery and Obesity and Metabolic Disease Center, China-Japan Friendship Hospital; 
+3School of sports medicine and rehabilitation, Beijing Sport University; 4Department 
+of Oncology, Sinopharm Tongmei General Hospital; 5Key Laboratory of Competitive 
+Sport Psychological and Psychological Regulation, Tianjin University of Sport; 
+6School of Laboratory Medicine and School of Biological Engineering, Hangzhou 
+Medical College; 7The High School Affiliated to Beijing Normal University. 
+*Corresponding authors.Address: Department  of General Surgery ＆ Obesity and 
+Metabolic Disease Center, China-Japan Friendship Hospital, Beijing100029, China. E-
+mail:zhoubiao327@163.com; Department of Oncology, Sinopharm Tongmei General 
+Hospital, Datong 037000 Shanxi, China. E-mail:zhanglei412625@163.com; 
+Department of General Surgery＆Obesityand Metabolic Disease Center, China-Japan 
+Friendship Hospital, Beijing 100029, China. Electronic address: 
+menghuade@hotmail.com. 
+†These authors have contributed equally to this work and share first authorship: Bojun 
+Zhou; Dongzhe Wu; Shuting Chen 
+ 
+Abstract Background: Observational studies have suggested that body mass index 
+(BMI) is associated with accelerated epigenetic aging; however, the age at which this 
+association begins and the duration of its effects have not been fully established. This 
+study evaluated the effects of BMI and physical activity on epigenetic aging from early 
+life to adulthood. Methods: We integrated multi -source data from populations of 
+different racial backgrounds, including genome -wide association study (GWAS) data, 
+the National Health and Nut rition Examination Survey (NHANES), clinical visceral 
+adipose tissue, and blood samples from obese and physically active populations.  
+Specifically, Mendelian randomization (MR) analysis was used to infer the causal 
+relationship between early -life BMI and e pigenetic age acceleration and to identify 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 2 
+potential mediators. NHANES data were then analyzed to validate this association at 
+the population level. Finally, biomarkers in blood and adipose tissue were examined to 
+assess whether physical activity is associ ated with reduced aging -related signatures.  
+Results: The Mendelian randomization analyses indicated that high early-life BMI was 
+causally associated with accelerated epigenetic aging across multiple epigenetic clocks, 
+with β ranging from 0.231 to 0.506; si milar associations were also observed for 
+childhood obesity, with β ranging from 0.139 to 0.231. Physical activity was identified 
+as an important mediator that attenuated epigenetic aging acceleration, with mediation 
+effects accounting for 10.70% to 16.22% . Analysis of the NHANES dataset further 
+confirmed that epigenetic age acceleration increases progressively with increasing BMI: 
+[25 ≤ BMI < 30: β=0.83, 95% CI (0.66, 1.00); 30 ≤ BMI < 35: β=1.73, 95% CI (1.54, 
+1.93); 35 ≤ BMI < 40: β=2.93, 95% CI (2.67, 3.20); BMI ≥ 40: β=4.64, 95% CI (4.30, 
+4.99)]. Subgroup analysis showed that, at the same BMI level, female exhibited more 
+severe PhenoAA acceleration than male. Validation using multi-tissue samples showed 
+that obesity accelerates DNA damage and significan tly upregulates genes involved in 
+cell cycle regulation. Physical activity significantly inhibited the upregulation of aging-
+related genes and reduced oxidative stress. Conclusion: BMI is strongly associated  
+with accelerated epigenetic aging. This association is evident in children with obesity, 
+becomes stronger with higher BMI, and is also observed in adults, whereas physical 
+activity may partially attenuate this process. 
+Keywords: Epigenetics; Aging clock; Physical activity; Body mass index 
+From 1990 to 2 021, the global prevalence of overweight and obesity has 
+consistently increased, with all countries showing an upward trend. By 2021, 
+approximately 1 billion male and 1.11 billion female worldwide were overweight or 
+obese[1]. Obesity increases the risk of chronic diseases and accelerated aging [2]. With 
+population aging becoming a growing global concern, the prevention and delay of aging 
+have attracted widespread attention in the scientific communi ty. In this context, the 
+distinction between chronological an d biological age is particularly important, as 
+individual aging processes often deviate from calendar time . Chronological age refers 
+to the actual time a person has lived, usually measured in years. In contrast, biological 
+age reflects an individual's phys iological and functional status, as evaluated using 
+multiple indicators, including cardiopulmonary function, hormone levels, 
+inflammatory markers, and epigenetic aging clocks. People of different genders and 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 3 
+ethnicities may have the same chronological age, but their biological age may differ 
+significantly, often related to environmental factors, daily behaviors, and endogenous 
+or exogenous stresses [3]. Emerging evidence suggests that biological age is strongly 
+associated with the risk of multiple chronic di seases, including cancer, metabolic 
+disorders, and cardiovascular disease. Therefore, assessing biological age may provide 
+a clinically meaningful framework for disease prevention and aging surveillance, while 
+also helping to clarify how modifiable factors , such as obesity and physical activity, 
+may accelerate or delay the aging process[4]. 
+Aging is a complex process involving changes in gene expression, protein 
+synthesis, hormone secretion, and cellular function [ 5 ]. Within this complex aging 
+process, epigenetic modifications play a crucial role by regulating gene activity and 
+expression, thereby influencing cell and tissue function. Epigenetic "age estimators" 
+use specific CpG sites (also known as epigenetic clocks) and mathematical algorithms 
+to estimate DNA methylation age. Due to its applicability across various tissues, high 
+precision, and strong correlation, this method has been recognized as one of the most 
+promising tools for predicting biological age [6][7]. Numerous studies have shown that 
+obesity is significantly associated with cardiovascular and metabolic diseases, both in 
+childhood and adulthood. This association may operate through epigenetic mechanisms. 
+Research has demonstrated that the liver and visceral fat tissue significantly accelerate 
+epigenetic aging in obese states[8][9][10]. More importantly, this accelerated aging process 
+has been directly linked to an increased risk of coronary artery disease and type 2 
+diabetes, with a particularly pronounced effect in obese populations [11]. Conve rsely, 
+regular physical activity promotes the secretion of exerkines from multiple organs, 
+thereby modulating DNA methylation patterns and contributing to a delay in epigenetic 
+aging[12][13]. This may partly explain why individuals who engage in regular phys ical 
+activity often exhibit a lower biological age than age -matched individuals with 
+obesity[14][15]. Taken together, these findings highlight the potential role of obesity and 
+physical activity as key modifiable determinants of biological aging and underscore the 
+importance of weight management for both delaying aging and preventing related 
+chronic diseases. 
+Early-life body mass index (BMI) may better capture the obesity -related health 
+burden[16]. Among adults with high levels of physical activity, an elevate d BMI can 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 4 
+partly reflect greater lean and bone mass rather than excess adiposity; by contrast, early-
+life BMI is less likely to be substantially influenced by these factors [17]. Accordingly, 
+using early -life BMI as the exposure may provide a clearer assessm ent of the 
+relationship between adiposity -related BMI variation and epigenetic aging, thereby 
+informing intervention strategies to decelerate aging and mitigate obesity-related health 
+risks. To further advance this field, we aimed to determine whether earl y-life BMI is 
+causally associated with accelerated epigenetic aging, examine associations across BMI 
+levels, and evaluate whether physical activity is associated with slower epigenetic aging. 
+2. Methods 
+2.1 Overall Study Design 
+We adopted an integrated study design. In the first phase, Mendelian 
+randomization (MR) was employed to establish a causal relationship between early-life 
+BMI and accelerated epigenetic aging, followed by mediation analysis to identify 
+mediating factors that potentially decelerate this process. In the second phase, the 
+NHANES database was utilized to further validate the association between BMI and 
+epigenetic aging. Finally, blood samples from exercising cohorts and visceral fat 
+samples were analyzed to determine the molecular-level effects of physical activity on 
+slowing aging (Figure 1). By combining public databases with clinical samples, we 
+aimed to demonstrate the multi-dimensional impact of obesity and physical activity on 
+epigenetic aging. 
+2.2 Mendelian Randomization Analysis 
+2.2.1 Basic Concepts of MR Analysis 
+Since genetic variants are randomly allocated at conception and are generally not 
+influenced by external environmental factors, MR analysis is less susceptible to 
+confounding and reverse causation. Therefore, in this study, M R analysis was used to 
+investigate the relationship between early -life BMI and epigenetic age acceleration 
+using single-nucleotide polymorphisms (SNPs) associated with the exposure of interest. 
+To obtain valid causal estimates, the genetic variants used as  instrumental variables 
+(IVs) in MR analysis must satisfy three core assumptions (Figure 1) [18]. First, the 
+selected SNPs must be strongly associated with early -life BMI. Second, these genetic 
+variants must not be confounded by other factors. Third, their effects on epigenetic age 
+acceleration must operate exclusively through early-life BMI. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 5 
+ 
+Figure 1.Study design. (a) Schematic overview of the Mendelian randomization (MR) 
+study design. Genetic variants (SNPs) associated with the exposures were used as 
+instrumental variables to estimate the causal effects of early -life body mass index, 
+childhood obesity, visceral ad iposity, and subcutaneous adiposity on four epigenetic 
+age acceleration measures. (b) Design of the NHANES population -based analysis. 
+Participants aged ≥18 years with BMI ≥18 were selected from the NHANES 
+database (1999-2018). Individuals were stratified b y BMI categories to evaluate the 
+association between BMI and epigenetic age. (c) Clinical sample collection and 
+molecular assays. Adipose tissue and fasting plasma samples were collected for 
+molecular measurements of aging -related biomarkers. The represent ative human 
+figures and sample illustrations in the figure were created with BioRender.com. 
+2.2.2 Data Sources 
+We used a two -sample MR analysis to investigate the causal effect of early -life 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 6 
+BMI on epigenetic age acceleration. Early -childhood BMI (ages 2 –10)[ 19 ] and 
+childhood obesity (ages 2–18)[20], visceral adipose tissue, and abdominal subcutaneous 
+adipose tissue were treated as exposures [21]. The outcomes were four epigenetic aging 
+clocks（average age 54 ）, including Intrinsic Epigenetic Age Acceleration (IE AA), 
+GrimAge Acceleration (GrimAA), Hannum Age Acceleration (HannumAA), and 
+PhenoAge Acceleration (PhenoAA)[22]. In addition, physical activity was evaluated as 
+a potential mediator[23]. Summary statistics for all traits were obtained from large-scale 
+genome-wide association studies (GWAS) (Table 2, Supplementary File 1). 
+2.2.3 SNP Selection for MR Analysis 
+When selecting instrumental variables, we set the genome -wide significance 
+threshold at p < 5 × 10 -6 to obtain a larger number of SNPs. After excluding SN Ps in 
+linkage disequilibrium using an r2 threshold of < 0.001 within a 10,000 kb window, the 
+remaining independent SNPs were retained as instrumental variables for early -
+childhood BMI, childhood obesity, visceral adipose tissue, and abdominal 
+subcutaneous adipose tissue [19–21]. Their associations with the four epigenetic aging 
+clocks were then extracted from the corresponding GWAS summary statistics [22]. 
+Finally, we calculated the F -statistic for each SNP to assess instrument strength and 
+excluded weak instruments with F-statistics < 10 (SNPs are shown in Supplementary 
+Material File 2). 
+2.2.4 Mediation Analysis 
+To further explore whether physical activity mediated the association between 
+early-life adiposity and epigenetic aging, we performed a two -step MR mediation 
+analysis[24]. This approach estimates the causal effect of the exposure on the mediator 
+and the causal effect of the mediator on the outcome, thereby allowing the indirect 
+effect through the mediator to be quantified. 
+2.3.1 Data Source and Study Population 
+The data used in this study were collected from the National Health and Nutrition 
+Examination Survey (NHANES) conducted between 1999 and 2018. The data, sourced 
+from the National Center for Health Statistics, Centers for Disease Control and 
+Prevention (CDC), are available at: https://wwwn.cdc.gov/nchs/nhanes/Default.aspx. 
+This survey, conducted by the CDC, aims to assess the health and nutritional status of 
+noninstitutionalized civilians in the United States. The cohort employs a stratified, 
+multistage probability sampling method to evaluate the health and nutritional status of 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 7 
+U.S. noninstitutionalized civilians. The stratified multistage probability sampling 
+strategy assesses approximately 10,000 individuals every two years. The data collection 
+process includes in -depth household interviews and comprehensive physical 
+assessments. This study protocol was approved by the Institutional Review Board (IRB) 
+of the National Center for Health Statistics, and written informed consent was obtained 
+from all participants before completing questionnaires and collecting laboratory 
+analysis samples, in accordance with the ethical guidelines established by the Helsinki 
+Declaration. 
+2.3.2 BMI Classification 
+BMI is an index used to estimate body fat content in indiv iduals of different ages 
+and genders, calculated by dividing weight (in kilograms) by height (in meters) squared. 
+According to the classification standards of the National Institutes of Health (NIH) and 
+the World Health Organization (WHO), BMI is classified as follows: (1)Normal weight: 
+BMI < 25; (2)Overweight: 25 ≤ BMI < 30; (3)Obesity Class I: 30 ≤ BMI < 35; 
+(4)Obesity Class II: 35 ≤ BMI < 40; (5)Obesity Class III: BMI ≥ 40. These classification 
+standards apply to White, Hispanic, and Black populations[25]. 
+2.3.3 Epigenetic Age Acceleration 
+PhenoAA is measured as the residuals from a linear regression of phenotypic age 
+on chronological age. In our previous study, PhenoAA was calculated using a composite 
+method[14]. This algorithm integrates clinical laborat ory blood chemistry parameters 
+and various biomarkers, which were modeled through elastic net regression in 
+NHANES III. The specific formula is as follows: 
+PhenoAA = 1.435671 + ln[−0.0059383581 × ln[1 − mortality risk]]
+0.08548908  
+mortality risk = 1 − e−exb[exp(120xγ)－1]/γ
+ 
+𝛾=0.007354285  
+2.3.4 Covariate Assessment 
+This study included multiple covariates to enable comprehensive analysis, 
+including basic demographic information, lifestyle factors, and health status indicators. 
+ 
+xb = − 18.311623487 − 0.029197296 × albumin + 0.002285539 × alkaline phosphatase + 0.006379140 × creatinine 
++ 0.177752648  × glycated hemoglobin + 0.055248172 × white blood cell count − 0.013502137 × lymphocyte 
+percentage + 0.029331315 × mean corpuscular volume + 0.234452108 × red cell distribution width + 0.077245523 
+× chronological age 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 8 
+Demographic information includes age, gender  (male or female), and race (Mexican 
+American, non-Hispanic Black, non -Hispanic White, or other). Education level was 
+categorized as below high school, high school, and above high school. Economic status 
+was assessed using the poverty income ratio (PIR), w ith PIR < 1.3 indicating low 
+income, 1.3 -3.3 indicating middle income, 3.3 -3.5 indicating upper -middle income, 
+and > 3.5 indicating high income. Lifestyle factors include marital status 
+(married/cohabiting, widowed/divorced/separated), smoking status (neve r smoked, 
+former smoker, current smoker), alcohol consumption (never, former, light, moderate, 
+heavy), and physical activity level was assessed using the Global Physical Activity 
+Questionnaire (GPAQ) and categorized into quartiles (Q1, Q2, Q3, and Q4) base d on 
+weekly energy expenditure (Met -min/week). Dietary quality was assessed using the 
+2015 Healthy Eating Index (HEI -2015), reflecting whether an individual's diet aligns 
+with the U.S. Department of Agriculture's Dietary Guidelines for Americans. 
+Healthcare professionals assessed health status and included diseases such as diabetes, 
+dyslipidemia, hypertension, and cancer.  
+2.4 Statistical Analysis 
+To determine the causal relationship between early -life BMI and accelerated 
+epigenetic aging, we used inverse-variance weighting (IVW) as the primary method of 
+analysis, which provides stable causal inference regardless of heterogeneity [ 26 ]. 
+Weighted median and MR -Egger were used as secondary methods. A positive result 
+was considered when the IVW method yielded a si gnificant result (p<0.05) and when 
+the β-values from other methods were either all positive or all negative [27]. Sensitivity 
+analysis was performed to evaluate potential heterogeneity and horizontal pleiotropy. 
+Cochran's Q test was used to assess heterogene ity among IVs, and MR -PRESSO was 
+used to assess robustness of associations and to evaluate potential horizontal pleiotropy. 
+To evaluate the sensitivity of individual SNPs, a Leave-One-Out (LOO) sensitivity test 
+was performed. Additionally, to exclude reverse causality, bidirectional MR was used 
+to determine the direction of the association between accelerated epigenetic aging and 
+early-life BMI. Finally, a two -step MR method was employed to identify potential 
+variables that accelerate or slow epigenetic aging[28]. 
+For the NHANES dataset analysis, all statistical analyses were conducted in strict 
+accordance with the analytical guidelines provided by the Centers for Disease Control 
+and Prevention (CDC) to account for the complex, multistage probability sampling  
+design of the NHANES. Appropriate multi -year Mobile Examination Center (MEC) 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 9 
+sample weights were applied to generate nationally representative estimates. Variance 
+and standard errors were estimated using the Taylor series linearization method, 
+incorporating the masked variance pseudo-stratum (SDMVSTRA) and pseudo-primary 
+sampling unit (SDMVPSU) variables. Baseline characteristics were assessed using 
+one-way analysis of variance (ANOV A) for continuous variables and chi-square tests 
+for categorical variables. To explore the association between BMI and PhenoAA, we 
+used weighted generalized linear regression models, specifying a Gaussian distribution 
+and an identity link for the continuous outcome (PhenoAA). Additionally, a subgroup 
+analysis by gender was condu cted to examine potential gender -specific effects. Both 
+continuous BMI values and obesity categories were analyzed in the regression models 
+to assess their impact on PhenoAA. Based on the linear regression results, we used 
+restricted cubic splines to test for nonlinear trends among the variables. In cases of 
+nonlinear associations, piecewise regression combined with likelihood ratio tests was 
+used to elucidate the threshold effect of BMI on PhenoAA. Finally, to verify the impact 
+of control variables on the relationship between BMI and PhenoAA, these variables 
+were incorporated into an interaction effect testing model. Data processing and analysis 
+were performed using R Studio (version 4.2.1, USA). 
+Multi-sample data were analyzed using GraphPad Prism 9 . For n ormally 
+distributed data, independent -sample t-tests or ANOV A were used; for non -normally 
+distributed data, Mann -Whitney U tests were used for pairwise comparisons. All 
+statistical analyses were conducted with a significance threshold of p<0.05. Between-
+group differential analyses for the proteomic and metabolomic data were conducted on 
+log2-transformed abundances. For each prespecified contrast, multiple testing was 
+controlled using the Benjamini -Hochberg procedure, with FDR -adjusted p-values 
+computed across all quantified proteins and, separately, across all identified metabolites; 
+statistical significance was defined as FDR-adjusted p < 0.05. 
+2.5 Population Study 
+2.5.1 Subject Recruitment 
+We recruited 51 overweight or obese female (age = 23.52 ± 4.88, BMI = 25.29 ± 
+2.97, body fat percentage = 36.76 ± 4.80) to participate in an 8 -week comprehensive 
+exercise intervention. Participants exercised three times per week for 75 minutes per 
+session under the supervision of qualified trainers. F asting blood samples were 
+collected at baseline and after the completion of the 8 -week exercise intervention.  
+Concurrently, 40 male were recruited, including 21 with obesity(age = 27.57 ± 5.34, 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 10 
+BMI = 43.29 ± 6.35) and 19 with normal weight and regular exer cise habits (age = 
+29.42 ± 6.31, BMI = 21.96 ± 1.85). Visceral fat samples were obtained from obese 
+metabolic weight loss surgery patients (n = 4, age = 27.5 ± 8.5, BMI = 47.13 ± 7.0), 
+while visceral fat from men with normal weight and exercise habits was sourced from 
+hernia surgery patients (n = 3, age = 30 ± 1.73, BMI = 24.92 ± 2.3). The research team 
+conducted interviews with all participants to assess their exercise experience. Prior to 
+participating in the study, all participants read and signed an inf ormed consent form 
+(Ethics approval number: 2021-112-K70; Clinical registration: NCT06452303）.  
+2.5.2 Biomarker Detection Methods 
+The experimental procedures involved in this study were carried out in strict 
+accordance with the standardized protocols provided by the commercial assay kits. 
+Blood Sample Collection and Preparation 
+Before the start of the exercise intervention and after completion of the 8 -week 
+exercise program, fasting blood samples were collected from the antecubital vein. The 
+EDTA anticoagulation tubes (Solarbio, YA1462-1pk) were stored at 4°C for at least 1 
+hour, followed by centrifugation (3,000 rpm for 10 minutes) to separate the plasma. 
+Whole blood, plasma, and PBMCs were aliquoted and stored at -80°C for subsequent 
+analyses. PBMCs were i solated from whole blood samples using density gradient 
+centrifugation, and human peripheral blood lymphocyte separation solution (Human) 
+was purchased from Beijing Solarbio Science & Technology Co., Ltd. (P8610-200ml). 
+Enzyme-Linked Immunosorbent Assay (ELISA) 
+Plasma levels of Glutathione and 8 -OHdG were measured using commercial 
+ELISA kits (Elabscience Biotechnology, GSH catalog number: E -EL-0026; 8-OHdG 
+catalog number: E-EL-0028). 
+Real-Time qPCR 
+Total RNA was extracted using Trizol reagent (Invitrogen) a ccording to the 
+manufacturer's instructions [29]. Gene expression data were normalized to GAPDH as 
+the housekeeping gene, and primer sequences are provided in the supplementary 
+materials (Table 4, Supplementary File 1). 
+Immunohistochemistry (IHC) 
+IHC was performed to detect the expression of p16, p21, and p -γ-H2A.X (S139) 
+in adipose tissue. The tissues were fixed in 4% paraformaldehyde, dehydrated, and 
+embedded in O.C.T. Compound (Beijing Wanjing Inspirational Biotechnology, catalog 
+number: WJ1177) for frozen sectioning. The sections were treated with 0.1% Triton X-
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 11 
+100 and blocked with 3% H2O2 to inhibit endogenous peroxidase activity, then 
+subjected to antigen retrieval. After blocking non-specific antibody binding with BSA, 
+the sections were incubated overnight at 4°C with primary antibodies and subsequently 
+incubated for 1 hour at room temperature with secondary antibodies. The sections were 
+then stained with DAB and counterstained with hematoxylin. Images were captured 
+with an optical microscope (Olympus) and analyzed with ImageJ. The antibodies used 
+were: p16 (ET1608 -62, dilution 1:200, HUABIO), p21 (HA500156, dilution 1:200, 
+HUABIO), p-γ-H2A.X (ET1602-2, dilution 1:100, HUABIO). 
+Immunofluorescence Staining（IF） 
+Frozen adipose tissue sections were fixed at r oom temperature with 4% 
+paraformaldehyde and treated with 0.1% Triton -X 100. After blocking nonspecific 
+antibody binding with BSA, the sections were incubated overnight at 4°C with primary 
+antibodies, then for 1 hour at room temperature with fluorescent secondary antibodies. 
+Images were collected using an LSM 780 confocal microscope (Zeiss) and analyzed in 
+ImageJ. The antibodies used were: p16 (ET1608 -62, dilution 1:200, HUABIO), p21 
+(HA500156, dilution 1:200, HUABIO), p -γ-H2A.X (R010101, dilution 1:100, 
+Epizyme). 
+Metabolomics 
+A 100 μL plasma sample was added to a 1.5 mL centrifuge tube, followed by the 
+addition of 400 μL extraction solution (acetonitrile: methanol = 1:1) containing 0.02 
+mg/mL internal standard (L-2-chlorophenylalanine). The mixture was vortexed for 30 
+seconds and subjected to low -temperature ultrasound extraction for 30 minutes (5°C, 
+40 KHz). The sample was then left at -20°C for 30 minutes, followed by centrifugation 
+at 13,000 g for 15 minutes at 4°C. The supernatant was collected, dried under nitrogen, 
+and reconstituted in 100 µL of solution (acetonitrile: water = 1:1). The reconstituted 
+sample was sonicated for 5 minutes (5°C, 40 KHz), and centrifuged again at 13,000 g 
+for 10 minutes at 4°C. The supernatant was transferred to an injection vial with an insert 
+for analysis. Detailed methods are described in previous studies[30]. Metabolomics was 
+performed by Shanghai Majorbio Bio-Pharm Technology Co., Ltd. 
+Proteomics 
+A 100 µL plasma sample was added to an appropriate amount of pre -chilled 
+protein lysis buffer (8 M urea + 1% SDS, containing protease inhibitors). The sample 
+was subjected to non -contact low -temperature sonication for 30 minutes. After 
+centrifugation at 14,000 g for 15 minutes at 8°C, the supernatant was collected. Protein 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 12 
+concentration was measured using the BCA method, following the instructions 
+provided with the BCA reagent. After protein quantification, SDS -PAGE 
+electrophoresis was performed. Detailed methods can be found in previous studies [31]. 
+Proteomics was performed by Shanghai Majorbio Bio-Pharm Technology Co., Ltd. 
+3 Results 
+3.1 MR Estimates 
+Genetically predicted early -life BMI shows a causal association with increased 
+epigenetic age acceleration across multiple clocks (Figure 2). Specifically, early-life 
+BMI was positively associated with IEAA greater acceleration (β =0.231, 95%Cl 0.001 
+to 0.461; p=4.92×10-2); GrimAA (β =0.369, 95%Cl 0.157 to 0.581; p=6.52×10-4); 
+HannumAA (β =0.267, 95%Cl 0.045 to 0.49; p=1.85×10-2); and PhenoAA(β =0.560, 
+95%Cl 0.237 to 0.775; p=2.31×10-4). Childhood obesity was likewise positively 
+associated with IEAA greater  acceleration (β =0.162, 95%Cl 0.033 to 0.291; 
+p=1.36×10-3); GrimAA(β =0.164, 95%Cl 0.043 to 0.285; p=7.71×10-3); HannumAA (β 
+=0.139, 95%Cl 0.035 to 0.244; p=8.90×10-3); and PhenoAA(β =0.231, 95%Cl 0.097 to 
+0.365; p=7.20×10-4). Subcutaneous adiposity was associated with GrimAA (β =0.471, 
+95% CI 0.169 to 0.773; p=2.26×10−3). Together, these findings indicate that higher 
+early-life adiposity is associated with accelerated epigenetic ageing. 
+ 
+Figure 2. Causal associations between early -life weight -related exposures and 
+epigenetic age acceleration. Forest plots present inverse-variance weighted Mendelian 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 13 
+randomization estimates for the associations of early -life BMI, childhood ob esity, 
+visceral adipose tissue, and subcutaneous adipose tissue with IEAA, GrimAge 
+acceleration, Hannum age acceleration, and PhenoAge acceleration. Squares indicate β 
+estimates and horizontal lines indicate 95% confidence intervals (CIs). The dashed 
+vertical line represents the null effect ( β = 0). The left panel shows the number of 
+SNPs, β (95% CI), SE, and p value. 
+3.2 MR Mediation Analysis 
+Using a two-step MR framework, we assessed PA as a mediator between early-life 
+BMI and epigenetic age acceleration (Supplementary Table 1). PA showed partial 
+mediation. Genetically predicted PA was associated with slower ageing across four 
+clocks, with direct effects of IEAA (β = −0.06, 95% CI −0.109 to −0.001), GrimAA (β 
+= −0.09, 95% CI −0.138 to 0.039), HannumAA (β = −0.10, 95% CI −0.151 to −0.041), 
+and PhenoAA (β = −0.12, 95% CI −0.183 to −0.058). The proportions of the early-life 
+BMI-epigenetic ageing association mediated by PA were 10.74%, 10.88%, 16.22%, and 
+10.70%, respectively. Supplementary MVMR analyses furthe r suggested a potential 
+causal relationship between early -life BMI and PA (Supplementary Figure 1), 
+indicating potential interrelatedness between these exposures. This finding is consistent 
+with the mediation analysis and supports consideration of PA as a relevant factor in the 
+association between early-life BMI and epigenetic ageing. 
+3.3 Horizontal Pleiotropy and Sensitivity Analysis 
+To assess the robustness of the statistical results, sensitivity analysis was 
+conducted for the four exposures and accelerat ed epigenetic aging (Table 5, 
+Supplementary File 1). The MR-Egger intercept test indicated no horizontal pleiotropy 
+(p > 0.05), and no outliers or heterogeneity were observed (p > 0.05). Furthermore, the 
+Leave-One-Out analysis and funnel plot indicated no violations in the estimates 
+(Supplementary File 1), confirming the robustness and reliability of the statistical 
+results. 
+3.4 Demographic Characteristics of NHANES 
+This study included baseline data from 20,337 adults, classified by BMI categories. 
+As BMI increased, the distribution of accelerated epigenetic age shifted towards higher 
+values. Significant differences were observed across demographic indicators (age, 
+gender, race), lifestyle factors (marital status, education, PIR, smoking status, alcohol 
+consumption, HEI score), and health status indicators (diabetes, hypertension, 
+hyperlipidemia). Among participants with accelerated epigenetic aging, a higher 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 14 
+proportion were male. Non -Hispanic Whites made up the largest proportion of the 
+Obesity group, which also had poorer economic status and a higher prevalence of 
+cardiovascular and metabolic diseases (Table 3, Supplementary File 1). 
+3.5 Association analysis between BMI and PhenoAA in American adults 
+A significant positive association was observed between BM I and PhenoAA . In 
+the fully adjusted model, compared to the group with BMI < 25, overweight individuals 
+exhibited accelerated PhenoAA [Overweight: β = 0.83, 95% CI (0.66, 1.00), p < 
+0.0001]. When BMI ≥ 30, the acceleration of PhenoAA increased significantly, and  
+aging acceleration increased progressively with higher BMI [Obesity I: β = 1.73, 95% 
+CI (1.54, 1.93), p < 0.0001; Obesity II: β = 2.93, 95% CI (2.67, 3.20), p < 0.0001; 
+Obesity III: β = 4.64, 95% CI (4.30, 4.99), p < 0.0001]. The restricted cubic spline (RCS) 
+analysis revealed a nonlinear threshold for BMI at 27.37 (p for Nonlinear = 0.005) 
+(Figure 3a-b). 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 15 
+Figure 3.（a-b）Male and Female, (c-d)Male; (e-f)Female. Association analysis between 
+BMI and PhenoAA in American adults Legend: Crude Model is the unadjusted model. 
+Model 1 adjusted for age, sex, race,PIR, education, BMI, marital status, smoke, alcohol, 
+HEI. Model 2 adjusted for age, sex, race, PIR, education, BMI, marital sta tus, smoke, 
+alcohol, HEI, diabetes, hypertension, hyperlipidemia and cancer.This study used a 
+multivariate linear regression model to analyze the relationship between BMI and 
+PhenoAA in American adults. The results are shown in Figure 3 (a-f). Figure 3a,3c,3e 
+the Y-axis is labeled "Beta (95% CI)"; Figure 3b, 3d, and 3f, the X-axis is labeled "Body 
+Mass Index (kg/m²)", and the Y-axis is labeled "Beta (95% CI)". 
+Subgroup analysis by gender yielded consistent results. In male, after becoming 
+overweight, indivi duals also showed accelerated PhenoAA, and this acceleration 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 16 
+increased with higher BMI [Overweight: β = 0.67, 95% CI (0.44, 0.90), p < 0.0001; 
+Obesity I: β = 1.56, 95% CI (1.31, 1.81), p < 0.0001; Obesity II: β = 2.71, 95% CI (2.31, 
+3.10), p < 0.0001; Obesity III: β = 4.32, 95% CI (3.79, 4.85), p < 0.0001]. RCS analysis 
+indicated a nonlinear threshold for BMI at 33.4 (p for Nonlinear = 0.005) (Figure 3c-
+d). 
+In the female population, the degree of PhenoAA acceleration was more 
+pronounced than in male. Compared to female with a BMI < 25, both overweight and 
+obese female exhibited significantly accelerated PhenoAA aging. Specifically, 
+overweight female had a PhenoAA acceleration of β = 1.03, 95% CI (0.81, 1.26), p < 
+0.0001, while obese female showed progressively greater acceleration of PhenoAA 
+[Obesity I: β = 1.96, 95% CI (1.67, 2.24), p < 0.0001; Obesity II: β = 3.17, 95% CI 
+(2.80, 3.54), p < 0.0001; Obesity III: β = 4.89, 95% CI (4.46, 5.32), p < 0.0001]. RCS 
+analysis revealed a linear threshold for BMI at 42.27 (p for Nonlinear = 0.979) (Figure 
+3e-f). 
+3.6 Threshold Effect Analysis of the Relationship Between BMI and PhenoAA 
+This study demonstrated a nonlinear relationship between BMI levels and 
+PhenoAA. Specifically, when BMI <  27.37, the relationship between BMI and 
+PhenoAA was significant [β = 0.149, 95% CI (0.125, 0.173), p < 0.001]. However, 
+when BMI ≥ 27.37, the relationship between the two changed [β = 0.198, 95% CI (0.186, 
+0.210), p < 0.001]. The likelihood ratio test sho wed statistical significance (p < 0.01), 
+providing strong evidence for the Two-piecewise linear regression model  (Table 1).  
+In the male subgroup, when BMI < 33.4, the relationship between BMI and 
+PhenoAA was significant [β = 0.154, 95% CI (0.134, 0.173), p < 0.001]. However, 
+when BMI ≥ 33.4, the relationship changed [β = 0.218, 95% CI (0.188, 0.248), p < 
+0.001]. The likelihood ratio test (p < 0.01) indicated that the two-piecewise linear model 
+provided a significantly better fit than the single linear model (Table 1). 
+For females, when BMI < 42.27, the relationship between BMI and PhenoAA was 
+significant [β = 0.207, 95% CI (0.194, 0.221), p < 0.001]. However, when BMI ≥ 42.27, 
+the relationship changed [β = 0.121, 95% CI (0.073, 0.169), p < 0.001]. The likelihood 
+ratio test ( p < 0.01) indicated that the two -piecewise linear model provided a 
+significantly better fit than the single linear model (Table 1). 
+These results highlight the importance of considering the nonlinear threshold 
+effect of BMI levels in pred icting PhenoAA, indicating that the acceleration of aging 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 17 
+in both male and female is influenced by specific BMI thresholds. 
+Table 1.Threshold effect analysis of the relationship between BMI and PhenoAA 
+Outcome Beta 95%CI p-value 
+BMI(All)    
+Two-piecewise linear regression model    
+Inflection point 27.37   
+BMI<27.37 0.149 0.125，0.173 <0.001 
+BMI≥27.37 0.198 0.186,0.210 <0.001 
+p for Log-likelihood ratio test   0.002 
+BMI(Male)    
+Two-piecewise linear regression model    
+Inflection point 33.4   
+BMI<33.4 0.154 0.134,0.173 <0.001 
+BMI≥33.4 0.218 0.188,0.248 <0.001 
+p for Log-likelihood ratio test   0.003 
+BMI(Female)    
+Two-piecewise linear regression model    
+Inflection point 42.27   
+BMI<42.27 0.207 0.194,0.221 <0.001 
+BMI≥42.27 0.121 0.073,0.169 <0.001 
+p for Log-likelihood ratio test   0.002 
+Notes: A two-piecewise linear regression model was used to assess the threshold effect 
+of BMI on PhenoAA. The inflection point denotes the estimated BMI threshold. 
+Regression coefficients (Beta), 95% confidence intervals (95% CI) and p -values are 
+reported separately for BMI below and above the inflection point. The log -likelihood 
+ratio test compares the two -piecewise model with a single linear model; p < 0.05  
+indicates a significantly better fit of the two-piecewise model, supporting the presence 
+of an inflection threshold.  
+3.7 Interaction Effect Test Between BMI and PhenoAA 
+This study analyzed the relationship between BMI and PhenoAA and assessed the 
+interactions among gender, age, race, marital status, education level, PIR, smoking 
+status, alcohol consumption, HEI, diabetes, hyperlipidemia, hypertension, and cancer 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 18 
+(Supplementary Materials File 2). The results indicated that age, race, hypertension, 
+and cancer had statistically significant interaction effects with BMI and PhenoAA (p < 
+0.05). This suggests that the relationship between BMI and PhenoAA may be 
+influenced by other factors across subgroups, including age, race, and health status. 
+ 
+Figure 4. Multi-sample comparison of metabolic, inflammatory, and oxidative stress 
+biomarkers. a-d: Detection of cell cycle regulatory gene expression in adipose tissue of 
+the third group of subjects; e-j: Detection results of aging -related markers in plasma 
+and PBMCs of the first group of subjects; k-x: Detection of oxidative stress markers in 
+plasma metabolites and proteomics of the second group of subject. 
+*p<0.05,**p<0.01,***p<0.0001. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 19 
+ 
+Figure 5. (a) Immunohistochemical staining of senescence markers in visceral adipose 
+tissue; (b-c) Immunofluorescence staining of visceral adipose tissue; (d -f) Statistical 
+analysis of positive cell area from immunohistochemical staining; (g -i) Statistical 
+analysis of fluorescence intensity from immunofluorescence staining. *p<0.05. 
+3.8 Identification of Aging Biomarker Associated with Physical Activities 
+Obesity Accelerates Aging and DNA Damage 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 20 
+Compared to individuals with normal weight and regular exercise habits, obese 
+individuals showed a significant upregulation in the expression of cell cycle regulation-
+related genes (p16 and p21) in their omental fat tissue (Figure 4. a-d). Additionally, 
+IHC further supported these findings. Compared with the normal-weight group, adipose 
+tissue from obese individuals showed a markedly higher abundance of p16, p21, and 
+phospho-γ-H2AX (Ser139)-positive cells, indicating increased cellular senescence and 
+DNA damage in obesity (Figure 5a, d -f). Consistent with these results, IF staining 
+further verified these changes and revealed that the signals were predominantly 
+localized to the nuclei (Figure 5b-c, g -i). The obese group also exhibited stronger 
+nuclear fluorescence intensity, providing additional histological evidence that obesity 
+is associated with accelerated senescence -related alterations and increased DNA 
+damage in adipose tissue. 
+Physical Activity Reduces DNA Damage and Oxidative Stress 
+In the first group of overweight or obese participants who underwent an 8 -week 
+comprehensive exercise intervention, we observed a significant reduction in the 
+expression levels of p16, p21, and p53 genes in peripheral blood mononuclear cells, 
+indicating that e xercise effectively mitigated the upregulation of aging -related genes 
+(Figure 4.e-j). Additionally, plasma glutathione levels increased, and 8 -OHdG levels 
+decreased, further supporting the potential role of exercise in reducing oxidative stress 
+and DNA damage (Figure 4.f). In the second group of participants, we collected their 
+fasting plasma and conducted metabolomics and proteomics analyses (Figure 4.k-x). 
+The results showed that the plasma levels of MMP1, SOD -2, Arginine, Succinate 
+Semialdehyde, and Kynurenine were higher in the obese group, suggesting significant 
+oxidative stress and metabolic disturbances in this population. In contrast, in the healthy 
+group with normal weight and regular exercise habits, the plasma levels of SOD -3, 
+GPX3, GPX4, VEGF -D, and Tryptophan were higher, indicating that maintaining 
+normal weight and good exercise habits helps regulate antioxidant capacity and 
+promote healthy metabolism. 
+4. Discussion 
+Prior research has been largely associative and focused mainly on adult 
+populations. By integrating Mendelian randomization, population -based analyses 
+spanning childhood and adulthood, and molecular profiling of biospecimens collected 
+in the context of exercise intervention, the present study provides multi-level evidence 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 21 
+on the relationships among early-life BMI, physical activity, and biological aging. Our 
+findings suggest that higher early -life BMI is associated with accelerated epigenetic 
+aging across multiple clocks. Physical activity may partially attenuate this adverse 
+association. However, the potentially mediating role of physical activity should be 
+interpreted cautiously, as MVMR is designed to estimate the independent effects of 
+correlated exposures rather than to directly establish mediation. In the NHANES 
+analysis, higher adult BMI was likewise positively associated with PhenoAge 
+acceleration, with progressively greater advancement observed across BMI categories. 
+Compared with normal-weight individuals (BMI < 25 kg/m2), PhenoAA was 0.83 years 
+higher in the overweight group,  1.73 years higher in class I obesity, 2.93 years higher 
+in class II obesity, and 4.64 years higher in class III obesity, indicating a clear graded 
+relationship across BMI -defined adiposity categories. In addition, analyses of blood 
+and adipose biospecimen s suggested that obesity -related metabolic burden was 
+accompanied by greater DNA damage, oxidative stress, and aging -related molecular 
+alterations. In contrast, regular physical activity and maintaining a healthier weight 
+were associated with more favorabl e aging -related profiles. Taken together, these 
+results support a link between excess adiposity and accelerated biological aging across 
+the life course and further suggest that physical activity may help mitigate this process. 
+These findings provide suppor tive evidence for lifestyle -based strategies to promote 
+healthier aging. 
+Biological aging is not merely a reflection of chronological time; rather, its 
+molecular hallmarks often emerge subtly during early life, long before they manifest 
+clinically. A study  on preschool children (ages 3 -4) found that, compared to their 
+normal-weight peers, obese children exhibited significantly shorter telomere lengths in 
+peripheral blood leukocytes, suggesting that changes in biomarkers associated with 
+aging may appear earl y in life [32]. Furthermore, a prospective cohort study involving 
+children aged 8 -14 confirmed that higher BMI during childhood was significantly 
+associated with accelerated epigenetic aging [33]. Together, these findings indicate that 
+the onset of aging in obese individuals begins much earlier than the established 
+physiological age. Without intervention, the acceleration of aging in early life may 
+persist into adulthood. We found that PhenoAA was particularly sensitive to early-life 
+BMI. As an “extrinsic” clock, PhenoAA reflects not only cell-intrinsic methylation 
+ageing but also shifts in blood-cell composition and the broader metabolic milieu[34]. It 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 22 
+was explicitly developed to approximate phenotypic age, trained on mortality and 
+clinical risk markers, with CpGs selected accordingly, so obesity -related chronic 
+inflammation and metabolic dysregulation are more readily captured as PhenoAA 
+acceleration[ 35 ]. We also observed that, among individuals with obesity, female 
+exhibited higher epigenetic age than male. This pattern likely relates to alterations in 
+the sex -steroid milieu ; oestrogen has antioxidant, anti -inflammatory, and pro -repair 
+effects[ 36 ], whereas obesity -associated hyperandrogenism in female can suppress 
+oestrogen biosynthesis and potentially hasten biological ageing[37]. Consistent with this, 
+large studies report that earlier menopause is linked to faster epigenetic ageing, with 
+each year of earlier menopause associated with a further advance in DNA methylation 
+age[38]. Notably, we did not observe a clear causal association between visceral adipose 
+tissue (VAT) or abdominal subcutaneous adipose tissue (ASAT) volume and epigenetic 
+aging measures. This null finding may partly reflect the characteristics of the imaging 
+cohort. Although the mean BMI ranged from 26.5 to 27.4 kg/m2, indicating an overall 
+overweight population, VAT and ASAT are imaging -derived quantitative traits for 
+which the available genetic instruments typically explain only a limited proportion of 
+variance[22]. In addition, the relatively sm all sample size further reduced statistical 
+power to detect potential effects of fat distribution on accelerated aging. These findings 
+also suggest that the aging-related risk associated with higher BMI in early life may not 
+be entirely irreversible. Susta ined improvement in body weight and metabolic health 
+during adulthood may help attenuate epigenetic age acceleration; however, this life -
+course effect of weight trajectory still requires confirmation in longitudinal studies with 
+follow-up data. 
+Obesity-associated accelerated aging is not confined to a single organ or tissue; 
+rather, it can involve multiple systems, including the liver, omental adipose tissue, and 
+the brain[8][9][39]. Experimental and mechanistic studies in cellular and animal models 
+suggest that excessive lipid accumulation may trigger chronic low-grade inflammation, 
+oxidative stress, and metabolic dysfunction, thereby promoting the earlier onset of 
+molecular damage and functional decline[40]. Emerging evidence further indicates that 
+obesity-related aging is not confined to a single tissue but rather involves coordinated 
+alterations across multiple organs and biological systems, including adipose tissue 
+dysfunction, stress-response pathways, and systemic inflammatory remodeling [41][42]. 
+In contrast, physical activity is widely recognized as a scalable intervention with 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 23 
+systemic benefits. It may help attenuate obesity- or metabolic stress-related acceleration 
+of biological aging, which is consistent with our findings [43][44]. Mechanistic studie s 
+further suggest that exercise exerts anti -aging effects through multi -organ processes, 
+including the reduction of chronic inflammation, improvement of metabolic 
+homeostasis, enhancement of mitochondrial function, and modulation of inter -organ 
+communication. These beneficial adaptations have been observed across several tissues, 
+including adipose tissue, the liver, skeletal muscle, and the central nervous system, 
+underscoring the broad biological relevance of physical activity in regulating 
+aging[45][46][47]. Taken together, the protective effects of physical activity on biological 
+aging are more likely to reflect integrated whole-body adaptations than a single organ-
+specific mechanism. 
+We employed an integrated design across diverse populations, improving 
+representativeness and generalizability. Collectively, our findings showed that obesity 
+accelerates aging, whereas physical activity consistently mitigates it, providing a 
+scientific basis for exercise -based strategies to promote healthy aging. Because aging 
+is a multisystem process, drugs that act on single targets often yield limited system -
+wide benefits. By contrast, exercise elicits coordinated, cross -organ adaptations with 
+robust anti-aging effects. Elevated BMI in early life may signal a trajectory towar d 
+accelerated biological aging, underscoring childhood and adolescence as a critical 
+window for preventive intervention. Health education and early school - and 
+community-based programs that promote a healthy diet and regular physical activity 
+may therefore help reduce obesity, prevent adult chronic disease, and support healthy 
+aging across the life course.  To translate these life -course strategies into actionable 
+prevention and clinical management, it is essential to have a scalable biomarker that 
+quantifies biological aging and tracks intervention response. Epigenetic clocks provide 
+such a quantitative readout by capturing cumulative biological burden beyond 
+chronological age and conventional adiposity indices, enabling risk stratification and 
+identifying individuals with disproportionate aging who may benefit from earlier or 
+more intensive prevention and clinical management. Importantly, the potential 
+reversibility of epigenetic modifications does not diminish clinical utility; rather, it 
+makes epigenetic age an actionable marker. Epigenetic clocks can serve as intermediate 
+phenotypes or endpoints to evaluate whether interventions (exercise training, dietary 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 24 
+programs, or metabolic surgery) achieve system -wide aging benefits and to support 
+longitudinal monitoring and tailoring of intervention intensity over time.  
+Limitations and Future Prospects 
+Several limitations merit consideration. First, obesity in the public datasets was 
+primarily defined by BMI, which is not a gold-standard measure of adiposity and cannot 
+distinguish fat and lean mass. This may have introduced misclassification and reduced 
+estimate precision. In addition, BMI reflects overall adiposity but does not fully capture 
+the biological heterogeneity of pathological obesity, limiting the specific ity of our 
+causal interpretation. Future studies should incorporate more refined adiposity -related 
+phenotypes and methods such as multivariable or pathway -specific MR. Second, 
+caution is needed when comparing the MR and NHANES findings. The MR analysis 
+evaluated the effect of early -life adiposity on epigenetic aging. In contrast, the 
+NHANES analysis was limited to adults because data required to calculate epigenetic 
+aging measures in minors were unavailable. As such, the NHANES analysis does not 
+constitute a strictly matched validation, but rather provides complementary 
+observational evidence for the association between obesity and accelerated aging in 
+adulthood. Third, although adipose tissue and blood sample findings supported the 
+causal and cohort-based results, the sample sizes were modest and require confirmation 
+in larger studies. Finally, differences in age structure between the GWAS population 
+used for the MR analysis and the NHANES sample may have contributed to differences 
+in association magnitude, limiting direct comparison of effect estimates across datasets. 
+Therefore, consistency in the direction of findings may be more informative than exact 
+similarity in effect sizes. 
+Abbreviations 
+IEAA   Intrinsic Epigenetic Age Acceleration  
+GrimAA   GrimAge A cceleration 
+HannumAA   Hannum Age Acceleration  
+PhenoAA   PhenoAge Acceleration  
+BMI   Body mass index  
+MR   Mendelian randomization  
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 25 
+SNPs   single -nucleotide polymorphisms 
+IVs   instrumental variables  
+NHANES   National Health and Nutrition Examination Survey  
+CDC   Centers for Disease Control and Prevention     
+IRB   Institutional Review Board  
+NIH   National Institutes of Health  
+WHO   World Health Organization     
+GPAQ   Global Physical Activity Questionnaire      
+HEI-2015   2015 Healthy Eating Index     
+IVW   Inverse-variance weighting     
+LOO   Leave -One-Out     
+ANOV A   One -way analysis of variance     
+ELISA   Enzyme -Linked Immunosorbent Assay     
+IHC   Immunohistochemistry  
+IF   Immunofluorescence  
+V AT   Visceral adipose tissue  
+ASAT   Abdominal subcutaneous a dipose tissue 
+GR   Glucocorticoid -glucocorticoid receptor 
+GREs   Glucocorticoid response elements  
+BBB   Blood -brain barrier 
+ 
+Acknowledgements 
+We would like to express our sincere gratitude to the researchers and teams who have 
+made their valuable research data publicly available. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 26 
+Ethics approval and consent to participate 
+All the cohorts and samples involved in the study adhered to national and international 
+guidelines, including the Deontological Code and the Declaration of Helsinki, and 
+complied with current personal data protection regulations. The research using publicly 
+available data was approved by the relevant authorities, with all participants having 
+provided informed consent. For the multi -biomarker studies, ethical approval was 
+obtained from China-Japan Friendship Hospital and Beijing Sport University, and all 
+participants signed informed consent forms (Ethics approval number: 2021-112-K70). 
+Consent 
+Written informed consent for publication was obtained from every patient; for minors, 
+consent was secured from their parents or legal guardians. 
+Funding 
+This work was supported by the China-Japan Friendship Hospital National High Level 
+Hospital Clinical Research Funding  (2025 -NHLHCRF-DLYJ-RCT-05); Beijing 
+Natural Science Foundation (7242125); General Program of National Natural Science 
+Foundation of China (82470857); Capital's funds for health improvement and research 
+( 首发 2026-2-4063); "Kunlun Talents · High -end Innovation and Entrepreneurial 
+Talents" project of Qinghai Province (202308210043); Fundamen tal Research Funds 
+for the Central Universities (202531). 
+Author Contributions: Dr. Zhou was responsible for the Mendelian randomization 
+data analysis and adipose tissue sample collection, Dr. Wu was responsible for the 
+Nhanes cohort data acquisition and a nalysis, and Dr. Zhou and Master Chen were 
+responsible for laboratory testing. The three are jointly responsible for the authenticity 
+of the data and the accuracy of the data analysis; Concept design: Bojun, Dongzhe, 
+Biao, Lei, Hua; Acquisition, analysis o r interpretation of data: Bojun, Dongzhe; 
+Drafting the manuscript: Bojun, Dongzhe, Biao, Lei, Hua; Laboratory testing: Bojun, 
+Shuting, Jiaming, Shijie, Ninghao; Subject recruitment and adipose sample acquisition: 
+Xiaochuan, Shiyan, Bojun, Biao; Statistical analysis: Bojun, Dongzhe, Lianghao, Lei 
+Conflicts of interest disclosure 
+All authors have no conflicts of interest or financial ties to disclose. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 27 
+Research registration unique identifying number(UIN) 
+Name of the registry: China-Japan Friendship Hospital National Integrated Chinese and 
+Western Medicine Medical Center 
+Unique identifying number or registration ID: NCT06452303. 
+Hyperlink to your specific registration (must be publicly  accessible and will be 
+checked):https://www.centerwatch.com/clinical-trials/listings/NCT06452303/the-
+patient-cohort-for-bariatric-surgery 
+Data availability statement 
+For access to multi -sample data or analysis code, please contact Bojun Zhou 
+(phdzhou@qq.com). The Nhanes data and Mendelian randomization data can be 
+accessed directly  at https://wwwn.cdc.gov/nchs/nhanes/Default.aspx and 
+https://gwas.mrcieu.ac.uk/ respectively. 
+ 
+  
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 28 
+References 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 29 
+ 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 30 
+ 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 31 
+ 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 32 
+ 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 33 
+ 
+ 
+[1] GBD 2021 Adult BMI Collaborators. Global, regional, and national prevalence of 
+adult overweight and obesity, 1990 -2021, with forecasts to 2050: a forecasting 
+study for the Global Burden of Disease Study 2021.  Lancet. 
+2025;405(10481):813-838. doi:10.1016/S0140-6736(25)00355-1 
+[2] Cao X, Yang G, Li X, et al. Weight change across adulthood and accelerated 
+biological aging in middle-aged and older adults. Am J Clin Nutr. 2023;117(1):1-
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 34 
+ 
+11. doi:10.1016/j.ajcnut.2022.10.020 
+[ 3 ] Jones MJ, Goodman SJ, Kobor MS. DNA methylation and healthy human 
+aging. Aging Cell. 2015;14(6):924-932. doi:10.1111/acel.12349 
+[4] Duan R, Fu Q, Sun Y , Li Q. Epigenetic clock: A promising biomarker and practical 
+tool in aging. Ageing Res Rev. 2022;81:101743. doi:10.1016/j.arr.2022.101743 
+[5] Li Y , Tian X, Luo J, Bao T, Wang S, Wu X. Molecular mechanisms of aging and 
+anti-aging strategies. Cell Commun Signal. 2024 May 24;22(1):285. doi: 
+10.1186/s12964-024-01663-1 
+[6] Jylhävä J, Pedersen NL, Hägg S. Biological Age Predictors. EBioMedicine. 2017 
+Jul;21:29-36. doi: 10.1016/j.ebiom.2017.03.046. Epub 2017 Apr 1. PMID: 
+28396265; PMCID: PMC5514388. 
+[7] Horvath S, Raj K. DNA methylation -based biomarkers and the epigenetic clock 
+theory of ageing. Nat Rev Genet. 2018 Jun;19(6):371 -384. doi: 10.1038/s41576-
+018-0004-3.  
+[8] Horvath S, Erhart W, Brosch M, et al. Obesity accelerates epigenetic aging of human 
+liver. Proc Natl Acad Sci U S A. 2014;111(43):15538 -15543. 
+doi:10.1073/pnas.1412759111 
+[9] de Toro-Martín J, Guénard F, Tchernof A, et al. Body mass index is associated with 
+epigenetic age acceleration in the visceral adipose tissue of subjects with severe 
+obesity. Clin Epigenetics. 2019;11(1):172. Published 2019 Dec 2. 
+doi:10.1186/s13148-019-0754-6 
+[10] Lundgren S, Kuitunen S, Pietiläinen KH, et al. BMI is positively associated with 
+accelerated epigenetic aging in twin pairs discordant for body mass index. J Intern 
+Med. 2022;292(4):627-640. doi:10.1111/joim.13528 
+[11] Kim K, Joyce BT, Zheng Y , et al. DNA Methylation GrimAge and Incident 
+Diabetes: The Coronary Artery Risk Development in Young Adults (CARDIA) 
+Study. Diabetes. 2021;70(6):1404-1413. doi:10.2337/db20-1167 
+[12] Walzik D, Wences Chirino TY , Zimmer P, Joisten N. Molecular insights of exercise 
+therapy in disease prevention and treatment.  Signal Transduct Target Ther. 
+2024;9(1):138. Published 2024 May 29. doi:10.1038/s41392-024-01841-0 
+[13] Fox FAU, Liu D, Breteler MMB, Aziz NA. Physical activity is associated with 
+slower epigenetic  ageing-Findings from the Rhineland study.  Aging Cell. 
+2023;22(6):e13828. doi:10.1111/acel.13828 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 35 
+ 
+[14] Wu D, Huang P, Geng X, et al. Dose -response relationship between leisure -time 
+physical activity patterns and phenotypic age acceleration in American adults : a 
+cross-sectional analysis. Journal of Exercise Science & Fitness, 2024, 22(4): 445-
+455. 
+[15] Tian YE, Cropley V , Maier AB, Lautenschlager NT, Breakspear M, Zalesky A. 
+Heterogeneous aging across multiple organ systems and prediction of chronic 
+disease and mortality. Nat Med. 2023;29(5):1221-1231. doi:10.1038/s41591-023-
+02296-6 
+[16] Juonala M, Magnussen CG, Berenson GS, et al. Childhood adiposity, adult 
+adiposity, and cardiovascular risk factors. N Engl J Med. 2011;365(20):1876-1885. 
+doi:10.1056/NEJMoa1010112 
+[17] Zhou B, Zhu L, Du X, Meng H. Early -life body mass index and the risk of six 
+cardiovascular diseases: A Mendelian Randomization study.  Pediatr Obes. 
+2024;19(10):e13157. doi:10.1111/ijpo.13157 
+[18] Skrivankova VW, Richmond RC, Woolf BAR, et al. Strengthening the Reporting 
+of Observational Studies in Epidemiology Using Mendelian Randomization: The 
+STROBE-MR Statement.  JAMA. 2021;326(16):1614 -1621. 
+doi:10.1001/jama.2021.18236 
+[19] Bradfield JP, Taal HR, Timpson NJ, et al . A genome -wide association m eta-
+analysis identifies new childhood obesity loci.  Nat Genet. 2012;44(5):526 -531. 
+doi:10.1038/ng.2247 
+[20] V ogelezang S, Bradfield JP, Ahluwalia TS, et al. Novel loci for childhood body 
+mass index and shared heritability with adult cardiometabolic traits. PLoS Genet. 
+2020;16(10):e1008718. Published 2020 Oct 12. doi:10.1371/journal.pgen 
+[21] Liu Y , Basty N, Whitcher B, et al. Genetic architecture of 11 organ traits derived 
+from abdominal MRI using deep learning. Elife. 2021;10:e65554. Published 2021 
+Jun 15. doi:10.7554/eLife.65554 
+[22] McCartney DL, Min JL, Richmond RC, et al. Genome -wide association studies 
+identify 137 genetic loci for DNA methylation biomarkers of aging. Genome Biol. 
+2021;22(1):194. Published 2021 Jun 29. doi:10.1186/s13059-021-02398-9 
+[23] Klimentidis YC, Raichlen DA, Bea J, et al. Genome -wide association study of 
+habitual physical activity in over 377,000 UK Biobank participants identifies 
+multiple variants including CADM2 and APOE. Int J Obes (Lond). 
+2018;42(6):1161-1176. doi:10.1038/s41366-018-0120-3 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 36 
+ 
+[ 24 ] Tong J, Li N, Hu F, Yue Y . Metabolic Improvement Mediates the Causal 
+Relationship Between GLP -1 Receptor Agonists and Myocardial Infarction: A 
+Mendelian Randomization and Mediation Analysis Study. Diabetes Care. 
+2026;49(1):171-178. doi:10.2337/dc25-1822 
+[25] Weir CB, Jan A. BMI Classification Percentile And Cut Off Points. In: StatPearls. 
+Treasure Island (FL): StatPearls Publishing; June 26, 2023. 
+[26] Davey Smith G, Hemani G. Mendelian randomization: genetic anchors for causal 
+inference in ep idemiological studies.  Hum Mol Genet. 2014;23(R1):R89 -R98. 
+doi:10.1093/hmg/ddu328 
+[27] Chen X, Kong J, Diao X, et al. Depression and prostate cancer risk: A Mendelian 
+randomization study.  Cancer Med. 2020;9(23):9160 -9167. 
+doi:10.1002/cam4.3493 
+[28] Carter AR, Sanderson E, Hammerton G, et al. Mendelian randomisation for 
+mediation analysis: current methods and challenges for implementation.  Eur J 
+Epidemiol. 2021;36(5):465-478. doi:10.1007/s10654-021-00757-1 
+[29] Wu JW, Wang SP, Alvarez F, et al. Deficiency of liver adipose triglyceride lipase 
+in mice causes progressive hepatic steatosis.  Hepatology. 2011;54(1):122-132. 
+doi:10.1002/hep.24338 
+[30] Li JX, Li RZ, Sun A, et al. Metabolomics and integrated network pharmacology 
+analysis reveal Tricin as the active anti-cancer component of Weijing decoction by 
+suppression of PRKCA and sphingolipid signaling.  Pharmacol Res. 
+2021;171:105574. doi:10.1016/j.phrs.2021.105574 
+[31] Dai WB, Zhang X, Jiang XL, et al. The kynurenine pathway regulated by intestinal 
+innate lymphoid c ells mediates postoperative cognitive dysfunction.  Mucosal 
+Immunol. 2025;18(1):53-65. doi:10.1016/j.mucimm.2024.09.002 
+[32] Liu X, Liu X, Shi Q, Fan X, Qi K. Association of telomere length and telomerase 
+methylation with n-3 fatty acids in preschool children with obesity. BMC Pediatr. 
+2021;21(1):24. Published 2021 Jan 7. doi:10.1186/s12887-020-02487-x 
+[33] Etzel L, Hastings WJ, Hall MA, et al. Obesity and accelerated epigenetic aging in 
+a high-risk cohort of children. Sci Rep. 2022;12(1):8328. Published 2022 May 18. 
+doi:10.1038/s41598-022-11562-5 
+[34] Ammous F, Zhao W, Ratliff SM, et al. Epigenetic age acceleration is associated 
+with cardiometabolic risk factors and clinical cardiovascular disease risk scores in 
+African Americans.  Clin Epigenetics. 2021;13(1):5 5. Published 2021 Mar 16. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 37 
+ 
+doi:10.1186/s13148-021-01035-3 
+[35] Foster CA, Barker-Kamps M, Goering M, Patki A, Tiwari HK, Mrug S. Epigenetic 
+age acceleration correlates with BMI in young adults.  Aging (Albany NY). 
+2023;15(2):513-523. doi:10.18632/aging.204492 
+[ 36 ] Straub RH. The complex role of estrogens in inflammation.  Endocr Rev. 
+2007;28(5):521-574. doi:10.1210/er.2007-0001 
+[ 37 ] Practice Committee of the American Society for Reproductive Medicine. 
+Electronic address: asrm@asrm.org; Practice Committee of the American Society 
+for Reproductive Medicine. Obesity and reproduction: a committee opinion. Fertil 
+Steril. 2021;116(5):1266-1285. doi:10.1016/j.fertnstert.2021.08.018 
+[38] Levine ME, Lu AT, Chen BH, et al. Menopause accelerates biological aging. Proc 
+Natl Acad Sci U S A. 2016;113(33):9327-9332. doi:10.1073/pnas.1604558113 
+[39] Ronan L, Alexander-Bloch AF, Wagstyl K, et al. Obesity associated with increased 
+brain age from midlife.  Neurobiol Aging. 2016;47:63 -70. 
+doi:10.1016/j.neurobiolaging.2016.07.010 
+[40] Villareal DT. Editorial: Obesity and Accelerated Aging.  J Nutr Health Aging. 
+2023;27(5):312-313. doi:10.1007/s12603-023-1922-0 
+[41] Lee G, Kim YY , Jang H, et al. SREBP1c -PARP1 axis tunes anti -senescence 
+activity of adipocytes and ameliorates metabolic imbalance in obesity. Cell Metab. 
+2022;34(5):702-718.e5. doi:10.1016/j.cmet.2022.03.010 
+[42] Zannas AS, Arloth J, Carrillo -Roa T, et al. Lifetime stress accelerates epigenetic 
+aging in an urban, African American cohort: relevance of glucocorticoid signaling. 
+Genome Biol. 2015;16:266. Published 2015 Dec 17. doi:10.1186/s13059 -015-
+0828-5 
+[43] Ammous F, Peterson MD, Mitchell C, Faul JD. Physical Activity Is Associated 
+With Decreased Epigenetic Aging: Findings From the Health and Retirement 
+Study. J Cachexia Sarcopeni a Muscle. 2025;16(3):e13873. 
+doi:10.1002/jcsm.13873 
+[ 44 ] Petersen CL, Christensen BC, Batsis JA. Weight management intervention 
+identifies association of decreased DNA methylation age with improved functional 
+age measures in older adults with obesity.  Clin Epigenetics. 2021;13(1):46. 
+Published 2021 Mar 2. doi:10.1186/s13148-021-01031-7 
+[45] Geng L, Ping J, Wu R, et al. Systematic profiling reveals betaine as an exercise 
+mimetic for geroprotection. Cell. 2025;188(19):5403 -5425.e33. 
+doi:10.1016/j.cell.2025.06.001 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS
+ 38 
+ 
+[46] Bieri G, Pratt KJB, Fuseya Y , et al. Liver exerkine reverses aging- and Alzheimer's-
+related memory loss via vasculature.  Cell. Published online February 18, 2026. 
+doi:10.1016/j.cell.2026.01.024 
+[47] Kang JS, Kim JH, Kim MJ, et al. Exercise-induced CLCF1 attenuates age-related 
+muscle and bone decline in mice. Nat Commun. 2025;16(1):4743. Published 2025 
+May 22. doi:10.1038/s41467-025-59959-w 
+ACCEPTED MANUSCRIPTARTICLE IN PRESSARTICLE IN PRESS
+ARTICLE IN PRESSARTICLE IN PRESS

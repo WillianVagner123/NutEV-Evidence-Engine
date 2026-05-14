@@ -1,0 +1,732 @@
+ARTICLE IN PRESS
+Article in Press
+We are providing an unedited version of this manuscript to give early access to its 
+findings. Before final publication, the manuscript will undergo further editing. Please 
+note there may be errors present which affect the content, and all legal disclaimers 
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer 
+Review reports will publish with the final article.
+Cite this article as: Navrátilová,
+M., Seidlová, D., Čierny, M. et al. 
+Long-term outcomes of a structured
+lifestyle-based nutritional
+intervention for obesity management:
+a 10-year observational study. Eat
+Weight Disord (2026).
+https://doi.org/10.1007/s4051
+9-026-01852-6
+©The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you
+give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you
+modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts
+of it. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is
+not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.
+To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/
+Long-term outcomes of a structured
+lifestyle-based nutritional intervention for
+obesity management: a 10-year observational study
+Eating and Weight Disorders - Studies on Anorexia, Bulimia and Obesity
+https://doi.org/10.1007/s40519-026-01852-6
+Received: 23 Jan 2026
+Accepted: 07 Apr 2026
+Miroslava Navrátilová, Dagmar Seidlová, Michal Čierny, Luboš Babiak, Jana Tůmová &
+Luboš Bouček
+ARTICLE IN PRESS
+ 
+Long-Term Outcomes of a Structured Lifestyle-Based Nutritional Intervention for 
+Obesity Management: A 10-Year Observational Study 
+Authors 
+Miroslava Navrátilová¹, Dagmar Seidlová², Michal Čierny³, Luboš Babiak³, Jana Tůmová⁴,5, 
+Luboš Bouček⁴,5 
+Affiliations 
+¹ Advisory Center for Metabolic and Nutritional Disorders, Department of Psychiatry, 
+University Hospital Brno and Faculty of Medicine, Masaryk University, Brno, Czech 
+Republic 
+² Department of Anesthesiology, Clinic of Anesthesiology, Resuscitation and Intensive Care, 
+University Hospital Brno and Faculty of Medicine, Masaryk University, Brno, Czech 
+Republic 
+³ Department of Surgery, Břeclav Hospital, Břeclav, Czech Republic 
+⁴ Department of Laboratory Medicine – Division of Clinical Biochemistry, University 
+Hospital Brno, Czech Republic                                                                                                                          
+⁵Department of Laboratory Methods, Faculty of Medicine, Masaryk University, Brno, Czech 
+Republic 
+ 
+Corresponding author 
+Miroslava Navrátilová 
+E-mail: mirkanavratilova@seznam.cz 
+ 
+Abstract 
+ 
+Background: Obesity is a chronic, relapsing disease associated with substantial metabolic 
+morbidity. While bariatric surgery and pharmacotherapy can be effective, their use may be 
+limited by invasiveness, adverse effects, cost, or long-term accessibility. There remains a need 
+for sustainable, non-invasive lifestyle-based strategies applicable in routine outpatient care. 
+This study evaluated 10-year outcomes of a structured lifestyle-based nutritional intervention 
+(metabolic endolipolysis) in adults with obesity. 
+Methods: This retrospective observational cohort study evaluated long-term outcomes of a 
+structured outpatient nutritional intervention in a real-world clinical setting. A total of 100 
+adults with obesity (BMI ≥ 30 kg/m²) were included. The intervention was based on a defined 
+macronutrient composition with strict dietary fat limitation (approximately 30 g/day), 
+adequate protein intake (≥110 g/day), and normoglycemic carbohydrate intake, combined 
+with behavioral support and recommended daily moderate physical activity. Body 
+composition was assessed annually using bioelectrical impedance analysis. Metabolic 
+outcomes included HbA1c, fasting glucose, lipid profile, and liver enzymes. 
+Results: A mean fat mass reduction of 9.6 kg was observed during the first year, with 
+sustained reductions over the 10-year follow-up. Total fat mass decreased by 23.1%, 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+including a 32.3% reduction in visceral fat, while lean body mass was largely preserved. 
+Improvements were observed in metabolic parameters, including reductions in HbA1c 
+(−8.5%), LDL cholesterol (−36.6%), and total cholesterol (−30.0%). The greatest changes 
+occurred within the first year and remained relatively stable thereafter. Adherence and 
+retention appeared relatively high based on attendance at scheduled visits and self-monitoring; 
+however, quantitative adherence metrics and validated assessment tools were not available. 
+Conclusions: This long-term observational study suggests that a structured lifestyle-based 
+nutritional intervention delivered in an outpatient setting may represent a feasible, non-
+invasive component of obesity management. The intervention was associated with sustained 
+improvements in body composition and selected metabolic parameters. These findings should 
+be interpreted within the limitations of an observational design, including the absence of a 
+control group, and warrant confirmation in randomized controlled trials. 
+Trial registration: Retrospective observational study; registration not required.  
+Keywords: Obesity; Lifestyle intervention; Nutritional intervention; Dietary macronutrient 
+composition; Dietary fat restriction; Body composition; Visceral adiposity; Long-term 
+outcomes. 
+ 
+Introduction 
+Obesity is a chronic, relapsing disease associated with substantial metabolic morbidity and is 
+increasingly recognized as an adiposity-based chronic disease (ABCD). The World Health 
+Organization estimates that more than 650 million adults worldwide are affected, with 
+prevalence continuing to rise globally. This growing burden is associated with significant 
+healthcare costs and is strongly linked to type 2 diabetes, cardiovascular disease, and 
+premature mortality. 
+Current therapeutic options for obesity include lifestyle interventions, pharmacotherapy, and 
+bariatric surgery. Although pharmacological agents, such as glucagon-like peptide-1 (GLP-1) 
+receptor agonists, have demonstrated substantial efficacy, their long-term use may be limited 
+by accessibility, tolerability, and cost. Bariatric (metabolic) surgery is highly effective in 
+inducing sustained weight loss and provides metabolic benefits beyond caloric restriction; 
+however, it carries procedural risks and may not be accessible, acceptable, or appropriate for 
+all patients. These considerations highlight the need for effective, sustainable, and non-
+invasive approaches that can be implemented in routine clinical practice. 
+Metabolic endolipolysis was developed as a structured outpatient nutritional intervention 
+based on a defined macronutrient composition with strict dietary fat limitation, combined with 
+behavioral support and adherence monitoring. The term “metabolic endolipolysis” is used 
+here as an operational designation of this nutritional approach rather than a formally 
+recognized clinical entity. 
+The present study evaluates the long-term outcomes of this structured lifestyle-based 
+nutritional intervention in a real-world clinical setting over a 10-year follow-up period. The 
+aim of the study was to assess its association with sustained changes in body composition and 
+selected metabolic parameters, as well as its feasibility within routine outpatient care. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+An overview of the study design is presented in Fig. 1. 
+ 
+ 
+Fig. 1. Flow diagram of participant inclusion and follow-up. 
+ 
+The diagram illustrates the retrospective cohort structure and the availability of longitudinal 
+data over the 10-year follow-up period. Due to the retrospective design, complete data on 
+initial screening, exclusions, and attrition were not available, which may have introduced 
+selection bias. Only participants with complete 10-year follow-up data were included in the 
+analysis, potentially resulting in overrepresentation of participants with complete long-term 
+follow-up, which may have contributed to selection bias and overestimation of long-term 
+effectiveness. 
+ 
+Methods 
+Study design and participants 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+This retrospective observational study included 100 participants (aged 25–65 years) enrolled 
+in a structured outpatient nutritional program (metabolic endolipolysis). 
+Inclusion criteria comprised adults with obesity (BMI ≥ 30 kg/m²). Exclusion criteria included 
+previous bariatric surgery, severe comorbidities requiring surgical treatment, endocrine 
+disorders (e.g., thyroid or adrenal dysfunction), pregnancy or lactation, use of medications 
+known to affect body weight, and acute or chronic conditions potentially influencing 
+metabolic outcomes. Inability to adhere to dietary or behavioral recommendations was also 
+considered an exclusion criterion. 
+Due to the retrospective design, detailed screening and exclusion data were not systematically 
+recorded and could not be reliably reconstructed. Consequently, the initial number of 
+individuals assessed for eligibility and attrition rates were unavailable, and only patients with 
+complete 10-year follow-up were included in the present analysis. The cohort thus represents 
+participants with complete long-term follow-up data. This may have resulted in 
+overrepresentation of highly adherent individuals and may have contributed to overestimation 
+of long-term effectiveness.    
+Longitudinal clinical and metabolic data were available for all included participants, who 
+were followed for 10 years. Baseline characteristics of the study population, including age, 
+sex distribution, and selected metabolic parameters, are summarized in Supplementary Table 
+S0. 
+The nutritional program was delivered as part of routine outpatient clinical care and was not 
+implemented for research purposes or as a protocol-driven intervention. No prospective 
+allocation, randomization, or investigator-directed intervention was performed, and all clinical 
+decisions were made as part of standard patient care. The present analysis represents a 
+retrospective evaluation of routinely collected clinical data without modification of treatment 
+for research purposes. 
+ 
+Dietary intervention 
+Participants followed a structured outpatient nutritional program based on the principles of 
+metabolic endolipolysis, defined as a low-fat, normoglycemic, non-ketogenic dietary regimen 
+combined with continuous behavioral support. Behavioral strategies included regular 
+counseling sessions, self-monitoring, and motivational reinforcement aimed at supporting 
+long-term adherence. Dietary intake was monitored to support adherence to the prescribed 
+macronutrient composition and energy targets. 
+Adherence was assessed based on attendance at scheduled visits and self-monitoring records. 
+However, no validated adherence instruments were used, and quantitative adherence metrics 
+(e.g., proportion of attended visits or compliance with dietary and physical activity targets) 
+were not systematically recorded. Therefore, adherence could not be quantitatively assessed 
+and should be interpreted with caution. 
+The nutritional intervention emphasized a defined macronutrient composition designed to 
+support gradual fat loss while preserving lean body mass. Protein intake was prescribed at a 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+minimum target of 110 g/day, with minor day-to-day variation permitted within the 
+predefined macronutrient framework. 
+Average daily energy intake was approximately 2,010 kcal, calculated from digestible 
+macronutrients (110 g protein, 320 g carbohydrates, and 30 g fat). Energy intake was 
+individualized based on estimated total energy expenditure (TEE), aiming to achieve a 
+moderate caloric deficit, particularly during the initial phase of the intervention. However, 
+TEE was not systematically quantified, and the magnitude of the energy deficit cannot be 
+precisely determined. Intake was subsequently adjusted according to clinical response, 
+although these adjustments were not systematically quantified. 
+Dietary fiber intake ranged from 27 to 38 g/day and was not included in total energy 
+calculations. Hydration was maintained at approximately 30 mL/kg of ideal body weight. 
+ 
+Physical activity and behavioral support 
+Participants were encouraged to engage in moderate daily physical activity (≥45 
+minutes/day), including walking, swimming, or cycling. Behavioral support was provided 
+through regular consultations conducted by trained healthcare professionals (physicians or 
+nutrition specialists), typically at intervals of 1–3 months depending on individual needs. 
+These consultations focused on adherence, motivation, and sustainable lifestyle modification. 
+No pharmacological or surgical weight-loss interventions were prescribed as part of routine 
+clinical care. 
+ 
+Measurements and outcomes 
+Body composition was assessed annually using bioelectrical impedance analysis (BIA; Tanita 
+MC-980, Tokyo, Japan), including total body fat, visceral fat, and lean body mass. Raw BIA 
+parameters (e.g., resistance, reactance, phase angle) were not consistently available across the 
+full follow-up period and are therefore not reported. 
+Anthropometric measurements were obtained at baseline, 6 months, 12 months, and annually 
+thereafter. 
+Fasting blood samples were collected to assess glucose, HbA1c, HOMA-IR, total cholesterol, 
+LDL cholesterol, triglycerides, and liver enzymes (ALT, AST, GGT). All biochemical 
+analyses were performed in an accredited laboratory using standardized procedures. 
+Primary outcomes included changes in total and visceral fat mass, glycemic control, and lipid 
+profile. Secondary outcomes included preservation of lean body mass and changes in liver 
+enzymes. 
+ 
+Statistical analysis 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+Statistical analyses were performed using IBM SPSS Statistics version 27.0 (IBM Corp., 
+Armonk, NY, USA). Continuous variables are presented as mean ± standard deviation (SD). 
+Changes over time were evaluated using repeated-measures analysis of variance (ANOVA). 
+Assumptions of normality and sphericity were assessed where appropriate. Statistical 
+significance was set at p < 0.05. Missing data (<5%) were handled using multiple imputation 
+with predictive mean matching. 
+A formal a priori sample size calculation was not performed due to the retrospective nature of 
+the study and should be considered a methodological limitation when interpreting the 
+findings. The sample size was therefore determined by the availability of complete long-term 
+follow-up data. 
+ 
+Results 
+Body Composition 
+ 
+Participants exhibited sustained reductions in body weight and adiposity over the 10-year 
+follow-up, while lean body mass remained largely stable (Table 1). Mean body weight 
+decreased from 98.4 ± 12.3 kg at baseline to 83.7 ± 10.9 kg at year 10, corresponding to a 
+relative reduction of 14.9% (p < 0.001). 
+Fat mass decreased by 9.6 kg during the first year and by a total of 23.1% over the study 
+period (p < 0.001). Visceral fat, assessed by bioelectrical impedance analysis, declined 
+progressively, reaching a total reduction of 32.3% at year 10 relative to baseline (p < 0.001). 
+Lean body mass did not change significantly throughout the follow-up period. However, the 
+lack of detailed early-phase data prevents assessment of potential transient lean mass loss 
+during the initial phase of weight reduction. 
+Changes in anthropometric and metabolic parameters at years 1, 5, and 10 are summarized in 
+Table 1, and relative percentage changes over time are presented in Table 2. 
+ 
+Table 1. Changes in anthropometric and metabolic parameters over 10-year follow-up 
+Parameter Baseline 
+(mean ± SD) 
+Year 1 Year 5 Year 10 p-value (vs 
+baseline) 
+Body weight 
+(kg) 
+98.4 ± 12.3 90.9 ± 11.9 90.5 ± 11.4 83.7 ± 10.9 < 0.001 
+BMI (kg/m²) 36.1 ± 3.8 33.2 ± 3.5 31.5 ± 3.4 30.2 ± 3.4 < 0.001 
+Fat mass 
+(kg) 
+41.6 ± 7.8 37.0 ± 7.2 34.2 ± 6.5 32.0 ± 6.0 < 0.001 
+Visceral fat 
+(cm², BIA) 
+155 ± 22 132 ± 20 120 ± 18 105 ± 16 < 0.001 
+HbA1c (%) 5.9 ± 0.4 5.6 ± 0.3 5.6 ± 0.3 5.4 ± 0.3 0.009 
+LDL 4.1 ± 0.6 3.3 ± 0.5 3.0 ± 0.5 2.6 ± 0.4 < 0.001 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+cholesterol 
+(mmol/L) 
+Total 
+cholesterol 
+(mmol/L) 
+6.0 ± 0.7 4.9 ± 0.6 4.7 ± 0.6 4.2 ± 0.5 < 0.001 
+Values are presented as mean ± SD. Statistical significance was assessed using repeated-
+measures ANOVA with comparisons to baseline; Greenhouse–Geisser correction was applied 
+where appropriate. 
+ 
+Abbreviations: BMI, body mass index; HbA1c, glycated hemoglobin; BIA, bioelectrical 
+impedance analysis; SD, standard deviation. 
+ 
+Table 2. Percentage changes in anthropometric and biochemical parameters over 10 
+years 
+Parameter      Year 1 (%) Year 5 (%)    Year 10 (%)   p-value (vs baseline)* 
+Body weight     −7.7               −8.0                 −15.0                  < 0.001 
+BMI                        −8.0             −12.8                 −16.3                  < 0.001 
+Fat mass            −11.0             −17.9                 −23.1                  < 0.001 
+Visceral fat (BIA)     −14.8             −22.6                 −32.3                  < 0.001 
+HbA1c                        −5.1               −5.1                  −8.5                     0.009 
+LDL cholesterol        −19.5             −26.8                 −36.6                  < 0.001 
+Total cholesterol       −18.3             −21.7                 −30.0                  < 0.001 
+Percentage changes were calculated relative to baseline values and are presented for 
+descriptive purposes only. *p-values correspond to comparisons with baseline based on 
+absolute values (see Table 1 for absolute values). 
+Abbreviations: BIA, bioelectrical impedance analysis; HbA1c, glycated hemoglobin. 
+ 
+ 
+Metabolic Parameters 
+ 
+Metabolic parameters improved over time (Table 1). HbA1c decreased from 5.9 ± 0.4% at 
+baseline to 5.4 ± 0.3% at year 10 (−8.5%, p = 0.009). LDL cholesterol declined from 4.1 ± 0.6 
+mmol/L to 2.6 ± 0.4 mmol/L (−36.6%, p < 0.001), and total cholesterol decreased from 6.0 ± 
+0.7 mmol/L to 4.2 ± 0.5 mmol/L (−30.0%, p < 0.001). Liver enzyme levels (ALT, AST, 
+GGT) remained within reference ranges throughout the study period. 
+Yearly trajectories of anthropometric and metabolic parameters are provided in 
+Supplementary Table S3. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+Adherence and Follow-up 
+ 
+Adherence and retention appeared to be relatively high based on attendance at scheduled 
+visits and completion of self-monitoring records; however, no validated adherence 
+instruments or quantitative adherence metrics were available. These findings should therefore 
+be interpreted with caution, particularly given that the analysis included only participants with 
+complete long-term follow-up. 
+ 
+ 
+    
+    
+    
+ 
+Discussion 
+ 
+The present study provides long-term observational evidence that a structured lifestyle-based 
+nutritional intervention delivered in an outpatient setting was associated with reductions in fat 
+mass. Sustained decreases in body weight and adiposity were observed over a 10-year follow-
+up, while lean body mass was largely preserved. However, the lack of detailed early-phase 
+data prevents assessment of potential transient lean mass loss during the initial phase of 
+weight reduction. 
+Taken together, these findings suggest that this approach may represent a feasible component 
+of long-term obesity management in selected clinical settings and could complement existing 
+therapeutic strategies in selected patient populations [1,11]. However, causal relationships 
+cannot be established due to the observational study design. 
+Importantly, although significant reductions in adiposity were observed, the mean BMI 
+remained within the obese range at the end of follow-up. Despite sustained improvements, the 
+persistence of obesity at the group level indicates that this intervention should be interpreted 
+as a strategy for long-term disease management rather than disease resolution. This reflects 
+the chronic and relapsing nature of obesity and suggests that the intervention was associated 
+with partial improvement rather than complete remission. 
+The lifestyle-based intervention described in this study was delivered in an outpatient setting 
+and was based on strict dietary fat limitation, a physiologically defined macronutrient 
+composition, and continuous behavioral support. These characteristics differentiate it from 
+surgical approaches in terms of mechanism and clinical trajectory. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+The observed long-term changes in adiposity and selected metabolic outcomes are broadly 
+consistent with findings from other lifestyle-based interventions, although differences in study 
+design, population characteristics, and intervention intensity should be considered [5,6]. 
+While bariatric procedures typically induce greater initial weight loss, structured lifestyle 
+interventions may represent a non-invasive option for selected patients and may contribute to 
+longer-term metabolic stabilization. 
+The mechanisms potentially underlying the observed associations may relate to the specific 
+macronutrient composition, characterized by reduced dietary fat intake combined with 
+adequate carbohydrate and protein availability [3,7,8]. Although this macronutrient 
+composition differs from general dietary recommendations, it was applied within a structured 
+and supervised clinical setting, which may have supported adherence, safety, and long-term 
+feasibility. However, these mechanistic considerations remain speculative and cannot be 
+confirmed within the present observational study design. The observed improvements in 
+HbA1c and lipid outcomes are consistent with previously reported effects of lifestyle-based 
+interventions on cardiometabolic risk [6,8].  
+Importantly, these findings should be interpreted in the context of individualized energy 
+intake designed to achieve a caloric deficit, rather than as a consequence of macronutrient 
+composition alone. The relatively high reported energy intake should be viewed in relation to 
+individualized energy requirements and potential reporting limitations inherent to 
+retrospective dietary data. 
+From a clinical perspective, adherence and retention appeared to be relatively high based on 
+attendance at scheduled visits and self-monitoring. However, these measures were not 
+assessed using validated or quantitative instruments and should therefore be interpreted with 
+caution. Observational indicators, such as long-term follow-up completion and regular 
+attendance at scheduled visits, may suggest sustained engagement among participants 
+included in the analysis. 
+In the broader therapeutic context, these findings support a potential role of non-surgical and 
+non-pharmacological approaches as part of comprehensive obesity management. While 
+pharmacological treatments such as GLP-1 receptor agonists demonstrate substantial efficacy, 
+their long-term use may be limited by accessibility, tolerability, and cost. Structured lifestyle-
+based nutritional interventions may therefore represent a pragmatic component of obesity care 
+in routine clinical practice. 
+The relatively homogeneous study population may limit the generalizability of the findings. In 
+addition, unmeasured confounding factors, including potential changes in concomitant 
+treatments, cannot be excluded. 
+In summary, this long-term observational study suggests that a structured lifestyle-based 
+nutritional intervention delivered in an outpatient setting may represent a feasible and 
+potentially sustainable component of obesity management [5,6,8]. These findings should be 
+interpreted cautiously given the observational design and the absence of a control group and 
+should be considered hypothesis-generating pending confirmation in prospective controlled 
+studies [3,6,8,11]. 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+Clinical implications 
+Structured lifestyle-based nutritional interventions delivered in an outpatient setting may 
+represent a pragmatic component of long-term obesity management for selected patients, 
+particularly those who are unwilling or ineligible to undergo surgical treatment or who prefer 
+non-invasive approaches [5,6,8]. Integration of such programs into primary and preventive 
+care settings may help improve access to obesity management and address the long-term 
+burden of metabolic disease. 
+By combining a defined macronutrient composition within a non-ketogenic dietary model and 
+continuous behavioral support, this type of intervention may complement established surgical 
+and pharmacological therapies within a comprehensive obesity care framework. Such 
+approaches may be particularly relevant for individuals with contraindications to surgery or 
+for those requiring sustained lifestyle support over time. 
+ 
+Strengths and limitations 
+A major strength of this retrospective observational study is the exceptionally long follow-up 
+period of ten years, providing valuable insight into the durability of metabolic and 
+anthropometric changes achieved through a structured lifestyle-based intervention in a real-
+world clinical setting. The assessment of multiple metabolic, biochemical, and body 
+composition parameters allows for a comprehensive evaluation of long-term outcomes. In 
+addition, the outpatient design reflects routine clinical practice and supports the feasibility of 
+implementing such an approach over an extended period. 
+Several limitations should be acknowledged. The retrospective observational design precludes 
+causal inference, and the absence of a randomized control group limits direct comparability 
+with alternative interventions. In addition, no formal a priori sample size calculation was 
+performed due to the retrospective nature of the study and should be considered a 
+methodological limitation when interpreting the findings. 
+The study population may be subject to selection bias, as participants may have been more 
+motivated and adherent than the general population. Furthermore, the inclusion of only 
+patients with complete long-term follow-up may have resulted in overrepresentation of highly 
+adherent individuals and potential overestimation of long-term effectiveness. The initial 
+number of screened individuals and attrition rates could not be reconstructed due to the 
+retrospective design, further limiting the evaluation of attrition and the interpretation of cohort 
+representativeness. 
+Adherence was assessed based on attendance at scheduled visits and self-monitoring records; 
+however, no validated adherence instruments were used, and adherence could not be 
+quantitatively assessed, limiting the interpretability of adherence-related findings. Changes in 
+concomitant pharmacological treatments during follow-up were not systematically recorded 
+and may have influenced the observed metabolic outcomes. 
+Although additional metabolic and anthropometric parameters (e.g., HDL cholesterol, 
+triglycerides, and waist circumference) were routinely measured in clinical practice, these 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+variables were not consistently available across the full follow-up period and were therefore 
+not included in the present analysis. 
+Body composition was assessed using bioelectrical impedance analysis, which provides less 
+precise estimates than imaging-based methods such as MRI or dual-energy X-ray 
+absorptiometry (DEXA) [11]. This represents an important methodological limitation, 
+particularly in the context of long-term body composition assessment. Detailed temporal 
+dynamics of lean mass, particularly during early phases of the intervention, were not 
+available, which further limits interpretation. Raw BIA parameters (resistance, reactance, 
+phase angle) were not consistently available across the full follow-up period and could 
+therefore not be included in the analysis, which limits the interpretability of body composition 
+findings. 
+Despite these limitations, the consistency of findings across anthropometric and metabolic 
+outcomes over a prolonged follow-up period supports the potential clinical relevance of the 
+observed findings. These results should be interpreted within the context of an observational 
+design and considered hypothesis-generating, warranting confirmation in prospective 
+controlled studies. 
+ 
+Conclusion 
+This long-term observational study suggests that a structured lifestyle-based nutritional 
+intervention delivered in an outpatient setting was associated with sustained reductions in 
+body weight and fat mass over a 10-year follow-up, while lean body mass and overall 
+metabolic stability were largely preserved. Improvements in selected metabolic outcomes 
+were also observed. 
+Despite these changes, mean BMI remained within the obese range at the end of follow-up, 
+indicating that the intervention was associated with partial improvement rather than disease 
+resolution. These findings should therefore be interpreted within the context of long-term 
+disease management rather than remission. 
+Given the observational design and absence of a control group, causal relationships cannot be 
+established. The findings should be interpreted with caution and considered hypothesis-
+generating, requiring confirmation in prospective controlled studies. 
+ 
+Clinical and Public Health Implications 
+Structured lifestyle-based nutritional interventions delivered under clinical supervision may 
+represent a feasible component of routine outpatient care for selected patients, particularly 
+those who are unwilling or ineligible to undergo surgical treatment or who require long-term 
+metabolic management. 
+Within a comprehensive obesity care framework, such approaches may complement 
+established surgical and pharmacological strategies rather than replace them. Integration of 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+structured programs into routine clinical practice may help expand access to long-term obesity 
+management, particularly when combined with ongoing behavioral support. 
+ 
+ 
+Declarations 
+ 
+Ethics approval and consent to participate 
+In accordance with applicable Czech legislation and institutional policies governing 
+retrospective analyses of anonymized clinical data at University Hospital Brno, studies based 
+on fully anonymized data do not require formal Ethics Committee approval or individual 
+informed consent. Accordingly, the present study did not require formal ethics approval or 
+informed consent. 
+The nutritional program was delivered as part of routine outpatient clinical care and was not 
+implemented for research purposes or as a protocol-driven intervention. No prospective 
+allocation, randomization, or investigator-directed intervention was performed, and all clinical 
+decisions were made as part of standard patient care. The study is based exclusively on 
+retrospectively collected data obtained during routine clinical management, and no additional 
+procedures or interventions were introduced for research purposes. 
+All data were anonymized prior to analysis. The study was conducted in accordance with the 
+principles of the Declaration of Helsinki. 
+ 
+Competing interests 
+The authors declare that they have no competing interests. 
+ 
+Consent for publication 
+All authors consent to the publication of this manuscript. Individual patient consent for 
+publication was not required, as only anonymized data were used. 
+ 
+Availability of data and materials 
+The datasets used and/or analyzed during the current study are available from the 
+corresponding author upon reasonable request. 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+Funding 
+This work was supported by the Ministry of Health of the Czech Republic – RVO (FNBr, 
+65269705). 
+ 
+Authors’ contributions 
+MN and DS conceived the study. MC and LB collected and analyzed the data. JT and LB 
+evaluated laboratory parameters. MN drafted the manuscript. All authors read and approved 
+the final manuscript. 
+ 
+Acknowledgements 
+None. 
+ 
+Abbreviations 
+BIA, Bioelectrical Impedance Analysis 
+BMI, Body Mass Index 
+HbA1c, Glycated Hemoglobin 
+HOMA-IR, Homeostasis Model Assessment for Insulin Resistance 
+ 
+References  
+ 
+1. Schauer PR, Bhatt DL, Kirwan JP, Wolski K, Aminian A, Brethauer SA, Navaneethan 
+SD et al (2017) Bariatric surgery versus intensive medical therapy for diabetes—5-
+year outcomes. N Engl J Med 376:641–651. https://doi.org/10.1056/NEJMoa1600869 
+2. Hall KD, Ayuketah A, Brychta R, Cai H, Cassimatis T, Chen KY, Chung S et al 
+(2019) Ultra-processed diets cause excess calorie intake and weight gain: an inpatient 
+randomized controlled trial of ad libitum food intake. Cell Metab 30:67–77.e3. 
+https://doi.org/10.1016/j.cmet.2019.05.008 
+3. Ebbeling CB, Feldman HA, Klein GL et al (2018) Effects of a low-carbohydrate diet 
+on energy expenditure during weight loss maintenance: randomized trial. BMJ 
+363:k4583. https://doi.org/10.1136/bmj.k4583 
+4. Ludwig DS, Ebbeling CB (2018) The carbohydrate–insulin model of obesity: beyond 
+“calories in, calories out”. JAMA Intern Med 178:1098–1103. 
+https://doi.org/10.1001/jamainternmed.2018.2933 
+5. Heymsfield SB, Wadden TA (2017) Mechanisms, pathophysiology, and management 
+of obesity. N Engl J Med 376:254–266. https://doi.org/10.1056/NEJMra1514009 
+6. Lean MEJ, Leslie WS, Barnes AC, Brosnahan N, Thom G, McCombie L et al (2018) 
+Primary care–led weight management for remission of type 2 diabetes (DiRECT): an 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+open-label, cluster-randomised trial. Lancet 391:541–551. 
+https://doi.org/10.1016/S0140-6736(17)33102-1 
+7. Foster GD, Wyatt HR, Hill JO, McGuckin BG, Brill C, Mohammed BS et al (2003) A 
+randomized trial of a low-carbohydrate diet for obesity. N Engl J Med 348:2082–2090. 
+https://doi.org/10.1056/NEJMoa022207 
+8. Astrup A, Magkos F, Bier DM, Brenna JT, de Oliveira Otto MC, Hill JO et al (2020) 
+Saturated fats and health: a reassessment and proposal for food-based 
+recommendations. J Am Coll Cardiol 76:844–857. 
+https://doi.org/10.1016/j.jacc.2020.05.077 
+9. Jakubowicz D, Barnea M, Wainstein J, Froy O (2013) High-energy breakfast with 
+low-energy dinner decreases overall daily hyperglycemia in type 2 diabetics: a 
+randomized clinical trial. Diabetologia 56:1083–1091. https://doi.org/10.1007/s00125-
+013-2846-x 
+10. Thivel D, Ring-Dimitriou S, Weghuber D, Frelut ML, O’Malley G (2018) Physical 
+activity and energy balance: physiological mechanisms and insights from children and 
+adolescents. Obes Rev 19(Suppl 1):5–20. https://doi.org/10.1111/obr.12699 
+11. Musella M, Milone M, Gaudioso D et al (2020) Ten-year outcomes of one 
+anastomosis gastric bypass: weight loss, remission of comorbidities and quality of life. 
+Obes Surg 30:1695–1702 
+12. Cierny M, Travnicek A, Uchal J (2024) Gastricky bypass – vysledky po 10 letech. 
+Rozhl Chir 103:19–25. https://doi.org/10.33699/PIS.2024.103.1.19–25 
+ 
+ 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+Supplementary Table S0. Baseline characteristics of the study population (n = 100) 
+ 
+Parameter                                                  Value 
+Age (years)                                                 49.8 ± 11.1 (25–65) 
+Sex (male/female)                                      45/55 
+Body weight (kg)                                       98.4 ± 12.3 
+BMI (kg/m²)                                               36.1 ± 3.8 
+Fat mass (kg)                                              41.6 ± 7.8 
+Visceral fat area (cm²)                               155 ± 22 
+HbA1c (%)                                                 5.9 ± 0.4 
+LDL cholesterol (mmol/L)                         4.1 ± 0.6 
+Total cholesterol (mmol/L)                        6.0 ± 0.7 
+ 
+Values are presented as mean ± standard deviation (SD). 
+Abbreviations: BMI, body mass index; HbA1c, glycated hemoglobin; SD, standard deviation. 
+ 
+ 
+Supplementary Table S1a. Reference daily dietary composition of the metabolic 
+endolipolysis program  
+Prespecified macronutrient composition and hydration parameters used throughout the 
+intervention. 
+ 
+ 
+Parameter Target intake 
+Energy (kcal/day)*  ≈2,010 
+Protein (g/day) 110 (≈22% of total energy) 
+Carbohydrates (g/day) 320 (≈64% of total energy) 
+Fat (g/day) 30 (≈13% of total energy) 
+Fiber (g/day) 27–38 
+Hydration (mL/kg ideal body weight) ~30  
+* Total energy intake was calculated exclusively from digestible macronutrients; dietary fiber 
+was not included in total energy calculations. Values represent prespecified reference intakes; 
+minor day-to-day variation was permitted, provided that overall daily energy intake and 
+macronutrient distribution remained within the predefined protocol. 
+ 
+Supplementary Table S1b. Macronutrient-derived energy contribution 
+ 
+Macronutrient Intake Energy contribution (kcal) 
+Protein 110 g       440 
+Carbohydrates 320 g    1,280 
+Fat 30 g       270 
+Total  — ≈1,990 
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+Hydration ~30 ml/kg ideal body weight 
+Values reflect prespecified reference ranges; minor day-to-day variation was permitted. 
+ 
+Supplementary Table S2. An example of a representative daily meal plan illustrating the 
+dietary framework of the metabolic endolipolysis program 
+An example of a representative daily meal plan illustrating macronutrient distribution and 
+energy balance within the metabolic endolipolysis program. Macronutrient reference ranges 
+were defined in Supplementary Tables S1 and S1b. 
+ 
+Meal Food examples Energy 
+(kcal) 
+Protein 
+(g) 
+Carbohydrate
+s (g) 
+Fat 
+(g) 
+Notes 
+Breakfast Skim/low-fat yogurt 
+(250 g), oats (60 g), 
+banana (150 g) 
+470 20 78 6 Balanced 
+carb-to-
+protein ratio 
+Mid-
+morning 
+snack 
+Whole-grain bread (80 
+g) with cottage cheese 
+4% (100 g) 
+260 16 40 6 Support 
+glycemic 
+stability 
+Lunch Skinless chicken breast 
+(140 g), cooked rice (200 
+g dry), vegetables (200 
+g) 
+520 34 78 4 Main protein 
+meal 
+Afternoo
+n snack 
+Apple (250 g), whey 
+protein drink (15 g 
+protein) 
+190 17 35 2 Supports 
+satiety 
+Dinner White fish (170 g), 
+boiled potatoes (350 g), 
+vegetable salad (150 g) 
+450 23 80 4 Low-fat, 
+high-protein 
+meal 
+Evening 
+snack 
+(optional) 
+Skim milk (300 ml), oat 
+flakes (25 g) 
+210 10 25 8 Adherence 
+support 
+Daily 
+total 
+ 
+—  ≈2,100 ≈120 
+  
+≈336 
+ 
+≈30 Fiber: 27–38 
+g/day, 
+hydration: 
+~30 ml/kg 
+IBW 
+Total daily energy intake was calculated from digestible macronutrients; dietary fiber was not 
+included in energy calculations. Representative meal plans are provided for illustrative 
+purposes only; individual meals and portion sizes varied, while overall daily macronutrient 
+reference ranges and total energy intake were maintained according to the predefined 
+protocol. 
+ 
+Supplementary Table S3. Yearly changes in anthropometric and metabolic parameters 
+over the 10-year follow-up.  
+ 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+Longitudinal changes in selected anthropometric and metabolic parameters during the 10-year 
+follow-up period.  
+Year Body 
+weight (kg, 
+mean ± SD) 
+Fat mass 
+(kg) 
+HbA1c (%) LDL 
+cholesterol 
+(mmol/L) 
+Total 
+cholesterol 
+(mmol/L) 
+Baseline 98.4 ± 12.3 41.6 ± 7.8 5.9 ± 0.4 4.1 ± 0.6 6.0 ± 0.7 
+Year 1 90.9 ± 11.9 37.0 ± 7.2 5.6 ± 0.3 3.3 ± 0.5 4.9 ± 0.6 
+Year 5 90.5 ± 11.4 34.2 ± 6.5 5.6 ± 0.3 3.0 ± 0.5 4.7 ± 0.6 
+Year 10 83.7 ± 10.9 32.0 ± 6.0 5.4 ± 0.3 2.6 ± 0.4 4.2 ± 0.5 
+Values are presented as mean ± SD. Statistical comparisons are reported in the main text 
+(Table 1). Most improvements occurred during the first year and were maintained throughout 
+follow-up. 
+ACCEPTED MANUSCRIPTARTICLE IN PRESS

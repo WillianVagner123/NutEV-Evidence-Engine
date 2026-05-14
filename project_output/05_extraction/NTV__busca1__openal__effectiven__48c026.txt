@@ -1,0 +1,1773 @@
+Systematic Review
+Effectiveness of school-based interventions in Europe to promote healthy
+nutrition in children and adolescents: systematic review of published and
+‘grey’ literature
+Eveline Van Cauwenberghe 1*, Lea Maes 2, Heleen Spittaels 1, Frank J. van Lenthe 3, Johannes Brug 4,
+Jean-Michel Oppert5 and Ilse De Bourdeaudhuij 1
+1Department of Movement and Sport Sciences, Ghent University, Watersportlaan 2, 9000 Ghent, Belgium
+2Department of Public Health, Ghent University, Watersportlaan 2, 9000 Ghent, Belgium
+3Department of Public Health, Erasmus University Medical Centre Rotterdam, PO Box 2040, 3000 CA Rotterdam, The Netherlands
+4EMGO Institute for Health and Care Research, VU University Medical Centre, Van der Boechorststraat 7, 1081 BT Amsterdam,
+The Netherlands
+5Department of Nutrition, Universite´ Pierre et Marie Curie, Pitie´-Salpeˆtrie`re Hospital (AP-HP), Human Nutrition Centre
+Ile-de-France (CRNH-IdF), Paris, France
+(Received 17 June 2009 – Revised 9 November 2009 – Accepted 11 November 2009 – First published online 14 January 2010)
+The objective of the present review was to summarise the existing European published and ‘grey’ literature on the effectiveness of school-based
+interventions to promote a healthy diet in children (6–12 years old) and adolescents (13–18 years old). Eight electronic databases, websites and
+contents of key journals were systematically searched, reference lists were screened, and authors and experts in the ﬁeld were contacted for studies
+evaluating school-based interventions promoting a healthy diet and aiming at primary prevention of obesity. The studies were included if they were
+published between 1 January 1990 and 31 December 2007 and reported effects on dietary behaviour or on anthropometrics. Finally, forty-two
+studies met the inclusion criteria: twenty-nine in children and thirteen in adolescents. In children, strong evidence of effect was found for
+multicomponent interventions on fruit and vegetable intakes. Limited evidence of effect was found for educational interventions on behaviour,
+and for environmental interventions on fruit and vegetable intakes. Interventions that speciﬁcally targeted children from lower socio-economic
+status groups showed limited evidence of effect on behaviour. In adolescents, moderate evidence of effect was found for educational interventions
+on behaviour and limited evidence of effect for multicomponent programmes on behaviour. In children and adolescents, effects on anthropometrics
+were often not measured, and therefore evidence was lacking or delivered inconclusive evidence. To conclude, evidence was found for
+the effectiveness of especially multicomponent interventions promoting a healthy diet in school-aged children in European Union countries on
+self-reported dietary behaviour. Evidence for effectiveness on anthropometrical obesity-related measures is lacking.
+Systematic reviews: Europe: School-based interventions: Healthy diet
+A healthful diet during childhood and adolescence promotes
+optimal health, growth and cognitive development of the
+child and adolescent, and may contribute to the prevention
+of chronic disease in later life
+(1 – 5). Evidence suggests that
+eating habits adopted early in life track to some extent
+into adulthood, while the transition from childhood into
+adolescence is often associated with unhealthful dietary
+changes
+(6 – 8). It is therefore important to establish healthful
+eating behaviours early in life, and speciﬁcally focus on the
+transition from childhood to adolescence. Dietary recommen-
+dations for a healthful diet across Europe recommend
+consumption of at least ﬁve portions of fruit and vegetables
+a day, reduced intakes of saturated fat and salt, and increased
+consumption of complex carbohydrates and ﬁbre
+(3,9).
+However, dietary consumption surveys show that most
+European children and adolescents do not meet these guide-
+lines(10 – 14). Recent ﬁgures also show alarming and increasing
+numbers of obese and overweight children and adolescents in
+Europe, indicating that energy intakes are higher than energy
+needs(11). Discussion about how to tackle the epidemic of
+obesity is currently high on the health policy agenda
+and effective health promotion remains a key strategy
+(11,15).
+* Corresponding author: Eveline Van Cauwenberghe, fax þ32 9 264 64 84, email eveline.vancauwenberghe@ugent.be
+Abbreviation: RCT, randomised controlled trial.
+British Journal of Nutrition (2010), 103, 781–797 doi:10.1017/S0007114509993370
+q The Authors 2009
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+Therefore, there is a need to develop and implement effective
+programmes and policies that will result in children and
+adolescents adopting healthier diets.
+Schools are a crucial social environment for children and
+adolescents and many attempts have been made to utilise
+this environment to promote healthful behaviours in youth,
+including healthful eating habits
+(16 – 21). School-based
+interventions have the potential to reach almost 100 % of
+children of school age of diverse ethnic and socio-economic
+groups in the European context. Furthermore, in most
+European Union countries, primary and secondary schools
+serve at least one meal every school day. Other inﬂuencing
+factors at school for eating behaviours are food and beverages
+available at school outside meals (e.g. vending machines
+and school stores) and nutrition education classes. Schools
+therefore represent an important setting to promote and
+provide healthy nutrition and nutrition education
+(1,11,15).
+Until now, it is unclear how successful school-based
+efforts have been in improving the dietary habits of young
+people in Europe. Previous reviews have mostly dealt
+with the prevention of obesity (16,17,19 – 25) or focused only
+on one speciﬁc dietary behaviour (18,26 – 29). In addition,
+these recently published reviews were often limited in
+scope; only controlled trials (16 – 21,24,26,27,29) or long-term
+studies(16,19,20,24,26) were accepted. Such a strong focus on
+inclusion of only the most rigorous internal validity designs
+may disregard promising interventions, for which such
+designs were not possible or inappropriate. Finally, most of
+the studies included in these reviews were carried out in
+the United States
+(16 – 18,20,22 – 29), raising questions about the
+applicability of these results in European countries given the
+very different school system and school nutrition situation,
+as well as differences in eating habits and obesity
+rates
+(11,14). This is, to our knowledge, the ﬁrst review that
+tries to systematically review the evidence for effectiveness
+from studies conducted across Europe on school-based
+healthful diet promotion among children and adolescents on
+changes in nutrition behaviours and body composition.
+Methods
+Literature search
+The retrieval of published studies for the present review
+included a structured search in ﬁve electronic databases
+(PubMed, Web of Science, CINAHL, The Cochrane Library
+and MDConsult) from January 1990 up to and including
+December 2007. No language restrictions were applied. The
+search strategy was initially developed in PubMed and
+adapted for use in other databases. The search was run by
+one reviewer (E. V. C.) in October 2007 and was rerun in
+January and ﬁnally in June 2008 to be absolutely sure
+that all studies up to December 2007 were available
+through the electronic databases. The search strategy was
+designed to be inclusive and focused on three key elements:
+population (e.g. children and adolescents); intervention
+(e.g. school-based); outcome (e.g. diet and nutrition). In
+addition, reference lists of all retrieved articles and review
+articles
+(16 – 21,23,24,26,28,30 – 33) were screened for potentially
+eligible articles. Furthermore, a number of websites of
+research groups that conduct and publish systematic reviews
+of public-health and health promotion interventions were
+scanned. These strategies were complemented with a compre-
+hensive search of the ‘grey’ literature, i.e. publications not
+published in indexed peer-reviewed journals and publications
+in other languages than English. The following electronic
+databases were searched: SIGLE; Social Care Online; British
+National Bibliography for Report Literature. Additionally,
+the supplements of ‘International Journal of Obesity’ and
+‘Acta Paediatrica’ were hand searched. Finally, authors of
+relevant reports, abstracts and non-English articles, derived
+from the searches detailed earlier, were contacted and
+asked for additional information about their study. A complete
+and detailed summary of the search strategies used, including
+a full list of the search strings for each database, can
+be found in Web Extra 1 (http://www.hopeproject.eu/index.
+php?page ¼documents&documents_map ¼%2FWP þ 9 þ
+systematic þ review%2F).
+Selection of studies
+To be eligible for inclusion, studies needed to (1) be
+conducted in European Union countries; (2) target young
+children (6–18 years old) in a school setting; (3) aim at the
+primary prevention of obesity and diseases related to obesity
+in which the main component or one of the components was
+the promotion of a healthy diet and (4) report effects on
+dietary behaviour or on anthropometrics. The studies in
+the present review were, however, not limited to interventions
+explicitly aiming to contribute to obesity prevention.
+Rather, all interventions that targeted dietary behaviours that
+may be associated with obesity risk were included. Further-
+more, papers that deal with the implementation, feasibility,
+applicability or cost-effectiveness of the interventions were
+accepted for further review. There were no restrictions on
+study design, study duration, follow-up period, intervention
+strategies, control condition and on who delivered the
+intervention. Studies were considered regardless of their
+design because for public-health purposes, randomised
+controlled designs, considered to provide the strongest
+evidence regarding an intervention, are often unachievable
+and may even be found inappropriate
+(34 – 37). In addition, it is
+stated that different types of evidence (i.e. observational,
+experimental, extrapolated and experience-based sources) are
+needed to develop effective strategies for public-health
+interventions
+(34 – 37). Yet, in the review process, a distinction
+was made between evidence from stronger and from weaker
+study designs.
+The following exclusion criteria were applied: (1) inter-
+ventions that were conducted mainly outside the school setting
+(e.g. community and family); (2) interventions that were not
+designed for primary prevention (i.e. for the treatment of
+chronic diseases, aimed at obese children, aimed at treatment
+or management of eating disorders or aimed at malnourished
+children); and (3) studies that did not report the effects on
+dietary behaviour and on anthropometrics.
+To identify the relevant studies, one reviewer (E. V. C.)
+reviewed all titles and abstracts generated from the searches.
+Articles were rejected on initial screening only if the reviewer
+could determine from the title and abstract that the article did
+not meet the inclusion criteria or did meet any of the exclusion
+criteria. If abstracts were not available or unable to provide
+E. Van Cauwenberghe et al.782
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+sufﬁcient exclusion information, the entire article was
+retrieved to screen the full text. The evaluation of the full
+text articles was divided among four reviewers (E. V. C., H.
+S., I. D. B. and L. M.) to further reﬁne the results using the
+aforementioned inclusion and exclusion criteria. The decisions
+were discussed and disagreements between the reviewers
+were resolved by discussion until consensus was reached.
+Quality assessment
+A standardised quality assessment tool, the Effective
+Public Health Practice Project Quality Assessment Tool
+for Quantitative studies 2003, was used to appraise the metho-
+dological rigour of the included studies
+(38). The six criteria
+included for quality assessment were: the extent to which
+study participants were representative of the target population
+(i.e. ‘selection bias’); study design (i.e. ‘allocation bias’);
+control of confounders (i.e. ‘confounders’); whether outcome
+assessors were blinded (i.e. ‘blinding’); reliability and validity
+of the data collection tools (i.e. ‘data collection methods’); the
+withdrawals and dropouts (i.e. ‘withdrawals and dropouts’).
+Each criterion was rated as strong, moderate or weak, and
+then summed to obtain an overall score for each study. Studies
+with at least four criteria rated as strong and with no criteria
+rated as weak were given an overall rating of ‘strong’.
+Those studies receiving less than four strong ratings and only
+one weak rating were given an overall rating of ‘moderate’,
+and those studies with two or more criteria rated as weak
+were given an overall study rating of ‘weak’. Any comments
+on the analyses and on the integrity of the intervention were
+also collected, but these did not affect the overall rating
+of quality.
+The quality assessment instrument was pilot tested
+independently by two of the reviewers (E. V. C. and H. S.)
+on four of the reviewed studies. The reviewers compared
+their ratings, and where disagreement was noted, discussions
+ensued until consensus on all ratings was achieved. The
+quality assessment of the remaining studies was completed
+by one reviewer (E. V. C.) and discussed with another
+reviewer (H. S.).
+Data extraction
+To review the characteristics of the included studies,
+one reviewer (E. V. C.) extracted detailed information into
+summary tables. Data extracted included study and inter-
+vention characteristics as well as effect indicators. Speciﬁc
+study and intervention characteristics that have been identiﬁed
+previously by health education experts as being crucial for
+evaluating evidence on public-health interventions were
+extracted
+(36,39 – 43). The study characteristics included speciﬁcs
+about the study design, participants, context, outcome
+measures and instruments, and effect and process evaluation
+variables, and the intervention characteristics included
+speciﬁcs about the intervention components.
+Grading of evidence
+A rating system of levels of evidence of effect, based on
+previously used best evidence synthesis, was used to
+draw conclusions on effectiveness on dietary behaviour and
+anthropometrics
+(44 – 46). Some important adaptations were
+made to the system because the present review included
+studies regardless of their design, and a slightly different
+quality assessment tool was used. The following ﬁve levels
+were distinguished based on the number, design, overall
+quality and overall effectiveness of studies: (1) strong
+evidence of effect: (i) at least two (cluster) randomised
+controlled trials (RCT) of strong quality or (ii) one (cluster)
+RCT of strong quality and at least two (cluster) RCT of
+moderate quality. For both situations, consistent results are
+required; (2) moderate evidence of effect: (i) one (cluster)
+RCT of moderate quality and at least one (cluster) RCT
+of weak quality, (ii) one (cluster) RCT of moderate quality
+and at least one controlled trial of strong quality, (iii) at
+least three controlled trials of strong quality or (iv) one
+controlled trial of strong quality and at least three controlled
+trials of moderate quality. For all situations, consistent results
+are required; (3) limited evidence of effect: (i) more than one
+(cluster) RCT of weak quality, (ii) one controlled trial
+of moderate quality and two controlled trials of weak quality
+or (iii) two controlled trials of weak quality and at least
+two before–after, cohort or longitudinal studies. For all
+situations, consistent results were required; (4) inconclusive
+evidence of effect: (i) only one study, (ii) multiple before–
+after, cohort or longitudinal studies or (iii) contradictory
+results; (5) no evidence of effect: more than one study with
+consistent results that no signiﬁcant or relevant results were
+shown. Results were considered to be consistent if none of
+the relevant studies pointed in the opposite direction (i.e. a
+study with a deterioration as overall result) and a maximum
+33% of the studies reported mixed results.
+The overall result of each study for effectiveness on anthro-
+pometrics and dietary behaviour was based on the following
+system. If at least one ﬁnding was signiﬁcant in the intended
+direction and no signiﬁcant ﬁndings were found in the
+opposite direction, it was considered to be an improvement
+(i.e. þþ ). For example, if diaries and 24-h recall were used
+to assess dietary intake and according to the 24-h recall
+there was a positive signiﬁcant effect but according to the
+diaries the intake was unchanged but did not deteriorate
+signiﬁcantly, the outcome result for dietary behaviour was
+identiﬁed as an improvement. The same procedure was
+followed to indicate a deterioration (i.e. 22 ), namely at
+least one ﬁnding was signiﬁcant in the opposite direction
+and no signiﬁcant ﬁndings were found in the intended
+direction. Furthermore, it was stated that the overall result
+was mixed (i.e. þþ /22 ) if at least one ﬁnding was found
+in the intended direction and one in the opposite direction.
+Finally, it was indicated that no effect (i.e. 0) was found if
+all the ﬁndings did not change signiﬁcantly in any direction.
+Data synthesis
+Because of the heterogeneity of studies with respect to study
+design, intervention, participants, measures and outcomes, a
+meta-analysis was not conducted to estimate a pooled effect
+size. The present ﬁndings, therefore, resulted in a descriptive
+systematic literature review. In a stratiﬁed analysis, we
+assessed levels of evidence of effect for studies according to
+outcome measure (i.e. dietary behaviour and anthropometrics),
+type of intervention (i.e. educational, environmental and
+School interventions addressing healthy diet 783
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+multicomponent, i.e. combining education and environmental
+changes) and target group population (i.e. populations with
+a low socio-economic background and ethnic minority popu-
+lations) within each age group (i.e. children and adolescents).
+Results
+Literature search
+The initial database search yielded 8991 publications (Fig. 1).
+After reviewing the titles or abstracts or both, the total was
+reduced to 287. Checking the references in these papers and
+in review articles produced an additional eight papers, and
+another eleven papers were brought up by manually searching
+journals and contacting authors. After completely reviewing
+the 306 articles, 223 publications were excluded because
+they did not meet one or more of the inclusion criteria.
+Almost all of the excluded publications were studies
+conducted outside Europe. Other main reasons for exclusion
+were that the studies dealt with an irrelevant intervention or
+that the effects on behaviour and on anthropometrics were
+not reported. Finally, two interventions were family-based
+instead of school-based and another two were treatment
+instead of prevention studies. Thus, ﬁfty-six studies (reported
+in eighty-three articles) were included; forty-two studies
+(reported in ﬁfty-three articles) focused only on nutrition,
+the results of which are presented here. Twenty-nine studies
+included children and thirteen included adolescents. Of the
+Fig. 1. Flow chart of study selection process. PA, physical activity.
+E. Van Cauwenberghe et al.784
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+studies focusing only on nutrition, seven were ‘grey litera-
+ture’. Two studies in Italian (47,48), one study in German (49)
+and one study in French (50) were found through PubMed,
+and the authors were contacted for further information.
+One study(51) was retrieved by hand searching the supplements
+of the International Journal of Obesity and further information
+was again delivered by the author. In 2005, the ﬁnal
+two studies (52,53) were brieﬂy described in the article of
+Woolfe et al. , obtained through CINAHL, and further
+information about the two studies was collected by contacting
+the authors and the Food Standard Agency, London.
+An extensive table with a full description of the intervention
+characteristics and results can be found in Web Extra 2 and
+3 (http://www.hopeproject.eu/index. php? page ¼documents
+&documents_map ¼ %2FWP þ 9 þ systematic þ review%2F).
+The studies were organised in the tables according to age
+group (i.e. children: 6–12 years old and adolescents: 13–18
+years old) and the type of intervention (i.e. education-only,
+environmental or policy-based only or a combination of
+both: multicomponent). Follow-up periods (i.e. from baseline
+until follow-up measures) were divided into three categories:
+short term ( ,3 months), medium term (3–12 months) and
+long term ( .12 months).
+Methodological quality
+The results of the quality assessment are presented
+in Web Extra 4 (http://www.hopeproject.eu/index.php?page
+¼documents & documents_map¼%2 FWPþ9 þsystematic þ
+review%2F). Only ﬁve of the forty-two studies were overall
+rated as strong
+(54 – 58), eight were rated as moderate (52,59 – 65)
+and twenty-nine were rated as weak. All studies had some
+methodological weaknesses and none of the included studies
+fulﬁlled all the necessary quality criteria. In many studies,
+selection bias occurred. Only ﬁve studies
+(56,58,60,62,64) received
+a strong rating on this criterion. More mixed quality assess-
+ments were found for the criteria allocation bias (31 %
+scored weak, 40 % moderate and 29 % strong) and
+confounders (45 % scored weak, 7 % moderate and 48 %
+strong). Almost all of the studies used more than one
+method to measure dietary behaviours. In 76 % of the studies,
+dietary intake was collected by one of the following
+instruments: recall of food intake in the past 24 h; food diaries;
+food frequency checklists. Other methods that were used were
+self-developed questionnaires ( n 9), observations ( n 5),
+weighed measures ( n 3) and sales data ( n 2). Biomarker
+assessment, a more objective measurement method, was
+lacking in all of the studies. Because assessment of nutrition
+behaviour was self-reported, the blinding criterion, as stated
+in the dictionary of the tool
+(38), was not applicable in all of
+these cases. All the six studies (50,54,66 – 69) that measured
+body composition scored weak on blinding. Of all the
+measurement tools used, 49 % received a weak rating, 19 %
+a moderate rating and 32 % a strong rating on the criterion
+data collection methods. About 63 % of the studies reported
+a dropout between 0 and 40 %, and six studies
+(57,59,63 – 65,70)
+found differences between subjects who dropped out and
+who participated. Finally, a weak rating on the criterion
+withdrawals and dropouts was obtained in 43 % of the cases,
+a moderate rating in 20 % of the cases and a strong rating in
+37 % of the cases. Regarding the statistical analyses, for
+most studies, a power calculation was not reported (60 %),
+studies failed to apply intention to treat analyses (60 %),
+and adjustment for clustering of data was lacking when
+randomisation was carried out at group level (40 %).
+To conclude, there appeared to be a risk for contamination
+in some of the included studies (24 %).
+General characteristics of the studies
+Study characteristics. Forty-two studies were included in the
+present review, twenty-nine in children and thirteen in
+adolescents. The study characteristics of each included study
+can be found separately for children and adolescents in
+Tables 1 and 2. Most of the studies in children and adolescents
+were carried out in the United Kingdom. Study population size
+varied from 40 to 6076 in the studies in children and from
+54 to 4020 participants in the studies in adolescents. Three
+studies in children
+(53,71,72) and two in adolescents (68,69) were
+pilot studies. One-third of the studies in chil-
+dren(47,51,52,55,56,59,62,71,73 – 76) and just over half of the studies
+in adolescents (49,58,64,77 – 80) reported on process data such as
+appreciation, implementation, barriers, feasibility, subscription
+rates or opinions about the programme. Of those studies,
+only three studies
+(47,56,76) and one study (58), respectively,
+considered variation in integrity in analysing the effects
+of the programme. Short-term effects were reported in
+nine studies in children
+(52,55,61,71 – 73,81 – 83) and ﬁve studies
+in adolescents (58,65,78,79,84), medium-term effects in ﬁfteen
+(47,48,51,54,56,57,59,60,62,63,67,70,83,85,86) and six studies
+(49,64,68,69,78,87), respectively, and long-term effects in eight
+studies(50,53,56,57,60,62,66,88) and one study (89), respectively.
+Although all of the projects conducted an outcome assessment
+at the end of the intervention period, only seven projects in
+children(53,55,56,60,63,86,88) and only four in adolescents
+(58,64,78,79) conducted a follow-up measurement some time
+after the intervention period had ended. Some studies aimed
+at speciﬁc target groups within the population at large. Eight
+studies in children (47,61,72,81,85,86,90,91) and four studies in
+adolescents(58,65,79,80) targeted children and adolescents from
+low socio-economic backgrounds, and two studies in children
+addressed ethnic minority groups (63,70). All of the studies in
+children and adolescents targeted both boys and girls.
+Intervention characteristics . The characteristics of the
+interventions of each included study are presented separately
+for children and adolescents in Tables 1 and 2. About half
+of the interventions among children
+(47,48,50 – 55,66,67,71,72,81,92)
+and among adolescents (58,64,65,68,78,84) were educational,
+consisting mainly of classroom-based activities (e.g. an
+adapted curriculum and distribution of educational materials).
+Six programmes in children(59 – 61,73,90,91)and two programmes
+in adolescents (49,89) used environmental modiﬁcations to
+stimulate a more healthful diet, namely increased availability
+and accessibility of healthy foods, subscription or distribution
+programmes, school lunch modiﬁcations and incentives.
+Another nine studies in children
+(56,57,62,63,70,82,83,85,86) and
+another ﬁve studies in adolescents (69,79,80,87,93) combined
+these two components. The duration of the interventions
+varied greatly between projects from a minimum of
+2 weeks (71) to a maximum of 5 years (50,66) in children and
+from a minimum of 1 week (84) to a maximum of 2 years (80)
+School interventions addressing healthy diet 785
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+Table 1. Study and intervention characteristics of included studies promoting healthy nutrition in children
+First author (year)
+No. of
+participants
+Target
+group Country Follow-up period
+Process
+evaluation
+Intervention
+duration
+Dietary
+behaviours
+addressed
+Theory-
+based Delivered by
+Classroom-
+based
+Educational interventions (n 14)
+Agozzino (2007)
+(47) 278 þ Italy 5 months þ 5 months – þ E, T þ
+Angelico (1991)(66) 150 Italy 5 years 5 years – RT, T þ
+Boaz (1998)(71) 99 United Kingdom 4 and 6 weeks þ 2 weeks FV RT þ
+Bonaccorsi (2002)(48) 600 Italy 1 year ? – þ RT, T þ
+Borys (2000)(50),
+Heude (2003)(103),
+Lafay (1998)(104)
+804
+601
+2364
+1840
+France NA 5 years – E, RT, SS, T þ
+D’Addesa (2006)
+(51) 274 Italy 10 months þ 9 months FV E, RT, T þ
+Friel (1999)(81) 821 þ United Kingdom 3 months 10 weeks – þ RT, T þ
+James (2004, 2007)(54,88) 644 United Kingdom 1 and 3 years 1 year Soft drinks RT, T þ
+Livingstone (2002)(52),
+Woolfe (2005)(105)
+305 United Kingdom 3 weeks þ 3 weeks – þ RT, T þ
+Mangukusumo (2007)(55) 486 The Netherlands 3 months þ 2 weeks FV þ SS, RT þ
+O’Brien (2002)(72) 40 þ United Kingdom 6 weeks 4 weeks – RT, T þ
+Panunzio (2007)(67) 471 Italy 36 weeks 36 weeks – E, RT, SS, T þ
+Pearson (2002)(53),
+Woolfe (2005)(105)
+65 United Kingdom 2 years 6 months FV E, T þ
+Turnin (2001)(92) 1876 France NA 5 weeks – T þ
+Environmental interventions (n 6)
+Bere (2005)(59) 795 Norway 10 months þ 10 months FV RT, SS
+Bere (2007)(60) 1950 Norway 9 and 45 months 9 months FV RT, SS
+Eriksen (2003)(73) 445 Denmark 7 weeks þ 5 weeks FV RT, SS
+Fogarty (2007)(90) 5606
+5111
+3382
+þ United Kingdom NA 2 years F SS
+Shemilt (2004)(61,75) 6076 þ United Kingdom 3 months and NA þ ? Breakfast SS
+Wells (2005)(91) 1492 þ United Kingdom / A few years FV SS
+Multicomponent interventions (n 9)
+Anderson (2005)(85) 294 þ United Kingdom 9 months 9 months FV þ RT, SS, T þ
+Bere (2006)(56) 369 Norway 9 and 21 months þ 7 months FV þ RT, SS, T þ
+Bere (2006)(62) 517 Norway 9 and 21 months þ 21 months FV þ RT, SS, T þ
+Horne (2004)(86) 749 þ United Kingdom 5 months 16 d FV RT, T þ
+Lowe (2004)(82) 402 United Kingdom 28 d 16 d FV RT, T þ
+Pe´rez-Rodrigo (2005)(57),
+Te Velde (2008)(76),
+Wind (2006,
+2008)(94,106)
+1472 Norway,
+The Netherlands
+and Spain
+8 and 20 months þ 2 years FV þ RT, SS, T þ
+Ransley (2007)(83) 4595 United Kingdom 3 and 7 months 2 years FV SS, T þ
+Reinaerts (2007)(70,74) 939 þ The Netherlands 9 months þ 9 months FV þ SS, T þ
+Tak (2007)(63) 953 þ The Netherlands 1 year 1 year FV SS, T þ
+E. Van Cauwenberghe et al.786
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+First author (year)
+School-
+wide
+School
+nutrition
+policy Incentives
+Screening þ
+feedback
+Teacher
+involvement
+Peer
+leader
+involvement
+Family
+involvement
+School
+staff
+involvement
+Community
+involvement
+Educational interventions (n 14)
+Agozzino (2007)
+(47) þþ
+Angelico (1991)(66) þþ þ þ
+Boaz (1998)(71) þ
+Bonaccorsi (2002)(48) þþ
+Borys (2000)(50),
+Heude (2003)(103),
+Lafay (1998)(104)
+þ þ þþþ
+D’Addesa (2006)(51) þþ þ
+Friel (1999)(81) þþ
+James (2004, 2007)(54,88) þ
+Livingstone (2002)(52),
+Woolfe (2005)(105)
+þþ
+Mangukusumo (2007)(55) þþ
+O’Brien (2002)(72) þþ þ
+Panunzio (2007)(67) þ
+Pearson (2002)(53),
+Woolfe (2005)(105)
+þþ þ
+Turnin (2001)(92) þ
+Environmental interventions (n 6)
+Bere (2005)(59) þþ þ
+Bere (2007)(60) þþ þ
+Eriksen (2003)(73) þþ
+Fogarty (2007)(90) þþ
+Shemilt (2004)(61,75) þþ þ
+Wells (2005)(91) þþ
+Multicomponent interventions (n 9)
+Anderson (2005)(85) þþ þ þ þ
+Bere (2006)(56) þþ þ þ þ
+Bere (2006)(62) þþ þ þ þ
+Horne (2004)(86) þ þ þ þþþ
+Lowe (2004)(82) þ þ þ þþþ
+Pe´rez-Rodrigo (2005)(57),
+Te Velde (2008)(76),
+Wind (2006,
+2008)
+(94,106)
+þ þ þ þþþ
+Ransley (2007)(83) þþ þ þ
+Reinaerts (2007)(70,74) þ þ þþþ
+Tak (2007)(63) þþ þ
+E, experts; T, teachers; RT, research team; FV, fruit and vegetables; NA, not applicable; SS, school staff; F, fruit; þ , present in the study; – , several dietary behaviours; ?, not reported in the study.
+School interventions addressing healthy diet 787
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+Table 2. Study and intervention characteristics of included studies promoting healthy nutrition in adolescents
+First author (year)
+No. of
+participants
+Target
+group Country
+Follow-up
+period
+Process
+evaluation
+Intervention
+duration
+Dietary
+behaviours
+addressed
+Theory-
+based
+Delivered
+by
+Classroom-
+based
+Educational interventions (n 6)
+Gratton (2007)(84) 198 United Kingdom 2 weeks 1 week FV þ RT, SS þ
+Haerens (2007)(58) 304 þ Belgium 3 months þ 1 time Fat þ RT, T þ
+Hassapidou (1997)(68) 126 United Kingdom 7 months 10 weeks FV E þ
+Klepp (1993)(64) 447 Norway 5 and 12 months þ 4 months – þ RT, T þ
+Martens (2008, 2006,
+2005)(65,77,107)
+1613 þ The Netherlands 3 months þ 3 months – þ T þ
+Tsorbatzoudis (2005)(78) 335 United Kingdom 12 weeks and
+5 months
+þ 12 weeks – þ RT, T þ
+Environmental interventions (n 2)
+Eicchorn (2007)(49) 475 Denmark 6 months þ 6 months – þ SS, T
+Passmore (2005)(89) 2332 United Kingdom 2 years 2 years – þ RT, SS, T þ
+Multicomponent interventions (n 5)
+Ask (2006)(69) 54 Norway 5 months 4 months – RT, SS, T þ
+Loughridge (2005)(79) 2965 þ United Kingdom 3 months þ 1 month Water and
+soft drinks
+RT þ
+Parker (2001)(80) 3197
+3164
+3989
+3708
+3227
+4020
+þ United Kingdom NA þ 2 years – RT, SS, T þ
+Prell (2005)
+(87) 228 Sweden 10 months ? Fish þ E, RT, SS, T þ
+Young (1993)(93) 158 United Kingdom NA ? – RT, SS, T þ
+First author (year)
+School-
+wide
+School nutrition
+policy Incentives
+Screening þ
+feedback
+Teacher
+involvement
+Peer leader
+involvement
+Family
+involvement
+School staff
+involvement
+Community
+involvement
+Educational interventions (n 6)
+Gratton (2007)(84)
+Haerens (2007)(58) þ
+Hassapidou (1997)(68) þ
+Klepp (1993)(64) þþþ
+Martens (2008, 2006,
+2005)(65,77,107)
+þþ þ
+Tsorbatzoudis (2005)(78) þ
+Environmental interventions (n 2)
+Eicchorn (2007)(49) þþ þ þ þ
+Passmore (2005)(89) þþ þ þ þ
+Multicomponent interventions (n 5)
+Ask (2006)(69) þþ þ þ þ
+Loughridge (2005)(79) þþ
+Parker (2001)(80) þþ þ þ
+Prell (2005)(87) þþ þ þ
+Young (1993)(93) þþ þ þ þ
+No., number; FV, fruit and vegetables; RT, research team; SS, school staff; T, teachers; E, experts; NA, not applicable; þ, present in the study; – , several dietary behaviours; ?, not reported in the study.
+E. Van Cauwenberghe et al.788
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+in adolescents. Ten studies in children (47,48,52,55 – 57,62,70,81,85)
+and eight studies in adolescents (49,58,64,65,78,84,87,89) evaluated
+an intervention, which was explicitly informed by one or more
+behavioural theories, a theoretical framework or an explicit
+theory-based planning model. The majority of the projects
+using a theory in children reported the use of the social cognitive
+theory(52,56,62) or the intervention mapping protocol (70,94).
+In adolescents, the theory of planned behaviour was most
+frequently used (58,78,84,87,89). The consumption of fruit and
+vegetables was promoted in more than half of the interven-
+tions in children
+(51,53,55 – 57,59,60,62,63,70,71,73,82,83,85,86,90,91),
+while in adolescents several dietary behaviours were addressed
+in more than half of the interventions (49,64,65,69,78,80,89,93).
+All but three projects in children(61,90,91) and one study in ado-
+lescents(68) reported teachers or research staff as the primary
+intervention providers, while school staff and experts were
+involved occasionally in the delivery of the intervention. The
+intervention components were mainly delivered in the school
+setting, since this was an explicit inclusion criterion,
+but some projects in children involved additional family-
+based components
+(47,48,50,51,53,55 – 57,62,66,70 – 72,81 – 83,85,86) or
+additional community-based components (50,57,70). Few
+projects in adolescents had additional family-based
+components(64,65,68,69,93). Finally, some projects in children
+and adolescents reported the use of health screening plus
+feedback(52,55,65,66) and the use of peers(49,64,82,86,89).
+Evidence of effect
+Tables 3 and 4 present the components to calculate the levels
+of evidence of effect on anthropometrics and dietary
+behaviour in studies in children and adolescents. The study
+design, according to the Study Design Algorithm used by
+the Community Guide
+(95), the overall quality rating of each
+study and the overall effectiveness of each study are presented
+in these tables. It was found that 76 % of the studies in
+children resulted in an improvement in dietary behaviour
+and 25 % in body composition. In adolescents, this was 77
+and 0 %, respectively. Ten studies in children and six studies
+in adolescents also measured the effects on dietary determi-
+nants. These results are not included in the present paper,
+but they can be found in Web Extra 3 (http://www.
+hopeproject.eu/index.php?page ¼ documents&documents_
+map ¼%2FWP þ9 þsystematic þreview%2F).
+Finally, Table 5 summarises the stratiﬁed levels of evidence
+for the effectiveness of interventions to promote healthy
+nutrition in children and adolescents.
+Educational interventions in children . Fourteen studies
+evaluated the effect of education-only interventions in
+children on dietary behaviour, including two strong
+(54,55) and
+one weak (67) cluster RCT, one moderate (52) and three
+weak(51,71,81) controlled trials, and ﬁve weak before–after
+studies(47,48,53,66,72) and two weak prospective cohorts (50,92).
+In six studies, effectiveness was not found (48,51,55,66,67,71) and
+in two studies mixed results were found (47,72). Positive effects
+were found in the short term (52,81), the medium term (54),
+the long term (50,53) and in a prospective cohort (92), and in
+one study an improvement was mainly found in children
+from advantaged areas
+(81). This equates to limited evidence
+that educational interventions in children can alter dietary
+behaviour positively.
+Only four educational studies in children reported the effect
+on anthropometrics, including one strong (54) and one weak (67)
+cluster RCT, one weak before–after study (66) and one weak
+prospective cohort (50). A well-executed study discouraging
+the consumption of carbonated drinks reported a positive
+effect on the prevalence of obesity after 1 year (54), but this
+effect was not sustained after 2 years (88). However, no signiﬁ-
+cant changes in BMI, centile z-scores and waist z-scores were
+found at both follow-ups. Two studies found signiﬁcant nega-
+tive effects in subgroups at medium term
+(67) and long term(50),
+and one study found no effect on BMI (66). This provides
+inconclusive evidence that educational interventions can
+contribute to changes in body composition.
+Environmental interventions in children . Five studies on
+fruit and vegetable subscription or distribution programmes
+and one breakfast distribution programme (61) assessed the
+effect on fruit and vegetable intakes and on breakfast
+habits, including one moderate cluster RCT (61), two moder-
+ate(59,60) and one weak (73) controlled trials and two
+weak prospective cohorts (90,91). Effectiveness was found in
+the six studies, but only in one study a sustained effect
+at the long term was detected (60). This suggests that there
+is limited evidence that environmental interventions can
+improve fruit and vegetable intakes and there is inconclusive
+evidence that environmental interventions can improve
+breakfast habits.
+None of the interventions with environmental modiﬁcations
+in children measured the effect on body composition.
+Multicomponent interventions in children . Nine multi-
+component studies assessed the effect on fruit and/or
+vegetable intake, including two strong
+(56,94), one moderate (62)
+and one weak (85) cluster RCT, one moderate (63) and three
+weak(70,83,86) controlled trials and one weak before–after
+study(82). All consisted primarily of a fruit and/or vegetables
+subscription or distribution programme combined with a
+nutrition education curriculum and all found an improvement
+in dietary behaviour. Eight studies reported effects in
+subgroups only
+(56,62,63,70,82,85,86,94) and ﬁve studies reported
+a long-term effect (56,57,62,83,86). This provides strong evidence
+that multicomponent interventions can have a positive effect
+on fruit and vegetable intakes.
+None of the multicomponent studies in children measured
+the effect on anthropometrics.
+Educational interventions in adolescents . All the
+education-only programmes in adolescents measured the
+effect on dietary intake, including one strong (58), one
+moderate(65) and one weak (68) cluster RCT, one weak
+RCT(84) and one moderate (64) and one weak (78) controlled
+trial. Positive effects were almost always reported with one
+study reporting mixed results
+(65). Furthermore, four studies
+reported effects in subgroups only (58,64,65,68) and in one
+study the effect was sustained after 1 year (64). To conclude,
+there is moderate evidence that educational interventions in
+adolescents can improve dietary behaviour.
+Inconclusive evidence of effect was found for education-
+only interventions in adolescents on body composition, with
+only one weak cluster randomised trial
+(68) measuring the
+effect on height and weight and reporting no signiﬁcant
+change(68).
+School interventions addressing healthy diet 789
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+Table 3. Study design, overall study quality and overall intervention effectiveness on anthropometrics and dietary behaviour of included studies
+promoting healthy nutrition in children
+First author (year) Study design
+Overall study
+quality
+Overall effectiveness
+on anthropometrics
+Overall effectiveness
+on dietary behaviour
+Educational interventions (n 14)
+Agozzino (2007)(47) Before–after Weak / Food intake: þþ /22
+Different effects according to
+implementation level
+Angelico (1991)(66) Before–after Weak BMI: 0 Food intake at school: 0
+Boaz (1998)(71) Non-RCT Weak / Food intake: 0
+Bonaccorsi (2002)(48) Before–after Weak / Food intake: 0
+Borys (2000)(50),
+Heude (2003)(103),
+Lafay (1998)(104)
+Prospective cohort Weak BMI and overweight,
+obesity prevalence: 22
+Different effects according
+to deﬁnition of overweight
+and obesity, sex and age
+Food intake: þþ
+D’Addesa (2006)
+(51) Non-RCT Weak / Food intake: 0
+Friel (1999)(81) Non-RCT Weak / Food intake: þþ
+Different effects according to SES
+James (2004, 2007)(54,88) Cluster RCT Strong BMI, prevalence of obesity and
+waist circumference: þþ
+No sustained effect
+Consumption of carbonated
+drinks: þþ
+Sustained effect was not measured
+Livingstone (2002)(52),
+Woolfe (2005)(105)
+Non-RCT Moderate / Food intake: þþ
+Mangukusumo (2007)(55) Cluster RCT Strong / Fruit and vegetable intakes: 0
+O’Brien (2002)(72) Before–after Weak / Intake at school: þþ /22
+Panunzio (2007)(67) Cluster RCT Weak BMI and obesity prevalence: 22
+Only boys and girls from
+the nutritionist IG
+Food intake: 0
+Pearson (2002)(53),
+Woolfe (2005)(105)
+Before–after Weak / Food intake: þþ
+No different effects according
+to age and sex
+Turnin (2001)(92) Prospective cohort Weak / Food intake: þþ
+Environmental interventions (n 6)
+Bere (2005)(59) Non-RCT Moderate / Food intake: þþ
+Different effects according to
+parent’s education and habitual intake
+Bere (2007)(60) Non-RCT Moderate / Food intake: þþ
+Sustained effect
+No different effects according
+to sex
+Eriksen (2003)
+(73) Non-RCT Weak / Fruit and vegetable intakes: þþ
+Fogarty (2007)(90) Prospective cohort Weak / Fruit consumption: þþ
+No sustained effect
+No different effects according to SES
+Shemilt (2004)(61,75) Cluster RCT and
+prospective cohort
+Moderate / Breakfast habits: þþ
+Only at medium term
+Wells (2005)(91) Prospective cohort Weak / Fruit, fruit juice and vegetable
+intakes: þþ
+No sustained effect
+Multicomponent interventions (n 9)
+Anderson (2005)(85) Cluster RCT Weak / Food intake: þþ
+Different effects according to sex
+Bere (2006)(56) Cluster RCT Strong / Fruit and vegetable intakes: þþ
+Sustained effect
+Different effects according to
+enjoyment of the curriculum and
+usage of the newsletters
+No different effects according to
+implementation level and the
+presence of parents meetings
+Bere (2006)
+(62) Cluster RCT and
+non-RCT
+Moderate / Fruit and vegetable intakes: þþ
+Sustained effect
+Different effects according to sex
+Horne (2004)(86) Non-RCT Weak / Fruit and vegetable intakes: þþ
+Sustained effect
+Different effects according to
+baseline intake and age
+Lowe (2004)
+(82) Before–after Weak / Fruit and vegetable intakes: þþ
+Different effects according to
+baseline intake and age
+E. Van Cauwenberghe et al.790
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+Environmental interventions in adolescents. Two environ-
+mental programmes assessed the effect on behaviour,
+including one weak controlled trial
+(89) and one weak
+before–after study (49). Both trials used a peer-based setting
+approach. A positive long-term effect on food intake at
+school was found in one study
+(89), equating to inconclusive
+evidence of effect.
+None of the interventions with environmental modiﬁcations
+in adolescents measured the effect on anthropometrics.
+Multicomponent interventions in adolescents . The ﬁve
+multicomponent programmes measured the effect on
+dietary intake, including a weak cluster RCT
+(69), two weak
+controlled trials (79,87) and two weak prospective cohort
+studies(80,93). All programmes consisted primarily of a distri-
+bution programme or changes in the school lunch combined
+with a nutrition education curriculum. Effectiveness
+was found in four studies and one study reported mixed
+results
+(80), suggesting that there is limited evidence of effect.
+Table 3. Continued
+First author (year) Study design Overall study
+quality
+Overall effectiveness
+on anthropometrics
+Overall effectiveness
+on dietary behaviour
+Pe´rez-Rodrigo (2005)(94),
+Te Velde (2008)(57),
+Wind (2008, 2006)(76,106)
+Cluster RCT Strong / Fruit and vegetable intakes: þþ
+Sustained effect
+Different effects according to country,
+baseline intake, appreciation,
+implementation and parental
+involvement
+Ransley (2007)
+(83) Non-RCT Weak / Food intake: þþ
+Sustained effect
+Reinaerts (2007)(70,74) Non-RCT Weak / Fruit and vegetable intakes: þþ
+Different effects according to
+age, sex and ethnicity
+Tak (2007)(63) Non-RCT Moderate / Fruit and vegetable intakes: þþ
+Different effects according to
+ethnicity
+/, Not measured; þþ /22 , mixed results; 0, no effect; RCT, randomised controlled trial; þþ , overall improvement; 22, overall deterioration; SES, socio-economic status;
+IG, intervention group.
+Table 4. Study design, overall study quality and overall intervention effectiveness on anthropometrics and dietary behaviour of included studies
+promoting healthy nutrition in adolescents
+First author (year) Study design
+Overall study
+quality
+Overall effectiveness
+on anthropometrics Overall effectiveness on dietary behaviour
+Educational interventions (n 6)
+Gratton (2007)(84) RCT Weak / Fruit and vegetable intakes: þþ
+Haerens (2007)(58) Cluster RCT Strong / Fat intake: þþ
+Different effects according to
+education, sex, reading the intervention
+message and baseline self-rated stage
+of change
+No different effects
+according to attitudes
+Hassapidou (1997)
+(68) Cluster RCT Weak Height and weight: 0 Food intake: þþ
+Different effects according to sex
+Klepp (1993)(64) Non-RCT Moderate / Food intake: þþ
+Sustained effect
+Different effects according to sex
+Martens (2005, 2006,
+2008)
+(65,77,107)
+Cluster RCT Moderate / Food intake: þþ /22
+Different effects according to
+baseline intake
+Tsorbatzoudis (2005)(78) Non-RCT Weak / Food intake: þþ No sustained effect
+Environmental interventions (n 2)
+Eicchorn (2007)(49) Before–after Weak / Food intake: 0
+Passmore (2005)(89) Non-RCT Weak / Food intake at school: þþ
+Multicomponent interventions (n 5)
+Ask (2006)(69) Cluster RCT Weak BMI and prevalence
+of obesity: 0
+Food intake: þþ
+Loughridge (2005)(79) Non-RCT Weak / Water and soft drinks consumption
+at school: þþ
+Parker (2001)(80) Prospective cohort Weak / Food intake at school: þþ /22
+Prell (2005)(87) Non-RCT Weak / Fish consumption at school: þþ
+No different effects according to sex
+Young (1993)(93) Prospective cohort Weak / Food intake: þþ
+RCT, randomised controlled trial; /, not measured; þþ , overall improvement; 0, no effect; þþ /22 , mixed results.
+School interventions addressing healthy diet 791
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+Furthermore, in three studies the effect was only measured on
+food intake at school (79,80,87) and in one study a sustained
+effect at the long term was not found (80).
+Inconclusive evidence was found for the effect of
+multicomponent interventions on body composition; the
+weak cluster randomised trial in which anthropometrics were
+measured did not ﬁnd effects (69).
+Children from low socio-economic backgrounds. All eight
+studies targeting children from low socio-economic back-
+grounds assessed the effect on dietary behaviour,
+including one moderate
+(61) and one weak (85) cluster RCT,
+two weak controlled trials (81,86), two weak before–after
+studies(47,72) and two weak prospective cohort studies (90,91).
+Two studies reported mixed results (47,72), while the other
+studies reported improvements in dietary behaviour. This pro-
+vides limited evidence that interventions targeted at children
+with a low socio-economic status are effective in changing
+dietary behaviour. None of the interventions speciﬁcally
+aimed at low socio-economic groups measured effects on
+body composition.
+Children from ethnic minority populations . Only two
+studies evaluated the effect of an intervention in children
+from ethnic minority groups, including one moderate
+(63) and
+one weak controlled trial (70). A signiﬁcant positive effect
+on dietary intake was found in both studies, suggesting
+inconclusive evidence of effect. Both studies did not measure
+anthropometrics.
+Adolescents from low socio-economic backgrounds . Four
+studies in adolescents targeted adolescents with a low socio-
+economic status, including one strong
+(58) and one moderate(65)
+cluster RCT, one weak controlled trial (79) and one weak
+prospective cohort study (80). All four studies measured the
+effect on dietary behaviour. Two studies found an improve-
+ment in behaviour in this target group
+(58,79), while two studies
+found mixed results (65,80). Furthermore, in two studies the
+effect was only found in a subgroup (58,65). This suggests that
+there is inconclusive evidence that interventions in adolescents
+with low socio-economic backgrounds can change dietary
+behaviour positively. None of these studies measured the
+effect on body composition.
+Adolescents from ethnic minority populations . None of
+the studies measured the effect in adolescents from ethnic
+minority populations.
+Discussion
+The purpose of the present review was to compile the
+evidence regarding the effectiveness of school-based pro-
+grammes promoting a healthy diet on dietary intake and
+anthropometrics in children and adolescents in Europe.
+As the number of studies conducted among children was
+more than double and more studies in children were of
+higher quality, this resulted in more evidence of effect for
+interventions among children than among adolescents.
+In children, there is strong evidence that multicomponent
+interventions that combine improved availability of fruit and
+vegetables with a nutrition education curriculum delivered
+by the teacher and at least some parent involvement can
+alter intake of fruit and vegetables. Furthermore, limited
+evidence of effect was found for nutrition education-
+only programmes delivered by teachers using practical activi-
+ties such as taste testing, cooking classes, etc. Limited
+evidence of effect was also found for the effectiveness of
+programmes that only focused on environmental change.
+These were restricted to fruit and vegetables distribution
+programmes, either for free
+(59 – 61,90,91) or as a subscription
+programme(59,60,73). For both schemes, evidence for effective-
+ness was found. Furthermore, inconclusive evidence of effect
+on dietary behaviour was found for environmental initiatives
+that targeted breakfast habits, for studies directed at children
+from low socio-economic backgrounds or ethnic minority
+groups. The present review also shows inconclusive evidence
+of effect of educational interventions on body composition,
+while this effect was never measured in the environmental
+and multicomponent interventions in children. For children,
+we can conclude that a range of fruit and vegetable promotion
+activities can be recommended for implementation and have
+a great chance of success, as all the environmental and multi-
+component interventions including a fruit and vegetable
+provision scheme resulted in improvements in this behaviour.
+The European Commission has indeed issued implementation
+of such schemes across Europe (http://ec.europa.eu/health-eu/
+my_lifestyle/nutrition/index_en.htm). Whether fruit or vege-
+table promotion will meaningfully contribute to obesity
+prevention is rather doubtful, and more studies are needed
+that target a range of nutrition behaviours that contribute
+importantly to energy balance.
+Table 5. Summary of levels of evidence for the effectiveness of interventions promoting healthy nutrition in children and adolescents, stratiﬁed by
+intervention type and target group
+Children (twenty-nine studies) Adolescents (thirteen studies)
+Anthropometrics Dietary behaviour Anthropometrics Dietary behaviour
+Variables
+No. of
+studies
+Level of
+evidence
+of effect
+No. of
+studies
+Level of
+evidence
+of effect
+No. of
+studies
+Level of
+evidence
+of effect
+No. of
+studies
+Level of
+evidence
+of effect
+Intervention type
+Educational 4 Inconclusive 14 Limited 1 Inconclusive 6 Moderate
+Environmental 0 Lacking 6 Limited 0 Lacking 2 Inconclusive
+Multicomponent 0 Lacking 9 Strong 1 Inconclusive 5 Limited
+Target group
+Ethnic minority populations 0 Lacking 2 Inconclusive 0 Lacking 0 Lacking
+Low SES populations 0 Lacking 8 Limited 0 Lacking 4 Inconclusive
+SES, socio-economic status.
+E. Van Cauwenberghe et al.792
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+The same conclusion was found in a recent review investi-
+gating the effectiveness of worldwide interventions to promote
+fruit and/or vegetable consumption in children in schools,
+including ﬁfteen studies from Europe, fourteen studies from
+the USA and one study from New Zealand
+(29). Of the thirty
+studies included, 70 % increased fruit and vegetable intakes,
+with none decreasing intake. Nevertheless, of the seven
+school fruit and vegetables schemes targeting obesity
+reduction, only one study managed to produce positive
+impact on BMI and fruit and vegetable intakes.
+In adolescents, moderate evidence was found for the
+effect of education-only interventions on dietary intake.
+Educational trials in adolescents usually provided a nutrition
+education curriculum that was delivered by the teachers.
+Besides, limited evidence of effect is provided for multi-
+component programmes on dietary behaviour. The
+environmental part of these multicomponent trials consisted
+of adapting or increasing the availability of healthy food.
+This was combined with educating the adolescents about
+healthy nutrition by the teacher. In general, inconclusive
+evidence of effect of all these interventions was found on
+anthropometrics. As in children, it is also apparent in the
+trials for adolescents that there is an urgent need for
+dietary interventions in adolescents that measure the effect
+on overweight or obesity.
+If we compare the present results with previous reviews
+including studies from outside Europe, similar conclusions
+were found. The most recent international review, reviewing
+the effectiveness of interventions improving the school food
+environment, has found effectiveness for school food policies
+on food intake, but little evaluation of the impact on BMI was
+found
+(25). The present review included eleven studies from the
+USA and seven from Europe.
+It is believed that parents play a direct role in children’s and
+adolescent’s eating patterns and consequently it is advocated
+that interventions, aimed at improving children’s and
+adolescent’s nutrition, need to address the family
+(96 – 98).
+Furthermore, previous reviews concluded that the involvement
+of parents is an important determinant for success
+(18,21,26,28).
+Many school-based interventions included in the present
+review included some parental involvement, 62 % of the
+studies in children and 38 % of the studies in adolescents.
+Although this was usually limited to newsletters, folders,
+homework assignments, or at best the organisation of some
+family nights at school, just over half of these interventions
+were successful in improving dietary behaviour making it
+difﬁcult to come to a similar strong conclusion as in other
+international reviews
+(18,21,26,28).
+The evidence of effect compiled in these European Union
+studies suggests a number of recommendations for future
+research in Europe. First, the present review showed that in
+the few studies that included anthropometric measures, the
+evidence on body composition was lacking or inconclusive.
+Only a limited number of studies measured anthropometrics
+and the studies that did were mostly ‘low-dose’ studies over
+short periods. Furthermore, most of the included studies
+were not explicitly aiming to contribute to obesity prevention
+and in the end obesity prevention is only partly a nutritional
+issue. Nevertheless, there is an urgent need for studies that
+include measures of body composition to ﬁll the gap in the
+European literature. Second, more consensus is needed
+about ‘best measures’ for diet. This would help to increase
+comparability between studies and would facilitate assess-
+ment of effectiveness. Studies would also be stronger when
+self-reports, which could reﬂect a desire to report the
+‘right answer’, would be veriﬁed with more objective
+monitoring
+(99,100). Consequently, this illustrates the need for
+objective and validated outcome measures for dietary
+behaviour. Third, some studies only observed the effect on
+food intake at school
+(66,72,79,80,87,89). This raises the question
+whether children might compensate during the rest of the
+day. It is therefore important to assess the effect of the inter-
+vention on total dietary behaviour. Fourth, more research is
+needed in speciﬁc groups. In general, more studies are
+needed in adolescents; speciﬁcally, older adolescents (16–18
+years old) were never addressed in the included studies.
+Furthermore, socio-economic status and ethnicity are
+identiﬁed as determinants of healthy eating
+(101), but fewer
+interventions targeted children and adolescents from low
+socio-economic backgrounds
+(58,65,79,80) and from ethnic min-
+ority populations. Consequently, future research should
+address these populations. Fifth, it appeared that follow-up
+periods were relatively short, only 24 % of the studies in
+children and 9 % in adolescents reported long-term effects.
+Additionally, most of the interventions focused on short-term
+changes right after the intervention, 86 and 72 %, respectively,
+while it is essential to have measures of at least 6 months after
+the intervention to be able to study the retention of behaviour
+change and to detect if weight status is modiﬁed
+(39). Studies
+with greater length are needed to make it possible to draw
+conclusions about the effectiveness on behaviour and obesity
+and about the sustainability of an intervention. Sixth,
+cost-effectiveness data were only provided in one study
+(75),
+while it is recommended that the efﬁciency of the intervention
+is also measured next to its effectiveness. Economic analyses
+and economic evidence must become a central part of
+prevention research. These are needed for appropriate policy
+decision making and for assessing long-term beneﬁts
+(36,102).
+Finally, a lot of the methodological shortcomings reported in
+the quality analysis were due to lack of information. So
+we advocate that researchers follow existing guidelines for
+reporting trials in the future
+(40,42). Furthermore, the main
+reasons that studies received an overall low-quality rating
+were mainly due to a weak rating on the criteria selection
+bias and data collection methods. Consequently, European
+studies should try to do a better job on these quality criteria.
+In the same line, there is substantial evidence from the
+literature to suggest that the explicit use of theory will signiﬁ-
+cantly improve the chances of effectiveness
+(39), but not all of
+the studies reported the use of a theoretical background.
+Especially, the educational and multicomponent studies
+relied on a theoretical background, while environmental
+interventions never reported a theoretical background. In the
+present review, it is not possible to conclude that a theoretical
+background is a key factor to success because both, studies
+that reported the use of a theory and studies that did not,
+showed effectiveness.
+One of the major advantages of the present review is that
+we also collected grey literature and lower quality studies. In
+this way, the European evidence was broadened up, but grey
+literature and lower quality studies are useful information
+that is unfortunately excluded in many systematic reviews
+School interventions addressing healthy diet 793
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+that instead primarily focus on studies with rigid designs.
+Another advantage is that the present review looks speciﬁ-
+cally at the evidence available in Europe. European studies
+were the minority of included studies in other systematic
+reviews, which makes them hard to generalise to Europe.
+However, most of the studies included in the present
+review were carried out in countries from Western and
+Northern parts of Europe. This raises questions about the
+generalisability of these results to other countries in
+Europe, especially because contextual variables were often
+lacking in the included studies. To assess the usefulness
+of these strategies in the other parts of Europe, we would
+recommend replicating evaluations of the successful inter-
+ventions identiﬁed in the present review adapted to a speciﬁc
+country and its culture.
+Conclusion
+Implications for policy makers
+Various policy documents have called for the development of
+effective strategies to improve dietary habits in children and
+adolescents to help halt or reverse the increase in obesity
+and to improve other aspects of health.
+In children, it appears that a subscription or distribution
+programme for fruit and vegetables combined with an
+educational component is likely to be effective to stimulate
+the consumption of fruit and vegetables. Educational
+programmes solely can also be effective in stimulating a
+healthy diet among children. Furthermore, evidence was
+found for fruit and vegetable subscription or distribution
+programmes on intake. Finally, studies in children from low
+socio-economic backgrounds seemed to be effective to
+improve dietary intake.
+In adolescents, an educational programme is likely to be
+effective to promote healthy nutrition. Additionally, evidence
+was also found for programmes that adapted school lunches or
+increased the availability of healthy food and combined this
+with a nutritional curriculum on food intake.
+To conclude, evidence of effect was found for European
+school-based initiatives that promote a healthy diet in
+school-aged children on behaviour. European evidence of
+effect was not established for school-based dietary inter-
+ventions on obesity prevention. Furthermore, as discussed
+before, recommendations should not only be based on
+effectiveness, a lot of other factors such as sustainability,
+integrity, context and cost-effectiveness should also be
+considered to be able to deliver appropriate evidence-based
+recommendations to the policy makers.
+Implications for research
+Future research should focus on ﬁlling the gaps identiﬁed in
+the present review. To improve the quality of the evidence
+of effectiveness on these kind of interventions, it is important
+that high-quality studies are executed, namely studies with the
+most rigorous design as possible, an appropriate sample size, a
+follow-up beyond post intervention, the use of more objective
+measures of dietary behaviour, measurements of body compo-
+sition and the assessment of implementation issues and cost-
+effectiveness. Next to high-quality studies, high-quality
+interventions are required. These are interventions with greater
+length and intensity as low-dose interventions over short
+periods are unlikely to induce improvements in behaviour
+and anthropometrics, sufﬁcient integrity, and adequate
+involvement of the parents and schools. Furthermore,
+studies should be reported according to certain standards
+(e.g. CONSORT and the TREND statement), so that existing
+studies can be better compared and all the necessary
+information for the reader is delivered
+(40,42).
+Acknowledgements
+The present work was supported by a European Commission
+funded project called Health promotion through Obesity
+Prevention in Europe (HOPE, www.hopeproject.eu). The
+full search strategy and the complete characteristics,
+results and quality assessment table are available to view at
+(http://www.hopeproj ect.eu/index.php?page ¼ documents&
+documents_map ¼ %2FWP þ 9 þ systematic þ review%2F).
+The contribution of the funder and the authors is as
+follows: The HOPE project identiﬁed the research question,
+study design and decided to submit the article for
+publication. E. V. C. led the review and designed the search
+strategy. She carried out the literature searches and screened
+the initial results, extracted data, analysed the ﬁndings and
+drafted the tables. H. S., I. D. B. and L. M. assisted with
+screening the full-text articles, and E. V. C. and H. S. assessed
+the methodological quality of the studies. E. V. C. drafted the
+manuscript. All authors contributed to synthesising the results
+and critical revision of the manuscript, and all approved the
+ﬁnal version. The authors have no conﬂicts of interest to
+declare. Ethical approval was not required for the study.
+References
+1. Centers for Disease Control and Prevention (1997) Guide-
+lines for school health programs to promote lifelong healthy
+eating. J Sch Health 67, 9–26.
+2. Lytle LA & Kubik MY (2003) Nutritional issues for
+adolescents. Best Pract Res Clin Endocrinol Metab 17,
+177–189.
+3. World Health Organization (2003) Diet, Nutrition and
+The Prevention of Chronic Diseases: Report of a Joint
+WHO/FAO Expert Consultation. WHO Technical Report
+Series no. 916. Geneva: WHO.
+4. Willett WC (1994) Diet and health: what should we eat?
+Science 264, 532–537.
+5. Luzzi AF & James WPT (2001) European diet and public
+health: the continuing challenge.Public Health Nutr4, 275–292.
+6. Kelder SH, Perry CL, Klepp KI, et al. (1994) Longitudinal
+tracking of adolescent smoking, physical activity, and food
+choice behaviors. Am J Public Health 84, 1121–1126.
+7. Lien N, Lytle LA & Klepp KI (2001) Stability in consump-
+tion of fruit, vegetables, and sugary foods in a cohort from
+age 14 to age 21. Prev Med 33, 217–226.
+8. Lytle P, Seifert MPH, Greenstein MS, et al. (2000) How do
+children’s eating patterns and food choices change over
+time? Results from a cohort study. Am J Health Promot 14,
+222–228.
+9. Brug J (2006) Healthful nutrition promotion in Europe: goals,
+target populations, and strategies. Patient Educ Couns 63,
+255–257.
+E. Van Cauwenberghe et al.794
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+10. Currie C, Roberts C, Morgan A, et al. (2004) Young People’s
+Health in Context: International Report from The HBSC 2001/
+02 Survey. WHO Policy Series: Health Policy for Children
+and Adolescents Issue 4 . Copenhagen: WHO Regional Ofﬁce
+for Europe.
+11. Branca F, Nikogosian H & Lobstein T (2007) The Challenge of
+Obesity in the WHO European Region and the Strategies for
+Response. Copenhagen: World Health Organization.
+12. Lambert J, Agostoni C, Elmadfa I, et al. (2004) Dietary intake
+and nutritional status of children and adolescents in Europe.
+Br J Nutr 92, Suppl. 2, S147–S211.
+13. Cruz JAA (2000) Dietary habits and nutritional status in
+adolescents over Europe - Southern Europe. Eur J Clin Nutr
+54, S29–S35.
+14. Currie C, Gabhainn SN, Godeau E, et al. (2008) Inequalities in
+Young People’s Health: International Report From The HBSC
+2005/06 Survey. WHO Policy Series: Health Policy for
+Children and Adolescents Issue 5 . Copenhagen: WHO
+Regional Ofﬁce for Europe.
+15. Commission of the European Communities (2005) Green
+paper: ‘Promoting Healthy Diets and Physical Activity:
+A European Dimension for The Prevention of Overweight,
+Obesity and Chronic Diseases’ . Brussels: Commission of the
+European Communities.
+16. Summerbell CD, Waters E, Edmunds LD, et al. (2005)
+Interventions for preventing obesity in children. The Cochrane
+Database of Systematic Reviews CD001871.
+17. Doak CM, Visscher TL, Renders CM, et al. (2006) The
+prevention of overweight and obesity in children and
+adolescents: a review of interventions and programmes. Obes
+Rev 7, 111–136.
+18. French SA & Stables G (2003) Environmental interventions to
+promote vegetable and fruit consumption among youth in
+school settings. Prev Med 37, 593–610.
+19. Flodmark CE, Marcus C & Britton M (2006) Interventions
+to prevent obesity in children and adolescents: a systematic
+literature review. Int J Obes 30, 579–589.
+20. Sharma M (2006) School-based interventions for childhood
+and adolescent obesity. Obes Rev 7, 261–269.
+21. Sharma M (2006) International school-based interventions for
+preventing obesity in children. Obes Rev 8, 155–167.
+22. Shaya FT, Flores D, Gbarayor CM, et al. (2008) School-based
+obesity interventions: a literature review. J Sch Health 78,
+189–196.
+23. Hardeman W, Grifﬁn S, Johnston M, et al. (2000)
+Interventions to prevent weight gain: a systematic review of
+psychological models and behaviour change methods. Int J
+Obes Relat Metab Disord 24, 131–143.
+24. Institute for Health and Clinical Excellence National
+Collaborating Centre for Primary Care (2006) Obesity: The
+Prevention, Identiﬁcation, Assessment and Management of
+Overweight and Obesity in Adults and Children. Obesity:
+Full Guideline no. CG43. London: NICE.
+25. Jaime PC & Lock K (2009) Do school based food and nutrition
+policies improve diet and reduce obesity? Prev Med 48,
+45–53.
+26. Knai C, Pomerleau J, Lock K, et al. (2006) Getting children to
+eat more fruit and vegetables: a systematic review. Prev Med
+42, 85–95.
+27. Ammerman AS, Lindquist CH, Lohr KN, et al. (2002) The
+efﬁcacy of behavioral interventions to modify dietary fat and
+fruit and vegetable intake: a review of the evidence. Prev
+Med 35, 25–41.
+28. Blanchette L & Brug J (2005) Determinants of fruit and
+vegetable consumption among 6–12-year-old children and
+effective interventions to increase consumption. J Hum Nutr
+Diet 18, 431–443.
+29. de Sa J & Lock K (2008) Will European agricultural policy
+for school fruit and vegetables improve public health? A
+review of school fruit and vegetable programmes. Eur J
+Public Health 18, 558–568.
+30. Brug J & van Lenthe F (2005) Environmental Determinants
+and Interventions for Physical Activity, Nutrition and Smoking:
+A Review. Rotterdam: Erasmus MC.
+31. Flynn MA, McNeil DA, Maloff B, et al. (2006) Reducing
+obesity and related chronic disease risk in children and youth:
+a synthesis of evidence with ‘best practice’ recommendations.
+Obes Rev 7, Suppl. 1, 7–66.
+32. Katz DL, O’Connell M, Yeh MC, et al. (2005) Public
+health strategies for preventing and controlling overweight
+and obesity in school and worksite settings: a report on
+recommendations of the Task Force on Community Preventive
+Services. MMWR Recomm Rep 54, 1–12.
+33. Norman GJ, Zabinski MF, Adams MA, et al. (2007) A review
+of eHealth interventions for physical activity and dietary
+behavior change. Am J Prev Med 33, 336–345.
+34. McQueen DV & Jones CM (2007) Global Perspectives on
+Health Promotion Effectiveness . New York: Springer Science.
+35. Swinburn B, Gill T & Kumanyika S (2005) Obesity
+prevention: a proposed framework for translating evidence into
+action. Obes Rev 6, 23–33.
+36. Rychetnik L, Frommer M, Hawe P, et al. (2002) Criteria
+for evaluating evidence on public health interventions.
+J Epidemiol Community Health 56, 119–127.
+37. Kemm J (2006) The limitations of ‘evidence-based’ public
+health. J Eval Clin Pract 12, 319–324.
+38. Jackson N (2003) Handbook Systematic Reviews of Health
+Promotion and Public Health Interventions. The Cochrane
+Collaboration, pp. 57–67. Victoria, Australia. http://www.ph.
+cochrane.org/en/authors.html
+39. Jackson N (2005) Criteria for the systematic review of health
+promotion and public health interventions. Health Promot Int
+20, 367–374.
+40. Des Jarlais DC, Lyles C, Crepaz N, et al. (2004) Improving the
+reporting quality of nonrandomized evaluations of behavioral
+and public health interventions: the TREND statement. Am J
+Public Health 94, 361–366.
+41. Altman DG, Schulz KF, Moher D, et al. (2001) The revised
+CONSORT statement for reporting randomized trials:
+explanation and elaboration. Ann Intern Med 134, 663–694.
+42. Moher D, Schulz K & Altman D (2001) The CONSORT
+statement: revised recommendations for improving the quality
+of reports of parallel group randomized trials. BMC Med Res
+Methodol 1,2 .
+43. Moher D, Jones A, Lepage L, et al.(2001) Use of the CONSORT
+statement and quality of reports of randomized trials: a com-
+parative before-and-after evaluation. JAMA 285, 1992–1995.
+44. Engbers LH, van Poppel MN, Chin A Paw MJ, et al. (2005)
+Worksite health promotion programs with environmental
+changes: a systematic review. Am J Prev Med 29, 61–70.
+45. Proper KI, Staal BJ, Hildebrandt VH, et al. (2002) Effectiveness
+of physical activity programs at worksites with respect to work-
+related outcomes. Scand J Work Environ Health 28, 75–84.
+46. van Sluijs EM, McMinn AM & Grifﬁn SJ (2007) Effectiveness
+of interventions to promote physical activity in children
+and adolescents: systematic review of controlled trials. BMJ
+335, 703.
+47. Agozzino E, Esposito D, Genovese S, et al. (2007) Evaluation
+of the effectiveness of a nutrition education intervention
+performed by primary school teachers. Ann Ig 19, 315–324.
+48. Bonaccorsi G, Isola A, Tognarelli M, et al. (2002) Changes in
+eating habits among a group of children after completion of an
+educational intervention program in elementary school. Ann Ig
+14, 243–251.
+School interventions addressing healthy diet 795
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+49. Eichhorn C, Loss J & Nagel E (2007) Process and outcome
+evaluation of the school-based project ‘Students’ enterprises
+for healthy nutrition’. Int J Public Health 52, 242–254.
+50. Borys JM & Lafay L (2000) Nutritional information for
+children to modify the food habits of the whole family. Rev
+Med Suisse Romande 120, 207–209.
+51. D’Addesa D, Marzi V, Sinesio F, et al. (2006) Nutrition
+intervention to promote higher fruit, vegetable and legume
+consumption among schoolchildren. Int J Obes 30, S5–S6.
+52. Livingstone M, McKinley M, Robson P, et al. (2002) Develop-
+ment and Evaluation of an Interactive Multi-media CD-ROM
+for the Promotion of Nutrition Education in Secondary School-
+children no. N09012. London: Food Standards Agency.
+53. Pearson T, Lambert N & Barker M (2002) Increasing Fruit
+and Vegetable Consumption in Children: The Development
+and Evaluation of a School-based Intervention Using Art/
+play Therapy no. N09008. London: Food Standards Agency.
+54. James J, Thomas P, Cavan D, et al. (2004) Preventing
+childhood obesity by reducing consumption of carbonated
+drinks: cluster randomised controlled trial. BMJ 328, 1237.
+55. Mangunkusumo RT, Brug J, de Koning HJ, et al. (2007)
+School-based internet-tailored fruit and vegetable education
+combined with brief counselling increases children’s
+awareness of intake levels. Public Health Nutr 10, 273–279.
+56. Bere E, Veierod MB, Bjelland M, et al. (2006) Outcome and
+process evaluation of a Norwegian school-randomized fruit
+and vegetable intervention: fruits and vegetables make the
+marks (FVMM). Health Educ Res 21, 258–267.
+57. Te Velde SJ, Brug J, Wind M, et al. (2008) Effects of a
+comprehensive fruit- and vegetable-promoting school-based
+intervention in three European countries: the Pro Children
+Study. Br J Nutr 99, 893–903.
+58. Haerens L, Deforche B, Maes L, et al. (2007) A computer-
+tailored dietary fat intake intervention for adolescents: results
+of a randomized controlled trial. Ann Behav Med 34,
+253–262.
+59. Bere E, Veierod MB & Klepp KI (2005) The Norwegian
+School Fruit Programme: evaluating paid vs. no-cost
+subscriptions. Prev Med 41, 463–470.
+60. Bere E, Veierod MB, Skare O, et al. (2007) Free School Fruit-
+sustained effect three years later.Int J Behav Nutr Phys Act4,5 .
+61. Shemilt I, Harvey I, Shepstone L, et al. (2004) A national
+evaluation of school breakfast clubs: evidence from a cluster
+randomized controlled trial and an observational analysis.
+Child Care Health Dev 30, 413–427.
+62. Bere E, Veierod MB, Bjelland M, et al.(2006) Free School Fruit-
+sustained effect 1 year later. Health Educ Res 21, 268–275.
+63. Tak NI, Te Velde SJ & Brug J (2007) Ethnic differences in
+1-year follow-up effect of the Dutch Schoolgruiten Project –
+promoting fruit and vegetable consumption among primary-
+school children. Public Health Nutr 10, 1497–1507.
+64. Klepp KI & Wilhelmsen BU (1993) Nutrition education
+in junior high schools: incorporating behavior change strat-
+egies into home economics courses. Health Educ Res 8,
+547–554.
+65. Martens MK, van Assema P, Paulussen TG, et al. (2008)
+Krachtvoer: effect evaluation of a Dutch healthful diet
+promotion curriculum for lower vocational schools. Public
+Health Nutr 11, 271–278.
+66. Angelico F, Del Ben M, Fabiani L, et al. (1991) Management
+of childhood obesity through a school-based programme of
+general health and nutrition education. Public Health 105,
+393–398.
+67. Panunzio MF, Antoniciello A, Pisano A, et al. (2007) Nutrition
+education intervention by teachers may promote fruit and
+vegetable consumption in Italian students. Nutr Res 27,
+524–528.
+68. Hassapidou MN, Fotiadou E & Maglara E (1997) A nutrition
+intervention programme for lower secondary schools in
+Greece. Health Educ J 56, 134–144.
+69. Ask AS, Hernes S, Aarek I, et al. (2006) Changes in
+dietary pattern in 15 year old adolescents following a 4
+month dietary intervention with school breakfast – a pilot
+study. Nutr J 5, 33.
+70. Reinaerts E, de Nooijer J, Candel M, et al. (2007) Increasing
+children’s fruit and vegetable consumption: distribution or a
+multicomponent programme? Public Health Nutr 10, 939–947.
+71. Boaz A, Ziebland S, Wyke S, et al. (1998) A ‘ﬁve-a-day’ fruit
+and vegetable pack for primary school children. Part II:
+controlled evaluation in two Scottish schools. Health Educ J
+57, 105–116.
+72. O’Brien N, Roe C & Reeves S (2002) A quantitative
+nutritional evaluation of a healthy eating intervention in
+primary school children in a socioeconomically disadvantaged
+area – a pilot study. Health Educ J 61, 320–328.
+73. Eriksen K, Haraldsdottir J, Pederson R, et al. (2003) Effect of a
+fruit and vegetable subscription in Danish schools. Public
+Health Nutr 6, 57–63.
+74. Reinaerts EB, de Nooijer J & de Vries NK (2007) Fruit and
+vegetable distribution program versus a multicomponent
+program to increase fruit and vegetable consumption: which
+should be recommended for implementation? J Sch Health
+77, 679–686.
+75. Shemilt I (2004) A national evaluation of school breakfast
+clubs: where does economics ﬁt in? Child Care Health Dev
+30, 429–437.
+76. Wind M, Bjelland M, Perez-Rodrigo C, et al. (2008)
+Appreciation and implementation of a school-based inter-
+vention are associated with changes in fruit and vegetable
+intake in 10- to 13-year old schoolchildren – the Pro Children
+study. Health Educ Res 23, 997–1007.
+77. Martens M, van Assema P, Paulussen T, et al. (2006)
+Krachtvoer: process evaluation of a Dutch programme for
+lower vocational schools to promote healthful diet. Health
+Educ Res 21, 695–704.
+78. Tsorbatzoudis H (2005) Evaluation of a planned behavior
+theory-based intervention programme to promote healthy
+eating. Percept Mot Skills 101, 587–604.
+79. Loughridge JL & Barratt J (2005) Does the provision of cooled
+ﬁltered water in secondary school cafeterias increase water
+drinking and decrease the purchase of soft drinks? J Hum
+Nutr Diet 18, 281–286.
+80. Parker L & Fox A (2001) The Peterborough Schools Nutrition
+Project: a multiple intervention programme to improve school-
+based eating in secondary schools. Public Health Nutr 4,
+1221–1228.
+81. Friel S, Kelleher C, Campbell P, et al. (1999) Evaluation of the
+nutrition education at primary school (NEAPS) programme.
+Public Health Nutr 2, 549–555.
+82. Lowe CF, Horne PJ, Tapper K, et al. (2004) Effects of a peer
+modelling and rewards-based intervention to increase fruit and
+vegetable consumption in children.Eur J Clin Nutr58, 510–522.
+83. Ransley JK, Greenwood DC, Cade JE, et al. (2007) Does the
+school fruit and vegetable scheme improve children’s diet?
+A non-randomised controlled trial. J Epidemiol Commun
+Health 61, 699–703.
+84. Gratton L, Povey R & Clark-Carter D (2007) Promoting
+children’s fruit and vegetable consumption: interventions
+using the theory of planned behaviour as a framework. Br J
+Health Psychol 12, 639–650.
+85. Anderson AS, Porteous LE, Foster E, et al. (2005) The impact
+of a school-based nutrition education intervention on dietary
+intake and cognitive and attitudinal variables relating to
+fruits and vegetables. Public Health Nutr 8, 650–656.
+E. Van Cauwenberghe et al.796
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press
+86. Horne PJ, Tapper K, Lowe CF, et al. (2004) Increasing
+children’s fruit and vegetable consumption: a peer-modelling
+and rewards-based intervention. Eur J Clin Nutr 58,
+1649–1660.
+87. Prell HC, Berg MC, Jonsson LM, et al. (2005) A school-based
+intervention to promote dietary change.J Adolesc Health36, 529.
+88. James J, Thomas P & Kerr D (2007) Preventing childhood
+obesity: two year follow-up results from the Christchurch obesity
+prevention programme in schools (CHOPPS). BMJ 335, 762.
+89. Passmore S & Harris G (2005) School nutrition action groups
+and their effect upon secondary school-aged pupils’ food
+choices. Nutr Bull 30, 364–369.
+90. Fogarty AW, Antoniak M, Venn AJ, et al. (2007) Does
+participation in a population-based dietary intervention
+scheme have a lasting impact on fruit intake in young
+children? Int J Epidemiol 36, 1080–1085.
+91. Wells L & Nelson M (2005) The national school fruit scheme
+produces short-term but not longer-term increases in fruit con-
+sumption in primary school children. Br J Nutr 93, 537–542.
+92. Turnin MC, Tauber MT, Couvaras O, et al. (2001) Evaluation
+of microcomputer nutritional teaching games in 1,876 children
+at school. Diabetes Metab 27, 459–464.
+93. Young I (1993) Healthy eating policies in schools: an
+evaluation of effects on pupils’ knowledge, attitudes and
+behaviour. Health Educ J 52,3 – 9 .
+94. Perez-Rodrigo C, Wind M, Hildonen C, et al. (2005) The
+pro children intervention: applying the intervention mapping
+protocol to develop a school-based fruit and vegetable
+promotion programme. Ann Nutr Metab 49, 267–277.
+95. Zaza S, Wright-De Agu ¨ero L, Briss P, et al. (2000)
+Data collection instrument and procedure for systematic reviews
+in the guide to community preventive services. Task force on
+community preventive services. Am J Prev Med 18, 44–74.
+96. Rasmussen M, Krolner R, Klepp KI, et al. (2006) Deter-
+minants of fruit and vegetable consumption among children
+and adolescents: a review of the literature. Part I: quantitative
+studies. Int J Behav Nutr Phys Act 3, 22.
+97. Cullen KW, Baranowski T, Owens E, et al. (2003)
+Availability, accessibility, and preferences for fruit, 100 % fruit
+juice, and vegetables inﬂuence children’s dietary
+behavior. Health Educ Behav 30, 615–626.
+98. Patrick H & Nicklas TA (2005) A review of family and social
+determinants of children’s eating patterns and diet quality.JA m
+Coll Nutr 24, 83–92.
+99. van’t Veer P, Kardinaal AF, Bausch-Goldbohm RA, et al.
+(1993) Biomarkers for validation. Eur J Clin Nutr 47,
+Suppl. 2, S58–S63.
+100. Livingstone MB, Robson PJ & Wallace JM (2004) Issues in
+dietary intake assessment of children and adolescents. Br J
+Nutr 92, Suppl. 2, S213–S222.
+101. Brug J (2008) Determinants of healthy eating: motivation,
+abilities and environmental opportunities. Fam Pract 25,
+Suppl. 1, i50–i55.
+102. Kellam SG & Langevin DJ (2003) A framework for under-
+standing ‘evidence’ in prevention research and programs.
+Prev Sci 4, 137–153.
+103. Heude B, Lafay L, Borys JM, et al. (2003) Time trend in height,
+weight, and obesity prevalence in school children from Northern
+France, 1992–2000. Diabetes Metab 29, 235–240.
+104. Lafay L, Vray M, Boute D, et al. (1998) Food and nutritional
+data for a population from northern France: the Fleurbaix
+Laventie Ville Sante (FLVS) Study. Rev Epidemiol Sante
+Publique 46, 263–275.
+105. Woolfe J & Stockley L (2005) Nutrition health promotion in
+schools in the UK: learning from food standards agency
+funded schools research. Health Educ J 64, 229–246.
+106. Wind M (2006) The development, implementation and
+evaluation of a school-based intervention to promote fruit
+and vegetable intake among 10–13 year-old European school-
+children. PhD Thesis, Erasmus Universiteit Rotterdam.
+107. Martens MK (2005) Krachtvoer. The development,
+implementation, and evaluation of an educational programme
+for 12–14-year-old students to promote healthy eating. PhD
+Thesis, Universiteit Maastricht.
+School interventions addressing healthy diet 797
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114509993370
+ Published online by Cambridge University Press

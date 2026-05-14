@@ -1,0 +1,1325 @@
+Systematic Review with Meta-analysis
+Very-low-carbohydrate ketogenic diet v. low-fat diet for long-term
+weight loss: a meta-analysis of randomised controlled trials
+Nassib Bezerra Bueno*, Ingrid Soﬁa Vieira de Melo, Suzana Lima de Oliveira
+and Terezinha da Rocha Ataide
+Laborato´rio de Nutric¸a˜o Experimental, Faculdade de Nutric¸a˜o, Universidade Federal de Alagoas, Campus A. C. Simo ˜es,
+BR 104 Norte, Km 97, 57.072-970 Tabuleiro do Martins, Maceio ´, AL, Brazil
+(Submitted 7 November 2012 – Final revision received 24 January 2013 – Accepted 28 January 2013 – First published online 7 May 2013)
+Abstract
+The role of very-low-carbohydrate ketogenic diets (VLCKD) in the long-term management of obesity is not well established. The present
+meta-analysis aimed to investigate whether individuals assigned to a VLCKD (i.e. a diet with no more than 50 g carbohydrates/d) achieve
+better long-term body weight and cardiovascular risk factor management when compared with individuals assigned to a conventional low-
+fat diet (LFD; i.e. a restricted-energy diet with less than 30 % of energy from fat). Through August 2012, MEDLINE, CENTRAL, ScienceDirect,
+Scopus, LILACS, SciELO, ClinicalTrials.gov and grey literature databases were searched, using no date or language restrictions, for random-
+ised controlled trials that assigned adults to a VLCKD or a LFD, with 12 months or more of follow-up. The primary outcome was body
+weight. The secondary outcomes were TAG, HDL-cholesterol (HDL-C), LDL-cholesterol (LDL-C), systolic and diastolic blood pressure,
+glucose, insulin, HbA
+1c and C-reactive protein levels. A total of thirteen studies met the inclusion/exclusion criteria. In the overall analysis,
+ﬁve outcomes revealed signiﬁcant results. Individuals assigned to a VLCKD showed decreased body weight (weighted mean difference
+20·91 (95 % CI 21·65, 20·17) kg, 1415 patients), TAG (weighted mean difference 20·18 (95 % CI 20·27, 20·08) mmol/l, 1258 patients)
+and diastolic blood pressure (weighted mean difference 21·43 (95 % CI 22·49, 20·37) mmHg, 1298 patients) while increased HDL-C
+(weighted mean difference 0·09 (95 % CI 0·06, 0·12) mmol/l, 1257 patients) and LDL-C (weighted mean difference 0·12 (95 % CI 0·04,
+0·2) mmol/l, 1255 patients). Individuals assigned to a VLCKD achieve a greater weight loss than those assigned to a LFD in the long
+term; hence, a VLCKD may be an alternative tool against obesity.
+Key words: Cardiovascular risk factors: Low-carbohydrate diets: Meta-analysis: Obesity: Weight loss
+Obesity continues to be a major worldwide health problem,
+despite the efforts of the medical community. At least 2·8
+million adults die from obesity-related causes each year, and
+65 % of the worldwide population lives in countries where
+obesity causes more deaths than underweight (1). Although it
+is a difﬁcult task, intensive lifestyle interventions can achieve
+weight loss that is sustained over the long term, as shown
+by the ﬁndings of a recent large clinical trial (2).
+Diet is a cornerstone of any lifestyle intervention programme.
+The dietary plan that restricts energy and fat is the most common
+strategy, and based on it, several other dietary strategies have
+been proposed (3–5) . The very-low-carbohydrate ketogenic
+diet (VLCKD) differs from these approaches. According to
+Accurso et al.(6), in the early phases of this therapy, individuals
+must have approximately 50 g carbohydrates/d or 10 % of
+energy from a nominal 8400 kJ (approximately 2000 kcal) diet,
+unlike low-carbohydrate diets, which may have up to 130 g
+carbohydrates/d or 26 % of energy from a nominal diet.
+A major concern regarding the prescription of the VLCKD is
+the adherence of the individuals assigned to it, since it promotes
+important lifestyle changes
+(7).
+Given the importance of dietary counselling in weight
+loss, it is useful to investigate the effectiveness of different
+dietary therapies. A recent large randomised clinical trial,
+which assigned individuals to diets ranging from 35 to 65 %
+of dietary carbohydrate content, showed that, at this level of
+carbohydrate intake, there is no difference in weight loss
+between interventions (8). Nonetheless, evidence suggests
+* Corresponding author: N. B. Bueno, email nassibbb@hotmail.com
+Abbreviations: DBP, diastolic blood pressure; HDL-C, HDL-cholesterol; LDL-C, LDL-cholesterol; LFD, low-fat diet; SBP, systolic blood pressure; VLCKD,
+very-low-carbohydrate ketogenic diet; WMD, weighted mean differences.
+British Journal of Nutrition (2013), 110, 1178–1187 doi:10.1017/S0007114513000548
+q The Authors 2013
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+that greater dietary carbohydrate restrictions lead to greater
+weight loss (9). Indeed, previous meta-analyses have shown
+that carbohydrate-restricted diets promote greater weight
+loss than conventional energy-restricted low-fat diets
+(LFD)
+(10,11). However, these analyses did not exclusively
+focus on VLCKD studies (10), or included mostly trials with
+6 months of follow-up (11); hence, these analyses do not
+guarantee the long-term effectiveness of the VLCKD.
+A recent meta-analysis by Santos et al. (12) reported that
+low-carbohydrate diets lead to signiﬁcantly favourable changes
+in body weight and major cardiovascular risk factors. Never-
+theless, this analysis was based only on the individuals
+who had adopted a low-carbohydrate diet, comparing ﬁnal
+values against baseline values. Although it was an important
+investigation, the question of whether an abrupt change to an
+individual’s lifestyle, such as the adoption of a VLCKD, leads to
+relevant long-term clinical improvements remains unanswered.
+Thus, the present meta-analysis evaluated randomised
+controlled trials to determine whether overweight and obese
+individuals assigned to a VLCKD achieve greater weight loss
+and manage cardiovascular risk factors more effectively than
+those assigned to a LFD over the long term (deﬁned as
+12 months or more post-intervention).
+Methods
+The present meta-analysis is reported in accordance with the
+Preferred Reporting Items for Systematic Reviews and Meta-
+Analyses (PRISMA) Statement
+(13). The protocol was previously
+published in the PROSPERO database (http://www.crd.york.
+ac.uk/PROSPERO), under registration no. CRD42012002408.
+Search strategy
+The following databases were searched until August 2012:
+MEDLINE, CENTRAL, ScienceDirect, Scopus, LILACS, SciELO
+and ClinicalTrials.gov. In addition, the following grey litera-
+ture databases were searched: OpenGrey.eu, DissOnline.de,
+NYAM.org and ClinicalEvidence.com. There was no manual
+search of the included articles, and no specialists in the ﬁeld
+were contacted to avoid the risk of citation bias
+(14). The search
+strategy included terms related to the intervention (VLCKD),
+the primary outcome (weight loss) and the secondary outcomes
+(cardiovascular risk factors), as well as related terms designed
+to improve the sensitivity of a search for randomised controlled
+trials
+(15). The search was not restricted to any particular years
+of publication or languages. The complete search strategy is
+shown in the Supplementary material (available online).
+Eligibility criteria
+Only randomised controlled trials that met the following
+criteria were included: (1) the study participants were indivi-
+duals older than 18 years old who were assigned to a LFD
+(i.e. a restricted-energy diet with less than 30 % of energy
+from fat) or to a VLCKD (i.e. a diet with no more than 50 g
+carbohydrates/d or 10 % of daily energy from carbohydrates);
+(2) the follow-up period was 12 months or more; (3) the
+participants had a mean BMI greater than 27·5 kg/m
+2. The
+third criterion allowed the inclusion of studies of populations
+who are already at high risk beyond this BMI threshold
+(16).
+The present analysis aimed to evaluate the differences
+in the outcomes of the prescribed diets, without addressing
+individual adherence to the diets. There were no restrictions
+based on sex, race or co-morbidities. At a minimum, the
+studies must have assessed weight loss as an outcome and
+must have reported mean values or the differences between
+the mean values. The exclusion criteria were as follows:
+(1) studies with a concomitant pharmacological intervention
+and (2) duplicate publications of the included trials.
+Data extraction
+The titles and abstracts of the retrieved articles were evaluated
+independently by two investigators who were not blinded to
+the authors or the journal titles. The full-text versions of poten-
+tially eligible articles were retrieved for further evaluation.
+The primary outcome sought in the studies was the
+mean change between the baseline body weight and the
+ﬁnal body weight (in kg), with the associated measure of
+dispersion. The secondary outcomes were the mean changes
+between the baseline and ﬁnal values (with the associated
+measures of dispersion) for TAG (in mg/dl (to convert to
+mmol/l, multiply by 0·0113)), HDL-cholesterol (HDL-C) and
+LDL-cholesterol (LDL-C) (in mg/dl (to convert to mmol/l, mul-
+tiply by 0·0259)), fasting blood glucose (in mg/dl (to convert
+to mmol/l, multiply by 0·0555)), insulin (in mU/ml (to convert
+to pmol/l, multiply by 6·945)), C-reactive protein (in mg/l
+(to convert to nmol/l, multiply by 9·524)), HbA
+1c (percentage),
+and systolic and diastolic blood pressure (SBP and DBP,
+respectively, in mmHg).
+All the necessary information was extracted from the pub-
+lished articles, protocols and commentaries related to each
+study, and when necessary, the authors were contacted to
+obtain additional information. For the studies that had more
+than two experimental groups, the most suitable one was
+chosen. Any disagreements were resolved by consensus.
+A standard form for storing data was created based on the
+Cochrane Collaboration model
+(17).
+Assessment of risk of bias
+Risk of bias was evaluated according to the Cochrane
+Handbook recommendations
+(18), at the primary outcome
+level. The quality of the studies were assessed by two investi-
+gators independently in ﬁve categories: adequate sequence
+generation; allocation concealment; blinding of the outcome
+assessors; handling of missing data (intention-to-treat or per-
+protocol analysis); selective outcome reporting. The nature
+of the trials required an open intervention with no blinding
+of the trial participants or the investigators.
+Data analysis
+The absolute changes for each outcome, reported as the
+differences between the ﬁnal and baseline mean values,
+Carbohydrate restriction for weight loss 1179
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+were analysed. The treatment effects across the trials were
+pooled, and weighted mean differences (WMD) for the out-
+come measures were calculated. The study weights were
+assigned by using the inverse variance method (19), and the
+calculations were performed using a random-effects model(20).
+An a value of 0·05 was considered to be statistically signi-
+ﬁcant. When it was not possible to retrieve adequate data,
+imputations were performed (21). These imputations are
+shown in the Supplementary material (available online).
+Statistical heterogeneity among the studies was tested using
+the Cochran Q test, and inconsistency was tested using the
+I 2 test. A P value less than 0·10 was considered to be statis-
+tically signiﬁcant. Whenever a result showed heterogeneity,
+it was explored in three different ways. First, each analysis
+was repeated, removing each study one at a time in order to
+assess whether a particular study explained the heterogeneity.
+Second, univariate meta-regressions were performed to ana-
+lyse whether methodological covariates were inﬂuencing
+the results
+(22). The covariates included the risk of bias in the
+study, adequate nutritional counselling of the individuals
+(studies that included individual or group meetings with a
+dietitian at least bimonthly until the end of the follow-up
+period were considered as adequate), the use of an inten-
+tion-to-treat analysis, the study follow-up length in months
+and the presence of co-morbidities in the inclusion criteria
+for the participants in each study. Thereafter, it was planned
+to perform a multivariate meta-regression including all covari-
+ates that had aP value less than 0·10 in the univariate analysis.
+Finally, subgroup analyses were performed on studies that
+shared certain methodological features, including studies
+with a low risk of bias, studies using an intention-to-treat
+analysis and studies with 24 months of follow-up. Subgroup
+analyses were conducted regardless of heterogeneity.
+Contour-enhanced funnel plots
+(23) were created and
+Egger’s test (24) was performed to evaluate publication bias;
+P values less than 0·10 were considered to be statistically signi-
+ﬁcant. All analyses were conducted using Stata software 9.0
+(StataCorp). Graphs were plotted using RevMan 5.4 (Cochrane
+Collaboration).
+Results
+Included studies
+From 3123 potentially relevant records identiﬁed by searching
+the databases, twenty-ﬁve full-text publications met the
+inclusion criteria and were retrieved for further assessment.
+From these, eleven were excluded after the full-text analysis,
+leaving fourteen full texts included in the qualitative and
+quantitative analysis (Table 1). The ﬂow diagram illustrating
+the search and selection of studies is shown in Fig. 1. Reasons
+for exclusion are shown in the Supplementary material
+(available online).
+From the fourteen full-text articles included, the report by
+Vetter et al.
+(25) had characteristics that were unexpected and
+not mentioned in the inclusion or exclusion criteria for the
+review. This report describes a body weight analysis of the
+individuals included in the study by Stern et al.
+(26), conducted
+36 months after randomisation. Nevertheless, follow-up
+ceased after 12 months; thus, it was not possible to assess
+whether the individuals continued with the intervention in
+the period after follow-up, so the data from this full-text article
+were included in a sensitivity analysis.
+In total, thirteen studies were included in the quantitative
+analysis, with a total of 1577 individuals randomised to a
+condition (787 to a LFD group and 790 to a VLCKD group).
+From these, six studies had more than two intervention
+groups, and it was determined by consensus which groups
+ﬁt best in the analysis. Intervention groups of all studies are
+shown in the Supplementary material (available online).
+Assessment of risk of bias
+The risk of bias in the studies at the primary outcome level is
+shown in Table 2. In the ﬁnal result, nine from the thirteen
+included studies were assessed as having a low risk of bias.
+Of these nine studies, two did not report the sequence
+generation method used, while seven did not report using
+any measure to conceal the allocation. All the nine studies
+did not report blinding of the outcome assessors, but as all
+Table 1. Characteristics of the included studies
+Source
+Duration
+(months)
+Dietary
+counselling
+Dropouts
+(n/N)
+Females
+(%) Country Risk factor
+Mean age
+(years)
+Mean BMI
+(kg/m2)
+CHO intake/d
+(VLCKD)*
+Brinkworth et al.(28) 12 Adequate 38/107 70 Australia CV risk factor 50·6 33·6 36 g
+Dansinger et al.(50) 12 Inadequate 41/80 47 USA CV risk factor 47 35 190 g
+Davis et al.(51) 12 Adequate 14/105 78 USA T2D 53·5 35·9 33 %
+Dyson et al.(52) 24 Inadequate 4/26 73 UK T2D 52 35·1 Unreported
+Foster et al.(53) 12 Inadequate 37/63 68 USA None 44·9 34·1 Unreported
+Foster et al.(27) 24 Adequate 113/307 68 USA None 45·5 36·1 Unreported
+Gardner et al.(30) 12 Inadequate 26/153 100 USA None 42 32 34 %
+Iqbal et al.(29) 24 Adequate 76/144 10 USA T2D 60 37·4 47 %
+Lim et al.(54) 15 Inadequate 25/60 80 Australia CV risk factor 48·4 31·4 36 %
+McAuley et al.(55) 12 Inadequate 15/63 100 NZ None 45 36·1 33 %
+Shai et al.(49) 24 Adequate 44/213 16 Israel CV risk factor 51·5 30·7 40 %
+Stern et al.(26) 12 Adequate 45/132 17 USA None 53·5 42·9 120 g
+Truby et al.(56) 12† Inadequate 98/116 72 UK None 39·8 32 Unreported
+CHO, carbohydrate; VLCKD, very-low-carbohydrate ketogenic diet; CV, cardiovascular; T2D, type 2 diabetes mellitus; NZ, New Zealand.
+* Mean carbohydrate intake in the VLCKD group at the end of the follow-up, measured by dietary assessment, shown as g/d or percentage of energy from carbohydrates per d.
+† Truby et al.(56) assessed only the body weight at 12 months.
+N. B. Bueno et al.1180
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+the outcomes are objective, it is unlikely that this domain
+affected the results of the trials. Regarding the handling of
+missing data, ﬁve studies were categorised as having a high
+risk of bias because they utilised a per-protocol analysis.
+There was no evidence of selective outcome reporting.
+Data analysis
+Body weight . All the thirteen included studies (1415
+patients) were assessed (Fig. 2(a)). The individuals assigned
+to a VLCKD achieved a signiﬁcantly greater weight loss com-
+pared with the individuals assigned to a LFD (WMD 20·91
+(95 % CI 21·65, 20·17) kg, P¼0·02; I
+2 ¼ 0% , P¼0·47). This
+result was consistent across all subgroup analyses, except
+for the subgroup of studies with 24 months of follow-up
+(data not shown). The substitution of the data from Stern
+et al.
+(26) for the data from Vetter et al.(25) changed the results
+(WMD 20·73 (95 % CI 21·52, 0·06) kg, P¼0·07; I 2 ¼ 5% ,
+P¼0·39). There was no evidence of publication bias
+(P¼0·34). The contour-enhanced funnel plots for body
+weight and all other outcomes are shown in the Supplemen-
+tary material (available online).
+TAG. In total, twelve studies (1258 patients) were assessed
+(Fig. 2(b)). The individuals assigned to a VLCKD showed
+a signiﬁcantly greater reduction in TAG than the indivi-
+duals assigned to a LFD (WMD 20·18 (95 % CI 20·27,
+20·08) mmol/l, P,0·001; I
+2 ¼ 12 %, P¼0·33). This result
+was consistent across all subgroup analyses, except for the
+subgroup of studies with 24 months of follow-up (data not
+shown). Heterogeneity was reversed when the study by
+Foster et al.
+(27) was excluded, and also when the study
+by Stern et al.(26) was excluded, but there were no statistically
+signiﬁcant changes in the results. The evidence of publication
+bias ( P¼0·04) was also reversed with the exclusion of
+both aforementioned studies. The meta-regression analysis
+showed that the covariate ‘study follow-up length’ affected
+the results signiﬁcantly (r
+2 87·19 %, P¼0·09; Table 3).
+HDL-cholesterol. Overall, twelve studies (1257 patients)
+were assessed (Fig. 2(c)). The individuals assigned to a
+VLCKD achieved a signiﬁcantly greater increase in their
+Records identified through
+database searching
+(n 3378)
+IdentificationScreeningEligibilityIncluded
+Additional records identified
+through other sources
+(n 0)
+Records after duplicates
+removed
+(n 3123)
+Records excluded (n 3098)
+Not a randomised controlled
+trial (n 1389)
+Not a dietary intervention for
+weight loss (n 1013)
+Inadequate carbohydrate
+content (n 580)
+Participants younger than 18
+years old (n 11)
+Less than 12 months of
+follow-up (n 59)
+Did not report the necessary
+results (n 46)
+Full-text articles excluded
+(n 11)
+Did not report the necessary
+results (n 3)
+Less than 12 months of
+follow-up (n 3)
+Inadequate carbohydrate
+content (n 3)
+Concomitant drug
+intervention (n 1)
+Repeated results (n 1)
+Records screened
+(n 3123)
+Full-text articles assessed
+for eligibility
+(n 25)
+Studies included in
+qualitative synthesis
+(n 13)
+Studies included in
+quantitative synthesis
+(meta-analysis)
+(n 13)
+Fig. 1. Flow diagram of the study selection.
+Carbohydrate restriction for weight loss 1181
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+HDL-C levels compared with the individuals assigned to a LFD
+(WMD 0·09 (95 % CI 0·06, 0·12) mmol/l, P,0·001; I 2 ¼ 9% ,
+P¼0·36). All the subgroups showed the same result (data
+not shown). The study by Brinkworth et al.(28) and the study
+by Iqbal et al.(29) were each individually responsible for the
+heterogeneity in the overall analysis, and the stepwise exclu-
+sion of both studies did not change the main result (data
+not shown). In the meta-regression analysis, only the covariate
+‘study follow-up length’ signiﬁcantly affected the results
+(r
+2 ¼ 100 %,P¼0·03; Table 3). There was no evidence of pub-
+lication bias (P¼0·53).
+LDL-cholesterol. A total of twelve studies (1255 patients)
+were assessed (Fig. 2(d)). The individuals assigned to a
+VLCKD achieved a signiﬁcantly greater increase in their
+LDL-C levels compared with the individuals assigned to a
+LFD (WMD 0·12 (95 % CI 0·04, 0·2) mmol/l, P¼0·002;
+I
+2 ¼ 0% , P¼0·7). The subgroup of studies with 24 months
+of follow-up was the only subgroup that showed different
+results (data not shown). There was no evidence of publi-
+cation bias (P¼0·42).
+Systolic and diastolic blood pressure . Overall, eleven
+studies (1298 patients) were included in the SBP (Fig. 3(A))
+and DBP analyses (Fig. 3(B)). There were no differences in
+SBP between the groups (WMD in favour of the VLCKD
+21·47 (95 % CI 23·44, 0·50) mmHg, P¼0·14; I
+2 ¼ 33 %,
+P¼0·13), a result that held in the subgroup analyses. However,
+individuals assigned to a VLCKD had a signiﬁcantly greater
+reduction in DBP than the individuals assigned to a LFD
+(WMD 21·43 (95 % CI 22·49, 20·37) mmHg, P¼0·008;
+I
+2 ¼ 3% , P¼0·41).
+The sensitivity analysis for SBP showed that the study by
+Gardner et al.(30) was responsible for the heterogeneity, and
+its exclusion did not change the results (data not shown).
+The covariate ‘adequate nutritional counselling’ signiﬁcantly
+affected the SBP results ( r
+2 ¼ 79·7 %, P¼0·05; Table 3).
+Due to the extremely low heterogeneity, neither a sensitivity
+analysis nor a meta-regression analysis was undertaken for
+DBP, and only the subgroup of studies with 24 months of
+follow-up showed different results (data not shown). There
+was no evidence of publication bias for SBP ( P¼0·79), but
+the DBP analysis showed statistically signiﬁcant publication
+bias (P¼0·04), which was not reversed by the exclusion of
+any study.
+Fasting blood glucose, insulin, HbA
+1c and C-reactive
+protein. These analyses were performed in less than ten
+studies; thus, no sensitivity, subgroup, meta-regression and
+publication bias analyses were conducted. None of these
+analyses showed statistically signiﬁcant results. The forest
+plots for these analyses are shown in the Supplementary
+material (available online). For the fasting blood glucose anal-
+ysis, eight studies (770 patients) were assessed (WMD in
+favour of the VLCKD 20·08 (95 % CI 20·18, 0·02) mmol/l,
+P¼0·11; I
+2 ¼ 0% ,P¼0·88). For the insulin analysis, six studies
+(584 patients) were assessed (WMD in favour of the VLCKD
+25·52 (95 % CI 213·62, 2·57) pmol/l, P¼0·18; I
+2 ¼ 26 %,
+P¼0·24). For the HbA 1c analysis, four studies (319 patients)
+were assessed (WMD in favour of the VLCKD 20·24 (95 %
+CI 20·55, 0·06) %, P¼0·12; I 2 ¼ 0% , P¼0·59). Finally, for
+the C-reactive protein analysis, four studies (355 patients)
+were also assessed (WMD in favour of the VLCKD 21·85
+(95 % CI 26·66, 2·96) nmol/l, P¼0·45; I
+2 ¼ 0% , P¼0·55).
+Discussion
+The present meta-analysis showed that individuals assigned to
+a VLCKD achieve greater reductions in body weight, TAG
+and DBP, but they also demonstrate a greater increase in
+LDL-C and HDL-C levels over a treatment follow-up period
+of 12 months or more, compared with individuals assigned
+to a LFD. Only the change in HDL-C levels retained statistical
+signiﬁcance in the subgroup analysis of studies with 24
+months of follow-up; however, it is important to note that
+this analysis included only four studies. Low risk of bias was
+not unanimous, although this characteristic did not inﬂuence
+any of the results, since potential bias was explored by con-
+ducting subgroup and meta-regression analyses. Also, studies
+that included individuals with co-morbidities were not sources
+of heterogeneity. Furthermore, only the TAG and the DBP
+analyses revealed evidence of publication bias.
+With regard to the primary outcome, the present ﬁndings
+are similar to the ﬁndings of previous meta-analyses
+(10,11).
+The supposed beneﬁcial effect of a VLCKD on body weight
+may be due to the modulation of resting energy expenditure.
+Table 2. Risk of bias of the included studies
+Source
+Sequence
+generation
+Allocation
+concealment Blinding
+Missing
+data
+Selective
+report Overall
+Brinkworth et al.(28) Low High Unclear Low Low High
+Dansinger et al.(50) Low Low Low Low Low Low
+Davis et al.(51) Low High Unclear Low Low High
+Dyson et al.(52) Low Low Low High Low Low
+Foster et al.(53) Low Unclear Unclear Low Low Low
+Foster et al.(27) Low Unclear Unclear Low Low Low
+Gardner et al.(30) Low Low Low Low Low Low
+Iqbal et al.(29) Low Unclear Unclear Low Low Low
+Lim et al.(54) Unclear Unclear Unclear High Low High
+McAuley et al.(55) Low Low Unclear High Low Low
+Shai et al.(49) Low Unclear Low Low Low Low
+Stern et al.(26) Low Unclear Unclear Low Low Low
+Truby et al.(56) Low Unclear High High Low High
+N. B. Bueno et al.1182
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+(a)
+(b)
+(c)
+(d)
+712 703 –0·91(–1·65, –0·17)
+Favours VLCKD Favours LFD
+631 0·12 (0·04, 0·20)
+–1 –0·5 0 0·5 1
+Favours VLCKD Favours LFD
+–0·2 –0·1 0 0·1 0·2
+Favours VLCKDFavours LFD
+–0·5 –0·25 0 0·25 0·5
+Favours VLCKDFavours LFD
+625
+LDL -C (mmol/l)
+Study Mean, SD and total Mean, SD and total
+VLCKD LFD
+Weight (%)
+Mean difference
+(95 %CI)
+Mean difference
+IV, random, 95 %CI
+Heterogeneity:   t 2= 0·00;  c2=1 1·72,  df= 12 (P = 0·47);  I 2=0  %
+Test for overall effect:  Z = 2·42  (P = 0·02)
+Heterogeneity:   t 2= 0·00;  c2=12·44,  df= 1 1 (P = 0·33);  I 2=1 2  %
+Test for overall effect:  Z = 3·68  (P =00002)
+Heterogeneity:   t 2= 0·00;  c2=12·09,  df= 1 1 (P = 0·36);  I 2=9  %
+Test for overall effect:  Z = 6·40  (P =0·00001)
+Heterogeneity:   t 2= 0·00;  c2=8·16,  df= 1 1 (P = 0·70);  I 2=0 %
+Test for overall effect:  Z=3·02  (P = 0·002)
+–13·1 1 1·86 55 –1 1·6 52 –1·50 (–5·93, 2·93)1 1·53
+1·20 (–1·51, 3·91)7·3 40–3·3404·8–2·1
+1·10 (–3·64, 5·84)3·97 1 1–0·8116·960·3
+0·00 (–2·05, 2·05)5·8 50–3·1554·8–3·1
+–2·80 (–6·53, 0·93)83 0–4·4337–7·2
+–1·03 (–1·41·3·47)10·98 154–7·3715310·82–6·34
+–1·30 (–3·99, 1·39)7·74 71–0·2678·36–1·5
+–0·80 (–3·98, 2·38)4·7 18–2·1174·9–2·9
+–1·00 (–8·02, 8·02)12·2 24–4·42412·6–5·4
+–2·00 (–4·99, 0·99)8·4 64–3·1628·7–5·1
+–1·70 (–3·16, 6·56)6·2 9–10·794·1–9
+–2·10 (–4·13,   0·07)5·55 76–2·6777·16–4·7
+–1·80 (–3·26, –0·34)4·2 104–2·91096·5–4·7
+–0·2 0·57 10 0 1 1 –0·20 (–0·82, 0·42)0·87
+–0·58 0·63 33 –0·22 36 –0·36 (–0·66, –0·06)0·66
+–0·15 0·88 55 –0·01 50 –0·14 (–0·47 , 0·19)0·86
+–0·42 0·4 33 –0·02 30 –0·40 (–0·69, –0·1 1)0·7
+–0·29 1·15 67 –0·15 71 –0·14 (–0·50, 0·22)1
+–0·66 1·79 44 0·05 43 –0·71 (–1·31, –0·1 1)0·96
+–0·47 0·69 24 –0·31 24 –0·16 (–0·52, 0·20)0·56
+–0·25 0·96 81 –0·03 90 –0·22 (–0·50, 0·06)0·9
+0·3 0·4 33 0·07 36 0·23 (0·05, 0·41)0·36
+0·16 0·27 55 0·06 50 0·10 (0·01, 0·19)0·21
+0·18 0·22 10 0·09 1 1 0·09 (–0·14, 0·32)0·32
+0·22 0·31 33 0·04 30 0·18 (0·05, 0·31)0·21
+0·02 0·28 67 0·02 71 0·00 (–0·09, 0·09)0·24
+–0·18 0·62 40 –0·33 40 0·15 (–0·09, 0·39)0·49
+–0·04 0·63 55 –0·13 50 0·14 (–0·1 1, 0·39)0·66
+0 0·51 10 –0·4 1 1 0·40 (–0·15, 0·95)0·77
+0·02 0·7 33 –0·18 30 0·20 (–0·10, 0·50)0·49
+–0·21 1·29 67 –0·16 71 –0·05 (–0·47 , 0·37)1·2
+–0·3 0·7 17 –0·3 18 0·00 (–0·46, 0·46)0·7
+–0·1 1·07 24 –0·1 24 0·00 (–0·48, 0·48)0·58
+–0·08 1·02 81 0 90 –0·08 (–0·37 , 0·21)0·89
+0·18 0·91 42 –0·1 43 0·28 (–0·07 , 0·63)0·75
+0·1 0·3 17 0·1 18 0·00 (–0·20, 0·20)0·3
+0·6 1·15 33 0·1 36 0·50 (0·06, 0·94)0·6
+0·12 0·28 24 –0·02 24 0·14 (–0·00, 0·28)0·23
+0·22 0·28 81 0·17 90 0·05 (–0·03, 0·13)0·24
+–0·03 0·18 44 –0·13 43 0·10 (0·03, 0·17)0·14
+0·09 0·18 40 –0·01 40 0·10 (0·02, 0·18)0·17
+–0·01 0·95 40 0·069 40 –0·07 (–0·39, 0·25)0·41
+–0·2 0·7 17 0·1 18 –0·30 (–0·83, 0·23)0·9
+–0·14 0·76 153 –0·16 154 0·02 (–0·15, 0·19)0·8
+–0·33 0·67 70 –0·17 64 –0·16 (–0·36, 0·04)0·52
+0·2 0·29 153 0·12 154 0·08 (0·02, 0·14)0·24
+–0·12 0·72 153 –0·21 154 0·09 (–0·05, 0·23)0·56
+0·13 0·24 70 0 64 0·13 (0·06, 0·20)0·16
+0·02 0·59 70 –0·1 64 0·12 (–0·06, 0·30)0·49
+627 631 –0·18(–0·27 , –0·08)
+627 631
+100·0
+100·0
+2·8
+7·4
+2·4
+13·0
+3·9
+9·2
+7·5
+5·4
+1·1
+6·1
+2·3
+13·3
+25·5
+2·2
+8·4
+7·2
+9·4
+6·2
+2·4
+6·4
+9·8
+2·4
+8·5
+1·4
+4·5
+9·3
+10·1
+9·9
+2·0
+6·9
+3·5
+2·8
+2·6
+7·3
+4·8
+2·0
+3·1
+3·6
+11 · 2
+13·2
+11 · 7
+7·7
+3·0
+20·7
+16·7
+17·5
+29·0
+14·2
+18·0
+100·0
+100·0 0·09 (0·06, 0·12)
+HDL -C (mmol/l)
+Study Mean, SD and total Mean, SD and total
+VLCKD LFD
+Weight (%)
+Mean difference
+(95 %CI)
+Mean difference
+IV, random, 95 %CI
+TAG (mmol/l)
+Study Mean, SD and total Mean, SD and total
+VLCKD LFD
+Weight (%)
+Mean difference
+(95 %CI)
+Mean difference
+IV, random, 95 %CI
+Body weight (kg)
+Study Mean, SD and total Mean, SD and total
+VLCKD LFD
+Weight (%)
+Mean difference
+(95 %CI)
+Mean difference
+IV, random, 95 %CI
+–4 –2 0 2 4
+Total (95 % CI)
+Total (95 % CI)
+Brinkworth et al. (28)
+Dansinger et al. (50)
+Dyson et al. (52)
+Davis et al. (51)
+Foster et al. (53)
+Foster et al. (27)
+Iqbal et al. (29)
+Lim et al. (54)
+McAuley et al. (55)
+Stern et al. (26)
+Truby et al. (56)
+Lim et al. (30)
+Shai et al. (49)
+Dyson et al. (52)
+Brinkworth et al. (28)
+Davis et al. (51)
+Foster et al. (53)
+Iqbal et al. (29)
+Stern et al. (26)
+McAuley et al. (55)
+Shai et al. (49)
+Brinkworth et al. (28)
+Davis et al. (51)
+Dyson et al. (52)
+Foster et al. (53)
+Iqbal et al. (29)
+Dansinger et al. (50)
+Davis et al. (51)
+Dyson et al. (52)
+Foster et al. (53)
+Iqbal et al. (29)
+Lim et al. (54)
+McAuley et al. (55)
+Shai et al. (49)
+Stern et al. (26)
+Lim et al. (54)
+Brinkworth et al. (28)
+McAuley et al. (55)
+Shai et al. (49)
+Stern et al. (26)
+Dansinger et al. (50)
+Dansinger et al. (50)
+Lim et al. (54)
+Foster et al. (27)
+Gardner et al. (30)
+Foster et al. (27)
+Foster et al. (27)
+Gardner et al. (30)
+Gardner et al. (30)
+Total (95 % CI)
+Total (95 % CI)
+Fig. 2. Absolute changes in (a) body weight, (b) TAG, (c) HDL-cholesterol (HDL-C) and (d) LDL-cholesterol (LDL-C). VLCKD, very-low-carbohydrate ketogeni c
+diet; LFD, energy-restricted low-fat diet.
+Carbohydrate restriction for weight loss 1183
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+Under isoenergetic conditions, Ebbeling et al.(31) found that a
+carbohydrate-restricted diet is better than a LFD for retaining
+an individual’s BMR. In addition, Westman et al. (32) hypoth-
+esised that a VLCKD reduces insulin levels, which would
+explain the satietogenic effects of this diet. This hypoinsuli-
+naemic effect of the VLCKD was not evidenced in this analysis.
+TAG decreased signiﬁcantly in individuals assigned to a
+VLCKD. The heterogeneity in the analysis and the evidence
+of publication bias were entirely attributable to the study by
+Foster et al.
+(27), which was the only study to present neutral
+results in this analysis. On the other hand, individuals assigned
+to a VLCKD showed signiﬁcantly increased levels of both
+LDL-C and HDL-C levels. As discussed by Volek et al.(33), the
+preservation of the circulating HDL-C and the hypotriacylgly-
+cerolaemic effect of a VLCKD might be explained by the
+reduction in the dieting individuals’ postprandial lipaemia.
+Conversely, the increase in LDL-C concentration associated
+with the VLCKD is an expected ﬁnding that is attributable to
+the increase in saturated fat intake. However, this ﬁnding war-
+rants further investigation. Krauss et al.
+(34) showed that high
+fat intake, combined with carbohydrate restriction, raises the
+levels of larger-sized LDL-C, which are known to be less
+atherogenic than the small, dense LDL-C(35).
+There was also evidence that individuals assigned to a
+VLCKD showed a signiﬁcantly greater reduction in DBP.
+Hession et al.
+(10) analysed ﬁve studies and found that
+carbohydrate-restricted diets only inﬂuenced SBP. Usually,
+hypertension is attributable to obesity and Na intake, but
+Appel et al. (36) showed that substituting carbohydrates for
+proteins and monounsaturated fats may decrease blood press-
+ure beyond the decrease expected with Na restriction alone.
+It is remarkable to note that although ﬁve outcomes
+demonstrated statistical signiﬁcance, these ﬁndings must be
+carefully interpreted regarding its clinical signiﬁcance
+(37). For
+example, a typical 1·70 m-tall adult with a BMI of 30 kg/m 2
+weighs 87 kg; hence, a weight loss of 0·91 kg, as observed
+here, would represent only 1·04 % of the initial body weight.
+However, large randomised clinical trials with long-term diet-
+ary interventions aiming weight loss showed that individuals
+under intensive lifestyle interventions lose about 4·8 kg
+(2,38).
+Hence, the further reduction of 0·9 kg in the individuals
+assigned to a VLCKD would represent almost 20 % of the
+awaited weight loss achieved with long-term dietary inter-
+ventions. Additionally, if we assume the cut-off points of
+the metabolic syndrome
+(39), similar percentages would be
+found regarding the other outcomes. The extra reduction of
+1·43 mmHg in DBP achieved by individuals assigned to a
+VLCKD is similar to the reductions promoted by other dietary
+interventions, such as Mg supplementation
+(40) or consumption
+of ﬂavonol-rich products(41).
+Undoubtedly, the present ﬁndings demonstrate that a
+VLCKD has favourable effects on body weight and some cardi-
+ovascular risk factors, as stated by Santoset al.(12); however, in
+the long term and when compared with conventional therapy,
+the differences appear to be of little clinical signiﬁcance,
+although statistically signiﬁcant. Healthcare professionals
+should weigh the advantages and disadvantages of recom-
+mending a VLCKD and consider their patients’ will power,
+since this therapy prominently alters an individual’s daily habits.
+The present meta-analysis has several limitations. First, it
+used aggregated data from the studies instead of individual
+patient data. Second, only blood risk factors were assessed,
+neglecting important pathological markers such as hepatic
+lipid inﬁltration
+(42), endothelial function (43), general cardio-
+vascular events(44) and renal function(45), which are important
+in assessing the safety of dietary therapies. Third, the adher-
+ence to the VLCKD in the included studies was low
+(Table 1). At the end of the follow-up period in most studies,
+carbohydrate intake was higher than the protocol allowed.
+However, in most cases, there was good adherence in the
+Table 3. Meta-regression analysis
+(Coefﬁcients and 95 % conﬁdence intervals)
+Covariates Coefﬁcient 95 % CI Adj r 2 (%) P
+Adequate nutritional counselling
+TAG (mmol/l) 4·051 217·008, 25·110 29·67 0·677
+HDL-C (mmol/l) 21·645 24·030, 0·740 100·00 0·155
+Systolic blood pressure (mmHg) 3·582 20·167, 7·333 79·79 0·059
+Co-morbidities
+TAG (mmol/l) 22·498 223·740, 18·742 217·52 0·799
+HDL-C (mmol/l) 21·542 23·852, 0·768 100·00 0·168
+Systolic blood pressure (mmHg) 2·309 22·063, 6·682 28·18 0·263
+Intention-to-treat analysis
+TAG (mmol/l) 13·173 28·286, 34·632 34·23 0·201
+HDL-C (mmol/l) 20·406 23·233, 2·421 2644·4 0·755
+Systolic blood pressure (mmHg) 20·946 26·441, 4·548 213·25 0·706
+Length of the follow-up
+TAG (mmol/l) 1·259 20·261, 2·781 87·19 0·095
+HDL-C (mmol/l) 20·208 20·404, 20·013 100·00 0·039
+Systolic blood pressure (mmHg) 0·094 20·318, 0·506 21·55 0·619
+Low risk of bias
+TAG (mmol/l) 13·494 27·667, 34·656 33·87 0·186
+HDL-C (mmol/l) 0·117 22·610, 2·845 2510·1 0·925
+Systolic blood pressure (mmHg) 21·821 27·270, 3·627 26·98 0·469
+Adj r 2, adjusted r 2; HDL-C, HDL-cholesterol.
+N. B. Bueno et al.1184
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+short term, which may explain why meta-analyses of 6-month
+studies show more impressive results than meta-analyses of
+longer-term studies, like the present analysis. Greenberg
+et al.
+(46) found that among dieters, the initial weight reduction
+in the ﬁrst 6 months is the main predictor of both long-term
+retention and success in weight loss, which may explain the
+statistically signiﬁcant differences observed here.
+The Cochrane risk of bias tool was used in the present
+meta-analysis. Despite being the most recommended tool to
+assess the risk of bias in randomised controlled trials, it may
+face some limitations when assessing behavioural or lifestyle
+interventions, such as dietary ones
+(47). These interventions
+are usually complex, i.e. have multiple components, which
+deem its ﬁdelity (the extent to which the intervention has
+been delivered as planned) an important issue to be
+assessed
+(48). Since the risk of bias tool does not directly
+address ﬁdelity, it may be difﬁcult to distinguish between an
+ineffective intervention and a failed implementation
+(47).
+Upcoming trials should focus on dietary adherence, imple-
+menting measures to ensure that individuals adhere to the
+protocol, as was done by some of the included studies (28,49),
+permitting better investigation of the long-term effects of a
+VLCKD. Nevertheless, it is necessary to consider the feasibility
+of such measures, like those applied by Shai et al.
+(49), where
+the investigators managed the lunches of all individuals, in a
+real-life scenario.
+In conclusion, the present meta-analysis demonstrates that
+individuals assigned to a VLCKD achieve signiﬁcantly greater
+long-term reductions in body weight, diastolic blood pressure
+and TAG, as well as greater LDL and HDL increases when
+compared with individuals assigned to a LFD; hence, the
+VLCKD may be an alternative tool against obesity. Investi-
+gations beyond that of blood cardiovascular risk factors
+merit further study.
+Supplementary material
+To view supplementary material for this article, please visit
+http://dx.doi.org/10.1017/S0007114513000548
+Acknowledgements
+The present study was partially supported by Conselho Nacio-
+nal de Pesquisa e Desenvolvimento Cientı´ﬁco e Tecnolo´gico
+(CNPq) grant 130639/2011-7, by means of a studentship to
+N. B. B. The sponsors of the study had no role in the study
+(a) SBP (mmHg)
+Study
+Brinkworth et al. (28)
+Dansinger et al. (50)
+Davis et al. (51)
+Foster et al. (53)
+Foster et al. (27)
+Gardner et al. (30)
+Iqbal et al. (29)
+Lim et al. (54)
+McAuley et al. (55)
+Shai et al. (49)
+Stern et al. (26)
+Brinkworth et al. (28)
+Dansinger et al. (50)
+Davis et al. (51)
+Foster et al. (53)
+Foster et al. (27)
+Gardner et al. (30)
+Iqbal et al. (29)
+Lim et al. (54)
+McAuley et al. (55)
+Shai et al. (49)
+Stern et al. (26)
+Total (95 % CI)
+Test for overall effect: Z = 1·46 (P = 0·14)
+Total (95 % CI)
+Test for overall effect: Z = 2·64 (P = 0·008)
+(b) DBP (mmHg)
+–13·8
+Mean, SD and total Mean, SD and total
+14·36
+12
+15·6
+15
+15·17
+11
+30·28
+10·6
+15·9
+12·8
+19 44
+109
+24
+17
+67
+77
+153
+33
+55
+40
+33
+44
+652
+109
+24
+17
+67
+77
+153
+33
+55
+40
+3319·9–6·3
+–1·4
+–2·9
+–4·6
+–3·19
+–4·4
+–3·8
+–6·6
+–4
+–0·8
+3
+7·5
+9·4
+12
+9·24
+8·4
+19·64
+12·1
+9·81
+8·7
+15
+LFDVLCKD
+Mean, SD and total Mean, SD and total
+LFDVLCKD
+12 36 7·5
+Weight (%)
+Weight (%)
+Mean difference
+(95 % CI)
+Mean difference
+(95 % CI)
+Mean difference
+IV, random, 95 % CI
+Mean difference
+IV, random, 95 % CI
+0·80 (–5·47 , 7·07)
+–0·30 (–4·72, 4·12)
+3·80 (–3·70, 1 1·30)
+–5·50 (–14·30 3·30)
+–0·21 (–3·66, 3·24)
+–5·70 (–8·71 –2·69)
+–6·70 (–16·29 –2·89)
+–4·60 (–12·55 3·35)
+1·00 (–6·49, 8·49)
+1·40 (–2·90, 3·70)
+–1·00 (–8·18, 6·18)
+–1·47 (–3·44, 0·50)
+–10
+Favours VLCKD Favours LFD
+Favours VLCKD Favours LFD
+–5
+–4 –2 0 2 4
+01 0 5
+1·60 (–5·88, 9·08)
+1·60 (–5·33, 1·13)
+1·70 (–5·76, 3·36)
+1·60 (–5·60, 6·80)
+–2· 69 (–4·88, –0·50)
+–3·70(–6·01, –1·39)
+0·50 (–5·62, 6 62)
+0·90 (–6·12, 7 92)
+–1·00 (–6·73, 4·73)
+0·10 (–2·16, 2·36)
+2·00 (–3·35, 7·35)
+–1·43 (–2·49, –0·37)
+12·0
+5·6
+4·3
+15·8
+17·8
+3·7
+5·1
+5·6
+16·4
+6·0
+100·0%
+40
+50
+30
+154
+76
+71
+18
+24
+104
+43
+36 2·0
+14·3
+6·7
+2·9
+21·6
+19·6
+3·0
+2·3
+3·4
+20·4
+3·9
+100·0
+9·6–7·9
+0·2
+–2·2
+–5·2
+–0·5
+–0·7
+–4·3
+–7·5
+–3
+–0·9
+1
+4·6
+1 1·6
+13
+10·32
+6
+16·85
+8·7
+10·43
+8·1
+10
+40
+50
+30
+154
+76
+71
+18
+24
+104
+43
+646
+646
+7·7
+22·6
+20
+15·67
+7·7
+26·96
+13·3
+9·89
+1 1·8
+15
+–14·6
+0·5
+–1·8
+3·6
+–2·59
+–1·9
+–4·5
+–6
+–6
+–4·3
+2
+652
+0·2
+0·2
+–1·9
+–2·8
+–7·6
+–1 1·2
+–10·6
+–5
+–3·9
+1
+Study
+Heterogeneity: t
+2= 3·33; c 2 = 14·94, df = 10 (P = 0·13); l 2 = 33 %
+Heterogeneity: t 2= 0·1 1; c 2 = 10·33, df = 10 (P = 0·41); l 2 =3  %
+Fig. 3. Absolute changes in (a) systolic blood pressure (SBP) and (b) diastolic blood pressure (DBP). LFD, energy-restricted low-fat diet; VLCKD, very-low -carbo-
+hydrate ketogenic diet.
+Carbohydrate restriction for weight loss 1185
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+design, data collection, data analysis, data interpretation or
+writing of the report. N. B. B. and I. S. V. d. M. acquired, ana-
+lysed and interpreted the data. All authors designed the study,
+drafted and critically reviewed the manuscript. The authors
+declare no conﬂicts of interest.
+References
+1. World Health Organization (2012) Obesity and over-
+weight. http://www.who.int/mediacentre/factsheets/fs311/en/
+(accessed 10 May 2012).
+2. Go ¨gebakan O, Kohl A, Osterhoff MA, et al. (2011) Effects of
+weight loss and long-term weight maintenance with diets
+varying in protein and glycemic index on cardiovascular
+risk factors: the diet, obesity, and genes (DiOGenes) study:
+a randomized, controlled trial. Circulation 124, 2829–2838.
+3. Ornish D (1997) Every Day Cooking With Dean Ornish. New
+York: Harper Collins.
+4. Sears B & Lawren W (1995) Enter the Zone . New York:
+Harper Collins.
+5. Weight Watchers Publishing Group (1997) Weight Watchers
+New Complete Cookbook . New York: Macmill.
+6. Accurso A, Bernstein R, Dahlqvist A, et al. (2008) Dietary
+carbohydrate restriction in type 2 diabetes mellitus and
+metabolic syndrome: time for a critical appraisal. Nutr
+Metab (Lond) 5,9 .
+7. Alhassan S, Kim S, Bersamin A, et al. (2008) Dietary adher-
+ence and weight loss success among overweight women:
+results from the A to Z weight loss study. Int J Obes (Lond)
+32, 985–991.
+8. Sacks FM, Bray GA, Carey VJ, et al. (2009) Comparison of
+weight-loss diets with different compositions of fat, protein,
+and carbohydrates. N Engl J Med 360, 859–873.
+9. Krieger JW, Sitren HS, Daniels MJ, et al. (2006) Effects
+of variation in protein and carbohydrate intake on body
+mass and composition during energy restriction: a meta-
+regression. Am J Clin Nutr 83, 260–274.
+10. Hession M, Rolland C, Kulkarni U, et al. (2009) Systematic
+review of randomized controlled trials of low-carbohydrate
+vs. low-fat/low-calorie diets in the management of obesity
+and its comorbidities. Obes Rev 10, 36–50.
+11. Nordmann AJ, Nordmann A, Briel M, et al. (2006) Effects
+of low-carbohydrate vs low-fat diets on weight loss and
+cardiovascular risk factors: a meta-analysis of randomized
+controlled trials. Arch Intern Med 166, 285–293.
+12. Santos FL, Esteves SS, da Costa Pereira A, et al. (2012)
+Systematic review and meta-analysis of clinical trials of the
+effects of low carbohydrate diets on cardiovascular risk
+factors. Obes Rev 13, 1048–1066.
+13. Moher D, Liberati A, Tetzlaff J, et al. (2009) Preferred
+reporting items for systematic reviews and meta-analyses:
+the PRISMA statement. Ann Intern Med 151, 264–269.
+14. Sterne JAC, Egger M & Moher D (2011) Addressing reporting
+biases. In Higgins JPT, Green S, eds.Cochrane Handbook for
+Systematic Reviews of Interventions version 5.1.0 [updated
+March 2011]. http://www.cochrane-handbook.org (accessed
+10 March 2012).
+15. Robinson KA & Dickersin K (2002) Development of a highly
+sensitive search strategy for the retrieval of reports of con-
+trolled trials using PubMed. Int J Epidemiol 31, 150–153.
+16. World Health Organization Expert Consultation (2004)
+Appropriate body-mass index for Asian populations and its
+implications for policy and intervention strategies. Lancet
+363, 157–163.
+17. Higgins JPT & Deeks JJ (2011) Selecting studies and collect-
+ing data. In Higgins JPT, Green S, eds. Cochrane Handbook
+for Systematic Reviews of Interventions version 5.1.0
+[updated March 2011]. http://www.cochrane-handbook.org
+(accessed 22 March 2012).
+18. Higgins JPT, Altman DG & Sterne JAC (2011) Assessing risk
+of bias in included studies. In Higgins JPT, Green S, eds.
+Cochrane Handbook for Systematic Reviews of Interventions
+version 5.1.0 [updated March 2011]. http://www.cochrane-
+handbook.org (accessed 21 March 2012).
+19. Deeks JJ, Higgins JPT & Altman DG (2011) Analysing data
+and undertaking meta-analyses. In Higgins JPT, Green S,
+eds. Cochrane Handbook for Systematic Reviews of Interven-
+tions version 5.1.0 [updated March 2011]. http://www.
+cochrane-handbook.org (accessed 01 April 2012).
+20. DerSimonian R & Laird N (1986) Meta-analysis in clinical
+trials. Control Clin Trials 7, 177–188.
+21. Higgins JPT, Deeks JJ & Altman DG (2011) Special topics in
+statistics. In Higgins JPT, Green S, eds. Cochrane Handbook
+for Systematic Reviews of Interventions version 5.1.0
+[updated March 2011]. http://www.cochrane-handbook.org
+(accessed 01 April 2012).
+22. Harbord RM & Higgins JPT (2008) Meta-regression in stata.
+Stata J 8, 493–519.
+23. Peters JL, Sutton AJ, Jones DR, et al. (2008) Contour-
+enhanced meta-analysis funnel plots help distinguish
+publication bias from other causes of asymmetry. J Clin
+Epidemiol 61, 991–996.
+24. Egger M, Smith GD, Schneider M, et al. (1997) Bias in meta-
+analysis detected by a simple, graphical test. BMJ 315,
+629–634.
+25. Vetter ML, Iqbal N, Volger S, et al. (2010) Long-term effects
+of low-carbohydrate versus low-fat diets in obese persons.
+Ann Int Med 152, 334–335.
+26. Stern L, Iqbal N, Seshadri P, et al. (2004) The effects of
+low-carbohydrate versus conventional weight loss diets in
+severely obese adults: one-year follow-up of a randomized
+trial. Ann Intern Med 140, 778–785.
+27. Foster GD, Wyatt HR, Hill JO, et al. (2010) Weight and
+metabolic outcomes after 2 years on a low-carbohydrate
+versus low-fat diet: a randomized trial. Ann Intern Med
+153, 147–157.
+28. Brinkworth GD, Noakes M, Buckley JD, et al. (2009)
+Long-term effects of a very-low-carbohydrate weight loss
+diet compared with an isocaloric low-fat diet after 12 mo.
+Am J Clin Nutr 90, 23–32.
+29. Iqbal N, Vetter ML, Moore RH, et al. (2010) Effects of a
+low-intensity intervention that prescribed a low-carbohydrate
+vs. a low-fat diet in obese, diabetic participants.Obesity (Silver
+Spring) 18, 1733–1738.
+30. Gardner CD, Kiazand A, Alhassan S, et al. (2007) Compari-
+son of the Atkins, Zone, Ornish, and LEARN diets for
+change in weight and related risk factors among overweight
+premenopausal women: the A to Z Weight Loss Study:
+a randomized trial. JAMA 297, 969–977.
+31. Ebbeling CB, Swain JF, Feldman HA, et al. (2012) Effects of
+dietary composition on energy expenditure during weight-
+loss maintenance. JAMA 307, 2627–2634.
+32. Westman EC, Feinman RD, Mavropoulos JC, et al. (2007)
+Low-carbohydrate nutrition and metabolism. Am J Clin
+Nutr 86, 276–284.
+33. Volek JS, Sharman MJ & Forsythe CE (2005) Modiﬁcation of
+lipoproteins by very low-carbohydrate diets. J Nutr 135,
+1339–1342.
+34. Krauss RM, Blanche PJ, Rawlings RS, et al. (2006)
+Separate effects of reduced carbohydrate intake and weight
+N. B. Bueno et al.1186
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press
+loss on atherogenic dyslipidemia. Am J Clin Nutr 83,
+1025–1031.
+35. Berneis KK & Krauss RM (2002) Metabolic origins and
+clinical signiﬁcance of LDL heterogeneity. J Lipid Res 43,
+1363–1379.
+36. Appel LJ, Sacks FM, Carey VJ, et al. (2005) Effects of protein,
+monounsaturated fat, and carbohydrate intake on blood
+pressure and serum lipids: results of the omniheart random-
+ized trial. JAMA 294, 2455–2464.
+37. Anonymous (2001) Primer on statistical signiﬁcance and
+P values. Eff Clin Pract 4, 183–184.
+38. Wadden TA, Volger S, Sarwer DB, et al. (2011) A two-year
+randomized trial of obesity treatment in primary care prac-
+tice. N Engl J Med 365, 1969–1979.
+39. Alberti KG, Zimmet P, Shaw J, et al. (2005) The metabolic
+syndrome – a new worldwide deﬁnition. Lancet 366,
+1059–1062.
+40. Kass L, Weekes J & Carpenter L (2012) Effect of magnesium
+supplementation on blood pressure: a meta-analysis. Eur J
+Clin Nutr 66, 411–418.
+41. Ried K, Sullivan TR, Fakler P, et al. (2012) Effect of cocoa on
+blood pressure. The Cochrane Database of Systematic
+Reviews, issue 8 CD008893.
+42. Haufe S, Engeli S, Kast P, et al. (2011) Randomized compari-
+son of reduced fat and reduced carbohydrate hypocaloric
+diets on intrahepatic fat in overweight and obese human
+subjects. Hepatology 53, 1504–1514.
+43. Phillips SA, Jurva JW, Syed AQ, et al. (2008) Beneﬁt of
+low-fat over low-carbohydrate diet on endothelial health
+in obesity. Hypertension 51, 376–382.
+44. Lagiou P, Sandin S, Lof M, et al. (2012) Low carbohydrate-
+high protein diet and incidence of cardiovascular diseases
+in Swedish women: prospective cohort study. BMJ 344,
+e4026–e4037.
+45. Friedman AN, Ogden LG, Foster GD, et al. (2012) Compara-
+tive effects of low-carbohydrate high-protein versus low-fat
+diets on the kidney. Clin J Am Soc Nephrol 7, 1103–1111.
+46. Greenberg I, Stampfer MJ, Schwarzfuchs D, et al. (2009)
+Adherence and success in long-term weight loss diets: the
+dietary intervention randomized controlled trial (DIRECT).
+J Am Coll Nutr 28, 159–168.
+47. Institute of Medicine (2011) Finding What Works in Health
+Care: Standards for Systematic Reviews . Washington, DC:
+The National Academy Press.
+48. Centre for Reviews and Dissemination (2009) Syste-
+matic Reviews: CRD’s Guidance for Undertaking Reviews
+in Health Care . York: York Publishing Services.
+49. Shai I, Schwarzfuchs D, Henkin Y, et al. (2008) Weight loss
+with a low-carbohydrate, Mediterranean, or low-fat diet.
+N Engl J Med 359, 229–241.
+50. Dansinger ML, Gleason JA, Grifﬁth JL, et al. (2005) Compari-
+son of the atkins, ornish, weight watchers, and zone diets for
+weight loss and heart disease risk reduction: a randomized
+trial. JAMA 293, 43–53.
+51. Davis NJ, Tomuta N, Schetcher C, et al. (2009) Comparative
+study of the effects of a 1-year dietary intervention of a
+low-carbohydrate diet versus a low-fat diet on weight and
+glycemic control in type 2 diabetes. Diabetes Care 32,
+1147–1152.
+52. Dyson PA, Beatty S & Matthews DR (2010) An assessment of
+low-carbohydrate or low-fat diets for weight loss at 2 year’s
+follow-up. Diabet Med 27, 363–368.
+53. Foster GD, Wyatt HR, Hill JO, et al. (2003) A randomized trial
+of a low-carbohydrate diet for obesity. N Engl J Med 348,
+2082–2090.
+54. Lim SS, Noakes M, Keogh JB, et al. (2010) Long-term effects
+of a low carbohydrate, low fat or high unsaturated fat diet
+compared to a no-intervention control. Nutr Metab Cardio-
+vasc Dis 20, 599–607.
+55. McAuley KA, Smith KJ, Taylor RW, et al. (2006) Long-term
+effects of popular dietary approaches on weight loss and fea-
+tures of insulin resistance. Int J Obes (Lond) 30, 342–349.
+56. Truby H, Baic S, deLooy A, et al. (2006) Randomised con-
+trolled trial of four commercial weight loss programmes in
+the UK: initial ﬁndings from the BBC “diet trials”. BMJ 332,
+1309–1314.
+Carbohydrate restriction for weight loss 1187
+British Journal of Nutrition
+https://doi.org/10.1017/S0007114513000548
+ Published online by Cambridge University Press

@@ -1,0 +1,626 @@
+Inequities and obesity. Rev Bras Epidemiol. 2025; 28: e250038
+1
+https:/ /doi.org/10.1590/1980-549720250038
+Revista Brasileira de Epidemiologiawww.scielo.br/rbepid
+Analysis of inequities between demographic 
+and social determinants associated with 
+overweight and obesity
+Análise de iniquidades entre determinantes demográficos e 
+sociais associados ao sobrepeso e obesidade
+Pabyle Alves FlauzinoI , Ilana Nogueira BezerraII , Julia Sichieri MouraIII , Rosely SichieriIV
+IUniversidade Estadual do Ceará, Postgraduate Program in Collective Health – Fortaleza (CE), Brazil.
+IIUniversidade Estadual do Ceará, Postgraduate Program in Nutrition and Health – Fortaleza (CE), Brazil.
+IIIUniversidade Federal do Paraná, Postgraduate Program in Philosophy – Curitiba (PR), Brazil.
+IVUniversidade do Estado do Rio de Janeiro, Institute of Social Medicine, Department of Epidemiology – Rio de 
+Janeiro (RJ), Brazil.
+ORIGINAL ARTICLE
+ABSTRACT
+Objective: To assess demographic and social determinants associated with the prevalence of overweight and obesity from a 
+population survey. Methods: Cross-sectional study with 28,153 adults participating in the 2017–2018 Household Budget Survey. 
+Self-reported weight and height were used to estimate the prevalence of overweight and obesity, in addition to information on 
+sociodemographic characteristics such as age (continuous), sex (male/female), skin color or race (white, brown, and black), location of 
+residence (urban or rural), and per capita family income (quartile). Linear regression models were used to assess changes in mean BMI 
+according to age and income in each area (urban/rural), stratified by sex and race/skin color. Results: In men, overweight and obesity 
+were more prevalent in urban than rural areas, but there was no such difference in women. Income was quadratically related to the 
+mean BMI among women, while in men the prevalence increased with income. In women, higher income was associated with lower 
+BMI, except for black women, who did not show variation with income and were the ones with the highest prevalence of obesity. Men 
+in rural areas had a much lower BMI and, respectively, a lower prevalence of obesity. Conclusion: We found no difference between 
+extreme groups of possible inequality with regard to overweight and obesity. However, the prevalence of grade I obesity in men was 
+different according to the area, being higher in men living in urban areas; and the highest prevalence of obesity according to race/
+color occurred among black women in the highest income quartile.
+Keywords: Obesity. Intersectional framework. Social conditions. Race factors.
+CORRESPONDING AUTHOR:  Rosely Sichieri. Departamento de Epidemiologia, Instituto de Medicina Social, Universidade do Estado do Rio de Janeiro. Rua São 
+Francisco Xavier, 524, 7º andar, Bloco E, Sala E7002, Maracanã, CEP: 20550-012, Rio de Janeiro (RJ), Brazil. E-mail: rosely.sichieri@gmail.com 
+CONFLICT OF INTERESTS:  Nothing to declare 
+HOW TO CITE THIS ARTICLE:  Flauzino PA, Bezerra IN, Moura JS, Sichieri R. Analysis of inequities between demographic and social determinants associated with 
+overweight and obesity. Rev Bras Epidemiol. 2025; 28: e250038. https://doi.org/10.1590/1980-549720250038
+ASSOCIATE EDITOR:  Deborah Carvalho Malta
+SCIENTIFIC EDITOR:  Juraci Almeida Cesar
+This is an open article distributed under the CC-BY 4.0 license, which allows copying and redistribution of the material in any format and for any purpose as long as 
+the original authorship and publication credits are maintained.
+Received on: 09/28/2024
+Reviewed on: 03/26/2025
+Accepted on: 04/10/2025
+
+www.scielo.br/rbepid
+Inequities and obesity. Rev Bras Epidemiol. 2025; 28: e250038
+2
+https:/ /doi.org/10.1590/1980-549720250038
+INTRODUCTION
+The prevalence of overweight and obesity in Brazilian 
+adults has been increasing since the 1970s1. It is estimated 
+that 56.8% of Brazilian adults were overweight (i.e., over-
+weight and obese) in 20232. However, the factors that pre-
+dispose to the prevalence of overweight and obesity are 
+not equally distributed among populations, including in 
+Brazil3. Although diet, level of physical activity, sleep pat-
+terns, and other individual behavioral aspects are funda -
+mental to understanding the predisposition to overweight, 
+demographic and social determinants appear to have a di-
+rect influence on these inequities4.
+The World Health Organization (WHO) defines equity 
+as the absence of avoidable or irremediable differences 
+between population groups, when defined by social, eco-
+nomic, demographic, or geographic criteria5. From a public 
+health perspective, it is inequality — and not just inequal -
+ity — that represents a central problem to be addressed 6. 
+For example, short stature in a given group may be char-
+acterized by a genetic alteration; on the other hand, when 
+growth restriction occurs due to difficulty in providing ade-
+quate nutrition, there is inequality. Inequalities do not ad-
+dress whether differences are unfair or not, but inequities 
+per se reflect a failure in equity and social justice. Gender 
+roles and racism, historically present in Brazilian society, 
+still subject women and black and brown people to eco-
+nomic and educational disparities and disparities in access 
+to resources, which can harm their health and contribute 
+to weight gain7,8.
+In the national context, research focused on obesity 
+does not address inequality, as it may be insufficient to 
+understand the dynamics of health inequity. Demographic 
+and social determinants, such as sex, race/skin color, area 
+of   residence (i.e., urban or rural) and income can act as 
+unfair and disproportionate barriers, making some groups 
+marginalized and at greater risk of developing excess 
+weight9. Considering that sex, race/skin color, area of   res-
+idence and income greatly influence the social conditions 
+of individuals, the hypothesis of this study is that excess 
+weight could be more prevalent among black women living 
+in rural areas with the lowest income level, when compared 
+to the reference group (i.e., white men living in urban ar-
+eas with the highest income level) in the Brazilian popula -
+tion. Thus, in the present study, we evaluated demographic 
+and social determinants associated with the prevalence of 
+overweight and obesity from a population survey. 
+METHODS
+For the analyses in this article, data from the Household 
+Budget Survey (POF), conducted in 2017–2018 by the Brazil-
+ian Institute of Geography and Statistics (IBGE) were used. 
+POF is a household survey representative of the Brazilian 
+population, with the purpose of investigating consumption 
+strata, expenses, income and wealth variation of different 
+population groups in all regions of the country. The data 
+related to the 2017–2018 POF, which belongs to the public 
+domain, can be obtained at: https://www.ibge.gov.br/es-
+tatisticas/sociais/saude/24786-pesquisa-deorcamentos-fa-
+miliares-2.html?edicao=28523.
+The sampling plan was conducted by clusters in two 
+stages, involving the drawing of census sectors in the first 
+stage and households in the second, based on a master 
+sample defined in an Integrated Household Survey System 
+(SIPD) of the IBGE, which employs a universal sample de-
+sign in all household surveys. The Primary Sampling Units 
+(UPAs) were composed of census sectors selected based 
+on the census sectors of the 2010 Demographic Census. 
+The UPAs were stratified both geographically and statis-
+tically, considering the geographic division (capitals, met-
+ropolitan regions, municipalities and urban or rural areas) 
+and different socioeconomic levels. The selection of the 
+UPAs was carried out by probabilistic sampling, according 
+to the number of households in each stratum present in 
+the master sample, and the households were selected by 
+simple random sampling.
+Sociodemographic information was collected from all 
+residents of the selected households, and a subsample 
+of residents over 10 years of age (34% of the households 
+participating in the POF) provided food consumption data 
+and information on weight and height. For this article, we 
+used data from 28,153 adults (20 to 59 years old), exclud-
+ing pregnant and nursing women, who responded to the 
+food consumption survey with information on weight and 
+height. Adolescents and older individuals were not includ -
+ed in the analyses, since other age-related factors (e.g., 
+sexual maturation in adolescents and health conditions in 
+older adults) may confound the relationship between de-
+mographic and social determinants and the prevalence of 
+overweight and obesity. 
+Data were collected in households between July 2017 
+and July 2018. For these analyses, we used general infor-
+mation regarding sociodemographic characteristics (age, 
+sex, skin color or race, and location of household — ur-
+ban or rural area) and economic characteristics (monthly 
+per capita household income), in addition to self-reported 
+weight and height.
+The prevalence rates and their respective 95% confi-
+dence intervals (95%CI) of overweight and obesity, strati-
+fied by sex, were estimated according to area (urban and 
+rural), skin color (white, black, and brown), and income. 
+Per capita family income was categorized into quartiles: 
+1st quartile up to R$649.20, 2nd quartile from R$649.20 
+to R$1,172.90, 3rd quartile from R$1,172.90 to R$2,069.40, 
+and 4th quartile R$2,068.40 or more.
+To assess changes in mean BMI according to age and in-
+come in each area (urban/rural), linear regression models 
+were developed, with BMI as the dependent variable and 
+age, income, and area as independent variables. To assess 
+www.scielo.br/rbepid
+Inequities and obesity. Rev Bras Epidemiol. 2025; 28: e250038
+3
+https:/ /doi.org/10.1590/1980-549720250038
+the linearity of the models, quadratic models were tested 
+for age and income. To verify differences between groups, 
+confidence intervals were used as reference. For income, 
+the quadratic term was only statistically significant (p<0.05) 
+for females. Effect modification by age was also assessed in 
+the relationship between income quartiles and BMI varia-
+tion, including age squared and multiplication of quadratic 
+terms with income quartiles in the models, which did not 
+obtain statistical significance. Linear regression models 
+stratified by race were also developed. All analyses were 
+stratified by sex, considering the complexity of the design 
+and the sample weight, using the SAS (Statistical Analytics 
+System) software, online version.
+Data Availability Statement
+Data are public available at www.ibge.gov.br.
+RESULTS
+The prevalence of overweight in the studied popu -
+lation was 38.7% (95%CI 37.8–39.6), being higher in men 
+than in women (42.2%; 95%CI 40.9–43.5 vs. 35.8%; 95%CI 
+33.9–36.4, respectively). Obesity affected 16.7% (95%CI 
+15.8–17.7) of the individuals, being lower in men than in 
+women (6.7%; 95%CI 5.6–7.7 vs. 11.3%; 95%CI 9.7–12.9, 
+respectively). The prevalence of overweight and obesity in 
+men differed according to area, being higher in men liv-
+ing in urban areas compared to those in rural areas, while 
+in women there was no difference in prevalence between 
+the areas. Regarding income, different behaviors were also 
+observed between the sexes. While among men the prev-
+alence increased with income, among women there was 
+no difference in the prevalence of overweight and obesity 
+between income groups. There was no difference in prev-
+alence between race/skin color groups (Table 1). These re-
+sults relate to the single-axis analyses of the characteristics 
+of area, skin color, income and sex.
+Considering income, it was observed that there was a 
+quadratic behavior in the average BMI among women, with 
+the highest averages among women with lower incomes. 
+These characteristics were observed in both urban and ru-
+ral areas (Figure 1). Among men, the average BMI increased 
+with increasing income level.
+Among men of white and brown race/skin color, it was ob-
+served that the prevalence of obesity increased with increasing 
+income quartile, although this behavior did not occur among 
+black men. Higher prevalences of obesity were observed in 
+all categories of race/skin color among men in the highest 
+income quartile. Among women of white race/skin color, the 
+prevalence of obesity decreases with increasing income quar-
+tile. Brown and black women do not show a dose-response 
+relationship in the relationship between BMI and income. 
+Higher prevalence of obesity is observed in brown women in 
+the third income quartile and in black women in the fourth 
+income quartile. These results are shown in Table 2.
+Table 3 presents the results of the magnitudes of the 
+associations between income and area, with the increase 
+in BMI stratified by sex and race/skin color. Women of 
+white race/skin color remain statistically associated with 
+a reduction in BMI with each increase in income quartile, 
+showing an inverse relationship. Income did not influence 
+BMI in brown and black women (p>0.05). The region of res-
+idence (rural/urban) also does not appear to influence the 
+increase in BMI in any category of race/skin color in women 
+(p>0.05). In men of white and brown race/skin color, the 
+increase in the income quartile was statistically associated 
+with the increase in BMI. In black men, income and living in 
+rural areas also did not seem to influence the variation in 
+BMI (p>0.05), although living in rural areas was associated 
+with lower BMI values   among white and brown men. 
+Table 1. Prevalence and 95% confidence interval (95%CI) of overweight and obesity, according to sociodemographic 
+characteristics. Household Budget Survey, 2017–2018*.
+ 
+Men Women 
+Overweight Obesity 1 Obesity 2 and 3 Overweight Obesity 1 Obesity 2 and 3
+Area
+Urban 43.2 (41.7–44.7) 13.4 (12.4–14.5) 3.7 (3.2–4.3) 35.2 (33.8–36.6) 12.4 (11.5–13.3) 4.5 (4.0–5.1)
+Rural 36.7 (34.6–38.9) 9.6 (8.1–11.0) 1.7 (1.1–2.4) 35.1 (32.4–37.8) 14.1 (12.3–15.8) 4.8 (3.8–5.8)
+Income
+Quartile 1 38.3 (36.0–40.7) 10.3 (8.8–11.7) 2.0 (1.4–2.6) 34.9 (32.7–37.1) 13.2 (11.7–14.7) 5.4 (4.4–6.3)
+Quartile 2 40.5 (38.0–43.0) 11.8 (10.3–13.3) 3.1 (2.3–4.0) 36.0 (33.6–38.3) 12.5 (11.0–13.9) 4.7 (3.8–5.6)
+Quartile 3 44.0 (41.3–46.7) 13.8 (12.0–15.6) 3.5 (2.5–4.4) 36.2 (33.7–38.7) 14.0 (12.2–15.9) 4.4 (3.4–5.4)
+Quartile 4 45.6 (42.6–48.6) 15.4 (13.2–17.5) 5.0 (3.7–6.3) 33.6 (30.9–36.4) 10.7 (8.9–12.6) 3.8 (2.7–4.8)
+Race
+While 42.8 (40.8–44.9) 13.0 (11.5–14.4) 4.1 (3.3–5.0) 35.7 (33.7–37.7) 11.4 (10.1–12.7) 4.2 (3.5–4.9)
+Brown 42.4 (40.4–44.4) 12.7 (11.4–14.0) 2.7 (2.2–3.3) 34.2 (32.5–36.0) 13.4 (12.2–14.6) 4.9 (4.2–5.6)
+Black 38.7 (34.7–42.7) 12.8 (10.3–15.4) 3.8 (2.0–5.6) 38.8 (34.8–42.9) 14.2 (11.7–16.7) 5.2 (3.7–6.8)
+*Results presented in proportion (%) and confidence interval (CI).
+www.scielo.br/rbepid
+Inequities and obesity. Rev Bras Epidemiol. 2025; 28: e250038
+4
+https:/ /doi.org/10.1590/1980-549720250038
+Figure 1. Average Body Mass Index (BMI) by age group and income quartiles, according to area (urban/rural) and sex. 
+Household Budget Survey, 2017–2018. (A) Women Urban area. (B) Women Rural area. (C) Men Urban area. (D) Men Rural area.
+ 
+Table 2. Prevalence and 95% confidence interval (95%CI) of obesity between race/color, sex and income quartile. 
+Household Budget Survey, 2017–2018*.
+Income
+Quartile 1 Quartile 2 Quartile 3 Quartile 4
+Men
+White 9.7 (6.9–12.4) 15.8 (12.8–18.9) 18.5 (15.5–21.5) 19.9 (16.8–22.9)
+Brown 12.5 (10.5–14.4) 14.4 (12.1–16.6) 16.8 (13.6–20.1) 20.3 (15.9–24.6)
+Black 16.7 (11.2–22.1) 15.5 (10.7–20.3) 14.3 (9.8–18.8) 21.7 (12.9–30.5)
+Women
+While 19.4 (15.4–23.4) 16.4 (13.4–19.4) 15.9 (13.1–18.7) 13.3 (10.7–15.9)
+Brown 18.8 (16.7–21.0) 16.4 (14.4–18.3) 21.4 (17.9–24.9) 15.5 (11.6–19.3)
+Black 16.0 (11.5–20.6) 23.4 (17.2–29.6) 16.9 (11.2–22.7) 24.4 (16.2–32.6)
+*Results presented in proportion (%) and confidence interval (CI).
+Table 3. Regression coefficients* and 95% confidence interval (95%CI) of body mass index (BMI=kg/m2) according to 
+sex, skin color, income in quartiles and area (rural/urban). Household Budget Survey, 2017–2018.
+Women Men
+While Brown Black While Brown Black
+n 5,500 7,685 1,456 4,851 6,847 1,507
+Income
+95%CI
+-0.28
+(-0.47 a -0.09)
+-0.06
+(-0.22–0.10)
+0.02
+(-0.30–0.35)
+0.37 
+(0.21–0.54)
+0.42
+(0.27–0.58)
+0.14 
+(-0.19–0.46)
+p value 0.0045 0.4638 0.8817 <0.001 <0.001 0.4091
+Area
+ 95%CI
+0.17
+(-0.30–0.64)
+-0.07
+(-0.47–0.32)
+0.17
+(-0.96–1.30)
+-0.81 
+(-1.17 a -0.45)
+-0.81
+(-1.14 a -0.48)
+-0.79
+(-1.80–0.22)
+p value 0.4949 0.7044 0.7684 <0.001 <0.001 0.1266
+*mutually adjusted model for age and age*age
+www.scielo.br/rbepid
+Inequities and obesity. Rev Bras Epidemiol. 2025; 28: e250038
+5
+https:/ /doi.org/10.1590/1980-549720250038
+DISCUSSION
+In this study, we sought to compare the extremes of 
+possible inequality in terms of obesity between two groups: 
+black women living in rural areas with lower income lev-
+els versus white men living in urban areas with higher in-
+come levels. Furthermore, we found that the prevalence 
+of grade I obesity in men differed according to the area, 
+being higher in men living in urban areas, and the highest 
+prevalence of obesity according to race/skin color occurred 
+among black women in the highest income quartile when 
+compared to white women in the highest income quartile. 
+In both black men and women, there was no association 
+between income and BMI.
+We found no differences between black women living in 
+rural areas with lower income levels versus white men liv-
+ing in urban areas with higher income levels. This fact can 
+possibly be explained by the complexity of the issues relat-
+ed to the race/skin color variable, since the data from the 
+household budget survey may not be sufficient to reflect 
+the social dynamics related to this variable 8. First, the offi-
+cial classification of race in Brazil is based on self-identifica-
+tion in five categories10. The category “brown” is a descrip-
+tor for black or indigenous people with white ancestry 10. 
+As a result, the category “brown” is quite flexible, giving 
+individuals an ambiguous phenotype (i.e., they can be con-
+sidered white or black simultaneously, according to them 
+or others)11. However, for the Brazilian reality, this cannot 
+be the only hypothesis, given that this argument can limit/
+weaken the discussion of racial inequities. Another hypoth-
+esis for this is due to hormonal and reproductive health 
+differences — such as pregnancy and menopause —, mac-
+rostructural conditions — such as the use of agricultural 
+pesticides12 and other substances considered endocrine 
+disruptors —, which can explain the disparities in compo-
+sition between the sexes, although they are not sufficient. 
+The specific experiences of men and women in relation to 
+obesity can be shaped by specific factors, such as those re-
+sulting from a racist patriarchal structure13,14. For example, 
+social expectations surrounding the female and male body, 
+as well as gender- and race-specific cultural norms, play a 
+crucial role in shaping attitudes toward eating, body image, 
+and exercise practices15. 
+Comparisons with other studies should be cautious, 
+given that despite some similarities in race/skin color clas-
+sifications, being black, white, Asian/yellow, etc., there 
+are large discrepancies in different historical and social 
+contexts. A recent review pointed out that most studies 
+on obesity come from the American population and stat-
+ed that the growing obesity epidemic is unequal between 
+blacks and whites, even after adjusting for age and socio-
+economic status, reiterating the specificity of racial inequal-
+ities beyond social class differences16.
+In this study, we found that the prevalence of grade 1 
+obesity was higher among men in urban areas. These find-
+ings are consistent with the literature, since these areas 
+differ according to their demographic, cultural and socio-
+economic characteristics, which determine the health of 
+the subjects in different ways 17,18. A possible explanation 
+for this finding is the greater availability of ultra-processed 
+foods, pollution, sleep deprivation and stress in urban ar-
+eas, with all of these factors strongly associated with ex-
+cess body fat accumulation19,20.
+In our findings, black women in the highest income 
+quartile had a higher prevalence of obesity when compared 
+to white women in the highest income quartile. This find -
+ing adds to a paradoxical body of evidence demonstrating 
+a higher prevalence of obesity among socially advantaged 
+populations in low- and middle-income countries 21,22. For 
+black women with high income and education, the high 
+prevalence of overweight may be justified by a “hidden” 
+form of inequality, originating from a racist structure, in 
+which discrimination can generate negative consequences 
+for body weight and health, unlike their peers 23. Another 
+hypothesis for the aforementioned fact is the possibility 
+that black women have greater body mass and are less sus-
+ceptible to the white Western ideal of thinness. Thus, black 
+women may be less likely to engage in body modification 
+activities that culminate in weight loss24.
+The obesity epidemic is multifactorial and its determi-
+nants are complex25,26. Several biological factors have been 
+investigated, and many play a role in the accumulation of 
+body fat, but there is no single theory that can truly explain 
+the epidemic. A consensus has been prevailing, which con-
+cerns the concept of metabolic balance. However, popula -
+tion data (2000–2018) refute the positive energy balance 
+hypothesis, showing an increase in obesity from 31 to 42%, 
+with no evidence of increased energy intake or decreased 
+physical activity27,28. 
+Among the various biological factors and theories 
+about fat accumulation, there are exposures to more than 
+50 obesogens — chemicals that alter endocrine signaling, 
+known as disruptors, or that alter the body’s functions, in-
+cluding insulin levels and metabolic rate — whose chang-
+es can even be transmitted through generations 29. There 
+is also ample documentation that excessive consumption 
+of sugars and ultra-processed products leads to excessive 
+weight gain28. On the other hand, new medications that re-
+duce appetite are promising in terms of weight loss and 
+weight maintenance30.
+Policies, programs, and guidelines for the prevention 
+and control of obesity in Brazil, even though they consid-
+er its multifactorial nature, have an excessive focus on the 
+biological aspect 31. This fact ignores the intersections of 
+gender/sex, race/color, geographic space, and social class, 
+which greatly contribute to the predisposition to or wors-
+ening of obesity. This study sheds light on these categories 
+that have been little analyzed with regard to obesity. Thus, 
+we indicate which factors may be most related to weight 
+gain, which can help guide obesity prevention and control 
+www.scielo.br/rbepid
+Inequities and obesity. Rev Bras Epidemiol. 2025; 28: e250038
+6
+https:/ /doi.org/10.1590/1980-549720250038
+policies, such as the National Food and Nutrition Policy 32. 
+Thus, nutritional surveillance strategies, monitoring of the 
+risk of food insecurity and the promotion of adequate and 
+healthy eating become more targeted at disadvantaged 
+groups and can make the National Food and Nutrition Pol-
+icy more effective and fair.
+Despite the important findings, the limitations of this 
+study include: 
+• the complexity of self-declaration of skin color/race, 
+which may not adequately capture the racial phenome-
+non; 
+• the data are based on the household budget survey, 
+which has as its main objective to investigate income 
+and expenses among Brazilian families, and does not 
+have specific variables focusing on health inequities; 
+• the information on weight and height was self-declared, 
+so memory bias may compromise the accuracy of the 
+data. 
+Although weight and height are self-reported, both 
+can be used to calculate BMI and classify nutritional status 
+in a valid and rapid manner in population surveys 33,34. As 
+strengths, we highlight the population representativeness 
+of the Household Budget Survey with demographic and 
+socioeconomic data that allow for the assessment of the 
+population’s health conditions. As observed in the present 
+study, although higher income is historically associated 
+with increased opportunity for resources, high income can 
+influence health and nutrition conditions differently de-
+pending on race and gender. Thus, the present study adds 
+to the field of obesity epidemiology by shedding light on 
+inequities, especially according to race/color, sex and in-
+come.
+In conclusion, we found no differences between groups 
+located at the extremes of possible inequity with regard to 
+obesity. However, the prevalence of grade I obesity in men 
+was different according to the area, being higher in men 
+living in urban areas. A higher prevalence of obesity was 
+also observed according to race/color, among black wom-
+en in the highest income quartile. However, we found dif -
+ferences in the social pattern of prevalence of overweight 
+and obesity in the population with regard to sex, race/color 
+and income. 
+REFERENCES
+1. Kodaira K, Abe FC, Galvão TF, Silva MT. Time-trend in excess 
+weight in Brazilian adults: A systematic review and meta-
+analysis. Plos One 2021; 16(9): e0257755. https://doi.
+org/10.1371/journal.pone.0257755
+2. Hallal PC, Rocha ACCAD, Sardinha LMV, Barros A J, Wehrmeister 
+FC. Inquérito telefônico de fatores de risco para doenças 
+crônicas não transmissíveis em tempos de pandemia (Covitel): 
+aspectos metodológicos. Cad Saúde Pública 2023; 39: 
+e00248922. https://doi.org/10.1590/0102-311XPT248922
+3. Endalifer ML, Diress G. Epidemiology, predisposing factors, 
+biomarkers, and prevention mechanism of obesity: a 
+systematic review. J Obesity 2020; 2020: 6134362. https://
+doi.org/10.1155/2020/6134362
+4. Yerarby R. The social determinants of health, health disparities, 
+and health justice. J Law Med Ethics 2022; 50(4): 641-9. 
+https://doi.org/10.1017/jme.2023.3
+5. World Health Organization. Equity [Internet]. World Health 
+Organization [accessed on Nov 19, 2020]. Available at: 
+https://www.who.int/healthsystems/topics/equity/en 
+6. Vieira S, Silva L, Filho NM. Eqüidade em saúde: uma análise crítica 
+de conceitos. Cad Saúde Pública 2009; 25(Supl. 2): s217-s226. 
+https://doi.org/10.1590/S0102-311X2009001400004
+7. Mayorga C. Some reflections on race and racism in Brazil. 
+Pesqu Prát Psicossociais 2017; 12(4): 16.
+8. Brannon TN, Gerald D, Higginbotham KH. Class advantages 
+and disadvantages are not so Black and White: Intersectionality 
+impacts rank and selves. Curr Opin Psychol 2017; 18: 117-
+22. https://doi.org/10.1016/j.copsyc.2017.08.029
+9. Williams MS, McKinney SJ, Cheskin LJ. Social and structural 
+determinants of health and social injustices contributing 
+to obesity disparities. Curr Obes Rep 2024; 13(3): 617-25. 
+https://doi.org/10.1007/s13679-024-00578-9
+10. Instituto Brasileiro de Geografia e Estatística. Censo 
+demográfico 2000. Rio de Janeiro: IBGE; 2000.
+11. Lago MCDS, Montibeler DPDS, Miguel RDBP. Pardismo, 
+Colorismo e a “Mulher Brasileira”: produção da identidade racial 
+de mulheres negras de pele clara. Rev Estud Fem 2023; 31(2): 
+e83015. https://doi.org/10.1590/1806-9584-2023v31n283015
+12. Massimo D, Coppola L, Masella R, Tammaro A, La Rocca C. 
+Sex and gender differences on the impact of metabolism-
+disrupting chemicals on obesity: a systematic review. Nutrients 
+2024; 16(2): 181. https://doi.org/10.3390/nu16020181 
+13. Hazel KL, Kleyman KS. Gender and sex inequalities: 
+Implications and resistance. J Prev Interv Community 2020; 
+48(4): 281-92. https://doi.org/10.1080/10852352.2019.16
+27079
+14. Moura ECD, Gomes R, Falcão MTC, Schwarz E, Neves ACMD, 
+Santos W. Gender inequalities in external cause mortality 
+in Brazil, 2010. Ciênc Saúde Coletiva 2015; 20(3): 779-88. 
+https://doi.org/10.1590/1413-81232015203.11172014
+15. Grogan S. Body image: Understanding body dissatisfaction 
+in men, women and children. Abingdon: Routledge; 2021.
+16. Oraka, CS, Faustino DM, Oliveira E, Teixeira JAM, Souza ASPD, 
+Luiz ODC. Race and obesity in the black female population: 
+a scoping review. Saúde Soc 2020; 29: e191003. https://doi.
+org/10.1590/s0104-12902020191003 
+17. Martins-silva T, Vaz JDS, Mola CLD, Assunção MCF, Tovo-
+Rodrigues L. Prevalence of obesity in rural and urban areas in 
+Brazil: National Health Survey, 2013. Rev Bras Epidemiol 2019; 
+22: e190049. https://doi.org/10.1590/1980-549720190049
+18. Neuman M, Kawachi I, Gortmaker S, Subramanian SV. 
+Urban-rural differences in BMI in low- and middle-income 
+www.scielo.br/rbepid
+Inequities and obesity. Rev Bras Epidemiol. 2025; 28: e250038
+7
+https:/ /doi.org/10.1590/1980-549720250038
+countries: the role of socioeconomic status. Am J Clin Nutr 
+2013; 97(2): 428-36. https://doi.org/10.3945/ajcn.112.045997
+19. Ferrari G, Alberico C, Marques A, Kovalskys I, Gómez G, 
+Rigotti A, et al. Perceived urban environment attributes 
+and obesity indices in adults: an 8-Nation study from Latin 
+America. Sci Rep 2022; 12(1): 19598. https://doi.org/10.1038/
+s41598-022-24209-2
+20. Oliveira DM, Marques ML, dos Santos D, Spexoto MCB, 
+Togashi GB, Massini DA, et al. Spatial index relating urban 
+environment to health lifestyle and obesity risk in men and 
+women from different age groups. Plos One 2020; 15(3): 
+e0229961. https://doi.org/10.1371/journal.pone.0229961
+21. Daran B, Levasseur P, Clément M. Updating the association 
+between socioeconomic status and obesity in low-income 
+and lower-middle-income sub-saharan African countries: 
+A literature review. Obes Rev 2023; 24(10): e13601. https://
+doi.org/10.1111/obr.13601
+22. Rocha T, Melson E, Zamora J, Fernandez-Felix BM, Arlt W, 
+Thangaratinam S. Sex-specific obesity and cardiometabolic 
+disease risks in low- and middle-income countries: a meta-
+analysis involving 3,916,276 individuals. J Clin Endocrinol Metab 
+2024; 109(4): 1145-53. https://doi.org/10.1210/clinem/dgad599
+23. Bernard M, Fankhänel T, Riedel-Heller SG, Luck-sikorski 
+C. Does weight-related stigmatisation and discrimination 
+depend on educational attainment and level of income? A 
+systematic review. BMJ Open 2019; 9(11): e027673. https://
+doi.org/10.1136/bmjopen-2018-027673
+24. Chithambo TP, Huey SJ. Black/white differences in perceived 
+weight and attractiveness among overweight women. J Obes 
+2013; 2013: 320326. https://doi.org/10.1155/2013/320326
+25. Swinburn BA, Sacks G, Hall KD, McPherson K, Finegood DT, 
+Moodie ML, et al. The global obesity pandemic: shaped by 
+global drivers and local environments. Lancet 2011; 378(9793): 
+804-14. https://doi.org/10.1016/S0140-6736(11)60813-1
+26. Ross SE, Flynn JI, Pate RR. What is really causing the obesity 
+epidemic? A review of reviews in children and adults. J Sports 
+Sci 2016; 34(12): 1148-53. https://doi.org/10.1080/026404
+14.2015.1093650
+27. Mozaffarian D. Perspective: Obesity—an unexplained 
+epidemic. Am J Clin Nutr 2022; 115(6): 1445-50. https://
+doi.org/10.1093/ajcn/nqac075
+28. Ludwig DS, Apovian CM, Aronne LJ, Astrup A, Cantley 
+LC, Ebbeling CB, et al. Competing paradigms of obesity 
+pathogenesis: energy balance versus carbohydrate-insulin 
+models. Eur J Clin Nutr 2022; 76(9): 1209-21. https://doi.
+org/10.1038/s41430-022-01179-2
+29. Blumberg B. Do we need a new unifying theory for 
+obesity? Endocrinology 2024; 165(4): bqae029. https://
+doi.org/10.1210/endocr/bqae029
+30. Karavia EA, Giannopoulou PC, Konstantinopoulou V, 
+Athanasopoulou K, Filippatos TD, Panagiotakos D, et al. 
+Medicines for obesity: appraisal of clinical studies with 
+grading of recommendations, assessment, development, 
+and evaluation tool. Nutrients 2023; 15(3): 606. https://doi.
+org/10.3390/nu15030606
+31. Paim MB, Kovaleski DF. Análise das diretrizes brasileiras de 
+obesidade patologização do corpo gordo, abordagem focada 
+na perda de peso e gordofobia. Saúde Soc 2020; 29(1): 
+e190227. https://doi.org/10.1590/S0104-12902020190227
+32. Rodrigues LS, Miranda NG, Cabrini D. Obesidade e 
+interseccionalidade: análise crítica de narrativas no âmbito 
+das políticas públicas de saúde no Brasil (2004-2021). 
+Cad Saúde Pública 2023; 39(7): e00240322. https://doi.
+org/10.1590/0102-311XPT240322
+33. Olfert MD, Barr ML, Charlier CM, Famodu OA, Zhou W, 
+Mathews AE, et al. Self-reported vs. measured height, weight, 
+and bmi in young adults. Int J Environ Res Public Health 
+2018; 15(10): 2216. https://doi.org/10.3390/ijerph15102216
+34. Brito RCDS, Oliveira AGRDC. Validação de medidas 
+autorreferidas para estado nutricional: estudo a partir 
+da PNS 2019. Rev Saúde Pública 2024; 58: 28. https://doi.
+org/10.11606/s1518-8787.2024058005505
+www.scielo.br/rbepid
+Inequities and obesity. Rev Bras Epidemiol. 2025; 28: e250038
+8
+https:/ /doi.org/10.1590/1980-549720250038
+© 2025 | Epidemio is a publication of 
+ Associação Brasileira de Saúde Coletiva - ABRASCO
+RESUMO
+Objetivo: Avaliar determinantes demográficos e sociais associados à prevalência de sobrepeso e obesidade provenientes de 
+inquérito populacional. Métodos: Estudo transversal com 28.153 adultos participantes da Pesquisa de Orçamento Familiar 2017–
+2018. Utilizou-se peso e altura autorreferidos para estimar a prevalência de sobrepeso e obesidade, além de informações sobre 
+características sociodemográficas, como idade (contínua), sexo (homem/mulher), cor ou raça (branca, parda e preta), localização do 
+domicílio (urbano ou rural), e renda familiar per capita (quartil). Modelos de regressão linear foram usados para avaliar as mudanças 
+na média de IMC segundo idade e renda em cada área (urbano/rural), com estratificação por sexo e raça/cor da pele. Resultados: 
+Nos homens, o sobrepeso e a obesidade foram mais prevalentes em áreas urbanas do que rurais, mas nas mulheres não houve essa 
+diferença. A renda relaciona-se de forma quadrática com a média do IMC entre as mulheres, enquanto nos homens a prevalência 
+aumenta com a renda. Nas mulheres, maiores rendas associam-se a menor IMC, exceto para as pretas que não apresentam variação 
+com a renda e são as que apresentam as maiores prevalências de obesidade. Já os homens na zona rural têm IMC muito menor e 
+respectivamente menor prevalência de obesidade. Conclusão: Não encontramos diferenças entre os grupos situados em extremos 
+de possível iniquidade no que diz respeito ao sobrepeso e obesidade. Entretanto, a prevalência de obesidade grau I nos homens foi 
+diferente de acordo com a área, sendo maior nos homens residentes da área urbana; e a maior prevalência de obesidade de acordo 
+com a raça/cor se deu entre as mulheres pretas no maior quartil de renda. 
+Palavras-chave: Obesidade. Enquadramento interseccional. Condições sociais. Fatores raciais.
+ETHICS COMMITTEE:  The work uses secondary data publicly available at https:/ /www.ibge.gov.br/estatisticas/sociais/saude/24786-pesquisa-deorcamentos-
+familiares-2.html?edicao=28523, without the need for the approval of the Ethics Committee, according to CAEE opinion: 37923320.0.0000.5260, Aproval No.: 4.316.087.
+AUTHORS’ CONTRIBUTIONS:  PAF: Conceptualization, Writing – original draft, Writing – review & editing. INB: Conceptualization, Data curation, Formal analysis, 
+Writing – original draft, Writing – review & editing. JSM: Conceptualization, Data curation, Formal analysis, Writing – orginal draft, Writing – review & editing. RS: 
+Conceptualization, Data curation, Formal analysis, Visualization, Supervision, Writing – orginal draft, Writing – review & editing.
+FUNDING:  Coordenação Brasileira de Aperfeiçoamento de Pessoal de Nível Superior (CAPES 88887.802043/2023)

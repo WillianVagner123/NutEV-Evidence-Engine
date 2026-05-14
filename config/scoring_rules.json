@@ -1,0 +1,5 @@
+{
+  "keyword_points": {"guideline": 3, "adherence": 2, "obesity": 2, "cardiometabolic": 3},
+  "source_points": {"official": 4, "pubmed": 3, "europepmc": 2, "openalex": 1},
+  "workstream_points": {"busca1": 2, "busca2a": 3, "busca2b": 3, "a3": 1}
+}

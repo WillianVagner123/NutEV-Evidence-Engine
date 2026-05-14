@@ -1,0 +1,1142 @@
+Improvements in clinical characteristics of patients with non-alcoholic fatty
+liver disease, after an intervention based on the Mediterranean lifestyle:
+a randomised controlled clinical trial
+Christina N. Katsagoni 1, George V. Papatheodoridis 2, Panagiota Ioannidou 2, Melanie Deutsch 3,
+Alexandra Alexopoulou 3, Nikolaos Papadopoulos 3, Maria-Vasiliki Papageorgiou 2,
+Elizabeth Fragopoulou 1 and Meropi D. Kontogianni 1*
+1Department of Nutrition & Dietetics, School of Health Sciences and Education, Harokopio University, 70 El. Venizelou str.,
+176 71 Athens, Greece
+2Department of Gastroenterology, Medical School of National and Kapodistrian University of Athens, Laiko General Hospital
+of Athens, 17 Agiou Thoma str., 115 27 Athens, Greece
+32nd Department of Internal Medicine, Medical School of National and Kapodistrian University of Athens, Hippokration
+General Hospital of Athens, 114 Vassilissis Sophias Avenue, 115 27 Athens, Greece
+(Submitted 12 January 2018 – Final revision received 21 March 2018 – Accepted 13 April 2018)
+Abstract
+Lifestyle interventions remain the cornerstone therapy for non-alcoholic fatty liver disease (NAFLD). This randomised controlled single-blind
+clinical trial investigated the effect of Mediterranean diet (MD) or Mediterranean lifestyle, along with weight loss, in NAFLD patients. In all,
+sixty-three overweight/obese patients (50 (
+SD 11) years, BMI = 31·8( SD 4·5) kg/m2, 68 % men) with ultrasonography-proven NAFLD
+(and elevated alanine aminotransferase (ALT) and/or γ-glutamyl transpeptidase (GGT) levels) were randomised to the following groups:
+(A) control group (CG), (B) Mediterranean diet group (MDG) or (C) Mediterranean lifestyle group (MLG). Participants of MDG and MLG
+attended seven 60-min group sessions for 6 months, aiming at weight loss and increasing adherence to MD. In the MLG, additional guidance
+for increasing physical activity and improving sleep habits were given. Patients in CG received only written information for a healthy lifestyle.
+At the end of 6 months, 88 ·8 % of participants completed the study. On the basis of intention-to-treat analysis, both MDG and MLG showed
+greater weight reduction and higher adherence to MD compared with the CG (all P < 0·05) at the end of intervention. In addition, MLG
+increased vigorous exercise compared with the other two study groups ( P < 0·001) and mid-day rest/naps compared with CG ( P = 0·04). MLG
+showed signi ﬁcant improvements in ALT levels (i.e. ALT < 40 U/l ( P = 0·03) and 50 % reduction of ALT levels ( P = 0·009)) and liver stiffness
+(P = 0·004) compared with CG after adjusting for % weight loss and baseline values. MDG improved only liver stiffness compared with CG
+(P < 0·001) after adjusting for the aforementioned variables. Small changes towards the Mediterranean lifestyle, along with weight loss, can be
+a treatment option for patients with NAFLD.
+Key words: Non-alcoholic fatty liver disease: Mediterranean diet: Mediterranean lifestyle: Weight loss: Sleep: Intervention
+Non-alcoholic fatty liver disease (NAFLD) and non-alcoholic
+steatohepatitis (NASH) are the most prevalent liver disorders in
+Western countries
+(1). NAFLD patients are at a high risk of
+developing metabolic syndrome, type 2 diabetes mellitus
+(T2DM)
+(2) and cardiovascular disorders (3). Indeed, NAFLD is
+associated with increased overall, as well as liver-related,
+mortality compared with the healthy population
+(4). The
+‘multiple hit ’ hypothesis, including hits such as insulin resis-
+tance, lipotoxicity, nutritional factors, gut microbiota, genetic
+and epigenetic factors, is currently the most widely accepted
+theory for NAFLD pathogenesis (5).
+At present, no formally approved pharmacological or surgical
+therapy exists for the management of NAFLD or NASH, and lifestyle
+modiﬁcations remain the cornerstone therapy
+(6).A7 –10 % weight
+loss results in improvements in liver enzymes and histology, and
+can be achieved either by dietary changes or by adopting an active
+lifestyle
+(1). Exercise alone has also been shown to improve intra-
+hepatic lipid content, independent of weight loss (7)and baseline
+BMI(8,9), whereas the existing evidence regarding the optimal diet
+composition for NAFLD remains conﬂicting(7,10).
+Mediterranean diet (MD) is a dietary pattern widely known
+for its favourable effects, mainly in relation to mortality, CVD
+Abbreviations: ALT, alanine aminotransferase; AST, aspartate aminotransferase; CG, control group; GGT, γ-glutamyl transpeptidase; LSM, reliable liver stiffness
+measurements; MD, Mediterranean diet; MDG, Mediterranean diet group; MET, metabolic equivalents; MLG, Mediterranean lifestyle group; NAFLD, non -
+alcoholic fatty liver disease; NFS, NAFLD ﬁbrosis score.
+* Corresponding author: Assistant Professor M. D. Kontogianni, fax +30 210 9549141, email mkont@hua.gr
+British Journal of Nutrition (2018), 120, 164 –175 doi:10.1017/S000711451800137X
+© The Authors 2018
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+risk factors, cancer (11), T2DM (12) and risk of metabolic
+syndrome(13). Moreover, evidence from limited epidemiological
+data indicates that greater adherence to the MD is associated
+with lower probability of having NASH (14) or metabolic syn-
+drome in NAFLD patients (15). Although data from interventional
+studies are sparse, in the uncontrolled clinical trial of Trovato
+et al .
+(16) adherence to the MD was associated with improve-
+ments in liver fat content. Accordingly, in the cross-over clinical
+trial of Ryan et al .
+(17), increased adherence to the MD was
+associated with reduced intrahepatic lipid as assessed by
+magnetic resonance spectroscopy (
+1H-MRS), improved insulin
+sensitivity and ﬁbrosis compared with a low-fat/high-carbohy-
+drate controlled diet, under conditions of weight maintenance.
+Recently, the potential additional effects of other aspects of the
+Mediterranean lifestyle (i.e. adequate sleep and physical
+activity) have been discussed in the more recent version of the
+MD pyramid
+(18).
+Given the small number of interventional studies focused on
+the effects of MD in NAFLD, the present study aimed at
+exploring the potential bene ﬁts of an intervention based on the
+MD per se or the Mediterranean lifestyle, along with weight loss,
+on clinical and laboratory characteristics (i.e. liver enzymes and
+liver stiffness) of ultrasound-proven NAFLD patients, compared
+with usual care.
+Methods
+Study design
+The present study was a randomised, controlled single-blind
+clinical trial. Eligible participants were randomly assigned for
+6 months to one of the following three groups: (A) control
+group (CG), (B) Mediterranean diet group (MDG) or (C) Medi-
+terranean lifestyle group (MLG). The randomisation was made
+using a random numbers system. Each patient was fully
+informed about the goals and procedures of the study and
+provided a written consent before enrolment. The recruitment,
+allocation and intervention of the study were conducted from
+May 2013 to June 2016. The study was carried out in accordance
+with the regulations of EU directive 28/2005/EC for clinical trials
+and was approved by the Bioethics Committee of ‘Harokopio
+University’. The study was also registered in the American
+National Health Institute records (ClinicalTrials.gov, ID:
+NCT01894438). Moreover, the study protocol was designed in
+compliance with the CONSORT (Consolidated Standards of
+Reporting Trials) 2010 statement
+(19).
+Study participants
+Consecutive NAFLD patients were recruited from two out-
+patient liver clinics (Academic Department of Gastroenterology,
+Laiko General Hospital of Athens, Greece, and 2
+nd Academic
+Department of Internal Medicine, Hippokration General
+Hospital of Athens, Greece) (see Fig. 1). The inclusion criteria of
+this study were as follows: (a) age 18 –65 years, (b) BMI
+25–40 kg/m
+2 and (c) NAFLD diagnosis based on the following
+criteria: elevated alanine aminotransferase (ALT) and/or
+γ-glutamyl-transpeptidase (GGT) levels, evidence of hepatic
+steatosis on ultrasound and/or compatible liver histology and
+no other causes of liver injury or steatosis. Patients with positive
+serological markers for hepatitis B (HBsAg), hepatitis C (anti-
+HCV) and HIV (anti-HIV), weekly alcohol consumption more
+than 210 g for men or 140 g for women, use of potentially
+hepatotoxic or steatogenic agents (i.e. amiodarone, valproate,
+glucocorticosteroids, tamoxifen, methotrexate and other chemo-
+therapeutic agents), evidence of metabolic or autoimmune liver
+disease, diabetes or the presence of known systemic disease with
+potential liver involvement were excluded. History of alcohol
+intake was taken from the patients and was con ﬁrmed by the
+patients’ relatives or friends. Participants who were already on a
+weight-loss diet were excluded from the study.
+Dietary intervention and monitoring
+At baseline, all three groups were given an indicative energy
+restriction regimen with similar percentage of macronutrients,
+namely 45 % carbohydrates, 20 % protein and 35 % lipids, which
+provided 6276 kJ (1500 kcal) for women and 7531 kJ (1800 kcal)
+for men. The CG received also general written dietary guide-
+lines for a healthy lifestyle at baseline, without any other
+intervention until the end of the 6-month period (online Sup-
+plementary eTable 1S). Participants in MDG and MLG followed
+a more intensive counselling programme, consisting of seven
+60-min small group sessions (three to ﬁve people), held every
+ 
+ 
+ 
+76 NAFLD
+patients at
+baseline
+63
+fulfilled
+inclusion
+criteria
+63 randomised
+in the study
+groups
+21 patients in
+the control
+group
+21 patients in the
+Mediterranean
+diet group
+21 patients in the
+Mediterranean
+lifestyle group
+14
+patients at
+6 months
+21
+patients at
+6 months
+21
+patients at
+6 months
+21 were
+analysed
+using ITT
+analysis
+21 were
+analysed
+using ITT
+analysis
+21 were
+analysed
+using ITT
+analysis
+Fig. 1. Flow chart of the current clinical trial. NAFLD, non-alcoholic fatty liver
+disease; ITT: Intention-to-treat analysis.
+Lifestyle and non-alcoholic fatty liver 165
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+2 weeks for the ﬁrst 2 months and every month for the next
+4 months, co-ordinated by a research dietitian (C. N. K.).
+Nutritional counselling was based on the goal-setting theory (20)
+aiming at improving diet quality and promoting energy restric-
+tion by enhancing adherence to the Mediterranean food pat-
+tern, as described in the MD pyramid
+(18) and the Dietary
+Guidelines for Greeks (21) (online Supplementary eTable 2S). In
+the MDG, no further instructions were given for other lifestyle
+parameters. In the MLG, goals were also set for enhancing
+activity through a moderate –vigorous intensity physical activity
+programme of at least 30 min/d (fast or very fast walking, slow
+or fast running, dancing, tennis and so on), as well as for
+optimal sleep duration (i.e. ≥7 and ≤9 h/d)
+(22) and mid-day rest
+(e.g. naps, siesta) (online Supplementary eTable 3S).
+In MDG and MLG, compliance to the goals was checked
+using self-monitoring methods. In particular, multiple self-
+monitoring tools were used, namely special forms according to
+intervention goals or 3-d dietary records. At each session,
+patients discussed with the researcher –dietitian any possible
+barriers encountered while trying to achieve the goals. To self-
+monitor physical activity, volunteers in the MLG only were
+given a pedometer (TANITA Step
+TM, 3 Axes Pedometer, PD-
+724; TANITA Europe GmbH) and aimed at a gradual increase in
+steps, with the ultimate goal of 10 000 steps/d. Participants not
+attending three consecutive sessions were considered as drop-
+outs.
+Anthropometric and demographic characteristics
+Height of patients was measured once with a Seca type mea-
+suring tape with ±0·5 m accuracy. Body weight of patients was
+measured using a digital scale with ±100 g accuracy, barefoot
+and under the same conditions in each time point of the study
+(baseline and at the end of the study). BMI was calculated as the
+weight ratio (in kg) to the square of the height (in m
+2). Obesity
+was de ﬁned as BMI ≥30 kg/m2. Waist circumference (WC) was
+calculated on the average between the 12th rib and the iliac
+crest, with ±0·1 m accuracy. Increased (abnormal) WC was
+deﬁned as >88 and >102 cm for women and men, respectively.
+Those who smoked at least one cigarette a day were de ﬁned
+as smokers, those who had stopped smoking before their
+enrolment were de ﬁned as former smokers and those who had
+not smoked a single cigarette during their life were de ﬁned as
+non-smokers. The educational level of the participants was
+determined by years of education. In addition, information on
+marital status (married, unmarried, divorced or widowed), the
+number of children/family members and the area of residence
+(urban or rural) was recorded.
+Assessment of dietary intake
+Participants’ dietary habits over the last 6 months were assessed
+at baseline and at the end of the intervention period using a
+semi-quantitative sixty-nine-item FFQ validated for the Greek
+population
+(23) and two 24-h recalls. On the basis of the FFQ,
+consumption of main food groups such as total, low-fat and full-
+fat dairy products; total, re ﬁned and non-re ﬁned cereals and
+products; and red meat, poultry, ﬁsh, legumes, vegetables, fruit,
+sweets, soft drinks and nuts were calculated in servings per day
+as described in the dietary guidelines for Greek adults
+(21).
+Adherence to the MD was assessed using MedDietScore (24).
+The 24-h recalls were based on the ﬁve-step method of the
+US Department of Agriculture (25). Two 24-h recalls were
+implemented twice during the study (at baseline and at
+6 months), one via telephone and one face to face with the
+patient. The data from the recalls were analysed for energy and
+macronutrient intake using Nutritionist Pro software, version 2.2
+(Axxya Systems).
+Physical activity assessment
+The Athens Physical Activity Questionnaire (APAQ) (26), which is
+validated for the Greek population, was used to determine
+participants’ physical activity level (PAL). The APAQ was ﬁlled
+by all subjects twice during the study evaluations (at the
+beginning and at 6 months), asking participants to record a
+typical week of their life. Physical activity was also recorded at
+every session in the MLG, to check compliance to activity
+relevant goals. Total PAL was determined by measuring the total
+metabolic units (MET) expended per minute per day (MET-min/d).
+Total MET-min/d were calculated separately for low, moderate
+and vigorous exercise. Moreover, total duration of sedentary
+activities at leisure time was estimated. Sedentary activities were
+deﬁned as all activities with total MET ≤1·5
+(27), such as watching
+TV, video games, reading and so on, without taking sleep into
+account.
+Sleep duration and quality assessment
+Evaluation of sleep habits was performed both at baseline and
+at 6 months. Habitual total night sleep hours and mid-day rest/
+naps (siesta) (yes/no) were self-reported and recorded. Sleep
+quality was assessed using an appropriate sleep scale ques-
+tionnaire (Athens Insomnia Scale)
+(28). Optimal sleep duration
+was de ﬁned as sleep duration ≥7 and ≤9 h/d(22).
+Biochemical and clinical parameters
+Blood samples were collected between 08.30 and 10.00 hours,
+after 12 h of fasting. Serum and plasma were isolated and frozen
+immediately at −80°C. Glucose levels, albumin, total cholesterol
+(TC), TAG and HDL-cholesterol were measured by enzymatic
+colorimetric assay (COBAS
+® 8000 analyzer; Roche), whereas
+the LDL-cholesterol concentrations were calculated using the
+Friedewald formula
+(29). Non-HDL (determined by TC minus
+HDL-cholesterol), as well as the ratio of TAG:HDL-cholesterol,
+were calculated. Insulin levels were determined by chemilu-
+minescence method (E170 modular analyzer; Roche) and
+then homoeostasis model assessment of insulin resistance
+(HOMA-IR) was calculated using the formula of Matthews
+et al.
+(30). Levels of liver enzymes, namely ALT, aspartate amino-
+transferase (AST) and GGT, were measured by enzymatic
+colorimetric method (COBAS
+® 8000 analyzer). Normal ALT
+concentration was de ﬁned as ALT < 40 U/l, whereas normal
+GGT concentration was de ﬁned as GGT < 30 U/l.
+Blood pressure was measured at baseline and at the 6-month
+reassessment in the right hand, with patient resting in a sitting
+position, after having calmed down in a quiet environment.
+166 C. N. Katsagoni et al .
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+Hypertension was de ﬁned as systolic blood pressure
+≥140 mmHg and/or diastolic blood pressure ≥90 mmHg or
+reception of anti-hypertensive drugs.
+Non-invasive methods for detection of ﬁbrosis
+NAFLD ﬁbrosis score (NFS) was calculated according to Angulo
+et al .(31) formula using six variables: age, BMI, presence of
+hyperglycaemia (fasting blood glucose ≥110) or previously
+diagnosed T2DM, AST:ALT ratio, platelet count and albumin
+levels. NFS >0·676 is associated with the presence of signi ﬁcant
+ﬁbrosis, whereas <− 1·455 is associated with the absence of
+ﬁbrosis. NFS scores between −1·455 and 0 ·675 are referred as
+‘indeterminate’ scores
+(31).
+Shear-wave elastography
+Reliable liver stiffness measurements (LSM) (in kPa) were per-
+formed in all patients both at baseline and at 6 months by two-
+dimensional shear-wave elastography of the liver by the same
+clinician. LSM were operated using the Aixplorer
+® MultiWaveTM
+ultrasound system (SuperSonic Imagine S.A.) with the single
+crystal curved probe at frequencies of 1 –6 MHz. The examina-
+tion was considered to be reliable if at least ﬁve valid mea-
+surements were obtained based on good sonographic signal,
+combined with <25 % ratio of
+SD:mean LSM (mean value
+of all valid measurements per examination). Patients were
+categorised on the basis of their LSM results, as reviewed by
+Abenavoli et al.
+(32), into those with LSM >6·6 and LSM ≤6·6 kPa,
+suggesting the presence or not of signi ﬁcant ﬁbrosis,
+respectively.
+Study primary and secondary outcomes
+The primary end point of the present study was clinically sig-
+niﬁcant decrease in ALT levels de ﬁned as the restoration of ALT
+within normal limits (i.e. ALT < 40 U/l) or at least 50 % decrease
+of its initial levels. The secondary end points included the
+restoration of GGT levels within normal limits (i.e. GGT
+< 30 U/l), signi ﬁcant improvements in liver stiffness (i.e. LSM
+≤6·6 kPa) and changes in NFS scores.
+Statistical analysis
+On the basis of data from previously published research (14,33),
+it was assumed that primary end point could be achieved in
+50 % of patients in the intense dietary intervention groups and
+10 % in the CG. Hence, it was estimated that twenty-one
+patients were needed per treatment group (including 10 % of
+patients who might be lost to follow-up) to ﬁnd statistically
+signiﬁcant difference from the CG (with 5 and 20 % statistical
+type I and II error and 80 % statistical power, respectively).
+Continuous variables are presented as means and standard
+deviations, whereas continuous skewed variables as medians
+and interquartile ranges. Qualitative categorical variables are
+presented as absolute ( n) and relative frequencies (%). The
+normality of variables was checked through Shapiro –Wilk test
+and graphically through histograms.
+The primary analyses were performed in the intention-
+to-treat (ITT) population, which included all patients who were
+randomly assigned to a study group (i.e. including dropouts
+from the CG, n 7/21, 33 %). Missing values were imputed using
+multiple imputation (MI), which involved ﬁtting a statistical
+model to the observed data with the use of missing-at-random
+method
+(34). For the analysis of the primary end points as con-
+tinuous variables, the three study groups were compared by
+means of ANCOVA, with study group assignment as ﬁxed effect
+and % weight loss and baseline value of the dependent variable
+as covariates. Skewed variables were log-transformed for the
+analyses and are presented in their anti-logarithm form.
+Categorical changes for dichotomous end points were ana-
+lysed with the use of logistic regression with the same ﬁxed
+effects and covariates as the respective ANCOVA analysis. For
+secondary analyses, missing data were imputed according to
+MI, whereas ANCOVA and logistic regression were also
+used. Sensitivity analyses (per protocol analyses) were also
+performed to assess the robustness of the primary analysis.
+A two-sided α level of 5 % was used to indicate statistical
+signiﬁcance. CI, when calculated, were 95 % CI. Bonferroni
+correction was used for pairwise comparisons among the three
+study groups. Analyses were performed using the statistical
+package SPSS (version 23.0 for Windows; SPSS 2015).
+Results
+In all, twenty-one participants were allocated to each group. All
+patients from MDG and MLG successfully completed the
+6-month follow-up evaluation (100 %). No harms or unintended
+side effects were reported by participants. Patients ’ adherence
+to the intense intervention groups, as assessed by their parti-
+cipation in the group sessions and the 6-month evaluation
+appointment, was also 100 %. Seven participants from the CG
+(33 %) were considered as dropouts as they did not complete
+the 6-month evaluation. Dropouts had higher LSM ( P = 0·025)
+and a trend for higher BMI levels ( P = 0·067) compared with
+patients from CG who successfully completed the study (data
+not shown). Baseline characteristics of all participants according
+to their allocation to study groups are shown in Table 1.
+Regarding lifestyle characteristics, both MDG and MLG
+signiﬁcantly reduced hours of sedentary activities during leisure
+time compared with CG, after adjusting for baseline values
+(Table 2). Nevertheless, at the end of the intervention, only
+MLG signi ﬁcantly increased levels of vigorous exercise,
+compared with the other two study groups ( P < 0·001), with no
+other signi ﬁcant differences in MET-min per day or PAL
+(Table 2). No signi ﬁcant differences were recorded among
+groups regarding habitual sleep hours ( P = 0·41) and optimal
+sleep duration ( P = 0·87). However, at the end of the inter-
+vention, mid-day rest/naps (siesta) differed signi ﬁcantly in the
+MLG compared with the CG, after adjusting for baseline values
+(Table 2). Moreover, although no signi ﬁcant differences were
+noticed in sleep hours among groups at the end of the study,
+patients in MLG improved the relative low sleep hours
+(P = 0·03) during intervention, whereas daytime sleepiness
+compared with the GG was also improved ( P = 0·02) (data not
+shown).
+Furthermore, all three study groups signi ﬁcantly reduced
+their energy intake, as estimated from 24-h recalls (Table 2).
+Lifestyle and non-alcoholic fatty liver 167
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+No differences were recorded in macronutrient intake between
+the three study groups. However, only the MDG increased
+PUFA and MUFA intake, whereas both intensive intervention
+groups increased dietary ﬁbre intake compared with the CG,
+after adjusting for baseline values (Table 2). Moreover, both
+MDG and MLG signi ﬁcantly increased their adherence to the
+MD, as assessed by MedDietScore, compared with the CG, with
+no signi ﬁcant differences between the two intensive interven-
+tion groups (mean difference 1 ·6; 95 % CI −1·4, 4 ·7), after
+controlling for baseline values (Table 2). On a food group basis,
+both MDG and MLG signi ﬁcantly increased consumption of
+whole grains, fruit, vegetables and nuts, and signi ﬁcantly
+reduced the intake of re ﬁned cereals, potatoes, red meat and
+sweets (all P < 0·05, online Supplementary eTable 4S).
+Regarding anthropometric changes, MDG and MLG showed
+greater weight loss ( P = 0·01) and BMI reductions ( P = 0·008)
+compared with the CG, which also showed a slight body weight
+reduction (Table 2). Nevertheless, improvements in anthropo-
+metric characteristics were similar among MDG and MLG
+((% weight loss: mean difference −0·85; 95 % CI − 0·45, 1 ·6 and
+BMI = − 1·01; 95 % CI −0·97, 1 ·05).
+Regarding the study primary outcomes (i.e. ALT < 40 U/l and
+50 % reduction of ALT levels) based on the ITT analyses, MLG
+showed signiﬁcant improvements compared with the CG at the
+end of intervention (Table 3) after adjusting for baseline values
+and % weight loss. In contrast, MDG did not show signi ﬁcant
+changes in the primary outcomes. Regarding the secondary
+outcomes, neither MDG nor MLG showed changes in GGT
+levels or NFS, but both improved liver stiffness compared with
+the CG, after adjusting for baseline values and % of weight loss
+(Table 3). Between the intensive intervention groups, no dif-
+ferences were noticed regarding the study ’s primary and sec-
+ondary outcomes, except that patients in the MLG tended to
+have higher likelihood of halving their ALT levels compared
+with MDG (OR = 0·27; 95 % CI 0 ·07, 1 ·03), after controlling for
+baseline values and % weight loss. No differences among
+groups were observed regarding HOMA-IR, even after adjusting
+for weight loss. Patients in the MDG signi ﬁcantly improved LDL
+and non-HDL after adjusting for baseline values and % weight
+loss (Table 4). No signi ﬁcant improvements in lipid pro
+ﬁle were
+observed in the MLG. As far as blood pressure is concerned, no
+signiﬁcant differences were observed between groups regard-
+ing systolic ( P = 0·59) and diastolic ( P = 0·57) blood pressure.
+According to the per-protocol analyses, the percentage of
+weight loss was lower in CG (median −0·9 % (interquartile range
+−3·4, 0 ·79)) compared with intensive care groups, and therefore
+differences between groups regarding % weight loss ( P = 0·024)
+were maintained (data not shown). Moreover, vigorous exercise
+remained signiﬁcantly different between MLG and CG ( P = 0·01),
+as well as between the intensive care (P = 0·05). Adherence to the
+MD (as assessed by MedDietScore) increased in both MDG
+(P = 0·005) and MLG ( P < 0·001) compared with CG, with no
+differences between intensive care groups ( P = 0·67), after
+adjusting for baseline values. In regard to the main outcomes,
+changes in ALT levels (i.e. ALT < 40 U/l ( P = 0·05) and 50 %
+reduction of ALT levels ( P = 0·047)), as well as liver stiffness
+(P = 0·02), remained signi ﬁcant in the MLG compared with CG,
+after adjusting for % weight loss and baseline values. However,
+non-signiﬁcant trends were observed in the MDG (i.e. P for 50 %
+reduction in ALT = 0·09 and P for liver stiffness = 0·17), after
+adjusting for % weight loss and baseline values.
+Discussion
+The present randomised controlled single-blind clinical trial
+aimed to investigate the potential bene ﬁcial effects of the MD
+per se or the Mediterranean lifestyle (targeting also at adequate
+sleep and exercise), along with weight loss, on clinical and
+laboratory characteristics of ultrasonography-diagnosed NAFLD
+patients compared with usual care. According to the results, the
+MLG signi ﬁcantly improved ALT levels (i.e. ALT normalisation
+and Α LT reduction to half levels), as well as liver stiffness, com-
+pared with the CG, and these effects remained signi ﬁcant after
+adjustment for weight loss. In the MDG, only liver stiffness
+improvements remained signiﬁcant after adjusting for weight loss.
+Any existing recommendations regarding NAFLD treatment,
+before or in addition to pharmacological or surgical therapeutic
+Table 1. Descriptive statistics of non-alcoholic fatty liver disease patients in each study group at baseline
+(Numbers and percentages; medians and interquartile ranges (IQR, 25th –75th))
+CG ( n 21) MDG ( n 21) MLG ( n 21)
+Variables n % n % n % P*†
+Sex (males) 13 61 ·91 3 6 1 ·91 78 1 0 ·31
+Age (years) 0·90
+Median 47 44 48
+IQR 42 –60 41 –60 38 –60
+Education (years) 0·95
+Median 16 16 16
+IQR 12 –16·51 2 –16 12 –16·5
+Smoking (yes) 3 14 ·35 2 3 ·85 2 3 ·80 ·67
+Marital status (married) 15 71 ·42 0 9 5 ·21 36 1 ·90 ·10
+Residence 0·39
+Urban 16 76 ·21 6 7 6 ·21 99 0 ·5
+Semi-urban 5 23 ·85 2 3 ·829 ·5
+CG, control group; MDG, Mediterranean diet group; MLG, Mediterranean lifestyle group.
+* Statistical significance ( P) was set at P < 0·05.
+† Comparisons between categorical variables were made using the χ2 test, and between continuous variables with the Kruskal –Wallis H test.
+168 C. N. Katsagoni et al .
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+Table 2. Intervention effects on lifestyle characteristics in the intention-to-treat population
+(Medians and interquartile ranges (IQR, 25th –75th); mean values and standard deviations; adjusted differences and 95 % confidence intervals; numbers and percentages)
+CG ( n 21) MDG ( n 21) MLG ( n 21)
+Baseline 6 months Baseline 6 months Baseline 6 months MDG v. CG MLG v.C G
+Median IQR Median IQR Median IQR Median IQR Median IQR Median IQR P*
+Adjusted
+difference** 95 % CI
+Adjusted
+difference** 95 % CI
+MedDietScore
+(0–55)
+30 27 –34 32 29 –35 32 30 –34 38 34 –41 35 32 –37 40 38 –42 <0·001† 5·3† 2·3, 8 ·36 ·9† 3·7, 10 ·1
+Energy intake (kJ) 8841 6355 –10397 7799 6109 –9389 9049 6125 –11079 7657 6029 –8745 8309 5908 –9523 6627 5418 –8489 0 ·96 −0·99 −0·79, 1 ·25 −0·98 −0·77, 1 ·23
+Carbohydrates (% EI) 0·87 1 ·31 −5·8, 8 ·40 ·02 −7·1, 7 ·1
+Mean 44 ·94 6 ·24 4 ·64 7 ·44 7 ·24 7 ·1
+SD 10·39 ·88 ·81 2 ·18 ·46 ·7
+Protein (%EI) 0·38 −1·27 −4·1, 1 ·60 ·29 −2·6, 3 ·2
+Mean 15 ·21 6 ·71 4 ·71 5 ·31 5 ·61 7 ·1
+SD 3·22 ·83 ·43 ·95 ·64 ·7
+Fat (% EI) 0·71 −1·6 −8·0, 4 ·8 −2·1 −8·4, 4 ·4
+Mean 40 ·53 9 ·54 2 ·43 8 ·33 8 ·23 6 ·9
+SD 9·48 ·59 ·31 0 ·96 ·75 ·2
+SFA (% EI) 0·18 −0·45 −3·3, 2 ·3 −2·0 −4·8, 0 ·8
+Mean 12 ·11 2 ·11 2 ·21 1 ·61 1 ·41 0 ·0
+SD 3·43 ·53 ·24 ·43 ·23 ·0
+MUFA (% EI) 0·03† 5·1† 0·33, 9 ·91 ·5 −3·2, 6 ·3
+Mean 18 ·81 7 ·11 9 ·89 22 ·71 7 ·51 8 ·03
+SD 6·46 ·06 8 ·29 ·34 ·24 ·5
+PUFA (% EI) 5 ·34 ·0–6·54 ·93 ·8–6·05 ·14 ·4–7·96 ·04 ·9–8·8 105 ·44 ·4–6·26 ·04 ·5–6·60 ·04† 1·3† 1·01, 1 ·69 1 ·2 −0·94, 1 ·58
+Dietary fibre
+(g/1000 kcal)
+10·57 ·4–14·67 ·54 ·6–11·59 ·06 ·8–11·51 4 ·61 1 ·4–17 9 ·34 ·7–13·71 7 ·01 3 ·2–20·1 <0·001† 1·96† 1·40, 2 ·76 2 ·24† 1·59, 3 ·15
+Sedentary activities (during
+leisure time (h/d))
+0·02† −0·95† −1·8, −0·05 −0·90† −1·8, −0·03
+Mean 3 ·23 ·63 ·83 ·03 ·73 ·1
+SD 1·91 ·61 ·51 ·52 ·11 ·7
+ΜΕΤ-min/d of low intensity
+PA
+672 492 –923 603 464 –906 705 606 –901 768 588 –935 762 502 –1032 665 611 –963 0 ·43 1 ·08 −0·85, 1 ·37 −0·96 −0·76,1·21
+ΜΕΤ-min/d of moderate P A 154 51 –411 153 28 –316 180 49 –387 205 103 –429 154 0 –311 171 17 –447 0 ·57 −0·79 −0·23, 2 ·71 ·36 −0·37, 5 ·02
+ΜΕΤ-min/d of vigorous P A 0 0 –00 0 –00 0 –32 0 0 –51 0 0 –151 103 0 –238 <0·001† 1·36 −0·37, 5 ·02 14 ·5† 3·49, 60 ·2
+T otalΜΕΤ-min/d 1623 1330 –1875 1531 1365 –1877 1718 1613 –1810 1721 1489 –1824 1655 1446 –1880 1718 1613 –1810 0 ·10 1 ·05 −0·95, 1 ·15 1 ·09 −0·99, 1 ·2
+PA L 0·27 0 ·03 −0·08, 0 ·10 ·07 −0·04, 0 ·2
+Mean 1 ·30 1 ·29 1 ·30 1 ·34 1 ·29 1 ·37
+SD 0·14 0 ·15 0 ·16 0 ·18 0 ·20 0 ·21
+Habitual sleep hours (h/d) 0·41 −0·2 −0·9, 0 ·40 ·1 −0·5, 0 ·8
+Mean 7 ·17 ·17 ·16 ·96 ·26 ·8
+SD 1·25 1 ·31 ·31 1 ·30 1 ·25
+Mid-day rest/naps (yes)‡ 0·04† 0·65 0 ·16, 2 ·50 ·23† 0·05, 0 ·97
+n 8 7 11 10 13 15
+%3 8 ·13 3 ·35 2 ·44 7 ·66 1 ·97 1 ·4
+Optimal sleep duration‡§ 0·87 0 ·71 0 ·2, 2 ·70 ·95 0 ·2, 3 ·6
+n 12 11 11 12 9 10
+%5 7 ·15 2 ·45 2 ·45 7 ·14 2 ·94 7 ·6
+Body weight (kg) 89 ·37 9 ·4–95·28 6 ·47 8 ·4–95·09 6 ·77 9 ·6–101 83 ·07 5 ·3–98·09 6 ·08 2 ·0–104 92 ·57 5 ·5–101 0 ·14 −2·7 −6·1, 0 ·68 −1·9 −5·3, 1 ·5
+% Weight loss || −2·1 −3·6, 0 ·3 −5·4 −8·2, −3·3 −6·3 −8·2, −1·10 ·01† −2·1† −1·1, −4·1 −1·8† −1·02, −3·5
+BMI (kg/m 2)3 0 ·04 28 ·2–33·12 9 ·49 27 ·8–32·93 1 ·67 27 ·4–33·62 8 ·21 25 ·9–31·53 2 ·44 28 ·4–35·03 0 ·55 26 ·6–33·30 ·008† −0·95† −0·92, −0·99 −0·96† −0·93, 1 ·00
+Abnormal WC ‡¶ 0·36 0 ·42 0 ·07, 2 ·30 ·29 0 ·05, 1 ·8
+n 90·57 6 ·27 6 ·24 7 ·67 1 ·46 1 ·9
+% 1 91 61 61 0 1 5 1 3
+CG, control group; MDG, Mediterranean diet group; MLG, Mediterranean lifestyle group; MET -min/d, overall metabolic equivalents of exercise per da y; NAFLD, non-alcoholic fatty liver disease; P A, physical activity; P AL, physical activity level;
+WC, waist circumference.
+* Statistical significance was indicated using ANCOVA for continuous variables and logistic regression analysis for binary variables. Bonferroni correction was used for pairwise comparisons among the three study groups.
+† Statistically significant. Statistical significance ( P) was set at P < 0·05.
+‡ Adjusted differences for binary outcomes (i.e. mid-day rest/naps, optimal sleep duration, abnormal WC) are from logistic regression with the same f ixed effects and covariates as the respective ANCOVA analyses.
+§ Optimal sleep defined as sleep ≥7 and ≤9h .
+|| Relative weight change calculated using the following equation: weight at 6 months −weight at baseline: weight at baseline × 100.
+¶ WC >102 cm for men and >88 cm for women.
+**Adjusted differences for continuous outcomes are from ANCOVA with data from intention-to-treat analysis (i.e. all patients who were randomly assig ned to a study group were included). Adjustments for all continuous variables were made for
+baseline value of the dependent variable and study group. Skewed variables (i.e. MET -min/d of low intensity, moderate and vigorous P A, total MET -min/d, body weight, BMI) were log-transformed for the analysis and are presented in their anti-
+logarithm form.
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+Table 3. Intervention effects on liver outcomes in the intention-to-treat population
+(Medians and interquartile ranges (IQR, 25th –75th); mean values and standard deviations; adjusted differences and 95 % confidence intervals; numbers and percentages)
+CG ( n 21) MDG ( n 21) MLG ( n 21)
+Baseline 6 months Baseline 6 months Baseline 6 months MDG v. CG MLG v.C G
+Median IQR Median IQR Median IQR Median IQR Median IQR Median IQR P†
+Adjusted
+difference* 95 % CI
+Adjusted
+difference* 95 % CI
+AL T (U/l) 44 24 –64 44 32 –58 51 30 –73 34 24 –46 54 39 –81 32 21 –41 0 ·09 −0·79 −0·57, 1 ·1 −0·75 −0·53, 1 ·04
+AL T< 40U/l‡ 0·08 0 ·62 0 ·15, 2 ·50 ·20§ 0 ·04, 0 ·88
+n 88 9 1 2 5 1 5
+%3 8 ·13 8 ·14 2 ·95 7 ·12 3 ·87 1 ·4
+AL T -50 % reduction‡ 0·009§ 0 ·33 0 ·05, 2 ·10 ·10§ 0 ·02, 0 ·56
+n 25 1 1
+%9 ·52 3 ·85 2 ·4
+GGT (U/l) 64 34 –170 73 31 –166 65 28 –96 40 23 –64 71 37 –178 51 26 –173 0 ·24 −0·79 −0·54, 1 ·15 −0·82 −0·57, 1 ·17
+GGT < 30 U/l‡ 0·36 0 ·42 0 ·07, 2 ·30 ·32 0 ·06, 1 ·7
+n 23 5 7 1 6
+%9 ·51 4 ·32 3 ·83 3 ·34 ·82 8 ·6
+Liver stiffness (kPa) 7 ·85 ·5–10·98 ·06 ·1–11·16 ·65 ·5–9·86 ·25 ·1–9·97 ·16 ·3–8·86 ·15 ·0–7·60 ·002§ −0·83§ −0·70, −0·98 −0·78§ −0·66, −0·93
+Liver stiffness ≤6·6k P a‡|| 0·06 0 ·09 0 ·08, 1 ·10 ·16§ 0 ·03, 0 ·9
+n 7 6 11 12 7 12
+%3 3 ·32 8 ·65 2 ·45 5 ·03 3 ·35 7 ·1
+NAFLD fibrosis score 0·65 −0·15 −0·70, 0 ·40 −0·20 −0·74, 0 ·34
+Mean −2·19 −2·21 −2·36 −2·38 −2·11 −2·09
+SD 1·41 ·11 ·31 ·51 ·31 ·3
+CG, control group; MDG, Mediterranean diet group; MLG, Mediterranean lifestyle group; AL T , alanine transaminase; AST , aspartate transaminase; GGT, γ-glutamyl-transpeptidase; NAFLD fibrosis score, index range: >0·676 – presence of
+fibrosis, <1·455 – absence of fibrosis, 1 ·455 to 0 ·675: indeterminate score.
+* Adjusted differences for continuous outcomes are from ANCOVA with data from intention-to-treat analysis (i.e. all patients who were randomly assi gned to a study group were included). Adjustments were made for baseline value of the
+dependent variable, % weight loss and study group. Skewed variables (i.e. AL T , GGT and liver stiffness) were log-transformed for the analysis and are presented in their anti-logarithm form.
+† Statistical significance was indicated using ANCOVA for continuous variables and logistic regression analysis for binary variables. Bonferroni c orrection was used for pairwise comparisons among the three study groups.
+‡ Adjusted differences for binary outcomes (i.e. AL T < 40 U/l, AL T -50 % reduction, GGT< 30 U/l and liver stiffness < 6·6 kPa) are from logistic regression with the same fixed effects and covariates as the respective ANCOVA analyses.
+§ Statistically significant. Statistical significance ( P) was set at P < 0·05.
+|| As reviewed by Abenavoli et al .(32) values of liver stiffness >6·6o r ≤6·6 kPa suggests the presence of significant or not fibrosis, respectively .
+170 C. N. Katsagoni et al .
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+Table 4. Intervention effects on biochemical profile in the intention-to-treat population
+(Medians and interquartile ranges (IQR, 25th –75th); mean values and standard deviations; adjusted differences and 95 % confidence intervals)
+CG ( n 21) MDG ( n 21) MLG ( n 21)
+Baseline 6 months Baseline 6 months Baseline 6 months MDG v. CG MLG v.C G
+Median IQR Median IQR Median IQR Median IQR Median IQR Median IQR P†
+Adjusted
+difference‡ 95 % CI
+Adjusted
+difference‡ 95 % CI
+Glucose (mmol/l) 0·75 − 0·7 − 7·2, 5 ·7 − 1·9 − 8·2, 4 ·3
+Mean 5 ·05 ·15 ·15 ·14 ·94 ·8
+SD 0·44 0 ·46 0 ·63 0 ·75 0 ·53 0 ·52
+Insulin (pmol/l) 85 ·45 7 ·4–122·07 8 ·94 8 ·1–121·3 116 ·27 1 ·7–147·88 5 ·46 1 ·0–127·0 100 ·46 4 ·6–147·18 6 ·15 3 ·1–122·00 ·78 − 1·0 − 0·7, 1 ·4 − 0·9 − 0·7, 1 ·3
+HOMA-IR 2 ·51 ·7–4·02 ·51 ·4–3·63 ·41 ·9–5·12 ·61 ·7–4·13 ·32 ·0–5·02 ·71 ·4–3·80 ·60 − 1·1 − 0·74, 1 ·5 − 0·9 − 0·6, 1 ·3
+TC (mmol/l) 0·08 − 0·9 − 0·7, 1 ·0 − 0·9 − 0·8, 1 ·1
+Mean 5 ·35 ·65 ·14 ·85 ·25 ·2
+SD 1·01 ·21 ·31 ·20 ·91 ·1
+T AG (mmol/l) 0·28 − 0·8 − 0·7, 1 ·1 − 0·9 − 0·7, 1 ·1
+Mean 1 ·51 ·51 ·51 ·21 ·81 ·5
+SD 0·78 0 ·74 1 ·02 0 ·57 0 ·94 0 ·65
+HDL (mmol/l) 1 ·10 ·9–1·51 ·10 ·9–1·61 ·00 ·9–1·51 ·11 ·0–1·61 ·10 ·9–1·31 ·10 ·9–1·30 ·04‡ +1 ·1 − 0·9, 1 ·2 − 0·9 − 0·9, 1 ·1
+LDL (mmol/l) 0·04‡ − 0·8‡ − 0·7, −0·9 − 0·9 − 0·8, 1 ·1
+Mean 3 ·33 ·63 ·22 ·93 ·13 ·2
+SD 0·91 ·01 ·00 ·90 ·81 ·0
+Non-HDL (mmol/l)§ 3 ·93 ·3–4·84 ·23 ·2–5·43 ·73 ·1–4·73 ·52 ·6–4·24 ·13 ·3–4·53 ·93 ·2–5·10 ·04‡ − 1·5‡ − 2·2, −1·0 − 1·2 − 1·7, 1 ·2
+T AG:HDL ratio 2 ·11 ·4–4·92 ·21 ·4–4·72 ·41 ·3–4·41 ·81 ·3–4·93 ·91 ·5–4·63 ·31 ·2–4·70 ·16 − 1·64 − 3·1, 1 ·1 − 1·32 − 2·4, 1 ·4
+CG, control group; MDG, Mediterranean diet group; MLG, Mediterranean lifestyle group; HOMA-IR, homoeostasis model assessment of insulin resistan ce; TC, total cholesterol.
+* Statistical significance was indicated using ANCOVA. Bonferroni correction was used for pairwise comparisons among the three study groups.
+† Statistically significant. Statistical significance ( P) was set at P < 0·05.
+‡ Adjusted differences are from ANCOVA with data from intention-to-treat analysis (i.e. all patients who were randomly assigned to a study group were i ncluded). Adjustments were made for baseline value of the dependent variable,
+% weight loss and study group. Skewed variables (i.e. insulin, HOMA-IR, HDL, non-HDL and T AG:HDL ratio) were log-transformed for the analysis and are presented in their anti-logarithm form.
+§ Non-HDL: determined by TC minus HDL-cholesterol.
+Lifestyle and non-alcoholic fatty liver 171
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+approaches, encourage patients to initiate and adhere to
+lifestyle modi ﬁcations, aiming at weight loss, engagement in
+physical activities and adoption of healthy dietary habits, as
+keystones in NAFLD management (1,35). Weight loss has been
+suggested as the most important factor for NAFLD treatment (36),
+and most of the studies providing hypoenergetic feeding
+regimes (alone or in combination with physical activity) in
+NAFLD patients have shown signi ﬁcant improvements in both
+liver enzymes and liver fat content
+(37,38). Indeed, according to
+the American Association for the Study of Liver Diseases, 3 –5%
+of weight loss is necessary to improve liver steatosis (39),
+although a greater weight loss (up to 10 %) may be required
+for histological improvements and NAFLD resolution
+(39,40,41).
+Furthermore, there are data supporting that as long as energetic
+restriction is applied the macronutrient composition of the diet
+(namely low-fat or low-carbohydrate diets) has little impact on
+NAFLD management
+(35). In our protocol, we aimed at a small
+weight loss (approximately 5 %) in all study groups, although
+only the intensive intervention groups achieved this weight loss.
+Furthermore, even though the diets that participants complied
+with had similar macronutrient composition in all study groups,
+different effects on biochemical and clinical liver function
+outcomes were recorded, after controlling for weight loss,
+implying that other characteristics of the intensive interventions
+(e.g. the Mediterranean dietary pattern or the physical activity)
+could have contributed to these outcomes.
+Regarding interventions based on the Mediterranean pattern,
+so far there are three published clinical trials
+(16,17,42) exploring
+the effect of a MD-based intervention on NAFLD; however,
+owing to methodological limitations, only the Australian
+randomised cross-over clinical trial by Ryan et al .
+(17) supports
+clear bene ﬁts of the adherence to the MD. In this study,
+12 volunteers with NAFLD were assigned either to MD or low-
+fat high-carbohydrate diet (control diet) for a 6-week period.
+Rapid hepatic steatosis improvements, as measured by
+1H-MRS,
+and increases in insulin sensitivity, as measured by hyper-
+insulinaemic–euglycaemic clamp, were observed only in the
+MD compared with the CG. Moreover, in this study, a minimal
+and not signi ﬁcant weight loss was recorded that did not differ
+between the two study groups. In our study, the MDG, which
+received an intervention aiming only at increasing adherence to
+the MD, although achieving a weight reduction similar to that
+of the MLG, showed improvements only in liver stiffness
+compared with the CG, after controlling for weight loss, and not
+in liver enzyme levels.
+MD has been suggested to exhibit bene ﬁcial effects in NAFLD
+treatment mainly owing to its foods choices with predominantly
+anti-inﬂammatory and antioxidant properties
+(43–45). Indeed,
+both the intensive care groups showed a signi ﬁcant increase in
+the consumption of whole grains, fruit, vegetables and nuts.
+Several phytochemicals and vitamins, from fruits and
+vegetables, and the low glycaemic response owing to the high
+content of ﬁbres, appear to be some of the mechanisms through
+which the MD might lower the degree of hepatic steatosis in
+NAFLD patients
+(43). Moreover, reductions in re ﬁned cereals,
+potatoes and red meat consumption that have been also
+observed in our study have been suggested to bene ﬁt NAFLD
+patients
+(46), as these food groups have been constantly
+associated with higher insulin resistance in apparently healthy
+populations(47,48), as well as in NAFLD patients (49).
+Apart from changes in the MD, both the intensive groups
+decreased time spent in sedentary activities, whereas MLG
+further increased vigorous exercise. Several studies support
+beneﬁcial effects of physical exercise interventions on NAFLD
+in terms of improving intrahepatic lipid content and amino-
+transferase blood levels
+(8). Indeed, these effects have been
+recorded irrespectively of the presence of obesity (50) and
+weight reduction(7). Moreover, reductions in sitting time have a
+positive effect on insulin resistance in patients with NAFLD (51),
+whereas long-term physical activity can lead to signi ﬁcant
+increase in the circulating soluble receptor of advanced
+glycation end (AGE) products levels, a sign of decreased
+AGE-mediated in ﬂammation, which has been linked with
+NAFLD presence (52) and progression (53). As far as sleep habits
+are concerned, mid-day rest/naps differed signi ﬁcantly in the
+MLG compared with the CG, whereas during the intervention
+participants in the MLG also increased the initially reduced
+sleep hours. The effect of sleep habits on NAFLD has not been
+thoroughly studied. Short sleep duration ( ≤5 v. >7 h) and poor
+sleep quality have been associated with an increased risk of
+NAFLD in men
+(54). In addition, a ‘healthy diet-optimal sleep
+lifestyle pattern ’ has been inversely associated with liver stiff-
+ness and insulin resistance, independently of BMI and energy
+intake in a sample of NAFLD patients (49). Whether changes in
+sleep habits have partially contributed to the liver bene ﬁts
+observed in the MLG is hard to tell given the small changes
+achieved by the participants. Nevertheless, the MLG improved
+most of the liver parameters examined (i.e. ALT normalisation,
+Α LT reduction to half levels, liver stiffness) compared with the
+CG, even after weight loss was taken into account. This fact
+suggests a potential synergistic and cumulative effect of the
+combination of adherence to the MD with enhanced physical
+activity and improved sleep habits, compared with the MD
+alone in NAFLD management. This intercorrelation of lifestyle
+habits has been also highlighted in the more recent description
+of the MD
+(18), in which MD is described as a lifestyle and not
+just a dietary pattern, attributing part of its properties in physical
+activity, adequate night sleep and mid-day rest
+(18). This per-
+spective has been also discussed by Ancel Keys and the other
+researchers who participated in the Seven countries study
+(55),
+and is also acknowledged by UNESCO, which inscribed
+MedDiet on the Representative List of the Intangible Cultural
+Heritage of Humanity and describes it as ‘a way of life – a
+lifestyle’.
+Regarding pathophysiological pathways, insulin resistance is
+considered the key pathogenic factor for NAFLD development
+and progression
+(56). However, in the present study, HOMA-IR,
+as a measure of insulin resistance, did not differ between
+groups at the end of the study. Possibly, other markers, more
+sensitive to changes in insulin resistance and insulin sensitivity,
+such as the use of hyperglycaemic clamp or hyperinsulinaemic –
+euglycaemic clamp methods, could have better identi ﬁed
+potential changes in insulin resistance
+(57,58). Nevertheless,
+according to the ‘multiple hit ’ hypothesis, NAFLD pathogenesis
+is multifactorial (5). Thus, we cannot rule out the possibility that
+alterations in other pathophysiological factors such as in
+172 C. N. Katsagoni et al .
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+proinﬂammatory cytokines production, adipokines, markers of
+oxidative stress or intestinal microbiome permeability might
+have mediated the bene ﬁcial effects of the Mediterranean life-
+style on NAFLD liver function outcomes.
+NFS and liver stiffness determined by elastography are con-
+sidered as useful non-invasive tools for the assessment of the
+severity of hepatic ﬁbrosis in NAFLD patients, whereas elas-
+trography has been reported to have better diagnostic perfor-
+mance for such assessment compared with NFS
+(59,60). However,
+their changes after any intervention and particularly the kinetics
+of these changes are not well studied. In the present study, liver
+stiffness improved in both intensive intervention groups,
+whereas NFS remained unchanged. A possible explanation
+might be that multiple processes, other than ﬁbrosis, can con-
+tribute to elastographic liver stiffness, that is in ﬂammation and
+fat content
+(61,62), which could improve much earlier than
+ﬁbrosis itself after intervention leading to improved LSM without
+improvement in ﬁbrosis.
+The present study is not deprived of limitations. One limita-
+tion is the high dropout rate that was recorded in the CG. Given
+the higher severity of their condition (i.e. higher liver stiffness
+and BMI compared with the controls who did not drop out),
+probably these patients were looking for a closer monitoring of
+their diet. Nevertheless, the analysis was performed in the ITT
+population (i.e. including all patients who were randomly
+allocated to a study group), and without signi ﬁcant differences
+compared with the sensitivity (i.e. per protocol) analyses.
+Diagnosis of the disease was based on evidence of hepatic
+steatosis on ultrasound combined with elevated ALT and/or
+GGT levels. The upper limit of normal ALT used in current
+study was the traditional one (i.e. ALT < 40 U/I) and not the
+lower limits suggested by Prati et al .
+(63) that have not been
+validated in our population. Nevertheless, the ef ﬁcacy of our
+intervention was based not only on the clinically signi ﬁcant
+decreases of ALT within normal levels but also to the 50 %
+decrease of its initial levels. In addition, NAFLD severity
+assessment was based on shear-wave elastography instead of
+liver biopsy, which is the gold-standard method. However, as
+liver biopsy is an invasive procedure carrying potential risks of
+several complications, newer commercially available devices of
+liver elastography, such as share-wave elastography, provide
+improved diagnostic accuracy compared with other elasto-
+graphic methods and limit various physical limitations of the
+method, including the presence of obesity. On the other hand,
+the proposed intervention is simple and does not require
+sophisticated equipment, making intervention feasible even in
+healthcare services of limited resources, whereas it is based on
+small changes in everyday life that could constitute a realistic
+plan for the majority of NAFLD patients.
+Conclusions
+Compared with usual clinical care, a 6-month weight-loss pro-
+gramme based on Mediterranean lifestyle was successful in
+improving liver function outcomes, namely ALT levels and liver
+stiffness in NAFLD patients, after adjusting for weight loss.
+Therefore, small changes in everyday life towards the
+Mediterranean lifestyle, along with weight loss, can be a suc-
+cessful treatment option for patients with NAFLD.
+Acknowledgements
+The authors would like to thank all the participants who took
+part in the study and all the colleagues from Harokopio Uni-
+versity, Laiko and Hippokration General Hospital who con-
+tributed their expertise to this study.
+C. N. K. has received a Fellowship of Excellence for Post-
+graduate Research in Greece-Siemens Program, awarded by the
+State Scholarships Foundation (IKY). However, the State
+Scholarships Foundation had no role in the design, analysis or
+writing of this article. This research received no speci ﬁc grant
+from any funding agency, commercial or not-for-pro ﬁt sectors.
+G. V. P. and M. D. K. contributed to the study concept and
+design; C. N. K., G. V. P., P. I., M. D., A. A., N. P. and M.-V. P.
+contributed to the acquisition of the data; C. N. K. and E. F.
+conducted the biochemical analysis; C. N. K. performed the
+statistical analyses and drafted the manuscript; G. V. P., E. F. and
+M. D. K. critically revised the manuscript and all authors read
+and approved the ﬁnal manuscript.
+The authors declare that there are no con ﬂicts of interest.
+Supplementary material
+For supplementary material/s referred to in this article, please
+visit https://doi.org/10.1017/S000711451800137X
+References
+1. European Association for the Study of the Liver (EASL),
+European Association for the Study of Diabetes (EASD)
+& European Association for the Study of Obesity (EASO)
+(2016) Clinical Practice Guidelines for the management of
+non-alcoholic fatty liver disease. J Hepatol 64, 1388 –1402.
+2. Ballestri S, Zona S, Targher G, et al. (2016) Nonalcoholic fatty
+liver disease is associated with an almost twofold increased
+risk of incident type 2 diabetes and metabolic syndrome.
+Evidence from a systematic review and meta-analysis.
+J Gastroenterol Hepatol 31, 936 –944.
+3. Miele L & Targher G (2015) Understanding the association
+between developing a fatty liver and subsequent cardio-
+metabolic complications. Expert Rev Gastroenterol Hepatol 9,
+1243–1245.
+4. Levene AP & Goldin RD (2012) The epidemiology,
+pathogenesis and histopathology of fatty liver disease.
+Histopathology 61, 141 –152.
+5. Buzzetti E, Pinzani M & Tsochatzis EA (2016) The multiple-hit
+pathogenesis of non-alcoholic fatty liver disease (NAFLD).
+Metabolism 65, 1038 –1048.
+6. Rinella ME, Loomba R, Caldwell SH, et al . (2014) Con-
+troversies in the diagnosis and management of NAFLD
+and NASH. Gastroenterol Hepatol (N Y) 10, 219 –227.
+7. Katsagoni CN, Georgoulis M, Papatheodoridis GV, et al .
+(2017) Effects of lifestyle interventions on clinical character-
+istics of patients with non-alcoholic fatty liver disease: a meta-
+analysis. Metabolism 68, 119 –132.
+8. Orci LA, Gariani K, Oldani G, et al . (2016) Exercise-based
+interventions for nonalcoholic fatty liver disease: a meta-analysis
+Lifestyle and non-alcoholic fatty liver 173
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+and meta-regression. Clin Gastroenterol Hepatol 14,
+1398–1411.
+9. Keating SE, Hackett DA, George J, et al . (2012) Exercise and
+non-alcoholic fatty liver disease: a systematic review and
+meta-analysis. J Hepatol 57, 157 –166.
+10. Musso G, Cassader M, Rosina F, et al . (2012) Impact of
+current treatments on liver disease, glucose metabolism and
+cardiovascular risk in non-alcoholic fatty liver disease
+(NAFLD): a systematic review and meta-analysis of rando-
+mised trials. Diabetologia 55, 885 –904.
+11. So ﬁ F, Macchi C, Abbate R, et al . (2014) Mediterranean diet
+and health status: an updated meta-analysis and a proposal for
+a literature-based adherence score. Public Health Nutr 17,
+2769–2782.
+12. Esposito K, Maiorino MI, Bellastella G, et al . (2017) Medi-
+terranean diet for type 2 diabetes: cardiometabolic bene ﬁts.
+Endocrine 56,2 7 –32.
+13. Grosso G, Marventano S, Yang J, et al . (2017) A comprehen-
+sive meta-analysis on evidence of Mediterranean diet and
+cardiovascular disease: are individual components equal? Crit
+Rev Food Sci Nutr 57, 3218 –3232.
+14. Kontogianni MD, Tileli N, Margariti A, et al. (2014) Adherence
+to the Mediterranean diet is associated with the severity of
+non-alcoholic fatty liver disease. Clin Nutr 33, 678 –683.
+15. Georgoulis M, Kontogianni MD, Margariti A, et al . (2015)
+Associations between dietary intake and the presence of the
+metabolic syndrome in patients with non-alcoholic fatty liver
+disease. J Hum Nutr Diet 28, 409 –415.
+16. Trovato FM, Catalano D, Martines GF, et al. (2015) Mediterranean
+diet and non-alcoholic fatty liver disease: the need of extended
+and comprehensive interventions.Clin Nutr 34,8 6–88.
+17. Ryan MC, Itsiopoulos C, Thodis T, et al . (2013) The Medi-
+terranean diet improves hepatic steatosis and insulin sensi-
+tivity in individuals with non-alcoholic fatty liver disease.
+J Hepatol 59, 138 –143.
+18. Bach-Faig A, Berry EM, Lairon D, et al . (2011) Mediterranean
+diet pyramid today. Science and cultural updates. Public
+Health Nutr 14, 2274 –2284.
+19. Moher D, Hopewell S, Schulz KF, et al . (2010) CONSORT
+2010 explanation and elaboration: updated guidelines for
+reporting parallel group randomised trials. J Clin Epidemiol
+63,e 1 –e37.
+20. Cullen KWB, Baranowski T & Smith SP (2001) Using goal
+setting as a strategy for dietary behavior change. J Am Diet
+Assoc 101, 562 –566.
+21. Ministry of Health & Welfare of Greece (1999) Dietary guide-
+lines for adults in Greece. Arch Hellenic Med 16,5 1 6–524.
+22. Mukherjee S, Patel SR, Kales SN, et al . (2015) An of ﬁcial
+American Thoracic Society statement: the importance of
+healthy sleep. Recommendations and future priorities. Am J
+Respir Crit Care Med 191, 1450 –1458.
+23. Bountziouka V, Bathrellou E, Giotopoulou A, et al . (2012)
+Development, repeatability and validity regarding energy and
+macronutrient intake of a semi-quantitative food frequency
+questionnaire: methodological considerations. Nutr Metab
+Cardiovasc Dis 22, 659 –667.
+24. Panagiotakos DB, Pitsavos C, Arvaniti F, et al . (2007)
+Adherence to the Mediterranean food pattern predicts the
+prevalence of hypertension, hypercholesterolemia, diabetes
+and obesity, among healthy adults; the accuracy of the
+MedDietScore. Prev Med 44, 335 –340.
+25. Moshfegh AJ, Friday JE, Goldman JP, et al. (1999) Presence of
+inulin and oligofructose in the diets of Americans. J Nutr 129,
+1407S–1411S.
+26. Kavouras SA, Maraki MI, Kollia M, et al. (2016) Development,
+reliability and validity of a physical activity questionnaire for
+estimating energy expenditure in Greek adults. Sci Sports 31,
+e47–e53.
+27. Sedentary Behaviour Research Network (2012) Letter to the
+editor: standardized use of the terms ‘sedentary’ and ‘seden-
+tary behaviours ’. Appl Physiol Nutr Metab 37, 540 –542.
+28. Soldatos CR, Dikeos DG & Paparrigopoulos TJ (2003) The
+diagnostic validity of the Athens Insomnia Scale. J Psychosom
+Res 55, 263 –267.
+29. Friedewald WT, Levy RI & Fredrickson DS (1972) Estimation
+of the concentration of low-density lipoprotein cholesterol in
+plasma, without use of the preparative ultracentrifuge. Clin
+Chem 18, 499 –502.
+30. Matthews DR, Hosker JP, Rudenski AS, et al . (1985) Home-
+ostasis model assessment: insulin resistance and beta-cell
+function from fasting plasma glucose and insulin
+concentrations in man. Diabetologia 28, 412 –419.
+31. Angulo P, Hui JM, Marchesini G, et al . (2007) The NAFLD
+ﬁbrosis score: a noninvasive system that identi ﬁes liver ﬁbrosis
+in patients with NAFLD. Hepatology 45, 846 –854.
+32. Abenavoli L & Beaugrand M (2012) Transient elastography
+in non-alcoholic fatty liver disease. Ann Hepatol 11,
+172–178.
+33. Georgoulis M, Kontogianni MD, Tileli N, et al . (2014) The
+impact of cereal grain consumption on the development and
+severity of non-alcoholic fatty liver disease. Eur J Nutr 53,
+1727–1735.
+34. Liao JM & Stack CB (2017) Annals understanding clinical
+research: implications of missing data due to dropout. Ann
+Intern Med 166, 596 –598.
+35. Marchesini G, Petta S & Dalle Grave R (2016) Diet,
+weight loss, and liver health in nonalcoholic fatty liver disease:
+Pathophysiology, evidence, and practice. Hepatology 63,
+2032–2043.
+36. Romero-Gomez M, Zelber-Sagi S & Trenell M (2017) Treat-
+ment of NAFLD with diet, physical activity and exercise.
+J Hepatol 67, 829 –846.
+37. Parry SA & Hodson L (2017) In ﬂuence of dietary macro-
+nutrients on liver fat accumulation and metabolism. J Investig
+Med 65, 1102 –1115.
+38. McCarthy EM & Rinella ME (2012) The role of diet and nutrient
+composition in nonalcoholic Fatty liver disease. J Acad Nutr
+Diet 112, 401 –409.
+39. Chalasani N, Younossi Z, Lavine JE, et al. (2012) The diagnosis
+and management of non-alcoholic fatty liver disease: practice
+guideline by the American Association for the Study of Liver
+Diseases, American College of Gastroenterology, and the
+American Gastroenterological Association. Am J Gastroenterol
+107, 811 –826.
+40. Vilar-Gomez E, Martinez-Perez Y, Calzadilla-Bertot L, et al .
+(2015) Weight loss through lifestyle modi ﬁcation signi ﬁcantly
+reduces features of nonalcoholic steatohepatitis. Gastro-
+enterology 149, 367 –378, e365; quiz e314 –365.
+41. Wong VW, Chan RS, Wong GL, et al. (2013) Community-based
+lifestyle modi ﬁcation programme for non-alcoholic
+fatty liver disease: a randomized controlled trial. JH e p a t o l59,
+536–542.
+42. Misciagna G, Del Pilar Diaz M, Caramia DV, et al. (2017) Effect
+of a low glycemic index Mediterranean diet on non-alcoholic
+fatty liver disease. A randomized controlled clinici trial. J Nutr
+Health Aging 21, 404 –412.
+43. Godos J, Federico A, Dallio M, et al. (2017) Mediterranean diet
+and nonalcoholic fatty liver disease: molecular mechanisms of
+protection. Int J Food Sci Nutr 68,1 8 –27.
+44. Abenavoli L, Greco M, Milic N, et al . (2017) Effect of Medi-
+terranean diet and antioxidant formulation in non-alcoholic
+fatty liver disease: a randomized study. Nutrients 9, 870.
+174 C. N. Katsagoni et al .
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press
+45. Zelber-Sagi S, Salomone F & Mlynarsky L (2017) The
+Mediterranean dietary pattern as the diet of choice for non-
+alcoholic fatty liver disease: evidence and plausible mechan-
+isms. Liver Int 37, 936 –949.
+46. Finelli C & Tarantino G (2012) Is there any consensus as to
+what diet or lifestyle approach is the right one for NAFLD
+patients? J Gastrointestin Liver Dis 21, 293 –302.
+47. Kim Y, Keogh JB & Clifton PM (2017) Consumption of red and
+processed meat and re ﬁned grains for 4 weeks decreases
+insulin sensitivity in insulin-resistant adults: a randomized
+crossover study. Metabolism 68, 173 –183.
+48. Kim Y, Keogh JB & Clifton PM (2016) Differential effects of red
+meat/reﬁned grain diet and dairy/chicken/nuts/whole grain
+diet on glucose, insulin and triglyceride in a randomized
+crossover study. Nutrients 8, 687.
+49. Katsagoni CN, Papatheodoridis GV, Papageorgiou MV,
+et al . (2017) A ‘healthy diet-optimal sleep ’ lifestyle pattern is
+inversely associated with liver stiffness and insulin resistance
+in patients with nonalcoholic fatty liver disease. Appl Physiol
+Nutr Metab 42, 250 –256.
+50. Bae JC, Suh S, Park SE, et al . (2012) Regular exercise is
+associated with a reduction in the risk of NAFLD and
+decreased liver enzymes in individuals with NAFLD inde-
+pendent of obesity in Korean adults. PLOS ONE 7, e46819.
+51. Sabinicz A, Maciejewska D, Kaczorowska M, et al . (2016)
+Reduction of sitting time has a positive effect on the decrease
+of insulin resistance in patients with non-alcoholic fatty liver
+disease. Prz Gastroenterol 11, 257 –262.
+52. Palma-Duran SA, Kontogianni MD, Vlassopoulos A, et al .
+(2018) Serum levels of advanced glycation end-products
+(AGEs) and the decoy soluble receptor for AGEs (sRAGE)
+can discriminate non-alcoholic fatty liver disease in age-,
+sex- and BMI-matched normo-glycemic adults. Metabolism
+83, 120 –127.
+53. Sponder M, Campean IA, Emich M, et al . (2018) Long-term
+physical activity leads to a signi ﬁcant increase in serum sRAGE
+levels: a sign of decreased AGE-mediated in ﬂammation due to
+physical activity? Heart Vessels (epublication ahead of print
+version 24 January 2018).
+54. Kim CW, Yun KE, Jung HS, et al . (2013) Sleep duration and
+quality in relation to non-alcoholic fatty liver disease in
+middle-aged workers and their spouses. J Hepatol 59,
+351–
+357.
+55. Keys A (1986) Serum cholesterol response to dietary choles-
+terol. Am J Clin Nutr 44, 309.
+56. Bugianesi E, Moscatiello S, Ciaravella MF, et al . (2010) Insulin
+resistance in nonalcoholic fatty liver disease. Curr Pharm Des
+16, 1941 –1951.
+57. Tam CS, Xie W, Johnson WD, et al . (2012) De ﬁning insulin
+resistance from hyperinsulinemic-euglycemic clamps. Dia-
+betes Care 35, 1605 –1610.
+58. Singh B & Saxena A (2010) Surrogate markers of insulin
+resistance: a review. World J Diabetes 1,3 6 –47.
+59. Aykut UE, Akyuz U, Yesil A, et al . (2014) A comparison of
+FibroMeter NAFLD Score, NAFLD ﬁbrosis score, and transient
+elastography as noninvasive diagnostic tools for hepatic
+ﬁbrosis in patients with biopsy-proven non-alcoholic fatty
+liver disease. Scand J Gastroenterol 49, 1343 –1348.
+60. Xiao G, Zhu S, Xiao X, et al. (2017) Comparison of laboratory
+tests, ultrasound, or magnetic resonance elastography to
+detect ﬁbrosis in patients with nonalcoholic fatty liver disease:
+a meta-analysis. Hepatology 66, 1486 –1501.
+61. Karanjia RN, Crossey MM, Cox IJ, et al . (2016) Hepatic
+steatosis and ﬁbrosis: non-invasive assessment. World J
+Gastroenterol 22, 9880 –9897.
+62. European Association for Study of Liver & Asociacion
+Latinoamericana para el Estudio del Higado (2015) EASL-ALEH
+Clinical Practice Guidelines: non-invasive tests for evaluation of
+liver disease severity and prognosis. JH e p a t o l63,2 3 7–264.
+63. Prati D, Taioli E, Zanella A, et al. (2002) Updated de ﬁnitions of
+healthy ranges for serum alanine aminotransferase levels. Ann
+Intern Med 137,1 –10.
+Lifestyle and non-alcoholic fatty liver 175
+https://doi.org/10.1017/S000711451800137X
+ Published online by Cambridge University Press

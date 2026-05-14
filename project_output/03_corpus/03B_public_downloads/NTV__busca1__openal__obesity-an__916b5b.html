@@ -1,0 +1,1411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 7]><html xmlns="http://www.w3.org/1999/xhtml" lang="eng" xml:lang="eng" class="ie7"><![endif]-->
+<!--[if IE 8]><html xmlns="http://www.w3.org/1999/xhtml" lang="eng" xml:lang="eng" class="ie8"><![endif]-->
+<!--[if IE 9]><html xmlns="http://www.w3.org/1999/xhtml" lang="eng" xml:lang="eng" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="eng" xml:lang="eng"><!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name = "format-detection" content = "telephone=no">
+<TITLE>Psychiatry Investigation</TITLE>
+<meta name="google-site-verification" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1" />
+<META NAME="Title" CONTENT="Psychiatry Investigation">
+<META NAME="Subject" CONTENT="Psychiatry Investigation, Psychiatry Investig,  Korean Neuropsychiatric Association">
+<META NAME="Description" CONTENT="The Psychiatry Investigation (Psychiatry Investig) provides stroke clinicians and researchers with peer-reviewed articles on clinical and basic investigation of cerebral circulation and associated diseases to enhance patient management, education, clinical or experimental research, and professionalism. The jour-nal will consider submissions in areas including, but not limited to, the following: pathophysiology, risk factors, symptomatology, imaging, treat¬ment, and rehabilitation of stroke. We have a particular interest in strokes in Asian populations as they have features distinct from strokes in the other part of the world. Clinical researches on intracranial atherosclerosis, small vessel diseases, hemorrhagic strokes, and relevant basic research¬es are welcome, as are issues in epidemiology, public education, and clinical practice guidelines in Asian countries.">
+<META NAME="Keywords" CONTENT="Psychiatry Investigation, Psychiatry Investig Korean Neuropsychiatric Association">
+<link rel="shortcut icon" href="/image/icon/favicon.ico">
+<link type="text/css" rel="stylesheet" href="/css/common_v1.1.css" />
+<link type="text/css" rel="stylesheet" href="/css/style.css" />
+<script type="text/javascript" src="/script/jquery.js"></script>
+<script type="text/javascript" src="/script/jquery.placeholder.js"></script>
+<script type="text/javascript" src="/script/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="/script/user.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	$("#gnb>li").mouseover(function(){
+		$(".globalSearch").css("display", "none");
+	});
+});
+
+function journal_download(type, sid, filename) {
+	var increase_column;
+
+	if(type == "pdf") {
+		var openWindow = window.open("about:blank");
+		openWindow.location.href = '/upload/pdf/' + filename;
+
+		increase_column = "pdf_down";
+
+	} else if(type == "epub") {		
+		location.href = '/func/download.php?' + filename;		
+		increase_column = "epub_down";
+	}
+
+	$.ajax({
+		type: 'POST',
+		data: {table: 'journal_tbl', column: increase_column, count: 1, condition_column: 'sid', condition_value: sid},
+		url: '/func/count_increase.php'
+	});
+}
+
+var acIdx = -1;
+	function autoCompleteHead(v) {
+		if(event.keyCode >= 37 && event.keyCode <= 40) {
+			if(event.keyCode % 2) return;
+			var max = $(".autoKeywords").size();
+			if(event.keyCode == 38) acIdx--;
+			else if(event.keyCode == 40) acIdx++;
+			if(acIdx < 0) acIdx = max-1;
+			if(acIdx > max-1) acIdx = 0;
+			$(".autoKeywords").css("background","#ffffff");
+			$(".autoKeywords").eq(acIdx).css("background","#e9e9e9");
+			$("input[name='term_all']").val($(".autoKeywords").eq(acIdx).text());
+			return;
+		}
+		acIdx = -1;
+		$.post("/func/autoComplete.php", "value="+v, function (d, s) {
+			if(s == "success") {
+				if(d != "" && v.length > 1) {
+					$("#autoCompleteLayerHead").attr("class", "");
+					$("#autoCompleteLayerHead").html(d);
+				} else {
+					$("#autoCompleteLayerHead").attr("class", "none");
+					$("#autoCompleteLayerHead").html("");
+				}
+			}
+		});
+	}
+	var autoComplete_ck = 0;
+	function term_all_onblur(){
+		if(autoComplete_ck == 0){
+			$("#autoCompleteLayerHead").html("");
+			$("#autoCompleteLayerHead").attr("class", "none");
+		}
+	}
+	function transText(f) {
+		if(!f.term_all.value) return false;
+	}
+
+//]]>
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C1S6QC5H4F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C1S6QC5H4F');
+</script></head>
+<body>
+<div class="wrapper">
+
+
+	
+	<div class="headerWrap">
+		
+		<div class="header">
+			<div class="header_navi">
+				<div class="util_navi">
+					<ul class="utilMenu">
+						<li><a href="/" title="Home">Home</a></li>
+						<li><a href="http://mc03.manuscriptcentral.com/psychiatryinvestig" target="_new" title="E-submission">E-Submission</a></li>
+						<li><a href="/about/sitemap.php" title="Sitemap">Sitemap</a></li>
+						<li><a href="/about/contact.php" title="Contact Us">Contact Us</a></li>
+						<li>
+							<div id="google_translate_element" style='padding-top:0;height:20px;'></div><script type="text/javascript">
+							function googleTranslateElementInit() {
+							  new google.translate.TranslateElement({pageLanguage: '', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+							}
+							</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+						</li>
+					</ul>
+				</div>
+			</div>			
+			<div class="header_logo">
+				<h1><a href="/" title="Home"><img src="/image/b_top_logo.gif" alt="Psychiatry Investigation" /></a></h1>    
+				<p class="qrCode">			
+					<img src="/image/b_top_img.gif" alt="QR Code" class="qr" />
+				</p>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="gnbWrap">
+				<div class="gnb_menu">
+					<ul id="gnb">
+						<li><a href="/" title="Home">HOME</a></li>
+						<li><a href="/about/" title="About">ABOUT</a>
+							<ul class="subMenu m1">
+							<li><a href="/about/index.php" title="Aims and Scope">Aims and Scope</a></li>
+<li><a href="/about/about.php" title="About the Journal">About the Journal</a></li>
+<li><a href="/about/editorial.php" title="Editorial Board">Editorial Board</a></li>
+<li><a href="/about/open_access.php" title="Open Access">Open Access</a></li>
+<li><a href="/about/contact.php" title="Contact us">Contact us</a></li>
+							</ul>
+						</li>
+
+
+						<li><a href="/authors/authors.php" title="AUTHOR INFORMATION">AUTHOR INFORMATION&#160;</a>
+							<ul class="subMenu m2" style='width:180px;'>
+									<li><a href="/authors/authors.php" title="Instructions for Authors">Instructions for Authors</a></li>
+<li><a href="http://mc03.manuscriptcentral.com/psychiatryinvestig/" title="E-Submission"target="_blank">E-Submission</a></li>
+<li><a href="/authors/guide.php" title="Ethical Policy">Ethical Policy</a></li>
+<li><a href="/authors/checklist.php" title="Author’s Checklist">Author’s Checklist</a></li>
+<li><a href="/authors/copyright_transfer_agreement.php" title="Copyright Transfer Form">Copyright Transfer Form</a></li>
+							</ul>
+						</li>
+
+
+						<li><a href="/articles/category.php" title="ARTICLE CATEGORY"><!--ARTICLE CATEGORY-->ARTICLE CATEGORY&#160;</a>
+							
+							<dl class="subMenu m3">
+								<dd>
+									<ul>
+									<li><a href="/articles/category.php?article_category=Review Article" title="Review Article">Review Article</a></li>
+<li><a href="/articles/category.php?article_category=Original Article" title="Original Article">Original Article</a></li>
+<li><a href="/articles/category.php?article_category=Special Article" title="Special Article">Special Article</a></li>
+<li><a href="/articles/category.php?article_category=Case Report" title="Case Report">Case Report</a></li>
+<li><a href="/articles/category.php?article_category=Brief Report" title="Brief Report">Brief Report</a></li>
+<li><a href="/articles/category.php?article_category=Study Protocol" title="Study Protocol">Study Protocol</a></li>
+<li><a href="/articles/category.php?article_category=Editorial" title="Editorial">Editorial</a></li>
+<li><a href="/articles/category.php?article_category=Letter to the Editor" title="Letter to the Editor">Letter to the Editor</a></li>
+<li><a href="/articles/category.php?article_category=Others" title="Others">Others</a></li>
+	
+									<p><a href="/articles/category.php" title="Browse all articles">Browse all articles &gt;</a></p>						
+								</dd>
+							</dl>	
+						</li>
+
+
+
+						<li><a href="/articles/archive.php" title="BROWSE ARTICLES"><!--BROWSE ARTICLES-->BROWSE ARTICLES&#160;</a>
+							<dl class="subMenu m4">
+								<dd>
+									<ul>
+									<li><a href="/articles/archive.php" title="All Issues">All Issues</a></li>
+<li><a href="/current/" title="New Issue">New Issue</a></li>
+<li><a href="/articles/print.php" title="Ahead-of Print">Ahead-of Print</a></li>
+<li><a href="/articles/mostread.php" title="2y Most Read">2y Most Read</a></li>
+<li><a href="/articles/mostcited.php" title="2y Most Cited">2y Most Cited</a></li>
+<li><a href="/articles/mostdownload.php" title="Most Download">Most Download</a></li>
+<li><a href="/articles/funded.php" title="Funded Articles">Funded Articles</a></li>
+<li><a href="/articles/search.php" title="Psychiatry Investig Search">Psychiatry Investig Search</a></li>
+<li><a href="/articles/author_index.php" title="Author Index">Author Index</a></li>
+									</ul>
+								</dd>
+							</dl>
+						</li>
+
+
+
+					</ul>
+
+					<ul class="btn">
+						<li><a href="#" class="viewSearch" title="Search"><img src="/image/headerBtn_search.gif" alt="Search" class="viewSearch" title="Search"/></a></li>
+						<li><a href="/articles/search.php" title="Advanced Search"><img src="/image/headerBtn_search2.gif" alt="Advanced Search" /></a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="globalSearch">
+		
+			<dl>
+				<dt class="hidden">Search</dt>
+				<dd>
+					<form name="searformform" method="post" action="/articles/search_result.php" onsubmit="return transText(this);">
+						<fieldset>
+							<legend>Psychiatry Investig Search</legend>
+							<input type="text" name="term_all" autocomplete="off" value='' placeholder="Keyword, Title, Author, or Citation" class="_placeholder" onkeyup="autoCompleteHead(this.value);" onfocus="autoCompleteHead(this.value);" onblur="term_all_onblur();" />
+							<span class="search"><input class="opacity0" type="submit" value="Search" /></span>
+						</fieldset>
+					</form>
+					<div id="autoCompleteLayerHead" class="none" ></div>
+					<p class="close"><a href="#">CLOSE</a></p>
+				</dd>
+			</dl>		
+		</div>
+
+	</div>
+	<!-- //headerWrap -->
+	<hr />
+<div id="container">	
+	<div class="contents">
+	
+		<div class="titArea">
+			<h2>Most Download</h2>
+			
+			<dl class="pagePath">
+				<dt class="hidden">Page Path</dt>
+				<dd>
+					<ul>
+						<li>HOME</li>
+						<li>BROWSE ARTICLES</li>
+						<li>Most Download</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		
+		
+
+ <!-- <p>"Most Download" Articles are updated quarterly. Below are <I>Psychiatry Investig</I>’s most frequently downloaded  articles for the previous last months.</p>
+ -->
+								
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1656"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Smartphone Addiction Among University Students’ During the Post-COVID-19 Era: The Role of Emotional Intelligence and Future Anxiety							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(1,488 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Hong-xin Zhang							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2023;20(10):951-961. &nbsp;&nbsp;Published online October 24, 2023							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2023.0021"><font class="doi">https://doi.org/10.30773/pi.2023.0021</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001156667400008&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 8</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1656" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 13</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1656" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1656&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1656", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMy0wMDIxLmVwdWI=&filename=cGktMjAyMy0wMDIxLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-69K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1656", "pi-2023-0021.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -280K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=42"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								The 12-Item General Health Questionnaire as an Effective Mental Health Screening Tool for General Korean Adult Population							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(1,390 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Young Ju Kim, Maeng Je Cho, Subin Park, Jin Pyo Hong, Jee Hoon Sohn, Jae Nam Bae, Hong Jin Jeon, Sung Man Chang, Hae Woo Lee, Jong-Ik Park							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2013;10(4):352-358. &nbsp;&nbsp;Published online December 16, 2013							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.4306/pi.2013.10.4.352"><font class="doi">https://doi.org/10.4306/pi.2013.10.4.352</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="/journal/CitedBy.php?number=42" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 46</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=42" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=42&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "42", "pi-10-352.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -369K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1838"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Clinical Significance of the Vineland Adaptive Behavior Scale-II in Children With Developmental Disabilities							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(1,542 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Gyeongwon Park, Jichul Kim, Taeyeop Lee, Hyo-Won Kim							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(12):1407-1414. &nbsp;&nbsp;Published online December 23, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0140"><font class="doi">https://doi.org/10.30773/pi.2024.0140</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001382922000011&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 2</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1838" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 4</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1838" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1838&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1838", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMTQwLmVwdWI=&filename=cGktMjAyNC0wMTQwLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-340K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1838", "pi-2024-0140.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -611K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1838#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -611K'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1761"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								The Complexity of Borderline Personality Disorder: Network Analysis of Personality Factors and Defense Styles in the Context of Borderline Personality Organization							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(981 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Seokho Yun, So-Hye Jo, Hye-Jin Jeon, Hye-Geum Kim, Eun-Jin Cheon, Bon-Hoon Koo							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(6):672-679. &nbsp;&nbsp;Published online June 24, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0085"><font class="doi">https://doi.org/10.30773/pi.2024.0085</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001255252600014&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 2</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1761" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 3</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1761" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1761&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1761", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMDg1LmVwdWI=&filename=cGktMjAyNC0wMDg1LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-318K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1761", "pi-2024-0085.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -1.4M'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=848"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Stress and Heart Rate Variability: A Meta-Analysis and Review of the Literature							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(3,120 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Hye-Geum Kim, Eun-Jin Cheon, Dai-Seg Bai, Young Hwan Lee, Bon-Hoon Koo							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2018;15(3):235-245. &nbsp;&nbsp;Published online February 28, 2018							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2017.08.17"><font class="doi">https://doi.org/10.30773/pi.2017.08.17</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="/journal/CitedBy.php?number=848" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 1590</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=848" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=848&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "848", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAxNy0wOC0xNy5lcHVi&filename=cGktMjAxNy0wOC0xNy5lcHVi")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-64K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "848", "pi-2017-08-17.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -427K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1754"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								The Relationship Between Fast Food Consumption and Daily Lifestyle Changes During School Closures Following the COVID-19 Pandemic: A Cross-Sectional Study Among Adolescents in Korea							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(636 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Ju-Yeon Lee, Shinhyun Moon, Seo-Hyun Cho, Honey Kim, Hee-Ju Kang, Seon-Young Kim, Seunghyong Ryu, Jae-Min Kim, Il-Seon Shin, Sung-Wan Kim							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(6):610-617. &nbsp;&nbsp;Published online June 24, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2023.0283"><font class="doi">https://doi.org/10.30773/pi.2023.0283</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001255252600007&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 1</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1754" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 1</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1754" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1754&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1754", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMy0wMjgzLmVwdWI=&filename=cGktMjAyMy0wMjgzLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-29K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1754", "pi-2023-0283.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -256K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1754#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -256K'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1801"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Psychosocial Factors and Psychological Adjustment Among Adolescents and Young Adults: A Comparative Analysis of Occasional Drug Craving and Non-Craving							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(558 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Ayesha Nida, Arsalan Haider, Xiang-Yang Zhang							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(9):947-957. &nbsp;&nbsp;Published online September 11, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0124"><font class="doi">https://doi.org/10.30773/pi.2024.0124</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001313230800003&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 2</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1801" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 2</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1801" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1801&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1801", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMTI0LmVwdWI=&filename=cGktMjAyNC0wMTI0LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-34K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1801", "pi-2024-0124.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -323K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1801#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -323K'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1786"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Effect of Low-Intensity Transcranial Focused Ultrasound Stimulation in Patients With Major Depressive Disorder: A Randomized, Double-Blind, Sham-Controlled Clinical Trial							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(657 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Jooyoung Oh, Jin Sun Ryu, Junhyung Kim, Soojeong Kim, Hyu Seok Jeong, Kyung Ran Kim, Hyun-Chul Kim, Seung-Schik Yoo, Jeong-Ho Seok							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(8):885-896. &nbsp;&nbsp;Published online August 8, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0016"><font class="doi">https://doi.org/10.30773/pi.2024.0016</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001291170100010&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 30</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1786" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 37</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1786" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1786&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1786", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMDE2LmVwdWI=&filename=cGktMjAyNC0wMDE2LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-519K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1786", "pi-2024-0016.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -2.5M'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1786#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -2.5M'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1827"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Level of Work-Related Anxiety and Potential Causes of Anxiety in Healthcare Workers in the Emergency Department							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(480 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Turgut Dolanbay, Abdussamed Vural, Mustafa Cihan Altay, Nesibe Sultan Çınaroglu							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(11):1299-1307. &nbsp;&nbsp;Published online November 18, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0265"><font class="doi">https://doi.org/10.30773/pi.2024.0265</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001360205100014&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 4</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1827" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 3</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1827" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1827&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1827", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMjY1LmVwdWI=&filename=cGktMjAyNC0wMjY1LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-43K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1827", "pi-2024-0265.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -357K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1891"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Mental and Behavioral Disorders, Comorbidity, and Self-Harm: Results From Korea National Hospital Discharge In-Depth Injury Survey							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(422 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Mi Jung Rho, Young-Joo Won, Hyun-Sook Lim, Yoo-Kyung Boo							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(4):462-474. &nbsp;&nbsp;Published online April 11, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0301"><font class="doi">https://doi.org/10.30773/pi.2024.0301</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="/journal/CitedBy.php?number=1891" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 1</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1891" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1891&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1891", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMzAxLmVwdWI=&filename=cGktMjAyNC0wMzAxLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-1.1M'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1891", "pi-2024-0301.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -1.3M'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1891#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -1.3M'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1680"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Children’s and Parents’ Factors That Affect Parenting Stress in Preschool Children With Developmental Disabilities or Typical Development							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(454 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Eunji Jung, Taeyeop Lee, Jichul Kim, Hyo-Won Kim							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2023;20(12):1157-1167. &nbsp;&nbsp;Published online December 18, 2023							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2023.0223"><font class="doi">https://doi.org/10.30773/pi.2023.0223</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001164649300007&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 3</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1680" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 2</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1680" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1680&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1680", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMy0wMjIzLmVwdWI=&filename=cGktMjAyMy0wMjIzLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-470K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1680", "pi-2023-0223.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -1.6M'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1680#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -1.6M'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1814"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Psychiatric Considerations of Infertility							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(512 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Yoon Jung Hwang, Junhee Lee, Jihyun Hwang, Hyeonhee Sim, Namwoo Kim, Tae-Suk Kim							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(11):1175-1182. &nbsp;&nbsp;Published online November 18, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0239"><font class="doi">https://doi.org/10.30773/pi.2024.0239</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001360205100001&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 3</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1814" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 6</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1814" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1814&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1814", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMjM5LmVwdWI=&filename=cGktMjAyNC0wMjM5LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-214K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1814", "pi-2024-0239.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -283K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1730"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Clonidine Patch for Tourette Syndrome With Attention-Deficit/Hyperactivity Disorder							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(425 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Yanhui Chen, Zhongling Ke, Ying Ouyang, Ying Han, Dong Liang, Xueping Gao, Jie He, Yasong Du							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(4):387-395. &nbsp;&nbsp;Published online April 23, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2023.0262"><font class="doi">https://doi.org/10.30773/pi.2023.0262</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001222113400006&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 1</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1730" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 2</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1730" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1730&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1730", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMy0wMjYyLmVwdWI=&filename=cGktMjAyMy0wMjYyLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-29K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1730", "pi-2023-0262.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -256K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1730#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -256K'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1775"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Simultaneous Utilization of Mood Disorder Questionnaire and Bipolar Spectrum Diagnostic Scale for Machine Learning-Based Classification of Patients With Bipolar Disorders and Depressive Disorders							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(523 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Kyungwon Kim, Hyun Ju Lim, Je-Min Park, Byung-Dae Lee, Young-Min Lee, Hwagyu Suh, Eunsoo Moon							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(8):877-884. &nbsp;&nbsp;Published online August 2, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2023.0361"><font class="doi">https://doi.org/10.30773/pi.2023.0361</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001288013300001&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 5</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1775" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 5</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1775" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1775&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1775", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMy0wMzYxLmVwdWI=&filename=cGktMjAyMy0wMzYxLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-99K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1775", "pi-2023-0361.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -1.2M'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1748"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								A Review of Current Digital Mental Health Care Applications for Anxiety Symptoms and Future Prospects							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(470 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Hyerim Kwon, In Young Choi, Dai-Jin Kim, Jae Hyun Yoo							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(6):551-560. &nbsp;&nbsp;Published online June 24, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2023.0339"><font class="doi">https://doi.org/10.30773/pi.2023.0339</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001255252600001&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 7</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1748" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 6</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1748" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1748&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1748", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMy0wMzM5LmVwdWI=&filename=cGktMjAyMy0wMzM5LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-30K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1748", "pi-2023-0339.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -317K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1870"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Comparison of Logistic Regression and Machine Learning Approaches in Predicting Depressive Symptoms: A National-Based Study							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(396 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Xing-Xuan Dong, Jian-Hua Liu, Tian-Yang Zhang, Chen-Wei Pan, Chun-Hua Zhao, Yi-Bo Wu, Dan-Dan Chen							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(3):267-278. &nbsp;&nbsp;Published online March 18, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0156"><font class="doi">https://doi.org/10.30773/pi.2024.0156</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001447608900006&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 3</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1870" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 2</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1870" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1870&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1870", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMTU2LmVwdWI=&filename=cGktMjAyNC0wMTU2LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-179K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1870", "pi-2024-0156.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -504K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1870#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -504K'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1877"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Cognitive Emotion Regulation and Its Impact on Sexual Function, Body Image, and Depression in Breast Cancer Survivors							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(322 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Begüm Yıldırım Cinek, Melike Pekyürek Varan, Gökhan Yaprak, Merih Altıntaş							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(3):330-339. &nbsp;&nbsp;Published online March 18, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0349"><font class="doi">https://doi.org/10.30773/pi.2024.0349</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001447608900013&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 5</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1877" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 6</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1877" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1877&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1877", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMzQ5LmVwdWI=&filename=cGktMjAyNC0wMzQ5LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-30K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1877", "pi-2024-0349.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -363K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1208"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Chronobiology Revisited in Psychiatric Disorders: From a Translational Perspective							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(365 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Simge Seren Kirlioglu, Yasin Hasan Balcioglu							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2020;17(8):725-743. &nbsp;&nbsp;Published online August 6, 2020							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2020.0129"><font class="doi">https://doi.org/10.30773/pi.2020.0129</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:000571577300002&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 18</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1208" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 24</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1208" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1208&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1208", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMC0wMTI5LmVwdWI=&filename=cGktMjAyMC0wMTI5LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-257K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1208", "pi-2020-0129.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -380K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1829"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Managing Circadian Rhythms: A Key to Enhancing Mental Health in College Students							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(336 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Ji Won Yeom, Soohyun Park, Heon-Jeong Lee							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(12):1309-1317. &nbsp;&nbsp;Published online December 23, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0250"><font class="doi">https://doi.org/10.30773/pi.2024.0250</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001382922000001&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 10</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1829" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 10</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1829" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1829&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1829", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMjUwLmVwdWI=&filename=cGktMjAyNC0wMjUwLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-100K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1829", "pi-2024-0250.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -429K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1905"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								National Trends and Directions for Suicide Prevention Research in South Korea: A Narrative Review							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(204 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Ah Rah Lee, Je Young Hannah Sun, Myungjae Baik, Peter Jongho Na, Sang Min Lee, Jong-Woo Paik							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(6):603-611. &nbsp;&nbsp;Published online June 16, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0383"><font class="doi">https://doi.org/10.30773/pi.2024.0383</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001513561500001&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 2</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1905" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 2</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1905" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1905&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1905", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMzgzLmVwdWI=&filename=cGktMjAyNC0wMzgzLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-156K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1905", "pi-2024-0383.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -299K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1857"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Machine Learning Models to Identify Individuals With Imminent Suicide Risk Using a Wearable Device: A Pilot Study							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(285 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Jumyung Um, Jongsu Park, Dong Eun Lee, Jae Eun Ahn, Ji Hyun Baek							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(2):156-166. &nbsp;&nbsp;Published online February 17, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0257"><font class="doi">https://doi.org/10.30773/pi.2024.0257</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001428091100004&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 6</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1857" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 7</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1857" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1857&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1857", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMjU3LmVwdWI=&filename=cGktMjAyNC0wMjU3LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-769K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1857", "pi-2024-0257.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -2.4M'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1857#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -2.4M'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1878"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Pilot Trial: Impact of a Virtual Reality Stress Reduction Program on Healthcare and Information Technology Professionals During the COVID-19 Pandemic							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(270 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Daeho Kwon, Wooyoung Im, Yunsoo Kim, Jaesung Yoo, Huisu Jeon, Heeyong Choi, Hyeyun Kim							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(4):451-461. &nbsp;&nbsp;Published online March 28, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2025.0059"><font class="doi">https://doi.org/10.30773/pi.2025.0059</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001469639900013&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 4</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1878" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 5</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1878" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1878&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1878", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNS0wMDU5LmVwdWI=&filename=cGktMjAyNS0wMDU5LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-843K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1878", "pi-2025-0059.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -1.2M'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1168"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Efficacy of Interventions Based on Applied Behavior Analysis for Autism Spectrum Disorder: A Meta-Analysis							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(1,156 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Qian Yu, Enyao Li, Liguo Li, Weiyi Liang							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2020;17(5):432-443. &nbsp;&nbsp;Published online May 8, 2020							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2019.0229"><font class="doi">https://doi.org/10.30773/pi.2019.0229</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:000535751000007&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 83</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1168" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 95</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1168" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1168&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1168", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAxOS0wMjI5LmVwdWI=&filename=cGktMjAxOS0wMjI5LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-892K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1168", "pi-2019-0229.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -410K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1796"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Network Structure of Interpersonal Sensitivity in Patients With Mood Disorders: A Network Analysis							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(292 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Yuna Kim, Junwoo Jang, Hyo Shin Kang, Jakyung Lee, Daseul Lee, Hyeona Yu, Yoonjeong Jang, Joohyun Yoon, Hyukjun Lee, Tae Hyon Ha, Jungkyu Park, Woojae Myung							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(9):1016-1024. &nbsp;&nbsp;Published online September 3, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2023.0411"><font class="doi">https://doi.org/10.30773/pi.2023.0411</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+																	</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1796" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1796&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1796", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMy0wNDExLmVwdWI=&filename=cGktMjAyMy0wNDExLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-474K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1796", "pi-2023-0411.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -2.1M'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1796#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -2.1M'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1381"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Smartphone Screen Time Among University Students in Lebanon and Its Association With Insomnia, Bedtime Procrastination, and Body Mass Index During the COVID-19 Pandemic: A Cross-Sectional Study							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(422 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Sajida Fawaz Hammoudi, Hussein Walid Mreydem, Bayan Tarek Abou Ali, Nada Omar Saleh, Seockhoon Chung, Souheil Hallit, Pascale Salameh							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2021;18(9):871-878. &nbsp;&nbsp;Published online September 14, 2021							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2021.0120"><font class="doi">https://doi.org/10.30773/pi.2021.0120</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:000717092900009&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 35</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1381" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 38</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1381" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1381&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1381", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMS0wMTIwLmVwdWI=&filename=cGktMjAyMS0wMTIwLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-43K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1381", "pi-2021-0120.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -248K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1880"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Go and the Brain: Cognitive and Neural Impacts of Training							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(243 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Ki Woong Kim							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(4):357-364. &nbsp;&nbsp;Published online April 11, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0387"><font class="doi">https://doi.org/10.30773/pi.2024.0387</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001469639900002&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 2</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1880" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 2</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1880" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1880&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1880", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMzg3LmVwdWI=&filename=cGktMjAyNC0wMzg3LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-27K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1880", "pi-2024-0387.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -281K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1879"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								The Clinical Utility of Biomarkers in Diagnosing Major Depressive Disorder in Adults: A Systematic Review of Literature From 2013 to 2023							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(254 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Shi-han Ang, Roger C. Ho, Roger S. McIntyre, Zhisong Zhang, Soon-kiat Chang, Kayla M. Teopiz, Cyrus SH Ho							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(4):341-356. &nbsp;&nbsp;Published online April 11, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0152"><font class="doi">https://doi.org/10.30773/pi.2024.0152</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001469639900001&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 2</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1879" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 2</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1879" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1879&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1879", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMTUyLmVwdWI=&filename=cGktMjAyNC0wMTUyLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-179K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1879", "pi-2024-0152.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -362K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1879#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -362K'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1696"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Descriptive Analysis of Social Interaction and Communication Skills of Autistic Children According to Sibling Status and Characteristics							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(292 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Se Yeon Kim, Da-Yea Song, Guiyoung Bong, Jae Hyun Han, Hee Jeong Yoo							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2024;21(1):44-51. &nbsp;&nbsp;Published online January 22, 2024							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2023.0209"><font class="doi">https://doi.org/10.30773/pi.2023.0209</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001198696700011&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 2</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1696" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 3</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1696" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1696&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1696", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMy0wMjA5LmVwdWI=&filename=cGktMjAyMy0wMjA5LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-28K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1696", "pi-2023-0209.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -242K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1696#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -242K'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1380"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Drawing Test Form for Depression: The Development of Drawing Tests for Predicting Depression Among Breast Cancer Patients							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(368 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Jiyeon Kim, Seockhoon Chung							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2021;18(9):879-888. &nbsp;&nbsp;Published online September 14, 2021							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2021.0044"><font class="doi">https://doi.org/10.30773/pi.2021.0044</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:000717092900010&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 3</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1380" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 4</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1380" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1380&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1380", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyMS0wMDQ0LmVwdWI=&filename=cGktMjAyMS0wMDQ0LmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-223K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1380", "pi-2021-0044.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -399K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1380#supplementary-material" style='cursor: pointer;font-size:12px;color:#6f6f6f;'><img src="/image/c_icon_suppl_03.png" alt="PDF" style="padding-top:4px;" title='PDF -399K'/>Supplementary Materials</a>							</dd>
+						</dl>
+				</div>
+												
+					<div class="sub_journal">
+						<dl class="article">
+							<dt>
+							
+							<a href="/journal/view.php?number=1881"><span style="font-family: Georgia; font-size: 18px; color: #2f312f;">
+								Exploring the Mediation of Stress and Emotional Exhaustion on Academic Ineffectiveness and Cynicism Among University Students							</span></a>
+
+							&#160;&#160;<font style="color:#626E1A;;font-size:9pt;">(228 times)</font>							
+							
+							</dt>
+							<dd style="color: #6f6f6f;">
+							Cristian Ramos-Vera, Miguel Basauri-Delgado, Yaquelin E. Calizaya-Milla, Jacksaint Saintila							</dd>
+							<dd style="font-family: Lora; font-size: 12px; color: #6f6f6f;">
+									<em>Psychiatry Investig.</em> 2025;22(4):365-374. &nbsp;&nbsp;Published online April 11, 2025							</dd>
+
+							<dd>
+								<div style="position: relative;">
+																			DOI: <a href="https://doi.org/10.30773/pi.2024.0111"><font class="doi">https://doi.org/10.30773/pi.2024.0111</font></a>&nbsp;&nbsp;&nbsp;
+										
+						
+												
+									<div style="position: absolute; top: 0; right: 20px;"><a href="https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=m2pi2024&SrcAuth=WosAPI&KeyUT=WOS:001469639900003&DestLinkType=CitingArticles&DestApp=WOS" target='_blank' style="color:#324C96;font-size:9pt;"><font class="CitedTitle" style='color:#324C96;'>&nbsp;&nbsp;Web of Science 2</a></font>&nbsp;<a href="/journal/CitedBy.php?number=1881" onclick="window.open(this.href, 'CrossRef Citedby', 'width=756,height=800,scrollbars=yes');return false;" style="color:#DD434F;font-size:9pt;"><font class="CitedTitle" style='color:#DD434F;'>&nbsp;&nbsp;Crossref 2</a></font></div>								</div>
+							</dd>
+
+							<dd>
+							<a href="/journal/view.php?number=1881" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_full_03.png" alt="Full text" title="Full Text" style="padding-top:4px;"/>Full text</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/journal/view.php?number=1881&viewtype=pubreader" style="font-size:12px;color:#6f6f6f;"><img src="/image/c_icon_pub_03.png" style="padding-top:4px;" alt="Pubreader" title="Pubreader" />PubReader</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("epub", "1881", "path=L2hvbWUvdmlydHVhbC9wc3ktaW52L2pvdXJuYWwvdXBsb2FkL2VwdWIvcGktMjAyNC0wMTExLmVwdWI=&filename=cGktMjAyNC0wMTExLmVwdWI=")'><img src="/image/c_icon_epub_03.png" style="padding-top:4px;" alt="ePub"  title='ePub-82K'/>ePub</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style='cursor: pointer;font-size:12px;color:#6f6f6f;' onclick='journal_download("pdf", "1881", "pi-2024-0111.pdf")'><img src="/image/c_icon_pdf_03.png" alt="PDF" style="padding-top:4px;" title='PDF -349K'/>PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;							</dd>
+						</dl>
+				</div>
+						
+	</div>
+		<div class="aside">
+		<div class="journal">
+			<img src='/image/cover.jpg' border='0'>		</div>
+
+		<ul class="moreInfo">
+			<li>
+				<a href="http://mc03.manuscriptcentral.com/psychiatryinvestig" target="_blank">
+					<img src="/image/e_submission.gif" title="E-Submission">
+				</a>
+			</li>
+			<li><a href="/upload/Psych_Invest.ens"><img src="/image/b_endnote_style.gif" title="Endnote output style"></a></li>
+			<li>
+				<a href="/about/TOCAlerts.php">
+					<img src="/image/email_alerts.gif" title="TOC Alerts">
+				</a>
+			</li>
+			<li style='padding-bottom:10px;'>
+				<a href="/articles/author_index.php">
+					<img src="/image/authorindex_b.gif" title="Author Index">
+				</a>
+			</li>
+			<li>
+				<a href="/metrics/metrics_total_down_ref.php" onclick="window.open(this.href, 'Metrics_Total_View', 'width=720, height=800,scrollbars=yes');return false;" style="cursor:pointer;"><img src="/image/banner_Metrics.gif" border=0 title="More information" class="vertical_middle"/></a>
+			</li>
+
+			<li>
+				<div id="vis"></div>
+				<script>var tags =[{"key": "schizophrenia", "value": 33},{"key": "Antidepressant", "value": 27},{"key": "Tic", "value": 16},{"key": "Anxiety", "value": 15},{"key": "Stress", "value": 12},{"key": "Sleep", "value": 12},{"key": "Trauma", "value": 10},{"key": "Bipolar disorder", "value": 10},{"key": "Gene", "value": 10},{"key": "Autism Spectrum Disorder", "value": 10},{"key": "Suicide", "value": 9},{"key": "Age", "value": 9},{"key": "Aging", "value": 9},{"key": "Social", "value": 9},{"key": "Mental health", "value": 8},{"key": "Korea", "value": 8},{"key": "Health", "value": 8},{"key": "Symptoms", "value": 8},{"key": "DIA", "value": 7},{"key": "Treatment", "value": 7},{"key": "COVID-19", "value": 7},{"key": "Cognition", "value": 7},{"key": "Tics", "value": 7},{"key": "Korean", "value": 7},{"key": "Child", "value": 6},{"key": "Major depressive disorder", "value": 6},{"key": "Psychological", "value": 6},{"key": "SES", "value": 6},{"key": "Attention", "value": 6},{"key": "Analysis", "value": 6}];</script>				<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+				<script src="https://www.e-crt.org/script/d3.layout.cloud.js"></script>
+				<script type="text/javascript" src="https://www.e-crt.org/script/word-cloud.js"></script>
+			</li>
+
+			<li>
+				<a href="http://www.knpa.or.kr/" target="_blank">
+					<img src="/image/ksem.gif" title="Korean Neuropsychiatric Association"/>
+				</a>
+			</li>
+
+
+			<li>
+				<a href="https://mjl.clarivate.com/cgi-bin/jrnlst/jlresults.cgi?PC=MASTER&ISSN=1738-3684" target="_blank">
+					<div style="position: relative;background-size:cover;background-image:url('https://www.m2-pi.com/images/impact/impact_factor_174bg.gif');width:174px;height:137px;font-family: 'Roboto', 'Noto Sans KR', sans-serif">
+						<div style='position:absolute;left:14px;top:113px;font-size:12px;color:#ffffff;'>
+							Journal Impact Factor 1.8
+						</div>
+					</div>
+					</a>
+			</li>
+
+			<li>
+				<a href="https://www.scimagojr.com/journalsearch.php?q=4000151608&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target='_blank'><img border="0" src="https://www.scimagojr.com/journal_img.php?id=4000151608" alt="SCImago Journal &amp; Country Rank" width=174 /></a></td>
+			</li>
+
+
+	
+			<!---
+			
+			<li>
+				<a href="" title="SCImago Journal &amp; Country Rank" target="_blank"><img border="0" src="" width=174 alt="SCImago Journal &amp; Country Rank"  /></a>
+			</li>
+			-->
+
+			</ul>
+
+
+
+	</div>
+	<!--  //aside -->
+		</div>
+<hr/>
+<hr />
+
+	
+	<div class="siteMap">
+		<dl class="last" style='width:200px'>
+			<dt><a href="/about/" title="ABOUT">ABOUT</a></dt>
+			<dd>
+				<dl>
+					<dd>
+						<ul>
+							<li><a href="/about/index.php" title="Aims and Scope">Aims and Scope</a></li>
+<li><a href="/about/about.php" title="About the Journal">About the Journal</a></li>
+<li><a href="/about/editorial.php" title="Editorial Board">Editorial Board</a></li>
+<li><a href="/about/open_access.php" title="Open Access">Open Access</a></li>
+<li><a href="/about/contact.php" title="Contact us">Contact us</a></li>
+						</ul>
+					</dd>
+				</dl>
+			</dd>
+		</dl>
+		<dl style='width:250px'>
+
+			<dt><a href="/authors/authors.php" title="AUTHOR INFORMATION">AUTHOR INFORMATION</a></dt>
+			<dd>
+				<ul>
+				<li><a href="/authors/authors.php" title="Instructions for Authors">Instructions for Authors</a></li>
+<li><a href="http://mc03.manuscriptcentral.com/psychiatryinvestig/" title="E-Submission"target="_blank">E-Submission</a></li>
+<li><a href="/authors/guide.php" title="Ethical Policy">Ethical Policy</a></li>
+<li><a href="/authors/checklist.php" title="Author’s Checklist">Author’s Checklist</a></li>
+<li><a href="/authors/copyright_transfer_agreement.php" title="Copyright Transfer Form">Copyright Transfer Form</a></li>
+				</ul>
+			</dd>
+
+
+
+		</dl>
+		
+		<dl style='width:250px'>
+			<dt><a href="/articles/category.php" title="ARTICLES">ARTICLE CATEGORY</a></dt>
+			<dd>
+				<ul>
+				<li><a href="/articles/category.php?article_category=Review Article" title="Review Article">Review Article</a></li>
+<li><a href="/articles/category.php?article_category=Original Article" title="Original Article">Original Article</a></li>
+<li><a href="/articles/category.php?article_category=Special Article" title="Special Article">Special Article</a></li>
+<li><a href="/articles/category.php?article_category=Case Report" title="Case Report">Case Report</a></li>
+<li><a href="/articles/category.php?article_category=Brief Report" title="Brief Report">Brief Report</a></li>
+<li><a href="/articles/category.php?article_category=Study Protocol" title="Study Protocol">Study Protocol</a></li>
+<li><a href="/articles/category.php?article_category=Editorial" title="Editorial">Editorial</a></li>
+<li><a href="/articles/category.php?article_category=Letter to the Editor" title="Letter to the Editor">Letter to the Editor</a></li>
+<li><a href="/articles/category.php?article_category=Others" title="Others">Others</a></li>
+				</ul>
+				<p><a href="/articles/category.php" title="Browse all articles">Browse all articles &gt;</a></p>
+				
+
+
+
+			</dd>
+		</dl>
+		<dl style='width:270px'>
+			<dt><a href="/articles/archive.php" title="ISSUES">BROWSE ARTICLES</a></dt>
+			<dd>
+				<ul>
+				<li><a href="/articles/archive.php" title="All Issues">All Issues</a></li>
+<li><a href="/current/" title="New Issue">New Issue</a></li>
+<li><a href="/articles/print.php" title="Ahead-of Print">Ahead-of Print</a></li>
+<li><a href="/articles/mostread.php" title="2y Most Read">2y Most Read</a></li>
+<li><a href="/articles/mostcited.php" title="2y Most Cited">2y Most Cited</a></li>
+<li><a href="/articles/mostdownload.php" title="Most Download">Most Download</a></li>
+<li><a href="/articles/funded.php" title="Funded Articles">Funded Articles</a></li>
+<li><a href="/articles/search.php" title="Psychiatry Investig Search">Psychiatry Investig Search</a></li>
+<li><a href="/articles/author_index.php" title="Author Index">Author Index</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+	<div class="footerWrap">
+		<div>
+			<dl>
+				<dt>Editorial Office</dt>
+				<dd>
+					#522, G-five Central Plaza, 27 Seochojungang-ro 24-gil, Seocho-gu, Seoul 06601, Korea<br/>
+					Tel: +82-2-537-6171&nbsp;&nbsp;Fax: +82-2-537-6174&nbsp;&nbsp;&nbsp;&nbsp;E-mail: <a href="mailto:psychiatryinvest@gmail.com" class="link">psychiatryinvest@gmail.com</a> 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<script>
+						document.addEventListener('DOMContentLoaded', function() {
+							document.getElementById('view_mobile_site').addEventListener('click', function(event) {
+								event.preventDefault();
+								var url = '/articles/mostdownload.php';
+								document.cookie = "mobileView=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+								window.location.href = url;
+							});
+						});
+					</script>
+				</dd>
+			</dl>
+			
+			<p>Copyright &copy; <a href="http://www.knpa.or.kr" target="_blank">2026 by Korean Neuropsychiatric Association.</a>  </p>
+			<p class="posTR"><a href="https://www.m2-pi.com" target="_blank"><img src="https://www.m2-pi.com/images/developed_m2pi.png" style="vertical-align:middle;margin-top:2px;" alt="Developed in M2PI" /></a></p>
+		</div>
+	</div>
+	<!-- //footerWrap 
+
+
+</div>
+<!-- //wrapper -->
+<style>
+	#overlay { display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 999; }
+	#overlay #overlay_close { margin:25px auto 0px auto; height: 20px; text-align: right; }
+	#overlay #main_image_wrap { margin:25px auto 25px auto; height: 448px; text-align: center; }
+</style>
+<div id="overlay">
+	<div style="width:900px; background-color: rgba(208,208,208,0.85); border: 1px solid #a0a0a0; padding-bottom: 25px; margin: auto;">
+	<div id="overlay_close"><img src="/image/b_close.png" alt="Close layer" onclick="closePhotoView(); return false;" style="cursor:pointer;margin-right:25px;" /></div>
+	<div id="main_image_wrap"><table style="margin: auto;"><tr>
+	<td onclick="mImage_sliding('prev')" valign="middle" style="cursor: pointer;"><img src="/image/b_prev.png" alt="prev" border="0" /></td>
+	<td valign="middle" style="width: 800px;height:448px;"><img id="main_image" src="" width="800" height="448" /></td>
+	<td onclick="mImage_sliding('next')" valign="middle" style="cursor: pointer;"><img src="/image/b_next.png" alt="next" border="0" /></td>
+	</tr></table></div>
+	</div>
+</div>
+<script>
+
+/* Image Slide */
+	var thumb_array = new Array();
+	var thumb_index = 0;
+
+// 	$(window).scroll(function () {
+// 		var y = $(this).scrollTop();
+// 		$("#overlay").css("margin-top", y+100);
+// 	});
+	
+	function mImage_sliding(dir) {
+		 if(dir == 'next') {
+			 thumb_index++;
+			 if(thumb_index >= thumb_array.length) {
+				 thumb_index--;
+				 return false;
+			 }
+		 } else {
+			 thumb_index--;
+			 if(thumb_index < 0) {
+				 thumb_index++;
+				 return false;
+			 }
+		 }
+		 changeMainImage(thumb_array[thumb_index]);
+	}
+	
+	function openPhotoView(obj) {
+		var y = $(this).scrollTop();
+		$("#overlay").css("margin-top", y+100);
+		$("#overlay").show();
+		thumb_array = new Array();
+		$(obj).parent().parent().find('img.thumb').each(function (index) {
+			thumb_array.push($(this).attr("src"));
+			if($(obj).attr("src") == $(this).attr("src")) {
+				thumb_index = index;
+				changeMainImage($(this).attr("src"));
+			}
+		});
+	}
+	
+	function openPhotoView2() {
+		var y = $(this).scrollTop();
+		$("#overlay").css("margin-top", y+100);
+		$("#overlay").show();
+		thumb_array = new Array();
+		
+		var src_data = $("#ss_516").html();
+		
+		console.log(src_data);
+	}
+	/*
+	function openPhotoView2() {
+		var y = $(this).scrollTop();
+		$("#overlay").css("margin-top", y+100);
+		$("#overlay").show();
+		thumb_array = new Array();
+		$("#ss_516").find('img.thumb').each(function (index) {
+			if(index != 0) {
+				thumb_array.push($("#ss_516").attr("src"));
+				if($("#ss_516").attr("src") == $(this).attr("src")) {
+					thumb_index = index;
+					changeMainImage($(this).attr("src"));
+				}
+			} 
+		});
+		
+		console.log(thumb_array);
+	}
+	*/
+
+	function closePhotoView() {
+		$('#overlay').hide();
+		thumb_array = new Array();
+	}
+
+	function changeMainImage(src) {
+		$("<img />").attr("src", src).load(function() {
+			var ratio = 800 / this.width;
+			var width = this.width * ratio;
+			var height = this.height * ratio;
+			if(height > 448) {
+				ratio = 448 / this.height;
+				width = this.width * ratio;
+				height = this.height * ratio;
+			}
+			$("#overlay #main_image_wrap #main_image").attr('src', this.src);
+			$("#overlay #main_image_wrap #main_image").attr('width', width);
+			$("#overlay #main_image_wrap #main_image").attr('height', height);
+		});
+	}
+/* Image Slide End */
+</script>
+</body>
+</html> 

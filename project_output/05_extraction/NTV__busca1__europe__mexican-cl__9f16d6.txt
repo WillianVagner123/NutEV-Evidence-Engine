@@ -1,0 +1,2056 @@
+Vol.:(0123456789)
+Current Obesity Reports (2024) 13:643–666 
+https://doi.org/10.1007/s13679-024-00585-w
+REVIEW
+Mexican Clinical Practice Guidelines for Adult Overweight and Obesity 
+Management
+Emma A. Chávez‑Manzanera1,2 · Juan M. Vera‑Zertuche1,3 · Martha Kaufer‑Horwitz1,4 · 
+Verónica Vázquez‑Velázquez2,5 · José R. Flores‑Lázaro6 · Leonor Mireles‑Zavala1 · Raúl Calzada‑León1,7 · 
+Juan C. Garnica‑Cuellar1,8 · Verónica Sánchez‑Muñoz5 · Eduardo Ramírez‑Butanda2 · Ricardo Hernández‑González1 · 
+María A. Vargas‑Martínez9 · Hugo Laviada‑Molina1,10 · Rafael Violante‑Ortíz1,11 · Héctor Esquivias‑Zavala12 · 
+Eduardo García‑García1 · Fernando J. Lavalle‑González1,13 · Leonardo Mancillas‑Adame1,14,15 · 
+Juan C. López‑Alvarenga1,16 · Juan F. Pérez‑Hernández2 · Erika V. Soto‑Fuentes2 · Reina R. Soriano‑Cortés2 · 
+Eduardo W. Goicoechea‑Turcott17 · Gerardo Magallanes‑Díaz18 · Miguel F. Herrera‑Hernández3 · 
+Simón Barquera‑Cervera19 · Edith Vargas‑Contreras20 · Cybele B. Díaz‑Wionczek5 · Morgan Salmon5 · 
+Dinorah Ramírez‑De Jesús5 · Juan P . Villaseñor‑Díaz5 · Javiera Peña21 · José Ramos‑Rojas21 · Camila Ávila‑Oliver21 · 
+Gabriel Rada21 · Brad Hussey22 · Ximena Ramos Salas23
+Accepted: 16 August 2024 / Published online: 2 October 2024 
+© The Author(s) 2024
+Abstract
+Purpose To develop Mexico’s first methodologically rigorous clinical practice guideline for the management of adult over-
+weight and obesity. The target audiences are interdisciplinary healthcare professionals across healthcare systems who are 
+the first point of contact for patients with obesity in Mexico, patients, and health system decision makers.
+Recent Findings A review of recent international obesity clinical practice guidelines and an expert consensus process identi-
+fied: i) common recommendations appropriate for implementation in Mexico and ii) knowledge gaps requiring the formula-
+tion of new recommendations. In all, 20 new recommendations and 20 good practice statements were developed using the 
+GRADE Evidence-to-Decision Framework and expert consensus.
+Summary Overweight and obesity negatively impact the health and well-being of individuals and populations in Mexico. 
+This guideline aims to establish a new evidence-based, patient-centered, non-stigmatizing, and practical treatment and man-
+agement framework, based on the fundamental principles of chronic disease prevention and management.
+Keywords Overweight · Obesity · Chronic disease care · Management · Clinical guidelines
+Introduction
+Health complications related to overweight and obesity rep-
+resent significant public health problems in Mexico [1 , 2]. 
+As a heterogeneous, progressive, and relapsing chronic dis-
+ease characterized by excess and/or dysfunctional adipose 
+tissue that impairs health and well-being, obesity requires 
+long-term, integrated, individualized, and evidence-based 
+prevention, treatment, and management [3–13].
+The impact of obesity on quality of life and health out-
+comes has been extensively documented, indicating that it 
+is the primary contributor to years of life lost due to dis-
+ability [14]. Specifically, obesity is highly implicated in 
+both the development and exacerbation of cardiometabolic 
+diseases (e.g., hypertension, diabetes, gout, dyslipidemia), 
+mechanical diseases (e.g., sleep apnea, acid reflux disease, 
+gallbladder disease, urinary incontinence, osteoarthritis), 
+at least 12 types of cancer (e.g., esophageal, endometrium, 
+colon, breast) [15], and mental health conditions (e.g., anxi-
+ety, depression, binge eating disorder) [16, 17]. Obesity is 
+also a highly stigmatized disease; experiencing weight bias, 
+stigma, and weight-based discrimination negatively impacts 
+health and social outcomes independent of body mass index 
+(BMI) or weight status [18].
+At the population level, the prevalence of overweight 
+and obesity is estimated using proxy measures for body fat, 
+such as BMI, calculated as weight in kilograms divided by 
+height in meters squared (kg/m2). Although anthropometric Extended author information available on the last page of the article
+644 Current Obesity Reports (2024) 13:643–666
+measures are not accurate measures of obesity, existing 
+prevalence studies rely solely on BMI, making it the most 
+widely used tool to assess the impact of obesity. Globally, 
+BMI levels have been increasing, and as many as 650 mil-
+lion individuals could be living with obesity [19]. Based on 
+BMI, it is estimated that approximately 36.9% of the adult 
+population in Mexico live with this disease, impacting more 
+women than men (41% vs 32.3%) [2]. In addition, 38.3% of 
+the Mexican adult population is classified in the overweight 
+category (BMI 25–29.9 kg/m 2) and may be at risk for obe-
+sity and other obesity-related non-communicable diseases, 
+such as cardiovascular disease. In Mexico, adults classified 
+in the overweight category are 5.25 times more likely to have 
+mixed dyslipidemias and hypertriglyceridemia, two major 
+cardiovascular disease risk factors [1].
+Between 2016 and 2022, the prevalence of obesity 
+(BMI ≥  30 kg/m 2) increased from 33.3% [30.9, 35.9] to 
+36.9% [35.0, 38.7], an annualized rate of increase of 1.4% 
+compared with previous years [2 ]. For example, between 
+2000 and 2006, the prevalence of obesity increased from 
+23.5% [22.6, 24.4] to 30.4% [29.5, 31.3], represent-
+ing an annualized rate of 2.3%. However, severe obesity 
+(BMI ≥ 35 kg/m 2) has continued to increase at signifi-
+cant rates from 2016 to 2022, with Class II obesity (BMI 
+35–39.9 kg/m 2) increasing by 6.1% (from 8.2% to 8.7% 
+of the population) and Class III obesity (BMI ≥ 40 kg/m 2) 
+increasing by 37.9% (from 2.9% to 4.0% of the population) 
+[2, 20, 21]. The rise in the prevalence of severe obesity poses 
+a significant public health concern, given that it is linked to 
+a greater risk for poor health and premature death compared 
+with Class I obesity [22].
+Obesity rates in Mexico exhibit significant variation 
+across different populations, influenced by factors such as 
+age, sex, socioeconomic status, and geographic location. 
+Additionally, indigenous populations in Mexico experience 
+distinct challenges, including economic marginalization 
+and limited healthcare access, which have been shown to 
+exacerbate obesity and related complications [2 ]. Obesity 
+and excessive weight gain during pregnancy is linked to an 
+increased risk of complications, including gestational dia-
+betes mellitus, preeclampsia, caesarean delivery, perineal 
+lacerations, postpartum hemorrhage, venous thromboem-
+bolism, and postpartum depression [23, 24]. For neonates, 
+risks include perinatal fractures, perinatal asphyxia, cerebral 
+hemorrhage, shoulder dystocia and neonatal death. Obesity 
+in pregnancy can also present a higher risk for childhood 
+obesity, cardiometabolic syndrome, early puberty, behavio-
+ral changes, and attention deficit disorder [25– 29]. Obesity 
+in pregnancy has also been associated with long-term con-
+sequences on metabolic functions and in anthropometry by 
+transgenerational inheritance of obesity [25– 30].
+Obesity drivers vary across individuals and popu-
+lations and involve a complex interaction of genetic, 
+psychological, behavioral, environmental, medical, and 
+socioeconomic factors. Researchers have investigated 
+the drivers of obesity for many years, and various ini-
+tiatives have been implemented to prevent this disease, 
+yielding inconsistent outcomes and lacking the magni-
+tude many believe is required to make necessary impact 
+[31]. In recent years, there have been significant advances 
+in Mexico toward primary obesity prevention, acknowl-
+edged as international best practices by the World Health 
+Organization (WHO). These include implementing taxes 
+on soft drinks, sugary beverages, and energy-dense ultra-
+processed foods; introducing warning labels on packaged 
+food and drinks; regulating the presence and advertising of 
+unhealthy products in schools; and formulating new sus-
+tainable and nutritious dietary guidelines for the Mexican 
+population. However, there's a pressing need to incorpo -
+rate additional cost-effective policies, such as enhancing 
+access to nutritious foods and clean water and regulating 
+the marketing of unhealthy foods targeting children [32].
+Effective treatment and management of obesity requires 
+providing long-term, evidence-based, and high-quality 
+healthcare services (e.g., behavioral and psychological inter-
+ventions, pharmacotherapy, and bariatric surgery adjunctive 
+to medical nutrition therapy and physical activity) [5, 8, 33]. 
+Enhancing existing healthcare services entails identifying 
+key opportunities, such as training healthcare professionals 
+in various disciplines involved in treating individuals with 
+obesity across healthcare systems, refining healthcare quality 
+monitoring processes along with implementing necessary 
+evidence-based obesity treatment interventions and long-
+term management approaches. Historically, the benchmark 
+for obesity care was set by official Mexican government 
+standards (official norms), which proved insufficient due to 
+challenges in development and updating processes [32, 34]. 
+Mexico also lacks access to specialized multidisciplinary 
+health teams to support patients living with obesity, and, as 
+in most other countries, the majority of healthcare profes-
+sionals do not receive obesity training and feel ill-equipped 
+to treat obesity [35, 36].
+In 2019, it was estimated that the total cost of overweight 
+and obesity in Mexico (including direct healthcare costs, as 
+well as indirect costs, such as premature death, absenteeism, 
+and presenteeism) amounted to US$23.17 billion; [ 19] the 
+Organization for Economic Co-operation and Development 
+estimates that obesity will reduce Mexico’s gross domestic 
+product by 5.3% by 2050, with direct healthcare expendi-
+tures reaching 8.9% of Mexico’s total health expenditure [21, 
+37]. Considering the impact of obesity on health and well-
+being as well as the economy in Mexico, obesity preven-
+tion, treatment, and management efforts must be intensified 
+across all fronts to stave off predicted increases in disease 
+prevalence by 2030. Achieving this goal demands a shared 
+vision of required interventions, political commitment, 
+645Current Obesity Reports (2024) 13:643–666 
+adequate infrastructure, funding, efficient implementation, 
+and societal support [38].
+Crafting new clinical practice guidelines, founded on the 
+most current evidence and tailored to the national landscape, 
+will support secondary prevention, treatment, and manage-
+ment measures for obesity in Mexico. Given Mexico's role 
+as one of the front-runner countries in the Acceleration Plan 
+for Obesity, initiated by the WHO, UNICEF, and the World 
+Obesity Federation, these guidelines represent a valuable 
+contribution and an essential instrument for enhancing a 
+national response.
+Although obesity consensus statements exist [16], this 
+document represents Mexico’s first methodologically rigor-
+ous clinical practice guideline generated through a system-
+atic assessment of published evidence, under the guidance 
+of an independent methods team, using the Grading of Rec-
+ommendations Assessment, Development and Evaluation 
+(GRADE) Evidence-to-Decision (EtD) framework [39], 
+and with input from and participation of patients living with 
+obesity. The latter provided information related to the values 
+and preferences of patients, reviewed and formulated rec -
+ommendations, and participated in shared decision-making 
+throughout the process in collaboration with interdiscipli-
+nary subject matter experts [40].
+Without the development and implementation of evi-
+dence-based clinical practice guidelines, patients and health-
+care professionals have had to navigate a complex system of 
+non-evidence-based and internationally unregulated obesity 
+treatment products and programs that can contribute to more 
+harm at the individual level and a progression of the disease 
+at the population level.
+Methods
+Panel Composition
+The Mexican Society of Nutrition and Endocrinology (Span-
+ish acronym: SMNE) assembled a Steering Committee (SC) 
+comprising interdisciplinary experts working in obesity 
+research and clinical practice (n = 14). The SC included one 
+chair [E.A.C.M.], 13 endocrinologists [E.A.C.M., J.E.G.G., 
+L.M.A., L.M.Z., F.J.L.G., H.A.L.M., R.C.L., J.M.V.Z., 
+R.V.O., J.C.G.C, R.H.G, J.C.L.A., E.A.V.C.], and a dieti-
+tian [M.K.H.] to oversee the guideline development process 
+and to agree on general principles, scope, and target audi-
+ences (Appendix I). The SC met weekly via online platforms 
+(Zoom) and discussed issues electronically as needed (What-
+sApp) between December 2023 and July 2024.
+An Advisory Committee (AC), consisting of lead inter -
+disciplinary authors (e.g., psychology, psychiatry, nutrition, 
+sports medicine and physical activity, bariatric surgery, and 
+epidemiology) and one person living with obesity (n = 16) 
+(Appendix I), worked with the SC to propose, prioritize, and 
+finalize research questions using a Delphi-based consensus 
+process via an online survey and group discussions. The AC 
+met at least once monthly via Zoom.
+SC and AC members completed a 20-h online training 
+course on GRADE EtD methodology, provided by Episte-
+monikos Foundation, an independent, not-for-profit organi-
+zation that aims to provide reliable information to healthcare 
+decision makers.
+A Patient Committee (PC) engaged people living with 
+obesity recruited through two organizations: i) Obesidades, 
+a Mexican nonprofit civil society that raises awareness about 
+obesity and provides training to healthcare professionals 
+and students, and ii) the Obesity Clinic at National Institute  
+of Medical Sciences and Nutrition Salvador Zubirán (Insti-
+tuto Nacional de Ciencias Médicas y Nutrición Salvador  
+Zubirán) in Mexico City (Appendix I). The PC (n = 4) 
+met monthly via Zoom and held online discussions via  
+WhatsApp. Input on good practice statements and clinical 
+recommendations was received from the PC through online 
+and in-person meetings.
+The members of all committees met in person in June 
+2024 to develop the final recommendations with support 
+and guidance from the Epistemonikos Foundation. SMNE 
+staff and consultants provided administrative support and 
+project coordination for the guideline development process. 
+Table  1 outlines the guideline development process and the 
+responsibilities of each group of participants.
+Management of Competing Interests
+Funding for the development of the guidelines was provided 
+in the form of unrestricted industry grants (Novo Nordisk, 
+Merck, Boehringer Ingelheim) to SMNE, as well as in-kind 
+support from the scientific, professional, and patient volun-
+teers engaged in the process. Representatives from industry 
+sponsors had no presence or input and played no role in 
+any stage of the guideline development process, including 
+the preparation of PICO (population [P], intervention [I], 
+comparator [C], and outcome [O]) questions, evidence syn-
+thesis and grading, the development of recommendations 
+and the preparation of this manuscript, and therefore have 
+not influenced the guideline's content in any manner. None 
+of the committee members were remunerated for their work 
+on the guidelines.
+The SC developed and managed a competing interest 
+policy and procedures for mitigating bias. Detailed compet-
+ing interest declarations (using the International Committee 
+of Medical Journal Editors’ disclosure form) were collected 
+for all members of the SC, AC, and PC, as well as participat-
+ing methodologists from Epistemonikos Foundation, staff, 
+and consultants. Individuals with relevant disclosures were 
+not excluded from voting on recommendations. However, 
+646 Current Obesity Reports (2024) 13:643–666
+the SC asked individuals with direct competing interests to 
+abstain from voting in the areas in which they had a conflict. 
+Methodologists from the Epistemonikos Foundation, who 
+had no competing interests, independently conducted the 
+entire evidence synthesis processes using standard GRADE 
+EtD framework procedures and moderated consensus panels. 
+They drafted and reviewed all new recommendations and 
+good practice statements to ensure fidelity with the evidence.
+Target Audiences and Selection of Priority Topics
+The principal target audience for this guideline is healthcare 
+professionals who are the first point of contact for patients 
+in Mexico who seek/require evidence-based care to man -
+age their obesity. This includes any interdisciplinary health-
+care professional working across various healthcare levels 
+and clinical settings, including primary care and specialist 
+services. Secondary audiences include patients living with 
+obesity and health system decision makers.
+The SC identified specific clinical challenges facing 
+patients in Mexico, and those faced by the healthcare pro-
+fessionals who treat them. They defined the guideline scope 
+and priority topics based on a review of recommendations 
+put forward by recent U.S. [5], European [33], and Canadian 
+[8] clinical practice guidelines for adult obesity. Although 
+overweight and obesity prevention (primary and secondary), 
+treatment, and management initiatives are needed in Mexico, 
+primary prevention and public health approaches are beyond 
+the scope of this guideline. Thus, only research questions 
+focused on clinical challenges related to secondary preven-
+tion, treatment, and management of overweight and obesity 
+in the Mexican adult population were prioritized.
+In a five-round Delphi survey process, the SC and AC 
+reviewed primary recommendations from the U.S., Euro-
+pean, and Canadian obesity guidelines and identified recom-
+mendations perceived as the most relevant, appropriate, and 
+useful for the Mexican population and healthcare services 
+landscape. In the first round, the SC reviewed 80 statements 
+from the three international guidelines, and statements with 
+an agreement of 50% or higher were selected. In the second 
+round, the SC and AC added 35 new clinical challenges or 
+statements, and those with an agreement of 50% or higher 
+were selected. In the third to fifth rounds, statements with 
+75% agreement were selected. The Delphi survey was con-
+ducted from September 2023 to February 2024.
+Following this process, 20 clinical challenges were con-
+sidered high priority and relevant for Mexico and used to 
+create new PICO questions that were addressed using the 
+standardized GRADE EtD framework to develop recommen-
+dations (Table  2). Methodologists from the Epistemonikos 
+Foundation supported the translation from clinical questions 
+into PICO questions.
+Evidence Synthesis
+The Epistemonikos Foundation methods team conducted 
+an evidence synthesis process on the effects of interven-
+tions, the importance of outcomes, resource use, and con-
+siderations of equity, acceptability, and feasibility of treat-
+ment alternatives. Eligibility criteria were defined for the 
+components of each prioritized question. Systematic reviews 
+and randomized trials that met the inclusion criteria for each 
+question were included to inform the intervention effects 
+criteria. Only systematic reviews were considered for the 
+other EtD criteria.
+A search for systematic reviews was conducted through 
+the Epistemonikos Foundation database until May 29, 2024. 
+The Epistemonikos Foundation database is a comprehensive 
+database of systematic reviews relevant to health decision-
+making that is maintained by screening multiple sources 
+of information to identify systematic reviews and their 
+included primary studies, including the Cochrane database 
+Table 1  Guideline Development Process and Roles
+SC =steering committee, AC = advisory committee, PC = patient committee
+Action Responsibility Approach
+Oversight, identify the scope, selection of key topics, 
+target audiences and fundamental guideline principles 
+based on existing international guidelines and consen-
+sus
+SC Weekly meetings and discussions
+Develop and prioritize research PICO questions using 
+Delphi-based consensus process
+SC and AC Five Delphi-based consensus survey
+Conduct literature search and screening, synthesize data, 
+assess the certainty of evidence, and prepare summary 
+of findings and EtD tables
+Epistemonikos Foundation Evidence synthesis and GRADE
+Develop and approve recommendations based on EtD 
+Framework
+SC, AC, PC, and Epistemonikos Foundation Three day in-person workshop
+Develop and approve good practice statements SC, AC, PC, and Epistemonikos Foundation Online survey and two online meetings
+647Current Obesity Reports (2024) 13:643–666 
+Table 2  Prioritized Topics, Sub-Topics, and Research Questions
+Key Topic Clinical Challenge Research Question (Spanish) Research Question (English Translation)*
+Clinical Evaluation
+Obesity and cardiovascular disease En adultos de 18 años o más con sobrepeso u obesidad, ¿se deben 
+usar escalas para evaluar el riesgo cardiovascular en atención 
+primaria en comparación con no utilizarlas?
+In adults aged 18 years or older who live with overweight or obesity, 
+should risk scoring tools be used to assess cardiovascular risk in 
+primary care**, compared to not using them?
+Obesity and reproductive health En mujeres en etapa reproductiva que desean embarazarse y tienen 
+obesidad pregestacional, ¿se debe referir a un programa multidisci-
+plinario en comparación con tratamiento convencional?
+In women of reproductive age who wish to become pregnant and have 
+pregestational obesity, should they be referred to a multidisciplinary 
+program compared to conventional treatment?
+Interdisciplinary obesity care En adultos de 18 años o más con obesidad grado 2 con o sin comor-
+bilidades, ¿se debe referir a un programa multidisciplinario en 
+comparación con tratamiento convencional?
+In adults 18 years of age or older with Class 2 obesity with or without 
+comorbidities, should they be referred to a multidisciplinary pro-
+gram versus conventional treatment?
+Treatment and Follow-up
+Medical nutrition therapy En adultos de 18 años o más con sobrepeso u obesidad, ¿el plan de 
+alimentación debe ser prescrito por un nutriólogo en comparación 
+con un médico de primer contacto?
+In adults 18 years of age or older with overweight or obesity, should a 
+dietary plan be prescribed by a nutritionist compared to a physician 
+at the first point of contact?
+En adultos mexicanos de 18 años o más con sobrepeso u obesidad, 
+¿se debe usar la Dieta de la Milpa (tipo de dieta tradicional Mexi-
+cana) en comparación con una dieta hipoenergética equilibrada?
+In Mexican adults 18 years of age or older with overweight or obesity, 
+should the Milpa Diet (type of traditional Mexican diet) be used 
+compared to a balanced hypoenergetic diet?
+Physical activity En adultos de 18 años o más con sobrepeso u obesidad, ¿se deben 
+usar intervenciones destinadas a controlar conductas sedentarias 
+en comparación con no usarlas?
+In adults 18 years of age or older with overweight or obesity, should 
+interventions aimed at controlling sedentary behaviors be used 
+versus not using them?
+En adultos de 18 años o más con sobrepeso u obesidad, ¿se deben 
+realizar snacks de ejercicio en comparación con no realizarlos?
+In adults 18 years of age or older with overweight or obesity, should 
+exercise snacks be used compared to not using them?
+Behavioral interventions and mental health En adultos de 18 años o más con sobrepeso u obesidad, ¿se debe 
+realizar tamizaje de salud mental en atención primaria en compar-
+ación con no realizarlo?
+In adults 18 years of age or older with overweight or obesity, should 
+mental health screening be performed in primary care compared to 
+not screening?
+En adultos de 18 años o más con sobrepeso u obesidad, ¿se deben 
+usar herramientas conductuales en comparación con no utilizarlas?
+In adults 18 years of age or older with overweight or obesity, should 
+behavioral change tools be used versus not using them?
+En adultos de 18 años o más con sobrepeso u obesidad, ¿se deben 
+usar intervenciones psicológicas grupales en comparación con 
+intervenciones psicológicas individualizadas?
+In adults 18 years of age or older with overweight or obesity, should 
+group psychological interventions be used compared to individual-
+ized psychological interventions?
+Pharmaco-therapy En adultos de 18 años o más con sobrepeso u obesidad, ¿se debe 
+usar fentermina por 6 meses o más en comparación con interven-
+ciones en el estilo de vida/placebo?
+In adults 18 years of age or older with overweight or obesity, should 
+phentermine be used for six months or longer compared to lifestyle/
+placebo interventions?
+En adultos de 18 años o más con sobrepeso u obesidad, ¿se debe 
+usar fenproporex por 6 meses o más en comparación con interven-
+ciones en el estilo de vida/placebo?
+In adults 18 years of age or older with overweight or obesity, should 
+fenproporex be used for six months or longer compared to lifestyle/
+placebo interventions?
+En adultos de 18 años o más con sobrepeso u obesidad, ¿se debe 
+usar mazindol por 6 meses o más en comparación con interven-
+ciones en el estilo de vida/placebo?
+In adults 18 years of age or older with overweight or obesity, should 
+mazindol be used for six months or longer compared to lifestyle/
+placebo interventions?
+648 Current Obesity Reports (2024) 13:643–666
+Table 2  (continued)
+Key Topic Clinical Challenge Research Question (Spanish) Research Question (English Translation)*
+En adultos de 18 años o más con sobrepeso u obesidad, ¿se debe 
+usar anfepramona por 6 meses o más en comparación con inter-
+venciones en el estilo de vida/placebo?
+In adults 18 years of age or older with overweight or obesity, should 
+amfepramone be used for six months or longer compared to life-
+style/placebo interventions?
+En adultos de 18 años o más con sobrepeso u obesidad, ¿se debe 
+usar clobenzorex por 6 meses o más en comparación con interven-
+ciones en el estilo de vida/placebo?
+In adults 18 years of age or older with overweight or obesity, should 
+clobenzorex be used for six months or longer compared to lifestyle/
+placebo interventions?
+En adultos de 18 años o más con sobrepeso u obesidad sin diabetes, 
+¿se deben usar agonistas del péptido similar al glucagon tipo 1 
+(GLP-1) (liraglutida, semaglutida) en comparación con interven-
+ciones en el estilo de vida/placebo?
+In adults 18 years of age or older with overweight or obesity without 
+diabetes, should glucagon-like peptide 1 (GLP-1) agonists (liraglu-
+tide, semaglutide) be used compared to lifestyle/placebo interven-
+tions?
+En adultos de 18 años o más con sobrepeso u obesidad sin diabetes, 
+¿se debe usar naltrexona/bupropion en comparación con interven-
+ciones en el estilo de vida/placebo?
+In adults 18 years of age or older with overweight or obesity without 
+diabetes, should naltrexone/bupropion be used compared to lifestyle/
+placebo interventions?
+En adultos de 18 años o más con obesidad Índice de masa corporal 
+(IMC > 30), ¿se debe fenotipificar la farmacoterapia para obesidad 
+en comparación con la prescripción convencional?
+In adults aged 18 years or older with obesity (BMI > 30), should phar-
+macotherapy for obesity be phenotyped compared to conventional 
+prescribing?
+En adultos de 18 años o más con sobrepeso u obesidad, ¿se debe 
+usar terapia combinada de fármacos para obesidad (liraglutida, 
+semaglutida, naltrexona/bupropion, orlistat) en comparación con 
+monoterapia de fármacos para obesidad?
+In adults 18 years of age or older with overweight or obesity, should 
+combination obesity drug therapy (liraglutide, semaglutide, naltrex-
+one/bupropion) be used compared to obesity drug monotherapy?
+En adultos de 18 años o más con sobrepeso u obesidad sin altera-
+ciones del metabolismo de la glucosa, ¿se deben usar antidia-
+béticos orales (inhibidores del cotransportador sodio-glucosa 
+[iSGLT2] o metformina) en comparación con intervenciones en el 
+estilo de vida?
+In adults 18 years of age or older with overweight or obesity without 
+impaired glucose metabolism, should oral hypoglycemic agents 
+(Na + -glucose cotransporter 2 [iSGLT2] inhibitors or metformin) be 
+used compared to lifestyle interventions?
+* PICO questions were developed and processed in Spanish; English translations provided here are edited slightly for clarity for English readers
+** The use of the term “primary care” in the literature often refers specifically to the primary healthcare setting, and so the authors have adopted that language when crafting the PICO questions, 
+recommendations, and good practice statements
+649Current Obesity Reports (2024) 13:643–666 
+of systematic reviews, PubMed/MEDLINE, EMBASE, 
+CINAHL, PsycINFO, LILACS, DARE, HTA database, 
+Campbell database, JBI database of systematic reviews and 
+implementation reports, and EPPI-Center Evidence Library) 
+[41].
+No date or language restrictions were applied. To iden-
+tify primary studies not included in the reviews, additional 
+searches restricted to the previous three years were per -
+formed in PubMed and LILACS. The search strategies used 
+for each clinical question are available in Supplementary 
+File 1, Appendix 2. Duplicate records from the searches 
+were identified by an automated process through the Epis-
+temonikos Foundation database. Additionally, unpublished 
+or ongoing studies mentioned in the systematic reviews were 
+reviewed to see if there were updated publications for trials 
+mentioned as ongoing in the systematic reviews.
+Evidence was screened by independent peer reviewers in 
+two stages (title and abstract, and full text) using the Collab-
+oratron screening software developed by the Epistemonikos 
+Foundation [41]. Discrepancies were resolved by consensus 
+or by a third investigator.
+After the selection process, evidence matrices were con-
+structed with the aim of comparing the studies included in 
+the systematic reviews and identifying the most exhaustive, 
+updated, and best quality ones. When a review was identi-
+fied meeting these characteristics, it was used directly to 
+inform the corresponding clinical question; otherwise, a 
+rapid review was performed including randomized trials 
+[42]. When neither systematic reviews nor randomized tri-
+als were identified, observational studies were considered.
+Data extraction and risk of bias assessment were per -
+formed by two reviewers using standardized forms. The 
+RoB (risk of bias)-2 tool [43] was used to assess the risk of 
+bias of randomized trials, and ROBINS-I (Risk Of Bias In 
+Non-Randomised Studies—of Interventions) tool was used 
+for observational studies [44].
+The effects findings were synthesized quantitatively (i.e., 
+through a meta-analysis) or narratively according to the 
+available data. The GRADE approach was used to evaluate 
+the certainty of the evidence. The certainty of the evidence 
+was classified as high, moderate, low, and very low, consid-
+ering the criteria of risk of bias, inconsistency, imprecision, 
+indirect evidence, and publication bias. The results of the 
+synthesis of the effects were integrated in the EtD tables 
+through a summary of findings tables following the GRADE 
+EtD framework [39]. For each question, EtD tables were cre-
+ated through the interactive EtD (iEtD) platform [45]. EtD 
+tables are available in Supplementary File 1, Appendix 3.
+To inform the criteria of importance of the outcomes, 
+resource use, and considerations of equity, acceptability, 
+and feasibility, we searched for systematic reviews of util-
+ity studies, economic evaluations, and qualitative studies, 
+respectively. When systematic reviews of qualitative studies 
+were included, summary tables of qualitative findings were 
+constructed based on data reported by the review authors, 
+using the GRADE-CERQual (Confidence in the Evidence 
+from Reviews of Qualitative research) approach [46, 47] 
+and the iSoQ (Interactive Summary of Qualitative Findings) 
+software [45]. Short messages were drafted to populate the 
+corresponding EtD criteria.
+Development of Recommendations
+To develop the clinical recommendations based on the pri-
+oritized PICO questions, an in-person workshop was held 
+in June 2024. Each session was led by a member of the 
+methodological team and a thematic expert. The panel was 
+composed of clinical (healthcare professionals) and lived 
+experience (patients) thematic experts. A presentation of the 
+evidence for each question was made by a representative 
+of the methodological team, while the moderation of the 
+discussion and the recording of additional considerations 
+was done jointly with the thematic expert assigned to the 
+question. For each of the EtD framework criteria, thematic 
+experts discussed and voted until consensus was reached. 
+Consensus was defined a priori as an agreement of ≥ 75%. 
+Up to three rounds of voting were conducted and, if no 
+agreement was reached, the majority vote was chosen. After 
+making judgments for each criterion, the panelists voted on 
+the direction and strength of each recommendation. This 
+entire process was conducted using the iEtD platform. Sup-
+plementary File 1 contains the checklist and panel discus-
+sion for developing each recommendation.
+Formulating Good Practice Statements
+Through the question prioritization process, 20 questions 
+were identified by the expert panel and from other clinical 
+practice guidelines [5, 8, 33] that met the criteria to be for -
+mulated as good practice statements. These questions were 
+structured as actionable statements and evaluated through 
+a checklist that considered whether: i) the message is truly 
+needed in relation to current clinical practice; ii) implement-
+ing the statement results in a large net benefit (i.e., satisfies 
+several EtD criteria) after considering all relevant outcomes 
+and possible consequences; iii) in a context where time and 
+resources are limited, conducting a formal process of sum-
+marizing and discussing the evidence would not constitute 
+a good use of time and/or resources; iv) there is a clear, 
+explicit, and well-documented rationale connecting the indi-
+rect evidence; and v) the statement is clear and actionable 
+[48]. A structured online survey was conducted to determine 
+agreement on the wording and supporting information of the 
+good practice statements. Two online meetings were held to 
+discuss and finalize the wording of those where consensus 
+650 Current Obesity Reports (2024) 13:643–666
+was not reached (proportion of agreement < 75%) or which 
+had comments suggesting major changes. Supplementary 
+File 1, Appendix 3.1 contains the checklist and panel discus-
+sion for developing each good practice statement.
+Recommendations and Good Practice 
+Statements
+Clinical Evaluation
+Early diagnosis and treatment of overweight and obesity can 
+improve overall health and quality of life as well as prevent 
+and manage obesity-related complications [1 ]. However, 
+healthcare professionals should be aware that people living 
+with obesity may have experienced bias, stigma, and dis-
+crimination because of their weight or obesity in many set-
+tings, including healthcare settings [49]. These experiences 
+may affect patients’ willingness to interact with healthcare 
+professionals. Patients who have experienced weight bias 
+and stigma may delay or avoid healthcare services for fear 
+of being blamed and shamed for their weight. Therefore, 
+obesity screening, assessment, diagnosis, treatment, and 
+management need to be conducted using objective medical 
+measures and non-judgmental, collaborative, and person-
+centered approaches. Collaborative conversations, based on 
+motivational interviewing, can include strategies such as: i) 
+asking for permission to initiate a conversation about weight 
+and obesity (“Is it okay for us to talk about your weight?”, 
+“What worries you about your weight?”, “How can we work 
+together to manage your obesity?”); ii) avoiding making 
+assumptions about patients’ lifestyles, health behaviours, 
+interests, motivations, or stage of change; iii) listening to 
+patients’ concerns and trying to understand patients’ points 
+of view; iv) validating and respecting patients’ situations 
+and experiences; v) supporting patients to make choices, 
+adapt, and sustain evidence-based behaviors associated with 
+obesity management; vi) exchanging ideas about alterna-
+tive options to address obesity management barriers; vii) 
+establishing an action plan together; and viii) acknowledg-
+ing that behavior change is difficult while recognizing small 
+changes [50].
+Obesity is an adiposity-based chronic disease and the 
+goal of a medical obesity assessment is to determine how 
+excess or dysfunctional adiposity impacts a person’s health 
+and well-being. Anthropometric measures, such as BMI or 
+waist circumference, can be used as screening tools, but 
+relying solely on anthropometric measures for the screen-
+ing and diagnosis of obesity can lead to both underdiag-
+nosis and overdiagnosis of obesity [13, 51]. To diagnose 
+obesity, existing international guidelines recommend a full 
+medical assessment to determine if and how excess adipos-
+ity or pathogenic changes in adipose tissue are impacting a 
+person’s health and well-being [5, 8, 13, 33, 51, 52]. A medi-
+cal obesity assessment can consider the impact of obesity on 
+cardiometabolic health, physical functioning, and psycho-
+social outcomes [5 , 8, 13]. With a more accurate diagno-
+sis and staging of obesity and its complications, healthcare 
+professionals can work collaboratively with patients living 
+with obesity to develop personalized, targeted, and effective 
+obesity treatment and management approaches [52]. Accu-
+rate diagnosis of obesity can also facilitate the allocation 
+of healthcare resources so that patients who need treatment 
+have access to effective and evidence-based treatments.
+Cardiovascular diseases are among the most significant 
+obesity-related impacts and the leading cause of mortal-
+ity worldwide [ 53]. A staggering 17.7 million deaths in 
+2015 were due to cardiovascular diseases, accounting for 
+31% of global mortality. Research indicates that dysfunc-
+tional adipose tissue and abnormal fat deposits in the myo-
+cardium and epicardium lead to the release of a series of 
+metabolic signals, reactive oxygen species, prothrombotic, 
+pro-inflammatory, and neurohormonal factors, resulting in 
+endothelial dysfunction [53, 54]. Conducting a cardiovascu-
+lar risk assessment in patients living with obesity is critically 
+important and can inform effective clinical decision-mak -
+ing. Patients who have a low cardiovascular risk assessment 
+score can receive secondary prevention recommendations, 
+while patients with a high cardiovascular risk score should 
+receive evidence-based obesity and cardiovascular treat-
+ments. Several scales and predictive models are available to 
+assess cardiovascular risk in primary healthcare. However, 
+there is some uncertainty regarding the potential impact on 
+health outcomes and therapeutic approaches when using car-
+diovascular risk scales in adults with overweight or obesity 
+within primary care settings.
+In women of reproductive age who wish to get pregnant, 
+multidisciplinary obesity treatment before and during preg-
+nancy have been demonstrated to have some benefit for both 
+the mother and the offspring. There is some evidence that 
+multidisciplinary lifestyle-based programs can also enhance 
+certain fertility, maternal, and child health outcomes, com-
+pared to conventional treatment [55].
+This guideline includes evidence-based recommendations 
+(Table  3) and consensus-based good practice statements 
+(Table  4) for clinical evaluation.
+Obesity Treatments
+Effective and evidence-based obesity treatment interventions 
+include behavioral interventions and psychological therapy, 
+pharmacotherapy, and bariatric surgery and endoscopic 
+procedures in conjunction with medical nutrition therapy 
+and physical activity interventions [8 ]. Unfortunately, as in 
+many countries, Mexican adults living with obesity often 
+651Current Obesity Reports (2024) 13:643–666 
+lack access to effective, evidence-based treatments and long-
+term management support [36].
+Global obesity clinical guidelines widely accept that 
+creating individualized care plans (based on key princi-
+ples of chronic disease management) that target the root 
+causes and complications of obesity, delivered where 
+possible by a multidisciplinary care team with exper -
+tise in each treatment approach, and working towards 
+improvements in health and well-being (not solely 
+weight loss) and treatment goals identified in collabo-
+ration with patients, may represent the highest standard 
+of obesity care [13, 57].
+Table 3  Recommendations: Clinical Evaluation*
+ noitadnemmoceRnoitadnemmoceR
+Strength and Direction
+Certainty of 
+Evidence
+1. SMNE suggests using cardiovascular risk scoring tools to assess the 
+cardiovascular risk at the primary care level in adults aged 18 years or 
+older with overweight or obesity.
+Remarks: Using the Globorisk scale[ 56], validated in the Mexican 
+population, would be more appropriate for individuals over 40 years 
+and/or those with comorbidities.
+Conditional 
+recommendation for the 
+intervention
+Very low
+2. SMNE suggests referring women of reproductive age who wish to 
+become pregnant and have pregestational obesity to a multidisciplinary 
+program.
+Conditional 
+recommendation for the 
+intervention
+Very low
+3. SMNE suggests referring adults aged 18 years or older with Class 2 
+obesity, with or without comorbidities to a multidisciplinary program.
+Remarks: In the context of limited resources, prioritization could be 
+made according to the presence or absence of comorbidities for 
+referral to centers of greater complexity (referral centers or national 
+institutes of health).
+Conditional 
+recommendation for the 
+intervention
+Very low
+* Supplementary File 1 contains the checklist and panel discussion for developing each recommendation
+Table 4  Good Practice Statements (Ungraded): Clinical Evaluation*
+* Supplementary File 1, Appendix 3.1 contains the checklist and panel discussion for each good practice statement
+I) Healthcare professionals should examine, assess, and diagnose obesity using standardized measures that consider additional elements beyond 
+weight, BMI, and waist circumference
+II) Healthcare professionals should conduct a medical history aimed at identifying the causes of overweight or obesity in order to make appropriate 
+therapeutic decisions and implement effective treatments
+III) Healthcare professionals should assess and treat mechanical complications related to overweight or obesity, such as obstructive sleep apnea 
+syndrome, osteoarthritis, gastroesophageal reflux disease, urinary incontinence, and plantar fasciitis, which may coexist with other complica-
+tions
+IV) Healthcare professionals should assess and treat cardiometabolic complications related to overweight or obesity, such as insulin resistance, 
+prediabetes, T2D, dyslipidemia, metabolic syndrome, metabolic dysfunction-associated steatotic liver disease (MASLD), hypertension, and 
+cardiovascular and cerebrovascular diseases
+V) Healthcare professionals should assess and treat mental health complications related to overweight or obesity, such as depressive symptoms, 
+anxiety symptoms, and binge eating disorder
+VI) Healthcare professionals should maintain a mutually collaborative relationship with patients with overweight or obesity to help them adopt 
+evidence-based treatments and sustainable self-care behaviors associated with their treatment
+VII) Healthcare professionals can consider using the "5As" framework (Ask, Assess, Advise, Agree, Assist) as part of the assessment, follow-up, 
+and treatment of individuals with overweight or obesity
+VIII) Healthcare professionals can consider implementing the Edmonton Obesity Staging System to integrate physical, metabolic, and mental 
+health aspects in the diagnosis and treatment of obesity
+652 Current Obesity Reports (2024) 13:643–666
+Multidisciplinary management approaches may improve 
+obesity outcomes (e.g., weight loss, weight loss mainte-
+nance, quality of life, etc.) and management of obesity-
+related complications [58].
+Medical Nutrition Therapy
+Medical nutrition therapy is a central component of obe-
+sity treatment, along with other critical elements, such as 
+physical activity, exercise, sleep, and stress management. 
+The consequences of a diet high in energy (calories) can 
+negatively affect health in various ways, including prob-
+lems related to gastrointestinal function (e.g., constipation, 
+diarrhea, reflux, acid peptic disorders, etc.) and metabolic 
+imbalance (e.g., hypertension, metabolic dysfunction-
+associated steatotic liver disease, overweight, obesity, 
+prediabetes, diabetes, dyslipidemia).
+To ensure a safe, effective, culturally acceptable and 
+sustainable approach it is critical to provide personalized 
+nutritional recommendations for adults with overweight 
+or obesity based on their personal characteristics, history, 
+values, preferences, and treatment goals [59]. Medical 
+nutrition therapy should ideally be provided by a certified 
+nutritionist experienced in managing obesity who can pro-
+vide evidence-based advice to maximize outcomes [59].
+A dietary plan should be low in energy to effectively 
+treat obesity and achieve improved weight or BMI out-
+comes. Numerous studies have assessed various nutritional 
+approaches for treating obesity, examining the wide vari-
+ability in the composition of fat, protein, and carbohy -
+drates, as well as varying levels of energy restriction and 
+time restriction, among dietary approaches. These studies 
+demonstrate that the effectiveness of different types of diet 
+is variable in terms of achieved weight loss and meta-
+bolic benefit [60– 62]. However, it is difficult to compare 
+diets due to methodological and/or analytical differences, 
+degrees of caloric restriction, degrees of adherence, meas-
+urement errors, confounding variables, and other factors 
+[63].
+Systematic reviews and meta-analyses of clinical trials 
+related to dietary interventions for overweight and obesity, 
+usually show diverse results, although these differences are 
+minor [64–67]. This leads to the conclusion that the effects 
+of these interventions in the medium and long term do not 
+justify the prescription of one diet over another. Currently, 
+no single diet has been proven to be superior in treating 
+people with obesity.
+Thus, adults living with overweight or obesity can con-
+sider any of the multiple medical nutrition therapies with 
+scientific evidence to improve health-related outcomes, 
+choosing food-based dietary patterns that allow for best 
+long-term adherence [59]. It is important to clarify that, once 
+this dietary plan is identified, it will not necessarily remain 
+optimal throughout the patient's treatment since results may 
+vary and personal circumstances may change. Therefore, 
+health professionals and patients must be flexible and adapt 
+the treatment according to the results of the periodic evalu-
+ations carried out during follow-up.
+Physical Activity
+Accumulated time spent engaging in sedentary behaviors 
+– defined as any activity of an awake individual, lying or 
+reclining, that has an energy expenditure of less than 1.5 
+metabolic units [68]– increases the risk of morbidity and 
+mortality due to cardiovascular and metabolic causes. It also 
+has a negative impact on musculoskeletal and psychological 
+health, independent of other lifestyle factors [69–71].
+Active breaks are a simple strategy to improve cardiovas-
+cular and metabolic health and help offset the physiological 
+effects of sedentary behaviors. Given the ease of accessibil-
+ity and performance of these simple activities, they can serve 
+as an introduction to physical activity as a treatment tool for 
+patients with chronic diseases [69–72]. These breaks do not 
+require specialized sports equipment or specific intensity tar-
+gets, and can involve simple activities such as walking at any 
+speed, tiptoe rising, doing squats, etc. There is no consensus 
+on the number of active breaks needed throughout the day.
+Most people do not reach the minimum exercise rec-
+ommendations suggested by the WHO to maintain health 
+[73–77], with a lack of time commonly reported as a pri-
+mary barrier. The concept of “exercise snacks” has there-
+fore emerged as an option for individuals with limited time 
+and for those whose work activity is predominantly sed-
+entary [78, 79]. This approach centers on short bursts of 
+exercise multiple times throughout the day involving mod-
+erate to vigorous intensity with a duration of less than one 
+minute, spaced at intervals between one to four hours [80, 
+81]. Exercise snacks can be done with rhythmic, repetitive 
+exercises that involve long muscles, such as climbing stairs, 
+jumping jacks, and cycling, among others, or with strength 
+exercises, such as squats, rowing, planks, etc., depending on 
+specific objectives, health status, and level of physical fit-
+ness [82–85]. Performing exercise snacks with a minimum 
+frequency of three or more episodes during the day improves 
+various aspects of health: cardiorespiratory capacity [86, 
+87], muscle strength [84, 88–91], and cardiometabolic health 
+[82, 92–94]
+This guideline includes evidence-based recommendations 
+(Table  5) and consensus-based good practice statements 
+(Table  6) for medical nutrition therapy and physical activity 
+interventions.
+653Current Obesity Reports (2024) 13:643–666 
+Behavioral and Mental Health Interventions
+There is a complex and bidirectional relationship between 
+obesity and mental health [95, 96]. It has been documented 
+that people living with obesity have a higher prevalence 
+of depression, anxiety, and stress. Depressive symptoms, 
+anxiety, and stress can also drive to alterations in eating 
+behaviors [96], which, combined with other factors (e.g., 
+genetic, environmental, and biological), can lead to the 
+development of obesity. Other factors that affect both men-
+tal illness and obesity include inflammation, maladaptive 
+coping mechanisms, and sociodemographic factors [97].
+There is thus a need to consistently assess psychological 
+and behavioral factors both at the onset and throughout the 
+implementation of any obesity treatment. This is because 
+psychological distress may also stem from deteriorating 
+health, social stigma, and discrimination experienced by 
+individuals living with obesity [98, 99].
+Table 5  Recommendations: Medical Nutrition Therapy and Physical Activity*
+* Supplementary File 1 contains the checklist and panel discussion for developing each recommendation
+Table 6  Good Practice Statements (Ungraded): Medical Nutrition Therapy and Physical Activity*
+* Supplementary File 1, Appendix 3.1 contains the checklist and panel discussion for each good practice statement
+IX) Healthcare professionals should inform their patients about all evidence-based treatments for obesity, emphasizing that behavioral interventions 
+focusing on nutrition and physical activity form the foundation of any treatment plan for individuals living with chronic diseases
+X) Healthcare professionals should consider that nutritional and physical activity interventions are essential for health and well-being, but they 
+may also require complementary therapies for the treatment of obesity
+XI) Healthcare professionals should personalize dietary plans, prescribe physical activity and exercise, and tailor behavioral interventions for 
+individuals with overweight or obesity
+Remarks: The customization of treatments should be based on individual characteristics such as age, gender, genetics, metabolism, culture, 
+family background, socioeconomic status, health status, sleep quality, stress, among other factors. This is due to the high heterogeneity of the 
+disease (in terms of its causes, barriers to accessing care, phenotypes, and treatment responses)
+XII) Healthcare professionals should individualize the prescription of physical activity according to the characteristics and preferences of people 
+with overweight or obesity (cardiovascular risk, musculoskeletal conditions, and risk of falls), gradually increasing it to achieve WHO recom-
+mendations for aerobic physical activity
+Remarks: WHO recommendations include performing at least 150–300 min of moderate-intensity aerobic physical activity per week, or 
+75–150 min of vigorous-intensity aerobic physical activity per week (or an equivalent combination)
+XIII) In addition to prescribing aerobic physical activity, healthcare professionals should prescribe strength training at least two times per week 
+to achieve additional physical and mental health benefits for individuals with overweight or obesity
+Remarks: Strength training can be performed up to six times per week (as long as different muscle groups are used each time, allowing at least 
+48 h of rest between sessions of each muscle group) and should consider daily life activities that involve strength and are suitable for treatment 
+goals (e.g., maintaining muscle mass)
+654 Current Obesity Reports (2024) 13:643–666
+Understanding patients’ personal history and trajectory of 
+obesity development is crucial. This involves knowing when 
+the weight gain began, what caused it, previous treatments, 
+situations that led to weight changes, the impact on quality 
+of life, and how the weight gaining pattern has evolved over 
+time. A deeper understanding of each patient allows clini-
+cians to create a personalized treatment plan [100].
+In traditional obesity treatment paradigms, there has 
+been an implicit assumption that obesity results from a 
+lack of self-control (overeating), and that people can lose 
+weight and keep it off simply by changing their eating “hab-
+its”[101]. However, we now recognize the strong genetic 
+influences on body weight and the complex neuroendocrine 
+regulation of energy intake and expenditure, which often 
+hinder long-term weight management efforts.
+Psychological and behavioral interventions are integrated 
+as key pillars of obesity management [5, 8, 33]. These inter-
+ventions will not only support health behavior interventions 
+(e.g., medical nutrition therapy and physical activity) and 
+health behavior changes (e.g., medication adherence, self-
+care strategies), but they will also generate a deeper under -
+standing of the underlying reasons and conditions behind 
+these behaviors. This includes considering thoughts, emo-
+tions, attitudes, stages of change, motivation, expectations, 
+barriers, and potential solutions.
+Behavioral and psychological interventions can be used to 
+educate patients that weight control is neither easy nor always 
+comfortable, and to help them develop skills to achieve behav-
+ioral change that will allow them to have a healthier life, reduce 
+stress, have better tools to face their environment, increase psy-
+chological flexibility, promote acceptance of internal experi-
+ences, tolerate frustration, improve their quality of life, and 
+promote sustainable self-care in the short and long term [102, 
+103]. Effective and collaborative conversations with patients 
+using motivational interviewing strategies support changes 
+toward a health behavior change, which is essential for living 
+with and managing chronic diseases, including obesity [50].
+These psychological interventions, when used in con-
+junction with the rest of the obesity management strategies, 
+move from simply inducing weight loss (through caloric 
+restriction) to facilitating patients to adopt patterns of eating 
+and physical activity and medical adherence that promote 
+optimal changes in body composition and overall health 
+[102, 103].
+Table 7  Recommendations: Behavioral and Mental Health Interventions*
+Recommendation Recommendation 
+Strength and Direction
+Certainty of 
+Evidence
+* Supplementary File 1 contains the checklist and panel discussion for developing each recommendation
+Table 8  Good Practice Statements (Ungraded): Behavioral and Mental Health Interventions*
+* Supplementary File 1, Appendix 3.1 contains the checklist and panel discussion for each good practice statement
+XIV) Healthcare professionals should consider elements of motivational interviewing to build a collaborative relationship with their patients 
+with overweight or obesity. This approach helps patients explore readiness and reasons for change, increase self-esteem, and enhance self-
+efficacy
+XV) Healthcare professionals should discuss with patients the therapeutic goals related to weight loss, management of comorbidities, well-being, 
+and quality of life, without conveying the notion of an "ideal" weight, and instead talking about a "best weight."
+655Current Obesity Reports (2024) 13:643–666 
+This guideline includes evidence-based recommendations 
+(Table  7) and consensus-based good practice statements 
+(Table  8) for behavioral and mental health interventions.
+Pharmacotherapy
+There is a widespread belief among both patients, health 
+professionals, and healthcare policymakers that a lack of 
+adherence to lifestyle changes is the main barrier to manag-
+ing overweight and obesity [36]. However, in many cases, 
+medical nutrition therapy and physical activity interventions 
+on their own do not achieve long-term sustainable improve-
+ments in overweight and obesity (which, it is important to 
+stress, may or may not involve weight loss) given the multi-
+factorial etiology and heterogeneity of the disease. Multiple 
+interventions, including medical nutrition therapy, physical 
+activity, psychotherapy, pharmacotherapy, and bariatric sur-
+gery, may be necessary to address the complex physiological 
+mechanisms of weight gain and improve health outcomes 
+[104]. Thus, pharmacological treatments are recommended 
+for patients undergoing behavioral interventions who have a 
+BMI ≥  30 kg/m 2 or for patients with a BMI ≥  27 kg/m 2 with 
+at least one comorbidity associated with excess adiposity 
+[105]. Despite eligibility and safety of current obesity medi-
+cations, there are many access barriers to these treatments, 
+and less than 2.0% of patients living with obesity receive 
+pharmacological treatment [106].
+Multiple pharmacological agents have emerged with 
+potential utility for the treatment of overweight and obe-
+sity. Safe and effective long-term medications are avail-
+able in Mexico that can achieve a reduction of 5%–14% of 
+total body weight (semaglutide, liraglutide, combination of 
+naltrexone with bupropion, and orlistat). In addition, these 
+treatments may offer benefits in terms of improvement in 
+obesity-related complications and comorbidities independ-
+ent of weight loss [105].
+Pharmacotherapy should be individualized based on 
+patients’ specific conditions, obesity complications, and 
+comorbidities, as well as safety considerations specified in 
+Fig.  1. All approved medications for treating obesity are con-
+traindicated during pregnancy. Following obesity treatment, 
+there is an increased likelihood of pregnancy, necessitating 
+Fig. 1  Individualization of 
+Long-Term Pharmacotherapy 
+Using Agents Approved in Mex-
+ico. Abbreviations: T.i.d. = three 
+times a day, B.i.d. = two 
+times a day, Q.d. = once a 
+day, MAFLD = metabolic 
+dysfunction-associated steatotic 
+liver disease, CAD = car-
+diovascular arterial disease, 
+CKD = chronic kidney dis-
+ease, mild (50–79 mL/min), 
+moderate (30–49 mL/min), 
+RD = retinopathy-diabetic, 
+SBP = surveillance blood 
+pressure, UH = uncontrolled 
+hypertension, MHR = moni-
+tor heart rate, AD = adjusted 
+doses, APOS = avoid previous 
+oxalate stones, MS = monitor 
+symptoms, APD = avoid if prior 
+disease, A = avoid, CR = con-
+troversial results, LSU = lower 
+seizure umbral, AO = antago-
+nize opioids, ARD = avoid if 
+prior RD, MTAC = may trigger 
+angle closure
+Semaglutide
+Liraglutide
+Naltrexone / Bupropion
+Orlistat
+16 mg/180 mg b.i.d.
+3.0 mg q.d.
+2.4 mg/week
+120 mg t.i.d.
+ModerateCKD
+Pregnancy
+Hypertension
+CAD
+Arrhythmia
+Heart failure
+MildCKD
+Nephrolithiasis
+Cholelithiasis
+Pancreatitis
+Type 2 diabetes
+Prediabetes
+Post-bariatric
+surgery
+Retinopathy
+Glaucoma
+Age > 65 years
+Smoking
+Alcoholism
+Opioiduse
+Seizuredisorder
+Emotionaleating
+Bingeeating
+Depression
+MAFLD
+Long-term
+Pharmacotherapy
+M
+S
+MHR
+AD
+APOS
+MHR MHR
+MTAC
+AO
+LSU
+ARD
+CR
+CR
+M
+S
+M
+S
+APD
+SBPUH
+C
+C
+C
+C
+LSU
+APD
+Cardiom
+etabolic
+Kidney
+GastrointestinaI
+Neuropsychiatric
+Ophthalm
+ic
+Miscellaneous
+Safe to use in most patients
+Use with caution and surveillance
+Avoid
+656 Current Obesity Reports (2024) 13:643–666
+Table 9  Recommendations: Pharmacotherapy*
+* Supplementary File 1 contains the checklist and panel discussion for developing each recommendation
+** Additional panel considerations: The expert panel considered that the balance of effects, as well as equity and acceptability considerations, 
+657Current Obesity Reports (2024) 13:643–666 
+careful monitoring and guidance for women of childbear -
+ing age.
+It is important to note that in Mexico, some obesity medi-
+cations are still prescribed despite lacking robust scientific 
+evidence for their long-term efficacy and safety. Therefore, 
+it is crucial for healthcare professionals who are the first 
+point of contact for patients living with obesity and who 
+wish to prescribe pharmacological interventions to carefully 
+consider an agent’s effectiveness and safety.
+This guideline includes evidence-based recommendations 
+(Table  9) and consensus-based good practice statements 
+(Table  10) for pharmacotherapy interventions.
+Metabolic and Bariatric Surgery
+Metabolic and bariatric surgery (MBS) is one of the key 
+pillars of obesity treatments and should be considered for 
+individuals living with obesity, severe obesity, and obesity-
+related complications. MBS, encompassing procedures such 
+as gastric bypass and sleeve gastrectomy, plays a crucial role 
+in the treatment of severe obesity [5, 8, 33, 109]. Indications 
+for MBS include a BMI ≥ 35 kg/m 2, or BMI 30–34.9 kg/
+m2 with type 2 diabetes (T2D), or patients with suboptimal 
+treatment response, recurrent weight gain, or without co-
+morbidity improvement using non-surgical methods [109].
+  The benefits of MBS extend beyond significant and sus-
+tained medically necessary weight loss. MBS can also lead to 
+improvements in or resolution of obesity complications, such as 
+T2D, hypertension, hyperlipidemia, sleep apnea, and MAFLD, 
+and reduces the risk of some malignant tumors, acute cerebro-
+vascular events, and all-cause mortality [110]. MBS-induced 
+weight loss also enhances quality of life and increases longevity.
+Long-term benefits and outcomes of MBS, like all other 
+obesity treatments, are strongly related adherence to adjunctive 
+interventions (such as medical nutrition therapy and physical 
+activity, psychological and behavioral interventions), genetics, 
+and other environmental and social factors. Although MBS has 
+been shown to produce significant long-term weight loss and 
+manage or resolve obesity-related complications, 20%–30% of 
+patients may still experience suboptimal clinical response (i.e., 
+total weight loss of less than 20% or inadequate improvements 
+in significant obesity complications) or recurrent weight gain 
+(i.e., more than 20% of the initial surgical weight loss or wors-
+ening of an obesity complication that was a significant indi-
+cation for surgery) after MBS, due to the biological, chronic, 
+progressive, and relapsing nature of obesity [111–113].
+Potential MBS risks and complications include surgical com-
+plications and nutritional deficiencies, among others. Therefore, 
+bariatric surgery needs to be performed by specialized surgeons 
+in hospitals with dedicated multidisciplinary teams that can pro-
+vide lifelong medical follow-up and support [109].
+If MBS is indicated for T2D remission, an accurate diag-
+nosis of diabetes type and related complications, as well as 
+information about the level of pancreatic insulin secretory 
+reserve, is particularly important. This information is ben-
+eficial in assessing the likelihood of diabetes remission after 
+favor the use of phentermine for 6 months or more in most patients. Given the low cost and wide availability of the agent, it may be especially 
+useful for patients with lower income and those who lack access to the newer, costlier medications. The panel also considered that it is pos-
+sible that adverse events have not occurred in phentermine clinical trials due to the low number of participants, reduced follow-up time and a 
+lack of cardiovascular safety studies. The panel submitted two additional studies for discussion in the Mexican context. An observational study 
+of 166 participants found that, among patients receiving phentermine for 6 months, 92.9% of adverse events were mainly mild [107]. Another 
+study evaluating the effectiveness and safety of phentermine in nearly 14,000 individuals suggested that prolonged use of the medication 
+(> 12 months) does not significantly increase the likelihood of major cardiovascular events at 24 months [108]. Based on the panel's collective 
+clinical experience, phentermine can produce non-serious adverse events frequently observed in clinical practice; however, in some subgroups of 
+patients more caution should be exercised. These include individuals with anxiety disorders and depression, those taking antidepressants due to 
+drug interactions, and others at higher risk for adverse events (older adults, those at risk of cardiovascular disease and those at risk for glaucoma)
+Table 9  (continued)
+Table 10  Good Practice Statements (Ungraded): Pharmacotherapy*
+* Supplementary File 1, Appendix 3.1 contains the checklist and panel discussion for each good practice statement
+XVI) Healthcare professionals prescribing pharmacotherapy for overweight and obesity should consider it as an adjunct treatment to behavioral 
+interventions involving medical nutrition therapy and physical activity, stress management, etc. and it should never be prescribed as a stand-
+alone treatment
+XVII) Healthcare professionals prescribing pharmacotherapy should consider it for patients who have overweight (BMI ≥ 27 kg/m 2) with related 
+adiposity-related comorbidities, or for patients with obesity (BMI ≥ 30 kg/m 2), in conjunction with nutritional counseling, psychological sup-
+port, and physical activity prescription
+XVIII) Healthcare professionals prescribing pharmacotherapy as an adjunct for the treatment of obesity should consider medications approved 
+by the Mexican national regulatory agency (COFEPRIS) and for long-term follow-up
+658 Current Obesity Reports (2024) 13:643–666
+MBS. Preoperative evaluation in some patients may include 
+tests to distinguish type 1 diabetes from T2D, such as fast-
+ing C-peptide and anti-GAD (glutamic acid decarboxylase) 
+or other autoantibodies [114]. A preoperative evaluation may 
+also include prediction scales to identify patients who may 
+benefit from MBS. Among the existing prediction scales are 
+the DiaRem, Ad-DiaRem, ABCD, DRS, and 5y-Ad-DiaRem 
+scales, which assess several parameters such as age, glycated 
+hemoglobin, duration of diabetes, pancreatic reserves, insulin 
+use, among other factors [115–117].
+This guideline includes consensus-based good practice 
+statements (Table  11) for metabolic and bariatric surgery 
+interventions.
+Conclusion
+Implementing clinical practice guidelines for overweight and 
+obesity is crucial for enhancing the quality and consistency 
+of patient care. This guideline, developed through rigorous 
+research and expert consensus, provides healthcare profes-
+sionals with evidence-based recommendations to enhance 
+collaborative clinical decisions. By informing the standardi-
+zation of obesity care practices, this guideline can help reduce 
+variability in treatment approaches across populations and 
+regions, ensuring patients living with obesity receive the most 
+effective, safe, and personalized interventions. This can lead 
+to improved patient outcomes, reduced health inequalities, and 
+more efficient use of healthcare resources. Additionally, adher-
+ence to clinical practice guidelines supports continuous quality 
+improvement and facilitates better communication and coor-
+dination among healthcare teams, ultimately contributing to 
+a more reliable and patient-centered healthcare system [118].
+SMNE is committed to working with interdisciplinary 
+healthcare professional societies, patient advocacy groups, 
+and healthcare decision makers to disseminate and implement 
+this guideline. This guideline was conceived as a founda-
+tional first step to righting historical wrongs for patients in 
+Mexico, and as an objective and evidence-informed guide 
+for healthcare practitioners to provide meaningful obesity 
+care, in line with the latest thinking found in recent interna-
+tional clinical guidelines. Facilitating access to obesity care 
+in Mexico is a critical tool for prevention of the harm that 
+obesity can do to the health of the population. However, the 
+publication of clinical practice guidelines alone is insufficient 
+to bring about fundamental change. Without a comprehensive 
+national obesity care strategy encompassing i) meaningful 
+healthcare professional training in obesity management, ii) 
+supportive policies and funding at all relevant levels of gov-
+ernment and within health systems that remove barriers to 
+care and facilitate equitable, timely, and affordable access to 
+evidence-based treatments, iii) widespread efforts to reduce 
+weight bias and discrimination, and iv) programs to promote 
+more wide-spread awareness among the public about the 
+drivers of and treatments for the disease, adults living with 
+obesity in Mexico will continue to be underserved.
+Key references
+5. **Garvey WT, Mechanick JI, Brett EM, Garber AJ, 
+Hurley DL, Jastreboff AM, Nadolsky K, Pessah-Pollack 
+R, Plodkowski R (2016) AMERICAN ASSOCIATION 
+OF CLINICAL ENDOCRINOLOGISTS AND AMERI-
+CAN COLLEGE OF ENDOCRINOLOGY COMPRE-
+HENSIVE CLINICAL PRACTICE GUIDELINES FOR 
+MEDICAL CARE OF PATIENTS WITH OBESITY. 
+Endocr Pract 22 Suppl 3:1–203
+This clinical practice guideline provides medical rec-
+ommendations for healthcare professionals in the 
+management of obesity. This guideline informed many 
+of the ungraded consensus-based good practice state-
+ments in the Mexican clinical practice guideline.
+7. *Bray GA, Kim KK, Wilding JPH, on behalf of the 
+World Obesity Federation (2017) Obesity: a chronic 
+relapsing progressive disease process. A position state-
+ment of the World Obesity Federation: Position Paper. 
+Obesity Reviews 18:715–723.
+This paper summarizes global obesity expert consen-
+sus that obesity should be treated as a chronic relaps-
+ing chronic disease that requires evidence-based and 
+long-term management. This informed the overall 
+chronic disease management approach of the Mexican 
+clinical practice guideline.
+8. **Wharton S, Lau DCW, Vallis M, et al (2020) Obesity in 
+adults: a clinical practice guideline. CMAJ 192: E875–E891.
+Table 11  Good Practice Statements (Ungraded): Metabolic and Bariatric Surgery*
+* Supplementary File 1, Appendix 3.1 contains the checklist and panel discussion for each good practice statement
+XIX) Healthcare professionals should refer potentially eligible individuals for bariatric surgery to a specialized center that can provide multidis-
+ciplinary treatment and long-term follow-up
+Remarks: People with a BMI ≥ 40 kg/m 2 or BMI ≥ 35 kg/m2 with at least one adiposopathy-related disease are considered eligible for bariatric surgery
+XX) Healthcare professionals should refer potentially eligible individuals for metabolic surgery to a specialized center that can provide multidis-
+ciplinary treatment and long-term follow-up
+Remarks: People with a BMI ≥ 30 kg/m 2 and T2D that could potentially go into remission are considered eligible for metabolic surgery
+659Current Obesity Reports (2024) 13:643–666 
+This clinical practice guideline provides clinical rec-
+ommendations for the management of obesity using 
+non-stigmatizing, patient-centred, and evidence-based 
+approaches. This guideline informed many of the 
+ungraded consensus-based good practice statements 
+in the Mexican clinical practice guideline.
+32. *Barquera S, Véjar-Rentería LS, Aguilar-Salinas C, 
+et al (2022) Volviéndonos mejores: necesidad de acción 
+inmediata ante el reto de la obesidad. Una postura de pro-
+fesionales de la salud. Salud Publica Mex 64:225–229.
+This paper outlines consensus-based recommenda -
+tions for intersectoral actions for the prevention and 
+management of obesity in Mexico. This paper includes 
+a specific call for patient-centered actions to treat and 
+manage obesity in Mexico.
+33. **Durrer Schutz D, Busetto L, Dicker D, Farpour-Lambert 
+N, Pryke R, Toplak H, Widmer D, Yumuk V, Schutz Y (2019) 
+European Practical and Patient-Centred Guidelines for Adult 
+Obesity Management in Primary Care. Obes Facts 12:40–66.
+This clinical practice guideline provides practical clin-
+ical recommendations for healthcare professionals in 
+the context of primary care. This guideline informed 
+many of the ungraded consensus- based good practice 
+statements in the Mexican clinical practice guideline.
+Appendix 1 Guideline Committee Members
+Author list Discipline ORCID-ID email
+Chair
+Emma A. Chávez-Manzanera Endocrinologist 0000–0002-5530-965X emma.chavezm@incmnsz.mx 
+Steering Committee
+Leonor Mireles-Zavala Endocrinologist 0009–0002-9444–2418 dra.leonormireles80@gmail.com
+Juan M. Vera-Zertuche Endocrinologist 0000–0001-9477–6851 drverazertuche@gmail.com
+Raúl Calzada-León Endocrinologist 0000–0003-4253–4281 drraulcalzada@gmail.com
+Martha Kaufer-Horwitz Nutritionist 0000–0003-3489–6899 marthakaufer@gmail.com
+Hugo Laviada-Molina Endocrinologist 0000–0002-1061–3164 halm611031@hotmail.com
+Rafael Violante-Ortíz Endocrinologist 0000–0002-2440–2915 dr.violante@gmail.com
+Juan C. Garnica-Cuellar Endocrinologist 0000–0002-4520–3659 endocrinogarnica@gmail.com
+Ricardo Hernández-González Endocrinologist 0000–0002-1523–0701 ricardoendocrino1@gmail.com
+Eduardo García-García Endocrinologist 0000–0003-3881–0036 egarciaendocrino@gmail.com 
+Fernando J. Lavalle-González Endocrinologist 0000–0001-8820–5366 fernando.lavalle@gmail.com
+Leonardo Mancillas-Adame Endocrinologist 0000–0002-5556–7018 leomancillas@gmail.com
+Juan C. López-Alvarenga Endocrinologist 0000–0002-0966–8766 jclalvar@gmail.com
+Edith Vargas-Contreras Endocrinologist 0000–0002-6136–9691 edith_nibu@hotmail.com
+Author list Discipline ORCID-ID email
+Advisory Committee
+Verónica Vázquez-Velázquez Psychologist 0000–0002-4050–0152 veronica.vazquezv@incmnsz.mx
+Verónica Sánchez-Muñoz Sports Physician 0009–0003-9237–8392 verovoly@hotmail.com
+José R. Flores-Lázaro Sports Physician 0009–0004-0829–4338 rolomd37@gmail.com
+Eduardo W. Goicoechea-Turcott Internal Medicine 0009–0003-4369–5033 egoico@gmail.com
+Eduardo Ramírez-Butanda Endocrinologist 0009–0005-3497-537X eduardo.ramirezb@incmnsz.mx
+Juan F. Pérez-Hernández Nutritionist 0009–0004-1966–9051 fernando22ph@outlook.com
+Reina R. Soriano-Cortés Nutritionist 0009–0005-2451–9389 rusoriano@gmail.com
+Ma. Ángeles Vargas-Martínez Psychiatrist 0000–0003-2745–6449 avargasmartnez@gmail.com
+Erika V. Soto-Fuentes Psychologist 0009–0000-8281–8372 valeria.sofu@gmail.com
+Gerardo Magallanes-Díaz Physician 0009–0005-7494–7779 germagdi@gmail.com
+Héctor Esquivias-Zavala Psychiatrist 0000–0002-5713–4582 esquivias.zavala@gmail.com
+Miguel F. Herrera-Hernández Bariatric Surgeon 0000–0001-9187–9038 miguelfherrera@gmail.com
+Simón Barquera-Cervera Epidemiologist 0000–0003-1854–4615 sbarquera@insp.mx
+660 Current Obesity Reports (2024) 13:643–666
+Author list Discipline ORCID-ID email
+Patient Committee
+Morgan Salmon Patient Advocacy 0009–0005-9878–0125 salmonleguedemorgan@gmail.com
+Cybele B. Díaz-Wionczek Patient Advocacy 0000–0002-3399–5361 cybele.diaz@gmail.com
+Dinorah Ramírez-De Jesús Patient Advocacy 0009–0007-3568–9169 ramirezdinorah.2023@gmail.com
+Juan P. Villaseñor-Díaz Patient Advocacy 0009–0007-3561-508X juanpivd@me.com
+Replica Communications: Consultant
+Ximena Ramos Salas Consultant 0000–0003-0549–8314 ximenars@gmail.com
+Brad Hussey Consultant 0009–0008-6915–0599 brad.hussey@gmail.com
+Epistemonikos Foundation: Health Research Methodologist
+Javiera Peña Methodologist 0000–0002-0277–9922 jpena@epistemonikos.org
+José Ramos-Rojas Methodologist 0000–0003-2337–4227 jramos@epistemonikos.org
+Camila Ávila-Oliver Methodologist 0000–0001-5348–6284 cavila@epistemonikos.org
+Gabriel Rada Methodologist 0000–0003-2435–0710 radagabriel@gmail.com
+According to CRediT contribution roles taxonomy (https:// credit. niso. org/).
+ICMJE, Defining the Role of Authors and Contributors (https:// www. icmje. org/ recom menda tions/ browse/ roles- and- respo nsibi lities/ defin ing- the- 
+role- of- autho rs- and- contr ibuto rs. html)
+Supplementary Information The online version contains supplementary 
+material available at https:// doi. org/ 10. 1007/ s13679- 024- 00585-w.
+Acknowledgements We would like to express our gratitude to the Socie-
+dad Mexicana de Nutrición y Endocrinología (SMNE) and its governing 
+board members: Raquel N. Faradji-Hazán, Eduardo Márquez-Rodríguez, 
+Juan C. Garnica-Cuellar, Juan E. García-García, Edith A. Vargas-Contre-
+ras, and José A. Cetina-Canto for their invaluable support and resources 
+provided in the development of this guideline. We also extend our thanks 
+to the SMNE secretaries: Lorena Valdés-Trejo, Ángeles Miranda-Espe-
+jel, and Lourdes Cortés-Medina for their administrative support. Special 
+thanks to the Epistemonikos Foundation methods team: Francy Cantor-
+Cruz, Psy. MSc., Valentina Veloso, DDS. M.Ed. PhD., Diana Biscay, 
+Psy. MSc., Ana María Rojas-Gómez, DDS. MSc., Sebastián Pinto, DDS. 
+MSc., Sergio Fernández, PT. MSc., Magdalena Bignon, DDS., and Paula 
+Zambrano-Achig, DDS. for their contribution to the preliminary screening 
+and data extraction of articles included in this guideline. We appreciate 
+the work of Replica Communications, as well as Miguel A. Saquimux-
+Contreras, Ph.D. candidate, and Yudith Preiss-Contreras, MD, for their 
+conceptualization efforts. Lastly, we thank Víctor H. Tovar-Méndez and 
+Arantxa M. Godoy-Blanca for their design of the pharmacotherapy figure.
+Author contributions Chair: • Conceptualization: ECM formulated 
+the overarching research goals and aims. • Funding acquisition: ECM 
+arranged the acquisition of the financial support for the project leading 
+to this publication. • Investigation: ECM conducted the investigation 
+process. • Project administration: ECM performed the management 
+and coordination responsibility for the research activity planning and 
+execution. • Supervision: ECM oversaw the planning and execution 
+of the GPC activities. • Visualization: ECM participated in creating, 
+correcting, and visualizing the document for publication. • Writing 
+(original draft): ECM participated in the creation of the initial draft of 
+the writing. • Writing (review and editing): ECM reviewed the drafts 
+and approved the final version of this manuscript.
+ Steering committee team:  • Conceptualization: LMZ, RCL, JVZ, 
+MKH, EGG, HLM, RVO, JGC, RHG, FLG, LMA, JLA, and EVG 
+formulated the overarching research goals and aims. • Visualization: 
+LMZ, RCL, JVZ, MKH, EGG, HLM, RVO, JGC, RHG, FLG, LMA, 
+JLA, and EVG participated in creating, correcting, and visualizing the 
+document for publication. • Writing (original draft): JVZ, MK, LMM, 
+EGC, RCL participated in the creation of the initial draft of the writ-
+ing. • Writing (review and editing): all authors reviewed the drafts and 
+approved the final version of this manuscript.
+ Advisory committee team: • Conceptualization: VVV, JFL, VSM, 
+SMC, MHH, HEZ, ERM, JPH, EGT, RSC, MVM, and ESF formulated 
+the overarching research goals and aims. • Visualization: VVV, JFL, 
+VSM, SMC, MHH, HEZ, ERM, JPH, EGT, RSC, MVM, and ESF 
+participated in creating, correcting, and visualizing the document for 
+publication. • Writing (original draft): VVV, JFL, VSM, SBC, and 
+MHH participated in the creation of the initial draft of the writing. 
+• Writing (review and editing): all authors reviewed the drafts and 
+approved the final version of this manuscript.
+ Patient committee team: • Investigation: MS, CDW, DRD, and 
+JVD conducted the investigation process. • Visualization: MS, CDW, 
+DRD, and JVD participated in creating, correcting, and visualizing 
+the document for publication. • Writing (review and editing): all 
+authors reviewed the drafts and approved the final version of this 
+manuscript.
+ Epistemonikos Foundation methods team: • Conceptualization: GR, 
+CA, JP, and JR formulated the overarching research goals and aims. • 
+Methodology: GR, CA, JP, and JR developed the methods for evidence 
+synthesis. • Investigation: JP and JR performed the article screening, 
+extracted data, assessed the risk of bias of the included studies, evalu-
+ated the certainty of evidence, and prepared the summary of findings 
+and evidence to decision tables. JP and JR chaired the panel discussion, 
+drafted, and approved the recommendations and good practice state-
+ments. • Project administration: JP and JR coordinated the research 
+activities planning and execution. • Writing (original draft): JP and JR 
+wrote the first draft with input from CA and GR. • Writing (review and 
+editing): all authors reviewed the drafts and approved the final version 
+of this manuscript.
+ Replica Communications team: • Conceptualization: XRS and BH 
+formulated the overarching research goals and aims. • Investigation: 
+XRS and BH conducted the investigation process. • Supervision: XRS 
+and BH oversaw the planning and execution of the CPG activities. • 
+Visualization: XRS and BH participated in creating, correcting, and 
+visualizing the document for publication. • Writing (original draft): 
+XRS and BH participated in the creation of the initial draft of the writ-
+ing. • Writing (review and editing): all authors reviewed the drafts and 
+approved the final version of this manuscript.
+661Current Obesity Reports (2024) 13:643–666 
+Funding Sociedad Mexicana de Nutrición y Endocrinología
+Data Availability No datasets were generated or analysed during the 
+current study.
+Declarations 
+Competing Interests ECM. reports honoraria for lectures, presentations, 
+and educational events from Novo Nordisk, Merck, Boehringer Ingelheim, 
+and Silanes; advisory board honoraria from Abbott, Eli Lilly and Merck; 
+support for attending medical congresses from Merck and Boehringer 
+Ingelheim; and leadership roles as chair of the Obesity Task Force at the 
+Sociedad Mexicana de Nutrición y Endocrinología (SMNE) 2022-2024 
+and as a member at-large representing Mexico in The Obesity Society 
+(TOS) 2024-2026. JVZ reports honoraria for lectures, presentations, and 
+educational events from Novo Nordisk, Merck, Boehringer Ingelheim, 
+Exeltis, Abbot and Astra Zeneca; support for attending medical congress 
+from Novo Nordisk; and advisory board honoraria from Abbott, Bayer, 
+and Novo Nordisk. MKH reports royalties for the textbook Nutriología 
+Médica (Editorial Médica Panamericana), 4th and  5th editions; leader-
+ship roles as an editor of Cuadernos de Nutrición; and as a member of the 
+Research Ethics Committee at the Instituto Nacional de Ciencias Médi-
+cas y Nutrición Salvador Zubirán and the Universidad Iberoamericana. 
+VVV reports honoraria from the Grupo Mexicano para el Estudio de 
+la Obesidad (Obesidades) including one honoraria sponsored by Novo 
+Nordisk; consulting fees from Novo Nordisk and Eli Lilly; honoraria and 
+travel support for lectures, presentations in conferences and educational 
+events from Novo Nordisk and Eli Lilly; support for attending medical 
+congress from Novo Nordisk; advisory board honoraria from Novo Nor-
+disk and Eli Lilly; and leadership roles as chair of the Grupo Mexicano 
+para el Estudio de la Obesidad (Obesidades). RFL reports honoraria for 
+lectures, presentations, and educational events from Novo Nordisk and 
+Abbott and support for attending medical congress from Novo Nord-
+isk. LMZ reports honoraria for lectures, presentations, and educational 
+events from Novo Nordisk, Boehringer Ingelheim, and Silanes; support 
+for attending a medical congress from Novo Nordisk; and an advisory 
+board honorarium from Novo Nordisk. JGC reports honoraria from Bayer 
+and Novo Nordisk via Hospital Angeles Lindavista; honoraria for lectures, 
+presentations, manuscript and educational events from Novo Nordisk, 
+Astra Zeneca, AMGEN, Silanes, Bayer, Novartis, Boehringer Ingelheim 
+and PTC Therapeutics; support for attending medical congress from 
+Novo Nordisk, Boehringer Ingelheim and Astra Zeneca; and advisory 
+board honoraria from Novo Nordisk, Astra Zeneca, Boehringer Ingel-
+heim, Bayer, Novartis, AMGEN, Sanofi and PTC Therapeutics. VSM 
+reports honoraria for lectures, presentations, and educational events from 
+Novo Nordisk, Merck, Boehringer Ingelheim, and Abbott, and support for 
+attending medical congress from Abbott. ERM reports honoraria for lec-
+tures, presentations, and educational events from Eli Lilly. RHG reports 
+honoraria for lectures, presentations, and educational events from Silanes, 
+and support for attending medical congress from Silanes, Sanfer and Car-
+not. HLM reports honoraria from Novo Nordisk and Eli Lilly; honoraria 
+for lectures, presentations, and educational events from Novo Nordisk, 
+Eli Lilly and Abbott; and advisory board honoraria from Novo Nordisk 
+and Eli Lilly.  HEZ reports consulting fees from Merck and Silanes, and 
+honoraria for lectures, presentations, manuscripts and educational events 
+from Merck and Senosiain. EGG reports honoraria for lectures, presenta-
+tions, manuscript and educational events from Novo Nordisk and Merck, 
+and support for attending a medical congress from Novo Nordisk. FLG 
+reports consulting fees from Novo Nordisk, Eli Lilly, Silanes, Astra Zen-
+eca, Boehringer Ingelheim, Merck, Abbott and honoraria for lectures, 
+presentations, manuscripts and educational events from Novo Nordisk, 
+Eli Lilly, Silanes, Sanofi, Astra Zeneca, Boehringer Ingelheim, Merck, 
+Abbott. FLG reports support for attending meetings from Novo Nordisk 
+and Abbott, and advisory board honoraria from Abbott, Merck, Eli Lilly, 
+Sanofi, Silanes, Astra Zeneca, and Boehringer Ingelheim. LMA reports 
+consulting fees from Novo Nordisk and Eli Lilly; honoraria for expert 
+testimony from Novo Nordisk and Eli Lilly; honoraria for lectures, presen-
+tations, manuscripts and educational events from Novo Nordisk, Eli Lilly, 
+Opko, Sanofil; and advisory board honoraria from Opko and Avant Santé. 
+JLA reports NIH grant paid through the Biggs Institute for Alzheimer’s 
+and Neurodegenerative Diseases and the University of Texas Rio Grande 
+Valley (UTRGV), Health and Human Service Commission grant paid 
+through UTRGV and NIH/NIA grant paid through the University of Texas 
+Health Science Center at San Antonio). VSF reports honorarium from 
+Novo Nordisk, and leadership role as a member of Grupo Mexicano para 
+el Estudio de la Obesidad (Obesidades). EGT reports support for attending 
+medical congresses from Novo Nordisk. SBC reports support for attend-
+ing medical congresses and lectures from the Federación Latinoamericana 
+de Sociedades de Obesidad, Prince Mahidol Award and the Food and 
+Agriculture Organization. EVG is an employee of the Sociedad Mexicana 
+de Nutrición y Endocrinología. MS reports honorarium for expert testi-
+mony from Novo Nordisk, and leadership role as a member of ABHíspalis 
+Nacional and Alianza Hispano-Americana de Personas con Obesidad.
+RCL, MVM, RVO, JPH, RSC, GMD, MHH, CDW, and DRJ have nothing 
+to disclose. JP, JRR, CAO and GR are employees of Epistemonikos Foun-
+dation. BH reports consulting fees from the Sociedad Mexicana de Nutri-
+ción y Endocrinología (SMNE) on behalf of Replica Communications; 
+grant support from Novo Nordisk (through Replica Communications); 
+consulting fees for initiatives on behalf of Replica Communications from 
+the World Health Organization, Obesity Canada, European Association 
+for the Study of Obesity, European Council for People Living with Obe-
+sity, the Chilean Society for Clinical Nutrition, Obesity and Metabolism, 
+and the Consorci de Salut de Catalunya; travel support from the European 
+Association for the Study of Obesity, GB Obesitas, and Bias 180; unpaid 
+leadership role at Bias 180; and financial interests in 1919663 Ontario 
+Inc and Replica Communications.  XRS reports consulting fees from the 
+Sociedad Mexicana de Nutrición y Endocrinología (SMNE) on behalf 
+of Replica Communications; grants from Novo Nordisk (through Rep-
+lica Communications), the Canadian Institutes of Health Research, and 
+the Social Sciences and Humanities Research Council (through various 
+Canadian academic institutions); unpaid leadership and expert advisor 
+roles at Bias 180, World Obesity Federation, International Federation for 
+the Surgery of Obesity and Metabolic Disorders; consulting fees from the 
+World Health Organization, Obesity Canada, European Association for 
+the Study of Obesity, European Council for People Living with Obesity, 
+the Chilean Society for Clinical Nutrition, Obesity and Metabolism, and 
+the Consorci de Salut de Catalunya; speaker honoraria and travel support 
+from Blood Pressure Doctor, Canadian Cardiovascular Society, Consorci 
+de Salut de Catalunya, Hospital Clinic Barcelona, and Globalport LLC.; 
+Chilean Society for Clinical Nutrition, Obesity & Metabolism, Spanish 
+Society of Bariatric Surgery, International Federation for the Surgery of 
+Obesity, European Association for the Study of Obesity, GB Obesitas, 
+Bias 180, European Coalition for People Living with Obesity and the 
+Clínica de obesidad y trastornos de la conducta alimentaria; and financial 
+interests in K&X Ramos AB and Replica Communications.
+Open Access  This article is licensed under a Creative Commons 
+Attribution-NonCommercial-NoDerivatives 4.0 International License, 
+which permits any non-commercial use, sharing, distribution and repro-
+duction in any medium or format, as long as you give appropriate credit 
+to the original author(s) and the source, provide a link to the Creative 
+Commons licence, and indicate if you modified the licensed material. 
+You do not have permission under this licence to share adapted material 
+derived from this article or parts of it. The images or other third party 
+material in this article are included in the article’s Creative Commons 
+licence, unless indicated otherwise in a credit line to the material. If 
+material is not included in the article’s Creative Commons licence and 
+your intended use is not permitted by statutory regulation or exceeds 
+the permitted use, you will need to obtain permission directly from the 
+662 Current Obesity Reports (2024) 13:643–666
+copyright holder. To view a copy of this licence, visit http:// creat iveco 
+mmons. org/ licen ses/ by- nc- nd/4. 0/.
+References
+ 1. Mendoza-Herrera K, Pedroza-Tobías A, Hernández-Alcaraz C, 
+Ávila-Burgos L, Aguilar-Salinas CA, Barquera S. Attributable bur-
+den and expenditure of cardiovascular diseases and associated risk 
+factors in Mexico and other selected mega-countries. Int J Environ 
+Res Public Health. 2019. https:// doi. org/ 10. 3390/ ijerp h1620 4041. 
+ 2. Campos-Nonato I, Galván-Valencia O, Hernández-Barrera L, 
+Oviedo-Solís C, Barquera S. Prevalence of obesity and associ-
+ated risk factors in Mexican adults: results of the Ensanut 2022. 
+Salud Publica Mex. 2023;65:S238–47.
+ 3. World Health Organization. Health service delivery framework for 
+prevention and management of obesity. (2023). https:// www. who. 
+int/ news/ item/ 17- 05- 2023- new- WHO- frame work- avail able- for- 
+preve ntion- and- manag ement- of- obesi ty. Accessed 15 Aug 2024.
+ 4. Mechanick JI, Garber AJ, Handelsman Y, Garvey WT. American 
+Association of Clinical Endocrinologists’ position statement on 
+obesity and obesity medicine. Endocr Pract. 2012;18:642–8.
+ 5. Garvey WT, Mechanick JI, Brett EM, Garber AJ, Hurley DL, 
+Jastreboff AM, Nadolsky K, Pessah-Pollack R, Plodkowski R. 
+American association of clinical endocrinologists and american 
+college of endocrinology comprehensive clinical practice guide-
+lines for medical care of patients with obesity. Endocr Pract. 
+2016;22(Suppl 3):1–203.
+ 6. American Medical Association. Recognition of Obesity as a 
+Disease H-440.842. In: AMA Policy Finder. (2013). https:// polic 
+ysear ch. ama- assn. org/ polic yfind er/ detail/ obesi ty? uri=% 2FAMA 
+Doc% 2FHOD. xml-0- 3858. xml. Accessed 15 Aug 2024.
+ 7. Bray GA, Kim KK, Wilding JPH, on behalf of the World Obe -
+sity Federation. Obesity: a chronic relapsing progressive disease 
+process. A position statement of the World Obesity Federation: 
+Position Paper. Obesity Reviews. 2017;18:715–23.
+ 8. Wharton S, Lau DCW, Vallis M, et al. Obesity in adults: a clinical 
+practice guideline. CMAJ. 2020;192:E875–91.
+ 9. Breen C, O’Connell J, Geoghegan J, et al. Obesity in adults: A 
+2022 adapted clinical practice guideline for Ireland. Obes Facts. 
+2022;15:736–52.
+ 10. Yumuk V, Tsigos C, Fried M, Schindler K, Busetto L, Micic 
+D, Toplak H. European Guidelines for Obesity Management in 
+Adults. Obes Facts. 2015;8:402–24.
+ 11. Federatie Medisch Specialisten. Guideline Overweight and obe-
+sity in adults and children. In: Federatie Medisch Specialisten. 
+(2023).  https:// richt lijne ndata base. nl/ richt lijn/ overg ewicht_ en_ 
+obesi tas_ bij_ volwa ssenen_ en_ kinde ren/ start pagina_ richt lijn_ 
+overg ewicht_ en_ obesi tas_ bij_ volwa ssenen_ en_ kinde ren. html. 
+Accessed 15 Aug 2024.
+ 12. James WPT. WHO recognition of the global obesity epidemic. 
+Int J Obes. 2008;32:S120–6.
+ 13. Busetto L, Dicker D, Frühbeck G, Halford JCG, Sbraccia P, 
+Yumuk V, Goossens GH. A new framework for the diagnosis, 
+staging and management of obesity in adults. Nat Med. 2024. 
+https:// doi. org/ 10. 1038/ s41591- 024- 03095-3.
+ 14. Dai H, Alsalhe TA, Chalghaf N, Riccò M, Bragazzi NL, Wu J. 
+The global burden of disease attributable to high body mass index 
+in 195 countries and territories, 1990–2017: An analysis of the 
+Global Burden of Disease Study. PLoS Med. 2020;17: e1003198.
+ 15. National Institutes of Health NCI Cancers Associated with Over-
+weight and Obesity. https:// www. cancer. gov/ espan ol/ cancer/ 
+causas- preve ncion/ riesgo/ obesi dad/ cance res- asoci ados- sobre 
+peso- infog rafia. Accessed 17 Jul 2024
+ 16. Montaño SA, Bastarrachea Sosa RA, Bourges Rodríguez H, et al. 
+La obesidad en México: Posición de la Sociedad Mexicana de 
+Nutrición y Endocrinología. Grupo para el Estudio y Tratami-
+ento de la Obesidad. Revista de Endocrinología y Nutrición. 
+2004;12:S80–7.
+ 17. Sarwer DB, Polonsky HM. The psychosocial burden of obesity. 
+Endocrinol Metab Clin North Am. 2016;45:677–88.
+ 18. Sutin AR, Stephan Y, Terracciano A. Weight discrimination and 
+risk of mortality. Psychol Sci. 2015;26:1803–11.
+ 19. World Obesity Federation. World Obesity Atlas 2024. London: 
+World Obesity Federation, 2024. https:// data. world obesi ty. org/ 
+publi catio ns/? cat= 22. Accessed 15 Aug 2024.
+ 20. Barquera S, Rivera JA. Obesity in Mexico: rapid epidemiologi-
+cal transition and food industry interference in health policies. 
+Lancet Diabetes Endocrinol. 2020;8:746–7.
+ 21. OECD/The World Bank. Overweight and obese adults. In: Health 
+at a Glance: Latin America and the Caribbean 2020, OECD 
+Publishing, Paris. 2020. https:// doi. org/ 10. 1787/ 13e27 1bc- en. 
+Accessed 15 Aug 2024.
+ 22. Prospective Studies Collaboration. Body-mass index and cause-
+specific mortality in 900 000 adults: collaborative analyses of 57 
+prospective studies. The Lancet. 2009;373:1083–96.
+ 23. Neal K, Ullah S, Glastras SJ. Obesity class impacts adverse 
+maternal and neonatal outcomes independent of diabetes. Front 
+Endocrinol (Lausanne). 2022;13: 832678.
+ 24. Ma RCW, Schmidt MI, Tam WH, McIntyre HD, Catalano PM. 
+Clinical management of pregnancy in the obese mother: before 
+conception, during pregnancy, and post-partum. Lancet Diabe-
+tes Endocrinol. 2016;4:1037–49.
+ 25. Parrettini S, Caroli A, Torlone E. Nutrition and metabolic 
+adaptations in physiological and complicated pregnancy: Focus 
+on obesity and gestational diabetes. Front Endocrinol (Laus-
+anne). 2020;11: 611929.
+ 26. Stevens DR, Neelon B, Roberts JR, Taylor SN, Newman RB, 
+Vena JE, Hunt KJ. Mediation of the association between 
+maternal pre-pregnancy overweight/obesity and childhood 
+overweight/obesity by birth anthropometry. J Dev Orig Health 
+Dis. 2021;12:71–8.
+ 27. Santos-Silva R, Fontoura M, Guimarães JT, Severo M, Barros 
+H, Santos AC. Persistent weight gain between 0 and 4 years 
+of age is associated with higher dehydroepiandrosterone sul-
+phate levels at 7 years old: Data from the Generation XXI birth 
+cohort. Clin Endocrinol (Oxf). 2022;97:588–95.
+ 28. Baran J, Weres A, Czenczek-Lewandowska E, Leszczak J, 
+Kalandyk-Osinko K, Łuszczki E, Sobek G, Mazur A. Excessive 
+Gestational Weight Gain: Long-Term Consequences for the 
+Child. J Clin Med. 2020. https://  doi. org/ 10. 3390/ jcm91 23795.
+ 29. Pugh SJ, Hutcheon JA, Richardson GA, Brooks MM, Himes 
+KP, Day NL, Bodnar LM. Gestational weight gain, prepreg-
+nancy body mass index and offspring attention-deficit hyper -
+activity disorder symptoms and behaviour at age 10. BJOG. 
+2016;123:2094–103.
+ 30. Freinkel N. Banting Lecture 1980. Of pregnancy and progeny. 
+Diabetes. 1980;29:1023–35.
+ 31. Rivera JA, Colchero MA, Pérez-Ferrer C, Barquera S. Perspec-
+tive: Mexico’s experience in building a toolkit for obesity and 
+noncommunicable diseases prevention. Adv Nutr. 2024;15: 
+100180.
+ 32. Barquera S, Véjar-Rentería LS, Aguilar-Salinas C, et  al. 
+Volviéndonos mejores: necesidad de acción inmediata ante el 
+reto de la obesidad. Una postura de profesionales de la salud. 
+Salud Publica Mex. 2022;64:225–9.
+ 33. Durrer Schutz D, Busetto L, Dicker D, Farpour-Lambert 
+N, Pryke R, Toplak H, Widmer D, Yumuk V, Schutz Y. 
+663Current Obesity Reports (2024) 13:643–666 
+European practical and patient-centred guidelines for 
+adult obesity management in primary care. Obes Facts. 
+2019;12:40–66.
+ 34. SEGOB. SUPLEMENTO del Programa Nacional de Infraes-
+tructura de la Calidad 2023. 2023. https:// www. dof. gob. mx/  
+nota_ detal le. php? codigo= 56907 32& fecha= 01/ 06/ 2023# gsc. 
+tab=0. Accessed 15 Aug 2024.
+ 35. Estrada-Salgado LE, Kaufer-Horwitz M, Polo-Oteyza E, García-
+García E. Knowledge of obesity in medical residency pro-
+grams. Realities, reflections and proposals. Educación Médica. 
+2021;22:147–56.
+ 36. Vázquez-Velázquez V, Laviada-Molina H, García-García E, San-
+doval-Diez E, Mancillas-Adame L. Perceptions, Attitudes, and 
+Barriers to Obesity Care in Mexico: Data From the ACTION-IO 
+Study. Obesity (Silver Spring). 2021;29:317–26.
+ 37. OECD. The heavy burden of obesity: the economics of preven-
+tion. OECD Health Policy Studies, OECD Publishing, Paris. 
+2019. https:// doi. org/ 10. 1787/ 67450 d67- en. Accessed 15 Aug 
+2024.
+ 38. Barquera S, Hernandez-Barrera L, Oviedo-Solis C, et al. Obe-
+sidad en adultos. Salud pública de Mexico. 2024; Accepted July 
+10, 2024.
+ 39 Alonso-Coello P, Schünemann HJ, Moberg J, et al. GRADE Evi-
+dence to Decision (EtD) frameworks: a systematic and transparent 
+approach to making well informed healthcare choices.1: Introduc-
+tion. BMJ. 2016;353:i2016.
+ 40. Franco JVA, Arancibia M, Meza N, Madrid E, Kopitowski K. Clinical 
+practice guidelines: Concepts, limitations and challenges. Medwave. 
+2020;20: e7887.
+ 41. Epistemonikos Foundation (2016) Collaboratron. https:// www. epist 
+emoni kos. org/.
+ 42. Nussbaumer-Streit B, Sommer I, Hamel C, Devane D, Noel-Storr A, 
+Puljak L, Trivella M, Gartlehner G. Rapid reviews methods series: 
+Guidance on team considerations, study selection, data extraction 
+and risk of bias assessment. BMJ Evid Based Med. 2023;28:418–23.
+ 43. Sterne JAC, Savović J, Page MJ, et al. RoB 2: a revised tool for assess-
+ing risk of bias in randomised trials. BMJ. 2019;366: l4898.
+ 44. Sterne JA, Hernán MA, Reeves BC, et al. ROBINS-I: a tool for assess-
+ing risk of bias in non-randomised studies of interventions. BMJ. 
+2016;355: i4919.
+ 45. GRADE-CERQual Interactive Summary of Qualitative Findings 
+(iSoQ) [Computer program]. Version 1.0 accessed [insert date]. 
+Oslo, Norway: Norwegian Institute of Public Health (developed by 
+the Epistemonikos Foundation, Megan Wainwright Consulting and 
+the Norwegian Institute of Public Health for the GRADE-CERQual 
+Project Group). isoq. epist emoni kos. org. Accessed 15 Aug 2024.
+ 46. Lewin S, Booth A, Glenton C, et al. Applying GRADE-CERQual to 
+qualitative evidence synthesis findings: introduction to the series. 
+Implement Sci. 2018;13:2.
+ 47. Lewin S, Glenton C, Lawrie TA, Downe S, Finlayson KW, Rosenbaum 
+S, Barreix M, Tunçalp Ö. Qualitative Evidence Synthesis (QES) for 
+Guidelines: Paper 2 - Using qualitative evidence synthesis findings 
+to inform evidence-to-decision frameworks and recommendations. 
+Health Res Policy Syst. 2019;17:75.
+ 48. Dewidar O, Lotfi T, Langendam MW, et al. Good or best practice 
+statements: proposal for the operationalisation and implementation 
+of GRADE guidance. BMJ Evid Based Med. 2023;28:189–96.
+ 49 Kirk SFL, Ramos Salas X, Alberga AS, Russell-Mayhew S. Cana-
+dian Adult Obesity Clinical Practice Guidelines: Reducing Weight 
+Bias, Stigma and Discrimination in Obesity Management. Practice 
+and Policy. Obesity Canada; 2020.
+ 50. Reims K, Ernst D. Using Motivational Interviewing to Promote 
+Healthy Weight. Fam Pract Manag. 2016;23:32–8.
+ 51. Rueda-Clausen C, Poddar M, Lear S, Poirier P, Sharma AM. Cana-
+dian adult obesity clinical practice guidelines: assessment of people 
+living with obesity. https:// obesi tycan ada. ca/ guide lines/ asses sment. 
+Accessed 15 Aug 2024.
+ 52. Kuk JL, Ardern CI, Church TS, Sharma AM, Padwal R, Sui X, Blair 
+SN. Edmonton Obesity Staging System: association with weight his-
+tory and mortality risk. Appl Physiol Nutr Metab. 2011;36:570–6.
+ 53. Powell-Wiley TM, Poirier P, Burke LE, et al. Obesity and cardio-
+vascular disease: a scientific statement from the american heart 
+association. Circulation. 2021;143:e984–1010.
+ 54. Volpe M, Gallo G. Obesity and cardiovascular disease: An execu-
+tive document on pathophysiological and clinical links promoted 
+by the Italian Society of Cardiovascular Prevention (SIPREC). 
+Front Cardiovasc Med. 2023;10:1136340.
+ 55. Phelan S, Jelalian E, Coustan D, et al. Randomized controlled 
+trial of prepregnancy lifestyle intervention to reduce recur -
+rence of gestational diabetes mellitus. Am J Obstet Gynecol. 
+2023;229(158):e1-158.e14.
+ 56. Carrillo-Larco RM, Stern D, Hambleton IR, et al. Derivation, 
+internal validation, and recalibration of a cardiovascular risk 
+score for Latin America and the Caribbean (Globorisk-LAC): 
+A pooled analysis of cohort studies. Lancet Reg Health- 
+Americas. 2022;9:100258. https:// doi. org/ 10. 1016/j. lana. 2022. 
+100258.
+ 57. Key obesity management principles. https:// easo. org/ cpg- imple 
+menta tion/. Accessed 15 Aug 2024.
+ 58. Look AHEAD Research Group. Eight-year weight losses with an 
+intensive lifestyle intervention: the look AHEAD study. Obesity 
+(Silver Spring). 2014;22(1):5–13. https:// doi. org/ 10. 1002/ oby. 
+20662.
+ 59. Brown J, Clarke C, Johnson Stoklossa C, Sievenpiper J. Cana-
+dian adult obesity clinical practice guidelines: medical nutri-
+tion therapy in obesity management. https:// obesi tycan ada. ca/ 
+guide lines/ nutri tion. Accessed 15 Aug 2024.
+ 60. Jebb SA, Ahern AL, Olson AD, et al. Primary care referral to a 
+commercial provider for weight loss treatment versus standard 
+care: a randomised controlled trial. Lancet. 2011;378:1485–92.
+ 61. Sacks FM, Bray GA, Carey VJ, et al. Comparison of weight-
+loss diets with different compositions of fat, protein, and car -
+bohydrates. N Engl J Med. 2009;360:859–73.
+ 62. McManus K, Antinoro L, Sacks F. A randomized controlled 
+trial of a moderate-fat, low-energy diet compared with a low 
+fat, low-energy diet for weight loss in overweight adults. Int J 
+Obes Relat Metab Disord. 2001;25:1503–11.
+ 63. Yannakoulia M, Scarmeas N. Diets. N Engl J Med. 
+2024;390:2098–106.
+ 64. Smith ES, Smith HA, Betts JA, Gonzalez JT, Atkinson 
+G. A Systematic Review and Meta-Analysis Comparing 
+Heterogeneity in Body Mass Responses Between Low-
+Carbohydrate and Low-Fat Diets. Obesity (Silver Spring). 
+2020;28:1833–42.
+ 65. Dinu M, Pagliai G, Angelino D, et al. Effects of popular 
+diets on anthropometric and cardiometabolic parameters: An 
+umbrella review of meta-analyses of randomized controlled 
+trials. Adv Nutr. 2020;11:815–33.
+ 66. Emadian A, Andrews RC, England CY, Wallace V, Thompson 
+JL. The effect of macronutrients on glycaemic control: a sys-
+tematic review of dietary randomised controlled trials in over -
+weight and obese adults with type 2 diabetes in which there 
+was no difference in weight loss between treatment groups. Br 
+J Nutr. 2015;114:1656–66.
+ 67. Ge L, Sadeghirad B, Ball GDC, et al. Comparison of dietary 
+macronutrient patterns of 14 popular named dietary pro -
+grammes for weight and cardiovascular risk factor reduction 
+in adults: systematic review and network meta-analysis of ran-
+domised trials. BMJ. 2020;369:m696.
+664 Current Obesity Reports (2024) 13:643–666
+ 68. Gibbs BB, Hergenroeder AL, Katzmarzyk PT, Lee I-M, Jakicic 
+JM. Definition, measurement, and health risks associated with 
+sedentary behavior. Med Sci Sports Exerc. 2015;47:1295–300.
+ 69. Carter S, Hartman Y, Holder S, Thijssen DH, Hopkins ND. 
+Sedentary behavior and cardiovascular disease risk: mediating 
+mechanisms. Exerc Sport Sci Rev. 2017;45:80–6.
+ 70. Katzmarzyk PT, Powell KE, Jakicic JM, Troiano RP, Piercy K, 
+Tennant B. Sedentary Behavior and Health: Update from the 
+2018 physical activity guidelines advisory committee. Med Sci 
+Sports Exerc. 2019;51:1227–41.
+ 71. Lavie CJ, Ozemek C, Carbone S, Katzmarzyk PT, Blair SN. 
+Sedentary behavior, exercise, and cardiovascular health. Circ 
+Res. 2019;124:799–815.
+ 72. Pinto AJ, Bergouignan A, Dempsey PC, Roschel H, Owen N, 
+Gualano B, Dunstan DW. Physiology of sedentary behavior. 
+Physiol Rev. 2023;103:2561–622.
+ 73. Zavala GA, Ainscough TS, Jimenez-Moreno AC. Barriers to 
+a healthy diet and physical activity in Mexican adults: results 
+from the Mexican Health and Nutrition Survey. Nutr Bull. 
+2022;47:298–306.
+ 74. INEGI. Módulo de práctica deportiva y ejercicio físico 
+(MOPRADEF). Comunicado de prensa núm. 34/23. 26 de 
+enero de 2023. 2022. https:// www. inegi. org. mx/ conte nidos/  
+salad epren sa/ bolet ines/ 2023/ mopra def/ mopra def20 22. pdf. 
+Accessed 15 Aug 2024.
+ 75. Bull FC, Al-Ansari SS, Biddle S, et al. World Health Organiza-
+tion 2020 guidelines on physical activity and sedentary behav -
+iour. Br J Sports Med. 2020;54:1451–62.
+ 76. Global action plan on physical activity 2018–2030: more active 
+people for a healthier world. Geneva: World Health Organiza-
+tion; 2018. Licence: CC BY-NC-SA 3.0 IGO. Accessed 15 Aug 
+2024.
+ 77. Hoare E, Stavreski B, Jennings GL, Kingwell BA. Exploring 
+motivation and barriers to physical activity among active and 
+inactive Australian adults. Sports (Basel). 2017. https:// doi.  
+org/ 10. 3390/ sport s5030 047.
+ 78. Safi A, Cole M, Kelly AL, Zariwala MG, Walker NC. Workplace 
+physical activity barriers and facilitators: A qualitative study 
+based on employees physical activity levels. Int J Environ Res 
+Public Health. 2022. https:// doi. org/ 10. 3390/ ijerp h1915 9442.
+ 79. Yin M, Deng S, Chen Z, et al. Exercise snacks are a time-efficient 
+alternative to moderate-intensity continuous training for improv-
+ing cardiorespiratory fitness but not maximal fat oxidation in 
+inactive adults: a randomized controlled trial. Appl Physiol Nutr 
+Metab. 2024;49:920–32.
+ 80. Islam H, Gibala MJ, Little JP. Exercise Snacks: A Novel Strat -
+egy to Improve Cardiometabolic Health. Exerc Sport Sci Rev. 
+2022;50:31–7.
+ 81. Wang T, Laher I, Li S. Exercise snacks and physical fitness in 
+sedentary populations. Sports Med Health Sci. 2024. https:// doi. 
+org/ 10. 1016/j. smhs. 2024. 02. 006.
+ 82. Rafiei H, Omidian K, Myette-Côté É, Little JP. Metabolic effect 
+of breaking up prolonged sitting with stair climbing exercise 
+snacks. Med Sci Sports Exerc. 2021;53:150–8.
+ 83. Kowalsky RJ, Farney TM, Hearon CM. Resistance exercise 
+breaks improve ratings of discomfort and sleepiness in college 
+students. Res Q Exerc Sport. 2023;94:210–5.
+ 84. Perkin OJ, McGuigan PM, Stokes KA. Exercise snacking to 
+improve muscle function in healthy older adults: a pilot study. J 
+Aging Res. 2019;2019:7516939.
+ 85. Jansons P, Fyfe JJ, Dalla Via J, Daly RM, Scott D. Barriers and 
+enablers associated with participation in a home-based pragmatic 
+exercise snacking program in older adults delivered and moni-
+tored by Amazon Alexa: a qualitative study. Aging Clin Exp Res. 
+2023;35:561–9.
+ 86. Little JP, Langley J, Lee M, Myette-Côté E, Jackson G, Durrer C, 
+Gibala MJ, Jung ME. Sprint exercise snacks: a novel approach to 
+increase aerobic fitness. Eur J Appl Physiol. 2019;119:1203–12.
+ 87. Jenkins EM, Nairn LN, Skelly LE, Little JP, Gibala MJ. Do stair 
+climbing exercise “snacks” improve cardiorespiratory fitness? 
+Appl Physiol Nutr Metab. 2019;44:681–4.
+ 88. Nuzzo JL, Pinto MD, Kirk BJC, Nosaka K. Resistance exercise 
+minimal dose strategies for increasing muscle strength in the 
+general population: an Overview. Sports Med. 2024;54:1139–62.
+ 89. Fyfe JJ, Dalla Via J, Jansons P, Scott D, Daly RM. Feasibility 
+and acceptability of a remotely delivered, home-based, pragmatic 
+resistance “exercise snacking” intervention in community-dwell-
+ing older adults: a pilot randomised controlled trial. BMC Geri-
+atr. 2022;22:521.
+ 90. Liang IJ, Perkin OJ, McGuigan PM, Thompson D, Western MJ. 
+Feasibility and acceptability of home-based exercise snacking 
+and Tai Chi snacking delivered remotely to self-isolating older 
+adults during COVID-19. J Aging Phys Act. 2022;30:33–43.
+ 91. Brandt T, Schwandner CTL, Schmidt A. Resistance exercise 
+snacks improve muscle mass in female university employees: 
+a prospective, controlled, intervention pilot-study. Front Public 
+Health. 2024;12:1347825.
+ 92. Francois ME, Baldi JC, Manning PJ, Lucas SJE, Hawley JA, Wil-
+liams MJA, Cotter JD. “Exercise snacks” before meals: a novel 
+strategy to improve glycaemic control in individuals with insulin 
+resistance. Diabetologia. 2014;57:1437–45.
+ 93. Gale JT, Wei DL, Haszard JJ, Brown RC, Taylor RW, Peddie MC. 
+Breaking up evening sitting with resistance activity improves 
+postprandial glycemic response: a randomized crossover study. 
+Med Sci Sports Exerc. 2023;55:1471–80.
+ 94. Caldwell HG, Coombs GB, Rafiei H, Ainslie PN, Little JP. 
+Hourly staircase sprinting exercise “snacks” improve femoral 
+artery shear patterns but not flow-mediated dilation or cerebro-
+vascular regulation: a pilot study. Appl Physiol Nutr Metab. 
+2021;46:521–9.
+ 95. Luppino FS, de Wit LM, Bouvy PF, Stijnen T, Cuijpers P, Pen-
+ninx BWJH, Zitman FG. Overweight, obesity, and depression: a 
+systematic review and meta-analysis of longitudinal studies. Arch 
+Gen Psychiatry. 2010;67:220–9.
+ 96. Abiri B, Hosseinpanah F, Banihashem S, Madinehzad SA, Vali-
+zadeh M. Mental health and quality of life in different obesity 
+phenotypes: a systematic review. Health Qual Life Outcomes. 
+2022;20:63.
+ 97. Taylor VH, McIntyre RS, Remington G, Levitan RD, Stone-
+hocker B, Sharma AM. Beyond pharmacotherapy: understand-
+ing the links between obesity and chronic mental illness. Can J 
+Psychiatry. 2012;57:5–12.
+ 98. Tomiyama AJ. Stress and Obesity. Annu Rev Psychol. 
+2019;70:703–18.
+ 99. Rubino F, Puhl RM, Cummings DE, et al. Joint international 
+consensus statement for ending stigma of obesity. Nat Med. 
+2020;26:485–97.
+ 100. Kushner R. Taking a Weight History - Using Mnemonics to 
+Learn a Missing Skill in Medical Education. MedEdPublish 
+(2016). 2017;6:215.
+ 101. Chao AM, Moore M, Wadden TA. The past, present, and future 
+of behavioral obesity treatment. Int J Obes. 2024. https:// doi. org/ 
+10. 1038/ s41366- 024- 01525-3.
+ 102. Vallis TM, Macklin D, Russell-Mayhew S. Canadian adult 
+obesity clinical practice guidelines: effective psychological 
+and behavioural interventions in obesity management. https://  
+obesi tycan ada. ca/ guide lines/ behav ioural. Accessed 15 Aug 
+2024.
+ 103. Wadden TA, Chao AM, Moore M, Tronieri JS, Gilden A, 
+Amaro A, Leonard S, Jakicic JM. The role of lifestyle modi-
+fication with second-generation anti-obesity medications: 
+665Current Obesity Reports (2024) 13:643–666 
+comparisons, questions, and clinical opportunities. Curr Obes 
+Rep. 2023;12:453–73.
+ 104. Anderson JW, Konz EC, Frederich RC, Wood CL. Long-term 
+weight-loss maintenance: a meta-analysis of US studies. Am J 
+Clin Nutr. 2001;74:579–84.
+ 105. Chakhtoura M, Haber R, Ghezzawi M, Rhayem C, Tcheroyan 
+R, Mantzoros CS. Pharmacotherapy of obesity: an update on the 
+available medications and drugs under investigation. EClinical-
+Medicine. 2023;58: 101882.
+ 106. Saxon DR, Iwamoto SJ, Mettenbrink CJ, et  al. Antiobes-
+ity Medication Use in 2.2 Million Adults Across Eight Large 
+Health Care Organizations: 2009–2015. Obesity (Silver Spring). 
+2019;27:1975–81.
+ 107. Rocha-González HI, De la Cruz-Álvarez LE, Kammar-García A, 
+Canizales-Quinteros S, Huerta-Cruz JC, Barranco-Garduño LM, 
+Reyes-García JG. Weight loss at first month and development of 
+tolerance as possible predictors of 30 mg phentermine efficacy 
+at 6 months. J Pers Med. 2021. https:// doi. org/ 10. 3390/ jpm11 
+121354.
+ 108. Lewis KH, Fischer H, Ard J, et  al. Safety and effective-
+ness of longer-term phentermine use: clinical outcomes from 
+an electronic health record cohort. Obesity (Silver Spring). 
+2019;27:591–602.
+ 109. Eisenberg D, Shikora SA, Aarts E, et al. 2022 American society 
+for metabolic and bariatric surgery (ASMBS) and international 
+federation for the surgery of obesity and metabolic disorders 
+(IFSO): Indications for metabolic and bariatric surgery. Surg 
+Obes Relat Dis. 2022;18:1345–56.
+ 110. Wiggins T, Guidozzi N, Welbourn R, Ahmed AR, Markar SR. 
+Association of bariatric surgery with all-cause mortality and inci-
+dence of obesity-related disease at a population level: A system-
+atic review and meta-analysis. PLoS Med. 2020;17: e1003206.
+ 111. King WC, Hinerman AS, Courcoulas AP. Weight regain after 
+bariatric surgery: a systematic literature review and comparison 
+across studies using a large reference sample. Surg Obes Relat 
+Dis. 2020;16:1133–44.
+ 112. Uittenbogaart M, de Witte E, Romeijn MM, Luijten AAPM, 
+van Dielen FMH, Leclercq WKG. Primary and secondary non-
+response following bariatric surgery: a survey study in current 
+bariatric practice in the Netherlands and Belgium. Obes Surg. 
+2020;30:3394–401.
+ 113. Salminen P, Kow L, Aminian A, Kaplan LM, Nimeri A, Prager 
+G, Behrens E, White KP, Shikora S. IFSO Consensus on Defini-
+tions and Clinical Practice Guidelines for Obesity Management-an 
+International Delphi Study. Obes Surg. 2024;34:30–42.
+ 114. Rubino F, Nathan DM, Eckel RH, et al. Metabolic surgery 
+in the treatment algorithm for type 2 Diabetes: A joint state-
+ment by international diabetes organizations. Diabetes Care. 
+2016;39:861–77.
+ 115. Still CD, Benotti P, Mirshahi T, Cook A, Wood GC. DiaRem2: 
+Incorporating duration of diabetes to improve prediction of dia-
+betes remission after metabolic surgery. Surg Obes Relat Dis. 
+2019;15:717–24.
+ 116. Fatima F, Hjelmesæth J, Hertel JK, Svanevik M, Sandbu R, 
+Småstuen MC, Hofsø D. Validation of Ad-DiaRem and ABCD 
+Diabetes Remission Prediction Scores at 1-Year After Roux-en-
+Y Gastric Bypass and Sleeve Gastrectomy in the Randomized 
+Controlled Oseberg Trial. Obes Surg. 2022;32:801–9.
+ 117. Eskandaros MS, Abbass A, Ebeid EF, Darwish AA. Remission 
+of Type II Diabetes Mellitus 1-Year Postoperative Following 
+One Anastomosis Gastric Bypass in Correlation with ABCD, 
+DiaRem, and DRS Scores. Obes Surg. 2022;32:450–6.
+ 118. Wang T, Tan J-Y (Benjamin), Liu X-L, Zhao I. Barriers and ena-
+blers to implementing clinical practice guidelines in primary care: 
+an overview of systematic reviews. BMJ Open. 2023;13:e062158.
+Publisher's Note Springer Nature remains neutral with regard to 
+jurisdictional claims in published maps and institutional affiliations.
+666 Current Obesity Reports (2024) 13:643–666
+Authors and Affiliations
+Emma A. Chávez‑Manzanera1,2 · Juan M. Vera‑Zertuche1,3 · Martha Kaufer‑Horwitz1,4 · 
+Verónica Vázquez‑Velázquez2,5 · José R. Flores‑Lázaro6 · Leonor Mireles‑Zavala1 · Raúl Calzada‑León1,7 · 
+Juan C. Garnica‑Cuellar1,8 · Verónica Sánchez‑Muñoz5 · Eduardo Ramírez‑Butanda2 · Ricardo Hernández‑González1 · 
+María A. Vargas‑Martínez9 · Hugo Laviada‑Molina1,10 · Rafael Violante‑Ortíz1,11 · Héctor Esquivias‑Zavala12 · 
+Eduardo García‑García1 · Fernando J. Lavalle‑González1,13 · Leonardo Mancillas‑Adame1,14,15 · 
+Juan C. López‑Alvarenga1,16 · Juan F. Pérez‑Hernández2 · Erika V. Soto‑Fuentes2 · Reina R. Soriano‑Cortés2 · 
+Eduardo W. Goicoechea‑Turcott17 · Gerardo Magallanes‑Díaz18 · Miguel F. Herrera‑Hernández3 · 
+Simón Barquera‑Cervera19 · Edith Vargas‑Contreras20 · Cybele B. Díaz‑Wionczek5 · Morgan Salmon5 · 
+Dinorah Ramírez‑De Jesús5 · Juan P . Villaseñor‑Díaz5 · Javiera Peña21 · José Ramos‑Rojas21 · Camila Ávila‑Oliver21 · 
+Gabriel Rada21 · Brad Hussey22 · Ximena Ramos Salas23
+ * Emma A. Chávez-Manzanera 
+ emma.chavezm@incmnsz.mx
+1 Obesity Workgroup, Sociedad Mexicana de Nutrición y 
+Endocrinología, Mexico City, México
+2 Obesity and Eating Disorders Clinic, Instituto Nacional 
+de Ciencias Médicas y Nutrición Salvador Zubirán, 
+Mexico City, México
+3 ABC Medical Center, Mexico City, México
+4 Nutrition Division, Instituto Nacional de Ciencias Médicas y 
+Nutrición Salvador Zubirán, Mexico City, México
+5 Obesidades S.C, Mexico City, México
+6 Sports Medicine Division, Universidad Nacional Autónoma 
+de México, Mexico City, México
+7 Service of Endocrinology, Instituto Nacional de Pediatría, 
+Mexico City, México
+8 Endocrinology Division, Centro Médico Nacional 20 de 
+Noviembre, Institute for Social Security and Services 
+for State, Mexico City, México
+9 Department of Neurology and Psychiatry, Instituto Nacional 
+de Ciencias Médicas y Nutrición Salvador Zubirán, 
+Mexico City, México
+10 School of Health Sciences, Universidad Marista de Mérida, 
+Mérida, México
+11 Tampico Faculty of Medicine Alberto Romo Caballero, 
+Universidad Autónoma de Tamaulipas, Tampico, 
+Tamaulipas, México
+12 Department for Continuing Education, Instituto Nacional de 
+Psiquiatría Ramón de la Fuente Muñiz, Mexico City, México
+13 Endocrine Service, Hospital Universitario Dr José 
+E. González, Medicine School, Universidad Autónoma de 
+Nuevo León, Nuevo Leon, México
+14 Institute for Obesity Research, Instituto Tecnológico de 
+Monterrey, Nuevo Leon, México
+15 Internal Medicine Division, Medical School, and University 
+Hospital, Universidad Autónoma de Nuevo Leon, 
+Nuevo Leon, México
+16 Population Health & Biostatistics, School of Medicine, 
+University of Texas Rio Grande Valley, Texas, United States
+17 Hospital General Dr. Manuel Gea González, Mexico City, 
+México
+18 Department of Secondary Prevention Central level, Servicios 
+de Salud IMSS-BIENESTAR , Mexico City, México
+19 School of Public Health of Mexico at, Instituto Nacional de 
+Salud Pública, Morelos, México
+20 Department of Endocrinology, Hospital General de México 
+“Dr. Eduardo Liceaga, Mexico City, México
+21 Epistemonikos Foundation, Santiago, Chile
+22 Replica Communications, Hamilton, Ontario, Canada
+23 Replica Communications, Kristianstad, Sweden
