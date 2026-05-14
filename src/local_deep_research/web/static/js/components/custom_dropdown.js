@@ -1,0 +1,668 @@
+/**
+ * Custom Dropdown Component
+ *
+ * This module provides functionality for custom dropdown menus with filtering and keyboard navigation.
+ * It can be used across the application for consistent dropdown behavior.
+ */
+(function() {
+    'use strict';
+
+    // Make the setupCustomDropdown function available globally
+    window.setupCustomDropdown = setupCustomDropdown;
+
+    // Also export the updateDropdownOptions function
+    window.updateDropdownOptions = updateDropdownOptions;
+
+    // Keep a registry of inputs and their associated options functions
+    const dropdownRegistry = {};
+
+    /**
+     * Create a favorite star element with proper accessibility attributes
+     * @param {Object} item - The item object with value and is_favorite properties
+     * @param {Function} onToggle - Callback when star is clicked (newIsFavorite) => {}
+     * @returns {HTMLElement} The star span element
+     */
+    function createFavoriteStarElement(item, onToggle) {
+        const starSpan = document.createElement('span');
+        starSpan.className = 'ldr-dropdown-favorite-star';
+        starSpan.setAttribute('data-value', item.value);
+        starSpan.setAttribute('role', 'button');
+        starSpan.setAttribute('tabindex', '0');
+
+        const isFavorite = item.is_favorite === true;
+        updateStarState(starSpan, isFavorite);
+
+        const handleToggle = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const newIsFavorite = !starSpan.classList.contains('ldr-is-favorite');
+            onToggle(newIsFavorite);
+            updateStarState(starSpan, newIsFavorite);
+        };
+
+        starSpan.addEventListener('click', handleToggle);
+        starSpan.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                handleToggle(e);
+            }
+        });
+
+        return starSpan;
+    }
+
+    /**
+     * Update the visual state of a star element
+     * @param {HTMLElement} starSpan - The star span element
+     * @param {boolean} isFavorite - Whether the item is a favorite
+     */
+    function updateStarState(starSpan, isFavorite) {
+        if (isFavorite) {
+            starSpan.classList.add('ldr-is-favorite');
+            starSpan.innerHTML = '&#9733;'; // Filled star
+            starSpan.title = 'Remove from favorites';
+            starSpan.setAttribute('aria-label', 'Remove from favorites');
+            starSpan.setAttribute('aria-pressed', 'true');
+        } else {
+            starSpan.classList.remove('ldr-is-favorite');
+            starSpan.innerHTML = '&#9734;'; // Empty star
+            starSpan.title = 'Add to favorites';
+            starSpan.setAttribute('aria-label', 'Add to favorites');
+            starSpan.setAttribute('aria-pressed', 'false');
+        }
+    }
+
+    /**
+     * Update the options for an existing dropdown without destroying it
+     * @param {HTMLElement} input - The input element
+     * @param {Array} newOptions - New options array to use [{value: string, label: string}]
+     */
+    function updateDropdownOptions(input, newOptions) {
+        if (!input || !input.id) {
+            SafeLogger.warn('Cannot update dropdown: Invalid input element');
+            return;
+        }
+
+        // Check if dropdown is registered
+        if (!dropdownRegistry[input.id]) {
+            SafeLogger.warn(`Dropdown ${input.id} not found in registry, unable to update options`);
+            return;
+        }
+
+        const dropdownInfo = dropdownRegistry[input.id];
+
+        // Update the options getter function to return new options
+        dropdownInfo.getOptions = () => newOptions;
+
+        // If dropdown is currently open, update its content
+        const dropdownList = document.getElementById(`${dropdownInfo.dropdownId}-list`);
+        if (dropdownList && window.getComputedStyle(dropdownList).display !== 'none') {
+            SafeLogger.log(`Dropdown ${input.id} is open, updating content in place`);
+
+            // Save scroll position
+            const scrollPos = dropdownList.scrollTop;
+
+            // Update dropdown content
+            const filteredData = dropdownInfo.getOptions();
+            // Clear dropdown list using safe DOM methods
+            while (dropdownList.firstChild) {
+                dropdownList.removeChild(dropdownList.firstChild);
+            }
+
+            if (filteredData.length === 0) {
+                // Create no results message using safe DOM methods
+                const noResultsDiv = document.createElement('div');
+                noResultsDiv.className = 'ldr-custom-dropdown-no-results';
+                noResultsDiv.setAttribute('role', 'status');
+                noResultsDiv.textContent = dropdownInfo.noResultsText;
+                dropdownList.appendChild(noResultsDiv);
+                return;
+            }
+
+            filteredData.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'ldr-custom-dropdown-item';
+
+                // Add ARIA role and unique ID for accessibility
+                div.setAttribute('role', 'option');
+                div.setAttribute('aria-selected', 'false');
+                div.id = `${dropdownInfo.dropdownId}-option-${index}`;
+
+                // Add favorite star if callback is provided
+                if (dropdownInfo.onFavoriteToggle) {
+                    const starSpan = createFavoriteStarElement(item, (newIsFavorite) => {
+                        dropdownInfo.onFavoriteToggle(item.value, item, newIsFavorite);
+                    });
+                    div.appendChild(starSpan);
+                }
+
+                // Create label content span
+                const labelSpan = document.createElement('span');
+                labelSpan.className = 'ldr-dropdown-item-label';
+                window.safeSetTextContent(labelSpan, item.label);
+                div.appendChild(labelSpan);
+
+                div.setAttribute('data-value', item.value);
+                div.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('ldr-dropdown-favorite-star')) {
+                        return;
+                    }
+                    // Set display value
+                    input.value = item.label;
+                    // Update hidden input if exists
+                    const hiddenInput = document.getElementById(`${input.id}_hidden`);
+                    if (hiddenInput) {
+                        hiddenInput.value = item.value;
+                        hiddenInput.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                    // Call original onSelect callback
+                    if (dropdownInfo.onSelect) {
+                        dropdownInfo.onSelect(item.value, item);
+                    }
+                    // Hide dropdown properly via hideDropdown to reset aria-expanded and state
+                    dropdownInfo.hideDropdown?.();
+                });
+
+                dropdownList.appendChild(div);
+            });
+
+            // Restore scroll position
+            dropdownList.scrollTop = scrollPos;
+        } else {
+            SafeLogger.log(`Dropdown ${input.id} is closed, options will update when opened`);
+        }
+    }
+
+    /**
+     * Setup a custom dropdown component
+     * @param {HTMLElement} input - The input element
+     * @param {HTMLElement} dropdownList - The dropdown list element
+     * @param {Function} getOptions - Function that returns the current options array [{value: string, label: string, is_favorite?: boolean}]
+     * @param {Function} onSelect - Callback when an item is selected (value, item) => {}
+     * @param {boolean} allowCustomValues - Whether to allow values not in the options list
+     * @param {string} noResultsText - Text to show when no results are found
+     * @param {Function|null} onFavoriteToggle - Optional callback when favorite star is clicked (value, item, isFavorite) => {}
+     */
+    function setupCustomDropdown(input, dropdownList, getOptions, onSelect, allowCustomValues = false, noResultsText = 'No results found.', onFavoriteToggle = null) {
+        // Clean up previous instance if re-initializing the same dropdown
+        if (input && input.id && dropdownRegistry[input.id]) {
+            const existing = dropdownRegistry[input.id];
+            if (existing.listenerController) {
+                existing.listenerController.abort();
+            }
+            delete dropdownRegistry[input.id];
+        }
+
+        let selectedIndex = -1;
+        let isOpen = false;
+        let showAllOptions = false; // Flag to track if we should show all options
+        let isClickingDropdown = false; // Flag to track clicks inside dropdown
+        let justSelected = false; // Flag to prevent immediate reopening after selection
+
+        // AbortController for cleaning up all input listeners on destroy
+        const listenerController = new AbortController();
+        const signal = listenerController.signal;
+
+        // Find the associated hidden input field
+        const hiddenInput = document.getElementById(`${input.id}_hidden`);
+
+        // Function to update hidden field
+        function updateHiddenField(value) {
+            if (hiddenInput) {
+                hiddenInput.value = value;
+                // Also dispatch a change event on the hidden input to trigger form handling
+                hiddenInput.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        }
+
+        // Function to filter options
+        function filterOptions(searchText, showAll = false) {
+            const options = getOptions();
+            if (showAll || !searchText.trim()) return options;
+
+            return options.filter(item =>
+                item.label.toLowerCase().includes(searchText.toLowerCase()) ||
+                item.value.toLowerCase().includes(searchText.toLowerCase())
+            );
+        }
+
+        // Function to highlight matched text
+        function highlightText(text, search) {
+            if (!search.trim() || showAllOptions) return text;
+            const lowerText = text.toLowerCase();
+            const lowerSearch = search.toLowerCase();
+            let result = '';
+            let lastIdx = 0;
+            let idx;
+            while ((idx = lowerText.indexOf(lowerSearch, lastIdx)) !== -1) {
+                result += text.substring(lastIdx, idx);
+                result += '<span class="ldr-highlight">' + text.substring(idx, idx + search.length) + '</span>';
+                lastIdx = idx + search.length;
+            }
+            result += text.substring(lastIdx);
+            return result;
+        }
+
+        // Function to show the dropdown
+        function showDropdown() {
+            const inputRect = input.getBoundingClientRect();
+
+            // Debug logging
+            SafeLogger.log('Dropdown positioning:', {
+                inputLeft: inputRect.left,
+                inputBottom: inputRect.bottom,
+                scrollY: window.scrollY,
+                inputWidth: inputRect.width,
+                windowWidth: window.innerWidth,
+                windowHeight: window.innerHeight
+            });
+
+            // Store original parent for when we close
+            if (!dropdownList._originalParent) {
+                dropdownList._originalParent = dropdownList.parentNode;
+            }
+
+            // Remove from current parent
+            if (dropdownList.parentNode) {
+                dropdownList.parentNode.removeChild(dropdownList);
+            }
+
+            // Append directly to body
+            document.body.appendChild(dropdownList);
+
+            // Make dropdown visible
+            dropdownList.style.display = 'block';
+
+            // Add active class for dropdown.
+            dropdownList.classList.add('ldr-dropdown-active');
+
+            // Add ldr-dropdown-active class to body
+            document.body.classList.add('ldr-dropdown-active');
+
+            // Add a small offset (6px) to ensure it's visibly separated from the input
+            const verticalOffset = 6;
+
+            // Calculate position relative to viewport
+            const left = Math.min(inputRect.left, window.innerWidth - inputRect.width - 10);
+            const top = inputRect.bottom + window.scrollY + verticalOffset;
+
+            // Apply the calculated position
+            dropdownList.style.left = `${left}px`;
+            dropdownList.style.top = `${top}px`;
+            dropdownList.style.width = `${inputRect.width}px`;
+
+            input.setAttribute('aria-expanded', 'true');
+            isOpen = true;
+        }
+
+        // Function to hide the dropdown
+        function hideDropdown() {
+            // Get current parent
+            const currentParent = dropdownList.parentNode;
+
+            // Hide first
+            dropdownList.style.display = 'none';
+            // Remove active class
+            dropdownList.classList.remove('ldr-dropdown-active');
+
+            // Remove ldr-dropdown-active class from body
+            document.body.classList.remove('ldr-dropdown-active');
+
+            // Reset position styles
+            dropdownList.style.left = '';
+            dropdownList.style.top = '';
+            dropdownList.style.width = '';
+
+            // Move back to original parent if it exists and we're not already there
+            if (dropdownList._originalParent && currentParent !== dropdownList._originalParent) {
+                currentParent.removeChild(dropdownList);
+                dropdownList._originalParent.appendChild(dropdownList);
+            }
+
+            input.setAttribute('aria-expanded', 'false');
+            input.removeAttribute('aria-activedescendant');
+            selectedIndex = -1;
+            isOpen = false;
+            showAllOptions = false; // Reset the flag when closing dropdown
+        }
+
+        // Function to update the dropdown
+        function updateDropdown() {
+            const searchText = input.value;
+            const filteredData = filterOptions(searchText, showAllOptions);
+
+            // Clear dropdown list using safe DOM methods
+            while (dropdownList.firstChild) {
+                dropdownList.removeChild(dropdownList.firstChild);
+            }
+
+            if (filteredData.length === 0) {
+                // Create no results message using safe DOM methods
+                const noResultsDiv = document.createElement('div');
+                noResultsDiv.className = 'ldr-custom-dropdown-no-results';
+                noResultsDiv.setAttribute('role', 'status');
+                noResultsDiv.textContent = noResultsText;
+                dropdownList.appendChild(noResultsDiv);
+
+                if (allowCustomValues && searchText.trim()) {
+                    const customOption = document.createElement('div');
+                    customOption.className = 'ldr-custom-dropdown-footer';
+                    customOption.textContent = `Press Enter to use "${searchText}"`;
+                    customOption.setAttribute('role', 'status');
+                    dropdownList.appendChild(customOption);
+                }
+
+                return;
+            }
+
+            // Get dropdown ID for generating unique option IDs
+            const dropdownId = dropdownList.id.replace('-list', '');
+
+            filteredData.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'ldr-custom-dropdown-item';
+
+                // Add ARIA role and unique ID for accessibility
+                div.setAttribute('role', 'option');
+                div.id = `${dropdownId}-option-${index}`;
+
+                // Add favorite star if callback is provided
+                if (onFavoriteToggle) {
+                    const starSpan = createFavoriteStarElement(item, (newIsFavorite) => {
+                        onFavoriteToggle(item.value, item, newIsFavorite);
+                    });
+                    div.appendChild(starSpan);
+                }
+
+                // Create label content span
+                const labelSpan = document.createElement('span');
+                labelSpan.className = 'ldr-dropdown-item-label';
+                // Sanitize highlighted text to prevent XSS
+                const highlightedText = highlightText(item.label, searchText);
+                // Allow basic HTML tags for highlighting but escape dangerous content
+                window.safeSetInnerHTML(labelSpan, highlightedText, true);
+                div.appendChild(labelSpan);
+
+                div.setAttribute('data-value', item.value);
+
+                // Handle item click (on the label span or the whole item minus the star)
+                const handleItemClick = (e) => {
+                    // Don't select if clicking on the star
+                    if (e.target.classList.contains('ldr-dropdown-favorite-star')) {
+                        return;
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // Set display value
+                    input.value = item.label;
+                    // Update hidden input value
+                    updateHiddenField(item.value);
+                    // Call onSelect callback
+                    onSelect(item.value, item);
+                    // Set flag to prevent immediate reopening
+                    justSelected = true;
+                    // Hide dropdown
+                    hideDropdown();
+                    // Reset the clicking flag
+                    isClickingDropdown = false;
+                    // Clear the justSelected flag after a delay
+                    setTimeout(() => {
+                        justSelected = false;
+                    }, 300);
+                };
+
+                div.addEventListener('click', handleItemClick);
+
+                if (index === selectedIndex) {
+                    div.classList.add('active');
+                    // Set aria-selected for selected item
+                    div.setAttribute('aria-selected', 'true');
+                } else {
+                    div.setAttribute('aria-selected', 'false');
+                }
+
+                dropdownList.appendChild(div);
+            });
+        }
+
+        // Input event - filter as user types
+        input.addEventListener('input', () => {
+            showAllOptions = false; // Reset when typing
+            selectedIndex = -1;
+            input.removeAttribute('aria-activedescendant');
+            showDropdown();
+            updateDropdown();
+        }, { signal });
+
+        // Click event - show all options when clicking in the input
+        input.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Don't reopen immediately after selection
+            if (!justSelected) {
+                showAllOptions = true;
+                showDropdown();
+                updateDropdown();
+            }
+        }, { signal });
+
+        // Focus event - show dropdown when input is focused
+        input.addEventListener('focus', () => {
+            // Don't reopen immediately after selection
+            if (!isOpen && !justSelected) {
+                showAllOptions = true; // Show all options on focus
+                showDropdown();
+                updateDropdown();
+            }
+        }, { signal });
+
+        // Blur event - close dropdown when tabbing away
+        input.addEventListener('blur', () => {
+            // Small delay to allow click events on dropdown items to fire first
+            setTimeout(() => {
+                // Don't close if we're clicking inside the dropdown
+                if (isClickingDropdown) {
+                    return;
+                }
+                // Check if focus has moved to an element inside the dropdown
+                const activeElement = document.activeElement;
+                if (!dropdownList.contains(activeElement) && activeElement !== input) {
+                    hideDropdown();
+                }
+            }, 150);
+        }, { signal });
+
+        // Keyboard navigation for dropdown
+        input.addEventListener('keydown', (e) => {
+            let items = dropdownList.querySelectorAll('.ldr-custom-dropdown-item');
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (!isOpen) {
+                    showAllOptions = true;
+                    showDropdown();
+                    updateDropdown();
+                    // Re-query after DOM rebuild
+                    items = dropdownList.querySelectorAll('.ldr-custom-dropdown-item');
+                    selectedIndex = items.length > 0 ? 0 : -1;
+                } else if (items.length > 0) {
+                    selectedIndex = (selectedIndex + 1) % items.length;
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (!isOpen) {
+                    showAllOptions = true;
+                    showDropdown();
+                    updateDropdown();
+                    // Re-query after DOM rebuild
+                    items = dropdownList.querySelectorAll('.ldr-custom-dropdown-item');
+                    selectedIndex = items.length > 0 ? items.length - 1 : -1;
+                } else if (items.length > 0) {
+                    selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+                }
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+
+                if (selectedIndex >= 0 && selectedIndex < items.length) {
+                    // Select the highlighted item
+                    const selectedItem = items[selectedIndex];
+                    const value = selectedItem.getAttribute('data-value');
+                    const item = getOptions().find(o => o.value === value);
+                    if (!item) {
+                        SafeLogger.warn('Selected item not found');
+                        return;
+                    }
+                    // Update display value
+                    input.value = item.label;
+                    // Update hidden input
+                    updateHiddenField(value);
+                    // Call callback
+                    onSelect(value, item);
+                } else if (items.length > 0 && selectedIndex === -1) {
+                    // No item explicitly selected, but there are filtered results
+                    // Auto-select the first item in the filtered list
+                    const firstItem = items[0];
+                    const value = firstItem.getAttribute('data-value');
+                    const item = getOptions().find(o => o.value === value);
+                    if (item) {
+                        // Update display value
+                        input.value = item.label;
+                        // Update hidden input
+                        updateHiddenField(value);
+                        // Call callback
+                        onSelect(value, item);
+                    }
+                } else if (allowCustomValues && input.value.trim()) {
+                    // Use the custom value
+                    const customValue = input.value.trim();
+                    // Update hidden input with custom value
+                    updateHiddenField(customValue);
+                    onSelect(customValue, null);
+                }
+                hideDropdown();
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                hideDropdown();
+            } else if (e.key === 'Home') {
+                if (isOpen) {
+                    e.preventDefault();
+                    if (items.length > 0) {
+                        selectedIndex = 0;
+                    }
+                }
+            } else if (e.key === 'End') {
+                if (isOpen) {
+                    e.preventDefault();
+                    if (items.length > 0) {
+                        selectedIndex = items.length - 1;
+                    }
+                }
+            }
+
+            // Update selected item styling and ARIA attributes
+            const dropdownId = dropdownList.id.replace('-list', '');
+            items.forEach((item, index) => {
+                if (index === selectedIndex) {
+                    item.classList.add('active');
+                    item.setAttribute('aria-selected', 'true');
+                    // Set aria-activedescendant on input to point to selected option
+                    input.setAttribute('aria-activedescendant', `${dropdownId}-option-${index}`);
+                    // Scroll into view if necessary
+                    if (item.offsetTop < dropdownList.scrollTop) {
+                        dropdownList.scrollTop = item.offsetTop;
+                    } else if (item.offsetTop + item.offsetHeight > dropdownList.scrollTop + dropdownList.offsetHeight) {
+                        dropdownList.scrollTop = item.offsetTop + item.offsetHeight - dropdownList.offsetHeight;
+                    }
+                } else {
+                    item.classList.remove('active');
+                    item.setAttribute('aria-selected', 'false');
+                }
+            });
+
+            // Clear aria-activedescendant if no item is selected
+            if (selectedIndex < 0) {
+                input.removeAttribute('aria-activedescendant');
+            }
+        }, { signal });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            if (isOpen) {
+                hideDropdown();
+            }
+        }, { signal });
+
+        // Track mouse events in the dropdown to prevent premature closing
+        dropdownList.addEventListener('mousedown', () => {
+            isClickingDropdown = true;
+        }, { signal });
+
+        dropdownList.addEventListener('mouseup', () => {
+            // Reset flag after a small delay to ensure click event fires
+            setTimeout(() => {
+                isClickingDropdown = false;
+            }, 200);
+        }, { signal });
+
+        // Prevent clicks in the dropdown from closing it
+        dropdownList.addEventListener('click', (e) => {
+            e.stopPropagation();
+        }, { signal });
+
+        // Register this dropdown for future updates
+        if (input && input.id && dropdownList && dropdownList.id) {
+            const dropdownId = dropdownList.id.replace('-list', '');
+            SafeLogger.log(`Registering dropdown: ${input.id} with list ${dropdownId}`);
+
+            dropdownRegistry[input.id] = {
+                getOptions,
+                onSelect,
+                dropdownId,
+                allowCustomValues,
+                noResultsText,
+                onFavoriteToggle,
+                hideDropdown,
+                listenerController
+            };
+        } else {
+            SafeLogger.warn('Cannot register dropdown: Missing input ID or dropdown list ID');
+        }
+
+        // Initial state
+        hideDropdown();
+
+        // Return functions that might be needed externally
+        return {
+            updateDropdown,
+            showDropdown,
+            hideDropdown,
+            destroy: () => {
+                listenerController.abort();
+                delete dropdownRegistry[input.id];
+            },
+            setValue: (value, triggerChange = true) => {
+                const options = getOptions();
+                const matchedOption = options.find(opt => opt.value === value || (opt.value && value && opt.value.toLowerCase() === value.toLowerCase()));
+
+                if (matchedOption) {
+                    input.value = matchedOption.label;
+                } else if (allowCustomValues && value) {
+                    input.value = value;
+                } else {
+                    input.value = '';
+                }
+
+                if (triggerChange) {
+                    updateHiddenField(value);
+                    // Also call onSelect if triggerChange is true
+                    if (matchedOption) {
+                        onSelect(value, matchedOption);
+                    } else {
+                        onSelect(value, { value, label: value });
+                    }
+                } else if (hiddenInput) {
+                    // Even if we don't trigger events, we should update the hidden field
+                    hiddenInput.value = value;
+                }
+            }
+        };
+    }
+})();

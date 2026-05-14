@@ -1,0 +1,478 @@
+{% extends "base.html" %}
+{% from "components/help_macros.html" import tooltip, help_panel, help_step, help_tip, privacy_note %}
+
+{% block title %}Star Reviews Analytics{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="/static/css/star_reviews.css">
+{% endblock %}
+
+{% block content %}
+<div class="ldr-star-reviews-container">
+    <div class="ldr-metrics-header">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+            <h1>⭐ Star Reviews Analytics</h1>
+            <a href="/metrics/" style="background: var(--bg-tertiary); color: var(--text-primary); padding: 0.5rem 1rem; border-radius: 0.375rem; text-decoration: none; font-size: 0.875rem; border: 1px solid var(--border-color); transition: background-color 0.2s ease;">
+                ← Back to Metrics
+            </a>
+        </div>
+        <p>Comprehensive analysis of user satisfaction ratings</p>
+    </div>
+
+    <div class="ldr-period-selector">
+        <label for="period-select">Time Period: </label>
+        <select id="period-select">
+            <option value="7d">Last 7 days</option>
+            <option value="30d" selected>Last 30 days</option>
+            <option value="3m">Last 3 months</option>
+            <option value="1y">Last year</option>
+            <option value="all">All time</option>
+        </select>
+    </div>
+
+    <!-- Understanding Star Reviews Help Panel -->
+    {% call help_panel('reviews-how', 'Understanding Star Reviews', icon='star', collapsed=true, dismissible=true) %}
+    <div class="ldr-help-steps">
+        {{ help_step(1, "Rate Your Research", "After viewing results, rate them 1-5 stars. This helps you track which settings produce best results.") }}
+        {{ help_step(2, "Model Comparison", "See which AI models and search engines give you the highest satisfaction.") }}
+        {{ help_step(3, "Improve Over Time", "Use insights to adjust settings - switch to models or engines that consistently rate higher.") }}
+    </div>
+    {{ privacy_note("All rating data is stored locally on your device only - never shared or sent anywhere.") }}
+    {% endcall %}
+
+    <div id="loading" class="ldr-loading">
+        <div>Loading star reviews data...</div>
+    </div>
+
+    <div id="error" class="ldr-error" style="display: none;"></div>
+
+    <div id="content" style="display: none;">
+        <!-- Overall Statistics -->
+        <div class="ldr-metric-card">
+            <h3>📊 Overall Satisfaction</h3>
+            <div class="ldr-overall-stats">
+                <div class="ldr-stat-item">
+                    <span class="ldr-stat-value" id="avg-rating">0.0</span>
+                    <div class="ldr-stat-label">Average Rating</div>
+                </div>
+                <div class="ldr-stat-item">
+                    <span class="ldr-stat-value" id="total-ratings">0</span>
+                    <div class="ldr-stat-label">Total Ratings</div>
+                </div>
+                <div class="ldr-stat-item">
+                    <span class="ldr-stat-value" id="satisfaction-rate">0%</span>
+                    <div class="ldr-stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+
+            <div class="ldr-rating-distribution">
+                <h4>Rating Distribution</h4>
+                <div class="ldr-rating-bar">
+                    <div class="ldr-rating-label">5 ⭐</div>
+                    <div class="ldr-rating-progress">
+                        <div class="ldr-rating-fill" id="rating-5" style="width: 0%;"></div>
+                    </div>
+                    <div class="ldr-rating-count" id="count-5">0</div>
+                </div>
+                <div class="ldr-rating-bar">
+                    <div class="ldr-rating-label">4 ⭐</div>
+                    <div class="ldr-rating-progress">
+                        <div class="ldr-rating-fill" id="rating-4" style="width: 0%;"></div>
+                    </div>
+                    <div class="ldr-rating-count" id="count-4">0</div>
+                </div>
+                <div class="ldr-rating-bar">
+                    <div class="ldr-rating-label">3 ⭐</div>
+                    <div class="ldr-rating-progress">
+                        <div class="ldr-rating-fill" id="rating-3" style="width: 0%;"></div>
+                    </div>
+                    <div class="ldr-rating-count" id="count-3">0</div>
+                </div>
+                <div class="ldr-rating-bar">
+                    <div class="ldr-rating-label">2 ⭐</div>
+                    <div class="ldr-rating-progress">
+                        <div class="ldr-rating-fill" id="rating-2" style="width: 0%;"></div>
+                    </div>
+                    <div class="ldr-rating-count" id="count-2">0</div>
+                </div>
+                <div class="ldr-rating-bar">
+                    <div class="ldr-rating-label">1 ⭐</div>
+                    <div class="ldr-rating-progress">
+                        <div class="ldr-rating-fill" id="rating-1" style="width: 0%;"></div>
+                    </div>
+                    <div class="ldr-rating-count" id="count-1">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ldr-metrics-grid">
+            <!-- LLM Model Ratings Chart -->
+            <div class="ldr-metric-card">
+                <h3>🤖 LLM Model Performance</h3>
+                <div class="ldr-chart-container">
+                    <canvas id="llm-ratings-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Search Engine Ratings Chart -->
+            <div class="ldr-metric-card">
+                <h3>🔍 Search Engine Performance</h3>
+                <div class="ldr-chart-container">
+                    <canvas id="search-engine-ratings-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Rating Trends Over Time -->
+            <div class="ldr-metric-card">
+                <h3>📈 Rating Trends</h3>
+                <div class="ldr-chart-container">
+                    <canvas id="rating-trends-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Ratings -->
+            <div class="ldr-metric-card">
+                <h3>🕐 Recent Ratings</h3>
+                <div class="ldr-recent-ratings" id="recent-ratings">
+                    <!-- Recent ratings will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ldr-info-section">
+        <div class="ldr-info-card">
+            <div class="ldr-info-icon">📊</div>
+            <div class="ldr-info-content">
+                <h3>Data-Driven Research Optimization</h3>
+                <p>Use your personal rating history to optimize your research workflow. Instead of relying on intuition alone, leverage actual performance statistics to identify which LLM models, search engines, and research approaches deliver the best results for your specific needs.</p>
+            </div>
+        </div>
+
+        <div class="ldr-info-grid">
+            <div class="ldr-info-item">
+                <div class="ldr-info-item-icon">🤖</div>
+                <h4>Model Performance</h4>
+                <p>Compare LLM models based on your actual satisfaction ratings to choose the best performing one for your research style.</p>
+            </div>
+
+            <div class="ldr-info-item">
+                <div class="ldr-info-item-icon">🔍</div>
+                <h4>Search Engine Insights</h4>
+                <p>Discover which search engines consistently deliver higher-quality results for your research topics and preferences.</p>
+            </div>
+
+            <div class="ldr-info-item">
+                <div class="ldr-info-item-icon">📈</div>
+                <h4>Trend Analysis</h4>
+                <p>Track your satisfaction trends over time to understand how your research effectiveness evolves and identify optimization opportunities.</p>
+            </div>
+
+            <div class="ldr-info-item">
+                <div class="ldr-info-item-icon">🎯</div>
+                <h4>Personalized Recommendations</h4>
+                <p>Make informed decisions about your research configuration based on your personal usage patterns and satisfaction data.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let llmChart, searchEngineChart, trendsChart;
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+    loadStarReviews();
+
+    // Period selector change handler
+    document.getElementById('period-select').addEventListener('change', loadStarReviews);
+});
+
+async function loadStarReviews() {
+    console.log('Loading star reviews...');
+    const period = document.getElementById('period-select').value;
+
+    showLoading();
+
+    try {
+        console.log('Fetching data for period:', period);
+        const response = await fetch(`/metrics/api/star-reviews?period=${period}`);
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log('Received data:', data);
+
+        if (data.error) {
+            showError(data.error);
+            return;
+        }
+
+        console.log('Updating charts and stats...');
+        updateOverallStats(data.overall_stats);
+        updateLLMChart(data.llm_ratings);
+        updateSearchEngineChart(data.search_engine_ratings);
+        updateTrendsChart(data.rating_trends);
+        updateRecentRatings(data.recent_ratings);
+
+        showContent();
+        console.log('Star reviews loaded successfully');
+
+    } catch (error) {
+        console.error('Error loading star reviews:', error);
+        showError('Failed to load star reviews data: ' + error.message);
+    }
+}
+
+function showLoading() {
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('content').style.display = 'none';
+    document.getElementById('error').style.display = 'none';
+}
+
+function showContent() {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+    document.getElementById('error').style.display = 'none';
+}
+
+function showError(message) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('content').style.display = 'none';
+    document.getElementById('error').style.display = 'block';
+    document.getElementById('error').textContent = message;
+}
+
+function updateOverallStats(stats) {
+    document.getElementById('avg-rating').textContent = stats.avg_rating;
+    document.getElementById('total-ratings').textContent = stats.total_ratings;
+
+    // Calculate satisfaction rate (4+ stars)
+    const satisfactionRate = stats.total_ratings > 0 ?
+        Math.round(((stats.rating_distribution['4'] + stats.rating_distribution['5']) / stats.total_ratings) * 100) : 0;
+    document.getElementById('satisfaction-rate').textContent = satisfactionRate + '%';
+
+    // Update rating distribution
+    const total = stats.total_ratings || 1;
+    for (let i = 1; i <= 5; i++) {
+        const count = stats.rating_distribution[i.toString()] || 0;
+        const percentage = Math.round((count / total) * 100);
+
+        document.getElementById(`rating-${i}`).style.width = percentage + '%';
+        document.getElementById(`count-${i}`).textContent = count;
+    }
+}
+
+function updateLLMChart(llmRatings) {
+    const ctx = document.getElementById('llm-ratings-chart').getContext('2d');
+
+    if (llmChart) {
+        llmChart.destroy();
+    }
+
+    // Sort by rating and take top 10
+    const sortedData = llmRatings.sort((a, b) => b.avg_rating - a.avg_rating).slice(0, 10);
+
+    llmChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: sortedData.map(item => item.model || 'Unknown'),
+            datasets: [{
+                label: 'Average Rating',
+                data: sortedData.map(item => item.avg_rating),
+                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 5,
+                    title: {
+                        display: true,
+                        text: 'Average Rating (Stars)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'LLM Models'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        afterLabel: function(context) {
+                            const index = context.dataIndex;
+                            const item = sortedData[index];
+                            return [
+                                `Ratings: ${item.rating_count}`,
+                                `Satisfaction: ${item.satisfaction_rate}%`
+                            ];
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function updateSearchEngineChart(searchEngineRatings) {
+    const ctx = document.getElementById('search-engine-ratings-chart').getContext('2d');
+
+    if (searchEngineChart) {
+        searchEngineChart.destroy();
+    }
+
+    // Sort by rating and take top 10
+    const sortedData = searchEngineRatings.sort((a, b) => b.avg_rating - a.avg_rating).slice(0, 10);
+
+    searchEngineChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: sortedData.map(item => item.search_engine || 'Unknown'),
+            datasets: [{
+                label: 'Average Rating',
+                data: sortedData.map(item => item.avg_rating),
+                backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 5,
+                    title: {
+                        display: true,
+                        text: 'Average Rating (Stars)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Search Engines'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        afterLabel: function(context) {
+                            const index = context.dataIndex;
+                            const item = sortedData[index];
+                            return [
+                                `Ratings: ${item.rating_count}`,
+                                `Satisfaction: ${item.satisfaction_rate}%`
+                            ];
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function updateTrendsChart(ratingTrends) {
+    const ctx = document.getElementById('rating-trends-chart').getContext('2d');
+
+    if (trendsChart) {
+        trendsChart.destroy();
+    }
+
+    trendsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ratingTrends.map(item => new Date(item.date).toLocaleDateString()),
+            datasets: [{
+                label: 'Average Rating',
+                data: ratingTrends.map(item => item.avg_rating),
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 5,
+                    title: {
+                        display: true,
+                        text: 'Average Rating'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
+function updateRecentRatings(recentRatings) {
+    const container = document.getElementById('recent-ratings');
+    container.innerHTML = '';
+
+    if (recentRatings.length === 0) {
+        container.innerHTML = '<div style="text-align: center; padding: 20px; color: var(--text-muted);">No recent ratings found</div>';
+        return;
+    }
+
+    recentRatings.forEach(rating => {
+        const item = document.createElement('div');
+        item.className = 'ldr-rating-item';
+
+        const stars = '⭐'.repeat(rating.rating);
+        const date = new Date(rating.rated_at).toLocaleDateString();
+
+        item.innerHTML = `
+            <div class="ldr-rating-details">
+                <div class="ldr-rating-query">
+                    <a href="/results/${encodeURIComponent(rating.research_id)}" class="ldr-rating-link">
+                        ${window.escapeHtml(rating.query)}
+                    </a>
+                </div>
+                <div class="ldr-rating-meta">
+                    ${window.escapeHtml(rating.llm_model)} • ${window.escapeHtml(rating.mode)} • ${date}
+                </div>
+            </div>
+            <div class="ldr-rating-score">
+                <span class="ldr-star-rating">${stars}</span>
+                <span>${rating.rating}/5</span>
+            </div>
+        `;
+
+        container.appendChild(item);
+    });
+}
+</script>
+{% endblock %}
