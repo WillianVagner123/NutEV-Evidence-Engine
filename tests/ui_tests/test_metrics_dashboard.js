@@ -1,0 +1,410 @@
+const puppeteer = require('puppeteer');
+const { getPuppeteerLaunchOptions } = require('./puppeteer_config');
+
+// Test configuration
+const BASE_URL = 'http://127.0.0.1:5000';
+const TEST_USER = `metrics_test_${Date.now()}`;
+const TEST_PASSWORD = 'TestPass123!';
+
+// Colors for console output
+const colors = {
+    reset: '\x1b[0m',
+    bright: '\x1b[1m',
+    green: '\x1b[32m',
+    red: '\x1b[31m',
+    yellow: '\x1b[33m',
+    blue: '\x1b[34m',
+    cyan: '\x1b[36m'
+};
+
+function log(message, type = 'info') {
+    const timestamp = new Date().toISOString().split('T')[1].split('.')[0];
+    const typeColors = {
+        'info': colors.cyan,
+        'success': colors.green,
+        'error': colors.red,
+        'warning': colors.yellow,
+        'section': colors.blue
+    };
+    const color = typeColors[type] || colors.reset;
+    console.log(`${color}[${timestamp}] ${message}${colors.reset}`);
+}
+
+async function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function registerAndLogin(page) {
+    log('📝 Registering new user...', 'info');
+
+    await page.goto(`${BASE_URL}/auth/register`);
+    await page.waitForSelector('#username');
+
+    await page.type('#username', TEST_USER);
+    await page.type('#password', TEST_PASSWORD);
+    await page.type('#confirm_password', TEST_PASSWORD);
+
+    // Check the acknowledge checkbox
+    const acknowledgeCheckbox = await page.$('#acknowledge');
+    if (acknowledgeCheckbox) {
+        await acknowledgeCheckbox.click();
+    }
+
+    await Promise.all([
+        page.waitForNavigation(),
+        page.click('button[type="submit"]')
+    ]);
+
+    log('✅ Registration successful', 'success');
+}
+
+async function createResearch(page, query) {
+    log(`🔬 Creating research: "${query}"`, 'info');
+
+    await page.goto(`${BASE_URL}/`);
+    await page.waitForSelector('#query');
+
+    await page.evaluate((q) => {
+        document.getElementById('query').value = q;
+    }, query);
+
+    await page.click('#start-research-btn');
+
+    // Wait for research to complete
+    log('⏳ Waiting for research to complete...', 'info');
+    const startTime = Date.now();
+    const maxWaitTime = 120000;
+
+    // In CI, don't wait for research to complete - just verify submission
+    await delay(3000);
+
+    try {
+        const currentUrl = page.url();
+        if (currentUrl.includes('/progress/') || currentUrl.includes('/research/')) {
+            log('✅ Research submitted successfully', 'success');
+            return;
+        }
+    } catch {
+        log('⚠️ Could not check research status', 'warning');
+        return;
+    }
+
+    if (Date.now() - startTime >= maxWaitTime) {
+        log('⚠️ Research timed out', 'warning');
+    }
+}
+
+async function testMetricsDashboard() {
+    const browser = await puppeteer.launch(getPuppeteerLaunchOptions());
+
+    const page = await browser.newPage();
+
+    // Enable request interception to monitor API calls
+    await page.setRequestInterception(true);
+    const apiCalls = [];
+
+    page.on('request', (request) => {
+        const url = request.url();
+        if (url.includes('/api/metrics') || url.includes('/api/')) {
+            apiCalls.push({
+                url,
+                method: request.method(),
+                timestamp: new Date().toISOString()
+            });
+        }
+        request.continue();
+    });
+
+    // Set console log handler
+    page.on('console', msg => {
+        if (msg.type() === 'error' && !msg.text().includes('favicon')) {
+            log(`Browser console error: ${msg.text()}`, 'error');
+        }
+    });
+
+    try {
+        // Setup: Register and create some research
+        await registerAndLogin(page);
+
+        // In CI, we'll start one quick research just to test the flow
+        log('\n=== CREATING TEST DATA ===', 'section');
+
+        // Only create one simple research to avoid timeouts
+        await createResearch(page, 'What is 2+2?');
+
+        // Navigate to metrics dashboard
+        log('\n=== TESTING METRICS DASHBOARD ===', 'section');
+        await page.goto(`${BASE_URL}/metrics`);
+
+        // Wait for page to load - check multiple possible selectors
+        try {
+            await page.waitForSelector('.metrics-container, #metrics-dashboard, .container h1, [data-page="metrics"]', { timeout: 10000 });
+            log('✅ Metrics page loaded', 'success');
+        } catch {
+            // Check if we're on the metrics page by URL
+            const currentUrl = page.url();
+            if (currentUrl.includes('/metrics')) {
+                log('✅ On metrics page (by URL)', 'success');
+            } else {
+                log('⚠️ Could not verify metrics page loaded', 'warning');
+            }
+        }
+
+        // Take screenshot if not in headless mode
+        const isHeadless = process.env.HEADLESS !== 'false';
+        if (!isHeadless) {
+            await page.screenshot({
+                path: './metrics-dashboard-test.png',
+                fullPage: true
+            });
+            log('📸 Screenshot saved: ./metrics-dashboard-test.png', 'info');
+        }
+
+        // Wait for API calls to complete
+        await delay(3000);
+
+        // Check if metrics API was called
+        const metricsApiCalls = apiCalls.filter(call => call.url.includes('/api/metrics'));
+        log(`📊 Metrics API calls made: ${metricsApiCalls.length}`, 'info');
+
+        if (metricsApiCalls.length === 0) {
+            log('⚠️ No metrics API calls detected (expected in CI with no data)', 'warning');
+        } else {
+            log('✅ Metrics API was called', 'success');
+        }
+
+        // Check page content
+        const metricsData = await page.evaluate(() => {
+            const data = {
+                title: document.title,
+                hasCharts: !!document.querySelector('canvas, .chart-container, .chart'),
+                sections: [],
+                stats: {},
+                errors: [],
+                gridLayout: null
+            };
+
+            // Find metric sections
+            const sections = document.querySelectorAll('.metric-section, .ldr-card, .panel');
+            sections.forEach(section => {
+                const title = section.querySelector('h2, h3, .card-title, .panel-title');
+                if (title) {
+                    data.sections.push(title.textContent.trim());
+                }
+            });
+
+            // Find statistic values
+            const statElements = document.querySelectorAll('.stat-value, .metric-value, [data-metric]');
+            statElements.forEach(el => {
+                const label = el.getAttribute('data-metric') ||
+                             el.previousElementSibling?.textContent ||
+                             'unknown';
+                data.stats[label] = el.textContent.trim();
+            });
+
+            // Check for error messages
+            const errors = document.querySelectorAll('.error, .alert-danger');
+            errors.forEach(error => {
+                data.errors.push(error.textContent.trim());
+            });
+
+            // Check for loading indicators still visible
+            data.hasLoadingIndicators = !!document.querySelector('.loading, .spinner');
+
+            // Check grid layout for metrics
+            const metricsGrid = document.querySelector('.ldr-metrics-grid, .metrics-grid');
+            if (metricsGrid) {
+                const gridStyle = window.getComputedStyle(metricsGrid);
+                const cards = metricsGrid.querySelectorAll('.ldr-metric-card, .metric-card');
+                data.gridLayout = {
+                    found: true,
+                    display: gridStyle.display,
+                    gridTemplateColumns: gridStyle.gridTemplateColumns,
+                    gap: gridStyle.gap,
+                    cardCount: cards.length,
+                    cardsVisible: Array.from(cards).map(card => ({
+                        visible: card.offsetParent !== null,
+                        width: card.offsetWidth,
+                        hasValue: !!card.querySelector('.ldr-metric-value, .metric-value')
+                    }))
+                };
+            } else {
+                data.gridLayout = { found: false };
+            }
+
+            return data;
+        });
+
+        log('📊 Metrics page content:', 'info');
+        log(`  - Title: ${metricsData.title}`, 'info');
+        log(`  - Sections found: ${metricsData.sections.length}`, 'info');
+        log(`  - Has charts: ${metricsData.hasCharts}`, 'info');
+        log(`  - Statistics found: ${Object.keys(metricsData.stats).length}`, 'info');
+
+        // Log grid layout info
+        if (metricsData.gridLayout) {
+            if (metricsData.gridLayout.found) {
+                log('📐 Grid Layout:', 'info');
+                log(`  - Display: ${metricsData.gridLayout.display}`, 'info');
+                log(`  - Grid columns: ${metricsData.gridLayout.gridTemplateColumns}`, 'info');
+                log(`  - Gap: ${metricsData.gridLayout.gap}`, 'info');
+                log(`  - Cards found: ${metricsData.gridLayout.cardCount}`, 'info');
+                const visibleCards = metricsData.gridLayout.cardsVisible.filter(c => c.visible).length;
+                log(`  - Cards visible: ${visibleCards}/${metricsData.gridLayout.cardCount}`, 'info');
+
+                // Check if cards are in grid (side by side)
+                if (metricsData.gridLayout.display === 'grid' && visibleCards > 1) {
+                    const widths = metricsData.gridLayout.cardsVisible.map(c => c.width);
+                    const uniqueWidths = [...new Set(widths)];
+                    if (uniqueWidths.length === 1 && widths[0] < 600) {
+                        log('✅ Metrics cards are displayed in grid layout (side by side)', 'success');
+                    } else {
+                        log('⚠️ Metrics cards may not be in proper grid layout', 'warning');
+                    }
+                }
+            } else {
+                log('⚠️ Metrics grid not found on page', 'warning');
+            }
+        }
+
+        if (metricsData.sections.length > 0) {
+            log('📋 Sections:', 'info');
+            metricsData.sections.forEach(section => {
+                log(`  - ${section}`, 'info');
+            });
+        }
+
+        if (metricsData.errors.length > 0) {
+            log('❌ Errors found on page:', 'error');
+            metricsData.errors.forEach(error => {
+                log(`  - ${error}`, 'error');
+            });
+        }
+
+        // Test period selector if available
+        log('\n=== TESTING PERIOD SELECTOR ===', 'section');
+        const periodSelector = await page.$('.period-selector, select[name="period"], #period-select');
+        if (periodSelector) {
+            // Change period
+            await page.select('.period-selector, select[name="period"], #period-select', '7d');
+            await delay(2000);
+
+            // Check if API was called with new period
+            const recentApiCalls = apiCalls.filter(call =>
+                call.url.includes('period=7d') &&
+                new Date() - new Date(call.timestamp) < 3000
+            );
+
+            if (recentApiCalls.length > 0) {
+                log('✅ Period selector works - API called with new period', 'success');
+            } else {
+                log('⚠️ Period selector may not be working correctly', 'warning');
+            }
+        }
+
+        // Test sub-pages
+        log('\n=== TESTING SUB-PAGES ===', 'section');
+
+        // Test cost analytics page
+        const costLink = await page.$('a[href*="/costs"], a[href*="/cost-analytics"]');
+        if (costLink) {
+            await costLink.click();
+            await page.waitForNavigation();
+            await page.waitForSelector('.cost-analytics, #cost-dashboard', { timeout: 5000 }).catch(() => {});
+
+            const costPageUrl = page.url();
+            if (costPageUrl.includes('cost')) {
+                log('✅ Cost analytics page accessible', 'success');
+
+                // Check for cost data
+                const hasCostData = await page.evaluate(() => {
+                    return document.body.textContent.includes('$') ||
+                           document.body.textContent.includes('cost') ||
+                           document.body.textContent.includes('Cost');
+                });
+
+                if (hasCostData) {
+                    log('  - Cost data present', 'info');
+                }
+            }
+        }
+
+        // Go back to main metrics
+        await page.goto(`${BASE_URL}/metrics`);
+        await delay(2000);
+
+        // Test star reviews page
+        const reviewsLink = await page.$('a[href*="/star-reviews"], a[href*="/reviews"]');
+        if (reviewsLink) {
+            await reviewsLink.click();
+            await page.waitForNavigation();
+            await page.waitForSelector('.star-reviews, #reviews-dashboard', { timeout: 5000 }).catch(() => {});
+
+            const reviewsPageUrl = page.url();
+            if (reviewsPageUrl.includes('review')) {
+                log('✅ Star reviews page accessible', 'success');
+            }
+        }
+
+        // Test rate limiting metrics
+        log('\n=== TESTING RATE LIMITING METRICS ===', 'section');
+        await page.goto(`${BASE_URL}/metrics`);
+        await delay(2000);
+
+        const rateLimitingData = await page.evaluate(() => {
+            const elements = Array.from(document.querySelectorAll('*'));
+            return elements.some(el =>
+                el.textContent.includes('rate limit') ||
+                el.textContent.includes('Rate Limit')
+            );
+        });
+
+        if (rateLimitingData) {
+            log('✅ Rate limiting metrics present', 'success');
+        }
+
+        // Check for charts/visualizations
+        log('\n=== TESTING VISUALIZATIONS ===', 'section');
+        const hasVisualizations = await page.evaluate(() => {
+            return {
+                canvas: document.querySelectorAll('canvas').length,
+                svg: document.querySelectorAll('svg').length,
+                chartContainers: document.querySelectorAll('.chart, .chart-container').length
+            };
+        });
+
+        log(`📊 Visualizations found:`, 'info');
+        log(`  - Canvas elements: ${hasVisualizations.canvas}`, 'info');
+        log(`  - SVG elements: ${hasVisualizations.svg}`, 'info');
+        log(`  - Chart containers: ${hasVisualizations.chartContainers}`, 'info');
+
+
+        // Final API call summary
+        log('\n=== API CALLS SUMMARY ===', 'section');
+        const apiEndpoints = [...new Set(apiCalls.map(call => {
+            const url = new URL(call.url);
+            return url.pathname;
+        }))];
+
+        log(`📡 Unique API endpoints called: ${apiEndpoints.length}`, 'info');
+        apiEndpoints.forEach(endpoint => {
+            log(`  - ${endpoint}`, 'info');
+        });
+
+        log('\n✅ Metrics dashboard test completed successfully!', 'success');
+
+    } catch (error) {
+        log(`\n❌ Test failed: ${error.message}`, 'error');
+
+
+        throw error;
+    } finally {
+        await browser.close();
+    }
+}
+
+// Run the test
+testMetricsDashboard().catch(error => {
+    console.error('Test execution failed:', error);
+    process.exit(1);
+});

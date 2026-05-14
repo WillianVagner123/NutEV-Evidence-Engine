@@ -1,0 +1,799 @@
+"""Tests for log_utils module."""
+
+import logging
+import queue
+import threading
+from datetime import datetime
+from unittest.mock import Mock, patch, MagicMock
+
+
+class TestInterceptHandler:
+    """Tests for InterceptHandler class."""
+
+    def test_emit_forwards_to_loguru(self):
+        """Should forward log records to loguru."""
+        from local_deep_research.utilities.log_utils import InterceptHandler
+
+        handler = InterceptHandler()
+
+        # Create a mock log record
+        record = logging.LogRecord(
+            name="test",
+            level=logging.INFO,
+            pathname="test.py",
+            lineno=1,
+            msg="Test message",
+            args=(),
+            exc_info=None,
+        )
+
+        with patch(
+            "local_deep_research.utilities.log_utils.logger"
+        ) as mock_logger:
+            mock_logger.level.return_value = Mock(name="INFO")
+            mock_opt = Mock()
+            mock_logger.opt.return_value = mock_opt
+
+            handler.emit(record)
+
+            mock_logger.opt.assert_called()
+            mock_opt.log.assert_called()
+
+    def test_handles_unknown_level(self):
+        """Should handle unknown log levels by using levelno."""
+        from local_deep_research.utilities.log_utils import InterceptHandler
+
+        handler = InterceptHandler()
+
+        record = logging.LogRecord(
+            name="test",
+            level=35,  # Non-standard level
+            pathname="test.py",
+            lineno=1,
+            msg="Test",
+            args=(),
+            exc_info=None,
+        )
+        record.levelname = "CUSTOM"
+
+        with patch(
+            "local_deep_research.utilities.log_utils.logger"
+        ) as mock_logger:
+            mock_logger.level.side_effect = ValueError("Unknown level")
+            mock_opt = Mock()
+            mock_logger.opt.return_value = mock_opt
+
+            handler.emit(record)
+
+            mock_opt.log.assert_called()
+
+
+class TestLogForResearch:
+    """Tests for log_for_research decorator."""
+
+    def test_sets_research_id_in_g(self):
+        """Should set research_id in Flask g object."""
+        from local_deep_research.utilities.log_utils import log_for_research
+
+        mock_g = MagicMock()
+
+        @log_for_research
+        def test_func(research_id):
+            return "done"
+
+        with patch("local_deep_research.utilities.log_utils.g", mock_g):
+            test_func("test-uuid-123")
+
+            # Check that research_id was set
+            assert mock_g.research_id == "test-uuid-123"
+
+    def test_removes_research_id_after_function(self):
+        """Should remove research_id from g after function completes."""
+        from local_deep_research.utilities.log_utils import log_for_research
+
+        @log_for_research
+        def test_func(research_id):
+            return "result"
+
+        mock_g = MagicMock()
+        with patch("local_deep_research.utilities.log_utils.g", mock_g):
+            test_func("uuid")
+
+            mock_g.pop.assert_called_with("research_id")
+
+    def test_preserves_function_metadata(self):
+        """Should preserve function name and docstring."""
+        from local_deep_research.utilities.log_utils import log_for_research
+
+        @log_for_research
+        def documented_func(research_id):
+            """My documentation."""
+            pass
+
+        assert documented_func.__name__ == "documented_func"
+        assert documented_func.__doc__ == "My documentation."
+
+    def test_passes_args_and_kwargs(self):
+        """Should pass arguments correctly."""
+        from local_deep_research.utilities.log_utils import log_for_research
+
+        @log_for_research
+        def test_func(research_id, arg1, kwarg1=None):
+            return (research_id, arg1, kwarg1)
+
+        mock_g = MagicMock()
+        with patch("local_deep_research.utilities.log_utils.g", mock_g):
+            result = test_func("uuid", "value1", kwarg1="value2")
+
+            assert result == ("uuid", "value1", "value2")
+
+
+class TestDatabaseSink:
+    """Tests for database_sink function."""
+
+    def test_creates_log_entry_dict(self):
+        """Should create log entry dictionary from message."""
+        from local_deep_research.utilities.log_utils import database_sink
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test log message",
+            "name": "test_module",
+            "function": "test_function",
+            "line": 42,
+            "level": Mock(name="INFO"),
+            # research_id is required — ResearchLog rows are research-scoped,
+            # logs with no research context are filtered out at the queue
+            # boundary (they'd never reach the panel anyway).
+            "extra": {"research_id": "rid-1"},
+        }
+
+        with patch(
+            "local_deep_research.utilities.log_utils.has_app_context",
+            return_value=False,
+        ):
+            with patch(
+                "local_deep_research.utilities.log_utils._log_queue"
+            ) as mock_queue:
+                database_sink(mock_message)
+
+                # Should queue the log since we're not in app context
+                mock_queue.put_nowait.assert_called_once()
+
+    def test_queues_log_from_non_main_thread(self):
+        """Should queue log when not in main thread."""
+        from local_deep_research.utilities.log_utils import database_sink
+        import local_deep_research.utilities.log_utils as module
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test message",
+            "name": "module",
+            "function": "func",
+            "line": 1,
+            "level": Mock(name="DEBUG"),
+            "extra": {"research_id": "test-uuid"},
+        }
+
+        # Mock has_app_context to return True but thread name is not MainThread
+        mock_thread = Mock()
+        mock_thread.name = "WorkerThread"
+
+        with patch.object(module, "has_app_context", return_value=True):
+            with patch.object(
+                module, "_get_research_id", return_value="test-uuid"
+            ):
+                with patch.object(
+                    threading, "current_thread", return_value=mock_thread
+                ):
+                    with patch.object(module, "_log_queue") as mock_queue:
+                        database_sink(mock_message)
+
+                        # Should queue since not MainThread
+                        mock_queue.put_nowait.assert_called_once()
+
+    def test_handles_full_queue_gracefully(self):
+        """Should not raise when queue is full."""
+        from local_deep_research.utilities.log_utils import database_sink
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test",
+            "name": "mod",
+            "function": "f",
+            "line": 1,
+            "level": Mock(name="INFO"),
+            "extra": {},
+        }
+
+        with patch(
+            "local_deep_research.utilities.log_utils.has_app_context",
+            return_value=False,
+        ):
+            with patch(
+                "local_deep_research.utilities.log_utils._log_queue"
+            ) as mock_queue:
+                mock_queue.put_nowait.side_effect = queue.Full()
+
+                # Should not raise
+                database_sink(mock_message)
+
+    def test_writes_to_database_in_main_thread(self):
+        """Should write to database when in main thread with app context."""
+        from local_deep_research.utilities.log_utils import database_sink
+        import local_deep_research.utilities.log_utils as module
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test message",
+            "name": "test_module",
+            "function": "test_func",
+            "line": 42,
+            "level": Mock(name="INFO"),
+            "extra": {"username": "testuser", "research_id": "test-uuid"},
+        }
+
+        mock_thread = Mock()
+        mock_thread.name = "MainThread"
+
+        mock_session = MagicMock()
+        mock_cm = MagicMock()
+        mock_cm.__enter__ = Mock(return_value=mock_session)
+        mock_cm.__exit__ = Mock(return_value=None)
+
+        mock_g = Mock()
+        mock_g.get.return_value = None
+
+        with patch.object(module, "has_app_context", return_value=True):
+            with patch.object(module, "g", mock_g):
+                with patch.object(
+                    threading, "current_thread", return_value=mock_thread
+                ):
+                    with patch(
+                        "local_deep_research.database.session_context.get_user_db_session",
+                        return_value=mock_cm,
+                    ):
+                        database_sink(mock_message)
+
+                        # Should write to database
+                        mock_session.add.assert_called_once()
+                        mock_session.commit.assert_called_once()
+
+    def test_handles_database_error_gracefully(self):
+        """Should not raise on database errors when writing."""
+        from local_deep_research.utilities.log_utils import database_sink
+        import local_deep_research.utilities.log_utils as module
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test",
+            "name": "mod",
+            "function": "f",
+            "line": 1,
+            "level": Mock(name="INFO"),
+            "extra": {"research_id": "test-uuid"},
+        }
+
+        mock_thread = Mock()
+        mock_thread.name = "MainThread"
+
+        mock_g = Mock()
+        mock_g.get.return_value = None
+
+        with patch.object(module, "has_app_context", return_value=True):
+            with patch.object(module, "g", mock_g):
+                with patch.object(
+                    threading, "current_thread", return_value=mock_thread
+                ):
+                    with patch(
+                        "local_deep_research.database.session_context.get_user_db_session",
+                        side_effect=Exception("DB error"),
+                    ):
+                        # Should not raise
+                        database_sink(mock_message)
+
+    def test_extracts_research_id_from_record_extra(self):
+        """Should extract research_id from record extra."""
+        from local_deep_research.utilities.log_utils import database_sink
+        import local_deep_research.utilities.log_utils as module
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test",
+            "name": "mod",
+            "function": "f",
+            "line": 1,
+            "level": Mock(name="INFO"),
+            "extra": {"research_id": "record-uuid"},
+        }
+
+        with patch.object(module, "has_app_context", return_value=False):
+            with patch.object(module, "_log_queue") as mock_queue:
+                database_sink(mock_message)
+
+                # Verify the queued log entry contains the research_id
+                call_args = mock_queue.put_nowait.call_args[0][0]
+                assert call_args["research_id"] == "record-uuid"
+
+    def test_extracts_research_id_from_flask_g(self):
+        """Should extract research_id from Flask g when not in record."""
+        from local_deep_research.utilities.log_utils import database_sink
+        import local_deep_research.utilities.log_utils as module
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test",
+            "name": "mod",
+            "function": "f",
+            "line": 1,
+            "level": Mock(name="INFO"),
+            "extra": {},
+        }
+
+        mock_g = Mock()
+        mock_g.get.return_value = "flask-uuid"
+
+        with patch.object(module, "has_app_context", return_value=True):
+            with patch.object(module, "g", mock_g):
+                with patch.object(module, "_log_queue") as mock_queue:
+                    # Use non-main thread to queue instead of write
+                    mock_thread = Mock()
+                    mock_thread.name = "WorkerThread"
+                    with patch.object(
+                        threading, "current_thread", return_value=mock_thread
+                    ):
+                        database_sink(mock_message)
+
+                        # Verify the queued log entry contains the research_id
+                        call_args = mock_queue.put_nowait.call_args[0][0]
+                        assert call_args["research_id"] == "flask-uuid"
+
+    def test_record_research_id_takes_priority_over_flask(self):
+        """Record research_id should take priority over Flask g."""
+        from local_deep_research.utilities.log_utils import database_sink
+        import local_deep_research.utilities.log_utils as module
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test",
+            "name": "mod",
+            "function": "f",
+            "line": 1,
+            "level": Mock(name="INFO"),
+            "extra": {"research_id": "record-uuid"},
+        }
+
+        mock_g = Mock()
+        mock_g.get.return_value = "flask-uuid"
+
+        with patch.object(module, "has_app_context", return_value=True):
+            with patch.object(module, "g", mock_g):
+                with patch.object(module, "_log_queue") as mock_queue:
+                    # Use non-main thread to queue instead of write
+                    mock_thread = Mock()
+                    mock_thread.name = "WorkerThread"
+                    with patch.object(
+                        threading, "current_thread", return_value=mock_thread
+                    ):
+                        database_sink(mock_message)
+
+                        # Record research_id should win
+                        call_args = mock_queue.put_nowait.call_args[0][0]
+                        assert call_args["research_id"] == "record-uuid"
+
+    def test_captures_user_password_from_thread_context(self):
+        """Should snapshot user_password from per-thread research context onto
+        the queue entry, so the daemon can decrypt the per-user SQLCipher DB
+        from a thread that can't read the research thread's ContextVar."""
+        from local_deep_research.utilities.log_utils import database_sink
+        import local_deep_research.utilities.log_utils as module
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "Test",
+            "name": "mod",
+            "function": "f",
+            "line": 1,
+            "level": Mock(name="INFO"),
+            "extra": {"research_id": "rid-1"},
+        }
+
+        fake_ctx = {
+            "research_id": "rid-1",
+            "username": "alice",
+            "user_password": "pw-from-thread-ctx",  # gitleaks:allow
+        }
+
+        with patch.object(
+            module, "_get_research_context_fallback", return_value=fake_ctx
+        ):
+            with patch.object(module, "has_app_context", return_value=False):
+                with patch.object(module, "_log_queue") as mock_queue:
+                    database_sink(mock_message)
+
+                    call_args = mock_queue.put_nowait.call_args[0][0]
+                    assert call_args["username"] == "alice"
+                    assert call_args["user_password"] == "pw-from-thread-ctx"
+
+    def test_skips_persistence_when_no_research_or_username(self):
+        """Logs without a research_id AND without a username must be dropped
+        at the sink, not queued. ResearchLog is research-scoped — system
+        DEBUG logs (auth, settings, etc.) attached via flask_session would
+        churn through the queue and never resolve to a valid row."""
+        from local_deep_research.utilities.log_utils import database_sink
+        import local_deep_research.utilities.log_utils as module
+
+        mock_message = Mock()
+        mock_message.record = {
+            "time": datetime.now(),
+            "message": "system debug log",
+            "name": "mod",
+            "function": "f",
+            "line": 1,
+            "level": Mock(name="DEBUG"),
+            "extra": {},
+        }
+
+        # No research context anywhere — neither thread context nor Flask.
+        with patch.object(
+            module, "_get_research_context_fallback", return_value=None
+        ):
+            with patch.object(module, "has_app_context", return_value=False):
+                with patch.object(module, "_log_queue") as mock_queue:
+                    database_sink(mock_message)
+
+                    mock_queue.put_nowait.assert_not_called()
+
+
+class TestFrontendProgressSink:
+    """Tests for frontend_progress_sink function."""
+
+    def test_skips_when_no_research_id(self):
+        """Should skip when no research_id is available."""
+        from local_deep_research.utilities.log_utils import (
+            frontend_progress_sink,
+        )
+
+        mock_message = Mock()
+        mock_message.record = {
+            "message": "Test",
+            "level": Mock(name="INFO"),
+            "time": Mock(isoformat=Mock(return_value="2024-01-01T00:00:00")),
+            "extra": {},
+        }
+
+        with patch(
+            "local_deep_research.utilities.log_utils._get_research_id",
+            return_value=None,
+        ):
+            with patch(
+                "local_deep_research.utilities.log_utils.SocketIOService"
+            ) as mock_socket:
+                frontend_progress_sink(mock_message)
+
+                # Should not emit anything
+                mock_socket.return_value.emit_to_subscribers.assert_not_called()
+
+    def test_emits_to_subscribers_with_research_id(self):
+        """Should emit to subscribers when research_id is present."""
+        from local_deep_research.utilities.log_utils import (
+            frontend_progress_sink,
+        )
+
+        mock_message = Mock()
+        mock_message.record = {
+            "message": "Progress update",
+            "level": Mock(name="INFO"),
+            "time": Mock(isoformat=Mock(return_value="2024-01-01T12:00:00")),
+            "extra": {"research_id": "test-uuid"},
+        }
+
+        with patch(
+            "local_deep_research.utilities.log_utils._get_research_id",
+            return_value="test-uuid",
+        ):
+            with patch(
+                "local_deep_research.utilities.log_utils.SocketIOService"
+            ) as mock_socket:
+                frontend_progress_sink(mock_message)
+
+                mock_socket.return_value.emit_to_subscribers.assert_called_once()
+                call_args = (
+                    mock_socket.return_value.emit_to_subscribers.call_args
+                )
+                assert call_args[0][0] == "progress"
+                assert call_args[0][1] == "test-uuid"
+
+
+class TestFlushLogQueue:
+    """Tests for flush_log_queue function."""
+
+    def test_flushes_all_queued_logs(self):
+        """Should flush all logs from queue."""
+        from local_deep_research.utilities.log_utils import flush_log_queue
+        import local_deep_research.utilities.log_utils as module
+
+        log_entries = [
+            {
+                "timestamp": datetime.now(),
+                "message": "Log 1",
+                "module": "mod",
+                "function": "f",
+                "line_no": 1,
+                "level": "INFO",
+                "research_id": None,
+                "username": None,
+            },
+            {
+                "timestamp": datetime.now(),
+                "message": "Log 2",
+                "module": "mod",
+                "function": "f",
+                "line_no": 2,
+                "level": "INFO",
+                "research_id": None,
+                "username": None,
+            },
+        ]
+
+        mock_session = MagicMock()
+        mock_cm = MagicMock()
+        mock_cm.__enter__ = Mock(return_value=mock_session)
+        mock_cm.__exit__ = Mock(return_value=None)
+
+        with patch.object(module, "_log_queue") as mock_queue:
+            mock_queue.empty.side_effect = [False, False, True]
+            mock_queue.get_nowait.side_effect = log_entries + [queue.Empty()]
+
+            with patch(
+                "local_deep_research.database.session_context.get_user_db_session",
+                return_value=mock_cm,
+            ):
+                flush_log_queue()
+
+                # Should have written 2 logs
+                assert mock_session.add.call_count == 2
+                assert mock_session.commit.call_count == 2
+
+    def test_handles_empty_queue(self):
+        """Should handle empty queue gracefully."""
+        from local_deep_research.utilities.log_utils import flush_log_queue
+
+        with patch(
+            "local_deep_research.utilities.log_utils._log_queue"
+        ) as mock_queue:
+            mock_queue.empty.return_value = True
+
+            # Should not raise
+            flush_log_queue()
+
+
+class TestConfigLogger:
+    """Tests for config_logger function."""
+
+    def test_configures_logger(self):
+        """Should configure logger with sinks."""
+        from local_deep_research.utilities.log_utils import config_logger
+
+        with patch(
+            "local_deep_research.utilities.log_utils.logger"
+        ) as mock_logger:
+            config_logger("test_app")
+
+            mock_logger.enable.assert_called_with("local_deep_research")
+            mock_logger.remove.assert_called_once()
+            # Should add multiple sinks
+            assert mock_logger.add.call_count >= 3
+
+    def test_adds_file_logging_when_enabled(self):
+        """Should add file logging when environment variable is set."""
+        from local_deep_research.utilities.log_utils import config_logger
+
+        with patch.dict("os.environ", {"LDR_ENABLE_FILE_LOGGING": "true"}):
+            with patch(
+                "local_deep_research.utilities.log_utils.logger"
+            ) as mock_logger:
+                config_logger("test_app")
+
+                # Should add 4 sinks (stderr, database, frontend, file)
+                assert mock_logger.add.call_count >= 4
+
+    def test_creates_milestone_level(self):
+        """Should create MILESTONE log level."""
+        from local_deep_research.utilities.log_utils import config_logger
+
+        with patch(
+            "local_deep_research.utilities.log_utils.logger"
+        ) as mock_logger:
+            config_logger("test_app")
+
+            mock_logger.level.assert_called()
+
+    def test_handles_existing_milestone_level(self):
+        """Should handle case where MILESTONE level already exists."""
+        from local_deep_research.utilities.log_utils import config_logger
+
+        with patch(
+            "local_deep_research.utilities.log_utils.logger"
+        ) as mock_logger:
+            mock_logger.level.side_effect = ValueError("Level already exists")
+
+            # Should not raise
+            config_logger("test_app")
+
+
+class TestWriteLogToDatabase:
+    """Tests for _write_log_to_database function."""
+
+    def test_writes_research_log(self):
+        """Should write ResearchLog to database."""
+        from local_deep_research.utilities.log_utils import (
+            _write_log_to_database,
+        )
+
+        log_entry = {
+            "timestamp": datetime.now(),
+            "message": "Test message",
+            "module": "test_module",
+            "function": "test_func",
+            "line_no": 42,
+            "level": "INFO",
+            "research_id": "test-uuid",
+            "username": "testuser",
+        }
+
+        mock_session = MagicMock()
+        mock_cm = MagicMock()
+        mock_cm.__enter__ = Mock(return_value=mock_session)
+        mock_cm.__exit__ = Mock(return_value=None)
+
+        with patch(
+            "local_deep_research.database.session_context.get_user_db_session",
+            return_value=mock_cm,
+        ):
+            _write_log_to_database(log_entry)
+
+            mock_session.add.assert_called_once()
+            mock_session.commit.assert_called_once()
+
+    def test_handles_database_error_gracefully(self):
+        """Should not raise on database errors."""
+        from local_deep_research.utilities.log_utils import (
+            _write_log_to_database,
+        )
+
+        log_entry = {
+            "timestamp": datetime.now(),
+            "message": "Test",
+            "module": "mod",
+            "function": "f",
+            "line_no": 1,
+            "level": "INFO",
+            "research_id": None,
+            "username": None,
+        }
+
+        with patch(
+            "local_deep_research.database.session_context.get_user_db_session",
+            side_effect=Exception("DB error"),
+        ):
+            # Should not raise
+            _write_log_to_database(log_entry)
+
+    def test_passes_user_password_to_get_user_db_session(self):
+        """The password snapshotted onto the queue entry by database_sink
+        must be forwarded to get_user_db_session as the password= kwarg.
+        Without this the daemon thread cannot decrypt the per-user
+        SQLCipher DB and every research-thread MILESTONE log is silently
+        dropped."""
+        from local_deep_research.utilities.log_utils import (
+            _write_log_to_database,
+        )
+
+        log_entry = {
+            "timestamp": datetime.now(),
+            "message": "milestone msg",
+            "module": "mod",
+            "function": "f",
+            "line_no": 1,
+            "level": "MILESTONE",
+            "research_id": "rid-1",
+            "username": "alice",
+            "user_password": "pw-from-queue",  # gitleaks:allow
+        }
+
+        mock_session = MagicMock()
+        mock_cm = MagicMock()
+        mock_cm.__enter__ = Mock(return_value=mock_session)
+        mock_cm.__exit__ = Mock(return_value=None)
+
+        with patch(
+            "local_deep_research.database.session_context.get_user_db_session",
+            return_value=mock_cm,
+        ) as mock_get_session:
+            _write_log_to_database(log_entry)
+
+            mock_get_session.assert_called_once()
+            call_args = mock_get_session.call_args
+            # username is positional (first arg).
+            assert call_args.args[0] == "alice"
+            # password must be passed as the kwarg the daemon uses for
+            # SQLCipher decryption.
+            assert call_args.kwargs.get("password") == "pw-from-queue"
+
+
+class TestLogQueueProcessorDaemon:
+    """Tests for start_log_queue_processor / stop_log_queue_processor."""
+
+    def _make_fake_app(self):
+        """Return a Flask-app-like stub that supports ``with app.app_context()``."""
+        fake_app = MagicMock()
+        ctx = MagicMock()
+        ctx.__enter__ = Mock(return_value=None)
+        ctx.__exit__ = Mock(return_value=False)
+        fake_app.app_context.return_value = ctx
+        return fake_app
+
+    def test_spawns_daemon_thread(self):
+        from local_deep_research.utilities import log_utils
+
+        app = self._make_fake_app()
+        try:
+            thread = log_utils.start_log_queue_processor(app)
+            assert isinstance(thread, threading.Thread)
+            assert thread.daemon is True
+            assert thread.is_alive()
+            assert thread.name == "log-queue-processor"
+        finally:
+            log_utils.stop_log_queue_processor(timeout=2.0)
+
+    def test_is_idempotent(self):
+        from local_deep_research.utilities import log_utils
+
+        app = self._make_fake_app()
+        try:
+            first = log_utils.start_log_queue_processor(app)
+            second = log_utils.start_log_queue_processor(app)
+            assert first is second
+        finally:
+            log_utils.stop_log_queue_processor(timeout=2.0)
+
+    def test_stop_joins_thread(self):
+        from local_deep_research.utilities import log_utils
+
+        app = self._make_fake_app()
+        thread = log_utils.start_log_queue_processor(app)
+        log_utils.stop_log_queue_processor(timeout=2.0)
+        assert not thread.is_alive()
+
+    def test_stop_does_not_clear_ref_when_join_times_out(self):
+        """If the daemon doesn't exit before join() times out, the
+        module-level reference must stay populated — otherwise a
+        subsequent start would happily spawn a second daemon competing
+        for the same queue."""
+        from local_deep_research.utilities import log_utils
+
+        # Stand-in thread that ignores the stop signal so join() always
+        # times out. Daemon=True so it doesn't keep the test process alive.
+        live_thread = threading.Thread(
+            target=lambda: threading.Event().wait(), daemon=True
+        )
+        live_thread.start()
+        log_utils._queue_processor_thread = live_thread
+        try:
+            log_utils.stop_log_queue_processor(timeout=0.05)
+            assert log_utils._queue_processor_thread is live_thread, (
+                "thread reference cleared despite join timing out — would "
+                "let start_log_queue_processor spawn a duplicate daemon"
+            )
+        finally:
+            log_utils._queue_processor_thread = None
