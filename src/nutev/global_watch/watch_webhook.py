@@ -1,0 +1,71 @@
+from __future__ import annotations
+
+import json
+import os
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urlparse
+
+import requests
+
+from nutev.engine.events import emit_event, write_event
+
+
+def build_webhook_payload(rows: list[dict], digest_path: Path, run_summary: dict, max_items: int = 10) -> dict:
+    top = rows[:max_items]
+    payload = {
+        "project": "NutMEV Global Watch",
+        "run_date": datetime.now(timezone.utc).date().isoformat(),
+        "mode": run_summary.get("mode", "unknown"),
+        "summary": run_summary,
+        "digest_path": str(digest_path),
+        "top_items": [
+            {
+                "priority": i + 1,
+                "title": r.get("title"),
+                "evidence_type": r.get("evidence_type"),
+                "source_provider": r.get("source_provider"),
+                "category": r.get("category"),
+                "workstream_affinity": r.get("workstream_affinity", []),
+                "url": r.get("url"),
+                "doi": r.get("doi"),
+                "download_status": r.get("download_status", "metadata_only"),
+                "why_it_matters": r.get("why_it_matters", ""),
+            }
+            for i, r in enumerate(top)
+        ],
+    }
+    payload["text"] = f"NutMEV Global Watch: {run_summary.get('new_items',0)} novos achados. Top: {(top[0].get('title') if top else 'n/a')}"
+    return payload
+
+
+def send_webhook(payload: dict, webhook_url: str, logger, run_id: str, logs_dir: Path) -> dict:
+    host = urlparse(webhook_url).netloc or "configured"
+    write_event(emit_event(run_id, "webhook_started", "Webhook started", meta_json={"host": host}), logs_dir / "run_events.jsonl")
+    for attempt in range(1, 3):
+        try:
+            r = requests.post(webhook_url, json=payload, timeout=20)
+            if r.status_code < 400:
+                write_event(emit_event(run_id, "webhook_sent", "Webhook sent", meta_json={"host": host, "status": r.status_code}), logs_dir / "run_events.jsonl")
+                return {"status": "sent", "http_status": r.status_code}
+        except Exception as exc:
+            last = str(exc)
+            logger.warning("webhook attempt=%s host=%s failed", attempt, host)
+    write_event(emit_event(run_id, "webhook_failed", "Webhook failed", event_kind="warning", meta_json={"host": host, "error": last if 'last' in locals() else 'http_error'}), logs_dir / "run_events.jsonl")
+    return {"status": "failed"}
+
+
+def maybe_send_webhook(rows: list[dict], digest_path: Path, run_summary: dict, settings, logger, run_id: str, enabled: bool, webhook_url: str | None = None) -> dict:
+    logs_dir = settings.output_dirs["07_logs"]
+    enabled = enabled or os.getenv("NUTEV_NOTIFY_WEBHOOK") == "1"
+    if not enabled:
+        write_event(emit_event(run_id, "webhook_skipped", "Webhook disabled"), logs_dir / "run_events.jsonl")
+        return {"status": "skipped", "reason": "disabled"}
+    url = webhook_url or os.getenv("NUTEV_DIGEST_WEBHOOK_URL")
+    if not url:
+        write_event(emit_event(run_id, "webhook_skipped", "Webhook URL not configured"), logs_dir / "run_events.jsonl")
+        return {"status": "skipped", "reason": "missing_url"}
+    payload = build_webhook_payload(rows, digest_path, run_summary)
+    run_dir = digest_path.parent
+    (run_dir / "webhook_payload.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return send_webhook(payload, url, logger, run_id, logs_dir)
