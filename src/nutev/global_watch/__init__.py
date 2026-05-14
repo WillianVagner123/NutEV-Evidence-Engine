@@ -1,0 +1,1 @@
+from nutev.global_watch.watch_pipeline import run_global_watch

@@ -8,6 +8,10 @@ class NutevSettings:
     project_root: Path
     config_root: Path = Path("config")
     web_enabled: bool = False
+    mode: str = "thesis"
+    since_days: int = 30
+    browser_enabled: bool = False
+    llm_enabled: bool = False
 
     @property
     def output_dirs(self) -> dict[str, Path]:
