@@ -25,3 +25,27 @@ Use:
 ```bash
 PYTHONPATH=src python -m nutev.cli --project-root ./project_output --workstreams busca1 busca2a busca2b a3 --web-enabled
 ```
+
+## NutMEV Global Watch
+
+Global Watch é vigilância contínua; workstreams (`busca1`, `busca2a`, `busca2b`, `a3`) continuam para execuções analíticas fechadas.
+
+### Rodar local
+
+```bash
+PYTHONPATH=src python -m nutev.cli global-watch --project-root ./project_output --since-days 7 --mode quick
+```
+
+### Rodar no GitHub Actions
+Workflow: `.github/workflows/nutev-global-watch.yml` (manual e semanal domingo 10:00 UTC).
+
+### Outputs
+- `project_output/09_global_watch/global_watch_master.csv`
+- `project_output/09_global_watch/runs/YYYY-MM-DD/global_watch_digest.md`
+- `project_output/08_docs/NUTEV_GLOBAL_WATCH_LATEST.md`
+
+### OPENAI_API_KEY
+Se ausente, o pipeline não quebra e registra `llm_disabled`.
+
+### Limitações
+Falhas 403/400/404, paywall, CAPTCHA e APIs indisponíveis geram `metadata_only`/`failure_reason`, sem derrubar a execução.
