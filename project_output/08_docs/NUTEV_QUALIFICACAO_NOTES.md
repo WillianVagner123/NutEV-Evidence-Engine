@@ -1,1 +1,0 @@
-Notas automáticas de qualificação geradas do evidence master.

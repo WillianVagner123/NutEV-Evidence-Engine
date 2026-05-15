@@ -1,1 +1,0 @@
-Limitações: dependência de APIs externas, OCR depende de Tesseract/poppler.
