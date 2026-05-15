@@ -462,3 +462,24 @@ showcontent = true
 directory = "misc"
 name = "📝 Other Changes"
 showcontent = true
+
+[tool.importlinter]
+root_package = "nutev"
+
+[[tool.importlinter.contracts]]
+name = "engine independence"
+type = "forbidden"
+source_modules = ["nutev.engine"]
+forbidden_modules = ["nutev.search", "nutev.download", "nutev.scrape", "nutev.export", "nutev.llm"]
+
+[[tool.importlinter.contracts]]
+name = "analysis boundaries"
+type = "forbidden"
+source_modules = ["nutev.analysis"]
+forbidden_modules = ["nutev.scrape", "nutev.search", "nutev.download"]
+
+[[tool.importlinter.contracts]]
+name = "export allowed"
+type = "layers"
+layers = ["nutev.engine", "nutev.analysis", "nutev.export"]
+

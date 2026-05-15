@@ -1,0 +1,45 @@
+name: NutEV Global Watch
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * 0'
+jobs:
+  global-watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -e .
+      - name: Install requirements.txt (optional)
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run tests
+        run: PYTHONPATH=src python -m pytest -q nutev_tests -p no:timeout
+      - name: Run global watch
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
+          NUTEV_DIGEST_WEBHOOK_URL: ${{ secrets.NUTEV_DIGEST_WEBHOOK_URL }}
+          NUTEV_NOTIFY_WEBHOOK: ${{ secrets.NUTEV_NOTIFY_WEBHOOK }}
+        run: |
+          PYTHONPATH=src python -m nutev.cli global-watch \
+            --project-root ./project_output \
+            --since-days 7 \
+            --mode thesis \
+            --web-enabled \
+            --official-crawl \
+            --capture-enabled \
+            --notify-webhook \
+            --resume
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nutev-global-watch-results
+          path: |
+            project_output/09_global_watch
+            project_output/08_docs/NUTEV_GLOBAL_WATCH_LATEST.md
+            project_output/09_global_watch/runs/**/webhook_payload.json
