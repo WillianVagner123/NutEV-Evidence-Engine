@@ -37,13 +37,16 @@ jobs:
       NUTEV_NOTIFY_WEBHOOK: ${{ secrets.NUTEV_NOTIFY_WEBHOOK }}
 
     steps:
+      - name: Create project_output folders
+        run: mkdir -p project_output/07_logs project_output/08_docs project_output/09_global_watch
+
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
@@ -83,7 +86,6 @@ jobs:
             --country-discovery \
             --capture-enabled \
             --capture-limit "${{ inputs.capture_limit }}" \
-            --llm-enabled \
             --notify-webhook \
             --resume
 
@@ -116,3 +118,4 @@ jobs:
           name: nutev-full-once-project-output
           path: project_output
           retention-days: 14
+

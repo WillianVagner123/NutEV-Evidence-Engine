@@ -13,3 +13,6 @@ backup_*/
 *.log
 .DS_Store
 Thumbs.db
+
+project_output*/
+github_actions_artifacts/
