@@ -53,3 +53,17 @@ def test_watch_digest_real_items(tmp_path):
     ], run_dir, latest)
     txt = latest.read_text(encoding="utf-8")
     assert "https://who.int/x" in txt
+
+
+def test_since_days_in_provider_queries(tmp_path, monkeypatch):
+    seen = {}
+    def fake_pubmed(q, retmax=12):
+        seen["q"] = q
+        return []
+    monkeypatch.setattr(wp, "search_pubmed", fake_pubmed)
+    monkeypatch.setattr(wp, "search_europepmc", lambda *a, **k: [])
+    monkeypatch.setattr(wp, "search_openalex", lambda *a, **k: [])
+    monkeypatch.setattr(wp, "search_crossref", lambda *a, **k: [])
+    sconf = _mk_settings(tmp_path)
+    wp.run_global_watch(sconf, setup_logger(sconf.output_dirs["07_logs"]), 7, "quick", False, False, False, False)
+    assert "Date - Publication" in seen["q"]
