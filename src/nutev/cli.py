@@ -1,5 +1,6 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 import argparse
+import os
 from pathlib import Path
 from nutev.settings import NutevSettings
 from nutev.logs import setup_logger
@@ -30,6 +31,9 @@ def main() -> None:
     args = p.parse_args()
 
     if args.command == "global-watch":
+        # auto offline when web_enabled is false
+        if not getattr(args, "web_enabled", False):
+            os.environ["NUTEV_DISABLE_NETWORK"] = "1"
         s = NutevSettings(project_root=args.project_root, web_enabled=args.web_enabled, mode=args.mode, since_days=args.since_days, llm_enabled=args.llm_enabled)
         for d in s.output_dirs.values(): d.mkdir(parents=True, exist_ok=True)
         logger = setup_logger(s.output_dirs["07_logs"])
@@ -48,3 +52,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

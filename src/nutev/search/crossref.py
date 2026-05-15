@@ -24,6 +24,9 @@ def _pick_crossref_url(item: dict) -> str:
 
 
 def search_crossref(query: str, rows: int = 18) -> list[dict]:
+    import os
+    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+        return []
     last = None
     for attempt in range(1, 4):
         try:

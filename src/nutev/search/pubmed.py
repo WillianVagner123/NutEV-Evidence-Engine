@@ -15,6 +15,9 @@ def _extract_doi(elocationid: str | None) -> str | None:
 
 
 def search_pubmed(query: str, retmax: int = 18) -> list[dict]:
+    import os
+    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+        return []
     last = None
     for attempt in range(1, 4):
         try:

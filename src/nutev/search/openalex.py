@@ -22,6 +22,9 @@ def _pick_openalex_url(item: dict) -> str:
 
 
 def search_openalex(query: str, per_page: int = 12) -> list[dict]:
+    import os
+    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+        return []
     last_error = None
 
     for attempt in range(1, 4):
