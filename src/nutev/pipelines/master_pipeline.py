@@ -22,6 +22,10 @@ from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
 from nutev.export.methods_writer import write_methods_docs
 from nutev.export.qualification_writer import write_qualification_outputs
+from nutev.engine.ids import make_run_id, make_document_id
+from nutev.engine.job import create_search_case, create_search_job, write_search_case, write_search_job_snapshot
+from nutev.engine.events import emit_event, write_event
+from nutev.engine.artifacts import build_artifact_manifest
 
 QUERY_BUDGET = {
     "busca1": 32,
@@ -80,6 +84,12 @@ def _safe_provider_call(provider: str, fn, q: str, ws: str, logger) -> list[dict
 
 
 def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dict[str, int]:
+    run_id = make_run_id()
+    search_case = create_search_case("NutMEV Deep Research", workstreams, settings.mode, DEFAULT_PRIORITY, since_days=settings.since_days, country_discovery=True, official_crawl=True, web_enabled=settings.web_enabled, browser_enabled=settings.browser_enabled, llm_enabled=settings.llm_enabled)
+    search_job = create_search_job(search_case.case_id, run_id, cli_args=[])
+    write_search_case(search_case, settings.output_dirs["07_logs"] / "search_case.json")
+    write_event(emit_event(run_id, "discovery_started", "Pipeline discovery started"), settings.output_dirs["07_logs"] / "run_events.jsonl")
+
     taxonomy = load_json(settings.config_root / "keyword_taxonomy.json")
     scoring = load_json(settings.config_root / "scoring_rules.json")
     sources = load_json(settings.config_root / "official_sources_manifest.json")
@@ -87,7 +97,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
     provider_map = _provider_map()
 
-    all_rows, extraction_manifest, all_manifest = [], [], []
+    all_rows, extraction_manifest, all_manifest, artifact_inputs = [], [], [], []
     total_downloads = total_failed = total_ocr = 0
 
     for ws, queries in qpack.items():
@@ -140,8 +150,14 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         )
 
         all_manifest += manifest
+        for m in manifest:
+            m["document_id"] = make_document_id(m)
+            artifact_inputs.append({"document_id": m["document_id"], "artifact_type": "pdf", "path": m.get("path", ""), "source_stage": "download", "status": "ok"})
         total_downloads += len(manifest)
         total_failed += len(failed)
+        for f in failed:
+            f["document_id"] = make_document_id(f)
+            write_event(emit_event(run_id, "metadata_only_saved", "Download failed, metadata only saved", event_kind="warning", document_id=f["document_id"], meta_json={"url": f.get("url"), "reason": f.get("reason")}), settings.output_dirs["07_logs"] / "run_events.jsonl")
 
         write_simple_csv(all_manifest, settings.project_root / "03_corpus" / "download_manifest.csv")
         write_simple_csv(failed, settings.project_root / "03_corpus" / "failed_downloads.csv")
@@ -202,6 +218,12 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
     prisma = build_prisma_flow(master, all_manifest, extraction_manifest)
     export_prisma(prisma, settings.output_dirs["06_tables"] / "NUTEV_PRISMA_FLOW.xlsx", settings.output_dirs["07_logs"] / "prisma_flow.json")
+
+    write_event(emit_event(run_id, "synthesis_completed", "Synthesis completed"), settings.output_dirs["07_logs"] / "run_events.jsonl")
+    build_artifact_manifest(artifact_inputs, settings.output_dirs["07_logs"] / "artifact_manifest.csv")
+    search_job.status = "completed"
+    search_job.finished_at = __import__("datetime").datetime.now(__import__("datetime").timezone.utc)
+    write_search_job_snapshot(search_job, settings.output_dirs["07_logs"] / "search_job_snapshot.json", {"mode": settings.mode, "workstreams": workstreams, "providers_enabled": DEFAULT_PRIORITY, "configs_loaded": ["keyword_taxonomy.json", "scoring_rules.json", "official_sources_manifest.json"], "scoring_rules": scoring, "country_manifest": sources, "environment": {"web_enabled": settings.web_enabled, "browser_enabled": settings.browser_enabled, "llm_enabled": settings.llm_enabled}})
 
     summary = {
         "workstreams": workstreams,
