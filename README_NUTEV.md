@@ -49,3 +49,19 @@ Se ausente, o pipeline não quebra e registra `llm_disabled`.
 
 ### Limitações
 Falhas 403/400/404, paywall, CAPTCHA e APIs indisponíveis geram `metadata_only`/`failure_reason`, sem derrubar a execução.
+
+
+## Webhook Dispatch
+
+Use `--notify-webhook` para habilitar envio opcional de resumo JSON para webhook.
+Configure `NUTEV_DIGEST_WEBHOOK_URL` e opcionalmente `NUTEV_NOTIFY_WEBHOOK=1`.
+No GitHub, configure esses valores em **Secrets**.
+
+Exemplo local:
+
+```bash
+PYTHONPATH=src python -m nutev.cli global-watch --project-root ./project_output --since-days 7 --mode thesis --web-enabled --capture-enabled --notify-webhook
+```
+
+O payload envia resumo + links (não envia PDFs).
+Se webhook ausente/falhar, o pipeline não quebra e registra evento.

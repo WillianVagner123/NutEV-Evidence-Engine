@@ -15,6 +15,8 @@ from nutev.global_watch.watch_digest import write_digest
 from nutev.global_watch.watch_export import export_watch_outputs
 from nutev.global_watch.watch_query_builder import build_watch_queries
 from nutev.global_watch.watch_scoring import score_watch_item
+from nutev.global_watch.watch_capture import capture_watch_items
+from nutev.global_watch.watch_webhook import maybe_send_webhook
 from nutev.settings import load_json
 
 try:
@@ -107,7 +109,7 @@ def run_watch_provider(provider_name: str, query: str, category: str, logger, ru
         return []
 
 
-def run_global_watch(settings, logger, since_days, mode, resume, official_crawl, country_discovery, llm_enabled):
+def run_global_watch(settings, logger, since_days, mode, resume, official_crawl, country_discovery, llm_enabled, capture_enabled=False, capture_limit=None, notify_webhook=False, webhook_url=None):
     run_id = make_run_id()
     logs = settings.output_dirs["07_logs"]
     case = create_search_case("NutMEV Global Watch", ["global_watch"], "watch", ["pubmed", "europepmc", "openalex", "crossref", "official_sources"], since_days=since_days, official_crawl=official_crawl, country_discovery=country_discovery, web_enabled=settings.web_enabled, llm_enabled=llm_enabled)
@@ -150,10 +152,27 @@ def run_global_watch(settings, logger, since_days, mode, resume, official_crawl,
     rows.sort(key=lambda x: x.get("watch_score", 0), reverse=True)
     save_seen_items(seen_path, update_seen_items(rows, seen))
 
+    if capture_enabled:
+        rows, captured_items = capture_watch_items(rows, settings, logger, run_id, mode)
+        if capture_limit:
+            captured_items = captured_items[:capture_limit]
+    else:
+        captured_items = []
+
     run_dir = settings.project_root / "09_global_watch" / "runs" / datetime.now(timezone.utc).date().isoformat()
     new_rows = [r for r in rows if r.get("is_new")]
-    export_watch_outputs(rows, new_rows, settings.project_root / "09_global_watch", run_dir)
-    write_digest(rows, run_dir, settings.output_dirs["08_docs"] / "NUTEV_GLOBAL_WATCH_LATEST.md")
+    host_failures = [{"host": r.get("host",""), "failure_reason": r.get("failure_reason",""), "http_status": r.get("http_status","")} for r in rows if r.get("failure_reason")]
+    provider_perf = []
+    for p in providers:
+        pr = [r for r in rows if r.get("source_provider")==p]
+        provider_perf.append({"provider": p, "hits": len(pr), "captured": sum(1 for x in pr if x.get("download_status") in {"pdf","html_snapshot"})})
+    capture_manifest=[{"document_id":r.get("document_id"),"download_status":r.get("download_status"),"capture_status":r.get("capture_status"),"artifact_paths":r.get("artifact_paths",{})} for r in captured_items]
+    digest_md, _ = write_digest(rows, run_dir, settings.output_dirs["08_docs"] / "NUTEV_GLOBAL_WATCH_LATEST.md")
+    summary = {"mode": mode, "total_items": len(rows), "new_items": len(new_rows), "high_priority": sum(1 for r in rows if (r.get("watch_score") or 0) >= 80), "pdf": sum(1 for r in rows if r.get("download_status")=="pdf"), "html_snapshot": sum(1 for r in rows if r.get("download_status")=="html_snapshot"), "metadata_only": sum(1 for r in rows if r.get("download_status")=="metadata_only"), "failed": sum(1 for r in rows if r.get("download_status")=="failed")}
+    wh = maybe_send_webhook(rows, digest_md, summary, settings, logger, run_id, enabled=notify_webhook, webhook_url=webhook_url)
+    included_ids = {r.get("document_id") for r in rows[:10]}
+    for r in rows: r["webhook_included"] = r.get("document_id") in included_ids and wh.get("status") == "sent"
+    export_watch_outputs(rows, new_rows, settings.project_root / "09_global_watch", run_dir, provider_perf=provider_perf, host_failures=host_failures, capture_manifest=capture_manifest)
     job.status = "completed"
     job.finished_at = datetime.now(timezone.utc)
     write_search_job_snapshot(job, logs / "search_job_snapshot.json", {"mode": mode, "since_days": since_days, "resume": resume, "providers": providers})

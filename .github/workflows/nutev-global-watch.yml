@@ -25,6 +25,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           NUTEV_DIGEST_WEBHOOK_URL: ${{ secrets.NUTEV_DIGEST_WEBHOOK_URL }}
+          NUTEV_NOTIFY_WEBHOOK: ${{ secrets.NUTEV_NOTIFY_WEBHOOK }}
         run: |
           PYTHONPATH=src python -m nutev.cli global-watch \
             --project-root ./project_output \
@@ -32,6 +33,8 @@ jobs:
             --mode thesis \
             --web-enabled \
             --official-crawl \
+            --capture-enabled \
+            --notify-webhook \
             --resume
       - uses: actions/upload-artifact@v4
         with:
@@ -39,3 +42,4 @@ jobs:
           path: |
             project_output/09_global_watch
             project_output/08_docs/NUTEV_GLOBAL_WATCH_LATEST.md
+            project_output/09_global_watch/runs/**/webhook_payload.json
