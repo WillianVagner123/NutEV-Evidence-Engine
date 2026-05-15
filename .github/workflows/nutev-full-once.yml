@@ -1,0 +1,118 @@
+﻿name: NutMEV Full Once
+
+on:
+  workflow_dispatch:
+    inputs:
+      since_days:
+        description: "Dias para o Global Watch olhar para trás"
+        required: true
+        default: "90"
+      mode:
+        description: "Modo do Global Watch"
+        required: true
+        default: "exhaustive"
+        type: choice
+        options:
+          - quick
+          - thesis
+          - exhaustive
+      capture_limit:
+        description: "Limite de capturas PDF/HTML no Global Watch"
+        required: true
+        default: "100"
+
+jobs:
+  full-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    env:
+      PYTHONPATH: src
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+      SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
+      NUTEV_DIGEST_WEBHOOK_URL: ${{ secrets.NUTEV_DIGEST_WEBHOOK_URL }}
+      NUTEV_NOTIFY_WEBHOOK: ${{ secrets.NUTEV_NOTIFY_WEBHOOK }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
+          python -m pip install -e .
+          python -m pip install \
+            pydantic \
+            pandas openpyxl \
+            requests urllib3 certifi beautifulsoup4 lxml tqdm \
+            pypdf pdfplumber pdf2image pillow pytesseract \
+            python-docx \
+            scikit-learn matplotlib \
+            pytest ruff
+
+      - name: Run tests
+        run: |
+          PYTHONPATH=src python -m pytest -q nutev_tests -p no:timeout
+
+      - name: Run full NutMEV workstreams
+        continue-on-error: true
+        run: |
+          PYTHONPATH=src python -m nutev.cli \
+            --project-root ./project_output \
+            --workstreams busca1 busca2a busca2b a3 \
+            --web-enabled
+
+      - name: Run Global Watch complete
+        continue-on-error: true
+        run: |
+          PYTHONPATH=src python -m nutev.cli global-watch \
+            --project-root ./project_output \
+            --since-days "${{ inputs.since_days }}" \
+            --mode "${{ inputs.mode }}" \
+            --web-enabled \
+            --official-crawl \
+            --country-discovery \
+            --capture-enabled \
+            --capture-limit "${{ inputs.capture_limit }}" \
+            --llm-enabled \
+            --notify-webhook \
+            --resume
+
+      - name: Print final summary
+        if: always()
+        run: |
+          echo "===== ARQUIVOS GERADOS ====="
+          find project_output -maxdepth 3 -type f | sort || true
+
+          echo ""
+          echo "===== RESUMO WORKSTREAMS ====="
+          if [ -f project_output/07_logs/run_summary_pretty.txt ]; then
+            cat project_output/07_logs/run_summary_pretty.txt
+          else
+            echo "run_summary_pretty.txt não encontrado"
+          fi
+
+          echo ""
+          echo "===== DIGEST GLOBAL WATCH ====="
+          if [ -f project_output/08_docs/NUTEV_GLOBAL_WATCH_LATEST.md ]; then
+            head -n 160 project_output/08_docs/NUTEV_GLOBAL_WATCH_LATEST.md
+          else
+            echo "NUTEV_GLOBAL_WATCH_LATEST.md não encontrado"
+          fi
+
+      - name: Upload full project_output artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nutev-full-once-project-output
+          path: project_output
+          retention-days: 14
