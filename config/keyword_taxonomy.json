@@ -850,5 +850,155 @@
         "índice"
       ]
     }
-  }
+  },
+  "taxonomy_version": "2026-05-v4",
+  "controlled_vocabulary": {
+    "mesh_dec": [
+      "Life Style",
+      "Lifestyle Medicine",
+      "Diet Therapy",
+      "Nutrition Therapy",
+      "Obesity Management",
+      "Cardiometabolic Risk Factors",
+      "Feeding Behavior",
+      "Health Behavior",
+      "Patient Compliance",
+      "Treatment Adherence and Compliance",
+      "Health Literacy",
+      "Food Literacy",
+      "Cooking",
+      "Social Support",
+      "Meals",
+      "Food Habits",
+      "Diet, Mediterranean",
+      "Diet, DASH",
+      "Diet, Vegetarian",
+      "Diet, Ketogenic",
+      "Practice Guideline",
+      "Clinical Practice Guideline",
+      "Consensus Development Conference"
+    ]
+  },
+  "update_terms": [
+    "update",
+    "updated guideline",
+    "guideline update",
+    "2025 guideline",
+    "2026 guideline",
+    "new recommendation",
+    "clinical update",
+    "practice update",
+    "position paper",
+    "expert consensus",
+    "living guideline"
+  ],
+  "institutions_societies": {
+    "global": [
+      "World Health Organization",
+      "WHO",
+      "FAO",
+      "PAHO",
+      "World Obesity Federation",
+      "International Diabetes Federation",
+      "World Heart Federation",
+      "EAT Forum"
+    ],
+    "usa": [
+      "CDC",
+      "NIH",
+      "NHLBI",
+      "USDA Dietary Guidelines",
+      "DietaryGuidelines.gov",
+      "American Heart Association",
+      "American College of Cardiology",
+      "American Diabetes Association",
+      "Endocrine Society",
+      "Obesity Society",
+      "Academy of Nutrition and Dietetics",
+      "American College of Lifestyle Medicine"
+    ],
+    "europe": [
+      "European Society of Cardiology",
+      "European Association for the Study of Diabetes",
+      "European Food Safety Authority",
+      "ESPEN",
+      "EASO",
+      "NICE",
+      "NHS"
+    ],
+    "brazil_latam": [
+      "Ministério da Saúde",
+      "Guia Alimentar para a População Brasileira",
+      "SciELO",
+      "BVS",
+      "LILACS",
+      "Sociedade Brasileira de Cardiologia",
+      "Sociedade Brasileira de Diabetes",
+      "ABESO",
+      "SBEM"
+    ]
+  },
+  "international_guideline_terms": {
+    "spanish": [
+      "guías alimentarias",
+      "guía alimentaria",
+      "recomendaciones alimentarias",
+      "recomendaciones dietéticas",
+      "consenso",
+      "guía clínica"
+    ],
+    "french": [
+      "guide alimentaire",
+      "recommandations alimentaires",
+      "recommandations nutritionnelles",
+      "lignes directrices"
+    ],
+    "german": [
+      "Ernährungsleitlinien",
+      "Ernährungsempfehlungen",
+      "Leitlinie"
+    ],
+    "italian": [
+      "linee guida alimentari",
+      "raccomandazioni nutrizionali",
+      "linee guida cliniche"
+    ]
+  },
+  "instrument_terms": [
+    "Food Literacy Questionnaire",
+    "Short Food Literacy Questionnaire",
+    "Cooking Skills Confidence Measure",
+    "Cooking and Food Provisioning Action Scale",
+    "Mediterranean Diet Adherence Screener",
+    "MEDAS",
+    "DASH adherence score",
+    "Healthy Eating Index",
+    "Alternative Healthy Eating Index",
+    "Diet Quality Index",
+    "PREDIMED",
+    "REAP-S",
+    "Starting the Conversation",
+    "Food Frequency Questionnaire",
+    "Dietary Screener Questionnaire",
+    "adherence scale",
+    "lifestyle medicine questionnaire",
+    "nutrition behavior questionnaire"
+  ],
+  "negative_noise_terms": [
+    "editorial",
+    "commentary",
+    "letter",
+    "case report",
+    "animal",
+    "mice",
+    "rat",
+    "in vitro",
+    "pediatric",
+    "child",
+    "adolescent",
+    "login",
+    "buy",
+    "mostdownload",
+    "conference abstract"
+  ]
 }
