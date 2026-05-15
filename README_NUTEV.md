@@ -65,3 +65,10 @@ PYTHONPATH=src python -m nutev.cli global-watch --project-root ./project_output 
 
 O payload envia resumo + links (não envia PDFs).
 Se webhook ausente/falhar, o pipeline não quebra e registra evento.
+
+
+### Capture layer (hardening)
+- `--capture-enabled`: tenta capturar PDF/HTML público para top itens.
+- `--capture-limit`: sobrescreve limite padrão (quick=10, thesis=30, exhaustive=100).
+- status possíveis: `pdf`, `html_snapshot`, `metadata_only`.
+- `--notify-webhook`: envia resumo opcional para webhook (sem anexar PDFs, apenas links e metadados).

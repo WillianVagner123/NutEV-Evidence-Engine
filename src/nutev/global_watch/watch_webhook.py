@@ -11,13 +11,32 @@ import requests
 from nutev.engine.events import emit_event, write_event
 
 
+def _why(item: dict) -> str:
+    t=f"{item.get('title','')} {item.get('evidence_type','')} {item.get('category','')}".lower()
+    if 'guideline' in t: return 'Pode alterar recomendações ou base metodológica do protocolo NutMEV.'
+    if 'systematic review' in t or 'meta-analysis' in t: return 'Pode consolidar evidência para síntese e discussão.'
+    if 'trial' in t: return 'Pode informar intervenções e desfechos práticos.'
+    if any(k in t for k in ['framework','questionnaire','instrument']): return 'Pode apoiar o desenvolvimento do Artigo 3 e instrumento NutMEV.'
+    if any(k in t for k in ['adherence','implementation','feasibility']): return 'Pode apoiar adesão, viabilidade e implementação.'
+    return 'Pode contribuir para monitoramento científico contínuo do NutMEV.'
+
+
 def build_webhook_payload(rows: list[dict], digest_path: Path, run_summary: dict, max_items: int = 10) -> dict:
     top = rows[:max_items]
+    summary = {
+        "total_items": run_summary.get("total_items", len(rows)),
+        "new_items": run_summary.get("new_items", 0),
+        "high_priority": run_summary.get("high_priority", 0),
+        "pdf": run_summary.get("pdf", 0),
+        "html_snapshot": run_summary.get("html_snapshot", 0),
+        "metadata_only": run_summary.get("metadata_only", 0),
+        "failed": run_summary.get("failed", 0),
+    }
     payload = {
         "project": "NutMEV Global Watch",
         "run_date": datetime.now(timezone.utc).date().isoformat(),
         "mode": run_summary.get("mode", "unknown"),
-        "summary": run_summary,
+        "summary": summary,
         "digest_path": str(digest_path),
         "top_items": [
             {
@@ -30,28 +49,30 @@ def build_webhook_payload(rows: list[dict], digest_path: Path, run_summary: dict
                 "url": r.get("url"),
                 "doi": r.get("doi"),
                 "download_status": r.get("download_status", "metadata_only"),
-                "why_it_matters": r.get("why_it_matters", ""),
-            }
-            for i, r in enumerate(top)
+                "watch_score": r.get("watch_score", 0),
+                "why_it_matters": r.get("why_it_matters") or _why(r),
+            } for i, r in enumerate(top)
         ],
     }
-    payload["text"] = f"NutMEV Global Watch: {run_summary.get('new_items',0)} novos achados. Top: {(top[0].get('title') if top else 'n/a')}"
+    payload["text"] = f"NutMEV Global Watch: {summary['new_items']} novos achados. Top: {(top[0].get('title') if top else 'n/a')}"
     return payload
 
 
 def send_webhook(payload: dict, webhook_url: str, logger, run_id: str, logs_dir: Path) -> dict:
     host = urlparse(webhook_url).netloc or "configured"
     write_event(emit_event(run_id, "webhook_started", "Webhook started", meta_json={"host": host}), logs_dir / "run_events.jsonl")
+    last='http_error'
     for attempt in range(1, 3):
         try:
             r = requests.post(webhook_url, json=payload, timeout=20)
             if r.status_code < 400:
                 write_event(emit_event(run_id, "webhook_sent", "Webhook sent", meta_json={"host": host, "status": r.status_code}), logs_dir / "run_events.jsonl")
                 return {"status": "sent", "http_status": r.status_code}
+            last=f"http_{r.status_code}"
         except Exception as exc:
             last = str(exc)
             logger.warning("webhook attempt=%s host=%s failed", attempt, host)
-    write_event(emit_event(run_id, "webhook_failed", "Webhook failed", event_kind="warning", meta_json={"host": host, "error": last if 'last' in locals() else 'http_error'}), logs_dir / "run_events.jsonl")
+    write_event(emit_event(run_id, "webhook_failed", "Webhook failed", event_kind="warning", meta_json={"host": host, "error": last}), logs_dir / "run_events.jsonl")
     return {"status": "failed"}
 
 

@@ -153,9 +153,7 @@ def run_global_watch(settings, logger, since_days, mode, resume, official_crawl,
     save_seen_items(seen_path, update_seen_items(rows, seen))
 
     if capture_enabled:
-        rows, captured_items = capture_watch_items(rows, settings, logger, run_id, mode)
-        if capture_limit:
-            captured_items = captured_items[:capture_limit]
+        rows, captured_items = capture_watch_items(rows, settings, logger, run_id, mode, capture_limit=capture_limit)
     else:
         captured_items = []
 
