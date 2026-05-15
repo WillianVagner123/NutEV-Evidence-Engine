@@ -16,12 +16,6 @@ def score_watch_item(item):
             score += v
 
     if item.get('is_new'): score += 15
-    intent=(item.get('intent') or "").lower()
-    intent_bonus={'guideline':20,'update':22,'official':16,'instrument':14}
-    score += intent_bonus.get(intent,0)
-    q=(item.get('query') or "").lower()
-    if any(k in q for k in ['world health organization','american','society','nih','cdc']): score += 8
-    if any(k in q for k in ['lifestyle medicine','diet therapy','clinical practice guideline']): score += 6
     if item.get('download_status') == 'pdf': score += 10
     elif item.get('download_status') == 'html_snapshot': score += 5
 
@@ -36,6 +30,3 @@ def score_watch_item(item):
     if not (item.get('title') or '').strip():
         score -= 20
     return round(score, 3)
-
-
-# intent/institution/mesh boosts

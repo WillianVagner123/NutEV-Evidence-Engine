@@ -1,29 +1,10 @@
-from pathlib import Path
-
 from nutev.engine.ids import make_document_id
-from nutev.querypacks.smart_builders import build_smart_queries, load_keyword_taxonomy
-
+from nutev.global_watch.watch_config import MODE_LIMITS, WATCH_CATEGORIES
 
 def build_watch_queries(categories, since_days, mode):
-    taxonomy_path = Path('config/keyword_taxonomy.json')
-    if taxonomy_path.exists():
-        taxonomy = load_keyword_taxonomy(taxonomy_path)
-        smart = build_smart_queries(taxonomy, ["busca1", "busca2a", "busca2b", "a3"], mode)
-        out = []
-        for ws, entries in smart.items():
-            for e in entries:
-                intent = e['intent']
-                provider_hint = 'pubmed' if intent in {'guideline','review','trial','update'} else 'openalex'
-                priority = 1 if intent in {'guideline','update'} else 2
-                out.append({
-                    "query_id": make_document_id({"title": e['query'], "provider": 'watch', "year": since_days}),
-                    "category": categories[0] if categories else intent,
-                    "intent": intent,
-                    "query": e['query'],
-                    "provider_hint": provider_hint,
-                    "priority": priority,
-                    "since_days": since_days,
-                    "workstream_affinity": [ws],
-                })
-        return out
-    return []
+    selected=categories or list(WATCH_CATEGORIES.keys()); limit=MODE_LIMITS.get(mode,6); out=[]
+    for cat in selected:
+        for term in WATCH_CATEGORIES.get(cat,[])[:limit]:
+            q=f'({term}) AND (nutrition OR diet OR obesity OR cardiometabolic)'
+            out.append({"query_id":make_document_id({"title":q,"provider":"watch","year":since_days}),"category":cat,"query":q,"provider_hint":"pubmed","priority":1 if any(x in term.lower() for x in ["guideline","consensus"]) else 2,"since_days":since_days})
+    return out
