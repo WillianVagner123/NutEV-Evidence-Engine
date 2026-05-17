@@ -58,7 +58,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: ${{ needs.prepare.outputs.checkout_repository }}
           ref: ${{ needs.prepare.outputs.checkout_sha }}
@@ -99,7 +99,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: ${{ needs.prepare.outputs.checkout_repository }}
           ref: ${{ needs.prepare.outputs.checkout_sha }}
@@ -138,7 +138,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: ${{ needs.prepare.outputs.checkout_repository }}
           ref: ${{ needs.prepare.outputs.checkout_sha }}
@@ -179,7 +179,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: ${{ needs.prepare.outputs.checkout_repository }}
           ref: ${{ needs.prepare.outputs.checkout_sha }}

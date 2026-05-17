@@ -1,4 +1,4 @@
-﻿name: NutMEV Full Once
+name: NutMEV Full Once
 
 on:
   workflow_dispatch:
@@ -41,7 +41,7 @@ jobs:
         run: mkdir -p project_output/07_logs project_output/08_docs project_output/09_global_watch
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Python
         uses: actions/setup-python@v5
