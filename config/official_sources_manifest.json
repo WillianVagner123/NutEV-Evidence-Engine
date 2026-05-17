@@ -1,1 +1,40 @@
-{"workstreams": {"busca1": [{"name": "WHO Healthy Diet", "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet", "authority": 5}], "busca2a": [{"name": "ADA Standards", "url": "https://diabetesjournals.org/care/issue", "authority": 5}], "busca2b": [{"name": "AHA Diet guidance", "url": "https://www.heart.org", "authority": 4}], "a3": [{"name": "Lifestyle medicine competencies", "url": "https://lifestylemedicine.org", "authority": 3}]}}
+{
+  "workstreams": {
+    "busca1": [
+      {"name": "WHO Healthy Diet", "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet", "authority": 5},
+      {"name": "WHO Obesity", "url": "https://www.who.int/health-topics/obesity", "authority": 5},
+      {"name": "FAO Food-Based Dietary Guidelines", "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/home/en/", "authority": 5},
+      {"name": "Dietary Guidelines for Americans", "url": "https://www.dietaryguidelines.gov/", "authority": 5},
+      {"name": "Brazilian Dietary Guidelines", "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf", "authority": 5},
+      {"name": "NICE Obesity overview", "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/obesity", "authority": 4},
+      {"name": "World Obesity Federation", "url": "https://www.worldobesity.org/", "authority": 4}
+    ],
+    "busca2a": [
+      {"name": "ADA Standards of Care", "url": "https://diabetesjournals.org/care/issue", "authority": 5},
+      {"name": "AHA Nutrition and Cardiovascular Health", "url": "https://www.heart.org/en/healthy-living/healthy-eating", "authority": 5},
+      {"name": "ESC Prevention Guidelines", "url": "https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines", "authority": 5},
+      {"name": "EAS Lipid Guidelines", "url": "https://eas-society.org/page/guidelines", "authority": 5},
+      {"name": "ESH Hypertension Guidelines", "url": "https://www.eshonline.org/guidelines/", "authority": 4},
+      {"name": "EASO Obesity Guidelines", "url": "https://easo.org/education/guidelines/", "authority": 5},
+      {"name": "AASLD Liver Disease Guidance", "url": "https://www.aasld.org/practice-guidelines", "authority": 4},
+      {"name": "NICE Type 2 Diabetes and Obesity", "url": "https://www.nice.org.uk/guidance", "authority": 4}
+    ],
+    "busca2b": [
+      {"name": "AHA Diet and Lifestyle Recommendations", "url": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart", "authority": 5},
+      {"name": "ADA Nutrition Therapy", "url": "https://diabetesjournals.org/care", "authority": 5},
+      {"name": "EASO Lifestyle Intervention Resources", "url": "https://easo.org/", "authority": 4},
+      {"name": "American College of Lifestyle Medicine", "url": "https://lifestylemedicine.org/", "authority": 4},
+      {"name": "NHLBI DASH Eating Plan", "url": "https://www.nhlbi.nih.gov/education/dash-eating-plan", "authority": 5},
+      {"name": "Oldways Mediterranean Diet", "url": "https://oldwayspt.org/traditional-diets/mediterranean-diet", "authority": 3},
+      {"name": "EAT-Lancet Commission", "url": "https://eatforum.org/eat-lancet-commission/", "authority": 4}
+    ],
+    "artigo3_framework": [
+      {"name": "American College of Lifestyle Medicine Competencies", "url": "https://lifestylemedicine.org/", "authority": 4},
+      {"name": "FAO Food Literacy and Nutrition Education", "url": "https://www.fao.org/nutrition/education/en/", "authority": 4},
+      {"name": "Harvard Culinary Medicine", "url": "https://cm.hms.harvard.edu/", "authority": 3},
+      {"name": "Teaching Kitchens Collaborative", "url": "https://teachingkitchens.org/", "authority": 3},
+      {"name": "WHO Healthy Diet and Behaviour Change Resources", "url": "https://www.who.int/teams/health-promotion/enhanced-wellbeing/healthy-diet", "authority": 4},
+      {"name": "CDC Health Literacy", "url": "https://www.cdc.gov/healthliteracy/", "authority": 3}
+    ]
+  }
+}
