@@ -34,6 +34,20 @@ SCHOLARLY_HTML_HOSTS = {
     "taylorfrancis.com",
 }
 
+BLOCKED_PUBLISHER_HINTS = {
+    "academic.oup.com",
+    "ahajournals.org",
+    "doi.apa.org",
+    "journals.sagepub.com",
+    "karger.com",
+    "linkinghub.elsevier.com",
+    "mayoclinicproceedings.org",
+    "mdpi.com",
+    "onlinelibrary.wiley.com",
+    "scielo.br",
+    "tandfonline.com",
+}
+
 SESSION_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -41,7 +55,14 @@ SESSION_HEADERS = {
         "Chrome/124.0.0.0 Safari/537.36"
     ),
     "Accept-Language": "en-US,en;q=0.9,pt-BR;q=0.8",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf;q=0.8,*/*;q=0.7",
 }
+
+
+class ControlledDownloadFailure(RuntimeError):
+    def __init__(self, reason: str, message: str):
+        super().__init__(message)
+        self.reason = reason
 
 
 def _head(url: str, timeout: int = 15) -> tuple[int, str]:
@@ -57,6 +78,32 @@ def _head(url: str, timeout: int = 15) -> tuple[int, str]:
         return 0, ""
 
 
+def _host(url: str) -> str:
+    return urlparse(url or "").netloc.lower()
+
+
+def _is_blocked_publisher(url: str) -> bool:
+    host = _host(url)
+    return any(hint in host for hint in BLOCKED_PUBLISHER_HINTS)
+
+
+def _failure_reason(exc: Exception, url: str, head_status: int = 0) -> str:
+    if isinstance(exc, ControlledDownloadFailure):
+        return exc.reason
+    status = getattr(getattr(exc, "response", None), "status_code", None) or head_status
+    if status in {401, 403}:
+        return "publisher_forbidden"
+    if status == 404:
+        return "not_found"
+    if status == 429:
+        return "rate_limited"
+    if status and status >= 500:
+        return "server_error"
+    if _is_blocked_publisher(url):
+        return "publisher_blocked_or_paywalled"
+    return "download_failed"
+
+
 def _request_with_retry(
     session: requests.Session,
     url: str,
@@ -68,16 +115,32 @@ def _request_with_retry(
         try:
             logger.info("download tentativa=%d url=%s", attempt, url)
             response = session.get(url, timeout=25, allow_redirects=True)
+            if response.status_code in {401, 403, 404, 429}:
+                reason = _failure_reason(requests.HTTPError(response=response), response.url)
+                raise ControlledDownloadFailure(
+                    reason,
+                    f"controlled download stop: {response.status_code} for {response.url}",
+                )
             response.raise_for_status()
             return response
+        except ControlledDownloadFailure:
+            raise
+        except requests.HTTPError as exc:
+            last_error = exc
+            status = getattr(exc.response, "status_code", 0)
+            if status in {401, 403, 404, 429} or _is_blocked_publisher(url):
+                break
+            time.sleep(0.8 * attempt)
         except Exception as exc:
             last_error = exc
+            if _is_blocked_publisher(url):
+                break
             time.sleep(0.8 * attempt)
     raise RuntimeError(f"download failed after retries: {last_error}")
 
 
 def _host_matches(url: str, hints: set[str]) -> bool:
-    host = urlparse(url).netloc.lower()
+    host = _host(url)
     return any(hint in host for hint in hints)
 
 
@@ -166,6 +229,13 @@ def _save_snapshot_html(
     try:
         logger.info("snapshot tentativa url=%s", candidate_url)
         response = session.get(candidate_url, timeout=25, allow_redirects=True)
+        if response.status_code in {401, 403, 404, 429}:
+            logger.info(
+                "snapshot bloqueado url=%s status=%s",
+                response.url,
+                response.status_code,
+            )
+            return None
         response.raise_for_status()
     except Exception as exc:
         logger.info("snapshot falhou url=%s erro=%s", candidate_url, exc)
@@ -339,7 +409,8 @@ def download_records(
                 continue
 
             except Exception as exc:
-                logger.info("download falhou url=%s erro=%s", resolved_url, exc)
+                reason = _failure_reason(exc, resolved_url, head_status)
+                logger.info("download falhou url=%s reason=%s erro=%s", resolved_url, reason, exc)
                 snapshot = _try_snapshot_fallbacks(
                     session,
                     record,
@@ -358,8 +429,8 @@ def download_records(
                     {
                         "url": raw_url,
                         "resolved_url": resolved_url,
-                        "status": "fail",
-                        "reason": str(exc),
+                        "status": "metadata_only",
+                        "reason": reason,
                         "head_status": head_status,
                     }
                 )
@@ -384,7 +455,7 @@ def download_records(
             {
                 "url": raw_url,
                 "resolved_url": resolved_url,
-                "status": "filtered_no_snapshot",
+                "status": "metadata_only",
                 "reason": "filtered_and_no_html_snapshot",
                 "head_status": head_status,
             }
