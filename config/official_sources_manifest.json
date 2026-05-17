@@ -1,1 +1,119 @@
-{"workstreams": {"busca1": [{"name": "WHO Healthy Diet", "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet", "authority": 5}], "busca2a": [{"name": "ADA Standards", "url": "https://diabetesjournals.org/care/issue", "authority": 5}], "busca2b": [{"name": "AHA Diet guidance", "url": "https://www.heart.org", "authority": 4}], "a3": [{"name": "Lifestyle medicine competencies", "url": "https://lifestylemedicine.org", "authority": 3}]}}
+{
+  "workstreams": {
+    "busca1": [
+      {
+        "name": "WHO Healthy Diet",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+        "authority": 5
+      },
+      {
+        "name": "FAO Food-based dietary guidelines",
+        "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/en/",
+        "authority": 5
+      },
+      {
+        "name": "Dietary Guidelines for Americans",
+        "url": "https://odphp.health.gov/our-work/nutrition-physical-activity/dietary-guidelines/current-dietary-guidelines",
+        "authority": 5
+      },
+      {
+        "name": "Guia Alimentar para a População Brasileira",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/saude-brasil/publicacoes-para-promocao-a-saude/guia_alimentar_populacao_brasileira_2ed.pdf/%40%40download/file",
+        "authority": 5
+      },
+      {
+        "name": "FAO Brazil dietary guidelines profile",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/brazil/en/",
+        "authority": 4
+      }
+    ],
+    "busca2a": [
+      {
+        "name": "ADA Standards of Care in Diabetes",
+        "url": "https://diabetesjournals.org/care/issue",
+        "authority": 5
+      },
+      {
+        "name": "Obesity Canada Adult clinical practice guideline",
+        "url": "https://obesitycanada.ca/healthcare-professionals/adult-clinical-practice-guideline/",
+        "authority": 5
+      },
+      {
+        "name": "EASO Guidelines",
+        "url": "https://easo.org/education/guidelines/",
+        "authority": 4
+      },
+      {
+        "name": "WHO Obesity",
+        "url": "https://www.who.int/health-topics/obesity/",
+        "authority": 4
+      }
+    ],
+    "busca2b": [
+      {
+        "name": "American Heart Association Diet and Lifestyle Recommendations",
+        "url": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/aha-diet-and-lifestyle-recommendations",
+        "authority": 5
+      },
+      {
+        "name": "NIDDK Diabetes Prevention Program",
+        "url": "https://www.niddk.nih.gov/about-niddk/research-areas/diabetes/diabetes-prevention-program-dpp",
+        "authority": 4
+      },
+      {
+        "name": "NIDDK Eating and Physical Activity to Lose or Maintain Weight",
+        "url": "https://www.niddk.nih.gov/health-information/weight-management/adult-overweight-obesity/eating-physical-activity",
+        "authority": 4
+      },
+      {
+        "name": "Healthy Eating - American Heart Association",
+        "url": "https://www.heart.org/en/healthy-living/healthy-eating",
+        "authority": 4
+      }
+    ],
+    "artigo3_framework": [
+      {
+        "name": "Lifestyle Medicine Core Competencies",
+        "url": "https://lifestylemedicine.org/wp-content/uploads/2022/11/Core-Compentencies-2022.pdf",
+        "authority": 5
+      },
+      {
+        "name": "FAO Nutrition education and consumer awareness",
+        "url": "https://www.fao.org/nutrition/capacity-development/nutrition-education-and-consumer-awareness/en/",
+        "authority": 4
+      },
+      {
+        "name": "FAO Nutrition education",
+        "url": "https://www.fao.org/nutrition/education/en/",
+        "authority": 4
+      },
+      {
+        "name": "Protocolos de uso do Guia Alimentar para a População Brasileira",
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolos_guia_alimentar_fasciculo1.pdf",
+        "authority": 4
+      }
+    ],
+    "a3": [
+      {
+        "name": "Lifestyle Medicine Core Competencies",
+        "url": "https://lifestylemedicine.org/wp-content/uploads/2022/11/Core-Compentencies-2022.pdf",
+        "authority": 5
+      },
+      {
+        "name": "FAO Nutrition education and consumer awareness",
+        "url": "https://www.fao.org/nutrition/capacity-development/nutrition-education-and-consumer-awareness/en/",
+        "authority": 4
+      },
+      {
+        "name": "FAO Nutrition education",
+        "url": "https://www.fao.org/nutrition/education/en/",
+        "authority": 4
+      },
+      {
+        "name": "Protocolos de uso do Guia Alimentar para a População Brasileira",
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolos_guia_alimentar_fasciculo1.pdf",
+        "authority": 4
+      }
+    ]
+  }
+}
