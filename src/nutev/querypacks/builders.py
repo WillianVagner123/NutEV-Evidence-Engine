@@ -224,7 +224,56 @@ def get_named_terms(section: dict, keys: list[str]) -> list[str]:
 
 def chunk_terms(terms: list[str], chunk_size: int = 5) -> list[list[str]]:
     clean = uniq(terms)
-    return [clean[i:i + chunk_size] for i in range(0, len(clean), chunk_size)]
+    return [clean[i : i + chunk_size] for i in range(0, len(clean), chunk_size)]
+
+
+def build_structured_components(
+    keyword_taxonomy: dict,
+    workstream: str,
+) -> tuple[str, dict[str, list[str]]]:
+    ws_key = canonical_workstream(workstream)
+    ws = keyword_taxonomy.get("workstreams", {}).get(ws_key, {})
+    global_cfg = keyword_taxonomy.get("global", {})
+    clinical_cfg = keyword_taxonomy.get("clinical", {})
+    outcomes_cfg = keyword_taxonomy.get("outcomes", {})
+    enhancements = WORKSTREAM_QUERY_ENHANCEMENTS.get(ws_key, {})
+
+    population_terms = uniq(ws.get("population_terms", []))
+    condition_terms = uniq(ws.get("condition_terms", []))
+    clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
+    priority_outcomes = get_named_terms(
+        outcomes_cfg,
+        ws.get("priority_outcomes", []),
+    )
+    doc_type_terms = get_named_terms(
+        global_cfg.get("document_types", {}),
+        ws.get("document_type_keys", []),
+    )
+    doc_type_terms = uniq(doc_type_terms + enhancements.get("document_terms", []))
+    web_hints = uniq(
+        ws.get("web_query_hints", []) + enhancements.get("web_hints", [])
+    )
+    behavior_terms = get_global_block(keyword_taxonomy, "implementation_behavior")
+    diet_terms = get_global_block(keyword_taxonomy, "diet_patterns")
+    nutrition_terms = get_global_block(keyword_taxonomy, "nutrition_domains")
+
+    focus_terms: list[str] = []
+    for block_name in ws.get("focus_blocks", []):
+        focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
+    focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
+
+    return ws_key, {
+        "population_terms": population_terms,
+        "condition_terms": condition_terms,
+        "clinical_terms": clinical_terms,
+        "priority_outcomes": priority_outcomes,
+        "doc_type_terms": doc_type_terms,
+        "web_hints": web_hints,
+        "behavior_terms": behavior_terms,
+        "diet_terms": diet_terms,
+        "nutrition_terms": nutrition_terms,
+        "focus_terms": focus_terms,
+    }
 
 
 def _build_legacy_queries(ws: dict) -> list[str]:
@@ -515,7 +564,9 @@ def _add_specific_a3(
         "planejamento de refeições",
     ]
 
-    queries.append(_join_parts([or_block(instrument_terms, 8), or_block(competence_terms, 8)]))
+    queries.append(
+        _join_parts([or_block(instrument_terms, 8), or_block(competence_terms, 8)])
+    )
     queries.append(
         _join_parts(
             [
@@ -545,32 +596,17 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
     if ws.get("base_terms") and ws.get("themes"):
         return _build_legacy_queries(ws)
 
-    global_cfg = keyword_taxonomy.get("global", {})
-    clinical_cfg = keyword_taxonomy.get("clinical", {})
-    outcomes_cfg = keyword_taxonomy.get("outcomes", {})
-    enhancements = WORKSTREAM_QUERY_ENHANCEMENTS.get(ws_key, {})
-
-    population_terms = uniq(ws.get("population_terms", []))
-    condition_terms = uniq(ws.get("condition_terms", []))
-    clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
-    priority_outcomes = get_named_terms(
-        outcomes_cfg,
-        ws.get("priority_outcomes", []),
-    )
-    doc_type_terms = get_named_terms(
-        global_cfg.get("document_types", {}),
-        ws.get("document_type_keys", []),
-    )
-    doc_type_terms = uniq(doc_type_terms + enhancements.get("document_terms", []))
-    web_hints = uniq(ws.get("web_query_hints", []) + enhancements.get("web_hints", []))
-    behavior_terms = get_global_block(keyword_taxonomy, "implementation_behavior")
-    diet_terms = get_global_block(keyword_taxonomy, "diet_patterns")
-    nutrition_terms = get_global_block(keyword_taxonomy, "nutrition_domains")
-
-    focus_terms: list[str] = []
-    for block_name in ws.get("focus_blocks", []):
-        focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
-    focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
+    ws_key, components = build_structured_components(keyword_taxonomy, workstream)
+    population_terms = components["population_terms"]
+    condition_terms = components["condition_terms"]
+    clinical_terms = components["clinical_terms"]
+    priority_outcomes = components["priority_outcomes"]
+    doc_type_terms = components["doc_type_terms"]
+    web_hints = components["web_hints"]
+    behavior_terms = components["behavior_terms"]
+    diet_terms = components["diet_terms"]
+    nutrition_terms = components["nutrition_terms"]
+    focus_terms = components["focus_terms"]
 
     queries: list[str] = []
 
@@ -593,7 +629,12 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
         )
     )
     queries.append(
-        _join_parts([or_block(web_hints, 5), or_block(condition_terms + clinical_terms, 8)])
+        _join_parts(
+            [
+                or_block(web_hints, 5),
+                or_block(condition_terms + clinical_terms, 8),
+            ]
+        )
     )
 
     for chunk in chunk_terms(focus_terms, 5)[:16]:
@@ -610,7 +651,10 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
     for outcome_chunk in chunk_terms(priority_outcomes, 5)[:8]:
         queries.append(
             _join_parts(
-                [or_block(condition_terms + clinical_terms, 8), or_block(outcome_chunk, 5)]
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(outcome_chunk, 5),
+                ]
             )
         )
 
