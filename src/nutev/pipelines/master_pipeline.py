@@ -99,6 +99,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
     all_rows, extraction_manifest, all_manifest, artifact_inputs = [], [], [], []
     total_downloads = total_failed = total_ocr = 0
+    total_ocr_attempted = total_ocr_failed = 0
 
     for ws, queries in qpack.items():
         ws_cfg = taxonomy.get("workstreams", {}).get(ws, taxonomy.get("workstreams", {}).get("artigo3_framework", {}))
@@ -172,6 +173,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             )
             extraction_manifest.append(e)
             total_ocr += int(e.get("used_ocr", False))
+            total_ocr_attempted += int(e.get("ocr_attempted", False))
+            if e.get("ocr_attempted") and not e.get("used_ocr"):
+                total_ocr_failed += 1
             if isinstance(m.get("url"), str):
                 ext_by_url[m["url"]] = e
             if isinstance(m.get("resolved_url"), str):
@@ -231,6 +235,8 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "downloads_ok": total_downloads,
         "downloads_failed": total_failed,
         "ocr_docs": total_ocr,
+        "ocr_attempted": total_ocr_attempted,
+        "ocr_failed": total_ocr_failed,
     }
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(
