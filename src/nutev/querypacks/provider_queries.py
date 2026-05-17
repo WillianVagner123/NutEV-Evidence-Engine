@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from nutev.querypacks.builders import (
+    WORKSTREAM_QUERY_ENHANCEMENTS,
     canonical_workstream,
     get_global_block,
     get_named_terms,
@@ -122,6 +123,7 @@ def _structured_components(keyword_taxonomy: dict, workstream: str) -> dict[str,
     global_cfg = keyword_taxonomy.get("global", {})
     clinical_cfg = keyword_taxonomy.get("clinical", {})
     outcomes_cfg = keyword_taxonomy.get("outcomes", {})
+    enhancements = WORKSTREAM_QUERY_ENHANCEMENTS.get(ws_key, {})
 
     population_terms = uniq(ws.get("population_terms", []))
     condition_terms = uniq(ws.get("condition_terms", []))
@@ -130,16 +132,19 @@ def _structured_components(keyword_taxonomy: dict, workstream: str) -> dict[str,
         outcomes_cfg,
         ws.get("priority_outcomes", []),
     )
-    doc_type_terms = get_named_terms(
-        global_cfg.get("document_types", {}),
-        ws.get("document_type_keys", []),
+    doc_type_terms = uniq(
+        enhancements.get("document_terms", [])
+        + get_named_terms(
+            global_cfg.get("document_types", {}),
+            ws.get("document_type_keys", []),
+        )
     )
-    web_hints = uniq(ws.get("web_query_hints", []))
+    web_hints = uniq(enhancements.get("web_hints", []) + ws.get("web_query_hints", []))
     behavior_terms = get_global_block(keyword_taxonomy, "implementation_behavior")
     diet_terms = get_global_block(keyword_taxonomy, "diet_patterns")
     nutrition_terms = get_global_block(keyword_taxonomy, "nutrition_domains")
 
-    focus_terms: list[str] = []
+    focus_terms = list(enhancements.get("focus_terms", []))
     for block_name in ws.get("focus_blocks", []):
         focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
 
@@ -176,6 +181,13 @@ def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
             [
                 _provider_or_block(condition_terms, "pubmed", 8),
                 _provider_or_block(components["priority_outcomes"], "pubmed", 6),
+                _pubmed_document_clause(components["doc_type_terms"]),
+            ]
+        ),
+        _join_parts(
+            [
+                _provider_or_block(condition_terms, "pubmed", 8),
+                _provider_or_block(components["focus_terms"], "pubmed", 5),
                 _pubmed_document_clause(components["doc_type_terms"]),
             ]
         ),
@@ -223,6 +235,13 @@ def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
         ),
         _join_parts(
             [
+                _provider_or_block(condition_terms, "europepmc", 8),
+                _provider_or_block(components["focus_terms"], "europepmc", 5),
+                _provider_or_block(components["doc_type_terms"], "europepmc", 6),
+            ]
+        ),
+        _join_parts(
+            [
                 _provider_or_block(components["diet_terms"], "europepmc", 5),
                 _provider_or_block(condition_terms, "europepmc", 8),
                 _provider_or_block(components["priority_outcomes"], "europepmc", 5),
@@ -251,6 +270,13 @@ def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
         ),
         _join_parts(
             [
+                _provider_or_block(condition_terms, "openalex", 6),
+                _provider_or_block(components["focus_terms"], "openalex", 4),
+                _provider_or_block(components["doc_type_terms"], "openalex", 4),
+            ]
+        ),
+        _join_parts(
+            [
                 _provider_or_block(components["diet_terms"], "openalex", 4),
                 _provider_or_block(condition_terms, "openalex", 6),
                 _provider_or_block(components["priority_outcomes"], "openalex", 4),
@@ -275,6 +301,13 @@ def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
                 _provider_or_block(condition_terms, "crossref", 6),
                 _provider_or_block(components["doc_type_terms"], "crossref", 4),
                 _provider_or_block(components["priority_outcomes"], "crossref", 4),
+            ]
+        ),
+        _join_parts(
+            [
+                _provider_or_block(condition_terms, "crossref", 6),
+                _provider_or_block(components["focus_terms"], "crossref", 4),
+                _provider_or_block(components["doc_type_terms"], "crossref", 4),
             ]
         ),
         _join_parts(
