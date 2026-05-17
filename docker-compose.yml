@@ -1,6 +1,11 @@
 # ============================================================================
 # DOCKER COMPOSE BASE CONFIGURATION (CPU-only, works on all platforms)
 # ============================================================================
+# NOTE FOR THIS FORK:
+#   This Compose stack primarily serves the inherited Local Deep Research web UI.
+#   The canonical NutEV/NutMEV evidence pipeline remains the `nutev` CLI and the
+#   GitHub Actions workflows used for reproducible collection runs.
+# ============================================================================
 # This base configuration works on:
 #   - macOS (M1/M2/M3/M4 Apple Silicon and Intel)
 #   - Windows
