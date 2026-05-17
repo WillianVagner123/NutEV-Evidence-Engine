@@ -1,0 +1,43 @@
+from __future__ import annotations
+
+from nutev.global_watch.watch_query_builder import build_watch_queries
+
+
+def test_build_watch_queries_respects_category_selection_and_mode_limit() -> None:
+    queries = build_watch_queries(
+        ["guidelines_consensus", "implementation_behavior"],
+        since_days=7,
+        mode="quick",
+    )
+
+    assert len(queries) == 6
+    assert {item["category"] for item in queries} == {
+        "guidelines_consensus",
+        "implementation_behavior",
+    }
+
+
+def test_build_watch_queries_adds_semantic_context_for_lifestyle_terms() -> None:
+    queries = build_watch_queries(["lifestyle_medicine"], since_days=30, mode="quick")
+
+    first_query = str(queries[0]["query"])
+    assert '"lifestyle medicine"' in first_query
+    assert '"food literacy"' in first_query
+    assert '"culinary medicine"' in first_query
+    assert '"meal planning"' in first_query
+
+
+def test_build_watch_queries_prioritizes_guideline_like_terms() -> None:
+    guideline_queries = build_watch_queries(
+        ["guidelines_consensus"],
+        since_days=30,
+        mode="quick",
+    )
+    behavior_queries = build_watch_queries(
+        ["implementation_behavior"],
+        since_days=30,
+        mode="quick",
+    )
+
+    assert guideline_queries[0]["priority"] == 1
+    assert behavior_queries[0]["priority"] == 2
