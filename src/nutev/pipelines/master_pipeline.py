@@ -192,6 +192,41 @@ def _dedup_rows(rows: list[dict]) -> list[dict]:
     return [by_key[key] for key in order]
 
 
+def _build_operational_counts(rows: list[dict]) -> dict[str, object]:
+    unique_keys: set[tuple[str, str]] = set()
+    doc_workstream_pairs: set[tuple[tuple[str, str], str]] = set()
+    workstream_summary: dict[str, dict[str, int]] = {}
+
+    for row in rows:
+        document_key = _canonical_article_key(row)
+        unique_keys.add(document_key)
+        workstream = _as_text(row.get("workstream")) or "unassigned"
+        doc_workstream_pairs.add((document_key, workstream))
+
+        summary = workstream_summary.setdefault(
+            workstream,
+            {"raw_records": 0, "unique_documents": 0, "document_workstream_pairs": 0},
+        )
+        summary["raw_records"] += 1
+
+    seen_per_workstream: dict[str, set[tuple[str, str]]] = {}
+    for row in rows:
+        document_key = _canonical_article_key(row)
+        workstream = _as_text(row.get("workstream")) or "unassigned"
+        per_ws = seen_per_workstream.setdefault(workstream, set())
+        if document_key not in per_ws:
+            per_ws.add(document_key)
+            workstream_summary[workstream]["unique_documents"] += 1
+        workstream_summary[workstream]["document_workstream_pairs"] = len(per_ws)
+
+    return {
+        "raw_records": len(rows),
+        "unique_documents": len(unique_keys),
+        "document_workstream_pairs": len(doc_workstream_pairs),
+        "workstream_summary": workstream_summary,
+    }
+
+
 def _safe_provider_call(provider: str, fn, q: str, ws: str, logger) -> list[dict]:
     try:
         result = fn(q)
@@ -348,6 +383,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     export_prisma(prisma, settings.output_dirs["06_tables"] / "NUTEV_PRISMA_FLOW.xlsx", settings.output_dirs["07_logs"] / "prisma_flow.json")
 
     curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
+    operational_counts = _build_operational_counts(all_rows)
 
     write_event(emit_event(run_id, "synthesis_completed", "Synthesis completed"), settings.output_dirs["07_logs"] / "run_events.jsonl")
     write_event(emit_event(run_id, "curation_completed", "Curated layer completed", meta_json=curation_summary), settings.output_dirs["07_logs"] / "run_events.jsonl")
@@ -359,6 +395,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     summary = {
         "workstreams": workstreams,
         "records": len(all_rows),
+        "raw_records": operational_counts["raw_records"],
+        "unique_documents": operational_counts["unique_documents"],
+        "document_workstream_pairs": operational_counts["document_workstream_pairs"],
+        "workstream_summary": operational_counts["workstream_summary"],
         "downloads_ok": total_downloads,
         "downloads_failed": total_failed,
         "ocr_docs": total_ocr,
