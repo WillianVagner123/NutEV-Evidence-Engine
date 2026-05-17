@@ -8,6 +8,11 @@ A documentação operacional foi consolidada no `README.md` principal.
 - Instalação editável recomendada: `pip install -e .`
 - Após instalar, o atalho `nutev` fica disponível além de `python -m nutev.cli`
 
+## Nota operacional
+
+- O caminho canônico para coleta reprodutível do NutEV/NutMEV é o `nutev` CLI e os workflows GitHub Actions do repositório.
+- O frontend web e o `docker-compose.yml` permanecem úteis como stack herdado da base `Local Deep Research`, mas não substituem o pipeline principal de evidências.
+
 ## Configuração rápida
 
 1. Copie `.env.example` para `.env`.
