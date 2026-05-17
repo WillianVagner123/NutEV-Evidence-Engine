@@ -16,6 +16,7 @@ from nutev.analysis.synthesis import build_master_rows, build_questionnaire_cand
 from nutev.analysis.prisma import build_prisma_flow, export_prisma
 from nutev.download.downloader import download_records
 from nutev.extract.smart_extract import extract_document
+from nutev.export.curation import curate_outputs
 from nutev.export.metadata_tables import write_metadata_csv, write_simple_csv
 from nutev.export.rayyan import write_rayyan
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
@@ -225,7 +226,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     prisma = build_prisma_flow(master, all_manifest, extraction_manifest)
     export_prisma(prisma, settings.output_dirs["06_tables"] / "NUTEV_PRISMA_FLOW.xlsx", settings.output_dirs["07_logs"] / "prisma_flow.json")
 
+    curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
+
     write_event(emit_event(run_id, "synthesis_completed", "Synthesis completed"), settings.output_dirs["07_logs"] / "run_events.jsonl")
+    write_event(emit_event(run_id, "curation_completed", "Curated layer completed", meta_json=curation_summary), settings.output_dirs["07_logs"] / "run_events.jsonl")
     build_artifact_manifest(artifact_inputs, settings.output_dirs["07_logs"] / "artifact_manifest.csv")
     search_job.status = "completed"
     search_job.finished_at = __import__("datetime").datetime.now(__import__("datetime").timezone.utc)
@@ -237,6 +241,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "downloads_ok": total_downloads,
         "downloads_failed": total_failed,
         "ocr_docs": total_ocr,
+        "curated_unique_documents": curation_summary["unique_documents"],
     }
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(
