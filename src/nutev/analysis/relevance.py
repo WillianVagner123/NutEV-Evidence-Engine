@@ -136,6 +136,39 @@ WORKSTREAM_BONUS = {
     },
 }
 
+DIRECT_DOWNLOAD_HINTS = [
+    ".pdf",
+    "/pdf",
+    "pdfdirect",
+    "download",
+    "fulltext",
+    "full-text",
+    "epdf",
+    "viewarticle",
+]
+
+HIGH_VALUE_DOWNLOAD_TOKENS = [
+    "guideline",
+    "guidelines",
+    "consensus",
+    "statement",
+    "recommendation",
+    "systematic review",
+    "meta-analysis",
+    "umbrella review",
+    "randomized",
+    "trial",
+    "framework",
+    "questionnaire",
+    "instrument",
+    "validation",
+    "psychometric",
+]
+
+
+def _contains_any(text: str, tokens: list[str]) -> bool:
+    return any(token in text for token in tokens)
+
 
 def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     title = (record.get("title") or "").lower()
@@ -165,7 +198,7 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
         if kw in text:
             score += pts
 
-    if ".pdf" in url or "/pdf" in url or "pdfdirect" in url or "download" in url:
+    if _contains_any(url, DIRECT_DOWNLOAD_HINTS):
         score += 2
 
     record["relevance_score"] = score
@@ -179,14 +212,27 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
     source = (record.get("source") or "").lower()
 
     hard_drop = [
-        "editorial", "commentary", "letter", "case report", "retraction",
-        "pediatric", "paediatric", "child", "children", "adolescent",
-        "mouse", "mice", "rat", "animal", "in vitro", "clozapine",
+        "editorial",
+        "commentary",
+        "letter",
+        "case report",
+        "retraction",
+        "pediatric",
+        "paediatric",
+        "child",
+        "children",
+        "adolescent",
+        "mouse",
+        "mice",
+        "rat",
+        "animal",
+        "in vitro",
+        "clozapine",
     ]
-    if any(tok in title for tok in hard_drop):
+    if _contains_any(title, hard_drop):
         return False
 
-    if any(tok in url for tok in ["mostdownload.php", "/tdm/v1/articles/", "content.aspx?aid=", "book/chapter-pdf"]):
+    if _contains_any(url, ["mostdownload.php", "/tdm/v1/articles/", "content.aspx?aid=", "book/chapter-pdf"]):
         return False
 
     if source == "official":
@@ -199,4 +245,21 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
         "a3": 5,
         "artigo3_framework": 5,
     }
-    return score >= thresholds.get(workstream, 6)
+    threshold = thresholds.get(workstream, 6)
+
+    has_direct_download_hint = _contains_any(url, DIRECT_DOWNLOAD_HINTS)
+    has_high_value_signal = _contains_any(title, HIGH_VALUE_DOWNLOAD_TOKENS)
+
+    if has_high_value_signal and has_direct_download_hint and score >= max(threshold - 2, 4):
+        return True
+
+    if workstream in {"a3", "artigo3_framework"} and _contains_any(
+        title,
+        ["questionnaire", "instrument", "framework", "validation", "psychometric", "scale"],
+    ):
+        return score >= max(threshold - 1, 4)
+
+    if source in {"pubmed", "europepmc"} and has_high_value_signal:
+        return score >= max(threshold - 1, 5)
+
+    return score >= threshold
