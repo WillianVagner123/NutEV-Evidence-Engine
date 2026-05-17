@@ -5,12 +5,63 @@ on:
     branches: ["**"]
   pull_request:
   workflow_dispatch:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
 
 jobs:
+  prepare:
+    if: |
+      github.event_name != 'issue_comment' ||
+      (
+        github.event.issue.pull_request != null &&
+        contains(github.event.comment.body, '/nutev-tests')
+      )
+    runs-on: ubuntu-latest
+    outputs:
+      checkout_repository: ${{ steps.resolve.outputs.checkout_repository }}
+      checkout_sha: ${{ steps.resolve.outputs.checkout_sha }}
+    steps:
+      - name: Resolve checkout target
+        id: resolve
+        uses: actions/github-script@v7
+        with:
+          script: |
+            if (context.eventName === 'issue_comment') {
+              const pullNumber = context.payload.issue.number;
+              const { data: pull } = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pullNumber,
+              });
+              core.setOutput('checkout_repository', pull.head.repo.full_name);
+              core.setOutput('checkout_sha', pull.head.sha);
+              core.notice(`Running nutev-tests for PR #${pullNumber} on ${pull.head.repo.full_name}@${pull.head.sha}`);
+              return;
+            }
+
+            if (context.eventName === 'pull_request') {
+              const pull = context.payload.pull_request;
+              core.setOutput('checkout_repository', pull.head.repo.full_name);
+              core.setOutput('checkout_sha', pull.head.sha);
+              return;
+            }
+
+            core.setOutput('checkout_repository', `${context.repo.owner}/${context.repo.repo}`);
+            core.setOutput('checkout_sha', context.sha);
+
   engine-and-contracts:
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: ${{ needs.prepare.outputs.checkout_repository }}
+          ref: ${{ needs.prepare.outputs.checkout_sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -30,9 +81,13 @@ jobs:
             nutev_tests/test_metadata_master_contract.py
 
   pipeline-phases:
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: ${{ needs.prepare.outputs.checkout_repository }}
+          ref: ${{ needs.prepare.outputs.checkout_sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -49,9 +104,13 @@ jobs:
             nutev_tests/test_qualification_phase4.py
 
   global-watch-core:
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: ${{ needs.prepare.outputs.checkout_repository }}
+          ref: ${{ needs.prepare.outputs.checkout_sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -71,9 +130,13 @@ jobs:
             nutev_tests/test_watch_export.py
 
   global-watch-io:
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: ${{ needs.prepare.outputs.checkout_repository }}
+          ref: ${{ needs.prepare.outputs.checkout_sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
