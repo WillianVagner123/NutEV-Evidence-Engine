@@ -8,6 +8,17 @@ A documentação operacional foi consolidada no `README.md` principal.
 - Instalação editável recomendada: `pip install -e .`
 - Após instalar, o atalho `nutev` fica disponível além de `python -m nutev.cli`
 
+## Configuração rápida
+
+1. Copie `.env.example` para `.env`.
+2. Preencha apenas as chaves que você realmente vai usar.
+3. Para debug offline/local, deixe `NUTEV_DISABLE_NETWORK=1` quando quiser garantir que nenhum provider externo seja chamado.
+
+Variáveis comuns:
+- `OPENAI_API_KEY`: opcional; se ausente, o pipeline pode registrar `llm_disabled` sem quebrar.
+- `BRAVE_API_KEY`, `SERPAPI_API_KEY`, `GOOGLE_API_KEY`, `GOOGLE_CSE_ID`: opcionais; habilitam providers externos quando usados.
+- `NUTEV_DIGEST_WEBHOOK_URL` e `NUTEV_NOTIFY_WEBHOOK`: opcionais; habilitam envio de resumo para webhook.
+
 ## Arquitetura canônica NutMEV
 
 A Fase 0 introduz uma camada central para robustez e reprodutibilidade:
