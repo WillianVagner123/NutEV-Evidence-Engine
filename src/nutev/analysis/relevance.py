@@ -43,6 +43,11 @@ POSITIVE_TITLE_RULES = {
     "vegan": 3,
     "keto": 3,
     "low-carb": 3,
+    "mafld": 4,
+    "metabolic dysfunction-associated fatty liver disease": 5,
+    "metabolic dysfunction-associated steatotic liver disease": 5,
+    "therapeutic lifestyle changes": 4,
+    "intensive lifestyle intervention": 4,
 }
 
 NEGATIVE_TITLE_RULES = {
@@ -93,7 +98,11 @@ WORKSTREAM_BONUS = {
         "cardiovascular": 4,
         "metabolic syndrome": 4,
         "masld": 4,
+        "mafld": 4,
         "nafld": 4,
+        "metabolic dysfunction-associated fatty liver disease": 5,
+        "metabolic dysfunction-associated steatotic liver disease": 5,
+        "therapeutic lifestyle changes": 4,
         "hba1c": 3,
         "blood pressure": 3,
         "ldl": 3,
@@ -113,6 +122,11 @@ WORKSTREAM_BONUS = {
         "low-carb": 4,
         "food literacy": 3,
         "culinary": 3,
+        "therapeutic lifestyle changes": 4,
+        "intensive lifestyle intervention": 4,
+        "lifestyle intervention": 4,
+        "mafld": 3,
+        "masld": 3,
     },
     "a3": {
         "framework": 6,
