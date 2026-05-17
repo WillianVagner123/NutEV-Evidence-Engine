@@ -70,6 +70,8 @@ PRISMA_COLUMNS = [
 
 PRISMA_NOTE_COLUMNS = ["nota"]
 QA_SUMMARY_COLUMNS = ["metric", "value"]
+DUPLICATE_SUMMARY_COLUMNS = ["document_key_type", "duplicate_documents", "duplicate_rows"]
+MISSING_BY_WORKSTREAM_COLUMNS = ["workstream", "missing_title", "missing_url", "missing_year", "missing_evidence_type"]
 
 _PRIORITY_TERMS = [
     "obesity",
@@ -332,6 +334,32 @@ def _build_duplicate_rows(curated_rows: list[dict]) -> pd.DataFrame:
     return pd.DataFrame(duplicates, columns=["document_key", "document_key_type", "document_id", "title", "workstream", "occurrences"])
 
 
+def _build_duplicate_summary(curated_rows: list[dict]) -> pd.DataFrame:
+    grouped: dict[str, dict[str, int]] = {}
+    key_counts: dict[str, int] = {}
+    key_types: dict[str, str] = {}
+    for row in curated_rows:
+        key = row["document_key"]
+        key_counts[key] = key_counts.get(key, 0) + 1
+        key_types[key] = row["document_key_type"]
+    for key, count in key_counts.items():
+        if count <= 1:
+            continue
+        key_type = key_types[key]
+        bucket = grouped.setdefault(key_type, {"duplicate_documents": 0, "duplicate_rows": 0})
+        bucket["duplicate_documents"] += 1
+        bucket["duplicate_rows"] += count - 1
+    rows = [
+        {
+            "document_key_type": key_type,
+            "duplicate_documents": values["duplicate_documents"],
+            "duplicate_rows": values["duplicate_rows"],
+        }
+        for key_type, values in sorted(grouped.items())
+    ]
+    return pd.DataFrame(rows, columns=DUPLICATE_SUMMARY_COLUMNS)
+
+
 def _build_missing_canonical_rows(curated_rows: list[dict]) -> pd.DataFrame:
     rows = []
     for row in curated_rows:
@@ -350,10 +378,36 @@ def _build_missing_canonical_rows(curated_rows: list[dict]) -> pd.DataFrame:
                     "document_key": row.get("document_key", ""),
                     "document_id": row.get("document_id", ""),
                     "title": row.get("title", ""),
+                    "workstream": row.get("workstream", ""),
                     "missing_fields": "; ".join(missing),
                 }
             )
-    return pd.DataFrame(rows, columns=["document_key", "document_id", "title", "missing_fields"])
+    return pd.DataFrame(rows, columns=["document_key", "document_id", "title", "workstream", "missing_fields"])
+
+
+def _build_missing_by_workstream(curated_rows: list[dict]) -> pd.DataFrame:
+    grouped: dict[str, dict[str, int]] = {}
+    for row in curated_rows:
+        workstream = _as_text(row.get("workstream")) or "unassigned"
+        bucket = grouped.setdefault(
+            workstream,
+            {
+                "missing_title": 0,
+                "missing_url": 0,
+                "missing_year": 0,
+                "missing_evidence_type": 0,
+            },
+        )
+        if not _as_text(row.get("title")):
+            bucket["missing_title"] += 1
+        if not _as_text(row.get("final_url") or row.get("original_url")):
+            bucket["missing_url"] += 1
+        if not _as_text(row.get("year")):
+            bucket["missing_year"] += 1
+        if not _as_text(row.get("evidence_type")):
+            bucket["missing_evidence_type"] += 1
+    rows = [{"workstream": workstream, **values} for workstream, values in sorted(grouped.items())]
+    return pd.DataFrame(rows, columns=MISSING_BY_WORKSTREAM_COLUMNS)
 
 
 def _build_status_counts(curated_rows: list[dict]) -> pd.DataFrame:
@@ -415,7 +469,9 @@ def curate_outputs(rows: list[dict], curated_dir: Path) -> dict[str, int]:
     workstream_map = _build_workstream_map(curated_rows)
     workstream_df = pd.DataFrame(workstream_map, columns=WORKSTREAM_MAP_COLUMNS)
     duplicate_df = _build_duplicate_rows(curated_rows)
+    duplicate_summary_df = _build_duplicate_summary(curated_rows)
     missing_df = _build_missing_canonical_rows(curated_rows)
+    missing_by_workstream_df = _build_missing_by_workstream(curated_rows)
     status_df = _build_status_counts(curated_rows)
     workstream_counts_df = _build_workstream_counts(curated_rows)
     qa_summary_df = _build_qa_summary(curated_rows, unique_rows, workstream_map)
@@ -440,7 +496,9 @@ def curate_outputs(rows: list[dict], curated_dir: Path) -> dict[str, int]:
     with pd.ExcelWriter(curated_dir / "NUTEV_QA_REPORT.xlsx") as writer:
         write_excel_sheet(writer, qa_summary_df, "summary")
         write_excel_sheet(writer, duplicate_df, "duplicate_keys")
+        write_excel_sheet(writer, duplicate_summary_df, "duplicate_summary")
         write_excel_sheet(writer, missing_df, "missing_canonical")
+        write_excel_sheet(writer, missing_by_workstream_df, "missing_by_workstream")
         write_excel_sheet(writer, status_df, "status_counts")
         write_excel_sheet(writer, workstream_counts_df, "workstream_counts")
 
