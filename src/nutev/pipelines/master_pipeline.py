@@ -28,7 +28,11 @@ from nutev.engine.job import (
 from nutev.export.curation import curate_outputs
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
-from nutev.export.metadata_tables import write_metadata_csv, write_simple_csv
+from nutev.export.metadata_tables import (
+    write_article_data_csv,
+    write_metadata_csv,
+    write_simple_csv,
+)
 from nutev.export.methods_writer import write_methods_docs
 from nutev.export.qualification_writer import write_qualification_outputs
 from nutev.export.rayyan import write_rayyan
@@ -73,20 +77,50 @@ def _provider_map():
     }
 
 
-def _dedup_rows(rows: list[dict]) -> list[dict]:
-    seen = set()
-    out = []
-    for r in rows:
-        key = (
-            (r.get("source") or "").lower(),
-            (r.get("title") or "").strip().lower(),
-            (r.get("url") or "").strip().lower(),
-        )
-        if key in seen:
+def _canonical_article_key(row: dict) -> tuple[str, str]:
+    for field in ["doi", "pmid", "pmcid"]:
+        value = str(row.get(field) or "").strip().lower()
+        if value:
+            return field, value
+    title = str(row.get("title") or "").strip().lower()
+    year = str(row.get("year") or "").strip()
+    if title:
+        return "title_year", f"{title}|{year}"
+    return "url", str(row.get("url") or "").strip().lower()
+
+
+def _merge_article_rows(existing: dict, incoming: dict) -> dict:
+    merged = dict(existing)
+    for key, value in incoming.items():
+        if value in (None, "", [], {}):
             continue
-        seen.add(key)
-        out.append(r)
-    return out
+        if not merged.get(key):
+            merged[key] = value
+    # Keep the stronger URL for capture. PMC and direct full-text URLs tend to
+    # produce better artifacts than DOI landing pages.
+    existing_url = str(merged.get("url") or "")
+    incoming_url = str(incoming.get("url") or "")
+    if incoming_url and (
+        not existing_url
+        or "pmc.ncbi.nlm.nih.gov" in incoming_url
+        or incoming_url.lower().endswith(".pdf")
+    ):
+        merged["url"] = incoming_url
+    merged["source"] = merged.get("source") or incoming.get("source")
+    return merged
+
+
+def _dedup_rows(rows: list[dict]) -> list[dict]:
+    by_key: dict[tuple[str, str], dict] = {}
+    order: list[tuple[str, str]] = []
+    for r in rows:
+        key = _canonical_article_key(r)
+        if key not in by_key:
+            by_key[key] = r
+            order.append(key)
+        else:
+            by_key[key] = _merge_article_rows(by_key[key], r)
+    return [by_key[key] for key in order]
 
 
 def _safe_provider_call(provider: str, fn, q: str, ws: str, logger) -> list[dict]:
@@ -266,7 +300,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             artifact_inputs.append(
                 {
                     "document_id": m["document_id"],
-                    "artifact_type": "pdf",
+                    "artifact_type": "pdf" if m.get("ext") == "pdf" else m.get("ext", "artifact"),
                     "path": m.get("path", ""),
                     "source_stage": "download",
                     "status": "ok",
@@ -306,14 +340,23 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             if isinstance(m.get("resolved_url"), str):
                 ext_by_url[m["resolved_url"]] = e
 
+        failed_by_url: dict[str, dict] = {}
+        for f in failed:
+            if isinstance(f.get("url"), str):
+                failed_by_url[f["url"]] = f
+            if isinstance(f.get("resolved_url"), str):
+                failed_by_url[f["resolved_url"]] = f
+
         for r in rows:
             url_key = r.get("url")
             if not isinstance(url_key, str):
                 url_key = ""
             e = ext_by_url.get(url_key, {})
+            f = failed_by_url.get(url_key, {})
             r["file_path"] = e.get("file", "")
             r["ocr_status"] = "used" if e.get("used_ocr") else "not_used"
             r["extraction_status"] = e.get("extraction_status", "missing")
+            r["failure_reason"] = f.get("reason", "")
             if e.get("text_path"):
                 r["extracted_text"] = Path(e["text_path"]).read_text(
                     encoding="utf-8",
@@ -342,6 +385,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         all_rows += rows
 
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
+    write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")
     write_simple_csv(
         extraction_manifest,
