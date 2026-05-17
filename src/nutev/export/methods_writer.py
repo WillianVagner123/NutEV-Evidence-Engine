@@ -1,11 +1,90 @@
 from __future__ import annotations
+
+import json
 from pathlib import Path
+
 from nutev.utils import write_text
 
-def _method_doc(workstream: str) -> str:
-    return f"""# NUTEV METHODS - {workstream.upper()}\n\n## objetivo\nExecutar captura local de evidências para {workstream}.\n\n## fontes consultadas\nOpenAlex, Europe PMC, PubMed e fontes oficiais do manifest.\n\n## lógica de querypacks\nQueries derivadas de config/keyword_taxonomy.json por workstream.\n\n## critérios de captura\nResultados dos providers + manifest oficial.\n\n## critérios de download\nFiltro por tipo/extensão e relevância de URL com deduplicação por URL/conteúdo.\n\n## lógica de OCR\nPDF: texto nativo primeiro; sem texto, OCR por página. Imagens: OCR direto.\n\n## regras de scoring\nScoring por keyword/source/workstream via config/scoring_rules.json.\n\n## análise por domínios\nRegras domain_rules_{workstream}.json quando aplicável.\n\n## outputs gerados\nTabelas 02_metadata, 05_extraction, 06_tables e logs 07_logs.\n\n## limitações reais\nDependência de disponibilidade de APIs e Tesseract/poppler local para OCR robusto.\n"""
 
-def write_methods_docs(docs_dir: Path) -> None:
-    for ws in ["busca1","busca2a","busca2b","a3"]:
-        write_text(docs_dir / f"NUTEV_METHODS_{ws.upper()}.md", _method_doc(ws))
-    write_text(docs_dir / "NUTEV_METHODS_MASTER.md", "\n\n".join(_method_doc(ws) for ws in ["busca1","busca2a","busca2b","a3"]))
+def _load_provider_querypack(logs_dir: Path) -> dict[str, dict[str, list[str]]]:
+    querypack_path = logs_dir / "provider_querypack_executed.json"
+    if not querypack_path.exists():
+        return {}
+    return json.loads(querypack_path.read_text(encoding="utf-8"))
+
+
+def _provider_section(
+    workstream: str,
+    provider_querypack: dict[str, dict[str, list[str]]],
+) -> str:
+    providers = provider_querypack.get(workstream, {})
+    if not providers:
+        return "## estratégia por base\nNão disponível para esta rodada.\n"
+
+    lines = ["## estratégia por base"]
+    for provider, queries in providers.items():
+        lines.append(f"### {provider}")
+        if not queries:
+            lines.append("Nenhuma query executada.")
+            continue
+        for idx, query in enumerate(queries[:5], start=1):
+            lines.append(f"{idx}. {query}")
+    return "\n".join(lines) + "\n"
+
+
+def _method_doc(
+    workstream: str,
+    provider_querypack: dict[str, dict[str, list[str]]],
+) -> str:
+    return f"""# NUTEV METHODS - {workstream.upper()}
+
+## objetivo
+Executar captura reprodutível de evidências para {workstream}.
+
+## fontes consultadas
+PubMed, Europe PMC, OpenAlex, Crossref e fontes oficiais do manifest.
+
+## lógica metodológica
+A estratégia é derivada de `config/keyword_taxonomy.json`, mas a execução final usa renderização específica por base para reduzir fragilidade e melhorar auditabilidade.
+
+{_provider_section(workstream, provider_querypack)}## auditoria da busca
+As queries efetivamente executadas ficam registradas em `07_logs/querypack_executed.json`, `07_logs/querypack_executed.csv`, `07_logs/provider_querypack_executed.json` e `07_logs/provider_querypack_executed.csv`.
+
+## critérios de captura
+Resultados dos providers suportados mais manifest oficial.
+
+## critérios de download
+Seleção por relevância, regras de domínio e orçamento operacional, com preservação explícita de falhas em `failed_downloads.csv`.
+
+## lógica de OCR
+PDF: texto nativo primeiro; sem texto, OCR por página. Imagens: OCR direto.
+
+## regras de scoring
+Scoring por keyword, source e workstream via `config/scoring_rules.json`.
+
+## análise por domínios
+Regras `domain_rules_{workstream}.json` quando aplicável.
+
+## outputs gerados
+Tabelas 02_metadata, 05_extraction, 06_tables, 10_curated e logs 07_logs.
+
+## limitações reais
+Ainda é uma estratégia operacional reprodutível e auditável. Para submissão de artigo, a seção de métodos deve explicitar também data da busca, critérios de inclusão/exclusão e justificativa de bases.
+"""
+
+
+def write_methods_docs(docs_dir: Path, logs_dir: Path | None = None) -> None:
+    provider_querypack = {}
+    if logs_dir is not None:
+        provider_querypack = _load_provider_querypack(logs_dir)
+
+    workstreams = ["busca1", "busca2a", "busca2b", "a3"]
+    for ws in workstreams:
+        write_text(
+            docs_dir / f"NUTEV_METHODS_{ws.upper()}.md",
+            _method_doc(ws, provider_querypack),
+        )
+    write_text(
+        docs_dir / "NUTEV_METHODS_MASTER.md",
+        "\n\n".join(_method_doc(ws, provider_querypack) for ws in workstreams),
+    )
