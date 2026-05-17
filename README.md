@@ -2,6 +2,12 @@
 
 A documentação operacional foi consolidada no `README.md` principal.
 
+## Requisitos rápidos
+
+- Python 3.12 ou superior (`pyproject.toml`: `>=3.12,<3.15`)
+- Instalação editável recomendada: `pip install -e .`
+- Após instalar, o atalho `nutev` fica disponível além de `python -m nutev.cli`
+
 ## Arquitetura canônica NutMEV
 
 A Fase 0 introduz uma camada central para robustez e reprodutibilidade:
@@ -23,6 +29,12 @@ A Fase 0 introduz uma camada central para robustez e reprodutibilidade:
 Use:
 
 ```bash
+nutev --project-root ./project_output --workstreams busca1 busca2a busca2b a3 --web-enabled
+```
+
+Alternativa equivalente:
+
+```bash
 PYTHONPATH=src python -m nutev.cli --project-root ./project_output --workstreams busca1 busca2a busca2b a3 --web-enabled
 ```
 
@@ -31,6 +43,12 @@ PYTHONPATH=src python -m nutev.cli --project-root ./project_output --workstreams
 Global Watch é vigilância contínua; workstreams (`busca1`, `busca2a`, `busca2b`, `a3`) continuam para execuções analíticas fechadas.
 
 ### Rodar local
+
+```bash
+nutev global-watch --project-root ./project_output --since-days 7 --mode quick
+```
+
+Alternativa equivalente:
 
 ```bash
 PYTHONPATH=src python -m nutev.cli global-watch --project-root ./project_output --since-days 7 --mode quick
@@ -50,7 +68,6 @@ Se ausente, o pipeline não quebra e registra `llm_disabled`.
 ### Limitações
 Falhas 403/400/404, paywall, CAPTCHA e APIs indisponíveis geram `metadata_only`/`failure_reason`, sem derrubar a execução.
 
-
 ## Webhook Dispatch
 
 Use `--notify-webhook` para habilitar envio opcional de resumo JSON para webhook.
@@ -60,12 +77,17 @@ No GitHub, configure esses valores em **Secrets**.
 Exemplo local:
 
 ```bash
+nutev global-watch --project-root ./project_output --since-days 7 --mode thesis --web-enabled --capture-enabled --notify-webhook
+```
+
+Alternativa equivalente:
+
+```bash
 PYTHONPATH=src python -m nutev.cli global-watch --project-root ./project_output --since-days 7 --mode thesis --web-enabled --capture-enabled --notify-webhook
 ```
 
 O payload envia resumo + links (não envia PDFs).
 Se webhook ausente/falhar, o pipeline não quebra e registra evento.
-
 
 ### Capture layer (hardening)
 - `--capture-enabled`: tenta capturar PDF/HTML público para top itens.
