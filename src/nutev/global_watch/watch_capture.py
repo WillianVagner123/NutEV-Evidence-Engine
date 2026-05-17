@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import os
@@ -94,6 +94,17 @@ def _emit(settings, run_id: str, event_name: str, message: str, item: dict, **kw
     )
 
 
+def _is_synthetic_fallback(item: dict) -> bool:
+    candidate_urls = [
+        str(item.get("url") or ""),
+        str(item.get("final_url") or ""),
+        str(item.get("original_url") or ""),
+    ]
+    return item.get("source_provider") == "watch_seed" or any(
+        "fallback.local" in url for url in candidate_urls
+    )
+
+
 def capture_single_watch_item(item: dict, settings, logger, run_id: str) -> dict:
     captures_dir = settings.project_root / "09_global_watch" / "captures"
     captures_dir.mkdir(parents=True, exist_ok=True)
@@ -101,21 +112,23 @@ def capture_single_watch_item(item: dict, settings, logger, run_id: str) -> dict
     _emit(settings, run_id, "capture_item_started", "Capture item started", item)
 
     try:
-        raw_url = str(item.get("url") or item.get("final_url") or "")
+        if _is_synthetic_fallback(item):
+            out = save_metadata_only(item, "synthetic_fallback_no_capture", captures_dir)
+            _emit(settings, run_id, "metadata_only_saved", "Metadata only saved", item)
+            return out
 
-        # Modo offline: não tentar resolver/capturar o item artificial de fallback.
-        if (
-            os.environ.get("NUTEV_DISABLE_NETWORK") == "1"
-            and (
-                item.get("source_provider") == "watch_seed"
-                or "fallback.local" in raw_url
-            )
-        ):
-            out = save_metadata_only(item, "offline_fallback_no_capture", captures_dir)
+        if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+            out = save_metadata_only(item, "network_disabled", captures_dir)
             _emit(settings, run_id, "metadata_only_saved", "Metadata only saved", item)
             return out
 
         item = resolve_watch_item_url(item)
+
+        if _is_synthetic_fallback(item):
+            out = save_metadata_only(item, "synthetic_fallback_no_capture", captures_dir)
+            _emit(settings, run_id, "metadata_only_saved", "Metadata only saved", item)
+            return out
+
         final_url = item.get("final_url")
 
         if not final_url:
