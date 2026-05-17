@@ -103,13 +103,14 @@ mcp = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/LearningCircuit/local-deep-research"
-"Bug Tracker" = "https://github.com/LearningCircuit/local-deep-research/issues"
+"Homepage" = "https://github.com/WillianVagner123/NUT-MEV_NEW"
+"Bug Tracker" = "https://github.com/WillianVagner123/NUT-MEV_NEW/issues"
 
 [project.scripts]
 ldr = "local_deep_research.main:main"
 ldr-web = "local_deep_research.web.app:main"
 ldr-mcp = "local_deep_research.mcp:run_server"
+nutev = "nutev.cli:main"
 
 # Note: build backend is pdm.backend (see [build-system]). These
 # [tool.setuptools] sections are kept for compatibility with editable
