@@ -4,18 +4,89 @@ on:
   push:
     branches: ["**"]
   pull_request:
+  workflow_dispatch:
 
 jobs:
-  tests:
+  engine-and-contracts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install minimal deps
+      - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install pytest requests pandas pypdf beautifulsoup4
-      - name: Run isolated NutEV tests
-        run: PYTHONPATH=src python -m pytest -q nutev_tests -p no:timeout
+          pip install -e .
+          pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+      - name: Run engine and contract tests
+        run: |
+          PYTHONPATH=src python -m pytest -q \
+            nutev_tests/test_engine_ids.py \
+            nutev_tests/test_engine_models.py \
+            nutev_tests/test_run_events.py \
+            nutev_tests/test_search_job_snapshot.py \
+            nutev_tests/test_artifact_manifest.py \
+            nutev_tests/test_metadata_master_contract.py
+
+  pipeline-phases:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and test deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+      - name: Run pipeline phase tests
+        run: |
+          PYTHONPATH=src python -m pytest -q \
+            nutev_tests/test_nutev_phase2.py \
+            nutev_tests/test_synthesis_phase3.py \
+            nutev_tests/test_qualification_phase4.py
+
+  global-watch-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and test deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+      - name: Run global watch core tests
+        run: |
+          PYTHONPATH=src python -m pytest -q \
+            nutev_tests/test_global_watch_query_builder.py \
+            nutev_tests/test_global_watch_scoring.py \
+            nutev_tests/test_watch_scoring.py \
+            nutev_tests/test_watch_diff.py \
+            nutev_tests/test_watch_digest.py \
+            nutev_tests/test_watch_export.py
+
+  global-watch-io:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project and test deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+      - name: Run global watch IO and integration tests
+        run: |
+          PYTHONPATH=src python -m pytest -q \
+            nutev_tests/test_watch_capture.py \
+            nutev_tests/test_watch_webhook.py \
+            nutev_tests/test_watch_pipeline_real.py \
+            nutev_tests/test_llm_disabled.py \
+            nutev_tests/test_github_action_config.py
