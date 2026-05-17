@@ -100,7 +100,9 @@ def _build_context_terms(category: str) -> list[str]:
 
 def _priority_for_term(term: str) -> int:
     lowered = term.lower()
-    return 1 if any(marker in lowered for marker in HIGH_PRIORITY_MARKERS) else 2
+    if any(marker in lowered for marker in HIGH_PRIORITY_MARKERS):
+        return 1
+    return 2
 
 
 def build_watch_queries(
