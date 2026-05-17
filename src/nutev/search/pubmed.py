@@ -8,25 +8,43 @@ from typing import Any
 import requests
 
 DOI_RE = re.compile(r"(10\.\d{4,9}/[-._;()/:A-Z0-9]+)", re.I)
+DOI_URL_RE = re.compile(r"https?://(?:dx\.)?doi\.org/", re.I)
+PMCID_RE = re.compile(r"\bPMC\s*([0-9]+)\b", re.I)
 
 
-def _clean_doi(value: str | None) -> str | None:
+def _clean_doi(value: Any | None) -> str | None:
     if not value:
         return None
     raw = str(value).strip()
+    raw = DOI_URL_RE.sub(" ", raw)
+    raw = raw.replace("doi.org/", " ")
     raw = raw.replace("DOI:", " ").replace("doi:", " ")
     match = DOI_RE.search(raw)
     if not match:
         return None
-    return match.group(1).rstrip(" .;,)")
+    return match.group(1).rstrip(" .;,)]}")
 
 
-def _pick_article_id(item: dict[str, Any], id_type: str) -> str | None:
-    wanted = id_type.lower()
+def _clean_pmcid(value: Any | None) -> str | None:
+    if not value:
+        return None
+    raw = str(value).strip()
+    if not raw:
+        return None
+    match = PMCID_RE.search(raw)
+    if match:
+        return f"PMC{match.group(1)}"
+    if raw.isdigit():
+        return f"PMC{raw}"
+    return raw
+
+
+def _pick_article_id(item: dict[str, Any], *id_types: str) -> str | None:
+    wanted = {id_type.lower() for id_type in id_types}
     for article_id in item.get("articleids", []) or []:
         if not isinstance(article_id, dict):
             continue
-        if str(article_id.get("idtype", "")).lower() == wanted:
+        if str(article_id.get("idtype", "")).lower() in wanted:
             value = article_id.get("value")
             if value:
                 return str(value).strip()
@@ -40,6 +58,10 @@ def _extract_doi(item: dict[str, Any]) -> str | None:
     return _clean_doi(_pick_article_id(item, "doi")) or _clean_doi(
         item.get("elocationid")
     )
+
+
+def _extract_pmcid(item: dict[str, Any]) -> str | None:
+    return _clean_pmcid(_pick_article_id(item, "pmc", "pmcid"))
 
 
 def _extract_year(pubdate: str | None, epubdate: str | None = None) -> str:
@@ -84,7 +106,12 @@ def search_pubmed(query: str, retmax: int = 18) -> list[dict]:
         try:
             esearch = requests.get(
                 "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
-                params={"db": "pubmed", "retmode": "json", "term": query, "retmax": retmax},
+                params={
+                    "db": "pubmed",
+                    "retmode": "json",
+                    "term": query,
+                    "retmax": retmax,
+                },
                 timeout=45,
             )
             esearch.raise_for_status()
@@ -94,7 +121,11 @@ def search_pubmed(query: str, retmax: int = 18) -> list[dict]:
 
             summary = requests.get(
                 "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
-                params={"db": "pubmed", "retmode": "json", "id": ",".join(ids)},
+                params={
+                    "db": "pubmed",
+                    "retmode": "json",
+                    "id": ",".join(ids),
+                },
                 timeout=45,
             )
             summary.raise_for_status()
@@ -104,7 +135,7 @@ def search_pubmed(query: str, retmax: int = 18) -> list[dict]:
             for pmid in ids:
                 item = payload.get(pmid, {})
                 doi = _extract_doi(item)
-                pmcid = _pick_article_id(item, "pmc")
+                pmcid = _extract_pmcid(item)
                 out.append(
                     {
                         "source": "pubmed",
@@ -113,9 +144,16 @@ def search_pubmed(query: str, retmax: int = 18) -> list[dict]:
                         "pmid": pmid,
                         "pmcid": pmcid or "",
                         "url": _pick_pubmed_url(pmid, doi, pmcid),
-                        "journal": item.get("fulljournalname") or item.get("source") or "",
-                        "year": _extract_year(item.get("pubdate"), item.get("epubdate")),
-                        "publication_date": item.get("pubdate") or item.get("epubdate") or "",
+                        "journal": item.get("fulljournalname")
+                        or item.get("source")
+                        or "",
+                        "year": _extract_year(
+                            item.get("pubdate"),
+                            item.get("epubdate"),
+                        ),
+                        "publication_date": item.get("pubdate")
+                        or item.get("epubdate")
+                        or "",
                         "article_type": "; ".join(item.get("pubtype", []) or []),
                         "authors": _extract_authors(item),
                         "metadata_status": "pubmed_esummary",
