@@ -97,73 +97,241 @@ def _join_parts(parts: list[str]) -> str:
     return " AND ".join([p for p in parts if p])
 
 
-def _add_specific_busca1(queries, population_terms, condition_terms, nutrition_terms, behavior_terms, diet_terms):
+def _add_specific_busca1(
+    queries,
+    population_terms,
+    condition_terms,
+    nutrition_terms,
+    behavior_terms,
+    diet_terms,
+):
     guideline_terms = [
-        "food-based dietary guideline", "food based dietary guidelines", "dietary guideline",
-        "dietary guidelines", "food guide", "nutrition guideline", "guia alimentar",
-        "diretrizes alimentares", "guia de alimentação", "healthy eating recommendation"
+        "food-based dietary guideline",
+        "food based dietary guidelines",
+        "dietary guideline",
+        "dietary guidelines",
+        "food guide",
+        "nutrition guideline",
+        "guia alimentar",
+        "diretrizes alimentares",
+        "guia de alimentação",
+        "healthy eating recommendation",
     ]
     grey_terms = [
-        "technical report", "policy brief", "white paper", "manual", "framework",
-        "report", "toolkit", "relatório técnico", "nota técnica", "manual", "relatório"
+        "technical report",
+        "policy brief",
+        "white paper",
+        "manual",
+        "framework",
+        "report",
+        "toolkit",
+        "relatório técnico",
+        "nota técnica",
+        "manual",
+        "relatório",
     ]
-    queries.append(_join_parts([or_block(population_terms, 5), or_block(condition_terms, 6), or_block(guideline_terms, 6)]))
-    queries.append(_join_parts([or_block(condition_terms, 6), or_block(grey_terms, 6), or_block(nutrition_terms, 6)]))
-    queries.append(_join_parts([or_block(condition_terms, 6), or_block(diet_terms, 6), or_block(behavior_terms, 6)]))
+    queries.append(
+        _join_parts(
+            [
+                or_block(population_terms, 5),
+                or_block(condition_terms, 6),
+                or_block(guideline_terms, 6),
+            ]
+        )
+    )
+    queries.append(
+        _join_parts(
+            [
+                or_block(condition_terms, 6),
+                or_block(grey_terms, 6),
+                or_block(nutrition_terms, 6),
+            ]
+        )
+    )
+    queries.append(
+        _join_parts(
+            [
+                or_block(condition_terms, 6),
+                or_block(diet_terms, 6),
+                or_block(behavior_terms, 6),
+            ]
+        )
+    )
 
 
-def _add_specific_busca2a(queries, condition_terms, clinical_terms, outcome_terms, diet_terms):
+def _add_specific_busca2a(
+    queries,
+    condition_terms,
+    clinical_terms,
+    outcome_terms,
+    diet_terms,
+):
     guideline_terms = [
-        "guideline", "guidelines", "clinical practice guideline", "practice guideline",
-        "guidance", "scientific statement", "statement", "consensus", "position statement",
-        "diretriz", "diretrizes", "consenso", "declaração científica", "recomendação"
+        "guideline",
+        "guidelines",
+        "clinical practice guideline",
+        "practice guideline",
+        "guidance",
+        "scientific statement",
+        "statement",
+        "consensus",
+        "position statement",
+        "diretriz",
+        "diretrizes",
+        "consenso",
+        "declaração científica",
+        "recomendação",
     ]
     clinical_chunks = chunk_terms(condition_terms + clinical_terms, 4)
     outcome_chunks = chunk_terms(outcome_terms, 5)
 
     for c in clinical_chunks[:10]:
-        queries.append(_join_parts([or_block(c), or_block(guideline_terms, 6), or_block(outcome_terms, 6)]))
+        queries.append(
+            _join_parts(
+                [or_block(c), or_block(guideline_terms, 6), or_block(outcome_terms, 6)]
+            )
+        )
 
     for o in outcome_chunks[:8]:
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(o), or_block(guideline_terms, 6)]))
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(o),
+                    or_block(guideline_terms, 6),
+                ]
+            )
+        )
 
     for d in chunk_terms(diet_terms, 4)[:6]:
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(d), or_block(guideline_terms, 6)]))
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(d),
+                    or_block(guideline_terms, 6),
+                ]
+            )
+        )
 
 
-def _add_specific_busca2b(queries, condition_terms, clinical_terms, outcome_terms, behavior_terms, diet_terms):
+def _add_specific_busca2b(
+    queries,
+    condition_terms,
+    clinical_terms,
+    outcome_terms,
+    behavior_terms,
+    diet_terms,
+):
     trial_terms = [
-        "randomized controlled trial", "controlled trial", "pragmatic trial",
-        "pilot study", "feasibility study", "ensaio clínico randomizado",
-        "ensaio controlado", "estudo piloto", "estudo de viabilidade"
+        "randomized controlled trial",
+        "controlled trial",
+        "pragmatic trial",
+        "pilot study",
+        "feasibility study",
+        "ensaio clínico randomizado",
+        "ensaio controlado",
+        "estudo piloto",
+        "estudo de viabilidade",
     ]
     review_terms = [
-        "systematic review", "scoping review", "integrative review", "umbrella review",
-        "meta-analysis", "revisão sistemática", "revisão de escopo", "revisão integrativa", "metanálise"
+        "systematic review",
+        "scoping review",
+        "integrative review",
+        "umbrella review",
+        "meta-analysis",
+        "revisão sistemática",
+        "revisão de escopo",
+        "revisão integrativa",
+        "metanálise",
     ]
 
     for d in chunk_terms(diet_terms, 4)[:12]:
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(d), or_block(trial_terms, 6), or_block(outcome_terms, 5)]))
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(d), or_block(review_terms, 6), or_block(outcome_terms, 5)]))
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(d),
+                    or_block(trial_terms, 6),
+                    or_block(outcome_terms, 5),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(d),
+                    or_block(review_terms, 6),
+                    or_block(outcome_terms, 5),
+                ]
+            )
+        )
 
     for b in chunk_terms(behavior_terms, 5)[:8]:
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(b), or_block(trial_terms, 6), or_block(outcome_terms, 5)]))
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(b),
+                    or_block(trial_terms, 6),
+                    or_block(outcome_terms, 5),
+                ]
+            )
+        )
 
 
-def _add_specific_a3(queries, condition_terms, clinical_terms, behavior_terms, diet_terms):
+def _add_specific_a3(
+    queries,
+    condition_terms,
+    clinical_terms,
+    behavior_terms,
+    diet_terms,
+):
     instrument_terms = [
-        "framework", "questionnaire", "instrument", "index", "food literacy instrument",
-        "culinary skills instrument", "commensality", "questionário", "índice"
+        "framework",
+        "questionnaire",
+        "instrument",
+        "index",
+        "food literacy instrument",
+        "culinary skills instrument",
+        "commensality",
+        "questionário",
+        "índice",
     ]
     competence_terms = [
-        "food literacy", "culinary medicine", "cooking skills", "meal planning",
-        "shared meals", "commensality", "behavior change", "self-monitoring",
-        "literacia alimentar", "habilidades culinárias", "planejamento de refeições"
+        "food literacy",
+        "culinary medicine",
+        "cooking skills",
+        "meal planning",
+        "shared meals",
+        "commensality",
+        "behavior change",
+        "self-monitoring",
+        "literacia alimentar",
+        "habilidades culinárias",
+        "planejamento de refeições",
     ]
 
     queries.append(_join_parts([or_block(instrument_terms, 8), or_block(competence_terms, 8)]))
-    queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(instrument_terms, 8), or_block(behavior_terms, 6)]))
-    queries.append(_join_parts([or_block(diet_terms, 6), or_block(instrument_terms, 8), or_block(behavior_terms, 6)]))
+    queries.append(
+        _join_parts(
+            [
+                or_block(condition_terms + clinical_terms, 8),
+                or_block(instrument_terms, 8),
+                or_block(behavior_terms, 6),
+            ]
+        )
+    )
+    queries.append(
+        _join_parts(
+            [
+                or_block(diet_terms, 6),
+                or_block(instrument_terms, 8),
+                or_block(behavior_terms, 6),
+            ]
+        )
+    )
 
 
 def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
@@ -182,8 +350,14 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
     population_terms = uniq(ws.get("population_terms", []))
     condition_terms = uniq(ws.get("condition_terms", []))
     clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
-    priority_outcomes = get_named_terms(outcomes_cfg, ws.get("priority_outcomes", []))
-    doc_type_terms = get_named_terms(global_cfg.get("document_types", {}), ws.get("document_type_keys", []))
+    priority_outcomes = get_named_terms(
+        outcomes_cfg,
+        ws.get("priority_outcomes", []),
+    )
+    doc_type_terms = get_named_terms(
+        global_cfg.get("document_types", {}),
+        ws.get("document_type_keys", []),
+    )
     web_hints = uniq(ws.get("web_query_hints", []))
     behavior_terms = get_global_block(keyword_taxonomy, "implementation_behavior")
     diet_terms = get_global_block(keyword_taxonomy, "diet_patterns")
@@ -194,43 +368,110 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
         focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
     focus_terms = uniq(focus_terms)
 
-    title = ws.get("title", "")
-    research_question = ws.get("research_question", "")
-
     queries: list[str] = []
 
-    if title:
-        queries.append(title)
-    if research_question:
-        queries.append(research_question)
-
-    queries.append(_join_parts([or_block(population_terms, 6), or_block(condition_terms + clinical_terms, 8), or_block(doc_type_terms, 6)]))
-    queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(priority_outcomes, 6), or_block(doc_type_terms, 6)]))
-    queries.append(_join_parts([or_block(web_hints, 5), or_block(condition_terms + clinical_terms, 8)]))
+    queries.append(
+        _join_parts(
+            [
+                or_block(population_terms, 6),
+                or_block(condition_terms + clinical_terms, 8),
+                or_block(doc_type_terms, 6),
+            ]
+        )
+    )
+    queries.append(
+        _join_parts(
+            [
+                or_block(condition_terms + clinical_terms, 8),
+                or_block(priority_outcomes, 6),
+                or_block(doc_type_terms, 6),
+            ]
+        )
+    )
+    queries.append(
+        _join_parts([or_block(web_hints, 5), or_block(condition_terms + clinical_terms, 8)])
+    )
 
     for chunk in chunk_terms(focus_terms, 5)[:16]:
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(chunk, 5), or_block(doc_type_terms, 6)]))
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(chunk, 5),
+                    or_block(doc_type_terms, 6),
+                ]
+            )
+        )
 
     for outcome_chunk in chunk_terms(priority_outcomes, 5)[:8]:
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(outcome_chunk, 5)]))
+        queries.append(
+            _join_parts(
+                [or_block(condition_terms + clinical_terms, 8), or_block(outcome_chunk, 5)]
+            )
+        )
 
     for behavior_chunk in chunk_terms(behavior_terms, 5)[:8]:
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(priority_outcomes, 5), or_block(behavior_chunk, 5)]))
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(priority_outcomes, 5),
+                    or_block(behavior_chunk, 5),
+                ]
+            )
+        )
 
     for diet_chunk in chunk_terms(diet_terms, 4)[:10]:
-        queries.append(_join_parts([or_block(condition_terms + clinical_terms, 8), or_block(diet_chunk, 4), or_block(priority_outcomes, 5)]))
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(diet_chunk, 4),
+                    or_block(priority_outcomes, 5),
+                ]
+            )
+        )
 
     if ws_key == "busca1":
-        _add_specific_busca1(queries, population_terms, condition_terms, nutrition_terms, behavior_terms, diet_terms)
+        _add_specific_busca1(
+            queries,
+            population_terms,
+            condition_terms,
+            nutrition_terms,
+            behavior_terms,
+            diet_terms,
+        )
     elif ws_key == "busca2a":
-        _add_specific_busca2a(queries, condition_terms, clinical_terms, priority_outcomes, diet_terms)
+        _add_specific_busca2a(
+            queries,
+            condition_terms,
+            clinical_terms,
+            priority_outcomes,
+            diet_terms,
+        )
     elif ws_key == "busca2b":
-        _add_specific_busca2b(queries, condition_terms, clinical_terms, priority_outcomes, behavior_terms, diet_terms)
+        _add_specific_busca2b(
+            queries,
+            condition_terms,
+            clinical_terms,
+            priority_outcomes,
+            behavior_terms,
+            diet_terms,
+        )
     elif ws_key == "artigo3_framework":
-        _add_specific_a3(queries, condition_terms, clinical_terms, behavior_terms, diet_terms)
+        _add_specific_a3(
+            queries,
+            condition_terms,
+            clinical_terms,
+            behavior_terms,
+            diet_terms,
+        )
 
     return uniq([q for q in queries if q])
 
 
-def build_querypack(keyword_taxonomy: dict, workstreams: Iterable[str]) -> dict[str, list[str]]:
+def build_querypack(
+    keyword_taxonomy: dict,
+    workstreams: Iterable[str],
+) -> dict[str, list[str]]:
     return {ws: build_queries(keyword_taxonomy, ws) for ws in workstreams}
