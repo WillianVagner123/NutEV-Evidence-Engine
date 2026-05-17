@@ -5,7 +5,6 @@ from pathlib import Path
 
 from nutev.querypacks.builders import (
     canonical_workstream,
-    chunk_terms,
     get_global_block,
     get_named_terms,
     uniq,
