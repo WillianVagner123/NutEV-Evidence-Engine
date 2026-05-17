@@ -1,11 +1,17 @@
 from __future__ import annotations
 
 from pathlib import Path
-from nutev.extract.pdf_text import extract_pdf_text, ocr_scanned_pdf, is_probably_pdf_file
+
 from nutev.extract.docx_text import extract_docx_text
-from nutev.extract.spreadsheet_text import extract_csv_text, extract_sheet_text
 from nutev.extract.html_text import extract_html_text
 from nutev.extract.image_ocr import ocr_image
+from nutev.extract.pdf_text import (
+    extract_pdf_text,
+    is_probably_pdf_file,
+    ocr_scanned_pdf,
+    should_run_ocr_fallback,
+)
+from nutev.extract.spreadsheet_text import extract_csv_text, extract_sheet_text
 
 
 def _read_text_safe(path: Path) -> str:
@@ -39,22 +45,29 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
     ext = path.suffix.lower().lstrip(".")
     text = ""
     used_ocr = False
-    ocr_failed_pages = []
+    ocr_attempted = False
+    ocr_failed_pages: list[int] = []
     extraction_status = "empty"
+    failure_reason = ""
 
     if ext == "pdf":
         if is_probably_pdf_file(path):
-            text, has_native = extract_pdf_text(path)
-            if text:
-                extraction_status = "ok"
-            else:
-                ocr_text, ocr_failed_pages = ocr_scanned_pdf(path, logger)
+            text, _ = extract_pdf_text(path)
+            if should_run_ocr_fallback(text):
+                ocr_attempted = True
+                ocr_text, ocr_failed_pages, ocr_failure_reason = ocr_scanned_pdf(path, logger)
                 if ocr_text:
                     text = ocr_text
                     used_ocr = True
                     extraction_status = "ok_ocr"
+                elif text:
+                    extraction_status = "ok_native_low_confidence"
+                    failure_reason = ocr_failure_reason or "ocr_not_improved"
                 else:
-                    extraction_status = "pdf_no_text"
+                    extraction_status = "ocr_unavailable" if ocr_failure_reason == "tesseract_missing" else "pdf_no_text"
+                    failure_reason = ocr_failure_reason or "pdf_no_text"
+            else:
+                extraction_status = "ok"
         elif _looks_like_html_bytes(path):
             text = _extract_html_file(path)
             extraction_status = "fake_pdf_html"
@@ -79,13 +92,21 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
         extraction_status = "ok" if text else "empty"
 
     elif ext in {"png", "jpg", "jpeg", "tiff"}:
+        ocr_attempted = True
         try:
             text = ocr_image(path)
             used_ocr = True
             extraction_status = "ok_ocr" if text else "empty"
-        except Exception as e:
-            logger.warning("OCR falhou para %s: %s", path, e)
+            if not text:
+                failure_reason = "ocr_empty"
+        except RuntimeError as exc:
+            logger.warning("OCR indisponivel para %s: %s", path, exc)
+            extraction_status = "ocr_unavailable"
+            failure_reason = "tesseract_missing"
+        except Exception as exc:
+            logger.warning("OCR falhou para %s: %s", path, exc)
             extraction_status = "ocr_fail"
+            failure_reason = type(exc).__name__
 
     elif ext == "txt":
         text = _read_text_safe(path)
@@ -108,8 +129,10 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
         "file": str(path),
         "ext": ext,
         "used_ocr": used_ocr,
+        "ocr_attempted": ocr_attempted,
         "ocr_failed_pages": ";".join(map(str, ocr_failed_pages)),
         "text_path": str(txt_path),
         "chars": len(text or ""),
         "extraction_status": extraction_status,
+        "failure_reason": failure_reason,
     }
