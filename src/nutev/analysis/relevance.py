@@ -45,6 +45,73 @@ POSITIVE_TITLE_RULES = {
     "low-carb": 3,
 }
 
+EVIDENCE_RULES = {
+    "clinical practice guideline": 12,
+    "guideline": 10,
+    "guidelines": 10,
+    "scientific statement": 10,
+    "consensus": 9,
+    "position statement": 8,
+    "systematic review": 9,
+    "meta-analysis": 9,
+    "meta analysis": 9,
+    "umbrella review": 9,
+    "randomized controlled trial": 8,
+    "randomised controlled trial": 8,
+    "controlled trial": 7,
+    "pragmatic trial": 7,
+    "framework": 6,
+    "questionnaire": 6,
+    "instrument": 6,
+    "scale": 5,
+}
+
+CLINICAL_TARGET_RULES = {
+    "obesity": 4,
+    "overweight": 3,
+    "cardiometabolic": 5,
+    "cardiovascular": 4,
+    "metabolic syndrome": 4,
+    "diabetes": 4,
+    "type 2 diabetes": 5,
+    "hypertension": 4,
+    "dyslipidemia": 4,
+    "masld": 4,
+    "nafld": 4,
+    "obesidade": 4,
+    "risco cardiometabólico": 5,
+    "hipertensão": 4,
+    "dislipidemia": 4,
+    "esteatose hepática": 4,
+}
+
+IMPLEMENTATION_RULES = {
+    "adherence": 4,
+    "acceptability": 4,
+    "feasibility": 4,
+    "implementation": 4,
+    "implementation science": 5,
+    "barrier": 3,
+    "facilitator": 3,
+    "behavior change": 4,
+    "self-efficacy": 4,
+    "self efficacy": 4,
+    "food literacy": 5,
+    "culinary medicine": 4,
+    "commensality": 4,
+    "meal planning": 3,
+    "shared meals": 3,
+    "adesão": 4,
+    "aceitabilidade": 4,
+    "viabilidade": 4,
+    "implementação": 4,
+    "mudança de comportamento": 4,
+    "autoeficácia": 4,
+    "literacia alimentar": 5,
+    "medicina culinária": 4,
+    "comensalidade": 4,
+}
+
 NEGATIVE_TITLE_RULES = {
     "editorial": -7,
     "commentary": -6,
@@ -77,9 +144,9 @@ WORKSTREAM_BONUS = {
         "policy": 3,
         "report": 3,
         "healthy eating": 4,
-        "food literacy": 3,
-        "commensality": 3,
-        "culinary": 3,
+        "food literacy": 4,
+        "commensality": 4,
+        "culinary": 4,
         "obesity": 3,
         "lifestyle": 2,
     },
@@ -111,8 +178,8 @@ WORKSTREAM_BONUS = {
         "vegan": 4,
         "keto": 4,
         "low-carb": 4,
-        "food literacy": 3,
-        "culinary": 3,
+        "food literacy": 4,
+        "culinary": 4,
     },
     "a3": {
         "framework": 6,
@@ -137,36 +204,64 @@ WORKSTREAM_BONUS = {
 }
 
 
+def _normalize_text(value: object) -> str:
+    return str(value or "").lower()
+
+
+def _score_rules(text: str, rules: dict[str, int]) -> int:
+    return sum(points for keyword, points in rules.items() if keyword in text)
+
+
 def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
-    title = (record.get("title") or "").lower()
-    url = (record.get("url") or "").lower()
-    doi = (record.get("doi") or "").lower()
-    text = f"{title} {url} {doi}"
+    title_text = _normalize_text(record.get("title"))
+    abstract_text = _normalize_text(record.get("abstract"))
+    extracted_text = _normalize_text(record.get("extracted_text"))[:12000]
+    url_text = _normalize_text(record.get("url"))
+    doi_text = _normalize_text(record.get("doi"))
+    metadata_text = " ".join(part for part in [title_text, abstract_text, url_text, doi_text] if part)
+    rich_text = " ".join(part for part in [title_text, abstract_text, extracted_text] if part)
 
     score = 0
 
-    for kw, points in scoring_rules.get("keyword_points", {}).items():
-        if kw.lower() in text:
+    for keyword, points in scoring_rules.get("keyword_points", {}).items():
+        if keyword.lower() in metadata_text:
             score += points
+        elif keyword.lower() in extracted_text:
+            score += max(1, points // 2)
 
-    score += scoring_rules.get("source_points", {}).get(record.get("source"), 0)
+    source = _normalize_text(record.get("source"))
+    score += scoring_rules.get("source_points", {}).get(source, 0)
     score += scoring_rules.get("workstream_points", {}).get(workstream, 0)
-    score += SOURCE_BONUS.get(record.get("source", ""), 0)
+    score += SOURCE_BONUS.get(source, 0)
 
-    for kw, pts in POSITIVE_TITLE_RULES.items():
-        if kw in text:
-            score += pts
+    if source == "official":
+        try:
+            score += int(record.get("authority") or 0) * 2
+        except (TypeError, ValueError):
+            pass
 
-    for kw, pts in NEGATIVE_TITLE_RULES.items():
-        if kw in text:
-            score += pts
+    score += _score_rules(title_text, POSITIVE_TITLE_RULES)
+    score += _score_rules(title_text, EVIDENCE_RULES)
+    score += _score_rules(metadata_text, CLINICAL_TARGET_RULES)
+    score += _score_rules(rich_text, IMPLEMENTATION_RULES)
+    score += _score_rules(metadata_text, NEGATIVE_TITLE_RULES)
+    score += _score_rules(rich_text, WORKSTREAM_BONUS.get(workstream, {}))
 
-    for kw, pts in WORKSTREAM_BONUS.get(workstream, {}).items():
-        if kw in text:
-            score += pts
+    if extracted_text:
+        if _score_rules(extracted_text, EVIDENCE_RULES):
+            score += 4
+        if _score_rules(extracted_text, CLINICAL_TARGET_RULES):
+            score += 3
+        if _score_rules(extracted_text, IMPLEMENTATION_RULES):
+            score += 3
 
-    if ".pdf" in url or "/pdf" in url or "pdfdirect" in url or "download" in url:
+    if ".pdf" in url_text or "/pdf" in url_text or "pdfdirect" in url_text or "download" in url_text:
         score += 2
+
+    if not title_text.strip():
+        score -= 8
+    if not (title_text or abstract_text or extracted_text).strip():
+        score -= 10
 
     record["relevance_score"] = score
     return record
@@ -174,29 +269,45 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
 
 def keep_candidate_for_download(record: dict, workstream: str) -> bool:
     score = record.get("relevance_score", 0)
-    title = (record.get("title") or "").lower()
-    url = (record.get("url") or "").lower()
-    source = (record.get("source") or "").lower()
+    title = _normalize_text(record.get("title"))
+    abstract = _normalize_text(record.get("abstract"))
+    extracted = _normalize_text(record.get("extracted_text"))[:6000]
+    url = _normalize_text(record.get("url"))
+    source = _normalize_text(record.get("source"))
+    text = " ".join(part for part in [title, abstract, extracted] if part)
 
     hard_drop = [
-        "editorial", "commentary", "letter", "case report", "retraction",
-        "pediatric", "paediatric", "child", "children", "adolescent",
-        "mouse", "mice", "rat", "animal", "in vitro", "clozapine",
+        "editorial",
+        "commentary",
+        "letter",
+        "case report",
+        "retraction",
+        "pediatric",
+        "paediatric",
+        "child",
+        "children",
+        "adolescent",
+        "mouse",
+        "mice",
+        "rat",
+        "animal",
+        "in vitro",
+        "clozapine",
     ]
-    if any(tok in title for tok in hard_drop):
+    if any(token in text for token in hard_drop):
         return False
 
-    if any(tok in url for tok in ["mostdownload.php", "/tdm/v1/articles/", "content.aspx?aid=", "book/chapter-pdf"]):
+    if any(token in url for token in ["mostdownload.php", "/tdm/v1/articles/", "content.aspx?aid=", "book/chapter-pdf"]):
         return False
 
     if source == "official":
         return True
 
     thresholds = {
-        "busca1": 7,
-        "busca2a": 7,
-        "busca2b": 7,
-        "a3": 5,
-        "artigo3_framework": 5,
+        "busca1": 9,
+        "busca2a": 9,
+        "busca2b": 8,
+        "a3": 6,
+        "artigo3_framework": 6,
     }
-    return score >= thresholds.get(workstream, 6)
+    return score >= thresholds.get(workstream, 7)
