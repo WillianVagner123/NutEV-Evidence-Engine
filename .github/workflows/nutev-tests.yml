@@ -68,8 +68,8 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install -e .
-          pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+          pip install -r requirements/nutev-ci.txt
+          pip install --no-deps -e .
       - name: Run engine and contract tests
         run: |
           PYTHONPATH=src python -m pytest -q \
@@ -94,8 +94,8 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install -e .
-          pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+          pip install -r requirements/nutev-ci.txt
+          pip install --no-deps -e .
       - name: Run pipeline phase tests
         run: |
           PYTHONPATH=src python -m pytest -q \
@@ -117,8 +117,8 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install -e .
-          pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+          pip install -r requirements/nutev-ci.txt
+          pip install --no-deps -e .
       - name: Run global watch core tests
         run: |
           PYTHONPATH=src python -m pytest -q \
@@ -143,8 +143,8 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install -e .
-          pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+          pip install -r requirements/nutev-ci.txt
+          pip install --no-deps -e .
       - name: Run global watch IO and integration tests
         run: |
           PYTHONPATH=src python -m pytest -q \
