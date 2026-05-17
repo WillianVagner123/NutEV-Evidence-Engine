@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from urllib.parse import urlparse
 
 PRIORITY_EXT = {"pdf", "docx", "xlsx", "csv", "txt", "doc", "xls"}
@@ -26,25 +27,61 @@ BLOCKED_HOST_HINTS = {
 }
 
 RELEVANT_HTML = {
-    "guideline", "guidelines", "statement", "report", "consensus",
-    "official", "recommendation", "recommendations",
-    "nutrition", "diet", "obesity", "lifestyle",
-    "framework", "questionnaire", "food", "commensality",
-    "adherence", "trial", "review", "journal", "article"
+    "guideline",
+    "guidelines",
+    "statement",
+    "report",
+    "consensus",
+    "official",
+    "recommendation",
+    "recommendations",
+    "nutrition",
+    "diet",
+    "obesity",
+    "lifestyle",
+    "framework",
+    "questionnaire",
+    "food",
+    "commensality",
+    "adherence",
+    "trial",
+    "review",
+    "journal",
+    "article",
 }
 
 SCHOLARLY_HOST_HINTS = {
-    "springer.com", "nature.com", "cambridge.org", "frontiersin.org",
-    "karger.com", "oup.com", "scielo.br", "ahajournals.org",
-    "cureus.com", "dovepress.com", "ncbi.nlm.nih.gov",
-    "pmc.ncbi.nlm.nih.gov", "bmj.com", "gastrojournal.org",
-    "diabetesjournals.org", "biomedcentral.com", "taylorfrancis.com"
+    "springer.com",
+    "nature.com",
+    "cambridge.org",
+    "frontiersin.org",
+    "karger.com",
+    "oup.com",
+    "scielo.br",
+    "ahajournals.org",
+    "cureus.com",
+    "dovepress.com",
+    "ncbi.nlm.nih.gov",
+    "pmc.ncbi.nlm.nih.gov",
+    "bmj.com",
+    "gastrojournal.org",
+    "diabetesjournals.org",
+    "biomedcentral.com",
+    "taylorfrancis.com",
 }
 
 OFFICIAL_HOST_HINTS = {
-    "who.int", "heart.org", "diabetesjournals.org", "lifestylemedicine.org",
-    "gov", "nih.gov", "paho.org", "fao.org", "scielo.br",
-    "abccardiol.org", "unicef.org"
+    "who.int",
+    "heart.org",
+    "diabetesjournals.org",
+    "lifestylemedicine.org",
+    "gov",
+    "nih.gov",
+    "paho.org",
+    "fao.org",
+    "scielo.br",
+    "abccardiol.org",
+    "unicef.org",
 }
 
 
@@ -54,10 +91,10 @@ def _host_has_any(url: str, hints: set[str]) -> bool:
 
 
 def is_likely_relevant_url(url: str) -> bool:
-    u = (url or "").lower()
-    if not u.startswith(("http://", "https://")):
+    normalized_url = (url or "").lower()
+    if not normalized_url.startswith(("http://", "https://")):
         return False
-    if any(tok in u for tok in BLOCKED_TOKENS):
+    if any(token in normalized_url for token in BLOCKED_TOKENS):
         return False
     if _host_has_any(url, BLOCKED_HOST_HINTS):
         return False
@@ -68,24 +105,41 @@ def should_download(url: str, ext: str, source: str | None = None) -> bool:
     if not is_likely_relevant_url(url):
         return False
 
-    e = ext.lower().lstrip(".")
-
-    if e in PRIORITY_EXT:
+    normalized_ext = ext.lower().lstrip(".")
+    if normalized_ext in PRIORITY_EXT:
         return True
 
-    if source == "official" and e in {"html", "htm"}:
+    if source == "official" and normalized_ext in {"html", "htm"}:
         return True
 
-    if _host_has_any(url, OFFICIAL_HOST_HINTS) and e in {"html", "htm"}:
+    if _host_has_any(url, OFFICIAL_HOST_HINTS) and normalized_ext in {
+        "html",
+        "htm",
+    }:
         return True
 
-    if _host_has_any(url, SCHOLARLY_HOST_HINTS) and e in {"html", "htm"}:
+    if _host_has_any(url, SCHOLARLY_HOST_HINTS) and normalized_ext in {
+        "html",
+        "htm",
+    }:
         path = urlparse(url).path.lower()
-        if any(tok in path for tok in ["/article", "/articles", "/doi", "/content", "/journal", "/journals", "/full", "/abstract"]):
+        if any(
+            token in path
+            for token in [
+                "/article",
+                "/articles",
+                "/doi",
+                "/content",
+                "/journal",
+                "/journals",
+                "/full",
+                "/abstract",
+            ]
+        ):
             return True
 
-    if e in {"html", "htm"}:
-        u = url.lower()
-        return any(k in u for k in RELEVANT_HTML)
+    if normalized_ext in {"html", "htm"}:
+        normalized_url = url.lower()
+        return any(keyword in normalized_url for keyword in RELEVANT_HTML)
 
     return False
