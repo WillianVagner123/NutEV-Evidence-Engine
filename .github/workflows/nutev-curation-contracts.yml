@@ -5,9 +5,11 @@ on:
   pull_request:
     paths:
       - "src/nutev/export/**"
+      - "src/nutev/analysis/**"
       - "src/nutev/pipelines/**"
       - "nutev_tests/test_curation_outputs.py"
       - "nutev_tests/test_metadata_master_contract.py"
+      - "nutev_tests/test_prisma_flow.py"
       - ".github/workflows/nutev-curation-contracts.yml"
   push:
     branches:
@@ -15,9 +17,11 @@ on:
       - "codex/**"
     paths:
       - "src/nutev/export/**"
+      - "src/nutev/analysis/**"
       - "src/nutev/pipelines/**"
       - "nutev_tests/test_curation_outputs.py"
       - "nutev_tests/test_metadata_master_contract.py"
+      - "nutev_tests/test_prisma_flow.py"
       - ".github/workflows/nutev-curation-contracts.yml"
 
 jobs:
@@ -46,4 +50,5 @@ jobs:
           PYTHONPATH=src python -m pytest -q \
             nutev_tests/test_curation_outputs.py \
             nutev_tests/test_metadata_master_contract.py \
+            nutev_tests/test_prisma_flow.py \
             -p no:timeout
