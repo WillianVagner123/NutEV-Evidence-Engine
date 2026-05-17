@@ -131,7 +131,8 @@ jobs:
           PYTHONPATH=src python -m pytest -q \
             nutev_tests/test_nutev_phase2.py \
             nutev_tests/test_synthesis_phase3.py \
-            nutev_tests/test_qualification_phase4.py
+            nutev_tests/test_qualification_phase4.py \
+            nutev_tests/test_curation_phase5.py
 
   global-watch-core:
     needs: prepare
