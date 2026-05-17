@@ -8,7 +8,11 @@ from urllib.parse import urlsplit, urlunsplit
 
 import pandas as pd
 
-from nutev.export.excel_writer import sanitize_dataframe_for_excel, write_excel_file, write_excel_sheet
+from nutev.export.excel_writer import (
+    sanitize_dataframe_for_excel,
+    write_excel_file,
+    write_excel_sheet,
+)
 from nutev.export.metadata_tables import REQUIRED_METADATA_COLUMNS
 
 CURATED_METADATA_COLUMNS = REQUIRED_METADATA_COLUMNS + [
@@ -70,8 +74,18 @@ PRISMA_COLUMNS = [
 
 PRISMA_NOTE_COLUMNS = ["nota"]
 QA_SUMMARY_COLUMNS = ["metric", "value"]
-DUPLICATE_SUMMARY_COLUMNS = ["document_key_type", "duplicate_documents", "duplicate_rows"]
-MISSING_BY_WORKSTREAM_COLUMNS = ["workstream", "missing_title", "missing_url", "missing_year", "missing_evidence_type"]
+DUPLICATE_SUMMARY_COLUMNS = [
+    "document_key_type",
+    "duplicate_documents",
+    "duplicate_rows",
+]
+MISSING_BY_WORKSTREAM_COLUMNS = [
+    "workstream",
+    "missing_title",
+    "missing_url",
+    "missing_year",
+    "missing_evidence_type",
+]
 
 _PRIORITY_TERMS = [
     "obesity",
@@ -137,7 +151,9 @@ def _normalize_url(value: object) -> str:
     if not parsed.scheme or not parsed.netloc:
         return text.strip().rstrip("/").lower()
     path = parsed.path.rstrip("/") or "/"
-    normalized = urlunsplit((parsed.scheme.lower(), parsed.netloc.lower(), path, "", ""))
+    normalized = urlunsplit(
+        (parsed.scheme.lower(), parsed.netloc.lower(), path, "", "")
+    )
     return normalized.rstrip("/")
 
 
@@ -159,7 +175,8 @@ def _normalize_year(value: object) -> str:
 
 def _hash_fallback(row: dict) -> str:
     payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
-    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]
+    # Deterministic operational fallback key, not a security primitive.
+    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
 
 
 def _compute_document_key(row: dict) -> tuple[str, str]:
@@ -175,7 +192,9 @@ def _compute_document_key(row: dict) -> tuple[str, str]:
     if pmcid:
         return pmcid, "pmcid"
 
-    url = _normalize_url(row.get("final_url") or row.get("original_url") or row.get("url"))
+    url = _normalize_url(
+        row.get("final_url") or row.get("original_url") or row.get("url")
+    )
     if url:
         return url, "url"
 
@@ -218,32 +237,50 @@ def _is_prioritized(row: dict) -> bool:
 
 
 def _curate_row(row: dict) -> dict:
-    curated = {column: _as_text(row.get(column)) for column in REQUIRED_METADATA_COLUMNS}
+    curated = {
+        column: _as_text(row.get(column)) for column in REQUIRED_METADATA_COLUMNS
+    }
     curated["document_id"] = _as_text(row.get("document_id") or row.get("id"))
     curated["title"] = _as_text(row.get("title"))
     curated["doi"] = _as_text(row.get("doi"))
     curated["pmid"] = _as_text(row.get("pmid"))
     curated["pmcid"] = _as_text(row.get("pmcid"))
     curated["original_url"] = _as_text(row.get("original_url") or row.get("url"))
-    curated["final_url"] = _as_text(row.get("final_url") or row.get("resolved_url") or row.get("url"))
-    curated["artifact_paths"] = _as_text(row.get("artifact_paths") or row.get("file_path"))
-    curated["source_provider"] = _as_text(row.get("source_provider") or row.get("source"))
+    curated["final_url"] = _as_text(
+        row.get("final_url") or row.get("resolved_url") or row.get("url")
+    )
+    curated["artifact_paths"] = _as_text(
+        row.get("artifact_paths") or row.get("file_path")
+    )
+    curated["source_provider"] = _as_text(
+        row.get("source_provider") or row.get("source")
+    )
     curated["workstream"] = _as_text(row.get("workstream"))
     curated["capture_status"] = _as_text(row.get("capture_status") or "missing")
-    curated["download_status"] = _as_text(row.get("download_status") or ("pdf" if row.get("file_path") else "metadata_only"))
-    curated["extraction_status"] = _as_text(row.get("extraction_status") or "missing")
+    curated["download_status"] = _as_text(
+        row.get("download_status") or ("pdf" if row.get("file_path") else "metadata_only")
+    )
+    curated["extraction_status"] = _as_text(
+        row.get("extraction_status") or "missing"
+    )
     curated["relevance_score"] = row.get("relevance_score") or row.get("score") or ""
     curated["novelty_score"] = row.get("novelty_score") or ""
     curated["domains"] = _as_text(row.get("domains"))
     curated["outcomes"] = _as_text(row.get("outcomes"))
-    curated["diet_patterns"] = _as_text(row.get("diet_patterns") or row.get("diet_pattern"))
-    curated["clinical_conditions"] = _as_text(row.get("clinical_conditions") or row.get("clinical_condition"))
+    curated["diet_patterns"] = _as_text(
+        row.get("diet_patterns") or row.get("diet_pattern")
+    )
+    curated["clinical_conditions"] = _as_text(
+        row.get("clinical_conditions") or row.get("clinical_condition")
+    )
 
     document_key, document_key_type = _compute_document_key(curated)
     curated["document_key"] = document_key
     curated["document_key_type"] = document_key_type
     curated["doi_normalized"] = _normalize_doi(curated.get("doi"))
-    curated["url_normalized"] = _normalize_url(curated.get("final_url") or curated.get("original_url"))
+    curated["url_normalized"] = _normalize_url(
+        curated.get("final_url") or curated.get("original_url")
+    )
     curated["title_normalized"] = _normalize_title(curated.get("title"))
     curated["year_normalized"] = _normalize_year(curated.get("year"))
     curated["workstream_list"] = curated.get("workstream", "")
@@ -285,19 +322,39 @@ def _build_unique_documents(curated_rows: list[dict]) -> list[dict]:
     for document_key in sorted(grouped):
         group = sorted(grouped[document_key], key=_rank_row, reverse=True)
         best = dict(group[0])
-        workstreams = sorted({_as_text(item.get("workstream")) for item in group if _as_text(item.get("workstream"))})
-        document_ids = sorted({_as_text(item.get("document_id")) for item in group if _as_text(item.get("document_id"))})
+        workstreams = sorted(
+            {
+                _as_text(item.get("workstream"))
+                for item in group
+                if _as_text(item.get("workstream"))
+            }
+        )
+        document_ids = sorted(
+            {
+                _as_text(item.get("document_id"))
+                for item in group
+                if _as_text(item.get("document_id"))
+            }
+        )
         best.update(
             {
                 "workstreams": "; ".join(workstreams),
                 "document_ids": "; ".join(document_ids),
                 "source_occurrences": len(group),
-                "has_full_text": any(bool(item.get("has_full_text")) for item in group),
-                "is_metadata_only": not any(bool(item.get("has_full_text")) for item in group),
-                "is_prioritized": any(bool(item.get("is_prioritized")) for item in group),
+                "has_full_text": any(
+                    bool(item.get("has_full_text")) for item in group
+                ),
+                "is_metadata_only": not any(
+                    bool(item.get("has_full_text")) for item in group
+                ),
+                "is_prioritized": any(
+                    bool(item.get("is_prioritized")) for item in group
+                ),
             }
         )
-        unique_rows.append({column: best.get(column, "") for column in UNIQUE_DOCUMENT_COLUMNS})
+        unique_rows.append(
+            {column: best.get(column, "") for column in UNIQUE_DOCUMENT_COLUMNS}
+        )
     return unique_rows
 
 
@@ -308,7 +365,12 @@ def _build_workstream_map(curated_rows: list[dict]) -> list[dict]:
         key = (row["document_key"], workstream)
         selected.setdefault(key, row)
     return [
-        {column: row.get(column if column != "workstream" else "workstream", "") for column in WORKSTREAM_MAP_COLUMNS}
+        {
+            column: row.get(
+                column if column != "workstream" else "workstream", ""
+            )
+            for column in WORKSTREAM_MAP_COLUMNS
+        }
         for _, row in sorted(selected.items())
     ]
 
@@ -331,7 +393,17 @@ def _build_duplicate_rows(curated_rows: list[dict]) -> pd.DataFrame:
                     "occurrences": occurrences,
                 }
             )
-    return pd.DataFrame(duplicates, columns=["document_key", "document_key_type", "document_id", "title", "workstream", "occurrences"])
+    return pd.DataFrame(
+        duplicates,
+        columns=[
+            "document_key",
+            "document_key_type",
+            "document_id",
+            "title",
+            "workstream",
+            "occurrences",
+        ],
+    )
 
 
 def _build_duplicate_summary(curated_rows: list[dict]) -> pd.DataFrame:
@@ -346,7 +418,9 @@ def _build_duplicate_summary(curated_rows: list[dict]) -> pd.DataFrame:
         if count <= 1:
             continue
         key_type = key_types[key]
-        bucket = grouped.setdefault(key_type, {"duplicate_documents": 0, "duplicate_rows": 0})
+        bucket = grouped.setdefault(
+            key_type, {"duplicate_documents": 0, "duplicate_rows": 0}
+        )
         bucket["duplicate_documents"] += 1
         bucket["duplicate_rows"] += count - 1
     rows = [
@@ -382,7 +456,16 @@ def _build_missing_canonical_rows(curated_rows: list[dict]) -> pd.DataFrame:
                     "missing_fields": "; ".join(missing),
                 }
             )
-    return pd.DataFrame(rows, columns=["document_key", "document_id", "title", "workstream", "missing_fields"])
+    return pd.DataFrame(
+        rows,
+        columns=[
+            "document_key",
+            "document_id",
+            "title",
+            "workstream",
+            "missing_fields",
+        ],
+    )
 
 
 def _build_missing_by_workstream(curated_rows: list[dict]) -> pd.DataFrame:
@@ -406,7 +489,10 @@ def _build_missing_by_workstream(curated_rows: list[dict]) -> pd.DataFrame:
             bucket["missing_year"] += 1
         if not _as_text(row.get("evidence_type")):
             bucket["missing_evidence_type"] += 1
-    rows = [{"workstream": workstream, **values} for workstream, values in sorted(grouped.items())]
+    rows = [
+        {"workstream": workstream, **values}
+        for workstream, values in sorted(grouped.items())
+    ]
     return pd.DataFrame(rows, columns=MISSING_BY_WORKSTREAM_COLUMNS)
 
 
@@ -418,7 +504,10 @@ def _build_status_counts(curated_rows: list[dict]) -> pd.DataFrame:
         df.groupby(["download_status", "extraction_status"], dropna=False)
         .size()
         .reset_index(name="n")
-        .sort_values(["n", "download_status", "extraction_status"], ascending=[False, True, True])
+        .sort_values(
+            ["n", "download_status", "extraction_status"],
+            ascending=[False, True, True],
+        )
     )
 
 
@@ -426,35 +515,78 @@ def _build_workstream_counts(curated_rows: list[dict]) -> pd.DataFrame:
     df = pd.DataFrame(curated_rows)
     if df.empty:
         return pd.DataFrame(columns=["workstream", "n"])
-    return df.groupby("workstream", dropna=False).size().reset_index(name="n").sort_values(["n", "workstream"], ascending=[False, True])
+    return df.groupby("workstream", dropna=False).size().reset_index(
+        name="n"
+    ).sort_values(["n", "workstream"], ascending=[False, True])
 
 
-def _build_qa_summary(curated_rows: list[dict], unique_rows: list[dict], workstream_map: list[dict]) -> pd.DataFrame:
+def _build_qa_summary(
+    curated_rows: list[dict], unique_rows: list[dict], workstream_map: list[dict]
+) -> pd.DataFrame:
     duplicate_rows = max(0, len(curated_rows) - len(unique_rows))
     summary = [
         {"metric": "raw_records", "value": len(curated_rows)},
         {"metric": "unique_documents", "value": len(unique_rows)},
         {"metric": "document_workstream_pairs", "value": len(workstream_map)},
         {"metric": "duplicate_rows_removed", "value": duplicate_rows},
-        {"metric": "documents_with_full_text", "value": sum(1 for row in unique_rows if row.get("has_full_text"))},
-        {"metric": "documents_metadata_only", "value": sum(1 for row in unique_rows if row.get("is_metadata_only"))},
-        {"metric": "documents_prioritized", "value": sum(1 for row in unique_rows if row.get("is_prioritized"))},
-        {"metric": "missing_title", "value": sum(1 for row in curated_rows if not _as_text(row.get("title")))},
-        {"metric": "missing_url", "value": sum(1 for row in curated_rows if not _as_text(row.get("final_url") or row.get("original_url")))},
-        {"metric": "missing_year", "value": sum(1 for row in curated_rows if not _as_text(row.get("year")))},
-        {"metric": "missing_evidence_type", "value": sum(1 for row in curated_rows if not _as_text(row.get("evidence_type")))},
+        {
+            "metric": "documents_with_full_text",
+            "value": sum(1 for row in unique_rows if row.get("has_full_text")),
+        },
+        {
+            "metric": "documents_metadata_only",
+            "value": sum(1 for row in unique_rows if row.get("is_metadata_only")),
+        },
+        {
+            "metric": "documents_prioritized",
+            "value": sum(1 for row in unique_rows if row.get("is_prioritized")),
+        },
+        {
+            "metric": "missing_title",
+            "value": sum(
+                1 for row in curated_rows if not _as_text(row.get("title"))
+            ),
+        },
+        {
+            "metric": "missing_url",
+            "value": sum(
+                1
+                for row in curated_rows
+                if not _as_text(row.get("final_url") or row.get("original_url"))
+            ),
+        },
+        {
+            "metric": "missing_year",
+            "value": sum(1 for row in curated_rows if not _as_text(row.get("year"))),
+        },
+        {
+            "metric": "missing_evidence_type",
+            "value": sum(
+                1
+                for row in curated_rows
+                if not _as_text(row.get("evidence_type"))
+            ),
+        },
     ]
     return pd.DataFrame(summary, columns=QA_SUMMARY_COLUMNS)
 
 
-def _build_prisma_corrected(curated_rows: list[dict], unique_rows: list[dict]) -> pd.DataFrame:
+def _build_prisma_corrected(
+    curated_rows: list[dict], unique_rows: list[dict]
+) -> pd.DataFrame:
     flow = {
         "registros_identificados": len(curated_rows),
         "duplicados_removidos": max(0, len(curated_rows) - len(unique_rows)),
         "registros_triados": len(unique_rows),
-        "documentos_com_pdf_ou_html": sum(1 for row in unique_rows if row.get("has_full_text")),
-        "documentos_metadata_only": sum(1 for row in unique_rows if row.get("is_metadata_only")),
-        "documentos_priorizados": sum(1 for row in unique_rows if row.get("is_prioritized")),
+        "documentos_com_pdf_ou_html": sum(
+            1 for row in unique_rows if row.get("has_full_text")
+        ),
+        "documentos_metadata_only": sum(
+            1 for row in unique_rows if row.get("is_metadata_only")
+        ),
+        "documentos_priorizados": sum(
+            1 for row in unique_rows if row.get("is_prioritized")
+        ),
     }
     return pd.DataFrame([flow], columns=PRISMA_COLUMNS)
 
@@ -479,17 +611,27 @@ def curate_outputs(rows: list[dict], curated_dir: Path) -> dict[str, int]:
     prisma_notes_df = pd.DataFrame(
         [
             {
-                "nota": "PRISMA operacional corrigido: registros_identificados = linhas brutas; duplicados_removidos = linhas brutas - documentos únicos; registros_triados = documentos únicos."
+                "nota": (
+                    "PRISMA operacional corrigido: registros_identificados = "
+                    "linhas brutas; duplicados_removidos = linhas brutas - "
+                    "documentos únicos; registros_triados = documentos únicos."
+                )
             }
         ],
         columns=PRISMA_NOTE_COLUMNS,
     )
 
     _write_csv(curated_df, curated_dir / "NUTEV_METADATA_CURATED.csv")
-    write_excel_file(sanitize_dataframe_for_excel(curated_df), curated_dir / "NUTEV_METADATA_CURATED.xlsx")
+    write_excel_file(
+        sanitize_dataframe_for_excel(curated_df),
+        curated_dir / "NUTEV_METADATA_CURATED.xlsx",
+    )
 
     _write_csv(unique_df, curated_dir / "NUTEV_DOCUMENTS_UNIQUE.csv")
-    write_excel_file(sanitize_dataframe_for_excel(unique_df), curated_dir / "NUTEV_DOCUMENTS_UNIQUE.xlsx")
+    write_excel_file(
+        sanitize_dataframe_for_excel(unique_df),
+        curated_dir / "NUTEV_DOCUMENTS_UNIQUE.xlsx",
+    )
 
     _write_csv(workstream_df, curated_dir / "NUTEV_DOCUMENT_WORKSTREAM_MAP.csv")
 
