@@ -7,20 +7,61 @@ REQUIRED_METADATA_COLUMNS = [
     "country", "region", "workstream", "year", "language", "evidence_type", "capture_status", "download_status", "extraction_status",
     "artifact_paths", "failure_reason", "relevance_score", "novelty_score", "domains", "outcomes", "diet_patterns", "clinical_conditions",
     "first_seen_date", "last_seen_date", "is_new", "llm_decision", "llm_reason",
+    "journal", "publication_date", "article_type", "authors", "abstract", "metadata_status",
 ]
+
+ARTICLE_DATA_COLUMNS = [
+    "document_id",
+    "workstream",
+    "source_provider",
+    "title",
+    "authors",
+    "journal",
+    "year",
+    "publication_date",
+    "article_type",
+    "doi",
+    "pmid",
+    "pmcid",
+    "original_url",
+    "final_url",
+    "abstract",
+    "relevance_score",
+    "download_status",
+    "extraction_status",
+    "artifact_paths",
+    "metadata_status",
+    "failure_reason",
+]
+
 
 def _normalize_metadata_row(row: dict) -> dict:
     out = {k: row.get(k, "") for k in REQUIRED_METADATA_COLUMNS}
     out["document_id"] = row.get("document_id") or row.get("id") or ""
     out["title"] = row.get("title", "")
     out["doi"] = row.get("doi", "")
+    out["pmid"] = row.get("pmid", "")
+    out["pmcid"] = row.get("pmcid", "")
     out["original_url"] = row.get("original_url", row.get("url", ""))
     out["final_url"] = row.get("final_url", row.get("resolved_url", row.get("url", "")))
+    out["source_provider"] = row.get("source_provider", row.get("source", ""))
     out["artifact_paths"] = row.get("artifact_paths", row.get("file_path", ""))
     out["capture_status"] = row.get("capture_status", "missing")
     out["download_status"] = row.get("download_status", "metadata_only" if not row.get("file_path") else "pdf")
     out["extraction_status"] = row.get("extraction_status", "missing")
+    out["journal"] = row.get("journal", "")
+    out["publication_date"] = row.get("publication_date", "")
+    out["article_type"] = row.get("article_type", row.get("evidence_type", ""))
+    out["authors"] = row.get("authors", "")
+    out["abstract"] = row.get("abstract", "")
+    out["metadata_status"] = row.get("metadata_status", "")
     return out
+
+
+def _normalize_article_data_row(row: dict) -> dict:
+    metadata = _normalize_metadata_row(row)
+    return {k: metadata.get(k, row.get(k, "")) for k in ARTICLE_DATA_COLUMNS}
+
 
 def write_metadata_csv(rows: list[dict], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -29,6 +70,16 @@ def write_metadata_csv(rows: list[dict], path: Path) -> None:
         w = csv.DictWriter(f, fieldnames=REQUIRED_METADATA_COLUMNS)
         w.writeheader()
         w.writerows(metadata_rows)
+
+
+def write_article_data_csv(rows: list[dict], path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    article_rows = [_normalize_article_data_row(r) for r in rows]
+    with path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=ARTICLE_DATA_COLUMNS)
+        w.writeheader()
+        w.writerows(article_rows)
+
 
 def write_simple_csv(rows: list[dict], path: Path) -> None:
     if not rows:
