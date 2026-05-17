@@ -68,8 +68,23 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements/nutev-ci.txt
-          pip install --no-deps -e .
+          if [ -f requirements/nutev-ci.txt ]; then
+            python -m pip install -r requirements/nutev-ci.txt
+          else
+            python -m pip install \
+              'requests>=2.32' \
+              'pandas>=2.2' \
+              'pypdf>=5.0' \
+              'beautifulsoup4>=4.12' \
+              'pydantic>=2.10' \
+              'openpyxl>=3.1' \
+              'pytest>=8.0' \
+              'pytest-timeout>=2.3' \
+              'pytest-mock>=3.14' \
+              'pytest-asyncio>=0.23' \
+              'freezegun>=1.5'
+          fi
+          python -m pip install --no-deps -e .
       - name: Run engine and contract tests
         run: |
           PYTHONPATH=src python -m pytest -q \
@@ -94,8 +109,23 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements/nutev-ci.txt
-          pip install --no-deps -e .
+          if [ -f requirements/nutev-ci.txt ]; then
+            python -m pip install -r requirements/nutev-ci.txt
+          else
+            python -m pip install \
+              'requests>=2.32' \
+              'pandas>=2.2' \
+              'pypdf>=5.0' \
+              'beautifulsoup4>=4.12' \
+              'pydantic>=2.10' \
+              'openpyxl>=3.1' \
+              'pytest>=8.0' \
+              'pytest-timeout>=2.3' \
+              'pytest-mock>=3.14' \
+              'pytest-asyncio>=0.23' \
+              'freezegun>=1.5'
+          fi
+          python -m pip install --no-deps -e .
       - name: Run pipeline phase tests
         run: |
           PYTHONPATH=src python -m pytest -q \
@@ -117,8 +147,23 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements/nutev-ci.txt
-          pip install --no-deps -e .
+          if [ -f requirements/nutev-ci.txt ]; then
+            python -m pip install -r requirements/nutev-ci.txt
+          else
+            python -m pip install \
+              'requests>=2.32' \
+              'pandas>=2.2' \
+              'pypdf>=5.0' \
+              'beautifulsoup4>=4.12' \
+              'pydantic>=2.10' \
+              'openpyxl>=3.1' \
+              'pytest>=8.0' \
+              'pytest-timeout>=2.3' \
+              'pytest-mock>=3.14' \
+              'pytest-asyncio>=0.23' \
+              'freezegun>=1.5'
+          fi
+          python -m pip install --no-deps -e .
       - name: Run global watch core tests
         run: |
           PYTHONPATH=src python -m pytest -q \
@@ -143,8 +188,23 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements/nutev-ci.txt
-          pip install --no-deps -e .
+          if [ -f requirements/nutev-ci.txt ]; then
+            python -m pip install -r requirements/nutev-ci.txt
+          else
+            python -m pip install \
+              'requests>=2.32' \
+              'pandas>=2.2' \
+              'pypdf>=5.0' \
+              'beautifulsoup4>=4.12' \
+              'pydantic>=2.10' \
+              'openpyxl>=3.1' \
+              'pytest>=8.0' \
+              'pytest-timeout>=2.3' \
+              'pytest-mock>=3.14' \
+              'pytest-asyncio>=0.23' \
+              'freezegun>=1.5'
+          fi
+          python -m pip install --no-deps -e .
       - name: Run global watch IO and integration tests
         run: |
           PYTHONPATH=src python -m pytest -q \
