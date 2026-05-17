@@ -34,6 +34,10 @@ from nutev.export.qualification_writer import write_qualification_outputs
 from nutev.export.rayyan import write_rayyan
 from nutev.extract.smart_extract import extract_document
 from nutev.querypacks.builders import build_querypack
+from nutev.querypacks.provider_queries import (
+    build_provider_querypack,
+    write_provider_querypack_audit,
+)
 from nutev.search.crossref import search_crossref
 from nutev.search.europepmc import search_europepmc
 from nutev.search.official_sources import manifest_sources
@@ -163,19 +167,14 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     taxonomy = load_json(settings.config_root / "keyword_taxonomy.json")
     scoring = load_json(settings.config_root / "scoring_rules.json")
     sources = load_json(settings.config_root / "official_sources_manifest.json")
-    qpack = build_querypack(taxonomy, workstreams)
-    _write_querypack_audit(qpack, settings.output_dirs["07_logs"])
-
     provider_map = _provider_map()
     providers_declared_by_workstream: dict[str, list[str]] = {}
     providers_executed_by_workstream: dict[str, list[str]] = {}
     providers_unsupported_by_workstream: dict[str, list[str]] = {}
+    qpack = build_querypack(taxonomy, workstreams)
+    _write_querypack_audit(qpack, settings.output_dirs["07_logs"])
 
-    all_rows, extraction_manifest, all_manifest, artifact_inputs = [], [], [], []
-    all_failed: list[dict] = []
-    total_downloads = total_failed = total_ocr = 0
-
-    for ws, queries in qpack.items():
+    for ws in workstreams:
         ws_cfg = taxonomy.get("workstreams", {}).get(
             ws,
             taxonomy.get("workstreams", {}).get("artigo3_framework", {}),
@@ -188,6 +187,24 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         providers_declared_by_workstream[ws] = source_priority
         providers_executed_by_workstream[ws] = supported_priority
         providers_unsupported_by_workstream[ws] = unsupported_priority
+
+    provider_querypack = build_provider_querypack(
+        taxonomy,
+        workstreams,
+        providers_executed_by_workstream,
+    )
+    write_provider_querypack_audit(
+        provider_querypack,
+        settings.output_dirs["07_logs"],
+    )
+
+    all_rows, extraction_manifest, all_manifest, artifact_inputs = [], [], [], []
+    all_failed: list[dict] = []
+    total_downloads = total_failed = total_ocr = 0
+
+    for ws, queries in qpack.items():
+        supported_priority = providers_executed_by_workstream.get(ws, DEFAULT_PRIORITY)
+        unsupported_priority = providers_unsupported_by_workstream.get(ws, [])
         if unsupported_priority:
             logger.warning(
                 "ws=%s providers_nao_suportados=%s",
@@ -200,14 +217,14 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         rows = []
         hits_by_provider = {}
 
-        for q in queries[:query_budget]:
-            for provider in supported_priority:
-                if provider == "official_web":
-                    continue
-                fn = provider_map.get(provider)
-                if fn is None:
-                    continue
-
+        provider_queries = provider_querypack.get(ws, {})
+        for provider in supported_priority:
+            if provider == "official_web":
+                continue
+            fn = provider_map.get(provider)
+            if fn is None:
+                continue
+            for q in provider_queries.get(provider, [])[:query_budget]:
                 new_rows = _safe_provider_call(provider, fn, q, ws, logger)
                 hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(
                     new_rows
@@ -353,7 +370,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         settings.output_dirs["06_tables"],
         settings.output_dirs["08_docs"],
     )
-    write_methods_docs(settings.output_dirs["08_docs"])
+    write_methods_docs(settings.output_dirs["08_docs"], settings.output_dirs["07_logs"])
 
     prisma = build_prisma_flow(master, all_manifest, extraction_manifest)
     export_prisma(
@@ -403,6 +420,8 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             "querypack_files": [
                 "07_logs/querypack_executed.json",
                 "07_logs/querypack_executed.csv",
+                "07_logs/provider_querypack_executed.json",
+                "07_logs/provider_querypack_executed.csv",
             ],
             "scoring_rules": scoring,
             "country_manifest": sources,
