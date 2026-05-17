@@ -4,9 +4,8 @@ import json
 from pathlib import Path
 
 from nutev.querypacks.builders import (
+    build_structured_components,
     canonical_workstream,
-    get_global_block,
-    get_named_terms,
     uniq,
 )
 
@@ -114,47 +113,6 @@ def _pubmed_document_clause(doc_terms: list[str]) -> str:
             _provider_or_block(title_abs_terms, "pubmed", 6),
         ]
     )
-
-
-def _structured_components(keyword_taxonomy: dict, workstream: str) -> dict[str, list[str]]:
-    ws_key = canonical_workstream(workstream)
-    ws = keyword_taxonomy.get("workstreams", {}).get(ws_key, {})
-    global_cfg = keyword_taxonomy.get("global", {})
-    clinical_cfg = keyword_taxonomy.get("clinical", {})
-    outcomes_cfg = keyword_taxonomy.get("outcomes", {})
-
-    population_terms = uniq(ws.get("population_terms", []))
-    condition_terms = uniq(ws.get("condition_terms", []))
-    clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
-    priority_outcomes = get_named_terms(
-        outcomes_cfg,
-        ws.get("priority_outcomes", []),
-    )
-    doc_type_terms = get_named_terms(
-        global_cfg.get("document_types", {}),
-        ws.get("document_type_keys", []),
-    )
-    web_hints = uniq(ws.get("web_query_hints", []))
-    behavior_terms = get_global_block(keyword_taxonomy, "implementation_behavior")
-    diet_terms = get_global_block(keyword_taxonomy, "diet_patterns")
-    nutrition_terms = get_global_block(keyword_taxonomy, "nutrition_domains")
-
-    focus_terms: list[str] = []
-    for block_name in ws.get("focus_blocks", []):
-        focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
-
-    return {
-        "population_terms": population_terms,
-        "condition_terms": condition_terms,
-        "clinical_terms": clinical_terms,
-        "priority_outcomes": priority_outcomes,
-        "doc_type_terms": doc_type_terms,
-        "web_hints": web_hints,
-        "behavior_terms": behavior_terms,
-        "diet_terms": diet_terms,
-        "nutrition_terms": nutrition_terms,
-        "focus_terms": uniq(focus_terms),
-    }
 
 
 def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
@@ -300,7 +258,7 @@ def render_queries_for_provider(
     workstream: str,
     provider: str,
 ) -> list[str]:
-    components = _structured_components(keyword_taxonomy, workstream)
+    _, components = build_structured_components(keyword_taxonomy, workstream)
     if provider == "pubmed":
         return _render_pubmed_queries(components)
     if provider == "europepmc":
@@ -330,7 +288,7 @@ def build_provider_querypack(
                 workstream,
                 provider,
             )
-        provider_querypack[workstream] = workstream_pack
+        provider_querypack[canonical_workstream(workstream)] = workstream_pack
     return provider_querypack
 
 
