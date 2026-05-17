@@ -1,5 +1,8 @@
 from __future__ import annotations
+
+import os
 import time
+
 import requests
 
 
@@ -22,38 +25,34 @@ def _pick_openalex_url(item: dict) -> str:
 
 
 def search_openalex(query: str, per_page: int = 12) -> list[dict]:
-    import os
     if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return []
-    last_error = None
 
     for attempt in range(1, 4):
         try:
-            r = requests.get(
+            response = requests.get(
                 "https://api.openalex.org/works",
                 params={"search": query, "per-page": per_page},
                 timeout=(10, 25),
                 headers={"User-Agent": "NutEV Research Pipeline/1.0"},
             )
-            r.raise_for_status()
-            payload = r.json()
+            response.raise_for_status()
+            payload = response.json()
             data = payload.get("results", [])
 
             rows = []
-            for it in data:
+            for item in data:
                 rows.append(
                     {
                         "source": "openalex",
-                        "title": it.get("display_name"),
-                        "doi": it.get("doi"),
-                        "url": _pick_openalex_url(it),
+                        "title": item.get("display_name"),
+                        "doi": item.get("doi"),
+                        "url": _pick_openalex_url(item),
                     }
                 )
             return rows
 
-        except Exception as e:
-            last_error = e
+        except Exception:
             time.sleep(1.0 * attempt)
 
-    # modo best effort: nunca derruba o pipeline
     return []
