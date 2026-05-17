@@ -107,6 +107,30 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
     },
 }
 
+DOWNLOAD_QUERY_GROUPS = {
+    "default": [
+        ["filetype:pdf"],
+        ["pdf", "download", "full text"],
+        ["open access", "free full text", "PMC"],
+    ],
+    "busca1": [
+        ["filetype:pdf", "guideline", "report"],
+        ["manual", "toolkit", "technical report"],
+    ],
+    "busca2a": [
+        ["filetype:pdf", "clinical practice guideline"],
+        ["consensus statement", "scientific statement", "PDF"],
+    ],
+    "busca2b": [
+        ["filetype:pdf", "randomized controlled trial"],
+        ["supplement", "protocol", "full text"],
+    ],
+    "artigo3_framework": [
+        ["filetype:pdf", "questionnaire", "instrument"],
+        ["scale development", "psychometric", "appendix"],
+    ],
+}
+
 
 def canonical_workstream(workstream: str) -> str:
     return WORKSTREAM_ALIASES.get(workstream, workstream)
@@ -141,6 +165,27 @@ def or_block(terms: list[str], limit: int | None = None) -> str:
     if limit is not None:
         chunk = chunk[:limit]
     chunk = [quote_term(t) for t in chunk if t]
+    if not chunk:
+        return ""
+    if len(chunk) == 1:
+        return chunk[0]
+    return "(" + " OR ".join(chunk) + ")"
+
+
+def _search_term(term: str) -> str:
+    clean = str(term).strip()
+    if not clean:
+        return ""
+    if clean.lower().startswith(("filetype:", "site:")):
+        return clean
+    return quote_term(clean)
+
+
+def search_or_block(terms: list[str], limit: int | None = None) -> str:
+    chunk = uniq(terms)
+    if limit is not None:
+        chunk = chunk[:limit]
+    chunk = [_search_term(term) for term in chunk if term]
     if not chunk:
         return ""
     if len(chunk) == 1:
@@ -194,6 +239,64 @@ def _build_legacy_queries(ws: dict) -> list[str]:
 
 def _join_parts(parts: list[str]) -> str:
     return " AND ".join([p for p in parts if p])
+
+
+def _add_capture_queries(
+    queries: list[str],
+    ws_key: str,
+    condition_terms: list[str],
+    clinical_terms: list[str],
+    focus_terms: list[str],
+    priority_outcomes: list[str],
+    doc_type_terms: list[str],
+    web_hints: list[str],
+) -> None:
+    condition_block = or_block(condition_terms + clinical_terms, 8)
+    seed_queries = [
+        _join_parts(
+            [
+                or_block(web_hints, 4),
+                condition_block,
+                or_block(doc_type_terms, 4),
+            ]
+        ),
+        _join_parts(
+            [
+                or_block(focus_terms, 5),
+                or_block(doc_type_terms, 5),
+                or_block(priority_outcomes, 4),
+            ]
+        ),
+        _join_parts(
+            [
+                condition_block,
+                or_block(focus_terms, 4),
+                or_block(web_hints + doc_type_terms, 5),
+            ]
+        ),
+    ]
+    qualifier_groups = uniq_nested(
+        DOWNLOAD_QUERY_GROUPS.get(ws_key, []) + DOWNLOAD_QUERY_GROUPS["default"]
+    )
+
+    for seed in seed_queries:
+        if not seed:
+            continue
+        for qualifiers in qualifier_groups[:5]:
+            queries.append(_join_parts([seed, search_or_block(qualifiers, 4)]))
+
+
+def uniq_nested(groups: list[list[str]]) -> list[list[str]]:
+    seen = set()
+    output = []
+    for group in groups:
+        clean = uniq(group)
+        key = tuple(term.lower() for term in clean)
+        if not clean or key in seen:
+            continue
+        seen.add(key)
+        output.append(clean)
+    return output
 
 
 def _add_specific_busca1(
@@ -554,6 +657,17 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
                 ]
             )
         )
+
+    _add_capture_queries(
+        queries,
+        ws_key,
+        condition_terms,
+        clinical_terms,
+        focus_terms,
+        priority_outcomes,
+        doc_type_terms,
+        web_hints,
+    )
 
     if ws_key == "busca1":
         _add_specific_busca1(
