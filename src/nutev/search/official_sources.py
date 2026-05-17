@@ -7,14 +7,15 @@ WORKSTREAM_ALIASES = {
 
 
 def manifest_sources(manifest: dict, workstream: str) -> list[dict]:
-    ws = WORKSTREAM_ALIASES.get(workstream, workstream)
-    sources = manifest.get("workstreams", {}).get(ws, [])
+    canonical = WORKSTREAM_ALIASES.get(workstream, workstream)
+    workstreams = manifest.get("workstreams", {})
+    sources = workstreams.get(canonical, []) or workstreams.get(workstream, [])
     return [
         {
             "source": "official",
-            "title": s.get("name"),
-            "url": s.get("url"),
-            "authority": s.get("authority", 1),
+            "title": item.get("name"),
+            "url": item.get("url"),
+            "authority": item.get("authority", 1),
         }
-        for s in sources
+        for item in sources
     ]
