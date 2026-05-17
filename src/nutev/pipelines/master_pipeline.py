@@ -75,10 +75,16 @@ def _safe_provider_call(provider: str, fn, q: str, ws: str, logger) -> list[dict
     try:
         result = fn(q)
         if not isinstance(result, list):
-            logger.warning("%s retornou tipo inesperado ws=%s query=%s tipo=%s", provider, ws, q, type(result).__name__)
+            logger.warning(
+                "%s retornou tipo inesperado ws=%s query=%s tipo=%s",
+                provider,
+                ws,
+                q,
+                type(result).__name__,
+            )
             return []
         return result
-    except BaseException as e:
+    except Exception as e:
         logger.warning("%s falhou ws=%s query=%s erro=%s", provider, ws, q, e)
         return []
 
