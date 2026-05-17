@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 import csv
 from pathlib import Path
 
@@ -8,6 +9,46 @@ REQUIRED_METADATA_COLUMNS = [
     "artifact_paths", "failure_reason", "relevance_score", "novelty_score", "domains", "outcomes", "diet_patterns", "clinical_conditions",
     "first_seen_date", "last_seen_date", "is_new", "llm_decision", "llm_reason",
 ]
+
+KNOWN_SIMPLE_CSV_COLUMNS = {
+    "download_manifest.csv": [
+        "url",
+        "resolved_url",
+        "path",
+        "ext",
+        "source",
+        "status",
+    ],
+    "failed_downloads.csv": [
+        "url",
+        "resolved_url",
+        "status",
+        "reason",
+        "head_status",
+        "document_id",
+    ],
+    "extraction_manifest.csv": [
+        "file",
+        "ext",
+        "used_ocr",
+        "ocr_failed_pages",
+        "text_path",
+        "chars",
+        "extraction_status",
+    ],
+    "querypack_executed.csv": [
+        "workstream",
+        "query_order",
+        "query_text",
+    ],
+    "provider_querypack_executed.csv": [
+        "workstream",
+        "provider",
+        "query_order",
+        "query_text",
+    ],
+}
+
 
 def _normalize_metadata_row(row: dict) -> dict:
     out = {k: row.get(k, "") for k in REQUIRED_METADATA_COLUMNS}
@@ -22,6 +63,7 @@ def _normalize_metadata_row(row: dict) -> dict:
     out["extraction_status"] = row.get("extraction_status", "missing")
     return out
 
+
 def write_metadata_csv(rows: list[dict], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     metadata_rows = [_normalize_metadata_row(r) for r in rows]
@@ -30,12 +72,20 @@ def write_metadata_csv(rows: list[dict], path: Path) -> None:
         w.writeheader()
         w.writerows(metadata_rows)
 
-def write_simple_csv(rows: list[dict], path: Path) -> None:
-    if not rows:
-        return
+
+def write_simple_csv(
+    rows: list[dict], path: Path, fieldnames: list[str] | None = None
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    keys = sorted({k for r in rows for k in r.keys()})
+    keys = fieldnames or KNOWN_SIMPLE_CSV_COLUMNS.get(path.name)
+    if rows:
+        row_keys = sorted({k for r in rows for k in r.keys()})
+        keys = list(dict.fromkeys((keys or []) + row_keys))
+    if not keys:
+        path.write_text("", encoding="utf-8")
+        return
     with path.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=keys)
         w.writeheader()
-        w.writerows(rows)
+        if rows:
+            w.writerows(rows)
