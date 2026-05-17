@@ -1,5 +1,38 @@
 {
-  "keyword_points": {"guideline": 3, "adherence": 2, "obesity": 2, "cardiometabolic": 3},
-  "source_points": {"official": 4, "pubmed": 3, "europepmc": 2, "openalex": 1},
-  "workstream_points": {"busca1": 2, "busca2a": 3, "busca2b": 3, "a3": 1}
+  "keyword_points": {
+    "guideline": 3,
+    "consensus": 3,
+    "statement": 2,
+    "adherence": 2,
+    "implementation": 2,
+    "obesity": 2,
+    "cardiometabolic": 3,
+    "diabetes": 2,
+    "hypertension": 2,
+    "masld": 2,
+    "nafld": 2,
+    "food literacy": 3,
+    "culinary medicine": 3,
+    "commensality": 3,
+    "framework": 2,
+    "questionnaire": 2,
+    "mediterranean": 2,
+    "dash": 2,
+    "plant-based": 2,
+    "lifestyle medicine": 3
+  },
+  "source_points": {
+    "official": 4,
+    "pubmed": 3,
+    "europepmc": 2,
+    "openalex": 1,
+    "crossref": 1
+  },
+  "workstream_points": {
+    "busca1": 2,
+    "busca2a": 3,
+    "busca2b": 3,
+    "a3": 2,
+    "artigo3_framework": 2
+  }
 }
