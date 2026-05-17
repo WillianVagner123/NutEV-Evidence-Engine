@@ -11,6 +11,7 @@ on:
       - "nutev_tests/test_metadata_master_contract.py"
       - "nutev_tests/test_prisma_flow.py"
       - "nutev_tests/test_master_pipeline_dedup.py"
+      - "nutev_tests/test_run_summary_counts.py"
       - ".github/workflows/nutev-curation-contracts.yml"
   push:
     branches:
@@ -24,6 +25,7 @@ on:
       - "nutev_tests/test_metadata_master_contract.py"
       - "nutev_tests/test_prisma_flow.py"
       - "nutev_tests/test_master_pipeline_dedup.py"
+      - "nutev_tests/test_run_summary_counts.py"
       - ".github/workflows/nutev-curation-contracts.yml"
 
 jobs:
@@ -54,4 +56,5 @@ jobs:
             nutev_tests/test_metadata_master_contract.py \
             nutev_tests/test_prisma_flow.py \
             nutev_tests/test_master_pipeline_dedup.py \
+            nutev_tests/test_run_summary_counts.py \
             -p no:timeout
