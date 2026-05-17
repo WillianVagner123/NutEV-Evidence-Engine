@@ -1,32 +1,45 @@
 from __future__ import annotations
+
+import json
 from pathlib import Path
+
 import pandas as pd
 
-from nutev.settings import NutevSettings, load_json
-from nutev.querypacks.builders import build_querypack
-from nutev.search.openalex import search_openalex
-from nutev.search.europepmc import search_europepmc
-from nutev.search.pubmed import search_pubmed
-from nutev.search.crossref import search_crossref
-from nutev.search.official_sources import manifest_sources
-from nutev.analysis.relevance import score_record, keep_candidate_for_download
 from nutev.analysis import domains_busca1, domains_busca2a, domains_busca2b
 from nutev.analysis.article3_framework import build_framework_signals
-from nutev.analysis.synthesis import build_master_rows, build_questionnaire_candidates, build_framework_components, write_synthesis_outputs
 from nutev.analysis.prisma import build_prisma_flow, export_prisma
+from nutev.analysis.relevance import keep_candidate_for_download, score_record
+from nutev.analysis.synthesis import (
+    build_framework_components,
+    build_master_rows,
+    build_questionnaire_candidates,
+    write_synthesis_outputs,
+)
 from nutev.download.downloader import download_records
-from nutev.extract.smart_extract import extract_document
+from nutev.engine.artifacts import build_artifact_manifest
+from nutev.engine.events import emit_event, write_event
+from nutev.engine.ids import make_document_id, make_run_id
+from nutev.engine.job import (
+    create_search_case,
+    create_search_job,
+    write_search_case,
+    write_search_job_snapshot,
+)
 from nutev.export.curation import curate_outputs
-from nutev.export.metadata_tables import write_metadata_csv, write_simple_csv
-from nutev.export.rayyan import write_rayyan
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
+from nutev.export.metadata_tables import write_metadata_csv, write_simple_csv
 from nutev.export.methods_writer import write_methods_docs
 from nutev.export.qualification_writer import write_qualification_outputs
-from nutev.engine.ids import make_run_id, make_document_id
-from nutev.engine.job import create_search_case, create_search_job, write_search_case, write_search_job_snapshot
-from nutev.engine.events import emit_event, write_event
-from nutev.engine.artifacts import build_artifact_manifest
+from nutev.export.rayyan import write_rayyan
+from nutev.extract.smart_extract import extract_document
+from nutev.querypacks.builders import build_querypack
+from nutev.search.crossref import search_crossref
+from nutev.search.europepmc import search_europepmc
+from nutev.search.official_sources import manifest_sources
+from nutev.search.openalex import search_openalex
+from nutev.search.pubmed import search_pubmed
+from nutev.settings import NutevSettings, load_json
 
 QUERY_BUDGET = {
     "busca1": 32,
@@ -90,26 +103,97 @@ def _safe_provider_call(provider: str, fn, q: str, ws: str, logger) -> list[dict
         return []
 
 
+def _split_supported_providers(
+    source_priority: list[str],
+    provider_map: dict,
+) -> tuple[list[str], list[str]]:
+    supported: list[str] = []
+    unsupported: list[str] = []
+    for provider in source_priority:
+        if provider == "official_web" or provider in provider_map:
+            supported.append(provider)
+        else:
+            unsupported.append(provider)
+    return supported, unsupported
+
+
+def _write_querypack_audit(
+    qpack: dict[str, list[str]],
+    logs_dir: Path,
+) -> None:
+    logs_dir.mkdir(parents=True, exist_ok=True)
+    (logs_dir / "querypack_executed.json").write_text(
+        json.dumps(qpack, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    rows = []
+    for workstream, queries in qpack.items():
+        for query_order, query_text in enumerate(queries, start=1):
+            rows.append(
+                {
+                    "workstream": workstream,
+                    "query_order": query_order,
+                    "query_text": query_text,
+                }
+            )
+    write_simple_csv(rows, logs_dir / "querypack_executed.csv")
+
+
 def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dict[str, int]:
     run_id = make_run_id()
-    search_case = create_search_case("NutMEV Deep Research", workstreams, settings.mode, DEFAULT_PRIORITY, since_days=settings.since_days, country_discovery=True, official_crawl=True, web_enabled=settings.web_enabled, browser_enabled=settings.browser_enabled, llm_enabled=settings.llm_enabled)
+    search_case = create_search_case(
+        "NutMEV Deep Research",
+        workstreams,
+        settings.mode,
+        DEFAULT_PRIORITY,
+        since_days=settings.since_days,
+        country_discovery=True,
+        official_crawl=True,
+        web_enabled=settings.web_enabled,
+        browser_enabled=settings.browser_enabled,
+        llm_enabled=settings.llm_enabled,
+    )
     search_job = create_search_job(search_case.case_id, run_id, cli_args=[])
     write_search_case(search_case, settings.output_dirs["07_logs"] / "search_case.json")
-    write_event(emit_event(run_id, "discovery_started", "Pipeline discovery started"), settings.output_dirs["07_logs"] / "run_events.jsonl")
+    write_event(
+        emit_event(run_id, "discovery_started", "Pipeline discovery started"),
+        settings.output_dirs["07_logs"] / "run_events.jsonl",
+    )
 
     taxonomy = load_json(settings.config_root / "keyword_taxonomy.json")
     scoring = load_json(settings.config_root / "scoring_rules.json")
     sources = load_json(settings.config_root / "official_sources_manifest.json")
     qpack = build_querypack(taxonomy, workstreams)
+    _write_querypack_audit(qpack, settings.output_dirs["07_logs"])
 
     provider_map = _provider_map()
+    providers_declared_by_workstream: dict[str, list[str]] = {}
+    providers_executed_by_workstream: dict[str, list[str]] = {}
+    providers_unsupported_by_workstream: dict[str, list[str]] = {}
 
     all_rows, extraction_manifest, all_manifest, artifact_inputs = [], [], [], []
+    all_failed: list[dict] = []
     total_downloads = total_failed = total_ocr = 0
 
     for ws, queries in qpack.items():
-        ws_cfg = taxonomy.get("workstreams", {}).get(ws, taxonomy.get("workstreams", {}).get("artigo3_framework", {}))
+        ws_cfg = taxonomy.get("workstreams", {}).get(
+            ws,
+            taxonomy.get("workstreams", {}).get("artigo3_framework", {}),
+        )
         source_priority = ws_cfg.get("source_priority", DEFAULT_PRIORITY)
+        supported_priority, unsupported_priority = _split_supported_providers(
+            source_priority,
+            provider_map,
+        )
+        providers_declared_by_workstream[ws] = source_priority
+        providers_executed_by_workstream[ws] = supported_priority
+        providers_unsupported_by_workstream[ws] = unsupported_priority
+        if unsupported_priority:
+            logger.warning(
+                "ws=%s providers_nao_suportados=%s",
+                ws,
+                unsupported_priority,
+            )
         query_budget = min(len(queries), QUERY_BUDGET.get(ws, 32))
 
         logger.info("workstream=%s queries_geradas=%d", ws, len(queries))
@@ -117,7 +201,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         hits_by_provider = {}
 
         for q in queries[:query_budget]:
-            for provider in source_priority:
+            for provider in supported_priority:
                 if provider == "official_web":
                     continue
                 fn = provider_map.get(provider)
@@ -125,7 +209,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
                     continue
 
                 new_rows = _safe_provider_call(provider, fn, q, ws, logger)
-                hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(new_rows)
+                hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(
+                    new_rows
+                )
                 rows += new_rows
 
         try:
@@ -157,17 +243,36 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         )
 
         all_manifest += manifest
+        all_failed += failed
         for m in manifest:
             m["document_id"] = make_document_id(m)
-            artifact_inputs.append({"document_id": m["document_id"], "artifact_type": "pdf", "path": m.get("path", ""), "source_stage": "download", "status": "ok"})
+            artifact_inputs.append(
+                {
+                    "document_id": m["document_id"],
+                    "artifact_type": "pdf",
+                    "path": m.get("path", ""),
+                    "source_stage": "download",
+                    "status": "ok",
+                }
+            )
         total_downloads += len(manifest)
         total_failed += len(failed)
         for f in failed:
             f["document_id"] = make_document_id(f)
-            write_event(emit_event(run_id, "metadata_only_saved", "Download failed, metadata only saved", event_kind="warning", document_id=f["document_id"], meta_json={"url": f.get("url"), "reason": f.get("reason")}), settings.output_dirs["07_logs"] / "run_events.jsonl")
+            write_event(
+                emit_event(
+                    run_id,
+                    "metadata_only_saved",
+                    "Download failed, metadata only saved",
+                    event_kind="warning",
+                    document_id=f["document_id"],
+                    meta_json={"url": f.get("url"), "reason": f.get("reason")},
+                ),
+                settings.output_dirs["07_logs"] / "run_events.jsonl",
+            )
 
         write_simple_csv(all_manifest, settings.project_root / "03_corpus" / "download_manifest.csv")
-        write_simple_csv(failed, settings.project_root / "03_corpus" / "failed_downloads.csv")
+        write_simple_csv(all_failed, settings.project_root / "03_corpus" / "failed_downloads.csv")
 
         ext_by_url = {}
         for m in manifest:
@@ -193,14 +298,26 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             r["ocr_status"] = "used" if e.get("used_ocr") else "not_used"
             r["extraction_status"] = e.get("extraction_status", "missing")
             if e.get("text_path"):
-                r["extracted_text"] = Path(e["text_path"]).read_text(encoding="utf-8", errors="ignore")
+                r["extracted_text"] = Path(e["text_path"]).read_text(
+                    encoding="utf-8",
+                    errors="ignore",
+                )
 
         if ws == "busca1":
-            rows = domains_busca1.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca1.json"))
+            rows = domains_busca1.apply_domain_rules(
+                rows,
+                load_json(settings.config_root / "domain_rules_busca1.json"),
+            )
         elif ws == "busca2a":
-            rows = domains_busca2a.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2a.json"))
+            rows = domains_busca2a.apply_domain_rules(
+                rows,
+                load_json(settings.config_root / "domain_rules_busca2a.json"),
+            )
         elif ws == "busca2b":
-            rows = domains_busca2b.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2b.json"))
+            rows = domains_busca2b.apply_domain_rules(
+                rows,
+                load_json(settings.config_root / "domain_rules_busca2b.json"),
+            )
         elif ws in {"a3", "artigo3_framework"}:
             rows = build_framework_signals(rows)
 
@@ -209,7 +326,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")
-    write_simple_csv(extraction_manifest, settings.output_dirs["05_extraction"] / "extraction_manifest.csv")
+    write_simple_csv(
+        extraction_manifest,
+        settings.output_dirs["05_extraction"] / "extraction_manifest.csv",
+    )
 
     master = build_master_rows(all_rows)
     write_synthesis_outputs(master, settings.output_dirs["06_tables"])
@@ -217,23 +337,82 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     q_items = build_questionnaire_candidates(master)
     fw_items = build_framework_components(master)
 
-    write_excel_file(pd.DataFrame(q_items), settings.output_dirs["06_tables"] / "NUTEV_QUESTIONNAIRE_ITEM_CANDIDATES.xlsx")
-    write_excel_file(pd.DataFrame(fw_items), settings.output_dirs["06_tables"] / "NUTEV_FRAMEWORK_COMPONENTS.xlsx")
+    write_excel_file(
+        pd.DataFrame(q_items),
+        settings.output_dirs["06_tables"] / "NUTEV_QUESTIONNAIRE_ITEM_CANDIDATES.xlsx",
+    )
+    write_excel_file(
+        pd.DataFrame(fw_items),
+        settings.output_dirs["06_tables"] / "NUTEV_FRAMEWORK_COMPONENTS.xlsx",
+    )
 
-    write_qualification_outputs(master, q_items, fw_items, settings.output_dirs["06_tables"], settings.output_dirs["08_docs"])
+    write_qualification_outputs(
+        master,
+        q_items,
+        fw_items,
+        settings.output_dirs["06_tables"],
+        settings.output_dirs["08_docs"],
+    )
     write_methods_docs(settings.output_dirs["08_docs"])
 
     prisma = build_prisma_flow(master, all_manifest, extraction_manifest)
-    export_prisma(prisma, settings.output_dirs["06_tables"] / "NUTEV_PRISMA_FLOW.xlsx", settings.output_dirs["07_logs"] / "prisma_flow.json")
+    export_prisma(
+        prisma,
+        settings.output_dirs["06_tables"] / "NUTEV_PRISMA_FLOW.xlsx",
+        settings.output_dirs["07_logs"] / "prisma_flow.json",
+    )
 
     curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
 
-    write_event(emit_event(run_id, "synthesis_completed", "Synthesis completed"), settings.output_dirs["07_logs"] / "run_events.jsonl")
-    write_event(emit_event(run_id, "curation_completed", "Curated layer completed", meta_json=curation_summary), settings.output_dirs["07_logs"] / "run_events.jsonl")
-    build_artifact_manifest(artifact_inputs, settings.output_dirs["07_logs"] / "artifact_manifest.csv")
+    write_event(
+        emit_event(run_id, "synthesis_completed", "Synthesis completed"),
+        settings.output_dirs["07_logs"] / "run_events.jsonl",
+    )
+    write_event(
+        emit_event(
+            run_id,
+            "curation_completed",
+            "Curated layer completed",
+            meta_json=curation_summary,
+        ),
+        settings.output_dirs["07_logs"] / "run_events.jsonl",
+    )
+    build_artifact_manifest(
+        artifact_inputs,
+        settings.output_dirs["07_logs"] / "artifact_manifest.csv",
+    )
     search_job.status = "completed"
-    search_job.finished_at = __import__("datetime").datetime.now(__import__("datetime").timezone.utc)
-    write_search_job_snapshot(search_job, settings.output_dirs["07_logs"] / "search_job_snapshot.json", {"mode": settings.mode, "workstreams": workstreams, "providers_enabled": DEFAULT_PRIORITY, "configs_loaded": ["keyword_taxonomy.json", "scoring_rules.json", "official_sources_manifest.json"], "scoring_rules": scoring, "country_manifest": sources, "environment": {"web_enabled": settings.web_enabled, "browser_enabled": settings.browser_enabled, "llm_enabled": settings.llm_enabled}})
+    search_job.finished_at = __import__("datetime").datetime.now(
+        __import__("datetime").timezone.utc
+    )
+    write_search_job_snapshot(
+        search_job,
+        settings.output_dirs["07_logs"] / "search_job_snapshot.json",
+        {
+            "mode": settings.mode,
+            "workstreams": workstreams,
+            "providers_enabled": DEFAULT_PRIORITY,
+            "providers_declared_by_workstream": providers_declared_by_workstream,
+            "providers_executed_by_workstream": providers_executed_by_workstream,
+            "providers_unsupported_by_workstream": providers_unsupported_by_workstream,
+            "configs_loaded": [
+                "keyword_taxonomy.json",
+                "scoring_rules.json",
+                "official_sources_manifest.json",
+            ],
+            "querypack_files": [
+                "07_logs/querypack_executed.json",
+                "07_logs/querypack_executed.csv",
+            ],
+            "scoring_rules": scoring,
+            "country_manifest": sources,
+            "environment": {
+                "web_enabled": settings.web_enabled,
+                "browser_enabled": settings.browser_enabled,
+                "llm_enabled": settings.llm_enabled,
+            },
+        },
+    )
 
     summary = {
         "workstreams": workstreams,
