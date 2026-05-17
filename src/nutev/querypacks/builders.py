@@ -8,6 +8,105 @@ WORKSTREAM_ALIASES = {
     "article3": "artigo3_framework",
 }
 
+WORKSTREAM_QUERY_ENHANCEMENTS = {
+    "busca1": {
+        "focus_terms": [
+            "medical nutrition therapy",
+            "nutrition counseling",
+            "nutrition counselling",
+            "healthy eating pattern",
+            "ultra-processed food",
+            "meal planning",
+            "shared meals",
+            "commensality",
+        ],
+        "web_hints": [
+            "food-based dietary guideline",
+            "dietary recommendation",
+            "healthy diet",
+            "nutrition policy",
+            "guia alimentar",
+        ],
+        "document_terms": [
+            "policy brief",
+            "technical report",
+            "practice recommendation",
+        ],
+    },
+    "busca2a": {
+        "focus_terms": [
+            "medical nutrition therapy",
+            "obesity management",
+            "clinical nutrition",
+            "cardiometabolic health",
+            "glycemic control",
+            "blood pressure",
+            "fatty liver",
+        ],
+        "web_hints": [
+            "clinical practice guideline",
+            "consensus statement",
+            "scientific statement",
+            "obesity guideline",
+            "cardiometabolic guideline",
+        ],
+        "document_terms": [
+            "consensus statement",
+            "scientific statement",
+            "clinical pathway",
+        ],
+    },
+    "busca2b": {
+        "focus_terms": [
+            "lifestyle intervention",
+            "behavioral intervention",
+            "nutrition counseling",
+            "nutrition counselling",
+            "meal replacement",
+            "time-restricted eating",
+            "intermittent fasting",
+            "diabetes prevention program",
+            "weight maintenance",
+        ],
+        "web_hints": [
+            "randomized trial",
+            "systematic review",
+            "implementation study",
+            "adherence intervention",
+            "behavior change trial",
+        ],
+        "document_terms": [
+            "randomized trial",
+            "systematic review",
+            "meta-analysis",
+        ],
+    },
+    "artigo3_framework": {
+        "focus_terms": [
+            "nutrition literacy",
+            "food agency",
+            "psychometric validation",
+            "scale development",
+            "questionnaire validation",
+            "implementation framework",
+            "self-efficacy",
+            "cooking skills",
+        ],
+        "web_hints": [
+            "questionnaire validation",
+            "survey instrument",
+            "framework development",
+            "food literacy scale",
+            "psychometric study",
+        ],
+        "document_terms": [
+            "framework",
+            "questionnaire",
+            "validation study",
+        ],
+    },
+}
+
 
 def canonical_workstream(workstream: str) -> str:
     return WORKSTREAM_ALIASES.get(workstream, workstream)
@@ -346,6 +445,7 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
     global_cfg = keyword_taxonomy.get("global", {})
     clinical_cfg = keyword_taxonomy.get("clinical", {})
     outcomes_cfg = keyword_taxonomy.get("outcomes", {})
+    enhancements = WORKSTREAM_QUERY_ENHANCEMENTS.get(ws_key, {})
 
     population_terms = uniq(ws.get("population_terms", []))
     condition_terms = uniq(ws.get("condition_terms", []))
@@ -358,7 +458,8 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
         global_cfg.get("document_types", {}),
         ws.get("document_type_keys", []),
     )
-    web_hints = uniq(ws.get("web_query_hints", []))
+    doc_type_terms = uniq(doc_type_terms + enhancements.get("document_terms", []))
+    web_hints = uniq(ws.get("web_query_hints", []) + enhancements.get("web_hints", []))
     behavior_terms = get_global_block(keyword_taxonomy, "implementation_behavior")
     diet_terms = get_global_block(keyword_taxonomy, "diet_patterns")
     nutrition_terms = get_global_block(keyword_taxonomy, "nutrition_domains")
@@ -366,7 +467,7 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
     focus_terms: list[str] = []
     for block_name in ws.get("focus_blocks", []):
         focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
-    focus_terms = uniq(focus_terms)
+    focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
 
     queries: list[str] = []
 
@@ -428,6 +529,28 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
                     or_block(condition_terms + clinical_terms, 8),
                     or_block(diet_chunk, 4),
                     or_block(priority_outcomes, 5),
+                ]
+            )
+        )
+
+    for nutrition_chunk in chunk_terms(nutrition_terms, 5)[:8]:
+        queries.append(
+            _join_parts(
+                [
+                    or_block(condition_terms + clinical_terms, 8),
+                    or_block(nutrition_chunk, 5),
+                    or_block(behavior_terms, 5),
+                ]
+            )
+        )
+
+    for hint_chunk in chunk_terms(web_hints, 4)[:8]:
+        queries.append(
+            _join_parts(
+                [
+                    or_block(hint_chunk, 4),
+                    or_block(focus_terms, 5),
+                    or_block(doc_type_terms, 5),
                 ]
             )
         )
