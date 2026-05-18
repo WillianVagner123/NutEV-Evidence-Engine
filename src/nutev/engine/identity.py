@@ -137,6 +137,34 @@ def _append_reason(reasons: list[str], reason: str) -> None:
         reasons.append(reason)
 
 
+def _append_field(fields: list[str], field: str) -> None:
+    if field and field not in fields:
+        fields.append(field)
+
+
+def _winner_enriched_fields(
+    winner_row: dict,
+    absorbed_rows: list[dict],
+    final_row: dict,
+) -> list[str]:
+    fields: list[str] = []
+
+    if as_text(final_row.get("url")) != as_text(winner_row.get("url")):
+        _append_field(fields, "url")
+
+    if len(as_text(final_row.get("abstract"))) > len(as_text(winner_row.get("abstract"))):
+        _append_field(fields, "abstract")
+    if len(as_text(final_row.get("summary"))) > len(as_text(winner_row.get("summary"))):
+        _append_field(fields, "summary")
+
+    for field in _METADATA_COMPLETENESS_FIELDS:
+        if not as_text(winner_row.get(field)) and as_text(final_row.get(field)):
+            if any(as_text(row.get(field)) for row in absorbed_rows):
+                _append_field(fields, field)
+
+    return fields
+
+
 def _winner_preference_reason(
     winner_row: dict,
     absorbed_rows: list[dict],
@@ -234,6 +262,9 @@ def deduplicate_document_rows(rows: list[dict]) -> tuple[list[dict], list[dict]]
         winner_preference_reason = _winner_preference_reason(
             winner_row, absorbed_rows, final_row
         )
+        winner_enriched_fields = "; ".join(
+            _winner_enriched_fields(winner_row, absorbed_rows, final_row)
+        )
 
         for occurrence_order, (input_index, row) in enumerate(group):
             is_winner = occurrence_order == 0
@@ -252,6 +283,7 @@ def deduplicate_document_rows(rows: list[dict]) -> tuple[list[dict], list[dict]]
                     if is_winner
                     else f"absorbed_by_same_{key_type}",
                     "winner_preference_reason": winner_preference_reason,
+                    "winner_enriched_fields": winner_enriched_fields,
                     "winner_url_after_merge": _manifest_value(final_row, "url"),
                     "occurrence_url": _manifest_value(row, "url"),
                     "source": _manifest_value(row, "source"),
