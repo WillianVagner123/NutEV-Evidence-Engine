@@ -19,7 +19,11 @@
     "mediterranean": 2,
     "dash": 2,
     "plant-based": 2,
-    "lifestyle medicine": 3
+    "lifestyle medicine": 3,
+    "mafld": 2,
+    "lifestyle intervention": 2,
+    "lifestyle modification": 2,
+    "therapeutic lifestyle changes": 3
   },
   "source_points": {
     "official": 4,
