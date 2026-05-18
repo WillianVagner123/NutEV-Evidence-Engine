@@ -18,7 +18,11 @@ from nutev.analysis.synthesis import (
 from nutev.download.downloader import download_records
 from nutev.engine.artifacts import build_artifact_manifest
 from nutev.engine.events import emit_event, write_event
-from nutev.engine.identity import as_text, compute_document_key, merge_article_rows
+from nutev.engine.identity import (
+    as_text,
+    compute_document_key,
+    deduplicate_document_rows,
+)
 from nutev.engine.ids import make_document_id, make_run_id
 from nutev.engine.job import (
     create_search_case,
@@ -76,17 +80,13 @@ def _canonical_article_key(row: dict) -> tuple[str, str]:
     return compute_document_key(row)
 
 
+def _dedup_rows_with_manifest(rows: list[dict]) -> tuple[list[dict], list[dict]]:
+    return deduplicate_document_rows(rows)
+
+
 def _dedup_rows(rows: list[dict]) -> list[dict]:
-    by_key: dict[tuple[str, str], dict] = {}
-    order: list[tuple[str, str]] = []
-    for row in rows:
-        key = _canonical_article_key(row)
-        if key not in by_key:
-            by_key[key] = row
-            order.append(key)
-            continue
-        by_key[key] = merge_article_rows(by_key[key], row)
-    return [by_key[key] for key in order]
+    deduped, _manifest = _dedup_rows_with_manifest(rows)
+    return deduped
 
 
 def _build_operational_counts(rows: list[dict]) -> dict[str, object]:
@@ -176,6 +176,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     write_provider_querypack_audit(provider_querypack, settings.output_dirs["07_logs"])
 
     all_rows, extraction_manifest, all_manifest, artifact_inputs = [], [], [], []
+    all_dedup_manifest = []
     total_downloads = total_failed = total_ocr = 0
 
     for ws, queries in qpack.items():
@@ -216,7 +217,8 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         for r in rows:
             r["workstream"] = ws
 
-        rows = _dedup_rows(rows)
+        rows, dedup_manifest = _dedup_rows_with_manifest(rows)
+        all_dedup_manifest += dedup_manifest
         rows = [score_record(r, scoring, ws) for r in rows]
         rows = sorted(rows, key=lambda x: x.get("relevance_score", 0), reverse=True)
 
@@ -319,6 +321,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv"
     )
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")
+    write_simple_csv(
+        all_dedup_manifest, settings.output_dirs["07_logs"] / "dedup_manifest.csv"
+    )
     write_simple_csv(
         extraction_manifest,
         settings.output_dirs["05_extraction"] / "extraction_manifest.csv",
