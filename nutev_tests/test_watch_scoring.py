@@ -34,3 +34,11 @@ def test_pdf_scores_more_than_metadata_only():
 
 def test_official_sources_bonus():
     assert _score_watch_item({"title": "report", "source_provider": "official_sources"}) > _score_watch_item({"title": "report", "source_provider": "crossref"})
+
+
+def test_implementation_science_bonus_improves_priority():
+    assert _score_watch_item({"title": "implementation science for dietary adherence in lifestyle medicine"}) > _score_watch_item({"title": "lifestyle medicine note"})
+
+
+def test_food_environment_bonus_improves_priority():
+    assert _score_watch_item({"title": "food environment and shared meals in obesity prevention"}) > _score_watch_item({"title": "obesity prevention note"})
