@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 import pandas as pd
 
@@ -25,6 +27,7 @@ from nutev.engine.job import (
     write_search_case,
     write_search_job_snapshot,
 )
+from nutev.engine.validators import normalize_doi, normalize_pmcid, normalize_pmid
 from nutev.export.curation import curate_outputs
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
@@ -77,16 +80,57 @@ def _provider_map():
     }
 
 
+def _normalize_dedup_url(value: str | None) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    parsed = urlsplit(text)
+    if not parsed.scheme or not parsed.netloc:
+        return text.rstrip("/").lower()
+    path = parsed.path.rstrip("/") or "/"
+    normalized = urlunsplit(
+        (parsed.scheme.lower(), parsed.netloc.lower(), path, "", "")
+    )
+    return normalized.rstrip("/")
+
+
+def _row_hash_key(row: dict) -> str:
+    payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
+    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
+
+
 def _canonical_article_key(row: dict) -> tuple[str, str]:
-    for field in ["doi", "pmid", "pmcid"]:
-        value = str(row.get(field) or "").strip().lower()
-        if value:
-            return field, value
-    title = str(row.get("title") or "").strip().lower()
-    year = str(row.get("year") or "").strip()
-    if title:
+    doi = normalize_doi(row.get("doi"))
+    if doi:
+        return "doi", doi
+
+    pmid = normalize_pmid(row.get("pmid"))
+    if pmid:
+        return "pmid", pmid
+
+    pmcid = normalize_pmcid(row.get("pmcid"))
+    if pmcid:
+        return "pmcid", pmcid
+
+    url = _normalize_dedup_url(
+        row.get("final_url")
+        or row.get("resolved_url")
+        or row.get("original_url")
+        or row.get("url")
+    )
+    if url:
+        return "url", url
+
+    title = " ".join(str(row.get("title") or "").strip().lower().split())
+    year_raw = str(row.get("year") or "").strip()
+    try:
+        year = str(int(float(year_raw))) if year_raw else ""
+    except Exception:
+        year = ""
+    if title and year:
         return "title_year", f"{title}|{year}"
-    return "url", str(row.get("url") or "").strip().lower()
+
+    return "row_hash", _row_hash_key(row)
 
 
 def _merge_article_rows(existing: dict, incoming: dict) -> dict:
