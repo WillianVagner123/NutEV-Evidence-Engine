@@ -119,3 +119,21 @@ def test_build_watch_queries_prioritizes_guideline_like_terms() -> None:
 
     assert guideline_queries[0]["priority"] == 1
     assert behavior_queries[0]["priority"] == 2
+
+
+def test_quick_mode_guidelines_cover_consensus_and_statement_seed_groups() -> None:
+    queries = build_watch_queries(["guidelines_consensus"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "consensus statement" in rendered
+    assert "scientific statement" in rendered
+    assert "position statement" in rendered
+
+
+def test_quick_mode_implementation_queries_cover_behavior_change_group() -> None:
+    queries = build_watch_queries(["implementation_behavior"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "behavior change" in rendered
+    assert "motivational interviewing" in rendered
+    assert "social support" in rendered
