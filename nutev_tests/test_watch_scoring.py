@@ -62,3 +62,7 @@ def test_taxonomy_aligned_food_literacy_signals_improve_priority():
 
 def test_whole_food_plant_based_signal_improves_priority():
     assert _score_watch_item({"title": "whole-food plant-based diet for cardiometabolic risk"}) > _score_watch_item({"title": "diet for cardiometabolic risk"})
+
+
+def test_implementation_fidelity_and_sustainability_improve_priority():
+    assert _score_watch_item({"title": "implementation fidelity and sustainability for lifestyle nutrition programs"}) > _score_watch_item({"title": "lifestyle nutrition programs note"})
