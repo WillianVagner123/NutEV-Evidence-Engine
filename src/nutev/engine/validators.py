@@ -1,11 +1,8 @@
 from __future__ import annotations
 
+from nutev.engine.identity import normalize_doi as _normalize_doi
+
 
 def normalize_doi(doi: str | None) -> str | None:
-    if not doi:
-        return None
-    cleaned = doi.strip().lower()
-    for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
-        if cleaned.startswith(prefix):
-            cleaned = cleaned[len(prefix):]
+    cleaned = _normalize_doi(doi)
     return cleaned or None
