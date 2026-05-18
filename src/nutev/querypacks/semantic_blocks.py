@@ -24,6 +24,9 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "hybrid effectiveness implementation",
             "implementation study",
             "implementation trial",
+            "health coaching",
+            "nutrition counseling",
+            "nutrition counselling",
         ],
         "document_terms": [
             "implementation study",
@@ -49,6 +52,8 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "behavioral maintenance",
             "self-monitoring",
             "relapse prevention",
+            "dietary counseling",
+            "dietary counselling",
         ],
         "document_terms": [
             "adherence intervention",
@@ -72,6 +77,8 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "self-efficacy",
             "patient activation",
             "empowerment",
+            "nutrition education",
+            "food and nutrition literacy",
         ],
         "document_terms": [
             "questionnaire validation",
