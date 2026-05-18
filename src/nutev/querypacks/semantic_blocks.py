@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from nutev.querypacks.builders import canonical_workstream, uniq
+WORKSTREAM_ALIASES = {
+    "a3": "artigo3_framework",
+    "article3": "artigo3_framework",
+}
 
 SemanticBlock = dict[str, list[str]]
 
@@ -153,13 +156,32 @@ WORKSTREAM_SEMANTIC_PRIORITIES: dict[str, list[tuple[str, int]]] = {
 }
 
 
+def _canonical_workstream(workstream: str) -> str:
+    return WORKSTREAM_ALIASES.get(workstream, workstream)
+
+
+def _uniq(items: list[str]) -> list[str]:
+    seen = set()
+    out = []
+    for item in items:
+        value = str(item).strip()
+        if not value:
+            continue
+        low = value.lower()
+        if low in seen:
+            continue
+        seen.add(low)
+        out.append(value)
+    return out
+
+
 def semantic_block_names(workstream: str) -> list[str]:
-    ws_key = canonical_workstream(workstream)
+    ws_key = _canonical_workstream(workstream)
     return [name for name, _ in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, [])]
 
 
 def prioritized_semantic_blocks(workstream: str) -> list[dict[str, int | str]]:
-    ws_key = canonical_workstream(workstream)
+    ws_key = _canonical_workstream(workstream)
     return [
         {"name": name, "priority": priority}
         for name, priority in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, [])
@@ -172,11 +194,11 @@ def semantic_terms(
     field: str = "terms",
     min_priority: int = 1,
 ) -> list[str]:
-    ws_key = canonical_workstream(workstream)
+    ws_key = _canonical_workstream(workstream)
     terms: list[str] = []
     for block_name, priority in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, []):
         if priority < min_priority:
             continue
         block = SEMANTIC_RESEARCH_BLOCKS.get(block_name, {})
         terms.extend(block.get(field, []))
-    return uniq(terms)
+    return _uniq(terms)
