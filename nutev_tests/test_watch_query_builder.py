@@ -47,6 +47,11 @@ def test_build_watch_queries_adds_implementation_and_education_context() -> None
     assert '"knowledge translation"' in first_query
     assert '"dietary adherence"' in first_query
     assert '"self-efficacy"' in first_query
+    assert '"implementation strategy"' in first_query
+    assert '"implementation outcomes"' in first_query
+    assert '"process evaluation"' in first_query
+    assert '"barriers and facilitators"' in first_query
+    assert '"behavior change technique"' in first_query
 
 
 def test_build_watch_queries_adds_food_environment_context() -> None:
@@ -59,7 +64,23 @@ def test_build_watch_queries_adds_food_environment_context() -> None:
     first_query = str(queries[0]["query"])
     assert '"food environment"' in first_query
     assert '"nutrition education"' in first_query
+    assert '"food and nutrition literacy"' in first_query
     assert '"shared meals"' in first_query
+
+
+def test_build_watch_queries_adds_guideline_report_context() -> None:
+    queries = build_watch_queries(
+        ["guidelines_consensus"],
+        since_days=30,
+        mode="quick",
+    )
+
+    first_query = str(queries[0]["query"])
+    assert '"consensus report"' in first_query
+    assert '"practice advisory"' in first_query
+    assert '"expert consensus"' in first_query
+    assert '"clinical guidance"' in first_query
+    assert '"practice recommendation"' in first_query
 
 
 def test_build_watch_queries_prioritizes_guideline_like_terms() -> None:
