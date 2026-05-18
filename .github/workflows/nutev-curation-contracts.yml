@@ -7,11 +7,13 @@ on:
       - "src/nutev/export/**"
       - "src/nutev/analysis/**"
       - "src/nutev/pipelines/**"
+      - "src/nutev/engine/**"
       - "nutev_tests/test_curation_outputs.py"
       - "nutev_tests/test_metadata_master_contract.py"
       - "nutev_tests/test_prisma_flow.py"
       - "nutev_tests/test_master_pipeline_dedup.py"
       - "nutev_tests/test_run_summary_counts.py"
+      - "nutev_tests/test_document_identity.py"
       - ".github/workflows/nutev-curation-contracts.yml"
   push:
     branches:
@@ -21,11 +23,13 @@ on:
       - "src/nutev/export/**"
       - "src/nutev/analysis/**"
       - "src/nutev/pipelines/**"
+      - "src/nutev/engine/**"
       - "nutev_tests/test_curation_outputs.py"
       - "nutev_tests/test_metadata_master_contract.py"
       - "nutev_tests/test_prisma_flow.py"
       - "nutev_tests/test_master_pipeline_dedup.py"
       - "nutev_tests/test_run_summary_counts.py"
+      - "nutev_tests/test_document_identity.py"
       - ".github/workflows/nutev-curation-contracts.yml"
 
 jobs:
@@ -57,4 +61,5 @@ jobs:
             nutev_tests/test_prisma_flow.py \
             nutev_tests/test_master_pipeline_dedup.py \
             nutev_tests/test_run_summary_counts.py \
+            nutev_tests/test_document_identity.py \
             -p no:timeout
