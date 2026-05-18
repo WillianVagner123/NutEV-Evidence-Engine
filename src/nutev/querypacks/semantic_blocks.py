@@ -1,0 +1,237 @@
+from __future__ import annotations
+
+WORKSTREAM_ALIASES = {
+    "a3": "artigo3_framework",
+    "article3": "artigo3_framework",
+}
+
+SemanticBlock = dict[str, list[str]]
+
+SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
+    "implementation_science": {
+        "terms": [
+            "implementation science",
+            "implementation framework",
+            "implementation strategy",
+            "implementation outcomes",
+            "implementation fidelity",
+            "real-world implementation",
+            "pragmatic implementation",
+            "scale-up",
+            "RE-AIM",
+            "CFIR",
+            "normalization process theory",
+            "hybrid effectiveness implementation",
+            "implementation study",
+            "implementation trial",
+        ],
+        "document_terms": [
+            "implementation study",
+            "implementation trial",
+            "process evaluation",
+            "mixed methods study",
+            "real-world evidence",
+        ],
+    },
+    "adherence_persistence": {
+        "terms": [
+            "adherence",
+            "dietary adherence",
+            "treatment adherence",
+            "long-term adherence",
+            "maintenance",
+            "weight maintenance",
+            "persistence",
+            "engagement",
+            "retention",
+            "dropout",
+            "attrition",
+            "behavioral maintenance",
+            "self-monitoring",
+            "relapse prevention",
+        ],
+        "document_terms": [
+            "adherence intervention",
+            "maintenance trial",
+            "behavior change trial",
+            "longitudinal study",
+        ],
+    },
+    "food_literacy_agency": {
+        "terms": [
+            "food literacy",
+            "nutrition literacy",
+            "health literacy",
+            "food agency",
+            "food skills",
+            "culinary skills",
+            "cooking skills",
+            "meal planning",
+            "label reading",
+            "food choice",
+            "self-efficacy",
+            "patient activation",
+            "empowerment",
+        ],
+        "document_terms": [
+            "questionnaire validation",
+            "scale development",
+            "psychometric validation",
+            "survey instrument",
+        ],
+    },
+    "commensality_context": {
+        "terms": [
+            "commensality",
+            "shared meals",
+            "family meals",
+            "meal context",
+            "eating context",
+            "social eating",
+            "food environment",
+            "household food practices",
+            "cultural food practices",
+            "food culture",
+            "meal routine",
+        ],
+        "document_terms": [
+            "qualitative study",
+            "mixed methods study",
+            "ethnographic study",
+            "observational study",
+        ],
+    },
+    "steatotic_liver_cardiometabolic": {
+        "terms": [
+            "metabolic dysfunction-associated steatotic liver disease",
+            "metabolic dysfunction associated steatotic liver disease",
+            "metabolic associated steatotic liver disease",
+            "steatotic liver disease",
+            "metabolic dysfunction-associated steatohepatitis",
+            "metabolic dysfunction associated steatohepatitis",
+            "mash",
+            "nonalcoholic fatty liver disease",
+            "non-alcoholic fatty liver disease",
+            "nafld",
+            "nonalcoholic steatohepatitis",
+            "non-alcoholic steatohepatitis",
+            "nash",
+            "fatty liver",
+            "hepatic steatosis",
+            "doença hepática esteatótica associada à disfunção metabólica",
+            "esteatose hepática metabólica",
+            "esteato-hepatite associada à disfunção metabólica",
+            "esteatohepatite associada à disfunção metabólica",
+            "esteatose hepática",
+        ],
+        "document_terms": [
+            "clinical practice guideline",
+            "consensus statement",
+            "scientific statement",
+            "position statement",
+            "systematic review",
+        ],
+    },
+    "equity_access": {
+        "terms": [
+            "health equity",
+            "food insecurity",
+            "social determinants of health",
+            "socioeconomic status",
+            "access to healthy food",
+            "affordability",
+            "cultural adaptation",
+            "underserved populations",
+            "low-income",
+            "racial disparities",
+            "ethnic disparities",
+        ],
+        "document_terms": [
+            "equity-focused intervention",
+            "community-based intervention",
+            "implementation study",
+            "policy evaluation",
+        ],
+    },
+}
+
+WORKSTREAM_SEMANTIC_PRIORITIES: dict[str, list[tuple[str, int]]] = {
+    "busca1": [
+        ("food_literacy_agency", 5),
+        ("commensality_context", 5),
+        ("implementation_science", 4),
+        ("adherence_persistence", 3),
+        ("equity_access", 3),
+    ],
+    "busca2a": [
+        ("implementation_science", 5),
+        ("steatotic_liver_cardiometabolic", 5),
+        ("adherence_persistence", 4),
+        ("equity_access", 4),
+        ("food_literacy_agency", 2),
+        ("commensality_context", 1),
+    ],
+    "busca2b": [
+        ("adherence_persistence", 5),
+        ("implementation_science", 5),
+        ("steatotic_liver_cardiometabolic", 4),
+        ("food_literacy_agency", 4),
+        ("equity_access", 3),
+        ("commensality_context", 2),
+    ],
+    "artigo3_framework": [
+        ("food_literacy_agency", 5),
+        ("commensality_context", 5),
+        ("implementation_science", 4),
+        ("adherence_persistence", 4),
+        ("equity_access", 3),
+    ],
+}
+
+
+def _canonical_workstream(workstream: str) -> str:
+    return WORKSTREAM_ALIASES.get(workstream, workstream)
+
+
+def _uniq(items: list[str]) -> list[str]:
+    seen = set()
+    out = []
+    for item in items:
+        value = str(item).strip()
+        if not value:
+            continue
+        low = value.lower()
+        if low in seen:
+            continue
+        seen.add(low)
+        out.append(value)
+    return out
+
+
+def semantic_block_names(workstream: str) -> list[str]:
+    ws_key = _canonical_workstream(workstream)
+    return [name for name, _ in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, [])]
+
+
+def prioritized_semantic_blocks(workstream: str) -> list[dict[str, int | str]]:
+    ws_key = _canonical_workstream(workstream)
+    return [
+        {"name": name, "priority": priority}
+        for name, priority in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, [])
+    ]
+
+
+def semantic_terms(
+    workstream: str,
+    *,
+    field: str = "terms",
+    min_priority: int = 1,
+) -> list[str]:
+    ws_key = _canonical_workstream(workstream)
+    terms: list[str] = []
+    for block_name, priority in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, []):
+        if priority < min_priority:
+            continue
+        block = SEMANTIC_RESEARCH_BLOCKS.get(block_name, {})
+        terms.extend(block.get(field, []))
+    return _uniq(terms)
