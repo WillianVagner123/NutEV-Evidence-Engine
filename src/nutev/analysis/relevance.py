@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from urllib.parse import urlparse
+
 SOURCE_BONUS = {
     "official": 9,
     "pubmed": 6,
@@ -492,12 +494,51 @@ def _should_hard_exclude_out_of_scope(text: str, workstream: str) -> bool:
     return penalty <= -10 or len(flags) >= 2
 
 
+def _extract_domain(url: str) -> str:
+    parsed = urlparse(url)
+    return (parsed.netloc or "").lower()
+
+
+def _match_weighted_points(text: str, points_map: dict[str, int]) -> int:
+    score = 0
+    for token, points in points_map.items():
+        if token and token.lower() in text:
+            score += points
+    return score
+
+
+def _editorial_authority_score(record: dict, scoring_rules: dict) -> int:
+    authority_rules = scoring_rules.get("editorial_authority_points", {})
+    journal = (record.get("journal") or "").lower()
+    source_institution = (record.get("source_institution") or "").lower()
+    url = (record.get("url") or record.get("final_url") or record.get("original_url") or "").lower()
+    domain = _extract_domain(url)
+
+    score = 0
+    score += _match_weighted_points(journal, authority_rules.get("journals", {}))
+    score += _match_weighted_points(source_institution, authority_rules.get("institutions", {}))
+    score += _match_weighted_points(domain, authority_rules.get("domains", {}))
+    return score
+
+
+def _editorial_priority_tier(score: int) -> str:
+    if score >= 12:
+        return "a1_proxy_high"
+    if score >= 7:
+        return "a1_proxy_moderate"
+    if score >= 3:
+        return "editorial_priority"
+    return "standard"
+
+
 def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     title = (record.get("title") or "").lower()
     url = (record.get("url") or "").lower()
     doi = (record.get("doi") or "").lower()
     abstract = (record.get("abstract") or record.get("summary") or "").lower()
-    text = f"{title} {url} {doi} {abstract}"
+    journal = (record.get("journal") or "").lower()
+    source_institution = (record.get("source_institution") or "").lower()
+    text = f"{title} {url} {doi} {abstract} {journal} {source_institution}"
 
     score = 0
 
@@ -522,13 +563,17 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
             score += pts
 
     out_of_scope_flags, out_of_scope_penalty = _out_of_scope_profile(text)
+    editorial_score = _editorial_authority_score(record, scoring_rules)
     score += _download_signal_score(text, url)
     score += _workstream_coherence_bonus(text, workstream)
     score += out_of_scope_penalty
     score += _out_of_scope_rescue_bonus(text, workstream)
+    score += editorial_score
 
     record["out_of_scope_flags"] = out_of_scope_flags
     record["out_of_scope_penalty"] = out_of_scope_penalty
+    record["editorial_priority_score"] = editorial_score
+    record["editorial_priority_tier"] = _editorial_priority_tier(editorial_score)
     record["relevance_score"] = score
     return record
 
@@ -539,9 +584,11 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
     url = (record.get("url") or "").lower()
     source = (record.get("source") or "").lower()
     abstract = (record.get("abstract") or record.get("summary") or "").lower()
-    text = f"{title} {url} {abstract}"
+    journal = (record.get("journal") or "").lower()
+    text = f"{title} {url} {abstract} {journal}"
     signal_hits = _workstream_signal_hits(text, workstream)
     matched_groups = sum(1 for count in signal_hits.values() if count > 0)
+    editorial_priority_score = int(record.get("editorial_priority_score") or 0)
 
     hard_drop = [
         "editorial",
@@ -592,6 +639,9 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
     has_high_value_signal = _contains_any(title, HIGH_VALUE_DOWNLOAD_TOKENS)
     has_open_access_signal = _contains_any(text, OPEN_ACCESS_HINTS)
     has_data_rich_signal = _contains_any(text, DATA_RICH_HINTS)
+
+    if editorial_priority_score >= 12 and score >= max(threshold - 2, 4):
+        return True
 
     if matched_groups >= 3 and score >= max(threshold - 2, 4):
         return True
