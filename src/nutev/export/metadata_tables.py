@@ -46,6 +46,7 @@ KNOWN_SIMPLE_CSV_COLUMNS = {
         "winner_input_index",
         "absorbed_count",
         "merge_reason",
+        "winner_preference_reason",
         "winner_url_after_merge",
         "occurrence_url",
         "source",
