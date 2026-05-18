@@ -1,12 +1,16 @@
 from __future__ import annotations
 
-import hashlib
 import json
-import re
 from pathlib import Path
-from urllib.parse import urlsplit, urlunsplit
 
 import pandas as pd
+
+from nutev.engine.identity import (
+    as_text,
+    compute_document_key,
+    has_full_text,
+    normalize_for_match,
+)
 
 PRISMA_COLUMNS = [
     "registros_identificados",
@@ -17,8 +21,6 @@ PRISMA_COLUMNS = [
     "documentos_priorizados",
 ]
 
-_WHITESPACE_RE = re.compile(r"\s+")
-_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
 _PRIORITY_TERMS = [
     "obesity",
     "obesidade",
@@ -70,95 +72,12 @@ _PRIORITY_TERMS = [
 ]
 
 
-def _as_text(value: object) -> str:
-    if value is None:
-        return ""
-    if isinstance(value, str):
-        return value.strip()
-    return str(value).strip()
-
-
-def _normalize_doi(value: object) -> str:
-    text = _as_text(value).lower()
-    if not text:
-        return ""
-    for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
-        if text.startswith(prefix):
-            text = text[len(prefix) :]
-    return text.strip().strip("/")
-
-
-def _normalize_url(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    parsed = urlsplit(text)
-    if not parsed.scheme or not parsed.netloc:
-        return text.strip().rstrip("/").lower()
-    path = parsed.path.rstrip("/") or "/"
-    normalized = urlunsplit(
-        (parsed.scheme.lower(), parsed.netloc.lower(), path, "", "")
-    )
-    return normalized.rstrip("/")
-
-
-def _normalize_title(value: object) -> str:
-    text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
-    return _NON_ALNUM_RE.sub(" ", text).strip()
-
-
-def _normalize_year(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    try:
-        year = int(float(text))
-    except Exception:
-        return ""
-    return str(year)
-
-
-def _hash_fallback(row: dict) -> str:
-    payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
-    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
-
-
 def _compute_document_key(row: dict) -> str:
-    doi = _normalize_doi(row.get("doi"))
-    if doi:
-        return doi
-
-    pmid = _as_text(row.get("pmid"))
-    if pmid:
-        return f"pmid:{pmid}"
-
-    pmcid = _as_text(row.get("pmcid")).lower()
-    if pmcid:
-        return f"pmcid:{pmcid}"
-
-    url = _normalize_url(
-        row.get("final_url") or row.get("original_url") or row.get("resolved_url") or row.get("url")
-    )
-    if url:
-        return url
-
-    title = _normalize_title(row.get("title"))
-    year = _normalize_year(row.get("year"))
-    if title and year:
-        return f"{title}::{year}"
-
-    return _hash_fallback(row)
+    return compute_document_key(row)[0]
 
 
 def _has_full_text(row: dict) -> bool:
-    statuses = {
-        _as_text(row.get("download_status")).lower(),
-        _as_text(row.get("capture_status")).lower(),
-        _as_text(row.get("extraction_status")).lower(),
-    }
-    if "pdf" in statuses or "html_snapshot" in statuses or "ok" in statuses:
-        return True
-    return bool(_as_text(row.get("file_path")) or _as_text(row.get("text_path")))
+    return has_full_text(row)
 
 
 def _is_prioritized(row: dict) -> bool:
@@ -168,16 +87,19 @@ def _is_prioritized(row: dict) -> bool:
         score = 0.0
     text = " ".join(
         [
-            _as_text(row.get("title")),
-            _as_text(row.get("evidence_type")),
-            _as_text(row.get("domains")),
-            _as_text(row.get("outcomes")),
-            _as_text(row.get("diet_patterns")),
-            _as_text(row.get("clinical_conditions")),
-            _as_text(row.get("main_terms")),
+            as_text(row.get("title")),
+            as_text(row.get("evidence_type")),
+            as_text(row.get("domains")),
+            as_text(row.get("outcomes")),
+            as_text(row.get("diet_patterns")),
+            as_text(row.get("clinical_conditions")),
+            as_text(row.get("main_terms")),
         ]
-    ).lower()
-    return score >= 8 and any(term in text for term in _PRIORITY_TERMS)
+    )
+    normalized_text = normalize_for_match(text)
+    return score >= 8 and any(
+        normalize_for_match(term) in normalized_text for term in _PRIORITY_TERMS
+    )
 
 
 def build_prisma_flow(
@@ -207,9 +129,15 @@ def build_prisma_flow(
         "registros_identificados": identified,
         "duplicados_removidos": max(0, identified - triaged),
         "registros_triados": triaged,
-        "documentos_com_pdf_ou_html": sum(1 for row in unique_rows if _has_full_text(row)),
-        "documentos_metadata_only": sum(1 for row in unique_rows if not _has_full_text(row)),
-        "documentos_priorizados": sum(1 for row in unique_rows if _is_prioritized(row)),
+        "documentos_com_pdf_ou_html": sum(
+            1 for row in unique_rows if _has_full_text(row)
+        ),
+        "documentos_metadata_only": sum(
+            1 for row in unique_rows if not _has_full_text(row)
+        ),
+        "documentos_priorizados": sum(
+            1 for row in unique_rows if _is_prioritized(row)
+        ),
     }
 
 
