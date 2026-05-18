@@ -51,10 +51,21 @@ def score_watch_item(item: dict) -> float:
         ("obesity", 10),
         ("cardiometabolic", 10),
         ("diabetes", 10),
+        ("prediabetes", 10),
         ("hypertension", 10),
         ("dyslipidemia", 10),
+        ("dyslipidaemia", 10),
+        ("hypertriglyceridemia", 10),
+        ("hypertriglyceridaemia", 10),
+        ("insulin resistance", 10),
         ("masld", 10),
         ("nafld", 10),
+        ("mafld", 10),
+        ("nash", 10),
+        ("steatotic liver disease", 12),
+        ("metabolic dysfunction-associated steatotic liver disease", 12),
+        ("non-alcoholic steatohepatitis", 12),
+        ("nonalcoholic steatohepatitis", 12),
     ]
     for key, value in bonus:
         if key in text:
