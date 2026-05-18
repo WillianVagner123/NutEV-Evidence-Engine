@@ -45,6 +45,10 @@ POSITIVE_TITLE_RULES = {
     "vegan": 3,
     "keto": 3,
     "low-carb": 3,
+    "lifestyle intervention": 4,
+    "lifestyle modification": 4,
+    "therapeutic lifestyle changes": 5,
+    "mafld": 4,
 }
 
 NEGATIVE_TITLE_RULES = {
@@ -168,6 +172,8 @@ OOS_RESCUE_TOKENS = [
     "meta-analysis",
     "randomized controlled trial",
     "lifestyle intervention",
+    "lifestyle modification",
+    "therapeutic lifestyle changes",
     "medical nutrition therapy",
     "obesity",
     "type 2 diabetes",
@@ -203,6 +209,9 @@ WORKSTREAM_BONUS = {
         "metabolic syndrome": 4,
         "masld": 4,
         "nafld": 4,
+        "mafld": 4,
+        "lifestyle modification": 3,
+        "therapeutic lifestyle changes": 3,
         "hba1c": 3,
         "blood pressure": 3,
         "ldl": 3,
@@ -222,6 +231,9 @@ WORKSTREAM_BONUS = {
         "low-carb": 4,
         "food literacy": 3,
         "culinary": 3,
+        "lifestyle intervention": 4,
+        "lifestyle modification": 4,
+        "therapeutic lifestyle changes": 4,
     },
     "a3": {
         "framework": 6,
@@ -276,6 +288,7 @@ WORKSTREAM_SIGNAL_GROUPS = {
             "metabolic syndrome",
             "masld",
             "nafld",
+            "mafld",
         ],
         "document": [
             "guideline",
@@ -316,6 +329,8 @@ WORKSTREAM_SIGNAL_GROUPS = {
             "feasibility",
             "behavior",
             "lifestyle intervention",
+            "lifestyle modification",
+            "therapeutic lifestyle changes",
             "counseling",
             "counselling",
         ],
