@@ -1,6 +1,6 @@
 # Minimal dependency set for NutEV/NutMEV CI.
 # Keep this file focused on what the nutev tests and smoke import path need.
-requests>=2.32
+requests>=2.34.2
 pandas>=2.2
 pypdf>=5.0
 beautifulsoup4>=4.12
