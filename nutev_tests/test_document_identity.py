@@ -58,6 +58,8 @@ def test_deduplicate_document_rows_returns_row_level_audit_manifest():
                 "title": "Document A",
                 "source": "pubmed",
                 "source_provider": "pubmed",
+                "abstract": "short",
+                "language": "",
                 "year": 2024,
             },
             {
@@ -67,6 +69,8 @@ def test_deduplicate_document_rows_returns_row_level_audit_manifest():
                 "title": "Document A",
                 "source": "europepmc",
                 "source_provider": "europepmc",
+                "abstract": "a much longer abstract",
+                "language": "en",
                 "year": 2024,
             },
         ]
@@ -84,6 +88,9 @@ def test_deduplicate_document_rows_returns_row_level_audit_manifest():
     assert winner_row["winner_input_index"] == 0
     assert winner_row["absorbed_count"] == 1
     assert winner_row["merge_reason"] == "first_occurrence"
+    assert winner_row["winner_preference_reason"] == (
+        "preferred_pmc_pdf; longer_abstract; filled_missing_metadata"
+    )
     assert (
         winner_row["winner_url_after_merge"]
         == "https://pmc.ncbi.nlm.nih.gov/articles/PMC1234567/pdf"
@@ -93,3 +100,6 @@ def test_deduplicate_document_rows_returns_row_level_audit_manifest():
     assert absorbed_row["winner_input_index"] == 0
     assert absorbed_row["merge_reason"] == "absorbed_by_same_doi"
     assert absorbed_row["dedup_rule"] == "same_doi"
+    assert absorbed_row["winner_preference_reason"] == (
+        "preferred_pmc_pdf; longer_abstract; filled_missing_metadata"
+    )
