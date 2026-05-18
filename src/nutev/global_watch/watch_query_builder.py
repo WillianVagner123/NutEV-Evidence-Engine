@@ -21,6 +21,11 @@ CATEGORY_CONTEXT_TERMS = {
         "practice guideline",
         "position paper",
         "food-based dietary guideline",
+        "consensus report",
+        "practice advisory",
+        "expert consensus",
+        "clinical guidance",
+        "practice recommendation",
     ],
     "lifestyle_medicine": [
         "food literacy",
@@ -63,6 +68,11 @@ CATEGORY_CONTEXT_TERMS = {
         "knowledge translation",
         "dietary adherence",
         "self-efficacy",
+        "implementation strategy",
+        "implementation outcomes",
+        "process evaluation",
+        "behavior change technique",
+        "barriers and facilitators",
     ],
     "food_literacy_culinary_commensality": [
         "lifestyle medicine",
@@ -70,6 +80,7 @@ CATEGORY_CONTEXT_TERMS = {
         "adherence",
         "food environment",
         "nutrition education",
+        "food and nutrition literacy",
         "shared meals",
     ],
     "frameworks_instruments": [
