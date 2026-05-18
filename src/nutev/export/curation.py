@@ -39,16 +39,45 @@ UNIQUE_DOCUMENT_COLUMNS = [
     "original_url",
     "final_url",
     "source_provider",
+    "source_institution",
+    "journal",
     "evidence_type",
     "download_status",
     "capture_status",
     "extraction_status",
+    "relevance_score",
+    "editorial_priority_score",
+    "editorial_priority_tier",
     "workstreams",
     "document_ids",
     "source_occurrences",
     "has_full_text",
     "is_metadata_only",
     "is_prioritized",
+]
+
+TOP_A1_OPERATIONAL_COLUMNS = [
+    "document_key",
+    "title",
+    "journal",
+    "source_institution",
+    "workstreams",
+    "year",
+    "evidence_type",
+    "relevance_score",
+    "editorial_priority_score",
+    "editorial_priority_tier",
+    "download_status",
+    "capture_status",
+    "extraction_status",
+    "has_full_text",
+    "is_metadata_only",
+    "is_prioritized",
+    "doi",
+    "pmid",
+    "pmcid",
+    "final_url",
+    "original_url",
 ]
 
 WORKSTREAM_MAP_COLUMNS = [
@@ -116,6 +145,8 @@ _PRIORITY_TERMS = [
     "behavior change",
     "self-efficacy",
 ]
+
+_A1_PROXY_TIERS = {"a1_proxy_high", "a1_proxy_moderate"}
 
 _WHITESPACE_RE = re.compile(r"\s+")
 _NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
@@ -290,11 +321,15 @@ def _curate_row(row: dict) -> dict:
     return curated
 
 
-def _rank_row(row: dict) -> tuple[int, int, float, int, str]:
+def _rank_row(row: dict) -> tuple[int, int, float, float, int, str]:
     try:
         score = float(row.get("relevance_score") or 0)
     except Exception:
         score = 0.0
+    try:
+        editorial_score = float(row.get("editorial_priority_score") or 0)
+    except Exception:
+        editorial_score = 0.0
     try:
         year = int(row.get("year_normalized") or 0)
     except Exception:
@@ -302,6 +337,7 @@ def _rank_row(row: dict) -> tuple[int, int, float, int, str]:
     return (
         int(bool(row.get("has_full_text"))),
         int(bool(row.get("is_prioritized"))),
+        editorial_score,
         score,
         year,
         _as_text(row.get("title")),
@@ -373,6 +409,40 @@ def _build_workstream_map(curated_rows: list[dict]) -> list[dict]:
         }
         for _, row in sorted(selected.items())
     ]
+
+
+def _build_top_a1_operational(unique_rows: list[dict]) -> pd.DataFrame:
+    df = pd.DataFrame(unique_rows)
+    if df.empty:
+        return pd.DataFrame(columns=TOP_A1_OPERATIONAL_COLUMNS)
+
+    editorial_score = pd.to_numeric(df.get("editorial_priority_score", 0), errors="coerce").fillna(0)
+    relevance_score = pd.to_numeric(df.get("relevance_score", 0), errors="coerce").fillna(0)
+    has_full_text = df.get("has_full_text", False).astype(bool)
+    is_prioritized = df.get("is_prioritized", False).astype(bool)
+    tier = df.get("editorial_priority_tier", "").fillna("")
+
+    mask = (
+        tier.isin(_A1_PROXY_TIERS)
+        & is_prioritized
+        & ((has_full_text & (relevance_score >= 10)) | (editorial_score >= 12))
+    )
+    top_df = df.loc[mask, TOP_A1_OPERATIONAL_COLUMNS].copy()
+    if top_df.empty:
+        return pd.DataFrame(columns=TOP_A1_OPERATIONAL_COLUMNS)
+
+    top_df["_editorial_sort"] = pd.to_numeric(
+        top_df["editorial_priority_score"], errors="coerce"
+    ).fillna(0)
+    top_df["_relevance_sort"] = pd.to_numeric(
+        top_df["relevance_score"], errors="coerce"
+    ).fillna(0)
+    top_df["_full_text_sort"] = top_df["has_full_text"].astype(bool).astype(int)
+    top_df = top_df.sort_values(
+        ["_full_text_sort", "_editorial_sort", "_relevance_sort", "year", "title"],
+        ascending=[False, False, False, False, True],
+    ).drop(columns=["_editorial_sort", "_relevance_sort", "_full_text_sort"])
+    return top_df
 
 
 def _build_duplicate_rows(curated_rows: list[dict]) -> pd.DataFrame:
@@ -521,7 +591,7 @@ def _build_workstream_counts(curated_rows: list[dict]) -> pd.DataFrame:
 
 
 def _build_qa_summary(
-    curated_rows: list[dict], unique_rows: list[dict], workstream_map: list[dict]
+    curated_rows: list[dict], unique_rows: list[dict], workstream_map: list[dict], top_a1_rows: pd.DataFrame
 ) -> pd.DataFrame:
     duplicate_rows = max(0, len(curated_rows) - len(unique_rows))
     summary = [
@@ -540,6 +610,14 @@ def _build_qa_summary(
         {
             "metric": "documents_prioritized",
             "value": sum(1 for row in unique_rows if row.get("is_prioritized")),
+        },
+        {
+            "metric": "top_a1_operational_documents",
+            "value": int(len(top_a1_rows.index)),
+        },
+        {
+            "metric": "top_a1_operational_full_text",
+            "value": int(top_a1_rows["has_full_text"].astype(bool).sum()) if not top_a1_rows.empty else 0,
         },
         {
             "metric": "missing_title",
@@ -598,6 +676,7 @@ def curate_outputs(rows: list[dict], curated_dir: Path) -> dict[str, int]:
     curated_df = pd.DataFrame(curated_rows, columns=CURATED_METADATA_COLUMNS)
     unique_rows = _build_unique_documents(curated_rows)
     unique_df = pd.DataFrame(unique_rows, columns=UNIQUE_DOCUMENT_COLUMNS)
+    top_a1_df = _build_top_a1_operational(unique_rows)
     workstream_map = _build_workstream_map(curated_rows)
     workstream_df = pd.DataFrame(workstream_map, columns=WORKSTREAM_MAP_COLUMNS)
     duplicate_df = _build_duplicate_rows(curated_rows)
@@ -606,7 +685,7 @@ def curate_outputs(rows: list[dict], curated_dir: Path) -> dict[str, int]:
     missing_by_workstream_df = _build_missing_by_workstream(curated_rows)
     status_df = _build_status_counts(curated_rows)
     workstream_counts_df = _build_workstream_counts(curated_rows)
-    qa_summary_df = _build_qa_summary(curated_rows, unique_rows, workstream_map)
+    qa_summary_df = _build_qa_summary(curated_rows, unique_rows, workstream_map, top_a1_df)
     prisma_df = _build_prisma_corrected(curated_rows, unique_rows)
     prisma_notes_df = pd.DataFrame(
         [
@@ -633,10 +712,17 @@ def curate_outputs(rows: list[dict], curated_dir: Path) -> dict[str, int]:
         curated_dir / "NUTEV_DOCUMENTS_UNIQUE.xlsx",
     )
 
+    _write_csv(top_a1_df, curated_dir / "NUTEV_TOP_A1_OPERACIONAL.csv")
+    write_excel_file(
+        sanitize_dataframe_for_excel(top_a1_df),
+        curated_dir / "NUTEV_TOP_A1_OPERACIONAL.xlsx",
+    )
+
     _write_csv(workstream_df, curated_dir / "NUTEV_DOCUMENT_WORKSTREAM_MAP.csv")
 
     with pd.ExcelWriter(curated_dir / "NUTEV_QA_REPORT.xlsx") as writer:
         write_excel_sheet(writer, qa_summary_df, "summary")
+        write_excel_sheet(writer, top_a1_df, "top_a1_operacional")
         write_excel_sheet(writer, duplicate_df, "duplicate_keys")
         write_excel_sheet(writer, duplicate_summary_df, "duplicate_summary")
         write_excel_sheet(writer, missing_df, "missing_canonical")
@@ -652,4 +738,5 @@ def curate_outputs(rows: list[dict], curated_dir: Path) -> dict[str, int]:
         "raw_records": len(curated_rows),
         "unique_documents": len(unique_rows),
         "document_workstream_pairs": len(workstream_map),
+        "top_a1_operational_documents": int(len(top_a1_df.index)),
     }
