@@ -48,6 +48,32 @@ BLOCKED_PUBLISHER_HINTS = {
     "tandfonline.com",
 }
 
+HIGH_FRICTION_HOST_REASONS = {
+    "academic.oup.com": "blocked_oup",
+    "bmjopen.bmj.com": "blocked_bmj",
+    "diabetesjournals.org": "blocked_diabetesjournals",
+    "dom-pubs.pericles-prod.literatumonline.com": "blocked_wiley_literatum",
+    "journals.lww.com": "blocked_lww",
+    "journalslibrary.nihr.ac.uk": "method_not_allowed_nihr",
+    "mdpi.com": "blocked_mdpi",
+    "nejm.org": "blocked_nejm",
+    "onlinelibrary.wiley.com": "blocked_wiley",
+    "pubmed.ncbi.nlm.nih.gov": "pubmed_metadata_page",
+    "scielo.br": "blocked_scielo",
+    "webofscience.com": "metadata_index_only",
+}
+
+DOI_PREFIX_REASONS = {
+    "10.1056": "blocked_nejm",
+    "10.1093": "blocked_oup",
+    "10.1097": "blocked_lww",
+    "10.1111": "blocked_wiley",
+    "10.1136": "blocked_bmj",
+    "10.2337": "blocked_diabetesjournals",
+    "10.3390": "blocked_mdpi",
+    "10.36660": "blocked_scielo",
+}
+
 SESSION_HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -82,23 +108,82 @@ def _host(url: str) -> str:
     return urlparse(url or "").netloc.lower()
 
 
-def _is_blocked_publisher(url: str) -> bool:
+def _host_matches(url: str, hints: set[str]) -> bool:
     host = _host(url)
-    return any(hint in host for hint in BLOCKED_PUBLISHER_HINTS)
+    return any(hint in host for hint in hints)
+
+
+def _is_blocked_publisher(url: str) -> bool:
+    return _host_matches(url, BLOCKED_PUBLISHER_HINTS)
+
+
+def _host_policy_reason(url: str) -> str | None:
+    host = _host(url)
+    for hint, reason in HIGH_FRICTION_HOST_REASONS.items():
+        if hint in host:
+            return reason
+    return None
+
+
+def _doi_policy_reason(value: str | None) -> str | None:
+    doi = extract_clean_doi(value)
+    if not doi:
+        return None
+    doi_lower = doi.lower()
+    for prefix, reason in DOI_PREFIX_REASONS.items():
+        if doi_lower.startswith(prefix):
+            return reason
+    return None
+
+
+def _capture_policy_key(url: str) -> str | None:
+    doi_reason = _doi_policy_reason(url)
+    if doi_reason:
+        return f"doi:{doi_reason}"
+    host_reason = _host_policy_reason(url)
+    if host_reason:
+        return f"host:{host_reason}"
+    return None
+
+
+def _is_pubmed_landing(url: str) -> bool:
+    return "pubmed.ncbi.nlm.nih.gov" in _host(url)
+
+
+def _metadata_only(
+    raw_url: str,
+    resolved_url: str,
+    reason: str,
+    head_status: int = 0,
+) -> dict:
+    return {
+        "url": raw_url,
+        "resolved_url": resolved_url,
+        "status": "metadata_only",
+        "reason": reason,
+        "head_status": head_status,
+    }
 
 
 def _failure_reason(exc: Exception, url: str, head_status: int = 0) -> str:
     if isinstance(exc, ControlledDownloadFailure):
         return exc.reason
     status = getattr(getattr(exc, "response", None), "status_code", None) or head_status
+    policy_reason = _doi_policy_reason(url) or _host_policy_reason(url)
     if status in {401, 403}:
-        return "publisher_forbidden"
+        return policy_reason or "publisher_forbidden"
+    if status == 400:
+        return "bad_source_url"
     if status == 404:
         return "not_found"
+    if status == 405:
+        return policy_reason or "method_not_allowed"
     if status == 429:
         return "rate_limited"
     if status and status >= 500:
         return "server_error"
+    if policy_reason:
+        return policy_reason
     if _is_blocked_publisher(url):
         return "publisher_blocked_or_paywalled"
     return "download_failed"
@@ -115,7 +200,7 @@ def _request_with_retry(
         try:
             logger.info("download tentativa=%d url=%s", attempt, url)
             response = session.get(url, timeout=25, allow_redirects=True)
-            if response.status_code in {401, 403, 404, 429}:
+            if response.status_code in {400, 401, 403, 404, 405, 429}:
                 reason = _failure_reason(requests.HTTPError(response=response), response.url)
                 raise ControlledDownloadFailure(
                     reason,
@@ -128,20 +213,15 @@ def _request_with_retry(
         except requests.HTTPError as exc:
             last_error = exc
             status = getattr(exc.response, "status_code", 0)
-            if status in {401, 403, 404, 429} or _is_blocked_publisher(url):
+            if status in {400, 401, 403, 404, 405, 429} or _is_blocked_publisher(url):
                 break
             time.sleep(0.8 * attempt)
         except Exception as exc:
             last_error = exc
-            if _is_blocked_publisher(url):
+            if _is_blocked_publisher(url) or _host_policy_reason(url):
                 break
             time.sleep(0.8 * attempt)
     raise RuntimeError(f"download failed after retries: {last_error}")
-
-
-def _host_matches(url: str, hints: set[str]) -> bool:
-    host = _host(url)
-    return any(hint in host for hint in hints)
 
 
 def _looks_html_candidate(url: str, source: str | None = None) -> bool:
@@ -191,6 +271,12 @@ def _candidate_doi_url(record: dict) -> str | None:
     return None
 
 
+def _primary_download_url(record: dict, raw_url: str) -> str | None:
+    if _is_pubmed_landing(raw_url):
+        return _candidate_doi_url(record)
+    return raw_url
+
+
 def _derive_landing_from_url(url: str) -> list[str]:
     derived_urls: list[str] = []
     if not url:
@@ -223,17 +309,20 @@ def _save_snapshot_html(
 ) -> dict | None:
     if not candidate_url or not is_likely_relevant_url(candidate_url):
         return None
+    if _is_pubmed_landing(candidate_url):
+        return None
     if not _looks_html_candidate(candidate_url, record.get("source")):
         return None
 
     try:
         logger.info("snapshot tentativa url=%s", candidate_url)
         response = session.get(candidate_url, timeout=25, allow_redirects=True)
-        if response.status_code in {401, 403, 404, 429}:
+        if response.status_code in {400, 401, 403, 404, 405, 429}:
             logger.info(
-                "snapshot bloqueado url=%s status=%s",
+                "snapshot bloqueado url=%s status=%s reason=%s",
                 response.url,
                 response.status_code,
+                _failure_reason(requests.HTTPError(response=response), response.url),
             )
             return None
         response.raise_for_status()
@@ -273,6 +362,23 @@ def _save_snapshot_html(
     }
 
 
+def _snapshot_candidates(
+    record: dict,
+    raw_url: str,
+    resolved_url: str,
+) -> list[str]:
+    candidates: list[str] = []
+    doi_url = _candidate_doi_url(record)
+    if doi_url:
+        candidates.append(doi_url)
+    candidates.extend(_derive_landing_from_url(resolved_url))
+    candidates.extend(_derive_landing_from_url(raw_url))
+    candidates.append(resolved_url)
+    if raw_url != resolved_url:
+        candidates.append(raw_url)
+    return candidates
+
+
 def _try_snapshot_fallbacks(
     session: requests.Session,
     record: dict,
@@ -283,21 +389,19 @@ def _try_snapshot_fallbacks(
     dedup: Deduplicator,
     logger,
 ) -> dict | None:
-    candidates: list[str] = []
-    doi_url = _candidate_doi_url(record)
-    if doi_url:
-        candidates.append(doi_url)
-    candidates.extend(_derive_landing_from_url(resolved_url))
-    candidates.extend(_derive_landing_from_url(raw_url))
-    candidates.append(resolved_url)
-    if raw_url != resolved_url:
-        candidates.append(raw_url)
-
     seen_candidates: set[str] = set()
-    for candidate in candidates:
+    seen_policy_keys: set[str] = set()
+    for candidate in _snapshot_candidates(record, raw_url, resolved_url):
         if not candidate or candidate in seen_candidates:
             continue
         seen_candidates.add(candidate)
+
+        policy_key = _capture_policy_key(candidate)
+        if policy_key and policy_key in seen_policy_keys:
+            continue
+        if policy_key:
+            seen_policy_keys.add(policy_key)
+
         snapshot = _save_snapshot_html(
             session,
             candidate,
@@ -331,7 +435,18 @@ def download_records(
         if dedup.seen_url(raw_url):
             continue
 
-        resolved_url, resolved_kind = resolve_url(raw_url)
+        primary_url = _primary_download_url(record, raw_url)
+        if not primary_url:
+            failed.append(
+                _metadata_only(
+                    raw_url,
+                    raw_url,
+                    "pubmed_no_doi_or_pmc_target",
+                )
+            )
+            continue
+
+        resolved_url, resolved_kind = resolve_url(primary_url)
         head_status, content_type = _head(resolved_url)
         ext = infer_ext(resolved_url, content_type)
 
@@ -426,13 +541,12 @@ def download_records(
                     continue
 
                 failed.append(
-                    {
-                        "url": raw_url,
-                        "resolved_url": resolved_url,
-                        "status": "metadata_only",
-                        "reason": reason,
-                        "head_status": head_status,
-                    }
+                    _metadata_only(
+                        raw_url,
+                        resolved_url,
+                        reason,
+                        head_status,
+                    )
                 )
                 continue
 
@@ -451,14 +565,14 @@ def download_records(
             manifest.append(snapshot)
             continue
 
+        filtered_reason = _doi_policy_reason(resolved_url) or _host_policy_reason(resolved_url)
         failed.append(
-            {
-                "url": raw_url,
-                "resolved_url": resolved_url,
-                "status": "metadata_only",
-                "reason": "filtered_and_no_html_snapshot",
-                "head_status": head_status,
-            }
+            _metadata_only(
+                raw_url,
+                resolved_url,
+                filtered_reason or "filtered_and_no_html_snapshot",
+                head_status,
+            )
         )
 
     return manifest, failed
