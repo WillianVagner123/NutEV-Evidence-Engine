@@ -137,3 +137,30 @@ def test_quick_mode_implementation_queries_cover_behavior_change_group() -> None
     assert "behavior change" in rendered
     assert "motivational interviewing" in rendered
     assert "social support" in rendered
+
+
+def test_quick_mode_diet_pattern_queries_cover_plant_based_and_planetary_blocks() -> None:
+    queries = build_watch_queries(["diet_patterns"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "plant-based diet" in rendered
+    assert "vegetarian diet" in rendered
+    assert "vegan diet" in rendered
+    assert "eat-lancet" in rendered
+    assert "planetary health diet" in rendered
+    assert "portfolio diet" in rendered
+    assert "nordic diet" in rendered
+
+
+def test_quick_mode_obesity_queries_cover_cardiometabolic_and_liver_blocks() -> None:
+    queries = build_watch_queries(["obesity_cardiometabolic"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "cardiometabolic risk" in rendered
+    assert "type 2 diabetes" in rendered
+    assert "metabolic syndrome" in rendered
+    assert "hypertension" in rendered
+    assert "dyslipidemia" in rendered
+    assert "masld" in rendered
+    assert "nafld" in rendered
+    assert "steatotic liver disease" in rendered
