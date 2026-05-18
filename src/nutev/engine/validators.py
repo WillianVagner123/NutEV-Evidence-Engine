@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urlparse, urlunparse
 
 from nutev.engine.enums import (
     CaptureStatus,
@@ -53,7 +53,17 @@ def normalize_url(url: str | None) -> str | None:
     parsed = urlparse(value)
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
         return None
-    return value
+    normalized_path = parsed.path.rstrip("/") or parsed.path
+    return urlunparse(
+        (
+            parsed.scheme.lower(),
+            parsed.netloc.lower(),
+            normalized_path,
+            "",
+            parsed.query,
+            "",
+        )
+    )
 
 
 def canonical_host(url: str | None) -> str:
