@@ -45,6 +45,13 @@ POSITIVE_TITLE_RULES = {
     "vegan": 3,
     "keto": 3,
     "low-carb": 3,
+    "steatotic liver disease": 4,
+    "metabolic dysfunction-associated steatotic liver disease": 5,
+    "metabolic dysfunction-associated steatohepatitis": 5,
+    "mash": 4,
+    "nash": 3,
+    "fatty liver": 3,
+    "hepatic steatosis": 3,
 }
 
 NEGATIVE_TITLE_RULES = {
@@ -175,6 +182,10 @@ OOS_RESCUE_TOKENS = [
     "cardiometabolic",
     "food literacy",
     "implementation",
+    "masld",
+    "mash",
+    "steatotic liver disease",
+    "metabolic dysfunction-associated steatotic liver disease",
 ]
 
 WORKSTREAM_BONUS = {
@@ -203,6 +214,11 @@ WORKSTREAM_BONUS = {
         "metabolic syndrome": 4,
         "masld": 4,
         "nafld": 4,
+        "mash": 4,
+        "nash": 3,
+        "steatotic liver disease": 4,
+        "fatty liver": 3,
+        "hepatic steatosis": 3,
         "hba1c": 3,
         "blood pressure": 3,
         "ldl": 3,
@@ -222,6 +238,10 @@ WORKSTREAM_BONUS = {
         "low-carb": 4,
         "food literacy": 3,
         "culinary": 3,
+        "masld": 3,
+        "nafld": 3,
+        "mash": 3,
+        "steatotic liver disease": 3,
     },
     "a3": {
         "framework": 6,
@@ -276,6 +296,11 @@ WORKSTREAM_SIGNAL_GROUPS = {
             "metabolic syndrome",
             "masld",
             "nafld",
+            "mash",
+            "nash",
+            "steatotic liver disease",
+            "fatty liver",
+            "hepatic steatosis",
         ],
         "document": [
             "guideline",
@@ -299,6 +324,12 @@ WORKSTREAM_SIGNAL_GROUPS = {
             "hypertension",
             "dyslipidemia",
             "cardiometabolic",
+            "masld",
+            "nafld",
+            "mash",
+            "nash",
+            "steatotic liver disease",
+            "fatty liver",
         ],
         "intervention": [
             "mediterranean",
