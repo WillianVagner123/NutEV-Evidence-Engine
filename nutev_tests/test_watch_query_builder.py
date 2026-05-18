@@ -164,3 +164,40 @@ def test_quick_mode_obesity_queries_cover_cardiometabolic_and_liver_blocks() -> 
     assert "masld" in rendered
     assert "nafld" in rendered
     assert "steatotic liver disease" in rendered
+
+
+def test_quick_mode_lifestyle_queries_cover_core_intervention_and_counseling_blocks() -> None:
+    queries = build_watch_queries(["lifestyle_medicine"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "lifestyle medicine nutrition" in rendered
+    assert "therapeutic lifestyle changes" in rendered
+    assert "lifestyle counseling" in rendered
+    assert "lifestyle counselling" in rendered
+
+
+def test_quick_mode_food_literacy_queries_cover_literacy_culinary_and_commensality_blocks() -> None:
+    queries = build_watch_queries(
+        ["food_literacy_culinary_commensality"],
+        since_days=7,
+        mode="quick",
+    )
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "food and nutrition literacy" in rendered
+    assert "culinary medicine" in rendered
+    assert "cooking skills" in rendered
+    assert "food environment" in rendered
+    assert "commensality" in rendered
+    assert "family meals" in rendered
+
+
+def test_quick_mode_framework_queries_cover_framework_instrument_and_validation_blocks() -> None:
+    queries = build_watch_queries(["frameworks_instruments"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "behavior change framework" in rendered
+    assert "survey instrument" in rendered
+    assert "food literacy instrument" in rendered
+    assert "psychometric validation" in rendered
+    assert "scale development" in rendered
