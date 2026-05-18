@@ -46,11 +46,15 @@ def test_build_watch_queries_adds_implementation_and_education_context() -> None
 
     first_query = str(queries[0]["query"])
     assert '"implementation science"' in first_query
+    assert '"implementation research"' in first_query
     assert '"knowledge translation"' in first_query
     assert '"dietary adherence"' in first_query
     assert '"self-efficacy"' in first_query
     assert '"implementation strategy"' in first_query
     assert '"implementation outcomes"' in first_query
+    assert '"implementation fidelity"' in first_query
+    assert '"implementation facilitation"' in first_query
+    assert '"implementation support"' in first_query
     assert '"process evaluation"' in first_query
     assert '"barriers and facilitators"' in first_query
     assert '"behavior change technique"' in first_query
@@ -58,6 +62,9 @@ def test_build_watch_queries_adds_implementation_and_education_context() -> None
     assert '"goal setting"' in first_query
     assert '"social support"' in first_query
     assert '"food access"' in first_query
+    assert '"sustainability"' in first_query
+    assert '"dissemination"' in first_query
+    assert '"scale-up"' in first_query
 
 
 def test_build_watch_queries_adds_food_environment_context() -> None:
@@ -137,6 +144,11 @@ def test_quick_mode_implementation_queries_cover_behavior_change_group() -> None
     assert "behavior change" in rendered
     assert "motivational interviewing" in rendered
     assert "social support" in rendered
+    assert "implementation research" in rendered
+    assert "implementation fidelity" in rendered
+    assert "sustainability" in rendered
+    assert "dissemination" in rendered
+    assert "scale-up" in rendered
 
 
 def test_quick_mode_diet_pattern_queries_cover_plant_based_and_planetary_blocks() -> None:
