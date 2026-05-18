@@ -27,6 +27,16 @@ def test_build_watch_queries_adds_semantic_context_for_lifestyle_terms() -> None
     assert '"meal planning"' in first_query
 
 
+def test_build_watch_queries_adds_cardiometabolic_liver_context() -> None:
+    queries = build_watch_queries(["obesity_cardiometabolic"], since_days=30, mode="quick")
+
+    first_query = str(queries[0]["query"])
+    assert '"steatotic liver disease"' in first_query
+    assert '"metabolic dysfunction-associated steatotic liver disease"' in first_query
+    assert '"dyslipidaemia"' in first_query
+    assert '"insulin resistance"' in first_query
+
+
 def test_build_watch_queries_prioritizes_guideline_like_terms() -> None:
     guideline_queries = build_watch_queries(
         ["guidelines_consensus"],
