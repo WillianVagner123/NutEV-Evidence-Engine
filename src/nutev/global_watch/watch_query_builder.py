@@ -53,6 +53,22 @@ CATEGORY_CONTEXT_TERMS = {
     ],
 }
 
+TERM_QUERY_EXPANSIONS = {
+    "masld": [
+        "metabolic dysfunction-associated steatotic liver disease",
+        "MAFLD",
+        "metabolic associated fatty liver disease",
+    ],
+    "nafld": [
+        "nonalcoholic fatty liver disease",
+        "non-alcoholic fatty liver disease",
+    ],
+    "lifestyle intervention": [
+        "therapeutic lifestyle changes",
+        "intensive lifestyle intervention",
+    ],
+}
+
 HIGH_PRIORITY_MARKERS = (
     "guideline",
     "consensus",
@@ -98,6 +114,11 @@ def _build_context_terms(category: str) -> list[str]:
     )
 
 
+def _build_term_clause(term: str) -> str:
+    expansions = TERM_QUERY_EXPANSIONS.get(term.strip().lower(), [])
+    return _or_clause([term, *expansions])
+
+
 def _priority_for_term(term: str) -> int:
     lowered = term.lower()
     if any(marker in lowered for marker in HIGH_PRIORITY_MARKERS):
@@ -117,7 +138,7 @@ def build_watch_queries(
     for category in selected_categories:
         context_clause = _or_clause(_build_context_terms(category))
         for term in WATCH_CATEGORIES.get(category, [])[:limit]:
-            term_clause = _quote_term(term)
+            term_clause = _build_term_clause(term)
             query = f"({term_clause})"
             if context_clause:
                 query = f"{query} AND {context_clause}"
