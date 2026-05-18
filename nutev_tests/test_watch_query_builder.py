@@ -35,6 +35,31 @@ def test_build_watch_queries_adds_cardiometabolic_liver_context() -> None:
     assert '"metabolic dysfunction-associated steatotic liver disease"' in first_query
     assert '"dyslipidaemia"' in first_query
     assert '"insulin resistance"' in first_query
+    assert '"weight management"' in first_query
+    assert '"adiposity"' in first_query
+
+
+def test_build_watch_queries_adds_implementation_and_education_context() -> None:
+    queries = build_watch_queries(["implementation_behavior"], since_days=30, mode="quick")
+
+    first_query = str(queries[0]["query"])
+    assert '"implementation science"' in first_query
+    assert '"knowledge translation"' in first_query
+    assert '"dietary adherence"' in first_query
+    assert '"self-efficacy"' in first_query
+
+
+def test_build_watch_queries_adds_food_environment_context() -> None:
+    queries = build_watch_queries(
+        ["food_literacy_culinary_commensality"],
+        since_days=30,
+        mode="quick",
+    )
+
+    first_query = str(queries[0]["query"])
+    assert '"food environment"' in first_query
+    assert '"nutrition education"' in first_query
+    assert '"shared meals"' in first_query
 
 
 def test_build_watch_queries_prioritizes_guideline_like_terms() -> None:
