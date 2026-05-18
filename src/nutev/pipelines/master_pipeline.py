@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 import json
-import re
 from pathlib import Path
-from urllib.parse import urlsplit, urlunsplit
 
 import pandas as pd
 
@@ -20,6 +18,7 @@ from nutev.analysis.synthesis import (
 from nutev.download.downloader import download_records
 from nutev.engine.artifacts import build_artifact_manifest
 from nutev.engine.events import emit_event, write_event
+from nutev.engine.identity import as_text, compute_document_key, merge_article_rows
 from nutev.engine.ids import make_document_id, make_run_id
 from nutev.engine.job import (
     create_search_case,
@@ -63,9 +62,6 @@ DOWNLOAD_BUDGET = {
 
 DEFAULT_PRIORITY = ["pubmed", "europepmc", "openalex", "crossref", "official_web"]
 
-_WHITESPACE_RE = re.compile(r"\s+")
-_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
-
 
 def _provider_map():
     return {
@@ -76,107 +72,8 @@ def _provider_map():
     }
 
 
-def _as_text(value: object) -> str:
-    if value is None:
-        return ""
-    return str(value).strip()
-
-
-def _normalize_doi(value: object) -> str:
-    text = _as_text(value).lower()
-    if not text:
-        return ""
-    for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
-        if text.startswith(prefix):
-            text = text[len(prefix) :]
-    return text.strip().strip("/")
-
-
-def _normalize_url(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    parsed = urlsplit(text)
-    if not parsed.scheme or not parsed.netloc:
-        return text.rstrip("/").lower()
-    path = parsed.path.rstrip("/") or "/"
-    normalized = urlunsplit(
-        (parsed.scheme.lower(), parsed.netloc.lower(), path, "", "")
-    )
-    return normalized.rstrip("/")
-
-
-def _normalize_title(value: object) -> str:
-    text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
-    return _NON_ALNUM_RE.sub(" ", text).strip()
-
-
-def _normalize_year(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    try:
-        return str(int(float(text)))
-    except Exception:
-        return ""
-
-
 def _canonical_article_key(row: dict) -> tuple[str, str]:
-    doi = _normalize_doi(row.get("doi"))
-    if doi:
-        return "doi", doi
-
-    pmid = _as_text(row.get("pmid"))
-    if pmid:
-        return "pmid", pmid
-
-    pmcid = _as_text(row.get("pmcid")).lower()
-    if pmcid:
-        return "pmcid", pmcid
-
-    url = _normalize_url(
-        row.get("final_url") or row.get("original_url") or row.get("resolved_url") or row.get("url")
-    )
-    if url:
-        return "url", url
-
-    title = _normalize_title(row.get("title"))
-    year = _normalize_year(row.get("year"))
-    if title and year:
-        return "title_year", f"{title}|{year}"
-    if title:
-        return "title", title
-    return "empty", ""
-
-
-def _url_capture_priority(url: str) -> tuple[int, int, int]:
-    lowered = url.lower()
-    return (
-        int("pmc.ncbi.nlm.nih.gov" in lowered),
-        int(lowered.endswith(".pdf")),
-        len(lowered),
-    )
-
-
-def _merge_article_rows(existing: dict, incoming: dict) -> dict:
-    merged = dict(existing)
-    for key, value in incoming.items():
-        if value in (None, "", [], {}):
-            continue
-        current = merged.get(key)
-        if current in (None, "", [], {}):
-            merged[key] = value
-            continue
-        if key in {"abstract", "summary"} and len(_as_text(value)) > len(_as_text(current)):
-            merged[key] = value
-
-    existing_url = _as_text(merged.get("url"))
-    incoming_url = _as_text(incoming.get("url"))
-    if incoming_url and _url_capture_priority(incoming_url) > _url_capture_priority(existing_url):
-        merged["url"] = incoming_url
-
-    merged["source"] = merged.get("source") or incoming.get("source")
-    return merged
+    return compute_document_key(row)
 
 
 def _dedup_rows(rows: list[dict]) -> list[dict]:
@@ -188,7 +85,7 @@ def _dedup_rows(rows: list[dict]) -> list[dict]:
             by_key[key] = row
             order.append(key)
             continue
-        by_key[key] = _merge_article_rows(by_key[key], row)
+        by_key[key] = merge_article_rows(by_key[key], row)
     return [by_key[key] for key in order]
 
 
@@ -200,19 +97,23 @@ def _build_operational_counts(rows: list[dict]) -> dict[str, object]:
     for row in rows:
         document_key = _canonical_article_key(row)
         unique_keys.add(document_key)
-        workstream = _as_text(row.get("workstream")) or "unassigned"
+        workstream = as_text(row.get("workstream")) or "unassigned"
         doc_workstream_pairs.add((document_key, workstream))
 
         summary = workstream_summary.setdefault(
             workstream,
-            {"raw_records": 0, "unique_documents": 0, "document_workstream_pairs": 0},
+            {
+                "raw_records": 0,
+                "unique_documents": 0,
+                "document_workstream_pairs": 0,
+            },
         )
         summary["raw_records"] += 1
 
     seen_per_workstream: dict[str, set[tuple[str, str]]] = {}
     for row in rows:
         document_key = _canonical_article_key(row)
-        workstream = _as_text(row.get("workstream")) or "unassigned"
+        workstream = as_text(row.get("workstream")) or "unassigned"
         per_ws = seen_per_workstream.setdefault(workstream, set())
         if document_key not in per_ws:
             per_ws.add(document_key)
@@ -240,17 +141,31 @@ def _safe_provider_call(provider: str, fn, q: str, ws: str, logger) -> list[dict
             )
             return []
         return result
-    except BaseException as e:
+    except Exception as e:
         logger.warning("%s falhou ws=%s query=%s erro=%s", provider, ws, q, e)
         return []
 
 
 def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dict[str, int]:
     run_id = make_run_id()
-    search_case = create_search_case("NutMEV Deep Research", workstreams, settings.mode, DEFAULT_PRIORITY, since_days=settings.since_days, country_discovery=True, official_crawl=True, web_enabled=settings.web_enabled, browser_enabled=settings.browser_enabled, llm_enabled=settings.llm_enabled)
+    search_case = create_search_case(
+        "NutMEV Deep Research",
+        workstreams,
+        settings.mode,
+        DEFAULT_PRIORITY,
+        since_days=settings.since_days,
+        country_discovery=True,
+        official_crawl=True,
+        web_enabled=settings.web_enabled,
+        browser_enabled=settings.browser_enabled,
+        llm_enabled=settings.llm_enabled,
+    )
     search_job = create_search_job(search_case.case_id, run_id, cli_args=[])
     write_search_case(search_case, settings.output_dirs["07_logs"] / "search_case.json")
-    write_event(emit_event(run_id, "discovery_started", "Pipeline discovery started"), settings.output_dirs["07_logs"] / "run_events.jsonl")
+    write_event(
+        emit_event(run_id, "discovery_started", "Pipeline discovery started"),
+        settings.output_dirs["07_logs"] / "run_events.jsonl",
+    )
 
     taxonomy = load_json(settings.config_root / "keyword_taxonomy.json")
     scoring = load_json(settings.config_root / "scoring_rules.json")
@@ -264,7 +179,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     total_downloads = total_failed = total_ocr = 0
 
     for ws, queries in qpack.items():
-        ws_cfg = taxonomy.get("workstreams", {}).get(ws, taxonomy.get("workstreams", {}).get("artigo3_framework", {}))
+        ws_cfg = taxonomy.get("workstreams", {}).get(
+            ws,
+            taxonomy.get("workstreams", {}).get("artigo3_framework", {}),
+        )
         source_priority = ws_cfg.get("source_priority", DEFAULT_PRIORITY)
         query_budget = min(len(queries), QUERY_BUDGET.get(ws, 32))
 
@@ -281,7 +199,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             provider_queries = provider_querypack.get(ws, {}).get(provider, queries)
             for q in provider_queries[:query_budget]:
                 new_rows = _safe_provider_call(provider, fn, q, ws, logger)
-                hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(new_rows)
+                hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(
+                    new_rows
+                )
                 rows += new_rows
 
         try:
@@ -315,15 +235,37 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         all_manifest += manifest
         for m in manifest:
             m["document_id"] = make_document_id(m)
-            artifact_inputs.append({"document_id": m["document_id"], "artifact_type": "pdf", "path": m.get("path", ""), "source_stage": "download", "status": "ok"})
+            artifact_inputs.append(
+                {
+                    "document_id": m["document_id"],
+                    "artifact_type": "pdf",
+                    "path": m.get("path", ""),
+                    "source_stage": "download",
+                    "status": "ok",
+                }
+            )
         total_downloads += len(manifest)
         total_failed += len(failed)
         for f in failed:
             f["document_id"] = make_document_id(f)
-            write_event(emit_event(run_id, "metadata_only_saved", "Download failed, metadata only saved", event_kind="warning", document_id=f["document_id"], meta_json={"url": f.get("url"), "reason": f.get("reason")}), settings.output_dirs["07_logs"] / "run_events.jsonl")
+            write_event(
+                emit_event(
+                    run_id,
+                    "metadata_only_saved",
+                    "Download failed, metadata only saved",
+                    event_kind="warning",
+                    document_id=f["document_id"],
+                    meta_json={"url": f.get("url"), "reason": f.get("reason")},
+                ),
+                settings.output_dirs["07_logs"] / "run_events.jsonl",
+            )
 
-        write_simple_csv(all_manifest, settings.project_root / "03_corpus" / "download_manifest.csv")
-        write_simple_csv(failed, settings.project_root / "03_corpus" / "failed_downloads.csv")
+        write_simple_csv(
+            all_manifest, settings.project_root / "03_corpus" / "download_manifest.csv"
+        )
+        write_simple_csv(
+            failed, settings.project_root / "03_corpus" / "failed_downloads.csv"
+        )
 
         ext_by_url = {}
         for m in manifest:
@@ -349,23 +291,38 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             r["ocr_status"] = "used" if e.get("used_ocr") else "not_used"
             r["extraction_status"] = e.get("extraction_status", "missing")
             if e.get("text_path"):
-                r["extracted_text"] = Path(e["text_path"]).read_text(encoding="utf-8", errors="ignore")
+                r["extracted_text"] = Path(e["text_path"]).read_text(
+                    encoding="utf-8", errors="ignore"
+                )
 
         if ws == "busca1":
-            rows = domains_busca1.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca1.json"))
+            rows = domains_busca1.apply_domain_rules(
+                rows, load_json(settings.config_root / "domain_rules_busca1.json")
+            )
         elif ws == "busca2a":
-            rows = domains_busca2a.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2a.json"))
+            rows = domains_busca2a.apply_domain_rules(
+                rows, load_json(settings.config_root / "domain_rules_busca2a.json")
+            )
         elif ws == "busca2b":
-            rows = domains_busca2b.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2b.json"))
+            rows = domains_busca2b.apply_domain_rules(
+                rows, load_json(settings.config_root / "domain_rules_busca2b.json")
+            )
         elif ws in {"a3", "artigo3_framework"}:
             rows = build_framework_signals(rows)
 
-        write_analysis_xlsx(rows, settings.output_dirs["06_tables"] / f"analysis_{ws}.xlsx")
+        write_analysis_xlsx(
+            rows, settings.output_dirs["06_tables"] / f"analysis_{ws}.xlsx"
+        )
         all_rows += rows
 
-    write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
+    write_metadata_csv(
+        all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv"
+    )
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")
-    write_simple_csv(extraction_manifest, settings.output_dirs["05_extraction"] / "extraction_manifest.csv")
+    write_simple_csv(
+        extraction_manifest,
+        settings.output_dirs["05_extraction"] / "extraction_manifest.csv",
+    )
 
     master = build_master_rows(all_rows)
     write_synthesis_outputs(master, settings.output_dirs["06_tables"])
@@ -373,31 +330,84 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     q_items = build_questionnaire_candidates(master)
     fw_items = build_framework_components(master)
 
-    write_excel_file(pd.DataFrame(q_items), settings.output_dirs["06_tables"] / "NUTEV_QUESTIONNAIRE_ITEM_CANDIDATES.xlsx")
-    write_excel_file(pd.DataFrame(fw_items), settings.output_dirs["06_tables"] / "NUTEV_FRAMEWORK_COMPONENTS.xlsx")
+    write_excel_file(
+        pd.DataFrame(q_items),
+        settings.output_dirs["06_tables"] / "NUTEV_QUESTIONNAIRE_ITEM_CANDIDATES.xlsx",
+    )
+    write_excel_file(
+        pd.DataFrame(fw_items),
+        settings.output_dirs["06_tables"] / "NUTEV_FRAMEWORK_COMPONENTS.xlsx",
+    )
 
-    write_qualification_outputs(master, q_items, fw_items, settings.output_dirs["06_tables"], settings.output_dirs["08_docs"])
+    write_qualification_outputs(
+        master,
+        q_items,
+        fw_items,
+        settings.output_dirs["06_tables"],
+        settings.output_dirs["08_docs"],
+    )
     write_methods_docs(settings.output_dirs["08_docs"])
 
     prisma = build_prisma_flow(master, all_manifest, extraction_manifest)
-    export_prisma(prisma, settings.output_dirs["06_tables"] / "NUTEV_PRISMA_FLOW.xlsx", settings.output_dirs["07_logs"] / "prisma_flow.json")
+    export_prisma(
+        prisma,
+        settings.output_dirs["06_tables"] / "NUTEV_PRISMA_FLOW.xlsx",
+        settings.output_dirs["07_logs"] / "prisma_flow.json",
+    )
 
     curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
     operational_counts = _build_operational_counts(all_rows)
 
-    write_event(emit_event(run_id, "synthesis_completed", "Synthesis completed"), settings.output_dirs["07_logs"] / "run_events.jsonl")
-    write_event(emit_event(run_id, "curation_completed", "Curated layer completed", meta_json=curation_summary), settings.output_dirs["07_logs"] / "run_events.jsonl")
-    build_artifact_manifest(artifact_inputs, settings.output_dirs["07_logs"] / "artifact_manifest.csv")
+    write_event(
+        emit_event(run_id, "synthesis_completed", "Synthesis completed"),
+        settings.output_dirs["07_logs"] / "run_events.jsonl",
+    )
+    write_event(
+        emit_event(
+            run_id,
+            "curation_completed",
+            "Curated layer completed",
+            meta_json=curation_summary,
+        ),
+        settings.output_dirs["07_logs"] / "run_events.jsonl",
+    )
+    build_artifact_manifest(
+        artifact_inputs, settings.output_dirs["07_logs"] / "artifact_manifest.csv"
+    )
     search_job.status = "completed"
-    search_job.finished_at = __import__("datetime").datetime.now(__import__("datetime").timezone.utc)
-    write_search_job_snapshot(search_job, settings.output_dirs["07_logs"] / "search_job_snapshot.json", {"mode": settings.mode, "workstreams": workstreams, "providers_enabled": DEFAULT_PRIORITY, "configs_loaded": ["keyword_taxonomy.json", "scoring_rules.json", "official_sources_manifest.json"], "scoring_rules": scoring, "country_manifest": sources, "environment": {"web_enabled": settings.web_enabled, "browser_enabled": settings.browser_enabled, "llm_enabled": settings.llm_enabled}})
+    search_job.finished_at = __import__("datetime").datetime.now(
+        __import__("datetime").timezone.utc
+    )
+    write_search_job_snapshot(
+        search_job,
+        settings.output_dirs["07_logs"] / "search_job_snapshot.json",
+        {
+            "mode": settings.mode,
+            "workstreams": workstreams,
+            "providers_enabled": DEFAULT_PRIORITY,
+            "configs_loaded": [
+                "keyword_taxonomy.json",
+                "scoring_rules.json",
+                "official_sources_manifest.json",
+            ],
+            "scoring_rules": scoring,
+            "country_manifest": sources,
+            "environment": {
+                "web_enabled": settings.web_enabled,
+                "browser_enabled": settings.browser_enabled,
+                "llm_enabled": settings.llm_enabled,
+            },
+        },
+    )
 
     summary = {
         "workstreams": workstreams,
         "records": len(all_rows),
         "raw_records": operational_counts["raw_records"],
         "unique_documents": operational_counts["unique_documents"],
-        "document_workstream_pairs": operational_counts["document_workstream_pairs"],
+        "document_workstream_pairs": operational_counts[
+            "document_workstream_pairs"
+        ],
         "workstream_summary": operational_counts["workstream_summary"],
         "downloads_ok": total_downloads,
         "downloads_failed": total_failed,
