@@ -22,7 +22,7 @@ jobs:
             echo "has_vite_frontend=false" >> "$GITHUB_OUTPUT"
             echo "No root Vite frontend entry detected; skipping web build/test checks."
           fi
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         if: steps.detect.outputs.has_vite_frontend == 'true'
         with:
           node-version: "24"
