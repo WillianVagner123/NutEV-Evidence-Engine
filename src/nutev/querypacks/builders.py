@@ -42,6 +42,14 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "glycemic control",
             "blood pressure",
             "fatty liver",
+            "masld",
+            "mafld",
+            "metabolic dysfunction-associated steatotic liver disease",
+            "metabolic dysfunction associated steatotic liver disease",
+            "metabolic dysfunction-associated fatty liver disease",
+            "metabolic dysfunction associated fatty liver disease",
+            "non-alcoholic fatty liver disease",
+            "nonalcoholic fatty liver disease",
         ],
         "web_hints": [
             "clinical practice guideline",
@@ -49,6 +57,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "scientific statement",
             "obesity guideline",
             "cardiometabolic guideline",
+            "masld guideline",
+            "mafld consensus",
         ],
         "document_terms": [
             "consensus statement",
