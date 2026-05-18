@@ -145,6 +145,24 @@ QUICK_MODE_SEED_GROUPS = {
             "declaração científica",
         ],
     ],
+    "lifestyle_medicine": [
+        [
+            "lifestyle medicine",
+            "lifestyle medicine nutrition",
+            "medicina do estilo de vida",
+        ],
+        [
+            "lifestyle intervention",
+            "lifestyle modification",
+            "therapeutic lifestyle changes",
+        ],
+        [
+            "healthy lifestyle",
+            "lifestyle counseling",
+            "lifestyle counselling",
+            "estilo de vida saudavel",
+        ],
+    ],
     "obesity_cardiometabolic": [
         [
             "obesity",
@@ -210,6 +228,52 @@ QUICK_MODE_SEED_GROUPS = {
             "motivational interviewing",
             "social support",
             "food agency",
+        ],
+    ],
+    "food_literacy_culinary_commensality": [
+        [
+            "food literacy",
+            "food and nutrition literacy",
+            "nutrition literacy",
+            "health literacy",
+        ],
+        [
+            "culinary medicine",
+            "cooking skills",
+            "food skills",
+            "home cooking",
+            "meal planning",
+        ],
+        [
+            "food environment",
+            "food access",
+            "shared meals",
+            "family meals",
+            "social eating",
+            "eat together",
+            "commensality",
+        ],
+    ],
+    "frameworks_instruments": [
+        [
+            "framework",
+            "behavior change framework",
+            "lifestyle medicine competencies",
+        ],
+        [
+            "questionnaire",
+            "instrument",
+            "survey instrument",
+            "adherence scale",
+            "food literacy instrument",
+            "culinary skills instrument",
+        ],
+        [
+            "psychometric validation",
+            "psychometric study",
+            "scale development",
+            "questionnaire validation",
+            "validation study",
         ],
     ],
 }
