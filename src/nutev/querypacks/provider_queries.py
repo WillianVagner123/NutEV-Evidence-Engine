@@ -8,6 +8,7 @@ from nutev.querypacks.builders import (
     canonical_workstream,
     uniq,
 )
+from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semantic_terms
 
 PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref")
 
@@ -28,7 +29,9 @@ PUBMED_MESH_MAP = {
     "plant-based diet": "Diet, Vegetarian",
     "dietary guidelines": "Guideline",
     "food literacy": "Health Literacy",
+    "nutrition literacy": "Health Literacy",
     "meal planning": "Food Planning",
+    "implementation science": "Implementation Science",
 }
 
 
@@ -115,8 +118,37 @@ def _pubmed_document_clause(doc_terms: list[str]) -> str:
     )
 
 
+def _augment_with_semantic_blocks(
+    workstream: str,
+    components: dict[str, list[str]],
+) -> dict[str, list[str]]:
+    enriched = {key: list(value) for key, value in components.items()}
+    high_priority_terms = semantic_terms(workstream, min_priority=4)
+    broad_terms = semantic_terms(workstream, min_priority=3)
+    semantic_doc_terms = semantic_terms(
+        workstream,
+        field="document_terms",
+        min_priority=3,
+    )
+    block_priorities = [
+        f"{item['name']}:{item['priority']}"
+        for item in prioritized_semantic_blocks(workstream)
+    ]
+
+    enriched["web_hints"] = uniq(enriched.get("web_hints", []) + high_priority_terms)
+    enriched["behavior_terms"] = uniq(enriched.get("behavior_terms", []) + broad_terms)
+    enriched["focus_terms"] = uniq(enriched.get("focus_terms", []) + broad_terms)
+    enriched["doc_type_terms"] = uniq(
+        enriched.get("doc_type_terms", []) + semantic_doc_terms
+    )
+    enriched["semantic_terms"] = broad_terms
+    enriched["semantic_block_priorities"] = block_priorities
+    return enriched
+
+
 def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
     condition_terms = components["condition_terms"] + components["clinical_terms"]
+    semantic_terms_ = components.get("semantic_terms", [])
     queries = [
         _join_parts(
             [
@@ -158,12 +190,20 @@ def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
                 _provider_or_block(condition_terms, "pubmed", 6),
             ]
         ),
+        _join_parts(
+            [
+                _provider_or_block(semantic_terms_, "pubmed", 5),
+                _provider_or_block(condition_terms, "pubmed", 6),
+                _pubmed_document_clause(components["doc_type_terms"]),
+            ]
+        ),
     ]
     return uniq([query for query in queries if query])
 
 
 def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
     condition_terms = components["condition_terms"] + components["clinical_terms"]
+    semantic_terms_ = components.get("semantic_terms", [])
     queries = [
         _join_parts(
             [
@@ -193,12 +233,20 @@ def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
                 _provider_or_block(components["priority_outcomes"], "europepmc", 5),
             ]
         ),
+        _join_parts(
+            [
+                _provider_or_block(semantic_terms_, "europepmc", 5),
+                _provider_or_block(condition_terms, "europepmc", 8),
+                _provider_or_block(components["doc_type_terms"], "europepmc", 5),
+            ]
+        ),
     ]
     return uniq([query for query in queries if query])
 
 
 def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
     condition_terms = components["condition_terms"] + components["clinical_terms"]
+    semantic_terms_ = components.get("semantic_terms", [])
     queries = [
         _join_parts(
             [
@@ -221,12 +269,20 @@ def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
                 _provider_or_block(components["doc_type_terms"], "openalex", 4),
             ]
         ),
+        _join_parts(
+            [
+                _provider_or_block(semantic_terms_, "openalex", 4),
+                _provider_or_block(condition_terms, "openalex", 6),
+                _provider_or_block(components["priority_outcomes"], "openalex", 4),
+            ]
+        ),
     ]
     return uniq([query for query in queries if query])
 
 
 def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
     condition_terms = components["condition_terms"] + components["clinical_terms"]
+    semantic_terms_ = components.get("semantic_terms", [])
     queries = [
         _join_parts(
             [
@@ -249,6 +305,13 @@ def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
                 _provider_or_block(components["doc_type_terms"], "crossref", 4),
             ]
         ),
+        _join_parts(
+            [
+                _provider_or_block(semantic_terms_, "crossref", 4),
+                _provider_or_block(condition_terms, "crossref", 6),
+                _provider_or_block(components["doc_type_terms"], "crossref", 4),
+            ]
+        ),
     ]
     return uniq([query for query in queries if query])
 
@@ -259,6 +322,7 @@ def render_queries_for_provider(
     provider: str,
 ) -> list[str]:
     _, components = build_structured_components(keyword_taxonomy, workstream)
+    components = _augment_with_semantic_blocks(workstream, components)
     if provider == "pubmed":
         return _render_pubmed_queries(components)
     if provider == "europepmc":
@@ -303,6 +367,12 @@ def write_provider_querypack_audit(
     )
     rows = []
     for workstream, providers in provider_querypack.items():
+        block_priorities = ";".join(
+            [
+                f"{item['name']}:{item['priority']}"
+                for item in prioritized_semantic_blocks(workstream)
+            ]
+        )
         for provider, queries in providers.items():
             for query_order, query_text in enumerate(queries, start=1):
                 rows.append(
@@ -310,14 +380,17 @@ def write_provider_querypack_audit(
                         "workstream": workstream,
                         "provider": provider,
                         "query_order": query_order,
+                        "semantic_blocks": block_priorities,
                         "query_text": query_text,
                     }
                 )
-    csv_lines = ["workstream,provider,query_order,query_text"]
+    csv_lines = ["workstream,provider,query_order,semantic_blocks,query_text"]
     for row in rows:
         query_text = row["query_text"].replace('"', '""')
+        semantic_blocks = row["semantic_blocks"].replace('"', '""')
         csv_lines.append(
-            f'{row["workstream"]},{row["provider"]},{row["query_order"]},"{query_text}"'
+            f'{row["workstream"]},{row["provider"]},{row["query_order"]},'
+            f'"{semantic_blocks}","{query_text}"'
         )
     (logs_dir / "provider_querypack_executed.csv").write_text(
         "\n".join(csv_lines) + "\n",
