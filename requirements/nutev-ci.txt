@@ -8,6 +8,6 @@ pydantic>=2.10
 openpyxl>=3.1
 pytest>=8.0
 pytest-timeout>=2.3
-pytest-mock>=3.14
+pytest-mock>=3.15.1
 pytest-asyncio>=0.23
 freezegun>=1.5
