@@ -8,6 +8,7 @@ from nutev.global_watch.watch_config import MODE_LIMITS, WATCH_CATEGORIES
 BASE_CONTEXT_TERMS = [
     "nutrition",
     "diet",
+    "food",
     "obesity",
     "cardiometabolic",
 ]
@@ -17,6 +18,9 @@ CATEGORY_CONTEXT_TERMS = {
         "dietary guideline",
         "dietary pattern",
         "lifestyle medicine",
+        "practice guideline",
+        "position paper",
+        "food-based dietary guideline",
     ],
     "lifestyle_medicine": [
         "food literacy",
@@ -32,6 +36,10 @@ CATEGORY_CONTEXT_TERMS = {
         "dyslipidaemia",
         "steatotic liver disease",
         "metabolic dysfunction-associated steatotic liver disease",
+        "weight management",
+        "adiposity",
+        "blood pressure",
+        "fatty liver",
     ],
     "diet_patterns": [
         "type 2 diabetes",
@@ -40,22 +48,38 @@ CATEGORY_CONTEXT_TERMS = {
         "adherence",
         "insulin resistance",
         "steatotic liver disease",
+        "mediterranean diet",
+        "dash",
+        "mind diet",
+        "plant-based diet",
+        "eat-lancet",
+        "planetary health diet",
     ],
     "implementation_behavior": [
         "lifestyle medicine",
         "food literacy",
         "culinary medicine",
+        "implementation science",
+        "knowledge translation",
+        "dietary adherence",
+        "self-efficacy",
     ],
     "food_literacy_culinary_commensality": [
         "lifestyle medicine",
         "behavior change",
         "adherence",
+        "food environment",
+        "nutrition education",
+        "shared meals",
     ],
     "frameworks_instruments": [
         "lifestyle medicine",
         "food literacy",
         "culinary medicine",
         "commensality",
+        "psychometric validation",
+        "scale development",
+        "lifestyle medicine competencies",
     ],
 }
 
@@ -64,6 +88,7 @@ HIGH_PRIORITY_MARKERS = (
     "consensus",
     "statement",
     "recommendation",
+    "position paper",
 )
 
 
