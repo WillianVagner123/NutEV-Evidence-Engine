@@ -27,6 +27,32 @@ def test_build_watch_queries_adds_semantic_context_for_lifestyle_terms() -> None
     assert '"meal planning"' in first_query
 
 
+def test_build_watch_queries_expands_lifestyle_intervention_aliases() -> None:
+    queries = build_watch_queries(["lifestyle_medicine"], since_days=30, mode="quick")
+
+    lifestyle_intervention_query = str(queries[1]["query"])
+    assert '"lifestyle intervention"' in lifestyle_intervention_query
+    assert '"therapeutic lifestyle changes"' in lifestyle_intervention_query
+    assert '"intensive lifestyle intervention"' in lifestyle_intervention_query
+
+
+def test_build_watch_queries_expands_masld_aliases() -> None:
+    queries = build_watch_queries(
+        ["obesity_cardiometabolic"],
+        since_days=30,
+        mode="exhaustive",
+    )
+
+    masld_query = next(
+        str(item["query"])
+        for item in queries
+        if '"MASLD"' in str(item["query"])
+    )
+    assert '"metabolic dysfunction-associated steatotic liver disease"' in masld_query
+    assert '"MAFLD"' in masld_query
+    assert '"metabolic associated fatty liver disease"' in masld_query
+
+
 def test_build_watch_queries_prioritizes_guideline_like_terms() -> None:
     guideline_queries = build_watch_queries(
         ["guidelines_consensus"],
