@@ -25,6 +25,14 @@ PUBMED_MESH_MAP = {
     "metabolic syndrome": "Metabolic Syndrome",
     "nafld": "Non-alcoholic Fatty Liver Disease",
     "masld": "Non-alcoholic Fatty Liver Disease",
+    "mash": "Steatohepatitis, Non-Alcoholic",
+    "nash": "Steatohepatitis, Non-Alcoholic",
+    "steatohepatitis": "Steatohepatitis, Non-Alcoholic",
+    "steatotic liver disease": "Non-alcoholic Fatty Liver Disease",
+    "metabolic dysfunction-associated steatotic liver disease": "Non-alcoholic Fatty Liver Disease",
+    "metabolic dysfunction associated steatotic liver disease": "Non-alcoholic Fatty Liver Disease",
+    "nonalcoholic steatohepatitis": "Steatohepatitis, Non-Alcoholic",
+    "non-alcoholic steatohepatitis": "Steatohepatitis, Non-Alcoholic",
     "mediterranean diet": "Diet, Mediterranean",
     "dash diet": "Dietary Approaches To Stop Hypertension",
     "plant-based diet": "Diet, Vegetarian",
@@ -35,7 +43,7 @@ PUBMED_MESH_MAP = {
     "implementation science": "Implementation Science",
 }
 
-BUSCA2B_LIVER_TERMS = [
+STEATOTIC_LIVER_TERMS = [
     "masld",
     "nafld",
     "mash",
@@ -48,15 +56,17 @@ BUSCA2B_LIVER_TERMS = [
     "non-alcoholic fatty liver disease",
     "nonalcoholic steatohepatitis",
     "non-alcoholic steatohepatitis",
+    "steatohepatitis",
 ]
 
-BUSCA2B_LIVER_HINTS = [
+STEATOTIC_LIVER_HINTS = [
     "masld",
     "nafld",
     "mash",
     "nash",
     "steatohepatitis",
     "steatotic liver disease",
+    "metabolic dysfunction-associated steatotic liver disease",
 ]
 
 
@@ -166,16 +176,19 @@ def _augment_with_semantic_blocks(
     enriched["doc_type_terms"] = uniq(
         enriched.get("doc_type_terms", []) + semantic_doc_terms
     )
-    if canonical_workstream(workstream) == "busca2b":
-        # Keep MASLD/NAFLD intervention evidence visible in provider queries even
-        # when broader cardiometabolic condition lists are capped for query size.
+    if canonical_workstream(workstream) in {"busca2a", "busca2b"}:
+        # Keep older and newer fatty-liver nomenclature visible in provider
+        # queries so guideline and intervention searches do not depend on a
+        # single terminology era.
         enriched["condition_terms"] = uniq(
-            enriched.get("condition_terms", []) + BUSCA2B_LIVER_TERMS
+            enriched.get("condition_terms", []) + STEATOTIC_LIVER_TERMS
         )
         enriched["clinical_terms"] = uniq(
-            enriched.get("clinical_terms", []) + BUSCA2B_LIVER_TERMS
+            enriched.get("clinical_terms", []) + STEATOTIC_LIVER_TERMS
         )
-        enriched["web_hints"] = uniq(enriched.get("web_hints", []) + BUSCA2B_LIVER_HINTS)
+        enriched["web_hints"] = uniq(
+            enriched.get("web_hints", []) + STEATOTIC_LIVER_HINTS
+        )
     enriched["semantic_terms"] = broad_terms
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
