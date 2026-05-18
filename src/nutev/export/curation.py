@@ -1,14 +1,19 @@
 from __future__ import annotations
 
-import hashlib
-import json
-import re
-import unicodedata
 from pathlib import Path
-from urllib.parse import urlsplit, urlunsplit
 
 import pandas as pd
 
+from nutev.engine.identity import (
+    as_text,
+    compute_document_key,
+    has_full_text,
+    normalize_doi,
+    normalize_for_match,
+    normalize_title,
+    normalize_url,
+    normalize_year,
+)
 from nutev.export.excel_writer import (
     sanitize_dataframe_for_excel,
     write_excel_file,
@@ -154,110 +159,13 @@ _PRIORITY_TERMS = [
     "autoeficácia",
 ]
 
-_WHITESPACE_RE = re.compile(r"\s+")
-_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
-
-
-def _as_text(value: object) -> str:
-    if value is None:
-        return ""
-    if isinstance(value, str):
-        return value.strip()
-    if isinstance(value, (list, tuple, set)):
-        return "; ".join(_as_text(v) for v in value if _as_text(v))
-    if isinstance(value, dict):
-        return json.dumps(value, ensure_ascii=False, sort_keys=True)
-    return str(value).strip()
-
-
-def _normalize_for_match(value: object) -> str:
-    text = unicodedata.normalize("NFKD", _as_text(value).lower())
-    text = "".join(ch for ch in text if not unicodedata.combining(ch))
-    return _WHITESPACE_RE.sub(" ", text).strip()
-
-
-def _normalize_doi(value: object) -> str:
-    text = _as_text(value).lower()
-    if not text:
-        return ""
-    for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
-        if text.startswith(prefix):
-            text = text[len(prefix) :]
-    return text.strip().strip("/")
-
-
-def _normalize_url(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    parsed = urlsplit(text)
-    if not parsed.scheme or not parsed.netloc:
-        return text.strip().rstrip("/").lower()
-    path = parsed.path.rstrip("/") or "/"
-    normalized = urlunsplit(
-        (parsed.scheme.lower(), parsed.netloc.lower(), path, "", "")
-    )
-    return normalized.rstrip("/")
-
-
-def _normalize_title(value: object) -> str:
-    text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
-    return _NON_ALNUM_RE.sub(" ", text).strip()
-
-
-def _normalize_year(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    try:
-        year = int(float(text))
-    except Exception:
-        return ""
-    return str(year)
-
-
-def _hash_fallback(row: dict) -> str:
-    payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
-    # Deterministic operational fallback key, not a security primitive.
-    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
-
 
 def _compute_document_key(row: dict) -> tuple[str, str]:
-    doi = _normalize_doi(row.get("doi"))
-    if doi:
-        return doi, "doi"
-
-    pmid = _as_text(row.get("pmid"))
-    if pmid:
-        return f"pmid:{pmid}", "pmid"
-
-    pmcid = _normalize_for_match(row.get("pmcid"))
-    if pmcid:
-        return f"pmcid:{pmcid}", "pmcid"
-
-    url = _normalize_url(
-        row.get("final_url") or row.get("original_url") or row.get("url")
-    )
-    if url:
-        return url, "url"
-
-    title = _normalize_title(row.get("title"))
-    year = _normalize_year(row.get("year"))
-    if title and year:
-        return f"{title}::{year}", "title_year"
-
-    return _hash_fallback(row), "row_hash"
+    return compute_document_key(row)
 
 
 def _has_full_text(row: dict) -> bool:
-    statuses = {
-        _as_text(row.get("download_status")).lower(),
-        _as_text(row.get("capture_status")).lower(),
-        _as_text(row.get("extraction_status")).lower(),
-    }
-    if "pdf" in statuses or "html_snapshot" in statuses or "ok" in statuses:
-        return True
-    return bool(_as_text(row.get("file_path")) or _as_text(row.get("text_path")))
+    return has_full_text(row)
 
 
 def _is_prioritized(row: dict) -> bool:
@@ -267,69 +175,69 @@ def _is_prioritized(row: dict) -> bool:
         score = 0.0
     text = " ".join(
         [
-            _as_text(row.get("title")),
-            _as_text(row.get("evidence_type")),
-            _as_text(row.get("domains")),
-            _as_text(row.get("outcomes")),
-            _as_text(row.get("diet_patterns")),
-            _as_text(row.get("clinical_conditions")),
-            _as_text(row.get("main_terms")),
+            as_text(row.get("title")),
+            as_text(row.get("evidence_type")),
+            as_text(row.get("domains")),
+            as_text(row.get("outcomes")),
+            as_text(row.get("diet_patterns")),
+            as_text(row.get("clinical_conditions")),
+            as_text(row.get("main_terms")),
         ]
     )
-    normalized_text = _normalize_for_match(text)
+    normalized_text = normalize_for_match(text)
     return score >= 8 and any(
-        _normalize_for_match(term) in normalized_text for term in _PRIORITY_TERMS
+        normalize_for_match(term) in normalized_text for term in _PRIORITY_TERMS
     )
 
 
 def _curate_row(row: dict) -> dict:
     curated = {
-        column: _as_text(row.get(column)) for column in REQUIRED_METADATA_COLUMNS
+        column: as_text(row.get(column)) for column in REQUIRED_METADATA_COLUMNS
     }
-    curated["document_id"] = _as_text(row.get("document_id") or row.get("id"))
-    curated["title"] = _as_text(row.get("title"))
-    curated["doi"] = _as_text(row.get("doi"))
-    curated["pmid"] = _as_text(row.get("pmid"))
-    curated["pmcid"] = _as_text(row.get("pmcid"))
-    curated["original_url"] = _as_text(row.get("original_url") or row.get("url"))
-    curated["final_url"] = _as_text(
+    curated["document_id"] = as_text(row.get("document_id") or row.get("id"))
+    curated["title"] = as_text(row.get("title"))
+    curated["doi"] = as_text(row.get("doi"))
+    curated["pmid"] = as_text(row.get("pmid"))
+    curated["pmcid"] = as_text(row.get("pmcid"))
+    curated["original_url"] = as_text(row.get("original_url") or row.get("url"))
+    curated["final_url"] = as_text(
         row.get("final_url") or row.get("resolved_url") or row.get("url")
     )
-    curated["artifact_paths"] = _as_text(
+    curated["artifact_paths"] = as_text(
         row.get("artifact_paths") or row.get("file_path")
     )
-    curated["source_provider"] = _as_text(
+    curated["source_provider"] = as_text(
         row.get("source_provider") or row.get("source")
     )
-    curated["workstream"] = _as_text(row.get("workstream"))
-    curated["capture_status"] = _as_text(row.get("capture_status") or "missing")
-    curated["download_status"] = _as_text(
+    curated["workstream"] = as_text(row.get("workstream"))
+    curated["capture_status"] = as_text(row.get("capture_status") or "missing")
+    curated["download_status"] = as_text(
         row.get("download_status")
         or ("pdf" if row.get("file_path") else "metadata_only")
     )
-    curated["extraction_status"] = _as_text(
+    curated["extraction_status"] = as_text(
         row.get("extraction_status") or "missing"
     )
     curated["relevance_score"] = row.get("relevance_score") or row.get("score") or ""
     curated["novelty_score"] = row.get("novelty_score") or ""
-    curated["domains"] = _as_text(row.get("domains"))
-    curated["outcomes"] = _as_text(row.get("outcomes"))
-    curated["diet_patterns"] = _as_text(
+    curated["domains"] = as_text(row.get("domains"))
+    curated["outcomes"] = as_text(row.get("outcomes"))
+    curated["diet_patterns"] = as_text(
         row.get("diet_patterns") or row.get("diet_pattern")
     )
-    curated["clinical_conditions"] = _as_text(
+    curated["clinical_conditions"] = as_text(
         row.get("clinical_conditions") or row.get("clinical_condition")
     )
 
     document_key, document_key_type = _compute_document_key(curated)
     curated["document_key"] = document_key
     curated["document_key_type"] = document_key_type
-    curated["doi_normalized"] = _normalize_doi(curated.get("doi"))
-    curated["url_normalized"] = _normalize_url(
+    curated["doi_normalized"] = normalize_doi(curated.get("doi"))
+    curated["url_normalized"] = normalize_url(
         curated.get("final_url") or curated.get("original_url")
     )
-    curated["title_normalized"] = _normalize_title(curated.get("title"))
-    curated["year_normalized"] = _normalize_year(curated.get("year"))
+    curated["title_normalized"] = normalize_title(curated.get("title"))
+    curated["year_normalized"] = normalize_year(curated.get("year"))
     curated["workstream_list"] = curated.get("workstream", "")
     curated["has_full_text"] = _has_full_text(curated)
     curated["is_metadata_only"] = not curated["has_full_text"]
@@ -351,7 +259,7 @@ def _rank_row(row: dict) -> tuple[int, int, float, int, str]:
         int(bool(row.get("is_prioritized"))),
         score,
         year,
-        _as_text(row.get("title")),
+        as_text(row.get("title")),
     )
 
 
@@ -371,16 +279,16 @@ def _build_unique_documents(curated_rows: list[dict]) -> list[dict]:
         best = dict(group[0])
         workstreams = sorted(
             {
-                _as_text(item.get("workstream"))
+                as_text(item.get("workstream"))
                 for item in group
-                if _as_text(item.get("workstream"))
+                if as_text(item.get("workstream"))
             }
         )
         document_ids = sorted(
             {
-                _as_text(item.get("document_id"))
+                as_text(item.get("document_id"))
                 for item in group
-                if _as_text(item.get("document_id"))
+                if as_text(item.get("document_id"))
             }
         )
         best.update(
@@ -408,7 +316,7 @@ def _build_unique_documents(curated_rows: list[dict]) -> list[dict]:
 def _build_workstream_map(curated_rows: list[dict]) -> list[dict]:
     selected: dict[tuple[str, str], dict] = {}
     for row in sorted(curated_rows, key=_rank_row, reverse=True):
-        workstream = _as_text(row.get("workstream")) or "unassigned"
+        workstream = as_text(row.get("workstream")) or "unassigned"
         key = (row["document_key"], workstream)
         selected.setdefault(key, row)
     return [
@@ -485,13 +393,13 @@ def _build_missing_canonical_rows(curated_rows: list[dict]) -> pd.DataFrame:
     rows = []
     for row in curated_rows:
         missing = []
-        if not _as_text(row.get("title")):
+        if not as_text(row.get("title")):
             missing.append("title")
-        if not _as_text(row.get("final_url") or row.get("original_url")):
+        if not as_text(row.get("final_url") or row.get("original_url")):
             missing.append("url")
-        if not _as_text(row.get("year")):
+        if not as_text(row.get("year")):
             missing.append("year")
-        if not _as_text(row.get("evidence_type")):
+        if not as_text(row.get("evidence_type")):
             missing.append("evidence_type")
         if missing:
             rows.append(
@@ -518,7 +426,7 @@ def _build_missing_canonical_rows(curated_rows: list[dict]) -> pd.DataFrame:
 def _build_missing_by_workstream(curated_rows: list[dict]) -> pd.DataFrame:
     grouped: dict[str, dict[str, int]] = {}
     for row in curated_rows:
-        workstream = _as_text(row.get("workstream")) or "unassigned"
+        workstream = as_text(row.get("workstream")) or "unassigned"
         bucket = grouped.setdefault(
             workstream,
             {
@@ -528,13 +436,13 @@ def _build_missing_by_workstream(curated_rows: list[dict]) -> pd.DataFrame:
                 "missing_evidence_type": 0,
             },
         )
-        if not _as_text(row.get("title")):
+        if not as_text(row.get("title")):
             bucket["missing_title"] += 1
-        if not _as_text(row.get("final_url") or row.get("original_url")):
+        if not as_text(row.get("final_url") or row.get("original_url")):
             bucket["missing_url"] += 1
-        if not _as_text(row.get("year")):
+        if not as_text(row.get("year")):
             bucket["missing_year"] += 1
-        if not _as_text(row.get("evidence_type")):
+        if not as_text(row.get("evidence_type")):
             bucket["missing_evidence_type"] += 1
     rows = [
         {"workstream": workstream, **values}
@@ -600,7 +508,7 @@ def _build_qa_summary(
         {
             "metric": "missing_title",
             "value": sum(
-                1 for row in curated_rows if not _as_text(row.get("title"))
+                1 for row in curated_rows if not as_text(row.get("title"))
             ),
         },
         {
@@ -608,19 +516,19 @@ def _build_qa_summary(
             "value": sum(
                 1
                 for row in curated_rows
-                if not _as_text(row.get("final_url") or row.get("original_url"))
+                if not as_text(row.get("final_url") or row.get("original_url"))
             ),
         },
         {
             "metric": "missing_year",
-            "value": sum(1 for row in curated_rows if not _as_text(row.get("year"))),
+            "value": sum(1 for row in curated_rows if not as_text(row.get("year"))),
         },
         {
             "metric": "missing_evidence_type",
             "value": sum(
                 1
                 for row in curated_rows
-                if not _as_text(row.get("evidence_type"))
+                if not as_text(row.get("evidence_type"))
             ),
         },
     ]
