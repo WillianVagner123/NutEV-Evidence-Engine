@@ -68,6 +68,113 @@ NEGATIVE_TITLE_RULES = {
     "stroke center": -6,
 }
 
+OUT_OF_SCOPE_DOMAINS = {
+    "pediatric_population": {
+        "tokens": [
+            "pediatric",
+            "paediatric",
+            "child",
+            "children",
+            "adolescent",
+            "adolescents",
+            "youth",
+            "schoolchildren",
+            "infant",
+            "neonate",
+            "pregnancy",
+            "gestational",
+        ],
+        "penalty": -8,
+    },
+    "animal_or_preclinical": {
+        "tokens": [
+            "mouse",
+            "mice",
+            "rat",
+            "rats",
+            "murine",
+            "animal model",
+            "zebrafish",
+            "swine",
+            "preclinical",
+        ],
+        "penalty": -10,
+    },
+    "bench_or_cellular": {
+        "tokens": [
+            "in vitro",
+            "cell culture",
+            "cell line",
+            "hepatocyte",
+            "adipocyte",
+            "gene expression",
+            "molecular docking",
+            "metabolomics only",
+            "proteomics only",
+        ],
+        "penalty": -8,
+    },
+    "psychiatric_drug_focus": {
+        "tokens": [
+            "clozapine",
+            "olanzapine",
+            "antipsychotic",
+            "schizophrenia",
+            "bipolar disorder",
+            "major depressive disorder",
+            "psychiatric inpatient",
+        ],
+        "penalty": -7,
+    },
+    "acute_hospital_or_surgery": {
+        "tokens": [
+            "intensive care",
+            "icu",
+            "perioperative",
+            "postoperative",
+            "surgery",
+            "surgical",
+            "stroke center",
+            "acute stroke",
+            "enteral nutrition",
+            "parenteral nutrition",
+        ],
+        "penalty": -6,
+    },
+    "non_human_or_agriculture": {
+        "tokens": [
+            "livestock",
+            "cattle",
+            "dairy cow",
+            "broiler",
+            "aquaculture",
+            "crop yield",
+            "soil microbiome",
+            "animal feed",
+        ],
+        "penalty": -10,
+    },
+}
+
+OOS_RESCUE_TOKENS = [
+    "adult",
+    "adults",
+    "clinical practice guideline",
+    "guideline",
+    "consensus",
+    "systematic review",
+    "meta-analysis",
+    "randomized controlled trial",
+    "lifestyle intervention",
+    "medical nutrition therapy",
+    "obesity",
+    "type 2 diabetes",
+    "hypertension",
+    "cardiometabolic",
+    "food literacy",
+    "implementation",
+]
+
 WORKSTREAM_BONUS = {
     "busca1": {
         "food guideline": 6,
@@ -355,6 +462,36 @@ def _workstream_coherence_bonus(text: str, workstream: str) -> int:
     return bonus
 
 
+def _out_of_scope_profile(text: str) -> tuple[list[str], int]:
+    flags: list[str] = []
+    penalty = 0
+    for domain, config in OUT_OF_SCOPE_DOMAINS.items():
+        tokens = config["tokens"]
+        if _contains_any(text, tokens):
+            flags.append(domain)
+            penalty += config["penalty"]
+    return flags, penalty
+
+
+def _out_of_scope_rescue_bonus(text: str, workstream: str) -> int:
+    rescue = 0
+    if _contains_any(text, OOS_RESCUE_TOKENS):
+        rescue += 3
+    if sum(1 for count in _workstream_signal_hits(text, workstream).values() if count) >= 3:
+        rescue += 4
+    return rescue
+
+
+def _should_hard_exclude_out_of_scope(text: str, workstream: str) -> bool:
+    flags, penalty = _out_of_scope_profile(text)
+    if not flags:
+        return False
+    rescue = _out_of_scope_rescue_bonus(text, workstream)
+    if rescue >= 7:
+        return False
+    return penalty <= -10 or len(flags) >= 2
+
+
 def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     title = (record.get("title") or "").lower()
     url = (record.get("url") or "").lower()
@@ -384,9 +521,14 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
         if kw in text:
             score += pts
 
+    out_of_scope_flags, out_of_scope_penalty = _out_of_scope_profile(text)
     score += _download_signal_score(text, url)
     score += _workstream_coherence_bonus(text, workstream)
+    score += out_of_scope_penalty
+    score += _out_of_scope_rescue_bonus(text, workstream)
 
+    record["out_of_scope_flags"] = out_of_scope_flags
+    record["out_of_scope_penalty"] = out_of_scope_penalty
     record["relevance_score"] = score
     return record
 
@@ -420,6 +562,9 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
         "clozapine",
     ]
     if _contains_any(title, hard_drop):
+        return False
+
+    if _should_hard_exclude_out_of_scope(text, workstream):
         return False
 
     blocked_url_tokens = [
