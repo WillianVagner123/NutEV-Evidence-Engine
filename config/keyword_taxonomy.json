@@ -1,10 +1,14 @@
 {
-  "version": "2026-04-v3",
+  "version": "2026-05-v1",
   "global": {
     "lifestyle_medicine_pillars": {
       "nutrition": [
         "lifestyle medicine",
         "medicina do estilo de vida",
+        "lifestyle intervention",
+        "lifestyle modification",
+        "therapeutic lifestyle changes",
+        "therapeutic lifestyle change",
         "healthy lifestyle",
         "estilo de vida saudável",
         "optimal nutrition",
@@ -290,6 +294,8 @@
         "acceptability",
         "feasibility",
         "implementation",
+        "lifestyle counseling",
+        "lifestyle counselling",
         "implementation science",
         "barrier",
         "barriers",
@@ -307,6 +313,8 @@
         "facilitadores"
       ],
       "behavioral": [
+        "behavioral lifestyle intervention",
+        "behavioral weight loss",
         "behavior change",
         "self-monitoring",
         "self efficacy",
@@ -498,7 +506,10 @@
       "nafld",
       "masld",
       "esteatose hepática",
-      "doença hepática gordurosa"
+      "doença hepática gordurosa",
+      "mafld",
+      "metabolic dysfunction-associated fatty liver disease",
+      "metabolic dysfunction-associated steatotic liver disease"
     ]
   },
   "outcomes": {
@@ -714,7 +725,10 @@
         "scientific statement",
         "society guideline",
         "diretriz clínica",
-        "consenso"
+        "consenso",
+        "lifestyle modification",
+        "therapeutic lifestyle changes",
+        "mafld"
       ]
     },
     "busca2b": {
@@ -782,7 +796,10 @@
         "pilot",
         "implementation",
         "culinary medicine",
-        "food literacy"
+        "food literacy",
+        "lifestyle modification",
+        "therapeutic lifestyle changes",
+        "mafld"
       ]
     },
     "artigo3_framework": {
