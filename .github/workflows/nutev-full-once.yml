@@ -1,4 +1,4 @@
-﻿name: NutMEV Full Once
+name: NutMEV Full Once
 
 on:
   workflow_dispatch:
@@ -113,7 +113,7 @@ jobs:
 
       - name: Upload full project_output artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nutev-full-once-project-output
           path: project_output
