@@ -38,6 +38,14 @@ POSITIVE_TITLE_RULES = {
     "implementation": 4,
     "culinary": 4,
     "food literacy": 5,
+    "nutrition literacy": 5,
+    "health literacy": 4,
+    "nutrition education": 4,
+    "dietary counseling": 4,
+    "dietary counselling": 4,
+    "health coaching": 3,
+    "meal planning": 4,
+    "shared meals": 4,
     "mediterranean": 3,
     "dash": 3,
     "plant-based": 3,
@@ -193,10 +201,15 @@ WORKSTREAM_BONUS = {
         "report": 3,
         "healthy eating": 4,
         "food literacy": 3,
+        "health literacy": 3,
+        "nutrition education": 3,
         "commensality": 3,
+        "shared meals": 3,
         "culinary": 3,
         "obesity": 3,
         "lifestyle": 2,
+        "dietary counseling": 3,
+        "dietary counselling": 3,
     },
     "busca2a": {
         "guideline": 5,
@@ -230,6 +243,11 @@ WORKSTREAM_BONUS = {
         "keto": 4,
         "low-carb": 4,
         "food literacy": 3,
+        "nutrition literacy": 3,
+        "nutrition education": 3,
+        "dietary counseling": 3,
+        "dietary counselling": 3,
+        "health coaching": 3,
         "culinary": 3,
         "lifestyle intervention": 4,
         "lifestyle modification": 4,
@@ -240,20 +258,32 @@ WORKSTREAM_BONUS = {
         "questionnaire": 6,
         "instrument": 5,
         "food literacy": 5,
+        "nutrition literacy": 5,
+        "health literacy": 4,
+        "nutrition education": 4,
         "culinary": 5,
         "commensality": 5,
+        "shared meals": 4,
         "behavior": 4,
         "implementation": 4,
+        "dietary counseling": 3,
+        "dietary counselling": 3,
     },
     "artigo3_framework": {
         "framework": 6,
         "questionnaire": 6,
         "instrument": 5,
         "food literacy": 5,
+        "nutrition literacy": 5,
+        "health literacy": 4,
+        "nutrition education": 4,
         "culinary": 5,
         "commensality": 5,
+        "shared meals": 4,
         "behavior": 4,
         "implementation": 4,
+        "dietary counseling": 3,
+        "dietary counselling": 3,
     },
 }
 
@@ -526,12 +556,20 @@ def _editorial_authority_score(record: dict, scoring_rules: dict) -> int:
     authority_rules = scoring_rules.get("editorial_authority_points", {})
     journal = (record.get("journal") or "").lower()
     source_institution = (record.get("source_institution") or "").lower()
-    url = (record.get("url") or record.get("final_url") or record.get("original_url") or "").lower()
+    url = (
+        record.get("url")
+        or record.get("final_url")
+        or record.get("original_url")
+        or ""
+    ).lower()
     domain = _extract_domain(url)
 
     score = 0
     score += _match_weighted_points(journal, authority_rules.get("journals", {}))
-    score += _match_weighted_points(source_institution, authority_rules.get("institutions", {}))
+    score += _match_weighted_points(
+        source_institution,
+        authority_rules.get("institutions", {}),
+    )
     score += _match_weighted_points(domain, authority_rules.get("domains", {}))
     return score
 
@@ -591,92 +629,3 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     record["editorial_priority_tier"] = _editorial_priority_tier(editorial_score)
     record["relevance_score"] = score
     return record
-
-
-def keep_candidate_for_download(record: dict, workstream: str) -> bool:
-    score = record.get("relevance_score", 0)
-    title = (record.get("title") or "").lower()
-    url = (record.get("url") or "").lower()
-    source = (record.get("source") or "").lower()
-    abstract = (record.get("abstract") or record.get("summary") or "").lower()
-    journal = (record.get("journal") or "").lower()
-    text = f"{title} {url} {abstract} {journal}"
-    signal_hits = _workstream_signal_hits(text, workstream)
-    matched_groups = sum(1 for count in signal_hits.values() if count > 0)
-    editorial_priority_score = int(record.get("editorial_priority_score") or 0)
-
-    hard_drop = [
-        "editorial",
-        "commentary",
-        "letter",
-        "case report",
-        "retraction",
-        "pediatric",
-        "paediatric",
-        "child",
-        "children",
-        "adolescent",
-        "mouse",
-        "mice",
-        "rat",
-        "animal",
-        "in vitro",
-        "clozapine",
-    ]
-    if _contains_any(title, hard_drop):
-        return False
-
-    if _should_hard_exclude_out_of_scope(text, workstream):
-        return False
-
-    blocked_url_tokens = [
-        "mostdownload.php",
-        "/tdm/v1/articles/",
-        "content.aspx?aid=",
-        "book/chapter-pdf",
-    ]
-    if _contains_any(url, blocked_url_tokens):
-        return False
-
-    if source == "official":
-        return True
-
-    thresholds = {
-        "busca1": 7,
-        "busca2a": 7,
-        "busca2b": 7,
-        "a3": 5,
-        "artigo3_framework": 5,
-    }
-    threshold = thresholds.get(workstream, 6)
-
-    has_direct_download_hint = _contains_any(url, DIRECT_DOWNLOAD_HINTS)
-    has_high_value_signal = _contains_any(title, HIGH_VALUE_DOWNLOAD_TOKENS)
-    has_open_access_signal = _contains_any(text, OPEN_ACCESS_HINTS)
-    has_data_rich_signal = _contains_any(text, DATA_RICH_HINTS)
-
-    if editorial_priority_score >= 12 and score >= max(threshold - 2, 4):
-        return True
-
-    if matched_groups >= 3 and score >= max(threshold - 2, 4):
-        return True
-
-    if has_high_value_signal and has_direct_download_hint and score >= max(threshold - 3, 4):
-        return True
-
-    if has_high_value_signal and has_open_access_signal and score >= max(threshold - 2, 4):
-        return True
-
-    if has_data_rich_signal and has_direct_download_hint and score >= max(threshold - 2, 4):
-        return True
-
-    if workstream in {"a3", "artigo3_framework"} and _contains_any(
-        title,
-        ["questionnaire", "instrument", "framework", "validation", "psychometric", "scale"],
-    ):
-        return score >= max(threshold - 2, 4)
-
-    if source in {"pubmed", "europepmc"} and has_high_value_signal:
-        return score >= max(threshold - 1, 5)
-
-    return score >= threshold
