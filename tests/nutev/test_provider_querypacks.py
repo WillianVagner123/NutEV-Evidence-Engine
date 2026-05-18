@@ -5,6 +5,11 @@ from nutev.querypacks.provider_queries import (
     render_queries_for_provider,
     write_provider_querypack_audit,
 )
+from nutev.querypacks.semantic_blocks import (
+    prioritized_semantic_blocks,
+    semantic_block_names,
+    semantic_terms,
+)
 
 
 def _sample_taxonomy() -> dict:
@@ -41,7 +46,16 @@ def _sample_taxonomy() -> dict:
                 "priority_outcomes": ["anthropometry", "diet_quality_adherence"],
                 "focus_blocks": ["diet_patterns", "implementation_behavior"],
                 "web_query_hints": ["food guideline"],
-            }
+            },
+            "busca2b": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["obesity", "diabetes"],
+                "document_type_keys": ["reviews"],
+                "priority_outcomes": ["anthropometry", "diet_quality_adherence"],
+                "focus_blocks": ["diet_patterns", "implementation_behavior"],
+                "web_query_hints": ["behavior change trial"],
+            },
         },
     }
 
@@ -59,6 +73,25 @@ def test_europepmc_queries_use_title_abs():
 
     assert queries
     assert all("TITLE_ABS:" in query for query in queries)
+
+
+def test_provider_queries_include_semantic_research_blocks():
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert "implementation science" in joined
+    assert "dietary adherence" in joined
+
+
+def test_semantic_blocks_are_prioritized_by_workstream():
+    busca1_blocks = semantic_block_names("busca1")
+    busca2b_terms = semantic_terms("busca2b", min_priority=5)
+    priorities = prioritized_semantic_blocks("a3")
+
+    assert busca1_blocks[:2] == ["food_literacy_agency", "commensality_context"]
+    assert "implementation science" in busca2b_terms
+    assert "adherence" in busca2b_terms
+    assert priorities[0] == {"name": "food_literacy_agency", "priority": 5}
 
 
 def test_provider_querypack_builds_per_provider():
@@ -83,5 +116,9 @@ def test_provider_querypack_audit_files_are_written(tmp_path: Path):
 
     write_provider_querypack_audit(provider_querypack, tmp_path)
 
-    assert (tmp_path / "provider_querypack_executed.json").exists()
-    assert (tmp_path / "provider_querypack_executed.csv").exists()
+    json_path = tmp_path / "provider_querypack_executed.json"
+    csv_path = tmp_path / "provider_querypack_executed.csv"
+    assert json_path.exists()
+    assert csv_path.exists()
+    assert "semantic_blocks" in csv_path.read_text(encoding="utf-8")
+    assert "food_literacy_agency:5" in csv_path.read_text(encoding="utf-8")
