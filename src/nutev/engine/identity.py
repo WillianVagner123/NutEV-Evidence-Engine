@@ -8,6 +8,16 @@ from urllib.parse import urlsplit, urlunsplit
 
 _WHITESPACE_RE = re.compile(r"\s+")
 _NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
+_METADATA_COMPLETENESS_FIELDS = (
+    "doi",
+    "pmid",
+    "pmcid",
+    "year",
+    "language",
+    "journal",
+    "publisher",
+    "document_type",
+)
 
 
 def as_text(value: object) -> str:
@@ -122,6 +132,43 @@ def url_capture_priority(url: str) -> tuple[int, int, int]:
     )
 
 
+def _append_reason(reasons: list[str], reason: str) -> None:
+    if reason and reason not in reasons:
+        reasons.append(reason)
+
+
+def _winner_preference_reason(
+    winner_row: dict,
+    absorbed_rows: list[dict],
+    final_row: dict,
+) -> str:
+    reasons: list[str] = []
+
+    winner_url = as_text(winner_row.get("url"))
+    final_url = as_text(final_row.get("url"))
+    if final_url and final_url != winner_url:
+        lowered = final_url.lower()
+        if "pmc.ncbi.nlm.nih.gov" in lowered and lowered.endswith(".pdf"):
+            _append_reason(reasons, "preferred_pmc_pdf")
+        elif lowered.endswith(".pdf"):
+            _append_reason(reasons, "preferred_pdf_url")
+        else:
+            _append_reason(reasons, "preferred_capture_url")
+
+    if len(as_text(final_row.get("abstract"))) > len(as_text(winner_row.get("abstract"))):
+        _append_reason(reasons, "longer_abstract")
+    if len(as_text(final_row.get("summary"))) > len(as_text(winner_row.get("summary"))):
+        _append_reason(reasons, "longer_summary")
+
+    for field in _METADATA_COMPLETENESS_FIELDS:
+        if not as_text(winner_row.get(field)) and as_text(final_row.get(field)):
+            if any(as_text(row.get(field)) for row in absorbed_rows):
+                _append_reason(reasons, "filled_missing_metadata")
+                break
+
+    return "; ".join(reasons) if reasons else "first_occurrence_only"
+
+
 def merge_article_rows(existing: dict, incoming: dict) -> dict:
     merged = dict(existing)
     for key, value in incoming.items():
@@ -181,7 +228,12 @@ def deduplicate_document_rows(rows: list[dict]) -> tuple[list[dict], list[dict]]
         final_row = by_key[compound_key]
         group = occurrences[compound_key]
         winner_input_index = group[0][0]
+        winner_row = group[0][1]
+        absorbed_rows = [row for _, row in group[1:]]
         absorbed_count = max(len(group) - 1, 0)
+        winner_preference_reason = _winner_preference_reason(
+            winner_row, absorbed_rows, final_row
+        )
 
         for occurrence_order, (input_index, row) in enumerate(group):
             is_winner = occurrence_order == 0
@@ -199,6 +251,7 @@ def deduplicate_document_rows(rows: list[dict]) -> tuple[list[dict], list[dict]]
                     "merge_reason": "first_occurrence"
                     if is_winner
                     else f"absorbed_by_same_{key_type}",
+                    "winner_preference_reason": winner_preference_reason,
                     "winner_url_after_merge": _manifest_value(final_row, "url"),
                     "occurrence_url": _manifest_value(row, "url"),
                     "source": _manifest_value(row, "source"),
