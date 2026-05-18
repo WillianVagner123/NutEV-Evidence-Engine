@@ -8,6 +8,7 @@ REQUIRED_METADATA_COLUMNS = [
     "artifact_paths", "failure_reason", "relevance_score", "novelty_score", "domains", "outcomes", "diet_patterns", "clinical_conditions",
     "first_seen_date", "last_seen_date", "is_new", "llm_decision", "llm_reason",
     "journal", "publication_date", "article_type", "authors", "abstract", "metadata_status",
+    "editorial_priority_score", "editorial_priority_tier"
 ]
 
 ARTICLE_DATA_COLUMNS = [
@@ -27,6 +28,8 @@ ARTICLE_DATA_COLUMNS = [
     "final_url",
     "abstract",
     "relevance_score",
+    "editorial_priority_score",
+    "editorial_priority_tier",
     "download_status",
     "extraction_status",
     "artifact_paths",
@@ -55,6 +58,8 @@ def _normalize_metadata_row(row: dict) -> dict:
     out["authors"] = row.get("authors", "")
     out["abstract"] = row.get("abstract", "")
     out["metadata_status"] = row.get("metadata_status", "")
+    out["editorial_priority_score"] = row.get("editorial_priority_score", "")
+    out["editorial_priority_tier"] = row.get("editorial_priority_tier", "")
     return out
 
 
