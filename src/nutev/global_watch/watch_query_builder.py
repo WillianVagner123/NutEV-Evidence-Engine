@@ -28,12 +28,18 @@ CATEGORY_CONTEXT_TERMS = {
         "lifestyle medicine",
         "implementation",
         "adherence",
+        "insulin resistance",
+        "dyslipidaemia",
+        "steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
     ],
     "diet_patterns": [
         "type 2 diabetes",
         "hypertension",
         "implementation",
         "adherence",
+        "insulin resistance",
+        "steatotic liver disease",
     ],
     "implementation_behavior": [
         "lifestyle medicine",
