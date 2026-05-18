@@ -213,3 +213,35 @@ def test_quick_mode_framework_queries_cover_framework_instrument_and_validation_
     assert "food literacy instrument" in rendered
     assert "psychometric validation" in rendered
     assert "scale development" in rendered
+
+
+def _category_query(category: str) -> str:
+    queries = build_watch_queries([category], since_days=7, mode="quick")
+    assert queries
+    return " ".join(item["query"] for item in queries)
+
+
+def test_guidelines_context_has_food_based_guidance_variants() -> None:
+    query = _category_query("guidelines_consensus")
+    assert "food based dietary guideline" in query
+    assert "dietary guidance" in query
+
+
+def test_obesity_context_has_prediabetes_and_old_masld_name() -> None:
+    query = _category_query("obesity_cardiometabolic")
+    assert "prediabetes" in query
+    assert "metabolic dysfunction-associated fatty liver disease" in query
+
+
+def test_implementation_quick_mode_adds_behavioral_precision_terms() -> None:
+    query = _category_query("implementation_behavior")
+    assert "self-monitoring" in query
+    assert "implementation barrier" in query
+    assert "meal planning" in query
+
+
+def test_food_literacy_quick_mode_adds_culinary_and_commensality_terms() -> None:
+    query = _category_query("food_literacy_culinary_commensality")
+    assert "food agency" in query
+    assert "meal preparation" in query
+    assert "comensalidade" in query
