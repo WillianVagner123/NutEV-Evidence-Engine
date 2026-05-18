@@ -11,10 +11,13 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
     "implementation_science": {
         "terms": [
             "implementation science",
+            "process evaluation",
+            "knowledge translation",
             "implementation framework",
             "implementation strategy",
             "implementation outcomes",
             "implementation fidelity",
+            "practice facilitation",
             "real-world implementation",
             "pragmatic implementation",
             "scale-up",
@@ -24,6 +27,8 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "hybrid effectiveness implementation",
             "implementation study",
             "implementation trial",
+            "implementation barriers",
+            "implementation facilitators",
             "health coaching",
             "nutrition counseling",
             "nutrition counselling",
@@ -65,12 +70,17 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
     "food_literacy_agency": {
         "terms": [
             "food literacy",
+            "food environment",
             "nutrition literacy",
+            "nutrition label",
             "health literacy",
+            "front-of-pack labeling",
             "food agency",
             "food skills",
+            "shopping skills",
             "culinary skills",
             "cooking skills",
+            "cooking confidence",
             "meal planning",
             "label reading",
             "food choice",
@@ -182,6 +192,32 @@ def _uniq(items: list[str]) -> list[str]:
     return out
 
 
+def _interleave_groups(groups: list[list[str]]) -> list[str]:
+    clean_groups = [_uniq(group) for group in groups if group]
+    if not clean_groups:
+        return []
+
+    out: list[str] = []
+    seen: set[str] = set()
+    depth = 0
+    while True:
+        progressed = False
+        for group in clean_groups:
+            if depth >= len(group):
+                continue
+            term = group[depth]
+            key = term.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(term)
+            progressed = True
+        if not progressed:
+            break
+        depth += 1
+    return out
+
+
 def semantic_block_names(workstream: str) -> list[str]:
     ws_key = _canonical_workstream(workstream)
     return [name for name, _ in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, [])]
@@ -202,10 +238,10 @@ def semantic_terms(
     min_priority: int = 1,
 ) -> list[str]:
     ws_key = _canonical_workstream(workstream)
-    terms: list[str] = []
+    term_groups: list[list[str]] = []
     for block_name, priority in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, []):
         if priority < min_priority:
             continue
         block = SEMANTIC_RESEARCH_BLOCKS.get(block_name, {})
-        terms.extend(block.get(field, []))
-    return _uniq(terms)
+        term_groups.append(block.get(field, []))
+    return _interleave_groups(term_groups)
