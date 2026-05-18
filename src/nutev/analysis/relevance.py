@@ -136,6 +136,128 @@ WORKSTREAM_BONUS = {
     },
 }
 
+WORKSTREAM_SIGNAL_GROUPS = {
+    "busca1": {
+        "condition": ["obesity", "overweight", "obesidade", "sobrepeso"],
+        "document": [
+            "guideline",
+            "guidelines",
+            "report",
+            "policy",
+            "framework",
+            "guia alimentar",
+            "dietary guideline",
+        ],
+        "mev_nutrition": [
+            "healthy eating",
+            "food literacy",
+            "culinary",
+            "commensality",
+            "meal planning",
+            "lifestyle medicine",
+        ],
+    },
+    "busca2a": {
+        "condition": [
+            "obesity",
+            "diabetes",
+            "hypertension",
+            "dyslipidemia",
+            "cardiovascular",
+            "metabolic syndrome",
+            "masld",
+            "nafld",
+        ],
+        "document": [
+            "guideline",
+            "consensus",
+            "statement",
+            "recommendation",
+        ],
+        "outcome": [
+            "hba1c",
+            "blood pressure",
+            "ldl",
+            "glycemic",
+            "lipid",
+            "cardiometabolic",
+        ],
+    },
+    "busca2b": {
+        "condition": [
+            "obesity",
+            "diabetes",
+            "hypertension",
+            "dyslipidemia",
+            "cardiometabolic",
+        ],
+        "intervention": [
+            "mediterranean",
+            "dash",
+            "plant-based",
+            "vegetarian",
+            "vegan",
+            "keto",
+            "low-carb",
+            "meal replacement",
+        ],
+        "implementation": [
+            "adherence",
+            "implementation",
+            "feasibility",
+            "behavior",
+            "lifestyle intervention",
+            "counseling",
+            "counselling",
+        ],
+        "design": [
+            "trial",
+            "randomized",
+            "systematic review",
+            "meta-analysis",
+            "umbrella review",
+        ],
+    },
+    "a3": {
+        "construct": [
+            "framework",
+            "questionnaire",
+            "instrument",
+            "scale",
+            "validation",
+            "psychometric",
+        ],
+        "domain": [
+            "food literacy",
+            "culinary",
+            "commensality",
+            "meal planning",
+            "self-efficacy",
+            "behavior change",
+        ],
+        "mev": ["lifestyle medicine", "nutrition", "implementation"],
+    },
+    "artigo3_framework": {
+        "construct": [
+            "framework",
+            "questionnaire",
+            "instrument",
+            "scale",
+            "validation",
+            "psychometric",
+        ],
+        "domain": [
+            "food literacy",
+            "culinary",
+            "commensality",
+            "meal planning",
+            "self-efficacy",
+            "behavior change",
+        ],
+        "mev": ["lifestyle medicine", "nutrition", "implementation"],
+    },
+}
+
 DIRECT_DOWNLOAD_HINTS = [
     ".pdf",
     "/pdf",
@@ -211,6 +333,28 @@ def _download_signal_score(text: str, url: str) -> int:
     return signal
 
 
+def _workstream_signal_hits(text: str, workstream: str) -> dict[str, int]:
+    hits = {}
+    for group_name, tokens in WORKSTREAM_SIGNAL_GROUPS.get(workstream, {}).items():
+        hits[group_name] = sum(1 for token in tokens if token in text)
+    return hits
+
+
+def _workstream_coherence_bonus(text: str, workstream: str) -> int:
+    hits = _workstream_signal_hits(text, workstream)
+    matched_groups = sum(1 for count in hits.values() if count > 0)
+    bonus = 0
+
+    if matched_groups >= 2:
+        bonus += 4
+    if matched_groups >= 3:
+        bonus += 4
+    if any(count >= 2 for count in hits.values()):
+        bonus += 2
+
+    return bonus
+
+
 def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     title = (record.get("title") or "").lower()
     url = (record.get("url") or "").lower()
@@ -241,6 +385,7 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
             score += pts
 
     score += _download_signal_score(text, url)
+    score += _workstream_coherence_bonus(text, workstream)
 
     record["relevance_score"] = score
     return record
@@ -253,6 +398,8 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
     source = (record.get("source") or "").lower()
     abstract = (record.get("abstract") or record.get("summary") or "").lower()
     text = f"{title} {url} {abstract}"
+    signal_hits = _workstream_signal_hits(text, workstream)
+    matched_groups = sum(1 for count in signal_hits.values() if count > 0)
 
     hard_drop = [
         "editorial",
@@ -300,6 +447,9 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
     has_high_value_signal = _contains_any(title, HIGH_VALUE_DOWNLOAD_TOKENS)
     has_open_access_signal = _contains_any(text, OPEN_ACCESS_HINTS)
     has_data_rich_signal = _contains_any(text, DATA_RICH_HINTS)
+
+    if matched_groups >= 3 and score >= max(threshold - 2, 4):
+        return True
 
     if has_high_value_signal and has_direct_download_hint and score >= max(threshold - 3, 4):
         return True
