@@ -6,6 +6,7 @@ from pathlib import Path
 from nutev.querypacks.builders import (
     build_structured_components,
     canonical_workstream,
+    chunk_terms,
     uniq,
 )
 from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semantic_terms
@@ -33,6 +34,30 @@ PUBMED_MESH_MAP = {
     "meal planning": "Food Planning",
     "implementation science": "Implementation Science",
 }
+
+BUSCA2B_LIVER_TERMS = [
+    "masld",
+    "nafld",
+    "mash",
+    "nash",
+    "fatty liver",
+    "steatotic liver disease",
+    "metabolic dysfunction-associated steatotic liver disease",
+    "metabolic dysfunction associated fatty liver disease",
+    "nonalcoholic fatty liver disease",
+    "non-alcoholic fatty liver disease",
+    "nonalcoholic steatohepatitis",
+    "non-alcoholic steatohepatitis",
+]
+
+BUSCA2B_LIVER_HINTS = [
+    "masld",
+    "nafld",
+    "mash",
+    "nash",
+    "steatohepatitis",
+    "steatotic liver disease",
+]
 
 
 def _provider_field_term(term: str, provider: str) -> str:
@@ -141,9 +166,85 @@ def _augment_with_semantic_blocks(
     enriched["doc_type_terms"] = uniq(
         enriched.get("doc_type_terms", []) + semantic_doc_terms
     )
+    if canonical_workstream(workstream) == "busca2b":
+        # Keep MASLD/NAFLD intervention evidence visible in provider queries even
+        # when broader cardiometabolic condition lists are capped for query size.
+        enriched["condition_terms"] = uniq(
+            enriched.get("condition_terms", []) + BUSCA2B_LIVER_TERMS
+        )
+        enriched["clinical_terms"] = uniq(
+            enriched.get("clinical_terms", []) + BUSCA2B_LIVER_TERMS
+        )
+        enriched["web_hints"] = uniq(enriched.get("web_hints", []) + BUSCA2B_LIVER_HINTS)
     enriched["semantic_terms"] = broad_terms
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
+
+
+def _secondary_condition_chunks(
+    components: dict[str, list[str]],
+    *,
+    primary_limit: int = 8,
+) -> list[list[str]]:
+    combined_conditions = uniq(
+        components.get("condition_terms", []) + components.get("clinical_terms", [])
+    )
+    if len(combined_conditions) <= primary_limit:
+        return []
+    return chunk_terms(combined_conditions[primary_limit:], 4)[:3]
+
+
+def _render_overflow_condition_queries(
+    components: dict[str, list[str]],
+    provider: str,
+) -> list[str]:
+    queries: list[str] = []
+    for extra_conditions in _secondary_condition_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_conditions, provider, 4),
+                    _provider_or_block(components["diet_terms"], provider, 4),
+                    _provider_or_block(components["priority_outcomes"], provider, 4),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_conditions, provider, 4),
+                    _provider_or_block(components["behavior_terms"], provider, 4),
+                    _provider_or_block(components["doc_type_terms"], provider, 4),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
+
+
+def _render_pubmed_overflow_condition_queries(
+    components: dict[str, list[str]],
+) -> list[str]:
+    queries: list[str] = []
+    for extra_conditions in _secondary_condition_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_conditions, "pubmed", 4),
+                    _provider_or_block(components["diet_terms"], "pubmed", 4),
+                    _provider_or_block(components["priority_outcomes"], "pubmed", 4),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_conditions, "pubmed", 4),
+                    _provider_or_block(components["behavior_terms"], "pubmed", 4),
+                    _pubmed_document_clause(components["doc_type_terms"]),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
 
 
 def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
@@ -198,7 +299,10 @@ def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
             ]
         ),
     ]
-    return uniq([query for query in queries if query])
+    return uniq(
+        [query for query in queries if query]
+        + _render_pubmed_overflow_condition_queries(components)
+    )
 
 
 def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
@@ -241,7 +345,10 @@ def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
             ]
         ),
     ]
-    return uniq([query for query in queries if query])
+    return uniq(
+        [query for query in queries if query]
+        + _render_overflow_condition_queries(components, "europepmc")
+    )
 
 
 def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
@@ -277,7 +384,10 @@ def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
             ]
         ),
     ]
-    return uniq([query for query in queries if query])
+    return uniq(
+        [query for query in queries if query]
+        + _render_overflow_condition_queries(components, "openalex")
+    )
 
 
 def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
@@ -313,7 +423,10 @@ def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
             ]
         ),
     ]
-    return uniq([query for query in queries if query])
+    return uniq(
+        [query for query in queries if query]
+        + _render_overflow_condition_queries(components, "crossref")
+    )
 
 
 def render_queries_for_provider(
