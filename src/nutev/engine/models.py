@@ -3,9 +3,21 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 from nutev.engine.enums import DownloadStatus, EventKind
+from nutev.engine.validators import (
+    assert_status_coherence,
+    normalize_doi,
+    normalize_pmcid,
+    normalize_pmid,
+    normalize_url,
+    validate_capture_status,
+    validate_download_status,
+    validate_extraction_status,
+    validate_failure_reason,
+    validate_workstream,
+)
 
 
 class SearchCase(BaseModel):
@@ -22,6 +34,11 @@ class SearchCase(BaseModel):
     providers_enabled: list[str] = Field(default_factory=list)
     created_at: datetime
     config_version: str = "v1"
+
+    @field_validator("workstreams")
+    @classmethod
+    def _validate_workstreams(cls, value: list[str]) -> list[str]:
+        return [validate_workstream(item) or item for item in value]
 
 
 class SearchJob(BaseModel):
@@ -57,6 +74,31 @@ class DocumentCandidate(BaseModel):
     evidence_type: str | None = None
     created_at: datetime
 
+    @field_validator("doi", mode="before")
+    @classmethod
+    def _normalize_doi(cls, value):
+        return normalize_doi(value)
+
+    @field_validator("pmid", mode="before")
+    @classmethod
+    def _normalize_pmid(cls, value):
+        return normalize_pmid(value)
+
+    @field_validator("pmcid", mode="before")
+    @classmethod
+    def _normalize_pmcid(cls, value):
+        return normalize_pmcid(value)
+
+    @field_validator("original_url", "final_url", mode="before")
+    @classmethod
+    def _normalize_url(cls, value):
+        return normalize_url(value)
+
+    @field_validator("workstream", mode="before")
+    @classmethod
+    def _validate_workstream(cls, value):
+        return validate_workstream(value)
+
 
 class ProviderHit(BaseModel):
     provider: str
@@ -71,6 +113,24 @@ class ProviderHit(BaseModel):
     raw_json: dict[str, Any] = Field(default_factory=dict)
     workstream: str | None = None
 
+    @field_validator("url", mode="before")
+    @classmethod
+    def _normalize_url(cls, value):
+        normalized = normalize_url(value)
+        if not normalized:
+            raise ValueError("ProviderHit.url must be a valid http(s) URL")
+        return normalized
+
+    @field_validator("doi", mode="before")
+    @classmethod
+    def _normalize_doi(cls, value):
+        return normalize_doi(value)
+
+    @field_validator("workstream", mode="before")
+    @classmethod
+    def _validate_workstream(cls, value):
+        return validate_workstream(value)
+
 
 class DownloadResult(BaseModel):
     document_id: str
@@ -83,6 +143,16 @@ class DownloadResult(BaseModel):
     failure_reason: str | None = None
     host: str | None = None
     created_at: datetime
+
+    @field_validator("original_url", "final_url", mode="before")
+    @classmethod
+    def _normalize_url(cls, value):
+        return normalize_url(value)
+
+    @field_validator("failure_reason", mode="before")
+    @classmethod
+    def _validate_failure_reason(cls, value):
+        return validate_failure_reason(value)
 
 
 class CaptureResult(BaseModel):
@@ -98,6 +168,11 @@ class CaptureResult(BaseModel):
     pdf_links_found: list[str] = Field(default_factory=list)
     metadata: dict[str, Any] = Field(default_factory=dict)
 
+    @field_validator("status", mode="before")
+    @classmethod
+    def _validate_status(cls, value):
+        return validate_capture_status(value)
+
 
 class ExtractionResult(BaseModel):
     document_id: str
@@ -108,6 +183,16 @@ class ExtractionResult(BaseModel):
     used_ocr: bool = False
     ocr_failed_pages: list[int] = Field(default_factory=list)
     failure_reason: str | None = None
+
+    @field_validator("extraction_status", mode="before")
+    @classmethod
+    def _validate_status(cls, value):
+        return validate_extraction_status(value)
+
+    @field_validator("failure_reason", mode="before")
+    @classmethod
+    def _validate_failure_reason(cls, value):
+        return validate_failure_reason(value)
 
 
 class EvidenceRecord(BaseModel):
@@ -134,6 +219,48 @@ class EvidenceRecord(BaseModel):
     outcomes: list[str] = Field(default_factory=list)
     diet_patterns: list[str] = Field(default_factory=list)
     clinical_conditions: list[str] = Field(default_factory=list)
+
+    @field_validator("doi", mode="before")
+    @classmethod
+    def _normalize_doi(cls, value):
+        return normalize_doi(value)
+
+    @field_validator("url", mode="before")
+    @classmethod
+    def _normalize_url(cls, value):
+        return normalize_url(value)
+
+    @field_validator("workstream", mode="before")
+    @classmethod
+    def _validate_workstream(cls, value):
+        return validate_workstream(value)
+
+    @field_validator("capture_status", mode="before")
+    @classmethod
+    def _validate_capture_status(cls, value):
+        return validate_capture_status(value)
+
+    @field_validator("download_status", mode="before")
+    @classmethod
+    def _validate_download_status(cls, value):
+        return validate_download_status(value)
+
+    @field_validator("extraction_status", mode="before")
+    @classmethod
+    def _validate_extraction_status(cls, value):
+        return validate_extraction_status(value)
+
+    @model_validator(mode="after")
+    def _validate_status_coherence(self):
+        assert_status_coherence(
+            {
+                "download_status": self.download_status,
+                "capture_status": self.capture_status,
+                "extraction_status": self.extraction_status,
+                "artifact_paths": self.artifact_paths,
+            }
+        )
+        return self
 
 
 class RunEvent(BaseModel):
