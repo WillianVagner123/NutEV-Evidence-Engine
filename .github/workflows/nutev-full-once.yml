@@ -60,7 +60,7 @@ jobs:
             pypdf pdfplumber pdf2image pillow pytesseract \
             python-docx \
             scikit-learn matplotlib \
-            pytest ruff
+            pytest pytest-timeout ruff
 
       - name: Run tests
         run: |
