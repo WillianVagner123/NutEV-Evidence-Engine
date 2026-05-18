@@ -145,3 +145,70 @@ def merge_article_rows(existing: dict, incoming: dict) -> dict:
 
     merged["source"] = merged.get("source") or incoming.get("source")
     return merged
+
+
+def _manifest_value(row: dict, key: str) -> str:
+    return as_text(row.get(key))
+
+
+def deduplicate_document_rows(rows: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Deduplicate document rows and return an audit manifest.
+
+    The first occurrence owns the stable document position, while later occurrences
+    can still enrich the final merged row through ``merge_article_rows``. The
+    manifest is intentionally row-oriented so a reviewer can see every raw
+    occurrence, whether it won, and which document key absorbed it.
+    """
+
+    by_key: dict[tuple[str, str], dict] = {}
+    order: list[tuple[str, str]] = []
+    occurrences: dict[tuple[str, str], list[tuple[int, dict]]] = {}
+
+    for input_index, row in enumerate(rows):
+        document_key, key_type = compute_document_key(row)
+        compound_key = (document_key, key_type)
+        occurrences.setdefault(compound_key, []).append((input_index, row))
+
+        if compound_key not in by_key:
+            by_key[compound_key] = dict(row)
+            order.append(compound_key)
+            continue
+        by_key[compound_key] = merge_article_rows(by_key[compound_key], row)
+
+    manifest: list[dict] = []
+    for compound_key in order:
+        document_key, key_type = compound_key
+        final_row = by_key[compound_key]
+        group = occurrences[compound_key]
+        winner_input_index = group[0][0]
+        absorbed_count = max(len(group) - 1, 0)
+
+        for occurrence_order, (input_index, row) in enumerate(group):
+            is_winner = occurrence_order == 0
+            role = "winner" if is_winner else "absorbed"
+            manifest.append(
+                {
+                    "workstream": _manifest_value(row, "workstream"),
+                    "document_key": document_key,
+                    "document_key_type": key_type,
+                    "dedup_rule": f"same_{key_type}",
+                    "occurrence_role": role,
+                    "input_index": input_index,
+                    "winner_input_index": winner_input_index,
+                    "absorbed_count": absorbed_count if is_winner else "",
+                    "merge_reason": "first_occurrence"
+                    if is_winner
+                    else f"absorbed_by_same_{key_type}",
+                    "winner_url_after_merge": _manifest_value(final_row, "url"),
+                    "occurrence_url": _manifest_value(row, "url"),
+                    "source": _manifest_value(row, "source"),
+                    "source_provider": _manifest_value(row, "source_provider"),
+                    "title": _manifest_value(row, "title"),
+                    "doi": _manifest_value(row, "doi"),
+                    "pmid": _manifest_value(row, "pmid"),
+                    "pmcid": _manifest_value(row, "pmcid"),
+                    "year": _manifest_value(row, "year"),
+                }
+            )
+
+    return [by_key[key] for key in order], manifest
