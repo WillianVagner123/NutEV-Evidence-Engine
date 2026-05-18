@@ -60,6 +60,7 @@ def test_deduplicate_document_rows_returns_row_level_audit_manifest():
                 "source_provider": "pubmed",
                 "abstract": "short",
                 "language": "",
+                "pmcid": "",
                 "year": 2024,
             },
             {
@@ -71,6 +72,7 @@ def test_deduplicate_document_rows_returns_row_level_audit_manifest():
                 "source_provider": "europepmc",
                 "abstract": "a much longer abstract",
                 "language": "en",
+                "pmcid": "PMC1234567",
                 "year": 2024,
             },
         ]
@@ -91,6 +93,7 @@ def test_deduplicate_document_rows_returns_row_level_audit_manifest():
     assert winner_row["winner_preference_reason"] == (
         "preferred_pmc_pdf; longer_abstract; filled_missing_metadata"
     )
+    assert winner_row["winner_enriched_fields"] == "url; abstract; pmcid; language"
     assert (
         winner_row["winner_url_after_merge"]
         == "https://pmc.ncbi.nlm.nih.gov/articles/PMC1234567/pdf"
@@ -103,3 +106,4 @@ def test_deduplicate_document_rows_returns_row_level_audit_manifest():
     assert absorbed_row["winner_preference_reason"] == (
         "preferred_pmc_pdf; longer_abstract; filled_missing_metadata"
     )
+    assert absorbed_row["winner_enriched_fields"] == "url; abstract; pmcid; language"
