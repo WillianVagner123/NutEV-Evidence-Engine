@@ -145,6 +145,53 @@ QUICK_MODE_SEED_GROUPS = {
             "declaração científica",
         ],
     ],
+    "obesity_cardiometabolic": [
+        [
+            "obesity",
+            "clinical obesity",
+            "overweight",
+            "adiposity",
+            "weight management",
+        ],
+        [
+            "cardiometabolic risk",
+            "metabolic syndrome",
+            "type 2 diabetes",
+            "prediabetes",
+            "insulin resistance",
+        ],
+        [
+            "hypertension",
+            "dyslipidemia",
+            "dyslipidaemia",
+            "MASLD",
+            "NAFLD",
+            "MAFLD",
+            "MASH",
+            "NASH",
+            "steatotic liver disease",
+        ],
+    ],
+    "diet_patterns": [
+        [
+            "Mediterranean diet",
+            "DASH",
+            "MIND diet",
+        ],
+        [
+            "plant-based diet",
+            "vegetarian diet",
+            "vegan diet",
+            "whole-food plant-based",
+            "whole food plant based",
+        ],
+        [
+            "Eat-Lancet",
+            "planetary health diet",
+            "Portfolio diet",
+            "Nordic diet",
+        ],
+    ],
     "implementation_behavior": [
         [
             "adherence",
