@@ -40,6 +40,36 @@ def test_build_queries_excludes_free_text_title_and_question():
     assert any('"obesity"' in query for query in queries)
 
 
+def test_build_queries_adds_capture_biased_variants():
+    tax = {
+        "global": {
+            "document_types": {"guidelines": ["guideline"]},
+            "implementation_behavior": {"adherence": ["adherence"]},
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {"core": ["fiber"]},
+        },
+        "clinical": {"obesity": ["obesity"]},
+        "outcomes": {"anthropometry": ["weight loss"]},
+        "workstreams": {
+            "busca2a": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["obesity"],
+                "document_type_keys": ["guidelines"],
+                "priority_outcomes": ["anthropometry"],
+                "focus_blocks": ["nutrition_domains"],
+                "web_query_hints": ["clinical practice guideline"],
+            }
+        },
+    }
+
+    queries = build_queries(tax, "busca2a")
+
+    assert any("filetype:pdf" in query for query in queries)
+    assert any("open access" in query or "free full text" in query for query in queries)
+    assert any("clinical practice guideline" in query for query in queries)
+
+
 def test_build_querypack_resolves_a3_alias():
     tax = {
         "global": {
