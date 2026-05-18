@@ -25,6 +25,8 @@ def test_build_watch_queries_adds_semantic_context_for_lifestyle_terms() -> None
     assert '"food literacy"' in first_query
     assert '"culinary medicine"' in first_query
     assert '"meal planning"' in first_query
+    assert '"lifestyle counseling"' in first_query
+    assert '"behavioral lifestyle intervention"' in first_query
 
 
 def test_build_watch_queries_adds_cardiometabolic_liver_context() -> None:
@@ -52,6 +54,10 @@ def test_build_watch_queries_adds_implementation_and_education_context() -> None
     assert '"process evaluation"' in first_query
     assert '"barriers and facilitators"' in first_query
     assert '"behavior change technique"' in first_query
+    assert '"behavioral weight loss"' in first_query
+    assert '"goal setting"' in first_query
+    assert '"social support"' in first_query
+    assert '"food access"' in first_query
 
 
 def test_build_watch_queries_adds_food_environment_context() -> None:
@@ -65,7 +71,12 @@ def test_build_watch_queries_adds_food_environment_context() -> None:
     assert '"food environment"' in first_query
     assert '"nutrition education"' in first_query
     assert '"food and nutrition literacy"' in first_query
+    assert '"nutrition literacy"' in first_query
+    assert '"food access"' in first_query
     assert '"shared meals"' in first_query
+    assert '"family meals"' in first_query
+    assert '"social eating"' in first_query
+    assert '"eat together"' in first_query
 
 
 def test_build_watch_queries_adds_guideline_report_context() -> None:
@@ -81,6 +92,17 @@ def test_build_watch_queries_adds_guideline_report_context() -> None:
     assert '"expert consensus"' in first_query
     assert '"clinical guidance"' in first_query
     assert '"practice recommendation"' in first_query
+    assert '"food guide"' in first_query
+    assert '"nutrition guideline"' in first_query
+
+
+def test_build_watch_queries_adds_diet_pattern_context_from_taxonomy() -> None:
+    queries = build_watch_queries(["diet_patterns"], since_days=30, mode="quick")
+
+    first_query = str(queries[0]["query"])
+    assert '"whole-food plant-based"' in first_query
+    assert '"portfolio diet"' in first_query
+    assert '"nordic diet"' in first_query
 
 
 def test_build_watch_queries_prioritizes_guideline_like_terms() -> None:
