@@ -145,6 +145,36 @@ DIRECT_DOWNLOAD_HINTS = [
     "full-text",
     "epdf",
     "viewarticle",
+    "article/download",
+    "article-pdf",
+]
+
+OPEN_ACCESS_HINTS = [
+    "open access",
+    "free full text",
+    "pmc",
+    "pmcid",
+    "pubmed central",
+    "creativecommons",
+    "creative commons",
+    "biomedcentral",
+    "frontiersin",
+    "mdpi",
+    "plos",
+    "scielo",
+]
+
+DATA_RICH_HINTS = [
+    "supplement",
+    "supplementary",
+    "appendix",
+    "questionnaire",
+    "scale",
+    "instrument",
+    "protocol",
+    "checklist",
+    "dataset",
+    "data availability",
 ]
 
 HIGH_VALUE_DOWNLOAD_TOKENS = [
@@ -170,11 +200,23 @@ def _contains_any(text: str, tokens: list[str]) -> bool:
     return any(token in text for token in tokens)
 
 
+def _download_signal_score(text: str, url: str) -> int:
+    signal = 0
+    if _contains_any(url, DIRECT_DOWNLOAD_HINTS):
+        signal += 3
+    if _contains_any(text, OPEN_ACCESS_HINTS):
+        signal += 2
+    if _contains_any(text, DATA_RICH_HINTS):
+        signal += 2
+    return signal
+
+
 def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     title = (record.get("title") or "").lower()
     url = (record.get("url") or "").lower()
     doi = (record.get("doi") or "").lower()
-    text = f"{title} {url} {doi}"
+    abstract = (record.get("abstract") or record.get("summary") or "").lower()
+    text = f"{title} {url} {doi} {abstract}"
 
     score = 0
 
@@ -198,8 +240,7 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
         if kw in text:
             score += pts
 
-    if _contains_any(url, DIRECT_DOWNLOAD_HINTS):
-        score += 2
+    score += _download_signal_score(text, url)
 
     record["relevance_score"] = score
     return record
@@ -210,6 +251,8 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
     title = (record.get("title") or "").lower()
     url = (record.get("url") or "").lower()
     source = (record.get("source") or "").lower()
+    abstract = (record.get("abstract") or record.get("summary") or "").lower()
+    text = f"{title} {url} {abstract}"
 
     hard_drop = [
         "editorial",
@@ -232,7 +275,13 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
     if _contains_any(title, hard_drop):
         return False
 
-    if _contains_any(url, ["mostdownload.php", "/tdm/v1/articles/", "content.aspx?aid=", "book/chapter-pdf"]):
+    blocked_url_tokens = [
+        "mostdownload.php",
+        "/tdm/v1/articles/",
+        "content.aspx?aid=",
+        "book/chapter-pdf",
+    ]
+    if _contains_any(url, blocked_url_tokens):
         return False
 
     if source == "official":
@@ -249,15 +298,23 @@ def keep_candidate_for_download(record: dict, workstream: str) -> bool:
 
     has_direct_download_hint = _contains_any(url, DIRECT_DOWNLOAD_HINTS)
     has_high_value_signal = _contains_any(title, HIGH_VALUE_DOWNLOAD_TOKENS)
+    has_open_access_signal = _contains_any(text, OPEN_ACCESS_HINTS)
+    has_data_rich_signal = _contains_any(text, DATA_RICH_HINTS)
 
-    if has_high_value_signal and has_direct_download_hint and score >= max(threshold - 2, 4):
+    if has_high_value_signal and has_direct_download_hint and score >= max(threshold - 3, 4):
+        return True
+
+    if has_high_value_signal and has_open_access_signal and score >= max(threshold - 2, 4):
+        return True
+
+    if has_data_rich_signal and has_direct_download_hint and score >= max(threshold - 2, 4):
         return True
 
     if workstream in {"a3", "artigo3_framework"} and _contains_any(
         title,
         ["questionnaire", "instrument", "framework", "validation", "psychometric", "scale"],
     ):
-        return score >= max(threshold - 1, 4)
+        return score >= max(threshold - 2, 4)
 
     if source in {"pubmed", "europepmc"} and has_high_value_signal:
         return score >= max(threshold - 1, 5)
