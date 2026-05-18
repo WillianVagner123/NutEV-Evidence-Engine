@@ -116,6 +116,57 @@ CATEGORY_CONTEXT_TERMS = {
     ],
 }
 
+QUICK_MODE_SEED_GROUPS = {
+    "guidelines_consensus": [
+        [
+            "clinical practice guideline",
+            "guideline",
+            "guidelines",
+            "guideline update",
+            "dietary guidelines",
+            "food-based dietary guidelines",
+            "diretriz",
+            "recomendações",
+        ],
+        [
+            "consensus",
+            "consensus statement",
+            "consensus report",
+            "expert consensus",
+            "consenso",
+        ],
+        [
+            "scientific statement",
+            "position statement",
+            "position paper",
+            "practice advisory",
+            "clinical guidance",
+            "recommendation",
+            "declaração científica",
+        ],
+    ],
+    "implementation_behavior": [
+        [
+            "adherence",
+            "compliance",
+            "acceptability",
+            "feasibility",
+        ],
+        [
+            "implementation",
+            "implementation science",
+            "lifestyle counseling",
+            "lifestyle counselling",
+        ],
+        [
+            "behavior change",
+            "motivational interviewing",
+            "social support",
+            "food agency",
+        ],
+    ],
+}
+
 HIGH_PRIORITY_MARKERS = (
     "guideline",
     "consensus",
@@ -162,11 +213,28 @@ def _build_context_terms(category: str) -> list[str]:
     )
 
 
-def _priority_for_term(term: str) -> int:
-    lowered = term.lower()
-    if any(marker in lowered for marker in HIGH_PRIORITY_MARKERS):
+def _priority_for_term(term: str | Iterable[str]) -> int:
+    candidates = [term] if isinstance(term, str) else list(term)
+    lowered_candidates = [str(value).lower() for value in candidates]
+    if any(
+        marker in candidate
+        for candidate in lowered_candidates
+        for marker in HIGH_PRIORITY_MARKERS
+    ):
         return 1
     return 2
+
+
+def _mode_terms(category: str, mode: str) -> list[str | list[str]]:
+    if mode == "quick" and category in QUICK_MODE_SEED_GROUPS:
+        return QUICK_MODE_SEED_GROUPS[category]
+    return WATCH_CATEGORIES.get(category, [])
+
+
+def _term_clause(term: str | Iterable[str]) -> str:
+    if isinstance(term, str):
+        return _quote_term(term)
+    return _or_clause(term)
 
 
 def build_watch_queries(
@@ -180,8 +248,8 @@ def build_watch_queries(
 
     for category in selected_categories:
         context_clause = _or_clause(_build_context_terms(category))
-        for term in WATCH_CATEGORIES.get(category, [])[:limit]:
-            term_clause = _quote_term(term)
+        for term in _mode_terms(category, mode)[:limit]:
+            term_clause = _term_clause(term)
             query = f"({term_clause})"
             if context_clause:
                 query = f"{query} AND {context_clause}"
