@@ -10,11 +10,14 @@ from pathlib import Path
 from typing import Any
 from urllib import error, request
 
-PROMPT_VERSION = "nutev-llm-triage-v1"
+PROMPT_VERSION = "nutev-llm-triage-v2"
 DEFAULT_MODEL = "gpt-4o-mini"
 DEFAULT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 DEFAULT_MAX_RECORDS = 80
 DEFAULT_BATCH_SIZE = 8
+
+PRIORITY_BOOST = {"high": 8.0, "medium": 3.0, "low": -4.0}
+VOTE_BOOST = {"include": 4.0, "maybe": 0.0, "exclude": -6.0}
 
 
 @dataclass(frozen=True)
@@ -59,6 +62,7 @@ Return JSON only in this schema:
       "priority": "high|medium|low",
       "inclusion_vote": "include|maybe|exclude",
       "evidence_type": "guideline|systematic_review|trial|observational|framework|instrument|policy|other",
+      "domain_signals": ["short controlled signal", "another signal"],
       "exclusion_reason": "",
       "rationale": "short audit-ready rationale",
       "confidence": 0.0
@@ -85,12 +89,14 @@ def triage_records(
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Run an optional, auditable OpenAI triage layer over ranked metadata rows.
 
-    The LLM never replaces the deterministic search, deduplication, or classic score.
-    It only adds prioritization columns and writes JSONL/CSV audit artifacts.
+    Deterministic search, deduplication, and rule-based relevance are preserved.
+    The LLM adds a transparent secondary decision layer, score adjustment,
+    rationale, confidence, and review flags.
     """
 
     cfg = config or OpenAITriageConfig.from_env(enabled)
     logs_dir.mkdir(parents=True, exist_ok=True)
+    _ensure_rule_based_scores(records)
 
     base_stats: dict[str, Any] = {
         "workstream": workstream,
@@ -101,15 +107,21 @@ def triage_records(
         "max_records": cfg.max_records,
         "completed": 0,
         "failed": 0,
+        "high_priority": 0,
+        "human_review_needed": 0,
+        "mean_confidence": 0.0,
         "status": "disabled",
     }
 
     if not cfg.enabled:
+        _mark_untriaged(records, status="disabled")
         _write_llm_summary(logs_dir, workstream, base_stats)
+        _write_workstream_rollup(logs_dir, workstream, base_stats)
         return records, base_stats
 
     if not cfg.api_key:
         base_stats["status"] = "not_configured"
+        _mark_untriaged(records, status="not_configured")
         _safe_log(
             logger,
             "warning",
@@ -117,11 +129,15 @@ def triage_records(
             workstream,
         )
         _write_llm_summary(logs_dir, workstream, base_stats)
+        _write_workstream_rollup(logs_dir, workstream, base_stats)
         return records, base_stats
 
     candidates = records[: max(0, cfg.max_records)]
+    _mark_untriaged(records[len(candidates) :], status="not_sent_budget_limit")
+
     audit_entries: list[dict[str, Any]] = []
     summary_rows: list[dict[str, Any]] = []
+    confidences: list[float] = []
 
     for batch in _batched(list(enumerate(candidates)), cfg.batch_size):
         try:
@@ -142,6 +158,7 @@ def triage_records(
                 exc,
             )
             for row_index, row in batch:
+                _mark_one_untriaged(row, status="error")
                 entry = _audit_entry(row_index, row, workstream, cfg, status="error")
                 entry["error"] = str(exc)
                 audit_entries.append(entry)
@@ -151,56 +168,81 @@ def triage_records(
             normalized = by_index.get(row_index)
             if normalized is None:
                 base_stats["failed"] += 1
+                _mark_one_untriaged(row, status="missing")
                 entry = _audit_entry(row_index, row, workstream, cfg, status="missing")
                 audit_entries.append(entry)
                 continue
 
             _apply_triage(row, normalized, cfg)
             base_stats["completed"] += 1
+            if normalized["priority"] == "high":
+                base_stats["high_priority"] += 1
+            if row.get("llm_human_review_needed"):
+                base_stats["human_review_needed"] += 1
+            confidences.append(float(normalized["confidence"]))
+
             entry = _audit_entry(row_index, row, workstream, cfg, status="completed")
             entry.update(normalized)
+            entry["llm_priority_boost"] = row.get("llm_priority_boost")
+            entry["relevance_score_rule_based"] = row.get("relevance_score_rule_based")
+            entry["relevance_score_final"] = row.get("relevance_score_final")
+            entry["llm_human_review_needed"] = row.get("llm_human_review_needed")
             audit_entries.append(entry)
-            summary_rows.append(
-                {
-                    "workstream": workstream,
-                    "row_index": row_index,
-                    "title": str(row.get("title") or "")[:500],
-                    "doi": row.get("doi", ""),
-                    "pmid": row.get("pmid", ""),
-                    "source": row.get("source", ""),
-                    "relevance_score": row.get("relevance_score", ""),
-                    "llm_priority": normalized["priority"],
-                    "llm_inclusion_vote": normalized["inclusion_vote"],
-                    "llm_evidence_type": normalized["evidence_type"],
-                    "llm_confidence": normalized["confidence"],
-                    "llm_exclusion_reason": normalized["exclusion_reason"],
-                    "llm_rationale": normalized["rationale"],
-                    "llm_model": cfg.model,
-                    "llm_prompt_version": PROMPT_VERSION,
-                }
-            )
+            summary_rows.append(_summary_row(workstream, row_index, row, normalized, cfg))
 
     _append_jsonl(logs_dir / "llm_triage.jsonl", audit_entries)
     _write_llm_csv(logs_dir / f"llm_triage_{workstream}.csv", summary_rows)
+    _append_llm_csv(logs_dir / "NUTEV_LLM_TRIAGE_AUDIT.csv", summary_rows)
+    _write_review_queue(logs_dir / "NUTEV_LLM_REVIEW_QUEUE.csv", records, workstream)
+
     base_stats["status"] = "completed" if base_stats["completed"] else "no_completed_items"
+    if confidences:
+        base_stats["mean_confidence"] = round(sum(confidences) / len(confidences), 4)
     _write_llm_summary(logs_dir, workstream, base_stats)
+    _write_workstream_rollup(logs_dir, workstream, base_stats)
     return records, base_stats
 
 
 def rerank_records_by_llm(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Use LLM priority as a secondary audit layer without discarding records."""
+    """Sort by final hybrid score while keeping every recovered record."""
 
-    priority_rank = {"high": 3, "medium": 2, "low": 1}
-    vote_rank = {"include": 3, "maybe": 2, "exclude": 1}
+    return sorted(
+        records,
+        key=lambda row: (
+            float(row.get("relevance_score_final") or row.get("relevance_score") or 0),
+            float(row.get("relevance_score_rule_based") or row.get("relevance_score") or 0),
+        ),
+        reverse=True,
+    )
 
-    def sort_key(row: dict[str, Any]) -> tuple[int, int, float]:
-        return (
-            priority_rank.get(str(row.get("llm_priority") or "").lower(), 0),
-            vote_rank.get(str(row.get("llm_inclusion_vote") or "").lower(), 0),
-            float(row.get("relevance_score") or 0),
-        )
 
-    return sorted(records, key=sort_key, reverse=True)
+def _ensure_rule_based_scores(records: list[dict[str, Any]]) -> None:
+    for row in records:
+        score = _float(row.get("relevance_score"), 0.0)
+        row.setdefault("relevance_score_rule_based", score)
+        row.setdefault("relevance_score_final", score)
+
+
+def _mark_untriaged(records: list[dict[str, Any]], *, status: str) -> None:
+    for row in records:
+        _mark_one_untriaged(row, status=status)
+
+
+def _mark_one_untriaged(row: dict[str, Any], *, status: str) -> None:
+    score = _float(row.get("relevance_score_rule_based", row.get("relevance_score")), 0.0)
+    row.setdefault("relevance_score_rule_based", score)
+    row["relevance_score_final"] = score
+    row["llm_triage_status"] = status
+    row.setdefault("llm_decision", "not_triaged")
+    row.setdefault("llm_priority", "")
+    row.setdefault("llm_inclusion_vote", "")
+    row.setdefault("llm_evidence_type", "")
+    row.setdefault("llm_domain_signals", "")
+    row.setdefault("llm_exclusion_reason", "")
+    row.setdefault("llm_reason", "")
+    row.setdefault("llm_confidence", "")
+    row.setdefault("llm_priority_boost", 0.0)
+    row.setdefault("llm_human_review_needed", False)
 
 
 def _triage_batch(
@@ -320,6 +362,7 @@ def _record_payload(row: dict[str, Any]) -> dict[str, Any]:
         "document_type",
         "publication_type",
         "relevance_score",
+        "relevance_score_rule_based",
         "workstream",
     ]
     payload: dict[str, Any] = {}
@@ -351,10 +394,14 @@ def _normalize_item(item: dict[str, Any]) -> dict[str, Any]:
         },
         "other",
     )
+    signals = item.get("domain_signals") or []
+    if not isinstance(signals, list):
+        signals = [str(signals)]
     return {
         "priority": priority,
         "inclusion_vote": vote,
         "evidence_type": evidence_type,
+        "domain_signals": [str(signal)[:80] for signal in signals[:8] if str(signal).strip()],
         "exclusion_reason": str(item.get("exclusion_reason") or "")[:300],
         "rationale": str(item.get("rationale") or "")[:500],
         "confidence": _confidence(item.get("confidence")),
@@ -362,15 +409,51 @@ def _normalize_item(item: dict[str, Any]) -> dict[str, Any]:
 
 
 def _apply_triage(row: dict[str, Any], item: dict[str, Any], cfg: OpenAITriageConfig) -> None:
+    rule_score = _float(row.get("relevance_score_rule_based", row.get("relevance_score")), 0.0)
+    boost = _llm_boost(item)
+    final_score = round(rule_score + boost, 4)
+    decision = _decision(item)
+    review_needed = bool(
+        item["inclusion_vote"] == "maybe"
+        or item["confidence"] < 0.65
+        or decision in {"possible_exclusion", "uncertain"}
+    )
+
     row["llm_triage_status"] = "completed"
+    row["llm_decision"] = decision
     row["llm_priority"] = item["priority"]
     row["llm_inclusion_vote"] = item["inclusion_vote"]
     row["llm_evidence_type"] = item["evidence_type"]
+    row["llm_domain_signals"] = "; ".join(item["domain_signals"])
     row["llm_exclusion_reason"] = item["exclusion_reason"]
+    row["llm_reason"] = item["rationale"]
     row["llm_rationale"] = item["rationale"]
     row["llm_confidence"] = item["confidence"]
+    row["llm_priority_boost"] = boost
+    row["llm_human_review_needed"] = review_needed
+    row["relevance_score_rule_based"] = rule_score
+    row["relevance_score_final"] = final_score
+    row["relevance_score"] = final_score
     row["llm_model"] = cfg.model
     row["llm_prompt_version"] = PROMPT_VERSION
+
+
+def _llm_boost(item: dict[str, Any]) -> float:
+    base = PRIORITY_BOOST.get(item["priority"], 0.0) + VOTE_BOOST.get(
+        item["inclusion_vote"], 0.0
+    )
+    confidence = _confidence(item.get("confidence"))
+    return round(base * max(0.25, confidence), 4)
+
+
+def _decision(item: dict[str, Any]) -> str:
+    if item["inclusion_vote"] == "include" and item["priority"] == "high":
+        return "prioritize_for_screening"
+    if item["inclusion_vote"] == "include":
+        return "include_candidate"
+    if item["inclusion_vote"] == "exclude" and item["confidence"] >= 0.75:
+        return "possible_exclusion"
+    return "uncertain"
 
 
 def _audit_entry(
@@ -390,9 +473,41 @@ def _audit_entry(
         "pmid": row.get("pmid", ""),
         "source": row.get("source", ""),
         "url": row.get("url", ""),
-        "relevance_score": row.get("relevance_score", ""),
+        "relevance_score_rule_based": row.get("relevance_score_rule_based", ""),
+        "relevance_score_final": row.get("relevance_score_final", ""),
         "model": cfg.model,
         "prompt_version": PROMPT_VERSION,
+    }
+
+
+def _summary_row(
+    workstream: str,
+    row_index: int,
+    row: dict[str, Any],
+    normalized: dict[str, Any],
+    cfg: OpenAITriageConfig,
+) -> dict[str, Any]:
+    return {
+        "workstream": workstream,
+        "row_index": row_index,
+        "title": str(row.get("title") or "")[:500],
+        "doi": row.get("doi", ""),
+        "pmid": row.get("pmid", ""),
+        "source": row.get("source", ""),
+        "relevance_score_rule_based": row.get("relevance_score_rule_based", ""),
+        "relevance_score_final": row.get("relevance_score_final", ""),
+        "llm_priority_boost": row.get("llm_priority_boost", ""),
+        "llm_decision": row.get("llm_decision", ""),
+        "llm_priority": normalized["priority"],
+        "llm_inclusion_vote": normalized["inclusion_vote"],
+        "llm_evidence_type": normalized["evidence_type"],
+        "llm_confidence": normalized["confidence"],
+        "llm_human_review_needed": row.get("llm_human_review_needed", ""),
+        "llm_domain_signals": row.get("llm_domain_signals", ""),
+        "llm_exclusion_reason": normalized["exclusion_reason"],
+        "llm_reason": normalized["rationale"],
+        "llm_model": cfg.model,
+        "llm_prompt_version": PROMPT_VERSION,
     }
 
 
@@ -407,11 +522,47 @@ def _append_jsonl(path: Path, entries: list[dict[str, Any]]) -> None:
 def _write_llm_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     if not rows:
         return
+    _write_csv(path, rows, append=False)
+
+
+def _append_llm_csv(path: Path, rows: list[dict[str, Any]]) -> None:
+    if not rows:
+        return
+    _write_csv(path, rows, append=path.exists())
+
+
+def _write_csv(path: Path, rows: list[dict[str, Any]], *, append: bool) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = list(rows[0].keys())
-    with path.open("w", encoding="utf-8", newline="") as fh:
+    with path.open("a" if append else "w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=fieldnames)
-        writer.writeheader()
+        if not append:
+            writer.writeheader()
         writer.writerows(rows)
+
+
+def _write_review_queue(path: Path, records: list[dict[str, Any]], workstream: str) -> None:
+    rows = []
+    for idx, row in enumerate(records):
+        if not row.get("llm_human_review_needed"):
+            continue
+        rows.append(
+            {
+                "workstream": workstream,
+                "row_index": idx,
+                "title": str(row.get("title") or "")[:500],
+                "doi": row.get("doi", ""),
+                "source": row.get("source", ""),
+                "relevance_score_rule_based": row.get("relevance_score_rule_based", ""),
+                "relevance_score_final": row.get("relevance_score_final", ""),
+                "llm_decision": row.get("llm_decision", ""),
+                "llm_confidence": row.get("llm_confidence", ""),
+                "llm_reason": row.get("llm_reason", ""),
+                "url": row.get("url", ""),
+            }
+        )
+    if rows:
+        _append_llm_csv(path, rows)
 
 
 def _write_llm_summary(logs_dir: Path, workstream: str, stats: dict[str, Any]) -> None:
@@ -419,6 +570,24 @@ def _write_llm_summary(logs_dir: Path, workstream: str, stats: dict[str, Any]) -
         json.dumps(stats, ensure_ascii=False, indent=2, sort_keys=True),
         encoding="utf-8",
     )
+
+
+def _write_workstream_rollup(logs_dir: Path, workstream: str, stats: dict[str, Any]) -> None:
+    row = {
+        "workstream": workstream,
+        "enabled": stats.get("enabled"),
+        "status": stats.get("status"),
+        "model": stats.get("model"),
+        "prompt_version": stats.get("prompt_version"),
+        "candidate_records": stats.get("candidate_records"),
+        "max_records": stats.get("max_records"),
+        "completed": stats.get("completed"),
+        "failed": stats.get("failed"),
+        "high_priority": stats.get("high_priority"),
+        "human_review_needed": stats.get("human_review_needed"),
+        "mean_confidence": stats.get("mean_confidence"),
+    }
+    _write_llm_csv(logs_dir / f"NUTEV_LLM_TRIAGE_SUMMARY_{workstream}.csv", [row])
 
 
 def _batched(
@@ -434,10 +603,14 @@ def _choice(value: Any, allowed: set[str], default: str) -> str:
 
 
 def _confidence(value: Any) -> float:
+    return max(0.0, min(1.0, _float(value, 0.0)))
+
+
+def _float(value: Any, default: float = 0.0) -> float:
     try:
-        return max(0.0, min(1.0, float(value)))
+        return float(value)
     except (TypeError, ValueError):
-        return 0.0
+        return default
 
 
 def _truncate(value: Any, *, limit: int) -> Any:
