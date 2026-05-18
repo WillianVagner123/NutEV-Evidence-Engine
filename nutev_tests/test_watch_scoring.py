@@ -34,3 +34,15 @@ def test_pdf_scores_more_than_metadata_only():
 
 def test_official_sources_bonus():
     assert _score_watch_item({"title": "report", "source_provider": "official_sources"}) > _score_watch_item({"title": "report", "source_provider": "crossref"})
+
+
+def test_lifestyle_intervention_alias_scores_above_generic_lifestyle() -> None:
+    assert _score_watch_item({"title": "therapeutic lifestyle changes for diabetes"}) > _score_watch_item({"title": "lifestyle counseling for diabetes"})
+
+
+def test_masld_alias_scores_above_generic_liver_study() -> None:
+    assert _score_watch_item({"title": "metabolic dysfunction-associated steatotic liver disease guideline"}) > _score_watch_item({"title": "liver disease guideline"})
+
+
+def test_food_environment_and_commensality_boost_scope_relevance() -> None:
+    assert _score_watch_item({"title": "food environment and commensality intervention"}) > _score_watch_item({"title": "community nutrition intervention"})
