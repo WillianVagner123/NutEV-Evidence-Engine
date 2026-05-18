@@ -101,6 +101,37 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "observational study",
         ],
     },
+    "steatotic_liver_cardiometabolic": {
+        "terms": [
+            "metabolic dysfunction-associated steatotic liver disease",
+            "metabolic dysfunction associated steatotic liver disease",
+            "metabolic associated steatotic liver disease",
+            "steatotic liver disease",
+            "metabolic dysfunction-associated steatohepatitis",
+            "metabolic dysfunction associated steatohepatitis",
+            "mash",
+            "nonalcoholic fatty liver disease",
+            "non-alcoholic fatty liver disease",
+            "nafld",
+            "nonalcoholic steatohepatitis",
+            "non-alcoholic steatohepatitis",
+            "nash",
+            "fatty liver",
+            "hepatic steatosis",
+            "doença hepática esteatótica associada à disfunção metabólica",
+            "esteatose hepática metabólica",
+            "esteato-hepatite associada à disfunção metabólica",
+            "esteatohepatite associada à disfunção metabólica",
+            "esteatose hepática",
+        ],
+        "document_terms": [
+            "clinical practice guideline",
+            "consensus statement",
+            "scientific statement",
+            "position statement",
+            "systematic review",
+        ],
+    },
     "equity_access": {
         "terms": [
             "health equity",
@@ -134,6 +165,7 @@ WORKSTREAM_SEMANTIC_PRIORITIES: dict[str, list[tuple[str, int]]] = {
     ],
     "busca2a": [
         ("implementation_science", 5),
+        ("steatotic_liver_cardiometabolic", 5),
         ("adherence_persistence", 4),
         ("equity_access", 4),
         ("food_literacy_agency", 2),
@@ -142,6 +174,7 @@ WORKSTREAM_SEMANTIC_PRIORITIES: dict[str, list[tuple[str, int]]] = {
     "busca2b": [
         ("adherence_persistence", 5),
         ("implementation_science", 5),
+        ("steatotic_liver_cardiometabolic", 4),
         ("food_literacy_agency", 4),
         ("equity_access", 3),
         ("commensality_context", 2),
