@@ -34,5 +34,63 @@
     "busca2b": 3,
     "a3": 2,
     "artigo3_framework": 2
+  },
+  "editorial_authority_points": {
+    "journals": {
+      "new england journal of medicine": 8,
+      "nejm": 8,
+      "the lancet": 8,
+      "lancet diabetes & endocrinology": 8,
+      "jama": 7,
+      "jama internal medicine": 7,
+      "bmj": 7,
+      "nature medicine": 8,
+      "circulation": 7,
+      "diabetes care": 7,
+      "obesity reviews": 7,
+      "american journal of clinical nutrition": 7,
+      "ajcn": 7,
+      "nutrition reviews": 6,
+      "international journal of obesity": 6,
+      "obesity": 5,
+      "nutrients": 4,
+      "clinical nutrition": 6,
+      "bmc medicine": 6,
+      "annals of internal medicine": 7
+    },
+    "institutions": {
+      "world health organization": 8,
+      "who": 8,
+      "food and agriculture organization": 7,
+      "fao": 7,
+      "american diabetes association": 7,
+      "american heart association": 7,
+      "european society of cardiology": 7,
+      "obesity canada": 7,
+      "easo": 6,
+      "ministério da saúde": 6,
+      "ministry of health": 6,
+      "odphp": 6,
+      "niddk": 6
+    },
+    "domains": {
+      "nejm.org": 7,
+      "thelancet.com": 7,
+      "jamanetwork.com": 6,
+      "bmj.com": 6,
+      "nature.com": 6,
+      "diabetesjournals.org": 6,
+      "ahajournals.org": 6,
+      "academic.oup.com": 5,
+      "ajcn.nutrition.org": 6,
+      "oup.com": 4,
+      "who.int": 7,
+      "fao.org": 6,
+      "heart.org": 6,
+      "obesitycanada.ca": 6,
+      "escardio.org": 6,
+      "gov.br": 5,
+      "niddk.nih.gov": 5
+    }
   }
 }
