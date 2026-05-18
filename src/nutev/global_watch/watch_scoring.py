@@ -27,6 +27,12 @@ def score_watch_item(item: dict) -> float:
         ("questionnaire", 25),
         ("instrument", 25),
         ("scale", 25),
+        ("therapeutic lifestyle changes", 20),
+        ("intensive lifestyle intervention", 20),
+        ("food environment", 18),
+        ("commensality", 18),
+        ("self-efficacy", 18),
+        ("self efficacy", 18),
         ("food literacy", 15),
         ("culinary medicine", 15),
         ("adherence", 15),
@@ -38,7 +44,10 @@ def score_watch_item(item: dict) -> float:
         ("hypertension", 10),
         ("dyslipidemia", 10),
         ("masld", 10),
+        ("mafld", 10),
         ("nafld", 10),
+        ("metabolic dysfunction-associated steatotic liver disease", 10),
+        ("metabolic associated fatty liver disease", 10),
     ]
     for key, value in bonus:
         if key in text:
