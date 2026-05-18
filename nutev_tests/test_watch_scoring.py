@@ -50,3 +50,15 @@ def test_practice_advisory_scores_more_than_generic_note():
 
 def test_process_evaluation_and_barriers_bonus_improves_priority():
     assert _score_watch_item({"title": "process evaluation of barriers and facilitators for dietary adherence"}) > _score_watch_item({"title": "dietary adherence note"})
+
+
+def test_taxonomy_aligned_behavioral_signals_improve_priority():
+    assert _score_watch_item({"title": "behavioral lifestyle intervention with goal setting and social support"}) > _score_watch_item({"title": "lifestyle intervention note"})
+
+
+def test_taxonomy_aligned_food_literacy_signals_improve_priority():
+    assert _score_watch_item({"title": "nutrition literacy, family meals, and food access in obesity care"}) > _score_watch_item({"title": "obesity care note"})
+
+
+def test_whole_food_plant_based_signal_improves_priority():
+    assert _score_watch_item({"title": "whole-food plant-based diet for cardiometabolic risk"}) > _score_watch_item({"title": "diet for cardiometabolic risk"})
