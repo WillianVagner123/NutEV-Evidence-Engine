@@ -59,48 +59,179 @@ def _provider_query(base: str, provider: str, since_days: int) -> str:
     return base
 
 
+def _contains_any(text: str, terms: list[str]) -> bool:
+    return any(term in text for term in terms)
+
+
 def infer_evidence_type(title: str, abstract: str, url: str) -> str:
     text = f"{title} {abstract} {url}".lower()
-    if "guideline" in text or "diretriz" in text:
+    guideline_terms = [
+        "guideline",
+        "diretriz",
+        "practice guideline",
+        "clinical guidance",
+        "practice advisory",
+        "recommendation",
+        "food guide",
+        "dietary guideline",
+    ]
+    consensus_terms = [
+        "consensus",
+        "scientific statement",
+        "position statement",
+        "position paper",
+        "expert consensus",
+        "consensus report",
+    ]
+    review_terms = [
+        "systematic review",
+        "meta-analysis",
+        "meta analysis",
+        "umbrella review",
+        "scoping review",
+        "integrative review",
+    ]
+    trial_terms = [
+        "randomized",
+        "randomised",
+        "trial",
+        "controlled trial",
+        "pragmatic trial",
+        "feasibility study",
+        "pilot study",
+    ]
+    framework_terms = [
+        "framework",
+        "questionnaire",
+        "instrument",
+        "scale development",
+        "psychometric",
+        "validation study",
+        "questionnaire validation",
+    ]
+    if _contains_any(text, guideline_terms):
         return "guideline"
-    if "consensus" in text or "scientific statement" in text:
+    if _contains_any(text, consensus_terms):
         return "consensus"
-    if "systematic review" in text or "meta-analysis" in text:
+    if _contains_any(text, review_terms):
         return "systematic_review"
-    if "trial" in text:
+    if _contains_any(text, trial_terms):
         return "trial"
+    if _contains_any(text, framework_terms):
+        return "framework_or_instrument"
     return "study"
 
 
 def infer_workstream_affinity(title: str, category: str) -> list[str]:
     text = f"{title} {category}".lower()
     workstreams: list[str] = []
-    if any(
-        keyword in text for keyword in ["guideline", "diet", "food", "nutrition"]
-    ):
+
+    busca1_terms = [
+        "guideline",
+        "guidelines",
+        "dietary guideline",
+        "food-based dietary guideline",
+        "food guide",
+        "nutrition guideline",
+        "guidelines_consensus",
+        "diet",
+        "food",
+        "nutrition",
+    ]
+    busca2a_terms = [
+        "obesity",
+        "cardio",
+        "cardiometabolic",
+        "metabolic syndrome",
+        "diabetes",
+        "hypertension",
+        "dyslipidemia",
+        "dyslipidaemia",
+        "insulin resistance",
+        "masld",
+        "nafld",
+        "mafld",
+        "mash",
+        "nash",
+        "fatty liver",
+        "steatotic liver disease",
+    ]
+    busca2b_terms = [
+        "adherence",
+        "dietary adherence",
+        "implementation",
+        "implementation science",
+        "implementation strategy",
+        "implementation outcomes",
+        "process evaluation",
+        "knowledge translation",
+        "behavior",
+        "behaviour",
+        "behavior change",
+        "behavioral lifestyle intervention",
+        "behavioral weight loss",
+        "feasibility",
+        "acceptability",
+        "motivational interviewing",
+        "goal setting",
+        "social support",
+        "trial",
+        "randomized",
+        "randomised",
+        "mediterranean",
+        "dash",
+        "mind diet",
+        "plant-based",
+        "whole-food plant-based",
+        "whole food plant based",
+        "portfolio diet",
+        "nordic diet",
+        "meal replacement",
+        "time-restricted eating",
+        "intermittent fasting",
+    ]
+    a3_terms = [
+        "framework",
+        "questionnaire",
+        "instrument",
+        "scale",
+        "psychometric",
+        "validation",
+        "competencies",
+        "food literacy",
+        "food and nutrition literacy",
+        "nutrition literacy",
+        "health literacy",
+        "culinary medicine",
+        "cooking skills",
+        "food skills",
+        "food agency",
+        "food environment",
+        "food label",
+        "meal planning",
+        "commensality",
+        "shared meals",
+        "family meals",
+        "social eating",
+        "eat together",
+        "self-efficacy",
+        "self efficacy",
+    ]
+
+    if _contains_any(text, busca1_terms):
         workstreams.append("busca1")
-    if any(
-        keyword in text
-        for keyword in ["obesity", "cardio", "metabolic", "diabetes"]
-    ):
+    if _contains_any(text, busca2a_terms):
         workstreams.append("busca2a")
-    if any(
-        keyword in text
-        for keyword in [
-            "adherence",
-            "implementation",
-            "behavior",
-            "framework",
-            "instrument",
-        ]
-    ):
+    if _contains_any(text, busca2b_terms) or category == "implementation_behavior":
         workstreams.append("busca2b")
-    if any(
-        keyword in text for keyword in ["framework", "questionnaire", "competencies"]
-    ):
+    if _contains_any(text, a3_terms) or category in {
+        "frameworks_instruments",
+        "food_literacy_culinary_commensality",
+    }:
         workstreams.append("a3")
+
     if workstreams:
-        return workstreams
+        return list(dict.fromkeys(workstreams))
     return ["busca1"]
 
 
