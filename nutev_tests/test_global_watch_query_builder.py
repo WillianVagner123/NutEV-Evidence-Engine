@@ -19,3 +19,9 @@ def test_obesity_cardiometabolic_queries_include_new_liver_and_lipid_context_ter
     assert "metabolic dysfunction-associated steatotic liver disease" in rendered
     assert "dyslipidaemia" in rendered
     assert "insulin resistance" in rendered
+
+
+def test_guidelines_queries_include_policy_statement_in_quick_mode():
+    rows = build_watch_queries(["guidelines_consensus"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "policy statement" in rendered
