@@ -66,3 +66,7 @@ def test_whole_food_plant_based_signal_improves_priority():
 
 def test_implementation_fidelity_and_sustainability_improve_priority():
     assert _score_watch_item({"title": "implementation fidelity and sustainability for lifestyle nutrition programs"}) > _score_watch_item({"title": "lifestyle nutrition programs note"})
+
+
+def test_medical_nutrition_therapy_and_counselling_improve_priority():
+    assert _score_watch_item({"title": "medical nutrition therapy and nutrition counselling for obesity"}) > _score_watch_item({"title": "obesity note"})
