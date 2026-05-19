@@ -90,3 +90,9 @@ def test_new_nordic_and_plant_based_variants_improve_priority():
     assert _score_watch_item(
         {"title": "New Nordic diet and plant based diet for obesity care"}
     ) > _score_watch_item({"title": "Diet for obesity care"})
+
+
+def test_therapeutic_lifestyle_changes_and_healthy_eating_pattern_improve_priority():
+    assert _score_watch_item(
+        {"title": "Therapeutic lifestyle changes and healthy eating pattern for cardiometabolic risk"}
+    ) > _score_watch_item({"title": "Cardiometabolic risk note"})
