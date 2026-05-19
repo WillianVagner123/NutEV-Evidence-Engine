@@ -192,6 +192,16 @@ def test_quick_mode_lifestyle_queries_cover_core_intervention_and_counseling_blo
     assert "lifestyle counselling" in rendered
 
 
+def test_quick_mode_lifestyle_queries_cover_nutrition_care_terms() -> None:
+    queries = build_watch_queries(["lifestyle_medicine"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "medical nutrition therapy" in rendered
+    assert "nutrition counseling" in rendered
+    assert "nutrition counselling" in rendered
+    assert "nutrition care" in rendered
+
+
 def test_quick_mode_food_literacy_queries_cover_literacy_culinary_and_commensality_blocks() -> None:
     queries = build_watch_queries(
         ["food_literacy_culinary_commensality"],
