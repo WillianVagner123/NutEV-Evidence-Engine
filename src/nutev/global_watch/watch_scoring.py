@@ -1,12 +1,21 @@
 from __future__ import annotations
 
 
-def score_watch_item(item: dict) -> float:
-    text = (
-        f"{item.get('title', '')} "
-        f"{item.get('evidence_type', '')} "
-        f"{item.get('category', '')}"
+def _build_scoring_text(item: dict) -> str:
+    return " ".join(
+        str(item.get(field, "") or "")
+        for field in (
+            "title",
+            "abstract",
+            "snippet",
+            "evidence_type",
+            "category",
+        )
     ).lower()
+
+
+def score_watch_item(item: dict) -> float:
+    text = _build_scoring_text(item)
     score = float(item.get("relevance_score") or 0)
 
     bonus = [
