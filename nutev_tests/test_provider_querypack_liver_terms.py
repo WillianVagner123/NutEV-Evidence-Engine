@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from nutev.global_watch.watch_pipeline import infer_workstream_affinity
 from nutev.querypacks.provider_queries import render_queries_for_provider
 from nutev.settings import load_json
 
@@ -15,3 +16,12 @@ def test_busca2b_pubmed_queries_include_liver_terms_from_tail_conditions():
     assert "mash" in rendered
     assert "nash" in rendered
     assert "steatotic liver disease" in rendered
+
+
+def test_watch_affinity_maps_metabolic_liver_nutrition_interventions_to_busca2b():
+    affinity = infer_workstream_affinity(
+        "Medical nutrition therapy for MASLD and non-alcoholic steatohepatitis in adults",
+        "diet_patterns",
+    )
+
+    assert "busca2b" in affinity
