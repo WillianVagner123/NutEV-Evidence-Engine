@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import hashlib
 import json
+import re
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 import pandas as pd
 
@@ -67,6 +70,9 @@ DOWNLOAD_BUDGET = {
 
 DEFAULT_PRIORITY = ["pubmed", "europepmc", "openalex", "crossref", "official_web"]
 
+_WHITESPACE_RE = re.compile(r"\s+")
+_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
+
 
 def _provider_map():
     return {
@@ -77,16 +83,84 @@ def _provider_map():
     }
 
 
+def _as_text(value: object) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    return str(value).strip()
+
+
+def _normalize_doi(value: object) -> str:
+    text = _as_text(value).lower()
+    if not text:
+        return ""
+    for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
+        if text.startswith(prefix):
+            text = text[len(prefix) :]
+    return text.strip().strip("/")
+
+
+def _normalize_url(value: object) -> str:
+    text = _as_text(value)
+    if not text:
+        return ""
+    parsed = urlsplit(text)
+    if not parsed.scheme or not parsed.netloc:
+        return text.rstrip("/").lower()
+    path = parsed.path.rstrip("/") or "/"
+    normalized = urlunsplit(
+        (parsed.scheme.lower(), parsed.netloc.lower(), path, "", "")
+    )
+    return normalized.rstrip("/")
+
+
+def _normalize_title(value: object) -> str:
+    text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
+    return _NON_ALNUM_RE.sub(" ", text).strip()
+
+
+def _normalize_year(value: object) -> str:
+    text = _as_text(value)
+    if not text:
+        return ""
+    try:
+        year = int(float(text))
+    except Exception:
+        return ""
+    return str(year)
+
+
+def _hash_fallback(row: dict) -> str:
+    payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
+    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
+
+
 def _canonical_article_key(row: dict) -> tuple[str, str]:
-    for field in ["doi", "pmid", "pmcid"]:
-        value = str(row.get(field) or "").strip().lower()
-        if value:
-            return field, value
-    title = str(row.get("title") or "").strip().lower()
-    year = str(row.get("year") or "").strip()
-    if title:
+    doi = _normalize_doi(row.get("doi"))
+    if doi:
+        return "doi", doi
+
+    pmid = _as_text(row.get("pmid")).lower()
+    if pmid:
+        return "pmid", pmid
+
+    pmcid = _as_text(row.get("pmcid")).lower()
+    if pmcid:
+        return "pmcid", pmcid
+
+    url = _normalize_url(
+        row.get("final_url") or row.get("resolved_url") or row.get("original_url") or row.get("url")
+    )
+    if url:
+        return "url", url
+
+    title = _normalize_title(row.get("title"))
+    year = _normalize_year(row.get("year"))
+    if title and year:
         return "title_year", f"{title}|{year}"
-    return "url", str(row.get("url") or "").strip().lower()
+
+    return "row_hash", _hash_fallback(row)
 
 
 def _merge_article_rows(existing: dict, incoming: dict) -> dict:
