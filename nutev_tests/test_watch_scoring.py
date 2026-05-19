@@ -102,3 +102,21 @@ def test_living_systematic_review_and_rapid_review_improve_priority():
     assert _score_watch_item(
         {"title": "Living systematic review and rapid review of Mediterranean diet for obesity"}
     ) > _score_watch_item({"title": "Mediterranean diet for obesity note"})
+
+
+def test_abstract_only_guideline_signal_improves_priority():
+    assert _score_watch_item(
+        {
+            "title": "Nutrition update",
+            "abstract": "Clinical practice guideline for obesity and cardiometabolic risk",
+        }
+    ) > _score_watch_item({"title": "Nutrition update"})
+
+
+def test_snippet_only_editorial_signal_reduces_priority():
+    assert _score_watch_item(
+        {
+            "title": "Lifestyle medicine update",
+            "snippet": "Editorial commentary on lifestyle medicine",
+        }
+    ) < _score_watch_item({"title": "Lifestyle medicine update"})
