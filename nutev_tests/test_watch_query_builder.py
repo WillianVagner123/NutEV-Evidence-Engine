@@ -275,3 +275,13 @@ def test_guideline_like_priority_covers_standards_of_care_group() -> None:
     queries = build_watch_queries(["guidelines_consensus"], since_days=7, mode="quick")
 
     assert queries[1]["priority"] == 1
+
+
+def test_quick_mode_diet_pattern_queries_cover_long_form_pattern_variants() -> None:
+    queries = build_watch_queries(["diet_patterns"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "mediterranean dietary pattern" in rendered
+    assert "dietary approaches to stop hypertension" in rendered
+    assert "plant based diet" in rendered
+    assert "new nordic diet" in rendered
