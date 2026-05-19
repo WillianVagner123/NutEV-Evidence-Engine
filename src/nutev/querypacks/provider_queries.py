@@ -12,6 +12,7 @@ from nutev.querypacks.builders import (
 from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semantic_terms
 
 PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref")
+LIVER_FOCUSED_WORKSTREAMS = {"busca2a", "busca2b"}
 
 PUBMED_MESH_MAP = {
     "obesity": "Obesity",
@@ -35,14 +36,16 @@ PUBMED_MESH_MAP = {
     "implementation science": "Implementation Science",
 }
 
-BUSCA2B_LIVER_TERMS = [
+CARDIOMETABOLIC_LIVER_TERMS = [
     "masld",
     "nafld",
     "mash",
     "nash",
     "fatty liver",
     "steatotic liver disease",
+    "steatohepatitis",
     "metabolic dysfunction-associated steatotic liver disease",
+    "metabolic dysfunction-associated fatty liver disease",
     "metabolic dysfunction associated fatty liver disease",
     "nonalcoholic fatty liver disease",
     "non-alcoholic fatty liver disease",
@@ -50,13 +53,14 @@ BUSCA2B_LIVER_TERMS = [
     "non-alcoholic steatohepatitis",
 ]
 
-BUSCA2B_LIVER_HINTS = [
+CARDIOMETABOLIC_LIVER_HINTS = [
     "masld",
     "nafld",
     "mash",
     "nash",
     "steatohepatitis",
     "steatotic liver disease",
+    "fatty liver",
 ]
 
 PUBMED_DOCUMENT_TYPE_MAP = {
@@ -176,16 +180,18 @@ def _augment_with_semantic_blocks(
     enriched["doc_type_terms"] = uniq(
         enriched.get("doc_type_terms", []) + semantic_doc_terms
     )
-    if canonical_workstream(workstream) == "busca2b":
-        # Keep MASLD/NAFLD intervention evidence visible in provider queries even
+    if canonical_workstream(workstream) in LIVER_FOCUSED_WORKSTREAMS:
+        # Keep MASLD/NAFLD guideline and intervention evidence visible even
         # when broader cardiometabolic condition lists are capped for query size.
         enriched["condition_terms"] = uniq(
-            enriched.get("condition_terms", []) + BUSCA2B_LIVER_TERMS
+            enriched.get("condition_terms", []) + CARDIOMETABOLIC_LIVER_TERMS
         )
         enriched["clinical_terms"] = uniq(
-            enriched.get("clinical_terms", []) + BUSCA2B_LIVER_TERMS
+            enriched.get("clinical_terms", []) + CARDIOMETABOLIC_LIVER_TERMS
         )
-        enriched["web_hints"] = uniq(enriched.get("web_hints", []) + BUSCA2B_LIVER_HINTS)
+        enriched["web_hints"] = uniq(
+            enriched.get("web_hints", []) + CARDIOMETABOLIC_LIVER_HINTS
+        )
     enriched["semantic_terms"] = broad_terms
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
