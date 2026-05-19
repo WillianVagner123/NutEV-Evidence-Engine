@@ -251,6 +251,9 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "new nordic diet",
             "eat-lancet",
             "planetary health diet",
+            "food is medicine",
+            "produce prescription",
+            "medically tailored meals",
         ],
         "document_terms": [
             "dietary guideline",
