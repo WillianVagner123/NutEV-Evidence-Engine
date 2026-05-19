@@ -102,3 +102,9 @@ def test_living_systematic_review_and_rapid_review_improve_priority():
     assert _score_watch_item(
         {"title": "Living systematic review and rapid review of Mediterranean diet for obesity"}
     ) > _score_watch_item({"title": "Mediterranean diet for obesity note"})
+
+
+def test_portuguese_guidance_labels_score_even_with_accents() -> None:
+    assert _score_watch_item(
+        {"title": "Diretriz clínica e revisão sistemática sobre alimentação e obesidade"}
+    ) > _score_watch_item({"title": "Nota sobre alimentacao e obesidade"})
