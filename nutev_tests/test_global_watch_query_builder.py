@@ -19,3 +19,13 @@ def test_obesity_cardiometabolic_queries_include_new_liver_and_lipid_context_ter
     assert "metabolic dysfunction-associated steatotic liver disease" in rendered
     assert "dyslipidaemia" in rendered
     assert "insulin resistance" in rendered
+
+
+def test_guideline_queries_include_standards_of_care_and_guidance_markers():
+    rows = build_watch_queries(["guidelines_consensus"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+
+    assert "standards of care" in rendered
+    assert "guidance statement" in rendered
+    assert "policy statement" in rendered
+    assert all(row["priority"] == 1 for row in rows)
