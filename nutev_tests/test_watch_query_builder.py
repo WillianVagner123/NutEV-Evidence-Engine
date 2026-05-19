@@ -36,6 +36,8 @@ def test_build_watch_queries_adds_cardiometabolic_liver_context() -> None:
     assert '"steatotic liver disease"' in first_query
     assert '"metabolic dysfunction-associated steatotic liver disease"' in first_query
     assert '"dyslipidaemia"' in first_query
+    assert '"hyperlipidemia"' in first_query
+    assert '"hypercholesterolemia"' in first_query
     assert '"insulin resistance"' in first_query
     assert '"weight management"' in first_query
     assert '"adiposity"' in first_query
@@ -173,6 +175,8 @@ def test_quick_mode_obesity_queries_cover_cardiometabolic_and_liver_blocks() -> 
     assert "metabolic syndrome" in rendered
     assert "hypertension" in rendered
     assert "dyslipidemia" in rendered
+    assert "hyperlipidemia" in rendered
+    assert "hypercholesterolemia" in rendered
     assert "masld" in rendered
     assert "nafld" in rendered
     assert "steatotic liver disease" in rendered
@@ -230,6 +234,8 @@ def test_guidelines_context_has_food_based_guidance_variants() -> None:
 def test_obesity_context_has_prediabetes_and_old_masld_name() -> None:
     query = _category_query("obesity_cardiometabolic")
     assert "prediabetes" in query
+    assert "hyperlipidemia" in query
+    assert "hypercholesterolemia" in query
     assert "metabolic dysfunction-associated fatty liver disease" in query
 
 
