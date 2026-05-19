@@ -27,6 +27,7 @@ def score_watch_item(item: dict) -> float:
         ("joint statement", 40),
         ("position statement", 40),
         ("position paper", 40),
+        ("policy statement", 40),
         ("clinical guidance", 40),
         ("practice recommendation", 40),
         ("standards of care", 45),
