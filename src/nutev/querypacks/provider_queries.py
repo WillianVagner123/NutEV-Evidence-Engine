@@ -59,6 +59,30 @@ BUSCA2B_LIVER_HINTS = [
     "steatotic liver disease",
 ]
 
+PUBMED_DOCUMENT_TYPE_MAP = {
+    "guideline": "Guideline",
+    "guidelines": "Guideline",
+    "clinical practice guideline": "Practice Guideline",
+    "practice guideline": "Practice Guideline",
+    "practice advisory": "Practice Guideline",
+    "living guideline": "Guideline",
+    "scientific statement": "Guideline",
+    "consensus": "Consensus",
+    "consensus statement": "Consensus",
+    "expert consensus": "Consensus",
+    "clinical consensus": "Consensus",
+    "position statement": "Guideline",
+    "position paper": "Guideline",
+    "systematic review": "Systematic Review",
+    "umbrella review": "Systematic Review",
+    "overview of reviews": "Systematic Review",
+    "review of reviews": "Systematic Review",
+    "meta-analysis": "Meta-Analysis",
+    "scoping review": "Systematic Review",
+    "randomized controlled trial": "Randomized Controlled Trial",
+    "controlled trial": "Controlled Clinical Trial",
+}
+
 
 def _provider_field_term(term: str, provider: str) -> str:
     clean = str(term).strip()
@@ -110,22 +134,8 @@ def _join_parts(parts: list[str]) -> str:
 def _pubmed_document_clause(doc_terms: list[str]) -> str:
     publication_types = []
     title_abs_terms = []
-    mapping = {
-        "guideline": "Guideline",
-        "guidelines": "Guideline",
-        "clinical practice guideline": "Practice Guideline",
-        "practice guideline": "Practice Guideline",
-        "scientific statement": "Guideline",
-        "consensus": "Consensus",
-        "position statement": "Guideline",
-        "systematic review": "Systematic Review",
-        "meta-analysis": "Meta-Analysis",
-        "scoping review": "Systematic Review",
-        "randomized controlled trial": "Randomized Controlled Trial",
-        "controlled trial": "Controlled Clinical Trial",
-    }
     for term in uniq(doc_terms):
-        pub_type = mapping.get(term.lower())
+        pub_type = PUBMED_DOCUMENT_TYPE_MAP.get(term.lower())
         if pub_type and pub_type not in publication_types:
             publication_types.append(pub_type)
         else:
