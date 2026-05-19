@@ -27,6 +27,9 @@ def test_build_watch_queries_adds_semantic_context_for_lifestyle_terms() -> None
     assert '"meal planning"' in first_query
     assert '"lifestyle counseling"' in first_query
     assert '"behavioral lifestyle intervention"' in first_query
+    assert '"food is medicine"' in first_query
+    assert '"medically tailored meals"' in first_query
+    assert '"medically tailored groceries"' in first_query
 
 
 def test_build_watch_queries_adds_cardiometabolic_liver_context() -> None:
@@ -67,6 +70,11 @@ def test_build_watch_queries_adds_implementation_and_education_context() -> None
     assert '"sustainability"' in first_query
     assert '"dissemination"' in first_query
     assert '"scale-up"' in first_query
+    assert '"RE-AIM"' in first_query
+    assert '"CFIR"' in first_query
+    assert '"hybrid effectiveness-implementation"' in first_query
+    assert '"practice facilitation"' in first_query
+    assert '"quality improvement"' in first_query
 
 
 def test_build_watch_queries_adds_food_environment_context() -> None:
@@ -151,6 +159,11 @@ def test_quick_mode_implementation_queries_cover_behavior_change_group() -> None
     assert "sustainability" in rendered
     assert "dissemination" in rendered
     assert "scale-up" in rendered
+    assert "re-aim" in rendered
+    assert "cfir" in rendered
+    assert "hybrid effectiveness-implementation" in rendered
+    assert "practice facilitation" in rendered
+    assert "quality improvement" in rendered
 
 
 def test_quick_mode_diet_pattern_queries_cover_plant_based_and_planetary_blocks() -> None:
@@ -190,6 +203,8 @@ def test_quick_mode_lifestyle_queries_cover_core_intervention_and_counseling_blo
     assert "therapeutic lifestyle changes" in rendered
     assert "lifestyle counseling" in rendered
     assert "lifestyle counselling" in rendered
+    assert "food is medicine" in rendered
+    assert "produce prescription" in rendered
 
 
 def test_quick_mode_lifestyle_queries_cover_nutrition_care_terms() -> None:
@@ -254,6 +269,8 @@ def test_implementation_quick_mode_adds_behavioral_precision_terms() -> None:
     assert "self-monitoring" in query
     assert "implementation barrier" in query
     assert "meal planning" in query
+    assert "RE-AIM" in query
+    assert "CFIR" in query
 
 
 def test_food_literacy_quick_mode_adds_culinary_and_commensality_terms() -> None:
