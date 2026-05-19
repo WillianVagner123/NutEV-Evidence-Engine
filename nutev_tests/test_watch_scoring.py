@@ -70,3 +70,11 @@ def test_implementation_fidelity_and_sustainability_improve_priority():
 
 def test_medical_nutrition_therapy_and_counselling_improve_priority():
     assert _score_watch_item({"title": "medical nutrition therapy and nutrition counselling for obesity"}) > _score_watch_item({"title": "obesity note"})
+
+
+def test_standards_of_care_scores_more_than_generic_report():
+    assert _score_watch_item({"title": "Standards of Care in Diabetes nutrition update"}) > _score_watch_item({"title": "Diabetes nutrition report"})
+
+
+def test_clinical_pathway_scores_more_than_generic_note():
+    assert _score_watch_item({"title": "Clinical pathway for obesity and cardiometabolic nutrition care"}) > _score_watch_item({"title": "Obesity and cardiometabolic nutrition care note"})
