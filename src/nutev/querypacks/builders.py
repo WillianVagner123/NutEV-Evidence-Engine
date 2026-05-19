@@ -36,6 +36,10 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
     "busca2a": {
         "focus_terms": [
             "medical nutrition therapy",
+            "therapeutic lifestyle changes",
+            "mediterranean dietary pattern",
+            "dietary approaches to stop hypertension",
+            "planetary health diet",
             "obesity management",
             "clinical nutrition",
             "cardiometabolic health",
@@ -59,6 +63,10 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
     "busca2b": {
         "focus_terms": [
             "medical nutrition therapy",
+            "therapeutic lifestyle changes",
+            "mediterranean dietary pattern",
+            "dietary approaches to stop hypertension",
+            "planetary health diet",
             "registered dietitian",
             "registered dietitian nutritionist",
             "dietitian-led intervention",
