@@ -268,6 +268,9 @@ def normalize_watch_hit(
     since_days: int = 30,
 ) -> dict[str, Any]:
     title = raw_hit.get("title") or ""
+    abstract = raw_hit.get("abstract") or ""
+    snippet = raw_hit.get("snippet") or raw_hit.get("summary") or ""
+    evidence_text = abstract or snippet
     year = raw_hit.get("year")
     try:
         year = int(year) if year is not None else None
@@ -281,6 +284,8 @@ def normalize_watch_hit(
     )
     item = {
         "title": title,
+        "abstract": abstract,
+        "snippet": snippet,
         "url": raw_hit.get("url") or "",
         "doi": raw_hit.get("doi") or "",
         "year": year,
@@ -289,7 +294,7 @@ def normalize_watch_hit(
         "query": query,
         "evidence_type": infer_evidence_type(
             title,
-            raw_hit.get("abstract") or "",
+            evidence_text,
             raw_hit.get("url") or "",
         ),
         "workstream_affinity": infer_workstream_affinity(title, category),
