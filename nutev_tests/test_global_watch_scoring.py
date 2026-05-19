@@ -15,3 +15,7 @@ def test_masld_and_dyslipidaemia_terms_score_above_generic_note():
 
 def test_hyperlipidemia_and_hypercholesterolemia_terms_score_above_generic_note():
     assert score_watch_item({"title": "hyperlipidemia and hypercholesterolemia guideline for cardiometabolic risk", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
+
+
+def test_policy_statement_scores_above_generic_note():
+    assert score_watch_item({"title": "nutrition policy statement for obesity and cardiometabolic risk", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
