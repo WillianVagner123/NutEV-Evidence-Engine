@@ -285,3 +285,15 @@ def test_quick_mode_diet_pattern_queries_cover_long_form_pattern_variants() -> N
     assert "dietary approaches to stop hypertension" in rendered
     assert "plant based diet" in rendered
     assert "new nordic diet" in rendered
+
+
+def test_quick_mode_guidelines_cover_portuguese_guidance_and_review_labels() -> None:
+    queries = build_watch_queries(["guidelines_consensus"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "guia alimentar" in rendered
+    assert "diretriz clinica" in rendered
+    assert "consenso brasileiro" in rendered
+    assert "declaracao cientifica" in rendered
+    assert "revisao sistematica" in rendered
+    assert "meta analise" in rendered
