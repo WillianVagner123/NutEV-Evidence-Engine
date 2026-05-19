@@ -123,6 +123,9 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "empowerment",
             "nutrition education",
             "culinary medicine",
+            "culinary nutrition",
+            "teaching kitchen",
+            "teaching kitchens",
         ],
         "document_terms": [
             "questionnaire validation",
@@ -133,6 +136,7 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "culinary skills instrument",
             "cooking confidence scale",
             "meal planning questionnaire",
+            "teaching kitchen intervention",
         ],
     },
     "commensality_context": {
