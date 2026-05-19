@@ -94,3 +94,30 @@ def test_busca2b_lipid_risk_terms_raise_relevance_score() -> None:
 
     assert enriched_score["relevance_score"] > base_score["relevance_score"] + 20
     assert enriched_score["out_of_scope_flags"] == []
+
+
+def test_busca2b_dietitian_led_medical_nutrition_therapy_is_prioritized() -> None:
+    baseline = {
+        "title": "Adult obesity nutrition follow-up",
+        "abstract": "Adults received dietary advice during follow-up.",
+        "url": "https://example.org/article",
+        "source": "pubmed",
+    }
+    enriched = {
+        "title": (
+            "Registered dietitian nutritionist-led medical nutrition therapy "
+            "trial for obesity and type 2 diabetes"
+        ),
+        "abstract": (
+            "A dietitian-led intervention evaluated adherence, glycemic "
+            "control and cardiometabolic outcomes in adults."
+        ),
+        "url": "https://example.org/full-text.pdf",
+        "source": "pubmed",
+    }
+
+    base_score = score_record(dict(baseline), BASE_SCORING_RULES, "busca2b")
+    enriched_score = score_record(dict(enriched), BASE_SCORING_RULES, "busca2b")
+
+    assert enriched_score["relevance_score"] > base_score["relevance_score"] + 18
+    assert enriched_score["out_of_scope_flags"] == []
