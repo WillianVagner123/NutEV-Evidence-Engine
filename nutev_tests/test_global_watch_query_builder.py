@@ -19,3 +19,11 @@ def test_obesity_cardiometabolic_queries_include_new_liver_and_lipid_context_ter
     assert "metabolic dysfunction-associated steatotic liver disease" in rendered
     assert "dyslipidaemia" in rendered
     assert "insulin resistance" in rendered
+
+
+def test_implementation_behavior_queries_include_behavior_change_framework_terms():
+    rows = build_watch_queries(["implementation_behavior"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "behavior change wheel" in rendered
+    assert "theoretical domains framework" in rendered
+    assert "action planning" in rendered
