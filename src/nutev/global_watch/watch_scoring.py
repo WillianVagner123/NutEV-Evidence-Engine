@@ -1,12 +1,28 @@
 from __future__ import annotations
 
+import unicodedata
+
+
+def _normalize_match_text(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", text)
+    return "".join(ch for ch in normalized if not unicodedata.combining(ch)).lower()
+
+
+def _build_scoring_text(item: dict) -> str:
+    return " ".join(
+        str(item.get(field, "") or "")
+        for field in (
+            "title",
+            "abstract",
+            "snippet",
+            "evidence_type",
+            "category",
+        )
+    )
+
 
 def score_watch_item(item: dict) -> float:
-    text = (
-        f"{item.get('title', '')} "
-        f"{item.get('evidence_type', '')} "
-        f"{item.get('category', '')}"
-    ).lower()
+    text = _normalize_match_text(_build_scoring_text(item))
     score = float(item.get("relevance_score") or 0)
 
     bonus = [
@@ -14,12 +30,16 @@ def score_watch_item(item: dict) -> float:
         ("practice guideline", 55),
         ("guideline update", 60),
         ("guideline", 50),
+        ("diretriz clinica", 55),
         ("food-based dietary guideline", 45),
         ("food guide", 40),
+        ("guia alimentar", 40),
         ("nutrition guideline", 40),
         ("scientific statement", 45),
+        ("declaracao cientifica", 45),
         ("consensus", 45),
         ("consensus report", 45),
+        ("consenso brasileiro", 45),
         ("expert consensus", 45),
         ("practice advisory", 45),
         ("practice guidance", 42),
@@ -27,6 +47,7 @@ def score_watch_item(item: dict) -> float:
         ("joint statement", 40),
         ("position statement", 40),
         ("position paper", 40),
+        ("posicionamento", 40),
         ("clinical guidance", 40),
         ("practice recommendation", 40),
         ("standards of care", 45),
@@ -34,14 +55,17 @@ def score_watch_item(item: dict) -> float:
         ("care pathway", 35),
         ("systematic review", 35),
         ("living systematic review", 35),
+        ("revisao sistematica", 35),
         ("meta-analysis", 35),
         ("meta analysis", 35),
+        ("meta analise", 35),
         ("network meta-analysis", 35),
         ("network meta analysis", 35),
         ("umbrella review", 35),
         ("overview of reviews", 35),
         ("review of reviews", 35),
         ("rapid review", 30),
+        ("revisao de escopo", 30),
         ("randomized trial", 30),
         ("randomised trial", 30),
         ("pragmatic trial", 30),
