@@ -11,3 +11,7 @@ def test_food_based_guideline_and_nutrition_literacy_score_above_editorial():
 
 def test_masld_and_dyslipidaemia_terms_score_above_generic_note():
     assert score_watch_item({"title":"metabolic dysfunction-associated steatotic liver disease and dyslipidaemia guideline", "relevance_score":1, "is_new":True}) > score_watch_item({"title":"generic nutrition note", "relevance_score":1})
+
+
+def test_standards_of_care_and_guidance_statement_score_above_generic_note():
+    assert score_watch_item({"title":"Standards of Care guidance statement for lifestyle medicine nutrition", "relevance_score":1, "is_new":True}) > score_watch_item({"title":"generic nutrition note", "relevance_score":1})
