@@ -78,3 +78,15 @@ def test_standards_of_care_scores_more_than_generic_report():
 
 def test_clinical_pathway_scores_more_than_generic_note():
     assert _score_watch_item({"title": "Clinical pathway for obesity and cardiometabolic nutrition care"}) > _score_watch_item({"title": "Obesity and cardiometabolic nutrition care note"})
+
+
+def test_long_form_dash_signal_scores_more_than_generic_hypertension_note():
+    assert _score_watch_item(
+        {"title": "Dietary Approaches to Stop Hypertension for cardiometabolic risk"}
+    ) > _score_watch_item({"title": "Hypertension note"})
+
+
+def test_new_nordic_and_plant_based_variants_improve_priority():
+    assert _score_watch_item(
+        {"title": "New Nordic diet and plant based diet for obesity care"}
+    ) > _score_watch_item({"title": "Diet for obesity care"})
