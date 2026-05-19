@@ -19,3 +19,11 @@ def test_obesity_cardiometabolic_queries_include_new_liver_and_lipid_context_ter
     assert "metabolic dysfunction-associated steatotic liver disease" in rendered
     assert "dyslipidaemia" in rendered
     assert "insulin resistance" in rendered
+
+
+def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
+    rows = build_watch_queries(["diet_patterns"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "network meta-analysis" in rendered
+    assert "rapid review" in rendered
+    assert "living systematic review" in rendered
