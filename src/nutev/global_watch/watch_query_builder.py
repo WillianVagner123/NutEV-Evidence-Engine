@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Iterable
+import unicodedata
 
 from nutev.engine.ids import make_document_id
 from nutev.global_watch.watch_config import MODE_LIMITS, WATCH_CATEGORIES
@@ -26,6 +27,9 @@ EVIDENCE_SYNTHESIS_TERMS = [
     "living systematic review",
     "overview of reviews",
     "review of reviews",
+    "revisao sistematica",
+    "meta analise",
+    "revisao de escopo",
 ]
 
 CATEGORY_CONTEXT_TERMS = {
@@ -51,6 +55,11 @@ CATEGORY_CONTEXT_TERMS = {
         "standards of care",
         "clinical pathway",
         "care pathway",
+        "guia alimentar",
+        "diretriz clinica",
+        "declaracao cientifica",
+        "posicionamento",
+        "consenso brasileiro",
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "lifestyle_medicine": [
@@ -185,6 +194,8 @@ QUICK_MODE_SEED_GROUPS = {
             "dietary guidelines",
             "food-based dietary guidelines",
             "diretriz",
+            "diretriz clinica",
+            "guia alimentar",
             "recomendações",
         ],
         [
@@ -193,6 +204,7 @@ QUICK_MODE_SEED_GROUPS = {
             "consensus report",
             "expert consensus",
             "consenso",
+            "consenso brasileiro",
             "standards of care",
         ],
         [
@@ -206,9 +218,13 @@ QUICK_MODE_SEED_GROUPS = {
             "clinical guidance",
             "recommendation",
             "declaração científica",
+            "declaracao cientifica",
+            "posicionamento",
             "clinical pathway",
             "care pathway",
             "living guideline",
+            "revisao sistematica",
+            "meta analise",
         ],
     ],
     "lifestyle_medicine": [
@@ -394,7 +410,17 @@ HIGH_PRIORITY_MARKERS = (
     "standards of care",
     "clinical pathway",
     "care pathway",
+    "diretriz",
+    "consenso brasileiro",
+    "declaracao cientifica",
+    "posicionamento",
+    "guia alimentar",
 )
+
+
+def _normalize_match_text(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", text)
+    return "".join(ch for ch in normalized if not unicodedata.combining(ch)).lower()
 
 
 def _dedupe_terms(terms: Iterable[str]) -> list[str]:
@@ -436,11 +462,12 @@ def _build_context_terms(category: str) -> list[str]:
 
 def _priority_for_term(term: str | Iterable[str]) -> int:
     candidates = [term] if isinstance(term, str) else list(term)
-    lowered_candidates = [str(value).lower() for value in candidates]
+    lowered_candidates = [_normalize_match_text(str(value)) for value in candidates]
+    normalized_markers = [_normalize_match_text(marker) for marker in HIGH_PRIORITY_MARKERS]
     if any(
         marker in candidate
         for candidate in lowered_candidates
-        for marker in HIGH_PRIORITY_MARKERS
+        for marker in normalized_markers
     ):
         return 1
     return 2
