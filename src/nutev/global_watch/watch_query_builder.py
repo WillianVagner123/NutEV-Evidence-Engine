@@ -13,6 +13,21 @@ BASE_CONTEXT_TERMS = [
     "cardiometabolic",
 ]
 
+EVIDENCE_SYNTHESIS_TERMS = [
+    "systematic review",
+    "meta-analysis",
+    "meta analysis",
+    "network meta-analysis",
+    "network meta analysis",
+    "umbrella review",
+    "scoping review",
+    "integrative review",
+    "rapid review",
+    "living systematic review",
+    "overview of reviews",
+    "review of reviews",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -36,6 +51,7 @@ CATEGORY_CONTEXT_TERMS = {
         "standards of care",
         "clinical pathway",
         "care pathway",
+        *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "lifestyle_medicine": [
         "food literacy",
@@ -68,6 +84,7 @@ CATEGORY_CONTEXT_TERMS = {
         "adiposity",
         "blood pressure",
         "fatty liver",
+        *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "diet_patterns": [
         "type 2 diabetes",
@@ -89,6 +106,7 @@ CATEGORY_CONTEXT_TERMS = {
         "new nordic diet",
         "eat-lancet",
         "planetary health diet",
+        *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "implementation_behavior": [
         "lifestyle medicine",
@@ -122,6 +140,7 @@ CATEGORY_CONTEXT_TERMS = {
         "scale up",
         "adoption",
         "reach",
+        *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "food_literacy_culinary_commensality": [
         "lifestyle medicine",
@@ -189,6 +208,7 @@ QUICK_MODE_SEED_GROUPS = {
             "declaração científica",
             "clinical pathway",
             "care pathway",
+            "living guideline",
         ],
     ],
     "lifestyle_medicine": [
@@ -243,6 +263,9 @@ QUICK_MODE_SEED_GROUPS = {
             "NASH",
             "steatotic liver disease",
             "metabolic dysfunction-associated fatty liver disease",
+            "systematic review",
+            "meta-analysis",
+            "umbrella review",
         ],
     ],
     "diet_patterns": [
@@ -267,6 +290,11 @@ QUICK_MODE_SEED_GROUPS = {
             "Portfolio diet",
             "Nordic diet",
             "New Nordic diet",
+            "systematic review",
+            "network meta-analysis",
+            "umbrella review",
+            "rapid review",
+            "living systematic review",
         ],
     ],
     "implementation_behavior": [
@@ -300,6 +328,9 @@ QUICK_MODE_SEED_GROUPS = {
             "scale-up",
             "adoption",
             "reach",
+            "systematic review",
+            "scoping review",
+            "rapid review",
         ],
     ],
     "food_literacy_culinary_commensality": [
