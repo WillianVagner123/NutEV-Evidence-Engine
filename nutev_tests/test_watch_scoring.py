@@ -96,3 +96,9 @@ def test_therapeutic_lifestyle_changes_and_healthy_eating_pattern_improve_priori
     assert _score_watch_item(
         {"title": "Therapeutic lifestyle changes and healthy eating pattern for cardiometabolic risk"}
     ) > _score_watch_item({"title": "Cardiometabolic risk note"})
+
+
+def test_living_systematic_review_and_rapid_review_improve_priority():
+    assert _score_watch_item(
+        {"title": "Living systematic review and rapid review of Mediterranean diet for obesity"}
+    ) > _score_watch_item({"title": "Mediterranean diet for obesity note"})
