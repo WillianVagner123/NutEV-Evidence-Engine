@@ -8,6 +8,7 @@ from nutev.global_watch.watch_config import MODE_LIMITS, WATCH_CATEGORIES
 BASE_CONTEXT_TERMS = [
     "nutrition",
     "diet",
+    "food",
     "obesity",
     "cardiometabolic",
 ]
@@ -17,21 +18,56 @@ CATEGORY_CONTEXT_TERMS = {
         "dietary guideline",
         "dietary pattern",
         "lifestyle medicine",
+        "practice guideline",
+        "position paper",
+        "food-based dietary guideline",
+        "food based dietary guideline",
+        "dietary guidance",
+        "consensus report",
+        "practice advisory",
+        "practice guidance",
+        "guidance statement",
+        "joint statement",
+        "expert consensus",
+        "clinical guidance",
+        "practice recommendation",
+        "food guide",
+        "nutrition guideline",
+        "standards of care",
+        "clinical pathway",
+        "care pathway",
     ],
     "lifestyle_medicine": [
         "food literacy",
         "culinary medicine",
         "meal planning",
+        "healthy lifestyle",
+        "lifestyle counseling",
+        "lifestyle counselling",
+        "behavioral lifestyle intervention",
+        "medical nutrition therapy",
+        "nutrition counseling",
+        "nutrition counselling",
+        "nutrition care",
     ],
     "obesity_cardiometabolic": [
         "dietary pattern",
         "lifestyle medicine",
         "implementation",
         "adherence",
+        "prediabetes",
         "insulin resistance",
         "dyslipidaemia",
+        "hyperlipidemia",
+        "hyperlipidaemia",
+        "hypercholesterolemia",
+        "hypercholesterolaemia",
         "steatotic liver disease",
         "metabolic dysfunction-associated steatotic liver disease",
+        "weight management",
+        "adiposity",
+        "blood pressure",
+        "fatty liver",
     ],
     "diet_patterns": [
         "type 2 diabetes",
@@ -40,22 +76,287 @@ CATEGORY_CONTEXT_TERMS = {
         "adherence",
         "insulin resistance",
         "steatotic liver disease",
+        "mediterranean diet",
+        "dash",
+        "mind diet",
+        "plant-based diet",
+        "whole-food plant-based",
+        "portfolio diet",
+        "nordic diet",
+        "eat-lancet",
+        "planetary health diet",
     ],
     "implementation_behavior": [
         "lifestyle medicine",
         "food literacy",
         "culinary medicine",
+        "implementation science",
+        "implementation research",
+        "knowledge translation",
+        "dietary adherence",
+        "self-efficacy",
+        "self-monitoring",
+        "meal planning",
+        "implementation strategy",
+        "implementation outcomes",
+        "implementation fidelity",
+        "implementation facilitation",
+        "implementation support",
+        "implementation barrier",
+        "implementation facilitator",
+        "process evaluation",
+        "behavior change technique",
+        "behavior change wheel",
+        "theoretical domains framework",
+        "intervention mapping",
+        "action planning",
+        "coping planning",
+        "habit formation",
+        "self-regulation",
+        "barriers and facilitators",
+        "behavioral lifestyle intervention",
+        "behavioral weight loss",
+        "goal setting",
+        "social support",
+        "food access",
+        "sustainability",
+        "dissemination",
+        "scale-up",
+        "scale up",
+        "adoption",
+        "reach",
     ],
     "food_literacy_culinary_commensality": [
         "lifestyle medicine",
         "behavior change",
         "adherence",
+        "food environment",
+        "nutrition education",
+        "food and nutrition literacy",
+        "nutrition literacy",
+        "food agency",
+        "home cooking",
+        "meal preparation",
+        "cooking confidence",
+        "cooking skills",
+        "food skills",
+        "food label",
+        "food access",
+        "commensality",
+        "shared meals",
+        "family meals",
+        "social eating",
+        "eat together",
     ],
     "frameworks_instruments": [
         "lifestyle medicine",
         "food literacy",
         "culinary medicine",
         "commensality",
+        "psychometric validation",
+        "scale development",
+        "lifestyle medicine competencies",
+    ],
+}
+
+QUICK_MODE_SEED_GROUPS = {
+    "guidelines_consensus": [
+        [
+            "clinical practice guideline",
+            "guideline",
+            "guidelines",
+            "guideline update",
+            "dietary guidelines",
+            "food-based dietary guidelines",
+            "diretriz",
+            "recomendações",
+        ],
+        [
+            "consensus",
+            "consensus statement",
+            "consensus report",
+            "expert consensus",
+            "consenso",
+            "standards of care",
+        ],
+        [
+            "scientific statement",
+            "position statement",
+            "position paper",
+            "practice advisory",
+            "practice guidance",
+            "guidance statement",
+            "joint statement",
+            "clinical guidance",
+            "recommendation",
+            "declaração científica",
+            "clinical pathway",
+            "care pathway",
+        ],
+    ],
+    "lifestyle_medicine": [
+        [
+            "lifestyle medicine",
+            "lifestyle medicine nutrition",
+            "medical nutrition therapy",
+            "medicina do estilo de vida",
+        ],
+        [
+            "lifestyle intervention",
+            "lifestyle modification",
+            "therapeutic lifestyle changes",
+            "nutrition counseling",
+            "nutrition counselling",
+        ],
+        [
+            "healthy lifestyle",
+            "lifestyle counseling",
+            "lifestyle counselling",
+            "nutrition care",
+            "estilo de vida saudavel",
+        ],
+    ],
+    "obesity_cardiometabolic": [
+        [
+            "obesity",
+            "clinical obesity",
+            "overweight",
+            "adiposity",
+            "weight management",
+        ],
+        [
+            "cardiometabolic risk",
+            "metabolic syndrome",
+            "type 2 diabetes",
+            "prediabetes",
+            "insulin resistance",
+        ],
+        [
+            "hypertension",
+            "dyslipidemia",
+            "dyslipidaemia",
+            "hyperlipidemia",
+            "hyperlipidaemia",
+            "hypercholesterolemia",
+            "hypercholesterolaemia",
+            "MASLD",
+            "NAFLD",
+            "MAFLD",
+            "MASH",
+            "NASH",
+            "steatotic liver disease",
+            "metabolic dysfunction-associated fatty liver disease",
+        ],
+    ],
+    "diet_patterns": [
+        [
+            "Mediterranean diet",
+            "DASH",
+            "MIND diet",
+        ],
+        [
+            "plant-based diet",
+            "vegetarian diet",
+            "vegan diet",
+            "whole-food plant-based",
+            "whole food plant based",
+        ],
+        [
+            "Eat-Lancet",
+            "planetary health diet",
+            "Portfolio diet",
+            "Nordic diet",
+        ],
+    ],
+    "implementation_behavior": [
+        [
+            "adherence",
+            "compliance",
+            "acceptability",
+            "feasibility",
+            "self-monitoring",
+        ],
+        [
+            "implementation",
+            "implementation science",
+            "implementation research",
+            "implementation fidelity",
+            "implementation facilitation",
+            "implementation support",
+            "implementation barrier",
+            "implementation facilitator",
+            "lifestyle counseling",
+            "lifestyle counselling",
+        ],
+        [
+            "behavior change",
+            "behavior change wheel",
+            "theoretical domains framework",
+            "intervention mapping",
+            "action planning",
+            "coping planning",
+            "habit formation",
+            "self-regulation",
+            "motivational interviewing",
+            "social support",
+            "food agency",
+            "meal planning",
+            "sustainability",
+            "dissemination",
+            "scale-up",
+            "adoption",
+            "reach",
+        ],
+    ],
+    "food_literacy_culinary_commensality": [
+        [
+            "food literacy",
+            "food and nutrition literacy",
+            "nutrition literacy",
+            "health literacy",
+        ],
+        [
+            "culinary medicine",
+            "cooking skills",
+            "food skills",
+            "food agency",
+            "home cooking",
+            "meal planning",
+            "meal preparation",
+            "cooking confidence",
+        ],
+        [
+            "food environment",
+            "food access",
+            "shared meals",
+            "family meals",
+            "social eating",
+            "eat together",
+            "commensality",
+            "comensalidade",
+        ],
+    ],
+    "frameworks_instruments": [
+        [
+            "framework",
+            "behavior change framework",
+            "lifestyle medicine competencies",
+        ],
+        [
+            "questionnaire",
+            "instrument",
+            "survey instrument",
+            "adherence scale",
+            "food literacy instrument",
+            "culinary skills instrument",
+        ],
+        [
+            "psychometric validation",
+            "psychometric study",
+            "scale development",
+            "questionnaire validation",
+            "validation study",
+        ],
     ],
 }
 
@@ -64,6 +365,10 @@ HIGH_PRIORITY_MARKERS = (
     "consensus",
     "statement",
     "recommendation",
+    "position paper",
+    "standards of care",
+    "clinical pathway",
+    "care pathway",
 )
 
 
@@ -104,11 +409,28 @@ def _build_context_terms(category: str) -> list[str]:
     )
 
 
-def _priority_for_term(term: str) -> int:
-    lowered = term.lower()
-    if any(marker in lowered for marker in HIGH_PRIORITY_MARKERS):
+def _priority_for_term(term: str | Iterable[str]) -> int:
+    candidates = [term] if isinstance(term, str) else list(term)
+    lowered_candidates = [str(value).lower() for value in candidates]
+    if any(
+        marker in candidate
+        for candidate in lowered_candidates
+        for marker in HIGH_PRIORITY_MARKERS
+    ):
         return 1
     return 2
+
+
+def _mode_terms(category: str, mode: str) -> list[str | list[str]]:
+    if mode == "quick" and category in QUICK_MODE_SEED_GROUPS:
+        return QUICK_MODE_SEED_GROUPS[category]
+    return WATCH_CATEGORIES.get(category, [])
+
+
+def _term_clause(term: str | Iterable[str]) -> str:
+    if isinstance(term, str):
+        return _quote_term(term)
+    return _or_clause(term)
 
 
 def build_watch_queries(
@@ -122,8 +444,8 @@ def build_watch_queries(
 
     for category in selected_categories:
         context_clause = _or_clause(_build_context_terms(category))
-        for term in WATCH_CATEGORIES.get(category, [])[:limit]:
-            term_clause = _quote_term(term)
+        for term in _mode_terms(category, mode)[:limit]:
+            term_clause = _term_clause(term)
             query = f"({term_clause})"
             if context_clause:
                 query = f"{query} AND {context_clause}"
