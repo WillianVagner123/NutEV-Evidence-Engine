@@ -475,7 +475,12 @@ def build_provider_querypack(
                 workstream,
                 provider,
             )
-        provider_querypack[canonical_workstream(workstream)] = workstream_pack
+        provider_querypack[workstream] = workstream_pack
+        canonical_key = canonical_workstream(workstream)
+        if canonical_key != workstream and canonical_key not in provider_querypack:
+            # Preserve alias and canonical access so downstream code can keep
+            # using the requested workstream name without losing provider queries.
+            provider_querypack[canonical_key] = workstream_pack
     return provider_querypack
 
 
