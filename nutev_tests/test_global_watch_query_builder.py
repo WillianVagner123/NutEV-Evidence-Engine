@@ -12,6 +12,13 @@ def test_food_literacy_queries_include_nutrition_literacy_in_quick_mode():
     assert "nutrition literacy" in rendered
 
 
+def test_guideline_queries_include_best_practice_labels_in_quick_mode():
+    rows = build_watch_queries(["guidelines_consensus"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "best practice advice" in rendered
+    assert "best practice statement" in rendered
+
+
 def test_obesity_cardiometabolic_queries_include_new_liver_and_lipid_context_terms():
     rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
