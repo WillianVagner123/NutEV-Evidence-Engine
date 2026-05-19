@@ -83,6 +83,15 @@ def test_provider_queries_include_semantic_research_blocks():
     assert "dietary adherence" in joined
 
 
+def test_provider_queries_include_food_is_medicine_semantic_terms() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries).lower()
+
+    assert "food is medicine" in joined
+    assert "produce prescription" in joined
+    assert "medically tailored meals" in joined
+
+
 def test_semantic_blocks_are_prioritized_by_workstream():
     busca1_blocks = semantic_block_names("busca1")
     busca2b_terms = semantic_terms("busca2b", min_priority=5)
@@ -91,6 +100,9 @@ def test_semantic_blocks_are_prioritized_by_workstream():
     assert busca1_blocks[:2] == ["food_literacy_agency", "commensality_context"]
     assert "implementation science" in busca2b_terms
     assert "adherence" in busca2b_terms
+    assert "food is medicine" in busca2b_terms
+    assert "produce prescription" in busca2b_terms
+    assert "medically tailored meals" in busca2b_terms
     assert priorities[0] == {"name": "food_literacy_agency", "priority": 5}
 
 
@@ -104,6 +116,21 @@ def test_provider_querypack_builds_per_provider():
     assert "pubmed" in querypack["busca1"]
     assert "europepmc" in querypack["busca1"]
     assert "official_web" not in querypack["busca1"]
+
+
+def test_provider_querypack_surfaces_food_is_medicine_terms_for_main_search() -> None:
+    querypack = build_provider_querypack(
+        _sample_taxonomy(),
+        ["busca2b"],
+        {"busca2b": ["pubmed", "europepmc"]},
+    )
+    pubmed_joined = "\n".join(querypack["busca2b"]["pubmed"]).lower()
+    europepmc_joined = "\n".join(querypack["busca2b"]["europepmc"]).lower()
+
+    assert "food is medicine" in pubmed_joined
+    assert "produce prescription" in pubmed_joined
+    assert "medically tailored meals" in pubmed_joined
+    assert "food is medicine" in europepmc_joined
 
 
 def test_provider_querypack_audit_files_are_written(tmp_path: Path):
