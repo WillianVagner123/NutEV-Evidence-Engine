@@ -70,3 +70,27 @@ def test_busca1_guideline_and_counselling_terms_are_prioritized() -> None:
 
     assert targeted_score["relevance_score"] > neutral_score["relevance_score"] + 15
     assert targeted_score["out_of_scope_flags"] == []
+
+
+def test_busca2b_lipid_risk_terms_raise_relevance_score() -> None:
+    baseline = {
+        "title": "Adult nutrition follow-up",
+        "abstract": "Adults received standard lifestyle advice.",
+        "url": "https://example.org/article",
+        "source": "pubmed",
+    }
+    enriched = {
+        "title": "Hyperlipidemia and hypercholesterolemia dietary intervention trial",
+        "abstract": (
+            "Adults with cardiometabolic risk and dyslipidaemia completed a "
+            "Mediterranean diet adherence program."
+        ),
+        "url": "https://example.org/full-text.pdf",
+        "source": "pubmed",
+    }
+
+    base_score = score_record(dict(baseline), BASE_SCORING_RULES, "busca2b")
+    enriched_score = score_record(dict(enriched), BASE_SCORING_RULES, "busca2b")
+
+    assert enriched_score["relevance_score"] > base_score["relevance_score"] + 20
+    assert enriched_score["out_of_scope_flags"] == []
