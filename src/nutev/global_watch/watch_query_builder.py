@@ -39,6 +39,10 @@ CATEGORY_CONTEXT_TERMS = {
         "lifestyle counseling",
         "lifestyle counselling",
         "behavioral lifestyle intervention",
+        "medical nutrition therapy",
+        "nutrition counseling",
+        "nutrition counselling",
+        "nutrition care",
     ],
     "obesity_cardiometabolic": [
         "dietary pattern",
@@ -176,17 +180,21 @@ QUICK_MODE_SEED_GROUPS = {
         [
             "lifestyle medicine",
             "lifestyle medicine nutrition",
+            "medical nutrition therapy",
             "medicina do estilo de vida",
         ],
         [
             "lifestyle intervention",
             "lifestyle modification",
             "therapeutic lifestyle changes",
+            "nutrition counseling",
+            "nutrition counselling",
         ],
         [
             "healthy lifestyle",
             "lifestyle counseling",
             "lifestyle counselling",
+            "nutrition care",
             "estilo de vida saudavel",
         ],
     ],
