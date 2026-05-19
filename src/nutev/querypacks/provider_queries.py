@@ -193,9 +193,9 @@ def _augment_with_semantic_blocks(
         enriched["web_hints"] = uniq(
             enriched.get("web_hints", []) + CARDIOMETABOLIC_LIVER_HINTS
         )
-    # Provider querypacks should honor both semantic expansions and the
-    # workstream-specific focus terms defined in the core taxonomy/builders.
-    enriched["semantic_terms"] = uniq(broad_terms + focus_terms)
+    # Put workstream focus terms first so provider query caps do not crowd out
+    # clinically important, NutMEV-specific expansions.
+    enriched["semantic_terms"] = uniq(focus_terms + broad_terms)
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
 
