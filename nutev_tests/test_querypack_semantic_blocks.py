@@ -32,3 +32,19 @@ def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -
     assert "mediterranean dietary pattern" in rendered
     assert "dietary approaches to stop hypertension" in rendered
     assert "planetary health diet" in rendered
+
+
+def test_food_literacy_semantic_block_adds_teaching_kitchen_terms() -> None:
+    rendered = " ".join(semantic_terms("busca1", min_priority=4)).lower()
+
+    assert "culinary nutrition" in rendered
+    assert "teaching kitchen" in rendered
+    assert "teaching kitchens" in rendered
+
+
+def test_food_literacy_document_terms_add_teaching_kitchen_intervention() -> None:
+    rendered = " ".join(
+        semantic_terms("busca1", field="document_terms", min_priority=4)
+    ).lower()
+
+    assert "teaching kitchen intervention" in rendered
