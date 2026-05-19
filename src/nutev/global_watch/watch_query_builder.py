@@ -25,6 +25,10 @@ CATEGORY_CONTEXT_TERMS = {
         "dietary guidance",
         "consensus report",
         "practice advisory",
+        "guidance statement",
+        "policy statement",
+        "standard of care",
+        "standards of care",
         "expert consensus",
         "clinical guidance",
         "practice recommendation",
@@ -148,6 +152,7 @@ QUICK_MODE_SEED_GROUPS = {
             "guideline update",
             "dietary guidelines",
             "food-based dietary guidelines",
+            "standards of care",
             "diretriz",
             "recomendações",
         ],
@@ -163,6 +168,8 @@ QUICK_MODE_SEED_GROUPS = {
             "position statement",
             "position paper",
             "practice advisory",
+            "guidance statement",
+            "policy statement",
             "clinical guidance",
             "recommendation",
             "declaração científica",
@@ -325,6 +332,10 @@ HIGH_PRIORITY_MARKERS = (
     "statement",
     "recommendation",
     "position paper",
+    "guidance statement",
+    "policy statement",
+    "standard of care",
+    "standards of care",
 )
 
 
