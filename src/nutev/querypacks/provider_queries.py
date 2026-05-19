@@ -475,12 +475,10 @@ def build_provider_querypack(
                 workstream,
                 provider,
             )
+        # Keep the requested workstream key in the querypack. Query rendering
+        # already resolves aliases internally, and preserving the input name
+        # avoids duplicate audit rows for alias/canonical pairs.
         provider_querypack[workstream] = workstream_pack
-        canonical_key = canonical_workstream(workstream)
-        if canonical_key != workstream and canonical_key not in provider_querypack:
-            # Preserve alias and canonical access so downstream code can keep
-            # using the requested workstream name without losing provider queries.
-            provider_querypack[canonical_key] = workstream_pack
     return provider_querypack
 
 
