@@ -60,6 +60,12 @@ def test_taxonomy_aligned_food_literacy_signals_improve_priority():
     assert _score_watch_item({"title": "nutrition literacy, family meals, and food access in obesity care"}) > _score_watch_item({"title": "obesity care note"})
 
 
+def test_food_access_and_nutrition_security_signals_improve_priority():
+    assert _score_watch_item(
+        {"title": "nutrition security and healthy food access for obesity and cardiometabolic risk"}
+    ) > _score_watch_item({"title": "obesity and cardiometabolic risk note"})
+
+
 def test_whole_food_plant_based_signal_improves_priority():
     assert _score_watch_item({"title": "whole-food plant-based diet for cardiometabolic risk"}) > _score_watch_item({"title": "diet for cardiometabolic risk"})
 
