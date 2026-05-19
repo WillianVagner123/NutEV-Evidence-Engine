@@ -173,10 +173,11 @@ def _augment_with_semantic_blocks(
         f"{item['name']}:{item['priority']}"
         for item in prioritized_semantic_blocks(workstream)
     ]
+    focus_terms = enriched.get("focus_terms", [])
 
     enriched["web_hints"] = uniq(enriched.get("web_hints", []) + high_priority_terms)
     enriched["behavior_terms"] = uniq(enriched.get("behavior_terms", []) + broad_terms)
-    enriched["focus_terms"] = uniq(enriched.get("focus_terms", []) + broad_terms)
+    enriched["focus_terms"] = uniq(focus_terms + broad_terms)
     enriched["doc_type_terms"] = uniq(
         enriched.get("doc_type_terms", []) + semantic_doc_terms
     )
@@ -192,7 +193,9 @@ def _augment_with_semantic_blocks(
         enriched["web_hints"] = uniq(
             enriched.get("web_hints", []) + CARDIOMETABOLIC_LIVER_HINTS
         )
-    enriched["semantic_terms"] = broad_terms
+    # Provider querypacks should honor both semantic expansions and the
+    # workstream-specific focus terms defined in the core taxonomy/builders.
+    enriched["semantic_terms"] = uniq(broad_terms + focus_terms)
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
 
