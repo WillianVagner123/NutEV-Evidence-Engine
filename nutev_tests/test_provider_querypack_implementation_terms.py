@@ -31,3 +31,33 @@ def test_busca2b_pubmed_queries_include_dietitian_led_nutrition_focus_terms():
     assert "medical nutrition therapy" in rendered
     assert "registered dietitian nutritionist" in rendered
     assert "dietitian-led intervention" in rendered
+
+
+def test_busca2a_pubmed_queries_include_lifestyle_nutrition_pattern_terms():
+    taxonomy = {
+        "global": {
+            "implementation_behavior": {"core": ["adherence"]},
+            "diet_patterns": {"core": ["mediterranean diet"]},
+            "nutrition_domains": {"core": ["nutrition care"]},
+            "document_types": {"guidance": ["guideline"]},
+        },
+        "clinical": {"glycemia": ["type 2 diabetes"]},
+        "outcomes": {"metabolic": ["glycemic control"]},
+        "workstreams": {
+            "busca2a": {
+                "population_terms": ["adults with obesity"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["glycemia"],
+                "priority_outcomes": ["metabolic"],
+                "document_type_keys": ["guidance"],
+                "focus_blocks": [],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(taxonomy, "busca2a", "pubmed")
+    rendered = "\n".join(queries).lower()
+
+    assert "therapeutic lifestyle changes" in rendered
+    assert "mediterranean dietary pattern" in rendered
+    assert "dietary approaches to stop hypertension" in rendered
