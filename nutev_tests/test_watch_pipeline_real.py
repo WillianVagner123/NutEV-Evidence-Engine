@@ -18,6 +18,24 @@ def test_watch_normalize_hit():
     assert hit["document_id"] and hit["source_provider"] == "pubmed"
 
 
+def test_watch_normalize_hit_preserves_abstract_and_snippet():
+    hit = wp.normalize_watch_hit(
+        {
+            "title": "Nutrition update",
+            "abstract": "",
+            "snippet": "Clinical practice guideline for obesity care",
+            "url": "https://x",
+            "year": 2026,
+        },
+        "pubmed",
+        "guidelines_consensus",
+        "q",
+    )
+    assert hit["abstract"] == ""
+    assert hit["snippet"] == "Clinical practice guideline for obesity care"
+    assert hit["evidence_type"] == "guideline"
+
+
 def test_watch_pipeline_uses_real_provider_mock(tmp_path, monkeypatch):
     monkeypatch.setattr(wp, "search_pubmed", lambda q, retmax=12: [{"title": "Guideline Update", "url": "https://real.org/a", "doi": "10.1/a", "year": 2026}])
     monkeypatch.setattr(wp, "search_europepmc", lambda q, page_size=12: [])
