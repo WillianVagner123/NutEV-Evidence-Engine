@@ -30,6 +30,9 @@ CATEGORY_CONTEXT_TERMS = {
         "practice recommendation",
         "food guide",
         "nutrition guideline",
+        "standards of care",
+        "clinical pathway",
+        "care pathway",
     ],
     "lifestyle_medicine": [
         "food literacy",
@@ -58,7 +61,6 @@ CATEGORY_CONTEXT_TERMS = {
         "hypercholesterolaemia",
         "steatotic liver disease",
         "metabolic dysfunction-associated steatotic liver disease",
-        "metabolic dysfunction-associated fatty liver disease",
         "weight management",
         "adiposity",
         "blood pressure",
@@ -165,6 +167,7 @@ QUICK_MODE_SEED_GROUPS = {
             "consensus report",
             "expert consensus",
             "consenso",
+            "standards of care",
         ],
         [
             "scientific statement",
@@ -174,6 +177,8 @@ QUICK_MODE_SEED_GROUPS = {
             "clinical guidance",
             "recommendation",
             "declaração científica",
+            "clinical pathway",
+            "care pathway",
         ],
     ],
     "lifestyle_medicine": [
@@ -341,6 +346,9 @@ HIGH_PRIORITY_MARKERS = (
     "statement",
     "recommendation",
     "position paper",
+    "standards of care",
+    "clinical pathway",
+    "care pathway",
 )
 
 
