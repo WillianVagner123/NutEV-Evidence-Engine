@@ -120,3 +120,9 @@ def test_snippet_only_editorial_signal_reduces_priority():
             "snippet": "Editorial commentary on lifestyle medicine",
         }
     ) < _score_watch_item({"title": "Lifestyle medicine update"})
+
+
+def test_portuguese_guidance_labels_score_even_with_accents() -> None:
+    assert _score_watch_item(
+        {"title": "Diretriz clínica e revisão sistemática sobre alimentação e obesidade"}
+    ) > _score_watch_item({"title": "Nota sobre alimentacao e obesidade"})
