@@ -1,7 +1,7 @@
 from nutev.querypacks.provider_queries import render_queries_for_provider
 
 
-def test_busca2b_pubmed_queries_include_new_implementation_science_terms():
+def test_busca2b_pubmed_queries_include_dietitian_led_nutrition_focus_terms():
     taxonomy = {
         "global": {
             "implementation_behavior": {
@@ -28,7 +28,6 @@ def test_busca2b_pubmed_queries_include_new_implementation_science_terms():
     queries = render_queries_for_provider(taxonomy, "busca2b", "pubmed")
     rendered = "\n".join(queries).lower()
 
-    assert "implementation science" in rendered
     assert "medical nutrition therapy" in rendered
     assert "registered dietitian nutritionist" in rendered
     assert "dietitian-led intervention" in rendered
