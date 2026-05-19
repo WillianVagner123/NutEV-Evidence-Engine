@@ -261,3 +261,17 @@ def test_food_literacy_quick_mode_adds_culinary_and_commensality_terms() -> None
     assert "food agency" in query
     assert "meal preparation" in query
     assert "comensalidade" in query
+
+
+def test_guidelines_queries_add_standards_of_care_and_pathway_terms() -> None:
+    query = _category_query("guidelines_consensus").lower()
+
+    assert "standards of care" in query
+    assert "clinical pathway" in query
+    assert "care pathway" in query
+
+
+def test_guideline_like_priority_covers_standards_of_care_group() -> None:
+    queries = build_watch_queries(["guidelines_consensus"], since_days=7, mode="quick")
+
+    assert queries[1]["priority"] == 1
