@@ -96,3 +96,9 @@ def test_therapeutic_lifestyle_changes_and_healthy_eating_pattern_improve_priori
     assert _score_watch_item(
         {"title": "Therapeutic lifestyle changes and healthy eating pattern for cardiometabolic risk"}
     ) > _score_watch_item({"title": "Cardiometabolic risk note"})
+
+
+def test_culinary_nutrition_and_teaching_kitchen_improve_priority():
+    assert _score_watch_item(
+        {"title": "teaching kitchen and culinary nutrition intervention for food literacy"}
+    ) > _score_watch_item({"title": "food literacy note"})
