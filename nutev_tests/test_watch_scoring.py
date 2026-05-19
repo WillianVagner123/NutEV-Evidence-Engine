@@ -120,3 +120,35 @@ def test_snippet_only_editorial_signal_reduces_priority():
             "snippet": "Editorial commentary on lifestyle medicine",
         }
     ) < _score_watch_item({"title": "Lifestyle medicine update"})
+
+
+def test_re_aim_cfir_and_practice_facilitation_improve_priority():
+    assert _score_watch_item(
+        {
+            "title": "RE-AIM and CFIR with practice facilitation for implementation of nutrition care",
+        }
+    ) > _score_watch_item({"title": "Implementation of nutrition care note"})
+
+
+def test_food_is_medicine_and_medically_tailored_meals_improve_priority():
+    assert _score_watch_item(
+        {
+            "title": "Food is medicine and medically tailored meals for cardiometabolic risk",
+        }
+    ) > _score_watch_item({"title": "Cardiometabolic risk note"})
+
+
+def test_produce_prescription_signal_improves_priority():
+    assert _score_watch_item(
+        {
+            "title": "Produce prescription program for obesity and hypertension",
+        }
+    ) > _score_watch_item({"title": "Obesity and hypertension note"})
+
+
+def test_hybrid_effectiveness_implementation_signal_improves_priority():
+    assert _score_watch_item(
+        {
+            "title": "Hybrid effectiveness-implementation trial for dietary adherence",
+        }
+    ) > _score_watch_item({"title": "Dietary adherence note"})
