@@ -1,5 +1,5 @@
 {
-  "version": "2026-05-v1",
+  "version": "2026-05-v2",
   "global": {
     "lifestyle_medicine_pillars": {
       "nutrition": [
@@ -376,11 +376,17 @@
         "guidelines",
         "clinical practice guideline",
         "practice guideline",
+        "practice advisory",
         "guidance",
         "scientific statement",
         "statement",
         "consensus",
+        "consensus statement",
+        "expert consensus",
+        "clinical consensus",
         "position statement",
+        "position paper",
+        "living guideline",
         "diretriz",
         "diretrizes",
         "consenso",
@@ -393,6 +399,8 @@
         "scoping review",
         "integrative review",
         "umbrella review",
+        "overview of reviews",
+        "review of reviews",
         "meta-analysis",
         "revisão sistemática",
         "revisão de escopo",
