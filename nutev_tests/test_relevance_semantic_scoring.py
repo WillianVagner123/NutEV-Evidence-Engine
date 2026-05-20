@@ -16,7 +16,7 @@ BASE_SCORING_RULES = {
         "nutrition counselling": 3,
     },
     "source_points": {"pubmed": 3, "official": 4},
-    "workstream_points": {"busca1": 2, "busca2b": 3},
+    "workstream_points": {"busca1": 2, "busca2a": 3, "busca2b": 3},
     "editorial_authority_points": {},
 }
 
@@ -69,6 +69,33 @@ def test_busca1_guideline_and_counselling_terms_are_prioritized() -> None:
     targeted_score = score_record(dict(targeted), BASE_SCORING_RULES, "busca1")
 
     assert targeted_score["relevance_score"] > neutral_score["relevance_score"] + 15
+    assert targeted_score["out_of_scope_flags"] == []
+
+
+def test_busca2a_guidance_statement_and_decision_pathway_are_prioritized() -> None:
+    baseline = {
+        "title": "Adult obesity care update",
+        "abstract": "Adults with obesity received routine nutrition follow-up.",
+        "url": "https://example.org/update",
+        "source": "official",
+    }
+    targeted = {
+        "title": (
+            "Joint statement and clinical decision pathway for obesity, "
+            "dyslipidemia and cardiometabolic risk"
+        ),
+        "abstract": (
+            "This practice guidance summarizes therapeutic lifestyle changes, "
+            "medical nutrition therapy and blood pressure management in adults."
+        ),
+        "url": "https://example.org/guidance.pdf",
+        "source": "official",
+    }
+
+    baseline_score = score_record(dict(baseline), BASE_SCORING_RULES, "busca2a")
+    targeted_score = score_record(dict(targeted), BASE_SCORING_RULES, "busca2a")
+
+    assert targeted_score["relevance_score"] > baseline_score["relevance_score"] + 25
     assert targeted_score["out_of_scope_flags"] == []
 
 
