@@ -12,6 +12,13 @@ def test_food_literacy_queries_include_nutrition_literacy_in_quick_mode():
     assert "nutrition literacy" in rendered
 
 
+def test_food_literacy_queries_include_teaching_kitchen_terms_in_quick_mode():
+    rows = build_watch_queries(["food_literacy_culinary_commensality"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "teaching kitchen" in rendered
+    assert "culinary nutrition" in rendered
+
+
 def test_obesity_cardiometabolic_queries_include_new_liver_and_lipid_context_terms():
     rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
