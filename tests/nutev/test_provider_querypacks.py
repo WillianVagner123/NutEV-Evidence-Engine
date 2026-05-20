@@ -139,3 +139,42 @@ def test_doc_type_overflow_keeps_late_guideline_labels_visible():
 
     assert '"living guideline"[Title/Abstract]' in joined
     assert '"position paper"[Publication Type]' in joined or '"position paper"[Title/Abstract]' in joined
+
+
+def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
+    taxonomy = {
+        "global": {
+            "document_types": {"guidelines": ["guideline"]},
+            "diet_patterns": {"core": ["mediterranean diet"]},
+            "nutrition_domains": {"core": ["medical nutrition therapy"]},
+            "implementation_behavior": {"adherence": ["adherence"]},
+        },
+        "clinical": {
+            "lipids": ["dyslipidaemia", "hypercholesterolaemia"],
+            "fatty_liver": [
+                "metabolic dysfunction-associated steatotic liver disease",
+                "non-alcoholic fatty liver disease",
+            ],
+        },
+        "outcomes": {
+            "lipids": ["cholesterol"],
+        },
+        "workstreams": {
+            "busca2a": {
+                "population_terms": ["adult"],
+                "condition_terms": ["dyslipidaemia"],
+                "clinical_keys": ["lipids", "fatty_liver"],
+                "document_type_keys": ["guidelines"],
+                "priority_outcomes": ["lipids"],
+                "focus_blocks": ["diet_patterns", "implementation_behavior"],
+                "web_query_hints": ["practice guidance"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(taxonomy, "busca2a", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"Dyslipidemias"[MeSH Terms]' in joined
+    assert '"Hypercholesterolemia"[MeSH Terms]' in joined
+    assert '"Non-alcoholic Fatty Liver Disease"[MeSH Terms]' in joined
