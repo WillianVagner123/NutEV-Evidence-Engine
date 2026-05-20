@@ -12,9 +12,12 @@ def test_quick_watch_queries_expand_implementation_semantics() -> None:
     assert "barriers and facilitators" in rendered
     assert "registered dietitian" in rendered
     assert "dietitian-led intervention" in rendered
+    assert "self-management" in rendered
+    assert "shared decision making" in rendered
+    assert "weight loss maintenance" in rendered
 
 
-def test_watch_score_prioritizes_dietitian_led_implementation_signals() -> None:
+def test_watch_score_prioritizes_self_management_implementation_signals() -> None:
     baseline = score_watch_item(
         {
             "title": "Lifestyle intervention for obesity",
@@ -30,10 +33,10 @@ def test_watch_score_prioritizes_dietitian_led_implementation_signals() -> None:
     enriched = score_watch_item(
         {
             "title": (
-                "Dietitian-led lifestyle intervention for obesity: "
-                "implementation barriers and facilitators"
+                "Dietitian-led lifestyle intervention with self-management support "
+                "and shared decision making for obesity"
             ),
-            "abstract": "Registered dietitian nutritionist support improved maintenance.",
+            "abstract": "Treatment adherence improved during weight loss maintenance.",
             "snippet": "",
             "evidence_type": "study",
             "category": "implementation_behavior",
@@ -46,11 +49,11 @@ def test_watch_score_prioritizes_dietitian_led_implementation_signals() -> None:
     assert enriched > baseline
 
 
-def test_infer_workstream_affinity_routes_implementation_titles_to_busca2b() -> None:
+def test_infer_workstream_affinity_routes_self_management_titles_to_busca2b() -> None:
     affinity = infer_workstream_affinity(
         (
-            "Dietitian-led lifestyle intervention identifies implementation "
-            "barriers and facilitators in obesity care"
+            "Dietitian-led obesity care uses self-management support and shared "
+            "decision making to improve weight loss maintenance"
         ),
         "implementation_behavior",
     )
