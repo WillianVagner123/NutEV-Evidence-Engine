@@ -128,3 +128,19 @@ def test_mash_and_nonalcoholic_fatty_liver_disease_signals_improve_priority():
             "title": "Medical nutrition therapy for MASH and nonalcoholic fatty liver disease",
         }
     ) > _score_watch_item({"title": "Medical nutrition therapy note"})
+
+
+def test_culinary_training_and_food_literacy_signals_improve_priority():
+    assert _score_watch_item(
+        {
+            "title": "Teaching kitchens, culinary nutrition, and cooking confidence for food literacy",
+        }
+    ) > _score_watch_item({"title": "Food literacy note"})
+
+
+def test_home_cooking_and_meal_preparation_signals_improve_priority():
+    assert _score_watch_item(
+        {
+            "title": "Home cooking, meal preparation, and nutrition education in obesity care",
+        }
+    ) > _score_watch_item({"title": "Obesity care note"})
