@@ -350,3 +350,28 @@ def semantic_terms(
         block = SEMANTIC_RESEARCH_BLOCKS.get(block_name, {})
         terms.extend(block.get(field, []))
     return _uniq(terms)
+
+
+def interleaved_semantic_terms(
+    workstream: str,
+    *,
+    field: str = "terms",
+    min_priority: int = 1,
+) -> list[str]:
+    ws_key = _canonical_workstream(workstream)
+    grouped_terms: list[list[str]] = []
+    for block_name, priority in WORKSTREAM_SEMANTIC_PRIORITIES.get(ws_key, []):
+        if priority < min_priority:
+            continue
+        block = SEMANTIC_RESEARCH_BLOCKS.get(block_name, {})
+        terms = _uniq(list(block.get(field, [])))
+        if terms:
+            grouped_terms.append(terms)
+
+    interleaved: list[str] = []
+    max_length = max((len(group) for group in grouped_terms), default=0)
+    for index in range(max_length):
+        for group in grouped_terms:
+            if index < len(group):
+                interleaved.append(group[index])
+    return _uniq(interleaved)
