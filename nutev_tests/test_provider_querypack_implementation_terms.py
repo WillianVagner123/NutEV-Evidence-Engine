@@ -61,3 +61,5 @@ def test_busca2a_pubmed_queries_include_lifestyle_nutrition_pattern_terms():
     assert "therapeutic lifestyle changes" in rendered
     assert "mediterranean dietary pattern" in rendered
     assert "dietary approaches to stop hypertension" in rendered
+    assert "practice guidance" in rendered
+    assert "clinical decision pathway" in rendered
