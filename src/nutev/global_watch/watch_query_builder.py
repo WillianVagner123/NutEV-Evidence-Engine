@@ -458,32 +458,57 @@ def _term_clause(term: str | Iterable[str]) -> str:
     return _or_clause(term)
 
 
+def _build_category_queries(
+    category: str,
+    since_days: int,
+    mode: str,
+) -> list[dict[str, object]]:
+    context_clause = _or_clause(_build_context_terms(category))
+    queries: list[dict[str, object]] = []
+    for term in _mode_terms(category, mode)[: MODE_LIMITS.get(mode, 6)]:
+        term_clause = _term_clause(term)
+        query = f"({term_clause})"
+        if context_clause:
+            query = f"{query} AND {context_clause}"
+        queries.append(
+            {
+                "query_id": make_document_id(
+                    {"title": query, "provider": "watch", "year": since_days}
+                ),
+                "category": category,
+                "query": query,
+                "provider_hint": "pubmed",
+                "priority": _priority_for_term(term),
+                "since_days": since_days,
+            }
+        )
+    return sorted(
+        queries,
+        key=lambda query: (int(query["priority"]), str(query["query"])),
+    )
+
+
+def _interleave_category_queries(
+    category_queries: dict[str, list[dict[str, object]]],
+) -> list[dict[str, object]]:
+    ordered: list[dict[str, object]] = []
+    max_bucket = max((len(bucket) for bucket in category_queries.values()), default=0)
+    for index in range(max_bucket):
+        for category in category_queries:
+            bucket = category_queries.get(category, [])
+            if index < len(bucket):
+                ordered.append(bucket[index])
+    return ordered
+
+
 def build_watch_queries(
     categories: list[str] | None,
     since_days: int,
     mode: str,
 ) -> list[dict[str, object]]:
     selected_categories = categories or list(WATCH_CATEGORIES.keys())
-    limit = MODE_LIMITS.get(mode, 6)
-    queries: list[dict[str, object]] = []
-
-    for category in selected_categories:
-        context_clause = _or_clause(_build_context_terms(category))
-        for term in _mode_terms(category, mode)[:limit]:
-            term_clause = _term_clause(term)
-            query = f"({term_clause})"
-            if context_clause:
-                query = f"{query} AND {context_clause}"
-            queries.append(
-                {
-                    "query_id": make_document_id(
-                        {"title": query, "provider": "watch", "year": since_days}
-                    ),
-                    "category": category,
-                    "query": query,
-                    "provider_hint": "pubmed",
-                    "priority": _priority_for_term(term),
-                    "since_days": since_days,
-                }
-            )
-    return queries
+    category_queries = {
+        category: _build_category_queries(category, since_days, mode)
+        for category in selected_categories
+    }
+    return _interleave_category_queries(category_queries)
