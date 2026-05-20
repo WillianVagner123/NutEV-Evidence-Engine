@@ -135,13 +135,24 @@ _PRIORITY_TERMS = [
     "food-based dietary guideline",
     "lifestyle medicine",
     "culinary medicine",
+    "culinary nutrition",
     "food literacy",
+    "food is medicine",
+    "produce prescription",
+    "produce prescriptions",
+    "medically tailored meals",
+    "medically tailored groceries",
+    "nutrition security",
     "adherence",
     "implementation",
+    "implementation mapping",
+    "practice facilitation",
+    "quality improvement",
     "barrier",
     "facilitator",
     "commensality",
     "meal planning",
+    "teaching kitchen",
     "behavior change",
     "self-efficacy",
 ]
@@ -448,7 +459,7 @@ def _build_top_a1_operational(unique_rows: list[dict]) -> pd.DataFrame:
 def _build_duplicate_rows(curated_rows: list[dict]) -> pd.DataFrame:
     counts: dict[str, int] = {}
     for row in curated_rows:
-        counts[row["document_key"]] = counts.get(row["document_key"], 0) + 1
+        counts[row["document_key"]] = counts.get(row["document_key"]"", 0) + 1
     duplicates = []
     for row in curated_rows:
         occurrences = counts[row["document_key"]]
