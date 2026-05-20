@@ -4,9 +4,7 @@ from nutev.querypacks.provider_queries import render_queries_for_provider
 def test_busca2b_pubmed_queries_include_dietitian_led_nutrition_focus_terms():
     taxonomy = {
         "global": {
-            "implementation_behavior": {
-                "adherence": ["adherence", "implementation science"]
-            },
+            "implementation_behavior": {"adherence": ["adherence", "implementation science"]},
             "diet_patterns": {"core": ["mediterranean diet", "dash diet"]},
             "nutrition_domains": {"core": ["nutrition care"]},
             "document_types": {"reviews": ["systematic review"]},
@@ -31,6 +29,10 @@ def test_busca2b_pubmed_queries_include_dietitian_led_nutrition_focus_terms():
     assert "medical nutrition therapy" in rendered
     assert "registered dietitian nutritionist" in rendered
     assert "dietitian-led intervention" in rendered
+    assert "implementation determinants" in rendered
+    assert "motivational interviewing" in rendered
+    assert "shared decision making" in rendered
+    assert "self-management support" in rendered
 
 
 def test_busca2a_pubmed_queries_include_lifestyle_nutrition_pattern_terms():
