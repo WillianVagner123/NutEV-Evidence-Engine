@@ -43,6 +43,7 @@ CATEGORY_CONTEXT_TERMS = {
         "practice guidance",
         "guidance statement",
         "joint statement",
+        "joint guideline",
         "expert consensus",
         "clinical guidance",
         "practice recommendation",
@@ -51,6 +52,9 @@ CATEGORY_CONTEXT_TERMS = {
         "standards of care",
         "clinical pathway",
         "care pathway",
+        "clinical decision pathway",
+        "decision pathway",
+        "living guideline",
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "lifestyle_medicine": [
@@ -231,11 +235,14 @@ QUICK_MODE_SEED_GROUPS = {
             "practice guidance",
             "guidance statement",
             "joint statement",
+            "joint guideline",
             "clinical guidance",
             "recommendation",
             "declaração científica",
             "clinical pathway",
             "care pathway",
+            "clinical decision pathway",
+            "decision pathway",
             "living guideline",
         ],
     ],
@@ -440,6 +447,8 @@ HIGH_PRIORITY_MARKERS = (
     "standards of care",
     "clinical pathway",
     "care pathway",
+    "clinical decision pathway",
+    "decision pathway",
 )
 
 
