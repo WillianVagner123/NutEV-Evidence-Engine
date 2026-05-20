@@ -53,6 +53,26 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
     assert '"systematic review"[publication type]' in clause
 
 
+def test_pubmed_document_clause_keeps_guidance_variants_in_publication_types_only():
+    clause = _pubmed_document_clause(
+        [
+            "consensus report",
+            "practice guidance",
+            "guidance statement",
+            "joint statement",
+            "standards of care",
+            "guideline update",
+            "umbrella review",
+        ]
+    ).lower()
+
+    assert '"consensus"[publication type]' in clause
+    assert '"practice guideline"[publication type]' in clause
+    assert '"guideline"[publication type]' in clause
+    assert '"systematic review"[publication type]' in clause
+    assert "title/abstract" not in clause
+
+
 def test_master_pipeline_dedup_normalizes_doi_and_url_before_title_year():
     rows = [
         {
