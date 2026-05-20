@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from nutev.pipelines.master_pipeline import _dedup_rows
-from nutev.querypacks.builders import build_structured_components
+from nutev.querypacks.builders import build_queries, build_structured_components
 from nutev.querypacks.provider_queries import _pubmed_document_clause
 from nutev.settings import load_json
 
@@ -18,6 +18,23 @@ def test_busca2a_structured_components_include_high_value_guidance_terms():
     assert "practice advisory" in doc_terms
     assert "living guideline" in doc_terms
     assert "overview of reviews" in doc_terms
+
+
+def test_busca2b_queries_cover_fatty_liver_diet_trials():
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+
+    _, components = build_structured_components(taxonomy, "busca2b")
+    condition_terms = {term.lower() for term in components["condition_terms"]}
+    queries = [query.lower() for query in build_queries(taxonomy, "busca2b")]
+
+    assert "masld" in condition_terms
+    assert "nafld" in condition_terms
+    assert "steatotic liver disease" in condition_terms
+    assert any(
+        ("masld" in query or "nafld" in query or "steatotic liver disease" in query)
+        and ("randomized controlled trial" in query or "systematic review" in query)
+        for query in queries
+    )
 
 
 def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
