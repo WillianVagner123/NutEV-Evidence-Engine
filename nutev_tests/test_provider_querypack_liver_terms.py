@@ -13,9 +13,12 @@ def test_busca2b_pubmed_queries_include_liver_terms_from_tail_conditions():
 
     assert "masld" in rendered
     assert "nafld" in rendered
+    assert "mafld" in rendered
     assert "mash" in rendered
     assert "nash" in rendered
     assert "steatotic liver disease" in rendered
+    assert "non-alcoholic fatty liver disease" in rendered
+    assert "nonalcoholic steatohepatitis" in rendered
 
 
 def test_watch_affinity_maps_metabolic_liver_nutrition_interventions_to_busca2b():
