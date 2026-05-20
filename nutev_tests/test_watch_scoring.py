@@ -80,6 +80,18 @@ def test_clinical_pathway_scores_more_than_generic_note():
     assert _score_watch_item({"title": "Clinical pathway for obesity and cardiometabolic nutrition care"}) > _score_watch_item({"title": "Obesity and cardiometabolic nutrition care note"})
 
 
+def test_clinical_decision_pathway_scores_more_than_generic_note():
+    assert _score_watch_item({"title": "Clinical decision pathway for obesity and cardiometabolic nutrition care"}) > _score_watch_item({"title": "Obesity and cardiometabolic nutrition care note"})
+
+
+def test_joint_guideline_scores_more_than_generic_note():
+    assert _score_watch_item({"title": "Joint guideline for obesity and cardiometabolic nutrition care"}) > _score_watch_item({"title": "Obesity and cardiometabolic nutrition care note"})
+
+
+def test_living_guideline_scores_more_than_generic_note():
+    assert _score_watch_item({"title": "Living guideline for obesity and cardiometabolic nutrition care"}) > _score_watch_item({"title": "Obesity and cardiometabolic nutrition care note"})
+
+
 def test_long_form_dash_signal_scores_more_than_generic_hypertension_note():
     assert _score_watch_item(
         {"title": "Dietary Approaches to Stop Hypertension for cardiometabolic risk"}
