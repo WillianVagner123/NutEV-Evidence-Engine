@@ -13,6 +13,9 @@ def test_implementation_semantic_block_adds_core_implementation_science_terms() 
     assert "sustainability" in rendered
     assert "dissemination" in rendered
     assert "scale-up" in rendered
+    assert "food is medicine" in rendered
+    assert "produce prescription" in rendered
+    assert "medically tailored meals" in rendered
 
 
 def test_implementation_semantic_block_adds_document_level_terms() -> None:
@@ -32,3 +35,15 @@ def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -
     assert "mediterranean dietary pattern" in rendered
     assert "dietary approaches to stop hypertension" in rendered
     assert "planetary health diet" in rendered
+
+
+def test_food_literacy_semantic_block_adds_culinary_training_terms() -> None:
+    rendered = " ".join(semantic_terms("artigo3_framework", min_priority=5)).lower()
+
+    assert "culinary nutrition" in rendered
+    assert "teaching kitchen" in rendered
+    assert "teaching kitchens" in rendered
+    assert "home cooking" in rendered
+    assert "meal preparation" in rendered
+    assert "cooking confidence" in rendered
+    assert "nutrition education" in rendered
