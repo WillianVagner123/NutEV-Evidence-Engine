@@ -81,6 +81,8 @@ def test_provider_queries_include_semantic_research_blocks():
 
     assert "implementation science" in joined
     assert "dietary adherence" in joined
+    assert "food is medicine" in joined
+    assert "produce prescription" in joined
 
 
 def test_semantic_blocks_are_prioritized_by_workstream():
