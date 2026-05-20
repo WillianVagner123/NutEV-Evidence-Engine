@@ -224,6 +224,11 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "practice guidance",
             "guidance statement",
             "joint statement",
+            "standards of care",
+            "best practice advice",
+            "best practice statement",
+            "policy statement",
+            "clinical consensus",
         ],
     },
     "lifestyle_nutrition_patterns": {
