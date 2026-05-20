@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from nutev.querypacks.semantic_blocks import semantic_terms
+from nutev.querypacks.semantic_blocks import (
+    interleaved_semantic_terms,
+    semantic_terms,
+)
 
 
 def test_implementation_semantic_block_adds_core_implementation_science_terms() -> None:
@@ -32,3 +35,15 @@ def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -
     assert "mediterranean dietary pattern" in rendered
     assert "dietary approaches to stop hypertension" in rendered
     assert "planetary health diet" in rendered
+
+
+def test_interleaved_semantic_terms_surface_multiple_priority_blocks_early() -> None:
+    rendered = interleaved_semantic_terms("busca2b", min_priority=4)[:5]
+
+    assert rendered[:5] == [
+        "implementation science",
+        "adherence",
+        "systematic review",
+        "lifestyle medicine",
+        "food literacy",
+    ]
