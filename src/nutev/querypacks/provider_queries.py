@@ -13,6 +13,14 @@ from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semant
 
 PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref")
 LIVER_FOCUSED_WORKSTREAMS = {"busca2a", "busca2b"}
+BUSCA2A_GUIDANCE_TERMS = [
+    "practice guidance",
+    "guidance statement",
+    "joint statement",
+    "joint guideline",
+    "clinical decision pathway",
+    "decision pathway",
+]
 
 PUBMED_MESH_MAP = {
     "obesity": "Obesity",
@@ -72,6 +80,12 @@ PUBMED_DOCUMENT_TYPE_MAP = {
     "clinical practice guideline": "Practice Guideline",
     "practice guideline": "Practice Guideline",
     "practice advisory": "Practice Guideline",
+    "practice guidance": "Practice Guideline",
+    "guidance statement": "Guideline",
+    "joint statement": "Guideline",
+    "joint guideline": "Guideline",
+    "clinical decision pathway": "Practice Guideline",
+    "decision pathway": "Practice Guideline",
     "living guideline": "Guideline",
     "scientific statement": "Guideline",
     "consensus": "Consensus",
@@ -177,6 +191,16 @@ def _augment_with_semantic_blocks(
         for item in prioritized_semantic_blocks(workstream)
     ]
     focus_terms = enriched.get("focus_terms", [])
+
+    if canonical_workstream(workstream) == "busca2a":
+        # Keep high-value guidance labels near the front so provider-level query
+        # caps do not crowd out cardiometabolic society documents.
+        enriched["doc_type_terms"] = uniq(
+            BUSCA2A_GUIDANCE_TERMS + enriched.get("doc_type_terms", [])
+        )
+        enriched["web_hints"] = uniq(
+            BUSCA2A_GUIDANCE_TERMS + enriched.get("web_hints", [])
+        )
 
     enriched["web_hints"] = uniq(enriched.get("web_hints", []) + high_priority_terms)
     enriched["behavior_terms"] = uniq(enriched.get("behavior_terms", []) + broad_terms)
