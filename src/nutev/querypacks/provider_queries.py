@@ -9,7 +9,10 @@ from nutev.querypacks.builders import (
     chunk_terms,
     uniq,
 )
-from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semantic_terms
+from nutev.querypacks.semantic_blocks import (
+    interleaved_semantic_terms,
+    prioritized_semantic_blocks,
+)
 
 PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref")
 LIVER_FOCUSED_WORKSTREAMS = {"busca2a", "busca2b"}
@@ -165,9 +168,9 @@ def _augment_with_semantic_blocks(
     components: dict[str, list[str]],
 ) -> dict[str, list[str]]:
     enriched = {key: list(value) for key, value in components.items()}
-    high_priority_terms = semantic_terms(workstream, min_priority=4)
-    broad_terms = semantic_terms(workstream, min_priority=3)
-    semantic_doc_terms = semantic_terms(
+    high_priority_terms = interleaved_semantic_terms(workstream, min_priority=4)
+    broad_terms = interleaved_semantic_terms(workstream, min_priority=3)
+    semantic_doc_terms = interleaved_semantic_terms(
         workstream,
         field="document_terms",
         min_priority=3,
@@ -178,7 +181,9 @@ def _augment_with_semantic_blocks(
     ]
     focus_terms = enriched.get("focus_terms", [])
 
-    enriched["web_hints"] = uniq(enriched.get("web_hints", []) + high_priority_terms)
+    # Lead with balanced semantic seeds so provider caps retain coverage from
+    # multiple NutMEV blocks instead of overfilling from the first block only.
+    enriched["web_hints"] = uniq(high_priority_terms + enriched.get("web_hints", []))
     enriched["behavior_terms"] = uniq(enriched.get("behavior_terms", []) + broad_terms)
     enriched["focus_terms"] = uniq(focus_terms + broad_terms)
     enriched["doc_type_terms"] = uniq(
@@ -196,9 +201,9 @@ def _augment_with_semantic_blocks(
         enriched["web_hints"] = uniq(
             enriched.get("web_hints", []) + CARDIOMETABOLIC_LIVER_HINTS
         )
-    # Put workstream focus terms first so provider query caps do not crowd out
-    # clinically important, NutMEV-specific expansions.
-    enriched["semantic_terms"] = uniq(focus_terms + broad_terms)
+    # Keep one dedicated semantic query broad and balanced; workstream focus
+    # terms still remain first-class in the focused query blocks above.
+    enriched["semantic_terms"] = uniq(broad_terms + focus_terms)
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
 
