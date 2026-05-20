@@ -31,6 +31,19 @@ def test_implementation_semantic_block_adds_document_level_terms() -> None:
     assert "hybrid type 2" in rendered
 
 
+def test_evidence_synthesis_semantic_block_adds_guidance_and_pathway_terms() -> None:
+    rendered = " ".join(
+        semantic_terms("busca2a", field="document_terms", min_priority=5)
+    ).lower()
+
+    assert "practice guidance" in rendered
+    assert "guidance statement" in rendered
+    assert "joint statement" in rendered
+    assert "joint guideline" in rendered
+    assert "clinical decision pathway" in rendered
+    assert "decision pathway" in rendered
+
+
 def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -> None:
     rendered = " ".join(semantic_terms("busca2b", min_priority=4)).lower()
 
