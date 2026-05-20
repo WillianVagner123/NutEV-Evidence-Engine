@@ -10,6 +10,12 @@ def test_implementation_semantic_block_adds_core_implementation_science_terms() 
     assert "implementation facilitation" in rendered
     assert "implementation support" in rendered
     assert "implementation research" in rendered
+    assert "implementation determinant" in rendered
+    assert "implementation determinants" in rendered
+    assert "shared decision making" in rendered
+    assert "motivational interviewing" in rendered
+    assert "behavior change technique" in rendered
+    assert "self-management support" in rendered
     assert "sustainability" in rendered
     assert "dissemination" in rendered
     assert "scale-up" in rendered
