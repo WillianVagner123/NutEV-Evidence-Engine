@@ -285,3 +285,31 @@ def test_quick_mode_diet_pattern_queries_cover_long_form_pattern_variants() -> N
     assert "dietary approaches to stop hypertension" in rendered
     assert "plant based diet" in rendered
     assert "new nordic diet" in rendered
+
+
+def test_quick_mode_interleaves_categories_so_tail_categories_survive() -> None:
+    queries = build_watch_queries(None, since_days=7, mode="quick")
+    first_seven_categories = [query["category"] for query in queries[:7]]
+
+    assert len(set(first_seven_categories)) == 7
+    assert first_seven_categories[0] == "guidelines_consensus"
+    assert "frameworks_instruments" in first_seven_categories
+    assert "implementation_behavior" in first_seven_categories
+
+
+def test_selected_categories_preserve_round_robin_order_within_priority() -> None:
+    queries = build_watch_queries(
+        [
+            "guidelines_consensus",
+            "implementation_behavior",
+            "frameworks_instruments",
+        ],
+        since_days=7,
+        mode="quick",
+    )
+
+    assert [query["category"] for query in queries[:3]] == [
+        "guidelines_consensus",
+        "implementation_behavior",
+        "frameworks_instruments",
+    ]
