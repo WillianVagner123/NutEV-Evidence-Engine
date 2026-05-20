@@ -13,6 +13,23 @@ from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semant
 
 PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref")
 LIVER_FOCUSED_WORKSTREAMS = {"busca2a", "busca2b"}
+NUTRITION_SERVICE_MODEL_WORKSTREAMS = {"busca2b", "artigo3_framework"}
+BUSCA2A_GUIDANCE_TERMS = [
+    "practice guidance",
+    "guidance statement",
+    "joint statement",
+    "joint guideline",
+    "clinical decision pathway",
+    "decision pathway",
+]
+NUTRITION_SERVICE_MODEL_TERMS = [
+    "food is medicine",
+    "food as medicine",
+    "produce prescription",
+    "produce prescriptions",
+    "medically tailored meal",
+    "medically tailored meals",
+]
 
 PUBMED_MESH_MAP = {
     "obesity": "Obesity",
@@ -72,6 +89,12 @@ PUBMED_DOCUMENT_TYPE_MAP = {
     "clinical practice guideline": "Practice Guideline",
     "practice guideline": "Practice Guideline",
     "practice advisory": "Practice Guideline",
+    "practice guidance": "Practice Guideline",
+    "guidance statement": "Guideline",
+    "joint statement": "Guideline",
+    "joint guideline": "Guideline",
+    "clinical decision pathway": "Practice Guideline",
+    "decision pathway": "Practice Guideline",
     "living guideline": "Guideline",
     "scientific statement": "Guideline",
     "consensus": "Consensus",
@@ -165,6 +188,7 @@ def _augment_with_semantic_blocks(
     components: dict[str, list[str]],
 ) -> dict[str, list[str]]:
     enriched = {key: list(value) for key, value in components.items()}
+    ws_key = canonical_workstream(workstream)
     high_priority_terms = semantic_terms(workstream, min_priority=4)
     broad_terms = semantic_terms(workstream, min_priority=3)
     semantic_doc_terms = semantic_terms(
@@ -178,13 +202,33 @@ def _augment_with_semantic_blocks(
     ]
     focus_terms = enriched.get("focus_terms", [])
 
+    if ws_key == "busca2a":
+        # Keep high-value guidance labels near the front so provider-level query
+        # caps do not crowd out cardiometabolic society documents.
+        enriched["doc_type_terms"] = uniq(
+            BUSCA2A_GUIDANCE_TERMS + enriched.get("doc_type_terms", [])
+        )
+        enriched["web_hints"] = uniq(
+            BUSCA2A_GUIDANCE_TERMS + enriched.get("web_hints", [])
+        )
+
+    if ws_key in NUTRITION_SERVICE_MODEL_WORKSTREAMS:
+        # Promote high-value nutrition service models so provider query caps
+        # keep these implementation signals visible in search.
+        enriched["web_hints"] = uniq(
+            NUTRITION_SERVICE_MODEL_TERMS + enriched.get("web_hints", [])
+        )
+        enriched["behavior_terms"] = uniq(
+            NUTRITION_SERVICE_MODEL_TERMS + enriched.get("behavior_terms", [])
+        )
+
     enriched["web_hints"] = uniq(enriched.get("web_hints", []) + high_priority_terms)
     enriched["behavior_terms"] = uniq(enriched.get("behavior_terms", []) + broad_terms)
     enriched["focus_terms"] = uniq(focus_terms + broad_terms)
     enriched["doc_type_terms"] = uniq(
         enriched.get("doc_type_terms", []) + semantic_doc_terms
     )
-    if canonical_workstream(workstream) in LIVER_FOCUSED_WORKSTREAMS:
+    if ws_key in LIVER_FOCUSED_WORKSTREAMS:
         # Keep MASLD/NAFLD guideline and intervention evidence visible even
         # when broader cardiometabolic condition lists are capped for query size.
         enriched["condition_terms"] = uniq(
@@ -198,7 +242,10 @@ def _augment_with_semantic_blocks(
         )
     # Put workstream focus terms first so provider query caps do not crowd out
     # clinically important, NutMEV-specific expansions.
-    enriched["semantic_terms"] = uniq(focus_terms + broad_terms)
+    semantic_seed_terms = focus_terms + broad_terms
+    if ws_key in NUTRITION_SERVICE_MODEL_WORKSTREAMS:
+        semantic_seed_terms = NUTRITION_SERVICE_MODEL_TERMS + semantic_seed_terms
+    enriched["semantic_terms"] = uniq(semantic_seed_terms)
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
 
