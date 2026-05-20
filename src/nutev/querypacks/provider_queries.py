@@ -26,6 +26,7 @@ PUBMED_MESH_MAP = {
     "metabolic syndrome": "Metabolic Syndrome",
     "nafld": "Non-alcoholic Fatty Liver Disease",
     "masld": "Non-alcoholic Fatty Liver Disease",
+    "mafld": "Non-alcoholic Fatty Liver Disease",
     "mediterranean diet": "Diet, Mediterranean",
     "dash diet": "Dietary Approaches To Stop Hypertension",
     "plant-based diet": "Diet, Vegetarian",
@@ -39,6 +40,7 @@ PUBMED_MESH_MAP = {
 CARDIOMETABOLIC_LIVER_TERMS = [
     "masld",
     "nafld",
+    "mafld",
     "mash",
     "nash",
     "fatty liver",
@@ -56,6 +58,7 @@ CARDIOMETABOLIC_LIVER_TERMS = [
 CARDIOMETABOLIC_LIVER_HINTS = [
     "masld",
     "nafld",
+    "mafld",
     "mash",
     "nash",
     "steatohepatitis",
