@@ -83,6 +83,24 @@ def test_provider_queries_include_semantic_research_blocks():
     assert "dietary adherence" in joined
 
 
+def test_provider_queries_include_best_practice_guidance_labels():
+    pubmed_queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    europepmc_queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "europepmc")
+    pubmed_joined = "\n".join(pubmed_queries).lower()
+    europepmc_joined = "\n".join(europepmc_queries).lower()
+
+    assert "best practice advice" in pubmed_joined
+    assert "best practice statement" in pubmed_joined
+    assert "policy statement" in pubmed_joined
+    assert "standards of care" in pubmed_joined
+    assert "clinical consensus" in pubmed_joined
+    assert "best practice advice" in europepmc_joined
+    assert "best practice statement" in europepmc_joined
+    assert "policy statement" in europepmc_joined
+    assert "standards of care" in europepmc_joined
+    assert "clinical consensus" in europepmc_joined
+
+
 def test_semantic_blocks_are_prioritized_by_workstream():
     busca1_blocks = semantic_block_names("busca1")
     busca2b_terms = semantic_terms("busca2b", min_priority=5)
