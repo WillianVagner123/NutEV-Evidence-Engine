@@ -42,6 +42,9 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
         [
             "consensus statement",
             "practice advisory",
+            "practice guidance",
+            "guidance statement",
+            "clinical decision pathway",
             "position paper",
             "umbrella review",
         ]
