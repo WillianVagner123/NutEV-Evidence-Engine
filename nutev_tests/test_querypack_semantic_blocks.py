@@ -36,10 +36,15 @@ def test_evidence_synthesis_semantic_block_adds_guidance_and_pathway_terms() -> 
         semantic_terms("busca2a", field="document_terms", min_priority=5)
     ).lower()
 
+    assert "guideline update" in rendered
+    assert "living guideline" in rendered
+    assert "standards of care" in rendered
+    assert "consensus report" in rendered
     assert "practice guidance" in rendered
     assert "guidance statement" in rendered
     assert "joint statement" in rendered
     assert "joint guideline" in rendered
+    assert "clinical guidance" in rendered
     assert "clinical decision pathway" in rendered
     assert "decision pathway" in rendered
 
