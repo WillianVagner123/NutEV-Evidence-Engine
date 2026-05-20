@@ -103,6 +103,10 @@ def test_build_watch_queries_adds_guideline_report_context() -> None:
     assert '"practice recommendation"' in first_query
     assert '"food guide"' in first_query
     assert '"nutrition guideline"' in first_query
+    assert '"joint guideline"' in first_query
+    assert '"clinical decision pathway"' in first_query
+    assert '"decision pathway"' in first_query
+    assert '"living guideline"' in first_query
 
 
 def test_build_watch_queries_adds_diet_pattern_context_from_taxonomy() -> None:
@@ -269,6 +273,10 @@ def test_guidelines_queries_add_standards_of_care_and_pathway_terms() -> None:
     assert "standards of care" in query
     assert "clinical pathway" in query
     assert "care pathway" in query
+    assert "clinical decision pathway" in query
+    assert "decision pathway" in query
+    assert "joint guideline" in query
+    assert "living guideline" in query
 
 
 def test_guideline_like_priority_covers_standards_of_care_group() -> None:
