@@ -92,6 +92,18 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "metabolic dysfunction-associated steatotic liver disease",
             "metabolic dysfunction associated steatotic liver disease",
             "steatotic liver disease",
+            "masld",
+            "mafld",
+            "nafld",
+            "mash",
+            "nash",
+            "nonalcoholic fatty liver disease",
+            "non-alcoholic fatty liver disease",
+            "nonalcoholic steatohepatitis",
+            "non-alcoholic steatohepatitis",
+            "metabolic dysfunction-associated fatty liver disease",
+            "metabolic dysfunction associated fatty liver disease",
+            "fatty liver",
         ],
         "focus_terms": [
             "medical nutrition therapy",
@@ -123,6 +135,9 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "behavior change trial",
             "dyslipidemia trial",
             "lipid lowering trial",
+            "masld trial",
+            "nafld trial",
+            "steatotic liver disease trial",
         ],
         "document_terms": [
             "randomized trial",
@@ -547,6 +562,23 @@ def _add_specific_busca2b(
         "revisão integrativa",
         "metanálise",
     ]
+    hepatic_terms = [
+        "masld",
+        "mafld",
+        "nafld",
+        "mash",
+        "nash",
+        "steatotic liver disease",
+        "fatty liver",
+        "nonalcoholic fatty liver disease",
+        "non-alcoholic fatty liver disease",
+        "nonalcoholic steatohepatitis",
+        "non-alcoholic steatohepatitis",
+        "metabolic dysfunction-associated fatty liver disease",
+        "metabolic dysfunction associated fatty liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "metabolic dysfunction associated steatotic liver disease",
+    ]
 
     for d in chunk_terms(diet_terms, 4)[:12]:
         queries.append(
@@ -577,6 +609,28 @@ def _add_specific_busca2b(
                     or_block(condition_terms + clinical_terms, 8),
                     or_block(b),
                     or_block(trial_terms, 6),
+                    or_block(outcome_terms, 5),
+                ]
+            )
+        )
+
+    for hepatic_chunk in chunk_terms(hepatic_terms, 4)[:6]:
+        queries.append(
+            _join_parts(
+                [
+                    or_block(hepatic_chunk),
+                    or_block(diet_terms, 5),
+                    or_block(trial_terms, 5),
+                    or_block(outcome_terms, 5),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    or_block(hepatic_chunk),
+                    or_block(behavior_terms, 5),
+                    or_block(review_terms, 5),
                     or_block(outcome_terms, 5),
                 ]
             )
