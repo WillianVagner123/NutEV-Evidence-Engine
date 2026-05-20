@@ -9,6 +9,10 @@ def test_food_based_guideline_and_nutrition_literacy_score_above_editorial():
     assert score_watch_item({"title": "food-based dietary guideline for nutrition literacy and meal planning", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "editorial note on laboratory methods", "relevance_score": 1})
 
 
+def test_teaching_kitchen_and_culinary_nutrition_score_above_generic_note():
+    assert score_watch_item({"title": "teaching kitchen and culinary nutrition intervention for food literacy", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
+
+
 def test_masld_and_dyslipidaemia_terms_score_above_generic_note():
     assert score_watch_item({"title": "metabolic dysfunction-associated steatotic liver disease and dyslipidaemia guideline", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
 
