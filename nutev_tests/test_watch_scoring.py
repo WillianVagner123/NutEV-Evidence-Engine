@@ -120,3 +120,11 @@ def test_snippet_only_editorial_signal_reduces_priority():
             "snippet": "Editorial commentary on lifestyle medicine",
         }
     ) < _score_watch_item({"title": "Lifestyle medicine update"})
+
+
+def test_mash_and_nonalcoholic_fatty_liver_disease_signals_improve_priority():
+    assert _score_watch_item(
+        {
+            "title": "Medical nutrition therapy for MASH and nonalcoholic fatty liver disease",
+        }
+    ) > _score_watch_item({"title": "Medical nutrition therapy note"})
