@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from functools import lru_cache
 import hashlib
 import json
 import re
@@ -141,9 +142,20 @@ _PRIORITY_TERMS = [
     "barrier",
     "facilitator",
     "commensality",
+    "comensalidade",
     "meal planning",
     "behavior change",
     "self-efficacy",
+    "food is medicine",
+    "food as medicine",
+    "produce prescription",
+    "produce prescriptions",
+    "medically tailored meal",
+    "medically tailored meals",
+    "culinary nutrition",
+    "teaching kitchen",
+    "food environment",
+    "nutrition security",
 ]
 
 _A1_PROXY_TIERS = {"a1_proxy_high", "a1_proxy_moderate"}
@@ -191,6 +203,15 @@ def _normalize_url(value: object) -> str:
 def _normalize_title(value: object) -> str:
     text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
     return _NON_ALNUM_RE.sub(" ", text).strip()
+
+
+@lru_cache(maxsize=1)
+def _normalized_priority_terms() -> tuple[str, ...]:
+    return tuple(
+        normalized
+        for normalized in (_normalize_title(term) for term in _PRIORITY_TERMS)
+        if normalized
+    )
 
 
 def _normalize_year(value: object) -> str:
@@ -253,18 +274,20 @@ def _is_prioritized(row: dict) -> bool:
         score = float(row.get("relevance_score") or row.get("score") or 0)
     except Exception:
         score = 0.0
-    text = " ".join(
-        [
-            _as_text(row.get("title")),
-            _as_text(row.get("evidence_type")),
-            _as_text(row.get("domains")),
-            _as_text(row.get("outcomes")),
-            _as_text(row.get("diet_patterns")),
-            _as_text(row.get("clinical_conditions")),
-            _as_text(row.get("main_terms")),
-        ]
-    ).lower()
-    return score >= 8 and any(term in text for term in _PRIORITY_TERMS)
+    text = _normalize_title(
+        " ".join(
+            [
+                _as_text(row.get("title")),
+                _as_text(row.get("evidence_type")),
+                _as_text(row.get("domains")),
+                _as_text(row.get("outcomes")),
+                _as_text(row.get("diet_patterns")),
+                _as_text(row.get("clinical_conditions")),
+                _as_text(row.get("main_terms")),
+            ]
+        )
+    )
+    return score >= 8 and any(term in text for term in _normalized_priority_terms())
 
 
 def _curate_row(row: dict) -> dict:
