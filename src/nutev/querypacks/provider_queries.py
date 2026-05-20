@@ -21,6 +21,19 @@ BUSCA2A_GUIDANCE_TERMS = [
     "clinical decision pathway",
     "decision pathway",
 ]
+BEHAVIOR_PRIORITY_TERMS = [
+    "implementation science",
+    "implementation research",
+    "implementation fidelity",
+    "implementation determinant",
+    "implementation determinants",
+    "shared decision making",
+    "motivational interviewing",
+    "behavior change technique",
+    "self-management support",
+    "dietary adherence",
+    "treatment adherence",
+]
 
 PUBMED_MESH_MAP = {
     "obesity": "Obesity",
@@ -191,6 +204,12 @@ def _augment_with_semantic_blocks(
         for item in prioritized_semantic_blocks(workstream)
     ]
     focus_terms = enriched.get("focus_terms", [])
+    behavior_seed_terms = enriched.get("behavior_terms", [])
+    behavior_priority_terms = [
+        term
+        for term in BEHAVIOR_PRIORITY_TERMS
+        if term in broad_terms or term in behavior_seed_terms
+    ]
 
     if canonical_workstream(workstream) == "busca2a":
         # Keep high-value guidance labels near the front so provider-level query
@@ -203,7 +222,9 @@ def _augment_with_semantic_blocks(
         )
 
     enriched["web_hints"] = uniq(enriched.get("web_hints", []) + high_priority_terms)
-    enriched["behavior_terms"] = uniq(enriched.get("behavior_terms", []) + broad_terms)
+    enriched["behavior_terms"] = uniq(
+        behavior_priority_terms + behavior_seed_terms + broad_terms
+    )
     enriched["focus_terms"] = uniq(focus_terms + broad_terms)
     enriched["doc_type_terms"] = uniq(
         enriched.get("doc_type_terms", []) + semantic_doc_terms
