@@ -212,8 +212,6 @@ def _augment_with_semantic_blocks(
     ]
 
     if canonical_workstream(workstream) == "busca2a":
-        # Keep high-value guidance labels near the front so provider-level query
-        # caps do not crowd out cardiometabolic society documents.
         enriched["doc_type_terms"] = uniq(
             BUSCA2A_GUIDANCE_TERMS + enriched.get("doc_type_terms", [])
         )
@@ -230,8 +228,6 @@ def _augment_with_semantic_blocks(
         enriched.get("doc_type_terms", []) + semantic_doc_terms
     )
     if canonical_workstream(workstream) in LIVER_FOCUSED_WORKSTREAMS:
-        # Keep MASLD/NAFLD guideline and intervention evidence visible even
-        # when broader cardiometabolic condition lists are capped for query size.
         enriched["condition_terms"] = uniq(
             enriched.get("condition_terms", []) + CARDIOMETABOLIC_LIVER_TERMS
         )
@@ -241,8 +237,6 @@ def _augment_with_semantic_blocks(
         enriched["web_hints"] = uniq(
             enriched.get("web_hints", []) + CARDIOMETABOLIC_LIVER_HINTS
         )
-    # Put workstream focus terms first so provider query caps do not crowd out
-    # clinically important, NutMEV-specific expansions.
     enriched["semantic_terms"] = uniq(focus_terms + broad_terms)
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
@@ -270,6 +264,17 @@ def _secondary_behavior_chunks(
     if len(behavior_terms) <= primary_limit:
         return []
     return chunk_terms(behavior_terms[primary_limit:], 4)[:4]
+
+
+def _secondary_doc_type_chunks(
+    components: dict[str, list[str]],
+    *,
+    primary_limit: int = 6,
+) -> list[list[str]]:
+    doc_type_terms = uniq(components.get("doc_type_terms", []))
+    if len(doc_type_terms) <= primary_limit:
+        return []
+    return chunk_terms(doc_type_terms[primary_limit:], 4)[:4]
 
 
 def _render_overflow_condition_queries(
@@ -327,6 +332,34 @@ def _render_behavior_overflow_queries(
     return uniq([query for query in queries if query])
 
 
+def _render_doc_type_overflow_queries(
+    components: dict[str, list[str]],
+    provider: str,
+) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    queries: list[str] = []
+    for extra_doc_types in _secondary_doc_type_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_doc_types, provider, 4),
+                    _provider_or_block(condition_terms, provider, 6),
+                    _provider_or_block(components["priority_outcomes"], provider, 4),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_doc_types, provider, 4),
+                    _provider_or_block(components["web_hints"], provider, 4),
+                    _provider_or_block(components["nutrition_terms"], provider, 4),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
+
+
 def _render_pubmed_overflow_condition_queries(
     components: dict[str, list[str]],
 ) -> list[str]:
@@ -374,6 +407,33 @@ def _render_pubmed_behavior_overflow_queries(
                     _provider_or_block(extra_behavior, "pubmed", 4),
                     _provider_or_block(condition_terms, "pubmed", 6),
                     _pubmed_document_clause(components["doc_type_terms"]),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
+
+
+def _render_pubmed_doc_type_overflow_queries(
+    components: dict[str, list[str]],
+) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    queries: list[str] = []
+    for extra_doc_types in _secondary_doc_type_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _pubmed_document_clause(extra_doc_types),
+                    _provider_or_block(condition_terms, "pubmed", 6),
+                    _provider_or_block(components["priority_outcomes"], "pubmed", 4),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _pubmed_document_clause(extra_doc_types),
+                    _provider_or_block(components["web_hints"], "pubmed", 4),
+                    _provider_or_block(components["nutrition_terms"], "pubmed", 4),
                 ]
             )
         )
@@ -436,6 +496,7 @@ def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
         [query for query in queries if query]
         + _render_pubmed_overflow_condition_queries(components)
         + _render_pubmed_behavior_overflow_queries(components)
+        + _render_pubmed_doc_type_overflow_queries(components)
     )
 
 
@@ -483,6 +544,7 @@ def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
         [query for query in queries if query]
         + _render_overflow_condition_queries(components, "europepmc")
         + _render_behavior_overflow_queries(components, "europepmc")
+        + _render_doc_type_overflow_queries(components, "europepmc")
     )
 
 
@@ -523,6 +585,7 @@ def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
         [query for query in queries if query]
         + _render_overflow_condition_queries(components, "openalex")
         + _render_behavior_overflow_queries(components, "openalex")
+        + _render_doc_type_overflow_queries(components, "openalex")
     )
 
 
@@ -563,6 +626,7 @@ def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
         [query for query in queries if query]
         + _render_overflow_condition_queries(components, "crossref")
         + _render_behavior_overflow_queries(components, "crossref")
+        + _render_doc_type_overflow_queries(components, "crossref")
     )
 
 
@@ -602,9 +666,6 @@ def build_provider_querypack(
                 workstream,
                 provider,
             )
-        # Keep the requested workstream key in the querypack. Query rendering
-        # already resolves aliases internally, and preserving the input name
-        # avoids duplicate audit rows for alias/canonical pairs.
         provider_querypack[workstream] = workstream_pack
     return provider_querypack
 
