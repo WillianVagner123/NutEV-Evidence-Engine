@@ -47,7 +47,20 @@
     "mafld": 2,
     "lifestyle intervention": 2,
     "lifestyle modification": 2,
-    "therapeutic lifestyle changes": 3
+    "therapeutic lifestyle changes": 3,
+    "hyperlipidemia": 2,
+    "hyperlipidaemia": 2,
+    "hypercholesterolemia": 2,
+    "hypercholesterolaemia": 2,
+    "hypertriglyceridemia": 2,
+    "hypertriglyceridaemia": 2,
+    "atherogenic dyslipidemia": 2,
+    "atherogenic dyslipidaemia": 2,
+    "remnant cholesterol": 2,
+    "triglyceride-rich lipoprotein": 2,
+    "triglyceride rich lipoprotein": 2,
+    "apo b": 2,
+    "apolipoprotein b": 2
   },
   "source_points": {
     "official": 4,
