@@ -16,7 +16,16 @@ def _sample_taxonomy() -> dict:
     return {
         "global": {
             "document_types": {
-                "guidelines": ["guideline", "clinical practice guideline"],
+                "guidelines": [
+                    "guideline",
+                    "clinical practice guideline",
+                    "practice guidance",
+                    "guidance statement",
+                    "joint statement",
+                    "living guideline",
+                    "position paper",
+                    "scientific statement",
+                ],
                 "reviews": ["systematic review"],
             },
             "implementation_behavior": {
@@ -122,3 +131,11 @@ def test_provider_querypack_audit_files_are_written(tmp_path: Path):
     assert csv_path.exists()
     assert "semantic_blocks" in csv_path.read_text(encoding="utf-8")
     assert "food_literacy_agency:5" in csv_path.read_text(encoding="utf-8")
+
+
+def test_doc_type_overflow_keeps_late_guideline_labels_visible():
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca1", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"living guideline"[Title/Abstract]' in joined
+    assert '"position paper"[Publication Type]' in joined or '"position paper"[Title/Abstract]' in joined
