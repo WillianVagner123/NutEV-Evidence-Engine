@@ -32,3 +32,12 @@ def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -
     assert "mediterranean dietary pattern" in rendered
     assert "dietary approaches to stop hypertension" in rendered
     assert "planetary health diet" in rendered
+
+
+def test_evidence_synthesis_document_terms_add_statement_and_advisory_variants() -> None:
+    rendered = " ".join(
+        semantic_terms("busca2b", field="document_terms", min_priority=4)
+    ).lower()
+
+    assert "position statement" in rendered
+    assert "practice advisory" in rendered
