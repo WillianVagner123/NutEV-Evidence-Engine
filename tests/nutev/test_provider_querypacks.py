@@ -83,6 +83,14 @@ def test_provider_queries_include_semantic_research_blocks():
     assert "dietary adherence" in joined
 
 
+def test_provider_queries_surface_balanced_semantic_seeds_before_caps():
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert "lifestyle medicine" in joined
+    assert "food literacy" in joined
+
+
 def test_semantic_blocks_are_prioritized_by_workstream():
     busca1_blocks = semantic_block_names("busca1")
     busca2b_terms = semantic_terms("busca2b", min_priority=5)
