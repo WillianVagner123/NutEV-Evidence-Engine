@@ -34,6 +34,20 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
         ],
     },
     "busca2a": {
+        "condition_terms": [
+            "dyslipidaemia",
+            "hyperlipidemia",
+            "hyperlipidaemia",
+            "hypercholesterolemia",
+            "hypercholesterolaemia",
+            "lipid disorder",
+            "lipid disorders",
+            "atherogenic dyslipidemia",
+            "atherogenic dyslipidaemia",
+            "metabolic dysfunction-associated steatotic liver disease",
+            "metabolic dysfunction associated steatotic liver disease",
+            "steatotic liver disease",
+        ],
         "focus_terms": [
             "medical nutrition therapy",
             "therapeutic lifestyle changes",
@@ -46,6 +60,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "glycemic control",
             "blood pressure",
             "fatty liver",
+            "lipid management",
+            "cholesterol management",
         ],
         "web_hints": [
             "clinical practice guideline",
@@ -53,6 +69,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "scientific statement",
             "obesity guideline",
             "cardiometabolic guideline",
+            "dyslipidemia guideline",
+            "lipid management guideline",
         ],
         "document_terms": [
             "consensus statement",
@@ -61,6 +79,20 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
         ],
     },
     "busca2b": {
+        "condition_terms": [
+            "dyslipidaemia",
+            "hyperlipidemia",
+            "hyperlipidaemia",
+            "hypercholesterolemia",
+            "hypercholesterolaemia",
+            "lipid disorder",
+            "lipid disorders",
+            "atherogenic dyslipidemia",
+            "atherogenic dyslipidaemia",
+            "metabolic dysfunction-associated steatotic liver disease",
+            "metabolic dysfunction associated steatotic liver disease",
+            "steatotic liver disease",
+        ],
         "focus_terms": [
             "medical nutrition therapy",
             "therapeutic lifestyle changes",
@@ -80,6 +112,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "intermittent fasting",
             "diabetes prevention program",
             "weight maintenance",
+            "lipid management",
+            "cholesterol management",
         ],
         "web_hints": [
             "randomized trial",
@@ -87,6 +121,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "implementation study",
             "adherence intervention",
             "behavior change trial",
+            "dyslipidemia trial",
+            "lipid lowering trial",
         ],
         "document_terms": [
             "randomized trial",
@@ -252,11 +288,13 @@ def build_structured_components(
     enhancements = WORKSTREAM_QUERY_ENHANCEMENTS.get(ws_key, {})
 
     population_terms = uniq(ws.get("population_terms", []))
-    condition_terms = uniq(ws.get("condition_terms", []))
+    condition_terms = uniq(
+        ws.get("condition_terms", []) + enhancements.get("condition_terms", [])
+    )
     clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
-    priority_outcomes = get_named_terms(
-        outcomes_cfg,
-        ws.get("priority_outcomes", []),
+    priority_outcomes = uniq(
+        get_named_terms(outcomes_cfg, ws.get("priority_outcomes", []))
+        + enhancements.get("priority_outcomes", [])
     )
     doc_type_terms = get_named_terms(
         global_cfg.get("document_types", {}),
