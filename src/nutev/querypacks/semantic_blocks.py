@@ -244,9 +244,6 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "joint guideline",
             "clinical decision pathway",
             "decision pathway",
-            "practice guidance",
-            "guidance statement",
-            "joint statement",
         ],
     },
     "lifestyle_nutrition_patterns": {
