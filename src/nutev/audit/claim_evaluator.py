@@ -5,21 +5,6 @@ from nutev.audit.models import ClaimEvaluation, EvidenceClaim
 
 
 GUIDELINE_HINTS = {"guideline", "official", "clinical_society", "clinical"}
-QUALITY_TIER = {
-    "official_guideline": "normative_high",
-    "clinical_guideline": "normative_high",
-    "consensus_statement": "normative_high",
-    "position_statement": "normative_high",
-    "scientific_statement": "normative_high",
-    "systematic_review": "research_high",
-    "umbrella_review": "research_high",
-    "randomized_trial": "research_moderate",
-    "implementation_study": "research_moderate",
-    "grey_literature": "contextual",
-    "extracted_quote": "not_assessed",
-    "computational_inference": "inference_only",
-    "human_annotation": "not_assessed",
-}
 
 
 def _eval_id(claim_id: str) -> str:
@@ -45,9 +30,6 @@ def evaluate_claim(claim: EvidenceClaim, audit_rules: dict) -> ClaimEvaluation:
     if any(h in (claim.source_type or "").lower() for h in GUIDELINE_HINTS):
         pos = min(1.0, pos + 0.2)
 
-    tier = QUALITY_TIER.get(claim.evidence_type, "not_assessed")
-    if tier == "inference_only":
-        decision = "needs_human_review"
     return ClaimEvaluation(
         evaluation_id=_eval_id(claim.claim_id),
         claim_id=claim.claim_id,
@@ -58,8 +40,6 @@ def evaluate_claim(claim: EvidenceClaim, audit_rules: dict) -> ClaimEvaluation:
         positive_support=pos,
         negative_support=neg,
         uncertainty=unc,
-        evidence_quality_tier=tier,
-        evidence_quality_note=f"Tier mapped from evidence_type={claim.evidence_type}.",
     )
 
 

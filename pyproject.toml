@@ -106,13 +106,6 @@ dashboard = [
     "pandas",
     "openpyxl",
 ]
-platform = [
-    "fastapi",
-    "uvicorn",
-    "pandas",
-    "openpyxl",
-    "jinja2",
-]
 
 [project.urls]
 "Homepage" = "https://github.com/WillianVagner123/NUT-MEV_NEW"

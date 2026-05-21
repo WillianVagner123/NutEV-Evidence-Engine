@@ -58,13 +58,6 @@ Saídas integradas:
 - `NUTEV_GLOBAL_EVIDENCE_MATRIX.xlsx`
 - `NUTEV_PROTOCOL_TRANSLATION_MATRIX.xlsx`
 
-## Auditoria, rastreabilidade e controle de inferências
-“A etapa de auditoria foi planejada para reduzir o risco de inferências não rastreáveis. Cada recomendação candidata do Protocolo NutEV deverá estar vinculada a um ou mais EvidenceClaims, e cada EvidenceClaim deverá estar vinculado a um documento identificado no Metadata Master. A pré-codificação computacional será utilizada para organização e geração de candidatos à síntese, mas não substituirá a triagem, interpretação e validação por revisores humanos. Recomendações sem claims documentais suficientes serão classificadas como draft_needs_evidence ou insufficient_evidence, e não como diretrizes finais.”
-
-“Claims classificados como inference_only não poderão sustentar recomendações finais sem validação humana.”
-
-“Conflitos entre documentos ou recomendações serão preservados em matriz específica de evidências conflitantes, sem exclusão automática.”
-
 {_provider_section(workstream, provider_querypack)}## auditoria da busca
 As queries efetivamente executadas ficam registradas em `07_logs/querypack_executed.json`, `07_logs/querypack_executed.csv`, `07_logs/provider_querypack_executed.json` e `07_logs/provider_querypack_executed.csv`.
 

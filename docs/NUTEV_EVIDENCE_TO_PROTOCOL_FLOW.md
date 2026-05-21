@@ -32,12 +32,3 @@ No `project_output/02_metadata`:
 ```bash
 PYTHONPATH=src python -m pytest -q tests/nutev/test_pipeline_audit_integration.py
 ```
-
-## Revisão humana e decisão final
-Use `human_review_decisions.csv` para registrar decisões de revisores. Sem `final_decision=approved`, não há aprovação final.
-
-## Pilot report
-Após execução do piloto, gere:
-```bash
-nutev pilot-report --project-root ./project_output_pilot
-```

@@ -90,7 +90,6 @@ class ClaimEvaluation(BaseModel):
     positive_support: float | None = None
     negative_support: float | None = None
     uncertainty: float | None = None
-    evidence_quality_tier: str = "not_assessed"
     evidence_quality_note: str | None = None
     reason: str
     decision: Decision

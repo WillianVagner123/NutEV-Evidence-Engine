@@ -55,9 +55,3 @@ curl http://127.0.0.1:8000/api/claims
 
 ## Uso na qualificação
 Use demo-data + API + Control Center para demonstrar fluxo reprodutível sem usar dados científicos reais como base de conclusão.
-
-## Integração com piloto real
-```bash
-nutev --project-root ./project_output_pilot --workstreams busca1 busca2a busca2b a3 --web-enabled
-nutev pilot-report --project-root ./project_output_pilot
-```
