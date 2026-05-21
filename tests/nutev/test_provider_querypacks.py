@@ -139,6 +139,9 @@ def test_doc_type_overflow_keeps_late_guideline_labels_visible():
 
     assert '"living guideline"[Title/Abstract]' in joined
     assert '"position paper"[Publication Type]' in joined or '"position paper"[Title/Abstract]' in joined
+    assert '"dietary guidance"[Title/Abstract]' in joined
+    assert '"nutrition guideline"[Title/Abstract]' in joined
+    assert '"food guide"[Title/Abstract]' in joined
 
 
 def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
