@@ -1,6 +1,31 @@
 # NutEV/NutMEV
 
 A documentação operacional foi consolidada no `README.md` principal.
+Documentação metodológica de auditoria: `docs/NUTEV_AUDIT_ENGINE.md`.
+Fluxo evidência→protocolo para qualificação: `docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md`.
+Control Center: `docs/NUTEV_CONTROL_CENTER.md`.
+
+## NutEV Control Center
+
+```bash
+pip install -e ".[dashboard]"
+nutev dashboard --project-root ./project_output --port 8501
+```
+
+## Demo para qualificação
+
+```bash
+pip install -e ".[dashboard]"
+nutev demo-data --project-root ./project_output_demo
+nutev dashboard --project-root ./project_output_demo --port 8501
+```
+
+Dados demo são simulados e servem apenas para visualização e teste do pipeline, não para síntese científica real.
+
+## Revisão humana
+
+As decisões ficam em `project_output/07_logs/human_review_decisions.csv`.
+Nenhuma recomendação vira final sem revisão humana explícita e vínculo documental.
 
 ## Requisitos rápidos
 

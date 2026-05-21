@@ -1,0 +1,26 @@
+{
+  "version": "2026-05-nutev-recommendation-rules-v1",
+  "protocol_components": [
+    "diretrizes_dieteticas",
+    "piramide_nutev",
+    "competencias_alimentares",
+    "menus_modelo",
+    "adesao_implementacao",
+    "nutricao_contingencial",
+    "modificadores_clinicos"
+  ],
+  "recommendation_generation_policy": {
+    "allow_computational_candidates": true,
+    "allow_final_recommendations": false,
+    "human_validation_required": true,
+    "must_link_evidence_claims": true
+  },
+  "strength_placeholder_values": [
+    "strong_convergence",
+    "moderate_convergence",
+    "limited_evidence",
+    "conflicting_evidence",
+    "insufficient_evidence",
+    "not_assessed"
+  ]
+}
