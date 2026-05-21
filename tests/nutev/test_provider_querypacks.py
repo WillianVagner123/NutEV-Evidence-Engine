@@ -141,6 +141,13 @@ def test_doc_type_overflow_keeps_late_guideline_labels_visible():
     assert '"position paper"[Publication Type]' in joined or '"position paper"[Title/Abstract]' in joined
 
 
+def test_semantic_overflow_keeps_late_focus_terms_visible_in_pubmed_queries() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"dietitian-led intervention"[Title/Abstract]' in joined
+
+
 def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
     taxonomy = {
         "global": {
