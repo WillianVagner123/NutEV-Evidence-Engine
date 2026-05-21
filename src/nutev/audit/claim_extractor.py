@@ -50,18 +50,22 @@ def detect_claim_protocol_components(sentence: str, ontology_or_rules: dict) -> 
     return sorted(set(out))
 
 
-def extract_candidate_claims_from_field(record: dict, field_name: str, ontology: dict | None, audit_rules: dict) -> list[EvidenceClaim]:
-    field_text = str(record.get(field_name, "") or "").strip()
-    if not field_text:
+def extract_candidate_claims_from_record(record: dict, ontology: dict | None, audit_rules: dict) -> list[EvidenceClaim]:
+    text = " ".join(str(record.get(k, "") or "") for k in ("title", "abstract", "extracted_text")).strip()
+    if not text:
         return []
-    out: list[EvidenceClaim] = []
-    for sentence in split_text_into_candidate_sentences(field_text):
+    claims: list[EvidenceClaim] = []
+    for sentence in split_text_into_candidate_sentences(text):
         norm = normalize_claim_text(sentence)
         domains = detect_claim_domains(norm, ontology or {})
         has_recommend = any(t in norm.lower() for t in RECOMMEND_TERMS)
         if not domains and not has_recommend:
             continue
-        out.append(EvidenceClaim(
+        claim_status = "supported" if sentence in (record.get("extracted_text") or "") else "inference_only"
+        exact_quote = sentence if claim_status == "supported" else None
+        if not exact_quote and claim_status != "inference_only":
+            claim_status = "needs_human_review"
+        claims.append(EvidenceClaim(
             claim_id=build_claim_id(str(record.get("document_id", "unknown")), norm),
             document_id=str(record.get("document_id", "")).strip(),
             run_id=record.get("run_id"),
@@ -73,31 +77,17 @@ def extract_candidate_claims_from_field(record: dict, field_name: str, ontology:
             country=record.get("country"),
             year=record.get("year"),
             claim_text=norm,
-            exact_quote=sentence,
-            quote_location=field_name,
-            evidence_type=record.get("evidence_type", "extracted_quote"),
+            exact_quote=exact_quote,
+            quote_location="extracted_text" if exact_quote else None,
+            evidence_type="extracted_quote" if exact_quote else "computational_inference",
             nutev_domains=domains,
             clinical_conditions=record.get("clinical_conditions", []),
             dietary_patterns=record.get("diet_patterns", []),
             outcomes=record.get("outcomes", []),
             protocol_components=detect_claim_protocol_components(norm, ontology or {}),
             evidence_lenses=record.get("evidence_lenses", []),
-            computational_confidence=0.7,
-            claim_status="supported",
-            needs_human_review=False,
+            computational_confidence=0.7 if exact_quote else 0.4,
+            claim_status=claim_status,
+            needs_human_review=claim_status != "supported",
         ))
-    return out
-
-
-def extract_candidate_claims_from_record(record: dict, ontology: dict | None, audit_rules: dict) -> list[EvidenceClaim]:
-    claims: list[EvidenceClaim] = []
-    for field_name in ["title", "abstract", "extracted_text"]:
-        claims.extend(extract_candidate_claims_from_field(record, field_name, ontology, audit_rules))
-    dedup: dict[str, EvidenceClaim] = {}
-    for c in claims:
-        key = f"{c.document_id}|{normalize_claim_text(c.claim_text).lower()}"
-        if key not in dedup:
-            dedup[key] = c
-    if dedup:
-        return list(dedup.values())
-    return []
+    return claims

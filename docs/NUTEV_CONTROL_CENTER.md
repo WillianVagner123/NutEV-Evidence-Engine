@@ -38,14 +38,3 @@ Sem persistência de edição no backend nesta versão.
 
 ## Evitar interpretações indevidas
 O painel não gera recomendações novas e não substitui validação humana.
-
-## Demo para qualificação
-```bash
-nutev demo-data --project-root ./project_output_demo
-nutev dashboard --project-root ./project_output_demo --port 8501
-```
-Dados demo são simulados e não devem ser usados como evidência científica real.
-
-## Revisão humana
-O painel lê e registra decisões em `07_logs/human_review_decisions.csv` sem sobrescrever histórico.
-A aprovação final depende de revisão humana explícita e vínculo documental.

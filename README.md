@@ -12,21 +12,6 @@ pip install -e ".[dashboard]"
 nutev dashboard --project-root ./project_output --port 8501
 ```
 
-## Demo para qualificação
-
-```bash
-pip install -e ".[dashboard]"
-nutev demo-data --project-root ./project_output_demo
-nutev dashboard --project-root ./project_output_demo --port 8501
-```
-
-Dados demo são simulados e servem apenas para visualização e teste do pipeline, não para síntese científica real.
-
-## Revisão humana
-
-As decisões ficam em `project_output/07_logs/human_review_decisions.csv`.
-Nenhuma recomendação vira final sem revisão humana explícita e vínculo documental.
-
 ## Requisitos rápidos
 
 - Python 3.12 ou superior (`pyproject.toml`: `>=3.12,<3.15`)

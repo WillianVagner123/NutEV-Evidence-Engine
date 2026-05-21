@@ -6,15 +6,13 @@ import os
 import pandas as pd
 import streamlit as st
 
-from nutev.ui.loaders import calculate_overview_metrics, load_and_merge_human_review_queue, load_csv, load_json_file, load_jsonl, load_xlsx_or_csv
-from nutev.review.human_review import append_human_review_decision
+from nutev.ui.loaders import calculate_overview_metrics, load_csv, load_json_file, load_jsonl, load_xlsx_or_csv
 
 
 def run_dashboard(project_root: Path) -> None:
     st.set_page_config(page_title='NutEV Control Center', layout='wide')
     st.title('NutEV Control Center')
     st.warning('Este painel é uma ferramenta de auditoria e monitoramento. Ele não substitui triagem, interpretação e validação humana.')
-    st.warning('A aprovação final depende de revisão humana explícita e vínculo documental.')
 
     metadata, _ = load_csv(project_root / '02_metadata' / 'metadata_master.csv')
     claims, _ = load_csv(project_root / '02_metadata' / 'NUTEV_EVIDENCE_CLAIMS.csv')
@@ -68,31 +66,10 @@ def run_dashboard(project_root: Path) -> None:
         if not recs.empty:
             add_r = recs[recs.get('recommendation_status', pd.Series(dtype=str)).astype(str).isin(['insufficient_evidence','conflicting_evidence'])]
             q = pd.concat([q, add_r], ignore_index=True) if not add_r.empty else q
-        q, decisions_df = load_and_merge_human_review_queue(project_root, q)
         if q.empty: st.warning('not available yet')
         else:
             st.dataframe(q, use_container_width=True)
             st.download_button('Download Human Review Queue CSV', q.to_csv(index=False).encode('utf-8'), file_name='NUTEV_HUMAN_REVIEW_QUEUE.csv')
-            st.download_button('Download Human Review Template CSV', pd.DataFrame([{
-                'item_type':'claim','item_id':'','reviewer_name':'','reviewer_role':'reviewer_1','reviewer_decision':'needs_more_evidence','reviewer_notes':'','final_decision':'pending'
-            }]).to_csv(index=False).encode('utf-8'), file_name='human_review_template.csv')
-            st.subheader('Decisões humanas registradas')
-            st.dataframe(decisions_df, use_container_width=True)
-            with st.form('human_review_form'):
-                item_type = st.selectbox('item_type', ['claim','recommendation_candidate','conflict','metadata_only_record','unsupported_claim'])
-                item_id = st.text_input('item_id')
-                reviewer_name = st.text_input('reviewer_name')
-                reviewer_role = st.selectbox('reviewer_role', ['principal_investigator','advisor','coadvisor','reviewer_1','reviewer_2','external_reviewer'])
-                reviewer_decision = st.selectbox('reviewer_decision', ['approve','approve_with_revision','reject','needs_more_evidence','needs_second_reviewer','conflict','not_applicable'])
-                reviewer_notes = st.text_area('reviewer_notes')
-                final_decision = st.selectbox('final_decision', ['pending','approved','revised','rejected','insufficient_evidence','conflicting_evidence'])
-                if st.form_submit_button('Registrar decisão'):
-                    append_human_review_decision(project_root, {
-                        'item_type': item_type, 'item_id': item_id, 'reviewer_name': reviewer_name,
-                        'reviewer_role': reviewer_role, 'reviewer_decision': reviewer_decision,
-                        'reviewer_notes': reviewer_notes, 'final_decision': final_decision
-                    })
-                    st.success('Decisão registrada.')
 
     elif page == 'Logs & Run Summary':
         st.subheader('run_summary.json')
