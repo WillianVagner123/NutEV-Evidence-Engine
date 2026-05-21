@@ -57,6 +57,10 @@ def test_evidence_synthesis_semantic_block_adds_guidance_and_pathway_terms() -> 
 def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -> None:
     rendered = " ".join(semantic_terms("busca2b", min_priority=4)).lower()
 
+    assert "intensive lifestyle intervention" in rendered
+    assert "comprehensive lifestyle intervention" in rendered
+    assert "multicomponent lifestyle intervention" in rendered
+    assert "behavioral lifestyle intervention" in rendered
     assert "therapeutic lifestyle changes" in rendered
     assert "mediterranean dietary pattern" in rendered
     assert "dietary approaches to stop hypertension" in rendered
