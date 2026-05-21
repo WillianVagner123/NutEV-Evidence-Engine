@@ -218,6 +218,9 @@ class EvidenceRecord(BaseModel):
     domains: list[str] = Field(default_factory=list)
     outcomes: list[str] = Field(default_factory=list)
     diet_patterns: list[str] = Field(default_factory=list)
+    evidence_lenses: list[str] = Field(default_factory=list)
+    ontology_version: str | None = None
+    classifier_version: str = "nutev_classifier_v1"
     clinical_conditions: list[str] = Field(default_factory=list)
 
     @field_validator("doi", mode="before")
