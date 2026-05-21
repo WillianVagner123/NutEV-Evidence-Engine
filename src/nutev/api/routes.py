@@ -7,13 +7,6 @@ from fastapi.responses import HTMLResponse
 
 from nutev.api.loaders import filter_df, list_artifacts, paginate_df, read_csv_safe, read_json_safe, read_markdown_safe, read_xlsx_safe
 from nutev.review.human_review import append_human_review_decision, load_human_review_decisions, merge_human_review_decisions
-from nutev.provider_settings import (
-    load_provider_registry,
-    load_provider_settings,
-    masked_provider_settings,
-    resolve_provider_secret,
-    save_provider_settings,
-)
 
 
 def build_router(project_root: Path) -> APIRouter:
@@ -87,57 +80,5 @@ def build_router(project_root: Path) -> APIRouter:
         if not text:
             return {"available": False, "message": "Methods document not generated yet."}
         return {"available": True, "markdown": text}
-
-    @r.get("/api/providers")
-    def providers():
-        reg = load_provider_registry(Path("config"))
-        return {"available": True, "items": reg.get("providers", [])}
-
-    @r.get("/api/provider-settings")
-    def provider_settings():
-        return {"available": True, **masked_provider_settings(project_root)}
-
-    @r.post("/api/provider-settings")
-    def provider_settings_post(payload: dict):
-        save_provider_settings(project_root, payload)
-        return {"available": True, **masked_provider_settings(project_root)}
-
-    @r.post("/api/provider-settings/test")
-    def provider_settings_test(payload: dict):
-        provider_id = str(payload.get("provider_id", ""))
-        settings = load_provider_settings(project_root).get("providers", {}).get(provider_id, {})
-        if not settings.get("enabled", False):
-            return {"provider_id": provider_id, "status": "disabled", "message": "Provider disabled", "checked_at": __import__("datetime").datetime.now().isoformat()}
-        env_var = settings.get("env_var", "")
-        secret = resolve_provider_secret(provider_id, env_var, project_root)
-        if provider_id in {"openai", "anthropic", "google_gemini", "openrouter", "brave_search", "serpapi"} and not secret:
-            return {"provider_id": provider_id, "status": "missing_key", "message": "API key missing", "checked_at": __import__("datetime").datetime.now().isoformat()}
-        if provider_id == "ollama":
-            import requests
-            try:
-                base_url = settings.get("base_url", "http://127.0.0.1:11434")
-                resp = requests.get(f"{base_url}/api/tags", timeout=2)
-                if resp.status_code == 200:
-                    return {"provider_id": provider_id, "status": "ok", "message": "Ollama available", "checked_at": __import__("datetime").datetime.now().isoformat()}
-                return {"provider_id": provider_id, "status": "provider_unavailable", "message": f"HTTP {resp.status_code}", "checked_at": __import__("datetime").datetime.now().isoformat()}
-            except Exception:
-                return {"provider_id": provider_id, "status": "provider_unavailable", "message": "Ollama not reachable", "checked_at": __import__("datetime").datetime.now().isoformat()}
-        return {"provider_id": provider_id, "status": "ok", "message": "Provider minimally configured", "checked_at": __import__("datetime").datetime.now().isoformat()}
-
-    @r.get("/api/provider-health")
-    def provider_health():
-        reg = load_provider_registry(Path("config")).get("providers", [])
-        settings = load_provider_settings(project_root).get("providers", {})
-        items = []
-        for p in reg:
-            pid = p.get("provider_id")
-            cfg = settings.get(pid, {})
-            items.append({
-                "provider_id": pid,
-                "enabled": bool(cfg.get("enabled", p.get("default_enabled", False))),
-                "mode": cfg.get("mode", "disabled"),
-                "secret_status": "configured" if resolve_provider_secret(pid, cfg.get("env_var", ""), project_root) else "missing",
-            })
-        return {"available": True, "items": items}
 
     return r

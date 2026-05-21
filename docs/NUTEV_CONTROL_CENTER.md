@@ -38,34 +38,3 @@ Sem persistência de edição no backend nesta versão.
 
 ## Evitar interpretações indevidas
 O painel não gera recomendações novas e não substitui validação humana.
-
-## Demo para qualificação
-```bash
-nutev demo-data --project-root ./project_output_demo
-nutev dashboard --project-root ./project_output_demo --port 8501
-```
-Dados demo são simulados e não devem ser usados como evidência científica real.
-
-## Revisão humana
-O painel lê e registra decisões em `07_logs/human_review_decisions.csv` sem sobrescrever histórico.
-A aprovação final depende de revisão humana explícita e vínculo documental.
-
-## NutEV Platform API local
-- Control Center (Streamlit): dashboard visual.
-- NutEV Platform API (FastAPI): landing page + endpoints de leitura e registro controlado de revisão humana.
-- Ambos leem os mesmos outputs e nenhum aprova recomendações finais automaticamente.
-
-Rodar plataforma local:
-```bash
-pip install -e ".[platform]"
-nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
-```
-
-## Piloto real
-Para revisão visual do piloto real:
-```bash
-nutev dashboard --project-root ./project_output_pilot --port 8501
-```
-
-## Provider Settings
-A página "Provider Settings" permite habilitar/desabilitar provedores, configurar modo/modelo e testar status local sem expor segredos completos.

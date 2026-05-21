@@ -45,7 +45,3 @@ class ArtifactInfo(BaseModel):
     size_bytes: int
     modified_at: str
     artifact_type: str
-
-
-class ProviderTestIn(BaseModel):
-    provider_id: str

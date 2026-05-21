@@ -2,7 +2,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import pandas as pd
-from nutev.review.human_review import load_human_review_decisions, merge_human_review_decisions
 
 def empty_with_warning(warning: str = 'not available yet'):
     return pd.DataFrame(), warning
@@ -48,7 +47,6 @@ def calculate_overview_metrics(run_summary: dict, metadata: pd.DataFrame, claims
             'recommendation_candidates_ready_review': int(run_summary.get('recommendation_candidates_ready_review',0) or 0),
             'recommendation_candidates_insufficient_evidence': int(run_summary.get('recommendation_candidates_insufficient_evidence',0) or 0),
             'conflicting_evidence_total': int(run_summary.get('conflicting_evidence_total',0) or 0),
-            'human_review_decisions_total': int(run_summary.get('human_review_decisions_total',0) or 0),
         }
     return {
         'total_records': int(len(metadata)),
@@ -62,10 +60,4 @@ def calculate_overview_metrics(run_summary: dict, metadata: pd.DataFrame, claims
         'recommendation_candidates_ready_review': int((recs.get('recommendation_status', pd.Series(dtype=str)).astype(str)=='ready_for_human_review').sum()) if not recs.empty else 0,
         'recommendation_candidates_insufficient_evidence': int((recs.get('recommendation_status', pd.Series(dtype=str)).astype(str)=='insufficient_evidence').sum()) if not recs.empty else 0,
         'conflicting_evidence_total': int((claims.get('claim_status', pd.Series(dtype=str)).astype(str)=='conflicting').sum()) if not claims.empty else 0,
-        'human_review_decisions_total': 0,
     }
-
-
-def load_and_merge_human_review_queue(project_root: Path, queue_df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    decisions_df = load_human_review_decisions(project_root)
-    return merge_human_review_decisions(queue_df, decisions_df), decisions_df
