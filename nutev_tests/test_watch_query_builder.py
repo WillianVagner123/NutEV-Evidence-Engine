@@ -336,3 +336,21 @@ def test_exhaustive_mode_food_literacy_queries_cover_labeling_terms() -> None:
     assert "label reading" in rendered
     assert "front-of-pack" in rendered
     assert "front-of-pack labeling" in rendered
+
+
+def test_quick_mode_implementation_queries_cover_process_and_framework_terms() -> None:
+    query = _category_query("implementation_behavior")
+
+    assert "process evaluation" in query
+    assert "implementation barriers" in query
+    assert "implementation facilitators" in query
+    assert "practice facilitation" in query
+    assert "health coaching" in query
+    assert "CFIR" in query
+    assert "RE-AIM" in query
+
+
+def test_quick_mode_implementation_queries_keep_three_seed_buckets() -> None:
+    queries = build_watch_queries(["implementation_behavior"], since_days=7, mode="quick")
+
+    assert len(queries) == 3
