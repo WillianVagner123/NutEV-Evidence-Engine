@@ -321,3 +321,18 @@ def test_selected_categories_preserve_round_robin_order_within_priority() -> Non
         "implementation_behavior",
         "frameworks_instruments",
     ]
+
+
+def test_exhaustive_mode_food_literacy_queries_cover_labeling_terms() -> None:
+    queries = build_watch_queries(
+        ["food_literacy_culinary_commensality"],
+        since_days=7,
+        mode="exhaustive",
+    )
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert len(queries) == 10
+    assert "nutrition label" in rendered
+    assert "label reading" in rendered
+    assert "front-of-pack" in rendered
+    assert "front-of-pack labeling" in rendered
