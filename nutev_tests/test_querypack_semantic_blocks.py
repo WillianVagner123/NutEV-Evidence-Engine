@@ -58,7 +58,7 @@ def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -
     assert "planetary health diet" in rendered
 
 
-def test_food_literacy_semantic_block_adds_culinary_training_terms() -> None:
+def test_food_literacy_semantic_block_adds_culinary_training_and_labeling_terms() -> None:
     rendered = " ".join(semantic_terms("artigo3_framework", min_priority=5)).lower()
 
     assert "culinary nutrition" in rendered
@@ -68,3 +68,7 @@ def test_food_literacy_semantic_block_adds_culinary_training_terms() -> None:
     assert "meal preparation" in rendered
     assert "cooking confidence" in rendered
     assert "nutrition education" in rendered
+    assert "nutrition label" in rendered
+    assert "label reading" in rendered
+    assert "front-of-pack" in rendered
+    assert "front-of-pack labeling" in rendered
