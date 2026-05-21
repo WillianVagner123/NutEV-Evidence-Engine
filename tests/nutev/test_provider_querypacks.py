@@ -178,3 +178,36 @@ def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
     assert '"Dyslipidemias"[MeSH Terms]' in joined
     assert '"Hypercholesterolemia"[MeSH Terms]' in joined
     assert '"Non-alcoholic Fatty Liver Disease"[MeSH Terms]' in joined
+
+
+def test_liver_focused_queries_include_long_form_mash_variant() -> None:
+    taxonomy = {
+        "global": {
+            "document_types": {"guidelines": ["guideline"]},
+            "diet_patterns": {"core": ["mediterranean diet"]},
+            "nutrition_domains": {"core": ["medical nutrition therapy"]},
+            "implementation_behavior": {"adherence": ["adherence"]},
+        },
+        "clinical": {
+            "fatty_liver": ["non-alcoholic fatty liver disease"],
+        },
+        "outcomes": {
+            "lipids": ["cholesterol"],
+        },
+        "workstreams": {
+            "busca2a": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["fatty_liver"],
+                "document_type_keys": ["guidelines"],
+                "priority_outcomes": ["lipids"],
+                "focus_blocks": ["diet_patterns", "implementation_behavior"],
+                "web_query_hints": ["practice guidance"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(taxonomy, "busca2a", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"metabolic dysfunction-associated steatohepatitis"[Title/Abstract]' in joined
