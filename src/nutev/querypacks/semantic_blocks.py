@@ -277,6 +277,10 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
         "terms": [
             "lifestyle medicine",
             "lifestyle intervention",
+            "intensive lifestyle intervention",
+            "comprehensive lifestyle intervention",
+            "multicomponent lifestyle intervention",
+            "behavioral lifestyle intervention",
             "lifestyle modification",
             "therapeutic lifestyle changes",
             "medical nutrition therapy",
