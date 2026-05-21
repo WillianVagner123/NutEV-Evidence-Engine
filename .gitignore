@@ -19,3 +19,6 @@ Thumbs.db
 
 project_output*/
 github_actions_artifacts/
+project_output*/00_settings/
+*.local.json
+provider_settings.local.json

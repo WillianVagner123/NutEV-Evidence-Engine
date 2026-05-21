@@ -1,0 +1,15 @@
+{
+  "providers": [
+    {"provider_id":"openai","label":"OpenAI","provider_type":"llm","env_vars":["OPENAI_API_KEY"],"required":false,"default_enabled":false,"allowed_modes":["disabled","assistive","extraction","synthesis"],"security_note":"LLM cannot approve final recommendations."},
+    {"provider_id":"anthropic","label":"Anthropic","provider_type":"llm","env_vars":["ANTHROPIC_API_KEY"],"required":false,"default_enabled":false,"allowed_modes":["disabled","assistive","extraction","synthesis"],"security_note":"LLM cannot approve final recommendations."},
+    {"provider_id":"google_gemini","label":"Google Gemini","provider_type":"llm","env_vars":["GOOGLE_API_KEY"],"required":false,"default_enabled":false,"allowed_modes":["disabled","assistive","extraction","synthesis"],"security_note":"LLM cannot approve final recommendations."},
+    {"provider_id":"openrouter","label":"OpenRouter","provider_type":"llm","env_vars":["OPENROUTER_API_KEY"],"required":false,"default_enabled":false,"allowed_modes":["disabled","assistive","extraction","synthesis"],"security_note":"LLM cannot approve final recommendations."},
+    {"provider_id":"ollama","label":"Ollama","provider_type":"local_model","env_vars":[],"required":false,"default_enabled":false,"allowed_modes":["disabled","assistive","extraction","synthesis"],"security_note":"Local model is assistive only."},
+    {"provider_id":"brave_search","label":"Brave Search","provider_type":"search","env_vars":["BRAVE_API_KEY"],"required":false,"default_enabled":false,"allowed_modes":["disabled","assistive"],"security_note":"Search provider; no recommendation approval."},
+    {"provider_id":"serpapi","label":"SerpAPI","provider_type":"search","env_vars":["SERPAPI_API_KEY"],"required":false,"default_enabled":false,"allowed_modes":["disabled","assistive"],"security_note":"Search provider; no recommendation approval."},
+    {"provider_id":"ncbi_pubmed","label":"NCBI PubMed","provider_type":"bibliographic","env_vars":["NCBI_API_KEY","NCBI_EMAIL"],"required":false,"default_enabled":true,"allowed_modes":["disabled","assistive","extraction"],"security_note":"Bibliographic provider."},
+    {"provider_id":"crossref","label":"Crossref","provider_type":"bibliographic","env_vars":["CROSSREF_MAILTO"],"required":false,"default_enabled":true,"allowed_modes":["disabled","assistive","extraction"],"security_note":"Bibliographic provider."},
+    {"provider_id":"openalex","label":"OpenAlex","provider_type":"bibliographic","env_vars":["OPENALEX_MAILTO"],"required":false,"default_enabled":true,"allowed_modes":["disabled","assistive","extraction"],"security_note":"Bibliographic provider."},
+    {"provider_id":"europepmc","label":"Europe PMC","provider_type":"official_source","env_vars":[],"required":false,"default_enabled":true,"allowed_modes":["disabled","assistive","extraction"],"security_note":"Official source provider."}
+  ]
+}
