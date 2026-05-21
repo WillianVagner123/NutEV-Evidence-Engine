@@ -178,3 +178,12 @@ def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
     assert '"Dyslipidemias"[MeSH Terms]' in joined
     assert '"Hypercholesterolemia"[MeSH Terms]' in joined
     assert '"Non-alcoholic Fatty Liver Disease"[MeSH Terms]' in joined
+
+
+def test_provider_queries_surface_lifestyle_intervention_variants() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"intensive lifestyle intervention"[Title/Abstract]' in joined
+    assert '"comprehensive lifestyle intervention"[Title/Abstract]' in joined
+    assert '"multicomponent lifestyle intervention"[Title/Abstract]' in joined
