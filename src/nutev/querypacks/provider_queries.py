@@ -21,6 +21,12 @@ BUSCA2A_GUIDANCE_TERMS = [
     "clinical decision pathway",
     "decision pathway",
 ]
+LIFESTYLE_INTERVENTION_PRIORITY_TERMS = [
+    "intensive lifestyle intervention",
+    "comprehensive lifestyle intervention",
+    "multicomponent lifestyle intervention",
+    "behavioral lifestyle intervention",
+]
 BEHAVIOR_PRIORITY_TERMS = [
     "implementation science",
     "implementation research",
@@ -233,6 +239,11 @@ def _augment_with_semantic_blocks(
         for term in BEHAVIOR_PRIORITY_TERMS
         if term in broad_terms or term in behavior_seed_terms
     ]
+    lifestyle_priority_terms = [
+        term
+        for term in LIFESTYLE_INTERVENTION_PRIORITY_TERMS
+        if term in broad_terms or term in focus_terms
+    ]
 
     if canonical_workstream(workstream) == "busca2a":
         enriched["doc_type_terms"] = uniq(
@@ -242,7 +253,9 @@ def _augment_with_semantic_blocks(
             BUSCA2A_GUIDANCE_TERMS + enriched.get("web_hints", [])
         )
 
-    enriched["web_hints"] = uniq(enriched.get("web_hints", []) + high_priority_terms)
+    enriched["web_hints"] = uniq(
+        lifestyle_priority_terms + enriched.get("web_hints", []) + high_priority_terms
+    )
     enriched["behavior_terms"] = uniq(
         behavior_priority_terms + behavior_seed_terms + broad_terms
     )
@@ -260,7 +273,7 @@ def _augment_with_semantic_blocks(
         enriched["web_hints"] = uniq(
             enriched.get("web_hints", []) + CARDIOMETABOLIC_LIVER_HINTS
         )
-    enriched["semantic_terms"] = uniq(focus_terms + broad_terms)
+    enriched["semantic_terms"] = uniq(lifestyle_priority_terms + focus_terms + broad_terms)
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
 
