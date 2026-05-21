@@ -40,7 +40,11 @@ def test_evidence_synthesis_semantic_block_adds_guidance_and_pathway_terms() -> 
     assert "living guideline" in rendered
     assert "standards of care" in rendered
     assert "consensus report" in rendered
+    assert "consensus statement" in rendered
+    assert "expert consensus" in rendered
+    assert "clinical consensus" in rendered
     assert "consensus guidance" in rendered
+    assert "position statement" in rendered
     assert "practice guidance" in rendered
     assert "guidance statement" in rendered
     assert "joint statement" in rendered
