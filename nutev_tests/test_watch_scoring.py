@@ -156,3 +156,14 @@ def test_home_cooking_and_meal_preparation_signals_improve_priority():
             "title": "Home cooking, meal preparation, and nutrition education in obesity care",
         }
     ) > _score_watch_item({"title": "Obesity care note"})
+
+
+def test_implementation_framework_terms_improve_priority():
+    assert _score_watch_item(
+        {
+            "title": (
+                "CFIR and RE-AIM implementation mapping for a hybrid "
+                "effectiveness-implementation lifestyle nutrition trial"
+            ),
+        }
+    ) > _score_watch_item({"title": "Lifestyle nutrition trial"})
