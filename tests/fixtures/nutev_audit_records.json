@@ -1,0 +1,38 @@
+[
+  {
+    "document_id": "doc_001",
+    "title": "Guideline for adults",
+    "source_type": "official_guideline",
+    "source_provider": "official_web",
+    "country": "US",
+    "year": 2025,
+    "workstream": "busca1",
+    "evidence_lenses": ["busca1"],
+    "outcomes": ["cardiometabolic"],
+    "extracted_text": "Adults should reduce ultra-processed foods to lower cardiometabolic risk."
+  },
+  {
+    "document_id": "doc_002",
+    "title": "Implementation report",
+    "source_type": "implementation_study",
+    "source_provider": "pubmed",
+    "country": "BR",
+    "year": 2024,
+    "workstream": "busca2a",
+    "evidence_lenses": ["busca2a"],
+    "outcomes": ["adherence"],
+    "abstract": "Programs encourage adherence in primary care."
+  },
+  {
+    "document_id": "doc_003",
+    "title": "Observational note",
+    "source_type": "grey_literature",
+    "source_provider": "openalex",
+    "country": "UK",
+    "year": 2023,
+    "workstream": "a3",
+    "evidence_lenses": ["a3"],
+    "outcomes": ["cardiometabolic"],
+    "extracted_text": "Higher intake may increase risk in one subgroup while others suggest reduce intake."
+  }
+]

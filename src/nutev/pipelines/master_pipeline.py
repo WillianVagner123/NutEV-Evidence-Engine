@@ -10,6 +10,12 @@ import pandas as pd
 
 from nutev.analysis import domains_busca1, domains_busca2a, domains_busca2b
 from nutev.analysis.article3_framework import build_framework_signals
+from nutev.analysis.nutev_classifier import classify_evidence
+from nutev.audit.audit_export import export_audit_outputs
+from nutev.audit.claim_evaluator import detect_conflicts, evaluate_claims
+from nutev.audit.claim_extractor import extract_candidate_claims_from_record
+from nutev.audit.models import AuditEvent
+from nutev.audit.recommendation_registry import generate_recommendation_candidates
 from nutev.analysis.prisma import build_prisma_flow, export_prisma
 from nutev.analysis.relevance import keep_candidate_for_download, score_record
 from nutev.analysis.synthesis import (
@@ -275,6 +281,11 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     taxonomy = load_json(settings.config_root / "keyword_taxonomy.json")
     scoring = load_json(settings.config_root / "scoring_rules.json")
     sources = load_json(settings.config_root / "official_sources_manifest.json")
+    audit_rules = load_json(settings.config_root / "audit_rules.json")
+    recommendation_rules = load_json(settings.config_root / "recommendation_rules.json")
+    ontology = load_json(settings.config_root / "nutev_ontology.json")
+    evidence_lenses = load_json(settings.config_root / "evidence_lenses.json")
+    source_registry = load_json(settings.config_root / "source_registry.json")
     provider_map = _provider_map()
     providers_declared_by_workstream: dict[str, list[str]] = {}
     providers_executed_by_workstream: dict[str, list[str]] = {}
@@ -437,23 +448,21 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
                     errors="ignore",
                 )
 
+        # Backward-compatible legacy enrichments
         if ws == "busca1":
-            rows = domains_busca1.apply_domain_rules(
-                rows,
-                load_json(settings.config_root / "domain_rules_busca1.json"),
-            )
+            rows = domains_busca1.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca1.json"))
         elif ws == "busca2a":
-            rows = domains_busca2a.apply_domain_rules(
-                rows,
-                load_json(settings.config_root / "domain_rules_busca2a.json"),
-            )
+            rows = domains_busca2a.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2a.json"))
         elif ws == "busca2b":
-            rows = domains_busca2b.apply_domain_rules(
-                rows,
-                load_json(settings.config_root / "domain_rules_busca2b.json"),
-            )
+            rows = domains_busca2b.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2b.json"))
         elif ws in {"a3", "artigo3_framework"}:
             rows = build_framework_signals(rows)
+
+        # New integrated global evidence layer: all records pass through shared classifier/lenses.
+        rows = classify_evidence(rows, ontology, evidence_lenses)
+        for r in rows:
+            r["source_registry_version"] = source_registry.get("version", "")
+            r["ontology_version"] = ontology.get("version", "")
 
         write_analysis_xlsx(rows, settings.output_dirs["06_tables"] / f"analysis_{ws}.xlsx")
         all_rows += rows
@@ -489,6 +498,62 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         settings.output_dirs["08_docs"],
     )
     write_methods_docs(settings.output_dirs["08_docs"], settings.output_dirs["07_logs"])
+
+    global_df = pd.DataFrame(master)
+    if not global_df.empty:
+        lens_cols = [c for c in global_df.columns if c.startswith("lens_") or c in {"workstream", "document_id", "title", "domains", "outcomes", "evidence_lenses", "relevance_score"}]
+        protocol_cols = [c for c in global_df.columns if c.startswith("domain_") or c.startswith("outcome_") or c in {"workstream", "document_id", "title", "evidence_type"}]
+        write_excel_file(
+            global_df[lens_cols].copy(),
+            settings.output_dirs["06_tables"] / "NUTEV_GLOBAL_EVIDENCE_MATRIX.xlsx",
+        )
+        write_excel_file(
+            global_df[protocol_cols].copy(),
+            settings.output_dirs["06_tables"] / "NUTEV_PROTOCOL_TRANSLATION_MATRIX.xlsx",
+        )
+
+    claims = []
+    claim_events: list[AuditEvent] = []
+    for r in all_rows:
+        extracted = extract_candidate_claims_from_record(r, ontology, audit_rules)
+        if not extracted and not (r.get("extracted_text") or r.get("abstract") or r.get("title")):
+            claim_events.append(
+                AuditEvent(
+                    audit_event_id=f"audit_missing_text_{r.get('document_id', '')}",
+                    run_id=run_id,
+                    document_id=r.get("document_id"),
+                    event_stage="claim_extraction",
+                    event_type="needs_human_review",
+                    event_message="insufficient_text_for_claim_extraction",
+                    meta_json={"failure_reason": "insufficient_text_for_claim_extraction"},
+                )
+            )
+        claims.extend(extracted)
+    evaluations = evaluate_claims(claims, audit_rules)
+    conflicts = detect_conflicts(claims)
+    recommendations = generate_recommendation_candidates(claims, evaluations, recommendation_rules)
+    claim_events.extend(
+        AuditEvent(
+            audit_event_id=f"audit_claim_{c.claim_id}",
+            run_id=run_id,
+            document_id=c.document_id,
+            claim_id=c.claim_id,
+            event_stage="claim_evaluation",
+            event_type="created",
+            event_message=f"claim_status={c.claim_status}",
+            meta_json={},
+        )
+        for c in claims
+    )
+    export_audit_outputs(
+        claims,
+        evaluations,
+        recommendations,
+        claim_events,
+        conflicts,
+        settings.output_dirs["06_tables"],
+        settings.output_dirs["02_metadata"],
+    )
 
     prisma = build_prisma_flow(master, all_manifest, extraction_manifest)
     export_prisma(
@@ -558,6 +623,13 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "downloads_failed": total_failed,
         "ocr_docs": total_ocr,
         "curated_unique_documents": curation_summary["unique_documents"],
+        "evidence_claims_total": len(claims),
+        "evidence_claims_supported": sum(1 for c in claims if c.claim_status == "supported"),
+        "evidence_claims_needs_review": sum(1 for c in claims if c.needs_human_review),
+        "recommendation_candidates_total": len(recommendations),
+        "recommendation_candidates_ready_review": sum(1 for r in recommendations if r.recommendation_status == "ready_for_human_review"),
+        "recommendation_candidates_insufficient_evidence": sum(1 for r in recommendations if r.recommendation_status == "insufficient_evidence"),
+        "conflicting_evidence_total": len(conflicts),
     }
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(

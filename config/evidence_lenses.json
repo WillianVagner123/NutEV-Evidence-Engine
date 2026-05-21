@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "description": "Evidence lenses that convert legacy workstreams (busca1/busca2a/busca2b/a3) into composable analysis layers.",
+  "lenses": {
+    "busca1": {"focus": "clinical_outcomes", "domains": ["clinical_outcomes", "dietary_patterns"]},
+    "busca2a": {"focus": "implementation", "domains": ["implementation", "equity"]},
+    "busca2b": {"focus": "policy_systems", "domains": ["policy_systems", "equity"]},
+    "a3": {"focus": "framework", "domains": ["implementation", "policy_systems", "dietary_patterns"]}
+  },
+  "cross_lens": {
+    "shared_outcomes": true,
+    "shared_domains": true,
+    "allow_multi_label": true
+  }
+}
