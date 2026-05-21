@@ -47,6 +47,10 @@ def test_evidence_synthesis_semantic_block_adds_guidance_and_pathway_terms() -> 
     assert "clinical guidance" in rendered
     assert "clinical decision pathway" in rendered
     assert "decision pathway" in rendered
+    assert "dietary guidance" in rendered
+    assert "nutrition guideline" in rendered
+    assert "food guide" in rendered
+    assert "food-based dietary guidelines" in rendered
 
 
 def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -> None:
