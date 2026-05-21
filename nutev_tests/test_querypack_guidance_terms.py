@@ -37,6 +37,34 @@ def test_busca2b_queries_cover_fatty_liver_diet_trials():
     )
 
 
+def test_busca1_and_busca2b_cover_food_is_medicine_interventions() -> None:
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+
+    _, busca1_components = build_structured_components(taxonomy, "busca1")
+    _, busca2b_components = build_structured_components(taxonomy, "busca2b")
+    busca2b_queries = [query.lower() for query in build_queries(taxonomy, "busca2b")]
+
+    busca1_focus = {term.lower() for term in busca1_components["focus_terms"]}
+    busca1_hints = {term.lower() for term in busca1_components["web_hints"]}
+    busca2b_focus = {term.lower() for term in busca2b_components["focus_terms"]}
+    busca2b_hints = {term.lower() for term in busca2b_components["web_hints"]}
+
+    assert "food is medicine" in busca1_focus
+    assert "produce prescription" in busca1_focus
+    assert "medically tailored meals" in busca1_focus
+    assert "teaching kitchen" in busca1_hints
+    assert "food is medicine" in busca2b_focus
+    assert "medically tailored groceries" in busca2b_focus
+    assert "food is medicine intervention" in busca2b_hints
+    assert "produce prescription program" in busca2b_hints
+    assert any(
+        "food is medicine" in query
+        or "produce prescription" in query
+        or "medically tailored meals" in query
+        for query in busca2b_queries
+    )
+
+
 def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
     clause = _pubmed_document_clause(
         [
