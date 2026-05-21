@@ -47,6 +47,10 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
             "clinical decision pathway",
             "position paper",
             "umbrella review",
+            "consensus guidance",
+            "scientific advisory",
+            "clinical practice recommendations",
+            "best practice advice",
         ]
     ).lower()
 
@@ -54,6 +58,10 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
     assert '"practice guideline"[publication type]' in clause
     assert '"guideline"[publication type]' in clause
     assert '"systematic review"[publication type]' in clause
+    assert '"consensus guidance"[title/abstract]' in clause
+    assert '"scientific advisory"[title/abstract]' in clause
+    assert '"clinical practice recommendations"[title/abstract]' in clause
+    assert '"best practice advice"[title/abstract]' in clause
 
 
 def test_master_pipeline_dedup_normalizes_doi_and_url_before_title_year():
