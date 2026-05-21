@@ -72,6 +72,7 @@ def score_watch_item(item: dict) -> float:
         ("teaching kitchens", 15),
         ("food agency", 15),
         ("food is medicine", 18),
+        ("food as medicine", 18),
         ("produce prescription", 18),
         ("produce prescriptions", 18),
         ("produce prescription program", 18),
