@@ -300,6 +300,17 @@ def _secondary_doc_type_chunks(
     return chunk_terms(doc_type_terms[primary_limit:], 4)[:4]
 
 
+def _secondary_semantic_chunks(
+    components: dict[str, list[str]],
+    *,
+    primary_limit: int = 5,
+) -> list[list[str]]:
+    semantic_terms_ = uniq(components.get("semantic_terms", []))
+    if len(semantic_terms_) <= primary_limit:
+        return []
+    return chunk_terms(semantic_terms_[primary_limit:], 4)[:4]
+
+
 def _render_overflow_condition_queries(
     components: dict[str, list[str]],
     provider: str,
@@ -377,6 +388,34 @@ def _render_doc_type_overflow_queries(
                     _provider_or_block(extra_doc_types, provider, 4),
                     _provider_or_block(components["web_hints"], provider, 4),
                     _provider_or_block(components["nutrition_terms"], provider, 4),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
+
+
+def _render_semantic_overflow_queries(
+    components: dict[str, list[str]],
+    provider: str,
+) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    queries: list[str] = []
+    for extra_semantic in _secondary_semantic_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_semantic, provider, 4),
+                    _provider_or_block(condition_terms, provider, 6),
+                    _provider_or_block(components["doc_type_terms"], provider, 4),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_semantic, provider, 4),
+                    _provider_or_block(condition_terms, provider, 6),
+                    _provider_or_block(components["priority_outcomes"], provider, 4),
                 ]
             )
         )
@@ -463,6 +502,33 @@ def _render_pubmed_doc_type_overflow_queries(
     return uniq([query for query in queries if query])
 
 
+def _render_pubmed_semantic_overflow_queries(
+    components: dict[str, list[str]],
+) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    queries: list[str] = []
+    for extra_semantic in _secondary_semantic_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_semantic, "pubmed", 4),
+                    _provider_or_block(condition_terms, "pubmed", 6),
+                    _pubmed_document_clause(components["doc_type_terms"]),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_semantic, "pubmed", 4),
+                    _provider_or_block(condition_terms, "pubmed", 6),
+                    _provider_or_block(components["priority_outcomes"], "pubmed", 4),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
+
+
 def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
     condition_terms = components["condition_terms"] + components["clinical_terms"]
     semantic_terms_ = components.get("semantic_terms", [])
@@ -520,6 +586,7 @@ def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_pubmed_overflow_condition_queries(components)
         + _render_pubmed_behavior_overflow_queries(components)
         + _render_pubmed_doc_type_overflow_queries(components)
+        + _render_pubmed_semantic_overflow_queries(components)
     )
 
 
@@ -568,6 +635,7 @@ def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_overflow_condition_queries(components, "europepmc")
         + _render_behavior_overflow_queries(components, "europepmc")
         + _render_doc_type_overflow_queries(components, "europepmc")
+        + _render_semantic_overflow_queries(components, "europepmc")
     )
 
 
@@ -609,6 +677,7 @@ def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_overflow_condition_queries(components, "openalex")
         + _render_behavior_overflow_queries(components, "openalex")
         + _render_doc_type_overflow_queries(components, "openalex")
+        + _render_semantic_overflow_queries(components, "openalex")
     )
 
 
@@ -650,6 +719,7 @@ def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_overflow_condition_queries(components, "crossref")
         + _render_behavior_overflow_queries(components, "crossref")
         + _render_doc_type_overflow_queries(components, "crossref")
+        + _render_semantic_overflow_queries(components, "crossref")
     )
 
 
