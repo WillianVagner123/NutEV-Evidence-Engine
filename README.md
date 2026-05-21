@@ -7,6 +7,7 @@ Control Center: `docs/NUTEV_CONTROL_CENTER.md`.
 
 ## NutEV Control Center
 
+## Instalação
 ```bash
 pip install -e ".[dashboard]"
 nutev dashboard --project-root ./project_output --port 8501
@@ -36,6 +37,9 @@ nutev demo-data --project-root ./project_output_demo
 ```bash
 nutev dashboard --project-root ./project_output_demo --port 8501
 ```
+URLs:
+- http://127.0.0.1:8000
+- http://127.0.0.1:8000/docs
 
 ### Pipeline principal
 ```bash
