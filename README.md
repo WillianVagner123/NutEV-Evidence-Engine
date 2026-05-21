@@ -1,6 +1,17 @@
 # NutEV/NutMEV — Evidence Engine for Lifestyle Nutrition
 
-Pipeline computacional reprodutível para identificação, classificação, auditoria e tradução de evidências em recomendações candidatas para o Protocolo Dietético NutEV.
+A documentação operacional foi consolidada no `README.md` principal.
+Documentação metodológica de auditoria: `docs/NUTEV_AUDIT_ENGINE.md`.
+Fluxo evidência→protocolo para qualificação: `docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md`.
+Control Center: `docs/NUTEV_CONTROL_CENTER.md`.
+
+## NutEV Control Center
+
+## Instalação
+```bash
+pip install -e ".[dashboard]"
+nutev dashboard --project-root ./project_output --port 8501
+```
 
 ## Componentes principais
 - NutEV Evidence Engine
@@ -12,7 +23,7 @@ Pipeline computacional reprodutível para identificação, classificação, audi
 
 ## Instalação
 ```bash
-pip install -e ".[dashboard,platform]"
+pip install -e ".[dashboard]"
 ```
 
 ## Comandos principais
@@ -25,13 +36,6 @@ nutev demo-data --project-root ./project_output_demo
 ### Dashboard local
 ```bash
 nutev dashboard --project-root ./project_output_demo --port 8501
-```
-
-### NutEV Platform API
-```bash
-pip install -e ".[platform]"
-nutev demo-data --project-root ./project_output_demo
-nutev serve --project-root ./project_output_demo --port 8000
 ```
 URLs:
 - http://127.0.0.1:8000
@@ -65,7 +69,6 @@ As decisões humanas são persistidas em `project_output/07_logs/human_review_de
 - `docs/NUTEV_AUDIT_ENGINE.md`
 - `docs/NUTEV_CONTROL_CENTER.md`
 - `docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md`
-- `docs/NUTEV_PLATFORM_API.md`
 - `docs/REPOSITORY_STRUCTURE.md`
 - `docs/LEGACY_CLEANUP_AUDIT.md`
 - `docs/LEGACY_DEPENDENCY_MAP.md`

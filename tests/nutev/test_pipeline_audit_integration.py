@@ -48,8 +48,8 @@ def test_pipeline_audit_integration(tmp_path: Path):
         if rec.recommendation_status in blocked:
             assert rec.supporting_claim_ids
 
-    # Required validation: claim locations preserved for literal text
-    assert any(c.quote_location in {"title", "abstract", "extracted_text"} for c in claims)
+    # Required validation: claims without quote go to human review
+    assert any(c.exact_quote is None and c.needs_human_review for c in claims)
 
     # Required validation: inference_only not final approval
     inference_ids = {c.claim_id for c in claims if c.claim_status == "inference_only"}

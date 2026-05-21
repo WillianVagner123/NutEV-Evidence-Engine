@@ -2,7 +2,7 @@
 
 ## Canonical runtime
 - `src/nutev/`
-  - `api/`, `audit/`, `analysis/`, `demo/`, `engine/`, `export/`, `global_watch/`, `pipelines/`, `querypacks/`, `review/`, `search/`, `ui/`, `cli.py`, `settings.py`.
+  - `audit/`, `analysis/`, `demo/`, `engine/`, `export/`, `global_watch/`, `pipelines/`, `querypacks/`, `review/`, `search/`, `ui/`, `cli.py`, `settings.py`.
 
 ## Configs
 - `config/`
@@ -12,7 +12,6 @@
 - `docs/NUTEV_AUDIT_ENGINE.md`
 - `docs/NUTEV_CONTROL_CENTER.md`
 - `docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md`
-- `docs/NUTEV_PLATFORM_API.md`
 - `docs/CHANGELOG_METODOLOGICO.md`
 - `docs/LEGACY_CLEANUP_AUDIT.md`
 - `docs/LEGACY_DEPENDENCY_MAP.md`

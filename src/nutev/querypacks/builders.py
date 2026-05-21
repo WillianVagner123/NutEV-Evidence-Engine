@@ -708,6 +708,19 @@ def _add_specific_a3(
         "habilidades culinárias",
         "planejamento de refeições",
     ]
+    review_terms = [
+        "systematic review",
+        "scoping review",
+        "integrative review",
+        "umbrella review",
+        "meta-analysis",
+        "network meta-analysis",
+        "network meta analysis",
+        "rapid review",
+        "living systematic review",
+        "overview of reviews",
+        "review of reviews",
+    ]
 
     queries.append(
         _join_parts([or_block(instrument_terms, 8), or_block(competence_terms, 8)])
@@ -727,6 +740,15 @@ def _add_specific_a3(
                 or_block(diet_terms, 6),
                 or_block(instrument_terms, 8),
                 or_block(behavior_terms, 6),
+            ]
+        )
+    )
+    queries.append(
+        _join_parts(
+            [
+                or_block(instrument_terms, 8),
+                or_block(competence_terms, 8),
+                or_block(review_terms, 6),
             ]
         )
     )
