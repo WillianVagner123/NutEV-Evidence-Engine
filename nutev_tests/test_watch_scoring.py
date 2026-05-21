@@ -142,6 +142,14 @@ def test_mash_and_nonalcoholic_fatty_liver_disease_signals_improve_priority():
     ) > _score_watch_item({"title": "Medical nutrition therapy note"})
 
 
+def test_long_form_mash_signal_improves_priority():
+    assert _score_watch_item(
+        {
+            "title": "Medical nutrition therapy for metabolic dysfunction-associated steatohepatitis",
+        }
+    ) > _score_watch_item({"title": "Medical nutrition therapy note"})
+
+
 def test_culinary_training_and_food_literacy_signals_improve_priority():
     assert _score_watch_item(
         {
