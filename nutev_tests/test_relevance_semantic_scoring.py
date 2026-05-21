@@ -148,3 +148,30 @@ def test_busca2b_dietitian_led_medical_nutrition_therapy_is_prioritized() -> Non
 
     assert enriched_score["relevance_score"] > base_score["relevance_score"] + 18
     assert enriched_score["out_of_scope_flags"] == []
+
+
+def test_busca2b_implementation_framework_terms_raise_relevance_score() -> None:
+    baseline = {
+        "title": "Adult lifestyle nutrition trial",
+        "abstract": "Adults received usual lifestyle advice.",
+        "url": "https://example.org/article",
+        "source": "pubmed",
+    }
+    enriched = {
+        "title": (
+            "CFIR and RE-AIM implementation mapping in a hybrid "
+            "effectiveness-implementation trial for obesity"
+        ),
+        "abstract": (
+            "The study used the consolidated framework for implementation "
+            "research and normalization process theory to evaluate adherence."
+        ),
+        "url": "https://example.org/full-text.pdf",
+        "source": "pubmed",
+    }
+
+    base_score = score_record(dict(baseline), BASE_SCORING_RULES, "busca2b")
+    enriched_score = score_record(dict(enriched), BASE_SCORING_RULES, "busca2b")
+
+    assert enriched_score["relevance_score"] > base_score["relevance_score"] + 20
+    assert enriched_score["out_of_scope_flags"] == []
