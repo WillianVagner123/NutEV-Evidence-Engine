@@ -348,6 +348,9 @@ def test_quick_mode_implementation_queries_cover_process_and_framework_terms() -
     assert "health coaching" in query
     assert "CFIR" in query
     assert "RE-AIM" in query
+    assert "implementation mapping" in query
+    assert "hybrid effectiveness-implementation" in query
+    assert "normalization process theory" in query
 
 
 def test_quick_mode_implementation_queries_keep_three_seed_buckets() -> None:
