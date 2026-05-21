@@ -7,8 +7,11 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+.env.*
+.envrc
 project_output/
 project_output_smoke/
+project_output_demo/
 backup_*/
 *.log
 .DS_Store
@@ -16,3 +19,6 @@ Thumbs.db
 
 project_output*/
 github_actions_artifacts/
+project_output*/00_settings/
+*.local.json
+provider_settings.local.json

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "providers": {
+    "pubmed": {"type": "biomedical_index", "priority": 1},
+    "europepmc": {"type": "biomedical_index", "priority": 2},
+    "openalex": {"type": "scholarly_index", "priority": 3},
+    "crossref": {"type": "doi_index", "priority": 4},
+    "official_web": {"type": "official_sources", "priority": 5}
+  },
+  "compatibility": {
+    "legacy_source_priority_supported": true,
+    "fallback_to_default_priority": true
+  }
+}
