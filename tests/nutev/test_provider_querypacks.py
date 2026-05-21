@@ -141,6 +141,15 @@ def test_doc_type_overflow_keeps_late_guideline_labels_visible():
     assert '"position paper"[Publication Type]' in joined or '"position paper"[Title/Abstract]' in joined
 
 
+def test_europepmc_queries_keep_consensus_and_position_statement_labels_visible() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "europepmc")
+    joined = "\n".join(queries)
+
+    assert 'TITLE_ABS:"consensus statement"' in joined
+    assert 'TITLE_ABS:"expert consensus"' in joined
+    assert 'TITLE_ABS:"position statement"' in joined
+
+
 def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
     taxonomy = {
         "global": {
