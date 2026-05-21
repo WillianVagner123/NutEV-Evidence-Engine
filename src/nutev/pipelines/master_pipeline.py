@@ -573,6 +573,13 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "downloads_failed": total_failed,
         "ocr_docs": total_ocr,
         "curated_unique_documents": curation_summary["unique_documents"],
+        "evidence_claims_total": len(claims),
+        "evidence_claims_supported": sum(1 for c in claims if c.claim_status == "supported"),
+        "evidence_claims_needs_review": sum(1 for c in claims if c.needs_human_review),
+        "recommendation_candidates_total": len(recommendations),
+        "recommendation_candidates_ready_review": sum(1 for r in recommendations if r.recommendation_status == "ready_for_human_review"),
+        "recommendation_candidates_insufficient_evidence": sum(1 for r in recommendations if r.recommendation_status == "insufficient_evidence"),
+        "conflicting_evidence_total": len(conflicts),
     }
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(
