@@ -47,6 +47,17 @@ PubMed, Europe PMC, OpenAlex, Crossref e fontes oficiais do manifest.
 ## lógica metodológica
 A estratégia é derivada de `config/keyword_taxonomy.json`, mas a execução final usa renderização específica por base para reduzir fragilidade e melhorar auditabilidade.
 
+## camada global de evidência NutEV (integrada)
+A classificação não funciona mais como silos isolados por workstream. Os fluxos `busca1`, `busca2a`, `busca2b` e `a3` são tratados como **lentes de evidência** sobre a mesma base de registros:
+- `config/nutev_ontology.json`: ontologia central (domínios, outcomes, tipos de evidência).
+- `config/evidence_lenses.json`: mapeamento das lentes e regras multi-rótulo.
+- `config/source_registry.json`: registro de provedores/fontes e compatibilidade.
+- `src/nutev/analysis/nutev_classifier.py`: classificador unificado aplicado em todos os registros, independentemente do workstream de origem.
+
+Saídas integradas:
+- `NUTEV_GLOBAL_EVIDENCE_MATRIX.xlsx`
+- `NUTEV_PROTOCOL_TRANSLATION_MATRIX.xlsx`
+
 {_provider_section(workstream, provider_querypack)}## auditoria da busca
 As queries efetivamente executadas ficam registradas em `07_logs/querypack_executed.json`, `07_logs/querypack_executed.csv`, `07_logs/provider_querypack_executed.json` e `07_logs/provider_querypack_executed.csv`.
 

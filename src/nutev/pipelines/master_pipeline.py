@@ -10,6 +10,7 @@ import pandas as pd
 
 from nutev.analysis import domains_busca1, domains_busca2a, domains_busca2b
 from nutev.analysis.article3_framework import build_framework_signals
+from nutev.analysis.nutev_classifier import classify_evidence
 from nutev.analysis.prisma import build_prisma_flow, export_prisma
 from nutev.analysis.relevance import keep_candidate_for_download, score_record
 from nutev.analysis.synthesis import (
@@ -275,6 +276,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     taxonomy = load_json(settings.config_root / "keyword_taxonomy.json")
     scoring = load_json(settings.config_root / "scoring_rules.json")
     sources = load_json(settings.config_root / "official_sources_manifest.json")
+    ontology = load_json(settings.config_root / "nutev_ontology.json")
+    evidence_lenses = load_json(settings.config_root / "evidence_lenses.json")
+    source_registry = load_json(settings.config_root / "source_registry.json")
     provider_map = _provider_map()
     providers_declared_by_workstream: dict[str, list[str]] = {}
     providers_executed_by_workstream: dict[str, list[str]] = {}
@@ -437,23 +441,21 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
                     errors="ignore",
                 )
 
+        # Backward-compatible legacy enrichments
         if ws == "busca1":
-            rows = domains_busca1.apply_domain_rules(
-                rows,
-                load_json(settings.config_root / "domain_rules_busca1.json"),
-            )
+            rows = domains_busca1.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca1.json"))
         elif ws == "busca2a":
-            rows = domains_busca2a.apply_domain_rules(
-                rows,
-                load_json(settings.config_root / "domain_rules_busca2a.json"),
-            )
+            rows = domains_busca2a.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2a.json"))
         elif ws == "busca2b":
-            rows = domains_busca2b.apply_domain_rules(
-                rows,
-                load_json(settings.config_root / "domain_rules_busca2b.json"),
-            )
+            rows = domains_busca2b.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2b.json"))
         elif ws in {"a3", "artigo3_framework"}:
             rows = build_framework_signals(rows)
+
+        # New integrated global evidence layer: all records pass through shared classifier/lenses.
+        rows = classify_evidence(rows, ontology, evidence_lenses)
+        for r in rows:
+            r["source_registry_version"] = source_registry.get("version", "")
+            r["ontology_version"] = ontology.get("version", "")
 
         write_analysis_xlsx(rows, settings.output_dirs["06_tables"] / f"analysis_{ws}.xlsx")
         all_rows += rows
@@ -489,6 +491,19 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         settings.output_dirs["08_docs"],
     )
     write_methods_docs(settings.output_dirs["08_docs"], settings.output_dirs["07_logs"])
+
+    global_df = pd.DataFrame(master)
+    if not global_df.empty:
+        lens_cols = [c for c in global_df.columns if c.startswith("lens_") or c in {"workstream", "document_id", "title", "domains", "outcomes", "evidence_lenses", "relevance_score"}]
+        protocol_cols = [c for c in global_df.columns if c.startswith("domain_") or c.startswith("outcome_") or c in {"workstream", "document_id", "title", "evidence_type"}]
+        write_excel_file(
+            global_df[lens_cols].copy(),
+            settings.output_dirs["06_tables"] / "NUTEV_GLOBAL_EVIDENCE_MATRIX.xlsx",
+        )
+        write_excel_file(
+            global_df[protocol_cols].copy(),
+            settings.output_dirs["06_tables"] / "NUTEV_PROTOCOL_TRANSLATION_MATRIX.xlsx",
+        )
 
     prisma = build_prisma_flow(master, all_manifest, extraction_manifest)
     export_prisma(
