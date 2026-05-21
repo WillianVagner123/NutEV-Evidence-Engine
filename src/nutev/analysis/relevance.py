@@ -847,3 +847,21 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     record["editorial_priority_tier"] = _editorial_priority_tier(editorial_score)
     record["relevance_score"] = score
     return record
+
+
+def keep_candidate_for_download(record: dict, workstream: str) -> bool:
+    text = " ".join(
+        [
+            str(record.get("title") or ""),
+            str(record.get("abstract") or ""),
+            str(record.get("url") or ""),
+        ]
+    ).lower()
+    if _should_hard_exclude_out_of_scope(text, workstream):
+        return False
+    score = float(record.get("relevance_score") or 0)
+    if score < 7:
+        return False
+    if any(t in text for t in ("editorial", "commentary", "letter", "case report")):
+        return False
+    return True

@@ -101,6 +101,18 @@ dependencies = [
 mcp = [
     "mcp[cli]~=1.2",
 ]
+dashboard = [
+    "streamlit",
+    "pandas",
+    "openpyxl",
+]
+platform = [
+    "fastapi",
+    "uvicorn",
+    "pandas",
+    "openpyxl",
+    "jinja2",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/WillianVagner123/NUT-MEV_NEW"
@@ -483,4 +495,3 @@ forbidden_modules = ["nutev.scrape", "nutev.search", "nutev.download"]
 name = "export allowed"
 type = "layers"
 layers = ["nutev.engine", "nutev.analysis", "nutev.export"]
-
