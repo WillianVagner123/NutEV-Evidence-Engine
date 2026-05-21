@@ -1,6 +1,16 @@
 # NutEV/NutMEV — Evidence Engine for Lifestyle Nutrition
 
-Pipeline computacional reprodutível para identificação, classificação, auditoria e tradução de evidências em recomendações candidatas para o Protocolo Dietético NutEV.
+A documentação operacional foi consolidada no `README.md` principal.
+Documentação metodológica de auditoria: `docs/NUTEV_AUDIT_ENGINE.md`.
+Fluxo evidência→protocolo para qualificação: `docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md`.
+Control Center: `docs/NUTEV_CONTROL_CENTER.md`.
+
+## NutEV Control Center
+
+```bash
+pip install -e ".[dashboard]"
+nutev dashboard --project-root ./project_output --port 8501
+```
 
 ## Componentes principais
 - NutEV Evidence Engine

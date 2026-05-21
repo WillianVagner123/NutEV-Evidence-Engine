@@ -26,9 +26,3 @@ Matrizes de claims, conflitos e fila humana sustentam revisão.
 Sem NLP semântico avançado/LLM nesta fase inicial.
 ## 12. Próximos passos
 Calibração de regras, revisão dupla e integração com UI de curadoria.
-
-## Revisão humana persistente
-Decisões humanas são persistidas em `07_logs/human_review_decisions.csv` e versionadas por linha (append-only).
-
-## Qualidade inicial da evidência
-ClaimEvaluation inclui `evidence_quality_tier` com níveis iniciais (normative_high, research_high, research_moderate, contextual, inference_only, insufficient, not_assessed).

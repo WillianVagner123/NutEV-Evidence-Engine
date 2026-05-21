@@ -96,3 +96,42 @@ def test_build_querypack_resolves_a3_alias():
     qp = build_querypack(tax, ["a3"])
 
     assert qp["a3"]
+
+
+def test_artigo3_queries_include_advanced_review_synthesis_terms():
+    tax = {
+        "global": {
+            "document_types": {
+                "reviews": [
+                    "network meta-analysis",
+                    "overview of reviews",
+                    "living systematic review",
+                ]
+            },
+            "implementation_behavior": {"behavioral": ["behavior change", "self-efficacy"]},
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {
+                "core": ["food literacy", "culinary medicine", "meal planning"]
+            },
+        },
+        "clinical": {"obesity": ["obesity"]},
+        "outcomes": {"behavioral": ["self efficacy"]},
+        "workstreams": {
+            "artigo3_framework": {
+                "population_terms": ["adult"],
+                "condition_terms": ["food literacy", "commensality"],
+                "clinical_keys": ["obesity"],
+                "document_type_keys": ["reviews"],
+                "priority_outcomes": ["behavioral"],
+                "focus_blocks": ["nutrition_domains", "implementation_behavior"],
+                "web_query_hints": ["framework", "questionnaire validation"],
+            }
+        },
+    }
+
+    queries = build_queries(tax, "artigo3_framework")
+
+    assert any("network meta-analysis" in query for query in queries)
+    assert any("overview of reviews" in query for query in queries)
+    assert any("living systematic review" in query for query in queries)
+    assert any("food literacy" in query and "questionnaire" in query for query in queries)
