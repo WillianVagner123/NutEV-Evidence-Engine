@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import os
+import subprocess
+import sys
 from pathlib import Path
 
 from nutev.logs import setup_logger
@@ -24,6 +26,11 @@ def main() -> None:
     gw.add_argument("--webhook-url", type=str, default=None)
     gw.add_argument("--capture-enabled", action="store_true")
     gw.add_argument("--capture-limit", type=int, default=None)
+    dash = sub.add_parser("dashboard")
+    dash.add_argument("--project-root", type=Path, required=True)
+    dash.add_argument("--port", type=int, default=8501)
+    demo = sub.add_parser("demo-data")
+    demo.add_argument("--project-root", type=Path, required=True)
 
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
@@ -61,6 +68,36 @@ def main() -> None:
             webhook_url=args.webhook_url,
         )
         logger.info("Global watch: %s", result)
+        return
+    if args.command == "dashboard":
+        dashboard_path = Path(__file__).parent / "ui" / "dashboard.py"
+        url = f"http://localhost:{args.port}"
+        print(url)
+        try:
+            __import__("streamlit")
+            subprocess.run(
+                [
+                    sys.executable,
+                    "-m",
+                    "streamlit",
+                    "run",
+                    str(dashboard_path),
+                    "--server.port",
+                    str(args.port),
+                    "--",
+                ],
+                check=True,
+                env={**os.environ, "NUTEV_DASHBOARD_PROJECT_ROOT": str(args.project_root)},
+            )
+        except ModuleNotFoundError:
+            print("Streamlit não está instalado. Rode: pip install -e .[dashboard]")
+        except Exception:
+            print(url)
+        return
+    if args.command == "demo-data":
+        from nutev.demo.demo_data import generate_demo_data
+        generate_demo_data(args.project_root)
+        print(f"Demo data generated at: {args.project_root}")
         return
 
     if not args.project_root:

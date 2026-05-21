@@ -7,8 +7,11 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+.env.*
+.envrc
 project_output/
 project_output_smoke/
+project_output_demo/
 backup_*/
 *.log
 .DS_Store
