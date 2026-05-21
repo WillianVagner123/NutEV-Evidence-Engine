@@ -40,6 +40,22 @@ try:
 except Exception:  # pragma: no cover
     manifest_sources = None
 
+_PROVIDER_PRIORITY = {
+    "official_sources": 5,
+    "pubmed": 4,
+    "europepmc": 4,
+    "openalex": 3,
+    "crossref": 2,
+    "watch_seed": 1,
+}
+
+_DOWNLOAD_STATUS_PRIORITY = {
+    "pdf": 4,
+    "html_snapshot": 3,
+    "metadata_only": 2,
+    "failed": 1,
+}
+
 
 def _provider_query(base: str, provider: str, since_days: int) -> str:
     date_from = (
@@ -61,6 +77,149 @@ def _provider_query(base: str, provider: str, since_days: int) -> str:
 
 def _contains_any(text: str, terms: list[str]) -> bool:
     return any(term in text for term in terms)
+
+
+def _provider_rank(provider: object) -> int:
+    return _PROVIDER_PRIORITY.get(str(provider or "").lower(), 0)
+
+
+def _download_status_rank(status: object) -> int:
+    return _DOWNLOAD_STATUS_PRIORITY.get(str(status or "").lower(), 0)
+
+
+def _dedupe_values(*values: object) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for value in values:
+        if value in (None, ""):
+            continue
+        if isinstance(value, (list, tuple, set)):
+            candidates = value
+        else:
+            candidates = str(value).split("|")
+        for candidate in candidates:
+            text = str(candidate).strip()
+            if not text:
+                continue
+            lowered = text.lower()
+            if lowered in seen:
+                continue
+            seen.add(lowered)
+            out.append(text)
+    return out
+
+
+def _prefer_longer_text(existing: object, incoming: object) -> str:
+    existing_text = str(existing or "").strip()
+    incoming_text = str(incoming or "").strip()
+    if not existing_text:
+        return incoming_text
+    if len(incoming_text) > len(existing_text):
+        return incoming_text
+    return existing_text
+
+
+def _merge_watch_rows(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
+    merged = dict(existing)
+    prefer_incoming_provider = _provider_rank(incoming.get("source_provider")) > _provider_rank(
+        merged.get("source_provider")
+    )
+
+    for field in ("title", "abstract", "snippet"):
+        merged[field] = _prefer_longer_text(merged.get(field), incoming.get(field))
+
+    for field in ("doi", "evidence_type", "failure_reason"):
+        if prefer_incoming_provider and incoming.get(field):
+            merged[field] = incoming[field]
+        elif not merged.get(field) and incoming.get(field):
+            merged[field] = incoming[field]
+
+    incoming_url = str(incoming.get("url") or "").strip()
+    existing_url = str(merged.get("url") or "").strip()
+    if incoming_url and (
+        not existing_url
+        or prefer_incoming_provider
+        or incoming_url.lower().endswith(".pdf")
+        or "pmc.ncbi.nlm.nih.gov" in incoming_url.lower()
+    ):
+        merged["url"] = incoming_url
+
+    if merged.get("year") in (None, "") and incoming.get("year") not in (None, ""):
+        merged["year"] = incoming["year"]
+
+    if prefer_incoming_provider and incoming.get("source_provider"):
+        merged["source_provider"] = incoming["source_provider"]
+
+    if _download_status_rank(incoming.get("download_status")) > _download_status_rank(
+        merged.get("download_status")
+    ):
+        merged["download_status"] = incoming.get("download_status")
+
+    merged["relevance_score"] = max(
+        float(merged.get("relevance_score") or 0),
+        float(incoming.get("relevance_score") or 0),
+    )
+    merged["is_recent_publication"] = bool(
+        merged.get("is_recent_publication") or incoming.get("is_recent_publication")
+    )
+    merged["fallback_used"] = bool(
+        merged.get("fallback_used") or incoming.get("fallback_used")
+    )
+    merged["workstream_affinity"] = _dedupe_values(
+        merged.get("workstream_affinity"),
+        incoming.get("workstream_affinity"),
+    )
+    merged["matched_categories"] = "|".join(
+        _dedupe_values(
+            merged.get("matched_categories"),
+            merged.get("category"),
+            incoming.get("matched_categories"),
+            incoming.get("category"),
+        )
+    )
+    merged["matched_providers"] = "|".join(
+        _dedupe_values(
+            merged.get("matched_providers"),
+            merged.get("source_provider"),
+            incoming.get("matched_providers"),
+            incoming.get("source_provider"),
+        )
+    )
+    if not merged.get("category") and incoming.get("category"):
+        merged["category"] = incoming["category"]
+    if not merged.get("query") and incoming.get("query"):
+        merged["query"] = incoming["query"]
+    if not merged.get("document_id") and incoming.get("document_id"):
+        merged["document_id"] = incoming["document_id"]
+    return merged
+
+
+def _dedup_watch_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    by_id: dict[str, dict[str, Any]] = {}
+    order: list[str] = []
+    for row in rows:
+        document_id = str(row.get("document_id") or make_document_id(row))
+        normalized = dict(row)
+        normalized["document_id"] = document_id
+        normalized["workstream_affinity"] = _dedupe_values(
+            normalized.get("workstream_affinity")
+        )
+        normalized["matched_categories"] = "|".join(
+            _dedupe_values(
+                normalized.get("matched_categories"), normalized.get("category")
+            )
+        )
+        normalized["matched_providers"] = "|".join(
+            _dedupe_values(
+                normalized.get("matched_providers"), normalized.get("source_provider")
+            )
+        )
+        if document_id not in by_id:
+            by_id[document_id] = normalized
+            order.append(document_id)
+            continue
+        by_id[document_id] = _merge_watch_rows(by_id[document_id], normalized)
+    return [by_id[document_id] for document_id in order]
 
 
 def infer_evidence_type(title: str, abstract: str, url: str) -> str:
@@ -133,8 +292,13 @@ def infer_evidence_type(title: str, abstract: str, url: str) -> str:
     return "study"
 
 
-def infer_workstream_affinity(title: str, category: str) -> list[str]:
-    text = f"{title} {category}".lower()
+def infer_workstream_affinity(
+    title: str,
+    category: str,
+    abstract: str = "",
+    snippet: str = "",
+) -> list[str]:
+    text = f"{title} {abstract} {snippet} {category}".lower()
     workstreams: list[str] = []
 
     busca1_terms = [
@@ -326,7 +490,14 @@ def normalize_watch_hit(
             evidence_text,
             raw_hit.get("url") or "",
         ),
-        "workstream_affinity": infer_workstream_affinity(title, category),
+        "workstream_affinity": infer_workstream_affinity(
+            title,
+            category,
+            abstract=abstract,
+            snippet=snippet,
+        ),
+        "matched_categories": category,
+        "matched_providers": provider_name,
         "download_status": "metadata_only",
         "relevance_score": 50,
         "failure_reason": "",
@@ -526,7 +697,7 @@ def run_global_watch(
         fallback["failure_reason"] = "no_provider_results"
         rows = [fallback]
 
-    rows = list({row["document_id"]: row for row in rows}.values())
+    rows = _dedup_watch_rows(rows)
     seen_path = (
         settings.project_root / "09_global_watch" / "watch_state" / "seen_items.json"
     )
