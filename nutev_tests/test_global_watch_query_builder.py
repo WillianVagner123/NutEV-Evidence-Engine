@@ -24,6 +24,7 @@ def test_obesity_cardiometabolic_queries_include_new_liver_and_lipid_context_ter
     rendered = " ".join(str(row["query"]) for row in rows).lower()
     assert "steatotic liver disease" in rendered
     assert "metabolic dysfunction-associated steatotic liver disease" in rendered
+    assert "metabolic dysfunction-associated steatohepatitis" in rendered
     assert "dyslipidaemia" in rendered
     assert "insulin resistance" in rendered
 
