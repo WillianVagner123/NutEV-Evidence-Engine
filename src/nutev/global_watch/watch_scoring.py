@@ -180,6 +180,8 @@ def score_watch_item(item: dict) -> float:
         ("steatotic liver disease", 12),
         ("metabolic dysfunction-associated steatotic liver disease", 12),
         ("metabolic dysfunction associated steatotic liver disease", 12),
+        ("metabolic dysfunction-associated steatohepatitis", 12),
+        ("metabolic dysfunction associated steatohepatitis", 12),
         ("metabolic dysfunction-associated fatty liver disease", 12),
         ("metabolic dysfunction associated fatty liver disease", 12),
         ("fatty liver", 12),
