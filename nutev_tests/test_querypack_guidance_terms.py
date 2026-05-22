@@ -11,13 +11,26 @@ def test_busca2a_structured_components_include_high_value_guidance_terms():
 
     _, components = build_structured_components(taxonomy, "busca2a")
     doc_terms = {term.lower() for term in components["doc_type_terms"]}
+    web_hints = {term.lower() for term in components["web_hints"]}
 
     assert "consensus statement" in doc_terms
     assert "expert consensus" in doc_terms
     assert "position paper" in doc_terms
-    assert "practice advisory" in doc_terms
+    assert "practice guidance" in doc_terms
+    assert "guidance statement" in doc_terms
+    assert "best practice advice" in doc_terms
+    assert "clinical decision pathway" in doc_terms
+    assert "standards of care" in doc_terms
+    assert "consensus guidance" in doc_terms
+    assert "scientific advisory" in doc_terms
+    assert "clinical practice recommendations" in doc_terms
     assert "living guideline" in doc_terms
     assert "overview of reviews" in doc_terms
+    assert "practice guidance" in web_hints
+    assert "guidance statement" in web_hints
+    assert "best practice advice" in web_hints
+    assert "clinical decision pathway" in web_hints
+    assert "standards of care" in web_hints
 
 
 def test_busca2b_queries_cover_fatty_liver_diet_trials():
