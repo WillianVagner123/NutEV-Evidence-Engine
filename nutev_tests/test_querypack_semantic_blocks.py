@@ -39,6 +39,8 @@ def test_evidence_synthesis_semantic_block_adds_guidance_and_pathway_terms() -> 
     assert "guideline update" in rendered
     assert "living guideline" in rendered
     assert "standards of care" in rendered
+    assert "standards of medical care" in rendered
+    assert "standards of medical care in diabetes" in rendered
     assert "consensus report" in rendered
     assert "consensus guidance" in rendered
     assert "practice guidance" in rendered
