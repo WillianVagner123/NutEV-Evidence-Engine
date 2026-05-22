@@ -1,3 +1,7 @@
+import json
+from pathlib import Path
+
+from nutev.analysis.relevance import score_record
 from nutev.querypacks.builders import build_queries, build_querypack
 from nutev.querypacks.provider_queries import render_queries_for_provider
 
@@ -164,6 +168,7 @@ def test_provider_queries_include_nutrition_delivery_terms_for_busca2b():
     queries = render_queries_for_provider(tax, "busca2b", "pubmed")
 
     assert any("food is medicine" in query for query in queries)
+    assert any("food as medicine" in query for query in queries)
     assert any(
         "registered dietitian nutritionist" in query
         or "dietitian-led intervention" in query
@@ -176,3 +181,37 @@ def test_provider_queries_include_nutrition_delivery_terms_for_busca2b():
         or "hybrid effectiveness-implementation" in query
         for query in queries
     )
+
+
+def test_food_as_medicine_variant_scores_like_food_is_medicine():
+    scoring_rules = json.loads(
+        (Path(__file__).resolve().parents[2] / "config" / "scoring_rules.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    base_record = {
+        "source": "pubmed",
+        "url": "https://example.org/article",
+        "abstract": "Adult obesity intervention with medically tailored meals and implementation outcomes.",
+        "journal": "",
+        "source_institution": "",
+    }
+
+    food_is_medicine = score_record(
+        {
+            **base_record,
+            "title": "Food is medicine intervention for adult obesity",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    food_as_medicine = score_record(
+        {
+            **base_record,
+            "title": "Food as medicine intervention for adult obesity",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert food_as_medicine["relevance_score"] >= food_is_medicine["relevance_score"]
