@@ -133,9 +133,37 @@ _PRIORITY_TERMS = [
     "eat-lancet",
     "dietary guideline",
     "food-based dietary guideline",
+    "guideline",
+    "guidelines",
+    "clinical practice guideline",
+    "consensus",
+    "consensus statement",
+    "scientific statement",
+    "position statement",
+    "position paper",
+    "systematic review",
+    "meta-analysis",
+    "meta analysis",
+    "network meta-analysis",
+    "network meta analysis",
+    "umbrella review",
     "lifestyle medicine",
     "culinary medicine",
     "food literacy",
+    "food and nutrition literacy",
+    "nutrition literacy",
+    "food agency",
+    "food is medicine",
+    "food as medicine",
+    "produce prescription",
+    "produce prescriptions",
+    "produce prescription program",
+    "medically tailored meal",
+    "medically tailored meals",
+    "medically tailored grocery",
+    "medically tailored groceries",
+    "teaching kitchen",
+    "teaching kitchens",
     "adherence",
     "implementation",
     "barrier",
@@ -145,6 +173,21 @@ _PRIORITY_TERMS = [
     "behavior change",
     "self-efficacy",
 ]
+
+_PRIORITY_TEXT_FIELDS = (
+    "title",
+    "abstract",
+    "snippet",
+    "summary",
+    "evidence_type",
+    "domains",
+    "outcomes",
+    "diet_patterns",
+    "clinical_conditions",
+    "main_terms",
+    "journal",
+    "source_institution",
+)
 
 _A1_PROXY_TIERS = {"a1_proxy_high", "a1_proxy_moderate"}
 
@@ -258,18 +301,11 @@ def _is_prioritized(row: dict) -> bool:
         score = float(row.get("relevance_score") or row.get("score") or 0)
     except Exception:
         score = 0.0
-    text = " ".join(
-        [
-            _as_text(row.get("title")),
-            _as_text(row.get("evidence_type")),
-            _as_text(row.get("domains")),
-            _as_text(row.get("outcomes")),
-            _as_text(row.get("diet_patterns")),
-            _as_text(row.get("clinical_conditions")),
-            _as_text(row.get("main_terms")),
-        ]
-    ).lower()
-    return score >= 8 and any(term in text for term in _PRIORITY_TERMS)
+    text = " ".join(_as_text(row.get(field)) for field in _PRIORITY_TEXT_FIELDS).lower()
+    editorial_tier = _as_text(row.get("editorial_priority_tier")).lower()
+    high_value_editorial = editorial_tier in _A1_PROXY_TIERS
+    matches_priority_scope = any(term in text for term in _PRIORITY_TERMS)
+    return (score >= 8 and matches_priority_scope) or (score >= 7 and high_value_editorial)
 
 
 def _curate_row(row: dict) -> dict:
@@ -281,6 +317,9 @@ def _curate_row(row: dict) -> dict:
     curated["doi"] = _as_text(row.get("doi"))
     curated["pmid"] = _as_text(row.get("pmid"))
     curated["pmcid"] = _as_text(row.get("pmcid"))
+    curated["abstract"] = _as_text(row.get("abstract") or row.get("summary"))
+    curated["snippet"] = _as_text(row.get("snippet"))
+    curated["summary"] = _as_text(row.get("summary"))
     curated["original_url"] = _as_text(row.get("original_url") or row.get("url"))
     curated["final_url"] = _as_text(
         row.get("final_url") or row.get("resolved_url") or row.get("url")
@@ -308,6 +347,12 @@ def _curate_row(row: dict) -> dict:
     )
     curated["clinical_conditions"] = _as_text(
         row.get("clinical_conditions") or row.get("clinical_condition")
+    )
+    curated["journal"] = _as_text(row.get("journal"))
+    curated["source_institution"] = _as_text(row.get("source_institution"))
+    curated["editorial_priority_score"] = row.get("editorial_priority_score") or ""
+    curated["editorial_priority_tier"] = _as_text(
+        row.get("editorial_priority_tier")
     )
 
     document_key, document_key_type = _compute_document_key(curated)
