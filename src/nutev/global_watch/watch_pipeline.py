@@ -243,6 +243,12 @@ def infer_evidence_type(title: str, abstract: str, url: str) -> str:
         "clinical decision pathway",
         "decision pathway",
         "living guideline",
+        "best practice advice",
+        "guideline update",
+        "clinical practice update",
+        "clinical practice recommendation",
+        "clinical practice recommendations",
+        "scientific advisory",
     ]
     consensus_terms = [
         "consensus",
@@ -252,6 +258,7 @@ def infer_evidence_type(title: str, abstract: str, url: str) -> str:
         "position paper",
         "expert consensus",
         "consensus report",
+        "consensus guidance",
     ]
     review_terms = [
         "systematic review",
@@ -260,6 +267,12 @@ def infer_evidence_type(title: str, abstract: str, url: str) -> str:
         "umbrella review",
         "scoping review",
         "integrative review",
+        "network meta-analysis",
+        "network meta analysis",
+        "rapid review",
+        "living systematic review",
+        "overview of reviews",
+        "review of reviews",
     ]
     trial_terms = [
         "randomized",
@@ -278,6 +291,8 @@ def infer_evidence_type(title: str, abstract: str, url: str) -> str:
         "psychometric",
         "validation study",
         "questionnaire validation",
+        "survey instrument",
+        "index validation",
     ]
     if _contains_any(text, guideline_terms):
         return "guideline"
@@ -352,6 +367,7 @@ def infer_workstream_affinity(
         "behavior",
         "behaviour",
         "behavior change",
+        "behavior change technique",
         "behavioral lifestyle intervention",
         "behavioral weight loss",
         "feasibility",
@@ -368,6 +384,14 @@ def infer_workstream_affinity(
         "registered dietitian nutritionist",
         "dietitian-led",
         "dietitian led",
+        "dietitian-led intervention",
+        "dietitian led intervention",
+        "practice facilitation",
+        "health coaching",
+        "nutrition counseling",
+        "nutrition counselling",
+        "dietary counseling",
+        "dietary counselling",
         "trial",
         "randomized",
         "randomised",
@@ -392,6 +416,16 @@ def infer_workstream_affinity(
         "lifestyle intervention",
         "lifestyle modification",
         "therapeutic lifestyle changes",
+        "food is medicine",
+        "food is medicine intervention",
+        "produce prescription",
+        "produce prescriptions",
+        "produce prescription program",
+        "medically tailored meals",
+        "medically tailored groceries",
+        "teaching kitchen",
+        "teaching kitchens",
+        "culinary medicine",
         "masld",
         "nafld",
         "mafld",
@@ -422,6 +456,7 @@ def infer_workstream_affinity(
         "health literacy",
         "culinary medicine",
         "cooking skills",
+        "cooking confidence",
         "food skills",
         "food agency",
         "food environment",
@@ -434,6 +469,9 @@ def infer_workstream_affinity(
         "eat together",
         "self-efficacy",
         "self efficacy",
+        "survey instrument",
+        "questionnaire validation",
+        "scale development",
     ]
 
     if _contains_any(text, busca1_terms):
