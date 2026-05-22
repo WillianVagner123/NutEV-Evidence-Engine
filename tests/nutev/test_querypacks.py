@@ -135,3 +135,34 @@ def test_artigo3_queries_include_advanced_review_synthesis_terms():
     assert any("overview of reviews" in query for query in queries)
     assert any("living systematic review" in query for query in queries)
     assert any("food literacy" in query and "questionnaire" in query for query in queries)
+
+
+def test_busca2b_queries_include_implementation_science_enhancements():
+    tax = {
+        "global": {
+            "document_types": {"trials": ["randomized controlled trial"]},
+            "implementation_behavior": {"adherence": ["adherence"]},
+            "diet_patterns": {"core": ["mediterranean diet"]},
+            "nutrition_domains": {"core": ["fiber"]},
+        },
+        "clinical": {"obesity": ["obesity"]},
+        "outcomes": {"behavioral": ["self efficacy"]},
+        "workstreams": {
+            "busca2b": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["obesity"],
+                "document_type_keys": ["trials"],
+                "priority_outcomes": ["behavioral"],
+                "focus_blocks": ["implementation_behavior"],
+                "web_query_hints": ["implementation study"],
+            }
+        },
+    }
+
+    queries = build_queries(tax, "busca2b")
+    joined_queries = " ".join(queries)
+
+    assert "implementation strategy" in joined_queries
+    assert "implementation fidelity" in joined_queries
+    assert "knowledge translation" in joined_queries
