@@ -16,9 +16,20 @@ LIVER_FOCUSED_WORKSTREAMS = {"busca2a", "busca2b"}
 BUSCA2A_GUIDANCE_TERMS = [
     "practice guidance",
     "guidance statement",
+    "consensus statement",
+    "consensus guidance",
+    "scientific statement",
+    "best practice advice",
+    "standards of care",
+    "clinical decision pathway",
+    "position statement",
+    "position paper",
+    "consensus report",
     "joint statement",
     "joint guideline",
-    "clinical decision pathway",
+    "clinical practice recommendation",
+    "clinical practice recommendations",
+    "scientific advisory",
     "decision pathway",
 ]
 BEHAVIOR_PRIORITY_TERMS = [
