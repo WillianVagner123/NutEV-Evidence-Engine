@@ -1,5 +1,5 @@
 {
-  "version": "2026-05-v2",
+  "version": "2026-05-v3",
   "global": {
     "lifestyle_medicine_pillars": {
       "nutrition": [
@@ -274,6 +274,17 @@
         "front-of-pack",
         "shopping",
         "food literacy",
+        "food and nutrition literacy",
+        "nutrition literacy",
+        "nutrition security",
+        "food agency",
+        "food is medicine",
+        "produce prescription",
+        "produce prescriptions",
+        "medically tailored meals",
+        "medically tailored groceries",
+        "teaching kitchen",
+        "teaching kitchens",
         "medicina culinária",
         "habilidades culinárias",
         "cozinhar em casa",
@@ -283,7 +294,9 @@
         "rótulos",
         "compras",
         "literacia alimentar",
-        "letramento alimentar"
+        "letramento alimentar",
+        "agência alimentar",
+        "segurança alimentar e nutricional"
       ]
     },
     "implementation_behavior": {
@@ -847,6 +860,10 @@
       "condition_terms": [
         "diet quality",
         "food literacy",
+        "food and nutrition literacy",
+        "nutrition literacy",
+        "food agency",
+        "nutrition security",
         "culinary medicine",
         "commensality",
         "adherence",
