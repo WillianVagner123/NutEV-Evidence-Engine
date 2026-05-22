@@ -1,0 +1,18 @@
+{
+  "version": "2026-05-nutev-evidence-quality-v1",
+  "evidence_quality_tiers": {
+    "normative_high": ["official_guideline", "clinical_guideline", "consensus_statement", "position_statement", "scientific_statement"],
+    "research_high": ["systematic_review", "umbrella_review", "meta_analysis"],
+    "research_moderate": ["randomized_trial", "pragmatic_trial", "implementation_study"],
+    "contextual": ["grey_literature", "technical_report", "policy_brief"],
+    "inference_only": ["computational_inference"],
+    "not_assessed": ["extracted_quote", "human_annotation"]
+  },
+  "recommendation_strength_rules": {
+    "strong_convergence": {"min_documents": 3, "min_lenses": 2, "requires_human_approval": true},
+    "moderate_convergence": {"min_documents": 2, "min_lenses": 1, "requires_human_approval": true},
+    "limited_evidence": {"min_documents": 1, "requires_human_approval": true},
+    "conflicting_evidence": {"requires_adjudication": true},
+    "insufficient_evidence": {"cannot_enter_protocol": true}
+  }
+}
