@@ -1,4 +1,5 @@
 from nutev.querypacks.builders import build_queries, build_querypack
+from nutev.querypacks.provider_queries import render_queries_for_provider
 
 
 def test_build_querypack():
@@ -135,3 +136,36 @@ def test_artigo3_queries_include_advanced_review_synthesis_terms():
     assert any("overview of reviews" in query for query in queries)
     assert any("living systematic review" in query for query in queries)
     assert any("food literacy" in query and "questionnaire" in query for query in queries)
+
+
+def test_provider_queries_include_nutrition_delivery_terms_for_busca2b():
+    tax = {
+        "global": {
+            "document_types": {"reviews": ["systematic review"]},
+            "implementation_behavior": {"behavioral": ["behavior change"]},
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {"core": ["food literacy"]},
+        },
+        "clinical": {"obesity": ["obesity"], "diabetes": ["type 2 diabetes"]},
+        "outcomes": {"behavioral": ["self efficacy"]},
+        "workstreams": {
+            "busca2b": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity", "type 2 diabetes"],
+                "clinical_keys": ["obesity", "diabetes"],
+                "document_type_keys": ["reviews"],
+                "priority_outcomes": ["behavioral"],
+                "focus_blocks": ["implementation_behavior", "diet_patterns"],
+                "web_query_hints": ["implementation study"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(tax, "busca2b", "pubmed")
+
+    assert any("food is medicine" in query for query in queries)
+    assert any(
+        "registered dietitian nutritionist" in query
+        or "dietitian-led intervention" in query
+        for query in queries
+    )
