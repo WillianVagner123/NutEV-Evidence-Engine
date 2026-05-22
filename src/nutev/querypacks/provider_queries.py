@@ -50,6 +50,18 @@ BEHAVIOR_PRIORITY_TERMS = [
     "self-management support",
     "dietary adherence",
     "treatment adherence",
+    "registered dietitian",
+    "registered dietitian nutritionist",
+    "dietitian-led intervention",
+    "dietitian led intervention",
+    "food is medicine",
+    "food as medicine",
+    "food is medicine intervention",
+    "produce prescription",
+    "produce prescriptions",
+    "produce prescription program",
+    "medically tailored meals",
+    "medically tailored groceries",
 ]
 
 PUBMED_MESH_MAP = {
