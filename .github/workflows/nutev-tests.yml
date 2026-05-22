@@ -169,6 +169,7 @@ jobs:
         run: |
           PYTHONPATH=src python -m pytest -q \
             nutev_tests/test_global_watch_query_builder.py \
+            nutev_tests/test_global_watch_lifestyle_mode_expansion.py \
             nutev_tests/test_global_watch_scoring.py \
             nutev_tests/test_watch_scoring.py \
             nutev_tests/test_watch_diff.py \
