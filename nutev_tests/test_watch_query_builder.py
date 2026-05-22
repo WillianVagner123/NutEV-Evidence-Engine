@@ -97,7 +97,10 @@ def test_build_watch_queries_adds_guideline_report_context() -> None:
 
     first_query = str(queries[0]["query"])
     assert '"consensus report"' in first_query
+    assert '"consensus guidance"' in first_query
     assert '"practice advisory"' in first_query
+    assert '"scientific advisory"' in first_query
+    assert '"best practice advice"' in first_query
     assert '"expert consensus"' in first_query
     assert '"clinical guidance"' in first_query
     assert '"practice recommendation"' in first_query
@@ -139,7 +142,10 @@ def test_quick_mode_guidelines_cover_consensus_and_statement_seed_groups() -> No
     rendered = " ".join(str(row["query"]).lower() for row in queries)
 
     assert "consensus statement" in rendered
+    assert "consensus guidance" in rendered
     assert "scientific statement" in rendered
+    assert "scientific advisory" in rendered
+    assert "best practice advice" in rendered
     assert "position statement" in rendered
 
 
