@@ -14,6 +14,8 @@ from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semant
 PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref")
 LIVER_FOCUSED_WORKSTREAMS = {"busca2a", "busca2b"}
 BUSCA2A_GUIDANCE_TERMS = [
+    "practice guideline",
+    "clinical practice guideline",
     "practice guidance",
     "guidance statement",
     "consensus statement",
@@ -31,6 +33,10 @@ BUSCA2A_GUIDANCE_TERMS = [
     "clinical practice recommendations",
     "scientific advisory",
     "decision pathway",
+    "guideline update",
+    "clinical practice update",
+    "clinical guidance",
+    "living guideline",
 ]
 BEHAVIOR_PRIORITY_TERMS = [
     "implementation science",
