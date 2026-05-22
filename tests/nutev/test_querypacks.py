@@ -169,3 +169,10 @@ def test_provider_queries_include_nutrition_delivery_terms_for_busca2b():
         or "dietitian-led intervention" in query
         for query in queries
     )
+    assert any(
+        "re-aim" in query
+        or "cfir" in query
+        or "consolidated framework for implementation research" in query
+        or "hybrid effectiveness-implementation" in query
+        for query in queries
+    )
