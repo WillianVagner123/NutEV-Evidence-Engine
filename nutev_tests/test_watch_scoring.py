@@ -48,6 +48,20 @@ def test_practice_advisory_scores_more_than_generic_note():
     assert _score_watch_item({"title": "practice advisory for obesity nutrition care"}) > _score_watch_item({"title": "obesity nutrition care note"})
 
 
+def test_guidance_advisory_variants_score_more_than_generic_note():
+    assert _score_watch_item(
+        {
+            "title": "Scientific advisory and best practice advice for obesity nutrition care",
+        }
+    ) > _score_watch_item({"title": "obesity nutrition care note"})
+
+
+def test_consensus_guidance_scores_more_than_generic_note():
+    assert _score_watch_item(
+        {"title": "Consensus guidance for cardiometabolic nutrition care"}
+    ) > _score_watch_item({"title": "cardiometabolic nutrition care note"})
+
+
 def test_process_evaluation_and_barriers_bonus_improves_priority():
     assert _score_watch_item({"title": "process evaluation of barriers and facilitators for dietary adherence"}) > _score_watch_item({"title": "dietary adherence note"})
 
