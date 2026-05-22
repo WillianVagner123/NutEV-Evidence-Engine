@@ -1,143 +1,151 @@
-# Contributing to Local Deep Research
+# Contributing to NutEV/NutMEV
 
-Thank you for your interest in contributing to Local Deep Research.
+Thank you for your interest in contributing to **NutEV/NutMEV — Evidence Engine for Lifestyle Nutrition**.
 
-We deeply value every contribution to this project. Open source thrives when developers share their expertise, creativity, and passion. Whether you're fixing a typo, optimizing performance, adding a feature, or helping with documentation — your work directly impacts researchers and developers worldwide. Code contributions are not the only way to help: answering questions, reporting bugs, and improving documentation are equally valuable. We carefully review all PRs and are genuinely excited to merge contributions that enhance the project. This is truly a community-driven project, and we're honored to have you join us.
+NutEV/NutMEV is a scientific and methodological platform for identifying, classifying, auditing, and translating evidence into **candidate recommendations** for the NutEV dietary protocol. The canonical runtime for the doctorate project is `src/nutev/`.
 
-### Before You Start
+This repository evolved from a historical Local Deep Research base. Some legacy files and compatibility entry points may still exist, but new research, qualification, and protocol-development work should target the NutEV/NutMEV architecture.
 
-**Please keep PRs small and atomic.** One fix, one feature, one change per PR. This repository has grown in complexity, and large or cross-cutting PRs become very difficult to review safely. Small, focused PRs are easier to review, faster to merge, and less likely to introduce regressions. If your change touches multiple concerns, split it into separate PRs — this protects your time as much as ours.
+## Project principles
 
-**Talk to us before building large changes.** Open an issue, start a discussion, or drop a message on [Discord](https://discord.gg/ttcqQeFcJ3). This helps us reach agreement on your approach before you put significant effort into it. For small fixes (typos, bugs with obvious solutions), feel free to open a PR directly. For anything larger, a quick comment like this goes a long way:
+1. **Scientific traceability first.** Evidence must be traceable from document to claim to recommendation candidate.
+2. **No unsupported recommendations.** A RecommendationCandidate is not a final recommendation.
+3. **Human review is required.** Final protocol inclusion requires explicit human validation.
+4. **LLM is assistive only.** LLM output cannot approve protocol items, replace reviewers, or create support without documentary evidence.
+5. **Small PRs are safer.** One intent per PR: UI, audit, rigor, docs, or pipeline.
 
-> "I'd like to work on this. My intended approach would be to [brief description]. Does this align with what you'd expect?"
+## Canonical NutEV workflow
 
-**Don't hesitate to ask questions.** A lot of people worry about "wasting the team's time," but we genuinely don't feel that way — contributors are important to us. Both core team members and external contributors go through the same review process, and review feedback is completely normal (it happens to our core contributors too).
+The expected evidence-to-protocol chain is:
 
-## 📚 Developer Resources
-
-For detailed development setup instructions, please see our [Developer Guide](https://github.com/LearningCircuit/local-deep-research/wiki/Developer-Guide) which covers:
-- Environment configuration with PDM
-- Pre-commit hooks setup
-- Building packages
-- Running the application
-
-## 🔒 Security Guidelines
-
-As a public repository, we maintain strict file management policies to ensure code quality and prevent unintended data exposure.
-
-### Allowed File Types
-
-Our repository uses a whitelist approach. Only these file types are permitted:
-- **Source code**: `.py`, `.js`, `.html`, `.css`
-- **Configuration**: `.json`, `.yml`, `.yaml`, `.cfg`
-- **Documentation**: `.md`, `.ipynb`
-- **Project files**: `LICENSE`, `README`, `README.md`, `Dockerfile`, `pyproject.toml`, etc.
-- **Scripts**: `.sh`, `.template`
-- **Windows installers** (only in `installers/` directory): `.bat`, `.ps1`, `.iss`, `.ico`
-
-### Blocked File Types
-
-The following are automatically blocked by our CI/CD pipeline:
-- Data files (`.csv`, `.xlsx`, `.jsonl`, `.db`, `.sqlite`, `.parquet`, etc.)
-- Binary files (`.pickle`, `.pkl`, `.npy`, `.npz`)
-- Media files (`.mp4`, `.png`, `.jpg`, `.pdf`, etc.)
-- Archive files (`.zip`, `.tar.gz`, `.rar`)
-- Sensitive files (`.env`, `.key`, `.pem`, or files containing credentials)
-- Files larger than 1MB
-
-## 🚀 Quick Start
-
-1. **Fork and clone the repository**
-2. **Set up your development environment** following the [Developer Guide](https://github.com/LearningCircuit/local-deep-research/wiki/Developer-Guide)
-3. **Install pre-commit hooks**:
-   ```bash
-   pre-commit install
-   pre-commit install-hooks
-   ```
-4. **Create a new branch** for your feature or fix
-
-## 💻 Development Workflow
-
-### Configuration
-
-Never commit sensitive information like API keys or passwords. Configuration is typically done through the web UI.
-
-For environment variables and advanced configuration, see the [Installation guide](https://github.com/LearningCircuit/local-deep-research/wiki/Installation#environment-variables) on our wiki.
-
-### Testing
-
-Run tests before submitting PRs:
-```bash
-pdm run python run_tests.py
+```text
+Document -> EvidenceRecord -> EvidenceClaim -> ClaimEvaluation -> RecommendationCandidate -> HumanReview -> ProtocolReadiness
 ```
 
-### Code Quality
+New code should preserve this chain and should not bypass audit or human review safeguards.
 
-Pre-commit hooks will automatically:
-- Lint and auto-fix with Ruff (`ruff --fix`)
-- Format code with Ruff (`ruff format`)
-- Detect secrets with gitleaks
-- Lint shell scripts with shellcheck
-- Lint JavaScript with ESLint
-- Check for large files and case conflicts
-- Run custom checks (datetime timezone, session context managers, SSRF protection, etc.)
+## Before you start
 
-## 📋 Pull Request Process
+- Open or reference an issue for larger changes.
+- Keep PRs small and atomic.
+- Prefer additive changes over broad rewrites.
+- Avoid mixing UI, scientific methods, search strategy, and pipeline changes in the same PR.
+- Do not commit generated real outputs, secrets, or large files.
 
-1. **Search first** — Check existing PRs and issues to make sure nobody is already working on the same thing
-2. **Comment before you code** — If you're picking up an issue, leave a comment so others don't duplicate your effort
-3. **Create a focused PR** — One feature/fix per PR. If your PR is large or cross-cutting, consider splitting it
-4. **Write clear commit messages** — Explain what and why, not just what changed
-5. **Add tests** — Include tests for new functionality
-6. **Update documentation** — Keep docs in sync with code changes
-7. **Add a release-notes fragment** — If your change is user-visible (new feature, bug fix, breaking change, security fix, etc.), drop a one-line markdown file at `changelog.d/<PR-number>.<category>.md` where `<category>` is one of `breaking`, `security`, `feature`, `bugfix`, `removal`, `misc`. The pre-commit hook will nudge you if you forget. See [`changelog.d/README.md`](changelog.d/README.md) for the convention. Skip for dep bumps, CI tweaks, and pure refactors — the auto-generated PR list catches those.
-8. **Ensure CI passes** — All automated checks must pass. Address CI failures promptly
+## Development setup
 
-We will review your pull request and either merge it, request changes, or close it with an explanation. Don't worry about things like commit message formatting — we squash-merge and can adjust the final message.
+Install the project locally:
 
-### Security Checks
+```bash
+pip install -e ".[dashboard,platform]"
+```
 
-Every PR automatically runs:
-- File whitelist enforcement
-- Large file detection (>1MB)
-- Security pattern scanning
-- Binary file detection
+Generate demo outputs:
 
-## 🛡️ Additional Security
+```bash
+nutev demo-data --project-root ./project_output_demo
+```
 
-### GitGuardian
+Run the local platform API:
 
-For enhanced security on your fork:
-1. Visit [GitGuardian on GitHub Marketplace](https://github.com/marketplace/gitguardian)
-2. Install the free plan for public repositories
-3. It will scan commits for exposed secrets
+```bash
+nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
+```
 
-### If You Accidentally Commit Sensitive Data
+Run the Control Center:
 
-1. **Immediately revoke** any exposed credentials
-2. **Clean git history** using BFG Repo-Cleaner or git filter-branch
-3. **Force push** the cleaned history
-4. **Notify maintainers** if the data was pushed to the main repository
+```bash
+nutev dashboard --project-root ./project_output_demo --port 8501
+```
 
-## 🤝 Community
+Run NutEV tests:
 
-- **Discord**: Join our [Discord server](https://discord.gg/ttcqQeFcJ3) for discussions
-- **Issues**: Check existing issues before opening new ones
-- **Wiki**: Contribute to our [documentation wiki](https://github.com/LearningCircuit/local-deep-research/wiki)
+```bash
+PYTHONPATH=src python -m pytest -q tests/nutev
+```
 
-## 📝 Code of Conduct
+## Pull request expectations
 
-- Be respectful and professional
-- Welcome newcomers with patience
-- Focus on constructive feedback
-- Report inappropriate behavior to maintainers
+A good PR should include:
 
-## 🏆 Recognition
+- a clear title;
+- a short explanation of why the change is needed;
+- files changed only for one concern;
+- tests or a clear note if tests were not run;
+- documentation updates when user-facing behavior changes.
 
-All contributors are recognized in:
-- Release notes
-- GitHub contributors graph
-- Special mentions for significant contributions
+Recommended PR scopes:
 
-Thank you for helping improve Local Deep Research! 🎉
+- `fix(cli): ...`
+- `feat(audit): ...`
+- `feat(rigor): ...`
+- `feat(ui): ...`
+- `docs(nutev): ...`
+- `test(nutev): ...`
+
+## Safety rules for contributions
+
+Do not commit:
+
+- API keys, tokens, credentials, or `.env` files;
+- real patient or participant data;
+- unreviewed generated outputs from real searches;
+- large binary files;
+- private PDFs or copyrighted full-text files without permission.
+
+Generated folders such as `project_output/` and `project_output_demo/` should remain local unless intentionally added as small, clearly marked demo fixtures.
+
+## Scientific rules
+
+When contributing to evidence, audit, or protocol modules:
+
+- keep exact quotes when available;
+- preserve `document_id`, `claim_id`, and `recommendation_id` links;
+- mark computational inference as requiring human review;
+- do not convert gaps into final recommendations;
+- do not hide conflicting evidence;
+- do not let LLM output set `approved`, `approved_for_protocol`, or `locked_for_protocol`.
+
+## Repository structure
+
+Canonical NutEV areas:
+
+```text
+src/nutev/audit/
+src/nutev/analysis/
+src/nutev/api/
+src/nutev/demo/
+src/nutev/export/
+src/nutev/global_watch/
+src/nutev/pipelines/
+src/nutev/protocol/
+src/nutev/review/
+src/nutev/ui/
+config/
+docs/
+tests/nutev/
+```
+
+Legacy areas may remain for compatibility, but new doctorate work should not depend on `src/local_deep_research/` unless explicitly justified.
+
+## Documentation
+
+Useful project documents:
+
+- `README.md`
+- `SECURITY.md`
+- `docs/REPOSITORY_STRUCTURE.md`
+- `docs/NUTEV_AUDIT_ENGINE.md`
+- `docs/NUTEV_CONTROL_CENTER.md`
+- `docs/NUTEV_PLATFORM_API.md`
+- `docs/NUTEV_PREMIUM_UI_GUIDE.md`
+- `docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md`
+
+## Code of conduct
+
+- Be respectful and constructive.
+- Make methodological assumptions explicit.
+- Prefer transparent limitations over overclaiming.
+- Protect the scientific integrity of the NutEV protocol.
+
+Thank you for helping build NutEV/NutMEV.
