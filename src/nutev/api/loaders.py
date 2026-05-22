@@ -14,11 +14,14 @@ def read_csv_safe(path: Path) -> pd.DataFrame:
         return pd.DataFrame()
 
 
-def read_xlsx_safe(path: Path, sheet_name: str | None = None) -> pd.DataFrame:
+def read_xlsx_safe(path: Path, sheet_name: str | int | None = 0) -> pd.DataFrame:
     if not path.exists():
         return pd.DataFrame()
     try:
-        return pd.read_excel(path, sheet_name=sheet_name)
+        data = pd.read_excel(path, sheet_name=sheet_name)
+        if isinstance(data, dict):
+            return next(iter(data.values())) if data else pd.DataFrame()
+        return data if isinstance(data, pd.DataFrame) else pd.DataFrame(data)
     except Exception:
         return pd.DataFrame()
 
@@ -53,13 +56,7 @@ def filter_df(df: pd.DataFrame, filters: dict) -> pd.DataFrame:
 def paginate_df(df: pd.DataFrame, limit: int, offset: int) -> dict:
     total = int(len(df))
     page = df.iloc[offset : offset + limit] if total else df
-    return {
-        "available": total > 0,
-        "total": total,
-        "limit": limit,
-        "offset": offset,
-        "items": page.fillna("").to_dict("records"),
-    }
+    return {"available": total > 0, "total": total, "limit": limit, "offset": offset, "items": page.fillna("").to_dict("records")}
 
 
 def list_artifacts(project_root: Path) -> list[dict]:
@@ -71,11 +68,5 @@ def list_artifacts(project_root: Path) -> list[dict]:
             continue
         for p in base.glob(globp):
             st = p.stat()
-            out.append({
-                "file_name": p.name,
-                "relative_path": str(p.relative_to(project_root)),
-                "size_bytes": int(st.st_size),
-                "modified_at": __import__("datetime").datetime.fromtimestamp(st.st_mtime).isoformat(),
-                "artifact_type": folder,
-            })
+            out.append({"file_name": p.name, "relative_path": str(p.relative_to(project_root)), "size_bytes": int(st.st_size), "modified_at": __import__("datetime").datetime.fromtimestamp(st.st_mtime).isoformat(), "artifact_type": folder})
     return sorted(out, key=lambda x: x["relative_path"])
