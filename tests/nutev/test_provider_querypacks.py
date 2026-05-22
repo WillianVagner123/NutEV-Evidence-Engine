@@ -178,3 +178,40 @@ def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
     assert '"Dyslipidemias"[MeSH Terms]' in joined
     assert '"Hypercholesterolemia"[MeSH Terms]' in joined
     assert '"Non-alcoholic Fatty Liver Disease"[MeSH Terms]' in joined
+
+
+def test_busca2a_guidance_terms_pull_guideline_variants_into_queries() -> None:
+    taxonomy = {
+        "global": {
+            "document_types": {"guidelines": ["guideline"]},
+            "diet_patterns": {"core": ["mediterranean diet"]},
+            "nutrition_domains": {"core": ["medical nutrition therapy"]},
+            "implementation_behavior": {"adherence": ["adherence"]},
+        },
+        "clinical": {
+            "obesity": ["obesity"],
+            "diabetes": ["type 2 diabetes"],
+        },
+        "outcomes": {
+            "metabolic": ["hba1c", "blood pressure"],
+        },
+        "workstreams": {
+            "busca2a": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["obesity", "diabetes"],
+                "document_type_keys": ["guidelines"],
+                "priority_outcomes": ["metabolic"],
+                "focus_blocks": ["diet_patterns", "implementation_behavior"],
+                "web_query_hints": ["clinical practice guideline"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(taxonomy, "busca2a", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"consensus guidance"[Title/Abstract]' in joined
+    assert '"best practice advice"[Title/Abstract]' in joined
+    assert '"standards of care"[Title/Abstract]' in joined
+    assert '"position statement"[Title/Abstract]' in joined
