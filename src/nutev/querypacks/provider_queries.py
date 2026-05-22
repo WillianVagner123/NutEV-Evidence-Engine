@@ -21,6 +21,8 @@ BUSCA2A_GUIDANCE_TERMS = [
     "consensus statement",
     "consensus guidance",
     "scientific statement",
+    "guideline update",
+    "clinical practice update",
     "best practice advice",
     "standards of care",
     "clinical decision pathway",
@@ -33,8 +35,6 @@ BUSCA2A_GUIDANCE_TERMS = [
     "clinical practice recommendations",
     "scientific advisory",
     "decision pathway",
-    "guideline update",
-    "clinical practice update",
     "clinical guidance",
     "living guideline",
 ]
