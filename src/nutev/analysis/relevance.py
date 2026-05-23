@@ -569,6 +569,52 @@ WORKSTREAM_BONUS = {
     },
 }
 
+IMPLEMENTATION_DESIGN_BONUS = {
+    "busca2b": {
+        "hybrid type 1": 4,
+        "hybrid type 2": 5,
+        "hybrid type 3": 5,
+        "implementation trial": 4,
+        "implementation evaluation": 4,
+        "process evaluation": 3,
+        "quality improvement": 3,
+        "quality improvement study": 4,
+        "real-world evidence": 3,
+        "real-world implementation": 4,
+        "scale-up": 3,
+        "scale up": 3,
+        "scale-out": 3,
+        "scale out": 3,
+        "program implementation": 3,
+        "care delivery": 2,
+        "service delivery": 2,
+    },
+    "a3": {
+        "hybrid type 1": 3,
+        "hybrid type 2": 4,
+        "hybrid type 3": 4,
+        "implementation trial": 3,
+        "implementation evaluation": 3,
+        "process evaluation": 3,
+        "quality improvement": 2,
+        "real-world implementation": 3,
+        "scale-up": 2,
+        "scale up": 2,
+    },
+    "artigo3_framework": {
+        "hybrid type 1": 3,
+        "hybrid type 2": 4,
+        "hybrid type 3": 4,
+        "implementation trial": 3,
+        "implementation evaluation": 3,
+        "process evaluation": 3,
+        "quality improvement": 2,
+        "real-world implementation": 3,
+        "scale-up": 2,
+        "scale up": 2,
+    },
+}
+
 WORKSTREAM_SIGNAL_GROUPS = {
     "busca1": {
         "condition": ["obesity", "overweight", "obesidade", "sobrepeso"],
@@ -893,6 +939,10 @@ def _match_weighted_points(text: str, points_map: dict[str, int]) -> int:
     return score
 
 
+def _implementation_design_bonus(text: str, workstream: str) -> int:
+    return _match_weighted_points(text, IMPLEMENTATION_DESIGN_BONUS.get(workstream, {}))
+
+
 def _editorial_authority_score(record: dict, scoring_rules: dict) -> int:
     authority_rules = scoring_rules.get("editorial_authority_points", {})
     journal = (record.get("journal") or "").lower()
@@ -955,6 +1005,8 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     for kw, pts in WORKSTREAM_BONUS.get(workstream, {}).items():
         if kw in text:
             score += pts
+
+    score += _implementation_design_bonus(text, workstream)
 
     out_of_scope_flags, out_of_scope_penalty = _out_of_scope_profile(text)
     editorial_score = _editorial_authority_score(record, scoring_rules)
