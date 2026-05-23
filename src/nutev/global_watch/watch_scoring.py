@@ -19,6 +19,7 @@ def score_watch_item(item: dict) -> float:
     score = float(item.get("relevance_score") or 0)
 
     bonus = [
+        ("standards of medical care in diabetes", 60),
         ("clinical practice guideline", 60),
         ("practice guideline", 55),
         ("guideline update", 60),
@@ -76,6 +77,7 @@ def score_watch_item(item: dict) -> float:
         ("food agency", 15),
         ("food is medicine", 18),
         ("food as medicine", 18),
+        ("food as medicine intervention", 18),
         ("produce prescription", 18),
         ("produce prescriptions", 18),
         ("produce prescription program", 18),
@@ -110,6 +112,8 @@ def score_watch_item(item: dict) -> float:
         ("implementation framework", 15),
         ("implementation frameworks", 15),
         ("implementation outcomes", 15),
+        ("implementation trial", 16),
+        ("implementation evaluation", 14),
         ("implementation fidelity", 15),
         ("implementation facilitation", 15),
         ("implementation support", 12),
@@ -130,6 +134,11 @@ def score_watch_item(item: dict) -> float:
         ("normalization process theory", 14),
         ("theoretical domains framework", 14),
         ("process evaluation", 15),
+        ("quality improvement", 10),
+        ("quality improvement study", 12),
+        ("program implementation", 10),
+        ("scale out", 10),
+        ("scale-out", 10),
         ("knowledge translation", 15),
         ("behavioral lifestyle intervention", 15),
         ("behavioral weight loss", 15),
