@@ -267,6 +267,7 @@ def _pubmed_mesh_expansion_queries(components: dict[str, list[str]]) -> list[str
             components.get("focus_terms", [])
             + components.get("behavior_terms", [])
             + components.get("nutrition_terms", [])
+            + components.get("web_hints", [])
         ),
         4,
     )
