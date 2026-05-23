@@ -183,6 +183,40 @@ def test_provider_queries_include_nutrition_delivery_terms_for_busca2b():
     )
 
 
+def test_provider_queries_include_hybrid_type_and_process_evaluation_terms_for_busca2b():
+    tax = {
+        "global": {
+            "document_types": {"reviews": ["systematic review"]},
+            "implementation_behavior": {"behavioral": ["behavior change"]},
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {"core": ["food literacy"]},
+        },
+        "clinical": {"obesity": ["obesity"], "diabetes": ["type 2 diabetes"]},
+        "outcomes": {"behavioral": ["self efficacy"]},
+        "workstreams": {
+            "busca2b": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity", "type 2 diabetes"],
+                "clinical_keys": ["obesity", "diabetes"],
+                "document_type_keys": ["reviews"],
+                "priority_outcomes": ["behavioral"],
+                "focus_blocks": ["implementation_behavior", "diet_patterns"],
+                "web_query_hints": ["implementation study"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(tax, "busca2b", "pubmed")
+
+    assert any(
+        "hybrid type 2" in query
+        or "hybrid type 3" in query
+        or "process evaluation" in query
+        or "implementation trial" in query
+        for query in queries
+    )
+
+
 def test_food_as_medicine_variant_scores_like_food_is_medicine():
     scoring_rules = json.loads(
         (Path(__file__).resolve().parents[2] / "config" / "scoring_rules.json").read_text(
@@ -215,3 +249,37 @@ def test_food_as_medicine_variant_scores_like_food_is_medicine():
     )
 
     assert food_as_medicine["relevance_score"] >= food_is_medicine["relevance_score"]
+
+
+def test_busca2b_scoring_boosts_hybrid_implementation_designs():
+    scoring_rules = json.loads(
+        (Path(__file__).resolve().parents[2] / "config" / "scoring_rules.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    base_record = {
+        "source": "pubmed",
+        "url": "https://example.org/article",
+        "abstract": "Adult obesity care in primary care with food as medicine delivery and dietary support.",
+        "journal": "",
+        "source_institution": "",
+    }
+
+    standard_program = score_record(
+        {
+            **base_record,
+            "title": "Food as medicine program for adult obesity in primary care",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    hybrid_implementation = score_record(
+        {
+            **base_record,
+            "title": "Hybrid type 2 implementation trial of a food as medicine program for adult obesity in primary care",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert hybrid_implementation["relevance_score"] > standard_program["relevance_score"]
