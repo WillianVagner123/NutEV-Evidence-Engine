@@ -53,3 +53,33 @@ def test_watch_scoring_boosts_diabetes_standards_and_implementation_trials():
 
     assert score_watch_item(diabetes_standards) > score_watch_item(generic_guideline)
     assert score_watch_item(stronger_implementation) > score_watch_item(generic_implementation)
+
+
+def test_obesity_cardiometabolic_quick_queries_include_advanced_lipid_markers() -> None:
+    queries = build_watch_queries(["obesity_cardiometabolic"], 30, "quick")
+    query_texts = [str(item["query"]).lower() for item in queries]
+
+    assert any("apolipoprotein b" in query for query in query_texts)
+    assert any("remnant cholesterol" in query for query in query_texts)
+    assert any("triglyceride-rich lipoprotein" in query for query in query_texts)
+
+
+def test_watch_scoring_boosts_advanced_lipid_markers() -> None:
+    generic_item = {
+        "title": "Dietary intervention for cardiometabolic risk",
+        "abstract": "Adult obesity and dyslipidemia management.",
+        "snippet": "",
+        "evidence_type": "study",
+        "category": "obesity_cardiometabolic",
+        "relevance_score": 50,
+        "source_provider": "pubmed",
+        "download_status": "metadata_only",
+        "is_new": False,
+    }
+    advanced_lipid_item = {
+        **generic_item,
+        "title": "Dietary intervention targeting apolipoprotein B and remnant cholesterol in adult cardiometabolic risk",
+        "abstract": "Adult obesity and triglyceride-rich lipoprotein management.",
+    }
+
+    assert score_watch_item(advanced_lipid_item) > score_watch_item(generic_item)
