@@ -217,6 +217,67 @@ def test_provider_queries_include_hybrid_type_and_process_evaluation_terms_for_b
     )
 
 
+def test_provider_queries_include_diabetes_standards_for_busca2a():
+    tax = {
+        "global": {
+            "document_types": {"guidelines": ["guideline"]},
+            "implementation_behavior": {"behavioral": ["behavior change"]},
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {"core": ["food literacy"]},
+        },
+        "clinical": {"obesity": ["obesity"], "diabetes": ["type 2 diabetes"]},
+        "outcomes": {"glycemia": ["hba1c"]},
+        "workstreams": {
+            "busca2a": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity", "type 2 diabetes"],
+                "clinical_keys": ["obesity", "diabetes"],
+                "document_type_keys": ["guidelines"],
+                "priority_outcomes": ["glycemia"],
+                "focus_blocks": ["diet_patterns"],
+                "web_query_hints": ["clinical practice guideline"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(tax, "busca2a", "pubmed")
+
+    assert any("standards of medical care in diabetes" in query for query in queries)
+    assert any("consensus report" in query for query in queries)
+
+
+def test_provider_queries_include_intensive_lifestyle_intervention_for_busca2b():
+    tax = {
+        "global": {
+            "document_types": {"reviews": ["systematic review"]},
+            "implementation_behavior": {"behavioral": ["behavior change"]},
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {"core": ["food literacy"]},
+        },
+        "clinical": {"obesity": ["obesity"], "diabetes": ["type 2 diabetes"]},
+        "outcomes": {"behavioral": ["self efficacy"]},
+        "workstreams": {
+            "busca2b": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity", "type 2 diabetes"],
+                "clinical_keys": ["obesity", "diabetes"],
+                "document_type_keys": ["reviews"],
+                "priority_outcomes": ["behavioral"],
+                "focus_blocks": ["implementation_behavior", "diet_patterns"],
+                "web_query_hints": ["implementation study"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(tax, "busca2b", "pubmed")
+
+    assert any("intensive lifestyle intervention" in query for query in queries)
+    assert any(
+        "lifestyle program" in query or "lifestyle programme" in query
+        for query in queries
+    )
+
+
 def test_food_as_medicine_variant_scores_like_food_is_medicine():
     scoring_rules = json.loads(
         (Path(__file__).resolve().parents[2] / "config" / "scoring_rules.json").read_text(
@@ -283,3 +344,56 @@ def test_busca2b_scoring_boosts_hybrid_implementation_designs():
     )
 
     assert hybrid_implementation["relevance_score"] > standard_program["relevance_score"]
+
+
+def test_scoring_boosts_diabetes_standards_and_intensive_lifestyle_intervention():
+    scoring_rules = json.loads(
+        (Path(__file__).resolve().parents[2] / "config" / "scoring_rules.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    guideline_base = {
+        "source": "pubmed",
+        "url": "https://example.org/diabetes-guideline",
+        "abstract": "Adult obesity and type 2 diabetes nutrition care.",
+        "journal": "",
+        "source_institution": "American Diabetes Association",
+    }
+    generic_guideline = score_record(
+        {**guideline_base, "title": "Guideline for nutrition care in type 2 diabetes"},
+        scoring_rules,
+        "busca2a",
+    )
+    diabetes_standards = score_record(
+        {
+            **guideline_base,
+            "title": "Standards of Medical Care in Diabetes for obesity and nutrition therapy",
+        },
+        scoring_rules,
+        "busca2a",
+    )
+
+    intervention_base = {
+        "source": "pubmed",
+        "url": "https://example.org/lifestyle-intervention",
+        "abstract": "Adult obesity and type 2 diabetes behavior change support in primary care.",
+        "journal": "",
+        "source_institution": "",
+    }
+    generic_intervention = score_record(
+        {**intervention_base, "title": "Lifestyle intervention for adult obesity and diabetes"},
+        scoring_rules,
+        "busca2b",
+    )
+    intensive_intervention = score_record(
+        {
+            **intervention_base,
+            "title": "Intensive lifestyle intervention program for adult obesity and type 2 diabetes",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert diabetes_standards["relevance_score"] > generic_guideline["relevance_score"]
+    assert intensive_intervention["relevance_score"] > generic_intervention["relevance_score"]
