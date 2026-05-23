@@ -117,7 +117,6 @@ def score_watch_item(item: dict) -> float:
         ("implementation fidelity", 15),
         ("implementation facilitation", 15),
         ("implementation support", 12),
-        ("implementation evaluation", 12),
         ("implementation determinant", 12),
         ("implementation determinants", 12),
         ("implementation barrier", 12),
