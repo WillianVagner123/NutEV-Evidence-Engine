@@ -360,3 +360,22 @@ def test_quick_mode_implementation_queries_keep_three_seed_buckets() -> None:
     queries = build_watch_queries(["implementation_behavior"], since_days=7, mode="quick")
 
     assert len(queries) == 3
+
+
+def test_thesis_mode_implementation_queries_keep_curated_seed_order() -> None:
+    queries = build_watch_queries(["implementation_behavior"], since_days=30, mode="thesis")
+    rendered = [str(row["query"]).lower() for row in queries]
+
+    assert len(rendered) == 6
+    assert '"adherence"' in rendered[0]
+    assert '"dietary adherence"' in rendered[1]
+    assert '"implementation science"' in rendered[2]
+
+
+def test_exhaustive_mode_implementation_queries_reach_framework_markers() -> None:
+    queries = build_watch_queries(["implementation_behavior"], since_days=30, mode="exhaustive")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert '"cfir"' in rendered
+    assert '"re-aim"' in rendered
+    assert '"hybrid effectiveness-implementation"' in rendered
