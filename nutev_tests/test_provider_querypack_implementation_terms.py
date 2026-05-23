@@ -30,11 +30,11 @@ def test_busca2b_pubmed_queries_include_dietitian_led_nutrition_focus_terms():
     assert "registered dietitian nutritionist" in rendered
     assert "dietitian-led intervention" in rendered
     assert "implementation determinants" in rendered
-    assert "implementation barriers" in rendered
-    assert "implementation facilitators" in rendered
+    assert "implementation evaluation" in rendered
     assert "process evaluation" in rendered
+    assert "real-world evidence" in rendered
     assert "hybrid type 1" in rendered
-    assert "theoretical domains framework" in rendered
+    assert "hybrid type 2" in rendered
     assert "motivational interviewing" in rendered
     assert "shared decision making" in rendered
     assert "self-management support" in rendered
