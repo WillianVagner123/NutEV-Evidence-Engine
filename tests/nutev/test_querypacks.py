@@ -278,6 +278,55 @@ def test_provider_queries_include_intensive_lifestyle_intervention_for_busca2b()
     )
 
 
+def test_provider_queries_add_pubmed_mesh_expansion_for_lifestyle_nutrition_terms():
+    tax = {
+        "global": {
+            "document_types": {"reviews": ["systematic review"]},
+            "implementation_behavior": {
+                "behavioral": ["shared decision making", "self efficacy"],
+                "adherence": ["registered dietitian"],
+            },
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {
+                "core": [
+                    "medical nutrition therapy",
+                    "teaching kitchen",
+                    "food environment",
+                ]
+            },
+        },
+        "clinical": {"obesity": ["obesity"], "diabetes": ["type 2 diabetes"]},
+        "outcomes": {"behavioral": ["self efficacy"]},
+        "workstreams": {
+            "busca2b": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity", "type 2 diabetes"],
+                "clinical_keys": ["obesity", "diabetes"],
+                "document_type_keys": ["reviews"],
+                "priority_outcomes": ["behavioral"],
+                "focus_blocks": [
+                    "implementation_behavior",
+                    "diet_patterns",
+                    "nutrition_domains",
+                ],
+                "web_query_hints": ["implementation study", "lifestyle intervention"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(tax, "busca2b", "pubmed")
+
+    assert any('"Life Style"[MeSH Terms]' in query for query in queries)
+    assert any('"Diet Therapy"[MeSH Terms]' in query for query in queries)
+    assert any(
+        '"Dietitians"[MeSH Terms]' in query
+        or '"Decision Making, Shared"[MeSH Terms]' in query
+        or '"Self Efficacy"[MeSH Terms]' in query
+        or '"Cooking"[MeSH Terms]' in query
+        for query in queries
+    )
+
+
 def test_food_as_medicine_variant_scores_like_food_is_medicine():
     scoring_rules = json.loads(
         (Path(__file__).resolve().parents[2] / "config" / "scoring_rules.json").read_text(
