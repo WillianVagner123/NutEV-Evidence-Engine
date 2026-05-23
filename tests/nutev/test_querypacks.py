@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from nutev.analysis.relevance import score_record
+from nutev.pipelines.master_pipeline import _query_budget_for_workstream
 from nutev.querypacks.builders import build_queries, build_querypack
 from nutev.querypacks.provider_queries import render_queries_for_provider
 
@@ -397,3 +398,26 @@ def test_scoring_boosts_diabetes_standards_and_intensive_lifestyle_intervention(
 
     assert diabetes_standards["relevance_score"] > generic_guideline["relevance_score"]
     assert intensive_intervention["relevance_score"] > generic_intervention["relevance_score"]
+
+
+def test_query_budget_uses_provider_querypack_when_it_is_larger_than_generic_qpack():
+    generic_queries = ["q1", "q2", "q3"]
+    provider_queries = {
+        "pubmed": [f"pubmed-{idx}" for idx in range(12)],
+        "europepmc": [f"europepmc-{idx}" for idx in range(8)],
+    }
+
+    budget = _query_budget_for_workstream("busca2a", generic_queries, provider_queries)
+
+    assert budget == 12
+
+
+def test_query_budget_keeps_workstream_cap_for_large_provider_querypacks():
+    generic_queries = ["q1", "q2"]
+    provider_queries = {
+        "pubmed": [f"pubmed-{idx}" for idx in range(99)],
+    }
+
+    budget = _query_budget_for_workstream("busca2b", generic_queries, provider_queries)
+
+    assert budget == 36
