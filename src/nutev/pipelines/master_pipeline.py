@@ -252,6 +252,17 @@ def _write_querypack_audit(
     write_simple_csv(rows, logs_dir / "querypack_executed.csv")
 
 
+def _query_budget_for_workstream(
+    workstream: str,
+    generic_queries: list[str],
+    provider_queries: dict[str, list[str]],
+) -> int:
+    configured_budget = QUERY_BUDGET.get(workstream, 32)
+    provider_query_count = max((len(queries) for queries in provider_queries.values()), default=0)
+    effective_query_count = max(len(generic_queries), provider_query_count)
+    return min(effective_query_count, configured_budget)
+
+
 def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dict[str, int]:
     run_id = make_run_id()
     search_case = create_search_case(
@@ -323,13 +334,20 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
                 ws,
                 unsupported_priority,
             )
-        query_budget = min(len(queries), QUERY_BUDGET.get(ws, 32))
 
-        logger.info("workstream=%s queries_geradas=%d", ws, len(queries))
+        provider_queries = provider_querypack.get(ws, {})
+        query_budget = _query_budget_for_workstream(ws, queries, provider_queries)
+
+        logger.info(
+            "workstream=%s queries_genericas=%d provider_queries_max=%d query_budget=%d",
+            ws,
+            len(queries),
+            max((len(qs) for qs in provider_queries.values()), default=0),
+            query_budget,
+        )
         rows = []
         hits_by_provider = {}
 
-        provider_queries = provider_querypack.get(ws, {})
         for provider in supported_priority:
             if provider == "official_web":
                 continue
