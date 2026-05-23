@@ -2,8 +2,8 @@ from nutev.global_watch.watch_query_builder import build_watch_queries
 from nutev.global_watch.watch_scoring import score_watch_item
 
 
-def test_build_watch_queries_include_diabetes_standards_and_implementation_design_terms_in_quick_mode():
-    queries = build_watch_queries([], 30, "quick")
+def test_build_watch_queries_include_diabetes_standards_and_implementation_design_terms_in_thesis_mode():
+    queries = build_watch_queries([], 30, "thesis")
     query_texts = [str(item["query"]).lower() for item in queries]
 
     assert any("standards of medical care in diabetes" in query for query in query_texts)
