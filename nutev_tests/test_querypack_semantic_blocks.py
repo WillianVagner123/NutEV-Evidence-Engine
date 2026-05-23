@@ -10,8 +10,12 @@ def test_implementation_semantic_block_adds_core_implementation_science_terms() 
     assert "implementation facilitation" in rendered
     assert "implementation support" in rendered
     assert "implementation research" in rendered
+    assert "implementation evaluation" in rendered
+    assert "process evaluation" in rendered
     assert "implementation determinant" in rendered
     assert "implementation determinants" in rendered
+    assert "implementation barriers" in rendered
+    assert "implementation facilitators" in rendered
     assert "shared decision making" in rendered
     assert "motivational interviewing" in rendered
     assert "behavior change technique" in rendered
@@ -19,6 +23,9 @@ def test_implementation_semantic_block_adds_core_implementation_science_terms() 
     assert "sustainability" in rendered
     assert "dissemination" in rendered
     assert "scale-up" in rendered
+    assert "hybrid type 1" in rendered
+    assert "theoretical domains framework" in rendered
+    assert "real-world evidence" in rendered
 
 
 def test_implementation_semantic_block_adds_document_level_terms() -> None:
@@ -27,8 +34,10 @@ def test_implementation_semantic_block_adds_document_level_terms() -> None:
     ).lower()
 
     assert "implementation evaluation" in rendered
+    assert "process evaluation" in rendered
     assert "dissemination study" in rendered
     assert "hybrid type 2" in rendered
+    assert "real world evidence" in rendered
 
 
 def test_evidence_synthesis_semantic_block_adds_guidance_and_pathway_terms() -> None:
