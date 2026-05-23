@@ -108,6 +108,27 @@ PUBMED_MESH_MAP = {
     "nutrition literacy": "Health Literacy",
     "meal planning": "Food Planning",
     "implementation science": "Implementation Science",
+    "lifestyle medicine": "Life Style",
+    "lifestyle intervention": "Life Style",
+    "lifestyle modification": "Life Style",
+    "therapeutic lifestyle changes": "Life Style",
+    "therapeutic lifestyle change": "Life Style",
+    "medical nutrition therapy": "Diet Therapy",
+    "nutrition counseling": "Counseling",
+    "nutrition counselling": "Counseling",
+    "dietary counseling": "Counseling",
+    "dietary counselling": "Counseling",
+    "registered dietitian": "Dietitians",
+    "registered dietitian nutritionist": "Dietitians",
+    "shared decision making": "Decision Making, Shared",
+    "self-efficacy": "Self Efficacy",
+    "self efficacy": "Self Efficacy",
+    "cooking skills": "Cooking",
+    "cooking confidence": "Cooking",
+    "home cooking": "Cooking",
+    "teaching kitchen": "Cooking",
+    "teaching kitchens": "Cooking",
+    "food environment": "Food Supply",
 }
 
 CARDIOMETABOLIC_LIVER_TERMS = [
@@ -237,6 +258,44 @@ def _pubmed_document_clause(doc_terms: list[str]) -> str:
             _provider_or_block(title_abs_terms, "pubmed", 6),
         ]
     )
+
+
+def _pubmed_mesh_expansion_queries(components: dict[str, list[str]]) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    focus_mesh_block = _pubmed_mesh_block(
+        uniq(
+            components.get("focus_terms", [])
+            + components.get("behavior_terms", [])
+            + components.get("nutrition_terms", [])
+        ),
+        4,
+    )
+    diet_mesh_block = _pubmed_mesh_block(
+        uniq(components.get("diet_terms", []) + components.get("focus_terms", [])),
+        4,
+    )
+    queries: list[str] = []
+    if focus_mesh_block:
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(condition_terms, "pubmed", 6),
+                    focus_mesh_block,
+                    _pubmed_document_clause(components["doc_type_terms"]),
+                ]
+            )
+        )
+    if diet_mesh_block:
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(condition_terms, "pubmed", 6),
+                    diet_mesh_block,
+                    _provider_or_block(components["priority_outcomes"], "pubmed", 4),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
 
 
 def _augment_with_semantic_blocks(
@@ -616,6 +675,7 @@ def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_pubmed_behavior_overflow_queries(components)
         + _render_pubmed_doc_type_overflow_queries(components)
         + _render_pubmed_outcome_overflow_queries(components)
+        + _pubmed_mesh_expansion_queries(components)
     )
 
 
