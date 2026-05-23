@@ -608,28 +608,36 @@ def _build_category_queries(
     mode: str,
 ) -> list[dict[str, object]]:
     context_clause = _or_clause(_build_context_terms(category))
-    queries: list[dict[str, object]] = []
-    for term in _mode_terms(category, mode)[: MODE_LIMITS.get(mode, 6)]:
+    ranked_queries: list[tuple[int, dict[str, object]]] = []
+    for index, term in enumerate(
+        _mode_terms(category, mode)[: MODE_LIMITS.get(mode, 6)]
+    ):
         term_clause = _term_clause(term)
         query = f"({term_clause})"
         if context_clause:
             query = f"{query} AND {context_clause}"
-        queries.append(
-            {
-                "query_id": make_document_id(
-                    {"title": query, "provider": "watch", "year": since_days}
-                ),
-                "category": category,
-                "query": query,
-                "provider_hint": "pubmed",
-                "priority": _priority_for_term(term),
-                "since_days": since_days,
-            }
+        ranked_queries.append(
+            (
+                index,
+                {
+                    "query_id": make_document_id(
+                        {"title": query, "provider": "watch", "year": since_days}
+                    ),
+                    "category": category,
+                    "query": query,
+                    "provider_hint": "pubmed",
+                    "priority": _priority_for_term(term),
+                    "since_days": since_days,
+                },
+            )
         )
-    return sorted(
-        queries,
-        key=lambda query: (int(query["priority"]), str(query["query"])),
-    )
+    return [
+        query
+        for _, query in sorted(
+            ranked_queries,
+            key=lambda item: (int(item[1]["priority"]), item[0]),
+        )
+    ]
 
 
 def _interleave_category_queries(
