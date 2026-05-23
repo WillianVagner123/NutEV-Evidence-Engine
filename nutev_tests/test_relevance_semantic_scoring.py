@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 from nutev.analysis.relevance import score_record
 
 
@@ -147,4 +150,40 @@ def test_busca2b_dietitian_led_medical_nutrition_therapy_is_prioritized() -> Non
     enriched_score = score_record(dict(enriched), BASE_SCORING_RULES, "busca2b")
 
     assert enriched_score["relevance_score"] > base_score["relevance_score"] + 18
+    assert enriched_score["out_of_scope_flags"] == []
+
+
+def test_busca2b_time_restricted_eating_variants_are_prioritized() -> None:
+    scoring_rules = json.loads(
+        (Path(__file__).resolve().parents[1] / "config" / "scoring_rules.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    baseline = {
+        "title": "Lifestyle intervention for obesity and MASLD",
+        "abstract": "Adults received dietary advice with weight follow-up.",
+        "url": "https://example.org/article",
+        "source": "pubmed",
+        "journal": "",
+        "source_institution": "",
+    }
+    enriched = {
+        "title": (
+            "Early time-restricted feeding and intermittent fasting trial for "
+            "obesity and MASLD"
+        ),
+        "abstract": (
+            "Adults with cardiometabolic risk completed a time restricted "
+            "eating intervention with metabolic follow-up."
+        ),
+        "url": "https://example.org/full-text.pdf",
+        "source": "pubmed",
+        "journal": "",
+        "source_institution": "",
+    }
+
+    baseline_score = score_record(dict(baseline), scoring_rules, "busca2b")
+    enriched_score = score_record(dict(enriched), scoring_rules, "busca2b")
+
+    assert enriched_score["relevance_score"] > baseline_score["relevance_score"] + 12
     assert enriched_score["out_of_scope_flags"] == []
