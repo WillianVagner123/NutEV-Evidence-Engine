@@ -98,6 +98,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "clinical practice recommendations",
             "scientific advisory",
             "standards of care",
+            "standards of medical care in diabetes",
+            "consensus report",
         ],
         "document_terms": [
             "consensus statement",
@@ -111,6 +113,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "clinical practice recommendations",
             "scientific advisory",
             "standards of care",
+            "standards of medical care in diabetes",
+            "consensus report",
         ],
     },
     "busca2b": {
@@ -151,6 +155,9 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "dietitian-led intervention",
             "dietitian led intervention",
             "lifestyle intervention",
+            "intensive lifestyle intervention",
+            "lifestyle program",
+            "lifestyle programme",
             "behavioral intervention",
             "nutrition counseling",
             "nutrition counselling",
@@ -222,6 +229,9 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "medically tailored grocery",
             "medically tailored groceries",
             "teaching kitchen",
+            "intensive lifestyle intervention",
+            "lifestyle program",
+            "lifestyle programme",
         ],
         "document_terms": [
             "randomized trial",
