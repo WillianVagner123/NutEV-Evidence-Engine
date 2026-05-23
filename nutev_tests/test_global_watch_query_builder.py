@@ -34,3 +34,16 @@ def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     assert "network meta-analysis" in rendered
     assert "rapid review" in rendered
     assert "living systematic review" in rendered
+
+
+def test_guidelines_thesis_mode_surfaces_broader_guidance_families_early():
+    rows = build_watch_queries(["guidelines_consensus"], 7, "thesis")
+    rendered = [str(row["query"]).lower() for row in rows]
+
+    assert len(rendered) == 6
+    assert '("guideline")' in rendered[0]
+    assert '("clinical practice guideline")' in rendered[1]
+    assert '("consensus statement")' in rendered[2]
+    assert '("scientific statement")' in rendered[3]
+    assert '("position paper")' in rendered[4]
+    assert '("guidance statement")' in rendered[5]
