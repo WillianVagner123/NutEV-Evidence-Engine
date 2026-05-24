@@ -119,6 +119,8 @@ def test_build_watch_queries_adds_diet_pattern_context_from_taxonomy() -> None:
     assert '"whole-food plant-based"' in first_query
     assert '"portfolio diet"' in first_query
     assert '"nordic diet"' in first_query
+    assert '"ultra-processed food"' in first_query
+    assert '"nova classification"' in first_query
 
 
 def test_build_watch_queries_prioritizes_guideline_like_terms() -> None:
@@ -174,6 +176,8 @@ def test_quick_mode_diet_pattern_queries_cover_plant_based_and_planetary_blocks(
     assert "planetary health diet" in rendered
     assert "portfolio diet" in rendered
     assert "nordic diet" in rendered
+    assert "ultra-processed food" in rendered
+    assert "nova classification" in rendered
 
 
 def test_quick_mode_obesity_queries_cover_cardiometabolic_and_liver_blocks() -> None:
