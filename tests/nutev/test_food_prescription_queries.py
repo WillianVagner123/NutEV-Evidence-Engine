@@ -1,6 +1,3 @@
-import json
-from pathlib import Path
-
 from nutev.querypacks.provider_queries import render_queries_for_provider
 from nutev.querypacks.semantic_blocks import semantic_terms
 
