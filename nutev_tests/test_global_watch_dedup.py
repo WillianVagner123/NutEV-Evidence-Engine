@@ -118,3 +118,20 @@ def test_normalize_watch_hit_uses_abstract_and_snippet_for_workstream_affinity()
     assert "a3" in item["workstream_affinity"]
     assert item["matched_categories"] == "implementation_behavior"
     assert item["matched_providers"] == "pubmed"
+
+
+def test_normalize_watch_hit_maps_produce_rx_variants_to_busca2b() -> None:
+    item = normalize_watch_hit(
+        {
+            "title": "Produce Rx and healthy food prescription program for hypertension management",
+            "abstract": "Fruit and vegetable prescription delivery in a cardiometabolic nutrition clinic.",
+            "url": "https://example.org/produce-rx",
+            "year": 2025,
+        },
+        "pubmed",
+        "lifestyle_medicine",
+        "produce rx hypertension",
+    )
+
+    assert "busca2b" in item["workstream_affinity"]
+    assert "busca2a" in item["workstream_affinity"]
