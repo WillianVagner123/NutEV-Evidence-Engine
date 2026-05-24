@@ -14,6 +14,15 @@ def test_build_watch_queries_includes_hybrid_implementation_terms() -> None:
     assert any("normalization process theory" in query.lower() for query in query_texts)
 
 
+def test_build_watch_queries_include_behavior_change_framework_terms() -> None:
+    queries = build_watch_queries(["implementation_behavior"], since_days=7, mode="thesis")
+    query_texts = [str(item["query"]).lower() for item in queries]
+
+    assert any("behavior change wheel" in query for query in query_texts)
+    assert any("com-b" in query for query in query_texts)
+    assert any("intervention mapping" in query for query in query_texts)
+
+
 def test_score_watch_item_rewards_hybrid_framework_markers() -> None:
     baseline = score_watch_item(
         {
@@ -43,6 +52,38 @@ def test_score_watch_item_rewards_hybrid_framework_markers() -> None:
     assert hybrid > baseline
 
 
+def test_score_watch_item_rewards_behavior_change_framework_markers() -> None:
+    baseline = score_watch_item(
+        {
+            "title": "Behavior change support for obesity nutrition care",
+            "abstract": "Adult implementation support in lifestyle medicine.",
+            "snippet": "",
+            "evidence_type": "study",
+            "category": "implementation_behavior",
+            "relevance_score": 50,
+            "download_status": "metadata_only",
+            "source_provider": "pubmed",
+        }
+    )
+    enriched = score_watch_item(
+        {
+            "title": (
+                "COM-B and behavior change wheel intervention mapping for obesity "
+                "nutrition implementation"
+            ),
+            "abstract": "Motivational interviewing strategy for adherence and implementation outcomes.",
+            "snippet": "",
+            "evidence_type": "study",
+            "category": "implementation_behavior",
+            "relevance_score": 50,
+            "download_status": "metadata_only",
+            "source_provider": "pubmed",
+        }
+    )
+
+    assert enriched > baseline
+
+
 def test_curated_priority_flags_hybrid_implementation_documents() -> None:
     prioritized = _is_prioritized(
         {
@@ -57,6 +98,31 @@ def test_curated_priority_flags_hybrid_implementation_documents() -> None:
             "clinical_conditions": "obesity",
             "main_terms": "",
             "journal": "Implementation Science",
+            "source_institution": "",
+            "relevance_score": 8,
+        }
+    )
+
+    assert prioritized is True
+
+
+def test_curated_priority_flags_behavior_change_framework_documents() -> None:
+    prioritized = _is_prioritized(
+        {
+            "title": "Behavior change wheel and COM-B framework for obesity nutrition implementation",
+            "abstract": (
+                "Intervention mapping and motivational interviewing were used to improve "
+                "dietary adherence in adults with cardiometabolic risk."
+            ),
+            "summary": "",
+            "snippet": "",
+            "evidence_type": "study",
+            "domains": "implementation_behavior",
+            "outcomes": "adherence",
+            "diet_patterns": "",
+            "clinical_conditions": "obesity; cardiometabolic risk",
+            "main_terms": "",
+            "journal": "BMC Health Services Research",
             "source_institution": "",
             "relevance_score": 8,
         }
