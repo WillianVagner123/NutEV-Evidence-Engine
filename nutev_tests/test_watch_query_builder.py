@@ -379,3 +379,13 @@ def test_exhaustive_mode_implementation_queries_reach_framework_markers() -> Non
     assert '"cfir"' in rendered
     assert '"re-aim"' in rendered
     assert '"hybrid effectiveness-implementation"' in rendered
+
+
+def test_implementation_queries_add_pipeline_aligned_operational_terms() -> None:
+    query = _category_query("implementation_behavior").lower()
+
+    assert "consolidated framework for implementation research" in query
+    assert "implementation strategies" in query
+    assert "audit and feedback" in query
+    assert "service delivery" in query
+    assert "care delivery" in query
