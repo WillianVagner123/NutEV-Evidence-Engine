@@ -1,5 +1,5 @@
 {
-  "version": "2026-05-v3",
+  "version": "2026-05-v4",
   "global": {
     "lifestyle_medicine_pillars": {
       "nutrition": [
@@ -269,6 +269,9 @@
         "cooking skills",
         "home cooking",
         "meal planning",
+        "meal preparation",
+        "dietary counseling",
+        "dietary counselling",
         "food label",
         "nutrition label",
         "front-of-pack",
@@ -289,6 +292,8 @@
         "habilidades culinárias",
         "cozinhar em casa",
         "planejamento de refeições",
+        "preparo de refeições",
+        "aconselhamento dietético",
         "rotulagem",
         "rótulo",
         "rótulos",
@@ -718,7 +723,9 @@
         "guia alimentar",
         "grey literature",
         "technical report",
-        "policy brief"
+        "policy brief",
+        "dietary counseling",
+        "meal preparation"
       ]
     },
     "busca2a": {
@@ -860,6 +867,8 @@
         "food literacy",
         "lifestyle modification",
         "therapeutic lifestyle changes",
+        "dietary counseling",
+        "meal preparation",
         "mafld"
       ]
     },
@@ -928,6 +937,8 @@
         "food literacy instrument",
         "culinary skills instrument",
         "commensality",
+        "meal preparation",
+        "dietary counseling",
         "questionário",
         "índice"
       ]
