@@ -170,3 +170,15 @@ def test_home_cooking_and_meal_preparation_signals_improve_priority():
             "title": "Home cooking, meal preparation, and nutrition education in obesity care",
         }
     ) > _score_watch_item({"title": "Obesity care note"})
+
+
+def test_cfir_long_form_signal_improves_priority() -> None:
+    assert _score_watch_item(
+        {"title": "Consolidated framework for implementation research in dietary adherence"}
+    ) > _score_watch_item({"title": "Dietary adherence note"})
+
+
+def test_audit_and_feedback_signal_improves_priority() -> None:
+    assert _score_watch_item(
+        {"title": "Audit and feedback for lifestyle nutrition care delivery"}
+    ) > _score_watch_item({"title": "Lifestyle nutrition note"})
