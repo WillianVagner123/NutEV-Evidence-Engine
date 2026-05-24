@@ -139,6 +139,38 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "adherence study",
         ],
     },
+    "food_prescription_programs": {
+        "terms": [
+            "food is medicine",
+            "food as medicine",
+            "food is medicine intervention",
+            "food as medicine intervention",
+            "produce prescription",
+            "produce prescriptions",
+            "produce rx",
+            "fruit and vegetable prescription",
+            "healthy food prescription",
+            "food prescription program",
+            "produce prescription program",
+            "medically tailored meal",
+            "medically tailored meals",
+            "medically tailored grocery",
+            "medically tailored groceries",
+            "teaching kitchen",
+            "teaching kitchens",
+        ],
+        "document_terms": [
+            "food is medicine intervention",
+            "food as medicine intervention",
+            "produce prescription program",
+            "food prescription program",
+            "implementation study",
+            "implementation trial",
+            "quality improvement study",
+            "technical report",
+            "policy brief",
+        ],
+    },
     "food_literacy_agency": {
         "terms": [
             "food literacy",
@@ -355,6 +387,7 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
 
 WORKSTREAM_SEMANTIC_PRIORITIES: dict[str, list[tuple[str, int]]] = {
     "busca1": [
+        ("food_prescription_programs", 5),
         ("food_literacy_agency", 5),
         ("commensality_context", 5),
         ("lifestyle_nutrition_patterns", 5),
@@ -373,6 +406,7 @@ WORKSTREAM_SEMANTIC_PRIORITIES: dict[str, list[tuple[str, int]]] = {
         ("commensality_context", 1),
     ],
     "busca2b": [
+        ("food_prescription_programs", 5),
         ("implementation_science", 5),
         ("adherence_persistence", 5),
         ("evidence_synthesis", 5),
