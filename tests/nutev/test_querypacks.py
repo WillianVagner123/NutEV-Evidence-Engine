@@ -446,3 +446,37 @@ def test_scoring_boosts_diabetes_standards_and_intensive_lifestyle_intervention(
 
     assert diabetes_standards["relevance_score"] > generic_guideline["relevance_score"]
     assert intensive_intervention["relevance_score"] > generic_intervention["relevance_score"]
+
+
+def test_busca2b_scoring_boosts_telehealth_delivery_models():
+    scoring_rules = json.loads(
+        (Path(__file__).resolve().parents[2] / "config" / "scoring_rules.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    base_record = {
+        "source": "pubmed",
+        "url": "https://example.org/telehealth-lifestyle",
+        "abstract": "Adult obesity and type 2 diabetes nutrition care with implementation support in primary care.",
+        "journal": "",
+        "source_institution": "",
+    }
+
+    standard_delivery = score_record(
+        {
+            **base_record,
+            "title": "Lifestyle intervention for adult obesity and type 2 diabetes in primary care",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    telehealth_delivery = score_record(
+        {
+            **base_record,
+            "title": "Telehealth lifestyle intervention with remote coaching for adult obesity and type 2 diabetes in primary care",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert telehealth_delivery["relevance_score"] > standard_delivery["relevance_score"]
