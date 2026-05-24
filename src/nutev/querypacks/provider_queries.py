@@ -411,6 +411,17 @@ def _secondary_outcome_chunks(
     return chunk_terms(outcome_terms[primary_limit:], 4)[:4]
 
 
+def _secondary_nutrition_chunks(
+    components: dict[str, list[str]],
+    *,
+    primary_limit: int = 5,
+) -> list[list[str]]:
+    nutrition_terms = uniq(components.get("nutrition_terms", []))
+    if len(nutrition_terms) <= primary_limit:
+        return []
+    return chunk_terms(nutrition_terms[primary_limit:], 4)[:4]
+
+
 def _render_overflow_condition_queries(
     components: dict[str, list[str]],
     provider: str,
@@ -515,6 +526,34 @@ def _render_outcome_overflow_queries(
                 [
                     _provider_or_block(extra_outcomes, provider, 4),
                     _provider_or_block(components["diet_terms"], provider, 4),
+                    _provider_or_block(components["behavior_terms"], provider, 4),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
+
+
+def _render_nutrition_overflow_queries(
+    components: dict[str, list[str]],
+    provider: str,
+) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    queries: list[str] = []
+    for extra_nutrition in _secondary_nutrition_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_nutrition, provider, 4),
+                    _provider_or_block(condition_terms, provider, 6),
+                    _provider_or_block(components["doc_type_terms"], provider, 4),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_nutrition, provider, 4),
+                    _provider_or_block(components["web_hints"], provider, 4),
                     _provider_or_block(components["behavior_terms"], provider, 4),
                 ]
             )
@@ -629,6 +668,33 @@ def _render_pubmed_outcome_overflow_queries(
     return uniq([query for query in queries if query])
 
 
+def _render_pubmed_nutrition_overflow_queries(
+    components: dict[str, list[str]],
+) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    queries: list[str] = []
+    for extra_nutrition in _secondary_nutrition_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_nutrition, "pubmed", 4),
+                    _provider_or_block(condition_terms, "pubmed", 6),
+                    _pubmed_document_clause(components["doc_type_terms"]),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_nutrition, "pubmed", 4),
+                    _provider_or_block(components["web_hints"], "pubmed", 4),
+                    _provider_or_block(components["behavior_terms"], "pubmed", 4),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
+
+
 def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
     condition_terms = components["condition_terms"] + components["clinical_terms"]
     semantic_terms_ = components.get("semantic_terms", [])
@@ -687,6 +753,7 @@ def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_pubmed_behavior_overflow_queries(components)
         + _render_pubmed_doc_type_overflow_queries(components)
         + _render_pubmed_outcome_overflow_queries(components)
+        + _render_pubmed_nutrition_overflow_queries(components)
         + _pubmed_mesh_expansion_queries(components)
     )
 
@@ -737,6 +804,7 @@ def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_behavior_overflow_queries(components, "europepmc")
         + _render_doc_type_overflow_queries(components, "europepmc")
         + _render_outcome_overflow_queries(components, "europepmc")
+        + _render_nutrition_overflow_queries(components, "europepmc")
     )
 
 
@@ -779,6 +847,7 @@ def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_behavior_overflow_queries(components, "openalex")
         + _render_doc_type_overflow_queries(components, "openalex")
         + _render_outcome_overflow_queries(components, "openalex")
+        + _render_nutrition_overflow_queries(components, "openalex")
     )
 
 
@@ -821,6 +890,7 @@ def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_behavior_overflow_queries(components, "crossref")
         + _render_doc_type_overflow_queries(components, "crossref")
         + _render_outcome_overflow_queries(components, "crossref")
+        + _render_nutrition_overflow_queries(components, "crossref")
     )
 
 
