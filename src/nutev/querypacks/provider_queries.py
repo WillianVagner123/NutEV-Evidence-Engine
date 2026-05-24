@@ -253,10 +253,11 @@ def _pubmed_document_clause(doc_terms: list[str]) -> str:
     title_abs_terms = []
     for term in uniq(doc_terms):
         pub_type = PUBMED_DOCUMENT_TYPE_MAP.get(term.lower())
-        if pub_type and pub_type not in publication_types:
-            publication_types.append(pub_type)
-        else:
-            title_abs_terms.append(term)
+        if pub_type:
+            if pub_type not in publication_types:
+                publication_types.append(pub_type)
+            continue
+        title_abs_terms.append(term)
     publication_block = ""
     if publication_types:
         publication_block = "(" + " OR ".join(
