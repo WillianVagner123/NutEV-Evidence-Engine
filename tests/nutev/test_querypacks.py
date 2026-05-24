@@ -495,3 +495,45 @@ def test_busca2b_scoring_boosts_telehealth_delivery_models():
     )
 
     assert telehealth_delivery["relevance_score"] > standard_delivery["relevance_score"]
+
+
+def test_provider_queries_include_digital_delivery_terms_for_busca2b():
+    tax = {
+        "global": {
+            "document_types": {"reviews": ["systematic review"]},
+            "implementation_behavior": {"behavioral": ["behavior change"]},
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {"core": ["food literacy"]},
+        },
+        "clinical": {"obesity": ["obesity"], "diabetes": ["type 2 diabetes"]},
+        "outcomes": {"behavioral": ["self efficacy"]},
+        "workstreams": {
+            "busca2b": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity", "type 2 diabetes"],
+                "clinical_keys": ["obesity", "diabetes"],
+                "document_type_keys": ["reviews"],
+                "priority_outcomes": ["behavioral"],
+                "focus_blocks": ["implementation_behavior", "diet_patterns"],
+                "web_query_hints": ["implementation study"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(tax, "busca2b", "pubmed")
+
+    assert any(
+        "telehealth" in query
+        or "telemedicine" in query
+        or "digital health" in query
+        or "virtual care" in query
+        for query in queries
+    )
+    assert any(
+        "remote coaching" in query
+        or "remote monitoring" in query
+        or "digital therapeutics" in query
+        or "app-based" in query
+        or "app based" in query
+        for query in queries
+    )
