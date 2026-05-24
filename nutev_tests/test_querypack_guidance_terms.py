@@ -89,8 +89,14 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
             "position paper",
             "umbrella review",
             "consensus guidance",
-            "scientific advisory",
+            "consensus report",
+            "clinical practice recommendation",
             "clinical practice recommendations",
+            "guideline update",
+            "clinical practice update",
+            "standards of care",
+            "standards of medical care in diabetes",
+            "scientific advisory",
             "best practice advice",
         ]
     ).lower()
@@ -99,10 +105,16 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
     assert '"practice guideline"[publication type]' in clause
     assert '"guideline"[publication type]' in clause
     assert '"systematic review"[publication type]' in clause
-    assert '"consensus guidance"[title/abstract]' in clause
     assert '"scientific advisory"[title/abstract]' in clause
-    assert '"clinical practice recommendations"[title/abstract]' in clause
     assert '"best practice advice"[title/abstract]' in clause
+    assert '"consensus guidance"[title/abstract]' not in clause
+    assert '"consensus report"[title/abstract]' not in clause
+    assert '"clinical practice recommendation"[title/abstract]' not in clause
+    assert '"clinical practice recommendations"[title/abstract]' not in clause
+    assert '"guideline update"[title/abstract]' not in clause
+    assert '"clinical practice update"[title/abstract]' not in clause
+    assert '"standards of care"[title/abstract]' not in clause
+    assert '"standards of medical care in diabetes"[title/abstract]' not in clause
 
 
 def test_master_pipeline_dedup_normalizes_doi_and_url_before_title_year():
