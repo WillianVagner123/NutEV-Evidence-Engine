@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 from nutev.analysis.relevance import score_record
-from nutev.querypacks.builders import build_queries, build_querypack
+from nutev.querypacks.builders import build_queries, build_querypack, build_structured_components
 from nutev.querypacks.provider_queries import render_queries_for_provider
 
 
@@ -73,6 +73,21 @@ def test_build_queries_adds_capture_biased_variants():
     assert any("filetype:pdf" in query for query in queries)
     assert any("open access" in query or "free full text" in query for query in queries)
     assert any("clinical practice guideline" in query for query in queries)
+
+
+def test_real_taxonomy_guideline_terms_cover_guidance_and_pathways():
+    taxonomy = json.loads(
+        (Path(__file__).resolve().parents[2] / "config" / "keyword_taxonomy.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    _, components = build_structured_components(taxonomy, "busca1")
+    doc_terms = set(components["doc_type_terms"])
+
+    assert "best practice advice" in doc_terms
+    assert "consensus report" in doc_terms
+    assert "clinical decision pathway" in doc_terms
 
 
 def test_build_querypack_resolves_a3_alias():
