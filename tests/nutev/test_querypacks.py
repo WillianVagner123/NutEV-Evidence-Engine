@@ -342,6 +342,47 @@ def test_provider_queries_add_pubmed_mesh_expansion_for_lifestyle_nutrition_term
     )
 
 
+def test_provider_queries_preserve_tail_nutrition_terms_via_overflow_queries():
+    tax = {
+        "global": {
+            "document_types": {"guidelines": ["guideline"]},
+            "implementation_behavior": {"behavioral": ["adherence"]},
+            "diet_patterns": {"core": ["healthy diet"]},
+            "nutrition_domains": {
+                "core": [
+                    "energy intake",
+                    "fiber",
+                    "protein",
+                    "olive oil",
+                    "vegetables",
+                    "front-of-pack labeling",
+                    "healthy food procurement",
+                ]
+            },
+        },
+        "clinical": {"obesity": ["obesity"]},
+        "outcomes": {"anthropometry": ["weight loss"]},
+        "workstreams": {
+            "busca1": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["obesity"],
+                "document_type_keys": ["guidelines"],
+                "priority_outcomes": ["anthropometry"],
+                "focus_blocks": ["nutrition_domains"],
+                "web_query_hints": ["food guideline"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(tax, "busca1", "pubmed")
+
+    assert any(
+        "front-of-pack labeling" in query or "healthy food procurement" in query
+        for query in queries
+    )
+
+
 def test_food_as_medicine_variant_scores_like_food_is_medicine():
     scoring_rules = json.loads(
         (Path(__file__).resolve().parents[2] / "config" / "scoring_rules.json").read_text(
