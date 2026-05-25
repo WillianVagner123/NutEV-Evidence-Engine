@@ -235,6 +235,16 @@ CATEGORY_CONTEXT_TERMS = {
         "medically tailored meals",
         "medically tailored grocery",
         "medically tailored groceries",
+        "telehealth",
+        "telemedicine",
+        "digital health",
+        "mobile health",
+        "mhealth",
+        "ehealth",
+        "virtual care",
+        "remote coaching",
+        "remote monitoring",
+        "digital therapeutics",
         "sustainability",
         "dissemination",
         "scale-up",
@@ -550,6 +560,16 @@ QUICK_MODE_SEED_GROUPS = {
             "food prescription program",
             "medically tailored meals",
             "medically tailored groceries",
+            "telehealth",
+            "telemedicine",
+            "digital health",
+            "mobile health",
+            "mhealth",
+            "ehealth",
+            "virtual care",
+            "remote coaching",
+            "remote monitoring",
+            "digital therapeutics",
             "sustainment",
             "sustainability",
             "dissemination",
@@ -623,6 +643,77 @@ QUICK_MODE_SEED_GROUPS = {
     ],
 }
 
+THESIS_MODE_SEED_GROUPS = {
+    "implementation_behavior": [
+        [
+            "adherence",
+            "dietary adherence",
+            "treatment adherence",
+            "acceptability",
+            "appropriateness",
+            "feasibility",
+            "self-management support",
+        ],
+        [
+            "implementation science",
+            "implementation research",
+            "implementation framework",
+            "implementation frameworks",
+            "implementation outcomes",
+            "implementation strategy",
+            "implementation strategies",
+            "process evaluation",
+            "knowledge translation",
+        ],
+        [
+            "behavior change",
+            "behavior change technique",
+            "behavior change wheel",
+            "behaviour change wheel",
+            "COM-B",
+            "capability opportunity motivation behavior",
+            "capability opportunity motivation behaviour",
+            "motivational interviewing",
+            "goal setting",
+        ],
+        [
+            "digital health",
+            "telehealth",
+            "telemedicine",
+            "mobile health",
+            "mhealth",
+            "ehealth",
+            "virtual care",
+            "remote coaching",
+            "remote monitoring",
+            "digital therapeutics",
+        ],
+        [
+            "food is medicine",
+            "food as medicine",
+            "produce prescription",
+            "produce prescriptions",
+            "produce rx",
+            "fruit and vegetable prescription",
+            "healthy food prescription",
+            "food prescription program",
+            "medically tailored meals",
+            "medically tailored groceries",
+        ],
+        [
+            "registered dietitian",
+            "registered dietitian nutritionist",
+            "dietitian-led intervention",
+            "dietitian led intervention",
+            "teaching kitchen",
+            "teaching kitchens",
+            "health coaching",
+            "shared decision making",
+            "social support",
+        ],
+    ]
+}
+
 HIGH_PRIORITY_MARKERS = (
     "guideline",
     "consensus",
@@ -689,6 +780,8 @@ def _priority_for_term(term: str | Iterable[str]) -> int:
 def _mode_terms(category: str, mode: str) -> list[str | list[str]]:
     if mode == "quick" and category in QUICK_MODE_SEED_GROUPS:
         return QUICK_MODE_SEED_GROUPS[category]
+    if mode == "thesis" and category in THESIS_MODE_SEED_GROUPS:
+        return THESIS_MODE_SEED_GROUPS[category]
     return WATCH_CATEGORIES.get(category, [])
 
 
