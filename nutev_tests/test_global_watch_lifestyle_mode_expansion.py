@@ -18,6 +18,13 @@ def test_quick_mode_lifestyle_queries_add_culinary_food_literacy_and_dietitian_s
     assert "registered dietitian nutritionist" in rendered
     assert "dietitian-led" in rendered
     assert "dietitian led" in rendered
+    assert "intensive lifestyle intervention" in rendered
+    assert "lifestyle program" in rendered
+    assert "lifestyle programme" in rendered
+    assert "behavioral intervention" in rendered
+    assert "time-restricted eating" in rendered
+    assert "intermittent fasting" in rendered
+    assert "diabetes prevention program" in rendered
 
 
 def test_exhaustive_mode_lifestyle_queries_add_culinary_and_food_literacy_seeds() -> None:
@@ -30,6 +37,9 @@ def test_exhaustive_mode_lifestyle_queries_add_culinary_and_food_literacy_seeds(
     assert "food literacy" in rendered
     assert "teaching kitchen" in rendered
     assert "teaching kitchens" in rendered
+    assert "intensive lifestyle intervention" in rendered
+    assert "lifestyle program" in rendered
+    assert "intermittent fasting" in rendered
 
 
 def test_thesis_mode_lifestyle_queries_add_dietitian_delivery_seeds() -> None:
@@ -41,3 +51,7 @@ def test_thesis_mode_lifestyle_queries_add_dietitian_delivery_seeds() -> None:
     assert "registered dietitian nutritionist" in rendered
     assert "dietitian-led" in rendered
     assert "dietitian led" in rendered
+    assert "intensive lifestyle intervention" in rendered
+    assert "time-restricted eating" in rendered
+    assert "intermittent fasting" in rendered
+    assert "diabetes prevention program" in rendered
