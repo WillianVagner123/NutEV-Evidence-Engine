@@ -1,8 +1,8 @@
 # Rodar o NutEV/NutMEV no PC
 
-Este guia é o caminho recomendado para instalar, testar e abrir o sistema localmente.
+Este guia e o caminho recomendado para instalar, testar e abrir o sistema localmente.
 
-## 1. Pré-requisitos
+## 1. Pre-requisitos
 
 Instale no computador:
 
@@ -12,16 +12,88 @@ Instale no computador:
 
 O projeto exige Python `>=3.12,<3.15`.
 
-## 2. Baixar o repositório
+## 2. Caminho recomendado: instalacao automatica
+
+### Windows PowerShell
+
+```powershell
+git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
+cd NUT-MEV_NEW
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\scripts\setup_windows.ps1
+```
+
+Depois abra o dashboard:
+
+```powershell
+.\scripts\run_dashboard_windows.ps1
+```
+
+Acesse:
+
+```text
+http://127.0.0.1:8501
+```
+
+Para abrir a API local em outro terminal:
+
+```powershell
+.\scripts\run_api_windows.ps1
+```
+
+Acesse:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+### macOS/Linux
+
+```bash
+git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
+cd NUT-MEV_NEW
+chmod +x scripts/setup_unix.sh scripts/run_dashboard_unix.sh
+./scripts/setup_unix.sh
+```
+
+Depois abra o dashboard:
+
+```bash
+./scripts/run_dashboard_unix.sh
+```
+
+Acesse:
+
+```text
+http://127.0.0.1:8501
+```
+
+Para abrir a API local em outro terminal:
+
+```bash
+.venv/bin/nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
+```
+
+Acesse:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+## 3. Instalacao manual
+
+Use esta secao se preferir controlar cada etapa.
+
+### Baixar o repositorio
 
 ```bash
 git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
 cd NUT-MEV_NEW
 ```
 
-## 3. Criar ambiente virtual
+### Criar ambiente virtual
 
-### Windows PowerShell
+#### Windows PowerShell
 
 ```powershell
 py -3.12 -m venv .venv
@@ -29,14 +101,14 @@ py -3.12 -m venv .venv
 python -m pip install --upgrade pip
 ```
 
-Se o PowerShell bloquear a ativação:
+Se o PowerShell bloquear a ativacao:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
 ```
 
-### macOS/Linux
+#### macOS/Linux
 
 ```bash
 python3.12 -m venv .venv
@@ -44,25 +116,25 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 ```
 
-## 4. Instalar o sistema
+### Instalar o sistema
 
 ```bash
 pip install -e ".[dashboard,platform]"
 ```
 
-Esse comando instala o pacote em modo editável e habilita:
+Esse comando instala o pacote em modo editavel e habilita:
 
 - `nutev`, a CLI principal;
 - dashboard local;
 - API local da plataforma.
 
-## 5. Gerar dados demo
+### Gerar dados demo
 
 ```bash
 nutev demo-data --project-root ./project_output_demo
 ```
 
-## 6. Abrir o dashboard
+### Abrir o dashboard
 
 ```bash
 nutev dashboard --project-root ./project_output_demo --port 8501
@@ -74,7 +146,7 @@ Depois acesse:
 http://127.0.0.1:8501
 ```
 
-## 7. Abrir a API local
+### Abrir a API local
 
 Em outro terminal, com o ambiente virtual ativado:
 
@@ -82,16 +154,28 @@ Em outro terminal, com o ambiente virtual ativado:
 nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
 ```
 
-URLs úteis:
+URLs uteis:
 
 ```text
 http://127.0.0.1:8000
 http://127.0.0.1:8000/docs
 ```
 
-## 8. Rodar o primeiro piloto
+## 4. Verificar instalacao
 
-Use esta opção quando quiser gerar saída real para trabalho científico:
+```bash
+python scripts/check_local.py
+```
+
+No Windows, se estiver usando o ambiente virtual sem ativa-lo:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\check_local.py
+```
+
+## 5. Rodar o primeiro piloto
+
+Use esta opcao quando quiser gerar saida real para trabalho cientifico:
 
 ```bash
 nutev --project-root ./project_output_pilot --workstreams busca1 busca2a busca2b a3 --web-enabled
@@ -99,7 +183,7 @@ nutev pilot-report --project-root ./project_output_pilot
 nutev dashboard --project-root ./project_output_pilot --port 8501
 ```
 
-## 9. Chaves e variáveis locais
+## 6. Chaves e variaveis locais
 
 Nunca coloque chave de API no GitHub.
 
@@ -115,7 +199,7 @@ $env:OPENAI_API_KEY="sua-chave-aqui"
 export OPENAI_API_KEY="sua-chave-aqui"
 ```
 
-Variáveis úteis para integrações bibliográficas:
+Variaveis uteis para integracoes bibliograficas:
 
 ```bash
 export NCBI_EMAIL="seu-email@exemplo.com"
@@ -124,7 +208,7 @@ export CROSSREF_MAILTO="seu-email@exemplo.com"
 export OPENALEX_MAILTO="seu-email@exemplo.com"
 ```
 
-## 10. Testes essenciais
+## 7. Testes essenciais
 
 ```bash
 PYTHONPATH=src python -m pytest -q tests/nutev
@@ -137,9 +221,9 @@ $env:PYTHONPATH="src"
 python -m pytest -q tests/nutev
 ```
 
-## 11. Solução rápida de problemas
+## 8. Solucao rapida de problemas
 
-### O comando `nutev` não existe
+### O comando `nutev` nao existe
 
 Ative o ambiente virtual e reinstale:
 
@@ -147,7 +231,13 @@ Ative o ambiente virtual e reinstale:
 pip install -e ".[dashboard,platform]"
 ```
 
-### Erro de versão do Python
+Ou rode o verificador:
+
+```bash
+python scripts/check_local.py
+```
+
+### Erro de versao do Python
 
 Confirme:
 
@@ -157,9 +247,9 @@ python --version
 
 Use Python 3.12 ou 3.13.
 
-### Dashboard não abre
+### Dashboard nao abre
 
-Confirme se a porta está correta:
+Confirme se a porta esta correta:
 
 ```bash
 nutev dashboard --project-root ./project_output_demo --port 8501
@@ -167,7 +257,7 @@ nutev dashboard --project-root ./project_output_demo --port 8501
 
 Depois acesse `http://127.0.0.1:8501`.
 
-### API não abre
+### API nao abre
 
 Rode:
 
@@ -177,6 +267,6 @@ nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
 
 Depois acesse `http://127.0.0.1:8000/docs`.
 
-## 12. Regra metodológica
+## 9. Regra metodologica
 
-O sistema gera evidências candidatas, matrizes, logs e relatórios de apoio. Ele não substitui revisão humana, adjudicação metodológica ou decisão final do protocolo NutEV/NutMEV.
+O sistema gera evidencias candidatas, matrizes, logs e relatorios de apoio. Ele nao substitui revisao humana, adjudicacao metodologica ou decisao final do protocolo NutEV/NutMEV.
