@@ -2,7 +2,7 @@
 # Keep this file focused on what the nutev tests and smoke import path need.
 requests>=2.32
 pandas>=2.2
-pypdf>=5.0
+pypdf>=6.12.1
 beautifulsoup4>=4.12
 pydantic>=2.10
 openpyxl>=3.1
