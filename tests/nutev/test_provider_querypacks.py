@@ -103,6 +103,21 @@ def test_semantic_blocks_are_prioritized_by_workstream():
     assert priorities[0] == {"name": "food_literacy_agency", "priority": 5}
 
 
+def test_busca1_semantic_blocks_include_food_environment_policy_terms() -> None:
+    busca1_terms = semantic_terms("busca1", min_priority=5)
+    busca1_doc_terms = semantic_terms(
+        "busca1",
+        field="document_terms",
+        min_priority=5,
+    )
+
+    assert "retail food environment" in busca1_terms
+    assert "healthy food procurement" in busca1_terms
+    assert "menu labeling" in busca1_terms
+    assert "policy brief" in busca1_doc_terms
+    assert "policy evaluation" in busca1_doc_terms
+
+
 def test_provider_querypack_builds_per_provider():
     querypack = build_provider_querypack(
         _sample_taxonomy(),
