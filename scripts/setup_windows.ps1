@@ -29,27 +29,37 @@ function Invoke-Checked {
     }
 }
 
-function Invoke-PythonBase {
-    param(
-        [Parameter(Mandatory = $true)][string[]]$PythonBase,
-        [Parameter(Mandatory = $true)][string[]]$Arguments
-    )
+function Test-PythonExecutable {
+    param([Parameter(Mandatory = $true)][string]$PythonExe)
 
-    $cmd = $PythonBase[0]
-    $prefixArgs = @()
-    if ($PythonBase.Length -gt 1) {
-        $prefixArgs = $PythonBase[1..($PythonBase.Length - 1)]
+    if (-not (Test-Path $PythonExe)) {
+        return $false
     }
-    Invoke-Checked $cmd @($prefixArgs + $Arguments)
+
+    & $PythonExe -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 12) and sys.version_info < (3, 15) else 1)" | Out-Null
+    return ($LASTEXITCODE -eq 0)
 }
 
-function Resolve-Python312 {
+function Resolve-PythonExecutable {
+    $candidatePaths = @(
+        "C:\Program Files\Python312\python.exe",
+        "C:\Program Files\Python313\python.exe",
+        "$env:LOCALAPPDATA\Programs\Python\Python312\python.exe",
+        "$env:LOCALAPPDATA\Programs\Python\Python313\python.exe"
+    )
+
+    foreach ($candidate in $candidatePaths) {
+        if (Test-PythonExecutable $candidate) {
+            return $candidate
+        }
+    }
+
     $pyLauncher = Get-Command py -ErrorAction SilentlyContinue
     if ($pyLauncher) {
         try {
-            & py -3.12 --version | Out-Null
-            if ($LASTEXITCODE -eq 0) {
-                return @("py", "-3.12")
+            $pyExe = & py -3.12 -c "import sys; print(sys.executable)"
+            if ($LASTEXITCODE -eq 0 -and (Test-PythonExecutable $pyExe)) {
+                return $pyExe
             }
         } catch {
             Write-Host "Python 3.12 nao encontrado pelo launcher py." -ForegroundColor Yellow
@@ -58,14 +68,13 @@ function Resolve-Python312 {
 
     $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
     if ($pythonCmd) {
-        $versionText = & python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')"
-        if ($LASTEXITCODE -eq 0) {
-            $parts = $versionText.Split('.')
-            $major = [int]$parts[0]
-            $minor = [int]$parts[1]
-            if ($major -eq 3 -and $minor -ge 12 -and $minor -lt 15) {
-                return @("python")
+        try {
+            $pythonExe = & python -c "import sys; print(sys.executable)"
+            if ($LASTEXITCODE -eq 0 -and (Test-PythonExecutable $pythonExe)) {
+                return $pythonExe
             }
+        } catch {
+            Write-Host "Comando python encontrado, mas nao e uma versao compativel." -ForegroundColor Yellow
         }
     }
 
@@ -76,26 +85,17 @@ function Test-ProjectPathLength {
     $rootPath = (Resolve-Path ".").Path
     Write-Host "Pasta atual: $rootPath"
 
-    if ($rootPath.Length -gt 80) {
+    if ($rootPath.Length -gt 120) {
         Write-Host "" -ForegroundColor Yellow
         Write-Host "ATENCAO: o caminho desta pasta esta longo demais para algumas dependencias no Windows." -ForegroundColor Yellow
         Write-Host "Comprimento atual: $($rootPath.Length) caracteres." -ForegroundColor Yellow
-        Write-Host "Caminho recomendado: C:\NutMEV\NUT-MEV_NEW" -ForegroundColor Yellow
-        Write-Host "" -ForegroundColor Yellow
-        Write-Host "Correcao rapida:" -ForegroundColor Yellow
-        Write-Host "  cd C:\" -ForegroundColor Yellow
-        Write-Host "  mkdir NutMEV" -ForegroundColor Yellow
-        Write-Host "  cd C:\NutMEV" -ForegroundColor Yellow
-        Write-Host "  git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git" -ForegroundColor Yellow
-        Write-Host "  cd NUT-MEV_NEW" -ForegroundColor Yellow
-        Write-Host "  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass" -ForegroundColor Yellow
-        Write-Host "  .\scripts\setup_windows.ps1" -ForegroundColor Yellow
-        throw "Caminho longo detectado. Mova ou clone o projeto para C:\NutMEV\NUT-MEV_NEW e rode novamente."
+        Write-Host "Use uma unica pasta do projeto, por exemplo: H:\Meu Drive\NUT MEV_NEW" -ForegroundColor Yellow
+        throw "Caminho longo detectado. Mova ou clone o projeto para uma pasta unica e rode novamente."
     }
 }
 
 if (-not (Test-Path "pyproject.toml")) {
-    throw "Execute este script dentro da pasta raiz do repositorio NUT-MEV_NEW."
+    throw "Execute este script dentro da pasta raiz do repositorio NUT-MEV_NEW, onde existe pyproject.toml."
 }
 
 Write-Step "Validando caminho do projeto"
@@ -105,16 +105,16 @@ Write-Step "Configurando Git para aceitar caminhos longos neste usuario"
 try {
     git config --global core.longpaths true
 } catch {
-    Write-Host "Aviso: nao consegui configurar git core.longpaths. Continue se o projeto estiver em C:\NutMEV\NUT-MEV_NEW." -ForegroundColor Yellow
+    Write-Host "Aviso: nao consegui configurar git core.longpaths. Continue se o projeto estiver em uma pasta curta." -ForegroundColor Yellow
 }
 
 Write-Step "Validando Python"
-$pythonBase = Resolve-Python312
-Write-Host "Python selecionado: $($pythonBase -join ' ')"
+$PythonExe = Resolve-PythonExecutable
+Write-Host "Python selecionado: $PythonExe"
 
 Write-Step "Criando ambiente virtual .venv"
 if (-not (Test-Path ".venv")) {
-    Invoke-PythonBase -PythonBase $pythonBase -Arguments @("-m", "venv", ".venv")
+    Invoke-Checked $PythonExe -m venv .venv
 }
 
 $VenvPython = Join-Path ".venv" "Scripts\python.exe"
