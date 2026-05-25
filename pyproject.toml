@@ -3,21 +3,27 @@ requires = ["pdm-backend>=2.4.3"]
 build-backend = "pdm.backend"
 
 [project]
+# Compatibility note: the distribution name is kept as local-deep-research
+# while this repository transitions to the NutEV/NutMEV doctorate platform.
+# The canonical runtime for new work is src/nutev and the primary CLI is nutev.
 name = "local-deep-research"
 dynamic = ["version"]
-description = "AI-powered research assistant with deep, iterative analysis using LLMs and web searches"
+description = "NutEV/NutMEV — Evidence Engine for Lifestyle Nutrition, with legacy Local Deep Research compatibility."
 readme = "README.md"
 requires-python = ">=3.12,<3.15"
 license = {file = "LICENSE"}
 authors = [
+    {name = "Willian Vagner", email = "198835699+WillianVagner123@users.noreply.github.com"},
     {name = "LearningCircuit", email = "185559241+LearningCircuit@users.noreply.github.com"},
     {name = "HashedViking", email = "6432677+HashedViking@users.noreply.github.com"},
     {name = "djpetti", email = "djpetti@gmail.com"},
 ]
+keywords = ["nutev", "nutmev", "lifestyle nutrition", "evidence engine", "nutrition protocol", "audit trail"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
 ]
 dependencies = [
     "langchain~=1.2",
@@ -117,12 +123,15 @@ platform = [
 [project.urls]
 "Homepage" = "https://github.com/WillianVagner123/NUT-MEV_NEW"
 "Bug Tracker" = "https://github.com/WillianVagner123/NUT-MEV_NEW/issues"
+"NutEV Documentation" = "https://github.com/WillianVagner123/NUT-MEV_NEW#readme"
 
 [project.scripts]
+# Canonical doctorate platform CLI
+nutev = "nutev.cli:main"
+# Legacy compatibility CLIs retained while Local Deep Research artifacts are phased out
 ldr = "local_deep_research.main:main"
 ldr-web = "local_deep_research.web.app:main"
 ldr-mcp = "local_deep_research.mcp:run_server"
-nutev = "nutev.cli:main"
 
 # Note: build backend is pdm.backend (see [build-system]). These
 # [tool.setuptools] sections are kept for compatibility with editable
