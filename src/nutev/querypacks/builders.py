@@ -148,6 +148,18 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "medically tailored groceries",
             "teaching kitchen",
         ],
+        "behavior_terms": [
+            "telehealth",
+            "telemedicine",
+            "digital health",
+            "mobile health",
+            "mhealth",
+            "ehealth",
+            "virtual care",
+            "remote coaching",
+            "remote monitoring",
+            "digital therapeutics",
+        ],
         "web_hints": [
             "randomized trial",
             "systematic review",
@@ -353,7 +365,10 @@ def build_structured_components(
     web_hints = uniq(
         ws.get("web_query_hints", []) + enhancements.get("web_hints", [])
     )
-    behavior_terms = get_global_block(keyword_taxonomy, "implementation_behavior")
+    behavior_terms = uniq(
+        enhancements.get("behavior_terms", [])
+        + get_global_block(keyword_taxonomy, "implementation_behavior")
+    )
     diet_terms = get_global_block(keyword_taxonomy, "diet_patterns")
     nutrition_terms = get_global_block(keyword_taxonomy, "nutrition_domains")
 
