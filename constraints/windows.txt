@@ -1,0 +1,8 @@
+# Windows HTTP stack constraints for NutEV/NutMEV local runs.
+# Keep requests aligned with compatible urllib3/chardet/charset-normalizer versions.
+# This avoids RequestsDependencyWarning and reduces SSL instability in provider calls.
+
+requests>=2.34,<2.35
+urllib3>=2.6,<2.7
+charset-normalizer>=3.4,<4
+chardet>=5,<6
