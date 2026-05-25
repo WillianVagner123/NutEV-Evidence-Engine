@@ -47,6 +47,9 @@ def main() -> None:
     pilot = sub.add_parser("pilot-report")
     pilot.add_argument("--project-root", type=Path, required=True)
 
+    prize = sub.add_parser("prize-metrics")
+    prize.add_argument("--project-root", type=Path, required=True)
+
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
     p.add_argument("--web-enabled", action="store_true")
@@ -142,6 +145,14 @@ def main() -> None:
 
         path = generate_pilot_report(args.project_root)
         print(f"Pilot report generated: {path}")
+        return
+
+    if args.command == "prize-metrics":
+        from nutev.export.prize_metrics import write_prize_metrics_summary
+
+        path = write_prize_metrics_summary(args.project_root)
+        print(f"Prize metrics generated: {path}")
+        print(f"Prize metrics text: {path.with_suffix('.txt')}")
         return
 
     if not args.project_root:
