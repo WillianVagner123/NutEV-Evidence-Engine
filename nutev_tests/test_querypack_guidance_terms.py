@@ -50,6 +50,31 @@ def test_busca2b_queries_cover_fatty_liver_diet_trials():
     )
 
 
+def test_busca2b_queries_cover_implementation_readiness_and_sustainment_terms() -> None:
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+
+    _, components = build_structured_components(taxonomy, "busca2b")
+    focus_terms = {term.lower() for term in components["focus_terms"]}
+    web_hints = {term.lower() for term in components["web_hints"]}
+    queries = [query.lower() for query in build_queries(taxonomy, "busca2b")]
+
+    assert "implementation climate" in focus_terms
+    assert "organizational readiness" in focus_terms
+    assert "readiness for implementation" in focus_terms
+    assert "penetration" in focus_terms
+    assert "sustainment" in focus_terms
+    assert "organizational readiness" in web_hints
+    assert "sustainment" in web_hints
+    assert any(
+        "implementation climate" in query
+        or "organizational readiness" in query
+        or "readiness for implementation" in query
+        or "penetration" in query
+        or "sustainment" in query
+        for query in queries
+    )
+
+
 def test_busca1_and_busca2b_cover_food_is_medicine_interventions() -> None:
     taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
 
