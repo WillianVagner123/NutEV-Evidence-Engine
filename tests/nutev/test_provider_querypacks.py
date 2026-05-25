@@ -156,7 +156,7 @@ def test_doc_type_overflow_keeps_late_guideline_labels_visible():
     assert '"position paper"[Publication Type]' in joined or '"position paper"[Title/Abstract]' in joined
 
 
-def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
+def test_pubmed_mesh_expands_lipid_liver_and_prediabetes_terms() -> None:
     taxonomy = {
         "global": {
             "document_types": {"guidelines": ["guideline"]},
@@ -165,6 +165,7 @@ def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
             "implementation_behavior": {"adherence": ["adherence"]},
         },
         "clinical": {
+            "diabetes": ["prediabetes", "insulin resistance"],
             "lipids": ["dyslipidaemia", "hypercholesterolaemia"],
             "fatty_liver": [
                 "metabolic dysfunction-associated steatotic liver disease",
@@ -178,7 +179,7 @@ def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
             "busca2a": {
                 "population_terms": ["adult"],
                 "condition_terms": ["dyslipidaemia"],
-                "clinical_keys": ["lipids", "fatty_liver"],
+                "clinical_keys": ["diabetes", "lipids", "fatty_liver"],
                 "document_type_keys": ["guidelines"],
                 "priority_outcomes": ["lipids"],
                 "focus_blocks": ["diet_patterns", "implementation_behavior"],
@@ -190,9 +191,19 @@ def test_pubmed_mesh_expands_lipid_and_liver_synonyms() -> None:
     queries = render_queries_for_provider(taxonomy, "busca2a", "pubmed")
     joined = "\n".join(queries)
 
+    assert '"Prediabetic State"[MeSH Terms]' in joined
+    assert '"Insulin Resistance"[MeSH Terms]' in joined
     assert '"Dyslipidemias"[MeSH Terms]' in joined
     assert '"Hypercholesterolemia"[MeSH Terms]' in joined
     assert '"Non-alcoholic Fatty Liver Disease"[MeSH Terms]' in joined
+
+
+def test_busca2b_enhancements_add_prediabetes_and_insulin_resistance_queries() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"prediabetes"[Title/Abstract]' in joined
+    assert '"insulin resistance"[Title/Abstract]' in joined
 
 
 def test_busca2a_guidance_terms_pull_guideline_variants_into_queries() -> None:
