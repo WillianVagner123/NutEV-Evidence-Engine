@@ -362,7 +362,9 @@ def _augment_with_semantic_blocks(
         enriched["web_hints"] = uniq(
             enriched.get("web_hints", []) + CARDIOMETABOLIC_LIVER_HINTS
         )
-    enriched["semantic_terms"] = uniq(focus_terms + broad_terms)
+    enriched["semantic_terms"] = uniq(
+        high_priority_terms + enriched.get("focus_terms", []) + broad_terms
+    )
     enriched["semantic_block_priorities"] = block_priorities
     return enriched
 
