@@ -861,6 +861,13 @@ def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
         ),
         _join_parts(
             [
+                _provider_or_block(components["web_hints"], "europepmc", 4),
+                _provider_or_block(components["nutrition_terms"], "europepmc", 5),
+                _provider_or_block(condition_terms, "europepmc", 6),
+            ]
+        ),
+        _join_parts(
+            [
                 _provider_or_block(semantic_terms_, "europepmc", 5),
                 _provider_or_block(condition_terms, "europepmc", 8),
                 _provider_or_block(components["doc_type_terms"], "europepmc", 5),
@@ -899,6 +906,13 @@ def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
         _join_parts(
             [
                 _provider_or_block(components["behavior_terms"], "openalex", 4),
+                _provider_or_block(condition_terms, "openalex", 6),
+                _provider_or_block(components["doc_type_terms"], "openalex", 4),
+            ]
+        ),
+        _join_parts(
+            [
+                _provider_or_block(components["web_hints"], "openalex", 4),
                 _provider_or_block(condition_terms, "openalex", 6),
                 _provider_or_block(components["doc_type_terms"], "openalex", 4),
             ]
