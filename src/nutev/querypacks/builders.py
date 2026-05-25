@@ -54,6 +54,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
     },
     "busca2a": {
         "condition_terms": [
+            "prediabetes",
+            "insulin resistance",
             "dyslipidaemia",
             "hyperlipidemia",
             "hyperlipidaemia",
@@ -76,6 +78,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "obesity management",
             "clinical nutrition",
             "cardiometabolic health",
+            "prediabetes",
+            "insulin resistance",
             "glycemic control",
             "blood pressure",
             "fatty liver",
@@ -88,6 +92,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "scientific statement",
             "obesity guideline",
             "cardiometabolic guideline",
+            "prediabetes guideline",
+            "insulin resistance guideline",
             "dyslipidemia guideline",
             "lipid management guideline",
             "practice guidance",
@@ -119,6 +125,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
     },
     "busca2b": {
         "condition_terms": [
+            "prediabetes",
+            "insulin resistance",
             "dyslipidaemia",
             "hyperlipidemia",
             "hyperlipidaemia",
@@ -165,6 +173,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "time-restricted eating",
             "intermittent fasting",
             "diabetes prevention program",
+            "prediabetes",
+            "insulin resistance",
             "weight maintenance",
             "lipid management",
             "cholesterol management",
@@ -236,6 +246,8 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "program implementation",
             "adherence intervention",
             "behavior change trial",
+            "prediabetes trial",
+            "insulin resistance trial",
             "dyslipidemia trial",
             "lipid lowering trial",
             "masld trial",
