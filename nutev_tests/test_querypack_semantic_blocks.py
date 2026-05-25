@@ -88,3 +88,20 @@ def test_food_literacy_semantic_block_adds_culinary_training_and_labeling_terms(
     assert "label reading" in rendered
     assert "front-of-pack" in rendered
     assert "front-of-pack labeling" in rendered
+
+
+def test_food_literacy_semantic_block_adds_operational_budget_and_shopping_terms() -> None:
+    terms = semantic_terms("artigo3_framework", min_priority=5)
+    document_terms = semantic_terms(
+        "artigo3_framework",
+        field="document_terms",
+        min_priority=5,
+    )
+
+    assert "shopping skills" in terms
+    assert "healthy grocery shopping" in terms
+    assert "food budgeting" in terms
+    assert "food resource management" in terms
+    assert "shopping skills scale" in document_terms
+    assert "food budgeting scale" in document_terms
+    assert "food resource management questionnaire" in document_terms
