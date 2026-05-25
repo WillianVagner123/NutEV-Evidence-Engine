@@ -130,6 +130,14 @@ def test_therapeutic_lifestyle_changes_and_healthy_eating_pattern_improve_priori
     ) > _score_watch_item({"title": "Cardiometabolic risk note"})
 
 
+def test_lifestyle_intervention_variants_improve_priority():
+    assert _score_watch_item(
+        {
+            "title": "Intensive lifestyle intervention, intermittent fasting, and diabetes prevention program for obesity care",
+        }
+    ) > _score_watch_item({"title": "Obesity care note"})
+
+
 def test_living_systematic_review_and_rapid_review_improve_priority():
     assert _score_watch_item(
         {"title": "Living systematic review and rapid review of Mediterranean diet for obesity"}
