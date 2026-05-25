@@ -25,8 +25,22 @@ function Invoke-Checked {
 
     & $Command @Arguments
     if ($LASTEXITCODE -ne 0) {
-        throw "Comando falhou com codigo $LASTEXITCODE: $Command $($Arguments -join ' ')"
+        throw "Comando falhou com codigo ${LASTEXITCODE}: $Command $($Arguments -join ' ')"
     }
+}
+
+function Invoke-PythonBase {
+    param(
+        [Parameter(Mandatory = $true)][string[]]$PythonBase,
+        [Parameter(Mandatory = $true)][string[]]$Arguments
+    )
+
+    $cmd = $PythonBase[0]
+    $prefixArgs = @()
+    if ($PythonBase.Length -gt 1) {
+        $prefixArgs = $PythonBase[1..($PythonBase.Length - 1)]
+    }
+    Invoke-Checked $cmd @($prefixArgs + $Arguments)
 }
 
 function Resolve-Python312 {
@@ -100,7 +114,7 @@ Write-Host "Python selecionado: $($pythonBase -join ' ')"
 
 Write-Step "Criando ambiente virtual .venv"
 if (-not (Test-Path ".venv")) {
-    Invoke-Checked $pythonBase[0] @($pythonBase[1..($pythonBase.Length - 1)] + @("-m", "venv", ".venv"))
+    Invoke-PythonBase -PythonBase $pythonBase -Arguments @("-m", "venv", ".venv")
 }
 
 $VenvPython = Join-Path ".venv" "Scripts\python.exe"
