@@ -119,12 +119,23 @@ if (-not (Test-Path ".venv")) {
 
 $VenvPython = Join-Path ".venv" "Scripts\python.exe"
 $VenvNutev = Join-Path ".venv" "Scripts\nutev.exe"
+$ConstraintsFile = Join-Path "constraints" "windows.txt"
 
 Write-Step "Atualizando pip"
 Invoke-Checked $VenvPython -m pip install --upgrade pip
 
 Write-Step "Instalando NutEV/NutMEV com dashboard e API"
-Invoke-Checked $VenvPython -m pip install --no-cache-dir -e ".[dashboard,platform]"
+if (Test-Path $ConstraintsFile) {
+    Invoke-Checked $VenvPython -m pip install --no-cache-dir -c $ConstraintsFile -e ".[dashboard,platform]"
+} else {
+    Invoke-Checked $VenvPython -m pip install --no-cache-dir -e ".[dashboard,platform]"
+}
+
+Write-Step "Estabilizando stack HTTP no Windows"
+if (Test-Path $ConstraintsFile) {
+    Invoke-Checked $VenvPython -m pip install --no-cache-dir -c $ConstraintsFile requests urllib3 charset-normalizer chardet
+}
+Invoke-Checked $VenvPython -c "import requests, urllib3, charset_normalizer; print('requests=', requests.__version__, 'urllib3=', urllib3.__version__, 'charset_normalizer=', charset_normalizer.__version__)"
 
 Write-Step "Instalando navegador Chromium do Playwright quando disponivel"
 try {
