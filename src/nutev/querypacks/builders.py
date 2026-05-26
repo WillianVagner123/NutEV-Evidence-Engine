@@ -8,6 +8,27 @@ WORKSTREAM_ALIASES = {
     "article3": "artigo3_framework",
 }
 
+FATTY_LIVER_TRIGGER_TERMS = {
+    "fatty liver",
+    "nafld",
+    "masld",
+    "mafld",
+    "mash",
+    "nash",
+    "steatotic liver disease",
+    "steatohepatitis",
+    "nonalcoholic fatty liver disease",
+    "non-alcoholic fatty liver disease",
+    "nonalcoholic steatohepatitis",
+    "non-alcoholic steatohepatitis",
+    "metabolic dysfunction-associated fatty liver disease",
+    "metabolic dysfunction associated fatty liver disease",
+    "metabolic dysfunction-associated steatotic liver disease",
+    "metabolic dysfunction associated steatotic liver disease",
+    "metabolic dysfunction-associated steatohepatitis",
+    "metabolic dysfunction associated steatohepatitis",
+}
+
 WORKSTREAM_QUERY_ENHANCEMENTS = {
     "busca1": {
         "focus_terms": [
@@ -320,6 +341,17 @@ def get_named_terms(section: dict, keys: list[str]) -> list[str]:
     return uniq(out)
 
 
+def should_include_fatty_liver_terms(ws: dict, enhancements: dict) -> bool:
+    candidate_terms = uniq(
+        ws.get("condition_terms", [])
+        + ws.get("web_query_hints", [])
+        + enhancements.get("condition_terms", [])
+        + enhancements.get("focus_terms", [])
+        + enhancements.get("web_hints", [])
+    )
+    return any(term.lower() in FATTY_LIVER_TRIGGER_TERMS for term in candidate_terms)
+
+
 def chunk_terms(terms: list[str], chunk_size: int = 5) -> list[list[str]]:
     clean = uniq(terms)
     return [clean[i : i + chunk_size] for i in range(0, len(clean), chunk_size)]
@@ -340,7 +372,10 @@ def build_structured_components(
     condition_terms = uniq(
         ws.get("condition_terms", []) + enhancements.get("condition_terms", [])
     )
-    clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
+    clinical_keys = list(ws.get("clinical_keys", []))
+    if should_include_fatty_liver_terms(ws, enhancements) and "fatty_liver" not in clinical_keys:
+        clinical_keys.append("fatty_liver")
+    clinical_terms = get_named_terms(clinical_cfg, clinical_keys)
     priority_outcomes = uniq(
         get_named_terms(outcomes_cfg, ws.get("priority_outcomes", []))
         + enhancements.get("priority_outcomes", [])
