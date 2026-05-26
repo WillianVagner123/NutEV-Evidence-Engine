@@ -513,6 +513,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     )
 
     curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
+    claims = []
+    recommendations = []
+    conflicts = []
 
     write_event(
         emit_event(run_id, "synthesis_completed", "Synthesis completed"),

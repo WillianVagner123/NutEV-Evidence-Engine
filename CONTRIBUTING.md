@@ -9,7 +9,7 @@ This repository evolved from a historical Local Deep Research base. Some legacy 
 ## Project principles
 
 1. **Scientific traceability first.** Evidence must be traceable from document to claim to recommendation candidate.
-2. **No unsupported recommendations.** A RecommendationCandidate is not a final recommendation.
+2. **No unsupported recommendations.** A `RecommendationCandidate` is not a final recommendation.
 3. **Human review is required.** Final protocol inclusion requires explicit human validation.
 4. **LLM is assistive only.** LLM output cannot approve protocol items, replace reviewers, or create support without documentary evidence.
 5. **Small PRs are safer.** One intent per PR: UI, audit, rigor, docs, or pipeline.
@@ -37,7 +37,7 @@ New code should preserve this chain and should not bypass audit or human review 
 Install the project locally:
 
 ```bash
-pip install -e ".[dashboard,platform]"
+python -m pip install -e ".[dashboard,platform]"
 ```
 
 Generate demo outputs:
@@ -61,7 +61,7 @@ nutev dashboard --project-root ./project_output_demo --port 8501
 Run NutEV tests:
 
 ```bash
-PYTHONPATH=src python -m pytest -q tests/nutev
+PYTHONPATH=src python -m pytest -q nutev_tests
 ```
 
 ## Pull request expectations
@@ -123,7 +123,7 @@ src/nutev/review/
 src/nutev/ui/
 config/
 docs/
-tests/nutev/
+nutev_tests/
 ```
 
 Legacy areas may remain for compatibility, but new doctorate work should not depend on `src/local_deep_research/` unless explicitly justified.
@@ -135,6 +135,7 @@ Useful project documents:
 - `README.md`
 - `SECURITY.md`
 - `docs/REPOSITORY_STRUCTURE.md`
+- `docs/VALIDATION_REPORT.md`
 - `docs/NUTEV_AUDIT_ENGINE.md`
 - `docs/NUTEV_CONTROL_CENTER.md`
 - `docs/NUTEV_PLATFORM_API.md`

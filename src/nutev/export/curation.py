@@ -504,3 +504,106 @@ def _rank_row(row: dict) -> tuple[int, int, float, float, int, str]:
         year,
         _as_text(row.get("title")),
     )
+
+def _ensure_columns(df: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
+    out = df.copy()
+    for column in columns:
+        if column not in out.columns:
+            out[column] = ""
+    return out[columns]
+
+
+def _build_unique_documents(curated_rows: list[dict]) -> list[dict]:
+    groups: dict[str, list[dict]] = {}
+    for row in curated_rows:
+        key = _as_text(row.get("document_key")) or _hash_fallback(row)
+        groups.setdefault(key, []).append(row)
+
+    unique_rows: list[dict] = []
+    for key, rows in groups.items():
+        best = sorted(rows, key=_rank_row, reverse=True)[0]
+        item = {column: best.get(column, "") for column in UNIQUE_DOCUMENT_COLUMNS}
+        item["document_key"] = key
+        item["document_key_type"] = best.get("document_key_type", "")
+        item["workstreams"] = "; ".join(
+            sorted({ _as_text(row.get("workstream")) for row in rows if _as_text(row.get("workstream")) })
+        )
+        item["document_ids"] = "; ".join(
+            sorted({ _as_text(row.get("document_id")) for row in rows if _as_text(row.get("document_id")) })
+        )
+        item["source_occurrences"] = len(rows)
+        item["has_full_text"] = any(bool(row.get("has_full_text")) for row in rows)
+        item["is_metadata_only"] = not item["has_full_text"]
+        item["is_prioritized"] = any(bool(row.get("is_prioritized")) for row in rows)
+        unique_rows.append(item)
+
+    return sorted(unique_rows, key=_rank_row, reverse=True)
+
+
+def curate_outputs(rows: list[dict], output_dir: Path) -> dict:
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    curated_rows = [_curate_row(row) for row in rows]
+    curated_df = pd.DataFrame(curated_rows)
+    if curated_df.empty:
+        curated_df = pd.DataFrame(columns=CURATED_METADATA_COLUMNS)
+    else:
+        curated_df = _ensure_columns(curated_df, CURATED_METADATA_COLUMNS)
+
+    curated_df = sanitize_dataframe_for_excel(curated_df)
+    curated_df.to_csv(output_dir / "curated_metadata.csv", index=False, encoding="utf-8-sig")
+    write_excel_file(curated_df, output_dir / "curated_metadata.xlsx")
+
+    unique_rows = _build_unique_documents(curated_rows)
+    unique_df = pd.DataFrame(unique_rows)
+    if unique_df.empty:
+        unique_df = pd.DataFrame(columns=UNIQUE_DOCUMENT_COLUMNS)
+    else:
+        unique_df = _ensure_columns(unique_df, UNIQUE_DOCUMENT_COLUMNS)
+
+    unique_df = sanitize_dataframe_for_excel(unique_df)
+    unique_df.to_csv(output_dir / "unique_documents.csv", index=False, encoding="utf-8-sig")
+    write_excel_file(unique_df, output_dir / "unique_documents.xlsx")
+
+    top_df = unique_df.head(100).copy()
+    if not top_df.empty:
+        top_df = _ensure_columns(top_df, TOP_A1_OPERATIONAL_COLUMNS)
+    else:
+        top_df = pd.DataFrame(columns=TOP_A1_OPERATIONAL_COLUMNS)
+    write_excel_file(top_df, output_dir / "top_operational_documents.xlsx")
+
+    workstream_rows = []
+    for row in curated_rows:
+        workstream_rows.append({
+            "document_key": row.get("document_key", ""),
+            "document_id": row.get("document_id", ""),
+            "workstream": row.get("workstream", ""),
+            "source_provider": row.get("source_provider", ""),
+            "title": row.get("title", ""),
+            "year": row.get("year", ""),
+            "download_status": row.get("download_status", ""),
+            "extraction_status": row.get("extraction_status", ""),
+            "is_prioritized": row.get("is_prioritized", False),
+        })
+
+    workstream_df = pd.DataFrame(workstream_rows)
+    if workstream_df.empty:
+        workstream_df = pd.DataFrame(columns=WORKSTREAM_MAP_COLUMNS)
+    else:
+        workstream_df = _ensure_columns(workstream_df, WORKSTREAM_MAP_COLUMNS)
+    workstream_df.to_csv(output_dir / "workstream_document_map.csv", index=False, encoding="utf-8-sig")
+
+    summary = {
+        "input_rows": len(rows),
+        "curated_rows": len(curated_rows),
+        "unique_documents": len(unique_rows),
+        "metadata_only_documents": int(unique_df["is_metadata_only"].astype(bool).sum()) if not unique_df.empty else 0,
+        "prioritized_documents": int(unique_df["is_prioritized"].astype(bool).sum()) if not unique_df.empty else 0,
+    }
+
+    (output_dir / "curation_summary.json").write_text(
+        json.dumps(summary, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return summary
