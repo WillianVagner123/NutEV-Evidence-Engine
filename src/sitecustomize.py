@@ -193,10 +193,22 @@ def _patch_query_generation() -> None:
             queries = list(original_render(keyword_taxonomy, workstream, provider))
             if provider == "pubmed":
                 ws = builders_module.canonical_workstream(workstream)
+                lifestyle_terms = [
+                    "lifestyle medicine intervention",
+                    "lifestyle medicine interventions",
+                    "lifestyle medicine program",
+                    "lifestyle medicine programme",
+                    "lifestyle medicine counseling",
+                    "lifestyle medicine counselling",
+                    "lifestyle medicine approach",
+                    "lifestyle medicine approaches",
+                ]
                 if ws == "busca2a":
                     terms = ["therapeutic lifestyle changes", "mediterranean dietary pattern", "dietary approaches to stop hypertension", "living guideline", "clinical guidance"]
                 elif ws == "busca2b":
-                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "nonalcoholic steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "carbohydrate-restricted diet", "network meta-analysis", "living systematic review", "rapid review"]
+                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "nonalcoholic steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "carbohydrate-restricted diet", "carbohydrate restricted diet", "network meta-analysis", "living systematic review", "rapid review"] + lifestyle_terms
+                elif ws in {"busca1", "artigo3_framework"}:
+                    terms = lifestyle_terms
                 else:
                     terms = []
                 queries.extend([f'"{term}"[Title/Abstract]' for term in terms])
@@ -208,8 +220,11 @@ def _patch_query_generation() -> None:
     if original_build is not None and not getattr(original_build, "_nutev_foodmed_patched", False):
         def wrapped_build(keyword_taxonomy: dict, workstream: str) -> list[str]:
             queries = list(original_build(keyword_taxonomy, workstream))
-            if builders_module.canonical_workstream(workstream) == "busca2b":
+            ws = builders_module.canonical_workstream(workstream)
+            if ws == "busca2b":
                 queries.append('("food is medicine" OR "produce prescription" OR "medically tailored meals")')
+            if ws in {"busca1", "busca2b", "artigo3_framework"}:
+                queries.append('("lifestyle medicine intervention" OR "lifestyle medicine interventions" OR "lifestyle medicine program" OR "lifestyle medicine programme" OR "lifestyle medicine counseling" OR "lifestyle medicine counselling" OR "lifestyle medicine approach" OR "lifestyle medicine approaches")')
             return builders_module.uniq([q for q in queries if q])
 
         wrapped_build._nutev_foodmed_patched = True  # type: ignore[attr-defined]
