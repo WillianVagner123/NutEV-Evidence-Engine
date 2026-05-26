@@ -23,6 +23,18 @@ def test_build_watch_queries_include_behavior_change_framework_terms() -> None:
     assert any("intervention mapping" in query for query in query_texts)
 
 
+def test_build_watch_queries_include_self_efficacy_variants() -> None:
+    quick_queries = build_watch_queries(["implementation_behavior"], since_days=7, mode="quick")
+    thesis_queries = build_watch_queries(["implementation_behavior"], since_days=30, mode="thesis")
+    rendered = " ".join(
+        [str(item["query"]).lower() for item in quick_queries]
+        + [str(item["query"]).lower() for item in thesis_queries]
+    )
+
+    assert "self-efficacy" in rendered
+    assert "self efficacy" in rendered
+
+
 def test_score_watch_item_rewards_hybrid_framework_markers() -> None:
     baseline = score_watch_item(
         {
