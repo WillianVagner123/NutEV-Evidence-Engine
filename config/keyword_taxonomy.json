@@ -1,5 +1,5 @@
 {
-  "version": "2026-05-v4",
+  "version": "2026-05-v5",
   "global": {
     "lifestyle_medicine_pillars": {
       "nutrition": [
@@ -477,6 +477,8 @@
       "obese",
       "overweight",
       "clinical obesity",
+      "adiposity-based chronic disease",
+      "adiposity based chronic disease",
       "body mass index",
       "bmi",
       "waist circumference",
@@ -796,7 +798,10 @@
         "consenso",
         "lifestyle modification",
         "therapeutic lifestyle changes",
-        "mafld"
+        "mafld",
+        "clinical obesity",
+        "adiposity-based chronic disease",
+        "adiposity based chronic disease"
       ]
     },
     "busca2b": {
@@ -869,7 +874,10 @@
         "therapeutic lifestyle changes",
         "dietary counseling",
         "meal preparation",
-        "mafld"
+        "mafld",
+        "clinical obesity",
+        "adiposity-based chronic disease",
+        "adiposity based chronic disease"
       ]
     },
     "artigo3_framework": {
