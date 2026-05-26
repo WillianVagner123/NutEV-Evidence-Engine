@@ -12,3 +12,11 @@ def test_busca2b_semantic_terms_include_precision_terms() -> None:
     assert "insulin resistance" in terms
     assert "adiposity-based chronic disease" in terms
     assert "hypercholesterolaemia" in terms
+
+
+def test_busca2b_semantic_terms_include_behavior_change_variants() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+    assert "behavior change techniques" in terms
+    assert "behaviour change techniques" in terms
+    assert "behavior change taxonomy" in terms
+    assert "com b" in terms
