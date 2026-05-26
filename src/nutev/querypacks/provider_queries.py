@@ -102,6 +102,8 @@ PUBMED_MESH_MAP = {
     "metabolic dysfunction associated fatty liver disease": "Non-alcoholic Fatty Liver Disease",
     "metabolic dysfunction-associated steatotic liver disease": "Non-alcoholic Fatty Liver Disease",
     "metabolic dysfunction associated steatotic liver disease": "Non-alcoholic Fatty Liver Disease",
+    "metabolic dysfunction-associated steatohepatitis": "Steatohepatitis",
+    "metabolic dysfunction associated steatohepatitis": "Steatohepatitis",
     "mediterranean diet": "Diet, Mediterranean",
     "dash diet": "Dietary Approaches To Stop Hypertension",
     "plant-based diet": "Diet, Vegetarian",
@@ -145,6 +147,8 @@ CARDIOMETABOLIC_LIVER_TERMS = [
     "metabolic dysfunction-associated steatotic liver disease",
     "metabolic dysfunction-associated fatty liver disease",
     "metabolic dysfunction associated fatty liver disease",
+    "metabolic dysfunction-associated steatohepatitis",
+    "metabolic dysfunction associated steatohepatitis",
     "nonalcoholic fatty liver disease",
     "non-alcoholic fatty liver disease",
     "nonalcoholic steatohepatitis",
@@ -160,6 +164,8 @@ CARDIOMETABOLIC_LIVER_HINTS = [
     "steatohepatitis",
     "steatotic liver disease",
     "fatty liver",
+    "metabolic dysfunction-associated steatohepatitis",
+    "metabolic dysfunction associated steatohepatitis",
 ]
 
 PUBMED_DOCUMENT_TYPE_MAP = {
