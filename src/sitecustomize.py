@@ -194,9 +194,9 @@ def _patch_query_generation() -> None:
             if provider == "pubmed":
                 ws = builders_module.canonical_workstream(workstream)
                 if ws == "busca2a":
-                    terms = ["therapeutic lifestyle changes", "mediterranean dietary pattern", "living guideline", "clinical guidance"]
+                    terms = ["therapeutic lifestyle changes", "mediterranean dietary pattern", "dietary approaches to stop hypertension", "living guideline", "clinical guidance"]
                 elif ws == "busca2b":
-                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "network meta-analysis", "living systematic review"]
+                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "network meta-analysis", "living systematic review", "rapid review"]
                 else:
                     terms = []
                 queries.extend([f'"{term}"[Title/Abstract]' for term in terms])
