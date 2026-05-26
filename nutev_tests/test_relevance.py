@@ -42,3 +42,12 @@ def test_implementation_delivery_signals_gain_busca2b_priority() -> None:
     baseline = _score("Dietary adherence implementation")
 
     assert boosted > baseline
+
+
+def test_expanded_mash_term_gains_busca2b_priority() -> None:
+    boosted = _score(
+        "Lifestyle intervention for metabolic dysfunction-associated steatohepatitis in obesity"
+    )
+    baseline = _score("Lifestyle intervention for steatohepatitis in obesity")
+
+    assert boosted > baseline
