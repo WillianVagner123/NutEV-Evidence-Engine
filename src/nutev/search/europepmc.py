@@ -113,6 +113,8 @@ def _normalize_result(item: dict) -> dict[str, str]:
 def search_europepmc(query: str, page_size: int = 18) -> list[dict]:
     if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return []
+    if os.environ.get("NUTEV_SKIP_EUROPEPMC") == "1":
+        return []
     last = None
     for attempt in range(1, 4):
         try:

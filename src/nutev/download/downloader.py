@@ -222,6 +222,15 @@ def _request_with_retry(
                 break
             time.sleep(0.8 * attempt)
     raise RuntimeError(f"download failed after retries: {last_error}")
+\n\n
+def _get_with_retry(session: requests.Session, url: str, logger, retries: int = 2) -> bytes:
+    """Backward-compatible helper used by older tests.
+
+    The active downloader uses _request_with_retry(), which returns a Response.
+    This wrapper preserves the previous API by returning response.content.
+    """
+    response = _request_with_retry(session, url, logger, retries=retries)
+    return response.content
 
 
 def _looks_html_candidate(url: str, source: str | None = None) -> bool:
