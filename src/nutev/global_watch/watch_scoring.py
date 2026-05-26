@@ -21,6 +21,7 @@ def score_watch_item(item: dict) -> float:
     bonus = [
         ("clinical practice guideline", 60),
         ("practice guideline", 55),
+        ("clinical practice update", 50),
         ("guideline update", 60),
         ("living guideline", 55),
         ("guideline", 50),
@@ -34,6 +35,7 @@ def score_watch_item(item: dict) -> float:
         ("practice advisory", 45),
         ("practice guidance", 42),
         ("guidance statement", 42),
+        ("hepatology guidance", 42),
         ("joint statement", 40),
         ("joint guideline", 42),
         ("position statement", 40),
