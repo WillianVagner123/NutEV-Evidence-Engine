@@ -25,28 +25,26 @@
         "sedentary",
         "sedentário"
       ],
-      "sleep_stress_social": {
-        "sleep": [
-          "sleep",
-          "sleep quality",
-          "circadian",
-          "stress",
-          "mindfulness",
-          "social connection",
-          "social support",
-          "sono",
-          "qualidade do sono",
-          "ritmo circadiano",
-          "estresse",
-          "atenção plena",
-          "conexões sociais",
-          "suporte social",
-          "comensalidade",
-          "shared meals",
-          "family meals",
-          "commensality"
-        ]
-      },
+      "sleep_stress_social": [
+        "sleep",
+        "sleep quality",
+        "circadian",
+        "stress",
+        "mindfulness",
+        "social connection",
+        "social support",
+        "sono",
+        "qualidade do sono",
+        "ritmo circadiano",
+        "estresse",
+        "atenção plena",
+        "conexões sociais",
+        "suporte social",
+        "comensalidade",
+        "shared meals",
+        "family meals",
+        "commensality"
+      ],
       "substances": [
         "smoking cessation",
         "alcohol",
