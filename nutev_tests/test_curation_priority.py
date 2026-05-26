@@ -24,6 +24,17 @@ def test_curated_priority_matches_food_as_medicine_implementation_terms() -> Non
     assert _is_prioritized(row) is True
 
 
+def test_curated_priority_matches_behavior_change_implementation_terms() -> None:
+    row = {
+        "title": "Implementation outcomes framework for obesity care delivery",
+        "abstract": "Behaviour change techniques and COM B implementation mapping were evaluated.",
+        "relevance_score": 8,
+        "editorial_priority_tier": "standard",
+    }
+
+    assert _is_prioritized(row) is True
+
+
 def test_curated_priority_still_requires_minimum_operational_score() -> None:
     row = {
         "title": "Practice guidance for healthy food procurement in primary care",
