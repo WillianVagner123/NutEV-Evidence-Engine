@@ -3,7 +3,7 @@ from unittest.mock import Mock
 import importlib.util
 
 from nutev.analysis.synthesis import build_master_rows, classify_nutev_objects, build_questionnaire_candidates, build_framework_components, write_synthesis_outputs
-from nutev.download.downloader import _get_with_retry
+from nutev.download.downloader import _request_with_retry as _get_with_retry_response
 from nutev.extract.smart_extract import extract_document
 
 
@@ -28,10 +28,10 @@ def test_synthesis_export(tmp_path: Path):
 
 def test_retry_logic():
     s=Mock()
-    resp=Mock(); resp.raise_for_status.return_value=None; resp.content=b"abc"
+    resp=Mock(); resp.raise_for_status.return_value=None; resp.status_code=200; resp.content=b"abc"
     s.get.side_effect=[Exception("x"), resp]
-    out=_get_with_retry(s, "http://x", Mock(), retries=2)
-    assert out == b"abc"
+    out=_get_with_retry_response(s, "http://x", Mock(), retries=2)
+    assert out.content == b"abc"
 
 
 def test_ocr_fallback_smoke(tmp_path: Path):
