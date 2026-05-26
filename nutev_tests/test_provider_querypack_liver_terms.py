@@ -17,6 +17,7 @@ def test_busca2b_pubmed_queries_include_liver_terms_from_tail_conditions():
     assert "mash" in rendered
     assert "nash" in rendered
     assert "steatotic liver disease" in rendered
+    assert "metabolic dysfunction-associated steatohepatitis" in rendered
     assert "non-alcoholic fatty liver disease" in rendered
     assert "nonalcoholic steatohepatitis" in rendered
 
