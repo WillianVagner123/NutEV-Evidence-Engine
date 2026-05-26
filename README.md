@@ -1,33 +1,62 @@
 # NutEV/NutMEV — Evidence Engine for Lifestyle Nutrition
 
-Pipeline computacional reprodutível para identificação, classificação, auditoria e tradução de evidências em recomendações candidatas para o Protocolo Dietético NutEV/NutMEV.
+Pipeline computacional reprodutível para identificação, classificação, auditoria e tradução de evidências em **recomendações candidatas** para o Protocolo Dietético NutEV/NutMEV.
 
-## Para rodar no PC
+> **Regra metodológica central:** uma `RecommendationCandidate` não é recomendação final do protocolo. Toda candidata exige revisão humana, adjudicação metodológica e vínculo documental antes de qualquer uso como recomendação NutEV/NutMEV.
 
-O guia principal está em:
+## Visão geral
 
-- [`docs/RUN_LOCAL.md`](docs/RUN_LOCAL.md)
+O projeto organiza uma arquitetura científica local para apoiar a qualificação de doutorado e o desenvolvimento do Protocolo Dietético NutEV/NutMEV. Ele inclui:
 
-Caminho rápido:
+- CLI principal `nutev`;
+- dashboard local;
+- API local;
+- demo data;
+- pipeline de busca, classificação, download e extração;
+- Global Watch;
+- Audit Engine;
+- Scientific Rigor Layer;
+- Human Review and Adjudication.
+
+## Runtime canônico e legado
+
+A arquitetura canônica para o NutEV/NutMEV está em:
+
+```text
+src/nutev
+```
+
+O repositório evoluiu a partir de uma base histórica `local-deep-research`. Diretórios e imports legados não devem ser removidos de forma brusca enquanto ainda houver dependências ativas. Para novos módulos científicos NutEV/NutMEV, prefira `src/nutev`.
+
+## Instalação rápida
+
+### Windows PowerShell
+
+```powershell
+git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
+cd NUT-MEV_NEW
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e ".[dashboard,platform]"
+```
+
+### macOS/Linux
 
 ```bash
 git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
 cd NUT-MEV_NEW
-python -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-pip install -e ".[dashboard,platform]"
-nutev demo-data --project-root ./project_output_demo
-nutev dashboard --project-root ./project_output_demo --port 8501
+python -m pip install -e ".[dashboard,platform]"
 ```
 
-No Windows PowerShell, use:
+O projeto requer Python `>=3.12,<3.15`.
 
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -e ".[dashboard,platform]"
+## Demo
+
+```bash
 nutev demo-data --project-root ./project_output_demo
 nutev dashboard --project-root ./project_output_demo --port 8501
 ```
@@ -38,40 +67,7 @@ Depois acesse:
 http://127.0.0.1:8501
 ```
 
-## Componentes principais
-
-- NutEV Evidence Engine
-- NutEV Audit Engine
-- NutEV Scientific Rigor Layer
-- NutEV Platform API
-- NutEV Control Center
-- Human Review and Adjudication
-- Demo Data
-- Global Watch
-
-## Instalação
-
-```bash
-pip install -e ".[dashboard,platform]"
-```
-
-O projeto requer Python `>=3.12,<3.15`.
-
-## Comandos principais
-
-### Demo data
-
-```bash
-nutev demo-data --project-root ./project_output_demo
-```
-
-### Dashboard local
-
-```bash
-nutev dashboard --project-root ./project_output_demo --port 8501
-```
-
-### NutEV Platform API
+API local:
 
 ```bash
 nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
@@ -79,18 +75,8 @@ nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
 
 URLs:
 
-- http://127.0.0.1:8000
-- http://127.0.0.1:8000/docs
-
-### NutEV Provider Settings
-
-```bash
-export OPENAI_API_KEY="..."
-nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
-nutev dashboard --project-root ./project_output_demo --port 8501
-```
-
-As chaves são locais, devem ser preferencialmente resolvidas por variáveis de ambiente e não devem aparecer em outputs, logs, matrizes ou relatórios.
+- `http://127.0.0.1:8000`
+- `http://127.0.0.1:8000/docs`
 
 ## Primeiro piloto real
 
@@ -100,62 +86,88 @@ nutev pilot-report --project-root ./project_output_pilot
 nutev dashboard --project-root ./project_output_pilot --port 8501
 ```
 
-### Pipeline principal
+Variáveis úteis para integrações bibliográficas:
 
 ```bash
-nutev --project-root ./project_output --workstreams busca1 busca2a busca2b a3 --web-enabled
+export NCBI_EMAIL="seu-email@exemplo.com"
+export NCBI_API_KEY="sua-chave-ncbi"
+export CROSSREF_MAILTO="seu-email@exemplo.com"
+export OPENALEX_MAILTO="seu-email@exemplo.com"
 ```
 
-### Global Watch
+Nunca coloque chaves de API no GitHub, em logs ou em outputs científicos.
+
+## Outputs esperados
+
+Camadas principais em `project_output_*`:
+
+- `06_tables`: matrizes, PRISMA, tabelas e artefatos de auditoria;
+- `07_logs`: eventos, snapshots, resumo da execução e rastreabilidade;
+- `10_curated`: metadados curados, documentos únicos e documentos operacionais priorizados.
+
+Artefatos de auditoria esperados em `06_tables`:
+
+- `NUTEV_EVIDENCE_CLAIMS.csv`
+- `NUTEV_CLAIM_EVALUATIONS.csv`
+- `NUTEV_CONFLICTS.csv`
+- `NUTEV_RECOMMENDATION_CANDIDATES.csv`
+
+Resumo final esperado em `07_logs/run_summary.json`:
+
+- `records`
+- `downloads_ok`
+- `downloads_failed`
+- `ocr_docs`
+- `curated_unique_documents`
+- `evidence_claims_total`
+- `evidence_claims_supported`
+- `evidence_claims_needs_review`
+- `recommendation_candidates_total`
+- `recommendation_candidates_ready_review`
+- `recommendation_candidates_insufficient_evidence`
+- `conflicting_evidence_total`
+
+## Testes NutEV
+
+Caminho padronizado:
 
 ```bash
-nutev global-watch --project-root ./project_output --since-days 30 --mode thesis --web-enabled --official-crawl --country-discovery --capture-enabled
+PYTHONPATH=src python -m pytest -q nutev_tests
 ```
 
-### Testes NutEV
+No Windows PowerShell:
 
-```bash
-PYTHONPATH=src python -m pytest -q tests/nutev
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q nutev_tests
 ```
 
-## Aviso metodológico
+## Limitações metodológicas
 
-O sistema gera recomendações candidatas e matrizes de auditoria, mas **não substitui revisão humana**.
+O sistema apoia identificação, classificação, auditoria e tradução preliminar de evidências. Ele **não substitui** revisão sistemática humana, avaliação de risco de viés, dupla checagem, adjudicação de conflitos, interpretação clínica ou decisão final do protocolo.
 
-Uma RecommendationCandidate não é uma recomendação final. A entrada no Protocolo NutEV/NutMEV requer lastro documental, claim auditável, qualidade da evidência, ausência de conflito não adjudicado, validação humana e readiness compatível com protocolo.
+Recomendações candidatas podem receber estados como:
 
-## Demo para qualificação
+- `ready_for_human_review`
+- `conflicting_evidence`
+- `draft_needs_evidence`
+- `insufficient_evidence`
 
-Dados demo são simulados e servem para visualização e teste do fluxo operacional. Não devem ser usados como evidência científica real.
-
-## Revisão humana
-
-As decisões humanas são persistidas em `project_output/07_logs/human_review_decisions.csv` (append-only). Nenhuma recomendação deve ser considerada final sem revisão humana explícita e vínculo documental.
-
-## Scientific Rigor Layer
-
-A camada de rigor científico formaliza:
-
-- modelo conceitual NutEV/NutMEV;
-- qualidade da evidência;
-- convergência entre lentes;
-- registro de lacunas;
-- dupla revisão humana e adjudicação;
-- protocol readiness;
-- bloqueio de inferências não validadas.
+Nenhum desses estados equivale a recomendação final.
 
 ## Documentação
 
-- `docs/RUN_LOCAL.md`
-- `docs/NUTEV_AUDIT_ENGINE.md`
-- `docs/NUTEV_CONTROL_CENTER.md`
-- `docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md`
-- `docs/NUTEV_PLATFORM_API.md`
-- `docs/NUTEV_PROVIDER_SETTINGS.md`
-- `docs/REPOSITORY_STRUCTURE.md`
-- `docs/LEGACY_CLEANUP_AUDIT.md`
-- `docs/LEGACY_DEPENDENCY_MAP.md`
+- [`docs/RUN_LOCAL.md`](docs/RUN_LOCAL.md)
+- [`docs/VALIDATION_REPORT.md`](docs/VALIDATION_REPORT.md)
+- [`docs/NUTEV_AUDIT_ENGINE.md`](docs/NUTEV_AUDIT_ENGINE.md)
+- [`docs/NUTEV_CONTROL_CENTER.md`](docs/NUTEV_CONTROL_CENTER.md)
+- [`docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md`](docs/NUTEV_EVIDENCE_TO_PROTOCOL_FLOW.md)
+- [`docs/NUTEV_PLATFORM_API.md`](docs/NUTEV_PLATFORM_API.md)
+- [`docs/NUTEV_PROVIDER_SETTINGS.md`](docs/NUTEV_PROVIDER_SETTINGS.md)
+- [`docs/REPOSITORY_STRUCTURE.md`](docs/REPOSITORY_STRUCTURE.md)
+- [`docs/LEGACY_CLEANUP_AUDIT.md`](docs/LEGACY_CLEANUP_AUDIT.md)
+- [`docs/LEGACY_DEPENDENCY_MAP.md`](docs/LEGACY_DEPENDENCY_MAP.md)
 
-## Historical note
+## Revisão humana
 
-O repositório evoluiu de uma base histórica Local Deep Research. A arquitetura canônica atual para pesquisa e qualificação é NutEV/NutMEV (`src/nutev`).
+As decisões humanas são persistidas em `project_output/07_logs/human_review_decisions.csv` quando o fluxo de revisão está habilitado. Nenhuma recomendação deve ser considerada final sem revisão humana explícita, lastro documental e adjudicação metodológica.
