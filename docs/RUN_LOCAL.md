@@ -1,8 +1,8 @@
 # Rodar o NutEV/NutMEV no PC
 
-Este guia e o caminho recomendado para instalar, testar e abrir o sistema localmente.
+Este guia descreve o caminho recomendado para instalar, testar e abrir o sistema localmente.
 
-## 1. Pre-requisitos
+## 1. Pré-requisitos
 
 Instale no computador:
 
@@ -12,7 +12,7 @@ Instale no computador:
 
 O projeto exige Python `>=3.12,<3.15`.
 
-## 2. Caminho recomendado: instalacao automatica
+## 2. Caminho recomendado: instalação automática
 
 ### Windows PowerShell
 
@@ -47,44 +47,9 @@ Acesse:
 http://127.0.0.1:8000/docs
 ```
 
-### macOS/Linux
+## 3. Instalação manual
 
-```bash
-git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
-cd NUT-MEV_NEW
-chmod +x scripts/setup_unix.sh scripts/run_dashboard_unix.sh
-./scripts/setup_unix.sh
-```
-
-Depois abra o dashboard:
-
-```bash
-./scripts/run_dashboard_unix.sh
-```
-
-Acesse:
-
-```text
-http://127.0.0.1:8501
-```
-
-Para abrir a API local em outro terminal:
-
-```bash
-.venv/bin/nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
-```
-
-Acesse:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-## 3. Instalacao manual
-
-Use esta secao se preferir controlar cada etapa.
-
-### Baixar o repositorio
+### Baixar o repositório
 
 ```bash
 git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
@@ -101,7 +66,7 @@ py -3.12 -m venv .venv
 python -m pip install --upgrade pip
 ```
 
-Se o PowerShell bloquear a ativacao:
+Se o PowerShell bloquear a ativação:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
@@ -119,24 +84,19 @@ python -m pip install --upgrade pip
 ### Instalar o sistema
 
 ```bash
-pip install -e ".[dashboard,platform]"
+python -m pip install -e ".[dashboard,platform]"
 ```
 
-Esse comando instala o pacote em modo editavel e habilita:
+Esse comando instala:
 
 - `nutev`, a CLI principal;
 - dashboard local;
 - API local da plataforma.
 
-### Gerar dados demo
+## 4. Demo local
 
 ```bash
 nutev demo-data --project-root ./project_output_demo
-```
-
-### Abrir o dashboard
-
-```bash
 nutev dashboard --project-root ./project_output_demo --port 8501
 ```
 
@@ -146,36 +106,34 @@ Depois acesse:
 http://127.0.0.1:8501
 ```
 
-### Abrir a API local
-
-Em outro terminal, com o ambiente virtual ativado:
+API local:
 
 ```bash
 nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
 ```
 
-URLs uteis:
+URLs úteis:
 
 ```text
 http://127.0.0.1:8000
 http://127.0.0.1:8000/docs
 ```
 
-## 4. Verificar instalacao
+## 5. Verificar instalação
 
 ```bash
 python scripts/check_local.py
 ```
 
-No Windows, se estiver usando o ambiente virtual sem ativa-lo:
+No Windows, se estiver usando o ambiente virtual sem ativá-lo:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\check_local.py
 ```
 
-## 5. Rodar o primeiro piloto
+## 6. Rodar o primeiro piloto
 
-Use esta opcao quando quiser gerar saida real para trabalho cientifico:
+Use esta opção quando quiser gerar saída real para trabalho científico:
 
 ```bash
 nutev --project-root ./project_output_pilot --workstreams busca1 busca2a busca2b a3 --web-enabled
@@ -183,7 +141,15 @@ nutev pilot-report --project-root ./project_output_pilot
 nutev dashboard --project-root ./project_output_pilot --port 8501
 ```
 
-## 6. Chaves e variaveis locais
+Para ambiente instável de rede, rode primeiro em modo controlado:
+
+```powershell
+$env:PYTHONPATH="src"
+$env:NUTEV_DOWNLOAD_LIMIT="40"
+nutev --project-root ./project_output_pilot --workstreams busca1 --web-enabled
+```
+
+## 7. Chaves e variáveis locais
 
 Nunca coloque chave de API no GitHub.
 
@@ -191,53 +157,70 @@ Nunca coloque chave de API no GitHub.
 
 ```powershell
 $env:OPENAI_API_KEY="sua-chave-aqui"
+$env:NCBI_EMAIL="seu-email@exemplo.com"
+$env:NCBI_API_KEY="sua-chave-ncbi"
+$env:CROSSREF_MAILTO="seu-email@exemplo.com"
+$env:OPENALEX_MAILTO="seu-email@exemplo.com"
 ```
 
 ### macOS/Linux
 
 ```bash
 export OPENAI_API_KEY="sua-chave-aqui"
-```
-
-Variaveis uteis para integracoes bibliograficas:
-
-```bash
 export NCBI_EMAIL="seu-email@exemplo.com"
 export NCBI_API_KEY="sua-chave-ncbi"
 export CROSSREF_MAILTO="seu-email@exemplo.com"
 export OPENALEX_MAILTO="seu-email@exemplo.com"
 ```
 
-## 7. Testes essenciais
+## 8. Testes essenciais
+
+Caminho padronizado:
 
 ```bash
-PYTHONPATH=src python -m pytest -q tests/nutev
+PYTHONPATH=src python -m pytest -q nutev_tests
 ```
 
 No Windows PowerShell:
 
 ```powershell
 $env:PYTHONPATH="src"
-python -m pytest -q tests/nutev
+python -m pytest -q nutev_tests
 ```
 
-## 8. Solucao rapida de problemas
+## 9. Artefatos esperados
 
-### O comando `nutev` nao existe
+Em `06_tables`:
+
+- `NUTEV_EVIDENCE_CLAIMS.csv`
+- `NUTEV_CLAIM_EVALUATIONS.csv`
+- `NUTEV_CONFLICTS.csv`
+- `NUTEV_RECOMMENDATION_CANDIDATES.csv`
+
+Em `07_logs`:
+
+- `run_events.jsonl`
+- `run_summary.json`
+- `run_summary_pretty.txt`
+- `search_job_snapshot.json`
+
+Em `10_curated`:
+
+- `curated_metadata.csv`
+- `unique_documents.csv`
+- `top_operational_documents.xlsx`
+
+## 10. Solução rápida de problemas
+
+### O comando `nutev` não existe
 
 Ative o ambiente virtual e reinstale:
 
 ```bash
-pip install -e ".[dashboard,platform]"
+python -m pip install -e ".[dashboard,platform]"
 ```
 
-Ou rode o verificador:
-
-```bash
-python scripts/check_local.py
-```
-
-### Erro de versao do Python
+### Erro de versão do Python
 
 Confirme:
 
@@ -247,9 +230,9 @@ python --version
 
 Use Python 3.12 ou 3.13.
 
-### Dashboard nao abre
+### Dashboard não abre
 
-Confirme se a porta esta correta:
+Confirme se a porta está correta:
 
 ```bash
 nutev dashboard --project-root ./project_output_demo --port 8501
@@ -257,16 +240,8 @@ nutev dashboard --project-root ./project_output_demo --port 8501
 
 Depois acesse `http://127.0.0.1:8501`.
 
-### API nao abre
+## 11. Observação metodológica
 
-Rode:
+O sistema apoia busca, classificação, auditoria e tradução preliminar de evidências. Ele não substitui revisão humana, avaliação de risco de viés, adjudicação metodológica ou decisão final do protocolo.
 
-```bash
-nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
-```
-
-Depois acesse `http://127.0.0.1:8000/docs`.
-
-## 9. Regra metodologica
-
-O sistema gera evidencias candidatas, matrizes, logs e relatorios de apoio. Ele nao substitui revisao humana, adjudicacao metodologica ou decisao final do protocolo NutEV/NutMEV.
+`RecommendationCandidate` é recomendação candidata, não recomendação final.
