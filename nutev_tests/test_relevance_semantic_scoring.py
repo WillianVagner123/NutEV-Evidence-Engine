@@ -153,6 +153,33 @@ def test_busca2b_dietitian_led_medical_nutrition_therapy_is_prioritized() -> Non
     assert enriched_score["out_of_scope_flags"] == []
 
 
+def test_busca2b_behavior_change_taxonomy_variants_raise_relevance_score() -> None:
+    baseline = {
+        "title": "Adult obesity implementation follow-up",
+        "abstract": "Adults received routine diet support during follow-up.",
+        "url": "https://example.org/article",
+        "source": "pubmed",
+    }
+    enriched = {
+        "title": (
+            "Implementation outcomes framework and behaviour change techniques "
+            "for obesity care delivery"
+        ),
+        "abstract": (
+            "A COM B implementation mapping study evaluated food agency, "
+            "adherence and cardiometabolic outcomes in adults."
+        ),
+        "url": "https://example.org/full-text.pdf",
+        "source": "pubmed",
+    }
+
+    baseline_score = score_record(dict(baseline), BASE_SCORING_RULES, "busca2b")
+    enriched_score = score_record(dict(enriched), BASE_SCORING_RULES, "busca2b")
+
+    assert enriched_score["relevance_score"] > baseline_score["relevance_score"] + 18
+    assert enriched_score["out_of_scope_flags"] == []
+
+
 def test_busca2b_time_restricted_eating_variants_are_prioritized() -> None:
     scoring_rules = json.loads(
         (Path(__file__).resolve().parents[1] / "config" / "scoring_rules.json").read_text(
