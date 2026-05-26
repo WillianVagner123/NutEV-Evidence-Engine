@@ -123,6 +123,9 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
             "standards of medical care in diabetes",
             "scientific advisory",
             "best practice advice",
+            "meta analysis",
+            "network meta-analysis",
+            "network meta analysis",
         ]
     ).lower()
 
@@ -130,6 +133,7 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
     assert '"practice guideline"[publication type]' in clause
     assert '"guideline"[publication type]' in clause
     assert '"systematic review"[publication type]' in clause
+    assert '"meta-analysis"[publication type]' in clause
     assert '"scientific advisory"[title/abstract]' in clause
     assert '"best practice advice"[title/abstract]' in clause
     assert '"consensus guidance"[title/abstract]' not in clause
@@ -140,6 +144,9 @@ def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
     assert '"clinical practice update"[title/abstract]' not in clause
     assert '"standards of care"[title/abstract]' not in clause
     assert '"standards of medical care in diabetes"[title/abstract]' not in clause
+    assert '"meta analysis"[title/abstract]' not in clause
+    assert '"network meta-analysis"[title/abstract]' not in clause
+    assert '"network meta analysis"[title/abstract]' not in clause
 
 
 def test_master_pipeline_dedup_normalizes_doi_and_url_before_title_year():
