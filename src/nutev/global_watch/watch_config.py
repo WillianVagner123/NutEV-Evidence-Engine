@@ -180,6 +180,7 @@ WATCH_CATEGORIES = {
         "behavioral weight loss",
         "self-monitoring",
         "self-efficacy",
+        "self efficacy",
         "self-management support",
         "treatment adherence",
         "motivational interviewing",
