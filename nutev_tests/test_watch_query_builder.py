@@ -393,3 +393,27 @@ def test_implementation_queries_add_pipeline_aligned_operational_terms() -> None
     assert "audit and feedback" in query
     assert "service delivery" in query
     assert "care delivery" in query
+
+
+def test_thesis_mode_food_literacy_queries_include_operational_shopping_terms() -> None:
+    queries = build_watch_queries(
+        ["food_literacy_culinary_commensality"],
+        since_days=30,
+        mode="thesis",
+    )
+    rendered = "\n".join(str(item["query"]).lower() for item in queries)
+
+    assert '"food label literacy"' in rendered
+    assert '"shopping skills"' in rendered
+
+
+def test_exhaustive_mode_food_literacy_queries_include_budgeting_and_menu_terms() -> None:
+    queries = build_watch_queries(
+        ["food_literacy_culinary_commensality"],
+        since_days=30,
+        mode="exhaustive",
+    )
+    rendered = "\n".join(str(item["query"]).lower() for item in queries)
+
+    assert '"food budgeting"' in rendered
+    assert '"menu labeling"' in rendered
