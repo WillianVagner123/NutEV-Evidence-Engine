@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from nutev.analysis.relevance import score_record
+from nutev.settings import load_json
 
 
 EMPTY_SCORING_RULES = {
@@ -51,3 +54,25 @@ def test_expanded_mash_term_gains_busca2b_priority() -> None:
     baseline = _score("Lifestyle intervention for steatohepatitis in obesity")
 
     assert boosted > baseline
+
+
+def test_portuguese_lifestyle_medicine_phrase_gains_busca2a_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Medicina do estilo de vida e diretriz clínica para obesidade e diabetes tipo 2",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2a",
+    )
+    baseline = score_record(
+        {
+            "title": "Diretriz clínica para obesidade e diabetes tipo 2",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2a",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
