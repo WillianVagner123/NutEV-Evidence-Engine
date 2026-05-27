@@ -158,6 +158,8 @@ CATEGORY_CONTEXT_TERMS = {
         "non-alcoholic steatohepatitis",
         "weight management",
         "adiposity",
+        "adiposity-based chronic disease",
+        "adiposity based chronic disease",
         "blood pressure",
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
@@ -492,6 +494,8 @@ QUICK_MODE_SEED_GROUPS = {
             "clinical obesity",
             "overweight",
             "adiposity",
+            "adiposity-based chronic disease",
+            "adiposity based chronic disease",
             "weight management",
         ],
         [
@@ -708,6 +712,7 @@ QUICK_MODE_SEED_GROUPS = {
             "food and nutrition literacy",
             "nutrition literacy",
             "health literacy",
+            "nutrition security",
         ],
         [
             "culinary medicine",
