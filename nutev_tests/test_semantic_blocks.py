@@ -33,3 +33,19 @@ def test_busca2a_semantic_document_terms_include_nutrition_care_pathway() -> Non
     terms = {term.lower() for term in semantic_terms("busca2a", field="document_terms", min_priority=4)}
     assert "nutrition care process model" in terms
     assert "nutrition care pathway" in terms
+
+
+def test_busca2b_priority_five_terms_surface_nutrition_care_delivery_before_generic_implementation() -> None:
+    terms = semantic_terms("busca2b", min_priority=5)
+
+    assert terms.index("nutrition care pathway") < terms.index("implementation science")
+    assert terms.index("registered dietitian-led intervention") < terms.index(
+        "shared decision making"
+    )
+
+
+def test_a3_alias_priority_five_terms_include_nutrition_care_delivery() -> None:
+    terms = {term.lower() for term in semantic_terms("a3", min_priority=5)}
+
+    assert "nutrition care pathway" in terms
+    assert "registered dietitian-led intervention" in terms
