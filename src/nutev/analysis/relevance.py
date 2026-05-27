@@ -765,6 +765,39 @@ WORKSTREAM_BONUS = {
     },
 }
 
+BEHAVIOR_CHANGE_MODEL_BONUS = {
+    "busca2b": {
+        "action planning": 4,
+        "coping planning": 4,
+        "self-regulation": 4,
+        "self regulation": 4,
+        "readiness to change": 4,
+        "stage of change": 4,
+        "stages of change": 4,
+        "transtheoretical model": 5,
+    },
+    "a3": {
+        "action planning": 3,
+        "coping planning": 3,
+        "self-regulation": 3,
+        "self regulation": 3,
+        "readiness to change": 4,
+        "stage of change": 4,
+        "stages of change": 4,
+        "transtheoretical model": 5,
+    },
+    "artigo3_framework": {
+        "action planning": 3,
+        "coping planning": 3,
+        "self-regulation": 3,
+        "self regulation": 3,
+        "readiness to change": 4,
+        "stage of change": 4,
+        "stages of change": 4,
+        "transtheoretical model": 5,
+    },
+}
+
 IMPLEMENTATION_DESIGN_BONUS = {
     "busca2b": {
         "hybrid type 1": 4,
@@ -1250,6 +1283,10 @@ def _implementation_design_bonus(text: str, workstream: str) -> int:
     return _match_weighted_points(text, IMPLEMENTATION_DESIGN_BONUS.get(workstream, {}))
 
 
+def _behavior_change_model_bonus(text: str, workstream: str) -> int:
+    return _match_weighted_points(text, BEHAVIOR_CHANGE_MODEL_BONUS.get(workstream, {}))
+
+
 def _workstream_bonus_score(text: str, scoring_rules: dict, workstream: str) -> int:
     configured_bonus = scoring_rules.get("workstream_bonus", {}).get(workstream, {})
     if configured_bonus:
@@ -1319,6 +1356,7 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
     score += _workstream_bonus_score(text, scoring_rules, workstream)
 
     score += _implementation_design_bonus(text, workstream)
+    score += _behavior_change_model_bonus(text, workstream)
 
     out_of_scope_flags, out_of_scope_penalty = _out_of_scope_profile(text)
     editorial_score = _editorial_authority_score(record, scoring_rules)
