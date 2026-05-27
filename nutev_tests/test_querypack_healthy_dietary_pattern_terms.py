@@ -9,3 +9,8 @@ def test_semantic_blocks_include_healthy_dietary_pattern_variants() -> None:
         assert "healthy eating patterns" in terms
         assert "healthy dietary pattern" in terms
         assert "healthy dietary patterns" in terms
+        assert "vegetarian diet" in terms
+        assert "vegetarian dietary pattern" in terms
+        assert "vegan diet" in terms
+        assert "vegan dietary pattern" in terms
+        assert "healthy plant-based diet" in terms
