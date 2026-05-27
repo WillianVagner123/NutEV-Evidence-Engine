@@ -1232,6 +1232,13 @@ def _implementation_design_bonus(text: str, workstream: str) -> int:
     return _match_weighted_points(text, IMPLEMENTATION_DESIGN_BONUS.get(workstream, {}))
 
 
+def _workstream_bonus_score(text: str, scoring_rules: dict, workstream: str) -> int:
+    configured_bonus = scoring_rules.get("workstream_bonus", {}).get(workstream, {})
+    if configured_bonus:
+        return _match_weighted_points(text, configured_bonus)
+    return _match_weighted_points(text, WORKSTREAM_BONUS.get(workstream, {}))
+
+
 def _editorial_authority_score(record: dict, scoring_rules: dict) -> int:
     authority_rules = scoring_rules.get("editorial_authority_points", {})
     journal = (record.get("journal") or "").lower()
@@ -1291,9 +1298,7 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
         if kw in text:
             score += pts
 
-    for kw, pts in WORKSTREAM_BONUS.get(workstream, {}).items():
-        if kw in text:
-            score += pts
+    score += _workstream_bonus_score(text, scoring_rules, workstream)
 
     score += _implementation_design_bonus(text, workstream)
 
