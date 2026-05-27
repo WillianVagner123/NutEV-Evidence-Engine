@@ -103,6 +103,31 @@ def test_busca1_and_busca2b_cover_food_is_medicine_interventions() -> None:
     )
 
 
+def test_artigo3_queries_cover_psychometric_and_cross_cultural_terms() -> None:
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+
+    _, components = build_structured_components(taxonomy, "artigo3_framework")
+    focus_terms = {term.lower() for term in components["focus_terms"]}
+    web_hints = {term.lower() for term in components["web_hints"]}
+    queries = [query.lower() for query in build_queries(taxonomy, "artigo3_framework")]
+
+    assert "cross-cultural adaptation" in focus_terms
+    assert "content validity" in focus_terms
+    assert "construct validity" in focus_terms
+    assert "test-retest reliability" in focus_terms
+    assert "measurement invariance" in focus_terms
+    assert "cross-cultural adaptation" in web_hints
+    assert "measurement invariance" in web_hints
+    assert any(
+        "cross-cultural adaptation" in query
+        or "content validity" in query
+        or "construct validity" in query
+        or "test-retest reliability" in query
+        or "measurement invariance" in query
+        for query in queries
+    )
+
+
 def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
     clause = _pubmed_document_clause(
         [
