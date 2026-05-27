@@ -116,6 +116,21 @@ MISSING_BY_WORKSTREAM_COLUMNS = [
     "missing_evidence_type",
 ]
 
+CURATED_OUTPUT_ALIASES = {
+    "curated_metadata_csv": ["curated_metadata.csv", "NUTEV_METADATA_CURATED.csv"],
+    "curated_metadata_xlsx": ["curated_metadata.xlsx", "NUTEV_METADATA_CURATED.xlsx"],
+    "unique_documents_csv": ["unique_documents.csv", "NUTEV_DOCUMENTS_UNIQUE.csv"],
+    "unique_documents_xlsx": ["unique_documents.xlsx", "NUTEV_DOCUMENTS_UNIQUE.xlsx"],
+    "workstream_map_csv": [
+        "workstream_document_map.csv",
+        "NUTEV_DOCUMENT_WORKSTREAM_MAP.csv",
+    ],
+    "workstream_map_xlsx": ["NUTEV_DOCUMENT_WORKSTREAM_MAP.xlsx"],
+    "qa_report_xlsx": ["NUTEV_QA_REPORT.xlsx"],
+    "prisma_flow_xlsx": ["NUTEV_PRISMA_FLOW_CORRIGIDO.xlsx"],
+    "top_operational_xlsx": ["top_operational_documents.xlsx"],
+}
+
 _PRIORITY_TERMS = [
     "obesity",
     "obesidade",
@@ -161,6 +176,8 @@ _PRIORITY_TERMS = [
     "standards of care",
     "standards of medical care",
     "standards of medical care in diabetes",
+    "nutrition practice guideline",
+    "dietetic practice guideline",
     "systematic review",
     "meta-analysis",
     "meta analysis",
@@ -356,7 +373,6 @@ def _normalize_url(value: object) -> str:
         netloc = netloc[:-4]
 
     path = parsed.path.rstrip("/") or "/"
-    # Ignore scheme, fragments, and tracking parameters for operational dedup.
     return f"{netloc}{path}".rstrip("/")
 
 
@@ -378,7 +394,6 @@ def _normalize_year(value: object) -> str:
 
 def _hash_fallback(row: dict) -> str:
     payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
-    # Deterministic operational fallback key, not a security primitive.
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
 
 
@@ -430,6 +445,163 @@ def _is_prioritized(row: dict) -> bool:
     high_value_editorial = editorial_tier in _A1_PROXY_TIERS
     matches_priority_scope = any(term in text for term in _PRIORITY_TERMS)
     return (score >= 8 and matches_priority_scope) or (score >= 7 and high_value_editorial)
+
+
+def _is_truthy(value: object) -> bool:
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return False
+    if isinstance(value, (int, float)):
+        return value != 0
+    text = _as_text(value).lower()
+    return text in {"1", "true", "yes", "y", "sim"}
+
+
+def _count_truthy(series: pd.Series) -> int:
+    return int(sum(_is_truthy(value) for value in series.tolist()))
+
+
+def _write_csv_aliases(df: pd.DataFrame, output_dir: Path, names: list[str]) -> None:
+    safe_df = sanitize_dataframe_for_excel(df)
+    for name in names:
+        safe_df.to_csv(output_dir / name, index=False, encoding="utf-8-sig")
+
+
+def _write_excel_aliases(df: pd.DataFrame, output_dir: Path, names: list[str]) -> None:
+    safe_df = sanitize_dataframe_for_excel(df)
+    for name in names:
+        write_excel_file(safe_df, output_dir / name)
+
+
+def _build_qa_summary_df(curated_df: pd.DataFrame, unique_df: pd.DataFrame) -> pd.DataFrame:
+    duplicate_rows = max(len(curated_df) - len(unique_df), 0)
+    rows = [
+        {"metric": "curated_rows", "value": len(curated_df)},
+        {"metric": "unique_documents", "value": len(unique_df)},
+        {"metric": "duplicate_rows_removed", "value": duplicate_rows},
+        {
+            "metric": "documents_with_full_text",
+            "value": _count_truthy(unique_df["has_full_text"]) if not unique_df.empty else 0,
+        },
+        {
+            "metric": "metadata_only_documents",
+            "value": _count_truthy(unique_df["is_metadata_only"]) if not unique_df.empty else 0,
+        },
+        {
+            "metric": "prioritized_documents",
+            "value": _count_truthy(unique_df["is_prioritized"]) if not unique_df.empty else 0,
+        },
+    ]
+    return pd.DataFrame(rows, columns=QA_SUMMARY_COLUMNS)
+
+
+def _build_duplicate_summary_df(unique_df: pd.DataFrame) -> pd.DataFrame:
+    if unique_df.empty:
+        return pd.DataFrame(columns=DUPLICATE_SUMMARY_COLUMNS)
+
+    working = unique_df.copy()
+    working["source_occurrences"] = pd.to_numeric(
+        working["source_occurrences"],
+        errors="coerce",
+    ).fillna(0)
+    duplicates_only = working[working["source_occurrences"] > 1].copy()
+    if duplicates_only.empty:
+        return pd.DataFrame(columns=DUPLICATE_SUMMARY_COLUMNS)
+
+    grouped = (
+        duplicates_only.groupby("document_key_type", dropna=False)
+        .agg(
+            duplicate_documents=("document_key", "count"),
+            duplicate_rows=("source_occurrences", lambda s: int(s.sum() - len(s))),
+        )
+        .reset_index()
+    )
+    return _ensure_columns(grouped, DUPLICATE_SUMMARY_COLUMNS)
+
+
+def _build_missing_by_workstream_df(curated_df: pd.DataFrame) -> pd.DataFrame:
+    if curated_df.empty:
+        return pd.DataFrame(columns=MISSING_BY_WORKSTREAM_COLUMNS)
+
+    rows: list[dict[str, object]] = []
+    for workstream, group in curated_df.groupby("workstream", dropna=False):
+        workstream_name = _as_text(workstream) or "unknown"
+        missing_url = (
+            (group["original_url"].fillna("") == "")
+            & (group["final_url"].fillna("") == "")
+        ).sum()
+        rows.append(
+            {
+                "workstream": workstream_name,
+                "missing_title": int((group["title"].fillna("") == "").sum()),
+                "missing_url": int(missing_url),
+                "missing_year": int((group["year"].fillna("") == "").sum()),
+                "missing_evidence_type": int(
+                    (group["evidence_type"].fillna("") == "").sum()
+                ),
+            }
+        )
+    return pd.DataFrame(rows, columns=MISSING_BY_WORKSTREAM_COLUMNS)
+
+
+def _build_prisma_df(curated_df: pd.DataFrame, unique_df: pd.DataFrame) -> pd.DataFrame:
+    registros_identificados = len(curated_df)
+    registros_triados = len(unique_df)
+    documentos_com_pdf_ou_html = (
+        _count_truthy(unique_df["has_full_text"]) if not unique_df.empty else 0
+    )
+    documentos_metadata_only = (
+        _count_truthy(unique_df["is_metadata_only"]) if not unique_df.empty else 0
+    )
+    documentos_priorizados = (
+        _count_truthy(unique_df["is_prioritized"]) if not unique_df.empty else 0
+    )
+    row = {
+        "registros_identificados": registros_identificados,
+        "duplicados_removidos": max(registros_identificados - registros_triados, 0),
+        "registros_triados": registros_triados,
+        "documentos_com_pdf_ou_html": documentos_com_pdf_ou_html,
+        "documentos_metadata_only": documentos_metadata_only,
+        "documentos_priorizados": documentos_priorizados,
+    }
+    return pd.DataFrame([row], columns=PRISMA_COLUMNS)
+
+
+def _build_prisma_notes_df() -> pd.DataFrame:
+    note = (
+        "PRISMA operacional derivado da camada curada. "
+        "registros_identificados = linhas brutas curadas; "
+        "duplicados_removidos = linhas curadas - documentos únicos; "
+        "documentos_com_pdf_ou_html = documentos únicos com has_full_text verdadeiro; "
+        "documentos_metadata_only = documentos únicos sem texto completo; "
+        "documentos_priorizados = documentos únicos priorizados pela regra operacional."
+    )
+    return pd.DataFrame([{"nota": note}], columns=PRISMA_NOTE_COLUMNS)
+
+
+def _write_qa_report(
+    output_dir: Path,
+    summary_df: pd.DataFrame,
+    duplicate_df: pd.DataFrame,
+    missing_df: pd.DataFrame,
+) -> None:
+    for name in CURATED_OUTPUT_ALIASES["qa_report_xlsx"]:
+        with pd.ExcelWriter(output_dir / name) as writer:
+            write_excel_sheet(writer, summary_df, "qa_summary")
+            write_excel_sheet(writer, duplicate_df, "duplicate_summary")
+            write_excel_sheet(writer, missing_df, "missing_by_workstream")
+
+
+def _write_prisma_report(
+    output_dir: Path,
+    prisma_df: pd.DataFrame,
+    notes_df: pd.DataFrame,
+) -> None:
+    for name in CURATED_OUTPUT_ALIASES["prisma_flow_xlsx"]:
+        with pd.ExcelWriter(output_dir / name) as writer:
+            write_excel_sheet(writer, prisma_df, "prisma_flow")
+            write_excel_sheet(writer, notes_df, "notes")
 
 
 def _curate_row(row: dict) -> dict:
@@ -517,6 +689,7 @@ def _rank_row(row: dict) -> tuple[int, int, float, float, int, str]:
         _as_text(row.get("title")),
     )
 
+
 def _ensure_columns(df: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
     out = df.copy()
     for column in columns:
@@ -538,10 +711,22 @@ def _build_unique_documents(curated_rows: list[dict]) -> list[dict]:
         item["document_key"] = key
         item["document_key_type"] = best.get("document_key_type", "")
         item["workstreams"] = "; ".join(
-            sorted({ _as_text(row.get("workstream")) for row in rows if _as_text(row.get("workstream")) })
+            sorted(
+                {
+                    _as_text(row.get("workstream"))
+                    for row in rows
+                    if _as_text(row.get("workstream"))
+                }
+            )
         )
         item["document_ids"] = "; ".join(
-            sorted({ _as_text(row.get("document_id")) for row in rows if _as_text(row.get("document_id")) })
+            sorted(
+                {
+                    _as_text(row.get("document_id"))
+                    for row in rows
+                    if _as_text(row.get("document_id"))
+                }
+            )
         )
         item["source_occurrences"] = len(rows)
         item["has_full_text"] = any(bool(row.get("has_full_text")) for row in rows)
@@ -563,9 +748,16 @@ def curate_outputs(rows: list[dict], output_dir: Path) -> dict:
     else:
         curated_df = _ensure_columns(curated_df, CURATED_METADATA_COLUMNS)
 
-    curated_df = sanitize_dataframe_for_excel(curated_df)
-    curated_df.to_csv(output_dir / "curated_metadata.csv", index=False, encoding="utf-8-sig")
-    write_excel_file(curated_df, output_dir / "curated_metadata.xlsx")
+    _write_csv_aliases(
+        curated_df,
+        output_dir,
+        CURATED_OUTPUT_ALIASES["curated_metadata_csv"],
+    )
+    _write_excel_aliases(
+        curated_df,
+        output_dir,
+        CURATED_OUTPUT_ALIASES["curated_metadata_xlsx"],
+    )
 
     unique_rows = _build_unique_documents(curated_rows)
     unique_df = pd.DataFrame(unique_rows)
@@ -574,44 +766,90 @@ def curate_outputs(rows: list[dict], output_dir: Path) -> dict:
     else:
         unique_df = _ensure_columns(unique_df, UNIQUE_DOCUMENT_COLUMNS)
 
-    unique_df = sanitize_dataframe_for_excel(unique_df)
-    unique_df.to_csv(output_dir / "unique_documents.csv", index=False, encoding="utf-8-sig")
-    write_excel_file(unique_df, output_dir / "unique_documents.xlsx")
+    _write_csv_aliases(
+        unique_df,
+        output_dir,
+        CURATED_OUTPUT_ALIASES["unique_documents_csv"],
+    )
+    _write_excel_aliases(
+        unique_df,
+        output_dir,
+        CURATED_OUTPUT_ALIASES["unique_documents_xlsx"],
+    )
 
     top_df = unique_df.head(100).copy()
     if not top_df.empty:
         top_df = _ensure_columns(top_df, TOP_A1_OPERATIONAL_COLUMNS)
     else:
         top_df = pd.DataFrame(columns=TOP_A1_OPERATIONAL_COLUMNS)
-    write_excel_file(top_df, output_dir / "top_operational_documents.xlsx")
+    _write_excel_aliases(
+        top_df,
+        output_dir,
+        CURATED_OUTPUT_ALIASES["top_operational_xlsx"],
+    )
 
     workstream_rows = []
     for row in curated_rows:
-        workstream_rows.append({
-            "document_key": row.get("document_key", ""),
-            "document_id": row.get("document_id", ""),
-            "workstream": row.get("workstream", ""),
-            "source_provider": row.get("source_provider", ""),
-            "title": row.get("title", ""),
-            "year": row.get("year", ""),
-            "download_status": row.get("download_status", ""),
-            "extraction_status": row.get("extraction_status", ""),
-            "is_prioritized": row.get("is_prioritized", False),
-        })
+        workstream_rows.append(
+            {
+                "document_key": row.get("document_key", ""),
+                "document_id": row.get("document_id", ""),
+                "workstream": row.get("workstream", ""),
+                "source_provider": row.get("source_provider", ""),
+                "title": row.get("title", ""),
+                "year": row.get("year", ""),
+                "download_status": row.get("download_status", ""),
+                "extraction_status": row.get("extraction_status", ""),
+                "is_prioritized": row.get("is_prioritized", False),
+            }
+        )
 
     workstream_df = pd.DataFrame(workstream_rows)
     if workstream_df.empty:
         workstream_df = pd.DataFrame(columns=WORKSTREAM_MAP_COLUMNS)
     else:
         workstream_df = _ensure_columns(workstream_df, WORKSTREAM_MAP_COLUMNS)
-    workstream_df.to_csv(output_dir / "workstream_document_map.csv", index=False, encoding="utf-8-sig")
+    _write_csv_aliases(
+        workstream_df,
+        output_dir,
+        CURATED_OUTPUT_ALIASES["workstream_map_csv"],
+    )
+    _write_excel_aliases(
+        workstream_df,
+        output_dir,
+        CURATED_OUTPUT_ALIASES["workstream_map_xlsx"],
+    )
+
+    qa_summary_df = _build_qa_summary_df(curated_df, unique_df)
+    duplicate_summary_df = _build_duplicate_summary_df(unique_df)
+    missing_by_workstream_df = _build_missing_by_workstream_df(curated_df)
+    _write_qa_report(
+        output_dir,
+        qa_summary_df,
+        duplicate_summary_df,
+        missing_by_workstream_df,
+    )
+
+    prisma_df = _build_prisma_df(curated_df, unique_df)
+    prisma_notes_df = _build_prisma_notes_df()
+    _write_prisma_report(output_dir, prisma_df, prisma_notes_df)
 
     summary = {
         "input_rows": len(rows),
         "curated_rows": len(curated_rows),
         "unique_documents": len(unique_rows),
-        "metadata_only_documents": int(unique_df["is_metadata_only"].astype(bool).sum()) if not unique_df.empty else 0,
-        "prioritized_documents": int(unique_df["is_prioritized"].astype(bool).sum()) if not unique_df.empty else 0,
+        "metadata_only_documents": _count_truthy(unique_df["is_metadata_only"]) if not unique_df.empty else 0,
+        "prioritized_documents": _count_truthy(unique_df["is_prioritized"]) if not unique_df.empty else 0,
+        "canonical_outputs": [
+            "10_curated/NUTEV_METADATA_CURATED.csv",
+            "10_curated/NUTEV_METADATA_CURATED.xlsx",
+            "10_curated/NUTEV_DOCUMENTS_UNIQUE.csv",
+            "10_curated/NUTEV_DOCUMENTS_UNIQUE.xlsx",
+            "10_curated/NUTEV_DOCUMENT_WORKSTREAM_MAP.csv",
+            "10_curated/NUTEV_DOCUMENT_WORKSTREAM_MAP.xlsx",
+            "10_curated/NUTEV_QA_REPORT.xlsx",
+            "10_curated/NUTEV_PRISMA_FLOW_CORRIGIDO.xlsx",
+        ],
     }
 
     (output_dir / "curation_summary.json").write_text(
