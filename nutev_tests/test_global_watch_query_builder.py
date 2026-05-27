@@ -56,3 +56,14 @@ def test_guidelines_thesis_mode_surfaces_broader_guidance_families_early():
     assert '("scientific statement")' in rendered[3]
     assert '("position paper")' in rendered[4]
     assert '("guidance statement")' in rendered[5]
+
+
+def test_implementation_behavior_exhaustive_mode_adds_adherence_persistence_terms():
+    rows = build_watch_queries(["implementation_behavior"], 7, "exhaustive")
+    rendered = " ".join(str(row["query"]).lower() for row in rows)
+
+    assert "engagement" in rendered
+    assert "retention" in rendered
+    assert "persistence" in rendered
+    assert "maintenance" in rendered
+    assert "implementation science" in rendered
