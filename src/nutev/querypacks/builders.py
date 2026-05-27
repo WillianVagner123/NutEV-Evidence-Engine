@@ -19,6 +19,27 @@ BEHAVIOR_CHANGE_PLANNING_TERMS = [
     "transtheoretical model",
 ]
 
+EXPANDED_GUIDELINE_VARIANTS = [
+    "nutrition practice guideline",
+    "dietetic practice guideline",
+    "practice advisory",
+    "policy statement",
+    "consensus update",
+    "guideline update",
+    "clinical practice update",
+    "best practice advice",
+    "joint statement",
+    "joint guideline",
+    "living guideline",
+    "clinical pathway",
+    "care pathway",
+    "clinical decision pathway",
+    "decision pathway",
+    "clinical practice recommendation",
+    "clinical practice recommendations",
+    "scientific advisory",
+]
+
 WORKSTREAM_QUERY_ENHANCEMENTS = {
     "busca1": {
         "focus_terms": [
@@ -560,6 +581,8 @@ def build_structured_components(
         ws.get("document_type_keys", []),
     )
     doc_type_terms = uniq(doc_type_terms + enhancements.get("document_terms", []))
+    if "guidelines" in ws.get("document_type_keys", []):
+        doc_type_terms = uniq(EXPANDED_GUIDELINE_VARIANTS + doc_type_terms)
     web_hints = uniq(
         ws.get("web_query_hints", []) + enhancements.get("web_hints", [])
     )
@@ -1031,6 +1054,7 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
                 [
                     or_block(condition_terms + clinical_terms, 8),
                     or_block(outcome_chunk, 5),
+                    or_block(doc_type_terms, 6),
                 ]
             )
         )
