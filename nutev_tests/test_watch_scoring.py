@@ -92,6 +92,12 @@ def test_medical_nutrition_therapy_and_counselling_improve_priority():
     assert _score_watch_item({"title": "medical nutrition therapy and nutrition counselling for obesity"}) > _score_watch_item({"title": "obesity note"})
 
 
+def test_dietary_counselling_variants_improve_priority() -> None:
+    assert _score_watch_item(
+        {"title": "dietary counseling and dietary counselling for obesity care"}
+    ) > _score_watch_item({"title": "obesity care note"})
+
+
 def test_standards_of_care_scores_more_than_generic_report():
     assert _score_watch_item({"title": "Standards of Care in Diabetes nutrition update"}) > _score_watch_item({"title": "Diabetes nutrition report"})
 
@@ -196,3 +202,17 @@ def test_audit_and_feedback_signal_improves_priority() -> None:
     assert _score_watch_item(
         {"title": "Audit and feedback for lifestyle nutrition care delivery"}
     ) > _score_watch_item({"title": "Lifestyle nutrition note"})
+
+
+def test_health_coaching_and_practice_facilitation_improve_priority() -> None:
+    assert _score_watch_item(
+        {"title": "Health coaching and practice facilitation for lifestyle nutrition implementation"}
+    ) > _score_watch_item({"title": "Lifestyle nutrition implementation note"})
+
+
+def test_food_as_medicine_voucher_and_pantry_variants_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Healthy food incentives, produce vouchers, and medically tailored pantry support for cardiometabolic care",
+        }
+    ) > _score_watch_item({"title": "Cardiometabolic care note"})
