@@ -24,6 +24,10 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "food as medicine intervention",
             "produce prescription",
             "produce prescriptions",
+            "produce rx",
+            "fruit and vegetable prescription",
+            "healthy food prescription",
+            "food prescription program",
             "medically tailored meal",
             "medically tailored meals",
             "medically tailored grocery",
@@ -40,6 +44,10 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "food as medicine",
             "food as medicine intervention",
             "produce prescription",
+            "produce rx",
+            "fruit and vegetable prescription",
+            "healthy food prescription",
+            "food prescription program",
             "medically tailored meal",
             "medically tailored meals",
             "medically tailored grocery",
@@ -254,6 +262,10 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "food as medicine intervention",
             "produce prescription",
             "produce prescriptions",
+            "produce rx",
+            "fruit and vegetable prescription",
+            "healthy food prescription",
+            "food prescription program",
             "medically tailored meal",
             "medically tailored meals",
             "medically tailored grocery",
@@ -316,6 +328,10 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "food as medicine",
             "food as medicine intervention",
             "produce prescription program",
+            "produce rx",
+            "fruit and vegetable prescription",
+            "healthy food prescription",
+            "food prescription program",
             "medically tailored meal",
             "medically tailored meals",
             "medically tailored grocery",
@@ -509,20 +525,22 @@ def build_structured_components(
 
     population_terms = uniq(ws.get("population_terms", []))
     condition_terms = uniq(
-        ws.get("condition_terms", []) + enhancements.get("condition_terms", [])
+        enhancements.get("condition_terms", []) + ws.get("condition_terms", [])
     )
     clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
     priority_outcomes = uniq(
-        get_named_terms(outcomes_cfg, ws.get("priority_outcomes", []))
-        + enhancements.get("priority_outcomes", [])
+        enhancements.get("priority_outcomes", [])
+        + get_named_terms(outcomes_cfg, ws.get("priority_outcomes", []))
     )
-    doc_type_terms = get_named_terms(
-        global_cfg.get("document_types", {}),
-        ws.get("document_type_keys", []),
+    doc_type_terms = uniq(
+        enhancements.get("document_terms", [])
+        + get_named_terms(
+            global_cfg.get("document_types", {}),
+            ws.get("document_type_keys", []),
+        )
     )
-    doc_type_terms = uniq(doc_type_terms + enhancements.get("document_terms", []))
     web_hints = uniq(
-        ws.get("web_query_hints", []) + enhancements.get("web_hints", [])
+        enhancements.get("web_hints", []) + ws.get("web_query_hints", [])
     )
     behavior_terms = get_global_block(keyword_taxonomy, "implementation_behavior")
     diet_terms = get_global_block(keyword_taxonomy, "diet_patterns")
@@ -531,7 +549,7 @@ def build_structured_components(
     focus_terms: list[str] = []
     for block_name in ws.get("focus_blocks", []):
         focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
-    focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
+    focus_terms = uniq(enhancements.get("focus_terms", []) + focus_terms)
 
     return ws_key, {
         "population_terms": population_terms,
