@@ -38,6 +38,9 @@ def test_busca2b_pubmed_queries_include_dietitian_led_nutrition_focus_terms():
     assert "motivational interviewing" in rendered
     assert "shared decision making" in rendered
     assert "self-management support" in rendered
+    assert "meal replacement" in rendered
+    assert "total diet replacement" in rendered
+    assert "very low energy diet" in rendered
 
 
 def test_busca2a_pubmed_queries_include_lifestyle_nutrition_pattern_terms():
