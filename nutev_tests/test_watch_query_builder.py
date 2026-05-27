@@ -216,6 +216,18 @@ def test_quick_mode_lifestyle_queries_cover_nutrition_care_terms() -> None:
     assert "nutrition care" in rendered
 
 
+def test_quick_mode_lifestyle_queries_cover_food_access_program_variants() -> None:
+    queries = build_watch_queries(["lifestyle_medicine"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "healthy food incentive" in rendered
+    assert "produce voucher" in rendered
+    assert "nutrition incentive" in rendered
+    assert "medically tailored pantry" in rendered
+    assert "medically tailored food package" in rendered
+    assert "fruit and vegetable vouchers" in rendered
+
+
 def test_quick_mode_food_literacy_queries_cover_literacy_culinary_and_commensality_blocks() -> None:
     queries = build_watch_queries(
         ["food_literacy_culinary_commensality"],
@@ -374,6 +386,18 @@ def test_thesis_mode_implementation_queries_keep_curated_seed_order() -> None:
     assert '"adherence"' in rendered[0]
     assert '"dietary adherence"' in rendered[1]
     assert '"implementation science"' in rendered[2]
+
+
+def test_thesis_mode_implementation_queries_cover_food_access_program_variants() -> None:
+    queries = build_watch_queries(["implementation_behavior"], since_days=30, mode="thesis")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "healthy food incentives" in rendered
+    assert "nutrition incentives" in rendered
+    assert "produce voucher" in rendered
+    assert "fruit and vegetable vouchers" in rendered
+    assert "medically tailored pantry" in rendered
+    assert "medically tailored food packages" in rendered
 
 
 def test_exhaustive_mode_implementation_queries_reach_framework_markers() -> None:
