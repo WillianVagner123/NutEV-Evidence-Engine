@@ -77,6 +77,9 @@ def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -
     assert "mediterranean dietary pattern" in rendered
     assert "dietary approaches to stop hypertension" in rendered
     assert "planetary health diet" in rendered
+    assert "meal replacement" in rendered
+    assert "total diet replacement" in rendered
+    assert "very low energy diet" in rendered
 
 
 def test_food_literacy_semantic_block_adds_culinary_training_and_labeling_terms() -> None:
