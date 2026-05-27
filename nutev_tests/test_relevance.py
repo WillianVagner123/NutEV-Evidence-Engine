@@ -98,3 +98,47 @@ def test_configured_food_access_program_bonus_gains_busca2b_priority() -> None:
     )
 
     assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_busca2a_advanced_dyslipidemia_bonus_gains_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Clinical practice guideline for obesity with hypertriglyceridemia, apolipoprotein B, and remnant cholesterol management",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2a",
+    )
+    baseline = score_record(
+        {
+            "title": "Clinical practice guideline for obesity with lipid management",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2a",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_busca2b_advanced_dyslipidemia_bonus_gains_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Randomized trial of Mediterranean diet for clinical obesity with apo B and remnant cholesterol reduction",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    baseline = score_record(
+        {
+            "title": "Randomized trial of Mediterranean diet for obesity with lipid reduction",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
