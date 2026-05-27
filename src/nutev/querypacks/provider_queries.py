@@ -446,6 +446,31 @@ def _secondary_web_hint_chunks(
     return chunk_terms(web_hint_terms[primary_limit:], 4)[:4]
 
 
+def _secondary_focus_chunks(
+    components: dict[str, list[str]],
+    *,
+    primary_limit: int = 5,
+) -> list[list[str]]:
+    focus_terms = uniq(components.get("focus_terms", []))
+    if len(focus_terms) <= primary_limit:
+        return []
+    anchor_terms = {
+        term.lower()
+        for group_name in (
+            "behavior_terms",
+            "nutrition_terms",
+            "diet_terms",
+            "web_hints",
+            "doc_type_terms",
+        )
+        for term in components.get(group_name, [])
+    }
+    overflow_terms = focus_terms[primary_limit:]
+    focus_only_terms = [term for term in overflow_terms if term.lower() not in anchor_terms]
+    prioritized_terms = uniq(focus_only_terms + overflow_terms)
+    return chunk_terms(prioritized_terms, 4)[:6]
+
+
 def _render_overflow_condition_queries(
     components: dict[str, list[str]],
     provider: str,
@@ -607,6 +632,34 @@ def _render_web_hint_overflow_queries(
                     _provider_or_block(extra_web_hints, provider, 4),
                     _provider_or_block(components["nutrition_terms"], provider, 4),
                     _provider_or_block(components["behavior_terms"], provider, 4),
+                ]
+            )
+        )
+    return uniq([query for query in queries if query])
+
+
+def _render_focus_overflow_queries(
+    components: dict[str, list[str]],
+    provider: str,
+) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    queries: list[str] = []
+    for extra_focus in _secondary_focus_chunks(components):
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_focus, provider, 4),
+                    _provider_or_block(condition_terms, provider, 6),
+                    _provider_or_block(components["doc_type_terms"], provider, 4),
+                ]
+            )
+        )
+        queries.append(
+            _join_parts(
+                [
+                    _provider_or_block(extra_focus, provider, 4),
+                    _provider_or_block(condition_terms, provider, 6),
+                    _provider_or_block(components["priority_outcomes"], provider, 4),
                 ]
             )
         )
@@ -834,6 +887,7 @@ def _render_pubmed_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_pubmed_outcome_overflow_queries(components)
         + _render_pubmed_nutrition_overflow_queries(components)
         + _render_pubmed_web_hint_overflow_queries(components)
+        + _render_focus_overflow_queries(components, "pubmed")
         + _pubmed_mesh_expansion_queries(components)
     )
 
@@ -893,6 +947,7 @@ def _render_europepmc_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_outcome_overflow_queries(components, "europepmc")
         + _render_nutrition_overflow_queries(components, "europepmc")
         + _render_web_hint_overflow_queries(components, "europepmc")
+        + _render_focus_overflow_queries(components, "europepmc")
     )
 
 
@@ -944,6 +999,7 @@ def _render_openalex_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_outcome_overflow_queries(components, "openalex")
         + _render_nutrition_overflow_queries(components, "openalex")
         + _render_web_hint_overflow_queries(components, "openalex")
+        + _render_focus_overflow_queries(components, "openalex")
     )
 
 
@@ -988,6 +1044,7 @@ def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
         + _render_outcome_overflow_queries(components, "crossref")
         + _render_nutrition_overflow_queries(components, "crossref")
         + _render_web_hint_overflow_queries(components, "crossref")
+        + _render_focus_overflow_queries(components, "crossref")
     )
 
 
