@@ -92,6 +92,14 @@ def test_provider_queries_include_semantic_research_blocks():
     assert "dietary adherence" in joined
 
 
+def test_food_access_program_terms_are_promoted_into_provider_queries():
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca1", "pubmed")
+    joined = "\n".join(queries)
+
+    assert "healthy food incentive" in joined
+    assert "produce voucher" in joined
+
+
 def test_semantic_blocks_are_prioritized_by_workstream():
     busca1_blocks = semantic_block_names("busca1")
     busca2b_terms = semantic_terms("busca2b", min_priority=5)
