@@ -18,6 +18,19 @@ def test_quick_mode_diet_pattern_queries_cover_long_form_low_carb_variants() -> 
     assert "ketogenic diet" in rendered
 
 
+def test_quick_mode_diet_pattern_queries_cover_meal_replacement_variants() -> None:
+    queries = build_watch_queries(["diet_patterns"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "meal replacement" in rendered
+    assert "partial meal replacement" in rendered
+    assert "total diet replacement" in rendered
+    assert "formula diet" in rendered
+    assert "very low energy diet" in rendered
+    assert "very-low-energy diet" in rendered
+    assert "very low calorie diet" in rendered
+
+
 def test_exhaustive_mode_diet_pattern_queries_cover_long_form_low_carb_variants() -> None:
     queries = build_watch_queries(["diet_patterns"], since_days=7, mode="exhaustive")
     rendered = " ".join(str(row["query"]).lower() for row in queries)
@@ -27,6 +40,18 @@ def test_exhaustive_mode_diet_pattern_queries_cover_long_form_low_carb_variants(
     assert "low carbohydrate diet" in rendered
     assert "carbohydrate-restricted diet" in rendered
     assert "ketogenic diet" in rendered
+
+
+def test_exhaustive_mode_diet_pattern_queries_cover_meal_replacement_variants() -> None:
+    queries = build_watch_queries(["diet_patterns"], since_days=7, mode="exhaustive")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "meal replacement" in rendered
+    assert "meal replacements" in rendered
+    assert "partial meal replacements" in rendered
+    assert "formula diets" in rendered
+    assert "low-energy diet" in rendered
+    assert "very-low-calorie diet" in rendered
 
 
 def test_long_form_low_carb_signal_improves_priority() -> None:
