@@ -49,3 +49,21 @@ def test_a3_alias_priority_five_terms_include_nutrition_care_delivery() -> None:
 
     assert "nutrition care pathway" in terms
     assert "registered dietitian-led intervention" in terms
+
+
+def test_busca1_semantic_terms_include_food_as_medicine_program_variants() -> None:
+    terms = {term.lower() for term in semantic_terms("busca1", min_priority=5)}
+
+    assert "healthy food incentive program" in terms
+    assert "nutrition incentive program" in terms
+    assert "produce voucher program" in terms
+    assert "fruit and vegetable voucher program" in terms
+
+
+def test_busca2b_semantic_terms_include_food_as_medicine_program_variants() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+
+    assert "healthy food incentive program" in terms
+    assert "nutrition incentive program" in terms
+    assert "produce voucher program" in terms
+    assert "fruit and vegetable voucher program" in terms
