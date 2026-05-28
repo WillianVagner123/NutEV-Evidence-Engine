@@ -4,7 +4,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import urlsplit
 
 import pandas as pd
 
@@ -108,12 +108,16 @@ def _normalize_url(value: object) -> str:
         return ""
     parsed = urlsplit(text)
     if not parsed.scheme or not parsed.netloc:
-        return text.rstrip("/").lower()
+        return text.strip().rstrip("/").lower().removeprefix("www.")
+
+    netloc = parsed.netloc.lower().removeprefix("www.")
+    if parsed.scheme.lower() == "http" and netloc.endswith(":80"):
+        netloc = netloc[:-3]
+    if parsed.scheme.lower() == "https" and netloc.endswith(":443"):
+        netloc = netloc[:-4]
+
     path = parsed.path.rstrip("/") or "/"
-    normalized = urlunsplit(
-        (parsed.scheme.lower(), parsed.netloc.lower(), path, "", "")
-    )
-    return normalized.rstrip("/")
+    return f"{netloc}{path}".rstrip("/")
 
 
 def _normalize_title(value: object) -> str:
