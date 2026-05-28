@@ -62,6 +62,7 @@ CATEGORY_CONTEXT_TERMS = {
     ],
     "lifestyle_medicine": [
         "food literacy",
+        "food and nutrition literacy",
         "culinary medicine",
         "culinary nutrition",
         "teaching kitchen",
@@ -783,6 +784,54 @@ QUICK_MODE_SEED_GROUPS = {
 }
 
 THESIS_MODE_SEED_GROUPS = {
+    "lifestyle_medicine": [
+        [
+            "lifestyle medicine",
+            "lifestyle medicine nutrition",
+            "medical nutrition therapy",
+            "medicina do estilo de vida",
+        ],
+        [
+            "lifestyle intervention",
+            "lifestyle modification",
+            "therapeutic lifestyle changes",
+            "intensive lifestyle intervention",
+            "lifestyle program",
+            "lifestyle programme",
+        ],
+        [
+            "food is medicine",
+            "food as medicine",
+            "food as medicine intervention",
+            "produce prescription",
+            "produce prescriptions",
+            "produce rx",
+        ],
+        [
+            "culinary medicine",
+            "culinary nutrition",
+            "food literacy",
+            "food and nutrition literacy",
+            "teaching kitchen",
+            "teaching kitchens",
+        ],
+        [
+            "registered dietitian",
+            "registered dietitian nutritionist",
+            "dietitian-led",
+            "dietitian led",
+            "nutrition counseling",
+            "nutrition counselling",
+        ],
+        [
+            "time-restricted eating",
+            "time restricted eating",
+            "intermittent fasting",
+            "diabetes prevention program",
+            "meal planning",
+            "healthy lifestyle",
+        ],
+    ],
     "implementation_behavior": [
         [
             "adherence",
@@ -858,7 +907,72 @@ THESIS_MODE_SEED_GROUPS = {
             "shared decision making",
             "social support",
         ],
-    ]
+    ],
+}
+
+EXHAUSTIVE_MODE_SEED_GROUPS = {
+    "lifestyle_medicine": [
+        [
+            "lifestyle medicine",
+            "lifestyle medicine nutrition",
+            "medical nutrition therapy",
+            "medicina do estilo de vida",
+        ],
+        [
+            "lifestyle intervention",
+            "lifestyle modification",
+            "therapeutic lifestyle changes",
+            "intensive lifestyle intervention",
+        ],
+        [
+            "behavioral lifestyle intervention",
+            "behavioral intervention",
+            "lifestyle program",
+            "lifestyle programme",
+        ],
+        [
+            "food is medicine",
+            "food as medicine",
+            "food as medicine intervention",
+            "produce prescription",
+        ],
+        [
+            "produce prescriptions",
+            "produce rx",
+            "fruit and vegetable prescription",
+            "healthy food prescription",
+        ],
+        [
+            "medically tailored meal",
+            "medically tailored meals",
+            "medically tailored grocery",
+            "medically tailored groceries",
+        ],
+        [
+            "culinary medicine",
+            "culinary nutrition",
+            "teaching kitchen",
+            "teaching kitchens",
+        ],
+        [
+            "food literacy",
+            "food and nutrition literacy",
+            "meal planning",
+            "nutrition care",
+        ],
+        [
+            "registered dietitian",
+            "registered dietitian nutritionist",
+            "dietitian-led",
+            "dietitian led",
+        ],
+        [
+            "time-restricted eating",
+            "time restricted eating",
+            "intermittent fasting",
+            "diabetes prevention program",
+        ],
+    ],
 }
 
 HIGH_PRIORITY_MARKERS = (
@@ -929,6 +1043,8 @@ def _mode_terms(category: str, mode: str) -> list[str | list[str]]:
         return QUICK_MODE_SEED_GROUPS[category]
     if mode == "thesis" and category in THESIS_MODE_SEED_GROUPS:
         return THESIS_MODE_SEED_GROUPS[category]
+    if mode == "exhaustive" and category in EXHAUSTIVE_MODE_SEED_GROUPS:
+        return EXHAUSTIVE_MODE_SEED_GROUPS[category]
     return WATCH_CATEGORIES.get(category, [])
 
 
