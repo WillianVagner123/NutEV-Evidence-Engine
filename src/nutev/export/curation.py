@@ -162,8 +162,10 @@ _PRIORITY_TERMS = [
     "consensus statement",
     "consensus report",
     "consensus guidance",
+    "consensus update",
     "scientific statement",
     "scientific advisory",
+    "policy statement",
     "position statement",
     "position paper",
     "joint statement",
@@ -184,6 +186,15 @@ _PRIORITY_TERMS = [
     "network meta-analysis",
     "network meta analysis",
     "umbrella review",
+    "overview of reviews",
+    "review of reviews",
+    "living systematic review",
+    "rapid review",
+    "scoping review",
+    "integrative review",
+    "randomized controlled trial",
+    "controlled trial",
+    "pragmatic trial",
     "lifestyle medicine",
     "culinary medicine",
     "food literacy",
@@ -392,6 +403,11 @@ def _normalize_year(value: object) -> str:
     return str(year)
 
 
+def _normalize_priority_text(value: object) -> str:
+    text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
+    return _NON_ALNUM_RE.sub(" ", text).strip()
+
+
 def _hash_fallback(row: dict) -> str:
     payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
@@ -440,10 +456,13 @@ def _is_prioritized(row: dict) -> bool:
         score = float(row.get("relevance_score") or row.get("score") or 0)
     except Exception:
         score = 0.0
-    text = " ".join(_as_text(row.get(field)) for field in _PRIORITY_TEXT_FIELDS).lower()
+    text = " ".join(_as_text(row.get(field)) for field in _PRIORITY_TEXT_FIELDS)
+    normalized_text = _normalize_priority_text(text)
     editorial_tier = _as_text(row.get("editorial_priority_tier")).lower()
     high_value_editorial = editorial_tier in _A1_PROXY_TIERS
-    matches_priority_scope = any(term in text for term in _PRIORITY_TERMS)
+    matches_priority_scope = any(
+        _normalize_priority_text(term) in normalized_text for term in _PRIORITY_TERMS
+    )
     return (score >= 8 and matches_priority_scope) or (score >= 7 and high_value_editorial)
 
 
