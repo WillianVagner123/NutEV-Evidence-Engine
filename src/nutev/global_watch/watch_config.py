@@ -61,6 +61,7 @@ WATCH_CATEGORIES = {
         "culinary medicine",
         "culinary nutrition",
         "food literacy",
+        "food and nutrition literacy",
         "teaching kitchen",
         "teaching kitchens",
         "meal planning",
