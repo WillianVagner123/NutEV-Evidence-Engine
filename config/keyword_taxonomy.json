@@ -1,5 +1,5 @@
 {
-  "version": "2026-05-v5",
+  "version": "2026-05-v6",
   "global": {
     "lifestyle_medicine_pillars": {
       "nutrition": [
@@ -636,14 +636,27 @@
       "ldl-c",
       "hdl-c",
       "non-hdl",
+      "non-hdl cholesterol",
+      "non hdl cholesterol",
       "triglycerides",
       "cholesterol",
       "apo b",
+      "apolipoprotein b",
+      "apob",
+      "remnant cholesterol",
+      "triglyceride-rich lipoprotein",
+      "triglyceride rich lipoprotein",
+      "hypertriglyceridemia",
+      "hypertriglyceridaemia",
       "colesterol ldl",
       "colesterol hdl",
       "triglicerídeos",
       "colesterol não hdl",
-      "apo b"
+      "apo b",
+      "apolipoproteína b",
+      "colesterol remanescente",
+      "lipoproteína rica em triglicerídeos",
+      "hipertrigliceridemia"
     ],
     "inflammation": [
       "inflammation",
