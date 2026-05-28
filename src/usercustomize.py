@@ -21,12 +21,20 @@ def _patch_final_querypack_terms() -> None:
             if ws == "busca2a":
                 terms = [
                     "dietary approaches to stop hypertension",
+                    "lifestyle medicine intervention",
+                    "comprehensive lifestyle intervention",
+                    "therapeutic lifestyle intervention",
                 ]
             elif ws == "busca2b":
                 terms = [
                     "non-alcoholic fatty liver disease",
                     "low carbohydrate diet",
                     "rapid review",
+                    "lifestyle medicine intervention",
+                    "lifestyle medicine program",
+                    "lifestyle medicine programme",
+                    "comprehensive lifestyle intervention",
+                    "therapeutic lifestyle intervention",
                 ]
             else:
                 terms = []
