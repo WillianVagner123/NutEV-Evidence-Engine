@@ -311,6 +311,23 @@ WATCH_CATEGORIES = {
         "behavior change framework",
         "lifestyle medicine competencies",
     ],
+    "diabetes_remission_nutrition": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "remission of type 2 diabetes",
+        "remission in type 2 diabetes",
+        "glycemic remission",
+        "glycaemic remission",
+        "diabetes reversal",
+        "type 2 diabetes reversal",
+        "diet-induced remission",
+        "diet induced remission",
+        "weight loss induced remission",
+        "low energy diet remission",
+        "very low calorie diet remission",
+        "total diet replacement remission",
+        "medical nutrition therapy remission",
+    ],
 }
 
 MODE_LIMITS = {"quick": 3, "thesis": 6, "exhaustive": 10}
