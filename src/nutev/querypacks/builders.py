@@ -19,6 +19,27 @@ BEHAVIOR_CHANGE_PLANNING_TERMS = [
     "transtheoretical model",
 ]
 
+NUTRITION_CARE_PATHWAY_TERMS = [
+    "medical nutrition therapy",
+    "nutrition care process",
+    "nutrition care process model",
+    "nutrition care pathway",
+    "nutrition care pathways",
+    "nutrition care protocol",
+    "nutrition care protocols",
+]
+
+DIETITIAN_IMPLEMENTATION_TERMS = [
+    "dietitian-delivered intervention",
+    "dietitian delivered intervention",
+    "dietitian-managed intervention",
+    "dietitian managed intervention",
+    "registered dietitian-led intervention",
+    "registered dietitian led intervention",
+    "registered dietitian nutritionist-led intervention",
+    "registered dietitian nutritionist led intervention",
+]
+
 EXPANDED_GUIDELINE_VARIANTS = [
     "nutrition practice guideline",
     "dietetic practice guideline",
@@ -667,6 +688,13 @@ def build_structured_components(
     for block_name in ws.get("focus_blocks", []):
         focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
     focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
+
+    if ws_key in {"busca2a", "busca2b"}:
+        focus_terms = uniq(focus_terms + NUTRITION_CARE_PATHWAY_TERMS)
+        web_hints = uniq(web_hints + NUTRITION_CARE_PATHWAY_TERMS)
+    if ws_key == "busca2b":
+        focus_terms = uniq(focus_terms + DIETITIAN_IMPLEMENTATION_TERMS)
+        web_hints = uniq(web_hints + DIETITIAN_IMPLEMENTATION_TERMS)
 
     return ws_key, {
         "population_terms": population_terms,
