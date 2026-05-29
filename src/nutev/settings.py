@@ -1,7 +1,11 @@
 from __future__ import annotations
+
+from copy import deepcopy
 from dataclasses import dataclass
-from pathlib import Path
 import json
+from pathlib import Path
+from typing import Any
+
 
 @dataclass
 class NutevSettings:
@@ -32,5 +36,33 @@ class NutevSettings:
             "10_curated": b / "10_curated",
         }
 
+
+def _merge_config_overlay(base: Any, overlay: Any) -> Any:
+    if isinstance(base, dict) and isinstance(overlay, dict):
+        merged = deepcopy(base)
+        for key, value in overlay.items():
+            if key in merged:
+                merged[key] = _merge_config_overlay(merged[key], value)
+            else:
+                merged[key] = deepcopy(value)
+        return merged
+    if isinstance(base, list) and isinstance(overlay, list):
+        merged_list = list(base)
+        seen = {str(item).lower() for item in merged_list}
+        for item in overlay:
+            marker = str(item).lower()
+            if marker in seen:
+                continue
+            seen.add(marker)
+            merged_list.append(item)
+        return merged_list
+    return deepcopy(overlay)
+
+
 def load_json(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
+    data = json.loads(path.read_text(encoding="utf-8"))
+    overlay_path = path.with_name(f"{path.stem}_overlay{path.suffix}")
+    if path.name == "keyword_taxonomy.json" and overlay_path.exists():
+        overlay = json.loads(overlay_path.read_text(encoding="utf-8"))
+        data = _merge_config_overlay(data, overlay)
+    return data
