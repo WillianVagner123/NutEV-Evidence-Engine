@@ -13,6 +13,20 @@ def test_document_id_stable_for_url():
     assert a == b
 
 
+def test_document_id_ignores_tracking_url_params():
+    a = make_document_id(
+        {"final_url": "https://example.com/paper?utm_source=newsletter&fbclid=abc"}
+    )
+    b = make_document_id({"final_url": "https://example.com/paper"})
+    assert a == b
+
+
+def test_document_id_keeps_non_tracking_url_params():
+    a = make_document_id({"final_url": "https://example.com/search?page=1"})
+    b = make_document_id({"final_url": "https://example.com/search?page=2"})
+    assert a != b
+
+
 def test_document_id_uses_pmid_before_url():
     a = make_document_id({"pmid": "123456", "url": "https://example.com/a"})
     b = make_document_id({"pmid": 123456, "url": "https://example.com/b"})
