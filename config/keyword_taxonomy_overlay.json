@@ -1,0 +1,64 @@
+{
+  "version_overlay": "2026-05-diabetes-prevention-lifestyle",
+  "global": {
+    "diet_patterns": {
+      "core": [
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "national diabetes prevention program",
+        "national diabetes prevention programme",
+        "lifestyle change program",
+        "lifestyle change programme",
+        "intensive lifestyle intervention",
+        "intensive lifestyle program",
+        "intensive lifestyle programme"
+      ]
+    },
+    "implementation_behavior": {
+      "behavioral": [
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "national diabetes prevention program",
+        "national diabetes prevention programme",
+        "lifestyle change program",
+        "lifestyle change programme",
+        "intensive lifestyle intervention",
+        "intensive lifestyle program",
+        "intensive lifestyle programme",
+        "translated diabetes prevention program",
+        "translated diabetes prevention programme",
+        "diabetes prevention translational research",
+        "diabetes prevention implementation",
+        "diabetes prevention adherence",
+        "diabetes prevention maintenance"
+      ]
+    },
+    "document_types": {
+      "trials": [
+        "translation study",
+        "translational study",
+        "implementation trial",
+        "pragmatic implementation trial"
+      ],
+      "reviews": [
+        "implementation review",
+        "translational review"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "national diabetes prevention program",
+        "lifestyle change program",
+        "intensive lifestyle intervention",
+        "translated diabetes prevention program",
+        "diabetes prevention implementation",
+        "diabetes prevention adherence",
+        "diabetes prevention maintenance"
+      ]
+    }
+  }
+}
