@@ -23,3 +23,11 @@ def test_metabolic_dysfunction_associated_steatohepatitis_terms_score_above_gene
 
 def test_hyperlipidemia_and_hypercholesterolemia_terms_score_above_generic_note():
     assert score_watch_item({"title": "hyperlipidemia and hypercholesterolemia guideline for cardiometabolic risk", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
+
+
+def test_central_adiposity_terms_score_above_generic_note():
+    assert score_watch_item({"title": "central obesity and waist circumference intervention for cardiometabolic health", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
+
+
+def test_diabetes_remission_terms_score_above_generic_note():
+    assert score_watch_item({"title": "type 2 diabetes remission after medical nutrition therapy", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
