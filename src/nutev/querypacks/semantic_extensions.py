@@ -24,6 +24,30 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+DIET_QUALITY_PATTERN_TERMS = [
+    "healthy eating index",
+    "alternate healthy eating index",
+    "alternative healthy eating index",
+    "diet quality index",
+    "diet quality score",
+    "dietary quality score",
+    "dietary inflammatory index",
+    "empirical dietary inflammatory pattern",
+    "anti-inflammatory diet",
+    "anti inflammatory diet",
+    "prudent dietary pattern",
+    "western dietary pattern",
+]
+
+DIET_QUALITY_PATTERN_DOCUMENT_TERMS = [
+    "systematic review",
+    "meta-analysis",
+    "umbrella review",
+    "scoping review",
+    "dietary guideline",
+    "food-based dietary guideline",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -48,6 +72,19 @@ def apply_semantic_extensions() -> None:
     precision_block["document_terms"] = _extend_unique(
         precision_block.setdefault("document_terms", []),
         CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+    )
+
+    diet_pattern_block = semantic_blocks.SEMANTIC_RESEARCH_BLOCKS.setdefault(
+        "lifestyle_nutrition_patterns",
+        {"terms": [], "document_terms": []},
+    )
+    diet_pattern_block["terms"] = _extend_unique(
+        diet_pattern_block.setdefault("terms", []),
+        DIET_QUALITY_PATTERN_TERMS,
+    )
+    diet_pattern_block["document_terms"] = _extend_unique(
+        diet_pattern_block.setdefault("document_terms", []),
+        DIET_QUALITY_PATTERN_DOCUMENT_TERMS,
     )
 
 
