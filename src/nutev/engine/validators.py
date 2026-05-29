@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from urllib.parse import unquote, urlparse, urlunparse
+from urllib.parse import parse_qsl, unquote, urlencode, urlparse, urlunparse
 
 from nutev.engine.enums import (
     CaptureStatus,
@@ -14,6 +14,18 @@ from nutev.engine.enums import (
 DOI_RE = re.compile(r"(10\.\d{4,9}/[-._;()/:A-Z0-9]+)", re.I)
 PMID_RE = re.compile(r"^\d{1,12}$")
 PMCID_RE = re.compile(r"^PMC\d+$", re.I)
+TRACKING_QUERY_PARAMS = {
+    "fbclid",
+    "gclid",
+    "mc_cid",
+    "mc_eid",
+    "msclkid",
+    "utm_campaign",
+    "utm_content",
+    "utm_medium",
+    "utm_source",
+    "utm_term",
+}
 
 
 def normalize_doi(doi: str | None) -> str | None:
@@ -46,6 +58,15 @@ def normalize_pmcid(pmcid: str | None) -> str | None:
     return None
 
 
+def _normalize_query(query: str) -> str:
+    params = [
+        (key, value)
+        for key, value in parse_qsl(query, keep_blank_values=True)
+        if key.lower() not in TRACKING_QUERY_PARAMS
+    ]
+    return urlencode(params, doseq=True)
+
+
 def normalize_url(url: str | None) -> str | None:
     if not url:
         return None
@@ -60,7 +81,7 @@ def normalize_url(url: str | None) -> str | None:
             parsed.netloc.lower(),
             normalized_path,
             "",
-            parsed.query,
+            _normalize_query(parsed.query),
             "",
         )
     )
