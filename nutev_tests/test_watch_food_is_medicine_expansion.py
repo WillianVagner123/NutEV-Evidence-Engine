@@ -20,6 +20,15 @@ CULINARY_MEDICINE_PROGRAM_VARIANTS = {
     "teaching kitchen program",
 }
 
+DPP_LIFESTYLE_TRANSLATION_VARIANTS = {
+    "intensive lifestyle intervention",
+    "diabetes prevention program",
+    "diabetes prevention programme",
+    "national diabetes prevention program",
+    "lifestyle change program",
+    "lifestyle change programme",
+}
+
 
 def test_lifestyle_watch_category_covers_food_is_medicine_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
@@ -56,6 +65,18 @@ def test_implementation_watch_category_covers_culinary_medicine_program_variants
     } <= terms
 
 
+def test_lifestyle_watch_category_covers_dpp_translation_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
+
+    assert DPP_LIFESTYLE_TRANSLATION_VARIANTS <= terms
+
+
+def test_implementation_watch_category_covers_dpp_translation_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
+
+    assert DPP_LIFESTYLE_TRANSLATION_VARIANTS <= terms
+
+
 def test_food_prescription_variants_raise_watch_priority() -> None:
     assert score_watch_item(
         {"title": "Healthy food prescription and produce rx for obesity care"}
@@ -64,3 +85,13 @@ def test_food_prescription_variants_raise_watch_priority() -> None:
     assert score_watch_item(
         {"title": "Fruit and vegetable prescription program for cardiometabolic risk"}
     ) > score_watch_item({"title": "Cardiometabolic risk note"})
+
+
+def test_dpp_translation_variants_raise_watch_priority() -> None:
+    assert score_watch_item(
+        {"title": "National diabetes prevention program lifestyle change program"}
+    ) > score_watch_item({"title": "Type 2 diabetes prevention note"})
+
+    assert score_watch_item(
+        {"title": "Intensive lifestyle intervention for prediabetes and weight management"}
+    ) > score_watch_item({"title": "Prediabetes and weight management note"})
