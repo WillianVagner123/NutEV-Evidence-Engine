@@ -11,6 +11,15 @@ FOOD_IS_MEDICINE_VARIANTS = {
     "food prescription program",
 }
 
+CULINARY_MEDICINE_PROGRAM_VARIANTS = {
+    "culinary medicine curriculum",
+    "culinary medicine education",
+    "culinary medicine program",
+    "culinary medicine training",
+    "teaching kitchen curriculum",
+    "teaching kitchen program",
+}
+
 
 def test_lifestyle_watch_category_covers_food_is_medicine_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
@@ -22,6 +31,29 @@ def test_implementation_watch_category_covers_food_is_medicine_variants() -> Non
     terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
 
     assert FOOD_IS_MEDICINE_VARIANTS <= terms
+
+
+def test_lifestyle_watch_category_covers_culinary_medicine_program_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
+
+    assert CULINARY_MEDICINE_PROGRAM_VARIANTS <= terms
+
+
+def test_food_literacy_watch_category_covers_culinary_medicine_program_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["food_literacy_culinary_commensality"]}
+
+    assert CULINARY_MEDICINE_PROGRAM_VARIANTS <= terms
+
+
+def test_implementation_watch_category_covers_culinary_medicine_program_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
+
+    assert {
+        "culinary medicine curriculum",
+        "culinary medicine training",
+        "teaching kitchen curriculum",
+        "teaching kitchen program",
+    } <= terms
 
 
 def test_food_prescription_variants_raise_watch_priority() -> None:
