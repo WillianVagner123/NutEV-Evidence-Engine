@@ -34,6 +34,11 @@
         "authority": 5
       },
       {
+        "name": "ADA Standards of Care practice guidelines resources",
+        "url": "https://professional.diabetes.org/standards-of-care/practice-guidelines-resources",
+        "authority": 5
+      },
+      {
         "name": "Obesity Canada Adult clinical practice guideline",
         "url": "https://obesitycanada.ca/healthcare-professionals/adult-clinical-practice-guideline/",
         "authority": 5
@@ -47,6 +52,16 @@
         "name": "WHO Obesity",
         "url": "https://www.who.int/health-topics/obesity/",
         "authority": 4
+      },
+      {
+        "name": "AASLD MASLD clinical assessment and management guidance",
+        "url": "https://www.aasld.org/practice-guidelines/clinical-assessment-and-management-metabolic-dysfunction-associated-steatotic",
+        "authority": 5
+      },
+      {
+        "name": "EASL-EASD-EASO MASLD clinical practice guidelines PDF",
+        "url": "https://easlcampus.eu/sites/default/files/2024-06/EASL_CPGs_on_MASLD.pdf",
+        "authority": 5
       }
     ],
     "busca2b": [
