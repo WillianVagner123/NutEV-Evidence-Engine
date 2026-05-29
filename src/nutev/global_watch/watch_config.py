@@ -304,6 +304,14 @@ WATCH_CATEGORIES = {
         "family meals",
         "social eating",
         "eat together",
+        "food literacy questionnaire",
+        "nutrition literacy assessment",
+        "food skills questionnaire",
+        "cooking confidence scale",
+        "meal planning questionnaire",
+        "teaching kitchen curriculum",
+        "culinary medicine curriculum",
+        "nutrition education intervention",
     ],
     "frameworks_instruments": [
         "framework",
@@ -320,6 +328,13 @@ WATCH_CATEGORIES = {
         "culinary skills instrument",
         "behavior change framework",
         "lifestyle medicine competencies",
+        "food literacy questionnaire",
+        "nutrition literacy assessment",
+        "food skills questionnaire",
+        "cooking confidence scale",
+        "meal planning questionnaire",
+        "teaching kitchen curriculum",
+        "culinary medicine curriculum",
     ],
 }
 
