@@ -15,3 +15,19 @@ def test_questionnaire_validation_and_psychometric_signals_improve_priority() ->
             "title": "Food literacy questionnaire validation and psychometric study",
         }
     ) > score_watch_item({"title": "Food literacy note"})
+
+
+def test_cardiometabolic_clinical_signals_improve_watch_priority() -> None:
+    enriched = score_watch_item(
+        {
+            "title": (
+                "Dietary adherence intervention for type 2 diabetes mellitus, "
+                "glycemic control, HbA1c, and LDL cholesterol"
+            ),
+        }
+    )
+    generic = score_watch_item(
+        {"title": "Dietary adherence intervention for diabetes and cholesterol"}
+    )
+
+    assert enriched > generic
