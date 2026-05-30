@@ -65,3 +65,33 @@ def test_intensive_lifestyle_program_terms_enter_provider_queries() -> None:
     assert '"intensive lifestyle intervention"[Title/Abstract]' in joined
     assert '"diabetes prevention programme"[Title/Abstract]' in joined
     assert '"behavioral weight loss trial"[Title/Abstract]' in joined
+
+
+def test_nutrition_implementation_terms_enter_semantic_blocks() -> None:
+    busca2b_terms = semantic_terms("busca2b", min_priority=5)
+    busca2b_doc_terms = semantic_terms(
+        "busca2b",
+        field="document_terms",
+        min_priority=5,
+    )
+    framework_terms = semantic_terms("artigo3_framework", min_priority=5)
+
+    assert "nutrition implementation" in busca2b_terms
+    assert "dietary intervention implementation" in busca2b_terms
+    assert "dietary self-management support" in busca2b_terms
+    assert "dietary adherence intervention" in busca2b_terms
+    assert "nutrition implementation study" in busca2b_doc_terms
+    assert "diet quality maintenance trial" in busca2b_doc_terms
+    assert "culinary medicine intervention" in framework_terms
+    assert "food literacy intervention" in framework_terms
+    assert "meal planning intervention" in framework_terms
+
+
+def test_nutrition_implementation_terms_enter_provider_queries() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"nutrition implementation"[Title/Abstract]' in joined
+    assert '"dietary intervention implementation"[Title/Abstract]' in joined
+    assert '"nutrition implementation study"[Title/Abstract]' in joined
+    assert '"dietary adherence intervention"[Title/Abstract]' in joined
