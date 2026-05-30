@@ -108,3 +108,13 @@ def test_dpp_translation_variants_raise_watch_priority() -> None:
     assert score_watch_item(
         {"title": "Intensive lifestyle intervention for prediabetes and weight management"}
     ) > score_watch_item({"title": "Prediabetes and weight management note"})
+
+
+def test_food_security_variants_raise_watch_priority() -> None:
+    assert score_watch_item(
+        {"title": "Food insecurity and nutrition security in cardiometabolic care"}
+    ) > score_watch_item({"title": "Cardiometabolic care note"})
+
+    assert score_watch_item(
+        {"title": "Household food insecurity and diet quality in obesity"}
+    ) > score_watch_item({"title": "Diet quality in obesity note"})
