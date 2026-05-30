@@ -36,6 +36,17 @@ FOOD_SECURITY_VARIANTS = {
     "household food insecurity",
 }
 
+FOOD_REFERRAL_DELIVERY_VARIANTS = {
+    "nutrition referral",
+    "food referral",
+    "healthy food referral",
+    "social prescribing",
+    "food social prescribing",
+    "food pharmacy",
+    "food farmacy",
+    "medical food pantry",
+}
+
 
 def test_lifestyle_watch_category_covers_food_is_medicine_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
@@ -98,6 +109,15 @@ def test_food_prescription_variants_raise_watch_priority() -> None:
     assert score_watch_item(
         {"title": "Fruit and vegetable prescription program for cardiometabolic risk"}
     ) > score_watch_item({"title": "Cardiometabolic risk note"})
+
+
+def test_food_referral_delivery_variants_raise_watch_priority() -> None:
+    baseline_score = score_watch_item({"title": "Cardiometabolic care note"})
+
+    for term in FOOD_REFERRAL_DELIVERY_VARIANTS:
+        assert score_watch_item(
+            {"title": f"{term} model for cardiometabolic care"}
+        ) > baseline_score
 
 
 def test_dpp_translation_variants_raise_watch_priority() -> None:
