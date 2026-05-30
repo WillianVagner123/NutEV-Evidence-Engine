@@ -1,11 +1,60 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "description": "Evidence lenses that convert legacy workstreams (busca1/busca2a/busca2b/a3) into composable analysis layers.",
   "lenses": {
-    "busca1": {"focus": "clinical_outcomes", "domains": ["clinical_outcomes", "dietary_patterns"]},
-    "busca2a": {"focus": "implementation", "domains": ["implementation", "equity"]},
-    "busca2b": {"focus": "policy_systems", "domains": ["policy_systems", "equity"]},
-    "a3": {"focus": "framework", "domains": ["implementation", "policy_systems", "dietary_patterns"]}
+    "busca1": {
+      "focus": "dietary_guidelines_and_public_nutrition",
+      "domains": [
+        "clinical_outcomes",
+        "dietary_patterns",
+        "policy_systems",
+        "food_literacy_culinary",
+        "equity"
+      ]
+    },
+    "busca2a": {
+      "focus": "clinical_guidelines_for_cardiometabolic_obesity",
+      "domains": [
+        "clinical_outcomes",
+        "dietary_patterns",
+        "nutrition_care_delivery",
+        "policy_systems",
+        "implementation"
+      ]
+    },
+    "busca2b": {
+      "focus": "dietary_interventions_adherence_and_metabolic_outcomes",
+      "domains": [
+        "clinical_outcomes",
+        "dietary_patterns",
+        "nutrition_care_delivery",
+        "adherence_behavior_change",
+        "implementation",
+        "equity"
+      ]
+    },
+    "a3": {
+      "focus": "framework_food_literacy_and_adherence",
+      "domains": [
+        "food_literacy_culinary",
+        "adherence_behavior_change",
+        "implementation",
+        "nutrition_care_delivery",
+        "dietary_patterns",
+        "policy_systems"
+      ]
+    },
+    "artigo3_framework": {
+      "focus": "framework_food_literacy_and_adherence",
+      "domains": [
+        "food_literacy_culinary",
+        "adherence_behavior_change",
+        "implementation",
+        "nutrition_care_delivery",
+        "dietary_patterns",
+        "policy_systems"
+      ]
+    }
   },
   "cross_lens": {
     "shared_outcomes": true,
