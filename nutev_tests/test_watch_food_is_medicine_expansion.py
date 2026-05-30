@@ -112,17 +112,12 @@ def test_food_prescription_variants_raise_watch_priority() -> None:
 
 
 def test_food_referral_delivery_variants_raise_watch_priority() -> None:
-    assert score_watch_item(
-        {
-            "title": "Nutrition referral and food pharmacy model for cardiometabolic care",
-        }
-    ) > score_watch_item({"title": "Cardiometabolic care note"})
+    baseline_score = score_watch_item({"title": "Cardiometabolic care note"})
 
-    assert score_watch_item(
-        {
-            "title": "Social prescribing with medical food pantry for obesity care",
-        }
-    ) > score_watch_item({"title": "Obesity care note"})
+    for term in FOOD_REFERRAL_DELIVERY_VARIANTS:
+        assert score_watch_item(
+            {"title": f"{term} model for cardiometabolic care"}
+        ) > baseline_score
 
 
 def test_dpp_translation_variants_raise_watch_priority() -> None:
