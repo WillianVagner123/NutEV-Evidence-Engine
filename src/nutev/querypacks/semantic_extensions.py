@@ -51,6 +51,78 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+NUTRITION_IMPLEMENTATION_TERMS = [
+    "nutrition implementation",
+    "diet implementation",
+    "dietary implementation",
+    "nutrition intervention implementation",
+    "dietary intervention implementation",
+    "implementation of nutrition interventions",
+    "implementation of dietary interventions",
+    "nutrition behavior change intervention",
+    "nutrition behaviour change intervention",
+    "dietary behavior change intervention",
+    "dietary behaviour change intervention",
+    "dietary self-management support",
+    "nutrition self-management support",
+]
+
+NUTRITION_IMPLEMENTATION_DOCUMENT_TERMS = [
+    "nutrition implementation study",
+    "dietary implementation study",
+    "nutrition implementation trial",
+    "dietary implementation trial",
+    "nutrition intervention implementation study",
+    "dietary intervention implementation study",
+    "nutrition behavior change trial",
+    "nutrition behaviour change trial",
+]
+
+CULINARY_FOOD_SKILLS_IMPLEMENTATION_TERMS = [
+    "culinary medicine intervention",
+    "culinary medicine program",
+    "culinary medicine programme",
+    "teaching kitchen intervention",
+    "teaching kitchen program",
+    "teaching kitchen programme",
+    "cooking skills intervention",
+    "home cooking intervention",
+    "food literacy intervention",
+    "nutrition literacy intervention",
+    "food skills intervention",
+    "meal planning intervention",
+    "healthy grocery shopping intervention",
+]
+
+CULINARY_FOOD_SKILLS_DOCUMENT_TERMS = [
+    "culinary medicine intervention",
+    "teaching kitchen intervention",
+    "teaching kitchen curriculum",
+    "cooking skills intervention",
+    "food literacy intervention",
+    "nutrition literacy intervention",
+    "meal planning intervention",
+    "food skills intervention",
+]
+
+DIET_ADHERENCE_PRECISION_TERMS = [
+    "diet adherence",
+    "dietary adherence intervention",
+    "adherence to dietary intervention",
+    "adherence to nutrition intervention",
+    "diet quality maintenance",
+    "dietary maintenance intervention",
+    "dietary self-efficacy",
+    "nutrition self-efficacy",
+]
+
+DIET_ADHERENCE_PRECISION_DOCUMENT_TERMS = [
+    "dietary adherence intervention",
+    "dietary maintenance trial",
+    "diet quality maintenance trial",
+    "adherence to dietary intervention",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -98,6 +170,21 @@ def apply_semantic_extensions() -> None:
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "implementation_science",
+        terms=NUTRITION_IMPLEMENTATION_TERMS,
+        document_terms=NUTRITION_IMPLEMENTATION_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "adherence_persistence",
+        terms=DIET_ADHERENCE_PRECISION_TERMS,
+        document_terms=DIET_ADHERENCE_PRECISION_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "food_literacy_agency",
+        terms=CULINARY_FOOD_SKILLS_IMPLEMENTATION_TERMS,
+        document_terms=CULINARY_FOOD_SKILLS_DOCUMENT_TERMS,
+    )
 
 
 apply_semantic_extensions()
