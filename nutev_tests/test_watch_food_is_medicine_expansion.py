@@ -108,3 +108,23 @@ def test_dpp_translation_variants_raise_watch_priority() -> None:
     assert score_watch_item(
         {"title": "Intensive lifestyle intervention for prediabetes and weight management"}
     ) > score_watch_item({"title": "Prediabetes and weight management note"})
+
+
+def test_nutrition_referral_signals_raise_watch_priority() -> None:
+    assert score_watch_item(
+        {"title": "Nutrition referral and dietitian consultation for obesity care"}
+    ) > score_watch_item({"title": "Obesity care note"})
+
+    assert score_watch_item(
+        {"title": "Intensive medical nutrition therapy and nutrition prescription for cardiometabolic risk"}
+    ) > score_watch_item({"title": "Cardiometabolic risk note"})
+
+
+def test_intensive_behavioral_therapy_signals_raise_watch_priority() -> None:
+    assert score_watch_item(
+        {"title": "Intensive behavioral therapy with nutrition counseling for obesity"}
+    ) > score_watch_item({"title": "Obesity counseling note"})
+
+    assert score_watch_item(
+        {"title": "Intensive multicomponent behavioural intervention for dietary adherence"}
+    ) > score_watch_item({"title": "Dietary adherence note"})
