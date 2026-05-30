@@ -29,6 +29,18 @@ DPP_LIFESTYLE_TRANSLATION_VARIANTS = {
     "lifestyle change programme",
 }
 
+DIET_QUALITY_INDEX_VARIANTS = {
+    "diet quality",
+    "diet quality index",
+    "healthy eating index",
+    "alternate healthy eating index",
+    "ahei",
+    "dietary inflammatory index",
+    "empirical dietary inflammatory pattern",
+    "plant-based diet index",
+    "healthy plant-based diet index",
+}
+
 
 def test_lifestyle_watch_category_covers_food_is_medicine_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
@@ -75,6 +87,12 @@ def test_implementation_watch_category_covers_dpp_translation_variants() -> None
     terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
 
     assert DPP_LIFESTYLE_TRANSLATION_VARIANTS <= terms
+
+
+def test_diet_patterns_watch_category_covers_diet_quality_index_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["diet_patterns"]}
+
+    assert DIET_QUALITY_INDEX_VARIANTS <= terms
 
 
 def test_food_prescription_variants_raise_watch_priority() -> None:
