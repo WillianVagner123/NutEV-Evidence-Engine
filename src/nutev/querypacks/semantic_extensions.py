@@ -24,6 +24,32 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+DIABETES_REMISSION_WEIGHT_MAINTENANCE_TERMS = [
+    "diabetes remission",
+    "type 2 diabetes remission",
+    "diabetes reversal",
+    "type 2 diabetes reversal",
+    "glycemic remission",
+    "glycaemic remission",
+    "weight loss maintenance",
+    "weight maintenance",
+    "weight regain prevention",
+    "prevention of weight regain",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+]
+
+DIABETES_REMISSION_WEIGHT_MAINTENANCE_DOCUMENT_TERMS = [
+    "clinical practice guideline",
+    "consensus statement",
+    "position statement",
+    "scientific statement",
+    "systematic review",
+    "umbrella review",
+    "randomized controlled trial",
+    "pragmatic trial",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -45,9 +71,17 @@ def apply_semantic_extensions() -> None:
         precision_block.setdefault("terms", []),
         CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
     )
+    precision_block["terms"] = _extend_unique(
+        precision_block.setdefault("terms", []),
+        DIABETES_REMISSION_WEIGHT_MAINTENANCE_TERMS,
+    )
     precision_block["document_terms"] = _extend_unique(
         precision_block.setdefault("document_terms", []),
         CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+    )
+    precision_block["document_terms"] = _extend_unique(
+        precision_block.setdefault("document_terms", []),
+        DIABETES_REMISSION_WEIGHT_MAINTENANCE_DOCUMENT_TERMS,
     )
 
 
