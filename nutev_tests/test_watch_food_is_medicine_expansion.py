@@ -36,6 +36,19 @@ FOOD_SECURITY_VARIANTS = {
     "household food insecurity",
 }
 
+DIABETES_REMISSION_VARIANTS = {
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "remission of type 2 diabetes",
+}
+
+STRUCTURED_DIET_REPLACEMENT_VARIANTS = {
+    "diet replacement",
+    "diet replacements",
+    "low calorie diet",
+    "low-calorie diet",
+}
+
 
 def test_lifestyle_watch_category_covers_food_is_medicine_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
@@ -88,6 +101,18 @@ def test_food_literacy_watch_category_covers_food_security_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["food_literacy_culinary_commensality"]}
 
     assert FOOD_SECURITY_VARIANTS <= terms
+
+
+def test_lifestyle_watch_category_covers_diabetes_remission_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
+
+    assert DIABETES_REMISSION_VARIANTS <= terms
+
+
+def test_diet_patterns_watch_category_covers_structured_diet_replacement_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["diet_patterns"]}
+
+    assert STRUCTURED_DIET_REPLACEMENT_VARIANTS <= terms
 
 
 def test_food_prescription_variants_raise_watch_priority() -> None:
