@@ -51,6 +51,33 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+EQUITY_FOOD_ACCESS_TERMS = [
+    "food apartheid",
+    "food deserts",
+    "food swamps",
+    "healthy food retail",
+    "healthy food retail intervention",
+    "healthy food financing",
+    "healthy food financing initiative",
+    "geographic food access",
+    "spatial access to food",
+    "food retail access",
+    "neighborhood food environment",
+    "neighbourhood food environment",
+    "community food environment",
+    "food environment policy",
+    "healthy food availability",
+]
+
+EQUITY_FOOD_ACCESS_DOCUMENT_TERMS = [
+    "healthy food retail intervention",
+    "food environment policy",
+    "policy evaluation",
+    "natural experiment",
+    "community-based intervention",
+    "implementation study",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -98,6 +125,21 @@ def apply_semantic_extensions() -> None:
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "equity_access",
+        terms=EQUITY_FOOD_ACCESS_TERMS,
+        document_terms=EQUITY_FOOD_ACCESS_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "food_literacy_agency",
+        terms=[
+            "healthy food retail",
+            "food retail access",
+            "community food environment",
+            "healthy food availability",
+        ],
+        document_terms=["healthy food retail intervention"],
+    )
 
 
 apply_semantic_extensions()
