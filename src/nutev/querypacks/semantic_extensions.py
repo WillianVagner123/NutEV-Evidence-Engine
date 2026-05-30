@@ -24,6 +24,33 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
+    "intensive lifestyle intervention",
+    "intensive lifestyle interventions",
+    "behavioral lifestyle intervention",
+    "behavioural lifestyle intervention",
+    "behavioral weight loss",
+    "behavioural weight loss",
+    "lifestyle weight management",
+    "weight management program",
+    "weight management programme",
+    "diabetes prevention program",
+    "diabetes prevention programme",
+    "diabetes prevention programs",
+    "diabetes prevention programmes",
+    "weight loss maintenance",
+]
+
+INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
+    "lifestyle intervention trial",
+    "intensive lifestyle intervention trial",
+    "behavioral weight loss trial",
+    "behavioural weight loss trial",
+    "weight loss maintenance trial",
+    "diabetes prevention program",
+    "diabetes prevention programme",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -36,19 +63,41 @@ def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     return existing
 
 
-def apply_semantic_extensions() -> None:
-    precision_block = semantic_blocks.SEMANTIC_RESEARCH_BLOCKS.setdefault(
-        "cardiometabolic_precision",
+def _extend_semantic_block(
+    block_name: str,
+    *,
+    terms: list[str] | None = None,
+    document_terms: list[str] | None = None,
+) -> None:
+    block = semantic_blocks.SEMANTIC_RESEARCH_BLOCKS.setdefault(
+        block_name,
         {"terms": [], "document_terms": []},
     )
-    precision_block["terms"] = _extend_unique(
-        precision_block.setdefault("terms", []),
-        CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
+    if terms:
+        block["terms"] = _extend_unique(block.setdefault("terms", []), terms)
+    if document_terms:
+        block["document_terms"] = _extend_unique(
+            block.setdefault("document_terms", []),
+            document_terms,
+        )
+
+
+def apply_semantic_extensions() -> None:
+    _extend_semantic_block(
+        "cardiometabolic_precision",
+        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
+        document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
     )
-    precision_block["document_terms"] = _extend_unique(
-        precision_block.setdefault("document_terms", []),
-        CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
-    )
+    for block_name in (
+        "implementation_science",
+        "adherence_persistence",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
+            document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
 
 
 apply_semantic_extensions()
