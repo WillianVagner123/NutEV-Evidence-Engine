@@ -29,6 +29,14 @@ DPP_LIFESTYLE_TRANSLATION_VARIANTS = {
     "lifestyle change programme",
 }
 
+COMPREHENSIVE_LIFESTYLE_INTERVENTION_VARIANTS = {
+    "lifestyle medicine intervention",
+    "therapeutic lifestyle intervention",
+    "comprehensive lifestyle intervention",
+    "comprehensive lifestyle modification",
+    "multicomponent lifestyle intervention",
+}
+
 FOOD_SECURITY_VARIANTS = {
     "nutrition security",
     "food security",
@@ -82,6 +90,18 @@ def test_implementation_watch_category_covers_dpp_translation_variants() -> None
     terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
 
     assert DPP_LIFESTYLE_TRANSLATION_VARIANTS <= terms
+
+
+def test_lifestyle_watch_category_covers_comprehensive_lifestyle_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
+
+    assert COMPREHENSIVE_LIFESTYLE_INTERVENTION_VARIANTS <= terms
+
+
+def test_implementation_watch_category_covers_comprehensive_lifestyle_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
+
+    assert COMPREHENSIVE_LIFESTYLE_INTERVENTION_VARIANTS <= terms
 
 
 def test_food_literacy_watch_category_covers_food_security_variants() -> None:
