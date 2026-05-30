@@ -1,7 +1,10 @@
 from __future__ import annotations
+
+import json
 from dataclasses import dataclass
 from pathlib import Path
-import json
+from typing import Iterable
+
 
 @dataclass
 class NutevSettings:
@@ -32,5 +35,20 @@ class NutevSettings:
             "10_curated": b / "10_curated",
         }
 
+
+def _candidate_config_paths(path: Path) -> Iterable[Path]:
+    yield path
+    if not path.is_absolute():
+        repo_root = Path(__file__).resolve().parents[2]
+        yield repo_root / path
+
+
 def load_json(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
+    attempted: list[str] = []
+    for candidate in _candidate_config_paths(path):
+        attempted.append(str(candidate))
+        if candidate.exists():
+            return json.loads(candidate.read_text(encoding="utf-8"))
+    raise FileNotFoundError(
+        f"Config JSON not found: {path}. Attempted: {', '.join(attempted)}"
+    )
