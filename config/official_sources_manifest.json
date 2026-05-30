@@ -17,6 +17,16 @@
         "authority": 5
       },
       {
+        "name": "HHS Food Is Medicine Initiative",
+        "url": "https://odphp.health.gov/our-work/nutrition-physical-activity/food-medicine",
+        "authority": 5
+      },
+      {
+        "name": "HHS Food Is Medicine Landscape Summary PDF",
+        "url": "https://odphp.health.gov/sites/default/files/2024-09/Food%20Is%20Medicine%20Landscape%20Summary%20FINAL%20508.pdf",
+        "authority": 5
+      },
+      {
         "name": "Guia Alimentar para a População Brasileira",
         "url": "https://www.gov.br/saude/pt-br/assuntos/saude-brasil/publicacoes-para-promocao-a-saude/guia_alimentar_populacao_brasileira_2ed.pdf/%40%40download/file",
         "authority": 5
@@ -68,6 +78,26 @@
       {
         "name": "American Heart Association Diet and Lifestyle Recommendations",
         "url": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/aha-diet-and-lifestyle-recommendations",
+        "authority": 5
+      },
+      {
+        "name": "CDC National Diabetes Prevention Program",
+        "url": "https://www.cdc.gov/diabetes-prevention/index.html",
+        "authority": 5
+      },
+      {
+        "name": "CDC National DPP Lifestyle Change Program",
+        "url": "https://www.cdc.gov/diabetes-prevention/lifestyle-change-program/index.html",
+        "authority": 5
+      },
+      {
+        "name": "HHS Food Is Medicine Initiative",
+        "url": "https://odphp.health.gov/our-work/nutrition-physical-activity/food-medicine",
+        "authority": 5
+      },
+      {
+        "name": "HHS Food Is Medicine Landscape Summary PDF",
+        "url": "https://odphp.health.gov/sites/default/files/2024-09/Food%20Is%20Medicine%20Landscape%20Summary%20FINAL%20508.pdf",
         "authority": 5
       },
       {
