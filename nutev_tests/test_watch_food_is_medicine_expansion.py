@@ -29,6 +29,13 @@ DPP_LIFESTYLE_TRANSLATION_VARIANTS = {
     "lifestyle change programme",
 }
 
+FOOD_SECURITY_VARIANTS = {
+    "nutrition security",
+    "food security",
+    "food insecurity",
+    "household food insecurity",
+}
+
 
 def test_lifestyle_watch_category_covers_food_is_medicine_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
@@ -75,6 +82,12 @@ def test_implementation_watch_category_covers_dpp_translation_variants() -> None
     terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
 
     assert DPP_LIFESTYLE_TRANSLATION_VARIANTS <= terms
+
+
+def test_food_literacy_watch_category_covers_food_security_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["food_literacy_culinary_commensality"]}
+
+    assert FOOD_SECURITY_VARIANTS <= terms
 
 
 def test_food_prescription_variants_raise_watch_priority() -> None:
