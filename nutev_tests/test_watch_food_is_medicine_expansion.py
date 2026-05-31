@@ -36,6 +36,20 @@ FOOD_SECURITY_VARIANTS = {
     "household food insecurity",
 }
 
+DIETARY_BEHAVIOR_IMPLEMENTATION_VARIANTS = {
+    "behaviour change",
+    "behaviour change technique",
+    "behavioural lifestyle intervention",
+    "behavioural weight loss",
+    "dietary counseling",
+    "dietary counselling",
+    "dietary advice",
+    "dietary behavior change",
+    "dietary behaviour change",
+    "health behavior change",
+    "health behaviour change",
+}
+
 
 def test_lifestyle_watch_category_covers_food_is_medicine_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
@@ -88,6 +102,12 @@ def test_food_literacy_watch_category_covers_food_security_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["food_literacy_culinary_commensality"]}
 
     assert FOOD_SECURITY_VARIANTS <= terms
+
+
+def test_implementation_watch_category_covers_dietary_behavior_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
+
+    assert DIETARY_BEHAVIOR_IMPLEMENTATION_VARIANTS <= terms
 
 
 def test_food_prescription_variants_raise_watch_priority() -> None:
