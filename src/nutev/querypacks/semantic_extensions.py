@@ -85,6 +85,33 @@ FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS = [
     "teaching kitchen curriculum",
 ]
 
+NUTRITION_PRESCRIPTION_TERMS = [
+    "nutrition prescription",
+    "nutritional prescription",
+    "dietary prescription",
+    "diet prescription",
+    "therapeutic diet prescription",
+    "individualized nutrition prescription",
+    "individualised nutrition prescription",
+    "personalized nutrition prescription",
+    "personalised nutrition prescription",
+    "nutrition prescription protocol",
+    "dietary prescription protocol",
+    "prescricao nutricional",
+    "prescricao dietetica",
+]
+
+NUTRITION_PRESCRIPTION_DOCUMENT_TERMS = [
+    "nutrition prescription protocol",
+    "dietary prescription protocol",
+    "therapeutic diet prescription protocol",
+    "individualized nutrition prescription protocol",
+    "personalized nutrition prescription protocol",
+    "nutrition prescription intervention",
+    "dietary prescription intervention",
+    "diet prescription intervention",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -131,6 +158,15 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "nutrition_care_delivery",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=NUTRITION_PRESCRIPTION_TERMS,
+            document_terms=NUTRITION_PRESCRIPTION_DOCUMENT_TERMS,
         )
     _extend_semantic_block(
         "food_literacy_agency",
