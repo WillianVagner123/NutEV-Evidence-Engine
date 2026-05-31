@@ -31,3 +31,27 @@ def test_central_adiposity_terms_score_above_generic_note():
 
 def test_diabetes_remission_terms_score_above_generic_note():
     assert score_watch_item({"title": "type 2 diabetes remission after medical nutrition therapy", "relevance_score": 1, "is_new": True}) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
+
+
+def test_visceral_adiposity_terms_score_above_generic_note():
+    item = {
+        "title": "visceral obesity and waist-to-hip ratio in cardiometabolic risk",
+        "abstract": "Lifestyle nutrition intervention targeting ectopic fat and hepatic steatosis.",
+        "relevance_score": 1,
+        "is_new": True,
+    }
+
+    assert score_watch_item(item) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
+
+
+def test_editorial_penalty_still_applies_to_scored_adiposity_terms():
+    scored_item = {
+        "title": "visceral obesity and waist-to-hip ratio in cardiometabolic risk",
+        "abstract": "Lifestyle nutrition intervention targeting ectopic fat and hepatic steatosis.",
+    }
+    editorial_item = {
+        **scored_item,
+        "abstract": f"{scored_item['abstract']} Editorial commentary.",
+    }
+
+    assert score_watch_item(editorial_item) == score_watch_item(scored_item) - 75
