@@ -51,6 +51,40 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+FOOD_SKILLS_SELF_EFFICACY_TERMS = [
+    "cooking self-efficacy",
+    "cooking self efficacy",
+    "culinary self-efficacy",
+    "culinary self efficacy",
+    "food skills confidence",
+    "food skills self-efficacy",
+    "food skills self efficacy",
+    "meal planning skills",
+    "meal preparation skills",
+    "healthy cooking skills",
+    "healthy shopping skills",
+    "nutrition label use",
+    "food label use",
+    "nutrition facts label",
+    "front-of-package nutrition label",
+    "front of package nutrition label",
+]
+
+FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS = [
+    "food skills questionnaire",
+    "food skills assessment",
+    "cooking self-efficacy scale",
+    "cooking self efficacy scale",
+    "culinary self-efficacy scale",
+    "culinary self efficacy scale",
+    "food literacy questionnaire",
+    "nutrition literacy questionnaire",
+    "nutrition label use questionnaire",
+    "food label use questionnaire",
+    "culinary medicine curriculum",
+    "teaching kitchen curriculum",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -98,6 +132,11 @@ def apply_semantic_extensions() -> None:
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "food_literacy_agency",
+        terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
+        document_terms=FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS,
+    )
 
 
 apply_semantic_extensions()
