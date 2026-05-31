@@ -214,6 +214,23 @@ def test_busca2b_enhancements_add_prediabetes_and_insulin_resistance_queries() -
     assert '"insulin resistance"[Title/Abstract]' in joined
 
 
+def test_diabetes_remission_terms_are_promoted_for_cardiometabolic_workstreams() -> None:
+    busca2b_terms = semantic_terms("busca2b", min_priority=5)
+    busca2a_doc_terms = semantic_terms(
+        "busca2a",
+        field="document_terms",
+        min_priority=5,
+    )
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert "type 2 diabetes remission" in busca2b_terms
+    assert "glycaemic remission" in busca2b_terms
+    assert "diabetes remission systematic review" in busca2a_doc_terms
+    assert '"type 2 diabetes remission"[Title/Abstract]' in joined
+    assert '"diabetes remission"[Title/Abstract]' in joined
+
+
 def test_busca2a_guidance_terms_pull_guideline_variants_into_queries() -> None:
     taxonomy = {
         "global": {
