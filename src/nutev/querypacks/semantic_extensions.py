@@ -85,6 +85,45 @@ FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS = [
     "teaching kitchen curriculum",
 ]
 
+FOOD_ENVIRONMENT_DIET_QUALITY_TERMS = [
+    "food environment assessment",
+    "food environment intervention",
+    "food environment interventions",
+    "healthy food retail",
+    "healthy food retail intervention",
+    "healthy food retail interventions",
+    "grocery store intervention",
+    "grocery store interventions",
+    "supermarket intervention",
+    "supermarket interventions",
+    "food pantry intervention",
+    "food pantry interventions",
+    "food pantry nutrition",
+    "healthy food pantry",
+    "healthy food pantry intervention",
+    "food desert",
+    "food deserts",
+    "food swamp",
+    "food swamps",
+    "diet quality index",
+    "diet quality indices",
+    "healthy eating index",
+    "alternative healthy eating index",
+    "mediterranean diet score",
+]
+
+FOOD_ENVIRONMENT_DIET_QUALITY_DOCUMENT_TERMS = [
+    "food environment assessment",
+    "food environment intervention",
+    "healthy food retail intervention",
+    "grocery store intervention",
+    "supermarket intervention",
+    "food pantry intervention",
+    "diet quality index",
+    "healthy eating index",
+    "alternative healthy eating index",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -136,6 +175,16 @@ def apply_semantic_extensions() -> None:
         "food_literacy_agency",
         terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
         document_terms=FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "food_literacy_agency",
+        terms=FOOD_ENVIRONMENT_DIET_QUALITY_TERMS,
+        document_terms=FOOD_ENVIRONMENT_DIET_QUALITY_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "adherence_persistence",
+        terms=FOOD_ENVIRONMENT_DIET_QUALITY_TERMS,
+        document_terms=FOOD_ENVIRONMENT_DIET_QUALITY_DOCUMENT_TERMS,
     )
 
 
