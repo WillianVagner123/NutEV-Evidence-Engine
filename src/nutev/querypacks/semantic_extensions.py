@@ -51,6 +51,41 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+CULINARY_FOOD_SKILLS_TERMS = [
+    "culinary medicine education",
+    "culinary medicine program",
+    "culinary medicine programme",
+    "culinary medicine curriculum",
+    "culinary nutrition education",
+    "teaching kitchen program",
+    "teaching kitchen programme",
+    "teaching kitchen curriculum",
+    "kitchen-based intervention",
+    "kitchen based intervention",
+    "cooking intervention",
+    "cooking skills intervention",
+    "food skills intervention",
+    "meal preparation intervention",
+    "meal planning intervention",
+    "grocery shopping intervention",
+    "food label reading",
+    "label reading intervention",
+    "food resource management intervention",
+]
+
+CULINARY_FOOD_SKILLS_DOCUMENT_TERMS = [
+    "culinary medicine curriculum",
+    "culinary medicine program",
+    "culinary medicine programme",
+    "teaching kitchen curriculum",
+    "teaching kitchen program",
+    "teaching kitchen programme",
+    "cooking skills intervention",
+    "food skills intervention",
+    "meal planning intervention",
+    "food resource management intervention",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -97,6 +132,16 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "food_literacy_agency",
+        "implementation_science",
+        "adherence_persistence",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=CULINARY_FOOD_SKILLS_TERMS,
+            document_terms=CULINARY_FOOD_SKILLS_DOCUMENT_TERMS,
         )
 
 
