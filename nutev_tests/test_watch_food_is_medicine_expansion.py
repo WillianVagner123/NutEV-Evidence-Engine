@@ -36,6 +36,17 @@ FOOD_SECURITY_VARIANTS = {
     "household food insecurity",
 }
 
+FOOD_INSECURITY_SCREENING_VARIANTS = {
+    "food insecurity screening",
+    "food insecurity screener",
+    "food insecurity intervention",
+    "nutrition assistance",
+    "food assistance",
+    "supplemental nutrition assistance program",
+    "snap benefits",
+    "wic program",
+}
+
 
 def test_lifestyle_watch_category_covers_food_is_medicine_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
@@ -88,6 +99,12 @@ def test_food_literacy_watch_category_covers_food_security_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["food_literacy_culinary_commensality"]}
 
     assert FOOD_SECURITY_VARIANTS <= terms
+
+
+def test_food_literacy_watch_category_covers_food_insecurity_screening_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["food_literacy_culinary_commensality"]}
+
+    assert FOOD_INSECURITY_SCREENING_VARIANTS <= terms
 
 
 def test_food_prescription_variants_raise_watch_priority() -> None:
