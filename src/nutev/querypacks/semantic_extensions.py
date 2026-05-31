@@ -51,6 +51,34 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+BEHAVIOR_CHANGE_PLANNING_TERMS = [
+    "action planning",
+    "coping planning",
+    "implementation intention",
+    "implementation intentions",
+    "if-then plan",
+    "if then plan",
+    "goal setting",
+    "problem solving",
+    "relapse prevention",
+    "habit formation",
+    "habit-based intervention",
+    "habit based intervention",
+    "self-regulation",
+    "self regulation",
+]
+
+BEHAVIOR_CHANGE_PLANNING_DOCUMENT_TERMS = [
+    "behavior change technique taxonomy",
+    "behaviour change technique taxonomy",
+    "behavior change intervention development",
+    "behaviour change intervention development",
+    "implementation intention intervention",
+    "habit formation intervention",
+    "self-regulation intervention",
+    "self regulation intervention",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -131,6 +159,12 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in ("implementation_science", "adherence_persistence"):
+        _extend_semantic_block(
+            block_name,
+            terms=BEHAVIOR_CHANGE_PLANNING_TERMS,
+            document_terms=BEHAVIOR_CHANGE_PLANNING_DOCUMENT_TERMS,
         )
     _extend_semantic_block(
         "food_literacy_agency",
