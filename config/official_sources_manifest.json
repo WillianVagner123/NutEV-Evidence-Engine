@@ -25,6 +25,16 @@
         "name": "FAO Brazil dietary guidelines profile",
         "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/brazil/en/",
         "authority": 4
+      },
+      {
+        "name": "HHS Food Is Medicine resource hub",
+        "url": "https://odphp.health.gov/foodismedicine",
+        "authority": 5
+      },
+      {
+        "name": "HHS Food Is Medicine Analytic Framework",
+        "url": "https://odphp.health.gov/foodismedicine/research-and-measurement/food-medicine-analytic-framework",
+        "authority": 5
       }
     ],
     "busca2a": [
@@ -62,6 +72,11 @@
         "name": "EASL-EASD-EASO MASLD clinical practice guidelines PDF",
         "url": "https://easlcampus.eu/sites/default/files/2024-06/EASL_CPGs_on_MASLD.pdf",
         "authority": 5
+      },
+      {
+        "name": "AHA Dietary Guidance to Improve Cardiovascular Health",
+        "url": "https://professional.heart.org/en/science-news/2021-dietary-guidance-to-improve-cardiovascular-health",
+        "authority": 5
       }
     ],
     "busca2b": [
@@ -83,6 +98,21 @@
       {
         "name": "Healthy Eating - American Heart Association",
         "url": "https://www.heart.org/en/healthy-living/healthy-eating",
+        "authority": 4
+      },
+      {
+        "name": "AHA Dietary Guidance to Improve Cardiovascular Health",
+        "url": "https://professional.heart.org/en/science-news/2021-dietary-guidance-to-improve-cardiovascular-health",
+        "authority": 5
+      },
+      {
+        "name": "HHS Food Is Medicine Analytic Framework",
+        "url": "https://odphp.health.gov/foodismedicine/research-and-measurement/food-medicine-analytic-framework",
+        "authority": 5
+      },
+      {
+        "name": "HHS Food Is Medicine policy pathways",
+        "url": "https://odphp.health.gov/foodismedicine/understanding-food-medicine/select-policy-pathways-fim-interventions",
         "authority": 4
       }
     ],
@@ -106,6 +136,16 @@
         "name": "Protocolos de uso do Guia Alimentar para a População Brasileira",
         "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolos_guia_alimentar_fasciculo1.pdf",
         "authority": 4
+      },
+      {
+        "name": "HHS Food Is Medicine resource hub",
+        "url": "https://odphp.health.gov/foodismedicine",
+        "authority": 5
+      },
+      {
+        "name": "HHS Food Is Medicine Analytic Framework",
+        "url": "https://odphp.health.gov/foodismedicine/research-and-measurement/food-medicine-analytic-framework",
+        "authority": 5
       }
     ],
     "a3": [
@@ -128,6 +168,16 @@
         "name": "Protocolos de uso do Guia Alimentar para a População Brasileira",
         "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolos_guia_alimentar_fasciculo1.pdf",
         "authority": 4
+      },
+      {
+        "name": "HHS Food Is Medicine resource hub",
+        "url": "https://odphp.health.gov/foodismedicine",
+        "authority": 5
+      },
+      {
+        "name": "HHS Food Is Medicine Analytic Framework",
+        "url": "https://odphp.health.gov/foodismedicine/research-and-measurement/food-medicine-analytic-framework",
+        "authority": 5
       }
     ]
   }
