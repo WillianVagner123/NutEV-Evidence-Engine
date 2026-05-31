@@ -144,6 +144,14 @@ def test_lifestyle_intervention_variants_improve_priority():
     ) > _score_watch_item({"title": "Obesity care note"})
 
 
+def test_dpp_and_lifestyle_change_program_variants_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "National diabetes prevention program and lifestyle change programme for cardiometabolic risk",
+        }
+    ) > _score_watch_item({"title": "Cardiometabolic risk note"})
+
+
 def test_living_systematic_review_and_rapid_review_improve_priority():
     assert _score_watch_item(
         {"title": "Living systematic review and rapid review of Mediterranean diet for obesity"}
@@ -174,6 +182,14 @@ def test_mash_and_nonalcoholic_fatty_liver_disease_signals_improve_priority():
             "title": "Medical nutrition therapy for MASH and nonalcoholic fatty liver disease",
         }
     ) > _score_watch_item({"title": "Medical nutrition therapy note"})
+
+
+def test_waist_and_hepatic_steatosis_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Waist-to-hip ratio and hepatic steatosis in lifestyle nutrition care",
+        }
+    ) > _score_watch_item({"title": "Lifestyle nutrition care note"})
 
 
 def test_culinary_training_and_food_literacy_signals_improve_priority():
