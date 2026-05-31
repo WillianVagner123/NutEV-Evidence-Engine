@@ -29,3 +29,14 @@ def test_labeling_and_security_signals_improve_priority() -> None:
     generic = score_watch_item({"title": "Food literacy in obesity care"})
 
     assert enriched > generic
+
+
+def test_food_insecurity_signal_improves_priority_when_nutmev_context_is_present() -> None:
+    enriched = score_watch_item(
+        {
+            "title": "Household food insecurity and food literacy in cardiometabolic nutrition care",
+        }
+    )
+    generic = score_watch_item({"title": "Food literacy in cardiometabolic nutrition care"})
+
+    assert enriched > generic
