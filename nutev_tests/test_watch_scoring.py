@@ -216,3 +216,11 @@ def test_food_as_medicine_voucher_and_pantry_variants_improve_priority() -> None
             "title": "Healthy food incentives, produce vouchers, and medically tailored pantry support for cardiometabolic care",
         }
     ) > _score_watch_item({"title": "Cardiometabolic care note"})
+
+
+def test_eating_behavior_and_meal_pattern_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Eating behaviour, food choices, and meal patterns in dietary adherence",
+        }
+    ) > _score_watch_item({"title": "Dietary adherence note"})
