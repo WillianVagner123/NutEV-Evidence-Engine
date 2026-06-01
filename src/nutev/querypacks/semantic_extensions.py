@@ -24,6 +24,29 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+METABOLIC_LIVER_STEATOSIS_TERMS = [
+    "hepatic steatosis",
+    "liver steatosis",
+    "hepatic fat",
+    "liver fat",
+    "intrahepatic fat",
+    "intra-hepatic fat",
+    "intrahepatic triglyceride",
+    "intrahepatic triglycerides",
+    "liver fat content",
+    "hepatic fat content",
+]
+
+METABOLIC_LIVER_STEATOSIS_DOCUMENT_TERMS = [
+    "hepatic steatosis guideline",
+    "steatotic liver disease guideline",
+    "masld practice guidance",
+    "nafld practice guidance",
+    "mash clinical practice guideline",
+    "liver fat systematic review",
+    "hepatic steatosis systematic review",
+]
+
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
     "intensive lifestyle intervention",
     "intensive lifestyle interventions",
@@ -154,6 +177,11 @@ def apply_semantic_extensions() -> None:
         "cardiometabolic_precision",
         terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
         document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "cardiometabolic_liver",
+        terms=METABOLIC_LIVER_STEATOSIS_TERMS,
+        document_terms=METABOLIC_LIVER_STEATOSIS_DOCUMENT_TERMS,
     )
     for block_name in (
         "implementation_science",
