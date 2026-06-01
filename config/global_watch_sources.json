@@ -80,5 +80,54 @@
     ],
     "blocked_patterns": ["login", "shop", "donate"],
     "notes": "Cardiovascular, CKM syndrome, nutrition and obesity guidance"
+  },
+  {
+    "institution": "American College of Lifestyle Medicine",
+    "country": "United States",
+    "region": "North America",
+    "base_url": "https://lifestylemedicine.org",
+    "priority": 1,
+    "language": "en",
+    "categories": ["guidelines_consensus", "lifestyle_medicine", "implementation"],
+    "workstream_affinity": ["busca1", "busca2a", "busca2b", "a3"],
+    "allowed_patterns": [
+      "nutrition",
+      "lifestyle-medicine",
+      "lifestyle medicine",
+      "food-as-medicine",
+      "food as medicine",
+      "culinary-medicine",
+      "culinary medicine",
+      "consensus",
+      "position",
+      "statement",
+      "white-paper",
+      "white paper"
+    ],
+    "blocked_patterns": ["login", "cart", "checkout", "donate", "membership"],
+    "notes": "Lifestyle medicine nutrition, food-as-medicine and implementation statements"
+  },
+  {
+    "institution": "Dietary Guidelines for Americans",
+    "country": "United States",
+    "region": "North America",
+    "base_url": "https://www.dietaryguidelines.gov",
+    "priority": 1,
+    "language": "en",
+    "categories": ["guidelines_consensus", "diet_patterns", "public_health_nutrition"],
+    "workstream_affinity": ["busca1", "busca2a"],
+    "allowed_patterns": [
+      "dietary-guidelines",
+      "dietary guidelines",
+      "scientific-report",
+      "scientific report",
+      "advisory-committee",
+      "advisory committee",
+      "food-patterns",
+      "food patterns",
+      "nutrition"
+    ],
+    "blocked_patterns": ["login", "subscribe", "search?", "calendar"],
+    "notes": "Food-based dietary guidelines, advisory reports and public health nutrition evidence"
   }
 ]
