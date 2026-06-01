@@ -24,6 +24,30 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+DIABETES_REMISSION_TERMS = [
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "t2d remission",
+    "remission of type 2 diabetes",
+    "glycemic remission",
+    "glycaemic remission",
+    "normoglycemia",
+    "normoglycaemia",
+    "remission maintenance",
+]
+
+DIABETES_REMISSION_DOCUMENT_TERMS = [
+    "diabetes remission guideline",
+    "type 2 diabetes remission guideline",
+    "diabetes remission consensus",
+    "type 2 diabetes remission consensus",
+    "diabetes remission trial",
+    "type 2 diabetes remission trial",
+    "diabetes remission systematic review",
+    "type 2 diabetes remission systematic review",
+    "remission maintenance trial",
+]
+
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
     "intensive lifestyle intervention",
     "intensive lifestyle interventions",
@@ -152,8 +176,11 @@ def _extend_semantic_block(
 def apply_semantic_extensions() -> None:
     _extend_semantic_block(
         "cardiometabolic_precision",
-        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
-        document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS + DIABETES_REMISSION_TERMS,
+        document_terms=(
+            CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS
+            + DIABETES_REMISSION_DOCUMENT_TERMS
+        ),
     )
     for block_name in (
         "implementation_science",
