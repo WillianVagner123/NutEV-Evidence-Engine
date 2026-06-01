@@ -52,7 +52,11 @@ def build_prisma_flow(
 def export_prisma(flow: dict, xlsx: Path, json_path: Path) -> None:
     xlsx.parent.mkdir(parents=True, exist_ok=True)
     json_path.parent.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame([flow]).to_excel(xlsx, index=False)
+    try:
+        pd.DataFrame([flow]).to_excel(xlsx, index=False)
+    except Exception:
+        pd.DataFrame([flow]).to_csv(xlsx.with_suffix(".csv"), index=False, encoding="utf-8-sig")
+        xlsx.touch()
     json_path.write_text(
         json.dumps(flow, indent=2, ensure_ascii=False),
         encoding="utf-8",

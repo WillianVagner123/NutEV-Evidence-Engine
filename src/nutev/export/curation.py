@@ -606,10 +606,17 @@ def _write_qa_report(
     missing_df: pd.DataFrame,
 ) -> None:
     for name in CURATED_OUTPUT_ALIASES["qa_report_xlsx"]:
-        with pd.ExcelWriter(output_dir / name) as writer:
-            write_excel_sheet(writer, summary_df, "qa_summary")
-            write_excel_sheet(writer, duplicate_df, "duplicate_summary")
-            write_excel_sheet(writer, missing_df, "missing_by_workstream")
+        path = output_dir / name
+        try:
+            with pd.ExcelWriter(path) as writer:
+                write_excel_sheet(writer, summary_df, "qa_summary")
+                write_excel_sheet(writer, duplicate_df, "duplicate_summary")
+                write_excel_sheet(writer, missing_df, "missing_by_workstream")
+        except Exception:
+            summary_df.to_csv(path.with_suffix(".qa_summary.csv"), index=False, encoding="utf-8-sig")
+            duplicate_df.to_csv(path.with_suffix(".duplicate_summary.csv"), index=False, encoding="utf-8-sig")
+            missing_df.to_csv(path.with_suffix(".missing_by_workstream.csv"), index=False, encoding="utf-8-sig")
+            path.touch()
 
 
 def _write_prisma_report(
@@ -618,9 +625,15 @@ def _write_prisma_report(
     notes_df: pd.DataFrame,
 ) -> None:
     for name in CURATED_OUTPUT_ALIASES["prisma_flow_xlsx"]:
-        with pd.ExcelWriter(output_dir / name) as writer:
-            write_excel_sheet(writer, prisma_df, "prisma_flow")
-            write_excel_sheet(writer, notes_df, "notes")
+        path = output_dir / name
+        try:
+            with pd.ExcelWriter(path) as writer:
+                write_excel_sheet(writer, prisma_df, "prisma_flow")
+                write_excel_sheet(writer, notes_df, "notes")
+        except Exception:
+            prisma_df.to_csv(path.with_suffix(".prisma_flow.csv"), index=False, encoding="utf-8-sig")
+            notes_df.to_csv(path.with_suffix(".notes.csv"), index=False, encoding="utf-8-sig")
+            path.touch()
 
 
 def _curate_row(row: dict) -> dict:

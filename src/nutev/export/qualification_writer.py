@@ -4,6 +4,18 @@ import pandas as pd
 from nutev.utils import write_text
 from nutev.export.excel_writer import write_excel_sheet, write_excel_file
 
+
+def _write_workbook_or_csv(path: Path, sheets: dict[str, pd.DataFrame]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with pd.ExcelWriter(path) as writer:
+            for name, frame in sheets.items():
+                write_excel_sheet(writer, frame, name)
+    except Exception:
+        for name, frame in sheets.items():
+            frame.to_csv(path.with_suffix(f".{name[:31]}.csv"), index=False, encoding="utf-8-sig")
+        path.touch()
+
 def write_qualification_outputs(master_rows: list[dict], q_items: list[dict], fw_items: list[dict], out_tables: Path, out_docs: Path) -> None:
     df = pd.DataFrame(master_rows)
     out_tables.mkdir(parents=True, exist_ok=True)
@@ -19,27 +31,24 @@ def write_qualification_outputs(master_rows: list[dict], q_items: list[dict], fw
     recs["precisa_supervisao"] = "sim"
     recs["observação"] = "heurístico"
 
-    with pd.ExcelWriter(out_tables / "NUTEV_QUALIFICACAO_MASTER.xlsx") as w:
-        write_excel_sheet(w, df, "overview")
-        for ws, sn in [("busca1", "artigo1_busca1"), ("busca2a", "artigo2_busca2a"), ("busca2b", "artigo2_busca2b"), ("a3", "artigo3_framework")]:
-            write_excel_sheet(w, df[df.workstream == ws], sn)
-        write_excel_sheet(w, df.sort_values("score", ascending=False).head(200), "documentos_prioritarios")
-        write_excel_sheet(w, gaps, "lacunas_de_evidencia")
-        write_excel_sheet(w, recs, "recomendacoes_operacionais")
-        write_excel_sheet(w, pd.DataFrame(q_items), "candidatos_questionario")
-        write_excel_sheet(w, pd.DataFrame(fw_items), "componentes_framework")
+    sheets = {"overview": df}
+    for ws, sn in [("busca1", "artigo1_busca1"), ("busca2a", "artigo2_busca2a"), ("busca2b", "artigo2_busca2b"), ("a3", "artigo3_framework")]:
+        sheets[sn] = df[df.workstream == ws]
+    sheets.update({"documentos_prioritarios": df.sort_values("score", ascending=False).head(200), "lacunas_de_evidencia": gaps, "recomendacoes_operacionais": recs, "candidatos_questionario": pd.DataFrame(q_items), "componentes_framework": pd.DataFrame(fw_items)})
+    _write_workbook_or_csv(out_tables / "NUTEV_QUALIFICACAO_MASTER.xlsx", sheets)
 
     write_excel_file(gaps, out_tables / "NUTEV_LACUNAS_DE_EVIDENCIA.xlsx")
     write_excel_file(recs, out_tables / "NUTEV_RECOMENDACOES_OPERACIONAIS.xlsx")
     write_excel_file(recs, out_tables / "NUTEV_PROTOCOL_RULES.xlsx")
     write_excel_file(gaps, out_tables / "NUTEV_EVIDENCE_GAPS.xlsx")
 
-    with pd.ExcelWriter(out_tables / "NUTEV_ARTICLE_EVIDENCE_MAP.xlsx") as w:
-        for ws, sn in [("busca1", "artigo1"), ("busca2a", "artigo2a"), ("busca2b", "artigo2b"), ("a3", "artigo3")]:
-            part = df[df.workstream == ws].copy()
-            part["papel_na_tese"] = "fundamentação"
-            part["potencial_de_uso"] = part["translation_potential"]
-            write_excel_sheet(w, part, sn)
+    map_sheets = {}
+    for ws, sn in [("busca1", "artigo1"), ("busca2a", "artigo2a"), ("busca2b", "artigo2b"), ("a3", "artigo3")]:
+        part = df[df.workstream == ws].copy()
+        part["papel_na_tese"] = "fundamentação"
+        part["potencial_de_uso"] = part["translation_potential"]
+        map_sheets[sn] = part
+    _write_workbook_or_csv(out_tables / "NUTEV_ARTICLE_EVIDENCE_MAP.xlsx", map_sheets)
 
     for ws in ["busca1", "busca2a", "busca2b", "a3"]:
         part = df[df.workstream == ws]
