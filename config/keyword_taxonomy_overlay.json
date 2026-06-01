@@ -1,0 +1,38 @@
+{
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "dietary adherence",
+        "treatment adherence",
+        "long-term adherence",
+        "dietary maintenance",
+        "weight maintenance",
+        "relapse prevention",
+        "dietary self-monitoring"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "dietary adherence",
+      "long-term adherence",
+      "weight maintenance",
+      "dietary self-monitoring",
+      "relapse prevention"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "clinical_keys": [
+        "fatty_liver"
+      ],
+      "web_query_hints": [
+        "masld",
+        "nafld",
+        "steatotic liver disease",
+        "fatty liver",
+        "metabolic dysfunction-associated steatotic liver disease"
+      ]
+    }
+  }
+}
