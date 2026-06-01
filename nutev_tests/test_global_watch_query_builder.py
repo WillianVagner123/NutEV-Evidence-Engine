@@ -40,6 +40,15 @@ def test_obesity_cardiometabolic_queries_include_extended_liver_synonyms():
     assert "non-alcoholic steatohepatitis" in rendered
 
 
+def test_obesity_cardiometabolic_exhaustive_queries_include_diabetes_remission_reversal_terms():
+    rows = build_watch_queries(["obesity_cardiometabolic"], 7, "exhaustive")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "type 2 diabetes remission" in rendered
+    assert "type 2 diabetes reversal" in rendered
+    assert "glycemic remission" in rendered
+    assert "glycaemic remission" in rendered
+
+
 def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     rows = build_watch_queries(["diet_patterns"], 7, "quick")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
