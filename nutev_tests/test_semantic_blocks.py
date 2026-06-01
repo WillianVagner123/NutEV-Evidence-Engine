@@ -14,6 +14,22 @@ def test_busca2b_semantic_terms_include_precision_terms() -> None:
     assert "hypercholesterolaemia" in terms
 
 
+def test_busca2a_and_busca2b_semantic_terms_include_diabetes_remission_terms() -> None:
+    busca2a_terms = {term.lower() for term in semantic_terms("busca2a", min_priority=5)}
+    busca2b_terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+    busca2b_document_terms = {
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    }
+
+    assert "type 2 diabetes remission" in busca2a_terms
+    assert "diabetes remission" in busca2b_terms
+    assert "t2d remission" in busca2b_terms
+    assert "glycaemic remission" in busca2b_terms
+    assert "type 2 diabetes remission trial" in busca2b_document_terms
+    assert "diabetes remission systematic review" in busca2b_document_terms
+
+
 def test_busca2b_semantic_terms_include_behavior_change_variants() -> None:
     terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
     assert "behavior change techniques" in terms
