@@ -713,6 +713,14 @@ QUICK_MODE_SEED_GROUPS = {
             "motivational interviewing",
             "intervention mapping",
             "implementation mapping",
+            "action planning",
+            "coping planning",
+            "self-regulation",
+            "self regulation",
+            "stages of change",
+            "stage of change",
+            "readiness to change",
+            "transtheoretical model",
             "social support",
             "food agency",
             "meal planning",
@@ -939,6 +947,14 @@ THESIS_MODE_SEED_GROUPS = {
             "capability opportunity motivation behaviour",
             "motivational interviewing",
             "goal setting",
+            "action planning",
+            "coping planning",
+            "self-regulation",
+            "self regulation",
+            "stages of change",
+            "stage of change",
+            "readiness to change",
+            "transtheoretical model",
         ],
         [
             "digital health",
@@ -1152,11 +1168,13 @@ def _build_category_queries(
                     "category": category,
                     "query": query,
                     "provider_hint": "pubmed",
-                    "priority": _priority_for_term(term),
+                    "priority": 2 if category == "implementation_behavior" else _priority_for_term(term),
                     "since_days": since_days,
                 },
             )
         )
+    if category == "implementation_behavior":
+        return [query for _, query in ranked_queries]
     return [
         query
         for _, query in sorted(

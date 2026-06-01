@@ -32,5 +32,5 @@ class NutevSettings:
             "10_curated": b / "10_curated",
         }
 
-def load_json(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
+def load_json(path: Path | str) -> dict:
+    return json.loads(Path(path).read_text(encoding="utf-8"))

@@ -245,3 +245,8 @@ Depois acesse `http://127.0.0.1:8501`.
 O sistema apoia busca, classificação, auditoria e tradução preliminar de evidências. Ele não substitui revisão humana, avaliação de risco de viés, adjudicação metodológica ou decisão final do protocolo.
 
 `RecommendationCandidate` é recomendação candidata, não recomendação final.
+## Robust provider execution
+
+Use `.env.example` as the canonical environment template. `NCBI_EMAIL` is recommended for PubMed, while `NCBI_API_KEY` is optional. If PubMed, Google, SerpAPI, Europe PMC, OpenAlex or Crossref fail, NutEV records the provider event in `07_logs/run_events.jsonl`, `provider_failures.csv` and `provider_performance.csv`, then continues with the remaining providers and official sources.
+
+Resume interrupted searches by re-running the same command; provider checkpoints are stored in `07_logs/checkpoints/` and PubMed continues from the saved `retstart_done` without duplicating collected rows.

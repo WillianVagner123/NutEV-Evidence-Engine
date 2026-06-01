@@ -171,3 +171,12 @@ Nenhum desses estados equivale a recomendação final.
 ## Revisão humana
 
 As decisões humanas são persistidas em `project_output/07_logs/human_review_decisions.csv` quando o fluxo de revisão está habilitado. Nenhuma recomendação deve ser considerada final sem revisão humana explícita, lastro documental e adjudicação metodológica.
+## NutEV/NutMEV robust search runtime
+
+The canonical runtime is `src/nutev`. The older `src/local_deep_research` package remains only as legacy/reference code and is not the main runtime.
+
+Scientific search does not depend on Google. PubMed, Europe PMC, OpenAlex, Crossref and official sources run through safe provider handling; provider failures are logged and the pipeline exports partial results instead of crashing. PubMed uses NCBI E-utilities with `usehistory=y`, `WebEnv`, `query_key`, paginated batches, retry/backoff and checkpoints under `07_logs/checkpoints/pubmed/`.
+
+Configure local environment variables from `.env.example`. The most important PubMed settings are `NCBI_EMAIL`, optional `NCBI_API_KEY`, and `NCBI_TOOL=nutev_pipeline`. Google/SerpAPI keys are optional and are used only for gray-literature discovery.
+
+More details: `docs/SEARCH_PROVIDERS.md` and `docs/PUBMED_TROUBLESHOOTING.md`.
