@@ -33,3 +33,21 @@ def test_cardiometabolic_vascular_signals_improve_priority() -> None:
     generic = score_watch_item({"title": "Nutrition therapy note"})
 
     assert enriched > generic
+
+
+def test_cardiometabolic_anthropometric_signals_improve_priority() -> None:
+    enriched = score_watch_item(
+        {
+            "title": (
+                "Waist-to-hip ratio, visceral fat, and hepatic steatosis "
+                "in adults with metabolic health risk"
+            ),
+            "abstract": (
+                "Body mass index and BMI trajectories are evaluated alongside "
+                "nutrition therapy for cardiometabolic risk."
+            ),
+        }
+    )
+    generic = score_watch_item({"title": "Adult nutrition observational note"})
+
+    assert enriched > generic
