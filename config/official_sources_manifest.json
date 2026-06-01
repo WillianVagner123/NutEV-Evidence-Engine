@@ -35,6 +35,16 @@
         "name": "HHS Food Is Medicine Analytic Framework",
         "url": "https://odphp.health.gov/foodismedicine/research-and-measurement/food-medicine-analytic-framework",
         "authority": 5
+      },
+      {
+        "name": "AHA Health Care by Food initiative",
+        "url": "https://www.healthcarexfood.org/",
+        "authority": 5
+      },
+      {
+        "name": "Tufts Food is Medicine Institute resources",
+        "url": "https://tuftsfoodismedicine.org/resources/",
+        "authority": 4
       }
     ],
     "busca2a": [
@@ -114,6 +124,16 @@
         "name": "HHS Food Is Medicine policy pathways",
         "url": "https://odphp.health.gov/foodismedicine/understanding-food-medicine/select-policy-pathways-fim-interventions",
         "authority": 4
+      },
+      {
+        "name": "AHA Health Care by Food initiative",
+        "url": "https://www.healthcarexfood.org/",
+        "authority": 5
+      },
+      {
+        "name": "Tufts Food is Medicine Institute resources",
+        "url": "https://tuftsfoodismedicine.org/resources/",
+        "authority": 4
       }
     ],
     "artigo3_framework": [
@@ -146,6 +166,16 @@
         "name": "HHS Food Is Medicine Analytic Framework",
         "url": "https://odphp.health.gov/foodismedicine/research-and-measurement/food-medicine-analytic-framework",
         "authority": 5
+      },
+      {
+        "name": "AHA Health Care by Food - defining Food Is Medicine",
+        "url": "https://www.healthcarexfood.org/en/about/about-fim",
+        "authority": 5
+      },
+      {
+        "name": "Tufts Food is Medicine Institute resources",
+        "url": "https://tuftsfoodismedicine.org/resources/",
+        "authority": 4
       }
     ],
     "a3": [
@@ -178,6 +208,16 @@
         "name": "HHS Food Is Medicine Analytic Framework",
         "url": "https://odphp.health.gov/foodismedicine/research-and-measurement/food-medicine-analytic-framework",
         "authority": 5
+      },
+      {
+        "name": "AHA Health Care by Food - defining Food Is Medicine",
+        "url": "https://www.healthcarexfood.org/en/about/about-fim",
+        "authority": 5
+      },
+      {
+        "name": "Tufts Food is Medicine Institute resources",
+        "url": "https://tuftsfoodismedicine.org/resources/",
+        "authority": 4
       }
     ]
   }
