@@ -118,6 +118,42 @@ FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS = [
     "nutrition education intervention",
 ]
 
+OFFICIAL_GUIDANCE_TERMS = [
+    "evidence-based guideline",
+    "evidence based guideline",
+    "evidence-based guidance",
+    "evidence based guidance",
+    "recommendation statement",
+    "clinical recommendation statement",
+    "official recommendation",
+    "official recommendations",
+    "position statement",
+    "position paper",
+    "expert consensus",
+    "expert consensus statement",
+    "clinical consensus statement",
+    "society guideline",
+    "society guidelines",
+    "professional society statement",
+]
+
+OFFICIAL_GUIDANCE_DOCUMENT_TERMS = [
+    "evidence-based guideline",
+    "evidence based guideline",
+    "evidence-based guidance",
+    "evidence based guidance",
+    "recommendation statement",
+    "clinical recommendation statement",
+    "position statement",
+    "position paper",
+    "expert consensus",
+    "expert consensus statement",
+    "clinical consensus statement",
+    "society guideline",
+    "society guidelines",
+    "professional society statement",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -154,6 +190,11 @@ def apply_semantic_extensions() -> None:
         "cardiometabolic_precision",
         terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
         document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "evidence_synthesis",
+        terms=OFFICIAL_GUIDANCE_TERMS,
+        document_terms=OFFICIAL_GUIDANCE_DOCUMENT_TERMS,
     )
     for block_name in (
         "implementation_science",
