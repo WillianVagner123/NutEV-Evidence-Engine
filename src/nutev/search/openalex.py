@@ -32,7 +32,7 @@ def search_openalex(query: str, per_page: int = 12) -> list[dict]:
         try:
             response = requests.get(
                 "https://api.openalex.org/works",
-                params={"search": query, "per-page": per_page},
+                params={"search": query, "per-page": per_page, **({"mailto": os.environ.get("OPENALEX_MAILTO")} if os.environ.get("OPENALEX_MAILTO") else {})},
                 timeout=(10, 25),
                 headers={"User-Agent": "NutEV Research Pipeline/1.0"},
             )
@@ -45,9 +45,20 @@ def search_openalex(query: str, per_page: int = 12) -> list[dict]:
                 rows.append(
                     {
                         "source": "openalex",
+                        "source_provider": "openalex",
                         "title": item.get("display_name"),
+                        "abstract": " ".join((item.get("abstract_inverted_index") or {}).keys()) if isinstance(item.get("abstract_inverted_index"), dict) else "",
+                        "snippet": "",
                         "doi": item.get("doi"),
                         "url": _pick_openalex_url(item),
+                        "journal": ((item.get("primary_location") or {}).get("source") or {}).get("display_name", ""),
+                        "year": item.get("publication_year") or "",
+                        "publication_date": item.get("publication_date") or "",
+                        "article_type": item.get("type") or "",
+                        "authors": "; ".join([str((a.get("author") or {}).get("display_name") or "") for a in item.get("authorships", [])[:12]]) if isinstance(item.get("authorships"), list) else "",
+                        "metadata_status": "openalex_search",
+                        "query": query,
+                        "provider_query": query,
                     }
                 )
             return rows

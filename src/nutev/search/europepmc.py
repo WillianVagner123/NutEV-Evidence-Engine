@@ -88,6 +88,7 @@ def _normalize_result(item: dict) -> dict[str, str]:
     )
     return {
         "source": "europepmc",
+        "source_provider": "europepmc",
         "title": _clean_text(item.get("title")),
         "abstract": _clean_text(item.get("abstractText")),
         "summary": _clean_text(item.get("abstractText")),
@@ -106,6 +107,8 @@ def _normalize_result(item: dict) -> dict[str, str]:
         "article_type": _clean_text(item.get("pubType") or item.get("resultType")),
         "authors": _clean_text(item.get("authorString")),
         "metadata_status": "europepmc_search",
+        "query": "",
+        "provider_query": "",
         "is_open_access": _clean_text(item.get("isOpenAccess")).lower(),
     }
 
@@ -125,8 +128,12 @@ def search_europepmc(query: str, page_size: int = 18) -> list[dict]:
             )
             response.raise_for_status()
             results = response.json().get("resultList", {}).get("result", [])
-            return [_normalize_result(item) for item in results]
+            rows = [_normalize_result(item) for item in results]
+            for row in rows:
+                row["query"] = query
+                row["provider_query"] = query
+            return rows
         except Exception as exc:
             last = exc
             time.sleep(1.0 * attempt)
-    raise last
+    return []

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import csv
 import os
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -25,6 +27,7 @@ from nutev.global_watch.watch_export import export_watch_outputs
 from nutev.global_watch.watch_query_builder import build_watch_queries
 from nutev.global_watch.watch_scoring import score_watch_item
 from nutev.global_watch.watch_webhook import maybe_send_webhook
+from nutev.search.checkpoint import query_hash
 from nutev.search.europepmc import search_europepmc
 from nutev.search.openalex import search_openalex
 from nutev.search.pubmed import search_pubmed
@@ -39,6 +42,41 @@ try:
     from nutev.search.official_sources import manifest_sources
 except Exception:  # pragma: no cover
     manifest_sources = None
+
+def _append_provider_csv(path: Path, row: dict[str, Any], fields: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    exists = path.exists()
+    with path.open("a", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        if not exists:
+            writer.writeheader()
+        writer.writerow({field: row.get(field, "") for field in fields})
+
+
+def _watch_provider_logs(
+    logs_dir: Path,
+    run_id: str,
+    provider: str,
+    category: str,
+    query: str,
+    status: str,
+    rows: int,
+    duration: float,
+    error: str = "",
+) -> None:
+    qh = query_hash(provider, category, query)
+    _append_provider_csv(
+        logs_dir / "provider_performance.csv",
+        {"run_id": run_id, "provider": provider, "workstream": category, "query_hash": qh, "query": query, "status": status, "total_found": "", "rows_returned": rows, "duration_seconds": round(duration, 3), "resume_used": False, "checkpoint_path": ""},
+        ["run_id", "provider", "workstream", "query_hash", "query", "status", "total_found", "rows_returned", "duration_seconds", "resume_used", "checkpoint_path"],
+    )
+    if status in {"failed", "partial", "skipped"}:
+        _append_provider_csv(
+            logs_dir / "provider_failures.csv",
+            {"run_id": run_id, "timestamp": datetime.now(timezone.utc).isoformat(), "provider": provider, "workstream": category, "query_hash": qh, "query": query, "stage": f"provider_{status}", "status": status, "error_type": status, "error_message": error, "recoverable": True, "fallback_used": False, "checkpoint_path": ""},
+            ["run_id", "timestamp", "provider", "workstream", "query_hash", "query", "stage", "status", "error_type", "error_message", "recoverable", "fallback_used", "checkpoint_path"],
+        )
+
 
 _PROVIDER_PRIORITY = {
     "official_sources": 5,
@@ -573,6 +611,7 @@ def run_watch_provider(
     logs_dir: Path,
     since_days: int,
 ) -> list[dict[str, Any]]:
+    started = time.monotonic()
     write_event(
         emit_event(
             run_id,
@@ -583,6 +622,20 @@ def run_watch_provider(
         ),
         logs_dir / "run_events.jsonl",
     )
+    if __import__("os").environ.get("NUTEV_DISABLE_NETWORK") == "1":
+        write_event(
+            emit_event(
+                run_id,
+                "provider_skipped",
+                f"Provider {provider_name} skipped because network is disabled",
+                event_kind="warning",
+                provider=provider_name,
+                meta_json={"category": category, "reason": "network_disabled"},
+            ),
+            logs_dir / "run_events.jsonl",
+        )
+        _watch_provider_logs(logs_dir, run_id, provider_name, category, query, "skipped", 0, time.monotonic() - started, "network_disabled")
+        return []
     filtered_query = _provider_query(query, provider_name, since_days)
     provider_fn = _build_provider_map().get(provider_name)
     if provider_fn is None:
@@ -596,6 +649,7 @@ def run_watch_provider(
             ),
             logs_dir / "run_events.jsonl",
         )
+        _watch_provider_logs(logs_dir, run_id, provider_name, category, query, "skipped", 0, time.monotonic() - started, "provider_unavailable")
         return []
     try:
         rows = provider_fn(filtered_query) or []
@@ -613,6 +667,7 @@ def run_watch_provider(
             ),
             logs_dir / "run_events.jsonl",
         )
+        _watch_provider_logs(logs_dir, run_id, provider_name, category, filtered_query, "completed" if out else "empty", len(out), time.monotonic() - started)
         return out
     except Exception as exc:
         logger.warning(
@@ -632,6 +687,7 @@ def run_watch_provider(
             ),
             logs_dir / "run_events.jsonl",
         )
+        _watch_provider_logs(logs_dir, run_id, provider_name, category, filtered_query if 'filtered_query' in locals() else query, "failed", 0, time.monotonic() - started, str(exc))
         return []
 
 

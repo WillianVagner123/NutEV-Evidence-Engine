@@ -86,3 +86,9 @@ nutev --project-root ./project_output_pilot --workstreams busca1 busca2a busca2b
 ## Methodological guardrail
 
 `RecommendationCandidate` é candidata à recomendação, não recomendação final. A inclusão no protocolo requer revisão humana, adjudicação de conflitos e lastro documental auditável.
+
+## Canonical and legacy search layers
+
+- `src/nutev/`: canonical NutEV/NutMEV runtime, including CLI, pipelines, provider orchestration, checkpoints, exports and Global Watch.
+- `src/nutev/search/`: robust provider layer for PubMed, Europe PMC, OpenAlex, Crossref, optional Google/SerpAPI stubs, provider orchestration and checkpoints.
+- `src/local_deep_research/`: legacy/reference implementation retained for comparison only; do not switch the runtime back to this package.

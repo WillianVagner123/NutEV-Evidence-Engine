@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from urllib.parse import urlparse
+
 WORKSTREAM_ALIASES = {
     "a3": "artigo3_framework",
     "article3": "artigo3_framework",
@@ -10,9 +12,11 @@ def _dedupe_sources(sources: list[dict]) -> list[dict]:
     seen: set[str] = set()
     unique_sources: list[dict] = []
     for source in sources:
-        url = (source.get("url") or "").strip().lower()
-        title = (source.get("name") or source.get("title") or "").strip().lower()
-        key = url or title
+        if not isinstance(source, dict):
+            continue
+        url = str(source.get("url") or "").strip()
+        title = str(source.get("name") or source.get("title") or "").strip()
+        key = (url or title).lower()
         if not key or key in seen:
             continue
         seen.add(key)
@@ -20,19 +24,46 @@ def _dedupe_sources(sources: list[dict]) -> list[dict]:
     return unique_sources
 
 
-def manifest_sources(manifest: dict, workstream: str) -> list[dict]:
-    ws = WORKSTREAM_ALIASES.get(workstream, workstream)
-    workstreams = manifest.get("workstreams", {})
-    sources = workstreams.get(ws, [])
-    if ws != workstream:
-        sources = _dedupe_sources(sources + workstreams.get(workstream, []))
+def _valid_url(url: str) -> bool:
+    try:
+        parsed = urlparse(url)
+    except Exception:
+        return False
+    return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
 
-    return [
-        {
-            "source": "official",
-            "title": source.get("name"),
-            "url": source.get("url"),
-            "authority": source.get("authority", 1),
-        }
-        for source in sources
-    ]
+
+def manifest_sources(manifest: dict, workstream: str) -> list[dict]:
+    try:
+        ws = WORKSTREAM_ALIASES.get(workstream, workstream)
+        workstreams = manifest.get("workstreams", {}) if isinstance(manifest, dict) else {}
+        sources = workstreams.get(ws, []) if isinstance(workstreams, dict) else []
+        if ws != workstream and isinstance(workstreams, dict):
+            sources = _dedupe_sources(list(sources or []) + list(workstreams.get(workstream, []) or []))
+        else:
+            sources = _dedupe_sources(list(sources or []))
+    except Exception:
+        return []
+
+    rows: list[dict] = []
+    for source in sources:
+        try:
+            url = str(source.get("url") or "").strip()
+            title = str(source.get("name") or source.get("title") or "").strip()
+            if not url or not title or not _valid_url(url):
+                continue
+            rows.append(
+                {
+                    "source": "official",
+                    "source_provider": "official_web",
+                    "title": title,
+                    "url": url,
+                    "authority": source.get("authority", 1),
+                    "source_institution": source.get("institution") or source.get("authority_name") or title,
+                    "metadata_status": "official_manifest",
+                    "query": workstream,
+                    "provider_query": workstream,
+                }
+            )
+        except Exception:
+            continue
+    return rows

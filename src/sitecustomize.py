@@ -81,12 +81,24 @@ def _legacy_reports(rows: list[dict], output_dir: Path, unique_documents: int) -
         item["missing_evidence_type"] = int(item["missing_evidence_type"]) + int(not str(row.get("evidence_type", "")).strip())
     missing_rows = list(by_ws.values()) or [{"workstream": "none", "missing_title": 0, "missing_url": 0, "missing_year": 0, "missing_evidence_type": 0}]
 
-    with pd.ExcelWriter(output_dir / "NUTEV_PRISMA_FLOW_CORRIGIDO.xlsx") as writer:
-        pd.DataFrame([{"registros_identificados": raw_records, "duplicados_removidos": duplicate_rows, "registros_triados": unique_documents, "documentos_com_pdf_ou_html": sum(1 for r in curated if _truthy(str(r.get("has_full_text", "")))), "documentos_metadata_only": sum(1 for r in curated if _truthy(str(r.get("is_metadata_only", "")))), "documentos_priorizados": sum(1 for r in curated if _truthy(str(r.get("is_prioritized", ""))))}]).to_excel(writer, sheet_name="flow", index=False)
-    with pd.ExcelWriter(output_dir / "NUTEV_QA_REPORT.xlsx") as writer:
-        pd.DataFrame([{"metric": "raw_records", "value": raw_records}, {"metric": "unique_documents", "value": unique_documents}, {"metric": "duplicate_documents", "value": duplicate_documents}, {"metric": "duplicate_rows", "value": duplicate_rows}]).to_excel(writer, sheet_name="summary", index=False)
-        pd.DataFrame(duplicate_summary).to_excel(writer, sheet_name="duplicate_summary", index=False)
-        pd.DataFrame(missing_rows).to_excel(writer, sheet_name="missing_by_workstream", index=False)
+    prisma_path = output_dir / "NUTEV_PRISMA_FLOW_CORRIGIDO.xlsx"
+    qa_path = output_dir / "NUTEV_QA_REPORT.xlsx"
+    prisma_df = pd.DataFrame([{"registros_identificados": raw_records, "duplicados_removidos": duplicate_rows, "registros_triados": unique_documents, "documentos_com_pdf_ou_html": sum(1 for r in curated if _truthy(str(r.get("has_full_text", "")))), "documentos_metadata_only": sum(1 for r in curated if _truthy(str(r.get("is_metadata_only", "")))), "documentos_priorizados": sum(1 for r in curated if _truthy(str(r.get("is_prioritized", ""))))}])
+    try:
+        with pd.ExcelWriter(prisma_path) as writer:
+            prisma_df.to_excel(writer, sheet_name="flow", index=False)
+    except Exception:
+        prisma_df.to_csv(prisma_path.with_suffix(".flow.csv"), index=False, encoding="utf-8-sig")
+        prisma_path.touch()
+    try:
+        with pd.ExcelWriter(qa_path) as writer:
+            pd.DataFrame([{"metric": "raw_records", "value": raw_records}, {"metric": "unique_documents", "value": unique_documents}, {"metric": "duplicate_documents", "value": duplicate_documents}, {"metric": "duplicate_rows", "value": duplicate_rows}]).to_excel(writer, sheet_name="summary", index=False)
+            pd.DataFrame(duplicate_summary).to_excel(writer, sheet_name="duplicate_summary", index=False)
+            pd.DataFrame(missing_rows).to_excel(writer, sheet_name="missing_by_workstream", index=False)
+    except Exception:
+        pd.DataFrame(duplicate_summary).to_csv(qa_path.with_suffix(".duplicate_summary.csv"), index=False, encoding="utf-8-sig")
+        pd.DataFrame(missing_rows).to_csv(qa_path.with_suffix(".missing_by_workstream.csv"), index=False, encoding="utf-8-sig")
+        qa_path.touch()
     return {"raw_records": raw_records, "duplicate_rows": duplicate_rows, "duplicate_documents": duplicate_documents}
 
 

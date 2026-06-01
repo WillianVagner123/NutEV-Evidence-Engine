@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import time
 from pathlib import Path
 from urllib.parse import urlparse
@@ -425,10 +426,35 @@ def download_records(
     dedup = Deduplicator()
     manifest: list[dict] = []
     failed: list[dict] = []
+    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+        limited = records
+        limit_env = os.environ.get("NUTEV_DOWNLOAD_LIMIT")
+        try:
+            download_limit = int(limit_env) if limit_env not in (None, "") else None
+        except ValueError:
+            download_limit = None
+        if download_limit is not None:
+            limited = records[:download_limit]
+        for record in limited:
+            raw_url = record.get("url") if isinstance(record, dict) else ""
+            if isinstance(raw_url, str) and raw_url:
+                failed.append(_metadata_only(raw_url, raw_url, "network_disabled"))
+        return manifest, failed
+
     session = requests.Session()
     session.headers.update(SESSION_HEADERS)
 
-    for record in records:
+    limit_env = os.environ.get("NUTEV_DOWNLOAD_LIMIT")
+    try:
+        download_limit = int(limit_env) if limit_env not in (None, "") else None
+    except ValueError:
+        download_limit = None
+
+    for record in records[:download_limit] if download_limit is not None else records:
+        try:
+            record = dict(record)
+        except Exception:
+            continue
         raw_url = record.get("url")
         if not isinstance(raw_url, str) or not raw_url:
             continue
@@ -446,9 +472,14 @@ def download_records(
             )
             continue
 
-        resolved_url, resolved_kind = resolve_url(primary_url)
-        head_status, content_type = _head(resolved_url)
-        ext = infer_ext(resolved_url, content_type)
+        try:
+            resolved_url, resolved_kind = resolve_url(primary_url)
+            head_status, content_type = _head(resolved_url)
+            ext = infer_ext(resolved_url, content_type)
+        except Exception as exc:
+            logger.info("resolve/head falhou url=%s erro=%s", primary_url, exc)
+            failed.append(_metadata_only(raw_url, primary_url, _failure_reason(exc, primary_url), 0))
+            continue
 
         if resolved_kind == "pdf" and ext == "bin":
             ext = "pdf"

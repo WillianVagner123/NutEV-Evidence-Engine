@@ -46,11 +46,8 @@ from nutev.querypacks.provider_queries import (
     build_provider_querypack,
     write_provider_querypack_audit,
 )
-from nutev.search.crossref import search_crossref
-from nutev.search.europepmc import search_europepmc
 from nutev.search.official_sources import manifest_sources
-from nutev.search.openalex import search_openalex
-from nutev.search.pubmed import search_pubmed
+from nutev.search.provider_orchestrator import search_provider
 from nutev.settings import NutevSettings, load_json
 
 QUERY_BUDGET = {
@@ -76,12 +73,7 @@ _NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
 
 
 def _provider_map():
-    return {
-        "pubmed": lambda q: search_pubmed(q, retmax=18),
-        "europepmc": lambda q: search_europepmc(q, page_size=18),
-        "openalex": lambda q: search_openalex(q, per_page=12),
-        "crossref": lambda q: search_crossref(q, rows=18),
-    }
+    return {"pubmed": True, "europepmc": True, "openalex": True, "crossref": True}
 
 
 def _as_text(value: object) -> str:
@@ -173,7 +165,9 @@ def _merge_article_rows(existing: dict, incoming: dict) -> dict:
     for key, value in incoming.items():
         if value in (None, "", [], {}):
             continue
-        if not merged.get(key):
+        if key in {"abstract", "snippet", "summary"} and len(str(value)) > len(str(merged.get(key) or "")):
+            merged[key] = value
+        elif not merged.get(key):
             merged[key] = value
     # Keep the stronger URL for capture. PMC and direct full-text URLs tend to
     # produce better artifacts than DOI landing pages.
@@ -185,6 +179,13 @@ def _merge_article_rows(existing: dict, incoming: dict) -> dict:
         or incoming_url.lower().endswith(".pdf")
     ):
         merged["url"] = incoming_url
+    providers = []
+    for value in (merged.get("matched_providers"), merged.get("source_provider"), merged.get("source"), incoming.get("matched_providers"), incoming.get("source_provider"), incoming.get("source")):
+        for part in str(value or "").split("|"):
+            part = part.strip()
+            if part and part not in providers:
+                providers.append(part)
+    merged["matched_providers"] = "|".join(providers)
     merged["source"] = merged.get("source") or incoming.get("source")
     return merged
 
@@ -195,6 +196,10 @@ def _dedup_rows(rows: list[dict]) -> list[dict]:
     for r in rows:
         key = _canonical_article_key(r)
         if key not in by_key:
+            r = dict(r)
+            provider = r.get("source_provider") or r.get("source")
+            if provider and not r.get("matched_providers"):
+                r["matched_providers"] = str(provider)
             by_key[key] = r
             order.append(key)
         else:
@@ -317,6 +322,8 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     all_rows, extraction_manifest, all_manifest, artifact_inputs = [], [], [], []
     all_failed: list[dict] = []
     total_downloads = total_failed = total_ocr = 0
+    provider_status_counts = {"completed": 0, "partial": 0, "failed": 0, "skipped": 0, "empty": 0}
+    provider_rows = {provider: 0 for provider in ["pubmed", "europepmc", "openalex", "crossref", "official_web", "google_pse", "serpapi", "brave"]}
 
     for ws, queries in qpack.items():
         supported_priority = providers_executed_by_workstream.get(ws, DEFAULT_PRIORITY)
@@ -337,22 +344,43 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         for provider in supported_priority:
             if provider == "official_web":
                 continue
-            fn = provider_map.get(provider)
-            if fn is None:
+            if provider not in provider_map:
                 continue
             for q in provider_queries.get(provider, [])[:query_budget]:
-                new_rows = _safe_provider_call(provider, fn, q, ws, logger)
-                hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(
-                    new_rows
+                result = search_provider(
+                    provider=provider,
+                    query=q,
+                    workstream=ws,
+                    limit=18 if provider != "openalex" else 12,
+                    checkpoint_dir=settings.output_dirs["07_logs"] / "checkpoints",
+                    resume=True,
+                    logger=logger,
+                    run_id=run_id,
+                    logs_dir=settings.output_dirs["07_logs"],
+                    mode=settings.mode,
                 )
-                rows += new_rows
+                provider_status_counts[result.status] = provider_status_counts.get(result.status, 0) + 1
+                provider_rows[provider] = provider_rows.get(provider, 0) + len(result.rows)
+                hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(result.rows)
+                rows += result.rows
 
-        try:
-            official_rows = manifest_sources(sources, ws)
-            hits_by_provider["official_web"] = len(official_rows)
-            rows += official_rows
-        except Exception as e:
-            logger.warning("official_web falhou ws=%s erro=%s", ws, e)
+        official_result = search_provider(
+            provider="official_web",
+            query=ws,
+            workstream=ws,
+            limit=500,
+            checkpoint_dir=settings.output_dirs["07_logs"] / "checkpoints",
+            resume=True,
+            logger=logger,
+            run_id=run_id,
+            logs_dir=settings.output_dirs["07_logs"],
+            mode=settings.mode,
+            context={"official_manifest": sources},
+        )
+        provider_status_counts[official_result.status] = provider_status_counts.get(official_result.status, 0) + 1
+        provider_rows["official_web"] = provider_rows.get("official_web", 0) + len(official_result.rows)
+        hits_by_provider["official_web"] = len(official_result.rows)
+        rows += official_result.rows
 
         logger.info("ws=%s hits_por_provider=%s", ws, hits_by_provider)
 
@@ -409,12 +437,16 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
         ext_by_url = {}
         for m in manifest:
-            e = extract_document(
-                Path(m["path"]),
-                settings.output_dirs["04_ocr_text"],
-                settings.output_dirs["05_extraction"],
-                logger,
-            )
+            try:
+                e = extract_document(
+                    Path(m["path"]),
+                    settings.output_dirs["04_ocr_text"],
+                    settings.output_dirs["05_extraction"],
+                    logger,
+                )
+            except Exception as exc:
+                logger.warning("extract falhou path=%s erro=%s", m.get("path"), exc)
+                e = {"file": m.get("path", ""), "ext": m.get("ext", ""), "used_ocr": False, "ocr_failed_pages": "", "text_path": "", "chars": 0, "extraction_status": "failed", "reason": str(exc)}
             extraction_manifest.append(e)
             total_ocr += int(e.get("used_ocr", False))
             if isinstance(m.get("url"), str):
@@ -538,7 +570,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         artifact_inputs,
         settings.output_dirs["07_logs"] / "artifact_manifest.csv",
     )
-    search_job.status = "completed"
+    provider_failures_path = settings.output_dirs["07_logs"] / "provider_failures.csv"
+    partial_results = provider_status_counts.get("failed", 0) > 0 or provider_status_counts.get("partial", 0) > 0
+    run_status = "failed" if not all_rows and provider_status_counts.get("failed", 0) and not provider_status_counts.get("completed", 0) else ("partial" if partial_results else "completed")
+    search_job.status = run_status
     search_job.finished_at = __import__("datetime").datetime.now(
         __import__("datetime").timezone.utc
     )
@@ -587,6 +622,26 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "recommendation_candidates_ready_review": sum(1 for r in recommendations if r.recommendation_status == "ready_for_human_review"),
         "recommendation_candidates_insufficient_evidence": sum(1 for r in recommendations if r.recommendation_status == "insufficient_evidence"),
         "conflicting_evidence_total": len(conflicts),
+        "run_status": run_status,
+        "providers_started": sum(provider_status_counts.values()),
+        "providers_completed": provider_status_counts.get("completed", 0),
+        "providers_partial": provider_status_counts.get("partial", 0),
+        "providers_failed": provider_status_counts.get("failed", 0),
+        "providers_skipped": provider_status_counts.get("skipped", 0),
+        "providers_empty": provider_status_counts.get("empty", 0),
+        "providers_unsupported_by_workstream": providers_unsupported_by_workstream,
+        "provider_rows": provider_rows,
+        "pubmed_rows": provider_rows.get("pubmed", 0),
+        "europepmc_rows": provider_rows.get("europepmc", 0),
+        "openalex_rows": provider_rows.get("openalex", 0),
+        "crossref_rows": provider_rows.get("crossref", 0),
+        "official_rows": provider_rows.get("official_web", 0),
+        "google_rows": provider_rows.get("google_pse", 0),
+        "partial_results": partial_results,
+        "resume_used": True,
+        "checkpoint_resume_used": True,
+        "checkpoint_dir": str(settings.output_dirs["07_logs"] / "checkpoints"),
+        "status": run_status,
     }
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(

@@ -5,6 +5,18 @@ from pathlib import Path
 import pandas as pd
 
 from nutev.export.excel_writer import write_excel_file, write_excel_sheet
+
+
+def _write_workbook_or_csv(path: Path, sheets: dict[str, pd.DataFrame]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with pd.ExcelWriter(path) as writer:
+            for name, frame in sheets.items():
+                write_excel_sheet(writer, frame, name)
+    except Exception:
+        for name, frame in sheets.items():
+            frame.to_csv(path.with_suffix(f".{name[:31]}.csv"), index=False, encoding="utf-8-sig")
+        path.touch()
 from nutev.search.normalize import (
     infer_clinical_condition,
     infer_diet_pattern,
@@ -449,17 +461,18 @@ def write_synthesis_outputs(master_rows: list[dict], out_dir: Path) -> None:
         ascending=[False, False, False, True],
     ).drop(columns=["year_sort"]).head(200)
 
-    with pd.ExcelWriter(out_dir / "NUTEV_EVIDENCE_MASTER.xlsx") as writer:
-        for ws in ["busca1", "busca2a", "busca2b", "a3"]:
-            write_excel_sheet(writer, df[df["workstream"] == ws].drop(columns=["year_sort"]), f"{ws}_documents")
-        write_excel_sheet(writer, top, "top_ranked")
-        write_excel_sheet(writer, df.groupby("source", dropna=False).size().reset_index(name="n"), "by_source")
-        write_excel_sheet(writer, df.groupby("year", dropna=False).size().reset_index(name="n"), "by_year")
-        write_excel_sheet(writer, by_domain, "by_domain")
-        write_excel_sheet(writer, by_diet, "by_diet_pattern")
-        write_excel_sheet(writer, by_cond, "by_clinical_condition")
-        write_excel_sheet(writer, by_evidence_track, "by_evidence_track")
-        write_excel_sheet(writer, by_evidence_tier, "by_evidence_tier")
+    evidence_sheets = {
+        **{f"{ws}_documents": df[df["workstream"] == ws].drop(columns=["year_sort"]) for ws in ["busca1", "busca2a", "busca2b", "a3"]},
+        "top_ranked": top,
+        "by_source": df.groupby("source", dropna=False).size().reset_index(name="n"),
+        "by_year": df.groupby("year", dropna=False).size().reset_index(name="n"),
+        "by_domain": by_domain,
+        "by_diet_pattern": by_diet,
+        "by_clinical_condition": by_cond,
+        "by_evidence_track": by_evidence_track,
+        "by_evidence_tier": by_evidence_tier,
+    }
+    _write_workbook_or_csv(out_dir / "NUTEV_EVIDENCE_MASTER.xlsx", evidence_sheets)
 
     top.to_csv(out_dir / "NUTEV_TOP_DOCUMENTS.csv", index=False)
     write_excel_file(top, out_dir / "NUTEV_TOP_DOCUMENTS.xlsx")
@@ -469,21 +482,21 @@ def write_synthesis_outputs(master_rows: list[dict], out_dir: Path) -> None:
     )
     write_excel_file(by_domain, out_dir / "NUTEV_DOMAIN_SUMMARY.xlsx")
 
-    with pd.ExcelWriter(out_dir / "NUTEV_ARTICLE_EVIDENCE_MAP.xlsx") as writer:
-        for track in [
-            "guideline_map",
-            "review_map",
-            "intervention_map",
-            "framework_map",
-            "implementation_map",
-            "observational_map",
-        ]:
-            subset = df[df["evidence_use_track"] == track].sort_values(
-                ["evidence_priority_score", "score", "year_sort", "title"],
-                ascending=[False, False, False, True],
-            ).drop(columns=["year_sort"])
-            write_excel_sheet(writer, subset, track)
-        write_excel_sheet(writer, by_evidence_track, "summary")
+    map_sheets = {}
+    for track in [
+        "guideline_map",
+        "review_map",
+        "intervention_map",
+        "framework_map",
+        "implementation_map",
+        "observational_map",
+    ]:
+        map_sheets[track] = df[df["evidence_use_track"] == track].sort_values(
+            ["evidence_priority_score", "score", "year_sort", "title"],
+            ascending=[False, False, False, True],
+        ).drop(columns=["year_sort"])
+    map_sheets["summary"] = by_evidence_track
+    _write_workbook_or_csv(out_dir / "NUTEV_ARTICLE_EVIDENCE_MAP.xlsx", map_sheets)
 
     questionnaire_df = pd.DataFrame(
         build_questionnaire_candidates(master_rows),
