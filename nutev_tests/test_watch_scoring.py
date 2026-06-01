@@ -224,3 +224,17 @@ def test_eating_behavior_and_meal_pattern_signals_improve_priority() -> None:
             "title": "Eating behaviour, food choices, and meal patterns in dietary adherence",
         }
     ) > _score_watch_item({"title": "Dietary adherence note"})
+
+
+def test_culturally_tailored_nutrition_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Culturally tailored nutrition intervention for dietary adherence in obesity care",
+        }
+    ) > _score_watch_item({"title": "Dietary adherence in obesity care note"})
+
+
+def test_personalized_nutrition_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {"title": "Personalized nutrition and individualized nutrition for cardiometabolic risk"}
+    ) > _score_watch_item({"title": "Nutrition for cardiometabolic risk note"})
