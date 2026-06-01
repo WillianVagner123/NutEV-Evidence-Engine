@@ -224,3 +224,11 @@ def test_eating_behavior_and_meal_pattern_signals_improve_priority() -> None:
             "title": "Eating behaviour, food choices, and meal patterns in dietary adherence",
         }
     ) > _score_watch_item({"title": "Dietary adherence note"})
+
+
+def test_sustainable_healthy_diet_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Sustainable healthy diets for cardiometabolic risk and obesity care",
+        }
+    ) > _score_watch_item({"title": "Diets for cardiometabolic risk and obesity care"})
