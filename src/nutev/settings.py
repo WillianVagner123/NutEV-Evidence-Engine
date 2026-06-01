@@ -2,6 +2,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 import json
+from copy import deepcopy
+
 
 @dataclass
 class NutevSettings:
@@ -32,5 +34,45 @@ class NutevSettings:
             "10_curated": b / "10_curated",
         }
 
+
+def _merge_unique_lists(base: list, overlay: list) -> list:
+    merged = list(base)
+    seen = {str(item).strip().lower() for item in merged if str(item).strip()}
+    for item in overlay:
+        value = str(item).strip()
+        if not value:
+            continue
+        key = value.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(item)
+    return merged
+
+
+def _deep_merge_config(base: dict, overlay: dict) -> dict:
+    merged = deepcopy(base)
+    for key, value in overlay.items():
+        current = merged.get(key)
+        if isinstance(current, dict) and isinstance(value, dict):
+            merged[key] = _deep_merge_config(current, value)
+        elif isinstance(current, list) and isinstance(value, list):
+            merged[key] = _merge_unique_lists(current, value)
+        else:
+            merged[key] = deepcopy(value)
+    return merged
+
+
+def _load_optional_overlay(path: Path) -> dict:
+    overlay_path = path.with_name(f"{path.stem}_overlay{path.suffix}")
+    if not overlay_path.exists():
+        return {}
+    return json.loads(overlay_path.read_text(encoding="utf-8"))
+
+
 def load_json(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
+    data = json.loads(path.read_text(encoding="utf-8"))
+    overlay = _load_optional_overlay(path)
+    if overlay:
+        return _deep_merge_config(data, overlay)
+    return data
