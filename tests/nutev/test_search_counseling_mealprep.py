@@ -48,6 +48,16 @@ def test_provider_queries_keep_counseling_and_meal_preparation_visible():
     assert any("meal preparation" in query for query in queries)
 
 
+def test_provider_queries_include_culinary_medicine_delivery_terms():
+    taxonomy = _load_taxonomy()
+
+    queries = render_queries_for_provider(taxonomy, "artigo3_framework", "pubmed")
+
+    assert any("culinary medicine program" in query for query in queries)
+    assert any("teaching kitchen intervention" in query for query in queries)
+    assert any("meal planning intervention" in query for query in queries)
+
+
 def test_scoring_rewards_counseling_meal_prep_and_family_meals_signals():
     scoring_rules = _load_scoring_rules()
     base_record = {
