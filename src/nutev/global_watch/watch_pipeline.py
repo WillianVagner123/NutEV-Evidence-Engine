@@ -583,6 +583,19 @@ def run_watch_provider(
         ),
         logs_dir / "run_events.jsonl",
     )
+    if __import__("os").environ.get("NUTEV_DISABLE_NETWORK") == "1":
+        write_event(
+            emit_event(
+                run_id,
+                "provider_skipped",
+                f"Provider {provider_name} skipped because network is disabled",
+                event_kind="warning",
+                provider=provider_name,
+                meta_json={"category": category, "reason": "network_disabled"},
+            ),
+            logs_dir / "run_events.jsonl",
+        )
+        return []
     filtered_query = _provider_query(query, provider_name, since_days)
     provider_fn = _build_provider_map().get(provider_name)
     if provider_fn is None:

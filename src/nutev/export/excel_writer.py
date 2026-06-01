@@ -62,6 +62,7 @@ def write_analysis_xlsx(rows: list[dict], path: Path) -> None:
         df.to_excel(path, index=False)
     except Exception:
         df.to_csv(path.with_suffix(".csv"), index=False, encoding="utf-8-sig")
+        path.touch()
 
 
 def write_excel_sheet(writer, df: pd.DataFrame, sheet_name: str) -> None:
@@ -76,3 +77,4 @@ def write_excel_file(df: pd.DataFrame, path: Path) -> None:
         safe_df.to_excel(path, index=False)
     except Exception:
         safe_df.to_csv(path.with_suffix(".csv"), index=False, encoding="utf-8-sig")
+        path.touch()

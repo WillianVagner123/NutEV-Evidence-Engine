@@ -1,18 +1,22 @@
 from __future__ import annotations
 
+import logging
 import os
 import re
 import time
+from pathlib import Path
 from typing import Any
 
 import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+
+from nutev.search.base import ProviderResult
+from nutev.search.checkpoint import checkpoint_path, load_checkpoint, query_hash, save_checkpoint
 
 DOI_RE = re.compile(r"(10\.\d{4,9}/[-._;()/:A-Z0-9]+)", re.I)
 DOI_URL_RE = re.compile(r"https?://(?:dx\.)?doi\.org/", re.I)
 PMCID_RE = re.compile(r"\bPMC\s*([0-9]+)\b", re.I)
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+RETRY_STATUSES = {429, 500, 502, 503, 504}
 
 
 class PubMedUnavailable(RuntimeError):
@@ -24,7 +28,7 @@ def _clean_doi(value: Any | None) -> str | None:
         return None
     raw = str(value).strip()
     raw = DOI_URL_RE.sub(" ", raw)
-    raw = raw.replace("doi.org/", " ")
+    raw = raw.replace("doi.org/", " ").replace("dx.doi.org/", " ")
     raw = raw.replace("DOI:", " ").replace("doi:", " ")
     match = DOI_RE.search(raw)
     if not match:
@@ -43,7 +47,7 @@ def _clean_pmcid(value: Any | None) -> str | None:
         return f"PMC{match.group(1)}"
     if raw.isdigit():
         return f"PMC{raw}"
-    return raw
+    return raw.upper() if raw.lower().startswith("pmc") else raw
 
 
 def _pick_article_id(item: dict[str, Any], *id_types: str) -> str | None:
@@ -66,8 +70,8 @@ def _extract_pmcid(item: dict[str, Any]) -> str | None:
     return _clean_pmcid(_pick_article_id(item, "pmc", "pmcid"))
 
 
-def _extract_year(pubdate: str | None, epubdate: str | None = None) -> str:
-    for value in [pubdate, epubdate]:
+def _extract_year(*values: Any) -> str:
+    for value in values:
         if not value:
             continue
         match = re.search(r"\b(19|20)\d{2}\b", str(value))
@@ -79,11 +83,8 @@ def _extract_year(pubdate: str | None, epubdate: str | None = None) -> str:
 def _extract_authors(item: dict[str, Any], limit: int = 12) -> str:
     names: list[str] = []
     for author in item.get("authors", []) or []:
-        if not isinstance(author, dict):
-            continue
-        name = author.get("name")
-        if name:
-            names.append(str(name))
+        if isinstance(author, dict) and author.get("name"):
+            names.append(str(author["name"]))
     if len(names) > limit:
         return "; ".join(names[:limit]) + f"; +{len(names) - limit} more"
     return "; ".join(names)
@@ -97,10 +98,14 @@ def _pick_pubmed_url(pmid: str, doi: str | None, pmcid: str | None) -> str:
     return f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
 
 
+def _ncbi_email() -> str | None:
+    return os.environ.get("NCBI_EMAIL") or os.environ.get("ENTREZ_EMAIL")
+
+
 def _ncbi_params(params: dict[str, Any]) -> dict[str, Any]:
     out = dict(params)
     out["tool"] = os.environ.get("NCBI_TOOL", "nutev_pipeline")
-    email = os.environ.get("NCBI_EMAIL") or os.environ.get("ENTREZ_EMAIL")
+    email = _ncbi_email()
     api_key = os.environ.get("NCBI_API_KEY")
     if email:
         out["email"] = email
@@ -109,101 +114,285 @@ def _ncbi_params(params: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
-def _session() -> requests.Session:
-    retries = Retry(
-        total=5,
-        connect=5,
-        read=5,
-        status=5,
-        backoff_factor=1.5,
-        status_forcelist=(429, 500, 502, 503, 504),
-        allowed_methods=frozenset({"GET", "POST"}),
-        raise_on_status=False,
-    )
-    adapter = HTTPAdapter(max_retries=retries, pool_connections=8, pool_maxsize=8)
-    session = requests.Session()
-    session.mount("https://", adapter)
-    session.mount("http://", adapter)
+def _rate_limit_sleep() -> None:
+    # NCBI: 3 req/s without API key, 10 req/s with key. Use a safety margin.
+    time.sleep(0.13 if os.environ.get("NCBI_API_KEY") else 0.40)
+
+
+def _request_json(
+    endpoint: str,
+    params: dict[str, Any],
+    *,
+    timeout: int | tuple[int, int] = (10, 60),
+    max_attempts: int = 4,
+    session: requests.Session | None = None,
+) -> dict[str, Any]:
+    url = f"{EUTILS_BASE}/{endpoint}"
+    params = _ncbi_params(params)
+    last_error: Exception | None = None
+    owns_session = session is None
+    session = session or requests.Session()
     session.headers.update(
         {
             "User-Agent": "NutEV/0.1 (+https://github.com/WillianVagner123/NUT-MEV_NEW)",
             "Accept": "application/json,text/plain,*/*",
-            "Connection": "close",
         }
     )
-    return session
-
-
-def _request_json(endpoint: str, params: dict[str, Any], timeout: int = 60) -> dict[str, Any]:
-    url = f"{EUTILS_BASE}/{endpoint}"
-    params = _ncbi_params(params)
-    last_error: Exception | None = None
-
-    for attempt in range(1, 5):
-        with _session() as session:
+    try:
+        for attempt in range(1, max_attempts + 1):
             for method in ("get", "post"):
                 try:
+                    _rate_limit_sleep()
                     if method == "get":
                         response = session.get(url, params=params, timeout=timeout)
                     else:
                         response = session.post(url, data=params, timeout=timeout)
+                    if response.status_code in RETRY_STATUSES:
+                        raise requests.HTTPError(
+                            f"HTTP {response.status_code}", response=response
+                        )
                     response.raise_for_status()
-                    return response.json()
-                except Exception as exc:
+                    try:
+                        return response.json()
+                    except ValueError as exc:
+                        raise PubMedUnavailable(f"Invalid JSON from PubMed {endpoint}") from exc
+                except (requests.Timeout, requests.ConnectionError, requests.HTTPError, PubMedUnavailable) as exc:
                     last_error = exc
-        time.sleep(min(2 * attempt, 8))
-
+                    # POST is the same-attempt fallback for long URLs/GET failures.
+                    continue
+            time.sleep(min(2**attempt, 8))
+    finally:
+        if owns_session:
+            session.close()
     raise PubMedUnavailable(f"PubMed E-utilities request failed after retries: {last_error}")
 
 
-def search_pubmed(query: str, retmax: int = 18) -> list[dict]:
-    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
-        return []
-    if os.environ.get("NUTEV_SKIP_PUBMED") == "1":
-        return []
+def _normalize_summary(item: dict[str, Any], pmid: str, query: str) -> dict[str, Any]:
+    doi = _extract_doi(item)
+    pmcid = _extract_pmcid(item)
+    pubdate = item.get("pubdate") or item.get("epubdate") or ""
+    title = item.get("title") or ""
+    return {
+        "source": "pubmed",
+        "source_provider": "pubmed",
+        "title": title,
+        "abstract": item.get("abstract") or "",
+        "snippet": item.get("summary") or item.get("abstract") or title,
+        "summary": item.get("summary") or item.get("abstract") or "",
+        "doi": doi or "",
+        "pmid": str(pmid),
+        "pmcid": pmcid or "",
+        "url": _pick_pubmed_url(str(pmid), doi, pmcid),
+        "journal": item.get("fulljournalname") or item.get("source") or "",
+        "year": _extract_year(item.get("pubdate"), item.get("epubdate"), pubdate),
+        "publication_date": pubdate,
+        "article_type": "; ".join(item.get("pubtype") or []),
+        "authors": _extract_authors(item),
+        "metadata_status": "pubmed_esummary",
+        "query": query,
+        "provider_query": query,
+    }
 
-    esearch_payload = _request_json(
-        "esearch.fcgi",
-        {
-            "db": "pubmed",
-            "retmode": "json",
-            "term": query,
-            "retmax": retmax,
+
+class PubMedClient:
+    name = "pubmed"
+
+    def search(
+        self,
+        query: str,
+        *,
+        limit: int,
+        context: dict[str, Any] | None = None,
+    ) -> ProviderResult:
+        context = context or {}
+        workstream = str(context.get("workstream") or "default")
+        checkpoint_dir = Path(context.get("checkpoint_dir") or Path("07_logs") / "checkpoints")
+        resume = bool(context.get("resume", False))
+        batch_size = int(context.get("batch_size") or os.environ.get("NUTEV_PUBMED_BATCH_SIZE") or 200)
+        logger = context.get("logger") or logging.getLogger(__name__)
+        cp_path = checkpoint_path(checkpoint_dir, self.name, workstream, query)
+        qh = query_hash(self.name, workstream, query)
+
+        if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+            return ProviderResult(self.name, query, status="skipped", error="network_disabled", checkpoint_path=str(cp_path))
+        if os.environ.get("NUTEV_SKIP_PUBMED") == "1":
+            return ProviderResult(self.name, query, status="skipped", error="NUTEV_SKIP_PUBMED=1", checkpoint_path=str(cp_path))
+        if not _ncbi_email():
+            logger.warning("NCBI_EMAIL/ENTREZ_EMAIL ausente; usando rate limit conservador para PubMed")
+
+        rows: list[dict[str, Any]] = []
+        ids_collected: list[str] = []
+        retstart = 0
+        count: int | None = None
+        webenv = ""
+        query_key = ""
+        loaded = load_checkpoint(cp_path) if resume else None
+        if loaded and loaded.get("status") == "completed":
+            cached_rows = loaded.get("rows") or []
+            return ProviderResult(
+                self.name,
+                query,
+                rows=cached_rows[:limit],
+                total_found=loaded.get("count"),
+                total_returned=min(len(cached_rows), limit),
+                status="completed",
+                checkpoint_path=str(cp_path),
+                meta={"resume_used": True, "query_hash": qh},
+            )
+        if loaded:
+            retstart = int(loaded.get("retstart_done") or 0)
+            rows = list(loaded.get("rows") or [])
+            ids_collected = [str(x) for x in loaded.get("ids") or []]
+            count = loaded.get("count")
+            webenv = str(loaded.get("webenv") or "")
+            query_key = str(loaded.get("query_key") or "")
+
+        try:
+            if not webenv or not query_key or count is None:
+                search_payload = _request_json(
+                    "esearch.fcgi",
+                    {
+                        "db": "pubmed",
+                        "retmode": "json",
+                        "term": query,
+                        "retmax": 0,
+                        "usehistory": "y",
+                    },
+                )
+                result = search_payload.get("esearchresult", {})
+                count = int(result.get("count") or 0)
+                webenv = str(result.get("webenv") or result.get("WebEnv") or "")
+                query_key = str(result.get("querykey") or result.get("query_key") or "")
+                save_checkpoint(
+                    cp_path,
+                    {
+                        "provider": self.name,
+                        "workstream": workstream,
+                        "query_hash": qh,
+                        "query": query,
+                        "count": count,
+                        "webenv": webenv,
+                        "query_key": query_key,
+                        "retstart_done": retstart,
+                        "retmax": batch_size,
+                        "ids_collected": len(ids_collected),
+                        "rows_collected": len(rows),
+                        "ids": ids_collected,
+                        "rows": rows,
+                        "status": "partial",
+                    },
+                )
+            target = min(limit, count or 0)
+            while retstart < target:
+                retmax = min(batch_size, target - retstart)
+                search_payload = _request_json(
+                    "esearch.fcgi",
+                    {
+                        "db": "pubmed",
+                        "retmode": "json",
+                        "term": query,
+                        "retstart": retstart,
+                        "retmax": retmax,
+                        "usehistory": "y",
+                        "WebEnv": webenv,
+                        "query_key": query_key,
+                    },
+                )
+                batch_ids = [str(x) for x in search_payload.get("esearchresult", {}).get("idlist", [])]
+                batch_ids = [pmid for pmid in batch_ids if pmid not in set(ids_collected)]
+                if batch_ids:
+                    summary_payload = _request_json(
+                        "esummary.fcgi",
+                        {"db": "pubmed", "retmode": "json", "id": ",".join(batch_ids)},
+                    )
+                    payload = summary_payload.get("result", {})
+                    for pmid in batch_ids:
+                        item = payload.get(pmid, {})
+                        if item:
+                            rows.append(_normalize_summary(item, pmid, query))
+                    ids_collected.extend(batch_ids)
+                retstart += retmax
+                save_checkpoint(
+                    cp_path,
+                    {
+                        "provider": self.name,
+                        "workstream": workstream,
+                        "query_hash": qh,
+                        "query": query,
+                        "count": count,
+                        "webenv": webenv,
+                        "query_key": query_key,
+                        "retstart_done": retstart,
+                        "retmax": batch_size,
+                        "ids_collected": len(ids_collected),
+                        "rows_collected": len(rows),
+                        "ids": ids_collected,
+                        "rows": rows,
+                        "status": "partial" if retstart < target else "completed",
+                    },
+                )
+            return ProviderResult(
+                self.name,
+                query,
+                rows=rows[:limit],
+                total_found=count,
+                total_returned=len(rows[:limit]),
+                status="completed",
+                checkpoint_path=str(cp_path),
+                meta={"query_hash": qh, "resume_used": bool(loaded)},
+            )
+        except Exception as exc:
+            status = "partial" if rows else "failed"
+            save_checkpoint(
+                cp_path,
+                {
+                    "provider": self.name,
+                    "workstream": workstream,
+                    "query_hash": qh,
+                    "query": query,
+                    "count": count,
+                    "webenv": webenv,
+                    "query_key": query_key,
+                    "retstart_done": retstart,
+                    "retmax": batch_size,
+                    "ids_collected": len(ids_collected),
+                    "rows_collected": len(rows),
+                    "ids": ids_collected,
+                    "rows": rows,
+                    "status": status,
+                    "error": str(exc),
+                },
+            )
+            return ProviderResult(
+                self.name,
+                query,
+                rows=rows[:limit],
+                total_found=count,
+                total_returned=len(rows[:limit]),
+                status=status,
+                error=str(exc),
+                checkpoint_path=str(cp_path),
+                meta={"query_hash": qh, "resume_used": bool(loaded)},
+            )
+
+
+def search_pubmed(
+    query: str,
+    retmax: int = 18,
+    *,
+    checkpoint_dir: str | Path | None = None,
+    workstream: str = "default",
+    resume: bool = False,
+    logger: Any | None = None,
+) -> list[dict]:
+    result = PubMedClient().search(
+        query,
+        limit=retmax,
+        context={
+            "checkpoint_dir": checkpoint_dir or Path("07_logs") / "checkpoints",
+            "workstream": workstream,
+            "resume": resume,
+            "logger": logger,
         },
     )
-    ids = esearch_payload.get("esearchresult", {}).get("idlist", [])
-    if not ids:
-        return []
-
-    summary_payload = _request_json(
-        "esummary.fcgi",
-        {
-            "db": "pubmed",
-            "retmode": "json",
-            "id": ",".join(ids),
-        },
-    )
-    payload = summary_payload.get("result", {})
-
-    out = []
-    for pmid in ids:
-        item = payload.get(pmid, {})
-        doi = _extract_doi(item)
-        pmcid = _extract_pmcid(item)
-        out.append(
-            {
-                "source": "pubmed",
-                "title": item.get("title"),
-                "doi": doi or "",
-                "pmid": pmid,
-                "pmcid": pmcid or "",
-                "url": _pick_pubmed_url(pmid, doi, pmcid),
-                "journal": item.get("fulljournalname") or item.get("source") or "",
-                "year": _extract_year(item.get("pubdate"), item.get("epubdate")),
-                "publication_date": item.get("pubdate") or item.get("epubdate") or "",
-                "article_type": "; ".join(item.get("pubtype", []) or []),
-                "authors": _extract_authors(item),
-                "metadata_status": "pubmed_esummary",
-            }
-        )
-    return out
+    return result.rows

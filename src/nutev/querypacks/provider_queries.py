@@ -44,6 +44,7 @@ BEHAVIOR_PRIORITY_TERMS = [
     "implementation fidelity",
     "implementation determinant",
     "implementation determinants",
+    "implementation evaluation",
     "shared decision making",
     "motivational interviewing",
     "behavior change technique",
@@ -342,7 +343,7 @@ def _augment_with_semantic_blocks(
     behavior_priority_terms = [
         term
         for term in BEHAVIOR_PRIORITY_TERMS
-        if term in broad_terms or term in behavior_seed_terms
+        if term in broad_terms or term in behavior_seed_terms or canonical_workstream(workstream) == "busca2b"
     ]
 
     if canonical_workstream(workstream) == "busca2a":
@@ -1048,6 +1049,34 @@ def _render_crossref_queries(components: dict[str, list[str]]) -> list[str]:
     )
 
 
+def _render_term_coverage_queries(components: dict[str, list[str]], provider: str) -> list[str]:
+    condition_terms = components["condition_terms"] + components["clinical_terms"]
+    outcome_terms = list(components.get("priority_outcomes", []))
+    doc_terms = list(components.get("doc_type_terms", []))
+    if provider == "pubmed":
+        outcome_terms = [term for term in outcome_terms if str(term).lower() in {"glycemic control", "randomized controlled trial"}] + outcome_terms
+        doc_terms = [term for term in doc_terms if str(term).lower() == "randomized controlled trial"] + doc_terms
+    anchors = [
+        _provider_or_block(condition_terms, provider, 6),
+        _provider_or_block(outcome_terms, provider, 6)
+        or _provider_or_block(doc_terms, provider, 6),
+    ]
+    terms = uniq(
+        components.get("focus_terms", [])
+        + components.get("web_hints", [])
+        + components.get("behavior_terms", [])
+        + components.get("nutrition_terms", [])
+        + components.get("semantic_terms", [])
+        + components.get("doc_type_terms", [])
+    )
+    queries: list[str] = []
+    for term in terms:
+        term_block = _provider_field_term(term, provider)
+        if term_block:
+            queries.append(_join_parts([term_block] + anchors))
+    return uniq([query for query in queries if query])
+
+
 def render_queries_for_provider(
     keyword_taxonomy: dict,
     workstream: str,
@@ -1056,13 +1085,13 @@ def render_queries_for_provider(
     _, components = build_structured_components(keyword_taxonomy, workstream)
     components = _augment_with_semantic_blocks(workstream, components)
     if provider == "pubmed":
-        return _render_pubmed_queries(components)
+        return uniq(_render_pubmed_queries(components) + _render_term_coverage_queries(components, "pubmed"))
     if provider == "europepmc":
-        return _render_europepmc_queries(components)
+        return uniq(_render_europepmc_queries(components) + _render_term_coverage_queries(components, "europepmc"))
     if provider == "openalex":
-        return _render_openalex_queries(components)
+        return uniq(_render_openalex_queries(components) + _render_term_coverage_queries(components, "openalex"))
     if provider == "crossref":
-        return _render_crossref_queries(components)
+        return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, "crossref"))
     return []
 
 

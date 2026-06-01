@@ -46,11 +46,8 @@ from nutev.querypacks.provider_queries import (
     build_provider_querypack,
     write_provider_querypack_audit,
 )
-from nutev.search.crossref import search_crossref
-from nutev.search.europepmc import search_europepmc
 from nutev.search.official_sources import manifest_sources
-from nutev.search.openalex import search_openalex
-from nutev.search.pubmed import search_pubmed
+from nutev.search.provider_orchestrator import search_provider
 from nutev.settings import NutevSettings, load_json
 
 QUERY_BUDGET = {
@@ -76,12 +73,7 @@ _NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
 
 
 def _provider_map():
-    return {
-        "pubmed": lambda q: search_pubmed(q, retmax=18),
-        "europepmc": lambda q: search_europepmc(q, page_size=18),
-        "openalex": lambda q: search_openalex(q, per_page=12),
-        "crossref": lambda q: search_crossref(q, rows=18),
-    }
+    return {"pubmed": True, "europepmc": True, "openalex": True, "crossref": True}
 
 
 def _as_text(value: object) -> str:
@@ -173,7 +165,9 @@ def _merge_article_rows(existing: dict, incoming: dict) -> dict:
     for key, value in incoming.items():
         if value in (None, "", [], {}):
             continue
-        if not merged.get(key):
+        if key in {"abstract", "snippet", "summary"} and len(str(value)) > len(str(merged.get(key) or "")):
+            merged[key] = value
+        elif not merged.get(key):
             merged[key] = value
     # Keep the stronger URL for capture. PMC and direct full-text URLs tend to
     # produce better artifacts than DOI landing pages.
@@ -185,6 +179,13 @@ def _merge_article_rows(existing: dict, incoming: dict) -> dict:
         or incoming_url.lower().endswith(".pdf")
     ):
         merged["url"] = incoming_url
+    providers = []
+    for value in (merged.get("matched_providers"), merged.get("source_provider"), merged.get("source"), incoming.get("matched_providers"), incoming.get("source_provider"), incoming.get("source")):
+        for part in str(value or "").split("|"):
+            part = part.strip()
+            if part and part not in providers:
+                providers.append(part)
+    merged["matched_providers"] = "|".join(providers)
     merged["source"] = merged.get("source") or incoming.get("source")
     return merged
 
@@ -195,6 +196,10 @@ def _dedup_rows(rows: list[dict]) -> list[dict]:
     for r in rows:
         key = _canonical_article_key(r)
         if key not in by_key:
+            r = dict(r)
+            provider = r.get("source_provider") or r.get("source")
+            if provider and not r.get("matched_providers"):
+                r["matched_providers"] = str(provider)
             by_key[key] = r
             order.append(key)
         else:
@@ -337,19 +342,29 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         for provider in supported_priority:
             if provider == "official_web":
                 continue
-            fn = provider_map.get(provider)
-            if fn is None:
+            if provider not in provider_map:
                 continue
             for q in provider_queries.get(provider, [])[:query_budget]:
-                new_rows = _safe_provider_call(provider, fn, q, ws, logger)
-                hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(
-                    new_rows
+                result = search_provider(
+                    provider=provider,
+                    query=q,
+                    workstream=ws,
+                    limit=18 if provider != "openalex" else 12,
+                    checkpoint_dir=settings.output_dirs["07_logs"] / "checkpoints",
+                    resume=True,
+                    logger=logger,
+                    run_id=run_id,
+                    logs_dir=settings.output_dirs["07_logs"],
+                    mode=settings.mode,
                 )
-                rows += new_rows
+                hits_by_provider[provider] = hits_by_provider.get(provider, 0) + len(result.rows)
+                rows += result.rows
 
         try:
             official_rows = manifest_sources(sources, ws)
             hits_by_provider["official_web"] = len(official_rows)
+            for row in official_rows:
+                row.setdefault("source_provider", "official_web")
             rows += official_rows
         except Exception as e:
             logger.warning("official_web falhou ws=%s erro=%s", ws, e)
@@ -538,7 +553,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         artifact_inputs,
         settings.output_dirs["07_logs"] / "artifact_manifest.csv",
     )
-    search_job.status = "completed"
+    provider_failures_path = settings.output_dirs["07_logs"] / "provider_failures.csv"
+    partial_results = provider_failures_path.exists()
+    search_job.status = "partial" if partial_results else "completed"
     search_job.finished_at = __import__("datetime").datetime.now(
         __import__("datetime").timezone.utc
     )
@@ -587,6 +604,19 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "recommendation_candidates_ready_review": sum(1 for r in recommendations if r.recommendation_status == "ready_for_human_review"),
         "recommendation_candidates_insufficient_evidence": sum(1 for r in recommendations if r.recommendation_status == "insufficient_evidence"),
         "conflicting_evidence_total": len(conflicts),
+        "providers_started": sum(len(v) for v in providers_executed_by_workstream.values()),
+        "providers_completed": "see_07_logs_provider_performance_csv",
+        "providers_failed": "see_07_logs_provider_failures_csv",
+        "providers_skipped": providers_unsupported_by_workstream,
+        "pubmed_rows": sum(1 for r in all_rows if r.get("source_provider") == "pubmed" or r.get("source") == "pubmed"),
+        "europepmc_rows": sum(1 for r in all_rows if r.get("source_provider") == "europepmc" or r.get("source") == "europepmc"),
+        "openalex_rows": sum(1 for r in all_rows if r.get("source_provider") == "openalex" or r.get("source") == "openalex"),
+        "crossref_rows": sum(1 for r in all_rows if r.get("source_provider") == "crossref" or r.get("source") == "crossref"),
+        "official_rows": sum(1 for r in all_rows if r.get("source_provider") == "official_web" or r.get("source") == "official_web"),
+        "google_rows": sum(1 for r in all_rows if r.get("source_provider") in {"google", "google_pse", "serpapi"}),
+        "partial_results": partial_results,
+        "checkpoint_resume_used": True,
+        "status": "partial" if partial_results else "completed",
     }
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(
