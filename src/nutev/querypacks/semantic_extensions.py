@@ -154,6 +154,44 @@ OFFICIAL_GUIDANCE_DOCUMENT_TERMS = [
     "professional society statement",
 ]
 
+SOCIAL_NEEDS_FOOD_ACCESS_TERMS = [
+    "food insecurity intervention",
+    "food insecurity screening",
+    "screening for food insecurity",
+    "hunger vital sign",
+    "nutrition security screening",
+    "social needs screening",
+    "social needs intervention",
+    "social determinants of health",
+    "community-based nutrition intervention",
+    "community based nutrition intervention",
+    "community health worker nutrition",
+    "community health worker lifestyle",
+    "healthy food access",
+    "access to healthy food",
+    "healthy food retail",
+    "food pantry intervention",
+    "food pantry referral",
+    "food pharmacy",
+    "food pharmacy program",
+    "social prescribing nutrition",
+    "social prescribing for food insecurity",
+]
+
+SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS = [
+    "food insecurity screening program",
+    "social needs screening program",
+    "community-based intervention",
+    "community based intervention",
+    "community health worker intervention",
+    "food pantry intervention",
+    "food pharmacy program",
+    "social prescribing program",
+    "policy evaluation",
+    "implementation study",
+    "quality improvement study",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -211,6 +249,12 @@ def apply_semantic_extensions() -> None:
         terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
         document_terms=FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS,
     )
+    for block_name in ("equity_access", "food_prescription_programs"):
+        _extend_semantic_block(
+            block_name,
+            terms=SOCIAL_NEEDS_FOOD_ACCESS_TERMS,
+            document_terms=SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS,
+        )
 
 
 apply_semantic_extensions()
