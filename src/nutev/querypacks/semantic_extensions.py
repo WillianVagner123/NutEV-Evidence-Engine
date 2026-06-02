@@ -154,6 +154,24 @@ OFFICIAL_GUIDANCE_DOCUMENT_TERMS = [
     "professional society statement",
 ]
 
+FOOD_FARMACY_TERMS = [
+    "food farmacy",
+    "food farmacy program",
+    "food farmacy intervention",
+    "fresh food farmacy",
+    "fresh food farmacy program",
+    "fresh food farmacy intervention",
+]
+
+FOOD_FARMACY_DOCUMENT_TERMS = [
+    "food farmacy program",
+    "food farmacy intervention",
+    "fresh food farmacy program",
+    "fresh food farmacy intervention",
+    "implementation study",
+    "quality improvement study",
+]
+
 SOCIAL_NEEDS_FOOD_ACCESS_TERMS = [
     "food insecurity intervention",
     "food insecurity screening",
@@ -235,6 +253,16 @@ def _extend_semantic_block(
         )
 
 
+def _prepend_workstream_priority(
+    workstream: str,
+    block_name: str,
+    priority: int,
+) -> None:
+    priorities = semantic_blocks.WORKSTREAM_SEMANTIC_PRIORITIES.setdefault(workstream, [])
+    existing = [(name, value) for name, value in priorities if name != block_name]
+    priorities[:] = [(block_name, priority), *existing]
+
+
 def apply_semantic_extensions() -> None:
     _extend_semantic_block(
         "cardiometabolic_precision",
@@ -261,6 +289,13 @@ def apply_semantic_extensions() -> None:
         terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
         document_terms=FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS,
     )
+    _extend_semantic_block(
+        "food_farmacy_programs",
+        terms=FOOD_FARMACY_TERMS,
+        document_terms=FOOD_FARMACY_DOCUMENT_TERMS,
+    )
+    _prepend_workstream_priority("busca1", "food_farmacy_programs", 5)
+    _prepend_workstream_priority("busca2b", "food_farmacy_programs", 5)
     for block_name in ("equity_access", "food_prescription_programs"):
         _extend_semantic_block(
             block_name,
