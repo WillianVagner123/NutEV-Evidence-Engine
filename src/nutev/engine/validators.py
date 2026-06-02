@@ -140,7 +140,12 @@ def canonical_document_key(row: dict) -> str:
     pmcid = normalize_pmcid(row.get("pmcid"))
     if pmcid:
         return f"pmcid:{pmcid}"
-    url = normalize_url(row.get("final_url") or row.get("resolved_url") or row.get("url"))
+    url = normalize_url(
+        row.get("final_url")
+        or row.get("resolved_url")
+        or row.get("original_url")
+        or row.get("url")
+    )
     if url:
         return f"url:{url.lower()}"
     title = str(row.get("title") or "").strip().lower()
