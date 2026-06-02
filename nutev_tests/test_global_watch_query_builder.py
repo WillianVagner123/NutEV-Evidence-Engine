@@ -59,3 +59,17 @@ def test_guidelines_thesis_mode_surfaces_broader_guidance_families_early():
     assert '("scientific statement")' in rendered[3]
     assert '("position paper")' in rendered[4]
     assert '("guidance statement")' in rendered[5]
+
+
+def test_framework_instrument_queries_include_adherence_and_competence_scales():
+    rows = build_watch_queries(["frameworks_instruments"], 7, "thesis")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+
+    assert "dietary adherence questionnaire" in rendered
+    assert "dietary self-efficacy scale" in rendered
+    assert "nutrition literacy scale" in rendered
+    assert "food agency scale" in rendered
+    assert "cooking confidence scale" in rendered
+    assert "eating competence scale" in rendered
+    assert "satter eating competence inventory" in rendered
+    assert "mediterranean diet adherence screener" in rendered
