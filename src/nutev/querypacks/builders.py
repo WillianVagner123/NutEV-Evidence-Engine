@@ -40,6 +40,28 @@ DIETITIAN_IMPLEMENTATION_TERMS = [
     "registered dietitian nutritionist led intervention",
 ]
 
+ADVANCED_DYSLIPIDEMIA_TERMS = [
+    "hypertriglyceridemia",
+    "hypertriglyceridaemia",
+    "atherogenic dyslipidemia",
+    "atherogenic dyslipidaemia",
+    "remnant cholesterol",
+    "triglyceride-rich lipoprotein",
+    "triglyceride rich lipoprotein",
+    "apolipoprotein b",
+    "apo b",
+    "non-hdl cholesterol",
+    "non hdl cholesterol",
+]
+
+ADVANCED_DYSLIPIDEMIA_FOCUS_TERMS = ADVANCED_DYSLIPIDEMIA_TERMS + [
+    "lipid lowering",
+    "triglyceride lowering",
+    "apo b management",
+    "apolipoprotein b management",
+    "remnant cholesterol management",
+]
+
 EXPANDED_GUIDELINE_VARIANTS = [
     "nutrition practice guideline",
     "dietetic practice guideline",
@@ -665,6 +687,8 @@ def build_structured_components(
     condition_terms = uniq(
         ws.get("condition_terms", []) + enhancements.get("condition_terms", [])
     )
+    if ws_key in {"busca2a", "busca2b"}:
+        condition_terms = uniq(condition_terms + ADVANCED_DYSLIPIDEMIA_TERMS)
     clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
     priority_outcomes = uniq(
         get_named_terms(outcomes_cfg, ws.get("priority_outcomes", []))
@@ -688,6 +712,8 @@ def build_structured_components(
     for block_name in ws.get("focus_blocks", []):
         focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
     focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
+    if ws_key in {"busca2a", "busca2b"}:
+        focus_terms = uniq(focus_terms + ADVANCED_DYSLIPIDEMIA_FOCUS_TERMS)
 
     if ws_key in {"busca2a", "busca2b"}:
         focus_terms = uniq(focus_terms + NUTRITION_CARE_PATHWAY_TERMS)
