@@ -48,6 +48,24 @@ def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     assert "living systematic review" in rendered
 
 
+def test_diet_pattern_queries_include_sustainable_diet_terms_in_quick_mode():
+    rows = build_watch_queries(["diet_patterns"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "sustainable healthy diet" in rendered
+    assert "sustainable healthy diets" in rendered
+    assert "healthy and sustainable diet" in rendered
+    assert "sustainable dietary pattern" in rendered
+
+
+def test_lifestyle_queries_include_lifestyle_change_program_variants_in_quick_mode():
+    rows = build_watch_queries(["lifestyle_medicine"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "lifestyle change program" in rendered
+    assert "lifestyle change programme" in rendered
+    assert "diabetes prevention programme" in rendered
+    assert "national diabetes prevention program" in rendered
+
+
 def test_guidelines_thesis_mode_surfaces_broader_guidance_families_early():
     rows = build_watch_queries(["guidelines_consensus"], 7, "thesis")
     rendered = [str(row["query"]).lower() for row in rows]
