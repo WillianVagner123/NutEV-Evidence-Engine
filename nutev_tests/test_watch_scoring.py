@@ -232,3 +232,11 @@ def test_sustainable_healthy_diet_signals_improve_priority() -> None:
             "title": "Sustainable healthy diets for cardiometabolic risk and obesity care",
         }
     ) > _score_watch_item({"title": "Diets for cardiometabolic risk and obesity care"})
+
+
+def test_taxonomy_aligned_adiposity_and_liver_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Body mass index, visceral fat, waist-to-hip ratio, and hepatic steatosis in cardiometabolic care",
+        }
+    ) > _score_watch_item({"title": "Cardiometabolic care note"})
