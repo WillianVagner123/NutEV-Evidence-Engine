@@ -51,6 +51,43 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+WEIGHT_MAINTENANCE_RELAPSE_TERMS = [
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight-loss maintenance",
+    "weight maintenance intervention",
+    "weight maintenance interventions",
+    "weight maintenance program",
+    "weight maintenance programme",
+    "weight maintenance programs",
+    "weight maintenance programmes",
+    "weight regain prevention",
+    "weight-regain prevention",
+    "prevention of weight regain",
+    "weight regain",
+    "weight regain after weight loss",
+    "post-weight loss maintenance",
+    "post weight loss maintenance",
+    "relapse prevention intervention",
+    "relapse prevention interventions",
+    "behavioral maintenance intervention",
+    "behavioural maintenance intervention",
+    "dietary relapse prevention",
+]
+
+WEIGHT_MAINTENANCE_RELAPSE_DOCUMENT_TERMS = [
+    "weight maintenance trial",
+    "weight-loss maintenance trial",
+    "weight maintenance intervention",
+    "weight maintenance program",
+    "weight maintenance programme",
+    "weight regain prevention trial",
+    "weight-regain prevention trial",
+    "relapse prevention intervention",
+    "behavioral maintenance trial",
+    "behavioural maintenance trial",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -205,6 +242,12 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
+        _extend_semantic_block(
+            block_name,
+            terms=WEIGHT_MAINTENANCE_RELAPSE_TERMS,
+            document_terms=WEIGHT_MAINTENANCE_RELAPSE_DOCUMENT_TERMS,
         )
     _extend_semantic_block(
         "food_literacy_agency",
