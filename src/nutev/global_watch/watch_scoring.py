@@ -1,6 +1,60 @@
 from __future__ import annotations
 
 
+GENERIC_IMPLEMENTATION_TERMS = [
+    "sustainability",
+    "dissemination",
+    "scale-up",
+    "scale up",
+    "adoption",
+    "reach",
+    "maintenance",
+    "real-world implementation",
+    "real world implementation",
+    "real-world evidence",
+    "real world evidence",
+    "quality improvement",
+    "service delivery",
+    "care delivery",
+]
+
+NUTEV_ANCHOR_TERMS = [
+    "nutrition",
+    "diet",
+    "dietary",
+    "food",
+    "meal",
+    "culinary",
+    "lifestyle medicine",
+    "lifestyle nutrition",
+    "lifestyle intervention",
+    "medical nutrition therapy",
+    "obesity",
+    "adiposity",
+    "weight management",
+    "cardiometabolic",
+    "metabolic syndrome",
+    "diabetes",
+    "hypertension",
+    "blood pressure",
+    "dyslipidemia",
+    "dyslipidaemia",
+    "masld",
+    "nafld",
+    "mash",
+    "nash",
+    "fatty liver",
+    "steatotic liver disease",
+    "adherence",
+    "food literacy",
+    "nutrition literacy",
+    "culinary medicine",
+    "commensality",
+    "produce prescription",
+    "medically tailored",
+]
+
+
 def _build_scoring_text(item: dict) -> str:
     return " ".join(
         str(item.get(field, "") or "")
@@ -12,6 +66,16 @@ def _build_scoring_text(item: dict) -> str:
             "category",
         )
     ).lower()
+
+
+def _contains_any(text: str, terms: list[str]) -> bool:
+    return any(term in text for term in terms)
+
+
+def _is_generic_implementation_noise(text: str) -> bool:
+    return _contains_any(text, GENERIC_IMPLEMENTATION_TERMS) and not _contains_any(
+        text, NUTEV_ANCHOR_TERMS
+    )
 
 
 def score_watch_item(item: dict) -> float:
@@ -417,6 +481,9 @@ def score_watch_item(item: dict) -> float:
     for key, value in penalties:
         if key in text:
             score += value
+
+    if _is_generic_implementation_noise(text):
+        score -= 30
 
     if not (item.get("title") or "").strip():
         score -= 20
