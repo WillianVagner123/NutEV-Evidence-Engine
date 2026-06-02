@@ -98,3 +98,16 @@ def test_canonical_document_key_priority():
     assert canonical_document_key({"pmid": "123", "url": "https://x.test"}) == "pmid:123"
     assert canonical_document_key({"pmcid": "pmc123", "url": "https://x.test"}) == "pmcid:PMC123"
     assert canonical_document_key({"url": "https://x.test/a"}) == "url:https://x.test/a"
+
+
+def test_canonical_document_key_uses_original_url_before_title_year():
+    assert (
+        canonical_document_key(
+            {
+                "original_url": "https://example.org/nutmev-guideline/?utm_source=newsletter",
+                "title": "Lifestyle nutrition guideline",
+                "year": "2026",
+            }
+        )
+        == "url:https://example.org/nutmev-guideline"
+    )
