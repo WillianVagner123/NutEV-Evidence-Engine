@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-v1",
+  "version": "2026-06-v2",
   "global": {
     "lifestyle_medicine_pillars": {
       "nutrition": [
@@ -681,12 +681,21 @@
     "diet_quality_adherence": [
       "diet quality",
       "healthy eating index",
+      "alternative healthy eating index",
+      "ahei",
+      "diet quality index",
+      "dietary quality index",
+      "dietary inflammatory index",
+      "healthy diet indicator",
+      "dietary guideline adherence index",
+      "mediterranean diet adherence score",
+      "qualidade da dieta",
+      "índice de qualidade da dieta",
+      "índice de alimentação saudável",
       "adherence",
       "acceptability",
       "feasibility",
       "food literacy",
-      "qualidade da dieta",
-      "healthy eating index",
       "adesão",
       "aceitabilidade",
       "viabilidade",
