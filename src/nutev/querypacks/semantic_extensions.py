@@ -118,6 +118,46 @@ FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS = [
     "nutrition education intervention",
 ]
 
+DIET_QUALITY_INDEX_TERMS = [
+    "diet quality index",
+    "diet quality indices",
+    "diet quality score",
+    "diet quality scores",
+    "healthy eating index",
+    "alternate healthy eating index",
+    "ahei",
+    "dietary quality score",
+    "dietary quality scores",
+    "dietary pattern score",
+    "dietary pattern scores",
+    "mediterranean diet score",
+    "mediterranean dietary score",
+    "dash score",
+    "dash diet score",
+    "plant-based diet index",
+    "plant based diet index",
+    "healthy plant-based diet index",
+    "healthy plant based diet index",
+    "provegetarian food pattern",
+    "pro-vegetarian food pattern",
+    "dietary inflammatory index",
+    "nova score",
+    "ultra-processed food score",
+]
+
+DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
+    "diet quality index validation",
+    "diet quality score validation",
+    "healthy eating index validation",
+    "dietary pattern score validation",
+    "dietary adherence score",
+    "dietary adherence scores",
+    "mediterranean diet adherence score",
+    "dash adherence score",
+    "plant-based diet index validation",
+    "plant based diet index validation",
+]
+
 OFFICIAL_GUIDANCE_TERMS = [
     "evidence-based guideline",
     "evidence based guideline",
@@ -243,6 +283,12 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
+        _extend_semantic_block(
+            block_name,
+            terms=DIET_QUALITY_INDEX_TERMS,
+            document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
         )
     _extend_semantic_block(
         "food_literacy_agency",
