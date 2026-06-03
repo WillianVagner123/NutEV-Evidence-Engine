@@ -8,6 +8,29 @@ WORKSTREAM_ALIASES = {
     "article3": "artigo3_framework",
 }
 
+DIABETES_REMISSION_TERMS = [
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "remission of type 2 diabetes",
+    "glycemic remission",
+    "glycaemic remission",
+    "diabetes reversal",
+    "type 2 diabetes reversal",
+]
+
+CENTRAL_ADIPOSITY_TERMS = [
+    "abdominal obesity",
+    "central obesity",
+    "visceral obesity",
+    "visceral adiposity",
+    "visceral fat",
+    "ectopic fat",
+    "waist-to-height ratio",
+    "waist to height ratio",
+    "waist-to-hip ratio",
+    "waist to hip ratio",
+]
+
 WORKSTREAM_QUERY_ENHANCEMENTS = {
     "busca1": {
         "focus_terms": [
@@ -340,6 +363,10 @@ def build_structured_components(
     condition_terms = uniq(
         ws.get("condition_terms", []) + enhancements.get("condition_terms", [])
     )
+    if ws_key in {"busca2a", "busca2b"}:
+        condition_terms = uniq(
+            condition_terms + DIABETES_REMISSION_TERMS + CENTRAL_ADIPOSITY_TERMS
+        )
     clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
     priority_outcomes = uniq(
         get_named_terms(outcomes_cfg, ws.get("priority_outcomes", []))
@@ -361,6 +388,13 @@ def build_structured_components(
     for block_name in ws.get("focus_blocks", []):
         focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
     focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
+    if ws_key in {"busca2a", "busca2b"}:
+        focus_terms = uniq(
+            focus_terms + DIABETES_REMISSION_TERMS + CENTRAL_ADIPOSITY_TERMS
+        )
+        web_hints = uniq(
+            web_hints + DIABETES_REMISSION_TERMS + CENTRAL_ADIPOSITY_TERMS
+        )
 
     return ws_key, {
         "population_terms": population_terms,
