@@ -21,7 +21,7 @@ def test_food_literacy_queries_include_teaching_kitchen_terms_in_quick_mode():
 
 
 def test_framework_instrument_queries_include_food_competence_and_commensality_scales():
-    rows = build_watch_queries(["frameworks_instruments"], 7, "quick")
+    rows = build_watch_queries(["frameworks_instruments"], 7, "exhaustive")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
     assert "food literacy questionnaire" in rendered
     assert "nutrition literacy instrument" in rendered
