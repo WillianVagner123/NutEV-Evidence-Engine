@@ -158,6 +158,63 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+NUTRITION_CARE_IMPLEMENTATION_TERMS = [
+    "nutrition care intervention",
+    "nutrition care interventions",
+    "nutrition care delivery",
+    "nutrition care program",
+    "nutrition care programme",
+    "medical nutrition therapy intervention",
+    "medical nutrition therapy interventions",
+    "diet therapy intervention",
+    "diet therapy interventions",
+    "dietitian-led care",
+    "dietitian led care",
+    "dietitian-delivered care",
+    "dietitian delivered care",
+    "dietitian-managed care",
+    "dietitian managed care",
+    "registered dietitian intervention",
+    "registered dietitian nutritionist intervention",
+    "nutrition counseling intervention",
+    "nutrition counselling intervention",
+    "dietary counseling intervention",
+    "dietary counselling intervention",
+    "group medical nutrition therapy",
+    "telehealth nutrition counseling",
+    "telehealth nutrition counselling",
+    "remote nutrition counseling",
+    "remote nutrition counselling",
+    "virtual nutrition counseling",
+    "virtual nutrition counselling",
+    "digital nutrition intervention",
+    "digital nutrition interventions",
+]
+
+NUTRITION_CARE_IMPLEMENTATION_DOCUMENT_TERMS = [
+    "nutrition care intervention trial",
+    "nutrition care implementation study",
+    "nutrition care delivery study",
+    "medical nutrition therapy trial",
+    "medical nutrition therapy implementation",
+    "diet therapy trial",
+    "dietitian-led trial",
+    "dietitian led trial",
+    "dietitian-delivered trial",
+    "dietitian delivered trial",
+    "dietitian-managed trial",
+    "dietitian managed trial",
+    "nutrition counseling trial",
+    "nutrition counselling trial",
+    "dietary counseling trial",
+    "dietary counselling trial",
+    "telehealth nutrition intervention",
+    "remote nutrition intervention",
+    "virtual nutrition intervention",
+    "digital nutrition intervention",
+    "pragmatic nutrition trial",
+]
+
 OFFICIAL_GUIDANCE_TERMS = [
     "evidence-based guideline",
     "evidence based guideline",
@@ -289,6 +346,16 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=DIET_QUALITY_INDEX_TERMS,
             document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "nutrition_care_delivery",
+        "implementation_science",
+        "adherence_persistence",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=NUTRITION_CARE_IMPLEMENTATION_TERMS,
+            document_terms=NUTRITION_CARE_IMPLEMENTATION_DOCUMENT_TERMS,
         )
     _extend_semantic_block(
         "food_literacy_agency",
