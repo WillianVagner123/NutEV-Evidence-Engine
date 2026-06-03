@@ -20,6 +20,15 @@ def test_food_literacy_queries_include_teaching_kitchen_terms_in_quick_mode():
     assert "culinary nutrition" in rendered
 
 
+def test_framework_instrument_queries_include_food_competence_and_commensality_scales():
+    rows = build_watch_queries(["frameworks_instruments"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "food literacy questionnaire" in rendered
+    assert "nutrition literacy instrument" in rendered
+    assert "food competence scale" in rendered
+    assert "commensality scale" in rendered
+
+
 def test_obesity_cardiometabolic_queries_include_new_liver_and_lipid_context_terms():
     rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
