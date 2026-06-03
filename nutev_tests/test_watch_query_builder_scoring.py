@@ -1,3 +1,4 @@
+from nutev.global_watch.watch_config import WATCH_CATEGORIES
 from nutev.global_watch.watch_query_builder import build_watch_queries
 from nutev.global_watch.watch_scoring import score_watch_item
 
@@ -26,3 +27,17 @@ def test_watch_scoring_prioritizes_nutrition_care_implementation_hits():
     }
 
     assert score_watch_item(enriched) > score_watch_item(baseline)
+
+
+def test_watch_config_includes_iberoamerican_nutrition_and_cardiometabolic_terms():
+    guidelines = {term.lower() for term in WATCH_CATEGORIES["guidelines_consensus"]}
+    cardiometabolic = {term.lower() for term in WATCH_CATEGORIES["obesity_cardiometabolic"]}
+    implementation = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
+    food_literacy = {term.lower() for term in WATCH_CATEGORIES["food_literacy_culinary_commensality"]}
+
+    assert "guia alimentar" in guidelines
+    assert "diretrizes alimentares" in guidelines
+    assert "risco cardiometabolico" in cardiometabolic
+    assert "diabetes tipo 2" in cardiometabolic
+    assert "barreiras e facilitadores" in implementation
+    assert "literacia alimentar" in food_literacy
