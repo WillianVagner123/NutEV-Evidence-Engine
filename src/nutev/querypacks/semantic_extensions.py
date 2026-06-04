@@ -51,6 +51,54 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+DIABETES_REMISSION_DEPRESCRIBING_TERMS = [
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "remission of type 2 diabetes",
+    "remission of diabetes",
+    "glycemic remission",
+    "glycaemic remission",
+    "diabetes reversal",
+    "type 2 diabetes reversal",
+    "lifestyle-induced diabetes remission",
+    "lifestyle induced diabetes remission",
+    "diet-induced diabetes remission",
+    "diet induced diabetes remission",
+    "weight loss-induced diabetes remission",
+    "weight loss induced diabetes remission",
+    "low energy diet diabetes remission",
+    "low-energy diet diabetes remission",
+    "total diet replacement diabetes remission",
+    "meal replacement diabetes remission",
+    "diabetes medication reduction",
+    "glucose-lowering medication reduction",
+    "glucose lowering medication reduction",
+    "antihyperglycemic medication reduction",
+    "antihyperglycaemic medication reduction",
+    "deprescribing diabetes medication",
+    "diabetes medication deprescribing",
+    "medication deprescribing",
+    "antihypertensive deprescribing",
+]
+
+DIABETES_REMISSION_DEPRESCRIBING_DOCUMENT_TERMS = [
+    "diabetes remission trial",
+    "type 2 diabetes remission trial",
+    "diabetes remission intervention",
+    "type 2 diabetes remission intervention",
+    "diabetes remission program",
+    "diabetes remission programme",
+    "diabetes remission guideline",
+    "diabetes remission consensus",
+    "diabetes remission consensus report",
+    "diabetes remission position statement",
+    "diabetes remission systematic review",
+    "diabetes remission meta-analysis",
+    "deprescribing guideline",
+    "deprescribing consensus",
+    "medication deprescribing trial",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -270,6 +318,11 @@ def apply_semantic_extensions() -> None:
         document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
     )
     _extend_semantic_block(
+        "cardiometabolic_precision",
+        terms=DIABETES_REMISSION_DEPRESCRIBING_TERMS,
+        document_terms=DIABETES_REMISSION_DEPRESCRIBING_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
         "evidence_synthesis",
         terms=OFFICIAL_GUIDANCE_TERMS,
         document_terms=OFFICIAL_GUIDANCE_DOCUMENT_TERMS,
@@ -283,6 +336,12 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in ("implementation_science", "adherence_persistence", "lifestyle_nutrition_patterns"):
+        _extend_semantic_block(
+            block_name,
+            terms=DIABETES_REMISSION_DEPRESCRIBING_TERMS,
+            document_terms=DIABETES_REMISSION_DEPRESCRIBING_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
