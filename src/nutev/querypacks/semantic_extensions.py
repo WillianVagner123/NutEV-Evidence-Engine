@@ -12,13 +12,23 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS = [
     "ckm syndrome",
     "ckm health",
     "ckm risk",
+    "cardiorenal metabolic syndrome",
+    "cardiorenal-metabolic syndrome",
+    "cardiorenal metabolic health",
+    "cardiorenal-metabolic health",
+    "cardiorenal metabolic risk",
+    "cardiorenal-metabolic risk",
+    "kidney cardiometabolic health",
+    "kidney cardiometabolic risk",
 ]
 
 CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "scientific statement",
     "presidential advisory",
+    "advisory statement",
     "clinical practice guideline",
     "consensus statement",
+    "consensus report",
     "clinical decision pathway",
     "practice guidance",
     "systematic review",
