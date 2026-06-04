@@ -113,3 +113,20 @@ def test_food_literacy_semantic_block_adds_operational_budget_and_shopping_terms
     assert "shopping skills scale" in document_terms
     assert "food budgeting scale" in document_terms
     assert "food resource management questionnaire" in document_terms
+
+
+def test_commensality_semantic_extensions_add_social_meal_context_terms() -> None:
+    terms = semantic_terms("artigo3_framework", min_priority=5)
+    document_terms = semantic_terms(
+        "artigo3_framework",
+        field="document_terms",
+        min_priority=5,
+    )
+
+    assert "eating together" in terms
+    assert "family mealtime" in terms
+    assert "meal companionship" in terms
+    assert "convivial eating" in terms
+    assert "commensality scale" in document_terms
+    assert "family mealtime scale" in document_terms
+    assert "meal context questionnaire" in document_terms
