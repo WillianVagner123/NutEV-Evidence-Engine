@@ -240,3 +240,11 @@ def test_taxonomy_aligned_adiposity_and_liver_signals_improve_priority() -> None
             "title": "Body mass index, visceral fat, waist-to-hip ratio, and hepatic steatosis in cardiometabolic care",
         }
     ) > _score_watch_item({"title": "Cardiometabolic care note"})
+
+
+def test_carbohydrate_quality_fiber_and_glycemic_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Carbohydrate quality, dietary fiber, whole grains, and glycemic index for cardiometabolic risk",
+        }
+    ) > _score_watch_item({"title": "Diet for cardiometabolic risk"})
