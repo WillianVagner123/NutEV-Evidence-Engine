@@ -232,6 +232,33 @@ SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS = [
     "quality improvement study",
 ]
 
+COMMENSALITY_SOCIAL_MEAL_TERMS = [
+    "eating together",
+    "shared eating",
+    "eating companionship",
+    "convivial eating",
+    "family mealtime",
+    "family mealtimes",
+    "family meal frequency",
+    "meal frequency",
+    "meal companionship",
+    "social meals",
+    "group meals",
+    "eating alone",
+]
+
+COMMENSALITY_SOCIAL_MEAL_DOCUMENT_TERMS = [
+    "commensality scale",
+    "shared meals scale",
+    "family meals scale",
+    "family mealtime scale",
+    "meal context questionnaire",
+    "social eating questionnaire",
+    "observational study",
+    "qualitative study",
+    "mixed methods study",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -301,6 +328,11 @@ def apply_semantic_extensions() -> None:
             terms=SOCIAL_NEEDS_FOOD_ACCESS_TERMS,
             document_terms=SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "commensality_context",
+        terms=COMMENSALITY_SOCIAL_MEAL_TERMS,
+        document_terms=COMMENSALITY_SOCIAL_MEAL_DOCUMENT_TERMS,
+    )
 
 
 apply_semantic_extensions()
