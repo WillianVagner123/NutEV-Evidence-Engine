@@ -406,6 +406,7 @@ WATCH_CATEGORIES = {
         "nutrition security",
         "food security",
         "food insecurity",
+        "household food insecurity",
         "food insecurity screening",
         "screening for food insecurity",
         "hunger vital sign",
