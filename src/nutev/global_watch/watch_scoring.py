@@ -418,6 +418,37 @@ BONUS_TERMS: tuple[tuple[str, float], ...] = (
     ("obesity", 10),
 )
 
+ADHERENCE_MAINTENANCE_TERMS: tuple[tuple[str, float], ...] = (
+    ("long-term adherence", 18),
+    ("long term adherence", 18),
+    ("dietary maintenance", 16),
+    ("behavioral maintenance", 16),
+    ("behavioural maintenance", 16),
+    ("weight maintenance", 16),
+    ("weight loss maintenance", 18),
+    ("long-term weight loss maintenance", 20),
+    ("long term weight loss maintenance", 20),
+    ("weight regain prevention", 18),
+    ("weight regain", 16),
+    ("relapse prevention", 14),
+    ("lapse management", 12),
+    ("dietary lapse", 12),
+    ("dietary lapses", 12),
+    ("habit formation", 14),
+    ("implementation intentions", 12),
+    ("dietary self-monitoring", 12),
+    ("dietary self-regulation", 12),
+    ("dietary self regulation", 12),
+    ("eating self-regulation", 12),
+    ("self-regulation of eating", 12),
+    ("healthy eating index", 12),
+    ("diet quality", 8),
+    ("engagement", 8),
+    ("retention", 8),
+    ("attrition", 6),
+    ("dropout", 6),
+)
+
 PENALTY_TERMS: tuple[tuple[str, float], ...] = (
     ("editorial", -40),
     ("commentary", -35),
@@ -465,6 +496,7 @@ def score_watch_item(item: dict) -> float:
     score = float(item.get("relevance_score") or 0)
 
     score = _apply_terms(score, text, BONUS_TERMS)
+    score = _apply_terms(score, text, ADHERENCE_MAINTENANCE_TERMS)
 
     if item.get("is_new"):
         score += 15
