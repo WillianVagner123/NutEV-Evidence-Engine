@@ -126,6 +126,21 @@ def test_busca1_semantic_blocks_include_food_environment_policy_terms() -> None:
     assert "policy evaluation" in busca1_doc_terms
 
 
+def test_equity_access_terms_cover_food_environment_interventions() -> None:
+    busca2b_terms = semantic_terms("busca2b", min_priority=4)
+    busca2b_doc_terms = semantic_terms(
+        "busca2b",
+        field="document_terms",
+        min_priority=4,
+    )
+
+    assert "neighborhood food environment" in busca2b_terms
+    assert "food environment intervention" in busca2b_terms
+    assert "healthy corner store" in busca2b_terms
+    assert "food retail intervention" in busca2b_doc_terms
+    assert "grocery store intervention" in busca2b_doc_terms
+
+
 def test_provider_querypack_builds_per_provider():
     querypack = build_provider_querypack(
         _sample_taxonomy(),
