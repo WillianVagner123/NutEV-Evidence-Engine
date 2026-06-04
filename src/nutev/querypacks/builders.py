@@ -62,6 +62,39 @@ ADVANCED_DYSLIPIDEMIA_FOCUS_TERMS = ADVANCED_DYSLIPIDEMIA_TERMS + [
     "remnant cholesterol management",
 ]
 
+METABOLIC_REMISSION_TERMS = [
+    "diabetes remission",
+    "type 2 diabetes remission",
+    "diabetes reversal",
+    "glycemic remission",
+    "glycaemic remission",
+    "remission of type 2 diabetes",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight regain prevention",
+    "weight regain management",
+]
+
+METABOLIC_REMISSION_WEB_HINTS = [
+    "diabetes remission guideline",
+    "diabetes remission consensus",
+    "diabetes remission consensus report",
+    "type 2 diabetes remission guideline",
+    "type 2 diabetes remission consensus",
+    "weight loss maintenance trial",
+    "weight loss maintenance systematic review",
+    "weight regain prevention trial",
+]
+
+METABOLIC_REMISSION_DOCUMENT_TERMS = [
+    "remission consensus",
+    "remission consensus report",
+    "remission guideline",
+    "weight loss maintenance trial",
+    "weight loss maintenance systematic review",
+]
+
 EXPANDED_GUIDELINE_VARIANTS = [
     "nutrition practice guideline",
     "dietetic practice guideline",
@@ -713,11 +746,17 @@ def build_structured_components(
         focus_terms.extend(get_global_block(keyword_taxonomy, block_name))
     focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
     if ws_key in {"busca2a", "busca2b"}:
-        focus_terms = uniq(focus_terms + ADVANCED_DYSLIPIDEMIA_FOCUS_TERMS)
+        focus_terms = uniq(
+            focus_terms + ADVANCED_DYSLIPIDEMIA_FOCUS_TERMS + METABOLIC_REMISSION_TERMS
+        )
+        priority_outcomes = uniq(priority_outcomes + METABOLIC_REMISSION_TERMS)
+        doc_type_terms = uniq(doc_type_terms + METABOLIC_REMISSION_DOCUMENT_TERMS)
 
     if ws_key in {"busca2a", "busca2b"}:
         focus_terms = uniq(focus_terms + NUTRITION_CARE_PATHWAY_TERMS)
-        web_hints = uniq(web_hints + NUTRITION_CARE_PATHWAY_TERMS)
+        web_hints = uniq(
+            web_hints + NUTRITION_CARE_PATHWAY_TERMS + METABOLIC_REMISSION_WEB_HINTS
+        )
     if ws_key == "busca2b":
         focus_terms = uniq(focus_terms + DIETITIAN_IMPLEMENTATION_TERMS)
         web_hints = uniq(web_hints + DIETITIAN_IMPLEMENTATION_TERMS)
