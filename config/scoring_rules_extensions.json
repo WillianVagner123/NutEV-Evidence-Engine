@@ -1,0 +1,43 @@
+{
+  "keyword_points": {
+    "diabetes remission": 3,
+    "type 2 diabetes remission": 4,
+    "diabetes reversal": 3,
+    "glycemic remission": 3,
+    "glycaemic remission": 3,
+    "remission of type 2 diabetes": 4,
+    "weight loss maintenance": 3,
+    "long-term weight loss maintenance": 4,
+    "long term weight loss maintenance": 4,
+    "weight regain prevention": 3,
+    "weight regain management": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "diabetes remission": 4,
+      "type 2 diabetes remission": 5,
+      "diabetes reversal": 4,
+      "glycemic remission": 4,
+      "glycaemic remission": 4,
+      "remission of type 2 diabetes": 5,
+      "weight loss maintenance": 4,
+      "long-term weight loss maintenance": 5,
+      "long term weight loss maintenance": 5,
+      "weight regain prevention": 4,
+      "weight regain management": 4
+    },
+    "busca2b": {
+      "diabetes remission": 4,
+      "type 2 diabetes remission": 5,
+      "diabetes reversal": 4,
+      "glycemic remission": 4,
+      "glycaemic remission": 4,
+      "remission of type 2 diabetes": 5,
+      "weight loss maintenance": 4,
+      "long-term weight loss maintenance": 5,
+      "long term weight loss maintenance": 5,
+      "weight regain prevention": 4,
+      "weight regain management": 4
+    }
+  }
+}
