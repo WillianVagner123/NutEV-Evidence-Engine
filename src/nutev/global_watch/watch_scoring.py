@@ -522,6 +522,92 @@ PROVIDER_BONUS = {
     "crossref": 5,
 }
 
+NUTMEV_SCOPE_TERMS = (
+    "nutrition",
+    "diet",
+    "dietary",
+    "food",
+    "meal",
+    "culinary",
+    "cooking",
+    "lifestyle medicine",
+    "lifestyle intervention",
+    "lifestyle modification",
+    "therapeutic lifestyle",
+    "medical nutrition therapy",
+    "nutrition care",
+    "nutrition counseling",
+    "nutrition counselling",
+    "dietary counseling",
+    "dietary counselling",
+    "registered dietitian",
+    "dietitian",
+    "obesity",
+    "overweight",
+    "adiposity",
+    "body mass index",
+    "bmi",
+    "cardiometabolic",
+    "metabolic syndrome",
+    "type 2 diabetes",
+    "diabetes",
+    "prediabetes",
+    "insulin resistance",
+    "hypertension",
+    "blood pressure",
+    "dyslipidemia",
+    "dyslipidaemia",
+    "hyperlipidemia",
+    "hyperlipidaemia",
+    "hypertriglyceridemia",
+    "hypertriglyceridaemia",
+    "apolipoprotein b",
+    "apo b",
+    "masld",
+    "nafld",
+    "mafld",
+    "mash",
+    "nash",
+    "fatty liver",
+    "steatotic liver disease",
+    "hepatic steatosis",
+    "mediterranean",
+    "dash",
+    "dietary approaches to stop hypertension",
+    "mind diet",
+    "plant-based",
+    "plant based",
+    "vegetarian",
+    "vegan",
+    "portfolio diet",
+    "nordic diet",
+    "eat-lancet",
+    "planetary health diet",
+    "ultra-processed",
+    "ultra processed",
+    "food literacy",
+    "nutrition literacy",
+    "food agency",
+    "food environment",
+    "commensality",
+    "shared meals",
+    "family meals",
+    "food is medicine",
+    "food as medicine",
+    "produce prescription",
+    "medically tailored",
+    "implementation",
+    "adherence",
+    "behavior change",
+    "behaviour change",
+    "self-efficacy",
+    "self efficacy",
+    "motivational interviewing",
+    "health coaching",
+)
+
+OUT_OF_SCOPE_HIGH_SCORE_PENALTY = -45.0
+
 
 def _build_scoring_text(item: dict) -> str:
     return " ".join(str(item.get(field, "") or "") for field in SCORING_FIELDS).lower()
@@ -532,6 +618,10 @@ def _apply_terms(score: float, text: str, terms: Iterable[tuple[str, float]]) ->
         if key in text:
             score += value
     return score
+
+
+def _has_nutmev_scope_signal(text: str) -> bool:
+    return any(term in text for term in NUTMEV_SCOPE_TERMS)
 
 
 def _is_synthetic_fallback(item: dict, text: str) -> bool:
@@ -556,6 +646,9 @@ def score_watch_item(item: dict) -> float:
     provider = (item.get("source_provider") or "").lower()
     score += PROVIDER_BONUS.get(provider, 0)
     score = _apply_terms(score, text, PENALTY_TERMS)
+
+    if not _has_nutmev_scope_signal(text):
+        score += OUT_OF_SCOPE_HIGH_SCORE_PENALTY
 
     if not (item.get("title") or "").strip():
         score -= 20
