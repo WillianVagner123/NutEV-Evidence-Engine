@@ -96,6 +96,21 @@ NUTRITION_CARE_DELIVERY_TERMS = [
     "registered dietitian nutritionist led intervention",
 ]
 
+NUTRITION_PRACTICE_GUIDELINE_TERMS = [
+    "nutrition practice guideline",
+    "nutrition practice guidelines",
+    "dietetic practice guideline",
+    "dietetic practice guidelines",
+    "dietitian practice guideline",
+    "dietitian practice guidelines",
+    "nutrition care guideline",
+    "nutrition care guidelines",
+    "nutrition care pathway",
+    "nutrition care pathways",
+    "nutrition care protocol",
+    "nutrition care protocols",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -126,6 +141,7 @@ CATEGORY_CONTEXT_TERMS = {
         "clinical decision pathway",
         "decision pathway",
         "living guideline",
+        *NUTRITION_PRACTICE_GUIDELINE_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "lifestyle_medicine": [
@@ -420,6 +436,9 @@ QUICK_MODE_SEED_GROUPS = {
             "guideline update",
             "dietary guidelines",
             "food-based dietary guidelines",
+            "nutrition practice guideline",
+            "dietetic practice guideline",
+            "nutrition care guideline",
             "diretriz",
             "recomendações",
         ],
@@ -448,6 +467,8 @@ QUICK_MODE_SEED_GROUPS = {
             "declaração científica",
             "clinical pathway",
             "care pathway",
+            "nutrition care pathway",
+            "nutrition care protocol",
             "clinical decision pathway",
             "decision pathway",
             "living guideline",
@@ -1100,6 +1121,8 @@ HIGH_PRIORITY_MARKERS = (
     "care pathway",
     "clinical decision pathway",
     "decision pathway",
+    "nutrition care pathway",
+    "nutrition care protocol",
 )
 
 
