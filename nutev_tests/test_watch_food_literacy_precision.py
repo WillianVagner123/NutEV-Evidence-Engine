@@ -21,6 +21,20 @@ def test_food_literacy_queries_add_labeling_and_security_context() -> None:
     assert '"front-of-pack labelling"' in first_query
 
 
+def test_food_literacy_thesis_queries_include_social_needs_screening_terms() -> None:
+    queries = build_watch_queries(
+        ["food_literacy_culinary_commensality"],
+        since_days=30,
+        mode="thesis",
+    )
+    rendered = "\n".join(str(query["query"]).lower() for query in queries)
+
+    assert "nutrition security screening" in rendered
+    assert "food insecurity screening" in rendered
+    assert "social needs referral" in rendered
+    assert "social prescribing" in rendered
+
+
 def test_labeling_and_security_signals_improve_priority() -> None:
     enriched = score_watch_item(
         {
