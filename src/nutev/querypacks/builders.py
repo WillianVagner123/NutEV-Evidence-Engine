@@ -54,6 +54,24 @@ ADVANCED_DYSLIPIDEMIA_TERMS = [
     "non hdl cholesterol",
 ]
 
+CARDIOMETABOLIC_PRECISION_TERMS = [
+    "cardiometabolic risk",
+    "cardiometabolic health",
+    "cardiometabolic disease",
+    "cardiometabolic diseases",
+    "metabolic syndrome",
+    "metabolic syndrome x",
+    "insulin resistance",
+    "central adiposity",
+    "abdominal adiposity",
+    "visceral adiposity",
+    "waist circumference",
+    "waist-to-height ratio",
+    "waist to height ratio",
+    "waist-to-hip ratio",
+    "waist to hip ratio",
+]
+
 ADVANCED_DYSLIPIDEMIA_FOCUS_TERMS = ADVANCED_DYSLIPIDEMIA_TERMS + [
     "lipid lowering",
     "triglyceride lowering",
@@ -721,7 +739,9 @@ def build_structured_components(
         ws.get("condition_terms", []) + enhancements.get("condition_terms", [])
     )
     if ws_key in {"busca2a", "busca2b"}:
-        condition_terms = uniq(condition_terms + ADVANCED_DYSLIPIDEMIA_TERMS)
+        condition_terms = uniq(
+            condition_terms + ADVANCED_DYSLIPIDEMIA_TERMS + CARDIOMETABOLIC_PRECISION_TERMS
+        )
     clinical_terms = get_named_terms(clinical_cfg, ws.get("clinical_keys", []))
     priority_outcomes = uniq(
         get_named_terms(outcomes_cfg, ws.get("priority_outcomes", []))
@@ -747,9 +767,14 @@ def build_structured_components(
     focus_terms = uniq(focus_terms + enhancements.get("focus_terms", []))
     if ws_key in {"busca2a", "busca2b"}:
         focus_terms = uniq(
-            focus_terms + ADVANCED_DYSLIPIDEMIA_FOCUS_TERMS + METABOLIC_REMISSION_TERMS
+            focus_terms
+            + ADVANCED_DYSLIPIDEMIA_FOCUS_TERMS
+            + CARDIOMETABOLIC_PRECISION_TERMS
+            + METABOLIC_REMISSION_TERMS
         )
-        priority_outcomes = uniq(priority_outcomes + METABOLIC_REMISSION_TERMS)
+        priority_outcomes = uniq(
+            priority_outcomes + CARDIOMETABOLIC_PRECISION_TERMS + METABOLIC_REMISSION_TERMS
+        )
         doc_type_terms = uniq(doc_type_terms + METABOLIC_REMISSION_DOCUMENT_TERMS)
 
     if ws_key in {"busca2a", "busca2b"}:
