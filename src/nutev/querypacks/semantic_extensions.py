@@ -24,6 +24,44 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+OBESITY_CARDIOMETABOLIC_STAGING_TERMS = [
+    "obesity staging",
+    "obesity staging system",
+    "edmonton obesity staging system",
+    "edmonton obesity stage",
+    "eoss",
+    "adiposity staging",
+    "adiposity-based staging",
+    "adiposity based staging",
+    "adiposity-based chronic disease staging",
+    "adiposity based chronic disease staging",
+    "cardiometabolic staging",
+    "cardiometabolic disease staging",
+    "cardiometabolic-based chronic disease",
+    "cardiometabolic based chronic disease",
+    "cardiometabolic risk staging",
+    "cardiometabolic risk stratification",
+    "metabolic health staging",
+    "metabolic syndrome severity score",
+    "metabolic syndrome severity",
+    "cardiometabolic multimorbidity",
+    "obesity complications staging",
+    "obesity-related complications",
+    "obesity related complications",
+]
+
+OBESITY_CARDIOMETABOLIC_STAGING_DOCUMENT_TERMS = [
+    "obesity staging guideline",
+    "obesity staging consensus",
+    "obesity staging system",
+    "edmonton obesity staging system",
+    "adiposity-based chronic disease framework",
+    "adiposity based chronic disease framework",
+    "cardiometabolic staging framework",
+    "cardiometabolic risk stratification",
+    "metabolic syndrome severity score",
+]
+
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
     "intensive lifestyle intervention",
     "intensive lifestyle interventions",
@@ -266,8 +304,14 @@ def _extend_semantic_block(
 def apply_semantic_extensions() -> None:
     _extend_semantic_block(
         "cardiometabolic_precision",
-        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
-        document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+        terms=(
+            CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS
+            + OBESITY_CARDIOMETABOLIC_STAGING_TERMS
+        ),
+        document_terms=(
+            CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS
+            + OBESITY_CARDIOMETABOLIC_STAGING_DOCUMENT_TERMS
+        ),
     )
     _extend_semantic_block(
         "evidence_synthesis",
