@@ -67,6 +67,23 @@ FOOD_AS_MEDICINE_ACCESS_TERMS = [
     "nutrition assistance",
     "nutrition assistance program",
     "nutrition assistance programs",
+    "food insecurity",
+    "household food insecurity",
+    "food insecurity screening",
+    "screening for food insecurity",
+    "hunger vital sign",
+    "social needs screening",
+    "social needs referral",
+    "social prescribing",
+    "food pantry referral",
+    "food bank partnership",
+    "community food program",
+    "community food programme",
+    "community health worker",
+    "community health worker-led nutrition",
+    "community health worker led nutrition",
+    "patient navigation",
+    "care navigation",
 ]
 
 NUTRITION_CARE_DELIVERY_TERMS = [
