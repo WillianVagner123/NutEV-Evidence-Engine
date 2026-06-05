@@ -32,5 +32,29 @@ class NutevSettings:
             "10_curated": b / "10_curated",
         }
 
+
+def _deep_merge_dict(base: dict, overlay: dict) -> dict:
+    merged = dict(base)
+    for key, value in overlay.items():
+        if isinstance(value, dict) and isinstance(merged.get(key), dict):
+            merged[key] = _deep_merge_dict(merged[key], value)
+        else:
+            merged[key] = value
+    return merged
+
+
+def _load_json_with_optional_extension(path: Path) -> dict:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if path.name != "scoring_rules.json":
+        return data
+
+    extension_path = path.with_name("scoring_rules_extensions.json")
+    if not extension_path.exists():
+        return data
+
+    extension = json.loads(extension_path.read_text(encoding="utf-8"))
+    return _deep_merge_dict(data, extension)
+
+
 def load_json(path: Path | str) -> dict:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    return _load_json_with_optional_extension(Path(path))
