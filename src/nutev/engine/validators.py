@@ -14,6 +14,8 @@ from nutev.engine.enums import (
 DOI_RE = re.compile(r"(10\.\d{4,9}/[-._;()/:A-Z0-9]+)", re.I)
 PMID_RE = re.compile(r"^\d{1,12}$")
 PMCID_RE = re.compile(r"^PMC\d+$", re.I)
+TITLE_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
+WHITESPACE_RE = re.compile(r"\s+")
 TRACKING_QUERY_PARAMS = {
     "fbclid",
     "gclid",
@@ -56,6 +58,28 @@ def normalize_pmcid(pmcid: str | None) -> str | None:
     if value.isdigit():
         return f"PMC{value}"
     return None
+
+
+def normalize_title(title: str | None) -> str | None:
+    if not title:
+        return None
+    lowered = WHITESPACE_RE.sub(" ", str(title).strip().lower())
+    normalized = TITLE_NON_ALNUM_RE.sub(" ", lowered)
+    normalized = WHITESPACE_RE.sub(" ", normalized).strip()
+    return normalized or None
+
+
+def normalize_year(year: str | int | float | None) -> str:
+    if year in (None, ""):
+        return ""
+    value = str(year).strip()
+    try:
+        parsed = int(float(value))
+    except (TypeError, ValueError):
+        return value
+    if 1000 <= parsed <= 3000:
+        return str(parsed)
+    return value
 
 
 def _normalize_query(query: str) -> str:
@@ -140,11 +164,16 @@ def canonical_document_key(row: dict) -> str:
     pmcid = normalize_pmcid(row.get("pmcid"))
     if pmcid:
         return f"pmcid:{pmcid}"
-    url = normalize_url(row.get("final_url") or row.get("resolved_url") or row.get("url"))
+    url = normalize_url(
+        row.get("final_url")
+        or row.get("resolved_url")
+        or row.get("original_url")
+        or row.get("url")
+    )
     if url:
         return f"url:{url.lower()}"
-    title = str(row.get("title") or "").strip().lower()
-    year = str(row.get("year") or "").strip()
+    title = normalize_title(row.get("title"))
+    year = normalize_year(row.get("year"))
     if title:
         return f"title_year:{title}|{year}"
     raise ValueError("Cannot build document key: missing DOI, PMID, PMCID, URL and title")
