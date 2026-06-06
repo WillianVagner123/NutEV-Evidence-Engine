@@ -37,8 +37,8 @@ def test_curated_priority_matches_behavior_change_implementation_terms() -> None
 
 def test_curated_priority_matches_food_access_and_social_prescribing_terms() -> None:
     row = {
-        "title": "Food pharmacy referral and social prescribing for adults with cardiometabolic risk",
-        "abstract": "The intervention included grocery prescriptions and nutrition security screening.",
+        "title": "Food pharmacy referral and social prescribing in primary care",
+        "abstract": "The service included grocery prescriptions and food insecurity screening.",
         "relevance_score": 8,
         "editorial_priority_tier": "standard",
     }
