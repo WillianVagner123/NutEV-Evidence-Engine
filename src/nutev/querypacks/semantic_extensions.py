@@ -51,6 +51,34 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+METABOLIC_REMISSION_MAINTENANCE_TERMS = [
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "remission of type 2 diabetes",
+    "glycemic remission",
+    "glycaemic remission",
+    "diabetes reversal",
+    "type 2 diabetes reversal",
+    "metabolic remission",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight regain prevention",
+    "weight regain management",
+]
+
+METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
+    "diabetes remission consensus",
+    "diabetes remission consensus report",
+    "type 2 diabetes remission guideline",
+    "type 2 diabetes remission consensus",
+    "remission consensus",
+    "remission guideline",
+    "weight loss maintenance trial",
+    "weight loss maintenance systematic review",
+    "weight regain prevention trial",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -309,6 +337,16 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "adherence_persistence",
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=METABOLIC_REMISSION_MAINTENANCE_TERMS,
+            document_terms=METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
