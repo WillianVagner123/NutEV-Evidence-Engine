@@ -292,12 +292,24 @@
         "food and nutrition literacy",
         "nutrition literacy",
         "nutrition security",
+        "nutrition insecurity",
+        "nutrition security screening",
         "food agency",
         "food is medicine",
         "produce prescription",
         "produce prescriptions",
         "medically tailored meals",
         "medically tailored groceries",
+        "food insecurity screening",
+        "screening for food insecurity",
+        "hunger vital sign",
+        "social needs screening",
+        "screening and referral",
+        "closed-loop referral",
+        "closed loop referral",
+        "social prescribing",
+        "food pantry referral",
+        "food bank partnership",
         "teaching kitchen",
         "teaching kitchens",
         "medicina culinária",
@@ -389,6 +401,27 @@
         "meal context",
         "work routine",
         "environmental determinant",
+        "nutrition security",
+        "nutrition insecurity",
+        "food insecurity",
+        "food insecurity screening",
+        "screening for food insecurity",
+        "hunger vital sign",
+        "social needs screening",
+        "social needs referral",
+        "screening and referral",
+        "closed-loop referral",
+        "closed loop referral",
+        "screen and intervene",
+        "social prescribing",
+        "food pantry referral",
+        "food bank partnership",
+        "community food program",
+        "community food programme",
+        "food access intervention",
+        "healthy food access intervention",
+        "nutrition security intervention",
+        "food insecurity intervention",
         "ambiente alimentar",
         "acesso a alimentos",
         "custo dos alimentos",
@@ -775,7 +808,12 @@
         "technical report",
         "policy brief",
         "dietary counseling",
-        "meal preparation"
+        "meal preparation",
+        "food insecurity screening",
+        "nutrition security screening",
+        "social prescribing",
+        "screening and referral",
+        "food pantry referral"
       ]
     },
     "busca2a": {
@@ -949,7 +987,13 @@
         "mafld",
         "clinical obesity",
         "adiposity-based chronic disease",
-        "adiposity based chronic disease"
+        "adiposity based chronic disease",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "social prescribing program",
+        "screening and referral",
+        "closed-loop referral",
+        "hunger vital sign"
       ]
     },
     "artigo3_framework": {
@@ -973,7 +1017,10 @@
         "culinary medicine",
         "commensality",
         "adherence",
-        "implementation"
+        "implementation",
+        "food insecurity screening",
+        "social prescribing",
+        "screening and referral"
       ],
       "clinical_keys": [
         "obesity",
@@ -1020,7 +1067,11 @@
         "meal preparation",
         "dietary counseling",
         "questionário",
-        "índice"
+        "índice",
+        "nutrition security screening",
+        "social needs screening",
+        "social prescribing",
+        "food pantry referral"
       ]
     }
   }
