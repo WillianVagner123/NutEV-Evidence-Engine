@@ -96,6 +96,29 @@ NUTRITION_CARE_DELIVERY_TERMS = [
     "registered dietitian nutritionist led intervention",
 ]
 
+DIGITAL_NUTRITION_BEHAVIOR_TERMS = [
+    "digital nutrition intervention",
+    "digital dietary intervention",
+    "web-based dietary intervention",
+    "web based dietary intervention",
+    "online dietary intervention",
+    "online nutrition intervention",
+    "app-based dietary intervention",
+    "app based dietary intervention",
+    "mobile app dietary intervention",
+    "mobile app nutrition intervention",
+    "text messaging dietary intervention",
+    "text message dietary intervention",
+    "sms dietary intervention",
+    "remote lifestyle coaching",
+    "virtual nutrition counseling",
+    "virtual nutrition counselling",
+    "telehealth nutrition counseling",
+    "telehealth nutrition counselling",
+    "digital weight management",
+    "remote weight management",
+]
+
 NUTRITION_PRACTICE_GUIDELINE_TERMS = [
     "nutrition practice guideline",
     "nutrition practice guidelines",
@@ -188,6 +211,7 @@ CATEGORY_CONTEXT_TERMS = {
         "diabetes prevention program",
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
+        *DIGITAL_NUTRITION_BEHAVIOR_TERMS,
     ],
     "obesity_cardiometabolic": [
         "dietary pattern",
@@ -377,6 +401,7 @@ CATEGORY_CONTEXT_TERMS = {
         "remote coaching",
         "remote monitoring",
         "digital therapeutics",
+        *DIGITAL_NUTRITION_BEHAVIOR_TERMS,
         "sustainability",
         "dissemination",
         "scale-up",
@@ -805,6 +830,7 @@ QUICK_MODE_SEED_GROUPS = {
             "remote coaching",
             "remote monitoring",
             "digital therapeutics",
+            *DIGITAL_NUTRITION_BEHAVIOR_TERMS,
             "sustainment",
             "sustainability",
             "dissemination",
@@ -1024,6 +1050,7 @@ THESIS_MODE_SEED_GROUPS = {
             "remote coaching",
             "remote monitoring",
             "digital therapeutics",
+            *DIGITAL_NUTRITION_BEHAVIOR_TERMS,
         ],
         [
             "food is medicine",
