@@ -216,6 +216,22 @@ SOCIAL_NEEDS_FOOD_ACCESS_TERMS = [
     "food pharmacy program",
     "social prescribing nutrition",
     "social prescribing for food insecurity",
+    "nutrition assistance program",
+    "nutrition assistance intervention",
+    "healthy food assistance",
+    "healthy food benefit",
+    "healthy food benefits",
+    "food benefit program",
+    "food resource referral",
+    "food resource navigation",
+    "produce prescription referral",
+    "food as medicine referral",
+    "food is medicine referral",
+    "medically tailored meal referral",
+    "medically tailored grocery referral",
+    "fresh food pharmacy",
+    "fruit and vegetable incentive",
+    "fruit and vegetable incentives",
 ]
 
 SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS = [
@@ -230,6 +246,16 @@ SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS = [
     "policy evaluation",
     "implementation study",
     "quality improvement study",
+    "nutrition assistance program",
+    "nutrition assistance intervention",
+    "healthy food benefit program",
+    "food resource referral program",
+    "produce prescription referral program",
+    "food as medicine referral program",
+    "food is medicine referral program",
+    "medically tailored meal referral program",
+    "fresh food pharmacy program",
+    "fruit and vegetable incentive program",
 ]
 
 
