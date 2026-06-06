@@ -19,6 +19,9 @@ def test_food_literacy_queries_add_labeling_and_security_context() -> None:
     assert '"front-of-pack"' in first_query
     assert '"front-of-pack labeling"' in first_query
     assert '"front-of-pack labelling"' in first_query
+    assert '"choice architecture"' in first_query
+    assert '"healthy food retail"' in first_query
+    assert '"food procurement policy"' in first_query
 
 
 def test_labeling_and_security_signals_improve_priority() -> None:
