@@ -79,6 +79,26 @@ METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
     "weight regain prevention trial",
 ]
 
+SUSTAINABLE_HEALTHY_DIET_TERMS = [
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "healthy and sustainable diet",
+    "healthy and sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+]
+
+SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS = [
+    "sustainable healthy diet guideline",
+    "sustainable healthy diets guideline",
+    "sustainable dietary pattern guideline",
+    "sustainable dietary patterns guideline",
+    "healthy and sustainable diet guideline",
+    "planetary health diet guideline",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -348,6 +368,11 @@ def apply_semantic_extensions() -> None:
             terms=METABOLIC_REMISSION_MAINTENANCE_TERMS,
             document_terms=METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "lifestyle_nutrition_patterns",
+        terms=SUSTAINABLE_HEALTHY_DIET_TERMS,
+        document_terms=SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS,
+    )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
             block_name,
