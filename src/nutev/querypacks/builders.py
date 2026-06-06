@@ -548,8 +548,13 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
     },
     "artigo3_framework": {
         "focus_terms": [
+            "food literacy",
             "nutrition literacy",
+            "food and nutrition literacy",
             "food agency",
+            "food skills",
+            "food competence",
+            "eating competence",
             "psychometric validation",
             "scale development",
             "questionnaire validation",
@@ -574,13 +579,40 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "normalization process theory",
             "theoretical domains framework",
             "self-efficacy",
+            "culinary medicine",
+            "culinary nutrition",
+            "culinary skills",
             "cooking skills",
+            "cooking confidence",
+            "cooking self-efficacy",
+            "home cooking",
+            "meal preparation",
+            "meal planning",
+            "meal planning skills",
+            "shopping skills",
+            "grocery shopping skills",
+            "food budgeting",
+            "food resource management",
+            "food label literacy",
+            "teaching kitchen",
+            "commensality",
+            "shared meals",
         ],
         "web_hints": [
             "questionnaire validation",
             "survey instrument",
             "framework development",
             "food literacy scale",
+            "food literacy questionnaire",
+            "nutrition literacy questionnaire",
+            "food and nutrition literacy scale",
+            "food skills questionnaire",
+            "food competence questionnaire",
+            "eating competence scale",
+            "cooking skills questionnaire",
+            "cooking self-efficacy scale",
+            "meal planning questionnaire",
+            "food resource management questionnaire",
             "psychometric study",
             "action planning",
             "coping planning",
@@ -599,6 +631,18 @@ WORKSTREAM_QUERY_ENHANCEMENTS = {
             "framework",
             "questionnaire",
             "validation study",
+            "scale development",
+            "psychometric validation",
+            "survey instrument",
+            "food literacy instrument",
+            "nutrition literacy instrument",
+            "food literacy questionnaire",
+            "nutrition literacy questionnaire",
+            "food competence questionnaire",
+            "eating competence scale",
+            "cooking self-efficacy scale",
+            "meal planning questionnaire",
+            "food resource management questionnaire",
         ],
     },
 }
@@ -1113,17 +1157,42 @@ def _add_specific_a3(
         "questionnaire",
         "instrument",
         "index",
+        "scale",
+        "survey instrument",
         "food literacy instrument",
-        "culinary skills instrument",
-        "commensality",
+        "nutrition literacy instrument",
+        "food literacy questionnaire",
+        "nutrition literacy questionnaire",
+        "food competence questionnaire",
+        "eating competence scale",
+        "cooking self-efficacy scale",
+        "meal planning questionnaire",
         "questionário",
         "índice",
     ]
     competence_terms = [
         "food literacy",
+        "nutrition literacy",
+        "food and nutrition literacy",
+        "food agency",
+        "food skills",
+        "food competence",
+        "eating competence",
         "culinary medicine",
+        "culinary nutrition",
+        "culinary skills",
         "cooking skills",
+        "cooking confidence",
+        "cooking self-efficacy",
+        "home cooking",
+        "meal preparation",
         "meal planning",
+        "meal planning skills",
+        "shopping skills",
+        "grocery shopping skills",
+        "food budgeting",
+        "food resource management",
+        "food label literacy",
         "shared meals",
         "commensality",
         "behavior change",
@@ -1147,13 +1216,13 @@ def _add_specific_a3(
     ]
 
     queries.append(
-        _join_parts([or_block(instrument_terms, 8), or_block(competence_terms, 8)])
+        _join_parts([or_block(instrument_terms, 10), or_block(competence_terms, 10)])
     )
     queries.append(
         _join_parts(
             [
                 or_block(condition_terms + clinical_terms, 8),
-                or_block(instrument_terms, 8),
+                or_block(instrument_terms, 10),
                 or_block(behavior_terms, 6),
             ]
         )
@@ -1162,7 +1231,7 @@ def _add_specific_a3(
         _join_parts(
             [
                 or_block(diet_terms, 6),
-                or_block(instrument_terms, 8),
+                or_block(instrument_terms, 10),
                 or_block(behavior_terms, 6),
             ]
         )
@@ -1170,8 +1239,8 @@ def _add_specific_a3(
     queries.append(
         _join_parts(
             [
-                or_block(instrument_terms, 8),
-                or_block(competence_terms, 8),
+                or_block(instrument_terms, 10),
+                or_block(competence_terms, 10),
                 or_block(review_terms, 6),
             ]
         )
