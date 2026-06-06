@@ -23,3 +23,18 @@ def test_network_meta_analysis_scores_above_generic_pattern_note() -> None:
 
 def test_overview_of_reviews_scores_above_generic_adherence_note() -> None:
     assert score_watch_item({"title": "Overview of reviews on dietary adherence in lifestyle medicine"}) > score_watch_item({"title": "Dietary adherence in lifestyle medicine note"})
+
+
+def test_prevention_program_signals_score_above_generic_lifestyle_note() -> None:
+    assert score_watch_item(
+        {"title": "National Diabetes Prevention Program lifestyle change program outcomes"}
+    ) > score_watch_item({"title": "Generic lifestyle program note"})
+
+
+def test_diabetes_remission_program_signals_remain_in_nutmev_scope() -> None:
+    remission_score = score_watch_item(
+        {"title": "Diabetes remission programme nutrition intervention in primary care"}
+    )
+    nonscope_score = score_watch_item({"title": "Unrelated primary care operations note"})
+
+    assert remission_score > nonscope_score
