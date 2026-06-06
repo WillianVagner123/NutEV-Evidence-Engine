@@ -19,7 +19,7 @@ from nutev.search.openalex import search_openalex
 from nutev.search.pubmed import PubMedClient
 from nutev.search.serpapi_optional import search_serpapi
 
-OPTIONAL_PROVIDERS = {"google", "google_pse", "serpapi", "brave"}
+OPTIONAL_PROVIDERS = {"google", "google_pse", "google_cse", "serpapi", "brave"}
 PERFORMANCE_FIELDS = [
     "run_id",
     "provider",
@@ -61,7 +61,7 @@ def _append_csv(path: Path, row: dict[str, Any], fields: list[str]) -> None:
 
 
 def _optional_missing(provider: str) -> str | None:
-    if provider in {"google", "google_pse"} and not (os.environ.get("GOOGLE_API_KEY") and os.environ.get("GOOGLE_CSE_ID")):
+    if provider in {"google", "google_pse", "google_cse"} and not (os.environ.get("GOOGLE_API_KEY") and os.environ.get("GOOGLE_CSE_ID")):
         return "missing GOOGLE_API_KEY/GOOGLE_CSE_ID"
     if provider == "serpapi" and not os.environ.get("SERPAPI_API_KEY"):
         return "missing SERPAPI_API_KEY"
@@ -77,6 +77,7 @@ def _registry() -> dict[str, Callable[[str, int, dict[str, Any]], ProviderResult
         "crossref": lambda q, limit, ctx: search_crossref(q, rows=limit),
         "google": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "google_pse": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
+        "google_cse": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "serpapi": lambda q, limit, ctx: search_serpapi(q, limit=limit, context=ctx),
         "brave": lambda q, limit, ctx: search_brave(q, limit=limit, context=ctx),
         "official_web": lambda q, limit, ctx: manifest_sources(ctx.get("official_manifest") or {}, ctx.get("workstream") or "")[:limit],
