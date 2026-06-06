@@ -17,3 +17,17 @@ def test_watch_categories_include_nutrition_prescription_terms() -> None:
     ):
         terms = {term.lower() for term in WATCH_CATEGORIES[category]}
         assert expected_terms & terms
+
+
+def test_watch_categories_include_lifestyle_care_model_terms() -> None:
+    expected_terms = {
+        "whole-person care",
+        "lifestyle medicine referral",
+        "lifestyle prescription",
+        "shared medical appointment",
+        "group medical visit",
+    }
+
+    for category in ("lifestyle_medicine", "implementation_behavior"):
+        terms = {term.lower() for term in WATCH_CATEGORIES[category]}
+        assert expected_terms & terms
