@@ -111,6 +111,28 @@ NUTRITION_PRACTICE_GUIDELINE_TERMS = [
     "nutrition care protocols",
 ]
 
+FOOD_ENVIRONMENT_POLICY_TERMS = [
+    "food environment intervention",
+    "food environment interventions",
+    "healthy food retail",
+    "healthy food retail intervention",
+    "healthy food retail policy",
+    "choice architecture",
+    "healthy choice architecture",
+    "choice architecture intervention",
+    "nudge",
+    "nudging",
+    "food procurement policy",
+    "healthy food procurement policy",
+    "institutional food procurement",
+    "public food procurement",
+    "food service guidelines",
+    "healthy food service guidelines",
+    "nutrition standards for food service",
+    "healthy default",
+    "healthy defaults",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -415,6 +437,7 @@ CATEGORY_CONTEXT_TERMS = {
         "eat together",
         "meal context",
         "meal routine",
+        *FOOD_ENVIRONMENT_POLICY_TERMS,
     ],
     "frameworks_instruments": [
         "lifestyle medicine",
@@ -832,6 +855,7 @@ QUICK_MODE_SEED_GROUPS = {
             "retail food environment",
             "healthy food access",
             "healthy food procurement",
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
             "shared meals",
             "family meals",
             "social eating",
