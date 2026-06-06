@@ -17,6 +17,7 @@ from nutev.engine.validators import (
 def test_normalize_doi_extracts_canonical_doi_from_noisy_metadata():
     assert normalize_doi("pii: qdag137. doi: 10.1093/jsxmed/qdag137") == "10.1093/jsxmed/qdag137"
     assert normalize_doi("https://doi.org/10.1000/ABC.123") == "10.1000/abc.123"
+    assert normalize_doi("https://dx.doi.org/10.1000/ABC.123") == "10.1000/abc.123"
     assert normalize_doi("not a doi") is None
 
 
@@ -27,6 +28,8 @@ def test_identifier_normalizers_are_strict():
     assert normalize_pmcid("pmc12345") == "PMC12345"
     assert normalize_pmcid("abc") is None
     assert normalize_url("https://example.org/a") == "https://example.org/a"
+    assert normalize_url("https://www.example.org/a?utm_source=x&b=2") == "https://example.org/a?b=2"
+    assert normalize_url("https://dx.doi.org/10.1000/ABC.123") == "https://doi.org/10.1000/ABC.123"
     assert normalize_url("javascript:void(0)") is None
 
 
@@ -98,3 +101,14 @@ def test_canonical_document_key_priority():
     assert canonical_document_key({"pmid": "123", "url": "https://x.test"}) == "pmid:123"
     assert canonical_document_key({"pmcid": "pmc123", "url": "https://x.test"}) == "pmcid:PMC123"
     assert canonical_document_key({"url": "https://x.test/a"}) == "url:https://x.test/a"
+
+
+def test_canonical_document_key_uses_doi_embedded_in_urls_before_url_fallback():
+    assert canonical_document_key({"url": "https://doi.org/10.1000/ABC.123"}) == "doi:10.1000/abc.123"
+    assert canonical_document_key({"original_url": "https://dx.doi.org/10.1000/ABC.123"}) == "doi:10.1000/abc.123"
+    assert canonical_document_key({"final_url": "https://publisher.test/article/10.1000/ABC.123"}) == "doi:10.1000/abc.123"
+
+
+def test_canonical_document_key_normalizes_common_url_host_variants():
+    assert canonical_document_key({"url": "https://www.example.org/path/?utm_campaign=x"}) == "url:https://example.org/path"
+    assert canonical_document_key({"url": "https://dx.doi.org/article-without-doi"}) == "url:https://doi.org/article-without-doi"
