@@ -28,6 +28,9 @@ TRACKING_QUERY_PARAMS = {
     "utm_source",
     "utm_term",
 }
+DOI_HOST_ALIASES = {
+    "dx.doi.org": "doi.org",
+}
 
 
 def normalize_doi(doi: str | None) -> str | None:
@@ -36,6 +39,7 @@ def normalize_doi(doi: str | None) -> str | None:
     raw = unquote(str(doi)).strip()
     raw = raw.replace("DOI:", " ").replace("doi:", " ")
     raw = raw.replace("https://doi.org/", " ").replace("http://doi.org/", " ")
+    raw = raw.replace("https://dx.doi.org/", " ").replace("http://dx.doi.org/", " ")
     match = DOI_RE.search(raw)
     if not match:
         return None
@@ -98,11 +102,13 @@ def normalize_url(url: str | None) -> str | None:
     parsed = urlparse(value)
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
         return None
+    normalized_host = parsed.netloc.lower().removeprefix("www.")
+    normalized_host = DOI_HOST_ALIASES.get(normalized_host, normalized_host)
     normalized_path = parsed.path.rstrip("/") or parsed.path
     return urlunparse(
         (
             parsed.scheme.lower(),
-            parsed.netloc.lower(),
+            normalized_host,
             normalized_path,
             "",
             _normalize_query(parsed.query),
@@ -154,10 +160,23 @@ def validate_failure_reason(value: str | None) -> str | None:
     return validate_enum_value(value, FailureReason, "failure_reason")
 
 
+def _url_identifier_values(row: dict) -> list[object]:
+    return [
+        row.get("final_url"),
+        row.get("resolved_url"),
+        row.get("original_url"),
+        row.get("url"),
+    ]
+
+
 def canonical_document_key(row: dict) -> str:
     doi = normalize_doi(row.get("doi"))
     if doi:
         return f"doi:{doi}"
+    for url_value in _url_identifier_values(row):
+        doi = normalize_doi(url_value)
+        if doi:
+            return f"doi:{doi}"
     pmid = normalize_pmid(row.get("pmid"))
     if pmid:
         return f"pmid:{pmid}"
