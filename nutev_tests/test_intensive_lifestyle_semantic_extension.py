@@ -65,3 +65,28 @@ def test_intensive_lifestyle_program_terms_enter_provider_queries() -> None:
     assert '"intensive lifestyle intervention"[Title/Abstract]' in joined
     assert '"diabetes prevention programme"[Title/Abstract]' in joined
     assert '"behavioral weight loss trial"[Title/Abstract]' in joined
+
+
+def test_metabolic_remission_terms_enter_semantic_blocks() -> None:
+    busca2b_terms = semantic_terms("busca2b", min_priority=5)
+    busca2b_doc_terms = semantic_terms(
+        "busca2b",
+        field="document_terms",
+        min_priority=5,
+    )
+
+    assert "type 2 diabetes remission" in busca2b_terms
+    assert "glycemic remission" in busca2b_terms
+    assert "diabetes reversal" in busca2b_terms
+    assert "weight regain prevention" in busca2b_terms
+    assert "diabetes remission consensus report" in busca2b_doc_terms
+    assert "weight regain prevention trial" in busca2b_doc_terms
+
+
+def test_metabolic_remission_terms_enter_provider_queries() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"type 2 diabetes remission"[Title/Abstract]' in joined
+    assert '"glycemic remission"[Title/Abstract]' in joined
+    assert '"diabetes remission consensus report"[Title/Abstract]' in joined
