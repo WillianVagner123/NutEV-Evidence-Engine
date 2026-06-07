@@ -67,3 +67,18 @@ def test_busca2b_semantic_terms_include_food_as_medicine_program_variants() -> N
     assert "nutrition incentive program" in terms
     assert "produce voucher program" in terms
     assert "fruit and vegetable voucher program" in terms
+
+
+def test_busca2b_semantic_terms_include_sustainable_diet_patterns() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+    document_terms = {
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    }
+
+    assert "sustainable healthy diets" in terms
+    assert "healthy and sustainable diets" in terms
+    assert "sustainable dietary patterns" in terms
+    assert "planetary health dietary pattern" in terms
+    assert "sustainable dietary guidelines" in document_terms
+    assert "planetary health diet review" in document_terms

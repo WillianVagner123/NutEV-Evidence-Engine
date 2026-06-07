@@ -186,6 +186,32 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+SUSTAINABLE_DIET_PATTERN_TERMS = [
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "healthy and sustainable diet",
+    "healthy and sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+    "sustainable diet",
+    "sustainable diets",
+    "planetary health dietary pattern",
+    "planetary health dietary patterns",
+]
+
+SUSTAINABLE_DIET_PATTERN_DOCUMENT_TERMS = [
+    "sustainable healthy diet guideline",
+    "sustainable healthy diets guideline",
+    "sustainable dietary guideline",
+    "sustainable dietary guidelines",
+    "sustainable dietary pattern review",
+    "sustainable dietary patterns review",
+    "planetary health diet guideline",
+    "planetary health diet review",
+]
+
 PRECISION_PERSONALIZED_NUTRITION_TERMS = [
     "personalized nutrition for cardiometabolic risk",
     "personalised nutrition for cardiometabolic risk",
@@ -393,6 +419,11 @@ def apply_semantic_extensions() -> None:
             terms=PRECISION_PERSONALIZED_NUTRITION_TERMS,
             document_terms=PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "lifestyle_nutrition_patterns",
+        terms=SUSTAINABLE_DIET_PATTERN_TERMS,
+        document_terms=SUSTAINABLE_DIET_PATTERN_DOCUMENT_TERMS,
+    )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
             block_name,
