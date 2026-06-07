@@ -268,6 +268,11 @@ SOCIAL_NEEDS_FOOD_ACCESS_TERMS = [
     "screening for food insecurity",
     "hunger vital sign",
     "nutrition security screening",
+    "nutrition insecurity",
+    "nutrition insecurity screening",
+    "screening for nutrition insecurity",
+    "food and nutrition security",
+    "food and nutrition insecurity",
     "social needs screening",
     "social needs intervention",
     "social determinants of health",
@@ -304,6 +309,9 @@ SOCIAL_NEEDS_FOOD_ACCESS_TERMS = [
 
 SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS = [
     "food insecurity screening program",
+    "nutrition insecurity screening program",
+    "nutrition insecurity intervention",
+    "food and nutrition security intervention",
     "social needs screening program",
     "community-based intervention",
     "community based intervention",
