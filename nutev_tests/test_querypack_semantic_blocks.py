@@ -82,6 +82,20 @@ def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -
     assert "very low energy diet" in rendered
 
 
+def test_lifestyle_nutrition_semantic_block_adds_sustainable_healthy_diet_terms() -> None:
+    terms = " ".join(semantic_terms("busca2b", min_priority=4)).lower()
+    document_terms = " ".join(
+        semantic_terms("busca2b", field="document_terms", min_priority=4)
+    ).lower()
+
+    assert "sustainable healthy diets" in terms
+    assert "healthy and sustainable diets" in terms
+    assert "sustainable dietary patterns" in terms
+    assert "eat-lancet dietary pattern" in terms
+    assert "sustainable healthy diets systematic review" in document_terms
+    assert "healthy and sustainable diet guideline" in document_terms
+
+
 def test_food_literacy_semantic_block_adds_culinary_training_and_labeling_terms() -> None:
     rendered = " ".join(semantic_terms("artigo3_framework", min_priority=5)).lower()
 
