@@ -186,6 +186,33 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+SUSTAINABLE_HEALTHY_DIET_TERMS = [
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "healthy and sustainable diet",
+    "healthy and sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+    "planetary health diet",
+    "planetary health diets",
+    "eat-lancet diet",
+    "eat-lancet dietary pattern",
+]
+
+SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS = [
+    "sustainable healthy diet guideline",
+    "sustainable healthy diets guideline",
+    "sustainable healthy diet systematic review",
+    "sustainable healthy diets systematic review",
+    "sustainable dietary pattern systematic review",
+    "sustainable dietary patterns systematic review",
+    "planetary health diet systematic review",
+    "eat-lancet diet systematic review",
+    "healthy and sustainable diet guideline",
+]
+
 OFFICIAL_GUIDANCE_TERMS = [
     "evidence-based guideline",
     "evidence based guideline",
@@ -328,6 +355,11 @@ def apply_semantic_extensions() -> None:
         terms=OFFICIAL_GUIDANCE_TERMS,
         document_terms=OFFICIAL_GUIDANCE_DOCUMENT_TERMS,
     )
+    _extend_semantic_block(
+        "evidence_synthesis",
+        terms=SUSTAINABLE_HEALTHY_DIET_TERMS,
+        document_terms=SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS,
+    )
     for block_name in (
         "implementation_science",
         "adherence_persistence",
@@ -354,6 +386,11 @@ def apply_semantic_extensions() -> None:
             terms=DIET_QUALITY_INDEX_TERMS,
             document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "lifestyle_nutrition_patterns",
+        terms=SUSTAINABLE_HEALTHY_DIET_TERMS,
+        document_terms=SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS,
+    )
     _extend_semantic_block(
         "food_literacy_agency",
         terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
