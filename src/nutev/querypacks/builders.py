@@ -40,6 +40,28 @@ DIETITIAN_IMPLEMENTATION_TERMS = [
     "registered dietitian nutritionist led intervention",
 ]
 
+SOCIAL_PRESCRIBING_ACCESS_TERMS = [
+    "social prescribing",
+    "social prescribing program",
+    "social prescribing programme",
+    "social needs referral",
+    "social needs intervention",
+    "screening and referral",
+    "closed-loop referral",
+    "closed loop referral",
+    "community referral",
+    "community referrals",
+    "food pantry referral",
+    "food pantry referral program",
+    "food bank partnership",
+    "community food program",
+    "community food programme",
+    "community health worker-led nutrition",
+    "community health worker led nutrition",
+    "patient navigation",
+    "care navigation",
+]
+
 ADVANCED_DYSLIPIDEMIA_TERMS = [
     "hypertriglyceridemia",
     "hypertriglyceridaemia",
@@ -782,6 +804,9 @@ def build_structured_components(
         web_hints = uniq(
             web_hints + NUTRITION_CARE_PATHWAY_TERMS + METABOLIC_REMISSION_WEB_HINTS
         )
+    if ws_key in {"busca1", "busca2b"}:
+        focus_terms = uniq(focus_terms + SOCIAL_PRESCRIBING_ACCESS_TERMS)
+        web_hints = uniq(web_hints + SOCIAL_PRESCRIBING_ACCESS_TERMS)
     if ws_key == "busca2b":
         focus_terms = uniq(focus_terms + DIETITIAN_IMPLEMENTATION_TERMS)
         web_hints = uniq(web_hints + DIETITIAN_IMPLEMENTATION_TERMS)
