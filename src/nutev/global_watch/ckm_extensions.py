@@ -80,11 +80,9 @@ def apply_ckm_extensions() -> None:
         "EXHAUSTIVE_MODE_SEED_GROUPS",
     ):
         mode_groups = getattr(watch_query_builder, mode_groups_name, {})
-        category_groups = mode_groups.setdefault("obesity_cardiometabolic", [])
+        category_groups = mode_groups.get("obesity_cardiometabolic")
         if category_groups:
             _extend_unique(category_groups[0], CKM_TERMS)
-        else:
-            category_groups.append(list(CKM_TERMS))
 
     watch_scoring.BONUS_TERMS = _extend_weighted_tuple(  # type: ignore[misc]
         watch_scoring.BONUS_TERMS,
