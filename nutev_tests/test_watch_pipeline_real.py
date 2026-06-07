@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 
 from nutev.global_watch import watch_pipeline as wp
+from nutev.global_watch.watch_scoring import score_watch_item
 from nutev.logs import setup_logger
 from nutev.settings import NutevSettings
 
@@ -34,6 +35,20 @@ def test_watch_normalize_hit_preserves_abstract_and_snippet():
     assert hit["abstract"] == ""
     assert hit["snippet"] == "Clinical practice guideline for obesity care"
     assert hit["evidence_type"] == "guideline"
+
+
+def test_watch_scores_diabetes_remission_as_nutmev_priority():
+    score = score_watch_item(
+        {
+            "title": "Type 2 diabetes remission consensus report after lifestyle intervention",
+            "abstract": "Weight regain prevention and long-term weight loss maintenance in obesity care.",
+            "source_provider": "pubmed",
+            "category": "obesity_cardiometabolic",
+            "evidence_type": "consensus",
+            "is_new": True,
+        }
+    )
+    assert score >= 90
 
 
 def test_watch_pipeline_uses_real_provider_mock(tmp_path, monkeypatch):
