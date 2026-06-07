@@ -121,7 +121,14 @@ def test_busca1_semantic_blocks_include_food_environment_policy_terms() -> None:
 
     assert "retail food environment" in busca1_terms
     assert "healthy food procurement" in busca1_terms
+    assert "healthy food access" in busca1_terms
+    assert "food policy" in busca1_terms
+    assert "nutrition policy" in busca1_terms
+    assert "front-of-pack labeling" in busca1_terms
+    assert "front-of-pack labelling" in busca1_terms
+    assert "food label literacy" in busca1_terms
     assert "menu labeling" in busca1_terms
+    assert "menu labelling" in busca1_terms
     assert "policy brief" in busca1_doc_terms
     assert "policy evaluation" in busca1_doc_terms
 
