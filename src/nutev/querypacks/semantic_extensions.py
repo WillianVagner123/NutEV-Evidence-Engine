@@ -186,6 +186,46 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+PRECISION_PERSONALIZED_NUTRITION_TERMS = [
+    "personalized nutrition for cardiometabolic risk",
+    "personalised nutrition for cardiometabolic risk",
+    "personalized nutrition for obesity",
+    "personalised nutrition for obesity",
+    "personalized nutrition for type 2 diabetes",
+    "personalised nutrition for type 2 diabetes",
+    "precision nutrition for cardiometabolic risk",
+    "precision nutrition for obesity",
+    "precision nutrition for type 2 diabetes",
+    "tailored dietary advice for cardiometabolic risk",
+    "tailored dietary advice for obesity",
+    "tailored dietary advice for type 2 diabetes",
+    "tailored dietary intervention for cardiometabolic risk",
+    "tailored dietary intervention for obesity",
+    "tailored dietary intervention for type 2 diabetes",
+    "personalized dietary intervention for cardiometabolic risk",
+    "personalised dietary intervention for cardiometabolic risk",
+    "individualized dietary intervention for obesity",
+    "individualised dietary intervention for obesity",
+    "individualized dietary intervention for type 2 diabetes",
+    "individualised dietary intervention for type 2 diabetes",
+]
+
+PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS = [
+    "personalized nutrition intervention",
+    "personalised nutrition intervention",
+    "precision nutrition intervention",
+    "tailored dietary advice intervention",
+    "tailored dietary intervention",
+    "personalized dietary intervention",
+    "personalised dietary intervention",
+    "individualized dietary intervention",
+    "individualised dietary intervention",
+    "personalized nutrition framework",
+    "personalised nutrition framework",
+    "precision nutrition framework",
+    "tailored nutrition framework",
+]
+
 OFFICIAL_GUIDANCE_TERMS = [
     "evidence-based guideline",
     "evidence based guideline",
@@ -347,6 +387,11 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=METABOLIC_REMISSION_MAINTENANCE_TERMS,
             document_terms=METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS,
+        )
+        _extend_semantic_block(
+            block_name,
+            terms=PRECISION_PERSONALIZED_NUTRITION_TERMS,
+            document_terms=PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
