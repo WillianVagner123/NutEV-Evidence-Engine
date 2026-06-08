@@ -133,6 +133,32 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "healthy defaults",
 ]
 
+METABOLIC_REMISSION_MAINTENANCE_TERMS = [
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "remission of type 2 diabetes",
+    "diabetes reversal",
+    "glycemic remission",
+    "glycaemic remission",
+    "metabolic remission",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight regain prevention",
+    "weight regain management",
+    "weight regain",
+    "behavioral maintenance",
+    "dietary maintenance",
+    "relapse prevention",
+    "lapse management",
+    "dietary self-monitoring",
+    "dietary self-regulation",
+    "nutrition care for diabetes remission",
+    "nutrition care for weight maintenance",
+    "dietitian-led remission",
+    "dietitian led remission",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -237,6 +263,7 @@ CATEGORY_CONTEXT_TERMS = {
         "adiposity-based chronic disease",
         "adiposity based chronic disease",
         "blood pressure",
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "diet_patterns": [
@@ -296,6 +323,7 @@ CATEGORY_CONTEXT_TERMS = {
         "ultra processed foods",
         "nova classification",
         "nova food classification",
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "implementation_behavior": [
@@ -367,6 +395,7 @@ CATEGORY_CONTEXT_TERMS = {
         "food access",
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         "telehealth",
         "telemedicine",
         "digital health",
@@ -579,6 +608,13 @@ QUICK_MODE_SEED_GROUPS = {
             "type 2 diabetes",
             "prediabetes",
             "insulin resistance",
+            "type 2 diabetes remission",
+            "diabetes remission",
+            "remission of type 2 diabetes",
+            "diabetes reversal",
+            "glycemic remission",
+            "glycaemic remission",
+            "metabolic remission",
         ],
         [
             "hypertension",
@@ -691,6 +727,14 @@ QUICK_MODE_SEED_GROUPS = {
             "self-management",
             "maintenance",
             "weight loss maintenance",
+            "long-term weight loss maintenance",
+            "weight regain prevention",
+            "weight regain management",
+            "behavioral maintenance",
+            "dietary maintenance",
+            "relapse prevention",
+            "dietary self-monitoring",
+            "dietary self-regulation",
         ],
         [
             "implementation",
@@ -968,6 +1012,12 @@ THESIS_MODE_SEED_GROUPS = {
             "self-efficacy",
             "self efficacy",
             "self-management support",
+            "weight loss maintenance",
+            "long-term weight loss maintenance",
+            "weight regain prevention",
+            "weight regain management",
+            "dietary self-monitoring",
+            "dietary self-regulation",
         ],
         [
             "implementation science",
@@ -1058,7 +1108,6 @@ THESIS_MODE_SEED_GROUPS = {
             "teaching kitchens",
             "health coaching",
             "shared decision making",
-            "social support",
         ],
     ],
 }
