@@ -51,6 +51,34 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+METABOLIC_REMISSION_MAINTENANCE_TERMS = [
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "remission of type 2 diabetes",
+    "glycemic remission",
+    "glycaemic remission",
+    "diabetes reversal",
+    "type 2 diabetes reversal",
+    "metabolic remission",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight regain prevention",
+    "weight regain management",
+]
+
+METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
+    "diabetes remission consensus",
+    "diabetes remission consensus report",
+    "type 2 diabetes remission guideline",
+    "type 2 diabetes remission consensus",
+    "remission consensus",
+    "remission guideline",
+    "weight loss maintenance trial",
+    "weight loss maintenance systematic review",
+    "weight regain prevention trial",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -158,6 +186,79 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+ADHERENCE_MAINTENANCE_BEHAVIOR_TERMS = [
+    "dietary self-monitoring intervention",
+    "self-monitoring of diet",
+    "food diary",
+    "food logging",
+    "meal logging",
+    "implementation intentions",
+    "habit formation",
+    "habit-based intervention",
+    "relapse prevention",
+    "lapse management",
+    "problem solving intervention",
+    "behavioral maintenance",
+    "behavioural maintenance",
+    "maintenance intervention",
+    "adherence support",
+    "dietary adherence support",
+    "patient engagement",
+    "intervention engagement",
+    "retention strategy",
+]
+
+ADHERENCE_MAINTENANCE_BEHAVIOR_DOCUMENT_TERMS = [
+    "dietary self-monitoring intervention",
+    "habit formation intervention",
+    "relapse prevention intervention",
+    "maintenance intervention",
+    "behavioral maintenance intervention",
+    "behavioural maintenance intervention",
+    "adherence support intervention",
+    "implementation intentions intervention",
+]
+
+PRECISION_PERSONALIZED_NUTRITION_TERMS = [
+    "personalized nutrition for cardiometabolic risk",
+    "personalised nutrition for cardiometabolic risk",
+    "personalized nutrition for obesity",
+    "personalised nutrition for obesity",
+    "personalized nutrition for type 2 diabetes",
+    "personalised nutrition for type 2 diabetes",
+    "precision nutrition for cardiometabolic risk",
+    "precision nutrition for obesity",
+    "precision nutrition for type 2 diabetes",
+    "tailored dietary advice for cardiometabolic risk",
+    "tailored dietary advice for obesity",
+    "tailored dietary advice for type 2 diabetes",
+    "tailored dietary intervention for cardiometabolic risk",
+    "tailored dietary intervention for obesity",
+    "tailored dietary intervention for type 2 diabetes",
+    "personalized dietary intervention for cardiometabolic risk",
+    "personalised dietary intervention for cardiometabolic risk",
+    "individualized dietary intervention for obesity",
+    "individualised dietary intervention for obesity",
+    "individualized dietary intervention for type 2 diabetes",
+    "individualised dietary intervention for type 2 diabetes",
+]
+
+PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS = [
+    "personalized nutrition intervention",
+    "personalised nutrition intervention",
+    "precision nutrition intervention",
+    "tailored dietary advice intervention",
+    "tailored dietary intervention",
+    "personalized dietary intervention",
+    "personalised dietary intervention",
+    "individualized dietary intervention",
+    "individualised dietary intervention",
+    "personalized nutrition framework",
+    "personalised nutrition framework",
+    "precision nutrition framework",
+    "tailored nutrition framework",
+]
+
 OFFICIAL_GUIDANCE_TERMS = [
     "evidence-based guideline",
     "evidence based guideline",
@@ -216,6 +317,22 @@ SOCIAL_NEEDS_FOOD_ACCESS_TERMS = [
     "food pharmacy program",
     "social prescribing nutrition",
     "social prescribing for food insecurity",
+    "nutrition assistance program",
+    "nutrition assistance intervention",
+    "healthy food assistance",
+    "healthy food benefit",
+    "healthy food benefits",
+    "food benefit program",
+    "food resource referral",
+    "food resource navigation",
+    "produce prescription referral",
+    "food as medicine referral",
+    "food is medicine referral",
+    "medically tailored meal referral",
+    "medically tailored grocery referral",
+    "fresh food pharmacy",
+    "fruit and vegetable incentive",
+    "fruit and vegetable incentives",
 ]
 
 SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS = [
@@ -230,6 +347,16 @@ SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS = [
     "policy evaluation",
     "implementation study",
     "quality improvement study",
+    "nutrition assistance program",
+    "nutrition assistance intervention",
+    "healthy food benefit program",
+    "food resource referral program",
+    "produce prescription referral program",
+    "food as medicine referral program",
+    "food is medicine referral program",
+    "medically tailored meal referral program",
+    "fresh food pharmacy program",
+    "fruit and vegetable incentive program",
 ]
 
 
@@ -283,6 +410,31 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "adherence_persistence",
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=METABOLIC_REMISSION_MAINTENANCE_TERMS,
+            document_terms=METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS,
+        )
+        _extend_semantic_block(
+            block_name,
+            terms=PRECISION_PERSONALIZED_NUTRITION_TERMS,
+            document_terms=PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "implementation_science",
+        "adherence_persistence",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=ADHERENCE_MAINTENANCE_BEHAVIOR_TERMS,
+            document_terms=ADHERENCE_MAINTENANCE_BEHAVIOR_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
