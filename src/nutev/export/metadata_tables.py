@@ -86,12 +86,16 @@ def write_article_data_csv(rows: list[dict], path: Path) -> None:
         w.writerows(article_rows)
 
 
-def write_simple_csv(rows: list[dict], path: Path) -> None:
-    if not rows:
-        return
+def write_simple_csv(
+    rows: list[dict],
+    path: Path,
+    fieldnames: list[str] | None = None,
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    keys = sorted({k for r in rows for k in r.keys()})
+    keys = fieldnames or sorted({k for r in rows for k in r.keys()})
     with path.open("w", newline="", encoding="utf-8") as f:
+        if not keys:
+            return
         w = csv.DictWriter(f, fieldnames=keys)
         w.writeheader()
         w.writerows(rows)
