@@ -326,6 +326,57 @@ SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS = [
     "fruit and vegetable incentive program",
 ]
 
+FOOD_AS_MEDICINE_REFERRAL_TERMS = [
+    "food as medicine clinic",
+    "food is medicine clinic",
+    "food as medicine program",
+    "food is medicine program",
+    "food as medicine programme",
+    "food is medicine programme",
+    "food pharmacy referral",
+    "food pharmacy intervention",
+    "food pharmacy implementation",
+    "fresh food pharmacy intervention",
+    "produce prescription implementation",
+    "produce prescription evaluation",
+    "produce prescription intervention",
+    "produce prescription trial",
+    "healthy food prescription intervention",
+    "medically tailored groceries intervention",
+    "medically tailored grocery intervention",
+    "medically tailored meals intervention",
+    "medically tailored meal intervention",
+    "medically tailored food intervention",
+    "nutrition security intervention",
+    "nutrition security program",
+    "nutrition security programme",
+    "food resource navigation program",
+    "food resource navigation intervention",
+    "community food referral",
+    "clinical-community food referral",
+    "clinical community food referral",
+]
+
+FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS = [
+    "food as medicine implementation study",
+    "food is medicine implementation study",
+    "food as medicine program evaluation",
+    "food is medicine program evaluation",
+    "food pharmacy implementation study",
+    "food pharmacy program evaluation",
+    "produce prescription implementation study",
+    "produce prescription program evaluation",
+    "produce prescription intervention trial",
+    "healthy food prescription intervention trial",
+    "medically tailored meal intervention trial",
+    "medically tailored meals program evaluation",
+    "medically tailored grocery program evaluation",
+    "nutrition security intervention trial",
+    "nutrition security program evaluation",
+    "food resource navigation program evaluation",
+    "clinical-community food referral program",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -407,9 +458,15 @@ def apply_semantic_extensions() -> None:
     for block_name in ("equity_access", "food_prescription_programs"):
         _extend_semantic_block(
             block_name,
-            terms=SOCIAL_NEEDS_FOOD_ACCESS_TERMS,
-            document_terms=SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS,
+            terms=SOCIAL_NEEDS_FOOD_ACCESS_TERMS + FOOD_AS_MEDICINE_REFERRAL_TERMS,
+            document_terms=SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS
+            + FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "implementation_science",
+        terms=FOOD_AS_MEDICINE_REFERRAL_TERMS,
+        document_terms=FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS,
+    )
 
 
 apply_semantic_extensions()
