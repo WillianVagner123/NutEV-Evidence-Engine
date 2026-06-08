@@ -186,6 +186,39 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+ADHERENCE_MAINTENANCE_BEHAVIOR_TERMS = [
+    "dietary self-monitoring intervention",
+    "self-monitoring of diet",
+    "food diary",
+    "food logging",
+    "meal logging",
+    "implementation intentions",
+    "habit formation",
+    "habit-based intervention",
+    "relapse prevention",
+    "lapse management",
+    "problem solving intervention",
+    "behavioral maintenance",
+    "behavioural maintenance",
+    "maintenance intervention",
+    "adherence support",
+    "dietary adherence support",
+    "patient engagement",
+    "intervention engagement",
+    "retention strategy",
+]
+
+ADHERENCE_MAINTENANCE_BEHAVIOR_DOCUMENT_TERMS = [
+    "dietary self-monitoring intervention",
+    "habit formation intervention",
+    "relapse prevention intervention",
+    "maintenance intervention",
+    "behavioral maintenance intervention",
+    "behavioural maintenance intervention",
+    "adherence support intervention",
+    "implementation intentions intervention",
+]
+
 PRECISION_PERSONALIZED_NUTRITION_TERMS = [
     "personalized nutrition for cardiometabolic risk",
     "personalised nutrition for cardiometabolic risk",
@@ -392,6 +425,16 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=PRECISION_PERSONALIZED_NUTRITION_TERMS,
             document_terms=PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "implementation_science",
+        "adherence_persistence",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=ADHERENCE_MAINTENANCE_BEHAVIOR_TERMS,
+            document_terms=ADHERENCE_MAINTENANCE_BEHAVIOR_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
