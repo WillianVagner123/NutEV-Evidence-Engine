@@ -133,6 +133,23 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "healthy defaults",
 ]
 
+DIET_QUALITY_INDEX_TERMS = [
+    "diet quality",
+    "diet quality index",
+    "diet quality score",
+    "healthy eating index",
+    "alternate healthy eating index",
+    "alternative healthy eating index",
+    "ahei",
+    "dietary guideline adherence",
+    "dietary guidelines adherence",
+    "dietary diversity",
+    "dietary diversity score",
+    "dietary variety",
+    "healthy eating pattern",
+    "healthy eating patterns",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -246,6 +263,7 @@ CATEGORY_CONTEXT_TERMS = {
         "adherence",
         "insulin resistance",
         "steatotic liver disease",
+        *DIET_QUALITY_INDEX_TERMS,
         "mediterranean diet",
         "mediterranean dietary pattern",
         "dash",
@@ -666,6 +684,13 @@ QUICK_MODE_SEED_GROUPS = {
             "low-energy diet",
             "very low calorie diet",
             "very-low-calorie diet",
+            "diet quality",
+            "diet quality index",
+            "healthy eating index",
+            "alternate healthy eating index",
+            "dietary guideline adherence",
+            "dietary diversity score",
+            "healthy eating pattern",
             "ultra-processed food",
             "ultra processed food",
             "NOVA classification",
