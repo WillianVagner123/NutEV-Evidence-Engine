@@ -68,3 +68,15 @@ def test_guidelines_thesis_mode_surfaces_broader_guidance_families_early():
     assert '("scientific statement")' in rendered[3]
     assert '("position paper")' in rendered[4]
     assert '("guidance statement")' in rendered[5]
+
+
+def test_food_access_queries_include_social_referral_and_insecurity_terms():
+    rows = build_watch_queries(["food_literacy_culinary_commensality"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+
+    assert "food insecurity screening" in rendered
+    assert "nutrition insecurity" in rendered
+    assert "food access intervention" in rendered
+    assert "healthy food access intervention" in rendered
+    assert "social needs referral" in rendered
+    assert "closed-loop referral" in rendered
