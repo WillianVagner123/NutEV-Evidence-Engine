@@ -20,6 +20,22 @@ def test_food_literacy_queries_include_teaching_kitchen_terms_in_quick_mode():
     assert "culinary nutrition" in rendered
 
 
+def test_quick_queries_include_eating_behavior_and_meal_pattern_terms():
+    rows = build_watch_queries(
+        ["implementation_behavior", "food_literacy_culinary_commensality"],
+        7,
+        "quick",
+    )
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+
+    assert "eating behavior" in rendered
+    assert "eating behaviour" in rendered
+    assert "dietary behavior" in rendered
+    assert "dietary behaviour" in rendered
+    assert "food choices" in rendered
+    assert "meal patterns" in rendered
+
+
 def test_framework_instrument_queries_include_food_competence_and_commensality_scales():
     rows = build_watch_queries(["frameworks_instruments"], 7, "exhaustive")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
