@@ -38,3 +38,15 @@ def test_watch_categories_include_food_access_prescription_variants() -> None:
     for category in ("lifestyle_medicine", "implementation_behavior"):
         terms = {term.lower() for term in WATCH_CATEGORIES[category]}
         assert expected_terms <= terms
+
+
+def test_obesity_cardiometabolic_watch_terms_include_precise_lipid_markers() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["obesity_cardiometabolic"]}
+
+    assert "atherogenic dyslipidemia" in terms
+    assert "atherogenic dyslipidaemia" in terms
+    assert "ldl cholesterol" in terms
+    assert "non-hdl cholesterol" in terms
+    assert "non hdl cholesterol" in terms
+    assert "lipid lowering" in terms
+    assert "triglyceride lowering" in terms
