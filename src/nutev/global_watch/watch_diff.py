@@ -49,7 +49,12 @@ def update_seen_items(
             "url": candidate.get("url", ""),
             "source_provider": candidate.get("source_provider", ""),
             "category": candidate.get("category", ""),
+            "matched_categories": candidate.get("matched_categories", ""),
+            "matched_providers": candidate.get("matched_providers", ""),
+            "workstream_affinity": candidate.get("workstream_affinity", []),
+            "evidence_type": candidate.get("evidence_type", ""),
             "relevance_score": candidate.get("relevance_score", 0),
+            "watch_score": candidate.get("watch_score", 0),
             "last_status": candidate.get("download_status", "metadata_only"),
         }
     return out
