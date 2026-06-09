@@ -1,12 +1,17 @@
 from __future__ import annotations
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 import json
+
+
+def default_config_root() -> Path:
+    return Path(__file__).resolve().parents[2] / "config"
+
 
 @dataclass
 class NutevSettings:
     project_root: Path
-    config_root: Path = Path("config")
+    config_root: Path = field(default_factory=default_config_root)
     web_enabled: bool = False
     mode: str = "thesis"
     since_days: int = 30
