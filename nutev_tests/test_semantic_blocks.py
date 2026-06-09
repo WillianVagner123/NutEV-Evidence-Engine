@@ -67,3 +67,25 @@ def test_busca2b_semantic_terms_include_food_as_medicine_program_variants() -> N
     assert "nutrition incentive program" in terms
     assert "produce voucher program" in terms
     assert "fruit and vegetable voucher program" in terms
+
+
+def test_busca2b_semantic_terms_include_adherence_engagement_variants() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+
+    assert "dietary engagement" in terms
+    assert "dietary behavior maintenance" in terms
+    assert "dietary behaviour maintenance" in terms
+    assert "relapse management" in terms
+    assert "lapse prevention" in terms
+
+
+def test_busca2b_semantic_document_terms_include_adherence_engagement_interventions() -> None:
+    terms = {
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    }
+
+    assert "dietary engagement intervention" in terms
+    assert "dietary behavior maintenance trial" in terms
+    assert "lapse prevention intervention" in terms
+    assert "patient engagement intervention" in terms
