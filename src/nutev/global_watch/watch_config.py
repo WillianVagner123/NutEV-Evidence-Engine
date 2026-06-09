@@ -685,9 +685,12 @@ WATCH_CATEGORIES = {
             "personalized nutrition obesity",
             "personalised nutrition obesity",
             "precision nutrition type 2 diabetes",
+            "precision nutrition obesity",
             "tailored dietary advice cardiometabolic risk",
             "individualized dietary intervention type 2 diabetes",
             "individualised dietary intervention type 2 diabetes",
+            "adaptive dietary intervention obesity",
+            "adaptive nutrition intervention type 2 diabetes",
         ],
         [
             "personalized nutrition cardiometabolic risk",
@@ -697,6 +700,8 @@ WATCH_CATEGORIES = {
             "tailored dietary intervention cardiometabolic risk",
             "individualized meal plan obesity",
             "individualised meal plan obesity",
+            "digital dietary self-monitoring cardiometabolic risk",
+            "just-in-time adaptive intervention nutrition",
         ],
         [
             "personalized nutrition",
@@ -721,6 +726,11 @@ WATCH_CATEGORIES = {
             "diet personalisation",
             "nutrition prescription",
             "dietary prescription",
+            "adaptive dietary intervention",
+            "adaptive nutrition intervention",
+            "digital dietary self-monitoring",
+            "just-in-time adaptive intervention",
+            "JITAI nutrition",
         ],
     ],
 }
