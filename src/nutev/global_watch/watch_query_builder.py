@@ -28,6 +28,20 @@ EVIDENCE_SYNTHESIS_TERMS = [
     "review of reviews",
 ]
 
+EATING_BEHAVIOR_TERMS = [
+    "eating behavior",
+    "eating behaviour",
+    "dietary behavior",
+    "dietary behaviour",
+    "nutrition behavior",
+    "nutrition behaviour",
+    "eating habits",
+    "food choices",
+    "food choice",
+    "meal patterns",
+    "meal pattern",
+]
+
 FOOD_AS_MEDICINE_ACCESS_TERMS = [
     "food is medicine",
     "food as medicine",
@@ -186,6 +200,7 @@ CATEGORY_CONTEXT_TERMS = {
         "time restricted eating",
         "intermittent fasting",
         "diabetes prevention program",
+        *EATING_BEHAVIOR_TERMS,
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
     ],
@@ -296,6 +311,7 @@ CATEGORY_CONTEXT_TERMS = {
         "ultra processed foods",
         "nova classification",
         "nova food classification",
+        *EATING_BEHAVIOR_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "implementation_behavior": [
@@ -365,6 +381,7 @@ CATEGORY_CONTEXT_TERMS = {
         "goal setting",
         "social support",
         "food access",
+        *EATING_BEHAVIOR_TERMS,
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
         "telehealth",
@@ -437,6 +454,7 @@ CATEGORY_CONTEXT_TERMS = {
         "eat together",
         "meal context",
         "meal routine",
+        *EATING_BEHAVIOR_TERMS,
         *FOOD_ENVIRONMENT_POLICY_TERMS,
     ],
     "frameworks_instruments": [
@@ -561,6 +579,7 @@ QUICK_MODE_SEED_GROUPS = {
             "healthy food box",
             "medically tailored food package",
             "fruit and vegetable vouchers",
+            *EATING_BEHAVIOR_TERMS,
         ],
     ],
     "obesity_cardiometabolic": [
@@ -669,6 +688,7 @@ QUICK_MODE_SEED_GROUPS = {
             "ultra-processed food",
             "ultra processed food",
             "NOVA classification",
+            *EATING_BEHAVIOR_TERMS,
             "systematic review",
             "network meta-analysis",
             "umbrella review",
@@ -766,6 +786,7 @@ QUICK_MODE_SEED_GROUPS = {
             "social support",
             "food agency",
             "meal planning",
+            *EATING_BEHAVIOR_TERMS,
             "registered dietitian",
             "registered dietitian nutritionist",
             "dietitian-led intervention",
@@ -866,6 +887,7 @@ QUICK_MODE_SEED_GROUPS = {
             "menu labelling",
             "meal context",
             "meal routine",
+            *EATING_BEHAVIOR_TERMS,
             "food policy",
             "nutrition policy",
             "food label",
