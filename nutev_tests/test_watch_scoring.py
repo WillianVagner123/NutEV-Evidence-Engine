@@ -240,3 +240,19 @@ def test_taxonomy_aligned_adiposity_and_liver_signals_improve_priority() -> None
             "title": "Body mass index, visceral fat, waist-to-hip ratio, and hepatic steatosis in cardiometabolic care",
         }
     ) > _score_watch_item({"title": "Cardiometabolic care note"})
+
+
+def test_pragmatic_implementation_trial_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Pragmatic clinical trial of nutrition care implementation for cardiometabolic risk",
+        }
+    ) > _score_watch_item({"title": "Nutrition care implementation note"})
+
+
+def test_hybrid_effectiveness_implementation_trial_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Hybrid effectiveness-implementation trial of lifestyle nutrition care delivery",
+        }
+    ) > _score_watch_item({"title": "Lifestyle nutrition care delivery note"})
