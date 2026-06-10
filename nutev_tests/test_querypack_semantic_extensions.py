@@ -23,3 +23,16 @@ def test_precision_personalized_nutrition_document_terms_reach_framework_querypa
     assert "personalized nutrition framework" in artigo3_document_terms
     assert "precision nutrition intervention" in artigo3_document_terms
     assert "tailored nutrition framework" in artigo3_document_terms
+
+
+def test_adherence_maintenance_terms_reach_intervention_querypack() -> None:
+    busca2b_terms = _lowered_terms("busca2b")
+    busca2b_document_terms = _lowered_terms("busca2b", field="document_terms")
+
+    assert "dietary self-monitoring intervention" in busca2b_terms
+    assert "implementation intentions" in busca2b_terms
+    assert "habit-based intervention" in busca2b_terms
+    assert "dietary adherence support" in busca2b_terms
+    assert "relapse prevention intervention" in busca2b_document_terms
+    assert "behavioral maintenance intervention" in busca2b_document_terms
+    assert "implementation intentions intervention" in busca2b_document_terms
