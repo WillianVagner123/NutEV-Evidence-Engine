@@ -1,0 +1,52 @@
+{
+  "keyword_points": {
+    "diet quality index": 3,
+    "healthy eating index": 3,
+    "alternate healthy eating index": 3,
+    "ahei": 2,
+    "dietary inflammatory index": 3,
+    "mediterranean diet score": 3,
+    "mediterranean diet adherence score": 4,
+    "mediterranean diet adherence": 4,
+    "dash adherence": 4,
+    "dash diet adherence": 4,
+    "plant-based diet index": 3,
+    "healthy plant-based diet index": 4,
+    "dietary pattern adherence": 4,
+    "dietary adherence score": 4,
+    "diet quality score": 3,
+    "dietary quality score": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "diet quality index": 5,
+      "healthy eating index": 5,
+      "alternate healthy eating index": 4,
+      "dietary inflammatory index": 4,
+      "mediterranean diet adherence score": 5,
+      "mediterranean diet adherence": 5,
+      "dash adherence": 5,
+      "dash diet adherence": 5,
+      "plant-based diet index": 4,
+      "healthy plant-based diet index": 5,
+      "dietary pattern adherence": 5,
+      "dietary adherence score": 5,
+      "diet quality score": 4,
+      "dietary quality score": 4
+    },
+    "a3": {
+      "diet quality index": 4,
+      "healthy eating index": 4,
+      "mediterranean diet adherence score": 4,
+      "dietary adherence score": 4,
+      "diet quality score": 4
+    },
+    "artigo3_framework": {
+      "diet quality index": 4,
+      "healthy eating index": 4,
+      "mediterranean diet adherence score": 4,
+      "dietary adherence score": 4,
+      "diet quality score": 4
+    }
+  }
+}
