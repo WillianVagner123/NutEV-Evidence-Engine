@@ -1,7 +1,9 @@
 from __future__ import annotations
+
+import json
 from dataclasses import dataclass, field
 from pathlib import Path
-import json
+from typing import Any
 
 
 def default_config_root() -> Path:
@@ -37,5 +39,26 @@ class NutevSettings:
             "10_curated": b / "10_curated",
         }
 
+
+def _merge_dict(base: dict[str, Any], overlay: dict[str, Any]) -> dict[str, Any]:
+    merged = dict(base)
+    for key, value in overlay.items():
+        if isinstance(value, dict) and isinstance(merged.get(key), dict):
+            merged[key] = _merge_dict(merged[key], value)
+        else:
+            merged[key] = value
+    return merged
+
+
 def load_json(path: Path | str) -> dict:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    config_path = Path(path)
+    data = json.loads(config_path.read_text(encoding="utf-8"))
+    if config_path.name != "scoring_rules.json":
+        return data
+
+    overlay_path = config_path.with_name("scoring_rules_overlay.json")
+    if not overlay_path.exists():
+        return data
+
+    overlay = json.loads(overlay_path.read_text(encoding="utf-8"))
+    return _merge_dict(data, overlay)
