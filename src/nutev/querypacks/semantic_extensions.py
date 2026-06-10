@@ -186,6 +186,51 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+SUSTAINABLE_DIETARY_GUIDANCE_TERMS = [
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "healthy and sustainable diet",
+    "healthy and sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+    "planetary diet",
+    "planetary health diet",
+    "eat-lancet diet",
+    "eat-lancet planetary health diet",
+    "sustainable food-based dietary guideline",
+    "sustainable food-based dietary guidelines",
+    "sustainable food based dietary guideline",
+    "sustainable food based dietary guidelines",
+    "sustainable dietary guideline",
+    "sustainable dietary guidelines",
+    "food-based dietary guideline sustainability",
+    "food based dietary guideline sustainability",
+    "dietary guidelines sustainability",
+    "climate-friendly diet",
+    "climate friendly diet",
+]
+
+SUSTAINABLE_DIETARY_GUIDANCE_DOCUMENT_TERMS = [
+    "sustainable healthy diet guideline",
+    "sustainable healthy diets guideline",
+    "sustainable food-based dietary guideline",
+    "sustainable food-based dietary guidelines",
+    "sustainable food based dietary guideline",
+    "sustainable food based dietary guidelines",
+    "sustainable dietary guideline",
+    "sustainable dietary guidelines",
+    "planetary health diet guideline",
+    "eat-lancet guideline",
+    "food-based dietary guideline sustainability",
+    "food based dietary guideline sustainability",
+    "healthy sustainable diets policy brief",
+    "sustainable diets policy brief",
+    "sustainable diets position statement",
+    "sustainable diets systematic review",
+]
+
 PRECISION_PERSONALIZED_NUTRITION_TERMS = [
     "personalized nutrition for cardiometabolic risk",
     "personalised nutrition for cardiometabolic risk",
@@ -416,8 +461,9 @@ def apply_semantic_extensions() -> None:
     )
     _extend_semantic_block(
         "evidence_synthesis",
-        terms=OFFICIAL_GUIDANCE_TERMS,
-        document_terms=OFFICIAL_GUIDANCE_DOCUMENT_TERMS,
+        terms=OFFICIAL_GUIDANCE_TERMS + SUSTAINABLE_DIETARY_GUIDANCE_TERMS,
+        document_terms=OFFICIAL_GUIDANCE_DOCUMENT_TERMS
+        + SUSTAINABLE_DIETARY_GUIDANCE_DOCUMENT_TERMS,
     )
     for block_name in (
         "implementation_science",
@@ -450,6 +496,11 @@ def apply_semantic_extensions() -> None:
             terms=DIET_QUALITY_INDEX_TERMS,
             document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
         )
+    _extend_semantic_block(
+        "lifestyle_nutrition_patterns",
+        terms=SUSTAINABLE_DIETARY_GUIDANCE_TERMS,
+        document_terms=SUSTAINABLE_DIETARY_GUIDANCE_DOCUMENT_TERMS,
+    )
     _extend_semantic_block(
         "food_literacy_agency",
         terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
