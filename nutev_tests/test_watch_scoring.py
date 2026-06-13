@@ -256,3 +256,11 @@ def test_hybrid_effectiveness_implementation_trial_signals_improve_priority() ->
             "title": "Hybrid effectiveness-implementation trial of lifestyle nutrition care delivery",
         }
     ) > _score_watch_item({"title": "Lifestyle nutrition care delivery note"})
+
+
+def test_dietary_fat_quality_signals_improve_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Replacing saturated fat with polyunsaturated fat for dyslipidemia and cardiometabolic risk",
+        }
+    ) > _score_watch_item({"title": "Dyslipidemia and cardiometabolic risk note"})
