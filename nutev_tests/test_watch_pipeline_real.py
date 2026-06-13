@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 
 from nutev.global_watch import watch_pipeline as wp
+from nutev.global_watch.watch_config import WATCH_CATEGORIES
 from nutev.global_watch.watch_scoring import score_watch_item
 from nutev.logs import setup_logger
 from nutev.settings import NutevSettings
@@ -49,6 +50,15 @@ def test_watch_scores_diabetes_remission_as_nutmev_priority():
         }
     )
     assert score >= 90
+
+
+def test_implementation_behavior_terms_cover_engagement_and_retention():
+    terms = WATCH_CATEGORIES["implementation_behavior"]
+    assert len(terms) == len({term.lower() for term in terms})
+    assert "dietary adherence intervention" in terms
+    assert "intervention engagement" in terms
+    assert "program retention" in terms
+    assert "attrition" in terms
 
 
 def test_watch_pipeline_uses_real_provider_mock(tmp_path, monkeypatch):
