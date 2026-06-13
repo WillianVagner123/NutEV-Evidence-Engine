@@ -1,44 +1,27 @@
+from pathlib import Path
+
 from nutev.analysis.nutev_classifier import classify_evidence
+from nutev.settings import load_json
 
 
-ONTOLOGY = {
-    "domains": {
-        "clinical_outcomes": ["remission", "risk"],
-        "implementation": ["implementation", "delivery"],
-        "equity": ["equity", "low-income"],
-        "dietary_patterns": ["mediterranean", "diet quality"],
-        "policy_systems": ["guideline", "policy"],
-    },
-    "outcomes": {},
-}
+CONFIG_ROOT = Path(__file__).resolve().parents[1] / "config"
 
-LENSES = {
-    "lenses": {
-        "busca1": {
-            "focus": "policy_systems",
-            "domains": ["policy_systems", "dietary_patterns", "equity"],
-        },
-        "busca2a": {
-            "focus": "clinical_outcomes",
-            "domains": ["clinical_outcomes", "dietary_patterns", "policy_systems"],
-        },
-        "busca2b": {
-            "focus": "implementation",
-            "domains": ["implementation", "clinical_outcomes", "dietary_patterns"],
-        },
-        "a3": {
-            "focus": "framework",
-            "domains": ["implementation", "policy_systems", "dietary_patterns"],
-        },
-    }
-}
+
+def _load_ontology() -> dict:
+    return load_json(CONFIG_ROOT / "nutev_ontology.json")
+
+
+def _load_lenses() -> dict:
+    return load_json(CONFIG_ROOT / "evidence_lenses.json")
 
 
 def test_evidence_lenses_reference_known_ontology_domains():
-    known_domains = set(ONTOLOGY["domains"])
+    ontology = _load_ontology()
+    lenses = _load_lenses()
+    known_domains = set(ontology["domains"])
     configured_domains = {
         domain
-        for lens in LENSES["lenses"].values()
+        for lens in lenses["lenses"].values()
         for domain in lens.get("domains", [])
     }
 
@@ -59,7 +42,7 @@ def test_evidence_lenses_classify_workstream_aligned_records():
         },
     ]
 
-    classified = classify_evidence(records, ONTOLOGY, LENSES)
+    classified = classify_evidence(records, _load_ontology(), _load_lenses())
 
     assert classified[0]["lens_busca1_present"] == 1
     assert classified[0]["lens_busca2a_present"] == 1
