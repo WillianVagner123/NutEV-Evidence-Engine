@@ -23,3 +23,21 @@ def test_precision_personalized_nutrition_document_terms_reach_framework_querypa
     assert "personalized nutrition framework" in artigo3_document_terms
     assert "precision nutrition intervention" in artigo3_document_terms
     assert "tailored nutrition framework" in artigo3_document_terms
+
+
+def test_culturally_tailored_diet_terms_reach_behavioral_and_clinical_querypacks() -> None:
+    busca2a_terms = _lowered_terms("busca2a")
+    busca2b_terms = _lowered_terms("busca2b")
+
+    assert "culturally adapted nutrition education" in busca2a_terms
+    assert "culturally tailored dietary intervention" in busca2b_terms
+    assert "culturally sensitive nutrition counseling" in busca2b_terms
+    assert "cultural tailoring of dietary advice" in busca2b_terms
+
+
+def test_culturally_tailored_diet_document_terms_reach_framework_querypack() -> None:
+    artigo3_document_terms = _lowered_terms("artigo3_framework", field="document_terms")
+
+    assert "culturally adapted nutrition intervention" in artigo3_document_terms
+    assert "culturally tailored lifestyle intervention" in artigo3_document_terms
+    assert "mixed methods cultural adaptation" in artigo3_document_terms
