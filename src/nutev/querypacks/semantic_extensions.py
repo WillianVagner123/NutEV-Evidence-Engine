@@ -226,6 +226,42 @@ PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS = [
     "tailored nutrition framework",
 ]
 
+CULTURALLY_TAILORED_DIET_TERMS = [
+    "culturally tailored diet",
+    "culturally tailored diets",
+    "culturally tailored dietary intervention",
+    "culturally tailored nutrition intervention",
+    "culturally tailored nutrition education",
+    "culturally adapted diet",
+    "culturally adapted diets",
+    "culturally adapted dietary intervention",
+    "culturally adapted nutrition intervention",
+    "culturally adapted nutrition education",
+    "culturally appropriate nutrition",
+    "culturally responsive nutrition",
+    "culturally relevant nutrition",
+    "culturally sensitive nutrition counseling",
+    "culturally sensitive nutrition counselling",
+    "culturally tailored lifestyle intervention",
+    "culturally adapted lifestyle intervention",
+    "cultural tailoring of dietary advice",
+    "cultural adaptation of dietary guidelines",
+    "ethnically tailored dietary intervention",
+]
+
+CULTURALLY_TAILORED_DIET_DOCUMENT_TERMS = [
+    "culturally tailored dietary intervention",
+    "culturally tailored nutrition intervention",
+    "culturally adapted nutrition intervention",
+    "culturally adapted lifestyle intervention",
+    "culturally tailored lifestyle intervention",
+    "culturally adapted intervention trial",
+    "culturally tailored intervention trial",
+    "cultural adaptation study",
+    "mixed methods cultural adaptation",
+    "cultural adaptation of dietary guidelines",
+]
+
 OFFICIAL_GUIDANCE_TERMS = [
     "evidence-based guideline",
     "evidence based guideline",
@@ -449,6 +485,17 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=DIET_QUALITY_INDEX_TERMS,
             document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "adherence_persistence",
+        "equity_access",
+        "implementation_science",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=CULTURALLY_TAILORED_DIET_TERMS,
+            document_terms=CULTURALLY_TAILORED_DIET_DOCUMENT_TERMS,
         )
     _extend_semantic_block(
         "food_literacy_agency",
