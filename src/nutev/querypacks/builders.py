@@ -40,6 +40,55 @@ DIETITIAN_IMPLEMENTATION_TERMS = [
     "registered dietitian nutritionist led intervention",
 ]
 
+BROAD_LIFESTYLE_TERMS_REQUIRING_NUTRITION_ANCHOR = {
+    "lifestyle medicine",
+    "medicina do estilo de vida",
+    "lifestyle intervention",
+    "lifestyle modification",
+    "therapeutic lifestyle changes",
+    "therapeutic lifestyle change",
+    "healthy lifestyle",
+    "estilo de vida saudável",
+    "physical activity",
+    "exercise",
+    "movement",
+    "atividade física",
+    "exercício",
+    "sedentary",
+    "sedentário",
+    "sleep",
+    "sleep quality",
+    "circadian",
+    "stress",
+    "mindfulness",
+    "social connection",
+    "social support",
+    "sono",
+    "qualidade do sono",
+    "ritmo circadiano",
+    "estresse",
+    "atenção plena",
+    "conexões sociais",
+    "suporte social",
+    "smoking cessation",
+    "alcohol",
+    "substance use",
+    "tabaco",
+    "tabagismo",
+    "álcool",
+}
+
+NUTRITION_ANCHOR_FALLBACK_TERMS = [
+    "nutrition",
+    "nutrição",
+    "diet",
+    "dietary",
+    "food",
+    "healthy eating",
+    "dietary pattern",
+    "medical nutrition therapy",
+]
+
 SOCIAL_PRESCRIBING_ACCESS_TERMS = [
     "social prescribing",
     "social prescribing program",
@@ -760,6 +809,36 @@ def chunk_terms(terms: list[str], chunk_size: int = 5) -> list[list[str]]:
     return [clean[i : i + chunk_size] for i in range(0, len(clean), chunk_size)]
 
 
+def _needs_nutrition_anchor(terms: list[str]) -> bool:
+    return any(
+        term.lower() in BROAD_LIFESTYLE_TERMS_REQUIRING_NUTRITION_ANCHOR
+        for term in terms
+    )
+
+
+def _nutrition_anchor_terms(
+    nutrition_terms: list[str],
+    diet_terms: list[str],
+) -> list[str]:
+    prioritized_terms = [
+        "medical nutrition therapy",
+        "nutrition counseling",
+        "nutrition counselling",
+        "dietary counseling",
+        "dietary counselling",
+        "dietary pattern",
+        "dietary patterns",
+        "healthy diet",
+        "healthy eating",
+        "food literacy",
+        "culinary medicine",
+        "meal planning",
+    ]
+    available_terms = nutrition_terms + diet_terms + NUTRITION_ANCHOR_FALLBACK_TERMS
+    prioritized = [term for term in prioritized_terms if term.lower() in {t.lower() for t in available_terms}]
+    return uniq(prioritized + available_terms)
+
+
 def build_structured_components(
     keyword_taxonomy: dict,
     workstream: str,
@@ -1238,6 +1317,7 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
     diet_terms = components["diet_terms"]
     nutrition_terms = components["nutrition_terms"]
     focus_terms = components["focus_terms"]
+    nutrition_anchor_terms = _nutrition_anchor_terms(nutrition_terms, diet_terms)
 
     queries: list[str] = []
 
@@ -1269,11 +1349,13 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
     )
 
     for chunk in chunk_terms(focus_terms, 5)[:16]:
+        anchor_terms = nutrition_anchor_terms if _needs_nutrition_anchor(chunk) else []
         queries.append(
             _join_parts(
                 [
                     or_block(condition_terms + clinical_terms, 8),
                     or_block(chunk, 5),
+                    or_block(anchor_terms, 4),
                     or_block(doc_type_terms, 6),
                 ]
             )
