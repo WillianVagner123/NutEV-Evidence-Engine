@@ -43,3 +43,15 @@ def test_food_and_eating_competence_terms_reach_adherence_querypacks() -> None:
     assert "food competence intervention" in busca2b_terms
     assert "eating competence intervention" in busca2b_terms
     assert "eating competence questionnaire" in busca2b_document_terms
+
+
+def test_food_access_referral_terms_reach_equity_querypacks() -> None:
+    busca1_terms = _lowered_terms("busca1")
+    busca2b_terms = _lowered_terms("busca2b")
+    busca2b_document_terms = _lowered_terms("busca2b", field="document_terms")
+
+    assert "closed-loop food referral" in busca1_terms
+    assert "community resource navigation" in busca2b_terms
+    assert "clinical-community linkage" in busca2b_terms
+    assert "closed-loop food referral program" in busca2b_document_terms
+    assert "community resource referral program" in busca2b_document_terms
