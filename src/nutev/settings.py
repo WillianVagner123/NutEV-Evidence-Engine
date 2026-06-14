@@ -34,6 +34,7 @@ class NutevSettings:
             "06_tables": b / "06_tables",
             "07_logs": b / "07_logs",
             "08_docs": b / "08_docs",
+            "09_global_watch": b / "09_global_watch",
             "10_curated": b / "10_curated",
         }
 
