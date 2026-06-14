@@ -1,0 +1,20 @@
+{
+  "global": {
+    "diet_patterns": {
+      "therapeutic_diet": [
+        "diet therapy",
+        "diet therapies",
+        "therapeutic diet",
+        "therapeutic diets",
+        "dietary therapy",
+        "dietary treatment",
+        "nutrition therapy",
+        "nutrition therapy intervention",
+        "structured dietary intervention",
+        "structured diet intervention",
+        "evidence-based nutrition intervention",
+        "evidence based nutrition intervention"
+      ]
+    }
+  }
+}

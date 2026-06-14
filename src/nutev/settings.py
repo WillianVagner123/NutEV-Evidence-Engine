@@ -1,7 +1,9 @@
 from __future__ import annotations
+
 from dataclasses import dataclass, field
-from pathlib import Path
 import json
+from pathlib import Path
+from typing import Any
 
 
 def default_config_root() -> Path:
@@ -37,5 +39,40 @@ class NutevSettings:
             "10_curated": b / "10_curated",
         }
 
+
+def _merge_unique_list(base: list[Any], override: list[Any]) -> list[Any]:
+    output = list(base)
+    seen = {str(item).lower() for item in output}
+    for item in override:
+        marker = str(item).lower()
+        if marker in seen:
+            continue
+        output.append(item)
+        seen.add(marker)
+    return output
+
+
+def _deep_merge_config(base: Any, override: Any) -> Any:
+    if isinstance(base, dict) and isinstance(override, dict):
+        merged = dict(base)
+        for key, value in override.items():
+            if key in merged:
+                merged[key] = _deep_merge_config(merged[key], value)
+            else:
+                merged[key] = value
+        return merged
+    if isinstance(base, list) and isinstance(override, list):
+        return _merge_unique_list(base, override)
+    return override
+
+
 def load_json(path: Path | str) -> dict:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    config_path = Path(path)
+    data = json.loads(config_path.read_text(encoding="utf-8"))
+    override_path = config_path.with_name(
+        f"{config_path.stem}_overrides{config_path.suffix}"
+    )
+    if override_path.exists():
+        override = json.loads(override_path.read_text(encoding="utf-8"))
+        data = _deep_merge_config(data, override)
+    return data

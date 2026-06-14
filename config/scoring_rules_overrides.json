@@ -1,0 +1,43 @@
+{
+  "keyword_points": {
+    "diet therapy": 3,
+    "diet therapies": 3,
+    "therapeutic diet": 3,
+    "therapeutic diets": 3,
+    "dietary therapy": 3,
+    "dietary treatment": 3,
+    "nutrition therapy": 3,
+    "nutrition therapy intervention": 4,
+    "structured dietary intervention": 3,
+    "structured diet intervention": 3,
+    "evidence-based nutrition intervention": 3,
+    "evidence based nutrition intervention": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "diet therapy": 4,
+      "therapeutic diet": 4,
+      "dietary therapy": 4,
+      "dietary treatment": 4,
+      "nutrition therapy": 4,
+      "nutrition therapy intervention": 5,
+      "structured dietary intervention": 4,
+      "evidence-based nutrition intervention": 4,
+      "evidence based nutrition intervention": 4
+    },
+    "busca2b": {
+      "diet therapy": 4,
+      "diet therapies": 4,
+      "therapeutic diet": 4,
+      "therapeutic diets": 4,
+      "dietary therapy": 4,
+      "dietary treatment": 4,
+      "nutrition therapy": 4,
+      "nutrition therapy intervention": 5,
+      "structured dietary intervention": 5,
+      "structured diet intervention": 5,
+      "evidence-based nutrition intervention": 4,
+      "evidence based nutrition intervention": 4
+    }
+  }
+}
