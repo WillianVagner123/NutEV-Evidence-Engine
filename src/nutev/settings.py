@@ -38,5 +38,41 @@ class NutevSettings:
             "10_curated": b / "10_curated",
         }
 
+
+def _merge_config(base: dict, supplement: dict) -> dict:
+    merged = dict(base)
+    for key, value in supplement.items():
+        if key == "version_note":
+            continue
+        if isinstance(value, dict) and isinstance(merged.get(key), dict):
+            merged[key] = _merge_config(merged[key], value)
+            continue
+        if isinstance(value, list) and isinstance(merged.get(key), list):
+            existing = list(merged[key])
+            seen = {str(item).strip().lower() for item in existing}
+            for item in value:
+                normalized = str(item).strip().lower()
+                if normalized and normalized not in seen:
+                    existing.append(item)
+                    seen.add(normalized)
+            merged[key] = existing
+            continue
+        merged[key] = value
+    return merged
+
+
+def _load_keyword_taxonomy_supplement(path: Path) -> dict:
+    supplement_path = path.with_name("keyword_taxonomy_supplement.json")
+    if not supplement_path.exists():
+        return {}
+    return json.loads(supplement_path.read_text(encoding="utf-8"))
+
+
 def load_json(path: Path | str) -> dict:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    json_path = Path(path)
+    data = json.loads(json_path.read_text(encoding="utf-8"))
+    if json_path.name == "keyword_taxonomy.json":
+        supplement = _load_keyword_taxonomy_supplement(json_path)
+        if supplement:
+            data = _merge_config(data, supplement)
+    return data
