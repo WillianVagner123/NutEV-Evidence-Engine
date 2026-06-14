@@ -146,6 +146,35 @@ FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS = [
     "nutrition education intervention",
 ]
 
+FOOD_EATING_COMPETENCE_TERMS = [
+    "food competence",
+    "eating competence",
+    "eating competent",
+    "food competence intervention",
+    "eating competence intervention",
+    "food competence framework",
+    "eating competence framework",
+    "eating competence model",
+    "eating competence approach",
+    "ecSatter",
+    "Satter eating competence",
+    "Satter eating competence model",
+]
+
+FOOD_EATING_COMPETENCE_DOCUMENT_TERMS = [
+    "food competence questionnaire",
+    "food competence scale",
+    "food competence instrument",
+    "eating competence questionnaire",
+    "eating competence scale",
+    "eating competence instrument",
+    "Satter eating competence inventory",
+    "ecSatter inventory",
+    "eating competence validation",
+    "eating competence intervention",
+    "eating competence framework",
+]
+
 DIET_QUALITY_INDEX_TERMS = [
     "diet quality index",
     "diet quality indices",
@@ -449,6 +478,12 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=DIET_QUALITY_INDEX_TERMS,
             document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
+        )
+    for block_name in ("adherence_persistence", "food_literacy_agency"):
+        _extend_semantic_block(
+            block_name,
+            terms=FOOD_EATING_COMPETENCE_TERMS,
+            document_terms=FOOD_EATING_COMPETENCE_DOCUMENT_TERMS,
         )
     _extend_semantic_block(
         "food_literacy_agency",
