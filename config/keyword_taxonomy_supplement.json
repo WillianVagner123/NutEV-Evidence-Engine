@@ -20,5 +20,71 @@
         "intermittent fasting"
       ]
     }
+  },
+  "clinical": {
+    "cardiovascular_kidney_metabolic": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "cardiovascular-kidney-metabolic disease",
+      "cardiovascular kidney metabolic disease",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "ckm disease",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome",
+      "cardiorenal metabolic health",
+      "cardio-renal-metabolic health",
+      "cardiorenal metabolic risk",
+      "cardio-renal-metabolic risk"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome",
+        "ckm risk",
+        "cardiorenal metabolic syndrome",
+        "cardiorenal metabolic risk"
+      ],
+      "clinical_keys": [
+        "cardiovascular_kidney_metabolic"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic syndrome scientific statement",
+        "cardiovascular kidney metabolic syndrome guideline",
+        "ckm syndrome consensus",
+        "cardiorenal metabolic syndrome lifestyle intervention"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome",
+        "ckm risk",
+        "cardiorenal metabolic syndrome",
+        "cardiorenal metabolic risk"
+      ],
+      "clinical_keys": [
+        "cardiovascular_kidney_metabolic"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic syndrome lifestyle intervention",
+        "cardiovascular kidney metabolic risk dietary intervention",
+        "ckm syndrome nutrition intervention",
+        "cardiorenal metabolic syndrome dietary intervention"
+      ]
+    }
   }
 }
