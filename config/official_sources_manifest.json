@@ -45,6 +45,21 @@
         "name": "Tufts Food is Medicine Institute resources",
         "url": "https://tuftsfoodismedicine.org/resources/",
         "authority": 4
+      },
+      {
+        "name": "USDA Nutrition Security research and resources",
+        "url": "https://www.ers.usda.gov/newsroom/trending-topics/nutrition-security-research-resources",
+        "authority": 5
+      },
+      {
+        "name": "CDC Food assistance and food system resources",
+        "url": "https://www.cdc.gov/nutrition/php/resources/food-and-food-system-resources.html",
+        "authority": 4
+      },
+      {
+        "name": "CDC Healthy Food Environments",
+        "url": "https://www.cdc.gov/nutrition/php/healthy-food-environments/index.html",
+        "authority": 5
       }
     ],
     "busca2a": [
@@ -159,6 +174,21 @@
         "name": "Tufts Food is Medicine Institute resources",
         "url": "https://tuftsfoodismedicine.org/resources/",
         "authority": 4
+      },
+      {
+        "name": "CDC Healthy Food Environments",
+        "url": "https://www.cdc.gov/nutrition/php/healthy-food-environments/index.html",
+        "authority": 5
+      },
+      {
+        "name": "CDC Diabetes and Food Insecurity",
+        "url": "https://www.cdc.gov/diabetes/healthy-eating/diabetes-food-insecurity.html",
+        "authority": 4
+      },
+      {
+        "name": "ODPHP Food Is Medicine types of interventions",
+        "url": "https://odphp.health.gov/foodismedicine/understanding-food-medicine/types-interventions",
+        "authority": 5
       }
     ],
     "artigo3_framework": [
