@@ -1,0 +1,24 @@
+{
+  "version_note": "Supplemental NutMEV query expansion loaded after keyword_taxonomy.json; preserves the base taxonomy and appends focused terms.",
+  "global": {
+    "diet_patterns": {
+      "chrononutrition": [
+        "chrononutrition",
+        "chrono-nutrition",
+        "meal timing",
+        "meal timing intervention",
+        "eating window",
+        "feeding window",
+        "time-restricted eating",
+        "time restricted eating",
+        "early time-restricted eating",
+        "early time restricted eating",
+        "early time-restricted feeding",
+        "early time restricted feeding",
+        "time-restricted feeding",
+        "time restricted feeding",
+        "intermittent fasting"
+      ]
+    }
+  }
+}
