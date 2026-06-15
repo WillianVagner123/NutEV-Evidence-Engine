@@ -1,0 +1,103 @@
+{
+  "version_note": "Focused NutMEV expansion for nutrition-sensitive social prescribing, navigation, and community food referral terms. Loaded after keyword_taxonomy.json without overwriting the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_as_medicine_access": [
+        "nutrition-sensitive social prescribing",
+        "nutrition sensitive social prescribing",
+        "food-related social prescribing",
+        "food related social prescribing",
+        "diet-related social prescribing",
+        "diet related social prescribing",
+        "social prescribing nutrition",
+        "social prescribing food",
+        "nutrition navigation",
+        "food resource navigation",
+        "food access navigation",
+        "community food navigation",
+        "community food referral pathway",
+        "community food referral pathways",
+        "food assistance referral",
+        "food assistance referrals",
+        "nutrition assistance referral",
+        "nutrition assistance referrals",
+        "produce prescription referral pathway",
+        "medically tailored food referral pathway"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "nutrition-sensitive social prescribing",
+      "nutrition sensitive social prescribing",
+      "food-related social prescribing",
+      "food related social prescribing",
+      "diet-related social prescribing",
+      "diet related social prescribing",
+      "nutrition navigation",
+      "food resource navigation",
+      "food access navigation",
+      "community food referral pathway",
+      "food assistance referral",
+      "nutrition assistance referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "nutrition-sensitive social prescribing",
+        "food-related social prescribing",
+        "diet-related social prescribing",
+        "nutrition navigation",
+        "food resource navigation",
+        "food access navigation",
+        "community food referral pathway",
+        "food assistance referral",
+        "nutrition assistance referral"
+      ],
+      "web_query_hints": [
+        "nutrition-sensitive social prescribing report",
+        "food-related social prescribing program",
+        "diet-related social prescribing evaluation",
+        "nutrition navigation program",
+        "food resource navigation program",
+        "community food referral pathway report",
+        "food assistance referral program"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "navigation program",
+        "program evaluation",
+        "implementation report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "nutrition-sensitive social prescribing",
+        "food-related social prescribing",
+        "diet-related social prescribing",
+        "nutrition navigation",
+        "food resource navigation",
+        "food access navigation",
+        "community food referral pathway",
+        "food assistance referral",
+        "nutrition assistance referral"
+      ],
+      "web_query_hints": [
+        "nutrition-sensitive social prescribing cardiometabolic trial",
+        "food-related social prescribing systematic review",
+        "diet-related social prescribing intervention",
+        "nutrition navigation cardiometabolic intervention",
+        "food access navigation obesity intervention",
+        "community food referral pathway evaluation"
+      ],
+      "document_terms": [
+        "navigation intervention",
+        "referral pathway",
+        "implementation trial",
+        "process evaluation",
+        "systematic review"
+      ]
+    }
+  }
+}
