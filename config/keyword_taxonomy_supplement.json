@@ -40,6 +40,25 @@
         "dietary maintenance",
         "behavioral maintenance",
         "behavioural maintenance"
+      ],
+      "masld_nutrition_lifestyle": [
+        "MASLD nutrition",
+        "MASLD diet",
+        "MASLD dietary intervention",
+        "MASLD lifestyle intervention",
+        "MASLD weight loss",
+        "MASH nutrition",
+        "MASH diet",
+        "MASH dietary intervention",
+        "MASH lifestyle intervention",
+        "steatotic liver disease nutrition",
+        "steatotic liver disease diet",
+        "steatotic liver disease dietary intervention",
+        "steatotic liver disease lifestyle intervention",
+        "metabolic dysfunction-associated steatotic liver disease nutrition",
+        "metabolic dysfunction associated steatotic liver disease nutrition",
+        "metabolic dysfunction-associated fatty liver disease diet",
+        "metabolic dysfunction associated fatty liver disease diet"
       ]
     },
     "implementation_behavior": {
@@ -138,6 +157,19 @@
       "ckm risk",
       "cardiorenal metabolic syndrome",
       "cardio-renal-metabolic syndrome"
+    ],
+    "liver_metabolic": [
+      "MASLD nutrition",
+      "MASLD diet",
+      "MASLD dietary intervention",
+      "MASLD lifestyle intervention",
+      "MASH nutrition",
+      "MASH diet",
+      "MASH dietary intervention",
+      "MASH lifestyle intervention",
+      "steatotic liver disease nutrition",
+      "steatotic liver disease diet",
+      "steatotic liver disease lifestyle intervention"
     ]
   },
   "outcomes": {
@@ -171,6 +203,21 @@
       "ckm risk",
       "cardiorenal metabolic syndrome",
       "cardio-renal-metabolic syndrome"
+    ],
+    "liver_metabolic": [
+      "MASLD nutrition",
+      "MASLD diet",
+      "MASLD dietary intervention",
+      "MASLD lifestyle intervention",
+      "MASLD weight loss",
+      "MASH nutrition",
+      "MASH diet",
+      "MASH dietary intervention",
+      "MASH lifestyle intervention",
+      "steatotic liver disease nutrition",
+      "steatotic liver disease diet",
+      "steatotic liver disease dietary intervention",
+      "steatotic liver disease lifestyle intervention"
     ],
     "diet_quality_adherence": [
       "long-term adherence",
@@ -270,7 +317,13 @@
         "cardiovascular kidney metabolic risk",
         "ckm syndrome",
         "ckm health",
-        "ckm risk"
+        "ckm risk",
+        "MASLD nutrition",
+        "MASLD diet",
+        "MASH nutrition",
+        "MASH diet",
+        "steatotic liver disease nutrition",
+        "steatotic liver disease diet"
       ],
       "web_query_hints": [
         "diabetes remission guideline",
@@ -282,7 +335,15 @@
         "cardiovascular kidney metabolic syndrome guideline",
         "ckm syndrome scientific statement",
         "ckm syndrome consensus",
-        "cardiorenal metabolic syndrome guideline"
+        "cardiorenal metabolic syndrome guideline",
+        "MASLD clinical practice guideline",
+        "MASLD practice guidance",
+        "MASLD nutrition guideline",
+        "MASLD dietary guidance",
+        "MASH practice guidance",
+        "MASH clinical practice guideline",
+        "steatotic liver disease guideline",
+        "steatotic liver disease practice guidance"
       ]
     },
     "busca2b": {
@@ -305,7 +366,19 @@
         "cardiovascular kidney metabolic risk",
         "ckm syndrome",
         "ckm health",
-        "ckm risk"
+        "ckm risk",
+        "MASLD nutrition",
+        "MASLD diet",
+        "MASLD dietary intervention",
+        "MASLD lifestyle intervention",
+        "MASH nutrition",
+        "MASH diet",
+        "MASH dietary intervention",
+        "MASH lifestyle intervention",
+        "steatotic liver disease nutrition",
+        "steatotic liver disease diet",
+        "steatotic liver disease dietary intervention",
+        "steatotic liver disease lifestyle intervention"
       ],
       "focus_terms": [
         "food is medicine implementation",
@@ -320,7 +393,14 @@
         "food insecurity intervention",
         "patient navigation",
         "community health worker-led nutrition",
-        "community health worker led nutrition"
+        "community health worker led nutrition",
+        "MASLD dietary intervention",
+        "MASLD lifestyle intervention",
+        "MASLD weight loss",
+        "MASH dietary intervention",
+        "MASH lifestyle intervention",
+        "steatotic liver disease dietary intervention",
+        "steatotic liver disease lifestyle intervention"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -341,14 +421,25 @@
         "food as medicine evaluation",
         "medically tailored meals cardiometabolic trial",
         "nutrition security intervention trial",
-        "food insecurity intervention cardiometabolic"
+        "food insecurity intervention cardiometabolic",
+        "MASLD lifestyle intervention trial",
+        "MASLD dietary intervention trial",
+        "MASLD nutrition systematic review",
+        "MASLD weight loss trial",
+        "MASH lifestyle intervention trial",
+        "MASH dietary intervention trial",
+        "steatotic liver disease lifestyle intervention",
+        "steatotic liver disease systematic review"
       ],
       "document_terms": [
         "implementation trial",
         "program evaluation",
         "process evaluation",
         "pragmatic trial",
-        "systematic review"
+        "systematic review",
+        "nutrition systematic review",
+        "dietary intervention trial",
+        "lifestyle intervention trial"
       ]
     },
     "a3": {
