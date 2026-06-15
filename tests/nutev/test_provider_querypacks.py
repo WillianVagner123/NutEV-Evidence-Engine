@@ -206,12 +206,55 @@ def test_pubmed_mesh_expands_lipid_liver_and_prediabetes_terms() -> None:
     assert '"Non-alcoholic Fatty Liver Disease"[MeSH Terms]' in joined
 
 
+def test_pubmed_mesh_expands_non_hdl_cholesterol_terms() -> None:
+    taxonomy = {
+        "global": {
+            "document_types": {"reviews": ["systematic review"]},
+            "diet_patterns": {"core": ["mediterranean diet"]},
+            "nutrition_domains": {"core": ["medical nutrition therapy"]},
+            "implementation_behavior": {"adherence": ["adherence"]},
+        },
+        "clinical": {
+            "lipids": ["non-hdl cholesterol"],
+        },
+        "outcomes": {
+            "lipids": ["cholesterol"],
+        },
+        "workstreams": {
+            "busca2b": {
+                "population_terms": ["adult"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["lipids"],
+                "document_type_keys": ["reviews"],
+                "priority_outcomes": ["lipids"],
+                "focus_blocks": ["diet_patterns", "implementation_behavior"],
+                "web_query_hints": ["lipid lowering trial"],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(taxonomy, "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"Cholesterol, LDL"[MeSH Terms]' in joined
+
+
 def test_busca2b_enhancements_add_prediabetes_and_insulin_resistance_queries() -> None:
     queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
     joined = "\n".join(queries)
 
     assert '"prediabetes"[Title/Abstract]' in joined
     assert '"insulin resistance"[Title/Abstract]' in joined
+
+
+def test_busca2b_promotes_nutrition_prescription_and_structured_lifestyle_queries() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"nutrition prescription"[Title/Abstract]' in joined
+    assert '"dietary prescription"[Title/Abstract]' in joined
+    assert '"structured lifestyle program"[Title/Abstract]' in joined
+    assert '"lifestyle medicine intervention"[Title/Abstract]' in joined
 
 
 def test_busca2a_guidance_terms_pull_guideline_variants_into_queries() -> None:
