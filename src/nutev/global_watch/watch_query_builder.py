@@ -487,6 +487,7 @@ CATEGORY_CONTEXT_TERMS = {
         "culinary medicine",
         "culinary nutrition",
         "commensality",
+        "commensality scale",
         "psychometric validation",
         "scale development",
         "lifestyle medicine competencies",

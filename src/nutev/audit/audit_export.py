@@ -52,7 +52,12 @@ def export_audit_outputs(
     write_excel_file(events_df, tables_dir / "NUTEV_RECOMMENDATION_AUDIT_TRAIL.xlsx")
     write_excel_file(claims_df[claims_df.get("claim_status", "") == "insufficient_evidence"], tables_dir / "NUTEV_UNSUPPORTED_CLAIMS.xlsx")
     write_excel_file(conflicts_df, tables_dir / "NUTEV_CONFLICTING_EVIDENCE.xlsx")
-    write_excel_file(claims_df[claims_df.get("needs_human_review", False) == True], tables_dir / "NUTEV_HUMAN_REVIEW_QUEUE.xlsx")
+    review_queue = (
+        claims_df[claims_df["needs_human_review"].astype(bool)]
+        if "needs_human_review" in claims_df.columns
+        else claims_df.iloc[0:0]
+    )
+    write_excel_file(review_queue, tables_dir / "NUTEV_HUMAN_REVIEW_QUEUE.xlsx")
 
     write_simple_csv(claims_df.to_dict("records"), metadata_dir / "NUTEV_EVIDENCE_CLAIMS.csv")
     write_simple_csv(rec_df.to_dict("records"), metadata_dir / "NUTEV_RECOMMENDATION_CANDIDATES.csv")

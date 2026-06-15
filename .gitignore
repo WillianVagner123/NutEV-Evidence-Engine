@@ -22,3 +22,4 @@ project_output*/00_settings/
 provider_settings.local.json
 node_modules/
 tests/accessibility_tests/node_modules/
+.venv-ci/

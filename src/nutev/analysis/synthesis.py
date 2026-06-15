@@ -5,6 +5,13 @@ from pathlib import Path
 import pandas as pd
 
 from nutev.export.excel_writer import write_excel_file, write_excel_sheet
+from nutev.search.normalize import (
+    infer_clinical_condition,
+    infer_diet_pattern,
+    infer_doc_type,
+    infer_year,
+    normalize_source,
+)
 
 
 def _write_workbook_or_csv(path: Path, sheets: dict[str, pd.DataFrame]) -> None:
@@ -17,13 +24,7 @@ def _write_workbook_or_csv(path: Path, sheets: dict[str, pd.DataFrame]) -> None:
         for name, frame in sheets.items():
             frame.to_csv(path.with_suffix(f".{name[:31]}.csv"), index=False, encoding="utf-8-sig")
         path.touch()
-from nutev.search.normalize import (
-    infer_clinical_condition,
-    infer_diet_pattern,
-    infer_doc_type,
-    infer_year,
-    normalize_source,
-)
+
 
 DIET_PATTERNS = [
     "mediterranean",

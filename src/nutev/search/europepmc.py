@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+import logging
 import os
 import re
 import time
 from typing import Any
 
 import requests
+
+logger = logging.getLogger(__name__)
 
 _YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
 
@@ -136,4 +139,5 @@ def search_europepmc(query: str, page_size: int = 18) -> list[dict]:
         except Exception as exc:
             last = exc
             time.sleep(1.0 * attempt)
+    logger.warning("europepmc search failed query=%s error=%s", query, last)
     return []

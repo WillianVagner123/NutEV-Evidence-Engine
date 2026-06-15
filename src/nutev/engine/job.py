@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import platform
 import subprocess
 from datetime import datetime, timezone
@@ -48,4 +49,4 @@ def write_search_job_snapshot(search_job: SearchJob, path: Path, snapshot: dict)
         "search_job": search_job.model_dump(mode="json"),
     }
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(__import__("json").dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

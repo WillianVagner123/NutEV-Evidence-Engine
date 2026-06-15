@@ -46,7 +46,7 @@ def generate_recommendation_candidates(claims: list[EvidenceClaim], evaluations:
             nutev_domains=[dom],
             supporting_claim_ids=[c.claim_id for c in support],
             supporting_document_ids=sorted({c.document_id for c in support}),
-            evidence_lenses=sorted({l for c in support for l in c.evidence_lenses}),
+            evidence_lenses=sorted({lens for c in support for lens in c.evidence_lenses}),
             clinical_conditions=sorted({x for c in support for x in c.clinical_conditions}),
             dietary_patterns=sorted({x for c in support for x in c.dietary_patterns}),
             outcomes=sorted({x for c in support for x in c.outcomes}),

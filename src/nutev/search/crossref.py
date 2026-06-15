@@ -1,7 +1,10 @@
 from __future__ import annotations
+import logging
 import os
 import requests
 import time
+
+logger = logging.getLogger(__name__)
 
 
 def _pick_crossref_url(item: dict) -> str:
@@ -67,4 +70,5 @@ def search_crossref(query: str, rows: int = 18) -> list[dict]:
         except Exception as e:
             last = e
             time.sleep(1.0 * attempt)
+    logger.warning("crossref search failed query=%s error=%s", query, last)
     return []
