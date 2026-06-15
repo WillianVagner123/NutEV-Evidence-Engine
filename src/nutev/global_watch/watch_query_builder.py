@@ -153,6 +153,23 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "nutrition security intervention",
 ]
 
+BEHAVIOR_CHANGE_PLANNING_TERMS = [
+    "action planning",
+    "coping planning",
+    "problem solving",
+    "relapse prevention",
+    "lapse management",
+    "habit formation",
+    "self-regulation",
+    "self regulation",
+    "dietary self-monitoring",
+    "dietary self-regulation",
+    "readiness to change",
+    "stage of change",
+    "stages of change",
+    "transtheoretical model",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -400,6 +417,7 @@ CATEGORY_CONTEXT_TERMS = {
         "social needs referral",
         "closed-loop referral",
         "closed loop referral",
+        *BEHAVIOR_CHANGE_PLANNING_TERMS,
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
         "telehealth",
