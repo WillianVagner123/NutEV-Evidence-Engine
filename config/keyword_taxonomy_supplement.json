@@ -79,6 +79,19 @@
       "weight regain",
       "weight regain prevention",
       "weight regain management"
+    ],
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome"
     ]
   },
   "outcomes": {
@@ -100,6 +113,19 @@
       "glycaemic remission",
       "remission maintenance"
     ],
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome"
+    ],
     "diet_quality_adherence": [
       "long-term adherence",
       "dietary maintenance",
@@ -119,14 +145,28 @@
         "remission of type 2 diabetes",
         "diabetes reversal",
         "weight loss maintenance",
-        "weight regain prevention"
+        "weight regain prevention",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome",
+        "ckm health",
+        "ckm risk"
       ],
       "web_query_hints": [
         "diabetes remission guideline",
         "type 2 diabetes remission consensus",
         "diabetes remission consensus report",
         "weight loss maintenance guideline",
-        "weight regain prevention guideline"
+        "weight regain prevention guideline",
+        "cardiovascular-kidney-metabolic syndrome guideline",
+        "cardiovascular kidney metabolic syndrome guideline",
+        "ckm syndrome scientific statement",
+        "ckm syndrome consensus",
+        "cardiorenal metabolic syndrome guideline"
       ]
     },
     "busca2b": {
@@ -140,7 +180,16 @@
         "long-term weight loss maintenance",
         "long term weight loss maintenance",
         "weight regain prevention",
-        "weight regain management"
+        "weight regain management",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome",
+        "ckm health",
+        "ckm risk"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -149,7 +198,12 @@
         "weight loss maintenance trial",
         "weight loss maintenance systematic review",
         "weight regain prevention trial",
-        "dietary maintenance intervention"
+        "dietary maintenance intervention",
+        "cardiovascular-kidney-metabolic syndrome lifestyle intervention",
+        "cardiovascular kidney metabolic syndrome nutrition intervention",
+        "ckm syndrome lifestyle intervention",
+        "ckm syndrome diet intervention",
+        "ckm syndrome systematic review"
       ]
     }
   }
