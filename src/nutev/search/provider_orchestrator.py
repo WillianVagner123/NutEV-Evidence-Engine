@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from nutev.engine.events import emit_event, write_event
-from nutev.search.base import ProviderResult
+from nutev.search.base import ProviderResult, redact_secrets
 from nutev.search.brave_optional import search_brave
 from nutev.search.checkpoint import query_hash
 from nutev.search.crossref import search_crossref
@@ -205,6 +205,7 @@ def search_provider(
         result.meta.setdefault("query_hash", qh)
         return finish(result)
     except Exception as exc:
+        safe_error = redact_secrets(exc)
         if logger:
-            logger.warning("provider_failed provider=%s workstream=%s error=%s", provider, workstream, exc)
-        return finish(ProviderResult(provider, query, status="failed", error=str(exc), meta={"query_hash": qh}))
+            logger.warning("provider_failed provider=%s workstream=%s error=%s", provider, workstream, safe_error)
+        return finish(ProviderResult(provider, query, status="failed", error=safe_error, meta={"query_hash": qh}))

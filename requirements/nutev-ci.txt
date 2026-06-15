@@ -4,6 +4,7 @@ requests>=2.34.2
 pandas>=3.0.3
 pypdf>=6.12.1
 beautifulsoup4>=4.14.3
+defusedxml>=0.7.1
 pydantic>=2.13.4
 openpyxl>=3.1.5
 pytest>=9.0.3

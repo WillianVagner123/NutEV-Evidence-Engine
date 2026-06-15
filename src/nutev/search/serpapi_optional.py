@@ -6,7 +6,7 @@ from typing import Any
 
 import requests
 
-from nutev.search.base import ProviderResult
+from nutev.search.base import ProviderResult, redact_secrets
 
 
 def _row(item: dict[str, Any], query: str) -> dict[str, Any]:
@@ -62,6 +62,6 @@ def search_serpapi(query: str, *, limit: int = 10, context: dict[str, Any] | Non
                     raise
                 time.sleep(min(2**attempt, 8))
     except Exception as exc:
-        return ProviderResult("serpapi", query, rows=rows, total_returned=len(rows), status="partial" if rows else "failed", error=str(exc))
+        return ProviderResult("serpapi", query, rows=rows, total_returned=len(rows), status="partial" if rows else "failed", error=redact_secrets(exc))
     finally:
         session.close()

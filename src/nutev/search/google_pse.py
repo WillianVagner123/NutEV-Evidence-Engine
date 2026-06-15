@@ -6,7 +6,7 @@ from typing import Any
 
 import requests
 
-from nutev.search.base import ProviderResult
+from nutev.search.base import ProviderResult, redact_secrets
 
 RETRY_STATUSES = {429, 500, 502, 503, 504}
 
@@ -84,6 +84,6 @@ def search_google_pse(query: str, *, limit: int = 10, context: dict[str, Any] | 
             time.sleep(0.2)
         return ProviderResult("google_pse", query, rows=rows[:limit], total_found=total, total_returned=len(rows[:limit]), status="completed" if rows else "empty")
     except Exception as exc:
-        return ProviderResult("google_pse", query, rows=rows[:limit], total_found=total, total_returned=len(rows[:limit]), status="partial" if rows else "failed", error=str(exc))
+        return ProviderResult("google_pse", query, rows=rows[:limit], total_found=total, total_returned=len(rows[:limit]), status="partial" if rows else "failed", error=redact_secrets(exc))
     finally:
         session.close()

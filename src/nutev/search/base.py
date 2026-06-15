@@ -1,9 +1,26 @@
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import Any, Protocol
 
 PROVIDER_STATUSES = {"completed", "partial", "failed", "skipped", "empty"}
+
+_SECRET_PARAM = re.compile(
+    r"((?:api_?key|apikey|key|token|secret|password|cx)=)[^&\s'\"]+",
+    re.IGNORECASE,
+)
+
+
+def redact_secrets(text: object) -> str:
+    """Strip API keys/tokens from query-string-bearing text before it is logged.
+
+    Providers that pass credentials as URL query params (Google PSE, SerpAPI,
+    Brave) leak them through requests' exception strings, which otherwise end up
+    verbatim in 07_logs/provider_failures.csv and run events. This masks the
+    value of any ``key=``/``api_key=``/``token=`` style parameter.
+    """
+    return _SECRET_PARAM.sub(r"\1REDACTED", str(text))
 
 
 @dataclass

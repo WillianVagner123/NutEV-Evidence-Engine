@@ -19,7 +19,7 @@ def test_pdf_keeps_pdf_status(tmp_path, monkeypatch):
         text = ""
         url = "https://x/a.pdf"
 
-    monkeypatch.setattr("requests.get", lambda *a, **k: R())
+    monkeypatch.setattr("nutev.global_watch.watch_capture.safe_get", lambda *a, **k: R())
     s = _s(tmp_path)
     rows, _ = capture_watch_items(
         [{"document_id": "d1", "url": "https://x/a.pdf", "title": "x"}],
@@ -39,7 +39,7 @@ def test_html_keeps_html_snapshot_status(tmp_path, monkeypatch):
         text = "<html><title>T</title><h1>H</h1><body>Body</body></html>"
         url = "https://x/a"
 
-    monkeypatch.setattr("requests.get", lambda *a, **k: R())
+    monkeypatch.setattr("nutev.global_watch.watch_capture.safe_get", lambda *a, **k: R())
     s = _s(tmp_path)
     rows, _ = capture_watch_items(
         [{"document_id": "d1", "url": "https://x/a", "title": "x"}],
@@ -59,7 +59,7 @@ def test_http_404_metadata_only(tmp_path, monkeypatch):
         text = "x"
         url = "https://x/a"
 
-    monkeypatch.setattr("requests.get", lambda *a, **k: R())
+    monkeypatch.setattr("nutev.global_watch.watch_capture.safe_get", lambda *a, **k: R())
     s = _s(tmp_path)
     rows, _ = capture_watch_items(
         [{"document_id": "d1", "url": "https://x/a", "title": "x"}],
@@ -86,9 +86,9 @@ def test_capture_limit_override(tmp_path):
 
 def test_synthetic_fallback_never_captures(tmp_path, monkeypatch):
     def fail_requests(*args, **kwargs):
-        raise AssertionError("requests.get should not be called for fallback.local")
+        raise AssertionError("safe_get should not be called for fallback.local")
 
-    monkeypatch.setattr("requests.get", fail_requests)
+    monkeypatch.setattr("nutev.global_watch.watch_capture.safe_get", fail_requests)
     s = _s(tmp_path)
     rows, _ = capture_watch_items(
         [{"document_id": "d1", "url": "https://fallback.local", "title": "fallback", "source_provider": "watch_seed"}],

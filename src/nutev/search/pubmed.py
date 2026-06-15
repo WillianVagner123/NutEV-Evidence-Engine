@@ -9,6 +9,8 @@ from pathlib import Path
 from typing import Any
 
 import requests
+from defusedxml.ElementTree import fromstring as safe_xml_fromstring
+from defusedxml.common import DefusedXmlException
 
 from nutev.search.base import ProviderResult
 from nutev.search.checkpoint import checkpoint_path, load_checkpoint, query_hash, save_checkpoint
@@ -204,8 +206,10 @@ def _request_text(
 
 def _abstracts_from_efetch_xml(xml_text: str) -> dict[str, str]:
     try:
-        root = ET.fromstring(xml_text)
-    except ET.ParseError as exc:
+        # defusedxml guards against entity-expansion / external-entity (XXE)
+        # attacks in the untrusted XML returned by the PubMed efetch endpoint.
+        root = safe_xml_fromstring(xml_text)
+    except (ET.ParseError, DefusedXmlException) as exc:
         raise PubMedUnavailable("Invalid XML from PubMed efetch") from exc
     abstracts: dict[str, str] = {}
     for article in root.findall(".//PubmedArticle"):

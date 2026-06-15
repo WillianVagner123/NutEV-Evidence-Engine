@@ -1,10 +1,22 @@
 from __future__ import annotations
 
+import html
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
 import streamlit as st
+
+
+def _esc(value: object) -> str:
+    """HTML-escape a value before interpolating it into ``unsafe_allow_html`` markup.
+
+    Dashboard cards render claim/recommendation text, document ids and titles
+    that originate from scraped web content and LLM output. Escaping prevents a
+    crafted value (e.g. ``<img src=x onerror=...>``) from executing as stored
+    XSS in the analyst's browser.
+    """
+    return html.escape(str(value), quote=True)
 
 
 STATUS_COLORS = {
@@ -61,8 +73,8 @@ def render_header(title: str, subtitle: str) -> None:
     st.markdown(
         f"""
         <div class="nutev-hero">
-          <div class="nutev-title">{title}</div>
-          <div class="nutev-subtitle">{subtitle}</div>
+          <div class="nutev-title">{_esc(title)}</div>
+          <div class="nutev-subtitle">{_esc(subtitle)}</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -73,9 +85,9 @@ def metric_card(label: str, value: Any, helper: str | None = None) -> None:
     st.markdown(
         f"""
         <div class="metric-card">
-          <div class="metric-label">{label}</div>
-          <div class="metric-value">{value}</div>
-          <div class="metric-helper">{helper or ''}</div>
+          <div class="metric-label">{_esc(label)}</div>
+          <div class="metric-value">{_esc(value)}</div>
+          <div class="metric-helper">{_esc(helper or '')}</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -84,34 +96,34 @@ def metric_card(label: str, value: Any, helper: str | None = None) -> None:
 
 def status_pill(status: str) -> str:
     color = STATUS_COLORS.get(str(status), "#64748b")
-    return f'<span class="status-pill" style="background:{color}">{status}</span>'
+    return f'<span class="status-pill" style="background:{color}">{_esc(status)}</span>'
 
 
 def warning_banner(text: str) -> None:
-    st.markdown(f'<div class="nutev-banner banner-warning">{text}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="nutev-banner banner-warning">{_esc(text)}</div>', unsafe_allow_html=True)
 
 
 def success_banner(text: str) -> None:
-    st.markdown(f'<div class="nutev-banner banner-success">{text}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="nutev-banner banner-success">{_esc(text)}</div>', unsafe_allow_html=True)
 
 
 def info_banner(text: str) -> None:
-    st.markdown(f'<div class="nutev-banner banner-info">{text}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="nutev-banner banner-info">{_esc(text)}</div>', unsafe_allow_html=True)
 
 
 def section_card(title: str, body: str) -> None:
-    st.markdown(f'<div class="section-card"><h3>{title}</h3><p class="nutev-muted">{body}</p></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="section-card"><h3>{_esc(title)}</h3><p class="nutev-muted">{_esc(body)}</p></div>', unsafe_allow_html=True)
 
 
 def empty_state(title: str, message: str) -> None:
-    st.markdown(f'<div class="empty-state"><h3>{title}</h3><p>{message}</p></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="empty-state"><h3>{_esc(title)}</h3><p>{_esc(message)}</p></div>', unsafe_allow_html=True)
 
 
 def download_card(label: str, path: Path) -> None:
     exists = path.exists()
     size = path.stat().st_size if exists else 0
     st.markdown(
-        f'<div class="mini-card"><b>{label}</b><br><span class="nutev-muted">{path.name} - {"available" if exists else "missing"} - {size} bytes</span></div>',
+        f'<div class="mini-card"><b>{_esc(label)}</b><br><span class="nutev-muted">{_esc(path.name)} - {"available" if exists else "missing"} - {size} bytes</span></div>',
         unsafe_allow_html=True,
     )
     if exists:
@@ -128,9 +140,9 @@ def recommendation_card(row: pd.Series | dict[str, Any]) -> None:
     st.markdown(
         f"""
         <div class="mini-card">
-          <b>{data.get('recommendation_text', data.get('recommendation_id', 'Recommendation'))}</b><br>
+          <b>{_esc(data.get('recommendation_text', data.get('recommendation_id', 'Recommendation')))}</b><br>
           {status_pill(str(status))}<br>
-          <span class="nutev-muted">Component: {data.get('protocol_component', 'not mapped')}</span>
+          <span class="nutev-muted">Component: {_esc(data.get('protocol_component', 'not mapped'))}</span>
         </div>
         """,
         unsafe_allow_html=True,
@@ -143,9 +155,9 @@ def claim_card(row: pd.Series | dict[str, Any]) -> None:
     st.markdown(
         f"""
         <div class="mini-card">
-          <b>{data.get('claim_text', data.get('claim_id', 'Claim'))}</b><br>
+          <b>{_esc(data.get('claim_text', data.get('claim_id', 'Claim')))}</b><br>
           {status_pill(str(status))}<br>
-          <span class="nutev-muted">Document: {data.get('document_id', 'not available')}</span>
+          <span class="nutev-muted">Document: {_esc(data.get('document_id', 'not available'))}</span>
         </div>
         """,
         unsafe_allow_html=True,

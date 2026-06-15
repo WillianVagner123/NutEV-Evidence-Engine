@@ -2,17 +2,31 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
-import requests
-
 from nutev.download.resolver import resolve_url
+from nutev.download.url_safety import safe_get
 from nutev.engine.events import emit_event, write_event
 from nutev.global_watch.watch_html_extract import extract_clean_html_text
 
 MODE_CAPTURE_LIMITS = {"quick": 10, "thesis": 30, "exhaustive": 100}
+
+_UNSAFE_ID_CHARS = re.compile(r"[^A-Za-z0-9_.-]")
+
+
+def _safe_document_id(value: object) -> str:
+    """Sanitize a document id before using it as a filename.
+
+    Watch items can carry an attacker-influenced ``document_id``; concatenating
+    it into a capture path would otherwise allow traversal (``../``) outside the
+    captures directory. Non-alphanumeric characters collapse to ``_`` and any
+    leading dots are stripped.
+    """
+    cleaned = _UNSAFE_ID_CHARS.sub("_", str(value or "").strip()).lstrip(".")
+    return cleaned or "unknown_document"
 
 
 def resolve_watch_item_url(item: dict) -> dict:
@@ -35,7 +49,7 @@ def save_capture_json(item: dict, out_dir: Path) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     item.setdefault("artifact_paths", {})
 
-    document_id = item.get("document_id") or "unknown_document"
+    document_id = _safe_document_id(item.get("document_id"))
     json_path = out_dir / f"{document_id}.json"
 
     payload = {
@@ -139,7 +153,7 @@ def capture_single_watch_item(item: dict, settings, logger, run_id: str) -> dict
         item["host"] = urlparse(final_url).netloc.lower()
         item.setdefault("artifact_paths", {})
 
-        r = requests.get(final_url, timeout=20, allow_redirects=True)
+        r = safe_get(final_url, timeout=20)
         item["http_status"] = r.status_code
         item["content_type"] = (r.headers.get("Content-Type") or "").lower()
 
@@ -159,7 +173,7 @@ def capture_single_watch_item(item: dict, settings, logger, run_id: str) -> dict
                 _emit(settings, run_id, "metadata_only_saved", "Metadata only saved", item)
                 return out
 
-            pdf_path = captures_dir / f"{item['document_id']}.pdf"
+            pdf_path = captures_dir / f"{_safe_document_id(item['document_id'])}.pdf"
             pdf_path.write_bytes(r.content)
 
             item["artifact_paths"]["pdf"] = str(pdf_path)
@@ -170,8 +184,9 @@ def capture_single_watch_item(item: dict, settings, logger, run_id: str) -> dict
             _emit(settings, run_id, "capture_item_completed", "Capture item completed", item)
             return out
 
-        html_path = captures_dir / f"{item['document_id']}.html"
-        txt_path = captures_dir / f"{item['document_id']}.txt"
+        safe_id = _safe_document_id(item["document_id"])
+        html_path = captures_dir / f"{safe_id}.html"
+        txt_path = captures_dir / f"{safe_id}.txt"
 
         html_path.write_bytes(r.content)
 
