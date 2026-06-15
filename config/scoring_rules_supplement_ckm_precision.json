@@ -1,0 +1,38 @@
+{
+  "version_note": "2026-06-15 CKM cardiometabolic precision supplement for operational scoring",
+  "keyword_points": {
+    "cardiovascular-kidney-metabolic health": 3,
+    "cardiovascular kidney metabolic health": 3,
+    "cardiovascular-kidney-metabolic risk": 3,
+    "cardiovascular kidney metabolic risk": 3,
+    "cardio-kidney-metabolic syndrome": 4,
+    "cardio kidney metabolic syndrome": 4,
+    "cardiorenal metabolic syndrome": 4,
+    "ckm health": 3,
+    "ckm risk": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiovascular-kidney-metabolic health": 4,
+      "cardiovascular kidney metabolic health": 4,
+      "cardiovascular-kidney-metabolic risk": 4,
+      "cardiovascular kidney metabolic risk": 4,
+      "cardio-kidney-metabolic syndrome": 5,
+      "cardio kidney metabolic syndrome": 5,
+      "cardiorenal metabolic syndrome": 5,
+      "ckm health": 4,
+      "ckm risk": 4
+    },
+    "busca2b": {
+      "cardiovascular-kidney-metabolic health": 4,
+      "cardiovascular kidney metabolic health": 4,
+      "cardiovascular-kidney-metabolic risk": 4,
+      "cardiovascular kidney metabolic risk": 4,
+      "cardio-kidney-metabolic syndrome": 5,
+      "cardio kidney metabolic syndrome": 5,
+      "cardiorenal metabolic syndrome": 5,
+      "ckm health": 4,
+      "ckm risk": 4
+    }
+  }
+}
