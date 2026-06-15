@@ -1,0 +1,94 @@
+{
+  "version_note": "Focused NutMEV supplement for cardiometabolic dietary patterns. Loaded after keyword_taxonomy.json and keyword_taxonomy_supplement.json; appends terms without replacing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "cardiometabolic_dietary_patterns": [
+        "cardioprotective diet",
+        "cardioprotective dietary pattern",
+        "heart-healthy diet",
+        "heart healthy diet",
+        "cholesterol-lowering diet",
+        "cholesterol lowering diet",
+        "ldl-lowering diet",
+        "ldl lowering diet",
+        "lipid-lowering diet",
+        "lipid lowering diet",
+        "portfolio diet",
+        "dietary portfolio",
+        "portfolio dietary pattern",
+        "dietary portfolio for cholesterol lowering",
+        "dash-sodium diet",
+        "dash sodium diet",
+        "dash dietary pattern",
+        "low-sodium dash diet",
+        "low sodium dash diet"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "cardioprotective dietary pattern",
+        "heart-healthy diet",
+        "cholesterol-lowering diet",
+        "ldl-lowering diet",
+        "lipid-lowering diet",
+        "dietary portfolio",
+        "portfolio dietary pattern",
+        "dash-sodium diet",
+        "dash dietary pattern"
+      ],
+      "web_query_hints": [
+        "portfolio diet guideline",
+        "portfolio diet consensus",
+        "portfolio diet scientific statement",
+        "cholesterol-lowering diet guideline",
+        "ldl-lowering diet guideline",
+        "dash-sodium diet guideline",
+        "dash dietary pattern hypertension guideline",
+        "heart-healthy diet scientific statement"
+      ],
+      "document_terms": [
+        "scientific statement",
+        "consensus statement",
+        "practice guideline",
+        "clinical practice guideline",
+        "guidance statement"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "cardioprotective dietary pattern",
+        "heart-healthy diet",
+        "cholesterol-lowering diet",
+        "ldl-lowering diet",
+        "lipid-lowering diet",
+        "dietary portfolio",
+        "portfolio dietary pattern",
+        "dietary portfolio for cholesterol lowering",
+        "dash-sodium diet",
+        "dash dietary pattern",
+        "low-sodium dash diet"
+      ],
+      "web_query_hints": [
+        "portfolio diet randomized trial",
+        "portfolio diet systematic review",
+        "portfolio diet meta-analysis",
+        "dietary portfolio cholesterol lowering trial",
+        "cholesterol-lowering diet systematic review",
+        "ldl-lowering diet randomized trial",
+        "dash-sodium diet trial",
+        "dash dietary pattern blood pressure trial",
+        "heart-healthy diet cardiometabolic trial"
+      ],
+      "document_terms": [
+        "randomized trial",
+        "randomised trial",
+        "controlled trial",
+        "systematic review",
+        "meta-analysis",
+        "umbrella review"
+      ]
+    }
+  }
+}
