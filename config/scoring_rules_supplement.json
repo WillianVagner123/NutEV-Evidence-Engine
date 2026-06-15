@@ -1,12 +1,22 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic and MASLD/SLD prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "masld": 3,
+    "mash": 3,
+    "sld": 2,
+    "steatotic liver disease": 3,
+    "metabolic dysfunction-associated steatotic liver disease": 3,
+    "metabolic dysfunction associated steatotic liver disease": 3,
+    "metabolic dysfunction-associated steatohepatitis": 3,
+    "metabolic dysfunction associated steatohepatitis": 3,
+    "hepatic steatosis": 2,
+    "liver fibrosis": 2
   },
   "workstream_bonus": {
     "busca2a": {
@@ -15,7 +25,13 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "masld guideline": 5,
+      "masld practice guidance": 5,
+      "masld consensus statement": 5,
+      "sld practice guidance": 4,
+      "steatotic liver disease guideline": 4,
+      "mash guidance": 4
     },
     "busca2b": {
       "ckm health": 4,
@@ -23,7 +39,13 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "masld lifestyle intervention": 5,
+      "masld nutrition intervention": 5,
+      "masld dietary intervention": 5,
+      "mash lifestyle intervention": 4,
+      "hepatic steatosis diet": 4,
+      "liver fibrosis diet": 3
     }
   }
 }

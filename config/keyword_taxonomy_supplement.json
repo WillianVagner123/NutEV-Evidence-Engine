@@ -137,7 +137,17 @@
       "ckm health",
       "ckm risk",
       "cardiorenal metabolic syndrome",
-      "cardio-renal-metabolic syndrome"
+      "cardio-renal-metabolic syndrome",
+      "masld",
+      "mash",
+      "sld",
+      "steatotic liver disease",
+      "metabolic dysfunction-associated steatotic liver disease",
+      "metabolic dysfunction associated steatotic liver disease",
+      "metabolic dysfunction-associated steatohepatitis",
+      "metabolic dysfunction associated steatohepatitis",
+      "hepatic steatosis",
+      "liver fibrosis"
     ]
   },
   "outcomes": {
@@ -170,7 +180,16 @@
       "ckm health",
       "ckm risk",
       "cardiorenal metabolic syndrome",
-      "cardio-renal-metabolic syndrome"
+      "cardio-renal-metabolic syndrome",
+      "masld",
+      "mash",
+      "steatotic liver disease",
+      "metabolic dysfunction-associated steatotic liver disease",
+      "metabolic dysfunction associated steatotic liver disease",
+      "metabolic dysfunction-associated steatohepatitis",
+      "metabolic dysfunction associated steatohepatitis",
+      "hepatic steatosis",
+      "liver fibrosis"
     ],
     "diet_quality_adherence": [
       "long-term adherence",
@@ -270,7 +289,17 @@
         "cardiovascular kidney metabolic risk",
         "ckm syndrome",
         "ckm health",
-        "ckm risk"
+        "ckm risk",
+        "masld",
+        "mash",
+        "sld",
+        "steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "metabolic dysfunction associated steatotic liver disease",
+        "metabolic dysfunction-associated steatohepatitis",
+        "metabolic dysfunction associated steatohepatitis",
+        "hepatic steatosis",
+        "liver fibrosis"
       ],
       "web_query_hints": [
         "diabetes remission guideline",
@@ -282,7 +311,24 @@
         "cardiovascular kidney metabolic syndrome guideline",
         "ckm syndrome scientific statement",
         "ckm syndrome consensus",
-        "cardiorenal metabolic syndrome guideline"
+        "cardiorenal metabolic syndrome guideline",
+        "masld guideline",
+        "masld practice guidance",
+        "masld consensus statement",
+        "masld clinical practice guideline",
+        "mash guidance",
+        "mash consensus statement",
+        "sld practice guidance",
+        "steatotic liver disease guideline",
+        "steatotic liver disease consensus"
+      ],
+      "document_terms": [
+        "masld guideline",
+        "masld practice guidance",
+        "masld consensus statement",
+        "mash guidance",
+        "sld practice guidance",
+        "steatotic liver disease guideline"
       ]
     },
     "busca2b": {
@@ -305,7 +351,17 @@
         "cardiovascular kidney metabolic risk",
         "ckm syndrome",
         "ckm health",
-        "ckm risk"
+        "ckm risk",
+        "masld",
+        "mash",
+        "sld",
+        "steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "metabolic dysfunction associated steatotic liver disease",
+        "metabolic dysfunction-associated steatohepatitis",
+        "metabolic dysfunction associated steatohepatitis",
+        "hepatic steatosis",
+        "liver fibrosis"
       ],
       "focus_terms": [
         "food is medicine implementation",
@@ -320,7 +376,15 @@
         "food insecurity intervention",
         "patient navigation",
         "community health worker-led nutrition",
-        "community health worker led nutrition"
+        "community health worker led nutrition",
+        "masld lifestyle intervention",
+        "masld nutrition intervention",
+        "masld dietary intervention",
+        "mash lifestyle intervention",
+        "mash nutrition intervention",
+        "steatotic liver disease diet",
+        "hepatic steatosis diet",
+        "liver fibrosis diet"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -341,14 +405,26 @@
         "food as medicine evaluation",
         "medically tailored meals cardiometabolic trial",
         "nutrition security intervention trial",
-        "food insecurity intervention cardiometabolic"
+        "food insecurity intervention cardiometabolic",
+        "masld lifestyle intervention trial",
+        "masld nutrition intervention trial",
+        "masld dietary intervention trial",
+        "masld systematic review diet",
+        "mash lifestyle intervention trial",
+        "mash nutrition intervention review",
+        "steatotic liver disease lifestyle intervention",
+        "hepatic steatosis diet systematic review",
+        "liver fibrosis diet intervention"
       ],
       "document_terms": [
         "implementation trial",
         "program evaluation",
         "process evaluation",
         "pragmatic trial",
-        "systematic review"
+        "systematic review",
+        "masld systematic review",
+        "mash systematic review",
+        "steatotic liver disease review"
       ]
     },
     "a3": {
