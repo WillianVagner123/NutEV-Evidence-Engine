@@ -55,6 +55,25 @@
         "dietary self-monitoring",
         "dietary self-regulation",
         "eating self-regulation"
+      ],
+      "food_literacy_instruments": [
+        "food literacy questionnaire",
+        "nutrition literacy questionnaire",
+        "food and nutrition literacy questionnaire",
+        "food literacy scale",
+        "nutrition literacy scale",
+        "food agency scale",
+        "eating competence scale",
+        "cooking skills questionnaire",
+        "cooking skills scale",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "meal preparation questionnaire",
+        "food preparation skills questionnaire",
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "adherence questionnaire",
+        "adherence scale"
       ]
     }
   },
@@ -135,6 +154,22 @@
       "dietary self-monitoring",
       "dietary self-regulation",
       "eating self-regulation"
+    ],
+    "food_literacy_competence": [
+      "food literacy questionnaire",
+      "nutrition literacy questionnaire",
+      "food and nutrition literacy questionnaire",
+      "food literacy scale",
+      "nutrition literacy scale",
+      "food agency scale",
+      "eating competence scale",
+      "food competence scale",
+      "culinary skills questionnaire",
+      "cooking skills questionnaire",
+      "cooking self-efficacy scale",
+      "cooking self efficacy scale",
+      "meal preparation questionnaire",
+      "food preparation skills questionnaire"
     ]
   },
   "workstreams": {
@@ -204,6 +239,100 @@
         "ckm syndrome lifestyle intervention",
         "ckm syndrome diet intervention",
         "ckm syndrome systematic review"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "food literacy questionnaire",
+        "nutrition literacy questionnaire",
+        "food and nutrition literacy questionnaire",
+        "food literacy scale",
+        "nutrition literacy scale",
+        "food agency scale",
+        "food competence scale",
+        "eating competence scale",
+        "culinary skills questionnaire",
+        "cooking skills questionnaire",
+        "cooking skills scale",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "meal preparation questionnaire",
+        "food preparation skills questionnaire",
+        "culinary medicine curriculum",
+        "culinary medicine education",
+        "teaching kitchen curriculum",
+        "teaching kitchen evaluation",
+        "dietary adherence questionnaire",
+        "dietary adherence scale"
+      ],
+      "web_query_hints": [
+        "food literacy questionnaire validation",
+        "nutrition literacy questionnaire validation",
+        "food and nutrition literacy questionnaire validation",
+        "food literacy scale validation",
+        "nutrition literacy scale validation",
+        "eating competence scale validation",
+        "cooking skills questionnaire validation",
+        "cooking self-efficacy scale validation",
+        "meal preparation questionnaire validation",
+        "culinary medicine curriculum evaluation",
+        "teaching kitchen curriculum evaluation",
+        "dietary adherence questionnaire validation"
+      ],
+      "document_terms": [
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "psychometric validation",
+        "curriculum evaluation",
+        "framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "food literacy questionnaire",
+        "nutrition literacy questionnaire",
+        "food and nutrition literacy questionnaire",
+        "food literacy scale",
+        "nutrition literacy scale",
+        "food agency scale",
+        "food competence scale",
+        "eating competence scale",
+        "culinary skills questionnaire",
+        "cooking skills questionnaire",
+        "cooking skills scale",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "meal preparation questionnaire",
+        "food preparation skills questionnaire",
+        "culinary medicine curriculum",
+        "culinary medicine education",
+        "teaching kitchen curriculum",
+        "teaching kitchen evaluation",
+        "dietary adherence questionnaire",
+        "dietary adherence scale"
+      ],
+      "web_query_hints": [
+        "food literacy questionnaire validation",
+        "nutrition literacy questionnaire validation",
+        "food and nutrition literacy questionnaire validation",
+        "food literacy scale validation",
+        "nutrition literacy scale validation",
+        "eating competence scale validation",
+        "cooking skills questionnaire validation",
+        "cooking self-efficacy scale validation",
+        "meal preparation questionnaire validation",
+        "culinary medicine curriculum evaluation",
+        "teaching kitchen curriculum evaluation",
+        "dietary adherence questionnaire validation"
+      ],
+      "document_terms": [
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "psychometric validation",
+        "curriculum evaluation",
+        "framework"
       ]
     }
   }
