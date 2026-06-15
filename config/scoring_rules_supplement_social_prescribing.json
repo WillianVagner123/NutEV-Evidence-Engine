@@ -1,0 +1,41 @@
+{
+  "version_note": "Focused scoring supplement for nutrition-sensitive social prescribing and food navigation evidence; complements query expansion without changing base scoring rules.",
+  "keyword_points": {
+    "nutrition-sensitive social prescribing": 4,
+    "nutrition sensitive social prescribing": 4,
+    "food-related social prescribing": 4,
+    "food related social prescribing": 4,
+    "diet-related social prescribing": 4,
+    "diet related social prescribing": 4,
+    "nutrition navigation": 3,
+    "food resource navigation": 3,
+    "food access navigation": 3,
+    "community food referral pathway": 3,
+    "food assistance referral": 3,
+    "nutrition assistance referral": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "nutrition-sensitive social prescribing": 5,
+      "food-related social prescribing": 5,
+      "diet-related social prescribing": 5,
+      "nutrition navigation": 4,
+      "food resource navigation": 4,
+      "food access navigation": 4,
+      "community food referral pathway": 4,
+      "food assistance referral": 4,
+      "nutrition assistance referral": 4
+    },
+    "busca2b": {
+      "nutrition-sensitive social prescribing": 5,
+      "food-related social prescribing": 5,
+      "diet-related social prescribing": 5,
+      "nutrition navigation": 4,
+      "food resource navigation": 4,
+      "food access navigation": 4,
+      "community food referral pathway": 4,
+      "food assistance referral": 4,
+      "nutrition assistance referral": 4
+    }
+  }
+}
