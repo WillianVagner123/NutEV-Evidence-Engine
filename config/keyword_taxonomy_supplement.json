@@ -56,6 +56,33 @@
         "dietary self-regulation",
         "eating self-regulation"
       ],
+      "food_as_medicine_access": [
+        "food is medicine program",
+        "food as medicine program",
+        "food is medicine implementation",
+        "food as medicine implementation",
+        "food as medicine evaluation",
+        "produce prescription intervention",
+        "produce prescription implementation",
+        "produce prescription evaluation",
+        "fruit and vegetable prescription program",
+        "healthy food prescription program",
+        "medically tailored meals program",
+        "medically tailored grocery program",
+        "food pharmacy program",
+        "food farmacy program",
+        "nutrition security intervention",
+        "food insecurity intervention",
+        "screening and referral",
+        "closed-loop referral",
+        "closed loop referral",
+        "social needs referral",
+        "community food referral",
+        "food pantry referral",
+        "community health worker-led nutrition",
+        "community health worker led nutrition",
+        "patient navigation"
+      ],
       "food_literacy_instruments": [
         "food literacy questionnaire",
         "nutrition literacy questionnaire",
@@ -155,6 +182,22 @@
       "dietary self-regulation",
       "eating self-regulation"
     ],
+    "food_access_implementation": [
+      "food is medicine evaluation",
+      "produce prescription evaluation",
+      "produce prescription implementation",
+      "medically tailored meals program",
+      "medically tailored grocery program",
+      "nutrition security intervention",
+      "food insecurity intervention",
+      "healthy food access intervention",
+      "food pantry referral",
+      "screening and referral",
+      "social needs referral",
+      "patient navigation",
+      "community health worker-led nutrition",
+      "community health worker led nutrition"
+    ],
     "food_literacy_competence": [
       "food literacy questionnaire",
       "nutrition literacy questionnaire",
@@ -173,6 +216,44 @@
     ]
   },
   "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food is medicine program",
+        "food as medicine program",
+        "food is medicine implementation",
+        "food as medicine evaluation",
+        "produce prescription intervention",
+        "produce prescription implementation",
+        "produce prescription evaluation",
+        "fruit and vegetable prescription program",
+        "healthy food prescription program",
+        "food pharmacy program",
+        "food farmacy program",
+        "nutrition security intervention",
+        "food insecurity intervention",
+        "healthy food access intervention",
+        "screening and referral",
+        "social needs referral",
+        "community food referral"
+      ],
+      "web_query_hints": [
+        "food is medicine implementation report",
+        "food as medicine evaluation report",
+        "produce prescription implementation report",
+        "produce prescription evaluation",
+        "healthy food prescription program report",
+        "nutrition security intervention report",
+        "food insecurity screening referral",
+        "food pantry referral program",
+        "community food referral program"
+      ],
+      "document_terms": [
+        "implementation report",
+        "evaluation report",
+        "program evaluation",
+        "technical report"
+      ]
+    },
     "busca2a": {
       "condition_terms": [
         "type 2 diabetes remission",
@@ -226,6 +307,21 @@
         "ckm health",
         "ckm risk"
       ],
+      "focus_terms": [
+        "food is medicine implementation",
+        "food as medicine implementation",
+        "food as medicine evaluation",
+        "produce prescription intervention",
+        "produce prescription implementation",
+        "produce prescription evaluation",
+        "medically tailored meals program",
+        "medically tailored grocery program",
+        "nutrition security intervention",
+        "food insecurity intervention",
+        "patient navigation",
+        "community health worker-led nutrition",
+        "community health worker led nutrition"
+      ],
       "web_query_hints": [
         "diabetes remission trial",
         "type 2 diabetes remission trial",
@@ -238,7 +334,21 @@
         "cardiovascular kidney metabolic syndrome nutrition intervention",
         "ckm syndrome lifestyle intervention",
         "ckm syndrome diet intervention",
-        "ckm syndrome systematic review"
+        "ckm syndrome systematic review",
+        "produce prescription randomized trial",
+        "produce prescription systematic review",
+        "food is medicine implementation trial",
+        "food as medicine evaluation",
+        "medically tailored meals cardiometabolic trial",
+        "nutrition security intervention trial",
+        "food insecurity intervention cardiometabolic"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "pragmatic trial",
+        "systematic review"
       ]
     },
     "a3": {
