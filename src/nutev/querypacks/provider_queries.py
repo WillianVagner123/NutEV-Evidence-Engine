@@ -1077,6 +1077,67 @@ def _render_term_coverage_queries(components: dict[str, list[str]], provider: st
     return uniq([query for query in queries if query])
 
 
+_FOOD_ENVIRONMENT_PUBMED_TERMS = [
+    "food environment intervention",
+    "retail food environment",
+    "healthy food retail",
+    "healthy food procurement",
+    "food procurement policy",
+    "nutrition standards",
+    "choice architecture",
+    "healthy default",
+    "menu labeling policy",
+    "food policy implementation",
+]
+
+_EXTRA_PUBMED_TERMS: dict[str, list[str]] = {
+    "busca2a": [
+        "therapeutic lifestyle changes",
+        "mediterranean dietary pattern",
+        "dietary approaches to stop hypertension",
+        "living guideline",
+        "clinical guidance",
+    ],
+    "busca2b": [
+        "medical nutrition therapy",
+        "hybrid type 1",
+        "hybrid type 2",
+        "hybrid type 3",
+        "steatotic liver disease",
+        "metabolic dysfunction-associated steatohepatitis",
+        "non-alcoholic fatty liver disease",
+        "nonalcoholic steatohepatitis",
+        "ketogenic diet",
+        "low-carbohydrate diet",
+        "low carbohydrate diet",
+        "carbohydrate-restricted diet",
+        "carbohydrate restricted diet",
+        "network meta-analysis",
+        "living systematic review",
+        "rapid review",
+        "food environment intervention",
+        "food procurement policy",
+        "healthy food retail",
+        "choice architecture",
+        "healthy default",
+    ],
+    "busca1": _FOOD_ENVIRONMENT_PUBMED_TERMS,
+    "artigo3_framework": _FOOD_ENVIRONMENT_PUBMED_TERMS,
+}
+
+
+def _extra_pubmed_terms(workstream: str) -> list[str]:
+    """Workstream-specific PubMed Title/Abstract terms folded into the querypack.
+
+    These supplement the structured/semantic querypack with curated lifestyle
+    nutrition and food-environment vocabulary. Kept inside the querypack (rather
+    than an import-time runtime hook) so the search strategy is transparent and
+    reproducible regardless of how the package is installed or invoked.
+    """
+    terms = _EXTRA_PUBMED_TERMS.get(canonical_workstream(workstream), [])
+    return [f'"{term}"[Title/Abstract]' for term in terms]
+
+
 def render_queries_for_provider(
     keyword_taxonomy: dict,
     workstream: str,
@@ -1085,7 +1146,11 @@ def render_queries_for_provider(
     _, components = build_structured_components(keyword_taxonomy, workstream)
     components = _augment_with_semantic_blocks(workstream, components)
     if provider == "pubmed":
-        return uniq(_render_pubmed_queries(components) + _render_term_coverage_queries(components, "pubmed"))
+        return uniq(
+            _render_pubmed_queries(components)
+            + _render_term_coverage_queries(components, "pubmed")
+            + _extra_pubmed_terms(workstream)
+        )
     if provider == "europepmc":
         return uniq(_render_europepmc_queries(components) + _render_term_coverage_queries(components, "europepmc"))
     if provider == "openalex":

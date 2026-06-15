@@ -1462,6 +1462,15 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
             diet_terms,
         )
 
+    # Food-as-medicine / food-environment supplements folded into the querypack
+    # (previously injected by an import-time runtime hook) so the search
+    # strategy is transparent and reproducible across install/invocation modes.
+    if ws_key == "busca2b":
+        queries.append('("food is medicine" OR "produce prescription" OR "medically tailored meals")')
+        queries.append('("food environment intervention" OR "healthy food retail" OR "food procurement policy") AND ("implementation" OR "dietary adherence" OR "cardiometabolic")')
+    elif ws_key in {"busca1", "artigo3_framework"}:
+        queries.append('("food environment intervention" OR "healthy food retail" OR "healthy food procurement" OR "food procurement policy" OR "choice architecture") AND ("nutrition" OR "diet" OR "food literacy" OR "lifestyle medicine")')
+
     return uniq([q for q in queries if q])
 
 

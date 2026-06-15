@@ -868,8 +868,11 @@ def curate_outputs(rows: list[dict], output_dir: Path) -> dict:
 
     summary = {
         "input_rows": len(rows),
+        "raw_records": len(rows),
         "curated_rows": len(curated_rows),
         "unique_documents": len(unique_rows),
+        "duplicate_rows": max(0, len(curated_rows) - len(unique_rows)),
+        "duplicate_documents": int(duplicate_summary_df["duplicate_documents"].sum()) if not duplicate_summary_df.empty else 0,
         "metadata_only_documents": _count_truthy(unique_df["is_metadata_only"]) if not unique_df.empty else 0,
         "prioritized_documents": _count_truthy(unique_df["is_prioritized"]) if not unique_df.empty else 0,
         "canonical_outputs": [

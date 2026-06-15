@@ -122,7 +122,10 @@ def validate_workstream(value: str | None) -> str | None:
     normalized = str(value).strip()
     aliases = {"article3_framework": "artigo3_framework"}
     normalized = aliases.get(normalized, normalized)
-    allowed = {item.value for item in Workstream}
+    # "global_watch" is a pseudo-workstream used by the Global Watch pipeline.
+    # It is accepted as a valid value but is intentionally kept out of the
+    # Workstream search enum (it has no keyword-taxonomy entry of its own).
+    allowed = {item.value for item in Workstream} | {"global_watch"}
     if normalized not in allowed:
         raise ValueError(f"Invalid workstream: {value}")
     return normalized

@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -29,6 +30,7 @@ from nutev.engine.job import (
     write_search_case,
     write_search_job_snapshot,
 )
+from nutev.export.audit_artifacts import write_audit_artifacts
 from nutev.export.curation import curate_outputs
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
@@ -46,7 +48,6 @@ from nutev.querypacks.provider_queries import (
     build_provider_querypack,
     write_provider_querypack_audit,
 )
-from nutev.search.official_sources import manifest_sources
 from nutev.search.provider_orchestrator import search_provider
 from nutev.settings import NutevSettings, load_json
 
@@ -549,9 +550,12 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     )
 
     curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
-    claims = []
-    recommendations = []
-    conflicts = []
+    # Run the audit engine explicitly and write the four NUTEV audit CSVs into
+    # 06_tables. This used to be wired only through an import-time monkey-patch
+    # (sitecustomize), which made the scientific metrics silently zero unless
+    # src/ happened to be on sys.path. Calling it here makes the evidence
+    # claims / recommendation candidates / conflicts part of every real run.
+    audit_summary = write_audit_artifacts(all_rows, settings.output_dirs["06_tables"])
 
     write_event(
         emit_event(run_id, "synthesis_completed", "Synthesis completed"),
@@ -570,13 +574,13 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         artifact_inputs,
         settings.output_dirs["07_logs"] / "artifact_manifest.csv",
     )
-    provider_failures_path = settings.output_dirs["07_logs"] / "provider_failures.csv"
+    # provider_failures.csv is written incrementally by the search orchestrator
+    # (see provider_orchestrator._append_csv) under 07_logs, so it is not
+    # rebuilt here.
     partial_results = provider_status_counts.get("failed", 0) > 0 or provider_status_counts.get("partial", 0) > 0
     run_status = "failed" if not all_rows and provider_status_counts.get("failed", 0) and not provider_status_counts.get("completed", 0) else ("partial" if partial_results else "completed")
     search_job.status = run_status
-    search_job.finished_at = __import__("datetime").datetime.now(
-        __import__("datetime").timezone.utc
-    )
+    search_job.finished_at = datetime.now(timezone.utc)
     write_search_job_snapshot(
         search_job,
         settings.output_dirs["07_logs"] / "search_job_snapshot.json",
@@ -615,13 +619,13 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "downloads_failed": total_failed,
         "ocr_docs": total_ocr,
         "curated_unique_documents": curation_summary["unique_documents"],
-        "evidence_claims_total": len(claims),
-        "evidence_claims_supported": sum(1 for c in claims if c.claim_status == "supported"),
-        "evidence_claims_needs_review": sum(1 for c in claims if c.needs_human_review),
-        "recommendation_candidates_total": len(recommendations),
-        "recommendation_candidates_ready_review": sum(1 for r in recommendations if r.recommendation_status == "ready_for_human_review"),
-        "recommendation_candidates_insufficient_evidence": sum(1 for r in recommendations if r.recommendation_status == "insufficient_evidence"),
-        "conflicting_evidence_total": len(conflicts),
+        "evidence_claims_total": audit_summary["evidence_claims_total"],
+        "evidence_claims_supported": audit_summary["evidence_claims_supported"],
+        "evidence_claims_needs_review": audit_summary["evidence_claims_needs_review"],
+        "recommendation_candidates_total": audit_summary["recommendation_candidates_total"],
+        "recommendation_candidates_ready_review": audit_summary["recommendation_candidates_ready_review"],
+        "recommendation_candidates_insufficient_evidence": audit_summary["recommendation_candidates_insufficient_evidence"],
+        "conflicting_evidence_total": audit_summary["conflicting_evidence_total"],
         "run_status": run_status,
         "providers_started": sum(provider_status_counts.values()),
         "providers_completed": provider_status_counts.get("completed", 0),

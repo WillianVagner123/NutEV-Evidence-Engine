@@ -85,7 +85,7 @@ def test_curated_outputs_deduplicate_and_map_workstreams(tmp_path):
     assert sorted(row["workstream"] for row in doi_rows) == ["busca1", "busca2a"]
 
     if importlib.util.find_spec("openpyxl") is not None:
-        prisma = pd.read_excel(tmp_path / "NUTEV_PRISMA_FLOW_CORRIGIDO.xlsx", sheet_name="flow")
+        prisma = pd.read_excel(tmp_path / "NUTEV_PRISMA_FLOW_CORRIGIDO.xlsx", sheet_name="prisma_flow")
         assert int(prisma.loc[0, "registros_identificados"]) == 4
         assert int(prisma.loc[0, "registros_triados"]) == 3
 
