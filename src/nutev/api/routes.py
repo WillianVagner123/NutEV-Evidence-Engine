@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 from fastapi import APIRouter, HTTPException
@@ -80,6 +81,26 @@ def build_router(project_root: Path) -> APIRouter:
     @r.get("/api/artifacts")
     def artifacts():
         return {"available": True, "items": list_artifacts(project_root)}
+
+    @r.get("/api/provider-health")
+    def provider_health():
+        # Advertised on the landing page; reports env-based provider/model
+        # configuration status (parity with the Streamlit Provider Settings page).
+        providers = [
+            "openai", "anthropic", "google_gemini", "openrouter", "ollama",
+            "brave_search", "serpapi", "ncbi_pubmed", "crossref", "openalex", "europepmc",
+        ]
+        assistive = {"openai", "anthropic", "google_gemini", "openrouter", "ollama"}
+        items = []
+        for provider in providers:
+            env_name = provider.upper() + ("_EMAIL" if provider in {"crossref", "openalex"} else "_API_KEY")
+            items.append({
+                "provider": provider,
+                "secret_source": "env",
+                "secret_status": "configured" if os.environ.get(env_name) else "missing",
+                "mode": "assistive" if provider in assistive else "lookup",
+            })
+        return {"available": True, "items": items}
 
     @r.get("/api/methods")
     def methods():

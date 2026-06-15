@@ -622,7 +622,7 @@ def run_watch_provider(
         ),
         logs_dir / "run_events.jsonl",
     )
-    if __import__("os").environ.get("NUTEV_DISABLE_NETWORK") == "1":
+    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         write_event(
             emit_event(
                 run_id,

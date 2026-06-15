@@ -127,7 +127,7 @@ def search_europepmc(query: str, page_size: int = 18) -> list[dict]:
             response = requests.get(
                 "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
                 params={"query": query, "format": "json", "pageSize": page_size},
-                timeout=45,
+                timeout=(10, 45),
             )
             response.raise_for_status()
             results = response.json().get("resultList", {}).get("result", [])

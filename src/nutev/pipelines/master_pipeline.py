@@ -447,9 +447,6 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
                 settings.output_dirs["07_logs"] / "run_events.jsonl",
             )
 
-        write_simple_csv(all_manifest, settings.project_root / "03_corpus" / "download_manifest.csv")
-        write_simple_csv(all_failed, settings.project_root / "03_corpus" / "failed_downloads.csv")
-
         ext_by_url = {}
         for m in manifest:
             try:
@@ -511,6 +508,11 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         write_analysis_xlsx(rows, settings.output_dirs["06_tables"] / f"analysis_{ws}.xlsx")
         all_rows += rows
 
+    # Written once after all workstreams (not per-iteration): avoids O(W^2)
+    # rewrites and the non-deterministic column ordering that write_simple_csv
+    # infers from the growing accumulation.
+    write_simple_csv(all_manifest, settings.project_root / "03_corpus" / "download_manifest.csv")
+    write_simple_csv(all_failed, settings.project_root / "03_corpus" / "failed_downloads.csv")
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")

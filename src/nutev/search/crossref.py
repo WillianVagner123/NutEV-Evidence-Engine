@@ -36,7 +36,7 @@ def search_crossref(query: str, rows: int = 18) -> list[dict]:
             r = requests.get(
                 "https://api.crossref.org/works",
                 params={"query": query, "rows": rows, **({"mailto": os.environ.get("CROSSREF_MAILTO")} if os.environ.get("CROSSREF_MAILTO") else {})},
-                timeout=45,
+                timeout=(10, 45),
                 headers={"User-Agent": "NutEV Research Pipeline/1.0"},
             )
             r.raise_for_status()
