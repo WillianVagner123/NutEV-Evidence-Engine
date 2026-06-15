@@ -1,0 +1,112 @@
+{
+  "version_note": "2026-06-15 ckm, prediabetes and remission search supplement",
+  "clinical": {
+    "diabetes": [
+      "prediabetes",
+      "pre-diabetes",
+      "prediabetic state",
+      "impaired fasting glucose",
+      "impaired glucose tolerance",
+      "dysglycemia",
+      "dysglycaemia",
+      "glucose intolerance",
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "glycemic remission",
+      "glycaemic remission",
+      "diabetes reversal"
+    ],
+    "cvd": [
+      "cardiometabolic health",
+      "cardiometabolic disease",
+      "cardiometabolic diseases",
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome"
+    ],
+    "metabolic_syndrome": [
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ]
+  },
+  "outcomes": {
+    "glycemia": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "glycemic remission",
+      "glycaemic remission",
+      "diabetes reversal",
+      "remission maintenance"
+    ],
+    "anthropometry": [
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "prediabetes",
+        "pre-diabetes",
+        "prediabetic state",
+        "impaired fasting glucose",
+        "impaired glucose tolerance",
+        "dysglycemia",
+        "dysglycaemia",
+        "glucose intolerance",
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome"
+      ],
+      "web_query_hints": [
+        "ckm syndrome guideline",
+        "cardiovascular-kidney-metabolic syndrome guideline",
+        "cardiovascular kidney metabolic syndrome consensus",
+        "prediabetes guideline",
+        "diabetes remission consensus",
+        "type 2 diabetes remission guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "prediabetes",
+        "pre-diabetes",
+        "prediabetic state",
+        "impaired fasting glucose",
+        "impaired glucose tolerance",
+        "dysglycemia",
+        "dysglycaemia",
+        "glucose intolerance",
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome"
+      ],
+      "web_query_hints": [
+        "ckm syndrome lifestyle intervention",
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "prediabetes lifestyle intervention",
+        "diabetes remission trial",
+        "type 2 diabetes remission trial",
+        "weight regain prevention trial",
+        "weight loss maintenance systematic review"
+      ]
+    }
+  }
+}
