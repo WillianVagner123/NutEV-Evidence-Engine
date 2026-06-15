@@ -18,6 +18,21 @@ def _write_workbook_or_csv(path: Path, sheets: dict[str, pd.DataFrame]) -> None:
 
 def write_qualification_outputs(master_rows: list[dict], q_items: list[dict], fw_items: list[dict], out_tables: Path, out_docs: Path) -> None:
     df = pd.DataFrame(master_rows)
+    if df.empty:
+        # A run where every provider returned nothing still needs to produce the
+        # qualification artifacts (and let the pipeline reach run_summary.json)
+        # instead of crashing on groupby/sort over absent columns.
+        df = pd.DataFrame(
+            columns=[
+                "workstream",
+                "title",
+                "source",
+                "score",
+                "domains",
+                "translation_potential",
+                "diet_pattern",
+            ]
+        )
     out_tables.mkdir(parents=True, exist_ok=True)
     out_docs.mkdir(parents=True, exist_ok=True)
 

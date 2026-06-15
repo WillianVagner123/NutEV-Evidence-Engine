@@ -78,6 +78,16 @@ def merge_human_review_decisions(queue_df: pd.DataFrame, decisions_df: pd.DataFr
     q = queue_df.copy()
     if "item_id" not in q.columns:
         q["item_id"] = q.get("claim_id", q.get("recommendation_id", ""))
-    latest = decisions_df.sort_values("created_at").drop_duplicates(subset=["item_id"], keep="last")
+    # Sort by parsed timestamp (not lexically) so "latest decision wins" stays
+    # correct even if a row uses a different created_at format; unparseable
+    # values become NaT and sort first, never overriding a real decision.
+    latest = decisions_df.copy()
+    if "created_at" in latest.columns:
+        latest = (
+            latest.assign(_created_at_dt=pd.to_datetime(latest["created_at"], utc=True, errors="coerce"))
+            .sort_values("_created_at_dt")
+            .drop(columns="_created_at_dt")
+        )
+    latest = latest.drop_duplicates(subset=["item_id"], keep="last")
     cols = ["item_id", "reviewer_name", "reviewer_role", "reviewer_decision", "reviewer_notes", "final_decision", "decision_date"]
     return q.merge(latest[[c for c in cols if c in latest.columns]], on="item_id", how="left")

@@ -54,18 +54,23 @@ def extract_candidate_claims_from_record(record: dict, ontology: dict | None, au
     if not text:
         return []
     claims: list[EvidenceClaim] = []
+    seen_claim_ids: set[str] = set()
     for sentence in split_text_into_candidate_sentences(text):
         norm = normalize_claim_text(sentence)
         domains = detect_claim_domains(norm, ontology or {})
         has_recommend = any(t in norm.lower() for t in RECOMMEND_TERMS)
         if not domains and not has_recommend:
             continue
+        claim_id = build_claim_id(str(record.get("document_id", "unknown")), norm)
+        if claim_id in seen_claim_ids:
+            # The same sentence can appear in title/abstract/extracted_text;
+            # emit each distinct claim once so evidence totals are not inflated.
+            continue
+        seen_claim_ids.add(claim_id)
         claim_status = "supported" if sentence in (record.get("extracted_text") or "") else "inference_only"
         exact_quote = sentence if claim_status == "supported" else None
-        if not exact_quote and claim_status != "inference_only":
-            claim_status = "needs_human_review"
         claims.append(EvidenceClaim(
-            claim_id=build_claim_id(str(record.get("document_id", "unknown")), norm),
+            claim_id=claim_id,
             document_id=str(record.get("document_id", "")).strip(),
             run_id=record.get("run_id"),
             title=record.get("title"),

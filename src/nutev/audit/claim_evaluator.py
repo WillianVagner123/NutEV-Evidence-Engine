@@ -1,10 +1,16 @@
 from __future__ import annotations
 
 import hashlib
+import re
 from nutev.audit.models import ClaimEvaluation, EvidenceClaim
 
 
 GUIDELINE_HINTS = {"guideline", "official", "clinical_society", "clinical"}
+
+
+def _has_word(text: str, word: str) -> bool:
+    """Whole-word match so 'high'/'low' don't fire on 'highlights'/'below'."""
+    return re.search(rf"\b{re.escape(word)}\b", text) is not None
 
 
 def _eval_id(claim_id: str) -> str:
@@ -56,6 +62,9 @@ def detect_conflicts(claims: list[EvidenceClaim]) -> list[dict]:
             if set(c1.nutev_domains).isdisjoint(set(c2.nutev_domains)):
                 continue
             t2 = c2.claim_text.lower()
-            if any((a in t1 and b in t2) or (b in t1 and a in t2) for a, b in opposites):
+            if any(
+                (_has_word(t1, a) and _has_word(t2, b)) or (_has_word(t1, b) and _has_word(t2, a))
+                for a, b in opposites
+            ):
                 results.append({"type": "possible_conflict", "claim_id_a": c1.claim_id, "claim_id_b": c2.claim_id, "domains": sorted(set(c1.nutev_domains) & set(c2.nutev_domains))})
     return results

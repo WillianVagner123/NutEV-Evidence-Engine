@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime
 from pathlib import Path
 import pandas as pd
+
+MAX_PAGE_LIMIT = 1000
 
 
 def read_csv_safe(path: Path) -> pd.DataFrame:
@@ -55,8 +58,12 @@ def filter_df(df: pd.DataFrame, filters: dict) -> pd.DataFrame:
 
 def paginate_df(df: pd.DataFrame, limit: int, offset: int) -> dict:
     total = int(len(df))
-    page = df.iloc[offset : offset + limit] if total else df
-    return {"available": total > 0, "total": total, "limit": limit, "offset": offset, "items": page.fillna("").to_dict("records")}
+    # Clamp so a negative offset can't select a wrong tail page and an
+    # oversized limit can't serialize the whole frame into one response.
+    safe_limit = max(1, min(int(limit), MAX_PAGE_LIMIT))
+    safe_offset = max(0, int(offset))
+    page = df.iloc[safe_offset : safe_offset + safe_limit] if total else df
+    return {"available": total > 0, "total": total, "limit": safe_limit, "offset": safe_offset, "items": page.fillna("").to_dict("records")}
 
 
 def list_artifacts(project_root: Path) -> list[dict]:
@@ -68,5 +75,5 @@ def list_artifacts(project_root: Path) -> list[dict]:
             continue
         for p in base.glob(globp):
             st = p.stat()
-            out.append({"file_name": p.name, "relative_path": str(p.relative_to(project_root)), "size_bytes": int(st.st_size), "modified_at": __import__("datetime").datetime.fromtimestamp(st.st_mtime).isoformat(), "artifact_type": folder})
+            out.append({"file_name": p.name, "relative_path": str(p.relative_to(project_root)), "size_bytes": int(st.st_size), "modified_at": datetime.fromtimestamp(st.st_mtime).isoformat(), "artifact_type": folder})
     return sorted(out, key=lambda x: x["relative_path"])

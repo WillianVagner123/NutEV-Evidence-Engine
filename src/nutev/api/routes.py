@@ -2,10 +2,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import HTMLResponse
 
 from nutev.api.loaders import filter_df, list_artifacts, paginate_df, read_csv_safe, read_json_safe, read_markdown_safe, read_xlsx_safe
+from nutev.api.schemas import HumanReviewDecisionIn
 from nutev.review.human_review import append_human_review_decision, load_human_review_decisions, merge_human_review_decisions
 
 
@@ -65,8 +66,14 @@ def build_router(project_root: Path) -> APIRouter:
         return paginate_df(load_human_review_decisions(project_root), limit, offset)
 
     @r.post("/api/human-review-decisions")
-    def human_review_decisions_post(payload: dict):
-        append_human_review_decision(project_root, payload)
+    def human_review_decisions_post(payload: HumanReviewDecisionIn):
+        # Typed body => FastAPI returns 422 on malformed input; domain-rule
+        # violations (invalid item_type/role/decision) raise ValueError, which
+        # we surface as 422 rather than letting it become a 500.
+        try:
+            append_human_review_decision(project_root, payload.model_dump())
+        except ValueError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
         latest = load_human_review_decisions(project_root).tail(1)
         return latest.to_dict("records")[0] if not latest.empty else {"available": False}
 

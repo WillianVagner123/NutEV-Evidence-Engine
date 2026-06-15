@@ -1,9 +1,29 @@
 from __future__ import annotations
 
+import logging
 import os
 import time
 
 import requests
+
+logger = logging.getLogger(__name__)
+
+
+def _reconstruct_abstract(inverted_index: object) -> str:
+    """Rebuild an OpenAlex abstract from its inverted index.
+
+    The index maps each word to the list of positions where it occurs; the
+    abstract must be reassembled in positional order. Joining ``.keys()`` (the
+    previous behaviour) scrambles word order and drops repeated words.
+    """
+    if not isinstance(inverted_index, dict) or not inverted_index:
+        return ""
+    positions: list[tuple[int, str]] = []
+    for word, idxs in inverted_index.items():
+        if isinstance(idxs, list):
+            positions.extend((pos, word) for pos in idxs if isinstance(pos, int))
+    positions.sort(key=lambda pair: pair[0])
+    return " ".join(word for _, word in positions)
 
 
 def _pick_openalex_url(item: dict) -> str:
@@ -28,6 +48,7 @@ def search_openalex(query: str, per_page: int = 12) -> list[dict]:
     if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return []
 
+    last: Exception | None = None
     for attempt in range(1, 4):
         try:
             response = requests.get(
@@ -47,7 +68,7 @@ def search_openalex(query: str, per_page: int = 12) -> list[dict]:
                         "source": "openalex",
                         "source_provider": "openalex",
                         "title": item.get("display_name"),
-                        "abstract": " ".join((item.get("abstract_inverted_index") or {}).keys()) if isinstance(item.get("abstract_inverted_index"), dict) else "",
+                        "abstract": _reconstruct_abstract(item.get("abstract_inverted_index")),
                         "snippet": "",
                         "doi": item.get("doi"),
                         "url": _pick_openalex_url(item),
@@ -63,7 +84,9 @@ def search_openalex(query: str, per_page: int = 12) -> list[dict]:
                 )
             return rows
 
-        except Exception:
+        except Exception as exc:
+            last = exc
             time.sleep(1.0 * attempt)
 
+    logger.warning("openalex search failed query=%s error=%s", query, last)
     return []

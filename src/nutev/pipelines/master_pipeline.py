@@ -134,6 +134,20 @@ def _hash_fallback(row: dict) -> str:
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
 
 
+def _document_id_with_fallback(row: dict) -> str:
+    """Document id that never aborts the run.
+
+    Downloader manifest/failed dicts can lack DOI/PMID/PMCID/URL/title, which
+    makes engine.make_document_id raise ValueError. Falling back to a stable row
+    hash keeps a high-scoring but sparsely-identified record in the outputs
+    instead of crashing the whole pipeline mid-workstream.
+    """
+    try:
+        return make_document_id(row)
+    except ValueError:
+        return f"doc_{_hash_fallback(row)}"
+
+
 def _canonical_article_key(row: dict) -> tuple[str, str]:
     doi = _normalize_doi(row.get("doi"))
     if doi:
@@ -407,7 +421,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         all_manifest += manifest
         all_failed += failed
         for m in manifest:
-            m["document_id"] = make_document_id(m)
+            m["document_id"] = _document_id_with_fallback(m)
             artifact_inputs.append(
                 {
                     "document_id": m["document_id"],
@@ -420,7 +434,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         total_downloads += len(manifest)
         total_failed += len(failed)
         for f in failed:
-            f["document_id"] = make_document_id(f)
+            f["document_id"] = _document_id_with_fallback(f)
             write_event(
                 emit_event(
                     run_id,
