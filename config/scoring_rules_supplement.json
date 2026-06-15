@@ -1,0 +1,56 @@
+{
+  "version_note": "Supplemental NutMEV scoring rules loaded after scoring_rules.json; preserves base scoring and appends focused food access referral terms.",
+  "keyword_points": {
+    "screening and referral": 3,
+    "closed-loop referral": 3,
+    "closed loop referral": 3,
+    "screening for food insecurity": 3,
+    "food insecurity screening": 3,
+    "nutrition insecurity screening": 3,
+    "hunger vital sign": 3,
+    "food access intervention": 4,
+    "healthy food access intervention": 4,
+    "food insecurity intervention": 4,
+    "nutrition security intervention": 4,
+    "nutrition insecurity intervention": 4,
+    "food prescription referral": 4,
+    "produce prescription referral": 4,
+    "medically tailored food referral": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "screening and referral": 4,
+      "closed-loop referral": 4,
+      "closed loop referral": 4,
+      "screening for food insecurity": 4,
+      "food insecurity screening": 4,
+      "nutrition insecurity screening": 4,
+      "hunger vital sign": 4,
+      "food access intervention": 5,
+      "healthy food access intervention": 5,
+      "food insecurity intervention": 5,
+      "nutrition security intervention": 5,
+      "nutrition insecurity intervention": 5,
+      "food prescription referral": 5,
+      "produce prescription referral": 5,
+      "medically tailored food referral": 5
+    },
+    "busca2b": {
+      "screening and referral": 4,
+      "closed-loop referral": 4,
+      "closed loop referral": 4,
+      "screening for food insecurity": 4,
+      "food insecurity screening": 4,
+      "nutrition insecurity screening": 4,
+      "hunger vital sign": 4,
+      "food access intervention": 5,
+      "healthy food access intervention": 5,
+      "food insecurity intervention": 5,
+      "nutrition security intervention": 5,
+      "nutrition insecurity intervention": 5,
+      "food prescription referral": 5,
+      "produce prescription referral": 5,
+      "medically tailored food referral": 5
+    }
+  }
+}
