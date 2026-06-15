@@ -1,0 +1,29 @@
+{
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "keyword_points": {
+    "ckm health": 3,
+    "ckm risk": 3,
+    "cardiorenal metabolic syndrome": 3,
+    "cardio-renal-metabolic syndrome": 3,
+    "cardiorenal metabolic health": 3,
+    "cardiorenal metabolic risk": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "ckm health": 4,
+      "ckm risk": 4,
+      "cardiorenal metabolic syndrome": 4,
+      "cardio-renal-metabolic syndrome": 4,
+      "cardiorenal metabolic health": 4,
+      "cardiorenal metabolic risk": 4
+    },
+    "busca2b": {
+      "ckm health": 4,
+      "ckm risk": 4,
+      "cardiorenal metabolic syndrome": 4,
+      "cardio-renal-metabolic syndrome": 4,
+      "cardiorenal metabolic health": 4,
+      "cardiorenal metabolic risk": 4
+    }
+  }
+}
