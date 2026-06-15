@@ -79,6 +79,54 @@ METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
     "weight regain prevention trial",
 ]
 
+ADHERENCE_HABIT_MAINTENANCE_TERMS = [
+    "habit formation",
+    "habit maintenance",
+    "dietary habit formation",
+    "dietary habit maintenance",
+    "healthy eating habits",
+    "healthy eating habit formation",
+    "habit-based intervention",
+    "habit based intervention",
+    "habit-based dietary intervention",
+    "habit based dietary intervention",
+    "implementation intentions",
+    "dietary implementation intentions",
+    "action planning",
+    "coping planning",
+    "relapse prevention",
+    "dietary relapse prevention",
+    "dietary lapse",
+    "dietary lapses",
+    "lapse management",
+    "dietary self-regulation",
+    "dietary self regulation",
+    "eating self-regulation",
+    "eating self regulation",
+    "self-regulation of eating",
+    "self regulation of eating",
+    "automaticity",
+    "behavioral maintenance",
+    "behavioural maintenance",
+    "maintenance of behavior change",
+    "maintenance of behaviour change",
+]
+
+ADHERENCE_HABIT_MAINTENANCE_DOCUMENT_TERMS = [
+    "habit formation intervention",
+    "habit-based intervention trial",
+    "habit based intervention trial",
+    "dietary habit formation intervention",
+    "dietary self-regulation intervention",
+    "eating self-regulation intervention",
+    "implementation intentions intervention",
+    "action planning intervention",
+    "coping planning intervention",
+    "relapse prevention intervention",
+    "behavior change maintenance intervention",
+    "behaviour change maintenance intervention",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -472,6 +520,12 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=PRECISION_PERSONALIZED_NUTRITION_TERMS,
             document_terms=PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS,
+        )
+    for block_name in ("adherence_persistence", "implementation_science"):
+        _extend_semantic_block(
+            block_name,
+            terms=ADHERENCE_HABIT_MAINTENANCE_TERMS,
+            document_terms=ADHERENCE_HABIT_MAINTENANCE_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
