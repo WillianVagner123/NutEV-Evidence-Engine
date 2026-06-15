@@ -1,14 +1,36 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic and nutrition-access implementation prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "nutrition prescription program": 4,
+    "nutrition prescription intervention": 4,
+    "dietary prescription program": 3,
+    "food pharmacy referral": 3,
+    "food farmacy referral": 3,
+    "social prescribing nutrition": 4,
+    "nutrition social prescribing": 4,
+    "social prescribing referral": 3,
+    "social needs navigation": 3,
+    "food insecurity screening and referral": 4,
+    "food pantry referral program": 4,
+    "community food referral": 3,
+    "community food program": 3,
+    "care navigation": 3
   },
   "workstream_bonus": {
+    "busca1": {
+      "nutrition prescription program": 4,
+      "social prescribing nutrition": 4,
+      "nutrition social prescribing": 4,
+      "food insecurity screening and referral": 4,
+      "food pantry referral program": 4,
+      "community food referral": 3
+    },
     "busca2a": {
       "ckm health": 4,
       "ckm risk": 4,
@@ -23,7 +45,12 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "nutrition prescription intervention": 4,
+      "social prescribing nutrition": 4,
+      "nutrition social prescribing": 4,
+      "food insecurity screening and referral": 4,
+      "care navigation": 3
     }
   }
 }
