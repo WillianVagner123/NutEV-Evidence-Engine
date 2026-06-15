@@ -61,17 +61,24 @@ def _merge_config(base: dict, supplement: dict) -> dict:
     return merged
 
 
-def _load_json_supplement(path: Path) -> dict:
-    supplement_path = path.with_name(f"{path.stem}_supplement{path.suffix}")
-    if not supplement_path.exists():
-        return {}
-    return json.loads(supplement_path.read_text(encoding="utf-8"))
+def _load_json_supplements(path: Path) -> list[dict]:
+    exact_supplement = path.with_name(f"{path.stem}_supplement{path.suffix}")
+    supplement_paths: list[Path] = []
+    if exact_supplement.exists():
+        supplement_paths.append(exact_supplement)
+    supplement_paths.extend(
+        sorted(
+            candidate
+            for candidate in path.parent.glob(f"{path.stem}_supplement_*{path.suffix}")
+            if candidate != exact_supplement
+        )
+    )
+    return [json.loads(path.read_text(encoding="utf-8")) for path in supplement_paths]
 
 
 def load_json(path: Path | str) -> dict:
     json_path = Path(path)
     data = json.loads(json_path.read_text(encoding="utf-8"))
-    supplement = _load_json_supplement(json_path)
-    if supplement:
+    for supplement in _load_json_supplements(json_path):
         data = _merge_config(data, supplement)
     return data
