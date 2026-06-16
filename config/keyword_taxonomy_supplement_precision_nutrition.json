@@ -1,0 +1,67 @@
+{
+  "version_note": "Precision and personalized nutrition supplement for busca2b. Adds focused terms for tailored dietary interventions in obesity, diabetes and cardiometabolic risk without changing raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "personalized_nutrition_adherence": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "diet personalization",
+        "diet personalisation"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "personalized nutrition",
+      "personalised nutrition",
+      "precision nutrition",
+      "tailored dietary advice",
+      "tailored dietary intervention",
+      "individualized dietary intervention",
+      "individualised dietary intervention"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "diet personalization",
+        "diet personalisation"
+      ],
+      "web_query_hints": [
+        "personalized nutrition obesity trial",
+        "personalised nutrition obesity trial",
+        "precision nutrition type 2 diabetes trial",
+        "tailored dietary advice cardiometabolic risk",
+        "tailored dietary intervention systematic review",
+        "individualized dietary intervention type 2 diabetes",
+        "individualised dietary intervention cardiometabolic"
+      ],
+      "document_terms": [
+        "personalized nutrition trial",
+        "personalised nutrition trial",
+        "precision nutrition trial",
+        "tailored dietary intervention",
+        "individualized dietary intervention",
+        "individualised dietary intervention"
+      ]
+    }
+  }
+}
