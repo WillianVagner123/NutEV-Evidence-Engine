@@ -11,7 +11,7 @@ from nutev.querypacks.builders import (
 )
 from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semantic_terms
 
-PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref")
+PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref", "semantic_scholar", "doaj", "scielo", "preprints", "clinicaltrials")
 LIVER_FOCUSED_WORKSTREAMS = {"busca2a", "busca2b"}
 BUSCA2A_GUIDANCE_TERMS = [
     "practice guideline",
@@ -1157,6 +1157,15 @@ def render_queries_for_provider(
         return uniq(_render_openalex_queries(components) + _render_term_coverage_queries(components, "openalex"))
     if provider == "crossref":
         return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, "crossref"))
+    # SciELO is served through Crossref (prefix filter) so it shares its syntax.
+    if provider == "scielo":
+        return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, "crossref"))
+    # Preprints are served through Europe PMC (SRC:PPR) so they share its syntax.
+    if provider == "preprints":
+        return uniq(_render_europepmc_queries(components) + _render_term_coverage_queries(components, "europepmc"))
+    # Generic keyword/boolean APIs (Semantic Scholar, DOAJ, ClinicalTrials.gov).
+    if provider in {"semantic_scholar", "doaj", "clinicaltrials"}:
+        return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, provider))
     return []
 
 

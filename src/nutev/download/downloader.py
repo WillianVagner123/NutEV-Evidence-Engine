@@ -10,6 +10,7 @@ import requests
 from nutev.download.dedup import Deduplicator
 from nutev.download.filters import is_likely_relevant_url, should_download
 from nutev.download.naming import build_filename, infer_ext
+from nutev.download.oa_resolver import resolve_oa_pdf
 from nutev.download.resolver import extract_clean_doi, resolve_url
 
 SCHOLARLY_HTML_HOSTS = {
@@ -461,7 +462,9 @@ def download_records(
         if dedup.seen_url(raw_url):
             continue
 
-        primary_url = _primary_download_url(record, raw_url)
+        # Prefer a discoverable open-access PDF (provider oa_pdf_url, Unpaywall,
+        # PMC) so more full texts are retrieved; fall back to the record's URL.
+        primary_url = resolve_oa_pdf(record) or _primary_download_url(record, raw_url)
         if not primary_url:
             failed.append(
                 _metadata_only(

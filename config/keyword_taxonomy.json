@@ -797,7 +797,11 @@
         "europepmc",
         "openalex",
         "crossref",
-        "doaj"
+        "doaj",
+        "semantic_scholar",
+        "scielo",
+        "preprints",
+        "clinicaltrials"
       ],
       "web_query_hints": [
         "food guideline",
@@ -881,7 +885,11 @@
         "ddg_web",
         "openalex",
         "crossref",
-        "doaj"
+        "doaj",
+        "semantic_scholar",
+        "scielo",
+        "preprints",
+        "clinicaltrials"
       ],
       "web_query_hints": [
         "clinical practice guideline",
@@ -968,6 +976,10 @@
         "openalex",
         "crossref",
         "doaj",
+        "semantic_scholar",
+        "scielo",
+        "preprints",
+        "clinicaltrials",
         "official_web"
       ],
       "web_query_hints": [
@@ -1057,6 +1069,10 @@
         "openalex",
         "crossref",
         "doaj",
+        "semantic_scholar",
+        "scielo",
+        "preprints",
+        "clinicaltrials",
         "official_web"
       ],
       "web_query_hints": [

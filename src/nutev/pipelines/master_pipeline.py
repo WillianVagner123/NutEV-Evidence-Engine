@@ -67,14 +67,35 @@ DOWNLOAD_BUDGET = {
     "artigo3_framework": 260,
 }
 
-DEFAULT_PRIORITY = ["pubmed", "europepmc", "openalex", "crossref", "official_web"]
+DEFAULT_PRIORITY = [
+    "pubmed",
+    "europepmc",
+    "openalex",
+    "crossref",
+    "semantic_scholar",
+    "doaj",
+    "scielo",
+    "preprints",
+    "clinicaltrials",
+    "official_web",
+]
 
 _WHITESPACE_RE = re.compile(r"\s+")
 _NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
 
 
 def _provider_map():
-    return {"pubmed": True, "europepmc": True, "openalex": True, "crossref": True}
+    return {
+        "pubmed": True,
+        "europepmc": True,
+        "openalex": True,
+        "crossref": True,
+        "semantic_scholar": True,
+        "doaj": True,
+        "scielo": True,
+        "preprints": True,
+        "clinicaltrials": True,
+    }
 
 
 def _as_text(value: object) -> str:
@@ -338,7 +359,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     all_failed: list[dict] = []
     total_downloads = total_failed = total_ocr = 0
     provider_status_counts = {"completed": 0, "partial": 0, "failed": 0, "skipped": 0, "empty": 0}
-    provider_rows = {provider: 0 for provider in ["pubmed", "europepmc", "openalex", "crossref", "official_web", "google_pse", "serpapi", "brave"]}
+    provider_rows = {provider: 0 for provider in ["pubmed", "europepmc", "openalex", "crossref", "semantic_scholar", "doaj", "scielo", "preprints", "clinicaltrials", "official_web", "google_pse", "serpapi", "brave"]}
 
     for ws, queries in qpack.items():
         supported_priority = providers_executed_by_workstream.get(ws, DEFAULT_PRIORITY)
