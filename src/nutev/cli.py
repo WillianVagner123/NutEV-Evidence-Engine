@@ -54,6 +54,12 @@ def main() -> None:
     ask.add_argument("--project-root", type=Path, required=True)
     ask.add_argument("question", nargs="+", help="Your question about the corpus")
     ask.add_argument("--k", type=int, default=8, help="Number of articles to retrieve")
+    ask.add_argument(
+        "--backend",
+        choices=["auto", "openai", "anthropic", "offline"],
+        default="auto",
+        help="LLM backend (default auto: OpenAI/Anthropic if a key is set, else offline)",
+    )
 
     build_kb = sub.add_parser("build-kb", help="(Re)build the knowledge base from metadata_master.csv")
     build_kb.add_argument("--project-root", type=Path, required=True)
@@ -177,10 +183,21 @@ def main() -> None:
 
     if args.command == "ask":
         from nutev.llm.ask import answer
+        from nutev.llm.chat_client import describe_backend, get_chat_client
 
         s = NutevSettings(project_root=args.project_root)
-        result = answer(" ".join(args.question), s.output_dirs["11_knowledge_base"], k=args.k)
-        print(f"[{result['mode']} | backend={result['backend']} | corpus={result['n_corpus']}]\n")
+        if args.backend == "auto":
+            client: object | str | None = "auto"
+        elif args.backend == "offline":
+            client = None
+        else:
+            client = get_chat_client(args.backend)
+        result = answer(" ".join(args.question), s.output_dirs["11_knowledge_base"], k=args.k, client=client)
+        label = result.get("backend") if args.backend == "auto" else describe_backend(args.backend)
+        retrieval = result.get("retrieval")
+        meta = f"[{result['mode']} | backend={label} | corpus={result['n_corpus']}"
+        meta += f" | retrieval={retrieval}]" if retrieval else "]"
+        print(meta + "\n")
         print(result["answer"])
         if result["citations"]:
             print("\nSources:")

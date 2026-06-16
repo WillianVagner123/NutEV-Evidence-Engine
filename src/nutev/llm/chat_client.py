@@ -140,14 +140,22 @@ class AnthropicChatClient:
         return str(content)
 
 
-def get_chat_client() -> object | None:
-    """Return an automatically chosen chat client, or ``None`` for offline.
+def get_chat_client(backend: str = "auto") -> object | None:
+    """Return a chat client, or ``None`` for offline.
 
-    Selection order: disabled network -> OpenAI -> Anthropic -> offline.
+    ``backend`` may be ``"auto"`` (default; OpenAI -> Anthropic -> offline),
+    ``"openai"``, ``"anthropic"`` or ``"offline"``. A forced backend whose API
+    key is missing yields ``None`` (offline). ``NUTEV_DISABLE_NETWORK=1`` always
+    forces offline.
     """
 
-    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+    if backend == "offline" or os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return None
+    if backend == "openai":
+        return OpenAIChatClient() if os.environ.get("OPENAI_API_KEY") else None
+    if backend == "anthropic":
+        return AnthropicChatClient() if os.environ.get("ANTHROPIC_API_KEY") else None
+    # auto
     if os.environ.get("OPENAI_API_KEY"):
         return OpenAIChatClient()
     if os.environ.get("ANTHROPIC_API_KEY"):
@@ -155,11 +163,15 @@ def get_chat_client() -> object | None:
     return None
 
 
-def describe_backend() -> str:
-    """Return a stable human-readable label for the active backend."""
+def describe_backend(backend: str = "auto") -> str:
+    """Return a stable human-readable label for the active/selected backend."""
 
-    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+    if backend == "offline" or os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return "offline"
+    if backend == "openai":
+        return f"openai:{_openai_model()}" if os.environ.get("OPENAI_API_KEY") else "offline"
+    if backend == "anthropic":
+        return f"anthropic:{_anthropic_model()}" if os.environ.get("ANTHROPIC_API_KEY") else "offline"
     if os.environ.get("OPENAI_API_KEY"):
         return f"openai:{_openai_model()}"
     if os.environ.get("ANTHROPIC_API_KEY"):

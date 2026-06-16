@@ -133,3 +133,88 @@ def test_build_context_truncates_and_numbers(tmp_path, monkeypatch):
     context = build_context(hits)
     assert context.startswith("[1] ")
     assert "[2] " in context
+
+
+def test_retrieve_falls_back_to_tfidf_when_semantic_unavailable(
+    tmp_path, monkeypatch
+):
+    # Network disabled => embeddings.semantic_retrieve returns None, so even
+    # with kb_dir/mode="auto" we must transparently fall back to TF-IDF and
+    # still rank the on-topic document first.
+    monkeypatch.setenv("NUTEV_DISABLE_NETWORK", "1")
+    kb_dir = _write_corpus(tmp_path)
+    records = load_corpus(kb_dir)
+    hits = retrieve(
+        records, "mediterranean diet diabetes", kb_dir=kb_dir, mode="auto"
+    )
+    assert hits[0]["document_id"] == "doc-medi"
+    assert hits[0]["_retrieval_score"] > 0
+
+
+def test_answer_reports_keyword_retrieval_when_offline(tmp_path, monkeypatch):
+    monkeypatch.setenv("NUTEV_DISABLE_NETWORK", "1")
+    kb_dir = _write_corpus(tmp_path)
+    result = answer("mediterranean diet diabetes", kb_dir, k=3, mode="auto")
+    assert result["retrieval"] == "keyword"
+    # Existing contract keys must remain intact.
+    assert result["mode"] == "offline"
+    assert result["n_corpus"] == len(CORPUS)
+
+
+def test_retrieve_and_answer_use_semantic_when_available(tmp_path, monkeypatch):
+    # Monkeypatch the embeddings layer to simulate semantic availability and a
+    # fixed ordering; both retrieve() and answer() must honour/report it.
+    monkeypatch.setenv("NUTEV_DISABLE_NETWORK", "1")
+    kb_dir = _write_corpus(tmp_path)
+    records = load_corpus(kb_dir)
+
+    from nutev.llm import embeddings
+
+    fixed = dict(records[1])  # doc-sleep, deliberately off-topic
+    fixed["_retrieval_score"] = 0.99
+
+    def fake_semantic_retrieve(recs, query, kb, k=8):
+        return [fixed]
+
+    monkeypatch.setattr(embeddings, "semantic_retrieve", fake_semantic_retrieve)
+
+    hits = retrieve(
+        records, "mediterranean diet diabetes", kb_dir=kb_dir, mode="auto"
+    )
+    assert [h["document_id"] for h in hits] == ["doc-sleep"]
+    assert hits[0]["_retrieval_score"] == 0.99
+
+    result = answer("mediterranean diet diabetes", kb_dir, k=3, mode="auto")
+    assert result["retrieval"] == "semantic"
+    assert result["citations"][0]["document_id"] == "doc-sleep"
+
+
+def test_answer_keyword_mode_forces_tfidf(tmp_path, monkeypatch):
+    # Even if semantic were available, mode="keyword" must never call it.
+    monkeypatch.setenv("NUTEV_DISABLE_NETWORK", "1")
+    kb_dir = _write_corpus(tmp_path)
+    records = load_corpus(kb_dir)
+
+    from nutev.llm import embeddings
+
+    def boom(*args, **kwargs):  # pragma: no cover - must not be called
+        raise AssertionError("semantic_retrieve must not be called in keyword mode")
+
+    monkeypatch.setattr(embeddings, "semantic_retrieve", boom)
+
+    hits = retrieve(
+        records, "mediterranean diet diabetes", kb_dir=kb_dir, mode="keyword"
+    )
+    assert hits[0]["document_id"] == "doc-medi"
+
+    result = answer("mediterranean diet diabetes", kb_dir, k=3, mode="keyword")
+    assert result["retrieval"] == "keyword"
+
+
+def test_answer_backward_compatible_signature(tmp_path, monkeypatch):
+    # The original two-arg call must still work and now report keyword retrieval.
+    monkeypatch.setenv("NUTEV_DISABLE_NETWORK", "1")
+    kb_dir = _write_corpus(tmp_path)
+    result = answer("mediterranean diet diabetes", kb_dir)
+    assert result["retrieval"] == "keyword"
+    assert result["citations"][0]["document_id"] == "doc-medi"

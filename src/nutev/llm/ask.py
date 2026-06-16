@@ -99,10 +99,23 @@ def _to_float(value: Any, default: float = 0.0) -> float:
         return default
 
 
-def retrieve(records: list[dict], query: str, k: int = 8) -> list[dict]:
-    """Rank ``records`` against ``query`` with deterministic TF-IDF scoring.
+def retrieve(
+    records: list[dict],
+    query: str,
+    k: int = 8,
+    kb_dir: str | Path | None = None,
+    mode: str = "auto",
+) -> list[dict]:
+    """Rank ``records`` against ``query``.
 
-    Score = sum over query terms of (term frequency in doc * idf), where
+    When ``mode`` is ``"auto"`` or ``"semantic"`` and ``kb_dir`` is provided,
+    optional embeddings-based retrieval is attempted first; if it is
+    unavailable or fails it returns ``None`` and we transparently fall back to
+    the deterministic TF-IDF keyword ranking below. ``mode == "keyword"`` forces
+    TF-IDF. The embeddings module is imported lazily so importing this module
+    stays light and offline-safe.
+
+    TF-IDF score = sum over query terms of (term frequency in doc * idf), where
     ``idf = log(N / df)``. Ties break by ``relevance_score`` then
     ``cited_by_count`` (descending), then original order for stability. Each
     returned record is a shallow copy carrying ``_retrieval_score``.
@@ -110,6 +123,16 @@ def retrieve(records: list[dict], query: str, k: int = 8) -> list[dict]:
 
     if not records:
         return []
+
+    if mode in ("auto", "semantic") and kb_dir is not None:
+        try:
+            from nutev.llm import embeddings
+
+            hits = embeddings.semantic_retrieve(records, query, kb_dir, k)
+        except Exception:  # noqa: BLE001 - any failure -> keyword fallback
+            hits = None
+        if hits is not None:
+            return hits
 
     query_terms = _tokenize(query)
     doc_tokens = [_doc_tokens(rec) for rec in records]
@@ -208,22 +231,41 @@ def answer(
     kb_dir: str | Path,
     k: int = 8,
     client: object | str = "auto",
+    mode: str = "auto",
 ) -> dict:
     """Answer ``question`` from the knowledge base in ``kb_dir``.
 
     With a chat backend available the answer is grounded in retrieved sources;
-    any client error falls back to deterministic offline mode. The returned
-    dict keys are a stable contract.
+    any client error falls back to deterministic offline mode. Retrieval uses
+    optional semantic search when available (``mode`` ``"auto"``/``"semantic"``)
+    and otherwise the deterministic TF-IDF ranking. The returned dict keys are a
+    stable contract; ``"retrieval"`` reports the strategy actually used
+    (``"semantic"`` or ``"keyword"``).
     """
 
     records = load_corpus(kb_dir)
-    top = retrieve(records, question, k=k)
+
+    top: list[dict] | None = None
+    retrieval = "keyword"
+    if mode in ("auto", "semantic"):
+        try:
+            from nutev.llm import embeddings
+
+            top = embeddings.semantic_retrieve(records, question, kb_dir, k)
+        except Exception:  # noqa: BLE001 - any failure -> keyword fallback
+            top = None
+        if top is not None:
+            retrieval = "semantic"
+    if top is None:
+        top = retrieve(records, question, k=k, mode="keyword")
+        retrieval = "keyword"
+
     context = build_context(top)
     citations = [_citation(i, rec) for i, rec in enumerate(top, start=1)]
 
     chat = get_chat_client() if client == "auto" else client
 
-    mode = "offline"
+    answer_mode = "offline"
     backend = "offline"
     answer_text = _offline_answer(question, context, len(top))
 
@@ -233,18 +275,19 @@ def answer(
             llm_text = chat.chat(SYSTEM_PROMPT, user)
             if llm_text and llm_text.strip():
                 answer_text = llm_text
-                mode = "llm"
+                answer_mode = "llm"
                 backend = describe_backend() or "offline"
         except Exception:  # noqa: BLE001 - any backend failure -> offline
-            mode = "offline"
+            answer_mode = "offline"
             backend = "offline"
             answer_text = _offline_answer(question, context, len(top))
 
     return {
         "question": question,
-        "mode": mode,
+        "mode": answer_mode,
         "backend": backend,
         "answer": answer_text,
         "citations": citations,
         "n_corpus": len(records),
+        "retrieval": retrieval,
     }
