@@ -472,7 +472,35 @@ def _extend_semantic_block(
         )
 
 
+def _prioritize_semantic_block(
+    block_name: str,
+    priorities: dict[str, int],
+) -> None:
+    for workstream, priority in priorities.items():
+        existing = [
+            (name, value)
+            for name, value in semantic_blocks.WORKSTREAM_SEMANTIC_PRIORITIES.get(
+                workstream,
+                [],
+            )
+            if name != block_name
+        ]
+        semantic_blocks.WORKSTREAM_SEMANTIC_PRIORITIES[workstream] = [
+            (block_name, priority),
+            *existing,
+        ]
+
+
 def apply_semantic_extensions() -> None:
+    _extend_semantic_block(
+        "diet_processing_quality",
+        terms=ULTRA_PROCESSED_FOOD_TERMS,
+        document_terms=ULTRA_PROCESSED_FOOD_DOCUMENT_TERMS,
+    )
+    _prioritize_semantic_block(
+        "diet_processing_quality",
+        {"busca2a": 5, "busca2b": 5},
+    )
     _extend_semantic_block(
         "cardiometabolic_precision",
         terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
