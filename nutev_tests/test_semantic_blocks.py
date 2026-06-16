@@ -1,6 +1,17 @@
 from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semantic_terms
 
 
+CULINARY_NUTRITION_TERMS = {
+    "culinary nutrition",
+    "culinary nutrition intervention",
+    "food skills",
+    "food skills intervention",
+    "food preparation skills",
+    "meal planning skills",
+    "grocery shopping skills",
+}
+
+
 def test_busca2a_prioritizes_cardiometabolic_precision_block() -> None:
     blocks = prioritized_semantic_blocks("busca2a")
     assert {"name": "cardiometabolic_precision", "priority": 5} in blocks
@@ -67,3 +78,21 @@ def test_busca2b_semantic_terms_include_food_as_medicine_program_variants() -> N
     assert "nutrition incentive program" in terms
     assert "produce voucher program" in terms
     assert "fruit and vegetable voucher program" in terms
+
+
+def test_busca1_semantic_terms_include_culinary_nutrition_skills() -> None:
+    terms = {term.lower() for term in semantic_terms("busca1", min_priority=5)}
+
+    assert CULINARY_NUTRITION_TERMS.issubset(terms)
+
+
+def test_busca2b_semantic_terms_include_culinary_nutrition_skills() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+
+    assert CULINARY_NUTRITION_TERMS.issubset(terms)
+
+
+def test_semantic_terms_are_deduplicated_after_cross_block_expansion() -> None:
+    terms = semantic_terms("busca2b", min_priority=4)
+
+    assert len(terms) == len({term.lower() for term in terms})
