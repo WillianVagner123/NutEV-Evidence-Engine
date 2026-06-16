@@ -154,6 +154,15 @@ def validate_failure_reason(value: str | None) -> str | None:
     return validate_enum_value(value, FailureReason, "failure_reason")
 
 
+def _candidate_url(row: dict) -> object:
+    return (
+        row.get("final_url")
+        or row.get("resolved_url")
+        or row.get("original_url")
+        or row.get("url")
+    )
+
+
 def canonical_document_key(row: dict) -> str:
     doi = normalize_doi(row.get("doi"))
     if doi:
@@ -164,12 +173,10 @@ def canonical_document_key(row: dict) -> str:
     pmcid = normalize_pmcid(row.get("pmcid"))
     if pmcid:
         return f"pmcid:{pmcid}"
-    url = normalize_url(
-        row.get("final_url")
-        or row.get("resolved_url")
-        or row.get("original_url")
-        or row.get("url")
-    )
+    doi_from_url = normalize_doi(str(_candidate_url(row) or ""))
+    if doi_from_url:
+        return f"doi:{doi_from_url}"
+    url = normalize_url(_candidate_url(row))
     if url:
         return f"url:{url.lower()}"
     title = normalize_title(row.get("title"))
