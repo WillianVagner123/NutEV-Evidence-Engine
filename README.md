@@ -229,6 +229,33 @@ Multilingual and concept queries are interleaved into each provider's query set
 so they fall within the per-provider query budget. Edit the lexicon to add
 languages or concepts; it is hashed in the reproducibility report.
 
+## Article knowledge base & `ask` (chat over the corpus)
+
+Every run builds an AI-/RAG-ready knowledge base under `11_knowledge_base/`, so
+the harvested literature can be organized and queried conversationally:
+
+- **`corpus.jsonl` / `corpus.csv` / `corpus.parquet`** — one clean record per
+  de-duplicated document, enriched with **country/region** (from author
+  affiliations), **language**, **journal/ISSN/publisher**, citation count, plus
+  the existing domains/outcomes/diet-patterns/conditions/evidence tier.
+  `schema.json` + `data_dictionary.md` describe every field for humans and LLMs.
+- **`summary/`** — precomputed aggregations that answer the common questions
+  directly: `by_country.csv` (what each country is publishing — top
+  domains/outcomes/diets/conditions/journals per country), `by_venue.csv`,
+  `by_language.csv`, `by_year.csv`, `by_concept.csv`, and `overview.json`.
+
+Ask questions over the base (retrieval + citations):
+
+```bash
+nutev ask --project-root <root> "what is Brazil publishing about the mediterranean diet and diabetes?"
+nutev build-kb --project-root <root>   # rebuild the base from metadata_master.csv
+```
+
+The AI backend is **automatic**: it uses `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
+if present, otherwise it runs **offline** (deterministic keyword retrieval that
+returns the most relevant sources with citations — ready to paste into any AI).
+`NUTEV_DISABLE_NETWORK=1` forces offline mode.
+
 ## QUALIS A1 methodological outputs
 
 Each run also emits publication-grade reporting scaffolding (these are

@@ -50,6 +50,14 @@ def main() -> None:
     prize = sub.add_parser("prize-metrics")
     prize.add_argument("--project-root", type=Path, required=True)
 
+    ask = sub.add_parser("ask", help="Ask questions over the article knowledge base")
+    ask.add_argument("--project-root", type=Path, required=True)
+    ask.add_argument("question", nargs="+", help="Your question about the corpus")
+    ask.add_argument("--k", type=int, default=8, help="Number of articles to retrieve")
+
+    build_kb = sub.add_parser("build-kb", help="(Re)build the knowledge base from metadata_master.csv")
+    build_kb.add_argument("--project-root", type=Path, required=True)
+
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
     p.add_argument("--web-enabled", action="store_true")
@@ -153,6 +161,32 @@ def main() -> None:
         path = write_prize_metrics_summary(args.project_root)
         print(f"Prize metrics generated: {path}")
         print(f"Prize metrics text: {path.with_suffix('.txt')}")
+        return
+
+    if args.command == "build-kb":
+        from nutev.export.kb_aggregations import write_aggregations
+        from nutev.export.knowledge_base import load_kb_records_from_metadata_csv, write_knowledge_base
+
+        s = NutevSettings(project_root=args.project_root)
+        kb_dir = s.output_dirs["11_knowledge_base"]
+        records = load_kb_records_from_metadata_csv(s.output_dirs["02_metadata"] / "metadata_master.csv")
+        write_knowledge_base(records, kb_dir)
+        write_aggregations(records, kb_dir / "summary")
+        print(f"Knowledge base rebuilt: {len(records)} records -> {kb_dir}")
+        return
+
+    if args.command == "ask":
+        from nutev.llm.ask import answer
+
+        s = NutevSettings(project_root=args.project_root)
+        result = answer(" ".join(args.question), s.output_dirs["11_knowledge_base"], k=args.k)
+        print(f"[{result['mode']} | backend={result['backend']} | corpus={result['n_corpus']}]\n")
+        print(result["answer"])
+        if result["citations"]:
+            print("\nSources:")
+            for c in result["citations"]:
+                where = ", ".join(c.get("countries") or []) or "—"
+                print(f"  [{c['index']}] {c['title']} ({c.get('year') or 'n/a'}; {where}; {c.get('journal') or '—'}) {c.get('url') or c.get('doi') or ''}")
         return
 
     if not args.project_root:

@@ -4,11 +4,11 @@ from pathlib import Path
 
 REQUIRED_METADATA_COLUMNS = [
     "document_id", "title", "doi", "pmid", "pmcid", "original_url", "final_url", "source_provider", "source_institution",
-    "country", "region", "workstream", "year", "language", "evidence_type", "capture_status", "download_status", "extraction_status",
+    "country", "countries", "region", "workstream", "year", "language", "evidence_type", "capture_status", "download_status", "extraction_status",
     "artifact_paths", "failure_reason", "relevance_score", "novelty_score", "domains", "outcomes", "diet_patterns", "clinical_conditions",
     "first_seen_date", "last_seen_date", "is_new", "llm_decision", "llm_reason",
-    "journal", "publication_date", "article_type", "authors", "abstract", "metadata_status",
-    "editorial_priority_score", "editorial_priority_tier"
+    "journal", "issn", "publisher", "publication_date", "article_type", "authors", "abstract", "metadata_status",
+    "cited_by_count", "editorial_priority_score", "editorial_priority_tier"
 ]
 
 ARTICLE_DATA_COLUMNS = [
@@ -52,7 +52,13 @@ def _normalize_metadata_row(row: dict) -> dict:
     out["capture_status"] = row.get("capture_status", "missing")
     out["download_status"] = row.get("download_status", "metadata_only" if not row.get("file_path") else "pdf")
     out["extraction_status"] = row.get("extraction_status", "missing")
+    countries = row.get("countries")
+    if isinstance(countries, list):
+        out["countries"] = ";".join(str(c) for c in countries if c)
     out["journal"] = row.get("journal", "")
+    out["issn"] = row.get("issn", "")
+    out["publisher"] = row.get("publisher", "")
+    out["cited_by_count"] = row.get("cited_by_count", "")
     out["publication_date"] = row.get("publication_date", "")
     out["article_type"] = row.get("article_type", row.get("evidence_type", ""))
     out["authors"] = row.get("authors", "")

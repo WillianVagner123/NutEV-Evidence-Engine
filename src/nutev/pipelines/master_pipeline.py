@@ -12,6 +12,7 @@ import pandas as pd
 from nutev import __version__ as nutev_version
 from nutev.analysis import domains_busca1, domains_busca2a, domains_busca2b
 from nutev.analysis.article3_framework import build_framework_signals
+from nutev.analysis.enrich_geo import enrich_records
 from nutev.analysis.nutev_classifier import classify_evidence
 from nutev.analysis.prisma import build_prisma_flow, export_prisma
 from nutev.analysis.relevance import keep_candidate_for_download, score_record
@@ -33,6 +34,8 @@ from nutev.engine.job import (
 )
 from nutev.export.audit_artifacts import write_audit_artifacts
 from nutev.export.curation import curate_outputs
+from nutev.export.kb_aggregations import write_aggregations
+from nutev.export.knowledge_base import to_kb_records, write_knowledge_base
 from nutev.export.qualis_methods import write_qualis_methods
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
@@ -549,6 +552,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
         # New integrated global evidence layer: all records pass through shared classifier/lenses.
         rows = classify_evidence(rows, ontology, evidence_lenses)
+        # Geography/venue/language enrichment (country, region, language, ISSN...)
+        # powers the country-aware, AI-queryable knowledge base.
+        rows = enrich_records(rows)
         for r in rows:
             r["source_registry_version"] = source_registry.get("version", "")
             r["ontology_version"] = ontology.get("version", "")
@@ -564,6 +570,12 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")
+
+    # AI-/RAG-ready knowledge base + country/venue/topic aggregations.
+    kb_dir = settings.output_dirs["11_knowledge_base"]
+    kb_records = to_kb_records(all_rows)
+    write_knowledge_base(kb_records, kb_dir)
+    write_aggregations(kb_records, kb_dir / "summary")
     write_simple_csv(
         extraction_manifest,
         settings.output_dirs["05_extraction"] / "extraction_manifest.csv",

@@ -44,6 +44,38 @@ def _pick_openalex_url(item: dict) -> str:
     return ""
 
 
+def _openalex_affiliations_venue(item: dict) -> dict:
+    """Extract geography (author institution countries), institution names and
+    venue identity (ISSN/publisher) that OpenAlex carries but we otherwise drop.
+
+    This is the language-independent geography signal that powers "what is each
+    country publishing" analyses downstream.
+    """
+    country_codes: list[str] = []
+    institutions: list[str] = []
+    authorships = item.get("authorships")
+    if isinstance(authorships, list):
+        for authorship in authorships:
+            for inst in (authorship.get("institutions") or []):
+                code = inst.get("country_code")
+                if code and code not in country_codes:
+                    country_codes.append(str(code).upper())
+                name = inst.get("display_name")
+                if name and name not in institutions:
+                    institutions.append(str(name))
+    source = ((item.get("primary_location") or {}).get("source") or {})
+    issn = source.get("issn_l") or ""
+    if not issn and isinstance(source.get("issn"), list) and source.get("issn"):
+        issn = source["issn"][0]
+    return {
+        "country_codes": country_codes,
+        "source_institution": "; ".join(institutions[:6]),
+        "issn": issn or "",
+        "publisher": source.get("host_organization_name") or "",
+    }
+
+
+
 def search_openalex(query: str, per_page: int = 12, concept_filter: str | None = None) -> list[dict]:
     if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return []
@@ -70,6 +102,7 @@ def search_openalex(query: str, per_page: int = 12, concept_filter: str | None =
 
             rows = []
             for item in data:
+                geo = _openalex_affiliations_venue(item)
                 rows.append(
                     {
                         "source": "openalex",
@@ -84,6 +117,12 @@ def search_openalex(query: str, per_page: int = 12, concept_filter: str | None =
                         "publication_date": item.get("publication_date") or "",
                         "article_type": item.get("type") or "",
                         "authors": "; ".join([str((a.get("author") or {}).get("display_name") or "") for a in item.get("authorships", [])[:12]]) if isinstance(item.get("authorships"), list) else "",
+                        "language": item.get("language") or "",
+                        "country_codes": geo["country_codes"],
+                        "source_institution": geo["source_institution"],
+                        "issn": geo["issn"],
+                        "publisher": geo["publisher"],
+                        "cited_by_count": item.get("cited_by_count") or 0,
                         "metadata_status": "openalex_search",
                         "query": query,
                         "provider_query": query,

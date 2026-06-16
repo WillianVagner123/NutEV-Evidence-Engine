@@ -36,6 +36,7 @@ class NutevSettings:
             "08_docs": b / "08_docs",
             "09_global_watch": b / "09_global_watch",
             "10_curated": b / "10_curated",
+            "11_knowledge_base": b / "11_knowledge_base",
         }
 
 
