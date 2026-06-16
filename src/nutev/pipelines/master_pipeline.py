@@ -79,6 +79,7 @@ DEFAULT_PRIORITY = [
     "scielo",
     "preprints",
     "clinicaltrials",
+    "core",
     "official_web",
 ]
 
@@ -97,6 +98,7 @@ def _provider_map():
         "scielo": True,
         "preprints": True,
         "clinicaltrials": True,
+        "core": True,
     }
 
 
@@ -361,7 +363,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     all_failed: list[dict] = []
     total_downloads = total_failed = total_ocr = 0
     provider_status_counts = {"completed": 0, "partial": 0, "failed": 0, "skipped": 0, "empty": 0}
-    provider_rows = {provider: 0 for provider in ["pubmed", "europepmc", "openalex", "crossref", "semantic_scholar", "doaj", "scielo", "preprints", "clinicaltrials", "official_web", "google_pse", "serpapi", "brave"]}
+    provider_rows = {provider: 0 for provider in ["pubmed", "europepmc", "openalex", "crossref", "semantic_scholar", "doaj", "scielo", "preprints", "clinicaltrials", "core", "official_web", "google_pse", "serpapi", "brave"]}
 
     for ws, queries in qpack.items():
         supported_priority = providers_executed_by_workstream.get(ws, DEFAULT_PRIORITY)

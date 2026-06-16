@@ -12,6 +12,7 @@ from nutev.search.base import ProviderResult, redact_secrets
 from nutev.search.brave_optional import search_brave
 from nutev.search.checkpoint import query_hash
 from nutev.search.clinicaltrials import search_clinicaltrials
+from nutev.search.core_optional import search_core
 from nutev.search.crossref import search_crossref
 from nutev.search.doaj import search_doaj
 from nutev.search.europepmc import search_europepmc
@@ -85,6 +86,7 @@ def _registry() -> dict[str, Callable[[str, int, dict[str, Any]], ProviderResult
         "scielo": lambda q, limit, ctx: search_scielo(q, limit=limit, context=ctx),
         "preprints": lambda q, limit, ctx: search_preprints(q, limit=limit, context=ctx),
         "clinicaltrials": lambda q, limit, ctx: search_clinicaltrials(q, limit=limit, context=ctx),
+        "core": lambda q, limit, ctx: search_core(q, limit=limit, context=ctx),
         "google": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "google_pse": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "serpapi": lambda q, limit, ctx: search_serpapi(q, limit=limit, context=ctx),

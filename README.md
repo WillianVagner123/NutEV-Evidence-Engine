@@ -180,3 +180,49 @@ Scientific search does not depend on Google. PubMed, Europe PMC, OpenAlex, Cross
 Configure local environment variables from `.env.example`. The most important PubMed settings are `NCBI_EMAIL`, optional `NCBI_API_KEY`, and `NCBI_TOOL=nutev_pipeline`. Google/SerpAPI keys are optional and are used only for gray-literature discovery.
 
 More details: `docs/SEARCH_PROVIDERS.md` and `docs/PUBMED_TROUBLESHOOTING.md`.
+
+## Scientific databases
+
+The pipeline queries the following databases by default (all free; no credential
+required to run), each through the orchestrator's retry/checkpoint/failure-logging
+contract:
+
+- **PubMed/MEDLINE** (NCBI E-utilities, history server, checkpoints)
+- **Europe PMC**
+- **OpenAlex**
+- **Crossref**
+- **Semantic Scholar** (Graph API; optional `SEMANTIC_SCHOLAR_API_KEY` for higher rate limits)
+- **DOAJ** (Directory of Open Access Journals)
+- **SciELO** (Latin American, via Crossref prefix `10.1590`)
+- **Preprints** (medRxiv/bioRxiv and others, via Europe PMC `SRC:PPR`)
+- **ClinicalTrials.gov** (API v2 trial registry)
+- **CORE** (open-access aggregator) — optional, enabled with a free `CORE_API_KEY`
+
+Provider failures are logged to `07_logs/provider_failures.csv` and the pipeline
+exports partial results instead of crashing.
+
+## Open-access full-text downloading
+
+To maximize how many full texts are retrieved, the downloader prefers a
+discoverable open-access PDF before the generic resolver, in order: a provider's
+`oa_pdf_url` → **Unpaywall** (by DOI, requires `UNPAYWALL_EMAIL`) → **PMC** (by
+PMCID). Publisher pages are scraped for PDF links (meta tags, `<link>`/anchor
+hints, `meta refresh`) across common publisher URL patterns.
+
+## QUALIS A1 methodological outputs
+
+Each run also emits publication-grade reporting scaffolding (these are
+scaffolding for the human researcher; they do not replace screening, appraisal
+or adjudication):
+
+- `06_tables/NUTEV_PRISMA2020_FLOW.csv` — PRISMA 2020 flow with per-database
+  identified counts plus dedup/screening/full-text/claims stages;
+- `08_docs/NUTEV_SEARCH_STRATEGY_APPENDIX.md` — the exact queries executed per
+  database per workstream (PRISMA 2020 item 7, reproducible search);
+- `08_docs/NUTEV_PROSPERO_PROTOCOL.md` and `08_docs/NUTEV_PRISMA2020_CHECKLIST.md`
+  — protocol registration template and the 27-item checklist;
+- `06_tables/NUTEV_RISK_OF_BIAS.csv` (+ guide) — RoB 2 / ROBINS-I / AMSTAR 2
+  domain template, one row per full-text document;
+- `06_tables/NUTEV_REPRODUCIBILITY.json` — run dates, package version,
+  per-database record counts, total queries and SHA-256 hashes of the
+  configuration that drove the run.

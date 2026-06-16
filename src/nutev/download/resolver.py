@@ -25,6 +25,18 @@ PDF_LINK_HINTS = [
     "article/download",
     "/download/",
     ".full.pdf",
+    # Additional publisher-platform patterns for broader full-text capture.
+    "/doi/pdf",
+    "/doi/epdf",
+    "/content/pdf",
+    "epdf",
+    "getpdf",
+    "pdfft",          # Elsevier ScienceDirect
+    "type=printable",
+    "/pdf/",
+    "downloadpdf",
+    "render=pdf",
+    "viewpdf",
 ]
 PDF_TEXT_HINTS = [
     "pdf",
@@ -147,10 +159,26 @@ def _extract_pdf_from_anchors(base_url: str, soup: BeautifulSoup) -> str | None:
     return None
 
 
+def _extract_pdf_from_meta_refresh(base_url: str, soup: BeautifulSoup) -> str | None:
+    for meta in soup.find_all("meta"):
+        equiv = (meta.get("http-equiv") or "").strip().lower()
+        if equiv != "refresh":
+            continue
+        content = (meta.get("content") or "")
+        marker = content.lower().find("url=")
+        if marker == -1:
+            continue
+        target = content[marker + 4:].strip().strip("'\"")
+        if target and _looks_pdfish(target):
+            return _join(base_url, target)
+    return None
+
+
 def _extract_pdf_like_link(base_url: str, html: str) -> str | None:
     soup = BeautifulSoup(html, "html.parser")
     return (
         _extract_pdf_from_meta(base_url, soup)
+        or _extract_pdf_from_meta_refresh(base_url, soup)
         or _extract_pdf_from_link_tags(base_url, soup)
         or _extract_pdf_from_anchors(base_url, soup)
     )

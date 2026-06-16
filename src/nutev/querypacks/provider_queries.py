@@ -11,7 +11,7 @@ from nutev.querypacks.builders import (
 )
 from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semantic_terms
 
-PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref", "semantic_scholar", "doaj", "scielo", "preprints", "clinicaltrials")
+PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref", "semantic_scholar", "doaj", "scielo", "preprints", "clinicaltrials", "core")
 LIVER_FOCUSED_WORKSTREAMS = {"busca2a", "busca2b"}
 BUSCA2A_GUIDANCE_TERMS = [
     "practice guideline",
@@ -1164,7 +1164,7 @@ def render_queries_for_provider(
     if provider == "preprints":
         return uniq(_render_europepmc_queries(components) + _render_term_coverage_queries(components, "europepmc"))
     # Generic keyword/boolean APIs (Semantic Scholar, DOAJ, ClinicalTrials.gov).
-    if provider in {"semantic_scholar", "doaj", "clinicaltrials"}:
+    if provider in {"semantic_scholar", "doaj", "clinicaltrials", "core"}:
         return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, provider))
     return []
 

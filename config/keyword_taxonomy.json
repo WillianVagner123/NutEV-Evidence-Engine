@@ -801,7 +801,8 @@
         "semantic_scholar",
         "scielo",
         "preprints",
-        "clinicaltrials"
+        "clinicaltrials",
+        "core"
       ],
       "web_query_hints": [
         "food guideline",
@@ -889,7 +890,8 @@
         "semantic_scholar",
         "scielo",
         "preprints",
-        "clinicaltrials"
+        "clinicaltrials",
+        "core"
       ],
       "web_query_hints": [
         "clinical practice guideline",
@@ -980,6 +982,7 @@
         "scielo",
         "preprints",
         "clinicaltrials",
+        "core",
         "official_web"
       ],
       "web_query_hints": [
@@ -1073,6 +1076,7 @@
         "scielo",
         "preprints",
         "clinicaltrials",
+        "core",
         "official_web"
       ],
       "web_query_hints": [
