@@ -1,0 +1,73 @@
+{
+  "version_note": "Focused NutMEV query supplement for cardiovascular-kidney-metabolic and cardiorenal-metabolic terminology. Loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "clinical": {
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome",
+      "cardiorenal-metabolic syndrome",
+      "cardiorenal metabolic health",
+      "cardiorenal metabolic risk"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome",
+      "cardiorenal-metabolic syndrome",
+      "cardiorenal metabolic health",
+      "cardiorenal metabolic risk"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiorenal metabolic syndrome",
+        "cardio-renal-metabolic syndrome",
+        "cardiorenal-metabolic syndrome",
+        "cardiorenal metabolic health",
+        "cardiorenal metabolic risk"
+      ],
+      "web_query_hints": [
+        "cardiorenal metabolic syndrome guideline",
+        "cardiorenal metabolic syndrome scientific statement",
+        "cardiorenal metabolic syndrome consensus",
+        "cardiovascular-kidney-metabolic health scientific statement",
+        "ckm health scientific statement"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiorenal metabolic syndrome",
+        "cardio-renal-metabolic syndrome",
+        "cardiorenal-metabolic syndrome",
+        "cardiorenal metabolic health",
+        "cardiorenal metabolic risk"
+      ],
+      "web_query_hints": [
+        "cardiorenal metabolic syndrome lifestyle intervention",
+        "cardiorenal metabolic syndrome nutrition intervention",
+        "cardiorenal metabolic syndrome dietary intervention",
+        "cardiovascular-kidney-metabolic health lifestyle intervention",
+        "ckm health nutrition intervention"
+      ]
+    }
+  }
+}
