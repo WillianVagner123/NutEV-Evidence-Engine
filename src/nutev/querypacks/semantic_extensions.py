@@ -215,6 +215,41 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+ULTRA_PROCESSED_FOOD_TERMS = [
+    "ultra-processed food",
+    "ultra-processed foods",
+    "ultra processed food",
+    "ultra processed foods",
+    "ultraprocessed food",
+    "ultraprocessed foods",
+    "upf intake",
+    "upf consumption",
+    "nova classification",
+    "nova food classification",
+    "nova food groups",
+    "nova score",
+    "processed food classification",
+    "minimally processed foods",
+    "unprocessed or minimally processed foods",
+    "whole foods diet",
+    "whole-food diet",
+]
+
+ULTRA_PROCESSED_FOOD_DOCUMENT_TERMS = [
+    "ultra-processed food systematic review",
+    "ultra-processed foods systematic review",
+    "ultra-processed food meta-analysis",
+    "ultra processed food systematic review",
+    "nova classification systematic review",
+    "nova classification meta-analysis",
+    "ultra-processed food intervention",
+    "ultra processed food intervention",
+    "ultra-processed food guideline",
+    "ultra processed food guideline",
+    "ultra-processed food consensus",
+    "ultra processed food consensus",
+]
+
 PRECISION_PERSONALIZED_NUTRITION_TERMS = [
     "personalized nutrition for cardiometabolic risk",
     "personalised nutrition for cardiometabolic risk",
@@ -478,6 +513,16 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=DIET_QUALITY_INDEX_TERMS,
             document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "adherence_persistence",
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=ULTRA_PROCESSED_FOOD_TERMS,
+            document_terms=ULTRA_PROCESSED_FOOD_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "food_literacy_agency"):
         _extend_semantic_block(
