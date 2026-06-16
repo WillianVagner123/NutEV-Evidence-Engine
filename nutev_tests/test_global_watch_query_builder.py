@@ -49,6 +49,17 @@ def test_obesity_cardiometabolic_queries_include_extended_liver_synonyms():
     assert "non-alcoholic steatohepatitis" in rendered
 
 
+def test_obesity_cardiometabolic_queries_include_adiposity_and_diabetes_remission_terms():
+    rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "abdominal obesity" in rendered
+    assert "central obesity" in rendered
+    assert "visceral adiposity" in rendered
+    assert "waist-to-height ratio" in rendered
+    assert "type 2 diabetes remission" in rendered
+    assert "remission of type 2 diabetes" in rendered
+
+
 def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     rows = build_watch_queries(["diet_patterns"], 7, "quick")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
