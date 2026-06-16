@@ -1,0 +1,67 @@
+{
+  "version_note": "2026-06 circadian nutrition scoring supplement: prioritizes diet-anchored meal timing and chrononutrition records in intervention and framework workstreams.",
+  "keyword_points": {
+    "meal timing intervention": 4,
+    "meal timing interventions": 4,
+    "meal timing pattern": 3,
+    "meal timing patterns": 3,
+    "eating timing": 3,
+    "eating window": 3,
+    "eating windows": 3,
+    "feeding window": 3,
+    "feeding windows": 3,
+    "time-restricted eating": 3,
+    "time restricted eating": 3,
+    "early time-restricted eating": 4,
+    "early time restricted eating": 4,
+    "early time-restricted feeding": 4,
+    "early time restricted feeding": 4,
+    "chrononutrition": 4,
+    "chrono-nutrition": 4,
+    "circadian nutrition": 4,
+    "circadian eating": 4,
+    "circadian diet": 3,
+    "circadian dietary pattern": 4,
+    "late eating": 2,
+    "night eating": 2,
+    "breakfast skipping": 2,
+    "meal regularity": 3,
+    "eating jet lag": 3,
+    "social jetlag and diet": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "meal timing intervention": 5,
+      "meal timing trial": 5,
+      "time-restricted eating trial": 5,
+      "time restricted eating trial": 5,
+      "early time-restricted eating trial": 5,
+      "early time restricted eating trial": 5,
+      "early time-restricted feeding trial": 5,
+      "early time restricted feeding trial": 5,
+      "chrononutrition systematic review": 5,
+      "chrono-nutrition systematic review": 5,
+      "chrononutrition meta-analysis": 5,
+      "circadian nutrition intervention": 5,
+      "circadian eating intervention": 5,
+      "meal timing adherence": 4,
+      "time-restricted eating adherence": 4
+    },
+    "artigo3_framework": {
+      "meal timing adherence": 4,
+      "meal timing questionnaire": 4,
+      "meal regularity questionnaire": 4,
+      "time-restricted eating adherence": 4,
+      "chrononutrition questionnaire": 4,
+      "circadian eating questionnaire": 4
+    },
+    "a3": {
+      "meal timing adherence": 4,
+      "meal timing questionnaire": 4,
+      "meal regularity questionnaire": 4,
+      "time-restricted eating adherence": 4,
+      "chrononutrition questionnaire": 4,
+      "circadian eating questionnaire": 4
+    }
+  }
+}
