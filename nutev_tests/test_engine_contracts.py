@@ -98,3 +98,9 @@ def test_canonical_document_key_priority():
     assert canonical_document_key({"pmid": "123", "url": "https://x.test"}) == "pmid:123"
     assert canonical_document_key({"pmcid": "pmc123", "url": "https://x.test"}) == "pmcid:PMC123"
     assert canonical_document_key({"url": "https://x.test/a"}) == "url:https://x.test/a"
+
+
+def test_canonical_document_key_extracts_doi_from_candidate_urls():
+    assert canonical_document_key({"url": "https://doi.org/10.1000/ABC.123"}) == "doi:10.1000/abc.123"
+    assert canonical_document_key({"original_url": "https://doi.org/10.1093/jsxmed/qdag137"}) == "doi:10.1093/jsxmed/qdag137"
+    assert canonical_document_key({"resolved_url": "https://doi.org/10.1016/j.jand.2025.01.001?utm_source=newsletter"}) == "doi:10.1016/j.jand.2025.01.001"
