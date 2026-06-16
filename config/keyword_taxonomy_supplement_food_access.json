@@ -1,0 +1,88 @@
+{
+  "version_note": "Focused NutMEV query expansion for food-access referral, food pharmacy, food pantry, food bank, community food program, and social prescribing terms.",
+  "global": {
+    "implementation_behavior": {
+      "food_access_referral_programs": [
+        "food pharmacy",
+        "food pharmacy program",
+        "food pharmacy referral",
+        "food pharmacy prescription",
+        "food farmacy",
+        "food pantry referral",
+        "food pantry prescription",
+        "food bank referral",
+        "food bank partnership",
+        "community food program",
+        "community food programme",
+        "community food referral",
+        "community resource referral",
+        "community resource referrals",
+        "social prescribing",
+        "social prescribing program",
+        "social prescribing programme",
+        "social prescribing referral"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food pharmacy",
+      "food pharmacy program",
+      "food pharmacy referral",
+      "food pantry referral",
+      "food bank partnership",
+      "community food program",
+      "community food programme",
+      "community resource referral",
+      "social prescribing",
+      "social prescribing program",
+      "social prescribing referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food pharmacy",
+        "food pharmacy program",
+        "food pharmacy referral",
+        "food pantry referral",
+        "food bank partnership",
+        "community food program",
+        "community food programme",
+        "community resource referral",
+        "social prescribing",
+        "social prescribing program",
+        "social prescribing referral"
+      ],
+      "web_query_hints": [
+        "food pharmacy implementation report",
+        "food pantry referral program",
+        "food bank partnership nutrition program",
+        "community food program implementation",
+        "social prescribing nutrition program"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food pharmacy",
+        "food pharmacy program",
+        "food pharmacy referral",
+        "food pantry referral",
+        "food bank partnership",
+        "community food program",
+        "community food programme",
+        "community resource referral",
+        "social prescribing",
+        "social prescribing program",
+        "social prescribing referral"
+      ],
+      "web_query_hints": [
+        "food pharmacy randomized trial",
+        "food pharmacy cardiometabolic trial",
+        "food pantry referral cardiometabolic intervention",
+        "community food program cardiometabolic intervention",
+        "social prescribing nutrition intervention"
+      ]
+    }
+  }
+}
