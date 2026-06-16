@@ -1,0 +1,78 @@
+{
+  "version_note": "2026-06 circadian nutrition search supplement: adds nutrition-anchored meal timing and chrononutrition terms without changing base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "timing_chrononutrition": [
+        "meal timing",
+        "meal timing intervention",
+        "meal timing interventions",
+        "meal timing pattern",
+        "meal timing patterns",
+        "eating timing",
+        "eating window",
+        "eating windows",
+        "feeding window",
+        "feeding windows",
+        "time-restricted eating",
+        "time restricted eating",
+        "early time-restricted eating",
+        "early time restricted eating",
+        "early time-restricted feeding",
+        "early time restricted feeding",
+        "chrononutrition",
+        "chrono-nutrition",
+        "circadian nutrition",
+        "circadian eating",
+        "circadian diet",
+        "circadian dietary pattern",
+        "late eating",
+        "night eating",
+        "breakfast skipping",
+        "meal regularity",
+        "eating jet lag",
+        "social jetlag and diet"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "meal timing intervention",
+        "meal timing trial",
+        "time-restricted eating trial",
+        "time restricted eating trial",
+        "early time-restricted eating trial",
+        "early time restricted eating trial",
+        "early time-restricted feeding trial",
+        "early time restricted feeding trial",
+        "chrononutrition systematic review",
+        "chrono-nutrition systematic review",
+        "chrononutrition meta-analysis",
+        "circadian nutrition intervention",
+        "circadian eating intervention",
+        "meal timing adherence",
+        "time-restricted eating adherence"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "meal timing",
+        "meal regularity",
+        "eating window",
+        "time-restricted eating",
+        "time restricted eating",
+        "chrononutrition",
+        "circadian nutrition",
+        "circadian eating"
+      ],
+      "web_query_hints": [
+        "meal timing adherence",
+        "meal timing questionnaire",
+        "meal regularity questionnaire",
+        "time-restricted eating adherence",
+        "chrononutrition questionnaire",
+        "circadian eating questionnaire"
+      ]
+    }
+  }
+}
