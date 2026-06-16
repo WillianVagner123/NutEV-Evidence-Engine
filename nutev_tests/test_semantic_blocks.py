@@ -14,6 +14,20 @@ def test_busca2b_semantic_terms_include_precision_terms() -> None:
     assert "hypercholesterolaemia" in terms
 
 
+def test_busca2b_semantic_terms_include_ckm_renal_cardiometabolic_aliases() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+    document_terms = {
+        term.lower()
+        for term in semantic_terms("busca2a", field="document_terms", min_priority=5)
+    }
+
+    assert "cardio-kidney-metabolic syndrome" in terms
+    assert "cardio kidney metabolic risk" in terms
+    assert "cardiorenal metabolic syndrome" in terms
+    assert "cardio-kidney-metabolic scientific statement" in document_terms
+    assert "cardio-kidney-metabolic clinical practice guideline" in document_terms
+
+
 def test_busca2b_semantic_terms_include_behavior_change_variants() -> None:
     terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
     assert "behavior change techniques" in terms
