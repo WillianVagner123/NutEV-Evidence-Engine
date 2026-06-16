@@ -9,6 +9,10 @@ from nutev.querypacks.builders import (
     chunk_terms,
     uniq,
 )
+from nutev.querypacks.multilingual import (
+    render_mesh_queries,
+    render_multilingual_queries,
+)
 from nutev.querypacks.semantic_blocks import prioritized_semantic_blocks, semantic_terms
 
 PROVIDER_ORDER = ("pubmed", "europepmc", "openalex", "crossref", "semantic_scholar", "doaj", "scielo", "preprints", "clinicaltrials", "core")
@@ -1142,37 +1146,63 @@ def render_queries_for_provider(
     keyword_taxonomy: dict,
     workstream: str,
     provider: str,
+    lexicon: dict | None = None,
 ) -> list[str]:
     _, components = build_structured_components(keyword_taxonomy, workstream)
     components = _augment_with_semantic_blocks(workstream, components)
     if provider == "pubmed":
-        return uniq(
+        base = (
             _render_pubmed_queries(components)
             + _render_term_coverage_queries(components, "pubmed")
             + _extra_pubmed_terms(workstream)
         )
-    if provider == "europepmc":
-        return uniq(_render_europepmc_queries(components) + _render_term_coverage_queries(components, "europepmc"))
-    if provider == "openalex":
-        return uniq(_render_openalex_queries(components) + _render_term_coverage_queries(components, "openalex"))
-    if provider == "crossref":
-        return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, "crossref"))
-    # SciELO is served through Crossref (prefix filter) so it shares its syntax.
-    if provider == "scielo":
-        return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, "crossref"))
-    # Preprints are served through Europe PMC (SRC:PPR) so they share its syntax.
-    if provider == "preprints":
-        return uniq(_render_europepmc_queries(components) + _render_term_coverage_queries(components, "europepmc"))
-    # Generic keyword/boolean APIs (Semantic Scholar, DOAJ, ClinicalTrials.gov).
-    if provider in {"semantic_scholar", "doaj", "clinicaltrials", "core"}:
-        return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, provider))
-    return []
+    elif provider in ("europepmc", "preprints"):
+        # Preprints are served through Europe PMC (SRC:PPR) so they share its syntax.
+        base = _render_europepmc_queries(components) + _render_term_coverage_queries(components, "europepmc")
+    elif provider == "openalex":
+        base = _render_openalex_queries(components) + _render_term_coverage_queries(components, "openalex")
+    elif provider in ("crossref", "scielo"):
+        # SciELO is served through Crossref (prefix filter) so it shares its syntax.
+        base = _render_crossref_queries(components) + _render_term_coverage_queries(components, "crossref")
+    elif provider in {"semantic_scholar", "doaj", "clinicaltrials", "core"}:
+        # Generic keyword/boolean APIs.
+        base = _render_crossref_queries(components) + _render_term_coverage_queries(components, provider)
+    else:
+        return []
+    # Worldwide coverage: expand the workstream's concepts across many languages
+    # (and language-independent MeSH for PubMed) so documents in any language are found.
+    extra: list[str] = []
+    if lexicon:
+        extra = render_multilingual_queries(components, lexicon, provider)
+        if provider == "pubmed":
+            extra = extra + render_mesh_queries(components, lexicon)
+    # Interleave so the multilingual/concept queries fall within the per-provider
+    # query budget (which slices the prefix) instead of being appended past it.
+    return uniq(_interleave_queries(base, extra))
+
+
+def _interleave_queries(base: list[str], extra: list[str]) -> list[str]:
+    """Weave the (smaller) extra list into base, front-loaded, ~2 base per extra."""
+    if not extra:
+        return base
+    out: list[str] = []
+    bi = ei = 0
+    while bi < len(base) or ei < len(extra):
+        if ei < len(extra):
+            out.append(extra[ei])
+            ei += 1
+        for _ in range(2):
+            if bi < len(base):
+                out.append(base[bi])
+                bi += 1
+    return out
 
 
 def build_provider_querypack(
     keyword_taxonomy: dict,
     workstreams: list[str],
     providers_by_workstream: dict[str, list[str]],
+    lexicon: dict | None = None,
 ) -> dict[str, dict[str, list[str]]]:
     provider_querypack: dict[str, dict[str, list[str]]] = {}
     for workstream in workstreams:
@@ -1186,6 +1216,7 @@ def build_provider_querypack(
                 keyword_taxonomy,
                 workstream,
                 provider,
+                lexicon=lexicon,
             )
         provider_querypack[workstream] = workstream_pack
     return provider_querypack

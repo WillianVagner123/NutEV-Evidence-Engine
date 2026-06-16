@@ -45,11 +45,13 @@ from nutev.export.methods_writer import write_methods_docs
 from nutev.export.qualification_writer import write_qualification_outputs
 from nutev.export.rayyan import write_rayyan
 from nutev.extract.smart_extract import extract_document
-from nutev.querypacks.builders import build_querypack
+from nutev.querypacks.builders import build_querypack, build_structured_components
+from nutev.querypacks.multilingual import active_concepts, load_lexicon
 from nutev.querypacks.provider_queries import (
     build_provider_querypack,
     write_provider_querypack_audit,
 )
+from nutev.search.openalex_concepts import resolve_concept_ids
 from nutev.search.provider_orchestrator import search_provider
 from nutev.settings import NutevSettings, load_json
 
@@ -349,10 +351,30 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         providers_executed_by_workstream[ws] = supported_priority
         providers_unsupported_by_workstream[ws] = unsupported_priority
 
+    # Multilingual + concept-based expansion for worldwide, language-independent
+    # retrieval. The lexicon drives query translation; OpenAlex concept IDs are
+    # resolved per workstream (best-effort, cached) for language-agnostic filtering.
+    lexicon = load_lexicon(settings.config_root)
+    openalex_concept_filters: dict[str, str] = {}
+    for ws in workstreams:
+        try:
+            _, comps = build_structured_components(taxonomy, ws)
+            conditions = active_concepts(
+                list(comps.get("condition_terms", [])) + list(comps.get("clinical_terms", [])),
+                lexicon,
+                "conditions",
+            )[:3]
+            ids = resolve_concept_ids(conditions, config_root=settings.config_root)
+            if ids:
+                openalex_concept_filters[ws] = "|".join(ids)
+        except Exception as exc:
+            logger.debug("openalex concept resolution skipped ws=%s: %s", ws, exc)
+
     provider_querypack = build_provider_querypack(
         taxonomy,
         workstreams,
         providers_executed_by_workstream,
+        lexicon=lexicon,
     )
     write_provider_querypack_audit(
         provider_querypack,
@@ -398,6 +420,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
                     run_id=run_id,
                     logs_dir=settings.output_dirs["07_logs"],
                     mode=settings.mode,
+                    context={"openalex_concept_filter": openalex_concept_filters.get(ws)},
                 )
                 provider_status_counts[result.status] = provider_status_counts.get(result.status, 0) + 1
                 provider_rows[provider] = provider_rows.get(provider, 0) + len(result.rows)

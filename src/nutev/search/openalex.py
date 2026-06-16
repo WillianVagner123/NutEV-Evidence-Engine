@@ -44,16 +44,23 @@ def _pick_openalex_url(item: dict) -> str:
     return ""
 
 
-def search_openalex(query: str, per_page: int = 12) -> list[dict]:
+def search_openalex(query: str, per_page: int = 12, concept_filter: str | None = None) -> list[dict]:
     if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return []
 
     last: Exception | None = None
     for attempt in range(1, 4):
         try:
+            params = {"search": query, "per-page": per_page, **({"mailto": os.environ.get("OPENALEX_MAILTO")} if os.environ.get("OPENALEX_MAILTO") else {})}
+            # OpenAlex filter syntax: filters joined by ",", OR values by "|".
+            # ``concept_filter`` is a (possibly pipe-joined) concept-id value;
+            # filtering by concept.id is language-agnostic across all works.
+            if concept_filter:
+                concept_clause = f"concepts.id:{concept_filter}"
+                params["filter"] = f"{params['filter']},{concept_clause}" if params.get("filter") else concept_clause
             response = requests.get(
                 "https://api.openalex.org/works",
-                params={"search": query, "per-page": per_page, **({"mailto": os.environ.get("OPENALEX_MAILTO")} if os.environ.get("OPENALEX_MAILTO") else {})},
+                params=params,
                 timeout=(10, 25),
                 headers={"User-Agent": "NutEV Research Pipeline/1.0"},
             )

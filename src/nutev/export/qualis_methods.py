@@ -228,10 +228,17 @@ def build_reproducibility_report(
     finished_at: str,
 ) -> dict:
     total_queries = sum(len(qs or []) for ws in provider_querypack.values() for qs in ws.values())
+    search_languages: list[str] = []
+    try:
+        lexicon = json.loads((Path(config_root) / "multilingual_lexicon.json").read_text(encoding="utf-8"))
+        search_languages = list(lexicon.get("languages") or [])
+    except Exception:
+        search_languages = []
     return {
         "generated_at": _now(),
         "tool": "NutEV/NutMEV",
         "package_version": package_version,
+        "search_languages": search_languages,
         "run_started_at": started_at,
         "run_finished_at": finished_at,
         "databases": sorted(provider_rows.keys()),

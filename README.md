@@ -209,6 +209,26 @@ discoverable open-access PDF before the generic resolver, in order: a provider's
 PMCID). Publisher pages are scraped for PDF links (meta tags, `<link>`/anchor
 hints, `meta refresh`) across common publisher URL patterns.
 
+## Worldwide, multilingual & concept-based retrieval
+
+To capture documents from around the world (not only English-titled ones), the
+pipeline expands each workstream's key concepts beyond English:
+
+- **Multilingual expansion** — concepts (conditions, diets, outcomes, document
+  types) are translated via `config/multilingual_lexicon.json` into 10 languages
+  (EN, PT, ES, FR, DE, IT, ZH, JA, RU, AR; non-Latin scripts included) and the
+  queries are OR-combined across all of them. No database applies a language
+  filter, so results are worldwide.
+- **Concept-based, language-independent** — PubMed is queried with **MeSH**
+  descriptors and publication types (which index non-English records under the
+  same controlled term), and **OpenAlex** is filtered by language-agnostic
+  **concept IDs** (resolved once and cached in `config/openalex_concepts.json`
+  for reproducibility).
+
+Multilingual and concept queries are interleaved into each provider's query set
+so they fall within the per-provider query budget. Edit the lexicon to add
+languages or concepts; it is hashed in the reproducibility report.
+
 ## QUALIS A1 methodological outputs
 
 Each run also emits publication-grade reporting scaffolding (these are

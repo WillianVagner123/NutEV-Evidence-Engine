@@ -79,7 +79,7 @@ def _optional_missing(provider: str) -> str | None:
 def _registry() -> dict[str, Callable[[str, int, dict[str, Any]], ProviderResult | list[dict[str, Any]]]]:
     return {
         "europepmc": lambda q, limit, ctx: search_europepmc(q, page_size=limit),
-        "openalex": lambda q, limit, ctx: search_openalex(q, per_page=limit),
+        "openalex": lambda q, limit, ctx: search_openalex(q, per_page=limit, concept_filter=ctx.get("openalex_concept_filter")),
         "crossref": lambda q, limit, ctx: search_crossref(q, rows=limit),
         "semantic_scholar": lambda q, limit, ctx: search_semantic_scholar(q, limit=limit, context=ctx),
         "doaj": lambda q, limit, ctx: search_doaj(q, limit=limit, context=ctx),
