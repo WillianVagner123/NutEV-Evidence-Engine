@@ -226,6 +226,59 @@ def _abstracts_from_efetch_xml(xml_text: str) -> dict[str, str]:
     return abstracts
 
 
+def _details_from_efetch_xml(xml_text: str) -> dict[str, dict[str, Any]]:
+    """Parse PubMed EFetch XML into per-PMID details: abstract, author
+    affiliations and article language.
+
+    Affiliations come from ``AuthorList/Author/AffiliationInfo/Affiliation`` and
+    are de-duplicated preserving order; language from ``Article/Language``.
+    Returns ``{pmid: {"abstract", "affiliations", "language"}}``. Raises
+    ``PubMedUnavailable`` on malformed XML (mirrors the abstract parser).
+    """
+    try:
+        # defusedxml guards against entity-expansion / external-entity (XXE)
+        # attacks in the untrusted XML returned by the PubMed efetch endpoint.
+        root = safe_xml_fromstring(xml_text)
+    except (ET.ParseError, DefusedXmlException) as exc:
+        raise PubMedUnavailable("Invalid XML from PubMed efetch") from exc
+    details: dict[str, dict[str, Any]] = {}
+    for article in root.findall(".//PubmedArticle"):
+        pmid_node = article.find(".//PMID")
+        pmid = pmid_node.text.strip() if pmid_node is not None and pmid_node.text else ""
+        if not pmid:
+            continue
+        abstract_parts = [
+            "".join(node.itertext()).strip()
+            for node in article.findall(".//Abstract/AbstractText")
+        ]
+        abstract = "\n".join(part for part in abstract_parts if part)
+        affiliations: list[str] = []
+        for node in article.findall(".//AuthorList/Author/AffiliationInfo/Affiliation"):
+            text = "".join(node.itertext()).strip()
+            if text and text not in affiliations:
+                affiliations.append(text)
+        lang_node = article.find(".//Article/Language")
+        language = (lang_node.text or "").strip() if lang_node is not None else ""
+        details[pmid] = {
+            "abstract": abstract,
+            "affiliations": affiliations,
+            "language": language,
+        }
+    return details
+
+
+def _esummary_language(item: dict[str, Any]) -> str:
+    """Best-effort language from an esummary item; "" when absent.
+
+    esummary exposes language as ``lang`` (occasionally a list, e.g. ``["eng"]``).
+    The richer EFetch ``Article/Language`` overrides this later when available.
+    """
+    lang = item.get("lang")
+    if isinstance(lang, list):
+        lang = lang[0] if lang else ""
+    return str(lang or "").strip()
+
+
 def _normalize_summary(item: dict[str, Any], pmid: str, query: str) -> dict[str, Any]:
     doi = _extract_doi(item)
     pmcid = _extract_pmcid(item)
@@ -247,6 +300,10 @@ def _normalize_summary(item: dict[str, Any], pmid: str, query: str) -> dict[str,
         "publication_date": pubdate,
         "article_type": "; ".join(item.get("pubtype") or []),
         "authors": _extract_authors(item),
+        # Affiliations live only in EFetch XML, not esummary; default to [] so the
+        # record shape stays uniform and the EFetch path can fill it in.
+        "affiliations": [],
+        "language": _esummary_language(item),
         "metadata_status": "pubmed_esummary",
         "query": query,
         "provider_query": query,
@@ -375,16 +432,23 @@ class PubMedClient:
                     if os.environ.get("NUTEV_PUBMED_FETCH_ABSTRACTS") == "1" and batch_rows:
                         try:
                             xml_text = _request_text("efetch.fcgi", {"db": "pubmed", "retmode": "xml", "id": ",".join(batch_ids)})
-                            abstracts = _abstracts_from_efetch_xml(xml_text)
+                            details = _details_from_efetch_xml(xml_text)
                             for row in batch_rows:
-                                abstract = abstracts.get(str(row.get("pmid") or ""), "")
+                                detail = details.get(str(row.get("pmid") or ""), {})
+                                abstract = detail.get("abstract") or ""
                                 if abstract and len(abstract) > len(str(row.get("abstract") or "")):
                                     row["abstract"] = abstract
                                     row["summary"] = abstract
                                     row["snippet"] = abstract[:500]
                                     row["metadata_status"] = "pubmed_efetch"
+                                affiliations = detail.get("affiliations") or []
+                                if affiliations:
+                                    row["affiliations"] = affiliations
+                                language = detail.get("language") or ""
+                                if language and not row.get("language"):
+                                    row["language"] = language
                         except Exception as exc:
-                            logger.warning("PubMed efetch abstracts falhou query=%s erro=%s", query, exc)
+                            logger.warning("PubMed efetch detalhes falhou query=%s erro=%s", query, exc)
                     rows.extend(batch_rows)
                     ids_collected.extend(batch_ids)
                 retstart += retmax

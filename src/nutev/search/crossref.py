@@ -27,6 +27,57 @@ def _pick_crossref_url(item: dict) -> str:
     return item.get("URL") or ""
 
 
+def _crossref_affiliations(item: dict) -> list[str]:
+    """Author affiliation names from Crossref ``author[].affiliation[].name``.
+
+    Crossref usually omits affiliations, so this is commonly ``[]``. Names are
+    de-duplicated preserving order.
+    """
+    out: list[str] = []
+    authors = item.get("author")
+    if not isinstance(authors, list):
+        return out
+    for author in authors:
+        if not isinstance(author, dict):
+            continue
+        for aff in author.get("affiliation") or []:
+            if isinstance(aff, dict):
+                name = str(aff.get("name") or "").strip()
+                if name and name not in out:
+                    out.append(name)
+    return out
+
+
+def _normalize_crossref(it: dict, query: str) -> dict:
+    """Map a Crossref work to the row schema. Pure: no network, no side effects."""
+    titles = it.get("title") or [""]
+    issn_list = it.get("ISSN")
+    issn = issn_list[0] if isinstance(issn_list, list) and issn_list else ""
+    return {
+        "source": "crossref",
+        "source_provider": "crossref",
+        "title": titles[0] if titles else "",
+        "abstract": it.get("abstract") or "",
+        "snippet": it.get("abstract") or "",
+        "doi": it.get("DOI"),
+        "pmid": "",
+        "pmcid": "",
+        "url": _pick_crossref_url(it),
+        "journal": (it.get("container-title") or [""])[0] if isinstance(it.get("container-title"), list) else "",
+        "year": str(((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[""]])[0][0] or ""),
+        "publication_date": "-".join(str(x) for x in (((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[]])[0])),
+        "article_type": it.get("type") or "",
+        "authors": "; ".join([" ".join([str(a.get("given", "")), str(a.get("family", ""))]).strip() for a in it.get("author", [])[:12]]) if isinstance(it.get("author"), list) else "",
+        "publisher": it.get("publisher") or "",
+        "issn": issn or "",
+        "language": it.get("language") or "",
+        "affiliations": _crossref_affiliations(it),
+        "metadata_status": "crossref_search",
+        "query": query,
+        "provider_query": query,
+    }
+
+
 def search_crossref(query: str, rows: int = 18) -> list[dict]:
     if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return []
@@ -41,32 +92,7 @@ def search_crossref(query: str, rows: int = 18) -> list[dict]:
             )
             r.raise_for_status()
             items = r.json().get("message", {}).get("items", [])
-
-            out = []
-            for it in items:
-                titles = it.get("title") or [""]
-                out.append(
-                    {
-                        "source": "crossref",
-                        "source_provider": "crossref",
-                        "title": titles[0] if titles else "",
-                        "abstract": it.get("abstract") or "",
-                        "snippet": it.get("abstract") or "",
-                        "doi": it.get("DOI"),
-                        "pmid": "",
-                        "pmcid": "",
-                        "url": _pick_crossref_url(it),
-                        "journal": (it.get("container-title") or [""])[0] if isinstance(it.get("container-title"), list) else "",
-                        "year": str(((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[""]])[0][0] or ""),
-                        "publication_date": "-".join(str(x) for x in (((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[]])[0])),
-                        "article_type": it.get("type") or "",
-                        "authors": "; ".join([" ".join([str(a.get("given", "")), str(a.get("family", ""))]).strip() for a in it.get("author", [])[:12]]) if isinstance(it.get("author"), list) else "",
-                        "metadata_status": "crossref_search",
-                        "query": query,
-                        "provider_query": query,
-                    }
-                )
-            return out
+            return [_normalize_crossref(it, query) for it in items]
         except Exception as e:
             last = e
             time.sleep(1.0 * attempt)

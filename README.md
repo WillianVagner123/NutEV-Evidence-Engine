@@ -235,10 +235,12 @@ Every run builds an AI-/RAG-ready knowledge base under `11_knowledge_base/`, so
 the harvested literature can be organized and queried conversationally:
 
 - **`corpus.jsonl` / `corpus.csv` / `corpus.parquet`** — one clean record per
-  de-duplicated document, enriched with **country/region** (from author
-  affiliations), **language**, **journal/ISSN/publisher**, citation count, plus
-  the existing domains/outcomes/diet-patterns/conditions/evidence tier.
-  `schema.json` + `data_dictionary.md` describe every field for humans and LLMs.
+  de-duplicated document, enriched with **country/region**, **language**,
+  **journal/ISSN/publisher**, citation count, plus the existing
+  domains/outcomes/diet-patterns/conditions/evidence tier. `schema.json` +
+  `data_dictionary.md` describe every field for humans and LLMs.
+  Geography comes from OpenAlex author-institution country codes and, as a
+  fallback, from parsing PubMed/Crossref affiliation strings.
 - **`summary/`** — precomputed aggregations that answer the common questions
   directly: `by_country.csv` (what each country is publishing — top
   domains/outcomes/diets/conditions/journals per country), `by_venue.csv`,
@@ -248,13 +250,18 @@ Ask questions over the base (retrieval + citations):
 
 ```bash
 nutev ask --project-root <root> "what is Brazil publishing about the mediterranean diet and diabetes?"
+nutev ask --project-root <root> "..." --backend openai --k 12   # force a backend / depth
 nutev build-kb --project-root <root>   # rebuild the base from metadata_master.csv
 ```
 
-The AI backend is **automatic**: it uses `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
-if present, otherwise it runs **offline** (deterministic keyword retrieval that
-returns the most relevant sources with citations — ready to paste into any AI).
-`NUTEV_DISABLE_NETWORK=1` forces offline mode.
+**Retrieval** is semantic when embeddings are available (`sentence-transformers`
++ FAISS, cached under `11_knowledge_base/embeddings/`) and falls back
+automatically to deterministic TF-IDF keyword search; the answer banner reports
+which was used. The **AI backend is automatic** (`--backend auto`): it uses
+`OPENAI_API_KEY` or `ANTHROPIC_API_KEY` if present, otherwise runs **offline**
+(retrieval-only, citations ready to paste into any AI). Force it with
+`--backend openai|anthropic|offline`; `NUTEV_DISABLE_NETWORK=1` also forces
+offline (keyword retrieval, no model download).
 
 ## QUALIS A1 methodological outputs
 
