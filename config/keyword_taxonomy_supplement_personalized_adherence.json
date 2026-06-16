@@ -1,0 +1,89 @@
+{
+  "version_note": "Focused NutMEV supplement for personalized nutrition, shared decision making, and adherence-oriented care delivery; loaded after keyword_taxonomy.json without modifying the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "personalized_adherence": [
+        "personalized nutrition intervention",
+        "personalised nutrition intervention",
+        "precision nutrition intervention",
+        "tailored nutrition intervention",
+        "tailored dietary intervention",
+        "tailored dietary advice",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation",
+        "shared decision making",
+        "patient-centered nutrition care",
+        "patient centred nutrition care",
+        "nutrition coaching",
+        "diet coaching",
+        "lifestyle coaching",
+        "remote nutrition coaching",
+        "digital nutrition intervention",
+        "app-based dietary intervention",
+        "app based dietary intervention"
+      ]
+    }
+  },
+  "outcomes": {
+    "personalized_adherence": [
+      "personalized nutrition intervention",
+      "personalised nutrition intervention",
+      "precision nutrition intervention",
+      "tailored nutrition intervention",
+      "tailored dietary intervention",
+      "tailored dietary advice",
+      "personalized dietary advice",
+      "personalised dietary advice",
+      "individualized dietary intervention",
+      "individualised dietary intervention",
+      "personalized meal planning",
+      "personalised meal planning",
+      "shared decision making",
+      "patient-centered nutrition care",
+      "patient centred nutrition care",
+      "nutrition coaching",
+      "remote nutrition coaching",
+      "digital nutrition intervention",
+      "app-based dietary intervention",
+      "app based dietary intervention",
+      "dietary adherence",
+      "long-term adherence"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "priority_outcomes": [
+        "personalized_adherence"
+      ],
+      "web_query_hints": [
+        "personalized nutrition intervention",
+        "precision nutrition intervention",
+        "tailored dietary intervention",
+        "shared decision making nutrition",
+        "remote nutrition coaching",
+        "digital nutrition intervention",
+        "app-based dietary intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "priority_outcomes": [
+        "personalized_adherence"
+      ],
+      "web_query_hints": [
+        "personalized nutrition framework",
+        "precision nutrition framework",
+        "tailored dietary advice framework",
+        "shared decision making nutrition framework",
+        "digital nutrition adherence framework"
+      ]
+    }
+  }
+}
