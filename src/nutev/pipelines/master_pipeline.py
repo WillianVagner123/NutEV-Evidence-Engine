@@ -9,6 +9,7 @@ from urllib.parse import urlsplit
 
 import pandas as pd
 
+from nutev import __version__ as nutev_version
 from nutev.analysis import domains_busca1, domains_busca2a, domains_busca2b
 from nutev.analysis.article3_framework import build_framework_signals
 from nutev.analysis.nutev_classifier import classify_evidence
@@ -32,6 +33,7 @@ from nutev.engine.job import (
 )
 from nutev.export.audit_artifacts import write_audit_artifacts
 from nutev.export.curation import curate_outputs
+from nutev.export.qualis_methods import write_qualis_methods
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
 from nutev.export.metadata_tables import (
@@ -689,4 +691,25 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "\n".join(f"{k}: {v}" for k, v in summary.items()),
         encoding="utf-8",
     )
+
+    # Publication-grade methodological scaffolding for QUALIS A1 reporting
+    # (PRISMA 2020 per-database, search appendix, PROSPERO/checklist, risk of
+    # bias, reproducibility). Best-effort: never fail the run on a reporting error.
+    try:
+        methods_summary = write_qualis_methods(
+            tables_dir=settings.output_dirs["06_tables"],
+            docs_dir=settings.output_dirs["08_docs"],
+            provider_rows=provider_rows,
+            provider_querypack=provider_querypack,
+            summary={**curation_summary, **summary},
+            config_root=settings.config_root,
+            package_version=nutev_version,
+            started_at=str(getattr(search_job, "started_at", "") or ""),
+            finished_at=str(getattr(search_job, "finished_at", "") or ""),
+            included_documents=[r for r in all_rows if str(r.get("download_status", "")) in {"pdf", "html_snapshot"}],
+        )
+        summary["qualis_artifacts"] = methods_summary.get("qualis_artifacts", [])
+    except Exception as exc:
+        logger.warning("qualis methods generation failed: %s", exc)
+
     return summary
