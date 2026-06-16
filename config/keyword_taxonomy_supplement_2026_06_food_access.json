@@ -1,0 +1,60 @@
+{
+  "version_note": "2026-06 food access intervention expansion for NutMEV semantic coverage",
+  "global": {
+    "nutrition_domains": {
+      "food_access_interventions": [
+        "fruit and vegetable incentive",
+        "fruit and vegetable incentives",
+        "fruit and vegetable subsidy",
+        "fruit and vegetable subsidies",
+        "healthy food subsidy",
+        "healthy food subsidies",
+        "healthy food voucher",
+        "healthy food vouchers",
+        "farmers market incentive",
+        "farmers market incentives",
+        "farmers market voucher",
+        "farmers market vouchers",
+        "farmers market nutrition program",
+        "farmers market nutrition programme",
+        "nutrition assistance incentive",
+        "nutrition assistance incentives",
+        "snap incentive",
+        "snap incentives",
+        "snap healthy incentive",
+        "gusnip",
+        "produce incentive",
+        "produce incentives",
+        "produce box program",
+        "produce boxes program",
+        "food box program",
+        "food boxes program",
+        "food basket program",
+        "food baskets program",
+        "community-supported agriculture",
+        "community supported agriculture",
+        "medically tailored food",
+        "medically tailored foods"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "fruit and vegetable incentive",
+        "healthy food subsidy",
+        "healthy food voucher",
+        "farmers market incentive",
+        "farmers market voucher",
+        "nutrition assistance incentive",
+        "snap incentive",
+        "snap healthy incentive",
+        "gusnip",
+        "produce incentive",
+        "produce box program",
+        "food box program",
+        "food basket program",
+        "community-supported agriculture",
+        "community supported agriculture"
+      ]
+    }
+  }
+}
