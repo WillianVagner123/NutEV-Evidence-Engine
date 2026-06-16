@@ -19,6 +19,8 @@ def test_busca1_structured_components_include_food_access_program_variants() -> 
         "produce voucher",
         "medically tailored pantry",
         "medically tailored food packages",
+        "food farmacy intervention",
+        "food farmacy implementation",
     ]:
         assert term in components["focus_terms"]
         assert term in components["web_hints"]
@@ -32,6 +34,8 @@ def test_busca2b_structured_components_include_food_access_program_variants() ->
         "healthy food prescription",
         "nutrition incentives",
         "fruit and vegetable vouchers",
+        "food farmacy intervention",
+        "food farmacy implementation",
     ]:
         assert term in components["focus_terms"]
         assert term in components["web_hints"]
@@ -44,3 +48,5 @@ def test_busca2b_provider_queries_surface_new_food_access_variants() -> None:
     assert "healthy food incentive" in joined_queries
     assert "produce voucher" in joined_queries
     assert "medically tailored pantry" in joined_queries
+    assert "food farmacy intervention" in joined_queries
+    assert "food farmacy implementation" in joined_queries
