@@ -1,14 +1,38 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic and food-access referral prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "food pharmacy": 3,
+    "food pharmacy program": 4,
+    "food pharmacy referral": 4,
+    "food pantry referral": 3,
+    "food bank partnership": 3,
+    "community food program": 3,
+    "community food programme": 3,
+    "community resource referral": 3,
+    "social prescribing": 3,
+    "social prescribing program": 4,
+    "social prescribing referral": 4
   },
   "workstream_bonus": {
+    "busca1": {
+      "food pharmacy": 4,
+      "food pharmacy program": 5,
+      "food pharmacy referral": 5,
+      "food pantry referral": 4,
+      "food bank partnership": 4,
+      "community food program": 4,
+      "community food programme": 4,
+      "community resource referral": 4,
+      "social prescribing": 4,
+      "social prescribing program": 5,
+      "social prescribing referral": 5
+    },
     "busca2a": {
       "ckm health": 4,
       "ckm risk": 4,
@@ -23,7 +47,18 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "food pharmacy": 4,
+      "food pharmacy program": 5,
+      "food pharmacy referral": 5,
+      "food pantry referral": 4,
+      "food bank partnership": 4,
+      "community food program": 4,
+      "community food programme": 4,
+      "community resource referral": 4,
+      "social prescribing": 4,
+      "social prescribing program": 5,
+      "social prescribing referral": 5
     }
   }
 }
