@@ -41,6 +41,28 @@ def test_semantic_blocks_include_healthy_dietary_pattern_variants() -> None:
         assert "healthy plant-based diet" in terms
 
 
+def test_semantic_blocks_include_sustainable_healthy_diet_variants() -> None:
+    busca1_terms = semantic_terms("busca1", min_priority=5)
+    busca2b_terms = semantic_terms("busca2b", min_priority=5)
+    busca2b_doc_terms = semantic_terms(
+        "busca2b",
+        field="document_terms",
+        min_priority=5,
+    )
+
+    for terms in (busca1_terms, busca2b_terms):
+        assert "sustainable healthy diet" in terms
+        assert "sustainable healthy diets" in terms
+        assert "healthy sustainable diet" in terms
+        assert "healthy and sustainable diets" in terms
+        assert "sustainable dietary pattern" in terms
+        assert "sustainable dietary patterns" in terms
+
+    assert "sustainable healthy diet guideline" in busca2b_doc_terms
+    assert "sustainable dietary patterns systematic review" in busca2b_doc_terms
+    assert "planetary health diet systematic review" in busca2b_doc_terms
+
+
 def test_semantic_blocks_include_ultra_processed_food_variants() -> None:
     busca2a_terms = semantic_terms("busca2a", min_priority=4)
     busca2b_terms = semantic_terms("busca2b", min_priority=5)
@@ -71,3 +93,16 @@ def test_ultra_processed_food_terms_enter_provider_queries() -> None:
     assert '"ultra-processed food"[Title/Abstract]' in joined
     assert '"nova classification"[Title/Abstract]' in joined
     assert '"ultra-processed food systematic review"[Title/Abstract]' in joined
+
+
+def test_sustainable_healthy_diet_terms_enter_provider_queries() -> None:
+    queries = render_queries_for_provider(
+        _sample_busca2b_taxonomy(),
+        "busca2b",
+        "pubmed",
+    )
+    joined = "\n".join(queries)
+
+    assert '"sustainable healthy diet"[Title/Abstract]' in joined
+    assert '"sustainable dietary pattern"[Title/Abstract]' in joined
+    assert '"sustainable healthy diet guideline"[Title/Abstract]' in joined
