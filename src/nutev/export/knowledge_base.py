@@ -84,6 +84,19 @@ def _coerce_int(value: object) -> int | None:
     return None
 
 
+def _coerce_number(value: object) -> float | int:
+    """Coerce to a number for the corpus contract; 0 when uncoercible."""
+    if isinstance(value, bool):
+        return 0
+    if isinstance(value, (int, float)):
+        return value
+    try:
+        num = float(str(value))
+    except (TypeError, ValueError):
+        return 0
+    return int(num) if num.is_integer() else num
+
+
 def _document_id(row: dict) -> str:
     for key in ("document_id", "id", "doi", "pmid", "pmcid"):
         val = str(row.get(key) or "").strip()
@@ -119,7 +132,7 @@ def to_kb_record(row: dict) -> dict:
         "clinical_conditions": _coerce_list(row.get("clinical_conditions")),
         "evidence_type": str(row.get("evidence_type") or row.get("article_type") or ""),
         "evidence_tier": str(row.get("editorial_priority_tier") or row.get("evidence_priority_tier") or ""),
-        "relevance_score": row.get("relevance_score") or 0,
+        "relevance_score": _coerce_number(row.get("relevance_score")),
         "cited_by_count": _coerce_int(row.get("cited_by_count")) or 0,
     }
 

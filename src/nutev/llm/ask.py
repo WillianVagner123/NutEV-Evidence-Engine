@@ -147,8 +147,9 @@ def retrieve(
     idf: dict[str, float] = {}
     for term in unique_query_terms:
         term_df = df[term]
-        # log(N/df); guard df==0 so unseen terms contribute nothing.
-        idf[term] = math.log(total_docs / term_df) if term_df else 0.0
+        # log((N+1)/df); +1 smoothing so a term present in every doc still
+        # contributes a (small) positive weight instead of being zeroed out.
+        idf[term] = math.log((total_docs + 1) / term_df) if term_df else 0.0
 
     scored: list[tuple[float, float, float, int, dict]] = []
     for index, (record, counts) in enumerate(zip(records, doc_counts)):
@@ -226,6 +227,15 @@ def _offline_answer(question: str, context: str, n_hits: int) -> str:
     )
 
 
+def _client_label(chat: object) -> str:
+    """Best-effort backend label for an explicit (non-'auto') chat client."""
+    model = getattr(chat, "model", "")
+    name = type(chat).__name__.replace("ChatClient", "").lower()
+    if name in ("openai", "anthropic"):
+        return f"{name}:{model}" if model else name
+    return name or "llm"
+
+
 def answer(
     question: str,
     kb_dir: str | Path,
@@ -254,8 +264,10 @@ def answer(
             top = embeddings.semantic_retrieve(records, question, kb_dir, k)
         except Exception:  # noqa: BLE001 - any failure -> keyword fallback
             top = None
-        if top is not None:
+        if top:
             retrieval = "semantic"
+        else:
+            top = None  # empty/unavailable semantic result -> keyword fallback
     if top is None:
         top = retrieve(records, question, k=k, mode="keyword")
         retrieval = "keyword"
@@ -276,7 +288,7 @@ def answer(
             if llm_text and llm_text.strip():
                 answer_text = llm_text
                 answer_mode = "llm"
-                backend = describe_backend() or "offline"
+                backend = (describe_backend() if client == "auto" else _client_label(chat)) or "offline"
         except Exception:  # noqa: BLE001 - any backend failure -> offline
             answer_mode = "offline"
             backend = "offline"

@@ -48,11 +48,21 @@ def _crossref_affiliations(item: dict) -> list[str]:
     return out
 
 
+def _crossref_date_parts(it: dict) -> list:
+    """Numeric date components for a Crossref work, robust to empty ``[[]]`` blocks."""
+    block = it.get("published-print") or it.get("published-online") or it.get("issued") or {}
+    parts = block.get("date-parts") if isinstance(block, dict) else None
+    if isinstance(parts, list) and parts and isinstance(parts[0], list):
+        return [p for p in parts[0] if p not in (None, "")]
+    return []
+
+
 def _normalize_crossref(it: dict, query: str) -> dict:
     """Map a Crossref work to the row schema. Pure: no network, no side effects."""
     titles = it.get("title") or [""]
     issn_list = it.get("ISSN")
     issn = issn_list[0] if isinstance(issn_list, list) and issn_list else ""
+    date_parts = _crossref_date_parts(it)
     return {
         "source": "crossref",
         "source_provider": "crossref",
@@ -64,8 +74,8 @@ def _normalize_crossref(it: dict, query: str) -> dict:
         "pmcid": "",
         "url": _pick_crossref_url(it),
         "journal": (it.get("container-title") or [""])[0] if isinstance(it.get("container-title"), list) else "",
-        "year": str(((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[""]])[0][0] or ""),
-        "publication_date": "-".join(str(x) for x in (((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[]])[0])),
+        "year": str(date_parts[0]) if date_parts else "",
+        "publication_date": "-".join(str(x) for x in date_parts),
         "article_type": it.get("type") or "",
         "authors": "; ".join([" ".join([str(a.get("given", "")), str(a.get("family", ""))]).strip() for a in it.get("author", [])[:12]]) if isinstance(it.get("author"), list) else "",
         "publisher": it.get("publisher") or "",

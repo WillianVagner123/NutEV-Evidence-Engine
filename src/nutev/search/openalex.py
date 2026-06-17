@@ -56,7 +56,11 @@ def _openalex_affiliations_venue(item: dict) -> dict:
     authorships = item.get("authorships")
     if isinstance(authorships, list):
         for authorship in authorships:
+            if not isinstance(authorship, dict):
+                continue
             for inst in (authorship.get("institutions") or []):
+                if not isinstance(inst, dict):
+                    continue
                 code = inst.get("country_code")
                 if code and code not in country_codes:
                     country_codes.append(str(code).upper())

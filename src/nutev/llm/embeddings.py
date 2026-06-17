@@ -151,6 +151,7 @@ def build_or_load_index(records: list[dict], kb_dir: str | Path):
             if (
                 meta.get("hash") == content_hash
                 and meta.get("count") == count
+                and meta.get("model") == _model_name()
                 and isinstance(meta.get("ids"), list)
                 and len(meta["ids"]) == count
             ):
@@ -228,6 +229,7 @@ def semantic_retrieve(
     try:
         import numpy as np
 
+        aligned = len(records) == len(id_order)
         by_id: dict[str, dict] = {}
         for rec in records:
             by_id.setdefault(_doc_id(rec), rec)
@@ -251,7 +253,12 @@ def semantic_retrieve(
         for score, idx in zip(scores[0], indices[0]):
             if idx < 0 or idx >= len(id_order):
                 continue
-            record = by_id.get(id_order[idx])
+            # Prefer positional mapping (handles duplicate/empty document ids);
+            # fall back to id lookup only if the corpus order no longer aligns.
+            if aligned and _doc_id(records[idx]) == id_order[idx]:
+                record = records[idx]
+            else:
+                record = by_id.get(id_order[idx])
             if record is None:
                 continue
             copy = dict(record)

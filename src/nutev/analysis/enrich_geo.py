@@ -138,7 +138,8 @@ _COUNTRY_NAMES: dict[str, str] = {
     "p.r. china": "CN",
     "mainland china": "CN",
     "cyprus": "CY",
-    "georgia": "GE",
+    # "georgia" intentionally omitted: in affiliation text it collides with the
+    # US state far more often than the country (use the code "GE" directly).
     "hong kong": "HK",
     "india": "IN",
     "indonesia": "ID",
@@ -402,6 +403,26 @@ def _as_list(value: object) -> list[str]:
     return []
 
 
+# ISO-639-2/3 (and locale) -> ISO-639-1, so PubMed's "eng" and OpenAlex's "en"
+# are not counted as two different languages.
+_LANG_3_TO_2 = {
+    "eng": "en", "por": "pt", "spa": "es", "fre": "fr", "fra": "fr", "ger": "de",
+    "deu": "de", "ita": "it", "chi": "zh", "zho": "zh", "jpn": "ja", "rus": "ru",
+    "ara": "ar", "kor": "ko", "nld": "nl", "dut": "nl", "pol": "pl", "tur": "tr",
+}
+
+
+def normalize_language(code: str) -> str:
+    """Normalize a language code to ISO-639-1 (lowercase 2-letter); "" if empty."""
+    text = (code or "").strip().lower().replace("_", "-")
+    if not text:
+        return ""
+    base = text.split("-")[0]
+    if len(base) == 2:
+        return base
+    return _LANG_3_TO_2.get(base, base)
+
+
 def enrich_record(row: dict) -> dict:
     """Populate canonical geo/venue/language fields on a single record (in place)."""
     codes = [c.upper() for c in _as_list(row.get("country_codes"))]
@@ -423,7 +444,7 @@ def enrich_record(row: dict) -> dict:
     row["country"] = countries[0] if countries else (row.get("country") or "")
     row["region"] = next((region_for(c) for c in countries if region_for(c)), row.get("region") or "")
 
-    language = (row.get("language") or "").strip()
+    language = normalize_language(row.get("language"))
     if not language:
         language = detect_language(f"{row.get('title', '')} {row.get('abstract', '')}".strip())
     row["language"] = language
@@ -431,8 +452,11 @@ def enrich_record(row: dict) -> dict:
     row["source_institution"] = row.get("source_institution") or ""
     row["issn"] = row.get("issn") or ""
     row["publisher"] = row.get("publisher") or ""
+    raw_citations = row.get("cited_by_count")
     try:
-        row["cited_by_count"] = int(row.get("cited_by_count") or 0)
+        row["cited_by_count"] = (
+            int(float(str(raw_citations).replace(",", ""))) if raw_citations not in (None, "") else 0
+        )
     except (TypeError, ValueError):
         row["cited_by_count"] = 0
     return row

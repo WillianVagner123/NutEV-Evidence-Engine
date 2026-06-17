@@ -80,11 +80,14 @@ def active_concepts(component_terms: list[str], lexicon: dict, group: str) -> li
     """Concept keys in ``group`` whose English synonyms match the given terms."""
     concepts = lexicon.get("concepts") or {}
     group_keys = (lexicon.get("concept_groups") or {}).get(group, [])
-    terms_lower = [str(t).strip().lower() for t in component_terms if str(t).strip()]
+    # Ignore very short tokens (<3 chars): substring matching on them produces
+    # spurious concept activations (e.g. a stray "a"/"i" matching many concepts).
+    terms_lower = [str(t).strip().lower() for t in component_terms if len(str(t).strip()) >= 3]
     matched: list[str] = []
     for concept in group_keys:
         english = [str(t).lower() for t in (concepts.get(concept, {}).get("en") or [])]
         english.append(concept.lower())
+        english = [en for en in english if len(en) >= 3]
         for term in terms_lower:
             if any(en in term or term in en for en in english):
                 matched.append(concept)

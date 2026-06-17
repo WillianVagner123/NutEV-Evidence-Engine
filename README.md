@@ -54,6 +54,26 @@ python -m pip install -e ".[dashboard,platform]"
 
 O projeto requer Python `>=3.12,<3.15`.
 
+### Instalação enxuta vs. completa
+
+A instalação padrão (`pip install -e .`) é **leve**: recursos pesados ficam em
+*extras* opcionais, importados sob demanda e que degradam graciosamente quando
+ausentes.
+
+| Extra | Instala | Habilita |
+| --- | --- | --- |
+| _(nenhum)_ | núcleo | pipeline, banco (JSONL/CSV), `nutev ask` por TF-IDF |
+| `semantic` | sentence-transformers, faiss (puxa torch) | busca semântica no `ask` (senão cai p/ TF-IDF) |
+| `kb` | pyarrow | export `corpus.parquet` (JSONL/CSV sempre funcionam) |
+| `research` | crawl4ai, playwright, datasets, elasticsearch, optuna, weasyprint, unstructured | app `local_deep_research` e crawlers pesados |
+| `all` | tudo acima | — |
+
+```bash
+pip install -e .            # núcleo leve
+pip install -e ".[semantic]" # + busca semântica
+pip install -e ".[all]"      # tudo
+```
+
 ## Demo
 
 ```bash

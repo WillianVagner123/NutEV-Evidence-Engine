@@ -442,7 +442,7 @@ def write_aggregations(records: list[dict], out_dir: Path) -> dict[str, Path]:
         "n_documents": len(records),
         "n_countries": len(total_countries),
         "n_journals": len(total_journals),
-        "n_languages": len(total_languages),
+        "n_languages": len([lang for lang in total_languages if lang != "unknown"]),
         "year_min": year_min,
         "year_max": year_max,
         "providers": dict(total_providers),
