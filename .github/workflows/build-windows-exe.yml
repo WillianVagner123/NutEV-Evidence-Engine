@@ -1,7 +1,12 @@
 name: build-windows-exe
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Versão a publicar (ex.: v0.1.0). Em branco = só compila/testa."
+        required: false
+        default: ""
   push:
     branches: ["claude/gracious-albattani-muvekl"]
     tags: ["v*"]
@@ -72,11 +77,13 @@ jobs:
           path: dist/NutEV.exe
           if-no-files-found: warn
 
-      - name: Create Release with exe (on tag)
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Create Release with exe (tag push or manual dispatch with a tag)
+        if: ${{ startsWith(github.ref, 'refs/tags/') || (github.event_name == 'workflow_dispatch' && github.event.inputs.tag != '') }}
+        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
-        run: >
-          gh release create "${{ github.ref_name }}" dist/NutEV.exe
-          --title "NutEV ${{ github.ref_name }}"
-          --notes "Aplicativo Windows do NutEV. Baixe o NutEV.exe abaixo, dê duplo-clique e o site abre no navegador; clique em 'Rodar pipeline' para executar localmente. Nao precisa instalar Python."
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then TAG="${{ github.event.inputs.tag }}"; else TAG="${{ github.ref_name }}"; fi
+          echo "Publicando release $TAG"
+          gh release create "$TAG" dist/NutEV.exe --target "${{ github.sha }}" --title "NutEV $TAG" \
+            --notes "Aplicativo Windows do NutEV. Baixe o NutEV.exe abaixo, dê duplo-clique e o site abre no navegador; clique em 'Rodar pipeline' para executar localmente. Nao precisa instalar Python."
