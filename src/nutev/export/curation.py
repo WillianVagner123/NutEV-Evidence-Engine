@@ -146,6 +146,21 @@ _PRIORITY_TERMS = [
     "self-efficacy",
 ]
 
+_PRIORITY_TEXT_FIELDS = (
+    "title",
+    "abstract",
+    "snippet",
+    "summary",
+    "evidence_type",
+    "domains",
+    "outcomes",
+    "diet_patterns",
+    "clinical_conditions",
+    "main_terms",
+    "journal",
+    "source_institution",
+)
+
 _A1_PROXY_TIERS = {"a1_proxy_high", "a1_proxy_moderate"}
 
 _WHITESPACE_RE = re.compile(r"\s+")
@@ -209,6 +224,18 @@ def _normalize_year(value: object) -> str:
     return str(year)
 
 
+def _normalize_priority_text(value: object) -> str:
+    text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
+    return _NON_ALNUM_RE.sub(" ", text).strip()
+
+
+def _priority_term_matches(normalized_text: str, normalized_term: str) -> bool:
+    if not normalized_text or not normalized_term:
+        return False
+    pattern = rf"(?:^|\s){re.escape(normalized_term)}(?:\s|$)"
+    return re.search(pattern, normalized_text) is not None
+
+
 def _hash_fallback(row: dict) -> str:
     payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
     # Deterministic operational fallback key, not a security primitive.
@@ -258,18 +285,13 @@ def _is_prioritized(row: dict) -> bool:
         score = float(row.get("relevance_score") or row.get("score") or 0)
     except Exception:
         score = 0.0
-    text = " ".join(
-        [
-            _as_text(row.get("title")),
-            _as_text(row.get("evidence_type")),
-            _as_text(row.get("domains")),
-            _as_text(row.get("outcomes")),
-            _as_text(row.get("diet_patterns")),
-            _as_text(row.get("clinical_conditions")),
-            _as_text(row.get("main_terms")),
-        ]
-    ).lower()
-    return score >= 8 and any(term in text for term in _PRIORITY_TERMS)
+    text = " ".join(_as_text(row.get(field)) for field in _PRIORITY_TEXT_FIELDS)
+    normalized_text = _normalize_priority_text(text)
+    matches_priority_scope = any(
+        _priority_term_matches(normalized_text, _normalize_priority_text(term))
+        for term in _PRIORITY_TERMS
+    )
+    return score >= 8 and matches_priority_scope
 
 
 def _curate_row(row: dict) -> dict:
