@@ -1,0 +1,106 @@
+{
+  "version_note": "2026-06-17 culinary home food environment expansion",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "home food environment",
+        "household food environment",
+        "home food availability",
+        "home food practices",
+        "household food practices",
+        "food provisioning",
+        "meal preparation intervention",
+        "meal prep",
+        "meal prepping",
+        "batch cooking",
+        "home meal preparation",
+        "home meal planning",
+        "grocery shopping intervention",
+        "healthy grocery shopping",
+        "food purchasing behavior",
+        "food purchasing behaviour",
+        "food shopping behavior",
+        "food shopping behaviour",
+        "food budgeting",
+        "food resource management",
+        "cooking self-efficacy",
+        "cooking confidence",
+        "kitchen confidence",
+        "cooking frequency",
+        "home cooking frequency"
+      ]
+    },
+    "implementation_behavior": {
+      "behavioral": [
+        "meal preparation intervention",
+        "meal planning intervention",
+        "grocery shopping intervention",
+        "food shopping intervention",
+        "cooking self-efficacy",
+        "home cooking frequency",
+        "food purchasing behavior",
+        "food purchasing behaviour"
+      ],
+      "contextual": [
+        "home food environment",
+        "household food environment",
+        "home food availability",
+        "home food practices",
+        "household food practices",
+        "food provisioning",
+        "food resource management"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "home food availability",
+      "home food practices",
+      "food purchasing behavior",
+      "food purchasing behaviour",
+      "grocery shopping skills",
+      "food resource management"
+    ],
+    "behavioral": [
+      "meal preparation self-efficacy",
+      "cooking self-efficacy",
+      "cooking confidence",
+      "kitchen confidence",
+      "home cooking frequency",
+      "meal planning skills"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "home food environment",
+        "household food environment",
+        "food provisioning",
+        "meal preparation intervention",
+        "grocery shopping intervention",
+        "food resource management"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "meal preparation intervention",
+        "meal planning intervention",
+        "grocery shopping intervention",
+        "food shopping intervention",
+        "home food environment",
+        "home food availability",
+        "cooking self-efficacy"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "home food environment scale",
+        "food resource management questionnaire",
+        "grocery shopping skills scale",
+        "meal preparation self-efficacy",
+        "cooking self-efficacy scale",
+        "home cooking frequency questionnaire"
+      ]
+    }
+  }
+}
