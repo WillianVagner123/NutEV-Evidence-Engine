@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from nutev.global_watch.watch_config import WATCH_CATEGORIES
+from nutev.global_watch.watch_expansions import apply_watch_expansions
 from nutev.global_watch.watch_query_builder import build_watch_queries
 
 
@@ -21,6 +22,10 @@ def test_personalized_nutrition_category_has_cardio_metabolic_anchors() -> None:
     assert "precision nutrition type 2 diabetes" in flattened_terms
     assert "tailored dietary advice cardiometabolic risk" in flattened_terms
     assert "tailored dietary intervention obesity" in flattened_terms
+    assert "precision nutrition glycemic response" in flattened_terms
+    assert "personalized nutrition postprandial glucose" in flattened_terms
+    assert "personalized dietary intervention type 2 diabetes" in flattened_terms
+    assert "cgm-guided nutrition" in flattened_terms
 
 
 def test_personalized_nutrition_quick_watch_query_is_generated() -> None:
@@ -30,4 +35,17 @@ def test_personalized_nutrition_quick_watch_query_is_generated() -> None:
     assert queries
     assert "precision nutrition type 2 diabetes" in query_text
     assert "tailored dietary advice cardiometabolic risk" in query_text
+    assert "precision nutrition glycemic response" in query_text
+    assert "personalized dietary intervention type 2 diabetes" in query_text
     assert "obesity" in query_text or "cardiometabolic" in query_text
+
+
+def test_personalized_nutrition_expansion_is_idempotent() -> None:
+    category_terms = WATCH_CATEGORIES["personalized_nutrition"]
+    before = _flatten_terms(category_terms).count("precision nutrition glycemic response")
+
+    apply_watch_expansions(WATCH_CATEGORIES)
+
+    after = _flatten_terms(category_terms).count("precision nutrition glycemic response")
+    assert before == 1
+    assert after == 1
