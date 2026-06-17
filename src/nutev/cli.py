@@ -31,9 +31,6 @@ def main() -> None:
     dash.add_argument("--project-root", type=Path, required=True)
     dash.add_argument("--port", type=int, default=8501)
 
-    demo = sub.add_parser("demo-data")
-    demo.add_argument("--project-root", type=Path, required=True)
-
     serve = sub.add_parser("serve")
     serve.add_argument("--project-root", type=Path, required=True)
     serve.add_argument("--host", type=str, default="127.0.0.1")
@@ -43,12 +40,6 @@ def main() -> None:
     platform_cmd.add_argument("--project-root", type=Path, required=True)
     platform_cmd.add_argument("--host", type=str, default="127.0.0.1")
     platform_cmd.add_argument("--port", type=int, default=8000)
-
-    pilot = sub.add_parser("pilot-report")
-    pilot.add_argument("--project-root", type=Path, required=True)
-
-    prize = sub.add_parser("prize-metrics")
-    prize.add_argument("--project-root", type=Path, required=True)
 
     ask = sub.add_parser("ask", help="Ask questions over the article knowledge base")
     ask.add_argument("--project-root", type=Path, required=True)
@@ -132,13 +123,6 @@ def main() -> None:
             print(url)
         return
 
-    if args.command == "demo-data":
-        from nutev.demo.demo_data import generate_demo_data
-
-        generate_demo_data(args.project_root)
-        print(f"Demo data generated at: {args.project_root}")
-        return
-
     if args.command in {"serve", "platform"}:
         landing = f"http://{args.host}:{args.port}"
         if args.host == "0.0.0.0":
@@ -156,21 +140,6 @@ def main() -> None:
             uvicorn.run(app, host=args.host, port=args.port)
         except ModuleNotFoundError:
             print('FastAPI/uvicorn não estão instalados. Rode: pip install -e ".[platform]"')
-        return
-
-    if args.command == "pilot-report":
-        from nutev.export.pilot_report import generate_pilot_report
-
-        path = generate_pilot_report(args.project_root)
-        print(f"Pilot report generated: {path}")
-        return
-
-    if args.command == "prize-metrics":
-        from nutev.export.prize_metrics import write_prize_metrics_summary
-
-        path = write_prize_metrics_summary(args.project_root)
-        print(f"Prize metrics generated: {path}")
-        print(f"Prize metrics text: {path.with_suffix('.txt')}")
         return
 
     if args.command == "taxonomy":

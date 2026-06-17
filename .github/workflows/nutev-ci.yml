@@ -1,0 +1,30 @@
+name: nutev-ci
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip ruff
+          if [ -f requirements/nutev-ci.txt ]; then
+            python -m pip install -r requirements/nutev-ci.txt
+          fi
+          python -m pip install --no-deps -e .
+      - name: Lint (ruff)
+        run: ruff check src/nutev
+      - name: Tests
+        run: PYTHONPATH=src python -m pytest -q nutev_tests

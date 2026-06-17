@@ -74,35 +74,22 @@ pip install -e ".[semantic]" # + busca semântica
 pip install -e ".[all]"      # tudo
 ```
 
-## Demo
+## Dashboard e API local
 
 ```bash
-nutev demo-data --project-root ./project_output_demo
-nutev dashboard --project-root ./project_output_demo --port 8501
-```
-
-Depois acesse:
-
-```text
-http://127.0.0.1:8501
-```
-
-API local:
-
-```bash
-nutev serve --project-root ./project_output_demo --host 127.0.0.1 --port 8000
+nutev dashboard --project-root ./project_output --port 8501   # extra [dashboard]
+nutev serve --project-root ./project_output --host 127.0.0.1 --port 8000   # extra [platform]
 ```
 
 URLs:
 
-- `http://127.0.0.1:8000`
-- `http://127.0.0.1:8000/docs`
+- Dashboard: `http://127.0.0.1:8501`
+- API: `http://127.0.0.1:8000` · docs em `/docs`
 
 ## Primeiro piloto real
 
 ```bash
 nutev --project-root ./project_output_pilot --workstreams busca1 busca2a busca2b a3 --web-enabled
-nutev pilot-report --project-root ./project_output_pilot
 nutev dashboard --project-root ./project_output_pilot --port 8501
 ```
 

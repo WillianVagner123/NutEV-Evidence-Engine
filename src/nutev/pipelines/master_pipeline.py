@@ -11,8 +11,6 @@ from urllib.parse import urlsplit
 import pandas as pd
 
 from nutev import __version__ as nutev_version
-from nutev.analysis import domains_busca1, domains_busca2a, domains_busca2b
-from nutev.analysis.article3_framework import build_framework_signals
 from nutev.analysis.enrich_geo import enrich_records
 from nutev.analysis.nutev_classifier import classify_evidence
 from nutev.analysis.prisma import build_prisma_flow, export_prisma
@@ -552,16 +550,6 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
                     encoding="utf-8",
                     errors="ignore",
                 )
-
-        # Backward-compatible legacy enrichments
-        if ws == "busca1":
-            rows = domains_busca1.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca1.json"))
-        elif ws == "busca2a":
-            rows = domains_busca2a.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2a.json"))
-        elif ws == "busca2b":
-            rows = domains_busca2b.apply_domain_rules(rows, load_json(settings.config_root / "domain_rules_busca2b.json"))
-        elif ws in {"a3", "artigo3_framework"}:
-            rows = build_framework_signals(rows)
 
         # New integrated global evidence layer: all records pass through shared classifier/lenses.
         rows = classify_evidence(rows, ontology, evidence_lenses)

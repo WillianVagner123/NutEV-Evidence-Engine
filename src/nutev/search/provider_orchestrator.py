@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import csv
-import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -9,23 +8,20 @@ from typing import Any, Callable
 
 from nutev.engine.events import emit_event, write_event
 from nutev.search.base import ProviderResult, redact_secrets
-from nutev.search.brave_optional import search_brave
 from nutev.search.checkpoint import query_hash
 from nutev.search.clinicaltrials import search_clinicaltrials
 from nutev.search.core_optional import search_core
 from nutev.search.crossref import search_crossref
 from nutev.search.doaj import search_doaj
 from nutev.search.europepmc import search_europepmc
-from nutev.search.google_pse import search_google_pse
 from nutev.search.official_sources import manifest_sources
 from nutev.search.openalex import search_openalex
 from nutev.search.preprints import search_preprints
 from nutev.search.pubmed import PubMedClient
 from nutev.search.scielo import search_scielo
 from nutev.search.semantic_scholar import search_semantic_scholar
-from nutev.search.serpapi_optional import search_serpapi
 
-OPTIONAL_PROVIDERS = {"google", "google_pse", "serpapi", "brave"}
+OPTIONAL_PROVIDERS: set[str] = set()
 PERFORMANCE_FIELDS = [
     "run_id",
     "provider",
@@ -67,12 +63,7 @@ def _append_csv(path: Path, row: dict[str, Any], fields: list[str]) -> None:
 
 
 def _optional_missing(provider: str) -> str | None:
-    if provider in {"google", "google_pse"} and not (os.environ.get("GOOGLE_API_KEY") and os.environ.get("GOOGLE_CSE_ID")):
-        return "missing GOOGLE_API_KEY/GOOGLE_CSE_ID"
-    if provider == "serpapi" and not os.environ.get("SERPAPI_API_KEY"):
-        return "missing SERPAPI_API_KEY"
-    if provider == "brave" and not os.environ.get("BRAVE_API_KEY"):
-        return "missing BRAVE_API_KEY"
+    # No credential-gated web-search providers remain; kept for the call site.
     return None
 
 
@@ -87,10 +78,6 @@ def _registry() -> dict[str, Callable[[str, int, dict[str, Any]], ProviderResult
         "preprints": lambda q, limit, ctx: search_preprints(q, limit=limit, context=ctx),
         "clinicaltrials": lambda q, limit, ctx: search_clinicaltrials(q, limit=limit, context=ctx),
         "core": lambda q, limit, ctx: search_core(q, limit=limit, context=ctx),
-        "google": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
-        "google_pse": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
-        "serpapi": lambda q, limit, ctx: search_serpapi(q, limit=limit, context=ctx),
-        "brave": lambda q, limit, ctx: search_brave(q, limit=limit, context=ctx),
         "official_web": lambda q, limit, ctx: manifest_sources(ctx.get("official_manifest") or {}, ctx.get("workstream") or "")[:limit],
         "official_sources": lambda q, limit, ctx: manifest_sources(ctx.get("official_manifest") or {}, ctx.get("workstream") or "")[:limit],
     }
