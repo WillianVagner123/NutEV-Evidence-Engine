@@ -2,6 +2,11 @@ from __future__ import annotations
 
 from typing import Any
 
+from nutev.global_watch.watch_config import WATCH_CATEGORIES
+from nutev.global_watch.watch_expansions import apply_watch_expansions
+
+apply_watch_expansions(WATCH_CATEGORIES)
+
 __all__ = ["run_global_watch"]
 
 
