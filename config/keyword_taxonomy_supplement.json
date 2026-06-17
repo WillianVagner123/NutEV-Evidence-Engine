@@ -101,6 +101,36 @@
         "dietary adherence scale",
         "adherence questionnaire",
         "adherence scale"
+      ],
+      "group_care_delivery": [
+        "shared medical appointment",
+        "shared medical appointments",
+        "group medical visit",
+        "group medical visits",
+        "group visit for diabetes",
+        "group visits for diabetes",
+        "group visit for obesity",
+        "group visits for obesity",
+        "group lifestyle intervention",
+        "group-based lifestyle intervention",
+        "group based lifestyle intervention",
+        "group nutrition intervention",
+        "group-based nutrition intervention",
+        "group based nutrition intervention",
+        "group dietary intervention",
+        "group-based dietary intervention",
+        "group based dietary intervention",
+        "group lifestyle program",
+        "group lifestyle programme",
+        "group nutrition education",
+        "group health coaching",
+        "group coaching for weight management",
+        "peer-led lifestyle intervention",
+        "peer led lifestyle intervention",
+        "peer-led nutrition intervention",
+        "peer led nutrition intervention",
+        "peer support group",
+        "peer support groups"
       ]
     }
   },
@@ -180,7 +210,15 @@
       "relapse prevention",
       "dietary self-monitoring",
       "dietary self-regulation",
-      "eating self-regulation"
+      "eating self-regulation",
+      "group lifestyle intervention",
+      "group-based lifestyle intervention",
+      "group nutrition intervention",
+      "group-based nutrition intervention",
+      "group dietary intervention",
+      "group-based dietary intervention",
+      "peer-led lifestyle intervention",
+      "peer-led nutrition intervention"
     ],
     "food_access_implementation": [
       "food is medicine evaluation",
@@ -320,7 +358,24 @@
         "food insecurity intervention",
         "patient navigation",
         "community health worker-led nutrition",
-        "community health worker led nutrition"
+        "community health worker led nutrition",
+        "shared medical appointment",
+        "shared medical appointments",
+        "group medical visit",
+        "group medical visits",
+        "group lifestyle intervention",
+        "group-based lifestyle intervention",
+        "group based lifestyle intervention",
+        "group nutrition intervention",
+        "group-based nutrition intervention",
+        "group based nutrition intervention",
+        "group dietary intervention",
+        "group-based dietary intervention",
+        "peer-led lifestyle intervention",
+        "peer led lifestyle intervention",
+        "peer-led nutrition intervention",
+        "peer led nutrition intervention",
+        "peer support group"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -341,14 +396,26 @@
         "food as medicine evaluation",
         "medically tailored meals cardiometabolic trial",
         "nutrition security intervention trial",
-        "food insecurity intervention cardiometabolic"
+        "food insecurity intervention cardiometabolic",
+        "shared medical appointment nutrition trial",
+        "shared medical appointment diabetes nutrition",
+        "group medical visit diabetes lifestyle intervention",
+        "group medical visit obesity nutrition",
+        "group-based lifestyle intervention cardiometabolic",
+        "group-based nutrition intervention obesity",
+        "peer-led nutrition intervention diabetes",
+        "peer-led lifestyle intervention weight management"
       ],
       "document_terms": [
         "implementation trial",
         "program evaluation",
         "process evaluation",
         "pragmatic trial",
-        "systematic review"
+        "systematic review",
+        "group-based intervention",
+        "group based intervention",
+        "peer-led intervention",
+        "peer led intervention"
       ]
     },
     "a3": {
@@ -373,7 +440,12 @@
         "teaching kitchen curriculum",
         "teaching kitchen evaluation",
         "dietary adherence questionnaire",
-        "dietary adherence scale"
+        "dietary adherence scale",
+        "group-based nutrition intervention",
+        "group based nutrition intervention",
+        "peer-led nutrition intervention",
+        "peer led nutrition intervention",
+        "peer support group"
       ],
       "web_query_hints": [
         "food literacy questionnaire validation",
@@ -387,7 +459,10 @@
         "meal preparation questionnaire validation",
         "culinary medicine curriculum evaluation",
         "teaching kitchen curriculum evaluation",
-        "dietary adherence questionnaire validation"
+        "dietary adherence questionnaire validation",
+        "group-based nutrition intervention framework",
+        "peer-led nutrition intervention framework",
+        "peer support dietary adherence framework"
       ],
       "document_terms": [
         "questionnaire validation",
@@ -395,7 +470,8 @@
         "instrument development",
         "psychometric validation",
         "curriculum evaluation",
-        "framework"
+        "framework",
+        "intervention framework"
       ]
     },
     "artigo3_framework": {
@@ -420,7 +496,12 @@
         "teaching kitchen curriculum",
         "teaching kitchen evaluation",
         "dietary adherence questionnaire",
-        "dietary adherence scale"
+        "dietary adherence scale",
+        "group-based nutrition intervention",
+        "group based nutrition intervention",
+        "peer-led nutrition intervention",
+        "peer led nutrition intervention",
+        "peer support group"
       ],
       "web_query_hints": [
         "food literacy questionnaire validation",
@@ -434,7 +515,10 @@
         "meal preparation questionnaire validation",
         "culinary medicine curriculum evaluation",
         "teaching kitchen curriculum evaluation",
-        "dietary adherence questionnaire validation"
+        "dietary adherence questionnaire validation",
+        "group-based nutrition intervention framework",
+        "peer-led nutrition intervention framework",
+        "peer support dietary adherence framework"
       ],
       "document_terms": [
         "questionnaire validation",
@@ -442,7 +526,8 @@
         "instrument development",
         "psychometric validation",
         "curriculum evaluation",
-        "framework"
+        "framework",
+        "intervention framework"
       ]
     }
   }
