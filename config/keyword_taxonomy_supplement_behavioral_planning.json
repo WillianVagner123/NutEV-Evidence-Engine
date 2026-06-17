@@ -1,0 +1,107 @@
+{
+  "version_note": "Adds behavior-change planning and adherence-maintenance terms used by the query builders as a non-destructive supplement to keyword_taxonomy.json.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "dietary adherence",
+        "treatment adherence",
+        "long-term adherence",
+        "long term adherence",
+        "maintenance",
+        "behavioral maintenance",
+        "behavioural maintenance",
+        "weight loss maintenance",
+        "weight regain prevention",
+        "relapse prevention",
+        "lapse management",
+        "retention",
+        "dropout",
+        "attrition",
+        "engagement"
+      ],
+      "behavioral": [
+        "action planning",
+        "coping planning",
+        "implementation intentions",
+        "readiness to change",
+        "stage of change",
+        "stages of change",
+        "transtheoretical model",
+        "shared decision making",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "dietary self regulation",
+        "eating self-regulation",
+        "self-regulation of eating",
+        "problem solving",
+        "habit formation",
+        "health coaching",
+        "lifestyle coaching",
+        "nutrition coaching",
+        "peer support",
+        "patient navigation",
+        "care navigation",
+        "behavioral dietary intervention",
+        "behavioural dietary intervention",
+        "behavioral nutrition intervention",
+        "behavioural nutrition intervention"
+      ]
+    }
+  },
+  "outcomes": {
+    "behavioral": [
+      "action planning",
+      "coping planning",
+      "implementation intentions",
+      "readiness to change",
+      "stage of change",
+      "stages of change",
+      "transtheoretical model",
+      "dietary self-monitoring",
+      "dietary self-regulation",
+      "eating self-regulation",
+      "habit formation",
+      "relapse prevention",
+      "weight loss maintenance",
+      "weight regain prevention"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "action planning",
+        "coping planning",
+        "implementation intentions",
+        "readiness to change",
+        "stages of change",
+        "transtheoretical model",
+        "shared decision making",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "habit formation",
+        "relapse prevention",
+        "weight loss maintenance",
+        "weight regain prevention",
+        "behavioral dietary intervention",
+        "behavioral nutrition intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "action planning",
+        "coping planning",
+        "implementation intentions",
+        "readiness to change",
+        "stages of change",
+        "transtheoretical model",
+        "shared decision making",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "habit formation",
+        "relapse prevention",
+        "behavioral dietary intervention",
+        "behavioral nutrition intervention"
+      ]
+    }
+  }
+}
