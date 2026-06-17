@@ -1,0 +1,82 @@
+{
+  "version_note": "2026-06 lifestyle medicine institutional nutrition expansion. Adds precise ACLM/lifestyle medicine document terms through the existing JSON supplement loader without changing the base taxonomy.",
+  "global": {
+    "lifestyle_medicine_pillars": {
+      "nutrition": [
+        "lifestyle medicine nutrition",
+        "lifestyle medicine dietary intervention",
+        "lifestyle medicine dietary interventions",
+        "lifestyle medicine nutrition intervention",
+        "lifestyle medicine nutrition interventions",
+        "lifestyle medicine nutrition guideline",
+        "lifestyle medicine nutrition guidelines",
+        "lifestyle medicine position statement",
+        "lifestyle medicine consensus statement",
+        "lifestyle medicine clinical practice guideline",
+        "lifestyle medicine practice guideline",
+        "lifestyle medicine competencies",
+        "lifestyle medicine core competencies",
+        "American College of Lifestyle Medicine",
+        "ACLM"
+      ]
+    },
+    "document_types": {
+      "guidelines": [
+        "lifestyle medicine position statement",
+        "lifestyle medicine consensus statement",
+        "lifestyle medicine clinical practice guideline",
+        "lifestyle medicine practice guideline",
+        "lifestyle medicine practice recommendation",
+        "lifestyle medicine competencies",
+        "lifestyle medicine core competencies"
+      ],
+      "grey": [
+        "lifestyle medicine white paper",
+        "lifestyle medicine toolkit",
+        "lifestyle medicine implementation guide"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "lifestyle medicine nutrition guideline",
+        "lifestyle medicine dietary guideline",
+        "lifestyle medicine position statement nutrition",
+        "American College of Lifestyle Medicine nutrition",
+        "ACLM nutrition",
+        "lifestyle medicine food as medicine guideline"
+      ]
+    },
+    "busca2a": {
+      "web_query_hints": [
+        "lifestyle medicine clinical practice guideline nutrition obesity",
+        "lifestyle medicine position statement cardiometabolic",
+        "lifestyle medicine consensus statement diabetes nutrition",
+        "American College of Lifestyle Medicine obesity nutrition",
+        "ACLM diabetes nutrition",
+        "lifestyle medicine cardiometabolic nutrition guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "lifestyle medicine nutrition intervention obesity trial",
+        "lifestyle medicine dietary intervention cardiometabolic",
+        "lifestyle medicine implementation nutrition",
+        "American College of Lifestyle Medicine nutrition intervention",
+        "ACLM lifestyle intervention nutrition",
+        "lifestyle medicine food as medicine implementation"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "lifestyle medicine competencies nutrition",
+        "lifestyle medicine core competencies nutrition",
+        "lifestyle medicine competencies food literacy",
+        "American College of Lifestyle Medicine competencies nutrition",
+        "ACLM competencies nutrition",
+        "lifestyle medicine framework nutrition behavior change"
+      ]
+    }
+  }
+}
