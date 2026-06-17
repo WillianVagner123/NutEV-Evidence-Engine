@@ -20,6 +20,17 @@ def test_obesity_queries_add_vascular_and_metabolic_context_terms() -> None:
     assert '"mash"' in rendered
 
 
+def test_obesity_queries_add_ckm_context_terms() -> None:
+    queries = build_watch_queries(["obesity_cardiometabolic"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "cardiovascular-kidney-metabolic syndrome" in rendered
+    assert "cardiovascular kidney metabolic syndrome" in rendered
+    assert "cardio-kidney-metabolic nutrition" in rendered
+    assert '"ckm syndrome"' in rendered
+    assert '"ckm nutrition"' in rendered
+
+
 def test_cardiometabolic_vascular_signals_improve_priority() -> None:
     enriched = score_watch_item(
         {
@@ -31,5 +42,17 @@ def test_cardiometabolic_vascular_signals_improve_priority() -> None:
         }
     )
     generic = score_watch_item({"title": "Nutrition therapy note"})
+
+    assert enriched > generic
+
+
+def test_ckm_nutrition_signals_improve_priority() -> None:
+    enriched = score_watch_item(
+        {
+            "title": "CKM nutrition consensus for cardiovascular-kidney-metabolic syndrome",
+            "abstract": "Dietary pattern guidance for obesity and type 2 diabetes risk.",
+        }
+    )
+    generic = score_watch_item({"title": "Nutrition consensus note"})
 
     assert enriched > generic
