@@ -249,3 +249,21 @@ def test_busca2a_guidance_terms_pull_guideline_variants_into_queries() -> None:
     assert '"best practice advice"[Title/Abstract]' in joined
     assert '"standards of care"[Title/Abstract]' in joined
     assert '"position statement"[Title/Abstract]' in joined
+
+
+def test_ckm_metabolic_precision_terms_are_prioritized_for_busca2_streams() -> None:
+    busca2a_terms = semantic_terms("busca2a", min_priority=5)
+    busca2b_terms = semantic_terms("busca2b", min_priority=5)
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert "cardiovascular-kidney-metabolic syndrome" in busca2a_terms
+    assert "visceral adiposity" in busca2a_terms
+    assert "metabolically unhealthy obesity" in busca2b_terms
+    assert "cardiometabolic risk consensus" in semantic_terms(
+        "busca2a",
+        field="document_terms",
+        min_priority=5,
+    )
+    assert '"cardiometabolic health"[Title/Abstract]' in joined
+    assert '"visceral adiposity"[Title/Abstract]' in joined

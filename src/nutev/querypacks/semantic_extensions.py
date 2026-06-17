@@ -12,6 +12,19 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS = [
     "ckm syndrome",
     "ckm health",
     "ckm risk",
+    "cardiometabolic health",
+    "cardiometabolic risk clustering",
+    "metabolic risk clustering",
+    "metabolic health",
+    "adiposity-based chronic disease",
+    "adiposity based chronic disease",
+    "abdominal obesity",
+    "central obesity",
+    "visceral adiposity",
+    "visceral obesity",
+    "ectopic fat",
+    "metabolically healthy obesity",
+    "metabolically unhealthy obesity",
 ]
 
 CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
@@ -22,6 +35,12 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "clinical decision pathway",
     "practice guidance",
     "systematic review",
+    "cardiovascular-kidney-metabolic scientific statement",
+    "cardiovascular kidney metabolic scientific statement",
+    "cardiometabolic risk guideline",
+    "cardiometabolic risk consensus",
+    "obesity cardiometabolic risk consensus",
+    "metabolic health systematic review",
 ]
 
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
@@ -505,6 +524,10 @@ def apply_semantic_extensions() -> None:
         "cardiometabolic_precision",
         terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
         document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+    )
+    _prioritize_semantic_block(
+        "cardiometabolic_precision",
+        {"busca2a": 5, "busca2b": 5},
     )
     _extend_semantic_block(
         "evidence_synthesis",
