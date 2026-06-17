@@ -1,0 +1,78 @@
+{
+  "version_note": "2026-06-17: prioritize nutrition security and food access referral evidence without changing raw outputs.",
+  "keyword_points": {
+    "nutrition security intervention": 4,
+    "nutrition insecurity": 3,
+    "nutrition insecurity screening": 4,
+    "screening for nutrition insecurity": 4,
+    "food insecurity intervention": 4,
+    "food insecurity referral": 4,
+    "food insecurity screening and referral": 5,
+    "food resource referral": 4,
+    "food resource navigation": 4,
+    "healthy food referral": 4,
+    "produce prescription referral": 4,
+    "food as medicine referral": 4,
+    "food is medicine referral": 4,
+    "medically tailored food referral": 4,
+    "medically tailored food program": 4,
+    "medically tailored food programme": 4,
+    "food pharmacy referral": 4,
+    "food pharmacy intervention": 4,
+    "closed-loop food referral": 4,
+    "closed loop food referral": 4,
+    "community resource navigation": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "nutrition security intervention": 5,
+      "food insecurity screening and referral": 5,
+      "food resource referral": 4,
+      "food resource navigation": 4,
+      "healthy food referral": 4,
+      "produce prescription referral": 5,
+      "food as medicine referral": 5,
+      "food is medicine referral": 5,
+      "medically tailored food referral": 5,
+      "medically tailored food program": 5,
+      "food pharmacy referral": 5,
+      "food pharmacy intervention": 5,
+      "closed-loop food referral": 4,
+      "community resource navigation": 4
+    },
+    "busca2b": {
+      "nutrition security intervention": 5,
+      "food insecurity intervention": 5,
+      "food insecurity screening and referral": 5,
+      "food resource referral": 5,
+      "food resource navigation": 5,
+      "healthy food referral": 5,
+      "produce prescription referral": 5,
+      "food as medicine referral": 5,
+      "food is medicine referral": 5,
+      "medically tailored food referral": 5,
+      "medically tailored food program": 5,
+      "food pharmacy referral": 5,
+      "food pharmacy intervention": 5,
+      "closed-loop food referral": 5,
+      "closed loop food referral": 5,
+      "community resource navigation": 4
+    },
+    "a3": {
+      "nutrition insecurity": 4,
+      "nutrition insecurity screening": 4,
+      "food resource referral": 4,
+      "food resource navigation": 5,
+      "healthy food referral": 4,
+      "community resource navigation": 4
+    },
+    "artigo3_framework": {
+      "nutrition insecurity": 4,
+      "nutrition insecurity screening": 4,
+      "food resource referral": 4,
+      "food resource navigation": 5,
+      "healthy food referral": 4,
+      "community resource navigation": 4
+    }
+  }
+}
