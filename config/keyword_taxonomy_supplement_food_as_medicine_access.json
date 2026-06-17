@@ -1,0 +1,97 @@
+{
+  "version_note": "2026-06 food-as-medicine access supplement for NutMEV query expansion",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "medically tailored nutrition programme",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy program",
+        "food farmacy programme",
+        "produce prescription programme",
+        "healthy food incentive program",
+        "healthy food incentive programme",
+        "nutrition incentive program",
+        "nutrition incentive programme",
+        "fruit and vegetable voucher program",
+        "fruit and vegetable voucher programme",
+        "produce voucher program",
+        "produce voucher programme"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "food pantry referral program",
+        "food pantry referral programme",
+        "community-supported food program",
+        "community supported food program",
+        "community-supported food programme",
+        "community supported food programme",
+        "social prescribing link worker",
+        "link worker",
+        "community connector",
+        "community connectors"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "program evaluation",
+        "programme evaluation",
+        "implementation report",
+        "evaluation report",
+        "policy evaluation"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "medically tailored nutrition program",
+        "food pharmacy program",
+        "produce prescription programme",
+        "healthy food incentive program",
+        "nutrition incentive program",
+        "fruit and vegetable voucher program",
+        "food is medicine referral",
+        "food as medicine referral"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "medically tailored nutrition intervention",
+        "food pharmacy intervention",
+        "food pharmacy program",
+        "produce prescription programme",
+        "healthy food incentive intervention",
+        "nutrition incentive intervention",
+        "fruit and vegetable voucher intervention",
+        "food is medicine referral",
+        "produce prescription referral"
+      ],
+      "condition_terms": [
+        "nutrition insecurity",
+        "food insecurity"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "food is medicine framework",
+        "produce prescription implementation framework",
+        "food pharmacy implementation framework",
+        "medically tailored nutrition framework",
+        "nutrition security implementation framework"
+      ],
+      "condition_terms": [
+        "nutrition security",
+        "nutrition insecurity",
+        "food insecurity"
+      ]
+    }
+  }
+}
