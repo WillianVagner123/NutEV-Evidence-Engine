@@ -2,9 +2,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 import json
+import sys
 
 
 def default_config_root() -> Path:
+    # In a PyInstaller bundle the package lives under _MEIPASS and there is no
+    # repo root above it, so config/ is shipped at the bundle root instead.
+    if getattr(sys, "frozen", False):
+        return Path(getattr(sys, "_MEIPASS", Path(sys.executable).parent)) / "config"
     return Path(__file__).resolve().parents[2] / "config"
 
 

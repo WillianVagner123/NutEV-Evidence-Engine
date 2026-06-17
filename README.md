@@ -105,6 +105,13 @@ Qualquer um deles instala o necessário (**apenas na 1ª vez**), sobe o servidor
 PowerShell*) ou `scripts/create_shortcut_macos.command` (macOS, duplo-clique) para
 criar um ícone **NutEV** na sua área de trabalho que abre o site direto.
 
+**Aplicativo Windows (.exe, sem instalar Python):** existe um build automático
+(GitHub Actions → `build-windows-exe`) que gera um **`NutEV.exe`** único e o
+testa de ponta a ponta. Baixe-o nos *artifacts* da execução do workflow (ou, em
+versões marcadas com tag `v*`, na aba **Releases**), dê duplo-clique e o site
+abre — não precisa instalar Python nem nada. Para empacotar localmente:
+`pip install ".[platform]" pyinstaller && pyinstaller packaging/nutev.spec`.
+
 ```bash
 nutev serve --project-root ./project_output --host 127.0.0.1 --port 8000   # extra [platform]
 nutev dashboard --project-root ./project_output --port 8501                 # extra [dashboard]

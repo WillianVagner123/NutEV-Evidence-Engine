@@ -1,0 +1,79 @@
+name: build-windows-exe
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: ["claude/gracious-albattani-muvekl"]
+    tags: ["v*"]
+    paths:
+      - "packaging/**"
+      - ".github/workflows/build-windows-exe.yml"
+      - "src/nutev/**"
+      - "pyproject.toml"
+
+permissions:
+  contents: write  # attach the exe to a Release on tag pushes
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps + PyInstaller
+        run: |
+          python -m pip install --upgrade pip
+          pip install ".[platform]" pyinstaller
+
+      - name: Build NutEV.exe
+        run: pyinstaller packaging/nutev.spec --noconfirm
+
+      - name: Smoke test (boot + offline Play run)
+        shell: pwsh
+        run: |
+          $env:NUTEV_NO_BROWSER = "1"
+          $root = Join-Path $env:RUNNER_TEMP "nutev_smoke"
+          New-Item -ItemType Directory -Force -Path $root | Out-Null
+          $proc = Start-Process -FilePath ".\dist\NutEV.exe" `
+            -ArgumentList @("serve","--project-root",$root,"--host","127.0.0.1","--port","8000") -PassThru
+          try {
+            $ok = $false
+            for ($i = 0; $i -lt 60; $i++) {
+              try { if ((Invoke-RestMethod http://127.0.0.1:8000/api/health -TimeoutSec 2).status -eq "ok") { $ok = $true; break } } catch {}
+              Start-Sleep -Seconds 2
+            }
+            if (-not $ok) { throw "Server never became healthy" }
+            Write-Host "Healthy. Firing offline Play run..."
+            Invoke-RestMethod -Method Post http://127.0.0.1:8000/api/run -ContentType "application/json" -Body '{"workstreams":["busca1"]}' | Out-Null
+            $done = $false
+            for ($i = 0; $i -lt 150; $i++) {
+              if (-not (Invoke-RestMethod http://127.0.0.1:8000/api/run/status).running) { $done = $true; break }
+              Start-Sleep -Seconds 2
+            }
+            if (-not $done) { throw "Pipeline did not finish in time" }
+            $status = Invoke-RestMethod http://127.0.0.1:8000/api/run/status
+            if ($status.returncode -ne 0) { throw "Pipeline returncode = $($status.returncode)" }
+            $summary = Invoke-RestMethod http://127.0.0.1:8000/api/run-summary
+            Write-Host "SMOKE OK: returncode=0 records=$($summary.records) run_status=$($summary.run_status)"
+          }
+          finally {
+            if ($proc -and -not $proc.HasExited) { Stop-Process -Id $proc.Id -Force }
+          }
+
+      - name: Upload exe artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NutEV-windows
+          path: dist/NutEV.exe
+          if-no-files-found: warn
+
+      - name: Attach exe to Release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/NutEV.exe

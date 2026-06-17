@@ -57,7 +57,16 @@ def build_router(project_root: Path) -> APIRouter:
             raise HTTPException(status_code=422, detail=f"Invalid workstreams {invalid}; allowed: {sorted(VALID_WORKSTREAMS)}")
 
         args = [sys.executable, "-m", "nutev", "--project-root", str(project_root), "--workstreams", *workstreams]
+        if getattr(sys, "frozen", False):
+            # Packaged app: sys.executable is the NutEV exe (no '-m'); re-invoke
+            # it with pipeline args, which the app entry routes to the CLI.
+            args = [sys.executable, "--project-root", str(project_root), "--workstreams", *workstreams]
         env = dict(os.environ)
+        if getattr(sys, "frozen", False):
+            # A one-file PyInstaller child must not inherit the parent's
+            # bootloader vars, or it reuses the parent's extraction and fails.
+            for _k in ("_MEIPASS2", "_PYI_APPLICATION_HOME_DIR", "_PYI_ARCHIVE_FILE", "_PYI_PARENT_PROCESS_LEVEL"):
+                env.pop(_k, None)
         if body.web_enabled:
             args.append("--web-enabled")
             env.pop("NUTEV_DISABLE_NETWORK", None)
