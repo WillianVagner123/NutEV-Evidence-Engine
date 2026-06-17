@@ -1,34 +1,203 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NutEV Platform</title>
+  <title>NutEV Monitor</title>
   <style>
-    :root{--bg:#f7faf7;--ink:#14231b;--muted:#607064;--brand:#167a52;--brand2:#77b255;--gold:#d9a441;--line:rgba(20,35,27,.12);--panel:rgba(255,255,255,.88);--shadow:0 24px 70px rgba(22,122,82,.14)}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 10%,rgba(119,178,85,.28),transparent 34rem),radial-gradient(circle at 85% 0%,rgba(217,164,65,.18),transparent 32rem),linear-gradient(135deg,#f7faf7,#eef8f0 55%,#fbf8ed);min-height:100vh} a{text-decoration:none;color:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:0 auto;padding:32px 0 56px}.nav{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:42px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:-.02em}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:#fff;box-shadow:0 12px 30px rgba(22,122,82,.25)}.pill{border:1px solid var(--line);background:rgba(255,255,255,.7);padding:10px 14px;border-radius:999px;color:var(--muted);font-size:14px}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);backdrop-filter:blur(14px)}.hero-main{padding:48px;overflow:hidden;position:relative}.eyebrow{display:inline-flex;color:var(--brand);background:rgba(22,122,82,.1);border:1px solid rgba(22,122,82,.14);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800}h1{font-size:clamp(46px,7vw,82px);line-height:.92;margin:22px 0 18px;letter-spacing:-.07em}.subtitle{font-size:22px;color:var(--brand);font-weight:800}.lead{color:var(--muted);font-size:18px;line-height:1.7;max-width:720px}.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{padding:14px 18px;border-radius:16px;font-weight:850;border:1px solid var(--line);background:#fff;box-shadow:0 10px 24px rgba(20,35,27,.08)}.btn.primary{background:linear-gradient(135deg,var(--brand),#1a9b66);color:#fff;border-color:transparent}.side{padding:26px;display:flex;flex-direction:column;gap:16px}.status{padding:18px;border-radius:22px;background:rgba(255,255,255,.74);border:1px solid var(--line)}.status b{display:block;margin-bottom:6px}.status span{color:var(--muted);font-size:14px;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}.card{background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 14px 40px rgba(20,35,27,.07)}.card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}.icon{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:rgba(22,122,82,.1);color:var(--brand);font-weight:900;margin-bottom:16px}.section{margin-top:26px;padding:30px}.workflow,.safety{display:grid;gap:12px;margin-top:18px}.workflow{grid-template-columns:repeat(6,1fr)}.safety{grid-template-columns:repeat(4,1fr)}.step{padding:14px;border-radius:16px;background:rgba(22,122,82,.08);border:1px solid rgba(22,122,82,.12);text-align:center;font-size:13px;font-weight:800;color:#24513c}.safe{border-left:4px solid var(--brand);background:rgba(255,255,255,.72);padding:16px;border-radius:18px;color:var(--muted)}code{background:rgba(20,35,27,.06);padding:3px 6px;border-radius:7px}footer{text-align:center;color:var(--muted);margin-top:32px;font-size:14px}@media(max-width:900px){.hero,.grid,.workflow,.safety{grid-template-columns:1fr}.hero-main{padding:32px}.nav{align-items:flex-start;flex-direction:column}}
+    :root{--bg:#f7faf7;--ink:#14231b;--muted:#607064;--brand:#167a52;--brand2:#77b255;--gold:#d9a441;--red:#c0392b;--amber:#b9770e;--line:rgba(20,35,27,.12);--panel:rgba(255,255,255,.92);--shadow:0 18px 50px rgba(22,122,82,.12)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 10%,rgba(119,178,85,.22),transparent 34rem),radial-gradient(circle at 85% 0%,rgba(217,164,65,.14),transparent 32rem),linear-gradient(135deg,#f7faf7,#eef8f0 55%,#fbf8ed);min-height:100vh}
+    a{color:var(--brand);text-decoration:none}
+    .wrap{width:min(1240px,calc(100% - 32px));margin:0 auto;padding:20px 0 48px}
+    .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-bottom:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.02em}
+    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 10px 24px rgba(22,122,82,.22)}
+    .controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+    .pill{border:1px solid var(--line);background:rgba(255,255,255,.8);padding:7px 12px;border-radius:999px;color:var(--muted);font-size:13px;display:inline-flex;align-items:center;gap:7px}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--muted);display:inline-block}
+    .dot.ok{background:var(--brand2)} .dot.live{background:#17b06b;box-shadow:0 0 0 0 rgba(23,176,107,.6);animation:pulse 1.4s infinite} .dot.idle{background:var(--gold)} .dot.err{background:var(--red)}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(23,176,107,.55)}70%{box-shadow:0 0 0 9px rgba(23,176,107,0)}100%{box-shadow:0 0 0 0 rgba(23,176,107,0)}}
+    button{font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);padding:7px 12px;border-radius:10px;font-size:13px;font-weight:650}
+    button.on{background:linear-gradient(135deg,var(--brand),#1a9b66);color:#fff;border-color:transparent}
+    select{font:inherit;padding:6px 8px;border-radius:9px;border:1px solid var(--line);background:#fff}
+    .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+    .kpi{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
+    .kpi .k{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .kpi .v{font-size:30px;font-weight:850;line-height:1.1;margin-top:4px;letter-spacing:-.03em}
+    .kpi .s{font-size:12px;color:var(--muted);margin-top:3px}
+    .grid2{display:grid;grid-template-columns:1.55fr 1fr;gap:16px;margin-bottom:16px}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+    .panel h2{margin:0;padding:14px 18px;font-size:15px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .panel .body{padding:14px 18px}
+    .feed{max-height:430px;overflow:auto;padding:8px 10px;font-size:13px}
+    .ev{display:grid;grid-template-columns:64px 14px 1fr;gap:9px;align-items:start;padding:6px 8px;border-radius:9px}
+    .ev:hover{background:rgba(22,122,82,.05)}
+    .ev .t{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+    .ev .b{width:8px;height:8px;border-radius:50%;margin-top:5px;background:var(--brand2)}
+    .ev.warning .b{background:var(--amber)} .ev.error .b{background:var(--red)}
+    .ev .m .stage{font-weight:750}.ev .m .prov{color:var(--brand);font-weight:700}.ev .m .msg{color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:7px}
+    .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:rgba(255,255,255,.7);border-radius:999px;padding:5px 10px;font-size:12px}
+    .bars{display:flex;flex-direction:column;gap:6px;font-size:12.5px}
+    .bar{display:grid;grid-template-columns:118px 1fr 38px;align-items:center;gap:8px}
+    .bar .track{height:9px;border-radius:6px;background:rgba(22,122,82,.1);overflow:hidden}
+    .bar .fill{height:100%;background:linear-gradient(90deg,var(--brand2),var(--brand))}
+    .bar .n{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+    .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+    .tabs button.on{background:linear-gradient(135deg,var(--brand),#1a9b66);color:#fff;border-color:transparent}
+    .tablewrap{overflow:auto;max-height:520px;border-radius:12px;border:1px solid var(--line)}
+    table{border-collapse:collapse;width:100%;font-size:12.5px}
+    th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap;max-width:340px;overflow:hidden;text-overflow:ellipsis}
+    th{position:sticky;top:0;background:#f1f7f2;font-weight:750;z-index:1}
+    tr:hover td{background:rgba(22,122,82,.04)}
+    .muted{color:var(--muted)} .empty{padding:24px;text-align:center;color:var(--muted)}
+    footer{text-align:center;color:var(--muted);margin-top:26px;font-size:13px}
+    @media(max-width:880px){.grid2{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <div class="wrap">
-  <nav class="nav"><div class="brand"><div class="logo">N</div><div>NutEV/NutMEV<br><span style="color:var(--muted);font-size:13px;font-weight:650">Local scientific platform</span></div></div><div><a class="pill" href="/docs">API Docs</a> <a class="pill" href="/api/artifacts">Artifacts</a> <a class="pill" href="/api/run-summary">Run Summary</a></div></nav>
-  <section class="hero">
-    <div class="panel hero-main"><span class="eyebrow">Local-first - auditable - human review</span><h1>NutEV Platform</h1><div class="subtitle">Evidence Engine for Lifestyle Nutrition</div><p class="lead">Plataforma local para transformar evidencias em recomendacoes candidatas auditaveis para o Protocolo Dietetico NutEV.</p><div class="cta"><a class="btn primary" href="/docs">Open API Docs</a><a class="btn" href="/api/evidence">Evidence Matrix</a><a class="btn" href="/api/human-review-queue">Human Review</a><a class="btn" href="/api/methods">Methods</a></div></div>
-    <aside class="panel side"><div class="status"><b>RecommendationCandidate is not final</b><span>Protocol entry requires evidence, claim, quality appraisal, no unresolved conflict and human review.</span></div><div class="status"><b>Control Center</b><span>Run the Streamlit dashboard to inspect matrices, claims and review queues.</span></div><div class="status"><b>Qualification mode</b><span>Use demo data, pilot report and export center to present the methodology.</span></div></aside>
+  <div class="top">
+    <div class="brand"><div class="logo">N</div><div>NutEV Monitor<br><span class="muted" style="font-size:12px;font-weight:600">Local evidence engine — live</span></div></div>
+    <div class="controls">
+      <span class="pill"><span id="healthDot" class="dot"></span><span id="healthText">conectando…</span></span>
+      <span class="pill"><span id="liveDot" class="dot"></span><span id="liveText">—</span></span>
+      <button id="autoBtn" class="on">⏸ Pausar</button>
+      <select id="interval"><option value="2000">2s</option><option value="5000" selected>5s</option><option value="10000">10s</option><option value="30000">30s</option></select>
+      <button id="refreshBtn">↻ Atualizar</button>
+      <a class="pill" href="/docs">API</a>
+      <span class="muted" id="updated"></span>
+    </div>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid2">
+    <section class="panel">
+      <h2>Monitor ao vivo <span class="muted" id="feedMeta" style="font-size:12px;font-weight:500"></span></h2>
+      <div class="feed" id="feed"><div class="empty">Sem eventos ainda. Rode um pipeline neste project-root.</div></div>
+    </section>
+    <section class="panel">
+      <h2>Provedores</h2>
+      <div class="body">
+        <div class="chips" id="providers"><span class="muted">—</span></div>
+        <div style="margin:14px 0 6px;font-weight:700;font-size:13px">Resultados por provedor</div>
+        <div class="bars" id="providerRows"><span class="muted">—</span></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <h2>Dados</h2>
+    <div class="body">
+      <div class="tabs" id="tabs"></div>
+      <div id="tableMeta" class="muted" style="font-size:12px;margin-bottom:8px"></div>
+      <div class="tablewrap"><div id="table"><div class="empty">—</div></div></div>
+    </div>
   </section>
-  <section class="grid">
-    <a class="card" href="/api/evidence"><div class="icon">E</div><h3>Evidence Engine</h3><p>Global evidence matrix, lenses and protocol outputs.</p></a>
-    <a class="card" href="/api/claims"><div class="icon">A</div><h3>Audit Engine</h3><p>Claims, quotes, status and document traceability.</p></a>
-    <a class="card" href="/api/recommendations"><div class="icon">R</div><h3>Recommendation Candidates</h3><p>Candidates linked to supporting claims and documents.</p></a>
-    <a class="card" href="/api/human-review-queue"><div class="icon">H</div><h3>Human Review Queue</h3><p>Items needing validation, adjudication or more evidence.</p></a>
-    <a class="card" href="/api/provider-health"><div class="icon">P</div><h3>Provider Settings</h3><p>Local provider and model status.</p></a>
-    <a class="card" href="/api/run-summary"><div class="icon">S</div><h3>Run Summary</h3><p>Execution and audit metrics.</p></a>
-    <a class="card" href="/api/artifacts"><div class="icon">X</div><h3>Artifacts</h3><p>Generated matrices, reports and logs.</p></a>
-    <a class="card" href="/api/methods"><div class="icon">M</div><h3>Methods</h3><p>Qualification methods preview.</p></a>
-  </section>
-  <section class="panel section"><h2>Evidence-to-protocol workflow</h2><p>The platform preserves documents, claims, evaluations, gaps, conflicts and decisions.</p><div class="workflow"><div class="step">Discovery</div><div class="step">Classification</div><div class="step">Evidence Claims</div><div class="step">Audit</div><div class="step">Human Review</div><div class="step">Protocol Translation</div></div></section>
-  <section class="panel section"><h2>Anti-hallucination safeguards</h2><div class="safety"><div class="safe"><b>No recommendation without document.</b><br>Every candidate needs traceable support.</div><div class="safe"><b>No final approval without human review.</b><br>Final validation remains human.</div><div class="safe"><b>LLM assistive only.</b><br>Models cannot approve protocol items.</div><div class="safe"><b>Local-first platform.</b><br>Default host is 127.0.0.1.</div></div></section>
-  <footer>NutEV/NutMEV - Local scientific platform. Not a substitute for human review.</footer>
+
+  <footer>NutEV/NutMEV — plataforma científica local. Nenhuma recomendação é final sem revisão humana.</footer>
 </div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const fmt = n => (typeof n==="number"? n.toLocaleString("pt-BR") : (n==null?"—":esc(n)));
+async function api(p){ try{ const r=await fetch(p,{cache:"no-store"}); if(!r.ok) return null; return await r.json(); }catch(e){ return null; } }
+const hhmmss = iso => { const d=new Date(iso); return isNaN(d)? "" : d.toLocaleTimeString("pt-BR",{hour12:false}); };
+
+let auto=true, timer=null, intervalMs=5000;
+let eventCursor=0, events=[], lastNewAt=0, lastEventIso=null;
+let activeTab="evidence";
+const TABS=[["evidence","Evidências"],["claims","Claims"],["recommendations","Recomendações"],["human-review-queue","Revisão humana"],["artifacts","Artefatos"]];
+
+function kpi(k,v,s){ return `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${fmt(v)}</div><div class="s">${s||""}</div></div>`; }
+
+async function loadHealth(){
+  const h=await api("/api/health");
+  if(h&&h.status==="ok"){ $("healthDot").className="dot ok"; $("healthText").textContent=(h.project_root||"").split("/").slice(-2).join("/")||"ok"; }
+  else { $("healthDot").className="dot err"; $("healthText").textContent="API offline"; }
+}
+
+async function loadSummary(){
+  const s=await api("/api/run-summary"); const g=$("kpis");
+  if(!s || s.available===false){ g.innerHTML=kpi("Status","sem run","rode o pipeline"); return; }
+  const ws=(s.workstreams||[]).join(", ");
+  g.innerHTML=[
+    kpi("Status", s.run_status||"—", ws?("workstreams: "+esc(ws)):""),
+    kpi("Documentos", s.records, (s.curated_unique_documents!=null? s.curated_unique_documents+" únicos curados":"")),
+    kpi("Claims", s.evidence_claims_total, `${fmt(s.evidence_claims_supported||0)} apoiados · ${fmt(s.evidence_claims_needs_review||0)} p/ revisão`),
+    kpi("Recomendações", s.recommendation_candidates_total, `${fmt(s.recommendation_candidates_ready_review||0)} prontas p/ revisão`),
+    kpi("Conflitos", s.conflicting_evidence_total),
+    kpi("Downloads", (s.downloads_ok||0), `${fmt(s.downloads_ok||0)} ok · ${fmt(s.downloads_failed||0)} falhos`),
+    kpi("Provedores", (s.providers_completed||0)+"/"+(s.providers_started||0), `${fmt(s.providers_empty||0)} vazios · ${fmt(s.providers_failed||0)} falhos`),
+  ].join("");
+  const rows=s.provider_rows||{}; const ent=Object.entries(rows).sort((a,b)=>b[1]-a[1]); const max=Math.max(1,...ent.map(e=>e[1]));
+  $("providerRows").innerHTML = ent.length? ent.map(([k,v])=>`<div class="bar"><span title="${esc(k)}" style="overflow:hidden;text-overflow:ellipsis">${esc(k)}</span><div class="track"><div class="fill" style="width:${Math.round(v/max*100)}%"></div></div><span class="n">${fmt(v)}</span></div>`).join("") : '<span class="muted">—</span>';
+}
+
+async function loadProviders(){
+  const p=await api("/api/provider-health"); const c=$("providers");
+  if(!p||!p.items){ c.innerHTML='<span class="muted">—</span>'; return; }
+  c.innerHTML=p.items.map(it=>{ const ok=it.secret_status==="configured"; return `<span class="chip"><span class="dot ${ok?'ok':''}"></span>${esc(it.provider)} <span class="muted">${esc(it.mode||"")}</span></span>`; }).join("");
+}
+
+function renderFeed(){
+  const f=$("feed");
+  if(!events.length){ f.innerHTML='<div class="empty">Sem eventos ainda. Rode um pipeline neste project-root.</div>'; return; }
+  f.innerHTML=events.map(e=>{
+    const kind=(e.event_kind||"progress");
+    const prov=e.provider? `<span class="prov">${esc(e.provider)}</span> ` : "";
+    return `<div class="ev ${esc(kind)}"><span class="t">${hhmmss(e.event_at)}</span><span class="b"></span><span class="m"><span class="stage">${esc(e.stage||kind)}</span> ${prov}<span class="msg">${esc(e.message||"")}</span></span></div>`;
+  }).join("");
+}
+
+async function loadEvents(){
+  const r=await api("/api/run-events?offset="+eventCursor+"&limit=200");
+  if(!r) return;
+  if((r.total||0) < eventCursor){ events=[]; eventCursor=0; const r2=await api("/api/run-events?offset=0&limit=200"); if(r2){ applyEvents(r2); } return; }
+  applyEvents(r);
+}
+function applyEvents(r){
+  const fresh=r.items||[];
+  if(fresh.length){
+    for(const e of fresh) events.unshift(e);
+    if(events.length>300) events.length=300;
+    lastNewAt=Date.now(); lastEventIso=r.last_event_at||lastEventIso;
+    renderFeed();
+  }
+  eventCursor=r.total||eventCursor;
+  $("feedMeta").textContent = r.run_id? ("run "+r.run_id.slice(-12)+" · "+fmt(r.total)+" eventos") : "";
+  updateLive();
+}
+function updateLive(){
+  const d=$("liveDot"), t=$("liveText"); const sinceNew=Date.now()-lastNewAt;
+  if(lastNewAt && sinceNew<(intervalMs+4000)){ d.className="dot live"; t.textContent="AO VIVO"; }
+  else if(lastEventIso){ const age=(Date.now()-new Date(lastEventIso))/1000; d.className="dot idle"; t.textContent= age<120? "ativo agora" : ("ocioso · último evento "+(age<3600? Math.round(age/60)+"min":"há tempo")); }
+  else { d.className="dot"; t.textContent="sem run"; }
+}
+
+function renderTabs(){ $("tabs").innerHTML=TABS.map(([k,l])=>`<button data-tab="${k}" class="${k===activeTab?'on':''}">${esc(l)}</button>`).join(""); }
+async function loadTab(){
+  const r=await api("/api/"+activeTab+(activeTab.includes("?")?"&":"?")+"limit=25");
+  const meta=$("tableMeta"), box=$("table");
+  if(!r || r.available===false || !(r.items||[]).length){ meta.textContent=""; box.innerHTML='<div class="empty">Sem dados para esta aba ainda.</div>'; return; }
+  const items=r.items; const cols=Object.keys(items[0]).slice(0,9);
+  meta.textContent=`${fmt(r.total)} registros (mostrando ${items.length})`;
+  box.innerHTML=`<table><thead><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${
+    items.map(row=>`<tr>${cols.map(c=>`<td title="${esc(row[c])}">${esc(row[c])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+}
+
+async function tick(){ await Promise.all([loadHealth(),loadSummary(),loadProviders(),loadEvents(),loadTab()]); $("updated").textContent="atualizado "+new Date().toLocaleTimeString("pt-BR",{hour12:false}); }
+function schedule(){ if(timer) clearInterval(timer); if(auto) timer=setInterval(tick,intervalMs); }
+
+$("autoBtn").onclick=()=>{ auto=!auto; $("autoBtn").textContent=auto?"⏸ Pausar":"▶ Retomar"; $("autoBtn").classList.toggle("on",auto); schedule(); };
+$("refreshBtn").onclick=tick;
+$("interval").onchange=e=>{ intervalMs=+e.target.value; schedule(); };
+$("tabs").onclick=e=>{ const b=e.target.closest("button[data-tab]"); if(!b) return; activeTab=b.dataset.tab; renderTabs(); loadTab(); };
+
+renderTabs(); tick(); schedule();
+</script>
 </body>
 </html>

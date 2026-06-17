@@ -86,8 +86,12 @@ nutev serve --project-root ./project_output --host 127.0.0.1 --port 8000   # ext
 
 URLs:
 
-- Dashboard: `http://127.0.0.1:8501`
-- API: `http://127.0.0.1:8000` · docs em `/docs`
+- **Monitor ao vivo: `http://127.0.0.1:8000/`** — painel que acompanha o run em
+  tempo real (feed de eventos via `/api/run-events`, KPIs do `run-summary`,
+  saúde/throughput dos provedores e abas de evidências/claims/recomendações/
+  revisão/artefatos). Auto-atualiza por *polling*; sem dependências de front-end.
+- API: `http://127.0.0.1:8000` · docs interativas em `/docs`
+- Dashboard Streamlit (alternativo): `http://127.0.0.1:8501`
 
 ## Docker
 

@@ -38,6 +38,45 @@ def read_json_safe(path: Path) -> dict:
         return {"available": False, "message": str(e)}
 
 
+def tail_jsonl(path: Path, limit: int, offset: int) -> dict:
+    """Tail a JSONL event log for live monitoring.
+
+    ``offset<=0`` (or beyond EOF — i.e. a fresh run rotated the file) returns the
+    last ``limit`` events. A positive ``offset`` returns events recorded *after*
+    that line, so a client polls with ``?offset=<previous total>`` to stream only
+    what is new. ``total`` is the current line count = the next cursor to use.
+    """
+    safe_limit = max(1, min(int(limit), MAX_PAGE_LIMIT))
+    if not path.exists():
+        return {"available": False, "total": 0, "offset": 0, "items": []}
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except Exception:
+        return {"available": False, "total": 0, "offset": 0, "items": []}
+    total = len(lines)
+    off = int(offset)
+    chunk = lines[off : off + safe_limit] if 0 < off <= total else lines[max(0, total - safe_limit):]
+    items: list[dict] = []
+    for line in chunk:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            items.append(json.loads(line))
+        except Exception:
+            continue
+    last = items[-1] if items else {}
+    return {
+        "available": total > 0,
+        "total": total,
+        "offset": off,
+        "run_id": last.get("run_id"),
+        "last_event_at": last.get("event_at"),
+        "last_stage": last.get("stage"),
+        "items": items,
+    }
+
+
 def read_markdown_safe(path: Path) -> str:
     if not path.exists():
         return ""

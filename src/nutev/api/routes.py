@@ -6,7 +6,7 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import HTMLResponse
 
-from nutev.api.loaders import filter_df, list_artifacts, paginate_df, read_csv_safe, read_json_safe, read_markdown_safe, read_xlsx_safe
+from nutev.api.loaders import filter_df, list_artifacts, paginate_df, read_csv_safe, read_json_safe, read_markdown_safe, read_xlsx_safe, tail_jsonl
 from nutev.api.schemas import HumanReviewDecisionIn
 from nutev.review.human_review import append_human_review_decision, load_human_review_decisions, merge_human_review_decisions
 
@@ -26,6 +26,12 @@ def build_router(project_root: Path) -> APIRouter:
     @r.get("/api/run-summary")
     def run_summary():
         return read_json_safe(project_root / "07_logs" / "run_summary.json")
+
+    @r.get("/api/run-events")
+    def run_events(limit: int = 120, offset: int = 0):
+        # Live monitor feed. Poll with ?offset=<previous total> to stream only
+        # new events as a run progresses (run_events.jsonl is appended live).
+        return tail_jsonl(project_root / "07_logs" / "run_events.jsonl", limit, offset)
 
     @r.get("/api/evidence")
     def evidence(limit: int = 100, offset: int = 0, lens: str | None = None, domain: str | None = None, condition: str | None = None, diet_pattern: str | None = None, outcome: str | None = None):
