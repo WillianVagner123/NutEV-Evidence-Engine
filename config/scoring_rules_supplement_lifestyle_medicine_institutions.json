@@ -1,0 +1,63 @@
+{
+  "version_note": "2026-06 scoring supplement for precise lifestyle medicine nutrition and ACLM institutional records.",
+  "keyword_points": {
+    "lifestyle medicine nutrition": 4,
+    "lifestyle medicine dietary intervention": 4,
+    "lifestyle medicine dietary interventions": 4,
+    "lifestyle medicine nutrition intervention": 4,
+    "lifestyle medicine nutrition interventions": 4,
+    "lifestyle medicine nutrition guideline": 5,
+    "lifestyle medicine nutrition guidelines": 5,
+    "lifestyle medicine position statement": 5,
+    "lifestyle medicine consensus statement": 5,
+    "lifestyle medicine clinical practice guideline": 5,
+    "lifestyle medicine practice guideline": 5,
+    "lifestyle medicine practice recommendation": 5,
+    "lifestyle medicine competencies": 4,
+    "lifestyle medicine core competencies": 4,
+    "american college of lifestyle medicine": 5,
+    "aclm": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "lifestyle medicine nutrition guideline": 6,
+      "lifestyle medicine dietary guideline": 6,
+      "lifestyle medicine position statement nutrition": 6,
+      "american college of lifestyle medicine nutrition": 6,
+      "aclm nutrition": 5,
+      "lifestyle medicine food as medicine guideline": 6
+    },
+    "busca2a": {
+      "lifestyle medicine clinical practice guideline nutrition obesity": 6,
+      "lifestyle medicine position statement cardiometabolic": 6,
+      "lifestyle medicine consensus statement diabetes nutrition": 6,
+      "american college of lifestyle medicine obesity nutrition": 6,
+      "aclm diabetes nutrition": 5,
+      "lifestyle medicine cardiometabolic nutrition guideline": 6
+    },
+    "busca2b": {
+      "lifestyle medicine nutrition intervention obesity trial": 6,
+      "lifestyle medicine dietary intervention cardiometabolic": 6,
+      "lifestyle medicine implementation nutrition": 6,
+      "american college of lifestyle medicine nutrition intervention": 6,
+      "aclm lifestyle intervention nutrition": 5,
+      "lifestyle medicine food as medicine implementation": 6
+    },
+    "a3": {
+      "lifestyle medicine competencies nutrition": 6,
+      "lifestyle medicine core competencies nutrition": 6,
+      "lifestyle medicine competencies food literacy": 6,
+      "american college of lifestyle medicine competencies nutrition": 6,
+      "aclm competencies nutrition": 5,
+      "lifestyle medicine framework nutrition behavior change": 6
+    },
+    "artigo3_framework": {
+      "lifestyle medicine competencies nutrition": 6,
+      "lifestyle medicine core competencies nutrition": 6,
+      "lifestyle medicine competencies food literacy": 6,
+      "american college of lifestyle medicine competencies nutrition": 6,
+      "aclm competencies nutrition": 5,
+      "lifestyle medicine framework nutrition behavior change": 6
+    }
+  }
+}
