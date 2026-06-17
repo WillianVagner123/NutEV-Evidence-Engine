@@ -79,17 +79,26 @@ pip install -e ".[all]"                # tudo
 
 ## Dashboard e API local
 
-### Início rápido (1 comando) — abrir o site e dar "play"
+### Início rápido — abrir o site e dar "play"
+
+**Mais fácil (duplo-clique no arquivo, na raiz do projeto):**
+
+- **Windows:** dê duplo-clique em **`start-nutev.bat`**
+- **macOS:** dê duplo-clique em **`start-nutev.command`** (na 1ª vez: clique com o botão direito → *Abrir*, por causa do Gatekeeper)
+- **Linux:** no terminal, `bash start-nutev.command`
+
+Ou por linha de comando:
 
 ```bash
 bash scripts/run_local_unix.sh        # macOS/Linux
-# Windows PowerShell:  .\scripts\run_local_windows.ps1
+.\scripts\run_local_windows.ps1       # Windows PowerShell
 ```
 
-Instala o necessário, sobe a API e **abre o navegador** em `http://127.0.0.1:8000`.
-Na página, clique em **▶ Rodar pipeline** para executar localmente e acompanhar
-ao vivo (botão **■ Parar** interrompe). Por padrão roda *offline* (fontes locais,
-rápido); marque "buscar na web" para coletar dos provedores online.
+Qualquer um deles instala o necessário (**apenas na 1ª vez**), sobe o servidor e
+**abre o navegador** em `http://127.0.0.1:8000`. Na página, clique em
+**▶ Rodar pipeline** para executar localmente e acompanhar **ao vivo** (botão
+**■ Parar** interrompe). Por padrão roda *offline* (fontes locais, rápido); marque
+"buscar na web" para coletar dos provedores online. Pré-requisito: Python 3.12+.
 
 ```bash
 nutev serve --project-root ./project_output --host 127.0.0.1 --port 8000   # extra [platform]

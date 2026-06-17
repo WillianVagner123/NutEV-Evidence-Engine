@@ -1,16 +1,34 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -eo pipefail  # not -u: venv activate scripts can reference unset vars
 
-# One command to open the NutEV site locally. Then click "▶ Rodar pipeline".
+# Open the NutEV site locally, then click "▶ Rodar pipeline" in the browser.
+# Idempotent: creates the venv + installs only on first run; fast afterwards.
 echo "NutEV/NutMEV — site local"
 
-if [ ! -d ".venv" ]; then
-  python3.12 -m venv .venv
+# Find a usable Python (3.12–3.14).
+PYBIN=""
+for c in python3.12 python3.13 python3.14 python3 python; do
+  if command -v "$c" >/dev/null 2>&1; then PYBIN="$c"; break; fi
+done
+if [ -z "$PYBIN" ]; then
+  echo "Python 3.12+ não encontrado. Instale em https://www.python.org/downloads/" >&2
+  exit 1
 fi
 
+if [ ! -d ".venv" ]; then
+  echo "Criando ambiente .venv (primeira vez)…"
+  "$PYBIN" -m venv .venv
+fi
+# shellcheck disable=SC1091
 source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -e ".[platform]"
+
+# Install only if the CLI isn't there yet (first run / incomplete venv).
+if ! command -v nutev >/dev/null 2>&1; then
+  echo "Instalando dependências (primeira vez, pode demorar um pouco)…"
+  python -m pip install --upgrade pip
+  pip install -e ".[platform]"
+fi
+
 mkdir -p ./project_output
 
 echo ""
