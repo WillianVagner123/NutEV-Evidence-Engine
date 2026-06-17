@@ -2,6 +2,12 @@ from __future__ import annotations
 
 from typing import Any
 
+from nutev.global_watch.watch_semantic_expansions import (
+    apply_global_watch_semantic_expansions,
+)
+
+apply_global_watch_semantic_expansions()
+
 __all__ = ["run_global_watch"]
 
 
