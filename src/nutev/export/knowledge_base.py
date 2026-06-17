@@ -177,7 +177,11 @@ def write_knowledge_base(records: list[dict], kb_dir: Path) -> dict[str, Path]:
         frame.to_parquet(corpus_parquet, index=False)
         paths["corpus_parquet"] = corpus_parquet
     except Exception as exc:  # pragma: no cover - parquet engine optional
-        logger.warning("knowledge base parquet skipped: %s", exc)
+        msg = str(exc).lower()
+        if isinstance(exc, ImportError) or "pyarrow" in msg or "fastparquet" in msg or "usable engine" in msg:
+            logger.info("corpus.parquet skipped (optional) — install nutev-nutmev[kb] to enable it")
+        else:
+            logger.warning("corpus.parquet skipped: %s", str(exc).splitlines()[0])
 
     schema_path = kb_dir / "schema.json"
     schema_path.write_text(

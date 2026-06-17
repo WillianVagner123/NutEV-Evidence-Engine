@@ -62,16 +62,19 @@ ausentes.
 
 | Extra | Instala | Habilita |
 | --- | --- | --- |
-| _(nenhum)_ | núcleo | pipeline, banco (JSONL/CSV), `nutev ask` por TF-IDF |
+| _(nenhum)_ | núcleo (requests, pandas, openpyxl, pypdf, beautifulsoup4…) | **pipeline completo**, tabelas `.xlsx`/`.csv`, banco (JSONL/CSV), `nutev ask` por TF-IDF |
 | `semantic` | sentence-transformers, faiss (puxa torch) | busca semântica no `ask` (senão cai p/ TF-IDF) |
 | `kb` | pyarrow | export `corpus.parquet` (JSONL/CSV sempre funcionam) |
-| `research` | crawl4ai, playwright, datasets, elasticsearch, optuna, weasyprint, unstructured | app `local_deep_research` e crawlers pesados |
-| `all` | tudo acima | — |
+| `ocr` | Pillow, pdf2image, pytesseract, python-docx | extração de PDF escaneado/imagem (requer `tesseract`/`poppler` no SO) |
+| `llm` | langchain-anthropic | backend Anthropic no `ask` (OpenAI precisa só da chave de API) |
+| `dashboard` | streamlit | painel `nutev dashboard` |
+| `platform` | fastapi, uvicorn, jinja2 | API + landing `nutev serve` / `nutev platform` |
+| `all` | semantic+kb+ocr+llm+dashboard+platform | tudo acima |
 
 ```bash
-pip install -e .            # núcleo leve
-pip install -e ".[semantic]" # + busca semântica
-pip install -e ".[all]"      # tudo
+pip install -e .                       # núcleo leve — já roda o pipeline completo
+pip install -e ".[dashboard,platform]" # + painel e API local
+pip install -e ".[all]"                # tudo
 ```
 
 ## Dashboard e API local
