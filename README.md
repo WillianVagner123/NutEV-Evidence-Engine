@@ -89,6 +89,21 @@ URLs:
 - Dashboard: `http://127.0.0.1:8501`
 - API: `http://127.0.0.1:8000` · docs em `/docs`
 
+## Docker
+
+Imagem enxuta (CLI + API FastAPI; substitui a antiga stack `local-deep-research`
++ ollama + searxng). O serviço padrão sobe a API em `http://localhost:8000`
+(docs em `/docs`); os resultados persistem em `./data` no host.
+
+```bash
+docker compose up -d --build                                            # sobe a API
+docker compose run --rm nutev --project-root /data --workstreams busca1 # pipeline
+docker compose run --rm nutev ask --project-root /data "..."            # consulta o KB
+```
+
+Extras no build: `docker build --build-arg EXTRAS="all" .` (semântico+OCR+LLM+UI).
+O extra `ocr` também precisa de `tesseract`/`poppler` no SO (veja o `Dockerfile`).
+
 ## Primeiro piloto real
 
 ```bash

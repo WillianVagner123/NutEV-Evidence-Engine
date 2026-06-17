@@ -1,0 +1,22 @@
+# Keep the build context small — the image only needs pyproject/README/LICENSE,
+# src/ and config/ (see Dockerfile).
+.git
+.github
+.venv*
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.pdm-build
+node_modules
+data
+docs
+nutev_tests
+community_benchmark_results
+unraid-templates
+cookiecutter-docker
+scripts
+*.log
+pdm.lock
+package-lock.json
