@@ -1,0 +1,154 @@
+{
+  "version_note": "Focused NutMEV supplement for food environment, healthy food access and retail implementation terms. Loaded after keyword_taxonomy.json without replacing base terms.",
+  "global": {
+    "implementation_behavior": {
+      "food_environment_access": [
+        "food environment intervention",
+        "food environment policy",
+        "food access policy",
+        "food access program",
+        "healthy food access program",
+        "healthy food access intervention",
+        "healthy food retail",
+        "healthy food retail intervention",
+        "food retail intervention",
+        "grocery store intervention",
+        "supermarket intervention",
+        "corner store intervention",
+        "healthy corner store",
+        "healthy corner store intervention",
+        "retail food environment intervention",
+        "food affordability intervention",
+        "healthy food affordability",
+        "healthy food subsidy",
+        "fruit and vegetable subsidy",
+        "produce subsidy",
+        "food purchasing behavior",
+        "food purchasing behaviour",
+        "healthy food purchasing",
+        "food choice architecture",
+        "choice architecture intervention",
+        "nutrition nudges",
+        "healthy checkout",
+        "healthy retail checkout",
+        "default healthy options",
+        "healthy menu intervention",
+        "menu labeling intervention",
+        "menu labelling intervention",
+        "front-of-pack labeling policy",
+        "front-of-pack labelling policy",
+        "healthy food procurement policy",
+        "institutional food procurement",
+        "public food procurement",
+        "school food environment",
+        "workplace food environment",
+        "community food environment"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food environment intervention",
+      "food environment policy",
+      "healthy food retail intervention",
+      "retail food environment intervention",
+      "grocery store intervention",
+      "supermarket intervention",
+      "corner store intervention",
+      "healthy corner store intervention",
+      "food affordability intervention",
+      "healthy food subsidy",
+      "fruit and vegetable subsidy",
+      "produce subsidy",
+      "food choice architecture",
+      "choice architecture intervention",
+      "nutrition nudges",
+      "healthy checkout",
+      "healthy food procurement policy",
+      "institutional food procurement",
+      "public food procurement"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food environment policy",
+        "food access policy",
+        "healthy food access program",
+        "healthy food retail",
+        "healthy food retail intervention",
+        "food retail intervention",
+        "healthy corner store intervention",
+        "food affordability intervention",
+        "healthy food subsidy",
+        "fruit and vegetable subsidy",
+        "produce subsidy",
+        "healthy food procurement policy",
+        "institutional food procurement",
+        "public food procurement"
+      ],
+      "web_query_hints": [
+        "food environment policy report",
+        "healthy food retail intervention report",
+        "healthy food access program report",
+        "healthy corner store intervention report",
+        "food affordability intervention report",
+        "healthy food procurement policy report",
+        "institutional food procurement guideline",
+        "public food procurement guideline"
+      ],
+      "document_terms": [
+        "policy evaluation",
+        "implementation report",
+        "program evaluation",
+        "technical report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food environment intervention",
+        "healthy food retail intervention",
+        "grocery store intervention",
+        "supermarket intervention",
+        "corner store intervention",
+        "healthy corner store intervention",
+        "food affordability intervention",
+        "healthy food subsidy",
+        "fruit and vegetable subsidy",
+        "produce subsidy",
+        "food purchasing behavior",
+        "food purchasing behaviour",
+        "healthy food purchasing",
+        "food choice architecture",
+        "choice architecture intervention",
+        "nutrition nudges",
+        "healthy checkout",
+        "healthy retail checkout",
+        "healthy menu intervention",
+        "menu labeling intervention",
+        "menu labelling intervention"
+      ],
+      "web_query_hints": [
+        "healthy food retail intervention trial",
+        "healthy food retail intervention systematic review",
+        "grocery store intervention cardiometabolic trial",
+        "supermarket intervention healthy food purchasing",
+        "healthy corner store intervention obesity",
+        "food affordability intervention cardiometabolic",
+        "fruit and vegetable subsidy trial",
+        "produce subsidy intervention",
+        "food choice architecture nutrition trial",
+        "nutrition nudges healthy food purchasing",
+        "menu labeling intervention systematic review"
+      ],
+      "document_terms": [
+        "policy evaluation",
+        "natural experiment",
+        "quasi-experimental study",
+        "implementation evaluation",
+        "pragmatic trial",
+        "systematic review"
+      ]
+    }
+  }
+}
