@@ -64,6 +64,10 @@ def main() -> None:
     build_kb = sub.add_parser("build-kb", help="(Re)build the knowledge base from metadata_master.csv")
     build_kb.add_argument("--project-root", type=Path, required=True)
 
+    tax = sub.add_parser("taxonomy", help="Manage the single-source-of-truth taxonomy (config/taxonomy.json)")
+    tax.add_argument("action", choices=["validate", "build", "list"], help="validate, regenerate derived files, or list concepts")
+    tax.add_argument("--config-root", type=Path, default=None, help="Config dir (default: bundled config/)")
+
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
     p.add_argument("--web-enabled", action="store_true")
@@ -167,6 +171,29 @@ def main() -> None:
         path = write_prize_metrics_summary(args.project_root)
         print(f"Prize metrics generated: {path}")
         print(f"Prize metrics text: {path.with_suffix('.txt')}")
+        return
+
+    if args.command == "taxonomy":
+        from nutev.settings import default_config_root
+        from nutev.taxonomy import build_all, concept_summary, load_taxonomy, validate_taxonomy
+
+        config_root = args.config_root or default_config_root()
+        if args.action == "validate":
+            errors = validate_taxonomy(load_taxonomy(config_root))
+            if errors:
+                print("taxonomy.json is INVALID:")
+                for err in errors:
+                    print(f"  - {err}")
+                raise SystemExit(1)
+            print(f"taxonomy.json is valid ({config_root})")
+        elif args.action == "build":
+            written = build_all(config_root)
+            print("Regenerated from taxonomy.json:")
+            for name, path in written.items():
+                print(f"  {name}: {path}")
+        else:  # list
+            for ctype, ids in concept_summary(load_taxonomy(config_root)).items():
+                print(f"{ctype} ({len(ids)}): {', '.join(ids)}")
         return
 
     if args.command == "build-kb":

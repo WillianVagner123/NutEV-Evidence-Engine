@@ -1,11 +1,51 @@
 {
   "_comment": "Multilingual lexicon for worldwide, language-independent retrieval. Each concept lists synonyms per language so queries capture documents written in any of these languages. 'mesh' holds the language-independent MeSH descriptor for PubMed concept queries. Edit/extend freely; the file is hashed in the reproducibility report.",
-  "languages": ["en", "pt", "es", "fr", "de", "it", "zh", "ja", "ru", "ar"],
+  "languages": [
+    "en",
+    "pt",
+    "es",
+    "fr",
+    "de",
+    "it",
+    "zh",
+    "ja",
+    "ru",
+    "ar"
+  ],
   "concept_groups": {
-    "conditions": ["type 2 diabetes", "obesity", "hypertension", "cardiovascular disease", "chronic kidney disease", "metabolic syndrome", "non-alcoholic fatty liver disease", "dyslipidemia"],
-    "diets": ["mediterranean diet", "plant-based diet", "vegetarian diet", "dash diet", "low-carbohydrate diet", "healthy diet", "caloric restriction"],
-    "outcomes": ["glycemic control", "weight loss", "blood pressure", "cholesterol", "cardiovascular risk"],
-    "doc_types": ["systematic review", "meta-analysis", "randomized controlled trial", "clinical trial", "guideline"]
+    "conditions": [
+      "type 2 diabetes",
+      "obesity",
+      "hypertension",
+      "cardiovascular disease",
+      "chronic kidney disease",
+      "metabolic syndrome",
+      "non-alcoholic fatty liver disease",
+      "dyslipidemia"
+    ],
+    "diets": [
+      "mediterranean diet",
+      "plant-based diet",
+      "vegetarian diet",
+      "dash diet",
+      "low-carbohydrate diet",
+      "healthy diet",
+      "caloric restriction"
+    ],
+    "outcomes": [
+      "glycemic control",
+      "weight loss",
+      "blood pressure",
+      "cholesterol",
+      "cardiovascular risk"
+    ],
+    "doc_types": [
+      "systematic review",
+      "meta-analysis",
+      "randomized controlled trial",
+      "clinical trial",
+      "guideline"
+    ]
   },
   "mesh": {
     "type 2 diabetes": "Diabetes Mellitus, Type 2",
@@ -35,304 +75,1023 @@
   },
   "concepts": {
     "type 2 diabetes": {
-      "en": ["type 2 diabetes", "type 2 diabetes mellitus"],
-      "pt": ["diabetes tipo 2", "diabetes mellitus tipo 2"],
-      "es": ["diabetes tipo 2", "diabetes mellitus tipo 2"],
-      "fr": ["diabète de type 2", "diabète sucré de type 2"],
-      "de": ["Typ-2-Diabetes", "Diabetes mellitus Typ 2"],
-      "it": ["diabete di tipo 2", "diabete mellito di tipo 2"],
-      "zh": ["2型糖尿病", "II型糖尿病"],
-      "ja": ["2型糖尿病"],
-      "ru": ["сахарный диабет 2 типа", "диабет 2 типа"],
-      "ar": ["داء السكري من النوع الثاني", "السكري من النوع 2"]
+      "en": [
+        "type 2 diabetes",
+        "type 2 diabetes mellitus"
+      ],
+      "pt": [
+        "diabetes tipo 2",
+        "diabetes mellitus tipo 2"
+      ],
+      "es": [
+        "diabetes tipo 2",
+        "diabetes mellitus tipo 2"
+      ],
+      "fr": [
+        "diabète de type 2",
+        "diabète sucré de type 2"
+      ],
+      "de": [
+        "Typ-2-Diabetes",
+        "Diabetes mellitus Typ 2"
+      ],
+      "it": [
+        "diabete di tipo 2",
+        "diabete mellito di tipo 2"
+      ],
+      "zh": [
+        "2型糖尿病",
+        "II型糖尿病"
+      ],
+      "ja": [
+        "2型糖尿病"
+      ],
+      "ru": [
+        "сахарный диабет 2 типа",
+        "диабет 2 типа"
+      ],
+      "ar": [
+        "داء السكري من النوع الثاني",
+        "السكري من النوع 2"
+      ]
     },
     "obesity": {
-      "en": ["obesity", "overweight"],
-      "pt": ["obesidade", "sobrepeso"],
-      "es": ["obesidad", "sobrepeso"],
-      "fr": ["obésité", "surpoids"],
-      "de": ["Adipositas", "Fettleibigkeit", "Übergewicht"],
-      "it": ["obesità", "sovrappeso"],
-      "zh": ["肥胖", "超重"],
-      "ja": ["肥満", "過体重"],
-      "ru": ["ожирение", "избыточная масса тела"],
-      "ar": ["السمنة", "زيادة الوزن"]
+      "en": [
+        "obesity",
+        "overweight"
+      ],
+      "pt": [
+        "obesidade",
+        "sobrepeso"
+      ],
+      "es": [
+        "obesidad",
+        "sobrepeso"
+      ],
+      "fr": [
+        "obésité",
+        "surpoids"
+      ],
+      "de": [
+        "Adipositas",
+        "Fettleibigkeit",
+        "Übergewicht"
+      ],
+      "it": [
+        "obesità",
+        "sovrappeso"
+      ],
+      "zh": [
+        "肥胖",
+        "超重"
+      ],
+      "ja": [
+        "肥満",
+        "過体重"
+      ],
+      "ru": [
+        "ожирение",
+        "избыточная масса тела"
+      ],
+      "ar": [
+        "السمنة",
+        "زيادة الوزن"
+      ]
     },
     "hypertension": {
-      "en": ["hypertension", "high blood pressure"],
-      "pt": ["hipertensão", "hipertensão arterial", "pressão alta"],
-      "es": ["hipertensión", "hipertensión arterial", "presión alta"],
-      "fr": ["hypertension", "hypertension artérielle"],
-      "de": ["Bluthochdruck", "arterielle Hypertonie", "Hypertonie"],
-      "it": ["ipertensione", "ipertensione arteriosa"],
-      "zh": ["高血压"],
-      "ja": ["高血圧", "高血圧症"],
-      "ru": ["артериальная гипертензия", "гипертония"],
-      "ar": ["ارتفاع ضغط الدم", "فرط ضغط الدم"]
+      "en": [
+        "hypertension",
+        "high blood pressure"
+      ],
+      "pt": [
+        "hipertensão",
+        "hipertensão arterial",
+        "pressão alta"
+      ],
+      "es": [
+        "hipertensión",
+        "hipertensión arterial",
+        "presión alta"
+      ],
+      "fr": [
+        "hypertension",
+        "hypertension artérielle"
+      ],
+      "de": [
+        "Bluthochdruck",
+        "arterielle Hypertonie",
+        "Hypertonie"
+      ],
+      "it": [
+        "ipertensione",
+        "ipertensione arteriosa"
+      ],
+      "zh": [
+        "高血压"
+      ],
+      "ja": [
+        "高血圧",
+        "高血圧症"
+      ],
+      "ru": [
+        "артериальная гипертензия",
+        "гипертония"
+      ],
+      "ar": [
+        "ارتفاع ضغط الدم",
+        "فرط ضغط الدم"
+      ]
     },
     "cardiovascular disease": {
-      "en": ["cardiovascular disease", "cardiovascular diseases"],
-      "pt": ["doença cardiovascular", "doenças cardiovasculares"],
-      "es": ["enfermedad cardiovascular", "enfermedades cardiovasculares"],
-      "fr": ["maladie cardiovasculaire", "maladies cardiovasculaires"],
-      "de": ["Herz-Kreislauf-Erkrankung", "kardiovaskuläre Erkrankungen"],
-      "it": ["malattia cardiovascolare", "malattie cardiovascolari"],
-      "zh": ["心血管疾病"],
-      "ja": ["心血管疾患", "循環器疾患"],
-      "ru": ["сердечно-сосудистые заболевания"],
-      "ar": ["أمراض القلب والأوعية الدموية", "الأمراض القلبية الوعائية"]
+      "en": [
+        "cardiovascular disease",
+        "cardiovascular diseases"
+      ],
+      "pt": [
+        "doença cardiovascular",
+        "doenças cardiovasculares"
+      ],
+      "es": [
+        "enfermedad cardiovascular",
+        "enfermedades cardiovasculares"
+      ],
+      "fr": [
+        "maladie cardiovasculaire",
+        "maladies cardiovasculaires"
+      ],
+      "de": [
+        "Herz-Kreislauf-Erkrankung",
+        "kardiovaskuläre Erkrankungen"
+      ],
+      "it": [
+        "malattia cardiovascolare",
+        "malattie cardiovascolari"
+      ],
+      "zh": [
+        "心血管疾病"
+      ],
+      "ja": [
+        "心血管疾患",
+        "循環器疾患"
+      ],
+      "ru": [
+        "сердечно-сосудистые заболевания"
+      ],
+      "ar": [
+        "أمراض القلب والأوعية الدموية",
+        "الأمراض القلبية الوعائية"
+      ]
     },
     "chronic kidney disease": {
-      "en": ["chronic kidney disease", "chronic renal disease"],
-      "pt": ["doença renal crônica", "insuficiência renal crônica"],
-      "es": ["enfermedad renal crónica", "insuficiencia renal crónica"],
-      "fr": ["maladie rénale chronique", "insuffisance rénale chronique"],
-      "de": ["chronische Nierenerkrankung", "chronische Niereninsuffizienz"],
-      "it": ["malattia renale cronica", "insufficienza renale cronica"],
-      "zh": ["慢性肾脏病", "慢性肾病"],
-      "ja": ["慢性腎臓病", "慢性腎不全"],
-      "ru": ["хроническая болезнь почек", "хроническая почечная недостаточность"],
-      "ar": ["مرض الكلى المزمن", "القصور الكلوي المزمن"]
+      "en": [
+        "chronic kidney disease",
+        "chronic renal disease"
+      ],
+      "pt": [
+        "doença renal crônica",
+        "insuficiência renal crônica"
+      ],
+      "es": [
+        "enfermedad renal crónica",
+        "insuficiencia renal crónica"
+      ],
+      "fr": [
+        "maladie rénale chronique",
+        "insuffisance rénale chronique"
+      ],
+      "de": [
+        "chronische Nierenerkrankung",
+        "chronische Niereninsuffizienz"
+      ],
+      "it": [
+        "malattia renale cronica",
+        "insufficienza renale cronica"
+      ],
+      "zh": [
+        "慢性肾脏病",
+        "慢性肾病"
+      ],
+      "ja": [
+        "慢性腎臓病",
+        "慢性腎不全"
+      ],
+      "ru": [
+        "хроническая болезнь почек",
+        "хроническая почечная недостаточность"
+      ],
+      "ar": [
+        "مرض الكلى المزمن",
+        "القصور الكلوي المزمن"
+      ]
     },
     "metabolic syndrome": {
-      "en": ["metabolic syndrome"],
-      "pt": ["síndrome metabólica"],
-      "es": ["síndrome metabólico"],
-      "fr": ["syndrome métabolique"],
-      "de": ["metabolisches Syndrom"],
-      "it": ["sindrome metabolica"],
-      "zh": ["代谢综合征"],
-      "ja": ["代謝症候群", "メタボリックシンドローム"],
-      "ru": ["метаболический синдром"],
-      "ar": ["متلازمة التمثيل الغذائي", "المتلازمة الأيضية"]
+      "en": [
+        "metabolic syndrome"
+      ],
+      "pt": [
+        "síndrome metabólica"
+      ],
+      "es": [
+        "síndrome metabólico"
+      ],
+      "fr": [
+        "syndrome métabolique"
+      ],
+      "de": [
+        "metabolisches Syndrom"
+      ],
+      "it": [
+        "sindrome metabolica"
+      ],
+      "zh": [
+        "代谢综合征"
+      ],
+      "ja": [
+        "代謝症候群",
+        "メタボリックシンドローム"
+      ],
+      "ru": [
+        "метаболический синдром"
+      ],
+      "ar": [
+        "متلازمة التمثيل الغذائي",
+        "المتلازمة الأيضية"
+      ]
     },
     "non-alcoholic fatty liver disease": {
-      "en": ["non-alcoholic fatty liver disease", "NAFLD", "MASLD", "fatty liver"],
-      "pt": ["doença hepática gordurosa não alcoólica", "esteatose hepática"],
-      "es": ["enfermedad del hígado graso no alcohólico", "esteatosis hepática"],
-      "fr": ["stéatose hépatique non alcoolique", "maladie du foie gras non alcoolique"],
-      "de": ["nichtalkoholische Fettlebererkrankung", "Fettleber"],
-      "it": ["steatosi epatica non alcolica", "malattia del fegato grasso non alcolica"],
-      "zh": ["非酒精性脂肪性肝病", "脂肪肝"],
-      "ja": ["非アルコール性脂肪性肝疾患", "脂肪肝"],
-      "ru": ["неалкогольная жировая болезнь печени", "жировой гепатоз"],
-      "ar": ["مرض الكبد الدهني غير الكحولي", "الكبد الدهني"]
+      "en": [
+        "non-alcoholic fatty liver disease",
+        "NAFLD",
+        "MASLD",
+        "fatty liver"
+      ],
+      "pt": [
+        "doença hepática gordurosa não alcoólica",
+        "esteatose hepática"
+      ],
+      "es": [
+        "enfermedad del hígado graso no alcohólico",
+        "esteatosis hepática"
+      ],
+      "fr": [
+        "stéatose hépatique non alcoolique",
+        "maladie du foie gras non alcoolique"
+      ],
+      "de": [
+        "nichtalkoholische Fettlebererkrankung",
+        "Fettleber"
+      ],
+      "it": [
+        "steatosi epatica non alcolica",
+        "malattia del fegato grasso non alcolica"
+      ],
+      "zh": [
+        "非酒精性脂肪性肝病",
+        "脂肪肝"
+      ],
+      "ja": [
+        "非アルコール性脂肪性肝疾患",
+        "脂肪肝"
+      ],
+      "ru": [
+        "неалкогольная жировая болезнь печени",
+        "жировой гепатоз"
+      ],
+      "ar": [
+        "مرض الكبد الدهني غير الكحولي",
+        "الكبد الدهني"
+      ]
     },
     "dyslipidemia": {
-      "en": ["dyslipidemia", "dyslipidaemia"],
-      "pt": ["dislipidemia"],
-      "es": ["dislipidemia"],
-      "fr": ["dyslipidémie"],
-      "de": ["Dyslipidämie", "Fettstoffwechselstörung"],
-      "it": ["dislipidemia"],
-      "zh": ["血脂异常"],
-      "ja": ["脂質異常症"],
-      "ru": ["дислипидемия"],
-      "ar": ["اضطراب شحميات الدم", "خلل شحوم الدم"]
+      "en": [
+        "dyslipidemia",
+        "dyslipidaemia"
+      ],
+      "pt": [
+        "dislipidemia"
+      ],
+      "es": [
+        "dislipidemia"
+      ],
+      "fr": [
+        "dyslipidémie"
+      ],
+      "de": [
+        "Dyslipidämie",
+        "Fettstoffwechselstörung"
+      ],
+      "it": [
+        "dislipidemia"
+      ],
+      "zh": [
+        "血脂异常"
+      ],
+      "ja": [
+        "脂質異常症"
+      ],
+      "ru": [
+        "дислипидемия"
+      ],
+      "ar": [
+        "اضطراب شحميات الدم",
+        "خلل شحوم الدم"
+      ]
     },
     "mediterranean diet": {
-      "en": ["mediterranean diet", "mediterranean dietary pattern"],
-      "pt": ["dieta mediterrânea", "padrão alimentar mediterrâneo"],
-      "es": ["dieta mediterránea", "patrón dietético mediterráneo"],
-      "fr": ["régime méditerranéen", "alimentation méditerranéenne"],
-      "de": ["mediterrane Ernährung", "Mittelmeerdiät"],
-      "it": ["dieta mediterranea"],
-      "zh": ["地中海饮食", "地中海膳食"],
-      "ja": ["地中海食", "地中海式食事"],
-      "ru": ["средиземноморская диета"],
-      "ar": ["حمية البحر الأبيض المتوسط", "النظام الغذائي المتوسطي"]
+      "en": [
+        "mediterranean diet",
+        "mediterranean dietary pattern"
+      ],
+      "pt": [
+        "dieta mediterrânea",
+        "padrão alimentar mediterrâneo"
+      ],
+      "es": [
+        "dieta mediterránea",
+        "patrón dietético mediterráneo"
+      ],
+      "fr": [
+        "régime méditerranéen",
+        "alimentation méditerranéenne"
+      ],
+      "de": [
+        "mediterrane Ernährung",
+        "Mittelmeerdiät"
+      ],
+      "it": [
+        "dieta mediterranea"
+      ],
+      "zh": [
+        "地中海饮食",
+        "地中海膳食"
+      ],
+      "ja": [
+        "地中海食",
+        "地中海式食事"
+      ],
+      "ru": [
+        "средиземноморская диета"
+      ],
+      "ar": [
+        "حمية البحر الأبيض المتوسط",
+        "النظام الغذائي المتوسطي"
+      ]
     },
     "plant-based diet": {
-      "en": ["plant-based diet", "plant based diet"],
-      "pt": ["dieta baseada em plantas", "dieta à base de plantas", "alimentação vegetal"],
-      "es": ["dieta basada en plantas", "dieta a base de plantas"],
-      "fr": ["régime à base de plantes", "alimentation végétale"],
-      "de": ["pflanzenbasierte Ernährung", "pflanzliche Ernährung"],
-      "it": ["dieta a base vegetale", "alimentazione vegetale"],
-      "zh": ["植物性饮食", "植物为主饮食"],
-      "ja": ["植物性食事", "プラントベース食"],
-      "ru": ["растительная диета", "растительное питание"],
-      "ar": ["نظام غذائي نباتي", "حمية نباتية"]
+      "en": [
+        "plant-based diet",
+        "plant based diet"
+      ],
+      "pt": [
+        "dieta baseada em plantas",
+        "dieta à base de plantas",
+        "alimentação vegetal"
+      ],
+      "es": [
+        "dieta basada en plantas",
+        "dieta a base de plantas"
+      ],
+      "fr": [
+        "régime à base de plantes",
+        "alimentation végétale"
+      ],
+      "de": [
+        "pflanzenbasierte Ernährung",
+        "pflanzliche Ernährung"
+      ],
+      "it": [
+        "dieta a base vegetale",
+        "alimentazione vegetale"
+      ],
+      "zh": [
+        "植物性饮食",
+        "植物为主饮食"
+      ],
+      "ja": [
+        "植物性食事",
+        "プラントベース食"
+      ],
+      "ru": [
+        "растительная диета",
+        "растительное питание"
+      ],
+      "ar": [
+        "نظام غذائي نباتي",
+        "حمية نباتية"
+      ]
     },
     "vegetarian diet": {
-      "en": ["vegetarian diet", "vegan diet"],
-      "pt": ["dieta vegetariana", "dieta vegana"],
-      "es": ["dieta vegetariana", "dieta vegana"],
-      "fr": ["régime végétarien", "régime végétalien"],
-      "de": ["vegetarische Ernährung", "vegane Ernährung"],
-      "it": ["dieta vegetariana", "dieta vegana"],
-      "zh": ["素食", "纯素饮食"],
-      "ja": ["菜食", "ベジタリアン食", "ヴィーガン"],
-      "ru": ["вегетарианская диета", "веганская диета"],
-      "ar": ["نظام غذائي نباتي", "حمية نباتية صرفة"]
+      "en": [
+        "vegetarian diet",
+        "vegan diet"
+      ],
+      "pt": [
+        "dieta vegetariana",
+        "dieta vegana"
+      ],
+      "es": [
+        "dieta vegetariana",
+        "dieta vegana"
+      ],
+      "fr": [
+        "régime végétarien",
+        "régime végétalien"
+      ],
+      "de": [
+        "vegetarische Ernährung",
+        "vegane Ernährung"
+      ],
+      "it": [
+        "dieta vegetariana",
+        "dieta vegana"
+      ],
+      "zh": [
+        "素食",
+        "纯素饮食"
+      ],
+      "ja": [
+        "菜食",
+        "ベジタリアン食",
+        "ヴィーガン"
+      ],
+      "ru": [
+        "вегетарианская диета",
+        "веганская диета"
+      ],
+      "ar": [
+        "نظام غذائي نباتي",
+        "حمية نباتية صرفة"
+      ]
     },
     "dash diet": {
-      "en": ["DASH diet", "dietary approaches to stop hypertension"],
-      "pt": ["dieta DASH"],
-      "es": ["dieta DASH"],
-      "fr": ["régime DASH"],
-      "de": ["DASH-Diät"],
-      "it": ["dieta DASH"],
-      "zh": ["得舒饮食", "DASH饮食"],
-      "ja": ["DASH食"],
-      "ru": ["диета DASH"],
-      "ar": ["حمية داش", "نظام داش الغذائي"]
+      "en": [
+        "DASH diet",
+        "dietary approaches to stop hypertension"
+      ],
+      "pt": [
+        "dieta DASH"
+      ],
+      "es": [
+        "dieta DASH"
+      ],
+      "fr": [
+        "régime DASH"
+      ],
+      "de": [
+        "DASH-Diät"
+      ],
+      "it": [
+        "dieta DASH"
+      ],
+      "zh": [
+        "得舒饮食",
+        "DASH饮食"
+      ],
+      "ja": [
+        "DASH食"
+      ],
+      "ru": [
+        "диета DASH"
+      ],
+      "ar": [
+        "حمية داش",
+        "نظام داش الغذائي"
+      ]
     },
     "low-carbohydrate diet": {
-      "en": ["low-carbohydrate diet", "low carb diet", "ketogenic diet"],
-      "pt": ["dieta com baixo teor de carboidratos", "dieta low carb", "dieta cetogênica"],
-      "es": ["dieta baja en carbohidratos", "dieta cetogénica"],
-      "fr": ["régime pauvre en glucides", "régime cétogène"],
-      "de": ["kohlenhydratarme Ernährung", "Low-Carb-Diät", "ketogene Diät"],
-      "it": ["dieta a basso contenuto di carboidrati", "dieta chetogenica"],
-      "zh": ["低碳水化合物饮食", "生酮饮食"],
-      "ja": ["低炭水化物食", "低糖質食", "ケトジェニックダイエット"],
-      "ru": ["низкоуглеводная диета", "кетогенная диета"],
-      "ar": ["نظام غذائي منخفض الكربوهيدرات", "الحمية الكيتونية"]
+      "en": [
+        "low-carbohydrate diet",
+        "low carb diet",
+        "ketogenic diet"
+      ],
+      "pt": [
+        "dieta com baixo teor de carboidratos",
+        "dieta low carb",
+        "dieta cetogênica"
+      ],
+      "es": [
+        "dieta baja en carbohidratos",
+        "dieta cetogénica"
+      ],
+      "fr": [
+        "régime pauvre en glucides",
+        "régime cétogène"
+      ],
+      "de": [
+        "kohlenhydratarme Ernährung",
+        "Low-Carb-Diät",
+        "ketogene Diät"
+      ],
+      "it": [
+        "dieta a basso contenuto di carboidrati",
+        "dieta chetogenica"
+      ],
+      "zh": [
+        "低碳水化合物饮食",
+        "生酮饮食"
+      ],
+      "ja": [
+        "低炭水化物食",
+        "低糖質食",
+        "ケトジェニックダイエット"
+      ],
+      "ru": [
+        "низкоуглеводная диета",
+        "кетогенная диета"
+      ],
+      "ar": [
+        "نظام غذائي منخفض الكربوهيدرات",
+        "الحمية الكيتونية"
+      ]
     },
     "healthy diet": {
-      "en": ["healthy diet", "dietary pattern", "healthy eating"],
-      "pt": ["dieta saudável", "padrão alimentar", "alimentação saudável"],
-      "es": ["dieta saludable", "patrón alimentario", "alimentación saludable"],
-      "fr": ["alimentation saine", "régime alimentaire", "habitudes alimentaires"],
-      "de": ["gesunde Ernährung", "Ernährungsmuster"],
-      "it": ["dieta sana", "modello alimentare", "alimentazione sana"],
-      "zh": ["健康饮食", "膳食模式"],
-      "ja": ["健康的な食事", "食事パターン"],
-      "ru": ["здоровое питание", "характер питания"],
-      "ar": ["نظام غذائي صحي", "النمط الغذائي", "التغذية الصحية"]
+      "en": [
+        "healthy diet",
+        "dietary pattern",
+        "healthy eating"
+      ],
+      "pt": [
+        "dieta saudável",
+        "padrão alimentar",
+        "alimentação saudável"
+      ],
+      "es": [
+        "dieta saludable",
+        "patrón alimentario",
+        "alimentación saludable"
+      ],
+      "fr": [
+        "alimentation saine",
+        "régime alimentaire",
+        "habitudes alimentaires"
+      ],
+      "de": [
+        "gesunde Ernährung",
+        "Ernährungsmuster"
+      ],
+      "it": [
+        "dieta sana",
+        "modello alimentare",
+        "alimentazione sana"
+      ],
+      "zh": [
+        "健康饮食",
+        "膳食模式"
+      ],
+      "ja": [
+        "健康的な食事",
+        "食事パターン"
+      ],
+      "ru": [
+        "здоровое питание",
+        "характер питания"
+      ],
+      "ar": [
+        "نظام غذائي صحي",
+        "النمط الغذائي",
+        "التغذية الصحية"
+      ]
     },
     "caloric restriction": {
-      "en": ["caloric restriction", "calorie restriction", "energy restriction"],
-      "pt": ["restrição calórica", "restrição energética"],
-      "es": ["restricción calórica", "restricción energética"],
-      "fr": ["restriction calorique", "restriction énergétique"],
-      "de": ["Kalorienrestriktion", "Energierestriktion"],
-      "it": ["restrizione calorica", "restrizione energetica"],
-      "zh": ["热量限制", "能量限制"],
-      "ja": ["カロリー制限", "エネルギー制限"],
-      "ru": ["ограничение калорий", "ограничение калорийности"],
-      "ar": ["تقييد السعرات الحرارية", "تقييد الطاقة"]
+      "en": [
+        "caloric restriction",
+        "calorie restriction",
+        "energy restriction"
+      ],
+      "pt": [
+        "restrição calórica",
+        "restrição energética"
+      ],
+      "es": [
+        "restricción calórica",
+        "restricción energética"
+      ],
+      "fr": [
+        "restriction calorique",
+        "restriction énergétique"
+      ],
+      "de": [
+        "Kalorienrestriktion",
+        "Energierestriktion"
+      ],
+      "it": [
+        "restrizione calorica",
+        "restrizione energetica"
+      ],
+      "zh": [
+        "热量限制",
+        "能量限制"
+      ],
+      "ja": [
+        "カロリー制限",
+        "エネルギー制限"
+      ],
+      "ru": [
+        "ограничение калорий",
+        "ограничение калорийности"
+      ],
+      "ar": [
+        "تقييد السعرات الحرارية",
+        "تقييد الطاقة"
+      ]
     },
     "glycemic control": {
-      "en": ["glycemic control", "glycaemic control", "blood glucose control"],
-      "pt": ["controle glicêmico", "controle da glicemia"],
-      "es": ["control glucémico", "control de la glucemia"],
-      "fr": ["contrôle glycémique"],
-      "de": ["Blutzuckerkontrolle", "glykämische Kontrolle"],
-      "it": ["controllo glicemico"],
-      "zh": ["血糖控制"],
-      "ja": ["血糖コントロール", "血糖管理"],
-      "ru": ["гликемический контроль", "контроль гликемии"],
-      "ar": ["التحكم في سكر الدم", "ضبط السكر في الدم"]
+      "en": [
+        "glycemic control",
+        "glycaemic control",
+        "blood glucose control"
+      ],
+      "pt": [
+        "controle glicêmico",
+        "controle da glicemia"
+      ],
+      "es": [
+        "control glucémico",
+        "control de la glucemia"
+      ],
+      "fr": [
+        "contrôle glycémique"
+      ],
+      "de": [
+        "Blutzuckerkontrolle",
+        "glykämische Kontrolle"
+      ],
+      "it": [
+        "controllo glicemico"
+      ],
+      "zh": [
+        "血糖控制"
+      ],
+      "ja": [
+        "血糖コントロール",
+        "血糖管理"
+      ],
+      "ru": [
+        "гликемический контроль",
+        "контроль гликемии"
+      ],
+      "ar": [
+        "التحكم في سكر الدم",
+        "ضبط السكر في الدم"
+      ]
     },
     "weight loss": {
-      "en": ["weight loss", "weight reduction"],
-      "pt": ["perda de peso", "emagrecimento", "redução de peso"],
-      "es": ["pérdida de peso", "reducción de peso"],
-      "fr": ["perte de poids", "réduction du poids"],
-      "de": ["Gewichtsverlust", "Gewichtsabnahme", "Gewichtsreduktion"],
-      "it": ["perdita di peso", "riduzione del peso"],
-      "zh": ["体重减轻", "减重"],
-      "ja": ["体重減少", "減量"],
-      "ru": ["снижение веса", "потеря веса"],
-      "ar": ["فقدان الوزن", "إنقاص الوزن"]
+      "en": [
+        "weight loss",
+        "weight reduction"
+      ],
+      "pt": [
+        "perda de peso",
+        "emagrecimento",
+        "redução de peso"
+      ],
+      "es": [
+        "pérdida de peso",
+        "reducción de peso"
+      ],
+      "fr": [
+        "perte de poids",
+        "réduction du poids"
+      ],
+      "de": [
+        "Gewichtsverlust",
+        "Gewichtsabnahme",
+        "Gewichtsreduktion"
+      ],
+      "it": [
+        "perdita di peso",
+        "riduzione del peso"
+      ],
+      "zh": [
+        "体重减轻",
+        "减重"
+      ],
+      "ja": [
+        "体重減少",
+        "減量"
+      ],
+      "ru": [
+        "снижение веса",
+        "потеря веса"
+      ],
+      "ar": [
+        "فقدان الوزن",
+        "إنقاص الوزن"
+      ]
     },
     "blood pressure": {
-      "en": ["blood pressure", "arterial pressure"],
-      "pt": ["pressão arterial"],
-      "es": ["presión arterial"],
-      "fr": ["pression artérielle", "tension artérielle"],
-      "de": ["Blutdruck"],
-      "it": ["pressione arteriosa", "pressione sanguigna"],
-      "zh": ["血压"],
-      "ja": ["血圧"],
-      "ru": ["артериальное давление"],
-      "ar": ["ضغط الدم"]
+      "en": [
+        "blood pressure",
+        "arterial pressure"
+      ],
+      "pt": [
+        "pressão arterial"
+      ],
+      "es": [
+        "presión arterial"
+      ],
+      "fr": [
+        "pression artérielle",
+        "tension artérielle"
+      ],
+      "de": [
+        "Blutdruck"
+      ],
+      "it": [
+        "pressione arteriosa",
+        "pressione sanguigna"
+      ],
+      "zh": [
+        "血压"
+      ],
+      "ja": [
+        "血圧"
+      ],
+      "ru": [
+        "артериальное давление"
+      ],
+      "ar": [
+        "ضغط الدم"
+      ]
     },
     "cholesterol": {
-      "en": ["cholesterol", "blood lipids", "lipid profile"],
-      "pt": ["colesterol", "lipídios", "perfil lipídico"],
-      "es": ["colesterol", "lípidos", "perfil lipídico"],
-      "fr": ["cholestérol", "lipides", "bilan lipidique"],
-      "de": ["Cholesterin", "Blutfette", "Lipidprofil"],
-      "it": ["colesterolo", "lipidi", "profilo lipidico"],
-      "zh": ["胆固醇", "血脂"],
-      "ja": ["コレステロール", "脂質"],
-      "ru": ["холестерин", "липиды"],
-      "ar": ["الكوليسترول", "الدهون", "صورة الدهون"]
+      "en": [
+        "cholesterol",
+        "blood lipids",
+        "lipid profile"
+      ],
+      "pt": [
+        "colesterol",
+        "lipídios",
+        "perfil lipídico"
+      ],
+      "es": [
+        "colesterol",
+        "lípidos",
+        "perfil lipídico"
+      ],
+      "fr": [
+        "cholestérol",
+        "lipides",
+        "bilan lipidique"
+      ],
+      "de": [
+        "Cholesterin",
+        "Blutfette",
+        "Lipidprofil"
+      ],
+      "it": [
+        "colesterolo",
+        "lipidi",
+        "profilo lipidico"
+      ],
+      "zh": [
+        "胆固醇",
+        "血脂"
+      ],
+      "ja": [
+        "コレステロール",
+        "脂質"
+      ],
+      "ru": [
+        "холестерин",
+        "липиды"
+      ],
+      "ar": [
+        "الكوليسترول",
+        "الدهون",
+        "صورة الدهون"
+      ]
     },
     "cardiovascular risk": {
-      "en": ["cardiovascular risk"],
-      "pt": ["risco cardiovascular"],
-      "es": ["riesgo cardiovascular"],
-      "fr": ["risque cardiovasculaire"],
-      "de": ["kardiovaskuläres Risiko"],
-      "it": ["rischio cardiovascolare"],
-      "zh": ["心血管风险"],
-      "ja": ["心血管リスク"],
-      "ru": ["сердечно-сосудистый риск"],
-      "ar": ["مخاطر القلب والأوعية الدموية", "الخطر القلبي الوعائي"]
+      "en": [
+        "cardiovascular risk"
+      ],
+      "pt": [
+        "risco cardiovascular"
+      ],
+      "es": [
+        "riesgo cardiovascular"
+      ],
+      "fr": [
+        "risque cardiovasculaire"
+      ],
+      "de": [
+        "kardiovaskuläres Risiko"
+      ],
+      "it": [
+        "rischio cardiovascolare"
+      ],
+      "zh": [
+        "心血管风险"
+      ],
+      "ja": [
+        "心血管リスク"
+      ],
+      "ru": [
+        "сердечно-сосудистый риск"
+      ],
+      "ar": [
+        "مخاطر القلب والأوعية الدموية",
+        "الخطر القلبي الوعائي"
+      ]
     },
     "systematic review": {
-      "en": ["systematic review"],
-      "pt": ["revisão sistemática"],
-      "es": ["revisión sistemática"],
-      "fr": ["revue systématique"],
-      "de": ["systematische Übersichtsarbeit", "systematische Übersicht"],
-      "it": ["revisione sistematica"],
-      "zh": ["系统评价", "系统综述"],
-      "ja": ["システマティックレビュー", "系統的レビュー"],
-      "ru": ["систематический обзор"],
-      "ar": ["مراجعة منهجية", "مراجعة منتظمة"]
+      "en": [
+        "systematic review"
+      ],
+      "pt": [
+        "revisão sistemática"
+      ],
+      "es": [
+        "revisión sistemática"
+      ],
+      "fr": [
+        "revue systématique"
+      ],
+      "de": [
+        "systematische Übersichtsarbeit",
+        "systematische Übersicht"
+      ],
+      "it": [
+        "revisione sistematica"
+      ],
+      "zh": [
+        "系统评价",
+        "系统综述"
+      ],
+      "ja": [
+        "システマティックレビュー",
+        "系統的レビュー"
+      ],
+      "ru": [
+        "систематический обзор"
+      ],
+      "ar": [
+        "مراجعة منهجية",
+        "مراجعة منتظمة"
+      ]
     },
     "meta-analysis": {
-      "en": ["meta-analysis", "meta analysis"],
-      "pt": ["metanálise", "meta-análise"],
-      "es": ["metaanálisis", "meta-análisis"],
-      "fr": ["méta-analyse"],
-      "de": ["Metaanalyse"],
-      "it": ["metanalisi", "meta-analisi"],
-      "zh": ["荟萃分析", "Meta分析", "元分析"],
-      "ja": ["メタアナリシス", "メタ解析"],
-      "ru": ["метаанализ"],
-      "ar": ["التحليل التلوي", "تحليل تلوي"]
+      "en": [
+        "meta-analysis",
+        "meta analysis"
+      ],
+      "pt": [
+        "metanálise",
+        "meta-análise"
+      ],
+      "es": [
+        "metaanálisis",
+        "meta-análisis"
+      ],
+      "fr": [
+        "méta-analyse"
+      ],
+      "de": [
+        "Metaanalyse"
+      ],
+      "it": [
+        "metanalisi",
+        "meta-analisi"
+      ],
+      "zh": [
+        "荟萃分析",
+        "Meta分析",
+        "元分析"
+      ],
+      "ja": [
+        "メタアナリシス",
+        "メタ解析"
+      ],
+      "ru": [
+        "метаанализ"
+      ],
+      "ar": [
+        "التحليل التلوي",
+        "تحليل تلوي"
+      ]
     },
     "randomized controlled trial": {
-      "en": ["randomized controlled trial", "randomised controlled trial"],
-      "pt": ["ensaio clínico randomizado", "ensaio controlado randomizado"],
-      "es": ["ensayo controlado aleatorizado", "ensayo clínico aleatorizado"],
-      "fr": ["essai contrôlé randomisé", "essai randomisé contrôlé"],
-      "de": ["randomisierte kontrollierte Studie"],
-      "it": ["studio controllato randomizzato", "trial controllato randomizzato"],
-      "zh": ["随机对照试验"],
-      "ja": ["ランダム化比較試験", "無作為化比較試験"],
-      "ru": ["рандомизированное контролируемое исследование"],
-      "ar": ["تجربة معشاة ذات شواهد", "تجربة سريرية عشوائية محكومة"]
+      "en": [
+        "randomized controlled trial",
+        "randomised controlled trial"
+      ],
+      "pt": [
+        "ensaio clínico randomizado",
+        "ensaio controlado randomizado"
+      ],
+      "es": [
+        "ensayo controlado aleatorizado",
+        "ensayo clínico aleatorizado"
+      ],
+      "fr": [
+        "essai contrôlé randomisé",
+        "essai randomisé contrôlé"
+      ],
+      "de": [
+        "randomisierte kontrollierte Studie"
+      ],
+      "it": [
+        "studio controllato randomizzato",
+        "trial controllato randomizzato"
+      ],
+      "zh": [
+        "随机对照试验"
+      ],
+      "ja": [
+        "ランダム化比較試験",
+        "無作為化比較試験"
+      ],
+      "ru": [
+        "рандомизированное контролируемое исследование"
+      ],
+      "ar": [
+        "تجربة معشاة ذات شواهد",
+        "تجربة سريرية عشوائية محكومة"
+      ]
     },
     "clinical trial": {
-      "en": ["clinical trial"],
-      "pt": ["ensaio clínico"],
-      "es": ["ensayo clínico"],
-      "fr": ["essai clinique"],
-      "de": ["klinische Studie"],
-      "it": ["studio clinico", "sperimentazione clinica"],
-      "zh": ["临床试验"],
-      "ja": ["臨床試験"],
-      "ru": ["клиническое исследование", "клиническое испытание"],
-      "ar": ["تجربة سريرية", "دراسة سريرية"]
+      "en": [
+        "clinical trial"
+      ],
+      "pt": [
+        "ensaio clínico"
+      ],
+      "es": [
+        "ensayo clínico"
+      ],
+      "fr": [
+        "essai clinique"
+      ],
+      "de": [
+        "klinische Studie"
+      ],
+      "it": [
+        "studio clinico",
+        "sperimentazione clinica"
+      ],
+      "zh": [
+        "临床试验"
+      ],
+      "ja": [
+        "臨床試験"
+      ],
+      "ru": [
+        "клиническое исследование",
+        "клиническое испытание"
+      ],
+      "ar": [
+        "تجربة سريرية",
+        "دراسة سريرية"
+      ]
     },
     "guideline": {
-      "en": ["guideline", "clinical practice guideline", "consensus statement"],
-      "pt": ["diretriz", "diretrizes", "consenso"],
-      "es": ["guía", "guía de práctica clínica", "directriz"],
-      "fr": ["recommandations", "lignes directrices", "guide de pratique clinique"],
-      "de": ["Leitlinie", "Behandlungsleitlinie"],
-      "it": ["linee guida", "linea guida"],
-      "zh": ["指南", "临床指南"],
-      "ja": ["ガイドライン", "診療ガイドライン"],
-      "ru": ["клинические рекомендации", "руководство"],
-      "ar": ["إرشادات", "دليل إرشادي", "إرشادات الممارسة السريرية"]
+      "en": [
+        "guideline",
+        "clinical practice guideline",
+        "consensus statement"
+      ],
+      "pt": [
+        "diretriz",
+        "diretrizes",
+        "consenso"
+      ],
+      "es": [
+        "guía",
+        "guía de práctica clínica",
+        "directriz"
+      ],
+      "fr": [
+        "recommandations",
+        "lignes directrices",
+        "guide de pratique clinique"
+      ],
+      "de": [
+        "Leitlinie",
+        "Behandlungsleitlinie"
+      ],
+      "it": [
+        "linee guida",
+        "linea guida"
+      ],
+      "zh": [
+        "指南",
+        "临床指南"
+      ],
+      "ja": [
+        "ガイドライン",
+        "診療ガイドライン"
+      ],
+      "ru": [
+        "клинические рекомендации",
+        "руководство"
+      ],
+      "ar": [
+        "إرشادات",
+        "دليل إرشادي",
+        "إرشادات الممارسة السريرية"
+      ]
     }
   }
 }

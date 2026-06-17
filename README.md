@@ -229,6 +229,38 @@ Multilingual and concept queries are interleaved into each provider's query set
 so they fall within the per-provider query budget. Edit the lexicon to add
 languages or concepts; it is hashed in the reproducibility report.
 
+## Taxonomy — one editable source of truth
+
+All concept taxonomy lives in a single file, **`config/taxonomy.json`**. Each
+concept has everything in one place:
+
+```jsonc
+{
+  "id": "type 2 diabetes",
+  "type": "condition",          // condition | diet | outcome | doc_type
+  "mesh": "Diabetes Mellitus, Type 2",   // optional, for PubMed MeSH queries
+  "openalex": "C2776...",        // optional OpenAlex concept id
+  "score": 3,                     // optional scoring weight
+  "terms": { "en": [...], "pt": [...], "es": [...], "...": [...] }   // 10 languages
+}
+```
+
+It also holds the classification `ontology` (domains / outcomes / evidence
+types). Edit this one file, then regenerate the derived files the pipeline reads:
+
+```bash
+nutev taxonomy validate    # check structure (unique ids, valid types, terms per language)
+nutev taxonomy build       # regenerate multilingual_lexicon.json, nutev_ontology.json,
+                           # seed OpenAlex concept cache, merge concept scores
+nutev taxonomy list        # list concepts grouped by type
+```
+
+`nutev taxonomy build` regenerates `config/multilingual_lexicon.json` and
+`config/nutev_ontology.json` from the master (so existing consumers and tests are
+unchanged); concept `score`/`openalex` values are merged **additively** into
+`scoring_rules.json` / the OpenAlex cache. Set `NUTEV_TAXONOMY_AUTOBUILD=1` to
+have a pipeline run regenerate them automatically before searching.
+
 ## Article knowledge base & `ask` (chat over the corpus)
 
 Every run builds an AI-/RAG-ready knowledge base under `11_knowledge_base/`, so

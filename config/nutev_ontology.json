@@ -2,17 +2,82 @@
   "version": "1.0",
   "description": "NutEV global evidence ontology for integrated classification across all lenses.",
   "domains": {
-    "clinical_outcomes": ["mortality", "hospitalization", "remission", "incidence", "prevalence", "risk"],
-    "implementation": ["implementation", "adoption", "barrier", "facilitator", "program", "delivery"],
-    "equity": ["equity", "inequality", "underserved", "vulnerable", "rural", "low-income"],
-    "dietary_patterns": ["mediterranean", "dash", "plant-based", "ultra-processed", "food pattern", "diet quality"],
-    "policy_systems": ["policy", "regulation", "guideline", "tax", "labeling", "school meal"]
+    "clinical_outcomes": [
+      "mortality",
+      "hospitalization",
+      "remission",
+      "incidence",
+      "prevalence",
+      "risk"
+    ],
+    "implementation": [
+      "implementation",
+      "adoption",
+      "barrier",
+      "facilitator",
+      "program",
+      "delivery"
+    ],
+    "equity": [
+      "equity",
+      "inequality",
+      "underserved",
+      "vulnerable",
+      "rural",
+      "low-income"
+    ],
+    "dietary_patterns": [
+      "mediterranean",
+      "dash",
+      "plant-based",
+      "ultra-processed",
+      "food pattern",
+      "diet quality"
+    ],
+    "policy_systems": [
+      "policy",
+      "regulation",
+      "guideline",
+      "tax",
+      "labeling",
+      "school meal"
+    ]
   },
   "outcomes": {
-    "cardiometabolic": ["diabetes", "hypertension", "cholesterol", "obesity", "cardiovascular"],
-    "oncology": ["cancer", "tumor", "carcinoma"],
-    "mental_health": ["depression", "anxiety", "well-being", "mental health"],
-    "maternal_child": ["pregnancy", "maternal", "child", "adolescent", "infant"]
+    "cardiometabolic": [
+      "diabetes",
+      "hypertension",
+      "cholesterol",
+      "obesity",
+      "cardiovascular"
+    ],
+    "oncology": [
+      "cancer",
+      "tumor",
+      "carcinoma"
+    ],
+    "mental_health": [
+      "depression",
+      "anxiety",
+      "well-being",
+      "mental health"
+    ],
+    "maternal_child": [
+      "pregnancy",
+      "maternal",
+      "child",
+      "adolescent",
+      "infant"
+    ]
   },
-  "evidence_types": ["rct", "cohort", "case_control", "cross_sectional", "review", "guideline", "policy", "framework"]
+  "evidence_types": [
+    "rct",
+    "cohort",
+    "case_control",
+    "cross_sectional",
+    "review",
+    "guideline",
+    "policy",
+    "framework"
+  ]
 }

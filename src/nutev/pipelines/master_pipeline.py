@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -326,6 +327,18 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         emit_event(run_id, "discovery_started", "Pipeline discovery started"),
         settings.output_dirs["07_logs"] / "run_events.jsonl",
     )
+
+    # Opt-in: regenerate derived config from the single-source-of-truth
+    # config/taxonomy.json so editing the master alone is enough. Off by default
+    # to keep runs side-effect free; use `nutev taxonomy build` otherwise.
+    if os.environ.get("NUTEV_TAXONOMY_AUTOBUILD") == "1":
+        from nutev.taxonomy import build_all, load_taxonomy
+
+        if load_taxonomy(settings.config_root):
+            try:
+                build_all(settings.config_root)
+            except Exception as exc:  # noqa: BLE001 - never block a run on taxonomy
+                logger.warning("taxonomy autobuild skipped: %s", exc)
 
     taxonomy = load_json(settings.config_root / "keyword_taxonomy.json")
     scoring = load_json(settings.config_root / "scoring_rules.json")
