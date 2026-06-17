@@ -100,6 +100,11 @@ Qualquer um deles instala o necessário (**apenas na 1ª vez**), sobe o servidor
 **■ Parar** interrompe). Por padrão roda *offline* (fontes locais, rápido); marque
 "buscar na web" para coletar dos provedores online. Pré-requisito: Python 3.12+.
 
+**Atalho na área de trabalho (opcional):** rode uma vez
+`scripts\create_shortcut_windows.ps1` (Windows, clique direito → *Executar com
+PowerShell*) ou `scripts/create_shortcut_macos.command` (macOS, duplo-clique) para
+criar um ícone **NutEV** na sua área de trabalho que abre o site direto.
+
 ```bash
 nutev serve --project-root ./project_output --host 127.0.0.1 --port 8000   # extra [platform]
 nutev dashboard --project-root ./project_output --port 8501                 # extra [dashboard]
