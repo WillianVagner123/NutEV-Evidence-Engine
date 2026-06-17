@@ -44,3 +44,9 @@ class ArtifactInfo(BaseModel):
     size_bytes: int
     modified_at: str
     artifact_type: str
+
+
+class RunRequest(BaseModel):
+    workstreams: list[str] | None = None
+    web_enabled: bool = False
+    journal_quality: bool = False

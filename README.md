@@ -79,9 +79,21 @@ pip install -e ".[all]"                # tudo
 
 ## Dashboard e API local
 
+### Início rápido (1 comando) — abrir o site e dar "play"
+
 ```bash
-nutev dashboard --project-root ./project_output --port 8501   # extra [dashboard]
+bash scripts/run_local_unix.sh        # macOS/Linux
+# Windows PowerShell:  .\scripts\run_local_windows.ps1
+```
+
+Instala o necessário, sobe a API e **abre o navegador** em `http://127.0.0.1:8000`.
+Na página, clique em **▶ Rodar pipeline** para executar localmente e acompanhar
+ao vivo (botão **■ Parar** interrompe). Por padrão roda *offline* (fontes locais,
+rápido); marque "buscar na web" para coletar dos provedores online.
+
+```bash
 nutev serve --project-root ./project_output --host 127.0.0.1 --port 8000   # extra [platform]
+nutev dashboard --project-root ./project_output --port 8501                 # extra [dashboard]
 ```
 
 URLs:
@@ -89,7 +101,8 @@ URLs:
 - **Monitor ao vivo: `http://127.0.0.1:8000/`** — painel que acompanha o run em
   tempo real (feed de eventos via `/api/run-events`, KPIs do `run-summary`,
   saúde/throughput dos provedores e abas de evidências/claims/recomendações/
-  revisão/artefatos). Auto-atualiza por *polling*; sem dependências de front-end.
+  revisão/artefatos) e um botão **▶ Rodar pipeline** para disparar/parar uma
+  execução local. Auto-atualiza por *polling*; sem dependências de front-end.
 - API: `http://127.0.0.1:8000` · docs interativas em `/docs`
 - Dashboard Streamlit (alternativo): `http://127.0.0.1:8501`
 

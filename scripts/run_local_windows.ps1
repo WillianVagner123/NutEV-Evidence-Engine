@@ -1,6 +1,7 @@
 $ErrorActionPreference = "Stop"
 
-Write-Host "NutEV/NutMEV local setup - Windows PowerShell"
+# One command to open the NutEV site locally. Then click "▶ Rodar pipeline".
+Write-Host "NutEV/NutMEV - site local"
 
 if (-not (Test-Path ".venv")) {
     py -3.12 -m venv .venv
@@ -8,12 +9,10 @@ if (-not (Test-Path ".venv")) {
 
 . .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-pip install -e ".[dashboard,platform]"
-nutev demo-data --project-root ./project_output_demo
+pip install -e ".[platform]"
+New-Item -ItemType Directory -Force -Path ".\project_output" | Out-Null
 
 Write-Host ""
-Write-Host "Setup concluido. Para abrir o dashboard:"
-Write-Host "  . .\.venv\Scripts\Activate.ps1"
-Write-Host "  nutev dashboard --project-root ./project_output_demo --port 8501"
-Write-Host ""
-Write-Host "Depois acesse: http://127.0.0.1:8501"
+Write-Host "Abrindo http://127.0.0.1:8000  - clique em '> Rodar pipeline'."
+Write-Host "(Ctrl+C para parar o servidor.)"
+nutev serve --project-root ./project_output --host 127.0.0.1 --port 8000

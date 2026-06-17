@@ -1,23 +1,90 @@
 from __future__ import annotations
 
 import os
+import subprocess
+import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import HTMLResponse
 
 from nutev.api.loaders import filter_df, list_artifacts, paginate_df, read_csv_safe, read_json_safe, read_markdown_safe, read_xlsx_safe, tail_jsonl
-from nutev.api.schemas import HumanReviewDecisionIn
+from nutev.api.schemas import HumanReviewDecisionIn, RunRequest
 from nutev.review.human_review import append_human_review_decision, load_human_review_decisions, merge_human_review_decisions
+
+# Workstreams the "Play" button may launch. Args are passed to subprocess as a
+# list (no shell), and validated against this set, so user input can't inject.
+VALID_WORKSTREAMS = {"busca1", "busca2a", "busca2b", "a3", "article3", "artigo3_framework"}
 
 
 def build_router(project_root: Path) -> APIRouter:
     r = APIRouter()
+    # Single in-process handle to the pipeline launched from the UI. The server
+    # is local-first (127.0.0.1), so one run at a time is the intended model.
+    run_state: dict = {"proc": None, "started_at": None, "workstreams": [], "options": {}}
+
+    def _run_status() -> dict:
+        proc = run_state["proc"]
+        returncode = proc.poll() if proc is not None else None
+        return {
+            "running": proc is not None and returncode is None,
+            "pid": proc.pid if proc is not None else None,
+            "returncode": returncode,
+            "started_at": run_state["started_at"],
+            "workstreams": run_state["workstreams"],
+            "options": run_state["options"],
+            "log": "07_logs/serve_run.log",
+        }
 
     @r.get("/", response_class=HTMLResponse)
     def index():
         t = (Path(__file__).parent / "templates" / "index.html").read_text(encoding="utf-8")
         return t
+
+    @r.get("/api/run/status")
+    def run_status():
+        return _run_status()
+
+    @r.post("/api/run")
+    def run_start(payload: RunRequest | None = None):
+        if run_state["proc"] is not None and run_state["proc"].poll() is None:
+            raise HTTPException(status_code=409, detail="A pipeline run is already in progress")
+        body = payload or RunRequest()
+        workstreams = body.workstreams or ["busca1"]
+        invalid = [w for w in workstreams if w not in VALID_WORKSTREAMS]
+        if invalid:
+            raise HTTPException(status_code=422, detail=f"Invalid workstreams {invalid}; allowed: {sorted(VALID_WORKSTREAMS)}")
+
+        args = [sys.executable, "-m", "nutev", "--project-root", str(project_root), "--workstreams", *workstreams]
+        env = dict(os.environ)
+        if body.web_enabled:
+            args.append("--web-enabled")
+            env.pop("NUTEV_DISABLE_NETWORK", None)
+        else:
+            env["NUTEV_DISABLE_NETWORK"] = "1"  # default: safe offline run
+        if body.journal_quality:
+            env["NUTEV_JOURNAL_QUALITY"] = "1"
+
+        logs_dir = project_root / "07_logs"
+        logs_dir.mkdir(parents=True, exist_ok=True)
+        log_fh = open(logs_dir / "serve_run.log", "ab")
+        proc = subprocess.Popen(args, stdout=log_fh, stderr=subprocess.STDOUT, env=env)
+        run_state.update({
+            "proc": proc,
+            "started_at": datetime.now(timezone.utc).isoformat(),
+            "workstreams": workstreams,
+            "options": {"web_enabled": bool(body.web_enabled), "journal_quality": bool(body.journal_quality)},
+        })
+        return {"started": True, **_run_status()}
+
+    @r.post("/api/run/stop")
+    def run_stop():
+        proc = run_state["proc"]
+        if proc is None or proc.poll() is not None:
+            return {"stopped": False, "message": "No run in progress"}
+        proc.terminate()
+        return {"stopped": True, "pid": proc.pid}
 
     @r.get("/api/health")
     def health():

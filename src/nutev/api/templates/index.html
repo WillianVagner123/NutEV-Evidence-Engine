@@ -71,6 +71,21 @@
     </div>
   </div>
 
+  <section class="panel" style="margin-bottom:16px">
+    <div class="body" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px">
+      <button id="playBtn" class="on" style="font-size:15px;padding:10px 20px">▶ Rodar pipeline</button>
+      <button id="stopBtn" style="display:none">■ Parar</button>
+      <span class="muted">buscas:</span>
+      <label class="chip"><input type="checkbox" class="ws" value="busca1" checked> busca1</label>
+      <label class="chip"><input type="checkbox" class="ws" value="busca2a"> busca2a</label>
+      <label class="chip"><input type="checkbox" class="ws" value="busca2b"> busca2b</label>
+      <label class="chip"><input type="checkbox" class="ws" value="a3"> a3</label>
+      <label class="chip" title="Sem isto, roda offline com fontes locais (rápido, sempre funciona)"><input type="checkbox" id="webChk"> buscar na web</label>
+      <label class="chip" title="Pontua a qualidade do periódico (precisa de web)"><input type="checkbox" id="jqChk"> qualidade periódico</label>
+      <span id="runState" class="pill"><span class="dot"></span><span>ocioso</span></span>
+    </div>
+  </section>
+
   <div class="kpis" id="kpis"></div>
 
   <div class="grid2">
@@ -189,13 +204,39 @@ async function loadTab(){
     items.map(row=>`<tr>${cols.map(c=>`<td title="${esc(row[c])}">${esc(row[c])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 }
 
-async function tick(){ await Promise.all([loadHealth(),loadSummary(),loadProviders(),loadEvents(),loadTab()]); $("updated").textContent="atualizado "+new Date().toLocaleTimeString("pt-BR",{hour12:false}); }
+async function loadRunStatus(){
+  const s=await api("/api/run/status"); const play=$("playBtn"), stop=$("stopBtn"), rs=$("runState");
+  if(s && s.running){
+    play.disabled=true; play.textContent="● rodando…"; play.classList.remove("on"); stop.style.display="";
+    rs.innerHTML='<span class="dot live"></span><span>rodando (pid '+esc(s.pid)+')</span>';
+  } else {
+    play.disabled=false; play.textContent="▶ Rodar pipeline"; play.classList.add("on"); stop.style.display="none";
+    let txt="ocioso", cls="";
+    if(s && s.returncode!=null){ const ok=s.returncode===0; txt=ok?"último run: concluído ✓":"último run: erro ("+s.returncode+")"; cls=ok?"ok":"err"; }
+    rs.innerHTML='<span class="dot '+cls+'"></span><span>'+esc(txt)+'</span>';
+  }
+}
+async function runStart(){
+  const ws=[...document.querySelectorAll(".ws:checked")].map(c=>c.value);
+  if(!ws.length){ alert("Selecione ao menos uma busca."); return; }
+  $("playBtn").disabled=true; $("playBtn").textContent="iniciando…";
+  const r=await fetch("/api/run",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({workstreams:ws,web_enabled:$("webChk").checked,journal_quality:$("jqChk").checked})});
+  if(!r.ok){ const e=await r.json().catch(()=>({})); alert("Não foi possível iniciar: "+((e&&e.detail)||r.status)); }
+  eventCursor=0; events=[];           // re-sync the live feed to the new run
+  if(!auto){ auto=true; $("autoBtn").textContent="⏸ Pausar"; $("autoBtn").classList.add("on"); schedule(); }
+  await tick();
+}
+async function runStop(){ await fetch("/api/run/stop",{method:"POST"}); await loadRunStatus(); }
+
+async function tick(){ await Promise.all([loadHealth(),loadSummary(),loadProviders(),loadEvents(),loadRunStatus(),loadTab()]); $("updated").textContent="atualizado "+new Date().toLocaleTimeString("pt-BR",{hour12:false}); }
 function schedule(){ if(timer) clearInterval(timer); if(auto) timer=setInterval(tick,intervalMs); }
 
 $("autoBtn").onclick=()=>{ auto=!auto; $("autoBtn").textContent=auto?"⏸ Pausar":"▶ Retomar"; $("autoBtn").classList.toggle("on",auto); schedule(); };
 $("refreshBtn").onclick=tick;
 $("interval").onchange=e=>{ intervalMs=+e.target.value; schedule(); };
 $("tabs").onclick=e=>{ const b=e.target.closest("button[data-tab]"); if(!b) return; activeTab=b.dataset.tab; renderTabs(); loadTab(); };
+$("playBtn").onclick=runStart;
+$("stopBtn").onclick=runStop;
 
 renderTabs(); tick(); schedule();
 </script>

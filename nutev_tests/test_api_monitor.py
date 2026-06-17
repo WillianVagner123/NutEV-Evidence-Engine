@@ -64,3 +64,22 @@ def test_run_events_route_and_dashboard(tmp_path):
 
     home = client.get("/")
     assert home.status_code == 200 and "run-events" in home.text  # live dashboard wired
+    assert "Rodar pipeline" in home.text  # Play button present
+
+
+def test_run_control_idle_and_validation(tmp_path):
+    pytest.importorskip("fastapi")
+    pytest.importorskip("httpx")
+    from fastapi.testclient import TestClient
+
+    from nutev.api.server import create_app
+
+    client = TestClient(create_app(tmp_path))
+    # idle before any run
+    status = client.get("/api/run/status").json()
+    assert status["running"] is False and status["pid"] is None
+    # allowlist rejects unknown workstreams (no subprocess is spawned)
+    bad = client.post("/api/run", json={"workstreams": ["bad; rm -rf /"]})
+    assert bad.status_code == 422
+    # stopping with nothing running is a safe no-op
+    assert client.post("/api/run/stop").json()["stopped"] is False

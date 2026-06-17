@@ -137,6 +137,20 @@ def main() -> None:
             import uvicorn
 
             app = create_app(args.project_root)
+            # Best-effort: pop the browser open once the server is up, so a local
+            # user just runs `nutev serve` and the site appears. Skipped when
+            # bound to all interfaces or when NUTEV_NO_BROWSER is set (Docker/CI).
+            if args.host not in {"0.0.0.0"} and not os.environ.get("NUTEV_NO_BROWSER"):
+                import threading
+                import webbrowser
+
+                def _open() -> None:
+                    try:
+                        webbrowser.open(landing)
+                    except Exception:
+                        pass
+
+                threading.Timer(1.5, _open).start()
             uvicorn.run(app, host=args.host, port=args.port)
         except ModuleNotFoundError:
             print('FastAPI/uvicorn não estão instalados. Rode: pip install -e ".[platform]"')
