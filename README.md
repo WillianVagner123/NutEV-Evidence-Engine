@@ -285,6 +285,16 @@ the harvested literature can be organized and queried conversationally:
   domains/outcomes/diets/conditions/journals per country), `by_venue.csv`,
   `by_language.csv`, `by_year.csv`, `by_concept.csv`, and `overview.json`.
 
+### Venue/journal quality (opcional)
+
+`nutev/analysis/journal_quality.py` deriva um **score de credibilidade do
+periódico (1–10)** a partir de sinais bibliométricos (h-index do *venue*,
+indexação DOAJ, tipo de fonte, flag de predatório) via uma consulta OpenAlex
+em cache (fail-soft, respeita `NUTEV_DISABLE_NETWORK`). Rode com
+`NUTEV_JOURNAL_QUALITY=1` para popular a coluna `journal_quality_score` no
+corpus — útil para priorizar evidência de periódicos sérios. (Núcleo
+reaproveitado e enxugado do antigo `local_deep_research`.)
+
 Ask questions over the base (retrieval + citations):
 
 ```bash

@@ -574,6 +574,12 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
     # AI-/RAG-ready knowledge base + country/venue/topic aggregations.
     kb_dir = settings.output_dirs["11_knowledge_base"]
+    # Opt-in venue-quality enrichment (one cached OpenAlex lookup per ISSN).
+    if os.environ.get("NUTEV_JOURNAL_QUALITY") == "1":
+        from nutev.analysis.journal_quality import enrich_journal_quality
+
+        enrich_journal_quality(all_rows, config_root=settings.config_root)
+
     kb_records = to_kb_records(all_rows)
     write_knowledge_base(kb_records, kb_dir)
     write_aggregations(kb_records, kb_dir / "summary")

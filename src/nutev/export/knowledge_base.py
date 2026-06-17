@@ -45,6 +45,7 @@ KB_FIELDS: list[tuple[str, str, str]] = [
     ("evidence_tier", "str", "Editorial/evidence priority tier."),
     ("relevance_score", "number", "Rule-based relevance score."),
     ("cited_by_count", "int", "Citation count (when reported by the source)."),
+    ("journal_quality_score", "int", "Venue quality 1–10 (OpenAlex h-index/DOAJ); 0 if unknown."),
 ]
 
 _LIST_FIELDS = {name for name, typ, _ in KB_FIELDS if typ.startswith("list")}
@@ -134,6 +135,7 @@ def to_kb_record(row: dict) -> dict:
         "evidence_tier": str(row.get("editorial_priority_tier") or row.get("evidence_priority_tier") or ""),
         "relevance_score": _coerce_number(row.get("relevance_score")),
         "cited_by_count": _coerce_int(row.get("cited_by_count")) or 0,
+        "journal_quality_score": _coerce_int(row.get("journal_quality_score")) or 0,
     }
 
 
