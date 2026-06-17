@@ -1,0 +1,6 @@
+{
+  "_comment": "Editable predatory-venue list consulted by nutev/analysis/predatory.py. Entries are matched case-insensitively (NFKC-normalized). When NUTEV_JOURNAL_QUALITY=1 and the network is available, this overlay is auto-merged with the public Stop Predatory Journals list (MIT, https://github.com/stop-predatory-journals) and cached as predatory_index.json. Add your own known-bad publishers/journals/ISSNs below; matches are scored 1/10 unless the venue is DOAJ-indexed.",
+  "publishers": [],
+  "journals": [],
+  "issns": []
+}

@@ -295,6 +295,13 @@ em cache (fail-soft, respeita `NUTEV_DISABLE_NETWORK`). Rode com
 corpus — útil para priorizar evidência de periódicos sérios. (Núcleo
 reaproveitado e enxugado do antigo `local_deep_research`.)
 
+**Predatórios:** `nutev/analysis/predatory.py` marca *venues* predatórios
+(score 1/10, salvo se indexados na DOAJ). Edite `config/predatory_journals.json`
+(publishers/journals/issns) — sempre consultado, offline; quando há rede, é
+mesclado automaticamente com a lista pública [Stop Predatory
+Journals](https://github.com/stop-predatory-journals) (MIT, sucessora da lista
+de Beall) e cacheada localmente.
+
 Ask questions over the base (retrieval + citations):
 
 ```bash

@@ -215,25 +215,44 @@ def score_journal(issn: str, *, config_root, is_predatory: bool = False, cache: 
     )
 
 
-def enrich_journal_quality(rows: list[dict], *, config_root) -> list[dict]:
+def enrich_journal_quality(rows: list[dict], *, config_root, detect_predatory: bool = True) -> list[dict]:
     """Annotate records with ``journal_quality_score``/``journal_in_doaj`` by ISSN.
 
-    De-duplicates by ISSN (one network call per distinct journal), fail-soft.
-    Records without an ISSN are left unchanged.
+    De-duplicates OpenAlex lookups by ISSN (one network call per distinct
+    journal), fail-soft. When ``detect_predatory`` is set, the venue's
+    name/publisher/ISSN is also matched against the predatory index, which
+    forces a score of 1 for non-DOAJ predatory venues (even without metrics).
     """
     cache = load_metrics_cache(config_root)
     before = dict(cache)
+
+    index = {"names": set(), "issns": set()}
+    if detect_predatory:
+        from nutev.analysis import predatory as _pred
+
+        index = _pred.load_predatory_index(config_root)
+
     for row in rows:
         issn = str(row.get("issn") or "").strip()
-        if not issn:
+        predatory = False
+        if detect_predatory:
+            from nutev.analysis.predatory import is_predatory
+
+            predatory = is_predatory(
+                journal=row.get("journal"),
+                publisher=row.get("publisher"),
+                issn=issn,
+                index=index,
+            )
+        metrics = fetch_journal_metrics(issn, config_root=config_root, cache=cache) if issn else {}
+        if not metrics and not predatory:
             continue
-        metrics = fetch_journal_metrics(issn, config_root=config_root, cache=cache)
-        if not metrics:
-            continue
-        row["journal_in_doaj"] = bool(metrics.get("is_in_doaj"))
+        if metrics:
+            row["journal_in_doaj"] = bool(metrics.get("is_in_doaj"))
         score = derive_quality_score(
             h_index=metrics.get("h_index"),
             is_in_doaj=bool(metrics.get("is_in_doaj")),
+            is_predatory=predatory,
             source_type=metrics.get("type") or None,
         )
         if score is not None:
