@@ -612,17 +612,29 @@
       "coronary heart disease",
       "ascvd",
       "cardiometabolic risk",
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome",
+      "ckm health",
       "risco cardiovascular",
       "doença cardiovascular",
       "doença arterial coronariana",
       "doença coronariana",
-      "risco cardiometabólico"
+      "risco cardiometabólico",
+      "síndrome cardiovascular-renal-metabólica"
     ],
     "metabolic_syndrome": [
       "metabolic syndrome",
+      "metabolic syndrome x",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome",
       "central obesity",
       "síndrome metabólica",
-      "obesidade central"
+      "obesidade central",
+      "síndrome cardiovascular-renal-metabólica"
     ],
     "fatty_liver": [
       "fatty liver",
@@ -842,6 +854,11 @@
         "remnant cholesterol",
         "triglyceride-rich lipoprotein",
         "cardiovascular risk",
+        "cardiometabolic risk",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "síndrome cardiovascular-renal-metabólica",
         "risco cardiovascular"
       ],
       "clinical_keys": [
@@ -896,6 +913,9 @@
         "hypertriglyceridemia guideline",
         "apolipoprotein b consensus",
         "non-hdl cholesterol guideline",
+        "ckm syndrome guideline",
+        "cardiovascular-kidney-metabolic syndrome guideline",
+        "cardiovascular-kidney-metabolic health advisory",
         "mafld",
         "clinical obesity",
         "adiposity-based chronic disease",
@@ -911,6 +931,7 @@
         "adulto",
         "adultos",
         "cardiometabolic risk",
+        "ckm syndrome",
         "risco cardiometabólico"
       ],
       "condition_terms": [
@@ -923,6 +944,10 @@
         "dislipidemia",
         "metabolic syndrome",
         "cardiometabolic risk",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "síndrome cardiovascular-renal-metabólica",
         "hypertriglyceridemia",
         "atherogenic dyslipidemia",
         "apolipoprotein b",
@@ -995,6 +1020,10 @@
         "hypertriglyceridemia trial",
         "apolipoprotein b intervention",
         "non-hdl cholesterol intervention",
+        "ckm syndrome trial",
+        "ckm syndrome intervention",
+        "cardiovascular-kidney-metabolic syndrome trial",
+        "cardiovascular-kidney-metabolic intervention",
         "mafld",
         "clinical obesity",
         "adiposity-based chronic disease",
