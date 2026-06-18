@@ -153,6 +153,20 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "nutrition security intervention",
 ]
 
+METABOLIC_REMISSION_MAINTENANCE_TERMS = [
+    "type 2 diabetes remission",
+    "remission of type 2 diabetes",
+    "diabetes remission",
+    "diabetes reversal",
+    "glycemic remission",
+    "glycaemic remission",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight regain prevention",
+    "weight regain management",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -263,6 +277,7 @@ CATEGORY_CONTEXT_TERMS = {
         "adiposity-based chronic disease",
         "adiposity based chronic disease",
         "blood pressure",
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "diet_patterns": [
@@ -400,6 +415,7 @@ CATEGORY_CONTEXT_TERMS = {
         "social needs referral",
         "closed-loop referral",
         "closed loop referral",
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
         "telehealth",
@@ -628,6 +644,7 @@ QUICK_MODE_SEED_GROUPS = {
             "type 2 diabetes",
             "prediabetes",
             "insulin resistance",
+            *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         ],
         [
             "hypertension",
@@ -739,7 +756,7 @@ QUICK_MODE_SEED_GROUPS = {
             "treatment adherence",
             "self-management",
             "maintenance",
-            "weight loss maintenance",
+            *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         ],
         [
             "implementation",
@@ -1040,6 +1057,7 @@ THESIS_MODE_SEED_GROUPS = {
             "self-efficacy",
             "self efficacy",
             "self-management support",
+            *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         ],
         [
             "implementation science",
