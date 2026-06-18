@@ -153,6 +153,28 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "nutrition security intervention",
 ]
 
+METABOLIC_MAINTENANCE_TERMS = [
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "remission of type 2 diabetes",
+    "diabetes reversal",
+    "glycemic remission",
+    "glycaemic remission",
+    "weight maintenance",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight regain",
+    "weight regain prevention",
+    "weight regain management",
+    "relapse prevention",
+    "lapse management",
+    "dietary maintenance",
+    "behavioral maintenance",
+    "dietary self-monitoring",
+    "dietary self-regulation",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -212,6 +234,7 @@ CATEGORY_CONTEXT_TERMS = {
         "time restricted eating",
         "intermittent fasting",
         "diabetes prevention program",
+        *METABOLIC_MAINTENANCE_TERMS,
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
     ],
@@ -263,6 +286,7 @@ CATEGORY_CONTEXT_TERMS = {
         "adiposity-based chronic disease",
         "adiposity based chronic disease",
         "blood pressure",
+        *METABOLIC_MAINTENANCE_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "diet_patterns": [
@@ -322,6 +346,7 @@ CATEGORY_CONTEXT_TERMS = {
         "ultra processed foods",
         "nova classification",
         "nova food classification",
+        *METABOLIC_MAINTENANCE_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "implementation_behavior": [
@@ -400,6 +425,7 @@ CATEGORY_CONTEXT_TERMS = {
         "social needs referral",
         "closed-loop referral",
         "closed loop referral",
+        *METABOLIC_MAINTENANCE_TERMS,
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
         "telehealth",
@@ -621,11 +647,19 @@ QUICK_MODE_SEED_GROUPS = {
             "adiposity-based chronic disease",
             "adiposity based chronic disease",
             "weight management",
+            "weight maintenance",
+            "weight loss maintenance",
+            "long-term weight loss maintenance",
+            "weight regain prevention",
         ],
         [
             "cardiometabolic risk",
             "metabolic syndrome",
             "type 2 diabetes",
+            "type 2 diabetes remission",
+            "diabetes remission",
+            "remission of type 2 diabetes",
+            "diabetes reversal",
             "prediabetes",
             "insulin resistance",
         ],
@@ -739,7 +773,12 @@ QUICK_MODE_SEED_GROUPS = {
             "treatment adherence",
             "self-management",
             "maintenance",
+            "weight maintenance",
             "weight loss maintenance",
+            "weight regain prevention",
+            "relapse prevention",
+            "dietary self-monitoring",
+            "dietary self-regulation",
         ],
         [
             "implementation",
