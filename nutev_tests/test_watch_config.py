@@ -50,3 +50,23 @@ def test_obesity_cardiometabolic_watch_terms_include_precise_lipid_markers() -> 
     assert "non hdl cholesterol" in terms
     assert "lipid lowering" in terms
     assert "triglyceride lowering" in terms
+
+
+def test_watch_categories_include_therapeutic_carbohydrate_restriction_terms() -> None:
+    expected_terms = {
+        "therapeutic carbohydrate restriction",
+        "therapeutic carbohydrate reduction",
+        "carbohydrate restriction",
+        "carbohydrate reduction",
+        "low-carbohydrate nutrition therapy",
+        "low carbohydrate nutrition therapy",
+        "nutritional ketosis",
+    }
+
+    obesity_terms = {term.lower() for term in WATCH_CATEGORIES["obesity_cardiometabolic"]}
+    diet_terms = {term.lower() for term in WATCH_CATEGORIES["diet_patterns"]}
+
+    assert expected_terms <= obesity_terms
+    assert expected_terms <= diet_terms
+    assert "low-carbohydrate dietary intervention" in diet_terms
+    assert "carbohydrate restriction intervention" in diet_terms
