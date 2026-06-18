@@ -167,7 +167,17 @@
       "ckm health",
       "ckm risk",
       "cardiorenal metabolic syndrome",
-      "cardio-renal-metabolic syndrome"
+      "cardio-renal-metabolic syndrome",
+      "chronic kidney disease",
+      "chronic kidney disease nutrition",
+      "chronic kidney disease dietary management",
+      "ckd",
+      "diabetic kidney disease",
+      "diabetic nephropathy",
+      "kidney function",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "albuminuria"
     ]
   },
   "outcomes": {
@@ -200,7 +210,16 @@
       "ckm health",
       "ckm risk",
       "cardiorenal metabolic syndrome",
-      "cardio-renal-metabolic syndrome"
+      "cardio-renal-metabolic syndrome",
+      "chronic kidney disease",
+      "chronic kidney disease nutrition",
+      "diabetic kidney disease",
+      "diabetic nephropathy",
+      "kidney function",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "albuminuria",
+      "albuminuria reduction"
     ],
     "diet_quality_adherence": [
       "long-term adherence",
@@ -308,7 +327,17 @@
         "cardiovascular kidney metabolic risk",
         "ckm syndrome",
         "ckm health",
-        "ckm risk"
+        "ckm risk",
+        "chronic kidney disease",
+        "chronic kidney disease nutrition",
+        "chronic kidney disease dietary management",
+        "ckd",
+        "diabetic kidney disease",
+        "diabetic nephropathy",
+        "kidney function",
+        "estimated glomerular filtration rate",
+        "egfr",
+        "albuminuria"
       ],
       "web_query_hints": [
         "diabetes remission guideline",
@@ -320,7 +349,12 @@
         "cardiovascular kidney metabolic syndrome guideline",
         "ckm syndrome scientific statement",
         "ckm syndrome consensus",
-        "cardiorenal metabolic syndrome guideline"
+        "cardiorenal metabolic syndrome guideline",
+        "chronic kidney disease nutrition guideline",
+        "chronic kidney disease dietary management guideline",
+        "diabetic kidney disease nutrition guideline",
+        "ckd medical nutrition therapy guideline",
+        "albuminuria nutrition guideline"
       ]
     },
     "busca2b": {
@@ -343,7 +377,17 @@
         "cardiovascular kidney metabolic risk",
         "ckm syndrome",
         "ckm health",
-        "ckm risk"
+        "ckm risk",
+        "chronic kidney disease",
+        "chronic kidney disease nutrition",
+        "chronic kidney disease dietary management",
+        "ckd",
+        "diabetic kidney disease",
+        "diabetic nephropathy",
+        "kidney function",
+        "estimated glomerular filtration rate",
+        "egfr",
+        "albuminuria"
       ],
       "focus_terms": [
         "food is medicine implementation",
@@ -390,6 +434,12 @@
         "ckm syndrome lifestyle intervention",
         "ckm syndrome diet intervention",
         "ckm syndrome systematic review",
+        "chronic kidney disease nutrition intervention",
+        "chronic kidney disease dietary intervention",
+        "diabetic kidney disease nutrition intervention",
+        "ckd medical nutrition therapy intervention",
+        "albuminuria dietary intervention",
+        "egfr diet intervention",
         "produce prescription randomized trial",
         "produce prescription systematic review",
         "food is medicine implementation trial",
