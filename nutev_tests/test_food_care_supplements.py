@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from nutev.analysis.relevance import score_record
-from nutev.querypacks.builders import build_queries
+from nutev.querypacks.provider_queries import render_queries_for_provider
 from nutev.settings import load_json
 
 
@@ -18,9 +18,9 @@ def test_keyword_taxonomy_loads_food_care_supplement_terms() -> None:
     assert "food care program" in contextual_terms
 
 
-def test_busca2b_queries_include_food_care_variants() -> None:
+def test_busca2b_pubmed_queries_include_food_care_variants() -> None:
     taxonomy = load_json(Path("config/keyword_taxonomy.json"))
-    queries = build_queries(taxonomy, "busca2b")
+    queries = render_queries_for_provider(taxonomy, "busca2b", "pubmed")
     query_blob = "\n".join(queries).lower()
 
     assert "nutrition prescription" in query_blob
