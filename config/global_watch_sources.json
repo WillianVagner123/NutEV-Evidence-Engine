@@ -80,5 +80,58 @@
     ],
     "blocked_patterns": ["login", "shop", "donate"],
     "notes": "Cardiovascular, CKM syndrome, nutrition and obesity guidance"
+  },
+  {
+    "institution": "American College of Lifestyle Medicine",
+    "country": "United States",
+    "region": "North America",
+    "base_url": "https://lifestylemedicine.org",
+    "priority": 1,
+    "language": "en",
+    "categories": ["lifestyle_medicine", "diet_patterns", "guidelines_consensus"],
+    "workstream_affinity": ["busca1", "busca2a", "busca2b", "a3"],
+    "allowed_patterns": [
+      "lifestyle-medicine",
+      "lifestyle medicine",
+      "food-as-medicine",
+      "food as medicine",
+      "nutrition",
+      "dietary-position-statement",
+      "position statement",
+      "clinical-practice-guideline",
+      "clinical practice guideline",
+      "type-2-diabetes",
+      "prediabetes",
+      "obesity"
+    ],
+    "blocked_patterns": ["login", "cart", "checkout", "donate", "membership"],
+    "notes": "Lifestyle medicine, Food as Medicine resources and dietary position statements"
+  },
+  {
+    "institution": "Office of Disease Prevention and Health Promotion - Food Is Medicine",
+    "country": "United States",
+    "region": "North America",
+    "base_url": "https://odphp.health.gov/foodismedicine",
+    "priority": 1,
+    "language": "en",
+    "categories": ["food_is_medicine", "implementation_behavior", "diet_patterns"],
+    "workstream_affinity": ["busca1", "busca2b", "a3"],
+    "allowed_patterns": [
+      "foodismedicine",
+      "food-is-medicine",
+      "food is medicine",
+      "promising-practices",
+      "promising practices",
+      "tools",
+      "teaching-kitchens",
+      "teaching kitchens",
+      "produce-prescription",
+      "produce prescription",
+      "medically-tailored",
+      "medically tailored",
+      "nutrition"
+    ],
+    "blocked_patterns": ["login", "subscribe", "shop"],
+    "notes": "Federal Food Is Medicine implementation resources, tools and promising practices"
   }
 ]
