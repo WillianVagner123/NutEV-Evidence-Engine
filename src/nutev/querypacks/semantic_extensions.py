@@ -24,6 +24,56 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+CKM_NUTRITION_CARE_TERMS = [
+    "cardiovascular-kidney-metabolic nutrition",
+    "cardiovascular kidney metabolic nutrition",
+    "cardiovascular-kidney-metabolic diet",
+    "cardiovascular kidney metabolic diet",
+    "ckm nutrition",
+    "ckm diet",
+    "ckm lifestyle intervention",
+    "ckm lifestyle management",
+    "ckm dietary intervention",
+    "ckm nutrition therapy",
+    "cardiovascular-kidney-metabolic lifestyle intervention",
+    "cardiovascular kidney metabolic lifestyle intervention",
+    "cardiovascular-kidney-metabolic lifestyle management",
+    "cardiovascular kidney metabolic lifestyle management",
+    "cardiovascular-kidney-metabolic dietary intervention",
+    "cardiovascular kidney metabolic dietary intervention",
+    "cardiovascular-kidney-metabolic nutrition therapy",
+    "cardiovascular kidney metabolic nutrition therapy",
+    "cardiometabolic kidney nutrition",
+    "cardiometabolic kidney diet",
+    "cardiometabolic kidney lifestyle",
+    "diabetic kidney disease nutrition",
+    "diabetic kidney disease diet",
+    "chronic kidney disease cardiometabolic nutrition",
+    "chronic kidney disease cardiometabolic diet",
+]
+
+CKM_NUTRITION_CARE_DOCUMENT_TERMS = [
+    "ckm nutrition guideline",
+    "ckm dietary guideline",
+    "ckm lifestyle guideline",
+    "ckm nutrition consensus",
+    "ckm dietary consensus",
+    "ckm scientific statement",
+    "cardiovascular-kidney-metabolic nutrition guideline",
+    "cardiovascular kidney metabolic nutrition guideline",
+    "cardiovascular-kidney-metabolic dietary guideline",
+    "cardiovascular kidney metabolic dietary guideline",
+    "cardiovascular-kidney-metabolic lifestyle guideline",
+    "cardiovascular kidney metabolic lifestyle guideline",
+    "cardiovascular-kidney-metabolic nutrition consensus",
+    "cardiovascular kidney metabolic nutrition consensus",
+    "cardiovascular-kidney-metabolic scientific statement",
+    "cardiovascular kidney metabolic scientific statement",
+    "diabetic kidney disease nutrition guideline",
+    "diabetic kidney disease dietary guideline",
+    "chronic kidney disease nutrition guideline",
+]
+
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
     "intensive lifestyle intervention",
     "intensive lifestyle interventions",
@@ -503,9 +553,16 @@ def apply_semantic_extensions() -> None:
     )
     _extend_semantic_block(
         "cardiometabolic_precision",
-        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
-        document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS + CKM_NUTRITION_CARE_TERMS,
+        document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS
+        + CKM_NUTRITION_CARE_DOCUMENT_TERMS,
     )
+    for block_name in ("nutrition_care_delivery", "lifestyle_nutrition_patterns"):
+        _extend_semantic_block(
+            block_name,
+            terms=CKM_NUTRITION_CARE_TERMS,
+            document_terms=CKM_NUTRITION_CARE_DOCUMENT_TERMS,
+        )
     _extend_semantic_block(
         "evidence_synthesis",
         terms=OFFICIAL_GUIDANCE_TERMS,
