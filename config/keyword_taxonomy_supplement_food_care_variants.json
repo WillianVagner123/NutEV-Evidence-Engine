@@ -1,0 +1,57 @@
+{
+  "version_note": "Adds food-care and nutrition-prescription variants without modifying the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "nutrition prescription program",
+        "nutrition prescription programme",
+        "grocery prescription",
+        "grocery prescriptions",
+        "food care",
+        "food care model",
+        "food care program",
+        "food care programme",
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "medically tailored nutrition programme"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "nutrition prescription program",
+        "nutrition prescription programme",
+        "grocery prescription",
+        "grocery prescriptions",
+        "food care",
+        "food care model",
+        "food care program",
+        "food care programme",
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "medically tailored nutrition programme"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "nutrition prescription program",
+        "grocery prescriptions",
+        "food care program",
+        "medically tailored nutrition program"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "nutrition prescription intervention",
+        "grocery prescription trial",
+        "food care intervention",
+        "medically tailored nutrition intervention"
+      ]
+    }
+  }
+}
