@@ -13,8 +13,11 @@ def test_precision_personalized_nutrition_terms_reach_clinical_querypacks() -> N
 
     assert "personalized nutrition for cardiometabolic risk" in busca2a_terms
     assert "precision nutrition for type 2 diabetes" in busca2a_terms
+    assert "adaptive dietary intervention for cardiometabolic risk" in busca2a_terms
+    assert "algorithm-guided dietary advice for type 2 diabetes" in busca2a_terms
     assert "tailored dietary intervention for obesity" in busca2b_terms
     assert "individualized dietary intervention for type 2 diabetes" in busca2b_terms
+    assert "digital personalized nutrition for obesity" in busca2b_terms
 
 
 def test_precision_personalized_nutrition_document_terms_reach_framework_querypack() -> None:
@@ -22,6 +25,8 @@ def test_precision_personalized_nutrition_document_terms_reach_framework_querypa
 
     assert "personalized nutrition framework" in artigo3_document_terms
     assert "precision nutrition intervention" in artigo3_document_terms
+    assert "adaptive dietary intervention" in artigo3_document_terms
+    assert "digital personalized nutrition intervention" in artigo3_document_terms
     assert "tailored nutrition framework" in artigo3_document_terms
 
 
