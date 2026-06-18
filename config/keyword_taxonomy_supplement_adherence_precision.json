@@ -1,0 +1,90 @@
+{
+  "version_note": "2026-06 adherence precision supplement: expands diet-anchored adherence, self-monitoring, and maintenance terms without changing raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "diet adherence",
+        "dietary adherence",
+        "dietary compliance",
+        "diet compliance",
+        "long-term dietary adherence",
+        "long term dietary adherence",
+        "intervention engagement",
+        "program engagement",
+        "treatment fidelity",
+        "intervention fidelity"
+      ],
+      "behavioral": [
+        "dietary self-monitoring",
+        "diet self-monitoring",
+        "food self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "food choice self-efficacy",
+        "dietary self-efficacy",
+        "action planning",
+        "coping planning",
+        "implementation intentions",
+        "relapse prevention",
+        "habit formation"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet adherence",
+      "dietary adherence",
+      "dietary compliance",
+      "long-term dietary adherence",
+      "long term dietary adherence",
+      "dietary self-monitoring",
+      "dietary self-regulation",
+      "eating self-regulation"
+    ],
+    "behavioral": [
+      "food choice self-efficacy",
+      "dietary self-efficacy",
+      "action planning",
+      "coping planning",
+      "implementation intentions",
+      "relapse prevention",
+      "habit formation"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "dietary adherence intervention",
+        "diet adherence intervention",
+        "dietary self-monitoring trial",
+        "dietary self-regulation trial",
+        "eating self-regulation intervention",
+        "food choice self-efficacy intervention",
+        "dietary self-efficacy intervention",
+        "weight loss maintenance intervention",
+        "relapse prevention weight loss",
+        "habit formation nutrition intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "dietary adherence",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "food choice self-efficacy",
+        "dietary self-efficacy"
+      ],
+      "web_query_hints": [
+        "dietary adherence questionnaire",
+        "diet adherence scale",
+        "dietary self-monitoring scale",
+        "dietary self-regulation scale",
+        "eating self-regulation scale",
+        "food choice self-efficacy scale",
+        "dietary self-efficacy scale",
+        "food choice questionnaire"
+      ]
+    }
+  }
+}
