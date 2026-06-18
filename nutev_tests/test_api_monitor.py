@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from nutev.api.loaders import tail_jsonl
+from nutev.api.loaders import summarize_run_events, tail_jsonl
 
 
 def _write_events(path, n):
@@ -43,6 +43,26 @@ def test_tail_jsonl_offset_beyond_eof_returns_tail(tmp_path):
 
 def test_tail_jsonl_missing(tmp_path):
     assert tail_jsonl(tmp_path / "nope.jsonl", limit=10, offset=0) == {"available": False, "total": 0, "offset": 0, "items": []}
+
+
+def test_summarize_run_events(tmp_path):
+    p = tmp_path / "run_events.jsonl"
+    rows = [
+        {"stage": "provider_completed", "event_kind": "progress", "meta_json": {"total_returned": 5, "total_found": 10}},
+        {"stage": "provider_completed", "event_kind": "progress", "meta_json": {"total_returned": 3, "total_found": 3}},
+        {"stage": "provider_empty", "event_kind": "progress", "meta_json": {"total_returned": 0, "total_found": 0}},
+    ]
+    p.write_text("\n".join(json.dumps(r) for r in rows), encoding="utf-8")
+    s = summarize_run_events(p)
+    assert s["available"] and s["total"] == 3
+    assert s["stages"]["provider_completed"] == 2 and s["stages"]["provider_empty"] == 1
+    assert s["rows_returned"] == 8 and s["rows_found"] == 13
+    assert s["last_stage"] == "provider_empty"
+
+
+def test_summarize_run_events_missing(tmp_path):
+    s = summarize_run_events(tmp_path / "nope.jsonl")
+    assert s["available"] is False and s["total"] == 0 and s["stages"] == {}
 
 
 def test_run_events_route_and_dashboard(tmp_path):

@@ -138,7 +138,21 @@ async function loadHealth(){
 
 async function loadSummary(){
   const s=await api("/api/run-summary"); const g=$("kpis");
-  if(!s || s.available===false){ g.innerHTML=lastRunning?kpi("Status","rodando…","pipeline em execução — o resumo aparece ao terminar"):kpi("Status","sem run","rode o pipeline"); return; }
+  if(!s || s.available===false){
+    if(lastRunning){
+      const p=await api("/api/run-progress")||{}; const st=p.stages||{};
+      g.innerHTML=[
+        kpi("Status","rodando…","coletando — o resumo final aparece ao terminar"),
+        kpi("Consultas c/ resultado", st.provider_completed||0),
+        kpi("Consultas vazias", st.provider_empty||0, "normal: essa busca específica não achou nada"),
+        kpi("Resultados retornados", p.rows_returned||0, "brutos, antes de remover duplicados"),
+        kpi("Eventos", p.total||0, "etapa atual: "+(p.last_stage||"—")),
+      ].join("");
+    } else {
+      g.innerHTML=kpi("Status","sem run","rode o pipeline");
+    }
+    return;
+  }
   const ws=(s.workstreams||[]).join(", ");
   g.innerHTML=[
     kpi("Status", s.run_status||"—", ws?("workstreams: "+ws):""),

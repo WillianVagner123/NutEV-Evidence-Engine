@@ -78,6 +78,47 @@ def tail_jsonl(path: Path, limit: int, offset: int) -> dict:
     }
 
 
+def summarize_run_events(path: Path) -> dict:
+    """Live progress from the event log: counts per stage + results returned so
+    far. Lets the UI show a running tally before run_summary.json exists (which is
+    only written when the pipeline finishes)."""
+    if not path.exists():
+        return {"available": False, "total": 0, "stages": {}, "rows_returned": 0, "rows_found": 0, "last_stage": None}
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except Exception:
+        return {"available": False, "total": 0, "stages": {}, "rows_returned": 0, "rows_found": 0, "last_stage": None}
+    stages: dict[str, int] = {}
+    rows_returned = 0
+    rows_found = 0
+    last_stage = None
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            ev = json.loads(line)
+        except Exception:
+            continue
+        stage = ev.get("stage") or ev.get("event_kind") or "?"
+        stages[stage] = stages.get(stage, 0) + 1
+        last_stage = stage
+        meta = ev.get("meta_json") or {}
+        tr, tf = meta.get("total_returned"), meta.get("total_found")
+        if isinstance(tr, (int, float)) and not isinstance(tr, bool):
+            rows_returned += int(tr)
+        if isinstance(tf, (int, float)) and not isinstance(tf, bool):
+            rows_found += int(tf)
+    return {
+        "available": len(stages) > 0,
+        "total": sum(stages.values()),
+        "stages": stages,
+        "rows_returned": rows_returned,
+        "rows_found": rows_found,
+        "last_stage": last_stage,
+    }
+
+
 def read_markdown_safe(path: Path) -> str:
     if not path.exists():
         return ""
