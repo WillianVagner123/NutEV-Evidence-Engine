@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -eo pipefail  # not -u: venv activate scripts can reference unset vars
 
+# Run from the repo root no matter where this is invoked from (scripts/ is one
+# level down), so the relative .venv / project_output / pip install paths resolve.
+cd "$(dirname "$0")/.." || exit 1
+
 # Open the NutEV site locally, then click "▶ Rodar pipeline" in the browser.
 # Idempotent: creates the venv + installs only on first run; fast afterwards.
 echo "NutEV/NutMEV — site local"

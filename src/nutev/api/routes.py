@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import subprocess
 import sys
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -22,7 +23,8 @@ def build_router(project_root: Path) -> APIRouter:
     r = APIRouter()
     # Single in-process handle to the pipeline launched from the UI. The server
     # is local-first (127.0.0.1), so one run at a time is the intended model.
-    run_state: dict = {"proc": None, "started_at": None, "workstreams": [], "options": {}}
+    run_state: dict = {"proc": None, "log_fh": None, "started_at": None, "workstreams": [], "options": {}}
+    run_lock = threading.Lock()  # FastAPI runs sync endpoints in a threadpool
 
     def _run_status() -> dict:
         proc = run_state["proc"]
@@ -48,8 +50,6 @@ def build_router(project_root: Path) -> APIRouter:
 
     @r.post("/api/run")
     def run_start(payload: RunRequest | None = None):
-        if run_state["proc"] is not None and run_state["proc"].poll() is None:
-            raise HTTPException(status_code=409, detail="A pipeline run is already in progress")
         body = payload or RunRequest()
         workstreams = body.workstreams or ["busca1"]
         invalid = [w for w in workstreams if w not in VALID_WORKSTREAMS]
@@ -77,23 +77,36 @@ def build_router(project_root: Path) -> APIRouter:
 
         logs_dir = project_root / "07_logs"
         logs_dir.mkdir(parents=True, exist_ok=True)
-        log_fh = open(logs_dir / "serve_run.log", "ab")
-        proc = subprocess.Popen(args, stdout=log_fh, stderr=subprocess.STDOUT, env=env)
-        run_state.update({
-            "proc": proc,
-            "started_at": datetime.now(timezone.utc).isoformat(),
-            "workstreams": workstreams,
-            "options": {"web_enabled": bool(body.web_enabled), "journal_quality": bool(body.journal_quality)},
-        })
-        return {"started": True, **_run_status()}
+        # Lock so the check-and-spawn is atomic (endpoints run in a threadpool):
+        # two near-simultaneous POSTs must not both start a pipeline.
+        with run_lock:
+            if run_state["proc"] is not None and run_state["proc"].poll() is None:
+                raise HTTPException(status_code=409, detail="A pipeline run is already in progress")
+            # Reap the previous (finished) run's log handle before opening a new one.
+            if run_state["log_fh"] is not None:
+                try:
+                    run_state["log_fh"].close()
+                except Exception:
+                    pass
+            log_fh = open(logs_dir / "serve_run.log", "ab")
+            proc = subprocess.Popen(args, stdout=log_fh, stderr=subprocess.STDOUT, env=env)
+            run_state.update({
+                "proc": proc,
+                "log_fh": log_fh,
+                "started_at": datetime.now(timezone.utc).isoformat(),
+                "workstreams": workstreams,
+                "options": {"web_enabled": bool(body.web_enabled), "journal_quality": bool(body.journal_quality)},
+            })
+            return {"started": True, **_run_status()}
 
     @r.post("/api/run/stop")
     def run_stop():
-        proc = run_state["proc"]
-        if proc is None or proc.poll() is not None:
-            return {"stopped": False, "message": "No run in progress"}
-        proc.terminate()
-        return {"stopped": True, "pid": proc.pid}
+        with run_lock:
+            proc = run_state["proc"]
+            if proc is None or proc.poll() is not None:
+                return {"stopped": False, "message": "No run in progress"}
+            proc.terminate()
+            return {"stopped": True, "pid": proc.pid}
 
     @r.get("/api/health")
     def health():
@@ -173,9 +186,15 @@ def build_router(project_root: Path) -> APIRouter:
             "brave_search", "serpapi", "ncbi_pubmed", "crossref", "openalex", "europepmc",
         ]
         assistive = {"openai", "anthropic", "google_gemini", "openrouter", "ollama"}
+        # Env var each provider actually reads (the rest follow <NAME>_API_KEY).
+        env_by_provider = {
+            "crossref": "CROSSREF_MAILTO",
+            "openalex": "OPENALEX_MAILTO",
+            "ncbi_pubmed": "NCBI_API_KEY",
+        }
         items = []
         for provider in providers:
-            env_name = provider.upper() + ("_EMAIL" if provider in {"crossref", "openalex"} else "_API_KEY")
+            env_name = env_by_provider.get(provider, provider.upper() + "_API_KEY")
             items.append({
                 "provider": provider,
                 "secret_source": "env",

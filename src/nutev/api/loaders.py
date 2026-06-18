@@ -42,9 +42,10 @@ def tail_jsonl(path: Path, limit: int, offset: int) -> dict:
     """Tail a JSONL event log for live monitoring.
 
     ``offset<=0`` (or beyond EOF — i.e. a fresh run rotated the file) returns the
-    last ``limit`` events. A positive ``offset`` returns events recorded *after*
-    that line, so a client polls with ``?offset=<previous total>`` to stream only
-    what is new. ``total`` is the current line count = the next cursor to use.
+    last ``limit`` events. A positive ``offset`` is a *count of already-seen
+    events*: it returns the events after the first ``offset`` lines
+    (``lines[offset:]``), so a client polls with ``?offset=<previous total>`` to
+    stream only what is new. ``total`` is the current line count = the next cursor.
     """
     safe_limit = max(1, min(int(limit), MAX_PAGE_LIMIT))
     if not path.exists():

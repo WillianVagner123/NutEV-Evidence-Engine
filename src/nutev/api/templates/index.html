@@ -117,7 +117,7 @@
 
 <script>
 const $ = id => document.getElementById(id);
-const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 const fmt = n => (typeof n==="number"? n.toLocaleString("pt-BR") : (n==null?"—":esc(n)));
 async function api(p){ try{ const r=await fetch(p,{cache:"no-store"}); if(!r.ok) return null; return await r.json(); }catch(e){ return null; } }
 const hhmmss = iso => { const d=new Date(iso); return isNaN(d)? "" : d.toLocaleTimeString("pt-BR",{hour12:false}); };
@@ -127,7 +127,7 @@ let eventCursor=0, events=[], lastNewAt=0, lastEventIso=null;
 let activeTab="evidence";
 const TABS=[["evidence","Evidências"],["claims","Claims"],["recommendations","Recomendações"],["human-review-queue","Revisão humana"],["artifacts","Artefatos"]];
 
-function kpi(k,v,s){ return `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${fmt(v)}</div><div class="s">${s||""}</div></div>`; }
+function kpi(k,v,s){ return `<div class="kpi"><div class="k">${esc(k)}</div><div class="v">${fmt(v)}</div><div class="s">${esc(s||"")}</div></div>`; }
 
 async function loadHealth(){
   const h=await api("/api/health");
@@ -140,7 +140,7 @@ async function loadSummary(){
   if(!s || s.available===false){ g.innerHTML=kpi("Status","sem run","rode o pipeline"); return; }
   const ws=(s.workstreams||[]).join(", ");
   g.innerHTML=[
-    kpi("Status", s.run_status||"—", ws?("workstreams: "+esc(ws)):""),
+    kpi("Status", s.run_status||"—", ws?("workstreams: "+ws):""),
     kpi("Documentos", s.records, (s.curated_unique_documents!=null? s.curated_unique_documents+" únicos curados":"")),
     kpi("Claims", s.evidence_claims_total, `${fmt(s.evidence_claims_supported||0)} apoiados · ${fmt(s.evidence_claims_needs_review||0)} p/ revisão`),
     kpi("Recomendações", s.recommendation_candidates_total, `${fmt(s.recommendation_candidates_ready_review||0)} prontas p/ revisão`),
@@ -199,7 +199,7 @@ async function loadTab(){
   const meta=$("tableMeta"), box=$("table");
   if(!r || r.available===false || !(r.items||[]).length){ meta.textContent=""; box.innerHTML='<div class="empty">Sem dados para esta aba ainda.</div>'; return; }
   const items=r.items; const cols=Object.keys(items[0]).slice(0,9);
-  meta.textContent=`${fmt(r.total)} registros (mostrando ${items.length})`;
+  meta.textContent=`${fmt(r.total!=null?r.total:items.length)} registros (mostrando ${items.length})`;
   box.innerHTML=`<table><thead><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${
     items.map(row=>`<tr>${cols.map(c=>`<td title="${esc(row[c])}">${esc(row[c])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 }
@@ -221,14 +221,23 @@ async function runStart(){
   if(!ws.length){ alert("Selecione ao menos uma busca."); return; }
   $("playBtn").disabled=true; $("playBtn").textContent="iniciando…";
   const r=await fetch("/api/run",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({workstreams:ws,web_enabled:$("webChk").checked,journal_quality:$("jqChk").checked})});
-  if(!r.ok){ const e=await r.json().catch(()=>({})); alert("Não foi possível iniciar: "+((e&&e.detail)||r.status)); }
-  eventCursor=0; events=[];           // re-sync the live feed to the new run
+  if(!r.ok){ const e=await r.json().catch(()=>({})); alert("Não foi possível iniciar: "+((e&&e.detail)||r.status)); await loadRunStatus(); return; }
+  // Re-sync the feed to the new run: run_events.jsonl is append-only, so move the
+  // cursor to the current EOF and only show events appended from now on.
+  const cur=await api("/api/run-events?offset=0&limit=1");
+  eventCursor=(cur&&typeof cur.total==="number")?cur.total:eventCursor; events=[]; renderFeed();
   if(!auto){ auto=true; $("autoBtn").textContent="⏸ Pausar"; $("autoBtn").classList.add("on"); schedule(); }
   await tick();
 }
 async function runStop(){ await fetch("/api/run/stop",{method:"POST"}); await loadRunStatus(); }
 
-async function tick(){ await Promise.all([loadHealth(),loadSummary(),loadProviders(),loadEvents(),loadRunStatus(),loadTab()]); $("updated").textContent="atualizado "+new Date().toLocaleTimeString("pt-BR",{hour12:false}); }
+let ticking=false;
+async function tick(){
+  if(ticking) return;   // guard: overlapping polls would double-append events to the feed
+  ticking=true;
+  try{ await Promise.all([loadHealth(),loadSummary(),loadProviders(),loadEvents(),loadRunStatus(),loadTab()]); $("updated").textContent="atualizado "+new Date().toLocaleTimeString("pt-BR",{hour12:false}); }
+  finally{ ticking=false; }
+}
 function schedule(){ if(timer) clearInterval(timer); if(auto) timer=setInterval(tick,intervalMs); }
 
 $("autoBtn").onclick=()=>{ auto=!auto; $("autoBtn").textContent=auto?"⏸ Pausar":"▶ Retomar"; $("autoBtn").classList.toggle("on",auto); schedule(); };

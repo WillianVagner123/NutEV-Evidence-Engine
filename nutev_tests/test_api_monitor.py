@@ -83,3 +83,31 @@ def test_run_control_idle_and_validation(tmp_path):
     assert bad.status_code == 422
     # stopping with nothing running is a safe no-op
     assert client.post("/api/run/stop").json()["stopped"] is False
+
+
+def test_run_control_concurrent_guard(tmp_path, monkeypatch):
+    pytest.importorskip("fastapi")
+    pytest.importorskip("httpx")
+    import subprocess
+
+    from fastapi.testclient import TestClient
+
+    from nutev.api.server import create_app
+
+    class FakeProc:  # a "running" process: poll() never returns a code
+        pid = 4242
+
+        def poll(self):
+            return None
+
+        def terminate(self):
+            pass
+
+    monkeypatch.setattr(subprocess, "Popen", lambda *a, **k: FakeProc())
+    client = TestClient(create_app(tmp_path))
+    first = client.post("/api/run", json={"workstreams": ["busca1"]})
+    assert first.status_code == 200 and first.json()["running"] is True
+    # second concurrent start is rejected by the lock+check
+    assert client.post("/api/run", json={"workstreams": ["busca1"]}).status_code == 409
+    # a tracked running proc can be stopped
+    assert client.post("/api/run/stop").json()["stopped"] is True
