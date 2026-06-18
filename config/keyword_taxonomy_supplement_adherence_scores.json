@@ -1,0 +1,158 @@
+{
+  "version_note": "Adds focused dietary adherence and diet quality measurement terms as a separate supplement, preserving the base taxonomy while improving retrieval of adherence instruments, validation studies, and pattern-specific adherence evidence.",
+  "global": {
+    "diet_patterns": {
+      "adherence_scores": [
+        "dietary adherence score",
+        "dietary pattern adherence",
+        "diet pattern adherence",
+        "dietary pattern score",
+        "diet quality score",
+        "diet quality index",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "mediterranean diet adherence",
+        "mediterranean diet adherence score",
+        "mediterranean diet adherence screener",
+        "mediterranean diet score",
+        "alternate mediterranean diet score",
+        "medas",
+        "predimed score",
+        "dash diet adherence",
+        "dash adherence score",
+        "mind diet score",
+        "plant-based diet index",
+        "plant based diet index",
+        "healthy plant-based diet index",
+        "healthy plant based diet index",
+        "provegetarian food pattern",
+        "dietary inflammatory index"
+      ]
+    },
+    "implementation_behavior": {
+      "dietary_adherence_measurement": [
+        "dietary adherence instrument",
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "dietary adherence score",
+        "dietary adherence measure",
+        "diet adherence questionnaire",
+        "diet adherence scale",
+        "diet adherence score",
+        "diet quality assessment",
+        "diet quality index",
+        "diet quality score",
+        "dietary pattern adherence",
+        "dietary pattern score",
+        "food frequency questionnaire",
+        "mediterranean diet adherence screener",
+        "mediterranean diet adherence score",
+        "dash adherence score",
+        "plant-based diet index",
+        "healthy plant-based diet index"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "dietary adherence score",
+      "dietary pattern adherence",
+      "dietary pattern score",
+      "diet quality score",
+      "diet quality index",
+      "mediterranean diet adherence screener",
+      "mediterranean diet adherence score",
+      "dash adherence score",
+      "mind diet score",
+      "plant-based diet index",
+      "healthy plant-based diet index"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "dietary adherence score",
+        "dietary pattern adherence",
+        "diet quality score",
+        "mediterranean diet adherence score",
+        "mediterranean diet adherence screener",
+        "dash adherence score",
+        "plant-based diet index",
+        "healthy plant-based diet index"
+      ],
+      "web_query_hints": [
+        "dietary pattern adherence systematic review",
+        "dietary adherence score cardiometabolic trial",
+        "diet quality score cardiometabolic systematic review",
+        "mediterranean diet adherence type 2 diabetes",
+        "mediterranean diet adherence cardiometabolic risk",
+        "dash adherence score hypertension",
+        "plant-based diet index cardiometabolic risk"
+      ],
+      "document_terms": [
+        "dietary adherence score validation",
+        "dietary pattern adherence systematic review",
+        "diet quality score validation",
+        "adherence score validation"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "dietary adherence instrument",
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "dietary adherence score",
+        "diet quality assessment",
+        "diet quality index",
+        "mediterranean diet adherence screener",
+        "mediterranean diet adherence score",
+        "dash adherence score",
+        "plant-based diet index"
+      ],
+      "web_query_hints": [
+        "dietary adherence questionnaire validation",
+        "dietary adherence scale validation",
+        "dietary adherence score validation",
+        "diet quality index validation",
+        "mediterranean diet adherence screener validation",
+        "dash adherence score validation",
+        "plant-based diet index validation"
+      ],
+      "document_terms": [
+        "dietary adherence score validation",
+        "diet quality index validation",
+        "adherence instrument validation",
+        "psychometric validation"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "dietary adherence instrument",
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "dietary adherence score",
+        "diet quality assessment",
+        "diet quality index",
+        "mediterranean diet adherence screener",
+        "mediterranean diet adherence score",
+        "dash adherence score",
+        "plant-based diet index"
+      ],
+      "web_query_hints": [
+        "dietary adherence questionnaire validation",
+        "dietary adherence scale validation",
+        "dietary adherence score validation",
+        "diet quality index validation",
+        "mediterranean diet adherence screener validation",
+        "dash adherence score validation",
+        "plant-based diet index validation"
+      ],
+      "document_terms": [
+        "dietary adherence score validation",
+        "diet quality index validation",
+        "adherence instrument validation",
+        "psychometric validation"
+      ]
+    }
+  }
+}
