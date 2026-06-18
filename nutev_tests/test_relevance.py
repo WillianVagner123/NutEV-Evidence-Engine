@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from nutev.analysis.relevance import score_record
+from nutev.analysis.relevance import keep_candidate_for_download, score_record
 from nutev.settings import load_json
 
 
@@ -54,6 +54,38 @@ def test_expanded_mash_term_gains_busca2b_priority() -> None:
     baseline = _score("Lifestyle intervention for steatohepatitis in obesity")
 
     assert boosted > baseline
+
+
+def test_preclinical_noise_is_not_kept_for_download() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    record = score_record(
+        {
+            "title": "Mouse model of dietary intervention for obesity and cardiometabolic risk",
+            "abstract": "Preclinical animal model of nutrition exposure.",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert "animal_or_preclinical" in record["out_of_scope_flags"]
+    assert not keep_candidate_for_download(record, "busca2b")
+
+
+def test_adult_guideline_with_pediatric_transition_context_is_rescued() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    record = score_record(
+        {
+            "title": "Adult clinical practice guideline for obesity and cardiometabolic nutrition during pediatric transition",
+            "abstract": "Guidance for adult obesity care, lifestyle medicine, and medical nutrition therapy.",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2a",
+    )
+
+    assert "pediatric_population" in record["out_of_scope_flags"]
+    assert keep_candidate_for_download(record, "busca2a")
 
 
 def test_portuguese_lifestyle_medicine_phrase_gains_busca2a_priority() -> None:
