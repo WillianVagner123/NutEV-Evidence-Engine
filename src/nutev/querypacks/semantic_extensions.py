@@ -12,6 +12,18 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS = [
     "ckm syndrome",
     "ckm health",
     "ckm risk",
+    "cardiorenal-metabolic syndrome",
+    "cardiorenal metabolic syndrome",
+    "cardiorenal-metabolic health",
+    "cardiorenal metabolic health",
+    "cardiorenal-metabolic risk",
+    "cardiorenal metabolic risk",
+    "kidney-heart-metabolic syndrome",
+    "kidney heart metabolic syndrome",
+    "kidney-heart-metabolic health",
+    "kidney heart metabolic health",
+    "kidney-heart-metabolic risk",
+    "kidney heart metabolic risk",
 ]
 
 CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
