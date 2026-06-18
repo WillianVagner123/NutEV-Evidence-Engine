@@ -1,0 +1,111 @@
+{
+  "version_note": "2026-06 metabolic precision supplement: reinforces CKM, diabetes remission, MASLD/MASH, and cardiometabolic maintenance terms without editing the base taxonomy.",
+  "clinical": {
+    "diabetes": [
+      "type 2 diabetes remission",
+      "diabetes remission",
+      "remission of type 2 diabetes",
+      "diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission",
+      "diabetes remission maintenance",
+      "prediabetic state",
+      "impaired fasting glucose",
+      "impaired glucose tolerance",
+      "dysglycemia",
+      "dysglycaemia"
+    ],
+    "cvd": [
+      "cardiometabolic disease",
+      "cardiometabolic diseases",
+      "cardiometabolic health",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "ckm syndrome",
+      "ckm health"
+    ],
+    "fatty_liver": [
+      "metabolic dysfunction-associated steatohepatitis",
+      "metabolic dysfunction associated steatohepatitis",
+      "metabolic dysfunction-associated steatotic liver disease",
+      "metabolic dysfunction associated steatotic liver disease",
+      "mash",
+      "masld",
+      "steatotic liver disease"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ],
+    "glycemia": [
+      "type 2 diabetes remission",
+      "diabetes remission",
+      "remission maintenance",
+      "diabetes remission maintenance",
+      "glycemic remission",
+      "glycaemic remission",
+      "impaired fasting glucose",
+      "impaired glucose tolerance"
+    ],
+    "diet_quality_adherence": [
+      "dietary maintenance",
+      "long-term adherence",
+      "long term adherence",
+      "remission maintenance",
+      "diabetes remission maintenance"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "remission of type 2 diabetes",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "masld",
+        "mash"
+      ],
+      "web_query_hints": [
+        "type 2 diabetes remission consensus",
+        "diabetes remission consensus report",
+        "diabetes remission guideline",
+        "cardiovascular-kidney-metabolic syndrome scientific statement",
+        "ckm syndrome scientific statement",
+        "masld practice guidance",
+        "mash practice guidance"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "remission of type 2 diabetes",
+        "weight regain prevention",
+        "weight loss maintenance",
+        "cardiovascular-kidney-metabolic syndrome",
+        "ckm syndrome",
+        "masld",
+        "mash"
+      ],
+      "web_query_hints": [
+        "type 2 diabetes remission trial",
+        "diabetes remission maintenance trial",
+        "weight regain prevention trial",
+        "weight loss maintenance systematic review",
+        "cardiometabolic health lifestyle intervention",
+        "ckm syndrome lifestyle intervention",
+        "masld lifestyle intervention",
+        "mash lifestyle intervention"
+      ]
+    }
+  }
+}
