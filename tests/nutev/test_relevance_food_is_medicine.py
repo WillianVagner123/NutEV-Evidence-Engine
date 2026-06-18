@@ -54,3 +54,25 @@ def test_busca2b_food_is_medicine_trials_stay_download_eligible() -> None:
 
     assert enriched["relevance_score"] > baseline["relevance_score"]
     assert keep_candidate_for_download(enriched, "busca2b") is True
+
+
+def test_busca2b_food_is_medicine_referral_economics_gain_priority() -> None:
+    baseline = score_record(
+        _base_record(
+            "Implementation evaluation of nutrition counseling for adults with obesity and type 2 diabetes",
+            "Primary care referral workflows and adherence outcomes were assessed.",
+        ),
+        {},
+        "busca2b",
+    )
+    enriched = score_record(
+        _base_record(
+            "Implementation evaluation of food is medicine referral through a food pharmacy for adults with obesity and type 2 diabetes",
+            "Produce prescription referral, medically tailored meals cost-effectiveness, healthcare utilization, and adherence outcomes were assessed.",
+        ),
+        {},
+        "busca2b",
+    )
+
+    assert enriched["relevance_score"] > baseline["relevance_score"] + 20
+    assert keep_candidate_for_download(enriched, "busca2b") is True
