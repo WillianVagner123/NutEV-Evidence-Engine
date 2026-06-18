@@ -1,0 +1,54 @@
+{
+  "version_note": "Focused NutMEV scoring expansion for behavior-change maintenance and long-term dietary adherence. Complements query expansion without broadening unrelated domains.",
+  "keyword_points": {
+    "maintenance of behavior change": 3,
+    "maintenance of behaviour change": 3,
+    "behavior change maintenance": 3,
+    "behaviour change maintenance": 3,
+    "habit formation": 3,
+    "habit maintenance": 3,
+    "relapse prevention": 3,
+    "lapse management": 2,
+    "action planning": 3,
+    "coping planning": 3,
+    "problem solving": 2,
+    "self-management support": 3,
+    "long-term dietary adherence": 4,
+    "long term dietary adherence": 4
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "maintenance of behavior change": 4,
+      "maintenance of behaviour change": 4,
+      "behavior change maintenance": 4,
+      "behaviour change maintenance": 4,
+      "habit formation": 4,
+      "habit maintenance": 3,
+      "relapse prevention": 4,
+      "lapse management": 3,
+      "action planning": 3,
+      "coping planning": 3,
+      "self-management support": 4,
+      "long-term dietary adherence": 4,
+      "long term dietary adherence": 4
+    },
+    "a3": {
+      "maintenance of behavior change": 3,
+      "maintenance of behaviour change": 3,
+      "behavior change maintenance": 3,
+      "behaviour change maintenance": 3,
+      "habit formation": 3,
+      "relapse prevention": 3,
+      "self-management support": 3
+    },
+    "artigo3_framework": {
+      "maintenance of behavior change": 3,
+      "maintenance of behaviour change": 3,
+      "behavior change maintenance": 3,
+      "behaviour change maintenance": 3,
+      "habit formation": 3,
+      "relapse prevention": 3,
+      "self-management support": 3
+    }
+  }
+}

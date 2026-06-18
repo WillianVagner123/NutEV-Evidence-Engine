@@ -1,0 +1,137 @@
+{
+  "version_note": "Focused NutMEV expansion for dietary adherence, behavior-change maintenance, relapse prevention and pragmatic self-management support. Loaded after keyword_taxonomy.json without changing raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "behavior_change_maintenance": [
+        "maintenance of behavior change",
+        "maintenance of behaviour change",
+        "behavior change maintenance",
+        "behaviour change maintenance",
+        "habit formation",
+        "habit maintenance",
+        "relapse prevention",
+        "lapse management",
+        "action planning",
+        "coping planning",
+        "problem solving",
+        "self-management support",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "long-term dietary adherence",
+        "long term dietary adherence"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "maintenance of behavior change",
+      "maintenance of behaviour change",
+      "behavior change maintenance",
+      "behaviour change maintenance",
+      "habit formation",
+      "habit maintenance",
+      "relapse prevention",
+      "lapse management",
+      "action planning",
+      "coping planning",
+      "problem solving",
+      "self-management support",
+      "long-term dietary adherence",
+      "long term dietary adherence"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "maintenance of behavior change",
+        "maintenance of behaviour change",
+        "behavior change maintenance",
+        "behaviour change maintenance",
+        "habit formation",
+        "habit maintenance",
+        "relapse prevention",
+        "lapse management",
+        "action planning",
+        "coping planning",
+        "problem solving",
+        "self-management support",
+        "long-term dietary adherence",
+        "long term dietary adherence"
+      ],
+      "web_query_hints": [
+        "dietary adherence behavior change maintenance",
+        "dietary adherence behaviour change maintenance",
+        "lifestyle intervention relapse prevention trial",
+        "weight maintenance behavior change techniques",
+        "self-management support dietary intervention cardiometabolic",
+        "action planning dietary adherence intervention",
+        "coping planning dietary adherence intervention",
+        "habit formation dietary intervention"
+      ],
+      "document_terms": [
+        "behavior change maintenance",
+        "behaviour change maintenance",
+        "relapse prevention",
+        "self-management support",
+        "process evaluation"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "maintenance of behavior change",
+        "maintenance of behaviour change",
+        "behavior change maintenance",
+        "behaviour change maintenance",
+        "habit formation",
+        "habit maintenance",
+        "relapse prevention",
+        "action planning",
+        "coping planning",
+        "problem solving",
+        "self-management support"
+      ],
+      "web_query_hints": [
+        "behavior change maintenance framework nutrition",
+        "behaviour change maintenance framework nutrition",
+        "dietary adherence self-regulation framework",
+        "habit formation dietary adherence framework",
+        "self-management support nutrition framework"
+      ],
+      "document_terms": [
+        "behavior change maintenance",
+        "behaviour change maintenance",
+        "self-management support",
+        "framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "maintenance of behavior change",
+        "maintenance of behaviour change",
+        "behavior change maintenance",
+        "behaviour change maintenance",
+        "habit formation",
+        "habit maintenance",
+        "relapse prevention",
+        "action planning",
+        "coping planning",
+        "problem solving",
+        "self-management support"
+      ],
+      "web_query_hints": [
+        "behavior change maintenance framework nutrition",
+        "behaviour change maintenance framework nutrition",
+        "dietary adherence self-regulation framework",
+        "habit formation dietary adherence framework",
+        "self-management support nutrition framework"
+      ],
+      "document_terms": [
+        "behavior change maintenance",
+        "behaviour change maintenance",
+        "self-management support",
+        "framework"
+      ]
+    }
+  }
+}
