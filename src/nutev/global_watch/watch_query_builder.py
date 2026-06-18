@@ -153,6 +153,25 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "nutrition security intervention",
 ]
 
+BEHAVIOR_CHANGE_ADHERENCE_TERMS = [
+    "behavior change technique taxonomy",
+    "behaviour change technique taxonomy",
+    "BCT taxonomy",
+    "BCTTv1",
+    "dietary self-monitoring",
+    "dietary self monitoring",
+    "dietary self-regulation",
+    "dietary self regulation",
+    "habit formation",
+    "habit-based intervention",
+    "habit based intervention",
+    "problem solving",
+    "relapse prevention",
+    "lapse management",
+    "action control",
+    "implementation intentions",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -341,6 +360,7 @@ CATEGORY_CONTEXT_TERMS = {
         "self-efficacy",
         "self efficacy",
         "self-monitoring",
+        *BEHAVIOR_CHANGE_ADHERENCE_TERMS,
         "self-management",
         "self management",
         "self-management support",
@@ -796,6 +816,7 @@ QUICK_MODE_SEED_GROUPS = {
         [
             "behavior change",
             "behavior change technique",
+            *BEHAVIOR_CHANGE_ADHERENCE_TERMS,
             "behavior change wheel",
             "behaviour change wheel",
             "COM-B",
@@ -1069,6 +1090,7 @@ THESIS_MODE_SEED_GROUPS = {
         [
             "behavior change",
             "behavior change technique",
+            *BEHAVIOR_CHANGE_ADHERENCE_TERMS,
             "behavior change wheel",
             "behaviour change wheel",
             "COM-B",
