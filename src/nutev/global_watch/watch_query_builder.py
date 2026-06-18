@@ -961,6 +961,31 @@ QUICK_MODE_SEED_GROUPS = {
             "validation study",
         ],
     ],
+    "personalized_nutrition": [
+        [
+            "personalized nutrition obesity",
+            "personalised nutrition obesity",
+            "precision nutrition obesity",
+            "tailored dietary advice obesity",
+            "individualized meal plan obesity",
+            "individualised meal plan obesity",
+        ],
+        [
+            "personalized nutrition cardiometabolic risk",
+            "personalised nutrition cardiometabolic risk",
+            "precision nutrition cardiometabolic risk",
+            "tailored dietary advice cardiometabolic risk",
+            "tailored dietary intervention cardiometabolic risk",
+        ],
+        [
+            "personalized nutrition type 2 diabetes",
+            "personalised nutrition type 2 diabetes",
+            "precision nutrition type 2 diabetes",
+            "tailored dietary advice type 2 diabetes",
+            "individualized dietary intervention type 2 diabetes",
+            "individualised dietary intervention type 2 diabetes",
+        ],
+    ],
 }
 
 THESIS_MODE_SEED_GROUPS = {
