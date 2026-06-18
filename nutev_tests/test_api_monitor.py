@@ -62,7 +62,20 @@ def test_summarize_run_events(tmp_path):
 
 def test_summarize_run_events_missing(tmp_path):
     s = summarize_run_events(tmp_path / "nope.jsonl")
-    assert s["available"] is False and s["total"] == 0 and s["stages"] == {}
+    assert s["available"] is False and s["total"] == 0 and s["stages"] == {} and s["download"] is None
+
+
+def test_summarize_run_events_download_position(tmp_path):
+    p = tmp_path / "run_events.jsonl"
+    base = [
+        {"stage": "download_started", "meta_json": {"total": 100}},
+        {"stage": "download_progress", "meta_json": {"done": 40, "total": 100}},
+    ]
+    p.write_text("\n".join(json.dumps(r) for r in base), encoding="utf-8")
+    assert summarize_run_events(p)["download"] == {"done": 40, "total": 100}
+    # download_completed clears the live position
+    p.write_text("\n".join(json.dumps(r) for r in [*base, {"stage": "download_completed", "meta_json": {"downloaded": 10}}]), encoding="utf-8")
+    assert summarize_run_events(p)["download"] is None
 
 
 def test_run_events_route_and_dashboard(tmp_path):

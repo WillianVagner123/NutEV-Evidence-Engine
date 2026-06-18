@@ -83,15 +83,16 @@ def summarize_run_events(path: Path) -> dict:
     far. Lets the UI show a running tally before run_summary.json exists (which is
     only written when the pipeline finishes)."""
     if not path.exists():
-        return {"available": False, "total": 0, "stages": {}, "rows_returned": 0, "rows_found": 0, "last_stage": None}
+        return {"available": False, "total": 0, "stages": {}, "rows_returned": 0, "rows_found": 0, "last_stage": None, "download": None}
     try:
         lines = path.read_text(encoding="utf-8").splitlines()
     except Exception:
-        return {"available": False, "total": 0, "stages": {}, "rows_returned": 0, "rows_found": 0, "last_stage": None}
+        return {"available": False, "total": 0, "stages": {}, "rows_returned": 0, "rows_found": 0, "last_stage": None, "download": None}
     stages: dict[str, int] = {}
     rows_returned = 0
     rows_found = 0
     last_stage = None
+    download = None  # latest full-text download position {done,total}
     for line in lines:
         line = line.strip()
         if not line:
@@ -109,6 +110,13 @@ def summarize_run_events(path: Path) -> dict:
             rows_returned += int(tr)
         if isinstance(tf, (int, float)) and not isinstance(tf, bool):
             rows_found += int(tf)
+        if stage in ("download_started", "download_progress"):
+            t = meta.get("total")
+            d = meta.get("done", 0)
+            if isinstance(t, (int, float)) and not isinstance(t, bool):
+                download = {"done": int(d) if isinstance(d, (int, float)) and not isinstance(d, bool) else 0, "total": int(t)}
+        elif stage == "download_completed":
+            download = None
     return {
         "available": len(stages) > 0,
         "total": sum(stages.values()),
@@ -116,6 +124,7 @@ def summarize_run_events(path: Path) -> dict:
         "rows_returned": rows_returned,
         "rows_found": rows_found,
         "last_stage": last_stage,
+        "download": download,
     }
 
 

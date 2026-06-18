@@ -423,6 +423,7 @@ def download_records(
     public_dir: Path,
     official_dir: Path,
     logger,
+    on_progress=None,
 ) -> tuple[list[dict], list[dict]]:
     dedup = Deduplicator()
     manifest: list[dict] = []
@@ -451,7 +452,16 @@ def download_records(
     except ValueError:
         download_limit = None
 
-    for record in records[:download_limit] if download_limit is not None else records:
+    items = records[:download_limit] if download_limit is not None else records
+    total = len(items)
+    for index, record in enumerate(items, 1):
+        # Periodic progress so the live monitor isn't silent during the (slow,
+        # sequential) full-text download phase.
+        if on_progress and (index == 1 or index % 20 == 0):
+            try:
+                on_progress(index, total, len(manifest))
+            except Exception:
+                pass
         try:
             record = dict(record)
         except Exception:

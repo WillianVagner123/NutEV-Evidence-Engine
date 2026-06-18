@@ -141,13 +141,17 @@ async function loadSummary(){
   if(!s || s.available===false){
     if(lastRunning){
       const p=await api("/api/run-progress")||{}; const st=p.stages||{};
-      g.innerHTML=[
-        kpi("Status","rodando…","coletando — o resumo final aparece ao terminar"),
+      const STAGE_PT={provider_started:"buscando",provider_completed:"buscando",provider_empty:"buscando",download_started:"baixando textos",download_progress:"baixando textos",download_completed:"baixando textos",journal_quality_started:"qualidade de periódico",journal_quality_completed:"qualidade de periódico",synthesis_completed:"sintetizando",curation_completed:"finalizando"};
+      const etapa=STAGE_PT[p.last_stage]||(p.last_stage||"—");
+      const cards=[
+        kpi("Status","rodando…","etapa: "+etapa),
         kpi("Consultas c/ resultado", st.provider_completed||0),
         kpi("Consultas vazias", st.provider_empty||0, "normal: essa busca específica não achou nada"),
         kpi("Resultados retornados", p.rows_returned||0, "brutos, antes de remover duplicados"),
-        kpi("Eventos", p.total||0, "etapa atual: "+(p.last_stage||"—")),
-      ].join("");
+      ];
+      if(p.download && p.download.total){ cards.push(kpi("Baixando textos", (p.download.done||0)+"/"+p.download.total, "fase lenta: baixa PDFs um a um")); }
+      cards.push(kpi("Eventos", p.total||0, "atividade do pipeline"));
+      g.innerHTML=cards.join("");
     } else {
       g.innerHTML=kpi("Status","sem run","rode o pipeline");
     }

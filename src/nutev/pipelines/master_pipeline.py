@@ -473,11 +473,28 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
         logger.info("ws=%s candidatos_download=%d", ws, len(rows_for_download))
 
+        events_path = settings.output_dirs["07_logs"] / "run_events.jsonl"
+        write_event(
+            emit_event(run_id, "download_started", f"Downloading {len(rows_for_download)} full-texts", meta_json={"workstream": ws, "total": len(rows_for_download)}),
+            events_path,
+        )
+
+        def _dl_progress(done: int, total: int, ok: int, _ws: str = ws) -> None:
+            write_event(
+                emit_event(run_id, "download_progress", f"Downloaded {done}/{total}", meta_json={"workstream": _ws, "done": done, "total": total, "downloaded_ok": ok}),
+                events_path,
+            )
+
         manifest, failed = download_records(
             rows_for_download,
             settings.output_dirs["03B_public_downloads"],
             settings.output_dirs["03C_official_docs"],
             logger,
+            on_progress=_dl_progress,
+        )
+        write_event(
+            emit_event(run_id, "download_completed", f"Downloaded {len(manifest)}, {len(failed)} metadata-only", meta_json={"workstream": ws, "downloaded": len(manifest), "failed": len(failed)}),
+            events_path,
         )
 
         all_manifest += manifest
@@ -578,7 +595,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     if os.environ.get("NUTEV_JOURNAL_QUALITY") == "1":
         from nutev.analysis.journal_quality import enrich_journal_quality
 
+        jq_path = settings.output_dirs["07_logs"] / "run_events.jsonl"
+        write_event(emit_event(run_id, "journal_quality_started", "Scoring journal quality (network)", meta_json={"rows": len(all_rows)}), jq_path)
         enrich_journal_quality(all_rows, config_root=settings.config_root)
+        write_event(emit_event(run_id, "journal_quality_completed", "Journal quality done"), jq_path)
 
     kb_records = to_kb_records(all_rows)
     write_knowledge_base(kb_records, kb_dir)
