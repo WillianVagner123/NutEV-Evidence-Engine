@@ -1,0 +1,40 @@
+{
+  "version_note": "2026-06-15 ckm, prediabetes and remission scoring supplement",
+  "keyword_points": {
+    "cardiovascular-kidney-metabolic": 3,
+    "cardiovascular kidney metabolic": 3,
+    "cardiovascular-kidney-metabolic syndrome": 4,
+    "cardiovascular kidney metabolic syndrome": 4,
+    "ckm syndrome": 4,
+    "prediabetes lifestyle intervention": 4,
+    "prediabetes lifestyle modification": 4,
+    "diabetes remission consensus": 4,
+    "diabetes remission guideline": 4,
+    "type 2 diabetes remission trial": 4,
+    "weight regain prevention": 4,
+    "weight regain management": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiovascular-kidney-metabolic": 4,
+      "cardiovascular kidney metabolic": 4,
+      "cardiovascular-kidney-metabolic syndrome": 5,
+      "cardiovascular kidney metabolic syndrome": 5,
+      "ckm syndrome": 5,
+      "prediabetes guideline": 5,
+      "diabetes remission consensus": 5,
+      "type 2 diabetes remission guideline": 5
+    },
+    "busca2b": {
+      "cardiovascular-kidney-metabolic lifestyle intervention": 5,
+      "cardiovascular kidney metabolic lifestyle intervention": 5,
+      "ckm syndrome lifestyle intervention": 5,
+      "prediabetes lifestyle intervention": 5,
+      "prediabetes lifestyle modification": 5,
+      "diabetes remission trial": 5,
+      "type 2 diabetes remission trial": 5,
+      "weight regain prevention trial": 5,
+      "weight loss maintenance systematic review": 5
+    }
+  }
+}
