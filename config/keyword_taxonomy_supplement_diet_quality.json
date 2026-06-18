@@ -1,0 +1,30 @@
+{
+  "version_note": "2026-06 diet quality index expansion for cardiometabolic nutrition search",
+  "global": {
+    "diet_patterns": {
+      "diet_quality_indices": [
+        "diet quality",
+        "diet quality index",
+        "diet quality indices",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "alternative healthy eating index",
+        "ahei",
+        "dietary inflammatory index",
+        "empirical dietary inflammatory pattern",
+        "edip score",
+        "mediterranean diet score",
+        "alternate mediterranean diet score",
+        "dash score",
+        "mind diet score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "unhealthy plant-based diet index",
+        "dietary guideline adherence index",
+        "food-based dietary guideline adherence",
+        "healthy diet indicator",
+        "dietary approaches index"
+      ]
+    }
+  }
+}
