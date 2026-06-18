@@ -1,0 +1,26 @@
+{
+  "version_note": "2026-06 scoring support for diet quality index retrieval",
+  "keyword_points": {
+    "diet quality": 2,
+    "diet quality index": 3,
+    "diet quality indices": 3,
+    "healthy eating index": 3,
+    "alternate healthy eating index": 3,
+    "alternative healthy eating index": 3,
+    "ahei": 2,
+    "dietary inflammatory index": 3,
+    "empirical dietary inflammatory pattern": 3,
+    "edip score": 2,
+    "mediterranean diet score": 3,
+    "alternate mediterranean diet score": 3,
+    "dash score": 3,
+    "mind diet score": 3,
+    "plant-based diet index": 3,
+    "healthy plant-based diet index": 3,
+    "unhealthy plant-based diet index": 2,
+    "dietary guideline adherence index": 3,
+    "food-based dietary guideline adherence": 3,
+    "healthy diet indicator": 3,
+    "dietary approaches index": 2
+  }
+}
