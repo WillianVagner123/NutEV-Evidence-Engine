@@ -80,5 +80,49 @@
     ],
     "blocked_patterns": ["login", "shop", "donate"],
     "notes": "Cardiovascular, CKM syndrome, nutrition and obesity guidance"
+  },
+  {
+    "institution": "Obesity Canada",
+    "country": "Canada",
+    "region": "North America",
+    "base_url": "https://obesitycanada.ca",
+    "priority": 1,
+    "language": "en",
+    "categories": ["guidelines_consensus", "cardiometabolic_risk"],
+    "workstream_affinity": ["busca2a", "busca2b"],
+    "allowed_patterns": [
+      "guideline",
+      "guidelines",
+      "clinical-practice-guideline",
+      "clinical practice guideline",
+      "obesity",
+      "nutrition",
+      "weight-management",
+      "weight management"
+    ],
+    "blocked_patterns": ["login", "subscribe", "donate", "shop"],
+    "notes": "Adult obesity clinical practice guidelines and nutrition-related management guidance"
+  },
+  {
+    "institution": "European Association for the Study of Obesity",
+    "country": "Europe",
+    "region": "Europe",
+    "base_url": "https://easo.org",
+    "priority": 1,
+    "language": "en",
+    "categories": ["guidelines_consensus", "cardiometabolic_risk"],
+    "workstream_affinity": ["busca2a", "busca2b"],
+    "allowed_patterns": [
+      "guideline",
+      "guidelines",
+      "position-statement",
+      "position statement",
+      "consensus",
+      "obesity",
+      "nutrition",
+      "cardiometabolic"
+    ],
+    "blocked_patterns": ["login", "subscribe", "membership", "donate"],
+    "notes": "European obesity statements, guidelines and cardiometabolic consensus documents"
   }
 ]
