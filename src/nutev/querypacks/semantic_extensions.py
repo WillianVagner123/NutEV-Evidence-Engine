@@ -24,6 +24,23 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+SARCOPENIC_OBESITY_TERMS = [
+    "sarcopenic obesity",
+    "sarcopenic adiposity",
+    "obesity with sarcopenia",
+    "sarcopenia and obesity",
+    "dynapenic obesity",
+    "low muscle mass obesity",
+]
+
+SARCOPENIC_OBESITY_DOCUMENT_TERMS = [
+    "clinical practice guideline",
+    "consensus statement",
+    "position statement",
+    "systematic review",
+    "umbrella review",
+]
+
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
     "intensive lifestyle intervention",
     "intensive lifestyle interventions",
@@ -503,8 +520,11 @@ def apply_semantic_extensions() -> None:
     )
     _extend_semantic_block(
         "cardiometabolic_precision",
-        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
-        document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS + SARCOPENIC_OBESITY_TERMS,
+        document_terms=(
+            CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS
+            + SARCOPENIC_OBESITY_DOCUMENT_TERMS
+        ),
     )
     _extend_semantic_block(
         "evidence_synthesis",
