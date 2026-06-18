@@ -266,6 +266,8 @@ WATCH_CATEGORIES = {
         "remission of diabetes",
         "diabetes reversal",
         "type 2 diabetes reversal",
+        "glycemic remission",
+        "glycaemic remission",
         "hypertension",
         "blood pressure",
         "dyslipidemia",
