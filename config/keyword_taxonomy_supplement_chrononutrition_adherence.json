@@ -1,0 +1,106 @@
+{
+  "version_note": "Focused NutMEV supplement for chrononutrition adherence and meal-timing interventions. Loaded after keyword_taxonomy.json and keyword_taxonomy_supplement.json; appends terms without replacing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "chrononutrition_adherence": [
+        "chrononutrition adherence",
+        "chrono-nutrition adherence",
+        "circadian nutrition",
+        "circadian eating pattern",
+        "circadian dietary pattern",
+        "meal timing adherence",
+        "meal timing counseling",
+        "meal timing counselling",
+        "time-restricted eating adherence",
+        "time restricted eating adherence",
+        "early time-restricted eating adherence",
+        "early time restricted eating adherence",
+        "time-restricted feeding adherence",
+        "time restricted feeding adherence"
+      ]
+    },
+    "implementation_behavior": {
+      "chrononutrition_implementation": [
+        "chrononutrition intervention",
+        "chrono-nutrition intervention",
+        "chrononutrition implementation",
+        "meal timing intervention",
+        "meal timing counseling",
+        "meal timing counselling",
+        "meal timing behavior change",
+        "meal timing behaviour change",
+        "time-restricted eating intervention",
+        "time restricted eating intervention",
+        "time-restricted eating adherence",
+        "time restricted eating adherence",
+        "early time-restricted eating intervention",
+        "early time restricted eating intervention",
+        "eating window adherence",
+        "feeding window adherence"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "chrononutrition adherence",
+      "meal timing adherence",
+      "time-restricted eating adherence",
+      "time restricted eating adherence",
+      "early time-restricted eating adherence",
+      "early time restricted eating adherence",
+      "eating window adherence",
+      "feeding window adherence"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "chrononutrition intervention",
+        "chrono-nutrition intervention",
+        "chrononutrition implementation",
+        "circadian nutrition",
+        "circadian eating pattern",
+        "circadian dietary pattern",
+        "meal timing intervention",
+        "meal timing adherence",
+        "meal timing counseling",
+        "meal timing counselling",
+        "meal timing behavior change",
+        "meal timing behaviour change",
+        "time-restricted eating intervention",
+        "time restricted eating intervention",
+        "time-restricted eating adherence",
+        "time restricted eating adherence",
+        "early time-restricted eating intervention",
+        "early time restricted eating intervention",
+        "early time-restricted eating adherence",
+        "early time restricted eating adherence",
+        "eating window adherence",
+        "feeding window adherence"
+      ],
+      "web_query_hints": [
+        "chrononutrition obesity intervention",
+        "chrononutrition type 2 diabetes intervention",
+        "chrononutrition cardiometabolic trial",
+        "meal timing obesity trial",
+        "meal timing type 2 diabetes trial",
+        "meal timing adherence intervention",
+        "time-restricted eating adherence trial",
+        "time restricted eating adherence trial",
+        "early time-restricted eating cardiometabolic trial",
+        "early time restricted eating cardiometabolic trial",
+        "time-restricted eating implementation",
+        "time restricted eating implementation"
+      ],
+      "document_terms": [
+        "randomized trial",
+        "randomised trial",
+        "controlled trial",
+        "feasibility study",
+        "pilot study",
+        "systematic review",
+        "meta-analysis"
+      ]
+    }
+  }
+}
