@@ -24,6 +24,53 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+ADIPOSITY_PHENOTYPE_TERMS = [
+    "adiposity phenotype",
+    "adiposity phenotypes",
+    "body mass index",
+    "bmi",
+    "central adiposity",
+    "abdominal adiposity",
+    "abdominal obesity",
+    "central obesity",
+    "visceral adiposity",
+    "visceral fat",
+    "waist circumference",
+    "waist-to-height ratio",
+    "waist to height ratio",
+    "waist-to-hip ratio",
+    "waist to hip ratio",
+    "anthropometric measure",
+    "anthropometric measures",
+    "anthropometric index",
+    "anthropometric indices",
+    "body composition",
+    "body fat percentage",
+    "percent body fat",
+    "ectopic fat",
+    "sarcopenic obesity",
+    "adiposity-based chronic disease",
+    "adiposity based chronic disease",
+]
+
+ADIPOSITY_PHENOTYPE_DOCUMENT_TERMS = [
+    "adiposity phenotype",
+    "adiposity phenotypes",
+    "body mass index",
+    "waist circumference",
+    "waist-to-height ratio",
+    "waist to height ratio",
+    "waist-to-hip ratio",
+    "waist to hip ratio",
+    "visceral adiposity",
+    "anthropometric index",
+    "anthropometric indices",
+    "body composition",
+    "sarcopenic obesity",
+    "adiposity-based chronic disease",
+    "adiposity based chronic disease",
+]
+
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
     "intensive lifestyle intervention",
     "intensive lifestyle interventions",
@@ -503,8 +550,11 @@ def apply_semantic_extensions() -> None:
     )
     _extend_semantic_block(
         "cardiometabolic_precision",
-        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
-        document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+        terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS + ADIPOSITY_PHENOTYPE_TERMS,
+        document_terms=(
+            CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS
+            + ADIPOSITY_PHENOTYPE_DOCUMENT_TERMS
+        ),
     )
     _extend_semantic_block(
         "evidence_synthesis",

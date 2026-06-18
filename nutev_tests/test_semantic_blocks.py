@@ -14,6 +14,21 @@ def test_busca2b_semantic_terms_include_precision_terms() -> None:
     assert "hypercholesterolaemia" in terms
 
 
+def test_busca2b_semantic_terms_include_adiposity_phenotype_terms() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+    document_terms = {
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    }
+
+    assert "waist circumference" in terms
+    assert "waist-to-height ratio" in terms
+    assert "visceral adiposity" in terms
+    assert "sarcopenic obesity" in terms
+    assert "anthropometric index" in document_terms
+    assert "body composition" in document_terms
+
+
 def test_busca2b_semantic_terms_include_behavior_change_variants() -> None:
     terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
     assert "behavior change techniques" in terms
