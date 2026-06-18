@@ -1,0 +1,45 @@
+{
+  "version_note": "2026-06-17: expand UPF/NOVA vocabulary for cardiometabolic lifestyle nutrition retrieval.",
+  "global": {
+    "diet_patterns": {
+      "processing": [
+        "ultra-processed food",
+        "ultra processed food",
+        "ultra-processed foods",
+        "ultra processed foods",
+        "ultraprocessed food",
+        "ultraprocessed foods",
+        "UPF",
+        "UPFs",
+        "UPF consumption",
+        "UPF intake",
+        "ultra-processed food consumption",
+        "ultra processed food consumption",
+        "ultra-processed food intake",
+        "ultra processed food intake",
+        "ultra-processed dietary pattern",
+        "ultra processed dietary pattern",
+        "ultra-processed diet",
+        "ultra processed diet",
+        "NOVA group 4",
+        "NOVA food classification",
+        "NOVA classification",
+        "industrial food formulation",
+        "industrial food formulations",
+        "industrially formulated food",
+        "industrially formulated foods",
+        "highly processed food",
+        "highly processed foods",
+        "minimally processed food",
+        "minimally processed foods",
+        "unprocessed or minimally processed food",
+        "unprocessed or minimally processed foods",
+        "alimentos ultraprocessados",
+        "consumo de ultraprocessados",
+        "consumo de alimentos ultraprocessados",
+        "classificacao NOVA",
+        "classificacao nova"
+      ]
+    }
+  }
+}

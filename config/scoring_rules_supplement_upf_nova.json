@@ -1,0 +1,62 @@
+{
+  "version_note": "2026-06-17: add moderate scoring for UPF/NOVA terms within NutMEV cardiometabolic nutrition scope.",
+  "keyword_points": {
+    "ultra-processed food": 3,
+    "ultra processed food": 3,
+    "ultra-processed foods": 3,
+    "ultra processed foods": 3,
+    "ultraprocessed food": 3,
+    "ultraprocessed foods": 3,
+    "upf consumption": 3,
+    "upf intake": 3,
+    "ultra-processed food consumption": 4,
+    "ultra processed food consumption": 4,
+    "ultra-processed food intake": 4,
+    "ultra processed food intake": 4,
+    "ultra-processed dietary pattern": 4,
+    "ultra processed dietary pattern": 4,
+    "ultra-processed diet": 3,
+    "ultra processed diet": 3,
+    "nova group 4": 4,
+    "nova food classification": 4,
+    "nova classification": 3,
+    "industrial food formulation": 3,
+    "industrial food formulations": 3,
+    "industrially formulated food": 3,
+    "industrially formulated foods": 3,
+    "highly processed food": 2,
+    "highly processed foods": 2,
+    "minimally processed food": 2,
+    "minimally processed foods": 2,
+    "unprocessed or minimally processed food": 2,
+    "unprocessed or minimally processed foods": 2
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "ultra-processed food": 3,
+      "ultra processed food": 3,
+      "nova classification": 3,
+      "nova food classification": 4,
+      "alimentos ultraprocessados": 3
+    },
+    "busca2a": {
+      "ultra-processed food": 3,
+      "ultra processed food": 3,
+      "ultra-processed food intake": 4,
+      "ultra processed food intake": 4,
+      "nova group 4": 4,
+      "nova classification": 3,
+      "nova food classification": 4
+    },
+    "busca2b": {
+      "ultra-processed food": 3,
+      "ultra processed food": 3,
+      "ultra-processed dietary pattern": 4,
+      "ultra processed dietary pattern": 4,
+      "upf consumption": 3,
+      "upf intake": 3,
+      "nova group 4": 4,
+      "nova classification": 3
+    }
+  }
+}
