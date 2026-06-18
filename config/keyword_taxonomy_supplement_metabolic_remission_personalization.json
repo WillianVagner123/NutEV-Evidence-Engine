@@ -1,0 +1,212 @@
+{
+  "version_note": "Adds focused metabolic remission, weight-maintenance, and personalized nutrition search terms for NutMEV without changing base taxonomy files.",
+  "global": {
+    "implementation_behavior": {
+      "metabolic_remission_maintenance": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "remission of type 2 diabetes",
+        "glycemic remission",
+        "glycaemic remission",
+        "diabetes reversal",
+        "type 2 diabetes reversal",
+        "metabolic remission",
+        "nutrition care for diabetes remission",
+        "dietitian-led remission",
+        "dietitian led remission",
+        "weight loss maintenance",
+        "long-term weight loss maintenance",
+        "long term weight loss maintenance",
+        "weight regain prevention",
+        "weight regain management"
+      ],
+      "personalized_nutrition_care": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation"
+      ]
+    }
+  },
+  "outcomes": {
+    "weight_adiposity": [
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ],
+    "glycemic_metabolic": [
+      "type 2 diabetes remission",
+      "diabetes remission",
+      "remission of type 2 diabetes",
+      "glycemic remission",
+      "glycaemic remission",
+      "diabetes reversal",
+      "type 2 diabetes reversal",
+      "metabolic remission",
+      "nutrition care for diabetes remission"
+    ],
+    "diet_quality_adherence": [
+      "personalized nutrition",
+      "personalised nutrition",
+      "precision nutrition",
+      "tailored dietary advice",
+      "tailored dietary intervention",
+      "personalized meal planning",
+      "personalised meal planning",
+      "individualized diet",
+      "individualised diet"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "remission of type 2 diabetes",
+        "glycemic remission",
+        "glycaemic remission",
+        "diabetes reversal",
+        "type 2 diabetes reversal",
+        "metabolic remission",
+        "nutrition care for diabetes remission",
+        "medical nutrition therapy remission",
+        "dietitian-led remission",
+        "dietitian led remission",
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention"
+      ],
+      "web_query_hints": [
+        "diabetes remission guideline",
+        "type 2 diabetes remission guideline",
+        "diabetes remission consensus report",
+        "nutrition care for diabetes remission guideline",
+        "medical nutrition therapy diabetes remission consensus",
+        "precision nutrition cardiometabolic guideline"
+      ],
+      "document_terms": [
+        "diabetes remission consensus",
+        "diabetes remission consensus report",
+        "type 2 diabetes remission guideline",
+        "remission guideline",
+        "medical nutrition therapy consensus",
+        "nutrition care consensus"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "glycemic remission",
+        "glycaemic remission",
+        "diabetes reversal",
+        "nutrition care for diabetes remission",
+        "dietitian-led remission",
+        "dietitian led remission",
+        "weight loss maintenance",
+        "long-term weight loss maintenance",
+        "long term weight loss maintenance",
+        "weight regain prevention",
+        "weight regain management",
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored dietary intervention",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning"
+      ],
+      "web_query_hints": [
+        "type 2 diabetes remission lifestyle intervention trial",
+        "diabetes remission diet intervention trial",
+        "nutrition care for diabetes remission trial",
+        "weight loss maintenance dietary intervention trial",
+        "weight regain prevention lifestyle intervention",
+        "personalized nutrition cardiometabolic trial",
+        "precision nutrition type 2 diabetes trial",
+        "tailored dietary intervention cardiometabolic risk"
+      ],
+      "document_terms": [
+        "remission trial",
+        "weight loss maintenance trial",
+        "weight loss maintenance systematic review",
+        "weight regain prevention trial",
+        "personalized nutrition trial",
+        "precision nutrition trial"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation"
+      ],
+      "web_query_hints": [
+        "personalized nutrition framework",
+        "precision nutrition framework",
+        "tailored dietary advice framework",
+        "personalized meal planning intervention"
+      ],
+      "document_terms": [
+        "personalized nutrition framework",
+        "precision nutrition framework",
+        "tailored dietary advice framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation"
+      ],
+      "web_query_hints": [
+        "personalized nutrition framework",
+        "precision nutrition framework",
+        "tailored dietary advice framework",
+        "personalized meal planning intervention"
+      ],
+      "document_terms": [
+        "personalized nutrition framework",
+        "precision nutrition framework",
+        "tailored dietary advice framework"
+      ]
+    }
+  }
+}
