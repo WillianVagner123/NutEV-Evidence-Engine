@@ -67,3 +67,21 @@ def test_busca2b_semantic_terms_include_food_as_medicine_program_variants() -> N
     assert "nutrition incentive program" in terms
     assert "produce voucher program" in terms
     assert "fruit and vegetable voucher program" in terms
+
+
+def test_food_prescription_terms_include_nutrition_security_and_subsidy_variants() -> None:
+    busca1_terms = {term.lower() for term in semantic_terms("busca1", min_priority=5)}
+    busca2b_terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+    document_terms = {
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    }
+
+    for terms in (busca1_terms, busca2b_terms):
+        assert "nutrition security intervention" in terms
+        assert "healthy food subsidy program" in terms
+        assert "fruit and vegetable subsidy program" in terms
+
+    assert "nutrition security intervention" in document_terms
+    assert "healthy food subsidy program" in document_terms
+    assert "fruit and vegetable subsidy program" in document_terms
