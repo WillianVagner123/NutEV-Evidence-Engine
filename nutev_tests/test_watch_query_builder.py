@@ -441,3 +441,19 @@ def test_exhaustive_mode_food_literacy_queries_include_budgeting_and_menu_terms(
 
     assert '"food budgeting"' in rendered
     assert '"menu labeling"' in rendered
+
+
+def test_quick_mode_queries_cover_remission_and_weight_maintenance_terms() -> None:
+    rendered = "\n".join(
+        [
+            _category_query("obesity_cardiometabolic"),
+            _category_query("implementation_behavior"),
+        ]
+    ).lower()
+
+    assert "type 2 diabetes remission" in rendered
+    assert "remission of type 2 diabetes" in rendered
+    assert "glycemic remission" in rendered
+    assert "glycaemic remission" in rendered
+    assert "long-term weight loss maintenance" in rendered
+    assert "weight regain prevention" in rendered
