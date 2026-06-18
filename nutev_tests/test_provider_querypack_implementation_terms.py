@@ -43,6 +43,42 @@ def test_busca2b_pubmed_queries_include_dietitian_led_nutrition_focus_terms():
     assert "very low energy diet" in rendered
 
 
+def test_busca2b_pubmed_queries_include_adherence_persistence_terms():
+    taxonomy = {
+        "global": {
+            "implementation_behavior": {"adherence": ["adherence", "implementation science"]},
+            "diet_patterns": {"core": ["mediterranean diet", "dash diet"]},
+            "nutrition_domains": {"core": ["nutrition care"]},
+            "document_types": {"reviews": ["systematic review"]},
+        },
+        "clinical": {"glycemia": ["type 2 diabetes"]},
+        "outcomes": {"metabolic": ["glycemic control"]},
+        "workstreams": {
+            "busca2b": {
+                "population_terms": ["adults with obesity"],
+                "condition_terms": ["obesity"],
+                "clinical_keys": ["glycemia"],
+                "priority_outcomes": ["metabolic"],
+                "document_type_keys": ["reviews"],
+                "focus_blocks": [],
+            }
+        },
+    }
+
+    queries = render_queries_for_provider(taxonomy, "busca2b", "pubmed")
+    rendered = "\n".join(queries).lower()
+
+    assert "long-term adherence" in rendered
+    assert "dietary self-monitoring" in rendered
+    assert "dietary self-regulation" in rendered
+    assert "weight loss maintenance" in rendered
+    assert "weight regain prevention" in rendered
+    assert "relapse prevention" in rendered
+    assert "habit formation" in rendered
+    assert "implementation intentions" in rendered
+    assert "tailored dietary intervention" in rendered
+
+
 def test_busca2a_pubmed_queries_include_lifestyle_nutrition_pattern_terms():
     taxonomy = {
         "global": {
