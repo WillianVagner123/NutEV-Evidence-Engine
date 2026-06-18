@@ -57,6 +57,15 @@ def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     assert "living systematic review" in rendered
 
 
+def test_personalized_nutrition_queries_include_precision_diet_and_response_terms():
+    rows = build_watch_queries(["personalized_nutrition"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "precision diet obesity" in rendered
+    assert "phenotype-guided diet" in rendered
+    assert "postprandial glycemic response" in rendered
+    assert "continuous glucose monitoring guided nutrition" in rendered
+
+
 def test_guidelines_thesis_mode_surfaces_broader_guidance_families_early():
     rows = build_watch_queries(["guidelines_consensus"], 7, "thesis")
     rendered = [str(row["query"]).lower() for row in rows]
