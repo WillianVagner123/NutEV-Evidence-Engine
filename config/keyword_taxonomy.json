@@ -642,6 +642,7 @@
       "metabolic dysfunction-associated fatty liver disease",
       "metabolic dysfunction associated fatty liver disease",
       "metabolic dysfunction-associated steatotic liver disease",
+      "metabolic dysfunction associated steatotic liver disease",
       "metabolic dysfunction-associated steatohepatitis",
       "metabolic dysfunction associated steatohepatitis"
     ]
@@ -842,7 +843,12 @@
         "remnant cholesterol",
         "triglyceride-rich lipoprotein",
         "cardiovascular risk",
-        "risco cardiovascular"
+        "risco cardiovascular",
+        "nafld",
+        "masld",
+        "mash",
+        "steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease"
       ],
       "clinical_keys": [
         "obesity",
@@ -897,6 +903,12 @@
         "apolipoprotein b consensus",
         "non-hdl cholesterol guideline",
         "mafld",
+        "masld guideline",
+        "masld consensus",
+        "mash guideline",
+        "nafld guideline nutrition",
+        "steatotic liver disease guideline",
+        "metabolic dysfunction-associated steatotic liver disease guideline",
         "clinical obesity",
         "adiposity-based chronic disease",
         "adiposity based chronic disease"
@@ -929,7 +941,12 @@
         "apo b",
         "non-hdl cholesterol",
         "remnant cholesterol",
-        "triglyceride-rich lipoprotein"
+        "triglyceride-rich lipoprotein",
+        "nafld",
+        "masld",
+        "mash",
+        "steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease"
       ],
       "clinical_keys": [
         "obesity",
@@ -937,7 +954,8 @@
         "hypertension",
         "dyslipidemia",
         "cvd",
-        "metabolic_syndrome"
+        "metabolic_syndrome",
+        "fatty_liver"
       ],
       "document_type_keys": [
         "trials",
@@ -996,6 +1014,13 @@
         "apolipoprotein b intervention",
         "non-hdl cholesterol intervention",
         "mafld",
+        "masld lifestyle intervention",
+        "masld diet intervention",
+        "mash nutrition intervention",
+        "nafld diet intervention",
+        "nafld lifestyle intervention",
+        "steatotic liver disease lifestyle intervention",
+        "metabolic dysfunction-associated steatotic liver disease diet",
         "clinical obesity",
         "adiposity-based chronic disease",
         "adiposity based chronic disease"
