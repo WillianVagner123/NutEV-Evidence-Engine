@@ -1,0 +1,91 @@
+{
+  "version_note": "Focused NutMEV supplement for cardiovascular-kidney-metabolic (CKM) syndrome. Appends CKM and renal-metabolic anchors to busca2a/busca2b without replacing the base taxonomy or broadening busca1/a3.",
+  "clinical": {
+    "cvd": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk"
+    ],
+    "metabolic_syndrome": [
+      "cardiorenal metabolic syndrome",
+      "cardiorenal-metabolic syndrome",
+      "kidney-metabolic risk",
+      "kidney metabolic risk"
+    ]
+  },
+  "outcomes": {
+    "renal_metabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "kidney function",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "albuminuria",
+      "uacr",
+      "cardiorenal risk",
+      "cardiovascular-kidney-metabolic outcomes",
+      "cardiovascular kidney metabolic outcomes"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome",
+        "cardiorenal metabolic syndrome",
+        "cardiorenal-metabolic syndrome",
+        "chronic kidney disease",
+        "ckd"
+      ],
+      "priority_outcomes": [
+        "renal_metabolic"
+      ],
+      "web_query_hints": [
+        "ckm syndrome scientific statement",
+        "cardiovascular-kidney-metabolic syndrome guideline",
+        "cardiovascular kidney metabolic syndrome guideline",
+        "cardiovascular-kidney-metabolic health consensus",
+        "cardiorenal metabolic syndrome guideline",
+        "chronic kidney disease cardiometabolic guideline",
+        "kidney metabolic risk consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome",
+        "cardiorenal metabolic syndrome",
+        "cardiorenal-metabolic syndrome",
+        "chronic kidney disease",
+        "ckd"
+      ],
+      "priority_outcomes": [
+        "renal_metabolic"
+      ],
+      "web_query_hints": [
+        "ckm syndrome lifestyle intervention",
+        "cardiovascular-kidney-metabolic health diet intervention",
+        "cardiovascular kidney metabolic risk dietary intervention",
+        "cardiorenal metabolic lifestyle intervention",
+        "chronic kidney disease cardiometabolic diet trial",
+        "kidney metabolic risk nutrition intervention"
+      ]
+    }
+  }
+}
