@@ -1,0 +1,42 @@
+{
+  "version_note": "2026-06-ckm-coverage: prioritize CKM syndrome records when linked to NutMEV clinical workstreams.",
+  "keyword_points": {
+    "cardiovascular-kidney-metabolic syndrome": 4,
+    "cardiovascular kidney metabolic syndrome": 4,
+    "cardiovascular-kidney-metabolic health": 3,
+    "cardiovascular kidney metabolic health": 3,
+    "cardiovascular-kidney-metabolic risk": 3,
+    "cardiovascular kidney metabolic risk": 3,
+    "cardiovascular-kidney-metabolic disease": 3,
+    "cardiovascular kidney metabolic disease": 3,
+    "ckm syndrome": 4,
+    "ckm health": 3,
+    "ckm risk": 3,
+    "ckm disease": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiovascular-kidney-metabolic syndrome": 5,
+      "cardiovascular kidney metabolic syndrome": 5,
+      "cardiovascular-kidney-metabolic guideline": 5,
+      "cardiovascular kidney metabolic guideline": 5,
+      "cardiovascular-kidney-metabolic scientific statement": 5,
+      "cardiovascular kidney metabolic scientific statement": 5,
+      "ckm syndrome guideline": 5,
+      "ckm syndrome consensus": 5,
+      "ckm syndrome scientific statement": 5
+    },
+    "busca2b": {
+      "cardiovascular-kidney-metabolic syndrome": 4,
+      "cardiovascular kidney metabolic syndrome": 4,
+      "cardiovascular-kidney-metabolic lifestyle intervention": 5,
+      "cardiovascular kidney metabolic lifestyle intervention": 5,
+      "cardiovascular-kidney-metabolic nutrition intervention": 5,
+      "cardiovascular kidney metabolic nutrition intervention": 5,
+      "ckm syndrome lifestyle intervention": 5,
+      "ckm syndrome nutrition intervention": 5,
+      "ckm syndrome dietary intervention": 5,
+      "ckm syndrome systematic review": 4
+    }
+  }
+}
