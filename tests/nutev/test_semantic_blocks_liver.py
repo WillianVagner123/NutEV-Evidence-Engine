@@ -28,3 +28,19 @@ def test_busca2_liver_terms_include_long_form_mash_variants():
 
     assert expected_terms.issubset(set(busca2a_terms))
     assert expected_terms.issubset(set(busca2b_terms))
+
+
+def test_busca2_liver_terms_include_hepatic_steatosis_variants():
+    busca2a_terms = semantic_terms("busca2a", min_priority=4)
+    busca2b_terms = semantic_terms("busca2b", min_priority=4)
+
+    expected_terms = {
+        "hepatic steatosis",
+        "liver steatosis",
+        "metabolic hepatic steatosis",
+        "metabolic dysfunction-associated hepatic steatosis",
+        "metabolic dysfunction associated hepatic steatosis",
+    }
+
+    assert expected_terms.issubset(set(busca2a_terms))
+    assert expected_terms.issubset(set(busca2b_terms))

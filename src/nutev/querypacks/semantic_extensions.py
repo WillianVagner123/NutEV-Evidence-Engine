@@ -79,6 +79,14 @@ METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
     "weight regain prevention trial",
 ]
 
+METABOLIC_LIVER_STEATOSIS_TERMS = [
+    "hepatic steatosis",
+    "liver steatosis",
+    "metabolic hepatic steatosis",
+    "metabolic dysfunction-associated hepatic steatosis",
+    "metabolic dysfunction associated hepatic steatosis",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -505,6 +513,10 @@ def apply_semantic_extensions() -> None:
         "cardiometabolic_precision",
         terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
         document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "cardiometabolic_liver",
+        terms=METABOLIC_LIVER_STEATOSIS_TERMS,
     )
     _extend_semantic_block(
         "evidence_synthesis",
