@@ -51,6 +51,21 @@ def test_a3_alias_priority_five_terms_include_nutrition_care_delivery() -> None:
     assert "registered dietitian-led intervention" in terms
 
 
+def test_a3_semantic_terms_include_food_competence_extensions() -> None:
+    terms = {term.lower() for term in semantic_terms("a3", min_priority=5)}
+    document_terms = {
+        term.lower()
+        for term in semantic_terms("a3", field="document_terms", min_priority=5)
+    }
+
+    assert "food competence" in terms
+    assert "eating competence" in terms
+    assert "meal planning self-efficacy" in terms
+    assert "food resource management skills" in terms
+    assert "food competence scale" in document_terms
+    assert "meal planning self-efficacy scale" in document_terms
+
+
 def test_busca1_semantic_terms_include_food_as_medicine_program_variants() -> None:
     terms = {term.lower() for term in semantic_terms("busca1", min_priority=5)}
 
