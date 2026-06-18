@@ -1,0 +1,58 @@
+{
+  "version_note": "2026-06-18: Adds cardiovascular-kidney-metabolic (CKM) terminology as an additive NutMEV search supplement for cardiometabolic workstreams.",
+  "clinical": {
+    "cvd": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome",
+        "ckm health",
+        "ckm risk"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic syndrome guideline",
+        "cardiovascular kidney metabolic syndrome guideline",
+        "cardiovascular-kidney-metabolic health statement",
+        "ckm syndrome guideline",
+        "ckm health scientific statement"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome",
+        "ckm health",
+        "ckm risk"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic syndrome lifestyle intervention",
+        "cardiovascular kidney metabolic syndrome dietary intervention",
+        "cardiovascular-kidney-metabolic health trial",
+        "ckm syndrome lifestyle intervention",
+        "ckm health dietary intervention"
+      ]
+    }
+  }
+}
