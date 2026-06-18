@@ -408,6 +408,13 @@ def _normalize_priority_text(value: object) -> str:
     return _NON_ALNUM_RE.sub(" ", text).strip()
 
 
+def _priority_term_matches(normalized_text: str, normalized_term: str) -> bool:
+    if not normalized_text or not normalized_term:
+        return False
+    pattern = rf"(?:^|\s){re.escape(normalized_term)}(?:\s|$)"
+    return re.search(pattern, normalized_text) is not None
+
+
 def _hash_fallback(row: dict) -> str:
     payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
@@ -461,7 +468,8 @@ def _is_prioritized(row: dict) -> bool:
     editorial_tier = _as_text(row.get("editorial_priority_tier")).lower()
     high_value_editorial = editorial_tier in _A1_PROXY_TIERS
     matches_priority_scope = any(
-        _normalize_priority_text(term) in normalized_text for term in _PRIORITY_TERMS
+        _priority_term_matches(normalized_text, _normalize_priority_text(term))
+        for term in _PRIORITY_TERMS
     )
     return (score >= 8 and matches_priority_scope) or (score >= 7 and high_value_editorial)
 
