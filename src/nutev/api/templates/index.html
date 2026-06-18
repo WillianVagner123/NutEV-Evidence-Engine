@@ -274,7 +274,7 @@ $("reportBtn").onclick=async()=>{
   const b=$("reportBtn"), msg=$("reportMsg"); b.disabled=true; const old=b.textContent; b.textContent="gerando…"; msg.textContent="";
   try{
     const r=await fetch("/api/report",{method:"POST"}); const d=await r.json().catch(()=>({}));
-    if(d&&d.available){ msg.innerHTML="✅ "+esc(d.n_documents)+" documentos → pasta <b>09_report/</b> ("+esc((d.written||[]).length)+" arquivos: referências .bib/.ris, estudos_incluidos.xlsx, RELATORIO_DISSERTACAO.md)"; }
+    if(d&&d.available){ msg.innerHTML="✅ "+esc(d.n_documents)+" documentos → pasta <b>09_report/</b>: comece pelo <b>INDICE.md</b> · planilha <b>NUTEV_DISSERTACAO.xlsx</b> (abas) · referências .bib/.ris · relatório .md/.docx ("+esc((d.written||[]).length)+" arquivos)"; }
     else { msg.textContent="⚠ "+((d&&d.message)||"rode o pipeline primeiro"); }
   }catch(e){ msg.textContent="⚠ falha ao gerar"; }
   b.disabled=false; b.textContent=old;

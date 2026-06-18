@@ -131,11 +131,12 @@ URLs:
 
 Depois de um run, clique em **📄 Gerar relatório** no painel (ou rode
 `nutev report --project-root ./project_output`). Ele lê os resultados e escreve
-em **`09_report/`**:
+um pacote **organizado** em **`09_report/`**:
 
+- **`INDICE.md`** — comece por aqui: mapeia cada arquivo para a seção da dissertação (Métodos/Resultados/Discussão/Referências/Apêndices).
+- **`NUTEV_DISSERTACAO.xlsx`** — uma planilha com várias abas: Resumo, Estudos_incluidos, Por_tema, Por_pais, Por_ano, Por_periodico, Por_workstream, Claims_apoiados.
+- **`RELATORIO_DISSERTACAO.md`** e **`.docx`** (Word) — relatório em capítulos (métodos/PRISMA, resultados, **avaliação dos artigos**, resultados por tema, claims, lacunas, como citar).
 - **`referencias.bib` / `referencias.ris`** — referências p/ LaTeX/Overleaf e Zotero/Mendeley/EndNote.
-- **`estudos_incluidos.xlsx` / `.csv`** — tabela de estudos incluídos + avaliação por artigo (nível de evidência, qualidade do periódico, citações, relevância).
-- **`RELATORIO_DISSERTACAO.md`** — relatório consolidado (métodos/PRISMA, resultados quantitativos, avaliação dos artigos, claims apoiados, lacunas/conflitos, como citar).
 - **`RESUMO_EXECUTIVO.md`** — uma página com os números-chave.
 
 > É material de **apoio**: claims e recomendações são candidatos e exigem **revisão humana** antes do uso final.

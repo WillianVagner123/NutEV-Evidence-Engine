@@ -34,8 +34,12 @@ def test_build_dissertation_report(tmp_path):
     res = build_dissertation_report(tmp_path)
     assert res["available"] and res["n_documents"] == 2
     rep = tmp_path / "09_report"
-    for name in ("referencias.bib", "referencias.ris", "estudos_incluidos.csv", "RELATORIO_DISSERTACAO.md", "RESUMO_EXECUTIVO.md"):
+    for name in ("INDICE.md", "referencias.bib", "referencias.ris", "estudos_incluidos.csv",
+                 "NUTEV_DISSERTACAO.xlsx", "RELATORIO_DISSERTACAO.md", "RESUMO_EXECUTIVO.md"):
         assert (rep / name).exists(), name
+    import openpyxl
+    sheets = openpyxl.load_workbook(rep / "NUTEV_DISSERTACAO.xlsx").sheetnames
+    assert "Estudos_incluidos" in sheets and "Por_tema" in sheets
     bib = (rep / "referencias.bib").read_text(encoding="utf-8")
     assert "Mediterranean diet and obesity" in bib and "Silva" in bib
     ris = (rep / "referencias.ris").read_text(encoding="utf-8")

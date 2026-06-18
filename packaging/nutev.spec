@@ -4,7 +4,7 @@
 import glob
 import os
 
-from PyInstaller.utils.hooks import collect_submodules
+from PyInstaller.utils.hooks import collect_data_files, collect_submodules
 
 # SPECPATH is injected by PyInstaller = directory containing this spec (packaging/).
 ROOT = os.path.dirname(SPECPATH)  # repo root
@@ -27,6 +27,13 @@ hiddenimports = collect_submodules("nutev") + collect_submodules("uvicorn") + [
     "uvicorn.protocols.websockets.auto",
     "anyio._backends._asyncio",
 ]
+
+# python-docx (optional Word export): bundle its default template + lxml backend.
+try:
+    datas += collect_data_files("docx")
+    hiddenimports += collect_submodules("lxml")
+except Exception:
+    pass
 
 a = Analysis(
     [os.path.join(SPECPATH, "nutev_app.py")],

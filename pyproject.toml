@@ -46,6 +46,8 @@ platform = [
     "fastapi",
     "uvicorn",
     "jinja2",
+    # Word (.docx) export for the dissertation report (best-effort, lazily imported).
+    "python-docx~=1.1",
 ]
 # Heavy/optional features. The default `pip install` stays lean; install an
 # extra only for the capability you need. All are lazily imported and degrade
