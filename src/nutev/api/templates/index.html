@@ -107,6 +107,10 @@
   <section class="panel">
     <h2>Dados</h2>
     <div class="body">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+        <button id="reportBtn" class="on">📄 Gerar relatório (dissertação/artigos)</button>
+        <span id="reportMsg" class="muted" style="font-size:12px"></span>
+      </div>
       <div class="tabs" id="tabs"></div>
       <div id="tableMeta" class="muted" style="font-size:12px;margin-bottom:8px"></div>
       <div class="tablewrap"><div id="table"><div class="empty">—</div></div></div>
@@ -266,6 +270,15 @@ $("interval").onchange=e=>{ intervalMs=+e.target.value; schedule(); };
 $("tabs").onclick=e=>{ const b=e.target.closest("button[data-tab]"); if(!b) return; activeTab=b.dataset.tab; renderTabs(); loadTab(); };
 $("playBtn").onclick=runStart;
 $("stopBtn").onclick=runStop;
+$("reportBtn").onclick=async()=>{
+  const b=$("reportBtn"), msg=$("reportMsg"); b.disabled=true; const old=b.textContent; b.textContent="gerando…"; msg.textContent="";
+  try{
+    const r=await fetch("/api/report",{method:"POST"}); const d=await r.json().catch(()=>({}));
+    if(d&&d.available){ msg.innerHTML="✅ "+esc(d.n_documents)+" documentos → pasta <b>09_report/</b> ("+esc((d.written||[]).length)+" arquivos: referências .bib/.ris, estudos_incluidos.xlsx, RELATORIO_DISSERTACAO.md)"; }
+    else { msg.textContent="⚠ "+((d&&d.message)||"rode o pipeline primeiro"); }
+  }catch(e){ msg.textContent="⚠ falha ao gerar"; }
+  b.disabled=false; b.textContent=old;
+};
 
 renderTabs(); tick(); schedule();
 </script>

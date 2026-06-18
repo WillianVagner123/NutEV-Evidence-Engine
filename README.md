@@ -127,6 +127,19 @@ URLs:
 - API: `http://127.0.0.1:8000` · docs interativas em `/docs`
 - Dashboard Streamlit (alternativo): `http://127.0.0.1:8501`
 
+### Relatório para dissertação/artigos
+
+Depois de um run, clique em **📄 Gerar relatório** no painel (ou rode
+`nutev report --project-root ./project_output`). Ele lê os resultados e escreve
+em **`09_report/`**:
+
+- **`referencias.bib` / `referencias.ris`** — referências p/ LaTeX/Overleaf e Zotero/Mendeley/EndNote.
+- **`estudos_incluidos.xlsx` / `.csv`** — tabela de estudos incluídos + avaliação por artigo (nível de evidência, qualidade do periódico, citações, relevância).
+- **`RELATORIO_DISSERTACAO.md`** — relatório consolidado (métodos/PRISMA, resultados quantitativos, avaliação dos artigos, claims apoiados, lacunas/conflitos, como citar).
+- **`RESUMO_EXECUTIVO.md`** — uma página com os números-chave.
+
+> É material de **apoio**: claims e recomendações são candidatos e exigem **revisão humana** antes do uso final.
+
 ## Docker
 
 Imagem enxuta (CLI + API FastAPI; substitui a antiga stack `local-deep-research`

@@ -128,6 +128,14 @@ def build_router(project_root: Path) -> APIRouter:
         # progress before run_summary.json is written at the end of the run.
         return summarize_run_events(project_root / "07_logs" / "run_events.jsonl")
 
+    @r.post("/api/report")
+    def report():
+        # Build the dissertation/article bundle (references, tables, evaluation)
+        # from the finished run's outputs.
+        from nutev.export.report import build_dissertation_report
+
+        return build_dissertation_report(project_root)
+
     @r.get("/api/evidence")
     def evidence(limit: int = 100, offset: int = 0, lens: str | None = None, domain: str | None = None, condition: str | None = None, diet_pattern: str | None = None, outcome: str | None = None):
         df = read_xlsx_safe(project_root / "06_tables" / "NUTEV_GLOBAL_EVIDENCE_MATRIX.xlsx")

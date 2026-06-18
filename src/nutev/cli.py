@@ -55,6 +55,9 @@ def main() -> None:
     build_kb = sub.add_parser("build-kb", help="(Re)build the knowledge base from metadata_master.csv")
     build_kb.add_argument("--project-root", type=Path, required=True)
 
+    report = sub.add_parser("report", help="Gera relatório p/ dissertação/artigos (referências BibTeX/RIS, tabelas, avaliação)")
+    report.add_argument("--project-root", type=Path, required=True)
+
     tax = sub.add_parser("taxonomy", help="Manage the single-source-of-truth taxonomy (config/taxonomy.json)")
     tax.add_argument("action", choices=["validate", "build", "list"], help="validate, regenerate derived files, or list concepts")
     tax.add_argument("--config-root", type=Path, default=None, help="Config dir (default: bundled config/)")
@@ -189,6 +192,18 @@ def main() -> None:
         write_knowledge_base(records, kb_dir)
         write_aggregations(records, kb_dir / "summary")
         print(f"Knowledge base rebuilt: {len(records)} records -> {kb_dir}")
+        return
+
+    if args.command == "report":
+        from nutev.export.report import build_dissertation_report
+
+        result = build_dissertation_report(args.project_root)
+        if not result.get("available"):
+            print(result.get("message", "Nada para gerar."))
+            return
+        print(f"Relatório gerado em {args.project_root}/09_report ({result['n_documents']} documentos):")
+        for w in result["written"]:
+            print(f"  {w}")
         return
 
     if args.command == "ask":
