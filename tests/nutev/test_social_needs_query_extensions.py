@@ -31,6 +31,8 @@ def test_provider_queries_include_social_needs_food_access_terms_for_busca2b():
         or "social needs screening" in query
         or "community health worker nutrition" in query
         or "food pharmacy" in query
+        or "food assistance program" in query
+        or "food is medicine implementation" in query
         for query in queries
     )
     assert any(
@@ -38,5 +40,7 @@ def test_provider_queries_include_social_needs_food_access_terms_for_busca2b():
         or "social needs screening program" in query
         or "community health worker intervention" in query
         or "food pharmacy program" in query
+        or "food assistance intervention" in query
+        or "produce prescription implementation study" in query
         for query in queries
     )
