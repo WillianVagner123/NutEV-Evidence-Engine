@@ -1,0 +1,109 @@
+{
+  "version_note": "Focused NutMEV supplement for cardiovascular-kidney-metabolic (CKM) query expansion. Loaded after keyword_taxonomy.json; appends CKM clinical and outcome terms without replacing the base taxonomy.",
+  "clinical": {
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "cardiovascular-kidney-metabolic disease",
+      "cardiovascular kidney metabolic disease",
+      "cardiovascular-kidney-metabolic diseases",
+      "cardiovascular kidney metabolic diseases",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "ckm disease",
+      "ckm diseases",
+      "ckm stages",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome",
+      "cardiometabolic multimorbidity"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "cardiovascular-kidney-metabolic disease",
+      "cardiovascular kidney metabolic disease",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "ckm disease",
+      "ckm stages",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome",
+      "cardiometabolic multimorbidity"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "clinical_keys": [
+        "cardiometabolic"
+      ],
+      "priority_outcomes": [
+        "cardiometabolic"
+      ],
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic disease",
+        "cardiovascular kidney metabolic disease",
+        "ckm disease",
+        "ckm stages",
+        "cardiometabolic multimorbidity"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic health guideline",
+        "cardiovascular-kidney-metabolic syndrome scientific statement",
+        "ckm health scientific statement",
+        "ckm syndrome consensus",
+        "ckm stages guideline",
+        "cardiorenal metabolic syndrome guideline"
+      ],
+      "document_terms": [
+        "scientific statement",
+        "consensus statement",
+        "guidance statement",
+        "clinical practice guideline"
+      ]
+    },
+    "busca2b": {
+      "clinical_keys": [
+        "cardiometabolic"
+      ],
+      "priority_outcomes": [
+        "cardiometabolic"
+      ],
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic disease",
+        "cardiovascular kidney metabolic disease",
+        "ckm disease",
+        "ckm diseases",
+        "ckm stages",
+        "cardiometabolic multimorbidity"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "cardiovascular-kidney-metabolic nutrition intervention",
+        "ckm health diet intervention",
+        "ckm syndrome lifestyle intervention",
+        "ckm syndrome systematic review",
+        "ckm stages lifestyle intervention",
+        "cardiorenal metabolic syndrome diet intervention"
+      ],
+      "document_terms": [
+        "randomized trial",
+        "pragmatic trial",
+        "systematic review",
+        "meta-analysis",
+        "umbrella review"
+      ]
+    }
+  }
+}
