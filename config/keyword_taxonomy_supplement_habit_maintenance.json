@@ -1,0 +1,162 @@
+{
+  "version_note": "Adds focused adherence, habit formation, and behavioral maintenance search terms for NutMEV query expansion without changing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "habit_maintenance": [
+        "habit formation",
+        "habit strength",
+        "habit-based intervention",
+        "habit based intervention",
+        "automaticity",
+        "dietary automaticity",
+        "healthy eating habits",
+        "dietary habit formation",
+        "eating habit formation",
+        "habit maintenance",
+        "maintenance intervention",
+        "behavioral maintenance intervention",
+        "behavioural maintenance intervention",
+        "dietary maintenance intervention",
+        "adherence maintenance",
+        "long-term dietary adherence",
+        "long term dietary adherence",
+        "dietary lapse prevention",
+        "lapse prevention",
+        "lapse management",
+        "relapse prevention",
+        "coping self-efficacy",
+        "action control",
+        "self-monitoring of diet",
+        "diet self-monitoring",
+        "implementation intentions",
+        "if-then planning",
+        "if then planning"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "habit formation",
+      "habit strength",
+      "habit maintenance",
+      "dietary habit formation",
+      "eating habit formation",
+      "long-term dietary adherence",
+      "long term dietary adherence",
+      "adherence maintenance",
+      "dietary lapse prevention",
+      "lapse prevention",
+      "coping self-efficacy",
+      "action control",
+      "self-monitoring of diet",
+      "diet self-monitoring",
+      "implementation intentions",
+      "if-then planning",
+      "if then planning"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "habit formation",
+        "habit strength",
+        "habit-based intervention",
+        "habit based intervention",
+        "automaticity",
+        "dietary automaticity",
+        "healthy eating habits",
+        "dietary habit formation",
+        "eating habit formation",
+        "maintenance intervention",
+        "dietary maintenance intervention",
+        "adherence maintenance",
+        "long-term dietary adherence",
+        "long term dietary adherence",
+        "dietary lapse prevention",
+        "coping self-efficacy",
+        "action control",
+        "self-monitoring of diet",
+        "diet self-monitoring",
+        "implementation intentions",
+        "if-then planning",
+        "if then planning"
+      ],
+      "web_query_hints": [
+        "dietary habit formation trial",
+        "healthy eating habit formation intervention",
+        "dietary maintenance intervention trial",
+        "long-term dietary adherence intervention",
+        "long term dietary adherence trial",
+        "adherence maintenance lifestyle intervention",
+        "dietary lapse prevention trial",
+        "self-monitoring of diet intervention",
+        "implementation intentions dietary behavior",
+        "if-then planning dietary adherence"
+      ],
+      "document_terms": [
+        "maintenance intervention",
+        "behavior change trial",
+        "behaviour change trial",
+        "adherence intervention"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "habit formation",
+        "habit strength",
+        "dietary automaticity",
+        "healthy eating habits",
+        "dietary habit formation",
+        "eating habit formation",
+        "coping self-efficacy",
+        "action control",
+        "self-monitoring of diet",
+        "implementation intentions",
+        "if-then planning",
+        "if then planning"
+      ],
+      "web_query_hints": [
+        "habit formation questionnaire diet",
+        "healthy eating habit strength scale",
+        "dietary automaticity scale",
+        "implementation intentions dietary behavior",
+        "if-then planning dietary behavior"
+      ],
+      "document_terms": [
+        "habit strength scale",
+        "automaticity scale",
+        "behavior change framework",
+        "behaviour change framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "habit formation",
+        "habit strength",
+        "dietary automaticity",
+        "healthy eating habits",
+        "dietary habit formation",
+        "eating habit formation",
+        "coping self-efficacy",
+        "action control",
+        "self-monitoring of diet",
+        "implementation intentions",
+        "if-then planning",
+        "if then planning"
+      ],
+      "web_query_hints": [
+        "habit formation questionnaire diet",
+        "healthy eating habit strength scale",
+        "dietary automaticity scale",
+        "implementation intentions dietary behavior",
+        "if-then planning dietary behavior"
+      ],
+      "document_terms": [
+        "habit strength scale",
+        "automaticity scale",
+        "behavior change framework",
+        "behaviour change framework"
+      ]
+    }
+  }
+}
