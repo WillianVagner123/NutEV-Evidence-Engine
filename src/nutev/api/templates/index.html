@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NutEV Monitor</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23167a52'/%3E%3Ctext x='16' y='23' font-size='21' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
   <style>
     :root{--bg:#f7faf7;--ink:#14231b;--muted:#607064;--brand:#167a52;--brand2:#77b255;--gold:#d9a441;--red:#c0392b;--amber:#b9770e;--line:rgba(20,35,27,.12);--panel:rgba(255,255,255,.92);--shadow:0 18px 50px rgba(22,122,82,.12)}
     *{box-sizing:border-box}
@@ -123,7 +124,7 @@ async function api(p){ try{ const r=await fetch(p,{cache:"no-store"}); if(!r.ok)
 const hhmmss = iso => { const d=new Date(iso); return isNaN(d)? "" : d.toLocaleTimeString("pt-BR",{hour12:false}); };
 
 let auto=true, timer=null, intervalMs=5000;
-let eventCursor=0, events=[], lastNewAt=0, lastEventIso=null;
+let eventCursor=0, events=[], lastNewAt=0, lastEventIso=null, lastRunning=false;
 let activeTab="evidence";
 const TABS=[["evidence","Evidências"],["claims","Claims"],["recommendations","Recomendações"],["human-review-queue","Revisão humana"],["artifacts","Artefatos"]];
 
@@ -137,7 +138,7 @@ async function loadHealth(){
 
 async function loadSummary(){
   const s=await api("/api/run-summary"); const g=$("kpis");
-  if(!s || s.available===false){ g.innerHTML=kpi("Status","sem run","rode o pipeline"); return; }
+  if(!s || s.available===false){ g.innerHTML=lastRunning?kpi("Status","rodando…","pipeline em execução — o resumo aparece ao terminar"):kpi("Status","sem run","rode o pipeline"); return; }
   const ws=(s.workstreams||[]).join(", ");
   g.innerHTML=[
     kpi("Status", s.run_status||"—", ws?("workstreams: "+ws):""),
@@ -206,6 +207,7 @@ async function loadTab(){
 
 async function loadRunStatus(){
   const s=await api("/api/run/status"); const play=$("playBtn"), stop=$("stopBtn"), rs=$("runState");
+  lastRunning=!!(s&&s.running);   // so the STATUS card can show "rodando…" before the summary exists
   if(s && s.running){
     play.disabled=true; play.textContent="● rodando…"; play.classList.remove("on"); stop.style.display="";
     rs.innerHTML='<span class="dot live"></span><span>rodando (pid '+esc(s.pid)+')</span>';
