@@ -83,12 +83,21 @@ def normalize_year(year: str | int | float | None) -> str:
 
 
 def _normalize_query(query: str) -> str:
-    params = [
+    params = sorted(
         (key, value)
         for key, value in parse_qsl(query, keep_blank_values=True)
         if key.lower() not in TRACKING_QUERY_PARAMS
-    ]
+    )
     return urlencode(params, doseq=True)
+
+
+def _normalize_netloc(scheme: str, netloc: str) -> str:
+    normalized = netloc.lower().removeprefix("www.")
+    if scheme == "http" and normalized.endswith(":80"):
+        return normalized[:-3]
+    if scheme == "https" and normalized.endswith(":443"):
+        return normalized[:-4]
+    return normalized
 
 
 def normalize_url(url: str | None) -> str | None:
@@ -98,11 +107,12 @@ def normalize_url(url: str | None) -> str | None:
     parsed = urlparse(value)
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
         return None
+    scheme = parsed.scheme.lower()
     normalized_path = parsed.path.rstrip("/") or parsed.path
     return urlunparse(
         (
-            parsed.scheme.lower(),
-            parsed.netloc.lower(),
+            scheme,
+            _normalize_netloc(scheme, parsed.netloc),
             normalized_path,
             "",
             _normalize_query(parsed.query),
