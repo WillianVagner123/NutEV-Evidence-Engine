@@ -1,0 +1,33 @@
+{
+  "version_note": "Supplemental scoring for group-based nutrition and lifestyle care delivery terms already present in keyword_taxonomy_supplement.json.",
+  "keyword_points": {
+    "shared medical appointment": 4,
+    "shared medical appointments": 4,
+    "group medical visit": 4,
+    "group medical visits": 4,
+    "group visit for diabetes": 4,
+    "group visits for diabetes": 4,
+    "group visit for obesity": 4,
+    "group visits for obesity": 4,
+    "group lifestyle intervention": 3,
+    "group-based lifestyle intervention": 3,
+    "group based lifestyle intervention": 3,
+    "group nutrition intervention": 3,
+    "group-based nutrition intervention": 3,
+    "group based nutrition intervention": 3,
+    "group dietary intervention": 3,
+    "group-based dietary intervention": 3,
+    "group based dietary intervention": 3,
+    "group lifestyle program": 3,
+    "group lifestyle programme": 3,
+    "group nutrition education": 3,
+    "group health coaching": 3,
+    "group coaching for weight management": 3,
+    "peer-led lifestyle intervention": 3,
+    "peer led lifestyle intervention": 3,
+    "peer-led nutrition intervention": 3,
+    "peer led nutrition intervention": 3,
+    "peer support group": 2,
+    "peer support groups": 2
+  }
+}
