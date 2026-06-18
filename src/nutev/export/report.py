@@ -83,10 +83,9 @@ def _citation_key(rec: dict, used: set[str]) -> str:
 
 
 def _bibtex(records: list[dict]) -> str:
-    used: set[str] = set()
     blocks = []
     for rec in records:
-        key = _citation_key(rec, used)
+        key = rec.get("_key") or "ref"
         fields = {
             "title": str(rec.get("title", "") or "").replace("{", "(").replace("}", ")"),
             "author": str(rec.get("authors", "") or "").replace("{", "(").replace("}", ")") or "Autor desconhecido",
@@ -106,6 +105,8 @@ def _ris(records: list[dict]) -> str:
     blocks = []
     for rec in records:
         lines = ["TY  - JOUR"]
+        if rec.get("_key"):
+            lines.append(f"ID  - {rec['_key']}")
         if rec.get("title"):
             lines.append(f"TI  - {rec['title']}")
         for author in re.split(r"\s*;\s*", str(rec.get("authors", "") or "")):
@@ -176,6 +177,17 @@ def build_dissertation_report(project_root: Path) -> dict:
     summary = _read_json(project_root / "07_logs" / "run_summary.json")
     claims = _read_csv(project_root / "06_tables" / "NUTEV_EVIDENCE_CLAIMS.csv")
 
+    # Stable citation key per document, reused across .bib/.ris, the studies table
+    # and the findings table — so every row maps cleanly to one reference.
+    used_keys: set[str] = set()
+    key_by_doc: dict[str, dict] = {}
+    for rec in corpus:
+        rec["_key"] = _citation_key(rec, used_keys)
+        key_by_doc[str(rec.get("document_id", ""))] = {
+            "key": rec["_key"], "journal": rec.get("journal", ""), "doi": rec.get("doi", ""),
+            "url": rec.get("url", ""), "year": rec.get("year", ""), "title": rec.get("title", ""),
+        }
+
     out_dir = project_root / "09_report"
     out_dir.mkdir(parents=True, exist_ok=True)
     written: list[str] = []
@@ -191,6 +203,7 @@ def build_dissertation_report(project_root: Path) -> dict:
     # --- per-article table (included studies + evaluation) ---
     studies = pd.DataFrame([
         {
+            "chave_citacao": r.get("_key", ""),
             "titulo": r.get("title", ""), "autores": r.get("authors", ""), "ano": r.get("year", ""),
             "periodico": r.get("journal", ""), "pais": "; ".join(str(x) for x in _as_list(r.get("countries"))),
             "tema": "; ".join(str(x) for x in _as_list(r.get("domains"))),
@@ -201,6 +214,8 @@ def build_dissertation_report(project_root: Path) -> dict:
         }
         for r in corpus
     ])
+    if "tema" in studies.columns:
+        studies = studies.sort_values(["tema", "ano"], na_position="last").reset_index(drop=True)
     studies.to_csv(out_dir / "estudos_incluidos.csv", index=False)
     written.append("09_report/estudos_incluidos.csv")
 
@@ -234,7 +249,27 @@ def build_dissertation_report(project_root: Path) -> dict:
     gen_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     supported = claims[claims.get("claim_status").astype(str).str.contains("support", case=False, na=False)] if "claim_status" in claims.columns else pd.DataFrame()
-    claims_sheet = supported[[c for c in ["title", "year", "claim_text", "exact_quote", "source_url"] if c in supported.columns]].head(500) if not supported.empty else pd.DataFrame()
+
+    # --- principais achados: cada claim apoiado ligado ao artigo + chave de citação ---
+    achados = pd.DataFrame()
+    if not supported.empty:
+        ach_rows = []
+        for _, c in supported.iterrows():
+            doc = key_by_doc.get(str(c.get("document_id", "")), {})
+            ach_rows.append({
+                "tema": str(c.get("nutev_domains", "") or c.get("evidence_lenses", "") or ""),
+                "achado": c.get("claim_text", ""),
+                "citacao_textual": c.get("exact_quote", ""),
+                "artigo": c.get("title", "") or doc.get("title", ""),
+                "ano": c.get("year", "") or doc.get("year", ""),
+                "periodico": doc.get("journal", ""),
+                "chave_citacao": doc.get("key", ""),
+                "doi": doc.get("doi", ""),
+                "url": c.get("source_url", "") or doc.get("url", ""),
+            })
+        achados = pd.DataFrame(ach_rows).sort_values(["tema", "ano"], na_position="last").reset_index(drop=True)
+        achados.to_csv(out_dir / "achados_principais.csv", index=False)
+        written.append("09_report/achados_principais.csv")
 
     # --- single organized workbook (one file, several sheets) ---
     resumo_df = pd.DataFrame([
@@ -252,8 +287,8 @@ def build_dissertation_report(project_root: Path) -> dict:
             _count_df(year_counts, "ano").to_excel(xl, sheet_name="Por_ano", index=False)
             _count_df(journals, "periodico").to_excel(xl, sheet_name="Por_periodico", index=False)
             _count_df(workstreams, "workstream").to_excel(xl, sheet_name="Por_workstream", index=False)
-            if not claims_sheet.empty:
-                claims_sheet.to_excel(xl, sheet_name="Claims_apoiados", index=False)
+            if not achados.empty:
+                achados.to_excel(xl, sheet_name="Principais_achados", index=False)
         written.append("09_report/NUTEV_DISSERTACAO.xlsx")
     except Exception:
         pass
@@ -271,10 +306,15 @@ def build_dissertation_report(project_root: Path) -> dict:
         for i, r in enumerate(most_cited, 1)
     ) or "- (sem dados de citação)"
 
-    sample_claims = "\n".join(
-        f"- **{str(row.get('title',''))[:90]}** ({row.get('year','')}): {str(row.get('claim_text',''))[:240]}"
-        for _, row in supported.head(10).iterrows()
-    ) or "- (nenhum claim apoiado destacado; veja a aba Claims_apoiados)"
+    achados_md = []
+    if not achados.empty:
+        for tema, grp in list(achados.groupby("tema"))[:10]:
+            items = "\n".join(
+                f"  - {str(row['achado'])[:200]} — _{str(row['artigo'])[:60]} ({row['ano']})_ **[{row['chave_citacao']}]**"
+                for _, row in grp.head(3).iterrows()
+            )
+            achados_md.append(f"**{tema or 'geral'}**\n{items}")
+    achados_section = "\n\n".join(achados_md) or "(veja `achados_principais.csv` — todos os achados com artigo e chave de citação)"
 
     methods_txt = (
         f"Busca multilíngue e multibase (workstreams: {', '.join(summary.get('workstreams', []) or ['n/d'])}). "
@@ -338,8 +378,12 @@ _Gerado automaticamente em {gen_at}._
 ## 4. Resultados por tema
 {by_theme_section}
 
-## 5. Claims apoiados (amostra — confirmar citação no texto-fonte)
-{sample_claims}
+## 5. Principais achados (claims apoiados)
+**Todos** os achados apoiados estão em **`achados_principais.csv`** (aba `Principais_achados`) —
+cada um já traz o artigo, o ano e a **chave de citação** (escreva o achado e cite pela chave/DOI).
+Amostra por tema:
+
+{achados_section}
 
 ## 6. Recomendações candidatas
 {recs_total} candidata(s) em `06_tables/NUTEV_RECOMENDACOES_OPERACIONAIS.xlsx`. **Não use sem revisão humana.**
@@ -380,13 +424,20 @@ _Gerado em {gen_at}. Pasta: `09_report/`._
 | **Métodos** | `08_docs/NUTEV_METHODS_MASTER.md` + `06_tables/NUTEV_PRISMA2020_FLOW.csv` + RELATORIO §1 |
 | **Resultados** | `NUTEV_DISSERTACAO.xlsx` (abas) + RELATORIO §2–§4 |
 | **Discussão** | RELATORIO §3 (avaliação) e §7 (lacunas/conflitos) — você redige a interpretação |
+| **Principais achados** | `achados_principais.csv` (cada achado já vem com artigo + **chave de citação** + DOI) |
 | **Referências** | `referencias.ris` (Zotero/Mendeley) ou `referencias.bib` (LaTeX) |
-| **Apêndices** | `estudos_incluidos.csv` + `08_docs/NUTEV_SEARCH_STRATEGY_APPENDIX.md` |
+| **Apêndices** | `estudos_incluidos.csv` (todos os {len(corpus)} artigos) + `08_docs/NUTEV_SEARCH_STRATEGY_APPENDIX.md` |
+
+## Como citar (rápido)
+1. Importe `referencias.ris` no Zotero/Mendeley (ou `referencias.bib` no Overleaf).
+2. Em `achados_principais.csv` / `estudos_incluidos.csv`, cada linha tem **`chave_citacao`** (igual à do `.bib`) e o **DOI**.
+3. No seu texto: escreva o achado e cite pela chave/DOI — a referência já está no seu gerenciador.
 
 ## Conteúdo
+- `achados_principais.csv` — **todos** os achados apoiados, ligados ao artigo + chave de citação
+- `estudos_incluidos.csv` — **todos os {len(corpus)} artigos** + avaliação por artigo (com `chave_citacao`)
 - `referencias.bib` / `referencias.ris` — {len(corpus)} referências
-- `estudos_incluidos.csv` — tabela de estudos + avaliação por artigo
-- `NUTEV_DISSERTACAO.xlsx` — Resumo, Estudos_incluidos, Por_tema, Por_pais, Por_ano, Por_periodico, Por_workstream, Claims_apoiados
+- `NUTEV_DISSERTACAO.xlsx` — Resumo, Estudos_incluidos, Principais_achados, Por_tema, Por_pais, Por_ano, Por_periodico, Por_workstream
 
 > ⚠️ Tudo é apoio: a validação científica final (claims, recomendações) é sua.
 """)

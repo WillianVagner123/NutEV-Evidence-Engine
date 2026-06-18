@@ -133,8 +133,10 @@ Depois de um run, clique em **📄 Gerar relatório** no painel (ou rode
 `nutev report --project-root ./project_output`). Ele lê os resultados e escreve
 um pacote **organizado** em **`09_report/`**:
 
-- **`INDICE.md`** — comece por aqui: mapeia cada arquivo para a seção da dissertação (Métodos/Resultados/Discussão/Referências/Apêndices).
-- **`NUTEV_DISSERTACAO.xlsx`** — uma planilha com várias abas: Resumo, Estudos_incluidos, Por_tema, Por_pais, Por_ano, Por_periodico, Por_workstream, Claims_apoiados.
+- **`INDICE.md`** — comece por aqui: mapeia cada arquivo para a seção da dissertação (Métodos/Resultados/Discussão/Referências/Apêndices) e explica como citar.
+- **`achados_principais.csv`** — **todos os achados** (claims apoiados) já ligados ao artigo, com **`chave_citacao`** + DOI: escreva o achado e cite pela chave.
+- **`estudos_incluidos.csv`** — **todos os artigos** organizados (por tema/ano) com `chave_citacao` e avaliação por artigo.
+- **`NUTEV_DISSERTACAO.xlsx`** — uma planilha com várias abas: Resumo, Estudos_incluidos, Principais_achados, Por_tema, Por_pais, Por_ano, Por_periodico, Por_workstream.
 - **`RELATORIO_DISSERTACAO.md`** e **`.docx`** (Word) — relatório em capítulos (métodos/PRISMA, resultados, **avaliação dos artigos**, resultados por tema, claims, lacunas, como citar).
 - **`referencias.bib` / `referencias.ris`** — referências p/ LaTeX/Overleaf e Zotero/Mendeley/EndNote.
 - **`RESUMO_EXECUTIVO.md`** — uma página com os números-chave.
