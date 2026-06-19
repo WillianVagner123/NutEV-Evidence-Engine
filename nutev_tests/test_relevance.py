@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from nutev.analysis.relevance import score_record
+from nutev.querypacks.builders import build_queries
 from nutev.settings import load_json
 
 
@@ -166,23 +167,10 @@ def test_configured_busca2b_advanced_dyslipidemia_bonus_gains_priority() -> None
     assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
 
 
-def test_configured_cardiometabolic_diet_quality_terms_gain_busca2b_priority() -> None:
-    scoring_rules = load_json(Path("config/scoring_rules.json"))
-    boosted = score_record(
-        {
-            "title": "Randomized trial of low glycemic index anti-inflammatory diet for obesity and cardiometabolic risk",
-            "source": "pubmed",
-        },
-        scoring_rules,
-        "busca2b",
-    )
-    baseline = score_record(
-        {
-            "title": "Randomized trial of healthy diet for obesity and cardiometabolic risk",
-            "source": "pubmed",
-        },
-        scoring_rules,
-        "busca2b",
-    )
+def test_busca2b_queries_keep_glycemic_diet_quality_terms() -> None:
+    keyword_taxonomy = load_json(Path("config/keyword_taxonomy.json"))
+    query_text = "\n".join(build_queries(keyword_taxonomy, "busca2b")).lower()
 
-    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+    assert "glycemic index" in query_text
+    assert "glycemic load" in query_text
+    assert "cardiometabolic risk" in query_text
