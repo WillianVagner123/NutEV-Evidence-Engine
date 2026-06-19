@@ -1,0 +1,58 @@
+{
+  "version_note": "2026-06-15 CKM cardiometabolic precision supplement for master pipeline queries",
+  "clinical": {
+    "cvd": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "cardio-kidney-metabolic syndrome",
+      "cardio kidney metabolic syndrome",
+      "cardiorenal metabolic syndrome",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "cardio-kidney-metabolic syndrome",
+        "cardiorenal metabolic syndrome",
+        "ckm syndrome"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic scientific statement",
+        "cardiovascular-kidney-metabolic consensus",
+        "cardiovascular-kidney-metabolic guideline",
+        "ckm syndrome scientific statement",
+        "ckm syndrome guideline",
+        "cardiorenal metabolic syndrome consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "cardio-kidney-metabolic syndrome",
+        "cardiorenal metabolic syndrome",
+        "ckm syndrome"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "cardiovascular-kidney-metabolic nutrition intervention",
+        "ckm syndrome lifestyle intervention",
+        "ckm syndrome nutrition intervention",
+        "cardiorenal metabolic syndrome dietary intervention"
+      ]
+    }
+  }
+}
