@@ -1,0 +1,25 @@
+{
+  "version_note": "Focused scoring supplement for cardiorenal metabolic / CKM terminology aligned with query taxonomy supplements.",
+  "keyword_points": {
+    "cardiorenal metabolic syndrome": 3,
+    "cardio-renal-metabolic syndrome": 3,
+    "cardio renal metabolic syndrome": 3,
+    "cardiorenal metabolic nutrition": 3,
+    "cardiorenal metabolic lifestyle": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiorenal metabolic syndrome": 4,
+      "cardio-renal-metabolic syndrome": 4,
+      "cardio renal metabolic syndrome": 4,
+      "cardiorenal metabolic nutrition": 4
+    },
+    "busca2b": {
+      "cardiorenal metabolic syndrome": 4,
+      "cardio-renal-metabolic syndrome": 4,
+      "cardio renal metabolic syndrome": 4,
+      "cardiorenal metabolic lifestyle": 4,
+      "cardiorenal metabolic nutrition": 4
+    }
+  }
+}
