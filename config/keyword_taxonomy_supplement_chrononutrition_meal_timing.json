@@ -1,0 +1,80 @@
+{
+  "version_note": "2026-06 chrononutrition and meal timing supplement. Adds focused search terms for meal timing, eating windows, early time-restricted eating, circadian eating patterns, and cardiometabolic nutrition outcomes.",
+  "global": {
+    "nutrition_domains": {
+      "chrononutrition_meal_timing": [
+        "chrononutrition",
+        "chrono-nutrition",
+        "meal timing",
+        "meal timing intervention",
+        "meal regularity",
+        "meal irregularity",
+        "meal pattern timing",
+        "eating window",
+        "eating windows",
+        "feeding window",
+        "feeding windows",
+        "time-restricted eating",
+        "time restricted eating",
+        "early time-restricted eating",
+        "early time restricted eating",
+        "time-restricted feeding",
+        "time restricted feeding",
+        "early time-restricted feeding",
+        "early time restricted feeding",
+        "circadian eating",
+        "circadian nutrition",
+        "circadian dietary pattern",
+        "night eating",
+        "late eating",
+        "breakfast skipping"
+      ]
+    },
+    "implementation_behavior": {
+      "meal_timing_adherence": [
+        "meal timing adherence",
+        "time-restricted eating adherence",
+        "time restricted eating adherence",
+        "eating window adherence",
+        "meal regularity adherence"
+      ]
+    }
+  },
+  "outcomes": {
+    "metabolic": [
+      "meal timing intervention",
+      "time-restricted eating",
+      "time restricted eating",
+      "early time-restricted eating",
+      "early time restricted eating",
+      "circadian eating",
+      "meal regularity"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "chrononutrition guideline",
+        "meal timing guideline",
+        "time-restricted eating guideline",
+        "time restricted eating guideline",
+        "early time-restricted eating guidance",
+        "circadian nutrition guideline",
+        "meal timing cardiometabolic consensus"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "chrononutrition systematic review",
+        "meal timing intervention trial",
+        "time-restricted eating systematic review",
+        "time restricted eating systematic review",
+        "early time-restricted eating trial",
+        "early time restricted eating trial",
+        "eating window adherence trial",
+        "meal regularity cardiometabolic trial",
+        "circadian eating obesity trial"
+      ]
+    }
+  }
+}
