@@ -67,3 +67,24 @@ def test_busca2b_semantic_terms_include_food_as_medicine_program_variants() -> N
     assert "nutrition incentive program" in terms
     assert "produce voucher program" in terms
     assert "fruit and vegetable voucher program" in terms
+
+
+def test_busca2b_semantic_terms_include_diet_quality_index_variants() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+
+    assert "dietary diversity score" in terms
+    assert "food-based diet quality score" in terms
+    assert "mediterranean diet adherence score" in terms
+    assert "dash adherence score" in terms
+
+
+def test_busca2b_document_terms_include_diet_quality_review_and_validation_terms() -> None:
+    terms = {
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    }
+
+    assert "diet quality systematic review" in terms
+    assert "diet quality meta-analysis" in terms
+    assert "dietary diversity score validation" in terms
+    assert "diet adherence score validation" in terms
