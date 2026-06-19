@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from nutev.global_watch.watch_config import WATCH_CATEGORIES
 from nutev.global_watch.watch_pipeline import _dedup_watch_rows, normalize_watch_hit
 
 
@@ -135,3 +136,12 @@ def test_normalize_watch_hit_maps_produce_rx_variants_to_busca2b() -> None:
 
     assert "busca2b" in item["workstream_affinity"]
     assert "busca2a" in item["workstream_affinity"]
+
+
+def test_watch_config_covers_fidelity_and_adaptation_terms() -> None:
+    implementation_terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
+
+    assert "intervention fidelity" in implementation_terms
+    assert "fidelity assessment" in implementation_terms
+    assert "implementation adaptation" in implementation_terms
+    assert "intervention adaptation" in implementation_terms
