@@ -310,6 +310,12 @@
         "ckm health",
         "ckm risk"
       ],
+      "clinical_keys": [
+        "cardiometabolic"
+      ],
+      "priority_outcomes": [
+        "cardiometabolic"
+      ],
       "web_query_hints": [
         "diabetes remission guideline",
         "type 2 diabetes remission consensus",
@@ -344,6 +350,14 @@
         "ckm syndrome",
         "ckm health",
         "ckm risk"
+      ],
+      "clinical_keys": [
+        "cardiometabolic",
+        "fatty_liver"
+      ],
+      "priority_outcomes": [
+        "cardiometabolic",
+        "food_access_implementation"
       ],
       "focus_terms": [
         "food is medicine implementation",
