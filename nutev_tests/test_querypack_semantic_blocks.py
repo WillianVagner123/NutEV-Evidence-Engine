@@ -82,6 +82,20 @@ def test_lifestyle_nutrition_semantic_block_adds_pattern_and_lifestyle_terms() -
     assert "very low energy diet" in rendered
 
 
+def test_lifestyle_nutrition_semantic_block_adds_anti_inflammatory_terms() -> None:
+    terms = " ".join(semantic_terms("busca2b", min_priority=4)).lower()
+    document_terms = " ".join(
+        semantic_terms("busca2b", field="document_terms", min_priority=4)
+    ).lower()
+
+    assert "anti-inflammatory diet" in terms
+    assert "anti inflammatory dietary pattern" in terms
+    assert "empirical dietary inflammatory pattern" in terms
+    assert "pro-inflammatory dietary pattern" in terms
+    assert "anti-inflammatory diet systematic review" in document_terms
+    assert "dietary inflammatory index meta-analysis" in document_terms
+
+
 def test_food_literacy_semantic_block_adds_culinary_training_and_labeling_terms() -> None:
     rendered = " ".join(semantic_terms("artigo3_framework", min_priority=5)).lower()
 
