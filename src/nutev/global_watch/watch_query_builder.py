@@ -110,6 +110,27 @@ NUTRITION_CARE_DELIVERY_TERMS = [
     "registered dietitian nutritionist led intervention",
 ]
 
+LONG_TERM_ADHERENCE_MAINTENANCE_TERMS = [
+    "dietary maintenance",
+    "behavioral maintenance",
+    "behavioural maintenance",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight regain prevention",
+    "weight regain management",
+    "relapse prevention",
+    "lapse management",
+    "dietary self-monitoring",
+    "dietary self regulation",
+    "dietary self-regulation",
+    "self-regulated eating",
+    "habit formation",
+    "habit maintenance",
+    "maintenance intervention",
+    "maintenance interventions",
+]
+
 NUTRITION_PRACTICE_GUIDELINE_TERMS = [
     "nutrition practice guideline",
     "nutrition practice guidelines",
@@ -402,6 +423,7 @@ CATEGORY_CONTEXT_TERMS = {
         "closed loop referral",
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
+        *LONG_TERM_ADHERENCE_MAINTENANCE_TERMS,
         "telehealth",
         "telemedicine",
         "digital health",
@@ -740,6 +762,11 @@ QUICK_MODE_SEED_GROUPS = {
             "self-management",
             "maintenance",
             "weight loss maintenance",
+            "long-term weight loss maintenance",
+            "weight regain prevention",
+            "dietary maintenance",
+            "dietary self-monitoring",
+            "relapse prevention",
         ],
         [
             "implementation",
@@ -1040,6 +1067,11 @@ THESIS_MODE_SEED_GROUPS = {
             "self-efficacy",
             "self efficacy",
             "self-management support",
+            "weight loss maintenance",
+            "long-term weight loss maintenance",
+            "weight regain prevention",
+            "dietary maintenance",
+            "relapse prevention",
         ],
         [
             "implementation science",
