@@ -2,7 +2,11 @@ from __future__ import annotations
 
 from typing import Any
 
+from nutev.global_watch.ckm_extensions import apply_ckm_extensions
+
 __all__ = ["run_global_watch"]
+
+apply_ckm_extensions()
 
 
 def __getattr__(name: str) -> Any:
