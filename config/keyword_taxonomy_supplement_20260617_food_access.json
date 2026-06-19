@@ -1,0 +1,84 @@
+{
+  "version_note": "2026-06-17: expand nutrition security, food access referral, and medically tailored food vocabulary for NutMEV searches.",
+  "global": {
+    "implementation_behavior": {
+      "contextual": [
+        "nutrition security intervention",
+        "nutrition insecurity",
+        "nutrition insecurity screening",
+        "screening for nutrition insecurity",
+        "food insecurity intervention",
+        "food insecurity referral",
+        "food insecurity screening and referral",
+        "food resource referral",
+        "food resource navigation",
+        "healthy food referral",
+        "produce prescription referral",
+        "food as medicine referral",
+        "food is medicine referral",
+        "medically tailored food referral",
+        "medically tailored food program",
+        "medically tailored food programme",
+        "medically tailored groceries program",
+        "medically tailored groceries programme",
+        "medically tailored meals program",
+        "medically tailored meals programme",
+        "food pharmacy referral",
+        "food pharmacy intervention",
+        "food pantry referral program",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "community resource navigation"
+      ]
+    },
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food resource navigation",
+        "food resource referral",
+        "healthy food referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "medically tailored food program",
+        "food pharmacy intervention",
+        "food pharmacy referral"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "nutrition security intervention",
+        "food insecurity screening and referral",
+        "food resource navigation",
+        "healthy food referral",
+        "medically tailored food program",
+        "food pharmacy intervention",
+        "produce prescription referral"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "nutrition security intervention",
+        "food insecurity intervention",
+        "food resource navigation",
+        "healthy food referral",
+        "medically tailored food program",
+        "food pharmacy intervention",
+        "closed-loop food referral"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "nutrition insecurity",
+        "food resource navigation",
+        "food resource referral",
+        "healthy food referral"
+      ],
+      "web_query_hints": [
+        "food resource navigation",
+        "food insecurity screening and referral",
+        "nutrition security intervention"
+      ]
+    }
+  }
+}
