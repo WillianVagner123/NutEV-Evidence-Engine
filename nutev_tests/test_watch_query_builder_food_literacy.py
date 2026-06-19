@@ -11,6 +11,8 @@ def test_food_literacy_queries_add_operational_literacy_and_policy_context() -> 
     )
     rendered = " ".join(str(row["query"]).lower() for row in queries)
 
+    assert "cooking skills" in rendered
+    assert "meal preparation" in rendered
     assert "healthy grocery shopping" in rendered
     assert "food budgeting" in rendered
     assert "food resource management" in rendered
