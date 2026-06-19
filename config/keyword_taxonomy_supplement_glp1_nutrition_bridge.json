@@ -1,0 +1,44 @@
+{
+  "version_note": "2026-06 GLP-1 nutrition bridge expansion. Adds precise search hints for obesity pharmacotherapy only when paired operationally with nutrition, lifestyle, adherence, maintenance, or cardiometabolic care contexts.",
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "GLP-1 nutrition guideline",
+        "GLP-1 lifestyle guidance",
+        "GLP-1 obesity nutrition consensus",
+        "GLP-1 dietary counseling",
+        "semaglutide nutrition guidance",
+        "semaglutide lifestyle modification guideline",
+        "tirzepatide nutrition guidance",
+        "tirzepatide lifestyle modification guideline",
+        "anti-obesity medication nutrition guidance",
+        "antiobesity medication lifestyle guidance",
+        "weight regain after GLP-1",
+        "weight maintenance after semaglutide",
+        "obesity pharmacotherapy lifestyle modification"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "GLP-1 dietary adherence",
+        "GLP-1 nutrition intervention",
+        "GLP-1 lifestyle intervention",
+        "GLP-1 weight maintenance",
+        "semaglutide dietary adherence",
+        "semaglutide nutrition intervention",
+        "semaglutide lifestyle intervention",
+        "semaglutide weight maintenance",
+        "tirzepatide dietary adherence",
+        "tirzepatide nutrition intervention",
+        "tirzepatide lifestyle intervention",
+        "tirzepatide weight maintenance",
+        "anti-obesity medication dietary adherence",
+        "anti-obesity medication lifestyle intervention",
+        "post-GLP-1 weight maintenance",
+        "weight regain after semaglutide lifestyle intervention",
+        "nutrition counseling during anti-obesity pharmacotherapy",
+        "medical nutrition therapy anti-obesity medication"
+      ]
+    }
+  }
+}
