@@ -79,6 +79,56 @@ METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
     "weight regain prevention trial",
 ]
 
+GROUP_CARE_DELIVERY_TERMS = [
+    "shared medical appointment",
+    "shared medical appointments",
+    "group medical visit",
+    "group medical visits",
+    "group visit for diabetes",
+    "group visits for diabetes",
+    "group visit for obesity",
+    "group visits for obesity",
+    "group lifestyle intervention",
+    "group-based lifestyle intervention",
+    "group based lifestyle intervention",
+    "group nutrition intervention",
+    "group-based nutrition intervention",
+    "group based nutrition intervention",
+    "group dietary intervention",
+    "group-based dietary intervention",
+    "group based dietary intervention",
+    "group lifestyle program",
+    "group lifestyle programme",
+    "group nutrition education",
+    "group health coaching",
+    "group coaching for weight management",
+    "peer-led lifestyle intervention",
+    "peer led lifestyle intervention",
+    "peer-led nutrition intervention",
+    "peer led nutrition intervention",
+    "peer support group",
+    "peer support groups",
+]
+
+GROUP_CARE_DELIVERY_DOCUMENT_TERMS = [
+    "shared medical appointment nutrition trial",
+    "shared medical appointment diabetes nutrition",
+    "group medical visit diabetes lifestyle intervention",
+    "group medical visit obesity nutrition",
+    "group-based lifestyle intervention cardiometabolic",
+    "group based lifestyle intervention cardiometabolic",
+    "group-based nutrition intervention obesity",
+    "group based nutrition intervention obesity",
+    "peer-led nutrition intervention diabetes",
+    "peer led nutrition intervention diabetes",
+    "peer-led lifestyle intervention weight management",
+    "peer led lifestyle intervention weight management",
+    "group-based intervention",
+    "group based intervention",
+    "peer-led intervention",
+    "peer led intervention",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -520,6 +570,17 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "implementation_science",
+        "adherence_persistence",
+        "nutrition_care_delivery",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=GROUP_CARE_DELIVERY_TERMS,
+            document_terms=GROUP_CARE_DELIVERY_DOCUMENT_TERMS,
         )
     for block_name in (
         "adherence_persistence",
