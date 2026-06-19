@@ -1,0 +1,80 @@
+{
+  "version_note": "2026-06-19 CKM syndrome, diabetes remission, and weight maintenance query coverage",
+  "clinical": {
+    "diabetes": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission",
+      "remission of type 2 diabetes",
+      "diet-induced diabetes remission",
+      "diet induced diabetes remission",
+      "lifestyle-induced diabetes remission",
+      "lifestyle induced diabetes remission"
+    ],
+    "cvd": [
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome",
+      "ckm health",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ],
+    "glycemia": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "glycemic remission",
+      "glycaemic remission",
+      "remission of type 2 diabetes"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "diabetes remission",
+        "type 2 diabetes remission",
+        "remission of type 2 diabetes"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic guideline",
+        "ckm syndrome guideline",
+        "cardiovascular-kidney-metabolic scientific statement",
+        "diabetes remission consensus report",
+        "type 2 diabetes remission guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "diabetes remission",
+        "type 2 diabetes remission"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "ckm syndrome lifestyle intervention",
+        "diabetes remission lifestyle intervention",
+        "type 2 diabetes remission intervention",
+        "weight loss maintenance intervention",
+        "weight regain prevention intervention"
+      ]
+    }
+  }
+}
