@@ -1,0 +1,55 @@
+{
+  "version_note": "2026-06 chrononutrition and meal timing scoring supplement. Scores focused phrases that connect meal timing or eating windows with diet, lifestyle, adherence, obesity, diabetes, or cardiometabolic outcomes.",
+  "keyword_points": {
+    "chrononutrition": 3,
+    "chrono-nutrition": 3,
+    "meal timing": 3,
+    "meal timing intervention": 4,
+    "meal regularity": 3,
+    "meal irregularity": 2,
+    "meal pattern timing": 3,
+    "eating window": 3,
+    "eating windows": 3,
+    "feeding window": 3,
+    "feeding windows": 3,
+    "time-restricted eating": 4,
+    "time restricted eating": 4,
+    "early time-restricted eating": 5,
+    "early time restricted eating": 5,
+    "time-restricted feeding": 4,
+    "time restricted feeding": 4,
+    "early time-restricted feeding": 5,
+    "early time restricted feeding": 5,
+    "circadian eating": 3,
+    "circadian nutrition": 3,
+    "circadian dietary pattern": 3,
+    "meal timing adherence": 4,
+    "time-restricted eating adherence": 4,
+    "time restricted eating adherence": 4,
+    "eating window adherence": 4,
+    "meal regularity adherence": 4
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "chrononutrition guideline": 5,
+      "meal timing guideline": 5,
+      "time-restricted eating guideline": 5,
+      "time restricted eating guideline": 5,
+      "early time-restricted eating guidance": 5,
+      "early time restricted eating guidance": 5,
+      "circadian nutrition guideline": 5,
+      "meal timing cardiometabolic consensus": 5
+    },
+    "busca2b": {
+      "chrononutrition systematic review": 5,
+      "meal timing intervention trial": 5,
+      "time-restricted eating systematic review": 5,
+      "time restricted eating systematic review": 5,
+      "early time-restricted eating trial": 6,
+      "early time restricted eating trial": 6,
+      "eating window adherence trial": 5,
+      "meal regularity cardiometabolic trial": 5,
+      "circadian eating obesity trial": 5
+    }
+  }
+}
