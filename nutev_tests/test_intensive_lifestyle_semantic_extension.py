@@ -90,3 +90,30 @@ def test_metabolic_remission_terms_enter_provider_queries() -> None:
     assert '"type 2 diabetes remission"[Title/Abstract]' in joined
     assert '"glycemic remission"[Title/Abstract]' in joined
     assert '"diabetes remission consensus report"[Title/Abstract]' in joined
+
+
+def test_group_care_delivery_terms_enter_semantic_blocks() -> None:
+    busca2b_terms = semantic_terms("busca2b", min_priority=5)
+    busca2b_doc_terms = semantic_terms(
+        "busca2b",
+        field="document_terms",
+        min_priority=5,
+    )
+    artigo3_terms = semantic_terms("artigo3_framework", min_priority=5)
+
+    assert "shared medical appointment" in busca2b_terms
+    assert "group-based lifestyle intervention" in busca2b_terms
+    assert "peer-led nutrition intervention" in busca2b_terms
+    assert "group medical visit obesity nutrition" in busca2b_doc_terms
+    assert "peer-led lifestyle intervention weight management" in busca2b_doc_terms
+    assert "group nutrition intervention" in artigo3_terms
+
+
+def test_group_care_delivery_terms_enter_provider_queries() -> None:
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert '"shared medical appointment"[Title/Abstract]' in joined
+    assert '"group-based lifestyle intervention"[Title/Abstract]' in joined
+    assert '"peer-led nutrition intervention"[Title/Abstract]' in joined
+    assert '"group medical visit obesity nutrition"[Title/Abstract]' in joined
