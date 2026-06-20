@@ -1,0 +1,132 @@
+{
+  "version_note": "Focused NutMEV supplement for food access, nutrition security, and Food is Medicine retrieval. Loaded after keyword_taxonomy.json; appends terms without replacing the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "food_access_prescriptions": [
+        "food is medicine",
+        "food as medicine",
+        "food is medicine intervention",
+        "food as medicine intervention",
+        "produce prescription",
+        "produce prescriptions",
+        "produce prescription program",
+        "produce prescription programme",
+        "produce rx",
+        "fruit and vegetable prescription",
+        "healthy food prescription",
+        "food prescription",
+        "food prescription program",
+        "food prescription programme",
+        "grocery prescription",
+        "grocery prescriptions",
+        "healthy food box",
+        "healthy food boxes",
+        "food pharmacy",
+        "food pharmacies",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy program",
+        "food farmacy programme",
+        "medically tailored nutrition",
+        "medically tailored food",
+        "medically tailored foods",
+        "medically tailored meal",
+        "medically tailored meals",
+        "medically tailored grocery",
+        "medically tailored groceries",
+        "medically tailored pantry",
+        "medically tailored pantries",
+        "medically tailored food package",
+        "medically tailored food packages"
+      ]
+    },
+    "implementation_behavior": {
+      "food_access_equity": [
+        "nutrition security",
+        "nutrition security intervention",
+        "nutrition security screening",
+        "nutrition insecurity",
+        "nutrition insecurity intervention",
+        "nutrition insecurity screening",
+        "food and nutrition security",
+        "food insecurity screening",
+        "screening for food insecurity",
+        "screen and intervene",
+        "hunger vital sign",
+        "food affordability",
+        "healthy food affordability",
+        "food access intervention",
+        "healthy food access intervention",
+        "food insecurity intervention",
+        "social determinants of health",
+        "health equity",
+        "equity-focused intervention",
+        "community-based intervention",
+        "community based intervention",
+        "cultural adaptation",
+        "culturally adapted",
+        "underserved populations",
+        "low-income",
+        "low income"
+      ],
+      "food_access_referrals": [
+        "screening and referral",
+        "closed-loop referral",
+        "closed loop referral",
+        "social needs screening",
+        "social needs referral",
+        "social needs intervention",
+        "food pantry referral",
+        "food pantry referral program",
+        "food bank partnership",
+        "community food program",
+        "community food programme",
+        "community-supported food program",
+        "community supported food program",
+        "community health worker-led nutrition",
+        "community health worker led nutrition",
+        "patient navigation",
+        "care navigation",
+        "social prescribing",
+        "social prescribing program",
+        "social prescribing programme"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food is medicine report",
+        "food as medicine policy brief",
+        "produce prescription program report",
+        "produce prescription programme report",
+        "grocery prescription program",
+        "food pharmacy program",
+        "food farmacy program",
+        "healthy food box program",
+        "nutrition security intervention report",
+        "food access intervention report",
+        "social needs referral nutrition",
+        "screen and intervene food insecurity"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food is medicine intervention trial",
+        "food as medicine intervention trial",
+        "produce prescription randomized trial",
+        "produce prescription systematic review",
+        "grocery prescription trial",
+        "food pharmacy intervention trial",
+        "food farmacy intervention trial",
+        "medically tailored meals trial",
+        "nutrition security intervention trial",
+        "food access intervention systematic review",
+        "food insecurity intervention cardiometabolic trial",
+        "community health worker nutrition intervention trial"
+      ]
+    }
+  }
+}
