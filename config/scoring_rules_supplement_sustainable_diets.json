@@ -1,0 +1,47 @@
+{
+  "version_note": "Supplemental NutMEV scoring expansion for sustainable healthy diet terminology. Loaded after scoring_rules.json and existing supplements; keeps base scoring intact while improving prioritization of EAT-Lancet and planetary-health diet evidence.",
+  "keyword_points": {
+    "sustainable healthy diet": 3,
+    "sustainable healthy diets": 3,
+    "healthy sustainable diet": 3,
+    "healthy sustainable diets": 3,
+    "healthy and sustainable diet": 3,
+    "healthy and sustainable diets": 3,
+    "sustainable dietary pattern": 3,
+    "sustainable dietary patterns": 3,
+    "dieta saudável sustentável": 3,
+    "dietas saudáveis sustentáveis": 3,
+    "padrão alimentar sustentável": 3,
+    "padrões alimentares sustentáveis": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "sustainable healthy diet": 3,
+      "sustainable healthy diets": 3,
+      "healthy and sustainable diet": 3,
+      "healthy and sustainable diets": 3,
+      "sustainable dietary pattern": 3,
+      "sustainable dietary patterns": 3,
+      "dieta saudável sustentável": 3,
+      "dietas saudáveis sustentáveis": 3,
+      "padrão alimentar sustentável": 3,
+      "padrões alimentares sustentáveis": 3
+    },
+    "busca2a": {
+      "sustainable healthy diet": 2,
+      "sustainable healthy diets": 2,
+      "healthy and sustainable diet": 2,
+      "healthy and sustainable diets": 2,
+      "sustainable dietary pattern": 2,
+      "sustainable dietary patterns": 2
+    },
+    "busca2b": {
+      "sustainable healthy diet": 3,
+      "sustainable healthy diets": 3,
+      "healthy and sustainable diet": 3,
+      "healthy and sustainable diets": 3,
+      "sustainable dietary pattern": 3,
+      "sustainable dietary patterns": 3
+    }
+  }
+}
