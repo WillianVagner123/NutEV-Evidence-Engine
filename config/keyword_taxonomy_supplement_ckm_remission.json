@@ -1,0 +1,106 @@
+{
+  "version_note": "2026-06 supplement: expands high-specificity CKM, diabetes remission, weight maintenance, and adiposity terms for busca2a/b without changing the base taxonomy.",
+  "clinical": {
+    "obesity": [
+      "abdominal obesity",
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "visceral fat",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ],
+    "diabetes": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission",
+      "remission of type 2 diabetes",
+      "diet-induced diabetes remission",
+      "diet induced diabetes remission",
+      "lifestyle-induced diabetes remission",
+      "lifestyle induced diabetes remission",
+      "diabetes remission maintenance"
+    ],
+    "cvd": [
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "ckm syndrome",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm health"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain",
+      "weight regain prevention",
+      "weight regain management"
+    ],
+    "glycemia": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "glycemic remission",
+      "glycaemic remission",
+      "diabetes remission maintenance"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "diabetes remission",
+        "type 2 diabetes remission",
+        "remission of type 2 diabetes",
+        "abdominal obesity",
+        "central adiposity",
+        "visceral adiposity",
+        "waist-to-height ratio"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic syndrome guideline",
+        "ckm syndrome statement",
+        "ckm syndrome scientific statement",
+        "diabetes remission guideline",
+        "type 2 diabetes remission consensus",
+        "weight loss maintenance guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "diabetes remission",
+        "type 2 diabetes remission",
+        "remission of type 2 diabetes",
+        "abdominal obesity",
+        "central adiposity",
+        "visceral adiposity",
+        "waist-to-height ratio"
+      ],
+      "web_query_hints": [
+        "ckm syndrome lifestyle intervention",
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "diabetes remission lifestyle intervention",
+        "type 2 diabetes remission trial",
+        "weight loss maintenance trial",
+        "weight regain prevention trial"
+      ]
+    }
+  }
+}
