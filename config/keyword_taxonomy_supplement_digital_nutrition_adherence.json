@@ -1,0 +1,63 @@
+{
+  "version_note": "2026-06-20 digital nutrition adherence query expansion",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "digital dietary adherence",
+        "digital nutrition adherence",
+        "mobile dietary self-monitoring",
+        "mobile food logging",
+        "food logging",
+        "diet tracking",
+        "dietary tracking",
+        "nutrition tracking",
+        "app-based dietary self-monitoring",
+        "app based dietary self-monitoring",
+        "remote dietary monitoring",
+        "remote nutrition monitoring",
+        "digital dietary intervention",
+        "digital nutrition intervention",
+        "mobile dietary intervention",
+        "mobile nutrition intervention",
+        "tele-nutrition",
+        "telenutrition",
+        "telehealth nutrition counseling",
+        "telehealth nutrition counselling",
+        "remote nutrition counseling",
+        "remote nutrition counselling",
+        "virtual nutrition counseling",
+        "virtual nutrition counselling"
+      ],
+      "behavioral": [
+        "digital behavior change intervention",
+        "digital behaviour change intervention",
+        "digital dietary behavior change",
+        "digital dietary behaviour change",
+        "mobile health behavior change",
+        "mobile health behaviour change",
+        "app-based behavior change",
+        "app based behavior change",
+        "just-in-time adaptive intervention",
+        "just in time adaptive intervention",
+        "jitai",
+        "digital coaching",
+        "nutrition app",
+        "diet app"
+      ]
+    },
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "digital food literacy",
+        "digital nutrition literacy",
+        "online nutrition education",
+        "web-based nutrition education",
+        "web based nutrition education",
+        "mobile nutrition education",
+        "digital culinary medicine",
+        "online cooking skills",
+        "virtual cooking class",
+        "virtual cooking classes"
+      ]
+    }
+  }
+}
