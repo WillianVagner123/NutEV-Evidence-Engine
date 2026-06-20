@@ -1,0 +1,54 @@
+{
+  "version_note": "2026-06-ckm-supplement",
+  "clinical": {
+    "cvd": [
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "ckm syndrome",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm health",
+      "ckm risk"
+    ]
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "ckm health",
+      "ckm risk"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic guideline",
+        "ckm syndrome guideline",
+        "ckm health statement",
+        "ckm syndrome scientific statement",
+        "cardiovascular-kidney-metabolic syndrome consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "ckm syndrome lifestyle intervention",
+        "ckm health nutrition intervention",
+        "ckm syndrome dietary intervention",
+        "cardiovascular-kidney-metabolic implementation"
+      ]
+    }
+  }
+}
