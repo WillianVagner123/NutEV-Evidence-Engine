@@ -1,0 +1,17 @@
+{
+  "version_note": "2026-06-ckm-supplement",
+  "keyword_points": {
+    "ckm health": 3,
+    "ckm risk": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "ckm health": 4,
+      "ckm risk": 4
+    },
+    "busca2b": {
+      "ckm health": 4,
+      "ckm risk": 4
+    }
+  }
+}
