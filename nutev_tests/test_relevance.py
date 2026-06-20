@@ -164,3 +164,36 @@ def test_configured_busca2b_advanced_dyslipidemia_bonus_gains_priority() -> None
     )
 
     assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_ckm_terms_gain_busca2a_and_busca2b_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    ckm_title = (
+        "Cardiovascular-kidney-metabolic syndrome nutrition guideline for obesity "
+        "and type 2 diabetes"
+    )
+    baseline_title = "Metabolic syndrome nutrition guideline for obesity and type 2 diabetes"
+
+    busca2a_boosted = score_record(
+        {"title": ckm_title, "source": "pubmed"}, scoring_rules, "busca2a"
+    )
+    busca2a_baseline = score_record(
+        {"title": baseline_title, "source": "pubmed"}, scoring_rules, "busca2a"
+    )
+    busca2b_boosted = score_record(
+        {"title": ckm_title.replace("guideline", "trial"), "source": "pubmed"},
+        scoring_rules,
+        "busca2b",
+    )
+    busca2b_baseline = score_record(
+        {"title": baseline_title.replace("guideline", "trial"), "source": "pubmed"},
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert float(busca2a_boosted["relevance_score"]) > float(
+        busca2a_baseline["relevance_score"]
+    )
+    assert float(busca2b_boosted["relevance_score"]) > float(
+        busca2b_baseline["relevance_score"]
+    )
