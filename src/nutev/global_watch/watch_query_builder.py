@@ -153,6 +153,22 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "nutrition security intervention",
 ]
 
+DIET_QUALITY_INDEX_TERMS = [
+    "diet quality",
+    "diet quality index",
+    "diet quality score",
+    "healthy eating index",
+    "alternate healthy eating index",
+    "alternative healthy eating index",
+    "AHEI",
+    "HEI-2015",
+    "HEI 2015",
+    "dietary inflammatory index",
+    "empirical dietary inflammatory pattern",
+    "dietary pattern adherence",
+    "dietary adherence score",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -322,6 +338,7 @@ CATEGORY_CONTEXT_TERMS = {
         "ultra processed foods",
         "nova classification",
         "nova food classification",
+        *DIET_QUALITY_INDEX_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "implementation_behavior": [
@@ -718,6 +735,7 @@ QUICK_MODE_SEED_GROUPS = {
             "ultra-processed food",
             "ultra processed food",
             "NOVA classification",
+            *DIET_QUALITY_INDEX_TERMS,
             "systematic review",
             "network meta-analysis",
             "umbrella review",
