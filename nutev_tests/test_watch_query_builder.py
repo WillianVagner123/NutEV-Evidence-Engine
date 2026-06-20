@@ -41,6 +41,10 @@ def test_build_watch_queries_adds_cardiometabolic_liver_context() -> None:
     assert '"insulin resistance"' in first_query
     assert '"weight management"' in first_query
     assert '"adiposity"' in first_query
+    assert '"cardiovascular-kidney-metabolic syndrome"' in first_query
+    assert '"cardiovascular kidney metabolic risk"' in first_query
+    assert '"CKM syndrome"' in first_query
+    assert '"CKM nutrition"' in first_query
 
 
 def test_build_watch_queries_adds_implementation_and_education_context() -> None:
@@ -185,6 +189,11 @@ def test_quick_mode_obesity_queries_cover_cardiometabolic_and_liver_blocks() -> 
     rendered = " ".join(str(row["query"]).lower() for row in queries)
 
     assert "cardiometabolic risk" in rendered
+    assert "cardiovascular-kidney-metabolic syndrome" in rendered
+    assert "cardiovascular kidney metabolic risk" in rendered
+    assert "cardio-kidney-metabolic syndrome" in rendered
+    assert "ckm syndrome" in rendered
+    assert "ckm nutrition" in rendered
     assert "type 2 diabetes" in rendered
     assert "metabolic syndrome" in rendered
     assert "hypertension" in rendered
