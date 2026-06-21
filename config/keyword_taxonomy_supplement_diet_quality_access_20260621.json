@@ -1,0 +1,143 @@
+{
+  "version_note": "2026-06-21 supplement: diet quality, healthy plant-based patterns, food access, culinary self-efficacy and adherence precision terms for NutMEV query expansion.",
+  "global": {
+    "diet_patterns": {
+      "core": [
+        "diet quality index",
+        "diet quality score",
+        "healthy eating index",
+        "alternative healthy eating index",
+        "dietary quality score",
+        "food quality score",
+        "qualidade da dieta",
+        "indice de qualidade da dieta",
+        "indice de alimentacao saudavel"
+      ],
+      "plant_based": [
+        "healthy plant-based diet index",
+        "healthful plant-based diet index",
+        "plant-based diet index",
+        "plant based diet index",
+        "unhealthy plant-based diet index",
+        "plant-forward diet",
+        "plant forward diet",
+        "whole-food plant-based diet",
+        "whole food plant based diet"
+      ],
+      "processing": [
+        "ultra-processed food intake",
+        "ultra processed food intake",
+        "ultra-processed foods",
+        "ultra processed foods",
+        "nova food classification",
+        "highly processed food",
+        "highly processed foods"
+      ]
+    },
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "culinary self-efficacy",
+        "cooking self efficacy",
+        "food preparation self-efficacy",
+        "food preparation self efficacy",
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "nutrition label literacy",
+        "food label use",
+        "front-of-package nutrition label",
+        "front of package nutrition label"
+      ]
+    },
+    "implementation_behavior": {
+      "adherence": [
+        "dietary persistence",
+        "long-term dietary adherence",
+        "long term dietary adherence",
+        "dietary habit formation",
+        "maintenance of dietary change",
+        "dietary relapse prevention",
+        "dietary lapse management",
+        "food routine",
+        "meal routine"
+      ],
+      "contextual": [
+        "food retail intervention",
+        "grocery store intervention",
+        "supermarket intervention",
+        "healthy checkout",
+        "healthy food placement",
+        "food environment intervention",
+        "community food access",
+        "food affordability intervention"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet quality index",
+      "diet quality score",
+      "healthy eating index",
+      "alternative healthy eating index",
+      "dietary adherence score",
+      "dietary pattern adherence",
+      "mediterranean diet adherence",
+      "dash adherence",
+      "plant-based diet adherence",
+      "ultra-processed food reduction",
+      "ultra processed food reduction"
+    ],
+    "behavioral": [
+      "culinary self-efficacy",
+      "cooking self efficacy",
+      "meal planning self-efficacy",
+      "food preparation confidence",
+      "dietary habit formation",
+      "dietary self-regulation",
+      "maintenance of dietary change"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "diet quality guideline",
+        "healthy eating index guideline",
+        "food environment policy",
+        "healthy food retail policy",
+        "front-of-package nutrition labeling policy",
+        "ultra-processed food policy",
+        "community food access report"
+      ]
+    },
+    "busca2a": {
+      "web_query_hints": [
+        "diet quality cardiometabolic guideline",
+        "healthy eating index cardiometabolic guideline",
+        "plant-based diet cardiometabolic guideline",
+        "ultra-processed food cardiometabolic guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "diet quality intervention trial",
+        "healthy eating index intervention",
+        "dietary pattern adherence trial",
+        "plant-based diet adherence trial",
+        "ultra-processed food reduction trial",
+        "culinary self-efficacy intervention",
+        "meal planning self-efficacy intervention",
+        "food environment intervention trial",
+        "healthy food retail intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "diet quality questionnaire",
+        "dietary habit formation framework",
+        "culinary self-efficacy scale",
+        "meal planning self-efficacy scale",
+        "food label literacy instrument",
+        "food environment framework"
+      ]
+    }
+  }
+}
