@@ -1,4 +1,5 @@
 {
+  "version_note": "Supplemental NutMEV scoring expansion for personalized and precision nutrition in cardiometabolic nutrition workflows.",
   "keyword_points": {
     "personalized nutrition": 3,
     "personalised nutrition": 3,
@@ -6,11 +7,36 @@
     "tailored nutrition": 3,
     "tailored dietary advice": 4,
     "tailored dietary intervention": 4,
+    "personalized dietary advice": 3,
+    "personalised dietary advice": 3,
+    "personalized dietary intervention": 4,
+    "personalised dietary intervention": 4,
     "individualized diet": 3,
     "individualised diet": 3,
     "individualized dietary intervention": 4,
     "individualised dietary intervention": 4,
     "diet personalization": 3,
     "diet personalisation": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "precision nutrition guideline": 4,
+      "personalized nutrition guideline": 4,
+      "personalised nutrition guideline": 4,
+      "personalized nutrition consensus": 4,
+      "personalised nutrition consensus": 4,
+      "tailored dietary advice guideline": 4,
+      "tailored dietary advice": 3
+    },
+    "busca2b": {
+      "precision nutrition intervention": 4,
+      "personalized nutrition intervention": 4,
+      "personalised nutrition intervention": 4,
+      "tailored dietary intervention": 4,
+      "personalized dietary intervention": 4,
+      "personalised dietary intervention": 4,
+      "individualized dietary intervention": 4,
+      "individualised dietary intervention": 4
+    }
   }
 }
