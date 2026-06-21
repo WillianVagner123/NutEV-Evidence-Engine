@@ -1,0 +1,127 @@
+{
+  "version_note": "2026-06 food agency adherence supplement: expands behavior-change and food-skills terms without modifying the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "behavioral": [
+        "dietary self-efficacy",
+        "nutrition self-efficacy",
+        "food self-efficacy",
+        "healthy eating self-efficacy",
+        "cooking self-efficacy",
+        "meal planning self-efficacy",
+        "food preparation self-efficacy",
+        "dietary autonomy",
+        "food autonomy",
+        "autonomous motivation",
+        "controlled motivation",
+        "self-determination theory",
+        "self determination theory",
+        "motivation for healthy eating",
+        "dietary goal setting",
+        "dietary problem solving",
+        "meal planning skills",
+        "grocery shopping skills",
+        "food budgeting skills",
+        "food resource management",
+        "label reading skills",
+        "nutrition label use",
+        "nutrition label understanding",
+        "literacia alimentar",
+        "autoeficácia alimentar",
+        "autoeficácia dietética",
+        "autonomia alimentar",
+        "motivação autônoma",
+        "planejamento alimentar",
+        "habilidades de compras",
+        "leitura de rótulos"
+      ]
+    },
+    "document_types": {
+      "trials": [
+        "dietary self-efficacy intervention",
+        "nutrition self-efficacy intervention",
+        "food skills intervention",
+        "meal planning intervention",
+        "grocery shopping intervention",
+        "food resource management intervention",
+        "self-determination theory intervention",
+        "autonomous motivation intervention"
+      ],
+      "reviews": [
+        "dietary self-efficacy systematic review",
+        "food skills systematic review",
+        "meal planning systematic review",
+        "self-determination theory systematic review"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "themes": [
+        "food skills",
+        "meal planning skills",
+        "grocery shopping skills",
+        "food budgeting skills",
+        "food resource management",
+        "nutrition label use",
+        "nutrition label understanding"
+      ],
+      "web_query_hints": [
+        "food skills intervention",
+        "meal planning intervention",
+        "grocery shopping skills",
+        "food resource management",
+        "nutrition label understanding"
+      ]
+    },
+    "busca2b": {
+      "themes": [
+        "dietary self-efficacy",
+        "nutrition self-efficacy",
+        "healthy eating self-efficacy",
+        "dietary autonomy",
+        "autonomous motivation",
+        "self-determination theory",
+        "dietary goal setting",
+        "dietary problem solving",
+        "meal planning skills",
+        "food resource management"
+      ],
+      "web_query_hints": [
+        "dietary self-efficacy intervention",
+        "nutrition self-efficacy intervention",
+        "healthy eating self-efficacy trial",
+        "self-determination theory dietary intervention",
+        "autonomous motivation weight loss maintenance",
+        "meal planning intervention cardiometabolic",
+        "food skills intervention obesity",
+        "food resource management intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "themes": [
+        "dietary self-efficacy",
+        "nutrition self-efficacy",
+        "food self-efficacy",
+        "cooking self-efficacy",
+        "meal planning self-efficacy",
+        "food agency",
+        "dietary autonomy",
+        "food autonomy",
+        "self-determination theory",
+        "food resource management"
+      ],
+      "web_query_hints": [
+        "dietary self-efficacy scale",
+        "nutrition self-efficacy scale",
+        "food self-efficacy scale",
+        "cooking self-efficacy scale",
+        "meal planning questionnaire",
+        "food resource management questionnaire",
+        "food agency instrument",
+        "dietary autonomy questionnaire",
+        "self-determination theory nutrition questionnaire"
+      ]
+    }
+  }
+}
