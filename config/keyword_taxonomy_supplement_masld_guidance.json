@@ -1,0 +1,45 @@
+{
+  "version_note": "2026-06 masld_mash_guidance_precision_supplement",
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "metabolic dysfunction associated steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "metabolic dysfunction associated steatohepatitis",
+        "metabolic dysfunction-associated steatohepatitis"
+      ],
+      "web_query_hints": [
+        "MASLD guideline",
+        "MASLD practice guidance",
+        "MASLD consensus statement",
+        "MASLD clinical practice guideline",
+        "MASH guideline",
+        "MASH practice guidance",
+        "MASH consensus statement",
+        "steatotic liver disease guideline",
+        "steatotic liver disease practice guidance",
+        "steatotic liver disease consensus statement"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "metabolic dysfunction associated steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "metabolic dysfunction associated steatohepatitis",
+        "metabolic dysfunction-associated steatohepatitis"
+      ],
+      "web_query_hints": [
+        "MASLD lifestyle intervention",
+        "MASLD dietary intervention",
+        "MASLD nutrition therapy",
+        "MASH lifestyle intervention",
+        "MASH dietary intervention",
+        "MASH nutrition therapy",
+        "steatotic liver disease dietary intervention",
+        "steatotic liver disease lifestyle intervention",
+        "steatotic liver disease systematic review",
+        "steatotic liver disease meta-analysis"
+      ]
+    }
+  }
+}
