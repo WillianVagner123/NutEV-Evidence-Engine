@@ -326,6 +326,71 @@ OFFICIAL_GUIDANCE_DOCUMENT_TERMS = [
     "professional society statement",
 ]
 
+NUTRITION_CARE_CARDIOMETABOLIC_TERMS = [
+    "cardiometabolic nutrition care",
+    "cardiometabolic nutrition therapy",
+    "cardiometabolic diet therapy",
+    "nutrition therapy for cardiometabolic risk",
+    "diet therapy for cardiometabolic risk",
+    "medical nutrition therapy for cardiometabolic risk",
+    "nutrition care for cardiometabolic risk",
+    "dietitian-led cardiometabolic care",
+    "dietitian led cardiometabolic care",
+    "dietitian-delivered cardiometabolic care",
+    "dietitian delivered cardiometabolic care",
+    "nutrition therapy for obesity",
+    "diet therapy for obesity",
+    "medical nutrition therapy for obesity",
+    "nutrition care for obesity",
+    "nutrition therapy for type 2 diabetes",
+    "diet therapy for type 2 diabetes",
+    "medical nutrition therapy for type 2 diabetes",
+    "nutrition care for type 2 diabetes",
+    "nutrition therapy for hypertension",
+    "diet therapy for hypertension",
+    "nutrition care for hypertension",
+    "nutrition therapy for dyslipidemia",
+    "nutrition therapy for dyslipidaemia",
+    "diet therapy for dyslipidemia",
+    "diet therapy for dyslipidaemia",
+    "nutrition care for dyslipidemia",
+    "nutrition care for dyslipidaemia",
+    "nutrition therapy for MASLD",
+    "nutrition therapy for NAFLD",
+    "diet therapy for MASLD",
+    "diet therapy for NAFLD",
+    "medical nutrition therapy for MASLD",
+    "medical nutrition therapy for NAFLD",
+    "nutrition care for steatotic liver disease",
+]
+
+NUTRITION_CARE_CARDIOMETABOLIC_DOCUMENT_TERMS = [
+    "cardiometabolic nutrition care guideline",
+    "cardiometabolic nutrition therapy guideline",
+    "cardiometabolic diet therapy guideline",
+    "medical nutrition therapy for obesity guideline",
+    "medical nutrition therapy for type 2 diabetes guideline",
+    "medical nutrition therapy for hypertension guideline",
+    "medical nutrition therapy for dyslipidemia guideline",
+    "medical nutrition therapy for dyslipidaemia guideline",
+    "medical nutrition therapy for MASLD guideline",
+    "medical nutrition therapy for NAFLD guideline",
+    "nutrition care for cardiometabolic risk guideline",
+    "nutrition care for obesity guideline",
+    "nutrition care for type 2 diabetes guideline",
+    "nutrition care for hypertension guideline",
+    "nutrition care for dyslipidemia guideline",
+    "nutrition care for dyslipidaemia guideline",
+    "nutrition care for steatotic liver disease guideline",
+    "dietitian-led cardiometabolic intervention",
+    "dietitian led cardiometabolic intervention",
+    "dietitian-delivered cardiometabolic intervention",
+    "dietitian delivered cardiometabolic intervention",
+    "nutrition therapy for cardiometabolic risk systematic review",
+    "medical nutrition therapy for obesity systematic review",
+    "medical nutrition therapy for type 2 diabetes systematic review",
+]
+
 SOCIAL_NEEDS_FOOD_ACCESS_TERMS = [
     "food insecurity intervention",
     "food insecurity screening",
@@ -511,6 +576,20 @@ def apply_semantic_extensions() -> None:
         terms=OFFICIAL_GUIDANCE_TERMS,
         document_terms=OFFICIAL_GUIDANCE_DOCUMENT_TERMS,
     )
+    _extend_semantic_block(
+        "nutrition_care_delivery",
+        terms=NUTRITION_CARE_CARDIOMETABOLIC_TERMS,
+        document_terms=NUTRITION_CARE_CARDIOMETABOLIC_DOCUMENT_TERMS,
+    )
+    for block_name in (
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=NUTRITION_CARE_CARDIOMETABOLIC_TERMS,
+            document_terms=NUTRITION_CARE_CARDIOMETABOLIC_DOCUMENT_TERMS,
+        )
     for block_name in (
         "implementation_science",
         "adherence_persistence",
