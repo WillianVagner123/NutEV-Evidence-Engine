@@ -1,0 +1,60 @@
+{
+  "version_note": "Adds scoring support for culturally tailored nutrition and lifestyle intervention evidence; supplements scoring_rules.json without replacing existing rules.",
+  "keyword_points": {
+    "culturally tailored nutrition intervention": 4,
+    "culturally tailored dietary intervention": 4,
+    "culturally adapted nutrition intervention": 4,
+    "culturally adapted dietary intervention": 4,
+    "culturally appropriate nutrition": 3,
+    "culturally appropriate diet": 3,
+    "culturally relevant nutrition": 3,
+    "culturally responsive nutrition counseling": 4,
+    "culturally responsive nutrition counselling": 4,
+    "culturally sensitive dietary counseling": 3,
+    "culturally sensitive dietary counselling": 3,
+    "cultural tailoring": 3,
+    "cultural adaptation": 3,
+    "culturally tailored lifestyle intervention": 4,
+    "culturally adapted lifestyle intervention": 4,
+    "culturally tailored diabetes prevention": 4,
+    "culturally adapted diabetes prevention": 4,
+    "language-concordant nutrition counseling": 3,
+    "language concordant nutrition counseling": 3,
+    "language-concordant nutrition counselling": 3,
+    "language concordant nutrition counselling": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "culturally tailored nutrition intervention": 5,
+      "culturally tailored dietary intervention": 5,
+      "culturally adapted nutrition intervention": 5,
+      "culturally adapted dietary intervention": 5,
+      "culturally tailored lifestyle intervention": 5,
+      "culturally adapted lifestyle intervention": 5,
+      "culturally tailored diabetes prevention": 5,
+      "culturally adapted diabetes prevention": 5,
+      "cultural tailoring": 4,
+      "cultural adaptation": 4,
+      "language-concordant nutrition counseling": 4,
+      "language concordant nutrition counseling": 4
+    },
+    "a3": {
+      "culturally appropriate nutrition": 4,
+      "culturally responsive nutrition counseling": 4,
+      "culturally responsive nutrition counselling": 4,
+      "cultural tailoring": 4,
+      "cultural adaptation": 4,
+      "language-concordant nutrition counseling": 4,
+      "language concordant nutrition counseling": 4
+    },
+    "artigo3_framework": {
+      "culturally appropriate nutrition": 4,
+      "culturally responsive nutrition counseling": 4,
+      "culturally responsive nutrition counselling": 4,
+      "cultural tailoring": 4,
+      "cultural adaptation": 4,
+      "language-concordant nutrition counseling": 4,
+      "language concordant nutrition counseling": 4
+    }
+  }
+}
