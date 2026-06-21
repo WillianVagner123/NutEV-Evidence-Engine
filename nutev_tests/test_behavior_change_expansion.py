@@ -70,3 +70,42 @@ def test_behavior_change_model_terms_gain_artigo3_priority() -> None:
     )
 
     assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_food_access_variants_gain_busca1_and_busca2b_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    busca1_boosted = score_record(
+        {
+            "title": "Food pharmacy program and healthy food boxes for obesity prevention",
+            "source": "official",
+        },
+        scoring_rules,
+        "busca1",
+    )
+    busca1_baseline = score_record(
+        {
+            "title": "Food access program for obesity prevention",
+            "source": "official",
+        },
+        scoring_rules,
+        "busca1",
+    )
+    busca2b_boosted = score_record(
+        {
+            "title": "Grocery prescription and medically tailored pantry intervention for cardiometabolic risk",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    busca2b_baseline = score_record(
+        {
+            "title": "Food access intervention for cardiometabolic risk",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert float(busca1_boosted["relevance_score"]) > float(busca1_baseline["relevance_score"])
+    assert float(busca2b_boosted["relevance_score"]) > float(busca2b_baseline["relevance_score"])

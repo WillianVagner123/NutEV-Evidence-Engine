@@ -368,8 +368,12 @@ OOS_RESCUE_TOKENS = [
     "meal preparation",
     "food is medicine",
     "food as medicine",
+    "food pharmacy",
+    "food farmacy",
+    "grocery prescription",
     "medically tailored meal",
     "medically tailored meals",
+    "medically tailored pantry",
 ]
 
 WORKSTREAM_BONUS = {
@@ -765,6 +769,45 @@ WORKSTREAM_BONUS = {
     },
 }
 
+FOOD_ACCESS_INTERVENTION_BONUS = {
+    "busca1": {
+        "grocery prescription": 5,
+        "grocery prescriptions": 5,
+        "food pharmacy": 5,
+        "food pharmacies": 5,
+        "food pharmacy program": 6,
+        "food farmacy": 5,
+        "food farmacies": 5,
+        "food farmacy program": 6,
+        "medically tailored pantry": 5,
+        "medically tailored pantries": 5,
+        "medically tailored nutrition": 5,
+        "healthy food box": 4,
+        "healthy food boxes": 4,
+        "nutrition assistance": 4,
+        "nutrition assistance program": 5,
+        "nutrition assistance programs": 5,
+    },
+    "busca2b": {
+        "grocery prescription": 5,
+        "grocery prescriptions": 5,
+        "food pharmacy": 5,
+        "food pharmacies": 5,
+        "food pharmacy program": 6,
+        "food farmacy": 5,
+        "food farmacies": 5,
+        "food farmacy program": 6,
+        "medically tailored pantry": 5,
+        "medically tailored pantries": 5,
+        "medically tailored nutrition": 5,
+        "healthy food box": 4,
+        "healthy food boxes": 4,
+        "nutrition assistance": 4,
+        "nutrition assistance program": 5,
+        "nutrition assistance programs": 5,
+    },
+}
+
 BEHAVIOR_CHANGE_MODEL_BONUS = {
     "busca2b": {
         "action planning": 4,
@@ -879,10 +922,17 @@ WORKSTREAM_SIGNAL_GROUPS = {
             "fruit and vegetable prescription",
             "healthy food prescription",
             "food prescription program",
+            "grocery prescription",
+            "food pharmacy",
+            "food farmacy",
             "medically tailored meal",
             "medically tailored meals",
             "medically tailored grocery",
             "medically tailored groceries",
+            "medically tailored pantry",
+            "medically tailored nutrition",
+            "healthy food box",
+            "nutrition assistance program",
             "teaching kitchen",
             "teaching kitchens",
             "culinary medicine",
@@ -1013,10 +1063,17 @@ WORKSTREAM_SIGNAL_GROUPS = {
             "fruit and vegetable prescription",
             "healthy food prescription",
             "food prescription program",
+            "grocery prescription",
+            "food pharmacy",
+            "food farmacy",
             "medically tailored meal",
             "medically tailored meals",
             "medically tailored grocery",
             "medically tailored groceries",
+            "medically tailored pantry",
+            "medically tailored nutrition",
+            "healthy food box",
+            "nutrition assistance program",
         ],
         "implementation": [
             "adherence",
@@ -1287,6 +1344,10 @@ def _behavior_change_model_bonus(text: str, workstream: str) -> int:
     return _match_weighted_points(text, BEHAVIOR_CHANGE_MODEL_BONUS.get(workstream, {}))
 
 
+def _food_access_intervention_bonus(text: str, workstream: str) -> int:
+    return _match_weighted_points(text, FOOD_ACCESS_INTERVENTION_BONUS.get(workstream, {}))
+
+
 def _workstream_bonus_score(text: str, scoring_rules: dict, workstream: str) -> int:
     configured_bonus = scoring_rules.get("workstream_bonus", {}).get(workstream, {})
     if configured_bonus:
@@ -1357,6 +1418,7 @@ def score_record(record: dict, scoring_rules: dict, workstream: str) -> dict:
 
     score += _implementation_design_bonus(text, workstream)
     score += _behavior_change_model_bonus(text, workstream)
+    score += _food_access_intervention_bonus(text, workstream)
 
     out_of_scope_flags, out_of_scope_penalty = _out_of_scope_profile(text)
     editorial_score = _editorial_authority_score(record, scoring_rules)
