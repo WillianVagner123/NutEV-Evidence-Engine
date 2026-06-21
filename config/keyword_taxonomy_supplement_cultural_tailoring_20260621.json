@@ -1,0 +1,108 @@
+{
+  "version_note": "Adds focused cultural tailoring terms for diet, nutrition, lifestyle medicine, adherence, and implementation searches without replacing the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "cultural_tailoring": [
+        "culturally tailored nutrition intervention",
+        "culturally tailored dietary intervention",
+        "culturally adapted nutrition intervention",
+        "culturally adapted dietary intervention",
+        "culturally appropriate nutrition",
+        "culturally appropriate diet",
+        "culturally relevant nutrition",
+        "culturally relevant dietary advice",
+        "culturally responsive nutrition counseling",
+        "culturally responsive nutrition counselling",
+        "culturally sensitive dietary counseling",
+        "culturally sensitive dietary counselling",
+        "cultural tailoring",
+        "cultural adaptation",
+        "culturally tailored lifestyle intervention",
+        "culturally adapted lifestyle intervention"
+      ]
+    },
+    "implementation_behavior": {
+      "cultural_tailoring": [
+        "culturally tailored intervention",
+        "culturally adapted intervention",
+        "culturally tailored behavior change",
+        "culturally tailored behaviour change",
+        "culturally adapted behavior change",
+        "culturally adapted behaviour change",
+        "culturally tailored health coaching",
+        "culturally tailored diabetes prevention",
+        "culturally adapted diabetes prevention",
+        "cultural tailoring",
+        "cultural adaptation",
+        "language-concordant nutrition counseling",
+        "language concordant nutrition counseling",
+        "language-concordant nutrition counselling",
+        "language concordant nutrition counselling"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "culturally tailored nutrition intervention",
+        "culturally tailored dietary intervention",
+        "culturally adapted nutrition intervention",
+        "culturally adapted dietary intervention",
+        "culturally tailored lifestyle intervention",
+        "culturally adapted lifestyle intervention",
+        "culturally tailored diabetes prevention",
+        "culturally adapted diabetes prevention",
+        "culturally responsive nutrition counseling",
+        "culturally responsive nutrition counselling"
+      ],
+      "web_query_hints": [
+        "culturally tailored nutrition intervention obesity",
+        "culturally adapted dietary intervention diabetes",
+        "culturally tailored lifestyle intervention cardiometabolic",
+        "culturally adapted diabetes prevention trial",
+        "culturally responsive nutrition counseling trial",
+        "culturally tailored dietary intervention systematic review"
+      ],
+      "document_terms": [
+        "cultural adaptation trial",
+        "culturally tailored intervention trial",
+        "culturally adapted intervention trial",
+        "cultural tailoring systematic review"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "cultural tailoring",
+        "cultural adaptation",
+        "culturally appropriate nutrition",
+        "culturally responsive nutrition counseling",
+        "culturally responsive nutrition counselling",
+        "language-concordant nutrition counseling",
+        "language concordant nutrition counseling"
+      ],
+      "web_query_hints": [
+        "culturally adapted food literacy framework",
+        "culturally tailored nutrition counseling framework",
+        "culturally responsive nutrition education instrument",
+        "language-concordant nutrition counseling framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "cultural tailoring",
+        "cultural adaptation",
+        "culturally appropriate nutrition",
+        "culturally responsive nutrition counseling",
+        "culturally responsive nutrition counselling",
+        "language-concordant nutrition counseling",
+        "language concordant nutrition counseling"
+      ],
+      "web_query_hints": [
+        "culturally adapted food literacy framework",
+        "culturally tailored nutrition counseling framework",
+        "culturally responsive nutrition education instrument",
+        "language-concordant nutrition counseling framework"
+      ]
+    }
+  }
+}
