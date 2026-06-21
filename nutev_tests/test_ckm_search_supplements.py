@@ -40,4 +40,3 @@ def test_ckm_supplement_improves_clinical_priority_score() -> None:
     baseline_score = score_record(dict(baseline_record), scoring, "busca2a")["relevance_score"]
 
     assert ckm_score > baseline_score
-}
