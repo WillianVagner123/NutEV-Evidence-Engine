@@ -1,0 +1,112 @@
+{
+  "version_note": "2026-06-21 focused food access referral and food pharmacy query expansion",
+  "global": {
+    "implementation_behavior": {
+      "food_access_referrals": [
+        "food pharmacy intervention",
+        "food pharmacy implementation",
+        "food pharmacy evaluation",
+        "food farmacy intervention",
+        "food farmacy implementation",
+        "food farmacy evaluation",
+        "healthy food referral",
+        "healthy food referral program",
+        "healthy food referral programme",
+        "produce referral",
+        "produce referral program",
+        "produce referral programme",
+        "fruit and vegetable referral",
+        "fruit and vegetable referral program",
+        "food insecurity screening and referral",
+        "food insecurity screening referral",
+        "nutrition insecurity screening and referral",
+        "nutrition insecurity screening referral",
+        "food resource referral",
+        "food resource navigation",
+        "nutrition resource referral",
+        "nutrition resource navigation"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food pharmacy intervention",
+      "food pharmacy implementation",
+      "food pharmacy evaluation",
+      "food farmacy intervention",
+      "food farmacy implementation",
+      "food farmacy evaluation",
+      "healthy food referral",
+      "healthy food referral program",
+      "produce referral program",
+      "fruit and vegetable referral program",
+      "food insecurity screening and referral",
+      "nutrition insecurity screening and referral",
+      "food resource navigation",
+      "nutrition resource navigation"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food pharmacy intervention",
+        "food pharmacy implementation",
+        "food pharmacy evaluation",
+        "food farmacy intervention",
+        "food farmacy implementation",
+        "food farmacy evaluation",
+        "healthy food referral program",
+        "produce referral program",
+        "food insecurity screening and referral",
+        "nutrition insecurity screening and referral",
+        "food resource navigation"
+      ],
+      "web_query_hints": [
+        "food pharmacy implementation report",
+        "food pharmacy evaluation report",
+        "food farmacy implementation report",
+        "healthy food referral program report",
+        "produce referral program evaluation",
+        "food insecurity screening and referral report",
+        "nutrition insecurity screening referral program"
+      ],
+      "document_terms": [
+        "implementation report",
+        "evaluation report",
+        "program evaluation",
+        "referral program"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food pharmacy intervention",
+        "food pharmacy implementation",
+        "food pharmacy evaluation",
+        "food farmacy intervention",
+        "food farmacy implementation",
+        "food farmacy evaluation",
+        "healthy food referral program",
+        "produce referral program",
+        "food insecurity screening and referral",
+        "nutrition insecurity screening and referral",
+        "food resource navigation"
+      ],
+      "web_query_hints": [
+        "food pharmacy cardiometabolic trial",
+        "food pharmacy diabetes trial",
+        "food pharmacy obesity trial",
+        "food pharmacy implementation trial",
+        "food farmacy cardiometabolic trial",
+        "produce referral program randomized trial",
+        "food insecurity screening referral cardiometabolic",
+        "nutrition insecurity screening referral diabetes"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "pragmatic trial"
+      ]
+    }
+  }
+}
