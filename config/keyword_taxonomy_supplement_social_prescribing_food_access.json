@@ -1,0 +1,142 @@
+{
+  "version_note": "Focused NutMEV supplement for food-anchored social prescribing and community referral terms. Loaded after keyword_taxonomy.json; appends scoped terms without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "social_prescribing_food_access": [
+        "food social prescribing",
+        "nutrition social prescribing",
+        "dietary social prescribing",
+        "social prescribing food",
+        "social prescribing nutrition",
+        "social prescribing diet",
+        "social prescribing produce prescription",
+        "social prescribing food pantry",
+        "social prescribing food bank",
+        "social prescribing medically tailored meals",
+        "social prescribing food insecurity",
+        "social prescribing nutrition security",
+        "link worker food insecurity",
+        "link worker nutrition",
+        "community connector food access",
+        "community connector nutrition",
+        "community food referral",
+        "community food referrals",
+        "community nutrition referral",
+        "community nutrition referrals",
+        "community resource referral food",
+        "community resource referral nutrition",
+        "food access referral pathway",
+        "nutrition referral pathway"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food social prescribing",
+      "nutrition social prescribing",
+      "social prescribing food insecurity",
+      "social prescribing nutrition security",
+      "community food referral",
+      "community nutrition referral",
+      "food access referral pathway",
+      "nutrition referral pathway"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food social prescribing",
+        "nutrition social prescribing",
+        "social prescribing food insecurity",
+        "social prescribing nutrition security",
+        "community food referral",
+        "community nutrition referral",
+        "food access referral pathway",
+        "nutrition referral pathway"
+      ],
+      "web_query_hints": [
+        "food social prescribing report",
+        "nutrition social prescribing report",
+        "social prescribing food insecurity program",
+        "social prescribing nutrition security program",
+        "community food referral program",
+        "community nutrition referral pathway",
+        "food access referral pathway report"
+      ],
+      "document_terms": [
+        "implementation report",
+        "program evaluation",
+        "referral pathway",
+        "practice guidance"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food social prescribing",
+        "nutrition social prescribing",
+        "social prescribing produce prescription",
+        "social prescribing medically tailored meals",
+        "link worker nutrition",
+        "community food referral",
+        "community nutrition referral",
+        "food access referral pathway"
+      ],
+      "web_query_hints": [
+        "food social prescribing trial",
+        "nutrition social prescribing intervention",
+        "social prescribing produce prescription trial",
+        "social prescribing medically tailored meals evaluation",
+        "community food referral cardiometabolic",
+        "community nutrition referral diabetes",
+        "food access referral pathway implementation"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "process evaluation",
+        "program evaluation",
+        "pragmatic trial",
+        "referral pathway"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "food social prescribing framework",
+        "nutrition social prescribing framework",
+        "food access referral pathway",
+        "nutrition referral pathway",
+        "community food referral"
+      ],
+      "web_query_hints": [
+        "food social prescribing framework",
+        "nutrition social prescribing framework",
+        "food access referral pathway framework",
+        "community food referral implementation framework"
+      ],
+      "document_terms": [
+        "framework",
+        "implementation framework",
+        "referral pathway"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "food social prescribing framework",
+        "nutrition social prescribing framework",
+        "food access referral pathway",
+        "nutrition referral pathway",
+        "community food referral"
+      ],
+      "web_query_hints": [
+        "food social prescribing framework",
+        "nutrition social prescribing framework",
+        "food access referral pathway framework",
+        "community food referral implementation framework"
+      ],
+      "document_terms": [
+        "framework",
+        "implementation framework",
+        "referral pathway"
+      ]
+    }
+  }
+}
