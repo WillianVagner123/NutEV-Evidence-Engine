@@ -63,6 +63,18 @@ BEHAVIOR_PRIORITY_TERMS = [
     "produce prescription program",
     "medically tailored meals",
     "medically tailored groceries",
+    "food insecurity screening",
+    "screening for food insecurity",
+    "social prescribing",
+    "social needs referral",
+    "closed-loop referral",
+    "closed loop referral",
+    "food pantry referral",
+    "food bank partnership",
+    "community health worker-led nutrition",
+    "community health worker led nutrition",
+    "patient navigation",
+    "care navigation",
 ]
 
 PUBMED_MESH_MAP = {
