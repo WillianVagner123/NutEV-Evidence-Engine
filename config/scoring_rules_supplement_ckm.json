@@ -1,0 +1,76 @@
+{
+  "version_note": "2026-06-21 CKM renal-metabolic scoring supplement for NutMEV clinical workstreams.",
+  "keyword_points": {
+    "cardiovascular-kidney-metabolic": 4,
+    "cardiovascular kidney metabolic": 4,
+    "cardiovascular-kidney-metabolic syndrome": 5,
+    "cardiovascular kidney metabolic syndrome": 5,
+    "ckm syndrome": 5,
+    "ckm health": 3,
+    "ckm risk": 3,
+    "chronic kidney disease": 3,
+    "diabetic kidney disease": 4,
+    "diabetic nephropathy": 3,
+    "albuminuria": 2,
+    "estimated glomerular filtration rate": 2,
+    "egfr": 2,
+    "kidney disease medical nutrition therapy": 5,
+    "chronic kidney disease nutrition guideline": 5,
+    "diabetic kidney disease nutrition guideline": 5
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiovascular-kidney-metabolic": 5,
+      "cardiovascular kidney metabolic": 5,
+      "cardiovascular-kidney-metabolic syndrome": 6,
+      "cardiovascular kidney metabolic syndrome": 6,
+      "ckm syndrome": 6,
+      "ckm health": 4,
+      "ckm risk": 4,
+      "chronic kidney disease": 4,
+      "diabetic kidney disease": 5,
+      "diabetic nephropathy": 4,
+      "albuminuria": 3,
+      "estimated glomerular filtration rate": 3,
+      "egfr": 3,
+      "kidney disease medical nutrition therapy": 6,
+      "chronic kidney disease nutrition guideline": 6,
+      "diabetic kidney disease nutrition guideline": 6
+    },
+    "busca2b": {
+      "cardiovascular-kidney-metabolic": 4,
+      "cardiovascular kidney metabolic": 4,
+      "cardiovascular-kidney-metabolic syndrome": 5,
+      "cardiovascular kidney metabolic syndrome": 5,
+      "ckm syndrome": 5,
+      "ckm health": 3,
+      "ckm risk": 3,
+      "chronic kidney disease": 3,
+      "diabetic kidney disease": 4,
+      "diabetic nephropathy": 3,
+      "albuminuria": 2,
+      "estimated glomerular filtration rate": 2,
+      "egfr": 2,
+      "kidney disease medical nutrition therapy": 5,
+      "chronic kidney disease dietary intervention": 5,
+      "diabetic kidney disease lifestyle intervention": 5
+    }
+  },
+  "editorial_authority_points": {
+    "journals": {
+      "kidney international": 6,
+      "american journal of kidney diseases": 6,
+      "clinical journal of the american society of nephrology": 6
+    },
+    "institutions": {
+      "kidney disease improving global outcomes": 7,
+      "kdigo": 7,
+      "national kidney foundation": 6
+    },
+    "domains": {
+      "kdigo.org": 7,
+      "kidney.org": 6,
+      "ajkd.org": 5
+    }
+  }
+}
