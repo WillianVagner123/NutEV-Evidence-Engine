@@ -1,0 +1,157 @@
+{
+  "version_note": "Focused supplement for diet quality/adherence scoring, pragmatic nutrition delivery, and cardiometabolic nutrition implementation terms.",
+  "global": {
+    "diet_patterns": {
+      "diet_quality_scores": [
+        "diet quality score",
+        "diet quality index",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "alternative healthy eating index",
+        "ahei",
+        "hei-2015",
+        "hei 2015",
+        "dietary inflammatory index",
+        "empirical dietary inflammatory pattern",
+        "dietary pattern adherence",
+        "dietary adherence score",
+        "mediterranean diet adherence",
+        "mediterranean diet score",
+        "dash diet adherence",
+        "dash score",
+        "mind diet score",
+        "portfolio diet score",
+        "plant-based diet index",
+        "plant based diet index",
+        "healthful plant-based diet index",
+        "healthy plant-based diet index",
+        "unhealthy plant-based diet index"
+      ]
+    },
+    "implementation_behavior": {
+      "pragmatic_nutrition_delivery": [
+        "pragmatic nutrition intervention",
+        "pragmatic dietary intervention",
+        "pragmatic lifestyle intervention",
+        "real-world nutrition intervention",
+        "real world nutrition intervention",
+        "real-world dietary intervention",
+        "real world dietary intervention",
+        "implementation-effectiveness nutrition trial",
+        "effectiveness-implementation nutrition trial",
+        "hybrid effectiveness-implementation nutrition trial",
+        "practice-based nutrition intervention",
+        "practice based nutrition intervention",
+        "primary care nutrition intervention",
+        "dietitian-led group visit",
+        "dietitian led group visit",
+        "group visit nutrition",
+        "group visit lifestyle intervention"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet quality score",
+      "diet quality index",
+      "healthy eating index",
+      "alternate healthy eating index",
+      "alternative healthy eating index",
+      "dietary inflammatory index",
+      "empirical dietary inflammatory pattern",
+      "dietary pattern adherence",
+      "dietary adherence score",
+      "mediterranean diet adherence",
+      "mediterranean diet score",
+      "dash diet adherence",
+      "dash score",
+      "mind diet score",
+      "portfolio diet score",
+      "plant-based diet index",
+      "plant based diet index",
+      "healthful plant-based diet index"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "diet quality score",
+        "diet quality index",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "alternative healthy eating index",
+        "dietary inflammatory index",
+        "dietary pattern adherence",
+        "dietary adherence score",
+        "pragmatic nutrition intervention",
+        "pragmatic dietary intervention",
+        "implementation-effectiveness nutrition trial",
+        "effectiveness-implementation nutrition trial",
+        "hybrid effectiveness-implementation nutrition trial",
+        "primary care nutrition intervention",
+        "dietitian-led group visit",
+        "group visit nutrition"
+      ],
+      "web_query_hints": [
+        "diet quality score cardiometabolic trial",
+        "healthy eating index obesity intervention",
+        "dietary inflammatory index cardiometabolic risk",
+        "dietary adherence score weight loss maintenance",
+        "mediterranean diet adherence implementation",
+        "dash diet adherence hypertension trial",
+        "pragmatic nutrition intervention primary care",
+        "implementation-effectiveness nutrition trial",
+        "hybrid effectiveness-implementation nutrition trial",
+        "dietitian-led group visit diabetes nutrition"
+      ],
+      "document_terms": [
+        "pragmatic nutrition intervention",
+        "pragmatic dietary intervention",
+        "implementation-effectiveness trial",
+        "effectiveness-implementation trial",
+        "diet quality score",
+        "dietary adherence score"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "diet quality score",
+        "dietary adherence score",
+        "mediterranean diet adherence",
+        "dash diet adherence",
+        "plant-based diet index",
+        "healthy eating index",
+        "dietitian-led group visit",
+        "group visit nutrition"
+      ],
+      "web_query_hints": [
+        "dietary adherence score questionnaire",
+        "diet quality score adherence instrument",
+        "mediterranean diet adherence questionnaire",
+        "dash diet adherence questionnaire",
+        "plant-based diet index adherence",
+        "group visit nutrition framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "diet quality score",
+        "dietary adherence score",
+        "mediterranean diet adherence",
+        "dash diet adherence",
+        "plant-based diet index",
+        "healthy eating index",
+        "dietitian-led group visit",
+        "group visit nutrition"
+      ],
+      "web_query_hints": [
+        "dietary adherence score questionnaire",
+        "diet quality score adherence instrument",
+        "mediterranean diet adherence questionnaire",
+        "dash diet adherence questionnaire",
+        "plant-based diet index adherence",
+        "group visit nutrition framework"
+      ]
+    }
+  }
+}
