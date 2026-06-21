@@ -1,0 +1,90 @@
+{
+  "version_note": "2026-06-21 CKM renal-metabolic search supplement for NutMEV clinical workstreams.",
+  "clinical": {
+    "cvd": [
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk"
+    ],
+    "kidney_metabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "diabetic kidney disease",
+      "diabetic nephropathy",
+      "albuminuria",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "kidney disease",
+      "renal impairment",
+      "doenca renal cronica",
+      "doenca renal diabetica"
+    ]
+  },
+  "outcomes": {
+    "renal_cardiometabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "albuminuria",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "kidney function",
+      "renal function",
+      "cardiovascular-kidney-metabolic syndrome",
+      "ckm syndrome"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "chronic kidney disease",
+        "diabetic kidney disease"
+      ],
+      "clinical_keys": [
+        "kidney_metabolic"
+      ],
+      "priority_outcomes": [
+        "renal_cardiometabolic"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic guideline",
+        "ckm syndrome scientific statement",
+        "chronic kidney disease nutrition guideline",
+        "diabetic kidney disease nutrition guideline",
+        "kidney disease medical nutrition therapy"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "chronic kidney disease",
+        "diabetic kidney disease"
+      ],
+      "clinical_keys": [
+        "kidney_metabolic"
+      ],
+      "priority_outcomes": [
+        "renal_cardiometabolic"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "ckm syndrome diet intervention",
+        "chronic kidney disease dietary intervention",
+        "diabetic kidney disease lifestyle intervention",
+        "kidney disease medical nutrition therapy trial"
+      ]
+    }
+  }
+}
