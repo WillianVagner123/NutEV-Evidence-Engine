@@ -1,0 +1,55 @@
+{
+  "version_note": "2026-06-21 focused food access referral and food pharmacy scoring",
+  "keyword_points": {
+    "food pharmacy intervention": 4,
+    "food pharmacy implementation": 4,
+    "food pharmacy evaluation": 4,
+    "food farmacy intervention": 4,
+    "food farmacy implementation": 4,
+    "food farmacy evaluation": 4,
+    "healthy food referral": 3,
+    "healthy food referral program": 4,
+    "healthy food referral programme": 4,
+    "produce referral": 3,
+    "produce referral program": 4,
+    "produce referral programme": 4,
+    "fruit and vegetable referral": 4,
+    "fruit and vegetable referral program": 4,
+    "food insecurity screening and referral": 4,
+    "food insecurity screening referral": 4,
+    "nutrition insecurity screening and referral": 4,
+    "nutrition insecurity screening referral": 4,
+    "food resource referral": 3,
+    "food resource navigation": 3,
+    "nutrition resource referral": 3,
+    "nutrition resource navigation": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food pharmacy intervention": 5,
+      "food pharmacy implementation": 5,
+      "food pharmacy evaluation": 5,
+      "food farmacy intervention": 5,
+      "food farmacy implementation": 5,
+      "food farmacy evaluation": 5,
+      "healthy food referral program": 5,
+      "produce referral program": 5,
+      "food insecurity screening and referral": 5,
+      "nutrition insecurity screening and referral": 5,
+      "food resource navigation": 4
+    },
+    "busca2b": {
+      "food pharmacy intervention": 5,
+      "food pharmacy implementation": 5,
+      "food pharmacy evaluation": 5,
+      "food farmacy intervention": 5,
+      "food farmacy implementation": 5,
+      "food farmacy evaluation": 5,
+      "healthy food referral program": 4,
+      "produce referral program": 5,
+      "food insecurity screening and referral": 4,
+      "nutrition insecurity screening and referral": 4,
+      "food resource navigation": 4
+    }
+  }
+}
