@@ -48,3 +48,27 @@ def test_evidence_lenses_classify_workstream_aligned_records():
     assert classified[0]["lens_busca2a_present"] == 1
     assert classified[1]["lens_busca2b_present"] == 1
     assert "busca2b" in classified[1]["evidence_lenses"]
+
+
+def test_food_literacy_and_access_domains_feed_expected_lenses():
+    records = [
+        {
+            "title": "Food literacy and culinary medicine framework for meal planning",
+            "abstract": "Teaching kitchen programs strengthen cooking skills and food agency.",
+            "extracted_text": "",
+        },
+        {
+            "title": "Produce prescription and medically tailored meals implementation trial",
+            "abstract": "Food is medicine delivery improved dietary adherence for adults with obesity.",
+            "extracted_text": "",
+        },
+    ]
+
+    classified = classify_evidence(records, _load_ontology(), _load_lenses())
+
+    assert "food_literacy_culinary" in classified[0]["domains"]
+    assert classified[0]["lens_a3_present"] == 1
+    assert classified[0]["lens_busca1_present"] == 1
+    assert "food_access_medicine" in classified[1]["domains"]
+    assert classified[1]["lens_busca2b_present"] == 1
+    assert "adherence_behavior" in classified[1]["outcomes"]
