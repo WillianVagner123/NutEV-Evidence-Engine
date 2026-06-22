@@ -1,0 +1,84 @@
+{
+  "version_note": "2026-06 lipid and cardiometabolic precision expansion for NutMEV search taxonomy.",
+  "clinical": {
+    "dyslipidemia": [
+      "ldl-c",
+      "ldl c",
+      "ldl cholesterol",
+      "low-density lipoprotein cholesterol",
+      "low density lipoprotein cholesterol",
+      "non-hdl-c",
+      "non hdl c",
+      "non-hdl cholesterol",
+      "non hdl cholesterol",
+      "atherogenic dyslipidemia",
+      "atherogenic dyslipidaemia",
+      "triglyceride-rich lipoproteins",
+      "triglyceride rich lipoproteins",
+      "apo b",
+      "apob",
+      "apolipoprotein b"
+    ],
+    "fatty_liver": [
+      "hepatic steatosis",
+      "metabolic dysfunction-associated steatotic liver disease",
+      "metabolic dysfunction associated steatotic liver disease",
+      "metabolic dysfunction-associated steatohepatitis",
+      "metabolic dysfunction associated steatohepatitis"
+    ]
+  },
+  "outcomes": {
+    "lipids": [
+      "ldl-c",
+      "ldl c",
+      "ldl cholesterol",
+      "low-density lipoprotein cholesterol",
+      "low density lipoprotein cholesterol",
+      "non-hdl-c",
+      "non hdl c",
+      "non-hdl cholesterol",
+      "non hdl cholesterol",
+      "apo b",
+      "apob",
+      "apolipoprotein b",
+      "atherogenic dyslipidemia",
+      "atherogenic dyslipidaemia",
+      "triglyceride-rich lipoproteins",
+      "triglyceride rich lipoproteins"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "ldl-c",
+        "ldl cholesterol",
+        "low-density lipoprotein cholesterol",
+        "non-hdl-c",
+        "non-hdl cholesterol",
+        "hepatic steatosis"
+      ],
+      "web_query_hints": [
+        "ldl-c guideline",
+        "non-hdl cholesterol guideline",
+        "atherogenic dyslipidemia guideline",
+        "hepatic steatosis guidance"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "ldl-c",
+        "ldl cholesterol",
+        "low-density lipoprotein cholesterol",
+        "non-hdl-c",
+        "non-hdl cholesterol",
+        "hepatic steatosis"
+      ],
+      "web_query_hints": [
+        "ldl-c lifestyle intervention",
+        "non-hdl cholesterol dietary intervention",
+        "atherogenic dyslipidemia trial",
+        "hepatic steatosis diet trial"
+      ]
+    }
+  }
+}
