@@ -1,0 +1,96 @@
+{
+  "version_note": "2026-06 nutrition prescription and personalization supplement. Adds semantically grouped terms used by load_json merge without editing the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "nutrition_prescription_personalization": [
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "diet prescription",
+        "diet prescriptions",
+        "dietary prescription",
+        "dietary prescriptions",
+        "nutrition therapy",
+        "diet therapy",
+        "dietetic treatment",
+        "dietary treatment",
+        "nutrition therapy intervention",
+        "diet therapy intervention",
+        "nutrition care plan",
+        "nutrition care plans",
+        "individualized nutrition care",
+        "individualised nutrition care",
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation"
+      ]
+    },
+    "implementation_behavior": {
+      "nutrition_personalization_delivery": [
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "nutrition care plan",
+        "nutrition care plans",
+        "shared decision making",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "nutrition coaching",
+        "diet coaching"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "nutrition prescription guideline",
+        "dietary prescription guideline",
+        "personalized nutrition guideline",
+        "precision nutrition consensus",
+        "nutrition care plan guideline",
+        "tailored dietary advice consensus",
+        "individualized nutrition care guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "nutrition prescription intervention",
+        "dietary prescription trial",
+        "personalized nutrition intervention",
+        "precision nutrition intervention",
+        "tailored dietary intervention trial",
+        "personalized meal planning trial",
+        "individualized dietary intervention trial",
+        "nutrition care plan implementation"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "personalized nutrition framework",
+        "precision nutrition framework",
+        "nutrition prescription framework",
+        "tailored dietary advice framework",
+        "nutrition care plan framework"
+      ]
+    }
+  }
+}
