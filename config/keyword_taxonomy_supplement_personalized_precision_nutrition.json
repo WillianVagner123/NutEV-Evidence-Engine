@@ -1,0 +1,130 @@
+{
+  "version_note": "2026-06-22 supplement: expands NutMEV search coverage for precision/personalized nutrition tied to obesity, type 2 diabetes remission, weight maintenance and cardiometabolic risk without editing the base taxonomy.",
+  "global": {
+    "personalized_precision_nutrition": {
+      "core": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "nutrition personalization",
+        "nutrition personalisation",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "individualized nutrition",
+        "individualised nutrition",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "individualized meal plan",
+        "individualised meal plan",
+        "personalized meal planning",
+        "personalised meal planning"
+      ],
+      "cardiometabolic_context": [
+        "personalized nutrition obesity",
+        "personalised nutrition obesity",
+        "precision nutrition obesity",
+        "precision nutrition type 2 diabetes",
+        "personalized nutrition type 2 diabetes",
+        "personalised nutrition type 2 diabetes",
+        "personalized nutrition cardiometabolic risk",
+        "personalised nutrition cardiometabolic risk",
+        "precision nutrition cardiometabolic risk",
+        "tailored dietary intervention obesity",
+        "tailored dietary intervention type 2 diabetes",
+        "tailored dietary intervention cardiometabolic risk",
+        "individualized dietary intervention obesity",
+        "individualised dietary intervention obesity",
+        "individualized dietary intervention type 2 diabetes",
+        "individualised dietary intervention type 2 diabetes"
+      ],
+      "precision_methods": [
+        "phenotype-guided nutrition",
+        "phenotype guided nutrition",
+        "phenotype-guided dietary advice",
+        "phenotype guided dietary advice",
+        "algorithm-guided nutrition",
+        "algorithm guided nutrition",
+        "algorithm-guided dietary advice",
+        "algorithm guided dietary advice",
+        "risk-stratified nutrition",
+        "risk stratified nutrition",
+        "risk-stratified dietary intervention",
+        "risk stratified dietary intervention"
+      ]
+    }
+  },
+  "clinical": {
+    "diabetes": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "diabetes reversal",
+      "type 2 diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission"
+    ],
+    "obesity": [
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain",
+      "weight regain prevention",
+      "weight regain management"
+    ]
+  },
+  "outcomes": {
+    "metabolic_remission_maintenance": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "glycemic remission",
+      "glycaemic remission",
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_blocks": [
+        "personalized_precision_nutrition"
+      ],
+      "priority_outcomes": [
+        "metabolic_remission_maintenance"
+      ],
+      "web_query_hints": [
+        "precision nutrition guideline",
+        "personalized nutrition guideline",
+        "personalised nutrition guideline",
+        "tailored dietary advice guideline",
+        "diabetes remission consensus",
+        "type 2 diabetes remission consensus",
+        "weight loss maintenance guideline"
+      ]
+    },
+    "busca2b": {
+      "focus_blocks": [
+        "personalized_precision_nutrition"
+      ],
+      "priority_outcomes": [
+        "metabolic_remission_maintenance"
+      ],
+      "web_query_hints": [
+        "precision nutrition trial",
+        "personalized nutrition intervention",
+        "personalised nutrition intervention",
+        "tailored dietary intervention trial",
+        "diabetes remission intervention",
+        "type 2 diabetes remission intervention",
+        "weight regain prevention intervention"
+      ]
+    }
+  }
+}
