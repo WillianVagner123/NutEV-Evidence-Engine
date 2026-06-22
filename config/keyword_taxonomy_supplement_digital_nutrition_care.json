@@ -1,0 +1,71 @@
+{
+  "version_note": "2026-06 digital nutrition care expansion: adds nutrition-anchored telehealth, coaching, app-based and remote-monitoring terms for busca2b/a3 without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "digital_nutrition_care": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "digital lifestyle intervention",
+        "digital weight management",
+        "digital diabetes prevention",
+        "digital health coaching",
+        "digital nutrition coaching",
+        "telehealth nutrition",
+        "telemedicine nutrition",
+        "virtual nutrition counseling",
+        "virtual nutrition counselling",
+        "remote nutrition counseling",
+        "remote nutrition counselling",
+        "remote dietary counseling",
+        "remote dietary counselling",
+        "remote dietitian",
+        "remote dietitian support",
+        "app-based nutrition",
+        "app based nutrition",
+        "mobile health nutrition",
+        "mhealth nutrition",
+        "ehealth nutrition",
+        "nutrition app",
+        "diet app",
+        "dietary self-monitoring app",
+        "digital dietary self-monitoring",
+        "remote dietary self-monitoring",
+        "remote weight monitoring",
+        "digital therapeutics nutrition",
+        "digital therapeutic nutrition",
+        "digital behavior change nutrition",
+        "digital behaviour change nutrition"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "digital nutrition intervention",
+        "digital lifestyle intervention",
+        "telehealth nutrition",
+        "remote nutrition counseling",
+        "remote dietary self-monitoring",
+        "app-based nutrition",
+        "mhealth nutrition",
+        "digital therapeutics nutrition"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "digital nutrition intervention",
+        "digital dietary self-monitoring",
+        "app-based nutrition",
+        "remote nutrition counseling",
+        "digital behavior change nutrition"
+      ],
+      "web_query_hints": [
+        "digital nutrition framework",
+        "digital dietary self-monitoring",
+        "nutrition app adherence",
+        "digital behavior change nutrition",
+        "digital behaviour change nutrition"
+      ]
+    }
+  }
+}
