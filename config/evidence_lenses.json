@@ -1,10 +1,16 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "description": "Evidence lenses that convert legacy workstreams (busca1/busca2a/busca2b/a3) into composable analysis layers aligned with NutMEV scope.",
   "lenses": {
     "busca1": {
       "focus": "policy_systems",
-      "domains": ["policy_systems", "dietary_patterns", "equity"]
+      "domains": [
+        "policy_systems",
+        "dietary_patterns",
+        "equity",
+        "food_literacy_culinary",
+        "food_access_medicine"
+      ]
     },
     "busca2a": {
       "focus": "clinical_outcomes",
@@ -12,11 +18,21 @@
     },
     "busca2b": {
       "focus": "implementation",
-      "domains": ["implementation", "clinical_outcomes", "dietary_patterns"]
+      "domains": [
+        "implementation",
+        "clinical_outcomes",
+        "dietary_patterns",
+        "food_access_medicine"
+      ]
     },
     "a3": {
       "focus": "framework",
-      "domains": ["implementation", "policy_systems", "dietary_patterns"]
+      "domains": [
+        "implementation",
+        "policy_systems",
+        "dietary_patterns",
+        "food_literacy_culinary"
+      ]
     }
   },
   "cross_lens": {
