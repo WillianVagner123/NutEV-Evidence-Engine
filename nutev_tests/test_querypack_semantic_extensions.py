@@ -25,6 +25,19 @@ def test_precision_personalized_nutrition_document_terms_reach_framework_querypa
     assert "tailored nutrition framework" in artigo3_document_terms
 
 
+def test_masld_nutrition_terms_reach_clinical_querypacks() -> None:
+    busca2a_terms = _lowered_terms("busca2a")
+    busca2b_terms = _lowered_terms("busca2b")
+    busca2a_document_terms = _lowered_terms("busca2a", field="document_terms")
+    busca2b_document_terms = _lowered_terms("busca2b", field="document_terms")
+
+    assert "masld nutrition therapy" in busca2a_terms
+    assert "mash dietary intervention" in busca2b_terms
+    assert "steatotic liver disease lifestyle intervention" in busca2b_terms
+    assert "masld clinical practice guideline" in busca2a_document_terms
+    assert "mash lifestyle intervention trial" in busca2b_document_terms
+
+
 def test_food_and_eating_competence_terms_reach_framework_querypack() -> None:
     artigo3_terms = _lowered_terms("artigo3_framework")
     artigo3_document_terms = _lowered_terms("artigo3_framework", field="document_terms")
