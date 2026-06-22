@@ -1,0 +1,71 @@
+{
+  "version_note": "2026-06 culinary medicine query expansion supplement; merged by nutev.settings.load_json without changing the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "culinary medicine intervention",
+        "culinary medicine education",
+        "culinary medicine training",
+        "culinary medicine teaching kitchen",
+        "hands-on culinary medicine",
+        "hands on culinary medicine",
+        "culinary coaching",
+        "culinary skills intervention",
+        "cooking intervention",
+        "cooking program",
+        "cooking programme",
+        "healthy cooking intervention",
+        "teaching kitchen intervention",
+        "teaching kitchen evaluation",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "experiential nutrition education"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "culinary medicine program",
+        "culinary medicine programme",
+        "culinary medicine education",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "experiential nutrition education",
+        "healthy cooking intervention"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "culinary medicine intervention",
+        "culinary medicine education",
+        "culinary coaching",
+        "cooking skills intervention",
+        "healthy cooking intervention",
+        "teaching kitchen intervention",
+        "teaching kitchen evaluation",
+        "experiential nutrition education"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "culinary medicine education",
+        "culinary medicine curriculum",
+        "culinary medicine curricula",
+        "teaching kitchen curriculum",
+        "teaching kitchen program",
+        "teaching kitchen programme"
+      ],
+      "web_query_hints": [
+        "culinary medicine curriculum",
+        "culinary medicine education",
+        "culinary medicine training",
+        "teaching kitchen curriculum",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "culinary skills instrument",
+        "cooking self-efficacy scale"
+      ]
+    }
+  }
+}
