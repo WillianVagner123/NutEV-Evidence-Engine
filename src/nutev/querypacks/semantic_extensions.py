@@ -24,6 +24,55 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+METABOLIC_LIVER_NUTRITION_TERMS = [
+    "masld nutrition therapy",
+    "masld dietary intervention",
+    "masld lifestyle intervention",
+    "mash nutrition therapy",
+    "mash dietary intervention",
+    "mash lifestyle intervention",
+    "steatotic liver disease nutrition therapy",
+    "steatotic liver disease dietary intervention",
+    "steatotic liver disease lifestyle intervention",
+    "metabolic dysfunction-associated steatotic liver disease nutrition",
+    "metabolic dysfunction associated steatotic liver disease nutrition",
+    "metabolic dysfunction-associated fatty liver disease nutrition",
+    "metabolic dysfunction associated fatty liver disease nutrition",
+    "metabolic dysfunction-associated steatohepatitis nutrition",
+    "metabolic dysfunction associated steatohepatitis nutrition",
+    "fatty liver nutrition therapy",
+    "fatty liver dietary intervention",
+    "fatty liver lifestyle intervention",
+    "hepatic steatosis dietary intervention",
+    "hepatic steatosis lifestyle intervention",
+    "nafld nutrition therapy",
+    "nafld dietary intervention",
+    "nafld lifestyle intervention",
+    "nash nutrition therapy",
+    "nash dietary intervention",
+    "nash lifestyle intervention",
+]
+
+METABOLIC_LIVER_NUTRITION_DOCUMENT_TERMS = [
+    "masld practice guidance",
+    "masld clinical practice guideline",
+    "masld consensus statement",
+    "masld systematic review",
+    "masld dietary intervention trial",
+    "masld lifestyle intervention trial",
+    "mash practice guidance",
+    "mash clinical practice guideline",
+    "mash consensus statement",
+    "mash systematic review",
+    "mash dietary intervention trial",
+    "mash lifestyle intervention trial",
+    "steatotic liver disease practice guidance",
+    "steatotic liver disease clinical practice guideline",
+    "steatotic liver disease systematic review",
+    "fatty liver dietary intervention trial",
+    "fatty liver lifestyle intervention trial",
+]
+
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
     "intensive lifestyle intervention",
     "intensive lifestyle interventions",
@@ -534,6 +583,16 @@ def apply_semantic_extensions() -> None:
         terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
         document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
     )
+    for block_name in (
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+        "adherence_persistence",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=METABOLIC_LIVER_NUTRITION_TERMS,
+            document_terms=METABOLIC_LIVER_NUTRITION_DOCUMENT_TERMS,
+        )
     _extend_semantic_block(
         "evidence_synthesis",
         terms=OFFICIAL_GUIDANCE_TERMS,
