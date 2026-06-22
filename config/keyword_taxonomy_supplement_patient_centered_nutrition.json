@@ -1,0 +1,64 @@
+{
+  "version_note": "Adds patient-centered nutrition counseling and dietary self-monitoring terms for adherence and implementation retrieval.",
+  "global": {
+    "implementation_behavior": {
+      "patient_centered_nutrition": [
+        "patient-centered nutrition counseling",
+        "patient centred nutrition counselling",
+        "patient-centered dietary counseling",
+        "patient centred dietary counselling",
+        "person-centered nutrition care",
+        "person centred nutrition care",
+        "patient-centered lifestyle counseling",
+        "patient centred lifestyle counselling",
+        "nutrition shared decision making",
+        "dietary shared decision making",
+        "collaborative goal setting",
+        "dietary goal setting",
+        "nutrition goal setting",
+        "dietary action planning",
+        "nutrition action planning",
+        "dietary coping planning",
+        "nutrition coping planning",
+        "dietary self-monitoring",
+        "food self-monitoring",
+        "diet tracking",
+        "food tracking",
+        "dietary feedback",
+        "nutrition feedback",
+        "dietary problem solving",
+        "nutrition problem solving",
+        "patient activation",
+        "patient engagement",
+        "nutrition self-management support",
+        "dietary self-management support",
+        "adherence counseling",
+        "adherence counselling",
+        "motivational nutrition counseling",
+        "motivational nutrition counselling"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "patient-centered nutrition counseling",
+        "nutrition shared decision making",
+        "dietary self-monitoring",
+        "nutrition self-management support",
+        "dietary action planning",
+        "adherence counseling"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "patient-centered nutrition counseling",
+        "nutrition shared decision making",
+        "dietary self-monitoring",
+        "nutrition self-management support",
+        "dietary action planning",
+        "patient activation"
+      ]
+    }
+  }
+}
