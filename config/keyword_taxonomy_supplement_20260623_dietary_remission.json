@@ -1,0 +1,135 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for diet-based weight loss, metabolic remission, and maintenance strategies. Loaded after keyword_taxonomy.json and appended without changing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "dietary_remission_strategies": [
+        "low-calorie diet",
+        "low calorie diet",
+        "low-energy diet",
+        "low energy diet",
+        "very-low-calorie diet",
+        "very low calorie diet",
+        "very-low-energy diet",
+        "very low energy diet",
+        "total diet replacement",
+        "partial meal replacement",
+        "meal replacement",
+        "formula diet",
+        "hypocaloric diet",
+        "energy-restricted diet",
+        "energy restricted diet",
+        "calorie restriction diet",
+        "dietary weight loss program",
+        "dietary weight loss programme",
+        "diet-induced weight loss",
+        "diet induced weight loss"
+      ]
+    },
+    "implementation_behavior": {
+      "remission_maintenance_support": [
+        "weight regain prevention",
+        "weight regain management",
+        "weight loss maintenance intervention",
+        "dietary maintenance intervention",
+        "remission maintenance intervention",
+        "meal replacement maintenance",
+        "relapse prevention for weight regain",
+        "long-term dietary adherence after weight loss",
+        "long term dietary adherence after weight loss"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "total diet replacement",
+      "meal replacement",
+      "very-low-calorie diet",
+      "very low calorie diet",
+      "very-low-energy diet",
+      "very low energy diet",
+      "diet-induced weight loss",
+      "diet induced weight loss"
+    ],
+    "diabetes": [
+      "total diet replacement",
+      "meal replacement",
+      "low-energy diet",
+      "low energy diet",
+      "diabetes remission maintenance",
+      "diet-induced diabetes remission",
+      "diet induced diabetes remission"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "diet-induced weight loss",
+      "diet induced weight loss",
+      "weight loss maintenance intervention",
+      "meal replacement maintenance"
+    ],
+    "glycemia": [
+      "diet-induced diabetes remission",
+      "diet induced diabetes remission",
+      "diabetes remission maintenance",
+      "remission maintenance intervention"
+    ],
+    "diet_quality_adherence": [
+      "long-term dietary adherence after weight loss",
+      "long term dietary adherence after weight loss",
+      "dietary maintenance intervention",
+      "meal replacement maintenance"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "total diet replacement",
+        "low-energy diet",
+        "low energy diet",
+        "very-low-calorie diet",
+        "very low calorie diet",
+        "very-low-energy diet",
+        "very low energy diet",
+        "meal replacement",
+        "diet-induced diabetes remission",
+        "diet induced diabetes remission"
+      ],
+      "web_query_hints": [
+        "total diet replacement guideline",
+        "meal replacement consensus",
+        "low energy diet guideline",
+        "diabetes remission diet consensus",
+        "diabetes remission diet guideline"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "low-calorie diet",
+        "low calorie diet",
+        "low-energy diet",
+        "low energy diet",
+        "very-low-calorie diet",
+        "very low calorie diet",
+        "very-low-energy diet",
+        "very low energy diet",
+        "total diet replacement",
+        "partial meal replacement",
+        "meal replacement",
+        "formula diet",
+        "hypocaloric diet",
+        "energy-restricted diet",
+        "energy restricted diet",
+        "diet-induced weight loss",
+        "diet induced weight loss"
+      ],
+      "web_query_hints": [
+        "total diet replacement trial",
+        "meal replacement randomized trial",
+        "meal replacement systematic review",
+        "low energy diet diabetes remission trial",
+        "very low calorie diet diabetes remission trial",
+        "weight loss maintenance meal replacement trial"
+      ]
+    }
+  }
+}
