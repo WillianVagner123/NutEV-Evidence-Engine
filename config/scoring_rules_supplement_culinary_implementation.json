@@ -1,0 +1,59 @@
+{
+  "version_note": "Supplemental NutMEV scoring for culinary medicine, teaching kitchen, and food skills implementation evidence.",
+  "keyword_points": {
+    "culinary medicine intervention": 4,
+    "culinary medicine program": 4,
+    "culinary medicine programme": 4,
+    "culinary medicine implementation": 4,
+    "culinary medicine evaluation": 4,
+    "teaching kitchen intervention": 4,
+    "teaching kitchen program": 4,
+    "teaching kitchen programme": 4,
+    "teaching kitchen implementation": 4,
+    "teaching kitchen evaluation": 4,
+    "cooking skills intervention": 3,
+    "cooking confidence intervention": 3,
+    "food skills intervention": 3,
+    "meal preparation intervention": 3,
+    "meal planning intervention": 3,
+    "home cooking intervention": 3,
+    "experiential nutrition education": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "culinary medicine program": 3,
+      "culinary medicine implementation": 3,
+      "culinary medicine evaluation": 3,
+      "teaching kitchen program": 3,
+      "teaching kitchen implementation": 3,
+      "teaching kitchen evaluation": 3,
+      "food skills intervention": 2,
+      "meal planning intervention": 2
+    },
+    "busca2b": {
+      "culinary medicine intervention": 4,
+      "teaching kitchen intervention": 4,
+      "cooking skills intervention": 3,
+      "food skills intervention": 3,
+      "meal preparation intervention": 3,
+      "meal planning intervention": 3,
+      "home cooking intervention": 3
+    },
+    "a3": {
+      "culinary medicine intervention framework": 4,
+      "teaching kitchen implementation framework": 4,
+      "cooking skills intervention framework": 3,
+      "food skills framework": 3,
+      "culinary medicine curriculum evaluation": 3,
+      "teaching kitchen curriculum evaluation": 3
+    },
+    "artigo3_framework": {
+      "culinary medicine intervention framework": 4,
+      "teaching kitchen implementation framework": 4,
+      "cooking skills intervention framework": 3,
+      "food skills framework": 3,
+      "culinary medicine curriculum evaluation": 3,
+      "teaching kitchen curriculum evaluation": 3
+    }
+  }
+}
