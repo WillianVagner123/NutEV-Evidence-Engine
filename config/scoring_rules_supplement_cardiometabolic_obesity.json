@@ -1,0 +1,59 @@
+{
+  "version_note": "2026-06-23: targeted scoring supplement for cardiometabolic obesity staging, adiposity complications, CKM syndrome, and weight-maintenance evidence. Loaded automatically by nutev.settings.load_json without overwriting scoring_rules.json.",
+  "keyword_points": {
+    "obesity staging": 3,
+    "obesity stage": 2,
+    "obesity classification": 3,
+    "obesity phenotype": 2,
+    "obesity phenotypes": 2,
+    "obesity complications": 4,
+    "adiposity-related complications": 5,
+    "adiposity related complications": 5,
+    "cardiometabolic obesity": 5,
+    "metabolically unhealthy obesity": 4,
+    "edmonton obesity staging system": 5,
+    "eoss": 3,
+    "cardiometabolic disease": 3,
+    "cardiometabolic diseases": 3,
+    "cardiometabolic comorbidity": 3,
+    "cardiometabolic comorbidities": 3,
+    "cardiovascular-kidney-metabolic syndrome": 5,
+    "cardiovascular kidney metabolic syndrome": 5,
+    "ckm syndrome": 4,
+    "weight regain": 3,
+    "weight regain prevention": 4,
+    "weight regain management": 3,
+    "weight maintenance": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "obesity staging": 4,
+      "obesity classification": 4,
+      "obesity complications": 5,
+      "adiposity-related complications": 5,
+      "adiposity related complications": 5,
+      "cardiometabolic obesity": 5,
+      "edmonton obesity staging system": 5,
+      "eoss": 3,
+      "cardiometabolic comorbidity": 4,
+      "cardiometabolic comorbidities": 4,
+      "cardiovascular-kidney-metabolic syndrome": 5,
+      "cardiovascular kidney metabolic syndrome": 5,
+      "ckm syndrome": 5
+    },
+    "busca2b": {
+      "obesity complications": 4,
+      "adiposity-related complications": 5,
+      "adiposity related complications": 5,
+      "cardiometabolic obesity": 5,
+      "metabolically unhealthy obesity": 4,
+      "weight regain": 4,
+      "weight regain prevention": 5,
+      "weight regain management": 4,
+      "weight maintenance": 4,
+      "weight loss maintenance": 5,
+      "long-term weight loss maintenance": 5,
+      "long term weight loss maintenance": 5
+    }
+  }
+}

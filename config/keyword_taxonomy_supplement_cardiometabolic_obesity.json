@@ -1,0 +1,86 @@
+{
+  "version_note": "2026-06-23: targeted supplement for cardiometabolic obesity staging, complications, and weight-maintenance retrieval. Loaded automatically by nutev.settings.load_json without overwriting keyword_taxonomy.json.",
+  "clinical": {
+    "obesity": [
+      "obesity staging",
+      "obesity stage",
+      "obesity stages",
+      "obesity classification",
+      "obesity phenotype",
+      "obesity phenotypes",
+      "obesity complications",
+      "adiposity-related complications",
+      "adiposity related complications",
+      "cardiometabolic obesity",
+      "metabolically unhealthy obesity",
+      "metabolically healthy obesity",
+      "edmonton obesity staging system",
+      "eoss"
+    ],
+    "cvd": [
+      "cardiometabolic disease",
+      "cardiometabolic diseases",
+      "cardiometabolic comorbidity",
+      "cardiometabolic comorbidities",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "weight regain",
+      "weight regain prevention",
+      "weight regain management",
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "obesity staging",
+        "obesity classification",
+        "obesity complications",
+        "adiposity-related complications",
+        "cardiometabolic obesity",
+        "edmonton obesity staging system",
+        "eoss",
+        "cardiometabolic disease",
+        "cardiovascular-kidney-metabolic syndrome",
+        "ckm syndrome"
+      ],
+      "web_query_hints": [
+        "obesity staging guideline",
+        "obesity complications guideline",
+        "adiposity-related complications guideline",
+        "cardiometabolic obesity consensus",
+        "edmonton obesity staging system guideline",
+        "cardiovascular-kidney-metabolic syndrome statement",
+        "ckm syndrome scientific statement"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "obesity staging",
+        "obesity complications",
+        "adiposity-related complications",
+        "cardiometabolic obesity",
+        "metabolically unhealthy obesity",
+        "weight regain",
+        "weight regain prevention",
+        "weight maintenance"
+      ],
+      "web_query_hints": [
+        "obesity complications lifestyle intervention",
+        "adiposity-related complications dietary intervention",
+        "cardiometabolic obesity lifestyle intervention",
+        "weight regain prevention trial",
+        "weight maintenance dietary intervention",
+        "long-term weight loss maintenance systematic review"
+      ]
+    }
+  }
+}
