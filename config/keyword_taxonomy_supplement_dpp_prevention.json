@@ -1,0 +1,64 @@
+{
+  "version_note": "2026-06-23 DPP and diabetes prevention search supplement for NutMEV clinical intervention workstreams.",
+  "global": {
+    "implementation_behavior": {
+      "behavioral": [
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "national diabetes prevention program",
+        "national diabetes prevention programme",
+        "dpp lifestyle intervention",
+        "dpp lifestyle program",
+        "dpp lifestyle programme",
+        "diabetes prevention lifestyle intervention",
+        "diabetes prevention lifestyle program",
+        "diabetes prevention lifestyle programme",
+        "type 2 diabetes prevention",
+        "t2d prevention",
+        "prediabetes lifestyle intervention",
+        "prediabetes lifestyle program",
+        "prediabetes lifestyle programme"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diabetes prevention program",
+      "diabetes prevention programme",
+      "dpp lifestyle intervention",
+      "type 2 diabetes prevention",
+      "prediabetes lifestyle intervention"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "diabetes prevention guideline",
+        "type 2 diabetes prevention guideline",
+        "prediabetes lifestyle guideline",
+        "diabetes prevention consensus",
+        "diabetes prevention standards of care"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "diabetes prevention",
+        "type 2 diabetes prevention",
+        "t2d prevention",
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "prediabetes lifestyle intervention"
+      ],
+      "web_query_hints": [
+        "diabetes prevention program lifestyle intervention",
+        "diabetes prevention programme lifestyle intervention",
+        "dpp lifestyle intervention trial",
+        "dpp lifestyle program trial",
+        "national diabetes prevention program trial",
+        "diabetes prevention implementation study",
+        "prediabetes lifestyle intervention adherence",
+        "type 2 diabetes prevention systematic review"
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "version_note": "2026-06-23 DPP and diabetes prevention scoring supplement for NutMEV clinical intervention workstreams.",
+  "keyword_points": {
+    "diabetes prevention program": 4,
+    "diabetes prevention programme": 4,
+    "national diabetes prevention program": 5,
+    "national diabetes prevention programme": 5,
+    "dpp lifestyle intervention": 5,
+    "dpp lifestyle program": 4,
+    "dpp lifestyle programme": 4,
+    "diabetes prevention lifestyle intervention": 5,
+    "type 2 diabetes prevention": 4,
+    "t2d prevention": 3,
+    "prediabetes lifestyle intervention": 4,
+    "prediabetes lifestyle program": 4,
+    "prediabetes lifestyle programme": 4
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "diabetes prevention guideline": 5,
+      "type 2 diabetes prevention guideline": 5,
+      "prediabetes lifestyle guideline": 5,
+      "diabetes prevention consensus": 5,
+      "diabetes prevention standards of care": 6
+    },
+    "busca2b": {
+      "diabetes prevention program": 5,
+      "diabetes prevention programme": 5,
+      "national diabetes prevention program": 6,
+      "national diabetes prevention programme": 6,
+      "dpp lifestyle intervention": 6,
+      "dpp lifestyle program": 5,
+      "dpp lifestyle programme": 5,
+      "diabetes prevention lifestyle intervention": 6,
+      "type 2 diabetes prevention": 5,
+      "t2d prevention": 4,
+      "prediabetes lifestyle intervention": 5,
+      "prediabetes lifestyle program": 5,
+      "prediabetes lifestyle programme": 5,
+      "diabetes prevention implementation study": 5,
+      "prediabetes lifestyle intervention adherence": 5
+    }
+  }
+}
