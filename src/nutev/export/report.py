@@ -64,20 +64,47 @@ def _as_list(value) -> list:
     return [value] if value not in (None, "", "nan") else []
 
 
+def _clean(value) -> str:
+    """Collapse whitespace/newlines so a value fits on one BibTeX/RIS line."""
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def _year(value) -> str:
+    s = _clean(value)
+    if s.endswith(".0"):  # pandas reads a year column with blanks as float64
+        s = s[:-2]
+    return s if s.isdigit() else ""
+
+
+_LATEX = {"&": r"\&", "%": r"\%", "#": r"\#", "_": r"\_", "$": r"\$", "~": " ", "^": " "}
+
+
+def _bib_escape(value) -> str:
+    s = _clean(value).replace("{", "(").replace("}", ")")
+    return "".join(_LATEX.get(ch, ch) for ch in s)
+
+
 def _first_author_surname(authors: str) -> str:
-    if not authors or str(authors) in ("nan", "None"):
+    if not authors or str(authors).strip() in ("", "nan", "None"):
         return "Anon"
-    first = re.split(r"[;,]", str(authors))[0].strip()
-    token = first.split()[-1] if first else "Anon"
-    return re.sub(r"[^A-Za-z]", "", token) or "Anon"
+    first = re.split(r"\s*;\s*", str(authors).strip())[0]
+    if "," in first:  # "Silva, J" -> Silva
+        surname = first.split(",")[0]
+    else:
+        parts = first.split()
+        if parts and len(parts[-1]) <= 2 and parts[-1].isupper():
+            surname = parts[0]  # "Silva J" (surname + initials)
+        else:
+            surname = parts[-1] if parts else "Anon"  # "John Silva"
+    return re.sub(r"[^A-Za-z]", "", surname) or "Anon"
 
 
 def _citation_key(rec: dict, used: set[str]) -> str:
-    key = re.sub(r"[^A-Za-z0-9]", "", f"{_first_author_surname(rec.get('authors', ''))}{rec.get('year', '') or 'sd'}") or "ref"
-    candidate, i = key, 1
+    base = re.sub(r"[^A-Za-z0-9]", "", f"{_first_author_surname(rec.get('authors', ''))}{_year(rec.get('year')) or 'sd'}") or "ref"
+    candidate, n = base, 1
     while candidate in used:
-        i += 1
-        candidate = f"{key}{chr(96 + i)}"
+        n += 1
+        candidate = f"{base}{n}"  # always-valid suffix: base, base2, base3, ...
     used.add(candidate)
     return candidate
 
@@ -87,12 +114,12 @@ def _bibtex(records: list[dict]) -> str:
     for rec in records:
         key = rec.get("_key") or "ref"
         fields = {
-            "title": str(rec.get("title", "") or "").replace("{", "(").replace("}", ")"),
-            "author": str(rec.get("authors", "") or "").replace("{", "(").replace("}", ")") or "Autor desconhecido",
-            "year": str(rec.get("year", "") or ""),
-            "journal": str(rec.get("journal", "") or ""),
-            "doi": str(rec.get("doi", "") or ""),
-            "url": str(rec.get("url", "") or ""),
+            "title": _bib_escape(rec.get("title", "")),
+            "author": _bib_escape(rec.get("authors", "")) or "Autor desconhecido",
+            "year": _year(rec.get("year")),
+            "journal": _bib_escape(rec.get("journal", "")),
+            "doi": _clean(rec.get("doi", "")),
+            "url": _clean(rec.get("url", "")),
         }
         lines = [f"@article{{{key},"]
         lines += [f"  {k} = {{{v}}}," for k, v in fields.items() if v]
@@ -107,19 +134,19 @@ def _ris(records: list[dict]) -> str:
         lines = ["TY  - JOUR"]
         if rec.get("_key"):
             lines.append(f"ID  - {rec['_key']}")
-        if rec.get("title"):
-            lines.append(f"TI  - {rec['title']}")
+        if _clean(rec.get("title")):
+            lines.append(f"TI  - {_clean(rec.get('title'))}")
         for author in re.split(r"\s*;\s*", str(rec.get("authors", "") or "")):
-            if author.strip():
-                lines.append(f"AU  - {author.strip()}")
-        if rec.get("year"):
-            lines.append(f"PY  - {rec['year']}")
-        if rec.get("journal"):
-            lines.append(f"JO  - {rec['journal']}")
-        if rec.get("doi"):
-            lines.append(f"DO  - {rec['doi']}")
-        if rec.get("url"):
-            lines.append(f"UR  - {rec['url']}")
+            if _clean(author):
+                lines.append(f"AU  - {_clean(author)}")
+        if _year(rec.get("year")):
+            lines.append(f"PY  - {_year(rec.get('year'))}")
+        if _clean(rec.get("journal")):
+            lines.append(f"JO  - {_clean(rec.get('journal'))}")
+        if _clean(rec.get("doi")):
+            lines.append(f"DO  - {_clean(rec.get('doi'))}")
+        if _clean(rec.get("url")):
+            lines.append(f"UR  - {_clean(rec.get('url'))}")
         lines.append("ER  - ")
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks) + ("\n" if blocks else "")
@@ -204,7 +231,7 @@ def build_dissertation_report(project_root: Path) -> dict:
     studies = pd.DataFrame([
         {
             "chave_citacao": r.get("_key", ""),
-            "titulo": r.get("title", ""), "autores": r.get("authors", ""), "ano": r.get("year", ""),
+            "titulo": r.get("title", ""), "autores": r.get("authors", ""), "ano": _year(r.get("year")),
             "periodico": r.get("journal", ""), "pais": "; ".join(str(x) for x in _as_list(r.get("countries"))),
             "tema": "; ".join(str(x) for x in _as_list(r.get("domains"))),
             "tipo_evidencia": r.get("evidence_type", ""), "nivel_evidencia": r.get("evidence_tier", ""),
@@ -231,8 +258,8 @@ def build_dissertation_report(project_root: Path) -> dict:
             countries[str(c)] += 1
         for d in _as_list(r.get("domains")):
             domains[str(d)] += 1
-    years = sorted({int(r["year"]) for r in corpus if str(r.get("year", "")).isdigit()})
-    year_counts = Counter(str(r["year"]) for r in corpus if str(r.get("year", "")).isdigit())
+    years = sorted({int(_year(r.get("year"))) for r in corpus if _year(r.get("year"))})
+    year_counts = Counter(_year(r.get("year")) for r in corpus if _year(r.get("year")))
     most_cited = sorted(
         [r for r in corpus if str(r.get("cited_by_count", "")).strip().isdigit()],
         key=lambda r: int(r["cited_by_count"]), reverse=True,
@@ -257,11 +284,11 @@ def build_dissertation_report(project_root: Path) -> dict:
         for _, c in supported.iterrows():
             doc = key_by_doc.get(str(c.get("document_id", "")), {})
             ach_rows.append({
-                "tema": str(c.get("nutev_domains", "") or c.get("evidence_lenses", "") or ""),
-                "achado": c.get("claim_text", ""),
-                "citacao_textual": c.get("exact_quote", ""),
-                "artigo": c.get("title", "") or doc.get("title", ""),
-                "ano": c.get("year", "") or doc.get("year", ""),
+                "tema": "; ".join(str(x) for x in (_as_list(c.get("nutev_domains")) or _as_list(c.get("evidence_lenses")))),
+                "achado": _clean(c.get("claim_text", "")),
+                "citacao_textual": _clean(c.get("exact_quote", "")),
+                "artigo": _clean(c.get("title", "") or doc.get("title", "")),
+                "ano": _year(c.get("year")) or _year(doc.get("year")),
                 "periodico": doc.get("journal", ""),
                 "chave_citacao": doc.get("key", ""),
                 "doi": doc.get("doi", ""),
