@@ -80,5 +80,32 @@
     ],
     "blocked_patterns": ["login", "shop", "donate"],
     "notes": "Cardiovascular, CKM syndrome, nutrition and obesity guidance"
+  },
+  {
+    "institution": "American College of Lifestyle Medicine",
+    "country": "United States",
+    "region": "North America",
+    "base_url": "https://lifestylemedicine.org",
+    "priority": 1,
+    "language": "en",
+    "categories": ["guidelines_consensus", "lifestyle_medicine", "implementation_behavior"],
+    "workstream_affinity": ["busca1", "busca2a", "busca2b", "a3"],
+    "allowed_patterns": [
+      "nutrition",
+      "food-as-medicine",
+      "food as medicine",
+      "culinary-medicine",
+      "culinary medicine",
+      "obesity",
+      "diabetes",
+      "cardiometabolic",
+      "lifestyle-medicine",
+      "lifestyle medicine",
+      "position",
+      "statement",
+      "guideline"
+    ],
+    "blocked_patterns": ["login", "join", "membership", "donate"],
+    "notes": "Lifestyle medicine, nutrition, food as medicine, culinary medicine and cardiometabolic implementation guidance"
   }
 ]
