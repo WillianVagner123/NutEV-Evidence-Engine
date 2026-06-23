@@ -1,0 +1,134 @@
+{
+  "version_note": "Adds focused digital nutrition care and dietary self-monitoring terms. These terms are nutrition-anchored to improve retrieval for NutMEV implementation/adherence evidence without broadening into generic telehealth.",
+  "global": {
+    "implementation_behavior": {
+      "digital_nutrition_care": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "digital lifestyle nutrition intervention",
+        "telehealth nutrition counseling",
+        "telehealth nutrition counselling",
+        "telehealth dietary counseling",
+        "telehealth dietary counselling",
+        "telehealth dietitian intervention",
+        "telemedicine nutrition counseling",
+        "telemedicine dietary counseling",
+        "remote nutrition counseling",
+        "remote dietary counseling",
+        "remote dietitian coaching",
+        "virtual nutrition counseling",
+        "virtual dietary counseling",
+        "mobile health nutrition intervention",
+        "mhealth nutrition intervention",
+        "mhealth dietary intervention",
+        "ehealth nutrition intervention",
+        "ehealth dietary intervention",
+        "app-based dietary intervention",
+        "app based dietary intervention",
+        "app-based nutrition intervention",
+        "app based nutrition intervention",
+        "dietary self-monitoring app",
+        "food tracking app",
+        "digital food diary",
+        "mobile food diary",
+        "web-based weight management nutrition",
+        "web based weight management nutrition",
+        "online weight management nutrition",
+        "remote weight management nutrition"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "digital dietary adherence",
+      "digital dietary self-monitoring",
+      "app-based dietary self-monitoring",
+      "app based dietary self-monitoring",
+      "food tracking adherence",
+      "remote dietary adherence",
+      "telehealth dietary adherence"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "telehealth nutrition counseling",
+        "telehealth dietitian intervention",
+        "remote dietitian coaching",
+        "mobile health nutrition intervention",
+        "mhealth dietary intervention",
+        "app-based dietary intervention",
+        "dietary self-monitoring app",
+        "digital food diary"
+      ],
+      "web_query_hints": [
+        "digital nutrition intervention trial",
+        "digital dietary intervention trial",
+        "telehealth nutrition counseling trial",
+        "telehealth dietitian intervention trial",
+        "mhealth dietary intervention trial",
+        "app-based dietary intervention weight management",
+        "digital dietary self-monitoring weight loss",
+        "remote dietitian coaching diabetes",
+        "remote dietary adherence intervention",
+        "web-based weight management nutrition trial"
+      ],
+      "document_terms": [
+        "digital health intervention trial",
+        "mhealth intervention trial",
+        "telehealth intervention trial",
+        "web-based intervention trial",
+        "digital dietary intervention systematic review",
+        "mhealth dietary intervention systematic review"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "digital dietary self-monitoring",
+        "dietary self-monitoring app",
+        "food tracking app",
+        "digital food diary",
+        "mobile food diary",
+        "app-based dietary adherence",
+        "digital nutrition behavior change"
+      ],
+      "web_query_hints": [
+        "dietary self-monitoring app adherence framework",
+        "digital food diary dietary adherence",
+        "food tracking app behavior change",
+        "digital nutrition behavior change framework"
+      ],
+      "document_terms": [
+        "digital dietary adherence instrument",
+        "dietary self-monitoring questionnaire",
+        "food tracking app evaluation",
+        "digital behavior change framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "digital dietary self-monitoring",
+        "dietary self-monitoring app",
+        "food tracking app",
+        "digital food diary",
+        "mobile food diary",
+        "app-based dietary adherence",
+        "digital nutrition behavior change"
+      ],
+      "web_query_hints": [
+        "dietary self-monitoring app adherence framework",
+        "digital food diary dietary adherence",
+        "food tracking app behavior change",
+        "digital nutrition behavior change framework"
+      ],
+      "document_terms": [
+        "digital dietary adherence instrument",
+        "dietary self-monitoring questionnaire",
+        "food tracking app evaluation",
+        "digital behavior change framework"
+      ]
+    }
+  }
+}
