@@ -1,0 +1,102 @@
+{
+  "version_note": "2026-06 environment/access expansion: adds food environment, choice architecture and labeling terms anchored to NutMEV nutrition, intervention, guideline and synthesis workflows.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "choice architecture",
+        "food choice architecture",
+        "healthy food default",
+        "default option",
+        "nudge intervention",
+        "nudging",
+        "traffic light labeling",
+        "traffic light labelling",
+        "warning label",
+        "front-of-package warning label",
+        "front of package warning label",
+        "shelf labeling",
+        "shelf labelling",
+        "menu calorie labeling",
+        "menu calorie labelling",
+        "restaurant menu labeling",
+        "restaurant menu labelling",
+        "healthy food retail",
+        "healthy food retail intervention",
+        "grocery store intervention",
+        "supermarket intervention",
+        "corner store intervention"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food environment intervention",
+        "retail food environment intervention",
+        "healthy food retail",
+        "healthy food retail intervention",
+        "grocery store intervention",
+        "supermarket intervention",
+        "corner store intervention",
+        "choice architecture",
+        "food choice architecture",
+        "healthy food default",
+        "default option",
+        "nudge intervention",
+        "nudging",
+        "traffic light labeling",
+        "traffic light labelling",
+        "warning label",
+        "front-of-package warning label",
+        "front of package warning label",
+        "shelf labeling",
+        "shelf labelling",
+        "menu calorie labeling",
+        "menu calorie labelling",
+        "restaurant menu labeling",
+        "restaurant menu labelling"
+      ]
+    },
+    "document_types": {
+      "reviews": [
+        "evidence synthesis",
+        "policy review"
+      ],
+      "grey": [
+        "policy evaluation",
+        "implementation report",
+        "evaluation report"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food environment intervention",
+        "retail food environment intervention",
+        "healthy food retail intervention",
+        "choice architecture nutrition",
+        "front-of-package warning label",
+        "menu calorie labeling",
+        "grocery store intervention obesity",
+        "supermarket intervention healthy eating"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food environment intervention trial",
+        "retail food environment intervention trial",
+        "healthy food retail intervention trial",
+        "choice architecture dietary intervention",
+        "nudge intervention diet quality",
+        "menu calorie labeling obesity",
+        "supermarket intervention cardiometabolic"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "food choice architecture framework",
+        "food environment intervention framework",
+        "food label literacy intervention"
+      ]
+    }
+  }
+}
