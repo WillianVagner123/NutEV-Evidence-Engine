@@ -1,0 +1,124 @@
+{
+  "version_note": "Supplemental NutMEV expansion for CKD/cardiorenal terminology in cardiometabolic workstreams; loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "clinical": {
+    "cardiorenal_kidney": [
+      "chronic kidney disease",
+      "chronic kidney diseases",
+      "ckd",
+      "kidney disease",
+      "kidney diseases",
+      "diabetic kidney disease",
+      "diabetic nephropathy",
+      "chronic renal disease",
+      "chronic renal insufficiency",
+      "renal disease",
+      "renal dysfunction",
+      "reduced kidney function",
+      "estimated glomerular filtration rate",
+      "glomerular filtration rate",
+      "egfr",
+      "albuminuria",
+      "proteinuria",
+      "uacr",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome",
+      "cardiorenal-metabolic syndrome",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "doenca renal cronica",
+      "doenca renal diabetica",
+      "nefropatia diabetica",
+      "albuminuria"
+    ]
+  },
+  "outcomes": {
+    "cardiorenal_kidney": [
+      "kidney function",
+      "renal function",
+      "egfr",
+      "estimated glomerular filtration rate",
+      "glomerular filtration rate",
+      "albuminuria",
+      "proteinuria",
+      "uacr",
+      "kidney outcome",
+      "kidney outcomes",
+      "renal outcome",
+      "renal outcomes",
+      "ckd progression",
+      "chronic kidney disease progression",
+      "kidney disease progression",
+      "renal disease progression",
+      "cardiorenal outcome",
+      "cardiorenal outcomes"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "clinical_keys": [
+        "cardiorenal_kidney"
+      ],
+      "priority_outcomes": [
+        "cardiorenal_kidney"
+      ],
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "diabetic kidney disease",
+        "diabetic nephropathy",
+        "albuminuria",
+        "cardiorenal metabolic syndrome",
+        "cardio-renal-metabolic syndrome"
+      ],
+      "web_query_hints": [
+        "chronic kidney disease nutrition guideline",
+        "ckd nutrition guideline",
+        "diabetic kidney disease nutrition guideline",
+        "cardiorenal metabolic syndrome guideline",
+        "cardio-renal-metabolic syndrome consensus",
+        "cardiovascular-kidney-metabolic syndrome kidney guideline"
+      ]
+    },
+    "busca2b": {
+      "clinical_keys": [
+        "cardiorenal_kidney"
+      ],
+      "priority_outcomes": [
+        "cardiorenal_kidney"
+      ],
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "diabetic kidney disease",
+        "diabetic nephropathy",
+        "albuminuria",
+        "cardiorenal metabolic syndrome",
+        "cardio-renal-metabolic syndrome"
+      ],
+      "focus_terms": [
+        "chronic kidney disease lifestyle intervention",
+        "ckd lifestyle intervention",
+        "chronic kidney disease diet intervention",
+        "ckd diet intervention",
+        "diabetic kidney disease nutrition intervention",
+        "cardiorenal metabolic lifestyle intervention",
+        "cardiorenal metabolic nutrition intervention"
+      ],
+      "web_query_hints": [
+        "chronic kidney disease diet intervention trial",
+        "ckd diet intervention trial",
+        "chronic kidney disease lifestyle intervention systematic review",
+        "diabetic kidney disease nutrition intervention",
+        "albuminuria dietary intervention",
+        "cardiorenal metabolic syndrome lifestyle intervention",
+        "cardio-renal-metabolic syndrome nutrition intervention"
+      ],
+      "document_terms": [
+        "cardiorenal metabolic trial",
+        "ckd diet trial",
+        "chronic kidney disease systematic review",
+        "kidney outcome trial"
+      ]
+    }
+  }
+}
