@@ -1,16 +1,58 @@
 {
   "keyword_points": {
+    "precision nutrition": 3,
     "personalized nutrition": 3,
     "personalised nutrition": 3,
-    "precision nutrition": 3,
     "tailored nutrition": 3,
-    "tailored dietary advice": 4,
+    "individualized nutrition": 3,
+    "individualised nutrition": 3,
+    "personalized dietary advice": 3,
+    "personalised dietary advice": 3,
+    "tailored dietary advice": 3,
+    "personalized dietary intervention": 4,
+    "personalised dietary intervention": 4,
     "tailored dietary intervention": 4,
-    "individualized diet": 3,
-    "individualised diet": 3,
     "individualized dietary intervention": 4,
     "individualised dietary intervention": 4,
     "diet personalization": 3,
     "diet personalisation": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "precision nutrition": 4,
+      "personalized nutrition": 4,
+      "personalised nutrition": 4,
+      "tailored nutrition": 4,
+      "tailored dietary advice": 4,
+      "personalized dietary advice": 4,
+      "personalised dietary advice": 4
+    },
+    "busca2b": {
+      "precision nutrition": 4,
+      "personalized nutrition": 4,
+      "personalised nutrition": 4,
+      "tailored nutrition": 4,
+      "individualized nutrition": 4,
+      "individualised nutrition": 4,
+      "personalized dietary intervention": 5,
+      "personalised dietary intervention": 5,
+      "tailored dietary intervention": 5,
+      "individualized dietary intervention": 5,
+      "individualised dietary intervention": 5,
+      "diet personalization": 4,
+      "diet personalisation": 4
+    },
+    "a3": {
+      "personalized nutrition framework": 4,
+      "personalised nutrition framework": 4,
+      "tailored nutrition framework": 4,
+      "precision nutrition framework": 4
+    },
+    "artigo3_framework": {
+      "personalized nutrition framework": 4,
+      "personalised nutrition framework": 4,
+      "tailored nutrition framework": 4,
+      "precision nutrition framework": 4
+    }
   }
 }
