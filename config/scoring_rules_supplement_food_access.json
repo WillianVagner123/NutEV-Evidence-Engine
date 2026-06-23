@@ -1,0 +1,49 @@
+{
+  "version_note": "2026-06 scoring supplement for food pharmacy and grocery prescription evidence",
+  "keyword_points": {
+    "food pharmacy intervention": 4,
+    "food farmacy": 4,
+    "food farmacy program": 4,
+    "grocery prescription": 4,
+    "grocery prescription program": 4,
+    "healthy grocery prescription": 4,
+    "fresh food prescription": 4,
+    "fresh food prescription program": 4,
+    "produce prescription implementation": 4,
+    "food prescription implementation": 4,
+    "nutrition incentive implementation": 4,
+    "healthy food incentive implementation": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food pharmacy intervention": 5,
+      "food farmacy": 5,
+      "food farmacy program": 5,
+      "grocery prescription": 5,
+      "grocery prescription program": 5,
+      "healthy grocery prescription": 5,
+      "fresh food prescription": 5,
+      "fresh food prescription program": 5
+    },
+    "busca2b": {
+      "food pharmacy intervention": 5,
+      "food farmacy": 5,
+      "food farmacy program": 5,
+      "grocery prescription": 5,
+      "grocery prescription program": 5,
+      "healthy grocery prescription": 5,
+      "fresh food prescription": 5,
+      "fresh food prescription program": 5,
+      "produce prescription implementation": 5,
+      "food prescription implementation": 5,
+      "nutrition incentive implementation": 5,
+      "healthy food incentive implementation": 5
+    },
+    "artigo3_framework": {
+      "food pharmacy intervention": 4,
+      "food farmacy": 4,
+      "grocery prescription": 4,
+      "healthy grocery prescription": 4
+    }
+  }
+}

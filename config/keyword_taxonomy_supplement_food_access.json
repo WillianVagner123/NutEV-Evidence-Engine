@@ -1,0 +1,75 @@
+{
+  "version_note": "2026-06 food access prescription expansion for NutMEV semantic search coverage",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food pharmacy intervention",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy",
+        "food farmacy program",
+        "grocery prescription",
+        "grocery prescription program",
+        "healthy grocery prescription",
+        "fresh food prescription",
+        "fresh food prescription program",
+        "produce prescription implementation",
+        "food prescription implementation"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food pharmacy intervention",
+        "food farmacy",
+        "food farmacy program",
+        "grocery prescription",
+        "grocery prescription program",
+        "healthy grocery prescription",
+        "fresh food prescription",
+        "fresh food prescription program",
+        "produce prescription implementation",
+        "food prescription implementation",
+        "nutrition incentive implementation",
+        "healthy food incentive implementation"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food pharmacy intervention",
+        "food farmacy",
+        "food farmacy program",
+        "grocery prescription",
+        "grocery prescription program",
+        "healthy grocery prescription",
+        "fresh food prescription",
+        "fresh food prescription program"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food pharmacy intervention",
+        "food farmacy",
+        "food farmacy program",
+        "grocery prescription",
+        "grocery prescription program",
+        "healthy grocery prescription",
+        "fresh food prescription",
+        "fresh food prescription program",
+        "produce prescription implementation",
+        "food prescription implementation",
+        "nutrition incentive implementation",
+        "healthy food incentive implementation"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "food pharmacy intervention",
+        "food farmacy",
+        "grocery prescription",
+        "healthy grocery prescription"
+      ]
+    }
+  }
+}
