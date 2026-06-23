@@ -100,7 +100,18 @@
         "dietary adherence questionnaire",
         "dietary adherence scale",
         "adherence questionnaire",
-        "adherence scale"
+        "adherence scale",
+        "culinary literacy questionnaire",
+        "culinary literacy scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "food resource management questionnaire",
+        "food resource management scale",
+        "meal planning skills questionnaire",
+        "meal planning self-efficacy scale",
+        "healthy cooking skills questionnaire",
+        "healthy cooking skills scale",
+        "cooking confidence scale"
       ],
       "group_care_delivery": [
         "shared medical appointment",
@@ -218,7 +229,12 @@
       "group dietary intervention",
       "group-based dietary intervention",
       "peer-led lifestyle intervention",
-      "peer-led nutrition intervention"
+      "peer-led nutrition intervention",
+      "food skills intervention",
+      "culinary skills intervention",
+      "meal planning intervention",
+      "healthy cooking intervention",
+      "cooking self-efficacy intervention"
     ],
     "food_access_implementation": [
       "food is medicine evaluation",
@@ -250,7 +266,18 @@
       "cooking self-efficacy scale",
       "cooking self efficacy scale",
       "meal preparation questionnaire",
-      "food preparation skills questionnaire"
+      "food preparation skills questionnaire",
+      "culinary literacy questionnaire",
+      "culinary literacy scale",
+      "food skills questionnaire",
+      "food skills scale",
+      "food resource management questionnaire",
+      "food resource management scale",
+      "meal planning skills questionnaire",
+      "meal planning self-efficacy scale",
+      "healthy cooking skills questionnaire",
+      "healthy cooking skills scale",
+      "cooking confidence scale"
     ]
   },
   "workstreams": {
@@ -375,7 +402,17 @@
         "peer led lifestyle intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "food skills intervention",
+        "culinary skills intervention",
+        "culinary medicine intervention",
+        "cooking skills intervention",
+        "healthy cooking intervention",
+        "meal planning intervention",
+        "meal preparation intervention",
+        "food preparation skills intervention",
+        "cooking self-efficacy intervention",
+        "food literacy intervention"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -404,7 +441,14 @@
         "group-based lifestyle intervention cardiometabolic",
         "group-based nutrition intervention obesity",
         "peer-led nutrition intervention diabetes",
-        "peer-led lifestyle intervention weight management"
+        "peer-led lifestyle intervention weight management",
+        "food skills intervention diabetes",
+        "food skills intervention obesity",
+        "culinary skills intervention cardiometabolic",
+        "culinary medicine intervention diabetes",
+        "healthy cooking intervention obesity",
+        "meal planning intervention weight management",
+        "food literacy intervention cardiometabolic"
       ],
       "document_terms": [
         "implementation trial",
@@ -445,7 +489,18 @@
         "group based nutrition intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "culinary literacy questionnaire",
+        "culinary literacy scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "food resource management questionnaire",
+        "food resource management scale",
+        "meal planning skills questionnaire",
+        "meal planning self-efficacy scale",
+        "healthy cooking skills questionnaire",
+        "healthy cooking skills scale",
+        "cooking confidence scale"
       ],
       "web_query_hints": [
         "food literacy questionnaire validation",
@@ -462,7 +517,14 @@
         "dietary adherence questionnaire validation",
         "group-based nutrition intervention framework",
         "peer-led nutrition intervention framework",
-        "peer support dietary adherence framework"
+        "peer support dietary adherence framework",
+        "culinary literacy scale validation",
+        "food skills questionnaire validation",
+        "food skills scale validation",
+        "food resource management scale validation",
+        "meal planning skills questionnaire validation",
+        "meal planning self-efficacy scale validation",
+        "cooking confidence scale validation"
       ],
       "document_terms": [
         "questionnaire validation",
@@ -501,7 +563,18 @@
         "group based nutrition intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "culinary literacy questionnaire",
+        "culinary literacy scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "food resource management questionnaire",
+        "food resource management scale",
+        "meal planning skills questionnaire",
+        "meal planning self-efficacy scale",
+        "healthy cooking skills questionnaire",
+        "healthy cooking skills scale",
+        "cooking confidence scale"
       ],
       "web_query_hints": [
         "food literacy questionnaire validation",
@@ -518,7 +591,14 @@
         "dietary adherence questionnaire validation",
         "group-based nutrition intervention framework",
         "peer-led nutrition intervention framework",
-        "peer support dietary adherence framework"
+        "peer support dietary adherence framework",
+        "culinary literacy scale validation",
+        "food skills questionnaire validation",
+        "food skills scale validation",
+        "food resource management scale validation",
+        "meal planning skills questionnaire validation",
+        "meal planning self-efficacy scale validation",
+        "cooking confidence scale validation"
       ],
       "document_terms": [
         "questionnaire validation",
