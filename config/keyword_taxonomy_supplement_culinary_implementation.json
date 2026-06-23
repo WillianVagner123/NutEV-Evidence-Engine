@@ -1,0 +1,164 @@
+{
+  "version_note": "Supplemental NutMEV expansion for culinary medicine, teaching kitchen, and food skills implementation; loaded after keyword_taxonomy.json without changing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "culinary_medicine_implementation": [
+        "culinary medicine intervention",
+        "culinary medicine program",
+        "culinary medicine programme",
+        "culinary medicine implementation",
+        "culinary medicine evaluation",
+        "teaching kitchen intervention",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "teaching kitchen implementation",
+        "teaching kitchen evaluation",
+        "cooking skills intervention",
+        "cooking skills program",
+        "cooking skills programme",
+        "cooking skills training",
+        "cooking confidence intervention",
+        "food skills intervention",
+        "food skills training",
+        "meal preparation intervention",
+        "meal planning intervention",
+        "home cooking intervention",
+        "culinary nutrition education",
+        "hands-on cooking class",
+        "hands on cooking class",
+        "experiential nutrition education"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_literacy_competence": [
+      "culinary medicine intervention",
+      "culinary medicine program",
+      "culinary medicine evaluation",
+      "teaching kitchen intervention",
+      "teaching kitchen program",
+      "teaching kitchen evaluation",
+      "cooking skills intervention",
+      "cooking confidence intervention",
+      "food skills intervention",
+      "meal preparation intervention",
+      "meal planning intervention",
+      "home cooking intervention",
+      "experiential nutrition education"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "culinary medicine program",
+        "teaching kitchen program",
+        "cooking skills program",
+        "food skills intervention",
+        "meal preparation intervention",
+        "meal planning intervention",
+        "home cooking intervention"
+      ],
+      "web_query_hints": [
+        "culinary medicine implementation report",
+        "teaching kitchen evaluation report",
+        "cooking skills intervention report",
+        "food skills program evaluation",
+        "meal planning intervention report"
+      ],
+      "document_terms": [
+        "program evaluation",
+        "implementation report",
+        "evaluation report",
+        "technical report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "culinary medicine intervention",
+        "teaching kitchen intervention",
+        "cooking skills intervention",
+        "cooking confidence intervention",
+        "food skills intervention",
+        "meal preparation intervention",
+        "meal planning intervention",
+        "home cooking intervention",
+        "experiential nutrition education"
+      ],
+      "web_query_hints": [
+        "culinary medicine obesity trial",
+        "culinary medicine diabetes trial",
+        "culinary medicine cardiometabolic trial",
+        "teaching kitchen obesity intervention",
+        "teaching kitchen diabetes intervention",
+        "teaching kitchen cardiometabolic intervention",
+        "cooking skills obesity trial",
+        "cooking skills diabetes intervention",
+        "food skills cardiometabolic intervention",
+        "meal planning obesity intervention",
+        "home cooking diabetes intervention",
+        "culinary medicine systematic review",
+        "teaching kitchen systematic review"
+      ],
+      "document_terms": [
+        "randomized trial",
+        "pragmatic trial",
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "systematic review"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "culinary medicine intervention framework",
+        "teaching kitchen implementation framework",
+        "cooking skills intervention framework",
+        "food skills framework",
+        "meal planning intervention framework",
+        "culinary medicine curriculum evaluation",
+        "teaching kitchen curriculum evaluation"
+      ],
+      "web_query_hints": [
+        "culinary medicine curriculum evaluation",
+        "teaching kitchen curriculum evaluation",
+        "cooking skills intervention framework",
+        "food skills questionnaire validation",
+        "food skills scale validation",
+        "meal planning questionnaire validation"
+      ],
+      "document_terms": [
+        "framework",
+        "curriculum evaluation",
+        "instrument development",
+        "questionnaire validation",
+        "scale validation"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "culinary medicine intervention framework",
+        "teaching kitchen implementation framework",
+        "cooking skills intervention framework",
+        "food skills framework",
+        "meal planning intervention framework",
+        "culinary medicine curriculum evaluation",
+        "teaching kitchen curriculum evaluation"
+      ],
+      "web_query_hints": [
+        "culinary medicine curriculum evaluation",
+        "teaching kitchen curriculum evaluation",
+        "cooking skills intervention framework",
+        "food skills questionnaire validation",
+        "food skills scale validation",
+        "meal planning questionnaire validation"
+      ],
+      "document_terms": [
+        "framework",
+        "curriculum evaluation",
+        "instrument development",
+        "questionnaire validation",
+        "scale validation"
+      ]
+    }
+  }
+}
