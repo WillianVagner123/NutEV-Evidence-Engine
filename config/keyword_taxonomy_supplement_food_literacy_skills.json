@@ -1,0 +1,118 @@
+{
+  "version_note": "Food literacy, culinary medicine and practical food skills supplement for NutMEV query expansion.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food literacy intervention",
+        "nutrition literacy intervention",
+        "food literacy program",
+        "food literacy programme",
+        "food literacy scale",
+        "food literacy questionnaire",
+        "food literacy instrument",
+        "food agency scale",
+        "food agency questionnaire",
+        "food skills program",
+        "food skills programme",
+        "culinary skills intervention",
+        "cooking skills intervention",
+        "cooking self-efficacy scale",
+        "cooking confidence scale",
+        "meal planning intervention",
+        "meal planning questionnaire",
+        "grocery shopping skills",
+        "food budgeting skills",
+        "food resource management",
+        "food resource management questionnaire",
+        "label reading skills",
+        "food label literacy scale",
+        "nutrition label literacy",
+        "culinary medicine elective",
+        "culinary medicine teaching kitchen",
+        "teaching kitchen curriculum",
+        "experiential nutrition education"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "curriculum",
+        "training manual",
+        "implementation guide",
+        "evaluation report"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "food literacy intervention",
+      "nutrition literacy intervention",
+      "food literacy score",
+      "nutrition literacy score",
+      "food skills",
+      "culinary skills",
+      "cooking self-efficacy",
+      "cooking confidence",
+      "meal planning skills",
+      "grocery shopping skills",
+      "food budgeting skills",
+      "food resource management",
+      "nutrition label literacy"
+    ],
+    "behavioral": [
+      "food agency",
+      "food agency scale",
+      "food agency questionnaire",
+      "cooking self-efficacy",
+      "cooking confidence",
+      "meal planning self-efficacy",
+      "food preparation confidence"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food literacy program",
+        "nutrition literacy intervention",
+        "culinary medicine teaching kitchen",
+        "teaching kitchen curriculum",
+        "food skills program",
+        "food resource management",
+        "nutrition label literacy"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food literacy intervention obesity",
+        "nutrition literacy intervention type 2 diabetes",
+        "culinary skills intervention cardiometabolic",
+        "cooking skills intervention obesity",
+        "meal planning intervention diabetes",
+        "teaching kitchen intervention cardiometabolic",
+        "food resource management intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "food literacy scale",
+        "food literacy questionnaire",
+        "nutrition literacy scale",
+        "food agency scale",
+        "cooking self-efficacy scale",
+        "cooking confidence scale",
+        "meal planning questionnaire",
+        "food label literacy scale"
+      ],
+      "web_query_hints": [
+        "food literacy scale validation",
+        "nutrition literacy questionnaire validation",
+        "food agency scale validation",
+        "cooking self-efficacy scale",
+        "cooking confidence scale",
+        "meal planning questionnaire",
+        "food resource management questionnaire",
+        "food label literacy scale",
+        "culinary medicine curriculum evaluation"
+      ]
+    }
+  }
+}
