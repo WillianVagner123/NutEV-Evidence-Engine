@@ -1,0 +1,59 @@
+{
+  "version_note": "Supplemental NutMEV scoring expansion for food-access social prescribing; rewards nutrition/food referral variants and keeps generic social prescribing anchored by NutMEV scope terms.",
+  "keyword_points": {
+    "social prescribing for food insecurity": 4,
+    "social prescribing for nutrition security": 4,
+    "social prescribing food referral": 4,
+    "social prescribing nutrition referral": 4,
+    "social prescribing produce prescription": 4,
+    "social prescribing food pharmacy": 4,
+    "social prescribing food pantry": 4,
+    "social prescribing healthy food access": 4,
+    "food is medicine social prescribing": 5,
+    "food as medicine social prescribing": 5,
+    "link worker food referral": 3,
+    "link worker nutrition referral": 3,
+    "social prescribing link worker food": 3,
+    "community connector food referral": 3,
+    "community connector nutrition referral": 3,
+    "community resource referral food insecurity": 3,
+    "community resource referral nutrition security": 3,
+    "closed-loop food referral": 3,
+    "closed loop food referral": 3,
+    "closed-loop nutrition referral": 3,
+    "closed loop nutrition referral": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "social prescribing for food insecurity": 4,
+      "social prescribing for nutrition security": 4,
+      "social prescribing food referral": 4,
+      "social prescribing nutrition referral": 4,
+      "food is medicine social prescribing": 5,
+      "food as medicine social prescribing": 5,
+      "link worker food referral": 3,
+      "link worker nutrition referral": 3,
+      "closed-loop food referral": 3,
+      "closed-loop nutrition referral": 3
+    },
+    "busca2b": {
+      "social prescribing for food insecurity": 4,
+      "social prescribing for nutrition security": 4,
+      "social prescribing food referral": 4,
+      "social prescribing nutrition referral": 4,
+      "social prescribing produce prescription": 5,
+      "social prescribing food pharmacy": 5,
+      "social prescribing healthy food access": 4,
+      "food is medicine social prescribing": 5,
+      "food as medicine social prescribing": 5,
+      "link worker food referral": 3,
+      "link worker nutrition referral": 3,
+      "community resource referral food insecurity": 3,
+      "community resource referral nutrition security": 3,
+      "closed-loop food referral": 3,
+      "closed loop food referral": 3,
+      "closed-loop nutrition referral": 3,
+      "closed loop nutrition referral": 3
+    }
+  }
+}
