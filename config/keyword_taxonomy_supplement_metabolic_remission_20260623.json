@@ -1,0 +1,90 @@
+{
+  "version_note": "2026-06-23 metabolic remission and weight-maintenance supplement. Adds tightly scoped search vocabulary for cardiometabolic nutrition evidence without editing the base taxonomy.",
+  "clinical": {
+    "diabetes": [
+      "type 2 diabetes remission",
+      "diabetes remission",
+      "diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission",
+      "remission of type 2 diabetes"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight maintenance",
+      "weight regain prevention",
+      "weight regain management",
+      "weight regain"
+    ],
+    "glycemia": [
+      "type 2 diabetes remission",
+      "diabetes remission",
+      "diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission",
+      "remission of type 2 diabetes"
+    ],
+    "diet_quality_adherence": [
+      "dietary maintenance",
+      "behavioral maintenance",
+      "relapse prevention",
+      "dietary self-monitoring",
+      "dietary self-regulation"
+    ],
+    "behavioral": [
+      "dietary maintenance",
+      "behavioral maintenance",
+      "relapse prevention",
+      "lapse management",
+      "dietary self-monitoring",
+      "dietary self-regulation"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "diabetes reversal",
+        "glycemic remission",
+        "glycaemic remission",
+        "remission of type 2 diabetes"
+      ],
+      "web_query_hints": [
+        "diabetes remission guideline",
+        "type 2 diabetes remission guideline",
+        "diabetes remission consensus",
+        "diabetes remission consensus report",
+        "type 2 diabetes remission consensus",
+        "weight loss maintenance guideline",
+        "weight regain prevention guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "diabetes reversal",
+        "glycemic remission",
+        "glycaemic remission",
+        "remission of type 2 diabetes",
+        "weight loss maintenance",
+        "weight regain prevention"
+      ],
+      "web_query_hints": [
+        "diabetes remission trial",
+        "type 2 diabetes remission intervention",
+        "diabetes remission systematic review",
+        "weight loss maintenance trial",
+        "weight loss maintenance systematic review",
+        "weight regain prevention trial",
+        "dietary self-monitoring intervention",
+        "dietary self-regulation intervention"
+      ]
+    }
+  }
+}
