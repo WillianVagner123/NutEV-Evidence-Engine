@@ -1,0 +1,68 @@
+{
+  "keyword_points": {
+    "food environment intervention": 3,
+    "retail food environment intervention": 3,
+    "healthy food retail": 3,
+    "healthy food retail intervention": 4,
+    "grocery store intervention": 3,
+    "supermarket intervention": 3,
+    "corner store intervention": 3,
+    "choice architecture": 3,
+    "food choice architecture": 4,
+    "healthy food default": 3,
+    "default option": 2,
+    "nudge intervention": 3,
+    "nudging": 2,
+    "traffic light labeling": 3,
+    "traffic light labelling": 3,
+    "warning label": 2,
+    "front-of-package warning label": 4,
+    "front of package warning label": 4,
+    "shelf labeling": 3,
+    "shelf labelling": 3,
+    "menu calorie labeling": 3,
+    "menu calorie labelling": 3,
+    "restaurant menu labeling": 3,
+    "restaurant menu labelling": 3,
+    "policy evaluation": 2,
+    "implementation report": 2,
+    "evaluation report": 2
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food environment intervention": 4,
+      "retail food environment intervention": 4,
+      "healthy food retail": 4,
+      "healthy food retail intervention": 5,
+      "choice architecture": 4,
+      "food choice architecture": 5,
+      "front-of-package warning label": 5,
+      "front of package warning label": 5,
+      "traffic light labeling": 4,
+      "traffic light labelling": 4,
+      "menu calorie labeling": 4,
+      "menu calorie labelling": 4,
+      "grocery store intervention": 4,
+      "supermarket intervention": 4,
+      "policy evaluation": 3
+    },
+    "busca2b": {
+      "food environment intervention": 4,
+      "retail food environment intervention": 4,
+      "healthy food retail intervention": 5,
+      "choice architecture": 4,
+      "food choice architecture": 5,
+      "nudge intervention": 4,
+      "menu calorie labeling": 4,
+      "menu calorie labelling": 4,
+      "grocery store intervention": 4,
+      "supermarket intervention": 4
+    },
+    "artigo3_framework": {
+      "food choice architecture": 4,
+      "choice architecture": 3,
+      "food label literacy": 4,
+      "policy evaluation": 3
+    }
+  }
+}
