@@ -1,0 +1,51 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for food-access social prescribing. Adds precise referral/link-worker variants while preserving the base taxonomy and raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "food_access_social_prescribing": [
+        "social prescribing for food insecurity",
+        "social prescribing for nutrition security",
+        "social prescribing food referral",
+        "social prescribing nutrition referral",
+        "social prescribing produce prescription",
+        "social prescribing food pharmacy",
+        "social prescribing food pantry",
+        "social prescribing food bank",
+        "social prescribing healthy food access",
+        "food is medicine social prescribing",
+        "food as medicine social prescribing",
+        "link worker food referral",
+        "link worker nutrition referral",
+        "social prescribing link worker food",
+        "community connector food referral",
+        "community connector nutrition referral",
+        "community resource referral food insecurity",
+        "community resource referral nutrition security",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "closed-loop nutrition referral",
+        "closed loop nutrition referral"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "social prescribing for food insecurity",
+      "social prescribing for nutrition security",
+      "social prescribing food referral",
+      "social prescribing nutrition referral",
+      "social prescribing produce prescription",
+      "social prescribing food pharmacy",
+      "social prescribing food pantry",
+      "social prescribing healthy food access",
+      "link worker food referral",
+      "link worker nutrition referral",
+      "community connector food referral",
+      "community resource referral food insecurity",
+      "closed-loop food referral",
+      "closed loop food referral",
+      "closed-loop nutrition referral",
+      "closed loop nutrition referral"
+    ]
+  }
+}
