@@ -54,7 +54,7 @@ def test_social_prescribing_terms_expand_busca1_food_access_layer() -> None:
     assert "food pantry referral" in focus_terms
     assert "nutrition security referral" in focus_terms
     assert "community health worker-led nutrition" in focus_terms
-    assert "food social prescribing" in web_hints
+    assert "food as medicine referral" in web_hints
 
 
 def test_social_prescribing_terms_expand_busca2b_implementation_layer() -> None:
