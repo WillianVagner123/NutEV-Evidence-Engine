@@ -1,0 +1,119 @@
+{
+  "version_note": "2026-06-23 focused expansion for food-as-medicine access, grocery prescription, food pharmacy/farmacy, healthy food boxes and health-related social needs terms.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "grocery prescription",
+        "grocery prescriptions",
+        "healthy grocery prescription",
+        "healthy grocery prescriptions",
+        "healthy food box",
+        "healthy food boxes",
+        "food box program",
+        "food box programs",
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "food pharmacy",
+        "food pharmacies",
+        "food farmacy",
+        "food farmacies"
+      ]
+    },
+    "implementation_behavior": {
+      "food_as_medicine_access": [
+        "food is medicine program evaluation",
+        "food as medicine program evaluation",
+        "food is medicine pilot program",
+        "food as medicine pilot program",
+        "food pharmacy",
+        "food pharmacies",
+        "food pharmacy intervention",
+        "food pharmacy evaluation",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy intervention",
+        "food farmacy evaluation",
+        "grocery prescription",
+        "grocery prescriptions",
+        "healthy grocery prescription",
+        "healthy grocery prescriptions",
+        "grocery prescription program",
+        "grocery prescription programs",
+        "healthy food box",
+        "healthy food boxes",
+        "food box program",
+        "food box programs",
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "health-related social needs",
+        "health related social needs",
+        "hrsn",
+        "food-related social needs",
+        "food related social needs",
+        "social needs screening and referral",
+        "food insecurity screening and referral",
+        "medically tailored meals implementation",
+        "medically tailored meals evaluation",
+        "medically tailored groceries implementation",
+        "medically tailored groceries evaluation"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "program evaluation",
+        "evaluation report",
+        "implementation report",
+        "pilot report"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food is medicine program evaluation",
+      "food as medicine program evaluation",
+      "food pharmacy intervention",
+      "food pharmacy evaluation",
+      "food farmacy intervention",
+      "food farmacy evaluation",
+      "grocery prescription program",
+      "healthy grocery prescription",
+      "healthy food box",
+      "food box program",
+      "nutrition prescription",
+      "health-related social needs",
+      "food-related social needs",
+      "social needs screening and referral",
+      "food insecurity screening and referral",
+      "medically tailored meals implementation",
+      "medically tailored meals evaluation",
+      "medically tailored groceries implementation",
+      "medically tailored groceries evaluation"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food is medicine program evaluation",
+        "food as medicine program evaluation",
+        "food pharmacy intervention report",
+        "food farmacy evaluation report",
+        "grocery prescription program report",
+        "healthy food box program report",
+        "nutrition prescription program",
+        "health-related social needs food insecurity",
+        "food-related social needs referral"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food is medicine program evaluation obesity",
+        "produce prescription implementation trial",
+        "food pharmacy intervention cardiometabolic",
+        "grocery prescription intervention diabetes",
+        "medically tailored meals implementation diabetes",
+        "healthy food box intervention",
+        "health-related social needs nutrition intervention"
+      ]
+    }
+  }
+}
