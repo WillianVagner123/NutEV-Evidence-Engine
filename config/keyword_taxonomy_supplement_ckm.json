@@ -1,0 +1,111 @@
+{
+  "version_note": "Focused CKM nutrition query expansion loaded after keyword_taxonomy.json; appends emerging cardiovascular-kidney-metabolic terms without changing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "ckm_nutrition": [
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "cardiovascular-kidney-metabolic diet",
+        "cardiovascular kidney metabolic diet",
+        "ckm nutrition",
+        "ckm diet",
+        "ckm dietary intervention",
+        "ckm lifestyle intervention",
+        "ckm lifestyle medicine"
+      ]
+    }
+  },
+  "clinical": {
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic nutrition",
+      "cardiovascular kidney metabolic nutrition",
+      "cardiovascular-kidney-metabolic diet",
+      "cardiovascular kidney metabolic diet",
+      "cardiovascular-kidney-metabolic lifestyle",
+      "cardiovascular kidney metabolic lifestyle",
+      "ckm nutrition",
+      "ckm diet",
+      "ckm lifestyle",
+      "ckm dietary intervention",
+      "ckm lifestyle intervention",
+      "ckm lifestyle medicine"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic nutrition",
+      "cardiovascular kidney metabolic nutrition",
+      "cardiovascular-kidney-metabolic diet",
+      "cardiovascular kidney metabolic diet",
+      "cardiovascular-kidney-metabolic lifestyle",
+      "cardiovascular kidney metabolic lifestyle",
+      "ckm nutrition",
+      "ckm diet",
+      "ckm lifestyle",
+      "ckm dietary intervention",
+      "ckm lifestyle intervention",
+      "ckm lifestyle medicine"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "cardiovascular-kidney-metabolic diet",
+        "cardiovascular kidney metabolic diet",
+        "cardiovascular-kidney-metabolic lifestyle",
+        "cardiovascular kidney metabolic lifestyle",
+        "ckm nutrition",
+        "ckm diet",
+        "ckm lifestyle"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic nutrition guideline",
+        "cardiovascular kidney metabolic nutrition guideline",
+        "cardiovascular-kidney-metabolic lifestyle guideline",
+        "ckm nutrition guideline",
+        "ckm diet guideline",
+        "ckm lifestyle scientific statement",
+        "ckm lifestyle consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "cardiovascular-kidney-metabolic diet",
+        "cardiovascular kidney metabolic diet",
+        "cardiovascular-kidney-metabolic lifestyle",
+        "cardiovascular kidney metabolic lifestyle",
+        "ckm nutrition",
+        "ckm diet",
+        "ckm lifestyle",
+        "ckm dietary intervention",
+        "ckm lifestyle intervention",
+        "ckm lifestyle medicine"
+      ],
+      "focus_terms": [
+        "cardiovascular-kidney-metabolic nutrition intervention",
+        "cardiovascular kidney metabolic nutrition intervention",
+        "cardiovascular-kidney-metabolic dietary intervention",
+        "cardiovascular kidney metabolic dietary intervention",
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "ckm nutrition intervention",
+        "ckm dietary intervention",
+        "ckm lifestyle intervention",
+        "ckm lifestyle medicine"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic nutrition intervention",
+        "cardiovascular kidney metabolic nutrition intervention",
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "ckm nutrition intervention",
+        "ckm dietary intervention",
+        "ckm lifestyle intervention",
+        "ckm lifestyle medicine systematic review",
+        "ckm diet systematic review"
+      ]
+    }
+  }
+}
