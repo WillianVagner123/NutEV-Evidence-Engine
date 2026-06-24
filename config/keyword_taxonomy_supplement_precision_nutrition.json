@@ -1,6 +1,58 @@
 {
-  "version_note": "Precision and personalized nutrition supplement for busca2b. Adds focused terms for tailored dietary interventions in obesity, diabetes and cardiometabolic risk without changing raw outputs.",
+  "version_note": "2026-06 precision nutrition supplement: expands NutMEV retrieval for personalized, precision, and tailored nutrition while keeping nutrition and cardiometabolic anchors.",
   "global": {
+    "diet_patterns": {
+      "personalized_precision": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "individualized dietary advice",
+        "individualised dietary advice",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation"
+      ]
+    },
+    "nutrition_domains": {
+      "personalized_precision": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "individualized dietary advice",
+        "individualised dietary advice",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation"
+      ]
+    },
     "implementation_behavior": {
       "personalized_nutrition_adherence": [
         "personalized nutrition",
@@ -15,6 +67,23 @@
         "individualised dietary intervention",
         "diet personalization",
         "diet personalisation"
+      ],
+      "personalized_precision_delivery": [
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "shared decision making",
+        "nutrition counseling",
+        "nutrition counselling",
+        "dietary counseling",
+        "dietary counselling"
       ]
     }
   },
@@ -25,11 +94,28 @@
       "precision nutrition",
       "tailored dietary advice",
       "tailored dietary intervention",
+      "personalized dietary advice",
+      "personalised dietary advice",
+      "personalized dietary intervention",
+      "personalised dietary intervention",
+      "individualized dietary advice",
+      "individualised dietary advice",
       "individualized dietary intervention",
-      "individualised dietary intervention"
+      "individualised dietary intervention",
+      "personalized meal planning",
+      "personalised meal planning"
     ]
   },
   "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "personalized nutrition cardiometabolic guideline",
+        "precision nutrition cardiometabolic guideline",
+        "tailored dietary advice guideline",
+        "personalized dietary intervention consensus",
+        "individualized dietary advice clinical practice guideline"
+      ]
+    },
     "busca2b": {
       "focus_terms": [
         "personalized nutrition",
@@ -52,7 +138,14 @@
         "tailored dietary advice cardiometabolic risk",
         "tailored dietary intervention systematic review",
         "individualized dietary intervention type 2 diabetes",
-        "individualised dietary intervention cardiometabolic"
+        "individualised dietary intervention cardiometabolic",
+        "personalized nutrition intervention",
+        "precision nutrition intervention",
+        "tailored dietary advice trial",
+        "tailored dietary intervention trial",
+        "personalized meal planning trial",
+        "individualized dietary intervention adherence",
+        "personalized dietary intervention implementation"
       ],
       "document_terms": [
         "personalized nutrition trial",
@@ -61,6 +154,25 @@
         "tailored dietary intervention",
         "individualized dietary intervention",
         "individualised dietary intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored dietary advice",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan"
+      ],
+      "web_query_hints": [
+        "personalized nutrition framework",
+        "precision nutrition framework",
+        "tailored dietary advice questionnaire",
+        "personalized meal planning instrument",
+        "individualized dietary advice instrument"
       ]
     }
   }
