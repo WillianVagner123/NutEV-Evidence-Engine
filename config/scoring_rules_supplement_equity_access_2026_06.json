@@ -1,0 +1,65 @@
+{
+  "version_note": "2026-06 scoring supplement for nutrition equity and food access justice terms",
+  "keyword_points": {
+    "nutrition equity": 3,
+    "food justice": 3,
+    "food sovereignty": 3,
+    "food dignity": 3,
+    "food access equity": 3,
+    "equitable food access": 3,
+    "culturally tailored nutrition": 3,
+    "culturally responsive nutrition": 3,
+    "community food sovereignty": 3,
+    "indigenous food sovereignty": 3,
+    "nutrition equity intervention": 4,
+    "food justice intervention": 4,
+    "food sovereignty intervention": 4,
+    "equitable food access intervention": 4,
+    "culturally tailored nutrition intervention": 4,
+    "culturally responsive nutrition intervention": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "nutrition equity": 5,
+      "food justice": 4,
+      "food sovereignty": 4,
+      "food dignity": 4,
+      "food access equity": 5,
+      "equitable food access": 5,
+      "culturally tailored nutrition": 4,
+      "culturally responsive nutrition": 4,
+      "nutrition equity guideline": 5,
+      "food justice policy brief": 5,
+      "food sovereignty policy brief": 5,
+      "equitable food access technical report": 5
+    },
+    "busca2b": {
+      "nutrition equity intervention": 5,
+      "food justice intervention": 5,
+      "food sovereignty intervention": 5,
+      "equitable food access intervention": 5,
+      "culturally tailored nutrition intervention": 5,
+      "culturally responsive nutrition intervention": 5
+    },
+    "a3": {
+      "nutrition equity": 4,
+      "food justice": 4,
+      "food sovereignty": 4,
+      "food dignity": 4,
+      "food access equity": 4,
+      "equitable food access": 4,
+      "culturally tailored nutrition": 4,
+      "culturally responsive nutrition": 4
+    },
+    "artigo3_framework": {
+      "nutrition equity": 4,
+      "food justice": 4,
+      "food sovereignty": 4,
+      "food dignity": 4,
+      "food access equity": 4,
+      "equitable food access": 4,
+      "culturally tailored nutrition": 4,
+      "culturally responsive nutrition": 4
+    }
+  }
+}
