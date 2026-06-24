@@ -1,0 +1,85 @@
+{
+  "version_note": "2026-06 equity/access expansion for NutMEV nutrition-focused food environment retrieval",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "nutrition equity",
+        "food justice",
+        "food sovereignty",
+        "food dignity",
+        "food access equity",
+        "equitable food access",
+        "culturally tailored nutrition",
+        "culturally responsive nutrition",
+        "community food sovereignty",
+        "indigenous food sovereignty"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "nutrition equity",
+        "food justice",
+        "food sovereignty",
+        "food dignity",
+        "food access equity",
+        "equitable food access",
+        "culturally tailored nutrition",
+        "culturally responsive nutrition",
+        "community food sovereignty",
+        "indigenous food sovereignty",
+        "food justice intervention",
+        "food sovereignty intervention",
+        "nutrition equity intervention",
+        "equitable food access intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "nutrition equity",
+        "food justice",
+        "food sovereignty",
+        "food dignity",
+        "food access equity",
+        "equitable food access",
+        "culturally tailored nutrition",
+        "culturally responsive nutrition",
+        "nutrition equity guideline",
+        "food justice policy brief",
+        "food sovereignty policy brief",
+        "equitable food access technical report"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "nutrition equity intervention",
+        "food justice intervention",
+        "food sovereignty intervention",
+        "equitable food access intervention",
+        "culturally tailored nutrition intervention",
+        "culturally responsive nutrition intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "nutrition equity",
+        "food justice",
+        "food sovereignty",
+        "food dignity",
+        "food access equity",
+        "equitable food access",
+        "culturally tailored nutrition",
+        "culturally responsive nutrition"
+      ],
+      "web_query_hints": [
+        "nutrition equity framework",
+        "food justice framework",
+        "food sovereignty framework",
+        "food dignity framework",
+        "equitable food access framework",
+        "culturally responsive nutrition framework"
+      ]
+    }
+  }
+}
