@@ -15,7 +15,11 @@
         "produce vouchers",
         "produce voucher program",
         "food insecurity intervention",
-        "nutrition security intervention"
+        "nutrition security intervention",
+        "voucher de frutas e vegetais",
+        "programa de incentivo alimentar saudável",
+        "intervenção em insegurança alimentar",
+        "intervenção de segurança alimentar e nutricional"
       ]
     },
     "implementation_behavior": {
@@ -33,7 +37,11 @@
         "healthy food incentive program",
         "nutrition incentive program",
         "produce voucher program",
-        "fruit and vegetable voucher program"
+        "fruit and vegetable voucher program",
+        "triagem de necessidades sociais",
+        "triagem e encaminhamento",
+        "encaminhamento para segurança alimentar",
+        "programa comunitário de alimentação"
       ]
     }
   },
@@ -49,7 +57,11 @@
         "healthy food incentive program",
         "nutrition incentive program",
         "produce voucher program",
-        "fruit and vegetable voucher program"
+        "fruit and vegetable voucher program",
+        "triagem de necessidades sociais",
+        "encaminhamento para segurança alimentar",
+        "voucher de frutas e vegetais",
+        "programa de incentivo alimentar saudável"
       ]
     },
     "busca2b": {
@@ -63,14 +75,20 @@
         "healthy food incentive program",
         "nutrition incentive program",
         "produce voucher program",
-        "fruit and vegetable voucher program"
+        "fruit and vegetable voucher program",
+        "triagem de necessidades sociais",
+        "encaminhamento para segurança alimentar",
+        "voucher de frutas e vegetais",
+        "programa de incentivo alimentar saudável"
       ]
     },
     "artigo3_framework": {
       "condition_terms": [
         "social needs screening",
         "food insecurity intervention",
-        "nutrition security intervention"
+        "nutrition security intervention",
+        "triagem de necessidades sociais",
+        "intervenção em insegurança alimentar"
       ],
       "web_query_hints": [
         "social needs screening",
@@ -79,7 +97,9 @@
         "nutrition security intervention",
         "healthy food incentive program",
         "nutrition incentive program",
-        "produce voucher program"
+        "produce voucher program",
+        "triagem de necessidades sociais",
+        "encaminhamento para segurança alimentar"
       ]
     }
   }
