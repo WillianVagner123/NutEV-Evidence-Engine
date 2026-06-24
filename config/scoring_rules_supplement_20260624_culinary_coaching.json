@@ -1,0 +1,83 @@
+{
+  "version_note": "2026-06-24: priority scoring for practical culinary nutrition and teaching-kitchen evidence. Loaded automatically by nutev.settings.load_json as a scoring_rules supplement.",
+  "keyword_points": {
+    "culinary coaching": 4,
+    "culinary nutrition": 3,
+    "culinary nutrition intervention": 4,
+    "culinary counseling": 3,
+    "culinary counselling": 3,
+    "teaching kitchen intervention": 4,
+    "teaching kitchen program": 4,
+    "teaching kitchen programme": 4,
+    "community kitchen": 3,
+    "community kitchens": 3,
+    "community cooking program": 4,
+    "community cooking programme": 4,
+    "hands-on cooking": 3,
+    "hands on cooking": 3,
+    "hands-on nutrition education": 4,
+    "hands on nutrition education": 4,
+    "experiential nutrition education": 4,
+    "cooking class": 2,
+    "cooking classes": 2,
+    "healthy cooking": 2,
+    "cooking confidence": 3,
+    "cooking self-efficacy": 4,
+    "kitchen confidence": 3,
+    "food skills": 3,
+    "food skills intervention": 4,
+    "food preparation skills": 3,
+    "food preparation confidence": 3,
+    "grocery shopping skills": 3,
+    "healthy grocery shopping": 3,
+    "food budgeting": 3,
+    "food resource management": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "culinary coaching": 4,
+      "culinary nutrition intervention": 4,
+      "teaching kitchen program": 5,
+      "teaching kitchen programme": 5,
+      "community kitchen": 4,
+      "community cooking program": 4,
+      "community cooking programme": 4,
+      "hands-on nutrition education": 4,
+      "experiential nutrition education": 4,
+      "food skills intervention": 4,
+      "food resource management": 4
+    },
+    "busca2b": {
+      "culinary coaching": 5,
+      "culinary nutrition intervention": 5,
+      "teaching kitchen intervention": 5,
+      "community cooking program": 4,
+      "community cooking programme": 4,
+      "hands-on nutrition education": 4,
+      "hands on nutrition education": 4,
+      "cooking self-efficacy": 4,
+      "food skills intervention": 4,
+      "food resource management": 4
+    },
+    "a3": {
+      "culinary coaching": 5,
+      "culinary nutrition": 5,
+      "culinary nutrition intervention": 5,
+      "teaching kitchen curriculum": 5,
+      "cooking self-efficacy": 5,
+      "kitchen confidence": 4,
+      "food skills questionnaire": 5,
+      "food resource management questionnaire": 5
+    },
+    "artigo3_framework": {
+      "culinary coaching": 5,
+      "culinary nutrition": 5,
+      "culinary nutrition intervention": 5,
+      "teaching kitchen curriculum": 5,
+      "cooking self-efficacy": 5,
+      "kitchen confidence": 4,
+      "food skills questionnaire": 5,
+      "food resource management questionnaire": 5
+    }
+  }
+}
