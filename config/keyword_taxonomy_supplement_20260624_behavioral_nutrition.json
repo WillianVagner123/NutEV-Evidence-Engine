@@ -1,0 +1,78 @@
+{
+  "version_note": "2026-06-24 behavioral nutrition adherence expansion for NutMEV scheduled curation run",
+  "global": {
+    "implementation_behavior": {
+      "dietary_adherence_mechanisms": [
+        "dietary self-monitoring",
+        "food self-monitoring",
+        "eating self-regulation",
+        "self-regulation of eating",
+        "dietary self-regulation",
+        "dietary self regulation",
+        "implementation intentions",
+        "relapse prevention",
+        "lapse management",
+        "dietary lapse",
+        "dietary lapses",
+        "habit formation",
+        "goal setting",
+        "problem solving",
+        "motivational interviewing",
+        "health coaching",
+        "nutrition coaching",
+        "diet coaching",
+        "peer support",
+        "patient navigation",
+        "care navigation",
+        "behavioral dietary intervention",
+        "behavioural dietary intervention",
+        "behavioral nutrition intervention",
+        "behavioural nutrition intervention",
+        "dietary behavior change intervention",
+        "dietary behaviour change intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "dietary self-monitoring trial",
+        "food self-monitoring trial",
+        "eating self-regulation intervention",
+        "dietary self-regulation intervention",
+        "implementation intentions trial",
+        "relapse prevention intervention",
+        "habit formation intervention",
+        "goal setting intervention",
+        "problem solving intervention",
+        "motivational interviewing nutrition trial",
+        "health coaching nutrition trial",
+        "behavioral dietary intervention",
+        "behavioural dietary intervention",
+        "behavioral nutrition intervention",
+        "behavioural nutrition intervention",
+        "dietary behavior change intervention",
+        "dietary behaviour change intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "dietary self-monitoring questionnaire",
+        "food self-monitoring questionnaire",
+        "eating self-regulation scale",
+        "dietary self-regulation scale",
+        "implementation intentions questionnaire",
+        "habit formation scale",
+        "goal setting questionnaire",
+        "problem solving scale",
+        "motivational interviewing nutrition",
+        "behavioral dietary intervention framework",
+        "behavioural dietary intervention framework",
+        "behavioral nutrition intervention framework",
+        "behavioural nutrition intervention framework",
+        "dietary behavior change framework",
+        "dietary behaviour change framework"
+      ]
+    }
+  }
+}
