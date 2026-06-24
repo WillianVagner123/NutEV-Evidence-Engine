@@ -1,5 +1,5 @@
 {
-  "version_note": "2026-06-17 culinary home food environment scoring",
+  "version_note": "2026-06-20 culinary home environment plus metabolic remission scoring",
   "keyword_points": {
     "home food environment": 3,
     "household food environment": 3,
@@ -17,7 +17,21 @@
     "meal preparation self-efficacy": 3,
     "cooking self-efficacy": 3,
     "kitchen confidence": 3,
-    "home cooking frequency": 3
+    "home cooking frequency": 3,
+    "type 2 diabetes remission": 4,
+    "diabetes remission": 3,
+    "remission of type 2 diabetes": 4,
+    "diabetes remission maintenance": 4,
+    "remission maintenance": 3,
+    "diet-induced diabetes remission": 4,
+    "diet induced diabetes remission": 4,
+    "lifestyle-induced diabetes remission": 4,
+    "lifestyle induced diabetes remission": 4,
+    "weight loss maintenance": 3,
+    "long-term weight loss maintenance": 4,
+    "long term weight loss maintenance": 4,
+    "weight regain prevention": 4,
+    "weight regain management": 3
   },
   "workstream_bonus": {
     "busca1": {
@@ -29,6 +43,23 @@
       "meal preparation intervention": 4,
       "grocery shopping intervention": 4
     },
+    "busca2a": {
+      "type 2 diabetes remission": 5,
+      "diabetes remission": 4,
+      "remission of type 2 diabetes": 5,
+      "diabetes remission guideline": 5,
+      "diabetes remission consensus": 5,
+      "diet-induced diabetes remission": 5,
+      "diet induced diabetes remission": 5,
+      "lifestyle-induced diabetes remission": 5,
+      "lifestyle induced diabetes remission": 5,
+      "weight loss maintenance guideline": 4,
+      "weight regain prevention guideline": 4,
+      "nutrition care for diabetes remission": 5,
+      "nutrition care for weight maintenance": 4,
+      "dietitian-led remission": 4,
+      "dietitian led remission": 4
+    },
     "busca2b": {
       "meal preparation intervention": 4,
       "meal planning intervention": 4,
@@ -36,7 +67,23 @@
       "food shopping intervention": 4,
       "home food environment": 3,
       "home food availability": 3,
-      "cooking self-efficacy": 3
+      "cooking self-efficacy": 3,
+      "type 2 diabetes remission intervention": 5,
+      "diabetes remission intervention": 5,
+      "diabetes remission program": 5,
+      "diabetes remission programme": 5,
+      "remission maintenance": 4,
+      "diabetes remission maintenance": 5,
+      "weight maintenance intervention": 4,
+      "weight loss maintenance intervention": 5,
+      "long-term weight loss maintenance intervention": 5,
+      "long term weight loss maintenance intervention": 5,
+      "weight regain prevention intervention": 5,
+      "weight regain management intervention": 4,
+      "nutrition care for diabetes remission": 5,
+      "nutrition care for weight maintenance": 4,
+      "dietitian-led remission": 4,
+      "dietitian led remission": 4
     },
     "a3": {
       "home food environment": 4,
