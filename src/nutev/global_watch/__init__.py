@@ -2,6 +2,10 @@ from __future__ import annotations
 
 from typing import Any
 
+from nutev.global_watch.watch_query_extensions import apply_watch_query_extensions
+
+apply_watch_query_extensions()
+
 __all__ = ["run_global_watch"]
 
 
