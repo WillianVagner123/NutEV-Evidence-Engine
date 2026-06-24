@@ -1,0 +1,29 @@
+{
+  "version_note": "2026-06-18: Adds CKM-specific scoring signals to prioritize cardiometabolic nutrition evidence recovered by the query supplement.",
+  "keyword_points": {
+    "cardiovascular-kidney-metabolic health": 3,
+    "cardiovascular kidney metabolic health": 3,
+    "cardiovascular-kidney-metabolic risk": 3,
+    "cardiovascular kidney metabolic risk": 3,
+    "ckm health": 3,
+    "ckm risk": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiovascular-kidney-metabolic health": 5,
+      "cardiovascular kidney metabolic health": 5,
+      "cardiovascular-kidney-metabolic risk": 5,
+      "cardiovascular kidney metabolic risk": 5,
+      "ckm health": 5,
+      "ckm risk": 5
+    },
+    "busca2b": {
+      "cardiovascular-kidney-metabolic health": 5,
+      "cardiovascular kidney metabolic health": 5,
+      "cardiovascular-kidney-metabolic risk": 5,
+      "cardiovascular kidney metabolic risk": 5,
+      "ckm health": 5,
+      "ckm risk": 5
+    }
+  }
+}
