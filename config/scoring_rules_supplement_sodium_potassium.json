@@ -1,0 +1,43 @@
+{
+  "version_note": "2026-06 sodium-potassium hypertension precision scoring supplement",
+  "keyword_points": {
+    "dietary sodium": 2,
+    "sodium reduction": 3,
+    "dietary sodium reduction": 4,
+    "salt reduction": 3,
+    "salt intake": 2,
+    "sodium intake": 2,
+    "low-sodium diet": 3,
+    "low sodium diet": 3,
+    "salt-sensitive hypertension": 4,
+    "salt sensitive hypertension": 4,
+    "salt substitute": 4,
+    "salt substitutes": 4,
+    "potassium salt substitute": 4,
+    "potassium-enriched salt": 4,
+    "potassium enriched salt": 4,
+    "potassium-rich diet": 3,
+    "potassium rich diet": 3,
+    "dietary potassium": 2
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "dietary sodium guideline": 5,
+      "sodium reduction guideline": 5,
+      "salt reduction guideline": 5,
+      "salt substitute guideline": 5,
+      "potassium-enriched salt guideline": 5,
+      "potassium enriched salt guideline": 5,
+      "DASH sodium guideline": 5
+    },
+    "busca2b": {
+      "dietary sodium reduction trial": 5,
+      "salt substitute trial": 5,
+      "potassium-enriched salt trial": 5,
+      "potassium enriched salt trial": 5,
+      "DASH sodium trial": 5,
+      "sodium reduction systematic review": 5,
+      "salt substitute systematic review": 5
+    }
+  }
+}

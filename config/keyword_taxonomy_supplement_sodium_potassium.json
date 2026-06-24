@@ -1,0 +1,67 @@
+{
+  "version_note": "2026-06 sodium-potassium hypertension precision supplement",
+  "global": {
+    "nutrition_domains": {
+      "electrolytes_blood_pressure": [
+        "dietary sodium",
+        "sodium reduction",
+        "dietary sodium reduction",
+        "salt reduction",
+        "salt intake",
+        "sodium intake",
+        "low-sodium diet",
+        "low sodium diet",
+        "salt substitute",
+        "salt substitutes",
+        "potassium salt substitute",
+        "potassium-enriched salt",
+        "potassium enriched salt",
+        "potassium intake",
+        "potassium-rich diet",
+        "potassium rich diet",
+        "dietary potassium"
+      ]
+    }
+  },
+  "outcomes": {
+    "pressure": [
+      "dietary sodium reduction",
+      "sodium reduction",
+      "salt reduction",
+      "salt substitute",
+      "salt substitutes",
+      "potassium-enriched salt",
+      "potassium enriched salt"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "salt-sensitive hypertension",
+        "salt sensitive hypertension"
+      ],
+      "web_query_hints": [
+        "dietary sodium guideline",
+        "sodium reduction guideline",
+        "salt reduction guideline",
+        "salt substitute guideline",
+        "potassium-enriched salt guideline",
+        "DASH sodium guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "salt-sensitive hypertension",
+        "salt sensitive hypertension"
+      ],
+      "web_query_hints": [
+        "dietary sodium reduction trial",
+        "salt substitute trial",
+        "potassium-enriched salt trial",
+        "DASH sodium trial",
+        "sodium reduction systematic review",
+        "salt substitute systematic review"
+      ]
+    }
+  }
+}
