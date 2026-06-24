@@ -38,6 +38,18 @@ ARTICLE_DATA_COLUMNS = [
 ]
 
 
+def _default_metadata_status(row: dict) -> str:
+    if row.get("metadata_status"):
+        return row.get("metadata_status", "")
+    if row.get("file_path") or row.get("artifact_paths"):
+        return "full_text_available"
+    download_status = str(row.get("download_status", "") or "").strip().lower()
+    capture_status = str(row.get("capture_status", "") or "").strip().lower()
+    if download_status == "metadata_only" or capture_status in {"missing", "metadata_only"}:
+        return "metadata_only"
+    return ""
+
+
 def _normalize_metadata_row(row: dict) -> dict:
     out = {k: row.get(k, "") for k in REQUIRED_METADATA_COLUMNS}
     out["document_id"] = row.get("document_id") or row.get("id") or ""
@@ -57,7 +69,7 @@ def _normalize_metadata_row(row: dict) -> dict:
     out["article_type"] = row.get("article_type", row.get("evidence_type", ""))
     out["authors"] = row.get("authors", "")
     out["abstract"] = row.get("abstract", "")
-    out["metadata_status"] = row.get("metadata_status", "")
+    out["metadata_status"] = _default_metadata_status(row)
     out["editorial_priority_score"] = row.get("editorial_priority_score", "")
     out["editorial_priority_tier"] = row.get("editorial_priority_tier", "")
     return out
