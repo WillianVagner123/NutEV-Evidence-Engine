@@ -1,0 +1,140 @@
+{
+  "version_note": "Supplemental NutMEV expansion for diet-quality indices and dietary pattern adherence metrics; loaded after keyword_taxonomy.json without replacing raw taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "diet_quality_metrics": [
+        "diet quality index",
+        "diet quality score",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "ahei",
+        "mediterranean diet score",
+        "mediterranean diet adherence score",
+        "mediterranean diet adherence screener",
+        "medas",
+        "dash score",
+        "dash diet score",
+        "mind diet score",
+        "plant-based diet index",
+        "healthful plant-based diet index",
+        "pdi",
+        "hpdi",
+        "dietary inflammatory index",
+        "energy-adjusted dietary inflammatory index",
+        "dii",
+        "e-dii",
+        "nova score",
+        "ultra-processed food score"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet quality index",
+      "diet quality score",
+      "healthy eating index",
+      "alternate healthy eating index",
+      "ahei",
+      "mediterranean diet score",
+      "mediterranean diet adherence score",
+      "mediterranean diet adherence screener",
+      "medas",
+      "dash score",
+      "dash diet score",
+      "mind diet score",
+      "plant-based diet index",
+      "healthful plant-based diet index",
+      "pdi",
+      "hpdi",
+      "dietary inflammatory index",
+      "energy-adjusted dietary inflammatory index",
+      "dii",
+      "e-dii",
+      "nova score",
+      "ultra-processed food score"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "diet quality index",
+        "diet quality score",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "mediterranean diet adherence score",
+        "dash diet score",
+        "mind diet score",
+        "plant-based diet index",
+        "healthful plant-based diet index",
+        "dietary inflammatory index"
+      ],
+      "web_query_hints": [
+        "diet quality index cardiometabolic trial",
+        "healthy eating index obesity intervention",
+        "alternate healthy eating index cardiometabolic",
+        "mediterranean diet adherence score trial",
+        "dash diet score blood pressure intervention",
+        "plant-based diet index cardiometabolic risk",
+        "dietary inflammatory index obesity systematic review"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "diet quality index",
+        "diet quality score",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "mediterranean diet adherence score",
+        "mediterranean diet adherence screener",
+        "dash diet score",
+        "mind diet score",
+        "plant-based diet index",
+        "healthful plant-based diet index",
+        "dietary inflammatory index"
+      ],
+      "web_query_hints": [
+        "diet quality index validation",
+        "healthy eating index validation",
+        "mediterranean diet adherence screener validation",
+        "diet quality score adherence questionnaire",
+        "plant-based diet index validation",
+        "dietary inflammatory index validation"
+      ],
+      "document_terms": [
+        "index validation",
+        "score validation",
+        "diet quality index validation",
+        "dietary adherence score"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "diet quality index",
+        "diet quality score",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "mediterranean diet adherence score",
+        "mediterranean diet adherence screener",
+        "dash diet score",
+        "mind diet score",
+        "plant-based diet index",
+        "healthful plant-based diet index",
+        "dietary inflammatory index"
+      ],
+      "web_query_hints": [
+        "diet quality index validation",
+        "healthy eating index validation",
+        "mediterranean diet adherence screener validation",
+        "diet quality score adherence questionnaire",
+        "plant-based diet index validation",
+        "dietary inflammatory index validation"
+      ],
+      "document_terms": [
+        "index validation",
+        "score validation",
+        "diet quality index validation",
+        "dietary adherence score"
+      ]
+    }
+  }
+}
