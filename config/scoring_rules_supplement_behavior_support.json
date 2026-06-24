@@ -1,0 +1,59 @@
+{
+  "version_note": "Adds modest prioritization for nutrition-anchored behavior support, adherence planning, and self-monitoring signals without changing raw retrieval outputs.",
+  "keyword_points": {
+    "nutrition coaching": 3,
+    "dietary coaching": 3,
+    "diet coaching": 3,
+    "lifestyle coaching": 2,
+    "health coaching": 2,
+    "nutrition self-monitoring": 3,
+    "dietary self-monitoring": 3,
+    "food self-monitoring": 3,
+    "meal self-monitoring": 3,
+    "self-monitoring of diet": 3,
+    "self monitoring of diet": 3,
+    "dietary self-regulation": 3,
+    "eating self-regulation": 3,
+    "action planning": 3,
+    "coping planning": 3,
+    "implementation intentions": 3,
+    "adherence planning": 3,
+    "dietary maintenance": 3,
+    "behavioral maintenance": 3,
+    "behavioural maintenance": 3,
+    "weight loss maintenance": 3,
+    "relapse prevention": 3,
+    "lapse management": 2
+  },
+  "workstream_points": {
+    "busca2b": {
+      "nutrition coaching": 4,
+      "dietary coaching": 4,
+      "diet coaching": 4,
+      "nutrition self-monitoring": 4,
+      "food self-monitoring": 4,
+      "meal self-monitoring": 4,
+      "self-monitoring of diet": 4,
+      "self monitoring of diet": 4,
+      "adherence planning": 4,
+      "dietary maintenance": 4,
+      "behavioral maintenance": 3,
+      "behavioural maintenance": 3,
+      "relapse prevention": 3
+    },
+    "a3": {
+      "nutrition coaching": 3,
+      "dietary coaching": 3,
+      "nutrition self-monitoring": 3,
+      "food self-monitoring": 3,
+      "adherence planning": 3
+    },
+    "artigo3_framework": {
+      "nutrition coaching": 3,
+      "dietary coaching": 3,
+      "nutrition self-monitoring": 3,
+      "food self-monitoring": 3,
+      "adherence planning": 3
+    }
+  }
+}
