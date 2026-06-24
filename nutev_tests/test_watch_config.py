@@ -50,3 +50,22 @@ def test_obesity_cardiometabolic_watch_terms_include_precise_lipid_markers() -> 
     assert "non hdl cholesterol" in terms
     assert "lipid lowering" in terms
     assert "triglyceride lowering" in terms
+
+
+def test_obesity_cardiometabolic_watch_terms_include_adiposity_phenotypes() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["obesity_cardiometabolic"]}
+
+    expected_terms = {
+        "obesity phenotype",
+        "obesity phenotypes",
+        "sarcopenic obesity",
+        "metabolically healthy obesity",
+        "metabolically unhealthy obesity",
+        "metabolically unhealthy phenotype",
+        "central adiposity",
+        "abdominal adiposity",
+        "visceral obesity",
+        "ectopic fat",
+    }
+
+    assert expected_terms <= terms
