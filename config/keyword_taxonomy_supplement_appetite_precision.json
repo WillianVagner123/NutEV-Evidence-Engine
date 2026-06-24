@@ -1,0 +1,57 @@
+{
+  "version_note": "2026-06 appetite, satiety, portion control, and chrononutrition search supplement",
+  "global": {
+    "diet_patterns": {
+      "appetite_satiety_precision": [
+        "satiety",
+        "satiation",
+        "satiety responsiveness",
+        "appetite regulation",
+        "appetite control",
+        "hunger control",
+        "satiating diet",
+        "high-satiety diet",
+        "high satiety diet",
+        "portion control",
+        "portion size",
+        "portion size reduction",
+        "energy density reduction",
+        "volumetric diet",
+        "mindful eating",
+        "intuitive eating",
+        "eating self-regulation",
+        "self-regulation of eating",
+        "meal timing",
+        "chrono-nutrition",
+        "chrononutrition",
+        "time-restricted eating",
+        "time restricted eating",
+        "early time-restricted feeding",
+        "early time restricted feeding",
+        "intermittent fasting"
+      ]
+    },
+    "implementation_behavior": {
+      "dietary_self_regulation": [
+        "dietary self-monitoring",
+        "food diary",
+        "food journaling",
+        "self-weighing",
+        "relapse prevention",
+        "lapse management",
+        "dietary lapse",
+        "dietary lapses",
+        "habit formation",
+        "implementation intentions",
+        "action planning",
+        "coping planning",
+        "goal setting",
+        "problem solving",
+        "mindful eating intervention",
+        "intuitive eating intervention",
+        "portion control intervention",
+        "appetite control intervention"
+      ]
+    }
+  }
+}
