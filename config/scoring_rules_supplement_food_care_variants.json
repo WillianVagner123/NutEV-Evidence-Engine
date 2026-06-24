@@ -1,0 +1,51 @@
+{
+  "version_note": "Prioritizes food-care and nutrition-prescription variants added to the query taxonomy supplement.",
+  "keyword_points": {
+    "nutrition prescription": 4,
+    "nutrition prescriptions": 4,
+    "nutrition prescription program": 4,
+    "nutrition prescription programme": 4,
+    "grocery prescription": 4,
+    "grocery prescriptions": 4,
+    "food care model": 3,
+    "food care program": 4,
+    "food care programme": 4,
+    "medically tailored nutrition": 4,
+    "medically tailored nutrition program": 4,
+    "medically tailored nutrition programme": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "nutrition prescription": 5,
+      "nutrition prescriptions": 5,
+      "nutrition prescription program": 5,
+      "nutrition prescription programme": 5,
+      "grocery prescription": 5,
+      "grocery prescriptions": 5,
+      "food care model": 4,
+      "food care program": 5,
+      "food care programme": 5,
+      "medically tailored nutrition": 5,
+      "medically tailored nutrition program": 5,
+      "medically tailored nutrition programme": 5
+    },
+    "busca2b": {
+      "nutrition prescription": 5,
+      "nutrition prescriptions": 5,
+      "nutrition prescription intervention": 5,
+      "nutrition prescription program": 5,
+      "nutrition prescription programme": 5,
+      "grocery prescription": 5,
+      "grocery prescriptions": 5,
+      "grocery prescription trial": 5,
+      "food care model": 4,
+      "food care intervention": 5,
+      "food care program": 5,
+      "food care programme": 5,
+      "medically tailored nutrition": 5,
+      "medically tailored nutrition intervention": 5,
+      "medically tailored nutrition program": 5,
+      "medically tailored nutrition programme": 5
+    }
+  }
+}
