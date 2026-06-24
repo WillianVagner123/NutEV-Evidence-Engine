@@ -30,7 +30,7 @@ def test_scope_guard_does_not_penalize_dietary_evidence_synthesis() -> None:
 def test_ckm_guidance_is_treated_as_nutmev_cardiometabolic_scope() -> None:
     ckm_guidance = score_watch_item(
         {
-            "title": "Scientific statement on cardiovascular-kidney-metabolic health and nutrition",
+            "title": "Scientific statement on cardiovascular-kidney-metabolic health",
             "source_provider": "pubmed",
         }
     )
