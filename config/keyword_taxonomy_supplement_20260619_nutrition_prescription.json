@@ -1,0 +1,99 @@
+{
+  "version_note": "Adds focused nutrition/dietary prescription terms for clinical nutrition pathways, preserving the base taxonomy while improving NutMEV retrieval of care protocols and adherence-oriented interventions.",
+  "global": {
+    "nutrition_domains": {
+      "nutrition_prescription_protocols": [
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "diet prescription",
+        "diet prescriptions",
+        "dietary prescription",
+        "dietary prescriptions",
+        "individualized nutrition prescription",
+        "individualised nutrition prescription",
+        "personalized nutrition prescription",
+        "personalised nutrition prescription",
+        "therapeutic diet prescription",
+        "therapeutic dietary prescription",
+        "nutrition care prescription",
+        "nutrition care protocol",
+        "nutrition care protocols",
+        "dietary care pathway",
+        "dietary care pathways",
+        "dietary treatment pathway",
+        "dietary treatment pathways"
+      ]
+    },
+    "implementation_behavior": {
+      "prescription_adherence": [
+        "nutrition prescription adherence",
+        "diet prescription adherence",
+        "dietary prescription adherence",
+        "prescribed diet adherence",
+        "adherence to dietary prescription",
+        "adherence to nutrition prescription",
+        "nutrition prescription implementation",
+        "dietary prescription implementation",
+        "nutrition prescription counseling",
+        "nutrition prescription counselling",
+        "dietary prescription counseling",
+        "dietary prescription counselling"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "nutrition prescription",
+        "dietary prescription",
+        "therapeutic diet prescription",
+        "nutrition care prescription",
+        "dietary care pathway",
+        "dietary treatment pathway"
+      ],
+      "web_query_hints": [
+        "nutrition prescription guideline",
+        "dietary prescription guideline",
+        "therapeutic diet prescription guideline",
+        "nutrition care prescription consensus",
+        "dietary care pathway guideline",
+        "dietary treatment pathway consensus"
+      ],
+      "document_terms": [
+        "nutrition prescription guideline",
+        "dietary prescription guideline",
+        "nutrition care protocol",
+        "dietary care pathway"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "nutrition prescription adherence",
+        "diet prescription adherence",
+        "dietary prescription adherence",
+        "prescribed diet adherence",
+        "nutrition prescription implementation",
+        "dietary prescription implementation",
+        "nutrition prescription counseling",
+        "nutrition prescription counselling",
+        "dietary prescription counseling",
+        "dietary prescription counselling"
+      ],
+      "web_query_hints": [
+        "nutrition prescription adherence trial",
+        "dietary prescription adherence intervention",
+        "prescribed diet adherence trial",
+        "nutrition prescription implementation study",
+        "dietary prescription implementation trial",
+        "nutrition prescription counseling intervention",
+        "dietary prescription counselling intervention"
+      ],
+      "document_terms": [
+        "nutrition prescription adherence trial",
+        "dietary prescription adherence intervention",
+        "nutrition prescription implementation study",
+        "dietary prescription implementation trial"
+      ]
+    }
+  }
+}
