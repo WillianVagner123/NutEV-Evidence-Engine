@@ -518,6 +518,63 @@ FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS = [
     "clinical-community food referral program",
 ]
 
+NUTRITION_ADHERENCE_BEHAVIOR_TERMS = [
+    "dietary self-monitoring",
+    "dietary self monitoring",
+    "diet self-monitoring",
+    "diet self monitoring",
+    "food self-monitoring",
+    "food self monitoring",
+    "food logging",
+    "diet logging",
+    "food diary",
+    "food diaries",
+    "diet diary",
+    "diet diaries",
+    "food record",
+    "food records",
+    "dietary record",
+    "dietary records",
+    "meal logging",
+    "meal tracking",
+    "nutrition tracking",
+    "calorie tracking",
+    "meal planning self-efficacy",
+    "meal planning self efficacy",
+    "dietary goal setting",
+    "diet goal setting",
+    "nutrition goal setting",
+    "dietary action planning",
+    "dietary coping planning",
+    "healthy eating action planning",
+    "healthy eating coping planning",
+    "dietary relapse prevention",
+    "weight regain relapse prevention",
+    "dietary problem solving",
+    "nutrition problem solving",
+]
+
+NUTRITION_ADHERENCE_BEHAVIOR_DOCUMENT_TERMS = [
+    "dietary self-monitoring intervention",
+    "dietary self monitoring intervention",
+    "food logging intervention",
+    "food diary intervention",
+    "food record intervention",
+    "meal tracking intervention",
+    "nutrition tracking intervention",
+    "dietary goal setting intervention",
+    "dietary action planning intervention",
+    "dietary coping planning intervention",
+    "healthy eating action planning intervention",
+    "healthy eating coping planning intervention",
+    "dietary relapse prevention intervention",
+    "dietary problem solving intervention",
+    "meal planning self-efficacy scale",
+    "meal planning self efficacy scale",
+    "dietary self-monitoring questionnaire",
+    "dietary self monitoring questionnaire",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -638,6 +695,16 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=ULTRA_PROCESSED_FOOD_TERMS,
             document_terms=ULTRA_PROCESSED_FOOD_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "adherence_persistence",
+        "implementation_science",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=NUTRITION_ADHERENCE_BEHAVIOR_TERMS,
+            document_terms=NUTRITION_ADHERENCE_BEHAVIOR_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "food_literacy_agency"):
         _extend_semantic_block(
