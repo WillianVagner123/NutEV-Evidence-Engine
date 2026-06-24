@@ -1,0 +1,33 @@
+{
+  "version_note": "Focused scoring supplement for nutrition-linked social prescribing and community referral evidence.",
+  "keyword_points": {
+    "social prescribing nutrition": 4,
+    "social prescribing dietary intervention": 4,
+    "social prescribing food insecurity": 4,
+    "social prescribing food access": 4,
+    "social prescribing obesity": 3,
+    "social prescribing diabetes": 3,
+    "social prescribing cardiometabolic": 4,
+    "social needs referral nutrition": 4,
+    "community resource referral nutrition": 4,
+    "community food referral": 3,
+    "food referral pathway": 4,
+    "nutrition referral pathway": 4,
+    "healthy food referral": 3,
+    "produce prescription referral": 4,
+    "food pharmacy referral": 4,
+    "medically tailored meals referral": 4,
+    "nutrition security referral": 4,
+    "closed-loop referral nutrition": 4,
+    "closed loop referral nutrition": 4,
+    "primary care food insecurity referral": 4,
+    "primary care nutrition referral": 4,
+    "primary care produce prescription": 4,
+    "primary care food is medicine": 4,
+    "primary care food as medicine": 4,
+    "community health worker nutrition referral": 4,
+    "community health worker food insecurity": 3,
+    "patient navigation nutrition": 3,
+    "care navigation nutrition": 3
+  }
+}
