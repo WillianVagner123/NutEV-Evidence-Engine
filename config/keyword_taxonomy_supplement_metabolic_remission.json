@@ -1,0 +1,87 @@
+{
+  "version_note": "Supplement focused on NutMEV-relevant metabolic remission, weight maintenance, and nutrition-care terms for busca2a/b. Loaded additively by nutev.settings.load_json without changing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "remission_maintenance": [
+        "diabetes remission diet",
+        "type 2 diabetes remission diet",
+        "diabetes remission dietary intervention",
+        "type 2 diabetes remission dietary intervention",
+        "nutrition care for diabetes remission",
+        "medical nutrition therapy for diabetes remission",
+        "dietitian-led diabetes remission",
+        "dietitian led diabetes remission",
+        "weight loss maintenance diet",
+        "weight loss maintenance dietary intervention",
+        "weight regain prevention diet",
+        "weight regain prevention dietary intervention",
+        "weight regain management diet",
+        "long-term weight loss maintenance diet",
+        "long term weight loss maintenance diet"
+      ]
+    }
+  },
+  "clinical": {
+    "diabetes": [
+      "type 2 diabetes remission",
+      "diabetes remission",
+      "remission of type 2 diabetes",
+      "remission of diabetes",
+      "diabetes reversal",
+      "type 2 diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission"
+    ],
+    "obesity": [
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain",
+      "weight regain prevention",
+      "weight regain management"
+    ]
+  },
+  "outcomes": {
+    "glycemia": [
+      "type 2 diabetes remission",
+      "diabetes remission",
+      "remission of type 2 diabetes",
+      "glycemic remission",
+      "glycaemic remission"
+    ],
+    "anthropometry": [
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "diabetes remission guideline",
+        "type 2 diabetes remission guideline",
+        "diabetes remission consensus",
+        "type 2 diabetes remission consensus",
+        "weight loss maintenance guideline",
+        "weight regain prevention guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "diabetes remission intervention",
+        "type 2 diabetes remission intervention",
+        "diabetes remission trial",
+        "weight loss maintenance intervention",
+        "weight loss maintenance trial",
+        "weight regain prevention intervention",
+        "weight regain prevention trial",
+        "dietitian-led remission intervention",
+        "dietitian led remission intervention"
+      ]
+    }
+  }
+}
