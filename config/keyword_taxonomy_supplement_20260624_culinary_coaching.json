@@ -1,0 +1,99 @@
+{
+  "version_note": "2026-06-24: focused NutMEV expansion for culinary coaching, teaching kitchen interventions, and practical food skills. Loaded automatically by nutev.settings.load_json as a keyword_taxonomy supplement.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "culinary coaching",
+        "culinary nutrition",
+        "culinary nutrition intervention",
+        "culinary counseling",
+        "culinary counselling",
+        "teaching kitchen intervention",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "community kitchen",
+        "community kitchens",
+        "community cooking program",
+        "community cooking programme",
+        "hands-on cooking",
+        "hands on cooking",
+        "hands-on nutrition education",
+        "hands on nutrition education",
+        "experiential nutrition education",
+        "cooking class",
+        "cooking classes",
+        "healthy cooking",
+        "cooking confidence",
+        "cooking self-efficacy",
+        "kitchen confidence",
+        "food skills",
+        "food skills intervention",
+        "food preparation skills",
+        "food preparation confidence",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "food budgeting",
+        "food resource management"
+      ]
+    },
+    "implementation_behavior": {
+      "behavioral": [
+        "culinary coaching",
+        "cooking self-efficacy",
+        "kitchen confidence",
+        "food skills intervention",
+        "hands-on nutrition education",
+        "experiential nutrition education"
+      ],
+      "contextual": [
+        "community kitchen",
+        "community kitchens",
+        "community cooking program",
+        "community cooking programme",
+        "food budgeting",
+        "food resource management",
+        "healthy grocery shopping"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "culinary coaching",
+        "culinary nutrition intervention",
+        "teaching kitchen program",
+        "community kitchen",
+        "hands-on nutrition education",
+        "food skills intervention"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "culinary coaching intervention",
+        "culinary nutrition intervention",
+        "teaching kitchen intervention",
+        "community cooking program",
+        "hands-on nutrition education intervention",
+        "cooking self-efficacy intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "culinary coaching",
+        "culinary nutrition",
+        "cooking self-efficacy",
+        "kitchen confidence",
+        "food skills",
+        "food resource management"
+      ],
+      "web_query_hints": [
+        "culinary coaching framework",
+        "culinary nutrition curriculum",
+        "teaching kitchen curriculum",
+        "cooking self-efficacy scale",
+        "food skills questionnaire",
+        "food resource management questionnaire"
+      ]
+    }
+  }
+}
