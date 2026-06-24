@@ -1,0 +1,66 @@
+{
+  "version_note": "2026-06 food competence expansion for NutMEV practical adherence and article 3 framework retrieval.",
+  "global": {
+    "nutrition_domains": {
+      "food_literacy_practical_competence": [
+        "food competence",
+        "food competencies",
+        "food capability",
+        "food capabilities",
+        "food skills confidence",
+        "food preparation skills",
+        "food preparation self-efficacy",
+        "food preparation self efficacy",
+        "meal preparation skills",
+        "meal preparation confidence",
+        "meal planning confidence",
+        "healthy meal planning",
+        "grocery shopping confidence",
+        "food label reading",
+        "nutrition label use",
+        "food choice skills",
+        "cooking at home",
+        "home food preparation"
+      ]
+    },
+    "implementation_behavior": {
+      "dietary_self_management": [
+        "dietary goal setting",
+        "healthy eating goals",
+        "dietary habit formation",
+        "healthy eating habits",
+        "meal planning intervention",
+        "food skills intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food competence",
+        "food capability",
+        "food skills confidence",
+        "food preparation skills",
+        "meal planning confidence"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "dietary habit formation",
+        "healthy eating habits",
+        "meal planning intervention",
+        "food skills intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "food competence questionnaire",
+        "food capability framework",
+        "food skills confidence scale",
+        "food preparation self-efficacy scale",
+        "meal planning confidence scale",
+        "nutrition label use questionnaire"
+      ]
+    }
+  }
+}

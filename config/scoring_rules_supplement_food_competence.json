@@ -1,0 +1,55 @@
+{
+  "version_note": "2026-06 scoring supplement for practical food competence, food skills confidence, and dietary habit signals.",
+  "keyword_points": {
+    "food competence": 4,
+    "food competencies": 4,
+    "food capability": 4,
+    "food capabilities": 4,
+    "food skills confidence": 4,
+    "food preparation skills": 3,
+    "food preparation self-efficacy": 4,
+    "food preparation self efficacy": 4,
+    "meal preparation skills": 3,
+    "meal preparation confidence": 3,
+    "meal planning confidence": 4,
+    "healthy meal planning": 3,
+    "grocery shopping confidence": 3,
+    "food label reading": 3,
+    "nutrition label use": 3,
+    "food choice skills": 3,
+    "dietary goal setting": 3,
+    "healthy eating goals": 3,
+    "dietary habit formation": 4,
+    "healthy eating habits": 3,
+    "meal planning intervention": 4,
+    "food skills intervention": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food competence": 4,
+      "food capability": 4,
+      "food skills confidence": 4,
+      "food preparation skills": 3,
+      "meal planning confidence": 3,
+      "nutrition label use": 3
+    },
+    "busca2b": {
+      "dietary goal setting": 3,
+      "dietary habit formation": 4,
+      "healthy eating habits": 3,
+      "meal planning intervention": 4,
+      "food skills intervention": 4
+    },
+    "artigo3_framework": {
+      "food competence": 5,
+      "food competencies": 5,
+      "food capability": 5,
+      "food capabilities": 5,
+      "food skills confidence": 5,
+      "food preparation self-efficacy": 5,
+      "food preparation self efficacy": 5,
+      "meal planning confidence": 4,
+      "nutrition label use": 4
+    }
+  }
+}
