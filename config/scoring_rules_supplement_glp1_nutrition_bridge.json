@@ -1,0 +1,56 @@
+{
+  "version_note": "2026-06 GLP-1 nutrition bridge scoring. Scores only anchored phrases that connect anti-obesity pharmacotherapy with nutrition, lifestyle, adherence, or weight maintenance; isolated drug terms are intentionally not boosted.",
+  "keyword_points": {
+    "glp-1 nutrition": 3,
+    "glp-1 dietary": 3,
+    "glp-1 lifestyle": 3,
+    "glp-1 weight maintenance": 4,
+    "post-glp-1 weight maintenance": 4,
+    "semaglutide nutrition": 3,
+    "semaglutide dietary adherence": 4,
+    "semaglutide lifestyle intervention": 4,
+    "semaglutide weight maintenance": 4,
+    "tirzepatide nutrition": 3,
+    "tirzepatide dietary adherence": 4,
+    "tirzepatide lifestyle intervention": 4,
+    "tirzepatide weight maintenance": 4,
+    "anti-obesity medication nutrition": 4,
+    "anti-obesity medication dietary adherence": 4,
+    "anti-obesity medication lifestyle intervention": 4,
+    "anti-obesity medication lifestyle modification": 4,
+    "antiobesity medication lifestyle": 3,
+    "obesity pharmacotherapy lifestyle modification": 4,
+    "nutrition counseling during anti-obesity pharmacotherapy": 5,
+    "medical nutrition therapy anti-obesity medication": 5,
+    "weight regain after semaglutide lifestyle intervention": 5
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "glp-1 nutrition guideline": 5,
+      "glp-1 lifestyle guidance": 4,
+      "semaglutide nutrition guidance": 4,
+      "semaglutide lifestyle modification guideline": 5,
+      "tirzepatide nutrition guidance": 4,
+      "tirzepatide lifestyle modification guideline": 5,
+      "anti-obesity medication nutrition guidance": 5,
+      "obesity pharmacotherapy lifestyle modification": 5
+    },
+    "busca2b": {
+      "glp-1 dietary adherence": 5,
+      "glp-1 nutrition intervention": 4,
+      "glp-1 lifestyle intervention": 4,
+      "semaglutide dietary adherence": 5,
+      "semaglutide nutrition intervention": 4,
+      "semaglutide lifestyle intervention": 5,
+      "tirzepatide dietary adherence": 5,
+      "tirzepatide nutrition intervention": 4,
+      "tirzepatide lifestyle intervention": 5,
+      "anti-obesity medication dietary adherence": 5,
+      "anti-obesity medication lifestyle intervention": 5,
+      "nutrition counseling during anti-obesity pharmacotherapy": 6,
+      "medical nutrition therapy anti-obesity medication": 6,
+      "post-glp-1 weight maintenance": 5,
+      "weight regain after semaglutide lifestyle intervention": 6
+    }
+  }
+}
