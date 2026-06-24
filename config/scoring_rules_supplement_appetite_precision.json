@@ -1,0 +1,72 @@
+{
+  "version_note": "2026-06 appetite, satiety, portion control, and chrononutrition scoring supplement",
+  "keyword_points": {
+    "satiety responsiveness": 3,
+    "satiation": 2,
+    "hunger control": 2,
+    "high-satiety diet": 3,
+    "high satiety diet": 3,
+    "portion control": 3,
+    "portion size": 2,
+    "portion size reduction": 3,
+    "energy density reduction": 3,
+    "volumetric diet": 2,
+    "mindful eating": 3,
+    "intuitive eating": 2,
+    "food diary": 2,
+    "food journaling": 2,
+    "self-weighing": 2,
+    "lapse management": 2,
+    "dietary lapse": 2,
+    "dietary lapses": 2,
+    "mindful eating intervention": 3,
+    "intuitive eating intervention": 2,
+    "portion control intervention": 3,
+    "appetite control intervention": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "satiety responsiveness": 4,
+      "satiation": 3,
+      "hunger control": 3,
+      "high-satiety diet": 4,
+      "high satiety diet": 4,
+      "portion control": 4,
+      "portion size reduction": 4,
+      "energy density reduction": 4,
+      "volumetric diet": 3,
+      "mindful eating": 4,
+      "mindful eating intervention": 5,
+      "intuitive eating": 3,
+      "intuitive eating intervention": 4,
+      "food diary": 3,
+      "food journaling": 3,
+      "self-weighing": 3,
+      "lapse management": 3,
+      "dietary lapse": 3,
+      "dietary lapses": 3,
+      "portion control intervention": 5,
+      "appetite control intervention": 5
+    },
+    "a3": {
+      "mindful eating": 4,
+      "intuitive eating": 4,
+      "eating self-regulation": 4,
+      "self-regulation of eating": 4,
+      "food diary": 3,
+      "food journaling": 3,
+      "portion control": 3,
+      "appetite control": 3
+    },
+    "artigo3_framework": {
+      "mindful eating": 4,
+      "intuitive eating": 4,
+      "eating self-regulation": 4,
+      "self-regulation of eating": 4,
+      "food diary": 3,
+      "food journaling": 3,
+      "portion control": 3,
+      "appetite control": 3
+    }
+  }
+}
