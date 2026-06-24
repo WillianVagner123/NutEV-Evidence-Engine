@@ -1,0 +1,41 @@
+{
+  "version_note": "Supplemental scoring for CKD/renal-risk terms inside the CKM nutrition scope; preserves base scoring and adds workstream-specific priority.",
+  "keyword_points": {
+    "chronic kidney disease": 3,
+    "ckd": 2,
+    "diabetic kidney disease": 3,
+    "diabetic nephropathy": 3,
+    "albuminuria": 2,
+    "proteinuria": 2,
+    "estimated glomerular filtration rate": 2,
+    "egfr": 2,
+    "kidney function": 2,
+    "renal function": 2
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "chronic kidney disease": 4,
+      "ckd": 3,
+      "diabetic kidney disease": 4,
+      "diabetic nephropathy": 4,
+      "albuminuria": 3,
+      "proteinuria": 3,
+      "estimated glomerular filtration rate": 3,
+      "egfr": 3,
+      "kidney function": 3,
+      "renal function": 3
+    },
+    "busca2b": {
+      "chronic kidney disease": 4,
+      "ckd": 3,
+      "diabetic kidney disease": 4,
+      "diabetic nephropathy": 4,
+      "albuminuria": 3,
+      "proteinuria": 3,
+      "estimated glomerular filtration rate": 3,
+      "egfr": 3,
+      "kidney function": 3,
+      "renal function": 3
+    }
+  }
+}

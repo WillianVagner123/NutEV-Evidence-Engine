@@ -1,0 +1,85 @@
+{
+  "version_note": "Supplemental CKD/renal-risk query expansion for CKM nutrition evidence; loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "clinical": {
+    "cardiometabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "diabetic kidney disease",
+      "diabetic nephropathy",
+      "albuminuria",
+      "proteinuria",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "kidney function",
+      "renal function",
+      "kidney disease"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "diabetic kidney disease",
+      "diabetic nephropathy",
+      "albuminuria",
+      "proteinuria",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "kidney function",
+      "renal function"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "diabetic kidney disease",
+        "diabetic nephropathy",
+        "albuminuria",
+        "proteinuria",
+        "estimated glomerular filtration rate",
+        "egfr",
+        "kidney function",
+        "renal function"
+      ],
+      "web_query_hints": [
+        "chronic kidney disease nutrition guideline",
+        "diabetic kidney disease nutrition guideline",
+        "ckd obesity guideline",
+        "ckd type 2 diabetes guideline",
+        "cardiovascular-kidney-metabolic nutrition guideline",
+        "cardiovascular kidney metabolic nutrition guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "diabetic kidney disease",
+        "diabetic nephropathy",
+        "albuminuria",
+        "proteinuria",
+        "estimated glomerular filtration rate",
+        "egfr",
+        "kidney function",
+        "renal function"
+      ],
+      "focus_terms": [
+        "dietary intervention chronic kidney disease",
+        "nutrition intervention chronic kidney disease",
+        "dietary intervention diabetic kidney disease",
+        "lifestyle intervention chronic kidney disease",
+        "lifestyle intervention diabetic kidney disease"
+      ],
+      "web_query_hints": [
+        "chronic kidney disease dietary intervention systematic review",
+        "diabetic kidney disease dietary intervention trial",
+        "ckd obesity lifestyle intervention",
+        "ckd type 2 diabetes nutrition intervention",
+        "albuminuria diet intervention",
+        "egfr dietary intervention"
+      ]
+    }
+  }
+}
