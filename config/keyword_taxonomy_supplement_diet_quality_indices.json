@@ -1,0 +1,128 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for diet quality, dietary pattern adherence scores, and food literacy instruments; keeps base taxonomy intact and appends focused terms.",
+  "global": {
+    "diet_patterns": {
+      "diet_quality_indices": [
+        "diet quality",
+        "diet quality index",
+        "diet quality score",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "alternative healthy eating index",
+        "ahei",
+        "mediterranean diet score",
+        "mediterranean diet adherence score",
+        "mediterranean diet adherence screener",
+        "medas",
+        "dash score",
+        "dash diet score",
+        "mind diet score",
+        "plant-based diet index",
+        "healthful plant-based diet index",
+        "planetary health diet index",
+        "sustainable diet index",
+        "food compass score",
+        "nutri-score",
+        "dietary inflammatory index",
+        "dietary pattern score",
+        "dietary adherence score",
+        "dietary adherence index",
+        "adherence to dietary guidelines"
+      ]
+    },
+    "implementation_behavior": {
+      "diet_quality_adherence_instruments": [
+        "diet quality assessment",
+        "diet quality questionnaire",
+        "diet quality instrument",
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "dietary adherence index",
+        "dietary pattern adherence",
+        "dietary pattern adherence score",
+        "food literacy questionnaire",
+        "nutrition literacy questionnaire",
+        "eating competence scale",
+        "food skills questionnaire",
+        "meal planning questionnaire",
+        "cooking skills questionnaire"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet quality",
+      "diet quality index",
+      "diet quality score",
+      "healthy eating index",
+      "alternate healthy eating index",
+      "alternative healthy eating index",
+      "ahei",
+      "mediterranean diet score",
+      "mediterranean diet adherence score",
+      "dash score",
+      "dash diet score",
+      "mind diet score",
+      "plant-based diet index",
+      "healthful plant-based diet index",
+      "planetary health diet index",
+      "sustainable diet index",
+      "dietary inflammatory index",
+      "dietary adherence score",
+      "dietary adherence index",
+      "adherence to dietary guidelines"
+    ],
+    "food_literacy_competence": [
+      "food skills questionnaire",
+      "meal planning questionnaire",
+      "cooking skills questionnaire",
+      "diet quality questionnaire",
+      "dietary adherence questionnaire",
+      "dietary adherence scale"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "diet quality",
+        "diet quality index",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "mediterranean diet adherence score",
+        "dash diet score",
+        "mind diet score",
+        "plant-based diet index",
+        "planetary health diet index",
+        "dietary adherence score",
+        "dietary pattern adherence"
+      ],
+      "web_query_hints": [
+        "diet quality intervention",
+        "diet quality trial",
+        "healthy eating index trial",
+        "dietary adherence intervention",
+        "dietary pattern adherence trial",
+        "diet quality systematic review"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "diet quality questionnaire",
+        "diet quality instrument",
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "dietary pattern adherence score",
+        "food skills questionnaire",
+        "meal planning questionnaire",
+        "cooking skills questionnaire"
+      ],
+      "web_query_hints": [
+        "diet quality questionnaire validation",
+        "dietary adherence scale validation",
+        "healthy eating index validation",
+        "food skills questionnaire validation",
+        "meal planning questionnaire validation"
+      ]
+    }
+  }
+}

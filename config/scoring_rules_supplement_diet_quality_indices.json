@@ -1,0 +1,67 @@
+{
+  "version_note": "Supplemental NutMEV scoring expansion for diet quality and dietary pattern adherence indices; keeps base scoring intact.",
+  "keyword_points": {
+    "diet quality": 3,
+    "diet quality index": 4,
+    "diet quality score": 4,
+    "healthy eating index": 4,
+    "alternate healthy eating index": 4,
+    "alternative healthy eating index": 4,
+    "ahei": 3,
+    "mediterranean diet score": 4,
+    "mediterranean diet adherence score": 4,
+    "mediterranean diet adherence screener": 4,
+    "medas": 3,
+    "dash score": 4,
+    "dash diet score": 4,
+    "mind diet score": 4,
+    "plant-based diet index": 4,
+    "healthful plant-based diet index": 4,
+    "planetary health diet index": 4,
+    "sustainable diet index": 3,
+    "dietary inflammatory index": 3,
+    "dietary pattern adherence": 4,
+    "dietary pattern adherence score": 4,
+    "dietary adherence score": 4,
+    "dietary adherence index": 4,
+    "adherence to dietary guidelines": 4
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "diet quality": 4,
+      "diet quality index": 5,
+      "diet quality score": 5,
+      "healthy eating index": 5,
+      "alternate healthy eating index": 5,
+      "alternative healthy eating index": 5,
+      "mediterranean diet adherence score": 5,
+      "dash diet score": 5,
+      "mind diet score": 5,
+      "plant-based diet index": 5,
+      "planetary health diet index": 5,
+      "dietary pattern adherence": 5,
+      "dietary adherence score": 5,
+      "dietary adherence index": 5
+    },
+    "artigo3_framework": {
+      "diet quality questionnaire": 5,
+      "diet quality instrument": 5,
+      "dietary adherence questionnaire": 5,
+      "dietary adherence scale": 5,
+      "dietary pattern adherence score": 5,
+      "food skills questionnaire": 5,
+      "meal planning questionnaire": 5,
+      "cooking skills questionnaire": 5
+    },
+    "a3": {
+      "diet quality questionnaire": 5,
+      "diet quality instrument": 5,
+      "dietary adherence questionnaire": 5,
+      "dietary adherence scale": 5,
+      "dietary pattern adherence score": 5,
+      "food skills questionnaire": 5,
+      "meal planning questionnaire": 5,
+      "cooking skills questionnaire": 5
+    }
+  }
+}
