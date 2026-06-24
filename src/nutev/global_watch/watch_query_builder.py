@@ -153,6 +153,27 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "nutrition security intervention",
 ]
 
+METABOLIC_REMISSION_MAINTENANCE_TERMS = [
+    "type 2 diabetes remission",
+    "diabetes remission",
+    "remission of type 2 diabetes",
+    "diabetes reversal",
+    "glycemic remission",
+    "glycaemic remission",
+    "diet-induced diabetes remission",
+    "diet induced diabetes remission",
+    "lifestyle-induced diabetes remission",
+    "lifestyle induced diabetes remission",
+    "remission maintenance",
+    "diabetes remission maintenance",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight regain prevention",
+    "weight regain management",
+    "weight regain",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -214,6 +235,7 @@ CATEGORY_CONTEXT_TERMS = {
         "diabetes prevention program",
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
     ],
     "obesity_cardiometabolic": [
         "dietary pattern",
@@ -263,6 +285,7 @@ CATEGORY_CONTEXT_TERMS = {
         "adiposity-based chronic disease",
         "adiposity based chronic disease",
         "blood pressure",
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "diet_patterns": [
@@ -322,6 +345,7 @@ CATEGORY_CONTEXT_TERMS = {
         "ultra processed foods",
         "nova classification",
         "nova food classification",
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         *EVIDENCE_SYNTHESIS_TERMS,
     ],
     "implementation_behavior": [
@@ -402,6 +426,7 @@ CATEGORY_CONTEXT_TERMS = {
         "closed loop referral",
         *FOOD_AS_MEDICINE_ACCESS_TERMS,
         *NUTRITION_CARE_DELIVERY_TERMS,
+        *METABOLIC_REMISSION_MAINTENANCE_TERMS,
         "telehealth",
         "telemedicine",
         "digital health",
