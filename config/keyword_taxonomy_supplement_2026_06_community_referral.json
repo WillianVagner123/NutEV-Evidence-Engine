@@ -1,0 +1,126 @@
+{
+  "version_note": "Focused NutMEV query expansion for nutrition-anchored social prescribing, community referral, and food access implementation evidence. Loaded after keyword_taxonomy.json and appended without modifying the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "community_referral_nutrition_access": [
+        "nutrition social prescribing",
+        "food social prescribing",
+        "social prescribing nutrition",
+        "social prescribing diet",
+        "social prescribing food insecurity",
+        "link worker nutrition",
+        "community connector nutrition",
+        "community resource referral nutrition",
+        "community resource referral food",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "food resource referral",
+        "healthy food referral",
+        "food pantry referral program",
+        "food bank referral",
+        "food bank partnership nutrition",
+        "community food referral",
+        "community food program nutrition",
+        "community health worker nutrition intervention",
+        "community health worker dietary counseling",
+        "community health worker dietary counselling",
+        "patient navigation nutrition",
+        "care navigation nutrition",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "medically tailored meal referral",
+        "medically tailored grocery referral",
+        "nutrition security referral",
+        "screening and referral for food insecurity",
+        "screening and referral for nutrition insecurity"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "implementation report",
+        "evaluation report",
+        "program evaluation",
+        "policy evaluation",
+        "implementation study",
+        "implementation trial",
+        "mixed methods study",
+        "community implementation report",
+        "food access evaluation",
+        "food access implementation report"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "nutrition social prescribing",
+      "food social prescribing",
+      "community food referral",
+      "food resource referral",
+      "healthy food referral",
+      "closed-loop food referral",
+      "closed loop food referral",
+      "food pantry referral program",
+      "food bank partnership nutrition",
+      "community health worker nutrition intervention",
+      "patient navigation nutrition",
+      "care navigation nutrition",
+      "produce prescription referral",
+      "medically tailored food referral",
+      "nutrition security referral",
+      "screening and referral for food insecurity",
+      "screening and referral for nutrition insecurity"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "priority_outcomes": [
+        "food_access_implementation"
+      ],
+      "web_query_hints": [
+        "nutrition social prescribing report",
+        "food social prescribing report",
+        "community food referral program",
+        "food resource referral program",
+        "closed-loop food referral",
+        "food pantry referral program evaluation",
+        "community health worker nutrition intervention report",
+        "patient navigation nutrition program",
+        "care navigation nutrition program",
+        "medically tailored food referral program"
+      ]
+    },
+    "busca2b": {
+      "priority_outcomes": [
+        "food_access_implementation"
+      ],
+      "web_query_hints": [
+        "nutrition social prescribing cardiometabolic",
+        "food social prescribing obesity",
+        "food social prescribing type 2 diabetes",
+        "community food referral cardiometabolic",
+        "food resource referral obesity",
+        "closed-loop food referral intervention",
+        "food pantry referral program trial",
+        "community health worker nutrition intervention trial",
+        "patient navigation nutrition cardiometabolic",
+        "care navigation nutrition diabetes"
+      ]
+    },
+    "a3": {
+      "web_query_hints": [
+        "community food referral framework",
+        "nutrition social prescribing framework",
+        "food resource referral implementation framework",
+        "patient navigation nutrition framework"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "community food referral framework",
+        "nutrition social prescribing framework",
+        "food resource referral implementation framework",
+        "patient navigation nutrition framework"
+      ]
+    }
+  }
+}
