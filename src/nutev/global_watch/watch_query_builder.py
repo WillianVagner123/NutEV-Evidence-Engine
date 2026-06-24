@@ -153,6 +153,21 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "nutrition security intervention",
 ]
 
+EATING_PATTERN_BEHAVIOR_TERMS = [
+    "healthy eating pattern",
+    "healthy eating patterns",
+    "diet quality",
+    "dietary behavior",
+    "dietary behaviour",
+    "eating behavior",
+    "eating behaviour",
+    "eating habits",
+    "food choice",
+    "food choices",
+    "meal pattern",
+    "meal patterns",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -390,6 +405,7 @@ CATEGORY_CONTEXT_TERMS = {
         "behavioral weight loss",
         "goal setting",
         "social support",
+        *EATING_PATTERN_BEHAVIOR_TERMS,
         "food access",
         "food access intervention",
         "healthy food access intervention",
@@ -815,6 +831,7 @@ QUICK_MODE_SEED_GROUPS = {
             "social support",
             "food agency",
             "meal planning",
+            *EATING_PATTERN_BEHAVIOR_TERMS,
             "registered dietitian",
             "registered dietitian nutritionist",
             "dietitian-led intervention",
