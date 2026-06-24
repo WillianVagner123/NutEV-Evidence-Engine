@@ -1,0 +1,106 @@
+{
+  "version_note": "2026-06-24 food access, social needs referral, and produce incentive expansion for NutMEV searches",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "fruit and vegetable voucher",
+        "fruit and vegetable vouchers",
+        "healthy food incentive",
+        "healthy food incentives",
+        "healthy food incentive program",
+        "nutrition incentive",
+        "nutrition incentives",
+        "nutrition incentive program",
+        "produce voucher",
+        "produce vouchers",
+        "produce voucher program",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "voucher de frutas e vegetais",
+        "programa de incentivo alimentar saudável",
+        "intervenção em insegurança alimentar",
+        "intervenção de segurança alimentar e nutricional"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "social needs screening",
+        "screening and referral",
+        "closed-loop referral program",
+        "closed loop referral program",
+        "community resource referral program",
+        "community resource referrals",
+        "community-supported food program",
+        "community supported food program",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "healthy food incentive program",
+        "nutrition incentive program",
+        "produce voucher program",
+        "fruit and vegetable voucher program",
+        "triagem de necessidades sociais",
+        "triagem e encaminhamento",
+        "encaminhamento para segurança alimentar",
+        "programa comunitário de alimentação"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "social needs screening",
+        "screening and referral",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "closed-loop referral program",
+        "community resource referral program",
+        "healthy food incentive program",
+        "nutrition incentive program",
+        "produce voucher program",
+        "fruit and vegetable voucher program",
+        "triagem de necessidades sociais",
+        "encaminhamento para segurança alimentar",
+        "voucher de frutas e vegetais",
+        "programa de incentivo alimentar saudável"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "social needs screening",
+        "screening and referral",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "closed-loop referral program",
+        "community resource referral program",
+        "healthy food incentive program",
+        "nutrition incentive program",
+        "produce voucher program",
+        "fruit and vegetable voucher program",
+        "triagem de necessidades sociais",
+        "encaminhamento para segurança alimentar",
+        "voucher de frutas e vegetais",
+        "programa de incentivo alimentar saudável"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "social needs screening",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "triagem de necessidades sociais",
+        "intervenção em insegurança alimentar"
+      ],
+      "web_query_hints": [
+        "social needs screening",
+        "screening and referral",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "healthy food incentive program",
+        "nutrition incentive program",
+        "produce voucher program",
+        "triagem de necessidades sociais",
+        "encaminhamento para segurança alimentar"
+      ]
+    }
+  }
+}
