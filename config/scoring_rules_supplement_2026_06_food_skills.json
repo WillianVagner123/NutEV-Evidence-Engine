@@ -1,0 +1,63 @@
+{
+    "version_note": "Focused scoring supplement for practical food skills, culinary confidence, and eating competence terms.",
+    "keyword_points": {
+        "food skills": 3,
+        "culinary skills": 3,
+        "food preparation skills": 3,
+        "meal preparation skills": 3,
+        "cooking confidence": 3,
+        "cooking self-efficacy": 4,
+        "cooking self efficacy": 4,
+        "kitchen confidence": 3,
+        "eating competence": 4,
+        "food competence": 4,
+        "food resource management": 3,
+        "meal management": 3,
+        "grocery shopping skills": 3,
+        "food budgeting skills": 3,
+        "eating competence questionnaire": 4,
+        "eating competence inventory": 4,
+        "food competence questionnaire": 4,
+        "food skills questionnaire": 4,
+        "food skills scale": 4,
+        "culinary skills scale": 4,
+        "food preparation skills scale": 4,
+        "food resource management scale": 4
+    },
+    "workstream_bonus": {
+        "busca1": {
+            "food skills": 4,
+            "culinary skills": 4,
+            "food preparation skills": 4,
+            "meal preparation skills": 4,
+            "cooking confidence": 4,
+            "food resource management": 4,
+            "grocery shopping skills": 4,
+            "food budgeting skills": 4
+        },
+        "a3": {
+            "eating competence": 5,
+            "food competence": 5,
+            "eating competence questionnaire": 5,
+            "eating competence inventory": 5,
+            "food competence questionnaire": 5,
+            "food skills questionnaire": 5,
+            "food skills scale": 5,
+            "culinary skills scale": 5,
+            "food preparation skills scale": 5,
+            "food resource management scale": 5
+        },
+        "artigo3_framework": {
+            "eating competence": 5,
+            "food competence": 5,
+            "eating competence questionnaire": 5,
+            "eating competence inventory": 5,
+            "food competence questionnaire": 5,
+            "food skills questionnaire": 5,
+            "food skills scale": 5,
+            "culinary skills scale": 5,
+            "food preparation skills scale": 5,
+            "food resource management scale": 5
+        }
+    }
+}

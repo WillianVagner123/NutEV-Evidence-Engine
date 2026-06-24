@@ -1,0 +1,157 @@
+{
+    "version_note": "Focused supplement for practical food skills, culinary confidence, and eating competence terms. Loaded after keyword_taxonomy.json without overwriting the base taxonomy.",
+    "global": {
+        "nutrition_domains": {
+            "culinary_labeling": [
+                "food skills",
+                "culinary skills",
+                "food preparation skills",
+                "meal preparation skills",
+                "cooking confidence",
+                "cooking self-efficacy",
+                "cooking self efficacy",
+                "kitchen confidence",
+                "food resource management",
+                "meal management",
+                "grocery shopping skills",
+                "food budgeting skills"
+            ]
+        },
+        "implementation_behavior": {
+            "behavioral": [
+                "eating competence",
+                "food competence",
+                "food skills",
+                "culinary skills",
+                "food preparation skills",
+                "meal preparation skills",
+                "cooking confidence",
+                "cooking self-efficacy",
+                "cooking self efficacy",
+                "food resource management",
+                "meal management",
+                "grocery shopping skills",
+                "food budgeting skills"
+            ],
+            "food_literacy_instruments": [
+                "eating competence questionnaire",
+                "eating competence inventory",
+                "food competence questionnaire",
+                "food skills questionnaire",
+                "food skills scale",
+                "culinary skills scale",
+                "food preparation skills scale",
+                "meal preparation skills scale",
+                "food resource management scale",
+                "grocery shopping skills scale"
+            ]
+        }
+    },
+    "outcomes": {
+        "behavioral": [
+            "eating competence",
+            "food competence",
+            "food skills",
+            "culinary skills",
+            "food preparation skills",
+            "meal preparation skills",
+            "cooking self-efficacy",
+            "cooking self efficacy",
+            "food resource management"
+        ],
+        "diet_quality_adherence": [
+            "eating competence",
+            "food competence",
+            "food skills",
+            "food preparation skills",
+            "meal preparation skills",
+            "food resource management",
+            "grocery shopping skills",
+            "food budgeting skills"
+        ],
+        "food_literacy_competence": [
+            "eating competence questionnaire",
+            "eating competence inventory",
+            "food competence questionnaire",
+            "food skills questionnaire",
+            "food skills scale",
+            "culinary skills scale",
+            "food preparation skills scale",
+            "meal preparation skills scale",
+            "food resource management scale",
+            "grocery shopping skills scale"
+        ]
+    },
+    "workstreams": {
+        "busca1": {
+            "focus_terms": [
+                "food skills",
+                "culinary skills",
+                "food preparation skills",
+                "meal preparation skills",
+                "cooking confidence",
+                "food resource management",
+                "grocery shopping skills",
+                "food budgeting skills"
+            ],
+            "web_query_hints": [
+                "food skills guideline",
+                "culinary skills intervention report",
+                "food preparation skills obesity",
+                "meal preparation skills weight management",
+                "food resource management nutrition education",
+                "grocery shopping skills healthy eating"
+            ]
+        },
+        "a3": {
+            "focus_terms": [
+                "eating competence questionnaire",
+                "eating competence inventory",
+                "food competence questionnaire",
+                "food skills questionnaire",
+                "food skills scale",
+                "culinary skills scale",
+                "food preparation skills scale",
+                "food resource management scale"
+            ],
+            "web_query_hints": [
+                "eating competence questionnaire validation",
+                "food competence questionnaire validation",
+                "food skills questionnaire validation",
+                "food skills scale validation",
+                "food preparation skills scale validation",
+                "food resource management scale validation"
+            ],
+            "document_terms": [
+                "questionnaire validation",
+                "scale validation",
+                "psychometric validation"
+            ]
+        },
+        "artigo3_framework": {
+            "focus_terms": [
+                "eating competence questionnaire",
+                "eating competence inventory",
+                "food competence questionnaire",
+                "food skills questionnaire",
+                "food skills scale",
+                "culinary skills scale",
+                "food preparation skills scale",
+                "food resource management scale"
+            ],
+            "web_query_hints": [
+                "eating competence questionnaire validation",
+                "food competence questionnaire validation",
+                "food skills questionnaire validation",
+                "food skills scale validation",
+                "food preparation skills scale validation",
+                "food resource management scale validation"
+            ],
+            "document_terms": [
+                "questionnaire validation",
+                "scale validation",
+                "psychometric validation"
+            ]
+        }
+    }
+}
