@@ -534,6 +534,15 @@
       "clinical obesity",
       "adiposity-based chronic disease",
       "adiposity based chronic disease",
+      "adiposity-related complications",
+      "adiposity related complications",
+      "obesity complications",
+      "obesity staging",
+      "obesity stage",
+      "obesity phenotype",
+      "edmonton obesity staging system",
+      "eoss",
+      "body fat distribution",
       "body mass index",
       "bmi",
       "waist circumference",
@@ -541,6 +550,8 @@
       "obeso",
       "sobrepeso",
       "obesidade clínica",
+      "complicações da adiposidade",
+      "estadiamento da obesidade",
       "índice de massa corporal",
       "imc",
       "circunferência da cintura",
@@ -899,7 +910,11 @@
         "mafld",
         "clinical obesity",
         "adiposity-based chronic disease",
-        "adiposity based chronic disease"
+        "adiposity based chronic disease",
+        "adiposity-related complications",
+        "obesity complications",
+        "obesity staging",
+        "edmonton obesity staging system"
       ]
     },
     "busca2b": {
@@ -937,7 +952,8 @@
         "hypertension",
         "dyslipidemia",
         "cvd",
-        "metabolic_syndrome"
+        "metabolic_syndrome",
+        "fatty_liver"
       ],
       "document_type_keys": [
         "trials",
@@ -998,7 +1014,11 @@
         "mafld",
         "clinical obesity",
         "adiposity-based chronic disease",
-        "adiposity based chronic disease"
+        "adiposity based chronic disease",
+        "adiposity-related complications",
+        "obesity complications",
+        "obesity staging",
+        "edmonton obesity staging system"
       ]
     },
     "artigo3_framework": {
