@@ -195,6 +195,56 @@ FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS = [
     "nutrition education intervention",
 ]
 
+FOOD_ENVIRONMENT_CHOICE_ARCHITECTURE_TERMS = [
+    "choice architecture",
+    "food choice architecture",
+    "nutrition choice architecture",
+    "healthy choice architecture",
+    "choice architecture intervention",
+    "food choice architecture intervention",
+    "healthy choice architecture intervention",
+    "nudge intervention",
+    "nudging intervention",
+    "healthy default",
+    "healthy defaults",
+    "healthy default option",
+    "healthy default options",
+    "default healthy option",
+    "default healthy options",
+    "food service guidelines",
+    "healthy food service guidelines",
+    "nutrition standards for food service",
+    "institutional food procurement",
+    "public food procurement",
+    "healthy food procurement policy",
+    "healthy food retail policy",
+    "menu labeling policy",
+    "menu labelling policy",
+]
+
+FOOD_ENVIRONMENT_CHOICE_ARCHITECTURE_DOCUMENT_TERMS = [
+    "choice architecture intervention",
+    "food choice architecture intervention",
+    "healthy choice architecture intervention",
+    "nudge intervention",
+    "nudging intervention",
+    "healthy default intervention",
+    "food service guideline",
+    "food service guidelines",
+    "healthy food service guideline",
+    "healthy food service guidelines",
+    "nutrition standards for food service",
+    "food procurement policy",
+    "healthy food procurement policy",
+    "public food procurement policy",
+    "institutional food procurement policy",
+    "healthy food retail policy",
+    "menu labeling policy",
+    "menu labelling policy",
+    "policy evaluation",
+    "implementation study",
+]
+
 FOOD_EATING_COMPETENCE_TERMS = [
     "food competence",
     "eating competence",
@@ -650,6 +700,16 @@ def apply_semantic_extensions() -> None:
         terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
         document_terms=FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS,
     )
+    for block_name in (
+        "food_literacy_agency",
+        "implementation_science",
+        "equity_access",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=FOOD_ENVIRONMENT_CHOICE_ARCHITECTURE_TERMS,
+            document_terms=FOOD_ENVIRONMENT_CHOICE_ARCHITECTURE_DOCUMENT_TERMS,
+        )
     for block_name in ("equity_access", "food_prescription_programs"):
         _extend_semantic_block(
             block_name,
