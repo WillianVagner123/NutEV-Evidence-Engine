@@ -1,0 +1,31 @@
+{
+  "version_note": "Focused CKM/cardiorenal metabolic query expansion for busca2a and busca2b; appends precise terms without changing raw outputs.",
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiorenal metabolic syndrome",
+        "cardio-renal-metabolic syndrome",
+        "cardio renal metabolic syndrome"
+      ],
+      "web_query_hints": [
+        "cardiorenal metabolic syndrome guideline",
+        "cardiorenal metabolic nutrition guideline",
+        "cardiorenal metabolic syndrome consensus",
+        "cardio-renal-metabolic syndrome consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiorenal metabolic syndrome",
+        "cardio-renal-metabolic syndrome",
+        "cardio renal metabolic syndrome"
+      ],
+      "web_query_hints": [
+        "cardiorenal metabolic syndrome lifestyle intervention",
+        "cardiorenal metabolic syndrome nutrition intervention",
+        "cardiorenal metabolic syndrome dietary intervention",
+        "cardio-renal-metabolic syndrome systematic review"
+      ]
+    }
+  }
+}
