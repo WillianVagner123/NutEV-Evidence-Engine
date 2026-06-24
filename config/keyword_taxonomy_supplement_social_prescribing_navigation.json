@@ -1,0 +1,47 @@
+{
+  "version_note": "2026-06 social prescribing and nutrition referral expansion for NutMEV search coverage",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "nutrition social prescribing",
+        "food social prescribing",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "fruit and vegetable prescription referral",
+        "healthy food prescription referral",
+        "food prescription referral",
+        "food pharmacy referral",
+        "food farmacy referral",
+        "medically tailored food referral",
+        "medically tailored meal referral",
+        "medically tailored grocery referral",
+        "nutrition security referral"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "nutrition social prescribing",
+        "food social prescribing",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "fruit and vegetable prescription referral",
+        "healthy food prescription referral",
+        "food prescription referral",
+        "food pharmacy referral",
+        "food farmacy referral",
+        "food pantry navigation",
+        "food pharmacy navigation",
+        "produce prescription navigation",
+        "medically tailored food referral",
+        "medically tailored meal referral",
+        "medically tailored grocery referral",
+        "nutrition security referral",
+        "food security referral",
+        "nutrition resource referral",
+        "food resource referral"
+      ]
+    }
+  }
+}
