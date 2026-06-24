@@ -1,0 +1,62 @@
+{
+  "version_note": "Focused supplement for NutMEV social prescribing and nutrition referral pathways; loaded after keyword_taxonomy.json without changing raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "nutrition_referral_pathways": [
+        "social prescribing nutrition",
+        "social prescribing diet",
+        "social prescribing dietary",
+        "social prescribing dietitian",
+        "social prescribing dietician",
+        "social prescribing food",
+        "social prescribing food security",
+        "social prescribing food insecurity",
+        "social prescribing healthy food",
+        "nutrition social prescribing",
+        "dietitian social prescribing",
+        "dietician social prescribing",
+        "food social prescribing",
+        "healthy food referral",
+        "healthy food referrals",
+        "nutrition referral pathway",
+        "nutrition referral pathways",
+        "dietitian referral pathway",
+        "dietitian referral pathways",
+        "dietary referral pathway",
+        "dietary referral pathways",
+        "food resource navigation",
+        "food resource navigator",
+        "food resource navigators",
+        "community resource navigation nutrition",
+        "community resource navigator nutrition",
+        "community connector nutrition",
+        "community connectors nutrition",
+        "social prescribing link worker nutrition",
+        "link worker nutrition",
+        "link workers nutrition",
+        "community health worker nutrition intervention",
+        "community health worker dietary intervention",
+        "community health worker food security",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "fruit and vegetable prescription referral",
+        "medically tailored food referral",
+        "medically tailored meal referral",
+        "medically tailored grocery referral",
+        "nutrition security referral pathway",
+        "food insecurity referral pathway"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "nutrition referral pathway",
+      "dietitian referral pathway",
+      "food resource navigation",
+      "healthy food referral",
+      "produce prescription referral",
+      "medically tailored food referral"
+    ]
+  }
+}
