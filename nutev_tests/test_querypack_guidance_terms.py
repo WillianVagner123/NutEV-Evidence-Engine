@@ -103,6 +103,26 @@ def test_busca1_and_busca2b_cover_food_is_medicine_interventions() -> None:
     )
 
 
+def test_food_as_medicine_access_supplement_reaches_structured_components() -> None:
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+
+    _, busca1_components = build_structured_components(taxonomy, "busca1")
+    _, busca2b_components = build_structured_components(taxonomy, "busca2b")
+    _, a3_components = build_structured_components(taxonomy, "artigo3_framework")
+
+    busca1_hints = {term.lower() for term in busca1_components["web_hints"]}
+    busca2b_focus = {term.lower() for term in busca2b_components["focus_terms"]}
+    busca2b_hints = {term.lower() for term in busca2b_components["web_hints"]}
+    a3_hints = {term.lower() for term in a3_components["web_hints"]}
+
+    assert "medically tailored nutrition intervention" in busca2b_focus
+    assert "food pharmacy intervention" in busca2b_focus
+    assert "produce prescription intervention" in busca2b_focus
+    assert "clinical-community food referral" in busca1_hints
+    assert "community-clinical linkage" in busca2b_hints
+    assert "clinical-community food referral framework" in a3_hints
+
+
 def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
     clause = _pubmed_document_clause(
         [

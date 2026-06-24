@@ -6,19 +6,27 @@
         "medically tailored nutrition",
         "medically tailored nutrition program",
         "medically tailored nutrition programme",
+        "medically tailored nutrition intervention",
         "food pharmacy program",
         "food pharmacy programme",
+        "food pharmacy intervention",
         "food farmacy program",
         "food farmacy programme",
+        "food farmacy intervention",
         "produce prescription programme",
+        "produce prescription intervention",
         "healthy food incentive program",
         "healthy food incentive programme",
+        "healthy food incentive intervention",
         "nutrition incentive program",
         "nutrition incentive programme",
+        "nutrition incentive intervention",
         "fruit and vegetable voucher program",
         "fruit and vegetable voucher programme",
+        "fruit and vegetable voucher intervention",
         "produce voucher program",
-        "produce voucher programme"
+        "produce voucher programme",
+        "produce voucher intervention"
       ]
     },
     "implementation_behavior": {
@@ -33,6 +41,10 @@
         "community supported food program",
         "community-supported food programme",
         "community supported food programme",
+        "clinical-community food referral",
+        "clinical community food referral",
+        "community-clinical linkage",
+        "community clinical linkage",
         "social prescribing link worker",
         "link worker",
         "community connector",
@@ -53,11 +65,16 @@
     "busca1": {
       "web_query_hints": [
         "medically tailored nutrition program",
+        "medically tailored nutrition intervention",
         "food pharmacy program",
+        "food pharmacy intervention",
         "produce prescription programme",
+        "produce prescription intervention",
         "healthy food incentive program",
         "nutrition incentive program",
         "fruit and vegetable voucher program",
+        "clinical-community food referral",
+        "community-clinical linkage",
         "food is medicine referral",
         "food as medicine referral"
       ]
@@ -68,9 +85,12 @@
         "food pharmacy intervention",
         "food pharmacy program",
         "produce prescription programme",
+        "produce prescription intervention",
         "healthy food incentive intervention",
         "nutrition incentive intervention",
         "fruit and vegetable voucher intervention",
+        "clinical-community food referral",
+        "community-clinical linkage",
         "food is medicine referral",
         "produce prescription referral"
       ],
@@ -85,7 +105,8 @@
         "produce prescription implementation framework",
         "food pharmacy implementation framework",
         "medically tailored nutrition framework",
-        "nutrition security implementation framework"
+        "nutrition security implementation framework",
+        "clinical-community food referral framework"
       ],
       "condition_terms": [
         "nutrition security",
