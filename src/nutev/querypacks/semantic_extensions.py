@@ -5,13 +5,28 @@ from nutev.querypacks import semantic_blocks
 CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS = [
     "cardiovascular-kidney-metabolic syndrome",
     "cardiovascular kidney metabolic syndrome",
+    "cardiovascular-kidney-metabolic disease",
+    "cardiovascular kidney metabolic disease",
+    "cardiovascular-kidney-metabolic diseases",
+    "cardiovascular kidney metabolic diseases",
     "cardiovascular-kidney-metabolic health",
     "cardiovascular kidney metabolic health",
     "cardiovascular-kidney-metabolic risk",
     "cardiovascular kidney metabolic risk",
+    "cardiovascular-kidney-metabolic care",
+    "cardiovascular kidney metabolic care",
+    "cardiovascular-kidney-metabolic nutrition",
+    "cardiovascular kidney metabolic nutrition",
+    "cardiovascular-kidney-metabolic lifestyle",
+    "cardiovascular kidney metabolic lifestyle",
     "ckm syndrome",
+    "ckm disease",
+    "ckm diseases",
     "ckm health",
     "ckm risk",
+    "ckm care",
+    "ckm nutrition",
+    "ckm lifestyle",
 ]
 
 CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
@@ -22,6 +37,12 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "clinical decision pathway",
     "practice guidance",
     "systematic review",
+    "cardiovascular-kidney-metabolic scientific statement",
+    "cardiovascular kidney metabolic scientific statement",
+    "cardiovascular-kidney-metabolic guideline",
+    "cardiovascular kidney metabolic guideline",
+    "ckm scientific statement",
+    "ckm guideline",
 ]
 
 METABOLIC_LIVER_NUTRITION_TERMS = [
