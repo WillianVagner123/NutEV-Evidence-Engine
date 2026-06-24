@@ -1,0 +1,217 @@
+{
+  "version_note": "Focused NutMEV expansion for cardiometabolic precision, adiposity measures, nutrition prescription and personalized dietary care. Loaded after keyword_taxonomy.json without changing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "personalized_nutrition": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation"
+      ],
+      "nutrition_prescription": [
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "diet prescription",
+        "diet prescriptions",
+        "dietary prescription",
+        "dietary prescriptions",
+        "nutrition care for diabetes remission",
+        "nutrition care for weight maintenance",
+        "dietitian-led remission",
+        "dietitian led remission"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "abdominal obesity",
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "visceral fat",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ],
+    "cardiometabolic": [
+      "cardiometabolic health",
+      "cardiometabolic disease",
+      "cardiometabolic diseases",
+      "metabolic health",
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "abdominal obesity",
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "visceral fat",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ],
+    "diet_quality_adherence": [
+      "personalized nutrition",
+      "personalised nutrition",
+      "precision nutrition",
+      "tailored dietary advice",
+      "tailored dietary intervention",
+      "personalized meal planning",
+      "personalised meal planning",
+      "nutrition prescription",
+      "dietary prescription",
+      "individualized meal plan",
+      "individualised meal plan"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiometabolic health",
+        "cardiometabolic disease",
+        "central adiposity",
+        "abdominal adiposity",
+        "visceral adiposity",
+        "waist-to-height ratio",
+        "waist to height ratio",
+        "waist-to-hip ratio",
+        "waist to hip ratio"
+      ],
+      "focus_terms": [
+        "nutrition prescription",
+        "dietary prescription",
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "nutrition care for diabetes remission",
+        "nutrition care for weight maintenance"
+      ],
+      "web_query_hints": [
+        "personalized nutrition guideline",
+        "personalised nutrition guideline",
+        "precision nutrition consensus",
+        "nutrition prescription guideline",
+        "dietary prescription guideline",
+        "waist-to-height ratio guideline",
+        "central adiposity guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiometabolic health",
+        "cardiometabolic disease",
+        "central adiposity",
+        "abdominal adiposity",
+        "visceral adiposity",
+        "waist-to-height ratio",
+        "waist to height ratio",
+        "waist-to-hip ratio",
+        "waist to hip ratio"
+      ],
+      "focus_terms": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "nutrition prescription",
+        "dietary prescription",
+        "nutrition care for diabetes remission",
+        "nutrition care for weight maintenance",
+        "dietitian-led remission",
+        "dietitian led remission"
+      ],
+      "web_query_hints": [
+        "personalized nutrition trial",
+        "personalised nutrition trial",
+        "precision nutrition trial",
+        "personalized dietary intervention cardiometabolic",
+        "personalised dietary intervention cardiometabolic",
+        "tailored dietary intervention obesity",
+        "tailored dietary intervention diabetes",
+        "individualized meal plan trial",
+        "nutrition prescription trial",
+        "dietary prescription intervention",
+        "dietitian-led remission trial",
+        "dietitian led remission trial"
+      ],
+      "document_terms": [
+        "personalized nutrition trial",
+        "personalised nutrition trial",
+        "precision nutrition trial",
+        "tailored dietary intervention",
+        "individualized dietary intervention",
+        "individualised dietary intervention"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "dietary prescription",
+        "nutrition prescription"
+      ],
+      "web_query_hints": [
+        "personalized meal planning framework",
+        "personalised meal planning framework",
+        "dietary prescription framework",
+        "nutrition prescription framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan",
+        "dietary prescription",
+        "nutrition prescription"
+      ],
+      "web_query_hints": [
+        "personalized meal planning framework",
+        "personalised meal planning framework",
+        "dietary prescription framework",
+        "nutrition prescription framework"
+      ]
+    }
+  }
+}
