@@ -1,0 +1,101 @@
+{
+  "version_note": "2026-06 hipertension diet precision supplement for NutMEV cardiometabolic workstreams",
+  "global": {
+    "diet_patterns": {
+      "dash": [
+        "low-sodium diet",
+        "low sodium diet",
+        "sodium reduction",
+        "dietary sodium reduction",
+        "reduced sodium diet",
+        "salt reduction",
+        "dietary salt reduction",
+        "salt substitute",
+        "salt substitutes",
+        "potassium-enriched salt",
+        "potassium enriched salt",
+        "potassium salt substitute",
+        "sodium restriction",
+        "dietary sodium restriction",
+        "lower sodium",
+        "reduced salt",
+        "redução de sódio",
+        "redução de sal",
+        "restrição de sódio",
+        "substituto do sal"
+      ]
+    },
+    "nutrition_domains": {
+      "fiber_matrix_micros": [
+        "dietary sodium",
+        "sodium intake",
+        "salt intake",
+        "sodium-to-potassium ratio",
+        "sodium potassium ratio",
+        "potassium intake",
+        "sodium reduction intervention",
+        "salt reduction intervention",
+        "low sodium foods",
+        "reduced sodium foods"
+      ]
+    }
+  },
+  "clinical": {
+    "hypertension": [
+      "salt-sensitive hypertension",
+      "salt sensitive hypertension",
+      "sodium-sensitive blood pressure",
+      "sodium sensitive blood pressure",
+      "dietary sodium and blood pressure",
+      "salt intake and blood pressure"
+    ]
+  },
+  "outcomes": {
+    "pressure": [
+      "sodium reduction",
+      "salt reduction",
+      "sodium intake",
+      "salt intake",
+      "dietary sodium",
+      "urinary sodium",
+      "24-hour urinary sodium",
+      "twenty-four-hour urinary sodium",
+      "potassium intake",
+      "sodium-to-potassium ratio",
+      "salt substitute",
+      "potassium-enriched salt"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "salt-sensitive hypertension",
+        "salt sensitive hypertension",
+        "dietary sodium and blood pressure"
+      ],
+      "web_query_hints": [
+        "sodium reduction guideline",
+        "salt reduction guideline",
+        "dietary sodium guideline",
+        "salt substitute guideline",
+        "potassium-enriched salt consensus",
+        "blood pressure sodium guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "salt-sensitive hypertension",
+        "salt sensitive hypertension",
+        "dietary sodium and blood pressure"
+      ],
+      "web_query_hints": [
+        "sodium reduction trial",
+        "salt reduction trial",
+        "sodium reduction systematic review",
+        "salt substitute trial",
+        "potassium-enriched salt trial",
+        "low-sodium diet blood pressure trial"
+      ]
+    }
+  }
+}
