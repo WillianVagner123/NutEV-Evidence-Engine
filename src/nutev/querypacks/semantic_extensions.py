@@ -264,6 +264,35 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+ANTI_INFLAMMATORY_DIET_TERMS = [
+    "anti-inflammatory diet",
+    "anti inflammatory diet",
+    "anti-inflammatory dietary pattern",
+    "anti inflammatory dietary pattern",
+    "inflammatory diet pattern",
+    "inflammatory dietary pattern",
+    "dietary inflammatory index",
+    "empirical dietary inflammatory pattern",
+    "edip score",
+    "anti-inflammatory diet score",
+    "anti inflammatory diet score",
+    "pro-inflammatory diet",
+    "pro inflammatory diet",
+    "pro-inflammatory dietary pattern",
+    "pro inflammatory dietary pattern",
+]
+
+ANTI_INFLAMMATORY_DIET_DOCUMENT_TERMS = [
+    "anti-inflammatory diet systematic review",
+    "anti inflammatory diet systematic review",
+    "anti-inflammatory dietary pattern systematic review",
+    "dietary inflammatory index systematic review",
+    "dietary inflammatory index meta-analysis",
+    "empirical dietary inflammatory pattern validation",
+    "anti-inflammatory diet trial",
+    "anti inflammatory diet trial",
+]
+
 ULTRA_PROCESSED_FOOD_TERMS = [
     "ultra-processed food",
     "ultra-processed foods",
@@ -626,8 +655,9 @@ def apply_semantic_extensions() -> None:
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
             block_name,
-            terms=DIET_QUALITY_INDEX_TERMS,
-            document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
+            terms=DIET_QUALITY_INDEX_TERMS + ANTI_INFLAMMATORY_DIET_TERMS,
+            document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS
+            + ANTI_INFLAMMATORY_DIET_DOCUMENT_TERMS,
         )
     for block_name in (
         "adherence_persistence",
