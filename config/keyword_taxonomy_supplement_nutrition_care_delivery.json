@@ -1,0 +1,139 @@
+{
+  "version_note": "Adds focused nutrition care delivery and dietitian-led care terms for cardiometabolic NutMEV searches. Loaded after keyword_taxonomy.json without replacing the base taxonomy or prior supplements.",
+  "global": {
+    "implementation_behavior": {
+      "nutrition_care_delivery_longitudinal": [
+        "nutrition care delivery",
+        "dietitian-led care",
+        "dietitian led care",
+        "dietitian-delivered care",
+        "dietitian delivered care",
+        "dietitian-managed care",
+        "dietitian managed care",
+        "registered dietitian referral",
+        "dietitian referral",
+        "dietetic referral",
+        "nutrition referral",
+        "nutrition follow-up",
+        "nutrition follow up",
+        "dietitian follow-up",
+        "dietitian follow up",
+        "nutrition care coordination",
+        "nutrition case management",
+        "dietetic care pathway",
+        "dietetic care pathways",
+        "dietetic care plan",
+        "dietetic care plans",
+        "nutrition care plan",
+        "nutrition care plans",
+        "nutrition shared decision making",
+        "dietary shared decision making",
+        "lifestyle medicine nutrition counseling",
+        "lifestyle medicine nutrition counselling",
+        "cardiometabolic nutrition counseling",
+        "cardiometabolic nutrition counselling",
+        "obesity nutrition counseling",
+        "obesity nutrition counselling",
+        "diabetes nutrition counseling",
+        "diabetes nutrition counselling"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "nutrition follow-up",
+      "nutrition follow up",
+      "dietitian follow-up",
+      "dietitian follow up",
+      "nutrition care coordination",
+      "nutrition case management",
+      "nutrition shared decision making",
+      "dietary shared decision making"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "nutrition care delivery",
+        "dietitian-led care",
+        "dietitian led care",
+        "registered dietitian referral",
+        "dietitian referral",
+        "dietetic referral",
+        "nutrition referral",
+        "nutrition care coordination",
+        "nutrition care plan",
+        "nutrition care plans",
+        "dietetic care pathway",
+        "dietetic care pathways",
+        "lifestyle medicine nutrition counseling",
+        "lifestyle medicine nutrition counselling",
+        "cardiometabolic nutrition counseling",
+        "cardiometabolic nutrition counselling"
+      ],
+      "web_query_hints": [
+        "nutrition care guideline obesity",
+        "nutrition care pathway diabetes guideline",
+        "dietitian referral obesity guideline",
+        "dietitian-led care cardiometabolic guideline",
+        "registered dietitian referral diabetes guideline",
+        "cardiometabolic nutrition counseling consensus",
+        "lifestyle medicine nutrition counseling guideline"
+      ],
+      "document_terms": [
+        "nutrition care guideline",
+        "nutrition care pathway",
+        "dietetic care pathway",
+        "dietitian referral guideline",
+        "nutrition care consensus",
+        "dietitian-led care guideline",
+        "nutrition shared decision making guideline"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "nutrition care delivery",
+        "dietitian-led care",
+        "dietitian led care",
+        "dietitian-delivered care",
+        "dietitian delivered care",
+        "registered dietitian referral",
+        "dietitian referral",
+        "nutrition referral",
+        "nutrition follow-up",
+        "nutrition follow up",
+        "dietitian follow-up",
+        "dietitian follow up",
+        "nutrition care coordination",
+        "nutrition case management",
+        "nutrition shared decision making",
+        "dietary shared decision making",
+        "lifestyle medicine nutrition counseling",
+        "lifestyle medicine nutrition counselling",
+        "cardiometabolic nutrition counseling",
+        "cardiometabolic nutrition counselling",
+        "obesity nutrition counseling",
+        "obesity nutrition counselling",
+        "diabetes nutrition counseling",
+        "diabetes nutrition counselling"
+      ],
+      "web_query_hints": [
+        "dietitian-led care obesity trial",
+        "dietitian-led care diabetes trial",
+        "nutrition care coordination cardiometabolic trial",
+        "nutrition follow-up weight management trial",
+        "registered dietitian referral diabetes intervention",
+        "cardiometabolic nutrition counseling trial",
+        "lifestyle medicine nutrition counseling intervention",
+        "nutrition shared decision making dietary adherence"
+      ],
+      "document_terms": [
+        "dietitian-led care trial",
+        "nutrition care coordination trial",
+        "nutrition follow-up trial",
+        "nutrition case management trial",
+        "nutrition shared decision making intervention"
+      ]
+    }
+  }
+}
