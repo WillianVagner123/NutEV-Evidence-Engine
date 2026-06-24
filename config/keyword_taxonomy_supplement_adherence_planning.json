@@ -1,0 +1,54 @@
+{
+  "version_note": "Supplemental NutMEV expansion for dietary adherence planning and habit-maintenance terms; loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "adherence_planning_and_habit_maintenance": [
+        "action planning",
+        "coping planning",
+        "implementation intentions",
+        "if-then planning",
+        "if then planning",
+        "goal setting",
+        "problem solving",
+        "habit formation",
+        "habit-based intervention",
+        "habit based intervention",
+        "dietary habit formation",
+        "healthy eating habits",
+        "dietary habit change",
+        "meal planning adherence",
+        "dietary self-monitoring",
+        "dietary self monitoring",
+        "dietary self-regulation",
+        "dietary self regulation",
+        "eating self-regulation",
+        "eating self regulation",
+        "relapse prevention",
+        "lapse management",
+        "dietary lapse",
+        "dietary lapses",
+        "maintenance of behavior change",
+        "maintenance of behaviour change",
+        "long-term dietary adherence",
+        "long term dietary adherence"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "action planning",
+      "coping planning",
+      "implementation intentions",
+      "if-then planning",
+      "habit formation",
+      "dietary habit formation",
+      "meal planning adherence",
+      "dietary self monitoring",
+      "eating self regulation",
+      "maintenance of behavior change",
+      "maintenance of behaviour change",
+      "long-term dietary adherence",
+      "long term dietary adherence"
+    ]
+  }
+}
