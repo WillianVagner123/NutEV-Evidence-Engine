@@ -1,0 +1,55 @@
+from __future__ import annotations
+
+DIETARY_ADHERENCE_SCORE_TERMS: list[str] = [
+    "dietary pattern adherence",
+    "dietary pattern score",
+    "diet adherence score",
+    "diet adherence index",
+    "dietary adherence score",
+    "dietary adherence index",
+    "diet quality index",
+    "diet quality score",
+    "healthy eating index score",
+    "alternate healthy eating index",
+    "alternative healthy eating index",
+    "mediterranean diet adherence",
+    "mediterranean diet adherence score",
+    "mediterranean diet score",
+    "dash adherence",
+    "dash diet adherence",
+    "dash score",
+    "plant-based diet index",
+    "healthy plant-based diet index",
+]
+
+DIETARY_ADHERENCE_DOCUMENT_TERMS: list[str] = [
+    "dietary adherence score",
+    "dietary adherence index",
+    "diet quality index",
+    "healthy eating index",
+    "mediterranean diet adherence score",
+    "dietary pattern adherence study",
+    "dietary pattern adherence intervention",
+]
+
+DIETARY_ADHERENCE_SCORE_BONUSES: tuple[tuple[str, float], ...] = (
+    ("mediterranean diet adherence score", 18),
+    ("dietary pattern adherence", 16),
+    ("dietary adherence score", 16),
+    ("dietary adherence index", 16),
+    ("diet adherence score", 16),
+    ("diet adherence index", 16),
+    ("healthy plant-based diet index", 16),
+    ("alternate healthy eating index", 14),
+    ("alternative healthy eating index", 14),
+    ("healthy eating index score", 14),
+    ("diet quality index", 14),
+    ("diet quality score", 14),
+    ("mediterranean diet adherence", 14),
+    ("mediterranean diet score", 14),
+    ("dash diet adherence", 14),
+    ("dash adherence", 14),
+    ("dash score", 12),
+    ("plant-based diet index", 14),
+    ("dietary pattern score", 12),
+)
