@@ -1,0 +1,117 @@
+{
+  "version_note": "2026-06-dpp-ckm-search-expansion",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "national diabetes prevention program",
+        "national diabetes prevention programme",
+        "DPP lifestyle intervention",
+        "DPP lifestyle program",
+        "DPP lifestyle programme",
+        "lifestyle change program",
+        "lifestyle change programme",
+        "lifestyle coach",
+        "lifestyle coaches"
+      ],
+      "behavioral": [
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "DPP lifestyle intervention",
+        "lifestyle change program",
+        "lifestyle change programme",
+        "group lifestyle balance",
+        "prevent t2",
+        "PreventT2",
+        "translational diabetes prevention"
+      ]
+    }
+  },
+  "clinical": {
+    "diabetes": [
+      "prediabetes lifestyle intervention",
+      "diabetes prevention program",
+      "diabetes prevention programme",
+      "national diabetes prevention program",
+      "national diabetes prevention programme",
+      "DPP lifestyle intervention",
+      "DPP lifestyle program",
+      "DPP lifestyle programme",
+      "translational diabetes prevention",
+      "diabetes prevention translation"
+    ],
+    "cvd": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "CKM health",
+      "CKM risk"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "ckm syndrome"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic syndrome guideline",
+        "cardiovascular kidney metabolic syndrome guideline",
+        "CKM syndrome scientific statement",
+        "cardiovascular-kidney-metabolic health statement",
+        "cardiovascular kidney metabolic health statement"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "prediabetes lifestyle intervention",
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "national diabetes prevention program",
+        "national diabetes prevention programme",
+        "DPP lifestyle intervention",
+        "DPP lifestyle program",
+        "DPP lifestyle programme",
+        "translational diabetes prevention",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome"
+      ],
+      "web_query_hints": [
+        "diabetes prevention program lifestyle intervention",
+        "national diabetes prevention program lifestyle coach",
+        "DPP lifestyle intervention trial",
+        "diabetes prevention program adherence",
+        "diabetes prevention program implementation",
+        "translational diabetes prevention lifestyle intervention",
+        "prediabetes lifestyle intervention systematic review",
+        "cardiovascular-kidney-metabolic syndrome lifestyle intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "lifestyle change program",
+        "lifestyle change programme",
+        "lifestyle coach",
+        "lifestyle coaches",
+        "diabetes prevention program",
+        "DPP lifestyle intervention"
+      ],
+      "web_query_hints": [
+        "lifestyle change program adherence framework",
+        "diabetes prevention program lifestyle coach curriculum",
+        "DPP lifestyle intervention behavior change"
+      ]
+    }
+  }
+}
