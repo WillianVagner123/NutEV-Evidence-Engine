@@ -1,0 +1,50 @@
+{
+  "version_note": "Supplemental scoring for social prescribing and food-access referral signals. Complements keyword_taxonomy_supplement_social_prescribing.json.",
+  "keyword_points": {
+    "social prescribing link worker": 4,
+    "social prescribing link workers": 4,
+    "link worker": 2,
+    "link workers": 2,
+    "community connector": 3,
+    "community connectors": 3,
+    "community resource referral": 3,
+    "community resource referrals": 3,
+    "food as medicine referral": 4,
+    "food is medicine referral": 4,
+    "produce prescription referral": 4,
+    "medically tailored food referral": 4,
+    "closed-loop food referral": 4,
+    "closed loop food referral": 4,
+    "social needs navigation": 3,
+    "food resource navigation": 3,
+    "nutrition resource navigation": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "social prescribing link worker": 3,
+      "community connector": 2,
+      "community resource referral": 3,
+      "food as medicine referral": 3,
+      "food is medicine referral": 3,
+      "produce prescription referral": 3,
+      "medically tailored food referral": 3,
+      "closed-loop food referral": 3,
+      "closed loop food referral": 3,
+      "food resource navigation": 2,
+      "nutrition resource navigation": 2
+    },
+    "busca2b": {
+      "social prescribing link worker": 3,
+      "community connector": 2,
+      "community resource referral": 3,
+      "food as medicine referral": 3,
+      "food is medicine referral": 3,
+      "produce prescription referral": 3,
+      "medically tailored food referral": 3,
+      "closed-loop food referral": 3,
+      "closed loop food referral": 3,
+      "food resource navigation": 2,
+      "nutrition resource navigation": 2
+    }
+  }
+}

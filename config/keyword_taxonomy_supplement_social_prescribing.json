@@ -1,0 +1,118 @@
+{
+  "version_note": "Supplemental social prescribing and food-access referral terms for NutMEV query expansion. Loaded after keyword_taxonomy.json without modifying the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_as_medicine_access": [
+        "social prescribing link worker",
+        "social prescribing link workers",
+        "link worker",
+        "link workers",
+        "community connector",
+        "community connectors",
+        "community resource referral",
+        "community resource referrals",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "social needs navigation",
+        "food resource navigation",
+        "nutrition resource navigation"
+      ],
+      "contextual": [
+        "social prescribing link worker",
+        "social prescribing link workers",
+        "link worker",
+        "link workers",
+        "community connector",
+        "community connectors",
+        "community resource referral",
+        "community resource referrals",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "social needs navigation",
+        "food resource navigation",
+        "nutrition resource navigation"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "social prescribing link worker",
+      "social prescribing link workers",
+      "link worker",
+      "link workers",
+      "community connector",
+      "community connectors",
+      "community resource referral",
+      "community resource referrals",
+      "food as medicine referral",
+      "food is medicine referral",
+      "produce prescription referral",
+      "medically tailored food referral",
+      "closed-loop food referral",
+      "closed loop food referral",
+      "social needs navigation",
+      "food resource navigation",
+      "nutrition resource navigation"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "social prescribing link worker",
+        "community connector",
+        "community resource referral",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "closed-loop food referral",
+        "social needs navigation",
+        "food resource navigation",
+        "nutrition resource navigation"
+      ],
+      "web_query_hints": [
+        "social prescribing food referral report",
+        "social prescribing link worker nutrition",
+        "community connector food access program",
+        "community resource referral food insecurity",
+        "food as medicine referral program",
+        "produce prescription referral program",
+        "medically tailored food referral program",
+        "closed-loop food referral implementation",
+        "food resource navigation program",
+        "nutrition resource navigation program"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "social prescribing link worker",
+        "community connector",
+        "community resource referral",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "closed-loop food referral",
+        "social needs navigation",
+        "food resource navigation",
+        "nutrition resource navigation"
+      ],
+      "web_query_hints": [
+        "social prescribing food referral trial",
+        "social prescribing link worker nutrition intervention",
+        "community connector food access intervention",
+        "community resource referral cardiometabolic",
+        "food as medicine referral intervention",
+        "produce prescription referral intervention",
+        "medically tailored food referral cardiometabolic",
+        "closed-loop food referral implementation",
+        "food resource navigation intervention",
+        "nutrition resource navigation intervention"
+      ]
+    }
+  }
+}
