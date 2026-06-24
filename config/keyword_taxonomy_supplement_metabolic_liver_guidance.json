@@ -1,0 +1,87 @@
+{
+  "version_note": "2026-06-21 metabolic liver guidance query expansion",
+  "global": {
+    "document_types": {
+      "guidelines": [
+        "MASLD guideline",
+        "MASLD practice guidance",
+        "MASLD consensus statement",
+        "MASLD consensus report",
+        "MASLD clinical practice guideline",
+        "NAFLD guideline",
+        "NAFLD practice guidance",
+        "NAFLD consensus statement",
+        "NAFLD consensus report",
+        "NAFLD clinical practice guideline",
+        "MASH guideline",
+        "MASH practice guidance",
+        "NASH guideline",
+        "NASH practice guidance",
+        "steatotic liver disease guideline",
+        "steatotic liver disease practice guidance",
+        "steatotic liver disease consensus",
+        "metabolic dysfunction-associated steatotic liver disease guideline",
+        "metabolic dysfunction-associated steatotic liver disease practice guidance",
+        "metabolic dysfunction-associated steatohepatitis guideline",
+        "metabolic dysfunction-associated steatohepatitis practice guidance"
+      ],
+      "reviews": [
+        "MASLD systematic review",
+        "NAFLD systematic review",
+        "MASH systematic review",
+        "NASH systematic review",
+        "steatotic liver disease systematic review",
+        "MASLD umbrella review",
+        "NAFLD umbrella review"
+      ]
+    }
+  },
+  "clinical": {
+    "fatty_liver": [
+      "metabolic dysfunction associated steatotic liver disease",
+      "MASLD guideline",
+      "NAFLD guideline",
+      "MASH guideline",
+      "NASH guideline",
+      "MASLD practice guidance",
+      "NAFLD practice guidance",
+      "steatotic liver disease practice guidance"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "MASLD guideline",
+        "MASLD practice guidance",
+        "NAFLD guideline",
+        "NAFLD practice guidance",
+        "MASH guideline",
+        "MASH practice guidance",
+        "NASH guideline",
+        "NASH practice guidance",
+        "steatotic liver disease guideline",
+        "steatotic liver disease practice guidance",
+        "metabolic dysfunction-associated steatotic liver disease guideline",
+        "metabolic dysfunction-associated steatohepatitis practice guidance"
+      ]
+    },
+    "busca2b": {
+      "clinical_keys": [
+        "fatty_liver"
+      ],
+      "web_query_hints": [
+        "MASLD dietary intervention",
+        "MASLD nutrition therapy",
+        "MASLD systematic review",
+        "NAFLD dietary intervention",
+        "NAFLD nutrition therapy",
+        "NAFLD systematic review",
+        "MASH dietary intervention",
+        "NASH dietary intervention",
+        "steatotic liver disease dietary intervention",
+        "steatotic liver disease lifestyle intervention",
+        "metabolic dysfunction-associated steatotic liver disease systematic review"
+      ]
+    }
+  }
+}
