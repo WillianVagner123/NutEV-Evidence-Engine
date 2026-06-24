@@ -1,0 +1,69 @@
+{
+  "version_note": "2026-06 scoring support for adherence, self-efficacy, and food-skills search expansion.",
+  "keyword_points": {
+    "dietary self-efficacy": 3,
+    "nutrition self-efficacy": 3,
+    "healthy eating self-efficacy": 3,
+    "cooking self-efficacy": 3,
+    "meal planning self-efficacy": 3,
+    "food preparation self-efficacy": 3,
+    "dietary self-regulation": 3,
+    "eating self-regulation": 3,
+    "self-regulation skills": 2,
+    "food self-monitoring": 3,
+    "implementation intention": 3,
+    "implementation intentions": 3,
+    "if-then planning": 3,
+    "action control": 2,
+    "habit formation": 3,
+    "healthy eating habits": 3,
+    "food skills": 3,
+    "food skills confidence": 3,
+    "food resource management": 3,
+    "food management skills": 3,
+    "meal planning skills": 3,
+    "meal preparation skills": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "dietary self-efficacy": 3,
+      "nutrition self-efficacy": 3,
+      "healthy eating self-efficacy": 3,
+      "cooking self-efficacy": 2,
+      "meal planning self-efficacy": 2,
+      "dietary self-monitoring": 3,
+      "food self-monitoring": 3,
+      "implementation intentions": 3,
+      "if-then planning": 3,
+      "habit formation": 3,
+      "food skills": 2,
+      "food resource management": 2
+    },
+    "a3": {
+      "dietary self-efficacy": 4,
+      "nutrition self-efficacy": 4,
+      "healthy eating self-efficacy": 4,
+      "cooking self-efficacy": 4,
+      "meal planning self-efficacy": 4,
+      "food preparation self-efficacy": 4,
+      "dietary self-regulation": 4,
+      "eating self-regulation": 4,
+      "food skills": 4,
+      "food skills confidence": 4,
+      "food resource management": 4
+    },
+    "artigo3_framework": {
+      "dietary self-efficacy": 4,
+      "nutrition self-efficacy": 4,
+      "healthy eating self-efficacy": 4,
+      "cooking self-efficacy": 4,
+      "meal planning self-efficacy": 4,
+      "food preparation self-efficacy": 4,
+      "dietary self-regulation": 4,
+      "eating self-regulation": 4,
+      "food skills": 4,
+      "food skills confidence": 4,
+      "food resource management": 4
+    }
+  }
+}

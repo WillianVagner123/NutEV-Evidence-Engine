@@ -1,0 +1,67 @@
+{
+  "version_note": "2026-06 adherence, self-efficacy, and food-skills search expansion for NutMEV precision.",
+  "global": {
+    "implementation_behavior": {
+      "behavioral": [
+        "dietary self-efficacy",
+        "nutrition self-efficacy",
+        "healthy eating self-efficacy",
+        "cooking self-efficacy",
+        "meal planning self-efficacy",
+        "food preparation self-efficacy",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "self-regulation skills",
+        "dietary self-monitoring",
+        "food self-monitoring",
+        "implementation intention",
+        "implementation intentions",
+        "if-then planning",
+        "action control",
+        "habit formation",
+        "healthy eating habits",
+        "food skills",
+        "food skills confidence",
+        "food resource management",
+        "food management skills",
+        "meal planning skills",
+        "meal preparation skills"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "dietary self-efficacy intervention",
+        "nutrition self-efficacy intervention",
+        "healthy eating self-efficacy trial",
+        "cooking self-efficacy intervention",
+        "meal planning self-efficacy intervention",
+        "dietary self-monitoring trial",
+        "food self-monitoring intervention",
+        "implementation intentions diet intervention",
+        "if-then planning diet intervention",
+        "habit formation diet intervention",
+        "food skills intervention",
+        "food resource management intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "dietary self-efficacy scale",
+        "nutrition self-efficacy scale",
+        "healthy eating self-efficacy scale",
+        "cooking self-efficacy scale",
+        "meal planning self-efficacy scale",
+        "food preparation self-efficacy scale",
+        "dietary self-regulation questionnaire",
+        "eating self-regulation questionnaire",
+        "dietary self-monitoring questionnaire",
+        "food skills questionnaire",
+        "food skills scale",
+        "food resource management scale",
+        "meal planning skills questionnaire"
+      ]
+    }
+  }
+}
