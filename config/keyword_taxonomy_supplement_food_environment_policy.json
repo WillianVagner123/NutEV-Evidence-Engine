@@ -1,0 +1,94 @@
+{
+  "version_note": "Adds food environment policy and choice-architecture terms for NutMEV search coverage without modifying the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food environment intervention",
+        "food environment interventions",
+        "healthy food retail",
+        "healthy food retail intervention",
+        "healthy food retail policy",
+        "food procurement policy",
+        "healthy food procurement policy",
+        "institutional food procurement",
+        "public food procurement",
+        "food service guidelines",
+        "healthy food service guidelines",
+        "nutrition standards for food service",
+        "choice architecture",
+        "healthy choice architecture",
+        "choice architecture intervention",
+        "nudge",
+        "nudging",
+        "healthy default",
+        "healthy defaults",
+        "food affordability",
+        "healthy food affordability",
+        "food insecurity intervention",
+        "nutrition security intervention"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food environment intervention",
+        "food environment interventions",
+        "healthy food retail",
+        "healthy food retail intervention",
+        "healthy food retail policy",
+        "food procurement policy",
+        "healthy food procurement policy",
+        "institutional food procurement",
+        "public food procurement",
+        "food service guidelines",
+        "healthy food service guidelines",
+        "nutrition standards for food service",
+        "choice architecture",
+        "healthy choice architecture",
+        "choice architecture intervention",
+        "nudge",
+        "nudging",
+        "healthy default",
+        "healthy defaults",
+        "food affordability",
+        "healthy food affordability",
+        "food insecurity intervention",
+        "nutrition security intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food service guidelines",
+        "healthy food service guidelines",
+        "nutrition standards for food service",
+        "healthy food procurement policy",
+        "healthy food retail policy"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food environment intervention",
+        "healthy food retail intervention",
+        "choice architecture intervention",
+        "healthy default intervention",
+        "nutrition security intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "food environment intervention",
+        "healthy food retail",
+        "choice architecture",
+        "healthy defaults",
+        "food affordability"
+      ],
+      "web_query_hints": [
+        "choice architecture",
+        "healthy default",
+        "healthy food retail",
+        "food affordability"
+      ]
+    }
+  }
+}
