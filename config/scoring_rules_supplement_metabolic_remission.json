@@ -1,0 +1,40 @@
+{
+  "version_note": "2026-06-22 metabolic remission and weight maintenance prioritization",
+  "workstream_bonus": {
+    "busca2a": {
+      "diabetes remission": 5,
+      "type 2 diabetes remission": 6,
+      "remission of type 2 diabetes": 6,
+      "glycemic remission": 5,
+      "glycaemic remission": 5,
+      "diabetes reversal": 5,
+      "metabolic remission": 5,
+      "remission maintenance": 5,
+      "diabetes remission maintenance": 6,
+      "weight loss maintenance": 5,
+      "long-term weight loss maintenance": 6,
+      "long term weight loss maintenance": 6,
+      "weight regain prevention": 5,
+      "weight regain management": 4
+    },
+    "busca2b": {
+      "diabetes remission": 5,
+      "type 2 diabetes remission": 6,
+      "remission of type 2 diabetes": 6,
+      "glycemic remission": 5,
+      "glycaemic remission": 5,
+      "diabetes reversal": 5,
+      "diet-induced diabetes remission": 6,
+      "diet induced diabetes remission": 6,
+      "lifestyle-induced diabetes remission": 6,
+      "lifestyle induced diabetes remission": 6,
+      "remission maintenance": 5,
+      "diabetes remission maintenance": 6,
+      "weight loss maintenance": 5,
+      "long-term weight loss maintenance": 6,
+      "long term weight loss maintenance": 6,
+      "weight regain prevention": 5,
+      "weight regain management": 4
+    }
+  }
+}
