@@ -1,0 +1,131 @@
+{
+  "version_note": "2026-06-25: Adds focused culinary medicine and food literacy expansion terms without modifying the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "culinary medicine curriculum",
+        "culinary medicine education",
+        "culinary medicine program",
+        "culinary medicine programme",
+        "culinary medicine training",
+        "culinary medicine evaluation",
+        "culinary nutrition intervention",
+        "teaching kitchen curriculum",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "teaching kitchen evaluation",
+        "food literacy intervention",
+        "food literacy program",
+        "food literacy programme",
+        "food literacy assessment",
+        "food literacy questionnaire",
+        "food literacy scale",
+        "food skills intervention",
+        "food skills program",
+        "food skills questionnaire",
+        "cooking skills intervention",
+        "cooking skills program",
+        "cooking skills questionnaire",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "cooking confidence scale",
+        "meal preparation skills",
+        "food preparation skills",
+        "food preparation confidence"
+      ]
+    },
+    "implementation_behavior": {
+      "behavioral": [
+        "culinary medicine curriculum",
+        "culinary medicine education",
+        "culinary medicine program",
+        "culinary medicine programme",
+        "culinary medicine training",
+        "culinary medicine evaluation",
+        "culinary nutrition intervention",
+        "teaching kitchen curriculum",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "teaching kitchen evaluation",
+        "food literacy intervention",
+        "food literacy program",
+        "food literacy programme",
+        "food literacy assessment",
+        "food skills intervention",
+        "food skills program",
+        "cooking skills intervention",
+        "cooking skills program",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "cooking confidence scale"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "curriculum",
+        "training program",
+        "program evaluation",
+        "programme evaluation",
+        "implementation guide",
+        "practice toolkit"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "food literacy intervention",
+      "food literacy program",
+      "food literacy programme",
+      "food literacy assessment",
+      "food skills intervention",
+      "cooking skills intervention",
+      "culinary nutrition intervention"
+    ],
+    "behavioral": [
+      "cooking self-efficacy scale",
+      "cooking self efficacy scale",
+      "cooking confidence scale",
+      "food preparation confidence",
+      "meal preparation skills",
+      "food preparation skills"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "culinary medicine curriculum",
+        "culinary medicine program",
+        "culinary medicine evaluation",
+        "teaching kitchen curriculum",
+        "teaching kitchen program",
+        "teaching kitchen evaluation",
+        "food literacy intervention",
+        "food literacy program",
+        "food literacy assessment",
+        "food skills intervention",
+        "cooking skills intervention"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "culinary nutrition intervention",
+        "teaching kitchen evaluation",
+        "food literacy intervention",
+        "food skills intervention",
+        "cooking skills intervention",
+        "cooking self-efficacy scale"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "food literacy assessment",
+        "food literacy questionnaire",
+        "food literacy scale",
+        "food skills questionnaire",
+        "cooking skills questionnaire",
+        "cooking self-efficacy scale",
+        "cooking confidence scale"
+      ]
+    }
+  }
+}
