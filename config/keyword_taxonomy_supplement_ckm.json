@@ -1,0 +1,58 @@
+{
+  "version_note": "2026-06-25: CKM query expansion for cardiometabolic guideline and intervention retrieval.",
+  "clinical": {
+    "cvd": [
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome",
+      "ckm health",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health"
+    ],
+    "metabolic_syndrome": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "ckm health"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic guideline",
+        "cardiovascular kidney metabolic guideline",
+        "ckm syndrome guideline",
+        "ckm health scientific statement",
+        "cardiovascular-kidney-metabolic scientific statement",
+        "cardiovascular-kidney-metabolic consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "ckm health"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "cardiovascular kidney metabolic lifestyle intervention",
+        "ckm syndrome lifestyle intervention",
+        "ckm health nutrition intervention",
+        "cardiovascular-kidney-metabolic dietary intervention",
+        "cardiovascular-kidney-metabolic implementation"
+      ]
+    }
+  }
+}
