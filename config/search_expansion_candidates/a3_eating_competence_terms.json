@@ -1,0 +1,50 @@
+{
+  "version": "2026-06-a3-eating-competence-v1",
+  "status": "candidate_for_querypack_integration",
+  "workstreams": [
+    "a3",
+    "artigo3_framework"
+  ],
+  "semantic_block": "food_literacy_agency",
+  "rationale": "A3 busca instrumentos e frameworks para competencias alimentares, adesao, literacia alimentar e comportamento alimentar. O scoring do Global Watch ja reconhece eating competence, mas a taxonomia/querypack principal ainda nao possui um bloco auditavel para Satter Eating Competence e variantes. Estes termos sao especificos o suficiente para ampliar cobertura de instrumentos sem abrir uma busca ampla por comportamento alimentar generico.",
+  "coverage_terms": [
+    "eating competence",
+    "competent eating",
+    "eating competence model",
+    "Satter Eating Competence",
+    "Satter eating competence model",
+    "ecSatter",
+    "ecSatter Inventory",
+    "Satter Eating Competence Inventory",
+    "eating competence inventory",
+    "eating competence questionnaire",
+    "eating competence scale"
+  ],
+  "recommended_query_anchors": [
+    "food literacy",
+    "nutrition literacy",
+    "food agency",
+    "diet quality",
+    "dietary adherence",
+    "behavior change",
+    "self-efficacy",
+    "meal planning"
+  ],
+  "recommended_document_terms": [
+    "questionnaire validation",
+    "psychometric validation",
+    "scale development",
+    "survey instrument",
+    "validation study"
+  ],
+  "noise_controls": [
+    "Keep these terms under artigo3_framework/A3 rather than all workstreams by default.",
+    "Anchor provider queries to instrument, psychometric, validation, framework, adherence, food literacy, diet quality, or behavior-change terms.",
+    "Do not use broad standalone eating behavior terms without nutrition or instrument anchors."
+  ],
+  "expected_pipeline_integration_points": [
+    "src/nutev/querypacks/semantic_blocks.py: add terms to food_literacy_agency",
+    "src/nutev/querypacks/semantic_blocks.py: add instrument/document terms for validation-focused retrieval",
+    "config/keyword_taxonomy.json: optionally add A3 web_query_hints for questionnaire/instrument recovery"
+  ]
+}
