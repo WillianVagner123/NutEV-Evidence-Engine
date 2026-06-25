@@ -1,16 +1,39 @@
 from __future__ import annotations
 
+import re
+from functools import lru_cache
 from typing import Any
+
+_TOKEN_RE = re.compile(r"[a-z0-9]+")
 
 
 def _text_blob(record: dict[str, Any]) -> str:
-    return " ".join(
-        str(record.get(k, "") or "") for k in ("title", "abstract", "extracted_text")
-    ).lower()
+    return _normalize_text(
+        " ".join(
+            str(record.get(k, "") or "")
+            for k in ("title", "abstract", "extracted_text")
+        )
+    )
+
+
+def _normalize_text(value: str) -> str:
+    return " ".join(_TOKEN_RE.findall(value.lower()))
+
+
+@lru_cache(maxsize=4096)
+def _normalized_term(term: str) -> str:
+    return _normalize_text(term)
+
+
+def _contains_term(blob: str, term: str) -> bool:
+    normalized = _normalized_term(term)
+    if not normalized:
+        return False
+    return f" {normalized} " in f" {blob} "
 
 
 def _match_terms(blob: str, terms: list[str]) -> int:
-    return sum(1 for term in terms if term.lower() in blob)
+    return sum(1 for term in terms if _contains_term(blob, term))
 
 
 def classify_evidence(
