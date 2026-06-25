@@ -1,0 +1,68 @@
+{
+  "version_note": "Supplemental NutMEV scoring for diet-quality indices and dietary-pattern adherence scores; prioritizes operationally relevant adherence and cardiometabolic diet-quality evidence.",
+  "keyword_points": {
+    "healthy eating index": 3,
+    "hei score": 3,
+    "alternative healthy eating index": 3,
+    "ahei": 3,
+    "mediterranean diet score": 3,
+    "alternate mediterranean diet score": 3,
+    "dash score": 3,
+    "dash adherence score": 3,
+    "plant-based diet index": 3,
+    "healthy plant-based diet index": 3,
+    "diet quality index": 3,
+    "diet quality score": 3,
+    "dietary quality score": 3,
+    "dietary pattern score": 3,
+    "dietary pattern adherence": 4,
+    "diet adherence score": 4,
+    "dietary adherence score": 4,
+    "dietary guideline adherence": 4,
+    "food-based dietary guideline adherence": 4,
+    "guideline adherence score": 4,
+    "planetary health diet index": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "healthy eating index": 3,
+      "alternative healthy eating index": 3,
+      "mediterranean diet score": 3,
+      "dash adherence score": 3,
+      "plant-based diet index": 3,
+      "healthy plant-based diet index": 3,
+      "diet quality index": 3,
+      "diet quality score": 3,
+      "dietary pattern adherence": 4,
+      "diet adherence score": 4,
+      "dietary adherence score": 4,
+      "dietary guideline adherence": 4,
+      "food-based dietary guideline adherence": 4,
+      "planetary health diet index": 3
+    },
+    "a3": {
+      "diet quality instrument": 4,
+      "diet quality questionnaire": 4,
+      "dietary adherence instrument": 4,
+      "dietary guideline adherence questionnaire": 4,
+      "food-based dietary guideline adherence questionnaire": 4,
+      "diet quality index": 3,
+      "diet quality score": 3,
+      "dietary pattern adherence": 3,
+      "dietary adherence score": 3,
+      "dietary guideline adherence": 3
+    },
+    "artigo3_framework": {
+      "diet quality instrument": 4,
+      "diet quality questionnaire": 4,
+      "dietary adherence instrument": 4,
+      "dietary guideline adherence questionnaire": 4,
+      "food-based dietary guideline adherence questionnaire": 4,
+      "diet quality index": 3,
+      "diet quality score": 3,
+      "dietary pattern adherence": 3,
+      "dietary adherence score": 3,
+      "dietary guideline adherence": 3
+    }
+  }
+}
