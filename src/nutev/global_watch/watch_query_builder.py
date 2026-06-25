@@ -1049,6 +1049,8 @@ THESIS_MODE_SEED_GROUPS = {
         [
             "culinary medicine",
             "culinary nutrition",
+            "food literacy",
+            "food and nutrition literacy",
             "culinary medicine curriculum",
             "culinary medicine education",
             "culinary medicine program",
