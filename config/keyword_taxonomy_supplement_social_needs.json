@@ -1,0 +1,88 @@
+{
+  "version_note": "Focused expansion for food-related health-related social needs and closed-loop food referrals; loaded after keyword_taxonomy.json without modifying raw taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "health_related_social_needs_food_access": [
+        "health-related social needs",
+        "health related social needs",
+        "health-related social needs screening",
+        "health related social needs screening",
+        "health-related social needs referral",
+        "health related social needs referral",
+        "food-related social needs",
+        "food related social needs",
+        "food-related social needs screening",
+        "food related social needs screening",
+        "food-related social needs referral",
+        "food related social needs referral",
+        "food resource referral",
+        "food resource referrals",
+        "community resource referral for food insecurity",
+        "community resource referrals for food insecurity",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "closed-loop food referrals",
+        "closed loop food referrals"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "health-related social needs screening",
+      "health related social needs screening",
+      "food-related social needs referral",
+      "food related social needs referral",
+      "food resource referral",
+      "community resource referral for food insecurity",
+      "closed-loop food referral",
+      "closed loop food referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "health-related social needs",
+        "health related social needs",
+        "food-related social needs",
+        "food related social needs",
+        "food resource referral",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ],
+      "web_query_hints": [
+        "health-related social needs food insecurity report",
+        "food-related social needs screening referral",
+        "closed-loop food referral program",
+        "community resource referral food insecurity program"
+      ],
+      "document_terms": [
+        "implementation report",
+        "program evaluation",
+        "technical report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "health-related social needs screening",
+        "health related social needs screening",
+        "food-related social needs referral",
+        "food related social needs referral",
+        "food resource referral",
+        "community resource referral for food insecurity",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ],
+      "web_query_hints": [
+        "health-related social needs cardiometabolic nutrition intervention",
+        "food-related social needs diabetes intervention",
+        "closed-loop food referral cardiometabolic trial",
+        "community resource referral food insecurity diabetes"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation"
+      ]
+    }
+  }
+}
