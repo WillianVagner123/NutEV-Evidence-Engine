@@ -49,6 +49,17 @@ def test_obesity_cardiometabolic_queries_include_extended_liver_synonyms():
     assert "non-alcoholic steatohepatitis" in rendered
 
 
+def test_obesity_cardiometabolic_queries_include_ckm_synonyms():
+    rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "cardiovascular-kidney-metabolic syndrome" in rendered
+    assert "cardiovascular kidney metabolic risk" in rendered
+    assert "cardio-kidney-metabolic nutrition" in rendered
+    assert "cardiorenal metabolic syndrome" in rendered
+    assert "ckm syndrome" in rendered
+    assert "ckm nutrition" in rendered
+
+
 def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     rows = build_watch_queries(["diet_patterns"], 7, "quick")
     rendered = " ".join(str(row["query"]) for row in rows).lower()

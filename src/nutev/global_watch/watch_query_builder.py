@@ -153,6 +153,26 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "nutrition security intervention",
 ]
 
+CARDIO_KIDNEY_METABOLIC_TERMS = [
+    "cardiovascular-kidney-metabolic syndrome",
+    "cardiovascular kidney metabolic syndrome",
+    "cardiovascular-kidney-metabolic health",
+    "cardiovascular kidney metabolic health",
+    "cardiovascular-kidney-metabolic risk",
+    "cardiovascular kidney metabolic risk",
+    "cardiovascular-kidney-metabolic nutrition",
+    "cardiovascular kidney metabolic nutrition",
+    "cardio-kidney-metabolic syndrome",
+    "cardio kidney metabolic syndrome",
+    "cardio-kidney-metabolic nutrition",
+    "cardio kidney metabolic nutrition",
+    "cardiorenal metabolic syndrome",
+    "CKM syndrome",
+    "CKM health",
+    "CKM risk",
+    "CKM nutrition",
+]
+
 CATEGORY_CONTEXT_TERMS = {
     "guidelines_consensus": [
         "dietary guideline",
@@ -226,6 +246,7 @@ CATEGORY_CONTEXT_TERMS = {
         "insulin resistance",
         "hypertension",
         "cardiovascular disease",
+        *CARDIO_KIDNEY_METABOLIC_TERMS,
         "coronary artery disease",
         "atherosclerotic cardiovascular disease",
         "ascvd",
@@ -628,6 +649,7 @@ QUICK_MODE_SEED_GROUPS = {
             "type 2 diabetes",
             "prediabetes",
             "insulin resistance",
+            *CARDIO_KIDNEY_METABOLIC_TERMS,
         ],
         [
             "hypertension",
