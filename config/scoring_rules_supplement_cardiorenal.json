@@ -10,8 +10,17 @@
     "cardiovascular kidney metabolic health": 3,
     "cardiovascular-kidney-metabolic risk": 3,
     "cardiovascular kidney metabolic risk": 3,
+    "cardiovascular-kidney-metabolic nutrition": 4,
+    "cardiovascular kidney metabolic nutrition": 4,
+    "cardiovascular-kidney-metabolic lifestyle intervention": 4,
+    "cardiovascular kidney metabolic lifestyle intervention": 4,
     "ckm health": 3,
-    "ckm risk": 3
+    "ckm risk": 3,
+    "ckm nutrition": 4,
+    "ckm diet": 4,
+    "ckm dietary intervention": 4,
+    "ckm lifestyle intervention": 4,
+    "ckm lifestyle medicine": 4
   },
   "workstream_bonus": {
     "busca2a": {
@@ -24,8 +33,17 @@
       "cardiovascular kidney metabolic health": 5,
       "cardiovascular-kidney-metabolic risk": 5,
       "cardiovascular kidney metabolic risk": 5,
+      "cardiovascular-kidney-metabolic nutrition": 6,
+      "cardiovascular kidney metabolic nutrition": 6,
+      "cardiovascular-kidney-metabolic lifestyle intervention": 6,
+      "cardiovascular kidney metabolic lifestyle intervention": 6,
       "ckm health": 5,
-      "ckm risk": 5
+      "ckm risk": 5,
+      "ckm nutrition": 6,
+      "ckm diet": 6,
+      "ckm dietary intervention": 6,
+      "ckm lifestyle intervention": 6,
+      "ckm lifestyle medicine": 6
     },
     "busca2b": {
       "cardiorenal metabolic syndrome": 5,
@@ -37,8 +55,17 @@
       "cardiovascular kidney metabolic health": 5,
       "cardiovascular-kidney-metabolic risk": 5,
       "cardiovascular kidney metabolic risk": 5,
+      "cardiovascular-kidney-metabolic nutrition": 6,
+      "cardiovascular kidney metabolic nutrition": 6,
+      "cardiovascular-kidney-metabolic lifestyle intervention": 6,
+      "cardiovascular kidney metabolic lifestyle intervention": 6,
       "ckm health": 5,
-      "ckm risk": 5
+      "ckm risk": 5,
+      "ckm nutrition": 6,
+      "ckm diet": 6,
+      "ckm dietary intervention": 6,
+      "ckm lifestyle intervention": 6,
+      "ckm lifestyle medicine": 6
     }
   }
 }
