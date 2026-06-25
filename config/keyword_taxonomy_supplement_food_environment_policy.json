@@ -1,0 +1,113 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for food environment policy and implementation. Loaded after keyword_taxonomy.json to preserve the base taxonomy while appending focused terms.",
+  "global": {
+    "implementation_behavior": {
+      "food_environment_policy": [
+        "food environment intervention",
+        "food environment interventions",
+        "retail food environment intervention",
+        "healthy food retail",
+        "healthy food retail intervention",
+        "healthy food retail policy",
+        "choice architecture",
+        "healthy choice architecture",
+        "choice architecture intervention",
+        "nutrition nudge",
+        "food nudge",
+        "nudging intervention",
+        "food procurement policy",
+        "healthy food procurement policy",
+        "institutional food procurement",
+        "public food procurement",
+        "food service guidelines",
+        "healthy food service guidelines",
+        "nutrition standards for food service",
+        "healthy default",
+        "healthy defaults",
+        "menu labeling policy",
+        "menu labelling policy",
+        "front-of-pack labeling policy",
+        "front-of-pack labelling policy",
+        "food labeling policy",
+        "food labelling policy",
+        "healthy food affordability",
+        "food affordability intervention"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "policy evaluation",
+        "implementation report",
+        "evaluation report",
+        "program evaluation",
+        "environmental scan",
+        "practice toolkit",
+        "implementation toolkit"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_environment_policy": [
+      "food environment intervention",
+      "retail food environment intervention",
+      "healthy food retail intervention",
+      "choice architecture intervention",
+      "healthy food procurement policy",
+      "food service guidelines",
+      "nutrition standards for food service",
+      "healthy default",
+      "menu labeling policy",
+      "front-of-pack labeling policy",
+      "healthy food affordability",
+      "policy evaluation",
+      "implementation report",
+      "program evaluation"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "priority_outcomes": [
+        "food_environment_policy"
+      ],
+      "web_query_hints": [
+        "food environment intervention policy brief",
+        "healthy food retail intervention report",
+        "healthy food procurement policy guideline",
+        "food service guidelines obesity prevention",
+        "nutrition standards for food service guideline",
+        "choice architecture healthy eating intervention",
+        "menu labeling policy obesity review",
+        "front-of-pack labeling policy review",
+        "healthy food affordability intervention report"
+      ]
+    },
+    "busca2b": {
+      "priority_outcomes": [
+        "food_environment_policy"
+      ],
+      "web_query_hints": [
+        "food environment intervention cardiometabolic trial",
+        "healthy food retail intervention obesity trial",
+        "healthy food procurement policy cardiometabolic",
+        "choice architecture healthy eating randomized trial",
+        "nutrition nudge obesity systematic review",
+        "food service guidelines cardiometabolic intervention",
+        "healthy defaults dietary intervention",
+        "menu labeling policy cardiometabolic review",
+        "front-of-pack labeling policy diet quality review"
+      ]
+    },
+    "artigo3_framework": {
+      "priority_outcomes": [
+        "food_environment_policy"
+      ],
+      "web_query_hints": [
+        "food environment framework food literacy",
+        "healthy choice architecture food literacy",
+        "food environment intervention implementation framework",
+        "food procurement policy implementation framework",
+        "healthy food retail intervention implementation framework"
+      ]
+    }
+  }
+}
