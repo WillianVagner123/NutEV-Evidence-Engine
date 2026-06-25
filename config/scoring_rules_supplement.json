@@ -1,12 +1,32 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal and personalized nutrition prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "personalized nutrition obesity": 4,
+    "personalised nutrition obesity": 4,
+    "precision nutrition obesity": 4,
+    "personalized nutrition type 2 diabetes": 4,
+    "personalised nutrition type 2 diabetes": 4,
+    "precision nutrition type 2 diabetes": 4,
+    "personalized nutrition cardiometabolic risk": 4,
+    "personalised nutrition cardiometabolic risk": 4,
+    "precision nutrition cardiometabolic risk": 4,
+    "tailored dietary advice cardiometabolic risk": 4,
+    "tailored dietary intervention obesity": 4,
+    "tailored dietary intervention type 2 diabetes": 4,
+    "individualized dietary intervention obesity": 4,
+    "individualised dietary intervention obesity": 4,
+    "individualized dietary intervention type 2 diabetes": 4,
+    "individualised dietary intervention type 2 diabetes": 4,
+    "personalized meal planning obesity": 3,
+    "personalised meal planning obesity": 3,
+    "personalized meal planning type 2 diabetes": 3,
+    "personalised meal planning type 2 diabetes": 3
   },
   "workstream_bonus": {
     "busca2a": {
@@ -15,7 +35,16 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "personalized nutrition type 2 diabetes": 4,
+      "personalised nutrition type 2 diabetes": 4,
+      "precision nutrition type 2 diabetes": 4,
+      "personalized nutrition cardiometabolic risk": 4,
+      "personalised nutrition cardiometabolic risk": 4,
+      "precision nutrition cardiometabolic risk": 4,
+      "tailored dietary advice cardiometabolic risk": 4,
+      "individualized dietary intervention type 2 diabetes": 4,
+      "individualised dietary intervention type 2 diabetes": 4
     },
     "busca2b": {
       "ckm health": 4,
@@ -23,7 +52,23 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "personalized nutrition obesity": 4,
+      "personalised nutrition obesity": 4,
+      "precision nutrition obesity": 4,
+      "personalized nutrition type 2 diabetes": 4,
+      "personalised nutrition type 2 diabetes": 4,
+      "precision nutrition type 2 diabetes": 4,
+      "tailored dietary intervention obesity": 4,
+      "tailored dietary intervention type 2 diabetes": 4,
+      "individualized dietary intervention obesity": 4,
+      "individualised dietary intervention obesity": 4,
+      "individualized dietary intervention type 2 diabetes": 4,
+      "individualised dietary intervention type 2 diabetes": 4,
+      "personalized meal planning obesity": 3,
+      "personalised meal planning obesity": 3,
+      "personalized meal planning type 2 diabetes": 3,
+      "personalised meal planning type 2 diabetes": 3
     }
   }
 }
