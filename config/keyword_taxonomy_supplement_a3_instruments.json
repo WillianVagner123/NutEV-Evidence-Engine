@@ -1,0 +1,94 @@
+{
+  "version_note": "2026-06-a3-framework-instrument-vocabulary",
+  "global": {
+    "implementation_behavior": {
+      "adherence_instruments": [
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "diet adherence questionnaire",
+        "diet adherence scale",
+        "adherence questionnaire",
+        "adherence scale",
+        "eating behavior questionnaire",
+        "eating behaviour questionnaire",
+        "dietary behavior questionnaire",
+        "dietary behaviour questionnaire",
+        "food choice questionnaire",
+        "meal planning questionnaire",
+        "meal preparation questionnaire",
+        "food preparation questionnaire"
+      ],
+      "culinary_self_efficacy_instruments": [
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "cooking self-efficacy questionnaire",
+        "cooking self efficacy questionnaire",
+        "cooking confidence scale",
+        "culinary skills scale",
+        "culinary skills questionnaire",
+        "food skills scale",
+        "food skills questionnaire",
+        "food competence scale",
+        "food competence questionnaire",
+        "eating competence scale"
+      ],
+      "commensality_instruments": [
+        "commensality scale",
+        "commensality questionnaire",
+        "shared meals scale",
+        "shared meals questionnaire",
+        "family meals scale",
+        "family meals questionnaire",
+        "family mealtime scale",
+        "family mealtime questionnaire"
+      ]
+    }
+  },
+  "outcomes": {
+    "behavioral": [
+      "dietary adherence questionnaire",
+      "dietary adherence scale",
+      "cooking self-efficacy scale",
+      "cooking self efficacy scale",
+      "food competence scale",
+      "eating competence scale",
+      "commensality scale",
+      "shared meals scale",
+      "family meals scale"
+    ],
+    "diet_quality_adherence": [
+      "diet adherence questionnaire",
+      "diet adherence scale",
+      "dietary pattern adherence scale",
+      "diet quality adherence scale"
+    ]
+  },
+  "workstreams": {
+    "artigo3_framework": {
+      "condition_terms": [
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "food competence scale",
+        "eating competence scale",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "commensality scale",
+        "shared meals scale",
+        "family meals scale"
+      ],
+      "web_query_hints": [
+        "dietary adherence questionnaire validation",
+        "dietary adherence scale validation",
+        "food literacy questionnaire validation",
+        "nutrition literacy questionnaire validation",
+        "food competence scale validation",
+        "eating competence scale validation",
+        "cooking self-efficacy scale validation",
+        "culinary skills questionnaire validation",
+        "commensality scale validation",
+        "shared meals questionnaire validation",
+        "family meals questionnaire validation"
+      ]
+    }
+  }
+}
