@@ -228,6 +228,20 @@ def test_quick_mode_lifestyle_queries_cover_food_access_program_variants() -> No
     assert "fruit and vegetable vouchers" in rendered
 
 
+def test_quick_mode_lifestyle_queries_cover_dpp_and_culinary_translation_terms() -> None:
+    queries = build_watch_queries(["lifestyle_medicine"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "national diabetes prevention program" in rendered
+    assert "lifestyle change program" in rendered
+    assert "lifestyle change programme" in rendered
+    assert "culinary medicine curriculum" in rendered
+    assert "culinary medicine education" in rendered
+    assert "culinary medicine training" in rendered
+    assert "teaching kitchen curriculum" in rendered
+    assert "teaching kitchen program" in rendered
+
+
 def test_quick_mode_food_literacy_queries_cover_literacy_culinary_and_commensality_blocks() -> None:
     queries = build_watch_queries(
         ["food_literacy_culinary_commensality"],
@@ -242,6 +256,22 @@ def test_quick_mode_food_literacy_queries_cover_literacy_culinary_and_commensali
     assert "food environment" in rendered
     assert "commensality" in rendered
     assert "family meals" in rendered
+
+
+def test_quick_mode_food_literacy_queries_cover_culinary_program_translation_terms() -> None:
+    queries = build_watch_queries(
+        ["food_literacy_culinary_commensality"],
+        since_days=7,
+        mode="quick",
+    )
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "culinary medicine curriculum" in rendered
+    assert "culinary medicine education" in rendered
+    assert "culinary medicine program" in rendered
+    assert "culinary medicine training" in rendered
+    assert "teaching kitchen curriculum" in rendered
+    assert "teaching kitchen program" in rendered
 
 
 def test_quick_mode_framework_queries_cover_framework_instrument_and_validation_blocks() -> None:
@@ -280,6 +310,18 @@ def test_implementation_quick_mode_adds_behavioral_precision_terms() -> None:
     assert "self-monitoring" in query
     assert "implementation barrier" in query
     assert "meal planning" in query
+
+
+def test_implementation_quick_mode_adds_dpp_and_culinary_translation_terms() -> None:
+    query = _category_query("implementation_behavior").lower()
+
+    assert "national diabetes prevention program" in query
+    assert "lifestyle change program" in query
+    assert "lifestyle change programme" in query
+    assert "culinary medicine curriculum" in query
+    assert "culinary medicine training" in query
+    assert "teaching kitchen curriculum" in query
+    assert "teaching kitchen program" in query
 
 
 def test_food_literacy_quick_mode_adds_culinary_and_commensality_terms() -> None:
@@ -398,6 +440,19 @@ def test_thesis_mode_implementation_queries_cover_food_access_program_variants()
     assert "fruit and vegetable vouchers" in rendered
     assert "medically tailored pantry" in rendered
     assert "medically tailored food packages" in rendered
+
+
+def test_thesis_mode_implementation_queries_cover_dpp_and_culinary_translation_terms() -> None:
+    queries = build_watch_queries(["implementation_behavior"], since_days=30, mode="thesis")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "national diabetes prevention program" in rendered
+    assert "lifestyle change program" in rendered
+    assert "lifestyle change programme" in rendered
+    assert "culinary medicine curriculum" in rendered
+    assert "culinary medicine training" in rendered
+    assert "teaching kitchen curriculum" in rendered
+    assert "teaching kitchen program" in rendered
 
 
 def test_exhaustive_mode_implementation_queries_reach_framework_markers() -> None:
