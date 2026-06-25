@@ -1,0 +1,149 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for diet-quality indices and dietary-pattern adherence scores; appends focused terms without changing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "diet_quality_indices": [
+        "healthy eating index",
+        "hei score",
+        "hei-2015",
+        "hei 2015",
+        "alternative healthy eating index",
+        "ahei",
+        "ahei score",
+        "mediterranean diet score",
+        "alternate mediterranean diet score",
+        "aMED score",
+        "meddiet score",
+        "dash score",
+        "dash adherence score",
+        "dietary approaches to stop hypertension score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "unhealthy plant-based diet index",
+        "pdi score",
+        "hpdi score",
+        "updi score",
+        "diet quality index",
+        "diet quality score",
+        "dietary quality score",
+        "dietary pattern score",
+        "dietary pattern adherence",
+        "diet adherence score",
+        "dietary adherence score",
+        "dietary guideline adherence",
+        "food-based dietary guideline adherence",
+        "guideline adherence score",
+        "healthy diet score",
+        "healthy dietary pattern score",
+        "sustainable diet score",
+        "planetary health diet index"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "healthy eating index",
+      "hei score",
+      "alternative healthy eating index",
+      "ahei",
+      "mediterranean diet score",
+      "alternate mediterranean diet score",
+      "dash score",
+      "dash adherence score",
+      "plant-based diet index",
+      "healthy plant-based diet index",
+      "diet quality index",
+      "diet quality score",
+      "dietary pattern adherence",
+      "diet adherence score",
+      "dietary adherence score",
+      "dietary guideline adherence",
+      "food-based dietary guideline adherence",
+      "guideline adherence score",
+      "planetary health diet index"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "healthy eating index",
+        "alternative healthy eating index",
+        "mediterranean diet score",
+        "dash adherence score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "diet quality index",
+        "diet quality score",
+        "dietary pattern adherence",
+        "dietary guideline adherence",
+        "food-based dietary guideline adherence",
+        "planetary health diet index"
+      ],
+      "web_query_hints": [
+        "healthy eating index obesity cardiometabolic",
+        "alternative healthy eating index type 2 diabetes",
+        "mediterranean diet score metabolic syndrome",
+        "dash adherence score hypertension",
+        "healthy plant-based diet index cardiometabolic risk",
+        "diet quality score weight loss maintenance",
+        "dietary guideline adherence obesity systematic review",
+        "food-based dietary guideline adherence cardiometabolic"
+      ],
+      "document_terms": [
+        "diet quality systematic review",
+        "diet quality meta-analysis",
+        "dietary pattern adherence systematic review",
+        "dietary guideline adherence systematic review",
+        "diet quality intervention trial"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "diet quality index",
+        "diet quality score",
+        "dietary pattern adherence",
+        "dietary adherence score",
+        "dietary guideline adherence",
+        "food-based dietary guideline adherence",
+        "healthy eating index",
+        "alternative healthy eating index"
+      ],
+      "web_query_hints": [
+        "diet quality score adherence questionnaire",
+        "dietary guideline adherence instrument",
+        "food-based dietary guideline adherence questionnaire",
+        "healthy eating index food literacy"
+      ],
+      "document_terms": [
+        "diet quality instrument",
+        "diet quality questionnaire",
+        "dietary adherence instrument",
+        "dietary guideline adherence questionnaire"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "diet quality index",
+        "diet quality score",
+        "dietary pattern adherence",
+        "dietary adherence score",
+        "dietary guideline adherence",
+        "food-based dietary guideline adherence",
+        "healthy eating index",
+        "alternative healthy eating index"
+      ],
+      "web_query_hints": [
+        "diet quality score adherence questionnaire",
+        "dietary guideline adherence instrument",
+        "food-based dietary guideline adherence questionnaire",
+        "healthy eating index food literacy"
+      ],
+      "document_terms": [
+        "diet quality instrument",
+        "diet quality questionnaire",
+        "dietary adherence instrument",
+        "dietary guideline adherence questionnaire"
+      ]
+    }
+  }
+}
