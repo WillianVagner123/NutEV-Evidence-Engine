@@ -20,6 +20,17 @@ def test_obesity_queries_add_vascular_and_metabolic_context_terms() -> None:
     assert '"mash"' in rendered
 
 
+def test_obesity_queries_add_cardiovascular_health_metric_terms() -> None:
+    queries = build_watch_queries(["obesity_cardiometabolic"], since_days=7, mode="quick")
+    rendered = " ".join(str(row["query"]).lower() for row in queries)
+
+    assert "ideal cardiovascular health" in rendered
+    assert "cardiovascular health score" in rendered
+    assert "life's essential 8" in rendered
+    assert "lifes essential 8" in rendered
+    assert "life's simple 7" in rendered
+
+
 def test_cardiometabolic_vascular_signals_improve_priority() -> None:
     enriched = score_watch_item(
         {
