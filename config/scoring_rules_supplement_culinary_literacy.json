@@ -1,0 +1,81 @@
+{
+  "version_note": "2026-06-25: Prioritizes focused culinary medicine and food literacy program/instrument records.",
+  "keyword_points": {
+    "culinary medicine curriculum": 4,
+    "culinary medicine education": 4,
+    "culinary medicine program": 4,
+    "culinary medicine programme": 4,
+    "culinary medicine training": 4,
+    "culinary medicine evaluation": 4,
+    "culinary nutrition intervention": 4,
+    "teaching kitchen curriculum": 4,
+    "teaching kitchen program": 4,
+    "teaching kitchen programme": 4,
+    "teaching kitchen evaluation": 4,
+    "food literacy intervention": 4,
+    "food literacy program": 4,
+    "food literacy programme": 4,
+    "food literacy assessment": 4,
+    "food literacy questionnaire": 4,
+    "food literacy scale": 4,
+    "food skills intervention": 4,
+    "food skills program": 4,
+    "food skills questionnaire": 4,
+    "cooking skills intervention": 4,
+    "cooking skills program": 4,
+    "cooking skills questionnaire": 4,
+    "cooking self-efficacy scale": 4,
+    "cooking self efficacy scale": 4,
+    "cooking confidence scale": 4,
+    "meal preparation skills": 3,
+    "food preparation skills": 3,
+    "food preparation confidence": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "culinary medicine curriculum": 5,
+      "culinary medicine program": 5,
+      "culinary medicine programme": 5,
+      "culinary medicine evaluation": 5,
+      "teaching kitchen curriculum": 5,
+      "teaching kitchen program": 5,
+      "teaching kitchen programme": 5,
+      "teaching kitchen evaluation": 5,
+      "food literacy intervention": 5,
+      "food literacy program": 5,
+      "food literacy programme": 5,
+      "food literacy assessment": 5,
+      "food skills intervention": 4,
+      "cooking skills intervention": 4
+    },
+    "busca2b": {
+      "culinary nutrition intervention": 4,
+      "teaching kitchen evaluation": 4,
+      "food literacy intervention": 4,
+      "food skills intervention": 4,
+      "cooking skills intervention": 4,
+      "cooking self-efficacy scale": 4,
+      "cooking self efficacy scale": 4
+    },
+    "a3": {
+      "food literacy assessment": 5,
+      "food literacy questionnaire": 5,
+      "food literacy scale": 5,
+      "food skills questionnaire": 5,
+      "cooking skills questionnaire": 5,
+      "cooking self-efficacy scale": 5,
+      "cooking self efficacy scale": 5,
+      "cooking confidence scale": 5
+    },
+    "artigo3_framework": {
+      "food literacy assessment": 5,
+      "food literacy questionnaire": 5,
+      "food literacy scale": 5,
+      "food skills questionnaire": 5,
+      "cooking skills questionnaire": 5,
+      "cooking self-efficacy scale": 5,
+      "cooking self efficacy scale": 5,
+      "cooking confidence scale": 5
+    }
+  }
+}
