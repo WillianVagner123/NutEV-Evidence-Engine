@@ -1,0 +1,47 @@
+{
+  "version_note": "2026-06 access barriers scoring supplement for NutMEV precision",
+  "keyword_points": {
+    "healthy food affordability": 3,
+    "food affordability": 3,
+    "food cost": 2,
+    "healthy food cost": 3,
+    "cost of healthy food": 3,
+    "cost-related food barriers": 3,
+    "food insecurity": 3,
+    "food insecurity intervention": 4,
+    "food insecurity screening program": 4,
+    "screen and intervene": 3,
+    "hunger vital sign": 4,
+    "social needs screening": 3,
+    "social needs navigation": 3,
+    "food resource referral": 3,
+    "community resource referral": 3,
+    "community resource navigation": 3,
+    "nutrition insecurity intervention": 4,
+    "nutrition security intervention": 4,
+    "food resource management": 3,
+    "food resource management education": 3,
+    "grocery budgeting": 2,
+    "budget-conscious healthy eating": 2
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "healthy food affordability": 4,
+      "food affordability": 4,
+      "food insecurity screening program": 5,
+      "nutrition security intervention": 5,
+      "food resource management education": 4
+    },
+    "busca2b": {
+      "food insecurity intervention": 5,
+      "nutrition security intervention": 5,
+      "healthy food affordability intervention": 4,
+      "food resource management intervention": 4
+    },
+    "artigo3_framework": {
+      "food resource management questionnaire": 4,
+      "healthy food affordability questionnaire": 4,
+      "food insecurity barriers facilitators": 4
+    }
+  }
+}
