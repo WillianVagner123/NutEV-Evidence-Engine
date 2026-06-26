@@ -1,0 +1,143 @@
+{
+  "version_note": "Focused supplement for social prescribing, food referral, and community food access terms. Appended after keyword_taxonomy.json to expand NutMEV retrieval without changing the raw taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "social_prescribing_food_referral": [
+        "social prescribing",
+        "social prescribing program",
+        "social prescribing programme",
+        "social prescribing referral",
+        "social prescribing link worker",
+        "social needs screening",
+        "social needs referral",
+        "social needs navigation",
+        "closed-loop referral",
+        "closed loop referral",
+        "community resource referral",
+        "community resource referrals",
+        "food resource referral",
+        "food resource referrals",
+        "food pantry referral",
+        "food pantry referral program",
+        "food bank referral",
+        "food bank partnership",
+        "community food program",
+        "community food programme",
+        "community food referral",
+        "food pharmacy",
+        "food pharmacies",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy program",
+        "food farmacy programme",
+        "community health worker-led nutrition",
+        "community health worker led nutrition",
+        "patient navigation",
+        "care navigation"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "social prescribing",
+      "social prescribing referral",
+      "social needs screening",
+      "social needs referral",
+      "social needs navigation",
+      "closed-loop referral",
+      "closed loop referral",
+      "community resource referral",
+      "food resource referral",
+      "food bank referral",
+      "food bank partnership",
+      "food pharmacy",
+      "food pharmacies",
+      "food pharmacy program",
+      "food pharmacy programme",
+      "food farmacy",
+      "food farmacies",
+      "food farmacy program",
+      "food farmacy programme",
+      "care navigation"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "social prescribing",
+        "social prescribing referral",
+        "social prescribing link worker",
+        "social needs screening",
+        "social needs navigation",
+        "closed-loop referral",
+        "closed loop referral",
+        "community resource referral",
+        "food resource referral",
+        "food bank referral",
+        "food bank partnership",
+        "food pharmacy",
+        "food pharmacies",
+        "food pharmacy programme",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy programme",
+        "care navigation"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition report",
+        "social prescribing food referral report",
+        "social needs screening food referral",
+        "closed-loop referral food insecurity",
+        "community resource referral nutrition security",
+        "food pharmacy nutrition program",
+        "food farmacy nutrition program",
+        "food bank partnership nutrition security"
+      ],
+      "document_terms": [
+        "implementation report",
+        "program evaluation",
+        "evaluation report",
+        "technical report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "social prescribing",
+        "social prescribing referral",
+        "social needs screening",
+        "social needs navigation",
+        "closed-loop referral",
+        "closed loop referral",
+        "community resource referral",
+        "food resource referral",
+        "food bank referral",
+        "food bank partnership",
+        "food pharmacy",
+        "food pharmacies",
+        "food pharmacy programme",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy programme",
+        "care navigation"
+      ],
+      "web_query_hints": [
+        "social prescribing cardiometabolic intervention",
+        "social prescribing diabetes nutrition trial",
+        "social prescribing obesity nutrition intervention",
+        "closed-loop referral food insecurity trial",
+        "food pharmacy diabetes trial",
+        "food pharmacy cardiometabolic trial",
+        "food farmacy diabetes trial",
+        "food bank partnership cardiometabolic intervention"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "pragmatic trial"
+      ]
+    }
+  }
+}
