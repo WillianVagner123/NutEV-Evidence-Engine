@@ -1,0 +1,135 @@
+{
+  "version_note": "Focused NutMEV expansion for nutrition-linked access navigation, social prescribing, and community referral terms.",
+  "global": {
+    "implementation_behavior": {
+      "food_as_medicine_access": [
+        "social prescribing link worker",
+        "link worker",
+        "link workers",
+        "community connector",
+        "community connectors",
+        "community resource referral",
+        "community resource referrals",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "nutrition security referral",
+        "nutrition insecurity intervention",
+        "social needs screening",
+        "screen and intervene",
+        "hunger vital sign",
+        "grocery prescription program",
+        "grocery prescription programs",
+        "food pharmacy programme",
+        "community-supported food program",
+        "community supported food program",
+        "community-supported food programme",
+        "community supported food programme"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "social prescribing link worker",
+      "community connector",
+      "community resource referral",
+      "food as medicine referral",
+      "food is medicine referral",
+      "produce prescription referral",
+      "medically tailored food referral",
+      "nutrition security referral",
+      "nutrition insecurity intervention",
+      "social needs screening",
+      "screen and intervene",
+      "hunger vital sign",
+      "grocery prescription program",
+      "food pharmacy programme",
+      "community-supported food program",
+      "community supported food program"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "social prescribing link worker",
+        "community connector",
+        "community resource referral",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "nutrition security referral",
+        "nutrition insecurity intervention",
+        "social needs screening",
+        "screen and intervene",
+        "hunger vital sign",
+        "grocery prescription program",
+        "food pharmacy programme",
+        "community-supported food program",
+        "community supported food program"
+      ],
+      "web_query_hints": [
+        "social prescribing food referral report",
+        "social prescribing nutrition referral report",
+        "social prescribing link worker food insecurity",
+        "community connector food referral",
+        "community resource referral food insecurity",
+        "food as medicine referral pathway",
+        "produce prescription referral pathway",
+        "medically tailored food referral",
+        "nutrition security referral program",
+        "nutrition insecurity intervention report",
+        "hunger vital sign implementation report",
+        "grocery prescription program report"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "implementation report",
+        "program evaluation",
+        "evaluation report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "social prescribing link worker",
+        "community connector",
+        "community resource referral",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "nutrition security referral",
+        "nutrition insecurity intervention",
+        "social needs screening",
+        "screen and intervene",
+        "hunger vital sign",
+        "grocery prescription program",
+        "food pharmacy programme",
+        "community-supported food program",
+        "community supported food program"
+      ],
+      "web_query_hints": [
+        "social prescribing food referral trial",
+        "social prescribing nutrition referral evaluation",
+        "social prescribing link worker food insecurity",
+        "community connector food referral trial",
+        "community resource referral food insecurity intervention",
+        "food as medicine referral pathway evaluation",
+        "produce prescription referral pathway evaluation",
+        "medically tailored food referral trial",
+        "nutrition security referral intervention",
+        "nutrition insecurity intervention trial",
+        "hunger vital sign implementation trial",
+        "grocery prescription program evaluation"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "pragmatic trial"
+      ]
+    }
+  }
+}
