@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from nutev.querypacks.body_composition_extensions import apply_body_composition_extensions
 from nutev.querypacks.carbohydrate_quality_extensions import (
     apply_carbohydrate_quality_extensions,
 )
@@ -9,8 +10,10 @@ from nutev.querypacks.semantic_extensions import apply_semantic_extensions
 apply_semantic_extensions()
 apply_carbohydrate_quality_extensions()
 apply_food_access_benefit_extensions()
+apply_body_composition_extensions()
 
 __all__ = [
+    "apply_body_composition_extensions",
     "apply_carbohydrate_quality_extensions",
     "apply_food_access_benefit_extensions",
     "apply_semantic_extensions",
