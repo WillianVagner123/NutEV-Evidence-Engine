@@ -1,0 +1,76 @@
+{
+  "version_note": "2026-06 access barriers supplement for NutMEV search coverage",
+  "global": {
+    "implementation_behavior": [
+      "healthy food affordability",
+      "food affordability",
+      "food cost",
+      "healthy food cost",
+      "cost of healthy food",
+      "cost-related food barriers",
+      "food insecurity",
+      "food insecurity intervention",
+      "food insecurity screening program",
+      "screen and intervene",
+      "hunger vital sign",
+      "social needs screening",
+      "social needs intervention",
+      "social needs navigation",
+      "food resource referral",
+      "community resource referral",
+      "community resource navigation",
+      "nutrition insecurity intervention",
+      "nutrition security intervention",
+      "food resource management",
+      "food resource management education"
+    ],
+    "nutrition_domains": {
+      "access_barriers": [
+        "healthy food affordability",
+        "food affordability",
+        "food cost",
+        "healthy food cost",
+        "cost of healthy food",
+        "cost-related food barriers",
+        "food insecurity",
+        "nutrition insecurity",
+        "nutrition security",
+        "food access",
+        "healthy food access",
+        "food access barrier",
+        "food access barriers",
+        "transportation barrier",
+        "transportation barriers",
+        "food resource management",
+        "food budgeting",
+        "grocery budgeting",
+        "budget-conscious healthy eating"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food insecurity screening program",
+        "nutrition security intervention",
+        "healthy food affordability policy",
+        "food resource management education"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food insecurity intervention trial",
+        "nutrition security intervention trial",
+        "healthy food affordability intervention",
+        "food resource management intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "food resource management questionnaire",
+        "food insecurity barriers facilitators",
+        "healthy food affordability questionnaire"
+      ]
+    }
+  }
+}
