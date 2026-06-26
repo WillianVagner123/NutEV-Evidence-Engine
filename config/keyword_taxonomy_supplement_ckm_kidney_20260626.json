@@ -1,0 +1,114 @@
+{
+  "version_note": "Focused CKM/kidney supplement for NutMEV query expansion; appends chronic kidney disease terms only where they are anchored to cardiometabolic, obesity, diabetes, lifestyle, or nutrition evidence.",
+  "clinical": {
+    "kidney_metabolic": [
+      "chronic kidney disease",
+      "chronic kidney disease nutrition",
+      "ckd",
+      "ckd nutrition",
+      "diabetic kidney disease",
+      "diabetic kidney disease nutrition",
+      "kidney disease in diabetes",
+      "albuminuria",
+      "albuminuria reduction",
+      "egfr decline",
+      "estimated glomerular filtration rate",
+      "cardiovascular-kidney-metabolic disease",
+      "cardiovascular kidney metabolic disease",
+      "cardiovascular-kidney-metabolic disease nutrition",
+      "cardiovascular kidney metabolic disease nutrition"
+    ],
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic disease",
+      "cardiovascular kidney metabolic disease",
+      "cardiovascular-kidney-metabolic disease nutrition",
+      "cardiovascular kidney metabolic disease nutrition"
+    ]
+  },
+  "outcomes": {
+    "kidney_metabolic": [
+      "albuminuria",
+      "albuminuria reduction",
+      "egfr",
+      "egfr decline",
+      "estimated glomerular filtration rate",
+      "kidney function",
+      "renal function",
+      "kidney outcomes",
+      "renal outcomes"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "diabetic kidney disease",
+        "kidney disease in diabetes",
+        "albuminuria",
+        "egfr decline",
+        "estimated glomerular filtration rate",
+        "cardiovascular-kidney-metabolic disease",
+        "cardiovascular kidney metabolic disease"
+      ],
+      "web_query_hints": [
+        "chronic kidney disease nutrition guideline",
+        "ckd nutrition guideline",
+        "diabetic kidney disease nutrition guideline",
+        "cardiovascular-kidney-metabolic disease guideline",
+        "cardiovascular kidney metabolic disease nutrition guideline",
+        "cardiovascular-kidney-metabolic disease scientific statement",
+        "albuminuria nutrition guideline"
+      ],
+      "document_terms": [
+        "nutrition guideline",
+        "clinical practice guideline",
+        "scientific statement",
+        "consensus report",
+        "practice guidance"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "diabetic kidney disease",
+        "kidney disease in diabetes",
+        "albuminuria",
+        "egfr decline",
+        "estimated glomerular filtration rate",
+        "cardiovascular-kidney-metabolic disease",
+        "cardiovascular kidney metabolic disease"
+      ],
+      "focus_terms": [
+        "chronic kidney disease nutrition",
+        "ckd nutrition",
+        "diabetic kidney disease nutrition",
+        "dietary intervention chronic kidney disease",
+        "dietary intervention ckd",
+        "medical nutrition therapy chronic kidney disease",
+        "medical nutrition therapy diabetic kidney disease",
+        "lifestyle intervention chronic kidney disease",
+        "lifestyle intervention ckd",
+        "cardiovascular-kidney-metabolic disease nutrition",
+        "cardiovascular kidney metabolic disease nutrition"
+      ],
+      "web_query_hints": [
+        "chronic kidney disease dietary intervention systematic review",
+        "ckd nutrition intervention trial",
+        "diabetic kidney disease nutrition intervention",
+        "albuminuria dietary intervention",
+        "egfr dietary intervention",
+        "cardiovascular-kidney-metabolic disease lifestyle intervention",
+        "cardiovascular kidney metabolic disease nutrition intervention"
+      ],
+      "document_terms": [
+        "systematic review",
+        "meta-analysis",
+        "randomized trial",
+        "pragmatic trial",
+        "implementation trial"
+      ]
+    }
+  }
+}
