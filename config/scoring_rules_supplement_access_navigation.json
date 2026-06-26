@@ -1,0 +1,58 @@
+{
+  "keyword_points": {
+    "social prescribing link worker": 3,
+    "community connector": 3,
+    "community resource referral": 3,
+    "food as medicine referral": 4,
+    "food is medicine referral": 4,
+    "produce prescription referral": 4,
+    "medically tailored food referral": 4,
+    "nutrition security referral": 4,
+    "nutrition insecurity intervention": 4,
+    "social needs screening": 3,
+    "screen and intervene": 3,
+    "hunger vital sign": 3,
+    "grocery prescription program": 4,
+    "food pharmacy programme": 4,
+    "community-supported food program": 3,
+    "community supported food program": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "social prescribing link worker": 5,
+      "community connector": 4,
+      "community resource referral": 4,
+      "food as medicine referral": 5,
+      "food is medicine referral": 5,
+      "produce prescription referral": 5,
+      "medically tailored food referral": 5,
+      "nutrition security referral": 5,
+      "nutrition insecurity intervention": 5,
+      "social needs screening": 4,
+      "screen and intervene": 4,
+      "hunger vital sign": 4,
+      "grocery prescription program": 5,
+      "food pharmacy programme": 5,
+      "community-supported food program": 4,
+      "community supported food program": 4
+    },
+    "busca2b": {
+      "social prescribing link worker": 4,
+      "community connector": 4,
+      "community resource referral": 4,
+      "food as medicine referral": 5,
+      "food is medicine referral": 5,
+      "produce prescription referral": 5,
+      "medically tailored food referral": 5,
+      "nutrition security referral": 5,
+      "nutrition insecurity intervention": 5,
+      "social needs screening": 4,
+      "screen and intervene": 4,
+      "hunger vital sign": 4,
+      "grocery prescription program": 5,
+      "food pharmacy programme": 5,
+      "community-supported food program": 4,
+      "community supported food program": 4
+    }
+  }
+}
