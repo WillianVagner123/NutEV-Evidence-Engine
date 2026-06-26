@@ -1,0 +1,50 @@
+{
+  "version_note": "Supplemental scoring for focused food-access and nutrition-prescription terms added in the 2026-06-26 NutMEV recurring run.",
+  "keyword_points": {
+    "nutrition prescription": 4,
+    "nutrition prescriptions": 4,
+    "nutrition prescription program": 4,
+    "food prescription": 4,
+    "food prescriptions": 4,
+    "food prescription intervention": 4,
+    "medically tailored nutrition": 4,
+    "medically tailored nutrition program": 4,
+    "medically tailored nutrition intervention": 4,
+    "fresh food pharmacy": 4,
+    "fresh food pharmacy program": 4,
+    "food insecurity screening and referral": 4,
+    "food insecurity referral": 3,
+    "nutrition insecurity": 3,
+    "nutrition insecurity screening": 4,
+    "nutrition insecurity referral": 3,
+    "snap incentive": 3,
+    "snap incentives": 3,
+    "snap produce incentive": 4,
+    "gusnip": 4,
+    "fruit and vegetable incentive": 4,
+    "fruit and vegetable incentives": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "nutrition prescription program": 5,
+      "food prescription intervention": 5,
+      "medically tailored nutrition": 5,
+      "fresh food pharmacy": 5,
+      "food insecurity screening and referral": 5,
+      "nutrition insecurity screening": 5,
+      "snap produce incentive": 4,
+      "gusnip": 4,
+      "fruit and vegetable incentive": 4
+    },
+    "busca2b": {
+      "nutrition prescription": 4,
+      "food prescription intervention": 4,
+      "medically tailored nutrition intervention": 5,
+      "fresh food pharmacy program": 4,
+      "food insecurity screening and referral": 4,
+      "snap produce incentive": 4,
+      "gusnip": 4,
+      "fruit and vegetable incentive": 4
+    }
+  }
+}
