@@ -39,6 +39,11 @@
   "workstreams": {
     "busca2a": {
       "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "ckm health",
+        "ckm risk",
         "cardiorenal metabolic syndrome",
         "cardio-renal-metabolic syndrome",
         "cardiorenal-metabolic syndrome",
@@ -49,12 +54,19 @@
         "cardiorenal metabolic syndrome guideline",
         "cardiorenal metabolic syndrome scientific statement",
         "cardiorenal metabolic syndrome consensus",
+        "cardiovascular-kidney-metabolic syndrome guideline",
         "cardiovascular-kidney-metabolic health scientific statement",
+        "ckm syndrome guideline",
         "ckm health scientific statement"
       ]
     },
     "busca2b": {
       "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "ckm health",
+        "ckm risk",
         "cardiorenal metabolic syndrome",
         "cardio-renal-metabolic syndrome",
         "cardiorenal-metabolic syndrome",
@@ -65,7 +77,9 @@
         "cardiorenal metabolic syndrome lifestyle intervention",
         "cardiorenal metabolic syndrome nutrition intervention",
         "cardiorenal metabolic syndrome dietary intervention",
+        "cardiovascular-kidney-metabolic syndrome lifestyle intervention",
         "cardiovascular-kidney-metabolic health lifestyle intervention",
+        "ckm syndrome nutrition intervention",
         "ckm health nutrition intervention"
       ]
     }

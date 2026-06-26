@@ -50,6 +50,26 @@ def test_busca2b_queries_cover_fatty_liver_diet_trials():
     )
 
 
+def test_busca2a_and_busca2b_queries_cover_ckm_condition_terms() -> None:
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+
+    for workstream in ("busca2a", "busca2b"):
+        _, components = build_structured_components(taxonomy, workstream)
+        condition_terms = {term.lower() for term in components["condition_terms"]}
+        web_hints = {term.lower() for term in components["web_hints"]}
+        queries = [query.lower() for query in build_queries(taxonomy, workstream)]
+
+        assert "cardiovascular-kidney-metabolic syndrome" in condition_terms
+        assert "cardiovascular kidney metabolic syndrome" in condition_terms
+        assert "ckm syndrome" in condition_terms
+        assert any("ckm" in hint for hint in web_hints)
+        assert any(
+            "cardiovascular-kidney-metabolic syndrome" in query
+            or "ckm syndrome" in query
+            for query in queries
+        )
+
+
 def test_busca2b_queries_cover_implementation_readiness_and_sustainment_terms() -> None:
     taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
 
