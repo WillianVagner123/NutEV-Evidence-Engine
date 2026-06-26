@@ -1,21 +1,47 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic and sustainable healthy diet prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "sustainable healthy diet": 3,
+    "sustainable healthy diets": 3,
+    "healthy sustainable diet": 3,
+    "healthy sustainable diets": 3,
+    "healthy and sustainable diet": 3,
+    "healthy and sustainable diets": 3,
+    "sustainable dietary pattern": 2,
+    "sustainable dietary patterns": 2
   },
   "workstream_bonus": {
+    "busca1": {
+      "sustainable healthy diet": 4,
+      "sustainable healthy diets": 4,
+      "healthy sustainable diet": 4,
+      "healthy sustainable diets": 4,
+      "healthy and sustainable diet": 4,
+      "healthy and sustainable diets": 4,
+      "sustainable dietary pattern": 3,
+      "sustainable dietary patterns": 3
+    },
     "busca2a": {
       "ckm health": 4,
       "ckm risk": 4,
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "sustainable healthy diet": 3,
+      "sustainable healthy diets": 3,
+      "healthy sustainable diet": 3,
+      "healthy sustainable diets": 3,
+      "healthy and sustainable diet": 3,
+      "healthy and sustainable diets": 3,
+      "sustainable dietary pattern": 2,
+      "sustainable dietary patterns": 2
     },
     "busca2b": {
       "ckm health": 4,
@@ -23,7 +49,15 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "sustainable healthy diet": 4,
+      "sustainable healthy diets": 4,
+      "healthy sustainable diet": 4,
+      "healthy sustainable diets": 4,
+      "healthy and sustainable diet": 4,
+      "healthy and sustainable diets": 4,
+      "sustainable dietary pattern": 3,
+      "sustainable dietary patterns": 3
     }
   }
 }
