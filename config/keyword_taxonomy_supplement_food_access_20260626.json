@@ -1,0 +1,115 @@
+{
+  "version_note": "Supplemental NutMEV food-access expansion for nutrition-prescription, medically tailored nutrition, SNAP/GusNIP incentives, and food-insecurity screening/referral terms. Loaded after keyword_taxonomy.json without overwriting raw outputs or base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_access_prescription_referral": [
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "nutrition prescription program",
+        "food prescription",
+        "food prescriptions",
+        "food prescription intervention",
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "medically tailored nutrition intervention",
+        "medically tailored groceries program",
+        "fresh food pharmacy",
+        "fresh food pharmacy program",
+        "food insecurity screening and referral",
+        "food insecurity referral",
+        "nutrition insecurity",
+        "nutrition insecurity screening",
+        "nutrition insecurity referral",
+        "snap incentive",
+        "snap incentives",
+        "snap produce incentive",
+        "gusnip",
+        "fruit and vegetable incentive",
+        "fruit and vegetable incentives"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "nutrition prescription program",
+      "food prescription intervention",
+      "medically tailored nutrition intervention",
+      "fresh food pharmacy program",
+      "food insecurity screening and referral",
+      "nutrition insecurity screening",
+      "snap produce incentive",
+      "gusnip",
+      "fruit and vegetable incentive"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "nutrition prescription program",
+        "food prescription",
+        "food prescription intervention",
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "fresh food pharmacy",
+        "fresh food pharmacy program",
+        "food insecurity screening and referral",
+        "nutrition insecurity screening",
+        "snap incentive",
+        "snap incentives",
+        "snap produce incentive",
+        "gusnip",
+        "fruit and vegetable incentive",
+        "fruit and vegetable incentives"
+      ],
+      "web_query_hints": [
+        "nutrition prescription program report",
+        "food prescription intervention report",
+        "medically tailored nutrition program report",
+        "fresh food pharmacy program evaluation",
+        "food insecurity screening and referral program",
+        "nutrition insecurity screening referral",
+        "snap produce incentive evaluation",
+        "gusnip produce prescription evaluation",
+        "fruit and vegetable incentive program report"
+      ],
+      "document_terms": [
+        "program evaluation",
+        "implementation report",
+        "evaluation report",
+        "policy evaluation"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "nutrition prescription",
+        "nutrition prescription program",
+        "food prescription intervention",
+        "medically tailored nutrition intervention",
+        "fresh food pharmacy program",
+        "food insecurity screening and referral",
+        "nutrition insecurity screening",
+        "snap produce incentive",
+        "gusnip",
+        "fruit and vegetable incentive"
+      ],
+      "web_query_hints": [
+        "nutrition prescription cardiometabolic trial",
+        "food prescription intervention cardiometabolic",
+        "medically tailored nutrition cardiometabolic trial",
+        "fresh food pharmacy diabetes trial",
+        "food insecurity screening referral cardiometabolic",
+        "snap produce incentive diabetes evaluation",
+        "gusnip produce prescription cardiometabolic",
+        "fruit and vegetable incentive randomized trial"
+      ],
+      "document_terms": [
+        "program evaluation",
+        "implementation trial",
+        "pragmatic trial",
+        "policy evaluation"
+      ]
+    }
+  }
+}
