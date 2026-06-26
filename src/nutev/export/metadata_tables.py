@@ -37,6 +37,43 @@ ARTICLE_DATA_COLUMNS = [
     "failure_reason",
 ]
 
+_SIMPLE_CSV_DEFAULT_COLUMNS = {
+    "download_manifest.csv": [
+        "document_id",
+        "url",
+        "resolved_url",
+        "path",
+        "ext",
+        "status",
+        "source_provider",
+        "workstream",
+    ],
+    "failed_downloads.csv": [
+        "document_id",
+        "url",
+        "resolved_url",
+        "reason",
+        "status",
+        "source_provider",
+        "workstream",
+    ],
+    "extraction_manifest.csv": [
+        "file",
+        "ext",
+        "used_ocr",
+        "ocr_failed_pages",
+        "text_path",
+        "chars",
+        "extraction_status",
+        "reason",
+    ],
+    "querypack_executed.csv": [
+        "workstream",
+        "query_order",
+        "query_text",
+    ],
+}
+
 
 def _normalize_metadata_row(row: dict) -> dict:
     out = {k: row.get(k, "") for k in REQUIRED_METADATA_COLUMNS}
@@ -86,6 +123,10 @@ def write_article_data_csv(rows: list[dict], path: Path) -> None:
         w.writerows(article_rows)
 
 
+def _default_simple_csv_columns(path: Path) -> list[str]:
+    return _SIMPLE_CSV_DEFAULT_COLUMNS.get(path.name, [])
+
+
 def write_simple_csv(
     rows: list[dict],
     path: Path,
@@ -93,6 +134,8 @@ def write_simple_csv(
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     keys = fieldnames or sorted({k for r in rows for k in r.keys()})
+    if not keys:
+        keys = _default_simple_csv_columns(path)
     with path.open("w", newline="", encoding="utf-8") as f:
         if not keys:
             return
