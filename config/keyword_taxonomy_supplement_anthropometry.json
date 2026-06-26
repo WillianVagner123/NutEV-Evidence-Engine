@@ -1,0 +1,214 @@
+{
+  "version_note": "Supplemental NutMEV expansion for cardiometabolic anthropometry, CKM nutrition, and maintenance/remission terms. Loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "cardiometabolic_anthropometry": [
+        "abdominal obesity",
+        "central obesity",
+        "visceral adiposity",
+        "visceral fat",
+        "waist circumference",
+        "waist-to-height ratio",
+        "waist to height ratio",
+        "waist-to-hip ratio",
+        "waist to hip ratio",
+        "body mass index",
+        "bmi",
+        "adiposity measures",
+        "anthropometric measures"
+      ],
+      "metabolic_maintenance_precision": [
+        "weight maintenance",
+        "weight loss maintenance",
+        "long-term weight loss maintenance",
+        "long term weight loss maintenance",
+        "weight regain",
+        "weight regain prevention",
+        "weight regain management",
+        "remission maintenance",
+        "diabetes remission maintenance"
+      ]
+    },
+    "implementation_behavior": {
+      "maintenance_self_regulation": [
+        "weight maintenance intervention",
+        "weight loss maintenance intervention",
+        "weight regain prevention intervention",
+        "relapse prevention",
+        "lapse management",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "maintenance intervention",
+        "behavioural maintenance intervention",
+        "behavioral maintenance intervention"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "abdominal obesity",
+      "central obesity",
+      "visceral adiposity",
+      "visceral fat",
+      "waist circumference",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ],
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic nutrition",
+      "cardiovascular kidney metabolic nutrition",
+      "cardio-kidney-metabolic nutrition",
+      "cardio kidney metabolic nutrition",
+      "ckm nutrition",
+      "ckm diet",
+      "ckm lifestyle",
+      "cardiometabolic nutrition"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "abdominal obesity",
+      "central obesity",
+      "visceral adiposity",
+      "visceral fat",
+      "waist circumference",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio",
+      "adiposity measures",
+      "anthropometric measures"
+    ],
+    "cardiometabolic": [
+      "cardiovascular-kidney-metabolic nutrition",
+      "cardiovascular kidney metabolic nutrition",
+      "cardio-kidney-metabolic nutrition",
+      "cardio kidney metabolic nutrition",
+      "ckm nutrition",
+      "ckm diet",
+      "ckm lifestyle",
+      "cardiometabolic nutrition"
+    ],
+    "diet_quality_adherence": [
+      "weight maintenance intervention",
+      "weight loss maintenance intervention",
+      "weight regain prevention intervention",
+      "maintenance intervention",
+      "dietary self-monitoring",
+      "dietary self-regulation",
+      "eating self-regulation"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "condition_terms": [
+        "abdominal obesity",
+        "central obesity",
+        "visceral adiposity",
+        "waist circumference"
+      ],
+      "focus_terms": [
+        "weight maintenance",
+        "weight regain prevention",
+        "dietary self-regulation",
+        "cardiometabolic nutrition"
+      ],
+      "web_query_hints": [
+        "abdominal obesity dietary guideline",
+        "weight maintenance nutrition guideline",
+        "cardiometabolic nutrition report"
+      ]
+    },
+    "busca2a": {
+      "condition_terms": [
+        "abdominal obesity",
+        "central obesity",
+        "visceral adiposity",
+        "visceral fat",
+        "waist circumference",
+        "waist-to-height ratio",
+        "waist to height ratio",
+        "waist-to-hip ratio",
+        "waist to hip ratio",
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "ckm nutrition",
+        "cardiometabolic nutrition"
+      ],
+      "focus_terms": [
+        "weight maintenance",
+        "weight loss maintenance",
+        "weight regain prevention",
+        "remission maintenance",
+        "diabetes remission maintenance"
+      ],
+      "web_query_hints": [
+        "central obesity clinical practice guideline",
+        "waist circumference guideline",
+        "ckm nutrition guideline",
+        "cardiovascular kidney metabolic nutrition consensus",
+        "diabetes remission maintenance consensus"
+      ],
+      "document_terms": [
+        "maintenance guideline",
+        "remission maintenance consensus",
+        "cardiometabolic nutrition consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "abdominal obesity",
+        "central obesity",
+        "visceral adiposity",
+        "visceral fat",
+        "waist circumference",
+        "waist-to-height ratio",
+        "waist to height ratio",
+        "cardiometabolic nutrition"
+      ],
+      "focus_terms": [
+        "weight maintenance intervention",
+        "weight loss maintenance intervention",
+        "weight regain prevention intervention",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "maintenance intervention"
+      ],
+      "web_query_hints": [
+        "weight loss maintenance trial",
+        "weight regain prevention trial",
+        "dietary self-monitoring trial",
+        "central obesity lifestyle intervention",
+        "waist circumference dietary intervention"
+      ],
+      "document_terms": [
+        "maintenance trial",
+        "weight regain prevention trial",
+        "dietary self-monitoring trial"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "weight maintenance intervention",
+        "relapse prevention",
+        "lapse management"
+      ],
+      "web_query_hints": [
+        "dietary self-regulation questionnaire",
+        "dietary self-monitoring scale",
+        "weight maintenance behavior framework"
+      ],
+      "document_terms": [
+        "self-regulation questionnaire",
+        "maintenance framework"
+      ]
+    }
+  }
+}
