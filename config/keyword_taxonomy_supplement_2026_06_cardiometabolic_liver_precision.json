@@ -1,0 +1,83 @@
+{
+  "version_note": "2026-06 cardiometabolic liver precision expansion for NutMEV semantic search blocks.",
+  "global": {
+    "diet_patterns": {
+      "therapeutic_weight_loss": [
+        "total diet replacement",
+        "total diet replacements",
+        "partial meal replacement",
+        "partial meal replacements",
+        "very low energy diet",
+        "very-low-energy diet",
+        "very low calorie diet",
+        "very-low-calorie diet",
+        "weight loss maintenance",
+        "weight regain prevention",
+        "remission maintenance"
+      ]
+    }
+  },
+  "clinical": {
+    "cardiometabolic_liver_precision": [
+      "metabolic dysfunction-associated steatotic liver disease",
+      "metabolic dysfunction associated steatotic liver disease",
+      "metabolic dysfunction-associated steatohepatitis",
+      "metabolic dysfunction associated steatohepatitis",
+      "hepatic steatosis",
+      "liver steatosis",
+      "liver fat",
+      "intrahepatic fat",
+      "hepatic fat",
+      "liver fibrosis",
+      "fibrosis regression",
+      "fibrosis improvement",
+      "non-invasive liver test",
+      "noninvasive liver test",
+      "fibrosis score",
+      "fib-4",
+      "fib4",
+      "transient elastography"
+    ],
+    "cardiometabolic_remission_maintenance": [
+      "type 2 diabetes remission",
+      "diabetes remission maintenance",
+      "remission maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management",
+      "diet-induced diabetes remission",
+      "lifestyle-induced diabetes remission"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "clinical_keys": [
+        "cardiometabolic_liver_precision",
+        "cardiometabolic_remission_maintenance"
+      ],
+      "web_query_hints": [
+        "MASLD practice guidance nutrition",
+        "MASLD guideline lifestyle intervention",
+        "MASH guidance weight loss diet",
+        "hepatic steatosis lifestyle intervention guideline",
+        "type 2 diabetes remission consensus nutrition",
+        "weight regain prevention guideline obesity"
+      ]
+    },
+    "busca2b": {
+      "clinical_keys": [
+        "cardiometabolic_liver_precision",
+        "cardiometabolic_remission_maintenance"
+      ],
+      "web_query_hints": [
+        "MASLD diet trial",
+        "MASH lifestyle intervention trial",
+        "hepatic steatosis dietary intervention",
+        "liver fat weight loss maintenance",
+        "type 2 diabetes remission maintenance trial",
+        "weight regain prevention lifestyle trial"
+      ]
+    }
+  }
+}
