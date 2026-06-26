@@ -1,0 +1,83 @@
+{
+  "version_note": "Adds focused food-access and food-as-medicine terms that are already represented in Global Watch but were underrepresented in the master query taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_access_program_variants": [
+        "grocery prescription",
+        "grocery prescriptions",
+        "grocery prescription program",
+        "grocery prescription programs",
+        "healthy food box",
+        "healthy food boxes",
+        "healthy food box program",
+        "food pharmacy",
+        "food pharmacies",
+        "food pharmacy program",
+        "food pharmacy programs",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy program",
+        "food farmacy programs",
+        "nutrition assistance program",
+        "nutrition assistance programs"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "grocery prescription",
+      "grocery prescription program",
+      "healthy food box",
+      "healthy food box program",
+      "food pharmacy",
+      "food pharmacy program",
+      "food farmacy",
+      "food farmacy program",
+      "nutrition assistance program"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "grocery prescription",
+        "grocery prescriptions",
+        "grocery prescription program",
+        "healthy food box",
+        "healthy food boxes",
+        "food pharmacy",
+        "food pharmacies",
+        "food pharmacy program",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy program",
+        "nutrition assistance program"
+      ],
+      "web_query_hints": [
+        "grocery prescription program",
+        "healthy food box program",
+        "food pharmacy program",
+        "food farmacy program",
+        "nutrition assistance program"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "grocery prescription",
+        "grocery prescription program",
+        "healthy food box",
+        "food pharmacy",
+        "food pharmacy program",
+        "food farmacy",
+        "food farmacy program",
+        "nutrition assistance program"
+      ],
+      "web_query_hints": [
+        "grocery prescription program",
+        "healthy food box program",
+        "food pharmacy program",
+        "food farmacy program",
+        "nutrition assistance program"
+      ]
+    }
+  }
+}
