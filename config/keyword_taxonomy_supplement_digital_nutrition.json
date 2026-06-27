@@ -1,0 +1,82 @@
+{
+  "version_note": "2026-06 digital nutrition delivery supplement: expands nutrition-anchored remote coaching, self-monitoring and digital lifestyle intervention terms without changing raw taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "digital dietary adherence",
+        "digital diet adherence",
+        "diet tracking",
+        "diet tracking app",
+        "food tracking",
+        "food tracking app",
+        "mobile food record",
+        "digital food record",
+        "digital dietary self-monitoring",
+        "app-based dietary self-monitoring",
+        "app based dietary self-monitoring"
+      ],
+      "behavioral": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "digital lifestyle intervention",
+        "remote nutrition counseling",
+        "remote nutrition counselling",
+        "telehealth nutrition",
+        "telenutrition",
+        "ehealth nutrition",
+        "mobile health nutrition",
+        "mhealth nutrition",
+        "app-based nutrition intervention",
+        "app based nutrition intervention",
+        "smartphone-based dietary intervention",
+        "smartphone based dietary intervention",
+        "web-based weight management",
+        "web based weight management",
+        "internet-based weight loss",
+        "internet based weight loss",
+        "remote lifestyle coaching",
+        "remote nutrition coaching",
+        "virtual nutrition coaching",
+        "nutrition coaching",
+        "diet coaching"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "digital lifestyle intervention",
+        "remote nutrition counseling",
+        "remote nutrition counselling",
+        "telehealth nutrition",
+        "telenutrition",
+        "app-based nutrition intervention",
+        "smartphone-based dietary intervention",
+        "digital dietary self-monitoring",
+        "diet tracking app",
+        "web-based weight management",
+        "remote nutrition coaching"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "digital dietary self-monitoring",
+        "mobile food record",
+        "diet tracking app",
+        "food tracking app",
+        "remote nutrition coaching",
+        "digital nutrition intervention"
+      ],
+      "web_query_hints": [
+        "digital dietary self-monitoring",
+        "mobile food record",
+        "diet tracking app",
+        "nutrition app",
+        "remote nutrition coaching",
+        "digital nutrition intervention"
+      ]
+    }
+  }
+}
