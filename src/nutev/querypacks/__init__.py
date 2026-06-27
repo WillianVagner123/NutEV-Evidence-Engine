@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from nutev.querypacks.adherence_precision_extensions import (
+    apply_adherence_precision_extensions,
+)
 from nutev.querypacks.carbohydrate_quality_extensions import (
     apply_carbohydrate_quality_extensions,
 )
@@ -9,8 +12,10 @@ from nutev.querypacks.semantic_extensions import apply_semantic_extensions
 apply_semantic_extensions()
 apply_carbohydrate_quality_extensions()
 apply_food_access_benefit_extensions()
+apply_adherence_precision_extensions()
 
 __all__ = [
+    "apply_adherence_precision_extensions",
     "apply_carbohydrate_quality_extensions",
     "apply_food_access_benefit_extensions",
     "apply_semantic_extensions",
