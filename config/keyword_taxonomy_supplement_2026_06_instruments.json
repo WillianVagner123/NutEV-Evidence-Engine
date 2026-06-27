@@ -1,0 +1,212 @@
+{
+  "version_note": "Focused 2026-06 expansion for NutMEV instrument recovery: dietary adherence, food literacy, food competence, eating behavior, and cooking self-efficacy measures.",
+  "global": {
+    "implementation_behavior": {
+      "dietary_adherence_instruments": [
+        "dietary adherence instrument",
+        "dietary adherence measure",
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "diet adherence questionnaire",
+        "diet adherence scale",
+        "nutrition adherence questionnaire",
+        "nutrition adherence scale",
+        "healthy eating adherence questionnaire",
+        "healthy eating adherence scale"
+      ],
+      "food_competence_instruments": [
+        "food competence questionnaire",
+        "food competence scale",
+        "eating competence questionnaire",
+        "eating competence scale",
+        "satter eating competence inventory",
+        "satter eating competence inventory 2.0",
+        "ecsi 2.0",
+        "food choice questionnaire",
+        "food choice scale"
+      ],
+      "eating_behavior_instruments": [
+        "dietary behavior questionnaire",
+        "dietary behaviour questionnaire",
+        "dietary behavior scale",
+        "dietary behaviour scale",
+        "eating behavior questionnaire",
+        "eating behaviour questionnaire",
+        "eating behavior scale",
+        "eating behaviour scale",
+        "healthy eating behavior questionnaire",
+        "healthy eating behaviour questionnaire"
+      ],
+      "nutrition_self_efficacy_instruments": [
+        "dietary self-efficacy scale",
+        "dietary self efficacy scale",
+        "eating self-efficacy scale",
+        "eating self efficacy scale",
+        "healthy eating self-efficacy scale",
+        "healthy eating self efficacy scale",
+        "nutrition self-efficacy scale",
+        "nutrition self efficacy scale",
+        "weight efficacy lifestyle questionnaire",
+        "weight efficacy lifestyle questionnaire short form"
+      ],
+      "food_literacy_validation_instruments": [
+        "short food literacy questionnaire",
+        "food literacy assessment tool",
+        "food literacy assessment instrument",
+        "nutrition literacy assessment instrument",
+        "nutrition literacy assessment questionnaire",
+        "food skills questionnaire",
+        "food skills scale",
+        "culinary skills questionnaire",
+        "culinary skills scale",
+        "cooking confidence scale",
+        "cooking confidence questionnaire"
+      ]
+    },
+    "document_types": {
+      "instrument_validation": [
+        "instrument validation",
+        "measure validation",
+        "questionnaire validation",
+        "scale validation",
+        "psychometric validation",
+        "psychometric properties",
+        "instrument development",
+        "scale development",
+        "cross-cultural validation",
+        "measurement invariance"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "dietary adherence instrument",
+      "dietary adherence measure",
+      "dietary adherence questionnaire",
+      "dietary adherence scale",
+      "healthy eating adherence questionnaire",
+      "healthy eating adherence scale",
+      "dietary self-efficacy scale",
+      "eating self-efficacy scale",
+      "healthy eating self-efficacy scale"
+    ],
+    "behavioral": [
+      "food choice questionnaire",
+      "dietary behavior questionnaire",
+      "dietary behaviour questionnaire",
+      "eating behavior questionnaire",
+      "eating behaviour questionnaire",
+      "weight efficacy lifestyle questionnaire",
+      "nutrition self-efficacy scale"
+    ],
+    "food_literacy_competence": [
+      "short food literacy questionnaire",
+      "food literacy assessment tool",
+      "food literacy assessment instrument",
+      "nutrition literacy assessment instrument",
+      "food competence questionnaire",
+      "food competence scale",
+      "eating competence questionnaire",
+      "eating competence scale",
+      "satter eating competence inventory",
+      "food skills questionnaire",
+      "food skills scale",
+      "cooking confidence scale",
+      "cooking confidence questionnaire"
+    ]
+  },
+  "workstreams": {
+    "a3": {
+      "focus_terms": [
+        "dietary adherence instrument",
+        "dietary adherence measure",
+        "food choice questionnaire",
+        "food competence questionnaire",
+        "eating competence questionnaire",
+        "satter eating competence inventory",
+        "short food literacy questionnaire",
+        "food literacy assessment tool",
+        "nutrition literacy assessment instrument",
+        "dietary behavior questionnaire",
+        "eating behavior questionnaire",
+        "healthy eating self-efficacy scale",
+        "weight efficacy lifestyle questionnaire"
+      ],
+      "web_query_hints": [
+        "dietary adherence questionnaire validation",
+        "dietary adherence scale validation",
+        "food choice questionnaire validation",
+        "food competence questionnaire validation",
+        "eating competence scale validation",
+        "satter eating competence inventory validation",
+        "short food literacy questionnaire validation",
+        "nutrition literacy assessment instrument validation",
+        "healthy eating self-efficacy scale validation",
+        "weight efficacy lifestyle questionnaire validation"
+      ],
+      "document_terms": [
+        "instrument validation",
+        "measure validation",
+        "psychometric properties",
+        "cross-cultural validation",
+        "measurement invariance"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "dietary adherence instrument",
+        "dietary adherence measure",
+        "food choice questionnaire",
+        "food competence questionnaire",
+        "eating competence questionnaire",
+        "satter eating competence inventory",
+        "short food literacy questionnaire",
+        "food literacy assessment tool",
+        "nutrition literacy assessment instrument",
+        "dietary behavior questionnaire",
+        "eating behavior questionnaire",
+        "healthy eating self-efficacy scale",
+        "weight efficacy lifestyle questionnaire"
+      ],
+      "web_query_hints": [
+        "dietary adherence questionnaire validation",
+        "dietary adherence scale validation",
+        "food choice questionnaire validation",
+        "food competence questionnaire validation",
+        "eating competence scale validation",
+        "satter eating competence inventory validation",
+        "short food literacy questionnaire validation",
+        "nutrition literacy assessment instrument validation",
+        "healthy eating self-efficacy scale validation",
+        "weight efficacy lifestyle questionnaire validation"
+      ],
+      "document_terms": [
+        "instrument validation",
+        "measure validation",
+        "psychometric properties",
+        "cross-cultural validation",
+        "measurement invariance"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "dietary adherence instrument",
+        "dietary adherence measure",
+        "healthy eating self-efficacy scale",
+        "dietary self-efficacy scale",
+        "eating self-efficacy scale",
+        "weight efficacy lifestyle questionnaire"
+      ],
+      "web_query_hints": [
+        "dietary adherence instrument obesity trial",
+        "dietary adherence questionnaire cardiometabolic intervention",
+        "healthy eating self-efficacy scale lifestyle intervention",
+        "weight efficacy lifestyle questionnaire weight management"
+      ],
+      "document_terms": [
+        "instrument validation",
+        "psychometric properties"
+      ]
+    }
+  }
+}
