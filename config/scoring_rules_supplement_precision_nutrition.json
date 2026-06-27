@@ -1,16 +1,73 @@
 {
+  "version_note": "2026-06-27 precision nutrition supplement: moderate bonuses for personalized/precision/tailored nutrition terms when they appear in NutMEV clinical, intervention, or framework contexts.",
   "keyword_points": {
     "personalized nutrition": 3,
     "personalised nutrition": 3,
     "precision nutrition": 3,
     "tailored nutrition": 3,
-    "tailored dietary advice": 4,
+    "tailored dietary advice": 3,
     "tailored dietary intervention": 4,
+    "personalized dietary advice": 3,
+    "personalised dietary advice": 3,
+    "personalized dietary intervention": 4,
+    "personalised dietary intervention": 4,
     "individualized diet": 3,
     "individualised diet": 3,
     "individualized dietary intervention": 4,
     "individualised dietary intervention": 4,
+    "personalized meal planning": 3,
+    "personalised meal planning": 3,
+    "individualized meal plan": 3,
+    "individualised meal plan": 3,
     "diet personalization": 3,
-    "diet personalisation": 3
+    "diet personalisation": 3,
+    "precision dietary intervention": 4,
+    "precision nutrition intervention": 4
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "personalized nutrition": 4,
+      "personalised nutrition": 4,
+      "precision nutrition": 4,
+      "tailored nutrition guidance": 4,
+      "personalized nutrition guideline": 5,
+      "personalised nutrition guideline": 5,
+      "precision nutrition guideline": 5,
+      "tailored dietary advice": 4,
+      "personalized dietary advice": 4,
+      "personalised dietary advice": 4,
+      "precision dietary intervention": 4
+    },
+    "busca2b": {
+      "personalized nutrition": 4,
+      "personalised nutrition": 4,
+      "precision nutrition": 4,
+      "tailored dietary intervention": 5,
+      "personalized dietary intervention": 5,
+      "personalised dietary intervention": 5,
+      "individualized dietary intervention": 5,
+      "individualised dietary intervention": 5,
+      "precision nutrition intervention": 5,
+      "personalized meal planning": 4,
+      "personalised meal planning": 4,
+      "diet personalization": 4,
+      "diet personalisation": 4
+    },
+    "a3": {
+      "personalized nutrition framework": 4,
+      "personalised nutrition framework": 4,
+      "precision nutrition framework": 4,
+      "tailored nutrition framework": 4,
+      "personalized meal planning": 4,
+      "personalised meal planning": 4
+    },
+    "artigo3_framework": {
+      "personalized nutrition framework": 4,
+      "personalised nutrition framework": 4,
+      "precision nutrition framework": 4,
+      "tailored nutrition framework": 4,
+      "personalized meal planning": 4,
+      "personalised meal planning": 4
+    }
   }
 }
