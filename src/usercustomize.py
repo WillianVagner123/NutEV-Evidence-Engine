@@ -37,4 +37,42 @@ def _patch_final_querypack_terms() -> None:
     provider_module.render_queries_for_provider = render_queries_for_provider_patched
 
 
+def _patch_bariatric_surgery_noise() -> None:
+    try:
+        from nutev.analysis import relevance as relevance_module
+    except Exception:
+        return
+
+    out_of_scope_domains = getattr(relevance_module, "OUT_OF_SCOPE_DOMAINS", None)
+    negative_rules = getattr(relevance_module, "NEGATIVE_TITLE_RULES", None)
+    if not isinstance(out_of_scope_domains, dict) or not isinstance(negative_rules, dict):
+        return
+
+    out_of_scope_domains.setdefault(
+        "bariatric_or_metabolic_surgery",
+        {
+            "tokens": [
+                "bariatric surgery",
+                "metabolic surgery",
+                "bariatric surgical",
+                "metabolic surgical",
+                "sleeve gastrectomy",
+                "gastric bypass",
+                "roux-en-y",
+                "roux en y",
+            ],
+            "penalty": -10,
+        },
+    )
+    negative_rules.update(
+        {
+            "bariatric surgery": -8,
+            "metabolic surgery": -8,
+            "sleeve gastrectomy": -8,
+            "gastric bypass": -8,
+        }
+    )
+
+
 _patch_final_querypack_terms()
+_patch_bariatric_surgery_noise()
