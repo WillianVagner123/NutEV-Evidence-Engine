@@ -50,7 +50,7 @@ def test_food_pharmacy_and_social_prescribing_gain_busca2b_priority() -> None:
 def test_food_access_signals_rescue_adult_nutmev_item_from_oos_penalty() -> None:
     record = score_record(
         {
-            "title": "Food pharmacy program for adults with obesity after hospital discharge",
+            "title": "Food pharmacy program for adults with obesity after postoperative hospital discharge",
             "abstract": "Lifestyle intervention with produce prescription and dietary adherence support",
             "source": "pubmed",
         },
