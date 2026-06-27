@@ -1,0 +1,87 @@
+{
+  "version_note": "Adds focused CKM/metabolic multimorbidity and adiposity-complication terms without changing the base taxonomy.",
+  "clinical": {
+    "cardiometabolic": [
+      "cardiometabolic multimorbidity",
+      "metabolic multimorbidity",
+      "cardiorenal metabolic health",
+      "cardiorenal metabolic risk",
+      "cardiorenal metabolic syndrome",
+      "kidney metabolic syndrome",
+      "cardiovascular renal metabolic syndrome",
+      "cardiovascular renal metabolic health",
+      "cardiovascular renal metabolic risk"
+    ],
+    "obesity": [
+      "obesity-related complications",
+      "obesity related complications",
+      "adiposity-related complications",
+      "adiposity related complications",
+      "complications-centric obesity",
+      "complications centric obesity"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "cardiometabolic multimorbidity",
+      "metabolic multimorbidity",
+      "cardiorenal metabolic health",
+      "cardiorenal metabolic risk",
+      "cardiorenal metabolic syndrome",
+      "kidney metabolic syndrome",
+      "cardiovascular renal metabolic syndrome",
+      "cardiovascular renal metabolic health",
+      "cardiovascular renal metabolic risk",
+      "obesity-related complications",
+      "obesity related complications",
+      "adiposity-related complications",
+      "adiposity related complications"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiometabolic multimorbidity",
+        "metabolic multimorbidity",
+        "cardiorenal metabolic health",
+        "cardiorenal metabolic risk",
+        "cardiorenal metabolic syndrome",
+        "kidney metabolic syndrome",
+        "cardiovascular renal metabolic syndrome",
+        "obesity-related complications",
+        "adiposity-related complications",
+        "complications-centric obesity"
+      ],
+      "web_query_hints": [
+        "cardiometabolic multimorbidity guideline",
+        "metabolic multimorbidity guideline",
+        "cardiorenal metabolic syndrome scientific statement",
+        "cardiovascular renal metabolic syndrome guideline",
+        "obesity-related complications guideline",
+        "adiposity-related complications consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiometabolic multimorbidity",
+        "metabolic multimorbidity",
+        "cardiorenal metabolic health",
+        "cardiorenal metabolic risk",
+        "cardiorenal metabolic syndrome",
+        "kidney metabolic syndrome",
+        "cardiovascular renal metabolic syndrome",
+        "obesity-related complications",
+        "adiposity-related complications",
+        "complications-centric obesity"
+      ],
+      "web_query_hints": [
+        "cardiometabolic multimorbidity lifestyle intervention",
+        "metabolic multimorbidity nutrition intervention",
+        "cardiorenal metabolic syndrome diet intervention",
+        "cardiovascular renal metabolic syndrome lifestyle intervention",
+        "obesity-related complications nutrition intervention",
+        "adiposity-related complications lifestyle intervention"
+      ]
+    }
+  }
+}

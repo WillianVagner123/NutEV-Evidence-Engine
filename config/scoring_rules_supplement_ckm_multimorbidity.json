@@ -1,0 +1,40 @@
+{
+  "version_note": "Adds scoring support for CKM/metabolic multimorbidity and adiposity-complication terms introduced in the matching keyword taxonomy supplement.",
+  "keyword_points": {
+    "cardiometabolic multimorbidity": 4,
+    "metabolic multimorbidity": 4,
+    "cardiorenal metabolic health": 4,
+    "cardiorenal metabolic risk": 4,
+    "cardiorenal metabolic syndrome": 4,
+    "kidney metabolic syndrome": 3,
+    "cardiovascular renal metabolic syndrome": 4,
+    "cardiovascular renal metabolic health": 4,
+    "cardiovascular renal metabolic risk": 4,
+    "obesity-related complications": 4,
+    "obesity related complications": 4,
+    "adiposity-related complications": 4,
+    "adiposity related complications": 4,
+    "complications-centric obesity": 4,
+    "complications centric obesity": 4
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiometabolic multimorbidity": 5,
+      "metabolic multimorbidity": 5,
+      "cardiorenal metabolic syndrome": 5,
+      "cardiovascular renal metabolic syndrome": 5,
+      "obesity-related complications": 5,
+      "adiposity-related complications": 5,
+      "complications-centric obesity": 5
+    },
+    "busca2b": {
+      "cardiometabolic multimorbidity": 5,
+      "metabolic multimorbidity": 5,
+      "cardiorenal metabolic syndrome": 5,
+      "cardiovascular renal metabolic syndrome": 5,
+      "obesity-related complications": 5,
+      "adiposity-related complications": 5,
+      "complications-centric obesity": 5
+    }
+  }
+}
