@@ -27,10 +27,10 @@ def test_scope_guard_does_not_penalize_dietary_evidence_synthesis() -> None:
     )
 
 
-def test_ckm_nutrition_statement_is_scoped_and_prioritized() -> None:
+def test_ckm_statement_is_scoped_and_prioritized() -> None:
     ckm_statement = score_watch_item(
         {
-            "title": "Scientific statement on CKM nutrition and cardiometabolic risk",
+            "title": "Scientific statement on CKM syndrome staging",
             "source_provider": "pubmed",
         }
     )
