@@ -200,6 +200,23 @@ def _patch_query_generation() -> None:
     except Exception:
         return
     original_render = getattr(provider_module, "render_queries_for_provider", None)
+    personalized_nutrition_terms = [
+        "personalized nutrition guideline",
+        "personalised nutrition guideline",
+        "precision nutrition guideline",
+        "tailored dietary advice guideline",
+        "personalized nutrition obesity",
+        "personalised nutrition obesity",
+        "precision nutrition type 2 diabetes",
+        "tailored dietary advice cardiometabolic risk",
+        "individualized dietary intervention type 2 diabetes",
+        "individualised dietary intervention type 2 diabetes",
+        "personalized nutrition implementation",
+        "personalised nutrition implementation",
+        "precision nutrition implementation",
+        "tailored dietary intervention cardiometabolic risk",
+    ]
+    personalized_nutrition_query = '("personalized nutrition" OR "personalised nutrition" OR "precision nutrition" OR "tailored dietary advice" OR "individualized dietary intervention" OR "individualised dietary intervention") AND ("obesity" OR "type 2 diabetes" OR "cardiometabolic risk")'
     if original_render is not None and not getattr(original_render, "_nutev_terms_patched", False):
         def wrapped_render(keyword_taxonomy: dict, workstream: str, provider: str) -> list[str]:
             queries = list(original_render(keyword_taxonomy, workstream, provider))
@@ -213,6 +230,8 @@ def _patch_query_generation() -> None:
                     terms = ["food environment intervention", "retail food environment", "healthy food retail", "healthy food procurement", "food procurement policy", "nutrition standards", "choice architecture", "healthy default", "menu labeling policy", "food policy implementation"]
                 else:
                     terms = []
+                if ws in {"busca2a", "busca2b"}:
+                    terms.extend(personalized_nutrition_terms)
                 queries.extend([f'"{term}"[Title/Abstract]' for term in terms])
             return builders_module.uniq([q for q in queries if q])
 
@@ -223,10 +242,13 @@ def _patch_query_generation() -> None:
         def wrapped_build(keyword_taxonomy: dict, workstream: str) -> list[str]:
             queries = list(original_build(keyword_taxonomy, workstream))
             ws = builders_module.canonical_workstream(workstream)
-            if ws == "busca2b":
+            if ws == "busca2a":
+                queries.append(personalized_nutrition_query)
+            elif ws == "busca2b":
                 queries.append('("food is medicine" OR "produce prescription" OR "medically tailored meals")')
                 queries.append('("DASH eating plan" OR "TLC diet" OR "therapeutic lifestyle changes diet" OR "heart-healthy diet" OR "cardioprotective diet") AND ("obesity" OR "cardiometabolic" OR "type 2 diabetes" OR "hypertension" OR "dyslipidemia")')
                 queries.append('("food environment intervention" OR "healthy food retail" OR "food procurement policy") AND ("implementation" OR "dietary adherence" OR "cardiometabolic")')
+                queries.append(personalized_nutrition_query)
             elif ws in {"busca1", "artigo3_framework"}:
                 queries.append('("food environment intervention" OR "healthy food retail" OR "healthy food procurement" OR "food procurement policy" OR "choice architecture") AND ("nutrition" OR "diet" OR "food literacy" OR "lifestyle medicine")')
             return builders_module.uniq([q for q in queries if q])
