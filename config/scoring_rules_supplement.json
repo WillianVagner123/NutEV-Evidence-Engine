@@ -1,12 +1,25 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic and adherence behavior-change prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "shared decision making": 3,
+    "motivational interviewing": 3,
+    "implementation intentions": 3,
+    "action planning": 3,
+    "coping planning": 3,
+    "goal setting": 3,
+    "problem solving": 3,
+    "dietary self-efficacy": 3,
+    "dietary self efficacy": 3,
+    "nutrition self-efficacy": 3,
+    "nutrition self efficacy": 3,
+    "patient activation": 2,
+    "autonomous motivation": 2
   },
   "workstream_bonus": {
     "busca2a": {
@@ -23,7 +36,46 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "shared decision making": 4,
+      "motivational interviewing": 4,
+      "implementation intentions": 4,
+      "action planning": 4,
+      "coping planning": 4,
+      "goal setting": 3,
+      "problem solving": 3,
+      "dietary self-efficacy": 4,
+      "dietary self efficacy": 4,
+      "nutrition self-efficacy": 4,
+      "nutrition self efficacy": 4,
+      "patient activation": 3,
+      "autonomous motivation": 3
+    },
+    "a3": {
+      "shared decision making": 3,
+      "motivational interviewing": 3,
+      "implementation intentions": 3,
+      "action planning": 3,
+      "coping planning": 3,
+      "dietary self-efficacy": 4,
+      "dietary self efficacy": 4,
+      "nutrition self-efficacy": 4,
+      "nutrition self efficacy": 4,
+      "patient activation": 3,
+      "autonomous motivation": 3
+    },
+    "artigo3_framework": {
+      "shared decision making": 3,
+      "motivational interviewing": 3,
+      "implementation intentions": 3,
+      "action planning": 3,
+      "coping planning": 3,
+      "dietary self-efficacy": 4,
+      "dietary self efficacy": 4,
+      "nutrition self-efficacy": 4,
+      "nutrition self efficacy": 4,
+      "patient activation": 3,
+      "autonomous motivation": 3
     }
   }
 }

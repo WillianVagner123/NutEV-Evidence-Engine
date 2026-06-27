@@ -54,7 +54,20 @@
         "lapse management",
         "dietary self-monitoring",
         "dietary self-regulation",
-        "eating self-regulation"
+        "eating self-regulation",
+        "shared decision making",
+        "motivational interviewing",
+        "implementation intentions",
+        "action planning",
+        "coping planning",
+        "goal setting",
+        "problem solving",
+        "dietary self-efficacy",
+        "dietary self efficacy",
+        "nutrition self-efficacy",
+        "nutrition self efficacy",
+        "patient activation",
+        "autonomous motivation"
       ],
       "food_as_medicine_access": [
         "food is medicine program",
@@ -211,6 +224,19 @@
       "dietary self-monitoring",
       "dietary self-regulation",
       "eating self-regulation",
+      "shared decision making",
+      "motivational interviewing",
+      "implementation intentions",
+      "action planning",
+      "coping planning",
+      "goal setting",
+      "problem solving",
+      "dietary self-efficacy",
+      "dietary self efficacy",
+      "nutrition self-efficacy",
+      "nutrition self efficacy",
+      "patient activation",
+      "autonomous motivation",
       "group lifestyle intervention",
       "group-based lifestyle intervention",
       "group nutrition intervention",
@@ -375,7 +401,20 @@
         "peer led lifestyle intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "shared decision making",
+        "motivational interviewing",
+        "implementation intentions",
+        "action planning",
+        "coping planning",
+        "goal setting",
+        "problem solving",
+        "dietary self-efficacy",
+        "dietary self efficacy",
+        "nutrition self-efficacy",
+        "nutrition self efficacy",
+        "patient activation",
+        "autonomous motivation"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -404,7 +443,17 @@
         "group-based lifestyle intervention cardiometabolic",
         "group-based nutrition intervention obesity",
         "peer-led nutrition intervention diabetes",
-        "peer-led lifestyle intervention weight management"
+        "peer-led lifestyle intervention weight management",
+        "motivational interviewing dietary adherence trial",
+        "motivational interviewing nutrition intervention diabetes",
+        "shared decision making nutrition intervention",
+        "shared decision making dietary intervention",
+        "implementation intentions dietary adherence",
+        "action planning dietary adherence",
+        "coping planning weight management",
+        "dietary self-efficacy intervention",
+        "nutrition self-efficacy intervention",
+        "patient activation nutrition intervention"
       ],
       "document_terms": [
         "implementation trial",
@@ -445,7 +494,16 @@
         "group based nutrition intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "shared decision making",
+        "motivational interviewing",
+        "implementation intentions",
+        "dietary self-efficacy",
+        "dietary self efficacy",
+        "nutrition self-efficacy",
+        "nutrition self efficacy",
+        "patient activation",
+        "autonomous motivation"
       ],
       "web_query_hints": [
         "food literacy questionnaire validation",
@@ -462,7 +520,12 @@
         "dietary adherence questionnaire validation",
         "group-based nutrition intervention framework",
         "peer-led nutrition intervention framework",
-        "peer support dietary adherence framework"
+        "peer support dietary adherence framework",
+        "dietary self-efficacy scale validation",
+        "nutrition self-efficacy scale validation",
+        "patient activation nutrition framework",
+        "motivational interviewing nutrition framework",
+        "shared decision making nutrition framework"
       ],
       "document_terms": [
         "questionnaire validation",
@@ -501,7 +564,16 @@
         "group based nutrition intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "shared decision making",
+        "motivational interviewing",
+        "implementation intentions",
+        "dietary self-efficacy",
+        "dietary self efficacy",
+        "nutrition self-efficacy",
+        "nutrition self efficacy",
+        "patient activation",
+        "autonomous motivation"
       ],
       "web_query_hints": [
         "food literacy questionnaire validation",
@@ -518,7 +590,12 @@
         "dietary adherence questionnaire validation",
         "group-based nutrition intervention framework",
         "peer-led nutrition intervention framework",
-        "peer support dietary adherence framework"
+        "peer support dietary adherence framework",
+        "dietary self-efficacy scale validation",
+        "nutrition self-efficacy scale validation",
+        "patient activation nutrition framework",
+        "motivational interviewing nutrition framework",
+        "shared decision making nutrition framework"
       ],
       "document_terms": [
         "questionnaire validation",
