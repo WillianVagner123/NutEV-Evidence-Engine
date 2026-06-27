@@ -25,6 +25,16 @@
     "food pantry referral programme": 3,
     "community-supported food program": 3,
     "community supported food program": 3,
+    "nutrition social prescribing": 4,
+    "food social prescribing": 4,
+    "social prescribing nutrition": 4,
+    "social prescribing food": 4,
+    "social prescribing dietitian": 4,
+    "social prescribing dietitian referral": 4,
+    "social prescribing produce prescription": 4,
+    "social prescribing food pharmacy": 4,
+    "social prescribing food pantry": 3,
+    "social prescribing nutrition security": 4,
     "social prescribing link worker": 3,
     "community connector": 3,
     "program evaluation": 3,
@@ -42,7 +52,12 @@
       "nutrition incentive program": 5,
       "fruit and vegetable voucher program": 5,
       "food is medicine referral": 4,
-      "food as medicine referral": 4
+      "food as medicine referral": 4,
+      "nutrition social prescribing": 5,
+      "food social prescribing": 5,
+      "social prescribing produce prescription": 5,
+      "social prescribing food pharmacy": 5,
+      "social prescribing nutrition security": 5
     },
     "busca2b": {
       "medically tailored nutrition": 5,
@@ -53,6 +68,11 @@
       "healthy food incentive intervention": 5,
       "nutrition incentive intervention": 5,
       "fruit and vegetable voucher intervention": 5,
+      "nutrition social prescribing intervention": 5,
+      "food social prescribing intervention": 5,
+      "social prescribing dietitian referral": 5,
+      "social prescribing food pharmacy": 5,
+      "social prescribing nutrition security": 5,
       "program evaluation": 4,
       "programme evaluation": 4,
       "implementation report": 4,
@@ -63,14 +83,18 @@
       "produce prescription implementation framework": 5,
       "food pharmacy implementation framework": 5,
       "medically tailored nutrition framework": 5,
-      "nutrition security implementation framework": 5
+      "nutrition security implementation framework": 5,
+      "nutrition social prescribing framework": 5,
+      "food social prescribing implementation framework": 5
     },
     "artigo3_framework": {
       "food is medicine framework": 5,
       "produce prescription implementation framework": 5,
       "food pharmacy implementation framework": 5,
       "medically tailored nutrition framework": 5,
-      "nutrition security implementation framework": 5
+      "nutrition security implementation framework": 5,
+      "nutrition social prescribing framework": 5,
+      "food social prescribing implementation framework": 5
     }
   }
 }

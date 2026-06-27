@@ -33,6 +33,16 @@
         "community supported food program",
         "community-supported food programme",
         "community supported food programme",
+        "nutrition social prescribing",
+        "food social prescribing",
+        "social prescribing nutrition",
+        "social prescribing food",
+        "social prescribing dietitian",
+        "social prescribing dietitian referral",
+        "social prescribing produce prescription",
+        "social prescribing food pharmacy",
+        "social prescribing food pantry",
+        "social prescribing nutrition security",
         "social prescribing link worker",
         "link worker",
         "community connector",
@@ -59,7 +69,12 @@
         "nutrition incentive program",
         "fruit and vegetable voucher program",
         "food is medicine referral",
-        "food as medicine referral"
+        "food as medicine referral",
+        "nutrition social prescribing",
+        "food social prescribing",
+        "social prescribing produce prescription",
+        "social prescribing food pharmacy",
+        "social prescribing nutrition security"
       ]
     },
     "busca2b": {
@@ -72,7 +87,12 @@
         "nutrition incentive intervention",
         "fruit and vegetable voucher intervention",
         "food is medicine referral",
-        "produce prescription referral"
+        "produce prescription referral",
+        "nutrition social prescribing intervention",
+        "food social prescribing intervention",
+        "social prescribing dietitian referral",
+        "social prescribing food pharmacy",
+        "social prescribing nutrition security"
       ],
       "condition_terms": [
         "nutrition insecurity",
@@ -85,7 +105,9 @@
         "produce prescription implementation framework",
         "food pharmacy implementation framework",
         "medically tailored nutrition framework",
-        "nutrition security implementation framework"
+        "nutrition security implementation framework",
+        "nutrition social prescribing framework",
+        "food social prescribing implementation framework"
       ],
       "condition_terms": [
         "nutrition security",
