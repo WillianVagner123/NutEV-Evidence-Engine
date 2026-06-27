@@ -1,0 +1,73 @@
+{
+  "version_note": "Adds CKM cardiovascular-kidney-metabolic terminology to cardiometabolic NutMEV search blocks without changing the base taxonomy.",
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "ckm health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "cardiovascular-kidney-metabolic disease",
+        "cardiovascular kidney metabolic disease"
+      ],
+      "focus_terms": [
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "cardio-kidney-metabolic nutrition",
+        "ckm nutrition",
+        "cardiovascular-kidney-metabolic lifestyle",
+        "cardiovascular kidney metabolic lifestyle",
+        "ckm lifestyle"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic guideline",
+        "cardiovascular kidney metabolic guideline",
+        "ckm syndrome guideline",
+        "cardiovascular-kidney-metabolic scientific statement",
+        "cardiovascular kidney metabolic scientific statement",
+        "ckm syndrome scientific statement",
+        "cardiovascular-kidney-metabolic consensus",
+        "cardiovascular kidney metabolic consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic health",
+        "cardiovascular kidney metabolic health",
+        "ckm health",
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "cardiovascular-kidney-metabolic disease",
+        "cardiovascular kidney metabolic disease"
+      ],
+      "focus_terms": [
+        "cardiovascular-kidney-metabolic nutrition intervention",
+        "cardiovascular kidney metabolic nutrition intervention",
+        "cardio-kidney-metabolic nutrition intervention",
+        "ckm nutrition intervention",
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "cardiovascular kidney metabolic lifestyle intervention",
+        "ckm lifestyle intervention",
+        "cardiovascular-kidney-metabolic dietary intervention",
+        "cardiovascular kidney metabolic dietary intervention"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "cardiovascular kidney metabolic lifestyle intervention",
+        "ckm syndrome lifestyle intervention",
+        "cardiovascular-kidney-metabolic dietary intervention",
+        "cardiovascular kidney metabolic dietary intervention",
+        "ckm syndrome dietary intervention",
+        "cardiovascular-kidney-metabolic systematic review",
+        "cardiovascular kidney metabolic systematic review"
+      ]
+    }
+  }
+}
