@@ -164,3 +164,47 @@ def test_configured_busca2b_advanced_dyslipidemia_bonus_gains_priority() -> None
     )
 
     assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_busca2b_metabolic_precision_terms_gain_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Low glycemic load and carbohydrate quality in type 2 diabetes remission diet intervention",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    baseline = score_record(
+        {
+            "title": "Type 2 diabetes remission diet intervention",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_busca2a_personalized_diet_prescription_gains_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Clinical practice guidance for individualized dietary prescription in obesity and type 2 diabetes",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2a",
+    )
+    baseline = score_record(
+        {
+            "title": "Clinical practice guidance for dietary treatment in obesity and type 2 diabetes",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2a",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
