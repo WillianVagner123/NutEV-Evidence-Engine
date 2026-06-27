@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from nutev.analysis.relevance import score_record
+from nutev.analysis.relevance import keep_candidate_for_download, score_record
 from nutev.settings import load_json
 
 
@@ -38,6 +38,30 @@ def test_produce_rx_variant_gains_busca1_priority() -> None:
     assert boosted > baseline
 
 
+def test_food_pharmacy_and_social_prescribing_gain_busca2b_priority() -> None:
+    boosted = _score(
+        "Food pharmacy and social prescribing program for adult obesity and cardiometabolic risk"
+    )
+    baseline = _score("Community referral program for adult obesity and cardiometabolic risk")
+
+    assert boosted > baseline
+
+
+def test_food_access_signals_rescue_adult_nutmev_item_from_oos_penalty() -> None:
+    record = score_record(
+        {
+            "title": "Food pharmacy program for adults with obesity after hospital discharge",
+            "abstract": "Lifestyle intervention with produce prescription and dietary adherence support",
+            "source": "pubmed",
+        },
+        EMPTY_SCORING_RULES,
+        "busca2b",
+    )
+
+    assert "acute_hospital_or_surgery" in record["out_of_scope_flags"]
+    assert keep_candidate_for_download(record, "busca2b")
+
+
 def test_implementation_delivery_signals_gain_busca2b_priority() -> None:
     boosted = _score(
         "Audit and feedback with practice facilitation for dietary adherence implementation"
@@ -52,6 +76,15 @@ def test_expanded_mash_term_gains_busca2b_priority() -> None:
         "Lifestyle intervention for metabolic dysfunction-associated steatohepatitis in obesity"
     )
     baseline = _score("Lifestyle intervention for steatohepatitis in obesity")
+
+    assert boosted > baseline
+
+
+def test_nonhyphenated_sld_term_gains_busca2b_priority() -> None:
+    boosted = _score(
+        "Lifestyle intervention for metabolic dysfunction associated steatotic liver disease in obesity"
+    )
+    baseline = _score("Lifestyle intervention for steatotic liver disease in obesity")
 
     assert boosted > baseline
 
