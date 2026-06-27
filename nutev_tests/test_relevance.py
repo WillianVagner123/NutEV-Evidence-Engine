@@ -164,3 +164,47 @@ def test_configured_busca2b_advanced_dyslipidemia_bonus_gains_priority() -> None
     )
 
     assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_social_prescribing_referral_bonus_gains_busca1_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Social prescribing and nutrition security referral for adults with obesity",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca1",
+    )
+    baseline = score_record(
+        {
+            "title": "Community referral for adults with obesity",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca1",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_food_voucher_and_pantry_bonus_gains_busca2b_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Produce voucher program and medically tailored pantry for cardiometabolic risk and obesity",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    baseline = score_record(
+        {
+            "title": "Community food support for cardiometabolic risk and obesity",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
