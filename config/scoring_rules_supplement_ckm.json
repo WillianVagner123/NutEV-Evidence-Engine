@@ -1,0 +1,35 @@
+{
+  "version_note": "Boosts CKM-specific records when they appear in cardiometabolic guideline or intervention workstreams.",
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiovascular-kidney-metabolic health": 5,
+      "cardiovascular kidney metabolic health": 5,
+      "cardiovascular-kidney-metabolic risk": 5,
+      "cardiovascular kidney metabolic risk": 5,
+      "ckm health": 5,
+      "ckm risk": 5,
+      "ckm health advisory": 5,
+      "cardiovascular-kidney-metabolic guideline": 6,
+      "cardiovascular kidney metabolic guideline": 6,
+      "cardiovascular-kidney-metabolic scientific statement": 6,
+      "cardiovascular kidney metabolic scientific statement": 6,
+      "ckm syndrome guideline": 6,
+      "ckm syndrome scientific statement": 6
+    },
+    "busca2b": {
+      "cardiovascular-kidney-metabolic health": 5,
+      "cardiovascular kidney metabolic health": 5,
+      "cardiovascular-kidney-metabolic risk": 5,
+      "cardiovascular kidney metabolic risk": 5,
+      "ckm health": 5,
+      "ckm risk": 5,
+      "cardiovascular-kidney-metabolic lifestyle intervention": 6,
+      "cardiovascular kidney metabolic lifestyle intervention": 6,
+      "cardiovascular-kidney-metabolic nutrition intervention": 6,
+      "cardiovascular kidney metabolic nutrition intervention": 6,
+      "ckm syndrome lifestyle intervention": 6,
+      "ckm syndrome nutrition intervention": 6,
+      "ckm health diet intervention": 6
+    }
+  }
+}
