@@ -2,7 +2,13 @@ from __future__ import annotations
 
 from typing import Any
 
-__all__ = ["run_global_watch"]
+from nutev.global_watch.metabolic_remission_extensions import (
+    apply_metabolic_remission_extensions,
+)
+
+apply_metabolic_remission_extensions()
+
+__all__ = ["apply_metabolic_remission_extensions", "run_global_watch"]
 
 
 def __getattr__(name: str) -> Any:
