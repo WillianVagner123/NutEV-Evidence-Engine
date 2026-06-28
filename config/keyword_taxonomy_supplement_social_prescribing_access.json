@@ -1,0 +1,130 @@
+{
+  "version_note": "Focused NutMEV supplement for social prescribing, nutrition security referral pathways, and community navigation models. Loaded after keyword_taxonomy.json without replacing base terms.",
+  "global": {
+    "implementation_behavior": {
+      "social_prescribing_access": [
+        "social prescribing",
+        "social prescribing program",
+        "social prescribing programme",
+        "social prescribing nutrition",
+        "social prescribing for nutrition",
+        "social prescribing for healthy eating",
+        "social prescribing link worker",
+        "link worker",
+        "link workers",
+        "community connector",
+        "community connectors",
+        "social needs screening",
+        "social needs referral",
+        "social needs intervention",
+        "screening and referral",
+        "closed-loop referral",
+        "closed loop referral",
+        "community referral",
+        "community referrals",
+        "community resource referral",
+        "community resource referrals",
+        "food pantry referral",
+        "food pantry referral program",
+        "food bank partnership",
+        "patient navigation",
+        "care navigation",
+        "community health worker nutrition",
+        "community health worker-led nutrition",
+        "community health worker led nutrition",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "nutrition security referral"
+      ]
+    }
+  },
+  "outcomes": {
+    "social_prescribing_access": [
+      "social prescribing",
+      "social prescribing nutrition",
+      "social needs referral",
+      "closed-loop referral",
+      "closed loop referral",
+      "community resource referral",
+      "food pantry referral",
+      "patient navigation",
+      "care navigation",
+      "community health worker nutrition",
+      "community health worker-led nutrition",
+      "community health worker led nutrition",
+      "food is medicine referral",
+      "food as medicine referral",
+      "produce prescription referral",
+      "medically tailored food referral",
+      "nutrition security referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "social prescribing nutrition",
+        "social prescribing for healthy eating",
+        "social needs referral",
+        "closed-loop referral",
+        "community resource referral",
+        "food pantry referral",
+        "food is medicine referral",
+        "food as medicine referral",
+        "nutrition security referral"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition report",
+        "social prescribing healthy eating guideline",
+        "social needs referral nutrition report",
+        "closed-loop referral food insecurity report",
+        "community resource referral nutrition program",
+        "food pantry referral nutrition security report"
+      ],
+      "document_terms": [
+        "implementation report",
+        "program evaluation",
+        "policy brief",
+        "technical report"
+      ]
+    },
+    "busca2b": {
+      "priority_outcomes": [
+        "social_prescribing_access"
+      ],
+      "focus_terms": [
+        "social prescribing nutrition",
+        "social needs referral",
+        "closed-loop referral",
+        "community resource referral",
+        "food pantry referral",
+        "patient navigation",
+        "care navigation",
+        "community health worker nutrition",
+        "community health worker-led nutrition",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "nutrition security referral"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition trial",
+        "social prescribing nutrition systematic review",
+        "social needs referral food insecurity intervention",
+        "closed-loop referral food insecurity intervention",
+        "community health worker nutrition intervention",
+        "patient navigation nutrition intervention",
+        "food is medicine referral implementation",
+        "produce prescription referral intervention"
+      ],
+      "document_terms": [
+        "implementation study",
+        "implementation trial",
+        "program evaluation",
+        "pragmatic trial",
+        "systematic review"
+      ]
+    }
+  }
+}
