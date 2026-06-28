@@ -1,0 +1,55 @@
+{
+  "version_note": "Supplemental NutMEV scoring for nutrition-linked social prescribing, referral pathways, and community navigation models. Loaded after scoring_rules.json without replacing base scoring.",
+  "keyword_points": {
+    "social prescribing nutrition": 4,
+    "social prescribing for nutrition": 4,
+    "social prescribing for healthy eating": 4,
+    "social needs referral": 4,
+    "social needs intervention": 4,
+    "closed-loop referral": 4,
+    "closed loop referral": 4,
+    "community resource referral": 4,
+    "food pantry referral": 4,
+    "patient navigation": 3,
+    "care navigation": 3,
+    "community health worker nutrition": 4,
+    "community health worker-led nutrition": 4,
+    "community health worker led nutrition": 4,
+    "food is medicine referral": 5,
+    "food as medicine referral": 5,
+    "produce prescription referral": 5,
+    "medically tailored food referral": 5,
+    "nutrition security referral": 5
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "social prescribing nutrition": 3,
+      "social prescribing for healthy eating": 3,
+      "social needs referral": 3,
+      "closed-loop referral": 3,
+      "closed loop referral": 3,
+      "community resource referral": 3,
+      "food pantry referral": 3,
+      "food is medicine referral": 4,
+      "food as medicine referral": 4,
+      "nutrition security referral": 4
+    },
+    "busca2b": {
+      "social prescribing nutrition": 4,
+      "social needs referral": 4,
+      "closed-loop referral": 4,
+      "closed loop referral": 4,
+      "community resource referral": 4,
+      "food pantry referral": 4,
+      "patient navigation": 3,
+      "care navigation": 3,
+      "community health worker nutrition": 4,
+      "community health worker-led nutrition": 4,
+      "community health worker led nutrition": 4,
+      "food is medicine referral": 5,
+      "produce prescription referral": 5,
+      "medically tailored food referral": 5,
+      "nutrition security referral": 5
+    }
+  }
+}
