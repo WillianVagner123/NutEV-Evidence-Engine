@@ -46,15 +46,16 @@ DIET_QUALITY_TARGET_BLOCKS = (
 )
 
 
-def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
-    seen = {item.lower() for item in existing}
-    for item in additions:
+def _prepend_unique(existing: list[str], additions: list[str]) -> list[str]:
+    seen: set[str] = set()
+    prioritized: list[str] = []
+    for item in additions + existing:
         value = item.strip()
         if not value or value.lower() in seen:
             continue
-        existing.append(value)
+        prioritized.append(value)
         seen.add(value.lower())
-    return existing
+    return prioritized
 
 
 def _extend_semantic_block(
@@ -67,8 +68,8 @@ def _extend_semantic_block(
         block_name,
         {"terms": [], "document_terms": []},
     )
-    block["terms"] = _extend_unique(block.setdefault("terms", []), terms)
-    block["document_terms"] = _extend_unique(
+    block["terms"] = _prepend_unique(block.setdefault("terms", []), terms)
+    block["document_terms"] = _prepend_unique(
         block.setdefault("document_terms", []),
         document_terms,
     )
