@@ -35,6 +35,48 @@ def test_keyword_taxonomy_supplement_appends_chrononutrition_terms(tmp_path: Pat
     ]
 
 
+def test_keyword_taxonomy_loads_named_supplement_files(tmp_path: Path) -> None:
+    taxonomy = tmp_path / "keyword_taxonomy.json"
+    exact_supplement = tmp_path / "keyword_taxonomy_supplement.json"
+    named_supplement = tmp_path / "keyword_taxonomy_supplement_planetary.json"
+    taxonomy.write_text(
+        json.dumps({"global": {"diet_patterns": {"core": ["dietary pattern"]}}}),
+        encoding="utf-8",
+    )
+    exact_supplement.write_text(
+        json.dumps(
+            {"global": {"diet_patterns": {"core": ["diet quality"]}}}
+        ),
+        encoding="utf-8",
+    )
+    named_supplement.write_text(
+        json.dumps(
+            {
+                "global": {
+                    "diet_patterns": {
+                        "sustainable_planetary_patterns": [
+                            "sustainable healthy diets",
+                            "planetary health diet",
+                        ]
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    loaded = load_json(taxonomy)
+
+    assert loaded["global"]["diet_patterns"]["core"] == [
+        "dietary pattern",
+        "diet quality",
+    ]
+    assert loaded["global"]["diet_patterns"]["sustainable_planetary_patterns"] == [
+        "sustainable healthy diets",
+        "planetary health diet",
+    ]
+
+
 def test_other_json_files_do_not_load_keyword_taxonomy_supplement(tmp_path: Path) -> None:
     config = tmp_path / "scoring_rules.json"
     supplement = tmp_path / "keyword_taxonomy_supplement.json"
