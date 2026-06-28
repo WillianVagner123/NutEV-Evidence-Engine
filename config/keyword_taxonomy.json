@@ -929,7 +929,14 @@
         "apo b",
         "non-hdl cholesterol",
         "remnant cholesterol",
-        "triglyceride-rich lipoprotein"
+        "triglyceride-rich lipoprotein",
+        "fatty liver",
+        "masld",
+        "mafld",
+        "nafld",
+        "mash",
+        "nash",
+        "steatotic liver disease"
       ],
       "clinical_keys": [
         "obesity",
@@ -937,7 +944,8 @@
         "hypertension",
         "dyslipidemia",
         "cvd",
-        "metabolic_syndrome"
+        "metabolic_syndrome",
+        "fatty_liver"
       ],
       "document_type_keys": [
         "trials",
@@ -996,6 +1004,12 @@
         "apolipoprotein b intervention",
         "non-hdl cholesterol intervention",
         "mafld",
+        "masld trial",
+        "nafld trial",
+        "steatotic liver disease trial",
+        "fatty liver diet intervention",
+        "masld dietary intervention",
+        "nafld lifestyle intervention",
         "clinical obesity",
         "adiposity-based chronic disease",
         "adiposity based chronic disease"
