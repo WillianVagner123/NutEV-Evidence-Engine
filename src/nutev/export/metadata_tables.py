@@ -94,8 +94,8 @@ def write_simple_csv(
     path.parent.mkdir(parents=True, exist_ok=True)
     keys = fieldnames or sorted({k for r in rows for k in r.keys()})
     with path.open("w", newline="", encoding="utf-8") as f:
-        if not keys:
+        if not keys and not fieldnames:
             return
-        w = csv.DictWriter(f, fieldnames=keys)
+        w = csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)
