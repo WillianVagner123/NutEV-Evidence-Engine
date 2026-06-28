@@ -49,6 +49,34 @@ def test_obesity_cardiometabolic_queries_include_extended_liver_synonyms():
     assert "non-alcoholic steatohepatitis" in rendered
 
 
+def test_obesity_cardiometabolic_queries_include_pharmacotherapy_nutrition_terms():
+    rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "anti-obesity medication nutrition" in rendered
+    assert "obesity pharmacotherapy nutrition care" in rendered
+    assert "glp-1 nutrition" in rendered
+    assert "glp-1 receptor agonist nutrition" in rendered
+    assert "incretin therapy nutrition care" in rendered
+
+
+def test_implementation_queries_include_weight_maintenance_self_regulation_terms():
+    rows = build_watch_queries(["implementation_behavior"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "long-term weight loss maintenance" in rendered
+    assert "weight regain prevention" in rendered
+    assert "dietary self-monitoring" in rendered
+    assert "dietary self-regulation" in rendered
+
+
+def test_obesity_cardiometabolic_queries_include_diabetes_remission_terms():
+    rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "type 2 diabetes remission" in rendered
+    assert "diabetes remission" in rendered
+    assert "remission of type 2 diabetes" in rendered
+    assert "diabetes reversal" in rendered
+
+
 def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     rows = build_watch_queries(["diet_patterns"], 7, "quick")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
