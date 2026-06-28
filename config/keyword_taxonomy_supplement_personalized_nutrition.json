@@ -1,0 +1,98 @@
+{
+  "version_note": "2026-06 personalized nutrition and anti-obesity medication nutrition context expansion",
+  "global": {
+    "diet_patterns": {
+      "personalized_precision_nutrition": [
+        "personalized nutrition counseling",
+        "personalised nutrition counselling",
+        "precision nutrition implementation",
+        "tailored dietary adherence",
+        "tailored diet adherence",
+        "individualized dietary counseling",
+        "individualised dietary counselling",
+        "nutrition personalization",
+        "nutrition personalisation",
+        "diet personalization",
+        "diet personalisation"
+      ]
+    },
+    "implementation_behavior": {
+      "personalized_nutrition_delivery": [
+        "personalized nutrition adherence",
+        "personalised nutrition adherence",
+        "precision nutrition implementation",
+        "tailored dietary adherence",
+        "individualized meal planning",
+        "individualised meal planning",
+        "shared decision making for nutrition",
+        "diet personalization implementation",
+        "diet personalisation implementation"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "anti-obesity medication",
+      "anti-obesity medications",
+      "obesity pharmacotherapy",
+      "glp-1 receptor agonist",
+      "glp-1 receptor agonists",
+      "incretin therapy"
+    ]
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "personalized nutrition adherence",
+      "personalised nutrition adherence",
+      "tailored dietary adherence",
+      "individualized meal planning",
+      "individualised meal planning"
+    ],
+    "anthropometry": [
+      "anti-obesity medication weight maintenance",
+      "glp-1 weight maintenance",
+      "post-glp-1 weight maintenance",
+      "weight regain after anti-obesity medication"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "anti-obesity medication",
+        "anti-obesity medications",
+        "obesity pharmacotherapy",
+        "glp-1 receptor agonist",
+        "glp-1 receptor agonists",
+        "incretin therapy"
+      ],
+      "web_query_hints": [
+        "precision nutrition guideline",
+        "personalized nutrition consensus",
+        "personalised nutrition consensus",
+        "tailored dietary advice guideline",
+        "anti-obesity medication nutrition guidance",
+        "glp-1 nutrition guidance",
+        "incretin therapy nutrition guidance"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "anti-obesity medication",
+        "anti-obesity medications",
+        "obesity pharmacotherapy",
+        "glp-1 receptor agonist",
+        "glp-1 receptor agonists",
+        "incretin therapy"
+      ],
+      "web_query_hints": [
+        "precision nutrition implementation",
+        "personalized nutrition adherence",
+        "personalised nutrition adherence",
+        "tailored dietary adherence",
+        "anti-obesity medication nutrition intervention",
+        "glp-1 dietary adherence",
+        "incretin therapy nutrition intervention"
+      ]
+    }
+  }
+}
