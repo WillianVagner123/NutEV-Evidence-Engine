@@ -30,6 +30,14 @@ def test_identifier_normalizers_are_strict():
     assert normalize_url("javascript:void(0)") is None
 
 
+def test_normalize_url_removes_tracking_and_canonicalizes_netloc():
+    assert (
+        normalize_url("https://www.Example.org:443/a/?utm_source=newsletter&b=2&a=1")
+        == "https://example.org/a?a=1&b=2"
+    )
+    assert normalize_url("http://www.example.org:80/a/") == "http://example.org/a"
+
+
 def test_workstream_alias_and_rejection():
     assert validate_workstream("article3_framework") == "artigo3_framework"
     with pytest.raises(ValueError):
@@ -98,6 +106,15 @@ def test_canonical_document_key_priority():
     assert canonical_document_key({"pmid": "123", "url": "https://x.test"}) == "pmid:123"
     assert canonical_document_key({"pmcid": "pmc123", "url": "https://x.test"}) == "pmcid:PMC123"
     assert canonical_document_key({"url": "https://x.test/a"}) == "url:https://x.test/a"
+
+
+def test_canonical_document_key_collapses_equivalent_urls():
+    first = canonical_document_key(
+        {"url": "https://www.example.org:443/path/?utm_medium=email&b=2&a=1"}
+    )
+    second = canonical_document_key({"url": "https://example.org/path?a=1&b=2"})
+
+    assert first == second == "url:https://example.org/path?a=1&b=2"
 
 
 def test_canonical_document_key_extracts_doi_from_candidate_urls():
