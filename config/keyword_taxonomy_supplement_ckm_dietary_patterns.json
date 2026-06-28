@@ -1,0 +1,114 @@
+{
+  "version_note": "Focused NutMEV expansion for CKM/cardiometabolic chronic disease terminology and therapeutic dietary pattern retrieval.",
+  "global": {
+    "diet_patterns": {
+      "therapeutic_cardiometabolic_patterns": [
+        "therapeutic dietary pattern",
+        "therapeutic dietary patterns",
+        "cardiometabolic dietary pattern",
+        "cardiometabolic dietary patterns",
+        "cardiometabolic diet",
+        "cardiometabolic diets",
+        "dietary pattern prescription",
+        "dietary pattern prescriptions",
+        "mediterranean diet prescription",
+        "dash diet prescription",
+        "portfolio diet prescription",
+        "portfolio dietary pattern",
+        "dietary portfolio",
+        "cholesterol-lowering diet",
+        "cholesterol lowering diet",
+        "blood pressure-lowering diet",
+        "blood pressure lowering diet",
+        "low glycemic index diet",
+        "low glycaemic index diet",
+        "high-fiber diet",
+        "high fiber diet",
+        "plant-forward diet",
+        "plant forward diet"
+      ]
+    }
+  },
+  "clinical": {
+    "cardiometabolic": [
+      "cardiometabolic-based chronic disease",
+      "cardiometabolic based chronic disease",
+      "cardiometabolic chronic disease",
+      "cardiometabolic chronic diseases",
+      "cardiometabolic multimorbidity",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "cardiometabolic-based chronic disease",
+      "cardiometabolic based chronic disease",
+      "cardiometabolic chronic disease",
+      "cardiometabolic chronic diseases",
+      "cardiometabolic multimorbidity",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "cardiorenal metabolic syndrome",
+      "cardio-renal-metabolic syndrome"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiometabolic-based chronic disease",
+        "cardiometabolic based chronic disease",
+        "cardiometabolic multimorbidity",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic guideline",
+        "cardiovascular kidney metabolic guideline",
+        "ckm syndrome guideline",
+        "ckm health scientific statement",
+        "cardiometabolic chronic disease consensus",
+        "cardiometabolic multimorbidity guideline",
+        "therapeutic dietary pattern guideline",
+        "portfolio diet guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiometabolic-based chronic disease",
+        "cardiometabolic based chronic disease",
+        "cardiometabolic multimorbidity",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome"
+      ],
+      "web_query_hints": [
+        "cardiometabolic chronic disease trial",
+        "cardiometabolic multimorbidity trial",
+        "ckm syndrome lifestyle intervention",
+        "ckm health dietary intervention",
+        "therapeutic dietary pattern trial",
+        "dietary pattern prescription trial",
+        "portfolio diet systematic review",
+        "cholesterol-lowering diet trial"
+      ]
+    }
+  }
+}
