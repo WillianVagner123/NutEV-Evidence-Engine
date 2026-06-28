@@ -1,5 +1,5 @@
 {
-  "version_note": "Focused NutMEV supplement for personalized nutrition, shared decision making, and adherence-oriented care delivery; loaded after keyword_taxonomy.json without modifying the base taxonomy.",
+  "version_note": "Focused NutMEV supplement for personalized nutrition, precision nutrition, shared decision making, and adherence-oriented care delivery; loaded after keyword_taxonomy.json without modifying the base taxonomy.",
   "global": {
     "implementation_behavior": {
       "personalized_adherence": [
@@ -19,9 +19,33 @@
         "individualised meal plan",
         "diet personalization",
         "diet personalisation",
+        "precision nutrition guideline",
+        "personalized nutrition guideline",
+        "personalised nutrition guideline",
+        "precision nutrition consensus",
+        "personalized nutrition consensus",
+        "personalised nutrition consensus",
+        "precision nutrition framework",
+        "personalized nutrition framework",
+        "personalised nutrition framework",
+        "phenotype-guided dietary advice",
+        "phenotype guided dietary advice",
+        "metabotype-guided dietary advice",
+        "metabotype guided dietary advice",
+        "nutrition phenotype",
+        "nutrition phenotypes",
+        "dietary phenotype",
+        "dietary phenotypes",
+        "metabotype",
+        "metabotypes",
         "shared decision making",
+        "shared decision making nutrition",
+        "shared decision making dietary counseling",
+        "shared decision making dietary counselling",
         "patient-centered nutrition care",
         "patient centred nutrition care",
+        "person-centered nutrition care",
+        "person centred nutrition care",
         "nutrition coaching",
         "diet coaching",
         "lifestyle coaching",
@@ -46,9 +70,27 @@
       "individualised dietary intervention",
       "personalized meal planning",
       "personalised meal planning",
+      "precision nutrition guideline",
+      "personalized nutrition guideline",
+      "personalised nutrition guideline",
+      "precision nutrition consensus",
+      "personalized nutrition consensus",
+      "personalised nutrition consensus",
+      "phenotype-guided dietary advice",
+      "phenotype guided dietary advice",
+      "metabotype-guided dietary advice",
+      "metabotype guided dietary advice",
+      "nutrition phenotype",
+      "dietary phenotype",
+      "metabotype",
       "shared decision making",
+      "shared decision making nutrition",
+      "shared decision making dietary counseling",
+      "shared decision making dietary counselling",
       "patient-centered nutrition care",
       "patient centred nutrition care",
+      "person-centered nutrition care",
+      "person centred nutrition care",
       "nutrition coaching",
       "remote nutrition coaching",
       "digital nutrition intervention",
@@ -59,15 +101,37 @@
     ]
   },
   "workstreams": {
+    "busca2a": {
+      "priority_outcomes": [
+        "personalized_adherence"
+      ],
+      "web_query_hints": [
+        "precision nutrition guideline",
+        "personalized nutrition guideline",
+        "personalised nutrition guideline",
+        "precision nutrition consensus",
+        "personalized nutrition consensus",
+        "personalised nutrition consensus",
+        "tailored dietary advice guideline",
+        "shared decision making nutrition guideline",
+        "patient-centered nutrition care guideline",
+        "person-centered nutrition care guideline"
+      ]
+    },
     "busca2b": {
       "priority_outcomes": [
         "personalized_adherence"
       ],
       "web_query_hints": [
         "personalized nutrition intervention",
+        "personalised nutrition intervention",
         "precision nutrition intervention",
         "tailored dietary intervention",
+        "phenotype-guided dietary advice",
+        "metabotype-guided dietary advice",
         "shared decision making nutrition",
+        "shared decision making dietary counseling",
+        "shared decision making dietary counselling",
         "remote nutrition coaching",
         "digital nutrition intervention",
         "app-based dietary intervention"
@@ -79,8 +143,11 @@
       ],
       "web_query_hints": [
         "personalized nutrition framework",
+        "personalised nutrition framework",
         "precision nutrition framework",
         "tailored dietary advice framework",
+        "phenotype-guided dietary advice framework",
+        "metabotype-guided dietary advice framework",
         "shared decision making nutrition framework",
         "digital nutrition adherence framework"
       ]
