@@ -1,0 +1,119 @@
+{
+  "version_note": "Focused NutMEV supplement for food-linked social prescribing and community referral retrieval. Loaded after keyword_taxonomy.json without changing raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "social_prescribing_food_referrals": [
+        "social prescribing",
+        "social prescribing program",
+        "social prescribing programme",
+        "social prescribing link worker",
+        "link worker nutrition referral",
+        "community connector nutrition referral",
+        "community resource referral",
+        "community resource referrals",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "fruit and vegetable prescription referral",
+        "medically tailored food referral",
+        "medically tailored meal referral",
+        "medically tailored meals referral",
+        "food pharmacy referral",
+        "food pantry referral program",
+        "food bank referral program",
+        "nutrition security referral",
+        "food insecurity referral",
+        "food access referral",
+        "healthy food access referral",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "screening for food insecurity and referral",
+        "social needs screening and food referral"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "social prescribing nutrition referral",
+      "social prescribing food referral",
+      "food as medicine referral",
+      "food is medicine referral",
+      "produce prescription referral",
+      "medically tailored food referral",
+      "food pharmacy referral",
+      "food pantry referral program",
+      "closed-loop food referral",
+      "closed loop food referral",
+      "nutrition security referral",
+      "social needs screening and food referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "social prescribing nutrition referral",
+        "social prescribing food referral",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "food pharmacy referral",
+        "food pantry referral program",
+        "food bank referral program",
+        "nutrition security referral",
+        "food insecurity referral",
+        "food access referral",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition referral guideline",
+        "social prescribing food referral program report",
+        "food as medicine referral implementation report",
+        "produce prescription referral implementation report",
+        "medically tailored food referral program evaluation",
+        "food pantry referral program evaluation",
+        "nutrition security referral implementation report",
+        "closed-loop food referral program evaluation"
+      ],
+      "document_terms": [
+        "implementation report",
+        "program evaluation",
+        "evaluation report",
+        "technical report",
+        "practice recommendation"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "social prescribing nutrition referral",
+        "social prescribing food referral",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "food pharmacy referral",
+        "nutrition security referral",
+        "food insecurity referral",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition intervention trial",
+        "social prescribing food referral systematic review",
+        "food as medicine referral cardiometabolic trial",
+        "produce prescription referral randomized trial",
+        "medically tailored food referral diabetes trial",
+        "nutrition security referral cardiometabolic intervention",
+        "closed-loop food referral implementation trial"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "pragmatic trial",
+        "systematic review"
+      ]
+    }
+  }
+}
