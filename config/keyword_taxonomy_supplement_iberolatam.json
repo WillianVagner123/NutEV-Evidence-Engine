@@ -1,0 +1,240 @@
+{
+  "version_note": "Supplemental NutMEV Iberian/Latin American search expansion loaded after keyword_taxonomy.json; preserves the base taxonomy and appends Spanish terms for official guidelines, lifestyle nutrition, adherence, and cardiometabolic risk.",
+  "global": {
+    "diet_patterns": {
+      "spanish_guidelines": [
+        "guia alimentaria",
+        "guias alimentarias",
+        "guia alimentaria basada en alimentos",
+        "guias alimentarias basadas en alimentos",
+        "recomendaciones alimentarias",
+        "recomendacion alimentaria",
+        "patron alimentario saludable",
+        "patrones alimentarios saludables",
+        "alimentacion saludable",
+        "dieta saludable",
+        "dieta mediterranea",
+        "dieta basada en plantas",
+        "dieta planetaria",
+        "dieta saludable sostenible",
+        "alimentos ultraprocesados"
+      ]
+    },
+    "lifestyle_medicine_pillars": {
+      "nutrition": [
+        "medicina del estilo de vida",
+        "intervencion de estilo de vida",
+        "intervenciones de estilo de vida",
+        "modificacion del estilo de vida",
+        "cambios terapeuticos del estilo de vida",
+        "consejeria nutricional",
+        "asesoramiento nutricional",
+        "terapia nutricional medica"
+      ]
+    },
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "medicina culinaria",
+        "alfabetizacion alimentaria",
+        "alfabetizacion nutricional",
+        "habilidades culinarias",
+        "preparacion de comidas",
+        "planificacion de comidas",
+        "etiquetado frontal",
+        "etiquetado nutricional"
+      ]
+    },
+    "implementation_behavior": {
+      "adherence": [
+        "adherencia dietetica",
+        "adherencia alimentaria",
+        "adherencia al tratamiento",
+        "mantenimiento del peso perdido",
+        "prevencion de recuperacion de peso",
+        "mantenimiento de la perdida de peso",
+        "automonitoreo dietetico",
+        "autorregulacion dietetica"
+      ],
+      "contextual": [
+        "ambiente alimentario",
+        "entorno alimentario",
+        "acceso a alimentos saludables",
+        "seguridad alimentaria y nutricional",
+        "inseguridad alimentaria",
+        "prescripcion de alimentos",
+        "alimentos como medicina"
+      ],
+      "commensality": [
+        "comensalidad",
+        "comidas compartidas",
+        "comidas familiares",
+        "comer juntos"
+      ]
+    },
+    "document_types": {
+      "guidelines": [
+        "guia de practica clinica",
+        "guias de practica clinica",
+        "guia clinica",
+        "guias clinicas",
+        "consenso",
+        "declaracion de posicion",
+        "declaracion cientifica",
+        "recomendacion",
+        "recomendaciones"
+      ],
+      "reviews": [
+        "revision sistematica",
+        "revision de alcance",
+        "revision paraguas",
+        "metaanalisis",
+        "meta analisis"
+      ],
+      "trials": [
+        "ensayo clinico aleatorizado",
+        "ensayo controlado",
+        "ensayo pragmatico",
+        "estudio piloto",
+        "estudio de factibilidad"
+      ],
+      "grey": [
+        "informe tecnico",
+        "documento de posicion",
+        "manual",
+        "caja de herramientas"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "obesidad",
+      "sobrepeso",
+      "obesidad clinica",
+      "enfermedad cronica basada en adiposidad",
+      "circunferencia de cintura",
+      "adiposidad visceral"
+    ],
+    "diabetes": [
+      "diabetes tipo 2",
+      "prediabetes",
+      "resistencia a la insulina",
+      "remision de diabetes tipo 2",
+      "remision de la diabetes",
+      "control glucemico"
+    ],
+    "hypertension": [
+      "hipertension",
+      "presion arterial"
+    ],
+    "dyslipidemia": [
+      "dislipidemia",
+      "hiperlipidemia",
+      "hipercolesterolemia",
+      "hipertrigliceridemia",
+      "colesterol remanente"
+    ],
+    "cvd": [
+      "riesgo cardiometabolico",
+      "salud cardiometabolica",
+      "enfermedad cardiometabolica",
+      "sindrome metabolico"
+    ],
+    "liver": [
+      "higado graso",
+      "enfermedad hepatica esteatosica",
+      "esteatosis hepatica",
+      "esteatohepatitis metabolica",
+      "enfermedad hepatica grasa no alcoholica"
+    ]
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "adherencia dietetica",
+      "adherencia alimentaria",
+      "mantenimiento de la perdida de peso",
+      "mantenimiento del peso perdido",
+      "prevencion de recuperacion de peso",
+      "automonitoreo dietetico",
+      "autorregulacion dietetica"
+    ],
+    "cardiometabolic": [
+      "riesgo cardiometabolico",
+      "salud cardiometabolica",
+      "sindrome metabolico",
+      "control glucemico",
+      "presion arterial"
+    ],
+    "food_literacy_competence": [
+      "alfabetizacion alimentaria",
+      "alfabetizacion nutricional",
+      "habilidades culinarias",
+      "planificacion de comidas",
+      "preparacion de comidas"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "guia alimentaria basada en alimentos",
+        "guias alimentarias basadas en alimentos",
+        "recomendaciones alimentarias",
+        "alimentacion saludable",
+        "ambiente alimentario",
+        "alfabetizacion alimentaria",
+        "medicina culinaria"
+      ],
+      "web_query_hints": [
+        "guia alimentaria obesidad",
+        "guias alimentarias obesidad",
+        "recomendaciones alimentarias obesidad",
+        "informe tecnico alimentacion saludable obesidad"
+      ]
+    },
+    "busca2a": {
+      "focus_terms": [
+        "guia de practica clinica obesidad",
+        "guia clinica diabetes tipo 2",
+        "consenso riesgo cardiometabolico",
+        "terapia nutricional medica",
+        "remision de diabetes tipo 2",
+        "enfermedad hepatica esteatosica"
+      ],
+      "web_query_hints": [
+        "guia de practica clinica obesidad",
+        "guia clinica diabetes tipo 2",
+        "consenso riesgo cardiometabolico",
+        "guia clinica higado graso"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "intervencion de estilo de vida",
+        "intervenciones de estilo de vida",
+        "adherencia dietetica",
+        "mantenimiento de la perdida de peso",
+        "prevencion de recuperacion de peso",
+        "asesoramiento nutricional",
+        "consejeria nutricional"
+      ],
+      "web_query_hints": [
+        "ensayo clinico aleatorizado intervencion de estilo de vida obesidad",
+        "revision sistematica adherencia dietetica diabetes tipo 2",
+        "mantenimiento de la perdida de peso intervencion nutricional"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "alfabetizacion alimentaria",
+        "alfabetizacion nutricional",
+        "habilidades culinarias",
+        "comensalidad",
+        "adherencia dietetica"
+      ],
+      "web_query_hints": [
+        "escala alfabetizacion alimentaria",
+        "cuestionario adherencia dietetica",
+        "instrumento habilidades culinarias"
+      ]
+    }
+  }
+}
