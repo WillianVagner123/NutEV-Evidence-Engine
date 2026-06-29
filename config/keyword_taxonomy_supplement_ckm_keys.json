@@ -1,0 +1,53 @@
+{
+  "version_note": "Supplemental CKM taxonomy wiring loaded after keyword_taxonomy.json; connects the existing cardiometabolic block to busca2a/b query construction without replacing base terms.",
+  "clinical": {
+    "cardiometabolic": [
+      "cardiorenal metabolic health",
+      "cardiorenal metabolic risk",
+      "cardio-renal-metabolic health",
+      "cardio-renal-metabolic risk",
+      "kidney-heart-metabolic syndrome",
+      "kidney heart metabolic syndrome"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "cardiorenal metabolic health",
+      "cardiorenal metabolic risk",
+      "cardio-renal-metabolic health",
+      "cardio-renal-metabolic risk",
+      "kidney-heart-metabolic syndrome",
+      "kidney heart metabolic syndrome"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "clinical_keys": [
+        "cardiometabolic"
+      ],
+      "priority_outcomes": [
+        "cardiometabolic"
+      ],
+      "web_query_hints": [
+        "cardiorenal metabolic health nutrition guideline",
+        "cardiorenal metabolic risk dietary guideline",
+        "ckm health nutrition statement",
+        "ckm risk lifestyle medicine guideline"
+      ]
+    },
+    "busca2b": {
+      "clinical_keys": [
+        "cardiometabolic"
+      ],
+      "priority_outcomes": [
+        "cardiometabolic"
+      ],
+      "web_query_hints": [
+        "cardiorenal metabolic health lifestyle intervention",
+        "cardiorenal metabolic risk nutrition intervention",
+        "ckm health dietary intervention",
+        "ckm risk lifestyle intervention"
+      ]
+    }
+  }
+}
