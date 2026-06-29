@@ -33,6 +33,26 @@ def test_busca2a_structured_components_include_high_value_guidance_terms():
     assert "standards of care" in web_hints
 
 
+def test_busca2a_queries_cover_personalized_cardiometabolic_nutrition_guidance():
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+
+    _, components = build_structured_components(taxonomy, "busca2a")
+    priority_outcomes = {term.lower() for term in components["priority_outcomes"]}
+    web_hints = {term.lower() for term in components["web_hints"]}
+    queries = [query.lower() for query in build_queries(taxonomy, "busca2a")]
+
+    assert "personalized nutrition for cardiometabolic risk" in priority_outcomes
+    assert "precision nutrition for cardiometabolic risk" in priority_outcomes
+    assert "tailored dietary advice for cardiometabolic risk" in priority_outcomes
+    assert "personalized nutrition cardiometabolic risk guideline" in web_hints
+    assert "tailored dietary advice cardiometabolic guideline" in web_hints
+    assert any(
+        "personalized nutrition" in query
+        and ("cardiometabolic" in query or "type 2 diabetes" in query or "obesity" in query)
+        for query in queries
+    )
+
+
 def test_busca2b_queries_cover_fatty_liver_diet_trials():
     taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
 
