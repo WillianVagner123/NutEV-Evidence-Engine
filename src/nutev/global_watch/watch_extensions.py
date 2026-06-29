@@ -32,6 +32,38 @@ PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS = [
     "individualised meal plan adherence",
 ]
 
+FOOD_ENVIRONMENT_POLICY_TERMS = [
+    "food service guidelines",
+    "healthy food service guidelines",
+    "nutrition standards for food service",
+    "institutional food procurement",
+    "public food procurement",
+    "healthy food procurement policy",
+    "food procurement policy",
+    "healthy food retail policy",
+    "choice architecture intervention",
+    "healthy choice architecture",
+    "healthy default",
+    "healthy defaults",
+    "food affordability policy",
+    "healthy food affordability policy",
+]
+
+FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
+    "food service guideline",
+    "food service guidelines",
+    "nutrition standards guideline",
+    "procurement guideline",
+    "procurement standards",
+    "food procurement standards",
+    "healthy food procurement standards",
+    "food environment policy",
+    "food environment policy evaluation",
+    "institutional food policy",
+    "school food service guideline",
+    "worksite food service guideline",
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -55,6 +87,15 @@ def _extend_seed_group(category: str, group_index: int, terms: Sequence[str]) ->
     group[:] = _dedupe_preserve_order([*group, *terms])
 
 
+def _extend_category_terms(category: str, terms: Sequence[str]) -> None:
+    category_terms = watch_config.WATCH_CATEGORIES.get(category)
+    if not isinstance(category_terms, list):
+        return
+    if any(isinstance(term, list) for term in category_terms):
+        return
+    category_terms[:] = _dedupe_preserve_order([*category_terms, *terms])
+
+
 def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
@@ -65,6 +106,18 @@ def apply_watch_taxonomy_extensions() -> None:
         "personalized_nutrition",
         1,
         PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS,
+    )
+    _extend_category_terms(
+        "food_literacy_culinary_commensality",
+        [*FOOD_ENVIRONMENT_POLICY_TERMS, *FOOD_ENVIRONMENT_DOCUMENT_TERMS],
+    )
+    _extend_category_terms(
+        "implementation_behavior",
+        FOOD_ENVIRONMENT_POLICY_TERMS,
+    )
+    _extend_category_terms(
+        "guidelines_consensus",
+        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
     )
 
 
