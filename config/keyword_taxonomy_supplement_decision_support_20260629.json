@@ -1,0 +1,155 @@
+{
+  "version_note": "Focused 2026-06-29 NutMEV supplement for nutrition-centered shared decision making, patient decision aids, and preference-sensitive dietary counseling. Loaded after keyword_taxonomy.json without altering the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "nutrition_decision_support": [
+        "nutrition shared decision making",
+        "nutrition shared decision-making",
+        "dietary shared decision making",
+        "dietary shared decision-making",
+        "shared decision making for diet",
+        "shared decision-making for diet",
+        "shared decision making for nutrition",
+        "shared decision-making for nutrition",
+        "nutrition decision aid",
+        "nutrition decision aids",
+        "diet decision aid",
+        "diet decision aids",
+        "dietary decision aid",
+        "dietary decision aids",
+        "patient decision aid diet",
+        "patient decision aid nutrition",
+        "preference-sensitive dietary counseling",
+        "preference sensitive dietary counseling",
+        "preference-sensitive dietary counselling",
+        "preference sensitive dietary counselling",
+        "patient-centered nutrition counseling",
+        "patient centered nutrition counseling",
+        "patient-centred nutrition counselling",
+        "patient centred nutrition counselling",
+        "collaborative goal setting nutrition",
+        "collaborative goal-setting nutrition",
+        "dietary goal setting",
+        "dietary goal-setting",
+        "nutrition goal setting",
+        "nutrition goal-setting",
+        "values clarification diet",
+        "values clarification nutrition"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "nutrition shared decision making",
+      "dietary shared decision making",
+      "nutrition decision aid",
+      "dietary decision aid",
+      "preference-sensitive dietary counseling",
+      "patient-centered nutrition counseling",
+      "collaborative goal setting nutrition",
+      "dietary goal setting",
+      "nutrition goal setting"
+    ],
+    "behavioral": [
+      "nutrition shared decision making",
+      "dietary shared decision making",
+      "nutrition decision aid",
+      "dietary decision aid",
+      "patient-centered nutrition counseling",
+      "collaborative goal setting nutrition",
+      "values clarification nutrition"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "nutrition shared decision making",
+        "nutrition shared decision-making",
+        "dietary shared decision making",
+        "dietary shared decision-making",
+        "nutrition decision aid",
+        "nutrition decision aids",
+        "dietary decision aid",
+        "dietary decision aids",
+        "patient decision aid nutrition",
+        "preference-sensitive dietary counseling",
+        "preference sensitive dietary counseling",
+        "patient-centered nutrition counseling",
+        "patient centred nutrition counselling",
+        "collaborative goal setting nutrition",
+        "dietary goal setting",
+        "nutrition goal setting"
+      ],
+      "web_query_hints": [
+        "nutrition shared decision making obesity trial",
+        "dietary shared decision making type 2 diabetes",
+        "nutrition decision aid diabetes diet",
+        "dietary decision aid weight management",
+        "patient decision aid nutrition cardiometabolic",
+        "preference-sensitive dietary counseling intervention",
+        "patient-centered nutrition counseling adherence",
+        "collaborative goal setting nutrition intervention"
+      ],
+      "document_terms": [
+        "decision aid trial",
+        "shared decision making intervention",
+        "patient-centered counseling intervention",
+        "goal setting intervention"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "nutrition shared decision making",
+        "dietary shared decision making",
+        "nutrition decision aid",
+        "dietary decision aid",
+        "patient decision aid nutrition",
+        "preference-sensitive dietary counseling",
+        "patient-centered nutrition counseling",
+        "collaborative goal setting nutrition",
+        "values clarification nutrition"
+      ],
+      "web_query_hints": [
+        "nutrition shared decision making questionnaire",
+        "dietary shared decision making instrument",
+        "nutrition decision aid framework",
+        "dietary decision aid validation",
+        "patient-centered nutrition counseling questionnaire",
+        "collaborative goal setting nutrition scale"
+      ],
+      "document_terms": [
+        "decision aid framework",
+        "shared decision making questionnaire",
+        "patient-centered counseling questionnaire",
+        "goal setting scale"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "nutrition shared decision making",
+        "dietary shared decision making",
+        "nutrition decision aid",
+        "dietary decision aid",
+        "patient decision aid nutrition",
+        "preference-sensitive dietary counseling",
+        "patient-centered nutrition counseling",
+        "collaborative goal setting nutrition",
+        "values clarification nutrition"
+      ],
+      "web_query_hints": [
+        "nutrition shared decision making questionnaire",
+        "dietary shared decision making instrument",
+        "nutrition decision aid framework",
+        "dietary decision aid validation",
+        "patient-centered nutrition counseling questionnaire",
+        "collaborative goal setting nutrition scale"
+      ],
+      "document_terms": [
+        "decision aid framework",
+        "shared decision making questionnaire",
+        "patient-centered counseling questionnaire",
+        "goal setting scale"
+      ]
+    }
+  }
+}
