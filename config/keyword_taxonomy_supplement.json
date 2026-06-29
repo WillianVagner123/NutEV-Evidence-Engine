@@ -56,6 +56,22 @@
         "dietary self-regulation",
         "eating self-regulation"
       ],
+      "coaching_navigation": [
+        "nutrition coaching",
+        "diet coaching",
+        "health coaching",
+        "lifestyle coaching",
+        "behavioral coaching",
+        "behavioural coaching",
+        "remote nutrition coaching",
+        "digital nutrition coaching",
+        "telehealth nutrition coaching",
+        "patient navigation intervention",
+        "care navigation intervention",
+        "community health worker nutrition intervention",
+        "community health worker-led lifestyle intervention",
+        "community health worker led lifestyle intervention"
+      ],
       "food_as_medicine_access": [
         "food is medicine program",
         "food as medicine program",
@@ -218,7 +234,14 @@
       "group dietary intervention",
       "group-based dietary intervention",
       "peer-led lifestyle intervention",
-      "peer-led nutrition intervention"
+      "peer-led nutrition intervention",
+      "nutrition coaching",
+      "health coaching",
+      "lifestyle coaching",
+      "behavioral coaching",
+      "behavioural coaching",
+      "patient navigation intervention",
+      "care navigation intervention"
     ],
     "food_access_implementation": [
       "food is medicine evaluation",
@@ -250,7 +273,10 @@
       "cooking self-efficacy scale",
       "cooking self efficacy scale",
       "meal preparation questionnaire",
-      "food preparation skills questionnaire"
+      "food preparation skills questionnaire",
+      "culinary medicine assessment",
+      "culinary medicine evaluation",
+      "teaching kitchen evaluation"
     ]
   },
   "workstreams": {
@@ -375,7 +401,21 @@
         "peer led lifestyle intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "nutrition coaching",
+        "diet coaching",
+        "health coaching",
+        "lifestyle coaching",
+        "behavioral coaching",
+        "behavioural coaching",
+        "remote nutrition coaching",
+        "digital nutrition coaching",
+        "telehealth nutrition coaching",
+        "culinary medicine intervention",
+        "culinary nutrition intervention",
+        "teaching kitchen intervention",
+        "cooking skills intervention",
+        "meal planning intervention"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -404,7 +444,16 @@
         "group-based lifestyle intervention cardiometabolic",
         "group-based nutrition intervention obesity",
         "peer-led nutrition intervention diabetes",
-        "peer-led lifestyle intervention weight management"
+        "peer-led lifestyle intervention weight management",
+        "nutrition coaching cardiometabolic trial",
+        "health coaching dietary adherence trial",
+        "lifestyle coaching obesity trial",
+        "digital nutrition coaching diabetes trial",
+        "telehealth nutrition coaching weight management",
+        "culinary medicine cardiometabolic trial",
+        "teaching kitchen diabetes intervention",
+        "cooking skills intervention obesity",
+        "meal planning intervention cardiometabolic"
       ],
       "document_terms": [
         "implementation trial",
@@ -415,7 +464,13 @@
         "group-based intervention",
         "group based intervention",
         "peer-led intervention",
-        "peer led intervention"
+        "peer led intervention",
+        "coaching intervention",
+        "nutrition coaching intervention",
+        "health coaching intervention",
+        "culinary medicine intervention",
+        "teaching kitchen intervention",
+        "cooking skills intervention"
       ]
     },
     "a3": {
@@ -439,6 +494,18 @@
         "culinary medicine education",
         "teaching kitchen curriculum",
         "teaching kitchen evaluation",
+        "culinary medicine assessment",
+        "culinary medicine evaluation",
+        "culinary medicine competency",
+        "culinary medicine competencies",
+        "teaching kitchen program evaluation",
+        "teaching kitchen programme evaluation",
+        "cooking confidence scale",
+        "food skills instrument",
+        "food skills scale",
+        "meal planning skills scale",
+        "grocery shopping skills scale",
+        "food resource management questionnaire",
         "dietary adherence questionnaire",
         "dietary adherence scale",
         "group-based nutrition intervention",
@@ -462,7 +529,14 @@
         "dietary adherence questionnaire validation",
         "group-based nutrition intervention framework",
         "peer-led nutrition intervention framework",
-        "peer support dietary adherence framework"
+        "peer support dietary adherence framework",
+        "culinary medicine competency assessment",
+        "culinary medicine program evaluation",
+        "teaching kitchen program evaluation",
+        "cooking confidence scale validation",
+        "food skills instrument validation",
+        "meal planning skills scale validation",
+        "food resource management questionnaire validation"
       ],
       "document_terms": [
         "questionnaire validation",
@@ -471,7 +545,11 @@
         "psychometric validation",
         "curriculum evaluation",
         "framework",
-        "intervention framework"
+        "intervention framework",
+        "competency framework",
+        "program evaluation",
+        "food skills instrument",
+        "culinary medicine competency assessment"
       ]
     },
     "artigo3_framework": {
@@ -495,6 +573,18 @@
         "culinary medicine education",
         "teaching kitchen curriculum",
         "teaching kitchen evaluation",
+        "culinary medicine assessment",
+        "culinary medicine evaluation",
+        "culinary medicine competency",
+        "culinary medicine competencies",
+        "teaching kitchen program evaluation",
+        "teaching kitchen programme evaluation",
+        "cooking confidence scale",
+        "food skills instrument",
+        "food skills scale",
+        "meal planning skills scale",
+        "grocery shopping skills scale",
+        "food resource management questionnaire",
         "dietary adherence questionnaire",
         "dietary adherence scale",
         "group-based nutrition intervention",
@@ -518,7 +608,14 @@
         "dietary adherence questionnaire validation",
         "group-based nutrition intervention framework",
         "peer-led nutrition intervention framework",
-        "peer support dietary adherence framework"
+        "peer support dietary adherence framework",
+        "culinary medicine competency assessment",
+        "culinary medicine program evaluation",
+        "teaching kitchen program evaluation",
+        "cooking confidence scale validation",
+        "food skills instrument validation",
+        "meal planning skills scale validation",
+        "food resource management questionnaire validation"
       ],
       "document_terms": [
         "questionnaire validation",
@@ -527,7 +624,11 @@
         "psychometric validation",
         "curriculum evaluation",
         "framework",
-        "intervention framework"
+        "intervention framework",
+        "competency framework",
+        "program evaluation",
+        "food skills instrument",
+        "culinary medicine competency assessment"
       ]
     }
   }
