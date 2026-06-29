@@ -1,0 +1,144 @@
+{
+  "version_note": "2026-06 food skills and meal planning supplement for NutMEV query expansion",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "meal preparation skills",
+        "meal preparation confidence",
+        "food preparation skills",
+        "food preparation confidence",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "kitchen confidence",
+        "healthy grocery shopping",
+        "grocery shopping skills",
+        "shopping self-efficacy",
+        "shopping self efficacy",
+        "food budgeting",
+        "food budget management",
+        "food resource management",
+        "meal plan adherence",
+        "healthy meal planning",
+        "nutrition label use",
+        "food label use",
+        "label reading skills",
+        "habilidades de planejamento de refeicoes",
+        "habilidades de preparo de refeicoes",
+        "confianca culinaria",
+        "autoeficacia culinaria",
+        "compras saudaveis",
+        "orcamento alimentar",
+        "gestao de recursos alimentares"
+      ]
+    },
+    "implementation_behavior": {
+      "adherence": [
+        "meal plan adherence",
+        "diet plan adherence",
+        "food skills adherence",
+        "meal planning adherence",
+        "grocery shopping adherence",
+        "cooking confidence intervention",
+        "meal planning intervention",
+        "food preparation intervention"
+      ],
+      "behavioral": [
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "shopping self-efficacy",
+        "shopping self efficacy",
+        "food preparation confidence",
+        "meal preparation confidence",
+        "kitchen confidence",
+        "label reading skills",
+        "nutrition label use",
+        "food label use",
+        "healthy grocery shopping",
+        "food budgeting",
+        "food budget management",
+        "food resource management"
+      ],
+      "contextual": [
+        "food resource management",
+        "food budget management",
+        "food budgeting",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "household food management",
+        "household meal planning",
+        "meal planning barrier",
+        "meal planning barriers",
+        "meal preparation barrier",
+        "meal preparation barriers"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "meal plan adherence",
+      "diet plan adherence",
+      "food skills adherence",
+      "meal planning self-efficacy",
+      "cooking self-efficacy",
+      "food resource management"
+    ],
+    "behavioral": [
+      "meal planning self-efficacy",
+      "meal planning self efficacy",
+      "cooking self-efficacy",
+      "cooking self efficacy",
+      "shopping self-efficacy",
+      "shopping self efficacy",
+      "food preparation confidence",
+      "meal preparation confidence",
+      "kitchen confidence",
+      "food budgeting",
+      "food resource management"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food skills intervention",
+        "meal planning intervention",
+        "food preparation skills",
+        "food resource management",
+        "healthy grocery shopping",
+        "nutrition label use"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "meal plan adherence",
+        "meal planning intervention",
+        "cooking confidence intervention",
+        "food preparation intervention",
+        "food resource management intervention",
+        "healthy grocery shopping intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "meal planning self-efficacy",
+        "cooking self-efficacy",
+        "food preparation skills",
+        "grocery shopping skills",
+        "food budgeting",
+        "food resource management"
+      ],
+      "web_query_hints": [
+        "meal planning questionnaire",
+        "meal planning self-efficacy scale",
+        "cooking self-efficacy scale",
+        "food preparation skills instrument",
+        "grocery shopping skills scale",
+        "food resource management questionnaire",
+        "nutrition label use scale"
+      ]
+    }
+  }
+}

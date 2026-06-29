@@ -1,0 +1,71 @@
+{
+  "version_note": "2026-06 food skills scoring supplement for NutMEV prioritization",
+  "keyword_points": {
+    "meal planning self-efficacy": 4,
+    "meal planning self efficacy": 4,
+    "cooking self-efficacy": 4,
+    "cooking self efficacy": 4,
+    "shopping self-efficacy": 3,
+    "shopping self efficacy": 3,
+    "food preparation skills": 3,
+    "food preparation confidence": 3,
+    "meal preparation skills": 3,
+    "meal preparation confidence": 3,
+    "kitchen confidence": 3,
+    "grocery shopping skills": 3,
+    "healthy grocery shopping": 3,
+    "food budgeting": 3,
+    "food budget management": 3,
+    "food resource management": 4,
+    "meal plan adherence": 4,
+    "diet plan adherence": 3,
+    "food skills adherence": 4,
+    "meal planning intervention": 4,
+    "food preparation intervention": 4,
+    "cooking confidence intervention": 4,
+    "nutrition label use": 3,
+    "food label use": 3,
+    "label reading skills": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food preparation skills": 4,
+      "meal preparation skills": 4,
+      "healthy grocery shopping": 4,
+      "food budgeting": 4,
+      "food resource management": 5,
+      "nutrition label use": 4,
+      "food label use": 4,
+      "label reading skills": 4
+    },
+    "busca2b": {
+      "meal plan adherence": 5,
+      "diet plan adherence": 4,
+      "food skills adherence": 5,
+      "meal planning self-efficacy": 5,
+      "cooking self-efficacy": 5,
+      "food preparation intervention": 5,
+      "meal planning intervention": 5,
+      "food resource management intervention": 5,
+      "healthy grocery shopping intervention": 4
+    },
+    "a3": {
+      "meal planning questionnaire": 5,
+      "meal planning self-efficacy scale": 6,
+      "cooking self-efficacy scale": 6,
+      "food preparation skills instrument": 6,
+      "grocery shopping skills scale": 5,
+      "food resource management questionnaire": 6,
+      "nutrition label use scale": 5
+    },
+    "artigo3_framework": {
+      "meal planning questionnaire": 5,
+      "meal planning self-efficacy scale": 6,
+      "cooking self-efficacy scale": 6,
+      "food preparation skills instrument": 6,
+      "grocery shopping skills scale": 5,
+      "food resource management questionnaire": 6,
+      "nutrition label use scale": 5
+    }
+  }
+}
