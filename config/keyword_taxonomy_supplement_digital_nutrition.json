@@ -1,0 +1,96 @@
+{
+  "version_note": "2026-06 digital nutrition implementation supplement. Adds nutrition-anchored digital care terms without changing raw taxonomy files.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "digital lifestyle intervention",
+        "app-based nutrition intervention",
+        "app based nutrition intervention",
+        "mobile nutrition intervention",
+        "mhealth nutrition intervention",
+        "telehealth nutrition intervention",
+        "telemedicine nutrition intervention",
+        "virtual nutrition counseling",
+        "virtual nutrition counselling",
+        "remote nutrition counseling",
+        "remote nutrition counselling",
+        "remote dietitian coaching",
+        "remote dietitian-led intervention",
+        "telehealth dietitian intervention",
+        "digital dietary self-monitoring",
+        "mobile dietary self-monitoring",
+        "nutrition app adherence",
+        "digital adherence support",
+        "remote lifestyle coaching"
+      ],
+      "behavioral": [
+        "digital behavior change intervention",
+        "digital behaviour change intervention",
+        "app-based behavior change",
+        "app based behavior change",
+        "mobile health coaching",
+        "remote health coaching",
+        "virtual health coaching",
+        "digital self-monitoring",
+        "mobile self-monitoring",
+        "remote self-monitoring",
+        "digital goal setting",
+        "mobile goal setting",
+        "digital motivational interviewing"
+      ],
+      "contextual": [
+        "telehealth lifestyle program",
+        "telehealth lifestyle programme",
+        "virtual lifestyle program",
+        "virtual lifestyle programme",
+        "digital lifestyle program",
+        "digital lifestyle programme",
+        "remote lifestyle program",
+        "remote lifestyle programme",
+        "digital health nutrition program",
+        "digital health nutrition programme",
+        "telehealth medical nutrition therapy",
+        "virtual medical nutrition therapy",
+        "remote medical nutrition therapy"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "digital lifestyle intervention",
+        "telehealth nutrition intervention",
+        "telemedicine nutrition intervention",
+        "virtual nutrition counseling",
+        "virtual nutrition counselling",
+        "remote nutrition counseling",
+        "remote nutrition counselling",
+        "remote dietitian coaching",
+        "telehealth dietitian intervention",
+        "digital dietary self-monitoring",
+        "mobile dietary self-monitoring",
+        "nutrition app adherence",
+        "digital adherence support",
+        "remote lifestyle coaching",
+        "telehealth medical nutrition therapy",
+        "virtual medical nutrition therapy",
+        "remote medical nutrition therapy",
+        "digital behavior change intervention",
+        "digital behaviour change intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "digital nutrition intervention framework",
+        "digital dietary self-monitoring framework",
+        "nutrition app adherence framework",
+        "telehealth nutrition counseling framework",
+        "remote dietitian coaching framework"
+      ]
+    }
+  }
+}
