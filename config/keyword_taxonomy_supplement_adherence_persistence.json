@@ -1,0 +1,100 @@
+{
+  "version_note": "2026-06-29 adherence/persistence query expansion for diet-maintenance and self-monitoring evidence",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "diet adherence",
+        "dietary pattern adherence",
+        "meal plan adherence",
+        "meal-plan adherence",
+        "nutrition adherence",
+        "diet acceptability",
+        "dietary acceptability",
+        "intervention acceptability",
+        "maintenance phase",
+        "weight maintenance phase",
+        "post-intervention maintenance",
+        "weight self-monitoring",
+        "food self-monitoring",
+        "diet tracking",
+        "self-weighing",
+        "self weighing",
+        "relapse prevention",
+        "lapse management",
+        "dietary lapse",
+        "dietary lapses"
+      ],
+      "behavioral": [
+        "meal planning self-efficacy",
+        "dietary self-efficacy",
+        "eating self-regulation",
+        "self-regulation of eating",
+        "implementation intentions",
+        "coping planning",
+        "action planning"
+      ]
+    },
+    "document_types": {
+      "trials": [
+        "maintenance trial",
+        "dietary adherence intervention",
+        "weight maintenance trial",
+        "weight regain prevention trial"
+      ],
+      "reviews": [
+        "dietary adherence systematic review",
+        "weight maintenance systematic review",
+        "behavioral maintenance review",
+        "behavioural maintenance review"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet adherence",
+      "dietary pattern adherence",
+      "meal plan adherence",
+      "nutrition adherence",
+      "diet acceptability",
+      "dietary acceptability",
+      "maintenance phase",
+      "post-intervention maintenance",
+      "weight self-monitoring",
+      "food self-monitoring",
+      "diet tracking",
+      "self-weighing",
+      "self weighing"
+    ],
+    "behavioral": [
+      "meal planning self-efficacy",
+      "dietary self-efficacy",
+      "eating self-regulation",
+      "self-regulation of eating",
+      "implementation intentions",
+      "coping planning",
+      "action planning"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "dietary adherence intervention",
+        "meal plan adherence",
+        "weight maintenance trial",
+        "weight regain prevention trial",
+        "diet acceptability",
+        "weight self-monitoring",
+        "food self-monitoring"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "meal plan adherence",
+        "dietary self-efficacy",
+        "eating self-regulation",
+        "food self-monitoring",
+        "weight self-monitoring"
+      ]
+    }
+  }
+}

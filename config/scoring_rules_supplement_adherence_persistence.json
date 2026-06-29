@@ -1,0 +1,54 @@
+{
+  "version_note": "2026-06-29 adherence/persistence scoring expansion for diet-maintenance evidence",
+  "keyword_points": {
+    "diet adherence": 3,
+    "dietary pattern adherence": 4,
+    "meal plan adherence": 4,
+    "meal-plan adherence": 4,
+    "nutrition adherence": 3,
+    "diet acceptability": 3,
+    "dietary acceptability": 3,
+    "intervention acceptability": 2,
+    "maintenance phase": 3,
+    "weight maintenance phase": 4,
+    "post-intervention maintenance": 4,
+    "weight self-monitoring": 4,
+    "food self-monitoring": 4,
+    "diet tracking": 3,
+    "self-weighing": 3,
+    "self weighing": 3,
+    "meal planning self-efficacy": 4,
+    "dietary self-efficacy": 4
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "diet adherence": 4,
+      "dietary pattern adherence": 5,
+      "meal plan adherence": 5,
+      "meal-plan adherence": 5,
+      "nutrition adherence": 4,
+      "diet acceptability": 4,
+      "dietary acceptability": 4,
+      "maintenance phase": 4,
+      "weight maintenance phase": 5,
+      "post-intervention maintenance": 5,
+      "weight self-monitoring": 5,
+      "food self-monitoring": 5,
+      "diet tracking": 4,
+      "self-weighing": 4,
+      "self weighing": 4,
+      "meal planning self-efficacy": 4,
+      "dietary self-efficacy": 4
+    },
+    "artigo3_framework": {
+      "meal plan adherence": 4,
+      "dietary pattern adherence": 4,
+      "diet acceptability": 3,
+      "dietary acceptability": 3,
+      "weight self-monitoring": 4,
+      "food self-monitoring": 4,
+      "dietary self-efficacy": 4,
+      "meal planning self-efficacy": 4
+    }
+  }
+}
