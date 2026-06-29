@@ -1,0 +1,47 @@
+{
+  "version_note": "Focused NutMEV scoring supplement for central/visceral adiposity and metabolic remission maintenance. Loaded after scoring_rules.json without replacing base scoring rules.",
+  "keyword_points": {
+    "central obesity": 3,
+    "abdominal obesity": 3,
+    "central adiposity": 3,
+    "abdominal adiposity": 3,
+    "visceral adiposity": 3,
+    "visceral fat": 3,
+    "waist circumference": 2,
+    "waist-to-height ratio": 2,
+    "waist to height ratio": 2,
+    "waist-to-hip ratio": 2,
+    "waist to hip ratio": 2,
+    "diabetes remission maintenance": 4,
+    "remission maintenance": 3,
+    "diet-induced diabetes remission": 4,
+    "diet induced diabetes remission": 4,
+    "lifestyle-induced diabetes remission": 4,
+    "lifestyle induced diabetes remission": 4,
+    "glycemic remission maintenance": 4,
+    "glycaemic remission maintenance": 4,
+    "weight regain prevention": 4,
+    "weight regain management": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "central obesity": 4,
+      "abdominal obesity": 4,
+      "central adiposity": 4,
+      "abdominal adiposity": 4,
+      "visceral adiposity": 4,
+      "diabetes remission maintenance": 5,
+      "weight regain prevention": 5
+    },
+    "busca2b": {
+      "central obesity": 4,
+      "abdominal obesity": 4,
+      "visceral adiposity": 4,
+      "diet-induced diabetes remission": 5,
+      "lifestyle-induced diabetes remission": 5,
+      "diabetes remission maintenance": 5,
+      "weight regain prevention": 5,
+      "weight regain management": 4
+    }
+  }
+}

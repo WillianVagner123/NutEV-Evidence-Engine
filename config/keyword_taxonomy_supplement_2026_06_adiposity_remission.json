@@ -1,0 +1,134 @@
+{
+  "version_note": "Focused NutMEV query supplement for central/visceral adiposity and metabolic remission maintenance. Loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "clinical": {
+    "obesity_adiposity_precision": [
+      "central obesity",
+      "abdominal obesity",
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "visceral fat",
+      "waist circumference",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ],
+    "metabolic_remission_maintenance": [
+      "diabetes remission maintenance",
+      "remission maintenance",
+      "diet-induced diabetes remission",
+      "diet induced diabetes remission",
+      "lifestyle-induced diabetes remission",
+      "lifestyle induced diabetes remission",
+      "glycemic remission maintenance",
+      "glycaemic remission maintenance",
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ]
+  },
+  "outcomes": {
+    "obesity_adiposity_precision": [
+      "central obesity",
+      "abdominal obesity",
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "visceral fat",
+      "waist circumference",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ],
+    "metabolic_remission_maintenance": [
+      "diabetes remission maintenance",
+      "remission maintenance",
+      "diet-induced diabetes remission",
+      "diet induced diabetes remission",
+      "lifestyle-induced diabetes remission",
+      "lifestyle induced diabetes remission",
+      "glycemic remission maintenance",
+      "glycaemic remission maintenance",
+      "weight maintenance",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "central obesity",
+        "abdominal obesity",
+        "central adiposity",
+        "abdominal adiposity",
+        "visceral adiposity",
+        "visceral fat",
+        "waist circumference",
+        "waist-to-height ratio",
+        "waist to height ratio",
+        "waist-to-hip ratio",
+        "waist to hip ratio"
+      ],
+      "priority_outcomes": [
+        "diabetes remission maintenance",
+        "remission maintenance",
+        "glycemic remission maintenance",
+        "glycaemic remission maintenance",
+        "weight loss maintenance",
+        "weight regain prevention"
+      ],
+      "web_query_hints": [
+        "central obesity guideline",
+        "abdominal obesity guideline",
+        "visceral adiposity guideline",
+        "waist circumference guideline",
+        "type 2 diabetes remission consensus",
+        "diabetes remission maintenance consensus",
+        "weight regain prevention guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "central obesity",
+        "abdominal obesity",
+        "central adiposity",
+        "abdominal adiposity",
+        "visceral adiposity",
+        "visceral fat",
+        "waist circumference",
+        "waist-to-height ratio",
+        "waist to height ratio",
+        "waist-to-hip ratio",
+        "waist to hip ratio"
+      ],
+      "focus_terms": [
+        "diet-induced diabetes remission",
+        "diet induced diabetes remission",
+        "lifestyle-induced diabetes remission",
+        "lifestyle induced diabetes remission",
+        "diabetes remission maintenance",
+        "remission maintenance",
+        "weight loss maintenance",
+        "weight regain prevention",
+        "weight regain management"
+      ],
+      "web_query_hints": [
+        "central obesity lifestyle intervention",
+        "visceral adiposity dietary intervention",
+        "waist circumference lifestyle intervention",
+        "diet-induced diabetes remission intervention",
+        "lifestyle-induced diabetes remission intervention",
+        "diabetes remission maintenance trial",
+        "weight regain prevention trial"
+      ]
+    }
+  }
+}
