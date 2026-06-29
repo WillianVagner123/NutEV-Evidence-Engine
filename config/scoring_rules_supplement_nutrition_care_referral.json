@@ -1,0 +1,72 @@
+{
+  "version_note": "Supplemental NutMEV scoring for clinical nutrition referral, prescription, order, care-plan and team-based delivery terms; tuned to boost nutrition implementation workflows only when records also match existing NutMEV anchors.",
+  "keyword_points": {
+    "nutrition referral": 3,
+    "dietitian referral": 3,
+    "registered dietitian referral": 3,
+    "registered dietitian nutritionist referral": 3,
+    "medical nutrition therapy referral": 4,
+    "nutrition prescription": 3,
+    "diet prescription": 2,
+    "dietary prescription": 3,
+    "medical nutrition therapy prescription": 4,
+    "nutrition order": 2,
+    "medical nutrition therapy order": 3,
+    "nutrition care coordination": 4,
+    "team-based nutrition care": 4,
+    "team based nutrition care": 4,
+    "interprofessional nutrition care": 4,
+    "multidisciplinary nutrition care": 3,
+    "primary care nutrition referral": 4,
+    "primary care dietitian referral": 4,
+    "electronic referral to dietitian": 3,
+    "nutrition e-consult": 3,
+    "nutrition e consult": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "medical nutrition therapy referral": 4,
+      "nutrition prescription": 3,
+      "dietary prescription": 3,
+      "nutrition care coordination": 4,
+      "team-based nutrition care": 4,
+      "team based nutrition care": 4,
+      "interprofessional nutrition care": 4,
+      "primary care nutrition referral": 4,
+      "primary care dietitian referral": 4
+    },
+    "busca2b": {
+      "nutrition referral": 3,
+      "dietitian referral": 3,
+      "dietitian referral pathway": 4,
+      "medical nutrition therapy referral": 4,
+      "nutrition prescription": 4,
+      "dietary prescription": 4,
+      "medical nutrition therapy order": 3,
+      "nutrition care coordination": 4,
+      "team-based nutrition care": 5,
+      "team based nutrition care": 5,
+      "interprofessional nutrition care": 4,
+      "multidisciplinary nutrition care": 4,
+      "primary care nutrition referral": 4,
+      "primary care dietitian referral": 4,
+      "electronic referral to dietitian": 3,
+      "nutrition e-consult": 3,
+      "nutrition e consult": 3
+    },
+    "a3": {
+      "nutrition care planning": 3,
+      "nutrition care coordination": 3,
+      "team-based nutrition care": 3,
+      "team based nutrition care": 3,
+      "interprofessional nutrition care": 3
+    },
+    "artigo3_framework": {
+      "nutrition care planning": 3,
+      "nutrition care coordination": 3,
+      "team-based nutrition care": 3,
+      "team based nutrition care": 3,
+      "interprofessional nutrition care": 3
+    }
+  }
+}

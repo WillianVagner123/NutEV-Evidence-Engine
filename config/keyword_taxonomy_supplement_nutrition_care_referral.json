@@ -1,0 +1,149 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for clinical nutrition referral, prescription, order, care-plan and team-based delivery terms; intended to improve capture of nutrition implementation workflows without changing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "clinical_nutrition_referral": [
+        "nutrition referral",
+        "dietitian referral",
+        "dietitian referral pathway",
+        "registered dietitian referral",
+        "registered dietitian nutritionist referral",
+        "medical nutrition therapy referral",
+        "nutrition therapy referral",
+        "diet therapy referral",
+        "nutrition prescription",
+        "diet prescription",
+        "dietary prescription",
+        "medical nutrition therapy prescription",
+        "nutrition order",
+        "diet order",
+        "dietary order",
+        "medical nutrition therapy order",
+        "nutrition care referral",
+        "nutrition care coordination",
+        "nutrition care planning",
+        "nutrition care plan",
+        "nutrition care plans",
+        "team-based nutrition care",
+        "team based nutrition care",
+        "interprofessional nutrition care",
+        "multidisciplinary nutrition care",
+        "primary care nutrition referral",
+        "primary care dietitian referral",
+        "electronic referral to dietitian",
+        "nutrition e-consult",
+        "nutrition e consult"
+      ]
+    }
+  },
+  "outcomes": {
+    "care_delivery_implementation": [
+      "nutrition referral",
+      "dietitian referral",
+      "medical nutrition therapy referral",
+      "nutrition prescription",
+      "diet prescription",
+      "dietary prescription",
+      "nutrition order",
+      "medical nutrition therapy order",
+      "nutrition care coordination",
+      "team-based nutrition care",
+      "interprofessional nutrition care",
+      "multidisciplinary nutrition care",
+      "primary care nutrition referral",
+      "primary care dietitian referral"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "nutrition referral",
+        "dietitian referral",
+        "medical nutrition therapy referral",
+        "nutrition prescription",
+        "dietary prescription",
+        "nutrition care coordination",
+        "team-based nutrition care",
+        "interprofessional nutrition care",
+        "primary care nutrition referral"
+      ],
+      "web_query_hints": [
+        "medical nutrition therapy referral guideline",
+        "dietitian referral clinical practice guideline",
+        "nutrition prescription guideline",
+        "nutrition care coordination consensus",
+        "team-based nutrition care guideline",
+        "primary care nutrition referral guideline"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "care coordination",
+        "clinical pathway",
+        "care pathway"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "nutrition referral",
+        "dietitian referral",
+        "dietitian referral pathway",
+        "medical nutrition therapy referral",
+        "nutrition prescription",
+        "dietary prescription",
+        "nutrition order",
+        "medical nutrition therapy order",
+        "nutrition care coordination",
+        "team-based nutrition care",
+        "interprofessional nutrition care",
+        "multidisciplinary nutrition care",
+        "primary care nutrition referral",
+        "primary care dietitian referral",
+        "electronic referral to dietitian",
+        "nutrition e-consult",
+        "nutrition e consult"
+      ],
+      "web_query_hints": [
+        "dietitian referral intervention",
+        "medical nutrition therapy referral trial",
+        "nutrition prescription implementation",
+        "nutrition order implementation",
+        "nutrition care coordination implementation",
+        "primary care dietitian referral trial",
+        "team-based nutrition care implementation"
+      ],
+      "document_terms": [
+        "referral intervention",
+        "referral pathway",
+        "implementation trial",
+        "process evaluation",
+        "care coordination"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "nutrition care planning",
+        "nutrition care coordination",
+        "team-based nutrition care",
+        "interprofessional nutrition care"
+      ],
+      "web_query_hints": [
+        "nutrition care planning framework",
+        "nutrition care coordination framework",
+        "team-based nutrition care framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "nutrition care planning",
+        "nutrition care coordination",
+        "team-based nutrition care",
+        "interprofessional nutrition care"
+      ],
+      "web_query_hints": [
+        "nutrition care planning framework",
+        "nutrition care coordination framework",
+        "team-based nutrition care framework"
+      ]
+    }
+  }
+}
