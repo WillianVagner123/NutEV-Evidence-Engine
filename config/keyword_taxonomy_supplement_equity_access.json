@@ -1,0 +1,91 @@
+{
+  "version_note": "2026-06 equity/access search supplement for NutMEV nutrition-focused implementation evidence",
+  "global": {
+    "implementation_behavior": {
+      "contextual": [
+        "food security",
+        "food and nutrition security",
+        "nutrition insecurity",
+        "household food insecurity",
+        "household food security",
+        "screen and intervene",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "nutrition insecurity intervention",
+        "health-related social needs",
+        "health related social needs",
+        "social needs navigation",
+        "resource navigation",
+        "community resource navigation",
+        "food resource navigation",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "food is medicine referral",
+        "food as medicine referral"
+      ]
+    },
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food security",
+        "food and nutrition security",
+        "nutrition insecurity",
+        "household food insecurity",
+        "household food security",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "nutrition insecurity intervention",
+        "health-related social needs",
+        "health related social needs",
+        "social needs navigation",
+        "resource navigation",
+        "food resource navigation"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food security",
+        "food and nutrition security",
+        "nutrition insecurity",
+        "household food insecurity",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "health-related social needs",
+        "social needs navigation",
+        "food resource navigation"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food security intervention",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "nutrition insecurity intervention",
+        "health-related social needs",
+        "social needs navigation",
+        "resource navigation",
+        "food resource navigation",
+        "produce prescription referral",
+        "medically tailored food referral"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "food security",
+        "food and nutrition security",
+        "nutrition insecurity",
+        "household food insecurity",
+        "health-related social needs",
+        "social needs navigation",
+        "food resource navigation"
+      ],
+      "web_query_hints": [
+        "nutrition security framework",
+        "food insecurity screening instrument",
+        "health-related social needs screening",
+        "food resource navigation framework"
+      ]
+    }
+  }
+}

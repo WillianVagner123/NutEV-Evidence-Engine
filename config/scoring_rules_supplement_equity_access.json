@@ -1,0 +1,61 @@
+{
+  "version_note": "2026-06 scoring supplement for nutrition-security and food-access implementation evidence",
+  "keyword_points": {
+    "food security": 3,
+    "food and nutrition security": 4,
+    "nutrition insecurity": 3,
+    "household food insecurity": 3,
+    "household food security": 3,
+    "food insecurity intervention": 4,
+    "nutrition insecurity intervention": 4,
+    "health-related social needs": 3,
+    "health related social needs": 3,
+    "social needs navigation": 3,
+    "resource navigation": 3,
+    "community resource navigation": 3,
+    "food resource navigation": 4,
+    "produce prescription referral": 4,
+    "medically tailored food referral": 4,
+    "food is medicine referral": 4,
+    "food as medicine referral": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food security": 4,
+      "food and nutrition security": 5,
+      "nutrition insecurity": 4,
+      "household food insecurity": 4,
+      "food insecurity intervention": 5,
+      "nutrition security intervention": 5,
+      "health-related social needs": 4,
+      "health related social needs": 4,
+      "social needs navigation": 4,
+      "food resource navigation": 5
+    },
+    "busca2b": {
+      "food security intervention": 5,
+      "food insecurity intervention": 5,
+      "nutrition security intervention": 5,
+      "nutrition insecurity intervention": 5,
+      "health-related social needs": 4,
+      "health related social needs": 4,
+      "social needs navigation": 5,
+      "resource navigation": 4,
+      "food resource navigation": 5,
+      "produce prescription referral": 5,
+      "medically tailored food referral": 5
+    },
+    "a3": {
+      "nutrition security framework": 4,
+      "food insecurity screening instrument": 4,
+      "health-related social needs screening": 4,
+      "food resource navigation framework": 4
+    },
+    "artigo3_framework": {
+      "nutrition security framework": 4,
+      "food insecurity screening instrument": 4,
+      "health-related social needs screening": 4,
+      "food resource navigation framework": 4
+    }
+  }
+}
