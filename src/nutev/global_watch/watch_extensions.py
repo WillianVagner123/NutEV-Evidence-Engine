@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib
 from collections.abc import Sequence
 from typing import Any
 
@@ -64,6 +65,25 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+SUSTAINABLE_HEALTHY_DIET_TERMS = [
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+    "sustainable diet quality",
+]
+
+SUSTAINABLE_HEALTHY_DIET_GUIDANCE_TERMS = [
+    "sustainable healthy diet guideline",
+    "sustainable healthy diets guideline",
+    "sustainable healthy diets guidelines",
+    "sustainable dietary guidelines",
+    "healthy sustainable diet guideline",
+    "healthy sustainable diets guideline",
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -96,6 +116,29 @@ def _extend_category_terms(category: str, terms: Sequence[str]) -> None:
     category_terms[:] = _dedupe_preserve_order([*category_terms, *terms])
 
 
+def _extend_query_builder_seed_group(
+    category: str,
+    group_index: int,
+    terms: Sequence[str],
+) -> None:
+    query_builder = importlib.import_module("nutev.global_watch.watch_query_builder")
+    groups = query_builder.QUICK_MODE_SEED_GROUPS.get(category)
+    if not isinstance(groups, list) or group_index >= len(groups):
+        return
+    group = groups[group_index]
+    if not isinstance(group, list):
+        return
+    group[:] = _dedupe_preserve_order([*group, *terms])
+
+
+def _extend_query_builder_context(category: str, terms: Sequence[str]) -> None:
+    query_builder = importlib.import_module("nutev.global_watch.watch_query_builder")
+    context_terms = query_builder.CATEGORY_CONTEXT_TERMS.get(category)
+    if not isinstance(context_terms, list):
+        return
+    context_terms[:] = _dedupe_preserve_order([*context_terms, *terms])
+
+
 def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
@@ -117,7 +160,18 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        [*FOOD_ENVIRONMENT_DOCUMENT_TERMS, *SUSTAINABLE_HEALTHY_DIET_GUIDANCE_TERMS],
+    )
+    _extend_category_terms("diet_patterns", SUSTAINABLE_HEALTHY_DIET_TERMS)
+    _extend_query_builder_seed_group(
+        "diet_patterns",
+        2,
+        [*SUSTAINABLE_HEALTHY_DIET_TERMS, *SUSTAINABLE_HEALTHY_DIET_GUIDANCE_TERMS],
+    )
+    _extend_query_builder_context("diet_patterns", SUSTAINABLE_HEALTHY_DIET_TERMS)
+    _extend_query_builder_context(
+        "guidelines_consensus",
+        SUSTAINABLE_HEALTHY_DIET_GUIDANCE_TERMS,
     )
 
 
