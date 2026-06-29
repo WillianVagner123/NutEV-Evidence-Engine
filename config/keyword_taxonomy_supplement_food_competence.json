@@ -1,0 +1,92 @@
+{
+  "version_note": "2026-06 food/eating competence expansion for NutMEV search coverage",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "eating competence",
+        "food competence",
+        "eating competence model",
+        "satter eating competence",
+        "cooking self efficacy",
+        "meal preparation skills",
+        "meal preparation confidence",
+        "food preparation skills",
+        "food preparation confidence",
+        "kitchen confidence",
+        "food management skills",
+        "food resource management skills",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "food label literacy"
+      ]
+    },
+    "implementation_behavior": {
+      "behavioral": [
+        "eating competence",
+        "food competence",
+        "eating competence model",
+        "satter eating competence",
+        "cooking self efficacy",
+        "meal preparation skills",
+        "food preparation skills",
+        "food management skills",
+        "food resource management skills",
+        "grocery shopping skills"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "competency framework",
+        "competency framework report",
+        "food skills toolkit",
+        "culinary skills toolkit"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "eating competence",
+      "food competence",
+      "cooking self efficacy",
+      "meal preparation skills",
+      "food preparation skills"
+    ],
+    "behavioral": [
+      "eating competence",
+      "food competence",
+      "cooking self efficacy",
+      "meal preparation skills",
+      "food preparation skills",
+      "food resource management skills"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food skills toolkit",
+        "culinary skills toolkit",
+        "food competence framework",
+        "eating competence framework"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "eating competence intervention",
+        "food competence intervention",
+        "cooking self efficacy intervention",
+        "meal preparation skills intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "eating competence scale",
+        "food competence scale",
+        "eating competence questionnaire",
+        "food competence questionnaire",
+        "cooking self efficacy scale",
+        "meal preparation skills questionnaire",
+        "food resource management questionnaire"
+      ]
+    }
+  }
+}
