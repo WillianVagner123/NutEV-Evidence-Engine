@@ -38,6 +38,20 @@ def test_masld_nutrition_terms_reach_clinical_querypacks() -> None:
     assert "mash lifestyle intervention trial" in busca2b_document_terms
 
 
+def test_sodium_potassium_bp_terms_reach_clinical_querypacks() -> None:
+    busca2a_terms = _lowered_terms("busca2a")
+    busca2b_terms = _lowered_terms("busca2b")
+    busca2a_document_terms = _lowered_terms("busca2a", field="document_terms")
+    busca2b_document_terms = _lowered_terms("busca2b", field="document_terms")
+
+    assert "dietary sodium reduction" in busca2a_terms
+    assert "salt substitute" in busca2a_terms
+    assert "potassium-enriched salt" in busca2b_terms
+    assert "sodium-to-potassium ratio" in busca2b_terms
+    assert "dietary sodium reduction guideline" in busca2a_document_terms
+    assert "salt substitute trial" in busca2b_document_terms
+
+
 def test_food_and_eating_competence_terms_reach_framework_querypack() -> None:
     artigo3_terms = _lowered_terms("artigo3_framework")
     artigo3_document_terms = _lowered_terms("artigo3_framework", field="document_terms")
