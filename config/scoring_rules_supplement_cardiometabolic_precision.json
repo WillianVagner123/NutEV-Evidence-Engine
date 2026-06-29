@@ -1,0 +1,66 @@
+{
+  "version_note": "2026-06 cardiometabolic precision supplement. Adds high-specificity nutrition and cardiometabolic signals without editing the base scoring file.",
+  "keyword_points": {
+    "type 2 diabetes": 3,
+    "type ii diabetes": 3,
+    "t2d": 3,
+    "glycaemic control": 3,
+    "blood pressure control": 3,
+    "blood pressure reduction": 3,
+    "ldl cholesterol": 3,
+    "triglycerides": 2,
+    "triglyceride lowering": 3,
+    "lipid control": 3,
+    "diet quality": 3,
+    "healthy eating index": 3,
+    "alternate healthy eating index": 3,
+    "dietary inflammatory index": 3,
+    "ultra-processed food": 3,
+    "ultra processed food": 3,
+    "sodium reduction": 3,
+    "fiber intake": 2,
+    "fibre intake": 2,
+    "whole grain intake": 2,
+    "fruit and vegetable intake": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "diet quality": 4,
+      "healthy eating index": 4,
+      "alternate healthy eating index": 4,
+      "ultra-processed food": 4,
+      "ultra processed food": 4,
+      "fruit and vegetable intake": 4,
+      "whole grain intake": 3
+    },
+    "busca2a": {
+      "type 2 diabetes": 4,
+      "type ii diabetes": 4,
+      "t2d": 4,
+      "glycaemic control": 4,
+      "blood pressure control": 4,
+      "blood pressure reduction": 4,
+      "ldl cholesterol": 4,
+      "triglyceride lowering": 4,
+      "lipid control": 4,
+      "diet quality": 3
+    },
+    "busca2b": {
+      "type 2 diabetes": 4,
+      "type ii diabetes": 4,
+      "t2d": 4,
+      "glycaemic control": 4,
+      "blood pressure control": 4,
+      "blood pressure reduction": 4,
+      "ldl cholesterol": 4,
+      "triglyceride lowering": 4,
+      "lipid control": 4,
+      "diet quality": 4,
+      "healthy eating index": 4,
+      "dietary inflammatory index": 4,
+      "sodium reduction": 4,
+      "fiber intake": 3,
+      "fibre intake": 3
+    }
+  }
+}
