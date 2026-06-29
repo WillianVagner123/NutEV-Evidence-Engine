@@ -1,0 +1,110 @@
+{
+  "version_note": "Focused NutMEV expansion for food literacy, nutrition numeracy, eating competence, and nutrition-label use. Loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_literacy_precision": [
+        "nutrition numeracy",
+        "dietary numeracy",
+        "food numeracy",
+        "nutrition label use",
+        "food label use",
+        "nutrition facts label",
+        "nutrition facts panel",
+        "nutrition label comprehension",
+        "food label comprehension",
+        "front-of-package nutrition label",
+        "front of package nutrition label",
+        "interpretive nutrition label",
+        "traffic light label",
+        "warning label",
+        "nutri-score",
+        "eating competence",
+        "eating competence scale",
+        "ecsi",
+        "ecsi 2.0",
+        "food choice competence",
+        "meal planning self-efficacy",
+        "cooking self-efficacy",
+        "food preparation self-efficacy",
+        "grocery shopping self-efficacy",
+        "literacia alimentar",
+        "literacia nutricional",
+        "numeracia nutricional",
+        "rotulagem nutricional",
+        "leitura de rótulos",
+        "compreensão de rótulos",
+        "competência alimentar",
+        "autoeficácia culinária",
+        "autoeficácia no planejamento de refeições"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "nutrition numeracy",
+      "dietary numeracy",
+      "nutrition label use",
+      "food label use",
+      "nutrition label comprehension",
+      "food label comprehension",
+      "eating competence",
+      "eating competence scale",
+      "meal planning self-efficacy",
+      "cooking self-efficacy",
+      "literacia nutricional",
+      "numeracia nutricional",
+      "leitura de rótulos",
+      "competência alimentar"
+    ],
+    "behavioral": [
+      "nutrition numeracy",
+      "dietary numeracy",
+      "food label comprehension",
+      "nutrition label comprehension",
+      "eating competence",
+      "food choice competence",
+      "meal planning self-efficacy",
+      "food preparation self-efficacy",
+      "grocery shopping self-efficacy",
+      "competência alimentar",
+      "autoeficácia culinária"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "nutrition label use",
+        "food label use",
+        "nutrition facts label",
+        "front-of-package nutrition label",
+        "eating competence",
+        "food label literacy",
+        "literacia alimentar",
+        "rotulagem nutricional",
+        "leitura de rótulos"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "nutrition numeracy intervention",
+        "food label use intervention",
+        "nutrition label comprehension intervention",
+        "eating competence intervention",
+        "meal planning self-efficacy intervention",
+        "cooking self-efficacy intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "nutrition numeracy questionnaire",
+        "food label literacy scale",
+        "nutrition label comprehension questionnaire",
+        "eating competence scale",
+        "ecsi 2.0",
+        "meal planning self-efficacy scale",
+        "cooking self-efficacy scale",
+        "food preparation skills questionnaire"
+      ]
+    }
+  }
+}
