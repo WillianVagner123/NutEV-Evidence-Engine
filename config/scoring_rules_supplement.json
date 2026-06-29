@@ -1,29 +1,59 @@
 {
   "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
   "keyword_points": {
-    "ckm health": 3,
-    "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
+    "cardiorenal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "cardiovascular-kidney-metabolic": 3,
+    "cardiovascular kidney metabolic": 3,
+    "cardiovascular-kidney-metabolic syndrome": 4,
+    "cardiovascular kidney metabolic syndrome": 4,
+    "cardiovascular-kidney-metabolic health": 3,
+    "cardiovascular kidney metabolic health": 3,
+    "cardiovascular-kidney-metabolic risk": 3,
+    "cardiovascular kidney metabolic risk": 3,
+    "ckm syndrome": 3,
+    "ckm health": 3,
+    "ckm risk": 3
   },
   "workstream_bonus": {
     "busca2a": {
-      "ckm health": 4,
-      "ckm risk": 4,
-      "cardiorenal metabolic syndrome": 4,
-      "cardio-renal-metabolic syndrome": 4,
-      "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic syndrome": 5,
+      "cardio-renal-metabolic syndrome": 5,
+      "cardiorenal-metabolic syndrome": 5,
+      "cardiorenal metabolic health": 5,
+      "cardiorenal metabolic risk": 5,
+      "cardiovascular-kidney-metabolic": 4,
+      "cardiovascular kidney metabolic": 4,
+      "cardiovascular-kidney-metabolic syndrome": 5,
+      "cardiovascular kidney metabolic syndrome": 5,
+      "cardiovascular-kidney-metabolic health": 5,
+      "cardiovascular kidney metabolic health": 5,
+      "cardiovascular-kidney-metabolic risk": 5,
+      "cardiovascular kidney metabolic risk": 5,
+      "ckm syndrome": 5,
+      "ckm health": 5,
+      "ckm risk": 5
     },
     "busca2b": {
-      "ckm health": 4,
-      "ckm risk": 4,
-      "cardiorenal metabolic syndrome": 4,
-      "cardio-renal-metabolic syndrome": 4,
-      "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic syndrome": 5,
+      "cardio-renal-metabolic syndrome": 5,
+      "cardiorenal-metabolic syndrome": 5,
+      "cardiorenal metabolic health": 5,
+      "cardiorenal metabolic risk": 5,
+      "cardiovascular-kidney-metabolic": 4,
+      "cardiovascular kidney metabolic": 4,
+      "cardiovascular-kidney-metabolic syndrome": 5,
+      "cardiovascular kidney metabolic syndrome": 5,
+      "cardiovascular-kidney-metabolic health": 5,
+      "cardiovascular kidney metabolic health": 5,
+      "cardiovascular-kidney-metabolic risk": 5,
+      "cardiovascular kidney metabolic risk": 5,
+      "ckm syndrome": 5,
+      "ckm health": 5,
+      "ckm risk": 5
     }
   }
 }
