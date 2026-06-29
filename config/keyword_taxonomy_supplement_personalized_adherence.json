@@ -55,10 +55,34 @@
       "app-based dietary intervention",
       "app based dietary intervention",
       "dietary adherence",
-      "long-term adherence"
+      "long-term adherence",
+      "personalized nutrition for cardiometabolic risk",
+      "personalised nutrition for cardiometabolic risk",
+      "precision nutrition for cardiometabolic risk",
+      "tailored dietary advice for cardiometabolic risk",
+      "individualized dietary counseling for cardiometabolic risk",
+      "individualised dietary counselling for cardiometabolic risk",
+      "personalized nutrition for type 2 diabetes",
+      "personalised nutrition for type 2 diabetes",
+      "tailored dietary intervention for type 2 diabetes",
+      "personalized nutrition for obesity",
+      "personalised nutrition for obesity",
+      "tailored nutrition for obesity management"
     ]
   },
   "workstreams": {
+    "busca2a": {
+      "priority_outcomes": [
+        "personalized_adherence"
+      ],
+      "web_query_hints": [
+        "personalized nutrition cardiometabolic risk guideline",
+        "precision nutrition cardiometabolic risk consensus",
+        "tailored dietary advice cardiometabolic guideline",
+        "personalized nutrition type 2 diabetes guideline",
+        "personalized nutrition obesity management consensus"
+      ]
+    },
     "busca2b": {
       "priority_outcomes": [
         "personalized_adherence"
