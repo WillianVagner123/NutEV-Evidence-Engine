@@ -1,12 +1,19 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic and obesity/adiposity management prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "obesity medicine": 3,
+    "adult obesity management": 3,
+    "obesity management guideline": 4,
+    "obesity clinical practice guideline": 4,
+    "adiposity management": 3,
+    "adiposity-based care": 3,
+    "adiposity based care": 3
   },
   "workstream_bonus": {
     "busca2a": {
@@ -15,7 +22,14 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "obesity medicine": 4,
+      "adult obesity management": 4,
+      "obesity management guideline": 5,
+      "obesity clinical practice guideline": 5,
+      "adiposity management": 4,
+      "adiposity-based care": 4,
+      "adiposity based care": 4
     },
     "busca2b": {
       "ckm health": 4,
@@ -23,7 +37,14 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "obesity medicine": 4,
+      "adult obesity management": 4,
+      "obesity management guideline": 5,
+      "obesity clinical practice guideline": 5,
+      "adiposity management": 4,
+      "adiposity-based care": 4,
+      "adiposity based care": 4
     }
   }
 }
