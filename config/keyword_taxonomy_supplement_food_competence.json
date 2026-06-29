@@ -1,0 +1,127 @@
+{
+  "version_note": "Focused expansion for Article 3 food competence, culinary self-efficacy, and diet adherence instrument retrieval. Loaded after keyword_taxonomy.json as an additive supplement.",
+  "global": {
+    "implementation_behavior": {
+      "food_literacy_instruments": [
+        "eating competence questionnaire",
+        "ecSI 2.0",
+        "satter eating competence inventory",
+        "food choice questionnaire",
+        "food choice motives questionnaire",
+        "healthy eating self-efficacy scale",
+        "dietary self-efficacy scale",
+        "nutrition self-efficacy scale",
+        "meal planning self-efficacy",
+        "cooking confidence scale",
+        "culinary confidence scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "grocery shopping skills scale",
+        "food label literacy scale"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_literacy_competence": [
+      "eating competence questionnaire",
+      "ecSI 2.0",
+      "satter eating competence inventory",
+      "food choice questionnaire",
+      "food choice motives questionnaire",
+      "healthy eating self-efficacy scale",
+      "dietary self-efficacy scale",
+      "nutrition self-efficacy scale",
+      "meal planning self-efficacy",
+      "cooking confidence scale",
+      "culinary confidence scale",
+      "food skills questionnaire",
+      "food skills scale",
+      "grocery shopping skills scale",
+      "food label literacy scale"
+    ]
+  },
+  "workstreams": {
+    "a3": {
+      "focus_terms": [
+        "eating competence questionnaire",
+        "ecSI 2.0",
+        "satter eating competence inventory",
+        "food choice questionnaire",
+        "food choice motives questionnaire",
+        "healthy eating self-efficacy scale",
+        "dietary self-efficacy scale",
+        "nutrition self-efficacy scale",
+        "meal planning self-efficacy",
+        "cooking confidence scale",
+        "culinary confidence scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "grocery shopping skills scale",
+        "food label literacy scale"
+      ],
+      "web_query_hints": [
+        "eating competence questionnaire validation",
+        "ecSI 2.0 validation",
+        "satter eating competence inventory validation",
+        "food choice questionnaire validation",
+        "healthy eating self-efficacy scale validation",
+        "dietary self-efficacy scale validation",
+        "nutrition self-efficacy scale validation",
+        "meal planning self-efficacy questionnaire",
+        "cooking confidence scale validation",
+        "culinary confidence scale validation",
+        "food skills questionnaire validation",
+        "food label literacy scale validation"
+      ],
+      "document_terms": [
+        "eating competence questionnaire",
+        "food choice questionnaire",
+        "self-efficacy scale",
+        "cooking confidence scale",
+        "food skills questionnaire",
+        "food label literacy scale"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "eating competence questionnaire",
+        "ecSI 2.0",
+        "satter eating competence inventory",
+        "food choice questionnaire",
+        "food choice motives questionnaire",
+        "healthy eating self-efficacy scale",
+        "dietary self-efficacy scale",
+        "nutrition self-efficacy scale",
+        "meal planning self-efficacy",
+        "cooking confidence scale",
+        "culinary confidence scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "grocery shopping skills scale",
+        "food label literacy scale"
+      ],
+      "web_query_hints": [
+        "eating competence questionnaire validation",
+        "ecSI 2.0 validation",
+        "satter eating competence inventory validation",
+        "food choice questionnaire validation",
+        "healthy eating self-efficacy scale validation",
+        "dietary self-efficacy scale validation",
+        "nutrition self-efficacy scale validation",
+        "meal planning self-efficacy questionnaire",
+        "cooking confidence scale validation",
+        "culinary confidence scale validation",
+        "food skills questionnaire validation",
+        "food label literacy scale validation"
+      ],
+      "document_terms": [
+        "eating competence questionnaire",
+        "food choice questionnaire",
+        "self-efficacy scale",
+        "cooking confidence scale",
+        "food skills questionnaire",
+        "food label literacy scale"
+      ]
+    }
+  }
+}
