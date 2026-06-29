@@ -24,6 +24,45 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+SODIUM_POTASSIUM_BLOOD_PRESSURE_TERMS = [
+    "dietary sodium reduction",
+    "dietary sodium restriction",
+    "sodium reduction",
+    "sodium restriction",
+    "salt reduction",
+    "salt intake reduction",
+    "reduced sodium diet",
+    "low sodium diet",
+    "low-sodium diet",
+    "low salt diet",
+    "low-salt diet",
+    "salt substitute",
+    "salt substitutes",
+    "potassium-enriched salt",
+    "potassium enriched salt",
+    "potassium salt substitute",
+    "dietary potassium intake",
+    "potassium intake",
+    "increase potassium intake",
+    "sodium-to-potassium ratio",
+    "sodium potassium ratio",
+]
+
+SODIUM_POTASSIUM_BLOOD_PRESSURE_DOCUMENT_TERMS = [
+    "dietary sodium reduction guideline",
+    "salt reduction guideline",
+    "sodium reduction systematic review",
+    "salt reduction systematic review",
+    "low sodium diet trial",
+    "low-sodium diet trial",
+    "salt substitute trial",
+    "salt substitute systematic review",
+    "potassium-enriched salt trial",
+    "potassium enriched salt trial",
+    "dietary potassium blood pressure systematic review",
+    "sodium potassium ratio hypertension",
+]
+
 METABOLIC_LIVER_NUTRITION_TERMS = [
     "masld nutrition therapy",
     "masld dietary intervention",
@@ -583,6 +622,12 @@ def apply_semantic_extensions() -> None:
         terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
         document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
     )
+    for block_name in ("cardiometabolic_precision", "lifestyle_nutrition_patterns"):
+        _extend_semantic_block(
+            block_name,
+            terms=SODIUM_POTASSIUM_BLOOD_PRESSURE_TERMS,
+            document_terms=SODIUM_POTASSIUM_BLOOD_PRESSURE_DOCUMENT_TERMS,
+        )
     for block_name in (
         "cardiometabolic_precision",
         "lifestyle_nutrition_patterns",
