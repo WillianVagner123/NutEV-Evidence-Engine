@@ -1,0 +1,127 @@
+{
+  "version_note": "2026-06 cultural meal planning and food competence expansion for NutMEV search recall",
+  "global": {
+    "nutrition_domains": {
+      "meal_planning_competence": [
+        "meal planning",
+        "meal planning intervention",
+        "meal planning skills",
+        "meal preparation",
+        "meal preparation skills",
+        "meal prep",
+        "home meal preparation",
+        "home food preparation",
+        "food preparation skills",
+        "food preparation confidence",
+        "food provisioning",
+        "food provisioning practices",
+        "grocery planning",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "food shopping skills",
+        "menu planning",
+        "weekly menu planning",
+        "budget-conscious meal planning",
+        "food budgeting",
+        "food resource management"
+      ],
+      "culturally_relevant_nutrition": [
+        "culturally tailored nutrition",
+        "culturally adapted nutrition",
+        "culturally appropriate nutrition",
+        "culturally responsive nutrition",
+        "culturally tailored diet",
+        "culturally adapted diet",
+        "culturally appropriate diet",
+        "cultural food practices",
+        "traditional dietary pattern",
+        "traditional dietary patterns",
+        "traditional foods",
+        "food culture",
+        "cultural adaptation",
+        "cultural tailoring"
+      ]
+    },
+    "implementation_behavior": {
+      "meal_routines_context": [
+        "meal routine",
+        "meal routines",
+        "mealtime routine",
+        "mealtime routines",
+        "household food practices",
+        "household meal practices",
+        "family meal practices",
+        "shared meal routine",
+        "shared meal routines",
+        "cooking routine",
+        "cooking routines",
+        "domestic organization",
+        "time constraints",
+        "food preparation barriers",
+        "meal planning barriers",
+        "meal preparation barriers",
+        "food preparation facilitators",
+        "meal planning facilitators",
+        "meal preparation facilitators"
+      ]
+    },
+    "document_types": {
+      "competence_instruments": [
+        "meal planning questionnaire",
+        "meal planning scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "food preparation skills questionnaire",
+        "cooking skills questionnaire",
+        "cooking confidence scale",
+        "food resource management questionnaire",
+        "food budgeting scale",
+        "cultural adaptation framework",
+        "culturally tailored intervention",
+        "culturally adapted intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "meal planning guideline",
+        "meal preparation guideline",
+        "food skills intervention",
+        "culturally tailored nutrition guideline",
+        "culturally adapted diet guideline",
+        "household food practices report"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "meal planning intervention",
+        "meal preparation intervention",
+        "food skills intervention",
+        "culturally tailored nutrition intervention",
+        "culturally adapted dietary intervention",
+        "household food practices intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "meal planning skills",
+        "food preparation skills",
+        "food resource management",
+        "culturally tailored nutrition",
+        "cultural food practices",
+        "household food practices"
+      ],
+      "document_type_keys": [
+        "competence_instruments"
+      ],
+      "web_query_hints": [
+        "meal planning questionnaire",
+        "food skills questionnaire",
+        "food resource management questionnaire",
+        "culturally tailored nutrition framework",
+        "cultural adaptation framework"
+      ]
+    }
+  }
+}
