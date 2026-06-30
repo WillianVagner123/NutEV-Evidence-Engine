@@ -1,0 +1,103 @@
+{
+  "version_note": "Focused expansion for social prescribing, community navigation, and food-access referral terms. Loaded after keyword_taxonomy.json to preserve the base taxonomy while improving NutMEV retrieval for implementation and food-access programs.",
+  "global": {
+    "implementation_behavior": {
+      "social_prescribing_navigation": [
+        "social prescribing nutrition",
+        "social prescribing for nutrition",
+        "social prescribing for healthy eating",
+        "social prescribing food insecurity",
+        "social prescribing food access",
+        "food social prescribing",
+        "nutrition social prescribing",
+        "community resource navigation",
+        "community resource navigator",
+        "community resource navigators",
+        "community health navigation",
+        "community connector",
+        "community connectors",
+        "link worker",
+        "link workers",
+        "social prescribing link worker",
+        "food access navigation",
+        "nutrition security navigation",
+        "food insecurity navigation",
+        "food resource navigation",
+        "community referral pathway",
+        "community referral pathways",
+        "community resource referral pathway",
+        "community resource referral pathways",
+        "closed-loop community referral",
+        "closed loop community referral"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "social prescribing nutrition",
+      "social prescribing food access",
+      "community resource navigation",
+      "food access navigation",
+      "nutrition security navigation",
+      "food insecurity navigation",
+      "community referral pathway",
+      "closed-loop community referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "social prescribing nutrition",
+        "food social prescribing",
+        "nutrition social prescribing",
+        "community resource navigation",
+        "food access navigation",
+        "nutrition security navigation",
+        "food insecurity navigation",
+        "community referral pathway",
+        "closed-loop community referral"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition program",
+        "social prescribing food access report",
+        "community resource navigation food insecurity",
+        "food access navigation program",
+        "nutrition security navigation program",
+        "closed-loop community referral food insecurity"
+      ],
+      "document_terms": [
+        "program evaluation",
+        "implementation report",
+        "referral pathway",
+        "community referral pathway"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "social prescribing nutrition",
+        "food social prescribing",
+        "nutrition social prescribing",
+        "community resource navigation",
+        "food access navigation",
+        "nutrition security navigation",
+        "food insecurity navigation",
+        "community referral pathway",
+        "closed-loop community referral"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition trial",
+        "social prescribing food access evaluation",
+        "community resource navigation nutrition trial",
+        "food access navigation cardiometabolic intervention",
+        "nutrition security navigation diabetes",
+        "closed-loop community referral food insecurity intervention"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "referral pathway"
+      ]
+    }
+  }
+}
