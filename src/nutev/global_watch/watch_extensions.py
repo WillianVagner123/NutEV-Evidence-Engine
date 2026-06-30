@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import MutableMapping, Sequence
 from typing import Any
 
-from nutev.global_watch import watch_config
+from nutev.global_watch import watch_config, watch_query_builder
 
 PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS = [
     "personalized nutrition diabetes remission",
@@ -64,6 +64,25 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+OBESITY_BODY_COMPOSITION_NUTRITION_TERMS = [
+    "sarcopenic obesity",
+    "sarcopenic overweight",
+    "body composition",
+    "body composition change",
+    "body composition changes",
+    "muscle preservation",
+    "lean mass preservation",
+    "fat-free mass preservation",
+    "fat free mass preservation",
+    "protein intake",
+    "dietary protein",
+    "protein adequacy",
+    "protein distribution",
+    "protein quality",
+    "high-protein diet",
+    "high protein diet",
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -96,6 +115,28 @@ def _extend_category_terms(category: str, terms: Sequence[str]) -> None:
     category_terms[:] = _dedupe_preserve_order([*category_terms, *terms])
 
 
+def _extend_query_context_terms(category: str, terms: Sequence[str]) -> None:
+    context_terms = watch_query_builder.CATEGORY_CONTEXT_TERMS.get(category)
+    if not isinstance(context_terms, list):
+        return
+    context_terms[:] = _dedupe_preserve_order([*context_terms, *terms])
+
+
+def _extend_query_seed_group(
+    seed_groups: MutableMapping[str, list[list[str]]],
+    category: str,
+    group_index: int,
+    terms: Sequence[str],
+) -> None:
+    groups = seed_groups.get(category)
+    if not isinstance(groups, list) or group_index >= len(groups):
+        return
+    group = groups[group_index]
+    if not isinstance(group, list):
+        return
+    group[:] = _dedupe_preserve_order([*group, *terms])
+
+
 def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
@@ -118,6 +159,20 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_category_terms(
         "guidelines_consensus",
         FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+    )
+    _extend_category_terms(
+        "obesity_cardiometabolic",
+        OBESITY_BODY_COMPOSITION_NUTRITION_TERMS,
+    )
+    _extend_query_context_terms(
+        "obesity_cardiometabolic",
+        OBESITY_BODY_COMPOSITION_NUTRITION_TERMS,
+    )
+    _extend_query_seed_group(
+        watch_query_builder.QUICK_MODE_SEED_GROUPS,
+        "obesity_cardiometabolic",
+        0,
+        OBESITY_BODY_COMPOSITION_NUTRITION_TERMS,
     )
 
 
