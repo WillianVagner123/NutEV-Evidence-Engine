@@ -1,0 +1,114 @@
+{
+  "version_note": "Focused query expansion for food farmacy, medically tailored nutrition, and referral/navigation models; loaded after keyword_taxonomy.json without modifying the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_farmacy_and_referral_navigation": [
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy programme",
+        "food pharmacy",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "medically tailored nutrition programme",
+        "medically tailored food referral",
+        "medically tailored meal referral",
+        "medically tailored meals referral",
+        "produce prescription referral",
+        "healthy food prescription referral",
+        "food is medicine referral",
+        "food as medicine referral",
+        "food is medicine navigation",
+        "food as medicine navigation",
+        "nutrition security referral",
+        "nutrition security navigation",
+        "community food navigation",
+        "food resource navigation"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food farmacy",
+      "food farmacy program",
+      "food farmacy programme",
+      "food pharmacy",
+      "food pharmacy program",
+      "food pharmacy programme",
+      "medically tailored nutrition",
+      "medically tailored nutrition program",
+      "medically tailored food referral",
+      "medically tailored meal referral",
+      "produce prescription referral",
+      "healthy food prescription referral",
+      "nutrition security referral",
+      "community food navigation",
+      "food resource navigation"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy programme",
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "healthy food prescription referral",
+        "community food navigation",
+        "food resource navigation"
+      ],
+      "web_query_hints": [
+        "food farmacy implementation report",
+        "food pharmacy implementation report",
+        "medically tailored nutrition program report",
+        "food is medicine referral program",
+        "produce prescription referral program",
+        "nutrition security referral program",
+        "community food navigation program"
+      ],
+      "document_terms": [
+        "referral program",
+        "navigation program",
+        "implementation report",
+        "program evaluation"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy programme",
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "medically tailored food referral",
+        "medically tailored meal referral",
+        "produce prescription referral",
+        "healthy food prescription referral",
+        "nutrition security navigation",
+        "community food navigation",
+        "food resource navigation"
+      ],
+      "web_query_hints": [
+        "food farmacy cardiometabolic trial",
+        "food pharmacy cardiometabolic trial",
+        "food farmacy implementation trial",
+        "medically tailored nutrition cardiometabolic trial",
+        "medically tailored nutrition implementation",
+        "produce prescription referral cardiometabolic",
+        "nutrition security navigation intervention"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "referral program",
+        "navigation program",
+        "pragmatic trial"
+      ]
+    }
+  }
+}
