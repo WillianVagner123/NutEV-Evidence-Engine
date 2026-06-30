@@ -2,7 +2,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import nutev.querypacks
 from nutev.analysis.relevance import keep_candidate_for_download, score_record
+from nutev.querypacks import semantic_blocks
 from nutev.settings import load_json
 
 
@@ -87,6 +89,17 @@ def test_nonhyphenated_sld_term_gains_busca2b_priority() -> None:
     baseline = _score("Lifestyle intervention for steatotic liver disease in obesity")
 
     assert boosted > baseline
+
+
+def test_adherence_measurement_terms_extend_semantic_query_blocks() -> None:
+    assert nutev.querypacks
+    adherence = semantic_blocks.SEMANTIC_RESEARCH_BLOCKS["adherence_persistence"]
+    lifestyle = semantic_blocks.SEMANTIC_RESEARCH_BLOCKS["lifestyle_nutrition_patterns"]
+
+    assert "dietary adherence assessment" in adherence["terms"]
+    assert "meal plan adherence" in adherence["terms"]
+    assert "dietary adherence questionnaire" in adherence["document_terms"]
+    assert "mediterranean diet adherence score" in lifestyle["document_terms"]
 
 
 def test_portuguese_lifestyle_medicine_phrase_gains_busca2a_priority() -> None:
