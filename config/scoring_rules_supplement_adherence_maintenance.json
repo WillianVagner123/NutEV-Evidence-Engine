@@ -1,0 +1,53 @@
+{
+  "version_note": "2026-06-30: strengthen busca2b prioritization for adherence persistence, maintenance, relapse prevention, and personalized dietary support without changing raw query generation.",
+  "keyword_points": {
+    "dietary maintenance": 3,
+    "behavioral maintenance": 3,
+    "behavioural maintenance": 3,
+    "dietary lapse": 3,
+    "dietary lapses": 3,
+    "lapse management": 3,
+    "relapse prevention intervention": 4,
+    "diet quality": 3,
+    "healthy eating index": 3,
+    "tailored nutrition": 3,
+    "tailored dietary advice": 3,
+    "tailored dietary intervention": 4,
+    "personalized dietary advice": 3,
+    "personalised dietary advice": 3,
+    "personalized dietary intervention": 4,
+    "personalised dietary intervention": 4,
+    "individualized diet": 3,
+    "individualised diet": 3,
+    "individualized dietary intervention": 4,
+    "individualised dietary intervention": 4,
+    "diet personalization": 3,
+    "diet personalisation": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "dietary maintenance": 4,
+      "behavioral maintenance": 4,
+      "behavioural maintenance": 4,
+      "dietary lapse": 4,
+      "dietary lapses": 4,
+      "lapse management": 4,
+      "relapse prevention intervention": 5,
+      "diet quality": 4,
+      "healthy eating index": 4,
+      "tailored nutrition": 4,
+      "tailored dietary advice": 4,
+      "tailored dietary intervention": 5,
+      "personalized dietary advice": 4,
+      "personalised dietary advice": 4,
+      "personalized dietary intervention": 5,
+      "personalised dietary intervention": 5,
+      "individualized diet": 4,
+      "individualised diet": 4,
+      "individualized dietary intervention": 5,
+      "individualised dietary intervention": 5,
+      "diet personalization": 4,
+      "diet personalisation": 4
+    }
+  }
+}
