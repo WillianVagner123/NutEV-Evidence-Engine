@@ -1,0 +1,58 @@
+{
+  "version_note": "Supplemental NutMEV scoring expansion for nutrition-anchored anti-obesity pharmacotherapy evidence; keeps drug-only items from being prioritized unless nutrition care terms are present.",
+  "keyword_points": {
+    "anti-obesity medication nutrition": 3,
+    "anti obesity medication nutrition": 3,
+    "anti-obesity medication dietary counseling": 4,
+    "anti obesity medication dietary counseling": 4,
+    "anti-obesity pharmacotherapy nutrition care": 4,
+    "anti obesity pharmacotherapy nutrition care": 4,
+    "obesity pharmacotherapy nutrition care": 4,
+    "obesity pharmacotherapy dietary counseling": 4,
+    "glp-1 nutrition": 3,
+    "glp-1 dietary counseling": 4,
+    "glp-1 receptor agonist nutrition": 4,
+    "glp-1 receptor agonist dietary counseling": 4,
+    "incretin therapy nutrition care": 4,
+    "incretin therapy dietary counseling": 4,
+    "semaglutide nutrition counseling": 3,
+    "semaglutide dietary counseling": 3,
+    "tirzepatide nutrition counseling": 3,
+    "tirzepatide dietary counseling": 3,
+    "muscle preservation": 3,
+    "lean mass preservation": 3,
+    "fat-free mass preservation": 3,
+    "fat free mass preservation": 3,
+    "protein adequacy": 3,
+    "protein distribution": 2,
+    "protein quality": 2,
+    "nutrition adequacy": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "anti-obesity medication nutrition": 3,
+      "anti-obesity medication dietary counseling": 4,
+      "obesity pharmacotherapy nutrition care": 4,
+      "glp-1 receptor agonist nutrition": 4,
+      "glp-1 receptor agonist dietary counseling": 4,
+      "incretin therapy nutrition care": 4,
+      "protein adequacy": 2,
+      "lean mass preservation": 3,
+      "muscle preservation": 3
+    },
+    "busca2b": {
+      "anti-obesity medication nutrition": 3,
+      "anti-obesity medication dietary counseling": 4,
+      "obesity pharmacotherapy nutrition care": 4,
+      "glp-1 receptor agonist nutrition": 4,
+      "glp-1 receptor agonist dietary counseling": 4,
+      "incretin therapy nutrition care": 4,
+      "semaglutide nutrition counseling": 3,
+      "tirzepatide nutrition counseling": 3,
+      "protein adequacy": 2,
+      "lean mass preservation": 3,
+      "muscle preservation": 3,
+      "dietary adherence": 2
+    }
+  }
+}
