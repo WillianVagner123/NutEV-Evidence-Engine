@@ -64,6 +64,33 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+BLOOD_PRESSURE_NUTRITION_SEED_GROUPS = [
+    [
+        "dietary sodium hypertension guideline",
+        "sodium reduction hypertension guideline",
+        "salt reduction blood pressure guideline",
+        "salt substitute hypertension guideline",
+    ],
+    [
+        "dietary sodium hypertension",
+        "sodium reduction hypertension",
+        "salt reduction blood pressure",
+        "reduced sodium diet hypertension",
+        "low sodium diet hypertension",
+        "salt substitute hypertension",
+        "potassium-enriched salt substitute",
+        "potassium enriched salt substitute",
+    ],
+    [
+        "dietary potassium blood pressure",
+        "potassium intake hypertension",
+        "sodium potassium ratio hypertension",
+        "DASH sodium reduction",
+        "DASH diet blood pressure",
+        "dietary approaches to stop hypertension sodium",
+    ],
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -96,6 +123,22 @@ def _extend_category_terms(category: str, terms: Sequence[str]) -> None:
     category_terms[:] = _dedupe_preserve_order([*category_terms, *terms])
 
 
+def _ensure_category_seed_groups(category: str, groups: Sequence[Sequence[str]]) -> None:
+    existing_groups = watch_config.WATCH_CATEGORIES.get(category)
+    if not isinstance(existing_groups, list) or not all(
+        isinstance(group, list) for group in existing_groups
+    ):
+        watch_config.WATCH_CATEGORIES[category] = [list(group) for group in groups]
+        return
+    for index, group in enumerate(groups):
+        if index >= len(existing_groups):
+            existing_groups.append(list(group))
+            continue
+        existing_groups[index][:] = _dedupe_preserve_order(
+            [*existing_groups[index], *group]
+        )
+
+
 def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
@@ -106,6 +149,10 @@ def apply_watch_taxonomy_extensions() -> None:
         "personalized_nutrition",
         1,
         PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS,
+    )
+    _ensure_category_seed_groups(
+        "blood_pressure_nutrition",
+        BLOOD_PRESSURE_NUTRITION_SEED_GROUPS,
     )
     _extend_category_terms(
         "food_literacy_culinary_commensality",
