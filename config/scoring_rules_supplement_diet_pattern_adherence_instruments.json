@@ -1,0 +1,63 @@
+{
+  "version_note": "2026-06-30 scoring supplement for diet-pattern adherence instruments and validated adherence scores.",
+  "keyword_points": {
+    "diet pattern adherence score": 4,
+    "dietary pattern adherence score": 4,
+    "dietary adherence score": 4,
+    "diet adherence score": 3,
+    "diet quality adherence score": 4,
+    "mediterranean diet adherence": 4,
+    "mediterranean diet adherence score": 5,
+    "mediterranean diet adherence screener": 5,
+    "mediterranean diet score": 4,
+    "mediterranean dietary score": 4,
+    "alternate mediterranean diet score": 4,
+    "mediterranean diet scale": 4,
+    "medas": 5,
+    "predimed": 5,
+    "dash adherence": 4,
+    "dash adherence score": 5,
+    "dash diet adherence": 4,
+    "dash diet adherence score": 5,
+    "dash score": 4,
+    "plant-based diet index": 4,
+    "healthy plant-based diet index": 4,
+    "plant based diet index": 4,
+    "healthy plant based diet index": 4,
+    "plant-based diet adherence": 4,
+    "plant based diet adherence": 4,
+    "eat-lancet adherence": 4,
+    "planetary health diet adherence": 4,
+    "planetary health diet score": 4,
+    "sustainable healthy diet score": 4
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "diet pattern adherence score": 4,
+      "dietary pattern adherence score": 4,
+      "mediterranean diet adherence score": 5,
+      "mediterranean diet adherence screener": 5,
+      "medas": 5,
+      "predimed": 5,
+      "dash adherence score": 5,
+      "dash diet adherence score": 5,
+      "plant-based diet index": 4,
+      "healthy plant-based diet index": 4,
+      "planetary health diet adherence": 4
+    },
+    "a3": {
+      "dietary adherence score": 4,
+      "mediterranean diet adherence screener": 5,
+      "medas": 5,
+      "dash adherence score": 5,
+      "plant-based diet index": 4
+    },
+    "artigo3_framework": {
+      "dietary adherence score": 4,
+      "mediterranean diet adherence screener": 5,
+      "medas": 5,
+      "dash adherence score": 5,
+      "plant-based diet index": 4
+    }
+  }
+}
