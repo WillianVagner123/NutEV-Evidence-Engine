@@ -1,0 +1,42 @@
+{
+  "version_note": "Supplemental NutMEV scoring expansion for CKM renal-axis records; keeps the base scoring intact and prioritizes CKD only in cardiometabolic workstreams.",
+  "keyword_points": {
+    "chronic kidney disease": 3,
+    "ckd": 2,
+    "chronic renal disease": 2,
+    "cardiometabolic kidney disease": 4,
+    "cardiorenal metabolic disease": 4,
+    "diabetic kidney disease": 3,
+    "diabetic nephropathy": 3,
+    "albuminuria": 2,
+    "uacr": 2,
+    "estimated glomerular filtration rate": 2,
+    "egfr": 2
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "chronic kidney disease": 4,
+      "ckd": 3,
+      "cardiometabolic kidney disease": 5,
+      "cardiorenal metabolic disease": 5,
+      "diabetic kidney disease": 4,
+      "diabetic nephropathy": 4,
+      "albuminuria": 3,
+      "uacr": 3,
+      "estimated glomerular filtration rate": 3,
+      "egfr": 3
+    },
+    "busca2b": {
+      "chronic kidney disease": 4,
+      "ckd": 3,
+      "cardiometabolic kidney disease": 5,
+      "cardiorenal metabolic disease": 5,
+      "diabetic kidney disease": 4,
+      "diabetic nephropathy": 4,
+      "albuminuria": 3,
+      "uacr": 3,
+      "estimated glomerular filtration rate": 3,
+      "egfr": 3
+    }
+  }
+}

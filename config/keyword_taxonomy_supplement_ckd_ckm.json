@@ -1,0 +1,70 @@
+{
+  "version_note": "Supplemental CKM renal-axis expansion for NutMEV querypacks. Loaded after keyword_taxonomy.json to append focused chronic kidney disease terms without changing raw outputs.",
+  "clinical": {
+    "cardiometabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "chronic renal disease",
+      "cardiometabolic kidney disease",
+      "cardiorenal metabolic disease",
+      "diabetic kidney disease",
+      "diabetic nephropathy",
+      "albuminuria",
+      "uacr",
+      "estimated glomerular filtration rate",
+      "egfr"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "cardiometabolic kidney disease",
+      "cardiorenal metabolic disease",
+      "diabetic kidney disease",
+      "albuminuria",
+      "uacr",
+      "estimated glomerular filtration rate",
+      "egfr"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "cardiometabolic kidney disease",
+        "cardiorenal metabolic disease",
+        "diabetic kidney disease",
+        "albuminuria",
+        "estimated glomerular filtration rate"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic syndrome guideline",
+        "ckm syndrome chronic kidney disease guideline",
+        "cardiorenal metabolic disease nutrition guideline",
+        "diabetic kidney disease nutrition guideline",
+        "chronic kidney disease lifestyle guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "cardiometabolic kidney disease",
+        "cardiorenal metabolic disease",
+        "diabetic kidney disease",
+        "albuminuria",
+        "estimated glomerular filtration rate"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic syndrome lifestyle intervention",
+        "ckm syndrome chronic kidney disease lifestyle intervention",
+        "cardiorenal metabolic disease dietary intervention",
+        "diabetic kidney disease nutrition intervention",
+        "chronic kidney disease diet quality intervention",
+        "albuminuria dietary intervention"
+      ]
+    }
+  }
+}
