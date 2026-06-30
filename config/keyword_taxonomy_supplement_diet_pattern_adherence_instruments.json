@@ -1,0 +1,115 @@
+{
+  "version_note": "2026-06-30 focused expansion for diet-pattern adherence instruments and scores; appends audit-friendly terms without replacing base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "diet_pattern_adherence_instruments": [
+        "diet pattern adherence score",
+        "dietary pattern adherence score",
+        "dietary adherence score",
+        "diet adherence score",
+        "diet quality adherence score",
+        "mediterranean diet adherence",
+        "mediterranean diet adherence score",
+        "mediterranean diet adherence screener",
+        "mediterranean diet score",
+        "mediterranean dietary score",
+        "alternate mediterranean diet score",
+        "mediterranean diet scale",
+        "medas",
+        "predimed",
+        "dash adherence",
+        "dash adherence score",
+        "dash diet adherence",
+        "dash diet adherence score",
+        "dash score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "plant based diet index",
+        "healthy plant based diet index",
+        "plant-based diet adherence",
+        "plant based diet adherence",
+        "eat-lancet adherence",
+        "planetary health diet adherence",
+        "planetary health diet score",
+        "sustainable healthy diet score"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet pattern adherence score",
+      "dietary pattern adherence score",
+      "dietary adherence score",
+      "diet adherence score",
+      "diet quality adherence score",
+      "mediterranean diet adherence",
+      "mediterranean diet adherence score",
+      "mediterranean diet adherence screener",
+      "mediterranean diet score",
+      "mediterranean dietary score",
+      "alternate mediterranean diet score",
+      "mediterranean diet scale",
+      "medas",
+      "predimed",
+      "dash adherence",
+      "dash adherence score",
+      "dash diet adherence",
+      "dash diet adherence score",
+      "dash score",
+      "plant-based diet index",
+      "healthy plant-based diet index",
+      "plant based diet index",
+      "healthy plant based diet index",
+      "plant-based diet adherence",
+      "plant based diet adherence",
+      "eat-lancet adherence",
+      "planetary health diet adherence",
+      "planetary health diet score",
+      "sustainable healthy diet score"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "diet pattern adherence score",
+        "dietary pattern adherence score",
+        "mediterranean diet adherence score",
+        "mediterranean diet adherence screener",
+        "medas",
+        "predimed",
+        "dash adherence score",
+        "dash diet adherence score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "planetary health diet adherence"
+      ],
+      "web_query_hints": [
+        "mediterranean diet adherence score trial",
+        "mediterranean diet adherence screener validation",
+        "medas questionnaire",
+        "predimed mediterranean diet score",
+        "dash adherence score trial",
+        "plant-based diet index cardiometabolic risk",
+        "planetary health diet adherence score"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "diet pattern adherence score",
+        "dietary adherence score",
+        "mediterranean diet adherence screener",
+        "medas",
+        "dash adherence score",
+        "plant-based diet index",
+        "planetary health diet adherence"
+      ],
+      "web_query_hints": [
+        "dietary adherence score questionnaire",
+        "mediterranean diet adherence screener validation",
+        "medas questionnaire validation",
+        "dash adherence score questionnaire",
+        "plant-based diet index validation"
+      ]
+    }
+  }
+}
