@@ -1,0 +1,81 @@
+{
+  "version_note": "2026-06 diet quality and dietary index scoring expansion",
+  "keyword_points": {
+    "diet quality": 3,
+    "dietary quality": 3,
+    "healthy eating index": 4,
+    "healthy eating index 2020": 4,
+    "hei-2020": 4,
+    "alternate healthy eating index": 4,
+    "ahei": 3,
+    "diet quality index": 3,
+    "dietary quality index": 3,
+    "dietary pattern score": 3,
+    "mediterranean diet score": 3,
+    "dash score": 3,
+    "plant-based diet index": 3,
+    "healthy plant-based diet index": 4,
+    "dietary inflammatory index": 3,
+    "energy-adjusted dietary inflammatory index": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "diet quality": 4,
+      "dietary quality": 4,
+      "healthy eating index": 4,
+      "alternate healthy eating index": 4,
+      "diet quality index": 4,
+      "dietary quality index": 4,
+      "dietary pattern score": 3,
+      "mediterranean diet score": 3,
+      "dash score": 3,
+      "plant-based diet index": 3,
+      "healthy plant-based diet index": 4
+    },
+    "busca2a": {
+      "diet quality": 3,
+      "dietary quality": 3,
+      "healthy eating index": 4,
+      "alternate healthy eating index": 4,
+      "diet quality index": 3,
+      "dietary pattern score": 3,
+      "mediterranean diet score": 3,
+      "dash score": 3,
+      "plant-based diet index": 3,
+      "healthy plant-based diet index": 4,
+      "dietary inflammatory index": 3
+    },
+    "busca2b": {
+      "diet quality": 4,
+      "dietary quality": 4,
+      "healthy eating index": 4,
+      "alternate healthy eating index": 4,
+      "diet quality index": 4,
+      "dietary quality index": 4,
+      "dietary pattern score": 4,
+      "mediterranean diet score": 3,
+      "dash score": 3,
+      "plant-based diet index": 3,
+      "healthy plant-based diet index": 4,
+      "dietary inflammatory index": 3
+    },
+    "a3": {
+      "diet quality": 3,
+      "dietary quality": 3,
+      "healthy eating index": 3,
+      "alternate healthy eating index": 3,
+      "diet quality index": 3,
+      "dietary quality index": 3,
+      "dietary pattern score": 3
+    },
+    "artigo3_framework": {
+      "diet quality": 3,
+      "dietary quality": 3,
+      "healthy eating index": 3,
+      "alternate healthy eating index": 3,
+      "diet quality index": 3,
+      "dietary quality index": 3,
+      "dietary pattern score": 3
+    }
+  }
+}
