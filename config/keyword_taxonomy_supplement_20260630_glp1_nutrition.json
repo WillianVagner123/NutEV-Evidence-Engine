@@ -1,0 +1,104 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for nutrition care during anti-obesity pharmacotherapy and GLP-1/incretin therapy; loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "clinical": {
+    "anti_obesity_pharmacotherapy_nutrition": [
+      "anti-obesity medication nutrition",
+      "anti obesity medication nutrition",
+      "anti-obesity medication dietary counseling",
+      "anti obesity medication dietary counseling",
+      "anti-obesity pharmacotherapy nutrition care",
+      "anti obesity pharmacotherapy nutrition care",
+      "obesity pharmacotherapy nutrition care",
+      "obesity pharmacotherapy dietary counseling",
+      "glp-1 nutrition",
+      "glp-1 dietary counseling",
+      "glp-1 receptor agonist nutrition",
+      "glp-1 receptor agonist dietary counseling",
+      "incretin therapy nutrition care",
+      "incretin therapy dietary counseling",
+      "semaglutide nutrition counseling",
+      "semaglutide dietary counseling",
+      "tirzepatide nutrition counseling",
+      "tirzepatide dietary counseling"
+    ]
+  },
+  "outcomes": {
+    "pharmacotherapy_nutrition_outcomes": [
+      "muscle preservation",
+      "lean mass preservation",
+      "fat-free mass preservation",
+      "fat free mass preservation",
+      "protein adequacy",
+      "protein intake",
+      "dietary protein",
+      "protein distribution",
+      "protein quality",
+      "weight regain prevention",
+      "weight loss maintenance",
+      "nutrition adequacy",
+      "diet quality",
+      "dietary adherence"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "clinical_keys": [
+        "anti_obesity_pharmacotherapy_nutrition"
+      ],
+      "priority_outcomes": [
+        "pharmacotherapy_nutrition_outcomes"
+      ],
+      "focus_terms": [
+        "anti-obesity medication nutrition",
+        "anti-obesity medication dietary counseling",
+        "obesity pharmacotherapy nutrition care",
+        "glp-1 receptor agonist nutrition",
+        "glp-1 receptor agonist dietary counseling",
+        "incretin therapy nutrition care",
+        "protein adequacy",
+        "lean mass preservation",
+        "muscle preservation"
+      ],
+      "web_query_hints": [
+        "anti-obesity medication nutrition guideline",
+        "anti-obesity medication dietary counseling guideline",
+        "glp-1 nutrition guidance",
+        "glp-1 receptor agonist dietary counseling guidance",
+        "obesity pharmacotherapy nutrition consensus",
+        "incretin therapy nutrition care consensus"
+      ]
+    },
+    "busca2b": {
+      "clinical_keys": [
+        "anti_obesity_pharmacotherapy_nutrition"
+      ],
+      "priority_outcomes": [
+        "pharmacotherapy_nutrition_outcomes"
+      ],
+      "focus_terms": [
+        "anti-obesity medication nutrition",
+        "anti-obesity medication dietary counseling",
+        "obesity pharmacotherapy nutrition care",
+        "glp-1 receptor agonist nutrition",
+        "glp-1 receptor agonist dietary counseling",
+        "incretin therapy nutrition care",
+        "semaglutide nutrition counseling",
+        "tirzepatide nutrition counseling",
+        "protein adequacy",
+        "lean mass preservation",
+        "muscle preservation",
+        "dietary adherence"
+      ],
+      "web_query_hints": [
+        "anti-obesity medication nutrition trial",
+        "anti-obesity medication dietary counseling trial",
+        "glp-1 nutrition intervention",
+        "glp-1 receptor agonist dietary counseling intervention",
+        "obesity pharmacotherapy nutrition systematic review",
+        "incretin therapy nutrition care trial",
+        "semaglutide nutrition counseling trial",
+        "tirzepatide nutrition counseling trial"
+      ]
+    }
+  }
+}
