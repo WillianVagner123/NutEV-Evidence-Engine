@@ -1,0 +1,145 @@
+{
+  "version_note": "Focused supplement for nutrition-linked social prescribing, community referral, and primary-care food access implementation queries. Loaded after keyword_taxonomy.json without modifying raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "social_prescribing_nutrition": [
+        "social prescribing nutrition",
+        "social prescribing dietary intervention",
+        "social prescribing food insecurity",
+        "social prescribing food access",
+        "social prescribing obesity",
+        "social prescribing diabetes",
+        "social prescribing cardiometabolic",
+        "social needs referral nutrition",
+        "social needs referral food insecurity",
+        "community resource referral nutrition",
+        "community resource referral food insecurity",
+        "community referral nutrition",
+        "community food referral",
+        "community food referral program",
+        "food referral pathway",
+        "nutrition referral pathway",
+        "healthy food referral",
+        "produce prescription referral",
+        "food pharmacy referral",
+        "medically tailored meals referral",
+        "nutrition security referral",
+        "closed-loop referral nutrition",
+        "closed loop referral nutrition",
+        "closed-loop referral food insecurity",
+        "closed loop referral food insecurity",
+        "primary care food insecurity referral",
+        "primary care nutrition referral",
+        "primary care produce prescription",
+        "primary care food is medicine",
+        "primary care food as medicine",
+        "community health worker nutrition referral",
+        "community health worker food insecurity",
+        "patient navigation nutrition",
+        "care navigation nutrition"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "social prescribing nutrition",
+      "social prescribing food insecurity",
+      "social prescribing food access",
+      "social needs referral nutrition",
+      "community resource referral nutrition",
+      "food referral pathway",
+      "nutrition referral pathway",
+      "closed-loop referral nutrition",
+      "primary care food insecurity referral",
+      "primary care produce prescription",
+      "patient navigation nutrition"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "social prescribing nutrition",
+        "social prescribing food insecurity",
+        "social prescribing food access",
+        "social needs referral nutrition",
+        "community resource referral nutrition",
+        "community food referral program",
+        "food referral pathway",
+        "nutrition referral pathway",
+        "healthy food referral",
+        "produce prescription referral",
+        "food pharmacy referral",
+        "medically tailored meals referral",
+        "nutrition security referral",
+        "closed-loop referral nutrition",
+        "closed loop referral nutrition",
+        "primary care food insecurity referral",
+        "primary care nutrition referral",
+        "primary care produce prescription",
+        "patient navigation nutrition"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition report",
+        "social prescribing food insecurity report",
+        "social prescribing food access report",
+        "social needs referral nutrition report",
+        "community resource referral nutrition program",
+        "community food referral program report",
+        "food referral pathway implementation",
+        "nutrition referral pathway implementation",
+        "closed-loop referral nutrition implementation",
+        "primary care food insecurity referral program",
+        "primary care produce prescription report"
+      ],
+      "document_terms": [
+        "implementation report",
+        "program evaluation",
+        "evaluation report",
+        "policy brief",
+        "technical report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "social prescribing dietary intervention",
+        "social prescribing obesity",
+        "social prescribing diabetes",
+        "social prescribing cardiometabolic",
+        "social prescribing food insecurity",
+        "social needs referral nutrition",
+        "community resource referral nutrition",
+        "food referral pathway",
+        "nutrition referral pathway",
+        "closed-loop referral nutrition",
+        "closed loop referral nutrition",
+        "primary care nutrition referral",
+        "primary care produce prescription",
+        "primary care food is medicine",
+        "primary care food as medicine",
+        "community health worker nutrition referral",
+        "patient navigation nutrition",
+        "care navigation nutrition"
+      ],
+      "web_query_hints": [
+        "social prescribing nutrition trial",
+        "social prescribing dietary intervention trial",
+        "social prescribing obesity systematic review",
+        "social prescribing diabetes systematic review",
+        "social prescribing cardiometabolic review",
+        "social prescribing food insecurity intervention",
+        "social needs referral nutrition implementation trial",
+        "closed-loop referral nutrition trial",
+        "primary care produce prescription trial",
+        "primary care food is medicine evaluation",
+        "patient navigation nutrition intervention"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "pragmatic trial",
+        "systematic review"
+      ]
+    }
+  }
+}
