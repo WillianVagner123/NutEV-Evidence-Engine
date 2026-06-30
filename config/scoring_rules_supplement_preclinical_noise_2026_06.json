@@ -1,0 +1,31 @@
+{
+  "version_note": "Additive scoring supplement to reduce prioritization of preclinical, animal, and cellular noise in NutMEV retrieval without changing base scoring rules.",
+  "keyword_points": {
+    "animal model": -6,
+    "animal models": -6,
+    "preclinical": -6,
+    "pre-clinical": -6,
+    "murine": -6,
+    "mouse": -6,
+    "mice": -6,
+    "rat": -6,
+    "rats": -6,
+    "rodent": -6,
+    "rodents": -6,
+    "zebrafish": -6,
+    "swine model": -6,
+    "porcine model": -6,
+    "in vitro": -6,
+    "cell culture": -6,
+    "cell line": -6,
+    "cell lines": -6,
+    "hepatocyte": -5,
+    "hepatocytes": -5,
+    "adipocyte": -5,
+    "adipocytes": -5,
+    "gene expression": -5,
+    "molecular docking": -6,
+    "metabolomics only": -5,
+    "proteomics only": -5
+  }
+}
