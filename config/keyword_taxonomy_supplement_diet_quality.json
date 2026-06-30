@@ -1,0 +1,43 @@
+{
+  "version_note": "2026-06 diet quality and dietary index expansion for NutMEV search coverage",
+  "global": {
+    "diet_patterns": {
+      "diet_quality_indices": [
+        "diet quality",
+        "dietary quality",
+        "healthy eating index",
+        "healthy eating index 2020",
+        "HEI-2020",
+        "alternate healthy eating index",
+        "AHEI",
+        "diet quality index",
+        "dietary quality index",
+        "dietary index",
+        "dietary indices",
+        "diet score",
+        "dietary pattern score",
+        "mediterranean diet score",
+        "alternate mediterranean diet score",
+        "DASH score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "provegetarian food pattern",
+        "dietary inflammatory index",
+        "energy-adjusted dietary inflammatory index"
+      ]
+    },
+    "nutrition_domains": {
+      "diet_quality_indices": [
+        "diet quality",
+        "dietary quality",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "diet quality index",
+        "dietary quality index",
+        "dietary pattern score",
+        "plant-based diet index",
+        "healthy plant-based diet index"
+      ]
+    }
+  }
+}
