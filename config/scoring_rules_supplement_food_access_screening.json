@@ -1,0 +1,63 @@
+{
+  "version_note": "Supplemental NutMEV scoring for food access screening and closed-loop referral terms; complements keyword_taxonomy_supplement_food_access_screening.json.",
+  "keyword_points": {
+    "food access screening": 3,
+    "healthy food access screening": 3,
+    "food insecurity screening and referral": 4,
+    "nutrition insecurity screening and referral": 4,
+    "nutrition security screening and referral": 4,
+    "screening for nutrition insecurity": 3,
+    "screening for nutrition security": 3,
+    "social needs screening": 2,
+    "health-related social needs screening": 3,
+    "health related social needs screening": 3,
+    "food resource referral": 3,
+    "food resource referrals": 3,
+    "healthy food referral": 3,
+    "healthy food referrals": 3,
+    "food assistance referral": 3,
+    "food assistance referrals": 3,
+    "food benefit referral": 3,
+    "food benefit referrals": 3,
+    "snap referral": 3,
+    "snap enrollment assistance": 3,
+    "wic referral": 3,
+    "closed-loop food referral": 4,
+    "closed loop food referral": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food access screening": 4,
+      "healthy food access screening": 4,
+      "food insecurity screening and referral": 5,
+      "nutrition insecurity screening and referral": 5,
+      "nutrition security screening and referral": 5,
+      "food resource referral": 4,
+      "healthy food referral": 4,
+      "food assistance referral": 4,
+      "food benefit referral": 4,
+      "snap referral": 4,
+      "wic referral": 4,
+      "closed-loop food referral": 5,
+      "closed loop food referral": 5
+    },
+    "busca2b": {
+      "food access screening": 4,
+      "healthy food access screening": 4,
+      "food insecurity screening and referral": 5,
+      "nutrition insecurity screening and referral": 5,
+      "nutrition security screening and referral": 5,
+      "health-related social needs screening": 4,
+      "health related social needs screening": 4,
+      "food resource referral": 4,
+      "healthy food referral": 4,
+      "food assistance referral": 4,
+      "food benefit referral": 4,
+      "snap referral": 4,
+      "snap enrollment assistance": 4,
+      "wic referral": 4,
+      "closed-loop food referral": 5,
+      "closed loop food referral": 5
+    }
+  }
+}
