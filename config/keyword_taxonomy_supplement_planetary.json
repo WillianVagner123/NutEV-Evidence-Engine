@@ -1,0 +1,70 @@
+{
+  "version_note": "Focused supplement for sustainable and planetary dietary patterns; loaded after keyword_taxonomy.json without modifying raw outputs.",
+  "global": {
+    "diet_patterns": {
+      "sustainable_planetary_patterns": [
+        "sustainable healthy diet",
+        "sustainable healthy diets",
+        "healthy sustainable diet",
+        "healthy sustainable diets",
+        "healthy and sustainable diet",
+        "healthy and sustainable diets",
+        "sustainable diet",
+        "sustainable diets",
+        "sustainable dietary pattern",
+        "sustainable dietary patterns",
+        "planetary health diet",
+        "planetary health diets",
+        "EAT-Lancet diet",
+        "EAT Lancet diet",
+        "EAT-Lancet healthy reference diet",
+        "healthy reference diet",
+        "plant-forward diet",
+        "plant forward diet",
+        "plant-forward dietary pattern",
+        "plant forward dietary pattern"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "sustainable healthy diet",
+        "sustainable healthy diets",
+        "food-based dietary guidelines sustainable diet",
+        "dietary guidelines sustainability",
+        "sustainable dietary guidelines",
+        "planetary health diet guideline",
+        "EAT-Lancet healthy reference diet"
+      ],
+      "web_query_hints": [
+        "sustainable healthy diets guideline",
+        "food-based dietary guidelines sustainability",
+        "planetary health diet guideline",
+        "EAT-Lancet healthy reference diet guideline"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "sustainable healthy diet cardiometabolic risk",
+        "sustainable dietary pattern cardiometabolic risk",
+        "planetary health diet cardiometabolic risk",
+        "EAT-Lancet diet cardiometabolic risk",
+        "plant-forward diet cardiometabolic risk"
+      ],
+      "web_query_hints": [
+        "sustainable healthy diets cardiometabolic systematic review",
+        "planetary health diet cardiometabolic systematic review",
+        "EAT-Lancet diet cardiometabolic risk review",
+        "plant-forward diet obesity cardiometabolic risk"
+      ],
+      "document_terms": [
+        "systematic review",
+        "umbrella review",
+        "guideline",
+        "consensus statement",
+        "position paper"
+      ]
+    }
+  }
+}
