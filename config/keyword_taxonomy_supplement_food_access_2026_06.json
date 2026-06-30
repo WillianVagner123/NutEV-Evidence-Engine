@@ -1,0 +1,67 @@
+{
+  "version_note": "2026-06 food access and food-as-medicine expansion for NutMEV querypacks",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food box",
+        "food boxes",
+        "healthy food box",
+        "healthy food boxes",
+        "fresh food box",
+        "fresh food boxes",
+        "grocery prescription",
+        "grocery prescriptions",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy program",
+        "food farmacy programme",
+        "medically tailored food referral",
+        "produce prescription referral"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "healthy food box",
+        "healthy food boxes",
+        "fresh food box",
+        "fresh food boxes",
+        "grocery prescription",
+        "grocery prescriptions",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy program",
+        "food farmacy programme",
+        "medically tailored food referral",
+        "produce prescription referral",
+        "food is medicine referral",
+        "food as medicine referral",
+        "food access referral",
+        "nutrition security referral"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "healthy food box",
+        "grocery prescription",
+        "food pharmacy program",
+        "food farmacy program",
+        "medically tailored food referral",
+        "produce prescription referral",
+        "food access referral"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "healthy food box trial",
+        "grocery prescription trial",
+        "food pharmacy program",
+        "food farmacy program",
+        "food access referral",
+        "produce prescription referral",
+        "medically tailored food referral"
+      ]
+    }
+  }
+}
