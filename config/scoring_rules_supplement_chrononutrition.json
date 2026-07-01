@@ -1,0 +1,27 @@
+{
+  "version_note": "Prioritizes high-specificity chrononutrition and meal-timing records when they appear in NutMEV cardiometabolic contexts.",
+  "keyword_points": {
+    "chrononutrition": 3,
+    "chrono-nutrition": 3,
+    "circadian nutrition": 3,
+    "circadian eating": 3,
+    "meal timing": 3,
+    "meal timing intervention": 4,
+    "meal timing interventions": 4,
+    "eating window": 2,
+    "feeding window": 2,
+    "time-restricted eating": 3,
+    "time restricted eating": 3,
+    "time-restricted feeding": 3,
+    "time restricted feeding": 3,
+    "early time-restricted feeding": 4,
+    "early time restricted feeding": 4,
+    "early time-restricted eating": 4,
+    "early time restricted eating": 4,
+    "intermittent fasting pragmatic trial": 4,
+    "chrononutrition systematic review": 4,
+    "meal timing systematic review": 4,
+    "time-restricted eating systematic review": 4,
+    "time restricted eating systematic review": 4
+  }
+}
