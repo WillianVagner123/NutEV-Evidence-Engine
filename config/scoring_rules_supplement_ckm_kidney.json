@@ -1,0 +1,32 @@
+{
+  "version_note": "Adds CKM and renal-metabolic scoring anchors aligned with the CKM kidney taxonomy supplement.",
+  "keyword_points": {
+    "chronic kidney disease": 3,
+    "ckd": 2,
+    "kidney disease": 2,
+    "diabetic kidney disease": 3,
+    "albuminuria": 2,
+    "estimated glomerular filtration rate": 2,
+    "egfr": 2
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "chronic kidney disease": 4,
+      "ckd": 3,
+      "kidney disease": 3,
+      "diabetic kidney disease": 4,
+      "albuminuria": 3,
+      "estimated glomerular filtration rate": 3,
+      "egfr": 3
+    },
+    "busca2b": {
+      "chronic kidney disease": 4,
+      "ckd": 3,
+      "kidney disease": 3,
+      "diabetic kidney disease": 4,
+      "albuminuria": 3,
+      "estimated glomerular filtration rate": 3,
+      "egfr": 3
+    }
+  }
+}
