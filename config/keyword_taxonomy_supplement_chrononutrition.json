@@ -1,0 +1,60 @@
+{
+  "version_note": "Adds a focused chrononutrition and meal-timing expansion for NutMEV cardiometabolic intervention retrieval without broad sleep/circadian terms.",
+  "global": {
+    "diet_patterns": {
+      "chrononutrition_meal_timing": [
+        "chrononutrition",
+        "chrono-nutrition",
+        "circadian nutrition",
+        "circadian eating",
+        "meal timing",
+        "meal timing intervention",
+        "meal timing interventions",
+        "eating window",
+        "feeding window",
+        "time-restricted eating",
+        "time restricted eating",
+        "time-restricted feeding",
+        "time restricted feeding",
+        "early time-restricted feeding",
+        "early time restricted feeding",
+        "early time-restricted eating",
+        "early time restricted eating",
+        "intermittent fasting",
+        "breakfast timing",
+        "dinner timing"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "chrononutrition guideline",
+        "chrono-nutrition guideline",
+        "chrononutrition consensus",
+        "meal timing guideline",
+        "time-restricted eating guideline",
+        "time restricted eating guideline",
+        "intermittent fasting guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "chrononutrition trial",
+        "chrono-nutrition trial",
+        "chrononutrition systematic review",
+        "meal timing intervention",
+        "meal timing systematic review",
+        "time-restricted eating trial",
+        "time restricted eating trial",
+        "time-restricted eating systematic review",
+        "time restricted eating systematic review",
+        "early time-restricted feeding trial",
+        "early time restricted feeding trial",
+        "early time-restricted eating trial",
+        "early time restricted eating trial",
+        "intermittent fasting pragmatic trial"
+      ]
+    }
+  }
+}
