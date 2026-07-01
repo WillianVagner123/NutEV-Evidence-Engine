@@ -1,0 +1,135 @@
+{
+  "version_note": "Supplemental NutMEV search expansion for diabetes prevention program translation and lifestyle change programs; loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "diabetes_prevention_translation": [
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "national diabetes prevention program",
+        "national diabetes prevention programme",
+        "diabetes prevention lifestyle program",
+        "diabetes prevention lifestyle programme",
+        "diabetes prevention lifestyle intervention",
+        "prediabetes lifestyle intervention",
+        "prediabetes lifestyle program",
+        "prediabetes lifestyle programme",
+        "lifestyle change program",
+        "lifestyle change programme",
+        "lifestyle change intervention",
+        "dpp translation",
+        "dpp implementation",
+        "dpp adaptation",
+        "dpp dissemination",
+        "dpp scale-up",
+        "dpp scale up",
+        "dpp maintenance",
+        "dpp adherence",
+        "community dpp",
+        "community diabetes prevention program",
+        "community diabetes prevention programme",
+        "digital diabetes prevention program",
+        "digital diabetes prevention programme",
+        "online diabetes prevention program",
+        "online diabetes prevention programme",
+        "group lifestyle balance",
+        "group lifestyle balance program"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diabetes prevention program adherence",
+      "diabetes prevention programme adherence",
+      "lifestyle change program adherence",
+      "lifestyle change programme adherence",
+      "dpp attendance",
+      "dpp retention",
+      "dpp engagement",
+      "dpp maintenance"
+    ],
+    "glycemia": [
+      "diabetes prevention program outcome",
+      "diabetes prevention programme outcome",
+      "dpp outcome",
+      "dpp outcomes",
+      "prediabetes remission",
+      "reversion to normoglycemia",
+      "reversion to normoglycaemia"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "diabetes prevention program guideline",
+        "diabetes prevention programme guideline",
+        "diabetes prevention program standards",
+        "national diabetes prevention program guidance",
+        "prediabetes lifestyle intervention guideline"
+      ],
+      "document_terms": [
+        "diabetes prevention program guideline",
+        "diabetes prevention programme guideline",
+        "prediabetes lifestyle intervention guideline"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "diabetes prevention program",
+        "diabetes prevention programme",
+        "national diabetes prevention program",
+        "national diabetes prevention programme",
+        "diabetes prevention lifestyle program",
+        "diabetes prevention lifestyle programme",
+        "diabetes prevention lifestyle intervention",
+        "prediabetes lifestyle intervention",
+        "prediabetes lifestyle program",
+        "prediabetes lifestyle programme",
+        "lifestyle change program",
+        "lifestyle change programme",
+        "dpp translation",
+        "dpp implementation",
+        "dpp adaptation",
+        "dpp dissemination",
+        "dpp scale-up",
+        "dpp scale up",
+        "community dpp",
+        "digital diabetes prevention program",
+        "online diabetes prevention program",
+        "group lifestyle balance"
+      ],
+      "web_query_hints": [
+        "diabetes prevention program trial",
+        "diabetes prevention programme trial",
+        "diabetes prevention program systematic review",
+        "diabetes prevention programme systematic review",
+        "diabetes prevention program implementation",
+        "diabetes prevention programme implementation",
+        "national diabetes prevention program evaluation",
+        "dpp translation trial",
+        "dpp implementation study",
+        "dpp adaptation study",
+        "dpp scale-up implementation",
+        "community dpp trial",
+        "digital diabetes prevention program trial",
+        "online diabetes prevention program trial",
+        "prediabetes lifestyle intervention adherence",
+        "lifestyle change program adherence",
+        "group lifestyle balance trial"
+      ],
+      "document_terms": [
+        "diabetes prevention program trial",
+        "diabetes prevention programme trial",
+        "diabetes prevention program systematic review",
+        "diabetes prevention programme systematic review",
+        "diabetes prevention program implementation",
+        "diabetes prevention programme implementation",
+        "dpp implementation study",
+        "dpp translation study",
+        "dpp adaptation study",
+        "dpp scale-up study",
+        "program evaluation",
+        "pragmatic trial"
+      ]
+    }
+  }
+}
