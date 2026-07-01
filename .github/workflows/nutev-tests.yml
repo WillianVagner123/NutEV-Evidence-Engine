@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Resolve checkout target
         id: resolve
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             if (context.eventName === 'issue_comment') {
@@ -58,7 +58,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           repository: ${{ needs.prepare.outputs.checkout_repository }}
           ref: ${{ needs.prepare.outputs.checkout_sha }}
@@ -99,7 +99,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           repository: ${{ needs.prepare.outputs.checkout_repository }}
           ref: ${{ needs.prepare.outputs.checkout_sha }}
@@ -138,7 +138,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           repository: ${{ needs.prepare.outputs.checkout_repository }}
           ref: ${{ needs.prepare.outputs.checkout_sha }}
@@ -180,7 +180,7 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           repository: ${{ needs.prepare.outputs.checkout_repository }}
           ref: ${{ needs.prepare.outputs.checkout_sha }}

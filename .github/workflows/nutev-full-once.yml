@@ -41,7 +41,7 @@ jobs:
         run: mkdir -p project_output/07_logs project_output/08_docs project_output/09_global_watch
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -113,7 +113,7 @@ jobs:
 
       - name: Upload full project_output artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nutev-full-once-project-output
           path: project_output
