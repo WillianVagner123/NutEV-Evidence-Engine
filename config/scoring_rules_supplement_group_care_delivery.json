@@ -1,0 +1,27 @@
+{
+  "version_note": "2026-07 group care delivery scoring supplement for NutMEV precision",
+  "keyword_points": {
+    "shared medical appointment": 3,
+    "shared medical appointments": 3,
+    "group medical visit": 3,
+    "group medical visits": 3,
+    "group-based lifestyle intervention": 3,
+    "group based lifestyle intervention": 3,
+    "group lifestyle intervention": 3,
+    "group-based nutrition intervention": 4,
+    "group based nutrition intervention": 4,
+    "group nutrition intervention": 3,
+    "group-based diabetes prevention": 4,
+    "group based diabetes prevention": 4,
+    "group-based weight management": 4,
+    "group based weight management": 4,
+    "group-based dietary counseling": 4,
+    "group based dietary counseling": 4,
+    "group-based dietary counselling": 4,
+    "group based dietary counselling": 4,
+    "group-based nutrition education": 3,
+    "group based nutrition education": 3,
+    "group health coaching": 3,
+    "group lifestyle coaching": 3
+  }
+}
