@@ -2,6 +2,13 @@
   "version_note": "Adds an auditable behavior-maintenance query supplement for NutMEV adherence and implementation retrieval without changing the canonical raw taxonomy file.",
   "global": {
     "implementation_behavior": {
+      "adherence": [
+        "dietary self-monitoring",
+        "weight regain prevention",
+        "relapse prevention",
+        "implementation intention",
+        "habit maintenance"
+      ],
       "maintenance_self_management": [
         "dietary self-monitoring",
         "dietary self monitoring",
