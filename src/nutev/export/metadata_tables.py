@@ -98,4 +98,5 @@ def write_simple_csv(
             return
         w = csv.DictWriter(f, fieldnames=keys)
         w.writeheader()
-        w.writerows(rows)
+        if rows:
+            w.writerows(rows)
