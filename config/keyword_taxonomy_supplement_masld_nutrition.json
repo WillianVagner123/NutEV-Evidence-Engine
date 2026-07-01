@@ -1,0 +1,71 @@
+{
+  "version_note": "2026-07-01: supplemental MASLD/MASH nutrition expansion for NutMEV querypacks. Terms are restricted to cardiometabolic workstreams and anchored to diet, lifestyle, guidelines, or evidence synthesis to limit off-scope hepatology noise.",
+  "clinical": {
+    "cardiometabolic": [
+      "metabolic dysfunction-associated steatotic liver disease",
+      "metabolic dysfunction associated steatotic liver disease",
+      "metabolic dysfunction-associated steatohepatitis",
+      "metabolic dysfunction associated steatohepatitis",
+      "masld",
+      "mash",
+      "steatotic liver disease",
+      "metabolic-associated fatty liver disease",
+      "metabolic associated fatty liver disease",
+      "mafld"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "liver fat",
+      "hepatic steatosis",
+      "steatosis resolution",
+      "liver enzymes",
+      "alanine aminotransferase",
+      "alt",
+      "aspartate aminotransferase",
+      "ast",
+      "fibrosis risk",
+      "noninvasive fibrosis score",
+      "transient elastography"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "masld",
+        "mash",
+        "steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "metabolic dysfunction-associated steatohepatitis",
+        "metabolic-associated fatty liver disease"
+      ],
+      "web_query_hints": [
+        "MASLD nutrition guideline",
+        "MASH lifestyle guideline",
+        "steatotic liver disease diet guideline",
+        "metabolic dysfunction-associated steatotic liver disease nutrition guideline",
+        "metabolic dysfunction-associated steatohepatitis lifestyle guidance",
+        "MASLD clinical practice guideline diet lifestyle"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "masld",
+        "mash",
+        "steatotic liver disease",
+        "metabolic dysfunction-associated steatotic liver disease",
+        "metabolic dysfunction-associated steatohepatitis",
+        "metabolic-associated fatty liver disease"
+      ],
+      "web_query_hints": [
+        "MASLD dietary intervention",
+        "MASLD lifestyle intervention",
+        "MASH diet weight loss intervention",
+        "steatotic liver disease Mediterranean diet intervention",
+        "hepatic steatosis diet quality intervention",
+        "metabolic dysfunction-associated steatotic liver disease systematic review diet",
+        "MASLD weight loss maintenance lifestyle intervention"
+      ]
+    }
+  }
+}
