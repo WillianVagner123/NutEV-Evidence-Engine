@@ -1,0 +1,33 @@
+{
+  "version_note": "2026-07 group care delivery expansion for NutMEV nutrition and lifestyle medicine retrieval",
+  "global": {
+    "implementation_behavior": {
+      "delivery_models": [
+        "shared medical appointment",
+        "shared medical appointments",
+        "group medical visit",
+        "group medical visits",
+        "group visit",
+        "group visits",
+        "group-based lifestyle intervention",
+        "group based lifestyle intervention",
+        "group lifestyle intervention",
+        "group-based nutrition intervention",
+        "group based nutrition intervention",
+        "group nutrition intervention",
+        "group-based diabetes prevention",
+        "group based diabetes prevention",
+        "group-based weight management",
+        "group based weight management",
+        "group-based dietary counseling",
+        "group based dietary counseling",
+        "group-based dietary counselling",
+        "group based dietary counselling",
+        "group-based nutrition education",
+        "group based nutrition education",
+        "group health coaching",
+        "group lifestyle coaching"
+      ]
+    }
+  }
+}
