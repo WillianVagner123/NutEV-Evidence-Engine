@@ -1,0 +1,107 @@
+{
+  "version_note": "Adds focused food and nutrition navigation terms for NutMEV search expansion. Loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_navigation_referral": [
+        "food navigation",
+        "food navigator",
+        "food navigators",
+        "nutrition navigation",
+        "nutrition navigator",
+        "nutrition navigators",
+        "food resource navigation",
+        "nutrition resource navigation",
+        "community food navigation",
+        "community nutrition navigation",
+        "community resource navigation",
+        "resource navigation for food insecurity",
+        "resource navigation for nutrition insecurity",
+        "navigation for food insecurity",
+        "navigation for nutrition insecurity",
+        "food referral pathway",
+        "food referral pathways",
+        "nutrition referral pathway",
+        "nutrition referral pathways",
+        "community food referral pathway",
+        "community nutrition referral pathway",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "closed-loop nutrition referral",
+        "closed loop nutrition referral",
+        "food assistance referral",
+        "nutrition assistance referral",
+        "food benefits navigation",
+        "nutrition benefits navigation",
+        "produce prescription referral pathway",
+        "medically tailored food referral pathway"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food navigation",
+      "nutrition navigation",
+      "food resource navigation",
+      "nutrition resource navigation",
+      "community resource navigation",
+      "food referral pathway",
+      "nutrition referral pathway",
+      "closed-loop food referral",
+      "closed loop food referral",
+      "food benefits navigation",
+      "nutrition benefits navigation"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food navigation",
+        "nutrition navigation",
+        "food resource navigation",
+        "community food navigation",
+        "food referral pathway",
+        "nutrition referral pathway",
+        "food benefits navigation"
+      ],
+      "web_query_hints": [
+        "food navigation program report",
+        "nutrition navigation program report",
+        "food resource navigation implementation",
+        "community food referral pathway report",
+        "closed-loop food referral implementation"
+      ],
+      "document_terms": [
+        "implementation report",
+        "program evaluation",
+        "referral pathway"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food navigation",
+        "nutrition navigation",
+        "food resource navigation",
+        "nutrition resource navigation",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "closed-loop nutrition referral",
+        "closed loop nutrition referral",
+        "food benefits navigation",
+        "nutrition benefits navigation"
+      ],
+      "web_query_hints": [
+        "food navigation cardiometabolic trial",
+        "nutrition navigation diabetes intervention",
+        "food resource navigation obesity intervention",
+        "closed-loop food referral trial",
+        "nutrition benefits navigation implementation"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "process evaluation",
+        "program evaluation",
+        "referral pathway"
+      ]
+    }
+  }
+}
