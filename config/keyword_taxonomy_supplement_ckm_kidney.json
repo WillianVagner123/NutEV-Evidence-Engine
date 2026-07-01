@@ -1,0 +1,79 @@
+{
+  "version_note": "Adds CKM and renal-metabolic search anchors for busca2a/b without changing the base taxonomy.",
+  "clinical": {
+    "kidney_metabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "kidney disease",
+      "diabetic kidney disease",
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "ckm syndrome",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "albuminuria",
+      "estimated glomerular filtration rate",
+      "egfr"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "clinical_keys": [
+        "kidney_metabolic"
+      ],
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "kidney disease",
+        "diabetic kidney disease",
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "albuminuria",
+        "estimated glomerular filtration rate",
+        "egfr"
+      ],
+      "web_query_hints": [
+        "ckm guideline",
+        "ckm syndrome consensus",
+        "cardiovascular-kidney-metabolic guideline",
+        "cardiovascular kidney metabolic consensus",
+        "chronic kidney disease obesity nutrition guideline",
+        "diabetic kidney disease nutrition guideline",
+        "albuminuria lifestyle guideline"
+      ]
+    },
+    "busca2b": {
+      "clinical_keys": [
+        "kidney_metabolic"
+      ],
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "kidney disease",
+        "diabetic kidney disease",
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "ckm syndrome",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "albuminuria",
+        "estimated glomerular filtration rate",
+        "egfr"
+      ],
+      "web_query_hints": [
+        "ckm lifestyle intervention",
+        "ckm nutrition intervention",
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "chronic kidney disease obesity diet intervention",
+        "diabetic kidney disease dietary intervention",
+        "albuminuria diet intervention",
+        "egfr dietary intervention",
+        "ckm systematic review",
+        "chronic kidney disease obesity systematic review"
+      ]
+    }
+  }
+}
