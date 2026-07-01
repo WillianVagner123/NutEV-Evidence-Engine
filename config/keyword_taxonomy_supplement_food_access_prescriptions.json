@@ -1,0 +1,60 @@
+{
+  "version_note": "2026-07 food access prescription expansion for NutMEV search coverage",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy programme",
+        "food pharmacy",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "grocery prescription",
+        "grocery prescriptions",
+        "healthy grocery prescription",
+        "healthy grocery prescriptions",
+        "fruit and vegetable prescription",
+        "fruit and vegetable prescriptions",
+        "fruit and vegetable prescription program",
+        "fruit and vegetable prescription programme",
+        "medically tailored nutrition",
+        "medically tailored food",
+        "medically tailored foods",
+        "medically tailored food program",
+        "medically tailored food programme",
+        "medically tailored groceries program",
+        "medically tailored groceries programme"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy programme",
+        "food pharmacy",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "grocery prescription",
+        "grocery prescriptions",
+        "healthy grocery prescription",
+        "healthy grocery prescriptions",
+        "fruit and vegetable prescription",
+        "fruit and vegetable prescriptions",
+        "fruit and vegetable prescription program",
+        "fruit and vegetable prescription programme",
+        "produce prescription referral",
+        "food pharmacy referral",
+        "food farmacy referral",
+        "medically tailored meal referral",
+        "medically tailored grocery referral",
+        "medically tailored nutrition",
+        "medically tailored food",
+        "medically tailored foods",
+        "medically tailored food program",
+        "medically tailored food programme",
+        "medically tailored groceries program",
+        "medically tailored groceries programme"
+      ]
+    }
+  }
+}
