@@ -1,0 +1,62 @@
+{
+  "version_note": "2026-07 food access prescription scoring expansion for NutMEV prioritization",
+  "keyword_points": {
+    "food farmacy": 4,
+    "food farmacy program": 4,
+    "food farmacy programme": 4,
+    "grocery prescription": 4,
+    "grocery prescriptions": 4,
+    "healthy grocery prescription": 4,
+    "healthy grocery prescriptions": 4,
+    "fruit and vegetable prescriptions": 4,
+    "fruit and vegetable prescription program": 4,
+    "fruit and vegetable prescription programme": 4,
+    "medically tailored nutrition": 4,
+    "medically tailored food": 4,
+    "medically tailored foods": 4,
+    "medically tailored food program": 4,
+    "medically tailored food programme": 4,
+    "medically tailored groceries program": 4,
+    "medically tailored groceries programme": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food farmacy": 5,
+      "food farmacy program": 5,
+      "food farmacy programme": 5,
+      "grocery prescription": 5,
+      "grocery prescriptions": 5,
+      "healthy grocery prescription": 5,
+      "healthy grocery prescriptions": 5,
+      "fruit and vegetable prescriptions": 5,
+      "fruit and vegetable prescription program": 5,
+      "fruit and vegetable prescription programme": 5,
+      "medically tailored nutrition": 5,
+      "medically tailored food": 5,
+      "medically tailored foods": 5,
+      "medically tailored food program": 5,
+      "medically tailored food programme": 5,
+      "medically tailored groceries program": 5,
+      "medically tailored groceries programme": 5
+    },
+    "busca2b": {
+      "food farmacy": 5,
+      "food farmacy program": 5,
+      "food farmacy programme": 5,
+      "grocery prescription": 5,
+      "grocery prescriptions": 5,
+      "healthy grocery prescription": 5,
+      "healthy grocery prescriptions": 5,
+      "fruit and vegetable prescriptions": 5,
+      "fruit and vegetable prescription program": 5,
+      "fruit and vegetable prescription programme": 5,
+      "medically tailored nutrition": 5,
+      "medically tailored food": 5,
+      "medically tailored foods": 5,
+      "medically tailored food program": 5,
+      "medically tailored food programme": 5,
+      "medically tailored groceries program": 5,
+      "medically tailored groceries programme": 5
+    }
+  }
+}
