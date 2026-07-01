@@ -1,0 +1,141 @@
+{
+  "version_note": "2026-07-01 supplement: expands food skills, label literacy, shopping skills, and culinary self-efficacy terms for NutMEV search without changing the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "culinary nutrition",
+        "culinary nutrition intervention",
+        "food skills",
+        "food skills intervention",
+        "food preparation skills",
+        "food preparation confidence",
+        "healthy cooking",
+        "hands-on cooking",
+        "hands on cooking",
+        "cooking class",
+        "cooking classes",
+        "cooking self-efficacy",
+        "kitchen confidence",
+        "meal planning skills",
+        "shopping skills",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "food budgeting",
+        "food resource management",
+        "label reading",
+        "food label literacy",
+        "experiential nutrition education",
+        "nutrição culinária",
+        "habilidades alimentares",
+        "habilidades de preparo de alimentos",
+        "aula de culinária",
+        "aulas de culinária",
+        "cozinha prática",
+        "autoeficácia culinária",
+        "confiança na cozinha",
+        "habilidades de planejamento de refeições",
+        "habilidades de compras",
+        "compras saudáveis",
+        "orçamento alimentar",
+        "gestão de recursos alimentares",
+        "leitura de rótulos",
+        "literacia de rótulos alimentares",
+        "educação nutricional experiencial"
+      ]
+    },
+    "implementation_behavior": {
+      "behavioral": [
+        "cooking self-efficacy",
+        "kitchen confidence",
+        "meal planning skills",
+        "food resource management",
+        "food budgeting",
+        "grocery shopping skills",
+        "shopping skills",
+        "autoeficácia culinária",
+        "confiança na cozinha",
+        "habilidades de planejamento de refeições",
+        "gestão de recursos alimentares"
+      ],
+      "contextual": [
+        "food resource management",
+        "food budgeting",
+        "healthy grocery shopping",
+        "grocery shopping skills",
+        "shopping skills",
+        "food label literacy",
+        "label reading",
+        "gestão de recursos alimentares",
+        "orçamento alimentar",
+        "compras saudáveis",
+        "habilidades de compras",
+        "literacia de rótulos alimentares",
+        "leitura de rótulos"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "curriculum",
+        "training manual",
+        "implementation toolkit",
+        "educational toolkit",
+        "currículo",
+        "manual de treinamento",
+        "kit de ferramentas de implementação",
+        "kit educacional"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food skills",
+        "food resource management",
+        "food budgeting",
+        "grocery shopping skills",
+        "food label literacy",
+        "label reading",
+        "culinary nutrition",
+        "experiential nutrition education"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food skills intervention",
+        "cooking self-efficacy intervention",
+        "meal planning skills intervention",
+        "food resource management intervention",
+        "food label literacy intervention",
+        "culinary nutrition intervention",
+        "experiential nutrition education intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "food skills",
+        "food preparation skills",
+        "food resource management",
+        "food budgeting",
+        "grocery shopping skills",
+        "food label literacy",
+        "label reading",
+        "cooking self-efficacy",
+        "kitchen confidence",
+        "culinary nutrition",
+        "experiential nutrition education"
+      ],
+      "web_query_hints": [
+        "food skills instrument",
+        "food skills questionnaire",
+        "food resource management questionnaire",
+        "meal planning questionnaire",
+        "grocery shopping skills scale",
+        "food budgeting scale",
+        "food label literacy scale",
+        "cooking self-efficacy scale",
+        "culinary nutrition curriculum",
+        "experiential nutrition education program"
+      ]
+    }
+  }
+}
