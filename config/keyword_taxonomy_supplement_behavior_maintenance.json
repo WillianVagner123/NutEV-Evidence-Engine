@@ -1,0 +1,49 @@
+{
+  "version_note": "Adds an auditable behavior-maintenance query supplement for NutMEV adherence and implementation retrieval without changing the canonical raw taxonomy file.",
+  "global": {
+    "implementation_behavior": {
+      "maintenance_self_management": [
+        "dietary self-monitoring",
+        "dietary self monitoring",
+        "food diary",
+        "food diaries",
+        "diet diary",
+        "diet diaries",
+        "diet tracking",
+        "dietary tracking",
+        "self-weighing",
+        "self weighing",
+        "weight self-monitoring",
+        "weight self monitoring",
+        "action planning",
+        "coping planning",
+        "implementation intention",
+        "implementation intentions",
+        "problem solving",
+        "relapse prevention",
+        "lapse management",
+        "habit formation",
+        "habit maintenance",
+        "maintenance of behavior change",
+        "maintenance of behaviour change",
+        "behavioral maintenance",
+        "behavioural maintenance",
+        "dietary maintenance",
+        "dietary self-regulation",
+        "dietary self regulation",
+        "weight loss maintenance",
+        "long-term weight loss maintenance",
+        "long term weight loss maintenance",
+        "weight regain prevention",
+        "automonitoramento alimentar",
+        "diário alimentar",
+        "registro alimentar",
+        "planejamento de ação",
+        "planejamento de enfrentamento",
+        "prevenção de recaída",
+        "manutenção da mudança de comportamento",
+        "manutenção do peso"
+      ]
+    }
+  }
+}
