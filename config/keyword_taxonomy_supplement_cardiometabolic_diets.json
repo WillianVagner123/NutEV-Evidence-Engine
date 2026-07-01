@@ -21,7 +21,18 @@
         "dash sodium diet",
         "dash dietary pattern",
         "low-sodium dash diet",
-        "low sodium dash diet"
+        "low sodium dash diet",
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "cardiovascular-kidney-metabolic diet",
+        "cardiovascular kidney metabolic diet",
+        "cardiovascular-kidney-metabolic dietary pattern",
+        "cardiovascular kidney metabolic dietary pattern",
+        "ckm nutrition",
+        "ckm diet",
+        "ckm dietary pattern",
+        "cardiorenal metabolic nutrition",
+        "cardio-renal-metabolic nutrition"
       ]
     }
   },
@@ -36,7 +47,18 @@
         "dietary portfolio",
         "portfolio dietary pattern",
         "dash-sodium diet",
-        "dash dietary pattern"
+        "dash dietary pattern",
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "cardiovascular-kidney-metabolic dietary pattern",
+        "cardiovascular kidney metabolic dietary pattern",
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "cardiovascular kidney metabolic lifestyle intervention",
+        "ckm nutrition",
+        "ckm diet",
+        "ckm lifestyle intervention",
+        "ckm dietary pattern",
+        "cardiorenal metabolic nutrition"
       ],
       "web_query_hints": [
         "portfolio diet guideline",
@@ -46,14 +68,24 @@
         "ldl-lowering diet guideline",
         "dash-sodium diet guideline",
         "dash dietary pattern hypertension guideline",
-        "heart-healthy diet scientific statement"
+        "heart-healthy diet scientific statement",
+        "cardiovascular-kidney-metabolic nutrition guideline",
+        "cardiovascular kidney metabolic nutrition guideline",
+        "cardiovascular-kidney-metabolic lifestyle scientific statement",
+        "cardiovascular kidney metabolic lifestyle scientific statement",
+        "ckm nutrition guideline",
+        "ckm diet guideline",
+        "ckm lifestyle scientific statement",
+        "ckm syndrome nutrition consensus"
       ],
       "document_terms": [
         "scientific statement",
         "consensus statement",
         "practice guideline",
         "clinical practice guideline",
-        "guidance statement"
+        "guidance statement",
+        "practice guidance",
+        "clinical decision pathway"
       ]
     },
     "busca2b": {
@@ -68,7 +100,21 @@
         "dietary portfolio for cholesterol lowering",
         "dash-sodium diet",
         "dash dietary pattern",
-        "low-sodium dash diet"
+        "low-sodium dash diet",
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "cardiovascular-kidney-metabolic diet",
+        "cardiovascular kidney metabolic diet",
+        "cardiovascular-kidney-metabolic dietary pattern",
+        "cardiovascular kidney metabolic dietary pattern",
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "cardiovascular kidney metabolic lifestyle intervention",
+        "ckm nutrition",
+        "ckm diet",
+        "ckm dietary pattern",
+        "ckm lifestyle intervention",
+        "cardiorenal metabolic nutrition",
+        "cardio-renal-metabolic nutrition"
       ],
       "web_query_hints": [
         "portfolio diet randomized trial",
@@ -79,7 +125,18 @@
         "ldl-lowering diet randomized trial",
         "dash-sodium diet trial",
         "dash dietary pattern blood pressure trial",
-        "heart-healthy diet cardiometabolic trial"
+        "heart-healthy diet cardiometabolic trial",
+        "cardiovascular-kidney-metabolic nutrition trial",
+        "cardiovascular kidney metabolic nutrition trial",
+        "cardiovascular-kidney-metabolic dietary intervention",
+        "cardiovascular kidney metabolic dietary intervention",
+        "cardiovascular-kidney-metabolic lifestyle intervention trial",
+        "cardiovascular kidney metabolic lifestyle intervention trial",
+        "ckm nutrition intervention",
+        "ckm dietary intervention",
+        "ckm lifestyle intervention trial",
+        "ckm syndrome systematic review nutrition",
+        "ckm syndrome diet intervention"
       ],
       "document_terms": [
         "randomized trial",
@@ -87,7 +144,9 @@
         "controlled trial",
         "systematic review",
         "meta-analysis",
-        "umbrella review"
+        "umbrella review",
+        "pragmatic trial",
+        "implementation trial"
       ]
     }
   }
