@@ -1,0 +1,158 @@
+{
+  "version_note": "2026-07-01 NutMEV precision supplement: expands adherence, maintenance, remission, CKM, and culinary/food literacy terms without replacing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "quality_fiber_minimally_processed": [
+        "high-fiber diet",
+        "high fiber diet",
+        "dietary fiber",
+        "dietary fibre",
+        "fiber-rich diet",
+        "fibre-rich diet",
+        "whole grains",
+        "whole grain intake",
+        "legume-rich diet",
+        "legume rich diet",
+        "pulses intake",
+        "minimally processed diet",
+        "minimally processed foods",
+        "healthy eating pattern",
+        "healthy dietary pattern",
+        "diet quality intervention"
+      ],
+      "personalized_and_tailored": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized meal planning",
+        "personalised meal planning"
+      ]
+    },
+    "implementation_behavior": {
+      "adherence_maintenance_self_regulation": [
+        "habit formation",
+        "implementation intentions",
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "self-regulation",
+        "self regulation",
+        "relapse prevention",
+        "lapse management",
+        "problem solving",
+        "engagement",
+        "retention",
+        "persistence",
+        "long-term adherence",
+        "long term adherence",
+        "long-term behavior change",
+        "long term behavior change",
+        "behavioral maintenance",
+        "dietary maintenance"
+      ],
+      "implementation_outcomes_precision": [
+        "implementation cost",
+        "implementation evaluation",
+        "implementation determinant",
+        "implementation determinants",
+        "implementation barrier",
+        "implementation barriers",
+        "implementation facilitator",
+        "implementation facilitators",
+        "implementation outcomes framework",
+        "proctor implementation outcomes",
+        "hybrid type 1",
+        "hybrid type 2",
+        "hybrid type 3"
+      ]
+    },
+    "nutrition_domains": {
+      "culinary_food_skills_precision": [
+        "food preparation skills",
+        "meal preparation skills",
+        "food preparation confidence",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "food label literacy",
+        "food resource management",
+        "food budgeting"
+      ]
+    }
+  },
+  "clinical": {
+    "diabetes": [
+      "prediabetes",
+      "pre-diabetes",
+      "prediabetic state",
+      "impaired fasting glucose",
+      "impaired glucose tolerance",
+      "dysglycemia",
+      "dysglycaemia",
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission"
+    ],
+    "cvd": [
+      "cardiometabolic health",
+      "cardiometabolic disease",
+      "cardiometabolic diseases",
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "ckm syndrome",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome"
+    ],
+    "metabolic_syndrome": [
+      "visceral adiposity",
+      "central adiposity",
+      "abdominal adiposity",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio"
+    ],
+    "fatty_liver": [
+      "hepatic steatosis",
+      "metabolic dysfunction associated steatotic liver disease"
+    ]
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "long-term adherence",
+      "long term adherence",
+      "dietary self-monitoring",
+      "dietary self-regulation",
+      "eating self-regulation",
+      "habit formation",
+      "implementation intentions",
+      "relapse prevention",
+      "lapse management",
+      "engagement",
+      "retention"
+    ],
+    "glycemia": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "glycemic remission",
+      "glycaemic remission"
+    ],
+    "behavioral": [
+      "problem solving",
+      "habit formation",
+      "implementation intentions",
+      "dietary self-regulation",
+      "eating self-regulation"
+    ]
+  }
+}
