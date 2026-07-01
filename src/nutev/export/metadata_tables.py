@@ -96,7 +96,7 @@ def write_simple_csv(
     with path.open("w", newline="", encoding="utf-8") as f:
         if not keys:
             return
-        w = csv.DictWriter(f, fieldnames=keys)
+        w = csv.DictWriter(f, fieldnames=keys, extrasaction="ignore")
         w.writeheader()
         if rows:
             w.writerows(rows)
