@@ -7,6 +7,9 @@ def test_busca2a_semantic_terms_include_ckm_variants() -> None:
     assert "cardiovascular-kidney-metabolic syndrome" in terms
     assert "cardiovascular kidney metabolic syndrome" in terms
     assert "ckm syndrome" in terms
+    assert "cardiorenal metabolic syndrome" in terms
+    assert "cardio-renal-metabolic syndrome" in terms
+    assert "cardiorenal-metabolic syndrome" in terms
 
 
 def test_busca2b_semantic_document_terms_include_ckm_evidence_types() -> None:
@@ -14,3 +17,5 @@ def test_busca2b_semantic_document_terms_include_ckm_evidence_types() -> None:
 
     assert "presidential advisory" in terms
     assert "clinical decision pathway" in terms
+    assert "cardiorenal metabolic syndrome scientific statement" in terms
+    assert "cardiorenal metabolic syndrome guideline" in terms
