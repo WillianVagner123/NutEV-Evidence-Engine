@@ -5,6 +5,24 @@ from typing import Any
 
 from nutev.global_watch import watch_config
 
+PERSONALIZED_NUTRITION_EVIDENCE_TERMS = [
+    "personalized nutrition systematic review",
+    "personalised nutrition systematic review",
+    "precision nutrition systematic review",
+    "personalized nutrition meta-analysis",
+    "personalised nutrition meta-analysis",
+    "precision nutrition meta-analysis",
+    "personalized nutrition umbrella review",
+    "personalised nutrition umbrella review",
+    "precision nutrition umbrella review",
+    "personalized nutrition consensus statement",
+    "personalised nutrition consensus statement",
+    "precision nutrition consensus statement",
+    "personalized nutrition position statement",
+    "personalised nutrition position statement",
+    "precision nutrition position statement",
+]
+
 PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS = [
     "personalized nutrition diabetes remission",
     "personalised nutrition diabetes remission",
@@ -30,6 +48,13 @@ PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS = [
     "personalised meal planning adherence",
     "individualized meal plan adherence",
     "individualised meal plan adherence",
+    "personalized nutrition dietary adherence",
+    "personalised nutrition dietary adherence",
+    "precision nutrition dietary adherence",
+    "tailored dietary intervention dietary adherence",
+    "personalized nutrition implementation",
+    "personalised nutrition implementation",
+    "precision nutrition implementation",
 ]
 
 FOOD_ENVIRONMENT_POLICY_TERMS = [
@@ -100,12 +125,16 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
         0,
-        PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS,
+        [*PERSONALIZED_NUTRITION_EVIDENCE_TERMS, *PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS],
     )
     _extend_seed_group(
         "personalized_nutrition",
         1,
         PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS,
+    )
+    _extend_category_terms(
+        "guidelines_consensus",
+        PERSONALIZED_NUTRITION_EVIDENCE_TERMS,
     )
     _extend_category_terms(
         "food_literacy_culinary_commensality",
