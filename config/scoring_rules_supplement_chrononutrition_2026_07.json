@@ -1,0 +1,52 @@
+{
+  "version_note": "2026-07 scoring supplement for chrononutrition and eating-time terms. Uses keyword_points and busca2b bonuses for nutrition-timing evidence; avoids broad sleep-only scoring.",
+  "keyword_points": {
+    "chrononutrition": 3,
+    "chrono-nutrition": 3,
+    "circadian nutrition": 3,
+    "circadian eating": 3,
+    "circadian eating pattern": 3,
+    "meal timing": 3,
+    "meal timing intervention": 4,
+    "eating timing": 3,
+    "food intake timing": 3,
+    "timing of food intake": 3,
+    "time-restricted eating": 3,
+    "time restricted eating": 3,
+    "time-restricted feeding": 3,
+    "time restricted feeding": 3,
+    "early time-restricted eating": 4,
+    "early time restricted eating": 4,
+    "early time-restricted feeding": 4,
+    "early time restricted feeding": 4,
+    "late eating": 2,
+    "night eating": 2,
+    "breakfast skipping": 2,
+    "caloric distribution": 2,
+    "daily energy distribution": 2,
+    "meal frequency": 2,
+    "eating window": 3,
+    "time-restricted eating adherence": 4,
+    "time restricted eating adherence": 4,
+    "chrononutrition adherence": 4,
+    "meal timing adherence": 4,
+    "eating window adherence": 4
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "chrononutrition intervention": 5,
+      "chrononutrition trial": 5,
+      "chrononutrition systematic review": 5,
+      "meal timing intervention": 5,
+      "meal timing trial": 5,
+      "time-restricted eating trial": 5,
+      "time restricted eating trial": 5,
+      "early time-restricted eating trial": 5,
+      "early time restricted eating trial": 5,
+      "time-restricted eating adherence": 5,
+      "eating window adherence": 5,
+      "breakfast skipping cardiometabolic risk": 4,
+      "late eating cardiometabolic risk": 4
+    }
+  }
+}
