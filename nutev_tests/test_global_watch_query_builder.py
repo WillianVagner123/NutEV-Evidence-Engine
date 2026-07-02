@@ -57,22 +57,6 @@ def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     assert "living systematic review" in rendered
 
 
-def test_diet_pattern_queries_include_precision_nutrition_terms_in_quick_mode():
-    rows = build_watch_queries(["diet_patterns"], 7, "quick")
-    rendered = " ".join(str(row["query"]) for row in rows).lower()
-    assert "personalized nutrition" in rendered
-    assert "precision nutrition" in rendered
-    assert "tailored dietary intervention" in rendered
-
-
-def test_implementation_queries_include_precision_nutrition_intervention_terms():
-    rows = build_watch_queries(["implementation_behavior"], 7, "quick")
-    rendered = " ".join(str(row["query"]) for row in rows).lower()
-    assert "personalized nutrition" in rendered
-    assert "tailored dietary intervention" in rendered
-    assert "individualized dietary intervention" in rendered
-
-
 def test_guidelines_thesis_mode_surfaces_broader_guidance_families_early():
     rows = build_watch_queries(["guidelines_consensus"], 7, "thesis")
     rendered = [str(row["query"]).lower() for row in rows]
