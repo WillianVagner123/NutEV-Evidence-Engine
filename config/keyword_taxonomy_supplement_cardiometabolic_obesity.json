@@ -1,0 +1,99 @@
+{
+  "version_note": "Adds focused cardiometabolic obesity vocabulary for busca2a/b without editing the base taxonomy. Terms are intentionally anchored to obesity complications, cardiometabolic risk and clinical guidance to limit off-scope retrieval.",
+  "clinical": {
+    "obesity": [
+      "complications-centric obesity",
+      "complications centric obesity",
+      "cardiometabolic obesity",
+      "cardiometabolic obesity phenotype",
+      "obesity-related complication",
+      "obesity-related complications",
+      "obesity related complication",
+      "obesity related complications",
+      "obesity with cardiometabolic complications",
+      "obesity with metabolic complications",
+      "cardiometabolic-based chronic disease",
+      "cardiometabolic based chronic disease"
+    ],
+    "cardiometabolic": [
+      "cardiometabolic-based chronic disease",
+      "cardiometabolic based chronic disease",
+      "cardiometabolic multimorbidity",
+      "cardiometabolic comorbidity",
+      "cardiometabolic complications",
+      "obesity-related cardiometabolic risk",
+      "obesity related cardiometabolic risk",
+      "obesity-related cardiovascular risk",
+      "obesity related cardiovascular risk"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "complications-centric obesity",
+      "complications centric obesity",
+      "obesity-related complication",
+      "obesity-related complications",
+      "obesity related complication",
+      "obesity related complications"
+    ],
+    "cardiometabolic": [
+      "cardiometabolic-based chronic disease",
+      "cardiometabolic based chronic disease",
+      "cardiometabolic multimorbidity",
+      "cardiometabolic comorbidity",
+      "cardiometabolic complications",
+      "obesity-related cardiometabolic risk",
+      "obesity related cardiometabolic risk",
+      "obesity-related cardiovascular risk",
+      "obesity related cardiovascular risk"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "complications-centric obesity",
+        "complications centric obesity",
+        "cardiometabolic obesity",
+        "cardiometabolic obesity phenotype",
+        "obesity with cardiometabolic complications",
+        "obesity with metabolic complications",
+        "cardiometabolic-based chronic disease",
+        "cardiometabolic based chronic disease"
+      ],
+      "web_query_hints": [
+        "complications-centric obesity guideline",
+        "complications centric obesity guideline",
+        "cardiometabolic obesity guideline",
+        "obesity cardiometabolic complications guideline",
+        "cardiometabolic-based chronic disease guideline",
+        "cardiometabolic based chronic disease consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "complications-centric obesity",
+        "complications centric obesity",
+        "cardiometabolic obesity",
+        "cardiometabolic obesity phenotype",
+        "obesity with cardiometabolic complications",
+        "obesity with metabolic complications",
+        "cardiometabolic-based chronic disease",
+        "cardiometabolic based chronic disease"
+      ],
+      "focus_terms": [
+        "cardiometabolic obesity lifestyle intervention",
+        "cardiometabolic obesity nutrition intervention",
+        "obesity cardiometabolic complications dietary intervention",
+        "complications-centric obesity lifestyle intervention",
+        "complications centric obesity lifestyle intervention"
+      ],
+      "web_query_hints": [
+        "cardiometabolic obesity lifestyle intervention",
+        "cardiometabolic obesity nutrition intervention",
+        "obesity cardiometabolic complications dietary intervention",
+        "complications-centric obesity lifestyle intervention",
+        "complications centric obesity systematic review"
+      ]
+    }
+  }
+}
