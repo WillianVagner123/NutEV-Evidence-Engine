@@ -1,0 +1,52 @@
+{
+  "version_note": "2026-07 CKM cardiometabolic scoring supplement",
+  "keyword_points": {
+    "cardiovascular-kidney-metabolic": 3,
+    "cardiovascular kidney metabolic": 3,
+    "cardiovascular-kidney-metabolic syndrome": 4,
+    "cardiovascular kidney metabolic syndrome": 4,
+    "cardiovascular-kidney-metabolic health": 3,
+    "cardiovascular kidney metabolic health": 3,
+    "cardiovascular-kidney-metabolic risk": 3,
+    "cardiovascular kidney metabolic risk": 3,
+    "cardio-kidney-metabolic syndrome": 4,
+    "cardio kidney metabolic syndrome": 4,
+    "ckm syndrome": 4,
+    "ckm health": 3,
+    "ckm risk": 3,
+    "ckm nutrition": 4,
+    "ckm diet": 4,
+    "ckm lifestyle intervention": 4,
+    "ckm lifestyle medicine": 4,
+    "ckm dietary adherence": 4,
+    "ckm implementation": 4
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiovascular-kidney-metabolic syndrome": 5,
+      "cardiovascular kidney metabolic syndrome": 5,
+      "cardio-kidney-metabolic syndrome": 5,
+      "cardio kidney metabolic syndrome": 5,
+      "ckm syndrome": 5,
+      "ckm health": 4,
+      "ckm risk": 4,
+      "ckm nutrition": 5,
+      "ckm diet": 5,
+      "ckm lifestyle medicine": 4
+    },
+    "busca2b": {
+      "cardiovascular-kidney-metabolic syndrome": 4,
+      "cardiovascular kidney metabolic syndrome": 4,
+      "cardio-kidney-metabolic syndrome": 4,
+      "cardio kidney metabolic syndrome": 4,
+      "ckm syndrome": 4,
+      "ckm health": 3,
+      "ckm risk": 3,
+      "ckm nutrition": 4,
+      "ckm diet": 4,
+      "ckm lifestyle intervention": 5,
+      "ckm dietary adherence": 5,
+      "ckm implementation": 5
+    }
+  }
+}
