@@ -143,6 +143,33 @@
         "minimamente processado",
         "nova classification",
         "classificação nova"
+      ],
+      "precision_personalized": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation",
+        "nutrição personalizada",
+        "nutrição de precisão",
+        "aconselhamento dietético personalizado",
+        "intervenção dietética personalizada",
+        "plano alimentar individualizado"
       ]
     },
     "nutrition_domains": {
@@ -309,6 +336,20 @@
         "medically tailored food package",
         "teaching kitchen",
         "teaching kitchens",
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
         "medicina culinária",
         "habilidades culinárias",
         "cozinhar em casa",
@@ -322,7 +363,10 @@
         "literacia alimentar",
         "letramento alimentar",
         "agência alimentar",
-        "segurança alimentar e nutricional"
+        "segurança alimentar e nutricional",
+        "nutrição personalizada",
+        "nutrição de precisão",
+        "intervenção dietética personalizada"
       ]
     },
     "implementation_behavior": {
@@ -352,6 +396,13 @@
         "barriers",
         "facilitator",
         "facilitators",
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored dietary intervention",
+        "individualized dietary intervention",
+        "diet personalization",
+        "diet personalisation",
         "adesão",
         "aderência",
         "aceitabilidade",
@@ -361,7 +412,9 @@
         "barreira",
         "barreiras",
         "facilitador",
-        "facilitadores"
+        "facilitadores",
+        "nutrição personalizada",
+        "nutrição de precisão"
       ],
       "behavioral": [
         "behavioral lifestyle intervention",
@@ -728,12 +781,18 @@
       "acceptability",
       "feasibility",
       "food literacy",
+      "personalized nutrition",
+      "precision nutrition",
+      "tailored dietary intervention",
+      "individualized dietary intervention",
       "qualidade da dieta",
       "healthy eating index",
       "adesão",
       "aceitabilidade",
       "viabilidade",
-      "literacia alimentar"
+      "literacia alimentar",
+      "nutrição personalizada",
+      "nutrição de precisão"
     ],
     "behavioral": [
       "self efficacy",
@@ -814,7 +873,10 @@
         "grocery prescription",
         "social prescribing",
         "social needs referral",
-        "nutrition security referral"
+        "nutrition security referral",
+        "personalized nutrition guidance",
+        "precision nutrition framework",
+        "tailored dietary advice"
       ]
     },
     "busca2a": {
@@ -899,7 +961,11 @@
         "mafld",
         "clinical obesity",
         "adiposity-based chronic disease",
-        "adiposity based chronic disease"
+        "adiposity based chronic disease",
+        "precision nutrition guideline",
+        "personalized nutrition guidance",
+        "tailored dietary advice",
+        "individualized diet consensus"
       ]
     },
     "busca2b": {
@@ -998,7 +1064,14 @@
         "mafld",
         "clinical obesity",
         "adiposity-based chronic disease",
-        "adiposity based chronic disease"
+        "adiposity based chronic disease",
+        "precision nutrition intervention",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "tailored dietary intervention",
+        "individualized diet intervention",
+        "individualised diet intervention",
+        "personalized meal planning"
       ]
     },
     "artigo3_framework": {
@@ -1022,7 +1095,11 @@
         "culinary medicine",
         "commensality",
         "adherence",
-        "implementation"
+        "implementation",
+        "personalized nutrition",
+        "precision nutrition",
+        "tailored dietary intervention",
+        "individualized dietary intervention"
       ],
       "clinical_keys": [
         "obesity",
@@ -1068,6 +1145,9 @@
         "commensality",
         "meal preparation",
         "dietary counseling",
+        "precision nutrition framework",
+        "personalized nutrition framework",
+        "tailored nutrition framework",
         "questionário",
         "índice"
       ]
