@@ -9,9 +9,18 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS = [
     "cardiovascular kidney metabolic health",
     "cardiovascular-kidney-metabolic risk",
     "cardiovascular kidney metabolic risk",
+    "cardiovascular-kidney-metabolic nutrition",
+    "cardiovascular kidney metabolic nutrition",
+    "cardiovascular-kidney-metabolic dietary intervention",
+    "cardiovascular kidney metabolic dietary intervention",
+    "cardiovascular-kidney-metabolic lifestyle intervention",
+    "cardiovascular kidney metabolic lifestyle intervention",
     "ckm syndrome",
     "ckm health",
     "ckm risk",
+    "ckm nutrition",
+    "ckm dietary intervention",
+    "ckm lifestyle intervention",
 ]
 
 CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
@@ -22,6 +31,13 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "clinical decision pathway",
     "practice guidance",
     "systematic review",
+    "cardiovascular-kidney-metabolic nutrition guideline",
+    "cardiovascular kidney metabolic nutrition guideline",
+    "cardiovascular-kidney-metabolic lifestyle intervention trial",
+    "cardiovascular kidney metabolic lifestyle intervention trial",
+    "ckm nutrition guideline",
+    "ckm dietary intervention trial",
+    "ckm lifestyle intervention trial",
 ]
 
 METABOLIC_LIVER_NUTRITION_TERMS = [
