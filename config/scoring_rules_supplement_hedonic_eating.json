@@ -1,0 +1,63 @@
+{
+  "version_note": "Supplemental NutMEV scoring for hedonic eating, food craving, food addiction, and dietary lapse signals. Scores are intentionally moderate and workstream-scoped to support busca2b intervention/adherence retrieval and artigo3 instrument/framework prioritization without overpowering guideline, synthesis, and cardiometabolic terms.",
+  "keyword_points": {
+    "food craving": 3,
+    "food cravings": 3,
+    "craving management": 3,
+    "hedonic hunger": 3,
+    "hedonic eating": 3,
+    "reward-driven eating": 3,
+    "reward driven eating": 3,
+    "emotional eating": 3,
+    "external eating": 2,
+    "uncontrolled eating": 2,
+    "disinhibited eating": 2,
+    "eating disinhibition": 2,
+    "binge eating symptoms": 2,
+    "loss of control eating": 2,
+    "dietary lapse": 3,
+    "dietary lapses": 3,
+    "lapse management": 3,
+    "relapse prevention": 3,
+    "food addiction": 3,
+    "addictive-like eating": 3,
+    "addictive like eating": 3,
+    "Yale Food Addiction Scale": 3,
+    "YFAS": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "food craving": 3,
+      "food cravings": 3,
+      "craving management": 3,
+      "hedonic hunger": 3,
+      "hedonic eating": 3,
+      "reward-driven eating": 3,
+      "reward driven eating": 3,
+      "emotional eating": 3,
+      "dietary lapse": 3,
+      "dietary lapses": 3,
+      "lapse management": 3,
+      "relapse prevention": 3,
+      "food addiction": 3,
+      "addictive-like eating": 3,
+      "addictive like eating": 3,
+      "Yale Food Addiction Scale": 2,
+      "YFAS": 2
+    },
+    "artigo3_framework": {
+      "food craving": 3,
+      "food cravings": 3,
+      "hedonic hunger": 3,
+      "hedonic eating": 3,
+      "emotional eating": 3,
+      "dietary lapse": 3,
+      "dietary lapses": 3,
+      "lapse management": 3,
+      "relapse prevention": 3,
+      "food addiction": 3,
+      "Yale Food Addiction Scale": 4,
+      "YFAS": 4
+    }
+  }
+}
