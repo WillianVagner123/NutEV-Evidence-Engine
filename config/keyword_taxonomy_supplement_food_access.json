@@ -1,0 +1,83 @@
+{
+  "version_note": "2026-07 food access and food-as-medicine query supplement for NutMEV. Loaded automatically by settings.load_json when keyword_taxonomy.json is read.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food is medicine intervention",
+        "food as medicine intervention",
+        "healthy food box",
+        "healthy food boxes",
+        "grocery prescription",
+        "grocery prescriptions",
+        "food pharmacy",
+        "food pharmacies",
+        "food farmacy",
+        "food farmacies",
+        "medically tailored nutrition",
+        "nutrition assistance",
+        "nutrition assistance program",
+        "nutrition assistance programs",
+        "nutrition security intervention",
+        "nutrition insecurity",
+        "nutrition insecurity screening",
+        "food insecurity screening",
+        "screening for food insecurity",
+        "food access intervention",
+        "healthy food access intervention"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "healthy food box",
+        "healthy food boxes",
+        "grocery prescription",
+        "grocery prescriptions",
+        "food pharmacies",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy program",
+        "food farmacy programme",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "medically tailored nutrition",
+        "nutrition assistance",
+        "nutrition assistance program",
+        "nutrition assistance programs",
+        "nutrition security intervention",
+        "nutrition insecurity",
+        "food access intervention",
+        "healthy food access intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "healthy food box",
+        "grocery prescription",
+        "food pharmacies",
+        "food farmacy",
+        "food farmacy program",
+        "nutrition assistance program",
+        "nutrition security intervention",
+        "food access intervention",
+        "healthy food access intervention"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food as medicine intervention trial",
+        "produce prescription trial",
+        "grocery prescription intervention",
+        "food pharmacy intervention",
+        "food farmacy intervention",
+        "medically tailored nutrition intervention",
+        "nutrition assistance intervention",
+        "nutrition security intervention",
+        "healthy food access intervention trial"
+      ]
+    }
+  }
+}
