@@ -1,0 +1,80 @@
+{
+  "version_note": "2026-07 scoring supplement for group visits and primary-care nutrition delivery",
+  "keyword_points": {
+    "shared medical appointment": 3,
+    "shared medical appointments": 3,
+    "shared medical visit": 3,
+    "shared medical visits": 3,
+    "group medical visit": 3,
+    "group medical visits": 3,
+    "group-based lifestyle intervention": 4,
+    "group based lifestyle intervention": 4,
+    "group-based nutrition intervention": 4,
+    "group based nutrition intervention": 4,
+    "group-based dietary intervention": 4,
+    "group based dietary intervention": 4,
+    "group lifestyle program": 3,
+    "group lifestyle programme": 3,
+    "group nutrition education": 3,
+    "group dietary counseling": 3,
+    "group dietary counselling": 3,
+    "peer support nutrition": 3,
+    "peer-led lifestyle intervention": 3,
+    "peer led lifestyle intervention": 3,
+    "primary care lifestyle intervention": 4,
+    "primary care nutrition intervention": 4,
+    "team-based lifestyle care": 4,
+    "team based lifestyle care": 4,
+    "interdisciplinary lifestyle care": 3,
+    "multidisciplinary lifestyle intervention": 3,
+    "lifestyle medicine clinic": 3,
+    "lifestyle medicine clinics": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "primary care nutrition intervention": 4,
+      "group nutrition education": 4,
+      "team-based lifestyle care": 4,
+      "team based lifestyle care": 4,
+      "lifestyle medicine clinic": 4
+    },
+    "busca2a": {
+      "shared medical appointment": 4,
+      "shared medical appointments": 4,
+      "group medical visit": 4,
+      "group medical visits": 4,
+      "primary care lifestyle intervention": 4,
+      "team-based lifestyle care": 4,
+      "team based lifestyle care": 4
+    },
+    "busca2b": {
+      "shared medical appointment": 5,
+      "shared medical appointments": 5,
+      "group medical visit": 5,
+      "group medical visits": 5,
+      "group-based lifestyle intervention": 5,
+      "group based lifestyle intervention": 5,
+      "group-based nutrition intervention": 5,
+      "group based nutrition intervention": 5,
+      "group-based dietary intervention": 5,
+      "group based dietary intervention": 5,
+      "peer support nutrition": 4,
+      "primary care lifestyle intervention": 5,
+      "primary care nutrition intervention": 5,
+      "team-based lifestyle care": 5,
+      "team based lifestyle care": 5
+    },
+    "artigo3_framework": {
+      "shared medical appointment": 4,
+      "shared medical appointments": 4,
+      "group medical visit": 4,
+      "group medical visits": 4,
+      "group-based lifestyle intervention": 4,
+      "group based lifestyle intervention": 4,
+      "primary care nutrition intervention": 4,
+      "team-based lifestyle care": 4,
+      "team based lifestyle care": 4,
+      "lifestyle medicine clinic": 4
+    }
+  }
+}
