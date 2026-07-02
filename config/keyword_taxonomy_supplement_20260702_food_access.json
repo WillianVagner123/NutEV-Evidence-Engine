@@ -1,0 +1,93 @@
+{
+  "version_note": "2026-07-02 NutMEV recurring run: expand food access, food pharmacy, and social prescribing retrieval terms for lifestyle nutrition evidence.",
+  "global": {
+    "nutrition_domains": {
+      "food_access_prescribing": [
+        "food access",
+        "healthy food access",
+        "food access intervention",
+        "healthy food access intervention",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "social needs screening",
+        "social needs intervention",
+        "social needs referral",
+        "closed-loop referral",
+        "closed loop referral",
+        "community resource referral",
+        "community food program",
+        "community food programme",
+        "community-supported food program",
+        "community supported food program",
+        "food pantry referral",
+        "food pantry referral program",
+        "food bank partnership",
+        "food pharmacy",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy programme",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "food is medicine referral",
+        "food as medicine referral",
+        "nutrition security referral"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food access intervention",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "social needs referral",
+        "community food program",
+        "community food programme",
+        "community-supported food program",
+        "community supported food program",
+        "food pantry referral program",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy program",
+        "food bank partnership"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food access intervention",
+        "healthy food access intervention",
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "social needs screening",
+        "social needs referral",
+        "closed-loop referral",
+        "closed loop referral",
+        "community resource referral",
+        "community-supported food program",
+        "community supported food program",
+        "food pantry referral program",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy program",
+        "food farmacy programme",
+        "produce prescription referral",
+        "medically tailored food referral",
+        "food is medicine referral",
+        "food as medicine referral",
+        "nutrition security referral"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "food access intervention",
+        "social needs referral",
+        "food pharmacy program",
+        "food farmacy program",
+        "community food program",
+        "community food programme"
+      ]
+    }
+  }
+}
