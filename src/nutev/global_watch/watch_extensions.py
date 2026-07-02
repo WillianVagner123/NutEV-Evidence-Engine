@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib
 from collections.abc import Sequence
 from typing import Any
 
@@ -64,6 +65,13 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+QUICK_FOOD_AS_MEDICINE_SENTINEL_TERMS = [
+    "food is medicine",
+    "food as medicine",
+    "produce prescription",
+    "medically tailored meal",
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -96,6 +104,21 @@ def _extend_category_terms(category: str, terms: Sequence[str]) -> None:
     category_terms[:] = _dedupe_preserve_order([*category_terms, *terms])
 
 
+def _promote_quick_seed_group(
+    category: str,
+    group_index: int,
+    terms: Sequence[str],
+) -> None:
+    query_builder = importlib.import_module("nutev.global_watch.watch_query_builder")
+    groups = getattr(query_builder, "QUICK_MODE_SEED_GROUPS", {}).get(category)
+    if not isinstance(groups, list) or group_index >= len(groups):
+        return
+    group = groups[group_index]
+    if not isinstance(group, list):
+        return
+    group[:] = _dedupe_preserve_order([*group, *terms])
+
+
 def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
@@ -118,6 +141,11 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_category_terms(
         "guidelines_consensus",
         FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+    )
+    _promote_quick_seed_group(
+        "lifestyle_medicine",
+        0,
+        QUICK_FOOD_AS_MEDICINE_SENTINEL_TERMS,
     )
 
 
