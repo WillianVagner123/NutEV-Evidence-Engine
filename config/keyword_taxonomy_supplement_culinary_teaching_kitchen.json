@@ -1,0 +1,214 @@
+{
+  "version_note": "Focused NutMEV expansion for culinary medicine, teaching kitchen, food skills, and experiential nutrition education. Loaded after the base taxonomy and broad supplement without overwriting raw search outputs.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "culinary nutrition",
+        "culinary nutrition intervention",
+        "culinary medicine intervention",
+        "culinary medicine program",
+        "culinary medicine programme",
+        "culinary medicine curriculum",
+        "culinary medicine curricula",
+        "culinary medicine education",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "teaching kitchen curriculum",
+        "teaching kitchen evaluation",
+        "hands-on cooking",
+        "hands on cooking",
+        "healthy cooking",
+        "cooking class",
+        "cooking classes",
+        "cooking intervention",
+        "cooking skills intervention",
+        "cooking confidence",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "kitchen confidence",
+        "food skills",
+        "food skills intervention",
+        "food preparation skills",
+        "food preparation confidence",
+        "food resource management",
+        "food budgeting",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "label reading",
+        "food label literacy"
+      ]
+    },
+    "implementation_behavior": {
+      "culinary_skill_delivery": [
+        "experiential nutrition education",
+        "hands-on nutrition education",
+        "hands on nutrition education",
+        "culinary medicine intervention",
+        "culinary medicine program",
+        "culinary medicine programme",
+        "teaching kitchen intervention",
+        "teaching kitchen program",
+        "teaching kitchen programme",
+        "teaching kitchen curriculum",
+        "teaching kitchen evaluation",
+        "cooking intervention",
+        "cooking skills intervention",
+        "food skills intervention",
+        "meal planning skills",
+        "shopping skills",
+        "grocery shopping skills",
+        "food budgeting",
+        "food resource management",
+        "food label literacy"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_literacy_competence": [
+      "culinary medicine intervention",
+      "culinary medicine curriculum",
+      "teaching kitchen evaluation",
+      "cooking skills intervention",
+      "cooking confidence",
+      "cooking self-efficacy",
+      "kitchen confidence",
+      "food skills intervention",
+      "food preparation skills",
+      "food resource management",
+      "food label literacy"
+    ],
+    "diet_quality_adherence": [
+      "culinary medicine intervention",
+      "teaching kitchen program",
+      "teaching kitchen evaluation",
+      "cooking skills intervention",
+      "meal planning skills",
+      "food resource management",
+      "food label literacy"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "culinary medicine program",
+        "culinary medicine curriculum",
+        "teaching kitchen program",
+        "teaching kitchen curriculum",
+        "teaching kitchen evaluation",
+        "experiential nutrition education",
+        "food skills intervention",
+        "food resource management",
+        "food label literacy"
+      ],
+      "web_query_hints": [
+        "culinary medicine program report",
+        "teaching kitchen program report",
+        "teaching kitchen curriculum evaluation",
+        "food skills intervention report",
+        "experiential nutrition education report"
+      ],
+      "document_terms": [
+        "program evaluation",
+        "curriculum evaluation",
+        "implementation report",
+        "technical report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "culinary medicine intervention",
+        "culinary nutrition intervention",
+        "teaching kitchen intervention",
+        "teaching kitchen program",
+        "teaching kitchen evaluation",
+        "cooking skills intervention",
+        "food skills intervention",
+        "experiential nutrition education",
+        "meal planning skills",
+        "food resource management",
+        "food label literacy"
+      ],
+      "web_query_hints": [
+        "culinary medicine intervention trial",
+        "culinary nutrition intervention trial",
+        "teaching kitchen intervention trial",
+        "teaching kitchen evaluation cardiometabolic",
+        "cooking skills intervention obesity",
+        "food skills intervention diabetes",
+        "experiential nutrition education trial"
+      ],
+      "document_terms": [
+        "randomized trial",
+        "pragmatic trial",
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "systematic review"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "culinary medicine curriculum",
+        "culinary medicine education",
+        "culinary medicine curricula",
+        "teaching kitchen curriculum",
+        "teaching kitchen evaluation",
+        "cooking confidence",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "kitchen confidence",
+        "food preparation skills",
+        "food resource management",
+        "food label literacy",
+        "grocery shopping skills"
+      ],
+      "web_query_hints": [
+        "culinary medicine curriculum evaluation",
+        "teaching kitchen curriculum evaluation",
+        "cooking confidence scale validation",
+        "cooking self-efficacy scale validation",
+        "food resource management questionnaire",
+        "food label literacy scale validation"
+      ],
+      "document_terms": [
+        "curriculum evaluation",
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "psychometric validation"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "culinary medicine curriculum",
+        "culinary medicine education",
+        "culinary medicine curricula",
+        "teaching kitchen curriculum",
+        "teaching kitchen evaluation",
+        "cooking confidence",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "kitchen confidence",
+        "food preparation skills",
+        "food resource management",
+        "food label literacy",
+        "grocery shopping skills"
+      ],
+      "web_query_hints": [
+        "culinary medicine curriculum evaluation",
+        "teaching kitchen curriculum evaluation",
+        "cooking confidence scale validation",
+        "cooking self-efficacy scale validation",
+        "food resource management questionnaire",
+        "food label literacy scale validation"
+      ],
+      "document_terms": [
+        "curriculum evaluation",
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "psychometric validation"
+      ]
+    }
+  }
+}
