@@ -3,27 +3,63 @@
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
+    "ckm disease": 3,
+    "ckm diseases": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "cardio-kidney-metabolic syndrome": 3,
+    "cardio kidney metabolic syndrome": 3,
+    "cardio-kidney-metabolic health": 3,
+    "cardio kidney metabolic health": 3,
+    "cardio-kidney-metabolic risk": 3,
+    "cardio kidney metabolic risk": 3,
+    "cardiovascular-kidney-metabolic disease": 3,
+    "cardiovascular kidney metabolic disease": 3,
+    "cardiovascular-kidney-metabolic diseases": 3,
+    "cardiovascular kidney metabolic diseases": 3
   },
   "workstream_bonus": {
     "busca2a": {
       "ckm health": 4,
       "ckm risk": 4,
+      "ckm disease": 4,
+      "ckm diseases": 4,
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "cardio-kidney-metabolic syndrome": 4,
+      "cardio kidney metabolic syndrome": 4,
+      "cardio-kidney-metabolic health": 4,
+      "cardio kidney metabolic health": 4,
+      "cardio-kidney-metabolic risk": 4,
+      "cardio kidney metabolic risk": 4,
+      "cardiovascular-kidney-metabolic disease": 4,
+      "cardiovascular kidney metabolic disease": 4,
+      "cardiovascular-kidney-metabolic diseases": 4,
+      "cardiovascular kidney metabolic diseases": 4
     },
     "busca2b": {
       "ckm health": 4,
       "ckm risk": 4,
+      "ckm disease": 4,
+      "ckm diseases": 4,
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "cardio-kidney-metabolic syndrome": 4,
+      "cardio kidney metabolic syndrome": 4,
+      "cardio-kidney-metabolic health": 4,
+      "cardio kidney metabolic health": 4,
+      "cardio-kidney-metabolic risk": 4,
+      "cardio kidney metabolic risk": 4,
+      "cardiovascular-kidney-metabolic disease": 4,
+      "cardiovascular kidney metabolic disease": 4,
+      "cardiovascular-kidney-metabolic diseases": 4,
+      "cardiovascular kidney metabolic diseases": 4
     }
   }
 }
