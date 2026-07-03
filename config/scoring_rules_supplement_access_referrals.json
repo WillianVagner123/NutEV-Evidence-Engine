@@ -1,0 +1,73 @@
+{
+  "version_note": "Adds operational scoring for food access referral and nutrition security navigation signals recovered by the access referral query supplement.",
+  "keyword_points": {
+    "food insecurity intervention": 3,
+    "food insecurity referral": 3,
+    "food insecurity screening and referral": 4,
+    "nutrition security intervention": 3,
+    "nutrition security screening and referral": 4,
+    "food access referral": 3,
+    "healthy food referral": 3,
+    "healthy food access referral": 3,
+    "social care referral": 3,
+    "social care integration": 3,
+    "social needs navigation": 3,
+    "food resource navigation": 3,
+    "food resource referral": 3,
+    "food assistance referral": 3,
+    "food assistance navigation": 3,
+    "food pantry prescription": 4,
+    "food pantry intervention": 4,
+    "food farmacy": 4,
+    "food farmacy program": 4,
+    "food farmacy intervention": 4,
+    "food pharmacy intervention": 4,
+    "medically tailored food referral": 4,
+    "medically tailored nutrition": 4,
+    "community health worker nutrition intervention": 3,
+    "community health worker food security": 3,
+    "primary care food insecurity screening": 4,
+    "primary care nutrition security screening": 4,
+    "clinical-community linkage": 3,
+    "clinical community linkage": 3,
+    "closed-loop food referral": 4,
+    "closed loop food referral": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food insecurity screening and referral": 5,
+      "nutrition security screening and referral": 5,
+      "food access referral": 4,
+      "food assistance referral": 4,
+      "food pantry prescription": 5,
+      "food pantry intervention": 5,
+      "food farmacy": 5,
+      "food farmacy program": 5,
+      "food pharmacy intervention": 5,
+      "clinical-community linkage": 4,
+      "clinical community linkage": 4
+    },
+    "busca2b": {
+      "food insecurity intervention": 5,
+      "nutrition security intervention": 5,
+      "social care integration": 4,
+      "social needs navigation": 4,
+      "food resource navigation": 4,
+      "community health worker nutrition intervention": 5,
+      "primary care food insecurity screening": 5,
+      "primary care nutrition security screening": 5,
+      "closed-loop food referral": 5,
+      "closed loop food referral": 5,
+      "medically tailored food referral": 5,
+      "medically tailored nutrition": 5
+    },
+    "artigo3_framework": {
+      "food insecurity screening and referral": 4,
+      "nutrition security screening and referral": 4,
+      "food resource navigation": 4,
+      "social needs navigation": 4,
+      "clinical-community linkage": 4,
+      "clinical community linkage": 4
+    }
+  }
+}
