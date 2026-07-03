@@ -518,6 +518,39 @@ FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS = [
     "clinical-community food referral program",
 ]
 
+IMPLEMENTATION_INERTIA_TERMS = [
+    "clinical inertia",
+    "therapeutic inertia",
+    "treatment inertia",
+    "clinical inertia in obesity",
+    "therapeutic inertia in obesity",
+    "obesity treatment inertia",
+    "clinical inertia in type 2 diabetes",
+    "therapeutic inertia in type 2 diabetes",
+    "diabetes treatment inertia",
+    "lifestyle treatment inertia",
+    "nutrition treatment inertia",
+    "nutrition care inertia",
+    "delayed treatment intensification",
+    "treatment intensification barrier",
+    "treatment intensification barriers",
+    "care escalation barrier",
+    "care escalation barriers",
+]
+
+IMPLEMENTATION_INERTIA_DOCUMENT_TERMS = [
+    "clinical inertia review",
+    "therapeutic inertia review",
+    "clinical inertia intervention",
+    "therapeutic inertia intervention",
+    "clinical inertia implementation",
+    "therapeutic inertia implementation",
+    "obesity treatment inertia review",
+    "diabetes treatment inertia review",
+    "treatment intensification barrier review",
+    "care escalation barrier review",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -662,6 +695,12 @@ def apply_semantic_extensions() -> None:
         terms=FOOD_AS_MEDICINE_REFERRAL_TERMS,
         document_terms=FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS,
     )
+    for block_name in ("implementation_science", "adherence_persistence"):
+        _extend_semantic_block(
+            block_name,
+            terms=IMPLEMENTATION_INERTIA_TERMS,
+            document_terms=IMPLEMENTATION_INERTIA_DOCUMENT_TERMS,
+        )
 
 
 apply_semantic_extensions()

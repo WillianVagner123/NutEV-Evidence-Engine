@@ -29,6 +29,19 @@ def test_busca2b_semantic_terms_include_nutrition_care_process_terms() -> None:
     assert "dietitian-delivered intervention" in terms
 
 
+def test_busca2b_semantic_terms_include_implementation_inertia_terms() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+    document_terms = {
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    }
+
+    assert "clinical inertia" in terms
+    assert "therapeutic inertia in obesity" in terms
+    assert "nutrition care inertia" in terms
+    assert "therapeutic inertia review" in document_terms
+
+
 def test_busca2a_semantic_document_terms_include_nutrition_care_pathway() -> None:
     terms = {term.lower() for term in semantic_terms("busca2a", field="document_terms", min_priority=4)}
     assert "nutrition care process model" in terms
