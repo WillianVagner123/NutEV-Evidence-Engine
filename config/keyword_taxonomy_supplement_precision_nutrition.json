@@ -1,5 +1,5 @@
 {
-  "version_note": "Supplemental precision-nutrition query expansion loaded after keyword_taxonomy.json; adds focused personalized/tailored nutrition terms anchored to NutMEV cardiometabolic and adherence workstreams.",
+  "version_note": "Precision and personalized nutrition supplement for NutMEV. Preserves the original busca2b expansion and adds focused cardiometabolic, adherence, framework and scoring anchors for tailored dietary interventions without changing raw outputs.",
   "global": {
     "diet_patterns": {
       "personalized_precision_nutrition": [
@@ -30,6 +30,20 @@
       ]
     },
     "implementation_behavior": {
+      "personalized_nutrition_adherence": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "diet personalization",
+        "diet personalisation"
+      ],
       "personalized_adherence_delivery": [
         "personalized nutrition intervention",
         "personalised nutrition intervention",
@@ -52,6 +66,22 @@
         "personalised nutrition coaching"
       ]
     }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "personalized nutrition",
+      "personalised nutrition",
+      "precision nutrition",
+      "tailored dietary advice",
+      "tailored dietary intervention",
+      "individualized dietary intervention",
+      "individualised dietary intervention",
+      "personalized dietary intervention",
+      "personalised dietary intervention",
+      "adaptive dietary intervention",
+      "nutrition decision support",
+      "dietary decision support"
+    ]
   },
   "workstreams": {
     "busca2a": {
@@ -78,6 +108,18 @@
     },
     "busca2b": {
       "focus_terms": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "diet personalization",
+        "diet personalisation",
         "personalized nutrition intervention",
         "personalised nutrition intervention",
         "precision nutrition intervention",
@@ -93,6 +135,13 @@
         "personalised nutrition coaching"
       ],
       "web_query_hints": [
+        "personalized nutrition obesity trial",
+        "personalised nutrition obesity trial",
+        "precision nutrition type 2 diabetes trial",
+        "tailored dietary advice cardiometabolic risk",
+        "tailored dietary intervention systematic review",
+        "individualized dietary intervention type 2 diabetes",
+        "individualised dietary intervention cardiometabolic",
         "personalized nutrition intervention trial",
         "personalised nutrition intervention trial",
         "precision nutrition intervention trial",
@@ -103,10 +152,15 @@
         "nutrition decision support dietary adherence"
       ],
       "document_terms": [
+        "personalized nutrition trial",
+        "personalised nutrition trial",
+        "precision nutrition trial",
+        "tailored dietary intervention",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
         "personalized nutrition intervention",
         "personalised nutrition intervention",
         "precision nutrition intervention",
-        "tailored dietary intervention",
         "adaptive dietary intervention"
       ]
     },
