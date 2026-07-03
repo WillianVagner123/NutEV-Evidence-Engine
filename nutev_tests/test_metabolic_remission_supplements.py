@@ -40,4 +40,3 @@ def test_metabolic_remission_scoring_supplement_prioritizes_maintenance_items() 
     )
 
     assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
-}
