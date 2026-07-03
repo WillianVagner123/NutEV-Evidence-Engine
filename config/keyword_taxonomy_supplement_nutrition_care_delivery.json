@@ -1,0 +1,98 @@
+{
+  "version_note": "2026-07 nutrition care delivery supplement: additive query terms for dietitian-led nutrition care and care-pathway implementation.",
+  "global": {
+    "nutrition_domains": {
+      "nutrition_care_delivery": [
+        "nutrition care",
+        "nutrition care delivery",
+        "nutrition care plan",
+        "nutrition care plans",
+        "nutrition care pathway",
+        "nutrition care pathways",
+        "nutrition care protocol",
+        "nutrition care protocols",
+        "dietetic care",
+        "dietetic intervention",
+        "dietetic interventions",
+        "dietitian-delivered care",
+        "dietitian delivered care",
+        "dietitian-delivered nutrition care",
+        "dietitian delivered nutrition care",
+        "dietitian-led lifestyle intervention",
+        "dietitian led lifestyle intervention",
+        "registered dietitian nutritionist intervention",
+        "registered dietitian nutritionist interventions",
+        "registered dietitian nutritionist care",
+        "registered dietitian nutritionist-led care",
+        "registered dietitian nutritionist led care",
+        "nutrition counselling intervention",
+        "nutrition counseling intervention",
+        "medical nutrition therapy implementation",
+        "medical nutrition therapy pathway",
+        "diet therapy intervention",
+        "diet therapy interventions"
+      ]
+    },
+    "implementation_behavior": {
+      "nutrition_care_implementation": [
+        "nutrition care implementation",
+        "dietetic care implementation",
+        "dietitian workflow",
+        "dietitian workflows",
+        "dietitian referral",
+        "dietitian referrals",
+        "nutrition referral",
+        "nutrition referrals",
+        "nutrition care coordination",
+        "nutrition service delivery",
+        "nutrition services delivery",
+        "dietetic service delivery",
+        "dietetic services delivery",
+        "nutrition care integration",
+        "integrated nutrition care",
+        "primary care nutrition intervention",
+        "primary care nutrition interventions",
+        "primary care dietitian",
+        "primary care dietitians",
+        "team-based nutrition care",
+        "team based nutrition care"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "medical nutrition therapy guideline",
+        "nutrition care pathway guideline",
+        "dietetic practice guideline",
+        "dietitian-delivered care guideline",
+        "primary care nutrition guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "dietitian-led lifestyle intervention",
+        "dietitian-delivered nutrition care trial",
+        "nutrition care implementation study",
+        "primary care nutrition intervention",
+        "medical nutrition therapy implementation"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "nutrition care delivery",
+        "nutrition care plan",
+        "dietitian workflow",
+        "nutrition referral",
+        "team-based nutrition care"
+      ],
+      "web_query_hints": [
+        "nutrition care pathway framework",
+        "nutrition care plan framework",
+        "dietitian workflow framework",
+        "nutrition referral pathway",
+        "team-based nutrition care framework"
+      ]
+    }
+  }
+}
