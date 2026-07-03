@@ -64,6 +64,46 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+SUSTAINABLE_HEALTHY_DIET_TERMS = [
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "healthy and sustainable diet",
+    "healthy and sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+    "sustainable diet",
+    "sustainable diets",
+    "plant-forward diet",
+    "plant forward diet",
+    "plant-forward dietary pattern",
+    "plant forward dietary pattern",
+    "flexitarian diet",
+    "flexitarian dietary pattern",
+    "planetary health diet",
+    "eat-lancet diet",
+    "eat-lancet dietary pattern",
+]
+
+SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS = [
+    "sustainable healthy diet guideline",
+    "sustainable healthy diets guideline",
+    "sustainable healthy diets guiding principles",
+    "healthy sustainable diet guideline",
+    "healthy and sustainable diet guideline",
+    "sustainable dietary pattern guideline",
+    "sustainable diets guideline",
+    "sustainable diets consensus",
+    "sustainable diets systematic review",
+    "sustainable diets umbrella review",
+    "plant-forward diet systematic review",
+    "plant forward diet systematic review",
+    "flexitarian diet systematic review",
+    "planetary health diet systematic review",
+    "eat-lancet systematic review",
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -108,6 +148,10 @@ def apply_watch_taxonomy_extensions() -> None:
         PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS,
     )
     _extend_category_terms(
+        "diet_patterns",
+        SUSTAINABLE_HEALTHY_DIET_TERMS + SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS,
+    )
+    _extend_category_terms(
         "food_literacy_culinary_commensality",
         [*FOOD_ENVIRONMENT_POLICY_TERMS, *FOOD_ENVIRONMENT_DOCUMENT_TERMS],
     )
@@ -117,7 +161,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        FOOD_ENVIRONMENT_DOCUMENT_TERMS + SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS,
     )
 
 
