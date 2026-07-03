@@ -1,0 +1,94 @@
+{
+  "version_note": "2026-07 food-is-medicine access and benefit terminology",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "produce prescription benefit",
+        "produce prescription coverage",
+        "produce prescription reimbursement",
+        "nutrition benefit",
+        "nutrition benefits",
+        "food benefit",
+        "food benefits",
+        "food as medicine benefit",
+        "food is medicine benefit",
+        "food as medicine coverage",
+        "food is medicine coverage",
+        "medically tailored nutrition",
+        "medically tailored nutrition benefit",
+        "medically tailored meal benefit",
+        "medically tailored meals benefit",
+        "medically tailored groceries benefit",
+        "grocery prescription program",
+        "grocery prescription benefit",
+        "food farmacy program",
+        "medicaid produce prescription",
+        "medicaid food is medicine",
+        "medicare advantage food benefit",
+        "health plan food benefit"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food as medicine benefit",
+        "food is medicine benefit",
+        "food as medicine coverage",
+        "food is medicine coverage",
+        "produce prescription benefit",
+        "produce prescription coverage",
+        "produce prescription reimbursement",
+        "medically tailored nutrition",
+        "medically tailored nutrition benefit",
+        "medically tailored meal benefit",
+        "medically tailored meals benefit",
+        "grocery prescription program",
+        "grocery prescription benefit",
+        "food farmacy program",
+        "medicaid produce prescription",
+        "medicaid food is medicine",
+        "medicare advantage food benefit",
+        "health plan food benefit"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food as medicine benefit",
+        "food is medicine benefit",
+        "food as medicine coverage",
+        "food is medicine coverage",
+        "produce prescription benefit",
+        "produce prescription coverage",
+        "medically tailored nutrition",
+        "medically tailored meal benefit",
+        "grocery prescription program",
+        "food farmacy program",
+        "medicaid food is medicine",
+        "medicare advantage food benefit"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food as medicine benefit",
+        "food is medicine benefit",
+        "food as medicine coverage",
+        "food is medicine coverage",
+        "produce prescription benefit",
+        "produce prescription coverage",
+        "produce prescription reimbursement",
+        "medically tailored nutrition",
+        "medically tailored nutrition benefit",
+        "medically tailored meal benefit",
+        "medically tailored meals benefit",
+        "grocery prescription program",
+        "grocery prescription benefit",
+        "food farmacy program",
+        "medicaid produce prescription",
+        "medicaid food is medicine",
+        "medicare advantage food benefit",
+        "health plan food benefit"
+      ]
+    }
+  }
+}
