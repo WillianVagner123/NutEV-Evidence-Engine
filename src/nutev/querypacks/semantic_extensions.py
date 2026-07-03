@@ -128,6 +128,39 @@ METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
     "weight regain prevention trial",
 ]
 
+NUTRITION_PRESCRIPTION_TERMS = [
+    "nutrition prescription",
+    "nutrition prescriptions",
+    "diet prescription",
+    "diet prescriptions",
+    "dietary prescription",
+    "dietary prescriptions",
+    "personalized meal planning",
+    "personalised meal planning",
+    "individualized meal plan",
+    "individualised meal plan",
+    "nutrition care for diabetes remission",
+    "nutrition care for weight maintenance",
+    "dietitian-led remission",
+    "dietitian led remission",
+]
+
+NUTRITION_PRESCRIPTION_DOCUMENT_TERMS = [
+    "nutrition prescription guideline",
+    "nutrition prescription protocol",
+    "nutrition prescription consensus",
+    "diet prescription guideline",
+    "dietary prescription guideline",
+    "nutrition care for diabetes remission",
+    "nutrition care for weight maintenance",
+    "dietitian-led remission protocol",
+    "dietitian led remission protocol",
+    "personalized meal planning intervention",
+    "personalised meal planning intervention",
+    "individualized meal plan intervention",
+    "individualised meal plan intervention",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -622,6 +655,17 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=PRECISION_PERSONALIZED_NUTRITION_TERMS,
             document_terms=PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "adherence_persistence",
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+        "nutrition_care_delivery",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=NUTRITION_PRESCRIPTION_TERMS,
+            document_terms=NUTRITION_PRESCRIPTION_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
