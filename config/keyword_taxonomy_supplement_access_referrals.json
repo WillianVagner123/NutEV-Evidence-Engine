@@ -1,0 +1,110 @@
+{
+  "version_note": "Expands NutMEV retrieval for nutrition security screening, food access referral, social prescribing, and food pharmacy/farmacy pathways while preserving nutrition and cardiometabolic anchors through existing query builders.",
+  "global": {
+    "implementation_behavior": {
+      "contextual": [
+        "food insecurity intervention",
+        "food insecurity interventions",
+        "food insecurity referral",
+        "food insecurity referrals",
+        "food insecurity screening and referral",
+        "nutrition security intervention",
+        "nutrition security interventions",
+        "nutrition security screening and referral",
+        "food access referral",
+        "food access referrals",
+        "healthy food referral",
+        "healthy food referrals",
+        "healthy food access referral",
+        "healthy food access referrals",
+        "social care referral",
+        "social care referrals",
+        "social care integration",
+        "social needs navigation",
+        "food resource navigation",
+        "food resource referral",
+        "food resource referrals",
+        "community food referral",
+        "community food referrals",
+        "food assistance referral",
+        "food assistance referrals",
+        "food assistance navigation",
+        "food pantry prescription",
+        "food pantry prescriptions",
+        "food pantry program",
+        "food pantry programme",
+        "food pantry intervention",
+        "food pantry interventions",
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy programme",
+        "food farmacy intervention",
+        "food pharmacy intervention",
+        "food pharmacy interventions",
+        "medically tailored food referral",
+        "medically tailored food referrals",
+        "medically tailored nutrition",
+        "community health worker nutrition intervention",
+        "community health worker nutrition interventions",
+        "community health worker food security",
+        "primary care food insecurity screening",
+        "primary care nutrition security screening",
+        "primary care food referral",
+        "clinical-community linkage",
+        "clinical community linkage",
+        "clinical-community linkages",
+        "clinical community linkages",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "closed-loop food referrals",
+        "closed loop food referrals"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food insecurity screening and referral",
+        "nutrition security screening and referral",
+        "food access referral",
+        "food assistance referral",
+        "food pantry prescription",
+        "food pantry program",
+        "food farmacy",
+        "food farmacy program",
+        "food pharmacy intervention",
+        "clinical-community linkage"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food insecurity intervention",
+        "nutrition security intervention",
+        "social care integration",
+        "social needs navigation",
+        "food resource navigation",
+        "community health worker nutrition intervention",
+        "primary care food insecurity screening",
+        "primary care nutrition security screening",
+        "closed-loop food referral",
+        "medically tailored food referral"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "food insecurity screening and referral",
+        "nutrition security screening and referral",
+        "food resource navigation",
+        "social needs navigation",
+        "clinical-community linkage"
+      ],
+      "web_query_hints": [
+        "food insecurity screening and referral",
+        "nutrition security screening and referral",
+        "food resource navigation",
+        "social needs navigation",
+        "clinical-community linkage"
+      ]
+    }
+  }
+}
