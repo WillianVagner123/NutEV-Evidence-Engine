@@ -2,10 +2,21 @@ from __future__ import annotations
 
 from typing import Any
 
+TEXT_SIGNAL_FIELDS = (
+    "title",
+    "abstract",
+    "summary",
+    "snippet",
+    "journal",
+    "source_institution",
+    "evidence_type",
+    "extracted_text",
+)
+
 
 def _text_blob(record: dict[str, Any]) -> str:
     return " ".join(
-        str(record.get(k, "") or "") for k in ("title", "abstract", "extracted_text")
+        str(record.get(field, "") or "") for field in TEXT_SIGNAL_FIELDS
     ).lower()
 
 
