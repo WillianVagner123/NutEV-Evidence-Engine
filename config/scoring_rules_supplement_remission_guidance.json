@@ -1,0 +1,58 @@
+{
+  "version_note": "Supplemental NutMEV scoring expansion for diabetes remission, weight maintenance, and nutrition-care guidance. Loaded after scoring_rules.json without modifying the base scoring file.",
+  "keyword_points": {
+    "diabetes remission guideline": 5,
+    "diabetes remission consensus": 5,
+    "diabetes remission consensus report": 5,
+    "type 2 diabetes remission guideline": 5,
+    "type 2 diabetes remission consensus": 5,
+    "remission of type 2 diabetes guideline": 5,
+    "remission of type 2 diabetes consensus": 5,
+    "remission maintenance": 4,
+    "diabetes remission maintenance": 5,
+    "weight loss maintenance guideline": 4,
+    "weight loss maintenance consensus": 4,
+    "weight regain prevention guideline": 4,
+    "weight regain prevention consensus": 4,
+    "medical nutrition therapy guideline": 5,
+    "medical nutrition therapy consensus": 5,
+    "nutrition care pathway guideline": 5,
+    "nutrition care protocol guideline": 5,
+    "nutrition care consensus": 5
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "diabetes remission guideline": 6,
+      "diabetes remission consensus": 6,
+      "diabetes remission consensus report": 6,
+      "type 2 diabetes remission guideline": 6,
+      "type 2 diabetes remission consensus": 6,
+      "remission of type 2 diabetes guideline": 6,
+      "remission of type 2 diabetes consensus": 6,
+      "remission maintenance": 4,
+      "diabetes remission maintenance": 5,
+      "weight loss maintenance guideline": 5,
+      "weight loss maintenance consensus": 5,
+      "weight regain prevention guideline": 5,
+      "weight regain prevention consensus": 5,
+      "medical nutrition therapy guideline": 6,
+      "medical nutrition therapy consensus": 6,
+      "nutrition care pathway guideline": 6,
+      "nutrition care protocol guideline": 6,
+      "nutrition care consensus": 6
+    },
+    "busca2b": {
+      "diabetes remission maintenance": 5,
+      "remission maintenance": 4,
+      "weight loss maintenance guideline": 4,
+      "weight loss maintenance consensus": 4,
+      "weight regain prevention guideline": 4,
+      "weight regain prevention consensus": 4,
+      "medical nutrition therapy guideline": 5,
+      "medical nutrition therapy consensus": 5,
+      "nutrition care pathway guideline": 5,
+      "nutrition care protocol guideline": 5,
+      "nutrition care consensus": 5
+    }
+  }
+}
