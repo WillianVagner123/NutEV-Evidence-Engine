@@ -1,16 +1,54 @@
 {
+  "version_note": "Supplemental precision-nutrition scoring expansion loaded after scoring_rules.json; assigns moderate priority only to personalized/tailored nutrition terms relevant to NutMEV cardiometabolic and adherence evidence.",
   "keyword_points": {
-    "personalized nutrition": 3,
-    "personalised nutrition": 3,
-    "precision nutrition": 3,
-    "tailored nutrition": 3,
-    "tailored dietary advice": 4,
-    "tailored dietary intervention": 4,
-    "individualized diet": 3,
-    "individualised diet": 3,
-    "individualized dietary intervention": 4,
-    "individualised dietary intervention": 4,
-    "diet personalization": 3,
-    "diet personalisation": 3
+    "personalized nutrition": 2,
+    "personalised nutrition": 2,
+    "precision nutrition": 2,
+    "tailored nutrition": 2,
+    "tailored dietary advice": 2,
+    "tailored dietary intervention": 3,
+    "personalized dietary advice": 2,
+    "personalised dietary advice": 2,
+    "personalized dietary intervention": 3,
+    "personalised dietary intervention": 3,
+    "personalized meal planning": 2,
+    "personalised meal planning": 2,
+    "individualized dietary intervention": 3,
+    "individualised dietary intervention": 3,
+    "adaptive dietary intervention": 3,
+    "adaptive lifestyle intervention": 2,
+    "nutrition decision support": 2,
+    "dietary decision support": 2,
+    "personalized nutrition coaching": 2,
+    "personalised nutrition coaching": 2
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "precision nutrition for cardiometabolic risk": 4,
+      "personalized nutrition for cardiometabolic risk": 4,
+      "personalised nutrition for cardiometabolic risk": 4,
+      "precision nutrition for type 2 diabetes": 4,
+      "personalized nutrition for type 2 diabetes": 4,
+      "personalised nutrition for type 2 diabetes": 4,
+      "tailored dietary advice for cardiometabolic risk": 3,
+      "tailored dietary intervention for type 2 diabetes": 4,
+      "individualized dietary intervention for type 2 diabetes": 4,
+      "individualised dietary intervention for type 2 diabetes": 4
+    },
+    "busca2b": {
+      "personalized nutrition intervention": 4,
+      "personalised nutrition intervention": 4,
+      "precision nutrition intervention": 4,
+      "tailored nutrition intervention": 3,
+      "tailored dietary adherence": 4,
+      "personalized dietary intervention": 4,
+      "personalised dietary intervention": 4,
+      "adaptive dietary intervention": 4,
+      "adaptive lifestyle intervention": 3,
+      "nutrition decision support": 3,
+      "dietary decision support": 3,
+      "personalized nutrition coaching": 3,
+      "personalised nutrition coaching": 3
+    }
   }
 }
