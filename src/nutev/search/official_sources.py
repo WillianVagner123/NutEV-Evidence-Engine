@@ -8,15 +8,30 @@ WORKSTREAM_ALIASES = {
 }
 
 
+def _source_key(source: dict) -> str:
+    url = str(source.get("url") or "").strip()
+    if url:
+        try:
+            parsed = urlparse(url)
+        except Exception:
+            parsed = None
+        if parsed and parsed.netloc:
+            netloc = parsed.netloc.lower().removeprefix("www.")
+            path = parsed.path.rstrip("/") or "/"
+            return f"{netloc}{path}".rstrip("/")
+        return url.lower().rstrip("/")
+
+    title = str(source.get("name") or source.get("title") or "").strip()
+    return title.lower()
+
+
 def _dedupe_sources(sources: list[dict]) -> list[dict]:
     seen: set[str] = set()
     unique_sources: list[dict] = []
     for source in sources:
         if not isinstance(source, dict):
             continue
-        url = str(source.get("url") or "").strip()
-        title = str(source.get("name") or source.get("title") or "").strip()
-        key = (url or title).lower()
+        key = _source_key(source)
         if not key or key in seen:
             continue
         seen.add(key)
