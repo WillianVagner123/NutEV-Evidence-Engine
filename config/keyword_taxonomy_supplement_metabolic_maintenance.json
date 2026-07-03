@@ -1,0 +1,154 @@
+{
+  "version_note": "2026-07 metabolic maintenance and personalized nutrition supplement. Adds nutrition-anchored terms for diabetes remission, weight maintenance, relapse prevention, and individualized dietary prescription without changing raw outputs.",
+  "global": {
+    "diet_patterns": {
+      "personalized_prescription": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "individualized meal plan",
+        "individualised meal plan",
+        "personalized meal planning",
+        "personalised meal planning",
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "diet prescription",
+        "diet prescriptions",
+        "dietary prescription",
+        "dietary prescriptions"
+      ]
+    },
+    "implementation_behavior": {
+      "metabolic_maintenance": [
+        "diabetes remission",
+        "type 2 diabetes remission",
+        "remission of type 2 diabetes",
+        "diabetes reversal",
+        "glycemic remission",
+        "glycaemic remission",
+        "diet-induced diabetes remission",
+        "diet induced diabetes remission",
+        "lifestyle-induced diabetes remission",
+        "lifestyle induced diabetes remission",
+        "nutrition care for diabetes remission",
+        "remission maintenance",
+        "diabetes remission maintenance",
+        "weight loss maintenance",
+        "long-term weight loss maintenance",
+        "long term weight loss maintenance",
+        "weight regain prevention",
+        "weight regain management",
+        "relapse prevention",
+        "lapse management",
+        "dietary maintenance",
+        "behavioral maintenance",
+        "dietary self-monitoring",
+        "dietary self-regulation"
+      ]
+    }
+  },
+  "clinical": {
+    "diabetes": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "diabetes reversal",
+      "glycemic remission",
+      "glycaemic remission",
+      "diet-induced diabetes remission",
+      "diet induced diabetes remission",
+      "lifestyle-induced diabetes remission",
+      "lifestyle induced diabetes remission"
+    ],
+    "obesity": [
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management",
+      "weight regain"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management",
+      "weight regain"
+    ],
+    "glycemia": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "glycemic remission",
+      "glycaemic remission"
+    ],
+    "diet_quality_adherence": [
+      "dietary self-monitoring",
+      "dietary self-regulation",
+      "relapse prevention",
+      "lapse management",
+      "dietary maintenance",
+      "behavioral maintenance"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "diabetes remission",
+        "type 2 diabetes remission",
+        "remission of type 2 diabetes",
+        "weight loss maintenance",
+        "weight regain prevention"
+      ],
+      "web_query_hints": [
+        "diabetes remission guideline",
+        "type 2 diabetes remission guideline",
+        "diabetes remission consensus",
+        "remission of type 2 diabetes consensus report",
+        "weight loss maintenance guideline",
+        "weight regain prevention guideline",
+        "medical nutrition therapy remission guideline",
+        "nutrition care pathway diabetes remission"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "diabetes remission",
+        "type 2 diabetes remission",
+        "remission of type 2 diabetes",
+        "weight loss maintenance",
+        "weight regain prevention",
+        "weight regain management"
+      ],
+      "web_query_hints": [
+        "diabetes remission trial",
+        "type 2 diabetes remission trial",
+        "diabetes remission lifestyle intervention",
+        "diet-induced diabetes remission",
+        "lifestyle-induced diabetes remission",
+        "weight loss maintenance trial",
+        "weight regain prevention trial",
+        "relapse prevention weight loss maintenance",
+        "dietary self-monitoring weight maintenance",
+        "personalized nutrition intervention",
+        "tailored dietary intervention",
+        "individualized meal plan trial",
+        "nutrition prescription intervention"
+      ]
+    }
+  }
+}
