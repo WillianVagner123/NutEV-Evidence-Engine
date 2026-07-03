@@ -1,0 +1,132 @@
+{
+  "version_note": "2026-07 metabolic remission and weight-maintenance search expansion. Loaded by settings.load_json as a non-destructive supplement to keyword_taxonomy.json.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "durable diabetes remission",
+        "sustained diabetes remission",
+        "maintenance of diabetes remission",
+        "remission maintenance",
+        "diabetes remission maintenance",
+        "weight loss maintenance",
+        "maintenance of weight loss",
+        "long-term weight loss maintenance",
+        "long term weight loss maintenance",
+        "weight maintenance intervention",
+        "weight regain prevention",
+        "weight regain management",
+        "relapse prevention after weight loss"
+      ],
+      "behavioral": [
+        "long-term weight management",
+        "self-regulation for weight maintenance",
+        "dietary self-regulation for weight maintenance",
+        "habit formation for weight maintenance"
+      ]
+    },
+    "document_types": {
+      "guidelines": [
+        "diabetes remission guideline",
+        "diabetes remission consensus",
+        "diabetes remission consensus report",
+        "type 2 diabetes remission guideline",
+        "type 2 diabetes remission consensus",
+        "remission consensus",
+        "remission consensus report",
+        "remission guideline",
+        "weight maintenance guideline",
+        "weight regain prevention guideline"
+      ],
+      "reviews": [
+        "diabetes remission systematic review",
+        "diabetes remission umbrella review",
+        "weight loss maintenance systematic review",
+        "weight regain prevention systematic review",
+        "weight maintenance review"
+      ],
+      "trials": [
+        "diabetes remission trial",
+        "weight loss maintenance trial",
+        "weight regain prevention trial",
+        "weight maintenance intervention trial"
+      ]
+    }
+  },
+  "clinical": {
+    "diabetes": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "remission of type 2 diabetes",
+      "durable diabetes remission",
+      "sustained diabetes remission",
+      "glycemic remission",
+      "glycaemic remission",
+      "diabetes reversal"
+    ],
+    "obesity": [
+      "weight loss maintenance",
+      "maintenance of weight loss",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "weight loss maintenance",
+      "maintenance of weight loss",
+      "long-term weight loss maintenance",
+      "weight regain prevention",
+      "weight regain management"
+    ],
+    "glycemia": [
+      "diabetes remission",
+      "type 2 diabetes remission",
+      "durable diabetes remission",
+      "sustained diabetes remission",
+      "glycemic remission",
+      "glycaemic remission"
+    ],
+    "diet_quality_adherence": [
+      "remission maintenance",
+      "diabetes remission maintenance",
+      "long-term dietary adherence",
+      "long term dietary adherence"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "type 2 diabetes remission",
+        "durable diabetes remission",
+        "sustained diabetes remission",
+        "weight loss maintenance",
+        "weight regain prevention"
+      ],
+      "web_query_hints": [
+        "diabetes remission guideline",
+        "diabetes remission consensus report",
+        "type 2 diabetes remission consensus",
+        "weight maintenance guideline",
+        "weight regain prevention guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "type 2 diabetes remission",
+        "durable diabetes remission",
+        "sustained diabetes remission",
+        "weight loss maintenance",
+        "weight regain prevention"
+      ],
+      "web_query_hints": [
+        "diabetes remission trial",
+        "weight loss maintenance trial",
+        "weight loss maintenance systematic review",
+        "weight regain prevention trial",
+        "weight regain prevention systematic review"
+      ]
+    }
+  }
+}
