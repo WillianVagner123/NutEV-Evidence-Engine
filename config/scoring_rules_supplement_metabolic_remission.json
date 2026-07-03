@@ -1,0 +1,44 @@
+{
+  "version_note": "2026-07 metabolic remission and weight-maintenance scoring supplement. Loaded by settings.load_json without overwriting scoring_rules.json.",
+  "keyword_points": {
+    "durable diabetes remission": 4,
+    "sustained diabetes remission": 4,
+    "maintenance of diabetes remission": 4,
+    "remission maintenance": 3,
+    "diabetes remission maintenance": 4,
+    "maintenance of weight loss": 4,
+    "weight maintenance intervention": 3,
+    "weight regain prevention": 4,
+    "weight regain management": 3,
+    "relapse prevention after weight loss": 3,
+    "long-term dietary adherence": 3,
+    "long term dietary adherence": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "durable diabetes remission": 5,
+      "sustained diabetes remission": 5,
+      "maintenance of diabetes remission": 5,
+      "diabetes remission consensus report": 6,
+      "type 2 diabetes remission consensus": 6,
+      "diabetes remission guideline": 6,
+      "weight maintenance guideline": 4,
+      "weight regain prevention guideline": 4
+    },
+    "busca2b": {
+      "durable diabetes remission": 5,
+      "sustained diabetes remission": 5,
+      "maintenance of diabetes remission": 5,
+      "weight loss maintenance": 5,
+      "maintenance of weight loss": 5,
+      "weight maintenance intervention": 5,
+      "weight regain prevention": 5,
+      "weight regain management": 4,
+      "relapse prevention after weight loss": 4,
+      "weight loss maintenance trial": 5,
+      "weight loss maintenance systematic review": 5,
+      "weight regain prevention trial": 5,
+      "weight regain prevention systematic review": 5
+    }
+  }
+}
