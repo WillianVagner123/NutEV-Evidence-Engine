@@ -1,0 +1,69 @@
+{
+  "version_note": "Adds focused adherence and implementation vocabulary for dietary pattern maintenance without editing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "adherence_indices": [
+        "dietary adherence index",
+        "dietary adherence indices",
+        "dietary adherence questionnaire",
+        "dietary adherence scale",
+        "Mediterranean diet adherence score",
+        "Mediterranean diet adherence index",
+        "DASH adherence score",
+        "DASH adherence index",
+        "plant-based diet adherence",
+        "plant-based diet score",
+        "healthy plant-based diet score",
+        "healthful plant-based diet index",
+        "dietary pattern score",
+        "dietary pattern index"
+      ]
+    },
+    "implementation_behavior": {
+      "adherence": [
+        "dietary adherence intervention",
+        "dietary adherence counseling",
+        "dietary adherence counselling",
+        "diet adherence counseling",
+        "diet adherence counselling",
+        "nutrition adherence counseling",
+        "nutrition adherence counselling",
+        "adherence support",
+        "adherence counselling",
+        "adherence counseling"
+      ],
+      "behavioral": [
+        "dietary behavior change",
+        "dietary behaviour change",
+        "eating behavior change",
+        "eating behaviour change",
+        "nutrition behavior change",
+        "nutrition behaviour change",
+        "dietary habit formation",
+        "healthy eating habit formation",
+        "dietary relapse prevention",
+        "dietary lapse management",
+        "lapse management",
+        "relapse prevention",
+        "diet maintenance",
+        "dietary maintenance",
+        "behavioral maintenance",
+        "behavioural maintenance",
+        "maintenance intervention"
+      ],
+      "care_delivery": [
+        "nutrition coaching",
+        "diet coaching",
+        "dietary coaching",
+        "health coaching nutrition",
+        "lifestyle coaching nutrition",
+        "remote nutrition coaching",
+        "digital nutrition coaching",
+        "telehealth nutrition counseling",
+        "telehealth nutrition counselling",
+        "virtual nutrition counseling",
+        "virtual nutrition counselling"
+      ]
+    }
+  }
+}
