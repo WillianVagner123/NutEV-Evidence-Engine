@@ -64,6 +64,36 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+POLICY_REPORT_DOCUMENT_TERMS = [
+    "nutrition policy brief",
+    "dietary policy brief",
+    "food policy brief",
+    "food environment policy brief",
+    "nutrition technical report",
+    "dietary guideline technical report",
+    "food-based dietary guideline technical report",
+    "food based dietary guideline technical report",
+    "nutrition standards technical report",
+    "food service guidelines technical report",
+    "food procurement technical report",
+    "healthy food procurement technical report",
+    "food environment technical report",
+]
+
+IMPLEMENTATION_GUIDE_TERMS = [
+    "nutrition implementation guide",
+    "nutrition implementation toolkit",
+    "food environment implementation guide",
+    "food service guidelines implementation guide",
+    "nutrition standards implementation guide",
+    "food is medicine implementation guide",
+    "food as medicine implementation guide",
+    "produce prescription implementation guide",
+    "medically tailored meals implementation guide",
+    "culinary medicine implementation guide",
+    "teaching kitchen implementation guide",
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -109,15 +139,20 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "food_literacy_culinary_commensality",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *FOOD_ENVIRONMENT_DOCUMENT_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+            *POLICY_REPORT_DOCUMENT_TERMS,
+            *IMPLEMENTATION_GUIDE_TERMS,
+        ],
     )
     _extend_category_terms(
         "implementation_behavior",
-        FOOD_ENVIRONMENT_POLICY_TERMS,
+        [*FOOD_ENVIRONMENT_POLICY_TERMS, *IMPLEMENTATION_GUIDE_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        [*FOOD_ENVIRONMENT_DOCUMENT_TERMS, *POLICY_REPORT_DOCUMENT_TERMS],
     )
 
 
