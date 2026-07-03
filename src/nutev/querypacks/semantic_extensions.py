@@ -264,6 +264,53 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+THERAPEUTIC_CARBOHYDRATE_RESTRICTION_TERMS = [
+    "therapeutic carbohydrate restriction",
+    "therapeutic carbohydrate reduction",
+    "carbohydrate restriction therapy",
+    "carbohydrate-restricted nutrition therapy",
+    "carbohydrate restricted nutrition therapy",
+    "low-carbohydrate nutrition therapy",
+    "low carbohydrate nutrition therapy",
+    "low-carbohydrate dietary intervention",
+    "low carbohydrate dietary intervention",
+    "very-low-carbohydrate dietary intervention",
+    "very low carbohydrate dietary intervention",
+    "carbohydrate-restricted dietary intervention",
+    "carbohydrate restricted dietary intervention",
+    "ketogenic dietary intervention",
+    "ketogenic nutrition therapy",
+    "nutritional ketosis",
+    "carbohydrate restriction for type 2 diabetes",
+    "carbohydrate restriction for obesity",
+    "low-carbohydrate diet for type 2 diabetes",
+    "low carbohydrate diet for type 2 diabetes",
+    "low-carbohydrate diet for obesity",
+    "low carbohydrate diet for obesity",
+    "carbohydrate-restricted diet remission",
+    "carbohydrate restricted diet remission",
+    "low-carbohydrate diabetes remission",
+    "low carbohydrate diabetes remission",
+    "ketogenic diet diabetes remission",
+]
+
+THERAPEUTIC_CARBOHYDRATE_RESTRICTION_DOCUMENT_TERMS = [
+    "therapeutic carbohydrate restriction guideline",
+    "therapeutic carbohydrate restriction consensus",
+    "therapeutic carbohydrate restriction systematic review",
+    "therapeutic carbohydrate restriction trial",
+    "low-carbohydrate diet systematic review",
+    "low carbohydrate diet systematic review",
+    "low-carbohydrate diet meta-analysis",
+    "low carbohydrate diet meta-analysis",
+    "low-carbohydrate diet randomized trial",
+    "low carbohydrate diet randomized trial",
+    "carbohydrate restriction diabetes remission trial",
+    "carbohydrate restriction diabetes remission systematic review",
+    "ketogenic diet diabetes remission trial",
+    "ketogenic diet systematic review",
+]
+
 ULTRA_PROCESSED_FOOD_TERMS = [
     "ultra-processed food",
     "ultra-processed foods",
@@ -622,6 +669,11 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=PRECISION_PERSONALIZED_NUTRITION_TERMS,
             document_terms=PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS,
+        )
+        _extend_semantic_block(
+            block_name,
+            terms=THERAPEUTIC_CARBOHYDRATE_RESTRICTION_TERMS,
+            document_terms=THERAPEUTIC_CARBOHYDRATE_RESTRICTION_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(

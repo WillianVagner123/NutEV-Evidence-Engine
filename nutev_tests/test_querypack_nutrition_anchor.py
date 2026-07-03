@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from nutev.querypacks.builders import build_queries
+from nutev.querypacks.semantic_blocks import semantic_terms
 
 
 def _taxonomy_with_broad_lifestyle_focus() -> dict:
@@ -62,3 +63,17 @@ def test_broad_lifestyle_queries_keep_nutrition_anchor() -> None:
         or '"healthy eating"' in query
         for query in broad_lifestyle_queries
     )
+
+
+def test_busca2b_semantics_include_therapeutic_carbohydrate_restriction() -> None:
+    terms = [term.lower() for term in semantic_terms("busca2b", min_priority=5)]
+    document_terms = [
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    ]
+
+    assert "therapeutic carbohydrate restriction" in terms
+    assert "low-carbohydrate dietary intervention" in terms
+    assert "low carbohydrate diabetes remission" in terms
+    assert "therapeutic carbohydrate restriction systematic review" in document_terms
+    assert "carbohydrate restriction diabetes remission trial" in document_terms
