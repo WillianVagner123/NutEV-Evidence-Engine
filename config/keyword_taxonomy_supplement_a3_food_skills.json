@@ -1,0 +1,134 @@
+{
+  "version_note": "Focused A3/artigo3 query expansion for food skills, label literacy, grocery skills, meal planning self-efficacy and commensality instruments.",
+  "global": {
+    "implementation_behavior": {
+      "food_literacy_instruments": [
+        "food skills questionnaire",
+        "food skills scale",
+        "food skills instrument",
+        "food competence questionnaire",
+        "food competence scale",
+        "food label literacy",
+        "food label literacy questionnaire",
+        "nutrition label literacy",
+        "nutrition label literacy questionnaire",
+        "label reading skills",
+        "grocery shopping skills",
+        "grocery shopping skills questionnaire",
+        "healthy grocery shopping",
+        "healthy grocery shopping skills",
+        "food resource management",
+        "food resource management questionnaire",
+        "food budgeting skills",
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "meal planning questionnaire",
+        "meal planning skills",
+        "commensality scale",
+        "commensality questionnaire",
+        "shared meals scale",
+        "shared meals questionnaire",
+        "family mealtime scale",
+        "family mealtime questionnaire"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_literacy_competence": [
+      "food skills questionnaire",
+      "food skills scale",
+      "food competence questionnaire",
+      "food label literacy",
+      "nutrition label literacy",
+      "grocery shopping skills",
+      "healthy grocery shopping skills",
+      "food resource management",
+      "food budgeting skills",
+      "meal planning self-efficacy",
+      "meal planning self efficacy",
+      "commensality scale",
+      "shared meals questionnaire",
+      "family mealtime scale"
+    ]
+  },
+  "workstreams": {
+    "a3": {
+      "focus_terms": [
+        "food skills questionnaire",
+        "food skills scale",
+        "food skills instrument",
+        "food competence questionnaire",
+        "food label literacy",
+        "nutrition label literacy",
+        "grocery shopping skills",
+        "healthy grocery shopping skills",
+        "food resource management questionnaire",
+        "food budgeting skills",
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "meal planning questionnaire",
+        "commensality scale",
+        "commensality questionnaire",
+        "shared meals questionnaire",
+        "family mealtime scale"
+      ],
+      "web_query_hints": [
+        "food skills questionnaire validation",
+        "food competence questionnaire validation",
+        "food label literacy questionnaire validation",
+        "nutrition label literacy questionnaire validation",
+        "grocery shopping skills questionnaire validation",
+        "food resource management questionnaire validation",
+        "meal planning self-efficacy scale validation",
+        "commensality scale validation",
+        "shared meals questionnaire validation",
+        "family mealtime scale validation"
+      ],
+      "document_terms": [
+        "instrument validation",
+        "measurement instrument",
+        "questionnaire development",
+        "scale development"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "food skills questionnaire",
+        "food skills scale",
+        "food skills instrument",
+        "food competence questionnaire",
+        "food label literacy",
+        "nutrition label literacy",
+        "grocery shopping skills",
+        "healthy grocery shopping skills",
+        "food resource management questionnaire",
+        "food budgeting skills",
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "meal planning questionnaire",
+        "commensality scale",
+        "commensality questionnaire",
+        "shared meals questionnaire",
+        "family mealtime scale"
+      ],
+      "web_query_hints": [
+        "food skills questionnaire validation",
+        "food competence questionnaire validation",
+        "food label literacy questionnaire validation",
+        "nutrition label literacy questionnaire validation",
+        "grocery shopping skills questionnaire validation",
+        "food resource management questionnaire validation",
+        "meal planning self-efficacy scale validation",
+        "commensality scale validation",
+        "shared meals questionnaire validation",
+        "family mealtime scale validation"
+      ],
+      "document_terms": [
+        "instrument validation",
+        "measurement instrument",
+        "questionnaire development",
+        "scale development"
+      ]
+    }
+  }
+}
