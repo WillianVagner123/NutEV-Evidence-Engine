@@ -30,6 +30,25 @@ FOOD_ACCESS_BENEFIT_TERMS = [
     "medically tailored grocery programme",
     "medically tailored groceries program",
     "medically tailored groceries programme",
+    "nutrition security screening",
+    "nutrition insecurity screening",
+    "nutrition security intervention",
+    "nutrition insecurity intervention",
+    "food insecurity screening",
+    "screening for food insecurity",
+    "hunger vital sign",
+    "screen and intervene",
+    "food access screening",
+    "food access referral",
+    "healthy food referral",
+    "food pharmacy",
+    "food pharmacies",
+    "food pharmacy program",
+    "food farmacy",
+    "food farmacies",
+    "food farmacy program",
+    "community-supported food program",
+    "community supported food program",
 ]
 
 FOOD_ACCESS_BENEFIT_DOCUMENT_TERMS = [
@@ -43,6 +62,14 @@ FOOD_ACCESS_BENEFIT_DOCUMENT_TERMS = [
     "medically tailored grocery program evaluation",
     "medically tailored grocery intervention trial",
     "medically tailored groceries program evaluation",
+    "nutrition security screening evaluation",
+    "nutrition insecurity screening evaluation",
+    "food insecurity screening evaluation",
+    "hunger vital sign evaluation",
+    "screen and intervene evaluation",
+    "food access referral program evaluation",
+    "food pharmacy program evaluation",
+    "food farmacy program evaluation",
 ]
 
 
