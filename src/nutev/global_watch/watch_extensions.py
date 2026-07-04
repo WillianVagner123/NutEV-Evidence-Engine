@@ -104,6 +104,58 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+DIET_REPLACEMENT_REMISSION_TERMS = [
+    "total diet replacement diabetes remission",
+    "total diet replacement type 2 diabetes",
+    "total diet replacement weight maintenance",
+    "total diet replacement weight regain prevention",
+    "partial meal replacement diabetes remission",
+    "partial meal replacement weight maintenance",
+    "meal replacement diabetes remission",
+    "meal replacement weight maintenance",
+    "meal replacement weight regain prevention",
+    "formula diet diabetes remission",
+    "formula diet weight maintenance",
+    "low-energy diet diabetes remission",
+    "low energy diet diabetes remission",
+    "low-energy diet weight maintenance",
+    "low energy diet weight maintenance",
+    "very-low-energy diet diabetes remission",
+    "very low energy diet diabetes remission",
+    "very-low-energy diet weight maintenance",
+    "very low energy diet weight maintenance",
+    "very-low-calorie diet diabetes remission",
+    "very low calorie diet diabetes remission",
+    "very-low-calorie diet weight maintenance",
+    "very low calorie diet weight maintenance",
+]
+
+DIET_REPLACEMENT_REMISSION_BONUS_TERMS = [
+    ("total diet replacement diabetes remission", 22),
+    ("total diet replacement type 2 diabetes", 20),
+    ("total diet replacement weight maintenance", 18),
+    ("total diet replacement weight regain prevention", 18),
+    ("partial meal replacement diabetes remission", 18),
+    ("partial meal replacement weight maintenance", 16),
+    ("meal replacement diabetes remission", 18),
+    ("meal replacement weight maintenance", 16),
+    ("meal replacement weight regain prevention", 16),
+    ("formula diet diabetes remission", 18),
+    ("formula diet weight maintenance", 16),
+    ("low-energy diet diabetes remission", 18),
+    ("low energy diet diabetes remission", 18),
+    ("low-energy diet weight maintenance", 16),
+    ("low energy diet weight maintenance", 16),
+    ("very-low-energy diet diabetes remission", 20),
+    ("very low energy diet diabetes remission", 20),
+    ("very-low-energy diet weight maintenance", 18),
+    ("very low energy diet weight maintenance", 18),
+    ("very-low-calorie diet diabetes remission", 20),
+    ("very low calorie diet diabetes remission", 20),
+    ("very-low-calorie diet weight maintenance", 18),
+    ("very low calorie diet weight maintenance", 18),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -162,12 +214,20 @@ def _extend_scoring_terms() -> None:
 
     watch_scoring.BONUS_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.BONUS_TERMS, *OBESITY_PHARMACOTHERAPY_BONUS_TERMS]
+            [
+                *watch_scoring.BONUS_TERMS,
+                *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *DIET_REPLACEMENT_REMISSION_BONUS_TERMS,
+            ]
         )
     )
     watch_scoring.NUTMEV_SCOPE_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.NUTMEV_SCOPE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS]
+            [
+                *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *DIET_REPLACEMENT_REMISSION_TERMS,
+            ]
         )
     )
 
@@ -197,16 +257,42 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *DIET_REPLACEMENT_REMISSION_TERMS],
+    )
+    _extend_category_terms(
+        "diet_patterns",
+        DIET_REPLACEMENT_REMISSION_TERMS,
+    )
+    _extend_category_terms(
+        "implementation_behavior",
+        DIET_REPLACEMENT_REMISSION_TERMS,
     )
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
+    _extend_quick_seed_group(
+        "obesity_cardiometabolic",
+        1,
+        DIET_REPLACEMENT_REMISSION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "diet_patterns",
+        2,
+        DIET_REPLACEMENT_REMISSION_TERMS,
+    )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *DIET_REPLACEMENT_REMISSION_TERMS],
+    )
+    _extend_query_context(
+        "diet_patterns",
+        DIET_REPLACEMENT_REMISSION_TERMS,
+    )
+    _extend_query_context(
+        "implementation_behavior",
+        DIET_REPLACEMENT_REMISSION_TERMS,
     )
     _extend_scoring_terms()
 
