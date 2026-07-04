@@ -1,5 +1,5 @@
 {
-  "version_note": "Focused NutMEV supplement for cardiometabolic dietary patterns. Loaded after keyword_taxonomy.json and keyword_taxonomy_supplement.json; appends terms without replacing the base taxonomy.",
+  "version_note": "Focused NutMEV supplement for cardiometabolic dietary patterns and CKM kidney terms. Loaded after keyword_taxonomy.json and keyword_taxonomy_supplement.json; appends terms without replacing the base taxonomy.",
   "global": {
     "diet_patterns": {
       "cardiometabolic_dietary_patterns": [
@@ -25,8 +25,43 @@
       ]
     }
   },
+  "clinical": {
+    "cardiometabolic": [
+      "chronic kidney disease",
+      "chronic kidney disease risk",
+      "ckd",
+      "kidney disease",
+      "renal function",
+      "kidney function",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "albuminuria"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "chronic kidney disease",
+      "ckd",
+      "renal function",
+      "kidney function",
+      "estimated glomerular filtration rate",
+      "egfr",
+      "albuminuria"
+    ]
+  },
   "workstreams": {
     "busca2a": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "chronic kidney disease risk",
+        "ckd",
+        "kidney disease",
+        "renal function",
+        "kidney function",
+        "estimated glomerular filtration rate",
+        "egfr",
+        "albuminuria"
+      ],
       "focus_terms": [
         "cardioprotective dietary pattern",
         "heart-healthy diet",
@@ -46,7 +81,13 @@
         "ldl-lowering diet guideline",
         "dash-sodium diet guideline",
         "dash dietary pattern hypertension guideline",
-        "heart-healthy diet scientific statement"
+        "heart-healthy diet scientific statement",
+        "cardiovascular-kidney-metabolic syndrome nutrition guideline",
+        "ckm syndrome kidney nutrition guideline",
+        "chronic kidney disease obesity nutrition guideline",
+        "diabetes chronic kidney disease nutrition guideline",
+        "albuminuria cardiometabolic guideline",
+        "egfr cardiometabolic nutrition guideline"
       ],
       "document_terms": [
         "scientific statement",
@@ -57,6 +98,17 @@
       ]
     },
     "busca2b": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "chronic kidney disease risk",
+        "ckd",
+        "kidney disease",
+        "renal function",
+        "kidney function",
+        "estimated glomerular filtration rate",
+        "egfr",
+        "albuminuria"
+      ],
       "focus_terms": [
         "cardioprotective dietary pattern",
         "heart-healthy diet",
@@ -79,7 +131,13 @@
         "ldl-lowering diet randomized trial",
         "dash-sodium diet trial",
         "dash dietary pattern blood pressure trial",
-        "heart-healthy diet cardiometabolic trial"
+        "heart-healthy diet cardiometabolic trial",
+        "cardiovascular-kidney-metabolic syndrome lifestyle intervention",
+        "ckm syndrome kidney diet intervention",
+        "chronic kidney disease obesity lifestyle intervention",
+        "diabetes chronic kidney disease dietary intervention",
+        "albuminuria diet intervention",
+        "egfr dietary intervention"
       ],
       "document_terms": [
         "randomized trial",
