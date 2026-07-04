@@ -1,0 +1,148 @@
+{
+  "version_note": "Focused NutMEV expansion for food-linked social prescribing and community referral models; loaded after keyword_taxonomy.json without changing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "social_prescribing_food_referral": [
+        "food resource referral",
+        "food resource referrals",
+        "food referral pathway",
+        "food referral pathways",
+        "community food referral",
+        "community food referrals",
+        "community food navigation",
+        "food navigator",
+        "food navigators",
+        "nutrition navigator",
+        "nutrition navigators",
+        "food as medicine referral",
+        "food is medicine referral",
+        "produce prescription referral",
+        "produce prescription referrals",
+        "medically tailored meal referral",
+        "medically tailored meals referral",
+        "medically tailored food referral",
+        "food pharmacy referral",
+        "food pantry referral",
+        "nutrition security referral",
+        "social prescribing nutrition",
+        "social prescribing food",
+        "link worker nutrition",
+        "link worker food",
+        "community connector nutrition",
+        "community connector food",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food resource referral",
+      "food referral pathway",
+      "community food navigation",
+      "food navigator",
+      "nutrition navigator",
+      "produce prescription referral",
+      "medically tailored meal referral",
+      "food pharmacy referral",
+      "social prescribing nutrition",
+      "social prescribing food",
+      "closed-loop food referral",
+      "closed loop food referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food resource referral",
+        "food referral pathway",
+        "community food referral",
+        "community food navigation",
+        "food navigator",
+        "nutrition navigator",
+        "food as medicine referral",
+        "produce prescription referral",
+        "medically tailored meal referral",
+        "food pharmacy referral",
+        "social prescribing nutrition",
+        "social prescribing food",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ],
+      "web_query_hints": [
+        "food resource referral program",
+        "community food referral program",
+        "community food navigation program",
+        "food navigator program",
+        "nutrition navigator program",
+        "produce prescription referral program",
+        "medically tailored meal referral program",
+        "food pharmacy referral program",
+        "social prescribing nutrition program",
+        "closed-loop food referral program",
+        "closed loop food referral program"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "navigation program",
+        "program evaluation",
+        "implementation report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food resource referral",
+        "food referral pathway",
+        "community food navigation",
+        "food navigator",
+        "nutrition navigator",
+        "produce prescription referral",
+        "medically tailored meal referral",
+        "food pharmacy referral",
+        "social prescribing nutrition",
+        "social prescribing food",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ],
+      "web_query_hints": [
+        "food resource referral intervention",
+        "community food navigation intervention",
+        "food navigator intervention",
+        "nutrition navigator intervention",
+        "produce prescription referral trial",
+        "medically tailored meal referral trial",
+        "food pharmacy referral evaluation",
+        "social prescribing nutrition evaluation",
+        "closed-loop food referral evaluation",
+        "closed loop food referral evaluation"
+      ],
+      "document_terms": [
+        "referral intervention",
+        "navigation intervention",
+        "program evaluation",
+        "implementation trial",
+        "process evaluation"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "food referral pathway",
+        "community food navigation",
+        "food navigator",
+        "nutrition navigator",
+        "social prescribing nutrition"
+      ],
+      "web_query_hints": [
+        "food referral pathway framework",
+        "community food navigation framework",
+        "nutrition navigator framework",
+        "social prescribing nutrition framework"
+      ],
+      "document_terms": [
+        "referral pathway framework",
+        "navigation framework",
+        "implementation framework"
+      ]
+    }
+  }
+}
