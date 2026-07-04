@@ -1,0 +1,69 @@
+{
+  "version_note": "Adds targeted scoring support for dietary adherence mechanisms centered on meal planning, meal preparation, food routines, and dietary habit formation. Loaded automatically by nutev.settings.load_json as a supplement to scoring_rules.json.",
+  "keyword_points": {
+    "meal planning intervention": 3,
+    "meal preparation intervention": 3,
+    "food preparation intervention": 3,
+    "dietary planning": 3,
+    "diet planning": 3,
+    "meal prep": 3,
+    "meal prepping": 3,
+    "structured meal plan": 3,
+    "structured meal plans": 3,
+    "meal routine": 3,
+    "meal routines": 3,
+    "food routine": 3,
+    "food routines": 3,
+    "dietary routine": 3,
+    "dietary routines": 3,
+    "eating routine": 3,
+    "eating routines": 3,
+    "dietary habit formation": 3,
+    "healthy eating habit formation": 3,
+    "meal planning adherence": 4,
+    "meal preparation adherence": 4,
+    "food preparation adherence": 4
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "meal planning intervention": 4,
+      "meal preparation intervention": 4,
+      "food preparation intervention": 4,
+      "dietary planning": 4,
+      "diet planning": 4,
+      "structured meal plan": 4,
+      "structured meal plans": 4,
+      "meal routine": 4,
+      "meal routines": 4,
+      "food routine": 4,
+      "food routines": 4,
+      "dietary routine": 4,
+      "dietary routines": 4,
+      "eating routine": 4,
+      "eating routines": 4,
+      "dietary habit formation": 4,
+      "healthy eating habit formation": 4,
+      "meal planning adherence": 5,
+      "meal preparation adherence": 5,
+      "food preparation adherence": 5
+    },
+    "a3": {
+      "meal planning adherence": 4,
+      "meal preparation adherence": 4,
+      "food preparation adherence": 4,
+      "dietary habit formation": 4,
+      "healthy eating habit formation": 4,
+      "food routines": 3,
+      "meal routines": 3
+    },
+    "artigo3_framework": {
+      "meal planning adherence": 4,
+      "meal preparation adherence": 4,
+      "food preparation adherence": 4,
+      "dietary habit formation": 4,
+      "healthy eating habit formation": 4,
+      "food routines": 3,
+      "meal routines": 3
+    }
+  }
+}
