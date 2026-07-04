@@ -64,6 +64,75 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+METABOLIC_MAINTENANCE_TERMS = [
+    "type 2 diabetes remission",
+    "remission of type 2 diabetes",
+    "diabetes remission",
+    "diabetes reversal",
+    "glycemic remission",
+    "glycaemic remission",
+    "weight loss maintenance",
+    "long-term weight loss maintenance",
+    "long term weight loss maintenance",
+    "weight maintenance",
+    "weight regain prevention",
+    "weight regain management",
+    "relapse prevention",
+    "lapse management",
+    "behavioral maintenance",
+    "behavioural maintenance",
+    "dietary maintenance",
+    "dietary self-monitoring",
+    "dietary self-regulation",
+]
+
+METABOLIC_MAINTENANCE_NUTRITION_TERMS = [
+    "nutrition care for diabetes remission",
+    "nutrition care for weight maintenance",
+    "medical nutrition therapy diabetes remission",
+    "medical nutrition therapy weight maintenance",
+    "dietitian-led remission",
+    "dietitian led remission",
+    "dietitian-led weight maintenance",
+    "dietitian led weight maintenance",
+    "dietary counseling weight maintenance",
+    "dietary counselling weight maintenance",
+    "nutrition counseling weight maintenance",
+    "nutrition counselling weight maintenance",
+]
+
+METABOLIC_MAINTENANCE_DOCUMENT_TERMS = [
+    "diabetes remission guideline",
+    "diabetes remission consensus",
+    "diabetes remission consensus report",
+    "type 2 diabetes remission guideline",
+    "type 2 diabetes remission consensus",
+    "weight loss maintenance guideline",
+    "weight loss maintenance systematic review",
+    "weight regain prevention trial",
+    "weight regain prevention systematic review",
+]
+
+METABOLIC_MAINTENANCE_BONUS_TERMS = [
+    ("type 2 diabetes remission", 20),
+    ("remission of type 2 diabetes", 20),
+    ("diabetes remission", 20),
+    ("diabetes reversal", 18),
+    ("glycemic remission", 18),
+    ("glycaemic remission", 18),
+    ("nutrition care for diabetes remission", 22),
+    ("medical nutrition therapy diabetes remission", 22),
+    ("dietitian-led remission", 18),
+    ("dietitian led remission", 18),
+    ("weight loss maintenance", 16),
+    ("long-term weight loss maintenance", 18),
+    ("long term weight loss maintenance", 18),
+    ("weight regain prevention", 16),
+    ("relapse prevention", 14),
+    ("dietary self-monitoring", 14),
+    ("dietary self-regulation", 14),
+]
+
 OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS = [
     "anti-obesity medication nutrition",
     "anti-obesity medication nutrition care",
@@ -162,12 +231,21 @@ def _extend_scoring_terms() -> None:
 
     watch_scoring.BONUS_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.BONUS_TERMS, *OBESITY_PHARMACOTHERAPY_BONUS_TERMS]
+            [
+                *watch_scoring.BONUS_TERMS,
+                *METABOLIC_MAINTENANCE_BONUS_TERMS,
+                *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+            ]
         )
     )
     watch_scoring.NUTMEV_SCOPE_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.NUTMEV_SCOPE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS]
+            [
+                *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *METABOLIC_MAINTENANCE_TERMS,
+                *METABOLIC_MAINTENANCE_NUTRITION_TERMS,
+                *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            ]
         )
     )
 
@@ -176,7 +254,10 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
         0,
-        PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS,
+        [
+            *PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS,
+            *METABOLIC_MAINTENANCE_NUTRITION_TERMS,
+        ],
     )
     _extend_seed_group(
         "personalized_nutrition",
@@ -189,24 +270,33 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "implementation_behavior",
-        FOOD_ENVIRONMENT_POLICY_TERMS,
+        [*FOOD_ENVIRONMENT_POLICY_TERMS, *METABOLIC_MAINTENANCE_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        [*FOOD_ENVIRONMENT_DOCUMENT_TERMS, *METABOLIC_MAINTENANCE_DOCUMENT_TERMS],
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*METABOLIC_MAINTENANCE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS],
     )
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*METABOLIC_MAINTENANCE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS],
+    )
+    _extend_quick_seed_group(
+        "implementation_behavior",
+        0,
+        METABOLIC_MAINTENANCE_TERMS,
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*METABOLIC_MAINTENANCE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS],
+    )
+    _extend_query_context(
+        "implementation_behavior",
+        METABOLIC_MAINTENANCE_TERMS,
     )
     _extend_scoring_terms()
 
