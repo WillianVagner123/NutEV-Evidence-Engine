@@ -104,6 +104,38 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+CULTURALLY_TAILORED_NUTRITION_TERMS = [
+    "culturally tailored nutrition",
+    "culturally tailored dietary intervention",
+    "culturally tailored diet",
+    "culturally adapted nutrition",
+    "culturally adapted dietary intervention",
+    "culturally adapted diet",
+    "culturally appropriate nutrition",
+    "culturally appropriate dietary advice",
+    "culturally sensitive nutrition",
+    "cultural adaptation nutrition",
+    "cultural adaptation dietary intervention",
+    "culturally tailored lifestyle intervention",
+    "culturally adapted lifestyle intervention",
+]
+
+CULTURALLY_TAILORED_NUTRITION_BONUS_TERMS = [
+    ("culturally tailored nutrition", 16),
+    ("culturally tailored dietary intervention", 18),
+    ("culturally tailored diet", 14),
+    ("culturally adapted nutrition", 16),
+    ("culturally adapted dietary intervention", 18),
+    ("culturally adapted diet", 14),
+    ("culturally appropriate nutrition", 16),
+    ("culturally appropriate dietary advice", 16),
+    ("culturally sensitive nutrition", 14),
+    ("cultural adaptation nutrition", 16),
+    ("cultural adaptation dietary intervention", 18),
+    ("culturally tailored lifestyle intervention", 16),
+    ("culturally adapted lifestyle intervention", 16),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -162,12 +194,20 @@ def _extend_scoring_terms() -> None:
 
     watch_scoring.BONUS_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.BONUS_TERMS, *OBESITY_PHARMACOTHERAPY_BONUS_TERMS]
+            [
+                *watch_scoring.BONUS_TERMS,
+                *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *CULTURALLY_TAILORED_NUTRITION_BONUS_TERMS,
+            ]
         )
     )
     watch_scoring.NUTMEV_SCOPE_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.NUTMEV_SCOPE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS]
+            [
+                *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *CULTURALLY_TAILORED_NUTRITION_TERMS,
+            ]
         )
     )
 
@@ -189,7 +229,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "implementation_behavior",
-        FOOD_ENVIRONMENT_POLICY_TERMS,
+        [*FOOD_ENVIRONMENT_POLICY_TERMS, *CULTURALLY_TAILORED_NUTRITION_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -204,9 +244,18 @@ def apply_watch_taxonomy_extensions() -> None:
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
+    _extend_quick_seed_group(
+        "implementation_behavior",
+        2,
+        CULTURALLY_TAILORED_NUTRITION_TERMS,
+    )
     _extend_query_context(
         "obesity_cardiometabolic",
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+    )
+    _extend_query_context(
+        "implementation_behavior",
+        CULTURALLY_TAILORED_NUTRITION_TERMS,
     )
     _extend_scoring_terms()
 
