@@ -64,6 +64,46 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS = [
+    "anti-obesity medication nutrition",
+    "anti-obesity medication nutrition care",
+    "anti-obesity medication dietary counseling",
+    "anti-obesity medication dietary counselling",
+    "obesity pharmacotherapy nutrition care",
+    "obesity pharmacotherapy dietary counseling",
+    "obesity pharmacotherapy dietary counselling",
+    "glp-1 nutrition",
+    "glp-1 dietary counseling",
+    "glp-1 dietary counselling",
+    "glp-1 receptor agonist nutrition",
+    "glp-1 receptor agonist nutrition care",
+    "glp-1 receptor agonist dietary counseling",
+    "glp-1 receptor agonist dietary counselling",
+    "incretin therapy nutrition care",
+    "incretin therapy dietary counseling",
+    "incretin therapy dietary counselling",
+]
+
+OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
+    ("anti-obesity medication nutrition", 18),
+    ("anti-obesity medication nutrition care", 20),
+    ("anti-obesity medication dietary counseling", 18),
+    ("anti-obesity medication dietary counselling", 18),
+    ("obesity pharmacotherapy nutrition care", 20),
+    ("obesity pharmacotherapy dietary counseling", 18),
+    ("obesity pharmacotherapy dietary counselling", 18),
+    ("glp-1 nutrition", 16),
+    ("glp-1 dietary counseling", 16),
+    ("glp-1 dietary counselling", 16),
+    ("glp-1 receptor agonist nutrition", 18),
+    ("glp-1 receptor agonist nutrition care", 20),
+    ("glp-1 receptor agonist dietary counseling", 18),
+    ("glp-1 receptor agonist dietary counselling", 18),
+    ("incretin therapy nutrition care", 18),
+    ("incretin therapy dietary counseling", 16),
+    ("incretin therapy dietary counselling", 16),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -96,6 +136,42 @@ def _extend_category_terms(category: str, terms: Sequence[str]) -> None:
     category_terms[:] = _dedupe_preserve_order([*category_terms, *terms])
 
 
+def _extend_quick_seed_group(category: str, group_index: int, terms: Sequence[str]) -> None:
+    from nutev.global_watch import watch_query_builder
+
+    groups = watch_query_builder.QUICK_MODE_SEED_GROUPS.get(category)
+    if not isinstance(groups, list) or group_index >= len(groups):
+        return
+    group = groups[group_index]
+    if not isinstance(group, list):
+        return
+    group[:] = _dedupe_preserve_order([*group, *terms])
+
+
+def _extend_query_context(category: str, terms: Sequence[str]) -> None:
+    from nutev.global_watch import watch_query_builder
+
+    context_terms = watch_query_builder.CATEGORY_CONTEXT_TERMS.get(category)
+    if not isinstance(context_terms, list):
+        return
+    context_terms[:] = _dedupe_preserve_order([*context_terms, *terms])
+
+
+def _extend_scoring_terms() -> None:
+    from nutev.global_watch import watch_scoring
+
+    watch_scoring.BONUS_TERMS = tuple(
+        _dedupe_preserve_order(
+            [*watch_scoring.BONUS_TERMS, *OBESITY_PHARMACOTHERAPY_BONUS_TERMS]
+        )
+    )
+    watch_scoring.NUTMEV_SCOPE_TERMS = tuple(
+        _dedupe_preserve_order(
+            [*watch_scoring.NUTMEV_SCOPE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS]
+        )
+    )
+
+
 def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
@@ -119,6 +195,20 @@ def apply_watch_taxonomy_extensions() -> None:
         "guidelines_consensus",
         FOOD_ENVIRONMENT_DOCUMENT_TERMS,
     )
+    _extend_category_terms(
+        "obesity_cardiometabolic",
+        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "obesity_cardiometabolic",
+        0,
+        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+    )
+    _extend_query_context(
+        "obesity_cardiometabolic",
+        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+    )
+    _extend_scoring_terms()
 
 
 apply_watch_taxonomy_extensions()
