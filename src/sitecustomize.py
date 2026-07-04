@@ -193,6 +193,23 @@ def _patch_synthesis_defaults() -> None:
     synthesis_module.write_synthesis_outputs = wrapped
 
 
+CKM_KIDNEY_NUTRITION_TERMS = [
+    "chronic kidney disease",
+    "ckd",
+    "diabetic kidney disease",
+    "diabetic nephropathy",
+    "albuminuria",
+    "microalbuminuria",
+    "kidney disease progression",
+    "cardio-kidney-metabolic nutrition",
+    "cardiovascular-kidney-metabolic nutrition",
+    "cardiorenal metabolic syndrome",
+    "kidney protective diet",
+    "renal nutrition",
+    "renal diet",
+]
+
+
 def _patch_query_generation() -> None:
     try:
         from nutev.querypacks import builders as builders_module
@@ -206,9 +223,9 @@ def _patch_query_generation() -> None:
             if provider == "pubmed":
                 ws = builders_module.canonical_workstream(workstream)
                 if ws == "busca2a":
-                    terms = ["therapeutic lifestyle changes", "mediterranean dietary pattern", "dietary approaches to stop hypertension", "DASH eating plan", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "living guideline", "clinical guidance"]
+                    terms = ["therapeutic lifestyle changes", "mediterranean dietary pattern", "dietary approaches to stop hypertension", "DASH eating plan", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "living guideline", "clinical guidance", *CKM_KIDNEY_NUTRITION_TERMS]
                 elif ws == "busca2b":
-                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "nonalcoholic steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "carbohydrate-restricted diet", "carbohydrate restricted diet", "DASH eating plan", "TLC diet", "therapeutic lifestyle changes diet", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "network meta-analysis", "living systematic review", "rapid review", "food environment intervention", "food procurement policy", "healthy food retail", "choice architecture", "healthy default"]
+                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "nonalcoholic steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "carbohydrate-restricted diet", "carbohydrate restricted diet", "DASH eating plan", "TLC diet", "therapeutic lifestyle changes diet", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "network meta-analysis", "living systematic review", "rapid review", "food environment intervention", "food procurement policy", "healthy food retail", "choice architecture", "healthy default", *CKM_KIDNEY_NUTRITION_TERMS]
                 elif ws in {"busca1", "artigo3_framework"}:
                     terms = ["food environment intervention", "retail food environment", "healthy food retail", "healthy food procurement", "food procurement policy", "nutrition standards", "choice architecture", "healthy default", "menu labeling policy", "food policy implementation"]
                 else:
@@ -226,6 +243,7 @@ def _patch_query_generation() -> None:
             if ws == "busca2b":
                 queries.append('("food is medicine" OR "produce prescription" OR "medically tailored meals")')
                 queries.append('("DASH eating plan" OR "TLC diet" OR "therapeutic lifestyle changes diet" OR "heart-healthy diet" OR "cardioprotective diet") AND ("obesity" OR "cardiometabolic" OR "type 2 diabetes" OR "hypertension" OR "dyslipidemia")')
+                queries.append('("chronic kidney disease" OR "diabetic kidney disease" OR "albuminuria" OR "cardiorenal metabolic syndrome") AND ("nutrition" OR "diet" OR "medical nutrition therapy" OR "lifestyle medicine") AND ("type 2 diabetes" OR "hypertension" OR "cardiometabolic")')
                 queries.append('("food environment intervention" OR "healthy food retail" OR "food procurement policy") AND ("implementation" OR "dietary adherence" OR "cardiometabolic")')
             elif ws in {"busca1", "artigo3_framework"}:
                 queries.append('("food environment intervention" OR "healthy food retail" OR "healthy food procurement" OR "food procurement policy" OR "choice architecture") AND ("nutrition" OR "diet" OR "food literacy" OR "lifestyle medicine")')
