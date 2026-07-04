@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from nutev.analysis.relevance import keep_candidate_for_download, score_record
 from nutev.settings import load_json
 
@@ -17,6 +19,14 @@ EMPTY_SCORING_RULES = {
 def _score(title: str, workstream: str = "busca2b") -> float:
     record = score_record({"title": title, "source": "pubmed"}, EMPTY_SCORING_RULES, workstream)
     return float(record["relevance_score"])
+
+
+@pytest.mark.xfail(reason="Current relevance matching uses substring checks for short terms.", strict=True)
+def test_short_terms_do_not_match_inside_unrelated_words() -> None:
+    dash_false_positive = _score("Dashboard for nutrition evidence monitoring")
+    dash_baseline = _score("Nutrition evidence monitoring")
+
+    assert dash_false_positive == dash_baseline
 
 
 def test_food_prescription_variants_gain_busca2b_priority() -> None:
