@@ -1,0 +1,99 @@
+{
+  "version_note": "Focused NutMEV query expansion for group-based lifestyle, diabetes, obesity, and nutrition care delivery. Loaded after keyword_taxonomy.json without altering raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "group_care_delivery_clinical_variants": [
+        "shared medical appointment for diabetes",
+        "shared medical appointments for diabetes",
+        "shared medical appointment for obesity",
+        "shared medical appointments for obesity",
+        "shared medical appointment for weight management",
+        "shared medical appointments for weight management",
+        "group visit for weight management",
+        "group visits for weight management",
+        "group visit for cardiometabolic risk",
+        "group visits for cardiometabolic risk",
+        "group visit for lifestyle medicine",
+        "group visits for lifestyle medicine",
+        "group visit for medical nutrition therapy",
+        "group visits for medical nutrition therapy",
+        "group medical visit for diabetes",
+        "group medical visits for diabetes",
+        "group medical visit for obesity",
+        "group medical visits for obesity",
+        "group medical visit for weight management",
+        "group medical visits for weight management",
+        "group-based diabetes prevention program",
+        "group based diabetes prevention program",
+        "group-based weight management",
+        "group based weight management",
+        "group-based medical nutrition therapy",
+        "group based medical nutrition therapy",
+        "group nutrition visit",
+        "group nutrition visits",
+        "group dietitian visit",
+        "group dietitian visits"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "shared medical appointment for diabetes",
+        "shared medical appointment for obesity",
+        "shared medical appointment for weight management",
+        "group visit for cardiometabolic risk",
+        "group visit for lifestyle medicine",
+        "group visit for medical nutrition therapy",
+        "group medical visit for diabetes",
+        "group medical visit for obesity",
+        "group medical visit for weight management",
+        "group-based diabetes prevention program",
+        "group based diabetes prevention program",
+        "group-based weight management",
+        "group based weight management",
+        "group-based medical nutrition therapy",
+        "group based medical nutrition therapy",
+        "group nutrition visit",
+        "group nutrition visits",
+        "group dietitian visit",
+        "group dietitian visits"
+      ],
+      "web_query_hints": [
+        "shared medical appointment diabetes nutrition trial",
+        "shared medical appointment obesity weight management",
+        "shared medical appointment cardiometabolic risk",
+        "group medical visit diabetes lifestyle intervention",
+        "group medical visit obesity nutrition",
+        "group visit weight management randomized trial",
+        "group visit medical nutrition therapy diabetes",
+        "group-based diabetes prevention program diet",
+        "group-based weight management systematic review",
+        "group nutrition visit cardiometabolic risk"
+      ],
+      "document_terms": [
+        "group visit trial",
+        "group medical visit trial",
+        "shared medical appointment trial",
+        "shared medical appointment systematic review",
+        "group-based intervention systematic review",
+        "group based intervention systematic review"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "shared medical appointment for diabetes",
+        "group visit for medical nutrition therapy",
+        "group nutrition visit",
+        "group dietitian visit",
+        "group-based medical nutrition therapy",
+        "group based medical nutrition therapy"
+      ],
+      "web_query_hints": [
+        "group nutrition visit framework",
+        "group dietitian visit implementation framework",
+        "shared medical appointment nutrition framework"
+      ]
+    }
+  }
+}
