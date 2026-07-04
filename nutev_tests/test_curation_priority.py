@@ -54,3 +54,25 @@ def test_curated_priority_still_requires_minimum_operational_score() -> None:
     }
 
     assert _is_prioritized(row) is False
+
+
+def test_curated_priority_uses_term_boundaries_for_short_terms() -> None:
+    row = {
+        "title": "An unrelated dashboard usability report",
+        "abstract": "Operational dashboard metrics without nutrition evidence.",
+        "relevance_score": 9,
+        "editorial_priority_tier": "standard",
+    }
+
+    assert _is_prioritized(row) is False
+
+
+def test_curated_priority_keeps_valid_dash_diet_match() -> None:
+    row = {
+        "title": "DASH diet adherence and blood pressure in adults",
+        "abstract": "A systematic review of dietary approaches to stop hypertension.",
+        "relevance_score": 9,
+        "editorial_priority_tier": "standard",
+    }
+
+    assert _is_prioritized(row) is True
