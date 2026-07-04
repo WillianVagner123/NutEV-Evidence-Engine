@@ -35,10 +35,10 @@ def test_curated_priority_matches_behavior_change_implementation_terms() -> None
     assert _is_prioritized(row) is True
 
 
-def test_curated_priority_matches_steatotic_liver_guideline_terms() -> None:
+def test_curated_priority_matches_steatotic_liver_terms() -> None:
     row = {
-        "title": "Clinical practice guideline for metabolic dysfunction-associated steatotic liver disease",
-        "abstract": "Nutrition and lifestyle intervention recommendations for adults with cardiometabolic risk.",
+        "title": "Dietary pattern adherence in adults with MASH",
+        "abstract": "A nutrition-focused cohort of metabolic dysfunction-associated steatotic liver disease.",
         "relevance_score": 8,
         "editorial_priority_tier": "standard",
     }
