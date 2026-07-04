@@ -1,0 +1,105 @@
+{
+  "version_note": "2026-07-04 food access and food-as-medicine query supplement. Merged at runtime by nutev.settings.load_json without modifying the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food is medicine intervention",
+        "food as medicine intervention",
+        "produce prescription intervention",
+        "fruit and vegetable prescription",
+        "grocery prescription",
+        "grocery prescriptions",
+        "healthy food box",
+        "healthy food boxes",
+        "food prescription program",
+        "healthy food incentive",
+        "healthy food incentives",
+        "nutrition incentive",
+        "nutrition incentives",
+        "produce voucher",
+        "produce vouchers",
+        "fruit and vegetable voucher",
+        "fruit and vegetable vouchers",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy program",
+        "food farmacy programme",
+        "medically tailored nutrition",
+        "medically tailored food packages"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "produce prescription intervention",
+        "medically tailored food referral",
+        "healthy food box",
+        "healthy food boxes",
+        "grocery prescription",
+        "grocery prescriptions",
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food farmacy program",
+        "food farmacy programme",
+        "nutrition assistance program",
+        "nutrition assistance programs",
+        "healthy food incentive",
+        "healthy food incentives",
+        "nutrition incentive",
+        "nutrition incentives",
+        "produce voucher",
+        "produce vouchers",
+        "fruit and vegetable voucher",
+        "fruit and vegetable vouchers",
+        "medically tailored nutrition",
+        "medically tailored food package",
+        "medically tailored food packages"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food is medicine intervention",
+        "produce prescription intervention",
+        "grocery prescription",
+        "grocery prescriptions",
+        "healthy food box",
+        "healthy food boxes",
+        "food pharmacy program",
+        "food farmacy program",
+        "healthy food incentive",
+        "nutrition incentive",
+        "produce voucher",
+        "fruit and vegetable voucher",
+        "medically tailored nutrition",
+        "medically tailored food package",
+        "medically tailored food packages",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food is medicine intervention",
+        "produce prescription intervention",
+        "grocery prescription intervention",
+        "healthy food box intervention",
+        "food pharmacy intervention",
+        "food farmacy intervention",
+        "healthy food incentive intervention",
+        "nutrition incentive intervention",
+        "produce voucher intervention",
+        "fruit and vegetable voucher intervention",
+        "medically tailored nutrition intervention",
+        "medically tailored food package intervention",
+        "food is medicine referral",
+        "produce prescription referral",
+        "medically tailored food referral"
+      ]
+    }
+  }
+}
