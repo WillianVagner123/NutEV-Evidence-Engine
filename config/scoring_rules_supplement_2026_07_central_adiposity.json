@@ -1,0 +1,40 @@
+{
+  "version_note": "2026-07 scoring supplement for central adiposity and waist-ratio cardiometabolic relevance.",
+  "keyword_points": {
+    "abdominal obesity": 3,
+    "central adiposity": 3,
+    "abdominal adiposity": 3,
+    "visceral adiposity": 3,
+    "visceral fat": 2,
+    "abdominal fat": 2,
+    "ectopic fat": 2,
+    "waist-to-height ratio": 3,
+    "waist to height ratio": 3,
+    "waist-height ratio": 3,
+    "waist-to-hip ratio": 3,
+    "waist to hip ratio": 3,
+    "waist hip ratio": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "abdominal obesity": 4,
+      "central adiposity": 4,
+      "visceral adiposity": 4,
+      "visceral fat": 3,
+      "waist-to-height ratio": 4,
+      "waist-height ratio": 4,
+      "waist-to-hip ratio": 4,
+      "waist hip ratio": 4
+    },
+    "busca2b": {
+      "abdominal obesity": 4,
+      "central adiposity": 4,
+      "visceral adiposity": 4,
+      "visceral fat": 3,
+      "waist-to-height ratio": 4,
+      "waist-height ratio": 4,
+      "waist-to-hip ratio": 4,
+      "waist hip ratio": 4
+    }
+  }
+}
