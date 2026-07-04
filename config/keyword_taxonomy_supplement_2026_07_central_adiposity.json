@@ -1,0 +1,95 @@
+{
+  "version_note": "2026-07 central adiposity cardiometabolic supplement for NutMEV search recall with scoped workstream targeting.",
+  "clinical": {
+    "obesity": [
+      "abdominal obesity",
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "visceral fat",
+      "abdominal fat",
+      "ectopic fat",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio",
+      "waist hip ratio"
+    ],
+    "cvd": [
+      "cardiometabolic health",
+      "cardiometabolic disease",
+      "cardiometabolic diseases",
+      "central adiposity",
+      "visceral adiposity",
+      "visceral fat"
+    ],
+    "metabolic_syndrome": [
+      "abdominal obesity",
+      "central adiposity",
+      "visceral adiposity",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio",
+      "waist hip ratio"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "visceral fat",
+      "abdominal fat",
+      "ectopic fat",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio",
+      "waist hip ratio"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "abdominal obesity",
+        "central adiposity",
+        "visceral adiposity",
+        "visceral fat",
+        "waist-to-height ratio",
+        "waist-height ratio",
+        "waist-to-hip ratio",
+        "waist hip ratio"
+      ],
+      "web_query_hints": [
+        "central adiposity guideline",
+        "visceral adiposity consensus",
+        "abdominal obesity guideline",
+        "waist-to-height ratio guideline",
+        "waist-to-hip ratio cardiometabolic risk"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "abdominal obesity",
+        "central adiposity",
+        "visceral adiposity",
+        "visceral fat",
+        "waist-to-height ratio",
+        "waist-height ratio",
+        "waist-to-hip ratio",
+        "waist hip ratio"
+      ],
+      "web_query_hints": [
+        "central adiposity intervention",
+        "visceral adiposity intervention",
+        "abdominal obesity lifestyle intervention",
+        "waist-to-height ratio trial",
+        "waist-to-hip ratio dietary intervention"
+      ]
+    }
+  }
+}
