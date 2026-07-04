@@ -1,0 +1,22 @@
+{
+  "version_note": "2026-07 sports-performance noise downranking for NutMEV searches",
+  "keyword_points": {
+    "sports performance": -6,
+    "athletic performance": -6,
+    "exercise performance": -5,
+    "sport nutrition": -5,
+    "sports nutrition": -5,
+    "ergogenic": -6,
+    "bodybuilding": -7,
+    "body builder": -7,
+    "bodybuilders": -7,
+    "muscle hypertrophy": -5,
+    "resistance-trained": -5,
+    "resistance trained": -5,
+    "trained athletes": -5,
+    "competitive athletes": -5,
+    "elite athletes": -5,
+    "athlete performance": -5,
+    "body composition in athletes": -5
+  }
+}
