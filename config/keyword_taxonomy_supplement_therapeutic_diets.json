@@ -1,0 +1,82 @@
+{
+  "version_note": "Adds a bounded therapeutic diet strategy block for obesity, type 2 diabetes, MASLD/NAFLD, hypertension and cardiometabolic risk. Terms are intentionally diet-specific so broad lifestyle queries remain anchored to NutMEV nutrition scope.",
+  "global": {
+    "diet_patterns": {
+      "therapeutic_weight_loss": [
+        "meal replacement",
+        "meal replacements",
+        "partial meal replacement",
+        "partial meal replacements",
+        "total diet replacement",
+        "total diet replacements",
+        "formula diet",
+        "formula diets",
+        "very low energy diet",
+        "very-low-energy diet",
+        "low energy diet",
+        "low-energy diet",
+        "very low calorie diet",
+        "very-low-calorie diet",
+        "low calorie diet",
+        "low-calorie diet",
+        "calorie restriction",
+        "caloric restriction",
+        "energy-restricted diet",
+        "energy restricted diet"
+      ],
+      "carbohydrate_restriction": [
+        "low-carbohydrate diet",
+        "low carbohydrate diet",
+        "low-carb diet",
+        "low carb diet",
+        "carbohydrate-restricted diet",
+        "carbohydrate restricted diet",
+        "moderate carbohydrate diet",
+        "reduced carbohydrate diet",
+        "ketogenic diet",
+        "very low carbohydrate diet",
+        "very-low-carbohydrate diet"
+      ],
+      "diet_quality_interventions": [
+        "diet quality intervention",
+        "diet quality interventions",
+        "healthy dietary pattern intervention",
+        "healthy dietary pattern interventions",
+        "whole diet intervention",
+        "whole-diet intervention",
+        "dietary pattern intervention",
+        "dietary pattern interventions",
+        "structured dietary intervention",
+        "structured dietary interventions"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "meal replacement guideline",
+        "total diet replacement guideline",
+        "very low energy diet guideline",
+        "low carbohydrate diet guideline",
+        "carbohydrate restricted diet consensus",
+        "dietary intervention obesity guideline",
+        "dietary intervention type 2 diabetes guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "meal replacement randomized trial",
+        "meal replacement systematic review",
+        "total diet replacement trial",
+        "total diet replacement systematic review",
+        "very low energy diet trial",
+        "very low energy diet systematic review",
+        "low carbohydrate diet randomized trial",
+        "low carbohydrate diet systematic review",
+        "carbohydrate restricted diet meta-analysis",
+        "dietary pattern intervention trial",
+        "structured dietary intervention adherence"
+      ]
+    }
+  }
+}
