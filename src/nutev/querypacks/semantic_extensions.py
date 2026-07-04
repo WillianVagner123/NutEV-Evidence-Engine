@@ -100,6 +100,46 @@ INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS = [
     "diabetes prevention programme",
 ]
 
+GROUP_VISIT_SHARED_CARE_TERMS = [
+    "group lifestyle intervention",
+    "group-based lifestyle intervention",
+    "group based lifestyle intervention",
+    "group nutrition counseling",
+    "group nutrition counselling",
+    "group dietitian visit",
+    "group dietitian visits",
+    "group medical visit",
+    "group medical visits",
+    "shared medical appointment",
+    "shared medical appointments",
+    "shared medical visit",
+    "shared medical visits",
+    "lifestyle medicine group visit",
+    "diabetes group visit",
+    "diabetes group visits",
+    "obesity group visit",
+    "obesity group visits",
+    "weight management group visit",
+    "weight management group visits",
+]
+
+GROUP_VISIT_SHARED_CARE_DOCUMENT_TERMS = [
+    "group lifestyle intervention trial",
+    "group-based lifestyle intervention trial",
+    "group based lifestyle intervention trial",
+    "group nutrition counseling program",
+    "group nutrition counselling programme",
+    "group dietitian visit program",
+    "group dietitian visits program",
+    "shared medical appointment program",
+    "shared medical appointments program",
+    "shared medical visit program",
+    "lifestyle medicine group visit program",
+    "diabetes group visit program",
+    "obesity group visit program",
+    "weight management group visit program",
+]
+
 METABOLIC_REMISSION_MAINTENANCE_TERMS = [
     "type 2 diabetes remission",
     "diabetes remission",
@@ -608,6 +648,15 @@ def apply_semantic_extensions() -> None:
             terms=INTENSIVE_LIFESTYLE_PROGRAM_TERMS,
             document_terms=INTENSIVE_LIFESTYLE_PROGRAM_DOCUMENT_TERMS,
         )
+        _extend_semantic_block(
+            block_name,
+            terms=GROUP_VISIT_SHARED_CARE_TERMS,
+            document_terms=GROUP_VISIT_SHARED_CARE_DOCUMENT_TERMS,
+        )
+    _prioritize_semantic_block(
+        "implementation_science",
+        {"busca2b": 5, "a3": 4, "artigo3_framework": 4},
+    )
     for block_name in (
         "adherence_persistence",
         "cardiometabolic_precision",
