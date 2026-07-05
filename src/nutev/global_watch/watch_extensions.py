@@ -104,6 +104,77 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+MASLD_NUTRITION_CARE_TERMS = [
+    "MASLD nutrition",
+    "MASLD nutrition care",
+    "MASLD dietary intervention",
+    "MASLD lifestyle intervention",
+    "MASLD weight management",
+    "MASLD Mediterranean diet",
+    "MASH nutrition",
+    "MASH dietary intervention",
+    "MASH lifestyle intervention",
+    "NAFLD nutrition",
+    "NAFLD nutrition care",
+    "NAFLD dietary intervention",
+    "NAFLD lifestyle intervention",
+    "NAFLD weight management",
+    "NAFLD Mediterranean diet",
+    "NASH nutrition",
+    "NASH dietary intervention",
+    "NASH lifestyle intervention",
+    "steatotic liver disease nutrition",
+    "steatotic liver disease dietary intervention",
+    "steatotic liver disease lifestyle intervention",
+    "hepatic steatosis dietary intervention",
+]
+
+MASLD_GUIDANCE_TERMS = [
+    "MASLD clinical practice guideline",
+    "MASLD practice guidance",
+    "MASLD consensus statement",
+    "MASH clinical practice guideline",
+    "MASH practice guidance",
+    "MASH consensus statement",
+    "NAFLD clinical practice guideline",
+    "NAFLD practice guidance",
+    "NAFLD consensus statement",
+    "NASH clinical practice guideline",
+    "NASH practice guidance",
+    "NASH consensus statement",
+    "steatotic liver disease guideline",
+    "steatotic liver disease practice guidance",
+    "metabolic dysfunction-associated steatotic liver disease guideline",
+    "metabolic dysfunction associated steatotic liver disease guideline",
+]
+
+MASLD_NUTRITION_BONUS_TERMS = [
+    ("MASLD clinical practice guideline", 24),
+    ("MASLD practice guidance", 22),
+    ("MASLD consensus statement", 22),
+    ("MASH clinical practice guideline", 24),
+    ("MASH practice guidance", 22),
+    ("NAFLD clinical practice guideline", 22),
+    ("NAFLD practice guidance", 20),
+    ("NASH clinical practice guideline", 22),
+    ("NASH practice guidance", 20),
+    ("steatotic liver disease guideline", 22),
+    ("steatotic liver disease practice guidance", 20),
+    ("MASLD nutrition care", 18),
+    ("MASLD dietary intervention", 18),
+    ("MASLD lifestyle intervention", 18),
+    ("MASLD Mediterranean diet", 16),
+    ("MASH dietary intervention", 18),
+    ("NAFLD nutrition care", 16),
+    ("NAFLD dietary intervention", 16),
+    ("NAFLD lifestyle intervention", 16),
+    ("NAFLD Mediterranean diet", 16),
+    ("NASH dietary intervention", 16),
+    ("steatotic liver disease nutrition", 16),
+    ("steatotic liver disease dietary intervention", 16),
+    ("hepatic steatosis dietary intervention", 14),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -162,12 +233,21 @@ def _extend_scoring_terms() -> None:
 
     watch_scoring.BONUS_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.BONUS_TERMS, *OBESITY_PHARMACOTHERAPY_BONUS_TERMS]
+            [
+                *watch_scoring.BONUS_TERMS,
+                *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *MASLD_NUTRITION_BONUS_TERMS,
+            ]
         )
     )
     watch_scoring.NUTMEV_SCOPE_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.NUTMEV_SCOPE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS]
+            [
+                *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *MASLD_NUTRITION_CARE_TERMS,
+                *MASLD_GUIDANCE_TERMS,
+            ]
         )
     )
 
@@ -193,20 +273,37 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        [*FOOD_ENVIRONMENT_DOCUMENT_TERMS, *MASLD_GUIDANCE_TERMS],
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *MASLD_NUTRITION_CARE_TERMS],
+    )
+    _extend_category_terms(
+        "diet_patterns",
+        MASLD_NUTRITION_CARE_TERMS,
     )
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
+    _extend_quick_seed_group(
+        "obesity_cardiometabolic",
+        2,
+        [*MASLD_NUTRITION_CARE_TERMS, *MASLD_GUIDANCE_TERMS],
+    )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *MASLD_NUTRITION_CARE_TERMS],
+    )
+    _extend_query_context(
+        "diet_patterns",
+        MASLD_NUTRITION_CARE_TERMS,
+    )
+    _extend_query_context(
+        "guidelines_consensus",
+        MASLD_GUIDANCE_TERMS,
     )
     _extend_scoring_terms()
 
