@@ -1,0 +1,101 @@
+{
+  "version_note": "Adds CKM and anti-obesity medication nutrition terms for cardiometabolic obesity workstreams without modifying the base taxonomy.",
+  "clinical": {
+    "obesity": [
+      "anti-obesity medication nutrition",
+      "anti-obesity medication dietary counseling",
+      "obesity pharmacotherapy nutrition care",
+      "obesity pharmacotherapy dietary counseling",
+      "glp-1 nutrition",
+      "glp-1 dietary counseling",
+      "glp-1 receptor agonist nutrition",
+      "glp-1 receptor agonist dietary counseling",
+      "incretin therapy nutrition care",
+      "incretin therapy dietary counseling"
+    ],
+    "cvd": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular-kidney-metabolic health",
+      "cardiovascular kidney metabolic health",
+      "cardiovascular-kidney-metabolic risk",
+      "cardiovascular kidney metabolic risk",
+      "cardiovascular-kidney-metabolic nutrition",
+      "cardiovascular kidney metabolic nutrition",
+      "cardio-kidney-metabolic syndrome",
+      "cardio kidney metabolic syndrome",
+      "cardio-kidney-metabolic nutrition",
+      "cardio kidney metabolic nutrition",
+      "cardiorenal metabolic syndrome",
+      "CKM syndrome",
+      "CKM health",
+      "CKM risk",
+      "CKM nutrition"
+    ]
+  },
+  "global": {
+    "nutrition_domains": {
+      "obesity_pharmacotherapy_nutrition": [
+        "anti-obesity medication nutrition",
+        "anti-obesity medication dietary counseling",
+        "obesity pharmacotherapy nutrition care",
+        "obesity pharmacotherapy dietary counseling",
+        "glp-1 nutrition",
+        "glp-1 dietary counseling",
+        "glp-1 receptor agonist nutrition",
+        "glp-1 receptor agonist dietary counseling",
+        "incretin therapy nutrition care",
+        "incretin therapy dietary counseling"
+      ],
+      "ckm_nutrition": [
+        "cardiovascular-kidney-metabolic nutrition",
+        "cardiovascular kidney metabolic nutrition",
+        "cardio-kidney-metabolic nutrition",
+        "cardio kidney metabolic nutrition",
+        "CKM nutrition"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "cardio-kidney-metabolic syndrome",
+        "cardio kidney metabolic syndrome",
+        "cardiorenal metabolic syndrome",
+        "CKM syndrome"
+      ],
+      "web_query_hints": [
+        "CKM nutrition guideline",
+        "cardiovascular-kidney-metabolic nutrition guideline",
+        "cardio-kidney-metabolic nutrition guideline",
+        "anti-obesity medication nutrition guideline",
+        "glp-1 nutrition guidance",
+        "glp-1 receptor agonist dietary counseling"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic risk",
+        "cardiovascular kidney metabolic risk",
+        "CKM risk",
+        "anti-obesity medication nutrition",
+        "obesity pharmacotherapy nutrition care",
+        "glp-1 nutrition",
+        "glp-1 dietary counseling",
+        "incretin therapy nutrition care"
+      ],
+      "web_query_hints": [
+        "anti-obesity medication nutrition intervention",
+        "anti-obesity medication dietary counseling",
+        "obesity pharmacotherapy nutrition intervention",
+        "glp-1 nutrition intervention",
+        "glp-1 dietary adherence",
+        "glp-1 weight maintenance",
+        "incretin therapy nutrition intervention",
+        "CKM nutrition intervention"
+      ]
+    }
+  }
+}
