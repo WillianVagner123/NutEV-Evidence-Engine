@@ -1,12 +1,27 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic and diet-quality prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
     "cardiorenal metabolic syndrome": 3,
     "cardio-renal-metabolic syndrome": 3,
     "cardiorenal metabolic health": 3,
-    "cardiorenal metabolic risk": 3
+    "cardiorenal metabolic risk": 3,
+    "diet quality score": 3,
+    "diet quality index": 3,
+    "diet quality indices": 3,
+    "healthy eating index": 3,
+    "alternative healthy eating index": 3,
+    "ahei": 2,
+    "mediterranean diet score": 3,
+    "mediterranean diet adherence score": 3,
+    "dash score": 3,
+    "dash diet score": 3,
+    "plant-based diet index": 3,
+    "healthy plant-based diet index": 3,
+    "unhealthy plant-based diet index": 2,
+    "dietary inflammatory index": 2,
+    "empirical dietary inflammatory pattern": 2
   },
   "workstream_bonus": {
     "busca2a": {
@@ -15,7 +30,15 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "diet quality score": 4,
+      "diet quality index": 4,
+      "healthy eating index": 4,
+      "alternative healthy eating index": 4,
+      "mediterranean diet score": 4,
+      "dash diet score": 4,
+      "plant-based diet index": 4,
+      "healthy plant-based diet index": 4
     },
     "busca2b": {
       "ckm health": 4,
@@ -23,7 +46,22 @@
       "cardiorenal metabolic syndrome": 4,
       "cardio-renal-metabolic syndrome": 4,
       "cardiorenal metabolic health": 4,
-      "cardiorenal metabolic risk": 4
+      "cardiorenal metabolic risk": 4,
+      "diet quality score": 5,
+      "diet quality index": 5,
+      "diet quality indices": 5,
+      "healthy eating index": 5,
+      "alternative healthy eating index": 5,
+      "ahei": 3,
+      "mediterranean diet score": 5,
+      "mediterranean diet adherence score": 5,
+      "dash score": 5,
+      "dash diet score": 5,
+      "plant-based diet index": 5,
+      "healthy plant-based diet index": 5,
+      "unhealthy plant-based diet index": 3,
+      "dietary inflammatory index": 3,
+      "empirical dietary inflammatory pattern": 3
     }
   }
 }
