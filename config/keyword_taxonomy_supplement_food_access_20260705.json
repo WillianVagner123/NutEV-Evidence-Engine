@@ -1,0 +1,83 @@
+{
+  "version_note": "2026-07-05 food access and medically tailored nutrition search supplement",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy programme",
+        "medically tailored nutrition",
+        "medically tailored nutrition program",
+        "medically tailored nutrition programme",
+        "medically tailored food",
+        "medically tailored foods",
+        "medically tailored food referral",
+        "medically tailored groceries program",
+        "medically tailored groceries programme",
+        "healthy food box",
+        "healthy food box program",
+        "healthy food box programme",
+        "produce box",
+        "produce box program",
+        "produce box programme",
+        "fruit and vegetable box",
+        "fruit and vegetable box program",
+        "fruit and vegetable box programme",
+        "healthy food delivery",
+        "healthy food delivery program"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food farmacy referral",
+        "food farmacy intervention",
+        "medically tailored nutrition referral",
+        "medically tailored food referral",
+        "medically tailored grocery referral",
+        "healthy food box intervention",
+        "produce box intervention",
+        "fruit and vegetable box intervention",
+        "healthy food delivery program",
+        "community-supported food program",
+        "community supported food program",
+        "community-supported food programme",
+        "community supported food programme"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food farmacy program",
+        "medically tailored nutrition",
+        "medically tailored food referral",
+        "healthy food box program",
+        "produce box program",
+        "fruit and vegetable box program",
+        "healthy food delivery program",
+        "community-supported food program"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food farmacy intervention",
+        "medically tailored nutrition intervention",
+        "medically tailored food referral",
+        "healthy food box intervention",
+        "produce box intervention",
+        "fruit and vegetable box intervention",
+        "healthy food delivery intervention",
+        "community-supported food program"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "medically tailored nutrition framework",
+        "food farmacy evaluation",
+        "healthy food box evaluation",
+        "produce box evaluation",
+        "community-supported food program evaluation"
+      ]
+    }
+  }
+}
