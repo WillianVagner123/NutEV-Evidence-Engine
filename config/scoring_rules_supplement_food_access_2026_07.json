@@ -1,0 +1,38 @@
+{
+  "version_note": "2026-07 scoring support for food access and nutrition prescription expansion",
+  "keyword_points": {
+    "fresh food prescription": 4,
+    "fruit and vegetable prescription program": 4,
+    "produce prescription intervention": 4,
+    "healthy food box": 3,
+    "healthy food boxes": 3,
+    "healthy grocery prescription": 4,
+    "nutrition prescription program": 4,
+    "food resource referral": 3,
+    "food resource navigation": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "fresh food prescription": 5,
+      "fruit and vegetable prescription program": 5,
+      "produce prescription intervention": 5,
+      "healthy food box": 4,
+      "healthy food boxes": 4,
+      "healthy grocery prescription": 5,
+      "nutrition prescription program": 5,
+      "food resource referral": 4,
+      "food resource navigation": 4
+    },
+    "busca2b": {
+      "fresh food prescription": 5,
+      "fruit and vegetable prescription program": 5,
+      "produce prescription intervention": 5,
+      "healthy food box": 4,
+      "healthy food boxes": 4,
+      "healthy grocery prescription": 5,
+      "nutrition prescription program": 5,
+      "food resource referral": 4,
+      "food resource navigation": 4
+    }
+  }
+}
