@@ -1,5 +1,5 @@
 {
-  "version_note": "Focused NutMEV supplement for cardiometabolic dietary patterns. Loaded after keyword_taxonomy.json and keyword_taxonomy_supplement.json; appends terms without replacing the base taxonomy.",
+  "version_note": "Focused NutMEV supplement for cardiometabolic dietary patterns and diet-quality indices. Loaded after keyword_taxonomy.json and keyword_taxonomy_supplement.json; appends terms without replacing the base taxonomy.",
   "global": {
     "diet_patterns": {
       "cardiometabolic_dietary_patterns": [
@@ -22,6 +22,24 @@
         "dash dietary pattern",
         "low-sodium dash diet",
         "low sodium dash diet"
+      ],
+      "diet_quality_indices": [
+        "diet quality score",
+        "diet quality index",
+        "diet quality indices",
+        "healthy eating index",
+        "alternative healthy eating index",
+        "ahei",
+        "mediterranean diet score",
+        "mediterranean diet adherence score",
+        "dash score",
+        "dash diet score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "unhealthy plant-based diet index",
+        "dietary inflammatory index",
+        "empirical dietary inflammatory pattern",
+        "dietary approaches to stop hypertension score"
       ]
     }
   },
@@ -36,7 +54,14 @@
         "dietary portfolio",
         "portfolio dietary pattern",
         "dash-sodium diet",
-        "dash dietary pattern"
+        "dash dietary pattern",
+        "diet quality score",
+        "healthy eating index",
+        "alternative healthy eating index",
+        "mediterranean diet score",
+        "dash diet score",
+        "plant-based diet index",
+        "healthy plant-based diet index"
       ],
       "web_query_hints": [
         "portfolio diet guideline",
@@ -46,7 +71,10 @@
         "ldl-lowering diet guideline",
         "dash-sodium diet guideline",
         "dash dietary pattern hypertension guideline",
-        "heart-healthy diet scientific statement"
+        "heart-healthy diet scientific statement",
+        "diet quality cardiometabolic guideline",
+        "healthy eating index cardiometabolic guideline",
+        "plant-based diet index cardiometabolic guideline"
       ],
       "document_terms": [
         "scientific statement",
@@ -68,7 +96,18 @@
         "dietary portfolio for cholesterol lowering",
         "dash-sodium diet",
         "dash dietary pattern",
-        "low-sodium dash diet"
+        "low-sodium dash diet",
+        "diet quality score",
+        "diet quality index",
+        "healthy eating index",
+        "alternative healthy eating index",
+        "mediterranean diet score",
+        "mediterranean diet adherence score",
+        "dash score",
+        "dash diet score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "dietary inflammatory index"
       ],
       "web_query_hints": [
         "portfolio diet randomized trial",
@@ -79,7 +118,12 @@
         "ldl-lowering diet randomized trial",
         "dash-sodium diet trial",
         "dash dietary pattern blood pressure trial",
-        "heart-healthy diet cardiometabolic trial"
+        "heart-healthy diet cardiometabolic trial",
+        "diet quality score cardiometabolic systematic review",
+        "healthy eating index cardiometabolic outcomes trial",
+        "alternative healthy eating index cardiometabolic systematic review",
+        "plant-based diet index cardiometabolic outcomes",
+        "mediterranean diet score metabolic syndrome review"
       ],
       "document_terms": [
         "randomized trial",
