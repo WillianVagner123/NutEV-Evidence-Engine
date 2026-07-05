@@ -518,6 +518,46 @@ FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS = [
     "clinical-community food referral program",
 ]
 
+FOOD_SELF_MANAGEMENT_NAVIGATION_TERMS = [
+    "food self-management",
+    "food self management",
+    "dietary self-management",
+    "dietary self management",
+    "nutrition self-management",
+    "nutrition self management",
+    "food resource navigator",
+    "food resource navigation",
+    "community resource navigation nutrition",
+    "community resource referral nutrition",
+    "community health worker nutrition counseling",
+    "community health worker nutrition counselling",
+    "community health worker lifestyle intervention",
+    "patient navigation nutrition",
+    "care navigation nutrition",
+    "link worker nutrition",
+    "social prescribing nutrition",
+    "social prescribing diet",
+    "social prescribing food",
+    "social prescribing healthy eating",
+]
+
+FOOD_SELF_MANAGEMENT_NAVIGATION_DOCUMENT_TERMS = [
+    "food self-management intervention",
+    "dietary self-management intervention",
+    "nutrition self-management intervention",
+    "food resource navigation program",
+    "food resource navigation intervention",
+    "food resource navigation implementation",
+    "community resource navigation nutrition program",
+    "community health worker nutrition intervention",
+    "community health worker nutrition counseling program",
+    "community health worker nutrition counselling program",
+    "patient navigation nutrition program",
+    "care navigation nutrition program",
+    "social prescribing nutrition program",
+    "social prescribing healthy eating program",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -650,6 +690,17 @@ def apply_semantic_extensions() -> None:
         terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
         document_terms=FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS,
     )
+    for block_name in (
+        "adherence_persistence",
+        "food_literacy_agency",
+        "implementation_science",
+        "equity_access",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=FOOD_SELF_MANAGEMENT_NAVIGATION_TERMS,
+            document_terms=FOOD_SELF_MANAGEMENT_NAVIGATION_DOCUMENT_TERMS,
+        )
     for block_name in ("equity_access", "food_prescription_programs"):
         _extend_semantic_block(
             block_name,
