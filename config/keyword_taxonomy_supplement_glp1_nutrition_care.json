@@ -1,0 +1,70 @@
+{
+  "version_note": "2026-07 NutMEV supplement: expands nutrition-focused retrieval for anti-obesity pharmacotherapy, GLP-1/incretin therapy, protein adequacy, and lean mass preservation without changing the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "anti_obesity_pharmacotherapy_nutrition": [
+        "anti-obesity medication nutrition",
+        "anti-obesity medication dietary counseling",
+        "anti-obesity medication dietary counselling",
+        "anti-obesity medication nutrition care",
+        "obesity pharmacotherapy nutrition care",
+        "obesity pharmacotherapy dietary counseling",
+        "obesity pharmacotherapy dietary counselling",
+        "incretin therapy nutrition care",
+        "incretin therapy dietary counseling",
+        "incretin therapy dietary counselling",
+        "glp-1 nutrition",
+        "glp-1 dietary counseling",
+        "glp-1 dietary counselling",
+        "glp-1 receptor agonist nutrition",
+        "glp-1 receptor agonist dietary counseling",
+        "glp-1 receptor agonist dietary counselling",
+        "semaglutide nutrition counseling",
+        "semaglutide nutrition counselling",
+        "tirzepatide nutrition counseling",
+        "tirzepatide nutrition counselling"
+      ],
+      "lean_mass_protein_preservation": [
+        "lean mass preservation",
+        "fat-free mass preservation",
+        "fat free mass preservation",
+        "muscle preservation",
+        "muscle mass preservation",
+        "sarcopenic obesity",
+        "sarcopenic overweight",
+        "body composition change",
+        "body composition changes",
+        "protein adequacy",
+        "protein distribution",
+        "protein quality",
+        "dietary protein adequacy",
+        "high-protein diet",
+        "high protein diet",
+        "protein-enriched diet",
+        "protein enriched diet"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "anti-obesity medication nutrition guideline",
+        "glp-1 nutrition guidance",
+        "incretin therapy nutrition care",
+        "obesity pharmacotherapy nutrition care",
+        "lean mass preservation obesity treatment",
+        "protein adequacy obesity treatment"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "glp-1 dietary counseling trial",
+        "glp-1 nutrition intervention",
+        "anti-obesity medication dietary adherence",
+        "obesity pharmacotherapy nutrition intervention",
+        "lean mass preservation weight loss trial",
+        "protein adequacy weight loss maintenance"
+      ]
+    }
+  }
+}
