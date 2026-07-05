@@ -1,0 +1,46 @@
+{
+  "version_note": "2026-07 food access and nutrition prescription expansion for NutMEV recurring agent",
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "fresh food prescription",
+        "fruit and vegetable prescription program",
+        "produce prescription intervention",
+        "healthy food box",
+        "healthy food boxes",
+        "healthy grocery prescription",
+        "nutrition prescription program",
+        "food resource referral",
+        "food resource navigation"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "fresh food prescription",
+        "fruit and vegetable prescription program",
+        "produce prescription intervention",
+        "healthy food box",
+        "healthy food boxes",
+        "healthy grocery prescription",
+        "nutrition prescription program",
+        "food resource referral",
+        "food resource navigation"
+      ]
+    }
+  },
+  "global": {
+    "implementation_behavior": {
+      "food_access_prescribing": [
+        "fresh food prescription",
+        "fruit and vegetable prescription program",
+        "produce prescription intervention",
+        "healthy food box",
+        "healthy food boxes",
+        "healthy grocery prescription",
+        "nutrition prescription program",
+        "food resource referral",
+        "food resource navigation"
+      ]
+    }
+  }
+}
