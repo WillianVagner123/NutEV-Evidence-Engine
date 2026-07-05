@@ -1,0 +1,136 @@
+{
+  "version_note": "Supplemental NutMEV expansion for adherence, remission maintenance, and implementation-outcome retrieval. Loaded after keyword_taxonomy.json and the base supplement; appends focused terms without altering raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "adherence_implementation_outcomes": [
+        "dietary intervention acceptability",
+        "lifestyle intervention acceptability",
+        "nutrition intervention acceptability",
+        "dietary intervention feasibility",
+        "lifestyle intervention feasibility",
+        "nutrition intervention feasibility",
+        "intervention uptake",
+        "program uptake",
+        "intervention engagement",
+        "participant engagement",
+        "program engagement",
+        "intervention retention",
+        "participant retention",
+        "program retention",
+        "implementation reach",
+        "program reach",
+        "maintenance phase",
+        "behavior maintenance intervention",
+        "behaviour maintenance intervention",
+        "dietary maintenance intervention",
+        "weight maintenance intervention",
+        "weight loss maintenance intervention",
+        "weight regain prevention intervention",
+        "diabetes remission maintenance intervention",
+        "type 2 diabetes remission maintenance",
+        "t2d remission",
+        "t2dm remission",
+        "relapse prevention intervention",
+        "dietary relapse prevention",
+        "lapse management intervention"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "dietary intervention acceptability",
+      "lifestyle intervention acceptability",
+      "nutrition intervention acceptability",
+      "dietary intervention feasibility",
+      "lifestyle intervention feasibility",
+      "nutrition intervention feasibility",
+      "intervention uptake",
+      "participant engagement",
+      "participant retention",
+      "program reach",
+      "maintenance phase",
+      "behavior maintenance intervention",
+      "behaviour maintenance intervention",
+      "dietary maintenance intervention",
+      "weight maintenance intervention",
+      "weight loss maintenance intervention",
+      "weight regain prevention intervention",
+      "diabetes remission maintenance intervention",
+      "type 2 diabetes remission maintenance",
+      "t2d remission",
+      "t2dm remission",
+      "dietary relapse prevention"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "dietary intervention acceptability",
+        "lifestyle intervention acceptability",
+        "nutrition intervention acceptability",
+        "dietary intervention feasibility",
+        "lifestyle intervention feasibility",
+        "nutrition intervention feasibility",
+        "intervention uptake",
+        "participant engagement",
+        "participant retention",
+        "program reach",
+        "maintenance phase",
+        "behavior maintenance intervention",
+        "behaviour maintenance intervention",
+        "dietary maintenance intervention",
+        "weight maintenance intervention",
+        "weight loss maintenance intervention",
+        "weight regain prevention intervention",
+        "diabetes remission maintenance intervention",
+        "type 2 diabetes remission maintenance",
+        "t2d remission",
+        "t2dm remission",
+        "dietary relapse prevention"
+      ],
+      "web_query_hints": [
+        "dietary intervention acceptability trial",
+        "lifestyle intervention feasibility trial",
+        "nutrition intervention feasibility trial",
+        "dietary intervention participant retention",
+        "lifestyle intervention participant engagement",
+        "weight loss maintenance intervention trial",
+        "weight regain prevention intervention trial",
+        "diabetes remission maintenance intervention",
+        "type 2 diabetes remission maintenance intervention"
+      ],
+      "document_terms": [
+        "feasibility trial",
+        "pilot randomized trial",
+        "pilot randomised trial",
+        "implementation outcome study",
+        "process evaluation",
+        "maintenance intervention trial",
+        "weight maintenance intervention trial",
+        "remission maintenance intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "dietary intervention acceptability",
+        "lifestyle intervention acceptability",
+        "nutrition intervention acceptability",
+        "intervention uptake",
+        "participant engagement",
+        "participant retention",
+        "program reach",
+        "maintenance phase",
+        "behavior maintenance intervention",
+        "behaviour maintenance intervention",
+        "dietary relapse prevention",
+        "lapse management intervention"
+      ],
+      "web_query_hints": [
+        "dietary intervention acceptability framework",
+        "lifestyle intervention feasibility framework",
+        "nutrition intervention participant engagement",
+        "dietary maintenance intervention framework"
+      ]
+    }
+  }
+}
