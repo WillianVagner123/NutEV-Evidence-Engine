@@ -1,0 +1,107 @@
+{
+  "version_note": "2026-07 nutrition care delivery supplement: expands focused terms for dietitian referral, intensive behavioral therapy for obesity, and group-based lifestyle delivery without editing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "nutrition care delivery",
+        "nutrition service delivery",
+        "dietitian referral",
+        "dietitian referrals",
+        "registered dietitian referral",
+        "registered dietitian nutritionist referral",
+        "nutrition referral",
+        "nutrition referrals",
+        "medical nutrition therapy referral",
+        "medical nutrition therapy referrals",
+        "nutrition care referral",
+        "nutrition care referrals",
+        "nutrition referral pathway",
+        "nutrition referral pathways",
+        "dietitian referral pathway",
+        "dietitian referral pathways",
+        "care pathway implementation",
+        "referral pathway implementation"
+      ],
+      "behavioral": [
+        "intensive behavioral therapy for obesity",
+        "intensive behavioural therapy for obesity",
+        "obesity intensive behavioral therapy",
+        "obesity intensive behavioural therapy",
+        "intensive behavioral therapy",
+        "intensive behavioural therapy",
+        "group-based lifestyle intervention",
+        "group based lifestyle intervention",
+        "group lifestyle intervention",
+        "group lifestyle program",
+        "group lifestyle programme",
+        "shared medical appointment",
+        "shared medical appointments",
+        "group medical visit",
+        "group medical visits",
+        "lifestyle medicine group visit",
+        "lifestyle medicine group visits"
+      ]
+    },
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "nutrition care delivery",
+        "nutrition service delivery",
+        "dietitian referral",
+        "nutrition referral",
+        "medical nutrition therapy referral",
+        "nutrition referral pathway",
+        "dietitian referral pathway"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "medical nutrition therapy referral guideline",
+        "nutrition referral guideline",
+        "dietitian referral guideline",
+        "intensive behavioral therapy for obesity guideline",
+        "obesity intensive behavioral therapy guideline",
+        "shared medical appointment obesity guideline",
+        "group medical visit obesity guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "medical nutrition therapy referral intervention",
+        "nutrition referral intervention",
+        "dietitian referral intervention",
+        "nutrition referral pathway implementation",
+        "dietitian referral pathway implementation",
+        "intensive behavioral therapy for obesity trial",
+        "intensive behavioral therapy for obesity implementation",
+        "obesity intensive behavioral therapy trial",
+        "group-based lifestyle intervention trial",
+        "group-based lifestyle intervention implementation",
+        "shared medical appointment obesity trial",
+        "group medical visit obesity trial",
+        "lifestyle medicine group visit implementation"
+      ],
+      "condition_terms": [
+        "intensive behavioral therapy for obesity",
+        "obesity intensive behavioral therapy"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "nutrition referral pathway",
+        "dietitian referral pathway",
+        "group-based lifestyle intervention",
+        "shared medical appointment",
+        "lifestyle medicine group visit"
+      ],
+      "web_query_hints": [
+        "nutrition referral pathway framework",
+        "dietitian referral pathway framework",
+        "group-based lifestyle intervention framework",
+        "shared medical appointment lifestyle medicine framework",
+        "lifestyle medicine group visit framework"
+      ]
+    }
+  }
+}
