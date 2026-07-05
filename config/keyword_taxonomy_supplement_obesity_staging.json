@@ -1,0 +1,102 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for adult clinical obesity complications and staging; loaded after keyword_taxonomy.json without modifying the base taxonomy.",
+  "clinical": {
+    "obesity": [
+      "obesity complications",
+      "complications of obesity",
+      "obesity-related complications",
+      "obesity related complications",
+      "obesity-associated complications",
+      "obesity associated complications",
+      "obesity-related comorbidities",
+      "obesity related comorbidities",
+      "obesity-associated comorbidities",
+      "obesity associated comorbidities",
+      "obesity staging",
+      "clinical obesity staging",
+      "edmonton obesity staging system",
+      "eoss",
+      "adiposity-based chronic disease staging",
+      "adiposity based chronic disease staging",
+      "adiposity-based chronic disease complications",
+      "adiposity based chronic disease complications",
+      "obesity-related cardiometabolic risk",
+      "obesity related cardiometabolic risk",
+      "complicações da obesidade",
+      "comorbidades associadas à obesidade",
+      "comorbidades associadas a obesidade",
+      "estadiamento da obesidade"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "obesity staging",
+      "clinical obesity staging",
+      "edmonton obesity staging system",
+      "eoss",
+      "adiposity-based chronic disease staging",
+      "adiposity based chronic disease staging"
+    ],
+    "diet_quality_adherence": [
+      "obesity-related cardiometabolic risk",
+      "obesity related cardiometabolic risk"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "obesity complications",
+        "complications of obesity",
+        "obesity-related complications",
+        "obesity related complications",
+        "obesity-associated comorbidities",
+        "obesity associated comorbidities",
+        "obesity staging",
+        "clinical obesity staging",
+        "edmonton obesity staging system",
+        "eoss",
+        "adiposity-based chronic disease staging",
+        "adiposity based chronic disease staging"
+      ],
+      "web_query_hints": [
+        "obesity complications guideline",
+        "obesity-related comorbidities guideline",
+        "clinical obesity staging guideline",
+        "edmonton obesity staging system guideline",
+        "adiposity-based chronic disease complications guideline",
+        "adiposity-based chronic disease staging consensus"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "obesity complications",
+        "complications of obesity",
+        "obesity-related complications",
+        "obesity related complications",
+        "obesity-associated comorbidities",
+        "obesity associated comorbidities",
+        "obesity staging",
+        "clinical obesity staging",
+        "edmonton obesity staging system",
+        "eoss",
+        "adiposity-based chronic disease staging",
+        "adiposity based chronic disease staging"
+      ],
+      "focus_terms": [
+        "obesity-related cardiometabolic risk",
+        "obesity related cardiometabolic risk",
+        "obesity complications lifestyle intervention",
+        "obesity-related comorbidities dietary intervention",
+        "clinical obesity staging lifestyle intervention",
+        "edmonton obesity staging system lifestyle intervention"
+      ],
+      "web_query_hints": [
+        "obesity complications lifestyle intervention",
+        "obesity-related comorbidities dietary intervention",
+        "clinical obesity staging trial",
+        "edmonton obesity staging system trial",
+        "adiposity-based chronic disease lifestyle intervention"
+      ]
+    }
+  }
+}
