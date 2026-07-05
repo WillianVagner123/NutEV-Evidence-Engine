@@ -1,0 +1,68 @@
+{
+  "version_note": "2026-07-05 food navigation and nutrition security referral expansion",
+  "global": {
+    "implementation_behavior": {
+      "contextual": [
+        "hunger vital sign",
+        "screen and intervene",
+        "food resource referral",
+        "food resource navigation",
+        "food navigator",
+        "food navigators",
+        "nutrition navigator",
+        "nutrition navigators",
+        "nutrition resource referral",
+        "nutrition resource navigation",
+        "food pharmacy referral",
+        "food farmacy referral",
+        "produce prescription referral",
+        "fruit and vegetable prescription referral",
+        "healthy food prescription referral",
+        "medically tailored meal referral",
+        "medically tailored meals referral",
+        "medically tailored grocery referral",
+        "medically tailored groceries referral",
+        "medically tailored food referral",
+        "medically tailored food package referral",
+        "community health worker nutrition program",
+        "community health worker nutrition programme"
+      ]
+    },
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "hunger vital sign",
+        "nutrition security screening",
+        "nutrition insecurity screening",
+        "food resource referral",
+        "food resource navigation",
+        "food navigator",
+        "nutrition navigator",
+        "produce prescription referral",
+        "medically tailored food referral"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "hunger vital sign",
+        "nutrition security screening",
+        "food resource referral",
+        "food navigator",
+        "produce prescription referral",
+        "medically tailored food referral"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "hunger vital sign",
+        "screen and intervene",
+        "food resource navigation",
+        "nutrition navigator",
+        "food pharmacy referral",
+        "produce prescription referral",
+        "medically tailored meals referral"
+      ]
+    }
+  }
+}
