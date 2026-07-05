@@ -1,0 +1,53 @@
+{
+  "version_note": "Supplemental scoring rules for adult clinical obesity complications and staging; loaded after scoring_rules.json to preserve the base scoring file.",
+  "keyword_points": {
+    "obesity complications": 3,
+    "complications of obesity": 3,
+    "obesity-related complications": 3,
+    "obesity related complications": 3,
+    "obesity-associated complications": 3,
+    "obesity associated complications": 3,
+    "obesity-related comorbidities": 3,
+    "obesity related comorbidities": 3,
+    "obesity-associated comorbidities": 3,
+    "obesity associated comorbidities": 3,
+    "obesity staging": 3,
+    "clinical obesity staging": 4,
+    "edmonton obesity staging system": 4,
+    "eoss": 2,
+    "adiposity-based chronic disease staging": 4,
+    "adiposity based chronic disease staging": 4,
+    "adiposity-based chronic disease complications": 4,
+    "adiposity based chronic disease complications": 4,
+    "obesity-related cardiometabolic risk": 4,
+    "obesity related cardiometabolic risk": 4,
+    "complicações da obesidade": 3,
+    "comorbidades associadas à obesidade": 3,
+    "comorbidades associadas a obesidade": 3,
+    "estadiamento da obesidade": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "obesity complications": 4,
+      "obesity-related complications": 4,
+      "obesity related complications": 4,
+      "obesity-associated comorbidities": 4,
+      "obesity associated comorbidities": 4,
+      "clinical obesity staging": 4,
+      "edmonton obesity staging system": 4,
+      "adiposity-based chronic disease staging": 4,
+      "adiposity based chronic disease staging": 4,
+      "adiposity-based chronic disease complications": 4,
+      "adiposity based chronic disease complications": 4
+    },
+    "busca2b": {
+      "obesity complications lifestyle intervention": 4,
+      "obesity-related comorbidities dietary intervention": 4,
+      "clinical obesity staging lifestyle intervention": 4,
+      "edmonton obesity staging system lifestyle intervention": 4,
+      "adiposity-based chronic disease lifestyle intervention": 4,
+      "obesity-related cardiometabolic risk": 4,
+      "obesity related cardiometabolic risk": 4
+    }
+  }
+}
