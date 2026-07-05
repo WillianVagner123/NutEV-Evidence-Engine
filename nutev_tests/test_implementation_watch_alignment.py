@@ -3,6 +3,7 @@ from __future__ import annotations
 from nutev.export.curation import _is_prioritized
 from nutev.global_watch.watch_query_builder import build_watch_queries
 from nutev.global_watch.watch_scoring import score_watch_item
+from nutev.querypacks.semantic_blocks import semantic_terms
 
 
 def test_build_watch_queries_includes_hybrid_implementation_terms() -> None:
@@ -33,6 +34,17 @@ def test_build_watch_queries_include_self_efficacy_variants() -> None:
 
     assert "self-efficacy" in rendered
     assert "self efficacy" in rendered
+
+
+def test_semantic_extensions_cover_nutrition_navigation_terms() -> None:
+    food_terms = {term.lower() for term in semantic_terms("food_literacy_agency")}
+    implementation_terms = {term.lower() for term in semantic_terms("implementation_science")}
+
+    assert "food self-management" in food_terms
+    assert "dietary self management" in food_terms
+    assert "food resource navigator" in food_terms
+    assert "community health worker nutrition counseling" in implementation_terms
+    assert "social prescribing nutrition" in implementation_terms
 
 
 def test_score_watch_item_rewards_hybrid_framework_markers() -> None:
