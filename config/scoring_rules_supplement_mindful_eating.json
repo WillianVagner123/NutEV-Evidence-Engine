@@ -1,0 +1,51 @@
+{
+  "version_note": "2026-07 mindful/intuitive eating and portion-control scoring supplement",
+  "keyword_points": {
+    "mindful eating": 3,
+    "mindful eating intervention": 4,
+    "intuitive eating": 3,
+    "intuitive eating intervention": 4,
+    "portion control": 3,
+    "portion size control": 3,
+    "portion control intervention": 4,
+    "hunger cues": 2,
+    "satiety cues": 2,
+    "hunger and satiety cues": 3,
+    "eating awareness": 3,
+    "eating self-regulation": 3,
+    "self-regulation of eating": 3,
+    "dietary self-regulation": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "mindful eating": 4,
+      "mindful eating intervention": 5,
+      "intuitive eating": 4,
+      "intuitive eating intervention": 5,
+      "portion control": 4,
+      "portion size control": 4,
+      "portion control intervention": 5,
+      "hunger and satiety cues": 4,
+      "eating awareness": 4,
+      "eating self-regulation": 4,
+      "self-regulation of eating": 4,
+      "dietary self-regulation": 4
+    },
+    "a3": {
+      "mindful eating": 4,
+      "intuitive eating": 4,
+      "eating awareness": 4,
+      "hunger and satiety cues": 3,
+      "portion control": 3,
+      "eating self-regulation": 4
+    },
+    "artigo3_framework": {
+      "mindful eating": 4,
+      "intuitive eating": 4,
+      "eating awareness": 4,
+      "hunger and satiety cues": 3,
+      "portion control": 3,
+      "eating self-regulation": 4
+    }
+  }
+}
