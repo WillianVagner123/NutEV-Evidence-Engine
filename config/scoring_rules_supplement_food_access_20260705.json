@@ -1,0 +1,69 @@
+{
+  "version_note": "2026-07-05 scoring supplement for food access and medically tailored nutrition terms",
+  "keyword_points": {
+    "food farmacy": 4,
+    "food farmacy program": 4,
+    "food farmacy programme": 4,
+    "medically tailored nutrition": 4,
+    "medically tailored nutrition program": 4,
+    "medically tailored nutrition programme": 4,
+    "medically tailored food": 4,
+    "medically tailored foods": 4,
+    "medically tailored food referral": 4,
+    "medically tailored grocery referral": 4,
+    "healthy food box": 4,
+    "healthy food box program": 4,
+    "produce box": 4,
+    "produce box program": 4,
+    "fruit and vegetable box": 4,
+    "fruit and vegetable box program": 4,
+    "healthy food delivery": 3,
+    "healthy food delivery program": 4,
+    "community-supported food program": 3,
+    "community supported food program": 3
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food farmacy": 5,
+      "food farmacy program": 5,
+      "medically tailored nutrition": 5,
+      "medically tailored food": 5,
+      "medically tailored food referral": 5,
+      "healthy food box": 5,
+      "healthy food box program": 5,
+      "produce box": 5,
+      "produce box program": 5,
+      "fruit and vegetable box": 5,
+      "fruit and vegetable box program": 5,
+      "healthy food delivery program": 4,
+      "community-supported food program": 4,
+      "community supported food program": 4
+    },
+    "busca2b": {
+      "food farmacy intervention": 5,
+      "medically tailored nutrition": 5,
+      "medically tailored nutrition intervention": 5,
+      "medically tailored food referral": 5,
+      "healthy food box intervention": 5,
+      "produce box intervention": 5,
+      "fruit and vegetable box intervention": 5,
+      "healthy food delivery intervention": 4,
+      "community-supported food program": 4,
+      "community supported food program": 4
+    },
+    "a3": {
+      "food farmacy evaluation": 4,
+      "medically tailored nutrition framework": 4,
+      "healthy food box evaluation": 4,
+      "produce box evaluation": 4,
+      "community-supported food program evaluation": 4
+    },
+    "artigo3_framework": {
+      "food farmacy evaluation": 4,
+      "medically tailored nutrition framework": 4,
+      "healthy food box evaluation": 4,
+      "produce box evaluation": 4,
+      "community-supported food program evaluation": 4
+    }
+  }
+}
