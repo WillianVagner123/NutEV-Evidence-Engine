@@ -1,0 +1,68 @@
+{
+  "version_note": "2026-07 mindful/intuitive eating and portion-control behavioral nutrition supplement",
+  "global": {
+    "implementation_behavior": {
+      "behavioral": [
+        "mindful eating",
+        "mindful eating intervention",
+        "intuitive eating",
+        "intuitive eating intervention",
+        "portion control",
+        "portion size control",
+        "portion control intervention",
+        "hunger cues",
+        "satiety cues",
+        "hunger and satiety cues",
+        "eating awareness",
+        "eating self-regulation",
+        "self-regulation of eating",
+        "dietary self-regulation"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "mindful eating",
+      "intuitive eating",
+      "portion control",
+      "portion size control",
+      "hunger and satiety cues",
+      "eating self-regulation"
+    ],
+    "behavioral": [
+      "mindful eating",
+      "intuitive eating",
+      "eating awareness",
+      "hunger cues",
+      "satiety cues",
+      "hunger and satiety cues",
+      "portion control",
+      "eating self-regulation"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "mindful eating intervention",
+        "intuitive eating intervention",
+        "portion control intervention",
+        "eating self-regulation intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "mindful eating",
+        "intuitive eating",
+        "eating awareness",
+        "hunger and satiety cues",
+        "portion control"
+      ],
+      "web_query_hints": [
+        "mindful eating questionnaire",
+        "intuitive eating scale",
+        "eating self-regulation scale",
+        "portion control questionnaire"
+      ]
+    }
+  }
+}
