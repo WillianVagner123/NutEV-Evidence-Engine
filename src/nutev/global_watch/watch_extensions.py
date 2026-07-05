@@ -104,6 +104,50 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+CKM_CARDIOMETABOLIC_TERMS = [
+    "cardiovascular-kidney-metabolic syndrome",
+    "cardiovascular kidney metabolic syndrome",
+    "cardiovascular-kidney-metabolic health",
+    "cardiovascular kidney metabolic health",
+    "cardiovascular-kidney-metabolic risk",
+    "cardiovascular kidney metabolic risk",
+    "cardiovascular-kidney-metabolic nutrition",
+    "cardiovascular kidney metabolic nutrition",
+    "cardio-kidney-metabolic syndrome",
+    "cardio kidney metabolic syndrome",
+    "cardio-kidney-metabolic health",
+    "cardio kidney metabolic health",
+    "cardio-kidney-metabolic risk",
+    "cardio kidney metabolic risk",
+    "cardio-kidney-metabolic nutrition",
+    "cardio kidney metabolic nutrition",
+    "cardiorenal metabolic syndrome",
+    "ckm syndrome",
+    "ckm health",
+    "ckm risk",
+    "ckm nutrition",
+]
+
+CKM_BONUS_TERMS = [
+    ("cardiovascular-kidney-metabolic syndrome", 14),
+    ("cardiovascular kidney metabolic syndrome", 14),
+    ("cardiovascular-kidney-metabolic health", 12),
+    ("cardiovascular kidney metabolic health", 12),
+    ("cardiovascular-kidney-metabolic risk", 12),
+    ("cardiovascular kidney metabolic risk", 12),
+    ("cardiovascular-kidney-metabolic nutrition", 14),
+    ("cardiovascular kidney metabolic nutrition", 14),
+    ("cardio-kidney-metabolic syndrome", 14),
+    ("cardio kidney metabolic syndrome", 14),
+    ("cardio-kidney-metabolic nutrition", 14),
+    ("cardio kidney metabolic nutrition", 14),
+    ("cardiorenal metabolic syndrome", 12),
+    ("ckm syndrome", 12),
+    ("ckm health", 10),
+    ("ckm risk", 10),
+    ("ckm nutrition", 12),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -162,12 +206,20 @@ def _extend_scoring_terms() -> None:
 
     watch_scoring.BONUS_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.BONUS_TERMS, *OBESITY_PHARMACOTHERAPY_BONUS_TERMS]
+            [
+                *watch_scoring.BONUS_TERMS,
+                *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *CKM_BONUS_TERMS,
+            ]
         )
     )
     watch_scoring.NUTMEV_SCOPE_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.NUTMEV_SCOPE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS]
+            [
+                *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *CKM_CARDIOMETABOLIC_TERMS,
+            ]
         )
     )
 
@@ -197,16 +249,16 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *CKM_CARDIOMETABOLIC_TERMS],
     )
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *CKM_CARDIOMETABOLIC_TERMS],
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *CKM_CARDIOMETABOLIC_TERMS],
     )
     _extend_scoring_terms()
 
