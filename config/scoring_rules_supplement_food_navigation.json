@@ -1,0 +1,28 @@
+{
+  "version_note": "2026-07-05 food navigation and nutrition security referral scoring",
+  "keyword_points": {
+    "hunger vital sign": 4,
+    "screen and intervene": 3,
+    "food resource referral": 3,
+    "food resource navigation": 3,
+    "food navigator": 3,
+    "food navigators": 3,
+    "nutrition navigator": 3,
+    "nutrition navigators": 3,
+    "nutrition resource referral": 3,
+    "nutrition resource navigation": 3,
+    "food pharmacy referral": 4,
+    "food farmacy referral": 4,
+    "produce prescription referral": 4,
+    "fruit and vegetable prescription referral": 4,
+    "healthy food prescription referral": 4,
+    "medically tailored meal referral": 4,
+    "medically tailored meals referral": 4,
+    "medically tailored grocery referral": 4,
+    "medically tailored groceries referral": 4,
+    "medically tailored food referral": 4,
+    "medically tailored food package referral": 4,
+    "community health worker nutrition program": 3,
+    "community health worker nutrition programme": 3
+  }
+}
