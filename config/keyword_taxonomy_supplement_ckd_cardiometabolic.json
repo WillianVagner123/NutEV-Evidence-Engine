@@ -1,0 +1,89 @@
+{
+  "version_note": "Focused NutMEV expansion for CKD/cardio-kidney-metabolic nutrition terms. Loaded after keyword_taxonomy.json and keyword_taxonomy_supplement.json; appends only targeted terms.",
+  "clinical": {
+    "cardiometabolic": [
+      "chronic kidney disease",
+      "chronic kidney disease nutrition",
+      "chronic kidney disease dietary counseling",
+      "chronic kidney disease dietary counselling",
+      "ckd nutrition",
+      "ckd dietary counseling",
+      "ckd dietary counselling",
+      "cardiometabolic kidney disease",
+      "cardiometabolic kidney risk",
+      "cardio-kidney-metabolic disease",
+      "cardio kidney metabolic disease",
+      "cardiovascular-kidney-metabolic disease",
+      "cardiovascular kidney metabolic disease",
+      "kidney metabolic health",
+      "kidney metabolic risk"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "chronic kidney disease nutrition",
+      "ckd nutrition",
+      "ckd dietary counseling",
+      "ckd dietary counselling",
+      "cardiometabolic kidney risk",
+      "kidney metabolic health",
+      "kidney metabolic risk",
+      "albuminuria",
+      "estimated glomerular filtration rate",
+      "egfr"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "cardiometabolic kidney disease",
+        "cardio-kidney-metabolic disease",
+        "cardio kidney metabolic disease",
+        "cardiovascular-kidney-metabolic disease",
+        "cardiovascular kidney metabolic disease"
+      ],
+      "focus_terms": [
+        "chronic kidney disease nutrition",
+        "chronic kidney disease dietary counseling",
+        "chronic kidney disease dietary counselling",
+        "ckd nutrition",
+        "ckd dietary counseling",
+        "ckd dietary counselling"
+      ],
+      "web_query_hints": [
+        "chronic kidney disease nutrition guideline",
+        "ckd nutrition guideline",
+        "cardio-kidney-metabolic nutrition guideline",
+        "cardiovascular-kidney-metabolic nutrition guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "chronic kidney disease",
+        "ckd",
+        "cardiometabolic kidney disease",
+        "cardio-kidney-metabolic disease",
+        "cardio kidney metabolic disease",
+        "cardiovascular-kidney-metabolic disease",
+        "cardiovascular kidney metabolic disease"
+      ],
+      "focus_terms": [
+        "chronic kidney disease nutrition intervention",
+        "chronic kidney disease dietary intervention",
+        "ckd nutrition intervention",
+        "ckd dietary intervention",
+        "cardio-kidney-metabolic nutrition intervention",
+        "cardiovascular-kidney-metabolic nutrition intervention"
+      ],
+      "web_query_hints": [
+        "chronic kidney disease nutrition systematic review",
+        "ckd nutrition systematic review",
+        "chronic kidney disease dietary intervention trial",
+        "ckd dietary intervention trial",
+        "cardio-kidney-metabolic nutrition intervention"
+      ]
+    }
+  }
+}
