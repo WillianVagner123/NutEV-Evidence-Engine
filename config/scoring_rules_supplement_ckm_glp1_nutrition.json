@@ -1,0 +1,47 @@
+{
+  "version_note": "Scores CKM nutrition and anti-obesity medication nutrition terms for cardiometabolic obesity evidence retrieval.",
+  "keyword_points": {
+    "cardiovascular-kidney-metabolic nutrition": 3,
+    "cardiovascular kidney metabolic nutrition": 3,
+    "cardio-kidney-metabolic nutrition": 3,
+    "cardio kidney metabolic nutrition": 3,
+    "ckm nutrition": 3,
+    "anti-obesity medication nutrition": 3,
+    "anti-obesity medication dietary counseling": 3,
+    "obesity pharmacotherapy nutrition care": 3,
+    "obesity pharmacotherapy dietary counseling": 3,
+    "glp-1 nutrition": 3,
+    "glp-1 dietary counseling": 3,
+    "glp-1 receptor agonist nutrition": 3,
+    "glp-1 receptor agonist dietary counseling": 3,
+    "incretin therapy nutrition care": 3,
+    "incretin therapy dietary counseling": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "cardiovascular-kidney-metabolic syndrome": 5,
+      "cardiovascular kidney metabolic syndrome": 5,
+      "cardio-kidney-metabolic syndrome": 4,
+      "cardio kidney metabolic syndrome": 4,
+      "cardiorenal metabolic syndrome": 4,
+      "ckm syndrome": 4,
+      "ckm nutrition guideline": 5,
+      "anti-obesity medication nutrition guideline": 4,
+      "glp-1 nutrition guidance": 4,
+      "glp-1 receptor agonist dietary counseling": 4
+    },
+    "busca2b": {
+      "anti-obesity medication nutrition intervention": 5,
+      "anti-obesity medication dietary counseling": 5,
+      "obesity pharmacotherapy nutrition intervention": 5,
+      "obesity pharmacotherapy nutrition care": 5,
+      "glp-1 nutrition intervention": 5,
+      "glp-1 dietary counseling": 5,
+      "glp-1 dietary adherence": 5,
+      "glp-1 weight maintenance": 5,
+      "incretin therapy nutrition intervention": 5,
+      "incretin therapy nutrition care": 5,
+      "ckm nutrition intervention": 4
+    }
+  }
+}
