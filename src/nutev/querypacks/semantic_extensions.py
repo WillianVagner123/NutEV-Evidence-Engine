@@ -128,6 +128,44 @@ METABOLIC_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
     "weight regain prevention trial",
 ]
 
+TRANSLATIONAL_REMISSION_MAINTENANCE_TERMS = [
+    "diabetes remission implementation",
+    "type 2 diabetes remission implementation",
+    "diabetes remission maintenance intervention",
+    "diabetes remission maintenance program",
+    "diabetes remission maintenance programme",
+    "remission maintenance intervention",
+    "remission maintenance program",
+    "remission maintenance programme",
+    "weight loss maintenance intervention",
+    "weight loss maintenance program",
+    "weight loss maintenance programme",
+    "weight regain prevention intervention",
+    "weight regain prevention program",
+    "weight regain prevention programme",
+    "weight regain prevention strategy",
+    "weight regain prevention strategies",
+    "post-weight loss maintenance",
+    "post weight loss maintenance",
+    "maintenance of weight loss",
+    "maintenance of diabetes remission",
+]
+
+TRANSLATIONAL_REMISSION_MAINTENANCE_DOCUMENT_TERMS = [
+    "diabetes remission implementation study",
+    "diabetes remission program evaluation",
+    "diabetes remission programme evaluation",
+    "diabetes remission maintenance trial",
+    "remission maintenance trial",
+    "remission maintenance systematic review",
+    "weight loss maintenance intervention trial",
+    "weight loss maintenance program evaluation",
+    "weight loss maintenance programme evaluation",
+    "weight regain prevention intervention trial",
+    "weight regain prevention program evaluation",
+    "weight regain prevention programme evaluation",
+]
+
 FOOD_SKILLS_SELF_EFFICACY_TERMS = [
     "cooking self-efficacy",
     "cooking self efficacy",
@@ -622,6 +660,17 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=PRECISION_PERSONALIZED_NUTRITION_TERMS,
             document_terms=PRECISION_PERSONALIZED_NUTRITION_DOCUMENT_TERMS,
+        )
+    for block_name in (
+        "adherence_persistence",
+        "implementation_science",
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=TRANSLATIONAL_REMISSION_MAINTENANCE_TERMS,
+            document_terms=TRANSLATIONAL_REMISSION_MAINTENANCE_DOCUMENT_TERMS,
         )
     for block_name in ("adherence_persistence", "lifestyle_nutrition_patterns"):
         _extend_semantic_block(
