@@ -1,0 +1,118 @@
+{
+  "version_note": "Supplemental A3 query expansion for food competence, cooking self-efficacy, meal preparation, and instrument retrieval. Loaded after keyword_taxonomy.json without replacing raw taxonomy terms.",
+  "global": {
+    "implementation_behavior": {
+      "food_competence_practical_skills": [
+        "food competence",
+        "eating competence",
+        "food skills",
+        "food preparation skills",
+        "meal preparation skills",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "cooking confidence",
+        "food preparation confidence",
+        "healthy cooking",
+        "home cooking",
+        "meal preparation",
+        "meal planning skills",
+        "food resource management",
+        "food budgeting",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "food label literacy",
+        "label reading"
+      ],
+      "food_competence_instruments": [
+        "food competence questionnaire",
+        "food competence scale",
+        "eating competence questionnaire",
+        "eating competence scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "cooking skills questionnaire",
+        "cooking skills scale",
+        "cooking self-efficacy questionnaire",
+        "cooking self efficacy questionnaire",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "cooking confidence questionnaire",
+        "cooking confidence scale",
+        "meal preparation questionnaire",
+        "meal preparation scale",
+        "food preparation skills questionnaire",
+        "food preparation skills scale",
+        "food resource management questionnaire",
+        "food resource management scale",
+        "food label literacy questionnaire",
+        "food label literacy scale"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_literacy_competence": [
+      "food competence questionnaire",
+      "food competence scale",
+      "eating competence questionnaire",
+      "eating competence scale",
+      "food skills questionnaire",
+      "food skills scale",
+      "cooking self-efficacy questionnaire",
+      "cooking self efficacy questionnaire",
+      "meal preparation scale",
+      "food preparation skills scale",
+      "food resource management scale",
+      "food label literacy scale"
+    ]
+  },
+  "workstreams": {
+    "artigo3_framework": {
+      "focus_terms": [
+        "food competence",
+        "eating competence",
+        "food skills",
+        "food preparation skills",
+        "meal preparation skills",
+        "food resource management",
+        "food budgeting",
+        "grocery shopping skills",
+        "healthy grocery shopping",
+        "food label literacy",
+        "label reading",
+        "cooking confidence",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "food preparation confidence",
+        "meal preparation",
+        "home cooking",
+        "healthy cooking",
+        "food competence questionnaire",
+        "food competence scale",
+        "eating competence questionnaire",
+        "eating competence scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "cooking self-efficacy questionnaire",
+        "cooking self efficacy questionnaire",
+        "cooking confidence questionnaire",
+        "cooking confidence scale",
+        "meal preparation questionnaire",
+        "meal preparation scale",
+        "food preparation skills questionnaire",
+        "food preparation skills scale"
+      ],
+      "web_query_hints": [
+        "food competence scale",
+        "eating competence scale",
+        "food skills questionnaire",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "cooking confidence scale",
+        "meal preparation questionnaire",
+        "food preparation skills questionnaire",
+        "food resource management questionnaire",
+        "food label literacy scale"
+      ]
+    }
+  }
+}
