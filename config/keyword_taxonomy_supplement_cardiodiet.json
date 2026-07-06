@@ -1,0 +1,118 @@
+{
+  "version_note": "Focused NutMEV expansion for cardiometabolic diet quality and dietary-pattern adherence. Loaded after keyword_taxonomy.json without replacing raw taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "cardiometabolic_diet_quality": [
+        "diet quality index",
+        "diet quality score",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "ahei",
+        "dietary inflammatory index",
+        "cardioprotective diet",
+        "cardiometabolic diet",
+        "cardiometabolic dietary pattern",
+        "heart-healthy diet",
+        "heart healthy diet",
+        "dietary portfolio",
+        "portfolio dietary pattern",
+        "plant-forward diet",
+        "plant forward diet",
+        "healthy plant-based diet",
+        "healthful plant-based diet",
+        "plant-based dietary index",
+        "plant based dietary index",
+        "pro-vegetarian dietary pattern",
+        "provegetarian dietary pattern",
+        "nordic dietary pattern",
+        "new nordic dietary pattern",
+        "mind dietary pattern"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet quality index",
+      "diet quality score",
+      "healthy eating index",
+      "alternate healthy eating index",
+      "ahei",
+      "dietary inflammatory index",
+      "dietary pattern adherence",
+      "healthy dietary pattern adherence",
+      "mediterranean diet adherence",
+      "dash diet adherence",
+      "plant-based diet adherence",
+      "plant based diet adherence",
+      "portfolio diet adherence",
+      "healthy plant-based diet adherence",
+      "cardiometabolic dietary adherence"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "diet quality index",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "cardioprotective diet",
+        "cardiometabolic dietary pattern",
+        "portfolio dietary pattern",
+        "healthy plant-based diet",
+        "plant-based dietary index",
+        "nordic dietary pattern"
+      ],
+      "web_query_hints": [
+        "diet quality cardiometabolic guideline",
+        "dietary pattern cardiometabolic guideline",
+        "cardioprotective diet guideline",
+        "portfolio diet dyslipidemia guideline",
+        "plant-based diet cardiometabolic guideline",
+        "dietary pattern cardiometabolic consensus",
+        "healthy eating index cardiometabolic risk guideline"
+      ],
+      "document_terms": [
+        "dietary pattern guideline",
+        "diet quality guideline",
+        "cardiometabolic diet guideline",
+        "dietary pattern consensus"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "diet quality intervention",
+        "dietary pattern adherence intervention",
+        "healthy dietary pattern intervention",
+        "mediterranean diet adherence",
+        "dash diet adherence",
+        "plant-based diet adherence",
+        "portfolio diet adherence",
+        "healthy eating index",
+        "alternate healthy eating index",
+        "dietary inflammatory index",
+        "cardioprotective diet",
+        "cardiometabolic dietary pattern",
+        "plant-forward diet",
+        "nordic dietary pattern"
+      ],
+      "web_query_hints": [
+        "diet quality intervention cardiometabolic trial",
+        "dietary pattern adherence cardiometabolic trial",
+        "healthy eating index cardiometabolic trial",
+        "mediterranean diet adherence intervention",
+        "dash diet adherence intervention",
+        "plant-based diet adherence intervention",
+        "portfolio diet dyslipidemia trial",
+        "cardioprotective diet systematic review",
+        "dietary inflammatory index cardiometabolic review"
+      ],
+      "document_terms": [
+        "diet quality intervention",
+        "dietary pattern adherence intervention",
+        "cardiometabolic dietary intervention",
+        "dietary pattern systematic review",
+        "dietary pattern trial"
+      ]
+    }
+  }
+}
