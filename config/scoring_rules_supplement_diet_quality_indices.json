@@ -1,0 +1,71 @@
+{
+  "version_note": "Supplemental scoring for diet-quality and dietary-pattern index signals; loaded after scoring_rules.json without changing base scoring.",
+  "keyword_points": {
+    "diet quality score": 3,
+    "diet quality index": 3,
+    "diet quality indices": 3,
+    "healthy eating index": 3,
+    "alternative healthy eating index": 3,
+    "ahei": 2,
+    "mediterranean diet score": 3,
+    "mediterranean diet adherence score": 3,
+    "dash score": 3,
+    "dash diet score": 3,
+    "plant-based diet index": 3,
+    "plant based diet index": 3,
+    "healthy plant-based diet index": 3,
+    "healthy plant based diet index": 3,
+    "unhealthy plant-based diet index": 2,
+    "unhealthy plant based diet index": 2,
+    "dietary inflammatory index": 2,
+    "empirical dietary inflammatory pattern": 2
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "diet quality score": 5,
+      "diet quality index": 5,
+      "diet quality indices": 5,
+      "healthy eating index": 5,
+      "alternative healthy eating index": 5,
+      "ahei": 3,
+      "mediterranean diet score": 5,
+      "mediterranean diet adherence score": 5,
+      "dash score": 5,
+      "dash diet score": 5,
+      "plant-based diet index": 5,
+      "plant based diet index": 5,
+      "healthy plant-based diet index": 5,
+      "healthy plant based diet index": 5,
+      "unhealthy plant-based diet index": 3,
+      "unhealthy plant based diet index": 3,
+      "dietary inflammatory index": 3,
+      "empirical dietary inflammatory pattern": 3
+    },
+    "a3": {
+      "diet quality score": 4,
+      "diet quality index": 4,
+      "healthy eating index": 4,
+      "alternative healthy eating index": 4,
+      "mediterranean diet adherence score": 4,
+      "dash diet score": 4,
+      "plant-based diet index": 4,
+      "plant based diet index": 4,
+      "healthy plant-based diet index": 4,
+      "healthy plant based diet index": 4,
+      "dietary inflammatory index": 3
+    },
+    "artigo3_framework": {
+      "diet quality score": 4,
+      "diet quality index": 4,
+      "healthy eating index": 4,
+      "alternative healthy eating index": 4,
+      "mediterranean diet adherence score": 4,
+      "dash diet score": 4,
+      "plant-based diet index": 4,
+      "plant based diet index": 4,
+      "healthy plant-based diet index": 4,
+      "healthy plant based diet index": 4,
+      "dietary inflammatory index": 3
+    }
+  }
+}
