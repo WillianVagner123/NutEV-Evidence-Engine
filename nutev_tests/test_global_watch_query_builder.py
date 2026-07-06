@@ -1,4 +1,5 @@
 from nutev.global_watch.watch_query_builder import build_watch_queries
+from nutev.global_watch.watch_scoring import score_watch_item
 
 
 def test_build_watch_queries_generates_queries():
@@ -18,6 +19,33 @@ def test_food_literacy_queries_include_teaching_kitchen_terms_in_quick_mode():
     rendered = " ".join(str(row["query"]) for row in rows).lower()
     assert "teaching kitchen" in rendered
     assert "culinary nutrition" in rendered
+
+
+def test_quick_queries_include_scoped_social_prescribing_nutrition_terms():
+    rows = build_watch_queries(["implementation_behavior"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "nutrition social prescribing" in rendered
+    assert "social prescribing nutrition security" in rendered
+    assert "link worker nutrition referral" in rendered
+    assert "community resource referral food" in rendered
+
+
+def test_social_prescribing_nutrition_terms_score_above_generic_referral_language():
+    scoped = score_watch_item(
+        {
+            "title": "Nutrition social prescribing link worker referral for food insecurity",
+            "source_provider": "pubmed",
+        }
+    )
+    generic = score_watch_item(
+        {
+            "title": "Social prescribing link worker referral for loneliness",
+            "source_provider": "pubmed",
+        }
+    )
+
+    assert scoped > generic
+    assert scoped - generic >= 45
 
 
 def test_framework_instrument_queries_include_food_competence_and_commensality_scales():
