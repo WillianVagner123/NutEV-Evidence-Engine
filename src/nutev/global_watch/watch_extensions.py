@@ -146,6 +146,50 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+LEAN_MASS_PROTEIN_NUTRITION_TERMS = [
+    "lean mass preservation nutrition",
+    "muscle preservation nutrition",
+    "fat-free mass preservation nutrition",
+    "fat free mass preservation nutrition",
+    "body composition nutrition care",
+    "dietary protein obesity treatment",
+    "protein adequacy weight loss",
+    "protein distribution weight loss",
+    "high-protein diet weight loss maintenance",
+    "high protein diet weight loss maintenance",
+    "protein-enriched diet obesity",
+    "protein enriched diet obesity",
+    "sarcopenic obesity nutrition",
+    "sarcopenic obesity dietary intervention",
+    "glp-1 lean mass preservation",
+    "glp-1 muscle preservation",
+    "anti-obesity medication lean mass",
+    "anti-obesity medication protein intake",
+    "obesity pharmacotherapy body composition",
+]
+
+LEAN_MASS_PROTEIN_BONUS_TERMS = [
+    ("lean mass preservation nutrition", 18),
+    ("muscle preservation nutrition", 18),
+    ("fat-free mass preservation nutrition", 18),
+    ("fat free mass preservation nutrition", 18),
+    ("body composition nutrition care", 16),
+    ("dietary protein obesity treatment", 16),
+    ("protein adequacy weight loss", 14),
+    ("protein distribution weight loss", 14),
+    ("high-protein diet weight loss maintenance", 16),
+    ("high protein diet weight loss maintenance", 16),
+    ("protein-enriched diet obesity", 16),
+    ("protein enriched diet obesity", 16),
+    ("sarcopenic obesity nutrition", 18),
+    ("sarcopenic obesity dietary intervention", 18),
+    ("glp-1 lean mass preservation", 18),
+    ("glp-1 muscle preservation", 18),
+    ("anti-obesity medication lean mass", 18),
+    ("anti-obesity medication protein intake", 18),
+    ("obesity pharmacotherapy body composition", 18),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +252,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *LEAN_MASS_PROTEIN_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +262,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *LEAN_MASS_PROTEIN_NUTRITION_TERMS,
             ]
         )
     )
@@ -255,7 +301,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *LEAN_MASS_PROTEIN_NUTRITION_TERMS],
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
@@ -275,7 +321,7 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *LEAN_MASS_PROTEIN_NUTRITION_TERMS],
     )
     _extend_query_context(
         "lifestyle_medicine",
@@ -291,7 +337,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *LEAN_MASS_PROTEIN_NUTRITION_TERMS],
     )
     _extend_scoring_terms()
 
