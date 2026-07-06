@@ -1,0 +1,178 @@
+{
+  "version_note": "Adds focused precision/personalized nutrition terms for cardiometabolic NutMEV retrieval; loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "personalized_precision_nutrition": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "precision diet",
+        "precision dietary intervention",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation",
+        "phenotype-guided nutrition",
+        "phenotype guided nutrition",
+        "algorithm-guided nutrition",
+        "algorithm guided nutrition",
+        "adaptive nutrition intervention",
+        "adaptive dietary intervention"
+      ]
+    },
+    "implementation_behavior": {
+      "personalized_nutrition_delivery": [
+        "personalized diet coaching",
+        "personalised diet coaching",
+        "personalized nutrition coaching",
+        "personalised nutrition coaching",
+        "tailored dietary counseling",
+        "tailored dietary counselling",
+        "tailored nutrition counseling",
+        "tailored nutrition counselling",
+        "precision lifestyle medicine",
+        "precision lifestyle intervention",
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "just-in-time adaptive intervention",
+        "just in time adaptive intervention",
+        "jitai",
+        "adaptive intervention",
+        "adaptive lifestyle intervention"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "tailored dietary advice adherence",
+      "personalized nutrition adherence",
+      "personalised nutrition adherence",
+      "precision nutrition adherence",
+      "adaptive dietary intervention adherence"
+    ],
+    "behavioral": [
+      "personalized diet coaching",
+      "personalised diet coaching",
+      "personalized nutrition coaching",
+      "personalised nutrition coaching",
+      "just-in-time adaptive intervention",
+      "just in time adaptive intervention",
+      "adaptive lifestyle intervention"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "personalized nutrition guideline",
+        "personalised nutrition guideline",
+        "precision nutrition guideline",
+        "tailored dietary advice guideline",
+        "precision nutrition cardiometabolic risk",
+        "personalized nutrition cardiometabolic risk",
+        "personalised nutrition cardiometabolic risk",
+        "individualized dietary intervention type 2 diabetes",
+        "individualised dietary intervention type 2 diabetes"
+      ],
+      "web_query_hints": [
+        "personalized nutrition guideline cardiometabolic",
+        "personalised nutrition guideline cardiometabolic",
+        "precision nutrition guideline type 2 diabetes",
+        "tailored dietary advice guideline obesity",
+        "precision lifestyle medicine cardiometabolic consensus"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "personalized nutrition intervention",
+        "personalised nutrition intervention",
+        "precision nutrition intervention",
+        "tailored dietary intervention",
+        "adaptive dietary intervention",
+        "adaptive nutrition intervention",
+        "personalized diet coaching",
+        "personalised diet coaching",
+        "digital nutrition intervention",
+        "just-in-time adaptive intervention",
+        "just in time adaptive intervention"
+      ],
+      "web_query_hints": [
+        "personalized nutrition intervention obesity trial",
+        "personalised nutrition intervention obesity trial",
+        "precision nutrition intervention type 2 diabetes",
+        "tailored dietary intervention cardiometabolic trial",
+        "adaptive dietary intervention cardiometabolic",
+        "digital nutrition intervention cardiometabolic",
+        "just-in-time adaptive intervention diet"
+      ],
+      "document_terms": [
+        "personalized nutrition trial",
+        "personalised nutrition trial",
+        "precision nutrition trial",
+        "tailored dietary intervention trial",
+        "adaptive intervention trial",
+        "digital nutrition intervention trial"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "personalized nutrition questionnaire",
+        "personalised nutrition questionnaire",
+        "precision nutrition questionnaire",
+        "tailored dietary advice questionnaire",
+        "diet personalization scale",
+        "diet personalisation scale",
+        "adaptive intervention framework"
+      ],
+      "web_query_hints": [
+        "personalized nutrition questionnaire validation",
+        "precision nutrition questionnaire validation",
+        "tailored dietary advice questionnaire",
+        "diet personalization scale validation",
+        "adaptive intervention framework nutrition"
+      ],
+      "document_terms": [
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "adaptive intervention framework"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "personalized nutrition questionnaire",
+        "personalised nutrition questionnaire",
+        "precision nutrition questionnaire",
+        "tailored dietary advice questionnaire",
+        "diet personalization scale",
+        "diet personalisation scale",
+        "adaptive intervention framework"
+      ],
+      "web_query_hints": [
+        "personalized nutrition questionnaire validation",
+        "precision nutrition questionnaire validation",
+        "tailored dietary advice questionnaire",
+        "diet personalization scale validation",
+        "adaptive intervention framework nutrition"
+      ],
+      "document_terms": [
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "adaptive intervention framework"
+      ]
+    }
+  }
+}
