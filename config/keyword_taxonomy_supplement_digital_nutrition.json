@@ -1,0 +1,86 @@
+{
+  "version_note": "2026-07 digital nutrition implementation supplement: expands query coverage for remote, telehealth, mobile and app-supported nutrition interventions while keeping terms anchored to nutrition, obesity, diabetes prevention, adherence, and cardiometabolic risk.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "digital dietary adherence",
+        "digital nutrition adherence",
+        "app-supported dietary adherence",
+        "app supported dietary adherence",
+        "mobile dietary self-monitoring",
+        "mobile nutrition self-monitoring",
+        "remote dietary self-monitoring",
+        "remote nutrition self-monitoring",
+        "digital food diary",
+        "mobile food diary",
+        "app-based food diary",
+        "app based food diary"
+      ],
+      "behavioral": [
+        "digital diabetes prevention program",
+        "digital diabetes prevention programme",
+        "online diabetes prevention program",
+        "online diabetes prevention programme",
+        "virtual diabetes prevention program",
+        "virtual diabetes prevention programme",
+        "digital lifestyle intervention",
+        "digital lifestyle program",
+        "digital lifestyle programme",
+        "remote lifestyle intervention",
+        "virtual lifestyle intervention",
+        "mobile lifestyle intervention",
+        "app-based lifestyle intervention",
+        "app based lifestyle intervention",
+        "remote nutrition coaching",
+        "virtual nutrition coaching",
+        "digital nutrition coaching",
+        "telehealth nutrition counseling",
+        "telehealth nutrition counselling",
+        "remote nutrition counseling",
+        "remote nutrition counselling",
+        "mobile health nutrition intervention",
+        "mhealth nutrition intervention",
+        "ehealth nutrition intervention",
+        "app-based weight loss intervention",
+        "app based weight loss intervention"
+      ],
+      "contextual": [
+        "telehealth nutrition intervention",
+        "telemedicine nutrition intervention",
+        "virtual dietitian visit",
+        "virtual dietitian visits",
+        "remote dietitian visit",
+        "remote dietitian visits",
+        "digital dietitian intervention",
+        "remote dietitian intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "digital diabetes prevention program",
+        "online diabetes prevention program",
+        "virtual diabetes prevention program",
+        "digital lifestyle intervention",
+        "remote lifestyle intervention",
+        "virtual lifestyle intervention",
+        "remote nutrition coaching",
+        "telehealth nutrition counseling",
+        "remote nutrition counseling",
+        "mobile dietary self-monitoring",
+        "app-based weight loss intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "digital dietary adherence",
+        "digital nutrition adherence",
+        "mobile dietary self-monitoring",
+        "digital food diary",
+        "app-based food diary",
+        "remote nutrition coaching"
+      ]
+    }
+  }
+}
