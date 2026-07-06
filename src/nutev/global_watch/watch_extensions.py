@@ -146,6 +146,48 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+HYPERTENSION_NUTRITION_TERMS = [
+    "dietary sodium reduction",
+    "dietary salt reduction",
+    "sodium reduction blood pressure",
+    "salt reduction blood pressure",
+    "sodium restriction hypertension",
+    "salt restriction hypertension",
+    "low sodium diet hypertension",
+    "low-sodium diet hypertension",
+    "DASH sodium",
+    "DASH diet sodium reduction",
+    "dietary potassium blood pressure",
+    "potassium intake hypertension",
+    "salt substitute hypertension",
+    "salt substitutes hypertension",
+    "potassium-enriched salt hypertension",
+    "potassium enriched salt hypertension",
+    "reduced-sodium salt hypertension",
+    "reduced sodium salt hypertension",
+]
+
+HYPERTENSION_NUTRITION_BONUS_TERMS = [
+    ("dietary sodium reduction", 18),
+    ("dietary salt reduction", 18),
+    ("sodium reduction blood pressure", 20),
+    ("salt reduction blood pressure", 20),
+    ("sodium restriction hypertension", 18),
+    ("salt restriction hypertension", 18),
+    ("low sodium diet hypertension", 18),
+    ("low-sodium diet hypertension", 18),
+    ("DASH sodium", 18),
+    ("DASH diet sodium reduction", 20),
+    ("dietary potassium blood pressure", 16),
+    ("potassium intake hypertension", 16),
+    ("salt substitute hypertension", 18),
+    ("salt substitutes hypertension", 18),
+    ("potassium-enriched salt hypertension", 20),
+    ("potassium enriched salt hypertension", 20),
+    ("reduced-sodium salt hypertension", 18),
+    ("reduced sodium salt hypertension", 18),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +250,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *HYPERTENSION_NUTRITION_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +260,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *HYPERTENSION_NUTRITION_TERMS,
             ]
         )
     )
@@ -251,11 +295,15 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        [*FOOD_ENVIRONMENT_DOCUMENT_TERMS, *HYPERTENSION_NUTRITION_TERMS],
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *HYPERTENSION_NUTRITION_TERMS],
+    )
+    _extend_category_terms(
+        "diet_patterns",
+        HYPERTENSION_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
@@ -277,6 +325,16 @@ def apply_watch_taxonomy_extensions() -> None:
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
+    _extend_quick_seed_group(
+        "obesity_cardiometabolic",
+        2,
+        HYPERTENSION_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "diet_patterns",
+        0,
+        HYPERTENSION_NUTRITION_TERMS,
+    )
     _extend_query_context(
         "lifestyle_medicine",
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
@@ -291,7 +349,11 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *HYPERTENSION_NUTRITION_TERMS],
+    )
+    _extend_query_context(
+        "diet_patterns",
+        HYPERTENSION_NUTRITION_TERMS,
     )
     _extend_scoring_terms()
 
