@@ -106,6 +106,68 @@ SOCIAL_PRESCRIBING_BONUS_TERMS = [
     ("community referral food program", 16),
 ]
 
+REFERRAL_INTEGRATION_TERMS = [
+    "clinical-community linkage nutrition",
+    "clinical community linkage nutrition",
+    "clinical-community linkage food",
+    "clinical community linkage food",
+    "healthcare food referral",
+    "health care food referral",
+    "healthcare nutrition referral",
+    "health care nutrition referral",
+    "primary care nutrition referral",
+    "primary care food referral",
+    "electronic health record food referral",
+    "electronic health record nutrition referral",
+    "ehr food referral",
+    "ehr nutrition referral",
+    "closed-loop food referral",
+    "closed loop food referral",
+    "closed-loop nutrition referral",
+    "closed loop nutrition referral",
+    "food is medicine referral pathway",
+    "food as medicine referral pathway",
+    "produce prescription referral pathway",
+    "medically tailored meals referral pathway",
+    "nutrition security referral pathway",
+    "food insecurity referral pathway",
+    "community-based nutrition referral",
+    "community based nutrition referral",
+    "community-based food referral",
+    "community based food referral",
+]
+
+REFERRAL_INTEGRATION_BONUS_TERMS = [
+    ("clinical-community linkage nutrition", 18),
+    ("clinical community linkage nutrition", 18),
+    ("clinical-community linkage food", 18),
+    ("clinical community linkage food", 18),
+    ("healthcare food referral", 18),
+    ("health care food referral", 18),
+    ("healthcare nutrition referral", 18),
+    ("health care nutrition referral", 18),
+    ("primary care nutrition referral", 18),
+    ("primary care food referral", 18),
+    ("electronic health record food referral", 16),
+    ("electronic health record nutrition referral", 16),
+    ("ehr food referral", 16),
+    ("ehr nutrition referral", 16),
+    ("closed-loop food referral", 18),
+    ("closed loop food referral", 18),
+    ("closed-loop nutrition referral", 18),
+    ("closed loop nutrition referral", 18),
+    ("food is medicine referral pathway", 20),
+    ("food as medicine referral pathway", 20),
+    ("produce prescription referral pathway", 20),
+    ("medically tailored meals referral pathway", 20),
+    ("nutrition security referral pathway", 18),
+    ("food insecurity referral pathway", 18),
+    ("community-based nutrition referral", 16),
+    ("community based nutrition referral", 16),
+    ("community-based food referral", 16),
+    ("community based food referral", 16),
+]
+
 OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS = [
     "anti-obesity medication nutrition",
     "anti-obesity medication nutrition care",
@@ -207,6 +269,7 @@ def _extend_scoring_terms() -> None:
             [
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
+                *REFERRAL_INTEGRATION_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
             ]
         )
@@ -216,6 +279,7 @@ def _extend_scoring_terms() -> None:
             [
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+                *REFERRAL_INTEGRATION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
             ]
         )
@@ -239,15 +303,20 @@ def apply_watch_taxonomy_extensions() -> None:
             *FOOD_ENVIRONMENT_POLICY_TERMS,
             *FOOD_ENVIRONMENT_DOCUMENT_TERMS,
             *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *REFERRAL_INTEGRATION_TERMS,
         ],
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *REFERRAL_INTEGRATION_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *REFERRAL_INTEGRATION_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -260,17 +329,17 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_quick_seed_group(
         "lifestyle_medicine",
         1,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *REFERRAL_INTEGRATION_TERMS],
     )
     _extend_quick_seed_group(
         "implementation_behavior",
         2,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *REFERRAL_INTEGRATION_TERMS],
     )
     _extend_quick_seed_group(
         "food_literacy_culinary_commensality",
         0,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *REFERRAL_INTEGRATION_TERMS],
     )
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
@@ -279,15 +348,15 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *REFERRAL_INTEGRATION_TERMS],
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *REFERRAL_INTEGRATION_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *REFERRAL_INTEGRATION_TERMS],
     )
     _extend_query_context(
         "obesity_cardiometabolic",
