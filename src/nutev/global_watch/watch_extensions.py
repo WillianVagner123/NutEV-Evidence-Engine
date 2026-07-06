@@ -64,6 +64,48 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+SOCIAL_PRESCRIBING_NUTRITION_TERMS = [
+    "nutrition social prescribing",
+    "food social prescribing",
+    "social prescribing nutrition",
+    "social prescribing food",
+    "social prescribing dietary intervention",
+    "social prescribing healthy eating",
+    "social prescribing food insecurity",
+    "social prescribing nutrition security",
+    "social prescribing link worker nutrition",
+    "social prescribing link worker food",
+    "link worker nutrition referral",
+    "link worker food referral",
+    "community connector nutrition referral",
+    "community connector food referral",
+    "community resource referral nutrition",
+    "community resource referral food",
+    "community referral nutrition program",
+    "community referral food program",
+]
+
+SOCIAL_PRESCRIBING_BONUS_TERMS = [
+    ("nutrition social prescribing", 20),
+    ("food social prescribing", 20),
+    ("social prescribing nutrition", 18),
+    ("social prescribing food", 18),
+    ("social prescribing dietary intervention", 20),
+    ("social prescribing healthy eating", 18),
+    ("social prescribing food insecurity", 18),
+    ("social prescribing nutrition security", 20),
+    ("social prescribing link worker nutrition", 18),
+    ("social prescribing link worker food", 18),
+    ("link worker nutrition referral", 16),
+    ("link worker food referral", 16),
+    ("community connector nutrition referral", 16),
+    ("community connector food referral", 16),
+    ("community resource referral nutrition", 16),
+    ("community resource referral food", 16),
+    ("community referral nutrition program", 16),
+    ("community referral food program", 16),
+]
+
 OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS = [
     "anti-obesity medication nutrition",
     "anti-obesity medication nutrition care",
@@ -162,12 +204,20 @@ def _extend_scoring_terms() -> None:
 
     watch_scoring.BONUS_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.BONUS_TERMS, *OBESITY_PHARMACOTHERAPY_BONUS_TERMS]
+            [
+                *watch_scoring.BONUS_TERMS,
+                *SOCIAL_PRESCRIBING_BONUS_TERMS,
+                *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+            ]
         )
     )
     watch_scoring.NUTMEV_SCOPE_TERMS = tuple(
         _dedupe_preserve_order(
-            [*watch_scoring.NUTMEV_SCOPE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS]
+            [
+                *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+                *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            ]
         )
     )
 
@@ -185,11 +235,19 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "food_literacy_culinary_commensality",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *FOOD_ENVIRONMENT_DOCUMENT_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        ],
     )
     _extend_category_terms(
         "implementation_behavior",
-        FOOD_ENVIRONMENT_POLICY_TERMS,
+        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+    )
+    _extend_category_terms(
+        "lifestyle_medicine",
+        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -200,9 +258,36 @@ def apply_watch_taxonomy_extensions() -> None:
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
+        "lifestyle_medicine",
+        1,
+        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "implementation_behavior",
+        2,
+        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "food_literacy_culinary_commensality",
+        0,
+        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+    )
+    _extend_query_context(
+        "lifestyle_medicine",
+        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_query_context(
+        "implementation_behavior",
+        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_query_context(
+        "food_literacy_culinary_commensality",
+        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
     )
     _extend_query_context(
         "obesity_cardiometabolic",
