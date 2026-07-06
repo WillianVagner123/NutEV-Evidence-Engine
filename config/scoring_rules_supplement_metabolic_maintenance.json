@@ -1,0 +1,54 @@
+{
+  "version_note": "Focused NutMEV scoring supplement for metabolic maintenance, weight recurrence, and diabetes remission relapse terminology. Loaded after scoring_rules.json without replacing base scoring rules.",
+  "keyword_points": {
+    "weight recurrence": 3,
+    "weight recidivism": 3,
+    "weight relapse": 3,
+    "weight cycling": 3,
+    "weight regain after weight loss": 4,
+    "post-weight-loss maintenance": 4,
+    "post weight loss maintenance": 4,
+    "long-term weight maintenance": 4,
+    "long term weight maintenance": 4,
+    "maintenance of weight loss": 4,
+    "diabetes relapse": 4,
+    "type 2 diabetes relapse": 4,
+    "relapse after diabetes remission": 5,
+    "loss of diabetes remission": 5,
+    "remission relapse": 4,
+    "remission durability": 4,
+    "durable diabetes remission": 5,
+    "sustained diabetes remission": 5
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "diabetes relapse": 4,
+      "type 2 diabetes relapse": 4,
+      "relapse after diabetes remission": 5,
+      "loss of diabetes remission": 5,
+      "remission durability": 4,
+      "durable diabetes remission": 5,
+      "sustained diabetes remission": 5
+    },
+    "busca2b": {
+      "weight recurrence": 5,
+      "weight recidivism": 5,
+      "weight relapse": 5,
+      "weight cycling": 4,
+      "weight regain after weight loss": 5,
+      "post-weight-loss maintenance": 5,
+      "post weight loss maintenance": 5,
+      "long-term weight maintenance": 5,
+      "long term weight maintenance": 5,
+      "maintenance of weight loss": 5,
+      "diabetes relapse": 5,
+      "type 2 diabetes relapse": 5,
+      "relapse after diabetes remission": 5,
+      "loss of diabetes remission": 5,
+      "remission relapse": 5,
+      "remission durability": 5,
+      "durable diabetes remission": 5,
+      "sustained diabetes remission": 5
+    }
+  }
+}
