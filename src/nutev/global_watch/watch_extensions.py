@@ -146,6 +146,38 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+CARDIO_KIDNEY_METABOLIC_NUTRITION_TERMS = [
+    "cardiovascular-kidney-metabolic nutrition",
+    "cardiovascular kidney metabolic nutrition",
+    "cardio-kidney-metabolic nutrition",
+    "cardio kidney metabolic nutrition",
+    "ckm nutrition",
+    "ckm health nutrition",
+    "ckm risk nutrition",
+    "ckm syndrome nutrition",
+    "cardiovascular-kidney-metabolic dietary pattern",
+    "cardiovascular kidney metabolic dietary pattern",
+    "cardio-kidney-metabolic dietary intervention",
+    "cardio kidney metabolic dietary intervention",
+    "cardiorenal metabolic nutrition",
+]
+
+CARDIO_KIDNEY_METABOLIC_BONUS_TERMS = [
+    ("cardiovascular-kidney-metabolic nutrition", 20),
+    ("cardiovascular kidney metabolic nutrition", 20),
+    ("cardio-kidney-metabolic nutrition", 18),
+    ("cardio kidney metabolic nutrition", 18),
+    ("ckm nutrition", 18),
+    ("ckm health nutrition", 18),
+    ("ckm risk nutrition", 18),
+    ("ckm syndrome nutrition", 18),
+    ("cardiovascular-kidney-metabolic dietary pattern", 18),
+    ("cardiovascular kidney metabolic dietary pattern", 18),
+    ("cardio-kidney-metabolic dietary intervention", 18),
+    ("cardio kidney metabolic dietary intervention", 18),
+    ("cardiorenal metabolic nutrition", 16),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +240,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *CARDIO_KIDNEY_METABOLIC_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +250,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *CARDIO_KIDNEY_METABOLIC_NUTRITION_TERMS,
             ]
         )
     )
@@ -255,7 +289,14 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [
+            *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            *CARDIO_KIDNEY_METABOLIC_NUTRITION_TERMS,
+        ],
+    )
+    _extend_category_terms(
+        "diet_patterns",
+        CARDIO_KIDNEY_METABOLIC_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
@@ -275,7 +316,15 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [
+            *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            *CARDIO_KIDNEY_METABOLIC_NUTRITION_TERMS,
+        ],
+    )
+    _extend_quick_seed_group(
+        "diet_patterns",
+        0,
+        CARDIO_KIDNEY_METABOLIC_NUTRITION_TERMS,
     )
     _extend_query_context(
         "lifestyle_medicine",
@@ -291,7 +340,14 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [
+            *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            *CARDIO_KIDNEY_METABOLIC_NUTRITION_TERMS,
+        ],
+    )
+    _extend_query_context(
+        "diet_patterns",
+        CARDIO_KIDNEY_METABOLIC_NUTRITION_TERMS,
     )
     _extend_scoring_terms()
 
