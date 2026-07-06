@@ -1,0 +1,55 @@
+{
+  "version_note": "2026-07-06 CKM syndrome query expansion for cardiometabolic workstreams. Loaded as a supplement by nutev.settings.load_json without modifying the base taxonomy.",
+  "clinical": {
+    "cvd": [
+      "cardiovascular-kidney-metabolic",
+      "cardiovascular kidney metabolic",
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "ckm syndrome",
+      "ckm health",
+      "ckm risk",
+      "ckm staging"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "ckm health",
+        "ckm risk",
+        "ckm staging"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic guideline",
+        "cardiovascular kidney metabolic guideline",
+        "ckm syndrome guideline",
+        "ckm health scientific statement",
+        "ckm staging scientific statement"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "cardiovascular-kidney-metabolic",
+        "cardiovascular kidney metabolic",
+        "cardiovascular-kidney-metabolic syndrome",
+        "cardiovascular kidney metabolic syndrome",
+        "ckm syndrome",
+        "ckm health",
+        "ckm risk",
+        "ckm staging"
+      ],
+      "web_query_hints": [
+        "cardiovascular-kidney-metabolic lifestyle intervention",
+        "cardiovascular kidney metabolic lifestyle intervention",
+        "ckm syndrome lifestyle intervention",
+        "ckm health nutrition intervention",
+        "ckm risk dietary intervention"
+      ]
+    }
+  }
+}
