@@ -1,0 +1,114 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for validated diet-quality and dietary-pattern indices; loaded after keyword_taxonomy.json without changing the base taxonomy.",
+  "global": {
+    "diet_patterns": {
+      "diet_quality_indices": [
+        "diet quality score",
+        "diet quality index",
+        "diet quality indices",
+        "healthy eating index",
+        "alternative healthy eating index",
+        "ahei",
+        "mediterranean diet score",
+        "mediterranean diet adherence score",
+        "dash score",
+        "dash diet score",
+        "plant-based diet index",
+        "plant based diet index",
+        "healthy plant-based diet index",
+        "healthy plant based diet index",
+        "unhealthy plant-based diet index",
+        "unhealthy plant based diet index",
+        "dietary inflammatory index",
+        "empirical dietary inflammatory pattern"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "diet quality score",
+      "diet quality index",
+      "diet quality indices",
+      "healthy eating index",
+      "alternative healthy eating index",
+      "ahei",
+      "mediterranean diet score",
+      "mediterranean diet adherence score",
+      "dash score",
+      "dash diet score",
+      "plant-based diet index",
+      "plant based diet index",
+      "healthy plant-based diet index",
+      "healthy plant based diet index",
+      "unhealthy plant-based diet index",
+      "unhealthy plant based diet index",
+      "dietary inflammatory index",
+      "empirical dietary inflammatory pattern"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "diet quality score",
+        "diet quality index",
+        "healthy eating index",
+        "alternative healthy eating index",
+        "mediterranean diet score",
+        "mediterranean diet adherence score",
+        "dash score",
+        "dash diet score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "dietary inflammatory index",
+        "empirical dietary inflammatory pattern"
+      ],
+      "web_query_hints": [
+        "diet quality score obesity trial",
+        "healthy eating index weight loss trial",
+        "alternative healthy eating index cardiometabolic trial",
+        "mediterranean diet score metabolic syndrome trial",
+        "dash diet score hypertension trial",
+        "plant-based diet index cardiometabolic risk",
+        "dietary inflammatory index obesity systematic review"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "diet quality score",
+        "diet quality index",
+        "healthy eating index",
+        "alternative healthy eating index",
+        "mediterranean diet adherence score",
+        "dash diet score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "dietary inflammatory index"
+      ],
+      "web_query_hints": [
+        "diet quality index questionnaire validation",
+        "healthy eating index dietary adherence instrument",
+        "diet quality score lifestyle medicine framework",
+        "plant-based diet index dietary adherence"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "diet quality score",
+        "diet quality index",
+        "healthy eating index",
+        "alternative healthy eating index",
+        "mediterranean diet adherence score",
+        "dash diet score",
+        "plant-based diet index",
+        "healthy plant-based diet index",
+        "dietary inflammatory index"
+      ],
+      "web_query_hints": [
+        "diet quality index questionnaire validation",
+        "healthy eating index dietary adherence instrument",
+        "diet quality score lifestyle medicine framework",
+        "plant-based diet index dietary adherence"
+      ]
+    }
+  }
+}
