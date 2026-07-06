@@ -77,6 +77,35 @@ def test_obesity_cardiometabolic_queries_include_extended_liver_synonyms():
     assert "non-alcoholic steatohepatitis" in rendered
 
 
+def test_obesity_cardiometabolic_queries_include_lean_mass_protein_terms():
+    rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "lean mass preservation nutrition" in rendered
+    assert "dietary protein obesity treatment" in rendered
+    assert "sarcopenic obesity nutrition" in rendered
+    assert "glp-1 lean mass preservation" in rendered
+
+
+def test_lean_mass_protein_terms_score_above_generic_protein_note():
+    scoped = score_watch_item(
+        {
+            "title": "GLP-1 lean mass preservation and dietary protein obesity treatment",
+            "abstract": "Body composition nutrition care during obesity pharmacotherapy.",
+            "source_provider": "pubmed",
+        }
+    )
+    generic = score_watch_item(
+        {
+            "title": "Generic protein intake note",
+            "abstract": "General laboratory methods.",
+            "source_provider": "pubmed",
+        }
+    )
+
+    assert scoped > generic
+    assert scoped - generic >= 30
+
+
 def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     rows = build_watch_queries(["diet_patterns"], 7, "quick")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
