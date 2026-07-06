@@ -1,0 +1,68 @@
+{
+  "version_note": "2026-07 digital nutrition coaching scoring supplement: rewards nutrition-anchored digital adherence and coaching terms while avoiding broad unanchored digital-health expansion.",
+  "keyword_points": {
+    "digital nutrition intervention": 4,
+    "digital dietary intervention": 4,
+    "digital lifestyle coaching": 3,
+    "remote nutrition coaching": 4,
+    "virtual nutrition coaching": 4,
+    "telehealth nutrition counseling": 4,
+    "telehealth nutrition counselling": 4,
+    "mobile health nutrition": 3,
+    "mhealth nutrition": 3,
+    "app-based nutrition intervention": 4,
+    "app based nutrition intervention": 4,
+    "app-based dietary intervention": 4,
+    "app based dietary intervention": 4,
+    "digital dietary self-monitoring": 4,
+    "dietary self-monitoring app": 4,
+    "automated dietary feedback": 4,
+    "personalized dietary feedback": 4,
+    "personalised dietary feedback": 4,
+    "remote dietary counseling": 3,
+    "remote dietary counselling": 3,
+    "virtual dietary counseling": 3,
+    "virtual dietary counselling": 3,
+    "digital behavior change intervention": 3,
+    "digital behaviour change intervention": 3
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "digital nutrition intervention": 5,
+      "digital dietary intervention": 5,
+      "remote nutrition coaching": 5,
+      "virtual nutrition coaching": 5,
+      "telehealth nutrition counseling": 5,
+      "telehealth nutrition counselling": 5,
+      "app-based nutrition intervention": 5,
+      "app based nutrition intervention": 5,
+      "app-based dietary intervention": 5,
+      "app based dietary intervention": 5,
+      "digital dietary self-monitoring": 5,
+      "dietary self-monitoring app": 5,
+      "automated dietary feedback": 4,
+      "personalized dietary feedback": 4,
+      "personalised dietary feedback": 4,
+      "digital behavior change intervention": 4,
+      "digital behaviour change intervention": 4
+    },
+    "a3": {
+      "digital dietary self-monitoring": 4,
+      "dietary self-monitoring app": 4,
+      "automated dietary feedback": 4,
+      "personalized dietary feedback": 4,
+      "personalised dietary feedback": 4,
+      "digital behavior change intervention": 3,
+      "digital behaviour change intervention": 3
+    },
+    "artigo3_framework": {
+      "digital dietary self-monitoring": 4,
+      "dietary self-monitoring app": 4,
+      "automated dietary feedback": 4,
+      "personalized dietary feedback": 4,
+      "personalised dietary feedback": 4,
+      "digital behavior change intervention": 3,
+      "digital behaviour change intervention": 3
+    }
+  }
+}
