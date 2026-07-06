@@ -97,7 +97,7 @@ def test_lean_mass_protein_terms_score_above_generic_protein_note():
     generic = score_watch_item(
         {
             "title": "Generic protein intake note",
-            "abstract": "No obesity or nutrition care context.",
+            "abstract": "General laboratory methods.",
             "source_provider": "pubmed",
         }
     )
