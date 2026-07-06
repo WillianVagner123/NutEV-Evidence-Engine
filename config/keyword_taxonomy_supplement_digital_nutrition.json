@@ -1,0 +1,69 @@
+{
+  "version_note": "2026-07 digital nutrition coaching supplement: adds nutrition-anchored digital, telehealth, app-based and remote coaching terms for busca2b/a3 without changing raw outputs.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "digital lifestyle coaching",
+        "remote nutrition coaching",
+        "virtual nutrition coaching",
+        "telehealth nutrition counseling",
+        "telehealth nutrition counselling",
+        "mobile health nutrition",
+        "mhealth nutrition",
+        "app-based nutrition intervention",
+        "app based nutrition intervention",
+        "app-based dietary intervention",
+        "app based dietary intervention",
+        "digital dietary self-monitoring",
+        "dietary self-monitoring app",
+        "automated dietary feedback",
+        "personalized dietary feedback",
+        "personalised dietary feedback"
+      ],
+      "behavioral": [
+        "digital behavior change intervention",
+        "digital behaviour change intervention",
+        "remote dietary counseling",
+        "remote dietary counselling",
+        "virtual dietary counseling",
+        "virtual dietary counselling",
+        "digital health coaching for weight loss",
+        "mobile app weight loss intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "remote nutrition coaching",
+        "virtual nutrition coaching",
+        "telehealth nutrition counseling",
+        "telehealth nutrition counselling",
+        "app-based nutrition intervention",
+        "app based nutrition intervention",
+        "digital dietary self-monitoring",
+        "dietary self-monitoring app",
+        "automated dietary feedback",
+        "personalized dietary feedback",
+        "personalised dietary feedback",
+        "digital behavior change intervention",
+        "digital behaviour change intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "digital dietary self-monitoring",
+        "dietary self-monitoring app",
+        "automated dietary feedback",
+        "personalized dietary feedback",
+        "personalised dietary feedback",
+        "digital behavior change intervention",
+        "digital behaviour change intervention"
+      ]
+    }
+  }
+}
