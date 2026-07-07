@@ -1,0 +1,84 @@
+{
+  "version_note": "Supplemental NutMEV engagement-dose query expansion loaded after keyword_taxonomy.json; adds intervention engagement, attendance, dose received, and completion terms for diet/lifestyle intervention retrieval without changing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "engagement_dose_retention": [
+        "intervention engagement",
+        "dietary intervention engagement",
+        "nutrition intervention engagement",
+        "lifestyle intervention engagement",
+        "program engagement",
+        "programme engagement",
+        "participant engagement",
+        "patient engagement",
+        "session attendance",
+        "intervention attendance",
+        "class attendance",
+        "visit attendance",
+        "program attendance",
+        "programme attendance",
+        "attendance rate",
+        "program retention",
+        "programme retention",
+        "participant retention",
+        "retention rate",
+        "program completion",
+        "programme completion",
+        "session completion",
+        "intervention dose",
+        "dose received",
+        "intervention exposure",
+        "adherence support"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "intervention engagement",
+      "dietary intervention engagement",
+      "nutrition intervention engagement",
+      "lifestyle intervention engagement",
+      "session attendance",
+      "intervention attendance",
+      "program retention",
+      "participant retention",
+      "program completion",
+      "intervention dose",
+      "dose received",
+      "intervention exposure",
+      "adherence support"
+    ],
+    "behavioral": [
+      "participant engagement",
+      "patient engagement",
+      "session attendance",
+      "attendance rate",
+      "retention rate",
+      "program completion",
+      "dose received"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "dietary intervention engagement",
+        "nutrition intervention engagement",
+        "lifestyle intervention engagement",
+        "session attendance",
+        "program retention",
+        "intervention dose",
+        "dose received",
+        "program completion",
+        "adherence support"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "intervention engagement",
+        "participant engagement",
+        "adherence support",
+        "program retention"
+      ]
+    }
+  }
+}
