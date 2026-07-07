@@ -1,0 +1,205 @@
+{
+  "version_note": "Focused NutMEV expansion for nutrition coaching, food skills, culinary self-efficacy, and eating competence. Loaded after keyword_taxonomy.json to preserve the base taxonomy while improving recall for behaviorally grounded nutrition interventions and Article 3 framework evidence.",
+  "global": {
+    "implementation_behavior": {
+      "nutrition_coaching_and_food_skills": [
+        "nutrition coaching",
+        "diet coaching",
+        "dietary coaching",
+        "health coaching",
+        "lifestyle coaching",
+        "wellness coaching",
+        "behavioral coaching",
+        "behavioural coaching",
+        "coach-led nutrition intervention",
+        "coach led nutrition intervention",
+        "health coach nutrition",
+        "nutrition self-efficacy",
+        "dietary self-efficacy",
+        "eating self-efficacy",
+        "cooking self-efficacy",
+        "cooking self efficacy",
+        "culinary self-efficacy",
+        "culinary self efficacy",
+        "food skills",
+        "food skills intervention",
+        "food skills program",
+        "food skills programme",
+        "cooking skills intervention",
+        "cooking skills program",
+        "cooking skills programme",
+        "meal planning skills",
+        "meal preparation skills",
+        "food preparation skills",
+        "food resource management",
+        "eating competence",
+        "eating competence intervention",
+        "satter eating competence",
+        "intuitive eating intervention",
+        "mindful eating intervention"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_literacy_competence": [
+      "nutrition self-efficacy",
+      "dietary self-efficacy",
+      "eating self-efficacy",
+      "cooking self-efficacy",
+      "cooking self efficacy",
+      "culinary self-efficacy",
+      "culinary self efficacy",
+      "food skills",
+      "food skills intervention",
+      "food skills program",
+      "food skills programme",
+      "meal planning skills",
+      "meal preparation skills",
+      "food preparation skills",
+      "food resource management",
+      "eating competence",
+      "satter eating competence",
+      "intuitive eating intervention",
+      "mindful eating intervention"
+    ],
+    "diet_quality_adherence": [
+      "nutrition coaching",
+      "diet coaching",
+      "dietary coaching",
+      "health coaching",
+      "lifestyle coaching",
+      "behavioral coaching",
+      "behavioural coaching",
+      "coach-led nutrition intervention",
+      "coach led nutrition intervention",
+      "eating self-efficacy",
+      "dietary self-efficacy",
+      "mindful eating intervention",
+      "intuitive eating intervention"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "nutrition coaching",
+        "diet coaching",
+        "dietary coaching",
+        "health coaching",
+        "lifestyle coaching",
+        "behavioral coaching",
+        "behavioural coaching",
+        "coach-led nutrition intervention",
+        "coach led nutrition intervention",
+        "nutrition self-efficacy",
+        "dietary self-efficacy",
+        "eating self-efficacy",
+        "food skills intervention",
+        "cooking skills intervention",
+        "meal planning skills",
+        "food preparation skills",
+        "eating competence intervention",
+        "mindful eating intervention"
+      ],
+      "web_query_hints": [
+        "nutrition coaching cardiometabolic trial",
+        "health coaching diet intervention systematic review",
+        "dietary coaching obesity trial",
+        "coach-led nutrition intervention diabetes",
+        "nutrition self-efficacy diet intervention",
+        "food skills intervention obesity",
+        "cooking skills intervention cardiometabolic",
+        "mindful eating intervention obesity systematic review"
+      ],
+      "document_terms": [
+        "coaching intervention",
+        "behavioral coaching intervention",
+        "behavioural coaching intervention",
+        "food skills intervention",
+        "cooking skills intervention",
+        "mindful eating intervention"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "nutrition self-efficacy scale",
+        "dietary self-efficacy scale",
+        "eating self-efficacy scale",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "culinary self-efficacy scale",
+        "culinary self efficacy scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "food resource management scale",
+        "meal planning skills questionnaire",
+        "meal preparation skills questionnaire",
+        "food preparation skills questionnaire",
+        "eating competence scale",
+        "satter eating competence inventory",
+        "intuitive eating scale",
+        "mindful eating questionnaire"
+      ],
+      "web_query_hints": [
+        "nutrition self-efficacy scale validation",
+        "dietary self-efficacy scale validation",
+        "eating self-efficacy scale validation",
+        "cooking self-efficacy scale validation",
+        "culinary self-efficacy scale validation",
+        "food skills questionnaire validation",
+        "food skills scale validation",
+        "food resource management scale validation",
+        "satter eating competence inventory validation",
+        "mindful eating questionnaire validation"
+      ],
+      "document_terms": [
+        "self-efficacy scale validation",
+        "self efficacy scale validation",
+        "food skills questionnaire validation",
+        "food skills scale validation",
+        "eating competence scale validation",
+        "mindful eating questionnaire validation"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "nutrition self-efficacy scale",
+        "dietary self-efficacy scale",
+        "eating self-efficacy scale",
+        "cooking self-efficacy scale",
+        "cooking self efficacy scale",
+        "culinary self-efficacy scale",
+        "culinary self efficacy scale",
+        "food skills questionnaire",
+        "food skills scale",
+        "food resource management scale",
+        "meal planning skills questionnaire",
+        "meal preparation skills questionnaire",
+        "food preparation skills questionnaire",
+        "eating competence scale",
+        "satter eating competence inventory",
+        "intuitive eating scale",
+        "mindful eating questionnaire"
+      ],
+      "web_query_hints": [
+        "nutrition self-efficacy scale validation",
+        "dietary self-efficacy scale validation",
+        "eating self-efficacy scale validation",
+        "cooking self-efficacy scale validation",
+        "culinary self-efficacy scale validation",
+        "food skills questionnaire validation",
+        "food skills scale validation",
+        "food resource management scale validation",
+        "satter eating competence inventory validation",
+        "mindful eating questionnaire validation"
+      ],
+      "document_terms": [
+        "self-efficacy scale validation",
+        "self efficacy scale validation",
+        "food skills questionnaire validation",
+        "food skills scale validation",
+        "eating competence scale validation",
+        "mindful eating questionnaire validation"
+      ]
+    }
+  }
+}
