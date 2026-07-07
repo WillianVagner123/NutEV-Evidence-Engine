@@ -1,0 +1,52 @@
+{
+  "version_note": "2026-07 group-based lifestyle nutrition care expansion",
+  "global": {
+    "implementation_behavior": {
+      "group_based_care_delivery": [
+        "group visit",
+        "group visits",
+        "shared medical appointment",
+        "shared medical appointments",
+        "group medical visit",
+        "group medical visits",
+        "group-based visit",
+        "group based visit",
+        "group-based visits",
+        "group based visits",
+        "group-based intervention",
+        "group based intervention",
+        "group-based lifestyle intervention",
+        "group based lifestyle intervention",
+        "group-based nutrition intervention",
+        "group based nutrition intervention",
+        "group nutrition counseling",
+        "group nutrition counselling",
+        "group dietary counseling",
+        "group dietary counselling",
+        "group lifestyle program",
+        "group lifestyle programme",
+        "group education session",
+        "group education sessions",
+        "peer group support",
+        "peer support group",
+        "peer support groups"
+      ]
+    },
+    "nutrition_domains": {
+      "group_based_care_delivery": [
+        "group nutrition counseling",
+        "group nutrition counselling",
+        "group dietary counseling",
+        "group dietary counselling",
+        "group-based nutrition intervention",
+        "group based nutrition intervention",
+        "group-based lifestyle intervention",
+        "group based lifestyle intervention",
+        "peer group support",
+        "peer support group",
+        "shared medical appointment",
+        "shared medical appointments"
+      ]
+    }
+  }
+}

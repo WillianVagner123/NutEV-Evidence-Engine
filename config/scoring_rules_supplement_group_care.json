@@ -1,0 +1,26 @@
+{
+  "version_note": "2026-07 group-based lifestyle nutrition care scoring",
+  "keyword_points": {
+    "group visit": 2,
+    "group visits": 2,
+    "shared medical appointment": 3,
+    "shared medical appointments": 3,
+    "group medical visit": 3,
+    "group medical visits": 3,
+    "group-based intervention": 2,
+    "group based intervention": 2,
+    "group-based lifestyle intervention": 3,
+    "group based lifestyle intervention": 3,
+    "group-based nutrition intervention": 4,
+    "group based nutrition intervention": 4,
+    "group nutrition counseling": 4,
+    "group nutrition counselling": 4,
+    "group dietary counseling": 4,
+    "group dietary counselling": 4,
+    "group lifestyle program": 3,
+    "group lifestyle programme": 3,
+    "peer group support": 2,
+    "peer support group": 2,
+    "peer support groups": 2
+  }
+}
