@@ -371,11 +371,32 @@
         "group based nutrition intervention",
         "group dietary intervention",
         "group-based dietary intervention",
+        "group based dietary intervention",
         "peer-led lifestyle intervention",
         "peer led lifestyle intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "telehealth nutrition counseling",
+        "telehealth nutrition counselling",
+        "telehealth dietary counseling",
+        "telehealth dietary counselling",
+        "virtual nutrition counseling",
+        "virtual nutrition counselling",
+        "virtual dietary counseling",
+        "virtual dietary counselling",
+        "remote nutrition counseling",
+        "remote nutrition counselling",
+        "remote dietary counseling",
+        "remote dietary counselling",
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "mobile health nutrition intervention",
+        "mhealth nutrition intervention",
+        "app-based dietary self-monitoring",
+        "app based dietary self-monitoring",
+        "app-based dietary self monitoring",
+        "app based dietary self monitoring"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -404,7 +425,18 @@
         "group-based lifestyle intervention cardiometabolic",
         "group-based nutrition intervention obesity",
         "peer-led nutrition intervention diabetes",
-        "peer-led lifestyle intervention weight management"
+        "peer-led lifestyle intervention weight management",
+        "telehealth nutrition counseling trial",
+        "telehealth dietary counseling trial",
+        "virtual nutrition counseling cardiometabolic",
+        "remote dietary counseling diabetes",
+        "remote nutrition counseling obesity",
+        "digital nutrition intervention trial",
+        "digital dietary intervention systematic review",
+        "mobile health nutrition intervention diabetes",
+        "mhealth nutrition intervention cardiometabolic",
+        "app-based dietary self-monitoring trial",
+        "app based dietary self monitoring weight management"
       ],
       "document_terms": [
         "implementation trial",
@@ -415,7 +447,13 @@
         "group-based intervention",
         "group based intervention",
         "peer-led intervention",
-        "peer led intervention"
+        "peer led intervention",
+        "telehealth nutrition intervention",
+        "remote dietary counseling intervention",
+        "digital nutrition intervention",
+        "digital dietary intervention",
+        "mobile health nutrition intervention",
+        "app-based dietary self-monitoring"
       ]
     },
     "a3": {
