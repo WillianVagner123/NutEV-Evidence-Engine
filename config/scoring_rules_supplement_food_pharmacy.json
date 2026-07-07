@@ -1,0 +1,19 @@
+{
+  "version_note": "2026-07 scoring supplement for narrow Food is Medicine access-program variants. Uses keyword_points only so existing workstream bonus logic remains intact.",
+  "keyword_points": {
+    "food pharmacy programme": 4,
+    "food pharmacy intervention": 4,
+    "food farmacy": 4,
+    "food farmacy program": 4,
+    "food farmacy intervention": 4,
+    "grocery prescription": 4,
+    "grocery prescription program": 4,
+    "grocery prescription intervention": 4,
+    "medically tailored nutrition": 4,
+    "medically tailored nutrition intervention": 4,
+    "medically tailored food referral": 3,
+    "produce prescription referral": 3,
+    "food is medicine referral": 3,
+    "food as medicine referral": 3
+  }
+}

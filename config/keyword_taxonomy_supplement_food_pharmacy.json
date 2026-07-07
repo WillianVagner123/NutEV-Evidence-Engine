@@ -1,0 +1,61 @@
+{
+  "version_note": "2026-07 food pharmacy and medically tailored nutrition supplement. Adds narrow Food is Medicine program variants to query generation without changing the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food pharmacy intervention",
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy intervention",
+        "grocery prescription program",
+        "grocery prescription intervention",
+        "medically tailored nutrition",
+        "medically tailored nutrition intervention",
+        "medically tailored food referral"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "food pharmacy intervention",
+        "food pharmacy programme",
+        "food farmacy",
+        "food farmacy program",
+        "food farmacy intervention",
+        "grocery prescription program",
+        "grocery prescription intervention",
+        "medically tailored nutrition",
+        "medically tailored nutrition intervention",
+        "medically tailored food referral",
+        "produce prescription referral",
+        "food is medicine referral",
+        "food as medicine referral"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food pharmacy program",
+        "food pharmacy programme",
+        "food pharmacy intervention",
+        "food farmacy program",
+        "grocery prescription program",
+        "medically tailored nutrition",
+        "medically tailored food referral"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food pharmacy intervention",
+        "food pharmacy program",
+        "food farmacy intervention",
+        "grocery prescription intervention",
+        "medically tailored nutrition intervention",
+        "produce prescription referral",
+        "food is medicine referral"
+      ]
+    }
+  }
+}
