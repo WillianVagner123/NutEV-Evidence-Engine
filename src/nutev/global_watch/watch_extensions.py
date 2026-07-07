@@ -64,6 +64,52 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+GROUP_BASED_LIFESTYLE_CARE_TERMS = [
+    "group lifestyle intervention",
+    "group-based lifestyle intervention",
+    "group based lifestyle intervention",
+    "group nutrition counseling",
+    "group nutrition counselling",
+    "group dietitian visit",
+    "group dietitian visits",
+    "group medical visit",
+    "group medical visits",
+    "lifestyle medicine group visit",
+    "shared medical appointment",
+    "shared medical appointments",
+    "diabetes group visit",
+    "diabetes group visits",
+    "obesity group visit",
+    "obesity group visits",
+    "weight management group visit",
+    "weight management group visits",
+    "group diabetes prevention program",
+    "group diabetes prevention programme",
+]
+
+GROUP_BASED_LIFESTYLE_CARE_BONUS_TERMS = [
+    ("group lifestyle intervention", 16),
+    ("group-based lifestyle intervention", 16),
+    ("group based lifestyle intervention", 16),
+    ("group nutrition counseling", 16),
+    ("group nutrition counselling", 16),
+    ("group dietitian visit", 16),
+    ("group dietitian visits", 16),
+    ("group medical visit", 14),
+    ("group medical visits", 14),
+    ("lifestyle medicine group visit", 18),
+    ("shared medical appointment", 14),
+    ("shared medical appointments", 14),
+    ("diabetes group visit", 14),
+    ("diabetes group visits", 14),
+    ("obesity group visit", 14),
+    ("obesity group visits", 14),
+    ("weight management group visit", 14),
+    ("weight management group visits", 14),
+    ("group diabetes prevention program", 16),
+    ("group diabetes prevention programme", 16),
+]
+
 SOCIAL_PRESCRIBING_NUTRITION_TERMS = [
     "nutrition social prescribing",
     "food social prescribing",
@@ -206,6 +252,7 @@ def _extend_scoring_terms() -> None:
         _dedupe_preserve_order(
             [
                 *watch_scoring.BONUS_TERMS,
+                *GROUP_BASED_LIFESTYLE_CARE_BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
             ]
@@ -215,6 +262,7 @@ def _extend_scoring_terms() -> None:
         _dedupe_preserve_order(
             [
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *GROUP_BASED_LIFESTYLE_CARE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
             ]
@@ -243,11 +291,18 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *GROUP_BASED_LIFESTYLE_CARE_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *GROUP_BASED_LIFESTYLE_CARE_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        ],
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -255,12 +310,25 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [
+            *GROUP_BASED_LIFESTYLE_CARE_TERMS,
+            *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        ],
+    )
+    _extend_quick_seed_group(
+        "lifestyle_medicine",
+        1,
+        GROUP_BASED_LIFESTYLE_CARE_TERMS,
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
         1,
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "implementation_behavior",
+        2,
+        GROUP_BASED_LIFESTYLE_CARE_TERMS,
     )
     _extend_quick_seed_group(
         "implementation_behavior",
@@ -275,15 +343,26 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
+        GROUP_BASED_LIFESTYLE_CARE_TERMS,
+    )
+    _extend_quick_seed_group(
+        "obesity_cardiometabolic",
+        0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
     _extend_query_context(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *GROUP_BASED_LIFESTYLE_CARE_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        ],
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *GROUP_BASED_LIFESTYLE_CARE_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        ],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
@@ -291,7 +370,10 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [
+            *GROUP_BASED_LIFESTYLE_CARE_TERMS,
+            *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        ],
     )
     _extend_scoring_terms()
 

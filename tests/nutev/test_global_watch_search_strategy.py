@@ -21,6 +21,20 @@ def test_thesis_mode_implementation_behavior_uses_semantic_seed_groups() -> None
     )
 
 
+def test_quick_mode_includes_group_based_lifestyle_care_terms() -> None:
+    queries = build_watch_queries(
+        categories=["implementation_behavior"],
+        since_days=30,
+        mode="quick",
+    )
+
+    assert any(
+        '"group nutrition counseling"' in query["query"]
+        and '"shared medical appointments"' in query["query"]
+        for query in queries
+    )
+
+
 def test_score_watch_item_rewards_digital_implementation_signals() -> None:
     base_item = {
         "title": "Lifestyle nutrition support for obesity care",
@@ -34,3 +48,18 @@ def test_score_watch_item_rewards_digital_implementation_signals() -> None:
     }
 
     assert score_watch_item(digital_item) > score_watch_item(base_item)
+
+
+def test_score_watch_item_rewards_group_based_lifestyle_care_signals() -> None:
+    base_item = {
+        "title": "Lifestyle nutrition support for obesity care",
+        "abstract": "Program evaluation for dietary counseling.",
+        "source_provider": "pubmed",
+    }
+    group_care_item = {
+        **base_item,
+        "title": "Group nutrition counseling and shared medical appointments for obesity care",
+        "abstract": "A lifestyle medicine group visit implementation for type 2 diabetes prevention.",
+    }
+
+    assert score_watch_item(group_care_item) > score_watch_item(base_item)
