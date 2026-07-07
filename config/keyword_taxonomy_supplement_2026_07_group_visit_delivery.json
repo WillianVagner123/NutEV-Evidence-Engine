@@ -1,0 +1,83 @@
+{
+  "version_note": "2026-07 group visit and primary-care nutrition delivery supplement",
+  "global": {
+    "implementation_behavior": {
+      "group_visit_delivery": [
+        "shared medical appointment",
+        "shared medical appointments",
+        "shared medical visit",
+        "shared medical visits",
+        "group medical visit",
+        "group medical visits",
+        "group visit",
+        "group visits",
+        "group-based lifestyle intervention",
+        "group based lifestyle intervention",
+        "group-based nutrition intervention",
+        "group based nutrition intervention",
+        "group-based dietary intervention",
+        "group based dietary intervention",
+        "group lifestyle program",
+        "group lifestyle programme",
+        "group nutrition education",
+        "group dietary counseling",
+        "group dietary counselling",
+        "peer support nutrition",
+        "peer-led lifestyle intervention",
+        "peer led lifestyle intervention",
+        "primary care lifestyle intervention",
+        "primary care nutrition intervention",
+        "team-based lifestyle care",
+        "team based lifestyle care",
+        "interdisciplinary lifestyle care",
+        "multidisciplinary lifestyle intervention",
+        "lifestyle medicine clinic",
+        "lifestyle medicine clinics"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "primary care nutrition intervention",
+        "group nutrition education",
+        "team-based lifestyle care",
+        "lifestyle medicine clinic"
+      ]
+    },
+    "busca2a": {
+      "web_query_hints": [
+        "shared medical appointment guideline",
+        "group medical visit consensus",
+        "primary care lifestyle intervention guideline",
+        "team-based lifestyle care guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "shared medical appointment trial",
+        "group medical visit trial",
+        "group-based lifestyle intervention trial",
+        "group-based nutrition intervention trial",
+        "primary care lifestyle intervention trial",
+        "peer support nutrition intervention",
+        "team-based lifestyle care implementation"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "shared medical appointment",
+        "group medical visit",
+        "group-based lifestyle intervention",
+        "primary care nutrition intervention",
+        "team-based lifestyle care"
+      ],
+      "web_query_hints": [
+        "shared medical appointment framework",
+        "group medical visit framework",
+        "group-based lifestyle intervention framework",
+        "primary care nutrition intervention framework"
+      ]
+    }
+  }
+}
