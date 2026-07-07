@@ -1,0 +1,117 @@
+{
+  "version_note": "Adds food choice architecture, labeling and procurement terms as an auditable NutMEV search supplement. Loaded automatically by settings.load_json alongside keyword_taxonomy.json.",
+  "global": {
+    "nutrition_domains": {
+      "culinary_labeling": [
+        "choice architecture",
+        "food choice architecture",
+        "healthy choice architecture",
+        "nudging",
+        "nudge intervention",
+        "nutrition nudging",
+        "food placement",
+        "product placement",
+        "healthy food placement",
+        "food availability",
+        "healthy food availability",
+        "food affordability",
+        "healthy default",
+        "healthy defaults",
+        "default option",
+        "default options",
+        "traffic light labeling",
+        "traffic light labelling",
+        "warning label",
+        "warning labels",
+        "healthy food retail",
+        "supermarket intervention",
+        "grocery store intervention",
+        "restaurant menu labeling",
+        "restaurant menu labelling",
+        "school food environment",
+        "worksite food environment",
+        "workplace food environment",
+        "institutional food procurement",
+        "public food procurement",
+        "healthy public procurement",
+        "healthy food service policy"
+      ]
+    },
+    "implementation_behavior": {
+      "contextual": [
+        "choice architecture",
+        "food choice architecture",
+        "healthy choice architecture",
+        "nudging",
+        "nudge intervention",
+        "nutrition nudging",
+        "food placement",
+        "healthy food placement",
+        "food availability",
+        "healthy food availability",
+        "food affordability",
+        "healthy default",
+        "healthy defaults",
+        "default option",
+        "default options",
+        "traffic light labeling",
+        "traffic light labelling",
+        "warning label",
+        "warning labels",
+        "healthy food retail",
+        "supermarket intervention",
+        "grocery store intervention",
+        "restaurant menu labeling",
+        "restaurant menu labelling",
+        "school food environment",
+        "worksite food environment",
+        "workplace food environment",
+        "institutional food procurement",
+        "public food procurement",
+        "healthy public procurement",
+        "healthy food service policy"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "web_query_hints": [
+        "food choice architecture guideline",
+        "healthy food procurement guideline",
+        "front-of-pack labeling policy",
+        "menu labeling policy",
+        "healthy food retail policy",
+        "school food environment guideline",
+        "workplace food environment guideline"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "food choice architecture intervention",
+        "nutrition nudging trial",
+        "healthy default intervention",
+        "supermarket intervention trial",
+        "grocery store intervention trial",
+        "menu labeling intervention",
+        "healthy food retail intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "food choice architecture framework",
+        "healthy food environment framework",
+        "food label literacy framework",
+        "menu labeling behavior change",
+        "healthy food procurement framework"
+      ],
+      "condition_terms": [
+        "choice architecture",
+        "food choice architecture",
+        "healthy food environment",
+        "healthy food procurement",
+        "food label literacy",
+        "menu labeling"
+      ]
+    }
+  }
+}

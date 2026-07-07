@@ -1,0 +1,72 @@
+{
+  "version_note": "Scores food choice architecture, labeling and procurement records so expanded retrieval is prioritized only when NutMEV-relevant terms are present.",
+  "keyword_points": {
+    "choice architecture": 3,
+    "food choice architecture": 4,
+    "healthy choice architecture": 4,
+    "nudging": 2,
+    "nudge intervention": 3,
+    "nutrition nudging": 4,
+    "food placement": 3,
+    "healthy food placement": 4,
+    "food availability": 2,
+    "healthy food availability": 3,
+    "food affordability": 3,
+    "healthy default": 4,
+    "healthy defaults": 4,
+    "default option": 2,
+    "default options": 2,
+    "traffic light labeling": 4,
+    "traffic light labelling": 4,
+    "warning label": 3,
+    "warning labels": 3,
+    "healthy food retail": 4,
+    "supermarket intervention": 4,
+    "grocery store intervention": 4,
+    "restaurant menu labeling": 3,
+    "restaurant menu labelling": 3,
+    "school food environment": 3,
+    "worksite food environment": 3,
+    "workplace food environment": 3,
+    "institutional food procurement": 4,
+    "public food procurement": 4,
+    "healthy public procurement": 5,
+    "healthy food service policy": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food choice architecture": 4,
+      "healthy food procurement": 5,
+      "healthy public procurement": 5,
+      "front-of-pack labeling policy": 5,
+      "menu labeling policy": 4,
+      "healthy food retail policy": 4,
+      "school food environment guideline": 4,
+      "workplace food environment guideline": 4
+    },
+    "busca2b": {
+      "food choice architecture intervention": 4,
+      "nutrition nudging trial": 5,
+      "nudge intervention": 4,
+      "healthy default intervention": 5,
+      "supermarket intervention trial": 5,
+      "grocery store intervention trial": 5,
+      "menu labeling intervention": 4,
+      "healthy food retail intervention": 4
+    },
+    "a3": {
+      "food choice architecture": 4,
+      "healthy food environment framework": 5,
+      "food label literacy framework": 5,
+      "menu labeling behavior change": 4,
+      "healthy food procurement framework": 4
+    },
+    "artigo3_framework": {
+      "food choice architecture": 4,
+      "healthy food environment framework": 5,
+      "food label literacy framework": 5,
+      "menu labeling behavior change": 4,
+      "healthy food procurement framework": 4
+    }
+  }
+}
