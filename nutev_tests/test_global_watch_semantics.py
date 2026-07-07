@@ -17,6 +17,17 @@ def test_quick_watch_queries_expand_implementation_semantics() -> None:
     assert "weight loss maintenance" in rendered
 
 
+def test_quick_watch_queries_expand_precision_nutrition_with_nutmev_anchors() -> None:
+    queries = build_watch_queries(["personalized_nutrition"], since_days=30, mode="quick")
+    rendered = " ".join(str(item["query"]) for item in queries).lower()
+
+    assert "precision nutrition systematic review" in rendered
+    assert "personalized nutrition diabetes remission" in rendered
+    assert "precision nutrition weight regain prevention" in rendered
+    assert "personalized nutrition dietary adherence" in rendered
+    assert "precision nutrition implementation" in rendered
+
+
 def test_watch_score_prioritizes_self_management_implementation_signals() -> None:
     baseline = score_watch_item(
         {
