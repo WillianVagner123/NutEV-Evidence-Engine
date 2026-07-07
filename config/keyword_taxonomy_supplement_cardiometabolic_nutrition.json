@@ -1,0 +1,250 @@
+{
+  "version_note": "Focused cardiometabolic nutrition expansion for NutMEV queries. Adds diet-pattern, referral, and implementation terms that preserve nutrition anchoring for lifestyle medicine retrieval.",
+  "global": {
+    "diet_patterns": {
+      "cardioprotective_patterns": [
+        "heart-healthy diet",
+        "heart healthy diet",
+        "heart-healthy dietary pattern",
+        "heart healthy dietary pattern",
+        "cardioprotective diet",
+        "cardioprotective dietary pattern",
+        "cardiometabolic diet",
+        "cardiometabolic dietary pattern",
+        "cardiovascular health diet",
+        "cardiovascular health dietary pattern",
+        "AHA dietary guidance",
+        "American Heart Association dietary guidance",
+        "Life's Essential 8",
+        "Life's Essential 8 diet",
+        "Life's Essential 8 nutrition",
+        "TLC diet",
+        "therapeutic lifestyle changes diet",
+        "therapeutic lifestyle change diet"
+      ],
+      "hypertension_lipid_nutrition": [
+        "sodium reduction",
+        "salt reduction",
+        "dietary sodium reduction",
+        "potassium-rich diet",
+        "potassium rich diet",
+        "DASH-sodium",
+        "DASH sodium",
+        "cholesterol-lowering diet",
+        "cholesterol lowering diet",
+        "lipid-lowering diet",
+        "lipid lowering diet",
+        "LDL-lowering diet",
+        "LDL lowering diet",
+        "apoB-lowering diet",
+        "apoB lowering diet"
+      ]
+    },
+    "implementation_behavior": {
+      "nutrition_referral_and_care_delivery": [
+        "nutrition referral",
+        "dietitian referral",
+        "registered dietitian referral",
+        "registered dietitian nutritionist referral",
+        "medical nutrition therapy referral",
+        "dietitian-led care",
+        "dietitian led care",
+        "dietitian-delivered care",
+        "dietitian delivered care",
+        "nutrition care pathway implementation",
+        "medical nutrition therapy implementation",
+        "medical nutrition therapy intervention",
+        "lifestyle medicine referral",
+        "lifestyle medicine program referral",
+        "cardiometabolic nutrition program",
+        "cardiometabolic nutrition intervention"
+      ]
+    },
+    "document_types": {
+      "implementation_guidance": [
+        "implementation guide",
+        "implementation guidance",
+        "clinical implementation guide",
+        "care pathway implementation",
+        "nutrition care pathway",
+        "nutrition care protocol",
+        "practice implementation",
+        "implementation toolkit"
+      ]
+    }
+  },
+  "clinical": {
+    "cvd": [
+      "cardiovascular-kidney-metabolic syndrome",
+      "cardiovascular kidney metabolic syndrome",
+      "cardiovascular health",
+      "heart health",
+      "Life's Essential 8"
+    ],
+    "dyslipidemia": [
+      "LDL lowering",
+      "LDL-lowering",
+      "apoB lowering",
+      "apoB-lowering",
+      "cholesterol lowering",
+      "cholesterol-lowering",
+      "lipid lowering",
+      "lipid-lowering"
+    ],
+    "hypertension": [
+      "sodium reduction",
+      "salt reduction",
+      "dietary sodium reduction",
+      "DASH-sodium",
+      "DASH sodium"
+    ]
+  },
+  "outcomes": {
+    "lipids": [
+      "LDL lowering",
+      "LDL-lowering",
+      "apoB lowering",
+      "apoB-lowering",
+      "cholesterol lowering",
+      "cholesterol-lowering",
+      "lipid lowering",
+      "lipid-lowering"
+    ],
+    "pressure": [
+      "sodium reduction",
+      "salt reduction",
+      "dietary sodium reduction",
+      "DASH-sodium",
+      "DASH sodium"
+    ],
+    "diet_quality_adherence": [
+      "heart-healthy diet adherence",
+      "heart healthy diet adherence",
+      "DASH adherence",
+      "TLC diet adherence",
+      "Life's Essential 8 adherence",
+      "medical nutrition therapy adherence"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "heart-healthy diet",
+        "heart healthy diet",
+        "Life's Essential 8 nutrition",
+        "nutrition care pathway",
+        "nutrition referral",
+        "dietitian referral"
+      ],
+      "web_query_hints": [
+        "heart healthy diet guideline",
+        "Life's Essential 8 dietary guidance",
+        "nutrition care pathway report",
+        "dietitian referral nutrition program",
+        "medical nutrition therapy implementation report"
+      ],
+      "document_terms": [
+        "nutrition care pathway",
+        "implementation guide",
+        "implementation toolkit"
+      ]
+    },
+    "busca2a": {
+      "focus_terms": [
+        "heart-healthy dietary pattern",
+        "cardioprotective diet",
+        "AHA dietary guidance",
+        "Life's Essential 8",
+        "TLC diet",
+        "sodium reduction",
+        "LDL-lowering diet",
+        "apoB-lowering diet",
+        "medical nutrition therapy referral"
+      ],
+      "web_query_hints": [
+        "Life's Essential 8 scientific statement",
+        "AHA dietary guidance cardiovascular health",
+        "heart healthy diet guideline",
+        "TLC diet guideline",
+        "sodium reduction hypertension guideline",
+        "LDL lowering diet guideline",
+        "medical nutrition therapy cardiometabolic guideline"
+      ],
+      "document_terms": [
+        "scientific statement",
+        "implementation guidance",
+        "nutrition care pathway"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "heart-healthy diet intervention",
+        "cardioprotective dietary pattern",
+        "Life's Essential 8 intervention",
+        "TLC diet intervention",
+        "sodium reduction intervention",
+        "LDL-lowering diet intervention",
+        "apoB-lowering diet intervention",
+        "dietitian referral",
+        "nutrition referral",
+        "medical nutrition therapy intervention",
+        "nutrition care pathway implementation",
+        "cardiometabolic nutrition program"
+      ],
+      "web_query_hints": [
+        "heart healthy diet randomized trial",
+        "cardioprotective diet systematic review",
+        "Life's Essential 8 nutrition intervention",
+        "TLC diet randomized trial",
+        "sodium reduction diet trial",
+        "LDL lowering diet trial",
+        "dietitian referral intervention trial",
+        "medical nutrition therapy implementation trial",
+        "nutrition care pathway implementation"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "pragmatic trial",
+        "care pathway implementation"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "nutrition referral",
+        "dietitian referral",
+        "medical nutrition therapy adherence",
+        "nutrition care pathway implementation",
+        "Life's Essential 8 adherence"
+      ],
+      "web_query_hints": [
+        "medical nutrition therapy adherence questionnaire",
+        "nutrition referral framework",
+        "dietitian referral framework",
+        "nutrition care pathway implementation framework"
+      ],
+      "document_terms": [
+        "implementation framework",
+        "care pathway implementation"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "nutrition referral",
+        "dietitian referral",
+        "medical nutrition therapy adherence",
+        "nutrition care pathway implementation",
+        "Life's Essential 8 adherence"
+      ],
+      "web_query_hints": [
+        "medical nutrition therapy adherence questionnaire",
+        "nutrition referral framework",
+        "dietitian referral framework",
+        "nutrition care pathway implementation framework"
+      ],
+      "document_terms": [
+        "implementation framework",
+        "care pathway implementation"
+      ]
+    }
+  }
+}
