@@ -1,0 +1,88 @@
+{
+  "version_note": "Focused NutMEV supplement for hedonic eating, food craving, food addiction, and dietary lapse constructs; loaded after keyword_taxonomy.json without modifying the base taxonomy. Terms are scoped to busca2b and artigo3_framework to improve intervention/adherence and instrument coverage while limiting noise in guideline retrieval.",
+  "global": {
+    "implementation_behavior": {
+      "hedonic_eating_adherence": [
+        "food craving",
+        "food cravings",
+        "craving control",
+        "craving management",
+        "hedonic hunger",
+        "hedonic eating",
+        "reward-driven eating",
+        "reward driven eating",
+        "emotional eating",
+        "external eating",
+        "uncontrolled eating",
+        "disinhibited eating",
+        "eating disinhibition",
+        "binge eating symptoms",
+        "loss of control eating",
+        "dietary lapse",
+        "dietary lapses",
+        "lapse management",
+        "relapse prevention",
+        "food addiction",
+        "addictive-like eating",
+        "addictive like eating",
+        "Yale Food Addiction Scale",
+        "YFAS"
+      ]
+    }
+  },
+  "outcomes": {
+    "hedonic_eating_adherence": [
+      "food craving",
+      "food cravings",
+      "hedonic hunger",
+      "hedonic eating",
+      "reward-driven eating",
+      "reward driven eating",
+      "emotional eating",
+      "external eating",
+      "uncontrolled eating",
+      "disinhibited eating",
+      "eating disinhibition",
+      "binge eating symptoms",
+      "loss of control eating",
+      "dietary lapse",
+      "dietary lapses",
+      "lapse management",
+      "relapse prevention",
+      "food addiction",
+      "addictive-like eating",
+      "addictive like eating",
+      "Yale Food Addiction Scale",
+      "YFAS"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "priority_outcomes": [
+        "hedonic_eating_adherence"
+      ],
+      "web_query_hints": [
+        "food craving obesity intervention",
+        "hedonic hunger obesity intervention",
+        "emotional eating weight loss intervention",
+        "dietary lapse weight loss maintenance",
+        "relapse prevention dietary adherence",
+        "food addiction obesity intervention",
+        "Yale Food Addiction Scale obesity"
+      ]
+    },
+    "artigo3_framework": {
+      "priority_outcomes": [
+        "hedonic_eating_adherence"
+      ],
+      "web_query_hints": [
+        "food craving questionnaire obesity",
+        "hedonic hunger scale obesity",
+        "emotional eating questionnaire adults",
+        "dietary lapse self regulation instrument",
+        "food addiction scale obesity",
+        "Yale Food Addiction Scale validation"
+      ]
+    }
+  }
+}
