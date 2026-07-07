@@ -1,0 +1,65 @@
+{
+  "version_note": "2026-07 chrononutrition and eating-time supplement. Additive query-generation terms for cardiometabolic nutrition interventions; avoids broad sleep-only terms to limit off-scope retrieval.",
+  "global": {
+    "diet_patterns": {
+      "chrononutrition_metabolic_timing": [
+        "chrononutrition",
+        "chrono-nutrition",
+        "circadian nutrition",
+        "circadian eating",
+        "circadian eating pattern",
+        "meal timing",
+        "meal timing intervention",
+        "eating timing",
+        "food intake timing",
+        "timing of food intake",
+        "time-restricted eating",
+        "time restricted eating",
+        "time-restricted feeding",
+        "time restricted feeding",
+        "early time-restricted eating",
+        "early time restricted eating",
+        "early time-restricted feeding",
+        "early time restricted feeding",
+        "late eating",
+        "night eating",
+        "breakfast skipping",
+        "breakfast omission",
+        "caloric distribution",
+        "daily energy distribution",
+        "meal frequency",
+        "eating window"
+      ]
+    },
+    "implementation_behavior": {
+      "behavioral": [
+        "meal timing intervention",
+        "eating timing intervention",
+        "time-restricted eating adherence",
+        "time restricted eating adherence",
+        "chrononutrition adherence",
+        "meal timing adherence",
+        "eating window adherence"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "chrononutrition intervention",
+        "chrononutrition trial",
+        "chrononutrition systematic review",
+        "meal timing intervention",
+        "meal timing trial",
+        "time-restricted eating trial",
+        "time restricted eating trial",
+        "early time-restricted eating trial",
+        "early time restricted eating trial",
+        "time-restricted eating adherence",
+        "eating window adherence",
+        "breakfast skipping cardiometabolic risk",
+        "late eating cardiometabolic risk"
+      ]
+    }
+  }
+}
