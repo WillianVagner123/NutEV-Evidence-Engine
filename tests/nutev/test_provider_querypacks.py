@@ -105,7 +105,7 @@ def test_semantic_blocks_are_prioritized_by_workstream():
     busca2b_terms = semantic_terms("busca2b", min_priority=5)
     priorities = prioritized_semantic_blocks("a3")
 
-    assert busca1_blocks[:2] == ["food_literacy_agency", "commensality_context"]
+    assert busca1_blocks[:2] == ["food_prescription_programs", "food_literacy_agency"]
     assert "implementation science" in busca2b_terms
     assert "adherence" in busca2b_terms
     assert priorities[0] == {"name": "food_literacy_agency", "priority": 5}
@@ -124,6 +124,18 @@ def test_busca1_semantic_blocks_include_food_environment_policy_terms() -> None:
     assert "menu labeling" in busca1_terms
     assert "policy brief" in busca1_doc_terms
     assert "policy evaluation" in busca1_doc_terms
+
+
+def test_lifestyle_nutrition_patterns_include_diet_quality_indices() -> None:
+    busca2b_terms = semantic_terms("busca2b", min_priority=5)
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca2b", "pubmed")
+    joined = "\n".join(queries)
+
+    assert "diet quality index" in busca2b_terms
+    assert "alternative healthy eating index" in busca2b_terms
+    assert "mediterranean diet score" in busca2b_terms
+    assert '"diet quality index"[Title/Abstract]' in joined
+    assert '"alternative healthy eating index"[Title/Abstract]' in joined
 
 
 def test_provider_querypack_builds_per_provider():
