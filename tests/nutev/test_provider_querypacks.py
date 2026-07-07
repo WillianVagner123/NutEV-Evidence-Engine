@@ -100,6 +100,16 @@ def test_food_access_program_terms_are_promoted_into_provider_queries():
     assert "produce voucher" in joined
 
 
+def test_food_environment_policy_terms_are_promoted_into_provider_queries():
+    queries = render_queries_for_provider(_sample_taxonomy(), "busca1", "pubmed")
+    joined = "\n".join(queries)
+
+    assert "food environment intervention" in joined
+    assert "healthy choice architecture" in joined
+    assert "nutrition standards for food service" in joined
+    assert "front-of-pack labeling policy" in joined
+
+
 def test_semantic_blocks_are_prioritized_by_workstream():
     busca1_blocks = semantic_block_names("busca1")
     busca2b_terms = semantic_terms("busca2b", min_priority=5)
