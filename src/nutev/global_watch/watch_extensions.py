@@ -106,6 +106,68 @@ SOCIAL_PRESCRIBING_BONUS_TERMS = [
     ("community referral food program", 16),
 ]
 
+GROUP_CARE_DELIVERY_TERMS = [
+    "shared medical appointment nutrition",
+    "shared medical appointment lifestyle",
+    "shared medical appointment diabetes nutrition",
+    "shared medical appointment obesity nutrition",
+    "group medical visit diabetes nutrition",
+    "group medical visit obesity nutrition",
+    "group visit lifestyle intervention",
+    "group visit nutrition intervention",
+    "group visit dietary intervention",
+    "group lifestyle intervention",
+    "group-based lifestyle intervention",
+    "group based lifestyle intervention",
+    "group nutrition intervention",
+    "group-based nutrition intervention",
+    "group based nutrition intervention",
+    "group dietary intervention",
+    "group-based dietary intervention",
+    "group based dietary intervention",
+    "group dietitian visit",
+    "group dietitian visits",
+    "group nutrition counseling",
+    "group nutrition counselling",
+    "peer-led lifestyle intervention",
+    "peer led lifestyle intervention",
+    "peer-led nutrition intervention",
+    "peer led nutrition intervention",
+    "peer support dietary adherence",
+    "peer support weight management",
+]
+
+GROUP_CARE_DELIVERY_BONUS_TERMS = [
+    ("shared medical appointment nutrition", 18),
+    ("shared medical appointment lifestyle", 18),
+    ("shared medical appointment diabetes nutrition", 20),
+    ("shared medical appointment obesity nutrition", 20),
+    ("group medical visit diabetes nutrition", 20),
+    ("group medical visit obesity nutrition", 20),
+    ("group visit lifestyle intervention", 18),
+    ("group visit nutrition intervention", 18),
+    ("group visit dietary intervention", 18),
+    ("group lifestyle intervention", 18),
+    ("group-based lifestyle intervention", 18),
+    ("group based lifestyle intervention", 18),
+    ("group nutrition intervention", 18),
+    ("group-based nutrition intervention", 18),
+    ("group based nutrition intervention", 18),
+    ("group dietary intervention", 18),
+    ("group-based dietary intervention", 18),
+    ("group based dietary intervention", 18),
+    ("group dietitian visit", 16),
+    ("group dietitian visits", 16),
+    ("group nutrition counseling", 16),
+    ("group nutrition counselling", 16),
+    ("peer-led lifestyle intervention", 16),
+    ("peer led lifestyle intervention", 16),
+    ("peer-led nutrition intervention", 16),
+    ("peer led nutrition intervention", 16),
+    ("peer support dietary adherence", 16),
+    ("peer support weight management", 16),
+]
+
 OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS = [
     "anti-obesity medication nutrition",
     "anti-obesity medication nutrition care",
@@ -207,6 +269,7 @@ def _extend_scoring_terms() -> None:
             [
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
+                *GROUP_CARE_DELIVERY_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
             ]
         )
@@ -216,6 +279,7 @@ def _extend_scoring_terms() -> None:
             [
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+                *GROUP_CARE_DELIVERY_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
             ]
         )
@@ -243,11 +307,15 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *GROUP_CARE_DELIVERY_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *GROUP_CARE_DELIVERY_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -263,9 +331,14 @@ def apply_watch_taxonomy_extensions() -> None:
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
+        "lifestyle_medicine",
+        2,
+        GROUP_CARE_DELIVERY_TERMS,
+    )
+    _extend_quick_seed_group(
         "implementation_behavior",
         2,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *GROUP_CARE_DELIVERY_TERMS],
     )
     _extend_quick_seed_group(
         "food_literacy_culinary_commensality",
@@ -279,11 +352,11 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *GROUP_CARE_DELIVERY_TERMS],
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *GROUP_CARE_DELIVERY_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
