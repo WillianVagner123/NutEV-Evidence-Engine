@@ -1,0 +1,129 @@
+{
+  "version_note": "Adds focused GLP-1/anti-obesity medication nutrition-transition terms. Terms are intended to be anchored by NutMEV obesity, cardiometabolic, diet, adherence, guideline, trial, or review query blocks rather than used as standalone pharmacology expansion.",
+  "global": {
+    "diet_patterns": {
+      "glp1_nutrition_transition": [
+        "nutrition during GLP-1 receptor agonist therapy",
+        "diet quality during GLP-1 receptor agonist therapy",
+        "dietary counseling during GLP-1 receptor agonist therapy",
+        "dietary counselling during GLP-1 receptor agonist therapy",
+        "protein intake during GLP-1 receptor agonist therapy",
+        "protein adequacy during GLP-1 receptor agonist therapy",
+        "meal planning during GLP-1 receptor agonist therapy",
+        "lifestyle intervention with GLP-1 receptor agonist",
+        "lifestyle intervention with semaglutide",
+        "lifestyle intervention with tirzepatide",
+        "anti-obesity medication lifestyle intervention",
+        "antiobesity medication lifestyle intervention"
+      ]
+    },
+    "implementation_behavior": {
+      "glp1_adherence_transition": [
+        "GLP-1 discontinuation",
+        "GLP-1 receptor agonist discontinuation",
+        "semaglutide discontinuation",
+        "tirzepatide discontinuation",
+        "anti-obesity medication discontinuation",
+        "antiobesity medication discontinuation",
+        "weight regain after GLP-1 discontinuation",
+        "weight regain after semaglutide discontinuation",
+        "weight regain after tirzepatide discontinuation",
+        "lifestyle maintenance after GLP-1 discontinuation",
+        "dietary maintenance after GLP-1 discontinuation",
+        "nutrition support after GLP-1 discontinuation",
+        "dietary adherence during GLP-1 therapy",
+        "nutrition counseling during GLP-1 therapy",
+        "nutrition counselling during GLP-1 therapy"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "GLP-1 receptor agonist",
+      "GLP-1 receptor agonists",
+      "GLP-1RA",
+      "semaglutide",
+      "tirzepatide",
+      "anti-obesity medication",
+      "anti-obesity medications",
+      "antiobesity medication",
+      "antiobesity medications"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "weight regain after GLP-1 discontinuation",
+      "weight regain after semaglutide discontinuation",
+      "weight regain after tirzepatide discontinuation",
+      "weight maintenance after GLP-1 discontinuation"
+    ],
+    "diet_quality_adherence": [
+      "diet quality during GLP-1 receptor agonist therapy",
+      "dietary adherence during GLP-1 therapy",
+      "dietary maintenance after GLP-1 discontinuation",
+      "nutrition support after GLP-1 discontinuation",
+      "protein intake during GLP-1 receptor agonist therapy",
+      "meal planning during GLP-1 receptor agonist therapy"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "GLP-1 receptor agonist",
+        "GLP-1 receptor agonists",
+        "semaglutide",
+        "tirzepatide",
+        "anti-obesity medication",
+        "antiobesity medication"
+      ],
+      "web_query_hints": [
+        "GLP-1 obesity guideline nutrition",
+        "semaglutide obesity guideline lifestyle intervention",
+        "tirzepatide obesity guideline lifestyle intervention",
+        "anti-obesity medication guideline lifestyle intervention",
+        "weight regain after GLP-1 discontinuation guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "GLP-1 receptor agonist",
+        "GLP-1 receptor agonists",
+        "semaglutide",
+        "tirzepatide",
+        "anti-obesity medication",
+        "antiobesity medication"
+      ],
+      "focus_terms": [
+        "nutrition during GLP-1 receptor agonist therapy",
+        "diet quality during GLP-1 receptor agonist therapy",
+        "protein intake during GLP-1 receptor agonist therapy",
+        "meal planning during GLP-1 receptor agonist therapy",
+        "dietary adherence during GLP-1 therapy",
+        "nutrition counseling during GLP-1 therapy",
+        "nutrition counselling during GLP-1 therapy",
+        "weight regain after GLP-1 discontinuation",
+        "weight regain after semaglutide discontinuation",
+        "weight regain after tirzepatide discontinuation",
+        "lifestyle maintenance after GLP-1 discontinuation",
+        "dietary maintenance after GLP-1 discontinuation",
+        "nutrition support after GLP-1 discontinuation"
+      ],
+      "web_query_hints": [
+        "GLP-1 lifestyle intervention trial",
+        "semaglutide lifestyle intervention trial",
+        "tirzepatide lifestyle intervention trial",
+        "GLP-1 nutrition counseling trial",
+        "GLP-1 dietary adherence systematic review",
+        "weight regain after GLP-1 discontinuation trial",
+        "weight regain after semaglutide discontinuation",
+        "nutrition support after GLP-1 discontinuation"
+      ],
+      "document_terms": [
+        "GLP-1 lifestyle intervention trial",
+        "GLP-1 dietary adherence systematic review",
+        "weight regain after GLP-1 discontinuation trial",
+        "anti-obesity medication lifestyle intervention"
+      ]
+    }
+  }
+}
