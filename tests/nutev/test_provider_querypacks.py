@@ -98,6 +98,9 @@ def test_food_access_program_terms_are_promoted_into_provider_queries():
 
     assert "healthy food incentive" in joined
     assert "produce voucher" in joined
+    assert "medically tailored nutrition" in joined
+    assert "food pharmacy programme" in joined
+    assert "food farmacy programme" in joined
 
 
 def test_semantic_blocks_are_prioritized_by_workstream():
