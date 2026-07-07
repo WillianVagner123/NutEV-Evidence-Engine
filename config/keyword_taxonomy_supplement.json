@@ -42,6 +42,26 @@
         "behavioural maintenance"
       ]
     },
+    "nutrition_domains": {
+      "nutrition_prescription_planning": [
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "diet prescription",
+        "diet prescriptions",
+        "dietary prescription",
+        "dietary prescriptions",
+        "prescribed diet",
+        "prescribed dietary plan",
+        "individualized meal plan",
+        "individualised meal plan",
+        "personalized meal planning",
+        "personalised meal planning",
+        "tailored meal plan",
+        "tailored meal planning",
+        "nutrition action plan",
+        "dietary action plan"
+      ]
+    },
     "implementation_behavior": {
       "adherence": [
         "long-term adherence",
@@ -101,6 +121,18 @@
         "dietary adherence scale",
         "adherence questionnaire",
         "adherence scale"
+      ],
+      "nutrition_prescription_planning": [
+        "nutrition prescription",
+        "dietary prescription",
+        "prescribed dietary plan",
+        "individualized meal plan",
+        "individualised meal plan",
+        "personalized meal planning",
+        "personalised meal planning",
+        "tailored meal planning",
+        "nutrition action plan",
+        "dietary action plan"
       ],
       "group_care_delivery": [
         "shared medical appointment",
@@ -218,7 +250,14 @@
       "group dietary intervention",
       "group-based dietary intervention",
       "peer-led lifestyle intervention",
-      "peer-led nutrition intervention"
+      "peer-led nutrition intervention",
+      "nutrition prescription",
+      "dietary prescription",
+      "personalized meal planning",
+      "personalised meal planning",
+      "tailored meal planning",
+      "nutrition action plan",
+      "dietary action plan"
     ],
     "food_access_implementation": [
       "food is medicine evaluation",
@@ -272,7 +311,10 @@
         "healthy food access intervention",
         "screening and referral",
         "social needs referral",
-        "community food referral"
+        "community food referral",
+        "nutrition prescription",
+        "dietary prescription",
+        "nutrition action plan"
       ],
       "web_query_hints": [
         "food is medicine implementation report",
@@ -283,7 +325,8 @@
         "nutrition security intervention report",
         "food insecurity screening referral",
         "food pantry referral program",
-        "community food referral program"
+        "community food referral program",
+        "nutrition prescription program report"
       ],
       "document_terms": [
         "implementation report",
@@ -310,6 +353,16 @@
         "ckm health",
         "ckm risk"
       ],
+      "focus_terms": [
+        "nutrition prescription",
+        "dietary prescription",
+        "prescribed dietary plan",
+        "individualized meal plan",
+        "individualised meal plan",
+        "personalized meal planning",
+        "personalised meal planning",
+        "tailored meal planning"
+      ],
       "web_query_hints": [
         "diabetes remission guideline",
         "type 2 diabetes remission consensus",
@@ -320,7 +373,10 @@
         "cardiovascular kidney metabolic syndrome guideline",
         "ckm syndrome scientific statement",
         "ckm syndrome consensus",
-        "cardiorenal metabolic syndrome guideline"
+        "cardiorenal metabolic syndrome guideline",
+        "nutrition prescription guideline",
+        "dietary prescription guideline",
+        "personalized meal planning guideline"
       ]
     },
     "busca2b": {
@@ -375,7 +431,20 @@
         "peer led lifestyle intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "diet prescription",
+        "dietary prescription",
+        "dietary prescriptions",
+        "prescribed dietary plan",
+        "individualized meal plan",
+        "individualised meal plan",
+        "personalized meal planning",
+        "personalised meal planning",
+        "tailored meal planning",
+        "nutrition action plan",
+        "dietary action plan"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -404,7 +473,12 @@
         "group-based lifestyle intervention cardiometabolic",
         "group-based nutrition intervention obesity",
         "peer-led nutrition intervention diabetes",
-        "peer-led lifestyle intervention weight management"
+        "peer-led lifestyle intervention weight management",
+        "nutrition prescription intervention trial",
+        "dietary prescription intervention trial",
+        "personalized meal planning intervention",
+        "tailored meal planning intervention",
+        "nutrition action plan cardiometabolic trial"
       ],
       "document_terms": [
         "implementation trial",
@@ -415,7 +489,10 @@
         "group-based intervention",
         "group based intervention",
         "peer-led intervention",
-        "peer led intervention"
+        "peer led intervention",
+        "nutrition prescription intervention",
+        "dietary prescription intervention",
+        "meal planning intervention"
       ]
     },
     "a3": {
