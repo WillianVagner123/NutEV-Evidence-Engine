@@ -1,15 +1,15 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "description": "NutEV global evidence ontology for integrated classification across all lenses.",
   "domains": {
     "clinical_outcomes": ["mortality", "hospitalization", "remission", "incidence", "prevalence", "risk"],
     "implementation": ["implementation", "adoption", "barrier", "facilitator", "program", "delivery"],
     "equity": ["equity", "inequality", "underserved", "vulnerable", "rural", "low-income"],
-    "dietary_patterns": ["mediterranean", "dash", "plant-based", "ultra-processed", "food pattern", "diet quality"],
+    "dietary_patterns": ["mediterranean", "dash", "plant-based", "ultra-processed", "food pattern", "diet quality", "chrononutrition", "chrono-nutrition", "meal timing", "meal regularity", "time-restricted eating", "eating window"],
     "policy_systems": ["policy", "regulation", "guideline", "tax", "labeling", "school meal"]
   },
   "outcomes": {
-    "cardiometabolic": ["diabetes", "hypertension", "cholesterol", "obesity", "cardiovascular"],
+    "cardiometabolic": ["diabetes", "hypertension", "cholesterol", "obesity", "cardiovascular", "glycemia", "glycaemia", "hba1c", "blood pressure", "lipids", "waist circumference", "masld", "nafld"],
     "oncology": ["cancer", "tumor", "carcinoma"],
     "mental_health": ["depression", "anxiety", "well-being", "mental health"],
     "maternal_child": ["pregnancy", "maternal", "child", "adolescent", "infant"]
