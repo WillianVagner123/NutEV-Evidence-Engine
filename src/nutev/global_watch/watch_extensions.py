@@ -32,6 +32,41 @@ PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS = [
     "individualised meal plan adherence",
 ]
 
+DIETARY_MAINTENANCE_ADHERENCE_TERMS = [
+    "dietary maintenance",
+    "diet maintenance",
+    "maintenance of dietary change",
+    "maintenance of healthy eating",
+    "dietary habit maintenance",
+    "healthy eating maintenance",
+    "long-term dietary adherence",
+    "long term dietary adherence",
+    "sustained dietary adherence",
+    "dietary adherence maintenance",
+    "diet adherence intervention",
+    "dietary relapse prevention",
+    "relapse prevention dietary intervention",
+    "weight regain prevention dietary intervention",
+    "weight regain prevention nutrition",
+    "post-weight loss dietary maintenance",
+    "post weight loss dietary maintenance",
+]
+
+DIETARY_MAINTENANCE_ADHERENCE_BONUS_TERMS = [
+    ("long-term dietary adherence", 18),
+    ("long term dietary adherence", 18),
+    ("sustained dietary adherence", 18),
+    ("dietary adherence maintenance", 18),
+    ("maintenance of dietary change", 16),
+    ("maintenance of healthy eating", 16),
+    ("dietary relapse prevention", 18),
+    ("relapse prevention dietary intervention", 18),
+    ("weight regain prevention dietary intervention", 20),
+    ("weight regain prevention nutrition", 18),
+    ("post-weight loss dietary maintenance", 18),
+    ("post weight loss dietary maintenance", 18),
+]
+
 FOOD_ENVIRONMENT_POLICY_TERMS = [
     "food service guidelines",
     "healthy food service guidelines",
@@ -208,6 +243,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *DIETARY_MAINTENANCE_ADHERENCE_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +253,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *DIETARY_MAINTENANCE_ADHERENCE_TERMS,
             ]
         )
     )
@@ -243,7 +280,11 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *DIETARY_MAINTENANCE_ADHERENCE_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
@@ -261,6 +302,11 @@ def apply_watch_taxonomy_extensions() -> None:
         "lifestyle_medicine",
         1,
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "implementation_behavior",
+        0,
+        DIETARY_MAINTENANCE_ADHERENCE_TERMS,
     )
     _extend_quick_seed_group(
         "implementation_behavior",
@@ -283,7 +329,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *DIETARY_MAINTENANCE_ADHERENCE_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
