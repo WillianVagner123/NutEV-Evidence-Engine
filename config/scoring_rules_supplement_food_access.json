@@ -1,0 +1,26 @@
+{
+  "version_note": "2026-07 food access and food-as-medicine scoring supplement for NutMEV. Loaded automatically by settings.load_json when scoring_rules.json is read.",
+  "keyword_points": {
+    "healthy food box": 4,
+    "healthy food boxes": 4,
+    "grocery prescription": 4,
+    "grocery prescriptions": 4,
+    "food pharmacies": 4,
+    "food farmacy": 4,
+    "food farmacies": 4,
+    "food farmacy program": 4,
+    "food farmacy programme": 4,
+    "food is medicine referral": 4,
+    "food as medicine referral": 4,
+    "produce prescription referral": 4,
+    "medically tailored food referral": 4,
+    "medically tailored nutrition": 4,
+    "nutrition assistance": 3,
+    "nutrition assistance program": 4,
+    "nutrition assistance programs": 4,
+    "nutrition security intervention": 4,
+    "nutrition insecurity": 3,
+    "food access intervention": 4,
+    "healthy food access intervention": 4
+  }
+}
