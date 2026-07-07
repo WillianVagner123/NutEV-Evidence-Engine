@@ -55,3 +55,27 @@ def test_pharmacotherapy_nutrition_terms_improve_watch_priority() -> None:
             "title": "GLP-1 receptor agonist nutrition care and dietary counseling for obesity",
         }
     ) > _score_watch_item({"title": "Obesity care note"})
+
+
+def test_obesity_queries_cover_body_composition_nutrition_terms() -> None:
+    rendered = _render_obesity_queries()
+
+    assert "sarcopenic obesity nutrition" in rendered
+    assert "sarcopenic obesity protein intake" in rendered
+    assert "lean mass preservation obesity" in rendered
+    assert "protein adequacy obesity" in rendered
+    assert "dietary protein weight loss maintenance" in rendered
+
+
+def test_body_composition_nutrition_terms_improve_watch_priority() -> None:
+    scoped = _score_watch_item(
+        {
+            "title": (
+                "Sarcopenic obesity nutrition intervention for lean mass preservation "
+                "and protein adequacy during weight loss maintenance"
+            ),
+        }
+    )
+    generic = _score_watch_item({"title": "Obesity body composition note"})
+
+    assert scoped > generic
