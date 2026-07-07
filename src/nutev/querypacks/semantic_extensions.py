@@ -24,6 +24,35 @@ CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS = [
     "systematic review",
 ]
 
+CARDIOMETABOLIC_MULTIMORBIDITY_TERMS = [
+    "cardiometabolic multimorbidity",
+    "cardiometabolic comorbidity",
+    "cardiometabolic comorbidities",
+    "cardiometabolic disease clustering",
+    "multiple cardiometabolic risk factors",
+    "metabolic health",
+    "metabolic dysfunction",
+    "metabolic risk factor clustering",
+    "metabolically healthy obesity",
+    "metabolically unhealthy obesity",
+    "obesity phenotype",
+    "obesity phenotypes",
+    "metabolic syndrome remission",
+    "metabolic syndrome reversal",
+    "metabolic syndrome management",
+]
+
+CARDIOMETABOLIC_MULTIMORBIDITY_DOCUMENT_TERMS = [
+    "cardiometabolic multimorbidity guideline",
+    "cardiometabolic multimorbidity systematic review",
+    "cardiometabolic comorbidity systematic review",
+    "metabolic health systematic review",
+    "metabolically healthy obesity systematic review",
+    "obesity phenotype systematic review",
+    "metabolic syndrome remission trial",
+    "metabolic syndrome management guideline",
+]
+
 METABOLIC_LIVER_NUTRITION_TERMS = [
     "masld nutrition therapy",
     "masld dietary intervention",
@@ -621,6 +650,15 @@ def apply_semantic_extensions() -> None:
         terms=CARDIOVASCULAR_KIDNEY_METABOLIC_TERMS,
         document_terms=CARDIOVASCULAR_KIDNEY_METABOLIC_DOCUMENT_TERMS,
     )
+    for block_name in (
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=CARDIOMETABOLIC_MULTIMORBIDITY_TERMS,
+            document_terms=CARDIOMETABOLIC_MULTIMORBIDITY_DOCUMENT_TERMS,
+        )
     for block_name in (
         "cardiometabolic_precision",
         "lifestyle_nutrition_patterns",
