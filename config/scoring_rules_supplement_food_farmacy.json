@@ -1,0 +1,48 @@
+{
+  "version_note": "Focused scoring expansion for food farmacy, medically tailored nutrition, and referral/navigation models; loaded after scoring_rules.json without modifying base scoring.",
+  "keyword_points": {
+    "food farmacy": 4,
+    "food farmacy program": 5,
+    "food farmacy programme": 5,
+    "food pharmacy": 4,
+    "food pharmacy program": 5,
+    "food pharmacy programme": 5,
+    "medically tailored nutrition": 5,
+    "medically tailored nutrition program": 5,
+    "medically tailored food referral": 5,
+    "medically tailored meal referral": 5,
+    "produce prescription referral": 5,
+    "healthy food prescription referral": 5,
+    "food is medicine referral": 5,
+    "food as medicine referral": 5,
+    "nutrition security referral": 4,
+    "nutrition security navigation": 4,
+    "community food navigation": 4,
+    "food resource navigation": 4
+  },
+  "workstream_bonus": {
+    "busca1": {
+      "food farmacy": 5,
+      "food farmacy program": 5,
+      "food pharmacy program": 5,
+      "medically tailored nutrition": 5,
+      "food is medicine referral": 5,
+      "food as medicine referral": 5,
+      "produce prescription referral": 5,
+      "community food navigation": 4,
+      "food resource navigation": 4
+    },
+    "busca2b": {
+      "food farmacy": 5,
+      "food farmacy program": 5,
+      "food pharmacy program": 5,
+      "medically tailored nutrition": 5,
+      "medically tailored nutrition program": 5,
+      "medically tailored food referral": 5,
+      "produce prescription referral": 5,
+      "nutrition security navigation": 4,
+      "community food navigation": 4,
+      "food resource navigation": 4
+    }
+  }
+}
