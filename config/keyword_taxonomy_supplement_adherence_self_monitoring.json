@@ -1,0 +1,124 @@
+{
+  "version_note": "2026-07 adherence and dietary self-monitoring expansion for busca2b and artigo3_framework.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "dietary self-monitoring",
+        "diet self-monitoring",
+        "food self-monitoring",
+        "self-monitoring of diet",
+        "self-monitoring of dietary intake",
+        "self-weighing",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "implementation intentions",
+        "relapse prevention",
+        "habit formation",
+        "goal setting",
+        "problem solving",
+        "action planning for diet",
+        "coping planning for diet",
+        "meal planning adherence",
+        "diet adherence intervention",
+        "dietary adherence intervention",
+        "automonitoramento alimentar",
+        "autorregulação alimentar",
+        "prevenção de recaída",
+        "formação de hábitos",
+        "definição de metas alimentares",
+        "planejamento de ação alimentar"
+      ],
+      "behavioral": [
+        "dietary goal setting",
+        "dietary problem solving",
+        "food diary",
+        "food diaries",
+        "diet diary",
+        "diet diaries",
+        "diet tracking",
+        "food tracking",
+        "mobile dietary self-monitoring",
+        "digital dietary self-monitoring",
+        "meal planning behavior",
+        "meal planning behaviour",
+        "meal preparation behavior",
+        "meal preparation behaviour",
+        "diário alimentar",
+        "registro alimentar",
+        "rastreamento alimentar",
+        "planejamento alimentar",
+        "preparo de refeições"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "dietary self-monitoring",
+      "diet self-monitoring",
+      "food self-monitoring",
+      "self-monitoring of dietary intake",
+      "dietary self-regulation",
+      "eating self-regulation",
+      "implementation intentions",
+      "relapse prevention",
+      "habit formation",
+      "diet adherence intervention",
+      "dietary adherence intervention",
+      "food diary",
+      "diet diary",
+      "diet tracking",
+      "food tracking",
+      "automonitoramento alimentar",
+      "autorregulação alimentar",
+      "registro alimentar"
+    ],
+    "behavioral": [
+      "action planning for diet",
+      "coping planning for diet",
+      "dietary goal setting",
+      "dietary problem solving",
+      "meal planning behavior",
+      "meal preparation behavior",
+      "prevenção de recaída",
+      "formação de hábitos",
+      "definição de metas alimentares"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "dietary self-monitoring intervention",
+        "dietary self-regulation intervention",
+        "diet adherence intervention",
+        "dietary adherence intervention",
+        "meal planning adherence",
+        "food diary intervention",
+        "diet tracking intervention",
+        "relapse prevention weight loss maintenance",
+        "habit formation dietary intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "condition_terms": [
+        "dietary self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "implementation intentions",
+        "relapse prevention",
+        "habit formation",
+        "dietary goal setting",
+        "dietary problem solving",
+        "food diary",
+        "diet tracking"
+      ],
+      "web_query_hints": [
+        "dietary self-monitoring instrument",
+        "dietary self-regulation scale",
+        "eating self-regulation questionnaire",
+        "food diary questionnaire",
+        "meal planning questionnaire",
+        "diet adherence scale"
+      ]
+    }
+  }
+}
