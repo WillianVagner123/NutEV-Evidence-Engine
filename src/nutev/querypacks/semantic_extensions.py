@@ -556,6 +556,35 @@ FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS = [
     "clinical-community food referral program",
 ]
 
+FAMILY_MEALS_COMMENSALITY_TERMS = [
+    "family meals intervention",
+    "family meal intervention",
+    "shared meals intervention",
+    "shared meal intervention",
+    "commensality intervention",
+    "mealtime routine intervention",
+    "mealtime routines intervention",
+    "family meal frequency",
+    "family meal practices",
+    "family mealtime practices",
+    "shared meal practices",
+    "meal sharing practices",
+    "home food preparation family meals",
+    "meal planning family meals",
+]
+
+FAMILY_MEALS_COMMENSALITY_DOCUMENT_TERMS = [
+    "family meals intervention trial",
+    "family meal intervention trial",
+    "shared meals intervention trial",
+    "commensality intervention study",
+    "mealtime routine intervention",
+    "family meal frequency study",
+    "family meals systematic review",
+    "family meals qualitative study",
+    "shared meals qualitative study",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -710,6 +739,11 @@ def apply_semantic_extensions() -> None:
         "implementation_science",
         terms=FOOD_AS_MEDICINE_REFERRAL_TERMS,
         document_terms=FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS,
+    )
+    _extend_semantic_block(
+        "commensality_context",
+        terms=FAMILY_MEALS_COMMENSALITY_TERMS,
+        document_terms=FAMILY_MEALS_COMMENSALITY_DOCUMENT_TERMS,
     )
 
 
