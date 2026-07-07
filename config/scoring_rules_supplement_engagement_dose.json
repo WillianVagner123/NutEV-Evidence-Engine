@@ -1,0 +1,61 @@
+{
+  "version_note": "Supplemental NutMEV scoring expansion for intervention engagement, attendance, retention, completion, and dose-received signals.",
+  "keyword_points": {
+    "intervention engagement": 3,
+    "dietary intervention engagement": 4,
+    "nutrition intervention engagement": 4,
+    "lifestyle intervention engagement": 4,
+    "program engagement": 3,
+    "programme engagement": 3,
+    "participant engagement": 3,
+    "patient engagement": 3,
+    "session attendance": 3,
+    "intervention attendance": 3,
+    "class attendance": 2,
+    "visit attendance": 2,
+    "program attendance": 2,
+    "programme attendance": 2,
+    "attendance rate": 3,
+    "program retention": 3,
+    "programme retention": 3,
+    "participant retention": 3,
+    "retention rate": 3,
+    "program completion": 3,
+    "programme completion": 3,
+    "session completion": 3,
+    "intervention dose": 3,
+    "dose received": 4,
+    "intervention exposure": 3,
+    "adherence support": 4
+  },
+  "workstream_bonus": {
+    "busca2b": {
+      "intervention engagement": 4,
+      "dietary intervention engagement": 5,
+      "nutrition intervention engagement": 5,
+      "lifestyle intervention engagement": 5,
+      "program engagement": 4,
+      "programme engagement": 4,
+      "session attendance": 4,
+      "intervention attendance": 4,
+      "attendance rate": 4,
+      "program retention": 4,
+      "programme retention": 4,
+      "participant retention": 4,
+      "retention rate": 4,
+      "program completion": 4,
+      "programme completion": 4,
+      "intervention dose": 4,
+      "dose received": 5,
+      "intervention exposure": 4,
+      "adherence support": 5
+    },
+    "artigo3_framework": {
+      "intervention engagement": 3,
+      "participant engagement": 3,
+      "patient engagement": 3,
+      "program retention": 3,
+      "adherence support": 4
+    }
+  }
+}
