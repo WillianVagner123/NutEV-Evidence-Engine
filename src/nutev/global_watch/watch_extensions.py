@@ -106,6 +106,62 @@ SOCIAL_PRESCRIBING_BONUS_TERMS = [
     ("community referral food program", 16),
 ]
 
+CARDIOMETABOLIC_NUTRITION_CARE_TERMS = [
+    "medical nutrition therapy obesity",
+    "medical nutrition therapy type 2 diabetes",
+    "medical nutrition therapy hypertension",
+    "medical nutrition therapy dyslipidemia",
+    "medical nutrition therapy dyslipidaemia",
+    "medical nutrition therapy masld",
+    "medical nutrition therapy nafld",
+    "cardiometabolic nutrition care",
+    "cardiometabolic nutrition pathway",
+    "cardiometabolic nutrition protocol",
+    "obesity nutrition care pathway",
+    "obesity nutrition care protocol",
+    "diabetes nutrition care pathway",
+    "diabetes nutrition care protocol",
+    "hypertension nutrition care pathway",
+    "dyslipidemia nutrition care pathway",
+    "dyslipidaemia nutrition care pathway",
+    "masld nutrition care pathway",
+    "nafld nutrition care pathway",
+    "dietitian-led cardiometabolic care",
+    "dietitian led cardiometabolic care",
+    "dietitian-led weight management",
+    "dietitian led weight management",
+    "dietitian-led diabetes care",
+    "dietitian led diabetes care",
+]
+
+CARDIOMETABOLIC_NUTRITION_CARE_BONUS_TERMS = [
+    ("medical nutrition therapy obesity", 22),
+    ("medical nutrition therapy type 2 diabetes", 22),
+    ("medical nutrition therapy hypertension", 20),
+    ("medical nutrition therapy dyslipidemia", 20),
+    ("medical nutrition therapy dyslipidaemia", 20),
+    ("medical nutrition therapy masld", 20),
+    ("medical nutrition therapy nafld", 20),
+    ("cardiometabolic nutrition care", 20),
+    ("cardiometabolic nutrition pathway", 22),
+    ("cardiometabolic nutrition protocol", 22),
+    ("obesity nutrition care pathway", 20),
+    ("obesity nutrition care protocol", 20),
+    ("diabetes nutrition care pathway", 20),
+    ("diabetes nutrition care protocol", 20),
+    ("hypertension nutrition care pathway", 18),
+    ("dyslipidemia nutrition care pathway", 18),
+    ("dyslipidaemia nutrition care pathway", 18),
+    ("masld nutrition care pathway", 18),
+    ("nafld nutrition care pathway", 18),
+    ("dietitian-led cardiometabolic care", 18),
+    ("dietitian led cardiometabolic care", 18),
+    ("dietitian-led weight management", 18),
+    ("dietitian led weight management", 18),
+    ("dietitian-led diabetes care", 18),
+    ("dietitian led diabetes care", 18),
+]
+
 OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS = [
     "anti-obesity medication nutrition",
     "anti-obesity medication nutrition care",
@@ -207,6 +263,7 @@ def _extend_scoring_terms() -> None:
             [
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
+                *CARDIOMETABOLIC_NUTRITION_CARE_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
             ]
         )
@@ -216,6 +273,7 @@ def _extend_scoring_terms() -> None:
             [
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+                *CARDIOMETABOLIC_NUTRITION_CARE_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
             ]
         )
@@ -243,24 +301,38 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CARDIOMETABOLIC_NUTRITION_CARE_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CARDIOMETABOLIC_NUTRITION_CARE_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        [*FOOD_ENVIRONMENT_DOCUMENT_TERMS, *CARDIOMETABOLIC_NUTRITION_CARE_TERMS],
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*CARDIOMETABOLIC_NUTRITION_CARE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS],
+    )
+    _extend_quick_seed_group(
+        "lifestyle_medicine",
+        0,
+        CARDIOMETABOLIC_NUTRITION_CARE_TERMS,
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
         1,
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "implementation_behavior",
+        1,
+        CARDIOMETABOLIC_NUTRITION_CARE_TERMS,
     )
     _extend_quick_seed_group(
         "implementation_behavior",
@@ -275,15 +347,20 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
+        CARDIOMETABOLIC_NUTRITION_CARE_TERMS,
+    )
+    _extend_quick_seed_group(
+        "obesity_cardiometabolic",
+        0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
     _extend_query_context(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CARDIOMETABOLIC_NUTRITION_CARE_TERMS],
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CARDIOMETABOLIC_NUTRITION_CARE_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
@@ -291,7 +368,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*CARDIOMETABOLIC_NUTRITION_CARE_TERMS, *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS],
     )
     _extend_scoring_terms()
 
