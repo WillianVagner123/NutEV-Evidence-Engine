@@ -1,6 +1,11 @@
 from __future__ import annotations
 
+import re
+from functools import lru_cache
 from typing import Any
+
+
+_TERM_BOUNDARY = r"(?<![a-z0-9]){}(?![a-z0-9])"
 
 
 def _text_blob(record: dict[str, Any]) -> str:
@@ -9,8 +14,20 @@ def _text_blob(record: dict[str, Any]) -> str:
     ).lower()
 
 
+@lru_cache(maxsize=4096)
+def _term_pattern(term: str) -> re.Pattern[str]:
+    return re.compile(_TERM_BOUNDARY.format(re.escape(term.lower())))
+
+
+def _term_present(blob: str, term: str) -> bool:
+    value = str(term or "").strip().lower()
+    if not value:
+        return False
+    return bool(_term_pattern(value).search(blob))
+
+
 def _match_terms(blob: str, terms: list[str]) -> int:
-    return sum(1 for term in terms if term.lower() in blob)
+    return sum(1 for term in terms if _term_present(blob, term))
 
 
 def classify_evidence(
