@@ -1,0 +1,129 @@
+{
+  "version_note": "Supplemental NutMEV query expansion for food access screening and closed-loop referral terms. Loaded after keyword_taxonomy.json without modifying the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_access_screening_referral": [
+        "food access screening",
+        "healthy food access screening",
+        "food insecurity screening and referral",
+        "nutrition insecurity screening and referral",
+        "nutrition security screening and referral",
+        "screening for food insecurity",
+        "screening for nutrition insecurity",
+        "screening for nutrition security",
+        "social needs screening",
+        "health-related social needs screening",
+        "health related social needs screening",
+        "food resource referral",
+        "food resource referrals",
+        "healthy food referral",
+        "healthy food referrals",
+        "food assistance referral",
+        "food assistance referrals",
+        "food benefit referral",
+        "food benefit referrals",
+        "snap referral",
+        "snap enrollment assistance",
+        "wic referral",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food access screening",
+      "healthy food access screening",
+      "food insecurity screening and referral",
+      "nutrition insecurity screening and referral",
+      "nutrition security screening and referral",
+      "social needs screening",
+      "health-related social needs screening",
+      "health related social needs screening",
+      "food resource referral",
+      "healthy food referral",
+      "food assistance referral",
+      "food benefit referral",
+      "snap referral",
+      "snap enrollment assistance",
+      "wic referral",
+      "closed-loop food referral",
+      "closed loop food referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food access screening",
+        "healthy food access screening",
+        "food insecurity screening and referral",
+        "nutrition insecurity screening and referral",
+        "nutrition security screening and referral",
+        "social needs screening",
+        "health-related social needs screening",
+        "health related social needs screening",
+        "food resource referral",
+        "healthy food referral",
+        "food assistance referral",
+        "food benefit referral",
+        "snap referral",
+        "wic referral",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ],
+      "web_query_hints": [
+        "food insecurity screening referral report",
+        "nutrition security screening referral report",
+        "food access screening implementation report",
+        "health-related social needs food referral report",
+        "closed-loop food referral implementation",
+        "snap referral nutrition security program",
+        "wic referral food security program"
+      ],
+      "document_terms": [
+        "implementation report",
+        "program evaluation",
+        "technical report",
+        "practice recommendation"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food access screening",
+        "healthy food access screening",
+        "food insecurity screening and referral",
+        "nutrition insecurity screening and referral",
+        "nutrition security screening and referral",
+        "social needs screening",
+        "health-related social needs screening",
+        "health related social needs screening",
+        "food resource referral",
+        "healthy food referral",
+        "food assistance referral",
+        "food benefit referral",
+        "snap referral",
+        "snap enrollment assistance",
+        "wic referral",
+        "closed-loop food referral",
+        "closed loop food referral"
+      ],
+      "web_query_hints": [
+        "food insecurity screening referral trial",
+        "nutrition security screening referral trial",
+        "food access screening implementation trial",
+        "health-related social needs food referral evaluation",
+        "closed-loop food referral implementation trial",
+        "food assistance referral cardiometabolic trial",
+        "snap referral nutrition intervention",
+        "wic referral nutrition intervention"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "pragmatic trial",
+        "systematic review"
+      ]
+    }
+  }
+}
