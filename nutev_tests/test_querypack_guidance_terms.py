@@ -3,6 +3,7 @@ from pathlib import Path
 from nutev.pipelines.master_pipeline import _dedup_rows
 from nutev.querypacks.builders import build_queries, build_structured_components
 from nutev.querypacks.provider_queries import _pubmed_document_clause
+from nutev.querypacks.semantic_blocks import semantic_terms
 from nutev.settings import load_json
 
 
@@ -101,6 +102,30 @@ def test_busca1_and_busca2b_cover_food_is_medicine_interventions() -> None:
         or "medically tailored meals" in query
         for query in busca2b_queries
     )
+
+
+def test_food_access_referral_terms_enter_semantic_blocks_and_components() -> None:
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+
+    terms = {term.lower() for term in semantic_terms("busca1", min_priority=4)}
+    document_terms = {
+        term.lower()
+        for term in semantic_terms("busca1", field="document_terms", min_priority=4)
+    }
+    _, busca1_components = build_structured_components(taxonomy, "busca1")
+    _, busca2b_components = build_structured_components(taxonomy, "busca2b")
+    busca1_focus = {term.lower() for term in busca1_components["focus_terms"]}
+    busca2b_hints = {term.lower() for term in busca2b_components["web_hints"]}
+
+    assert "closed-loop food referral" in terms
+    assert "clinical-community nutrition referral" in terms
+    assert "medically tailored meals programme" in terms
+    assert "food is medicine initiative" in terms
+    assert "closed-loop food referral program evaluation" in document_terms
+    assert "clinical-community nutrition referral program evaluation" in document_terms
+    assert "closed-loop food referral" in busca1_focus
+    assert "food is medicine initiative" in busca1_focus
+    assert "medically tailored meals programme" in busca2b_hints
 
 
 def test_pubmed_document_clause_maps_new_guidance_and_review_terms():
