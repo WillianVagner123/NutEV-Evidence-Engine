@@ -48,6 +48,33 @@ def test_social_prescribing_nutrition_terms_score_above_generic_referral_languag
     assert scoped - generic >= 45
 
 
+def test_quick_queries_include_scoped_group_care_delivery_terms():
+    rows = build_watch_queries(["implementation_behavior"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "shared medical appointment diabetes nutrition" in rendered
+    assert "group medical visit obesity nutrition" in rendered
+    assert "group nutrition intervention" in rendered
+    assert "peer support dietary adherence" in rendered
+
+
+def test_group_care_delivery_terms_score_above_generic_group_visit_language():
+    scoped = score_watch_item(
+        {
+            "title": "Group medical visit diabetes nutrition intervention for dietary adherence",
+            "source_provider": "pubmed",
+        }
+    )
+    generic = score_watch_item(
+        {
+            "title": "Group medical visit scheduling note",
+            "source_provider": "pubmed",
+        }
+    )
+
+    assert scoped > generic
+    assert scoped - generic >= 45
+
+
 def test_framework_instrument_queries_include_food_competence_and_commensality_scales():
     rows = build_watch_queries(["frameworks_instruments"], 7, "exhaustive")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
