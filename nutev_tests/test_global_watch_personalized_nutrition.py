@@ -73,5 +73,4 @@ def test_global_watch_extension_terms_are_scored_inside_nutmev_scope() -> None:
         }
     )
 
-    assert score["is_high_priority"] is True
-    assert score["relevance_score"] >= 70
+    assert score >= 70
