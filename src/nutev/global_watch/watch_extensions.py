@@ -146,6 +146,62 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+REMISSION_MAINTENANCE_NUTRITION_TERMS = [
+    "nutrition care for diabetes remission",
+    "medical nutrition therapy diabetes remission",
+    "dietitian-led diabetes remission",
+    "dietitian led diabetes remission",
+    "dietary intervention diabetes remission",
+    "dietary pattern diabetes remission",
+    "type 2 diabetes remission diet",
+    "type 2 diabetes remission nutrition",
+    "glycemic remission nutrition",
+    "glycaemic remission nutrition",
+    "weight loss maintenance nutrition",
+    "weight loss maintenance dietary intervention",
+    "weight regain prevention nutrition",
+    "weight regain prevention dietary intervention",
+    "dietary self-monitoring weight maintenance",
+    "dietary self-regulation weight maintenance",
+]
+
+REMISSION_MAINTENANCE_BONUS_TERMS = [
+    ("nutrition care for diabetes remission", 22),
+    ("medical nutrition therapy diabetes remission", 22),
+    ("dietitian-led diabetes remission", 20),
+    ("dietitian led diabetes remission", 20),
+    ("dietary intervention diabetes remission", 18),
+    ("type 2 diabetes remission nutrition", 20),
+    ("glycemic remission nutrition", 18),
+    ("glycaemic remission nutrition", 18),
+    ("weight loss maintenance nutrition", 18),
+    ("weight regain prevention nutrition", 18),
+]
+
+CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS = [
+    "culturally adapted nutrition intervention",
+    "culturally tailored nutrition intervention",
+    "culturally adapted dietary intervention",
+    "culturally tailored dietary intervention",
+    "cultural adaptation nutrition intervention",
+    "cultural adaptation dietary intervention",
+    "culturally adapted healthy eating intervention",
+    "culturally tailored healthy eating intervention",
+    "culturally appropriate nutrition education",
+    "culturally responsive nutrition education",
+    "community-based culturally tailored nutrition",
+    "community based culturally tailored nutrition",
+]
+
+CULTURALLY_ADAPTED_NUTRITION_BONUS_TERMS = [
+    ("culturally adapted nutrition intervention", 18),
+    ("culturally tailored nutrition intervention", 18),
+    ("culturally adapted dietary intervention", 18),
+    ("culturally tailored dietary intervention", 18),
+    ("culturally appropriate nutrition education", 16),
+    ("culturally responsive nutrition education", 16),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +264,8 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *REMISSION_MAINTENANCE_BONUS_TERMS,
+                *CULTURALLY_ADAPTED_NUTRITION_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +275,8 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *REMISSION_MAINTENANCE_NUTRITION_TERMS,
+                *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
             ]
         )
     )
@@ -226,7 +286,10 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
         0,
-        PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS,
+        [
+            *PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS,
+            *REMISSION_MAINTENANCE_NUTRITION_TERMS,
+        ],
     )
     _extend_seed_group(
         "personalized_nutrition",
@@ -239,15 +302,25 @@ def apply_watch_taxonomy_extensions() -> None:
             *FOOD_ENVIRONMENT_POLICY_TERMS,
             *FOOD_ENVIRONMENT_DOCUMENT_TERMS,
             *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
         ],
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *REMISSION_MAINTENANCE_NUTRITION_TERMS,
+            *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *REMISSION_MAINTENANCE_NUTRITION_TERMS,
+            *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
+        ],
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -255,43 +328,64 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [
+            *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            *REMISSION_MAINTENANCE_NUTRITION_TERMS,
+        ],
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
         1,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *REMISSION_MAINTENANCE_NUTRITION_TERMS],
     )
     _extend_quick_seed_group(
         "implementation_behavior",
         2,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *REMISSION_MAINTENANCE_NUTRITION_TERMS,
+            *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
+        ],
     )
     _extend_quick_seed_group(
         "food_literacy_culinary_commensality",
         0,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
+        ],
     )
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *REMISSION_MAINTENANCE_NUTRITION_TERMS],
     )
     _extend_query_context(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *REMISSION_MAINTENANCE_NUTRITION_TERMS,
+            *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
+        ],
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *REMISSION_MAINTENANCE_NUTRITION_TERMS,
+            *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
+        ],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CULTURALLY_ADAPTED_NUTRITION_IMPLEMENTATION_TERMS,
+        ],
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *REMISSION_MAINTENANCE_NUTRITION_TERMS],
     )
     _extend_scoring_terms()
 
