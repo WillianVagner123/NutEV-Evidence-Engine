@@ -10,6 +10,11 @@ def _render_personalized_queries(mode: str = "quick") -> str:
     return "\n".join(str(item["query"]).lower() for item in queries)
 
 
+def _render_diet_pattern_queries(mode: str = "quick") -> str:
+    queries = build_watch_queries(["diet_patterns"], since_days=30, mode=mode)
+    return "\n".join(str(item["query"]).lower() for item in queries)
+
+
 def _render_obesity_queries(mode: str = "quick") -> str:
     queries = build_watch_queries(["obesity_cardiometabolic"], since_days=30, mode=mode)
     return "\n".join(str(item["query"]).lower() for item in queries)
@@ -37,6 +42,25 @@ def test_personalized_nutrition_queries_cover_adherence_implementation_terms() -
     assert "precision nutrition adherence" in rendered
     assert "tailored dietary advice adherence" in rendered
     assert "personalized meal planning adherence" in rendered
+
+
+def test_diet_pattern_queries_cover_quality_indices_and_adherence_scores() -> None:
+    rendered = _render_diet_pattern_queries()
+
+    assert "mediterranean diet adherence" in rendered
+    assert "dash diet adherence" in rendered
+    assert "healthy eating index" in rendered
+    assert "dietary pattern adherence" in rendered
+    assert "diet quality score" in rendered
+    assert "plant-based diet index" in rendered
+
+
+def test_diet_quality_adherence_terms_improve_watch_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "Healthy Eating Index and Mediterranean diet adherence for cardiometabolic risk",
+        }
+    ) > _score_watch_item({"title": "Generic dietary pattern note"})
 
 
 def test_obesity_queries_cover_pharmacotherapy_nutrition_terms() -> None:
