@@ -1,0 +1,97 @@
+{
+  "version_note": "Focused NutMEV expansion for American Heart Association Life's Essential 8 / LE8 cardiometabolic nutrition evidence.",
+  "global": {
+    "lifestyle_medicine_pillars": {
+      "nutrition": [
+        "life's essential 8 nutrition",
+        "life essential 8 nutrition",
+        "le8 nutrition",
+        "life's simple 7 nutrition",
+        "life simple 7 nutrition"
+      ]
+    },
+    "implementation_behavior": {
+      "cardiometabolic_health_metrics": [
+        "life's essential 8",
+        "life essential 8",
+        "life's essential eight",
+        "life essential eight",
+        "le8",
+        "life's simple 7",
+        "life simple 7",
+        "cardiovascular health score",
+        "cardiovascular health metrics",
+        "ideal cardiovascular health"
+      ]
+    }
+  },
+  "clinical": {
+    "cardiometabolic": [
+      "life's essential 8",
+      "life essential 8",
+      "life's essential eight",
+      "life essential eight",
+      "le8",
+      "life's simple 7",
+      "life simple 7",
+      "cardiovascular health score",
+      "cardiovascular health metrics",
+      "ideal cardiovascular health"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "life's essential 8",
+      "life essential 8",
+      "life's essential eight",
+      "life essential eight",
+      "le8",
+      "life's simple 7",
+      "life simple 7",
+      "cardiovascular health score",
+      "cardiovascular health metrics",
+      "ideal cardiovascular health"
+    ],
+    "diet_quality_adherence": [
+      "life's essential 8 diet score",
+      "life essential 8 diet score",
+      "le8 diet score",
+      "life's essential 8 healthy diet score",
+      "life essential 8 healthy diet score"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "life's essential 8",
+        "life essential 8",
+        "le8",
+        "cardiovascular health score",
+        "cardiovascular health metrics",
+        "ideal cardiovascular health"
+      ],
+      "web_query_hints": [
+        "life's essential 8 scientific statement nutrition",
+        "life essential 8 cardiovascular health diet guideline",
+        "le8 diet score cardiometabolic risk",
+        "life's essential 8 obesity cardiometabolic risk"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "life's essential 8",
+        "life essential 8",
+        "le8",
+        "cardiovascular health score",
+        "cardiovascular health metrics",
+        "ideal cardiovascular health"
+      ],
+      "web_query_hints": [
+        "life's essential 8 diet score intervention",
+        "le8 diet score lifestyle intervention",
+        "life essential 8 nutrition intervention cardiometabolic",
+        "cardiovascular health score dietary intervention"
+      ]
+    }
+  }
+}
