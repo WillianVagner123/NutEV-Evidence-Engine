@@ -146,6 +146,76 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+INTENSIVE_BEHAVIORAL_NUTRITION_TERMS = [
+    "intensive behavioral therapy obesity nutrition",
+    "intensive behavioural therapy obesity nutrition",
+    "intensive behavioral treatment obesity nutrition",
+    "intensive behavioural treatment obesity nutrition",
+    "intensive behavioral therapy for obesity",
+    "intensive behavioural therapy for obesity",
+    "intensive behavioral treatment for obesity",
+    "intensive behavioural treatment for obesity",
+    "intensive behavioral lifestyle intervention",
+    "intensive behavioural lifestyle intervention",
+    "intensive lifestyle intervention nutrition",
+    "intensive lifestyle intervention dietitian",
+    "intensive lifestyle intervention dietary counseling",
+    "intensive lifestyle intervention dietary counselling",
+    "behavioral weight management nutrition",
+    "behavioural weight management nutrition",
+    "behavioral obesity treatment nutrition",
+    "behavioural obesity treatment nutrition",
+    "dietitian-led behavioral weight management",
+    "dietitian led behavioral weight management",
+    "dietitian-led behavioural weight management",
+    "dietitian led behavioural weight management",
+    "group medical visit nutrition",
+    "group medical visits nutrition",
+    "shared medical appointment nutrition",
+    "shared medical appointments nutrition",
+    "obesity shared medical appointment",
+    "obesity shared medical appointments",
+    "diabetes shared medical appointment",
+    "diabetes shared medical appointments",
+    "weight management shared medical appointment",
+    "weight management shared medical appointments",
+]
+
+INTENSIVE_BEHAVIORAL_NUTRITION_BONUS_TERMS = [
+    ("intensive behavioral therapy obesity nutrition", 20),
+    ("intensive behavioural therapy obesity nutrition", 20),
+    ("intensive behavioral treatment obesity nutrition", 20),
+    ("intensive behavioural treatment obesity nutrition", 20),
+    ("intensive behavioral therapy for obesity", 18),
+    ("intensive behavioural therapy for obesity", 18),
+    ("intensive behavioral treatment for obesity", 18),
+    ("intensive behavioural treatment for obesity", 18),
+    ("intensive behavioral lifestyle intervention", 18),
+    ("intensive behavioural lifestyle intervention", 18),
+    ("intensive lifestyle intervention nutrition", 18),
+    ("intensive lifestyle intervention dietitian", 18),
+    ("intensive lifestyle intervention dietary counseling", 18),
+    ("intensive lifestyle intervention dietary counselling", 18),
+    ("behavioral weight management nutrition", 18),
+    ("behavioural weight management nutrition", 18),
+    ("behavioral obesity treatment nutrition", 18),
+    ("behavioural obesity treatment nutrition", 18),
+    ("dietitian-led behavioral weight management", 20),
+    ("dietitian led behavioral weight management", 20),
+    ("dietitian-led behavioural weight management", 20),
+    ("dietitian led behavioural weight management", 20),
+    ("group medical visit nutrition", 16),
+    ("group medical visits nutrition", 16),
+    ("shared medical appointment nutrition", 16),
+    ("shared medical appointments nutrition", 16),
+    ("obesity shared medical appointment", 16),
+    ("obesity shared medical appointments", 16),
+    ("diabetes shared medical appointment", 16),
+    ("diabetes shared medical appointments", 16),
+    ("weight management shared medical appointment", 16),
+    ("weight management shared medical appointments", 16),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +278,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *INTENSIVE_BEHAVIORAL_NUTRITION_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +288,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS,
             ]
         )
     )
@@ -243,11 +315,15 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -255,17 +331,17 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS],
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
         1,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS],
     )
     _extend_quick_seed_group(
         "implementation_behavior",
         2,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS],
     )
     _extend_quick_seed_group(
         "food_literacy_culinary_commensality",
@@ -275,15 +351,15 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS],
     )
     _extend_query_context(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS],
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
@@ -291,7 +367,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *INTENSIVE_BEHAVIORAL_NUTRITION_TERMS],
     )
     _extend_scoring_terms()
 
