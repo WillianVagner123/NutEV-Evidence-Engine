@@ -235,8 +235,61 @@ def _patch_query_generation() -> None:
         builders_module.build_queries = wrapped_build
 
 
+def _extend_unique(existing: list[str], additions: list[str]) -> None:
+    seen = {str(item).strip().lower() for item in existing if str(item).strip()}
+    for term in additions:
+        value = str(term).strip()
+        if not value or value.lower() in seen:
+            continue
+        existing.append(value)
+        seen.add(value.lower())
+
+
+def _patch_global_watch_group_visit_terms() -> None:
+    try:
+        from nutev.global_watch import watch_query_builder as watch_module
+    except Exception:
+        return
+    if getattr(watch_module, "_nutev_group_visit_patched", False):
+        return
+
+    group_visit_terms = [
+        "group lifestyle intervention",
+        "group-based lifestyle intervention",
+        "group based lifestyle intervention",
+        "lifestyle medicine group visit",
+        "group nutrition counseling",
+        "group nutrition counselling",
+        "group dietitian visit",
+        "group dietitian visits",
+        "group medical visit",
+        "group medical visits",
+        "shared medical appointment",
+        "shared medical appointments",
+        "diabetes group visit",
+        "diabetes group visits",
+        "obesity group visit",
+        "obesity group visits",
+        "weight management group visit",
+        "weight management group visits",
+    ]
+    for category in ("lifestyle_medicine", "implementation_behavior"):
+        context_terms = watch_module.CATEGORY_CONTEXT_TERMS.setdefault(category, [])
+        _extend_unique(context_terms, group_visit_terms)
+
+    quick_lifestyle_groups = watch_module.QUICK_MODE_SEED_GROUPS.get("lifestyle_medicine", [])
+    if len(quick_lifestyle_groups) >= 2:
+        _extend_unique(quick_lifestyle_groups[1], group_visit_terms[:6])
+    quick_implementation_groups = watch_module.QUICK_MODE_SEED_GROUPS.get("implementation_behavior", [])
+    if len(quick_implementation_groups) >= 3:
+        _extend_unique(quick_implementation_groups[2], group_visit_terms)
+
+    watch_module._nutev_group_visit_patched = True
+
+
 _patch_workstream_validation()
 _patch_curation()
 _patch_run_summary()
 _patch_synthesis_defaults()
 _patch_query_generation()
+_patch_global_watch_group_visit_terms()
