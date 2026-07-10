@@ -32,6 +32,46 @@ PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS = [
     "individualised meal plan adherence",
 ]
 
+DIET_QUALITY_ADHERENCE_TERMS = [
+    "diet quality index",
+    "diet quality score",
+    "dietary pattern adherence",
+    "dietary adherence score",
+    "healthy eating index",
+    "alternate healthy eating index",
+    "alternative healthy eating index",
+    "mediterranean diet adherence",
+    "mediterranean diet score",
+    "dash diet adherence",
+    "dash score",
+    "mind diet score",
+    "portfolio diet score",
+    "plant-based diet index",
+    "plant based diet index",
+    "healthy plant-based diet index",
+    "healthful plant-based diet index",
+]
+
+DIET_QUALITY_ADHERENCE_BONUS_TERMS = [
+    ("diet quality index", 14),
+    ("diet quality score", 14),
+    ("dietary pattern adherence", 14),
+    ("dietary adherence score", 14),
+    ("healthy eating index", 14),
+    ("alternate healthy eating index", 14),
+    ("alternative healthy eating index", 14),
+    ("mediterranean diet adherence", 14),
+    ("mediterranean diet score", 14),
+    ("dash diet adherence", 14),
+    ("dash score", 14),
+    ("mind diet score", 14),
+    ("portfolio diet score", 14),
+    ("plant-based diet index", 14),
+    ("plant based diet index", 14),
+    ("healthy plant-based diet index", 14),
+    ("healthful plant-based diet index", 14),
+]
+
 FOOD_ENVIRONMENT_POLICY_TERMS = [
     "food service guidelines",
     "healthy food service guidelines",
@@ -206,6 +246,7 @@ def _extend_scoring_terms() -> None:
         _dedupe_preserve_order(
             [
                 *watch_scoring.BONUS_TERMS,
+                *DIET_QUALITY_ADHERENCE_BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
             ]
@@ -215,6 +256,7 @@ def _extend_scoring_terms() -> None:
         _dedupe_preserve_order(
             [
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *DIET_QUALITY_ADHERENCE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
             ]
@@ -232,6 +274,10 @@ def apply_watch_taxonomy_extensions() -> None:
         "personalized_nutrition",
         1,
         PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS,
+    )
+    _extend_category_terms(
+        "diet_patterns",
+        DIET_QUALITY_ADHERENCE_TERMS,
     )
     _extend_category_terms(
         "food_literacy_culinary_commensality",
@@ -258,6 +304,41 @@ def apply_watch_taxonomy_extensions() -> None:
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
+        "diet_patterns",
+        0,
+        [
+            "mediterranean diet adherence",
+            "mediterranean diet score",
+            "dash diet adherence",
+            "dash score",
+            "mind diet score",
+        ],
+    )
+    _extend_quick_seed_group(
+        "diet_patterns",
+        1,
+        [
+            "plant-based diet index",
+            "plant based diet index",
+            "healthy plant-based diet index",
+            "healthful plant-based diet index",
+        ],
+    )
+    _extend_quick_seed_group(
+        "diet_patterns",
+        2,
+        [
+            "diet quality index",
+            "diet quality score",
+            "dietary pattern adherence",
+            "dietary adherence score",
+            "healthy eating index",
+            "alternate healthy eating index",
+            "alternative healthy eating index",
+            "portfolio diet score",
+        ],
+    )
+    _extend_quick_seed_group(
         "lifestyle_medicine",
         1,
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
@@ -276,6 +357,10 @@ def apply_watch_taxonomy_extensions() -> None:
         "obesity_cardiometabolic",
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+    )
+    _extend_query_context(
+        "diet_patterns",
+        DIET_QUALITY_ADHERENCE_TERMS,
     )
     _extend_query_context(
         "lifestyle_medicine",
