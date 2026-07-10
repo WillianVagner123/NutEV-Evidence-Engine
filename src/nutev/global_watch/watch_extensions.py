@@ -146,6 +146,42 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+CULINARY_CARDIOMETABOLIC_TERMS = [
+    "culinary medicine cardiometabolic risk",
+    "culinary medicine obesity",
+    "culinary medicine type 2 diabetes",
+    "culinary medicine diabetes prevention",
+    "culinary medicine hypertension",
+    "culinary medicine dyslipidemia",
+    "culinary nutrition cardiometabolic risk",
+    "culinary nutrition obesity",
+    "culinary nutrition type 2 diabetes",
+    "teaching kitchen cardiometabolic risk",
+    "teaching kitchen obesity",
+    "teaching kitchen type 2 diabetes",
+    "teaching kitchen diabetes prevention",
+    "teaching kitchen dietary adherence",
+    "teaching kitchen implementation",
+]
+
+CULINARY_CARDIOMETABOLIC_BONUS_TERMS = [
+    ("culinary medicine cardiometabolic risk", 20),
+    ("culinary medicine obesity", 18),
+    ("culinary medicine type 2 diabetes", 18),
+    ("culinary medicine diabetes prevention", 18),
+    ("culinary medicine hypertension", 16),
+    ("culinary medicine dyslipidemia", 16),
+    ("culinary nutrition cardiometabolic risk", 18),
+    ("culinary nutrition obesity", 16),
+    ("culinary nutrition type 2 diabetes", 16),
+    ("teaching kitchen cardiometabolic risk", 20),
+    ("teaching kitchen obesity", 18),
+    ("teaching kitchen type 2 diabetes", 18),
+    ("teaching kitchen diabetes prevention", 18),
+    ("teaching kitchen dietary adherence", 18),
+    ("teaching kitchen implementation", 18),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +244,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *CULINARY_CARDIOMETABOLIC_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +254,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *CULINARY_CARDIOMETABOLIC_TERMS,
             ]
         )
     )
@@ -239,15 +277,20 @@ def apply_watch_taxonomy_extensions() -> None:
             *FOOD_ENVIRONMENT_POLICY_TERMS,
             *FOOD_ENVIRONMENT_DOCUMENT_TERMS,
             *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CULINARY_CARDIOMETABOLIC_TERMS,
         ],
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CULINARY_CARDIOMETABOLIC_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -255,43 +298,43 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
         1,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_quick_seed_group(
         "implementation_behavior",
         2,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_quick_seed_group(
         "food_literacy_culinary_commensality",
         0,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_query_context(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [*OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS, *CULINARY_CARDIOMETABOLIC_TERMS],
     )
     _extend_scoring_terms()
 
