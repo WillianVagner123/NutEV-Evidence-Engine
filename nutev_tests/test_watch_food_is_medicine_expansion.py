@@ -20,6 +20,16 @@ CULINARY_MEDICINE_PROGRAM_VARIANTS = {
     "teaching kitchen program",
 }
 
+CULINARY_CARDIOMETABOLIC_VARIANTS = {
+    "culinary medicine cardiometabolic risk",
+    "culinary medicine obesity",
+    "culinary medicine type 2 diabetes",
+    "culinary nutrition cardiometabolic risk",
+    "teaching kitchen cardiometabolic risk",
+    "teaching kitchen dietary adherence",
+    "teaching kitchen implementation",
+}
+
 DPP_LIFESTYLE_TRANSLATION_VARIANTS = {
     "intensive lifestyle intervention",
     "diabetes prevention program",
@@ -72,6 +82,30 @@ def test_implementation_watch_category_covers_culinary_medicine_program_variants
     } <= terms
 
 
+def test_lifestyle_watch_category_covers_culinary_cardiometabolic_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
+
+    assert CULINARY_CARDIOMETABOLIC_VARIANTS <= terms
+
+
+def test_food_literacy_watch_category_covers_culinary_cardiometabolic_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["food_literacy_culinary_commensality"]}
+
+    assert CULINARY_CARDIOMETABOLIC_VARIANTS <= terms
+
+
+def test_implementation_watch_category_covers_culinary_cardiometabolic_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["implementation_behavior"]}
+
+    assert CULINARY_CARDIOMETABOLIC_VARIANTS <= terms
+
+
+def test_obesity_watch_category_covers_culinary_cardiometabolic_variants() -> None:
+    terms = {term.lower() for term in WATCH_CATEGORIES["obesity_cardiometabolic"]}
+
+    assert CULINARY_CARDIOMETABOLIC_VARIANTS <= terms
+
+
 def test_lifestyle_watch_category_covers_dpp_translation_variants() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["lifestyle_medicine"]}
 
@@ -108,3 +142,13 @@ def test_dpp_translation_variants_raise_watch_priority() -> None:
     assert score_watch_item(
         {"title": "Intensive lifestyle intervention for prediabetes and weight management"}
     ) > score_watch_item({"title": "Prediabetes and weight management note"})
+
+
+def test_culinary_cardiometabolic_variants_raise_watch_priority() -> None:
+    assert score_watch_item(
+        {"title": "Teaching kitchen implementation for cardiometabolic risk"}
+    ) > score_watch_item({"title": "Cardiometabolic risk note"})
+
+    assert score_watch_item(
+        {"title": "Culinary medicine type 2 diabetes and obesity care"}
+    ) > score_watch_item({"title": "Type 2 diabetes and obesity care note"})
