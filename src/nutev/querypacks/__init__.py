@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from nutev.querypacks.behavioural_variants_extensions import (
+    apply_behavioural_variant_extensions,
+)
 from nutev.querypacks.carbohydrate_quality_extensions import (
     apply_carbohydrate_quality_extensions,
 )
@@ -9,8 +12,10 @@ from nutev.querypacks.semantic_extensions import apply_semantic_extensions
 apply_semantic_extensions()
 apply_carbohydrate_quality_extensions()
 apply_food_access_benefit_extensions()
+apply_behavioural_variant_extensions()
 
 __all__ = [
+    "apply_behavioural_variant_extensions",
     "apply_carbohydrate_quality_extensions",
     "apply_food_access_benefit_extensions",
     "apply_semantic_extensions",
