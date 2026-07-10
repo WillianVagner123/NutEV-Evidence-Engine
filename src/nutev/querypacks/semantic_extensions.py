@@ -302,6 +302,44 @@ DIET_QUALITY_INDEX_DOCUMENT_TERMS = [
     "plant based diet index validation",
 ]
 
+SATIETY_TIMING_DIET_TERMS = [
+    "satiety",
+    "satiating diet",
+    "satiating dietary pattern",
+    "satiating dietary patterns",
+    "high satiety diet",
+    "high-satiety diet",
+    "appetite regulation",
+    "appetite control",
+    "hunger regulation",
+    "meal timing",
+    "meal timing intervention",
+    "chrono-nutrition",
+    "chrononutrition",
+    "circadian nutrition",
+    "early time-restricted feeding",
+    "early time restricted feeding",
+    "time-restricted eating",
+    "time restricted eating",
+    "time-restricted feeding",
+    "time restricted feeding",
+]
+
+SATIETY_TIMING_DIET_DOCUMENT_TERMS = [
+    "satiating diet trial",
+    "satiety intervention trial",
+    "appetite regulation trial",
+    "meal timing trial",
+    "chrononutrition trial",
+    "chrono-nutrition trial",
+    "time-restricted eating trial",
+    "time restricted eating trial",
+    "early time-restricted feeding trial",
+    "early time restricted feeding trial",
+    "meal timing systematic review",
+    "chrononutrition systematic review",
+]
+
 ULTRA_PROCESSED_FOOD_TERMS = [
     "ultra-processed food",
     "ultra-processed foods",
@@ -677,6 +715,11 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=DIET_QUALITY_INDEX_TERMS,
             document_terms=DIET_QUALITY_INDEX_DOCUMENT_TERMS,
+        )
+        _extend_semantic_block(
+            block_name,
+            terms=SATIETY_TIMING_DIET_TERMS,
+            document_terms=SATIETY_TIMING_DIET_DOCUMENT_TERMS,
         )
     for block_name in (
         "adherence_persistence",
