@@ -1,0 +1,36 @@
+{
+  "version_note": "2026-07-10: targeted expansion for dietary adherence maintenance, relapse prevention, and long-term behavior change. Terms are added through the supplement merge layer to preserve the base taxonomy and keep provenance explicit.",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "dietary habit maintenance",
+        "healthy eating maintenance",
+        "diet maintenance",
+        "dietary maintenance intervention",
+        "dietary lapse recovery",
+        "relapse management",
+        "relapse prevention planning",
+        "weight maintenance intervention",
+        "weight loss maintenance intervention",
+        "weight regain prevention intervention",
+        "maintenance of behavior change",
+        "behavior change maintenance",
+        "behaviour change maintenance",
+        "long-term behavior change",
+        "long term behavior change",
+        "long-term behaviour change",
+        "long term behaviour change",
+        "long-term dietary behavior change",
+        "long term dietary behavior change",
+        "long-term dietary behaviour change",
+        "long term dietary behaviour change",
+        "dietary goal setting",
+        "implementation intention",
+        "habit-based intervention",
+        "habit based intervention",
+        "habit-based dietary intervention",
+        "habit based dietary intervention"
+      ]
+    }
+  }
+}
