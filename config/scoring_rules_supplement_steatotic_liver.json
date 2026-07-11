@@ -1,0 +1,58 @@
+{
+  "version_note": "Focused NutMEV scoring supplement for current SLD/MASLD/MASH nomenclature. Adds priority to guideline, consensus, nutrition therapy and dietary intervention records without changing base scoring rules.",
+  "keyword_points": {
+    "steatotic liver diseases": 2,
+    "sld guideline": 4,
+    "sld practice guidance": 4,
+    "sld consensus": 4,
+    "masld guideline": 4,
+    "masld practice guidance": 4,
+    "masld consensus": 4,
+    "mash guideline": 4,
+    "mash practice guidance": 4,
+    "mash consensus": 4,
+    "dietary intervention for masld": 4,
+    "nutrition therapy for masld": 4,
+    "medical nutrition therapy for masld": 4,
+    "mediterranean diet masld": 4,
+    "weight loss intervention masld": 4,
+    "lifestyle intervention masld": 4,
+    "dietary intervention for mash": 4,
+    "nutrition therapy for mash": 4,
+    "lifestyle intervention mash": 4,
+    "liver fat reduction": 3,
+    "hepatic fat reduction": 3,
+    "intrahepatic fat": 3,
+    "steatosis improvement": 3,
+    "fibrosis risk": 2,
+    "fibrosis progression": 2,
+    "fibrosis regression": 2
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "sld guideline": 5,
+      "sld practice guidance": 5,
+      "sld consensus": 5,
+      "masld guideline": 5,
+      "masld practice guidance": 5,
+      "masld consensus": 5,
+      "mash guideline": 5,
+      "mash practice guidance": 5,
+      "mash consensus": 5
+    },
+    "busca2b": {
+      "dietary intervention for masld": 5,
+      "nutrition therapy for masld": 5,
+      "medical nutrition therapy for masld": 5,
+      "mediterranean diet masld": 5,
+      "weight loss intervention masld": 5,
+      "lifestyle intervention masld": 5,
+      "dietary intervention for mash": 5,
+      "nutrition therapy for mash": 5,
+      "lifestyle intervention mash": 5,
+      "liver fat reduction": 3,
+      "hepatic fat reduction": 3,
+      "steatosis improvement": 3
+    }
+  }
+}
