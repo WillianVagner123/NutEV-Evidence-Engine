@@ -556,6 +556,76 @@ FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS = [
     "clinical-community food referral program",
 ]
 
+CLINICAL_FOOD_ASSISTANCE_PROGRAM_TERMS = [
+    "food prescription",
+    "food prescriptions",
+    "food prescription program",
+    "food prescription programme",
+    "food prescription intervention",
+    "food prescription referral",
+    "grocery prescription",
+    "grocery prescriptions",
+    "grocery prescription program",
+    "grocery prescription programme",
+    "grocery prescription intervention",
+    "nutrition prescription",
+    "nutrition prescriptions",
+    "nutrition prescription program",
+    "nutrition prescription programme",
+    "nutrition pharmacy",
+    "nutrition pharmacy program",
+    "nutrition pharmacy programme",
+    "food farmacy",
+    "food farmacies",
+    "food farmacy program",
+    "food farmacy programme",
+    "medically tailored pantry",
+    "medically tailored pantries",
+    "medically tailored pantry program",
+    "medically tailored pantry programme",
+    "medically tailored food package",
+    "medically tailored food packages",
+    "medically tailored food box",
+    "medically tailored food boxes",
+    "produce voucher program",
+    "produce voucher programme",
+    "fruit and vegetable voucher program",
+    "fruit and vegetable voucher programme",
+    "healthy food incentive program",
+    "healthy food incentive programme",
+    "nutrition incentive program",
+    "nutrition incentive programme",
+    "fresh produce prescription",
+    "fresh produce prescriptions",
+    "fresh produce prescription program",
+    "fresh produce prescription programme",
+]
+
+CLINICAL_FOOD_ASSISTANCE_PROGRAM_DOCUMENT_TERMS = [
+    "food prescription program evaluation",
+    "food prescription programme evaluation",
+    "food prescription implementation study",
+    "food prescription intervention trial",
+    "grocery prescription program evaluation",
+    "grocery prescription programme evaluation",
+    "grocery prescription intervention trial",
+    "nutrition pharmacy program evaluation",
+    "nutrition pharmacy programme evaluation",
+    "food farmacy program evaluation",
+    "food farmacy programme evaluation",
+    "medically tailored pantry program evaluation",
+    "medically tailored pantry programme evaluation",
+    "medically tailored food package intervention trial",
+    "produce voucher program evaluation",
+    "produce voucher programme evaluation",
+    "fruit and vegetable voucher program evaluation",
+    "fruit and vegetable voucher programme evaluation",
+    "healthy food incentive program evaluation",
+    "nutrition incentive program evaluation",
+    "fresh produce prescription program evaluation",
+    "fresh produce prescription programme evaluation",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -699,17 +769,28 @@ def apply_semantic_extensions() -> None:
         terms=FOOD_SKILLS_SELF_EFFICACY_TERMS,
         document_terms=FOOD_SKILLS_SELF_EFFICACY_DOCUMENT_TERMS,
     )
+    clinical_food_assistance_terms = (
+        SOCIAL_NEEDS_FOOD_ACCESS_TERMS
+        + FOOD_AS_MEDICINE_REFERRAL_TERMS
+        + CLINICAL_FOOD_ASSISTANCE_PROGRAM_TERMS
+    )
+    clinical_food_assistance_document_terms = (
+        SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS
+        + FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS
+        + CLINICAL_FOOD_ASSISTANCE_PROGRAM_DOCUMENT_TERMS
+    )
     for block_name in ("equity_access", "food_prescription_programs"):
         _extend_semantic_block(
             block_name,
-            terms=SOCIAL_NEEDS_FOOD_ACCESS_TERMS + FOOD_AS_MEDICINE_REFERRAL_TERMS,
-            document_terms=SOCIAL_NEEDS_FOOD_ACCESS_DOCUMENT_TERMS
-            + FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS,
+            terms=clinical_food_assistance_terms,
+            document_terms=clinical_food_assistance_document_terms,
         )
     _extend_semantic_block(
         "implementation_science",
-        terms=FOOD_AS_MEDICINE_REFERRAL_TERMS,
-        document_terms=FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS,
+        terms=FOOD_AS_MEDICINE_REFERRAL_TERMS
+        + CLINICAL_FOOD_ASSISTANCE_PROGRAM_TERMS,
+        document_terms=FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS
+        + CLINICAL_FOOD_ASSISTANCE_PROGRAM_DOCUMENT_TERMS,
     )
 
 
