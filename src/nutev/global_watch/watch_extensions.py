@@ -64,6 +64,66 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+SUSTAINABLE_HEALTHY_DIET_TERMS = [
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "healthy and sustainable diet",
+    "healthy and sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+    "sustainable diet",
+    "sustainable diets",
+    "planetary health diet",
+    "planetary health diets",
+    "EAT-Lancet diet",
+    "EAT-Lancet reference diet",
+    "climate-friendly diet",
+    "climate friendly diet",
+    "environmentally sustainable diet",
+    "environmentally sustainable diets",
+    "low environmental impact diet",
+    "low environmental impact diets",
+]
+
+SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS = [
+    "sustainable healthy diet guideline",
+    "sustainable healthy diets guideline",
+    "sustainable healthy diet guidance",
+    "sustainable healthy diets guidance",
+    "sustainable dietary guideline",
+    "sustainable dietary guidelines",
+    "sustainable diet guideline",
+    "sustainable diets guideline",
+    "planetary health diet guideline",
+    "planetary health diet guidance",
+    "EAT-Lancet diet systematic review",
+    "EAT-Lancet reference diet systematic review",
+    "sustainable dietary patterns systematic review",
+    "sustainable healthy diets systematic review",
+]
+
+SUSTAINABLE_HEALTHY_DIET_BONUS_TERMS = [
+    ("sustainable healthy diet", 16),
+    ("sustainable healthy diets", 16),
+    ("healthy sustainable diet", 14),
+    ("healthy sustainable diets", 14),
+    ("healthy and sustainable diet", 14),
+    ("healthy and sustainable diets", 14),
+    ("sustainable dietary pattern", 14),
+    ("sustainable dietary patterns", 14),
+    ("planetary health diet", 16),
+    ("planetary health diets", 16),
+    ("eat-lancet diet", 16),
+    ("eat-lancet reference diet", 18),
+    ("sustainable healthy diet guideline", 22),
+    ("sustainable healthy diets guideline", 22),
+    ("sustainable dietary guideline", 20),
+    ("sustainable dietary guidelines", 20),
+    ("planetary health diet guideline", 20),
+]
+
 SOCIAL_PRESCRIBING_NUTRITION_TERMS = [
     "nutrition social prescribing",
     "food social prescribing",
@@ -208,6 +268,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *SUSTAINABLE_HEALTHY_DIET_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +278,8 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *SUSTAINABLE_HEALTHY_DIET_TERMS,
+                *SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS,
             ]
         )
     )
@@ -251,7 +314,11 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        [*FOOD_ENVIRONMENT_DOCUMENT_TERMS, *SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS],
+    )
+    _extend_category_terms(
+        "diet_patterns",
+        [*SUSTAINABLE_HEALTHY_DIET_TERMS, *SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS],
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
@@ -273,6 +340,16 @@ def apply_watch_taxonomy_extensions() -> None:
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
+        "diet_patterns",
+        0,
+        SUSTAINABLE_HEALTHY_DIET_TERMS,
+    )
+    _extend_quick_seed_group(
+        "guidelines_consensus",
+        0,
+        SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS,
+    )
+    _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
@@ -288,6 +365,14 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_query_context(
         "food_literacy_culinary_commensality",
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+    )
+    _extend_query_context(
+        "diet_patterns",
+        SUSTAINABLE_HEALTHY_DIET_TERMS,
+    )
+    _extend_query_context(
+        "guidelines_consensus",
+        SUSTAINABLE_HEALTHY_DIET_DOCUMENT_TERMS,
     )
     _extend_query_context(
         "obesity_cardiometabolic",
