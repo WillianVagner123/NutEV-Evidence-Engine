@@ -1,0 +1,85 @@
+{
+  "version_note": "Focused NutMEV supplement for diet-anchored adherence, self-regulation, and behavioral maintenance terms. Loaded after keyword_taxonomy.json without modifying the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "adherence_self_regulation": [
+        "dietary self-monitoring",
+        "food self-monitoring",
+        "nutrition self-monitoring",
+        "dietary self-regulation",
+        "eating self-regulation",
+        "self-regulation of eating",
+        "implementation intentions",
+        "dietary implementation intentions",
+        "goal setting",
+        "dietary goal setting",
+        "nutrition goal setting",
+        "action planning",
+        "dietary action planning",
+        "coping planning",
+        "dietary coping planning",
+        "problem solving",
+        "dietary problem solving",
+        "relapse prevention",
+        "lapse management",
+        "dietary lapse management",
+        "habit formation",
+        "healthy eating habit formation",
+        "dietary habit formation",
+        "behavioral maintenance",
+        "behavioural maintenance"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "dietary self-monitoring",
+      "food self-monitoring",
+      "nutrition self-monitoring",
+      "dietary self-regulation",
+      "eating self-regulation",
+      "self-regulation of eating",
+      "dietary goal setting",
+      "nutrition goal setting",
+      "dietary action planning",
+      "dietary coping planning",
+      "dietary problem solving",
+      "dietary lapse management",
+      "healthy eating habit formation",
+      "dietary habit formation"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "dietary self-monitoring intervention",
+        "nutrition self-monitoring intervention",
+        "dietary self-regulation intervention",
+        "dietary goal setting intervention",
+        "dietary action planning intervention",
+        "dietary coping planning intervention",
+        "dietary problem solving intervention",
+        "healthy eating habit formation intervention",
+        "dietary relapse prevention intervention",
+        "dietary adherence maintenance trial"
+      ],
+      "priority_outcomes": [
+        "diet_quality_adherence"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "dietary self-monitoring questionnaire",
+        "nutrition self-monitoring questionnaire",
+        "dietary self-regulation scale",
+        "eating self-regulation scale",
+        "dietary goal setting questionnaire",
+        "dietary habit formation questionnaire",
+        "dietary adherence maintenance framework"
+      ],
+      "priority_outcomes": [
+        "diet_quality_adherence"
+      ]
+    }
+  }
+}
