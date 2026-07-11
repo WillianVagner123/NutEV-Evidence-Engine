@@ -27,3 +27,16 @@ def test_real_guideline_can_still_score_high_priority() -> None:
     }
 
     assert score_watch_item(item) >= 80
+
+
+def test_diet_engagement_and_retention_signal_scores_high_priority() -> None:
+    item = {
+        "title": "Dietary intervention engagement and retention for obesity care",
+        "abstract": "A pragmatic nutrition counseling program for cardiometabolic risk tracks intervention dose and session attendance.",
+        "source_provider": "pubmed",
+        "category": "implementation_behavior",
+        "relevance_score": 20,
+        "is_new": True,
+    }
+
+    assert score_watch_item(item) >= 80
