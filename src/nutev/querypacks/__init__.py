@@ -5,13 +5,18 @@ from nutev.querypacks.carbohydrate_quality_extensions import (
 )
 from nutev.querypacks.food_access_extensions import apply_food_access_benefit_extensions
 from nutev.querypacks.semantic_extensions import apply_semantic_extensions
+from nutev.querypacks.sodium_potassium_extensions import (
+    apply_sodium_potassium_extensions,
+)
 
 apply_semantic_extensions()
 apply_carbohydrate_quality_extensions()
 apply_food_access_benefit_extensions()
+apply_sodium_potassium_extensions()
 
 __all__ = [
     "apply_carbohydrate_quality_extensions",
     "apply_food_access_benefit_extensions",
     "apply_semantic_extensions",
+    "apply_sodium_potassium_extensions",
 ]
