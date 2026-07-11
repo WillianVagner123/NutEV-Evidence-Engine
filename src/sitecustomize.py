@@ -7,6 +7,17 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+SUSTAINABLE_HEALTHY_DIET_TERMS = (
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "healthy and sustainable diet",
+    "healthy and sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+)
+
 
 def _truthy(value: str | None) -> bool:
     return str(value or "").strip().lower() in {"1", "true", "yes", "y", "on"}
@@ -206,11 +217,11 @@ def _patch_query_generation() -> None:
             if provider == "pubmed":
                 ws = builders_module.canonical_workstream(workstream)
                 if ws == "busca2a":
-                    terms = ["therapeutic lifestyle changes", "mediterranean dietary pattern", "dietary approaches to stop hypertension", "DASH eating plan", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "living guideline", "clinical guidance"]
+                    terms = ["therapeutic lifestyle changes", "mediterranean dietary pattern", "dietary approaches to stop hypertension", "DASH eating plan", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "living guideline", "clinical guidance", *SUSTAINABLE_HEALTHY_DIET_TERMS]
                 elif ws == "busca2b":
-                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "nonalcoholic steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "carbohydrate-restricted diet", "carbohydrate restricted diet", "DASH eating plan", "TLC diet", "therapeutic lifestyle changes diet", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "network meta-analysis", "living systematic review", "rapid review", "food environment intervention", "food procurement policy", "healthy food retail", "choice architecture", "healthy default"]
+                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "nonalcoholic steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "carbohydrate-restricted diet", "carbohydrate restricted diet", "DASH eating plan", "TLC diet", "therapeutic lifestyle changes diet", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "network meta-analysis", "living systematic review", "rapid review", "food environment intervention", "food procurement policy", "healthy food retail", "choice architecture", "healthy default", *SUSTAINABLE_HEALTHY_DIET_TERMS]
                 elif ws in {"busca1", "artigo3_framework"}:
-                    terms = ["food environment intervention", "retail food environment", "healthy food retail", "healthy food procurement", "food procurement policy", "nutrition standards", "choice architecture", "healthy default", "menu labeling policy", "food policy implementation"]
+                    terms = ["food environment intervention", "retail food environment", "healthy food retail", "healthy food procurement", "food procurement policy", "nutrition standards", "choice architecture", "healthy default", "menu labeling policy", "food policy implementation", *SUSTAINABLE_HEALTHY_DIET_TERMS]
                 else:
                     terms = []
                 queries.extend([f'"{term}"[Title/Abstract]' for term in terms])
@@ -223,12 +234,17 @@ def _patch_query_generation() -> None:
         def wrapped_build(keyword_taxonomy: dict, workstream: str) -> list[str]:
             queries = list(original_build(keyword_taxonomy, workstream))
             ws = builders_module.canonical_workstream(workstream)
+            sustainable_diet_clause = '("sustainable healthy diet" OR "sustainable healthy diets" OR "healthy sustainable diet" OR "sustainable dietary patterns") AND ("nutrition" OR "diet" OR "obesity" OR "cardiometabolic" OR "lifestyle medicine" OR "dietary guideline")'
             if ws == "busca2b":
                 queries.append('("food is medicine" OR "produce prescription" OR "medically tailored meals")')
                 queries.append('("DASH eating plan" OR "TLC diet" OR "therapeutic lifestyle changes diet" OR "heart-healthy diet" OR "cardioprotective diet") AND ("obesity" OR "cardiometabolic" OR "type 2 diabetes" OR "hypertension" OR "dyslipidemia")')
                 queries.append('("food environment intervention" OR "healthy food retail" OR "food procurement policy") AND ("implementation" OR "dietary adherence" OR "cardiometabolic")')
+                queries.append(sustainable_diet_clause)
             elif ws in {"busca1", "artigo3_framework"}:
                 queries.append('("food environment intervention" OR "healthy food retail" OR "healthy food procurement" OR "food procurement policy" OR "choice architecture") AND ("nutrition" OR "diet" OR "food literacy" OR "lifestyle medicine")')
+                queries.append(sustainable_diet_clause)
+            elif ws == "busca2a":
+                queries.append(sustainable_diet_clause)
             return builders_module.uniq([q for q in queries if q])
 
         wrapped_build._nutev_foodmed_patched = True  # type: ignore[attr-defined]
