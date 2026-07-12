@@ -146,6 +146,69 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS = [
+    "type 2 diabetes remission nutrition",
+    "diabetes remission nutrition",
+    "type 2 diabetes remission diet",
+    "diabetes remission diet",
+    "type 2 diabetes remission dietary intervention",
+    "diabetes remission dietary intervention",
+    "type 2 diabetes remission lifestyle intervention",
+    "diabetes remission lifestyle intervention",
+    "diabetes remission maintenance intervention",
+    "diabetes remission maintenance program",
+    "diabetes remission maintenance programme",
+    "remission maintenance dietary intervention",
+    "remission maintenance lifestyle intervention",
+    "maintenance of diabetes remission nutrition",
+    "maintenance of diabetes remission diet",
+    "medical nutrition therapy diabetes remission",
+    "nutrition care for diabetes remission",
+    "dietitian-led diabetes remission",
+    "dietitian led diabetes remission",
+    "dietitian-delivered diabetes remission",
+    "dietitian delivered diabetes remission",
+    "total diet replacement diabetes remission",
+    "meal replacement diabetes remission",
+    "low energy diet diabetes remission",
+    "very low energy diet diabetes remission",
+    "weight loss maintenance dietary intervention",
+    "weight loss maintenance lifestyle intervention",
+    "weight regain prevention dietary intervention",
+    "weight regain prevention lifestyle intervention",
+    "post-weight loss maintenance nutrition",
+    "post weight loss maintenance nutrition",
+]
+
+CARDIOMETABOLIC_REMISSION_MAINTENANCE_BONUS_TERMS = [
+    ("type 2 diabetes remission nutrition", 24),
+    ("diabetes remission nutrition", 22),
+    ("type 2 diabetes remission dietary intervention", 24),
+    ("diabetes remission dietary intervention", 22),
+    ("type 2 diabetes remission lifestyle intervention", 24),
+    ("diabetes remission lifestyle intervention", 22),
+    ("diabetes remission maintenance intervention", 22),
+    ("diabetes remission maintenance program", 20),
+    ("diabetes remission maintenance programme", 20),
+    ("remission maintenance dietary intervention", 20),
+    ("remission maintenance lifestyle intervention", 20),
+    ("maintenance of diabetes remission nutrition", 22),
+    ("medical nutrition therapy diabetes remission", 24),
+    ("nutrition care for diabetes remission", 22),
+    ("dietitian-led diabetes remission", 20),
+    ("dietitian led diabetes remission", 20),
+    ("dietitian-delivered diabetes remission", 20),
+    ("dietitian delivered diabetes remission", 20),
+    ("total diet replacement diabetes remission", 20),
+    ("meal replacement diabetes remission", 18),
+    ("weight loss maintenance dietary intervention", 20),
+    ("weight loss maintenance lifestyle intervention", 20),
+    ("weight regain prevention dietary intervention", 18),
+    ("weight regain prevention lifestyle intervention", 18),
+    ("post-weight loss maintenance nutrition", 18),
+    ("post weight loss maintenance nutrition", 18),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +271,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *CARDIOMETABOLIC_REMISSION_MAINTENANCE_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +281,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
             ]
         )
     )
@@ -226,7 +291,10 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_seed_group(
         "personalized_nutrition",
         0,
-        PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS,
+        [
+            *PERSONALIZED_NUTRITION_CARDIOMETABOLIC_TERMS,
+            *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+        ],
     )
     _extend_seed_group(
         "personalized_nutrition",
@@ -243,11 +311,18 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+        ],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+        ],
     )
     _extend_category_terms(
         "guidelines_consensus",
@@ -255,7 +330,10 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [
+            *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+        ],
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
@@ -263,9 +341,17 @@ def apply_watch_taxonomy_extensions() -> None:
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
+        "lifestyle_medicine",
+        2,
+        CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+    )
+    _extend_quick_seed_group(
         "implementation_behavior",
         2,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+        ],
     )
     _extend_quick_seed_group(
         "food_literacy_culinary_commensality",
@@ -276,14 +362,25 @@ def apply_watch_taxonomy_extensions() -> None:
         "obesity_cardiometabolic",
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+    )
+    _extend_quick_seed_group(
+        "obesity_cardiometabolic",
+        1,
+        CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
     )
     _extend_query_context(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+        ],
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+        ],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
@@ -291,7 +388,10 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        [
+            *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            *CARDIOMETABOLIC_REMISSION_MAINTENANCE_TERMS,
+        ],
     )
     _extend_scoring_terms()
 
