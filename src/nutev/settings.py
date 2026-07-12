@@ -61,6 +61,35 @@ def _merge_config(base: dict, supplement: dict) -> dict:
     return merged
 
 
+def _append_unique_terms(target: list, additions: list) -> list:
+    merged = list(target)
+    seen = {str(item).strip().lower() for item in merged}
+    for item in additions:
+        normalized = str(item).strip().lower()
+        if normalized and normalized not in seen:
+            merged.append(item)
+            seen.add(normalized)
+    return merged
+
+
+def _promote_keyword_taxonomy_workstream_terms(data: dict) -> dict:
+    workstreams = data.get("workstreams", {})
+    if not isinstance(workstreams, dict):
+        return data
+
+    for config in workstreams.values():
+        if not isinstance(config, dict):
+            continue
+        query_hints = list(config.get("web_query_hints", []))
+        for field_name in ("focus_terms", "document_terms"):
+            field_terms = config.get(field_name, [])
+            if isinstance(field_terms, list):
+                query_hints = _append_unique_terms(query_hints, field_terms)
+        if query_hints:
+            config["web_query_hints"] = query_hints
+    return data
+
+
 def _load_json_supplements(path: Path) -> list[dict]:
     exact_supplement = path.with_name(f"{path.stem}_supplement{path.suffix}")
     supplement_paths: list[Path] = []
@@ -81,4 +110,6 @@ def load_json(path: Path | str) -> dict:
     data = json.loads(json_path.read_text(encoding="utf-8"))
     for supplement in _load_json_supplements(json_path):
         data = _merge_config(data, supplement)
+    if json_path.name == "keyword_taxonomy.json":
+        data = _promote_keyword_taxonomy_workstream_terms(data)
     return data
