@@ -63,3 +63,25 @@ def test_curate_outputs_writes_canonical_and_legacy_files(tmp_path: Path) -> Non
     assert summary["unique_documents"] == 1
     assert summary["prioritized_documents"] == 1
     assert summary["metadata_only_documents"] == 0
+
+
+def test_curate_outputs_prioritizes_ultra_processed_nova_records(tmp_path: Path) -> None:
+    rows = [
+        {
+            "document_id": "doc-upf",
+            "title": "NOVA classification and ultra-processed foods in cardiometabolic risk",
+            "year": "2025",
+            "workstream": "busca2b",
+            "evidence_type": "systematic review",
+            "source": "pubmed",
+            "url": "https://example.org/upf-review",
+            "download_status": "metadata_only",
+            "capture_status": "missing",
+            "extraction_status": "missing",
+            "relevance_score": 8,
+        },
+    ]
+
+    summary = curate_outputs(rows, tmp_path)
+
+    assert summary["prioritized_documents"] == 1
