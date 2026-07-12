@@ -73,6 +73,57 @@ METABOLIC_LIVER_NUTRITION_DOCUMENT_TERMS = [
     "fatty liver lifestyle intervention trial",
 ]
 
+HYPERTENSION_DASH_NUTRITION_TERMS = [
+    "dash diet hypertension",
+    "dash dietary pattern hypertension",
+    "dietary approaches to stop hypertension",
+    "dietary sodium reduction",
+    "sodium reduction intervention",
+    "salt reduction intervention",
+    "salt intake reduction",
+    "low sodium diet",
+    "low-sodium diet",
+    "reduced sodium diet",
+    "dietary salt restriction",
+    "salt restriction",
+    "sodium restriction",
+    "potassium intake hypertension",
+    "dietary potassium hypertension",
+    "potassium-rich diet",
+    "potassium rich diet",
+    "dietary potassium intervention",
+    "blood pressure dietary intervention",
+    "blood pressure lifestyle intervention",
+    "hypertension nutrition therapy",
+    "hypertension dietary intervention",
+    "hypertension lifestyle intervention",
+    "medical nutrition therapy hypertension",
+    "nutrition counseling hypertension",
+    "nutrition counselling hypertension",
+    "dietary counseling hypertension",
+    "dietary counselling hypertension",
+    "home blood pressure diet intervention",
+    "self-monitoring blood pressure diet",
+]
+
+HYPERTENSION_DASH_NUTRITION_DOCUMENT_TERMS = [
+    "hypertension nutrition guideline",
+    "hypertension dietary guideline",
+    "hypertension clinical practice guideline nutrition",
+    "hypertension lifestyle guideline",
+    "hypertension consensus statement nutrition",
+    "dash diet systematic review",
+    "dash diet meta-analysis",
+    "dash dietary pattern systematic review",
+    "dietary sodium reduction systematic review",
+    "salt reduction systematic review",
+    "potassium intake hypertension systematic review",
+    "hypertension dietary intervention trial",
+    "blood pressure dietary intervention trial",
+    "sodium reduction intervention trial",
+    "salt reduction intervention trial",
+]
+
 INTENSIVE_LIFESTYLE_PROGRAM_TERMS = [
     "intensive lifestyle intervention",
     "intensive lifestyle interventions",
@@ -701,10 +752,25 @@ def apply_semantic_extensions() -> None:
             terms=METABOLIC_LIVER_NUTRITION_TERMS,
             document_terms=METABOLIC_LIVER_NUTRITION_DOCUMENT_TERMS,
         )
+    for block_name in (
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+        "adherence_persistence",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=HYPERTENSION_DASH_NUTRITION_TERMS,
+            document_terms=HYPERTENSION_DASH_NUTRITION_DOCUMENT_TERMS,
+        )
+    _prioritize_semantic_block(
+        "cardiometabolic_precision",
+        {"busca2a": 6, "busca2b": 5},
+    )
     _extend_semantic_block(
         "evidence_synthesis",
-        terms=OFFICIAL_GUIDANCE_TERMS,
-        document_terms=OFFICIAL_GUIDANCE_DOCUMENT_TERMS,
+        terms=OFFICIAL_GUIDANCE_TERMS + HYPERTENSION_DASH_NUTRITION_DOCUMENT_TERMS,
+        document_terms=OFFICIAL_GUIDANCE_DOCUMENT_TERMS
+        + HYPERTENSION_DASH_NUTRITION_DOCUMENT_TERMS,
     )
     for block_name in (
         "implementation_science",
