@@ -67,3 +67,18 @@ def test_busca2b_semantic_terms_include_food_as_medicine_program_variants() -> N
     assert "nutrition incentive program" in terms
     assert "produce voucher program" in terms
     assert "fruit and vegetable voucher program" in terms
+
+
+def test_busca2b_semantic_terms_include_group_visit_care_delivery() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+
+    assert "shared medical appointments" in terms
+    assert "group medical visits" in terms
+    assert "group nutrition counseling" in terms
+    assert "group diabetes prevention program" in terms
+
+
+def test_group_visit_care_delivery_is_prioritized_for_intervention_workstream() -> None:
+    blocks = prioritized_semantic_blocks("busca2b")
+
+    assert {"name": "group_visit_care_delivery", "priority": 5} in blocks
