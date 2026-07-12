@@ -146,6 +146,63 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+DIET_QUALITY_ADHERENCE_TERMS = [
+    "diet quality score",
+    "diet quality scores",
+    "diet quality index",
+    "diet quality indices",
+    "healthy eating index",
+    "alternate healthy eating index",
+    "ahei",
+    "dietary quality score",
+    "dietary pattern score",
+    "dietary adherence score",
+    "dietary adherence scores",
+    "mediterranean diet adherence score",
+    "dash adherence score",
+    "plant-based diet index",
+    "plant based diet index",
+    "healthy plant-based diet index",
+    "healthy plant based diet index",
+    "dietary inflammatory index",
+    "healthy diet indicator",
+    "dietary guideline adherence",
+    "food-based dietary guideline adherence",
+]
+
+DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS = [
+    "diet quality index validation",
+    "diet quality score validation",
+    "healthy eating index validation",
+    "dietary pattern score validation",
+    "dietary adherence score validation",
+    "mediterranean diet adherence score validation",
+    "dash adherence score validation",
+    "plant-based diet index validation",
+    "plant based diet index validation",
+    "diet quality questionnaire",
+    "dietary adherence questionnaire",
+    "dietary adherence instrument",
+]
+
+DIET_QUALITY_ADHERENCE_BONUS_TERMS = [
+    ("diet quality score", 14),
+    ("diet quality index", 14),
+    ("healthy eating index", 14),
+    ("alternate healthy eating index", 14),
+    ("dietary adherence score", 16),
+    ("mediterranean diet adherence score", 16),
+    ("dash adherence score", 16),
+    ("plant-based diet index", 14),
+    ("plant based diet index", 14),
+    ("dietary guideline adherence", 16),
+    ("food-based dietary guideline adherence", 16),
+    ("diet quality index validation", 18),
+    ("dietary adherence score validation", 18),
+    ("dietary adherence questionnaire", 16),
+    ("dietary adherence instrument", 16),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +265,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *DIET_QUALITY_ADHERENCE_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +275,8 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *DIET_QUALITY_ADHERENCE_TERMS,
+                *DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS,
             ]
         )
     )
@@ -239,19 +299,29 @@ def apply_watch_taxonomy_extensions() -> None:
             *FOOD_ENVIRONMENT_POLICY_TERMS,
             *FOOD_ENVIRONMENT_DOCUMENT_TERMS,
             *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS,
         ],
     )
     _extend_category_terms(
         "implementation_behavior",
-        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+        [
+            *FOOD_ENVIRONMENT_POLICY_TERMS,
+            *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+            *DIET_QUALITY_ADHERENCE_TERMS,
+            *DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS,
+        ],
+    )
+    _extend_category_terms(
+        "diet_patterns",
+        [*DIET_QUALITY_ADHERENCE_TERMS, *DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS],
     )
     _extend_category_terms(
         "lifestyle_medicine",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *DIET_QUALITY_ADHERENCE_TERMS],
     )
     _extend_category_terms(
         "guidelines_consensus",
-        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
+        [*FOOD_ENVIRONMENT_DOCUMENT_TERMS, "dietary guideline adherence"],
     )
     _extend_category_terms(
         "obesity_cardiometabolic",
@@ -277,17 +347,31 @@ def apply_watch_taxonomy_extensions() -> None:
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
+    _extend_quick_seed_group(
+        "diet_patterns",
+        2,
+        [*DIET_QUALITY_ADHERENCE_TERMS, *DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS],
+    )
+    _extend_quick_seed_group(
+        "implementation_behavior",
+        0,
+        [*DIET_QUALITY_ADHERENCE_TERMS, *DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS],
+    )
     _extend_query_context(
         "lifestyle_medicine",
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *DIET_QUALITY_ADHERENCE_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS],
+    )
+    _extend_query_context(
+        "diet_patterns",
+        [*DIET_QUALITY_ADHERENCE_TERMS, *DIET_QUALITY_ADHERENCE_DOCUMENT_TERMS],
     )
     _extend_query_context(
         "obesity_cardiometabolic",
