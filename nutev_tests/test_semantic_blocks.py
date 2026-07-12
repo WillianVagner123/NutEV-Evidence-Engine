@@ -14,6 +14,31 @@ def test_busca2b_semantic_terms_include_precision_terms() -> None:
     assert "hypercholesterolaemia" in terms
 
 
+def test_busca2_semantic_terms_include_ckm_precision_terms() -> None:
+    for workstream in ("busca2a", "busca2b"):
+        terms = {term.lower() for term in semantic_terms(workstream, min_priority=5)}
+
+        assert "cardiovascular-kidney-metabolic" in terms
+        assert "cardiovascular kidney metabolic syndrome" in terms
+        assert "ckm syndrome" in terms
+
+
+def test_busca2_semantic_document_terms_include_ckm_guidance() -> None:
+    for workstream in ("busca2a", "busca2b"):
+        terms = {
+            term.lower()
+            for term in semantic_terms(
+                workstream,
+                field="document_terms",
+                min_priority=5,
+            )
+        }
+
+        assert "cardiovascular-kidney-metabolic guideline" in terms
+        assert "cardiovascular kidney metabolic scientific statement" in terms
+        assert "ckm syndrome guideline" in terms
+
+
 def test_busca2b_semantic_terms_include_behavior_change_variants() -> None:
     terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
     assert "behavior change techniques" in terms
