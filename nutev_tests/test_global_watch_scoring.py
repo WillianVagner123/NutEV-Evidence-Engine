@@ -41,3 +41,14 @@ def test_adherence_and_behavior_instruments_score_above_generic_note():
         "is_new": True,
     }
     assert score_watch_item(instrument_item) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
+
+
+def test_sarcopenic_obesity_nutrition_terms_score_above_generic_note():
+    sarcopenic_obesity_item = {
+        "title": "lean mass preservation weight loss nutrition care for sarcopenic obesity",
+        "abstract": "protein adequacy and body composition changes during obesity pharmacotherapy",
+        "relevance_score": 1,
+        "is_new": True,
+    }
+
+    assert score_watch_item(sarcopenic_obesity_item) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
