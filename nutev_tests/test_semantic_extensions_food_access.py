@@ -24,9 +24,36 @@ def test_food_as_medicine_referral_terms_extend_priority_blocks() -> None:
         assert expected_document_terms.issubset(set(block["document_terms"]))
 
 
+def test_food_access_program_terms_extend_priority_blocks() -> None:
+    expected_terms = {
+        "food voucher",
+        "healthy food voucher",
+        "produce incentive",
+        "fruit and vegetable incentive",
+        "medically tailored meal program",
+        "medically tailored meals programme",
+        "medically tailored nutrition program",
+    }
+    expected_document_terms = {
+        "food voucher program evaluation",
+        "healthy food voucher program evaluation",
+        "produce incentive program evaluation",
+        "fruit and vegetable incentive program evaluation",
+        "medically tailored meal program evaluation",
+        "medically tailored nutrition program evaluation",
+    }
+
+    for block_name in ("food_prescription_programs", "equity_access"):
+        block = semantic_blocks.SEMANTIC_RESEARCH_BLOCKS[block_name]
+        assert expected_terms.issubset(set(block["terms"]))
+        assert expected_document_terms.issubset(set(block["document_terms"]))
+
+
 def test_food_as_medicine_referral_terms_support_implementation_queries() -> None:
     block = semantic_blocks.SEMANTIC_RESEARCH_BLOCKS["implementation_science"]
 
     assert "food pharmacy implementation" in block["terms"]
     assert "food pharmacy program evaluation" in block["document_terms"]
+    assert "medically tailored nutrition program" in block["terms"]
+    assert "produce incentive program evaluation" in block["document_terms"]
     assert len(block["terms"]) == len({term.lower() for term in block["terms"]})
