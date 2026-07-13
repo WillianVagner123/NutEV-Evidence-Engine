@@ -874,6 +874,12 @@ WATCH_CATEGORIES = {
         "teaching kitchen evaluation",
     ],
     "frameworks_instruments": [
+        # Keep the core validated-instrument names within the first MODE_LIMITS
+        # entries so exhaustive-mode truncation cannot drop them.
+        "food literacy questionnaire",
+        "nutrition literacy instrument",
+        "food competence scale",
+        "commensality scale",
         "framework",
         "behavior change framework",
         "lifestyle medicine competencies",
@@ -881,10 +887,6 @@ WATCH_CATEGORIES = {
         "personalized nutrition framework",
         "personalised nutrition framework",
         "tailored nutrition framework",
-        "food literacy questionnaire",
-        "nutrition literacy instrument",
-        "food competence scale",
-        "commensality scale",
         "commensality questionnaire",
         "questionnaire",
         "instrument",

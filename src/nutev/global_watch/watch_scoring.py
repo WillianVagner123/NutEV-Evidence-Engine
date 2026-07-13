@@ -212,6 +212,8 @@ BONUS_TERMS: tuple[tuple[str, float], ...] = (
     ("social needs referral", 16),
     ("social prescribing", 18),
     ("social prescribing program", 20),
+    ("nutrition social prescribing", 12),
+    ("food social prescribing", 12),
     ("food pantry referral", 18),
     ("food pantry referral program", 20),
     ("food bank partnership", 16),
