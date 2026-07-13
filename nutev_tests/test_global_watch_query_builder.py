@@ -48,6 +48,33 @@ def test_social_prescribing_nutrition_terms_score_above_generic_referral_languag
     assert scoped - generic >= 45
 
 
+def test_quick_queries_include_cardiometabolic_nutrition_care_terms():
+    rows = build_watch_queries(["obesity_cardiometabolic"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "medical nutrition therapy type 2 diabetes" in rendered
+    assert "cardiometabolic nutrition pathway" in rendered
+    assert "obesity nutrition care pathway" in rendered
+    assert "dietitian-led weight management" in rendered
+
+
+def test_cardiometabolic_nutrition_care_terms_score_above_generic_care_language():
+    scoped = score_watch_item(
+        {
+            "title": "Cardiometabolic nutrition pathway for type 2 diabetes and obesity care",
+            "source_provider": "pubmed",
+        }
+    )
+    generic = score_watch_item(
+        {
+            "title": "Nutrition care pathway for adult primary care",
+            "source_provider": "pubmed",
+        }
+    )
+
+    assert scoped > generic
+    assert scoped - generic >= 30
+
+
 def test_framework_instrument_queries_include_food_competence_and_commensality_scales():
     rows = build_watch_queries(["frameworks_instruments"], 7, "exhaustive")
     rendered = " ".join(str(row["query"]) for row in rows).lower()
