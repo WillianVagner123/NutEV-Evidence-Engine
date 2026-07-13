@@ -1,0 +1,52 @@
+{
+  "version_note": "2026-07-13 scoring supplement for central adiposity and cardiometabolic multimorbidity",
+  "keyword_points": {
+    "central adiposity": 3,
+    "abdominal adiposity": 3,
+    "visceral adiposity": 3,
+    "abdominal obesity": 3,
+    "central obesity": 3,
+    "waist-to-height ratio": 3,
+    "waist to height ratio": 3,
+    "waist-to-hip ratio": 2,
+    "waist to hip ratio": 2,
+    "cardiometabolic disease": 3,
+    "cardiometabolic diseases": 3,
+    "cardiometabolic health": 3,
+    "cardiometabolic multimorbidity": 4,
+    "cardiometabolic comorbidity": 4,
+    "obesity-related cardiometabolic complications": 4,
+    "obesity related cardiometabolic complications": 4,
+    "metabolically unhealthy obesity": 3,
+    "insulin resistance syndrome": 3,
+    "cardiometabolic syndrome": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "central adiposity": 4,
+      "abdominal adiposity": 4,
+      "visceral adiposity": 4,
+      "abdominal obesity": 4,
+      "central obesity": 4,
+      "waist-to-height ratio": 4,
+      "waist to height ratio": 4,
+      "cardiometabolic multimorbidity": 5,
+      "cardiometabolic comorbidity": 5,
+      "obesity-related cardiometabolic complications": 5,
+      "obesity related cardiometabolic complications": 5
+    },
+    "busca2b": {
+      "central adiposity": 4,
+      "abdominal adiposity": 4,
+      "visceral adiposity": 4,
+      "abdominal obesity": 4,
+      "central obesity": 4,
+      "waist-to-height ratio": 4,
+      "waist to height ratio": 4,
+      "cardiometabolic multimorbidity": 5,
+      "cardiometabolic comorbidity": 5,
+      "obesity-related cardiometabolic complications": 5,
+      "obesity related cardiometabolic complications": 5
+    }
+  }
+}
