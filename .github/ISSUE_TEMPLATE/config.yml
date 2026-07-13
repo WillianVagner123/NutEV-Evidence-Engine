@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security or data-exposure report
+    url: https://github.com/WillianVagner123/NUT-MEV_NEW/security/policy
+    about: Please report vulnerabilities or accidental data/secret exposure privately (see SECURITY.md).
+  - name: Questions & discussion
+    url: https://github.com/WillianVagner123/NUT-MEV_NEW/discussions
+    about: Ask questions and discuss methodology or usage.

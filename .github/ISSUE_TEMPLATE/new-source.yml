@@ -1,0 +1,54 @@
+name: "New source"
+description: "Propose a new official source, guideline body, or search provider"
+labels: ["new-source"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose a source to include (official dietary guides, clinical guideline
+        bodies, databases, providers). Share references/URLs, not protected files.
+  - type: input
+    id: name
+    attributes:
+      label: Source name / organization
+    validations:
+      required: true
+  - type: dropdown
+    id: corpus
+    attributes:
+      label: Corpus / workstream
+      options:
+        - "busca1 — official dietary guides"
+        - "busca2a — clinical guidelines / consensus / statements"
+        - "busca2b — interventions / efficacy (outside Article 1 core)"
+        - "search provider / database"
+        - "other"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official URL / DOI
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope & relevance
+      description: Why is this source in scope for NutEV? Country/region, language, coverage.
+    validations:
+      required: true
+  - type: textarea
+    id: license
+    attributes:
+      label: License / access terms
+      description: Is content redistributable? If unsure, say so — we will share references only.
+    validations:
+      required: true
+  - type: checkboxes
+    id: guardrails
+    attributes:
+      label: Guardrails
+      options:
+        - label: I will not upload protected full texts / PDFs; only metadata/URLs.
+        - label: The source is public/official or its terms permit the intended use.

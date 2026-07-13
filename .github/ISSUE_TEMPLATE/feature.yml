@@ -1,0 +1,36 @@
+name: "Feature request"
+description: "Suggest a software feature or enhancement"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Software feature requests only. For methodology/scoring/ontology changes
+        use the "Methodology change" template; for adding a source use the
+        "New source" template.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What are you trying to do that is hard today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This does not present automated output as a final clinical recommendation.
+        - label: This does not require committing secrets, personal data, or protected full texts.
