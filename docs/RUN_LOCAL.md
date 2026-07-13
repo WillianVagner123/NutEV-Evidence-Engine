@@ -17,8 +17,8 @@ O projeto exige Python `>=3.12,<3.15`.
 ### Windows PowerShell
 
 ```powershell
-git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
-cd NUT-MEV_NEW
+git clone https://github.com/WillianVagner123/NutEV-Evidence-Engine.git
+cd NutEV-Evidence-Engine
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\scripts\setup_windows.ps1
 ```
@@ -52,8 +52,8 @@ http://127.0.0.1:8000/docs
 ### Baixar o repositório
 
 ```bash
-git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
-cd NUT-MEV_NEW
+git clone https://github.com/WillianVagner123/NutEV-Evidence-Engine.git
+cd NutEV-Evidence-Engine
 ```
 
 ### Criar ambiente virtual

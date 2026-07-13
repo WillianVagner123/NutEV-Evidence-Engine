@@ -1,8 +1,31 @@
 # NutEV/NutMEV — Evidence Engine for Lifestyle Nutrition
 
-Pipeline computacional reprodutível para identificação, classificação, auditoria e tradução de evidências em **recomendações candidatas** para o Protocolo Dietético NutEV/NutMEV.
+Infraestrutura computacional reprodutível que identifica, organiza, classifica, audita e traduz evidências científicas em **recomendações candidatas** para o Protocolo NutEV/NutMEV.
 
-> **Regra metodológica central:** uma `RecommendationCandidate` não é recomendação final do protocolo. Toda candidata exige revisão humana, adjudicação metodológica e vínculo documental antes de qualquer uso como recomendação NutEV/NutMEV.
+![status](https://img.shields.io/badge/status-alpha-orange)
+![python](https://img.shields.io/badge/python-3.12%E2%80%933.14-blue)
+![license](https://img.shields.io/badge/license-MIT-green)
+![tests](https://img.shields.io/badge/tests-nutev__tests-informational)
+![science](https://img.shields.io/badge/output-RecommendationCandidate%20(n%C3%A3o%20final)-red)
+
+> ⚠️ **Status científico:** software de apoio à pesquisa, em estágio **alpha**.
+> Distingue claramente **software**, **pesquisa**, **evidência** e **recomendação
+> clínica**. Uma saída computacional (`RecommendationCandidate`) **não** é
+> recomendação clínica final. Toda candidata exige revisão humana, adjudicação
+> metodológica e vínculo documental verificável. Nenhuma saída automática é
+> apresentada como recomendação final. Ver
+> [`docs/SCIENTIFIC_GOVERNANCE.md`](docs/SCIENTIFIC_GOVERNANCE.md).
+
+## O que o sistema faz / não faz
+
+**Faz:** documenta estratégias de busca; localiza metadados e documentos oficiais
+públicos; organiza, deduplica e classifica registros; extrai claims com localizador
+verificável; produz matrizes de evidência e filas de revisão humana; gera
+recomendações **candidatas** rastreáveis.
+
+**Não faz:** diagnóstico, prescrição individual, decisão clínica automática ou
+recomendação final; não redistribui PDFs/textos protegidos; não usa LLM para
+aprovar recomendações; não armazena dados pessoais/clínicos.
 
 ## Uso público para pesquisa
 
@@ -58,23 +81,27 @@ O projeto organiza uma arquitetura científica local para apoiar a qualificaçã
 - Scientific Rigor Layer;
 - Human Review and Adjudication.
 
-## Runtime canônico e legado
+## Runtime canônico
 
-A arquitetura canônica para o NutEV/NutMEV está em:
+Toda a arquitetura do NutEV/NutMEV está em:
 
 ```text
 src/nutev
 ```
 
-O repositório evoluiu a partir de uma base histórica `local-deep-research`. Diretórios e imports legados não devem ser removidos de forma brusca enquanto ainda houver dependências ativas. Para novos módulos científicos NutEV/NutMEV, prefira `src/nutev`.
+O repositório evoluiu a partir de uma base histórica `local-deep-research`
+(Local Deep Research, MIT © LearningCircuit). Esse motor herdado **foi removido**
+da árvore do projeto; sua proveniência e atribuição são preservadas em
+[`NOTICE.md`](NOTICE.md) e no histórico Git. O núcleo `src/nutev` nunca dependeu
+dele.
 
 ## Instalação rápida
 
 ### Windows PowerShell
 
 ```powershell
-git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
-cd NUT-MEV_NEW
+git clone https://github.com/WillianVagner123/NutEV-Evidence-Engine.git
+cd NutEV-Evidence-Engine
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -84,8 +111,8 @@ python -m pip install -e ".[dashboard,platform]"
 ### macOS/Linux
 
 ```bash
-git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
-cd NUT-MEV_NEW
+git clone https://github.com/WillianVagner123/NutEV-Evidence-Engine.git
+cd NutEV-Evidence-Engine
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -93,6 +120,21 @@ python -m pip install -e ".[dashboard,platform]"
 ```
 
 O projeto requer Python `>=3.12,<3.15`.
+
+## Demonstração sem chave (nem API paga, nem dados reais)
+
+O primeiro exemplo funciona **sem** OpenAI, Google, SerpAPI, Brave, dados reais ou
+PDFs protegidos:
+
+```bash
+python -m venv .venv
+python -m pip install -e ".[dashboard]"
+nutev demo-data --project-root ./project_output_demo
+nutev dashboard --project-root ./project_output_demo
+```
+
+Os dados gerados são **sintéticos** (demonstração, **não** evidência). Detalhes em
+[`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
 
 ## Demo
 
@@ -213,9 +255,63 @@ Nenhum desses estados equivale a recomendação final.
 
 As decisões humanas são persistidas em `project_output/07_logs/human_review_decisions.csv` quando o fluxo de revisão está habilitado. Nenhuma recomendação deve ser considerada final sem revisão humana explícita, lastro documental e adjudicação metodológica.
 
+## Artigo 1
+
+O **Artigo 1** é: *“Domínios da Nutrição do Estilo de Vida em guias alimentares e
+diretrizes clínicas: revisão de escopo e análise documental para subsidiar o
+Protocolo NutEV.”* Corpora:
+
+- `busca1` — guias alimentares oficiais;
+- `busca2a` — diretrizes, consensos e statements clínicos;
+- `busca2b` — intervenções e eficácia (fora do corpus principal do Artigo 1);
+- framework comportamental — produto posterior.
+
+Exemplo reproduzível (sem PDFs de terceiros):
+[`examples/article1_pilot/`](examples/article1_pilot/).
+
+## Ciência aberta, governança e copyright
+
+- [`docs/SCIENTIFIC_GOVERNANCE.md`](docs/SCIENTIFIC_GOVERNANCE.md) — política científica.
+- [`docs/AI_USE_AND_HUMAN_OVERSIGHT.md`](docs/AI_USE_AND_HUMAN_OVERSIGHT.md) — uso de IA e supervisão humana.
+- [`docs/DATA_GOVERNANCE.md`](docs/DATA_GOVERNANCE.md) — governança de dados.
+- [`docs/COPYRIGHT_AND_FULL_TEXT_POLICY.md`](docs/COPYRIGHT_AND_FULL_TEXT_POLICY.md) — copyright e texto integral.
+- [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) — reprodutibilidade.
+- [`docs/DEPENDENCY_ARCHITECTURE.md`](docs/DEPENDENCY_ARCHITECTURE.md) — arquitetura de dependências.
+- [`docs/PUBLIC_RELEASE_AUDIT.md`](docs/PUBLIC_RELEASE_AUDIT.md) · [`docs/LEGACY_MIGRATION_PLAN.md`](docs/LEGACY_MIGRATION_PLAN.md)
+
+Prefira compartilhar DOI, URL oficial, metadados e trechos mínimos permitidos.
+Não redistribua PDFs protegidos. Não envie dados pessoais ou clínicos.
+
+## Como citar
+
+Use o arquivo [`CITATION.cff`](CITATION.cff). Campos de autoria/afiliação/ORCID/DOI
+estão marcados como **REVIEW REQUIRED** e devem ser confirmados por um humano antes
+de uma release citável — nada foi inventado.
+
+## Como contribuir
+
+Veja [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
+e os templates em `.github/ISSUE_TEMPLATE/`. Toda contribuição científica deve
+indicar justificativa metodológica, fonte e impacto esperado.
+
+## Roadmap
+
+Ver [`docs/ROADMAP.md`](docs/ROADMAP.md). Primeira release pública organizada:
+`v0.1.0-alpha`.
+
+## Licença e proveniência
+
+- Licença: **MIT** (ver [`LICENSE`](LICENSE)).
+- O motor herdado `local_deep_research` foi **removido** da árvore, mas seu
+  copyright original **© 2025 LearningCircuit** permanece atribuído em
+  [`LICENSE`](LICENSE) — essa atribuição é preservada.
+- Proveniência e fronteira entre código herdado e código NutEV:
+  [`NOTICE.md`](NOTICE.md).
+
 ## NutEV/NutMEV robust search runtime
 
-The canonical runtime is `src/nutev`. The older `src/local_deep_research` package remains only as legacy/reference code and is not the main runtime.
+The canonical (and only) runtime is `src/nutev`. The inherited
+`local_deep_research` package has been removed from the tree.
 
 Scientific search does not depend on Google. PubMed, Europe PMC, OpenAlex, Crossref and official sources run through safe provider handling; provider failures are logged and the pipeline exports partial results instead of crashing. PubMed uses NCBI E-utilities with `usehistory=y`, `WebEnv`, `query_key`, paginated batches, retry/backoff and checkpoints under `07_logs/checkpoints/pubmed/`.
 

@@ -6,6 +6,11 @@ from typing import Any
 
 from nutev.audit.models import EvidenceClaim
 
+# Minimum length (chars) for a sentence to count as a quote-backed ("supported")
+# claim, to avoid fragmented sentences derived from abstracts being treated as
+# auditable quotes.
+MIN_SUPPORTED_QUOTE_CHARS = 40
+
 RECOMMEND_TERMS = {"recommend","should","advise","limit","reduce","increase","consume","avoid","prefer","encourage","guideline","recomenda","deve","limitar","reduzir","aumentar","consumir","evitar","preferir"}
 PROTOCOL_HINTS = {
     "diretrizes_dieteticas": ["guideline", "diretriz", "recommend", "recomenda"],
@@ -61,10 +66,19 @@ def extract_candidate_claims_from_record(record: dict, ontology: dict | None, au
         has_recommend = any(t in norm.lower() for t in RECOMMEND_TERMS)
         if not domains and not has_recommend:
             continue
-        claim_status = "supported" if sentence in (record.get("extracted_text") or "") else "inference_only"
-        exact_quote = sentence if claim_status == "supported" else None
-        if not exact_quote and claim_status != "inference_only":
-            claim_status = "needs_human_review"
+        # A claim is only "supported" (quote-backed) when its sentence is found
+        # verbatim in genuinely-extracted text AND is a substantial quote (not a
+        # fragment). Otherwise it is a computational inference that needs human
+        # validation. Note: the pipeline only populates `extracted_text` for
+        # non-junk extractions, so junk/blocked pages cannot back a claim.
+        extracted_text = record.get("extracted_text") or ""
+        is_quote_backed = (
+            bool(extracted_text)
+            and sentence in extracted_text
+            and len(sentence.strip()) >= MIN_SUPPORTED_QUOTE_CHARS
+        )
+        claim_status = "supported" if is_quote_backed else "inference_only"
+        exact_quote = sentence if is_quote_backed else None
         claims.append(EvidenceClaim(
             claim_id=build_claim_id(str(record.get("document_id", "unknown")), norm),
             document_id=str(record.get("document_id", "")).strip(),

@@ -1,0 +1,64 @@
+name: "Bug report"
+description: "Report a defect in the NutEV/NutMEV software"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Do **not** paste secrets, personal data, or
+        protected full texts. Share metadata/URLs, not protected content.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Exact commands. Prefer the key-free demo when possible.
+      placeholder: |
+        nutev demo-data --project-root ./project_output_demo
+        ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      description: "Output of `python -c 'import nutev; print(nutev.__version__)'` and git SHA."
+    validations:
+      required: false
+  - type: dropdown
+    id: install
+    attributes:
+      label: Install profile
+      options:
+        - core
+        - dashboard
+        - api / platform
+        - search
+        - documents
+        - llm
+        - watch
+        - legacy
+        - all
+    validations:
+      required: false
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Python version. Do not include secrets or tokens.
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste sanitized logs only (no signed URLs, cookies, or keys).
+      render: shell
+    validations:
+      required: false

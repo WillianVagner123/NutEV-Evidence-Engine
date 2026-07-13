@@ -1,0 +1,26 @@
+name: dependency-review
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v4
+        # The action errors ("Dependency review is not supported on this
+        # repository") until the repo's Dependency Graph is enabled in
+        # Settings > Code security & analysis. That is a repository setting,
+        # not a code issue, so this step is non-blocking: it runs and comments
+        # once the graph is enabled, but a disabled graph must not block PRs.
+        # See docs/GITHUB_PUBLIC_SETTINGS_CHECKLIST.md.
+        continue-on-error: true
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: on-failure

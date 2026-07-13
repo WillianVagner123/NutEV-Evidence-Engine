@@ -108,7 +108,7 @@ def calculate_overview_metrics(run_summary: dict, metadata: pd.DataFrame, claims
         "total_records": int(len(metadata)),
         "downloaded_documents": int((metadata.get("download_status", pd.Series(dtype=str)).astype(str) == "pdf").sum()) if not metadata.empty else 0,
         "metadata_only_records": int((metadata.get("download_status", pd.Series(dtype=str)).astype(str) == "metadata_only").sum()) if not metadata.empty else 0,
-        "extracted_texts": int((metadata.get("extraction_status", pd.Series(dtype=str)).astype(str) == "ok").sum()) if not metadata.empty else 0,
+        "extracted_texts": int(metadata.get("extraction_status", pd.Series(dtype=str)).astype(str).isin(["ok", "ok_ocr", "fake_pdf_html", "fake_pdf_text"]).sum()) if not metadata.empty else 0,
         "evidence_claims_total": int(len(claims)),
         "evidence_claims_supported": int((claims.get("claim_status", pd.Series(dtype=str)).astype(str) == "supported").sum()) if not claims.empty else 0,
         "evidence_claims_needs_review": int(normalize_bool_series(claims.get("needs_human_review", pd.Series(dtype=str))).sum()) if not claims.empty else 0,

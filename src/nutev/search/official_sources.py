@@ -1,11 +1,35 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
 from urllib.parse import urlparse
 
 WORKSTREAM_ALIASES = {
     "a3": "artigo3_framework",
     "article3": "artigo3_framework",
 }
+
+
+def load_official_manifest(config_root: Path, include_countries: bool = True) -> dict:
+    """Load the base official-source manifest and optionally merge the global
+    per-country/region manifest (`official_sources_countries.json`)."""
+    def _read(path: Path) -> dict:
+        try:
+            data = json.loads(Path(path).read_text(encoding="utf-8"))
+            return data if isinstance(data, dict) else {}
+        except Exception:
+            return {}
+
+    base = _read(Path(config_root) / "official_sources_manifest.json")
+    if include_countries:
+        countries = _read(Path(config_root) / "official_sources_countries.json")
+        extra_ws = countries.get("workstreams") if isinstance(countries, dict) else None
+        if isinstance(extra_ws, dict):
+            sw = base.setdefault("workstreams", {})
+            for ws_name, extra in extra_ws.items():
+                if isinstance(extra, list) and isinstance(sw.get(ws_name, []), list):
+                    sw[ws_name] = list(sw.get(ws_name, [])) + extra
+    return base
 
 
 def _source_key(source: dict) -> str:

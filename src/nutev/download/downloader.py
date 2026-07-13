@@ -363,12 +363,31 @@ def _save_snapshot_html(
     }
 
 
+def _open_access_candidates(record: dict) -> list[str]:
+    """Legal open-access copies to try before/instead of a blocked publisher:
+    PMC full text (from pmcid) and the OpenAlex/Unpaywall OA URL. This recovers
+    many texts that publishers return 403 for, without bypassing any paywall."""
+    candidates: list[str] = []
+    pmcid = str(record.get("pmcid") or "").strip().upper()
+    if pmcid:
+        if not pmcid.startswith("PMC"):
+            pmcid = f"PMC{pmcid}"
+        candidates.append(f"https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/")
+    for key in ("oa_url", "open_access_url", "pmc_url"):
+        value = str(record.get(key) or "").strip()
+        if value:
+            candidates.append(value)
+    return candidates
+
+
 def _snapshot_candidates(
     record: dict,
     raw_url: str,
     resolved_url: str,
 ) -> list[str]:
     candidates: list[str] = []
+    # Open-access copies first — legal full text that avoids publisher blocks.
+    candidates.extend(_open_access_candidates(record))
     doi_url = _candidate_doi_url(record)
     if doi_url:
         candidates.append(doi_url)

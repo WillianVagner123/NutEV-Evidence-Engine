@@ -18,146 +18,87 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
+# ---------------------------------------------------------------------------
+# CORE dependencies — the minimum required to import `nutev`, parse config,
+# generate demo data, run a basic bibliographic search and read/write tabular
+# outputs. Deliberately excludes Flask, the frontend, Elasticsearch, FAISS,
+# Playwright, SQLCipher and the LangChain ecosystem (all optional below).
+# Rationale for each is documented in docs/DEPENDENCY_ARCHITECTURE.md.
+# ---------------------------------------------------------------------------
 dependencies = [
-    "langchain~=1.2",
-    "langchain-community~=0.4",
-    "langchain-core~=1.2",
-    "langchain-ollama~=1.0",
-    "langchain-openai~=1.1",
-    "langchain-anthropic~=1.3",
-    "duckduckgo-search~=8.1",
-    "python-dateutil~=2.9",
-    "typing-extensions~=4.15",
-    "justext~=3.0",
-    "readabilipy~=0.3",
-    "trafilatura~=2.0",
-    "extruct~=0.18",
-    "playwright~=1.58",
-    "beautifulsoup4~=4.14",
-    "flask~=3.1.3",
-    "werkzeug~=3.1.6",
-    "flask-cors~=6.0",
-    "flask-socketio~=5.6.1",
-    "alembic~=1.17",
-    "sqlalchemy~=2.0",
-    "sqlalchemy-utc~=0.14",
-    "wikipedia~=1.4",
-    "arxiv~=2.4",
-    "pypdf~=6.10.1",
-    "sentence-transformers~=5.2",
-    "faiss-cpu~=1.13",
-    "pydantic~=2.12",
-    "pydantic-settings~=2.12",
-    "toml~=0.10",
-    "platformdirs~=4.5",
-    "dynaconf~=3.2",
-    "requests>=2.32",
-    "urllib3~=2.6",
-    "tiktoken~=0.12",
-    "xmltodict~=1.0",
-    "lxml>=5.3",
-    "newspaper4k~=0.9",
-    "crawl4ai~=0.8",
-    "defusedxml~=0.7",
-    "nh3~=0.3",
-    "pdfplumber~=0.11",
-    "unstructured~=0.18",
-    "google-search-results~=2.4",
-    "jaraco-context~=6.1",
-    "flask-wtf~=1.2",
-    "optuna~=4.7",
-    "elasticsearch~=9.3",
-    "methodtools~=0.4",
-    "loguru~=0.7",
-    "cachetools~=7.0",
-    "matplotlib~=3.10",
-    "pandas~=3.0",
-    "plotly~=6.5",
-    "kaleido~=1.2",
-    "aiohttp~=3.13",
-    "tenacity~=9.1",
-    "apscheduler~=3.11",
-    "rich~=14.3",
-    "click~=8.3",
-    "flask-login~=0.6",
-    "flask-limiter~=4.1",
-    "sqlcipher3-binary~=0.6; sys_platform == \"linux\" and platform_machine == \"x86_64\"",
-    "sqlcipher3~=0.6; (platform_machine == \"aarch64\" or platform_machine == \"arm64\") and sys_platform == \"linux\"",
-    "sqlcipher3~=0.6; sys_platform != \"linux\"",
-    "lxml-html-clean>=0.4.4",
-    "weasyprint~=68.1",
-    "Pillow>=12.1.1",
-    "cryptography>=46.0.7",
-    "apprise~=1.9",
-    "markdown~=3.10",
-    "pypandoc-binary~=1.16",
-    "datasets~=4.5",
-    "pyarrow~=23.0",
-    "langchain-experimental~=0.4",
+    "pandas~=3.0",            # tabular pipelines/exports/demo (analysis, export, audit, protocol, review, pipelines)
+    "pydantic~=2.12",         # typed engine/audit/api models
+    "requests>=2.32",         # HTTP client for bibliographic search and downloads
+    "beautifulsoup4~=4.14",   # HTML parsing in search/global_watch/download
+    "python-dateutil~=2.9",   # robust parsing of publication dates
+    "openpyxl~=3.1",          # .xlsx export tables (export/extract)
+    "typing-extensions~=4.15",# typing backports used across the core
 ]
 
 [project.optional-dependencies]
+# Optional bibliographic search providers (basic HTTP search works with core).
+search = [
+    "arxiv~=2.4",                  # arXiv metadata client
+    "wikipedia~=1.4",              # Wikipedia summaries
+    "google-search-results~=2.4",  # SerpAPI (OPTIONAL — Google/SerpAPI not required)
+    "lxml>=5.3",                   # faster HTML/XML parsing
+    "xmltodict~=1.0",              # PubMed / NCBI E-utilities XML
+]
+# Document ingestion / OCR / PDF text extraction (heavy, system deps: tesseract, poppler).
+documents = [
+    "pypdf~=6.10.1",
+    "pdfplumber~=0.11",
+    "pdf2image~=1.17",
+    "pytesseract~=0.3",
+    "python-docx~=1.1",
+    "Pillow>=12.1.1",
+]
+# Streamlit review dashboard.
+dashboard = [
+    "streamlit",
+    "pandas~=3.0",
+    "openpyxl~=3.1",
+    "plotly~=6.5",
+]
+# FastAPI platform / REST API.
+api = [
+    "fastapi",
+    "uvicorn",
+    "pydantic~=2.12",
+    "jinja2",
+]
+# Alias kept so the CLI hint `pip install -e ".[platform]"` keeps working.
+platform = [
+    "nutev-nutmev[api]",
+]
+# Optional LLM providers — NutEV runs without any LLM. Nothing here is required
+# to produce RecommendationCandidates; the LLM assists, it never approves.
+llm = [
+    "langchain~=1.2",
+    "langchain-community~=0.4",
+    "langchain-core~=1.2",
+    "langchain-openai~=1.1",
+    "langchain-anthropic~=1.3",
+    "langchain-ollama~=1.0",
+    "tiktoken~=0.12",
+]
+# Global Watch browser capture and scheduling.
+watch = [
+    "playwright~=1.58",
+    "apscheduler~=3.11",
+    "aiohttp~=3.13",
+    "tenacity~=9.1",
+]
 mcp = [
     "mcp[cli]~=1.2",
 ]
-dashboard = [
-    "streamlit",
-    "pandas",
-    "openpyxl",
-]
-platform = [
-    "fastapi",
-    "uvicorn",
-    "pandas",
-    "openpyxl",
-    "jinja2",
-]
-
-[project.urls]
-"Homepage" = "https://github.com/WillianVagner123/NUT-MEV_NEW"
-"Bug Tracker" = "https://github.com/WillianVagner123/NUT-MEV_NEW/issues"
-"Validation Report" = "https://github.com/WillianVagner123/NUT-MEV_NEW/blob/main/docs/VALIDATION_REPORT.md"
-
-[project.scripts]
-ldr = "local_deep_research.main:main"
-ldr-web = "local_deep_research.web.app:main"
-ldr-mcp = "local_deep_research.mcp:run_server"
-nutev = "nutev.cli:main"
-
-# Note: build backend is pdm.backend (see [build-system]). These
-# [tool.setuptools] sections are kept for compatibility with editable
-# installs via `pip install -e .` which may fall back to setuptools.
-[tool.setuptools]
-include-package-data = true
-
-[tool.setuptools.package-data]
-"local_deep_research.web" = ["templates/*", "static/*", "static/**/*"]
-"local_deep_research.defaults" = ["*.toml", "*.py", "*.template", ".env.template", "*.json"]
-"local_deep_research.notifications" = ["templates/*.jinja2"]
-# Note: there is no `local_deep_research.data` package any more. Every
-# academic dataset is downloaded at runtime into the user data directory
-# by the `local_deep_research.journal_quality.data_sources` package.
-
-[tool.pdm]
-distribution = true
-version = { source = "file", path = "src/local_deep_research/__version__.py" }
-
-[[tool.pdm.source]]
-url = "https://download.pytorch.org/whl/cpu"
-name = "torch"
-include_packages = ["torch", "torch*"]
-
-[tool.pdm.resolution.overrides]
-requests = ">=2.33"
-lxml = ">=6.0"
-
-[dependency-groups]
+# Development / test tooling (also available as the pdm `dev` group).
 dev = [
     "virtualenv~=20.36",
     "pre-commit~=4.5",
     "cookiecutter~=2.6",
-    "pytest-mock~=3.15",
     "pytest~=9.0",
+    "pytest-mock~=3.15",
     "pytest-cov~=7.0",
     "pytest-timeout~=2.4",
     "pytest-asyncio~=1.3",
@@ -172,13 +113,60 @@ dev = [
     "vulture~=2.14",
     "towncrier~=24.8",
 ]
+# Everything (all NutEV optional groups). The inherited local_deep_research
+# engine and its `legacy` extra were removed from the tree; see NOTICE.md and
+# docs/LEGACY_MIGRATION_PLAN.md.
+all = [
+    "nutev-nutmev[search,documents,dashboard,api,llm,watch,mcp]",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+"Bug Tracker" = "https://github.com/WillianVagner123/NutEV-Evidence-Engine/issues"
+"Validation Report" = "https://github.com/WillianVagner123/NutEV-Evidence-Engine/blob/main/docs/VALIDATION_REPORT.md"
+
+[project.scripts]
+# Canonical NutEV/NutMEV entrypoint — the only console script. The inherited
+# local_deep_research engine (and its ldr/ldr-web/ldr-mcp scripts) was removed
+# from the tree; see NOTICE.md and docs/LEGACY_MIGRATION_PLAN.md.
+nutev = "nutev.cli:main"
+
+# Build backend is pdm.backend (see [build-system]); the setuptools section is a
+# fallback for editable installs via `pip install -e .`.
+[tool.setuptools]
+include-package-data = true
+
+[tool.pdm]
+distribution = true
+# Version is sourced from the canonical NutEV package.
+version = { source = "file", path = "src/nutev/__version__.py" }
+
+[tool.pdm.resolution.overrides]
+requests = ">=2.33"
+lxml = ">=6.0"
+
+# Dev tooling now lives in [project.optional-dependencies].dev above so that
+# `pip install -e ".[dev]"` works for external contributors without pdm.
 
 [tool.pytest.ini_options]
+# Canonical test location is nutev_tests/ (the legacy tests/ tree is not part
+# of the canonical suite — see docs/LEGACY_MIGRATION_PLAN.md).
+testpaths = ["nutev_tests"]
 markers = [
-    "requires_llm: marks tests that require a real LLM (not fallback)",
-    "integration: marks integration tests",
-    "slow: marks slow tests",
-    "asyncio: marks async tests that use asyncio",
+    # Canonical NutEV test groups.
+    "unit: fast, isolated unit tests (default group)",
+    "contracts: schema/contract tests (artifact and metadata contracts)",
+    "integration_no_network: integration tests that must NOT touch the network",
+    "integration_network: integration tests that require network access",
+    "slow: slow tests",
+    "llm: tests that require a real LLM (paid/hosted) — excluded from default CI",
+    "dashboard: tests for the Streamlit dashboard",
+    "api: tests for the FastAPI platform",
+    "global_watch: tests for the Global Watch pipeline",
+    # Backwards-compatible aliases.
+    "requires_llm: (alias of llm) tests requiring a real LLM",
+    "integration: (broad) integration tests",
+    "asyncio: async tests that use asyncio",
 ]
 timeout = 60
 timeout_method = "thread"

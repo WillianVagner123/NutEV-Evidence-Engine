@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its methodology, please cite it using the metadata
+  below. Fields marked "REVIEW REQUIRED" must be confirmed by a human before a
+  citable release/DOI is minted — do not treat placeholders as verified.
+title: "NutEV/NutMEV: reproducible evidence engine for lifestyle nutrition research"
+abstract: >-
+  Computational infrastructure that identifies, organizes, classifies, audits and
+  translates scientific evidence into candidate recommendations for the NutEV/NutMEV
+  protocol. Outputs are RecommendationCandidates and require human review; they are
+  not final clinical recommendations.
+type: software
+version: 0.1.0-alpha
+license: MIT
+repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+keywords:
+  - lifestyle nutrition
+  - evidence synthesis
+  - scoping review
+  - reproducible research
+  - open science
+authors:
+  # REVIEW REQUIRED: confirm legal name, affiliation and ORCID before release.
+  # Placeholders below are derived only from the repository owner handle and must
+  # not be treated as verified authorship. Do not invent ORCID identifiers.
+  - name: "NutEV/NutMEV Project"
+    # given-names: ""      # REVIEW REQUIRED
+    # family-names: ""     # REVIEW REQUIRED
+    # affiliation: ""      # REVIEW REQUIRED
+    # orcid: ""            # REVIEW REQUIRED (leave unset if unknown)
+# DOI: ""                  # REVIEW REQUIRED — set after Zenodo/OSF archival
+# preferred-citation:      # REVIEW REQUIRED — add the Article 1 reference when published

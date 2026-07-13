@@ -1,1 +1,0 @@
-"""SearXNG test package."""

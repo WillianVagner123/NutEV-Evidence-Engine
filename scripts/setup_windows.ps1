@@ -95,7 +95,7 @@ function Test-ProjectPathLength {
 }
 
 if (-not (Test-Path "pyproject.toml")) {
-    throw "Execute este script dentro da pasta raiz do repositorio NUT-MEV_NEW, onde existe pyproject.toml."
+    throw "Execute este script dentro da pasta raiz do repositorio NutEV-Evidence-Engine, onde existe pyproject.toml."
 }
 
 Write-Step "Validando caminho do projeto"

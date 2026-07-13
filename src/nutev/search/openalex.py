@@ -51,6 +51,12 @@ def search_openalex(query: str, per_page: int = 12) -> list[dict]:
                         "snippet": "",
                         "doi": item.get("doi"),
                         "url": _pick_openalex_url(item),
+                        "pmcid": str((item.get("ids") or {}).get("pmcid") or "").rsplit("/", 1)[-1],
+                        "is_open_access": str(bool((item.get("open_access") or {}).get("is_oa"))).lower(),
+                        "oa_url": (item.get("open_access") or {}).get("oa_url")
+                        or (item.get("best_oa_location") or {}).get("pdf_url")
+                        or (item.get("best_oa_location") or {}).get("landing_page_url")
+                        or "",
                         "journal": ((item.get("primary_location") or {}).get("source") or {}).get("display_name", ""),
                         "year": item.get("publication_year") or "",
                         "publication_date": item.get("publication_date") or "",

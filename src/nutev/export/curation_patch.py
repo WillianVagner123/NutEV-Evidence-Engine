@@ -115,6 +115,71 @@ def _norm_year(value: object) -> str:
         return ""
 
 
+_YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+_VERSION_MARKER_RE = re.compile(r"\b(part|chapter|section|volume|edition|supplement|suppl|no|number|version|v)\s*[a-z0-9]{0,4}\b")
+_CHAPTER_MARKERS = ("chapter", "section ", "part ", "appendix")
+_SUPPLEMENT_MARKERS = ("supplement", "suppl.", "addendum")
+
+
+def _family_base_title(value: object) -> str:
+    """Title with year / edition / part / supplement markers stripped, so annual
+    or chaptered editions of the same document share a family base."""
+    base = _norm_title(value)
+    base = _YEAR_RE.sub(" ", base)
+    base = _VERSION_MARKER_RE.sub(" ", base)
+    return _WS_RE.sub(" ", base).strip()
+
+
+def _document_family_key(row: dict) -> str:
+    base = _family_base_title(row.get("title"))
+    inst = _norm_title(row.get("source_institution") or row.get("journal") or "")
+    if not base:
+        return _document_key(row)[0]
+    return f"{base}::{inst[:40]}"
+
+
+def _classify_document_relations(unique_rows: list[dict]) -> dict[str, list[dict]]:
+    """Group unique documents into version/publication families and tag each row
+    with a document_relation: standalone / primary_version / annual_version /
+    parallel_publication / guideline_chapter / supplement."""
+    families: dict[str, list[dict]] = {}
+    for row in unique_rows:
+        fk = _document_family_key(row)
+        row["document_family_key"] = fk
+        families.setdefault(fk, []).append(row)
+    for members in families.values():
+        if len(members) == 1:
+            members[0]["document_relation"] = "standalone"
+            continue
+        primary = sorted(members, key=lambda r: _norm_year(r.get("year")) or "0", reverse=True)[0]
+        primary_year = _norm_year(primary.get("year"))
+        for row in members:
+            title = _text(row.get("title")).lower()
+            year = _norm_year(row.get("year"))
+            if any(m in title for m in _CHAPTER_MARKERS):
+                row["document_relation"] = "guideline_chapter"
+            elif any(m in title for m in _SUPPLEMENT_MARKERS):
+                row["document_relation"] = "supplement"
+            elif row is primary:
+                row["document_relation"] = "primary_version"
+            elif year and primary_year and year != primary_year:
+                row["document_relation"] = "annual_version"
+            else:
+                row["document_relation"] = "parallel_publication"
+    return families
+
+
+def _version_family_summary(unique_rows: list[dict]) -> list[dict]:
+    from collections import Counter
+
+    rel_counts = Counter(r.get("document_relation", "standalone") for r in unique_rows)
+    families = Counter(r.get("document_family_key", "") for r in unique_rows)
+    multi = {k: v for k, v in families.items() if v > 1}
+    out = [{"metric": "version_families_with_multiple_members", "value": len(multi)}]
+    out += [{"metric": f"relation_{rel}", "value": count} for rel, count in sorted(rel_counts.items())]
+    return out
+
+
 def _document_key(row: dict) -> tuple[str, str]:
     doi = _norm_doi(row.get("doi"))
     if doi:
@@ -260,6 +325,9 @@ def curate_outputs(rows: list[dict], output_dir: Path) -> dict[str, int]:
     output_dir.mkdir(parents=True, exist_ok=True)
     curated = [_curate_row(row) for row in rows]
     unique = _unique_rows(curated)
+    # Tag version/publication families (annual versions, parallel publications,
+    # guideline chapters, supplements) so dedup distinguishes them.
+    _classify_document_relations(unique)
     mapped = [{column: row.get(column, "") for column in MAP_COLUMNS} for row in curated]
     prisma = [{
         "registros_identificados": len(curated),
@@ -276,6 +344,11 @@ def curate_outputs(rows: list[dict], output_dir: Path) -> dict[str, int]:
     ]
     _write_csv(curated, output_dir / "NUTEV_METADATA_CURATED.csv", CURATED_COLUMNS)
     _write_csv(unique, output_dir / "NUTEV_DOCUMENTS_UNIQUE.csv", UNIQUE_COLUMNS)
+    _write_csv(
+        unique,
+        output_dir / "NUTEV_VERSION_FAMILIES.csv",
+        ["document_id", "title", "year", "doi", "source_institution", "document_family_key", "document_relation"],
+    )
     _write_csv(mapped, output_dir / "NUTEV_DOCUMENT_WORKSTREAM_MAP.csv", MAP_COLUMNS)
     write_excel_file(pd.DataFrame(curated, columns=CURATED_COLUMNS), output_dir / "NUTEV_METADATA_CURATED.xlsx")
     write_excel_file(pd.DataFrame(unique, columns=UNIQUE_COLUMNS), output_dir / "NUTEV_DOCUMENTS_UNIQUE.xlsx")
@@ -283,6 +356,7 @@ def curate_outputs(rows: list[dict], output_dir: Path) -> dict[str, int]:
     with pd.ExcelWriter(output_dir / "NUTEV_QA_REPORT.xlsx") as writer:
         write_excel_sheet(writer, pd.DataFrame(qa), "summary")
         write_excel_sheet(writer, pd.DataFrame(_duplicate_summary(curated)), "duplicate_summary")
+        write_excel_sheet(writer, pd.DataFrame(_version_family_summary(unique)), "version_families")
         write_excel_sheet(writer, pd.DataFrame(_missing_by_workstream(curated)), "missing_by_workstream")
     with pd.ExcelWriter(output_dir / "NUTEV_PRISMA_FLOW_CORRIGIDO.xlsx") as writer:
         write_excel_sheet(writer, pd.DataFrame(prisma, columns=PRISMA_COLUMNS), "flow")
@@ -294,6 +368,8 @@ def curate_outputs(rows: list[dict], output_dir: Path) -> dict[str, int]:
         "full_text_documents": sum(1 for row in unique if bool(row.get("has_full_text"))),
         "metadata_only_documents": sum(1 for row in unique if bool(row.get("is_metadata_only"))),
         "prioritized_documents": sum(1 for row in unique if bool(row.get("is_prioritized"))),
+        "annual_versions": sum(1 for row in unique if row.get("document_relation") == "annual_version"),
+        "parallel_publications": sum(1 for row in unique if row.get("document_relation") == "parallel_publication"),
     }
     (output_dir / "curation_summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
     return summary

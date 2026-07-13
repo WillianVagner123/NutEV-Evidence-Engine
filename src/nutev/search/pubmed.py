@@ -135,7 +135,7 @@ def _request_json(
     session = session or requests.Session()
     session.headers.update(
         {
-            "User-Agent": "NutEV/0.1 (+https://github.com/WillianVagner123/NUT-MEV_NEW)",
+            "User-Agent": "NutEV/0.1 (+https://github.com/WillianVagner123/NutEV-Evidence-Engine)",
             "Accept": "application/json,text/plain,*/*",
         }
     )
@@ -181,7 +181,7 @@ def _request_text(
     last_error: Exception | None = None
     owns_session = session is None
     session = session or requests.Session()
-    session.headers.update({"User-Agent": "NutEV/0.1 (+https://github.com/WillianVagner123/NUT-MEV_NEW)", "Accept": "application/xml,text/xml,text/plain,*/*"})
+    session.headers.update({"User-Agent": "NutEV/0.1 (+https://github.com/WillianVagner123/NutEV-Evidence-Engine)", "Accept": "application/xml,text/xml,text/plain,*/*"})
     try:
         for attempt in range(1, max_attempts + 1):
             for method in ("get", "post"):

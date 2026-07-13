@@ -50,6 +50,11 @@ def main() -> None:
     prize = sub.add_parser("prize-metrics")
     prize.add_argument("--project-root", type=Path, required=True)
 
+    verify = sub.add_parser("verify-sources")
+    verify.add_argument("--project-root", type=Path, required=True)
+    verify.add_argument("--timeout", type=float, default=20.0)
+    verify.add_argument("--no-countries", action="store_true", help="Check only the base manifest (skip per-country sources)")
+
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
     p.add_argument("--web-enabled", action="store_true")
@@ -153,6 +158,30 @@ def main() -> None:
         path = write_prize_metrics_summary(args.project_root)
         print(f"Prize metrics generated: {path}")
         print(f"Prize metrics text: {path.with_suffix('.txt')}")
+        return
+
+    if args.command == "verify-sources":
+        from nutev.search.verify_sources import (
+            verify_official_sources,
+            write_verification_report,
+        )
+        from nutev.settings import NutevSettings as _NS
+
+        config_root = _NS(project_root=args.project_root).config_root
+        rows = verify_official_sources(
+            config_root,
+            timeout=args.timeout,
+            include_countries=not args.no_countries,
+        )
+        out = args.project_root / "07_logs" / "NUTEV_OFFICIAL_SOURCES_VERIFICATION.csv"
+        write_verification_report(rows, out)
+        total = len(rows)
+        alive = sum(1 for r in rows if r.get("ok"))
+        dead = [r for r in rows if not r.get("ok")]
+        print(f"Verificadas {total} fontes oficiais: {alive} acessíveis, {len(dead)} com problema.")
+        for r in dead[:50]:
+            print(f"  [{r.get('status_code')}] {r.get('reason')}  {r.get('name')}  {r.get('url')}")
+        print(f"Relatório completo: {out}")
         return
 
     if not args.project_root:

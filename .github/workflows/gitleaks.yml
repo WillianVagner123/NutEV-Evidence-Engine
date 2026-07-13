@@ -1,0 +1,54 @@
+name: security-scan
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    name: gitleaks secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Note: .gitleaksignore entries are NOT assumed safe — they must be
+          # re-triaged manually (see docs/PUBLIC_RELEASE_AUDIT.md §10).
+
+  repo-hygiene:
+    name: forbidden files & large files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check for forbidden committed files
+        run: |
+          set -euo pipefail
+          echo "Checking tracked files for forbidden types..."
+          BAD=$(git ls-files | grep -iE '(^|/)\.env($|\.)|\.env\.[^e].*|\.(pdf|sqlite3?|db)$|(^|/)webhook_payload.*\.json$|(^|/)project_output' \
+                | grep -viE '\.env\.example$|\.env\.template$' || true)
+          if [ -n "$BAD" ]; then
+            echo "::error::Forbidden files are tracked in git:"
+            echo "$BAD"
+            exit 1
+          fi
+          echo "OK: no forbidden files tracked."
+      - name: Check for oversized tracked files (> 5 MB)
+        run: |
+          set -euo pipefail
+          LIMIT=$((5 * 1024 * 1024))
+          OVER=$(git ls-files -z | xargs -0 -I{} bash -c 'f="{}"; s=$(wc -c < "$f" 2>/dev/null || echo 0); if [ "$s" -gt '"$LIMIT"' ]; then echo "$s $f"; fi' | sort -rn || true)
+          if [ -n "$OVER" ]; then
+            echo "::warning::Tracked files larger than 5 MB:"
+            echo "$OVER"
+          else
+            echo "OK: no tracked file exceeds 5 MB."
+          fi

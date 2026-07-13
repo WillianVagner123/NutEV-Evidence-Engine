@@ -13,6 +13,40 @@ def _match_terms(blob: str, terms: list[str]) -> int:
     return sum(1 for term in terms if term.lower() in blob)
 
 
+# Signals that a record is centrally about diet / nutrition / eating (Article 1
+# scope). Used to keep clinical/pharmacological documents that only *mention*
+# nutrition out of the core corpus unless they are dietary in focus.
+_DIETARY_CENTRALITY_TERMS = [
+    "diet", "dietary", "nutrition", "nutritional", "food", "eating", "meal",
+    "dietary pattern", "dietary guideline", "food-based", "vegetable", "fruit",
+    "whole grain", "dieta", "alimenta", "alimentar", "nutri", "padrão alimentar",
+]
+# Off-scope markers: if present WITHOUT dietary centrality, the record is very
+# likely outside the Article 1 dietary-guideline scope.
+_OFF_SCOPE_TERMS = {
+    "pharmacology": ["pharmacolog", "drug therapy", "glp-1", "glp1", "semaglutide", "metformin", "anticoagul", "statin", "pharmacotherap"],
+    "oncology_vte": ["thromboembolism", "venous thrombo", "chemotherap", "oncolog", "cancer treatment", "tumor"],
+    "pediatric_only": ["neonat", "infant formula", "preterm", "paediatric intensive", "pediatric intensive"],
+    "surgical": ["bariatric surgery", "surgical", "perioperative", "post-operative"],
+}
+
+
+def _scope_signals(blob: str, matched_domains: list[str], record: dict) -> tuple[int, str, list[str]]:
+    central = (
+        bool(matched_domains)
+        or bool(record.get("diet_patterns") or record.get("diet_pattern"))
+        or _match_terms(blob, _DIETARY_CENTRALITY_TERMS) >= 2
+    )
+    flags = sorted({label for label, terms in _OFF_SCOPE_TERMS.items() if any(t in blob for t in terms)})
+    if central:
+        status = "in_scope"
+    elif flags:
+        status = "off_scope_review"
+    else:
+        status = "low_dietary_signal"
+    return int(central), status, flags
+
+
 def classify_evidence(
     records: list[dict[str, Any]],
     ontology: dict[str, Any],
@@ -52,5 +86,13 @@ def classify_evidence(
         r["domains"] = sorted(set(matched_domains))
         r["outcomes"] = sorted(set(matched_outcomes))
         r["evidence_lenses"] = [k for k, v in lens_scores.items() if v > 0]
+
+        # Scope gate for Article 1: flag records that are not centrally about
+        # diet/nutrition so reviewers can exclude off-scope material (e.g.
+        # pharmacology-only, oncology VTE, pediatric intensive care).
+        centrality, scope_status, scope_flags = _scope_signals(blob, matched_domains, r)
+        r["dietary_centrality"] = centrality
+        r["scope_status"] = scope_status
+        r["scope_flags"] = scope_flags
 
     return records
