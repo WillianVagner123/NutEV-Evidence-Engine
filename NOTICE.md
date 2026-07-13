@@ -31,16 +31,19 @@ NutEV/NutMEV modifies and extends the inherited base by:
 - decoupling package identity, entrypoints and dependencies from the inherited
   package (the `nutev` command and core no longer depend on LDR).
 
-The inherited engine is being **isolated and progressively removed** from the
-main distribution — see `docs/LEGACY_MIGRATION_PLAN.md`.
+The inherited engine (`src/local_deep_research/**`), the legacy test suite
+(`tests/**`) and the legacy frontend/Docker infrastructure have now been
+**removed** from the working tree (see `docs/LEGACY_MIGRATION_PLAN.md`). The code
+remains in Git history and its copyright/attribution is preserved (see `LICENSE`
+and §1). This NOTICE documents that derivation.
 
 ## 3. Boundary: inherited vs NutEV code
 
 | Path | Provenance | License |
 |---|---|---|
-| `src/local_deep_research/**` | Inherited (LDR) | MIT (LearningCircuit) |
-| `src/sitecustomize.py`, `src/usercustomize.py` | Inherited shims | MIT (LearningCircuit) |
-| `tests/**` | Inherited (LDR) | MIT (LearningCircuit) |
+| `src/local_deep_research/**` (removed from tree; in history) | Inherited (LDR) | MIT (LearningCircuit) |
+| `tests/**` (removed from tree; in history) | Inherited (LDR) | MIT (LearningCircuit) |
+| `src/sitecustomize.py`, `src/usercustomize.py` | NutEV runtime hooks (retained; used by `nutev_tests`) | MIT (this repository) |
 | `src/nutev/**` | NutEV contribution | MIT (this repository) |
 | `config/**`, `nutev_tests/**` | NutEV contribution | MIT (this repository) |
 | NutEV `docs/**` (methodology/governance) | NutEV contribution | see doc headers |
@@ -55,10 +58,9 @@ main distribution — see `docs/LEGACY_MIGRATION_PLAN.md`.
 ## 5. Third-party dependencies and assets
 
 - Python dependencies are declared in `pyproject.toml`; each carries its own
-  upstream license. Optional/heavy stacks (Flask, SQLCipher, Elasticsearch,
-  FAISS, LangChain, Playwright) are only pulled in via the `legacy`/optional
-  extras.
-- Bundled assets inherited from LDR (e.g. `src/local_deep_research/web/static`
+  upstream license. Optional/heavy stacks (LLM providers, OCR, browser capture)
+  are only pulled in via optional extras.
+- Bundled assets that were inherited from LDR (e.g. `local_deep_research/web/static`
   icons/fonts/favicon) may carry their own licenses.
   <!-- REVIEW REQUIRED: verify licenses of bundled fonts/icons/images before
        redistribution. -->

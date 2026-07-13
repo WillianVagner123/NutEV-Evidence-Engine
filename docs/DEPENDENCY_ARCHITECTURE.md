@@ -45,8 +45,10 @@ Mirror file: `requirements/nutev-core.txt`.
 | `watch` | `.[watch]` | Global Watch browser capture + scheduling | `playwright`, `apscheduler`, `aiohttp`, `tenacity` |
 | `mcp` | `.[mcp]` | MCP server | `mcp[cli]` |
 | `dev` | `.[dev]` | Test/lint/type tooling | `pytest*`, `ruff`, `mypy`, `hypothesis`, … |
-| `legacy` | `.[legacy]` | Full inherited `local_deep_research` stack | Flask, SQLCipher, Elasticsearch, FAISS, LangChain, … |
-| `all` | `.[all]` | Everything above (incl. legacy) | recursive extra |
+| `all` | `.[all]` | Everything above | recursive extra |
+
+> The inherited `local_deep_research` engine and its `legacy` extra were
+> **removed** from the tree (see `NOTICE.md`). Only optional NutEV extras remain.
 
 ### Execution guarantees
 
@@ -65,11 +67,9 @@ Flask/FAISS/Elasticsearch/Playwright/SQLCipher.
 
 ## Legacy coupling
 
-- The `local_deep_research` engine requires the `legacy` extra. It is **not**
-  installed by the main distribution and the NutEV core never imports it
-  (verified: `git grep local_deep_research src/nutev` → no matches).
-- Removal of the legacy package from the wheel is sequenced in
-  `docs/LEGACY_MIGRATION_PLAN.md`.
+- The inherited `local_deep_research` engine has been **removed** from the tree;
+  the NutEV core never imported it (verified). Provenance is preserved in
+  `NOTICE.md` and Git history.
 
 ## Known follow-ups (pending)
 

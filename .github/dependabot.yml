@@ -1,5 +1,7 @@
 # Dependabot configuration for NutEV/NutMEV
 # Goal: keep security/dependency maintenance visible without flooding the PR queue.
+# npm/docker ecosystems were removed together with the legacy frontend, Docker
+# infra and legacy tests.
 
 version: 2
 updates:
@@ -22,25 +24,6 @@ updates:
       prefix: "chore"
       include: "scope"
 
-  # JavaScript dependencies - weekly, grouped
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "04:20"
-    open-pull-requests-limit: 2
-    labels:
-      - "dependencies"
-      - "javascript"
-    groups:
-      javascript-runtime:
-        patterns:
-          - "*"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-
   # GitHub Actions - monthly
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -57,79 +40,3 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-
-  # Docker - monthly only
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 1
-    labels:
-      - "dependencies"
-      - "docker"
-
-  # Test npm workspaces - monthly and grouped, not daily
-  - package-ecosystem: "npm"
-    directory: "/tests"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 1
-    labels:
-      - "dependencies"
-      - "javascript-tests"
-    groups:
-      test-dependencies:
-        patterns:
-          - "*"
-
-  - package-ecosystem: "npm"
-    directory: "/tests/api_tests_with_login"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 1
-    labels:
-      - "dependencies"
-      - "javascript-tests"
-    groups:
-      api-login-test-dependencies:
-        patterns:
-          - "*"
-
-  - package-ecosystem: "npm"
-    directory: "/tests/infrastructure_tests"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 1
-    labels:
-      - "dependencies"
-      - "javascript-tests"
-    groups:
-      infrastructure-test-dependencies:
-        patterns:
-          - "*"
-
-  - package-ecosystem: "npm"
-    directory: "/tests/puppeteer"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 1
-    labels:
-      - "dependencies"
-      - "javascript-tests"
-    groups:
-      puppeteer-test-dependencies:
-        patterns:
-          - "*"
-
-  - package-ecosystem: "npm"
-    directory: "/tests/ui_tests"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 1
-    labels:
-      - "dependencies"
-      - "javascript-tests"
-    groups:
-      ui-test-dependencies:
-        patterns:
-          - "*"

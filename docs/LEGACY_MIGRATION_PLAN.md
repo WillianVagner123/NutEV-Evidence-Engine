@@ -4,6 +4,14 @@ How the inherited `local_deep_research` (LDR) engine is progressively isolated
 and eventually removed from the main NutEV/NutMEV distribution — **without**
 breaking the `nutev` command at any step.
 
+> ✅ **Executed (delete option).** By maintainer decision, the inherited engine
+> (`src/local_deep_research/**`), the legacy test suite (`tests/**`), the legacy
+> examples, and the legacy frontend/Docker/tooling were **removed** from the
+> working tree. The code remains in Git history; provenance/attribution is
+> preserved (`LICENSE`, `NOTICE.md`). The `nutev` command and canonical
+> `nutev_tests/` are unaffected (the core never imported LDR). The steps below
+> are kept as the record of how this was sequenced.
+
 ## Guardrails
 
 - Do **not** move or delete legacy code until: dependencies are mapped, tests
@@ -58,8 +66,7 @@ later if size becomes a problem — and it is a history rewrite, out of scope he
 - The legacy engine remains reproducible via `pip install -e ".[legacy]"`.
 - Provenance/licensing preserved (`LICENSE`, `NOTICE.md`).
 
-## Do NOT do yet
+## Still out of scope
 
-- Delete `src/local_deep_research/**` or legacy `tests/` (still referenced by
-  packaging/tests until steps 5, 9).
-- Rewrite git history.
+- Rewrite git history / `git filter-repo` / force-push (the removed code stays in
+  history intentionally, preserving provenance).

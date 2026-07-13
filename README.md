@@ -81,15 +81,19 @@ O projeto organiza uma arquitetura científica local para apoiar a qualificaçã
 - Scientific Rigor Layer;
 - Human Review and Adjudication.
 
-## Runtime canônico e legado
+## Runtime canônico
 
-A arquitetura canônica para o NutEV/NutMEV está em:
+Toda a arquitetura do NutEV/NutMEV está em:
 
 ```text
 src/nutev
 ```
 
-O repositório evoluiu a partir de uma base histórica `local-deep-research`. Diretórios e imports legados não devem ser removidos de forma brusca enquanto ainda houver dependências ativas. Para novos módulos científicos NutEV/NutMEV, prefira `src/nutev`.
+O repositório evoluiu a partir de uma base histórica `local-deep-research`
+(Local Deep Research, MIT © LearningCircuit). Esse motor herdado **foi removido**
+da árvore do projeto; sua proveniência e atribuição são preservadas em
+[`NOTICE.md`](NOTICE.md) e no histórico Git. O núcleo `src/nutev` nunca dependeu
+dele.
 
 ## Instalação rápida
 
@@ -298,14 +302,16 @@ Ver [`docs/ROADMAP.md`](docs/ROADMAP.md). Primeira release pública organizada:
 ## Licença e proveniência
 
 - Licença: **MIT** (ver [`LICENSE`](LICENSE)).
-- O código herdado `local_deep_research` mantém o copyright original
-  **© 2025 LearningCircuit** — essa atribuição é preservada.
-- Proveniência, fronteira entre código herdado e código NutEV, e questões
-  jurídicas pendentes: [`NOTICE.md`](NOTICE.md).
+- O motor herdado `local_deep_research` foi **removido** da árvore, mas seu
+  copyright original **© 2025 LearningCircuit** permanece atribuído em
+  [`LICENSE`](LICENSE) — essa atribuição é preservada.
+- Proveniência e fronteira entre código herdado e código NutEV:
+  [`NOTICE.md`](NOTICE.md).
 
 ## NutEV/NutMEV robust search runtime
 
-The canonical runtime is `src/nutev`. The older `src/local_deep_research` package remains only as legacy/reference code and is not the main runtime.
+The canonical (and only) runtime is `src/nutev`. The inherited
+`local_deep_research` package has been removed from the tree.
 
 Scientific search does not depend on Google. PubMed, Europe PMC, OpenAlex, Crossref and official sources run through safe provider handling; provider failures are logged and the pipeline exports partial results instead of crashing. PubMed uses NCBI E-utilities with `usehistory=y`, `WebEnv`, `query_key`, paginated batches, retry/backoff and checkpoints under `07_logs/checkpoints/pubmed/`.
 

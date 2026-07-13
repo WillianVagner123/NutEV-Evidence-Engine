@@ -46,8 +46,17 @@ safe, easy to install and centered on NutEV/NutMEV.
   artifact uploads sanitized (no raw captures/PDFs/HTML/webhook payloads).
 
 ### Removed
-- Legacy `ldr`, `ldr-web`, `ldr-mcp` console scripts from the main install
-  (legacy engine remains available via the `legacy` extra).
+- **Inherited `local_deep_research` engine** (`src/local_deep_research/`, 768
+  files) and the **legacy test suite** (`tests/`, 1905 files) removed from the
+  tree (kept in Git history; provenance preserved in `LICENSE`/`NOTICE.md`).
+- Legacy examples, Docker/compose, cookiecutter, unraid templates,
+  `package.json`/`package-lock.json`, `README_old.md`, `bearer.yml`,
+  `.grype.yaml`, the web-frontend workflow, `constraints/`,
+  `community_benchmark_results/`, orphaned `.pre-commit-hooks/`, `changelog.d/`
+  and the stale `pdm.lock`.
+- The `legacy` extra and legacy packaging references (`[tool.setuptools]`
+  package-data, torch pdm source); dependabot npm/docker ecosystems.
+- Legacy `ldr`, `ldr-web`, `ldr-mcp` console scripts from the main install.
 - Superseded `.github/ISSUE_TEMPLATE/*.md` (replaced by issue forms).
 
 ### Known issues / pending
