@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use the NutEV Evidence Engine in research, please cite this software and the specific archived release used in your analysis."
+title: "NutEV Evidence Engine"
+abstract: "An open-source computational workflow for identifying, organizing, classifying, auditing, and translating evidence for lifestyle nutrition research with mandatory human review."
+type: software
+authors:
+  - family-names: "Schneider"
+    given-names: "Willian Vagner Dorneles"
+repository-code: "https://github.com/WillianVagner123/NUT-MEV_NEW"
+url: "https://github.com/WillianVagner123/NUT-MEV_NEW"
+license: MIT
+version: "0.1.0-prepublication"
+date-released: 2026-07-13
+keywords:
+  - lifestyle nutrition
+  - lifestyle medicine
+  - evidence synthesis
+  - scoping review
+  - dietary guidelines
+  - clinical guidelines
+  - nutrition informatics
+  - reproducible research
+preferred-citation:
+  type: software
+  title: "NutEV Evidence Engine"
+  authors:
+    - family-names: "Schneider"
+      given-names: "Willian Vagner Dorneles"
+  year: 2026
+  version: "0.1.0-prepublication"
+  publisher:
+    name: "GitHub"
+  repository-code: "https://github.com/WillianVagner123/NUT-MEV_NEW"
