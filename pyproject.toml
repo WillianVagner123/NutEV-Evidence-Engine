@@ -240,11 +240,24 @@ lxml = ">=6.0"
 # `pip install -e ".[dev]"` works for external contributors without pdm.
 
 [tool.pytest.ini_options]
+# Canonical test location is nutev_tests/ (the legacy tests/ tree is not part
+# of the canonical suite — see docs/LEGACY_MIGRATION_PLAN.md).
+testpaths = ["nutev_tests"]
 markers = [
-    "requires_llm: marks tests that require a real LLM (not fallback)",
-    "integration: marks integration tests",
-    "slow: marks slow tests",
-    "asyncio: marks async tests that use asyncio",
+    # Canonical NutEV test groups.
+    "unit: fast, isolated unit tests (default group)",
+    "contracts: schema/contract tests (artifact and metadata contracts)",
+    "integration_no_network: integration tests that must NOT touch the network",
+    "integration_network: integration tests that require network access",
+    "slow: slow tests",
+    "llm: tests that require a real LLM (paid/hosted) — excluded from default CI",
+    "dashboard: tests for the Streamlit dashboard",
+    "api: tests for the FastAPI platform",
+    "global_watch: tests for the Global Watch pipeline",
+    # Backwards-compatible aliases.
+    "requires_llm: (alias of llm) tests requiring a real LLM",
+    "integration: (broad) integration tests",
+    "asyncio: async tests that use asyncio",
 ]
 timeout = 60
 timeout_method = "thread"
