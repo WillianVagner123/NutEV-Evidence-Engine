@@ -64,6 +64,44 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "worksite food service guideline",
 ]
 
+SUSTAINABLE_HEALTHY_DIET_TERMS = [
+    "sustainable healthy diet",
+    "sustainable healthy diets",
+    "healthy sustainable diet",
+    "healthy sustainable diets",
+    "healthy and sustainable diet",
+    "healthy and sustainable diets",
+    "sustainable dietary pattern",
+    "sustainable dietary patterns",
+    "sustainable diet guideline",
+    "sustainable diet guidelines",
+    "sustainable diets guideline",
+    "sustainable diets guidelines",
+    "sustainable healthy diet guideline",
+    "planetary health diet guideline",
+    "Eat-Lancet diet",
+    "EAT Lancet diet",
+]
+
+SUSTAINABLE_HEALTHY_DIET_BONUS_TERMS = [
+    ("sustainable healthy diet", 14),
+    ("sustainable healthy diets", 14),
+    ("healthy sustainable diet", 14),
+    ("healthy sustainable diets", 14),
+    ("healthy and sustainable diet", 14),
+    ("healthy and sustainable diets", 14),
+    ("sustainable dietary pattern", 12),
+    ("sustainable dietary patterns", 12),
+    ("sustainable diet guideline", 18),
+    ("sustainable diet guidelines", 18),
+    ("sustainable diets guideline", 18),
+    ("sustainable diets guidelines", 18),
+    ("sustainable healthy diet guideline", 20),
+    ("planetary health diet guideline", 18),
+    ("eat-lancet diet", 16),
+    ("eat lancet diet", 16),
+]
+
 SOCIAL_PRESCRIBING_NUTRITION_TERMS = [
     "nutrition social prescribing",
     "food social prescribing",
@@ -208,6 +246,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *SUSTAINABLE_HEALTHY_DIET_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +256,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *SUSTAINABLE_HEALTHY_DIET_TERMS,
             ]
         )
     )
@@ -232,6 +272,10 @@ def apply_watch_taxonomy_extensions() -> None:
         "personalized_nutrition",
         1,
         PERSONALIZED_NUTRITION_IMPLEMENTATION_TERMS,
+    )
+    _extend_category_terms(
+        "diet_patterns",
+        SUSTAINABLE_HEALTHY_DIET_TERMS,
     )
     _extend_category_terms(
         "food_literacy_culinary_commensality",
@@ -258,6 +302,11 @@ def apply_watch_taxonomy_extensions() -> None:
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
+        "diet_patterns",
+        2,
+        SUSTAINABLE_HEALTHY_DIET_TERMS,
+    )
+    _extend_quick_seed_group(
         "lifestyle_medicine",
         1,
         SOCIAL_PRESCRIBING_NUTRITION_TERMS,
@@ -276,6 +325,10 @@ def apply_watch_taxonomy_extensions() -> None:
         "obesity_cardiometabolic",
         0,
         OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+    )
+    _extend_query_context(
+        "diet_patterns",
+        SUSTAINABLE_HEALTHY_DIET_TERMS,
     )
     _extend_query_context(
         "lifestyle_medicine",
