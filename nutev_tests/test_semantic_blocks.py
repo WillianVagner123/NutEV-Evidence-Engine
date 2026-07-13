@@ -82,3 +82,18 @@ def test_group_visit_care_delivery_is_prioritized_for_intervention_workstream() 
     blocks = prioritized_semantic_blocks("busca2b")
 
     assert {"name": "group_visit_care_delivery", "priority": 5} in blocks
+
+
+def test_busca2b_semantic_terms_include_body_composition_nutrition() -> None:
+    terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+
+    assert "sarcopenic obesity" in terms
+    assert "lean mass preservation" in terms
+    assert "dietary protein during weight loss" in terms
+    assert "high-protein diet for weight loss" in terms
+
+
+def test_body_composition_nutrition_is_prioritized_for_intervention_workstream() -> None:
+    blocks = prioritized_semantic_blocks("busca2b")
+
+    assert {"name": "body_composition_nutrition", "priority": 5} in blocks
