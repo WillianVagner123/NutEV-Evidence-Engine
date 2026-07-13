@@ -46,7 +46,7 @@ from nutev.querypacks.provider_queries import (
     build_provider_querypack,
     write_provider_querypack_audit,
 )
-from nutev.search.official_sources import manifest_sources
+from nutev.search.official_sources import manifest_sources, load_official_manifest
 from nutev.search.provider_orchestrator import search_provider
 from nutev.settings import NutevSettings, load_json
 
@@ -284,21 +284,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
     taxonomy = load_json(settings.config_root / "keyword_taxonomy.json")
     scoring = load_json(settings.config_root / "scoring_rules.json")
-    sources = load_json(settings.config_root / "official_sources_manifest.json")
-    # Merge the global per-country/region/institution official-source manifest.
-    _countries_path = settings.config_root / "official_sources_countries.json"
-    if _countries_path.exists():
-        try:
-            _countries = load_json(_countries_path)
-            if isinstance(sources, dict) and isinstance(_countries, dict) and isinstance(
-                _countries.get("workstreams"), dict
-            ):
-                _sw = sources.setdefault("workstreams", {})
-                for _ws_name, _extra in _countries["workstreams"].items():
-                    if isinstance(_extra, list) and isinstance(_sw.get(_ws_name, []), list):
-                        _sw[_ws_name] = list(_sw.get(_ws_name, [])) + _extra
-        except Exception as _exc:  # pragma: no cover - defensive
-            logger.warning("Falha ao mesclar official_sources_countries.json: %s", _exc)
+    # Base official-source manifest merged with the global per-country/region
+    # manifest (all countries) — see docs/PILOT_AUDIT_RESPONSE.md.
+    sources = load_official_manifest(settings.config_root, include_countries=True)
     ontology = load_json(settings.config_root / "nutev_ontology.json")
     evidence_lenses = load_json(settings.config_root / "evidence_lenses.json")
     source_registry = load_json(settings.config_root / "source_registry.json")

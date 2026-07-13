@@ -755,8 +755,13 @@ def run_global_watch(
 
     if official_crawl and manifest_sources is not None:
         try:
-            manifest = load_json(
-                settings.config_root / "official_sources_manifest.json"
+            # With --country-discovery, expand official sources to the global
+            # per-country/region manifest (all countries); otherwise use the
+            # base manifest only.
+            from nutev.search.official_sources import load_official_manifest
+
+            manifest = load_official_manifest(
+                settings.config_root, include_countries=bool(country_discovery)
             )
             for ws in ["busca1", "busca2a", "busca2b", "a3"]:
                 for record in manifest_sources(manifest, ws):
