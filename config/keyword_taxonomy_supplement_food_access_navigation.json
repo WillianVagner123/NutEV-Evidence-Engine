@@ -1,0 +1,137 @@
+{
+  "version_note": "Focused expansion for food-as-medicine access, food pharmacy/farmacy, grocery prescription, and navigation/referral terms. Loaded after keyword_taxonomy.json and merged additively by settings.load_json.",
+  "global": {
+    "implementation_behavior": {
+      "food_as_medicine_access": [
+        "food pharmacy",
+        "food pharmacies",
+        "food pharmacy intervention",
+        "food pharmacy implementation",
+        "food pharmacy evaluation",
+        "food farmacy",
+        "food farmacies",
+        "food farmacy intervention",
+        "food farmacy implementation",
+        "food farmacy evaluation",
+        "grocery prescription",
+        "grocery prescriptions",
+        "grocery prescription program",
+        "grocery prescription programme",
+        "healthy grocery prescription",
+        "medically tailored nutrition",
+        "medically tailored food referral",
+        "nutrition security referral",
+        "nutrition insecurity screening",
+        "community resource referral",
+        "community resource referrals",
+        "community referral",
+        "community referrals",
+        "care navigation",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "food pharmacy intervention",
+      "food pharmacy implementation",
+      "food pharmacy evaluation",
+      "food farmacy intervention",
+      "food farmacy implementation",
+      "food farmacy evaluation",
+      "grocery prescription program",
+      "grocery prescription programme",
+      "healthy grocery prescription",
+      "medically tailored nutrition",
+      "medically tailored food referral",
+      "nutrition security referral",
+      "nutrition insecurity screening",
+      "community resource referral",
+      "care navigation",
+      "food is medicine referral",
+      "produce prescription referral"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "food pharmacy",
+        "food pharmacy intervention",
+        "food pharmacy implementation",
+        "food pharmacy evaluation",
+        "food farmacy",
+        "food farmacy intervention",
+        "food farmacy implementation",
+        "food farmacy evaluation",
+        "grocery prescription",
+        "grocery prescription program",
+        "grocery prescription programme",
+        "healthy grocery prescription",
+        "medically tailored nutrition",
+        "medically tailored food referral",
+        "nutrition security referral",
+        "nutrition insecurity screening",
+        "community resource referral",
+        "care navigation",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral"
+      ],
+      "web_query_hints": [
+        "food pharmacy implementation report",
+        "food pharmacy evaluation report",
+        "food farmacy implementation report",
+        "food farmacy evaluation report",
+        "grocery prescription program evaluation",
+        "healthy grocery prescription program",
+        "medically tailored nutrition program report",
+        "food is medicine referral program",
+        "produce prescription referral program",
+        "nutrition security referral program",
+        "community resource referral food insecurity",
+        "care navigation food insecurity nutrition"
+      ],
+      "document_terms": [
+        "referral program",
+        "navigation program",
+        "implementation report",
+        "evaluation report",
+        "program evaluation"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "food pharmacy intervention",
+        "food farmacy intervention",
+        "grocery prescription intervention",
+        "healthy grocery prescription",
+        "medically tailored nutrition",
+        "food is medicine referral",
+        "produce prescription referral",
+        "nutrition security referral",
+        "community resource referral",
+        "care navigation"
+      ],
+      "web_query_hints": [
+        "food pharmacy cardiometabolic trial",
+        "food farmacy diabetes intervention",
+        "grocery prescription cardiometabolic trial",
+        "healthy grocery prescription diabetes",
+        "medically tailored nutrition cardiometabolic trial",
+        "food is medicine referral implementation trial",
+        "produce prescription referral cardiometabolic",
+        "nutrition security referral intervention trial",
+        "care navigation food insecurity diabetes"
+      ],
+      "document_terms": [
+        "referral intervention",
+        "navigation intervention",
+        "implementation trial",
+        "program evaluation",
+        "process evaluation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "version_note": "Focused NutMEV supplement for clinical food-access programs and food-as-medicine implementation terms. Loaded after keyword_taxonomy.json; appends terms without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "food_as_medicine_access": [
+        "fresh food pharmacy program",
+        "fresh food pharmacy intervention",
+        "fresh food pharmacy evaluation",
+        "grocery prescription program",
+        "grocery prescription intervention",
+        "grocery prescription evaluation",
+        "medically tailored groceries program",
+        "medically tailored groceries intervention",
+        "medically tailored groceries evaluation",
+        "medically tailored food box",
+        "medically tailored food box program",
+        "medically tailored food box evaluation",
+        "clinic-based food pantry",
+        "clinic based food pantry",
+        "clinic-based food pantry program",
+        "clinic based food pantry program",
+        "clinical-community food referral",
+        "clinical community food referral",
+        "clinical-community food referral program",
+        "clinical community food referral program",
+        "farm-to-clinic produce prescription",
+        "farm to clinic produce prescription",
+        "farm-to-clinic program",
+        "farm to clinic program"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "fresh food pharmacy evaluation",
+      "fresh food pharmacy intervention",
+      "grocery prescription evaluation",
+      "grocery prescription intervention",
+      "medically tailored groceries intervention",
+      "medically tailored food box evaluation",
+      "clinic-based food pantry program",
+      "clinic based food pantry program",
+      "clinical-community food referral program",
+      "clinical community food referral program",
+      "farm-to-clinic produce prescription",
+      "farm to clinic produce prescription"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "fresh food pharmacy program",
+        "grocery prescription program",
+        "medically tailored groceries program",
+        "medically tailored food box program",
+        "clinic-based food pantry program",
+        "clinic based food pantry program",
+        "clinical-community food referral program",
+        "clinical community food referral program",
+        "farm-to-clinic produce prescription",
+        "farm to clinic produce prescription"
+      ],
+      "web_query_hints": [
+        "fresh food pharmacy implementation report",
+        "fresh food pharmacy evaluation report",
+        "grocery prescription implementation report",
+        "grocery prescription evaluation report",
+        "medically tailored groceries program evaluation",
+        "medically tailored food box program evaluation",
+        "clinic-based food pantry implementation report",
+        "clinical-community food referral implementation report",
+        "farm-to-clinic produce prescription report"
+      ],
+      "document_terms": [
+        "implementation report",
+        "evaluation report",
+        "program evaluation",
+        "technical report",
+        "policy brief"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "fresh food pharmacy intervention",
+        "fresh food pharmacy evaluation",
+        "grocery prescription intervention",
+        "grocery prescription evaluation",
+        "medically tailored groceries intervention",
+        "medically tailored food box program",
+        "clinic-based food pantry program",
+        "clinic based food pantry program",
+        "clinical-community food referral program",
+        "clinical community food referral program",
+        "farm-to-clinic produce prescription",
+        "farm to clinic produce prescription"
+      ],
+      "web_query_hints": [
+        "fresh food pharmacy cardiometabolic trial",
+        "fresh food pharmacy diabetes evaluation",
+        "grocery prescription cardiometabolic trial",
+        "grocery prescription obesity intervention",
+        "medically tailored groceries cardiometabolic trial",
+        "medically tailored food box diabetes evaluation",
+        "clinic-based food pantry obesity intervention",
+        "clinical-community food referral cardiometabolic evaluation",
+        "farm-to-clinic produce prescription diabetes trial"
+      ],
+      "document_terms": [
+        "implementation trial",
+        "program evaluation",
+        "process evaluation",
+        "pragmatic trial",
+        "systematic review",
+        "policy evaluation"
+      ]
+    }
+  }
+}
