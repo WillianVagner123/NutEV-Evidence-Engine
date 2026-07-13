@@ -15,6 +15,58 @@ def _read_text_safe(path: Path) -> str:
         return ""
 
 
+# Anti-bot / interstitial / redirect pages that publishers return with HTTP 200
+# but which contain no real document. These must NOT be counted as extracted text.
+_JUNK_MARKERS = (
+    "checking your browser",
+    "just a moment",
+    "enable javascript",
+    "please enable javascript",
+    "recaptcha",
+    "captcha",
+    "verify you are human",
+    "are you a robot",
+    "attention required",
+    "cloudflare",
+    "access denied",
+    "request has been blocked",
+    "ddos protection",
+    "security check to access",
+    "why have i been blocked",
+)
+
+# Minimum characters below which an HTML/text "document" is treated as too thin
+# to be a real full text (metadata/landing/redirect stubs).
+MIN_MEANINGFUL_CHARS = 400
+
+
+def looks_like_junk_text(text: str) -> bool:
+    """Return True when extracted text is an anti-bot/redirect page or too thin
+    to be a real document (e.g. 'Redirecting', 'Checking your browser')."""
+    t = (text or "").strip()
+    low = t.lower()
+    if not t:
+        return True
+    # Bare redirect/loading stubs.
+    if len(t) < 200 and ("redirect" in low or low in {"redirecting", "loading", "loading..."}):
+        return True
+    # Interstitial/anti-bot pages: a known marker on a short page.
+    if len(t) < 3000 and any(marker in low for marker in _JUNK_MARKERS):
+        return True
+    return False
+
+
+# Extraction statuses that are only "successful" if the text is real content.
+_QUALITY_CHECKED_STATUSES = {"ok", "ok_ocr", "fake_pdf_html", "fake_pdf_text"}
+
+
+def _raw_contains_junk_markers(path: Path) -> bool:
+    """Anti-bot/interstitial pages often carry the marker in raw HTML even when
+    readability extracts little visible text."""
+    raw = _read_text_safe(path)[:20000].lower()
+    return any(marker in raw for marker in _JUNK_MARKERS)
+
+
 def _extract_html_file(path: Path) -> str:
     raw = _read_text_safe(path)
     payload = extract_html_text(raw)
@@ -94,6 +146,20 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
     else:
         text = _read_text_safe(path)
         extraction_status = "ok" if text else "empty"
+
+    # Quality gate: reject anti-bot/redirect/interstitial pages and content that
+    # is too thin to be a real document. These previously passed as "ok" and
+    # polluted the corpus and the extracted-text counts.
+    stripped_len = len((text or "").strip())
+    is_html_like = ext in {"html", "htm"} or extraction_status == "fake_pdf_html"
+    if extraction_status in _QUALITY_CHECKED_STATUSES and looks_like_junk_text(text):
+        extraction_status = "junk_or_blocked"
+    elif is_html_like and stripped_len < MIN_MEANINGFUL_CHARS and _raw_contains_junk_markers(path):
+        # Junk HTML whose visible text extracted thin/empty but whose raw markup
+        # is clearly an anti-bot/redirect page.
+        extraction_status = "junk_or_blocked"
+    elif extraction_status in {"ok", "fake_pdf_html", "fake_pdf_text"} and stripped_len < MIN_MEANINGFUL_CHARS:
+        extraction_status = "too_short"
 
     out_dir.mkdir(parents=True, exist_ok=True)
     ocr_dir.mkdir(parents=True, exist_ok=True)

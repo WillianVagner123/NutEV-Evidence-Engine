@@ -471,7 +471,16 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             r["ocr_status"] = "used" if e.get("used_ocr") else "not_used"
             r["extraction_status"] = e.get("extraction_status", "missing")
             r["failure_reason"] = f.get("reason", "")
-            if e.get("text_path"):
+            # Only feed genuinely-extracted text downstream. Junk/blocked/too-thin
+            # pages must NOT reach the classifier, dietary-pattern detection or
+            # claim extractor (they previously polluted classification and
+            # produced spurious "supported" claims).
+            if e.get("text_path") and e.get("extraction_status") in {
+                "ok",
+                "ok_ocr",
+                "fake_pdf_html",
+                "fake_pdf_text",
+            }:
                 r["extracted_text"] = Path(e["text_path"]).read_text(
                     encoding="utf-8",
                     errors="ignore",
@@ -608,15 +617,33 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         },
     )
 
+    # Real extracted-text accounting from the extraction manifest. Anti-bot /
+    # redirect / too-thin pages are downgraded by the extractor and must NOT be
+    # counted as extracted text (they previously inflated the corpus silently).
+    _success_extraction = {"ok", "ok_ocr", "fake_pdf_html", "fake_pdf_text"}
+    extracted_texts = sum(
+        1 for e in extraction_manifest if e.get("extraction_status") in _success_extraction
+    )
+    extraction_junk_or_blocked = sum(
+        1
+        for e in extraction_manifest
+        if e.get("extraction_status") in {"junk_or_blocked", "too_short"}
+    )
+
     summary = {
         "workstreams": workstreams,
         "records": len(all_rows),
         "downloads_ok": total_downloads,
         "downloads_failed": total_failed,
         "ocr_docs": total_ocr,
+        "extracted_texts": extracted_texts,
+        "extraction_junk_or_blocked": extraction_junk_or_blocked,
         "curated_unique_documents": curation_summary["unique_documents"],
         "evidence_claims_total": len(claims),
+        # "supported" here means quote-backed (verbatim quote found in extracted
+        # text) — NOT scientifically validated. It still requires human review.
         "evidence_claims_supported": sum(1 for c in claims if c.claim_status == "supported"),
+        "evidence_claims_inference_only": sum(1 for c in claims if c.claim_status == "inference_only"),
         "evidence_claims_needs_review": sum(1 for c in claims if c.needs_human_review),
         "recommendation_candidates_total": len(recommendations),
         "recommendation_candidates_ready_review": sum(1 for r in recommendations if r.recommendation_status == "ready_for_human_review"),
