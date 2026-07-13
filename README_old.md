@@ -1,3 +1,13 @@
+<!-- nutev-legacy-banner -->
+> ⚠️ **LEGACY — previous main README (Local Deep Research).** This is the
+> historical README of the inherited `local_deep_research` project, kept for
+> reference only. It is **superseded** by the current [README](README.md).
+> The inherited engine is not the canonical NutEV/NutMEV core (`src/nutev`) and
+> requires the optional `legacy` extra. Provenance: [NOTICE.md](NOTICE.md);
+> removal plan: [LEGACY_MIGRATION_PLAN.md](docs/LEGACY_MIGRATION_PLAN.md).
+
+---
+
 # Local Deep Research
 
 <div align="center">

@@ -1,3 +1,12 @@
+<!-- nutev-legacy-banner -->
+> ⚠️ **LEGACY / inherited (Local Deep Research).** This document describes the
+> inherited `local_deep_research` engine or its examples, **not** the canonical
+> NutEV/NutMEV core (`src/nutev`). Kept for reference; requires the optional
+> `legacy` extra (`pip install -e ".[legacy]"`). Current project: [README](../../../../README.md) ·
+> removal plan: [LEGACY_MIGRATION_PLAN.md](../../../../docs/LEGACY_MIGRATION_PLAN.md).
+
+---
+
 # Constraint Checking System
 
 This module provides an inheritance-based constraint checking system for validating candidates against constraints in the Local Deep Research framework.

@@ -1,3 +1,12 @@
+<!-- nutev-legacy-banner -->
+> ⚠️ **LEGACY / inherited (Local Deep Research).** This document describes the
+> inherited `local_deep_research` engine or its examples, **not** the canonical
+> NutEV/NutMEV core (`src/nutev`). Kept for reference; requires the optional
+> `legacy` extra (`pip install -e ".[legacy]"`). Current project: [README](../../../../README.md) ·
+> removal plan: [LEGACY_MIGRATION_PLAN.md](../../../../docs/LEGACY_MIGRATION_PLAN.md).
+
+---
+
 # Advanced HTTP API Examples
 
 This folder contains more comprehensive HTTP API examples for learning advanced features and production use cases.

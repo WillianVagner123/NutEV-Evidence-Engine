@@ -1,3 +1,12 @@
+<!-- nutev-legacy-banner -->
+> ⚠️ **LEGACY / inherited (Local Deep Research).** This document describes the
+> inherited `local_deep_research` engine or its examples, **not** the canonical
+> NutEV/NutMEV core (`src/nutev`). Kept for reference; requires the optional
+> `legacy` extra (`pip install -e ".[legacy]"`). Current project: [README](../../../../README.md) ·
+> removal plan: [LEGACY_MIGRATION_PLAN.md](../../../../docs/LEGACY_MIGRATION_PLAN.md).
+
+---
+
 # Candidate Exploration System
 
 This module provides an inheritance-based candidate exploration system for discovering and collecting candidates in the Local Deep Research framework.
