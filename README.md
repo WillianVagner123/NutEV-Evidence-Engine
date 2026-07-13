@@ -4,6 +4,46 @@ Pipeline computacional reprodutível para identificação, classificação, audi
 
 > **Regra metodológica central:** uma `RecommendationCandidate` não é recomendação final do protocolo. Toda candidata exige revisão humana, adjudicação metodológica e vínculo documental antes de qualquer uso como recomendação NutEV/NutMEV.
 
+## Uso público para pesquisa
+
+Este repositório é público e pode ser utilizado por estudantes, pesquisadores, nutricionistas e equipes acadêmicas para apoiar pesquisas relacionadas à Nutrição do Estilo de Vida, qualidade da dieta, guias alimentares, diretrizes clínicas, padrões alimentares, competências alimentares, adesão e implementação.
+
+Usos previstos:
+
+- construir e documentar estratégias de busca;
+- localizar metadados e documentos oficiais de acesso público;
+- organizar resultados de diferentes fontes;
+- deduplicar e classificar registros;
+- extrair trechos e claims para conferência humana;
+- produzir matrizes de evidências e filas de revisão;
+- apoiar revisões de escopo, análises documentais e projetos metodológicos.
+
+O sistema não fornece diagnóstico, prescrição individual, decisão clínica automática ou recomendação final. Resultados devem ser conferidos nas fontes originais e avaliados por revisores humanos.
+
+### Uso responsável
+
+- respeite licenças, direitos autorais e termos de uso das fontes;
+- não publique PDFs protegidos ou textos integrais sem autorização;
+- prefira compartilhar metadados, URLs oficiais, DOI e trechos estritamente necessários à auditoria;
+- não envie dados pessoais, prontuários ou informações identificáveis;
+- nunca inclua chaves de API, tokens ou credenciais em commits;
+- informe a versão do código, a data da execução, as fontes consultadas e os critérios de seleção;
+- descreva qualquer uso de modelos de linguagem e mantenha revisão humana documentada.
+
+### Como contribuir
+
+Contribuições podem ser propostas por issue ou pull request. São especialmente úteis:
+
+- correções de termos e traduções da taxonomia;
+- inclusão de fontes oficiais verificáveis;
+- testes reprodutíveis;
+- melhorias de documentação;
+- correções de bugs;
+- novos exportadores que preservem rastreabilidade;
+- exemplos públicos sem material protegido e sem dados pessoais.
+
+Toda contribuição científica deve indicar a justificativa metodológica, a fonte e o impacto esperado. Alterações não devem transformar recomendações candidatas em recomendações finais automáticas.
+
 ## Visão geral
 
 O projeto organiza uma arquitetura científica local para apoiar a qualificação de doutorado e o desenvolvimento do Protocolo Dietético NutEV/NutMEV. Ele inclui:
@@ -157,6 +197,7 @@ Nenhum desses estados equivale a recomendação final.
 
 ## Documentação
 
+- [`docs/AUDITORIA_CRUZADA_DRIVE_GITHUB_ARTIGO1.md`](docs/AUDITORIA_CRUZADA_DRIVE_GITHUB_ARTIGO1.md)
 - [`docs/RUN_LOCAL.md`](docs/RUN_LOCAL.md)
 - [`docs/VALIDATION_REPORT.md`](docs/VALIDATION_REPORT.md)
 - [`docs/NUTEV_AUDIT_ENGINE.md`](docs/NUTEV_AUDIT_ENGINE.md)
@@ -171,6 +212,7 @@ Nenhum desses estados equivale a recomendação final.
 ## Revisão humana
 
 As decisões humanas são persistidas em `project_output/07_logs/human_review_decisions.csv` quando o fluxo de revisão está habilitado. Nenhuma recomendação deve ser considerada final sem revisão humana explícita, lastro documental e adjudicação metodológica.
+
 ## NutEV/NutMEV robust search runtime
 
 The canonical runtime is `src/nutev`. The older `src/local_deep_research` package remains only as legacy/reference code and is not the main runtime.
