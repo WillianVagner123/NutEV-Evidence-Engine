@@ -15,11 +15,19 @@ permissions:
 
 jobs:
   prepare:
+    # For the `/nutev-tests` comment trigger, only run for authorized authors
+    # (OWNER / MEMBER / COLLABORATOR). This prevents arbitrary external comments
+    # from consuming Actions or executing code from forks.
     if: |
       github.event_name != 'issue_comment' ||
       (
         github.event.issue.pull_request != null &&
-        contains(github.event.comment.body, '/nutev-tests')
+        contains(github.event.comment.body, '/nutev-tests') &&
+        (
+          github.event.comment.author_association == 'OWNER' ||
+          github.event.comment.author_association == 'MEMBER' ||
+          github.event.comment.author_association == 'COLLABORATOR'
+        )
       )
     runs-on: ubuntu-latest
     outputs:

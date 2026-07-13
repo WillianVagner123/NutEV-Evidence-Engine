@@ -111,11 +111,16 @@ jobs:
             echo "NUTEV_GLOBAL_WATCH_LATEST.md não encontrado"
           fi
 
-      - name: Upload full project_output artifact
+      - name: Build sanitized artifact
+        if: always()
+        run: bash .github/scripts/build-safe-artifact.sh project_output artifact_safe
+
+      - name: Upload sanitized artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: nutev-full-once-project-output
-          path: project_output
-          retention-days: 14
+          name: nutev-full-once-safe
+          path: artifact_safe
+          retention-days: 5
+          if-no-files-found: warn
 
