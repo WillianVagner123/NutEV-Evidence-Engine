@@ -119,9 +119,12 @@ platform = [
 "Validation Report" = "https://github.com/WillianVagner123/NUT-MEV_NEW/blob/main/docs/VALIDATION_REPORT.md"
 
 [project.scripts]
-ldr = "local_deep_research.main:main"
-ldr-web = "local_deep_research.web.app:main"
-ldr-mcp = "local_deep_research.mcp:run_server"
+# Canonical NutEV/NutMEV entrypoint — the only console script installed by the
+# main distribution. Legacy `ldr`, `ldr-web` and `ldr-mcp` scripts have been
+# removed from the main install (they belonged to the inherited
+# local_deep_research package). When the optional `legacy` extra is installed,
+# the legacy engine remains importable and runnable via
+# `python -m local_deep_research...`. See docs/LEGACY_MIGRATION_PLAN.md.
 nutev = "nutev.cli:main"
 
 # Note: build backend is pdm.backend (see [build-system]). These
@@ -140,7 +143,9 @@ include-package-data = true
 
 [tool.pdm]
 distribution = true
-version = { source = "file", path = "src/local_deep_research/__version__.py" }
+# Version is sourced from the canonical NutEV package, NOT from the legacy
+# local_deep_research package. This is the identity decoupling of Etapa 2.
+version = { source = "file", path = "src/nutev/__version__.py" }
 
 [[tool.pdm.source]]
 url = "https://download.pytorch.org/whl/cpu"
