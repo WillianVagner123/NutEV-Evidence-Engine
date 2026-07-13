@@ -126,7 +126,8 @@ docs/
 nutev_tests/
 ```
 
-Legacy areas may remain for compatibility, but new doctorate work should not depend on `src/local_deep_research/` unless explicitly justified.
+The inherited `src/local_deep_research/` engine has been removed (see `NOTICE.md`
+and `docs/LEGACY_MIGRATION_PLAN.md`). All work targets `src/nutev/`.
 
 ## Documentation
 

@@ -64,11 +64,12 @@ Pastas esperadas:
 - `07_logs/`: logs, eventos, snapshots e resumo final;
 - `10_curated/`: metadados curados e documentos únicos.
 
-## Legacy area
+## Legacy area (removed)
 
-- `src/local_deep_research/` e documentos/workflows associados permanecem no repositório por compatibilidade.
-- Não remover diretórios legados sem checar imports ativos.
-- Novos módulos de pesquisa NutEV/NutMEV devem ser criados em `src/nutev/`.
+- O motor herdado `src/local_deep_research/`, os testes legados `tests/` e a
+  infraestrutura antiga (Docker/frontend) foram **removidos** da árvore; ver
+  `NOTICE.md` e `docs/LEGACY_MIGRATION_PLAN.md`. Permanecem apenas no histórico Git.
+- Todo módulo NutEV/NutMEV vive em `src/nutev/`.
 
 ## Run demo
 
@@ -91,4 +92,5 @@ nutev --project-root ./project_output_pilot --workstreams busca1 busca2a busca2b
 
 - `src/nutev/`: canonical NutEV/NutMEV runtime, including CLI, pipelines, provider orchestration, checkpoints, exports and Global Watch.
 - `src/nutev/search/`: robust provider layer for PubMed, Europe PMC, OpenAlex, Crossref, optional Google/SerpAPI stubs, provider orchestration and checkpoints.
-- `src/local_deep_research/`: legacy/reference implementation retained for comparison only; do not switch the runtime back to this package.
+
+The inherited `src/local_deep_research/` package was removed (see `NOTICE.md`).
