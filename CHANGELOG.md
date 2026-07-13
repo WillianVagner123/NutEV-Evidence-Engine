@@ -65,5 +65,5 @@ safe, easy to install and centered on NutEV/NutMEV.
 - `.gitleaksignore` (57 KB) still needs manual re-triage.
 - `pdm.lock` regeneration after the dependency split (pip installs unaffected).
 
-[Unreleased]: https://github.com/WillianVagner123/NUT-MEV_NEW/compare/v0.1.0-alpha...HEAD
-[0.1.0-alpha]: https://github.com/WillianVagner123/NUT-MEV_NEW/releases/tag/v0.1.0-alpha
+[Unreleased]: https://github.com/WillianVagner123/NutEV-Evidence-Engine/compare/v0.1.0-alpha...HEAD
+[0.1.0-alpha]: https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v0.1.0-alpha

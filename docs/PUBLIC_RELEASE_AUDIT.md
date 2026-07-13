@@ -13,7 +13,7 @@
 ## 1. Summarized repository tree
 
 ```
-NUT-MEV_NEW/
+NutEV-Evidence-Engine/
 ├── src/
 │   ├── nutev/                  # CANONICAL core (analysis, api, audit, cli, demo,
 │   │                           #   download, engine, export, extract, global_watch,

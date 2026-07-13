@@ -12,8 +12,8 @@ abstract: >-
 type: software
 version: 0.1.0-alpha
 license: MIT
-repository-code: "https://github.com/WillianVagner123/NUT-MEV_NEW"
-url: "https://github.com/WillianVagner123/NUT-MEV_NEW"
+repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
 keywords:
   - lifestyle nutrition
   - evidence synthesis

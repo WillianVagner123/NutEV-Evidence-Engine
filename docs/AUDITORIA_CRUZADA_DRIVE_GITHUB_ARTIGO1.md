@@ -1,7 +1,7 @@
 # Auditoria cruzada: Google Drive × GitHub — Artigo 1 NutEV
 
 **Data:** 13 de julho de 2026  
-**Objetivo:** verificar a coerência entre as decisões de orientação, a tese, o protocolo do Artigo 1 e a implementação computacional do repositório `NUT-MEV_NEW`.
+**Objetivo:** verificar a coerência entre as decisões de orientação, a tese, o protocolo do Artigo 1 e a implementação computacional do repositório `NutEV-Evidence-Engine`.
 
 ## 1. Materiais auditados
 

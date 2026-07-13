@@ -121,9 +121,9 @@ all = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/WillianVagner123/NUT-MEV_NEW"
-"Bug Tracker" = "https://github.com/WillianVagner123/NUT-MEV_NEW/issues"
-"Validation Report" = "https://github.com/WillianVagner123/NUT-MEV_NEW/blob/main/docs/VALIDATION_REPORT.md"
+"Homepage" = "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+"Bug Tracker" = "https://github.com/WillianVagner123/NutEV-Evidence-Engine/issues"
+"Validation Report" = "https://github.com/WillianVagner123/NutEV-Evidence-Engine/blob/main/docs/VALIDATION_REPORT.md"
 
 [project.scripts]
 # Canonical NutEV/NutMEV entrypoint — the only console script. The inherited

@@ -100,8 +100,8 @@ dele.
 ### Windows PowerShell
 
 ```powershell
-git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
-cd NUT-MEV_NEW
+git clone https://github.com/WillianVagner123/NutEV-Evidence-Engine.git
+cd NutEV-Evidence-Engine
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -111,8 +111,8 @@ python -m pip install -e ".[dashboard,platform]"
 ### macOS/Linux
 
 ```bash
-git clone https://github.com/WillianVagner123/NUT-MEV_NEW.git
-cd NUT-MEV_NEW
+git clone https://github.com/WillianVagner123/NutEV-Evidence-Engine.git
+cd NutEV-Evidence-Engine
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip

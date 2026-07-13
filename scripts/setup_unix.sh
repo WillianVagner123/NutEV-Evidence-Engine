@@ -6,7 +6,7 @@ step() {
 }
 
 if [ ! -f "pyproject.toml" ]; then
-  echo "Execute este script dentro da pasta raiz do repositorio NUT-MEV_NEW." >&2
+  echo "Execute este script dentro da pasta raiz do repositorio NutEV-Evidence-Engine." >&2
   exit 1
 fi
 
