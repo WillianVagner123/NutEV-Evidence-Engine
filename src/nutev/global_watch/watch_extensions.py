@@ -160,9 +160,9 @@ CKM_NUTRITION_TERMS = [
     "cardio-kidney-metabolic syndrome",
     "cardio kidney metabolic syndrome",
     "cardiorenal metabolic syndrome",
-    "CKM nutrition",
-    "CKM risk",
-    "CKM health",
+    "ckm nutrition",
+    "ckm risk",
+    "ckm health",
 ]
 
 CKM_BONUS_TERMS = [
@@ -170,7 +170,7 @@ CKM_BONUS_TERMS = [
     ("cardiovascular kidney metabolic nutrition", 20),
     ("cardio-kidney-metabolic nutrition", 18),
     ("cardio kidney metabolic nutrition", 18),
-    ("CKM nutrition", 18),
+    ("ckm nutrition", 18),
     ("cardiovascular-kidney-metabolic risk", 16),
     ("cardiovascular kidney metabolic risk", 16),
     ("cardiovascular-kidney-metabolic syndrome", 16),
