@@ -63,7 +63,12 @@ safe, easy to install and centered on NutEV/NutMEV.
 - Two pre-existing scoring-threshold test failures in
   `nutev_tests/test_global_watch_query_builder.py` (unrelated to packaging).
 - `.gitleaksignore` (57 KB) still needs manual re-triage.
-- `pdm.lock` regeneration after the dependency split (pip installs unaffected).
+- `pdm.lock` was removed; regenerate if pinned installs are needed (pip installs
+  unaffected).
+- The wheel does not bundle `config/`; full pipeline runs need the repo checkout
+  (`git clone` + `pip install -e .`). Packaging `config/` is a tracked follow-up.
+- `dependency-review` CI requires the repository's Dependency Graph to be enabled
+  (repo setting); the workflow is non-blocking until then.
 
 [Unreleased]: https://github.com/WillianVagner123/NutEV-Evidence-Engine/compare/v0.1.0-alpha...HEAD
 [0.1.0-alpha]: https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v0.1.0-alpha

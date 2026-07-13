@@ -3,6 +3,34 @@
 Prepare the first organized public release. **Do not publish automatically** —
 these are the commands and gates; a human performs the tag/publish.
 
+## Recorded validation (pre-merge)
+
+Results recorded from the pre-merge validation of this branch:
+
+- [x] **Build:** `python -m build` → `nutev_nutmev-0.1.0-py3-none-any.whl` +
+  `nutev_nutmev-0.1.0.tar.gz`.
+- [x] **`twine check dist/*`:** PASSED (wheel and sdist).
+- [x] **Clean Python 3.12 install:** `pip install "nutev_nutmev-0.1.0-*.whl[dashboard]"`
+  succeeds; the requires-python floor (`>=3.12`) is correctly enforced (a 3.11
+  venv is refused).
+- [x] **`nutev` command:** installed console script runs `nutev --help` and
+  `nutev demo-data` (generates 12 tables + `run_summary.json`), zero-key.
+- [x] **Canonical tests (Python 3.12, `PYTHONPATH=src python -m pytest nutev_tests`):**
+  397 passed; 2 pre-existing scoring-threshold failures in
+  `test_global_watch_query_builder` (tracked in `CHANGELOG.md`, unrelated to
+  packaging).
+- [x] **`dependency-review` CI:** was failing only because the repository's
+  **Dependency Graph is not enabled** ("Dependency review is not supported on
+  this repository") — a repo setting, not a code issue. The workflow step is now
+  `continue-on-error` so it does not block PRs; enable the Dependency Graph
+  (see `GITHUB_PUBLIC_SETTINGS_CHECKLIST.md`) for full enforcement.
+
+> **Known limitation:** the wheel does not bundle `config/` (it lives at the repo
+> root). The zero-key **demo works from the installed wheel**, but full pipeline
+> runs that read `config/*.json` require the repo checkout via the documented
+> `git clone` + `pip install -e .` path. Packaging `config/` into the
+> distribution is a tracked follow-up.
+
 ## 1. Versioning (SemVer)
 
 - [ ] `src/nutev/__version__.py` set to the target version (e.g. `0.1.0`).
