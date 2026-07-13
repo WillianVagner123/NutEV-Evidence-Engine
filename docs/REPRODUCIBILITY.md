@@ -40,8 +40,7 @@ and clearly-labeled demonstration results.
 
 - Software: semantic versioning + `CHANGELOG.md`.
 - Methodology: `docs/CHANGELOG_METODOLOGICO.md`.
-- Releases: `docs/RELEASE_GUIDE.md` / release checklist; first public tag
-  `v0.1.0-alpha`.
+- Release process: `docs/RELEASE_CHECKLIST.md`; first public tag `v0.1.0-alpha`.
 
 ## Known environment caveats
 
