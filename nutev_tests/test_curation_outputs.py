@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 from pathlib import Path
 
 from nutev.export.curation import curate_outputs
@@ -35,6 +36,21 @@ def test_curate_outputs_writes_canonical_and_legacy_files(tmp_path: Path) -> Non
             "extraction_status": "missing",
             "relevance_score": 10,
         },
+        {
+            "document_id": "doc-3",
+            "title": "Clinical practice guideline for shoulder surgery",
+            "year": "2024",
+            "workstream": "busca2a",
+            "evidence_type": "guideline",
+            "source": "pubmed",
+            "url": "https://example.org/orthopedics-guideline.pdf",
+            "download_status": "pdf",
+            "capture_status": "ok",
+            "extraction_status": "ok",
+            "relevance_score": 14,
+            "editorial_priority_score": 8,
+            "editorial_priority_tier": "a1_proxy_moderate",
+        },
     ]
 
     summary = curate_outputs(rows, tmp_path)
@@ -59,7 +75,14 @@ def test_curate_outputs_writes_canonical_and_legacy_files(tmp_path: Path) -> Non
     for filename in expected_files:
         assert (tmp_path / filename).exists(), filename
 
-    assert summary["curated_rows"] == 2
-    assert summary["unique_documents"] == 1
+    assert summary["curated_rows"] == 3
+    assert summary["unique_documents"] == 2
     assert summary["prioritized_documents"] == 1
     assert summary["metadata_only_documents"] == 0
+
+    with (tmp_path / "NUTEV_METADATA_CURATED.csv").open(encoding="utf-8-sig") as handle:
+        curated_rows = list(csv.DictReader(handle))
+    generic_guideline = next(
+        row for row in curated_rows if row["document_id"] == "doc-3"
+    )
+    assert generic_guideline["is_prioritized"] == "False"
