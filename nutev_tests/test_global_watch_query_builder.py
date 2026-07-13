@@ -85,6 +85,15 @@ def test_diet_pattern_queries_include_evidence_synthesis_terms_in_quick_mode():
     assert "living systematic review" in rendered
 
 
+def test_diet_pattern_queries_include_sustainable_healthy_diet_terms_in_quick_mode():
+    rows = build_watch_queries(["diet_patterns"], 7, "quick")
+    rendered = " ".join(str(row["query"]) for row in rows).lower()
+    assert "sustainable healthy diets" in rendered
+    assert "healthy and sustainable diets" in rendered
+    assert "sustainable dietary patterns" in rendered
+    assert "planetary health diet guideline" in rendered
+
+
 def test_guidelines_thesis_mode_surfaces_broader_guidance_families_early():
     rows = build_watch_queries(["guidelines_consensus"], 7, "thesis")
     rendered = [str(row["query"]).lower() for row in rows]
