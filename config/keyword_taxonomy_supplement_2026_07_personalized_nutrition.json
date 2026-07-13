@@ -1,0 +1,66 @@
+{
+  "version_note": "2026-07 personalized nutrition supplement for NutMEV search coverage. Loaded automatically by settings.load_json and merged without modifying the base taxonomy.",
+  "global": {
+    "nutrition_domains": {
+      "personalized_precision_nutrition": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "diet personalization",
+        "diet personalisation",
+        "nutrition personalization",
+        "nutrition personalisation",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention"
+      ]
+    },
+    "implementation_behavior": {
+      "behavioral": [
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "precision nutrition intervention",
+        "personalized nutrition intervention",
+        "personalised nutrition intervention"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "personalized nutrition intervention obesity",
+        "personalised nutrition intervention obesity",
+        "precision nutrition intervention obesity",
+        "tailored dietary intervention obesity",
+        "tailored dietary intervention type 2 diabetes",
+        "personalized dietary intervention type 2 diabetes",
+        "individualized dietary intervention type 2 diabetes",
+        "precision nutrition adherence trial",
+        "personalized nutrition adherence intervention"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "personalized nutrition framework",
+        "personalised nutrition framework",
+        "precision nutrition framework",
+        "tailored nutrition framework",
+        "personalized nutrition adherence framework"
+      ]
+    }
+  }
+}
