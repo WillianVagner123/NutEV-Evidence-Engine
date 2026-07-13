@@ -20,3 +20,9 @@ def test_ckm_nutrition_terms_improve_watch_priority() -> None:
             "title": "Cardiovascular-kidney-metabolic nutrition care for obesity and type 2 diabetes",
         }
     ) > score_watch_item({"title": "Obesity and type 2 diabetes care note"})
+
+
+def test_ckm_acronym_improves_watch_priority() -> None:
+    assert score_watch_item(
+        {"title": "CKM nutrition care pathway for cardiometabolic risk"}
+    ) > score_watch_item({"title": "Cardiometabolic risk care pathway"})
