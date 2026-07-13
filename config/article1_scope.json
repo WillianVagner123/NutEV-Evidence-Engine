@@ -1,0 +1,119 @@
+{
+  "profile_id": "article1_nutev_scoping_review",
+  "version": "2026-07-13-v1",
+  "status": "pilot_ready_pending_human_approval",
+  "title_pt": "Domínios da Nutrição do Estilo de Vida em guias alimentares e diretrizes clínicas: revisão de escopo e análise documental para subsidiar o Protocolo NutEV",
+  "title_en": "Lifestyle Nutrition Domains in Food-Based Dietary Guidelines and Clinical Nutrition Guidance: A Scoping Review and Documentary Analysis to Inform the NutEV Protocol",
+  "research_question": "Quais recomendações e domínios alimentares, nutricionais, comportamentais, contextuais e de implementação estão presentes em guias alimentares oficiais e diretrizes clínicas relevantes, e como esses elementos podem subsidiar a arquitetura do Protocolo NutEV?",
+  "workstreams": ["busca1", "busca2a"],
+  "excluded_workstreams": ["busca2b", "a3"],
+  "evidence_lenses": {
+    "population_guidance": {
+      "workstream": "busca1",
+      "eligible_sources": [
+        "official national food-based dietary guidelines",
+        "official supranational dietary guidance",
+        "government dietary guidance for adults",
+        "official implementation documents directly linked to an eligible food guide"
+      ]
+    },
+    "clinical_modifiers": {
+      "workstream": "busca2a",
+      "eligible_sources": [
+        "clinical practice guidelines",
+        "consensus statements",
+        "scientific statements",
+        "position statements",
+        "official society guidance"
+      ],
+      "conditions": [
+        "obesity",
+        "type 2 diabetes",
+        "hypertension",
+        "dyslipidemia",
+        "cardiovascular disease",
+        "metabolic syndrome",
+        "metabolic dysfunction-associated steatotic liver disease"
+      ]
+    }
+  },
+  "population": {
+    "include": ["adults", "general adult population", "adults with cardiometabolic conditions"],
+    "exclude": ["pediatric-only", "pregnancy-only", "hospital-only", "renal replacement therapy-specific"]
+  },
+  "document_eligibility": {
+    "include": [
+      "latest official version in force at the search date",
+      "documents with identifiable issuing organization and public provenance",
+      "documents containing dietary, food, behavioral, contextual or implementation recommendations"
+    ],
+    "exclude": [
+      "randomized or non-randomized intervention studies as primary corpus",
+      "observational studies as primary corpus",
+      "commercial diet documents",
+      "opinion pieces without institutional endorsement",
+      "duplicate or superseded versions when a current version is available",
+      "documents without recoverable source provenance"
+    ]
+  },
+  "time_rule": {
+    "official_documents": "include the current eligible version regardless of publication year",
+    "bibliographic_support": "use date limits only when explicitly justified in the protocol"
+  },
+  "languages": ["English", "Portuguese", "Spanish"],
+  "analytic_domains": {
+    "A": "dietary quality and composition",
+    "B": "food literacy, culinary competence and culinary medicine",
+    "C": "commensality and meal context",
+    "D": "adherence, feasibility and implementation"
+  },
+  "minimum_extraction_fields": [
+    "document_id",
+    "title",
+    "issuing_organization",
+    "country_or_region",
+    "publication_year",
+    "version_status",
+    "document_type",
+    "target_population",
+    "source_url",
+    "exact_quote",
+    "quote_location",
+    "analytic_domain",
+    "food_group_or_nutrient",
+    "dietary_pattern",
+    "processing_dimension",
+    "behavioral_component",
+    "contextual_component",
+    "implementation_barrier_or_facilitator",
+    "clinical_modifier",
+    "reviewer_1_decision",
+    "reviewer_2_decision",
+    "adjudication_status"
+  ],
+  "pilot": {
+    "target_documents_min": 20,
+    "target_documents_max": 30,
+    "population_guidance_target": "12-15",
+    "clinical_guidance_target": "8-10",
+    "implementation_documents_target": "2-5",
+    "success_criteria": [
+      "source provenance verified",
+      "quote location recoverable",
+      "coding ambiguity documented",
+      "human review decisions persisted",
+      "no candidate recommendation automatically promoted to final recommendation"
+    ]
+  },
+  "output_roots": {
+    "pilot": "project_output_article1_pilot",
+    "final": "project_output_article1_final"
+  },
+  "methodological_guardrails": [
+    "The software supports but does not replace human eligibility decisions.",
+    "Population guidance and clinical guidance must be analyzed as separate evidence lenses before cross-lens synthesis.",
+    "Intervention effectiveness studies are outside the primary corpus of Article 1.",
+    "RecommendationCandidate is not a final NutEV recommendation.",
+    "Raw outputs must not be overwritten by curated outputs."
+  ]
+}
