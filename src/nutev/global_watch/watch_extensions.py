@@ -146,6 +146,56 @@ OBESITY_PHARMACOTHERAPY_BONUS_TERMS = [
     ("incretin therapy dietary counselling", 16),
 ]
 
+GLP1_DISCONTINUATION_NUTRITION_TERMS = [
+    "glp-1 discontinuation nutrition",
+    "glp-1 discontinuation dietary counseling",
+    "glp-1 discontinuation dietary counselling",
+    "glp-1 receptor agonist discontinuation nutrition",
+    "glp-1 receptor agonist discontinuation dietary counseling",
+    "glp-1 receptor agonist discontinuation dietary counselling",
+    "anti-obesity medication discontinuation nutrition",
+    "anti-obesity medication discontinuation dietary counseling",
+    "anti-obesity medication discontinuation dietary counselling",
+    "obesity medication discontinuation nutrition care",
+    "obesity pharmacotherapy discontinuation nutrition care",
+    "incretin discontinuation nutrition care",
+    "post-glp-1 weight maintenance nutrition",
+    "post glp-1 weight maintenance nutrition",
+    "post-glp-1 weight regain prevention",
+    "post glp-1 weight regain prevention",
+    "nutrition care after glp-1 discontinuation",
+    "dietary intervention after glp-1 discontinuation",
+    "weight maintenance after glp-1 discontinuation",
+    "weight regain after glp-1 discontinuation",
+    "lifestyle intervention after anti-obesity medication discontinuation",
+    "dietitian-led care after anti-obesity medication discontinuation",
+    "dietitian led care after anti-obesity medication discontinuation",
+]
+
+GLP1_DISCONTINUATION_BONUS_TERMS = [
+    ("glp-1 discontinuation nutrition", 22),
+    ("glp-1 discontinuation dietary counseling", 20),
+    ("glp-1 discontinuation dietary counselling", 20),
+    ("glp-1 receptor agonist discontinuation nutrition", 22),
+    ("glp-1 receptor agonist discontinuation dietary counseling", 20),
+    ("glp-1 receptor agonist discontinuation dietary counselling", 20),
+    ("anti-obesity medication discontinuation nutrition", 22),
+    ("obesity medication discontinuation nutrition care", 22),
+    ("obesity pharmacotherapy discontinuation nutrition care", 22),
+    ("incretin discontinuation nutrition care", 20),
+    ("post-glp-1 weight maintenance nutrition", 22),
+    ("post glp-1 weight maintenance nutrition", 22),
+    ("post-glp-1 weight regain prevention", 20),
+    ("post glp-1 weight regain prevention", 20),
+    ("nutrition care after glp-1 discontinuation", 22),
+    ("dietary intervention after glp-1 discontinuation", 20),
+    ("weight maintenance after glp-1 discontinuation", 18),
+    ("weight regain after glp-1 discontinuation", 18),
+    ("lifestyle intervention after anti-obesity medication discontinuation", 20),
+    ("dietitian-led care after anti-obesity medication discontinuation", 20),
+    ("dietitian led care after anti-obesity medication discontinuation", 20),
+]
+
 
 def _dedupe_preserve_order(values: Sequence[Any]) -> list[Any]:
     seen: set[str] = set()
@@ -208,6 +258,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
+                *GLP1_DISCONTINUATION_BONUS_TERMS,
             ]
         )
     )
@@ -217,6 +268,7 @@ def _extend_scoring_terms() -> None:
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+                *GLP1_DISCONTINUATION_NUTRITION_TERMS,
             ]
         )
     )
@@ -253,9 +305,17 @@ def apply_watch_taxonomy_extensions() -> None:
         "guidelines_consensus",
         FOOD_ENVIRONMENT_DOCUMENT_TERMS,
     )
+    obesity_pharmacotherapy_terms = [
+        *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        *GLP1_DISCONTINUATION_NUTRITION_TERMS,
+    ]
     _extend_category_terms(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        obesity_pharmacotherapy_terms,
+    )
+    _extend_category_terms(
+        "implementation_behavior",
+        GLP1_DISCONTINUATION_NUTRITION_TERMS,
     )
     _extend_quick_seed_group(
         "lifestyle_medicine",
@@ -275,7 +335,12 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
         0,
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        obesity_pharmacotherapy_terms,
+    )
+    _extend_quick_seed_group(
+        "implementation_behavior",
+        2,
+        GLP1_DISCONTINUATION_NUTRITION_TERMS,
     )
     _extend_query_context(
         "lifestyle_medicine",
@@ -283,7 +348,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*SOCIAL_PRESCRIBING_NUTRITION_TERMS, *GLP1_DISCONTINUATION_NUTRITION_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
@@ -291,7 +356,7 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "obesity_cardiometabolic",
-        OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        obesity_pharmacotherapy_terms,
     )
     _extend_scoring_terms()
 
