@@ -38,7 +38,7 @@ dependencies = [
 [project.optional-dependencies]
 # Optional bibliographic search providers (basic HTTP search works with core).
 search = [
-    "arxiv~=2.4",                  # arXiv metadata client
+    "arxiv>=2.4,<5.0",                  # arXiv metadata client
     "wikipedia~=1.4",              # Wikipedia summaries
     "google-search-results~=2.4",  # SerpAPI (OPTIONAL — Google/SerpAPI not required)
     "lxml>=5.3",                   # faster HTML/XML parsing
@@ -46,7 +46,7 @@ search = [
 ]
 # Document ingestion / OCR / PDF text extraction (heavy, system deps: tesseract, poppler).
 documents = [
-    "pypdf~=6.10.1",
+    "pypdf>=6.10.1,<6.15.0",
     "pdfplumber~=0.11",
     # PyMuPDF renders scanned PDFs to images with no system dependency, so OCR
     # works with only `tesseract` installed (no poppler). pdf2image is kept as a
@@ -98,7 +98,7 @@ mcp = [
 ]
 # Development / test tooling (also available as the pdm `dev` group).
 dev = [
-    "virtualenv~=20.36",
+    "virtualenv>=20.36,<22.0",
     "pre-commit~=4.5",
     "cookiecutter~=2.6",
     "pytest~=9.0",
@@ -109,13 +109,13 @@ dev = [
     "pytest-xdist~=3.8",
     "ruff~=0.15",
     "freezegun~=1.5",
-    "mypy~=1.19",
+    "mypy>=1.19,<3.0",
     "types-requests~=2.32",
     "types-toml~=0.10",
     "types-flask~=1.1",
     "hypothesis~=6.151",
     "vulture~=2.14",
-    "towncrier~=24.8",
+    "towncrier>=24.8,<26.0",
 ]
 # Everything (all NutEV optional groups). The inherited local_deep_research
 # engine and its `legacy` extra were removed from the tree; see NOTICE.md and
