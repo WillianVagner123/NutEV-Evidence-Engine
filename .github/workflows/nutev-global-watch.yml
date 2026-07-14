@@ -1,8 +1,10 @@
 name: NutEV Global Watch
+# Manual-only (workflow_dispatch): this job runs the real collection pipeline
+# and would otherwise consume Actions minutes on a weekly schedule with no one
+# watching. Trigger it on demand from the Actions tab when you actually want a
+# scheduled-style run. (Re-add a `schedule:` cron here if you want it automatic.)
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 10 * * 0'
 jobs:
   global-watch:
     runs-on: ubuntu-latest
