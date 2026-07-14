@@ -42,9 +42,15 @@ def test_clinical_workstreams_prioritize_portfolio_lipid_terms() -> None:
     apply_portfolio_lipid_extensions()
 
     busca2a_terms = " ".join(semantic_blocks.semantic_terms("busca2a", min_priority=5))
-    busca2b_terms = " ".join(semantic_blocks.semantic_terms("busca2b", min_priority=5))
+    busca2b_docs = " ".join(
+        semantic_blocks.semantic_terms(
+            "busca2b",
+            field="document_terms",
+            min_priority=5,
+        )
+    )
 
     assert "portfolio dietary pattern" in busca2a_terms
     assert "dietary portfolio for dyslipidemia" in busca2a_terms
-    assert "portfolio diet intervention trial" in busca2b_terms
-    assert "lipid-lowering dietary pattern trial" in busca2b_terms
+    assert "portfolio diet intervention trial" in busca2b_docs
+    assert "lipid-lowering dietary pattern trial" in busca2b_docs
