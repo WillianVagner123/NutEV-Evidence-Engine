@@ -1,75 +1,1152 @@
 {
   "_note": "Global official dietary-guideline sources by country/region/institution. Merged into busca1. Run `nutev verify-sources --project-root <dir>` (on a machine with internet) to check every URL and get NUTEV_OFFICIAL_SOURCES_VERIFICATION.csv listing dead/moved links to fix. Entries marked verify:true are the least certain. The FAO dietary-guidelines platform is the canonical global registry.",
-  "version": "2026-07-countries-v2",
+  "version": "2026-07-countries-v3",
   "workstreams": {
     "busca1": [
-      {"name": "WHO Healthy diet fact sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet", "authority": 5, "institution": "World Health Organization", "region": "Global"},
-      {"name": "FAO Food-based dietary guidelines (global index)", "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/en/", "authority": 5, "institution": "FAO", "region": "Global"},
-      {"name": "FAO FBDG - Africa region", "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/africa/en/", "authority": 4, "institution": "FAO", "region": "Africa"},
-      {"name": "FAO FBDG - Asia and Pacific region", "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/asia-pacific/en/", "authority": 4, "institution": "FAO", "region": "Asia-Pacific"},
-      {"name": "FAO FBDG - Europe region", "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/europe/en/", "authority": 4, "institution": "FAO", "region": "Europe"},
-      {"name": "FAO FBDG - Latin America and the Caribbean", "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/latin-america/en/", "authority": 4, "institution": "FAO", "region": "Latin America & Caribbean"},
-      {"name": "FAO FBDG - Near East region", "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/near-east/en/", "authority": 4, "institution": "FAO", "region": "Near East"},
-      {"name": "FAO FBDG - North America region", "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/north-america/en/", "authority": 4, "institution": "FAO", "region": "North America"},
-
-      {"name": "Dietary Guidelines for Americans", "url": "https://www.dietaryguidelines.gov/", "authority": 5, "institution": "USDA / HHS", "country": "United States", "region": "Americas"},
-      {"name": "Canada's Food Guide", "url": "https://food-guide.canada.ca/en/", "authority": 5, "institution": "Health Canada", "country": "Canada", "region": "Americas"},
-      {"name": "Guia Alimentar para a Populacao Brasileira", "url": "https://www.gov.br/saude/pt-br/assuntos/saude-brasil/publicacoes-para-promocao-a-saude/guia_alimentar_populacao_brasileira_2ed.pdf", "authority": 5, "institution": "Ministerio da Saude", "country": "Brazil", "region": "Americas"},
-      {"name": "Guias Alimentarias para la Poblacion Argentina", "url": "https://www.argentina.gob.ar/salud/alimentacion-saludable/guias-alimentarias", "authority": 4, "institution": "Ministerio de Salud", "country": "Argentina", "region": "Americas", "verify": true},
-      {"name": "Guias Alimentarias para Mexico", "url": "https://www.gob.mx/salud", "authority": 3, "institution": "Secretaria de Salud", "country": "Mexico", "region": "Americas", "verify": true},
-      {"name": "Guias Alimentarias para Chile", "url": "https://www.minsal.cl/", "authority": 3, "institution": "Ministerio de Salud", "country": "Chile", "region": "Americas", "verify": true},
-      {"name": "Guia Alimentaria para Colombia (ICBF)", "url": "https://www.icbf.gov.co/", "authority": 3, "institution": "ICBF", "country": "Colombia", "region": "Americas", "verify": true},
-      {"name": "Guias Alimentarias para Uruguay", "url": "https://www.gub.uy/ministerio-salud-publica/", "authority": 3, "institution": "MSP", "country": "Uruguay", "region": "Americas", "verify": true},
-      {"name": "Guias Alimentarias para Peru", "url": "https://www.gob.pe/minsa", "authority": 3, "institution": "MINSA", "country": "Peru", "region": "Americas", "verify": true},
-      {"name": "Guias Alimentarias para Costa Rica", "url": "https://www.ministeriodesalud.go.cr/", "authority": 3, "institution": "Ministerio de Salud", "country": "Costa Rica", "region": "Americas", "verify": true},
-      {"name": "Guias Alimentarias para Cuba (INHA)", "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/cuba/en/", "authority": 3, "institution": "INHA", "country": "Cuba", "region": "Americas", "verify": true},
-
-      {"name": "The Eatwell Guide", "url": "https://www.gov.uk/government/publications/the-eatwell-guide", "authority": 5, "institution": "Public Health England / OHID", "country": "United Kingdom", "region": "Europe"},
-      {"name": "Healthy Food for Life (Ireland)", "url": "https://www.gov.ie/en/campaigns/healthy-eating-guidelines/", "authority": 4, "institution": "Department of Health", "country": "Ireland", "region": "Europe", "verify": true},
-      {"name": "EFSA Dietary Reference Values and advice", "url": "https://www.efsa.europa.eu/en/topics/topic/dietary-reference-values", "authority": 5, "institution": "European Food Safety Authority", "region": "Europe"},
-      {"name": "DGE food-based dietary guidelines (Germany)", "url": "https://www.dge.de/", "authority": 4, "institution": "Deutsche Gesellschaft fuer Ernaehrung", "country": "Germany", "region": "Europe", "verify": true},
-      {"name": "PNNS / Sante publique France dietary guidelines", "url": "https://www.mangerbouger.fr/", "authority": 4, "institution": "Sante publique France", "country": "France", "region": "Europe", "verify": true},
-      {"name": "Wheel of Five (Netherlands)", "url": "https://www.voedingscentrum.nl/", "authority": 4, "institution": "Voedingscentrum", "country": "Netherlands", "region": "Europe", "verify": true},
-      {"name": "Nordic Nutrition Recommendations", "url": "https://www.norden.org/en/publication/nordic-nutrition-recommendations-2023", "authority": 5, "institution": "Nordic Council of Ministers", "region": "Europe"},
-      {"name": "Swedish dietary guidelines (Livsmedelsverket)", "url": "https://www.livsmedelsverket.se/", "authority": 4, "institution": "Livsmedelsverket", "country": "Sweden", "region": "Europe", "verify": true},
-      {"name": "Norwegian dietary guidelines (Helsedirektoratet)", "url": "https://www.helsedirektoratet.no/", "authority": 4, "institution": "Helsedirektoratet", "country": "Norway", "region": "Europe", "verify": true},
-      {"name": "Danish official dietary guidelines", "url": "https://www.foedevarestyrelsen.dk/", "authority": 4, "institution": "Foedevarestyrelsen", "country": "Denmark", "region": "Europe", "verify": true},
-      {"name": "Finnish nutrition recommendations (VRN)", "url": "https://www.ruokavirasto.fi/en/", "authority": 4, "institution": "Ruokavirasto / VRN", "country": "Finland", "region": "Europe", "verify": true},
-      {"name": "Spanish dietary guidelines (AESAN)", "url": "https://www.aesan.gob.es/", "authority": 4, "institution": "AESAN", "country": "Spain", "region": "Europe", "verify": true},
-      {"name": "Portuguese food wheel (DGS)", "url": "https://www.dgs.pt/", "authority": 4, "institution": "Direcao-Geral da Saude", "country": "Portugal", "region": "Europe", "verify": true},
-      {"name": "Italian dietary guidelines (CREA)", "url": "https://www.crea.gov.it/", "authority": 4, "institution": "CREA", "country": "Italy", "region": "Europe", "verify": true},
-      {"name": "Swiss food pyramid (BLV)", "url": "https://www.blv.admin.ch/", "authority": 3, "institution": "BLV", "country": "Switzerland", "region": "Europe", "verify": true},
-      {"name": "Austrian dietary guidelines (BMSGPK)", "url": "https://www.oege.at/", "authority": 3, "institution": "OEGE", "country": "Austria", "region": "Europe", "verify": true},
-      {"name": "Belgian food triangle", "url": "https://www.gezondleven.be/", "authority": 3, "institution": "Vlaams Instituut Gezond Leven", "country": "Belgium", "region": "Europe", "verify": true},
-      {"name": "Polish dietary guidelines (NIZP PZH)", "url": "https://ncez.pzh.gov.pl/", "authority": 3, "institution": "NIZP PZH-PIB", "country": "Poland", "region": "Europe", "verify": true},
-      {"name": "Greek dietary guidelines", "url": "https://www.moh.gov.gr/", "authority": 3, "institution": "Ministry of Health", "country": "Greece", "region": "Europe", "verify": true},
-
-      {"name": "Dietary Guidelines for Indians (NIN/ICMR)", "url": "https://www.nin.res.in/", "authority": 5, "institution": "National Institute of Nutrition / ICMR", "country": "India", "region": "Asia"},
-      {"name": "Japanese Food Guide Spinning Top", "url": "https://www.mhlw.go.jp/", "authority": 4, "institution": "MHLW / MAFF", "country": "Japan", "region": "Asia", "verify": true},
-      {"name": "Chinese Dietary Guidelines (CNS)", "url": "http://en.cnsoc.org/", "authority": 4, "institution": "Chinese Nutrition Society", "country": "China", "region": "Asia", "verify": true},
-      {"name": "Dietary Guidelines for Koreans", "url": "https://www.mohw.go.kr/eng/", "authority": 4, "institution": "MOHW / MFDS", "country": "South Korea", "region": "Asia", "verify": true},
-      {"name": "Indonesia balanced nutrition guidelines (Kemenkes)", "url": "https://www.kemkes.go.id/", "authority": 3, "institution": "Kementerian Kesehatan", "country": "Indonesia", "region": "Asia", "verify": true},
-      {"name": "Thai Food-Based Dietary Guidelines", "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/thailand/en/", "authority": 3, "institution": "Ministry of Public Health", "country": "Thailand", "region": "Asia", "verify": true},
-      {"name": "Vietnam dietary guidelines (NIN)", "url": "https://viendinhduong.vn/", "authority": 3, "institution": "National Institute of Nutrition", "country": "Vietnam", "region": "Asia", "verify": true},
-      {"name": "Philippines Nutritional Guidelines (FNRI)", "url": "https://www.fnri.dost.gov.ph/", "authority": 3, "institution": "FNRI-DOST", "country": "Philippines", "region": "Asia", "verify": true},
-      {"name": "Malaysia dietary guidelines (MOH)", "url": "https://www.moh.gov.my/", "authority": 3, "institution": "Ministry of Health", "country": "Malaysia", "region": "Asia", "verify": true},
-      {"name": "Singapore My Healthy Plate (HPB)", "url": "https://www.healthhub.sg/", "authority": 3, "institution": "Health Promotion Board", "country": "Singapore", "region": "Asia", "verify": true},
-      {"name": "Sri Lanka food-based dietary guidelines", "url": "https://www.health.gov.lk/", "authority": 3, "institution": "Ministry of Health", "country": "Sri Lanka", "region": "Asia", "verify": true},
-      {"name": "Bangladesh dietary guidelines (BIRTAN)", "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/bangladesh/en/", "authority": 3, "institution": "BIRTAN", "country": "Bangladesh", "region": "Asia", "verify": true},
-
-      {"name": "Australian Dietary Guidelines (NHMRC)", "url": "https://www.eatforhealth.gov.au/", "authority": 5, "institution": "NHMRC", "country": "Australia", "region": "Oceania"},
-      {"name": "Eating and Activity Guidelines (New Zealand)", "url": "https://www.health.govt.nz/", "authority": 4, "institution": "Ministry of Health", "country": "New Zealand", "region": "Oceania", "verify": true},
-      {"name": "Fiji food-based dietary guidelines", "url": "https://www.health.gov.fj/", "authority": 3, "institution": "Ministry of Health", "country": "Fiji", "region": "Oceania", "verify": true},
-
-      {"name": "South African food-based dietary guidelines (DoH)", "url": "https://www.health.gov.za/", "authority": 4, "institution": "Department of Health", "country": "South Africa", "region": "Africa", "verify": true},
-      {"name": "Nigeria food-based dietary guidelines", "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/nigeria/en/", "authority": 3, "institution": "Federal Ministry of Health", "country": "Nigeria", "region": "Africa", "verify": true},
-      {"name": "Kenya food-based dietary guidelines", "url": "https://www.health.go.ke/", "authority": 3, "institution": "Ministry of Health", "country": "Kenya", "region": "Africa", "verify": true},
-      {"name": "Namibia food-based dietary guidelines", "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/namibia/en/", "authority": 3, "institution": "Ministry of Health and Social Services", "country": "Namibia", "region": "Africa", "verify": true},
-
-      {"name": "Qatar Dietary Guidelines", "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/qatar/en/", "authority": 3, "institution": "Supreme Council of Health", "country": "Qatar", "region": "Near East", "verify": true},
-      {"name": "Oman dietary guidelines", "url": "https://www.moh.gov.om/", "authority": 3, "institution": "Ministry of Health", "country": "Oman", "region": "Near East", "verify": true},
-      {"name": "Saudi Arabia dietary guidelines (Palm)", "url": "https://www.moh.gov.sa/en/", "authority": 3, "institution": "Ministry of Health", "country": "Saudi Arabia", "region": "Near East", "verify": true},
-      {"name": "Lebanon food-based dietary guidelines (AUB)", "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/lebanon/en/", "authority": 3, "institution": "Ministry of Public Health", "country": "Lebanon", "region": "Near East", "verify": true}
+      {
+        "name": "WHO Healthy diet fact sheet",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+        "authority": 5,
+        "institution": "World Health Organization",
+        "region": "Global"
+      },
+      {
+        "name": "FAO Food-based dietary guidelines (global index)",
+        "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/en/",
+        "authority": 5,
+        "institution": "FAO",
+        "region": "Global"
+      },
+      {
+        "name": "FAO FBDG - Africa region",
+        "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/africa/en/",
+        "authority": 4,
+        "institution": "FAO",
+        "region": "Africa"
+      },
+      {
+        "name": "FAO FBDG - Asia and Pacific region",
+        "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/asia-pacific/en/",
+        "authority": 4,
+        "institution": "FAO",
+        "region": "Asia-Pacific"
+      },
+      {
+        "name": "FAO FBDG - Europe region",
+        "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/europe/en/",
+        "authority": 4,
+        "institution": "FAO",
+        "region": "Europe"
+      },
+      {
+        "name": "FAO FBDG - Latin America and the Caribbean",
+        "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/latin-america/en/",
+        "authority": 4,
+        "institution": "FAO",
+        "region": "Latin America & Caribbean"
+      },
+      {
+        "name": "FAO FBDG - Near East region",
+        "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/near-east/en/",
+        "authority": 4,
+        "institution": "FAO",
+        "region": "Near East"
+      },
+      {
+        "name": "FAO FBDG - North America region",
+        "url": "https://www.fao.org/nutrition/education/food-dietary-guidelines/regions/north-america/en/",
+        "authority": 4,
+        "institution": "FAO",
+        "region": "North America"
+      },
+      {
+        "name": "Dietary Guidelines for Americans",
+        "url": "https://www.dietaryguidelines.gov/",
+        "authority": 5,
+        "institution": "USDA / HHS",
+        "country": "United States",
+        "region": "Americas"
+      },
+      {
+        "name": "Canada's Food Guide",
+        "url": "https://food-guide.canada.ca/en/",
+        "authority": 5,
+        "institution": "Health Canada",
+        "country": "Canada",
+        "region": "Americas"
+      },
+      {
+        "name": "Guia Alimentar para a Populacao Brasileira",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/saude-brasil/publicacoes-para-promocao-a-saude/guia_alimentar_populacao_brasileira_2ed.pdf",
+        "authority": 5,
+        "institution": "Ministerio da Saude",
+        "country": "Brazil",
+        "region": "Americas"
+      },
+      {
+        "name": "Guias Alimentarias para la Poblacion Argentina",
+        "url": "https://www.argentina.gob.ar/salud/alimentacion-saludable/guias-alimentarias",
+        "authority": 4,
+        "institution": "Ministerio de Salud",
+        "country": "Argentina",
+        "region": "Americas",
+        "verify": true
+      },
+      {
+        "name": "Guias Alimentarias para Mexico",
+        "url": "https://www.gob.mx/salud",
+        "authority": 3,
+        "institution": "Secretaria de Salud",
+        "country": "Mexico",
+        "region": "Americas",
+        "verify": true
+      },
+      {
+        "name": "Guias Alimentarias para Chile",
+        "url": "https://www.minsal.cl/",
+        "authority": 3,
+        "institution": "Ministerio de Salud",
+        "country": "Chile",
+        "region": "Americas",
+        "verify": true
+      },
+      {
+        "name": "Guia Alimentaria para Colombia (ICBF)",
+        "url": "https://www.icbf.gov.co/",
+        "authority": 3,
+        "institution": "ICBF",
+        "country": "Colombia",
+        "region": "Americas",
+        "verify": true
+      },
+      {
+        "name": "Guias Alimentarias para Uruguay",
+        "url": "https://www.gub.uy/ministerio-salud-publica/",
+        "authority": 3,
+        "institution": "MSP",
+        "country": "Uruguay",
+        "region": "Americas",
+        "verify": true
+      },
+      {
+        "name": "Guias Alimentarias para Peru",
+        "url": "https://www.gob.pe/minsa",
+        "authority": 3,
+        "institution": "MINSA",
+        "country": "Peru",
+        "region": "Americas",
+        "verify": true
+      },
+      {
+        "name": "Guias Alimentarias para Costa Rica",
+        "url": "https://www.ministeriodesalud.go.cr/",
+        "authority": 3,
+        "institution": "Ministerio de Salud",
+        "country": "Costa Rica",
+        "region": "Americas",
+        "verify": true
+      },
+      {
+        "name": "Guias Alimentarias para Cuba (INHA)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/cuba/en/",
+        "authority": 3,
+        "institution": "INHA",
+        "country": "Cuba",
+        "region": "Americas",
+        "verify": true
+      },
+      {
+        "name": "The Eatwell Guide",
+        "url": "https://www.gov.uk/government/publications/the-eatwell-guide",
+        "authority": 5,
+        "institution": "Public Health England / OHID",
+        "country": "United Kingdom",
+        "region": "Europe"
+      },
+      {
+        "name": "Healthy Food for Life (Ireland)",
+        "url": "https://www.gov.ie/en/campaigns/healthy-eating-guidelines/",
+        "authority": 4,
+        "institution": "Department of Health",
+        "country": "Ireland",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "EFSA Dietary Reference Values and advice",
+        "url": "https://www.efsa.europa.eu/en/topics/topic/dietary-reference-values",
+        "authority": 5,
+        "institution": "European Food Safety Authority",
+        "region": "Europe"
+      },
+      {
+        "name": "DGE food-based dietary guidelines (Germany)",
+        "url": "https://www.dge.de/",
+        "authority": 4,
+        "institution": "Deutsche Gesellschaft fuer Ernaehrung",
+        "country": "Germany",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "PNNS / Sante publique France dietary guidelines",
+        "url": "https://www.mangerbouger.fr/",
+        "authority": 4,
+        "institution": "Sante publique France",
+        "country": "France",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Wheel of Five (Netherlands)",
+        "url": "https://www.voedingscentrum.nl/",
+        "authority": 4,
+        "institution": "Voedingscentrum",
+        "country": "Netherlands",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Nordic Nutrition Recommendations",
+        "url": "https://www.norden.org/en/publication/nordic-nutrition-recommendations-2023",
+        "authority": 5,
+        "institution": "Nordic Council of Ministers",
+        "region": "Europe"
+      },
+      {
+        "name": "Swedish dietary guidelines (Livsmedelsverket)",
+        "url": "https://www.livsmedelsverket.se/",
+        "authority": 4,
+        "institution": "Livsmedelsverket",
+        "country": "Sweden",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Norwegian dietary guidelines (Helsedirektoratet)",
+        "url": "https://www.helsedirektoratet.no/",
+        "authority": 4,
+        "institution": "Helsedirektoratet",
+        "country": "Norway",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Danish official dietary guidelines",
+        "url": "https://www.foedevarestyrelsen.dk/",
+        "authority": 4,
+        "institution": "Foedevarestyrelsen",
+        "country": "Denmark",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Finnish nutrition recommendations (VRN)",
+        "url": "https://www.ruokavirasto.fi/en/",
+        "authority": 4,
+        "institution": "Ruokavirasto / VRN",
+        "country": "Finland",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Spanish dietary guidelines (AESAN)",
+        "url": "https://www.aesan.gob.es/",
+        "authority": 4,
+        "institution": "AESAN",
+        "country": "Spain",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Portuguese food wheel (DGS)",
+        "url": "https://www.dgs.pt/",
+        "authority": 4,
+        "institution": "Direcao-Geral da Saude",
+        "country": "Portugal",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Italian dietary guidelines (CREA)",
+        "url": "https://www.crea.gov.it/",
+        "authority": 4,
+        "institution": "CREA",
+        "country": "Italy",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Swiss food pyramid (BLV)",
+        "url": "https://www.blv.admin.ch/",
+        "authority": 3,
+        "institution": "BLV",
+        "country": "Switzerland",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Austrian dietary guidelines (BMSGPK)",
+        "url": "https://www.oege.at/",
+        "authority": 3,
+        "institution": "OEGE",
+        "country": "Austria",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Belgian food triangle",
+        "url": "https://www.gezondleven.be/",
+        "authority": 3,
+        "institution": "Vlaams Instituut Gezond Leven",
+        "country": "Belgium",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Polish dietary guidelines (NIZP PZH)",
+        "url": "https://ncez.pzh.gov.pl/",
+        "authority": 3,
+        "institution": "NIZP PZH-PIB",
+        "country": "Poland",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Greek dietary guidelines",
+        "url": "https://www.moh.gov.gr/",
+        "authority": 3,
+        "institution": "Ministry of Health",
+        "country": "Greece",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Dietary Guidelines for Indians (NIN/ICMR)",
+        "url": "https://www.nin.res.in/",
+        "authority": 5,
+        "institution": "National Institute of Nutrition / ICMR",
+        "country": "India",
+        "region": "Asia"
+      },
+      {
+        "name": "Japanese Food Guide Spinning Top",
+        "url": "https://www.mhlw.go.jp/",
+        "authority": 4,
+        "institution": "MHLW / MAFF",
+        "country": "Japan",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Chinese Dietary Guidelines (CNS)",
+        "url": "http://en.cnsoc.org/",
+        "authority": 4,
+        "institution": "Chinese Nutrition Society",
+        "country": "China",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Dietary Guidelines for Koreans",
+        "url": "https://www.mohw.go.kr/eng/",
+        "authority": 4,
+        "institution": "MOHW / MFDS",
+        "country": "South Korea",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Indonesia balanced nutrition guidelines (Kemenkes)",
+        "url": "https://www.kemkes.go.id/",
+        "authority": 3,
+        "institution": "Kementerian Kesehatan",
+        "country": "Indonesia",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Thai Food-Based Dietary Guidelines",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/thailand/en/",
+        "authority": 3,
+        "institution": "Ministry of Public Health",
+        "country": "Thailand",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Vietnam dietary guidelines (NIN)",
+        "url": "https://viendinhduong.vn/",
+        "authority": 3,
+        "institution": "National Institute of Nutrition",
+        "country": "Vietnam",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Philippines Nutritional Guidelines (FNRI)",
+        "url": "https://www.fnri.dost.gov.ph/",
+        "authority": 3,
+        "institution": "FNRI-DOST",
+        "country": "Philippines",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Malaysia dietary guidelines (MOH)",
+        "url": "https://www.moh.gov.my/",
+        "authority": 3,
+        "institution": "Ministry of Health",
+        "country": "Malaysia",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Singapore My Healthy Plate (HPB)",
+        "url": "https://www.healthhub.sg/",
+        "authority": 3,
+        "institution": "Health Promotion Board",
+        "country": "Singapore",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Sri Lanka food-based dietary guidelines",
+        "url": "https://www.health.gov.lk/",
+        "authority": 3,
+        "institution": "Ministry of Health",
+        "country": "Sri Lanka",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Bangladesh dietary guidelines (BIRTAN)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/bangladesh/en/",
+        "authority": 3,
+        "institution": "BIRTAN",
+        "country": "Bangladesh",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Australian Dietary Guidelines (NHMRC)",
+        "url": "https://www.eatforhealth.gov.au/",
+        "authority": 5,
+        "institution": "NHMRC",
+        "country": "Australia",
+        "region": "Oceania"
+      },
+      {
+        "name": "Eating and Activity Guidelines (New Zealand)",
+        "url": "https://www.health.govt.nz/",
+        "authority": 4,
+        "institution": "Ministry of Health",
+        "country": "New Zealand",
+        "region": "Oceania",
+        "verify": true
+      },
+      {
+        "name": "Fiji food-based dietary guidelines",
+        "url": "https://www.health.gov.fj/",
+        "authority": 3,
+        "institution": "Ministry of Health",
+        "country": "Fiji",
+        "region": "Oceania",
+        "verify": true
+      },
+      {
+        "name": "South African food-based dietary guidelines (DoH)",
+        "url": "https://www.health.gov.za/",
+        "authority": 4,
+        "institution": "Department of Health",
+        "country": "South Africa",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Nigeria food-based dietary guidelines",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/nigeria/en/",
+        "authority": 3,
+        "institution": "Federal Ministry of Health",
+        "country": "Nigeria",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Kenya food-based dietary guidelines",
+        "url": "https://www.health.go.ke/",
+        "authority": 3,
+        "institution": "Ministry of Health",
+        "country": "Kenya",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Namibia food-based dietary guidelines",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/namibia/en/",
+        "authority": 3,
+        "institution": "Ministry of Health and Social Services",
+        "country": "Namibia",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Qatar Dietary Guidelines",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/qatar/en/",
+        "authority": 3,
+        "institution": "Supreme Council of Health",
+        "country": "Qatar",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Oman dietary guidelines",
+        "url": "https://www.moh.gov.om/",
+        "authority": 3,
+        "institution": "Ministry of Health",
+        "country": "Oman",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Saudi Arabia dietary guidelines (Palm)",
+        "url": "https://www.moh.gov.sa/en/",
+        "authority": 3,
+        "institution": "Ministry of Health",
+        "country": "Saudi Arabia",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Lebanon food-based dietary guidelines (AUB)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/lebanon/en/",
+        "authority": 3,
+        "institution": "Ministry of Public Health",
+        "country": "Lebanon",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Afghanistan food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/afghanistan/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Afghanistan",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Albania food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/albania/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Albania",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Anguilla food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/anguilla/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Anguilla",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Antigua and Barbuda food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/antigua-and-barbuda/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Antigua and Barbuda",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Bahamas food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/bahamas/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Bahamas",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Bahrain food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/bahrain/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Bahrain",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Barbados food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/barbados/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Barbados",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Belize food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/belize/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Belize",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Benin food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/benin/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Benin",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Bermuda food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/bermuda/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Bermuda",
+        "region": "North America",
+        "verify": true
+      },
+      {
+        "name": "Bolivia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/bolivia-plurinational-state-of/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Bolivia",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Bulgaria food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/bulgaria/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Bulgaria",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Cambodia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/cambodia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Cambodia",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Chinese Taipei food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/chinese-taipei/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Chinese Taipei",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Croatia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/croatia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Croatia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Cyprus food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/cyprus/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Cyprus",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Czechia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/czechia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Czechia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Dominica food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/dominica/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Dominica",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Dominican Republic food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/dominican-republic/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Dominican Republic",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Ecuador food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/ecuador/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Ecuador",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "El Salvador food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/el-salvador/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "El Salvador",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Estonia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/estonia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Estonia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Gabon food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/gabon/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Gabon",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Georgia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/georgia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Georgia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Grenada food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/grenada/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Grenada",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Guatemala food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/guatemala/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Guatemala",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Guyana food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/guyana/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Guyana",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Haiti food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/haiti/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Haiti",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Honduras food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/honduras/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Honduras",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Hungary food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/hungary/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Hungary",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Iceland food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/iceland/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Iceland",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Iran food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/iran-islamic-republic-of/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Iran",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Israel food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/israel/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Israel",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Jamaica food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/jamaica/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Jamaica",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Jordan food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/jordan/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Jordan",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Kuwait food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/kuwait/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Kuwait",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Latvia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/latvia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Latvia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Lithuania food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/lithuania/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Lithuania",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Luxembourg food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/luxembourg/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Luxembourg",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Malta food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/malta/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Malta",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Mongolia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/mongolia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Mongolia",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Montenegro food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/montenegro/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Montenegro",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Myanmar food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/myanmar/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Myanmar",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Nepal food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/nepal/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Nepal",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Nicaragua food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/nicaragua/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Nicaragua",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "North Macedonia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/north-macedonia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "North Macedonia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Pakistan food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/pakistan/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Pakistan",
+        "region": "Asia",
+        "verify": true
+      },
+      {
+        "name": "Panama food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/panama/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Panama",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Paraguay food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/paraguay/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Paraguay",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Romania food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/romania/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Romania",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Saint Lucia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/saint-lucia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Saint Lucia",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Saint Vincent and the Grenadines food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/saint-vincent-and-the-grenadines/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Saint Vincent and the Grenadines",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Samoa food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/samoa/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Samoa",
+        "region": "Oceania",
+        "verify": true
+      },
+      {
+        "name": "Serbia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/serbia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Serbia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Seychelles food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/seychelles/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Seychelles",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Sierra Leone food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/sierra-leone/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Sierra Leone",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Slovakia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/slovakia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Slovakia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Slovenia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/slovenia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Slovenia",
+        "region": "Europe",
+        "verify": true
+      },
+      {
+        "name": "Turkey food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/turkiye/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Turkey",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "United Arab Emirates food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/united-arab-emirates/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "United Arab Emirates",
+        "region": "Near East",
+        "verify": true
+      },
+      {
+        "name": "Venezuela food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/venezuela-bolivarian-republic-of/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Venezuela",
+        "region": "Latin America & Caribbean",
+        "verify": true
+      },
+      {
+        "name": "Uganda food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/uganda/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Uganda",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Zambia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/zambia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Zambia",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Zimbabwe food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/zimbabwe/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Zimbabwe",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Tanzania food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/united-republic-of-tanzania/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Tanzania",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Ethiopia food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/ethiopia/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Ethiopia",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Ghana food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/ghana/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Ghana",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Mozambique food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/mozambique/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Mozambique",
+        "region": "Africa",
+        "verify": true
+      },
+      {
+        "name": "Rwanda food-based dietary guidelines (FAO profile)",
+        "url": "https://www.fao.org/nutrition/education/dietary-guidelines/regions/rwanda/en/",
+        "authority": 3,
+        "institution": "National authority / FAO FBDG profile",
+        "country": "Rwanda",
+        "region": "Africa",
+        "verify": true
+      }
     ]
   }
 }
