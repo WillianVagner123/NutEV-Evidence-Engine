@@ -223,6 +223,38 @@ class EvidenceRecord(BaseModel):
     classifier_version: str = "nutev_classifier_v1"
     clinical_conditions: list[str] = Field(default_factory=list)
 
+    # --- Article 1 analytical schema (see nutev.analysis.article1_coding) --------
+    # PRISMA track and provenance (Task P2). track is one of
+    # guideline_repository | indexed_database | society_website |
+    # reference_chaining | hand_search | linked_implementation_material.
+    track: str | None = None
+    issuing_body: str | None = None
+    who_region: str | None = None
+    income_band: str | None = None
+    document_version: str | None = None
+    access_date: str | None = None
+    official_url: str | None = None
+    archived_pdf_path: str | None = None
+    archived_pdf_sha256: str | None = None
+    # A/B/C/D analytical domains (Task P1). Assistive coding; human confirms.
+    domain_A: bool = False
+    domain_B: bool = False
+    domain_C: bool = False
+    domain_D: bool = False
+    profile: str | None = None
+    n_domains: int = 0
+    mentions_cost: bool = False
+    mentions_equity: bool = False
+    domain_coding_needs_human_review: bool = True
+    # AACODS grey-literature appraisal (Task P3).
+    authority: str | None = None
+    accuracy: str | None = None
+    coverage: str | None = None
+    objectivity: str | None = None
+    date_currency: str | None = None
+    significance: str | None = None
+    aacods_needs_human_review: bool = True
+
     @field_validator("doi", mode="before")
     @classmethod
     def _normalize_doi(cls, value):

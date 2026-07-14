@@ -559,10 +559,37 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         settings.output_dirs["07_logs"] / "prisma_flow.json",
     )
 
+    # Enrich every row with the Article 1 analytical fields (track, provenance,
+    # A/B/C/D domains, AACODS, archive hash) before curation, so the curated
+    # metadata and the Integration Matrix share the same assistive coding. This is
+    # assistive and enters human review (docs/ARTICLE1_DOMAIN_CODING.md).
+    try:
+        from nutev.analysis.article1_coding import article1_record_fields
+
+        for _row in all_rows:
+            _row.update(article1_record_fields(_row))
+    except Exception:  # pragma: no cover - defensive; never abort a run
+        pass
+
     curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
     claims = []
     recommendations = []
     conflicts = []
+
+    # Article 1 central artifact: the Domain Integration Matrix (A/B/C/D coverage)
+    # and the two-track PRISMA identification split. Coding is assistive and enters
+    # human review (see docs/ARTICLE1_DOMAIN_CODING.md); failures never abort a run.
+    article1_summary: dict = {}
+    try:
+        from nutev.export.article1_reports import (
+            build_two_track_prisma,
+            write_integration_matrix,
+        )
+
+        article1_summary = write_integration_matrix(all_rows, settings.output_dirs["06_tables"])
+        article1_summary["prisma_two_track"] = build_two_track_prisma(all_rows)
+    except Exception as exc:  # pragma: no cover - defensive
+        article1_summary = {"article1_report_error": str(exc)}
 
     write_event(
         emit_event(run_id, "synthesis_completed", "Synthesis completed"),
@@ -682,6 +709,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "checkpoint_dir": str(settings.output_dirs["07_logs"] / "checkpoints"),
         "status": run_status,
     }
+    # Article 1 domain-integration metrics (domain_coverage, profile_distribution,
+    # documents_with_all_four_domains, prisma_two_track).
+    summary.update(article1_summary)
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(
         "\n".join(f"{k}: {v}" for k, v in summary.items()),

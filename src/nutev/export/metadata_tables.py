@@ -8,7 +8,14 @@ REQUIRED_METADATA_COLUMNS = [
     "artifact_paths", "failure_reason", "relevance_score", "novelty_score", "domains", "outcomes", "diet_patterns", "clinical_conditions",
     "first_seen_date", "last_seen_date", "is_new", "llm_decision", "llm_reason",
     "journal", "publication_date", "article_type", "authors", "abstract", "metadata_status",
-    "editorial_priority_score", "editorial_priority_tier"
+    "editorial_priority_score", "editorial_priority_tier",
+    # Article 1 analytical schema (see nutev.analysis.article1_coding).
+    "track", "issuing_body", "who_region", "income_band", "document_version",
+    "access_date", "official_url", "archived_pdf_path", "archived_pdf_sha256",
+    "domain_A", "domain_B", "domain_C", "domain_D", "profile", "n_domains",
+    "mentions_cost", "mentions_equity", "domain_coding_needs_human_review",
+    "authority", "accuracy", "coverage", "objectivity", "date_currency",
+    "significance", "aacods_needs_human_review",
 ]
 
 ARTICLE_DATA_COLUMNS = [
