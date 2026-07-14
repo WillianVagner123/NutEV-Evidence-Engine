@@ -1,33 +1,51 @@
 cff-version: 1.2.0
 message: >-
   If you use this software or its methodology, please cite it using the metadata
-  below. Fields marked "REVIEW REQUIRED" must be confirmed by a human before a
-  citable release/DOI is minted — do not treat placeholders as verified.
-title: "NutEV/NutMEV: reproducible evidence engine for lifestyle nutrition research"
+  below. Fields tagged with a TODO comment are not yet verified and must be
+  completed by a human before a citable release/DOI is minted.
+title: "NutEV Evidence Engine: reproducible evidence engine for lifestyle nutrition research"
 abstract: >-
-  Computational infrastructure that identifies, organizes, classifies, audits and
-  translates scientific evidence into candidate recommendations for the NutEV/NutMEV
-  protocol. Outputs are RecommendationCandidates and require human review; they are
+  Computational infrastructure that supports a scoping review by identifying,
+  organizing, deduplicating, classifying and auditing scientific and official
+  documents on lifestyle nutrition, producing verifiable extraction matrices and
+  human-review queues. It supports the Evidence layer of the NutEV/NutMEV project;
+  it does not contain or run the separate clinical Decision Engine, and its outputs
+  (RecommendationCandidates) are candidates that require human adjudication and are
   not final clinical recommendations.
 type: software
-version: 0.1.0-alpha
+version: "0.1.0-alpha"
+# date-released is the date THIS version was tagged/archived. Align it with the
+# exact tag date of the citable release (see docs/ZENODO_SETUP.md) before citing.
+date-released: "2026-07-14"  # TODO: alinhar com a data real da tag/release e do Zenodo
 license: MIT
 repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
 url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
 keywords:
   - lifestyle nutrition
+  - dietary guidelines
   - evidence synthesis
   - scoping review
+  - PRISMA-ScR
+  - grey literature
   - reproducible research
   - open science
 authors:
-  # REVIEW REQUIRED: confirm legal name, affiliation and ORCID before release.
-  # Placeholders below are derived only from the repository owner handle and must
-  # not be treated as verified authorship. Do not invent ORCID identifiers.
-  - name: "NutEV/NutMEV Project"
-    # given-names: ""      # REVIEW REQUIRED
-    # family-names: ""     # REVIEW REQUIRED
-    # affiliation: ""      # REVIEW REQUIRED
-    # orcid: ""            # REVIEW REQUIRED (leave unset if unknown)
-# DOI: ""                  # REVIEW REQUIRED — set after Zenodo/OSF archival
-# preferred-citation:      # REVIEW REQUIRED — add the Article 1 reference when published
+  - given-names: "Willian Vagner Dorneles"
+    family-names: "Schneider"
+    # affiliation: "Programa de Pós-Graduação em Nutrição Humana (PPGNH), Universidade de Brasília (UnB)"  # TODO: confirmar a redação exata da afiliação
+    # orcid: "https://orcid.org/0000-0000-0000-0000"  # TODO: inserir ORCID real (não inventar)
+# doi identifies the archived, permanent version of this software.
+# doi: "10.5281/zenodo.XXXXXXX"  # TODO: preencher após depósito no Zenodo (ver docs/ZENODO_SETUP.md)
+preferred-citation:
+  type: software
+  title: "NutEV Evidence Engine: reproducible evidence engine for lifestyle nutrition research"
+  version: "0.1.0-alpha"
+  license: MIT
+  repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+  url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+  year: 2026  # TODO: confirmar o ano da release citável
+  # doi: "10.5281/zenodo.XXXXXXX"  # TODO: preencher após depósito no Zenodo
+  authors:
+    - given-names: "Willian Vagner Dorneles"
+      family-names: "Schneider"
+      # orcid: "https://orcid.org/0000-0000-0000-0000"  # TODO: inserir ORCID real

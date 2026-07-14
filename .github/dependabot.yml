@@ -1,18 +1,20 @@
-# Dependabot configuration for NutEV/NutMEV
-# Goal: keep security/dependency maintenance visible without flooding the PR queue.
+# Dependabot configuration for the NutEV Evidence Engine.
+# Goal: keep security/dependency maintenance visible WITHOUT flooding the PR queue
+# (a repository cited in an academic article must not look abandoned under a wall
+# of open bot PRs). Updates are grouped, capped and run monthly.
 # npm/docker ecosystems were removed together with the legacy frontend, Docker
 # infra and legacy tests.
 
 version: 2
 updates:
-  # Python dependencies - weekly, grouped
+  # Python dependencies - monthly, grouped into a single PR.
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "monday"
       time: "04:00"
-    open-pull-requests-limit: 2
+    open-pull-requests-limit: 5
     labels:
       - "dependencies"
       - "python"
@@ -24,12 +26,12 @@ updates:
       prefix: "chore"
       include: "scope"
 
-  # GitHub Actions - monthly
+  # GitHub Actions - monthly, grouped into a single PR.
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
-    open-pull-requests-limit: 1
+    open-pull-requests-limit: 5
     labels:
       - "dependencies"
       - "github-actions"

@@ -1,12 +1,20 @@
-# NutEV/NutMEV — Evidence Engine for Lifestyle Nutrition
+# NutEV **Evidence** Engine — Lifestyle Nutrition
 
-Infraestrutura computacional reprodutível que identifica, organiza, classifica, audita e traduz evidências científicas em **recomendações candidatas** para o Protocolo NutEV/NutMEV.
+Infraestrutura computacional reprodutível que **identifica, organiza, deduplica,
+classifica e audita** documentos científicos e oficiais de Nutrição do Estilo de
+Vida, produzindo matrizes de extração e filas de revisão humana para apoiar uma
+**revisão de escopo** (Artigo 1). É a camada de **evidência** do projeto
+NutEV/NutMEV — **não** é o motor de decisão clínica (ver
+[Escopo e o que este software NÃO é](#escopo-e-o-que-este-software-não-é)).
 
 ![status](https://img.shields.io/badge/status-alpha-orange)
 ![python](https://img.shields.io/badge/python-3.12%E2%80%933.14-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![tests](https://img.shields.io/badge/tests-nutev__tests-informational)
 ![science](https://img.shields.io/badge/output-RecommendationCandidate%20(n%C3%A3o%20final)-red)
+<!-- TODO: após o depósito no Zenodo (docs/ZENODO_SETUP.md), troque o badge abaixo
+     pelo badge de DOI real fornecido pelo Zenodo. -->
+[![DOI](https://img.shields.io/badge/DOI-pendente%20(Zenodo)-lightgrey)](docs/ZENODO_SETUP.md)
 
 > ⚠️ **Status científico:** software de apoio à pesquisa, em estágio **alpha**.
 > Distingue claramente **software**, **pesquisa**, **evidência** e **recomendação
@@ -26,6 +34,26 @@ recomendações **candidatas** rastreáveis.
 **Não faz:** diagnóstico, prescrição individual, decisão clínica automática ou
 recomendação final; não redistribui PDFs/textos protegidos; não usa LLM para
 aprovar recomendações; não armazena dados pessoais/clínicos.
+
+## Escopo e o que este software NÃO é
+
+O projeto NutEV/NutMEV tem **dois softwares distintos**, com nomes parecidos. É
+importante não confundi-los:
+
+| | **NutEV Evidence Engine** (ESTE repositório) | **Decision Engine** (NÃO está aqui) |
+|---|---|---|
+| Apoia | a **revisão de escopo** (Artigo 1) | o **instrumento clínico** |
+| Faz | busca, deduplicação, classificação de documentos, matrizes de extração | z-score intraindividual, AR(1), regra de acionamento |
+| Usuário | o **pesquisador** | o **nutricionista** |
+| Saída | documentos organizados e `RecommendationCandidate` (candidatas) | apoio à decisão clínica |
+
+**Este repositório NÃO contém, NÃO executa e NÃO distribui o motor de decisão
+clínica (*Decision Engine*).** Ele não produz recomendação clínica: as saídas do
+tipo `RecommendationCandidate` são **candidatas** sujeitas a adjudicação humana e
+**não** constituem recomendação final. Todas as decisões de inclusão, exclusão,
+codificação e interpretação são **humanas**. Ver
+[`docs/SCIENTIFIC_GOVERNANCE.md`](docs/SCIENTIFIC_GOVERNANCE.md) e
+[`docs/CODE_AVAILABILITY.md`](docs/CODE_AVAILABILITY.md).
 
 ## Uso público para pesquisa
 
