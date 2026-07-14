@@ -37,7 +37,7 @@ Mirror file: `requirements/nutev-core.txt`.
 | Extra | Install | Purpose | Notable deps |
 |---|---|---|---|
 | `search` | `.[search]` | Extra search providers | `arxiv`, `wikipedia`, `google-search-results` (SerpAPI, optional), `lxml`, `xmltodict` |
-| `documents` | `.[documents]` | PDF/DOCX/OCR extraction (needs system `tesseract`, `poppler`) | `pypdf`, `pdfplumber`, `pdf2image`, `pytesseract`, `python-docx`, `Pillow` |
+| `documents` | `.[documents]` | PDF/DOCX/OCR extraction (scanned-PDF OCR needs system `tesseract`; `poppler` optional — `pymupdf` renders via pip) | `pypdf`, `pdfplumber`, `pymupdf`, `pdf2image`, `pytesseract`, `python-docx`, `Pillow` |
 | `dashboard` | `.[dashboard]` | Streamlit review dashboard | `streamlit`, `plotly` |
 | `api` | `.[api]` | FastAPI REST platform | `fastapi`, `uvicorn`, `jinja2` |
 | `platform` | `.[platform]` | Alias of `api` (kept for the CLI hint) | → `api` |

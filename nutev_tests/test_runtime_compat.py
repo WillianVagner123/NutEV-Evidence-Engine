@@ -59,15 +59,27 @@ def test_audit_artifacts_report_inference_only(tmp_path: Path):
 
 def test_missing_ocr_dependencies_reports_actionable_items(monkeypatch):
     """When OCR prerequisites are absent, the pipeline names what to install."""
-    import shutil as _shutil
-
     from nutev.extract import pdf_text
 
-    # Simulate a machine with neither poppler nor tesseract on PATH.
+    # Simulate a machine with no PyMuPDF, no poppler, and no tesseract on PATH.
+    monkeypatch.setattr(pdf_text, "_has_pymupdf", lambda: False)
     monkeypatch.setattr(pdf_text.shutil, "which", lambda _name: None)
     missing = pdf_text.missing_ocr_dependencies()
     joined = " ".join(missing)
-    assert "poppler" in joined
+    # Rendering guidance offers the pip-only path first (pymupdf).
+    assert "pymupdf" in joined
     assert "tesseract" in joined
     # Every item must tell the user how to obtain it.
-    assert all(("install" in m or "documents" in m) for m in missing)
+    assert all(("install" in m or "documents" in m or "pymupdf" in m) for m in missing)
+
+
+def test_ocr_rendering_satisfied_by_pymupdf_without_poppler(monkeypatch):
+    """With PyMuPDF present, poppler is NOT required for PDF rendering."""
+    from nutev.extract import pdf_text
+
+    monkeypatch.setattr(pdf_text, "_has_pymupdf", lambda: True)
+    # No poppler on PATH, but tesseract present (as on the user's machine).
+    monkeypatch.setattr(pdf_text.shutil, "which", lambda name: "/usr/bin/tesseract" if name == "tesseract" else None)
+    missing = pdf_text.missing_ocr_dependencies()
+    joined = " ".join(missing)
+    assert "PDF rendering" not in joined  # PyMuPDF covers it, no poppler needed

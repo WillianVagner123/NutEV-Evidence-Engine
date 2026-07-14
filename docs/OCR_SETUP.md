@@ -12,37 +12,41 @@ pretend the document was read. It:
 - marks those documents with `extraction_status = pdf_needs_ocr_setup`,
   counted in `07_logs/run_summary.json` as `extraction_pdf_needs_ocr_setup`.
 
+Scanned-PDF OCR needs two things: (a) **render** each page to an image, and
+(b) **read** the text from that image. There are two ways to get (a).
+
 ## 1. Python packages (the `documents` extra)
 
 ```bash
 pip install -e ".[documents]"
 ```
 
-The Windows launcher (`Iniciar-NutEV-Windows.bat`) already installs this for
-you on first run.
+This installs **PyMuPDF** (`pymupdf`), which renders PDF pages to images
+**without any system program** — so you do NOT need poppler. The Windows
+launcher (`Iniciar-NutEV-Windows.bat`) installs this for you on first run.
 
-## 2. System programs
+## 2. The OCR engine: `tesseract`
 
-| Program    | Used for                         | Windows | macOS | Linux (Debian/Ubuntu) |
-|------------|----------------------------------|---------|-------|-----------------------|
-| poppler    | turning PDF pages into images    | download a poppler build and add its `bin` folder to `PATH` | `brew install poppler` | `sudo apt install poppler-utils` |
-| tesseract  | reading text from those images   | install the tesseract Windows build and add it to `PATH` | `brew install tesseract` | `sudo apt install tesseract-ocr` |
+`tesseract` is the one system program you still need (it does the actual
+text-reading). It is small and adds itself to `PATH`.
 
-### Windows, step by step
+| OS | Install |
+|----|---------|
+| Windows | install the tesseract Windows build (the UB Mannheim build is common), keeping the default "add to PATH" option |
+| macOS | `brew install tesseract` |
+| Linux (Debian/Ubuntu) | `sudo apt install tesseract-ocr` |
 
-1. **poppler** — download a Windows build (e.g. the "poppler-windows" release),
-   unzip it (for example to `C:\poppler`), then add `C:\poppler\Library\bin`
-   to your `PATH` (Windows Search → "Edit the system environment variables" →
-   *Environment Variables* → edit `Path` → *New*).
-2. **tesseract** — install the tesseract Windows build (UB Mannheim build is
-   common), keeping the default option that adds it to `PATH`.
-3. Close and reopen VS Code / the terminal so the new `PATH` takes effect.
+Then close and reopen VS Code / the terminal so the new `PATH` takes effect.
+
+> **poppler is optional.** With PyMuPDF installed you can skip it entirely. It
+> is only used as a fallback if PyMuPDF is not available; if you prefer it,
+> install a poppler build and add its `bin` folder to `PATH`.
 
 ## 3. Check it worked
 
 ```bash
-pdftoppm -h
 tesseract --version
+python -c "import fitz; print('pymupdf ok')"
 ```
 
 If both print output, OCR is ready. Re-run NutEV and the
