@@ -1,0 +1,113 @@
+{
+  "version_note": "Focused NutMEV expansion for Article 3 food competence, home food environment and instrument-relevant terms. Loaded after keyword_taxonomy.json and the base supplement.",
+  "global": {
+    "implementation_behavior": {
+      "food_competence_home_environment": [
+        "food competence",
+        "eating competence",
+        "food choice motives",
+        "food choice questionnaire",
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "food skills questionnaire",
+        "food resource management questionnaire",
+        "home food environment",
+        "home food availability",
+        "household food availability",
+        "home food inventory",
+        "healthy home food environment",
+        "food availability questionnaire"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_literacy_competence": [
+      "food competence",
+      "eating competence",
+      "food choice motives",
+      "food choice questionnaire",
+      "meal planning self-efficacy",
+      "meal planning self efficacy",
+      "food skills questionnaire",
+      "food resource management questionnaire",
+      "home food environment",
+      "home food availability",
+      "household food availability",
+      "home food inventory",
+      "healthy home food environment",
+      "food availability questionnaire"
+    ]
+  },
+  "workstreams": {
+    "a3": {
+      "focus_terms": [
+        "food competence",
+        "eating competence",
+        "food choice motives",
+        "food choice questionnaire",
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "food skills questionnaire",
+        "food resource management questionnaire",
+        "home food environment",
+        "home food availability",
+        "household food availability",
+        "home food inventory",
+        "healthy home food environment",
+        "food availability questionnaire"
+      ],
+      "web_query_hints": [
+        "food competence scale validation",
+        "eating competence questionnaire validation",
+        "food choice questionnaire validation",
+        "food skills questionnaire validation",
+        "food resource management questionnaire validation",
+        "meal planning self-efficacy scale",
+        "home food environment questionnaire",
+        "home food availability inventory",
+        "food availability questionnaire validation"
+      ],
+      "document_terms": [
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "psychometric validation"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "food competence",
+        "eating competence",
+        "food choice motives",
+        "food choice questionnaire",
+        "meal planning self-efficacy",
+        "meal planning self efficacy",
+        "food skills questionnaire",
+        "food resource management questionnaire",
+        "home food environment",
+        "home food availability",
+        "household food availability",
+        "home food inventory",
+        "healthy home food environment",
+        "food availability questionnaire"
+      ],
+      "web_query_hints": [
+        "food competence scale validation",
+        "eating competence questionnaire validation",
+        "food choice questionnaire validation",
+        "food skills questionnaire validation",
+        "food resource management questionnaire validation",
+        "meal planning self-efficacy scale",
+        "home food environment questionnaire",
+        "home food availability inventory",
+        "food availability questionnaire validation"
+      ],
+      "document_terms": [
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "psychometric validation"
+      ]
+    }
+  }
+}
