@@ -1,12 +1,20 @@
-# NutEV/NutMEV — Evidence Engine for Lifestyle Nutrition
+# NutEV **Evidence** Engine — Lifestyle Nutrition
 
-Infraestrutura computacional reprodutível que identifica, organiza, classifica, audita e traduz evidências científicas em **recomendações candidatas** para o Protocolo NutEV/NutMEV.
+Infraestrutura computacional reprodutível que **identifica, organiza, deduplica,
+classifica e audita** documentos científicos e oficiais de Nutrição do Estilo de
+Vida, produzindo matrizes de extração e filas de revisão humana para apoiar uma
+**revisão de escopo** (Artigo 1). É a camada de **evidência** do projeto
+NutEV/NutMEV — **não** é o motor de decisão clínica (ver
+[Escopo e o que este software NÃO é](#escopo-e-o-que-este-software-não-é)).
 
 ![status](https://img.shields.io/badge/status-alpha-orange)
 ![python](https://img.shields.io/badge/python-3.12%E2%80%933.14-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![tests](https://img.shields.io/badge/tests-nutev__tests-informational)
 ![science](https://img.shields.io/badge/output-RecommendationCandidate%20(n%C3%A3o%20final)-red)
+<!-- TODO: após o depósito no Zenodo (docs/ZENODO_SETUP.md), troque o badge abaixo
+     pelo badge de DOI real fornecido pelo Zenodo. -->
+[![DOI](https://img.shields.io/badge/DOI-pendente%20(Zenodo)-lightgrey)](docs/ZENODO_SETUP.md)
 
 > ⚠️ **Status científico:** software de apoio à pesquisa, em estágio **alpha**.
 > Distingue claramente **software**, **pesquisa**, **evidência** e **recomendação
@@ -26,6 +34,26 @@ recomendações **candidatas** rastreáveis.
 **Não faz:** diagnóstico, prescrição individual, decisão clínica automática ou
 recomendação final; não redistribui PDFs/textos protegidos; não usa LLM para
 aprovar recomendações; não armazena dados pessoais/clínicos.
+
+## Escopo e o que este software NÃO é
+
+O projeto NutEV/NutMEV tem **dois softwares distintos**, com nomes parecidos. É
+importante não confundi-los:
+
+| | **NutEV Evidence Engine** (ESTE repositório) | **Decision Engine** (NÃO está aqui) |
+|---|---|---|
+| Apoia | a **revisão de escopo** (Artigo 1) | o **instrumento clínico** |
+| Faz | busca, deduplicação, classificação de documentos, matrizes de extração | z-score intraindividual, AR(1), regra de acionamento |
+| Usuário | o **pesquisador** | o **nutricionista** |
+| Saída | documentos organizados e `RecommendationCandidate` (candidatas) | apoio à decisão clínica |
+
+**Este repositório NÃO contém, NÃO executa e NÃO distribui o motor de decisão
+clínica (*Decision Engine*).** Ele não produz recomendação clínica: as saídas do
+tipo `RecommendationCandidate` são **candidatas** sujeitas a adjudicação humana e
+**não** constituem recomendação final. Todas as decisões de inclusão, exclusão,
+codificação e interpretação são **humanas**. Ver
+[`docs/SCIENTIFIC_GOVERNANCE.md`](docs/SCIENTIFIC_GOVERNANCE.md) e
+[`docs/CODE_AVAILABILITY.md`](docs/CODE_AVAILABILITY.md).
 
 ## Uso público para pesquisa
 
@@ -262,16 +290,30 @@ Nenhum desses estados equivale a recomendação final.
 
 As decisões humanas são persistidas em `project_output/07_logs/human_review_decisions.csv` quando o fluxo de revisão está habilitado. Nenhuma recomendação deve ser considerada final sem revisão humana explícita, lastro documental e adjudicação metodológica.
 
-## Artigo 1
+## Estrutura dos artigos (numeração canônica) e mapa dos workstreams
+
+A arquitetura da tese/pós-doutorado tem **cinco artigos**. Este repositório
+(**Evidence Engine**) apoia os corpora documentais de **A1 e A2**; A3–A5 usam
+outros métodos/projetos.
+
+| | Artigo | Workstream no engine |
+|---|---|---|
+| **A1** | Revisão de escopo (guias + diretrizes) | `busca1` + `busca2a` |
+| **A2** | Revisão integrativa (implementação/adesão) | `busca2b` |
+| **A3** | Protocolo NutEV + pirâmide (Delphi) | — (fora do engine) |
+| **A4** | Framework comportamental | `a4_framework` (alias do antigo `a3`) |
+| **A5** | Instrumento CFD-8 + **Decision Engine** | — (outro projeto, não está aqui) |
 
 O **Artigo 1** é: *“Domínios da Nutrição do Estilo de Vida em guias alimentares e
 diretrizes clínicas: revisão de escopo e análise documental para subsidiar o
-Protocolo NutEV.”* Corpora:
+Protocolo NutEV.”* Seu corpus tem **três trilhas** metodologicamente distintas
+(guias por marco amostral; diretrizes por bases indexadas + sites de sociedades;
+materiais de implementação vinculados) — ver `docs/GREY_LITERATURE_POLICY.md` e
+`docs/ARTICLE1_DOMAIN_CODING.md`.
 
-- `busca1` — guias alimentares oficiais;
-- `busca2a` — diretrizes, consensos e statements clínicos;
-- `busca2b` — intervenções e eficácia (fora do corpus principal do Artigo 1);
-- framework comportamental — produto posterior.
+> Nota de renumeração: o workstream histórico `a3` passou a ser **`a4_framework`**
+> (aceito como alias; ambos funcionam). `busca2b` **deixou de ser "fora do
+> corpus"** e agora é o corpus do **Artigo 2**.
 
 Exemplo reproduzível (sem PDFs de terceiros):
 [`examples/article1_pilot/`](examples/article1_pilot/).

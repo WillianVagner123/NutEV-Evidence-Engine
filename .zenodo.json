@@ -1,0 +1,33 @@
+{
+  "title": "NutEV Evidence Engine: reproducible evidence engine for lifestyle nutrition research",
+  "description": "Computational infrastructure that supports a scoping review (Article 1 of a PhD thesis in Human Nutrition) by identifying, organizing, deduplicating, classifying and auditing scientific and official documents on lifestyle nutrition, and by producing verifiable extraction matrices and human-review queues. It supports the Evidence layer of the NutEV/NutMEV project; it does NOT contain or run the separate clinical Decision Engine, and its outputs (RecommendationCandidates) are candidates that require human adjudication and are not final clinical recommendations. The project evolved from an open-source base (Local Deep Research, MIT, LearningCircuit); the inherited engine was removed from the tree and its attribution is preserved in NOTICE.md.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "version": "0.1.0-alpha",
+  "keywords": [
+    "scoping review",
+    "lifestyle medicine",
+    "lifestyle nutrition",
+    "nutrition",
+    "dietary guidelines",
+    "evidence synthesis",
+    "PRISMA-ScR",
+    "grey literature",
+    "reproducible research",
+    "open science"
+  ],
+  "creators": [
+    {
+      "name": "Schneider, Willian Vagner Dorneles"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/WillianVagner123/NutEV-Evidence-Engine",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "TODO before minting the DOI: (1) add the author ORCID to the creators entry (do not invent it); (2) if the Article 1 manuscript has a DOI, add it to related_identifiers with relation 'isSupplementTo'; (3) confirm the affiliation. See docs/ZENODO_SETUP.md."
+}

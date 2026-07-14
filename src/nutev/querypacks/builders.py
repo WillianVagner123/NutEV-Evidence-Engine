@@ -6,6 +6,9 @@ from collections.abc import Iterable
 WORKSTREAM_ALIASES = {
     "a3": "artigo3_framework",
     "article3": "artigo3_framework",
+    # Canonical article renumbering (P5): the behavioural framework is Article 4.
+    "a4": "artigo3_framework",
+    "a4_framework": "artigo3_framework",
 }
 
 BEHAVIOR_CHANGE_PLANNING_TERMS = [
