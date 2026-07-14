@@ -136,6 +136,12 @@ nutev dashboard --project-root ./project_output_demo
 Os dados gerados são **sintéticos** (demonstração, **não** evidência). Detalhes em
 [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
 
+Para ler **PDFs escaneados** (imagem, sem camada de texto) é preciso o extra
+`documents` e os programas de sistema `poppler` e `tesseract`. Sem eles o NutEV
+não trava: avisa o que instalar e marca esses documentos como
+`pdf_needs_ocr_setup` no `run_summary.json`. Passo a passo (inclusive Windows)
+em [`docs/OCR_SETUP.md`](docs/OCR_SETUP.md).
+
 ## Demo
 
 ```bash

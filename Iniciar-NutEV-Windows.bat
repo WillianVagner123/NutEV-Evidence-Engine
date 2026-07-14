@@ -24,7 +24,8 @@ if not exist ".venv\Scripts\nutev.exe" (
   echo ==^> Preparando o ambiente na primeira vez. Isso pode levar alguns minutos...
   %PY% -m venv .venv
   ".venv\Scripts\python.exe" -m pip install --upgrade pip
-  ".venv\Scripts\python.exe" -m pip install -e ".[dashboard]"
+  REM dashboard = painel; documents = leitura de PDF/OCR; search = coleta real.
+  ".venv\Scripts\python.exe" -m pip install -e ".[dashboard,documents,search]"
   if errorlevel 1 (
     echo [ERRO] Falha na instalacao. Veja as mensagens acima.
     pause

@@ -631,6 +631,13 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         for e in extraction_manifest
         if e.get("extraction_status") in {"junk_or_blocked", "too_short"}
     )
+    # Scanned/image-only PDFs that could not be read because the OCR
+    # prerequisites (documents extra + poppler + tesseract) are not installed.
+    extraction_pdf_needs_ocr_setup = sum(
+        1
+        for e in extraction_manifest
+        if e.get("extraction_status") == "pdf_needs_ocr_setup"
+    )
 
     summary = {
         "workstreams": workstreams,
@@ -640,6 +647,7 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "ocr_docs": total_ocr,
         "extracted_texts": extracted_texts,
         "extraction_junk_or_blocked": extraction_junk_or_blocked,
+        "extraction_pdf_needs_ocr_setup": extraction_pdf_needs_ocr_setup,
         "curated_unique_documents": curation_summary["unique_documents"],
         # Claim/recommendation metrics come from the audit artifacts written
         # during curation (curation_summary), falling back to the local lists.

@@ -55,3 +55,19 @@ def test_audit_artifacts_report_inference_only(tmp_path: Path):
         summary["evidence_claims_total"]
         == summary["evidence_claims_supported"] + summary["evidence_claims_inference_only"]
     )
+
+
+def test_missing_ocr_dependencies_reports_actionable_items(monkeypatch):
+    """When OCR prerequisites are absent, the pipeline names what to install."""
+    import shutil as _shutil
+
+    from nutev.extract import pdf_text
+
+    # Simulate a machine with neither poppler nor tesseract on PATH.
+    monkeypatch.setattr(pdf_text.shutil, "which", lambda _name: None)
+    missing = pdf_text.missing_ocr_dependencies()
+    joined = " ".join(missing)
+    assert "poppler" in joined
+    assert "tesseract" in joined
+    # Every item must tell the user how to obtain it.
+    assert all(("install" in m or "documents" in m) for m in missing)

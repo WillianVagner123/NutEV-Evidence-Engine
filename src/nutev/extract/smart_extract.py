@@ -1,7 +1,30 @@
 from __future__ import annotations
 
 from pathlib import Path
-from nutev.extract.pdf_text import extract_pdf_text, ocr_scanned_pdf, is_probably_pdf_file
+from nutev.extract.pdf_text import (
+    extract_pdf_text,
+    ocr_scanned_pdf,
+    is_probably_pdf_file,
+    missing_ocr_dependencies,
+)
+
+# Emit the "install OCR prerequisites" guidance at most once per process so a
+# corpus of scanned PDFs does not flood the log with the same instruction.
+_OCR_DEPS_WARNED = False
+
+
+def _warn_ocr_setup_once(logger) -> bool:
+    """Warn (once) if scanned-PDF OCR prerequisites are missing. Returns True if missing."""
+    global _OCR_DEPS_WARNED
+    missing = missing_ocr_dependencies()
+    if missing and not _OCR_DEPS_WARNED:
+        _OCR_DEPS_WARNED = True
+        logger.warning(
+            "PDF sem texto nativo encontrado, mas o OCR nao esta configurado. "
+            "Instale os pre-requisitos para ler PDFs escaneados: %s",
+            "; ".join(missing),
+        )
+    return bool(missing)
 from nutev.extract.docx_text import extract_docx_text
 from nutev.extract.spreadsheet_text import extract_csv_text, extract_sheet_text
 from nutev.extract.html_text import extract_html_text
@@ -105,6 +128,11 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
                     text = ocr_text
                     used_ocr = True
                     extraction_status = "ok_ocr"
+                elif _warn_ocr_setup_once(logger):
+                    # Scanned/image-only PDF that could not be OCR'd because the
+                    # OCR prerequisites are not installed — flag distinctly so
+                    # the user knows this is a setup gap, not an empty document.
+                    extraction_status = "pdf_needs_ocr_setup"
                 else:
                     extraction_status = "pdf_no_text"
         elif _looks_like_html_bytes(path):
