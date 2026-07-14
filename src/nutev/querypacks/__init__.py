@@ -11,6 +11,7 @@ from nutev.querypacks.group_visit_care_extensions import apply_group_visit_care_
 from nutev.querypacks.iberoamerican_guidance_extensions import (
     apply_iberoamerican_guidance_extensions,
 )
+from nutev.querypacks.masld_diet_extensions import apply_masld_diet_extensions
 from nutev.querypacks.semantic_extensions import apply_semantic_extensions
 
 apply_semantic_extensions()
@@ -19,6 +20,7 @@ apply_carbohydrate_quality_extensions()
 apply_food_access_benefit_extensions()
 apply_group_visit_care_extensions()
 apply_iberoamerican_guidance_extensions()
+apply_masld_diet_extensions()
 
 __all__ = [
     "apply_adherence_engagement_extensions",
@@ -26,5 +28,6 @@ __all__ = [
     "apply_food_access_benefit_extensions",
     "apply_group_visit_care_extensions",
     "apply_iberoamerican_guidance_extensions",
+    "apply_masld_diet_extensions",
     "apply_semantic_extensions",
 ]
