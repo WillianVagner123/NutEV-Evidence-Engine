@@ -29,14 +29,18 @@ states exactly what AI may and may not do, and where humans are required.
 
 ## Running without any LLM
 
-NutEV runs fully without an LLM (`--llm-enabled` off, no `llm` extra installed).
-In that mode, LLM-assisted steps are skipped; deterministic rules and human review
-remain. No paid API is required for the core pipeline or the demo.
+NutEV runs fully without an LLM. The engine currently ships with **no built-in
+LLM integration** (the optional LLM scaffolding was removed from the tree);
+`--llm-enabled` stays off, deterministic rules and human review are the only
+decision paths, and no paid API is required for the pipeline or the demo.
 
 ## Provider configuration
 
-- LLM providers are optional (`pip install -e ".[llm]"`).
-- Keys are read from environment variables and never committed.
+- The engine does not call any LLM. If LLM assistance is reintroduced in the
+  future it must remain optional and assistive only (never approving a
+  recommendation).
+- API keys, when used by external tooling, are read from environment variables
+  and never committed.
 - The default PR CI never calls a paid/hosted LLM.
 
 ## Auditability
