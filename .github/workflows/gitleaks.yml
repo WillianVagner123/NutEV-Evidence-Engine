@@ -14,11 +14,11 @@ jobs:
     name: gitleaks secret scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Run gitleaks
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Note: .gitleaksignore entries are NOT assumed safe — they must be
@@ -28,7 +28,7 @@ jobs:
     name: forbidden files & large files
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Check for forbidden committed files
         run: |
           set -euo pipefail
