@@ -1,7 +1,33 @@
 from __future__ import annotations
 
+import shutil
 from pathlib import Path
 from nutev.extract.image_ocr import ocr_pil_image
+
+
+def missing_ocr_dependencies() -> list[str]:
+    """Return human-readable names of OCR prerequisites that are unavailable.
+
+    Scanned/image-only PDFs can only be read when both the Python packages
+    (installed via the ``documents`` extra) and the system binaries (poppler for
+    pdf2image, tesseract for OCR) are present. When any are missing, extraction
+    silently yields no text; this lets the pipeline report *why* and tell the
+    user exactly what to install instead of masking it as an empty PDF.
+    """
+    missing: list[str] = []
+    try:
+        import pdf2image  # noqa: F401
+    except Exception:
+        missing.append('pdf2image (pip install -e ".[documents]")')
+    try:
+        import pytesseract  # noqa: F401
+    except Exception:
+        missing.append('pytesseract (pip install -e ".[documents]")')
+    if shutil.which("pdftoppm") is None and shutil.which("pdftocairo") is None:
+        missing.append("poppler (system package: apt install poppler-utils / brew install poppler / Windows poppler build)")
+    if shutil.which("tesseract") is None:
+        missing.append("tesseract (system package: apt install tesseract-ocr / brew install tesseract / Windows tesseract build)")
+    return missing
 
 
 def is_probably_pdf_file(path: Path) -> bool:

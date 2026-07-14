@@ -631,6 +631,13 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         for e in extraction_manifest
         if e.get("extraction_status") in {"junk_or_blocked", "too_short"}
     )
+    # Scanned/image-only PDFs that could not be read because the OCR
+    # prerequisites (documents extra + poppler + tesseract) are not installed.
+    extraction_pdf_needs_ocr_setup = sum(
+        1
+        for e in extraction_manifest
+        if e.get("extraction_status") == "pdf_needs_ocr_setup"
+    )
 
     summary = {
         "workstreams": workstreams,
@@ -640,17 +647,20 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         "ocr_docs": total_ocr,
         "extracted_texts": extracted_texts,
         "extraction_junk_or_blocked": extraction_junk_or_blocked,
+        "extraction_pdf_needs_ocr_setup": extraction_pdf_needs_ocr_setup,
         "curated_unique_documents": curation_summary["unique_documents"],
-        "evidence_claims_total": len(claims),
-        # "supported" here means quote-backed (verbatim quote found in extracted
+        # Claim/recommendation metrics come from the audit artifacts written
+        # during curation (curation_summary), falling back to the local lists.
+        # "supported" means quote-backed (verbatim quote found in extracted
         # text) — NOT scientifically validated. It still requires human review.
-        "evidence_claims_supported": sum(1 for c in claims if c.claim_status == "supported"),
-        "evidence_claims_inference_only": sum(1 for c in claims if c.claim_status == "inference_only"),
-        "evidence_claims_needs_review": sum(1 for c in claims if c.needs_human_review),
-        "recommendation_candidates_total": len(recommendations),
-        "recommendation_candidates_ready_review": sum(1 for r in recommendations if r.recommendation_status == "ready_for_human_review"),
-        "recommendation_candidates_insufficient_evidence": sum(1 for r in recommendations if r.recommendation_status == "insufficient_evidence"),
-        "conflicting_evidence_total": len(conflicts),
+        "evidence_claims_total": curation_summary.get("evidence_claims_total", len(claims)),
+        "evidence_claims_supported": curation_summary.get("evidence_claims_supported", sum(1 for c in claims if c.claim_status == "supported")),
+        "evidence_claims_inference_only": curation_summary.get("evidence_claims_inference_only", sum(1 for c in claims if c.claim_status == "inference_only")),
+        "evidence_claims_needs_review": curation_summary.get("evidence_claims_needs_review", sum(1 for c in claims if c.needs_human_review)),
+        "recommendation_candidates_total": curation_summary.get("recommendation_candidates_total", len(recommendations)),
+        "recommendation_candidates_ready_review": curation_summary.get("recommendation_candidates_ready_review", sum(1 for r in recommendations if r.recommendation_status == "ready_for_human_review")),
+        "recommendation_candidates_insufficient_evidence": curation_summary.get("recommendation_candidates_insufficient_evidence", sum(1 for r in recommendations if r.recommendation_status == "insufficient_evidence")),
+        "conflicting_evidence_total": curation_summary.get("conflicting_evidence_total", len(conflicts)),
         "run_status": run_status,
         "providers_started": sum(provider_status_counts.values()),
         "providers_completed": provider_status_counts.get("completed", 0),
