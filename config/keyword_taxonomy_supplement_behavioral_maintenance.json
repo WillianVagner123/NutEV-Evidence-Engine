@@ -1,0 +1,173 @@
+{
+  "version_note": "Focused NutMEV supplement for dietary adherence maintenance, relapse prevention, and behavior-change self-regulation. Loaded after keyword_taxonomy.json and other supplements; appends terms without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "maintenance_self_regulation": [
+        "habit formation",
+        "habit maintenance",
+        "healthy habit formation",
+        "dietary habit formation",
+        "eating habit formation",
+        "implementation intentions",
+        "action control",
+        "coping self-efficacy",
+        "maintenance self-efficacy",
+        "self-regulatory skills",
+        "dietary self-regulation skills",
+        "dietary lapses",
+        "lapse prevention",
+        "relapse prevention",
+        "relapse prevention intervention",
+        "weight regain prevention",
+        "weight regain prevention intervention",
+        "weight maintenance intervention",
+        "long-term weight loss maintenance intervention",
+        "long term weight loss maintenance intervention"
+      ],
+      "adherence_engagement_retention": [
+        "dietary intervention engagement",
+        "nutrition intervention engagement",
+        "dietary intervention retention",
+        "nutrition intervention retention",
+        "intervention dose",
+        "dietary intervention dose",
+        "nutrition intervention dose",
+        "session attendance",
+        "counseling attendance",
+        "counselling attendance",
+        "treatment persistence",
+        "program adherence",
+        "programme adherence",
+        "program retention",
+        "programme retention"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "habit formation",
+      "habit maintenance",
+      "implementation intentions",
+      "action control",
+      "coping self-efficacy",
+      "maintenance self-efficacy",
+      "self-regulatory skills",
+      "dietary self-regulation skills",
+      "dietary lapses",
+      "lapse prevention",
+      "relapse prevention intervention",
+      "dietary intervention engagement",
+      "nutrition intervention engagement",
+      "dietary intervention retention",
+      "nutrition intervention retention",
+      "intervention dose",
+      "session attendance",
+      "counseling attendance",
+      "counselling attendance",
+      "program adherence",
+      "programme adherence",
+      "program retention",
+      "programme retention"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "habit formation",
+        "dietary habit formation",
+        "implementation intentions",
+        "action control",
+        "coping self-efficacy",
+        "maintenance self-efficacy",
+        "dietary self-regulation skills",
+        "dietary lapses",
+        "lapse prevention",
+        "relapse prevention intervention",
+        "weight maintenance intervention",
+        "weight regain prevention intervention",
+        "dietary intervention engagement",
+        "nutrition intervention engagement",
+        "dietary intervention retention",
+        "nutrition intervention retention",
+        "intervention dose",
+        "session attendance",
+        "program adherence",
+        "program retention"
+      ],
+      "web_query_hints": [
+        "dietary adherence habit formation intervention",
+        "implementation intentions dietary adherence trial",
+        "action control dietary behavior intervention",
+        "coping self-efficacy weight loss maintenance",
+        "maintenance self-efficacy weight management",
+        "relapse prevention dietary intervention",
+        "lapse prevention weight maintenance",
+        "dietary intervention engagement retention",
+        "nutrition intervention dose adherence",
+        "session attendance lifestyle intervention weight maintenance"
+      ],
+      "document_terms": [
+        "behavior change intervention",
+        "behaviour change intervention",
+        "maintenance intervention",
+        "relapse prevention intervention",
+        "implementation study",
+        "process evaluation",
+        "pragmatic trial",
+        "systematic review"
+      ]
+    },
+    "a3": {
+      "focus_terms": [
+        "habit formation questionnaire",
+        "self-regulation questionnaire",
+        "dietary self-regulation questionnaire",
+        "maintenance self-efficacy scale",
+        "coping self-efficacy scale",
+        "dietary lapses questionnaire",
+        "weight maintenance questionnaire",
+        "program adherence measure",
+        "program retention measure"
+      ],
+      "web_query_hints": [
+        "dietary self-regulation questionnaire validation",
+        "maintenance self-efficacy scale validation",
+        "coping self-efficacy scale weight management",
+        "habit formation questionnaire dietary behavior",
+        "dietary lapses questionnaire validation"
+      ],
+      "document_terms": [
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "psychometric validation"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "habit formation questionnaire",
+        "self-regulation questionnaire",
+        "dietary self-regulation questionnaire",
+        "maintenance self-efficacy scale",
+        "coping self-efficacy scale",
+        "dietary lapses questionnaire",
+        "weight maintenance questionnaire",
+        "program adherence measure",
+        "program retention measure"
+      ],
+      "web_query_hints": [
+        "dietary self-regulation questionnaire validation",
+        "maintenance self-efficacy scale validation",
+        "coping self-efficacy scale weight management",
+        "habit formation questionnaire dietary behavior",
+        "dietary lapses questionnaire validation"
+      ],
+      "document_terms": [
+        "questionnaire validation",
+        "scale validation",
+        "instrument development",
+        "psychometric validation"
+      ]
+    }
+  }
+}
