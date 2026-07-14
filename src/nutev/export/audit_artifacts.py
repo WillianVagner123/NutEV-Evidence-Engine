@@ -142,6 +142,7 @@ def write_audit_artifacts(rows: list[dict], tables_dir: Path) -> dict:
     return {
         "evidence_claims_total": len(claims),
         "evidence_claims_supported": sum(1 for claim in claims if claim.claim_status == "supported"),
+        "evidence_claims_inference_only": sum(1 for claim in claims if claim.claim_status == "inference_only"),
         "evidence_claims_needs_review": sum(1 for claim in claims if claim.needs_human_review),
         "recommendation_candidates_total": len(recommendations),
         "recommendation_candidates_ready_review": sum(

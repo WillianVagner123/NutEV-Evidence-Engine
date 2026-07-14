@@ -11,6 +11,15 @@ from nutev.settings import NutevSettings
 
 
 def main() -> None:
+    # Apply runtime-compat hooks deterministically (do not rely on the
+    # top-level sitecustomize.py being auto-imported — see nutev.runtime_compat).
+    try:
+        from nutev.runtime_compat import apply as _apply_runtime_compat
+
+        _apply_runtime_compat()
+    except Exception:
+        pass
+
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="command")
     gw = sub.add_parser("global-watch")

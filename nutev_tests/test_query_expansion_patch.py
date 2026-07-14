@@ -2,7 +2,9 @@ from pathlib import Path
 
 
 def test_sitecustomize_expands_cardiometabolic_diet_terms() -> None:
-    text = Path("src/sitecustomize.py").read_text(encoding="utf-8")
+    # The query-expansion terms now live in the importable runtime-compat
+    # module; sitecustomize.py is only a thin auto-load shim delegating to it.
+    text = Path("src/nutev/runtime_compat.py").read_text(encoding="utf-8")
 
     expected_terms = [
         "DASH eating plan",
