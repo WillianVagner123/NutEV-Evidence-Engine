@@ -41,10 +41,25 @@ FOOD_ENVIRONMENT_POLICY_TERMS = [
     "healthy food procurement policy",
     "food procurement policy",
     "healthy food retail policy",
+    "healthy food retail intervention",
     "choice architecture intervention",
+    "food choice architecture",
+    "choice architecture for healthy eating",
     "healthy choice architecture",
+    "healthy food placement",
+    "healthy food placement intervention",
     "healthy default",
     "healthy defaults",
+    "healthy default option",
+    "healthy default intervention",
+    "default option intervention",
+    "menu default",
+    "healthy checkout",
+    "checkout intervention",
+    "cafeteria intervention",
+    "worksite cafeteria intervention",
+    "school food environment intervention",
+    "worksite food environment intervention",
     "food affordability policy",
     "healthy food affordability policy",
 ]
@@ -62,6 +77,24 @@ FOOD_ENVIRONMENT_DOCUMENT_TERMS = [
     "institutional food policy",
     "school food service guideline",
     "worksite food service guideline",
+    "choice architecture intervention",
+    "healthy food retail intervention",
+    "healthy default intervention",
+    "cafeteria intervention",
+    "worksite food environment intervention",
+]
+
+FOOD_ENVIRONMENT_BONUS_TERMS = [
+    ("choice architecture for healthy eating", 16),
+    ("healthy food retail intervention", 16),
+    ("healthy food placement intervention", 16),
+    ("healthy default intervention", 16),
+    ("food procurement policy", 14),
+    ("healthy food procurement policy", 16),
+    ("food service guidelines", 14),
+    ("nutrition standards for food service", 16),
+    ("school food environment intervention", 16),
+    ("worksite food environment intervention", 16),
 ]
 
 SOCIAL_PRESCRIBING_NUTRITION_TERMS = [
@@ -206,6 +239,7 @@ def _extend_scoring_terms() -> None:
         _dedupe_preserve_order(
             [
                 *watch_scoring.BONUS_TERMS,
+                *FOOD_ENVIRONMENT_BONUS_TERMS,
                 *SOCIAL_PRESCRIBING_BONUS_TERMS,
                 *OBESITY_PHARMACOTHERAPY_BONUS_TERMS,
             ]
@@ -215,6 +249,8 @@ def _extend_scoring_terms() -> None:
         _dedupe_preserve_order(
             [
                 *watch_scoring.NUTMEV_SCOPE_TERMS,
+                *FOOD_ENVIRONMENT_POLICY_TERMS,
+                *FOOD_ENVIRONMENT_DOCUMENT_TERMS,
                 *SOCIAL_PRESCRIBING_NUTRITION_TERMS,
                 *OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
             ]
@@ -270,7 +306,7 @@ def apply_watch_taxonomy_extensions() -> None:
     _extend_quick_seed_group(
         "food_literacy_culinary_commensality",
         0,
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
     )
     _extend_quick_seed_group(
         "obesity_cardiometabolic",
@@ -283,11 +319,15 @@ def apply_watch_taxonomy_extensions() -> None:
     )
     _extend_query_context(
         "implementation_behavior",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
     )
     _extend_query_context(
         "food_literacy_culinary_commensality",
-        SOCIAL_PRESCRIBING_NUTRITION_TERMS,
+        [*FOOD_ENVIRONMENT_POLICY_TERMS, *SOCIAL_PRESCRIBING_NUTRITION_TERMS],
+    )
+    _extend_query_context(
+        "guidelines_consensus",
+        FOOD_ENVIRONMENT_DOCUMENT_TERMS,
     )
     _extend_query_context(
         "obesity_cardiometabolic",
