@@ -41,10 +41,9 @@ Mirror file: `requirements/nutev-core.txt`.
 | `dashboard` | `.[dashboard]` | Streamlit review dashboard | `streamlit`, `plotly` |
 | `api` | `.[api]` | FastAPI REST platform | `fastapi`, `uvicorn`, `jinja2` |
 | `platform` | `.[platform]` | Alias of `api` (kept for the CLI hint) | → `api` |
-| `llm` | `.[llm]` | Optional LLM providers | `langchain*`, `tiktoken` |
 | `watch` | `.[watch]` | Global Watch browser capture + scheduling | `playwright`, `apscheduler`, `aiohttp`, `tenacity` |
 | `mcp` | `.[mcp]` | MCP server | `mcp[cli]` |
-| `dev` | `.[dev]` | Test/lint/type tooling | `pytest*`, `ruff`, `mypy`, `hypothesis`, … |
+| `dev` | `.[dev]` | Test/lint/type tooling | `pytest*`, `ruff`, `mypy`, … |
 | `all` | `.[all]` | Everything above | recursive extra |
 
 > The inherited `local_deep_research` engine and its `legacy` extra were
@@ -52,8 +51,9 @@ Mirror file: `requirements/nutev-core.txt`.
 
 ### Execution guarantees
 
-- **Without any LLM:** core only; `llm_enabled` stays off. The LLM assists but
-  never approves a recommendation.
+- **Without any LLM:** the engine ships with **no built-in LLM integration**
+  (the optional LLM scaffolding was removed); `llm_enabled` stays off and no
+  automated step approves a recommendation.
 - **Without Google/SerpAPI/Brave:** core + (optionally) `search`; provider keys
   are read from env and simply skipped when absent.
 - **Demo without any key or network:** `pip install -e ".[dashboard]"` →
