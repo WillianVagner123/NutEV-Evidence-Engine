@@ -40,6 +40,27 @@ def test_watch_categories_include_food_access_prescription_variants() -> None:
         assert expected_terms <= terms
 
 
+def test_watch_categories_include_food_environment_policy_variants() -> None:
+    expected_terms = {
+        "choice architecture for healthy eating",
+        "food choice architecture",
+        "healthy food retail intervention",
+        "healthy food placement intervention",
+        "healthy default intervention",
+        "food procurement policy",
+        "nutrition standards for food service",
+        "school food environment intervention",
+        "worksite food environment intervention",
+    }
+
+    for category in (
+        "food_literacy_culinary_commensality",
+        "implementation_behavior",
+    ):
+        terms = {term.lower() for term in WATCH_CATEGORIES[category]}
+        assert expected_terms <= terms
+
+
 def test_obesity_cardiometabolic_watch_terms_include_precise_lipid_markers() -> None:
     terms = {term.lower() for term in WATCH_CATEGORIES["obesity_cardiometabolic"]}
 
