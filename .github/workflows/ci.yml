@@ -30,8 +30,8 @@ jobs:
       - name: Install project and test deps
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -e .
-          python -m pip install pytest pytest-timeout pytest-mock pytest-asyncio freezegun
+          python -m pip install -r requirements/nutev-ci.txt
+          python -m pip install --no-deps -e .
       - name: Run the full canonical test suite
         run: PYTHONPATH=src python -m pytest -q nutev_tests
 
