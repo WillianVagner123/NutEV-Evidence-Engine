@@ -16,20 +16,16 @@ def test_nutev_ci_requirements_exists():
     assert "pytest" in txt
 
 
-def test_nutev_workflows_use_ci_requirements_manifest():
-    tests_workflow = Path(".github/workflows/nutev-tests.yml").read_text(encoding="utf-8")
-    smoke_workflow = Path(".github/workflows/nutev-smoke.yml").read_text(encoding="utf-8")
-    assert "requirements/nutev-ci.txt" in tests_workflow
-    assert "requirements/nutev-ci.txt" in smoke_workflow
-    assert "pip install --no-deps -e ." in tests_workflow
-    assert "pip install --no-deps -e ." in smoke_workflow
+def test_ci_workflow_uses_ci_requirements_manifest():
+    # The canonical CI gate (ci.yml) installs deps from the CI manifest and the
+    # project with --no-deps, then runs the full nutev_tests suite.
+    ci_workflow = Path(".github/workflows/ci.yml").read_text(encoding="utf-8")
+    assert "requirements/nutev-ci.txt" in ci_workflow
+    assert "pip install --no-deps -e ." in ci_workflow
+    assert "pytest -q nutev_tests" in ci_workflow
 
 
-def test_nutev_workflows_use_node24_compatible_actions():
-    tests_workflow = Path(".github/workflows/nutev-tests.yml").read_text(encoding="utf-8")
-    smoke_workflow = Path(".github/workflows/nutev-smoke.yml").read_text(encoding="utf-8")
-    assert "actions/github-script@v8" in tests_workflow
-    assert "actions/checkout@v5" in tests_workflow
-    assert "actions/setup-python@v6" in tests_workflow
-    assert "actions/checkout@v5" in smoke_workflow
-    assert "actions/setup-python@v6" in smoke_workflow
+def test_ci_workflow_uses_node24_compatible_actions():
+    ci_workflow = Path(".github/workflows/ci.yml").read_text(encoding="utf-8")
+    assert "actions/checkout@v5" in ci_workflow
+    assert "actions/setup-python@v6" in ci_workflow
