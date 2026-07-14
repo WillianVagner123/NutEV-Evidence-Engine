@@ -65,3 +65,22 @@ def test_two_track_prisma_splits_databases_from_other_methods():
     assert prisma["identified_from_other_methods"] == 1
     assert prisma["by_track"]["guideline_repository"] == 1
     assert prisma["by_track"]["indexed_database"] == 2
+
+
+def test_record_domain_coding_review_agreement(tmp_path):
+    from nutev.review.human_review import (
+        load_human_review_decisions,
+        record_domain_coding_review,
+    )
+
+    # System suggested "AD"; human agreed.
+    d1 = record_domain_coding_review(tmp_path, "doc1", "AD", "AD", "Willian", "principal_investigator")
+    assert d1["agreement"] is True and d1["final_decision"] == "approved"
+    # System suggested "A"; human corrected to "AD" (disagreement, revised).
+    d2 = record_domain_coding_review(tmp_path, "doc2", "A", "DA", "Willian", "principal_investigator")
+    assert d2["agreement"] is False and d2["final_decision"] == "revised"
+    assert d2["human_decision"] == "AD"  # normalized/sorted
+
+    df = load_human_review_decisions(tmp_path)
+    assert len(df) == 2
+    assert set(["system_suggestion", "human_decision", "agreement"]).issubset(df.columns)

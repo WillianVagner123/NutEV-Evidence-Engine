@@ -131,7 +131,13 @@ def validate_workstream(value: str | None) -> str | None:
     if value in (None, ""):
         return None
     normalized = str(value).strip()
-    aliases = {"article3_framework": "artigo3_framework"}
+    # Canonical article renumbering (P5): the behavioural framework is Article 4;
+    # a4/a4_framework map to the same workstream as the legacy a3 alias.
+    aliases = {
+        "article3_framework": "artigo3_framework",
+        "a4": "artigo3_framework",
+        "a4_framework": "artigo3_framework",
+    }
     normalized = aliases.get(normalized, normalized)
     allowed = {item.value for item in Workstream}
     if normalized not in allowed:

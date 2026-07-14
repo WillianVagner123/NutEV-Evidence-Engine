@@ -290,16 +290,30 @@ Nenhum desses estados equivale a recomendação final.
 
 As decisões humanas são persistidas em `project_output/07_logs/human_review_decisions.csv` quando o fluxo de revisão está habilitado. Nenhuma recomendação deve ser considerada final sem revisão humana explícita, lastro documental e adjudicação metodológica.
 
-## Artigo 1
+## Estrutura dos artigos (numeração canônica) e mapa dos workstreams
+
+A arquitetura da tese/pós-doutorado tem **cinco artigos**. Este repositório
+(**Evidence Engine**) apoia os corpora documentais de **A1 e A2**; A3–A5 usam
+outros métodos/projetos.
+
+| | Artigo | Workstream no engine |
+|---|---|---|
+| **A1** | Revisão de escopo (guias + diretrizes) | `busca1` + `busca2a` |
+| **A2** | Revisão integrativa (implementação/adesão) | `busca2b` |
+| **A3** | Protocolo NutEV + pirâmide (Delphi) | — (fora do engine) |
+| **A4** | Framework comportamental | `a4_framework` (alias do antigo `a3`) |
+| **A5** | Instrumento CFD-8 + **Decision Engine** | — (outro projeto, não está aqui) |
 
 O **Artigo 1** é: *“Domínios da Nutrição do Estilo de Vida em guias alimentares e
 diretrizes clínicas: revisão de escopo e análise documental para subsidiar o
-Protocolo NutEV.”* Corpora:
+Protocolo NutEV.”* Seu corpus tem **três trilhas** metodologicamente distintas
+(guias por marco amostral; diretrizes por bases indexadas + sites de sociedades;
+materiais de implementação vinculados) — ver `docs/GREY_LITERATURE_POLICY.md` e
+`docs/ARTICLE1_DOMAIN_CODING.md`.
 
-- `busca1` — guias alimentares oficiais;
-- `busca2a` — diretrizes, consensos e statements clínicos;
-- `busca2b` — intervenções e eficácia (fora do corpus principal do Artigo 1);
-- framework comportamental — produto posterior.
+> Nota de renumeração: o workstream histórico `a3` passou a ser **`a4_framework`**
+> (aceito como alias; ambos funcionam). `busca2b` **deixou de ser "fora do
+> corpus"** e agora é o corpus do **Artigo 2**.
 
 Exemplo reproduzível (sem PDFs de terceiros):
 [`examples/article1_pilot/`](examples/article1_pilot/).

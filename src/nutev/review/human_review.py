@@ -19,7 +19,7 @@ REQUIRED_FIELDS = [
     "created_at",
 ]
 
-ITEM_TYPES = {"claim", "recommendation_candidate", "conflict", "metadata_only_record", "unsupported_claim"}
+ITEM_TYPES = {"claim", "recommendation_candidate", "conflict", "metadata_only_record", "unsupported_claim", "domain_coding"}
 REVIEWER_ROLES = {"principal_investigator", "advisor", "coadvisor", "reviewer_1", "reviewer_2", "external_reviewer"}
 REVIEWER_DECISIONS = {"approve", "approve_with_revision", "reject", "needs_more_evidence", "needs_second_reviewer", "conflict", "not_applicable"}
 FINAL_DECISIONS = {"pending", "approved", "revised", "rejected", "insufficient_evidence", "conflicting_evidence"}
@@ -68,6 +68,40 @@ def append_human_review_decision(project_root: Path, decision: dict) -> None:
     old = load_human_review_decisions(project_root)
     combined = pd.concat([old, pd.DataFrame([valid])], ignore_index=True)
     combined.to_csv(p, index=False)
+
+
+def record_domain_coding_review(
+    project_root: Path,
+    item_id: str,
+    system_profile: str,
+    human_profile: str,
+    reviewer_name: str,
+    reviewer_role: str,
+    notes: str = "",
+) -> dict:
+    """Log a human review of the A/B/C/D domain coding (Article 1, Task P1.3).
+
+    Stores the system suggestion, the human decision and their agreement so that
+    inter-rater/consistency agreement (e.g. kappa) can be computed later. The
+    system coding is assistive; the human decision is authoritative.
+    """
+    system_profile = "".join(sorted(set((system_profile or "").upper())))
+    human_profile = "".join(sorted(set((human_profile or "").upper())))
+    agreement = system_profile == human_profile
+    decision = {
+        "item_type": "domain_coding",
+        "item_id": item_id,
+        "reviewer_name": reviewer_name,
+        "reviewer_role": reviewer_role,
+        "reviewer_decision": "approve" if agreement else "approve_with_revision",
+        "reviewer_notes": notes,
+        "final_decision": "approved" if agreement else "revised",
+        "system_suggestion": system_profile,
+        "human_decision": human_profile,
+        "agreement": agreement,
+    }
+    append_human_review_decision(project_root, decision)
+    return decision
 
 
 def merge_human_review_decisions(queue_df: pd.DataFrame, decisions_df: pd.DataFrame) -> pd.DataFrame:
