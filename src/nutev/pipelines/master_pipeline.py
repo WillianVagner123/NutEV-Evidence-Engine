@@ -46,7 +46,7 @@ from nutev.querypacks.provider_queries import (
     build_provider_querypack,
     write_provider_querypack_audit,
 )
-from nutev.search.official_sources import manifest_sources, load_official_manifest
+from nutev.search.official_sources import load_official_manifest
 from nutev.search.provider_orchestrator import search_provider
 from nutev.settings import NutevSettings, load_json
 
@@ -608,7 +608,6 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         artifact_inputs,
         settings.output_dirs["07_logs"] / "artifact_manifest.csv",
     )
-    provider_failures_path = settings.output_dirs["07_logs"] / "provider_failures.csv"
     partial_results = provider_status_counts.get("failed", 0) > 0 or provider_status_counts.get("partial", 0) > 0
     run_status = "failed" if not all_rows and provider_status_counts.get("failed", 0) and not provider_status_counts.get("completed", 0) else ("partial" if partial_results else "completed")
     search_job.status = run_status
