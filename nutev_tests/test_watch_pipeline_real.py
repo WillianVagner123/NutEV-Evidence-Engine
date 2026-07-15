@@ -1,5 +1,3 @@
-from pathlib import Path
-import json
 
 from nutev.global_watch import watch_pipeline as wp
 from nutev.global_watch.watch_scoring import score_watch_item

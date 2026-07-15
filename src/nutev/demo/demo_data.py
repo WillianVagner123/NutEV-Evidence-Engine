@@ -47,7 +47,7 @@ def generate_demo_data(project_root: Path) -> None:
         "NUTEV_PROTOCOL_TRANSLATION_MATRIX.xlsx": metadata,
         "NUTEV_EVIDENCE_CLAIMS.xlsx": claims,
         "NUTEV_RECOMMENDATION_CANDIDATES.xlsx": recs,
-        "NUTEV_HUMAN_REVIEW_QUEUE.xlsx": claims[claims["needs_human_review"]==True],
+        "NUTEV_HUMAN_REVIEW_QUEUE.xlsx": claims[claims["needs_human_review"]],
     }.items():
         try:
             df.to_excel(project_root/"06_tables"/name, index=False)

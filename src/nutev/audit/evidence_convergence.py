@@ -33,7 +33,7 @@ def calculate_recommendation_convergence(candidate: Any, claims: list[Any]) -> d
     supporting_ids = set(_listish(c.get("supporting_claim_ids")))
     linked = [_claim_dict(x) for x in claims if _claim_dict(x).get("claim_id") in supporting_ids]
     documents = {x.get("document_id") for x in linked if x.get("document_id")}
-    lenses = {l for x in linked for l in _listish(x.get("evidence_lenses"))}
+    lenses = {lens for x in linked for lens in _listish(x.get("evidence_lenses"))}
     evidence_types = {x.get("evidence_type") for x in linked if x.get("evidence_type")}
     conflict = bool(_listish(c.get("conflicting_claim_ids")))
     score = len(documents) + len(lenses) + len(evidence_types)

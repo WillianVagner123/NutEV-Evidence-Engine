@@ -118,7 +118,6 @@ def search_europepmc(query: str, page_size: int = 18) -> list[dict]:
         return []
     if os.environ.get("NUTEV_SKIP_EUROPEPMC") == "1":
         return []
-    last = None
     for attempt in range(1, 4):
         try:
             response = requests.get(
@@ -133,7 +132,6 @@ def search_europepmc(query: str, page_size: int = 18) -> list[dict]:
                 row["query"] = query
                 row["provider_query"] = query
             return rows
-        except Exception as exc:
-            last = exc
+        except Exception:
             time.sleep(1.0 * attempt)
     return []

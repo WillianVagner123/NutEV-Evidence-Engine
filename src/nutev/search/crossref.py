@@ -27,7 +27,6 @@ def _pick_crossref_url(item: dict) -> str:
 def search_crossref(query: str, rows: int = 18) -> list[dict]:
     if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return []
-    last = None
     for attempt in range(1, 4):
         try:
             r = requests.get(
@@ -64,7 +63,6 @@ def search_crossref(query: str, rows: int = 18) -> list[dict]:
                     }
                 )
             return out
-        except Exception as e:
-            last = e
+        except Exception:
             time.sleep(1.0 * attempt)
     return []
