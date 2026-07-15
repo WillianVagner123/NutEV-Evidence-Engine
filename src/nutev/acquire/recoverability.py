@@ -208,6 +208,95 @@ def write_recoverability_report(diagnosis: dict, out_csv: str | Path) -> Path:
     return out
 
 
+# Extraction statuses that mean a usable full text was obtained (kept in sync
+# with the pipeline's success set in master_pipeline / smart_extract).
+_FULLTEXT_SUCCESS = ("ok", "ok_ocr", "fake_pdf_html", "fake_pdf_text")
+
+
+def fulltext_coverage(
+    rows: list[dict],
+    *,
+    success_statuses: Iterable[str] = _FULLTEXT_SUCCESS,
+) -> dict:
+    """Per-workstream full text actually captured in this run.
+
+    Reads each row's ``extraction_status`` (set by the pipeline after
+    extraction) and counts records that reached usable full text vs those that
+    stayed metadata-only. This is the number that proves *how much was captured*
+    (P6) — computed offline, no network.
+    """
+    ok = set(success_statuses)
+    buckets: dict[str, dict[str, int]] = {}
+    for row in rows:
+        ws = _clean(row.get("workstream")) or "unknown"
+        b = buckets.setdefault(ws, {"total": 0, "fulltext": 0})
+        b["total"] += 1
+        if _clean(row.get("extraction_status")) in ok:
+            b["fulltext"] += 1
+    per_ws = {
+        ws: {
+            "total": b["total"],
+            "fulltext_extracted": b["fulltext"],
+            "pct_fulltext": _pct(b["fulltext"], b["total"]),
+            "metadata_only": b["total"] - b["fulltext"],
+            "pct_metadata_only": _pct(b["total"] - b["fulltext"], b["total"]),
+        }
+        for ws, b in sorted(buckets.items())
+    }
+    total = sum(b["total"] for b in buckets.values())
+    ft = sum(b["fulltext"] for b in buckets.values())
+    return {
+        "total": total,
+        "fulltext_extracted": ft,
+        "pct_fulltext": _pct(ft, total),
+        "metadata_only": total - ft,
+        "per_workstream": per_ws,
+    }
+
+
+def fulltext_coverage_block(
+    rows: list[dict],
+    *,
+    recoverability: dict | None = None,
+) -> dict:
+    """Compact ``fulltext_coverage`` block for run_summary.json.
+
+    Combines what was actually extracted with the recoverability *ceiling* (OA
+    vs paywall) so the summary shows both "what we got" and "what is gettable".
+    """
+    cov = fulltext_coverage(rows)
+    block: dict = {
+        "total": cov["total"],
+        "fulltext_extracted": cov["fulltext_extracted"],
+        "pct_fulltext": cov["pct_fulltext"],
+        "metadata_only": cov["metadata_only"],
+        "per_workstream": cov["per_workstream"],
+    }
+    if recoverability is not None:
+        block["recoverable_ceiling"] = {
+            "overall_pct_open_access": recoverability.get("overall", {}).get("pct_open_access", 0.0),
+            "per_workstream_pct_open_access": {
+                ws: s["pct_open_access"]
+                for ws, s in recoverability.get("per_workstream", {}).items()
+            },
+        }
+    return {"fulltext_coverage": block}
+
+
+def write_recoverability_outputs(diagnosis: dict, logs_dir: str | Path) -> Path:
+    """Write both the recoverability CSV and JSON into ``logs_dir``.
+
+    Returns the JSON path. Used by the pipeline so the offline recoverability
+    ceiling is always emitted alongside run_summary.json.
+    """
+    logs_dir = Path(logs_dir)
+    write_recoverability_report(diagnosis, logs_dir / "fulltext_recoverability.csv")
+    return _write_json(
+        {**diagnosis, **recoverability_summary_block(diagnosis)},
+        logs_dir / "fulltext_recoverability.json",
+    )
+
+
 def recoverability_summary_block(diagnosis: dict) -> dict:
     """Compact block for run_summary.json: OA vs paywall per workstream."""
     return {
