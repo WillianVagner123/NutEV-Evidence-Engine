@@ -1,7 +1,6 @@
 """Tests for the official-source verifier (`nutev verify-sources`)."""
 from __future__ import annotations
 
-import os
 from pathlib import Path
 
 from nutev.search.verify_sources import verify_official_sources, write_verification_report

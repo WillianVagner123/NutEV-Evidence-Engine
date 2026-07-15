@@ -31,7 +31,6 @@ from nutev.search.checkpoint import query_hash
 from nutev.search.europepmc import search_europepmc
 from nutev.search.openalex import search_openalex
 from nutev.search.pubmed import search_pubmed
-from nutev.settings import load_json
 
 try:
     from nutev.search.crossref import search_crossref
