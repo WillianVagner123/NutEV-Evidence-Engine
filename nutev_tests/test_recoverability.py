@@ -92,6 +92,20 @@ def test_report_and_summary_block(tmp_path: Path):
     assert block["total"] == 4 and "busca2a" in block["per_workstream_pct_open_access"]
 
 
+def test_columns_resolved_from_union_not_first_row():
+    # Regression: the first row (an official guide) lacks the doi/pmid keys.
+    # Column resolution must use the union of keys across all rows, otherwise
+    # the whole corpus reports 0 DOIs/PMIDs.
+    rows = [
+        {"workstream": "busca1", "title": "guide", "pmcid": ""},  # no doi/pmid keys
+        {"workstream": "busca2a", "doi": "10.1/x", "pmid": "123", "pmcid": "PMC9"},
+        {"workstream": "busca2a", "doi": "10.2/y", "pmid": "456", "pmcid": ""},
+    ]
+    d = diagnose_recoverability(rows)
+    assert d["per_workstream"]["busca2a"]["with_doi"] == 2
+    assert d["per_workstream"]["busca2a"]["with_pmid"] == 2
+
+
 def test_read_metadata_rows_roundtrip(tmp_path: Path):
     p = tmp_path / "article_data.csv"
     p.write_text("workstream,doi,pmcid\nbusca1,10.1/x,PMC9\n", encoding="utf-8")

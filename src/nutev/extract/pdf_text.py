@@ -87,8 +87,12 @@ def _render_pdf_pages(path: Path, dpi: int = 200):
         images = []
         with fitz.open(str(path)) as doc:
             for page in doc:
-                pix = page.get_pixmap(dpi=dpi)
-                images.append(Image.frombytes("RGB", (pix.width, pix.height), pix.samples))
+                # alpha=False keeps 3 (RGB) or 1 (grayscale) bytes/pixel; picking
+                # the PIL mode from pix.n avoids a frombytes ValueError on
+                # grayscale/CMYK pages (which would silently abort OCR).
+                pix = page.get_pixmap(dpi=dpi, alpha=False)
+                mode = "RGB" if pix.n >= 3 else "L"
+                images.append(Image.frombytes(mode, (pix.width, pix.height), pix.samples))
         return images
     # Fallback: pdf2image needs the system poppler binaries.
     from pdf2image import convert_from_path
