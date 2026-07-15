@@ -116,7 +116,14 @@ def diagnose_recoverability(
     """
     if not rows:
         return {"total": 0, "per_workstream": {}, "overall": {}, "online": online}
-    cols = _resolve_columns(rows[0].keys())
+    # Resolve columns from the UNION of keys across all rows, not just rows[0]:
+    # official-guide rows often omit the doi/pmid keys entirely, and if such a
+    # row is first, resolving from it alone would report 0 DOIs/PMIDs for the
+    # whole corpus (undercounting the recoverability ceiling).
+    all_keys: set[str] = set()
+    for row in rows:
+        all_keys.update(row.keys())
+    cols = _resolve_columns(all_keys)
     if online and not (email and session is not None):
         raise ValueError("online mode requires both email and session")
     if cache is None:
