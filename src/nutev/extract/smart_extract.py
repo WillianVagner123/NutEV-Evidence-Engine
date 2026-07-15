@@ -192,18 +192,36 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     ocr_dir.mkdir(parents=True, exist_ok=True)
 
-    txt_path = out_dir / f"{path.stem}.txt"
-    txt_path.write_text(text or "", encoding="utf-8")
-
-    if used_ocr:
-        (ocr_dir / f"{path.stem}.txt").write_text(text or "", encoding="utf-8")
+    # P4 guard: only persist a text file when extraction genuinely produced
+    # usable text. Writing a .txt for empty/junk/too-short extractions created
+    # silent 11-33 byte files that masked the "no full text" problem. When there
+    # is no usable text we write nothing, return an empty text_path, and log it
+    # so the failure is visible in 07_logs — never a silent empty artifact.
+    text_body = text or ""
+    has_usable_text = (
+        extraction_status in _QUALITY_CHECKED_STATUSES and bool(text_body.strip())
+    )
+    if has_usable_text:
+        txt_path = out_dir / f"{path.stem}.txt"
+        txt_path.write_text(text_body, encoding="utf-8")
+        if used_ocr:
+            (ocr_dir / f"{path.stem}.txt").write_text(text_body, encoding="utf-8")
+        text_path_str = str(txt_path)
+    else:
+        text_path_str = ""
+        logger.info(
+            "extração sem texto útil path=%s status=%s chars=%s (nenhum .txt gravado)",
+            path,
+            extraction_status,
+            len(text_body.strip()),
+        )
 
     return {
         "file": str(path),
         "ext": ext,
         "used_ocr": used_ocr,
         "ocr_failed_pages": ";".join(map(str, ocr_failed_pages)),
-        "text_path": str(txt_path),
-        "chars": len(text or ""),
+        "text_path": text_path_str,
+        "chars": len(text_body),
         "extraction_status": extraction_status,
     }
