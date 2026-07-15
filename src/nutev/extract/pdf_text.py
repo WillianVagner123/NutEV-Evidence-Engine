@@ -75,8 +75,8 @@ def extract_pdf_text(path: Path) -> tuple[str, bool]:
         return "", False
 
 
-def _render_pdf_pages(path: Path):
-    """Render PDF pages to PIL images. Prefer PyMuPDF (pip-only, no poppler).
+def _render_pdf_pages(path: Path, dpi: int = 200):
+    """Render PDF pages to PIL images at ``dpi``. Prefer PyMuPDF (pip-only).
 
     Returns an iterable of PIL Images, or raises if no renderer is available.
     """
@@ -87,33 +87,67 @@ def _render_pdf_pages(path: Path):
         images = []
         with fitz.open(str(path)) as doc:
             for page in doc:
-                # 200 DPI is a good balance of OCR accuracy and speed.
-                pix = page.get_pixmap(dpi=200)
+                pix = page.get_pixmap(dpi=dpi)
                 images.append(Image.frombytes("RGB", (pix.width, pix.height), pix.samples))
         return images
     # Fallback: pdf2image needs the system poppler binaries.
     from pdf2image import convert_from_path
 
-    return convert_from_path(str(path))
+    return convert_from_path(str(path), dpi=dpi)
 
 
-def ocr_scanned_pdf(path: Path, logger) -> tuple[str, list[int]]:
-    failed = []
-    texts = []
+# OCR minimum useful length and the minimum share of alphabetic characters below
+# which the output is treated as garbage (a scanned page that rendered/OCR'd
+# poorly typically yields either almost nothing or a soup of symbols).
+_OCR_MIN_CHARS = 40
+_OCR_MIN_ALPHA_RATIO = 0.35
 
-    if not is_probably_pdf_file(path):
-        return "", [0]
 
-    try:
-        pages = _render_pdf_pages(path)
-    except Exception as e:
-        logger.warning("Falha ao renderizar PDF para OCR %s: %s", path, e)
-        return "", [0]
+def ocr_output_looks_failed(text: str) -> bool:
+    """Heuristic failure detector for a page/doc's OCR output."""
+    s = (text or "").strip()
+    if len(s) < _OCR_MIN_CHARS:
+        return True
+    alpha = sum(c.isalpha() for c in s)
+    return (alpha / len(s)) < _OCR_MIN_ALPHA_RATIO
 
+
+def _ocr_at_dpi(path: Path, dpi: int, logger) -> tuple[str, list[int]]:
+    failed: list[int] = []
+    texts: list[str] = []
+    pages = _render_pdf_pages(path, dpi=dpi)
     for i, img in enumerate(pages, start=1):
         try:
             texts.append(ocr_pil_image(img))
         except Exception:
             failed.append(i)
-
     return "\n".join(texts), failed
+
+
+def ocr_scanned_pdf(path: Path, logger) -> tuple[str, list[int]]:
+    """OCR a scanned PDF, retrying at higher DPI when the output looks failed.
+
+    First pass renders at 200 DPI; if the result is too short or mostly
+    non-alphabetic (a failed scan — the 4 pilot failures), it retries once at
+    400 DPI and keeps whichever pass produced usable text. Each attempt is logged.
+    """
+    if not is_probably_pdf_file(path):
+        return "", [0]
+
+    text, failed = "", [0]
+    for attempt, dpi in enumerate((200, 400), start=1):
+        try:
+            text, failed = _ocr_at_dpi(path, dpi, logger)
+        except Exception as e:
+            logger.warning("Falha ao renderizar PDF para OCR %s (dpi=%s): %s", path, dpi, e)
+            continue
+        if not ocr_output_looks_failed(text):
+            return text, failed
+        logger.info(
+            "OCR fraco em %s (dpi=%s, chars=%s) — %s",
+            path, dpi, len((text or "").strip()),
+            "tentando DPI maior" if attempt == 1 else "sem melhora",
+        )
+    # Return the best (last) attempt even if still weak; the caller's quality
+    # gate downgrades the status so it never counts as usable text.
+    return text, failed
