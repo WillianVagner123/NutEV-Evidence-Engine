@@ -712,6 +712,25 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     # Article 1 domain-integration metrics (domain_coverage, profile_distribution,
     # documents_with_all_four_domains, prisma_two_track).
     summary.update(article1_summary)
+
+    # Full-text coverage (P6): how much full text this run actually captured per
+    # workstream, plus the offline recoverability ceiling (OA vs paywall). Both
+    # are computed offline — from the extraction status already on each row and
+    # the identifiers in the metadata — so no network call is made here, and the
+    # recoverability report is written to 07_logs. Never aborts a run.
+    try:
+        from nutev.acquire.recoverability import (
+            diagnose_recoverability,
+            fulltext_coverage_block,
+            write_recoverability_outputs,
+        )
+
+        recover = diagnose_recoverability(all_rows)
+        write_recoverability_outputs(recover, settings.output_dirs["07_logs"])
+        summary.update(fulltext_coverage_block(all_rows, recoverability=recover))
+    except Exception as exc:  # pragma: no cover - defensive; never abort a run
+        summary["fulltext_coverage_error"] = str(exc)
+
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(
         "\n".join(f"{k}: {v}" for k, v in summary.items()),

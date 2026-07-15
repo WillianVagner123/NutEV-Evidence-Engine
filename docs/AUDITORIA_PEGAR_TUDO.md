@@ -18,7 +18,7 @@ sistema apenas sugere e mede.
 | **P3** (já existia) + **P3+** | `extract/pdf_text.py` | OCR via PyMuPDF+tesseract; **novo**: detector de falha (saída curta / não-textual) + **retry a 400 DPI** (corrige as 4 falhas). |
 | **P4** | `extract/smart_extract.py` | **Guard**: só grava `.txt` quando há texto útil — acabou o arquivo vazio de 11–33 bytes gravado em silêncio; a falha vai para o log. |
 | **P5** (já existia, #915) | `analysis/article1_coding.py`, `export/article1_reports.py`, `review/human_review.py` | Codificação A/B/C/D assistiva (regra de substantividade), fila de revisão humana com concordância (kappa) e a **Matriz de Integração**. |
-| **P6** | proveniência acima + este documento | Campos auditáveis por documento; cobertura de full-text no `run_summary`. |
+| **P6** | proveniência acima + bloco `fulltext_coverage` no `run_summary` | Campos auditáveis por documento; **o pipeline agora escreve automaticamente** `fulltext_coverage` (extraído × só-metadados por workstream) + o teto de recuperabilidade (OA × paywall) no `run_summary.json` e em `07_logs/fulltext_recoverability.csv/.json` — offline, sem rede. |
 
 > Rede: os módulos de aquisição têm a sessão HTTP **injetada** e são testados com
 > mocks; as buscas reais rodam na sua máquina (com internet). Nada aqui contorna
