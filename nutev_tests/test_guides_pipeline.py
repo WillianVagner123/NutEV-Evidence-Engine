@@ -106,8 +106,33 @@ def test_run_guides_with_mocked_session_fetches_then_codes(tmp_path: Path):
     urls = {s["url"]: _Resp(content=_GUIDE_HTML) for s in sources[:2] if s.get("url")}
     session = _Session(urls)
 
-    summary = run_guides(settings, _LOG, session=session, limit=2)
+    summary = run_guides(settings, _LOG, session=session, limit=2, workers=2)
     assert summary["guides_processed"] == 2
     # At least one guide fetched as HTML and coded with key phrases.
     assert summary["guides_with_fulltext"] >= 1
     assert summary["key_phrases_total"] >= 1
+
+
+def test_run_guides_saves_and_continues(tmp_path: Path):
+    settings = _Settings(tmp_path)
+    (settings.output_dirs["03C_official_docs"] / "g1.html").write_bytes(_GUIDE_HTML)
+    (settings.output_dirs["03C_official_docs"] / "g2.html").write_bytes(_GUIDE_HTML)
+
+    # First run processes both and writes the checkpoint.
+    first = run_guides(settings, _LOG, session=None, workers=2)
+    assert first["guides_new_this_run"] == 2
+    assert first["guides_resumed_from_checkpoint"] == 0
+    checkpoint = Path(first["checkpoint"])
+    assert checkpoint.is_file() and len(checkpoint.read_text().splitlines()) == 2
+
+    # Add a third guide; a resumed run reprocesses ONLY the new one.
+    (settings.output_dirs["03C_official_docs"] / "g3.html").write_bytes(_GUIDE_HTML)
+    second = run_guides(settings, _LOG, session=None, workers=2)
+    assert second["guides_new_this_run"] == 1          # only g3 is new
+    assert second["guides_resumed_from_checkpoint"] == 2
+    assert second["guides_processed"] == 3
+
+    # A fresh run ignores the checkpoint and redoes everything.
+    third = run_guides(settings, _LOG, session=None, workers=2, resume=False)
+    assert third["guides_new_this_run"] == 3
+    assert third["guides_resumed_from_checkpoint"] == 0

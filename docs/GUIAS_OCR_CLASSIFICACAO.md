@@ -18,10 +18,26 @@ pip install -e ".[documents]"
 nutev guides --project-root SAIDA
 
 # opções úteis:
+#   --workers 8    -> 8 guias em paralelo (mais rápido; padrão 4)
 #   --limit 20     -> processa só os 20 primeiros (teste rápido)
 #   --offline      -> não baixa; só processa PDFs já em 03_corpus/03C_official_docs
-#   --rate 1.0     -> 1s entre downloads (mais educado com os servidores)
+#   --rate 1.0     -> 1s entre downloads por worker (mais educado com os servidores)
+#   --fresh        -> ignora o checkpoint e refaz tudo do zero
 ```
+
+### Salvar & continuar (checkpoint)
+
+Cada guia é gravado no **checkpoint** (`07_logs/guides_checkpoint.jsonl`) assim
+que termina. Se a execução parar no meio (queda de rede, você fechou o terminal),
+**é só rodar o mesmo comando de novo** — ele retoma de onde parou, sem
+re-baixar nem re-OCR o que já foi feito. Para recomeçar do zero, use `--fresh`.
+
+### Mais rápido
+
+- **Paralelo**: `--workers N` baixa e faz OCR de N guias ao mesmo tempo (o
+  tesseract roda como subprocesso, então as threads realmente paralelizam).
+- **Não repete trabalho**: o checkpoint faz a re-execução pular o que já está
+  pronto; PDFs com texto nativo nem passam pelo OCR.
 
 > Windows: o `tesseract` precisa estar instalado (você já tem o 5.5.0). O
 > renderizador de PDF é o **PyMuPDF** (vem no `pip install`, não precisa do

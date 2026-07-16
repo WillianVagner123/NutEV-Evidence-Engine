@@ -19,10 +19,12 @@ the official-docs directory are still extracted, coded and key-phrased.
 from __future__ import annotations
 
 import json
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
-from nutev.acquire.guias_fetcher import fetch_guides, load_guide_sources
+from nutev.acquire.guias_fetcher import fetch_guide, load_guide_sources
 from nutev.analysis.article1_coding import article1_record_fields
 from nutev.analysis.keyphrases import (
     extract_keyphrases_from_pages,
@@ -106,6 +108,37 @@ def process_guide(record: dict, settings, logger) -> dict:
     return row
 
 
+def _guide_key(source_or_row: dict) -> str:
+    """Stable identity for save/continue: URL first, else name+country, else path."""
+    url = str(source_or_row.get("source_url") or source_or_row.get("url") or "").strip()
+    if url:
+        return f"url:{url}"
+    name = str(source_or_row.get("name") or "").strip().lower()
+    country = str(source_or_row.get("country") or source_or_row.get("region") or "").strip().lower()
+    if name:
+        return f"name:{country}|{name}"
+    return f"path:{source_or_row.get('archived_pdf_path', '')}"
+
+
+def _load_checkpoint(path: Path) -> dict[str, dict]:
+    """Load already-processed guide rows keyed by guide id (JSONL; robust to a
+    half-written last line from an interrupted run)."""
+    done: dict[str, dict] = {}
+    if not path.is_file():
+        return done
+    for line in path.read_text(encoding="utf-8", errors="ignore").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            row = json.loads(line)
+        except Exception:
+            continue  # skip a torn final line
+        key = row.get("_guide_key") or _guide_key(row)
+        done[key] = row
+    return done
+
+
 def run_guides(
     settings,
     logger,
@@ -113,29 +146,73 @@ def run_guides(
     session: Any | None = None,
     limit: int | None = None,
     timeout: float = 30.0,
+    workers: int = 4,
+    resume: bool = True,
 ) -> dict:
     """Fetch + process every official guide; write the coded table and summary.
+
+    Save & continue: each processed guide is appended to
+    ``07_logs/guides_checkpoint.jsonl`` as it finishes, so an interrupted run
+    resumes where it stopped (``resume=True``) without re-downloading or re-OCRing.
+    Faster: guides are fetched + OCR'd concurrently in a thread pool (``workers``);
+    tesseract runs as a subprocess so threads give real parallelism.
 
     Returns a summary dict (also written to ``07_logs/guides_summary.json``).
     """
     config_root = settings.config_root
     dest_dir = settings.output_dirs["03C_official_docs"]
+    checkpoint_path = settings.output_dirs["07_logs"] / "guides_checkpoint.jsonl"
     sources = load_guide_sources(config_root)
     logger.info("guias no manifesto=%d", len(sources))
 
     if session is not None:
-        records = fetch_guides(sources, dest_dir, session, timeout=timeout, limit=limit)
-        logger.info("guias baixados (tentativa)=%d", len(records))
+        work_items = list(sources[: limit or len(sources)])
     else:
         # Offline: no fetch. Code any PDFs already archived in the official-docs
         # directory so the flow still produces output on a machine without net.
         logger.info("sem sessão HTTP — pulando download; processando PDFs já baixados")
-        records = [
+        work_items = [
             {"name": p.stem, "archived_pdf_path": str(p), "source_url": "", "fulltext_status": "local_file"}
             for p in sorted(Path(dest_dir).glob("*")) if p.is_file()
         ]
 
-    rows = [process_guide(rec, settings, logger) for rec in records]
+    if not resume and checkpoint_path.is_file():
+        # Fresh run: drop the old checkpoint so we don't append duplicates to it.
+        checkpoint_path.unlink()
+    done = _load_checkpoint(checkpoint_path) if resume else {}
+    if done:
+        logger.info("checkpoint: %d guias já processados — retomando", len(done))
+    todo = [s for s in work_items if _guide_key(s) not in done]
+    logger.info("guias a processar agora=%d (pulando %d já feitos)", len(todo), len(work_items) - len(todo))
+
+    write_lock = threading.Lock()
+
+    def _one(source: dict) -> dict:
+        if session is not None:
+            record = fetch_guide(source, dest_dir, session, timeout=timeout)
+        else:
+            record = dict(source)
+        row = process_guide(record, settings, logger)
+        row["_guide_key"] = _guide_key(source)
+        # Append to the checkpoint the moment this guide is done, so progress
+        # survives an interruption. Drop the big extracted_text from the record.
+        line = json.dumps({k: v for k, v in row.items() if k != "extracted_text"}, ensure_ascii=False)
+        with write_lock:
+            with checkpoint_path.open("a", encoding="utf-8") as handle:
+                handle.write(line + "\n")
+        return row
+
+    new_rows: list[dict] = []
+    if todo:
+        with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+            for row in pool.map(_one, todo):
+                new_rows.append(row)
+
+    # Union of previously-done rows and newly-processed ones, in manifest order.
+    all_by_key = dict(done)
+    for row in new_rows:
+        all_by_key[row.get("_guide_key") or _guide_key(row)] = row
+    rows = [all_by_key[_guide_key(s)] for s in work_items if _guide_key(s) in all_by_key]
 
     # Persist the coded table (flat CSV; the nested key_phrases stay in the JSON).
     table_rows = [{col: r.get(col, "") for col in _TABLE_COLUMNS} for r in rows]
@@ -165,11 +242,15 @@ def run_guides(
     summary = {
         "guides_in_manifest": len(sources),
         "guides_processed": len(rows),
+        "guides_new_this_run": len(new_rows),
+        "guides_resumed_from_checkpoint": len(rows) - len(new_rows),
         "guides_fetched": fetched,
         "guides_with_fulltext": with_text,
         "guides_ocr_used": ocr_used,
         "key_phrases_total": total_phrases,
         "profile_distribution": dict(sorted(by_profile.items())),
+        "workers": workers,
+        "checkpoint": str(checkpoint_path),
         "table_csv": str(settings.output_dirs["06_tables"] / "NUTEV_GUIDES_CODED.csv"),
         "detail_json": str(detail_path),
     }
