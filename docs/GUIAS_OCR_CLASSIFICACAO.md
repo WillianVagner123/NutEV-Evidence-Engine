@@ -28,6 +28,23 @@ nutev guides --project-root SAIDA
 > poppler). Se ativar o venv der erro de permissão, use
 > `.\.venv\Scripts\python.exe -m nutev guides --project-root SAIDA`.
 
+### OCR (agora bem melhor)
+
+O OCR antes rodava **só em inglês, sem preparo de imagem** — péssimo para guias em
+português/espanhol. Agora:
+
+- **multilíngue** por padrão (`por+eng+spa`); troque com a variável de ambiente
+  `NUTEV_OCR_LANG` (ex.: `por+eng+spa+fra+ita`). Os pacotes de idioma precisam
+  estar instalados no tesseract (ex.: `tesseract-ocr-por`); se faltar, cai para
+  inglês em vez de falhar;
+- **prepara a imagem** (tons de cinza + autocontraste + amplia páginas de baixa
+  resolução) e renderiza a **300 DPI** (repetindo a 450 se sair fraco);
+- usa engine LSTM (`--oem 1 --psm 3`), configurável por `NUTEV_OCR_CONFIG`.
+
+> Windows — instalar o idioma português no tesseract: baixe `por.traineddata`
+> de `github.com/tesseract-ocr/tessdata` e coloque em
+> `C:\Program Files\Tesseract-OCR\tessdata\`.
+
 ## O que sai
 
 | Arquivo | Conteúdo |
@@ -38,19 +55,26 @@ nutev guides --project-root SAIDA
 
 O texto integral extraído/OCR fica em `04_ocr_text/` e `05_extraction/`.
 
-## As frases-chave
+## As frases-chave — com a referência e a página
 
 Para cada domínio, o extrator pega as **sentenças verbatim** que contêm um termo
 do domínio, priorizando as que também têm um **verbo de recomendação**
 (`recommends`, `should`, `deve`, `recomenda`…) — a mesma regra de
-"substantividade" da codificação. Exemplo real (guia sintético de teste):
+"substantividade" da codificação.
+
+Cada frase carrega **a referência em si** (não só o texto): a **citação** do
+documento-fonte + a **página** onde a frase aparece + o `source_url` + o
+`sha256` do arquivo arquivado. Assim toda frase é citável e rastreável:
 
 ```
-[A] This national dietary guideline recommends increasing fruit and vegetable intake…
-[B] Cooking skills and meal planning are encouraged to build food literacy…
-[C] Families should share meals together to strengthen commensality and food culture.
-[D] Health services must improve adherence and reduce barriers to implementation.
+[A] (p.12) O guia recomenda aumentar o consumo de frutas e hortaliças…
+    ↳ referência: Ministério da Saúde. Guia Alimentar para a População Brasileira.
+      Brazil. 2014. Disponível em: https://… . Acesso em: 2026-07-16. SHA-256: ab12…
 ```
+
+A citação completa sai na coluna `reference` da tabela e em cada item de
+`key_phrases` no `guides_coded.json` (`{domain, actionable, sentence, page,
+reference, source_url, sha256}`).
 
 ## Também no pipeline principal
 

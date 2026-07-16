@@ -71,9 +71,15 @@ def test_process_guide_codes_and_extracts_phrases(tmp_path: Path):
     assert row["extraction_status"] == "fake_pdf_html" or row["extraction_status"] == "ok"
     # A/B/C/D coding present; at least one domain flagged for a guideline.
     assert row["n_domains"] >= 1
-    # Key phrases extracted, with the domain-tagged readable block.
+    # Key phrases extracted, with the domain-tagged readable block incl. page.
     assert row["n_key_phrases"] >= 1
-    assert "[" in row["key_phrases_text"]
+    assert "[" in row["key_phrases_text"] and "(p." in row["key_phrases_text"]
+    # Every key phrase carries the reference + page — the source, not just text.
+    first = row["key_phrases"][0]
+    assert first["page"] >= 1
+    assert first["reference"] == row["reference"]
+    assert "Ministry of Health" in row["reference"]
+    assert "Brazil" in row["reference"]
 
 
 def test_run_guides_offline_processes_local_files(tmp_path: Path):

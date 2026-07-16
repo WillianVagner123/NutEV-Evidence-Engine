@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from nutev.analysis.keyphrases import (
     extract_keyphrases,
+    extract_keyphrases_from_pages,
     keyphrase_fields,
     split_sentences,
     top_terms,
@@ -63,3 +64,17 @@ def test_keyphrase_fields_empty_text_is_safe():
     assert fields["n_key_phrases"] == 0
     assert fields["key_phrases"] == []
     assert fields["top_terms"] == ""
+
+
+def test_extract_keyphrases_from_pages_records_page_number():
+    pages = [
+        "An introduction with no dietary content whatsoever here.",
+        "This guideline recommends increasing fruit and vegetable intake for diet quality.",
+        "Families should share meals together to strengthen commensality.",
+    ]
+    phrases = extract_keyphrases_from_pages(pages)
+    a = [p for p in phrases if p["domain"] == "A"][0]
+    c = [p for p in phrases if p["domain"] == "C"][0]
+    assert a["page"] == 2       # the A sentence is on page 2
+    assert c["page"] == 3       # the C sentence is on page 3
+    assert "fruit and vegetable" in a["sentence"].lower()

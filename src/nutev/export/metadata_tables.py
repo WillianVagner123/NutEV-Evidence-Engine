@@ -50,6 +50,7 @@ ARTICLE_DATA_COLUMNS = [
     "domain_B",
     "domain_C",
     "domain_D",
+    "reference",
     "n_key_phrases",
     "top_terms",
     "key_phrases_text",

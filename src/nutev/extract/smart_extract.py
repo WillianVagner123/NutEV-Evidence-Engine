@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 from nutev.extract.pdf_text import (
-    extract_pdf_text,
-    ocr_scanned_pdf,
+    extract_pdf_text_pages,
+    ocr_scanned_pdf_pages,
     is_probably_pdf_file,
     missing_ocr_dependencies,
 )
@@ -110,21 +110,26 @@ def _looks_like_html_bytes(path: Path) -> bool:
         return False
 
 
-def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
+def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger, *, capture_pages: bool = False) -> dict:
     ext = path.suffix.lower().lstrip(".")
     text = ""
     used_ocr = False
     ocr_failed_pages = []
     extraction_status = "empty"
+    pages: list[str] = []
 
     if ext == "pdf":
         if is_probably_pdf_file(path):
-            text, has_native = extract_pdf_text(path)
-            if text:
+            native_pages = extract_pdf_text_pages(path)
+            if "\n".join(native_pages).strip():
+                pages = native_pages
+                text = "\n".join(native_pages).strip()
                 extraction_status = "ok"
             else:
-                ocr_text, ocr_failed_pages = ocr_scanned_pdf(path, logger)
-                if ocr_text:
+                ocr_pages, ocr_failed_pages = ocr_scanned_pdf_pages(path, logger)
+                pages = ocr_pages
+                ocr_text = "\n".join(ocr_pages)
+                if ocr_text.strip():
                     text = ocr_text
                     used_ocr = True
                     extraction_status = "ok_ocr"
@@ -216,7 +221,7 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
             len(text_body.strip()),
         )
 
-    return {
+    result = {
         "file": str(path),
         "ext": ext,
         "used_ocr": used_ocr,
@@ -225,3 +230,8 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger) -> dict:
         "chars": len(text_body),
         "extraction_status": extraction_status,
     }
+    if capture_pages:
+        # Per-page text for page-precise citation. Only populated for PDFs; for
+        # single-body formats (HTML/txt) the whole document is page 1.
+        result["pages"] = pages if pages else ([text_body] if text_body.strip() else [])
+    return result

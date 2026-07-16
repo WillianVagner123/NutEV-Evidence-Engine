@@ -75,7 +75,20 @@ def extract_pdf_text(path: Path) -> tuple[str, bool]:
         return "", False
 
 
-def _render_pdf_pages(path: Path, dpi: int = 200):
+def extract_pdf_text_pages(path: Path) -> list[str]:
+    """Return native (non-OCR) text per page, or [] if unreadable."""
+    if not is_probably_pdf_file(path):
+        return []
+    try:
+        import pypdf
+
+        reader = pypdf.PdfReader(str(path), strict=False)
+        return [(page.extract_text() or "") for page in reader.pages]
+    except Exception:
+        return []
+
+
+def _render_pdf_pages(path: Path, dpi: int = 300):
     """Render PDF pages to PIL images at ``dpi``. Prefer PyMuPDF (pip-only).
 
     Returns an iterable of PIL Images, or raises if no renderer is available.
@@ -116,7 +129,8 @@ def ocr_output_looks_failed(text: str) -> bool:
     return (alpha / len(s)) < _OCR_MIN_ALPHA_RATIO
 
 
-def _ocr_at_dpi(path: Path, dpi: int, logger) -> tuple[str, list[int]]:
+def _ocr_pages_at_dpi(path: Path, dpi: int, logger) -> tuple[list[str], list[int]]:
+    """OCR every page at ``dpi``; return (per-page texts, failed page numbers)."""
     failed: list[int] = []
     texts: list[str] = []
     pages = _render_pdf_pages(path, dpi=dpi)
@@ -125,33 +139,48 @@ def _ocr_at_dpi(path: Path, dpi: int, logger) -> tuple[str, list[int]]:
             texts.append(ocr_pil_image(img))
         except Exception:
             failed.append(i)
+            texts.append("")
+    return texts, failed
+
+
+def _ocr_at_dpi(path: Path, dpi: int, logger) -> tuple[str, list[int]]:
+    texts, failed = _ocr_pages_at_dpi(path, dpi, logger)
     return "\n".join(texts), failed
 
 
-def ocr_scanned_pdf(path: Path, logger) -> tuple[str, list[int]]:
-    """OCR a scanned PDF, retrying at higher DPI when the output looks failed.
+# DPI ladder for OCR: 300 DPI is the accepted floor for reliable OCR; a weak
+# first pass retries at 450 (finer scans, small type) before giving up.
+_OCR_DPI_LADDER = (300, 450)
 
-    First pass renders at 200 DPI; if the result is too short or mostly
-    non-alphabetic (a failed scan — the 4 pilot failures), it retries once at
-    400 DPI and keeps whichever pass produced usable text. Each attempt is logged.
+
+def ocr_scanned_pdf_pages(path: Path, logger) -> tuple[list[str], list[int]]:
+    """OCR a scanned PDF and return per-page text (for page-precise citations).
+
+    Renders at 300 DPI; if the joined output looks failed (too short / mostly
+    non-alphabetic), retries once at 450 DPI and keeps the better pass.
     """
     if not is_probably_pdf_file(path):
-        return "", [0]
+        return [], [0]
 
-    text, failed = "", [0]
-    for attempt, dpi in enumerate((200, 400), start=1):
+    pages: list[str] = []
+    failed: list[int] = [0]
+    for attempt, dpi in enumerate(_OCR_DPI_LADDER, start=1):
         try:
-            text, failed = _ocr_at_dpi(path, dpi, logger)
+            pages, failed = _ocr_pages_at_dpi(path, dpi, logger)
         except Exception as e:
             logger.warning("Falha ao renderizar PDF para OCR %s (dpi=%s): %s", path, dpi, e)
             continue
-        if not ocr_output_looks_failed(text):
-            return text, failed
+        if not ocr_output_looks_failed("\n".join(pages)):
+            return pages, failed
         logger.info(
             "OCR fraco em %s (dpi=%s, chars=%s) — %s",
-            path, dpi, len((text or "").strip()),
-            "tentando DPI maior" if attempt == 1 else "sem melhora",
+            path, dpi, len("\n".join(pages).strip()),
+            "tentando DPI maior" if attempt < len(_OCR_DPI_LADDER) else "sem melhora",
         )
-    # Return the best (last) attempt even if still weak; the caller's quality
-    # gate downgrades the status so it never counts as usable text.
-    return text, failed
+    return pages, failed
+
+
+def ocr_scanned_pdf(path: Path, logger) -> tuple[str, list[int]]:
+    """OCR a scanned PDF into a single joined string (see ``ocr_scanned_pdf_pages``)."""
+    pages, failed = ocr_scanned_pdf_pages(path, logger)
+    return "\n".join(pages), failed
