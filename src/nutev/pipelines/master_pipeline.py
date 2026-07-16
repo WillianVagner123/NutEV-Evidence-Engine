@@ -507,6 +507,29 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         write_analysis_xlsx(rows, settings.output_dirs["06_tables"] / f"analysis_{ws}.xlsx")
         all_rows += rows
 
+    # Enrich every row with the Article 1 analytical fields (track, provenance,
+    # A/B/C/D domains, AACODS, archive hash) and the key phrases BEFORE any table
+    # is written, so the primary metadata/article CSVs and every downstream table
+    # carry the coding and key sentences. Assistive; enters human review
+    # (docs/ARTICLE1_DOMAIN_CODING.md). Failures never abort a run.
+    try:
+        from nutev.analysis.article1_coding import article1_record_fields
+
+        for _row in all_rows:
+            _row.update(article1_record_fields(_row))
+    except Exception:  # pragma: no cover - defensive; never abort a run
+        pass
+    try:
+        from nutev.analysis.keyphrases import keyphrase_fields
+
+        for _row in all_rows:
+            _kp = keyphrase_fields(_row)
+            _row["key_phrases_text"] = _kp["key_phrases_text"]
+            _row["n_key_phrases"] = _kp["n_key_phrases"]
+            _row["top_terms"] = _kp["top_terms"]
+    except Exception:  # pragma: no cover - defensive; never abort a run
+        pass
+
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")
@@ -558,18 +581,6 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         settings.output_dirs["06_tables"] / "NUTEV_PRISMA_FLOW.xlsx",
         settings.output_dirs["07_logs"] / "prisma_flow.json",
     )
-
-    # Enrich every row with the Article 1 analytical fields (track, provenance,
-    # A/B/C/D domains, AACODS, archive hash) before curation, so the curated
-    # metadata and the Integration Matrix share the same assistive coding. This is
-    # assistive and enters human review (docs/ARTICLE1_DOMAIN_CODING.md).
-    try:
-        from nutev.analysis.article1_coding import article1_record_fields
-
-        for _row in all_rows:
-            _row.update(article1_record_fields(_row))
-    except Exception:  # pragma: no cover - defensive; never abort a run
-        pass
 
     curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
     claims = []

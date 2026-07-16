@@ -19,6 +19,7 @@ sistema apenas sugere e mede.
 | **P4** | `extract/smart_extract.py` | **Guard**: só grava `.txt` quando há texto útil — acabou o arquivo vazio de 11–33 bytes gravado em silêncio; a falha vai para o log. |
 | **P5** (já existia, #915) | `analysis/article1_coding.py`, `export/article1_reports.py`, `review/human_review.py` | Codificação A/B/C/D assistiva (regra de substantividade), fila de revisão humana com concordância (kappa) e a **Matriz de Integração**. |
 | **P6** | proveniência acima + bloco `fulltext_coverage` no `run_summary` | Campos auditáveis por documento; **o pipeline agora escreve automaticamente** `fulltext_coverage` (extraído × só-metadados por workstream) + o teto de recuperabilidade (OA × paywall) no `run_summary.json` e em `07_logs/fulltext_recoverability.csv/.json` — offline, sem rede. |
+| **P7** | `pipelines/guides_pipeline.py` + `analysis/keyphrases.py` + `nutev guides` | Fluxo único **pegar todos os guias → OCR → classificar A/B/C/D → frases-chave**. Gera `NUTEV_GUIDES_CODED.csv`, `10_curated/guides_coded.json` e `07_logs/guides_summary.json`. As colunas de classificação e frases-chave também passam a sair no `article_data.csv` do pipeline principal. Ver `docs/GUIAS_OCR_CLASSIFICACAO.md`. |
 
 > Rede: os módulos de aquisição têm a sessão HTTP **injetada** e são testados com
 > mocks; as buscas reais rodam na sua máquina (com internet). Nada aqui contorna
