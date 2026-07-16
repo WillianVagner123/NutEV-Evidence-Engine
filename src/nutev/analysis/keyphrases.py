@@ -90,6 +90,45 @@ def extract_keyphrases(text: str, *, max_per_domain: int = 5) -> list[dict]:
     return out
 
 
+def extract_keyphrases_from_pages(pages: list[str], *, max_per_domain: int = 5) -> list[dict]:
+    """Like :func:`extract_keyphrases` but records the 1-indexed ``page`` of each
+    key sentence, for page-precise citation. ``pages`` is per-page text (OCR or
+    native); an empty/whitespace page is skipped.
+    """
+    # Tag every sentence with its source page, then reuse the same ranking.
+    sentences_with_page: list[tuple[int, str]] = []
+    for page_no, page_text in enumerate(pages, start=1):
+        for sentence in split_sentences(page_text or ""):
+            sentences_with_page.append((page_no, sentence))
+
+    out: list[dict] = []
+    seen: set[str] = set()
+    for domain, keywords in _DOMAIN_KEYWORDS.items():
+        scored: list[tuple[int, int, str]] = []
+        for page_no, sentence in sentences_with_page:
+            low = sentence.lower()
+            if any(kw in low for kw in keywords):
+                actionable_hits = sum(1 for cue in _ACTIONABLE_CUES if cue in low)
+                scored.append((actionable_hits, page_no, sentence))
+        scored.sort(key=lambda x: (-x[0], len(x[2])))
+        taken = 0
+        for actionable_hits, page_no, sentence in scored:
+            fingerprint = sentence.strip().lower()[:160]
+            if fingerprint in seen:
+                continue
+            seen.add(fingerprint)
+            out.append({
+                "domain": domain,
+                "actionable": actionable_hits > 0,
+                "sentence": sentence.strip(),
+                "page": page_no,
+            })
+            taken += 1
+            if taken >= max_per_domain:
+                break
+    return out
+
+
 def top_terms(text: str, *, n: int = 15, min_len: int = 4) -> list[str]:
     """Return the ``n`` most frequent meaningful terms (stop-word filtered)."""
     if not text:

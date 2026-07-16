@@ -529,6 +529,15 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             _row["top_terms"] = _kp["top_terms"]
     except Exception:  # pragma: no cover - defensive; never abort a run
         pass
+    # The reference itself (citation string + structured fields), so every row —
+    # and its key phrases — is traceable to its exact source, not just the text.
+    try:
+        from nutev.analysis.references import build_reference
+
+        for _row in all_rows:
+            _row.update(build_reference(_row))
+    except Exception:  # pragma: no cover - defensive; never abort a run
+        pass
 
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")

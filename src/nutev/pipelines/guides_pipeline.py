@@ -24,7 +24,11 @@ from typing import Any
 
 from nutev.acquire.guias_fetcher import fetch_guides, load_guide_sources
 from nutev.analysis.article1_coding import article1_record_fields
-from nutev.analysis.keyphrases import keyphrase_fields
+from nutev.analysis.keyphrases import (
+    extract_keyphrases_from_pages,
+    top_terms,
+)
+from nutev.analysis.references import build_reference
 from nutev.export.metadata_tables import write_simple_csv
 from nutev.extract.smart_extract import extract_document
 
@@ -36,7 +40,7 @@ _TABLE_COLUMNS = (
     "fulltext_status", "archived_pdf_path", "sha256", "archived_pdf_sha256",
     "aacods_authority_tier", "track", "extraction_status", "used_ocr", "chars",
     "profile", "n_domains", "domain_A", "domain_B", "domain_C", "domain_D",
-    "n_key_phrases", "top_terms", "key_phrases_text",
+    "reference", "n_key_phrases", "top_terms", "key_phrases_text",
 )
 
 
@@ -59,7 +63,7 @@ def process_guide(record: dict, settings, logger) -> dict:
     """
     row = dict(record)
     pdf_path = record.get("archived_pdf_path") or ""
-    extraction: dict = {"extraction_status": "no_file", "used_ocr": False, "chars": 0, "text_path": ""}
+    extraction: dict = {"extraction_status": "no_file", "used_ocr": False, "chars": 0, "text_path": "", "pages": []}
     if pdf_path and Path(pdf_path).is_file():
         try:
             extraction = extract_document(
@@ -67,10 +71,11 @@ def process_guide(record: dict, settings, logger) -> dict:
                 settings.output_dirs["04_ocr_text"],
                 settings.output_dirs["05_extraction"],
                 logger,
+                capture_pages=True,
             )
         except Exception as exc:  # never abort the batch on one bad file
             logger.warning("extract falhou guia=%s erro=%s", pdf_path, exc)
-            extraction = {"extraction_status": "failed", "used_ocr": False, "chars": 0, "text_path": ""}
+            extraction = {"extraction_status": "failed", "used_ocr": False, "chars": 0, "text_path": "", "pages": []}
 
     row["extraction_status"] = extraction.get("extraction_status", "")
     row["used_ocr"] = bool(extraction.get("used_ocr", False))
@@ -79,8 +84,25 @@ def process_guide(record: dict, settings, logger) -> dict:
 
     # A/B/C/D coding + provenance/AACODS (assistive; enters human review).
     row.update(article1_record_fields(row))
-    # Key phrases / key sentences per domain + top terms.
-    row.update(keyphrase_fields(row))
+    # The reference itself (citation string + structured fields) so every key
+    # phrase is traceable to its exact source, not just the text.
+    row.update(build_reference(row))
+
+    # Page-precise key phrases: each carries its source page AND the reference.
+    pages = extraction.get("pages") or ([row["extracted_text"]] if row["extracted_text"].strip() else [])
+    phrases = extract_keyphrases_from_pages(pages)
+    reference = row.get("reference", "")
+    for phrase in phrases:
+        phrase["reference"] = reference
+        phrase["source_url"] = row.get("reference_url", "")
+        phrase["sha256"] = row.get("reference_sha256", "")
+    row["key_phrases"] = phrases
+    row["n_key_phrases"] = len(phrases)
+    row["top_terms"] = "|".join(top_terms(row["extracted_text"]))
+    # Human-readable block: [A] (p.3) sentence — Reference
+    row["key_phrases_text"] = "\n".join(
+        f"[{p['domain']}] (p.{p['page']}) {p['sentence']}" for p in phrases
+    )
     return row
 
 
