@@ -64,6 +64,16 @@ def main() -> None:
     verify.add_argument("--timeout", type=float, default=20.0)
     verify.add_argument("--no-countries", action="store_true", help="Check only the base manifest (skip per-country sources)")
 
+    guides = sub.add_parser(
+        "guides",
+        help="Fetch ALL official guides, OCR them, code A/B/C/D and extract key phrases",
+    )
+    guides.add_argument("--project-root", type=Path, required=True)
+    guides.add_argument("--limit", type=int, default=None, help="Process only the first N guides (default: all)")
+    guides.add_argument("--timeout", type=float, default=30.0)
+    guides.add_argument("--rate", type=float, default=0.5, help="Seconds between downloads (politeness)")
+    guides.add_argument("--offline", action="store_true", help="Skip downloads; only process guides already in 03C_official_docs")
+
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
     p.add_argument("--web-enabled", action="store_true")
@@ -191,6 +201,41 @@ def main() -> None:
         for r in dead[:50]:
             print(f"  [{r.get('status_code')}] {r.get('reason')}  {r.get('name')}  {r.get('url')}")
         print(f"Relatório completo: {out}")
+        return
+
+    if args.command == "guides":
+        from nutev.pipelines.guides_pipeline import run_guides
+
+        s = NutevSettings(project_root=args.project_root)
+        for d in s.output_dirs.values():
+            d.mkdir(parents=True, exist_ok=True)
+        logger = setup_logger(s.output_dirs["07_logs"])
+
+        session = None
+        if not args.offline and os.environ.get("NUTEV_DISABLE_NETWORK") != "1":
+            import time
+
+            import requests
+
+            session = requests.Session()
+            session.headers["User-Agent"] = "NutEV Guides Fetcher/1.0"
+            _orig_get = session.get
+
+            def _throttled_get(*a, **k):  # polite rate limit between downloads
+                time.sleep(max(0.0, args.rate))
+                return _orig_get(*a, **k)
+
+            session.get = _throttled_get  # type: ignore[assignment]
+
+        result = run_guides(s, logger, session=session, limit=args.limit, timeout=args.timeout)
+        logger.info("Guias: %s", result)
+        print(
+            f"Guias processados: {result['guides_processed']}/{result['guides_in_manifest']} | "
+            f"com texto: {result['guides_with_fulltext']} | OCR: {result['guides_ocr_used']} | "
+            f"frases-chave: {result['key_phrases_total']}"
+        )
+        print(f"Tabela: {result['table_csv']}")
+        print(f"Detalhe (frases-chave): {result['detail_json']}")
         return
 
     if not args.project_root:

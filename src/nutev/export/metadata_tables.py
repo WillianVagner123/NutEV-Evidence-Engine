@@ -42,6 +42,17 @@ ARTICLE_DATA_COLUMNS = [
     "artifact_paths",
     "metadata_status",
     "failure_reason",
+    # Article 1 assistive coding + key phrases (enter human review).
+    "track",
+    "profile",
+    "n_domains",
+    "domain_A",
+    "domain_B",
+    "domain_C",
+    "domain_D",
+    "n_key_phrases",
+    "top_terms",
+    "key_phrases_text",
 ]
 
 
