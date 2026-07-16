@@ -71,8 +71,10 @@ def main() -> None:
     guides.add_argument("--project-root", type=Path, required=True)
     guides.add_argument("--limit", type=int, default=None, help="Process only the first N guides (default: all)")
     guides.add_argument("--timeout", type=float, default=30.0)
-    guides.add_argument("--rate", type=float, default=0.5, help="Seconds between downloads (politeness)")
+    guides.add_argument("--rate", type=float, default=0.5, help="Seconds between downloads per worker (politeness)")
     guides.add_argument("--offline", action="store_true", help="Skip downloads; only process guides already in 03C_official_docs")
+    guides.add_argument("--workers", type=int, default=4, help="Parallel workers for fetch+OCR (default: 4)")
+    guides.add_argument("--fresh", action="store_true", help="Ignore the checkpoint and reprocess everything from scratch")
 
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
@@ -227,13 +229,23 @@ def main() -> None:
 
             session.get = _throttled_get  # type: ignore[assignment]
 
-        result = run_guides(s, logger, session=session, limit=args.limit, timeout=args.timeout)
+        result = run_guides(
+            s,
+            logger,
+            session=session,
+            limit=args.limit,
+            timeout=args.timeout,
+            workers=args.workers,
+            resume=not args.fresh,
+        )
         logger.info("Guias: %s", result)
         print(
             f"Guias processados: {result['guides_processed']}/{result['guides_in_manifest']} | "
+            f"novos: {result['guides_new_this_run']} | retomados: {result['guides_resumed_from_checkpoint']} | "
             f"com texto: {result['guides_with_fulltext']} | OCR: {result['guides_ocr_used']} | "
             f"frases-chave: {result['key_phrases_total']}"
         )
+        print(f"Checkpoint (salvar & continuar): {result['checkpoint']}")
         print(f"Tabela: {result['table_csv']}")
         print(f"Detalhe (frases-chave): {result['detail_json']}")
         return
