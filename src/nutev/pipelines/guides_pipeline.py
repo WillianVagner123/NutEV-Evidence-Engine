@@ -148,8 +148,13 @@ def run_guides(
     timeout: float = 30.0,
     workers: int = 4,
     resume: bool = True,
+    discover_fao: bool = False,
 ) -> dict:
     """Fetch + process every official guide; write the coded table and summary.
+
+    Sources: the static country manifest by default, or — with
+    ``discover_fao=True`` and an HTTP session — the FAO FBDG registry crawled
+    *live* (every country + its actual downloadable guide files).
 
     Save & continue: each processed guide is appended to
     ``07_logs/guides_checkpoint.jsonl`` as it finishes, so an interrupted run
@@ -162,11 +167,19 @@ def run_guides(
     config_root = settings.config_root
     dest_dir = settings.output_dirs["03C_official_docs"]
     checkpoint_path = settings.output_dirs["07_logs"] / "guides_checkpoint.jsonl"
-    sources = load_guide_sources(config_root)
-    logger.info("guias no manifesto=%d", len(sources))
+    if discover_fao and session is not None:
+        from nutev.acquire.fao_discovery import discover_fao_guides
+
+        sources = discover_fao_guides(session, timeout=timeout, limit=limit, logger=logger)
+        logger.info("guias descobertos ao vivo (FAO)=%d", len(sources))
+    else:
+        sources = load_guide_sources(config_root)
+        logger.info("guias no manifesto=%d", len(sources))
 
     if session is not None:
-        work_items = list(sources[: limit or len(sources)])
+        # Live discovery already honored `limit` on the country list; the manifest
+        # path still slices here.
+        work_items = list(sources) if discover_fao else list(sources[: limit or len(sources)])
     else:
         # Offline: no fetch. Code any PDFs already archived in the official-docs
         # directory so the flow still produces output on a machine without net.
@@ -240,6 +253,7 @@ def run_guides(
     total_phrases = sum(int(r.get("n_key_phrases", 0) or 0) for r in rows)
 
     summary = {
+        "source_mode": "fao_live_discovery" if discover_fao else "static_manifest",
         "guides_in_manifest": len(sources),
         "guides_processed": len(rows),
         "guides_new_this_run": len(new_rows),

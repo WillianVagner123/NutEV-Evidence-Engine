@@ -18,11 +18,26 @@ pip install -e ".[documents]"
 nutev guides --project-root SAIDA
 
 # opções úteis:
+#   --discover-fao -> descobre TODOS os países AO VIVO no site da FAO
+#                     (nome oficial + ano + os PDFs reais de cada guia),
+#                     em vez do manifesto fixo. É o "pegar todos" de verdade.
 #   --workers 8    -> 8 guias em paralelo (mais rápido; padrão 4)
 #   --limit 20     -> processa só os 20 primeiros (teste rápido)
 #   --offline      -> não baixa; só processa PDFs já em 03_corpus/03C_official_docs
 #   --rate 1.0     -> 1s entre downloads por worker (mais educado com os servidores)
 #   --fresh        -> ignora o checkpoint e refaz tudo do zero
+```
+
+### Descoberta FAO ao vivo (`--discover-fao`)
+
+Sem essa flag, o comando usa o **manifesto fixo** de países. Com
+`--discover-fao`, ele **rastreia o registro FBDG da FAO na hora**: acha *todos*
+os países, lê **nome oficial** e **ano de publicação**, e pega os **arquivos de
+download reais** de cada guia (um "source" por PDF). Depois cada arquivo passa
+pelo mesmo fluxo: OCR → A/B/C/D → frases-chave → referência → checkpoint.
+
+```bash
+nutev guides --project-root SAIDA --discover-fao --workers 8
 ```
 
 ### Salvar & continuar (checkpoint)
