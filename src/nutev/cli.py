@@ -75,6 +75,7 @@ def main() -> None:
     guides.add_argument("--offline", action="store_true", help="Skip downloads; only process guides already in 03C_official_docs")
     guides.add_argument("--workers", type=int, default=4, help="Parallel workers for fetch+OCR (default: 4)")
     guides.add_argument("--fresh", action="store_true", help="Ignore the checkpoint and reprocess everything from scratch")
+    guides.add_argument("--discover-fao", action="store_true", help="Crawl the FAO FBDG registry live for ALL countries + real guide files (instead of the static manifest)")
 
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
@@ -237,6 +238,7 @@ def main() -> None:
             timeout=args.timeout,
             workers=args.workers,
             resume=not args.fresh,
+            discover_fao=args.discover_fao,
         )
         logger.info("Guias: %s", result)
         print(
