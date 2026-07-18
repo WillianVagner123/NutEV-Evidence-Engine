@@ -25,8 +25,24 @@ nutev guides --project-root SAIDA
 #   --limit 20     -> processa só os 20 primeiros (teste rápido)
 #   --offline      -> não baixa; só processa PDFs já em 03_corpus/03C_official_docs
 #   --rate 1.0     -> 1s entre downloads por worker (mais educado com os servidores)
+#   --report       -> gera o relatório de corpus (dedup fuzzy + clusters + heatmap)
 #   --fresh        -> ignora o checkpoint e refaz tudo do zero
 ```
+
+### Relatório de corpus (`--report`)
+
+Precisa das dependências opcionais: `pip install -e ".[report]"` (scikit-learn +
+matplotlib). Com `--report`, além das tabelas normais, o comando gera:
+
+- **`NUTEV_GUIDES_REPORT.xlsx`** — abas: `DOCUMENTS` (com `cluster_id`,
+  `dedup_group`, `dedup_is_duplicate_of`), `DUPLICATES` (pares parecidos com o
+  score de similaridade) e `THEME_BY_CLUSTER` (média A/B/C/D por cluster).
+- **`NUTEV_GUIDES_THEME_HEATMAP.png`** — mapa de calor dos domínios por cluster.
+
+O que ele faz: **dedup por conteúdo** (TF-IDF + cosseno — pega traduções e
+reedições que o dedup por identificador não pega) e **clusterização temática**
+(KMeans). Sem as dependências instaladas, ele é **pulado com um aviso** (não
+quebra o resto). Tudo assistivo, sob revisão humana.
 
 ### Descoberta FAO ao vivo (`--discover-fao`)
 

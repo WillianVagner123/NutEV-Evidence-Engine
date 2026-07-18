@@ -87,6 +87,15 @@ watch = [
 mcp = [
     "mcp[cli]~=1.2",
 ]
+# Corpus report: fuzzy (content) dedup, thematic clustering and the heatmap.
+# Optional — the guides pipeline runs without it; --report degrades gracefully
+# with an install hint when these are absent.
+report = [
+    "scikit-learn~=1.5",
+    "matplotlib~=3.9",
+    "pandas~=3.0",
+    "openpyxl~=3.1",
+]
 # Development / test tooling (also available as the pdm `dev` group).
 dev = [
     "virtualenv~=20.36",
@@ -103,7 +112,7 @@ dev = [
 # engine and its `legacy` extra were removed from the tree; see NOTICE.md and
 # docs/LEGACY_MIGRATION_PLAN.md.
 all = [
-    "nutev-nutmev[search,documents,dashboard,api,watch,mcp]",
+    "nutev-nutmev[search,documents,dashboard,api,watch,mcp,report]",
 ]
 
 [project.urls]

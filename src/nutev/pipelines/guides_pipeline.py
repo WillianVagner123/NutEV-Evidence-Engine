@@ -149,6 +149,7 @@ def run_guides(
     workers: int = 4,
     resume: bool = True,
     discover_fao: bool = False,
+    report: bool = False,
 ) -> dict:
     """Fetch + process every official guide; write the coded table and summary.
 
@@ -268,6 +269,20 @@ def run_guides(
         "table_csv": str(settings.output_dirs["06_tables"] / "NUTEV_GUIDES_CODED.csv"),
         "detail_json": str(detail_path),
     }
+
+    # Optional corpus report: fuzzy (content) dedup + thematic clustering + the
+    # theme heatmap Excel. Degrades gracefully when scikit-learn/matplotlib are
+    # not installed (see docs / the [report] extra). Never aborts a run.
+    if report:
+        try:
+            from nutev.analysis.corpus_report import write_corpus_report
+
+            summary["report"] = write_corpus_report(
+                rows, settings.output_dirs["06_tables"], logger=logger
+            )
+        except Exception as exc:  # pragma: no cover - defensive
+            summary["report"] = {"status": "error", "reason": str(exc)}
+
     (settings.output_dirs["07_logs"] / "guides_summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8"
     )
