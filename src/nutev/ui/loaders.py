@@ -67,6 +67,8 @@ def list_export_artifacts(project_root: Path) -> pd.DataFrame:
         "02_metadata/metadata_master.csv",
         "02_metadata/NUTEV_EVIDENCE_CLAIMS.csv",
         "02_metadata/NUTEV_RECOMMENDATION_CANDIDATES.csv",
+        "02_metadata/NUTEV_REFERENCES.bib",
+        "02_metadata/NUTEV_REFERENCES.ris",
         "06_tables/NUTEV_GLOBAL_EVIDENCE_MATRIX.xlsx",
         "06_tables/NUTEV_PROTOCOL_TRANSLATION_MATRIX.xlsx",
         "06_tables/NUTEV_EVIDENCE_CLAIMS.xlsx",

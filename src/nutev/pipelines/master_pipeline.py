@@ -38,6 +38,7 @@ from nutev.engine.job import (
     write_search_case,
     write_search_job_snapshot,
 )
+from nutev.export.citations import write_bibtex, write_ris
 from nutev.export.curation import curate_outputs
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
@@ -463,6 +464,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")
+    # Reference-manager exports (Zotero/Mendeley/EndNote): closes the
+    # "registro recuperado → referência correspondente" link. Never invents data.
+    write_bibtex(all_rows, settings.output_dirs["02_metadata"] / "NUTEV_REFERENCES.bib")
+    write_ris(all_rows, settings.output_dirs["02_metadata"] / "NUTEV_REFERENCES.ris")
     write_simple_csv(
         extraction_manifest,
         settings.output_dirs["05_extraction"] / "extraction_manifest.csv",
