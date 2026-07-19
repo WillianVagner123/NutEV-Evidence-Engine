@@ -15,6 +15,7 @@ and defensive: a country that fails to parse is skipped, never fatal.
 from __future__ import annotations
 
 import re
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 from urllib.parse import urljoin, urlparse
 
@@ -159,12 +160,15 @@ def discover_fao_guides(
     home_url: str = FAO_HOME,
     timeout: float = 60.0,
     limit: int | None = None,
+    workers: int = 8,
     logger: Any | None = None,
 ) -> list[dict]:
     """Crawl the FAO FBDG registry and return guide sources for every country.
 
-    Sources are compatible with :func:`guias_fetcher.fetch_guide`. The crawl is
-    read-only and best-effort: a country that fails to fetch/parse is skipped.
+    Country pages are fetched concurrently (``workers``) — the crawl is the slow
+    part, and each page is independent. Sources are compatible with
+    :func:`guias_fetcher.fetch_guide`. Read-only and best-effort: a country that
+    fails to fetch/parse is skipped, never fatal.
     """
     home_html = _get(session, home_url, timeout)
     country_urls = collect_country_urls(home_html, home_url)
@@ -173,21 +177,24 @@ def discover_fao_guides(
     if limit is not None:
         country_urls = country_urls[:limit]
 
-    sources: list[dict] = []
-    for i, url in enumerate(country_urls, start=1):
+    def _one(url: str) -> list[dict]:
         html = _get(session, url, timeout)
         if not html:
             if logger:
                 logger.warning("FAO FBDG: falha ao ler país %s", url)
-            continue
+            return []
         try:
-            country = scrape_country(html, url)
-            sources.extend(country_to_sources(country))
+            return country_to_sources(scrape_country(html, url))
         except Exception as exc:  # defensive: skip a bad page, never abort
             if logger:
                 logger.warning("FAO FBDG: erro no país %s: %s", url, exc)
-        if logger and i % 25 == 0:
-            logger.info("FAO FBDG: %d/%d países processados", i, len(country_urls))
+            return []
+
+    sources: list[dict] = []
+    if country_urls:
+        with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+            for country_sources in pool.map(_one, country_urls):
+                sources.extend(country_sources)
     if logger:
         sources_with_file = sum(1 for s in sources if _is_file_url(s.get("url", "")))
         logger.info("FAO FBDG: %d fontes (%d arquivos diretos)", len(sources), sources_with_file)
