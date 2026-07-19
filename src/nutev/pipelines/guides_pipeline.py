@@ -26,6 +26,7 @@ from typing import Any
 
 from nutev.acquire.guias_fetcher import fetch_guide, load_guide_sources
 from nutev.analysis.article1_coding import article1_record_fields
+from nutev.analysis.domain_states import code_domain_states, domain_state_rows
 from nutev.analysis.keyphrases import (
     extract_keyphrases_from_pages,
     top_terms,
@@ -44,6 +45,9 @@ _TABLE_COLUMNS = (
     "aacods_authority_tier", "track", "doc_type", "evidence_weight",
     "extraction_status", "used_ocr", "chars",
     "profile", "n_domains", "domain_A", "domain_B", "domain_C", "domain_D",
+    "domain_A_state", "domain_A_intensity", "domain_B_state", "domain_B_intensity",
+    "domain_C_state", "domain_C_intensity", "domain_D_state", "domain_D_intensity",
+    "domain_coding_source",
     "diet_patterns", "n_themes", "themes_present",
     "nutrition_macros_pct", "nutrition_fiber_g", "nutrition_sodium", "nutrition_micronutrients",
     "reference", "n_key_phrases", "top_terms", "key_phrases_text",
@@ -102,8 +106,13 @@ def process_guide(record: dict, settings, logger) -> dict:
     except Exception as exc:  # pragma: no cover - defensive
         logger.warning("detecção temática falhou guia=%s erro=%s", row.get("name"), exc)
 
-    # Page-precise key phrases: each carries its source page AND the reference.
+    # Protocol domain states + intensity (0–3) with page-precise evidence
+    # (§7.2/§7.3) — a machine SUGGESTION beside the A/B/C/D booleans; two humans
+    # decide. Never asserts absence.
     pages = extraction.get("pages") or ([row["extracted_text"]] if row["extracted_text"].strip() else [])
+    row.update(code_domain_states(row, pages=pages))
+
+    # Page-precise key phrases: each carries its source page AND the reference.
     phrases = extract_keyphrases_from_pages(pages)
     reference = row.get("reference", "")
     for phrase in phrases:
@@ -250,6 +259,14 @@ def run_guides(
     for r in rows:
         evidence.extend(evidence_rows(r))
     write_simple_csv(evidence, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_EVIDENCE.csv")
+
+    # Reviewable domain-states table: one row per document × domain (A/B/C/D) with
+    # the suggested state/intensity, the evidence snippet + page, and the
+    # "machine_suggestion" marker — the queue two human reviewers work from.
+    states: list[dict] = []
+    for r in rows:
+        states.extend(domain_state_rows(r))
+    write_simple_csv(states, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_DOMAIN_STATES.csv")
 
     # Full per-guide detail (including the nested key phrases) as JSON.
     detail_path = settings.output_dirs["10_curated"] / "guides_coded.json"

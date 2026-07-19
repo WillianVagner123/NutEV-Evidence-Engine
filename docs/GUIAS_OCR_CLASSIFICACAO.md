@@ -98,6 +98,7 @@ português/espanhol. Agora:
 |---|---|
 | `06_tables/NUTEV_GUIDES_CODED.csv` | **Uma linha por guia**: país, emissor, `sha256`, `fulltext_status`, OCR, `profile` A/B/C/D, **tipo de documento + peso de evidência**, **padrões nomeados** (mediterrânea/DASH/…), **nº de temas + temas detectados**, **valores nutricionais** (macros %, fibra, sódio, micronutrientes), termos frequentes e frases-chave. |
 | `06_tables/NUTEV_GUIDES_EVIDENCE.csv` | **Tabela de evidências (tidy)**: uma linha por tema detectado, com o **trecho verbatim** (evidência), a família/subtema, o tipo/peso de documento e a **referência** — ouro para o scoping. |
+| `06_tables/NUTEV_GUIDES_DOMAIN_STATES.csv` | **Estados A/B/C/D (protocolo §7.2/§7.3)**: uma linha por documento × domínio com o **estado** (`NOT_ASSESSED`/`MENTIONED`/`RECOMMENDED`/`OPERATIONALIZED`), a **intensidade 0–3** sugerida, o **trecho + página** que justifica e a referência. Marcado `machine_suggestion` — é a fila que os dois revisores humanos validam. |
 | `10_curated/guides_coded.json` | Detalhe completo por guia: frases-chave (`{domain, actionable, sentence, page, reference}`) **e** os temas com seus trechos (`themes[família][subtema].snippets`). |
 | `07_logs/guides_summary.json` | Contagem: guias, com texto, OCR, frases-chave, **temas detectados**, **trechos de evidência**, distribuição por `profile`. |
 
