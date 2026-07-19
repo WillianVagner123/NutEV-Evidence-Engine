@@ -101,6 +101,7 @@ português/espanhol. Agora:
 | `06_tables/NUTEV_GUIDES_DOMAIN_STATES.csv` | **Estados A/B/C/D (protocolo §7.2/§7.3)**: uma linha por documento × domínio com o **estado** (`NOT_ASSESSED`/`MENTIONED`/`RECOMMENDED`/`OPERATIONALIZED`), a **intensidade 0–3** sugerida, o **trecho + página** que justifica e a referência. Marcado `machine_suggestion` — é a fila que os dois revisores humanos validam. |
 | `10_curated/guides_coded.json` | Detalhe completo por guia: frases-chave (`{domain, actionable, sentence, page, reference}`) **e** os temas com seus trechos (`themes[família][subtema].snippets`). |
 | `07_logs/guides_summary.json` | Contagem: guias, com texto, OCR, frases-chave, **temas detectados**, **trechos de evidência**, distribuição por `profile`. |
+| `07_logs/{file_asset,document_version,document_family,denominator}_registry.csv` | **Registros de entidade (§7.1)**: separam **arquivo × documento × versão**. `file_asset` = arquivo físico (sha256); `document_version` = mesmo documento+edição/ano/idioma (PDF e HTML da mesma edição colapsam em 1); `document_family` = documento através das edições (a mais nova é `current`, as antigas `superseded`); `denominator_registry` = as contagens nomeadas para **nunca somar denominadores incompatíveis**. Agregadores/derivados não são contados como documento. |
 
 ### Detecção temática rica (multilíngue, config-driven)
 
