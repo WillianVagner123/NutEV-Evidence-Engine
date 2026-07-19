@@ -44,7 +44,7 @@ def _ocr_pdf_with_cache(path: Path, ocr_dir: Path, logger) -> tuple[list[str], l
                     logger.info("OCR cache hit path=%s (sha=%s)", path, sha[:12])
                     return [str(p) for p in pages], []
             except Exception:
-                pass  # corrupt cache entry -> re-OCR
+                logger.debug("cache de OCR corrompido em %s — refazendo OCR", cache_file, exc_info=True)
     pages, failed = ocr_scanned_pdf_pages(path, logger)
     if cache_file is not None and any(p.strip() for p in pages):
         try:

@@ -44,7 +44,9 @@ def _check_url(session: Any, url: str, timeout: float) -> dict:
         try:
             resp.close()
         except Exception:
-            pass
+            import logging
+
+            logging.getLogger(__name__).debug("failed to close response", exc_info=True)
         # 403/429 from anti-bot often still means the page exists.
         ok = 200 <= code < 400 or code in {401, 403, 429}
         reason = "ok" if 200 <= code < 400 else ("blocked_but_exists" if code in {401, 403, 429} else "http_error")

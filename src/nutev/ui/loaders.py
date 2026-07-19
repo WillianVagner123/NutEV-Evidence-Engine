@@ -28,7 +28,9 @@ def load_xlsx_or_csv(xlsx_path: Path, csv_path: Path | None = None):
                 data = next(iter(data.values())) if data else pd.DataFrame()
             return data, "ok"
         except Exception:
-            pass
+            import logging
+
+            logging.getLogger(__name__).debug("xlsx read failed, falling back to csv: %s", xlsx_path, exc_info=True)
     if csv_path and csv_path.exists():
         return load_csv(csv_path)
     return empty_with_warning()

@@ -512,13 +512,21 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     # is written, so the primary metadata/article CSVs and every downstream table
     # carry the coding and key sentences. Assistive; enters human review
     # (docs/ARTICLE1_DOMAIN_CODING.md). Failures never abort a run.
+    # Classified failures are recorded, not swallowed: if an enrichment stage
+    # fails, the whole run silently loses that column — so we log it AND record
+    # the lost coverage (07_logs/coverage_loss.json) instead of `except: pass`.
+    from nutev.telemetry.coverage import CoverageLog, write_coverage_report
+
+    coverage = CoverageLog()
     try:
         from nutev.analysis.article1_coding import article1_record_fields
 
         for _row in all_rows:
             _row.update(article1_record_fields(_row))
-    except Exception:  # pragma: no cover - defensive; never abort a run
-        pass
+    except Exception as exc:  # never abort a run — but never hide the loss
+        logger.warning("codificação A/B/C/D falhou: %s", exc)
+        coverage.record_exception(exc, code="artifact_contract_error", component="article1_coding",
+                                  stage="enrichment", impact="corpus sem colunas A/B/C/D/track")
     try:
         from nutev.analysis.keyphrases import keyphrase_fields
 
@@ -527,8 +535,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             _row["key_phrases_text"] = _kp["key_phrases_text"]
             _row["n_key_phrases"] = _kp["n_key_phrases"]
             _row["top_terms"] = _kp["top_terms"]
-    except Exception:  # pragma: no cover - defensive; never abort a run
-        pass
+    except Exception as exc:
+        logger.warning("frases-chave falharam: %s", exc)
+        coverage.record_exception(exc, code="artifact_contract_error", component="keyphrases",
+                                  stage="enrichment", impact="corpus sem frases-chave/top_terms")
     # The reference itself (citation string + structured fields), so every row —
     # and its key phrases — is traceable to its exact source, not just the text.
     try:
@@ -536,8 +546,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
 
         for _row in all_rows:
             _row.update(build_reference(_row))
-    except Exception:  # pragma: no cover - defensive; never abort a run
-        pass
+    except Exception as exc:
+        logger.warning("referências falharam: %s", exc)
+        coverage.record_exception(exc, code="artifact_contract_error", component="references",
+                                  stage="enrichment", impact="corpus sem coluna reference")
     # Rich thematic detection (diet patterns, LM pillars, neuro/mental, eating
     # competencies, processing, implementation) + doc type / evidence weight +
     # nutrition values. Only the flat, CSV-safe fields are attached here.
@@ -553,8 +565,11 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
                 "nutrition_sodium", "nutrition_micronutrients",
             ):
                 _row[_key] = _tf[_key]
-    except Exception:  # pragma: no cover - defensive; never abort a run
-        pass
+    except Exception as exc:
+        logger.warning("detecção temática falhou: %s", exc)
+        coverage.record_exception(exc, code="artifact_contract_error", component="thematic",
+                                  stage="enrichment", impact="corpus sem colunas temáticas/nutrição")
+    _coverage_summary = write_coverage_report(coverage, settings.output_dirs["07_logs"])
 
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")
@@ -748,6 +763,8 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     # Article 1 domain-integration metrics (domain_coverage, profile_distribution,
     # documents_with_all_four_domains, prisma_two_track).
     summary.update(article1_summary)
+    # Lost-coverage accounting: what (if anything) an enrichment stage dropped.
+    summary["coverage_loss"] = _coverage_summary
 
     # Full-text coverage (P6): how much full text this run actually captured per
     # workstream, plus the offline recoverability ceiling (OA vs paywall). Both
