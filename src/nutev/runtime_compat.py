@@ -133,7 +133,13 @@ def _patch_curation() -> None:
         summary.setdefault("input_rows", len(rows))
         summary.setdefault("curated_rows", len(rows))
         try:
-            summary.update(write_audit_artifacts(rows, output_dir.parent / "06_tables"))
+            # Write to 02_metadata (not 06_tables): this is the single location
+            # every reader expects for the audit CSVs — the Streamlit dashboard
+            # (ui/dashboard.py), the FastAPI routes (api/routes.py), pilot_report
+            # and the Export Center all read 02_metadata/NUTEV_*.csv, and
+            # demo-data writes them there too. Writing them to 06_tables left a
+            # real run's claims/recommendations invisible to every UI surface.
+            summary.update(write_audit_artifacts(rows, output_dir.parent / "02_metadata"))
             summary["methodological_note"] = "RecommendationCandidate is not a final protocol recommendation and requires human review."
         except Exception as exc:
             summary.setdefault("audit_artifact_error", str(exc))
@@ -154,7 +160,10 @@ def _patch_run_summary() -> None:
 
     def wrapped(path: Path, summary: dict) -> None:
         path = Path(path)
-        for key, value in _audit_metrics(path.parent.parent / "06_tables").items():
+        # Read the audit metrics from where write_audit_artifacts now writes
+        # them (02_metadata), so run_summary.json counts match the CSVs the UI
+        # shows instead of reading a directory the real run never populated.
+        for key, value in _audit_metrics(path.parent.parent / "02_metadata").items():
             if value or key not in summary:
                 summary[key] = value
         original(path, summary)
