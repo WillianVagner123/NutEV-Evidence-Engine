@@ -295,6 +295,12 @@ def run_guides(
     queue = build_screening_queue(rows)
     write_simple_csv(queue, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_SCREENING_QUEUE.csv")
 
+    # Article-1 reproducible exports (§17): A/B/C/D matrix, PRISMA counts +
+    # diagram, and the data dictionary. `included` stays pending (human review).
+    from nutev.export.article1_exports import write_article1_exports
+
+    exports = write_article1_exports(rows, registries, queue, settings)
+
     # Full per-guide detail (including the nested key phrases) as JSON.
     detail_path = settings.output_dirs["10_curated"] / "guides_coded.json"
     detail_path.parent.mkdir(parents=True, exist_ok=True)
@@ -336,6 +342,8 @@ def run_guides(
         "screening_queue": len(queue),
         "screening_ready_to_screen": sum(1 for q in queue if q["screen_flag"] == "ready_to_screen"),
         "screening_no_full_text": sum(1 for q in queue if q["screen_flag"] != "ready_to_screen"),
+        "abcd_matrix_rows": exports["abcd_matrix_rows"],
+        "prisma_counts": exports["prisma_counts"],
         "profile_distribution": dict(sorted(by_profile.items())),
         "workers": workers,
         "checkpoint": str(checkpoint_path),
