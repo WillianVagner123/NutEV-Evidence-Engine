@@ -206,14 +206,12 @@ def run_dashboard(project_root: Path) -> None:
     elif page == "Provider Settings":
         render_header("Provider Settings", "Local providers and LLM governance")
         info_banner("Use environment variables for provider credentials. LLMs are assistive only and cannot approve protocol items.")
-        providers = ["openai", "anthropic", "google_gemini", "openrouter", "ollama", "brave_search", "serpapi", "ncbi_pubmed", "crossref", "openalex", "europepmc"]
-        rows = []
-        for provider in providers:
-            env_name = provider.upper() + "_API_KEY"
-            if provider in {"crossref", "openalex"}:
-                env_name = provider.upper() + "_EMAIL"
-            rows.append({"provider": provider, "secret_source": "env", "secret_status": "configured" if os.environ.get(env_name) else "missing", "mode": "assistive" if provider in {"openai", "anthropic", "google_gemini", "openrouter", "ollama"} else "lookup"})
-        st.dataframe(pd.DataFrame(rows), use_container_width=True)
+        # Read the REAL credential env-var names from the provider registry —
+        # never infer them by convention (that produced wrong names like
+        # CROSSREF_EMAIL instead of CROSSREF_MAILTO). Single source of truth.
+        from nutev.search.provider_registry import provider_credential_rows
+
+        st.dataframe(pd.DataFrame(provider_credential_rows()), use_container_width=True)
 
     elif page == "Export Center":
         render_header("Export Center", "Download matrices, reports and logs")
