@@ -32,6 +32,7 @@ from nutev.analysis.keyphrases import (
     top_terms,
 )
 from nutev.analysis.references import build_reference
+from nutev.analysis.registries import build_registries
 from nutev.analysis.thematic import evidence_rows, load_taxonomy, thematic_fields
 from nutev.export.metadata_tables import write_simple_csv
 from nutev.extract.smart_extract import extract_document
@@ -268,6 +269,15 @@ def run_guides(
         states.extend(domain_state_rows(r))
     write_simple_csv(states, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_DOMAIN_STATES.csv")
 
+    # Entity registries (§7.1): file_asset × document_version × document_family +
+    # the denominator registry — so files are never miscounted as documents.
+    registries = build_registries(rows)
+    logs = settings.output_dirs["07_logs"]
+    write_simple_csv(registries["file_assets"], logs / "file_asset_registry.csv")
+    write_simple_csv(registries["versions"], logs / "document_version_registry.csv")
+    write_simple_csv(registries["families"], logs / "document_family_registry.csv")
+    write_simple_csv(registries["denominators"], logs / "denominator_registry.csv")
+
     # Full per-guide detail (including the nested key phrases) as JSON.
     detail_path = settings.output_dirs["10_curated"] / "guides_coded.json"
     detail_path.parent.mkdir(parents=True, exist_ok=True)
@@ -301,6 +311,9 @@ def run_guides(
         "key_phrases_total": total_phrases,
         "themes_detected_total": sum(int(r.get("n_themes", 0) or 0) for r in rows),
         "evidence_snippets_total": len(evidence),
+        "file_assets": len(registries["file_assets"]),
+        "document_versions": len(registries["versions"]),
+        "document_families": len(registries["families"]),
         "profile_distribution": dict(sorted(by_profile.items())),
         "workers": workers,
         "checkpoint": str(checkpoint_path),
