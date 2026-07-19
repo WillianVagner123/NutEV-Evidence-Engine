@@ -18,7 +18,9 @@ def main() -> None:
 
         _apply_runtime_compat()
     except Exception:
-        pass
+        import logging
+
+        logging.getLogger("nutev.cli").debug("runtime_compat bootstrap skipped", exc_info=True)
 
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="command")

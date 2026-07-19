@@ -26,7 +26,9 @@ def load_checkpoint(path: Path) -> dict[str, Any] | None:
         try:
             path.replace(corrupt_path)
         except Exception:
-            pass
+            import logging
+
+            logging.getLogger(__name__).debug("could not quarantine corrupt checkpoint %s", path, exc_info=True)
         return None
     return payload if isinstance(payload, dict) else None
 
