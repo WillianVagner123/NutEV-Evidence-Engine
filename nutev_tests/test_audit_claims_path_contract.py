@@ -66,3 +66,6 @@ def test_dashboard_loader_actually_finds_the_claims(tmp_path: Path):
     data = load_data(tmp_path)
     claims = data["claims"]
     assert claims is not None and len(claims) >= 1
+    # The derived matrices (C3) also reach the dashboard now, not just claims.
+    assert (tmp_path / "06_tables" / "NUTEV_EVIDENCE_CONVERGENCE_MATRIX.xlsx").exists()
+    assert (tmp_path / "06_tables" / "NUTEV_PROTOCOL_READINESS_MATRIX.xlsx").exists()

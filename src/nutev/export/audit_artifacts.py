@@ -128,17 +128,16 @@ def build_recommendation_candidates(claims: list[EvidenceClaim], conflicts: list
     return candidates
 
 
-def write_audit_artifacts(rows: list[dict], tables_dir: Path) -> dict:
+def _compute_audit(rows: list[dict]):
+    """Derive claims → evaluations → conflicts → recommendations from pipeline rows."""
     claims = extract_audit_claims(rows)
     evaluations = evaluate_claims(claims, {})
     conflicts = detect_conflicts(claims)
     recommendations = build_recommendation_candidates(claims, conflicts)
+    return claims, evaluations, conflicts, recommendations
 
-    _write_csv(_rows(claims), tables_dir / "NUTEV_EVIDENCE_CLAIMS.csv")
-    _write_csv(_rows(evaluations), tables_dir / "NUTEV_CLAIM_EVALUATIONS.csv")
-    _write_csv(conflicts, tables_dir / "NUTEV_CONFLICTS.csv")
-    _write_csv(_rows(recommendations), tables_dir / "NUTEV_RECOMMENDATION_CANDIDATES.csv")
 
+def _audit_summary(claims: list, conflicts: list, recommendations: list) -> dict:
     return {
         "evidence_claims_total": len(claims),
         "evidence_claims_supported": sum(1 for claim in claims if claim.claim_status == "supported"),
@@ -153,3 +152,64 @@ def write_audit_artifacts(rows: list[dict], tables_dir: Path) -> dict:
         ),
         "conflicting_evidence_total": len(conflicts),
     }
+
+
+def _write_audit_csvs(claims, evaluations, conflicts, recommendations, out_dir: Path) -> None:
+    _write_csv(_rows(claims), out_dir / "NUTEV_EVIDENCE_CLAIMS.csv")
+    _write_csv(_rows(evaluations), out_dir / "NUTEV_CLAIM_EVALUATIONS.csv")
+    _write_csv(conflicts, out_dir / "NUTEV_CONFLICTS.csv")
+    _write_csv(_rows(recommendations), out_dir / "NUTEV_RECOMMENDATION_CANDIDATES.csv")
+
+
+def write_audit_artifacts(rows: list[dict], tables_dir: Path) -> dict:
+    claims, evaluations, conflicts, recommendations = _compute_audit(rows)
+    _write_audit_csvs(claims, evaluations, conflicts, recommendations, Path(tables_dir))
+    return _audit_summary(claims, conflicts, recommendations)
+
+
+def write_audit_and_convergence(rows: list[dict], metadata_dir: Path, tables_dir: Path) -> dict:
+    """First-class audit stage: claims/recs + convergence/gaps/readiness in one place.
+
+    Audit CSVs (claims, evaluations, conflicts, recommendation candidates) go to
+    ``metadata_dir`` (``02_metadata`` — where the dashboard/API/pilot report read
+    them). The derived scientific matrices — evidence convergence, gap register,
+    protocol readiness and locked items — go to ``tables_dir`` (``06_tables`` —
+    where the dashboard reads them). Before this, those matrices were produced
+    only by ``nutev demo-data``, so a real run left the dashboard's
+    convergence/gap/readiness panels empty (audit finding C3).
+
+    A failure in the derived matrices is recorded in the returned summary
+    (``convergence_stage_error``) — surfaced in run_summary.json, never swallowed
+    silently — and never blocks the audit CSVs the UI needs most.
+    """
+    metadata_dir = Path(metadata_dir)
+    tables_dir = Path(tables_dir)
+    claims, evaluations, conflicts, recommendations = _compute_audit(rows)
+    _write_audit_csvs(claims, evaluations, conflicts, recommendations, metadata_dir)
+    summary = _audit_summary(claims, conflicts, recommendations)
+
+    claim_records = _rows(claims)
+    rec_records = _rows(recommendations)
+    try:
+        from nutev.audit.evidence_convergence import export_evidence_convergence_matrix
+        from nutev.audit.gap_register import export_evidence_gap_register
+        from nutev.protocol.locked_items import export_locked_protocol_items
+        from nutev.protocol.readiness import (
+            build_protocol_readiness_matrix,
+            export_protocol_readiness_matrix,
+        )
+
+        convergence = export_evidence_convergence_matrix(claim_records, rec_records, tables_dir)
+        gaps_total = export_evidence_gap_register(claim_records, rec_records, conflicts, tables_dir)
+        ready_total = export_protocol_readiness_matrix(rec_records, claim_records, tables_dir)
+        readiness_df = build_protocol_readiness_matrix(rec_records, claim_records)
+        locked_total = export_locked_protocol_items(rec_records, readiness_df, tables_dir)
+        summary.update({
+            "evidence_convergence_total": sum(convergence.values()) if isinstance(convergence, dict) else 0,
+            "evidence_gaps_total": gaps_total,
+            "protocol_ready_total": ready_total,
+            "locked_protocol_items_total": locked_total,
+        })
+    except Exception as exc:  # surfaced in summary, not swallowed
+        summary["convergence_stage_error"] = str(exc)
+    return summary

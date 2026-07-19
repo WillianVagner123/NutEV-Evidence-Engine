@@ -115,7 +115,7 @@ def _legacy_reports(rows: list[dict], output_dir: Path, unique_documents: int) -
 def _patch_curation() -> None:
     try:
         from nutev.export import curation as curation_module
-        from nutev.export.audit_artifacts import write_audit_artifacts
+        from nutev.export.audit_artifacts import write_audit_and_convergence
     except Exception:
         return
     original = getattr(curation_module, "curate_outputs", None)
@@ -133,13 +133,17 @@ def _patch_curation() -> None:
         summary.setdefault("input_rows", len(rows))
         summary.setdefault("curated_rows", len(rows))
         try:
-            # Write to 02_metadata (not 06_tables): this is the single location
-            # every reader expects for the audit CSVs — the Streamlit dashboard
-            # (ui/dashboard.py), the FastAPI routes (api/routes.py), pilot_report
-            # and the Export Center all read 02_metadata/NUTEV_*.csv, and
-            # demo-data writes them there too. Writing them to 06_tables left a
-            # real run's claims/recommendations invisible to every UI surface.
-            summary.update(write_audit_artifacts(rows, output_dir.parent / "02_metadata"))
+            # First-class audit stage: audit CSVs to 02_metadata (where the
+            # dashboard/API/pilot report read them) and the derived matrices
+            # (convergence, gap register, protocol readiness, locked items) to
+            # 06_tables (where the dashboard reads them). Writing the CSVs to
+            # 06_tables previously left a real run's claims invisible to every
+            # UI surface, and the matrices were produced only by demo-data.
+            summary.update(
+                write_audit_and_convergence(
+                    rows, output_dir.parent / "02_metadata", output_dir.parent / "06_tables"
+                )
+            )
             summary["methodological_note"] = "RecommendationCandidate is not a final protocol recommendation and requires human review."
         except Exception as exc:
             summary.setdefault("audit_artifact_error", str(exc))
