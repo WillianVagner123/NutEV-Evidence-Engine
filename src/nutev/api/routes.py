@@ -21,6 +21,14 @@ def build_router(project_root: Path) -> APIRouter:
     def health():
         return {"status": "ok", "project_root": str(project_root), "service": "nutev-platform"}
 
+    @r.get("/api/providers")
+    def providers():
+        # Real credential env-var names + status from the provider registry
+        # (single source of truth) — never inferred by convention.
+        from nutev.search.provider_registry import provider_credential_rows
+
+        return {"providers": provider_credential_rows()}
+
     @r.get("/api/run-summary")
     def run_summary():
         return read_json_safe(project_root / "07_logs" / "run_summary.json")
