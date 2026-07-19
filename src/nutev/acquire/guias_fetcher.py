@@ -15,6 +15,7 @@ nothing is fabricated. Copyright/ToS are respected — see
 """
 from __future__ import annotations
 
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -43,6 +44,15 @@ def _content_kind(content_type: str, body: bytes) -> str:
     if "html" in ct or body[:15].lstrip().lower().startswith((b"<!doctype", b"<html")):
         return "html"
     return "other"
+
+
+def _max_download_bytes() -> int:
+    """Optional cap on a single download's size (env NUTEV_MAX_DOWNLOAD_MB; 0 = no cap)."""
+    try:
+        mb = float(os.environ.get("NUTEV_MAX_DOWNLOAD_MB", "0") or 0)
+    except ValueError:
+        return 0
+    return int(mb * 1024 * 1024) if mb > 0 else 0
 
 
 def fetch_guide(
@@ -87,6 +97,10 @@ def fetch_guide(
             base["reason"] = f"http_{code}"
             return base
         body = resp.content or b""
+        cap = _max_download_bytes()
+        if cap and len(body) > cap:
+            base["reason"] = f"too_large_{len(body)}_bytes"
+            return base
         kind = _content_kind(getattr(resp, "headers", {}).get("Content-Type", "") if hasattr(resp, "headers") else "", body)
         ext = "pdf" if kind == "pdf" else ("html" if kind == "html" else "bin")
         fname = f"{_slug(source.get('country') or source.get('name'))}__{_slug(source.get('name'))}.{ext}"
