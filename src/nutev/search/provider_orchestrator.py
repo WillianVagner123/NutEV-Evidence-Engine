@@ -108,6 +108,16 @@ def _coerce_result(provider: str, query: str, raw: ProviderResult | list[dict[st
     )
 
 
+def _stamp_retrieved_at(result: ProviderResult, retrieved_at: str) -> None:
+    """Record the UTC retrieval timestamp on every row (the audit's 'data da
+    recuperação'). No connector stamped this; without it a record cannot be tied
+    to *when* it was pulled, which reproducible search reporting requires. Existing
+    values are preserved (a resumed/checkpointed row keeps its original date)."""
+    for row in getattr(result, "rows", None) or []:
+        if isinstance(row, dict):
+            row.setdefault("retrieved_at", retrieved_at)
+
+
 def search_provider(
     *,
     provider: str,
@@ -213,6 +223,7 @@ def search_provider(
                 result = ProviderResult(provider, query, status="skipped", error="unsupported_provider", meta={"query_hash": qh})
             else:
                 result = _coerce_result(provider, query, fn(query, limit, context))
+        _stamp_retrieved_at(result, datetime.now(timezone.utc).isoformat())
         result.meta.setdefault("query_hash", qh)
         return finish(result)
     except Exception as exc:

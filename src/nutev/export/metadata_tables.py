@@ -7,7 +7,7 @@ REQUIRED_METADATA_COLUMNS = [
     "country", "region", "workstream", "year", "language", "evidence_type", "capture_status", "download_status", "extraction_status",
     "artifact_paths", "failure_reason", "relevance_score", "novelty_score", "domains", "outcomes", "diet_patterns", "clinical_conditions",
     "first_seen_date", "last_seen_date", "is_new", "llm_decision", "llm_reason",
-    "journal", "publication_date", "article_type", "authors", "abstract", "metadata_status",
+    "journal", "publication_date", "article_type", "authors", "abstract", "metadata_status", "retrieved_at",
     "editorial_priority_score", "editorial_priority_tier",
     # Article 1 analytical schema (see nutev.analysis.article1_coding).
     "track", "issuing_body", "who_region", "income_band", "document_version",
