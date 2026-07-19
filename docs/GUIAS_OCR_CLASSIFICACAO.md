@@ -96,9 +96,28 @@ português/espanhol. Agora:
 
 | Arquivo | Conteúdo |
 |---|---|
-| `06_tables/NUTEV_GUIDES_CODED.csv` | **Uma linha por guia**: país, emissor, `sha256`, `fulltext_status`, se usou OCR, `profile` (ex.: `ABCD`), os 4 domínios, nº de frases-chave, termos frequentes e o bloco de frases-chave. |
-| `10_curated/guides_coded.json` | Detalhe completo por guia, incluindo a **lista** de frases-chave (`{domain, actionable, sentence}`). |
-| `07_logs/guides_summary.json` | Contagem: guias no manifesto, processados, com texto, quantos via OCR, total de frases-chave, distribuição por `profile`. |
+| `06_tables/NUTEV_GUIDES_CODED.csv` | **Uma linha por guia**: país, emissor, `sha256`, `fulltext_status`, OCR, `profile` A/B/C/D, **tipo de documento + peso de evidência**, **padrões nomeados** (mediterrânea/DASH/…), **nº de temas + temas detectados**, **valores nutricionais** (macros %, fibra, sódio, micronutrientes), termos frequentes e frases-chave. |
+| `06_tables/NUTEV_GUIDES_EVIDENCE.csv` | **Tabela de evidências (tidy)**: uma linha por tema detectado, com o **trecho verbatim** (evidência), a família/subtema, o tipo/peso de documento e a **referência** — ouro para o scoping. |
+| `10_curated/guides_coded.json` | Detalhe completo por guia: frases-chave (`{domain, actionable, sentence, page, reference}`) **e** os temas com seus trechos (`themes[família][subtema].snippets`). |
+| `07_logs/guides_summary.json` | Contagem: guias, com texto, OCR, frases-chave, **temas detectados**, **trechos de evidência**, distribuição por `profile`. |
+
+### Detecção temática rica (multilíngue, config-driven)
+
+Além do A/B/C/D, cada guia passa por um **detector temático granular** — definido em
+`config/thematic_taxonomy.json` (EN/PT/ES), fácil de editar:
+
+- **Padrões nomeados**: mediterrânea, DASH, MIND, nórdica, portfolio, plant-based, EAT-Lancet, FBDG
+- **Pilares de Lifestyle Medicine**: sono, estresse, atividade física, conexão social, ambiente alimentar
+- **Neuro / saúde mental**: depressão, ansiedade, cognição, demência, eixo intestino-cérebro, neuroinflamação, estresse oxidativo, neuroplasticidade
+- **Competências alimentares**: culinária, planejamento, compras, rótulos, comensalidade, estrutura das refeições
+- **Processamento (NOVA)**: minimamente processado, ultraprocessado
+- **Implementação**: aderência, custo, acesso, tempo, cultura, viabilidade, ambiente
+- **Tipo de documento → peso de evidência** (guideline=5, consenso/revisão=4, ensaio=3, observacional=2)
+- **Valores nutricionais** por regex: faixas de macro (`45-65%`), fibra (`25g`), sódio (`2000 mg`), micronutrientes
+
+Para **cada tema detectado**, o sistema guarda o **trecho verbatim** (janela de ~240
+caracteres) — a evidência que você lê e cita. Tudo assistivo, sob revisão humana.
+As mesmas colunas resumidas também saem no `article_data.csv` do pipeline principal.
 
 O texto integral extraído/OCR fica em `04_ocr_text/` e `05_extraction/`.
 

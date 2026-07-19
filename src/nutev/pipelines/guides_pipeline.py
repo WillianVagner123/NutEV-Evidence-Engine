@@ -31,6 +31,7 @@ from nutev.analysis.keyphrases import (
     top_terms,
 )
 from nutev.analysis.references import build_reference
+from nutev.analysis.thematic import evidence_rows, load_taxonomy, thematic_fields
 from nutev.export.metadata_tables import write_simple_csv
 from nutev.extract.smart_extract import extract_document
 
@@ -40,8 +41,11 @@ _FULLTEXT_OK = {"ok", "ok_ocr", "fake_pdf_html", "fake_pdf_text"}
 _TABLE_COLUMNS = (
     "name", "country", "institution", "source_url", "access_date",
     "fulltext_status", "archived_pdf_path", "sha256", "archived_pdf_sha256",
-    "aacods_authority_tier", "track", "extraction_status", "used_ocr", "chars",
+    "aacods_authority_tier", "track", "doc_type", "evidence_weight",
+    "extraction_status", "used_ocr", "chars",
     "profile", "n_domains", "domain_A", "domain_B", "domain_C", "domain_D",
+    "diet_patterns", "n_themes", "themes_present",
+    "nutrition_macros_pct", "nutrition_fiber_g", "nutrition_sodium", "nutrition_micronutrients",
     "reference", "n_key_phrases", "top_terms", "key_phrases_text",
 )
 
@@ -89,6 +93,14 @@ def process_guide(record: dict, settings, logger) -> dict:
     # The reference itself (citation string + structured fields) so every key
     # phrase is traceable to its exact source, not just the text.
     row.update(build_reference(row))
+
+    # Rich thematic detection (diet patterns, LM pillars, neuro/mental, eating
+    # competencies, processing, implementation) + evidence snippets + doc type /
+    # evidence weight + nutrition values. Config-driven; failures never abort.
+    try:
+        row.update(thematic_fields(row, load_taxonomy(settings.config_root)))
+    except Exception as exc:  # pragma: no cover - defensive
+        logger.warning("detecção temática falhou guia=%s erro=%s", row.get("name"), exc)
 
     # Page-precise key phrases: each carries its source page AND the reference.
     pages = extraction.get("pages") or ([row["extracted_text"]] if row["extracted_text"].strip() else [])
@@ -232,6 +244,13 @@ def run_guides(
     table_rows = [{col: r.get(col, "") for col in _TABLE_COLUMNS} for r in rows]
     write_simple_csv(table_rows, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_CODED.csv")
 
+    # Tidy evidence table: one row per detected sub-theme snippet, each with its
+    # verbatim evidence and the document's reference (a scoping-review goldmine).
+    evidence: list[dict] = []
+    for r in rows:
+        evidence.extend(evidence_rows(r))
+    write_simple_csv(evidence, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_EVIDENCE.csv")
+
     # Full per-guide detail (including the nested key phrases) as JSON.
     detail_path = settings.output_dirs["10_curated"] / "guides_coded.json"
     detail_path.parent.mkdir(parents=True, exist_ok=True)
@@ -263,6 +282,8 @@ def run_guides(
         "guides_with_fulltext": with_text,
         "guides_ocr_used": ocr_used,
         "key_phrases_total": total_phrases,
+        "themes_detected_total": sum(int(r.get("n_themes", 0) or 0) for r in rows),
+        "evidence_snippets_total": len(evidence),
         "profile_distribution": dict(sorted(by_profile.items())),
         "workers": workers,
         "checkpoint": str(checkpoint_path),

@@ -538,6 +538,23 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             _row.update(build_reference(_row))
     except Exception:  # pragma: no cover - defensive; never abort a run
         pass
+    # Rich thematic detection (diet patterns, LM pillars, neuro/mental, eating
+    # competencies, processing, implementation) + doc type / evidence weight +
+    # nutrition values. Only the flat, CSV-safe fields are attached here.
+    try:
+        from nutev.analysis.thematic import load_taxonomy, thematic_fields
+
+        _taxonomy = load_taxonomy(settings.config_root)
+        for _row in all_rows:
+            _tf = thematic_fields(_row, _taxonomy)
+            for _key in (
+                "themes_present", "n_themes", "diet_patterns", "doc_type",
+                "evidence_weight", "nutrition_macros_pct", "nutrition_fiber_g",
+                "nutrition_sodium", "nutrition_micronutrients",
+            ):
+                _row[_key] = _tf[_key]
+    except Exception:  # pragma: no cover - defensive; never abort a run
+        pass
 
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")
