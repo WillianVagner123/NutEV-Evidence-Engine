@@ -1,8 +1,21 @@
 from __future__ import annotations
 
+import os
 import shutil
 from pathlib import Path
 from nutev.extract.image_ocr import ocr_pil_image
+
+
+def _ocr_max_pages() -> int:
+    """Optional cap on pages OCR'd per PDF (env NUTEV_OCR_MAX_PAGES; 0 = all).
+
+    Guards against a single huge scan monopolizing the batch. Default 0 keeps the
+    behavior unchanged; set e.g. NUTEV_OCR_MAX_PAGES=150 to bound very long PDFs.
+    """
+    try:
+        return max(0, int(os.environ.get("NUTEV_OCR_MAX_PAGES", "0") or 0))
+    except ValueError:
+        return 0
 
 
 def _has_pymupdf() -> bool:
@@ -131,15 +144,40 @@ def ocr_output_looks_failed(text: str) -> bool:
 
 
 def _ocr_pages_at_dpi(path: Path, dpi: int, logger) -> tuple[list[str], list[int]]:
-    """OCR every page at ``dpi``; return (per-page texts, failed page numbers)."""
+    """OCR every page at ``dpi``; return (per-page texts, failed page numbers).
+
+    Resilient: a single page that fails to *render* (corrupt/unsupported page) is
+    skipped instead of aborting the whole document — earlier pages are kept. A
+    failure on the very first page (no renderer / unreadable PDF) is re-raised so
+    the caller can retry at a higher DPI or flag the OCR-setup gap. Honors the
+    optional per-PDF page cap.
+    """
+    max_pages = _ocr_max_pages()
     failed: list[int] = []
     texts: list[str] = []
-    pages = _render_pdf_pages(path, dpi=dpi)
-    for i, img in enumerate(pages, start=1):
+    gen = _render_pdf_pages(path, dpi=dpi)
+    page_no = 0
+    while True:
+        if max_pages and page_no >= max_pages:
+            logger.info("OCR: limite de %d páginas atingido em %s", max_pages, path)
+            break
+        try:
+            img = next(gen)
+        except StopIteration:
+            break
+        except Exception:
+            if page_no == 0:
+                raise  # no renderer / cannot open — let ocr_scanned_pdf_pages handle it
+            logger.warning("OCR: página %d de %s falhou ao renderizar (pulada)", page_no + 1, path)
+            failed.append(page_no + 1)
+            texts.append("")
+            page_no += 1
+            continue
+        page_no += 1
         try:
             texts.append(ocr_pil_image(img))
         except Exception:
-            failed.append(i)
+            failed.append(page_no)
             texts.append("")
     return texts, failed
 
