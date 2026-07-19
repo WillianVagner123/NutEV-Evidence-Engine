@@ -1,15 +1,23 @@
 from __future__ import annotations
 
-import hashlib
 import json
-import re
 from pathlib import Path
-from urllib.parse import urlsplit
 
 import pandas as pd
 
 from nutev.analysis import domains_busca1, domains_busca2a, domains_busca2b
 from nutev.analysis.article3_framework import build_framework_signals
+from nutev.analysis.dedup import (
+    as_text,
+    canonical_article_key,
+    dedup_rows,
+    hash_fallback,
+    merge_article_rows,
+    normalize_doi,
+    normalize_title,
+    normalize_url,
+    normalize_year,
+)
 from nutev.analysis.nutev_classifier import classify_evidence
 from nutev.analysis.prisma import build_prisma_flow, export_prisma
 from nutev.analysis.relevance import keep_candidate_for_download, score_record
@@ -68,143 +76,23 @@ DOWNLOAD_BUDGET = {
 
 DEFAULT_PRIORITY = ["pubmed", "europepmc", "openalex", "crossref", "official_web"]
 
-_WHITESPACE_RE = re.compile(r"\s+")
-_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
-
-
 def _provider_map():
     return {"pubmed": True, "europepmc": True, "openalex": True, "crossref": True}
 
 
-def _as_text(value: object) -> str:
-    if value is None:
-        return ""
-    if isinstance(value, str):
-        return value.strip()
-    return str(value).strip()
-
-
-def _normalize_doi(value: object) -> str:
-    text = _as_text(value).lower()
-    if not text:
-        return ""
-    for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
-        if text.startswith(prefix):
-            text = text[len(prefix) :]
-    return text.strip().strip("/")
-
-
-def _normalize_url(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    parsed = urlsplit(text)
-    if not parsed.scheme or not parsed.netloc:
-        return text.strip().rstrip("/").lower().removeprefix("www.")
-
-    netloc = parsed.netloc.lower().removeprefix("www.")
-    if parsed.scheme.lower() == "http" and netloc.endswith(":80"):
-        netloc = netloc[:-3]
-    if parsed.scheme.lower() == "https" and netloc.endswith(":443"):
-        netloc = netloc[:-4]
-
-    path = parsed.path.rstrip("/") or "/"
-    return f"{netloc}{path}".rstrip("/")
-
-
-def _normalize_title(value: object) -> str:
-    text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
-    return _NON_ALNUM_RE.sub(" ", text).strip()
-
-
-def _normalize_year(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    try:
-        year = int(float(text))
-    except Exception:
-        return ""
-    return str(year)
-
-
-def _hash_fallback(row: dict) -> str:
-    payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
-    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
-
-
-def _canonical_article_key(row: dict) -> tuple[str, str]:
-    doi = _normalize_doi(row.get("doi"))
-    if doi:
-        return "doi", doi
-
-    pmid = _as_text(row.get("pmid")).lower()
-    if pmid:
-        return "pmid", pmid
-
-    pmcid = _as_text(row.get("pmcid")).lower()
-    if pmcid:
-        return "pmcid", pmcid
-
-    url = _normalize_url(
-        row.get("final_url") or row.get("resolved_url") or row.get("original_url") or row.get("url")
-    )
-    if url:
-        return "url", url
-
-    title = _normalize_title(row.get("title"))
-    year = _normalize_year(row.get("year"))
-    if title and year:
-        return "title_year", f"{title}|{year}"
-
-    return "row_hash", _hash_fallback(row)
-
-
-def _merge_article_rows(existing: dict, incoming: dict) -> dict:
-    merged = dict(existing)
-    for key, value in incoming.items():
-        if value in (None, "", [], {}):
-            continue
-        if key in {"abstract", "snippet", "summary"} and len(str(value)) > len(str(merged.get(key) or "")):
-            merged[key] = value
-        elif not merged.get(key):
-            merged[key] = value
-    # Keep the stronger URL for capture. PMC and direct full-text URLs tend to
-    # produce better artifacts than DOI landing pages.
-    existing_url = str(merged.get("url") or "")
-    incoming_url = str(incoming.get("url") or "")
-    if incoming_url and (
-        not existing_url
-        or "pmc.ncbi.nlm.nih.gov" in incoming_url
-        or incoming_url.lower().endswith(".pdf")
-    ):
-        merged["url"] = incoming_url
-    providers = []
-    for value in (merged.get("matched_providers"), merged.get("source_provider"), merged.get("source"), incoming.get("matched_providers"), incoming.get("source_provider"), incoming.get("source")):
-        for part in str(value or "").split("|"):
-            part = part.strip()
-            if part and part not in providers:
-                providers.append(part)
-    merged["matched_providers"] = "|".join(providers)
-    merged["source"] = merged.get("source") or incoming.get("source")
-    return merged
-
-
-def _dedup_rows(rows: list[dict]) -> list[dict]:
-    by_key: dict[tuple[str, str], dict] = {}
-    order: list[tuple[str, str]] = []
-    for r in rows:
-        key = _canonical_article_key(r)
-        if key not in by_key:
-            r = dict(r)
-            provider = r.get("source_provider") or r.get("source")
-            if provider and not r.get("matched_providers"):
-                r["matched_providers"] = str(provider)
-            by_key[key] = r
-            order.append(key)
-        else:
-            by_key[key] = _merge_article_rows(by_key[key], r)
-    return [by_key[key] for key in order]
+# Deduplication moved to nutev.analysis.dedup (kept importable here under the
+# historical private names so the pipeline call sites and existing test imports —
+# e.g. `from nutev.pipelines.master_pipeline import _dedup_rows, _normalize_url` —
+# keep working unchanged).
+_as_text = as_text
+_normalize_doi = normalize_doi
+_normalize_url = normalize_url
+_normalize_title = normalize_title
+_normalize_year = normalize_year
+_hash_fallback = hash_fallback
+_canonical_article_key = canonical_article_key
+_merge_article_rows = merge_article_rows
+_dedup_rows = dedup_rows
 
 
 def _safe_provider_call(provider: str, fn, q: str, ws: str, logger) -> list[dict]:
