@@ -27,6 +27,7 @@ from nutev.analysis.synthesis import (
     build_questionnaire_candidates,
     write_synthesis_outputs,
 )
+from nutev.config_provenance import write_config_provenance
 from nutev.download.downloader import download_records
 from nutev.engine.artifacts import build_artifact_manifest
 from nutev.engine.events import emit_event, write_event
@@ -554,6 +555,12 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     search_job.finished_at = __import__("datetime").datetime.now(
         __import__("datetime").timezone.utc
     )
+    # Pin the exact taxonomy/scoring configuration to this run (base + every
+    # merged supplement, each hashed) so the result is reproducible and citable.
+    config_provenance = write_config_provenance(
+        settings.output_dirs["07_logs"] / "config_provenance.json",
+        settings.config_root,
+    )
     write_search_job_snapshot(
         search_job,
         settings.output_dirs["07_logs"] / "search_job_snapshot.json",
@@ -564,10 +571,11 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             "providers_declared_by_workstream": providers_declared_by_workstream,
             "providers_executed_by_workstream": providers_executed_by_workstream,
             "providers_unsupported_by_workstream": providers_unsupported_by_workstream,
+            "config_digest": config_provenance["config_digest"],
             "configs_loaded": [
-                "keyword_taxonomy.json",
-                "scoring_rules.json",
-                "official_sources_manifest.json",
+                source["name"]
+                for family in config_provenance["families"].values()
+                for source in family["sources"]
             ],
             "querypack_files": [
                 "07_logs/querypack_executed.json",

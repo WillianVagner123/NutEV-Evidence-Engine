@@ -61,19 +61,39 @@ def _merge_config(base: dict, supplement: dict) -> dict:
     return merged
 
 
-def _load_json_supplements(path: Path) -> list[dict]:
-    exact_supplement = path.with_name(f"{path.stem}_supplement{path.suffix}")
-    supplement_paths: list[Path] = []
+def resolve_config_sources(path: Path | str) -> list[Path]:
+    """Ordered files ``load_json`` merges for ``path``: base then supplements.
+
+    Supplements are the sibling ``{stem}_supplement*{suffix}`` files, applied in
+    a deterministic order (the exact ``_supplement`` first, then the
+    ``_supplement_*`` variants sorted by name). This is the single source of
+    truth for *which* files compose a config — both the loader and the
+    provenance/digest layer read the run's config through this list, so they can
+    never disagree about what was actually merged.
+    """
+    json_path = Path(path)
+    sources: list[Path] = [json_path] if json_path.exists() else []
+    exact_supplement = json_path.with_name(f"{json_path.stem}_supplement{json_path.suffix}")
     if exact_supplement.exists():
-        supplement_paths.append(exact_supplement)
-    supplement_paths.extend(
+        sources.append(exact_supplement)
+    sources.extend(
         sorted(
             candidate
-            for candidate in path.parent.glob(f"{path.stem}_supplement_*{path.suffix}")
+            for candidate in json_path.parent.glob(f"{json_path.stem}_supplement_*{json_path.suffix}")
             if candidate != exact_supplement
         )
     )
-    return [json.loads(path.read_text(encoding="utf-8")) for path in supplement_paths]
+    return sources
+
+
+def _load_json_supplements(path: Path) -> list[dict]:
+    # Only the supplement layers (the base is read separately by load_json).
+    base = Path(path)
+    return [
+        json.loads(source.read_text(encoding="utf-8"))
+        for source in resolve_config_sources(base)
+        if source != base
+    ]
 
 
 def load_json(path: Path | str) -> dict:
