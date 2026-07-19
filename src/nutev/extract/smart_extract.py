@@ -1,12 +1,58 @@
 from __future__ import annotations
 
+import hashlib
+import json
 from pathlib import Path
 from nutev.extract.pdf_text import (
     extract_pdf_text_pages,
+    ocr_cache_signature,
     ocr_scanned_pdf_pages,
     is_probably_pdf_file,
     missing_ocr_dependencies,
 )
+
+
+def _sha256_file(path: Path) -> str | None:
+    """SHA-256 of a file's bytes, or None if unreadable (for the OCR cache key)."""
+    h = hashlib.sha256()
+    try:
+        with open(path, "rb") as handle:
+            for chunk in iter(lambda: handle.read(65536), b""):
+                h.update(chunk)
+    except OSError:
+        return None
+    return h.hexdigest()
+
+
+def _ocr_pdf_with_cache(path: Path, ocr_dir: Path, logger) -> tuple[list[str], list[int]]:
+    """OCR a scanned PDF, reusing a content-addressed cache when possible.
+
+    The cache is keyed by the file's SHA-256 **and** the OCR settings signature,
+    so identical file content OCR'd with the same settings is never re-run (a big
+    win when the same guide is mirrored under different names) — and a settings
+    change invalidates it, preserving reproducibility. Tesseract is deterministic,
+    so a cache hit returns exactly what a fresh run would.
+    """
+    sha = _sha256_file(path)
+    cache_file = None
+    if sha:
+        cache_file = Path(ocr_dir) / "_ocrcache" / f"{sha}.{ocr_cache_signature()}.pages.json"
+        if cache_file.is_file():
+            try:
+                pages = json.loads(cache_file.read_text(encoding="utf-8"))
+                if isinstance(pages, list):
+                    logger.info("OCR cache hit path=%s (sha=%s)", path, sha[:12])
+                    return [str(p) for p in pages], []
+            except Exception:
+                pass  # corrupt cache entry -> re-OCR
+    pages, failed = ocr_scanned_pdf_pages(path, logger)
+    if cache_file is not None and any(p.strip() for p in pages):
+        try:
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            cache_file.write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
+        except Exception as exc:  # cache write is best-effort
+            logger.warning("não consegui gravar cache de OCR %s: %s", cache_file, exc)
+    return pages, failed
 
 # Emit the "install OCR prerequisites" guidance at most once per process so a
 # corpus of scanned PDFs does not flood the log with the same instruction.
@@ -126,7 +172,7 @@ def extract_document(path: Path, ocr_dir: Path, out_dir: Path, logger, *, captur
                 text = "\n".join(native_pages).strip()
                 extraction_status = "ok"
             else:
-                ocr_pages, ocr_failed_pages = ocr_scanned_pdf_pages(path, logger)
+                ocr_pages, ocr_failed_pages = _ocr_pdf_with_cache(path, ocr_dir, logger)
                 pages = ocr_pages
                 ocr_text = "\n".join(ocr_pages)
                 if ocr_text.strip():
