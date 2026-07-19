@@ -154,6 +154,24 @@ as colunas `track`, `profile`, `domain_A..D`, `n_key_phrases`, `top_terms` e
 `key_phrases_text` no `02_metadata/article_data.csv` — a classificação e as
 frases-chave aparecem na tabela principal, não só na camada curada.
 
+## Dashboard web do Artigo 1 (§15)
+
+Depois de rodar `nutev guides`, você pode ver os resultados no navegador (sem
+build de frontend):
+
+```bash
+pip install -e ".[api]"
+nutev serve --project-root SAIDA        # sobe a API em http://127.0.0.1:8000
+# abra:  http://127.0.0.1:8000/api/article1/dashboard
+```
+
+O dashboard mostra os **denominadores**, o **PRISMA-ScR** (com `incluídos =
+PENDENTE`, pois a validação é humana), a **matriz A/B/C/D** (estado colorido) e as
+**riquezas** ranqueadas — com os avisos de que tudo é assistivo e não é corpus
+final. Endpoints JSON em `/api/article1/*` (denominators, prisma, abcd-matrix,
+domain-states, gems, screening-queue, families, versions) alimentam a futura app
+Next.js completa.
+
 ## Limite honesto
 
 Guias públicos: dá para pegar quase todos. O que estiver atrás de acesso
