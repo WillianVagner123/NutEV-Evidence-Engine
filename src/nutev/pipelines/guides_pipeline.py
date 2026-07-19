@@ -34,6 +34,7 @@ from nutev.analysis.keyphrases import (
 )
 from nutev.analysis.references import build_reference
 from nutev.analysis.registries import build_registries
+from nutev.review.screening import build_screening_queue
 from nutev.analysis.thematic import evidence_rows, load_taxonomy, thematic_fields
 from nutev.export.metadata_tables import write_simple_csv
 from nutev.extract.smart_extract import extract_document
@@ -288,6 +289,12 @@ def run_guides(
         best_gems_markdown(gems), encoding="utf-8"
     )
 
+    # Two-reviewer screening queue (§13): one item per document for two humans to
+    # screen; docs with no usable text / poor OCR are flagged to a separate queue.
+    # Nothing is export-ready until two reviewers validate (the export gate).
+    queue = build_screening_queue(rows)
+    write_simple_csv(queue, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_SCREENING_QUEUE.csv")
+
     # Full per-guide detail (including the nested key phrases) as JSON.
     detail_path = settings.output_dirs["10_curated"] / "guides_coded.json"
     detail_path.parent.mkdir(parents=True, exist_ok=True)
@@ -326,6 +333,9 @@ def run_guides(
         "document_families": len(registries["families"]),
         "evidence_gems": len(gems),
         "top_gem_score": gems[0]["gem_score"] if gems else 0,
+        "screening_queue": len(queue),
+        "screening_ready_to_screen": sum(1 for q in queue if q["screen_flag"] == "ready_to_screen"),
+        "screening_no_full_text": sum(1 for q in queue if q["screen_flag"] != "ready_to_screen"),
         "profile_distribution": dict(sorted(by_profile.items())),
         "workers": workers,
         "checkpoint": str(checkpoint_path),
