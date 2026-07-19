@@ -217,16 +217,34 @@ def main() -> None:
 
         session = None
         if not args.offline and os.environ.get("NUTEV_DISABLE_NETWORK") != "1":
+            import threading
             import time
 
             import requests
+            from requests.adapters import HTTPAdapter
 
             session = requests.Session()
             session.headers["User-Agent"] = "NutEV Guides Fetcher/1.0"
-            _orig_get = session.get
+            # Size the connection pool to the worker count so parallel fetches
+            # reuse connections instead of contending for a tiny default pool.
+            _pool = max(args.workers * 2, 10)
+            adapter = HTTPAdapter(pool_connections=_pool, pool_maxsize=_pool)
+            session.mount("https://", adapter)
+            session.mount("http://", adapter)
 
-            def _throttled_get(*a, **k):  # polite rate limit between downloads
-                time.sleep(max(0.0, args.rate))
+            # Per-THREAD rate limit: a global sleep would serialize all workers
+            # (throughput 1/rate no matter how many workers). Throttling per
+            # thread keeps each worker polite while giving ~workers/rate overall.
+            _orig_get = session.get
+            _local = threading.local()
+
+            def _throttled_get(*a, **k):
+                now = time.monotonic()
+                last = getattr(_local, "last", 0.0)
+                wait = args.rate - (now - last)
+                if wait > 0:
+                    time.sleep(wait)
+                _local.last = time.monotonic()
                 return _orig_get(*a, **k)
 
             session.get = _throttled_get  # type: ignore[assignment]

@@ -183,7 +183,7 @@ def run_guides(
     if discover_fao and session is not None:
         from nutev.acquire.fao_discovery import discover_fao_guides
 
-        sources = discover_fao_guides(session, timeout=timeout, limit=limit, logger=logger)
+        sources = discover_fao_guides(session, timeout=timeout, limit=limit, workers=workers, logger=logger)
         logger.info("guias descobertos ao vivo (FAO)=%d", len(sources))
     else:
         sources = load_guide_sources(config_root)
