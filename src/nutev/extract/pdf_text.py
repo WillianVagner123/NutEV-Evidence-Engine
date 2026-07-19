@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+import logging
 import os
 import shutil
 from pathlib import Path
 from nutev.extract.image_ocr import ocr_pil_image
+
+logger = logging.getLogger("nutev.extract.pdf_text")
 
 
 def _ocr_max_pages() -> int:
@@ -97,7 +100,11 @@ def extract_pdf_text_pages(path: Path) -> list[str]:
 
         reader = pypdf.PdfReader(str(path), strict=False)
         return [(page.extract_text() or "") for page in reader.pages]
-    except Exception:
+    except Exception as exc:
+        # Native text failing here is normal for scanned PDFs (OCR follows), but
+        # log it so a genuinely corrupt/unreadable file is not silently counted
+        # as "no text" with no trace.
+        logger.warning("native PDF text extraction failed, falling back: path=%s error=%s", path, exc)
         return []
 
 

@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
 from urllib.parse import urlparse
+
+logger = logging.getLogger("nutev.search.official_sources")
 
 WORKSTREAM_ALIASES = {
     "a3": "artigo3_framework",
@@ -17,7 +20,12 @@ def load_official_manifest(config_root: Path, include_countries: bool = True) ->
         try:
             data = json.loads(Path(path).read_text(encoding="utf-8"))
             return data if isinstance(data, dict) else {}
-        except Exception:
+        except FileNotFoundError:
+            return {}
+        except Exception as exc:
+            # A malformed manifest silently dropping the entire official corpus is
+            # a scientific-integrity risk — record which file failed and why.
+            logger.warning("official manifest unreadable, dropped: path=%s error=%s", path, exc)
             return {}
 
     base = _read(Path(config_root) / "official_sources_manifest.json")
@@ -54,6 +62,7 @@ def _dedupe_sources(sources: list[dict]) -> list[dict]:
     unique_sources: list[dict] = []
     for source in sources:
         if not isinstance(source, dict):
+            logger.warning("official source row dropped: not an object: %r", source)
             continue
         key = _source_key(source)
         if not key or key in seen:
@@ -80,7 +89,8 @@ def manifest_sources(manifest: dict, workstream: str) -> list[dict]:
             sources = _dedupe_sources(list(sources or []) + list(workstreams.get(workstream, []) or []))
         else:
             sources = _dedupe_sources(list(sources or []))
-    except Exception:
+    except Exception as exc:
+        logger.warning("official sources unresolved for workstream=%s, dropped: error=%s", workstream, exc)
         return []
 
     rows: list[dict] = []
@@ -103,6 +113,7 @@ def manifest_sources(manifest: dict, workstream: str) -> list[dict]:
                     "provider_query": workstream,
                 }
             )
-        except Exception:
+        except Exception as exc:
+            logger.warning("official source row dropped: source=%r error=%s", source, exc)
             continue
     return rows

@@ -472,7 +472,8 @@ def download_records(
     for record in records[:download_limit] if download_limit is not None else records:
         try:
             record = dict(record)
-        except Exception:
+        except Exception as exc:
+            logger.warning("registro descartado (não é dict) erro=%s tipo=%s", exc, type(record).__name__)
             continue
         raw_url = record.get("url")
         if not isinstance(raw_url, str) or not raw_url:
