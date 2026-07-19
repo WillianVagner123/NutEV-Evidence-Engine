@@ -37,6 +37,41 @@ def list_providers(config_root: Path | None = None) -> list[dict]:
     return list(load_provider_registry(config_root).get("providers", []))
 
 
+def declared_provider_ids(config_root: Path | None = None) -> set[str]:
+    """All provider ids declared in the registry, including aliases."""
+    declared: set[str] = set()
+    for p in list_providers(config_root):
+        pid = p.get("provider_id")
+        if pid:
+            declared.add(pid)
+        declared.update(p.get("aliases", []))
+    return declared
+
+
+def reconcile_providers(implemented: list[str], config_root: Path | None = None) -> dict:
+    """Cross-check implemented providers against the declared registry.
+
+    Returns ``declared_not_implemented`` (in the config but with no code) and
+    ``implemented_not_declared`` (code exists but the config never declared it —
+    the drift the audit warned about). The registry is the single source of truth
+    for *which providers exist*; a non-empty ``implemented_not_declared`` is a bug.
+    """
+    declared = declared_provider_ids(config_root)
+    impl = set(implemented)
+    # Only search-capable declared providers can be "not implemented"; LLM/local
+    # models are declared but never run as search providers.
+    search_declared = {
+        p.get("provider_id") for p in list_providers(config_root)
+        if p.get("provider_type") in {"search", "bibliographic", "official_source"}
+    } | {a for p in list_providers(config_root)
+         if p.get("provider_type") in {"search", "bibliographic", "official_source"}
+         for a in p.get("aliases", [])}
+    return {
+        "declared_not_implemented": sorted(search_declared - impl),
+        "implemented_not_declared": sorted(impl - declared),
+    }
+
+
 def provider_env_vars(provider_id: str, config_root: Path | None = None) -> list[str]:
     """Return the REAL credential env-var names for a provider (from the registry)."""
     for p in list_providers(config_root):

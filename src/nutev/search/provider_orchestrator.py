@@ -84,6 +84,17 @@ def _registry() -> dict[str, Callable[[str, int, dict[str, Any]], ProviderResult
     }
 
 
+def implemented_search_providers() -> list[str]:
+    """Canonical provider ids the orchestrator can actually execute.
+
+    The authority for *which providers exist* is
+    ``config/provider_registry.json``; this is the implementation side, and
+    ``nutev.search.provider_registry.reconcile_providers`` cross-checks the two so
+    they can never silently diverge.
+    """
+    return sorted(set(_registry()) | {"pubmed"})
+
+
 def _coerce_result(provider: str, query: str, raw: ProviderResult | list[dict[str, Any]]) -> ProviderResult:
     if isinstance(raw, ProviderResult):
         return raw
