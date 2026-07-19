@@ -7,7 +7,9 @@ name = "nutev-nutmev"
 dynamic = ["version"]
 description = "NutEV/NutMEV reproducible evidence engine for lifestyle nutrition research and candidate protocol recommendations"
 readme = "README.md"
-requires-python = ">=3.12,<3.15"
+# Matches the CI matrix (3.12, 3.13). Bump the upper bound only when a 3.14 job
+# is added to .github/workflows/ci.yml — declare only what is actually tested.
+requires-python = ">=3.12,<3.14"
 license = {file = "LICENSE"}
 authors = [
     {name = "NutEV/NutMEV Project"},
