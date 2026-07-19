@@ -102,6 +102,7 @@ português/espanhol. Agora:
 | `10_curated/guides_coded.json` | Detalhe completo por guia: frases-chave (`{domain, actionable, sentence, page, reference}`) **e** os temas com seus trechos (`themes[família][subtema].snippets`). |
 | `07_logs/guides_summary.json` | Contagem: guias, com texto, OCR, frases-chave, **temas detectados**, **trechos de evidência**, distribuição por `profile`. |
 | `07_logs/{file_asset,document_version,document_family,denominator}_registry.csv` | **Registros de entidade (§7.1)**: separam **arquivo × documento × versão**. `file_asset` = arquivo físico (sha256); `document_version` = mesmo documento+edição/ano/idioma (PDF e HTML da mesma edição colapsam em 1); `document_family` = documento através das edições (a mais nova é `current`, as antigas `superseded`); `denominator_registry` = as contagens nomeadas para **nunca somar denominadores incompatíveis**. Agregadores/derivados não são contados como documento. |
+| `06_tables/NUTEV_GUIDES_EVIDENCE_GEMS.csv` + `10_curated/best_gems.md` | **Banco de riquezas (§14)**: ranqueia os documentos de maior **valor descritivo** (score 0–18: autoridade, vigência, amplitude A/B/C/D, especificidade operacional, rastreabilidade, novidade, material de implementação), cada um com **trecho + página + referência** e o **destino sugerido no manuscrito**. Marcado `candidate` / revisão humana. **É valor descritivo, NÃO avaliação de qualidade ou risco de viés.** |
 
 ### Detecção temática rica (multilíngue, config-driven)
 

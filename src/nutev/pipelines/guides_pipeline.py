@@ -27,6 +27,7 @@ from typing import Any
 from nutev.acquire.guias_fetcher import fetch_guide, load_guide_sources
 from nutev.analysis.article1_coding import article1_record_fields
 from nutev.analysis.domain_states import code_domain_states, domain_state_rows
+from nutev.analysis.evidence_gems import best_gems_markdown, rank_gems
 from nutev.analysis.keyphrases import (
     extract_keyphrases_from_pages,
     top_terms,
@@ -278,6 +279,15 @@ def run_guides(
     write_simple_csv(registries["families"], logs / "document_family_registry.csv")
     write_simple_csv(registries["denominators"], logs / "denominator_registry.csv")
 
+    # Evidence Gems Bank (§14): rank the highest descriptive-value documents,
+    # each tied to its snippet/page/reference and a suggested manuscript section.
+    # Descriptive value only — NOT a quality / risk-of-bias score.
+    gems = rank_gems(rows)
+    write_simple_csv(gems, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_EVIDENCE_GEMS.csv")
+    (settings.output_dirs["10_curated"] / "best_gems.md").write_text(
+        best_gems_markdown(gems), encoding="utf-8"
+    )
+
     # Full per-guide detail (including the nested key phrases) as JSON.
     detail_path = settings.output_dirs["10_curated"] / "guides_coded.json"
     detail_path.parent.mkdir(parents=True, exist_ok=True)
@@ -314,6 +324,8 @@ def run_guides(
         "file_assets": len(registries["file_assets"]),
         "document_versions": len(registries["versions"]),
         "document_families": len(registries["families"]),
+        "evidence_gems": len(gems),
+        "top_gem_score": gems[0]["gem_score"] if gems else 0,
         "profile_distribution": dict(sorted(by_profile.items())),
         "workers": workers,
         "checkpoint": str(checkpoint_path),
