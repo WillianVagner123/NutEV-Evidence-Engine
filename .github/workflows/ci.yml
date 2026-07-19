@@ -45,5 +45,10 @@ jobs:
           python-version: "3.12"
       - name: Install ruff
         run: python -m pip install ruff
-      - name: Ruff check
-        run: ruff check src nutev_tests || true  # advisory; does not block the gate
+      - name: Ruff check (objective errors — BLOCKING)
+        # Stage 1 of the staged lint gate: pyflakes (F: undefined names, unused
+        # imports/vars) and syntax errors (E9) fail the build. The tree is clean
+        # for these; new violations now block merge.
+        run: ruff check src nutev_tests scripts --select F,E9
+      - name: Ruff check (style — advisory)
+        run: ruff check src nutev_tests || true  # broader style set stays advisory for now
