@@ -89,15 +89,16 @@ def extract_pdf_text_pages(path: Path) -> list[str]:
 
 
 def _render_pdf_pages(path: Path, dpi: int = 300):
-    """Render PDF pages to PIL images at ``dpi``. Prefer PyMuPDF (pip-only).
+    """Yield PDF pages as PIL images at ``dpi``, one at a time (render on demand).
 
-    Returns an iterable of PIL Images, or raises if no renderer is available.
+    A generator so only one page image is held in memory at once — a big scanned
+    guide no longer materializes every page bitmap up front. Prefers PyMuPDF
+    (pip-only); falls back to pdf2image + poppler. Raises if no renderer exists.
     """
     if _has_pymupdf():
         import fitz  # PyMuPDF
         from PIL import Image
 
-        images = []
         with fitz.open(str(path)) as doc:
             for page in doc:
                 # alpha=False keeps 3 (RGB) or 1 (grayscale) bytes/pixel; picking
@@ -105,12 +106,12 @@ def _render_pdf_pages(path: Path, dpi: int = 300):
                 # grayscale/CMYK pages (which would silently abort OCR).
                 pix = page.get_pixmap(dpi=dpi, alpha=False)
                 mode = "RGB" if pix.n >= 3 else "L"
-                images.append(Image.frombytes(mode, (pix.width, pix.height), pix.samples))
-        return images
+                yield Image.frombytes(mode, (pix.width, pix.height), pix.samples)
+        return
     # Fallback: pdf2image needs the system poppler binaries.
     from pdf2image import convert_from_path
 
-    return convert_from_path(str(path), dpi=dpi)
+    yield from convert_from_path(str(path), dpi=dpi)
 
 
 # OCR minimum useful length and the minimum share of alphabetic characters below
@@ -184,3 +185,18 @@ def ocr_scanned_pdf(path: Path, logger) -> tuple[str, list[int]]:
     """OCR a scanned PDF into a single joined string (see ``ocr_scanned_pdf_pages``)."""
     pages, failed = ocr_scanned_pdf_pages(path, logger)
     return "\n".join(pages), failed
+
+
+def ocr_cache_signature() -> str:
+    """Short hash of the OCR settings (language, engine config, DPI ladder).
+
+    A content-addressed OCR cache is only safe to reuse when these are unchanged,
+    so the cache key includes this signature — changing NUTEV_OCR_LANG /
+    NUTEV_OCR_CONFIG (or the DPI ladder) automatically invalidates old entries.
+    """
+    import hashlib
+
+    from nutev.extract.image_ocr import _DEFAULT_CONFIG, _DEFAULT_LANG
+
+    raw = f"{_DEFAULT_LANG}|{_DEFAULT_CONFIG}|{_OCR_DPI_LADDER}".encode()
+    return hashlib.sha1(raw).hexdigest()[:10]  # noqa: S324  (cache key, not security)
