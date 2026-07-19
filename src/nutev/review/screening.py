@@ -93,6 +93,63 @@ def cohen_kappa(pairs: list[tuple[str, str]]) -> float:
     return round((po - pe) / (1 - pe), 4)
 
 
+def queue_reviewer_pairs(queue: list[dict]) -> list[tuple[str, str]]:
+    """(reviewer_1, reviewer_2) label pairs for queue rows both reviewers decided.
+
+    The screening queue is wide (``reviewer_1_decision``/``reviewer_2_decision``
+    columns). Only rows where *both* reviewers recorded a decision form a pair
+    eligible for agreement statistics — blank/single-reviewer rows are excluded
+    (they are ``needs_second_reviewer``, not disagreement).
+    """
+    pairs: list[tuple[str, str]] = []
+    for r in queue:
+        a = str(r.get("reviewer_1_decision") or "").strip().lower()
+        b = str(r.get("reviewer_2_decision") or "").strip().lower()
+        if a in SCREEN_DECISIONS and b in SCREEN_DECISIONS:
+            pairs.append((a, b))
+    return pairs
+
+
+def screening_agreement(queue: list[dict]) -> dict:
+    """Inter-reviewer agreement report for a two-reviewer screening queue (§13).
+
+    Computes Cohen's kappa and observed agreement over the rows both reviewers
+    screened, plus the queue's screenability breakdown and how many records
+    cleared the export gate. On a fresh queue (no decisions yet) it returns a
+    well-formed zero report with ``kappa=None`` and a note, so the artifact
+    always exists and simply fills in once humans screen and the run repeats.
+    Nothing here decides anything — it reports what two humans agreed on.
+    """
+    pairs = queue_reviewer_pairs(queue)
+    n_items = len(queue)
+    n_pairs = len(pairs)
+    flags = Counter(str(r.get("screen_flag") or "unknown") for r in queue)
+    agree = sum(1 for a, b in pairs if a == b)
+    agree_include = sum(1 for a, b in pairs if a == b == "include")
+    agree_exclude = sum(1 for a, b in pairs if a == b == "exclude")
+    export_ready = sum(1 for r in queue if r.get("export_ready"))
+    return {
+        "n_items": n_items,
+        "n_double_screened": n_pairs,
+        "cohen_kappa": cohen_kappa(pairs) if n_pairs else None,
+        "percent_agreement": round(agree / n_pairs, 4) if n_pairs else None,
+        "agree_total": agree,
+        "agree_include": agree_include,
+        "agree_exclude": agree_exclude,
+        "conflicts": n_pairs - agree,
+        "ready_to_screen": flags.get("ready_to_screen", 0),
+        "no_full_text": flags.get("no_full_text", 0),
+        "poor_ocr": flags.get("poor_ocr", 0),
+        "export_ready": export_ready,
+        "note": (
+            "No double-screened records yet; kappa is computed once two reviewers "
+            "record decisions and the run repeats."
+            if not n_pairs
+            else "Kappa over records screened by two reviewers; ≥0.6 substantial, ≥0.8 near-perfect."
+        ),
+    }
+
+
 def final_decision(record_decisions: list[dict], adjudications: list[dict] | None = None) -> dict:
     """Final full-text decision for a record: agreement, else adjudication, else pending."""
     adjudications = adjudications or []
