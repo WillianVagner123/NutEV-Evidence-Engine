@@ -36,6 +36,17 @@ oversight take precedence over speed.
 - Behavioral framework as a downstream product.
 - Zenodo/OSF archival + DOI; reproducibility packaging.
 
+### Deferred architectural refactors (parity-gated, phased)
+
+These change scientific outputs if rushed, so each has its own phased,
+parity-gated migration plan rather than a single rewrite:
+
+- **Dissolve the `runtime_compat` shim layer** → `docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md`
+  (move query terms, audit stage, synthesis defaults into the normal call graph).
+- **Unify Global Watch with the search orchestrator** → `docs/REFACTOR_GLOBAL_WATCH_UNIFICATION.md`
+  (shared dispatch/instrumentation; query-building unification is an explicit,
+  measured decision, not an accidental change).
+
 ## Out of scope (for now)
 
 - Git history rewrite.
