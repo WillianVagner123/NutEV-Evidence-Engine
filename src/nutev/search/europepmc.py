@@ -113,25 +113,87 @@ def _normalize_result(item: dict) -> dict[str, str]:
     }
 
 
-def search_europepmc(query: str, page_size: int = 18) -> list[dict]:
+_EUROPEPMC_URL = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+
+
+def _europepmc_get(params: dict) -> dict | None:
+    """GET with exponential backoff (was linear). Returns parsed JSON or None."""
+    for attempt in range(1, 4):
+        try:
+            response = requests.get(_EUROPEPMC_URL, params=params, timeout=45)
+            response.raise_for_status()
+            return response.json()
+        except Exception:
+            time.sleep(min(2 ** attempt, 8))
+    return None
+
+
+def _stamp(rows: list[dict], query: str) -> list[dict]:
+    for row in rows:
+        row["query"] = query
+        row["provider_query"] = query
+    return rows
+
+
+def _resolve_max_results(page_size: int, max_results: int | None) -> int:
+    """Default (max_results=None) preserves the historical single-page behaviour;
+    opt into deeper recall with NUTEV_EUROPEPMC_MAX_RESULTS so default runs stay
+    byte-for-byte reproducible."""
+    if max_results is not None:
+        return max(max_results, 0)
+    env = os.environ.get("NUTEV_EUROPEPMC_MAX_RESULTS", "")
+    return int(env) if env.isdigit() and int(env) > 0 else page_size
+
+
+def search_europepmc(query: str, page_size: int = 18, max_results: int | None = None) -> list[dict]:
     if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
         return []
     if os.environ.get("NUTEV_SKIP_EUROPEPMC") == "1":
         return []
-    for attempt in range(1, 4):
-        try:
-            response = requests.get(
-                "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
-                params={"query": query, "format": "json", "pageSize": page_size},
-                timeout=45,
+
+    target = _resolve_max_results(page_size, max_results)
+
+    # Single-page path — kept identical to the historical behaviour (no
+    # cursorMark, no cross-page dedup) so default runs are reproducible.
+    if target <= page_size:
+        data = _europepmc_get({"query": query, "format": "json", "pageSize": page_size})
+        if not data:
+            return []
+        results = data.get("resultList", {}).get("result", []) or []
+        return _stamp([_normalize_result(item) for item in results], query)
+
+    # Paginated path — cursorMark walk up to `target`, de-duplicating across pages.
+    collected: list[dict] = []
+    seen: set[str] = set()
+    cursor = "*"
+    while len(collected) < target:
+        data = _europepmc_get({
+            "query": query,
+            "format": "json",
+            "pageSize": min(page_size, target - len(collected)),
+            "cursorMark": cursor,
+        })
+        if not data:
+            break
+        results = data.get("resultList", {}).get("result", []) or []
+        if not results:
+            break
+        for item in results:
+            key = (
+                _clean_text(item.get("id"))
+                or _clean_text(item.get("doi"))
+                or _clean_text(item.get("pmid"))
+                or _clean_text(item.get("title"))
             )
-            response.raise_for_status()
-            results = response.json().get("resultList", {}).get("result", [])
-            rows = [_normalize_result(item) for item in results]
-            for row in rows:
-                row["query"] = query
-                row["provider_query"] = query
-            return rows
-        except Exception:
-            time.sleep(1.0 * attempt)
-    return []
+            if key and key in seen:
+                continue
+            if key:
+                seen.add(key)
+            collected.append(_normalize_result(item))
+            if len(collected) >= target:
+                break
+        next_cursor = data.get("nextCursorMark")
+        if not next_cursor or next_cursor == cursor:
+            break
+        cursor = next_cursor
+    return _stamp(collected, query)
