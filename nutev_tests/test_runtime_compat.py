@@ -1,32 +1,29 @@
-"""Regression tests for the deterministic runtime-compat bootstrap.
+"""Regression tests for behaviour formerly injected by the runtime_compat shim.
 
-Two things must hold for reproducible local runs:
-
-1. ``nutev.runtime_compat.apply()`` applies the pipeline hooks (curation,
-   run-summary, synthesis, query generation, workstream validation) explicitly,
-   so behaviour does not depend on ``sitecustomize.py`` being auto-imported.
-2. The audit artifacts report ``evidence_claims_inference_only`` — claims that
-   are NOT quote-backed must be counted, not silently dropped from the summary.
+The shim was fully dissolved into first-class code
+(docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md); these tests pin the behaviour that
+mattered: ``global_watch`` is a valid workstream (was
+``_patch_workstream_validation``), and the audit artifacts count
+``evidence_claims_inference_only`` — claims that are NOT quote-backed must be
+counted, not silently dropped from the summary.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
 
-def test_apply_is_idempotent_and_patches_curation():
-    from nutev.export import curation
-    from nutev.runtime_compat import apply
+def test_runtime_compat_module_is_gone():
+    # The shim and its auto-load sitecustomize were retired; nothing imports them.
+    import importlib.util
 
-    apply()
-    apply()  # second call must be a no-op, not double-wrap
-    assert getattr(curation.curate_outputs, "_nutev_audit_patched", False) is True
+    assert importlib.util.find_spec("nutev.runtime_compat") is None
 
 
-def test_sitecustomize_delegates_to_runtime_compat():
-    text = Path("src/sitecustomize.py").read_text(encoding="utf-8")
-    # The real logic must live in the importable module, not be duplicated here.
-    assert "nutev.runtime_compat" in text
-    assert "_patch_curation" not in text
+def test_global_watch_is_a_valid_workstream_natively():
+    from nutev.engine.validators import validate_workstream
+
+    # Was _patch_workstream_validation; now native in engine.validators.
+    assert validate_workstream("global_watch") == "global_watch"
 
 
 def test_audit_artifacts_report_inference_only(tmp_path: Path):

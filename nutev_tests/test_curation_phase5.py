@@ -4,6 +4,7 @@ import importlib.util
 import pandas as pd
 
 from nutev.export.curation import curate_outputs
+from nutev.export.curation_finalize import finalize_curated_layer
 
 
 def test_curated_outputs_deduplicate_and_map_workstreams(tmp_path):
@@ -65,6 +66,7 @@ def test_curated_outputs_deduplicate_and_map_workstreams(tmp_path):
     ]
 
     summary = curate_outputs(rows, tmp_path)
+    finalize_curated_layer(rows, tmp_path, summary)
 
     assert summary["raw_records"] == 4
     assert summary["unique_documents"] == 3
@@ -101,6 +103,7 @@ def test_curated_outputs_deduplicate_and_map_workstreams(tmp_path):
 
 def test_curated_outputs_write_headers_when_empty(tmp_path):
     summary = curate_outputs([], tmp_path)
+    finalize_curated_layer([], tmp_path, summary)
     assert summary["raw_records"] == 0
     with (tmp_path / "NUTEV_METADATA_CURATED.csv").open(encoding="utf-8-sig") as handle:
         header = next(handle).strip()

@@ -1,10 +1,26 @@
 # Phased Migration — Dissolve the `runtime_compat` shim layer
 
-> **Status: planned (not started).** This is a design/migration plan, not
-> executed work. It exists because `runtime_compat` cannot be removed in a single
-> change without risking the scientific outputs and the test suite. Each phase
-> below is independently shippable and gated on **parity** (same input → same
-> outputs).
+> **Status: ✅ COMPLETE.** The `runtime_compat` shim (and its auto-load
+> `sitecustomize.py`) has been fully dissolved into first-class code, one
+> parity-gated phase at a time. Every behavior it injected now lives in the normal
+> call graph with its own tests, and the Phase-0 parity harness proved the
+> pipeline's generated queries never changed across the migration.
+>
+> - ✅ **Phase 0** — `nutev_tests/test_runtime_compat_parity.py` + baseline.
+> - ✅ **Phase 1** — query terms → `querypacks/builders.EXTRA_BOOLEAN_QUERIES` and
+>   `querypacks/provider_queries.PUBMED_WORKSTREAM_ANCHOR_TERMS`.
+> - ✅ **Phase 2** — audit + legacy finalization → first-class
+>   `nutev.export.curation_finalize` (`finalize_curated_layer` / `audit_metrics`),
+>   called explicitly in `run_pipeline`.
+> - ✅ **Phase 3** — synthesis defaults → `analysis.synthesis._SYNTHESIS_DEFAULTS`
+>   inside `write_synthesis_outputs`.
+> - ✅ **Phase 4** — `global_watch` workstream accepted natively in
+>   `engine.validators.validate_workstream`.
+> - ✅ **Phase 5** — `src/nutev/runtime_compat.py` and `src/sitecustomize.py`
+>   deleted; `apply()` calls removed from `cli.main`, `run_pipeline` and the test
+>   `conftest`. Full suite green; parity gate green.
+>
+> The plan below is retained as the record of how it was done.
 
 ## Why this exists
 

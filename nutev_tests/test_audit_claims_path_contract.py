@@ -12,8 +12,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import nutev.export.curation as curation_module
-from nutev.runtime_compat import _patch_curation
+from nutev.export.curation import curate_outputs
+from nutev.export.curation_finalize import finalize_curated_layer
 
 # The canonical read locations, taken from the actual reader modules.
 DASHBOARD_CLAIMS = "02_metadata/NUTEV_EVIDENCE_CLAIMS.csv"          # ui/dashboard.py:41
@@ -21,11 +21,10 @@ DASHBOARD_RECS = "02_metadata/NUTEV_RECOMMENDATION_CANDIDATES.csv"  # ui/dashboa
 
 
 def _run_curation(project_root: Path) -> dict:
-    """Apply the audit patch and run curation exactly as the pipeline does."""
+    """Run curation + the first-class finalization exactly as the pipeline does."""
     curated_dir = project_root / "10_curated"
     for sub in ("02_metadata", "06_tables", "07_logs", curated_dir.name):
         (project_root / sub).mkdir(parents=True, exist_ok=True)
-    _patch_curation()
     rows = [
         {
             "document_id": "doc_1",
@@ -40,7 +39,9 @@ def _run_curation(project_root: Path) -> dict:
             "workstream": "busca1",
         }
     ]
-    return curation_module.curate_outputs(rows, curated_dir)
+    summary = curate_outputs(rows, curated_dir)
+    finalize_curated_layer(rows, curated_dir, summary)
+    return summary
 
 
 def test_real_run_writes_claims_where_the_dashboard_reads(tmp_path: Path):

@@ -1116,7 +1116,19 @@ def _render_term_coverage_queries(components: dict[str, list[str]], provider: st
     return uniq([query for query in queries if query])
 
 
-def render_queries_for_provider(
+# PubMed-only anchor terms appended per workstream (Title/Abstract). Moved here
+# verbatim from the former runtime_compat `_patch_query_generation` monkey-patch
+# (Phase 1 of docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md) so the queries are
+# generated natively; the query-parity harness proves the output is unchanged.
+PUBMED_WORKSTREAM_ANCHOR_TERMS: dict[str, list[str]] = {
+    "busca2a": ["therapeutic lifestyle changes", "mediterranean dietary pattern", "dietary approaches to stop hypertension", "DASH eating plan", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "living guideline", "clinical guidance"],
+    "busca2b": ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "nonalcoholic steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "carbohydrate-restricted diet", "carbohydrate restricted diet", "DASH eating plan", "TLC diet", "therapeutic lifestyle changes diet", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "network meta-analysis", "living systematic review", "rapid review", "food environment intervention", "food procurement policy", "healthy food retail", "choice architecture", "healthy default"],
+    "busca1": ["food environment intervention", "retail food environment", "healthy food retail", "healthy food procurement", "food procurement policy", "nutrition standards", "choice architecture", "healthy default", "menu labeling policy", "food policy implementation"],
+    "artigo3_framework": ["food environment intervention", "retail food environment", "healthy food retail", "healthy food procurement", "food procurement policy", "nutrition standards", "choice architecture", "healthy default", "menu labeling policy", "food policy implementation"],
+}
+
+
+def _render_base_queries_for_provider(
     keyword_taxonomy: dict,
     workstream: str,
     provider: str,
@@ -1132,6 +1144,18 @@ def render_queries_for_provider(
     if provider == "crossref":
         return uniq(_render_crossref_queries(components) + _render_term_coverage_queries(components, "crossref"))
     return []
+
+
+def render_queries_for_provider(
+    keyword_taxonomy: dict,
+    workstream: str,
+    provider: str,
+) -> list[str]:
+    queries = list(_render_base_queries_for_provider(keyword_taxonomy, workstream, provider))
+    if provider == "pubmed":
+        terms = PUBMED_WORKSTREAM_ANCHOR_TERMS.get(canonical_workstream(workstream), [])
+        queries.extend([f'"{term}"[Title/Abstract]' for term in terms])
+    return uniq([q for q in queries if q])
 
 
 def build_provider_querypack(

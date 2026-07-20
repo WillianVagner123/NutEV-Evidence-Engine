@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from nutev.export.curation import curate_outputs
+from nutev.export.curation_finalize import finalize_curated_layer
 
 
 def test_curate_outputs_writes_canonical_and_legacy_files(tmp_path: Path) -> None:
@@ -38,6 +39,7 @@ def test_curate_outputs_writes_canonical_and_legacy_files(tmp_path: Path) -> Non
     ]
 
     summary = curate_outputs(rows, tmp_path)
+    finalize_curated_layer(rows, tmp_path, summary)  # first-class audit + legacy finalization
 
     expected_files = [
         "curated_metadata.csv",

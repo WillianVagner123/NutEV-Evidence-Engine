@@ -399,7 +399,22 @@ def _count_by_split(df: pd.DataFrame, source_col: str, item_col: str) -> pd.Data
     )
 
 
+# Default evidence-priority / reading columns applied to every master row. Moved
+# here verbatim from the former runtime_compat `_patch_synthesis_defaults`
+# monkey-patch (Phase 3 of docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md); a row's own
+# value always wins (defaults only fill what is missing).
+_SYNTHESIS_DEFAULTS = {
+    "evidence_priority_score": 0,
+    "evidence_priority_tier": "unclassified",
+    "evidence_use_track": "unclassified",
+    "evidence_use_primary": "",
+    "evidence_use_secondary": "",
+    "reading_lane": "standard",
+}
+
+
 def write_synthesis_outputs(master_rows: list[dict], out_dir: Path) -> None:
+    master_rows = [{**_SYNTHESIS_DEFAULTS, **dict(row)} for row in master_rows]
     df = pd.DataFrame(master_rows)
     out_dir.mkdir(parents=True, exist_ok=True)
 
