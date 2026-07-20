@@ -1,10 +1,15 @@
 # Phased Migration — Dissolve the `runtime_compat` shim layer
 
-> **Status: planned (not started).** This is a design/migration plan, not
-> executed work. It exists because `runtime_compat` cannot be removed in a single
-> change without risking the scientific outputs and the test suite. Each phase
-> below is independently shippable and gated on **parity** (same input → same
-> outputs).
+> **Status: in progress.** Phase 0 (parity harness) and Phase 1 (query generation
+> → querypacks) are **done**; Phases 2–5 remain. `runtime_compat` cannot be
+> removed in a single change without risking the scientific outputs and the test
+> suite, so each phase is independently shipped and gated on **parity** (same
+> input → same outputs).
+>
+> - ✅ **Phase 0** — `nutev_tests/test_runtime_compat_parity.py` + baseline.
+> - ✅ **Phase 1** — terms moved to `querypacks/builders.EXTRA_BOOLEAN_QUERIES` and
+>   `querypacks/provider_queries.PUBMED_WORKSTREAM_ANCHOR_TERMS`;
+>   `_patch_query_generation` deleted from `apply()`. Parity gate green.
 
 ## Why this exists
 

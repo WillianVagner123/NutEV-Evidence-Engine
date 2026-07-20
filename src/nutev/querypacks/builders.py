@@ -1300,7 +1300,7 @@ def _add_specific_a3(
     )
 
 
-def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
+def _build_base_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
     ws_key = canonical_workstream(workstream)
     ws = keyword_taxonomy.get("workstreams", {}).get(ws_key, {})
     if not ws:
@@ -1465,6 +1465,31 @@ def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
             diet_terms,
         )
 
+    return uniq([q for q in queries if q])
+
+
+# Extra cross-cutting boolean queries appended per workstream. Moved here verbatim
+# from the former runtime_compat `_patch_query_generation` monkey-patch (Phase 1 of
+# docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md); the query-parity harness proves the
+# generated queries are byte-identical to the patched behaviour.
+EXTRA_BOOLEAN_QUERIES: dict[str, list[str]] = {
+    "busca2b": [
+        '("food is medicine" OR "produce prescription" OR "medically tailored meals")',
+        '("DASH eating plan" OR "TLC diet" OR "therapeutic lifestyle changes diet" OR "heart-healthy diet" OR "cardioprotective diet") AND ("obesity" OR "cardiometabolic" OR "type 2 diabetes" OR "hypertension" OR "dyslipidemia")',
+        '("food environment intervention" OR "healthy food retail" OR "food procurement policy") AND ("implementation" OR "dietary adherence" OR "cardiometabolic")',
+    ],
+    "busca1": [
+        '("food environment intervention" OR "healthy food retail" OR "healthy food procurement" OR "food procurement policy" OR "choice architecture") AND ("nutrition" OR "diet" OR "food literacy" OR "lifestyle medicine")',
+    ],
+    "artigo3_framework": [
+        '("food environment intervention" OR "healthy food retail" OR "healthy food procurement" OR "food procurement policy" OR "choice architecture") AND ("nutrition" OR "diet" OR "food literacy" OR "lifestyle medicine")',
+    ],
+}
+
+
+def build_queries(keyword_taxonomy: dict, workstream: str) -> list[str]:
+    queries = list(_build_base_queries(keyword_taxonomy, workstream))
+    queries.extend(EXTRA_BOOLEAN_QUERIES.get(canonical_workstream(workstream), []))
     return uniq([q for q in queries if q])
 
 

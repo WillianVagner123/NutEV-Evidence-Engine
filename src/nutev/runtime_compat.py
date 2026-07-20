@@ -216,48 +216,6 @@ def _patch_synthesis_defaults() -> None:
     synthesis_module.write_synthesis_outputs = wrapped
 
 
-def _patch_query_generation() -> None:
-    try:
-        from nutev.querypacks import builders as builders_module
-        from nutev.querypacks import provider_queries as provider_module
-    except Exception:
-        return
-    original_render = getattr(provider_module, "render_queries_for_provider", None)
-    if original_render is not None and not getattr(original_render, "_nutev_terms_patched", False):
-        def wrapped_render(keyword_taxonomy: dict, workstream: str, provider: str) -> list[str]:
-            queries = list(original_render(keyword_taxonomy, workstream, provider))
-            if provider == "pubmed":
-                ws = builders_module.canonical_workstream(workstream)
-                if ws == "busca2a":
-                    terms = ["therapeutic lifestyle changes", "mediterranean dietary pattern", "dietary approaches to stop hypertension", "DASH eating plan", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "living guideline", "clinical guidance"]
-                elif ws == "busca2b":
-                    terms = ["medical nutrition therapy", "hybrid type 1", "hybrid type 2", "hybrid type 3", "steatotic liver disease", "metabolic dysfunction-associated steatohepatitis", "non-alcoholic fatty liver disease", "nonalcoholic steatohepatitis", "ketogenic diet", "low-carbohydrate diet", "low carbohydrate diet", "carbohydrate-restricted diet", "carbohydrate restricted diet", "DASH eating plan", "TLC diet", "therapeutic lifestyle changes diet", "heart-healthy diet", "cardioprotective diet", "diet quality", "healthy eating pattern", "network meta-analysis", "living systematic review", "rapid review", "food environment intervention", "food procurement policy", "healthy food retail", "choice architecture", "healthy default"]
-                elif ws in {"busca1", "artigo3_framework"}:
-                    terms = ["food environment intervention", "retail food environment", "healthy food retail", "healthy food procurement", "food procurement policy", "nutrition standards", "choice architecture", "healthy default", "menu labeling policy", "food policy implementation"]
-                else:
-                    terms = []
-                queries.extend([f'"{term}"[Title/Abstract]' for term in terms])
-            return builders_module.uniq([q for q in queries if q])
-
-        wrapped_render._nutev_terms_patched = True  # type: ignore[attr-defined]
-        provider_module.render_queries_for_provider = wrapped_render
-    original_build = getattr(builders_module, "build_queries", None)
-    if original_build is not None and not getattr(original_build, "_nutev_foodmed_patched", False):
-        def wrapped_build(keyword_taxonomy: dict, workstream: str) -> list[str]:
-            queries = list(original_build(keyword_taxonomy, workstream))
-            ws = builders_module.canonical_workstream(workstream)
-            if ws == "busca2b":
-                queries.append('("food is medicine" OR "produce prescription" OR "medically tailored meals")')
-                queries.append('("DASH eating plan" OR "TLC diet" OR "therapeutic lifestyle changes diet" OR "heart-healthy diet" OR "cardioprotective diet") AND ("obesity" OR "cardiometabolic" OR "type 2 diabetes" OR "hypertension" OR "dyslipidemia")')
-                queries.append('("food environment intervention" OR "healthy food retail" OR "food procurement policy") AND ("implementation" OR "dietary adherence" OR "cardiometabolic")')
-            elif ws in {"busca1", "artigo3_framework"}:
-                queries.append('("food environment intervention" OR "healthy food retail" OR "healthy food procurement" OR "food procurement policy" OR "choice architecture") AND ("nutrition" OR "diet" OR "food literacy" OR "lifestyle medicine")')
-            return builders_module.uniq([q for q in queries if q])
-
-        wrapped_build._nutev_foodmed_patched = True  # type: ignore[attr-defined]
-        builders_module.build_queries = wrapped_build
-
-
 _APPLIED = False
 
 
@@ -270,5 +228,7 @@ def apply() -> None:
     _patch_curation()
     _patch_run_summary()
     _patch_synthesis_defaults()
-    _patch_query_generation()
+    # _patch_query_generation removed in Phase 1 of the runtime_compat migration:
+    # its injected query terms now live natively in nutev.querypacks (builders.py
+    # EXTRA_BOOLEAN_QUERIES + provider_queries.py PUBMED_WORKSTREAM_ANCHOR_TERMS).
     _APPLIED = True
