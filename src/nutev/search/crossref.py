@@ -24,45 +24,99 @@ def _pick_crossref_url(item: dict) -> str:
     return item.get("URL") or ""
 
 
-def search_crossref(query: str, rows: int = 18) -> list[dict]:
-    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
-        return []
+_CROSSREF_URL = "https://api.crossref.org/works"
+
+
+def _normalize_crossref_item(it: dict, query: str) -> dict:
+    titles = it.get("title") or [""]
+    return {
+        "source": "crossref",
+        "source_provider": "crossref",
+        "title": titles[0] if titles else "",
+        "abstract": it.get("abstract") or "",
+        "snippet": it.get("abstract") or "",
+        "doi": it.get("DOI"),
+        "pmid": "",
+        "pmcid": "",
+        "url": _pick_crossref_url(it),
+        "journal": (it.get("container-title") or [""])[0] if isinstance(it.get("container-title"), list) else "",
+        "year": str(((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[""]])[0][0] or ""),
+        "publication_date": "-".join(str(x) for x in (((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[]])[0])),
+        "article_type": it.get("type") or "",
+        "authors": "; ".join([" ".join([str(a.get("given", "")), str(a.get("family", ""))]).strip() for a in it.get("author", [])[:12]]) if isinstance(it.get("author"), list) else "",
+        "metadata_status": "crossref_search",
+        "query": query,
+        "provider_query": query,
+    }
+
+
+def _mailto() -> dict:
+    mailto = os.environ.get("CROSSREF_MAILTO")
+    return {"mailto": mailto} if mailto else {}
+
+
+def _crossref_get(params: dict) -> dict | None:
+    """GET with exponential backoff (was linear). Returns parsed JSON or None."""
     for attempt in range(1, 4):
         try:
             r = requests.get(
-                "https://api.crossref.org/works",
-                params={"query": query, "rows": rows, **({"mailto": os.environ.get("CROSSREF_MAILTO")} if os.environ.get("CROSSREF_MAILTO") else {})},
+                _CROSSREF_URL,
+                params=params,
                 timeout=45,
                 headers={"User-Agent": "NutEV Research Pipeline/1.0"},
             )
             r.raise_for_status()
-            items = r.json().get("message", {}).get("items", [])
-
-            out = []
-            for it in items:
-                titles = it.get("title") or [""]
-                out.append(
-                    {
-                        "source": "crossref",
-                        "source_provider": "crossref",
-                        "title": titles[0] if titles else "",
-                        "abstract": it.get("abstract") or "",
-                        "snippet": it.get("abstract") or "",
-                        "doi": it.get("DOI"),
-                        "pmid": "",
-                        "pmcid": "",
-                        "url": _pick_crossref_url(it),
-                        "journal": (it.get("container-title") or [""])[0] if isinstance(it.get("container-title"), list) else "",
-                        "year": str(((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[""]])[0][0] or ""),
-                        "publication_date": "-".join(str(x) for x in (((it.get("published-print") or it.get("published-online") or {}).get("date-parts") or [[]])[0])),
-                        "article_type": it.get("type") or "",
-                        "authors": "; ".join([" ".join([str(a.get("given", "")), str(a.get("family", ""))]).strip() for a in it.get("author", [])[:12]]) if isinstance(it.get("author"), list) else "",
-                        "metadata_status": "crossref_search",
-                        "query": query,
-                        "provider_query": query,
-                    }
-                )
-            return out
+            return r.json()
         except Exception:
-            time.sleep(1.0 * attempt)
-    return []
+            time.sleep(min(2 ** attempt, 8))
+    return None
+
+
+def _resolve_max_results(default: int, max_results: int | None) -> int:
+    """Default (None) preserves single-page behaviour; opt in with
+    NUTEV_CROSSREF_MAX_RESULTS so default runs stay reproducible."""
+    if max_results is not None:
+        return max(max_results, 0)
+    env = os.environ.get("NUTEV_CROSSREF_MAX_RESULTS", "")
+    return int(env) if env.isdigit() and int(env) > 0 else default
+
+
+def search_crossref(query: str, rows: int = 18, max_results: int | None = None) -> list[dict]:
+    if os.environ.get("NUTEV_DISABLE_NETWORK") == "1":
+        return []
+
+    target = _resolve_max_results(rows, max_results)
+
+    # Single-page path — identical to the historical request (no offset).
+    if target <= rows:
+        data = _crossref_get({"query": query, "rows": rows, **_mailto()})
+        if not data:
+            return []
+        items = data.get("message", {}).get("items", []) or []
+        return [_normalize_crossref_item(it, query) for it in items]
+
+    # Paginated path — offset walk up to `target`, de-duplicating by DOI/title.
+    collected: list[dict] = []
+    seen: set[str] = set()
+    offset = 0
+    while len(collected) < target:
+        page = min(rows, target - len(collected))
+        data = _crossref_get({"query": query, "rows": page, "offset": offset, **_mailto()})
+        if not data:
+            break
+        items = data.get("message", {}).get("items", []) or []
+        if not items:
+            break
+        for it in items:
+            key = str(it.get("DOI") or "") or str((it.get("title") or [""])[0] or "")
+            if key and key in seen:
+                continue
+            if key:
+                seen.add(key)
+            collected.append(_normalize_crossref_item(it, query))
+            if len(collected) >= target:
+                break
+        if len(items) < page:
+            break
+        offset += page
+    return collected
