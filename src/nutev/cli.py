@@ -80,6 +80,13 @@ def main() -> None:
     guides.add_argument("--discover-fao", action="store_true", help="Crawl the FAO FBDG registry live for ALL countries + real guide files (instead of the static manifest)")
     guides.add_argument("--report", action="store_true", help='Also write the corpus report (fuzzy dedup + clustering + heatmap); needs pip install -e ".[report]"')
 
+    strategy = sub.add_parser(
+        "strategy",
+        help="Build transparent per-base search expressions from a question/PICOS spec (broad/balanced/specific)",
+    )
+    strategy.add_argument("--spec", type=Path, required=True, help="JSON file: a PICOS dict (population/intervention/…) or {\"concepts\": [...]}")
+    strategy.add_argument("--out", type=Path, default=None, help="Optional path to write the full provider×breadth grid as JSON")
+
     p.add_argument("--project-root", type=Path)
     p.add_argument("--workstreams", nargs="+", default=["busca1", "busca2a", "busca2b", "a3"])
     p.add_argument("--web-enabled", action="store_true")
@@ -272,6 +279,24 @@ def main() -> None:
         print(f"Checkpoint (salvar & continuar): {result['checkpoint']}")
         print(f"Tabela: {result['table_csv']}")
         print(f"Detalhe (frases-chave): {result['detail_json']}")
+        return
+
+    if args.command == "strategy":
+        import json
+
+        from nutev.search.strategy_builder import build_all, parse_concepts, parse_picos
+
+        spec_data = json.loads(args.spec.read_text(encoding="utf-8"))
+        spec = parse_concepts(spec_data["concepts"]) if isinstance(spec_data, dict) and "concepts" in spec_data else parse_picos(spec_data)
+        grid = build_all(spec)
+        for provider, by_breadth in grid.items():
+            print(f"\n=== {provider} ===")
+            for breadth, expression in by_breadth.items():
+                print(f"[{breadth}] {expression or '(vazio)'}")
+        if args.out:
+            args.out.parent.mkdir(parents=True, exist_ok=True)
+            args.out.write_text(json.dumps(grid, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"\nGrade completa (provider × amplitude) salva em: {args.out}")
         return
 
     if not args.project_root:

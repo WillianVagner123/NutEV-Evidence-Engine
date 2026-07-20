@@ -19,3 +19,25 @@ def test_provider_exception_is_failed(monkeypatch, tmp_path):
     result = search_provider(provider="europepmc", query="x", workstream="busca1", limit=10, checkpoint_dir=tmp_path, logs_dir=tmp_path, run_id="run")
     assert result.status == "failed"
     assert "timeout" in (result.error or "")
+
+
+def test_stamp_retrieved_at_sets_missing_and_preserves_existing():
+    from nutev.search.base import ProviderResult
+    from nutev.search.provider_orchestrator import _stamp_retrieved_at
+
+    result = ProviderResult("europepmc", "q", rows=[{"title": "a"}, {"title": "b", "retrieved_at": "2000-01-01T00:00:00+00:00"}])
+    _stamp_retrieved_at(result, "2026-07-19T12:00:00+00:00")
+    assert result.rows[0]["retrieved_at"] == "2026-07-19T12:00:00+00:00"
+    # An existing (e.g. resumed) timestamp is never overwritten.
+    assert result.rows[1]["retrieved_at"] == "2000-01-01T00:00:00+00:00"
+
+
+def test_search_provider_stamps_retrieval_date_on_rows(monkeypatch, tmp_path):
+    import nutev.search.provider_orchestrator as po
+
+    monkeypatch.setattr(po, "search_europepmc", lambda *a, **k: [{"title": "Guideline", "doi": "10.1/x"}])
+    result = search_provider(provider="europepmc", query="diet", workstream="busca1", limit=5, checkpoint_dir=tmp_path, logs_dir=tmp_path, run_id="run")
+    assert result.status in {"completed", "empty"}
+    assert result.rows and result.rows[0].get("retrieved_at")
+    # ISO-8601 UTC (has date + time separator).
+    assert "T" in result.rows[0]["retrieved_at"]

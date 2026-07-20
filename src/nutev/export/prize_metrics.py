@@ -2,10 +2,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
+
+logger = logging.getLogger("nutev.export.prize_metrics")
 
 
 TRUE_VALUES = {"true", "1", "yes", "sim", "ok", "used", "pdf", "html_snapshot", "success"}
@@ -37,7 +40,9 @@ def _read_json_safe(path: Path) -> dict[str, Any]:
         return {}
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
+    except Exception as exc:
+        # Present-but-malformed input would otherwise show as silent zeros.
+        logger.warning("metrics input unreadable, treated as empty: path=%s error=%s", path, exc)
         return {}
 
 

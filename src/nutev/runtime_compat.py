@@ -115,7 +115,7 @@ def _legacy_reports(rows: list[dict], output_dir: Path, unique_documents: int) -
 def _patch_curation() -> None:
     try:
         from nutev.export import curation as curation_module
-        from nutev.export.audit_artifacts import write_audit_artifacts
+        from nutev.export.audit_artifacts import write_audit_and_convergence
     except Exception:
         return
     original = getattr(curation_module, "curate_outputs", None)
@@ -133,7 +133,17 @@ def _patch_curation() -> None:
         summary.setdefault("input_rows", len(rows))
         summary.setdefault("curated_rows", len(rows))
         try:
-            summary.update(write_audit_artifacts(rows, output_dir.parent / "06_tables"))
+            # First-class audit stage: audit CSVs to 02_metadata (where the
+            # dashboard/API/pilot report read them) and the derived matrices
+            # (convergence, gap register, protocol readiness, locked items) to
+            # 06_tables (where the dashboard reads them). Writing the CSVs to
+            # 06_tables previously left a real run's claims invisible to every
+            # UI surface, and the matrices were produced only by demo-data.
+            summary.update(
+                write_audit_and_convergence(
+                    rows, output_dir.parent / "02_metadata", output_dir.parent / "06_tables"
+                )
+            )
             summary["methodological_note"] = "RecommendationCandidate is not a final protocol recommendation and requires human review."
         except Exception as exc:
             summary.setdefault("audit_artifact_error", str(exc))
@@ -154,7 +164,10 @@ def _patch_run_summary() -> None:
 
     def wrapped(path: Path, summary: dict) -> None:
         path = Path(path)
-        for key, value in _audit_metrics(path.parent.parent / "06_tables").items():
+        # Read the audit metrics from where write_audit_artifacts now writes
+        # them (02_metadata), so run_summary.json counts match the CSVs the UI
+        # shows instead of reading a directory the real run never populated.
+        for key, value in _audit_metrics(path.parent.parent / "02_metadata").items():
             if value or key not in summary:
                 summary[key] = value
         original(path, summary)

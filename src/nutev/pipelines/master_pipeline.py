@@ -1,15 +1,23 @@
 from __future__ import annotations
 
-import hashlib
 import json
-import re
 from pathlib import Path
-from urllib.parse import urlsplit
 
 import pandas as pd
 
 from nutev.analysis import domains_busca1, domains_busca2a, domains_busca2b
 from nutev.analysis.article3_framework import build_framework_signals
+from nutev.analysis.dedup import (
+    as_text,
+    canonical_article_key,
+    dedup_rows,
+    hash_fallback,
+    merge_article_rows,
+    normalize_doi,
+    normalize_title,
+    normalize_url,
+    normalize_year,
+)
 from nutev.analysis.nutev_classifier import classify_evidence
 from nutev.analysis.prisma import build_prisma_flow, export_prisma
 from nutev.analysis.relevance import keep_candidate_for_download, score_record
@@ -19,6 +27,7 @@ from nutev.analysis.synthesis import (
     build_questionnaire_candidates,
     write_synthesis_outputs,
 )
+from nutev.config_provenance import write_config_provenance
 from nutev.download.downloader import download_records
 from nutev.engine.artifacts import build_artifact_manifest
 from nutev.engine.events import emit_event, write_event
@@ -29,6 +38,7 @@ from nutev.engine.job import (
     write_search_case,
     write_search_job_snapshot,
 )
+from nutev.export.citations import write_bibtex, write_ris
 from nutev.export.curation import curate_outputs
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
@@ -68,143 +78,23 @@ DOWNLOAD_BUDGET = {
 
 DEFAULT_PRIORITY = ["pubmed", "europepmc", "openalex", "crossref", "official_web"]
 
-_WHITESPACE_RE = re.compile(r"\s+")
-_NON_ALNUM_RE = re.compile(r"[^a-z0-9]+")
-
-
 def _provider_map():
     return {"pubmed": True, "europepmc": True, "openalex": True, "crossref": True}
 
 
-def _as_text(value: object) -> str:
-    if value is None:
-        return ""
-    if isinstance(value, str):
-        return value.strip()
-    return str(value).strip()
-
-
-def _normalize_doi(value: object) -> str:
-    text = _as_text(value).lower()
-    if not text:
-        return ""
-    for prefix in ("https://doi.org/", "http://doi.org/", "doi:"):
-        if text.startswith(prefix):
-            text = text[len(prefix) :]
-    return text.strip().strip("/")
-
-
-def _normalize_url(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    parsed = urlsplit(text)
-    if not parsed.scheme or not parsed.netloc:
-        return text.strip().rstrip("/").lower().removeprefix("www.")
-
-    netloc = parsed.netloc.lower().removeprefix("www.")
-    if parsed.scheme.lower() == "http" and netloc.endswith(":80"):
-        netloc = netloc[:-3]
-    if parsed.scheme.lower() == "https" and netloc.endswith(":443"):
-        netloc = netloc[:-4]
-
-    path = parsed.path.rstrip("/") or "/"
-    return f"{netloc}{path}".rstrip("/")
-
-
-def _normalize_title(value: object) -> str:
-    text = _WHITESPACE_RE.sub(" ", _as_text(value).lower()).strip()
-    return _NON_ALNUM_RE.sub(" ", text).strip()
-
-
-def _normalize_year(value: object) -> str:
-    text = _as_text(value)
-    if not text:
-        return ""
-    try:
-        year = int(float(text))
-    except Exception:
-        return ""
-    return str(year)
-
-
-def _hash_fallback(row: dict) -> str:
-    payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
-    return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
-
-
-def _canonical_article_key(row: dict) -> tuple[str, str]:
-    doi = _normalize_doi(row.get("doi"))
-    if doi:
-        return "doi", doi
-
-    pmid = _as_text(row.get("pmid")).lower()
-    if pmid:
-        return "pmid", pmid
-
-    pmcid = _as_text(row.get("pmcid")).lower()
-    if pmcid:
-        return "pmcid", pmcid
-
-    url = _normalize_url(
-        row.get("final_url") or row.get("resolved_url") or row.get("original_url") or row.get("url")
-    )
-    if url:
-        return "url", url
-
-    title = _normalize_title(row.get("title"))
-    year = _normalize_year(row.get("year"))
-    if title and year:
-        return "title_year", f"{title}|{year}"
-
-    return "row_hash", _hash_fallback(row)
-
-
-def _merge_article_rows(existing: dict, incoming: dict) -> dict:
-    merged = dict(existing)
-    for key, value in incoming.items():
-        if value in (None, "", [], {}):
-            continue
-        if key in {"abstract", "snippet", "summary"} and len(str(value)) > len(str(merged.get(key) or "")):
-            merged[key] = value
-        elif not merged.get(key):
-            merged[key] = value
-    # Keep the stronger URL for capture. PMC and direct full-text URLs tend to
-    # produce better artifacts than DOI landing pages.
-    existing_url = str(merged.get("url") or "")
-    incoming_url = str(incoming.get("url") or "")
-    if incoming_url and (
-        not existing_url
-        or "pmc.ncbi.nlm.nih.gov" in incoming_url
-        or incoming_url.lower().endswith(".pdf")
-    ):
-        merged["url"] = incoming_url
-    providers = []
-    for value in (merged.get("matched_providers"), merged.get("source_provider"), merged.get("source"), incoming.get("matched_providers"), incoming.get("source_provider"), incoming.get("source")):
-        for part in str(value or "").split("|"):
-            part = part.strip()
-            if part and part not in providers:
-                providers.append(part)
-    merged["matched_providers"] = "|".join(providers)
-    merged["source"] = merged.get("source") or incoming.get("source")
-    return merged
-
-
-def _dedup_rows(rows: list[dict]) -> list[dict]:
-    by_key: dict[tuple[str, str], dict] = {}
-    order: list[tuple[str, str]] = []
-    for r in rows:
-        key = _canonical_article_key(r)
-        if key not in by_key:
-            r = dict(r)
-            provider = r.get("source_provider") or r.get("source")
-            if provider and not r.get("matched_providers"):
-                r["matched_providers"] = str(provider)
-            by_key[key] = r
-            order.append(key)
-        else:
-            by_key[key] = _merge_article_rows(by_key[key], r)
-    return [by_key[key] for key in order]
+# Deduplication moved to nutev.analysis.dedup (kept importable here under the
+# historical private names so the pipeline call sites and existing test imports —
+# e.g. `from nutev.pipelines.master_pipeline import _dedup_rows, _normalize_url` —
+# keep working unchanged).
+_as_text = as_text
+_normalize_doi = normalize_doi
+_normalize_url = normalize_url
+_normalize_title = normalize_title
+_normalize_year = normalize_year
+_hash_fallback = hash_fallback
+_canonical_article_key = canonical_article_key
+_merge_article_rows = merge_article_rows
+_dedup_rows = dedup_rows
 
 
 def _safe_provider_call(provider: str, fn, q: str, ws: str, logger) -> list[dict]:
@@ -262,6 +152,20 @@ def _write_querypack_audit(
 
 
 def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dict[str, int]:
+    # Guarantee the runtime-compat hooks (incl. the audit/claims stage) are in
+    # place no matter how run_pipeline is reached — not only via cli.main. Before
+    # this, calling run_pipeline directly (e.g. embedded/programmatic use) skipped
+    # apply() and produced zero claims/recommendations. apply() is idempotent, so
+    # this is a no-op when the CLI already applied it. (Removing the shim layer
+    # entirely is a separate, larger refactor: it also injects scientific query
+    # terms and is relied on across the test suite, so it must not be rushed.)
+    try:
+        from nutev.runtime_compat import apply as _apply_runtime_compat
+
+        _apply_runtime_compat()
+    except Exception:
+        logger.debug("runtime_compat apply skipped", exc_info=True)
+
     run_id = make_run_id()
     search_case = create_search_case(
         "NutMEV Deep Research",
@@ -574,6 +478,10 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     write_metadata_csv(all_rows, settings.output_dirs["02_metadata"] / "metadata_master.csv")
     write_article_data_csv(all_rows, settings.output_dirs["02_metadata"] / "article_data.csv")
     write_rayyan(all_rows, settings.output_dirs["02_metadata"] / "rayyan_ready.csv")
+    # Reference-manager exports (Zotero/Mendeley/EndNote): closes the
+    # "registro recuperado → referência correspondente" link. Never invents data.
+    write_bibtex(all_rows, settings.output_dirs["02_metadata"] / "NUTEV_REFERENCES.bib")
+    write_ris(all_rows, settings.output_dirs["02_metadata"] / "NUTEV_REFERENCES.ris")
     write_simple_csv(
         extraction_manifest,
         settings.output_dirs["05_extraction"] / "extraction_manifest.csv",
@@ -666,6 +574,12 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     search_job.finished_at = __import__("datetime").datetime.now(
         __import__("datetime").timezone.utc
     )
+    # Pin the exact taxonomy/scoring configuration to this run (base + every
+    # merged supplement, each hashed) so the result is reproducible and citable.
+    config_provenance = write_config_provenance(
+        settings.output_dirs["07_logs"] / "config_provenance.json",
+        settings.config_root,
+    )
     write_search_job_snapshot(
         search_job,
         settings.output_dirs["07_logs"] / "search_job_snapshot.json",
@@ -676,10 +590,11 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
             "providers_declared_by_workstream": providers_declared_by_workstream,
             "providers_executed_by_workstream": providers_executed_by_workstream,
             "providers_unsupported_by_workstream": providers_unsupported_by_workstream,
+            "config_digest": config_provenance["config_digest"],
             "configs_loaded": [
-                "keyword_taxonomy.json",
-                "scoring_rules.json",
-                "official_sources_manifest.json",
+                source["name"]
+                for family in config_provenance["families"].values()
+                for source in family["sources"]
             ],
             "querypack_files": [
                 "07_logs/querypack_executed.json",

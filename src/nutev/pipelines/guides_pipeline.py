@@ -34,7 +34,7 @@ from nutev.analysis.keyphrases import (
 )
 from nutev.analysis.references import build_reference
 from nutev.analysis.registries import build_registries
-from nutev.review.screening import build_screening_queue
+from nutev.review.screening import build_screening_queue, screening_agreement
 from nutev.analysis.thematic import evidence_rows, load_taxonomy, thematic_fields
 from nutev.export.metadata_tables import write_simple_csv
 from nutev.extract.smart_extract import extract_document
@@ -294,6 +294,14 @@ def run_guides(
     # Nothing is export-ready until two reviewers validate (the export gate).
     queue = build_screening_queue(rows)
     write_simple_csv(queue, settings.output_dirs["06_tables"] / "NUTEV_GUIDES_SCREENING_QUEUE.csv")
+
+    # Inter-reviewer agreement (§13): Cohen's kappa + observed agreement over the
+    # records both reviewers screened, for PRISMA-ScR/JBI reliability reporting.
+    # Empty until humans screen and the run repeats (kappa=None on a fresh queue).
+    agreement = screening_agreement(queue)
+    (settings.output_dirs["07_logs"] / "NUTEV_GUIDES_SCREENING_AGREEMENT.json").write_text(
+        json.dumps(agreement, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
     # Article-1 reproducible exports (§17): A/B/C/D matrix, PRISMA counts +
     # diagram, and the data dictionary. `included` stays pending (human review).

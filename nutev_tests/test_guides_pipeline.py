@@ -95,6 +95,15 @@ def test_run_guides_offline_processes_local_files(tmp_path: Path):
     assert (settings.output_dirs["06_tables"] / "NUTEV_GUIDES_CODED.csv").exists()
     detail = json.loads((settings.output_dirs["10_curated"] / "guides_coded.json").read_text())
     assert len(detail) == 2 and "key_phrases" in detail[0]
+    # Screening queue + inter-reviewer agreement report (§13). No decisions yet,
+    # so kappa is null but the artifact exists and reports the queue size.
+    assert (settings.output_dirs["06_tables"] / "NUTEV_GUIDES_SCREENING_QUEUE.csv").exists()
+    agreement = json.loads(
+        (settings.output_dirs["07_logs"] / "NUTEV_GUIDES_SCREENING_AGREEMENT.json").read_text()
+    )
+    assert agreement["n_items"] == 2
+    assert agreement["cohen_kappa"] is None
+    assert agreement["n_double_screened"] == 0
 
 
 def test_run_guides_with_mocked_session_fetches_then_codes(tmp_path: Path):
