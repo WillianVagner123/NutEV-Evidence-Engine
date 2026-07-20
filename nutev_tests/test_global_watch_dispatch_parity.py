@@ -52,8 +52,15 @@ def _sha(obj) -> str:
 
 
 def _dispatch(provider: str, monkeypatch) -> list[dict]:
+    # Mock the connector on BOTH bindings — the watch module and the orchestrator —
+    # so the gate holds whether dispatch calls the connector directly (pre-Phase 1)
+    # or through the orchestrator registry (post-Phase 1). Same rows in, so the
+    # normalized-hits digest must be identical either way.
+    import nutev.search.provider_orchestrator as po
+
     for name in _CONNECTOR_FNS:
         monkeypatch.setattr(wp, name, lambda *a, **k: list(FIXED), raising=False)
+        monkeypatch.setattr(po, name, lambda *a, **k: list(FIXED), raising=False)
     logs = Path(tempfile.mkdtemp())
     return wp.run_watch_provider(provider, "diet adherence", "guidelines_consensus", logging.getLogger("t"), "run", logs, 30)
 

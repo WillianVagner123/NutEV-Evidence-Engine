@@ -90,6 +90,18 @@ remaining duplication (dispatch, instrumentation, and eventually query building)
   three unified providers. **Acceptance:** the Phase-0 harness stays green (the
   three shared connectors' dispatch output is unchanged; pubmed untouched).
 
+> **Phase-1 fallout to handle first (found while attempting it).** Routing the
+> three connectors through the orchestrator registry changes which *binding* is
+> called — the orchestrator's `search_*` import, not `watch_pipeline`'s. Real-run
+> output is unchanged (Phase 0 proved the call is identical), but existing watch
+> tests that mock `watch_pipeline.search_europepmc` (etc.) via `from-import`
+> binding stop intercepting and fall through to the network. So Phase 1 must land
+> **with** a test-mocking migration: mock the connector at a shared point (the
+> source module or `requests`), or mock both bindings — the Phase-0 harness already
+> does the latter (`test_global_watch_dispatch_parity._dispatch`). Do not merge the
+> dispatch change until every watch test that mocks a connector is migrated, or CI
+> will make real network calls.
+
 ### Phase 2 — Shared result normalization
 - Route Watch results through the same normalization the orchestrator/connectors
   already apply, removing any Watch-local duplicate of row shaping.
