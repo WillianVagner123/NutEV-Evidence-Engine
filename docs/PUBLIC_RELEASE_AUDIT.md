@@ -133,10 +133,13 @@ warranted at this stage (and it is explicitly out of scope).
   (b) documentation and `.env.example` placeholders,
   (c) security-scanner scripts (`.github/scripts/file-whitelist-check.sh`).
   No hard-coded credential value was found in tracked source.
-- `.gitleaksignore` is **57 KB** — a large historical allowlist. Per the plan, its
-  entries are **not** assumed safe. A fresh `gitleaks` scan should be run in CI
-  (added in Etapa 6) and each allowlisted finding re-triaged: distinguish historical
-  false positives from anything still live. **Pending manual action.**
+- `.gitleaksignore` **was reset** (2026-07): the previous 57 KB / 582-line baseline
+  was inherited from the unrelated upstream project (`local_deep_research` /
+  `web_search_engines`) — every fingerprint referenced a file/commit absent from this
+  repository, so it suppressed nothing here while giving false assurance. It now holds
+  no fingerprints (no known false positives for this repo); the gitleaks CI job scans
+  clean against the current tree. Any future entry must be manually triaged as a
+  confirmed non-secret before being added.
 - `gitleaks` binary was unavailable in the audit environment; the fresh scan is
   deferred to the CI workflow added in Etapa 6.
 
