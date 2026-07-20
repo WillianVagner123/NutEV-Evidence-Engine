@@ -152,6 +152,20 @@ def _write_querypack_audit(
 
 
 def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dict[str, int]:
+    # Guarantee the runtime-compat hooks (incl. the audit/claims stage) are in
+    # place no matter how run_pipeline is reached — not only via cli.main. Before
+    # this, calling run_pipeline directly (e.g. embedded/programmatic use) skipped
+    # apply() and produced zero claims/recommendations. apply() is idempotent, so
+    # this is a no-op when the CLI already applied it. (Removing the shim layer
+    # entirely is a separate, larger refactor: it also injects scientific query
+    # terms and is relied on across the test suite, so it must not be rushed.)
+    try:
+        from nutev.runtime_compat import apply as _apply_runtime_compat
+
+        _apply_runtime_compat()
+    except Exception:
+        logger.debug("runtime_compat apply skipped", exc_info=True)
+
     run_id = make_run_id()
     search_case = create_search_case(
         "NutMEV Deep Research",
