@@ -1,9 +1,22 @@
 # Phased Migration — Unify Global Watch with the search orchestrator
 
-> **Status: planned (not started).** Design/migration plan, not executed work.
-> Global Watch keeps a second, parallel search stack; merging it with the main
-> `search.provider_orchestrator` changes what queries run, so it must be phased
-> and parity-gated, not rewritten at once.
+> **Status: in progress.** Phase 0 (parity harness) is **done**; Phases 1–3
+> remain. Global Watch keeps a second, parallel search stack; merging it with the
+> main `search.provider_orchestrator` can change what runs, so it is phased and
+> parity-gated, not rewritten at once.
+>
+> - ✅ **Phase 0** — `nutev_tests/test_global_watch_dispatch_parity.py` + baseline.
+>   It locks `run_watch_provider`'s dispatch → normalized-hits output per provider,
+>   and **proves** the Phase-1 equivalence for europepmc/openalex/crossref (the
+>   orchestrator's registry makes the identical connector call once Watch's cap is
+>   passed). It also pins the key finding below.
+>
+> **Phase 0 finding — pubmed diverges.** The orchestrator runs pubmed through
+> `PubMedClient().search(...)`, but Watch calls `search_pubmed(q, retmax=12)` — a
+> different implementation. So Phase 1 can safely route **europepmc, openalex and
+> crossref** through `search_provider` (identical output, proven by the harness),
+> but **pubmed must stay on `search_pubmed`** (or its unification becomes an
+> explicit, measured product decision — it would change results).
 
 ## Why this exists
 
@@ -63,14 +76,19 @@ remaining duplication (dispatch, instrumentation, and eventually query building)
   and the digest. **Acceptance:** harness green; snapshot committed as reference.
 
 ### Phase 1 — Dispatch through `search_provider` (mechanism only)
-- Replace `_build_provider_map()` + `run_watch_provider()` internals so each
-  provider call goes through `search.provider_orchestrator.search_provider(...)`,
-  passing Watch's existing caps as the `limit` and a Watch-specific
-  `checkpoint_dir`/`logs_dir`. Keep Watch's query builder untouched.
+- Route **europepmc, openalex and crossref** through
+  `search.provider_orchestrator.search_provider(...)`, passing Watch's existing
+  caps (12 / 10 / 10) as the `limit`. Phase 0 proved these three make the
+  identical connector call, so output is unchanged. Keep Watch's query builder
+  untouched.
+- **Keep pubmed on `search_pubmed(q, retmax=12)`** — the orchestrator's
+  `PubMedClient` path is a different implementation (Phase 0 finding); unifying it
+  is deferred to the Phase-3 product decision. So `_build_provider_map` retains
+  its pubmed entry and only the other three change.
 - Benefit: one instrumentation path (events, `provider_performance.csv`,
-  `provider_failures.csv`, retry/backoff, retrieval-date stamping from C8) for
-  both stacks. **Acceptance:** hits/scoring/digest byte-identical to Phase 0;
-  `run_watch_provider` no longer imports low-level `search_*` directly.
+  `provider_failures.csv`, retry/backoff, retrieval-date stamping from C8) for the
+  three unified providers. **Acceptance:** the Phase-0 harness stays green (the
+  three shared connectors' dispatch output is unchanged; pubmed untouched).
 
 ### Phase 2 — Shared result normalization
 - Route Watch results through the same normalization the orchestrator/connectors
