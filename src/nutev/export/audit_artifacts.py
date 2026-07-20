@@ -2,10 +2,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import re
 from pathlib import Path
 
 import pandas as pd
+
+logger = logging.getLogger("nutev.export.audit_artifacts")
 
 from nutev.audit.claim_evaluator import detect_conflicts, evaluate_claims
 from nutev.audit.claim_extractor import extract_candidate_claims_from_record
@@ -79,7 +82,14 @@ def extract_audit_claims(rows: list[dict]) -> list[EvidenceClaim]:
     for row in rows:
         try:
             claims.extend(extract_candidate_claims_from_record(_claim_record(row), {}, {}))
-        except Exception:
+        except Exception as exc:
+            # A dropped row = a claim that never reaches the evidence layer; record
+            # which document failed instead of losing it silently (T2 integrity).
+            logger.warning(
+                "claim extraction failed, row skipped: document_id=%s error=%s",
+                row.get("document_id") or row.get("id") or "?",
+                exc,
+            )
             continue
     return claims
 

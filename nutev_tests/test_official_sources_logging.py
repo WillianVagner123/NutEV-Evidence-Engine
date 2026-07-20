@@ -44,3 +44,21 @@ def test_missing_manifest_is_not_logged_as_error(tmp_path: Path, caplog):
 
     assert manifest == {}
     assert not any("unreadable" in rec.message for rec in caplog.records)
+
+
+# --------------------------------------------------------------------------- #
+# T2 tranche 2 — audit claim-extraction failures must be logged, not silent.
+# --------------------------------------------------------------------------- #
+
+def test_failed_claim_extraction_is_logged(monkeypatch, caplog):
+    import nutev.export.audit_artifacts as aa
+
+    def boom(record, a, b):
+        raise RuntimeError("bad row")
+
+    monkeypatch.setattr(aa, "extract_candidate_claims_from_record", boom)
+    with caplog.at_level(logging.WARNING, logger="nutev.export.audit_artifacts"):
+        claims = aa.extract_audit_claims([{"document_id": "doc_9", "title": "x"}])
+
+    assert claims == []  # control flow unchanged (row skipped)
+    assert any("claim extraction failed" in r.message and "doc_9" in r.message for r in caplog.records)
