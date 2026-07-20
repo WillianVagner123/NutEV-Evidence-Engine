@@ -601,6 +601,19 @@ def _build_provider_map() -> dict[str, Any]:
     return provider_map
 
 
+def watch_provider_ids() -> list[str]:
+    """Provider ids the Global Watch stack can execute.
+
+    Global Watch keeps its own query-building/dispatch stack (separate from
+    ``search.provider_orchestrator``), but it must not drift onto a provider the
+    central registry (``config/provider_registry.json``) never declared. This
+    accessor is reconciled against the registry by ``test_watch_provider_reconcile``
+    — the same single-source-of-truth guard the orchestrator has — so the two
+    stacks can share connectors without their provider sets silently diverging.
+    """
+    return sorted(_build_provider_map().keys())
+
+
 def run_watch_provider(
     provider_name: str,
     query: str,
