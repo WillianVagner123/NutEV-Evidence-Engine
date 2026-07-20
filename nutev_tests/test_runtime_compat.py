@@ -2,9 +2,11 @@
 
 Two things must hold for reproducible local runs:
 
-1. ``nutev.runtime_compat.apply()`` applies the pipeline hooks (curation,
-   run-summary, synthesis, query generation, workstream validation) explicitly,
-   so behaviour does not depend on ``sitecustomize.py`` being auto-imported.
+1. ``nutev.runtime_compat.apply()`` applies the remaining pipeline hooks
+   (synthesis defaults, workstream validation) explicitly and idempotently, so
+   behaviour does not depend on ``sitecustomize.py`` being auto-imported. The
+   query-generation (Phase 1) and curation/run-summary (Phase 2) patches were
+   dissolved into first-class code — see docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md.
 2. The audit artifacts report ``evidence_claims_inference_only`` — claims that
    are NOT quote-backed must be counted, not silently dropped from the summary.
 """
@@ -13,13 +15,17 @@ from __future__ import annotations
 from pathlib import Path
 
 
-def test_apply_is_idempotent_and_patches_curation():
+def test_apply_is_idempotent_and_no_longer_patches_curation():
+    from nutev.engine.validators import validate_workstream
     from nutev.export import curation
     from nutev.runtime_compat import apply
 
     apply()
     apply()  # second call must be a no-op, not double-wrap
-    assert getattr(curation.curate_outputs, "_nutev_audit_patched", False) is True
+    # Curation is no longer monkey-patched (Phase 2 moved it to curation_finalize).
+    assert not hasattr(curation.curate_outputs, "_nutev_audit_patched")
+    # A still-active hook proves apply() ran: global_watch is accepted as a workstream.
+    assert validate_workstream("global_watch") == "global_watch"
 
 
 def test_sitecustomize_delegates_to_runtime_compat():

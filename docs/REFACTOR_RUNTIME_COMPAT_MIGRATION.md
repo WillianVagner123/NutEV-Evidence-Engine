@@ -1,15 +1,20 @@
 # Phased Migration — Dissolve the `runtime_compat` shim layer
 
-> **Status: in progress.** Phase 0 (parity harness) and Phase 1 (query generation
-> → querypacks) are **done**; Phases 2–5 remain. `runtime_compat` cannot be
-> removed in a single change without risking the scientific outputs and the test
-> suite, so each phase is independently shipped and gated on **parity** (same
-> input → same outputs).
+> **Status: in progress.** Phases 0–2 are **done**; Phases 3–5 remain.
+> `runtime_compat` cannot be removed in a single change without risking the
+> scientific outputs and the test suite, so each phase is independently shipped
+> and gated on **parity** (same input → same outputs).
 >
 > - ✅ **Phase 0** — `nutev_tests/test_runtime_compat_parity.py` + baseline.
 > - ✅ **Phase 1** — terms moved to `querypacks/builders.EXTRA_BOOLEAN_QUERIES` and
 >   `querypacks/provider_queries.PUBMED_WORKSTREAM_ANCHOR_TERMS`;
 >   `_patch_query_generation` deleted from `apply()`. Parity gate green.
+> - ✅ **Phase 2** — audit + legacy finalization is now a first-class step
+>   (`nutev.export.curation_finalize.finalize_curated_layer` / `audit_metrics`),
+>   called explicitly in `run_pipeline`; `_patch_curation` + `_patch_run_summary`
+>   deleted. The curation/audit tests (migrated off the patch) prove the artifacts
+>   and summary keys are unchanged; offline output is identical modulo the
+>   pre-existing `retrieved_at` timestamp.
 
 ## Why this exists
 

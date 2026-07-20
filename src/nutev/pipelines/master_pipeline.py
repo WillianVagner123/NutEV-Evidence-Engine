@@ -40,6 +40,7 @@ from nutev.engine.job import (
 )
 from nutev.export.citations import write_bibtex, write_ris
 from nutev.export.curation import curate_outputs
+from nutev.export.curation_finalize import audit_metrics, finalize_curated_layer
 from nutev.export.excel_writer import write_analysis_xlsx, write_excel_file
 from nutev.export.logs import write_run_summary
 from nutev.export.metadata_tables import (
@@ -532,6 +533,9 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
     )
 
     curation_summary = curate_outputs(all_rows, settings.output_dirs["10_curated"])
+    # First-class audit + legacy finalization (was runtime_compat._patch_curation):
+    # NUTEV_* renames, QA/PRISMA legacy reports, and the audit + convergence stage.
+    finalize_curated_layer(all_rows, settings.output_dirs["10_curated"], curation_summary)
     claims = []
     recommendations = []
     conflicts = []
@@ -698,6 +702,12 @@ def run_pipeline(settings: NutevSettings, workstreams: list[str], logger) -> dic
         summary.update(fulltext_coverage_block(all_rows, recoverability=recover))
     except Exception as exc:  # pragma: no cover - defensive; never abort a run
         summary["fulltext_coverage_error"] = str(exc)
+
+    # Merge audit metrics from the written CSVs (was runtime_compat._patch_run_summary):
+    # a truthy CSV-derived count wins, and any missing key is filled in.
+    for key, value in audit_metrics(settings.output_dirs["02_metadata"]).items():
+        if value or key not in summary:
+            summary[key] = value
 
     write_run_summary(settings.output_dirs["07_logs"] / "run_summary.json", summary)
     (settings.output_dirs["07_logs"] / "run_summary_pretty.txt").write_text(
