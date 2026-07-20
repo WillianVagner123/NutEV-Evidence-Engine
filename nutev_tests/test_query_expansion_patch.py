@@ -41,13 +41,8 @@ def test_build_queries_emits_the_food_medicine_query() -> None:
 
 
 def test_query_generation_monkeypatch_is_removed() -> None:
-    from pathlib import Path
+    import importlib.util
 
-    import nutev.runtime_compat as rc
-
-    # The patch function is gone...
-    assert not hasattr(rc, "_patch_query_generation")
-    # ...and the term data no longer lives in the shim (it moved to querypacks).
-    text = Path("src/nutev/runtime_compat.py").read_text(encoding="utf-8")
-    assert "menu labeling policy" not in text
-    assert "food is medicine" not in text
+    # The runtime_compat shim (and its query-generation patch) is gone entirely;
+    # the terms now live in nutev.querypacks (asserted above).
+    assert importlib.util.find_spec("nutev.runtime_compat") is None

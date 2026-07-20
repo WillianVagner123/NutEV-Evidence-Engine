@@ -32,9 +32,9 @@ def _sha(obj) -> str:
 
 
 def build_signature() -> dict:
-    from nutev.runtime_compat import apply
-
-    apply()  # current (patched) behaviour — the thing the migration must preserve
+    # No bootstrap needed: the query terms are now native in nutev.querypacks
+    # (Phase 1). The baseline still locks the exact generated queries so later
+    # phases can't change them.
     from nutev.querypacks.builders import build_querypack
     from nutev.querypacks.provider_queries import build_provider_querypack
     from nutev.settings import default_config_root, load_json

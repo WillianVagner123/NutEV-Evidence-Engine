@@ -1,38 +1,29 @@
-"""Regression tests for the deterministic runtime-compat bootstrap.
+"""Regression tests for behaviour formerly injected by the runtime_compat shim.
 
-Two things must hold for reproducible local runs:
-
-1. ``nutev.runtime_compat.apply()`` applies the remaining pipeline hooks
-   (synthesis defaults, workstream validation) explicitly and idempotently, so
-   behaviour does not depend on ``sitecustomize.py`` being auto-imported. The
-   query-generation (Phase 1) and curation/run-summary (Phase 2) patches were
-   dissolved into first-class code — see docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md.
-2. The audit artifacts report ``evidence_claims_inference_only`` — claims that
-   are NOT quote-backed must be counted, not silently dropped from the summary.
+The shim was fully dissolved into first-class code
+(docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md); these tests pin the behaviour that
+mattered: ``global_watch`` is a valid workstream (was
+``_patch_workstream_validation``), and the audit artifacts count
+``evidence_claims_inference_only`` — claims that are NOT quote-backed must be
+counted, not silently dropped from the summary.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
 
-def test_apply_is_idempotent_and_no_longer_patches_curation():
+def test_runtime_compat_module_is_gone():
+    # The shim and its auto-load sitecustomize were retired; nothing imports them.
+    import importlib.util
+
+    assert importlib.util.find_spec("nutev.runtime_compat") is None
+
+
+def test_global_watch_is_a_valid_workstream_natively():
     from nutev.engine.validators import validate_workstream
-    from nutev.export import curation
-    from nutev.runtime_compat import apply
 
-    apply()
-    apply()  # second call must be a no-op, not double-wrap
-    # Curation is no longer monkey-patched (Phase 2 moved it to curation_finalize).
-    assert not hasattr(curation.curate_outputs, "_nutev_audit_patched")
-    # A still-active hook proves apply() ran: global_watch is accepted as a workstream.
+    # Was _patch_workstream_validation; now native in engine.validators.
     assert validate_workstream("global_watch") == "global_watch"
-
-
-def test_sitecustomize_delegates_to_runtime_compat():
-    text = Path("src/sitecustomize.py").read_text(encoding="utf-8")
-    # The real logic must live in the importable module, not be duplicated here.
-    assert "nutev.runtime_compat" in text
-    assert "_patch_curation" not in text
 
 
 def test_audit_artifacts_report_inference_only(tmp_path: Path):

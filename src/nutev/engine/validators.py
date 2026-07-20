@@ -131,6 +131,11 @@ def validate_workstream(value: str | None) -> str | None:
     if value in (None, ""):
         return None
     normalized = str(value).strip()
+    # Global Watch is a valid workstream (accepted verbatim, not aliased). Moved
+    # here from the former runtime_compat `_patch_workstream_validation` monkey-patch
+    # (Phase 4 of docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md).
+    if normalized == "global_watch":
+        return normalized
     # Canonical article renumbering (P5): the behavioural framework is Article 4;
     # a4/a4_framework map to the same workstream as the legacy a3 alias.
     aliases = {

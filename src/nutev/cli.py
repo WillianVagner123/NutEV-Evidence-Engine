@@ -11,17 +11,8 @@ from nutev.settings import NutevSettings
 
 
 def main() -> None:
-    # Apply runtime-compat hooks deterministically (do not rely on the
-    # top-level sitecustomize.py being auto-imported — see nutev.runtime_compat).
-    try:
-        from nutev.runtime_compat import apply as _apply_runtime_compat
-
-        _apply_runtime_compat()
-    except Exception:
-        import logging
-
-        logging.getLogger("nutev.cli").debug("runtime_compat bootstrap skipped", exc_info=True)
-
+    # The runtime_compat shim was fully dissolved into first-class code
+    # (docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md), so no bootstrap is needed here.
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="command")
     gw = sub.add_parser("global-watch")

@@ -1,16 +1,8 @@
-"""Shared pytest fixtures/bootstrap for the canonical NutEV suite.
+"""Shared pytest bootstrap for the canonical NutEV suite.
 
-Apply the runtime-compat hooks deterministically before any test runs. The
-suite exercises the same wrapped pipeline behaviour that a real ``nutev`` run
-uses; relying on ``sitecustomize.py`` being auto-imported is fragile (it is
-shadowed on distros that ship their own ``sitecustomize``), so we apply the
-hooks explicitly here instead.
+The former ``runtime_compat`` shim was fully dissolved into first-class code
+(see ``docs/REFACTOR_RUNTIME_COMPAT_MIGRATION.md``), so there is no longer any
+hook to apply before the suite runs — the pipeline behaves the same whether or
+not anything is bootstrapped here.
 """
 from __future__ import annotations
-
-try:
-    from nutev.runtime_compat import apply as _apply_runtime_compat
-
-    _apply_runtime_compat()
-except Exception:
-    pass
