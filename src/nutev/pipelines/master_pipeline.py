@@ -58,7 +58,7 @@ from nutev.querypacks.provider_queries import (
     write_provider_querypack_audit,
 )
 from nutev.search.official_sources import load_official_manifest
-from nutev.search.provider_orchestrator import search_provider
+from nutev.search.provider_orchestrator import implemented_search_providers, search_provider
 from nutev.settings import NutevSettings, load_json
 
 QUERY_BUDGET = {
@@ -80,7 +80,13 @@ DOWNLOAD_BUDGET = {
 DEFAULT_PRIORITY = ["pubmed", "europepmc", "openalex", "crossref", "official_web"]
 
 def _provider_map():
-    return {"pubmed": True, "europepmc": True, "openalex": True, "crossref": True}
+    # The set of providers the pipeline can actually dispatch is the orchestrator's
+    # implemented registry — the single source of truth. Any provider a workstream
+    # opts into via source_priority (e.g. doaj/clinicaltrials/scielo/semantic_scholar/
+    # arxiv) is honored here without changing default runs, since DEFAULT_PRIORITY
+    # still lists only the always-on scientific providers. official_web keeps its
+    # dedicated dispatch path (see _split_supported_providers / run_pipeline).
+    return {provider: True for provider in implemented_search_providers()}
 
 
 # Deduplication moved to nutev.analysis.dedup (kept importable here under the
