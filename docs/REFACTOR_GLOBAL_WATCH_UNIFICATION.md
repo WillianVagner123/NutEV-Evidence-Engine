@@ -1,9 +1,10 @@
 # Phased Migration — Unify Global Watch with the search orchestrator
 
-> **Status: in progress.** Phases 0–1 are **done**; Phases 2–3 remain. Global
-> Watch keeps a second, parallel search stack; merging it with the main
-> `search.provider_orchestrator` can change what runs, so it is phased and
-> parity-gated, not rewritten at once.
+> **Status: substantially complete.** Phase 1 (the valuable, non-divergent
+> unification) is **done and merged**; Phase 3 was **evaluated and declined**
+> (keep the builders separate — see below); Phase 2 is low-value. Global Watch
+> shares connector *dispatch* with the orchestrator now, while intentionally
+> keeping its own category-based query builder.
 >
 > - ✅ **Phase 0** — `nutev_tests/test_global_watch_dispatch_parity.py` + baseline.
 >   It locks `run_watch_provider`'s dispatch → normalized-hits output per provider,
@@ -119,6 +120,31 @@ remaining duplication (dispatch, instrumentation, and eventually query building)
   product decision, not a refactor. If declined, document that the divergence is
   intentional and stop here. If accepted, migrate behind a flag with its own
   parity/coverage comparison (recall before/after), never silently.
+
+#### Phase 3 evaluation (done) → recommendation: **keep them separate**
+
+The mandated evaluation was run. The two query systems are organized on
+**different axes and are not redundant**:
+
+| | Global Watch | Main pipeline |
+|---|---|---|
+| Organizing unit | 8 **surveillance categories** (`guidelines_consensus`, `lifestyle_medicine`, `obesity_cardiometabolic`, `diet_patterns`, `implementation_behavior`, `food_literacy_culinary_commensality`, `frameworks_instruments`, `personalized_nutrition`) | 4 **review workstreams** (`busca1`, `busca2a`, `busca2b`, `a3`) |
+| Query shape | `(category seed terms) AND (context terms)` — broad, recency-oriented sweep (24 queries in `quick`, 45 in `thesis`) | PICOS/taxonomy boolean blocks — a systematic-review strategy |
+| Purpose | periodic surveillance ("what's new across these topics") | exhaustive retrieval for a fixed review question |
+
+There is **no category ↔ workstream identity**: unifying would require re-modeling
+all 8 surveillance categories as PICOS concept specs (a research-judgment task,
+not a mechanical move) and would **change and likely narrow** what the Watch
+surveils, for no clear benefit. This is exactly the "two products can legitimately
+want different queries" case flagged up front.
+
+**Recommendation: decline the query-building unification; keep
+`watch_query_builder` as the intentional, documented divergence.** The valuable,
+non-divergent unification (connector *dispatch*) is already done (Phase 1), and
+the reconciliation guard (T6) prevents provider drift. If a future need arises to
+share *specific term lists* between the two, do that at the term-list level behind
+a flag with a recall before/after comparison — never by replacing the Watch's
+category-based builder wholesale.
 
 ## Rollback
 
