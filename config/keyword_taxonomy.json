@@ -797,7 +797,8 @@
         "europepmc",
         "openalex",
         "crossref",
-        "doaj"
+        "doaj",
+        "scielo"
       ],
       "web_query_hints": [
         "food guideline",
@@ -881,7 +882,8 @@
         "ddg_web",
         "openalex",
         "crossref",
-        "doaj"
+        "doaj",
+        "scielo"
       ],
       "web_query_hints": [
         "clinical practice guideline",
@@ -968,6 +970,7 @@
         "openalex",
         "crossref",
         "doaj",
+        "scielo",
         "official_web"
       ],
       "web_query_hints": [
@@ -1057,6 +1060,7 @@
         "openalex",
         "crossref",
         "doaj",
+        "scielo",
         "official_web"
       ],
       "web_query_hints": [
