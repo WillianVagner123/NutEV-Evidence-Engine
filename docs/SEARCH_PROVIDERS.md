@@ -23,6 +23,13 @@ These scientific providers are independent of Google. Each provider has timeout/
 
 Open-access bibliographic provider via the public DOAJ REST API — **no API key required**. It follows the same connector contract as Europe PMC/OpenAlex/Crossref (timeout, exponential backoff, a reproducible single-page default with opt-in bounded pagination via `NUTEV_DOAJ_MAX_RESULTS`). It is declared in `config/provider_registry.json` and wired into the orchestrator, but is **not** in the default run set — enable it by adding `"doaj"` to a workstream's `source_priority` (or set `NUTEV_SKIP_DOAJ=1` to force it off). Rows are normalized to the shared schema and flagged `is_open_access`.
 
+## ClinicalTrials.gov and SciELO
+
+Two more no-key providers, same connector contract (timeout, exponential backoff, reproducible single-page default with opt-in `NUTEV_CLINICALTRIALS_MAX_RESULTS` / `NUTEV_SCIELO_MAX_RESULTS`), declared in the registry and wired into the orchestrator but **off the default run set** (enable per workstream via `source_priority`):
+
+- **ClinicalTrials.gov** — the v2 REST API. Adds clinical-trial registry evidence (distinct from journal articles); rows carry `registry_id` (NCT id), `article_type=clinical_trial`, and the lead sponsor as `source_institution`.
+- **SciELO** — SciELO has no clean public free-text search JSON API and scraping is out of scope, so this connector retrieves SciELO content through the **stable Crossref API restricted to SciELO's DOI prefix `10.1590`** (SciELO Brazil, the majority of the corpus). Coverage is prefix-scoped and honest about it; rows reuse the Crossref normalization, re-tagged `scielo`.
+
 ## Optional Google / gray literature
 
 Google Programmable Search Engine, SerpAPI and Brave are optional gray-literature providers. They are skipped unless their API keys are configured. A Google quota/configuration failure does not invalidate the scientific search; PubMed, Europe PMC, OpenAlex, Crossref and official sources continue.

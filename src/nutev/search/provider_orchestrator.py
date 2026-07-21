@@ -11,6 +11,7 @@ from nutev.engine.events import emit_event, write_event
 from nutev.search.base import ProviderResult
 from nutev.search.brave_optional import search_brave
 from nutev.search.checkpoint import query_hash
+from nutev.search.clinicaltrials import search_clinicaltrials
 from nutev.search.crossref import search_crossref
 from nutev.search.doaj import search_doaj
 from nutev.search.europepmc import search_europepmc
@@ -18,6 +19,7 @@ from nutev.search.google_pse import search_google_pse
 from nutev.search.official_sources import manifest_sources
 from nutev.search.openalex import search_openalex
 from nutev.search.pubmed import PubMedClient
+from nutev.search.scielo import search_scielo
 from nutev.search.serpapi_optional import search_serpapi
 
 OPTIONAL_PROVIDERS = {"google", "google_pse", "serpapi", "brave"}
@@ -77,6 +79,8 @@ def _registry() -> dict[str, Callable[[str, int, dict[str, Any]], ProviderResult
         "openalex": lambda q, limit, ctx: search_openalex(q, per_page=limit),
         "crossref": lambda q, limit, ctx: search_crossref(q, rows=limit),
         "doaj": lambda q, limit, ctx: search_doaj(q, page_size=limit),
+        "clinicaltrials": lambda q, limit, ctx: search_clinicaltrials(q, page_size=limit),
+        "scielo": lambda q, limit, ctx: search_scielo(q, rows=limit),
         "google": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "google_pse": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "serpapi": lambda q, limit, ctx: search_serpapi(q, limit=limit, context=ctx),
