@@ -105,6 +105,74 @@ def parse_picos(spec: dict) -> StrategySpec:
     )
 
 
+def _split_terms(text: object) -> list[str]:
+    """Split a free-text field into synonyms on newlines and semicolons.
+
+    Commas are intentionally *not* delimiters so multiword terms that contain a
+    comma survive intact. Blank fragments are dropped.
+    """
+    if text is None:
+        return []
+    out: list[str] = []
+    for chunk in str(text).replace(";", "\n").split("\n"):
+        term = chunk.strip()
+        if term:
+            out.append(term)
+    return out
+
+
+def picos_from_text(
+    population: object = "",
+    intervention: object = "",
+    exposure: object = "",
+    comparison: object = "",
+    outcome: object = "",
+    context: object = "",
+    *,
+    year_from: object = None,
+    year_to: object = None,
+    languages: object = "",
+    publication_types: object = "",
+) -> dict:
+    """Assemble a PICOS dict (the input to :func:`parse_picos`) from raw text
+    fields, one synonym per line. Streamlit-free so the UI stays thin and this
+    assembly logic is testable on its own. Roles with no terms are omitted, and
+    ``year_from``/``year_to`` of 0 or blank are treated as unset.
+    """
+    def _year(value: object) -> int | None:
+        try:
+            year = int(value)  # type: ignore[arg-type]
+        except (TypeError, ValueError):
+            return None
+        return year or None
+
+    spec: dict = {}
+    for key, value in (
+        ("population", population),
+        ("intervention", intervention),
+        ("exposure", exposure),
+        ("comparison", comparison),
+        ("outcome", outcome),
+        ("context", context),
+    ):
+        terms = _split_terms(value)
+        if terms:
+            spec[key] = terms
+    year_lo = _year(year_from)
+    year_hi = _year(year_to)
+    if year_lo is not None:
+        spec["year_from"] = year_lo
+    if year_hi is not None:
+        spec["year_to"] = year_hi
+    langs = _split_terms(str(languages).replace(",", "\n"))
+    if langs:
+        spec["languages"] = langs
+    pts = _split_terms(publication_types)
+    if pts:
+        spec["publication_types"] = pts
+    return spec
+
+
 def parse_concepts(blocks: list) -> StrategySpec:
     """Build a StrategySpec from a plain list of concept blocks.
 

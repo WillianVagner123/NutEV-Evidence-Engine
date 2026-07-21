@@ -119,6 +119,24 @@ http://127.0.0.1:8000
 http://127.0.0.1:8000/docs
 ```
 
+### Construtor de estratégia de busca (PICOS → expressão por base)
+
+Ferramenta transparente e question-first (C4): a partir de uma pergunta
+estruturada em PICOS/PECO, gera a expressão exata enviada a cada base
+(PubMed, Europe PMC, Crossref, OpenAlex) em três níveis de amplitude
+(`broad`/`balanced`/`specific`). É **aditiva** — não substitui os querypacks
+do pipeline; serve para autorar e auditar a estratégia.
+
+Na linha de comando (a partir de um arquivo JSON com o PICOS):
+
+```bash
+nutev strategy --spec examples/picos.json --out project_output_demo/07_logs/search_strategy.json
+```
+
+No dashboard, abra a página **Search Strategy**: preencha os blocos PICOS
+(um sinônimo por linha), opcionalmente ano/idiomas/tipos de publicação, e veja
+a grade provider × amplitude com download em JSON.
+
 ## 5. Verificar instalação
 
 ```bash
