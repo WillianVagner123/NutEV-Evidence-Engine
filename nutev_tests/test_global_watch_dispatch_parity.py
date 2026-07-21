@@ -73,7 +73,10 @@ def test_watch_dispatch_matches_baseline(monkeypatch):
         assert len(hits) == baseline["by_provider"][provider]["n_hits"]
 
 
-def test_shared_connectors_unify_identically_through_the_orchestrator(monkeypatch):
+def test_shared_connectors_are_unified_through_the_orchestrator(monkeypatch):
+    # Post-Phase-1: the watch provider map delegates europepmc/openalex/crossref to
+    # the orchestrator registry, so the watch entry point and the registry make the
+    # identical underlying connector call with Watch's cap.
     import nutev.search.provider_orchestrator as po
 
     for provider, (fn_name, kwarg, cap) in _SHARED.items():
@@ -83,19 +86,14 @@ def test_shared_connectors_unify_identically_through_the_orchestrator(monkeypatc
             calls.append({"args": args, "kwargs": dict(kwargs)})
             return [{"title": "X", "url": "https://x", "year": 2026}]
 
-        # Watch path: _build_provider_map()[provider](query)
-        monkeypatch.setattr(wp, fn_name, spy)
-        watch_rows = wp._build_provider_map()[provider]("q")
-        watch_call = calls[-1]
+        monkeypatch.setattr(po, fn_name, spy)  # the shared binding both paths now use
 
-        # Orchestrator path: _registry()[provider](query, cap, context)
+        watch_rows = wp._build_provider_map()[provider]("q")  # watch → registry → spy
+        watch_call = calls[-1]
         calls.clear()
-        monkeypatch.setattr(po, fn_name, spy)
-        orch_rows = po._registry()[provider]("q", cap, {})
+        orch_rows = po._registry()[provider]("q", cap, {})     # registry directly → spy
         orch_call = calls[-1]
 
-        # Same underlying call → same rows: Phase 1 can route this provider
-        # through search_provider with no change in output.
         assert watch_rows == orch_rows, f"{provider}: rows differ"
         assert watch_call == orch_call == {"args": ("q",), "kwargs": {kwarg: cap}}, (
             f"{provider}: watch vs orchestrator connector call differs: {watch_call} != {orch_call}"

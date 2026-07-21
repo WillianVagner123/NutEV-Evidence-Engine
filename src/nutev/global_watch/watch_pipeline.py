@@ -28,10 +28,11 @@ from nutev.global_watch.watch_query_builder import build_watch_queries
 from nutev.global_watch.watch_scoring import score_watch_item
 from nutev.global_watch.watch_webhook import maybe_send_webhook
 from nutev.search.checkpoint import query_hash
-from nutev.search.europepmc import search_europepmc
-from nutev.search.openalex import search_openalex
 from nutev.search.pubmed import search_pubmed
 
+# europepmc/openalex/crossref dispatch through the orchestrator registry (Phase 1
+# of docs/REFACTOR_GLOBAL_WATCH_UNIFICATION.md); only pubmed is called directly.
+# search_crossref is still imported to gate whether the crossref entry is added.
 try:
     from nutev.search.crossref import search_crossref
 except Exception:  # pragma: no cover
@@ -591,13 +592,21 @@ def normalize_watch_hit(
 
 
 def _build_provider_map() -> dict[str, Any]:
+    # Phase 1 of docs/REFACTOR_GLOBAL_WATCH_UNIFICATION.md: europepmc/openalex/
+    # crossref reuse the orchestrator's connector definitions (one source of truth
+    # for the connector call), passing Watch's caps as the limit. Phase 0 proved
+    # these make the identical call, so output is unchanged. pubmed stays on
+    # search_pubmed — the orchestrator runs it via a different client (PubMedClient).
+    from nutev.search.provider_orchestrator import _registry
+
+    registry = _registry()
     provider_map: dict[str, Any] = {
         "pubmed": lambda query: search_pubmed(query, retmax=12),
-        "europepmc": lambda query: search_europepmc(query, page_size=12),
-        "openalex": lambda query: search_openalex(query, per_page=10),
+        "europepmc": lambda query: registry["europepmc"](query, 12, {}),
+        "openalex": lambda query: registry["openalex"](query, 10, {}),
     }
-    if search_crossref:
-        provider_map["crossref"] = lambda query: search_crossref(query, rows=10)
+    if search_crossref and "crossref" in registry:
+        provider_map["crossref"] = lambda query: registry["crossref"](query, 10, {})
     return provider_map
 
 

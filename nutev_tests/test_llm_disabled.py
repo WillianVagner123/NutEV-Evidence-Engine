@@ -7,9 +7,14 @@ def test_llm_enabled_without_key_does_not_break(tmp_path, monkeypatch):
     s = NutevSettings(project_root=tmp_path, web_enabled=False)
     for d in s.output_dirs.values(): d.mkdir(parents=True, exist_ok=True)
     logger = setup_logger(s.output_dirs['07_logs'])
-    monkeypatch.setattr(wp, "search_pubmed", lambda *a, **k: [])
-    monkeypatch.setattr(wp, "search_europepmc", lambda *a, **k: [])
-    monkeypatch.setattr(wp, "search_openalex", lambda *a, **k: [])
-    monkeypatch.setattr(wp, "search_crossref", lambda *a, **k: [])
+    # Mock connectors on both bindings — watch_pipeline (pubmed) and the
+    # orchestrator (europepmc/openalex/crossref go through it after the Phase-1
+    # dispatch unification). See docs/REFACTOR_GLOBAL_WATCH_UNIFICATION.md.
+    import nutev.search.provider_orchestrator as po
+    for mod in (wp, po):
+        monkeypatch.setattr(mod, "search_pubmed", lambda *a, **k: [], raising=False)
+        monkeypatch.setattr(mod, "search_europepmc", lambda *a, **k: [], raising=False)
+        monkeypatch.setattr(mod, "search_openalex", lambda *a, **k: [], raising=False)
+        monkeypatch.setattr(mod, "search_crossref", lambda *a, **k: [], raising=False)
     out = wp.run_global_watch(s, logger, since_days=7, mode='quick', resume=False, official_crawl=False, country_discovery=False, llm_enabled=True)
     assert out['rows'] > 0

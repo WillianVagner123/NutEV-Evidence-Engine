@@ -1,8 +1,8 @@
 # Phased Migration — Unify Global Watch with the search orchestrator
 
-> **Status: in progress.** Phase 0 (parity harness) is **done**; Phases 1–3
-> remain. Global Watch keeps a second, parallel search stack; merging it with the
-> main `search.provider_orchestrator` can change what runs, so it is phased and
+> **Status: in progress.** Phases 0–1 are **done**; Phases 2–3 remain. Global
+> Watch keeps a second, parallel search stack; merging it with the main
+> `search.provider_orchestrator` can change what runs, so it is phased and
 > parity-gated, not rewritten at once.
 >
 > - ✅ **Phase 0** — `nutev_tests/test_global_watch_dispatch_parity.py` + baseline.
@@ -10,6 +10,12 @@
 >   and **proves** the Phase-1 equivalence for europepmc/openalex/crossref (the
 >   orchestrator's registry makes the identical connector call once Watch's cap is
 >   passed). It also pins the key finding below.
+> - ✅ **Phase 1** — `watch_pipeline._build_provider_map` routes europepmc/openalex/
+>   crossref through the orchestrator registry (`_registry()`), so the two stacks
+>   share one connector-call definition; pubmed stays on `search_pubmed`. The
+>   Phase-0 harness confirms the dispatch output is byte-identical, and the watch
+>   tests that mock connectors were migrated to mock both bindings (the fallout
+>   below). Unused `search_europepmc`/`search_openalex` imports removed.
 >
 > **Phase 0 finding — pubmed diverges.** The orchestrator runs pubmed through
 > `PubMedClient().search(...)`, but Watch calls `search_pubmed(q, retmax=12)` — a
