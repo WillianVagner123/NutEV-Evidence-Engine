@@ -30,6 +30,13 @@ Two more no-key providers, same connector contract (timeout, exponential backoff
 - **ClinicalTrials.gov** — the v2 REST API. Adds clinical-trial registry evidence (distinct from journal articles); rows carry `registry_id` (NCT id), `article_type=clinical_trial`, and the lead sponsor as `source_institution`.
 - **SciELO** — SciELO has no clean public free-text search JSON API and scraping is out of scope, so this connector retrieves SciELO content through the **stable Crossref API restricted to SciELO's DOI prefix `10.1590`** (SciELO Brazil, the majority of the corpus). Coverage is prefix-scoped and honest about it; rows reuse the Crossref normalization, re-tagged `scielo`.
 
+## Semantic Scholar and arXiv
+
+Two more optional providers on the same connector contract (timeout, exponential backoff, reproducible single-page default with opt-in `NUTEV_SEMANTIC_SCHOLAR_MAX_RESULTS` / `NUTEV_ARXIV_MAX_RESULTS`), declared in the registry and wired into the orchestrator but **off the default run set** (enable per workstream via `source_priority`, or force off with `NUTEV_SKIP_SEMANTIC_SCHOLAR=1` / `NUTEV_SKIP_ARXIV=1`):
+
+- **Semantic Scholar** — broad academic coverage via the public Graph API. A key is **optional**: set `S2_API_KEY` to raise the shared rate limit. Without one the connector still works but fails safe (returns `[]`) on throttling. Rows normalize external ids (DOI/PubMed/PubMedCentral) and prefer the open-access PDF url when present.
+- **arXiv** — preprint coverage via the public arXiv export API (**no key required**). The API returns Atom XML, parsed with the Python stdlib (`xml.etree.ElementTree`) so no extra dependency is added. Rows carry `article_type=preprint` and the arXiv id as `registry_id`.
+
 ## Optional Google / gray literature
 
 Google Programmable Search Engine, SerpAPI and Brave are optional gray-literature providers. They are skipped unless their API keys are configured. A Google quota/configuration failure does not invalidate the scientific search; PubMed, Europe PMC, OpenAlex, Crossref and official sources continue.

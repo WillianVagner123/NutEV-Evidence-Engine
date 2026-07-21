@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from nutev.engine.events import emit_event, write_event
+from nutev.search.arxiv import search_arxiv
 from nutev.search.base import ProviderResult
 from nutev.search.brave_optional import search_brave
 from nutev.search.checkpoint import query_hash
@@ -20,6 +21,7 @@ from nutev.search.official_sources import manifest_sources
 from nutev.search.openalex import search_openalex
 from nutev.search.pubmed import PubMedClient
 from nutev.search.scielo import search_scielo
+from nutev.search.semantic_scholar import search_semantic_scholar
 from nutev.search.serpapi_optional import search_serpapi
 
 OPTIONAL_PROVIDERS = {"google", "google_pse", "serpapi", "brave"}
@@ -81,6 +83,8 @@ def _registry() -> dict[str, Callable[[str, int, dict[str, Any]], ProviderResult
         "doaj": lambda q, limit, ctx: search_doaj(q, page_size=limit),
         "clinicaltrials": lambda q, limit, ctx: search_clinicaltrials(q, page_size=limit),
         "scielo": lambda q, limit, ctx: search_scielo(q, rows=limit),
+        "semantic_scholar": lambda q, limit, ctx: search_semantic_scholar(q, page_size=limit),
+        "arxiv": lambda q, limit, ctx: search_arxiv(q, page_size=limit),
         "google": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "google_pse": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "serpapi": lambda q, limit, ctx: search_serpapi(q, limit=limit, context=ctx),
