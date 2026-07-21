@@ -29,3 +29,16 @@ def test_default_workstreams_declare_and_support_doaj_and_scielo():
         for provider in _DEFAULT_BIBLIOGRAPHIC:
             assert provider in priority, f"{ws} no longer declares {provider}"
             assert provider in supported, f"{ws} declares {provider} but it is not dispatchable"
+
+
+def test_default_workstreams_declare_no_phantom_providers():
+    """Every provider a default workstream declares must be dispatchable — no
+    phantom entries (e.g. the removed google_cse/ddg_web) that log 'unsupported'
+    and silently do nothing on every run."""
+    taxonomy = _taxonomy()
+    provider_map = _provider_map()
+    workstreams = taxonomy.get("workstreams", {})
+    for ws in _WORKSTREAMS:
+        priority = workstreams[ws].get("source_priority", [])
+        _, unsupported = _split_supported_providers(priority, provider_map)
+        assert unsupported == [], f"{ws} declares undispatchable providers: {unsupported}"

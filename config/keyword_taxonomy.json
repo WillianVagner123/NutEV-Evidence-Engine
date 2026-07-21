@@ -791,8 +791,7 @@
       ],
       "source_priority": [
         "official_web",
-        "google_cse",
-        "ddg_web",
+        "google_pse",
         "pubmed",
         "europepmc",
         "openalex",
@@ -876,10 +875,9 @@
       ],
       "source_priority": [
         "official_web",
-        "google_cse",
+        "google_pse",
         "pubmed",
         "europepmc",
-        "ddg_web",
         "openalex",
         "crossref",
         "doaj",
@@ -965,8 +963,7 @@
       "source_priority": [
         "pubmed",
         "europepmc",
-        "google_cse",
-        "ddg_web",
+        "google_pse",
         "openalex",
         "crossref",
         "doaj",
@@ -1053,8 +1050,7 @@
         "document_types"
       ],
       "source_priority": [
-        "google_cse",
-        "ddg_web",
+        "google_pse",
         "pubmed",
         "europepmc",
         "openalex",
