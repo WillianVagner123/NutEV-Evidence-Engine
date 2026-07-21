@@ -51,9 +51,11 @@ def test_watch_scores_diabetes_remission_as_nutmev_priority():
 
 def test_watch_pipeline_uses_real_provider_mock(tmp_path, monkeypatch):
     monkeypatch.setattr(wp, "search_pubmed", lambda q, retmax=12: [{"title": "Guideline Update", "url": "https://real.org/a", "doi": "10.1/a", "year": 2026}])
-    monkeypatch.setattr(wp, "search_europepmc", lambda q, page_size=12: [])
-    monkeypatch.setattr(wp, "search_openalex", lambda q, per_page=10: [])
-    monkeypatch.setattr(wp, "search_crossref", lambda q, rows=10: [])
+    import nutev.search.provider_orchestrator as po
+    for mod in (wp, po):  # europepmc/openalex/crossref dispatch via the orchestrator (Phase 1)
+        monkeypatch.setattr(mod, "search_europepmc", lambda *a, **k: [], raising=False)
+        monkeypatch.setattr(mod, "search_openalex", lambda *a, **k: [], raising=False)
+        monkeypatch.setattr(mod, "search_crossref", lambda *a, **k: [], raising=False)
     s = _mk_settings(tmp_path)
     out = wp.run_global_watch(s, setup_logger(s.output_dirs["07_logs"]), 7, "quick", False, False, False, False)
     assert out["rows"] > 0
@@ -65,10 +67,12 @@ def test_watch_pipeline_uses_real_provider_mock(tmp_path, monkeypatch):
 def test_watch_pipeline_no_provider_failure(tmp_path, monkeypatch):
     def boom(*args, **kwargs):
         raise RuntimeError("down")
+    import nutev.search.provider_orchestrator as po
     monkeypatch.setattr(wp, "search_pubmed", boom)
-    monkeypatch.setattr(wp, "search_europepmc", boom)
-    monkeypatch.setattr(wp, "search_openalex", boom)
-    monkeypatch.setattr(wp, "search_crossref", boom)
+    for mod in (wp, po):  # europepmc/openalex/crossref dispatch via the orchestrator (Phase 1)
+        monkeypatch.setattr(mod, "search_europepmc", boom, raising=False)
+        monkeypatch.setattr(mod, "search_openalex", boom, raising=False)
+        monkeypatch.setattr(mod, "search_crossref", boom, raising=False)
     s = _mk_settings(tmp_path)
     out = wp.run_global_watch(s, setup_logger(s.output_dirs["07_logs"]), 7, "quick", False, False, False, False)
     assert out["rows"] >= 1
@@ -92,9 +96,11 @@ def test_since_days_in_provider_queries(tmp_path, monkeypatch):
         seen["q"] = q
         return []
     monkeypatch.setattr(wp, "search_pubmed", fake_pubmed)
-    monkeypatch.setattr(wp, "search_europepmc", lambda *a, **k: [])
-    monkeypatch.setattr(wp, "search_openalex", lambda *a, **k: [])
-    monkeypatch.setattr(wp, "search_crossref", lambda *a, **k: [])
+    import nutev.search.provider_orchestrator as po
+    for mod in (wp, po):  # europepmc/openalex/crossref dispatch via the orchestrator (Phase 1)
+        monkeypatch.setattr(mod, "search_europepmc", lambda *a, **k: [], raising=False)
+        monkeypatch.setattr(mod, "search_openalex", lambda *a, **k: [], raising=False)
+        monkeypatch.setattr(mod, "search_crossref", lambda *a, **k: [], raising=False)
     sconf = _mk_settings(tmp_path)
     wp.run_global_watch(sconf, setup_logger(sconf.output_dirs["07_logs"]), 7, "quick", False, False, False, False)
     assert "Date - Publication" in seen["q"]

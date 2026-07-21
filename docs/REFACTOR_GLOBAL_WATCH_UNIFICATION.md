@@ -1,9 +1,28 @@
 # Phased Migration — Unify Global Watch with the search orchestrator
 
-> **Status: planned (not started).** Design/migration plan, not executed work.
-> Global Watch keeps a second, parallel search stack; merging it with the main
-> `search.provider_orchestrator` changes what queries run, so it must be phased
-> and parity-gated, not rewritten at once.
+> **Status: in progress.** Phases 0–1 are **done**; Phases 2–3 remain. Global
+> Watch keeps a second, parallel search stack; merging it with the main
+> `search.provider_orchestrator` can change what runs, so it is phased and
+> parity-gated, not rewritten at once.
+>
+> - ✅ **Phase 0** — `nutev_tests/test_global_watch_dispatch_parity.py` + baseline.
+>   It locks `run_watch_provider`'s dispatch → normalized-hits output per provider,
+>   and **proves** the Phase-1 equivalence for europepmc/openalex/crossref (the
+>   orchestrator's registry makes the identical connector call once Watch's cap is
+>   passed). It also pins the key finding below.
+> - ✅ **Phase 1** — `watch_pipeline._build_provider_map` routes europepmc/openalex/
+>   crossref through the orchestrator registry (`_registry()`), so the two stacks
+>   share one connector-call definition; pubmed stays on `search_pubmed`. The
+>   Phase-0 harness confirms the dispatch output is byte-identical, and the watch
+>   tests that mock connectors were migrated to mock both bindings (the fallout
+>   below). Unused `search_europepmc`/`search_openalex` imports removed.
+>
+> **Phase 0 finding — pubmed diverges.** The orchestrator runs pubmed through
+> `PubMedClient().search(...)`, but Watch calls `search_pubmed(q, retmax=12)` — a
+> different implementation. So Phase 1 can safely route **europepmc, openalex and
+> crossref** through `search_provider` (identical output, proven by the harness),
+> but **pubmed must stay on `search_pubmed`** (or its unification becomes an
+> explicit, measured product decision — it would change results).
 
 ## Why this exists
 
@@ -63,14 +82,31 @@ remaining duplication (dispatch, instrumentation, and eventually query building)
   and the digest. **Acceptance:** harness green; snapshot committed as reference.
 
 ### Phase 1 — Dispatch through `search_provider` (mechanism only)
-- Replace `_build_provider_map()` + `run_watch_provider()` internals so each
-  provider call goes through `search.provider_orchestrator.search_provider(...)`,
-  passing Watch's existing caps as the `limit` and a Watch-specific
-  `checkpoint_dir`/`logs_dir`. Keep Watch's query builder untouched.
+- Route **europepmc, openalex and crossref** through
+  `search.provider_orchestrator.search_provider(...)`, passing Watch's existing
+  caps (12 / 10 / 10) as the `limit`. Phase 0 proved these three make the
+  identical connector call, so output is unchanged. Keep Watch's query builder
+  untouched.
+- **Keep pubmed on `search_pubmed(q, retmax=12)`** — the orchestrator's
+  `PubMedClient` path is a different implementation (Phase 0 finding); unifying it
+  is deferred to the Phase-3 product decision. So `_build_provider_map` retains
+  its pubmed entry and only the other three change.
 - Benefit: one instrumentation path (events, `provider_performance.csv`,
-  `provider_failures.csv`, retry/backoff, retrieval-date stamping from C8) for
-  both stacks. **Acceptance:** hits/scoring/digest byte-identical to Phase 0;
-  `run_watch_provider` no longer imports low-level `search_*` directly.
+  `provider_failures.csv`, retry/backoff, retrieval-date stamping from C8) for the
+  three unified providers. **Acceptance:** the Phase-0 harness stays green (the
+  three shared connectors' dispatch output is unchanged; pubmed untouched).
+
+> **Phase-1 fallout to handle first (found while attempting it).** Routing the
+> three connectors through the orchestrator registry changes which *binding* is
+> called — the orchestrator's `search_*` import, not `watch_pipeline`'s. Real-run
+> output is unchanged (Phase 0 proved the call is identical), but existing watch
+> tests that mock `watch_pipeline.search_europepmc` (etc.) via `from-import`
+> binding stop intercepting and fall through to the network. So Phase 1 must land
+> **with** a test-mocking migration: mock the connector at a shared point (the
+> source module or `requests`), or mock both bindings — the Phase-0 harness already
+> does the latter (`test_global_watch_dispatch_parity._dispatch`). Do not merge the
+> dispatch change until every watch test that mocks a connector is migrated, or CI
+> will make real network calls.
 
 ### Phase 2 — Shared result normalization
 - Route Watch results through the same normalization the orchestrator/connectors
