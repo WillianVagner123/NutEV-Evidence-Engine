@@ -12,6 +12,7 @@ from nutev.search.base import ProviderResult
 from nutev.search.brave_optional import search_brave
 from nutev.search.checkpoint import query_hash
 from nutev.search.crossref import search_crossref
+from nutev.search.doaj import search_doaj
 from nutev.search.europepmc import search_europepmc
 from nutev.search.google_pse import search_google_pse
 from nutev.search.official_sources import manifest_sources
@@ -75,6 +76,7 @@ def _registry() -> dict[str, Callable[[str, int, dict[str, Any]], ProviderResult
         "europepmc": lambda q, limit, ctx: search_europepmc(q, page_size=limit),
         "openalex": lambda q, limit, ctx: search_openalex(q, per_page=limit),
         "crossref": lambda q, limit, ctx: search_crossref(q, rows=limit),
+        "doaj": lambda q, limit, ctx: search_doaj(q, page_size=limit),
         "google": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "google_pse": lambda q, limit, ctx: search_google_pse(q, limit=limit, context=ctx),
         "serpapi": lambda q, limit, ctx: search_serpapi(q, limit=limit, context=ctx),

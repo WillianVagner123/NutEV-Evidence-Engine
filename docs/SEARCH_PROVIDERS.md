@@ -19,6 +19,10 @@ Without an API key, NutEV sleeps about 0.40 seconds between NCBI requests. With 
 
 These scientific providers are independent of Google. Each provider has timeout/retry protection and failures are converted into provider failure events instead of crashing the pipeline. Use `OPENALEX_MAILTO` and `CROSSREF_MAILTO` where possible.
 
+## DOAJ (Directory of Open Access Journals)
+
+Open-access bibliographic provider via the public DOAJ REST API — **no API key required**. It follows the same connector contract as Europe PMC/OpenAlex/Crossref (timeout, exponential backoff, a reproducible single-page default with opt-in bounded pagination via `NUTEV_DOAJ_MAX_RESULTS`). It is declared in `config/provider_registry.json` and wired into the orchestrator, but is **not** in the default run set — enable it by adding `"doaj"` to a workstream's `source_priority` (or set `NUTEV_SKIP_DOAJ=1` to force it off). Rows are normalized to the shared schema and flagged `is_open_access`.
+
 ## Optional Google / gray literature
 
 Google Programmable Search Engine, SerpAPI and Brave are optional gray-literature providers. They are skipped unless their API keys are configured. A Google quota/configuration failure does not invalidate the scientific search; PubMed, Europe PMC, OpenAlex, Crossref and official sources continue.
