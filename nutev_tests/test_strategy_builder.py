@@ -12,6 +12,7 @@ from nutev.search.strategy_builder import (
     build_query,
     parse_concepts,
     parse_picos,
+    picos_from_text,
 )
 
 
@@ -108,3 +109,43 @@ def test_unknown_provider_or_breadth_raises():
 
 def test_empty_spec_yields_empty_expression():
     assert build_query(StrategySpec(concepts=[]), "pubmed", "balanced") == ""
+
+
+# --------------------------------------------------------------------------- #
+# picos_from_text — the streamlit-free input assembly behind the dashboard page.
+# --------------------------------------------------------------------------- #
+
+def test_picos_from_text_splits_synonyms_and_feeds_build_all():
+    spec_dict = picos_from_text(
+        population="adults\nobesity",
+        intervention="dietary adherence; meal planning",
+        outcome="weight loss",
+        year_from=2015,
+        year_to=2025,
+        languages="eng, por",
+        publication_types="Guideline",
+    )
+    assert spec_dict["population"] == ["adults", "obesity"]        # newline split
+    assert spec_dict["intervention"] == ["dietary adherence", "meal planning"]  # semicolon split
+    assert spec_dict["languages"] == ["eng", "por"]               # comma split for langs
+    assert spec_dict["year_from"] == 2015 and spec_dict["year_to"] == 2025
+    grid = build_all(parse_picos(spec_dict))
+    assert '"dietary adherence"[tiab]' in grid["pubmed"]["balanced"]
+    assert "english[lang]" in grid["pubmed"]["specific"]
+
+
+def test_picos_from_text_omits_empty_blocks_and_zero_years():
+    spec_dict = picos_from_text(population="adults", intervention="", year_from=0, year_to=0)
+    assert "population" in spec_dict
+    assert "intervention" not in spec_dict   # blank block dropped
+    assert "year_from" not in spec_dict      # 0 treated as unset
+    assert "year_to" not in spec_dict
+
+
+def test_picos_from_text_all_blank_is_empty():
+    assert picos_from_text() == {}
+
+
+def test_picos_from_text_preserves_commas_inside_terms():
+    spec_dict = picos_from_text(population="type 2 diabetes, mellitus")
+    assert spec_dict["population"] == ["type 2 diabetes, mellitus"]  # comma kept in a P/I/C/O/S term

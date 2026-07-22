@@ -129,7 +129,7 @@ def run_dashboard(project_root: Path) -> None:
     st.sidebar.caption("Evidence Engine for Lifestyle Nutrition")
     page = st.sidebar.radio(
         "Navigation",
-        ["Home", "Evidence Engine", "Audit Engine", "Recommendations", "Human Review", "Provider Settings", "Export Center", "Logs", "Methods"],
+        ["Home", "Evidence Engine", "Search Strategy", "Audit Engine", "Recommendations", "Human Review", "Provider Settings", "Export Center", "Logs", "Methods"],
     )
     st.sidebar.markdown("---")
     st.sidebar.caption(f"Project root: `{project_root}`")
@@ -165,6 +165,71 @@ def run_dashboard(project_root: Path) -> None:
                 empty_state("Convergence matrix unavailable", "Run the scientific rigor exports to populate this table.")
             else:
                 st.dataframe(convergence, use_container_width=True)
+
+    elif page == "Search Strategy":
+        render_header("Search Strategy Builder", "Question / PICOS -> the exact expression sent to each base (C4)")
+        info_banner(
+            "Transparent, question-first strategy authoring. One synonym per line; "
+            "synonyms are OR-ed within a block and AND-ed across blocks. This is "
+            "additive to the taxonomy-driven querypacks the pipeline already runs."
+        )
+        import json
+
+        from nutev.search.strategy_builder import BREADTHS, build_all, picos_from_text
+
+        col_a, col_b = st.columns(2)
+        with col_a:
+            population = st.text_area("Population / Patient", placeholder="adults\nobesity", height=90)
+            intervention = st.text_area("Intervention", placeholder="dietary adherence\nmeal planning", height=90)
+            exposure = st.text_area("Exposure (PECO)", placeholder="ultra-processed food", height=90)
+        with col_b:
+            comparison = st.text_area("Comparison", placeholder="usual care", height=90)
+            outcome = st.text_area("Outcome", placeholder="weight loss", height=90)
+            context = st.text_area("Context / Setting", placeholder="primary care\nBrazil", height=90)
+
+        col_y1, col_y2, col_y3, col_y4 = st.columns(4)
+        with col_y1:
+            year_from = st.number_input("Year from", min_value=0, max_value=3000, value=0, step=1)
+        with col_y2:
+            year_to = st.number_input("Year to", min_value=0, max_value=3000, value=0, step=1)
+        with col_y3:
+            languages = st.text_input("Languages", placeholder="eng, por, spa")
+        with col_y4:
+            publication_types = st.text_input("Publication types", placeholder="Guideline")
+
+        spec_dict = picos_from_text(
+            population=population,
+            intervention=intervention,
+            exposure=exposure,
+            comparison=comparison,
+            outcome=outcome,
+            context=context,
+            year_from=year_from,
+            year_to=year_to,
+            languages=languages,
+            publication_types=publication_types,
+        )
+
+        concept_keys = [k for k in ("population", "intervention", "exposure", "comparison", "outcome", "context") if k in spec_dict]
+        if not concept_keys:
+            empty_state("No concepts yet", "Add at least one block above (e.g. Population or Intervention) to build a strategy.")
+        else:
+            from nutev.search.strategy_builder import parse_picos
+
+            grid = build_all(parse_picos(spec_dict))
+            st.caption("broad = core blocks only (recall) - balanced = all blocks - specific = balanced + filters (precision)")
+            for provider, by_breadth in grid.items():
+                st.subheader(provider)
+                for breadth in BREADTHS:
+                    expression = by_breadth.get(breadth) or "(empty)"
+                    st.markdown(f"**{breadth}**")
+                    st.code(expression, language="text")
+            st.download_button(
+                "Download strategy grid (JSON)",
+                json.dumps(grid, ensure_ascii=False, indent=2).encode("utf-8"),
+                file_name="NUTEV_SEARCH_STRATEGY.json",
+                mime="application/json",
+            )
 
     elif page == "Audit Engine":
         render_header("Audit Engine", "Document to claim traceability and anti-hallucination safeguards")
