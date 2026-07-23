@@ -69,6 +69,22 @@ def test_busca2b_semantic_terms_include_food_as_medicine_program_variants() -> N
     assert "fruit and vegetable voucher program" in terms
 
 
+def test_food_access_navigation_terms_reach_high_priority_querypacks() -> None:
+    busca1_terms = {term.lower() for term in semantic_terms("busca1", min_priority=5)}
+    busca2b_terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
+    busca2b_document_terms = {
+        term.lower()
+        for term in semantic_terms("busca2b", field="document_terms", min_priority=5)
+    }
+
+    assert "food resource navigation" in busca1_terms
+    assert "fresh produce prescription" in busca1_terms
+    assert "medically tailored nutrition" in busca2b_terms
+    assert "nutrition assistance intervention" in busca2b_terms
+    assert "food resource navigation program evaluation" in busca2b_document_terms
+    assert "medically tailored nutrition intervention trial" in busca2b_document_terms
+
+
 def test_busca2b_semantic_terms_include_group_visit_care_delivery() -> None:
     terms = {term.lower() for term in semantic_terms("busca2b", min_priority=5)}
 
