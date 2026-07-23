@@ -1,0 +1,118 @@
+{
+  "version_note": "Focused NutMEV search expansion for dietary habit formation, lapse management, relapse prevention, and long-term adherence maintenance; loaded after keyword_taxonomy.json without replacing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "habit_relapse_maintenance": [
+        "habit formation",
+        "healthy habit formation",
+        "dietary habit formation",
+        "nutrition habit formation",
+        "eating habit formation",
+        "habit-based intervention",
+        "habit based intervention",
+        "habit strength",
+        "habit automaticity",
+        "self-regulation of eating",
+        "dietary self-regulation",
+        "dietary self regulation",
+        "eating self-regulation",
+        "eating self regulation",
+        "dietary lapse",
+        "dietary lapses",
+        "lapse management",
+        "lapse recovery",
+        "relapse prevention",
+        "dietary relapse prevention",
+        "weight regain prevention",
+        "weight regain management",
+        "maintenance intervention",
+        "dietary maintenance intervention",
+        "adherence maintenance",
+        "long-term dietary adherence",
+        "long term dietary adherence",
+        "long-term behavior maintenance",
+        "long term behavior maintenance",
+        "long-term behaviour maintenance",
+        "long term behaviour maintenance"
+      ]
+    }
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "habit formation",
+      "dietary habit formation",
+      "habit-based intervention",
+      "habit based intervention",
+      "dietary lapse",
+      "lapse management",
+      "relapse prevention",
+      "dietary relapse prevention",
+      "adherence maintenance",
+      "long-term dietary adherence",
+      "long term dietary adherence"
+    ],
+    "weight": [
+      "weight regain prevention",
+      "weight regain management",
+      "weight loss maintenance",
+      "long-term weight loss maintenance",
+      "long term weight loss maintenance"
+    ]
+  },
+  "workstreams": {
+    "busca2b": {
+      "focus_terms": [
+        "habit formation",
+        "dietary habit formation",
+        "nutrition habit formation",
+        "habit-based intervention",
+        "habit based intervention",
+        "dietary lapse",
+        "dietary lapses",
+        "lapse management",
+        "relapse prevention",
+        "dietary relapse prevention",
+        "adherence maintenance",
+        "long-term dietary adherence",
+        "long term dietary adherence"
+      ],
+      "web_query_hints": [
+        "habit formation intervention",
+        "dietary habit formation intervention",
+        "habit-based intervention trial",
+        "habit based intervention trial",
+        "dietary lapse management trial",
+        "relapse prevention dietary intervention",
+        "adherence maintenance intervention",
+        "long-term dietary adherence intervention",
+        "long term dietary adherence intervention"
+      ],
+      "document_terms": [
+        "habit formation intervention",
+        "habit-based intervention trial",
+        "habit based intervention trial",
+        "relapse prevention intervention",
+        "dietary adherence maintenance trial",
+        "long-term adherence study",
+        "long term adherence study"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "habit strength",
+        "habit automaticity",
+        "dietary habit formation",
+        "self-regulation of eating",
+        "lapse management",
+        "relapse prevention"
+      ],
+      "web_query_hints": [
+        "dietary habit strength scale",
+        "self-regulation of eating questionnaire",
+        "dietary lapse management questionnaire",
+        "relapse prevention framework nutrition",
+        "habit formation framework nutrition"
+      ]
+    }
+  }
+}
