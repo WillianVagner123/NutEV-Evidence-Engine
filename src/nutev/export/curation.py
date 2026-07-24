@@ -367,6 +367,112 @@ _PRIORITY_TERMS = [
     "self-efficacy",
 ]
 
+_PRIORITY_ANCHOR_TERMS = [
+    "obesity",
+    "obesidade",
+    "overweight",
+    "adiposity",
+    "cardiometabolic",
+    "cardiovascular risk",
+    "diabetes",
+    "type 2 diabetes",
+    "hypertension",
+    "dyslipidemia",
+    "dyslipidaemia",
+    "metabolic syndrome",
+    "prediabetes",
+    "insulin resistance",
+    "masld",
+    "nafld",
+    "mafld",
+    "mash",
+    "nash",
+    "fatty liver",
+    "steatotic liver disease",
+    "steatohepatitis",
+    "nutrition",
+    "dietary",
+    "diet",
+    "food",
+    "food-based",
+    "food based",
+    "mediterranean",
+    "dash",
+    "mind",
+    "plant-based",
+    "plant based",
+    "eat-lancet",
+    "lifestyle medicine",
+    "culinary medicine",
+    "food literacy",
+    "food and nutrition literacy",
+    "nutrition literacy",
+    "food agency",
+    "food is medicine",
+    "food as medicine",
+    "produce prescription",
+    "healthy food prescription",
+    "medically tailored meal",
+    "medically tailored grocery",
+    "teaching kitchen",
+    "nutrition security",
+    "food environment",
+    "healthy food access",
+    "commensality",
+    "meal planning",
+]
+
+_PRIORITY_EVIDENCE_TERMS = [
+    "guideline",
+    "guidelines",
+    "clinical practice guideline",
+    "practice advisory",
+    "practice guidance",
+    "guidance statement",
+    "guideline update",
+    "clinical practice update",
+    "best practice advice",
+    "living guideline",
+    "consensus",
+    "consensus statement",
+    "consensus report",
+    "consensus guidance",
+    "scientific statement",
+    "scientific advisory",
+    "policy statement",
+    "position statement",
+    "position paper",
+    "joint statement",
+    "clinical guidance",
+    "clinical decision pathway",
+    "standards of care",
+    "standards of medical care",
+    "nutrition practice guideline",
+    "dietetic practice guideline",
+    "systematic review",
+    "meta-analysis",
+    "meta analysis",
+    "network meta-analysis",
+    "network meta analysis",
+    "umbrella review",
+    "overview of reviews",
+    "review of reviews",
+    "living systematic review",
+    "rapid review",
+    "scoping review",
+    "integrative review",
+    "randomized controlled trial",
+    "controlled trial",
+    "pragmatic trial",
+    "framework",
+    "implementation framework",
+    "implementation evaluation",
+    "process evaluation",
+    "instrument",
+    "questionnaire",
+    "scale",
+]
+
 _PRIORITY_TEXT_FIELDS = (
     "title",
     "abstract",
@@ -449,6 +555,10 @@ def _normalize_priority_text(value: object) -> str:
     return _NON_ALNUM_RE.sub(" ", text).strip()
 
 
+def _matches_priority_term(normalized_text: str, terms: list[str]) -> bool:
+    return any(_normalize_priority_text(term) in normalized_text for term in terms)
+
+
 def _hash_fallback(row: dict) -> str:
     payload = json.dumps(row, ensure_ascii=False, sort_keys=True, default=str)
     return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:16]  # noqa: S324
@@ -501,10 +611,17 @@ def _is_prioritized(row: dict) -> bool:
     normalized_text = _normalize_priority_text(text)
     editorial_tier = _as_text(row.get("editorial_priority_tier")).lower()
     high_value_editorial = editorial_tier in _A1_PROXY_TIERS
-    matches_priority_scope = any(
-        _normalize_priority_text(term) in normalized_text for term in _PRIORITY_TERMS
+    matches_priority_term = _matches_priority_term(normalized_text, _PRIORITY_TERMS)
+    matches_anchor_scope = _matches_priority_term(normalized_text, _PRIORITY_ANCHOR_TERMS)
+    matches_evidence_signal = _matches_priority_term(normalized_text, _PRIORITY_EVIDENCE_TERMS)
+    matches_priority_scope = (
+        matches_priority_term
+        and matches_anchor_scope
+        and (matches_evidence_signal or score >= 10)
     )
-    return (score >= 8 and matches_priority_scope) or (score >= 7 and high_value_editorial)
+    return (score >= 8 and matches_priority_scope) or (
+        score >= 7 and high_value_editorial and matches_anchor_scope
+    )
 
 
 def _is_truthy(value: object) -> bool:
