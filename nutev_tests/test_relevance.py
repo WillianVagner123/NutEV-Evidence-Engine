@@ -241,3 +241,47 @@ def test_configured_nutrition_security_screening_bonus_gains_busca1_priority() -
     )
 
     assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_precision_nutrition_bonus_gains_busca2b_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Precision nutrition and personalized dietary intervention for adults with obesity and type 2 diabetes",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    baseline = score_record(
+        {
+            "title": "Dietary intervention for adults with obesity and type 2 diabetes",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
+
+
+def test_configured_tailored_dietary_intervention_bonus_gains_busca2b_priority() -> None:
+    scoring_rules = load_json(Path("config/scoring_rules.json"))
+    boosted = score_record(
+        {
+            "title": "Tailored dietary intervention to improve adherence and cardiometabolic risk in obesity",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+    baseline = score_record(
+        {
+            "title": "Dietary intervention to improve adherence and cardiometabolic risk in obesity",
+            "source": "pubmed",
+        },
+        scoring_rules,
+        "busca2b",
+    )
+
+    assert float(boosted["relevance_score"]) > float(baseline["relevance_score"])
