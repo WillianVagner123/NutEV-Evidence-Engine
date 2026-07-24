@@ -1,0 +1,91 @@
+{
+  "version_note": "2026-07-13 cardiometabolic adiposity and multimorbidity expansion for busca2a/b",
+  "clinical": {
+    "obesity": [
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "abdominal obesity",
+      "central obesity",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio",
+      "adiposopathy",
+      "sick fat disease",
+      "metabolically unhealthy obesity",
+      "metabolically healthy obesity"
+    ],
+    "cvd": [
+      "cardiometabolic disease",
+      "cardiometabolic diseases",
+      "cardiometabolic health",
+      "cardiometabolic multimorbidity",
+      "cardiometabolic comorbidity",
+      "obesity-related cardiometabolic complications",
+      "obesity related cardiometabolic complications"
+    ],
+    "metabolic_syndrome": [
+      "metabolic syndrome x",
+      "insulin resistance syndrome",
+      "cardiometabolic syndrome"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "central adiposity",
+      "abdominal adiposity",
+      "visceral adiposity",
+      "abdominal obesity",
+      "central obesity",
+      "waist-to-height ratio",
+      "waist to height ratio",
+      "waist-to-hip ratio",
+      "waist to hip ratio",
+      "waist-to-height ratio reduction",
+      "waist circumference reduction"
+    ],
+    "diet_quality_adherence": [
+      "cardiometabolic lifestyle intervention adherence",
+      "cardiometabolic lifestyle program adherence"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "central adiposity",
+        "abdominal adiposity",
+        "visceral adiposity",
+        "abdominal obesity",
+        "cardiometabolic multimorbidity",
+        "cardiometabolic comorbidity",
+        "obesity-related cardiometabolic complications"
+      ],
+      "web_query_hints": [
+        "central adiposity guideline",
+        "abdominal obesity guideline",
+        "cardiometabolic multimorbidity guideline",
+        "obesity-related cardiometabolic complications guideline",
+        "waist-to-height ratio guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "central adiposity",
+        "abdominal adiposity",
+        "visceral adiposity",
+        "abdominal obesity",
+        "cardiometabolic multimorbidity",
+        "cardiometabolic comorbidity",
+        "obesity-related cardiometabolic complications"
+      ],
+      "web_query_hints": [
+        "central adiposity lifestyle intervention",
+        "abdominal obesity lifestyle intervention",
+        "visceral adiposity dietary intervention",
+        "cardiometabolic multimorbidity lifestyle intervention",
+        "waist-to-height ratio diet trial"
+      ]
+    }
+  }
+}
