@@ -131,6 +131,33 @@
         "peer led nutrition intervention",
         "peer support group",
         "peer support groups"
+      ],
+      "culturally_tailored_equity": [
+        "culturally tailored nutrition",
+        "culturally tailored dietary intervention",
+        "culturally tailored lifestyle intervention",
+        "culturally adapted nutrition",
+        "culturally adapted dietary intervention",
+        "culturally adapted lifestyle intervention",
+        "culturally appropriate nutrition",
+        "culturally appropriate dietary counseling",
+        "culturally appropriate dietary counselling",
+        "culturally responsive nutrition",
+        "culturally responsive dietary intervention",
+        "culture-centered nutrition",
+        "culture centered nutrition",
+        "cultural tailoring",
+        "cultural adaptation",
+        "cultural adaptation of diet",
+        "cultural adaptation of lifestyle intervention",
+        "community-based nutrition intervention",
+        "community based nutrition intervention",
+        "equity-focused nutrition intervention",
+        "equity focused nutrition intervention",
+        "health equity nutrition intervention",
+        "food sovereignty",
+        "traditional foods intervention",
+        "traditional food intervention"
       ]
     }
   },
@@ -251,6 +278,19 @@
       "cooking self efficacy scale",
       "meal preparation questionnaire",
       "food preparation skills questionnaire"
+    ],
+    "equity_cultural_fit": [
+      "culturally tailored nutrition",
+      "culturally tailored dietary intervention",
+      "culturally adapted nutrition",
+      "culturally adapted dietary intervention",
+      "culturally appropriate nutrition",
+      "culturally responsive nutrition",
+      "equity-focused nutrition intervention",
+      "health equity nutrition intervention",
+      "community-based nutrition intervention",
+      "food sovereignty",
+      "traditional foods intervention"
     ]
   },
   "workstreams": {
@@ -272,7 +312,13 @@
         "healthy food access intervention",
         "screening and referral",
         "social needs referral",
-        "community food referral"
+        "community food referral",
+        "culturally tailored nutrition",
+        "culturally appropriate dietary counseling",
+        "culturally appropriate dietary counselling",
+        "culturally responsive nutrition",
+        "food sovereignty",
+        "traditional foods intervention"
       ],
       "web_query_hints": [
         "food is medicine implementation report",
@@ -283,7 +329,10 @@
         "nutrition security intervention report",
         "food insecurity screening referral",
         "food pantry referral program",
-        "community food referral program"
+        "community food referral program",
+        "culturally tailored nutrition guideline",
+        "culturally adapted dietary intervention report",
+        "traditional foods nutrition program"
       ],
       "document_terms": [
         "implementation report",
@@ -375,7 +424,14 @@
         "peer led lifestyle intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "culturally tailored dietary intervention",
+        "culturally adapted dietary intervention",
+        "culturally responsive dietary intervention",
+        "equity-focused nutrition intervention",
+        "health equity nutrition intervention",
+        "community-based nutrition intervention",
+        "community based nutrition intervention"
       ],
       "web_query_hints": [
         "diabetes remission trial",
@@ -404,7 +460,10 @@
         "group-based lifestyle intervention cardiometabolic",
         "group-based nutrition intervention obesity",
         "peer-led nutrition intervention diabetes",
-        "peer-led lifestyle intervention weight management"
+        "peer-led lifestyle intervention weight management",
+        "culturally tailored dietary intervention diabetes",
+        "culturally adapted nutrition intervention obesity",
+        "health equity nutrition intervention cardiometabolic"
       ],
       "document_terms": [
         "implementation trial",
@@ -445,7 +504,11 @@
         "group based nutrition intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "culturally tailored nutrition",
+        "cultural adaptation of diet",
+        "culturally appropriate nutrition",
+        "culturally responsive nutrition"
       ],
       "web_query_hints": [
         "food literacy questionnaire validation",
@@ -462,7 +525,9 @@
         "dietary adherence questionnaire validation",
         "group-based nutrition intervention framework",
         "peer-led nutrition intervention framework",
-        "peer support dietary adherence framework"
+        "peer support dietary adherence framework",
+        "culturally tailored nutrition framework",
+        "cultural adaptation dietary intervention framework"
       ],
       "document_terms": [
         "questionnaire validation",
@@ -501,7 +566,11 @@
         "group based nutrition intervention",
         "peer-led nutrition intervention",
         "peer led nutrition intervention",
-        "peer support group"
+        "peer support group",
+        "culturally tailored nutrition",
+        "cultural adaptation of diet",
+        "culturally appropriate nutrition",
+        "culturally responsive nutrition"
       ],
       "web_query_hints": [
         "food literacy questionnaire validation",
@@ -518,7 +587,9 @@
         "dietary adherence questionnaire validation",
         "group-based nutrition intervention framework",
         "peer-led nutrition intervention framework",
-        "peer support dietary adherence framework"
+        "peer support dietary adherence framework",
+        "culturally tailored nutrition framework",
+        "cultural adaptation dietary intervention framework"
       ],
       "document_terms": [
         "questionnaire validation",
