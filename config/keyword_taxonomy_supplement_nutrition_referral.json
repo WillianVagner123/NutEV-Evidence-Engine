@@ -1,0 +1,105 @@
+{
+  "version_note": "Adds focused nutrition referral and care coordination vocabulary for cardiometabolic nutrition implementation without changing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "nutrition_referral_care_coordination": [
+        "nutrition referral",
+        "dietitian referral",
+        "dietician referral",
+        "referral to dietitian",
+        "referral to dietician",
+        "referral to registered dietitian",
+        "referral to registered dietitian nutritionist",
+        "registered dietitian referral",
+        "registered dietitian nutritionist referral",
+        "dietitian consultation",
+        "dietician consultation",
+        "nutrition consultation",
+        "dietitian consult",
+        "nutrition consult",
+        "primary care nutrition referral",
+        "primary care dietitian referral",
+        "primary care dietitian",
+        "primary care dietitian nutritionist",
+        "integrated nutrition care",
+        "coordinated nutrition care",
+        "collaborative nutrition care",
+        "interprofessional nutrition care",
+        "multidisciplinary nutrition care",
+        "team-based nutrition care",
+        "team based nutrition care"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "nutrition referral",
+        "dietitian referral",
+        "referral to registered dietitian",
+        "registered dietitian nutritionist referral",
+        "primary care nutrition referral",
+        "integrated nutrition care",
+        "coordinated nutrition care",
+        "interprofessional nutrition care",
+        "team-based nutrition care"
+      ],
+      "web_query_hints": [
+        "nutrition referral guideline",
+        "dietitian referral guideline",
+        "primary care nutrition referral guideline",
+        "integrated nutrition care guideline",
+        "team-based nutrition care guideline"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "care pathway",
+        "clinical pathway",
+        "implementation guidance",
+        "practice guidance"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "nutrition referral",
+        "dietitian referral",
+        "dietician referral",
+        "referral to dietitian",
+        "referral to registered dietitian",
+        "referral to registered dietitian nutritionist",
+        "registered dietitian referral",
+        "registered dietitian nutritionist referral",
+        "dietitian consultation",
+        "nutrition consultation",
+        "primary care nutrition referral",
+        "primary care dietitian referral",
+        "integrated nutrition care",
+        "coordinated nutrition care",
+        "collaborative nutrition care",
+        "interprofessional nutrition care",
+        "multidisciplinary nutrition care",
+        "team-based nutrition care",
+        "team based nutrition care"
+      ],
+      "web_query_hints": [
+        "nutrition referral implementation",
+        "dietitian referral implementation",
+        "primary care nutrition referral",
+        "primary care dietitian referral",
+        "integrated nutrition care implementation",
+        "coordinated nutrition care implementation",
+        "team-based nutrition care implementation",
+        "interprofessional nutrition care implementation"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "implementation study",
+        "implementation evaluation",
+        "process evaluation",
+        "care pathway",
+        "clinical pathway",
+        "quality improvement study"
+      ]
+    }
+  }
+}
