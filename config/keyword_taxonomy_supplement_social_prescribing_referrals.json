@@ -1,0 +1,142 @@
+{
+  "version_note": "Adds scoped nutrition and food-access referral terms for social prescribing and food-as-medicine discovery. Loaded after keyword_taxonomy.json without changing the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "nutrition_referral_pathways": [
+        "nutrition referral",
+        "nutrition referrals",
+        "dietitian referral",
+        "dietitian referrals",
+        "dietitian referral pathway",
+        "registered dietitian referral",
+        "registered dietitian nutritionist referral",
+        "nutrition care referral",
+        "nutrition counseling referral",
+        "nutrition counselling referral",
+        "food is medicine referral",
+        "food as medicine referral",
+        "food prescription referral",
+        "produce prescription referral",
+        "healthy food prescription referral",
+        "medically tailored meal referral",
+        "medically tailored meals referral",
+        "medically tailored food referral",
+        "food pharmacy referral",
+        "food pantry referral",
+        "food bank referral",
+        "community food referral",
+        "community resource referral food",
+        "community resource referral nutrition",
+        "social prescribing nutrition",
+        "nutrition social prescribing",
+        "social prescribing food insecurity",
+        "social prescribing nutrition security",
+        "link worker nutrition referral",
+        "community connector nutrition referral",
+        "closed-loop nutrition referral",
+        "closed loop nutrition referral",
+        "closed-loop food referral",
+        "closed loop food referral",
+        "screening and referral for food insecurity",
+        "screening and referral for nutrition insecurity"
+      ]
+    },
+    "document_types": {
+      "grey": [
+        "referral pathway",
+        "referral protocol",
+        "implementation guide",
+        "implementation toolkit",
+        "program manual",
+        "programme manual"
+      ]
+    }
+  },
+  "outcomes": {
+    "food_access_implementation": [
+      "nutrition referral",
+      "dietitian referral",
+      "food is medicine referral",
+      "food as medicine referral",
+      "produce prescription referral",
+      "healthy food prescription referral",
+      "medically tailored meal referral",
+      "medically tailored food referral",
+      "food pharmacy referral",
+      "community resource referral nutrition",
+      "social prescribing nutrition",
+      "nutrition social prescribing",
+      "closed-loop nutrition referral",
+      "screening and referral for food insecurity"
+    ]
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "nutrition referral",
+        "dietitian referral pathway",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "healthy food prescription referral",
+        "medically tailored food referral",
+        "food pharmacy referral",
+        "community food referral",
+        "community resource referral nutrition",
+        "social prescribing nutrition",
+        "nutrition social prescribing",
+        "closed-loop nutrition referral",
+        "screening and referral for food insecurity"
+      ],
+      "web_query_hints": [
+        "food is medicine referral pathway",
+        "produce prescription referral pathway",
+        "medically tailored meals referral program",
+        "food pharmacy referral program",
+        "social prescribing nutrition security",
+        "nutrition social prescribing program",
+        "closed-loop nutrition referral",
+        "screening and referral for food insecurity"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "referral protocol",
+        "implementation guide",
+        "implementation toolkit"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "nutrition referral",
+        "dietitian referral",
+        "dietitian referral pathway",
+        "food is medicine referral",
+        "food as medicine referral",
+        "produce prescription referral",
+        "healthy food prescription referral",
+        "medically tailored meal referral",
+        "food pharmacy referral",
+        "social prescribing nutrition",
+        "nutrition social prescribing",
+        "closed-loop nutrition referral",
+        "community resource referral nutrition"
+      ],
+      "web_query_hints": [
+        "produce prescription referral trial",
+        "food as medicine referral implementation",
+        "medically tailored meals referral cardiometabolic",
+        "food pharmacy referral diabetes",
+        "nutrition social prescribing cardiometabolic",
+        "social prescribing nutrition security intervention",
+        "closed-loop nutrition referral implementation"
+      ],
+      "document_terms": [
+        "referral pathway",
+        "referral protocol",
+        "implementation study",
+        "implementation trial",
+        "process evaluation"
+      ]
+    }
+  }
+}
