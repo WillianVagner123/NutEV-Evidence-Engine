@@ -1,0 +1,74 @@
+{
+  "version_note": "2026-07 deprescribing terms supplement for cardiometabolic lifestyle-nutrition retrieval",
+  "global": {
+    "implementation_behavior": {
+      "adherence": [
+        "deprescribing",
+        "de-prescribing",
+        "medication deprescribing",
+        "medication deintensification",
+        "medication de-intensification",
+        "treatment deintensification",
+        "treatment de-intensification",
+        "medication reduction",
+        "medication withdrawal",
+        "drug withdrawal",
+        "drug discontinuation",
+        "pharmacotherapy reduction",
+        "antihypertensive deprescribing",
+        "glucose-lowering medication reduction",
+        "diabetes medication reduction",
+        "insulin dose reduction",
+        "insulin discontinuation",
+        "diabetes remission medication",
+        "remission without medication"
+      ],
+      "behavioral": [
+        "self-management medication reduction",
+        "lifestyle-induced medication reduction",
+        "diet-induced medication reduction",
+        "dietary intervention medication reduction",
+        "weight loss medication reduction"
+      ]
+    }
+  },
+  "clinical": {
+    "diabetes": [
+      "glucose-lowering medication reduction",
+      "diabetes medication reduction",
+      "insulin dose reduction",
+      "insulin discontinuation",
+      "diabetes remission medication",
+      "remission without medication"
+    ],
+    "hypertension": [
+      "antihypertensive deprescribing",
+      "antihypertensive medication reduction",
+      "blood pressure medication reduction"
+    ],
+    "cvd": [
+      "cardiometabolic medication reduction",
+      "pharmacotherapy reduction"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "web_query_hints": [
+        "deprescribing guideline",
+        "medication deintensification guideline",
+        "diabetes remission medication",
+        "antihypertensive deprescribing",
+        "lifestyle medication reduction consensus"
+      ]
+    },
+    "busca2b": {
+      "web_query_hints": [
+        "dietary intervention medication reduction",
+        "lifestyle intervention medication reduction",
+        "weight loss medication reduction trial",
+        "diabetes remission medication reduction trial",
+        "antihypertensive deprescribing lifestyle intervention"
+      ]
+    }
+  }
+}
