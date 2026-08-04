@@ -1,0 +1,130 @@
+{
+  "version_note": "Focused NutMEV expansion for nutrition care around anti-obesity pharmacotherapy; terms are anchored to nutrition, dietary counseling, dietitian care, meal planning, or protein/body-composition preservation to avoid broad pharmacology retrieval.",
+  "global": {
+    "implementation_behavior": {
+      "anti_obesity_nutrition_care": [
+        "anti-obesity medication nutrition",
+        "anti-obesity medication dietary counseling",
+        "anti-obesity medication nutrition counseling",
+        "anti-obesity medication nutrition care",
+        "anti-obesity medication dietitian",
+        "obesity pharmacotherapy nutrition care",
+        "obesity pharmacotherapy dietary counseling",
+        "obesity pharmacotherapy nutrition counseling",
+        "obesity pharmacotherapy dietitian",
+        "glp-1 nutrition",
+        "glp-1 dietary counseling",
+        "glp-1 nutrition counseling",
+        "glp-1 nutrition care",
+        "glp-1 dietitian",
+        "glp-1 receptor agonist nutrition",
+        "glp-1 receptor agonist dietary counseling",
+        "glp-1 receptor agonist nutrition counseling",
+        "glp-1 receptor agonist nutrition care",
+        "incretin therapy nutrition care",
+        "incretin therapy dietary counseling",
+        "incretin therapy nutrition counseling",
+        "incretin therapy dietitian",
+        "nutrition care during weight loss pharmacotherapy",
+        "dietary counseling during weight loss pharmacotherapy",
+        "dietitian care during weight loss pharmacotherapy",
+        "meal planning during anti-obesity medication",
+        "protein intake during anti-obesity medication",
+        "lean mass preservation during anti-obesity medication"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "anti-obesity medication nutrition",
+      "anti-obesity medication dietary counseling",
+      "obesity pharmacotherapy nutrition care",
+      "obesity pharmacotherapy dietary counseling",
+      "glp-1 receptor agonist nutrition",
+      "glp-1 receptor agonist dietary counseling",
+      "incretin therapy nutrition care",
+      "nutrition care during weight loss pharmacotherapy"
+    ]
+  },
+  "outcomes": {
+    "diet_quality_adherence": [
+      "anti-obesity medication dietary counseling",
+      "anti-obesity medication nutrition counseling",
+      "glp-1 dietary counseling",
+      "glp-1 nutrition counseling",
+      "glp-1 receptor agonist dietary counseling",
+      "dietary counseling during weight loss pharmacotherapy",
+      "meal planning during anti-obesity medication"
+    ],
+    "anthropometry": [
+      "protein intake during anti-obesity medication",
+      "lean mass preservation during anti-obesity medication"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "focus_terms": [
+        "anti-obesity medication nutrition",
+        "anti-obesity medication dietary counseling",
+        "obesity pharmacotherapy nutrition care",
+        "obesity pharmacotherapy dietary counseling",
+        "glp-1 receptor agonist nutrition",
+        "glp-1 receptor agonist dietary counseling",
+        "incretin therapy nutrition care",
+        "nutrition care during weight loss pharmacotherapy"
+      ],
+      "web_query_hints": [
+        "anti-obesity medication nutrition guideline",
+        "anti-obesity medication dietary counseling guideline",
+        "obesity pharmacotherapy nutrition care guideline",
+        "glp-1 receptor agonist dietary counseling consensus",
+        "incretin therapy nutrition care consensus",
+        "nutrition care during weight loss pharmacotherapy guideline"
+      ],
+      "document_terms": [
+        "nutrition care guideline",
+        "dietary counseling guideline",
+        "consensus statement",
+        "practice guidance"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "anti-obesity medication nutrition counseling",
+        "anti-obesity medication nutrition care",
+        "anti-obesity medication dietitian",
+        "obesity pharmacotherapy nutrition counseling",
+        "obesity pharmacotherapy dietitian",
+        "glp-1 nutrition counseling",
+        "glp-1 nutrition care",
+        "glp-1 dietitian",
+        "glp-1 receptor agonist nutrition counseling",
+        "glp-1 receptor agonist nutrition care",
+        "incretin therapy nutrition counseling",
+        "incretin therapy dietitian",
+        "dietary counseling during weight loss pharmacotherapy",
+        "dietitian care during weight loss pharmacotherapy",
+        "meal planning during anti-obesity medication",
+        "protein intake during anti-obesity medication",
+        "lean mass preservation during anti-obesity medication"
+      ],
+      "web_query_hints": [
+        "anti-obesity medication nutrition counseling trial",
+        "obesity pharmacotherapy dietitian intervention",
+        "glp-1 nutrition counseling intervention",
+        "glp-1 receptor agonist nutrition care trial",
+        "incretin therapy dietary counseling study",
+        "meal planning during anti-obesity medication trial",
+        "protein intake during anti-obesity medication study",
+        "lean mass preservation during anti-obesity medication study"
+      ],
+      "document_terms": [
+        "randomized trial",
+        "implementation study",
+        "systematic review",
+        "dietitian-led intervention",
+        "nutrition counseling intervention"
+      ]
+    }
+  }
+}
