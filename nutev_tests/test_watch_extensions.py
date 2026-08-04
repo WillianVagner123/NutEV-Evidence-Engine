@@ -49,9 +49,36 @@ def test_obesity_queries_cover_pharmacotherapy_nutrition_terms() -> None:
     assert "incretin therapy dietary counseling" in rendered
 
 
+def test_obesity_queries_cover_ckm_terms() -> None:
+    rendered = _render_obesity_queries()
+
+    assert "cardiovascular-kidney-metabolic syndrome" in rendered
+    assert "cardiovascular kidney metabolic risk" in rendered
+    assert "cardio-kidney-metabolic nutrition" in rendered
+    assert "cardiorenal metabolic syndrome" in rendered
+    assert "ckm syndrome" in rendered
+    assert "ckm nutrition" in rendered
+
+
 def test_pharmacotherapy_nutrition_terms_improve_watch_priority() -> None:
     assert _score_watch_item(
         {
             "title": "GLP-1 receptor agonist nutrition care and dietary counseling for obesity",
         }
     ) > _score_watch_item({"title": "Obesity care note"})
+
+
+def test_ckm_terms_improve_watch_priority_and_scope() -> None:
+    scoped = _score_watch_item(
+        {
+            "title": "CKM syndrome scientific statement for cardiometabolic risk",
+        }
+    )
+    generic = _score_watch_item(
+        {
+            "title": "Kidney disease scientific statement",
+        }
+    )
+
+    assert scoped > generic
+    assert scoped - generic >= 40
