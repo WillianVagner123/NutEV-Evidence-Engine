@@ -626,6 +626,77 @@ CLINICAL_FOOD_ASSISTANCE_PROGRAM_DOCUMENT_TERMS = [
     "fresh produce prescription programme evaluation",
 ]
 
+ANTI_OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS = [
+    "anti-obesity medication nutrition",
+    "anti obesity medication nutrition",
+    "anti-obesity medication dietary counseling",
+    "anti obesity medication dietary counseling",
+    "anti-obesity medication dietary counselling",
+    "anti obesity medication dietary counselling",
+    "anti-obesity pharmacotherapy nutrition care",
+    "anti obesity pharmacotherapy nutrition care",
+    "obesity pharmacotherapy nutrition care",
+    "obesity pharmacotherapy dietary counseling",
+    "obesity pharmacotherapy dietary counselling",
+    "incretin therapy nutrition care",
+    "incretin therapy dietary counseling",
+    "incretin therapy dietary counselling",
+    "glp-1 nutrition",
+    "glp 1 nutrition",
+    "glp-1 dietary counseling",
+    "glp 1 dietary counseling",
+    "glp-1 dietary counselling",
+    "glp 1 dietary counselling",
+    "glp-1 receptor agonist nutrition",
+    "glp 1 receptor agonist nutrition",
+    "glp-1 receptor agonist dietary counseling",
+    "glp 1 receptor agonist dietary counseling",
+    "semaglutide nutrition",
+    "semaglutide dietary counseling",
+    "semaglutide dietary counselling",
+    "tirzepatide nutrition",
+    "tirzepatide dietary counseling",
+    "tirzepatide dietary counselling",
+    "nutritional management during weight loss medication",
+    "dietary management during weight loss medication",
+    "nutrition care during pharmacologic weight loss",
+    "nutrition care during pharmacological weight loss",
+    "dietary counseling during pharmacologic weight loss",
+    "dietary counselling during pharmacological weight loss",
+    "protein intake during anti-obesity medication",
+    "protein intake during obesity pharmacotherapy",
+    "lean mass preservation during weight loss medication",
+    "muscle preservation during weight loss medication",
+    "weight regain prevention after anti-obesity medication",
+    "weight regain prevention after obesity pharmacotherapy",
+]
+
+ANTI_OBESITY_PHARMACOTHERAPY_NUTRITION_DOCUMENT_TERMS = [
+    "anti-obesity medication nutrition guideline",
+    "anti obesity medication nutrition guideline",
+    "anti-obesity medication nutrition consensus",
+    "anti obesity medication nutrition consensus",
+    "obesity pharmacotherapy nutrition guideline",
+    "obesity pharmacotherapy nutrition consensus",
+    "glp-1 nutrition guideline",
+    "glp 1 nutrition guideline",
+    "glp-1 nutrition consensus",
+    "glp 1 nutrition consensus",
+    "glp-1 receptor agonist nutrition guideline",
+    "glp 1 receptor agonist nutrition guideline",
+    "incretin therapy nutrition guideline",
+    "incretin therapy nutrition consensus",
+    "anti-obesity medication dietary counseling guideline",
+    "obesity pharmacotherapy dietary counseling guideline",
+    "anti-obesity medication nutrition systematic review",
+    "obesity pharmacotherapy nutrition systematic review",
+    "glp-1 nutrition systematic review",
+    "semaglutide nutrition systematic review",
+    "tirzepatide nutrition systematic review",
+    "protein intake during anti-obesity medication systematic review",
+    "lean mass preservation during weight loss medication review",
+]
+
 
 def _extend_unique(existing: list[str], additions: list[str]) -> list[str]:
     seen = {item.lower() for item in existing}
@@ -792,6 +863,26 @@ def apply_semantic_extensions() -> None:
         document_terms=FOOD_AS_MEDICINE_REFERRAL_DOCUMENT_TERMS
         + CLINICAL_FOOD_ASSISTANCE_PROGRAM_DOCUMENT_TERMS,
     )
+    _extend_semantic_block(
+        "anti_obesity_pharmacotherapy_nutrition",
+        terms=ANTI_OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+        document_terms=ANTI_OBESITY_PHARMACOTHERAPY_NUTRITION_DOCUMENT_TERMS,
+    )
+    _prioritize_semantic_block(
+        "anti_obesity_pharmacotherapy_nutrition",
+        {"busca2a": 5, "busca2b": 5},
+    )
+    for block_name in (
+        "adherence_persistence",
+        "cardiometabolic_precision",
+        "lifestyle_nutrition_patterns",
+        "nutrition_care_delivery",
+    ):
+        _extend_semantic_block(
+            block_name,
+            terms=ANTI_OBESITY_PHARMACOTHERAPY_NUTRITION_TERMS,
+            document_terms=ANTI_OBESITY_PHARMACOTHERAPY_NUTRITION_DOCUMENT_TERMS,
+        )
 
 
 apply_semantic_extensions()
