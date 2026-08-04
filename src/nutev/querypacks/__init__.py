@@ -7,6 +7,7 @@ from nutev.querypacks.carbohydrate_quality_extensions import (
     apply_carbohydrate_quality_extensions,
 )
 from nutev.querypacks.food_access_extensions import apply_food_access_benefit_extensions
+from nutev.querypacks.glp1_nutrition_extensions import apply_glp1_nutrition_extensions
 from nutev.querypacks.group_visit_care_extensions import apply_group_visit_care_extensions
 from nutev.querypacks.iberoamerican_guidance_extensions import (
     apply_iberoamerican_guidance_extensions,
@@ -17,6 +18,7 @@ apply_semantic_extensions()
 apply_adherence_engagement_extensions()
 apply_carbohydrate_quality_extensions()
 apply_food_access_benefit_extensions()
+apply_glp1_nutrition_extensions()
 apply_group_visit_care_extensions()
 apply_iberoamerican_guidance_extensions()
 
@@ -24,6 +26,7 @@ __all__ = [
     "apply_adherence_engagement_extensions",
     "apply_carbohydrate_quality_extensions",
     "apply_food_access_benefit_extensions",
+    "apply_glp1_nutrition_extensions",
     "apply_group_visit_care_extensions",
     "apply_iberoamerican_guidance_extensions",
     "apply_semantic_extensions",
