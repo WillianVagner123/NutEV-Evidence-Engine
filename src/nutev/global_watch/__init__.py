@@ -3,8 +3,12 @@ from __future__ import annotations
 from typing import Any
 
 from nutev.global_watch.watch_extensions import apply_watch_taxonomy_extensions
+from nutev.global_watch.watch_sarcopenic_obesity_extensions import (
+    apply_sarcopenic_obesity_watch_extensions,
+)
 
 apply_watch_taxonomy_extensions()
+apply_sarcopenic_obesity_watch_extensions()
 
 __all__ = ["run_global_watch"]
 
