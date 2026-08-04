@@ -262,6 +262,65 @@ FOOD_EATING_COMPETENCE_DOCUMENT_TERMS = [
     "eating competence framework",
 ]
 
+ADAPTIVE_EATING_BEHAVIOR_TERMS = [
+    "intuitive eating",
+    "intuitive eating intervention",
+    "intuitive eating program",
+    "intuitive eating programme",
+    "intuitive eating counseling",
+    "intuitive eating counselling",
+    "mindful eating",
+    "mindful eating intervention",
+    "mindful eating program",
+    "mindful eating programme",
+    "mindful eating training",
+    "mindful eating-based intervention",
+    "mindful eating based intervention",
+    "responsive eating",
+    "responsive eating intervention",
+    "hunger cues",
+    "satiety cues",
+    "internal hunger cues",
+    "internal satiety cues",
+    "hunger and satiety cues",
+    "eating self-efficacy",
+    "eating self efficacy",
+    "eating self-regulation",
+    "eating self regulation",
+    "appetite self-regulation",
+    "appetite self regulation",
+    "non-diet approach",
+    "non diet approach",
+    "weight-neutral approach",
+    "weight neutral approach",
+    "weight-inclusive approach",
+    "weight inclusive approach",
+]
+
+ADAPTIVE_EATING_BEHAVIOR_DOCUMENT_TERMS = [
+    "intuitive eating intervention",
+    "intuitive eating program",
+    "intuitive eating programme",
+    "intuitive eating scale",
+    "intuitive eating questionnaire",
+    "mindful eating intervention",
+    "mindful eating program",
+    "mindful eating programme",
+    "mindful eating questionnaire",
+    "mindful eating scale",
+    "mindful eating-based intervention",
+    "mindful eating based intervention",
+    "responsive eating intervention",
+    "eating self-regulation intervention",
+    "eating self regulation intervention",
+    "appetite self-regulation intervention",
+    "appetite self regulation intervention",
+    "weight-neutral intervention",
+    "weight neutral intervention",
+    "weight-inclusive intervention",
+    "weight inclusive intervention",
+]
+
 DIET_QUALITY_INDEX_TERMS = [
     "diet quality index",
     "diet quality indices",
@@ -763,6 +822,12 @@ def apply_semantic_extensions() -> None:
             block_name,
             terms=FOOD_EATING_COMPETENCE_TERMS,
             document_terms=FOOD_EATING_COMPETENCE_DOCUMENT_TERMS,
+        )
+    for block_name in ("adherence_persistence", "food_literacy_agency"):
+        _extend_semantic_block(
+            block_name,
+            terms=ADAPTIVE_EATING_BEHAVIOR_TERMS,
+            document_terms=ADAPTIVE_EATING_BEHAVIOR_DOCUMENT_TERMS,
         )
     _extend_semantic_block(
         "food_literacy_agency",
