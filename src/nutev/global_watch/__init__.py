@@ -3,8 +3,10 @@ from __future__ import annotations
 from typing import Any
 
 from nutev.global_watch.watch_extensions import apply_watch_taxonomy_extensions
+from nutev.global_watch.sustainable_diet_extensions import apply_sustainable_diet_extensions
 
 apply_watch_taxonomy_extensions()
+apply_sustainable_diet_extensions()
 
 __all__ = ["run_global_watch"]
 
