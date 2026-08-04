@@ -1,0 +1,81 @@
+{
+  "version_note": "Focused NutMEV supplement for current steatotic liver disease nomenclature. Loaded after keyword_taxonomy.json and keyword_taxonomy_supplement*.json; appends SLD/MASLD/MASH terms without replacing the base taxonomy.",
+  "clinical": {
+    "cardiometabolic": [
+      "steatotic liver diseases",
+      "sld guideline",
+      "sld practice guidance",
+      "sld consensus",
+      "masld guideline",
+      "masld practice guidance",
+      "masld consensus",
+      "mash guideline",
+      "mash practice guidance",
+      "mash consensus"
+    ]
+  },
+  "outcomes": {
+    "cardiometabolic": [
+      "liver fat reduction",
+      "hepatic fat reduction",
+      "intrahepatic fat",
+      "steatosis improvement",
+      "fibrosis risk",
+      "fibrosis progression",
+      "fibrosis regression"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "steatotic liver diseases",
+        "sld guideline",
+        "sld practice guidance",
+        "sld consensus",
+        "masld guideline",
+        "masld practice guidance",
+        "masld consensus",
+        "mash guideline",
+        "mash practice guidance",
+        "mash consensus"
+      ],
+      "web_query_hints": [
+        "steatotic liver disease guideline",
+        "steatotic liver disease practice guidance",
+        "steatotic liver disease consensus",
+        "sld practice guidance",
+        "masld nutrition guideline",
+        "masld dietary guideline",
+        "mash nutrition guideline",
+        "mash dietary guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "steatotic liver diseases",
+        "dietary intervention for masld",
+        "nutrition therapy for masld",
+        "medical nutrition therapy for masld",
+        "mediterranean diet masld",
+        "weight loss intervention masld",
+        "lifestyle intervention masld",
+        "dietary intervention for mash",
+        "nutrition therapy for mash",
+        "lifestyle intervention mash"
+      ],
+      "web_query_hints": [
+        "dietary intervention for masld",
+        "nutrition therapy for masld",
+        "medical nutrition therapy for masld",
+        "mediterranean diet masld",
+        "weight loss intervention masld",
+        "lifestyle intervention masld",
+        "dietary intervention for mash",
+        "nutrition therapy for mash",
+        "lifestyle intervention mash",
+        "masld systematic review diet",
+        "mash systematic review lifestyle"
+      ]
+    }
+  }
+}
