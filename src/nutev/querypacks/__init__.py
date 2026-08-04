@@ -3,6 +3,9 @@ from __future__ import annotations
 from nutev.querypacks.adherence_engagement_extensions import (
     apply_adherence_engagement_extensions,
 )
+from nutev.querypacks.anti_obesity_pharmacotherapy_extensions import (
+    apply_anti_obesity_pharmacotherapy_extensions,
+)
 from nutev.querypacks.carbohydrate_quality_extensions import (
     apply_carbohydrate_quality_extensions,
 )
@@ -15,6 +18,7 @@ from nutev.querypacks.semantic_extensions import apply_semantic_extensions
 
 apply_semantic_extensions()
 apply_adherence_engagement_extensions()
+apply_anti_obesity_pharmacotherapy_extensions()
 apply_carbohydrate_quality_extensions()
 apply_food_access_benefit_extensions()
 apply_group_visit_care_extensions()
@@ -22,6 +26,7 @@ apply_iberoamerican_guidance_extensions()
 
 __all__ = [
     "apply_adherence_engagement_extensions",
+    "apply_anti_obesity_pharmacotherapy_extensions",
     "apply_carbohydrate_quality_extensions",
     "apply_food_access_benefit_extensions",
     "apply_group_visit_care_extensions",
