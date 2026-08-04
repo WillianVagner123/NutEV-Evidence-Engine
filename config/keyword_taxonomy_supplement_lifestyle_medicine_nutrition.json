@@ -1,0 +1,121 @@
+{
+  "version_note": "Focused NutMEV supplement for nutrition-anchored lifestyle medicine terms. Loaded after keyword_taxonomy.json; appends high-specificity terms without replacing the base taxonomy.",
+  "global": {
+    "lifestyle_medicine_pillars": {
+      "nutrition": [
+        "lifestyle medicine nutrition",
+        "nutrition-focused lifestyle medicine",
+        "nutrition focused lifestyle medicine",
+        "lifestyle medicine diet",
+        "lifestyle medicine dietary intervention",
+        "lifestyle medicine nutrition intervention",
+        "lifestyle medicine nutrition counseling",
+        "lifestyle medicine nutrition counselling",
+        "lifestyle medicine program",
+        "lifestyle medicine programme",
+        "lifestyle medicine clinic",
+        "lifestyle medicine service",
+        "comprehensive lifestyle intervention",
+        "multicomponent lifestyle intervention",
+        "intensive lifestyle intervention with nutrition",
+        "whole-person lifestyle medicine",
+        "whole person lifestyle medicine"
+      ]
+    },
+    "implementation_behavior": {
+      "lifestyle_medicine_delivery": [
+        "lifestyle medicine program",
+        "lifestyle medicine programme",
+        "lifestyle medicine clinic",
+        "lifestyle medicine service",
+        "lifestyle medicine implementation",
+        "lifestyle medicine referral",
+        "lifestyle medicine coaching",
+        "nutrition-focused lifestyle medicine",
+        "nutrition focused lifestyle medicine",
+        "comprehensive lifestyle intervention",
+        "multicomponent lifestyle intervention",
+        "intensive lifestyle intervention with nutrition",
+        "whole-person lifestyle medicine",
+        "whole person lifestyle medicine"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca1": {
+      "focus_terms": [
+        "lifestyle medicine nutrition",
+        "nutrition-focused lifestyle medicine",
+        "lifestyle medicine dietary intervention",
+        "lifestyle medicine nutrition counseling",
+        "lifestyle medicine program",
+        "comprehensive lifestyle intervention"
+      ],
+      "web_query_hints": [
+        "lifestyle medicine nutrition guideline",
+        "lifestyle medicine dietary guideline",
+        "lifestyle medicine nutrition recommendations",
+        "nutrition-focused lifestyle medicine guideline",
+        "lifestyle medicine program nutrition report"
+      ],
+      "document_terms": [
+        "practice guideline",
+        "clinical practice guideline",
+        "position statement",
+        "consensus statement",
+        "technical report"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "lifestyle medicine dietary intervention",
+        "lifestyle medicine nutrition intervention",
+        "lifestyle medicine nutrition counseling",
+        "lifestyle medicine program",
+        "lifestyle medicine implementation",
+        "comprehensive lifestyle intervention",
+        "multicomponent lifestyle intervention",
+        "intensive lifestyle intervention with nutrition"
+      ],
+      "web_query_hints": [
+        "lifestyle medicine dietary intervention trial",
+        "lifestyle medicine nutrition intervention trial",
+        "lifestyle medicine program adherence",
+        "lifestyle medicine implementation nutrition",
+        "comprehensive lifestyle intervention diet trial",
+        "multicomponent lifestyle intervention nutrition trial"
+      ],
+      "document_terms": [
+        "randomized trial",
+        "randomised trial",
+        "controlled trial",
+        "pragmatic trial",
+        "systematic review",
+        "meta-analysis",
+        "implementation study"
+      ]
+    },
+    "artigo3_framework": {
+      "focus_terms": [
+        "lifestyle medicine nutrition counseling",
+        "lifestyle medicine coaching",
+        "lifestyle medicine implementation",
+        "whole-person lifestyle medicine",
+        "whole person lifestyle medicine"
+      ],
+      "web_query_hints": [
+        "lifestyle medicine nutrition framework",
+        "lifestyle medicine competency nutrition",
+        "lifestyle medicine coaching framework",
+        "whole person lifestyle medicine framework"
+      ],
+      "document_terms": [
+        "framework",
+        "competency framework",
+        "questionnaire",
+        "instrument",
+        "survey instrument"
+      ]
+    }
+  }
+}
