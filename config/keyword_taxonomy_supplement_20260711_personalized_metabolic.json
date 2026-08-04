@@ -1,0 +1,185 @@
+{
+  "version_note": "2026-07-11 recurring NutMEV search expansion for personalized nutrition, metabolic remission, and anti-obesity medication nutrition care. Loaded automatically by nutev.settings.load_json as a keyword_taxonomy supplement.",
+  "global": {
+    "diet_patterns": {
+      "personalized_prescription": [
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "personalized dietary advice",
+        "personalised dietary advice",
+        "personalized dietary intervention",
+        "personalised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "individualized meal plan",
+        "individualised meal plan",
+        "diet personalization",
+        "diet personalisation",
+        "nutrition prescription",
+        "nutrition prescriptions",
+        "dietary prescription",
+        "dietary prescriptions"
+      ],
+      "metabolic_remission_maintenance": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "remission of type 2 diabetes",
+        "diabetes reversal",
+        "glycemic remission",
+        "glycaemic remission",
+        "weight loss maintenance",
+        "long-term weight loss maintenance",
+        "long term weight loss maintenance",
+        "weight regain prevention",
+        "weight regain management",
+        "dietary maintenance",
+        "relapse prevention",
+        "lapse management"
+      ]
+    },
+    "implementation_behavior": {
+      "personalized_and_remission_delivery": [
+        "personalized nutrition implementation",
+        "personalised nutrition implementation",
+        "precision nutrition implementation",
+        "tailored dietary intervention implementation",
+        "diet personalization implementation",
+        "diet personalisation implementation",
+        "nutrition care for diabetes remission",
+        "nutrition care for weight maintenance",
+        "dietitian-led remission",
+        "dietitian led remission",
+        "diabetes remission program",
+        "diabetes remission programme",
+        "diabetes remission intervention",
+        "type 2 diabetes remission intervention",
+        "weight maintenance intervention",
+        "weight loss maintenance intervention",
+        "weight regain prevention intervention",
+        "weight regain management intervention"
+      ],
+      "anti_obesity_medication_nutrition": [
+        "anti-obesity medication nutrition",
+        "anti-obesity medication dietary counseling",
+        "anti-obesity medication lifestyle intervention",
+        "anti-obesity medication nutrition intervention",
+        "anti-obesity medication adherence",
+        "anti-obesity medication weight maintenance",
+        "obesity pharmacotherapy nutrition care",
+        "obesity pharmacotherapy dietary counseling",
+        "obesity pharmacotherapy lifestyle intervention",
+        "obesity pharmacotherapy nutrition intervention",
+        "obesity pharmacotherapy dietary adherence",
+        "glp-1 nutrition",
+        "glp-1 dietary counseling",
+        "glp-1 lifestyle intervention",
+        "glp-1 nutrition intervention",
+        "glp-1 dietary adherence",
+        "glp-1 weight maintenance",
+        "glp-1 receptor agonist nutrition",
+        "glp-1 receptor agonist dietary counseling",
+        "glp-1 receptor agonist lifestyle intervention",
+        "glp-1 receptor agonist nutrition intervention",
+        "incretin therapy nutrition care",
+        "incretin therapy dietary counseling",
+        "incretin therapy lifestyle intervention",
+        "incretin therapy nutrition intervention"
+      ]
+    },
+    "document_types": {
+      "guidelines": [
+        "personalized nutrition guideline",
+        "personalised nutrition guideline",
+        "precision nutrition guideline",
+        "tailored dietary advice guideline",
+        "diabetes remission guideline",
+        "type 2 diabetes remission guideline",
+        "weight maintenance guideline",
+        "anti-obesity medication nutrition guidance",
+        "glp-1 nutrition guidance"
+      ],
+      "consensus": [
+        "personalized nutrition consensus",
+        "personalised nutrition consensus",
+        "precision nutrition consensus",
+        "diabetes remission consensus",
+        "diabetes remission consensus report",
+        "type 2 diabetes remission consensus",
+        "weight maintenance consensus",
+        "anti-obesity medication nutrition consensus",
+        "glp-1 nutrition consensus"
+      ],
+      "reviews": [
+        "personalized nutrition systematic review",
+        "precision nutrition systematic review",
+        "diabetes remission systematic review",
+        "weight loss maintenance systematic review",
+        "weight regain prevention systematic review",
+        "anti-obesity medication nutrition review",
+        "glp-1 nutrition review"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "type 2 diabetes remission",
+        "diabetes remission",
+        "remission of type 2 diabetes",
+        "anti-obesity medication nutrition",
+        "glp-1 nutrition",
+        "incretin therapy nutrition care"
+      ],
+      "web_query_hints": [
+        "diabetes remission guideline",
+        "type 2 diabetes remission consensus",
+        "weight maintenance guideline",
+        "anti-obesity medication nutrition guidance",
+        "glp-1 nutrition guidance",
+        "precision nutrition guideline"
+      ]
+    },
+    "busca2b": {
+      "focus_terms": [
+        "personalized nutrition implementation",
+        "precision nutrition implementation",
+        "tailored dietary intervention implementation",
+        "nutrition care for diabetes remission",
+        "dietitian-led remission",
+        "weight loss maintenance intervention",
+        "weight regain prevention intervention",
+        "anti-obesity medication nutrition intervention",
+        "glp-1 nutrition intervention",
+        "incretin therapy nutrition intervention"
+      ],
+      "web_query_hints": [
+        "diabetes remission intervention",
+        "type 2 diabetes remission intervention",
+        "weight loss maintenance trial",
+        "weight regain prevention trial",
+        "anti-obesity medication lifestyle intervention",
+        "anti-obesity medication nutrition intervention",
+        "glp-1 dietary adherence",
+        "glp-1 weight maintenance"
+      ]
+    },
+    "artigo3_framework": {
+      "themes": [
+        "personalized meal planning",
+        "diet personalization",
+        "precision nutrition questionnaire",
+        "tailored dietary advice questionnaire",
+        "weight maintenance adherence",
+        "diabetes remission adherence"
+      ]
+    }
+  }
+}
