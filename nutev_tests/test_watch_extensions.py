@@ -49,9 +49,27 @@ def test_obesity_queries_cover_pharmacotherapy_nutrition_terms() -> None:
     assert "incretin therapy dietary counseling" in rendered
 
 
+def test_obesity_queries_cover_pharmacotherapy_protein_preservation_terms() -> None:
+    rendered = _render_obesity_queries()
+
+    assert "anti-obesity medication protein adequacy" in rendered
+    assert "obesity pharmacotherapy lean mass preservation" in rendered
+    assert "glp-1 receptor agonist protein intake" in rendered
+    assert "glp-1 receptor agonist muscle preservation" in rendered
+    assert "incretin therapy lean mass preservation" in rendered
+
+
 def test_pharmacotherapy_nutrition_terms_improve_watch_priority() -> None:
     assert _score_watch_item(
         {
             "title": "GLP-1 receptor agonist nutrition care and dietary counseling for obesity",
         }
     ) > _score_watch_item({"title": "Obesity care note"})
+
+
+def test_pharmacotherapy_protein_terms_improve_watch_priority() -> None:
+    assert _score_watch_item(
+        {
+            "title": "GLP-1 receptor agonist protein intake and lean mass preservation for obesity",
+        }
+    ) > _score_watch_item({"title": "GLP-1 receptor agonist safety update"})
