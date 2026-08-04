@@ -1,0 +1,45 @@
+{
+  "version_note": "2026-07 deprescribing scoring supplement for NutMEV cardiometabolic nutrition scope",
+  "keyword_points": {
+    "deprescribing": 3,
+    "de-prescribing": 3,
+    "medication deprescribing": 4,
+    "medication deintensification": 4,
+    "medication de-intensification": 4,
+    "treatment deintensification": 3,
+    "treatment de-intensification": 3,
+    "medication reduction": 3,
+    "medication withdrawal": 2,
+    "drug discontinuation": 2,
+    "pharmacotherapy reduction": 3,
+    "antihypertensive deprescribing": 4,
+    "glucose-lowering medication reduction": 4,
+    "diabetes medication reduction": 4,
+    "insulin dose reduction": 3,
+    "insulin discontinuation": 3,
+    "diabetes remission medication": 4,
+    "remission without medication": 4,
+    "diet-induced medication reduction": 4,
+    "lifestyle-induced medication reduction": 4,
+    "dietary intervention medication reduction": 4,
+    "weight loss medication reduction": 4
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "deprescribing guideline": 5,
+      "medication deintensification guideline": 5,
+      "diabetes remission medication": 5,
+      "antihypertensive deprescribing": 5,
+      "lifestyle medication reduction consensus": 5
+    },
+    "busca2b": {
+      "dietary intervention medication reduction": 5,
+      "lifestyle intervention medication reduction": 5,
+      "weight loss medication reduction trial": 5,
+      "diabetes remission medication reduction trial": 5,
+      "antihypertensive deprescribing lifestyle intervention": 5,
+      "diet-induced medication reduction": 5,
+      "lifestyle-induced medication reduction": 5
+    }
+  }
+}
