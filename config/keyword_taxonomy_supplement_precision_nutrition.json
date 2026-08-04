@@ -1,5 +1,5 @@
 {
-  "version_note": "Precision and personalized nutrition supplement for busca2b. Adds focused terms for tailored dietary interventions in obesity, diabetes and cardiometabolic risk without changing raw outputs.",
+  "version_note": "Precision, personalized nutrition and clinical food assistance supplement for busca2b. Adds focused terms for tailored dietary interventions and Food is Medicine-style clinical food support in obesity, diabetes and cardiometabolic risk without changing raw outputs.",
   "global": {
     "implementation_behavior": {
       "personalized_nutrition_adherence": [
@@ -15,6 +15,33 @@
         "individualised dietary intervention",
         "diet personalization",
         "diet personalisation"
+      ],
+      "clinical_food_assistance": [
+        "food prescription intervention",
+        "food prescription program evaluation",
+        "food prescription programme evaluation",
+        "grocery prescription intervention",
+        "grocery prescription program evaluation",
+        "grocery prescription programme evaluation",
+        "nutrition prescription intervention",
+        "nutrition pharmacy program evaluation",
+        "nutrition pharmacy programme evaluation",
+        "food farmacy program evaluation",
+        "food farmacy programme evaluation",
+        "fresh food pharmacy intervention",
+        "fresh food pharmacy program evaluation",
+        "medically tailored meal intervention",
+        "medically tailored meals program evaluation",
+        "medically tailored grocery intervention",
+        "medically tailored grocery program evaluation",
+        "medically tailored groceries intervention",
+        "medically tailored groceries program evaluation",
+        "medically tailored pantry program evaluation",
+        "medically tailored food package intervention",
+        "produce prescription implementation study",
+        "produce prescription program evaluation",
+        "healthy food incentive program evaluation",
+        "fruit and vegetable voucher program evaluation"
       ]
     }
   },
@@ -26,7 +53,11 @@
       "tailored dietary advice",
       "tailored dietary intervention",
       "individualized dietary intervention",
-      "individualised dietary intervention"
+      "individualised dietary intervention",
+      "medically tailored meal intervention",
+      "medically tailored grocery intervention",
+      "food prescription intervention",
+      "produce prescription program evaluation"
     ]
   },
   "workstreams": {
@@ -43,7 +74,20 @@
         "individualized dietary intervention",
         "individualised dietary intervention",
         "diet personalization",
-        "diet personalisation"
+        "diet personalisation",
+        "food prescription intervention",
+        "grocery prescription intervention",
+        "nutrition prescription intervention",
+        "nutrition pharmacy program evaluation",
+        "food farmacy program evaluation",
+        "fresh food pharmacy intervention",
+        "medically tailored meal intervention",
+        "medically tailored grocery intervention",
+        "medically tailored grocery program evaluation",
+        "medically tailored groceries intervention",
+        "medically tailored food package intervention",
+        "produce prescription implementation study",
+        "healthy food incentive program evaluation"
       ],
       "web_query_hints": [
         "personalized nutrition obesity trial",
@@ -52,7 +96,19 @@
         "tailored dietary advice cardiometabolic risk",
         "tailored dietary intervention systematic review",
         "individualized dietary intervention type 2 diabetes",
-        "individualised dietary intervention cardiometabolic"
+        "individualised dietary intervention cardiometabolic",
+        "food prescription intervention",
+        "food prescription intervention cardiometabolic",
+        "grocery prescription intervention diabetes",
+        "nutrition pharmacy program evaluation",
+        "food farmacy program evaluation",
+        "fresh food pharmacy intervention",
+        "medically tailored meal intervention",
+        "medically tailored meal intervention trial",
+        "medically tailored grocery program evaluation",
+        "medically tailored groceries program evaluation",
+        "produce prescription implementation study",
+        "healthy food incentive program evaluation"
       ],
       "document_terms": [
         "personalized nutrition trial",
@@ -60,7 +116,22 @@
         "precision nutrition trial",
         "tailored dietary intervention",
         "individualized dietary intervention",
-        "individualised dietary intervention"
+        "individualised dietary intervention",
+        "food prescription intervention trial",
+        "food prescription program evaluation",
+        "grocery prescription intervention trial",
+        "grocery prescription program evaluation",
+        "nutrition pharmacy program evaluation",
+        "food farmacy program evaluation",
+        "fresh food pharmacy program evaluation",
+        "medically tailored meal intervention trial",
+        "medically tailored meals program evaluation",
+        "medically tailored grocery program evaluation",
+        "medically tailored groceries program evaluation",
+        "medically tailored food package intervention",
+        "produce prescription implementation study",
+        "produce prescription program evaluation",
+        "healthy food incentive program evaluation"
       ]
     }
   }
