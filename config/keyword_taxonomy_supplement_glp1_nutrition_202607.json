@@ -1,0 +1,144 @@
+{
+  "version_note": "Focused 2026-07 supplement for nutrition and behavioral support around GLP-1 receptor agonists and anti-obesity pharmacotherapy. Terms are intentionally anchored to diet, protein, lean mass, adherence, obesity, diabetes, and cardiometabolic care to avoid broad pharmacology-only retrieval.",
+  "global": {
+    "implementation_behavior": {
+      "glp1_nutrition_support": [
+        "glp-1 nutrition counseling",
+        "glp-1 nutrition counselling",
+        "glp-1 dietary counseling",
+        "glp-1 dietary counselling",
+        "glp-1 diet quality",
+        "glp-1 dietary adherence",
+        "glp-1 protein intake",
+        "glp-1 lean mass",
+        "glp-1 muscle mass",
+        "glp-1 weight maintenance",
+        "glp-1 lifestyle intervention",
+        "glp-1 lifestyle modification",
+        "glp-1 behavior change",
+        "glp-1 behavioural change",
+        "glp-1 obesity management",
+        "glp-1 cardiometabolic risk",
+        "glp-1 type 2 diabetes nutrition",
+        "glp-1 medical nutrition therapy",
+        "semaglutide nutrition counseling",
+        "semaglutide dietary counseling",
+        "semaglutide protein intake",
+        "semaglutide lean mass",
+        "semaglutide lifestyle intervention",
+        "tirzepatide nutrition counseling",
+        "tirzepatide dietary counseling",
+        "tirzepatide protein intake",
+        "tirzepatide lean mass",
+        "tirzepatide lifestyle intervention",
+        "anti-obesity medication nutrition counseling",
+        "anti-obesity medication dietary counseling",
+        "anti-obesity pharmacotherapy lifestyle intervention",
+        "obesity pharmacotherapy nutrition counseling",
+        "weight loss medication dietary adherence",
+        "weight loss medication nutrition support",
+        "nutrition support during anti-obesity medication",
+        "dietary management during anti-obesity medication"
+      ]
+    }
+  },
+  "clinical": {
+    "obesity": [
+      "anti-obesity medication",
+      "anti-obesity medications",
+      "anti-obesity pharmacotherapy",
+      "obesity pharmacotherapy",
+      "weight loss medication",
+      "weight loss medications",
+      "glp-1 receptor agonist",
+      "glp-1 receptor agonists",
+      "glp-1 agonist",
+      "glp-1 agonists",
+      "semaglutide",
+      "tirzepatide"
+    ],
+    "diabetes": [
+      "glp-1 receptor agonist",
+      "glp-1 receptor agonists",
+      "glp-1 agonist",
+      "glp-1 agonists",
+      "semaglutide",
+      "tirzepatide"
+    ]
+  },
+  "outcomes": {
+    "anthropometry": [
+      "lean mass preservation",
+      "fat-free mass",
+      "fat free mass",
+      "muscle mass preservation",
+      "weight maintenance after glp-1",
+      "weight regain after glp-1"
+    ],
+    "diet_quality_adherence": [
+      "glp-1 dietary adherence",
+      "glp-1 diet quality",
+      "glp-1 protein intake",
+      "semaglutide dietary adherence",
+      "tirzepatide dietary adherence",
+      "anti-obesity medication dietary adherence",
+      "anti-obesity medication nutrition support"
+    ]
+  },
+  "workstreams": {
+    "busca2a": {
+      "condition_terms": [
+        "anti-obesity medication",
+        "anti-obesity medications",
+        "anti-obesity pharmacotherapy",
+        "obesity pharmacotherapy",
+        "glp-1 receptor agonist",
+        "glp-1 receptor agonists"
+      ],
+      "web_query_hints": [
+        "anti-obesity medication nutrition guideline",
+        "obesity pharmacotherapy nutrition guidance",
+        "glp-1 nutrition guidance obesity",
+        "glp-1 receptor agonist lifestyle guideline",
+        "glp-1 receptor agonist dietary counseling guideline"
+      ]
+    },
+    "busca2b": {
+      "condition_terms": [
+        "anti-obesity medication",
+        "anti-obesity medications",
+        "anti-obesity pharmacotherapy",
+        "obesity pharmacotherapy",
+        "weight loss medication",
+        "weight loss medications",
+        "glp-1 receptor agonist",
+        "glp-1 receptor agonists",
+        "semaglutide",
+        "tirzepatide"
+      ],
+      "web_query_hints": [
+        "glp-1 nutrition counseling trial",
+        "glp-1 dietary adherence intervention",
+        "glp-1 protein intake lean mass trial",
+        "semaglutide nutrition counseling trial",
+        "tirzepatide nutrition counseling trial",
+        "anti-obesity medication nutrition support trial",
+        "obesity pharmacotherapy lifestyle intervention systematic review"
+      ]
+    },
+    "a3": {
+      "web_query_hints": [
+        "glp-1 dietary adherence questionnaire",
+        "anti-obesity medication nutrition adherence questionnaire",
+        "glp-1 nutrition behavior framework"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "glp-1 dietary adherence questionnaire",
+        "anti-obesity medication nutrition adherence questionnaire",
+        "glp-1 nutrition behavior framework"
+      ]
+    }
+  }
+}

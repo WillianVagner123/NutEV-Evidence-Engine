@@ -1,0 +1,63 @@
+{
+  "version_note": "Focused 2026-07 scoring supplement for nutrition-centered GLP-1 and anti-obesity medication evidence. Points emphasize dietary counseling, adherence, protein intake, lean mass preservation, and lifestyle integration rather than medication-only pharmacology.",
+  "keyword_points": {
+    "glp-1 nutrition counseling": 4,
+    "glp-1 nutrition counselling": 4,
+    "glp-1 dietary counseling": 4,
+    "glp-1 dietary counselling": 4,
+    "glp-1 diet quality": 4,
+    "glp-1 dietary adherence": 4,
+    "glp-1 protein intake": 4,
+    "glp-1 lean mass": 4,
+    "glp-1 muscle mass": 3,
+    "glp-1 lifestyle intervention": 4,
+    "glp-1 lifestyle modification": 4,
+    "glp-1 medical nutrition therapy": 5,
+    "semaglutide nutrition counseling": 4,
+    "semaglutide dietary counseling": 4,
+    "semaglutide protein intake": 4,
+    "semaglutide lean mass": 4,
+    "tirzepatide nutrition counseling": 4,
+    "tirzepatide dietary counseling": 4,
+    "tirzepatide protein intake": 4,
+    "tirzepatide lean mass": 4,
+    "anti-obesity medication nutrition counseling": 5,
+    "anti-obesity medication dietary counseling": 5,
+    "anti-obesity pharmacotherapy lifestyle intervention": 4,
+    "obesity pharmacotherapy nutrition counseling": 5,
+    "weight loss medication dietary adherence": 4,
+    "weight loss medication nutrition support": 4,
+    "lean mass preservation": 3,
+    "fat-free mass": 3,
+    "fat free mass": 3,
+    "muscle mass preservation": 3
+  },
+  "workstream_bonus": {
+    "busca2a": {
+      "anti-obesity medication nutrition guideline": 5,
+      "obesity pharmacotherapy nutrition guidance": 5,
+      "glp-1 nutrition guidance obesity": 5,
+      "glp-1 receptor agonist lifestyle guideline": 4,
+      "glp-1 receptor agonist dietary counseling guideline": 5
+    },
+    "busca2b": {
+      "glp-1 nutrition counseling trial": 5,
+      "glp-1 dietary adherence intervention": 5,
+      "glp-1 protein intake lean mass trial": 5,
+      "semaglutide nutrition counseling trial": 5,
+      "tirzepatide nutrition counseling trial": 5,
+      "anti-obesity medication nutrition support trial": 5,
+      "obesity pharmacotherapy lifestyle intervention systematic review": 5
+    },
+    "a3": {
+      "glp-1 dietary adherence questionnaire": 4,
+      "anti-obesity medication nutrition adherence questionnaire": 4,
+      "glp-1 nutrition behavior framework": 4
+    },
+    "artigo3_framework": {
+      "glp-1 dietary adherence questionnaire": 4,
+      "anti-obesity medication nutrition adherence questionnaire": 4,
+      "glp-1 nutrition behavior framework": 4
+    }
+  }
+}
