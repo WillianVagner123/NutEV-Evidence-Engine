@@ -738,6 +738,7 @@ SEMANTIC_RESEARCH_BLOCKS: dict[str, SemanticBlock] = {
             "nafld",
             "nash",
             "fatty liver",
+            "hepatic steatosis",
             "steatotic liver disease",
             "steatohepatitis",
             "nonalcoholic fatty liver disease",
