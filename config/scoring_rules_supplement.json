@@ -1,5 +1,5 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic, diet-quality, and food-navigation/referral prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic, diet-quality, food-navigation/referral, and digital nutrition coaching prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
@@ -36,7 +36,19 @@
     "food pantry referral program": 4,
     "social needs screening": 3,
     "screen and intervene": 4,
-    "hunger vital sign": 4
+    "hunger vital sign": 4,
+    "digital nutrition intervention": 4,
+    "digital dietary intervention": 4,
+    "digital lifestyle intervention": 3,
+    "telehealth nutrition intervention": 4,
+    "telehealth nutrition counseling": 4,
+    "telehealth nutrition counselling": 4,
+    "remote nutrition coaching": 4,
+    "remote dietary counseling": 4,
+    "remote dietary counselling": 4,
+    "mobile health nutrition": 4,
+    "app-based dietary intervention": 4,
+    "app based dietary intervention": 4
   },
   "workstream_bonus": {
     "busca1": {
@@ -107,7 +119,19 @@
       "food pantry referral program": 5,
       "social needs screening": 4,
       "screen and intervene": 5,
-      "hunger vital sign": 5
+      "hunger vital sign": 5,
+      "digital nutrition intervention": 5,
+      "digital dietary intervention": 5,
+      "digital lifestyle intervention": 4,
+      "telehealth nutrition intervention": 5,
+      "telehealth nutrition counseling": 5,
+      "telehealth nutrition counselling": 5,
+      "remote nutrition coaching": 5,
+      "remote dietary counseling": 5,
+      "remote dietary counselling": 5,
+      "mobile health nutrition": 5,
+      "app-based dietary intervention": 5,
+      "app based dietary intervention": 5
     },
     "a3": {
       "care navigation": 3,
@@ -115,7 +139,11 @@
       "community resource referral": 3,
       "social needs screening": 3,
       "screen and intervene": 3,
-      "hunger vital sign": 3
+      "hunger vital sign": 3,
+      "digital nutrition intervention": 3,
+      "remote nutrition coaching": 3,
+      "app-based dietary intervention": 3,
+      "app based dietary intervention": 3
     },
     "artigo3_framework": {
       "care navigation": 3,
@@ -123,7 +151,11 @@
       "community resource referral": 3,
       "social needs screening": 3,
       "screen and intervene": 3,
-      "hunger vital sign": 3
+      "hunger vital sign": 3,
+      "digital nutrition intervention": 3,
+      "remote nutrition coaching": 3,
+      "app-based dietary intervention": 3,
+      "app based dietary intervention": 3
     }
   }
 }
