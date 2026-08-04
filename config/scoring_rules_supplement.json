@@ -1,5 +1,5 @@
 {
-  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic, diet-quality, and food-navigation/referral prioritization terms.",
+  "version_note": "Supplemental NutMEV scoring expansion loaded after scoring_rules.json; keeps base scoring intact and adds focused CKM/cardiorenal metabolic, diet-quality, food-navigation/referral, and culturally tailored nutrition prioritization terms.",
   "keyword_points": {
     "ckm health": 3,
     "ckm risk": 3,
@@ -36,7 +36,32 @@
     "food pantry referral program": 4,
     "social needs screening": 3,
     "screen and intervene": 4,
-    "hunger vital sign": 4
+    "hunger vital sign": 4,
+    "culturally tailored nutrition": 4,
+    "culturally tailored dietary intervention": 4,
+    "culturally tailored lifestyle intervention": 3,
+    "culturally adapted nutrition": 4,
+    "culturally adapted dietary intervention": 4,
+    "culturally adapted lifestyle intervention": 3,
+    "culturally appropriate nutrition": 4,
+    "culturally appropriate dietary counseling": 4,
+    "culturally appropriate dietary counselling": 4,
+    "culturally responsive nutrition": 4,
+    "culturally responsive dietary intervention": 4,
+    "culture-centered nutrition": 3,
+    "culture centered nutrition": 3,
+    "cultural tailoring": 3,
+    "cultural adaptation": 3,
+    "cultural adaptation of diet": 4,
+    "cultural adaptation of lifestyle intervention": 3,
+    "community-based nutrition intervention": 4,
+    "community based nutrition intervention": 4,
+    "equity-focused nutrition intervention": 4,
+    "equity focused nutrition intervention": 4,
+    "health equity nutrition intervention": 4,
+    "food sovereignty": 3,
+    "traditional foods intervention": 3,
+    "traditional food intervention": 3
   },
   "workstream_bonus": {
     "busca1": {
@@ -48,7 +73,13 @@
       "food pantry referral program": 4,
       "social needs screening": 3,
       "screen and intervene": 4,
-      "hunger vital sign": 4
+      "hunger vital sign": 4,
+      "culturally tailored nutrition": 4,
+      "culturally appropriate dietary counseling": 4,
+      "culturally appropriate dietary counselling": 4,
+      "culturally responsive nutrition": 4,
+      "food sovereignty": 3,
+      "traditional foods intervention": 3
     },
     "busca2a": {
       "ckm health": 4,
@@ -107,7 +138,15 @@
       "food pantry referral program": 5,
       "social needs screening": 4,
       "screen and intervene": 5,
-      "hunger vital sign": 5
+      "hunger vital sign": 5,
+      "culturally tailored dietary intervention": 5,
+      "culturally adapted dietary intervention": 5,
+      "culturally responsive dietary intervention": 5,
+      "equity-focused nutrition intervention": 5,
+      "equity focused nutrition intervention": 5,
+      "health equity nutrition intervention": 5,
+      "community-based nutrition intervention": 5,
+      "community based nutrition intervention": 5
     },
     "a3": {
       "care navigation": 3,
@@ -115,7 +154,11 @@
       "community resource referral": 3,
       "social needs screening": 3,
       "screen and intervene": 3,
-      "hunger vital sign": 3
+      "hunger vital sign": 3,
+      "culturally tailored nutrition": 4,
+      "cultural adaptation of diet": 4,
+      "culturally appropriate nutrition": 4,
+      "culturally responsive nutrition": 4
     },
     "artigo3_framework": {
       "care navigation": 3,
@@ -123,7 +166,11 @@
       "community resource referral": 3,
       "social needs screening": 3,
       "screen and intervene": 3,
-      "hunger vital sign": 3
+      "hunger vital sign": 3,
+      "culturally tailored nutrition": 4,
+      "cultural adaptation of diet": 4,
+      "culturally appropriate nutrition": 4,
+      "culturally responsive nutrition": 4
     }
   }
 }
