@@ -41,3 +41,12 @@ def test_adherence_and_behavior_instruments_score_above_generic_note():
         "is_new": True,
     }
     assert score_watch_item(instrument_item) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
+
+
+def test_sustainable_healthy_diet_guidance_scores_above_generic_note():
+    item = {
+        "title": "Sustainable healthy diet guideline for cardiometabolic nutrition",
+        "relevance_score": 1,
+        "is_new": True,
+    }
+    assert score_watch_item(item) > score_watch_item({"title": "generic nutrition note", "relevance_score": 1})
