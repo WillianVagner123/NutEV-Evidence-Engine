@@ -37,3 +37,43 @@ def test_scoring_rules_prioritize_food_is_medicine_interventions() -> None:
     fim_scored = score_record(dict(food_is_medicine), scoring, "busca2b")
 
     assert fim_scored["relevance_score"] > baseline_scored["relevance_score"] + 15
+
+
+def test_food_pharmacy_and_farmacy_terms_enter_search_and_scoring() -> None:
+    taxonomy = load_json(Path("config") / "keyword_taxonomy.json")
+    scoring = load_json(Path("config") / "scoring_rules.json")
+
+    busca2b = taxonomy["workstreams"]["busca2b"]
+    joined_search_terms = " ".join(
+        busca2b["focus_terms"] + busca2b["web_query_hints"] + busca2b["document_terms"]
+    ).lower()
+
+    for term in [
+        "food pharmacy",
+        "food pharmacy referral",
+        "food farmacy",
+        "food farmacy referral",
+    ]:
+        assert term in joined_search_terms
+        assert term in scoring["keyword_points"]
+        assert term in scoring["workstream_bonus"]["busca2b"]
+
+    baseline = score_record(
+        {
+            "title": "Diet intervention for adults with obesity and cardiometabolic risk",
+            "source": "pubmed",
+        },
+        scoring,
+        "busca2b",
+    )
+    expanded = score_record(
+        {
+            "title": "Food farmacy referral intervention for adults with obesity and cardiometabolic risk",
+            "abstract": "Food pharmacy program evaluation measured dietary adherence and nutrition security.",
+            "source": "pubmed",
+        },
+        scoring,
+        "busca2b",
+    )
+
+    assert expanded["relevance_score"] > baseline["relevance_score"]
