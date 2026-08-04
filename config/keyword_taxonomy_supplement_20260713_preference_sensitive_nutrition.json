@@ -1,0 +1,79 @@
+{
+  "version_note": "Focused NutMEV expansion for preference-sensitive and personalized nutrition care. Loaded after keyword_taxonomy.json via settings.load_json without modifying the base taxonomy.",
+  "global": {
+    "implementation_behavior": {
+      "preference_sensitive_nutrition": [
+        "preference-sensitive nutrition",
+        "preference sensitive nutrition",
+        "preference-sensitive dietary advice",
+        "preference sensitive dietary advice",
+        "patient preference",
+        "patient preferences",
+        "food preference",
+        "food preferences",
+        "diet preference",
+        "diet preferences",
+        "meal preference",
+        "meal preferences",
+        "shared decision making",
+        "shared decision-making",
+        "patient-centered nutrition",
+        "patient centred nutrition",
+        "patient-centered dietary intervention",
+        "patient centred dietary intervention",
+        "person-centered nutrition",
+        "person centred nutrition",
+        "personalized nutrition",
+        "personalised nutrition",
+        "precision nutrition",
+        "tailored nutrition",
+        "tailored dietary advice",
+        "tailored dietary intervention",
+        "individualized diet",
+        "individualised diet",
+        "individualized dietary intervention",
+        "individualised dietary intervention",
+        "personalized meal planning",
+        "personalised meal planning",
+        "individualized meal plan",
+        "individualised meal plan"
+      ]
+    }
+  },
+  "workstreams": {
+    "busca2b": {
+      "web_query_hints": [
+        "preference-sensitive nutrition obesity trial",
+        "preference sensitive dietary advice type 2 diabetes",
+        "patient preference dietary intervention cardiometabolic",
+        "shared decision making nutrition intervention obesity",
+        "patient-centered nutrition intervention diabetes",
+        "personalized nutrition cardiometabolic trial",
+        "precision nutrition type 2 diabetes trial",
+        "tailored dietary intervention obesity",
+        "individualized dietary intervention type 2 diabetes",
+        "personalized meal planning weight management"
+      ]
+    },
+    "artigo3_framework": {
+      "web_query_hints": [
+        "patient preference dietary adherence questionnaire",
+        "food preference dietary adherence scale",
+        "shared decision making nutrition framework",
+        "patient-centered nutrition framework",
+        "personalized nutrition adherence instrument",
+        "tailored dietary advice adherence questionnaire"
+      ]
+    },
+    "a3": {
+      "web_query_hints": [
+        "patient preference dietary adherence questionnaire",
+        "food preference dietary adherence scale",
+        "shared decision making nutrition framework",
+        "patient-centered nutrition framework",
+        "personalized nutrition adherence instrument",
+        "tailored dietary advice adherence questionnaire"
+      ]
+    }
+  }
+}
