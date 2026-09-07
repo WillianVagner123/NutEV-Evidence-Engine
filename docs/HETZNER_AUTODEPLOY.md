@@ -38,7 +38,13 @@ Create an environment named `HETZNER` to match the workflow and configure:
 
 - `HETZNER_SSH_KEY`: complete **private** SSH key dedicated to deployment. Use an unencrypted OpenSSH/PEM private key whose public half is installed in the target user's `~/.ssh/authorized_keys`. Do not store the `.pub` key in this secret.
 
-The workflow normalizes Windows CRLF and one-line secrets containing literal `\n` sequences before use. It then validates the private key locally with `ssh-keygen` and performs a non-interactive SSH probe before any Git/Docker operation on the server. Invalid, public-only or passphrase-protected key material fails before deployment with an explicit error.
+The secret may be stored in any of these lossless representations:
+
+- the raw multiline OpenSSH/PEM private-key block;
+- a one-line value containing literal `\n` sequences;
+- base64 of the complete private-key block.
+
+The workflow normalizes Windows CRLF, literal `\n` sequences and valid base64-wrapped private keys before use. It never logs the key material. It then validates the normalized private key locally with `ssh-keygen` and performs a non-interactive SSH probe before any Git/Docker operation on the server. Invalid, truncated, public-only or passphrase-protected key material still fails before deployment with an explicit error.
 
 Leaving `HETZNER_AUTODEPLOY` unset or false disables only the automatic `workflow_run` path. It does not disable an explicit manual deploy from `main`.
 
@@ -77,9 +83,9 @@ The previous running image is tagged `nutev:rollback` before the switch. If the 
 
 ## SSH troubleshooting
 
-If Actions reports `Load key ... error in libcrypto`, first re-save `HETZNER_SSH_KEY` with the complete private-key block, including the BEGIN/END lines. The workflow handles CRLF and literal `\n`, but it cannot reconstruct a truncated key, convert a public key into a private key, or unlock a passphrase-protected key.
+If Actions reports `Load key ... error in libcrypto` or says that `HETZNER_SSH_KEY` could not be parsed, verify that the secret contains the complete private-key payload. Raw multiline, literal-`\n` and base64 representations are accepted, but encoding cannot reconstruct a truncated key, convert a public key into a private key, or unlock a passphrase-protected key.
 
-The secret should resemble one of these private-key envelopes:
+The decoded secret should resemble one of these private-key envelopes:
 
 ```text
 -----BEGIN OPENSSH PRIVATE KEY-----
