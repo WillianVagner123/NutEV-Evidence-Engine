@@ -1,29 +1,19 @@
 import{canonicalSavedKey,saveArticle,saveArticles,savedKeySet}from'./saved-library.js';
 
-const nativeFetch=window.fetch.bind(window);
 let latestSearch=null;
 let enhanceToken=0;
 
 function esc(value){return String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
-function requestPath(input){try{return new URL(typeof input==='string'?input:input?.url||'',location.href).pathname}catch{return''}}
 function searchContext(data){return{search_id:data?.search_id||'',query:data?.query||'',search_mode:data?.search_mode||''}}
 function resultForKey(key){return(latestSearch?.results||[]).find(item=>canonicalSavedKey(item)===key)||null}
 
-function capturePayload(payload){
-  const result=payload?.result?.results?payload.result:(payload?.results?payload:null);
-  if(!result)return;
+function captureResult(result){
+  if(!result?.results)return;
   latestSearch=result;
   queueMicrotask(enhance);
 }
 
-window.fetch=async(...args)=>{
-  const response=await nativeFetch(...args);
-  const path=requestPath(args[0]);
-  if(response.ok&&(path==='/api/search'||path.startsWith('/api/search/jobs/')||path.startsWith('/api/searches/'))){
-    response.clone().json().then(capturePayload).catch(()=>{});
-  }
-  return response;
-};
+window.addEventListener('nutev:search-result',event=>captureResult(event.detail?.result));
 
 async function markSavedButtons(){
   const buttons=[...document.querySelectorAll('[data-save-library-key]')];
@@ -106,4 +96,4 @@ async function enhance(){
 
 const observer=new MutationObserver(()=>queueMicrotask(enhance));
 observer.observe(document.documentElement,{subtree:true,childList:true});
-window.addEventListener('pageshow',()=>queueMicrotask(enhance));
+window.addEventListener('pageshow',()=>{const cached=window.NutEVSearchEvents?.getLastResult?.();if(cached)captureResult(cached);else queueMicrotask(enhance)});
