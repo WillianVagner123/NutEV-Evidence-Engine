@@ -6,9 +6,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import sqlite3
-from typing import Any, Iterable
-
-from nutev.reference_identity import normalize_doi, normalize_pmid
+from typing import Any
 
 from .identity import observed_aliases
 from .sqlite_store import SQLiteArticleRegistry
