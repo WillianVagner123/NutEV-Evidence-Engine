@@ -17,6 +17,7 @@ if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
 from nutev.reference_identity import dedupe_records
+from nutev.registry.ingest import register_search_result
 from nutev.search.classification import classify_search_record
 from nutev.search.crossref import search_crossref
 from nutev.search.doaj import search_doaj
@@ -206,7 +207,23 @@ def _atomic_json(path: Path, value: object) -> None:
     tmp.replace(path)
 
 
+def _registry_complete(result: dict[str, Any]) -> bool:
+    summary = result.get("registry_summary")
+    return isinstance(summary, dict) and str(summary.get("status") or "").startswith("COMPLETE")
+
+
 def _persist_search(result: dict[str, Any], output_root: Path) -> None:
+    if not _registry_complete(result):
+        try:
+            register_search_result(result, output_root=output_root)
+        except Exception as exc:
+            result["registry_summary"] = {
+                "status": "FAILED",
+                "search_id": result.get("search_id"),
+                "error": f"{type(exc).__name__}: {exc}",
+                "search_result_still_valid": True,
+                "semantics": "registry persistence failed explicitly; no scientific state was advanced",
+            }
     run_dir = _web_run_dir(output_root, str(result["search_id"]))
     payload = dict(result)
     payload["run_dir"] = str(run_dir)
