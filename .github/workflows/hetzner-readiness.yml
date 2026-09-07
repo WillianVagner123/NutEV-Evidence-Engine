@@ -1,0 +1,146 @@
+name: hetzner-readiness
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hetzner-readiness
+  cancel-in-progress: true
+
+jobs:
+  readiness:
+    name: production readiness
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 10
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+      HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+
+    steps:
+      - name: Validate readiness configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$HETZNER_HOST"
+          test -n "$HETZNER_USER"
+          test -n "$HETZNER_APP_DIR"
+          test -n "$HETZNER_SSH_KEY"
+
+      - name: Configure and validate SSH key
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          install -d -m 700 ~/.ssh
+
+          python3 - <<'PY'
+          import base64
+          import binascii
+          import os
+          from pathlib import Path
+
+          raw = os.environ["HETZNER_SSH_KEY"].strip()
+          raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+          if "\\n" in raw and "\n" not in raw:
+              raw = raw.replace("\\n", "\n")
+
+          candidate = raw.strip()
+          if not candidate.startswith("-----BEGIN "):
+              compact = "".join(candidate.split())
+              try:
+                  decoded = base64.b64decode(compact, validate=True).decode("utf-8").strip()
+              except (binascii.Error, UnicodeDecodeError, ValueError):
+                  decoded = ""
+              if decoded.startswith("-----BEGIN "):
+                  candidate = decoded.replace("\r\n", "\n").replace("\r", "\n")
+
+          candidate = candidate.strip() + "\n"
+          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate, encoding="utf-8")
+          PY
+
+          chmod 600 ~/.ssh/id_ed25519
+          if ! ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null; then
+            echo "::error::HETZNER_SSH_KEY is not a complete unencrypted private key after raw/literal-newline/base64 normalization." >&2
+            exit 1
+          fi
+          chmod 600 ~/.ssh/id_ed25519.pub
+          ssh-keyscan -p "$PORT" -H "$HETZNER_HOST" >> ~/.ssh/known_hosts
+
+      - name: Verify SSH access
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          ssh \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o ConnectTimeout=15 \
+            -p "$PORT" \
+            "$HETZNER_USER@$HETZNER_HOST" \
+            'printf "ssh-ok\n"' | grep -qx 'ssh-ok'
+
+      - name: Verify remote deployment prerequisites
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+
+          ssh \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o ConnectTimeout=15 \
+            -p "$PORT" \
+            "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+
+          cd "$APP_DIR"
+          test -d .git
+          test -f deploy/hetzner/.env
+          test -f deploy/hetzner/compose.yaml
+          test -f deploy/hetzner/Dockerfile
+          command -v git >/dev/null
+          command -v docker >/dev/null
+          command -v curl >/dev/null
+          docker info >/dev/null
+          docker compose version >/dev/null
+
+          echo "remote_repo_head=$(git rev-parse HEAD)"
+          echo "remote_branch=$(git branch --show-current || true)"
+          echo "docker_version=$(docker version --format '{{.Server.Version}}')"
+          echo "disk_free_kb=$(df -Pk "$APP_DIR" | awk 'NR==2 {print $4}')"
+
+          if curl -fsS http://127.0.0.1:8765/api/health >/dev/null 2>&1; then
+            echo "current_nutev_health=healthy"
+            printf 'current_nutev_version='
+            curl -fsS http://127.0.0.1:8765/api/version || true
+            printf '\n'
+          else
+            echo "::warning::Current NutEV health endpoint is unavailable; deployment prerequisites are present, but current production health could not be confirmed."
+            echo "current_nutev_health=unavailable"
+          fi
+          REMOTE
+
+      - name: Readiness summary
+        shell: bash
+        run: |
+          {
+            echo "## Hetzner production readiness"
+            echo ""
+            echo "- SSH key parsed successfully"
+            echo "- SSH authentication succeeded"
+            echo "- repository and production .env are present"
+            echo "- Docker, Docker Compose, Git and curl are available"
+            echo "- no build, checkout/reset, container replacement or volume mutation was performed"
+            echo ""
+            echo "Next step: run deploy-hetzner from main."
+          } >> "$GITHUB_STEP_SUMMARY"
