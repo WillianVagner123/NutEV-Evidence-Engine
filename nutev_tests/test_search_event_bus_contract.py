@@ -13,6 +13,7 @@ def test_search_event_bus_is_loaded_before_all_search_consumers() -> None:
     html = read("search.html")
 
     assert "search-events.js" in html
+    assert html.index("search-events.js") < html.index("search-history-ui.js")
     assert html.index("search-events.js") < html.index("search-library-ui.js")
     assert html.index("search-events.js") < html.index("search-facets-ui.js")
     assert html.index("search-events.js") < html.index("search-ux-resilience.js")
@@ -25,6 +26,7 @@ def test_only_event_bus_wraps_window_fetch_in_public_search_extensions() -> None
         name: read(name)
         for name in (
             "search-events.js",
+            "search-history-ui.js",
             "search-library-ui.js",
             "search-facets-ui.js",
             "search-ux-resilience.js",
@@ -34,6 +36,7 @@ def test_only_event_bus_wraps_window_fetch_in_public_search_extensions() -> None
 
     assert scripts["search-events.js"].count("window.fetch=") == 1
     for name in (
+        "search-history-ui.js",
         "search-library-ui.js",
         "search-facets-ui.js",
         "search-ux-resilience.js",
@@ -42,7 +45,7 @@ def test_only_event_bus_wraps_window_fetch_in_public_search_extensions() -> None
         assert "window.fetch=" not in scripts[name]
 
 
-def test_one_response_clone_fans_out_lifecycle_events() -> None:
+def test_one_response_clone_fans_out_lifecycle_and_history_events() -> None:
     events = read("search-events.js")
 
     assert events.count("response.clone().json()") == 1
@@ -50,8 +53,11 @@ def test_one_response_clone_fans_out_lifecycle_events() -> None:
     assert "emit('nutev:search-result'" in events
     assert "emit('nutev:search-failed'" in events
     assert "emit('nutev:search-transport-retry'" in events
+    assert "emit('nutev:search-history'" in events
+    assert "meta.path==='/api/searches'" in events
     assert "getLastResult:()=>lastResult" in events
     assert "getLastJob:()=>lastJob" in events
+    assert "getLastHistory:()=>[...lastHistory]" in events
 
 
 def test_retry_remains_fail_safe_and_never_reposts_a_search() -> None:
@@ -65,12 +71,14 @@ def test_retry_remains_fail_safe_and_never_reposts_a_search() -> None:
     assert "robustJobFetch(args,meta.path)" in events
 
 
-def test_library_facets_and_ux_consume_the_same_result_event() -> None:
+def test_search_consumers_receive_events_without_own_transport_wrappers() -> None:
+    history = read("search-history-ui.js")
     library = read("search-library-ui.js")
     facets = read("search-facets-ui.js")
     ux = read("search-ux-resilience.js")
     recovery = read("search-guided-recovery.js")
 
+    assert "addEventListener('nutev:search-history'" in history
     assert "addEventListener('nutev:search-result'" in library
     assert "addEventListener('nutev:search-result'" in facets
     assert "addEventListener('nutev:search-result'" in ux
