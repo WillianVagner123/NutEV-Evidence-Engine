@@ -75,12 +75,12 @@ function providerDisplayName(data,id){
   return String(match?.label||id).replaceAll('_',' ');
 }
 function searchAuditIdentity(data){
-  const mode=String(data?.search_mode||'');const plan=data?.query_plan||{};
+  const mode=String(data?.search_mode||'');const plan=data?.query_plan||{};const maximum=mode.includes('global_exhaustive')?' · cobertura máxima':'';
   if(mode.startsWith('exact_review')){
     const strategyId=String(plan.strategy_id||'UNVERSIONED');const strategyVersion=String(plan.strategy_version||'UNVERSIONED');
-    return `Estratégia exata · ${strategyId} · ${strategyVersion}`;
+    return `Estratégia exata · ${strategyId} · ${strategyVersion}${maximum}`;
   }
-  if(mode.startsWith('structured_review'))return `Busca avançada · ${String(plan.framework||'estrutura revisada')}`;
+  if(mode.startsWith('structured_review'))return `Busca avançada · ${String(plan.framework||'estrutura revisada')}${maximum}`;
   if(mode==='global_exhaustive')return'Busca rápida · cobertura máxima';
   if(mode==='interactive_bounded')return'Busca rápida · limitada';
   return'';
