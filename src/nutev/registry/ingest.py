@@ -62,7 +62,13 @@ def _search_context_sha256(result: dict[str, Any]) -> str:
 
 def _provider_gaps(result: dict[str, Any]) -> list[Any]:
     gaps: list[Any] = []
-    for key in ("failed_providers", "unavailable_providers", "non_exhaustive_providers"):
+    for key in (
+        "failed_providers",
+        "unavailable_providers",
+        "partial_providers",
+        "skipped_providers",
+        "non_exhaustive_providers",
+    ):
         for item in result.get(key) or []:
             if item not in gaps:
                 gaps.append(item)
