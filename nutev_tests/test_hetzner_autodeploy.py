@@ -67,8 +67,15 @@ def test_autodeploy_requires_live_http_surface_before_and_after_promotion() -> N
 
 def test_autodeploy_requires_public_https_smoke_and_commit_identity_when_visible() -> None:
     workflow = WORKFLOW.read_text(encoding="utf-8")
+    default_url_lines = [
+        line.strip()
+        for line in workflow.splitlines()
+        if line.strip().startswith("PUBLIC_URL_Q=")
+    ]
 
-    assert 'https://nutev.mindsperformance.com.br' in workflow
+    assert default_url_lines == [
+        'PUBLIC_URL_Q=$(printf \'%q\' "${NUTEV_PUBLIC_URL:-https://nutev.mindsperformance.com.br}")'
+    ]
     assert '$PUBLIC_URL/api/health' in workflow
     assert '$PUBLIC_URL/search.html' in workflow
     assert '$PUBLIC_URL/articles.html' in workflow
