@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 from typing import Any
 
-from playwright.sync_api import Page, sync_playwright
+from playwright.sync_api import Page, expect, sync_playwright
 
 
 BASE_URL = "http://127.0.0.1:8765"
@@ -42,11 +42,9 @@ def _assert(condition: bool, message: str) -> None:
 
 
 def _wait_engine(page: Page) -> None:
-    page.locator("#health").wait_for(state="visible", timeout=15_000)
-    page.wait_for_function(
-        "document.querySelector('#health')?.textContent?.includes('engine conectado')",
-        timeout=15_000,
-    )
+    health = page.locator("#health")
+    health.wait_for(state="visible", timeout=15_000)
+    expect(health).to_contain_text("engine conectado", timeout=15_000)
 
 
 def _diagnostics(page: Page) -> tuple[list[str], list[str], list[str]]:
@@ -139,10 +137,8 @@ def _select_only_pubmed(page: Page) -> None:
 
 
 def _wait_search_finished(page: Page) -> None:
-    page.wait_for_function(
-        "!document.querySelector('#searchBtn')?.disabled && !document.querySelector('#globalSearchBtn')?.disabled",
-        timeout=45_000,
-    )
+    expect(page.locator("#searchBtn")).to_be_enabled(timeout=45_000)
+    expect(page.locator("#globalSearchBtn")).to_be_enabled(timeout=45_000)
 
 
 def _search_workspace(browser: Any) -> None:
@@ -214,9 +210,10 @@ def _search_workspace(browser: Any) -> None:
     # Persisted quick/global runs must be visible in history with their gap state.
     page.goto(BASE_URL + "/search.html?view=history", wait_until="networkidle", timeout=30_000)
     page.locator("#historyList .history-item").first.wait_for(state="visible", timeout=15_000)
-    page.wait_for_function(
-        "document.querySelectorAll('#historyList .history-card').length >= 2",
-        timeout=15_000,
+    page.locator("#historyList .history-card").nth(1).wait_for(state="visible", timeout=15_000)
+    _assert(
+        page.locator("#historyList .history-card").count() >= 2,
+        "history did not retain both pre-deploy searches",
     )
     history_text = page.locator("#historyList").inner_text().casefold()
     _assert("lacuna" in history_text, "history does not surface provider/audit gaps")
