@@ -73,12 +73,14 @@ def _build_metadata() -> dict[str, str]:
                 info = parsed
         except (OSError, json.JSONDecodeError):
             info = {}
+    # Build identity is baked into the image and must win over a stale server
+    # env_file. Environment variables remain a fallback for direct/dev runs.
     return {
         "service": "nutev-web",
-        "version": str(os.environ.get("NUTEV_VERSION") or info.get("version") or "dev"),
-        "commit": str(os.environ.get("NUTEV_BUILD_COMMIT") or info.get("build_commit") or "unknown"),
-        "branch": str(os.environ.get("NUTEV_BUILD_BRANCH") or info.get("build_branch") or "unknown"),
-        "build_time": str(os.environ.get("NUTEV_BUILD_TIME") or info.get("build_time") or "unknown"),
+        "version": str(info.get("version") or os.environ.get("NUTEV_VERSION") or "dev"),
+        "commit": str(info.get("build_commit") or os.environ.get("NUTEV_BUILD_COMMIT") or "unknown"),
+        "branch": str(info.get("build_branch") or os.environ.get("NUTEV_BUILD_BRANCH") or "unknown"),
+        "build_time": str(info.get("build_time") or os.environ.get("NUTEV_BUILD_TIME") or "unknown"),
         "environment": str(os.environ.get("NUTEV_ENVIRONMENT") or "production"),
     }
 
