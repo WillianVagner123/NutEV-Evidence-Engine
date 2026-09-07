@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from hashlib import sha256
 import json
 import os
@@ -8,6 +9,7 @@ import threading
 from typing import Any, Callable
 from uuid import uuid4
 
+from nutev.registry.full_text import record_full_text_artifact
 from nutev.science.enrichment import (
     _content_signals,
     _download,
@@ -77,6 +79,11 @@ def _recorded_full_text_hint(row: dict[str, Any]) -> bool:
 
 
 def _identity_seed(row: dict[str, Any]) -> str:
+    # Once search persistence has assigned a durable NutEV identity, every provider
+    # and every future search must converge on the same full-text cache directory.
+    article_id = str(row.get("article_id") or "").strip()
+    if article_id:
+        return f"article_id:{article_id}"
     for field in (
         "pmcid",
         "pmc_id",
@@ -115,6 +122,14 @@ def _atomic_json(path: Path, value: dict[str, Any]) -> None:
     )
 
 
+def _file_sha256(path: Path) -> str:
+    digest = sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
 def _public_manifest(value: dict[str, Any], *, cache_hit: bool) -> dict[str, Any]:
     allowed = (
         "status",
@@ -133,6 +148,11 @@ def _public_manifest(value: dict[str, Any], *, cache_hit: bool) -> dict[str, Any
         "warnings",
         "probe_attempts",
         "candidate_count",
+        "article_id",
+        "artifact_id",
+        "content_sha256",
+        "text_sha256",
+        "registry_linked",
     )
     output = {key: value.get(key) for key in allowed if key in value}
     output.update(
@@ -145,7 +165,39 @@ def _public_manifest(value: dict[str, Any], *, cache_hit: bool) -> dict[str, Any
     return output
 
 
-def _load_cached(cache_dir: Path) -> dict[str, Any] | None:
+def _link_manifest_to_registry(
+    manifest: dict[str, Any],
+    *,
+    row: dict[str, Any],
+    output_root: Path,
+    cache_dir: Path,
+) -> dict[str, Any]:
+    article_id = str(row.get("article_id") or manifest.get("article_id") or "").strip()
+    if not article_id:
+        manifest["registry_linked"] = False
+        return manifest
+    linked = record_full_text_artifact(
+        output_root=output_root,
+        article_id=article_id,
+        manifest=manifest,
+        cache_dir=cache_dir,
+    )
+    manifest["article_id"] = article_id
+    if linked.get("status") == "linked":
+        manifest["artifact_id"] = linked.get("artifact_id")
+        manifest["registry_linked"] = True
+    else:
+        manifest["registry_linked"] = False
+        manifest["registry_link_error"] = linked.get("reason")
+    return manifest
+
+
+def _load_cached(
+    cache_dir: Path,
+    *,
+    row: dict[str, Any],
+    output_root: Path,
+) -> dict[str, Any] | None:
     manifest_path = cache_dir / "manifest.json"
     text_path = cache_dir / "private-text.txt"
     if not manifest_path.is_file() or not text_path.is_file():
@@ -156,7 +208,7 @@ def _load_cached(cache_dir: Path) -> dict[str, Any] | None:
         return None
     if not isinstance(value, dict) or value.get("status") != "extracted":
         return None
-    expected = str(value.get("private_text_sha256") or "").strip().lower()
+    expected = str(value.get("private_text_sha256") or value.get("text_sha256") or "").strip().lower()
     if not expected:
         return None
     try:
@@ -165,6 +217,17 @@ def _load_cached(cache_dir: Path) -> dict[str, Any] | None:
         return None
     if actual != expected:
         return None
+    # Caches created after Article Registry activation are self-healing: if the
+    # SQLite projection was rebuilt, the cached manifest can recreate the artifact
+    # link without downloading or OCRing the document again.
+    if value.get("content_sha256"):
+        value = _link_manifest_to_registry(
+            value,
+            row=row,
+            output_root=output_root,
+            cache_dir=cache_dir,
+        )
+        _atomic_json(manifest_path, value)
     return _public_manifest(value, cache_hit=True)
 
 
@@ -196,6 +259,8 @@ def _effective_media_type(candidate: dict[str, Any], downloaded_type: str) -> st
 def _extract_candidate(
     candidate: dict[str, Any],
     *,
+    row: dict[str, Any],
+    output_root: Path,
     cache_dir: Path,
     key: str,
     candidate_count: int,
@@ -206,6 +271,7 @@ def _extract_candidate(
         cache_dir / "private-assets",
     )
     media_type = _effective_media_type(candidate, downloaded_type)
+    content_sha = _file_sha256(downloaded_path)
     text, method, ocr_used, ocr_engine, warnings = _extract_local_file(
         downloaded_path,
         media_type,
@@ -220,13 +286,16 @@ def _extract_candidate(
     private_sha = sha256(text.encode("utf-8")).hexdigest()
     method_value = getattr(method, "value", str(method))
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "status": "extracted",
         "scope": "full_text",
+        "article_id": str(row.get("article_id") or "").strip() or None,
         "selected_url": final_url,
         "resolver_route": candidate.get("resolver_route"),
         "resolver_source": candidate.get("resolver_source"),
         "media_type": media_type,
+        "content_sha256": content_sha,
+        "text_sha256": private_sha,
         "extraction_method": method_value,
         "ocr_used": bool(ocr_used),
         "ocr_engine": ocr_engine,
@@ -239,8 +308,16 @@ def _extract_candidate(
         "candidate_count": candidate_count,
         "private_text_file": private_text_path.name,
         "private_text_sha256": private_sha,
+        "cache_key": key,
+        "retrieved_at": datetime.now(timezone.utc).isoformat(),
         "ranking_influence": "none",
     }
+    manifest = _link_manifest_to_registry(
+        manifest,
+        row=row,
+        output_root=output_root,
+        cache_dir=cache_dir,
+    )
     _atomic_json(cache_dir / "manifest.json", manifest)
     return _public_manifest(manifest, cache_hit=False)
 
@@ -254,7 +331,11 @@ def _enrich_one(
     key = _cache_key(row)
     cache_dir = output_root / _CACHE_ROOT_NAME / key
     with _cache_lock(key):
-        cached = _load_cached(cache_dir)
+        cached = _load_cached(
+            cache_dir,
+            row=row,
+            output_root=output_root,
+        )
         if cached is not None:
             return cached
 
@@ -292,6 +373,8 @@ def _enrich_one(
             }
         return _extract_candidate(
             selected,
+            row=row,
+            output_root=output_root,
             cache_dir=cache_dir,
             key=key,
             candidate_count=len(candidates),

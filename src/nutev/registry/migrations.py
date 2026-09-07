@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sqlite3
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 SCHEMA_SQL = """
 PRAGMA foreign_keys = ON;
@@ -117,6 +117,33 @@ CREATE TABLE IF NOT EXISTS identity_conflicts (
     updated_at TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_conflict_status ON identity_conflicts(status);
+
+CREATE TABLE IF NOT EXISTS full_text_artifacts (
+    artifact_id TEXT PRIMARY KEY,
+    article_id TEXT NOT NULL REFERENCES articles(article_id) ON DELETE CASCADE,
+    source_url TEXT NOT NULL DEFAULT '',
+    resolver_source TEXT NOT NULL DEFAULT '',
+    resolver_route TEXT NOT NULL DEFAULT '',
+    media_type TEXT NOT NULL DEFAULT '',
+    content_sha256 TEXT NOT NULL,
+    text_sha256 TEXT NOT NULL,
+    extraction_method TEXT NOT NULL DEFAULT '',
+    ocr_used INTEGER NOT NULL DEFAULT 0 CHECK (ocr_used IN (0, 1)),
+    ocr_engine TEXT NOT NULL DEFAULT '',
+    text_chars INTEGER NOT NULL DEFAULT 0,
+    retrieved_at TEXT NOT NULL,
+    storage_path TEXT NOT NULL DEFAULT '',
+    cache_key TEXT NOT NULL DEFAULT '',
+    status TEXT NOT NULL DEFAULT 'extracted'
+        CHECK (status IN ('extracted', 'superseded', 'quarantined')),
+    created_at TEXT NOT NULL,
+    last_seen_at TEXT NOT NULL,
+    UNIQUE(article_id, content_sha256)
+);
+CREATE INDEX IF NOT EXISTS idx_full_text_article ON full_text_artifacts(article_id);
+CREATE INDEX IF NOT EXISTS idx_full_text_content_sha ON full_text_artifacts(content_sha256);
+CREATE INDEX IF NOT EXISTS idx_full_text_ocr ON full_text_artifacts(ocr_used);
+CREATE INDEX IF NOT EXISTS idx_full_text_status ON full_text_artifacts(status);
 """
 
 
