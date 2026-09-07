@@ -62,6 +62,20 @@ CREATE TABLE IF NOT EXISTS article_manifestations (
 CREATE INDEX IF NOT EXISTS idx_manifest_article ON article_manifestations(article_id);
 CREATE INDEX IF NOT EXISTS idx_manifest_provider ON article_manifestations(provider);
 
+CREATE TABLE IF NOT EXISTS article_field_history (
+    history_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    article_id TEXT NOT NULL REFERENCES articles(article_id) ON DELETE CASCADE,
+    field_name TEXT NOT NULL,
+    value_json TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT '',
+    observed_at TEXT NOT NULL,
+    precedence_rule TEXT NOT NULL,
+    source_payload_hash TEXT NOT NULL,
+    UNIQUE(article_id, field_name, value_json, provider, source_payload_hash)
+);
+CREATE INDEX IF NOT EXISTS idx_field_history_article ON article_field_history(article_id);
+CREATE INDEX IF NOT EXISTS idx_field_history_field ON article_field_history(field_name);
+
 CREATE TABLE IF NOT EXISTS search_runs (
     search_id TEXT PRIMARY KEY,
     query TEXT NOT NULL,
