@@ -1,5 +1,5 @@
 import{canonicalDocumentClass,documentClassLabel,documentSubtypeLabel}from'./document-classes.js';
-import{countSavedArticles,getSavedArticle,listSavedArticles,removeSavedArticle,sourceUrlFor}from'./saved-library.js';
+import{countSavedArticles,getSavedArticle,listSavedArticles,removeSavedArticle,sourceProvidersFor,sourceUrlFor}from'./saved-library.js';
 
 const providerLabels={pubmed:'PubMed',europepmc:'Europe PMC',openalex:'OpenAlex',crossref:'Crossref',doaj:'DOAJ',semantic_scholar:'Semantic Scholar',lilacs_bvs_native:'LILACS/BVS',scielo_native:'SciELO'};
 const confidenceLabels={high:'alta',medium:'média',low:'sinal insuficiente'};
@@ -9,6 +9,8 @@ const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const fmtScore=value=>value===null||value===undefined||value===''?'—':Number(value).toLocaleString('pt-BR',{maximumFractionDigits:2});
 function classPresentation(value){const canonical=canonicalDocumentClass(value);const primary=documentClassLabel(canonical);const subtype=documentSubtypeLabel(value);return{primary,subtype:subtype!==primary?subtype:''}}
+function providerNames(record={}){return sourceProvidersFor(record).map(value=>providerLabels[value]||value).filter(Boolean)}
+function providerChip(record={}){const names=providerNames(record);if(!names.length)return'';return names.length===1?names[0]:`${names.join(' + ')} · ${names.length} fontes`}
 
 function installShell(){
   const topbar=document.querySelector('.articles-main .topbar');if(!topbar||document.querySelector('#savedCore'))return;
@@ -17,7 +19,7 @@ function installShell(){
       <div><h2 id="savedCoreTitle">Meus salvos</h2><p>Resultados guardados das suas buscas, deduplicados por DOI, PMID, URL ou identidade bibliográfica. Persistem neste navegador e não alteram o corpus científico verificado.</p></div>
       <div class="saved-core-count"><strong id="savedCoreCount">0</strong><span>salvos</span></div>
     </div>
-    <div class="saved-core-tools"><label>Filtrar meus salvos<input id="savedCoreQuery" type="search" autocomplete="off" placeholder="Título, DOI, PMID, revista ou busca de origem"></label><button id="refreshSavedCore" class="ghost" type="button">Atualizar</button></div>
+    <div class="saved-core-tools"><label>Filtrar meus salvos<input id="savedCoreQuery" type="search" autocomplete="off" placeholder="Título, DOI, PMID, revista, fonte ou busca de origem"></label><button id="refreshSavedCore" class="ghost" type="button">Atualizar</button></div>
     <div id="savedCoreState" class="saved-core-state">Carregando Biblioteca local…</div>
     <div id="savedCoreLayout" class="saved-core-layout hidden"><div id="savedCoreList" class="saved-core-list"></div><aside id="savedCoreDetail" class="saved-core-detail"><div class="detail-placeholder"><div class="placeholder-mark">★</div><strong>Selecione um artigo salvo</strong><p>O dossiê de busca abre aqui com classificação, ranking e proveniência.</p></div></aside></div>
   </section>`);
@@ -27,7 +29,8 @@ function savedRow(item){
   const ids=[item.doi?`DOI ${item.doi}`:'',item.pmid?`PMID ${item.pmid}`:''].filter(Boolean);
   const latest=(item.provenance||[]).at(-1)||{};
   const classification=classPresentation(item.document_class);
-  const chips=[item.year,classification.primary,classification.subtype,providerLabels[item.source_provider]||item.source_provider,item.classification_confidence?`classificação ${confidenceLabels[item.classification_confidence]||item.classification_confidence}`:''].filter(Boolean);
+  const provider=providerChip(item)||providerChip(item.article||{});
+  const chips=[item.year,classification.primary,classification.subtype,provider,item.classification_confidence?`classificação ${confidenceLabels[item.classification_confidence]||item.classification_confidence}`:''].filter(Boolean);
   return `<article class="saved-core-row${selectedKey===item.key?' active':''}" data-saved-key="${esc(item.key)}">
     <button type="button" class="saved-core-open" data-open-saved="${esc(item.key)}"><strong>${esc(item.title||'Sem título')}</strong><div class="saved-core-meta">${chips.map(value=>`<span>${esc(value)}</span>`).join('')}</div>${ids.length?`<div class="saved-core-ids">${ids.map(value=>`<span>${esc(value)}</span>`).join('')}</div>`:''}${latest.search_query?`<div class="saved-core-origin">Busca: ${esc(latest.search_query)}</div>`:''}</button>
     <div class="saved-core-row-actions">${item.source_url?`<a href="${esc(item.source_url)}" target="_blank" rel="noopener noreferrer">Fonte ↗</a>`:''}<button class="ghost" type="button" data-remove-saved="${esc(item.key)}">Remover</button></div>
@@ -36,21 +39,28 @@ function savedRow(item){
 
 function provenanceHtml(entries){
   if(!entries?.length)return'<p class="provenance">Nenhuma proveniência de busca registrada.</p>';
-  return `<div class="saved-provenance-list">${entries.slice().reverse().map(entry=>`<div class="saved-provenance-item"><strong>${esc(entry.search_query||'Busca sem título')}</strong><span>${esc(providerLabels[entry.source_provider]||entry.source_provider||'fonte n/d')} · rank ${esc(entry.reference_rank??'—')} · score ${esc(fmtScore(entry.reference_score))}</span>${entry.provider_query?`<details><summary>Query executada na fonte</summary><code>${esc(entry.provider_query)}</code></details>`:''}</div>`).join('')}</div>`;
+  return `<div class="saved-provenance-list">${entries.slice().reverse().map(entry=>{const providers=providerNames(entry);const label=providers.length?providers.join(' + '):(providerLabels[entry.source_provider]||entry.source_provider||'fonte n/d');return`<div class="saved-provenance-item"><strong>${esc(entry.search_query||'Busca sem título')}</strong><span>${esc(label)} · rank ${esc(entry.reference_rank??'—')} · score ${esc(fmtScore(entry.reference_score))}</span>${entry.provider_query?`<details><summary>Query da manifestação principal</summary><code>${esc(entry.provider_query)}</code></details>`:''}</div>`}).join('')}</div>`;
+}
+
+function manifestationsHtml(item){
+  const article=item.article||{};const manifestations=(item.source_manifestations||article.source_manifestations||[]).filter(value=>value&&typeof value==='object');
+  if(!manifestations.length)return'<p class="provenance">Nenhuma manifestação adicional foi registrada para este salvo.</p>';
+  return `<div class="saved-source-list">${manifestations.map(source=>{const provider=providerLabels[source.provider]||source.provider||source.source||'fonte n/d';const ids=[source.pmid?`PMID ${source.pmid}`:'',source.doi?`DOI ${source.doi}`:''].filter(Boolean).join(' · ');return`<div class="saved-source-item"><div><strong>${esc(provider)}</strong>${ids?`<span>${esc(ids)}</span>`:''}</div>${source.provider_query?`<details><summary>Query enviada à fonte</summary><code>${esc(source.provider_query)}</code></details>`:''}${source.url?`<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">Abrir manifestação ↗</a>`:''}</div>`}).join('')}</div><p class="provenance">Múltiplas fontes significam múltiplas manifestações recuperadas antes da deduplicação; não equivalem a maior qualidade, certeza ou elegibilidade científica.</p>`;
 }
 
 function savedDetailHtml(item){
   const article=item.article||{};const classification=article.search_classification||{};
-  const source=item.source_url||sourceUrlFor(article);const classInfo=classPresentation(item.document_class);
-  const chips=[item.year,item.journal,classInfo.primary,classInfo.subtype,providerLabels[item.source_provider]||item.source_provider,item.classification_confidence?`Confiança da classificação: ${confidenceLabels[item.classification_confidence]||item.classification_confidence}`:'',classification.taxonomy_primary||item.taxonomy_primary].filter(Boolean);
+  const source=item.source_url||sourceUrlFor(article);const classInfo=classPresentation(item.document_class);const provider=providerChip(item)||providerChip(article);
+  const chips=[item.year,item.journal,classInfo.primary,classInfo.subtype,provider,item.classification_confidence?`Confiança da classificação: ${confidenceLabels[item.classification_confidence]||item.classification_confidence}`:'',classification.taxonomy_primary||item.taxonomy_primary].filter(Boolean);
   const reasons=[];const match=classification.query_match||{};
   if((match.title_hits||[]).length)reasons.push(`título: ${(match.title_hits||[]).slice(0,6).join(', ')}`);
   if((match.abstract_hits||[]).length)reasons.push(`resumo: ${(match.abstract_hits||[]).slice(0,6).join(', ')}`);
   return `<div class="detail-head"><h2>${esc(item.title||'Sem título')}</h2><div class="detail-chips">${chips.map(value=>`<span class="mini-pill">${esc(value)}</span>`).join('')}</div></div>
     <section class="detail-section"><h3>Resumo salvo</h3><p class="saved-abstract">${esc(article.abstract||'Resumo não disponível neste resultado.')}</p></section>
     <section class="detail-section"><h3>Como o NutEV o encontrou</h3>${reasons.length?`<p class="provenance">${esc(reasons.join(' · '))}</p>`:'<p class="provenance">Sem termos de correspondência materializados neste registro.</p>'}<p class="provenance">Ranking salvo: ${esc(fmtScore(article.reference_score))} · relevância para a consulta: ${esc(fmtScore(article.query_relevance_score))} · prioridade NutEV: ${esc(fmtScore(article.nutev_priority_score))}.</p></section>
+    <section class="detail-section"><h3>Origens antes da deduplicação</h3>${manifestationsHtml(item)}</section>
     <section class="detail-section"><h3>Proveniência das buscas</h3>${provenanceHtml(item.provenance||[])}</section>
-    <section class="detail-section"><h3>Identidade e fonte</h3><p class="provenance">${item.doi?`DOI ${esc(item.doi)} · `:''}${item.pmid?`PMID ${esc(item.pmid)} · `:''}chave canônica ${esc(item.key)}</p>${source?`<p><a href="${esc(source)}" target="_blank" rel="noopener noreferrer">Abrir fonte original ↗</a></p>`:''}</section>
+    <section class="detail-section"><h3>Identidade e fonte principal</h3><p class="provenance">${item.doi?`DOI ${esc(item.doi)} · `:''}${item.pmid?`PMID ${esc(item.pmid)} · `:''}chave canônica ${esc(item.key)}</p>${source?`<p><a href="${esc(source)}" target="_blank" rel="noopener noreferrer">Abrir fonte principal ↗</a></p>`:''}</section>
     <section class="detail-section"><h3>Fronteira científica</h3><p class="provenance">Artigo salvo = item de leitura/indexação. Não equivale a inclusão em revisão, qualidade metodológica, risco de viés, certeza/GRADE, causalidade ou recomendação.</p></section>`;
 }
 
