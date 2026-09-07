@@ -6,9 +6,16 @@ let scheduled=false;
 
 function normalize(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR')}
 function byId(){return new Map(latestHistory.map(item=>[String(item?.search_id||''),item]))}
-function gapCount(item){return (item?.failed_providers||[]).length+(item?.unavailable_providers||[]).length}
+function gapCount(item){
+  const providerKeys=['failed_providers','unavailable_providers','partial_providers','skipped_providers','non_exhaustive_providers'];
+  const providers=new Set();
+  for(const key of providerKeys)for(const value of item?.[key]||[])providers.add(String(typeof value==='string'?value:(value?.provider||value?.id||value?.label||'')));
+  providers.delete('');
+  return providers.size+(item?.audit_gaps||[]).length;
+}
 function statusModel(item){
   const gaps=gapCount(item);const raw=String(item?.status||'').trim();
+  if(raw==='COMPLETE_WITH_AUDIT_GAPS')return{label:'Concluída com lacunas de auditoria',tone:'partial'};
   if(raw==='COMPLETE_WITH_PROVIDER_GAPS'||gaps>0)return{label:'Concluída com lacunas',tone:'partial'};
   if(raw==='COMPLETE')return{label:'Concluída',tone:'ok'};
   if(/fail|error/i.test(raw))return{label:'Falhou',tone:'bad'};
@@ -64,7 +71,7 @@ function enrichItem(node,item){
   openButton.innerHTML=`<span class="history-query">${esc(query)}</span><span class="history-open-label">Abrir resultados</span>`;
   const oldMeta=node.querySelector('.history-meta');oldMeta?.remove();
   const details=document.createElement('div');details.className='history-card-details';
-  details.innerHTML=`<div class="history-status-row"><span class="history-status ${status.tone}">${esc(status.label)}</span><span>${esc(dateLabel(item?.created_at))}</span></div><div class="history-counts"><span><strong>${Number(item?.unique_records||0).toLocaleString('pt-BR')}</strong> únicas</span><span><strong>${Number(item?.returned_records||0).toLocaleString('pt-BR')}</strong> exibidas</span><span class="${gaps?'has-gaps':''}"><strong>${gaps}</strong> lacuna${gaps===1?'':'s'} de fonte</span></div><div class="history-actions"><button type="button" class="ghost" data-prepare-search="${esc(String(item?.search_id||''))}">Usar pergunta em nova busca</button></div>`;
+  details.innerHTML=`<div class="history-status-row"><span class="history-status ${status.tone}">${esc(status.label)}</span><span>${esc(dateLabel(item?.created_at))}</span></div><div class="history-counts"><span><strong>${Number(item?.unique_records||0).toLocaleString('pt-BR')}</strong> únicas</span><span><strong>${Number(item?.returned_records||0).toLocaleString('pt-BR')}</strong> exibidas</span><span class="${gaps?'has-gaps':''}"><strong>${gaps}</strong> lacuna${gaps===1?'':'s'} de fonte/auditoria</span></div><div class="history-actions"><button type="button" class="ghost" data-prepare-search="${esc(String(item?.search_id||''))}">Usar pergunta em nova busca</button></div>`;
   node.appendChild(details);
   details.querySelector('[data-prepare-search]')?.addEventListener('click',()=>prepareNewQuickSearch(item));
 }
