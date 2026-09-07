@@ -4,6 +4,7 @@ const RETRY_DELAYS=[400,900,1800];
 
 let lastResult=null;
 let lastJob=null;
+let lastHistory=[];
 
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const emit=(name,detail)=>window.dispatchEvent(new CustomEvent(name,{detail}));
@@ -46,7 +47,14 @@ function publishResult(result,source){
   lastResult=result;
   emit('nutev:search-result',{result,source});
 }
+function publishHistory(searches,scope=''){
+  lastHistory=Array.isArray(searches)?searches:[];
+  emit('nutev:search-history',{searches:lastHistory,scope});
+}
 function processPayload(payload,{path,method}){
+  if(path==='/api/searches'&&method==='GET'&&Array.isArray(payload?.searches)){
+    publishHistory(payload.searches,payload.scope||'');return;
+  }
   if(path==='/api/search/jobs'&&method==='POST'){
     publishJob(payload,'submission');return;
   }
@@ -68,7 +76,7 @@ window.fetch=async(...args)=>{
   const meta=requestMeta(args[0],args[1]);
   const isJobRead=meta.method==='GET'&&meta.path.startsWith('/api/search/jobs/');
   const response=isJobRead?await robustJobFetch(args,meta.path):await nativeFetch(...args);
-  const relevant=meta.path==='/api/search'||meta.path==='/api/search/jobs'||isJobRead||meta.path.startsWith('/api/searches/');
+  const relevant=meta.path==='/api/search'||meta.path==='/api/searches'||meta.path==='/api/search/jobs'||isJobRead||meta.path.startsWith('/api/searches/');
   if(response.ok&&relevant){
     response.clone().json().then(payload=>processPayload(payload,meta)).catch(()=>{});
   }
@@ -78,5 +86,6 @@ window.fetch=async(...args)=>{
 window.NutEVSearchEvents={
   getLastResult:()=>lastResult,
   getLastJob:()=>lastJob,
+  getLastHistory:()=>[...lastHistory],
   retryDelays:[...RETRY_DELAYS],
 };
