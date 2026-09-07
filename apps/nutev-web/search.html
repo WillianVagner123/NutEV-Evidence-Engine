@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./saved-library.css">
   <link rel="stylesheet" href="./search-facets.css">
   <link rel="stylesheet" href="./search-ux.css">
+  <link rel="stylesheet" href="./search-recovery.css">
 </head>
 <body>
   <a class="skip-link" href="#results">Pular para resultados</a>
@@ -30,6 +31,7 @@
         <div class="hero card">
           <label for="question">O que você quer encontrar na literatura?</label>
           <textarea id="question" rows="3" placeholder="Ex.: creatina e cognição em idosos · dieta mediterrânea e mortalidade cardiovascular · proteína durante perda de peso"></textarea>
+          <div id="queryAssist" class="query-assist" aria-live="polite" hidden></div>
 
           <div class="search-mode-switch" role="radiogroup" aria-label="Modo de busca">
             <label><input type="radio" name="searchMode" value="quick" checked><span><strong>Busca rápida</strong><small>Pergunta livre em múltiplas fontes.</small></span></label>
@@ -101,6 +103,7 @@
         <div id="searchProgress" class="search-progress-card hidden" role="status" aria-live="polite"></div>
         <div id="searchState" class="hidden" role="status" aria-live="polite"></div>
         <section id="summary" class="hidden" aria-label="Resumo da busca" tabindex="-1"></section>
+        <section id="searchRecovery" class="search-recovery card hidden" aria-label="Recuperar ou ampliar a busca"></section>
         <section id="results" class="results" aria-label="Resultados da busca"></section>
       </section>
 
@@ -112,6 +115,7 @@
   <script type="module" src="./search-library-ui.js"></script>
   <script type="module" src="./search-facets-ui.js"></script>
   <script type="module" src="./search-ux-resilience.js"></script>
+  <script type="module" src="./search-guided-recovery.js"></script>
   <script type="module" src="./app.js"></script>
   <script type="module" src="./product-ui.js"></script>
 </body>

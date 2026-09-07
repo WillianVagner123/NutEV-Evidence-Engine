@@ -5,6 +5,7 @@ const RETRY_DELAYS=[400,900,1800];
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const emit=(name,detail)=>window.dispatchEvent(new CustomEvent(name,{detail}));
 
 let activeJobId='';
 let searchStartedAt=0;
@@ -82,6 +83,7 @@ function beginProgress(job){
   if(!searchStartedAt)searchStartedAt=Date.now();
   if(!elapsedTimer)elapsedTimer=window.setInterval(renderElapsed,1000);
   renderProgress(job);
+  emit('nutev:search-job',{job});
 }
 function finishProgress(){
   activeJobId='';searchStartedAt=0;lastJob=null;
@@ -107,18 +109,23 @@ function resultFromPayload(payload){
   if(payload?.results)return payload;
   return null;
 }
+function publishResult(result,source){
+  lastResult=result;
+  queueSummaryEnhancement(result);
+  emit('nutev:search-result',{result,source});
+}
 function capturePayload(payload,meta){
   if(meta.path==='/api/search/jobs'&&meta.method==='POST'){
     clearFeedback();beginProgress(payload);return;
   }
   if(meta.path.startsWith('/api/search/jobs/')){
     if(payload?.status==='queued'||payload?.status==='running'){beginProgress(payload);return}
-    if(payload?.status==='failed'){finishProgress();return}
+    if(payload?.status==='failed'){finishProgress();emit('nutev:search-failed',{job:payload});return}
     if(payload?.status==='completed'){
-      const result=resultFromPayload(payload);finishProgress();if(result){lastResult=result;queueSummaryEnhancement(result)}return;
+      const result=resultFromPayload(payload);finishProgress();if(result)publishResult(result,'job');return;
     }
   }
-  const result=resultFromPayload(payload);if(result){lastResult=result;queueSummaryEnhancement(result)}
+  const result=resultFromPayload(payload);if(result)publishResult(result,'history');
 }
 
 function providerGapIds(data){
@@ -208,4 +215,4 @@ const summary=$('#summary');
 if(summary)new MutationObserver(()=>{if(lastResult&&!summary.classList.contains('hidden')&&lastOutcomeKey!==String(lastResult?.search_id||`${lastResult?.query||''}|${lastResult?.returned_records||0}`))queueSummaryEnhancement(lastResult)}).observe(summary,{childList:true,attributes:true,attributeFilter:['class']});
 
 window.addEventListener('pageshow',()=>{compactCards();if(lastResult)queueSummaryEnhancement(lastResult)});
-window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,compactCards};
+window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,compactCards,getLastResult:()=>lastResult};
