@@ -53,6 +53,18 @@ def test_autodeploy_requires_runtime_contract_before_and_after_promotion() -> No
     assert '/tmp/nutev-runtime-production.json' in workflow
 
 
+def test_autodeploy_requires_live_http_surface_before_and_after_promotion() -> None:
+    workflow = WORKFLOW.read_text(encoding="utf-8")
+    marker = 'python tools/check_runtime_http_surface.py'
+
+    assert workflow.count(marker) == 2
+    assert '--base-url http://127.0.0.1:8765' in workflow
+    assert '--expected-commit "$TARGET_SHA"' in workflow
+    assert '/tmp/nutev-http-preflight.json' in workflow
+    assert '/tmp/nutev-http-production.json' in workflow
+    assert workflow.count('/api/providers') == 0  # provider semantics live in the reusable checker
+
+
 def test_autodeploy_requires_public_https_smoke_and_commit_identity_when_visible() -> None:
     workflow = WORKFLOW.read_text(encoding="utf-8")
 
