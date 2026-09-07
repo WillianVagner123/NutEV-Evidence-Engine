@@ -66,9 +66,10 @@ function renderProgress(job){
 function providerGapIds(data){
   const gaps=new Set();
   for(const item of data?.providers||[]){if(['failed','unavailable','partial','skipped'].includes(String(item?.status||'')))gaps.add(String(item.provider||item.id||item.label||''))}
-  for(const key of ['failed_providers','unavailable_providers','non_exhaustive_providers'])for(const item of data?.[key]||[])gaps.add(String(typeof item==='string'?item:(item?.provider||item?.id||item?.label||'')));
+  for(const key of ['failed_providers','unavailable_providers','partial_providers','skipped_providers','non_exhaustive_providers'])for(const item of data?.[key]||[])gaps.add(String(typeof item==='string'?item:(item?.provider||item?.id||item?.label||'')));
   gaps.delete('');return gaps;
 }
+function summaryGapCount(data){return providerGapIds(data).size+(Array.isArray(data?.audit_gaps)?data.audit_gaps.length:0)}
 function providerDisplayName(data,id){
   const match=(data?.providers||[]).find(item=>String(item.provider||item.id||item.label||'')===id);
   return String(match?.label||id).replaceAll('_',' ');
@@ -91,6 +92,8 @@ function enhanceSummary(data){
   const summary=$('#summary');if(!summary||summary.classList.contains('hidden'))return;
   const key=String(data?.search_id||`${data?.query||''}|${data?.returned_records||0}`);
   const outcome=coverageOutcome(data);
+  const kpiValues=summary.querySelectorAll('.summary-grid .kpi strong');
+  if(kpiValues.length>=4)kpiValues[3].textContent=String(summaryGapCount(data));
   summary.querySelector('.search-outcome')?.remove();
   const banner=document.createElement('div');banner.className=`search-outcome ${outcome.kind}`;
   banner.innerHTML=`<div><strong>${esc(outcome.title)}</strong><span>${esc(outcome.detail)}</span>${outcome.gaps?.length?`<small>Cobertura parcial em: ${outcome.gaps.slice(0,6).map(esc).join(', ')}${outcome.gaps.length>6?'…':''}</small>`:''}</div><span class="outcome-boundary">Cobertura descreve recuperação das fontes, não qualidade, certeza ou elegibilidade da evidência.</span>`;
@@ -166,4 +169,4 @@ window.addEventListener('pageshow',()=>{
   const cached=window.NutEVSearchEvents?.getLastResult?.()||lastResult;
   if(cached){lastResult=cached;queueSummaryEnhancement(cached)}
 });
-window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,compactCards,getLastResult:()=>window.NutEVSearchEvents?.getLastResult?.()||lastResult};
+window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,providerGapIds,summaryGapCount,compactCards,getLastResult:()=>window.NutEVSearchEvents?.getLastResult?.()||lastResult};
