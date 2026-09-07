@@ -30,10 +30,11 @@ jobs:
         env:
           NUTEV_DISABLE_NETWORK: "1"
           NUTEV_SEARCH_FULLTEXT_LIMIT: "0"
+          NUTEV_ENVIRONMENT: "test"
           PYTHONPATH: src
         run: |
           mkdir -p browser_e2e_artifacts
-          python apps/nutev-web/server.py --host 127.0.0.1 --port 8765 --no-browser > browser_e2e_artifacts/server.log 2>&1 &
+          python apps/nutev-web/secure_server.py --host 127.0.0.1 --port 8765 > browser_e2e_artifacts/server.log 2>&1 &
           SERVER_PID=$!
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
           python - <<'PY'
@@ -50,7 +51,7 @@ jobs:
                   pass
               time.sleep(0.5)
           else:
-              raise SystemExit("NutEV server did not become healthy")
+              raise SystemExit("NutEV secure server did not become healthy")
           PY
           python tools/run_predeploy_browser_e2e.py
       - name: Upload browser audit evidence
