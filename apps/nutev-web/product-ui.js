@@ -109,7 +109,8 @@ function explainResultCap(){
   let note=document.querySelector('#resultCapNote')
   if(unique<=returned){note?.remove();return}
   if(!note){note=document.createElement('div');note.id='resultCapNote';note.className='review-result-note';summary.appendChild(note)}
-  note.textContent=`Exibindo ${returned.toLocaleString('pt-BR')} de ${unique.toLocaleString('pt-BR')} referências únicas. Este modo possui limite de apresentação; use a busca sem teto para recuperar o conjunto completo.`
+  const copy=`Exibindo ${returned.toLocaleString('pt-BR')} de ${unique.toLocaleString('pt-BR')} referências únicas. Este modo possui limite de apresentação; use a busca sem teto para recuperar o conjunto completo.`
+  if(note.textContent!==copy)note.textContent=copy
 }
 
 function markStaticKpis(){
@@ -223,9 +224,11 @@ function decorateStrategyFlow(){
     const result=flowStatus(key,state[key]||{})
     let marker=node.querySelector('.strategy-flow-state')
     if(!marker){marker=document.createElement('em');marker.className='strategy-flow-state';node.appendChild(marker)}
-    marker.className=`strategy-flow-state ${result.tone}`
-    marker.textContent=result.label
-    node.classList.toggle('done',result.tone==='done')
+    const markerClass=`strategy-flow-state ${result.tone}`
+    if(marker.className!==markerClass)marker.className=markerClass
+    if(marker.textContent!==result.label)marker.textContent=result.label
+    const done=result.tone==='done'
+    if(node.classList.contains('done')!==done)node.classList.toggle('done',done)
   })
 }
 
@@ -248,7 +251,10 @@ function ensureStrategyFlowGuide(){
     flow.parentNode.insertBefore(guide,flow)
   }
   const copy=strategyGuideCopy()
+  const signature=copy||'default'
+  if(guide.dataset.nutevGuideSignature===signature)return
   guide.innerHTML=`<strong>Roteiro operacional, não atalho de gate.</strong><span>A sequência orienta o trabalho; os gates permanecem independentes e nenhuma etapa autoriza automaticamente a decisão científica seguinte.${copy?` ${escapeHtml(copy)}`:''}</span>`
+  guide.dataset.nutevGuideSignature=signature
 }
 
 async function renderBuildIdentity(){
