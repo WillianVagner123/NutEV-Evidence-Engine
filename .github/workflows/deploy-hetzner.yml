@@ -53,23 +53,36 @@ jobs:
           install -d -m 700 ~/.ssh
 
           python3 - <<'PY'
+          import base64
+          import binascii
           import os
           from pathlib import Path
 
           raw = os.environ["HETZNER_SSH_KEY"].strip()
-          # GitHub secrets may be pasted with Windows CRLF or with literal \n
-          # sequences when copied through another secret manager. Normalize both
-          # representations without logging key material.
+          # GitHub secrets may be pasted with Windows CRLF, literal \n sequences,
+          # or as base64 to preserve a multiline private key. Normalize those
+          # representations without logging any key material.
           raw = raw.replace("\r\n", "\n").replace("\r", "\n")
           if "\\n" in raw and "\n" not in raw:
               raw = raw.replace("\\n", "\n")
-          raw = raw.strip() + "\n"
-          Path.home().joinpath(".ssh", "id_ed25519").write_text(raw, encoding="utf-8")
+
+          candidate = raw.strip()
+          if not candidate.startswith("-----BEGIN "):
+              compact = "".join(candidate.split())
+              try:
+                  decoded = base64.b64decode(compact, validate=True).decode("utf-8").strip()
+              except (binascii.Error, UnicodeDecodeError, ValueError):
+                  decoded = ""
+              if decoded.startswith("-----BEGIN "):
+                  candidate = decoded.replace("\r\n", "\n").replace("\r", "\n")
+
+          candidate = candidate.strip() + "\n"
+          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate, encoding="utf-8")
           PY
 
           chmod 600 ~/.ssh/id_ed25519
           if ! ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null; then
-            echo "::error::HETZNER_SSH_KEY is not a valid unencrypted private SSH key. Store the complete OpenSSH/PEM private key in the HETZNER environment secret; do not store the .pub key." >&2
+            echo "::error::HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key after raw/literal-newline/base64 normalization. Ensure the HETZNER environment secret contains the complete private key (not .pub), without a passphrase." >&2
             exit 1
           fi
           chmod 600 ~/.ssh/id_ed25519.pub
