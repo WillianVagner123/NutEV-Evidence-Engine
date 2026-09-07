@@ -227,21 +227,39 @@ jobs:
             exit 1
           fi
 
+          public_status() {
+            curl -sS -o /dev/null -w '%{http_code}' --max-time 10 "$1" || printf '000'
+          }
+          acceptable_edge_status() {
+            [[ "$1" = "200" || "$1" = "401" ]]
+          }
+
           public_ok=0
           for _ in $(seq 1 30); do
-            if curl -fsS --max-time 10 "$PUBLIC_URL/api/health" >/dev/null \
-              && curl -fsS --max-time 10 "$PUBLIC_URL/search.html" >/dev/null \
-              && curl -fsS --max-time 10 "$PUBLIC_URL/articles.html" >/dev/null; then
-              PUBLIC_COMMIT="$(curl -fsS --max-time 10 "$PUBLIC_URL/api/version" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
-              if [[ "$PUBLIC_COMMIT" = "$TARGET_SHA" ]]; then
-                public_ok=1
-                break
+            HEALTH_CODE="$(public_status "$PUBLIC_URL/api/health")"
+            VERSION_CODE="$(public_status "$PUBLIC_URL/api/version")"
+            SEARCH_CODE="$(public_status "$PUBLIC_URL/search.html")"
+            ARTICLES_CODE="$(public_status "$PUBLIC_URL/articles.html")"
+
+            if acceptable_edge_status "$HEALTH_CODE" \
+              && acceptable_edge_status "$VERSION_CODE" \
+              && acceptable_edge_status "$SEARCH_CODE" \
+              && acceptable_edge_status "$ARTICLES_CODE"; then
+              if [[ "$VERSION_CODE" = "200" ]]; then
+                PUBLIC_COMMIT="$(curl -fsS --max-time 10 "$PUBLIC_URL/api/version" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
+                [[ "$PUBLIC_COMMIT" = "$TARGET_SHA" ]] || {
+                  echo "Public build identity mismatch: expected $TARGET_SHA, got $PUBLIC_COMMIT" >&2
+                  sleep 2
+                  continue
+                }
               fi
+              public_ok=1
+              break
             fi
             sleep 2
           done
           if [[ "$public_ok" != "1" ]]; then
-            echo "Public HTTPS smoke failed for $PUBLIC_URL or exposed a different commit." >&2
+            echo "Public HTTPS edge smoke failed for $PUBLIC_URL (expected 200 or Basic-Auth 401 on protected surfaces)." >&2
             rollback
             exit 1
           fi
