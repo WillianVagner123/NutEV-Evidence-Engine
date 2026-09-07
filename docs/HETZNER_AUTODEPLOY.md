@@ -22,6 +22,8 @@ A completed `ci` workflow triggers production deploy only when:
 
 `workflow_dispatch` can explicitly deploy the currently selected `main` commit even when `HETZNER_AUTODEPLOY` is disabled. Manual dispatch is restricted to `refs/heads/main`; it cannot be used to publish an arbitrary feature branch.
 
+Leaving `HETZNER_AUTODEPLOY` unset or false disables only the automatic workflow-run path; it does not disable an explicit manual deploy from `main`.
+
 ## GitHub production environment
 
 Create an environment named `HETZNER` to match the workflow and configure:
