@@ -241,7 +241,7 @@ def test_registry_stores_provenance_not_full_text_body(tmp_path: Path) -> None:
     assert "text_sha256" in columns
 
 
-def test_registry_schema_migrates_existing_v1_database_in_place(tmp_path: Path) -> None:
+def test_registry_schema_migrates_existing_database_to_current_version_in_place(tmp_path: Path) -> None:
     registry = SQLiteArticleRegistry(tmp_path / "registry" / "article_registry.sqlite")
     created = registry.register_article(
         {"source_provider": "pubmed", "pmid": "87654321", "title": "Migration"}
@@ -256,10 +256,14 @@ def test_registry_schema_migrates_existing_v1_database_in_place(tmp_path: Path) 
         schema_version = connection.execute(
             "SELECT value FROM registry_meta WHERE key = 'schema_version'"
         ).fetchone()[0]
-        table = connection.execute(
+        full_text_table = connection.execute(
             "SELECT name FROM sqlite_master WHERE type='table' AND name='full_text_artifacts'"
+        ).fetchone()
+        core_versions_table = connection.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='core_versions'"
         ).fetchone()
     finally:
         connection.close()
-    assert schema_version == "2"
-    assert table == ("full_text_artifacts",)
+    assert schema_version == "3"
+    assert full_text_table == ("full_text_artifacts",)
+    assert core_versions_table == ("core_versions",)
