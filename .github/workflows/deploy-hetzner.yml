@@ -186,6 +186,17 @@ jobs:
             > /tmp/nutev-runtime-preflight.json
           cat /tmp/nutev-runtime-preflight.json
 
+          if ! docker exec nutev-preflight \
+            python tools/check_runtime_http_surface.py \
+              --base-url http://127.0.0.1:8765 \
+              --expected-commit "$TARGET_SHA" \
+              --json \
+              > /tmp/nutev-http-preflight.json; then
+            cat /tmp/nutev-http-preflight.json || true
+            exit 1
+          fi
+          cat /tmp/nutev-http-preflight.json
+
           PREFLIGHT_COMMIT="$(curl -fsS http://127.0.0.1:18765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
           test "$PREFLIGHT_COMMIT" = "$TARGET_SHA"
           cleanup_preflight
@@ -219,6 +230,18 @@ jobs:
             exit 1
           fi
           cat /tmp/nutev-runtime-production.json
+
+          if ! "${COMPOSE[@]}" exec -T nutev \
+            python tools/check_runtime_http_surface.py \
+              --base-url http://127.0.0.1:8765 \
+              --expected-commit "$TARGET_SHA" \
+              --json \
+              > /tmp/nutev-http-production.json; then
+            cat /tmp/nutev-http-production.json || true
+            rollback
+            exit 1
+          fi
+          cat /tmp/nutev-http-production.json
 
           DEPLOYED_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
           if [[ "$DEPLOYED_COMMIT" != "$TARGET_SHA" ]]; then
