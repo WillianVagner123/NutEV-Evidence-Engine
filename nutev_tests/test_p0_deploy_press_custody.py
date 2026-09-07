@@ -34,8 +34,11 @@ def test_hetzner_ssh_key_is_normalized_validated_and_probed_before_deploy() -> N
     assert configure_at < probe_at < deploy_at
     assert 'raw.replace("\\r\\n", "\\n").replace("\\r", "\\n")' in workflow
     assert 'raw.replace("\\\\n", "\\n")' in workflow
+    assert "base64.b64decode(compact, validate=True)" in workflow
+    assert 'decoded.startswith("-----BEGIN ")' in workflow
+    assert "raw/literal-newline/base64 normalization" in workflow
     assert "ssh-keygen -y -P '' -f ~/.ssh/id_ed25519" in workflow
-    assert "not a valid unencrypted private SSH key" in workflow
+    assert "unencrypted private SSH key" in workflow
     assert "-o BatchMode=yes" in workflow
     assert "-o IdentitiesOnly=yes" in workflow
     assert "-o ConnectTimeout=15" in workflow
@@ -53,6 +56,7 @@ def test_hetzner_documentation_matches_workflow_configuration_surface() -> None:
         assert variable in doc
     assert "secrets.HETZNER_SSH_KEY" in workflow
     assert "complete **private** SSH key" in doc
+    assert "base64" in doc
     assert "Load key ... error in libcrypto" in doc
     assert "does not disable an explicit manual deploy from `main`" in doc
 
