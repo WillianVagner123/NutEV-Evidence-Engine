@@ -33,6 +33,7 @@ jobs:
       HETZNER_PORT: ${{ vars.HETZNER_PORT }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
       HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+      NUTEV_PUBLIC_URL: ${{ vars.NUTEV_PUBLIC_URL }}
 
     steps:
       - name: Validate deployment configuration
@@ -59,14 +60,13 @@ jobs:
           from pathlib import Path
 
           raw = os.environ["HETZNER_SSH_KEY"].strip()
-          # GitHub secrets may be pasted with Windows CRLF, literal \n sequences,
-          # or as base64 to preserve a multiline private key. Normalize those
-          # representations without logging any key material.
           raw = raw.replace("\r\n", "\n").replace("\r", "\n")
           if "\\n" in raw and "\n" not in raw:
               raw = raw.replace("\\n", "\n")
 
           candidate = raw.strip()
+          if candidate.startswith("ssh-") or "BEGIN PUBLIC KEY" in candidate:
+              raise SystemExit("HETZNER_SSH_KEY contains a public key; the complete private key is required")
           if not candidate.startswith("-----BEGIN "):
               compact = "".join(candidate.split())
               try:
@@ -108,6 +108,7 @@ jobs:
           PORT="${HETZNER_PORT:-22}"
           APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
           TARGET_SHA_Q=$(printf '%q' "$TARGET_SHA")
+          PUBLIC_URL_Q=$(printf '%q' "${NUTEV_PUBLIC_URL:-https://nutev.mindsperformance.com.br}")
 
           ssh \
             -o BatchMode=yes \
@@ -115,7 +116,7 @@ jobs:
             -o ConnectTimeout=15 \
             -p "$PORT" \
             "$HETZNER_USER@$HETZNER_HOST" \
-            "APP_DIR=$APP_DIR_Q TARGET_SHA=$TARGET_SHA_Q bash -s" <<'REMOTE'
+            "APP_DIR=$APP_DIR_Q TARGET_SHA=$TARGET_SHA_Q PUBLIC_URL=$PUBLIC_URL_Q bash -s" <<'REMOTE'
           set -euo pipefail
 
           cd "$APP_DIR"
@@ -137,6 +138,15 @@ jobs:
             OLD_IMAGE_ID="$(docker inspect -f '{{.Image}}' "$OLD_CONTAINER")"
             docker tag "$OLD_IMAGE_ID" nutev:rollback
           fi
+
+          rollback() {
+            if docker image inspect nutev:rollback >/dev/null 2>&1; then
+              echo "Deployment gate failed; rolling back previous NutEV image."
+              NUTEV_IMAGE=nutev:rollback "${COMPOSE[@]}" up -d --no-build nutev caddy
+              sleep 5
+              curl -fsS http://127.0.0.1:8765/api/health >/dev/null || true
+            fi
+          }
 
           docker build \
             --build-arg NUTEV_BUILD_COMMIT="$TARGET_SHA" \
@@ -170,6 +180,23 @@ jobs:
             docker logs nutev-preflight || true
             exit 1
           fi
+
+          docker exec nutev-preflight \
+            python tools/check_predeploy_runtime_contract.py --json \
+            > /tmp/nutev-runtime-preflight.json
+          cat /tmp/nutev-runtime-preflight.json
+
+          if ! docker exec nutev-preflight \
+            python tools/check_runtime_http_surface.py \
+              --base-url http://127.0.0.1:8765 \
+              --expected-commit "$TARGET_SHA" \
+              --json \
+              > /tmp/nutev-http-preflight.json; then
+            cat /tmp/nutev-http-preflight.json || true
+            exit 1
+          fi
+          cat /tmp/nutev-http-preflight.json
+
           PREFLIGHT_COMMIT="$(curl -fsS http://127.0.0.1:18765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
           test "$PREFLIGHT_COMMIT" = "$TARGET_SHA"
           cleanup_preflight
@@ -188,21 +215,75 @@ jobs:
 
           if [[ "$production_ok" != "1" ]]; then
             "${COMPOSE[@]}" logs --tail=200 nutev || true
-            if docker image inspect nutev:rollback >/dev/null 2>&1; then
-              echo "Health check failed; rolling back previous NutEV image."
-              NUTEV_IMAGE=nutev:rollback "${COMPOSE[@]}" up -d --no-build nutev caddy
-              sleep 5
-              curl -fsS http://127.0.0.1:8765/api/health >/dev/null || true
-            fi
+            rollback
             exit 1
           fi
+
+          if ! "${COMPOSE[@]}" exec -T nutev \
+            python tools/check_predeploy_runtime_contract.py \
+              --output-root /app/project_output_reference \
+              --write-probe \
+              --json \
+              > /tmp/nutev-runtime-production.json; then
+            cat /tmp/nutev-runtime-production.json || true
+            rollback
+            exit 1
+          fi
+          cat /tmp/nutev-runtime-production.json
+
+          if ! "${COMPOSE[@]}" exec -T nutev \
+            python tools/check_runtime_http_surface.py \
+              --base-url http://127.0.0.1:8765 \
+              --expected-commit "$TARGET_SHA" \
+              --json \
+              > /tmp/nutev-http-production.json; then
+            cat /tmp/nutev-http-production.json || true
+            rollback
+            exit 1
+          fi
+          cat /tmp/nutev-http-production.json
 
           DEPLOYED_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
           if [[ "$DEPLOYED_COMMIT" != "$TARGET_SHA" ]]; then
             echo "Build identity mismatch: expected $TARGET_SHA, got $DEPLOYED_COMMIT" >&2
-            if docker image inspect nutev:rollback >/dev/null 2>&1; then
-              NUTEV_IMAGE=nutev:rollback "${COMPOSE[@]}" up -d --no-build nutev caddy
+            rollback
+            exit 1
+          fi
+
+          public_status() {
+            curl -sS -o /dev/null -w '%{http_code}' --max-time 10 "$1" || printf '000'
+          }
+          acceptable_edge_status() {
+            [[ "$1" = "200" || "$1" = "401" ]]
+          }
+
+          public_ok=0
+          for _ in $(seq 1 30); do
+            HEALTH_CODE="$(public_status "$PUBLIC_URL/api/health")"
+            VERSION_CODE="$(public_status "$PUBLIC_URL/api/version")"
+            SEARCH_CODE="$(public_status "$PUBLIC_URL/search.html")"
+            ARTICLES_CODE="$(public_status "$PUBLIC_URL/articles.html")"
+
+            if acceptable_edge_status "$HEALTH_CODE" \
+              && acceptable_edge_status "$VERSION_CODE" \
+              && acceptable_edge_status "$SEARCH_CODE" \
+              && acceptable_edge_status "$ARTICLES_CODE"; then
+              if [[ "$VERSION_CODE" = "200" ]]; then
+                PUBLIC_COMMIT="$(curl -fsS --max-time 10 "$PUBLIC_URL/api/version" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
+                [[ "$PUBLIC_COMMIT" = "$TARGET_SHA" ]] || {
+                  echo "Public build identity mismatch: expected $TARGET_SHA, got $PUBLIC_COMMIT" >&2
+                  sleep 2
+                  continue
+                }
+              fi
+              public_ok=1
+              break
             fi
+            sleep 2
+          done
+          if [[ "$public_ok" != "1" ]]; then
+            echo "Public HTTPS edge smoke failed for $PUBLIC_URL (expected 200 or Basic-Auth 401 on protected surfaces)." >&2
+            rollback
             exit 1
           fi
 

@@ -4,6 +4,8 @@
 
 Deploy the exact commit that passed the `ci` workflow on `main` to the existing Hetzner host without deleting the persistent NutEV data volume.
 
+A successful `/api/health` response alone is not considered sufficient evidence for production promotion. The deploy also validates the runtime contract, persistent-volume write access, build identity and the public HTTPS edge.
+
 ## Trigger
 
 `.github/workflows/deploy-hetzner.yml` supports two distinct paths.
@@ -20,7 +22,7 @@ A completed `ci` workflow triggers production deploy only when:
 
 `workflow_dispatch` can explicitly deploy the currently selected `main` commit even when `HETZNER_AUTODEPLOY` is disabled. Manual dispatch is restricted to `refs/heads/main`; it cannot be used to publish an arbitrary feature branch.
 
-This separation allows an operator to keep continuous auto-deploy disabled while still performing an intentional, auditable production release.
+Leaving `HETZNER_AUTODEPLOY` unset or false disables only the automatic workflow-run path; it does not disable an explicit manual deploy from `main`.
 
 ## GitHub production environment
 
@@ -32,7 +34,8 @@ Create an environment named `HETZNER` to match the workflow and configure:
 - `HETZNER_USER`: SSH deployment user;
 - `HETZNER_APP_DIR`: absolute repository path on the server;
 - `HETZNER_PORT`: optional SSH port; blank means 22;
-- `HETZNER_AUTODEPLOY`: optional; set to `true` only when every successful `main` CI should deploy automatically.
+- `HETZNER_AUTODEPLOY`: optional; set to `true` only when every successful `main` CI should deploy automatically;
+- `NUTEV_PUBLIC_URL`: optional public base URL used by the edge smoke; blank defaults to `https://nutev.mindsperformance.com.br`.
 
 ### Secret
 
@@ -44,9 +47,31 @@ The secret may be stored in any of these lossless representations:
 - a one-line value containing literal `\n` sequences;
 - base64 of the complete private-key block.
 
-The workflow normalizes Windows CRLF, literal `\n` sequences and valid base64-wrapped private keys before use. It never logs the key material. It then validates the normalized private key locally with `ssh-keygen` and performs a non-interactive SSH probe before any Git/Docker operation on the server. Invalid, truncated, public-only or passphrase-protected key material still fails before deployment with an explicit error.
+The workflow normalizes Windows CRLF, literal `\n` sequences and valid base64-wrapped private keys before use. It never logs key material. It explicitly rejects public-key forms such as `ssh-ed25519 AAAA...`, `ssh-rsa AAAA...` and `-----BEGIN PUBLIC KEY-----`, validates the normalized private key with `ssh-keygen`, and performs a non-interactive SSH probe before any Git/Docker operation on the server.
 
-Leaving `HETZNER_AUTODEPLOY` unset or false disables only the automatic `workflow_run` path. It does not disable an explicit manual deploy from `main`.
+Invalid, truncated or passphrase-protected private keys fail before deployment.
+
+## Current SSH recovery
+
+If the workflow reports:
+
+```text
+HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key
+```
+
+or an older SSH/OpenSSL path reports `Load key ... error in libcrypto`, treat both as a key-material/configuration failure. No container or production data has been changed yet at that stage. Correct the GitHub Environment `HETZNER` secret before rerunning the deploy.
+
+The secret must look like a complete private key envelope, for example:
+
+```text
+-----BEGIN OPENSSH PRIVATE KEY-----
+...
+-----END OPENSSH PRIVATE KEY-----
+```
+
+Never paste a public key (`ssh-ed25519 AAAA...`, `ssh-rsa AAAA...` or a `.pub` file) into `HETZNER_SSH_KEY`. The public half belongs only in the target user's `~/.ssh/authorized_keys`.
+
+Do not paste the real private key into issues, pull requests, logs, documentation or chat.
 
 ## Server prerequisites
 
@@ -60,35 +85,60 @@ The deployment user must be able to:
 
 The production `.env` remains on the server and is never committed.
 
+## Offline runtime contract
+
+`tools/check_predeploy_runtime_contract.py` is deliberately network-free. It must not query PubMed or any other external scientific source. Its purpose is operational readiness, not evidence retrieval.
+
+It validates:
+
+- exactly 11 canonical public providers and their UI labels;
+- critical public files (`index.html`, `search.html`, `articles.html`, `advanced.html`, `product-ui.js`, `app.js`);
+- valid `config/reference_mode.json`;
+- Quick search query compilation for all 11 providers;
+- structured PICO query compilation for all 11 providers;
+- literal/versioned Exact PubMed query compilation;
+- image build identity when `build-info.json` is materialized;
+- optional provider credentials as explicit `skipped_config` warnings rather than false evidence absence;
+- optional persistent-output write probe that creates, fsyncs and removes a temporary file.
+
+Contract states:
+
+- `READY`: no failure or warning;
+- `READY_WITH_WARNINGS`: operationally promotable, with explicit non-fatal warnings such as optional web-provider credentials not configured;
+- `NOT_READY`: fail closed; deployment must stop/rollback.
+
+The contract does not change Registry identity, ranking, CORE, MEV, PRESS/PRISMA, eligibility or scientific inclusion state.
+
 ## Readiness check before deploy
 
 `.github/workflows/hetzner-readiness.yml` is a manual, `main`-only preflight that uses the same `HETZNER` environment but does **not** deploy or replace containers.
 
 It verifies:
 
-- the deployment variables and SSH secret are present;
+- deployment variables and SSH secret are present;
 - the SSH key can be normalized and parsed as an unencrypted private key;
-- SSH authentication to the configured host succeeds;
+- SSH authentication succeeds;
 - `HETZNER_APP_DIR` is a Git repository;
 - `deploy/hetzner/.env`, `compose.yaml`, and `Dockerfile` exist;
 - Git, Docker, Docker Compose, and curl are available;
 - Docker daemon access works;
 - current repository SHA, branch, Docker version, and free disk space can be read;
-- the current NutEV local health/version endpoints are reported when available.
+- current local health/version endpoints are reported when available.
 
-The readiness workflow intentionally does **not** run `git reset`, build images, start/stop containers, prune images, or mutate volumes. A failed readiness check should be corrected before running the production deploy.
+The readiness workflow intentionally does **not** run `git reset`, build images, start/stop containers, prune images, migrate Registry data or mutate volumes.
 
-## Tomorrow release runbook
-
-After access to the Hetzner host is available again:
+## Release runbook
 
 1. Generate or recover a dedicated unencrypted deployment private key and install its **public** half in the deployment user's `~/.ssh/authorized_keys`.
-2. Store the complete **private** half in GitHub Environment `HETZNER` as `HETZNER_SSH_KEY`. Do not paste the private key into issues, PRs, logs, or chat.
-3. In GitHub Actions, run **hetzner-readiness** on `main`.
-4. Do not continue if `Configure and validate SSH key`, `Verify SSH access`, or `Verify remote deployment prerequisites` fails.
-5. Once readiness is green, run **deploy-hetzner** manually from `main` (or allow the next successful `main` CI to trigger it when `HETZNER_AUTODEPLOY=true`).
-6. Confirm the deploy reports the expected `TARGET_SHA`, passes isolated preflight health, switches production, and confirms `/api/version` equals the target commit.
-7. Only then verify the public domain and run the user journey smoke test: home -> search -> results -> save to Library -> article dossier.
+2. Store the complete **private** half in GitHub Environment `HETZNER` as `HETZNER_SSH_KEY`.
+3. Run **hetzner-readiness** on `main`.
+4. Stop if SSH configuration/access or remote prerequisites fail.
+5. Run **deploy-hetzner** manually from `main`, or allow automatic deployment only when `HETZNER_AUTODEPLOY=true`.
+6. Confirm the exact `TARGET_SHA` is used.
+7. Confirm isolated preflight health + runtime contract + preflight build identity.
+8. Confirm production health + persistent-volume write probe + production build identity.
+9. Confirm public HTTPS edge smoke.
+10. Only then perform the authenticated user journey smoke: home -> search -> results -> Library -> article dossier.
 
 ## Deployment sequence
 
@@ -96,34 +146,49 @@ After access to the Hetzner host is available again:
 manual main dispatch OR successful main CI with autodeploy enabled
   -> resolve exact TARGET_SHA
   -> normalize and validate private SSH key
+  -> reject public/private-key format mistakes
   -> non-interactive SSH probe
   -> SSH to Hetzner
   -> fetch origin/main and reset to TARGET_SHA
-  -> build nutev:<sha> with build identity
+  -> build nutev:<sha> with immutable build identity
   -> isolated preflight container on 127.0.0.1:18765
-  -> /api/health must pass
-  -> /api/version commit must equal TARGET_SHA
-  -> switch production nutev service to nutev:<sha>
-  -> /api/health on 127.0.0.1:8765 must pass
-  -> /api/version commit must still equal TARGET_SHA
+  -> preflight /api/health
+  -> offline runtime contract in preflight
+  -> preflight /api/version == TARGET_SHA
+  -> tag previous production image as nutev:rollback
+  -> switch production service to nutev:<sha>
+  -> production /api/health on 127.0.0.1:8765
+  -> offline runtime contract in production + write probe on persistent volume
+  -> production /api/version == TARGET_SHA
+  -> public HTTPS edge smoke
   -> success
 ```
 
-The previous running image is tagged `nutev:rollback` before the switch. If the production health check or build-identity check fails, Compose restores that image and the workflow exits as failed.
+## Public HTTPS edge and Basic Auth
 
-## SSH troubleshooting
+The Caddy configuration protects the domain with Basic Auth. Therefore an unauthenticated edge probe has two acceptable states only:
 
-If Actions reports `Load key ... error in libcrypto` or says that `HETZNER_SSH_KEY` could not be parsed, verify that the secret contains the complete private-key payload. Raw multiline, literal-`\n` and base64 representations are accepted, but encoding cannot reconstruct a truncated key, convert a public key into a private key, or unlock a passphrase-protected key.
+- HTTP `200`: the route is intentionally accessible without Basic Auth;
+- HTTP `401`: the protected edge is reachable and correctly challenging for authentication.
 
-The decoded secret should resemble one of these private-key envelopes:
+The deployment workflow probes:
 
-```text
------BEGIN OPENSSH PRIVATE KEY-----
-...
------END OPENSSH PRIVATE KEY-----
-```
+- `/api/health`;
+- `/api/version`;
+- `/search.html`;
+- `/articles.html`.
 
-or another private PEM format accepted by `ssh-keygen`. Never paste `ssh-ed25519 AAAA...` / `ssh-rsa AAAA...` into `HETZNER_SSH_KEY`; that is the public key format and belongs in the server's `authorized_keys`.
+If `/api/version` is accessible with HTTP `200`, its commit must equal `TARGET_SHA`. If Caddy returns `401`, the workflow does not bypass authentication; build identity has already been verified through the local backend before the edge check.
+
+Other HTTP statuses, connection failure or TLS failure fail the edge smoke and trigger rollback when a previous image exists.
+
+## Rollback
+
+Before promotion, the previous running image is tagged `nutev:rollback` when a prior container exists.
+
+Any post-promotion failure in production health, runtime contract, persistent write probe, local build identity or public edge smoke attempts to restore `nutev:rollback` and exits the workflow as failed.
+
+On a first-ever deployment where no previous image exists, there is nothing to restore; the workflow still fails closed.
 
 ## Persistence
 
@@ -133,7 +198,9 @@ or another private PEM format accepted by `ssh-keygen`. Never paste `ssh-ed25519
 nutev_output:/app/project_output_reference
 ```
 
-Normal deploys use `docker compose up`, not `down -v`, so searches, CORE outputs, Workbench SQLite, Radar/Watch and other persisted data survive container recreation.
+Normal deploys use `docker compose up`, not `down -v`, so searches, Registry, CORE outputs, Workbench SQLite, Radar/Watch and other persisted data survive container recreation.
+
+The runtime write probe is intentionally temporary: it creates one small file, fsyncs it and removes it. It does not migrate or rewrite historical scientific data.
 
 ## Network boundary
 
@@ -143,7 +210,7 @@ NutEV port 8765 binds only to host loopback:
 127.0.0.1:8765:8765
 ```
 
-Caddy is the public 80/443 entrypoint and applies TLS plus Basic Auth where configured. Do not expose 8765 in the Hetzner firewall.
+Caddy is the public 80/443 entrypoint and applies TLS plus Basic Auth. Do not expose 8765 in the Hetzner firewall.
 
 ## First activation
 
@@ -156,8 +223,9 @@ cp deploy/hetzner/.env.example deploy/hetzner/.env  # only if .env does not alre
 docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml config
 docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml up -d --build
 curl -fsS http://127.0.0.1:8765/api/health
+python tools/check_predeploy_runtime_contract.py --output-root project_output_reference --write-probe --json
 ```
 
-If the current live server already has a valid `.env`, keep it. Do not overwrite it during activation.
+If the live server already has a valid `.env`, keep it. Do not overwrite it during activation.
 
 After this preflight, either keep `HETZNER_AUTODEPLOY` disabled and release with `workflow_dispatch` from `main`, or set it to `true` to enable automatic deployment after successful `main` CI.

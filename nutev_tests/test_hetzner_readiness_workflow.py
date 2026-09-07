@@ -15,6 +15,7 @@ def test_readiness_is_manual_main_only_and_uses_production_environment() -> None
     assert "workflow_dispatch:" in workflow
     assert "github.ref == 'refs/heads/main'" in workflow
     assert "environment: HETZNER" in workflow
+    assert "TARGET_SHA: ${{ github.sha }}" in workflow
     assert "secrets.HETZNER_SSH_KEY" in workflow
     assert "vars.HETZNER_HOST" in workflow
     assert "vars.HETZNER_USER" in workflow
@@ -27,6 +28,9 @@ def test_readiness_validates_same_supported_key_representations_as_deploy() -> N
     assert 'raw.replace("\\r\\n", "\\n").replace("\\r", "\\n")' in workflow
     assert 'raw.replace("\\\\n", "\\n")' in workflow
     assert "base64.b64decode" in workflow
+    assert 'candidate.startswith("ssh-")' in workflow
+    assert 'BEGIN PUBLIC KEY' in workflow
+    assert 'the complete private key is required' in workflow
     assert "ssh-keygen -y -P '' -f ~/.ssh/id_ed25519" in workflow
     assert "-o BatchMode=yes" in workflow
     assert "-o IdentitiesOnly=yes" in workflow
@@ -43,7 +47,11 @@ def test_readiness_checks_remote_prerequisites_without_deploying() -> None:
         "test -f deploy/hetzner/Dockerfile",
         "docker info",
         "docker compose version",
+        "docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml config --quiet",
+        "git ls-remote origin refs/heads/main",
         "git rev-parse HEAD",
+        "requested_target_sha=$TARGET_SHA",
+        "origin_main_sha=$ORIGIN_MAIN",
         "df -Pk",
         "http://127.0.0.1:8765/api/health",
         "http://127.0.0.1:8765/api/version",
@@ -61,6 +69,7 @@ def test_readiness_checks_remote_prerequisites_without_deploying() -> None:
         " compose up ",
         " compose down ",
         " down -v",
+        "history_migration",
     )
     for marker in forbidden:
         assert marker not in workflow
