@@ -84,9 +84,24 @@ function buildPacket(){
   $('#contextPacket').value=`NUTEV GROUNDED ANALYSIS PACKET\n\nQUESTION\n${question}\n\nSCOPE\nroute: ${route}\ndomain: ${domain}\ndocument class: ${documentClass}\n\nSUPPORTING DOCUMENTS (${chosen.length})\n${docs||'No supporting documents selected.'}\n\nCANONICAL CONTEXT\n${location.origin}/agent-context/article1/SEARCH_STATE.json\n${location.origin}/agent-context/article1/CONTEXT_MANIFEST.json\n${location.origin}/agent-context/article1/ARTICLE_SUMMARIES.jsonl\n\nINSTRUCTIONS FOR THE ANALYZING AGENT\n- Ground the analysis in the supporting documents and canonical NutEV context above.\n- Distinguish document metadata/machine profiles from human-accepted scientific evidence.\n- Do not treat route membership, retrieval status, class profile or lexical match as eligibility, inclusion, quality, RoB, certainty or recommendation.\n- If a claim requires deeper article content, open the Scientific Dossier / Workbench detail for that document and state when the available context is insufficient.\n- Do not infer PRISMA events or formal-search completion from this packet.\n- Return supporting document IDs alongside substantive claims.\n`;
 }
 
+function showContextUnavailable(status){
+  const missing=Array.isArray(status?.missing_files)?status.missing_files:[];
+  const detail=missing.length?` Arquivos ausentes: ${missing.join(', ')}.`:'';
+  $('#askState').className='warning';
+  $('#askState').innerHTML=`<strong>Contexto científico ainda não materializado neste ambiente.</strong><div>O Ask NutEV não interpreta ausência do bundle como zero evidência.${esc(detail)}</div>`;
+  $('#askContent').classList.add('hidden');
+  $('#askHealth').textContent='contexto não materializado';
+  $('#askHealth').className='status-pill';
+}
+
 async function load(){
   try{
-    const response=await fetch('/agent-context/article1/ARTICLE_SUMMARIES.jsonl',{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const statusResponse=await fetch('/api/agent-context/article1/status',{cache:'no-store'});
+    if(!statusResponse.ok)throw new Error(`status HTTP ${statusResponse.status}`);
+    const status=await statusResponse.json();
+    if(!status.available){showContextUnavailable(status);return}
+    const baseUrl=String(status.base_url||'/agent-context/article1/');
+    const response=await fetch(`${baseUrl}ARTICLE_SUMMARIES.jsonl`,{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);
     articles=(await response.text()).split(/\r?\n/).filter(Boolean).map(JSON.parse);
     const domainValues=[...new Set(articles.flatMap(domains))].sort((a,b)=>(domainLabels[a]||a).localeCompare(domainLabels[b]||b));
     $('#askDomain').insertAdjacentHTML('beforeend',domainValues.map(value=>`<option value="${esc(value)}">${esc(domainLabels[value]||value)}</option>`).join(''));
