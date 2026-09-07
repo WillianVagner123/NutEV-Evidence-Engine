@@ -55,6 +55,7 @@ jobs:
               raise SystemExit("NutEV secure server did not become healthy")
           PY
           python tools/run_predeploy_browser_e2e.py
+          python tools/run_predeploy_search_ui_execution_matrix.py
       - name: Upload browser audit evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
