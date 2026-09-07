@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
+from itertools import combinations
 from typing import Any, Iterable
 from urllib.parse import urlsplit, urlunsplit
 
@@ -114,6 +115,38 @@ def canonical_identity(row: dict[str, Any]) -> str:
     return "title:" + title if title else ""
 
 
+def _exact_identity_aliases(row: dict[str, Any]) -> tuple[str, ...]:
+    """Return exact observed aliases, including manifestations retained by prior dedupe passes."""
+
+    aliases: list[str] = []
+
+    def add_from(value: dict[str, Any]) -> None:
+        doi = normalize_doi(value.get("doi") or value.get("doi_normalized"))
+        pmid = normalize_pmid(value.get("pmid") or value.get("pmid_normalized"))
+        pmcid = normalize_pmcid(value.get("pmcid"))
+        url = normalize_url(value.get("url") or value.get("url_normalized"))
+        if doi:
+            aliases.append("doi:" + doi)
+        if pmid:
+            aliases.append("pmid:" + pmid)
+        if pmcid:
+            aliases.append("pmcid:" + pmcid.casefold())
+        if url:
+            aliases.append("url:" + url.casefold())
+
+    add_from(row)
+    manifestations = row.get("source_manifestations")
+    if isinstance(manifestations, list):
+        for manifestation in manifestations:
+            if isinstance(manifestation, dict):
+                add_from(manifestation)
+
+    if aliases:
+        return tuple(dict.fromkeys(aliases))
+    title = normalize_title(row.get("title"))
+    return ("title:" + title,) if title else ()
+
+
 def _provider_name(row: dict[str, Any]) -> str:
     return str(row.get("source_provider") or row.get("provider") or row.get("source") or "").strip()
 
@@ -204,30 +237,113 @@ def _with_provenance(record: dict[str, Any], *observed_rows: dict[str, Any]) -> 
     return enriched
 
 
-def dedupe_records(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Deduplicate while preserving every observed provider manifestation.
+def _observed_strong_identifiers(row: dict[str, Any]) -> dict[str, set[str]]:
+    values: dict[str, set[str]] = {"doi": set(), "pmid": set(), "pmcid": set()}
 
-    The richer descriptive manifestation remains the primary record. Provider multiplicity is
-    provenance only: it does not imply higher quality, certainty, eligibility, or ranking weight.
+    def add_from(value: dict[str, Any]) -> None:
+        doi = normalize_doi(value.get("doi") or value.get("doi_normalized"))
+        pmid = normalize_pmid(value.get("pmid") or value.get("pmid_normalized"))
+        pmcid = normalize_pmcid(value.get("pmcid"))
+        if doi:
+            values["doi"].add(doi)
+        if pmid:
+            values["pmid"].add(pmid)
+        if pmcid:
+            values["pmcid"].add(pmcid)
+
+    add_from(row)
+    manifestations = row.get("source_manifestations")
+    if isinstance(manifestations, list):
+        for manifestation in manifestations:
+            if isinstance(manifestation, dict):
+                add_from(manifestation)
+    return values
+
+
+def _strong_identity_conflict(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    """Fail closed when both sides assert incompatible strong identifiers of the same kind."""
+
+    left_ids = _observed_strong_identifiers(left)
+    right_ids = _observed_strong_identifiers(right)
+    for kind in ("doi", "pmid", "pmcid"):
+        if left_ids[kind] and right_ids[kind] and left_ids[kind].isdisjoint(right_ids[kind]):
+            return True
+    return False
+
+
+def _merge_descriptive(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
+    left_text = str(left.get("abstract") or left.get("summary") or left.get("snippet") or "")
+    right_text = str(right.get("abstract") or right.get("summary") or right.get("snippet") or "")
+    winner = right if len(right_text) > len(left_text) else left
+    return _with_provenance(dict(winner), left, right)
+
+
+def _fresh_group_key(base: str, groups: dict[str, dict[str, Any]]) -> str:
+    if base not in groups:
+        return base
+    index = 2
+    while f"{base}#conflict-{index}" in groups:
+        index += 1
+    return f"{base}#conflict-{index}"
+
+
+def dedupe_records(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Deduplicate by exact observed aliases while preserving provider manifestations.
+
+    A row may bridge DOI/PMID/PMCID/URL manifestations when an exact alias overlaps. Any conflict
+    between strong identifiers keeps records separate, and ambiguous aliases remain mapped to every
+    conflicting group so later sparse rows cannot silently pick a winner. Exact-title fallback is
+    limited to rows without exact identifiers/URLs. Provider multiplicity adds no rank weight.
     """
 
-    best: dict[str, dict[str, Any]] = {}
+    groups: dict[str, dict[str, Any]] = {}
+    alias_to_groups: dict[str, set[str]] = {}
     unkeyed: list[dict[str, Any]] = []
-    for row in rows:
-        key = canonical_identity(row)
-        if not key:
-            unkeyed.append(_with_provenance(dict(row)))
+
+    for raw_row in rows:
+        row = dict(raw_row)
+        aliases = _exact_identity_aliases(row)
+        canonical = canonical_identity(row) or (aliases[0] if aliases else "")
+        if not aliases or not canonical:
+            unkeyed.append(_with_provenance(row))
             continue
-        current = best.get(key)
-        if current is None:
-            best[key] = _with_provenance(dict(row))
+
+        candidate_keys: set[str] = set()
+        for alias in aliases:
+            candidate_keys.update(alias_to_groups.get(alias, set()))
+        candidates = sorted(
+            key
+            for key in candidate_keys
+            if key in groups and not _strong_identity_conflict(groups[key], row)
+        )
+
+        ambiguous = any(
+            _strong_identity_conflict(groups[left], groups[right])
+            for left, right in combinations(candidates, 2)
+        )
+        if ambiguous:
+            candidates = []
+
+        if not candidates:
+            group_key = _fresh_group_key(canonical, groups)
+            groups[group_key] = _with_provenance(row)
+            for alias in aliases:
+                alias_to_groups.setdefault(alias, set()).add(group_key)
             continue
-        old_text = str(
-            current.get("abstract") or current.get("summary") or current.get("snippet") or ""
-        )
-        new_text = str(
-            row.get("abstract") or row.get("summary") or row.get("snippet") or ""
-        )
-        winner = dict(row) if len(new_text) > len(old_text) else current
-        best[key] = _with_provenance(winner, current, row)
-    return list(best.values()) + unkeyed
+
+        target = candidates[0]
+        merged = groups[target]
+        for other in candidates[1:]:
+            merged = _merge_descriptive(merged, groups[other])
+            del groups[other]
+            for mapped_groups in alias_to_groups.values():
+                if other in mapped_groups:
+                    mapped_groups.discard(other)
+                    mapped_groups.add(target)
+
+        merged = _merge_descriptive(merged, row)
+        groups[target] = merged
+        for alias in aliases:
+            alias_to_groups.setdefault(alias, set()).add(target)
+
+    return list(groups.values()) + unkeyed
