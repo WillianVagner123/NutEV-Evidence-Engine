@@ -202,7 +202,11 @@ def _search_workspace(browser: Any) -> None:
     preview_text = page.locator("#strategyPreview").inner_text()
     _assert("predeploy-browser-exact" in preview_text, "exact strategy id missing from preview")
     _assert("v1.0" in preview_text, "exact strategy version missing from preview")
-    _assert("Dietary Proteins" in preview_text, "literal exact query missing from preview")
+    exact_preview = page.locator("#strategyPreview details.compiled-query").first
+    exact_preview.locator("summary").click()
+    exact_code = exact_preview.locator("code")
+    exact_code.wait_for(state="visible", timeout=5_000)
+    _assert(exact_code.inner_text() == EXACT_QUERY, "literal exact query changed in preview")
 
     ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
     page.screenshot(path=str(ARTIFACT_DIR / "search-desktop.png"), full_page=True)
