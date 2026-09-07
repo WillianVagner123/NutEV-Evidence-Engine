@@ -57,6 +57,12 @@ NOINDEX_PATH_PREFIXES = (
     "/recommendation-",
     "/api/",
 )
+AGENT_CONTEXT_REQUIRED_FILES = (
+    "CONTEXT_MANIFEST.json",
+    "SEARCH_STATE.json",
+    "SEARCH_SUMMARY.md",
+    "ARTICLE_SUMMARIES.jsonl",
+)
 
 
 def _prune_times(values: deque[float], now: float) -> None:
@@ -132,6 +138,40 @@ def _build_metadata() -> dict[str, str]:
         "branch": str(info.get("build_branch") or os.environ.get("NUTEV_BUILD_BRANCH") or "unknown"),
         "build_time": str(info.get("build_time") or os.environ.get("NUTEV_BUILD_TIME") or "unknown"),
         "environment": str(os.environ.get("NUTEV_ENVIRONMENT") or "production"),
+    }
+
+
+def _agent_context_status() -> dict[str, object]:
+    """Report Article 1 agent-context availability without probing missing static files.
+
+    The production image mounts the persistent Article 1 bundle into
+    ``apps/nutev-web/agent-context/article1``. A clean checkout legitimately has no
+    bundle yet, so the public UI needs a stable 200-status capability surface rather
+    than generating console 404s or fabricating context.
+    """
+
+    root = APP_ROOT / "agent-context" / "article1"
+    available: list[str] = []
+    missing: list[str] = []
+    for name in AGENT_CONTEXT_REQUIRED_FILES:
+        path = root / name
+        if path.is_file():
+            available.append(name)
+        else:
+            missing.append(name)
+    complete = not missing
+    return {
+        "status": "available" if complete else "not_materialized",
+        "available": complete,
+        "required_files": list(AGENT_CONTEXT_REQUIRED_FILES),
+        "available_files": available,
+        "missing_files": missing,
+        "base_url": "/agent-context/article1/" if complete else None,
+        "semantics": (
+            "verified persistent Article 1 agent context is materialized"
+            if complete
+            else "agent context is not materialized in this runtime; no scientific state is inferred"
+        ),
     }
 
 
@@ -230,6 +270,9 @@ class SecureNutEVHandler(NutEVHandler):
         path = parsed.path
         if path == "/api/version":
             self._json(_build_metadata())
+            return
+        if path == "/api/agent-context/article1/status":
+            self._json(_agent_context_status())
             return
         if path == "/api/capabilities":
             self._json(
