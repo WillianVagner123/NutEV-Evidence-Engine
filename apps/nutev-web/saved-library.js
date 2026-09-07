@@ -15,6 +15,16 @@ function normalizeUrl(value){
   catch{return raw}
 }
 
+export function sourceProvidersFor(record={}){
+  const providers=[];
+  const primary=text(record.source_provider||record.source);if(primary)providers.push(primary);
+  if(Array.isArray(record.source_providers))for(const value of record.source_providers){const provider=text(value);if(provider)providers.push(provider)}
+  return[...new Set(providers)];
+}
+function sourceManifestationsFor(record={}){
+  return Array.isArray(record.source_manifestations)?JSON.parse(JSON.stringify(record.source_manifestations.filter(item=>item&&typeof item==='object'))):[];
+}
+
 export function canonicalSavedKey(record={}){
   const doi=normalizeDoi(record.doi);if(doi)return`doi:${doi}`;
   const pmid=normalizePmid(record.pmid);if(pmid)return`pmid:${pmid}`;
@@ -54,6 +64,8 @@ function provenanceEntry(record,context={}){
     search_query:text(context.query),
     search_mode:text(context.search_mode),
     source_provider:text(record.source_provider||record.source),
+    source_providers:sourceProvidersFor(record),
+    source_manifestations:sourceManifestationsFor(record),
     provider_query:text(record.provider_query),
     reference_rank:Number(record.reference_rank||0)||null,
     reference_score:Number(record.reference_score||0)||null,
@@ -84,6 +96,8 @@ function savedSnapshot(record,context,existing){
     year:record.year??null,
     journal:text(record.journal||record.venue),
     source_provider:text(record.source_provider||record.source),
+    source_providers:sourceProvidersFor(record),
+    source_manifestations:sourceManifestationsFor(record),
     source_url:sourceUrlFor(record),
     document_class:text(record.search_classification?.document_class||record.document_class||record.article_type||'unclassified'),
     classification_confidence:text(record.search_classification?.confidence||''),
@@ -99,7 +113,7 @@ function savedSnapshot(record,context,existing){
 function saveChunk(db,records,context){
   return new Promise((resolve,reject)=>{
     const tx=db.transaction(STORE,'readwrite');
-    const store=tx.objectStore(STORE);
+    const store=db.objectStore(STORE);
     let saved=0,updated=0;
     for(const record of records){
       const key=canonicalSavedKey(record);
@@ -147,7 +161,7 @@ export async function listSavedArticles({q='',limit=500}={}){
   const db=await openDb();
   const rows=await new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readonly');const request=tx.objectStore(STORE).getAll();request.onsuccess=()=>resolve(request.result||[]);request.onerror=()=>reject(request.error||new Error('Falha ao listar artigos salvos.'))});
   const needle=normalized(q);
-  return rows.filter(item=>!needle||normalized([item.title,item.doi,item.pmid,item.journal,item.source_provider,...(item.provenance||[]).map(p=>p.search_query)].join(' ')).includes(needle)).sort((a,b)=>String(b.last_saved_at||'').localeCompare(String(a.last_saved_at||''))).slice(0,Math.max(1,Math.min(Number(limit)||500,5000)));
+  return rows.filter(item=>!needle||normalized([item.title,item.doi,item.pmid,item.journal,item.source_provider,...(item.source_providers||[]),...(item.provenance||[]).flatMap(p=>[p.search_query,...(p.source_providers||[])])].join(' ')).includes(needle)).sort((a,b)=>String(b.last_saved_at||'').localeCompare(String(a.last_saved_at||''))).slice(0,Math.max(1,Math.min(Number(limit)||500,5000)));
 }
 
 export async function countSavedArticles(){
