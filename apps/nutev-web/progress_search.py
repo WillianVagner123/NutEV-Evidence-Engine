@@ -415,3 +415,74 @@ def search_evidence_progressive(
         },
     )
     return result
+
+
+_search_without_full_text = search_evidence_progressive
+
+
+def search_evidence_progressive(
+    query: object,
+    *,
+    providers: list[str] | None = None,
+    per_provider: int = 25,
+    max_results: int = 100,
+    provider_queries: dict[str, str] | None = None,
+    query_plan: dict[str, Any] | None = None,
+    output_root: Path | None = None,
+    on_progress: ProgressCallback | None = None,
+) -> dict[str, Any]:
+    """Run search, then selectively enrich top OA results with full text/OCR.
+
+    Full-text enrichment is an operational reading aid. It is fail-open, bounded,
+    never changes reference rank/score, and never advances scientific workflow
+    state. The extracted body remains server-side and is not embedded in the
+    public search payload.
+    """
+
+    result = _search_without_full_text(
+        query,
+        providers=providers,
+        per_provider=per_provider,
+        max_results=max_results,
+        provider_queries=provider_queries,
+        query_plan=query_plan,
+        output_root=output_root,
+        on_progress=on_progress,
+    )
+    from search_fulltext import configured_full_text_limit, enrich_ranked_results
+
+    limit = configured_full_text_limit()
+    if limit <= 0 or not result.get("results"):
+        return result
+
+    root = _output_root(output_root)
+    allow_network = os.environ.get("NUTEV_DISABLE_NETWORK") != "1"
+    try:
+        rows, summary = enrich_ranked_results(
+            list(result.get("results") or []),
+            output_root=root,
+            search_id=str(result.get("search_id") or ""),
+            limit=limit,
+            allow_network=allow_network,
+            on_progress=on_progress,
+        )
+        result["results"] = rows
+        result["full_text_enrichment"] = summary
+    except Exception as exc:
+        result["full_text_enrichment"] = {
+            "enabled": bool(allow_network),
+            "status": "failed_open",
+            "policy": "selective_top_ranked_open_full_text",
+            "budget": limit,
+            "error": f"{type(exc).__name__}: {exc}",
+            "ranking_unchanged": True,
+            "public_payload_contains_full_text": False,
+        }
+
+    limitations = list(result.get("interactive_limitations") or [])
+    limitations.append(
+        "Texto completo/OCR é enriquecido seletivamente apenas nos primeiros resultados de acesso público; falha de enriquecimento não invalida a busca e disponibilidade de full text não altera o ranking."
+    )
+    result["interactive_limitations"] = limitations
+    _persist_search(result, root)
+    return result
