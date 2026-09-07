@@ -14,7 +14,7 @@ def test_articles_ui_exposes_operational_priority_without_scientific_overclaim()
     assert 'id="tierFilter"' in html
     assert 'id="sortFilter"' in html
     assert 'value="relevance"' in html
-    assert "Tier A · aprofundar primeiro" in html
+    assert "Nível A · aprofundar primeiro" in html
     assert "Não equivalem a inclusão" in html
     assert "qualidade metodológica" in html
 
