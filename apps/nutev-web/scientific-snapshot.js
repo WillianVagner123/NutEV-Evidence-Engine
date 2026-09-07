@@ -21,6 +21,17 @@ async function fetchText(url){
   return response.text();
 }
 
+async function requireArticle1Context(){
+  const response=await fetch('/api/agent-context/article1/status',{cache:'no-store'});
+  if(!response.ok)throw new Error(`Article 1 context status HTTP ${response.status}`);
+  const status=await response.json();
+  if(!status.available){
+    const missing=Array.isArray(status.missing_files)?status.missing_files.join(', '):'bundle incompleto';
+    throw new Error(`Article 1 context not materialized: ${missing}`);
+  }
+  return String(status.base_url||'/agent-context/article1/');
+}
+
 function countBy(rows,getter){
   const output={};
   for(const row of rows){
@@ -37,10 +48,11 @@ function effectiveClass(row){return row.review_profile?.primary_document_class||
 function domains(row){return row.review_profile?.operational_domains||[]}
 
 export async function buildScientificSnapshot(){
+  const baseUrl=await requireArticle1Context();
   const urls={
-    search_state:'/agent-context/article1/SEARCH_STATE.json',
-    context_manifest:'/agent-context/article1/CONTEXT_MANIFEST.json',
-    article_summaries:'/agent-context/article1/ARTICLE_SUMMARIES.jsonl',
+    search_state:`${baseUrl}SEARCH_STATE.json`,
+    context_manifest:`${baseUrl}CONTEXT_MANIFEST.json`,
+    article_summaries:`${baseUrl}ARTICLE_SUMMARIES.jsonl`,
     query_draft:'/strategy-data/article1_query_draft_v1.json',
     build_info:'/build-info.json'
   };
