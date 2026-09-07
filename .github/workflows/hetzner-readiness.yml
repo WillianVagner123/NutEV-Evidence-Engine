@@ -18,6 +18,7 @@ jobs:
     environment: HETZNER
     timeout-minutes: 10
     env:
+      TARGET_SHA: ${{ github.sha }}
       HETZNER_HOST: ${{ vars.HETZNER_HOST }}
       HETZNER_USER: ${{ vars.HETZNER_USER }}
       HETZNER_PORT: ${{ vars.HETZNER_PORT }}
@@ -29,6 +30,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          test -n "$TARGET_SHA"
           test -n "$HETZNER_HOST"
           test -n "$HETZNER_USER"
           test -n "$HETZNER_APP_DIR"
@@ -53,6 +55,8 @@ jobs:
               raw = raw.replace("\\n", "\n")
 
           candidate = raw.strip()
+          if candidate.startswith("ssh-") or "BEGIN PUBLIC KEY" in candidate:
+              raise SystemExit("HETZNER_SSH_KEY contains a public key; the complete private key is required")
           if not candidate.startswith("-----BEGIN "):
               compact = "".join(candidate.split())
               try:
@@ -68,7 +72,7 @@ jobs:
 
           chmod 600 ~/.ssh/id_ed25519
           if ! ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null; then
-            echo "::error::HETZNER_SSH_KEY is not a complete unencrypted private key after raw/literal-newline/base64 normalization." >&2
+            echo "::error::HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key after raw/literal-newline/base64 normalization. Ensure the HETZNER environment secret contains the complete private key (not .pub), without a passphrase." >&2
             exit 1
           fi
           chmod 600 ~/.ssh/id_ed25519.pub
@@ -93,6 +97,7 @@ jobs:
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
           APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          TARGET_SHA_Q=$(printf '%q' "$TARGET_SHA")
 
           ssh \
             -o BatchMode=yes \
@@ -100,7 +105,7 @@ jobs:
             -o ConnectTimeout=15 \
             -p "$PORT" \
             "$HETZNER_USER@$HETZNER_HOST" \
-            "APP_DIR=$APP_DIR_Q bash -s" <<'REMOTE'
+            "APP_DIR=$APP_DIR_Q TARGET_SHA=$TARGET_SHA_Q bash -s" <<'REMOTE'
           set -euo pipefail
 
           cd "$APP_DIR"
@@ -113,7 +118,13 @@ jobs:
           command -v curl >/dev/null
           docker info >/dev/null
           docker compose version >/dev/null
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml config --quiet
 
+          ORIGIN_MAIN="$(git ls-remote origin refs/heads/main | awk '{print $1}')"
+          test -n "$ORIGIN_MAIN"
+
+          echo "requested_target_sha=$TARGET_SHA"
+          echo "origin_main_sha=$ORIGIN_MAIN"
           echo "remote_repo_head=$(git rev-parse HEAD)"
           echo "remote_branch=$(git branch --show-current || true)"
           echo "docker_version=$(docker version --format '{{.Server.Version}}')"
@@ -136,11 +147,14 @@ jobs:
           {
             echo "## Hetzner production readiness"
             echo ""
-            echo "- SSH key parsed successfully"
+            echo "- SSH key parsed successfully as a private key"
             echo "- SSH authentication succeeded"
             echo "- repository and production .env are present"
             echo "- Docker, Docker Compose, Git and curl are available"
-            echo "- no build, checkout/reset, container replacement or volume mutation was performed"
+            echo "- compose configuration parses successfully with the production .env"
+            echo "- origin/main is reachable from the server"
+            echo "- current production health/version was probed when available"
+            echo "- no build, checkout/reset, container replacement, Registry migration or volume mutation was performed"
             echo ""
-            echo "Next step: run deploy-hetzner from main."
+            echo "Next step: run deploy-hetzner from main only after all repository gates are green."
           } >> "$GITHUB_STEP_SUMMARY"
