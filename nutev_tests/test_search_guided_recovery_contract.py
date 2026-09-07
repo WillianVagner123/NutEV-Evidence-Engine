@@ -16,7 +16,7 @@ def test_search_page_loads_guided_recovery_after_resilient_search_events() -> No
     assert 'id="queryAssist"' in html
     assert 'id="searchRecovery"' in html
     assert "search-guided-recovery.js" in html
-    assert html.index("search-ux-resilience.js") < html.index("search-guided-recovery.js") < html.index("app.js")
+    assert html.index("search-events.js") < html.index("search-ux-resilience.js") < html.index("search-guided-recovery.js") < html.index("app.js")
 
 
 def test_query_lint_warns_without_silently_rewriting_scientific_terms() -> None:
@@ -69,13 +69,15 @@ def test_recovery_actions_require_explicit_user_clicks() -> None:
 
 
 def test_search_lifecycle_events_reduce_fetch_wrapper_coupling() -> None:
+    events = read("search-events.js")
     ux = read("search-ux-resilience.js")
     recovery = read("search-guided-recovery.js")
 
-    assert "emit('nutev:search-job'" in ux
-    assert "emit('nutev:search-result'" in ux
-    assert "emit('nutev:search-failed'" in ux
-    assert "getLastResult:()=>lastResult" in ux
+    assert "emit('nutev:search-job'" in events
+    assert "emit('nutev:search-result'" in events
+    assert "emit('nutev:search-failed'" in events
+    assert "getLastResult:()=>lastResult" in events
+    assert "addEventListener('nutev:search-result'" in ux
     assert "addEventListener('nutev:search-result'" in recovery
     assert "addEventListener('nutev:search-job'" in recovery
 
