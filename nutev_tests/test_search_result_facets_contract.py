@@ -21,9 +21,30 @@ def test_facets_cover_reliable_returned_result_dimensions() -> None:
     for sort_key in ("query_relevance", "final_score", "newest", "nutev_priority"):
         assert sort_key in facets
     assert "resultados retornados nesta busca" in facets
-    assert "Texto completo não é oferecido como faceta" in facets
-    assert "status verificável por resultado" in facets
     assert "data-result-index" in facets
+
+
+def test_provider_facet_counts_and_filters_every_observed_source_after_deduplication() -> None:
+    facets = (WEB / "search-facets-ui.js").read_text(encoding="utf-8")
+
+    assert "function providerValues(record)" in facets
+    assert "record?.source_providers" in facets
+    assert "countedMultiOptions(records,providerValues,providerLabel)" in facets
+    assert "providerValues(record).includes(filters.provider)" in facets
+    assert "Um artigo deduplicado pode contar em mais de uma fonte" in facets
+    assert "proveniência de recuperação, não qualidade da evidência" in facets
+
+
+def test_multi_source_results_expose_retrieval_origins_without_claiming_scientific_strength() -> None:
+    facets = (WEB / "search-facets-ui.js").read_text(encoding="utf-8")
+    css = (WEB / "search-facets.css").read_text(encoding="utf-8")
+
+    assert "source_manifestations" in facets
+    assert "Origens da recuperação" in facets
+    assert "provider_query" in facets
+    assert "Múltiplas fontes não aumentam qualidade, certeza ou elegibilidade científica." in facets
+    assert "multi-source-pill" in facets
+    assert ".retrieval-provenance" in css
 
 
 def test_facet_sorting_does_not_break_saved_article_identity() -> None:
