@@ -1,6 +1,5 @@
 import{canonicalDocumentClass,documentClassLabel}from'./document-classes.js';
 
-const nativeFetch=window.fetch.bind(window);
 const RESULT_BATCH=100;
 const PROVIDER_LABELS={
   pubmed:'PubMed',europepmc:'Europe PMC',openalex:'OpenAlex',crossref:'Crossref',doaj:'DOAJ',semantic_scholar:'Semantic Scholar',lilacs_bvs_native:'LILACS/BVS',scielo_native:'SciELO',
@@ -16,7 +15,6 @@ let filters={text:'',year:'',documentClass:'',provider:'',taxonomy:'',sort:'quer
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 
-function requestPath(input){try{return new URL(typeof input==='string'?input:input?.url||'',location.href).pathname}catch{return''}}
 function searchKey(data){return String(data?.search_id||`${data?.query||''}|${data?.created_at||''}|${data?.returned_records||0}`)}
 function number(value,fallback=-Infinity){const parsed=Number(value);return Number.isFinite(parsed)?parsed:fallback}
 function yearValue(record){const value=String(record?.year??'').trim();return /^\d{4}$/.test(value)?value:''}
@@ -42,9 +40,8 @@ function inferredClass(record){
 }
 
 function blankFilters(){return{text:'',year:'',documentClass:'',provider:'',taxonomy:'',sort:'query_relevance'}}
-function capturePayload(payload){
-  const result=payload?.result?.results?payload.result:(payload?.results?payload:null);
-  if(!result)return;
+function captureResult(result){
+  if(!result?.results)return;
   const key=searchKey(result);
   if(key!==currentSearchKey){
     currentSearchKey=key;
@@ -55,14 +52,7 @@ function capturePayload(payload){
   setTimeout(enhance,0);
 }
 
-window.fetch=async(...args)=>{
-  const response=await nativeFetch(...args);
-  const path=requestPath(args[0]);
-  if(response.ok&&(path==='/api/search'||path.startsWith('/api/search/jobs/')||path.startsWith('/api/searches/'))){
-    response.clone().json().then(capturePayload).catch(()=>{});
-  }
-  return response;
-};
+window.addEventListener('nutev:search-result',event=>captureResult(event.detail?.result));
 
 function countedOptions(records,getValue,getLabel){
   const counts=new Map();
@@ -202,6 +192,6 @@ function enhance(){
 
 const summary=$('#summary');
 if(summary)new MutationObserver(()=>setTimeout(enhance,0)).observe(summary,{childList:true,attributes:true,attributeFilter:['class']});
-window.addEventListener('pageshow',()=>setTimeout(enhance,0));
+window.addEventListener('pageshow',()=>{const cached=window.NutEVSearchEvents?.getLastResult?.();if(cached)captureResult(cached);else setTimeout(enhance,0)});
 
 window.NutEVSearchFacets={filteredEntries,renderFilteredResults};
