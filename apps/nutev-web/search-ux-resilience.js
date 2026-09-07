@@ -1,11 +1,5 @@
-const previousFetch=window.fetch.bind(window);
-const RETRYABLE_JOB_STATUS=new Set([408,429,500,502,503,504]);
-const RETRY_DELAYS=[400,900,1800];
-
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
-const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-const emit=(name,detail)=>window.dispatchEvent(new CustomEvent(name,{detail}));
 
 let activeJobId='';
 let searchStartedAt=0;
@@ -13,13 +7,6 @@ let elapsedTimer=0;
 let lastJob=null;
 let lastResult=null;
 let lastOutcomeKey='';
-
-function requestMeta(input,init={}){
-  try{
-    const url=new URL(typeof input==='string'?input:input?.url||'',location.href);
-    return {path:url.pathname,method:String(init?.method||input?.method||'GET').toUpperCase()};
-  }catch{return {path:'',method:'GET'}}
-}
 
 function feedbackElement(){return $('#searchFeedback')}
 function showFeedback(message,kind='error'){
@@ -36,33 +23,6 @@ window.alert=message=>{
   showFeedback(text,'error');
   if(/digite/i.test(text))$('#question')?.focus();
   if(/selecione pelo menos uma fonte/i.test(text))document.querySelector('details.advanced')?.setAttribute('open','');
-};
-
-async function robustJobFetch(args){
-  let lastError=null;
-  for(let attempt=0;attempt<=RETRY_DELAYS.length;attempt+=1){
-    try{
-      const response=await previousFetch(...args);
-      if(response.ok||!RETRYABLE_JOB_STATUS.has(response.status)||attempt===RETRY_DELAYS.length)return response;
-    }catch(error){
-      lastError=error;
-      if(attempt===RETRY_DELAYS.length)throw error;
-    }
-    const progress=$('#searchProgress');
-    if(progress&&!progress.classList.contains('hidden'))progress.dataset.reconnecting='true';
-    await sleep(RETRY_DELAYS[attempt]);
-  }
-  throw lastError||new Error('Falha de conexão ao acompanhar a busca.');
-}
-
-window.fetch=async(...args)=>{
-  const {path,method}=requestMeta(args[0],args[1]);
-  const isJobRead=method==='GET'&&path.startsWith('/api/search/jobs/');
-  const response=isJobRead?await robustJobFetch(args):await previousFetch(...args);
-  if(response.ok&&(path==='/api/search/jobs'||isJobRead||path.startsWith('/api/searches/'))){
-    response.clone().json().then(payload=>capturePayload(payload,{path,method})).catch(()=>{});
-  }
-  return response;
 };
 
 function elapsedLabel(){
@@ -83,7 +43,6 @@ function beginProgress(job){
   if(!searchStartedAt)searchStartedAt=Date.now();
   if(!elapsedTimer)elapsedTimer=window.setInterval(renderElapsed,1000);
   renderProgress(job);
-  emit('nutev:search-job',{job});
 }
 function finishProgress(){
   activeJobId='';searchStartedAt=0;lastJob=null;
@@ -102,30 +61,6 @@ function renderProgress(job){
   root.setAttribute('aria-busy',String(job?.status!=='completed'&&job?.status!=='failed'));
   root.innerHTML=`<div class="search-progress-head"><div><strong>${esc(stageLabel(job))}</strong><span>${total?`${completed} de ${total} fontes concluídas`:'aguardando plano de fontes'} · ${esc(elapsedLabel())}</span></div><span class="search-progress-provider">${running?`Agora: ${esc(running.label||running.provider||'fonte')}`:(job?.stage==='finalizing'?'Consolidando resultados':'')}</span></div><div class="search-progress-track" role="progressbar" aria-label="Progresso da busca" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${percent}"><span style="width:${percent}%"></span></div>${reconnecting?'<div class="search-reconnect">A conexão oscilou. O NutEV está tentando recuperar o acompanhamento sem repetir a busca.</div>':''}<div class="search-progress-foot">Você pode sair desta página: a execução é persistida no servidor e poderá aparecer em <a href="/search.html?view=history">Minhas buscas</a>.</div>`;
   root.removeAttribute('data-reconnecting');
-}
-
-function resultFromPayload(payload){
-  if(payload?.result?.results)return payload.result;
-  if(payload?.results)return payload;
-  return null;
-}
-function publishResult(result,source){
-  lastResult=result;
-  queueSummaryEnhancement(result);
-  emit('nutev:search-result',{result,source});
-}
-function capturePayload(payload,meta){
-  if(meta.path==='/api/search/jobs'&&meta.method==='POST'){
-    clearFeedback();beginProgress(payload);return;
-  }
-  if(meta.path.startsWith('/api/search/jobs/')){
-    if(payload?.status==='queued'||payload?.status==='running'){beginProgress(payload);return}
-    if(payload?.status==='failed'){finishProgress();emit('nutev:search-failed',{job:payload});return}
-    if(payload?.status==='completed'){
-      const result=resultFromPayload(payload);finishProgress();if(result)publishResult(result,'job');return;
-    }
-  }
-  const result=resultFromPayload(payload);if(result)publishResult(result,'history');
 }
 
 function providerGapIds(data){
@@ -203,6 +138,18 @@ $('#question')?.addEventListener('keydown',event=>{
   }
 });
 
+window.addEventListener('nutev:search-job',event=>{clearFeedback();beginProgress(event.detail?.job||{})});
+window.addEventListener('nutev:search-result',event=>{
+  const result=event.detail?.result;if(!result)return;
+  lastResult=result;finishProgress();queueSummaryEnhancement(result);
+});
+window.addEventListener('nutev:search-failed',()=>finishProgress());
+window.addEventListener('nutev:search-transport-retry',()=>{
+  const progress=$('#searchProgress');if(progress&&!progress.classList.contains('hidden')){
+    progress.dataset.reconnecting='true';if(lastJob)renderProgress(lastJob);
+  }
+});
+
 const searchState=$('#searchState');
 if(searchState)new MutationObserver(()=>{
   if(searchState.classList.contains('error'))finishProgress();
@@ -214,5 +161,9 @@ if(results)new MutationObserver(()=>window.requestAnimationFrame(compactCards)).
 const summary=$('#summary');
 if(summary)new MutationObserver(()=>{if(lastResult&&!summary.classList.contains('hidden')&&lastOutcomeKey!==String(lastResult?.search_id||`${lastResult?.query||''}|${lastResult?.returned_records||0}`))queueSummaryEnhancement(lastResult)}).observe(summary,{childList:true,attributes:true,attributeFilter:['class']});
 
-window.addEventListener('pageshow',()=>{compactCards();if(lastResult)queueSummaryEnhancement(lastResult)});
-window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,compactCards,getLastResult:()=>lastResult};
+window.addEventListener('pageshow',()=>{
+  compactCards();
+  const cached=window.NutEVSearchEvents?.getLastResult?.()||lastResult;
+  if(cached){lastResult=cached;queueSummaryEnhancement(cached)}
+});
+window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,compactCards,getLastResult:()=>window.NutEVSearchEvents?.getLastResult?.()||lastResult};
