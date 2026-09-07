@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sqlite3
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 SCHEMA_SQL = """
 PRAGMA foreign_keys = ON;
@@ -144,6 +144,27 @@ CREATE INDEX IF NOT EXISTS idx_full_text_article ON full_text_artifacts(article_
 CREATE INDEX IF NOT EXISTS idx_full_text_content_sha ON full_text_artifacts(content_sha256);
 CREATE INDEX IF NOT EXISTS idx_full_text_ocr ON full_text_artifacts(ocr_used);
 CREATE INDEX IF NOT EXISTS idx_full_text_status ON full_text_artifacts(status);
+
+CREATE TABLE IF NOT EXISTS core_versions (
+    core_version_id TEXT PRIMARY KEY,
+    article_id TEXT NOT NULL REFERENCES articles(article_id) ON DELETE CASCADE,
+    version_number INTEGER NOT NULL,
+    core_record_id TEXT NOT NULL DEFAULT '',
+    source_document_id TEXT NOT NULL DEFAULT '',
+    record_sha256 TEXT NOT NULL,
+    input_artifact_hashes_json TEXT NOT NULL DEFAULT '{}',
+    pipeline_version TEXT NOT NULL DEFAULT '',
+    generated_at TEXT NOT NULL,
+    record_json TEXT NOT NULL,
+    is_current INTEGER NOT NULL DEFAULT 1 CHECK (is_current IN (0, 1)),
+    created_at TEXT NOT NULL,
+    UNIQUE(article_id, version_number),
+    UNIQUE(article_id, record_sha256)
+);
+CREATE INDEX IF NOT EXISTS idx_core_version_article ON core_versions(article_id);
+CREATE INDEX IF NOT EXISTS idx_core_version_current ON core_versions(article_id, is_current);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_core_one_current_per_article
+    ON core_versions(article_id) WHERE is_current = 1;
 """
 
 
