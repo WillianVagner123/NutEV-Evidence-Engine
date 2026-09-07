@@ -14,7 +14,12 @@ def test_evidence_map_uses_rank_blind_article_context() -> None:
     script = read("evidence-map.js")
 
     assert "Evidence Map" in html
-    assert "/agent-context/article1/ARTICLE_SUMMARIES.jsonl" in script
+    assert "/api/agent-context/article1/status" in script
+    assert "ARTICLE_SUMMARIES.jsonl" in script
+    assert script.index("/api/agent-context/article1/status") < script.index(
+        "ARTICLE_SUMMARIES.jsonl"
+    )
+    assert "contexto científico não materializado" in script
     for forbidden in (
         "reference_rank",
         "reference_score",
