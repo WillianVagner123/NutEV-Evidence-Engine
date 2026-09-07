@@ -60,6 +60,36 @@ The deployment user must be able to:
 
 The production `.env` remains on the server and is never committed.
 
+## Readiness check before deploy
+
+`.github/workflows/hetzner-readiness.yml` is a manual, `main`-only preflight that uses the same `HETZNER` environment but does **not** deploy or replace containers.
+
+It verifies:
+
+- the deployment variables and SSH secret are present;
+- the SSH key can be normalized and parsed as an unencrypted private key;
+- SSH authentication to the configured host succeeds;
+- `HETZNER_APP_DIR` is a Git repository;
+- `deploy/hetzner/.env`, `compose.yaml`, and `Dockerfile` exist;
+- Git, Docker, Docker Compose, and curl are available;
+- Docker daemon access works;
+- current repository SHA, branch, Docker version, and free disk space can be read;
+- the current NutEV local health/version endpoints are reported when available.
+
+The readiness workflow intentionally does **not** run `git reset`, build images, start/stop containers, prune images, or mutate volumes. A failed readiness check should be corrected before running the production deploy.
+
+## Tomorrow release runbook
+
+After access to the Hetzner host is available again:
+
+1. Generate or recover a dedicated unencrypted deployment private key and install its **public** half in the deployment user's `~/.ssh/authorized_keys`.
+2. Store the complete **private** half in GitHub Environment `HETZNER` as `HETZNER_SSH_KEY`. Do not paste the private key into issues, PRs, logs, or chat.
+3. In GitHub Actions, run **hetzner-readiness** on `main`.
+4. Do not continue if `Configure and validate SSH key`, `Verify SSH access`, or `Verify remote deployment prerequisites` fails.
+5. Once readiness is green, run **deploy-hetzner** manually from `main` (or allow the next successful `main` CI to trigger it when `HETZNER_AUTODEPLOY=true`).
+6. Confirm the deploy reports the expected `TARGET_SHA`, passes isolated preflight health, switches production, and confirms `/api/version` equals the target commit.
+7. Only then verify the public domain and run the user journey smoke test: home -> search -> results -> save to Library -> article dossier.
+
 ## Deployment sequence
 
 ```text

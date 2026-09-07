@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEPLOY = ROOT / "deploy" / "hetzner"
 WORKFLOW = ROOT / ".github" / "workflows" / "deploy-hetzner.yml"
+SECURE_SERVER = ROOT / "apps" / "nutev-web" / "secure_server.py"
 
 
 def test_hetzner_compose_preserves_data_and_keeps_backend_private() -> None:
@@ -45,3 +46,28 @@ def test_deploy_files_do_not_embed_secrets() -> None:
     assert 'REPLACE_WITH_CADDY_PASSWORD_HASH' in env_example
     assert '{$NUTEV_BASIC_AUTH_HASH}' in caddy
     assert 'BEGIN OPENSSH PRIVATE KEY' not in WORKFLOW.read_text(encoding="utf-8")
+
+
+def test_build_identity_is_image_owned_not_persistent_env_owned() -> None:
+    env_example = (DEPLOY / ".env.example").read_text(encoding="utf-8")
+    dockerfile = (DEPLOY / "Dockerfile").read_text(encoding="utf-8")
+    server = SECURE_SERVER.read_text(encoding="utf-8")
+
+    for key in (
+        "NUTEV_BUILD_COMMIT=",
+        "NUTEV_BUILD_BRANCH=",
+        "NUTEV_BUILD_TIME=",
+        "NUTEV_VERSION=",
+    ):
+        assert key not in env_example
+
+    assert '> /app/apps/nutev-web/build-info.json' in dockerfile
+    assert '"build_commit":"%s"' in dockerfile
+    assert '"build_branch":"%s"' in dockerfile
+    assert '"build_time":"%s"' in dockerfile
+    assert 'CMD ["sh", "-lc", "printf' not in dockerfile
+
+    assert 'info.get("version") or os.environ.get("NUTEV_VERSION")' in server
+    assert 'info.get("build_commit") or os.environ.get("NUTEV_BUILD_COMMIT")' in server
+    assert 'info.get("build_branch") or os.environ.get("NUTEV_BUILD_BRANCH")' in server
+    assert 'info.get("build_time") or os.environ.get("NUTEV_BUILD_TIME")' in server
