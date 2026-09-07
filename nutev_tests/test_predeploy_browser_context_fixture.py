@@ -3,6 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "tools" / "materialize_predeploy_e2e_context.py"
+MATRIX = ROOT / "tools" / "run_predeploy_search_ui_execution_matrix.py"
 
 
 def test_browser_context_fixture_is_explicitly_test_only_and_rank_blind() -> None:
@@ -33,6 +34,22 @@ def test_browser_workflow_materializes_fixture_before_server_start() -> None:
     materialize = "python tools/materialize_predeploy_e2e_context.py"
     server = "python apps/nutev-web/secure_server.py"
     browser = "python tools/run_predeploy_browser_e2e.py"
+    matrix = "python tools/run_predeploy_search_ui_execution_matrix.py"
 
     assert materialize in workflow
+    assert browser in workflow
+    assert matrix in workflow
     assert workflow.index(materialize) < workflow.index(server) < workflow.index(browser)
+    assert workflow.index(browser) < workflow.index(matrix)
+
+
+def test_browser_search_matrix_executes_every_advanced_and_exact_mode() -> None:
+    source = MATRIX.read_text(encoding="utf-8")
+
+    assert 'for framework in ("PCC", "PICO", "PECO")' in source
+    assert "structured_runs == 6" in source
+    assert "exact_runs == 2" in source
+    assert "#searchBtn" in source
+    assert "#globalSearchBtn" in source
+    assert "history_count >= 10" in source
+    assert "provider gaps were not surfaced" in source
