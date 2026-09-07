@@ -57,10 +57,17 @@ def _diagnostics(page: Page) -> tuple[list[str], list[str], list[str]]:
     page.on("pageerror", lambda exc: page_errors.append(str(exc)))
 
     def on_console(message: Any) -> None:
-        if message.type == "error":
-            text = str(message.text)
-            if "favicon.ico" not in text:
-                console_errors.append(text)
+        if message.type != "error":
+            return
+        text = str(message.text)
+        location = message.location or {}
+        url = str(location.get("url") or "")
+        if url.endswith("/favicon.ico"):
+            return
+        line = location.get("lineNumber")
+        column = location.get("columnNumber")
+        where = f" @ {url}:{line}:{column}" if url else ""
+        console_errors.append(text + where)
 
     def on_response(response: Any) -> None:
         if response.status < 400:
