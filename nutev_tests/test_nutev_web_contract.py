@@ -29,7 +29,7 @@ def test_global_search_is_a_first_class_maximum_coverage_action() -> None:
     assert "Cobertura máxima disponível" in search
     assert "sem teto interno" in search
     assert "Não há corte interno de 100, 300 ou outro número" in search
-    assert "limite demonstrável de cada provider" in search
+    assert "limite demonstrável de cada fonte" in search
     assert "GLOBAL_EXHAUSTIVE_SENTINEL=0" in app
     assert "state.providers.map(p=>p.id)" in app
     assert "runSearch({global:true})" in app

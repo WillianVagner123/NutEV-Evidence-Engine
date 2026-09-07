@@ -17,10 +17,10 @@ def test_corpus_wires_scientific_dossier_layer() -> None:
 
 def test_dossier_has_required_tabs_and_fail_closed_review() -> None:
     script = read("article-dossier.js")
-    for label in ("Overview", "Methods", "Evidence", "Domains", "Provenance", "Human Review"):
+    for label in ("Visão geral", "Métodos", "Evidência", "Domínios", "Proveniência", "Revisão humana"):
         assert label in script
     assert "Formal" not in script or "formal" in script.lower()
-    assert "Decisões formais de screening não são registradas nesta tela" in script
+    assert "Decisões formais de triagem não são registradas nesta tela" in script
     assert "/review.html" in script
 
 
@@ -34,6 +34,6 @@ def test_dossier_does_not_fetch_full_text_or_write_decisions() -> None:
 
 def test_dossier_keeps_machine_artifacts_separate_from_accepted_claims() -> None:
     script = read("article-dossier.js")
-    assert "Result bundles e excerpts são artefatos candidatos rastreáveis" in script
+    assert "Pacotes de resultados e trechos são artefatos candidatos rastreáveis" in script
     assert "Não são EvidenceClaims aceitos" in script
     assert "Ausência de campo não é preenchida por inferência" in script
