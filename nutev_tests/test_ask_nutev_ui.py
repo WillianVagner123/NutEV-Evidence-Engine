@@ -33,7 +33,9 @@ def test_ask_nutev_is_retrieval_not_scientific_decision() -> None:
     assert "SUPPORTING DOCUMENTS" in js
     assert "Return supporting document IDs" in js
     assert "if(!status.available){showContextUnavailable(status);return}" in js
-    assert js.index("/api/agent-context/article1/status") < js.index("ARTICLE_SUMMARIES.jsonl")
+    guarded_fetch = "fetch(`${baseUrl}ARTICLE_SUMMARIES.jsonl`,{cache:'no-store'})"
+    assert guarded_fetch in js
+    assert js.index("/api/agent-context/article1/status") < js.index(guarded_fetch)
     assert "não interpreta ausência do bundle como zero evidência" in js
     assert "method:'POST'" not in js.replace(" ", "")
     assert "api.openai.com" not in js
