@@ -28,6 +28,7 @@ def test_autodeploy_is_guarded_by_ci_and_explicit_enable_flag() -> None:
     assert 'HETZNER_PORT: ${{ vars.HETZNER_PORT }}' in workflow
     assert 'HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}' in workflow
     assert 'HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}' in workflow
+    assert 'NUTEV_PUBLIC_URL: ${{ vars.NUTEV_PUBLIC_URL }}' in workflow
 
 
 def test_autodeploy_preflights_and_rolls_back_on_health_failure() -> None:
@@ -38,6 +39,38 @@ def test_autodeploy_preflights_and_rolls_back_on_health_failure() -> None:
     assert 'docker tag "$OLD_IMAGE_ID" nutev:rollback' in workflow
     assert 'NUTEV_IMAGE=nutev:rollback' in workflow
     assert 'docker compose --env-file deploy/hetzner/.env' in workflow
+
+
+def test_autodeploy_requires_runtime_contract_before_and_after_promotion() -> None:
+    workflow = WORKFLOW.read_text(encoding="utf-8")
+    marker = 'python tools/check_predeploy_runtime_contract.py'
+
+    assert workflow.count(marker) == 2
+    assert 'docker exec nutev-preflight' in workflow
+    assert '--output-root /app/project_output_reference' in workflow
+    assert '--write-probe' in workflow
+    assert '/tmp/nutev-runtime-preflight.json' in workflow
+    assert '/tmp/nutev-runtime-production.json' in workflow
+
+
+def test_autodeploy_requires_public_https_smoke_and_commit_identity() -> None:
+    workflow = WORKFLOW.read_text(encoding="utf-8")
+
+    assert 'https://nutev.mindsperformance.com.br' in workflow
+    assert '$PUBLIC_URL/api/health' in workflow
+    assert '$PUBLIC_URL/search.html' in workflow
+    assert '$PUBLIC_URL/articles.html' in workflow
+    assert '$PUBLIC_URL/api/version' in workflow
+    assert 'PUBLIC_COMMIT' in workflow
+    assert 'rollback' in workflow
+
+
+def test_ssh_configuration_rejects_public_key_material_explicitly() -> None:
+    workflow = WORKFLOW.read_text(encoding="utf-8")
+
+    assert 'candidate.startswith("ssh-")' in workflow
+    assert 'BEGIN PUBLIC KEY' in workflow
+    assert 'the complete private key is required' in workflow
 
 
 def test_deploy_files_do_not_embed_secrets() -> None:
