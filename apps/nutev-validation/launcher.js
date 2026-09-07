@@ -210,7 +210,8 @@ async function copyPrivateLink(button) {
 
 async function renderChooser() {
   const onlineConfigured = Boolean(localStorage.getItem(ONLINE_CONFIG_KEY))
-  const [readiness, round] = await Promise.all([loadReadiness(), loadRound()])
+  const readiness = await loadReadiness()
+  const round = readiness.ready === true ? await loadRound() : null
   const gold = await loadGold(round)
   const metrics = await loadMetrics(round)
   app.innerHTML = shell(`

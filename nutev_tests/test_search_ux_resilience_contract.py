@@ -46,7 +46,22 @@ def test_search_outcome_distinguishes_partial_coverage_from_scientific_quality()
     assert "Cobertura descreve recuperação das fontes, não qualidade, certeza ou elegibilidade da evidência." in ux
     assert "failed_providers" in ux
     assert "unavailable_providers" in ux
+    assert "partial_providers" in ux
+    assert "skipped_providers" in ux
     assert "non_exhaustive_providers" in ux
+
+
+def test_execution_identity_stays_visible_when_technical_audit_is_collapsed() -> None:
+    ux = read("search-ux-resilience.js")
+
+    assert "function searchAuditIdentity(data)" in ux
+    assert "Estratégia exata · ${strategyId} · ${strategyVersion}" in ux
+    assert "Busca avançada · ${String(plan.framework||'estrutura revisada')}" in ux
+    assert "Busca rápida · cobertura máxima" in ux
+    assert "Busca rápida · limitada" in ux
+    assert 'class="search-outcome-mode"' in ux
+    assert "const outcome=coverageOutcome(data);const auditIdentity=searchAuditIdentity(data);" in ux
+    assert "searchAuditIdentity" in ux.split("window.NutEVSearchUX={", 1)[1]
 
 
 def test_technical_audit_is_collapsed_but_audit_errors_are_not_hidden() -> None:

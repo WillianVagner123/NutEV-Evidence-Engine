@@ -16,6 +16,17 @@ async function decisionApi(path, options = {}) {
   return payload
 }
 
+async function validationReadyForRound() {
+  try {
+    const response = await fetch('/api/validation/readiness', { cache:'no-store' })
+    if (!response.ok) return false
+    const readiness = await response.json()
+    return readiness.ready === true
+  } catch {
+    return false
+  }
+}
+
 function updateRoundBadge(status) {
   const panel = document.querySelector('#roundPanel')
   const badge = panel?.querySelector(':scope > section.card .section-head .badge')
@@ -74,6 +85,7 @@ async function renderDecisionPanel() {
   if (!roundPanel) return
   renderingDecision = true
   try {
+    if (!(await validationReadyForRound())) return
     const roundResponse = await fetch('/api/validation/round', { cache:'no-store' })
     if (!roundResponse.ok) return
     const round = await roundResponse.json()

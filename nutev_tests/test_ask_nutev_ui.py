@@ -13,7 +13,8 @@ def test_ask_nutev_uses_safe_rank_blind_context() -> None:
     js = read("ask.js")
 
     assert "Ask NutEV" in html
-    assert "/agent-context/article1/ARTICLE_SUMMARIES.jsonl" in js
+    assert "/api/agent-context/article1/status" in js
+    assert "ARTICLE_SUMMARIES.jsonl" in js
     assert "0 external LLM calls" in html
     assert "full text protegido" in html
     assert "machine_relevance_score" not in js
@@ -31,7 +32,11 @@ def test_ask_nutev_is_retrieval_not_scientific_decision() -> None:
     assert "Ask NutEV não autoriza PRESS, GF-10, freeze, busca formal ou PRISMA" in html
     assert "SUPPORTING DOCUMENTS" in js
     assert "Return supporting document IDs" in js
-    assert "fetch('/agent-context" in js
+    assert "if(!status.available){showContextUnavailable(status);return}" in js
+    guarded_fetch = "fetch(`${baseUrl}ARTICLE_SUMMARIES.jsonl`,{cache:'no-store'})"
+    assert guarded_fetch in js
+    assert js.index("/api/agent-context/article1/status") < js.index(guarded_fetch)
+    assert "não interpreta ausência do bundle como zero evidência" in js
     assert "method:'POST'" not in js.replace(" ", "")
     assert "api.openai.com" not in js
     assert "api.anthropic.com" not in js
