@@ -1,4 +1,5 @@
 import'./search-monitoring-ui.js';
+import'./search-fulltext-ui.js';
 
 const nativeFetch=window.fetch.bind(window);
 const RETRYABLE_JOB_STATUS=new Set([408,429,500,502,503,504]);
