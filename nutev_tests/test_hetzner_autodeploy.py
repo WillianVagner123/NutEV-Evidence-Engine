@@ -53,7 +53,7 @@ def test_autodeploy_requires_runtime_contract_before_and_after_promotion() -> No
     assert '/tmp/nutev-runtime-production.json' in workflow
 
 
-def test_autodeploy_requires_public_https_smoke_and_commit_identity() -> None:
+def test_autodeploy_requires_public_https_smoke_and_commit_identity_when_visible() -> None:
     workflow = WORKFLOW.read_text(encoding="utf-8")
 
     assert 'https://nutev.mindsperformance.com.br' in workflow
@@ -62,7 +62,20 @@ def test_autodeploy_requires_public_https_smoke_and_commit_identity() -> None:
     assert '$PUBLIC_URL/articles.html' in workflow
     assert '$PUBLIC_URL/api/version' in workflow
     assert 'PUBLIC_COMMIT' in workflow
+    assert '[[ "$PUBLIC_COMMIT" = "$TARGET_SHA" ]]' in workflow
     assert 'rollback' in workflow
+
+
+def test_public_edge_smoke_accepts_basic_auth_challenge_without_weakening_it() -> None:
+    workflow = WORKFLOW.read_text(encoding="utf-8")
+    caddy = (DEPLOY / "Caddyfile").read_text(encoding="utf-8")
+
+    assert 'basic_auth {' in caddy
+    assert 'acceptable_edge_status()' in workflow
+    assert '[[ "$1" = "200" || "$1" = "401" ]]' in workflow
+    assert 'expected 200 or Basic-Auth 401 on protected surfaces' in workflow
+    assert 'VERSION_CODE' in workflow
+    assert 'if [[ "$VERSION_CODE" = "200" ]]' in workflow
 
 
 def test_ssh_configuration_rejects_public_key_material_explicitly() -> None:
