@@ -10,7 +10,8 @@ const CONFIDENCE_LABELS={high:'alta',medium:'média',low:'sinal insuficiente'};
 let latestSearch=null;
 let currentSearchKey='';
 let visibleResults=RESULT_BATCH;
-let filters={year:'',documentClass:'',provider:'',taxonomy:'',sort:'query_relevance'};
+let textDebounce=0;
+let filters={text:'',year:'',documentClass:'',provider:'',taxonomy:'',sort:'query_relevance'};
 
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
@@ -23,6 +24,8 @@ function providerValue(record){return String(record?.source_provider||record?.so
 function taxonomyValue(record){return String(record?.search_classification?.taxonomy_primary||record?.taxonomy_primary||'').trim()}
 function taxonomyLabel(value){return String(value||'').split('.').filter(Boolean).slice(-2).join(' › ').replaceAll('_',' ')}
 function providerLabel(value){return PROVIDER_LABELS[value]||value||'Fonte não informada'}
+function normalizedText(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR')}
+function searchableText(record){return normalizedText([record?.title,record?.abstract,record?.journal,record?.authors,providerLabel(providerValue(record)),taxonomyLabel(taxonomyValue(record))].filter(Boolean).join(' '))}
 
 function inferredClass(record){
   const explicit=record?.search_classification?.document_class;if(explicit)return canonicalDocumentClass(explicit);
@@ -38,6 +41,7 @@ function inferredClass(record){
   return'unclassified';
 }
 
+function blankFilters(){return{text:'',year:'',documentClass:'',provider:'',taxonomy:'',sort:'query_relevance'}}
 function capturePayload(payload){
   const result=payload?.result?.results?payload.result:(payload?.results?payload:null);
   if(!result)return;
@@ -45,7 +49,7 @@ function capturePayload(payload){
   if(key!==currentSearchKey){
     currentSearchKey=key;
     visibleResults=RESULT_BATCH;
-    filters={year:'',documentClass:'',provider:'',taxonomy:'',sort:'query_relevance'};
+    filters=blankFilters();
   }
   latestSearch=result;
   setTimeout(enhance,0);
@@ -65,7 +69,6 @@ function countedOptions(records,getValue,getLabel){
   for(const record of records){const value=getValue(record);if(!value)continue;counts.set(value,(counts.get(value)||0)+1)}
   return [...counts.entries()].map(([value,count])=>({value,label:getLabel(value),count}));
 }
-
 function optionHtml(option){return `<option value="${esc(option.value)}">${esc(option.label)} (${option.count.toLocaleString('pt-BR')})</option>`}
 
 function ensureWorkspace(){
@@ -79,6 +82,24 @@ function ensureWorkspace(){
   return workspace;
 }
 
+function activeFilterDescriptors(){
+  const items=[];
+  if(filters.text)items.push({key:'text',label:`Texto: ${filters.text}`});
+  if(filters.year)items.push({key:'year',label:`Ano: ${filters.year}`});
+  if(filters.documentClass)items.push({key:'documentClass',label:`Classe: ${documentClassLabel(filters.documentClass)}`});
+  if(filters.provider)items.push({key:'provider',label:`Fonte: ${providerLabel(filters.provider)}`});
+  if(filters.taxonomy)items.push({key:'taxonomy',label:`Tema: ${taxonomyLabel(filters.taxonomy)}`});
+  return items;
+}
+function renderActiveFilters(){
+  const root=$('#activeResultFilters');if(!root)return;
+  const items=activeFilterDescriptors();
+  root.innerHTML=items.length?`<span>${items.length} ${items.length===1?'filtro ativo':'filtros ativos'}</span>${items.map(item=>`<button type="button" class="facet-chip" data-clear-filter="${esc(item.key)}">${esc(item.label)} <span aria-hidden="true">×</span></button>`).join('')}`:'<span>Nenhum filtro ativo.</span>';
+  root.querySelectorAll('[data-clear-filter]').forEach(button=>button.addEventListener('click',()=>{
+    const key=button.dataset.clearFilter;if(key&&Object.hasOwn(filters,key))filters[key]='';visibleResults=RESULT_BATCH;populateWorkspace();renderFilteredResults();
+  }));
+}
+
 function populateWorkspace(){
   const workspace=ensureWorkspace();if(!workspace||!latestSearch)return;
   const records=latestSearch.results||[];
@@ -88,28 +109,36 @@ function populateWorkspace(){
   const taxonomies=countedOptions(records,taxonomyValue,taxonomyLabel).sort((a,b)=>b.count-a.count||a.label.localeCompare(b.label,'pt-BR'));
   workspace.dataset.searchKey=currentSearchKey;
   workspace.classList.remove('hidden');
-  workspace.innerHTML=`<div class="facet-head"><div><strong>Refinar resultados</strong><span>Filtros aplicados somente aos ${records.length.toLocaleString('pt-BR')} resultados retornados nesta busca.</span></div><button id="clearResultFacets" type="button" class="ghost">Limpar filtros</button></div>
+  workspace.innerHTML=`<div class="facet-head"><div><strong>Refinar resultados</strong><span>Filtros aplicados somente aos ${records.length.toLocaleString('pt-BR')} resultados retornados nesta busca, sem refazer a busca nas fontes.</span></div><button id="clearResultFacets" type="button" class="ghost">Limpar filtros</button></div>
     <div class="facet-grid">
+      <label class="facet-text-search">Buscar nestes resultados<input id="facetText" type="search" autocomplete="off" placeholder="Título, resumo, periódico ou tema"></label>
       <label>Ano<select id="facetYear"><option value="">Todos os anos</option>${years.map(optionHtml).join('')}</select></label>
       <label>Classe do artigo<select id="facetClass"><option value="">Todas as classes</option>${classes.map(optionHtml).join('')}</select></label>
       <label>Fonte<select id="facetProvider"><option value="">Todas as fontes</option>${providers.map(optionHtml).join('')}</select></label>
       <label>Tema / taxonomia<select id="facetTaxonomy"><option value="">Todos os temas</option>${taxonomies.map(optionHtml).join('')}</select></label>
       <label>Ordenar por<select id="facetSort"><option value="query_relevance">Relevância à consulta</option><option value="final_score">Ranking final NutEV</option><option value="newest">Mais recentes</option><option value="nutev_priority">Prioridade NutEV</option></select></label>
     </div>
+    <div id="activeResultFilters" class="facet-active" aria-live="polite"></div>
     <div class="facet-foot"><strong id="facetResultCount">—</strong><span id="facetResultLabel">resultados após filtros</span><span class="facet-boundary">Texto completo não é oferecido como faceta enquanto o payload de busca não expuser um status verificável por resultado.</span></div>`;
+  $('#facetText').value=filters.text;
   $('#facetYear').value=filters.year;
   $('#facetClass').value=filters.documentClass;
   $('#facetProvider').value=filters.provider;
   $('#facetTaxonomy').value=filters.taxonomy;
   $('#facetSort').value=filters.sort;
-  const bind=(id,key)=>$(id).addEventListener('change',event=>{filters[key]=event.target.value;visibleResults=RESULT_BATCH;renderFilteredResults()});
+  $('#facetText').addEventListener('input',event=>{
+    filters.text=event.target.value.trim();visibleResults=RESULT_BATCH;clearTimeout(textDebounce);textDebounce=setTimeout(()=>{renderActiveFilters();renderFilteredResults()},140);
+  });
+  const bind=(id,key)=>$(id).addEventListener('change',event=>{filters[key]=event.target.value;visibleResults=RESULT_BATCH;renderActiveFilters();renderFilteredResults()});
   bind('#facetYear','year');bind('#facetClass','documentClass');bind('#facetProvider','provider');bind('#facetTaxonomy','taxonomy');bind('#facetSort','sort');
-  $('#clearResultFacets').addEventListener('click',()=>{filters={year:'',documentClass:'',provider:'',taxonomy:'',sort:'query_relevance'};visibleResults=RESULT_BATCH;populateWorkspace();renderFilteredResults()});
+  $('#clearResultFacets').addEventListener('click',()=>{filters=blankFilters();visibleResults=RESULT_BATCH;populateWorkspace();renderFilteredResults()});
+  renderActiveFilters();
 }
 
 function filteredEntries(){
-  const records=latestSearch?.results||[];
+  const records=latestSearch?.results||[];const needle=normalizedText(filters.text);
   const entries=records.map((record,index)=>({record,index})).filter(({record})=>{
+    if(needle&&!searchableText(record).includes(needle))return false;
     if(filters.year&&yearValue(record)!==filters.year)return false;
     if(filters.documentClass&&inferredClass(record)!==filters.documentClass)return false;
     if(filters.provider&&providerValue(record)!==filters.provider)return false;
@@ -134,7 +163,6 @@ function whyMatched(record){
   if(record.document_type_applied)parts.push(`sinal documental: ${record.document_type_applied}`);
   return parts;
 }
-
 function rankingSignals(record){
   const query=number(record.query_relevance_score,0),priority=number(record.nutev_priority_score,0);const parts=[];
   if(Number.isFinite(query))parts.push(`relevância para a consulta ${query.toFixed(1)}`);
@@ -152,8 +180,9 @@ function renderFilteredResults(){
   if(!latestSearch)return;const root=$('#results');if(!root)return;
   const entries=filteredEntries();const visible=entries.slice(0,visibleResults);
   const count=$('#facetResultCount');if(count)count.textContent=entries.length.toLocaleString('pt-BR');
-  root.innerHTML=visible.map((entry,index)=>resultCard(entry,index+1)).join('')||'<div class="card facet-empty"><strong>Nenhum resultado corresponde a estes filtros.</strong><p>Limpe uma faceta ou volte para “Todos”.</p></div>';
+  root.innerHTML=visible.map((entry,index)=>resultCard(entry,index+1)).join('')||'<div class="card facet-empty"><strong>Nenhum resultado corresponde a estes filtros.</strong><p>Limpe um filtro ou ajuste a busca dentro dos resultados.</p></div>';
   if(visible.length<entries.length){const more=document.createElement('div');more.className='card facet-load-more';more.innerHTML=`<div class="section-head"><div><strong>${visible.length.toLocaleString('pt-BR')} de ${entries.length.toLocaleString('pt-BR')}</strong><p>Filtros e ordenação atuam sobre o conjunto retornado sem refazer a busca nas fontes.</p></div><button class="ghost" id="facetLoadMore">Carregar mais ${Math.min(RESULT_BATCH,entries.length-visible.length)}</button></div>`;root.appendChild(more);$('#facetLoadMore').addEventListener('click',()=>{visibleResults+=RESULT_BATCH;renderFilteredResults()})}
+  window.NutEVSearchUX?.compactCards?.();
 }
 
 function enhance(){

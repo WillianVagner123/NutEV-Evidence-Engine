@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./product-ui.css">
   <link rel="stylesheet" href="./saved-library.css">
   <link rel="stylesheet" href="./search-facets.css">
+  <link rel="stylesheet" href="./search-ux.css">
 </head>
 <body>
   <a class="skip-link" href="#results">Pular para resultados</a>
@@ -88,6 +89,7 @@
               <label>Exibir até <input id="maxResults" type="number" min="1" max="300" value="100"></label>
             </div>
           </details>
+          <div id="searchFeedback" class="search-feedback" role="alert" aria-live="assertive" hidden></div>
           <div class="search-actions">
             <button id="searchBtn" class="primary">Buscar artigos</button>
             <button id="globalSearchBtn" class="global-search" aria-describedby="globalSearchNote" title="Remove o teto interno nas fontes selecionadas; em modo comum seleciona todas as fontes conectadas">Cobertura máxima disponível</button>
@@ -96,8 +98,9 @@
           <div id="globalSearchNote" class="global-search-note"><strong>Cobertura máxima disponível = sem teto interno do NutEV.</strong> Não há corte interno de 100, 300 ou outro número. Consulta as fontes selecionadas até o limite demonstrável de cada fonte. Limites, bloqueios ou cobertura parcial impostos pela própria fonte continuam explícitos.</div>
         </div>
 
-        <div id="searchState" class="hidden"></div>
-        <section id="summary" class="hidden" aria-label="Resumo da busca"></section>
+        <div id="searchProgress" class="search-progress-card hidden" role="status" aria-live="polite"></div>
+        <div id="searchState" class="hidden" role="status" aria-live="polite"></div>
+        <section id="summary" class="hidden" aria-label="Resumo da busca" tabindex="-1"></section>
         <section id="results" class="results" aria-label="Resultados da busca"></section>
       </section>
 
@@ -108,6 +111,7 @@
   </div>
   <script type="module" src="./search-library-ui.js"></script>
   <script type="module" src="./search-facets-ui.js"></script>
+  <script type="module" src="./search-ux-resilience.js"></script>
   <script type="module" src="./app.js"></script>
   <script type="module" src="./product-ui.js"></script>
 </body>
