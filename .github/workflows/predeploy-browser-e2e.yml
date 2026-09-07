@@ -34,6 +34,7 @@ jobs:
           PYTHONPATH: src
         run: |
           mkdir -p browser_e2e_artifacts
+          python tools/materialize_predeploy_e2e_context.py
           python apps/nutev-web/secure_server.py --host 127.0.0.1 --port 8765 > browser_e2e_artifacts/server.log 2>&1 &
           SERVER_PID=$!
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
