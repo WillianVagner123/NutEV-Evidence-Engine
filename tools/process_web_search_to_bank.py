@@ -13,6 +13,8 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
+from nutev.registry.core import project_core_records
+from nutev.registry.workbench import refresh_cumulative_workbench
 from nutev.science.search_bank import latest_search_id, run_search_bank_pipeline
 from nutev.science.workbench_priority import augment_workbench_priority
 
@@ -22,8 +24,8 @@ def build_parser() -> argparse.ArgumentParser:
         description=(
             "Materialize a persisted NutEV web-search run into Scientific Export -> "
             "abstract-only enrichment -> CORE -> semantic -> excerpts -> Workbench -> "
-            "audited bank priority index. No network full-text retrieval and no external "
-            "LLM calls are performed."
+            "cumulative Registry CORE -> cumulative Workbench projection -> audited bank "
+            "priority index. No network full-text retrieval and no external LLM calls are performed."
         )
     )
     parser.add_argument(
@@ -52,6 +54,30 @@ def main(argv: list[str] | None = None) -> int:
         output_root=output_root,
         on_progress=progress,
     )
+
+    scientific = output_root.resolve() / "scientific"
+    progress({"stage": "registry_core_projection", "search_id": search_id})
+    registry_core = project_core_records(
+        output_root=output_root,
+        core_records_path=scientific / "core" / "nutev_core_records.jsonl",
+        core_manifest_path=scientific / "core" / "CORE_MANIFEST.json",
+    )
+    result["registry_core"] = registry_core
+
+    progress({"stage": "registry_workbench_projection", "search_id": search_id})
+    try:
+        result["registry_workbench"] = refresh_cumulative_workbench(
+            output_root=output_root,
+        )
+    except Exception as exc:
+        # The just-produced scientific Workbench remains valid. Failure to make the
+        # cumulative projection is explicit and never advances scientific state.
+        result["registry_workbench"] = {
+            "status": "FAILED",
+            "error": f"{type(exc).__name__}: {exc}",
+            "scientific_workbench_still_valid": True,
+        }
+
     progress({"stage": "priority_index", "search_id": search_id})
     priority = augment_workbench_priority(
         search_id,
