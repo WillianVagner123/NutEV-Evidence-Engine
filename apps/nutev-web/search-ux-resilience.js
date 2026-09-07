@@ -74,6 +74,17 @@ function providerDisplayName(data,id){
   const match=(data?.providers||[]).find(item=>String(item.provider||item.id||item.label||'')===id);
   return String(match?.label||id).replaceAll('_',' ');
 }
+function searchAuditIdentity(data){
+  const mode=String(data?.search_mode||'');const plan=data?.query_plan||{};
+  if(mode.startsWith('exact_review')){
+    const strategyId=String(plan.strategy_id||'UNVERSIONED');const strategyVersion=String(plan.strategy_version||'UNVERSIONED');
+    return `Estratégia exata · ${strategyId} · ${strategyVersion}`;
+  }
+  if(mode.startsWith('structured_review'))return `Busca avançada · ${String(plan.framework||'estrutura revisada')}`;
+  if(mode==='global_exhaustive')return'Busca rápida · cobertura máxima';
+  if(mode==='interactive_bounded')return'Busca rápida · limitada';
+  return'';
+}
 function coverageOutcome(data){
   const providers=Array.isArray(data?.providers)?data.providers:[];const total=providers.length;
   const gaps=providerGapIds(data);const recovered=Number(data?.returned_records||data?.results?.length||0);const unique=Number(data?.unique_records||0);
@@ -91,12 +102,12 @@ function queueSummaryEnhancement(data){
 function enhanceSummary(data){
   const summary=$('#summary');if(!summary||summary.classList.contains('hidden'))return;
   const key=String(data?.search_id||`${data?.query||''}|${data?.returned_records||0}`);
-  const outcome=coverageOutcome(data);
+  const outcome=coverageOutcome(data);const auditIdentity=searchAuditIdentity(data);
   const kpiValues=summary.querySelectorAll('.summary-grid .kpi strong');
   if(kpiValues.length>=4)kpiValues[3].textContent=String(summaryGapCount(data));
   summary.querySelector('.search-outcome')?.remove();
   const banner=document.createElement('div');banner.className=`search-outcome ${outcome.kind}`;
-  banner.innerHTML=`<div><strong>${esc(outcome.title)}</strong><span>${esc(outcome.detail)}</span>${outcome.gaps?.length?`<small>Cobertura parcial em: ${outcome.gaps.slice(0,6).map(esc).join(', ')}${outcome.gaps.length>6?'…':''}</small>`:''}</div><span class="outcome-boundary">Cobertura descreve recuperação das fontes, não qualidade, certeza ou elegibilidade da evidência.</span>`;
+  banner.innerHTML=`<div>${auditIdentity?`<small class="search-outcome-mode">${esc(auditIdentity)}</small>`:''}<strong>${esc(outcome.title)}</strong><span>${esc(outcome.detail)}</span>${outcome.gaps?.length?`<small>Cobertura parcial em: ${outcome.gaps.slice(0,6).map(esc).join(', ')}${outcome.gaps.length>6?'…':''}</small>`:''}</div><span class="outcome-boundary">Cobertura descreve recuperação das fontes, não qualidade, certeza ou elegibilidade da evidência.</span>`;
   summary.insertBefore(banner,summary.firstChild);
   summary.querySelectorAll('details.plan-audit').forEach(details=>details.removeAttribute('open'));
   let technical=summary.querySelector('.search-technical-details');
@@ -169,4 +180,4 @@ window.addEventListener('pageshow',()=>{
   const cached=window.NutEVSearchEvents?.getLastResult?.()||lastResult;
   if(cached){lastResult=cached;queueSummaryEnhancement(cached)}
 });
-window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,providerGapIds,summaryGapCount,compactCards,getLastResult:()=>window.NutEVSearchEvents?.getLastResult?.()||lastResult};
+window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,providerGapIds,summaryGapCount,searchAuditIdentity,compactCards,getLastResult:()=>window.NutEVSearchEvents?.getLastResult?.()||lastResult};
