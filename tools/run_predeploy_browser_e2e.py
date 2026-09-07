@@ -118,7 +118,15 @@ def _route_smoke(browser: Any) -> None:
         context.close()
 
 
+def _open_provider_controls(page: Page) -> None:
+    details = page.locator("details.advanced")
+    if details.count() and not bool(details.evaluate("el => el.open")):
+        details.locator("summary").click()
+    page.locator("#providerGrid input[type=checkbox]").first.wait_for(state="visible", timeout=5_000)
+
+
 def _select_only_pubmed(page: Page) -> None:
+    _open_provider_controls(page)
     checkboxes = page.locator("#providerGrid input[type=checkbox]")
     for index in range(checkboxes.count()):
         checkbox = checkboxes.nth(index)
