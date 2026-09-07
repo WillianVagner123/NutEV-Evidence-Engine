@@ -323,6 +323,8 @@ def search_evidence_progressive(
     unavailable = [
         item["provider"] for item in provider_status if item["status"] == "unavailable"
     ]
+    partial = [item["provider"] for item in provider_status if item["status"] == "partial"]
+    skipped = [item["provider"] for item in provider_status if item["status"] == "skipped"]
     non_exhaustive = [
         item["provider"]
         for item in provider_status
@@ -350,6 +352,7 @@ def search_evidence_progressive(
 
     limitations = [
         "Busca global não aplica teto interno de quantidade: cada conector direto pagina até esgotar a fonte ou até a própria fonte impor um limite/erro.",
+        "Google Programmable Search, Brave Search e SerpAPI são fontes web opcionais: ausência de credencial permanece skipped e teto do conector permanece partial; nenhum desses estados prova ausência de literatura ou exaustão da fonte.",
         "LILACS/BVS e SciELO usam as interfaces públicas nativas; se a interface não demonstrar paginação exaustiva, o provider é marcado como não exaustivo em vez de receber cobertura fabricada.",
         "Scopus e Web of Science não são simulados e exigem acesso licenciado separado.",
     ]
@@ -371,7 +374,7 @@ def search_evidence_progressive(
 
     if audit_gaps:
         overall_status = "COMPLETE_WITH_AUDIT_GAPS"
-    elif failed or unavailable or non_exhaustive:
+    elif failed or unavailable or partial or skipped or non_exhaustive:
         overall_status = "COMPLETE_WITH_PROVIDER_GAPS"
     else:
         overall_status = "COMPLETE"
@@ -387,6 +390,8 @@ def search_evidence_progressive(
         "providers": provider_status,
         "failed_providers": failed,
         "unavailable_providers": unavailable,
+        "partial_providers": partial,
+        "skipped_providers": skipped,
         "non_exhaustive_providers": non_exhaustive,
         "audit_gaps": audit_gaps,
         "records_before_dedup": len(combined),
