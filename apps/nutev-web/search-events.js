@@ -1,10 +1,15 @@
+import'./search-monitoring-ui.js';
+
 const nativeFetch=window.fetch.bind(window);
 const RETRYABLE_JOB_STATUS=new Set([408,429,500,502,503,504]);
 const RETRY_DELAYS=[400,900,1800];
+const MONITORING_ABANDONED_SENTINEL='__NUTEV_MONITORING_ABANDONED__';
+const MAX_ABANDONED_JOBS=50;
 
 let lastResult=null;
 let lastJob=null;
 let lastHistory=[];
+const abandonedJobs=new Set();
 
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const emit=(name,detail)=>window.dispatchEvent(new CustomEvent(name,{detail}));
@@ -16,17 +21,46 @@ function requestMeta(input,init={}){
   }catch{return{path:'',method:'GET'}}
 }
 
+function jobIdFromPath(path){
+  if(!String(path||'').startsWith('/api/search/jobs/'))return'';
+  try{return decodeURIComponent(String(path).slice('/api/search/jobs/'.length)).trim()}catch{return''}
+}
+
 function resultFromPayload(payload){
   if(payload?.result?.results)return payload.result;
   if(payload?.results)return payload;
   return null;
 }
 
+function abandonedResponse(jobId){
+  return new Response(JSON.stringify({
+    error:'search_monitoring_abandoned',
+    message:MONITORING_ABANDONED_SENTINEL,
+    job_id:jobId,
+  }),{
+    status:409,
+    headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'},
+  });
+}
+
+function rememberAbandoned(jobId){
+  if(!jobId)return;
+  abandonedJobs.add(jobId);
+  while(abandonedJobs.size>MAX_ABANDONED_JOBS){
+    const oldest=abandonedJobs.values().next().value;
+    if(!oldest)break;
+    abandonedJobs.delete(oldest);
+  }
+}
+
 async function robustJobFetch(args,path){
+  const jobId=jobIdFromPath(path);
+  if(jobId&&abandonedJobs.has(jobId))return abandonedResponse(jobId);
   let lastError=null;
   for(let attempt=0;attempt<=RETRY_DELAYS.length;attempt+=1){
     try{
       const response=await nativeFetch(...args);
+      if(jobId&&abandonedJobs.has(jobId))return abandonedResponse(jobId);
       if(response.ok||!RETRYABLE_JOB_STATUS.has(response.status)||attempt===RETRY_DELAYS.length)return response;
     }catch(error){
       lastError=error;
@@ -35,6 +69,7 @@ async function robustJobFetch(args,path){
     const delay=RETRY_DELAYS[attempt];
     emit('nutev:search-transport-retry',{path,attempt:attempt+1,delay});
     await sleep(delay);
+    if(jobId&&abandonedJobs.has(jobId))return abandonedResponse(jobId);
   }
   throw lastError||new Error('Falha de conexão ao acompanhar a busca.');
 }
@@ -56,9 +91,13 @@ function processPayload(payload,{path,method}){
     publishHistory(payload.searches,payload.scope||'');return;
   }
   if(path==='/api/search/jobs'&&method==='POST'){
+    const jobId=String(payload?.job_id||'').trim();
+    if(jobId)abandonedJobs.delete(jobId);
     publishJob(payload,'submission');return;
   }
   if(path.startsWith('/api/search/jobs/')){
+    const jobId=String(payload?.job_id||jobIdFromPath(path)).trim();
+    if(jobId&&abandonedJobs.has(jobId))return;
     if(payload?.status==='queued'||payload?.status==='running'){publishJob(payload,'poll');return}
     if(payload?.status==='failed'){lastJob=payload;emit('nutev:search-failed',{job:payload,source:'poll'});return}
     if(payload?.status==='completed'){
@@ -70,6 +109,16 @@ function processPayload(payload,{path,method}){
   }
   const result=resultFromPayload(payload);
   if(result)publishResult(result,path.startsWith('/api/searches/')?'history':'legacy');
+}
+
+function abandonJob(jobId=lastJob?.job_id){
+  const id=String(jobId||'').trim();
+  const currentId=String(lastJob?.job_id||'').trim();
+  const currentStatus=String(lastJob?.status||'').trim();
+  if(!id||id!==currentId||!['queued','running'].includes(currentStatus))return false;
+  rememberAbandoned(id);
+  emit('nutev:search-monitoring-abandoned',{job_id:id,job:lastJob});
+  return true;
 }
 
 window.fetch=async(...args)=>{
@@ -87,5 +136,8 @@ window.NutEVSearchEvents={
   getLastResult:()=>lastResult,
   getLastJob:()=>lastJob,
   getLastHistory:()=>[...lastHistory],
+  isMonitoringAbandoned:jobId=>abandonedJobs.has(String(jobId||'').trim()),
+  abandonJob,
   retryDelays:[...RETRY_DELAYS],
+  monitoringAbandonedSentinel:MONITORING_ABANDONED_SENTINEL,
 };

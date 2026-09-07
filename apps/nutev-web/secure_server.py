@@ -30,6 +30,7 @@ RATE_WINDOW_SECONDS = 10 * 60
 SESSION_START_LIMIT = 12
 IP_START_LIMIT = 30
 SESSION_ACTIVE_LIMIT = 2
+SEARCH_OWNER_WATCH_INTERVAL_SECONDS = 0.25
 _RATE_LOCK = threading.Lock()
 _SESSION_STARTS: dict[str, deque[float]] = defaultdict(deque)
 _IP_STARTS: dict[str, deque[float]] = defaultdict(deque)
@@ -61,6 +62,55 @@ NOINDEX_PATH_PREFIXES = (
 def _prune_times(values: deque[float], now: float) -> None:
     while values and now - values[0] > RATE_WINDOW_SECONDS:
         values.popleft()
+
+
+def _mark_job_ownership_status(job_id: str, status: str) -> None:
+    with _SEARCH_JOBS_LOCK:
+        job = _SEARCH_JOBS.get(job_id)
+        if job is not None:
+            job["ownership_status"] = status
+
+
+def _persist_job_owner_when_terminal(job_id: str, owner_scope: str) -> None:
+    """Persist search ownership independently from browser polling.
+
+    The search job already runs server-side. This watcher only records the session/search
+    relationship after the persisted result exists, so closing the tab or stopping local
+    monitoring cannot orphan an otherwise successful search from public history.
+    """
+
+    while True:
+        try:
+            job = _load_search_job(job_id)
+        except KeyError:
+            return
+        status = str(job.get("status") or "")
+        if status == "failed":
+            _mark_job_ownership_status(job_id, "not_recorded_failed_job")
+            return
+        if status == "completed":
+            search_id = str(job.get("search_id") or "").strip()
+            if not search_id:
+                _mark_job_ownership_status(job_id, "not_recorded_missing_search_id")
+                return
+            try:
+                record_search_owner(search_id, owner_scope)
+            except (OSError, PermissionError, ValueError):
+                _mark_job_ownership_status(job_id, "record_failed")
+                return
+            _mark_job_ownership_status(job_id, "recorded")
+            return
+        time.sleep(SEARCH_OWNER_WATCH_INTERVAL_SECONDS)
+
+
+def _start_job_owner_watch(job_id: str, owner_scope: str) -> None:
+    thread = threading.Thread(
+        target=_persist_job_owner_when_terminal,
+        args=(job_id, owner_scope),
+        name=f"nutev-search-owner-{job_id[-8:]}",
+        daemon=True,
+    )
+    thread.start()
 
 
 def _build_metadata() -> dict[str, str]:
@@ -251,6 +301,7 @@ class SecureNutEVHandler(NutEVHandler):
             job_id = str(job.get("job_id") or "")
             with _RATE_LOCK:
                 _JOB_OWNERS[job_id] = owner_scope
+            _start_job_owner_watch(job_id, owner_scope)
             self._json(job, HTTPStatus.ACCEPTED)
             return
         super().do_POST()
