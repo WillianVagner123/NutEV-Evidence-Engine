@@ -57,7 +57,7 @@ If the workflow reports:
 HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key
 ```
 
-no container or production data has been changed yet. Correct the GitHub Environment `HETZNER` secret before rerunning the deploy.
+or an older SSH/OpenSSL path reports `Load key ... error in libcrypto`, treat both as a key-material/configuration failure. No container or production data has been changed yet at that stage. Correct the GitHub Environment `HETZNER` secret before rerunning the deploy.
 
 The secret must look like a complete private key envelope, for example:
 
