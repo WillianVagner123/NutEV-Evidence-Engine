@@ -27,7 +27,19 @@ def test_adjudication_ui_shows_only_conflicts_and_never_preselects_assessor_choi
     assert "Identificador do adjudicador" in script
     assert "Salvar decisão humana" in script
     assert "Encerrar adjudicação" in script
-    assert "adjudicate.js" in html
+    assert "adjudicate-bootstrap.js" in html
+
+
+def test_adjudication_deep_link_fails_closed_before_loading_round_api() -> None:
+    bootstrap = (VALIDATION_ROOT / "adjudicate-bootstrap.js").read_text(encoding="utf-8")
+
+    assert "/api/validation/readiness" in bootstrap
+    assert "if (!state.ready)" in bootstrap
+    assert "Etapa ainda não preparada" in bootstrap
+    assert "Nenhuma decisão, conflito ou ausência de evidência é inferida" in bootstrap
+    assert "await import('./adjudicate.js')" in bootstrap
+    assert bootstrap.index("/api/validation/readiness") < bootstrap.index("await import('./adjudicate.js')")
+    assert "/api/validation/adjudication" not in bootstrap
 
 
 def test_coordinator_opens_adjudication_only_after_locked_initial_assessments() -> None:
