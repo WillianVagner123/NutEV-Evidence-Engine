@@ -26,13 +26,15 @@ def test_public_search_has_inline_feedback_progress_and_keyboard_flow() -> None:
 
 
 def test_job_polling_retries_only_safe_status_reads_not_search_submission() -> None:
+    events = read("search-events.js")
     ux = read("search-ux-resilience.js")
 
-    assert "const isJobRead=method==='GET'&&path.startsWith('/api/search/jobs/')" in ux
-    assert "isJobRead?await robustJobFetch(args):await previousFetch(...args)" in ux
-    assert "RETRY_DELAYS=[400,900,1800]" in ux
+    assert "const isJobRead=meta.method==='GET'&&meta.path.startsWith('/api/search/jobs/')" in events
+    assert "isJobRead?await robustJobFetch(args,meta.path):await nativeFetch(...args)" in events
+    assert "RETRY_DELAYS=[400,900,1800]" in events
+    assert "nutev:search-transport-retry" in events
+    assert "path==='/api/search/jobs'&&method==='POST'" in events
     assert "sem repetir a busca" in ux
-    assert "method==='POST'" in ux
 
 
 def test_search_outcome_distinguishes_partial_coverage_from_scientific_quality() -> None:
