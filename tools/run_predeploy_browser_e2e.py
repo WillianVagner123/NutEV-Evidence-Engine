@@ -9,6 +9,8 @@ from playwright.sync_api import Page, expect, sync_playwright
 
 BASE_URL = "http://127.0.0.1:8765"
 ARTIFACT_DIR = Path("browser_e2e_artifacts")
+WEB_ROOT = Path("apps/nutev-web")
+VALIDATION_ROOT = Path("apps/nutev-validation")
 ROUTES = (
     "/",
     "/search.html",
@@ -95,6 +97,15 @@ def _assert_clean_diagnostics(
     _assert(not failures, f"{label} browser diagnostics:\n" + "\n".join(failures))
 
 
+def _all_html_routes() -> list[str]:
+    routes: set[str] = set()
+    for path in WEB_ROOT.glob("*.html"):
+        routes.add("/" if path.name == "index.html" else f"/{path.name}")
+    for path in VALIDATION_ROOT.glob("*.html"):
+        routes.add("/validation/" if path.name == "index.html" else f"/validation/{path.name}")
+    return sorted(routes)
+
+
 def _route_smoke(browser: Any) -> None:
     for route in ROUTES:
         context = browser.new_context(viewport={"width": 1440, "height": 900})
@@ -108,6 +119,36 @@ def _route_smoke(browser: Any) -> None:
         _assert(page.locator("h1").first.is_visible(), f"{route}: h1 not visible")
         _assert(
             len(page.locator("body").inner_text().strip()) > 40,
+            f"{route}: suspiciously empty page",
+        )
+        _assert_clean_diagnostics(
+            route, page_errors, console_errors, resource_errors
+        )
+        context.close()
+
+
+def _all_page_smoke(browser: Any) -> None:
+    routes = _all_html_routes()
+    _assert(routes, "no HTML product routes discovered")
+    ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
+    (ARTIFACT_DIR / "all-html-routes.txt").write_text(
+        "\n".join(routes) + "\n",
+        encoding="utf-8",
+    )
+    critical = set(ROUTES)
+    for route in routes:
+        if route in critical:
+            continue
+        context = browser.new_context(viewport={"width": 1366, "height": 768})
+        page = context.new_page()
+        page_errors, console_errors, resource_errors = _diagnostics(page)
+        response = page.goto(BASE_URL + route, wait_until="domcontentloaded", timeout=20_000)
+        _assert(response is not None, f"{route}: navigation returned no response")
+        _assert(response.status < 400, f"{route}: HTTP {response.status}")
+        page.locator("body").wait_for(state="visible", timeout=5_000)
+        page.wait_for_timeout(800)
+        _assert(
+            len(page.locator("body").inner_text().strip()) > 20,
             f"{route}: suspiciously empty page",
         )
         _assert_clean_diagnostics(
@@ -253,6 +294,7 @@ def main() -> int:
         browser = playwright.chromium.launch(headless=True)
         try:
             _route_smoke(browser)
+            _all_page_smoke(browser)
             _search_workspace(browser)
             _mobile_smoke(browser)
         finally:
