@@ -118,6 +118,12 @@ def _assert_provider_gap_summary(page: Page, label: str) -> None:
     _assert("lacuna" in text, f"{label}: provider gaps were not surfaced in the result summary")
 
 
+def _assert_visible_identity(page: Page, expected: str, label: str) -> None:
+    expect(page.locator("#summary")).to_contain_text(expected, timeout=5_000)
+    text = page.locator("#summary").inner_text()
+    _assert(expected in text, f"{label}: visible execution identity missing. Summary: {text[:500]}")
+
+
 def _assert_mode(result: dict[str, Any], expected: str, label: str) -> None:
     actual = str(result.get("search_mode") or "")
     _assert(actual == expected, f"{label}: expected search_mode={expected}, got {actual}")
@@ -127,10 +133,13 @@ def _run_quick_matrix(page: Page) -> int:
     page.locator('input[name="searchMode"][value="quick"]').check()
     bounded = _run_bounded(page)
     _assert_mode(bounded, "interactive_bounded", "Quick bounded")
+    _assert_visible_identity(page, "Busca rápida · limitada", "Quick bounded")
     _assert_provider_gap_summary(page, "Quick bounded")
 
     global_result = _run_global(page)
     _assert_mode(global_result, "global_exhaustive", "Quick global")
+    _assert(global_result.get("exhaustive_requested") is True, "Quick global lost exhaustive_requested")
+    _assert_visible_identity(page, "Busca rápida · cobertura máxima", "Quick global")
     _assert_provider_gap_summary(page, "Quick global")
     return 2
 
@@ -152,12 +161,15 @@ def _run_structured_matrix(page: Page) -> int:
         bounded = _run_bounded(page)
         _assert_mode(bounded, "structured_review_bounded", f"{framework} bounded")
         _assert((bounded.get("query_plan") or {}).get("framework") == framework, f"{framework} bounded lost framework audit plan")
+        _assert_visible_identity(page, f"Busca avançada · {framework}", f"{framework} bounded")
         _assert_provider_gap_summary(page, f"{framework} bounded")
         runs += 1
 
         global_result = _run_global(page)
         _assert_mode(global_result, "structured_review_global_exhaustive", f"{framework} global")
+        _assert(global_result.get("exhaustive_requested") is True, f"{framework} global lost exhaustive_requested")
         _assert((global_result.get("query_plan") or {}).get("framework") == framework, f"{framework} global lost framework audit plan")
+        _assert_visible_identity(page, f"Busca avançada · {framework} · cobertura máxima", f"{framework} global")
         _assert_provider_gap_summary(page, f"{framework} global")
         runs += 1
     return runs
@@ -180,18 +192,16 @@ def _run_exact_matrix(page: Page) -> int:
     _assert(plan.get("strategy_version") == "v1.0", "Exact bounded lost strategy_version")
     literal = ((plan.get("provider_queries") or {}).get("pubmed") or {}).get("query")
     _assert(literal == EXACT_QUERY, "Exact bounded rewrote the literal PubMed query")
-    summary = page.locator("#summary").inner_text()
-    _assert("Estratégia exata" in summary, f"Exact bounded audit state missing. Summary: {summary[:500]}")
+    _assert_visible_identity(page, "Estratégia exata · predeploy-browser-exact-execution · v1.0", "Exact bounded")
     _assert_provider_gap_summary(page, "Exact bounded")
 
     global_result = _run_global(page, exact=True)
     _assert_mode(global_result, "exact_review_global_exhaustive", "Exact global")
+    _assert(global_result.get("exhaustive_requested") is True, "Exact global lost exhaustive_requested")
     plan = global_result.get("query_plan") or {}
     literal = ((plan.get("provider_queries") or {}).get("pubmed") or {}).get("query")
     _assert(literal == EXACT_QUERY, "Exact global rewrote the literal PubMed query")
-    summary = page.locator("#summary").inner_text()
-    _assert("Estratégia exata" in summary, f"Exact global audit state missing. Summary: {summary[:500]}")
-    _assert("Busca sem teto interno" in summary, "Exact global did not surface no-internal-cap semantics")
+    _assert_visible_identity(page, "Estratégia exata · predeploy-browser-exact-execution · v1.0 · cobertura máxima", "Exact global")
     _assert_provider_gap_summary(page, "Exact global")
     return 2
 
