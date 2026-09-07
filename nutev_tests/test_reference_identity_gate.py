@@ -73,6 +73,94 @@ def test_shared_dedupe_prefers_richer_record() -> None:
     assert unique[0]["title"] == "Richer manifestation"
 
 
+def test_shared_dedupe_preserves_all_observed_provider_manifestations() -> None:
+    rows = [
+        {
+            "source_provider": "pubmed",
+            "source": "pubmed",
+            "doi": "10.1000/example",
+            "pmid": "12345678",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12345678/",
+            "title": "Same article",
+            "abstract": "short",
+            "provider_query": "creatine cognition older adults",
+            "query_dialect": "pubmed",
+            "interactive_retrieved_at": "2026-09-07T01:00:00Z",
+        },
+        {
+            "source_provider": "crossref",
+            "source": "crossref",
+            "doi": "https://doi.org/10.1000/EXAMPLE",
+            "url": "https://doi.org/10.1000/example",
+            "title": "Same article",
+            "abstract": "a richer abstract from Crossref for the same article",
+            "provider_query": "creatine cognition older adults",
+            "query_dialect": "crossref",
+            "interactive_retrieved_at": "2026-09-07T01:00:01Z",
+        },
+    ]
+
+    unique = dedupe_records(rows)
+    assert len(unique) == 1
+    record = unique[0]
+    assert record["source_provider"] == "crossref"
+    assert record["source_providers"] == ["crossref", "pubmed"]
+    assert [item["provider"] for item in record["source_manifestations"]] == [
+        "crossref",
+        "pubmed",
+    ]
+    pubmed = next(item for item in record["source_manifestations"] if item["provider"] == "pubmed")
+    assert pubmed["pmid"] == "12345678"
+    assert pubmed["provider_query"] == "creatine cognition older adults"
+    assert pubmed["url"] == "https://pubmed.ncbi.nlm.nih.gov/12345678"
+
+
+def test_dedupe_provenance_is_idempotent_and_does_not_multiply_manifestations() -> None:
+    rows = [
+        {
+            "source_provider": "pubmed",
+            "doi": "10.1000/example",
+            "title": "Article",
+            "abstract": "abstract",
+            "provider_query": "query one",
+        },
+        {
+            "source_provider": "europepmc",
+            "doi": "10.1000/example",
+            "title": "Article",
+            "abstract": "abstract",
+            "provider_query": "query two",
+        },
+    ]
+    once = dedupe_records(rows)
+    twice = dedupe_records(once)
+    assert once == twice
+    assert len(twice[0]["source_manifestations"]) == 2
+    assert twice[0]["source_providers"] == ["europepmc", "pubmed"]
+
+
+def test_provider_multiplicity_is_provenance_only_not_a_scientific_score_signal() -> None:
+    ranking = _load_tool("ranking_provenance_only_test", "tools/rank_references.py")
+    base = annotate_record(
+        {
+            "title": "Traceable reference",
+            "abstract": "nutrition evidence",
+            "source_provider": "crossref",
+            "doi": "10.1000/example",
+        }
+    )
+    multi = dict(base)
+    multi["source_providers"] = ["crossref", "pubmed", "europepmc"]
+    multi["source_manifestations"] = [
+        {"provider": "crossref", "doi": "10.1000/example"},
+        {"provider": "pubmed", "doi": "10.1000/example"},
+        {"provider": "europepmc", "doi": "10.1000/example"},
+    ]
+    assert ranking.score_record(base, {}, [], {})["reference_score"] == ranking.score_record(
+        multi, {}, [], {}
+    )["reference_score"]
+
+
 def test_invalid_identifier_with_url_gets_no_identifier_bonus() -> None:
     ranking = _load_tool("ranking_score_gate_test", "tools/rank_references.py")
     row = annotate_record(

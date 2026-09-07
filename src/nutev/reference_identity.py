@@ -114,19 +114,113 @@ def canonical_identity(row: dict[str, Any]) -> str:
     return "title:" + title if title else ""
 
 
+def _provider_name(row: dict[str, Any]) -> str:
+    return str(row.get("source_provider") or row.get("provider") or row.get("source") or "").strip()
+
+
+def _manifestation(row: dict[str, Any]) -> dict[str, str]:
+    """Keep only observed retrieval metadata; never infer missing provenance."""
+
+    manifestation = {
+        "provider": _provider_name(row),
+        "source": str(row.get("source") or "").strip(),
+        "doi": normalize_doi(row.get("doi") or row.get("doi_normalized")),
+        "pmid": normalize_pmid(row.get("pmid") or row.get("pmid_normalized")),
+        "pmcid": normalize_pmcid(row.get("pmcid")),
+        "url": normalize_url(row.get("url") or row.get("url_normalized")),
+        "provider_query": str(row.get("provider_query") or row.get("query") or "").strip(),
+        "query_dialect": str(row.get("query_dialect") or "").strip(),
+        "retrieved_at": str(
+            row.get("interactive_retrieved_at") or row.get("retrieved_at") or ""
+        ).strip(),
+    }
+    return {key: value for key, value in manifestation.items() if value}
+
+
+def _manifestation_key(item: dict[str, str]) -> tuple[str, ...]:
+    return tuple(
+        item.get(key, "")
+        for key in (
+            "provider",
+            "source",
+            "doi",
+            "pmid",
+            "pmcid",
+            "url",
+            "provider_query",
+            "query_dialect",
+            "retrieved_at",
+        )
+    )
+
+
+def _observed_provenance(*rows: dict[str, Any]) -> tuple[list[str], list[dict[str, str]]]:
+    providers: set[str] = set()
+    manifestations: dict[tuple[str, ...], dict[str, str]] = {}
+
+    for row in rows:
+        existing_providers = row.get("source_providers")
+        if isinstance(existing_providers, list):
+            providers.update(str(value).strip() for value in existing_providers if str(value).strip())
+
+        existing_manifestations = row.get("source_manifestations")
+        if isinstance(existing_manifestations, list):
+            for value in existing_manifestations:
+                if not isinstance(value, dict):
+                    continue
+                normalized = _manifestation(value)
+                if normalized:
+                    if normalized.get("provider"):
+                        providers.add(normalized["provider"])
+                    manifestations[_manifestation_key(normalized)] = normalized
+
+        own = _manifestation(row)
+        if own:
+            if own.get("provider"):
+                providers.add(own["provider"])
+            manifestations[_manifestation_key(own)] = own
+
+    ordered_providers = sorted(providers, key=str.casefold)
+    ordered_manifestations = sorted(
+        manifestations.values(),
+        key=lambda item: (
+            item.get("provider", "").casefold(),
+            item.get("doi", ""),
+            item.get("pmid", ""),
+            item.get("url", ""),
+            item.get("provider_query", ""),
+        ),
+    )
+    return ordered_providers, ordered_manifestations
+
+
+def _with_provenance(record: dict[str, Any], *observed_rows: dict[str, Any]) -> dict[str, Any]:
+    enriched = dict(record)
+    providers, manifestations = _observed_provenance(record, *observed_rows)
+    if providers:
+        enriched["source_providers"] = providers
+    if manifestations:
+        enriched["source_manifestations"] = manifestations
+    return enriched
+
+
 def dedupe_records(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Deduplicate with one identity rule and keep the richer descriptive record."""
+    """Deduplicate while preserving every observed provider manifestation.
+
+    The richer descriptive manifestation remains the primary record. Provider multiplicity is
+    provenance only: it does not imply higher quality, certainty, eligibility, or ranking weight.
+    """
 
     best: dict[str, dict[str, Any]] = {}
     unkeyed: list[dict[str, Any]] = []
     for row in rows:
         key = canonical_identity(row)
         if not key:
-            unkeyed.append(dict(row))
+            unkeyed.append(_with_provenance(dict(row)))
             continue
         current = best.get(key)
         if current is None:
-            best[key] = dict(row)
+            best[key] = _with_provenance(dict(row))
             continue
         old_text = str(
             current.get("abstract") or current.get("summary") or current.get("snippet") or ""
@@ -134,6 +228,6 @@ def dedupe_records(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
         new_text = str(
             row.get("abstract") or row.get("summary") or row.get("snippet") or ""
         )
-        if len(new_text) > len(old_text):
-            best[key] = dict(row)
+        winner = dict(row) if len(new_text) > len(old_text) else current
+        best[key] = _with_provenance(winner, current, row)
     return list(best.values()) + unkeyed

@@ -18,12 +18,18 @@ const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;'
 function searchKey(data){return String(data?.search_id||`${data?.query||''}|${data?.created_at||''}|${data?.returned_records||0}`)}
 function number(value,fallback=-Infinity){const parsed=Number(value);return Number.isFinite(parsed)?parsed:fallback}
 function yearValue(record){const value=String(record?.year??'').trim();return /^\d{4}$/.test(value)?value:''}
-function providerValue(record){return String(record?.source_provider||record?.source||'').trim()}
+function providerValues(record){
+  const values=[];
+  const primary=String(record?.source_provider||record?.source||'').trim();if(primary)values.push(primary);
+  if(Array.isArray(record?.source_providers))for(const value of record.source_providers){const provider=String(value||'').trim();if(provider)values.push(provider)}
+  return [...new Set(values)];
+}
+function providerValue(record){return providerValues(record)[0]||''}
 function taxonomyValue(record){return String(record?.search_classification?.taxonomy_primary||record?.taxonomy_primary||'').trim()}
 function taxonomyLabel(value){return String(value||'').split('.').filter(Boolean).slice(-2).join(' › ').replaceAll('_',' ')}
 function providerLabel(value){return PROVIDER_LABELS[value]||value||'Fonte não informada'}
 function normalizedText(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR')}
-function searchableText(record){return normalizedText([record?.title,record?.abstract,record?.journal,record?.authors,providerLabel(providerValue(record)),taxonomyLabel(taxonomyValue(record))].filter(Boolean).join(' '))}
+function searchableText(record){return normalizedText([record?.title,record?.abstract,record?.journal,record?.authors,...providerValues(record).map(providerLabel),taxonomyLabel(taxonomyValue(record))].filter(Boolean).join(' '))}
 
 function inferredClass(record){
   const explicit=record?.search_classification?.document_class;if(explicit)return canonicalDocumentClass(explicit);
@@ -57,6 +63,11 @@ window.addEventListener('nutev:search-result',event=>captureResult(event.detail?
 function countedOptions(records,getValue,getLabel){
   const counts=new Map();
   for(const record of records){const value=getValue(record);if(!value)continue;counts.set(value,(counts.get(value)||0)+1)}
+  return [...counts.entries()].map(([value,count])=>({value,label:getLabel(value),count}));
+}
+function countedMultiOptions(records,getValues,getLabel){
+  const counts=new Map();
+  for(const record of records)for(const value of new Set(getValues(record)||[])){if(!value)continue;counts.set(value,(counts.get(value)||0)+1)}
   return [...counts.entries()].map(([value,count])=>({value,label:getLabel(value),count}));
 }
 function optionHtml(option){return `<option value="${esc(option.value)}">${esc(option.label)} (${option.count.toLocaleString('pt-BR')})</option>`}
@@ -95,7 +106,7 @@ function populateWorkspace(){
   const records=latestSearch.results||[];
   const years=countedOptions(records,yearValue,value=>value).sort((a,b)=>Number(b.value)-Number(a.value));
   const classes=countedOptions(records,inferredClass,documentClassLabel).sort((a,b)=>a.label.localeCompare(b.label,'pt-BR'));
-  const providers=countedOptions(records,providerValue,providerLabel).sort((a,b)=>a.label.localeCompare(b.label,'pt-BR'));
+  const providers=countedMultiOptions(records,providerValues,providerLabel).sort((a,b)=>a.label.localeCompare(b.label,'pt-BR'));
   const taxonomies=countedOptions(records,taxonomyValue,taxonomyLabel).sort((a,b)=>b.count-a.count||a.label.localeCompare(b.label,'pt-BR'));
   workspace.dataset.searchKey=currentSearchKey;
   workspace.classList.remove('hidden');
@@ -109,7 +120,7 @@ function populateWorkspace(){
       <label>Ordenar por<select id="facetSort"><option value="query_relevance">Relevância à consulta</option><option value="final_score">Ranking final NutEV</option><option value="newest">Mais recentes</option><option value="nutev_priority">Prioridade NutEV</option></select></label>
     </div>
     <div id="activeResultFilters" class="facet-active" aria-live="polite"></div>
-    <div class="facet-foot"><strong id="facetResultCount">—</strong><span id="facetResultLabel">resultados após filtros</span><span class="facet-boundary">Texto completo não é oferecido como faceta enquanto o payload de busca não expuser um status verificável por resultado.</span></div>`;
+    <div class="facet-foot"><strong id="facetResultCount">—</strong><span id="facetResultLabel">resultados após filtros</span><span class="facet-boundary">Um artigo deduplicado pode contar em mais de uma fonte quando houve múltiplas manifestações observadas. Isso é proveniência de recuperação, não qualidade da evidência.</span></div>`;
   $('#facetText').value=filters.text;
   $('#facetYear').value=filters.year;
   $('#facetClass').value=filters.documentClass;
@@ -131,7 +142,7 @@ function filteredEntries(){
     if(needle&&!searchableText(record).includes(needle))return false;
     if(filters.year&&yearValue(record)!==filters.year)return false;
     if(filters.documentClass&&inferredClass(record)!==filters.documentClass)return false;
-    if(filters.provider&&providerValue(record)!==filters.provider)return false;
+    if(filters.provider&&!providerValues(record).includes(filters.provider))return false;
     if(filters.taxonomy&&taxonomyValue(record)!==filters.taxonomy)return false;
     return true;
   });
@@ -159,11 +170,23 @@ function rankingSignals(record){
   if(Number.isFinite(priority))parts.push(`prioridade NutEV ${priority.toFixed(1)}`);
   return parts;
 }
+function sourceManifestations(record){return Array.isArray(record?.source_manifestations)?record.source_manifestations.filter(item=>item&&typeof item==='object'):[]}
+function provenanceDetails(record){
+  const providers=providerValues(record);const manifestations=sourceManifestations(record);
+  if(providers.length<2&&manifestations.length<2)return'';
+  const rows=manifestations.slice(0,10).map(item=>{
+    const provider=providerLabel(String(item.provider||item.source||''));
+    const query=String(item.provider_query||'').trim();
+    const ids=[item.pmid?`PMID ${item.pmid}`:'',item.doi?`DOI ${item.doi}`:''].filter(Boolean).join(' · ');
+    return `<li><strong>${esc(provider)}</strong>${ids?`<span>${esc(ids)}</span>`:''}${query?`<code title="Query enviada à fonte">${esc(query.length>260?`${query.slice(0,260)}…`:query)}</code>`:''}</li>`;
+  }).join('');
+  return `<details class="retrieval-provenance"><summary>Origens da recuperação · ${providers.length.toLocaleString('pt-BR')} fontes</summary><p>Estas fontes recuperaram manifestações do mesmo artigo antes da deduplicação. Múltiplas fontes não aumentam qualidade, certeza ou elegibilidade científica.</p>${rows?`<ul>${rows}</ul>`:''}</details>`;
+}
 
 function resultCard(entry,viewPosition){
   const record=entry.record;const href=record.doi?`https://doi.org/${String(record.doi).replace(/^https?:\/\/doi\.org\//i,'').replace(/^doi:/i,'')}`:(record.url||'');
-  const id=record.pmid?`PMID ${record.pmid}`:(record.doi?`DOI ${record.doi}`:'');const classification=record.search_classification||{};const klass=inferredClass(record);const confidence=classification.confidence||'low';const taxonomy=classification.taxonomy_primary||record.taxonomy_primary||'';const reasons=whyMatched(record);const ranking=rankingSignals(record);const signals=(classification.signals||[]).map(item=>`${item.field}: ${item.value}`);const originalRank=record.reference_rank?`rank final #${record.reference_rank}`:'';
-  return `<article class="result-card" data-result-index="${entry.index}"><div class="result-top"><div class="rank" title="Posição na visualização atual">${viewPosition}</div><div style="flex:1"><h3>${esc(record.title||'(sem título)')}</h3><div class="meta"><span>${esc(record.journal||'—')}</span><span>${esc(record.year||'—')}</span><span>${esc(providerLabel(providerValue(record)))}</span><span>${esc(id)}</span>${originalRank?`<span>${esc(originalRank)}</span>`:''}</div><div class="classification-row"><span class="class-pill">${esc(documentClassLabel(klass))}</span><span class="confidence-pill">Confiança da classificação: ${esc(CONFIDENCE_LABELS[confidence]||confidence)}</span>${taxonomy?`<span class="taxonomy-pill">${esc(taxonomyLabel(taxonomy))}</span>`:''}</div></div><div class="score"><strong>${number(record.reference_score,0).toFixed(1)}</strong><span>ranking final</span></div></div>${reasons.length?`<div class="why-match"><strong>Por que foi recuperado</strong><span>${reasons.map(esc).join(' · ')}</span></div>`:''}${ranking.length?`<div class="why-match"><strong>Sinais do ranking final</strong><span>${ranking.map(esc).join(' · ')}</span></div>`:''}${signals.length?`<div class="result-signals"><strong>Como foi classificado:</strong> ${signals.map(esc).join(' · ')}</div>`:''}${record.abstract?`<div class="abstract">${esc(record.abstract).slice(0,900)}${String(record.abstract).length>900?'…':''}</div>`:''}${href?`<div class="links"><a href="${esc(href)}" target="_blank" rel="noopener noreferrer">Abrir fonte ↗</a></div>`:''}</article>`;
+  const id=record.pmid?`PMID ${record.pmid}`:(record.doi?`DOI ${record.doi}`:'');const classification=record.search_classification||{};const klass=inferredClass(record);const confidence=classification.confidence||'low';const taxonomy=classification.taxonomy_primary||record.taxonomy_primary||'';const reasons=whyMatched(record);const ranking=rankingSignals(record);const signals=(classification.signals||[]).map(item=>`${item.field}: ${item.value}`);const originalRank=record.reference_rank?`rank final #${record.reference_rank}`:'';const providers=providerValues(record);const providerText=providers.map(providerLabel).join(' + ')||'Fonte não informada';const multiSource=providers.length>1?`<span class="multi-source-pill">${providers.length} fontes</span>`:'';
+  return `<article class="result-card" data-result-index="${entry.index}"><div class="result-top"><div class="rank" title="Posição na visualização atual">${viewPosition}</div><div style="flex:1"><h3>${esc(record.title||'(sem título)')}</h3><div class="meta"><span>${esc(record.journal||'—')}</span><span>${esc(record.year||'—')}</span><span>${esc(providerText)}</span>${multiSource}<span>${esc(id)}</span>${originalRank?`<span>${esc(originalRank)}</span>`:''}</div><div class="classification-row"><span class="class-pill">${esc(documentClassLabel(klass))}</span><span class="confidence-pill">Confiança da classificação: ${esc(CONFIDENCE_LABELS[confidence]||confidence)}</span>${taxonomy?`<span class="taxonomy-pill">${esc(taxonomyLabel(taxonomy))}</span>`:''}</div></div><div class="score"><strong>${number(record.reference_score,0).toFixed(1)}</strong><span>ranking final</span></div></div>${reasons.length?`<div class="why-match"><strong>Por que foi recuperado</strong><span>${reasons.map(esc).join(' · ')}</span></div>`:''}${ranking.length?`<div class="why-match"><strong>Sinais do ranking final</strong><span>${ranking.map(esc).join(' · ')}</span></div>`:''}${provenanceDetails(record)}${signals.length?`<div class="result-signals"><strong>Como foi classificado:</strong> ${signals.map(esc).join(' · ')}</div>`:''}${record.abstract?`<div class="abstract">${esc(record.abstract).slice(0,900)}${String(record.abstract).length>900?'…':''}</div>`:''}${href?`<div class="links"><a href="${esc(href)}" target="_blank" rel="noopener noreferrer">Abrir fonte ↗</a></div>`:''}</article>`;
 }
 
 function renderFilteredResults(){
@@ -194,4 +217,4 @@ const summary=$('#summary');
 if(summary)new MutationObserver(()=>setTimeout(enhance,0)).observe(summary,{childList:true,attributes:true,attributeFilter:['class']});
 window.addEventListener('pageshow',()=>{const cached=window.NutEVSearchEvents?.getLastResult?.();if(cached)captureResult(cached);else setTimeout(enhance,0)});
 
-window.NutEVSearchFacets={filteredEntries,renderFilteredResults};
+window.NutEVSearchFacets={filteredEntries,renderFilteredResults,providerValues};

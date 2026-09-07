@@ -37,6 +37,17 @@ def test_search_can_save_single_open_dossier_and_save_all() -> None:
     assert "existing?.remove()" in ui
 
 
+def test_saved_snapshot_keeps_all_observed_sources_and_manifestations() -> None:
+    store = (WEB / "saved-library.js").read_text(encoding="utf-8")
+
+    assert "sourceProvidersFor(record)" in store
+    assert "sourceManifestationsFor(record)" in store
+    assert "source_providers:sourceProvidersFor(record)" in store
+    assert "source_manifestations:sourceManifestationsFor(record)" in store
+    assert "...(item.source_providers||[])" in store
+    assert "...(p.source_providers||[])" in store
+
+
 def test_biblioteca_surfaces_saved_core_without_replacing_verified_corpus() -> None:
     html = (WEB / "articles.html").read_text(encoding="utf-8")
     ui = (WEB / "saved-library-ui.js").read_text(encoding="utf-8")
@@ -47,6 +58,9 @@ def test_biblioteca_surfaces_saved_core_without_replacing_verified_corpus() -> N
     assert "corpus científico verificado" in html
     assert "Meus salvos" in ui
     assert "Persistem neste navegador" in ui
+    assert "Origens antes da deduplicação" in ui
     assert "Proveniência das buscas" in ui
+    assert "Múltiplas fontes significam múltiplas manifestações recuperadas" in ui
     assert "Não equivale a inclusão em revisão" in ui
     assert ".saved-core" in css
+    assert ".saved-source-list" in css
