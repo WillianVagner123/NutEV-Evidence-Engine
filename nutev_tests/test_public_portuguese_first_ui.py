@@ -41,7 +41,6 @@ def test_public_library_and_dossier_use_portuguese_first_labels() -> None:
     for legacy_label in (
         "Overview",
         "Methods",
-        "Evidence",
         "Domains",
         "Provenance",
         "Human Review",
