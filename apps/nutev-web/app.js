@@ -11,11 +11,12 @@ const FRAMEWORKS={PCC:['Population','Concept','Context'],PICO:['Population','Int
 function esc(v){return String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
 function switchView(name){$$('.view').forEach(x=>x.classList.add('hidden'));$$('.nav-item[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===name));$(`#${name}View`).classList.remove('hidden');if(name==='history')renderHistory()}
 function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
-function statusLabel(status){return ({queued:'aguardando',running:'buscando',completed:'concluído',empty:'sem resultados',completed_no_candidates_parsed:'sem candidatos',unavailable:'indisponível',failed:'falhou',skipped:'ignorada'})[status]||status||'aguardando'}
-function badgeClass(status){return ['failed','unavailable'].includes(status)?'failed':''}
+function statusLabel(status){return ({queued:'aguardando',running:'buscando',completed:'concluído',empty:'sem resultados',completed_no_candidates_parsed:'sem candidatos',unavailable:'indisponível',failed:'falhou',partial:'parcial',skipped:'ignorada'})[status]||status||'aguardando'}
+function badgeClass(status){return ['failed','unavailable'].includes(status)?'failed':status==='partial'?'partial':''}
 function providerLabel(id){return (state.providers.find(p=>p.id===id)||{}).label||id}
 function selectedProviders(){return $$('#providerGrid input:checked').map(x=>x.value)}
 function searchMode(){return document.querySelector('input[name="searchMode"]:checked')?.value||'quick'}
+function providerGapCount(data){const keys=['failed_providers','unavailable_providers','partial_providers','skipped_providers','non_exhaustive_providers'];const providers=new Set();for(const key of keys)for(const value of data?.[key]||[])providers.add(String(typeof value==='string'?value:(value?.provider||value?.id||value?.label||'')));providers.delete('');return providers.size}
 
 async function init(){
   $$('.nav-item[data-view]').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
@@ -101,7 +102,7 @@ function renderPubMedSearchDetails(data){const pubmed=(data.providers||[]).find(
 
 function renderSearch(data){
   $('#searchState').className='hidden';state.last=data;state.visibleResults=RESULT_BATCH;
-  const providerGaps=(data.failed_providers||[]).length+(data.unavailable_providers||[]).length+(data.non_exhaustive_providers||[]).length;const auditGaps=(data.audit_gaps||[]).length;$('#summary').classList.remove('hidden');
+  const providerGaps=providerGapCount(data);const auditGaps=(data.audit_gaps||[]).length;$('#summary').classList.remove('hidden');
   const globalMode=String(data.search_mode||'').includes('global_exhaustive');const advanced=String(data.search_mode||'').startsWith('structured_review');const exact=String(data.search_mode||'').startsWith('exact_review');
   const mode=globalMode?'<div class="warning"><strong>Busca sem teto interno.</strong> Providers que não conseguem demonstrar exaustão aparecem como lacuna de cobertura.</div>':'';
   const strategyNote=exact?'<div class="review-result-note"><strong>Estratégia exata.</strong> A string de cada base foi enviada sem reescrita pelo NutEV e está preservada no audit trail.</div>':advanced?'<div class="review-result-note"><strong>Busca avançada.</strong> Cada fonte recebeu sua própria query compilada; a estratégia está preservada abaixo e no result.json.</div>':'';
