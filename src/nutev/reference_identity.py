@@ -116,21 +116,31 @@ def canonical_identity(row: dict[str, Any]) -> str:
 
 
 def _exact_identity_aliases(row: dict[str, Any]) -> tuple[str, ...]:
-    """Return only exact observed aliases; title is fallback only when no exact alias exists."""
+    """Return exact observed aliases, including manifestations retained by prior dedupe passes."""
 
     aliases: list[str] = []
-    doi = normalize_doi(row.get("doi") or row.get("doi_normalized"))
-    pmid = normalize_pmid(row.get("pmid") or row.get("pmid_normalized"))
-    pmcid = normalize_pmcid(row.get("pmcid"))
-    url = normalize_url(row.get("url") or row.get("url_normalized"))
-    if doi:
-        aliases.append("doi:" + doi)
-    if pmid:
-        aliases.append("pmid:" + pmid)
-    if pmcid:
-        aliases.append("pmcid:" + pmcid.casefold())
-    if url:
-        aliases.append("url:" + url.casefold())
+
+    def add_from(value: dict[str, Any]) -> None:
+        doi = normalize_doi(value.get("doi") or value.get("doi_normalized"))
+        pmid = normalize_pmid(value.get("pmid") or value.get("pmid_normalized"))
+        pmcid = normalize_pmcid(value.get("pmcid"))
+        url = normalize_url(value.get("url") or value.get("url_normalized"))
+        if doi:
+            aliases.append("doi:" + doi)
+        if pmid:
+            aliases.append("pmid:" + pmid)
+        if pmcid:
+            aliases.append("pmcid:" + pmcid.casefold())
+        if url:
+            aliases.append("url:" + url.casefold())
+
+    add_from(row)
+    manifestations = row.get("source_manifestations")
+    if isinstance(manifestations, list):
+        for manifestation in manifestations:
+            if isinstance(manifestation, dict):
+                add_from(manifestation)
+
     if aliases:
         return tuple(dict.fromkeys(aliases))
     title = normalize_title(row.get("title"))
@@ -281,30 +291,31 @@ def dedupe_records(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     """Deduplicate by exact observed aliases while preserving provider manifestations.
 
     A row may bridge DOI/PMID/PMCID/URL manifestations when an exact alias overlaps. Any conflict
-    between strong identifiers keeps records separate. Exact-title fallback remains limited to rows
-    without exact identifiers/URLs. Provider multiplicity is provenance only and adds no rank weight.
+    between strong identifiers keeps records separate, and ambiguous aliases remain mapped to every
+    conflicting group so later sparse rows cannot silently pick a winner. Exact-title fallback is
+    limited to rows without exact identifiers/URLs. Provider multiplicity adds no rank weight.
     """
 
     groups: dict[str, dict[str, Any]] = {}
-    alias_to_group: dict[str, str] = {}
+    alias_to_groups: dict[str, set[str]] = {}
     unkeyed: list[dict[str, Any]] = []
 
     for raw_row in rows:
         row = dict(raw_row)
         aliases = _exact_identity_aliases(row)
-        canonical = canonical_identity(row)
+        canonical = canonical_identity(row) or (aliases[0] if aliases else "")
         if not aliases or not canonical:
             unkeyed.append(_with_provenance(row))
             continue
 
-        candidates: list[str] = []
+        candidate_keys: set[str] = set()
         for alias in aliases:
-            group_key = alias_to_group.get(alias)
-            if not group_key or group_key in candidates:
-                continue
-            current = groups.get(group_key)
-            if current is not None and not _strong_identity_conflict(current, row):
-                candidates.append(group_key)
+            candidate_keys.update(alias_to_groups.get(alias, set()))
+        candidates = sorted(
+            key
+            for key in candidate_keys
+            if key in groups and not _strong_identity_conflict(groups[key], row)
+        )
 
         ambiguous = any(
             _strong_identity_conflict(groups[left], groups[right])
@@ -317,7 +328,7 @@ def dedupe_records(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
             group_key = _fresh_group_key(canonical, groups)
             groups[group_key] = _with_provenance(row)
             for alias in aliases:
-                alias_to_group.setdefault(alias, group_key)
+                alias_to_groups.setdefault(alias, set()).add(group_key)
             continue
 
         target = candidates[0]
@@ -325,15 +336,14 @@ def dedupe_records(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
         for other in candidates[1:]:
             merged = _merge_descriptive(merged, groups[other])
             del groups[other]
-            for alias, mapped in list(alias_to_group.items()):
-                if mapped == other:
-                    alias_to_group[alias] = target
+            for mapped_groups in alias_to_groups.values():
+                if other in mapped_groups:
+                    mapped_groups.discard(other)
+                    mapped_groups.add(target)
 
         merged = _merge_descriptive(merged, row)
         groups[target] = merged
         for alias in aliases:
-            mapped = alias_to_group.get(alias)
-            if mapped is None or mapped in candidates:
-                alias_to_group[alias] = target
+            alias_to_groups.setdefault(alias, set()).add(target)
 
     return list(groups.values()) + unkeyed
