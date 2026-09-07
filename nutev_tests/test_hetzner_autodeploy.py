@@ -94,6 +94,20 @@ def test_deploy_files_do_not_embed_secrets() -> None:
     assert 'BEGIN OPENSSH PRIVATE KEY' not in WORKFLOW.read_text(encoding="utf-8")
 
 
+def test_optional_public_search_provider_credentials_are_documented_for_production() -> None:
+    env_example = (DEPLOY / ".env.example").read_text(encoding="utf-8")
+
+    for key in (
+        "GOOGLE_API_KEY=",
+        "GOOGLE_CSE_ID=",
+        "BRAVE_API_KEY=",
+        "SERPAPI_API_KEY=",
+    ):
+        assert key in env_example
+    assert "skipped_config" in env_example
+    assert "absence of literature" in env_example
+
+
 def test_build_identity_is_image_owned_not_persistent_env_owned() -> None:
     env_example = (DEPLOY / ".env.example").read_text(encoding="utf-8")
     dockerfile = (DEPLOY / "Dockerfile").read_text(encoding="utf-8")
