@@ -43,13 +43,23 @@ def test_browser_workflow_materializes_fixture_before_server_start() -> None:
     assert workflow.index(browser) < workflow.index(matrix)
 
 
-def test_browser_search_matrix_executes_every_advanced_and_exact_mode() -> None:
+def test_browser_search_matrix_executes_all_ten_modes_in_one_session() -> None:
     source = MATRIX.read_text(encoding="utf-8")
 
     assert 'for framework in ("PCC", "PICO", "PECO")' in source
+    assert "quick_runs == 2" in source
     assert "structured_runs == 6" in source
     assert "exact_runs == 2" in source
-    assert "#searchBtn" in source
-    assert "#globalSearchBtn" in source
+    assert "page.expect_response" in source
+    assert 'response.request.method == "POST"' in source
+    assert "completed job has no persisted result" in source
+    assert "interactive_bounded" in source
+    assert "global_exhaustive" in source
+    assert "structured_review_bounded" in source
+    assert "structured_review_global_exhaustive" in source
+    assert "exact_review_bounded" in source
+    assert "exact_review_global_exhaustive" in source
+    assert "Exact bounded rewrote the literal PubMed query" in source
+    assert "Exact global rewrote the literal PubMed query" in source
     assert "history_count >= 10" in source
     assert "provider gaps were not surfaced" in source
