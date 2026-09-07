@@ -29,17 +29,26 @@ def test_history_consumes_existing_api_event_without_new_network_wrapper() -> No
     assert "/api/searches" not in history
 
 
-def test_history_exposes_query_status_counts_and_provider_gaps() -> None:
+def test_history_exposes_query_status_counts_and_every_gap_class() -> None:
     history = read("search-history-ui.js")
 
     assert "Concluída com lacunas" in history
+    assert "Concluída com lacunas de auditoria" in history
     assert "Concluída" in history
     assert "Falhou" in history
     assert "unique_records" in history
     assert "returned_records" in history
-    assert "failed_providers" in history
-    assert "unavailable_providers" in history
-    assert "lacuna" in history
+    for field in (
+        "failed_providers",
+        "unavailable_providers",
+        "partial_providers",
+        "skipped_providers",
+        "non_exhaustive_providers",
+        "audit_gaps",
+    ):
+        assert field in history
+    assert "new Set()" in history
+    assert "fonte/auditoria" in history
     assert "Abrir resultados" in history
 
 
