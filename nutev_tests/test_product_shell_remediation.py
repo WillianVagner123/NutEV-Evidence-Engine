@@ -29,35 +29,74 @@ def test_core_product_surfaces_load_shared_product_ui() -> None:
     assert 'src="/product-ui.js"' in read(VALIDATION / "index.html")
 
 
-def test_canonical_navigation_is_search_classification_first() -> None:
+def test_canonical_navigation_is_tenant_aware_and_keeps_advanced_modules_out() -> None:
     script = read(WEB / "product-ui.js")
-    nav = script.split("const NAV_GROUPS=", 1)[1].split("const GLOSSARY=", 1)[0]
-    for label in ("Início", "Buscar artigos", "Biblioteca", "Minhas buscas", "Laboratório avançado"):
+    nav = script.split("function navGroups()", 1)[1].split("function activeNavKey()", 1)[0]
+
+    # Pilot exposes the research context and tenant-safe product surfaces.
+    for label in (
+        "Início",
+        "Projeto",
+        "Buscar evidências",
+        "Biblioteca",
+        "Exportações",
+        "Minhas buscas",
+        "Laboratório avançado",
+    ):
         assert label in nav
-    for hibernated in ("Mapa de evidências", "Radar", "Perguntar ao corpus", "PRESS", "Review Control", "Review Routes", "Validação científica", "QA"):
+    for href in ("/project.html", "/evidence-library.html", "/exports.html"):
+        assert href in nav
+
+    # Legacy keeps its local Workbench without changing the pilot destination.
+    assert "if(runtimeMode==='legacy')" in nav
+    assert "href:'/articles.html'" in nav
+
+    for hibernated in (
+        "Mapa de evidências",
+        "Radar",
+        "Perguntar ao corpus",
+        "PRESS",
+        "Review Control",
+        "Review Routes",
+        "Validação científica",
+        "QA",
+    ):
         assert hibernated not in nav
     assert "normalizeNavigation" in script
     assert 'aria-current="page"' in script
     assert "AI Context" not in nav
 
 
-def test_search_and_home_present_search_classification_as_primary_product() -> None:
+def test_search_and_home_present_research_context_without_hiding_search_core() -> None:
     home = read(WEB / "index.html")
     search = read(WEB / "search.html")
     advanced = read(WEB / "advanced.html")
-    assert "Motor de busca científica" in home
-    assert "Classificação explicável" in home
-    assert "Buscar artigos" in search
+
+    assert "Nut Evidence Engine" in home
+    assert "Contrato científico visível" in home
+    assert 'href="/project.html"' in home
+    assert 'href="/evidence-library.html"' in home
+    assert "Buscar evidências" in search
     assert "Busca avançada" in search
     assert "Modo revisão científica" not in search
     assert "Workflow tipo Rayyan / revisão sistemática" in advanced
-    assert "hibernado" in advanced
+    assert "uso especializado" in advanced
+
 
 def test_glossary_explains_search_terms_without_leaking_hibernated_workflows() -> None:
     script = read(WEB / "product-ui.js")
     css = read(WEB / "product-ui.css")
     glossary = script.split("const GLOSSARY=", 1)[1].split("const STRATEGY_FLOW_STORAGE_KEY", 1)[0]
-    for term in ("Busca progressiva", "Provider", "Deduplicação", "Ranking", "Proveniência"):
+    for term in (
+        "Busca progressiva",
+        "Provider",
+        "Deduplicação",
+        "Ranking",
+        "Proveniência",
+        "Workspace",
+        "Projeto",
+        "Aplicação de pesquisa",
+    ):
         assert term in glossary
     for hidden in ("PRESS", "PRISMA", "EvidenceClaim", "EvidenceSet", "Freeze"):
         assert hidden not in glossary
