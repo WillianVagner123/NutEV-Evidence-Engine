@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Busca NutEV — Busca e classificação de artigos</title>
-  <meta name="description" content="Motor de busca científica do NutEV para encontrar, deduplicar, ranquear e classificar artigos.">
+  <title>Buscar evidências — NutEV Evidence Engine</title>
+  <meta name="description" content="Busca científica do NutEV para encontrar, deduplicar, priorizar e classificar artigos com proveniência rastreável.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
   <link rel="stylesheet" href="./exact-strategy.css">
@@ -22,11 +22,11 @@
     <aside class="sidebar">
       <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
       <nav aria-label="Navegação principal"></nav>
-      <div class="sidebar-note">Busque artigos, veja a classificação automática e entenda por que cada resultado apareceu. Controles metodológicos avançados ficam no Laboratório.</div>
+      <div class="sidebar-note">Busque evidências, entenda por que cada artigo apareceu e guarde resultados no contexto selecionado. Controles metodológicos especializados ficam no Laboratório.</div>
     </aside>
 
     <main class="main">
-      <header class="topbar"><div><h1 id="pageTitle">Busca NutEV</h1><p id="pageSubtitle">Busque, deduplique, ranqueie e classifique artigos em múltiplas fontes científicas.</p></div><span class="status-pill" id="health">verificando motor…</span></header>
+      <header class="topbar"><div><h1 id="pageTitle">Buscar evidências</h1><p id="pageSubtitle">Encontre, deduplique, priorize e classifique artigos em múltiplas fontes científicas.</p></div><span class="status-pill" id="health">verificando motor…</span></header>
 
       <section id="searchView" class="view">
         <div class="hero card">
@@ -94,7 +94,7 @@
           </details>
           <div id="searchFeedback" class="search-feedback" role="alert" aria-live="assertive" hidden></div>
           <div class="search-actions">
-            <button id="searchBtn" class="primary">Buscar artigos</button>
+            <button id="searchBtn" class="primary">Buscar evidências</button>
             <button id="globalSearchBtn" class="global-search" aria-describedby="globalSearchNote" title="Remove o teto interno nas fontes selecionadas; em modo comum seleciona todas as fontes conectadas">Cobertura máxima disponível</button>
             <span id="searchHint">carregando fontes…</span>
           </div>
@@ -109,7 +109,7 @@
       </section>
 
       <section id="historyView" class="view hidden">
-        <div class="card"><div class="section-head"><div><h2>Minhas buscas</h2><p>Buscas persistidas pelo NutEV Evidence Engine.</p></div><button id="refreshHistory" class="ghost">Atualizar</button></div><div id="historyList"></div></div>
+        <div class="card"><div class="section-head"><div><h2>Minhas buscas</h2><p>Buscas persistidas no contexto autorizado pelo NutEV Evidence Engine.</p></div><button id="refreshHistory" class="ghost">Atualizar</button></div><div id="historyList"></div></div>
       </section>
     </main>
   </div>
