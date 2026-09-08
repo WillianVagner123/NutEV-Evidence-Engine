@@ -22,6 +22,8 @@ class Permission(StrEnum):
     FULL_TEXT_ACCESS_READ = "full_text_access.read"
     FULL_TEXT_ACCESS_MANAGE = "full_text_access.manage"
     PROJECT_BANK_READ = "project.bank.read"
+    HUMAN_REVIEW_READ = "human_review.read"
+    HUMAN_REVIEW_MANAGE = "human_review.manage"
     SCREEN = "project.screen"
     EXTRACT = "project.extract"
     ADJUDICATE = "project.adjudicate"
@@ -84,6 +86,8 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.FULL_TEXT_ACCESS_READ: _FULL,
         Permission.FULL_TEXT_ACCESS_MANAGE: _FULL,
         Permission.PROJECT_BANK_READ: _FULL,
+        Permission.HUMAN_REVIEW_READ: _FULL,
+        Permission.HUMAN_REVIEW_MANAGE: _FULL,
         Permission.SCREEN: _FULL,
         Permission.EXTRACT: _FULL,
         Permission.ADJUDICATE: _FULL,
@@ -103,6 +107,8 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.FULL_TEXT_ACCESS_READ: _FULL,
         Permission.FULL_TEXT_ACCESS_MANAGE: _FULL,
         Permission.PROJECT_BANK_READ: _FULL,
+        Permission.HUMAN_REVIEW_READ: _FULL,
+        Permission.HUMAN_REVIEW_MANAGE: _FULL,
         Permission.SCREEN: _FULL,
         Permission.EXTRACT: _FULL,
         Permission.ADJUDICATE: _FULL,
@@ -120,6 +126,8 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.FULL_TEXT_ACCESS_READ: _FULL,
         Permission.FULL_TEXT_ACCESS_MANAGE: _FULL,
         Permission.PROJECT_BANK_READ: _FULL,
+        Permission.HUMAN_REVIEW_READ: _FULL,
+        Permission.HUMAN_REVIEW_MANAGE: _FULL,
         Permission.SCREEN: _FULL,
         Permission.EXTRACT: _FULL,
         Permission.ADJUDICATE: _POLICY,
@@ -127,6 +135,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
     },
     WorkspaceRole.REVIEWER: {
         Permission.PROJECT_BANK_READ: _ASSIGNED,
+        Permission.HUMAN_REVIEW_READ: _ASSIGNED,
         Permission.SCREEN: _ASSIGNED,
         Permission.EXTRACT: _ASSIGNED,
     },
@@ -136,9 +145,11 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.EVIDENCE_LIBRARY_READ: _FULL,
         Permission.FULL_TEXT_ACCESS_READ: _FULL,
         Permission.PROJECT_BANK_READ: _FULL,
+        Permission.HUMAN_REVIEW_READ: _FULL,
         Permission.EXPORT: _POLICY,
     },
     WorkspaceRole.GUEST_REVIEWER: {
+        Permission.HUMAN_REVIEW_READ: _ASSIGNED,
         Permission.SCREEN: _ASSIGNED,
         Permission.EXTRACT: _ASSIGNED,
     },
@@ -148,6 +159,8 @@ _PROJECT_SCOPED = {
     Permission.APPLICATION_READ,
     Permission.APPLICATION_MANAGE,
     Permission.PROJECT_BANK_READ,
+    Permission.HUMAN_REVIEW_READ,
+    Permission.HUMAN_REVIEW_MANAGE,
     Permission.SCREEN,
     Permission.EXTRACT,
     Permission.ADJUDICATE,
