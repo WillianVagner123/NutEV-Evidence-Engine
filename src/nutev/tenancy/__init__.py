@@ -22,6 +22,17 @@ from .auth import (
     SQLiteAuthProvider,
     SQLiteSessionStore,
 )
+from .evidence_library import (
+    EVIDENCE_LIBRARY_SCHEMA_VERSION,
+    EvidenceLibraryEntry,
+    EvidenceLibraryError,
+    EvidenceLibraryService,
+    FullTextAccessGrant,
+    GlobalDocument,
+    GlobalEvidenceRegistryReader,
+    Placement,
+    SQLiteEvidenceLibraryStore,
+)
 from .models import (
     GlobalRole,
     Membership,
@@ -56,6 +67,7 @@ from .search_scope import (
 
 __all__ = [
     "AUTH_SCHEMA_VERSION",
+    "EVIDENCE_LIBRARY_SCHEMA_VERSION",
     "SEARCH_OWNERSHIP_SCHEMA_VERSION",
     "TENANCY_SCHEMA_VERSION",
     "AuthorizationContext",
@@ -64,6 +76,12 @@ __all__ = [
     "AuthenticatedSubject",
     "ContextSnapshot",
     "DEFAULT_SESSION_TTL_SECONDS",
+    "EvidenceLibraryEntry",
+    "EvidenceLibraryError",
+    "EvidenceLibraryService",
+    "FullTextAccessGrant",
+    "GlobalDocument",
+    "GlobalEvidenceRegistryReader",
     "GlobalRole",
     "IssuedSession",
     "LoginResult",
@@ -75,12 +93,14 @@ __all__ = [
     "PermissionRule",
     "PermissionScope",
     "PermissionService",
+    "Placement",
     "Principal",
     "Project",
     "ROLE_PERMISSIONS",
     "ResearchApplication",
     "ResearchContext",
     "SQLiteAuthProvider",
+    "SQLiteEvidenceLibraryStore",
     "SQLiteSearchOwnershipStore",
     "SQLiteSessionStore",
     "SQLiteWorkspaceProjectStore",
