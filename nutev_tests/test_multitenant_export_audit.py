@@ -11,7 +11,6 @@ from nutev.tenancy import (
     ExportArtifactInput,
     ExportAuditError,
     GlobalRole,
-    Membership,
     Permission,
     Principal,
     ProjectExportAuditService,
