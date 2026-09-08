@@ -22,14 +22,20 @@ def test_home_query_runs_immediately_after_search_page_initializes() -> None:
     assert "if(engineReady&&state.providers.length)await runSearch()" in app
 
 
-def test_primary_shell_contains_only_generic_search_product_surfaces() -> None:
+def test_primary_shell_contains_only_generic_tenant_product_surfaces() -> None:
     script = read("product-ui.js")
-    nav = script.split("const NAV_GROUPS=", 1)[1].split("const GLOSSARY=", 1)[0]
+    nav = script.split("function navGroups()", 1)[1].split("function activeNavKey()", 1)[0]
+
+    for href in ("/project.html", "/search.html", "/evidence-library.html", "/exports.html"):
+        assert href in nav
     for href in ("/evidence.html", "/evidence-map.html", "/radar.html", "/ask.html"):
         assert href not in nav
+
     home = read("index.html")
     for href in ('href="/evidence-map.html"', 'href="/radar.html"', 'href="/ask.html"'):
         assert href not in home
+    assert 'href="/project.html"' in home
+    assert 'href="/evidence-library.html"' in home
 
 
 def test_article1_exploration_surfaces_are_noindexed_and_use_canonical_shell() -> None:
