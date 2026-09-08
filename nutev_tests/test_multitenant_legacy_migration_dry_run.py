@@ -188,13 +188,19 @@ def test_explicit_mapping_requires_evidence_and_safe_relative_pattern() -> None:
         )
 
 
-def test_generic_planner_does_not_know_first_party_manuscript_names() -> None:
+def test_generic_planner_has_inventory_vocabulary_but_not_first_party_target_labels() -> None:
     source = (ROOT / "src" / "nutev" / "migration" / "legacy_plan.py").read_text(encoding="utf-8").casefold()
-    assert "willian" not in source
+    # PR-0 ownership vocabulary is intentionally generic input to the migration planner,
+    # including WILLIAN_PRIVATE / ARTICLE1_PRIVATE / ARTICLE2_PRIVATE. What must stay outside
+    # this module are the concrete customer hierarchy, labels, paths and target keys.
+    assert "doutorado willian" not in source
     assert "artigo 1" not in source
     assert "artigo 2" not in source
+    assert "agent_context/article1" not in source
+    assert "scientific/review_routes" not in source
     assert "article1_project" not in source
     assert "article2_project" not in source
+    assert "doctorate_workspace" not in source
 
 
 def test_cli_requires_dry_run_and_has_no_activation_flag() -> None:
