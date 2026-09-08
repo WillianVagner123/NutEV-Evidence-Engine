@@ -26,14 +26,24 @@ function formatDate(value){
   return new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(date)
 }
 
+function hideTenantSections(){
+  $('#auditSummarySection').classList.add('hidden')
+  $('#exportsSection').classList.add('hidden')
+  $('#auditSection').classList.add('hidden')
+}
+
+function renderLegacy(){
+  $('#exportsHealth').textContent='modo legado'
+  $('#exportsContext').innerHTML='<div class="empty-state"><strong>Exportações multi-tenant não estão ativas neste runtime</strong><span>O modo legado mantém a experiência local. Manifestos e auditoria por projeto ficam disponíveis no modo autenticado.</span></div>'
+  hideTenantSections()
+}
+
 function renderContext(context){
   const current=context.current||{}
   if(!current.project_id){
     $('#exportsHealth').textContent='projeto necessário'
     $('#exportsContext').innerHTML='<div class="empty-state"><strong>Selecione um projeto</strong><span>Exportações e auditoria são sempre consultadas dentro de um projeto explícito.</span></div>'
-    $('#auditSummarySection').classList.add('hidden')
-    $('#exportsSection').classList.add('hidden')
-    $('#auditSection').classList.add('hidden')
+    hideTenantSections()
     return false
   }
   const workspaceName=nameFor(context.workspaces,current.workspace_id)||'Workspace'
@@ -82,6 +92,8 @@ async function showManifest(exportId,button){
 async function loadAll(){
   $('#exportsHealth').textContent='carregando…'
   try{
+    const auth=await jsonFetch('/api/auth/status')
+    if(auth.mode!=='pilot'){renderLegacy();return}
     const context=await jsonFetch('/api/context')
     if(!renderContext(context))return
     const [exportsPayload,auditPayload]=await Promise.all([jsonFetch('/api/exports'),jsonFetch('/api/audit?limit=50')])
