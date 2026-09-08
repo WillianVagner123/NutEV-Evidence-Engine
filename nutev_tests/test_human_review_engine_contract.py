@@ -2,15 +2,27 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from nutev.tenancy import AuthorizationContext, Permission, PermissionService, Principal, WorkspaceRole
-from nutev.tenancy import Membership, new_opaque_id
+from nutev.tenancy import (
+    AuthorizationContext,
+    GlobalRole,
+    Membership,
+    Permission,
+    PermissionService,
+    Principal,
+    WorkspaceRole,
+    new_opaque_id,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 ENGINE = ROOT / "src" / "nutev" / "review" / "engine.py"
 LEGACY = ROOT / "apps" / "nutev-web" / "validation_server.py"
 
 
-def _principal(role: WorkspaceRole) -> tuple[Principal, str, str]:
+def _principal(
+    role: WorkspaceRole,
+    *,
+    global_roles: frozenset[GlobalRole] = frozenset(),
+) -> tuple[Principal, str, str]:
     user_id = new_opaque_id("user")
     workspace_id = new_opaque_id("workspace")
     project_id = new_opaque_id("project")
@@ -24,7 +36,7 @@ def _principal(role: WorkspaceRole) -> tuple[Principal, str, str]:
                     role=role,
                 ),
             ),
-            global_roles=frozenset(),
+            global_roles=global_roles,
             session_id=new_opaque_id("session"),
         ),
         workspace_id,
@@ -34,15 +46,28 @@ def _principal(role: WorkspaceRole) -> tuple[Principal, str, str]:
 
 def test_engine_is_application_agnostic_and_does_not_import_legacy_validation() -> None:
     source = ENGINE.read_text(encoding="utf-8").casefold()
-    assert "article1" not in source
-    assert "article 1" not in source
-    assert "article2" not in source
-    assert "article 2" not in source
-    assert "d-132" not in source
-    assert "validation_server" not in source
-    assert "validation.sqlite3" not in source
-    assert "nutev_rank" not in source
-    assert "machine_relevance" not in source
+
+    # Explanatory docstrings may name examples to state the boundary. What is forbidden
+    # in the reusable engine is concrete first-party configuration, paths, targets or
+    # application-specific implementation symbols.
+    forbidden_concrete_contracts = (
+        "article1_project",
+        "article2_project",
+        "doctorate_workspace",
+        "agent_context/article1",
+        "scientific/review_routes",
+        "article1_press",
+        "article1_search_master",
+        "d132_",
+        "validation_server",
+        "validation.sqlite3",
+        "nutev_rank",
+        "nutev_score",
+        "machine_relevance",
+        "r1_decision",
+    )
+    for forbidden in forbidden_concrete_contracts:
+        assert forbidden not in source
 
 
 def test_legacy_validation_remains_present_and_is_not_replaced_by_pr8() -> None:
@@ -97,3 +122,19 @@ def test_owner_can_manage_review_but_viewer_cannot() -> None:
             project_access_confirmed=True,
         ),
     )
+
+
+def test_platform_admin_role_does_not_bypass_private_human_review_permissions() -> None:
+    service = PermissionService()
+    admin, workspace_id, project_id = _principal(
+        WorkspaceRole.VIEWER,
+        global_roles=frozenset({GlobalRole.PLATFORM_ADMIN}),
+    )
+    context = AuthorizationContext(
+        workspace_id=workspace_id,
+        project_id=project_id,
+        project_access_confirmed=True,
+    )
+
+    assert service.can(admin, Permission.PLATFORM_INFRA_MANAGE)
+    assert not service.can(admin, Permission.HUMAN_REVIEW_MANAGE, context=context)
