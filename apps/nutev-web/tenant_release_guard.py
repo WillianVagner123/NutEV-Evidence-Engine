@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from http import HTTPStatus
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 from nutev.tenancy import SCOPING_REVIEW
 from server import NutEVHandler
@@ -84,7 +84,7 @@ def _release_guard_get(handler: NutEVHandler, path: str) -> bool:
     # Article 1 static context is scientific-private material. Caddy remains an
     # outer perimeter, but pilot mode additionally requires the selected project
     # to be the Article 1 SCOPING_REVIEW application.
-    if path.startswith("/agent-context/article1/"):
+    if path == "/agent-context/article1" or path.startswith("/agent-context/article1/"):
         return not _article1_context_allowed(handler)
 
     return False
@@ -100,7 +100,7 @@ def install_tenant_release_guard() -> None:
     original_get = NutEVHandler.do_GET
 
     def do_get(self: NutEVHandler) -> None:
-        path = urlparse(self.path).path
+        path = unquote(urlparse(self.path).path)
         if _release_guard_get(self, path):
             return
         original_get(self)
