@@ -94,4 +94,4 @@ def test_advanced_laboratory_has_page_level_noindex_defense() -> None:
     advanced = read("advanced.html")
     assert '<meta name="robots" content="noindex,nofollow">' in advanced
     assert "Workflow tipo Rayyan / revisão sistemática" in advanced
-    assert "hibernado" in advanced
+    assert "uso especializado" in advanced

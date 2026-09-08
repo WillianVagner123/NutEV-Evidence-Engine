@@ -8,7 +8,7 @@ WEB = ROOT / "apps" / "nutev-web"
 def test_public_search_uses_portuguese_first_labels() -> None:
     html = (WEB / "search.html").read_text(encoding="utf-8")
 
-    assert "Busca NutEV" in html
+    assert "Buscar evidências" in html
     assert "verificando motor" in html
     assert "usuários avançados" in html
     assert "consulta por fonte" in html

@@ -57,6 +57,8 @@ async function serverContext(){
   return current;
 }
 
+function serverScope(current){return current?.project_id?'project':'workspace'}
+
 function serverSnapshot(entry){
   const placement=entry?.placement||{};
   const document=entry?.document||{};
@@ -98,17 +100,20 @@ function serverSnapshot(entry){
   };
 }
 
-async function serverLibraryRows(){
-  await serverContext();
-  const response=await fetch('/api/library?scope=workspace&limit=500',{cache:'no-store',credentials:'same-origin'});
+async function serverLibraryRows(currentOverride=null){
+  const current=currentOverride||await serverContext();
+  const scope=serverScope(current);
+  const response=await fetch(`/api/library?scope=${scope}&limit=500`,{cache:'no-store',credentials:'same-origin'});
   if(!response.ok)throw new Error(`evidence_library_http_${response.status}`);
   const payload=await response.json();
   const entries=Array.isArray(payload?.entries)?payload.entries:[];
-  return entries.filter(entry=>!entry?.placement?.project_id).map(serverSnapshot);
+  const scoped=scope==='workspace'?entries.filter(entry=>!entry?.placement?.project_id):entries;
+  return scoped.map(serverSnapshot);
 }
 
 async function serverSaveArticles(records){
-  await serverContext();
+  const current=await serverContext();
+  const scope=serverScope(current);
   const unique=new Map();
   for(const record of Array.isArray(records)?records:[]){
     if(!record||typeof record!=='object')continue;
@@ -117,8 +122,8 @@ async function serverSaveArticles(records){
     unique.set(articleId,record);
   }
   const values=[...unique.values()];
-  if(!values.length)return{saved:0,updated:0,total:0};
-  const existing=await serverLibraryRows();
+  if(!values.length)return{saved:0,updated:0,total:0,scope};
+  const existing=await serverLibraryRows(current);
   const existingIds=new Set(existing.map(item=>item.article_id));
   let saved=0,updated=0;
   for(const record of values){
@@ -128,12 +133,12 @@ async function serverSaveArticles(records){
       method:'POST',
       credentials:'same-origin',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({article_id:articleId,scope:'workspace',state:'not_screened',tags:[],notes:''}),
+      body:JSON.stringify({article_id:articleId,scope,state:'not_screened',tags:[],notes:''}),
     });
     if(!response.ok)throw new Error(`evidence_library_save_${response.status}`);
     existingIds.add(articleId);saved+=1;
   }
-  return{saved,updated,total:values.length};
+  return{saved,updated,total:values.length,scope};
 }
 
 function openDb(){

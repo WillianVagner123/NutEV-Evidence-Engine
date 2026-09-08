@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>NutEV Evidence Engine — Busca e classificação científica</title>
-  <meta name="description" content="NutEV é um motor de busca, ranking e classificação rastreável de artigos científicos.">
+  <title>NutEV Evidence Engine — Pesquisa científica rastreável</title>
+  <meta name="description" content="NutEV organiza busca, biblioteca, revisão e exportação científica por workspace e projeto.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./product-ui.css">
 </head>
@@ -14,43 +14,53 @@
     <aside class="sidebar">
       <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
       <nav aria-label="Navegação principal"></nav>
-      <div class="sidebar-note">Motor de busca e classificação científica. Revisão sistemática e governança avançada ficam fora do fluxo principal.</div>
+      <div class="sidebar-note">Motor científico reutilizável. Cada pesquisador trabalha em seu próprio workspace, projeto e aplicação sem alterar o patrimônio de outro contexto.</div>
     </aside>
     <main class="main home-main">
-      <header class="topbar"><div><h1>NutEV Evidence Engine</h1><p>Busca científica, ranking, classificação e exploração de artigos.</p></div><span class="status-pill">Search & Classification</span></header>
+      <header class="topbar"><div><h1>NutEV Evidence Engine</h1><p>Busca, biblioteca, revisão e rastreabilidade organizadas por projeto.</p></div><span class="status-pill" id="homeRuntimeStatus">carregando contexto…</span></header>
+
+      <section id="homeWorkspacePanel" class="card product-panel" aria-live="polite">
+        <div class="empty-state"><strong>Carregando seu espaço de pesquisa…</strong><span>Validando sessão, workspace e projeto atual.</span></div>
+      </section>
+
       <section class="card home-hero">
-        <div class="home-eyebrow">Motor de busca científica</div>
-        <h2>Encontre artigos e entenda rapidamente o que cada estudo é e por que ele apareceu.</h2>
-        <p>O NutEV consulta múltiplas fontes, normaliza e deduplica registros, ranqueia por prioridade de leitura e classifica cada artigo com sinais rastreáveis de metadados, título, resumo e taxonomia.</p>
+        <div class="home-eyebrow">Nut Evidence Engine</div>
+        <h2>Encontre evidências e mantenha cada projeto científico no contexto certo.</h2>
+        <p>O NutEV consulta múltiplas fontes, normaliza e deduplica registros, preserva proveniência e organiza resultados sem transformar ranking em qualidade, inclusão ou decisão científica.</p>
         <form class="home-search" action="/search.html" method="get">
-          <input name="q" type="search" autocomplete="off" aria-label="Buscar artigos" placeholder="Ex.: creatina e cognição em idosos">
-          <button class="primary" type="submit">Buscar artigos</button>
+          <input name="q" type="search" autocomplete="off" aria-label="Buscar evidências" placeholder="Ex.: creatina e cognição em idosos">
+          <button class="primary" type="submit">Buscar evidências</button>
         </form>
       </section>
+
       <section class="home-grid" aria-label="Áreas principais">
-        <a class="card home-action" href="/search.html"><strong>⌕ Buscar artigos</strong><span>Consulta múltiplas fontes, deduplica, ranqueia e explica os resultados.</span></a>
-        <a class="card home-action" href="/articles.html"><strong>▤ Biblioteca</strong><span>Explore artigos guardados por classe documental, fonte, texto completo e prioridade.</span></a>
-        <a class="card home-action" href="/search.html?view=history"><strong>◷ Minhas buscas</strong><span>Reabra buscas persistidas e continue a exploração sem perder o contexto.</span></a>
+        <a class="card home-action" href="/project.html" data-pilot-only><strong>◇ Projeto</strong><span>Veja a aplicação metodológica e continue o fluxo no contexto selecionado.</span></a>
+        <a class="card home-action" href="/search.html"><strong>⌕ Buscar evidências</strong><span>Consulta múltiplas fontes, deduplica, ranqueia e explica os resultados.</span></a>
+        <a class="card home-action" href="/evidence-library.html" data-library-link><strong>▤ Biblioteca</strong><span>Organize artigos, estados, tags e notas privadas do workspace ou projeto.</span></a>
+        <a class="card home-action" href="/search.html?view=history"><strong>◷ Minhas buscas</strong><span>Reabra buscas persistidas no contexto atual sem executar novamente.</span></a>
       </section>
+
       <section class="card">
-        <div class="home-eyebrow">Classificação explicável</div>
-        <h2>O que o NutEV organiza em cada resultado</h2>
+        <div class="home-eyebrow">Contrato científico visível</div>
+        <h2>O que o NutEV organiza — e o que ele não presume</h2>
         <div class="classification-contract">
-          <div><strong>Tipo de estudo</strong><span>RCT, observacional, qualitativo, revisão, síntese de evidência, diretriz ou não classificado.</span></div>
-          <div><strong>Tema / taxonomia</strong><span>Domínios detectados pela taxonomia canônica e termos que sustentaram o agrupamento.</span></div>
-          <div><strong>Por que apareceu</strong><span>Termos da consulta encontrados no título/resumo e sinais de taxonomia/documento.</span></div>
-          <div><strong>Ranking NutEV</strong><span>Prioridade operacional de leitura com score breakdown auditável; não é qualidade científica.</span></div>
-          <div><strong>Proveniência</strong><span>Fonte, DOI/PMID, provider e rastros usados pelo motor para recuperar e organizar o registro.</span></div>
-          <div><strong>Dossiê</strong><span>Quando disponível, texto, estrutura, achados candidatos e informações enriquecidas do artigo.</span></div>
+          <div><strong>Tipo de estudo</strong><span>Classificação documental para organização e leitura; não é qualidade metodológica.</span></div>
+          <div><strong>Tema / taxonomia</strong><span>Domínios detectados e sinais que sustentaram o agrupamento.</span></div>
+          <div><strong>Por que apareceu</strong><span>Termos da consulta e sinais usados para recuperar e priorizar o registro.</span></div>
+          <div><strong>Ranking NutEV</strong><span>Prioridade operacional de leitura auditável; não é certeza nem recomendação.</span></div>
+          <div><strong>Proveniência</strong><span>Fonte, DOI/PMID, provider, consulta e contexto preservados para auditoria.</span></div>
+          <div><strong>Estado privado</strong><span>Tags, notas e decisões pertencem ao workspace/projeto e não alteram o documento global.</span></div>
         </div>
       </section>
+
       <section class="card hibernate-note">
-        <div><span class="hibernated-badge">fora do fluxo principal</span><strong style="display:block;margin-top:.45rem">Revisão sistemática, PRESS, PRISMA e governança continuam preservados.</strong><p>Esses módulos não foram apagados; ficam hibernados no Laboratório avançado para uso quando um projeto realmente exigir esse workflow.</p></div>
+        <div><span class="hibernated-badge">quando necessário</span><strong style="display:block;margin-top:.45rem">PRESS, PRISMA, síntese e governança continuam disponíveis sem poluir o fluxo principal.</strong><p>O Laboratório avançado concentra ferramentas metodológicas especializadas e legadas; elas não são atalho para gates científicos.</p></div>
         <a class="ghost" href="/advanced.html" style="text-decoration:none">Abrir laboratório avançado</a>
       </section>
     </main>
   </div>
   <script type="module" src="./product-ui.js"></script>
   <script type="module" src="./workspace-context.js"></script>
+  <script type="module" src="./home-dashboard.js"></script>
 </body>
 </html>

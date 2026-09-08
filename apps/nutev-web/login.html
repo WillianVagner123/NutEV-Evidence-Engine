@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Entrar — NutEV Evidence Engine</title>
+  <meta name="description" content="Acesso autenticado aos workspaces e projetos do NutEV Evidence Engine.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./product-ui.css">
+</head>
+<body class="login-page">
+  <main class="login-shell" aria-labelledby="loginTitle">
+    <section class="login-brand-panel" aria-label="NutEV Evidence Engine">
+      <div class="login-brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <div class="login-promise">
+        <h1>Seu trabalho científico, separado por projeto.</h1>
+        <p>Entre para acessar seus workspaces, pesquisas, biblioteca de evidências, aplicações metodológicas e exportações com isolamento de contexto.</p>
+      </div>
+      <div class="login-boundary">Autenticação identifica a sessão. Permissões continuam sendo revalidadas no backend para cada workspace, projeto e operação privada.</div>
+    </section>
+    <section class="login-card">
+      <h2 id="loginTitle">Entrar no NutEV</h2>
+      <p>Use a conta provisionada para sua organização.</p>
+      <form id="loginForm" class="login-form" novalidate>
+        <label for="loginEmail">E-mail
+          <input id="loginEmail" name="email" type="email" autocomplete="username" inputmode="email" required autofocus>
+        </label>
+        <label for="loginPassword">Senha
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button id="loginSubmit" class="login-submit" type="submit">Entrar</button>
+        <div id="loginStatus" class="login-status" role="status" aria-live="polite"></div>
+      </form>
+      <a class="login-home-link" href="/">Voltar ao início</a>
+    </section>
+  </main>
+  <script type="module" src="./login.js"></script>
+</body>
+</html>

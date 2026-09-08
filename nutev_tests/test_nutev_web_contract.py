@@ -13,7 +13,7 @@ def test_web_app_exposes_dashboard_search_and_validation_without_csv_ui() -> Non
     app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
     assert "NutEV Evidence Engine" in index
     assert 'href="/search.html"' in index
-    assert "Buscar artigos" in search
+    assert "Buscar evidências" in search
     assert "/validation/" in advanced
     assert "/api/search/jobs" in app
     for forbidden in (".csv", "upload csv", "importar csv"):
@@ -121,7 +121,8 @@ def test_web_history_uses_persisted_engine_runs() -> None:
     assert "fetch('/api/searches?limit=50')" in app
     assert "params.get('view')==='history'" in app
     assert "localStorage" not in app
-    assert "Buscas persistidas pelo NutEV Evidence Engine" in search
+    assert "Buscas persistidas" in search
+    assert "contexto autorizado" in search
 
 
 def test_validation_entry_uses_same_product_navigation_and_hides_technical_first_step() -> None:

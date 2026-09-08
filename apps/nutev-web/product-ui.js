@@ -9,28 +9,21 @@ const STATUS_LABELS={
   FORMAL:'Formal'
 }
 
-const NAV_GROUPS=[
-  {label:'Descoberta',items:[
-    {key:'dashboard',href:'/',icon:'⌂',label:'Início'},
-    {key:'search',href:'/search.html',icon:'⌕',label:'Buscar artigos'},
-    {key:'articles',href:'/articles.html',icon:'▤',label:'Biblioteca'}
-  ]},
-  {label:'Sistema',items:[
-    {key:'history',href:'/search.html?view=history',icon:'◷',label:'Minhas buscas'},
-    {key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado'}
-  ]}
-]
-
 const GLOSSARY=[
   ['Busca progressiva','Execução que consulta provedores em etapas e preserva o estado de cada fonte. Uma fonte indisponível não é tratada como zero resultados.'],
   ['Provider','Fonte externa consultada pelo NutEV, como PubMed, Europe PMC, OpenAlex, Crossref, DOAJ, SciELO ou LILACS/BVS.'],
   ['Deduplicação','Processo que consolida registros equivalentes vindos de fontes diferentes sem apagar a proveniência de origem.'],
   ['Ranking','Ordem de apresentação condicionada à consulta, combinando relevância para a busca e prioridade operacional NutEV. Não significa qualidade, certeza ou recomendação.'],
-  ['Proveniência','Rastro que liga um registro à fonte, consulta, versão e contexto em que foi recuperado e processado.']
+  ['Proveniência','Rastro que liga um registro à fonte, consulta, versão e contexto em que foi recuperado e processado.'],
+  ['Workspace','Espaço de trabalho que reúne projetos e define a fronteira principal de acesso privado.'],
+  ['Projeto','Contexto de pesquisa dentro de um workspace. Busca, biblioteca, revisão e exportação são autorizadas novamente para esse contexto.'],
+  ['Aplicação de pesquisa','Configuração metodológica do projeto, como revisão de escopo, revisão integrativa ou projeto genérico de evidências.']
 ]
 
 const STRATEGY_FLOW_STORAGE_KEY='nutev_strategy_flow:article1-scientific-closure-v1'
 const STRATEGY_FLOW_KEYS=['qa','press','regional']
+let runtimeMode='unknown'
+let strategyFlowEnabled=false
 
 function escapeHtml(value){
   return String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')
@@ -45,13 +38,42 @@ function ensureProductStyles(){
   document.head.appendChild(link)
 }
 
+function navGroups(){
+  if(runtimeMode==='legacy')return[
+    {label:'Descoberta',items:[
+      {key:'dashboard',href:'/',icon:'⌂',label:'Início'},
+      {key:'search',href:'/search.html',icon:'⌕',label:'Buscar artigos'},
+      {key:'library',href:'/articles.html',icon:'▤',label:'Biblioteca'}
+    ]},
+    {label:'Sistema',items:[
+      {key:'history',href:'/search.html?view=history',icon:'◷',label:'Minhas buscas'},
+      {key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado'}
+    ]}
+  ]
+  return[
+    {label:'Pesquisa',items:[
+      {key:'dashboard',href:'/',icon:'⌂',label:'Início'},
+      {key:'project',href:'/project.html',icon:'◇',label:'Projeto'},
+      {key:'search',href:'/search.html',icon:'⌕',label:'Buscar evidências'},
+      {key:'library',href:'/evidence-library.html',icon:'▤',label:'Biblioteca'},
+      {key:'exports',href:'/exports.html',icon:'⇩',label:'Exportações'}
+    ]},
+    {label:'Atividade',items:[
+      {key:'history',href:'/search.html?view=history',icon:'◷',label:'Minhas buscas'},
+      {key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado'}
+    ]}
+  ]
+}
+
 function activeNavKey(){
   const path=location.pathname.replace(/\/+$/,'')||'/'
   const params=new URLSearchParams(location.search)
   if(path==='/search.html'&&params.get('view')==='history')return 'history'
   if(path==='/')return 'dashboard'
+  if(path==='/project.html')return 'project'
   if(path==='/search.html')return 'search'
-  if(path==='/articles.html')return 'articles'
+  if(path==='/evidence-library.html'||path==='/articles.html')return 'library'
+  if(path==='/exports.html')return 'exports'
   if(['/evidence.html','/evidence-map.html','/radar.html','/ask.html'].includes(path))return 'advanced'
   if(path==='/advanced.html')return 'advanced'
   if(path.startsWith('/validation')||[
@@ -66,20 +88,49 @@ function activeNavKey(){
 }
 
 function canonicalNavHtml(active){
-  return NAV_GROUPS.map(group=>{
+  return navGroups().map(group=>{
     const items=group.items.map(item=>`<a class="nav-item${active===item.key?' active':''}" href="${item.href}"${active===item.key?' aria-current="page"':''}><span class="nav-icon" aria-hidden="true">${item.icon}</span><span>${escapeHtml(item.label)}</span></a>`).join('')
     return `<div class="nav-group-label">${escapeHtml(group.label)}</div>${items}`
   }).join('')
 }
 
-function normalizeNavigation(){
+function normalizeNavigation(force=false){
   const active=activeNavKey()
-  const signature=`v2:${active}`
+  const signature=`v4:${runtimeMode}:${active}`
   document.querySelectorAll('.sidebar nav,.product-nav').forEach(nav=>{
-    if(nav.dataset.nutevCanonicalNav===signature)return
+    if(!force&&nav.dataset.nutevCanonicalNav===signature)return
     nav.setAttribute('aria-label','Navegação principal')
+    if(!nav.id)nav.id='nutevPrimaryNavigation'
     nav.innerHTML=canonicalNavHtml(active)
     nav.dataset.nutevCanonicalNav=signature
+  })
+}
+
+function ensureMobileNavToggle(){
+  const sidebar=document.querySelector('.sidebar')
+  const nav=sidebar?.querySelector('nav')
+  if(!sidebar||!nav||sidebar.querySelector('.mobile-nav-toggle'))return
+  if(!nav.id)nav.id='nutevPrimaryNavigation'
+  const button=document.createElement('button')
+  button.type='button'
+  button.className='mobile-nav-toggle'
+  button.setAttribute('aria-controls',nav.id)
+  button.setAttribute('aria-expanded','false')
+  button.setAttribute('aria-label','Abrir navegação')
+  button.innerHTML='<span aria-hidden="true">☰</span><span class="mobile-nav-label">Menu</span>'
+  const brand=sidebar.querySelector('.brand')
+  if(brand)brand.insertAdjacentElement('afterend',button)
+  else sidebar.prepend(button)
+  button.addEventListener('click',()=>{
+    const open=sidebar.classList.toggle('mobile-nav-open')
+    button.setAttribute('aria-expanded',String(open))
+    button.setAttribute('aria-label',open?'Fechar navegação':'Abrir navegação')
+  })
+  nav.addEventListener('click',event=>{
+    if(!event.target.closest('a'))return
+    sidebar.classList.remove('mobile-nav-open')
+    button.setAttribute('aria-expanded','false')
+    button.setAttribute('aria-label','Abrir navegação')
   })
 }
 
@@ -90,15 +141,18 @@ function shouldTranslateNode(node){
 }
 
 function translateInternalEnums(root=document){
+  if(root.nodeType===Node.TEXT_NODE){
+    if(!shouldTranslateNode(root))return
+    let text=root.nodeValue||''
+    for(const [raw,label] of Object.entries(STATUS_LABELS))text=text.replaceAll(raw,label)
+    if(text!==root.nodeValue)root.nodeValue=text
+    return
+  }
+  if(!(root instanceof Element||root===document))return
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT)
   const nodes=[]
   while(walker.nextNode())nodes.push(walker.currentNode)
-  for(const node of nodes){
-    if(!shouldTranslateNode(node))continue
-    let text=node.nodeValue||''
-    for(const [raw,label] of Object.entries(STATUS_LABELS))text=text.replaceAll(raw,label)
-    if(text!==node.nodeValue)node.nodeValue=text
-  }
+  for(const node of nodes)translateInternalEnums(node)
 }
 
 function explainResultCap(){
@@ -113,8 +167,9 @@ function explainResultCap(){
   if(note.textContent!==copy)note.textContent=copy
 }
 
-function markStaticKpis(){
-  document.querySelectorAll('#summary .summary-grid .kpi').forEach(kpi=>{
+function markStaticKpis(root=document){
+  const scope=root instanceof Element?root:document
+  scope.querySelectorAll?.('#summary .summary-grid .kpi,.summary-grid .kpi').forEach(kpi=>{
     kpi.classList.add('static-kpi')
     kpi.setAttribute('role','group')
     kpi.setAttribute('title','Indicador informativo; não abre detalhamento.')
@@ -141,18 +196,18 @@ function glossaryRows(filter=''){
 }
 
 function ensureGlossary(){
-  if(document.querySelector('#nutevGlossaryButton'))return
+  if(document.querySelector('#nutevGlossaryButton')||location.pathname==='/login.html')return
   const button=document.createElement('button')
   button.id='nutevGlossaryButton'
   button.className='glossary-trigger'
   button.type='button'
-  button.textContent='Glossário científico'
+  button.textContent='Glossário'
   button.setAttribute('aria-haspopup','dialog')
 
   const dialog=document.createElement('dialog')
   dialog.id='nutevGlossaryDialog'
   dialog.className='glossary-dialog'
-  dialog.innerHTML=`<div class="glossary-head"><div><span class="glossary-eyebrow">Ajuda de termos</span><h2>Glossário científico</h2><p>Definições de interface para reduzir ambiguidade sem alterar os contratos científicos internos.</p></div><button class="glossary-close" type="button" aria-label="Fechar glossário">×</button></div><label class="glossary-search">Filtrar termos<input id="nutevGlossarySearch" type="search" autocomplete="off" placeholder="Ex.: provider, ranking, proveniência"></label><dl id="nutevGlossaryList" class="glossary-list">${glossaryRows()}</dl>`
+  dialog.innerHTML=`<div class="glossary-head"><div><span class="glossary-eyebrow">Ajuda de termos</span><h2>Glossário científico</h2><p>Definições da interface para reduzir ambiguidade sem alterar os contratos científicos internos.</p></div><button class="glossary-close" type="button" aria-label="Fechar glossário">×</button></div><label class="glossary-search">Filtrar termos<input id="nutevGlossarySearch" type="search" autocomplete="off" placeholder="Ex.: ranking, workspace, proveniência"></label><dl id="nutevGlossaryList" class="glossary-list">${glossaryRows()}</dl>`
 
   document.body.append(button,dialog)
   const close=()=>{if(typeof dialog.close==='function')dialog.close();else dialog.removeAttribute('open')}
@@ -166,12 +221,13 @@ function ensureGlossary(){
 }
 
 function readStrategyFlowState(){
+  if(!strategyFlowEnabled)return{}
   try{return JSON.parse(localStorage.getItem(STRATEGY_FLOW_STORAGE_KEY)||'{}')||{}}
   catch{return{}}
 }
 
 function updateStrategyFlowState(step,patch={}){
-  if(!STRATEGY_FLOW_KEYS.includes(step))return null
+  if(!strategyFlowEnabled||!STRATEGY_FLOW_KEYS.includes(step))return null
   const current=readStrategyFlowState()
   const next={...current,[step]:{...(current[step]||{}),...patch,updated_at:new Date().toISOString()}}
   try{localStorage.setItem(STRATEGY_FLOW_STORAGE_KEY,JSON.stringify(next))}catch{}
@@ -180,7 +236,7 @@ function updateStrategyFlowState(step,patch={}){
 }
 
 window.NutEVStrategyFlow={
-  key:STRATEGY_FLOW_STORAGE_KEY,
+  get key(){return strategyFlowEnabled?STRATEGY_FLOW_STORAGE_KEY:null},
   read:readStrategyFlowState,
   update:updateStrategyFlowState
 }
@@ -217,6 +273,12 @@ function flowStatus(key,value={}){
 function decorateStrategyFlow(){
   const flow=document.querySelector('.strategy-flow')
   if(!flow)return
+  if(!strategyFlowEnabled){
+    flow.dataset.nutevLocalState='disabled'
+    flow.querySelectorAll('.strategy-flow-state').forEach(node=>node.remove())
+    return
+  }
+  flow.dataset.nutevLocalState='legacy-only'
   const state=readStrategyFlowState()
   const nodes=[...flow.children].slice(0,3)
   nodes.forEach((node,index)=>{
@@ -228,7 +290,7 @@ function decorateStrategyFlow(){
     if(marker.className!==markerClass)marker.className=markerClass
     if(marker.textContent!==result.label)marker.textContent=result.label
     const done=result.tone==='done'
-    if(node.classList.contains('done')!==done)node.classList.toggle('done',done)
+    node.classList.toggle('done',done)
   })
 }
 
@@ -251,9 +313,10 @@ function ensureStrategyFlowGuide(){
     flow.parentNode.insertBefore(guide,flow)
   }
   const copy=strategyGuideCopy()
-  const signature=copy||'default'
+  const tenantCopy=runtimeMode==='pilot'?' No modo autenticado, estados locais do navegador ficam desativados para evitar mistura entre projetos.':''
+  const signature=`${runtimeMode}:${copy||'default'}`
   if(guide.dataset.nutevGuideSignature===signature)return
-  guide.innerHTML=`<strong>Roteiro operacional, não atalho de gate.</strong><span>A sequência orienta o trabalho; os gates permanecem independentes e nenhuma etapa autoriza automaticamente a decisão científica seguinte.${copy?` ${escapeHtml(copy)}`:''}</span>`
+  guide.innerHTML=`<strong>Roteiro operacional, não atalho de gate.</strong><span>A sequência orienta o trabalho; os gates permanecem independentes e nenhuma etapa autoriza automaticamente a decisão científica seguinte.${copy?` ${escapeHtml(copy)}`:''}${tenantCopy}</span>`
   guide.dataset.nutevGuideSignature=signature
 }
 
@@ -277,27 +340,65 @@ async function renderBuildIdentity(){
 
 function applyProductUi(root=document){
   normalizeNavigation()
+  ensureMobileNavToggle()
   translateInternalEnums(root)
   explainResultCap()
-  markStaticKpis()
+  markStaticKpis(root)
   ensureSkipLink()
   ensureGlossary()
   ensureStrategyFlowGuide()
   decorateStrategyFlow()
 }
 
+async function initRuntimeMode(){
+  try{
+    const response=await fetch('/api/auth/status',{cache:'no-store',credentials:'same-origin'})
+    if(!response.ok)throw new Error(`auth_status_${response.status}`)
+    const payload=await response.json()
+    runtimeMode=payload?.mode==='legacy'?'legacy':payload?.mode==='pilot'?'pilot':'unknown'
+  }catch{
+    runtimeMode='unknown'
+  }
+  strategyFlowEnabled=runtimeMode==='legacy'
+  normalizeNavigation(true)
+  ensureStrategyFlowGuide()
+  decorateStrategyFlow()
+  if(runtimeMode==='pilot'){
+    if(location.pathname==='/articles.html'){
+      const params=new URLSearchParams(location.search)
+      const saved=params.get('saved')
+      const suffix=saved?`?article=${encodeURIComponent(saved)}`:''
+      location.replace(`/evidence-library.html${suffix}`)
+      return
+    }
+    if(location.pathname!='/login.html')import('/workspace-context.js').catch(()=>{})
+  }
+  window.dispatchEvent(new CustomEvent('nutev:runtime-mode',{detail:{mode:runtimeMode}}))
+}
+
 ensureProductStyles()
 applyProductUi()
 renderBuildIdentity()
+initRuntimeMode()
 
 window.addEventListener('nutev:strategy-flow-update',()=>decorateStrategyFlow())
-window.addEventListener('storage',event=>{if(event.key===STRATEGY_FLOW_STORAGE_KEY)decorateStrategyFlow()})
+window.addEventListener('storage',event=>{if(strategyFlowEnabled&&event.key===STRATEGY_FLOW_STORAGE_KEY)decorateStrategyFlow()})
 
 const observer=new MutationObserver(mutations=>{
-  let changed=false
+  let summaryChanged=false
+  let strategyChanged=false
   for(const mutation of mutations){
-    if(mutation.addedNodes.length){changed=true;break}
+    for(const node of mutation.addedNodes){
+      translateInternalEnums(node)
+      if(node.nodeType===Node.ELEMENT_NODE){
+        const element=node
+        markStaticKpis(element)
+        if(element.matches?.('#summary,.summary-grid')||element.querySelector?.('#summary,.summary-grid'))summaryChanged=true
+        if(element.matches?.('.strategy-flow')||element.querySelector?.('.strategy-flow'))strategyChanged=true
+      }
+    }
   }
-  if(changed)applyProductUi(document)
+  if(summaryChanged)explainResultCap()
+  if(strategyChanged){ensureStrategyFlowGuide();decorateStrategyFlow()}
 })
 observer.observe(document.documentElement,{childList:true,subtree:true})

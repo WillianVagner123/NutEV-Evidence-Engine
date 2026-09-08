@@ -5,12 +5,18 @@ ROOT = Path(__file__).resolve().parents[1]
 WEB = ROOT / "apps" / "nutev-web"
 
 
-def test_articles_is_first_class_navigation_and_detail_panel() -> None:
+def test_legacy_articles_workbench_is_preserved_while_pilot_uses_evidence_library() -> None:
     index = (WEB / "index.html").read_text(encoding="utf-8")
-    radar = (WEB / "radar.html").read_text(encoding="utf-8")
+    product = (WEB / "product-ui.js").read_text(encoding="utf-8")
     page = (WEB / "articles.html").read_text(encoding="utf-8")
-    assert 'href="/articles.html"' in index
-    assert 'href="/articles.html"' in radar
+
+    assert 'href="/evidence-library.html"' in index
+    assert "if(runtimeMode==='legacy')" in product
+    assert "href:'/articles.html'" in product
+    assert "if(location.pathname==='/articles.html')" in product
+    assert "location.replace(`/evidence-library.html${suffix}`)" in product
+
+    # The legacy Workbench itself remains intact for compatibility mode.
     assert 'id="articleList"' in page
     assert 'id="articleDetail"' in page
     assert 'id="articleQuery"' in page
