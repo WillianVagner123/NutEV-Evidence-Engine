@@ -19,6 +19,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
+    "argon2-cffi>=25.1,<26",
     "requests>=2.32,<3",
 ]
 
