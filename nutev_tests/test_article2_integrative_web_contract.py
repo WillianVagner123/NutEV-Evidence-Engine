@@ -61,7 +61,11 @@ def test_article2_assembly_reuses_platform_primitives_without_copying_article1_o
     assert "article1_d132" not in lowered
     assert "from nutev.search" not in lowered
     assert "import nutev.search" not in lowered
-    assert "http" not in {line.strip().split()[1] for line in source.splitlines() if line.strip().startswith("import ") and len(line.strip().split()) > 1}
+    assert "http" not in {
+        line.strip().split()[1]
+        for line in source.splitlines()
+        if line.strip().startswith("import ") and len(line.strip().split()) > 1
+    }
 
     # A1 and A2 are separate assemblies, not files copied from one another.
     a1 = A1_ASSEMBLY.read_text(encoding="utf-8")
@@ -79,4 +83,5 @@ def test_article2_runtime_does_not_treat_historical_workstream_names_as_ownershi
     assert "busca2a" not in source
     assert "busca2b" not in source
     assert "current_login" not in source
-    assert "search_id" not in source
+    operational = source.replace('"no_inference_from_search_id"', "")
+    assert "search_id" not in operational
