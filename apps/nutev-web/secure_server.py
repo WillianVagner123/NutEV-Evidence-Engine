@@ -18,8 +18,10 @@ from nutev.tenancy import (
     ContextSnapshot,
     LoginResult,
     SQLiteAuthProvider,
+    SQLiteSearchOwnershipStore,
     SQLiteSessionStore,
     SQLiteWorkspaceProjectStore,
+    SearchScopeService,
     SessionPrincipal,
     SessionPrincipalService,
     WorkspaceProjectService,
@@ -34,6 +36,11 @@ from server import (
 )
 from search_access import filter_owned_runs, record_search_owner, search_owned_by
 from search_adapter import list_search_runs, load_search_run
+from tenant_search_jobs import (
+    create_tenant_search_job,
+    load_tenant_search_job,
+    start_tenant_search_owner_watch,
+)
 
 SESSION_COOKIE = "nutev_session"
 AUTH_SESSION_COOKIE = "nutev_auth_session"
@@ -49,9 +56,10 @@ _SESSION_STARTS: dict[str, deque[float]] = defaultdict(deque)
 _IP_STARTS: dict[str, deque[float]] = defaultdict(deque)
 _LOGIN_ATTEMPTS: dict[str, deque[float]] = defaultdict(deque)
 _JOB_OWNERS: dict[str, str] = {}
-_AUTH_SERVICE_LOCK = threading.Lock()
+_AUTH_SERVICE_LOCK = threading.RLock()
 _AUTH_SERVICE: SessionPrincipalService | None = None
 _ACCESS_SERVICE: WorkspaceProjectService | None = None
+_SEARCH_SCOPE_SERVICE: SearchScopeService | None = None
 
 NOINDEX_EXACT_PATHS = {
     "/ask.html",
@@ -122,15 +130,23 @@ def _workspace_access_service() -> WorkspaceProjectService:
         return _ACCESS_SERVICE
 
 
+def _search_scope_service() -> SearchScopeService:
+    global _SEARCH_SCOPE_SERVICE
+    with _AUTH_SERVICE_LOCK:
+        if _SEARCH_SCOPE_SERVICE is None:
+            _SEARCH_SCOPE_SERVICE = SearchScopeService(
+                SQLiteSearchOwnershipStore(_auth_database_path()),
+                _workspace_access_service(),
+            )
+        return _SEARCH_SCOPE_SERVICE
+
+
 def _auth_service() -> SessionPrincipalService:
     global _AUTH_SERVICE
     with _AUTH_SERVICE_LOCK:
         if _AUTH_SERVICE is None:
             database = _auth_database_path()
-            access_service = _ACCESS_SERVICE
-            if access_service is None:
-                access_service = WorkspaceProjectService(SQLiteWorkspaceProjectStore(database))
-                globals()["_ACCESS_SERVICE"] = access_service
+            access_service = _workspace_access_service()
             _AUTH_SERVICE = SessionPrincipalService(
                 SQLiteAuthProvider(database),
                 SQLiteSessionStore(database),
@@ -198,12 +214,7 @@ def _mark_job_ownership_status(job_id: str, status: str) -> None:
 
 
 def _persist_job_owner_when_terminal(job_id: str, owner_scope: str) -> None:
-    """Persist search ownership independently from browser polling.
-
-    The search job already runs server-side. This watcher only records the session/search
-    relationship after the persisted result exists, so closing the tab or stopping local
-    monitoring cannot orphan an otherwise successful search from public history.
-    """
+    """Persist legacy browser-session search ownership independently from polling."""
 
     while True:
         try:
@@ -249,8 +260,6 @@ def _build_metadata() -> dict[str, str]:
                 info = parsed
         except (OSError, json.JSONDecodeError):
             info = {}
-    # Build identity is baked into the image and must win over a stale server
-    # env_file. Environment variables remain a fallback for direct/dev runs.
     return {
         "service": "nutev-web",
         "version": str(info.get("version") or os.environ.get("NUTEV_VERSION") or "dev"),
@@ -262,19 +271,11 @@ def _build_metadata() -> dict[str, str]:
 
 
 def _agent_context_status() -> dict[str, object]:
-    """Report Article 1 agent-context availability without probing missing static files.
-
-    The production image mounts the persistent Article 1 bundle into
-    ``apps/nutev-web/agent-context/article1``. A clean checkout legitimately has no
-    bundle yet, so the public UI needs a stable 200-status capability surface rather
-    than generating console 404s or fabricating context.
-    """
-
     root = APP_ROOT / "agent-context" / "article1"
     available: list[str] = []
     missing: list[str] = []
     for name in AGENT_CONTEXT_REQUIRED_FILES:
-        path = root / "agent-context" / "article1" / name if False else root / name
+        path = root / name
         if path.is_file():
             available.append(name)
         else:
@@ -300,14 +301,9 @@ def _should_noindex(path: str) -> bool:
 
 
 class SecureNutEVHandler(NutEVHandler):
-    """Production-facing NutEV handler with compatibility-safe auth and context pilot.
+    """Production handler with legacy compatibility and authenticated tenant search isolation."""
 
-    Existing search/history behavior remains browser-session isolated. In pilot auth mode,
-    authenticated requests gain server-derived workspace memberships and a server-persisted
-    workspace/project selection. Selection never replaces authorization.
-    """
-
-    server_version = "NutEVWeb/1.3"
+    server_version = "NutEVWeb/1.4"
 
     def _cookie_secure(self) -> bool:
         return (
@@ -468,6 +464,109 @@ class SecureNutEVHandler(NutEVHandler):
             self._json({"error": "context_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
             return None
 
+    def _tenant_search_session(self) -> tuple[SessionPrincipal, ContextSnapshot] | None:
+        session = self._resolve_authenticated_session()
+        if session is None:
+            return None
+        snapshot = self._context_snapshot(session)
+        if snapshot is None:
+            return None
+        return session, snapshot
+
+    def _tenant_rate_scope(self, session: SessionPrincipal) -> str:
+        return sha256(session.principal.session_id.encode("ascii")).hexdigest()
+
+    def _tenant_job_get(self, path: str) -> None:
+        resolved = self._tenant_search_session()
+        if resolved is None:
+            return
+        session, snapshot = resolved
+        job_id = unquote(path[len("/api/search/jobs/"):]).strip()
+        try:
+            job = load_tenant_search_job(
+                job_id,
+                principal=session.principal,
+                context=snapshot.current,
+                scope_service=_search_scope_service(),
+            )
+        except (KeyError, PermissionError, ValueError):
+            self._json({"error": "search_job_not_found"}, HTTPStatus.NOT_FOUND)
+            return
+        self._json(job)
+
+    def _tenant_search_history(self, parsed) -> None:
+        resolved = self._tenant_search_session()
+        if resolved is None:
+            return
+        session, snapshot = resolved
+        query = parse_qs(parsed.query)
+        try:
+            limit = int((query.get("limit") or ["30"])[0])
+        except ValueError:
+            limit = 30
+        scope = str((query.get("scope") or ["workspace"])[0]).strip().casefold()
+        try:
+            allowed_ids = _search_scope_service().authorized_search_ids(
+                session.principal,
+                snapshot.current,
+                scope=scope,
+            )
+        except PermissionError as exc:
+            code = str(exc)
+            status = HTTPStatus.CONFLICT if "context_required" in code else HTTPStatus.FORBIDDEN
+            self._json({"error": code or "search_history_denied"}, status)
+            return
+        except ValueError:
+            self._json({"error": "invalid_search_history_scope"}, HTTPStatus.BAD_REQUEST)
+            return
+
+        runs = [
+            item
+            for item in list_search_runs(limit=200)
+            if str(item.get("search_id") or "") in allowed_ids
+        ]
+        enriched: list[dict[str, object]] = []
+        for item in runs:
+            value = dict(item)
+            owner = _search_scope_service().store.owner_for_search(str(item.get("search_id") or ""))
+            if owner is not None:
+                value["workspace_id"] = owner.workspace_id
+                value["project_id"] = owner.project_id
+                value["created_by_current_user"] = owner.user_id == session.principal.user_id
+            enriched.append(value)
+        self._json(
+            {
+                "searches": enriched[: max(1, min(limit, 200))],
+                "scope": scope,
+                "workspace_id": snapshot.current.workspace_id,
+                "project_id": snapshot.current.project_id if scope == "project" else None,
+            }
+        )
+
+    def _tenant_search_get(self, path: str) -> None:
+        resolved = self._tenant_search_session()
+        if resolved is None:
+            return
+        session, snapshot = resolved
+        search_id = unquote(path[len("/api/searches/"):]).strip()
+        try:
+            owner = _search_scope_service().require_search_access(
+                session.principal,
+                snapshot.current,
+                search_id,
+            )
+            payload = load_search_run(search_id)
+        except (FileNotFoundError, KeyError, PermissionError, ValueError):
+            self._json({"error": "search_not_found"}, HTTPStatus.NOT_FOUND)
+            return
+        result = dict(payload)
+        result["tenant_scope"] = {
+            "workspace_id": owner.workspace_id,
+            "project_id": owner.project_id,
+        }
+        result["created_by_current_user"] = owner.user_id == session.principal.user_id
+        self._json(result)
+
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
         path = parsed.path
@@ -518,14 +617,18 @@ class SecureNutEVHandler(NutEVHandler):
                 {
                     "coordinator_available": self._is_loopback(),
                     "remote_reviewer_available": True,
-                    "history_scope": "browser_session",
+                    "history_scope": "workspace_project" if mode == "pilot" else "browser_session",
                     "auth_mode": mode,
                     "authenticated_principal_pilot": mode == "pilot",
                     "workspace_project_context": mode == "pilot",
+                    "tenant_search_scope": mode == "pilot",
                 }
             )
             return
         if path.startswith("/api/search/jobs/"):
+            if self._auth_pilot_enabled():
+                self._tenant_job_get(path)
+                return
             owner_scope = self._owner_scope()
             job_id = unquote(path[len("/api/search/jobs/"):]).strip()
             try:
@@ -534,6 +637,9 @@ class SecureNutEVHandler(NutEVHandler):
                 self._json({"error": "search_job_not_found"}, HTTPStatus.NOT_FOUND)
             return
         if path == "/api/searches":
+            if self._auth_pilot_enabled():
+                self._tenant_search_history(parsed)
+                return
             owner_scope = self._owner_scope()
             query = parse_qs(parsed.query)
             try:
@@ -545,6 +651,9 @@ class SecureNutEVHandler(NutEVHandler):
             self._json({"searches": owned[: max(1, min(limit, 200))], "scope": "browser_session"})
             return
         if path.startswith("/api/searches/"):
+            if self._auth_pilot_enabled():
+                self._tenant_search_get(path)
+                return
             owner_scope = self._owner_scope()
             search_id = unquote(path[len("/api/searches/"):]).strip()
             if not search_owned_by(search_id, owner_scope):
@@ -563,6 +672,42 @@ class SecureNutEVHandler(NutEVHandler):
             max_age=_auth_session_ttl_seconds(),
         )
         self._json(_principal_payload(result.session), HTTPStatus.OK)
+
+    def _tenant_search_post(self) -> None:
+        resolved = self._tenant_search_session()
+        if resolved is None:
+            return
+        session, snapshot = resolved
+        if snapshot.current.workspace_id is None:
+            self._json({"error": "workspace_context_required"}, HTTPStatus.CONFLICT)
+            return
+        rate_scope = self._tenant_rate_scope(session)
+        allowed, message = self._consume_search_start(rate_scope)
+        if not allowed:
+            self._json({"error": "search_rate_limited", "message": message}, HTTPStatus.TOO_MANY_REQUESTS)
+            return
+        try:
+            payload = self._read_json()
+            job = create_tenant_search_job(
+                payload,
+                principal=session.principal,
+                context=snapshot.current,
+                scope_service=_search_scope_service(),
+            )
+        except PermissionError:
+            self._json({"error": "search_forbidden"}, HTTPStatus.FORBIDDEN)
+            return
+        except ValueError as exc:
+            self._json({"error": "invalid_request", "message": str(exc)}, HTTPStatus.BAD_REQUEST)
+            return
+        except Exception:
+            self._json({"error": "search_ownership_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
+            return
+        job_id = str(job.get("job_id") or "")
+        with _RATE_LOCK:
+            _JOB_OWNERS[job_id] = rate_scope
+        start_tenant_search_owner_watch(job_id, _search_scope_service())
+        self._json(job, HTTPStatus.ACCEPTED)
 
     def do_POST(self) -> None:
         path = urlparse(self.path).path
@@ -629,7 +774,6 @@ class SecureNutEVHandler(NutEVHandler):
                     project_id=project_id,
                 )
             except (ValueError, PermissionError, KeyError):
-                # Anti-enumeration: malformed, foreign, removed, and unknown targets share one response.
                 self._json({"error": "context_not_found"}, HTTPStatus.NOT_FOUND)
                 return
             except Exception:
@@ -647,6 +791,9 @@ class SecureNutEVHandler(NutEVHandler):
             )
             return
         if path == "/api/search/jobs":
+            if self._auth_pilot_enabled():
+                self._tenant_search_post()
+                return
             owner_scope = self._owner_scope()
             allowed, message = self._consume_search_start(owner_scope)
             if not allowed:
@@ -678,7 +825,6 @@ def main() -> int:
     parser.add_argument("--host", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
-    # Validate compatibility mode before binding a public socket.
     _auth_mode()
     if _auth_mode() == "pilot":
         _auth_session_ttl_seconds()
