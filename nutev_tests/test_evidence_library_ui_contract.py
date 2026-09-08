@@ -9,7 +9,7 @@ def test_pilot_evidence_library_page_is_server_backed() -> None:
     html = (WEB / "evidence-library.html").read_text(encoding="utf-8")
     script = (WEB / "evidence-library-page.js").read_text(encoding="utf-8")
 
-    assert "Evidence Library" in html
+    assert "Biblioteca de evidências" in html
     assert "evidence-library-page.js" in html
     assert "/api/context" in script
     assert "/api/library?scope=" in script
@@ -20,7 +20,7 @@ def test_pilot_evidence_library_page_is_server_backed() -> None:
     assert "indexedDB" not in script
 
 
-def test_real_saved_library_module_routes_pilot_to_server_without_silent_local_fallback() -> None:
+def test_real_saved_library_module_routes_pilot_to_selected_server_scope_without_silent_local_fallback() -> None:
     store = (WEB / "saved-library.js").read_text(encoding="utf-8")
     bootstrap = (WEB / "evidence-library-bootstrap.js").read_text(encoding="utf-8")
 
@@ -28,9 +28,10 @@ def test_real_saved_library_module_routes_pilot_to_server_without_silent_local_f
     assert "if(!response.ok)throw new Error(`auth_status_http_${response.status}`)" in store
     assert "if(mode==='pilot')return serverSaveArticles(records)" in store
     assert "if(mode==='pilot')return filterRows(await serverLibraryRows(),q,limit)" in store
-    assert "/api/library?scope=workspace&limit=500" in store
+    assert "function serverScope(current){return current?.project_id?'project':'workspace'}" in store
+    assert "/api/library?scope=${scope}&limit=500" in store
     assert "/api/library/placements" in store
-    assert "scope:'workspace'" in store
+    assert "body:JSON.stringify({article_id:articleId,scope,state:'not_screened'" in store
     assert "global_article_id_required" in store
     assert "indexedDB.open" in store
     assert "localStorage" not in store
