@@ -70,9 +70,9 @@ blockers
 reference-only actions
 ```
 
-It does not know Article 1, Article 2 or Willian.
+It intentionally consumes the PR-0 ownership vocabulary, including `WILLIAN_PRIVATE`, `ARTICLE1_PRIVATE`, and `ARTICLE2_PRIVATE`, because those are inventory classes already established by the migration contract.
 
-The first-party configuration is isolated in:
+What it does **not** contain are the concrete first-party hierarchy, project labels, runtime paths, target keys, or manuscript-specific mapping rules. Those live only in the reviewed profile:
 
 ```text
 src/nutev/migration/profiles/willian_doctorate.py
@@ -287,7 +287,7 @@ Repository CI can prove with fixtures:
 - unknown files are excluded;
 - cross-project mapping conflicts fail closed;
 - report cannot be placed inside source roots;
-- generic planner contains no first-party manuscript names;
+- generic planner contains no concrete first-party target labels, runtime paths, or target keys;
 - no activation CLI exists.
 
 ## What CI cannot prove
