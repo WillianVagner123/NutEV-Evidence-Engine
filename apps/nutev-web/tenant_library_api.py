@@ -174,7 +174,6 @@ def _library_get(handler: NutEVHandler, parsed) -> bool:
                 "workspace_id": current.workspace_id,
                 "project_id": current.project_id,
                 "grants": [grant.public_descriptor() for grant in grants],
-                "cache_path_exposed": False,
             }
         )
         return True
