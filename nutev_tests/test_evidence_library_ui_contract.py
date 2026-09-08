@@ -20,17 +20,23 @@ def test_pilot_evidence_library_page_is_server_backed() -> None:
     assert "indexedDB" not in script
 
 
-def test_hybrid_facade_never_falls_back_to_indexeddb_in_pilot_mode() -> None:
-    script = (WEB / "evidence-library-bootstrap.js").read_text(encoding="utf-8")
+def test_real_saved_library_module_routes_pilot_to_server_without_silent_local_fallback() -> None:
+    store = (WEB / "saved-library.js").read_text(encoding="utf-8")
+    bootstrap = (WEB / "evidence-library-bootstrap.js").read_text(encoding="utf-8")
 
-    assert "if(state.mode==='legacy')return legacy.list()" in script
-    assert "if(state.mode==='legacy')return legacy.save(record)" in script
-    assert "if(state.mode==='legacy')return legacy.remove(id)" in script
-    assert "if(!state.context)throw new Error('workspace_context_required')" in script
-    assert "/api/library/placements" in script
-    assert "window.NutEVEvidenceLibrary=facade" in script
-    assert "localStorage" not in script
-    assert "sessionStorage" not in script
+    assert "/api/auth/status" in store
+    assert "if(!response.ok)throw new Error(`auth_status_http_${response.status}`)" in store
+    assert "if(mode==='pilot')return serverSaveArticles(records)" in store
+    assert "if(mode==='pilot')return filterRows(await serverLibraryRows(),q,limit)" in store
+    assert "/api/library?scope=workspace&limit=500" in store
+    assert "/api/library/placements" in store
+    assert "scope:'workspace'" in store
+    assert "global_article_id_required" in store
+    assert "indexedDB.open" in store
+    assert "localStorage" not in store
+    assert "sessionStorage" not in store
+    assert "import * as library from './saved-library.js'" in bootstrap
+    assert "window.NutEVEvidenceLibrary=library" in bootstrap
 
 
 def test_pilot_library_does_not_claim_indexeddb_ownership_migration() -> None:
