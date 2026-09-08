@@ -18,7 +18,7 @@ def test_dashboard_is_home_and_search_is_separate_workspace() -> None:
     assert 'src="./app.js"' not in home
     assert 'href="/search.html"' in home
 
-    assert "Busca NutEV" in search
+    assert "Buscar evidências" in search
     assert 'src="./app.js"' in search
     assert 'src="./product-ui.js"' in search
 
