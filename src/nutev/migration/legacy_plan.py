@@ -67,7 +67,11 @@ class MappingRule:
             raise ValueError("mapping rule requires explicit evidence")
         if self.classification in MIGRATABLE_PRIVATE_CLASSES and not self.target_key:
             raise ValueError("private migration classification requires a logical target")
-        if self.classification in {OwnershipClass.GLOBAL, OwnershipClass.SYSTEM, OwnershipClass.UNKNOWN} and self.target_key:
+        if self.classification in {
+            OwnershipClass.GLOBAL,
+            OwnershipClass.SYSTEM,
+            OwnershipClass.UNKNOWN,
+        } and self.target_key:
             raise ValueError("GLOBAL/SYSTEM/UNKNOWN rules cannot attach a private target")
 
     def matches(self, root: Path, relative_path: str) -> bool:
@@ -112,7 +116,13 @@ class ExplicitMappingDocument:
 
 
 def _json(value: Any) -> str:
-    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), default=str)
+    return json.dumps(
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        default=str,
+    )
 
 
 def _sha256_file(path: Path) -> str:
@@ -167,15 +177,32 @@ def load_explicit_mapping(path: Path | None) -> ExplicitMappingDocument | None:
     )
 
 
-def _scan_files(source_roots: Iterable[Path]) -> tuple[Path, ...]:
+def _scan_sources(source_roots: Iterable[Path]) -> tuple[tuple[Path, ...], tuple[dict[str, str], ...]]:
+    """Return regular files plus symlink observations without following symlinks."""
+
     files: list[Path] = []
-    seen: set[str] = set()
+    symlinks: list[dict[str, str]] = []
+    seen_files: set[str] = set()
+    seen_links: set[tuple[str, str]] = set()
+
     for source_root in source_roots:
         root = Path(source_root).expanduser().resolve()
         if not root.is_dir():
             continue
         for candidate in sorted(root.rglob("*")):
             if candidate.is_symlink():
+                relative = candidate.relative_to(root).as_posix()
+                key = (str(root), relative)
+                if key not in seen_links:
+                    symlinks.append(
+                        {
+                            "source_root": str(root),
+                            "relative_path": relative,
+                            "followed": "false",
+                            "migration_action": "NO_AUTOMATIC_MIGRATION",
+                        }
+                    )
+                    seen_links.add(key)
                 continue
             if not candidate.is_file():
                 continue
@@ -183,10 +210,11 @@ def _scan_files(source_roots: Iterable[Path]) -> tuple[Path, ...]:
             if not _inside(resolved, root):
                 continue
             key = str(resolved)
-            if key not in seen:
+            if key not in seen_files:
                 files.append(resolved)
-                seen.add(key)
-    return tuple(files)
+                seen_files.add(key)
+
+    return tuple(files), tuple(symlinks)
 
 
 def _matching_rules(
@@ -212,7 +240,13 @@ def _classification_for(
     semantics = {(rule.classification, rule.target_key) for rule in matched}
     if len(semantics) != 1:
         evidence = " | ".join(sorted(rule.evidence for rule in matched))
-        return OwnershipClass.UNKNOWN, None, f"mapping_conflict: {evidence}", "conflict", True
+        return (
+            OwnershipClass.UNKNOWN,
+            None,
+            f"mapping_conflict: {evidence}",
+            "conflict",
+            True,
+        )
     first = matched[0]
     evidence = " | ".join(sorted({rule.evidence for rule in matched}))
     sources = "+".join(sorted({rule.source for rule in matched}))
@@ -250,15 +284,25 @@ def run_legacy_multitenant_dry_run(
         if _inside(destination, root):
             raise ValueError("migration report must be outside every legacy source root")
 
+    if explicit_mapping_path is not None:
+        mapping_candidate = Path(explicit_mapping_path).expanduser().resolve()
+        for root in roots:
+            if _inside(mapping_candidate, root):
+                raise ValueError("explicit mapping must be outside every legacy source root")
+
     explicit = load_explicit_mapping(explicit_mapping_path)
     rules = tuple(plan.rules) + (explicit.rules if explicit else ())
-    files = _scan_files(roots)
+    files, symlinks = _scan_sources(roots)
     root_for_file: dict[Path, Path] = {}
     for file_path in files:
         matches = [root for root in roots if _inside(file_path, root)]
         if not matches:
             continue
-        root_for_file[file_path] = sorted(matches, key=lambda item: len(str(item)), reverse=True)[0]
+        root_for_file[file_path] = sorted(
+            matches,
+            key=lambda item: len(str(item)),
+            reverse=True,
+        )[0]
 
     before_hashes = {path: _sha256_file(path) for path in files}
     records: list[dict[str, Any]] = []
@@ -289,29 +333,69 @@ def run_legacy_multitenant_dry_run(
                 "logical_target_key": target_key,
                 "mapping_evidence": evidence,
                 "mapping_source": mapping_source,
-                "migration_action": "REFERENCE_ONLY" if classification in MIGRATABLE_PRIVATE_CLASSES else "NO_AUTOMATIC_MIGRATION",
+                "migration_action": (
+                    "REFERENCE_ONLY"
+                    if classification in MIGRATABLE_PRIVATE_CLASSES
+                    else "NO_AUTOMATIC_MIGRATION"
+                ),
             }
         )
 
     after_hashes = {path: _sha256_file(path) for path in files}
-    changed_sources = [str(path) for path in files if before_hashes[path] != after_hashes[path]]
+    changed_sources = [
+        str(path)
+        for path in files
+        if before_hashes[path] != after_hashes[path]
+    ]
     for record, path in zip(records, files, strict=True):
         record["source_sha256_after"] = after_hashes[path]
         record["source_unchanged"] = before_hashes[path] == after_hashes[path]
 
     blockers: list[dict[str, str]] = []
     if mapping_conflicts:
-        blockers.append({"code": "MAPPING_CONFLICT", "detail": f"{mapping_conflicts} file(s) matched conflicting ownership rules"})
+        blockers.append(
+            {
+                "code": "MAPPING_CONFLICT",
+                "detail": f"{mapping_conflicts} file(s) matched conflicting ownership rules",
+            }
+        )
     if changed_sources:
-        blockers.append({"code": "SOURCE_SHA_MISMATCH", "detail": f"{len(changed_sources)} source file(s) changed during dry-run"})
+        blockers.append(
+            {
+                "code": "SOURCE_SHA_MISMATCH",
+                "detail": f"{len(changed_sources)} source file(s) changed during dry-run",
+            }
+        )
+    if symlinks:
+        blockers.append(
+            {
+                "code": "SYMLINK_NOT_FOLLOWED",
+                "detail": (
+                    f"{len(symlinks)} symlink(s) were observed, not followed, and excluded "
+                    "from automatic migration"
+                ),
+            }
+        )
     unknown_count = class_counts[OwnershipClass.UNKNOWN.value]
     if unknown_count:
-        blockers.append({"code": "UNKNOWN_OWNERSHIP_REMAINS", "detail": f"{unknown_count} file(s) remain UNKNOWN and are excluded from automatic migration"})
+        blockers.append(
+            {
+                "code": "UNKNOWN_OWNERSHIP_REMAINS",
+                "detail": (
+                    f"{unknown_count} file(s) remain UNKNOWN and are excluded from automatic migration"
+                ),
+            }
+        )
     for key in plan.required_target_keys:
         if target_counts.get(key, 0) == 0:
-            blockers.append({"code": "REQUIRED_TARGET_NOT_MATERIALIZED", "detail": f"No explicitly mapped source files for required target {key}"})
+            blockers.append(
+                {
+                    "code": "REQUIRED_TARGET_NOT_MATERIALIZED",
+                    "detail": f"No explicitly mapped source files for required target {key}",
+                }
+            )
 
-    if not roots or not files:
+    if not roots or (not files and not symlinks):
         status = "SOURCE_NOT_MATERIALIZED"
     elif changed_sources or mapping_conflicts:
         status = "DRY_RUN_FAIL"
@@ -344,12 +428,17 @@ def run_legacy_multitenant_dry_run(
         "logical_targets": [_target_descriptor(target) for target in plan.targets],
         "source_roots": [str(root) for root in roots],
         "explicit_mapping": (
-            {"path": explicit.path, "sha256": explicit.sha256, "rule_count": len(explicit.rules)}
+            {
+                "path": explicit.path,
+                "sha256": explicit.sha256,
+                "rule_count": len(explicit.rules),
+            }
             if explicit
             else None
         ),
         "counts": {
             "files_seen": len(records),
+            "symlinks_seen": len(symlinks),
             "by_classification": class_counts,
             "by_target": target_counts,
             "mapping_conflicts": mapping_conflicts,
@@ -357,9 +446,12 @@ def run_legacy_multitenant_dry_run(
         },
         "blockers": blockers,
         "records": records,
+        "symlinks": list(symlinks),
         "guardrails": {
             "unknown_never_auto_migrated": True,
+            "symlinks_never_followed_or_auto_migrated": True,
             "migration_by_reference_only": True,
+            "control_mapping_outside_source_roots": True,
             "opaque_activation_ids_not_inferred": True,
             "current_login_not_ownership_evidence": True,
             "query_or_search_id_not_ownership_evidence": True,
@@ -371,6 +463,9 @@ def run_legacy_multitenant_dry_run(
 
     destination.parent.mkdir(parents=True, exist_ok=True)
     temporary = destination.with_name(f".{destination.name}.tmp")
-    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    temporary.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     temporary.replace(destination)
     return payload
