@@ -1,4 +1,4 @@
-"""Identity, authentication, authorization, and tenant-access contracts for NutEV."""
+"""Identity, authentication, authorization, tenant-access, and search-scope contracts."""
 
 from .access import (
     TENANCY_SCHEMA_VERSION,
@@ -46,9 +46,17 @@ from .permissions import (
     PermissionService,
     ROLE_PERMISSIONS,
 )
+from .search_scope import (
+    SEARCH_OWNERSHIP_SCHEMA_VERSION,
+    SQLiteSearchOwnershipStore,
+    SearchOwnership,
+    SearchOwnershipError,
+    SearchScopeService,
+)
 
 __all__ = [
     "AUTH_SCHEMA_VERSION",
+    "SEARCH_OWNERSHIP_SCHEMA_VERSION",
     "TENANCY_SCHEMA_VERSION",
     "AuthorizationContext",
     "AuthDataError",
@@ -73,8 +81,12 @@ __all__ = [
     "ResearchApplication",
     "ResearchContext",
     "SQLiteAuthProvider",
+    "SQLiteSearchOwnershipStore",
     "SQLiteSessionStore",
     "SQLiteWorkspaceProjectStore",
+    "SearchOwnership",
+    "SearchOwnershipError",
+    "SearchScopeService",
     "SessionPrincipal",
     "SessionPrincipalService",
     "SessionRecord",
