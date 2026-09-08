@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "record_type": "NUTEV_APPLICATION_WILLIAN_DOCTORATE_A2_INTEGRATIVE",
+  "assembly_id": "WILLIAN_DOCTORATE_A2",
+  "config_version": "a2-integrative-v1",
+  "application_template": "INTEGRATIVE_REVIEW",
+  "workflow": {
+    "workflow_type": "INTEGRATIVE_REVIEW",
+    "definition_version": "1.0",
+    "phases": [
+      "LEGACY_BINDING",
+      "SEARCH_STRATEGY",
+      "SEARCH_EXECUTION",
+      "DEDUPLICATION",
+      "TITLE_ABSTRACT_SCREENING",
+      "FULL_TEXT",
+      "EXTRACTION",
+      "HUMAN_VERIFICATION",
+      "SYNTHESIS",
+      "COMPLETE"
+    ]
+  },
+  "legacy_binding": {
+    "required": true,
+    "target_key": "article2_project",
+    "required_classification": "ARTICLE2_PRIVATE",
+    "initial_state": "REQUIRED_UNMATERIALIZED"
+  },
+  "guardrails": {
+    "private_by_default": true,
+    "no_inference_from_historical_workstream_name": true,
+    "no_inference_from_query_text": true,
+    "no_inference_from_search_id": true,
+    "no_inference_from_current_user": true,
+    "no_legacy_copy_before_binding": true,
+    "no_search_execution_during_binding": true,
+    "no_result_recalculation_during_binding": true,
+    "no_cross_project_merge": true,
+    "no_article1_import": true,
+    "no_registry_identity_rewrite": true
+  }
+}
