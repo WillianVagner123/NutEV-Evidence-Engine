@@ -15,11 +15,14 @@ from uuid import uuid4
 
 from nutev.tenancy import (
     DEFAULT_SESSION_TTL_SECONDS,
+    ContextSnapshot,
     LoginResult,
     SQLiteAuthProvider,
     SQLiteSessionStore,
+    SQLiteWorkspaceProjectStore,
     SessionPrincipal,
     SessionPrincipalService,
+    WorkspaceProjectService,
 )
 from server import (
     APP_ROOT,
@@ -48,6 +51,7 @@ _LOGIN_ATTEMPTS: dict[str, deque[float]] = defaultdict(deque)
 _JOB_OWNERS: dict[str, str] = {}
 _AUTH_SERVICE_LOCK = threading.Lock()
 _AUTH_SERVICE: SessionPrincipalService | None = None
+_ACCESS_SERVICE: WorkspaceProjectService | None = None
 
 NOINDEX_EXACT_PATHS = {
     "/ask.html",
@@ -108,14 +112,29 @@ def _auth_database_path() -> Path:
     return (APP_ROOT.parents[1] / "project_output_reference" / "platform" / "auth.sqlite3").resolve()
 
 
+def _workspace_access_service() -> WorkspaceProjectService:
+    global _ACCESS_SERVICE
+    with _AUTH_SERVICE_LOCK:
+        if _ACCESS_SERVICE is None:
+            _ACCESS_SERVICE = WorkspaceProjectService(
+                SQLiteWorkspaceProjectStore(_auth_database_path())
+            )
+        return _ACCESS_SERVICE
+
+
 def _auth_service() -> SessionPrincipalService:
     global _AUTH_SERVICE
     with _AUTH_SERVICE_LOCK:
         if _AUTH_SERVICE is None:
             database = _auth_database_path()
+            access_service = _ACCESS_SERVICE
+            if access_service is None:
+                access_service = WorkspaceProjectService(SQLiteWorkspaceProjectStore(database))
+                globals()["_ACCESS_SERVICE"] = access_service
             _AUTH_SERVICE = SessionPrincipalService(
                 SQLiteAuthProvider(database),
                 SQLiteSessionStore(database),
+                membership_loader=access_service.memberships_for_user,
                 session_ttl_seconds=_auth_session_ttl_seconds(),
             )
         return _AUTH_SERVICE
@@ -139,6 +158,35 @@ def _principal_payload(session: SessionPrincipal) -> dict[str, object]:
             for membership in principal.workspace_memberships
         ],
         "expires_at": session.expires_at.isoformat(),
+    }
+
+
+def _context_payload(snapshot: ContextSnapshot) -> dict[str, object]:
+    return {
+        "current": {
+            "workspace_id": snapshot.current.workspace_id,
+            "project_id": snapshot.current.project_id,
+        },
+        "workspaces": [
+            {
+                "id": workspace.id,
+                "name": workspace.name,
+                "slug": workspace.slug,
+            }
+            for workspace in snapshot.workspaces
+        ],
+        "projects": [
+            {
+                "id": project.id,
+                "workspace_id": project.workspace_id,
+                "name": project.name,
+                "slug": project.slug,
+                "project_type": project.project_type,
+            }
+            for project in snapshot.projects
+        ],
+        "selection_is_authorization": False,
+        "semantics": "server-side context selection; every private operation must re-authorize the target",
     }
 
 
@@ -226,7 +274,7 @@ def _agent_context_status() -> dict[str, object]:
     available: list[str] = []
     missing: list[str] = []
     for name in AGENT_CONTEXT_REQUIRED_FILES:
-        path = root / name
+        path = root / "agent-context" / "article1" / name if False else root / name
         if path.is_file():
             available.append(name)
         else:
@@ -252,15 +300,14 @@ def _should_noindex(path: str) -> bool:
 
 
 class SecureNutEVHandler(NutEVHandler):
-    """Production-facing NutEV handler with compatibility-safe auth pilot.
+    """Production-facing NutEV handler with compatibility-safe auth and context pilot.
 
-    Existing public search/history behavior remains browser-session isolated in legacy
-    mode. ``NUTEV_AUTH_MODE=pilot`` additionally enables explicit Authentication ->
-    Session -> Principal for the new auth endpoints only. Scientific/private endpoints
-    are not silently re-scoped by this PR.
+    Existing search/history behavior remains browser-session isolated. In pilot auth mode,
+    authenticated requests gain server-derived workspace memberships and a server-persisted
+    workspace/project selection. Selection never replaces authorization.
     """
 
-    server_version = "NutEVWeb/1.2"
+    server_version = "NutEVWeb/1.3"
 
     def _cookie_secure(self) -> bool:
         return (
@@ -414,6 +461,13 @@ class SecureNutEVHandler(NutEVHandler):
             return None
         return session
 
+    def _context_snapshot(self, session: SessionPrincipal) -> ContextSnapshot | None:
+        try:
+            return _workspace_access_service().context_snapshot(session.principal)
+        except Exception:
+            self._json({"error": "context_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
+            return None
+
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
         path = parsed.path
@@ -427,6 +481,7 @@ class SecureNutEVHandler(NutEVHandler):
                     "mode": mode,
                     "login_available": mode == "pilot",
                     "principal_endpoint": "/api/auth/me" if mode == "pilot" else None,
+                    "context_endpoint": "/api/context" if mode == "pilot" else None,
                     "cookie": {
                         "http_only": True,
                         "same_site": "Lax",
@@ -443,6 +498,17 @@ class SecureNutEVHandler(NutEVHandler):
             if session is not None:
                 self._json(_principal_payload(session))
             return
+        if path == "/api/context":
+            if not self._auth_pilot_enabled():
+                self._auth_not_enabled()
+                return
+            session = self._resolve_authenticated_session()
+            if session is None:
+                return
+            snapshot = self._context_snapshot(session)
+            if snapshot is not None:
+                self._json(_context_payload(snapshot))
+            return
         if path == "/api/agent-context/article1/status":
             self._json(_agent_context_status())
             return
@@ -455,6 +521,7 @@ class SecureNutEVHandler(NutEVHandler):
                     "history_scope": "browser_session",
                     "auth_mode": mode,
                     "authenticated_principal_pilot": mode == "pilot",
+                    "workspace_project_context": mode == "pilot",
                 }
             )
             return
@@ -542,6 +609,33 @@ class SecureNutEVHandler(NutEVHandler):
                     return
             self._queue_auth_cookie("", max_age=0)
             self._json({"authenticated": False}, HTTPStatus.OK)
+            return
+        if path == "/api/context/select":
+            if not self._auth_pilot_enabled():
+                self._auth_not_enabled()
+                return
+            session = self._resolve_authenticated_session()
+            if session is None:
+                return
+            try:
+                payload = self._read_json()
+                workspace_raw = payload.get("workspace_id")
+                project_raw = payload.get("project_id")
+                workspace_id = str(workspace_raw).strip() if workspace_raw else None
+                project_id = str(project_raw).strip() if project_raw else None
+                snapshot = _workspace_access_service().select_context(
+                    session.principal,
+                    workspace_id=workspace_id,
+                    project_id=project_id,
+                )
+            except (ValueError, PermissionError, KeyError):
+                # Anti-enumeration: malformed, foreign, removed, and unknown targets share one response.
+                self._json({"error": "context_not_found"}, HTTPStatus.NOT_FOUND)
+                return
+            except Exception:
+                self._json({"error": "context_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
+                return
+            self._json(_context_payload(snapshot), HTTPStatus.OK)
             return
         if path == "/api/search":
             self._json(
