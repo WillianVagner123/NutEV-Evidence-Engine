@@ -482,7 +482,18 @@ def search_evidence(
     return result
 
 
-def list_search_runs(*, output_root: Path | None = None, limit: int = 30) -> list[dict[str, Any]]:
+def list_search_runs(
+    *,
+    output_root: Path | None = None,
+    limit: int = 30,
+    allowed_search_ids: set[str] | frozenset[str] | None = None,
+) -> list[dict[str, Any]]:
+    """List persisted runs, optionally constrained by a pre-authorized ID set.
+
+    Passing an empty set returns no runs. Passing ``None`` preserves the legacy/unscoped
+    internal behavior for callers that enforce access elsewhere.
+    """
+
     root = _output_root(output_root) / "15_web_searches"
     if not root.is_dir():
         return []
@@ -493,6 +504,9 @@ def list_search_runs(*, output_root: Path | None = None, limit: int = 30) -> lis
         except (OSError, json.JSONDecodeError):
             continue
         if not isinstance(value, dict):
+            continue
+        search_id = str(value.get("search_id") or "")
+        if allowed_search_ids is not None and search_id not in allowed_search_ids:
             continue
         items.append(
             {
@@ -513,10 +527,18 @@ def list_search_runs(*, output_root: Path | None = None, limit: int = 30) -> lis
     return items[: max(1, min(int(limit), 200))]
 
 
-def load_search_run(search_id: str, *, output_root: Path | None = None) -> dict[str, Any]:
-    path = _web_run_dir(_output_root(output_root), str(search_id)) / "result.json"
+def load_search_run(
+    search_id: str,
+    *,
+    output_root: Path | None = None,
+    allowed_search_ids: set[str] | frozenset[str] | None = None,
+) -> dict[str, Any]:
+    sid = str(search_id)
+    if allowed_search_ids is not None and sid not in allowed_search_ids:
+        raise FileNotFoundError(sid)
+    path = _web_run_dir(_output_root(output_root), sid) / "result.json"
     if not path.is_file():
-        raise FileNotFoundError(search_id)
+        raise FileNotFoundError(sid)
     value = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(value, dict):
         raise RuntimeError("Run web inválido")
