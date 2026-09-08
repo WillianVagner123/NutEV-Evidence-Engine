@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "record_type": "NUTEV_APPLICATION_WILLIAN_DOCTORATE_A1_D132",
+  "config_version": "d132-v1",
+  "protocol_id": "D-132",
+  "application_template": "SCOPING_REVIEW",
+  "source": {
+    "manifest_path": "evidence/article1_press/article1_press_20260906T202201Z/HUMAN_REVIEW_SAMPLE_MANIFEST.json",
+    "expected_record_type": "NUTEV_ARTICLE1_PRESS_HUMAN_REVIEW_SAMPLE_MANIFEST",
+    "expected_run_id": "article1_press_20260906T202201Z",
+    "expected_source_run_sha256": "2ffae67debc73bfb29e271ee1f46ac3332760704188f6be3f08817d63253b63d",
+    "expected_record_count": 100
+  },
+  "sampling": {
+    "mode": "MANIFEST_EXACT",
+    "explicit_record_ids": []
+  },
+  "review": {
+    "decision_options": ["Y", "N", "U"],
+    "reason_required": true,
+    "minimum_reviewers_per_item": 2,
+    "reviewer_slots": ["A", "B"],
+    "guest_token_ttl_seconds": 604800,
+    "allowed_fields": [
+      "packet_position",
+      "record_id",
+      "delta_id",
+      "route",
+      "route_purpose",
+      "pmid",
+      "doi",
+      "title",
+      "year",
+      "journal",
+      "url"
+    ]
+  },
+  "guardrails": {
+    "private_by_default": true,
+    "source_is_read_only": true,
+    "no_resampling_in_manifest_exact_mode": true,
+    "no_automatic_press_pass": true,
+    "no_automatic_c4_decision": true,
+    "no_automatic_gf10_authorization": true,
+    "no_automatic_query_freeze": true,
+    "no_formal_search_execution": true,
+    "no_prisma_creation": true,
+    "no_registry_mutation": true,
+    "no_article_id_rewrite": true
+  }
+}
