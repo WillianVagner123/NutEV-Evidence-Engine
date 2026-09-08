@@ -672,7 +672,7 @@ def test_http_same_global_article_private_placement_death_test(tmp_path: Path) -
         encoded = json.dumps(access_payload)
         assert "/never/expose/workspace-a.pdf" not in encoded
         assert "cache_path" not in encoded
-        assert access_payload["cache_path_exposed"] is False
+        assert "storage_path" not in encoded
         assert len(access_payload["grants"]) == 1
 
         status, b_access, _ = _http(
