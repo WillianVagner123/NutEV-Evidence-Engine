@@ -13,6 +13,14 @@ import time
 from urllib.parse import parse_qs, unquote, urlparse
 from uuid import uuid4
 
+from nutev.tenancy import (
+    DEFAULT_SESSION_TTL_SECONDS,
+    LoginResult,
+    SQLiteAuthProvider,
+    SQLiteSessionStore,
+    SessionPrincipal,
+    SessionPrincipalService,
+)
 from server import (
     APP_ROOT,
     NutEVHandler,
@@ -25,16 +33,21 @@ from search_access import filter_owned_runs, record_search_owner, search_owned_b
 from search_adapter import list_search_runs, load_search_run
 
 SESSION_COOKIE = "nutev_session"
+AUTH_SESSION_COOKIE = "nutev_auth_session"
 _SESSION_RE = re.compile(r"^[a-f0-9]{32}$")
 RATE_WINDOW_SECONDS = 10 * 60
 SESSION_START_LIMIT = 12
 IP_START_LIMIT = 30
 SESSION_ACTIVE_LIMIT = 2
+LOGIN_IP_LIMIT = 12
 SEARCH_OWNER_WATCH_INTERVAL_SECONDS = 0.25
 _RATE_LOCK = threading.Lock()
 _SESSION_STARTS: dict[str, deque[float]] = defaultdict(deque)
 _IP_STARTS: dict[str, deque[float]] = defaultdict(deque)
+_LOGIN_ATTEMPTS: dict[str, deque[float]] = defaultdict(deque)
 _JOB_OWNERS: dict[str, str] = {}
+_AUTH_SERVICE_LOCK = threading.Lock()
+_AUTH_SERVICE: SessionPrincipalService | None = None
 
 NOINDEX_EXACT_PATHS = {
     "/ask.html",
@@ -68,6 +81,65 @@ AGENT_CONTEXT_REQUIRED_FILES = (
 def _prune_times(values: deque[float], now: float) -> None:
     while values and now - values[0] > RATE_WINDOW_SECONDS:
         values.popleft()
+
+
+def _auth_mode() -> str:
+    mode = str(os.environ.get("NUTEV_AUTH_MODE") or "legacy").strip().casefold()
+    if mode not in {"legacy", "pilot"}:
+        raise RuntimeError("NUTEV_AUTH_MODE must be 'legacy' or 'pilot'")
+    return mode
+
+
+def _auth_session_ttl_seconds() -> int:
+    raw = str(os.environ.get("NUTEV_AUTH_SESSION_TTL_SECONDS") or DEFAULT_SESSION_TTL_SECONDS)
+    try:
+        value = int(raw)
+    except ValueError as exc:
+        raise RuntimeError("NUTEV_AUTH_SESSION_TTL_SECONDS must be an integer") from exc
+    if value < 60 or value > 30 * 24 * 60 * 60:
+        raise RuntimeError("NUTEV_AUTH_SESSION_TTL_SECONDS outside allowed range")
+    return value
+
+
+def _auth_database_path() -> Path:
+    configured = str(os.environ.get("NUTEV_AUTH_DB") or "").strip()
+    if configured:
+        return Path(configured).expanduser().resolve()
+    return (APP_ROOT.parents[1] / "project_output_reference" / "platform" / "auth.sqlite3").resolve()
+
+
+def _auth_service() -> SessionPrincipalService:
+    global _AUTH_SERVICE
+    with _AUTH_SERVICE_LOCK:
+        if _AUTH_SERVICE is None:
+            database = _auth_database_path()
+            _AUTH_SERVICE = SessionPrincipalService(
+                SQLiteAuthProvider(database),
+                SQLiteSessionStore(database),
+                session_ttl_seconds=_auth_session_ttl_seconds(),
+            )
+        return _AUTH_SERVICE
+
+
+def _principal_payload(session: SessionPrincipal) -> dict[str, object]:
+    principal = session.principal
+    return {
+        "authenticated": True,
+        "user": {
+            "id": session.user.id,
+            "display_name": session.user.display_name,
+        },
+        "global_roles": sorted(role.value for role in principal.global_roles),
+        "workspace_memberships": [
+            {
+                "workspace_id": membership.workspace_id,
+                "role": membership.role.value,
+                "status": membership.status.value,
+            }
+            for membership in principal.workspace_memberships
+        ],
+        "expires_at": session.expires_at.isoformat(),
+    }
 
 
 def _mark_job_ownership_status(job_id: str, status: str) -> None:
@@ -180,25 +252,54 @@ def _should_noindex(path: str) -> bool:
 
 
 class SecureNutEVHandler(NutEVHandler):
-    """Production-facing NutEV handler with browser-session isolation.
+    """Production-facing NutEV handler with compatibility-safe auth pilot.
 
-    The scientific engine and persisted result files remain unchanged. Public
-    history and asynchronous jobs are scoped to a server-issued opaque browser
-    session, while legacy/unowned runs stay preserved on disk but are not
-    exposed through the public history API.
+    Existing public search/history behavior remains browser-session isolated in legacy
+    mode. ``NUTEV_AUTH_MODE=pilot`` additionally enables explicit Authentication ->
+    Session -> Principal for the new auth endpoints only. Scientific/private endpoints
+    are not silently re-scoped by this PR.
     """
 
-    server_version = "NutEVWeb/1.1"
+    server_version = "NutEVWeb/1.2"
+
+    def _cookie_secure(self) -> bool:
+        return (
+            self.headers.get("X-Forwarded-Proto", "").lower() == "https"
+            or os.environ.get("NUTEV_ENVIRONMENT") == "production"
+        )
 
     def end_headers(self) -> None:
         pending = getattr(self, "_pending_session_cookie", "")
         if pending:
-            secure = self.headers.get("X-Forwarded-Proto", "").lower() == "https" or os.environ.get("NUTEV_ENVIRONMENT") == "production"
-            flags = [f"{SESSION_COOKIE}={pending}", "Path=/", "HttpOnly", "SameSite=Lax", "Max-Age=2592000"]
-            if secure:
+            flags = [
+                f"{SESSION_COOKIE}={pending}",
+                "Path=/",
+                "HttpOnly",
+                "SameSite=Lax",
+                "Max-Age=2592000",
+            ]
+            if self._cookie_secure():
                 flags.append("Secure")
             self.send_header("Set-Cookie", "; ".join(flags))
             self._pending_session_cookie = ""
+
+        auth_pending = getattr(self, "_pending_auth_cookie", None)
+        if auth_pending is not None:
+            token, max_age = auth_pending
+            flags = [
+                f"{AUTH_SESSION_COOKIE}={token}",
+                "Path=/",
+                "HttpOnly",
+                "SameSite=Lax",
+                f"Max-Age={int(max_age)}",
+            ]
+            if int(max_age) == 0:
+                flags.append("Expires=Thu, 01 Jan 1970 00:00:00 GMT")
+            if self._cookie_secure():
+                flags.append("Secure")
+            self.send_header("Set-Cookie", "; ".join(flags))
+            self._pending_auth_cookie = None
+
         path = urlparse(self.path).path
         if _should_noindex(path):
             self.send_header("X-Robots-Tag", "noindex, nofollow")
@@ -210,19 +311,28 @@ class SecureNutEVHandler(NutEVHandler):
         )
         super().end_headers()
 
-    def _session_token(self) -> str:
+    def _cookie_value(self, name: str) -> str:
         raw = self.headers.get("Cookie", "")
         cookie = SimpleCookie()
         try:
             cookie.load(raw)
         except Exception:
-            cookie = SimpleCookie()
-        morsel = cookie.get(SESSION_COOKIE)
-        token = morsel.value if morsel else ""
+            return ""
+        morsel = cookie.get(name)
+        return morsel.value if morsel else ""
+
+    def _session_token(self) -> str:
+        token = self._cookie_value(SESSION_COOKIE)
         if not _SESSION_RE.fullmatch(token):
             token = uuid4().hex
             self._pending_session_cookie = token
         return token
+
+    def _auth_token(self) -> str:
+        return self._cookie_value(AUTH_SESSION_COOKIE)
+
+    def _queue_auth_cookie(self, token: str, *, max_age: int) -> None:
+        self._pending_auth_cookie = (str(token), int(max_age))
 
     def _owner_scope(self) -> str:
         return sha256(self._session_token().encode("ascii")).hexdigest()
@@ -230,6 +340,17 @@ class SecureNutEVHandler(NutEVHandler):
     def _client_ip(self) -> str:
         forwarded = self.headers.get("X-Forwarded-For", "").split(",", 1)[0].strip()
         return forwarded or str(self.client_address[0])
+
+    def _consume_login_attempt(self) -> bool:
+        now = time.monotonic()
+        ip = self._client_ip()
+        with _RATE_LOCK:
+            attempts = _LOGIN_ATTEMPTS[ip]
+            _prune_times(attempts, now)
+            if len(attempts) >= LOGIN_IP_LIMIT:
+                return False
+            attempts.append(now)
+            return True
 
     def _consume_search_start(self, owner_scope: str) -> tuple[bool, str]:
         now = time.monotonic()
@@ -265,21 +386,75 @@ class SecureNutEVHandler(NutEVHandler):
             record_search_owner(search_id, owner_scope)
         return job
 
+    def _auth_pilot_enabled(self) -> bool:
+        return _auth_mode() == "pilot"
+
+    def _auth_not_enabled(self) -> None:
+        self._json(
+            {
+                "error": "auth_pilot_disabled",
+                "message": "Explicit platform authentication is not enabled in this runtime.",
+            },
+            HTTPStatus.NOT_FOUND,
+        )
+
+    def _resolve_authenticated_session(self) -> SessionPrincipal | None:
+        token = self._auth_token()
+        if not token:
+            self._json({"error": "authentication_required"}, HTTPStatus.UNAUTHORIZED)
+            return None
+        try:
+            session = _auth_service().resolve(token)
+        except Exception:
+            self._json({"error": "auth_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
+            return None
+        if session is None:
+            self._queue_auth_cookie("", max_age=0)
+            self._json({"error": "invalid_or_expired_session"}, HTTPStatus.UNAUTHORIZED)
+            return None
+        return session
+
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
         path = parsed.path
         if path == "/api/version":
             self._json(_build_metadata())
             return
+        if path == "/api/auth/status":
+            mode = _auth_mode()
+            self._json(
+                {
+                    "mode": mode,
+                    "login_available": mode == "pilot",
+                    "principal_endpoint": "/api/auth/me" if mode == "pilot" else None,
+                    "cookie": {
+                        "http_only": True,
+                        "same_site": "Lax",
+                        "secure_in_production": True,
+                    },
+                }
+            )
+            return
+        if path == "/api/auth/me":
+            if not self._auth_pilot_enabled():
+                self._auth_not_enabled()
+                return
+            session = self._resolve_authenticated_session()
+            if session is not None:
+                self._json(_principal_payload(session))
+            return
         if path == "/api/agent-context/article1/status":
             self._json(_agent_context_status())
             return
         if path == "/api/capabilities":
+            mode = _auth_mode()
             self._json(
                 {
                     "coordinator_available": self._is_loopback(),
                     "remote_reviewer_available": True,
                     "history_scope": "browser_session",
+                    "auth_mode": mode,
+                    "authenticated_principal_pilot": mode == "pilot",
                 }
             )
             return
@@ -315,8 +490,59 @@ class SecureNutEVHandler(NutEVHandler):
             return
         super().do_GET()
 
+    def _login_response(self, result: LoginResult) -> None:
+        self._queue_auth_cookie(
+            result.session_token,
+            max_age=_auth_session_ttl_seconds(),
+        )
+        self._json(_principal_payload(result.session), HTTPStatus.OK)
+
     def do_POST(self) -> None:
         path = urlparse(self.path).path
+        if path == "/api/auth/login":
+            if not self._auth_pilot_enabled():
+                self._auth_not_enabled()
+                return
+            if not self._consume_login_attempt():
+                self._json({"error": "login_rate_limited"}, HTTPStatus.TOO_MANY_REQUESTS)
+                return
+            try:
+                payload = self._read_json()
+            except ValueError:
+                self._json({"error": "invalid_credentials"}, HTTPStatus.UNAUTHORIZED)
+                return
+            email = str(payload.get("email") or "")
+            password = str(payload.get("password") or "")
+            try:
+                result = _auth_service().login(email, password)
+            except Exception:
+                self._json({"error": "auth_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
+                return
+            if result is None:
+                self._json({"error": "invalid_credentials"}, HTTPStatus.UNAUTHORIZED)
+                return
+            old_token = self._auth_token()
+            if old_token and old_token != result.session_token:
+                try:
+                    _auth_service().logout(old_token)
+                except Exception:
+                    pass
+            self._login_response(result)
+            return
+        if path == "/api/auth/logout":
+            if not self._auth_pilot_enabled():
+                self._auth_not_enabled()
+                return
+            token = self._auth_token()
+            if token:
+                try:
+                    _auth_service().logout(token)
+                except Exception:
+                    self._json({"error": "auth_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
+                    return
+            self._queue_auth_cookie("", max_age=0)
+            self._json({"authenticated": False}, HTTPStatus.OK)
+            return
         if path == "/api/search":
             self._json(
                 {
@@ -358,6 +584,10 @@ def main() -> int:
     parser.add_argument("--host", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
+    # Validate compatibility mode before binding a public socket.
+    _auth_mode()
+    if _auth_mode() == "pilot":
+        _auth_session_ttl_seconds()
     server = ThreadingHTTPServer((args.host, args.port), SecureNutEVHandler)
     print(f"NutEV secure web disponível em http://{args.host}:{args.port}/")
     try:
