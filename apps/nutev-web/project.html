@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Projeto — NutEV Evidence Engine</title>
+  <meta name="description" content="Contexto do projeto, aplicação de pesquisa e módulos do NutEV.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./product-ui.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <nav aria-label="Navegação principal"></nav>
+      <div class="sidebar-note">O projeto organiza o contexto privado. A aplicação define a receita metodológica sem alterar as operações científicas universais do Engine.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><h1>Projeto de pesquisa</h1><p>Contexto, aplicação metodológica e acesso às operações do NutEV.</p></div><span class="status-pill" id="projectHealth">carregando…</span></header>
+
+      <section id="projectState" class="card product-panel" aria-live="polite">
+        <div class="empty-state"><strong>Carregando projeto…</strong><span>Validando sessão e contexto atual.</span></div>
+      </section>
+
+      <section id="applicationPanel" class="card product-panel hidden">
+        <div class="product-panel-head"><div><span class="home-eyebrow">Aplicação de pesquisa</span><h2 id="applicationTitle">—</h2><p id="applicationDescription">—</p></div><span class="project-badge" id="applicationStatus">—</span></div>
+        <div id="applicationComponents" class="component-list" aria-label="Componentes da aplicação"></div>
+        <details class="advanced-id-entry"><summary>Detalhes técnicos da configuração</summary><div id="applicationTechnical" class="term-help"></div></details>
+      </section>
+
+      <section id="templatePanel" class="card product-panel hidden">
+        <div class="product-panel-head"><div><span class="home-eyebrow">Configuração inicial</span><h2>Escolha como este projeto vai usar o NutEV</h2><p>A aplicação seleciona uma composição metodológica. Busca, normalização, deduplicação, biblioteca e rastreabilidade continuam sendo capacidades universais do Engine.</p></div></div>
+        <div id="templateGrid" class="template-grid"></div>
+        <div class="product-actions"><button id="configureApplication" class="action-primary" type="button">Configurar aplicação</button><span id="configureStatus" class="small-state" aria-live="polite"></span></div>
+      </section>
+
+      <section id="projectModulesSection" class="product-panel hidden">
+        <div class="product-panel-head"><div><span class="home-eyebrow">Fluxo do projeto</span><h2>O que você quer fazer agora?</h2><p>As ações abaixo permanecem isoladas no workspace e projeto selecionados.</p></div></div>
+        <div id="projectModules" class="module-grid"></div>
+      </section>
+
+      <section class="card workbench-guardrail">
+        <strong>Limite científico</strong>
+        <p>A aplicação organiza o workflow do projeto. Ela não transforma ranking em qualidade, não cria inclusão/exclusão automaticamente, não autoriza PRISMA e não converte estados técnicos em decisão científica humana.</p>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./product-ui.js"></script>
+  <script type="module" src="./workspace-context.js"></script>
+  <script type="module" src="./project-page.js"></script>
+</body>
+</html>
