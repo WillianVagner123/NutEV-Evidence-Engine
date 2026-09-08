@@ -1,4 +1,4 @@
-"""Identity, authentication, authorization, tenant-access, and search-scope contracts."""
+"""Identity, authentication, authorization, tenant-access, and scientific application contracts."""
 
 from .access import (
     TENANCY_SCHEMA_VERSION,
@@ -7,6 +7,19 @@ from .access import (
     SQLiteWorkspaceProjectStore,
     TenancyDataError,
     WorkspaceProjectService,
+)
+from .applications import (
+    APPLICATION_SCHEMA_VERSION,
+    BUILTIN_APPLICATION_TEMPLATES,
+    GENERIC_EVIDENCE_PROJECT,
+    INTEGRATIVE_REVIEW,
+    SCOPING_REVIEW,
+    ApplicationDataError,
+    ApplicationInstance,
+    ApplicationService,
+    ApplicationTemplate,
+    ApplicationTemplateCatalog,
+    SQLiteApplicationStore,
 )
 from .auth import (
     AUTH_SCHEMA_VERSION,
@@ -66,10 +79,20 @@ from .search_scope import (
 )
 
 __all__ = [
+    "APPLICATION_SCHEMA_VERSION",
     "AUTH_SCHEMA_VERSION",
+    "BUILTIN_APPLICATION_TEMPLATES",
     "EVIDENCE_LIBRARY_SCHEMA_VERSION",
+    "GENERIC_EVIDENCE_PROJECT",
+    "INTEGRATIVE_REVIEW",
+    "SCOPING_REVIEW",
     "SEARCH_OWNERSHIP_SCHEMA_VERSION",
     "TENANCY_SCHEMA_VERSION",
+    "ApplicationDataError",
+    "ApplicationInstance",
+    "ApplicationService",
+    "ApplicationTemplate",
+    "ApplicationTemplateCatalog",
     "AuthorizationContext",
     "AuthDataError",
     "AuthProvider",
@@ -99,6 +122,7 @@ __all__ = [
     "ROLE_PERMISSIONS",
     "ResearchApplication",
     "ResearchContext",
+    "SQLiteApplicationStore",
     "SQLiteAuthProvider",
     "SQLiteEvidenceLibraryStore",
     "SQLiteSearchOwnershipStore",
