@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "pattern": "REPLACE_WITH_REVIEWED_ARTICLE2_RUNTIME_PATH/*",
+      "classification": "ARTICLE2_PRIVATE",
+      "target_key": "article2_project",
+      "evidence": "Replace this example with a reviewed runtime path and concrete provenance demonstrating that the files belong to Article 2. Do not infer ownership from search IDs, queries, browser sessions, or similar folder names."
+    }
+  ]
+}
