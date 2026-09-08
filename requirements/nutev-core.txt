@@ -1,3 +1,4 @@
 # NutEV Reference Engine runtime dependencies.
 # Keep synchronized with [project.dependencies] in pyproject.toml.
+argon2-cffi>=25.1,<26
 requests>=2.32,<3
