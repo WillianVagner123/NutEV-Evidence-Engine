@@ -15,7 +15,6 @@ from server import (
     _load_search_job,
     _now,
     _prune_jobs_locked,
-    _query_strings,
     _run_search_job,
     _selected_providers,
 )
