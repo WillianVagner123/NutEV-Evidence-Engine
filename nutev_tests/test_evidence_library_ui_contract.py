@@ -51,7 +51,8 @@ def test_full_text_ui_contract_never_mentions_internal_cache_path() -> None:
     page = (WEB / "evidence-library-page.js").read_text(encoding="utf-8")
     api = (WEB / "tenant_library_api.py").read_text(encoding="utf-8")
 
-    assert "cache_path_exposed" in api
-    assert '"cache_path_exposed": False' in api
+    assert "cache_path_exposed" not in api
+    assert '"cache_path"' not in api
+    assert '"storage_path"' not in api
     assert "cache_path" not in page
     assert "storage_path" not in page
