@@ -14,6 +14,7 @@ class Permission(StrEnum):
     WORKSPACE_DELETE = "workspace.delete"
     PROJECT_CREATE = "project.create"
     SEARCH_RUN = "search.run"
+    SEARCH_HISTORY_READ = "search.history.read"
     PROJECT_BANK_READ = "project.bank.read"
     SCREEN = "project.screen"
     EXTRACT = "project.extract"
@@ -69,6 +70,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.WORKSPACE_DELETE: _POLICY,
         Permission.PROJECT_CREATE: _FULL,
         Permission.SEARCH_RUN: _FULL,
+        Permission.SEARCH_HISTORY_READ: _FULL,
         Permission.PROJECT_BANK_READ: _FULL,
         Permission.SCREEN: _FULL,
         Permission.EXTRACT: _FULL,
@@ -81,6 +83,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.MEMBERS_MANAGE: _FULL,
         Permission.PROJECT_CREATE: _FULL,
         Permission.SEARCH_RUN: _FULL,
+        Permission.SEARCH_HISTORY_READ: _FULL,
         Permission.PROJECT_BANK_READ: _FULL,
         Permission.SCREEN: _FULL,
         Permission.EXTRACT: _FULL,
@@ -91,6 +94,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
     WorkspaceRole.RESEARCHER: {
         Permission.PROJECT_CREATE: _POLICY,
         Permission.SEARCH_RUN: _FULL,
+        Permission.SEARCH_HISTORY_READ: _FULL,
         Permission.PROJECT_BANK_READ: _FULL,
         Permission.SCREEN: _FULL,
         Permission.EXTRACT: _FULL,
@@ -103,6 +107,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.EXTRACT: _ASSIGNED,
     },
     WorkspaceRole.VIEWER: {
+        Permission.SEARCH_HISTORY_READ: _FULL,
         Permission.PROJECT_BANK_READ: _FULL,
         Permission.EXPORT: _POLICY,
     },
@@ -125,8 +130,8 @@ class PermissionService:
     """Fail-closed authorization contract for the multi-tenant platform.
 
     This service intentionally has no persistence or HTTP/session dependency. Callers must
-    resolve the Principal and target project/workspace separately. PR-3 will supply the
-    Workspace/Project services that can establish ``project_access_confirmed``.
+    resolve the Principal and target project/workspace separately. Workspace/Project services
+    establish ``project_access_confirmed`` before project-scoped permissions are evaluated.
     """
 
     def decide(
@@ -173,7 +178,12 @@ class PermissionService:
             )
 
         project_access_required = permission in _PROJECT_SCOPED or (
-            permission in {Permission.SEARCH_RUN, Permission.EXPORT} and ctx.project_id is not None
+            permission in {
+                Permission.SEARCH_RUN,
+                Permission.SEARCH_HISTORY_READ,
+                Permission.EXPORT,
+            }
+            and ctx.project_id is not None
         )
         if project_access_required and not ctx.project_access_confirmed:
             return PermissionDecision(

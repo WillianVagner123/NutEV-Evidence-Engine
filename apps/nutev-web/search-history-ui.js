@@ -2,6 +2,7 @@ const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 
 let latestHistory=[];
+let latestScope='';
 let scheduled=false;
 
 function normalize(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR')}
@@ -51,13 +52,48 @@ function prepareNewQuickSearch(item){
   window.NutEVSearchUX?.showFeedback?.('Pergunta carregada. Revise fontes e termos; a nova busca só começa quando você clicar em “Buscar artigos”.','warning');
 }
 
+async function loadHistoryScope(scope){
+  const requested=scope==='project'?'project':'workspace';
+  const message=$('#historyScopeMessage');if(message)message.textContent='Atualizando histórico…';
+  try{
+    const loader=window.NutEVSearchEvents?.loadHistoryScope;
+    if(typeof loader!=='function')throw new Error('history_event_bus_unavailable');
+    await loader(requested,50);
+    if(message)message.textContent='';
+  }catch(error){
+    const status=Number(error?.status||0);
+    if(message)message.textContent=status===409&&requested==='project'?'Selecione um projeto acessível para ver as buscas desse projeto.':'Não foi possível atualizar este histórico agora.';
+  }
+}
+
+function scopeControls(){
+  if(!['workspace','project'].includes(latestScope))return'';
+  return `<div class="history-scope-switch" role="group" aria-label="Escopo do histórico"><button type="button" class="ghost${latestScope==='workspace'?' active':''}" data-history-scope="workspace">Buscas do workspace</button><button type="button" class="ghost${latestScope==='project'?' active':''}" data-history-scope="project">Buscas do projeto</button><span id="historyScopeMessage" aria-live="polite"></span></div>`;
+}
+
 function ensureToolbar(root){
-  let toolbar=root.querySelector(':scope > .history-workspace');if(toolbar)return toolbar;
+  let toolbar=root.querySelector(':scope > .history-workspace');
+  if(toolbar){
+    const existing=toolbar.querySelector('.history-scope-switch');
+    if(existing)existing.outerHTML=scopeControls();
+    else if(scopeControls())toolbar.insertAdjacentHTML('afterbegin',scopeControls());
+    bindScopeButtons(toolbar);
+    return toolbar;
+  }
   toolbar=document.createElement('div');toolbar.className='history-workspace';
-  toolbar.innerHTML=`<div class="history-workspace-copy"><strong>Memória das suas buscas</strong><span>Abra uma execução já salva ou reutilize somente a pergunta para preparar uma nova busca.</span></div><label class="history-filter">Buscar no histórico<input id="historyFilter" type="search" autocomplete="off" placeholder="Filtrar por pergunta ou status"></label><div id="historyVisibleCount" class="history-visible-count" aria-live="polite"></div>`;
+  toolbar.innerHTML=`${scopeControls()}<div class="history-workspace-copy"><strong>Memória das suas buscas</strong><span>Abra uma execução já salva ou reutilize somente a pergunta para preparar uma nova busca.</span></div><label class="history-filter">Buscar no histórico<input id="historyFilter" type="search" autocomplete="off" placeholder="Filtrar por pergunta ou status"></label><div id="historyVisibleCount" class="history-visible-count" aria-live="polite"></div>`;
   root.prepend(toolbar);
   toolbar.querySelector('#historyFilter').addEventListener('input',applyFilter);
+  bindScopeButtons(toolbar);
   return toolbar;
+}
+
+function bindScopeButtons(toolbar){
+  toolbar.querySelectorAll('[data-history-scope]').forEach(button=>{
+    if(button.dataset.bound==='true')return;
+    button.dataset.bound='true';
+    button.addEventListener('click',()=>loadHistoryScope(button.dataset.historyScope));
+  });
 }
 
 function enrichItem(node,item){
@@ -71,7 +107,8 @@ function enrichItem(node,item){
   openButton.innerHTML=`<span class="history-query">${esc(query)}</span><span class="history-open-label">Abrir resultados</span>`;
   const oldMeta=node.querySelector('.history-meta');oldMeta?.remove();
   const details=document.createElement('div');details.className='history-card-details';
-  details.innerHTML=`<div class="history-status-row"><span class="history-status ${status.tone}">${esc(status.label)}</span><span>${esc(dateLabel(item?.created_at))}</span></div><div class="history-counts"><span><strong>${Number(item?.unique_records||0).toLocaleString('pt-BR')}</strong> únicas</span><span><strong>${Number(item?.returned_records||0).toLocaleString('pt-BR')}</strong> exibidas</span><span class="${gaps?'has-gaps':''}"><strong>${gaps}</strong> lacuna${gaps===1?'':'s'} de fonte/auditoria</span></div><div class="history-actions"><button type="button" class="ghost" data-prepare-search="${esc(String(item?.search_id||''))}">Usar pergunta em nova busca</button></div>`;
+  const projectLabel=item?.project_id?'<span>Projeto</span>':'<span>Workspace</span>';
+  details.innerHTML=`<div class="history-status-row"><span class="history-status ${status.tone}">${esc(status.label)}</span><span>${esc(dateLabel(item?.created_at))}</span>${projectLabel}</div><div class="history-counts"><span><strong>${Number(item?.unique_records||0).toLocaleString('pt-BR')}</strong> únicas</span><span><strong>${Number(item?.returned_records||0).toLocaleString('pt-BR')}</strong> exibidas</span><span class="${gaps?'has-gaps':''}"><strong>${gaps}</strong> lacuna${gaps===1?'':'s'} de fonte/auditoria</span></div><div class="history-actions"><button type="button" class="ghost" data-prepare-search="${esc(String(item?.search_id||''))}">Usar pergunta em nova busca</button></div>`;
   node.appendChild(details);
   details.querySelector('[data-prepare-search]')?.addEventListener('click',()=>prepareNewQuickSearch(item));
 }
@@ -86,18 +123,28 @@ function applyFilter(){
 
 function enhanceHistory(){
   scheduled=false;
-  const root=$('#historyList');if(!root||!latestHistory.length)return;
-  const items=[...root.querySelectorAll(':scope > .history-item')];if(!items.length)return;
-  ensureToolbar(root);
-  const map=byId();
-  items.forEach(node=>{const id=String(node.querySelector('button[data-id]')?.dataset.id||'');const item=map.get(id);if(item)enrichItem(node,item)});
-  applyFilter();
+  const root=$('#historyList');if(!root)return;
+  if(latestHistory.length){
+    const items=[...root.querySelectorAll(':scope > .history-item')];
+    if(items.length){
+      ensureToolbar(root);
+      const map=byId();
+      items.forEach(node=>{const id=String(node.querySelector('button[data-id]')?.dataset.id||'');const item=map.get(id);if(item)enrichItem(node,item)});
+      applyFilter();
+      return;
+    }
+  }
+  if(['workspace','project'].includes(latestScope))ensureToolbar(root);
 }
 function scheduleEnhance(){if(scheduled)return;scheduled=true;requestAnimationFrame(enhanceHistory)}
 
-window.addEventListener('nutev:search-history',event=>{latestHistory=Array.isArray(event.detail?.searches)?event.detail.searches:[];scheduleEnhance()});
+window.addEventListener('nutev:search-history',event=>{
+  latestHistory=Array.isArray(event.detail?.searches)?event.detail.searches:[];
+  latestScope=String(event.detail?.scope||'');
+  scheduleEnhance();
+});
 const historyRoot=$('#historyList');
 if(historyRoot)new MutationObserver(scheduleEnhance).observe(historyRoot,{childList:true});
 window.addEventListener('pageshow',()=>{const cached=window.NutEVSearchEvents?.getLastHistory?.()||[];if(cached.length){latestHistory=cached;scheduleEnhance()}});
 
-window.NutEVSearchHistory={prepareNewQuickSearch,statusModel,gapCount};
+window.NutEVSearchHistory={prepareNewQuickSearch,statusModel,gapCount,loadHistoryScope};
