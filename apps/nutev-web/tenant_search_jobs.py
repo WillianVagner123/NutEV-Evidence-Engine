@@ -18,8 +18,13 @@ from server import (
     _run_search_job,
     _selected_providers,
 )
+from tenant_library_api import install_library_routes
 
 SEARCH_OWNER_WATCH_INTERVAL_SECONDS = 0.25
+
+# SecureNutEVHandler imports this module and delegates unknown routes to NutEVHandler.
+# Install the authenticated Evidence Library extension on that shared base handler once.
+install_library_routes()
 
 
 def create_tenant_search_job(
