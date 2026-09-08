@@ -72,10 +72,18 @@ def test_article2_assembly_reuses_platform_primitives_without_copying_article1_o
     assert source != a1
 
 
-def test_tenant_platform_installs_article2_as_an_application_extension() -> None:
+def test_tenant_platform_dark_launches_article2_with_lazy_import() -> None:
     routes = ROUTES.read_text(encoding="utf-8")
+    assert 'os.environ.get("NUTEV_ARTICLE2_ENABLED")' in routes
+    assert "if _article2_enabled():" in routes
     assert "from article2_integrative_api import install_article2_integrative_routes" in routes
     assert "install_article2_integrative_routes()" in routes
+
+    # Import must stay inside the feature-flag branch so the default server keeps the
+    # proven route/handler chain while Article 2 historical ownership is unmaterialized.
+    before_flag, after_flag = routes.split("if _article2_enabled():", 1)
+    assert "article2_integrative_api" not in before_flag
+    assert "article2_integrative_api" in after_flag
 
 
 def test_article2_runtime_does_not_treat_historical_workstream_names_as_ownership() -> None:
