@@ -10,12 +10,28 @@ def _providers() -> dict[str, object]:
     }
 
 
+def _pilot_auth() -> dict[str, object]:
+    return {
+        "mode": "pilot",
+        "login_available": True,
+        "principal_endpoint": "/api/auth/me",
+        "context_endpoint": "/api/context",
+        "cookie": {
+            "http_only": True,
+            "same_site": "Lax",
+            "secure_in_production": True,
+        },
+    }
+
+
 def test_live_http_payload_contract_accepts_canonical_runtime() -> None:
     failures = validate_runtime_payloads(
         health={"status": "ok"},
         version={"commit": "abc123"},
         providers=_providers(),
         expected_commit="abc123",
+        auth_status=_pilot_auth(),
+        expected_auth_mode="pilot",
     )
 
     assert failures == []
@@ -73,3 +89,41 @@ def test_live_http_payload_contract_fails_when_health_is_not_ok() -> None:
     )
 
     assert "health.status must be 'ok'" in failures
+
+
+def test_final_release_contract_rejects_legacy_auth_mode() -> None:
+    legacy = {
+        "mode": "legacy",
+        "login_available": False,
+        "cookie": {
+            "http_only": True,
+            "secure_in_production": True,
+        },
+    }
+    failures = validate_runtime_payloads(
+        health={"status": "ok"},
+        version={"commit": "abc123"},
+        providers=_providers(),
+        expected_commit="abc123",
+        auth_status=legacy,
+        expected_auth_mode="pilot",
+    )
+    assert any("auth mode mismatch" in item for item in failures)
+    assert any("login_available" in item for item in failures)
+
+
+def test_final_release_contract_requires_secure_http_only_cookie_contract() -> None:
+    auth = _pilot_auth()
+    auth["cookie"] = {
+        "http_only": False,
+        "secure_in_production": False,
+    }
+    failures = validate_runtime_payloads(
+        health={"status": "ok"},
+        version={"commit": "abc123"},
+        providers=_providers(),
+        expected_commit="abc123",
+        auth_status=auth,
+        expected_auth_mode="pilot",
+    )
+    assert "pilot auth cookie contract is incomplete" in failures
