@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Evidence Library — NutEV Evidence Engine</title>
+  <meta name="description" content="Evidence Library privada do workspace/projeto, baseada no Global Evidence Registry do NutEV.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./product-ui.css">
+  <link rel="stylesheet" href="./saved-library.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <nav aria-label="Navegação principal"></nav>
+      <div class="sidebar-note">O documento bibliográfico é global; estado, notas, tags e acesso a texto completo pertencem ao workspace/projeto.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div><h1>Evidence Library</h1><p>Documentos globais reutilizáveis com placements privados por workspace e projeto.</p></div>
+        <span class="status-pill" id="libraryHealth">verificando contexto…</span>
+      </header>
+      <section class="card" id="libraryScopeCard">
+        <div class="section-head"><div><h2>Escopo privado</h2><p id="libraryContext">Carregando workspace/projeto atual…</p></div></div>
+        <div class="controls-row">
+          <label>Visualização
+            <select id="libraryScope">
+              <option value="workspace">Workspace inteiro</option>
+              <option value="project">Projeto atual</option>
+            </select>
+          </label>
+          <button class="ghost" id="refreshLibrary" type="button">Atualizar</button>
+        </div>
+      </section>
+      <section class="card" id="librarySaveCard">
+        <div class="section-head"><div><h2>Adicionar documento global</h2><p>Use o <code>article_id</code> canônico já materializado pelo Registry. O NutEV não cria uma segunda identidade bibliográfica.</p></div></div>
+        <div class="controls-row">
+          <label style="flex:1">article_id
+            <input id="libraryArticleId" type="text" autocomplete="off" placeholder="article_id canônico do Registry">
+          </label>
+          <label>Estado
+            <select id="libraryState">
+              <option value="not_screened">Não triado</option>
+              <option value="included">Incluído</option>
+              <option value="excluded">Excluído</option>
+              <option value="background">Background</option>
+            </select>
+          </label>
+        </div>
+        <label>Tags <input id="libraryTags" type="text" autocomplete="off" placeholder="separadas por vírgula"></label>
+        <label>Nota privada <textarea id="libraryNotes" rows="3" placeholder="Nota deste workspace/projeto; nunca entra no GlobalDocument."></textarea></label>
+        <div class="search-actions"><button class="primary" id="saveLibraryPlacement" type="button">Salvar placement</button><span id="librarySaveStatus" aria-live="polite"></span></div>
+      </section>
+      <section class="card">
+        <div class="section-head"><div><h2>Documentos neste escopo</h2><p>Metadados públicos podem ser compartilhados; decisões e notas abaixo são privadas.</p></div></div>
+        <div id="libraryStateMessage" class="workbench-state">Carregando…</div>
+        <div id="libraryEntries"></div>
+      </section>
+      <section class="card workbench-guardrail">
+        <strong>Boundary científico e de acesso</strong>
+        <p>Placement não altera o artigo global. Estado de triagem, tags e notas não são qualidade, certeza ou recomendação. A existência de full text no sistema não autoriza redistribuição; acesso depende de grant válido.</p>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./product-ui.js"></script>
+  <script type="module" src="./workspace-context.js"></script>
+  <script type="module" src="./evidence-library-page.js"></script>
+</body>
+</html>

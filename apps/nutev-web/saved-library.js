@@ -40,6 +40,102 @@ export function sourceUrlFor(record={}){
   return text(record.url||record.landing_page_url||record.open_access_url);
 }
 
+async function platformMode(){
+  const response=await fetch('/api/auth/status',{cache:'no-store',credentials:'same-origin'});
+  if(!response.ok)throw new Error(`auth_status_http_${response.status}`);
+  const payload=await response.json();
+  if(payload?.mode==='pilot'||payload?.mode==='legacy')return payload.mode;
+  throw new Error('auth_mode_unavailable');
+}
+
+async function serverContext(){
+  const response=await fetch('/api/context',{cache:'no-store',credentials:'same-origin'});
+  if(!response.ok)throw new Error(response.status===401?'authentication_required':`context_http_${response.status}`);
+  const payload=await response.json();
+  const current=payload?.current||{};
+  if(!current.workspace_id)throw new Error('workspace_context_required');
+  return current;
+}
+
+function serverSnapshot(entry){
+  const placement=entry?.placement||{};
+  const document=entry?.document||{};
+  const article={
+    article_id:text(document.article_id||placement.article_id),
+    title:text(document.title||'(sem título)'),
+    abstract:text(document.abstract),
+    year:document.year??null,
+    journal:text(document.journal),
+    doi:normalizeDoi(document.doi),
+    pmid:normalizePmid(document.pmid),
+    pmcid:text(document.pmcid),
+  };
+  return{
+    key:canonicalSavedKey(article),
+    placement_id:text(placement.placement_id),
+    article_id:article.article_id,
+    title:article.title,
+    title_norm:normalized(article.title),
+    doi:article.doi,
+    pmid:article.pmid,
+    year:article.year,
+    journal:article.journal,
+    source_provider:'',
+    source_providers:[],
+    source_manifestations:[],
+    source_url:sourceUrlFor(article),
+    document_class:'unclassified',
+    classification_confidence:'',
+    taxonomy_primary:'',
+    first_saved_at:text(placement.created_at),
+    last_saved_at:text(placement.updated_at||placement.created_at),
+    provenance:[],
+    article,
+    placement_state:text(placement.state||'not_screened'),
+    tags:Array.isArray(placement.tags)?placement.tags:[],
+    notes:text(placement.notes),
+    storage_semantics:'server_private_placement_not_scientific_inclusion',
+  };
+}
+
+async function serverLibraryRows(){
+  await serverContext();
+  const response=await fetch('/api/library?scope=workspace&limit=500',{cache:'no-store',credentials:'same-origin'});
+  if(!response.ok)throw new Error(`evidence_library_http_${response.status}`);
+  const payload=await response.json();
+  const entries=Array.isArray(payload?.entries)?payload.entries:[];
+  return entries.filter(entry=>!entry?.placement?.project_id).map(serverSnapshot);
+}
+
+async function serverSaveArticles(records){
+  await serverContext();
+  const unique=new Map();
+  for(const record of Array.isArray(records)?records:[]){
+    if(!record||typeof record!=='object')continue;
+    const articleId=text(record.article_id);
+    if(!articleId)throw new Error('global_article_id_required');
+    unique.set(articleId,record);
+  }
+  const values=[...unique.values()];
+  if(!values.length)return{saved:0,updated:0,total:0};
+  const existing=await serverLibraryRows();
+  const existingIds=new Set(existing.map(item=>item.article_id));
+  let saved=0,updated=0;
+  for(const record of values){
+    const articleId=text(record.article_id);
+    if(existingIds.has(articleId)){updated+=1;continue}
+    const response=await fetch('/api/library/placements',{
+      method:'POST',
+      credentials:'same-origin',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({article_id:articleId,scope:'workspace',state:'not_screened',tags:[],notes:''}),
+    });
+    if(!response.ok)throw new Error(`evidence_library_save_${response.status}`);
+    existingIds.add(articleId);saved+=1;
+  }
+  return{saved,updated,total:values.length};
+}
+
 function openDb(){
   if(dbPromise)return dbPromise;
   if(!('indexedDB' in globalThis))return Promise.reject(new Error('IndexedDB indisponível neste navegador.'));
@@ -131,7 +227,7 @@ function saveChunk(db,records,context){
   });
 }
 
-export async function saveArticles(records,context={}){
+async function localSaveArticles(records,context={}){
   const unique=new Map();
   for(const record of Array.isArray(records)?records:[]){if(record&&typeof record==='object')unique.set(canonicalSavedKey(record),record)}
   const values=[...unique.values()];
@@ -141,9 +237,15 @@ export async function saveArticles(records,context={}){
   return{saved,updated,total:values.length};
 }
 
+export async function saveArticles(records,context={}){
+  const mode=await platformMode();
+  if(mode==='pilot')return serverSaveArticles(records);
+  return localSaveArticles(records,context);
+}
+
 export async function saveArticle(record,context={}){return saveArticles([record],context)}
 
-export async function getSavedArticle(key){
+async function localGetSavedArticle(key){
   const db=await openDb();
   return new Promise((resolve,reject)=>{
     const tx=db.transaction(STORE,'readonly');const request=tx.objectStore(STORE).get(key);
@@ -151,23 +253,58 @@ export async function getSavedArticle(key){
   });
 }
 
-export async function savedKeySet(keys){
+export async function getSavedArticle(key){
+  const mode=await platformMode();
+  if(mode!=='pilot')return localGetSavedArticle(key);
+  const rows=await serverLibraryRows();const wanted=text(key);
+  return rows.find(item=>item.key===wanted||item.article_id===wanted)||null;
+}
+
+async function localSavedKeySet(keys){
   const db=await openDb();const unique=[...new Set((keys||[]).filter(Boolean))];const found=new Set();
   await Promise.all(unique.map(key=>new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readonly');const request=tx.objectStore(STORE).get(key);request.onsuccess=()=>{if(request.result)found.add(key);resolve()};request.onerror=()=>reject(request.error)})));
   return found;
 }
 
-export async function listSavedArticles({q='',limit=500}={}){
-  const db=await openDb();
-  const rows=await new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readonly');const request=tx.objectStore(STORE).getAll();request.onsuccess=()=>resolve(request.result||[]);request.onerror=()=>reject(request.error||new Error('Falha ao listar artigos salvos.'))});
+export async function savedKeySet(keys){
+  const mode=await platformMode();
+  if(mode!=='pilot')return localSavedKeySet(keys);
+  const wanted=new Set((keys||[]).map(text).filter(Boolean));const found=new Set();
+  for(const item of await serverLibraryRows()){if(wanted.has(item.key))found.add(item.key)}
+  return found;
+}
+
+function filterRows(rows,q,limit){
   const needle=normalized(q);
   return rows.filter(item=>!needle||normalized([item.title,item.doi,item.pmid,item.journal,item.source_provider,...(item.source_providers||[]),...(item.provenance||[]).flatMap(p=>[p.search_query,...(p.source_providers||[])])].join(' ')).includes(needle)).sort((a,b)=>String(b.last_saved_at||'').localeCompare(String(a.last_saved_at||''))).slice(0,Math.max(1,Math.min(Number(limit)||500,5000)));
 }
 
+async function localListSavedArticles({q='',limit=500}={}){
+  const db=await openDb();
+  const rows=await new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readonly');const request=tx.objectStore(STORE).getAll();request.onsuccess=()=>resolve(request.result||[]);request.onerror=()=>reject(request.error||new Error('Falha ao listar artigos salvos.'))});
+  return filterRows(rows,q,limit);
+}
+
+export async function listSavedArticles({q='',limit=500}={}){
+  const mode=await platformMode();
+  if(mode==='pilot')return filterRows(await serverLibraryRows(),q,limit);
+  return localListSavedArticles({q,limit});
+}
+
 export async function countSavedArticles(){
+  const mode=await platformMode();
+  if(mode==='pilot')return(await serverLibraryRows()).length;
   const db=await openDb();return new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readonly');const request=tx.objectStore(STORE).count();request.onsuccess=()=>resolve(Number(request.result||0));request.onerror=()=>reject(request.error||new Error('Falha ao contar artigos salvos.'))});
 }
 
 export async function removeSavedArticle(key){
+  const mode=await platformMode();
+  if(mode==='pilot'){
+    const wanted=text(key);const row=(await serverLibraryRows()).find(item=>item.key===wanted||item.article_id===wanted);
+    if(!row)return false;
+    const response=await fetch(`/api/library/placements/${encodeURIComponent(row.placement_id)}`,{method:'DELETE',credentials:'same-origin'});
+    if(!response.ok)throw new Error(`evidence_library_delete_${response.status}`);
+    return true;
+  }
   const db=await openDb();return new Promise((resolve,reject)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).delete(key);tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error||new Error('Falha ao remover artigo salvo.'))});
 }
