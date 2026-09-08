@@ -1,5 +1,13 @@
-"""Identity, authentication, and authorization contracts for NutEV multi-tenant boundaries."""
+"""Identity, authentication, authorization, and tenant-access contracts for NutEV."""
 
+from .access import (
+    TENANCY_SCHEMA_VERSION,
+    ContextSnapshot,
+    ResearchContext,
+    SQLiteWorkspaceProjectStore,
+    TenancyDataError,
+    WorkspaceProjectService,
+)
 from .auth import (
     AUTH_SCHEMA_VERSION,
     DEFAULT_SESSION_TTL_SECONDS,
@@ -41,10 +49,12 @@ from .permissions import (
 
 __all__ = [
     "AUTH_SCHEMA_VERSION",
+    "TENANCY_SCHEMA_VERSION",
     "AuthorizationContext",
     "AuthDataError",
     "AuthProvider",
     "AuthenticatedSubject",
+    "ContextSnapshot",
     "DEFAULT_SESSION_TTL_SECONDS",
     "GlobalRole",
     "IssuedSession",
@@ -61,14 +71,18 @@ __all__ = [
     "Project",
     "ROLE_PERMISSIONS",
     "ResearchApplication",
+    "ResearchContext",
     "SQLiteAuthProvider",
     "SQLiteSessionStore",
+    "SQLiteWorkspaceProjectStore",
     "SessionPrincipal",
     "SessionPrincipalService",
     "SessionRecord",
+    "TenancyDataError",
     "User",
     "Workspace",
     "WorkspaceMembership",
+    "WorkspaceProjectService",
     "WorkspaceRole",
     "new_opaque_id",
     "require_opaque_id",
