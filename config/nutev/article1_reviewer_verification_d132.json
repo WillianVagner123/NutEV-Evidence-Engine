@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "contract_type": "ARTICLE1_REVIEWER_VERIFICATION",
+  "decision_id": "D-132",
+  "status": "PROPOSED_PENDING_ADVISOR_APPROVAL",
+  "drive_source": {
+    "spreadsheet_id": "1uy99weVVAlT5FBF09VwaOI1YLr1aI-nLi7f8XQk50yc",
+    "decision_tab": "01_DECISOES_METODOLOGICAS",
+    "decision_range": "A135:H135",
+    "screening_gate_tab": "09H_GATE_CALIBRACAO_TRIAGEM",
+    "preflight_tab": "02J_PREFLIGHT_PILOT"
+  },
+  "screening": {
+    "title_abstract": {
+      "r1_coverage_pct": 100,
+      "verification": {
+        "initial_random_sample_pct": 20,
+        "all_doubt_cases": true,
+        "all_borderline_cases": true,
+        "blind_to_r1_when_operationally_possible": true
+      }
+    },
+    "full_text": {
+      "r1_coverage_pct": 100,
+      "verification": {
+        "all_r1_exclusions": true,
+        "all_doubt_cases": true,
+        "included_random_sample_pct": 20,
+        "blind_to_r1_when_operationally_possible": true
+      }
+    }
+  },
+  "extraction": {
+    "r1_coverage_pct": 100,
+    "verification": {
+      "included_documents_random_sample_pct": 20,
+      "all_doubt_or_critical_fields": true
+    }
+  },
+  "human_roles": {
+    "r1": "REQUIRED_100_PERCENT",
+    "verifier": "REQUIRED_BEFORE_FORMAL_SCREENING",
+    "adjudicator": "AS_NEEDED"
+  },
+  "engine_allowed_roles": [
+    "prepare_sampling_frame",
+    "generate_deterministic_sample_after_seed_freeze",
+    "prepare_verification_queue",
+    "preserve_r1_and_verifier_decisions_separately",
+    "generate_divergence_log",
+    "generate_audit_exports",
+    "prepare_locators_and_navigation"
+  ],
+  "engine_prohibited_roles": [
+    "act_as_human_second_reviewer",
+    "decide_inclusion",
+    "decide_exclusion",
+    "adjudicate_disagreements",
+    "overwrite_human_decisions",
+    "emit_prisma_counts_from_discovery_or_pilot"
+  ],
+  "gates": {
+    "formal_screening_authorized": false,
+    "freeze_authorized_by_this_contract": false,
+    "requires_advisor_approval": true,
+    "requires_named_human_verifier": true
+  },
+  "sampling_note": "The 20% verification fraction is a prospective Article 1 protocol choice, not a JBI-mandated threshold. It must be approved/frozen before formal screening and may be prospectively amended with a recorded methodological decision.",
+  "scientific_guardrail": "Automation supports auditability and navigation only. Human reviewers retain scientific eligibility, verification, consensus and adjudication authority."
+}
