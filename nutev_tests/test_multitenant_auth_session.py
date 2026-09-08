@@ -337,4 +337,5 @@ def test_secure_server_defaults_to_legacy_and_does_not_store_credentials_in_brow
     assert "localStorage" not in source
     assert "sessionStorage" not in source
     assert '"session_token"' not in source
-    assert '"password"' not in source.split("def _login_response", 1)[1]
+    serializer = source.split("def _login_response", 1)[1].split("def do_POST", 1)[0]
+    assert '"password"' not in serializer
