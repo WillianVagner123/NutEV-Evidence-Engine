@@ -161,13 +161,11 @@ def run_death_test(root: Path) -> dict[str, object]:
 
     selected_a = access.select_context(
         principal_a,
-        session_id=principal_a.session_id,
         workspace_id=workspace_a.id,
         project_id=project_a.id,
     )
     selected_b = access.select_context(
         principal_b,
-        session_id=principal_b.session_id,
         workspace_id=workspace_b.id,
         project_id=project_b.id,
     )
@@ -178,7 +176,6 @@ def run_death_test(root: Path) -> dict[str, object]:
             "context_cross_workspace_denied",
             lambda: access.select_context(
                 principal_a,
-                session_id=principal_a.session_id,
                 workspace_id=workspace_b.id,
                 project_id=project_b.id,
             ),
