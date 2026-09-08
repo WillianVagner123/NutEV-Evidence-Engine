@@ -9,17 +9,10 @@ import sqlite3
 from typing import Any
 from uuid import uuid4
 
-from nutev.tenancy import (
-    AuthorizationContext,
-    Permission,
-    PermissionService,
-    Principal,
-    require_opaque_id,
-)
+from nutev.tenancy import AuthorizationContext, Permission, PermissionService, Principal, require_opaque_id
 
 DEFAULT_CONFIG_RELATIVE = Path("config/nutev/applications/willian_doctorate_a2_integrative_v1.json")
 A2_WORKFLOW_SCHEMA_VERSION = 1
-
 _REQUIRED_GUARDRAILS = (
     "private_by_default",
     "no_inference_from_historical_workstream_name",
@@ -52,7 +45,7 @@ def _parse_datetime(value: str) -> datetime:
     return parsed.astimezone(timezone.utc)
 
 
-def _sha256_text(value: str) -> str:
+def _digest(value: str) -> str:
     return sha256(str(value).encode("utf-8")).hexdigest()
 
 
@@ -99,16 +92,12 @@ class A2Config:
             raise A2ConfigurationError("unexpected Article 2 assembly_id")
         if not self.config_version.strip():
             raise A2ConfigurationError("Article 2 config_version is required")
-        if self.application_template != "INTEGRATIVE_REVIEW":
+        if self.application_template != "INTEGRATIVE_REVIEW" or self.workflow_type != "INTEGRATIVE_REVIEW":
             raise A2ConfigurationError("Article 2 requires INTEGRATIVE_REVIEW")
-        if self.workflow_type != "INTEGRATIVE_REVIEW":
-            raise A2ConfigurationError("Article 2 workflow_type must be INTEGRATIVE_REVIEW")
         if not self.definition_version.strip():
             raise A2ConfigurationError("workflow definition_version is required")
-        if len(self.phases) < 2 or len(self.phases) != len(set(self.phases)):
+        if len(self.phases) < 2 or len(self.phases) != len(set(self.phases)) or any(not item for item in self.phases):
             raise A2ConfigurationError("workflow phases must be unique and non-empty")
-        if any(not phase.strip() for phase in self.phases):
-            raise A2ConfigurationError("workflow phases cannot be blank")
         if self.phases[0] != "LEGACY_BINDING" or self.phases[-1] != "COMPLETE":
             raise A2ConfigurationError("workflow must start at LEGACY_BINDING and end at COMPLETE")
         if self.legacy_binding_required is not True:
@@ -126,7 +115,7 @@ class A2Config:
 
 @dataclass(frozen=True, slots=True)
 class LegacyBindingEvidence:
-    """Reviewed migration evidence; deliberately contains no user-supplied paths/query IDs."""
+    """Reviewed migration evidence. No path, query text or search ID is accepted."""
 
     manifest_sha256: str
     target_key: str
@@ -144,11 +133,9 @@ class LegacyBindingEvidence:
             raise A2ConfigurationError("legacy binding classification must be ARTICLE2_PRIVATE")
         if self.record_count <= 0:
             raise A2ConfigurationError("legacy binding record_count must be positive")
-        if not self.source_fingerprints:
-            raise A2ConfigurationError("legacy binding requires source fingerprints")
         normalized = tuple(_require_sha256(item, "source_fingerprint") for item in self.source_fingerprints)
-        if len(normalized) != len(set(normalized)):
-            raise A2ConfigurationError("legacy binding source fingerprints must be unique")
+        if not normalized or len(normalized) != len(set(normalized)):
+            raise A2ConfigurationError("legacy binding requires unique source fingerprints")
         if not self.evidence.strip():
             raise A2ConfigurationError("legacy binding requires reviewed evidence")
         if self.validation_status != "VALIDATED":
@@ -161,10 +148,10 @@ class LegacyBindingEvidence:
             "classification": self.classification,
             "record_count": self.record_count,
             "source_fingerprints": sorted(item.lower() for item in self.source_fingerprints),
-            "evidence_sha256": _sha256_text(self.evidence.strip()),
+            "evidence_sha256": _digest(self.evidence.strip()),
             "validation_status": self.validation_status,
         }
-        return _sha256_text(json.dumps(payload, sort_keys=True, separators=(",", ":")))
+        return _digest(json.dumps(payload, sort_keys=True, separators=(",", ":")))
 
 
 @dataclass(frozen=True, slots=True)
@@ -186,10 +173,9 @@ class A2WorkflowState:
         return self.workflow_status == "BLOCKED"
 
 
-
 def load_a2_config(repo_root: Path, config_path: Path | None = None) -> A2Config:
     root = Path(repo_root).expanduser().resolve()
-    path = (Path(config_path).expanduser().resolve() if config_path is not None else (root / DEFAULT_CONFIG_RELATIVE).resolve())
+    path = Path(config_path).expanduser().resolve() if config_path is not None else (root / DEFAULT_CONFIG_RELATIVE).resolve()
     try:
         path.relative_to(root)
     except ValueError as exc:
@@ -204,9 +190,7 @@ def load_a2_config(repo_root: Path, config_path: Path | None = None) -> A2Config
         raise A2ConfigurationError("Article 2 config requires schema_version=1")
     if raw.get("record_type") != "NUTEV_APPLICATION_WILLIAN_DOCTORATE_A2_INTEGRATIVE":
         raise A2ConfigurationError("unexpected Article 2 config record_type")
-    workflow = raw.get("workflow")
-    binding = raw.get("legacy_binding")
-    guardrails = raw.get("guardrails")
+    workflow, binding, guardrails = raw.get("workflow"), raw.get("legacy_binding"), raw.get("guardrails")
     if not all(isinstance(item, dict) for item in (workflow, binding, guardrails)):
         raise A2ConfigurationError("Article 2 workflow/binding/guardrails must be objects")
     phases = workflow.get("phases")
@@ -228,7 +212,7 @@ def load_a2_config(repo_root: Path, config_path: Path | None = None) -> A2Config
 
 
 class SQLiteA2WorkflowStore:
-    """Private Article 2 orchestration state; stores no search/document scientific payload."""
+    """Private orchestration state only; no query, search ID, document body or filesystem path."""
 
     def __init__(self, database_path: Path) -> None:
         self.database_path = Path(database_path).expanduser().resolve()
@@ -291,7 +275,7 @@ class SQLiteA2WorkflowStore:
             current_phase=str(row["current_phase"]),
             workflow_status=str(row["workflow_status"]),
             legacy_binding_state=str(row["legacy_binding_state"]),
-            legacy_binding_fingerprint=(str(row["legacy_binding_fingerprint"]) if row["legacy_binding_fingerprint"] else None),
+            legacy_binding_fingerprint=str(row["legacy_binding_fingerprint"]) if row["legacy_binding_fingerprint"] else None,
             created_at=_parse_datetime(str(row["created_at"])),
             updated_at=_parse_datetime(str(row["updated_at"])),
         )
@@ -307,11 +291,7 @@ class SQLiteA2WorkflowStore:
         evidence_sha256: str | None = None,
     ) -> None:
         connection.execute(
-            """
-            INSERT INTO article2_integrative_events(
-                workflow_id, event_type, phase, actor_user_id, evidence_sha256, created_at
-            ) VALUES(?,?,?,?,?,?)
-            """,
+            "INSERT INTO article2_integrative_events(workflow_id,event_type,phase,actor_user_id,evidence_sha256,created_at) VALUES(?,?,?,?,?,?)",
             (workflow_id, event_type, phase, actor_user_id, evidence_sha256, _iso(_now())),
         )
 
@@ -328,25 +308,22 @@ class SQLiteA2WorkflowStore:
         require_opaque_id(project_id, "project")
         require_opaque_id(application_id, "application")
         require_opaque_id(actor_user_id, "user")
+        existing = self.find(
+            workspace_id=workspace_id,
+            project_id=project_id,
+            application_id=application_id,
+            config_version=config.config_version,
+        )
+        if existing is not None:
+            return existing
+        workflow_id, now = _new_workflow_id(), _iso(_now())
         with self._connect() as connection:
-            row = connection.execute(
-                """
-                SELECT * FROM article2_integrative_workflows
-                WHERE workspace_id = ? AND project_id = ? AND application_id = ? AND config_version = ?
-                """,
-                (workspace_id, project_id, application_id, config.config_version),
-            ).fetchone()
-            if row is not None:
-                return self._state(row)
-            workflow_id = _new_workflow_id()
-            now = _iso(_now())
             connection.execute(
                 """
                 INSERT INTO article2_integrative_workflows(
-                    workflow_id, workspace_id, project_id, application_id, config_version,
-                    current_phase, workflow_status, legacy_binding_state,
-                    legacy_binding_fingerprint, created_at, updated_at
-                ) VALUES(?,?,?,?,?,?,?,?,NULL,?,?)
+                    workflow_id,workspace_id,project_id,application_id,config_version,current_phase,
+                    workflow_status,legacy_binding_state,legacy_binding_fingerprint,created_at,updated_at
+                ) VALUES(?,?,?,?,?,?,?, ?,NULL,?,?)
                 """,
                 (
                     workflow_id,
@@ -371,35 +348,29 @@ class SQLiteA2WorkflowStore:
             connection.commit()
         return self.get(workflow_id, workspace_id=workspace_id, project_id=project_id)
 
-    def get(self, workflow_id: str, *, workspace_id: str, project_id: str) -> A2WorkflowState:
-        _require_workflow_id(workflow_id)
-        require_opaque_id(workspace_id, "workspace")
-        require_opaque_id(project_id, "project")
-        with self._connect() as connection:
-            row = connection.execute(
-                """
-                SELECT * FROM article2_integrative_workflows
-                WHERE workflow_id = ? AND workspace_id = ? AND project_id = ?
-                """,
-                (workflow_id, workspace_id, project_id),
-            ).fetchone()
-        if row is None:
-            raise FileNotFoundError(workflow_id)
-        return self._state(row)
-
     def find(self, *, workspace_id: str, project_id: str, application_id: str, config_version: str) -> A2WorkflowState | None:
         require_opaque_id(workspace_id, "workspace")
         require_opaque_id(project_id, "project")
         require_opaque_id(application_id, "application")
         with self._connect() as connection:
             row = connection.execute(
-                """
-                SELECT * FROM article2_integrative_workflows
-                WHERE workspace_id = ? AND project_id = ? AND application_id = ? AND config_version = ?
-                """,
+                "SELECT * FROM article2_integrative_workflows WHERE workspace_id=? AND project_id=? AND application_id=? AND config_version=?",
                 (workspace_id, project_id, application_id, config_version),
             ).fetchone()
         return self._state(row) if row is not None else None
+
+    def get(self, workflow_id: str, *, workspace_id: str, project_id: str) -> A2WorkflowState:
+        _require_workflow_id(workflow_id)
+        require_opaque_id(workspace_id, "workspace")
+        require_opaque_id(project_id, "project")
+        with self._connect() as connection:
+            row = connection.execute(
+                "SELECT * FROM article2_integrative_workflows WHERE workflow_id=? AND workspace_id=? AND project_id=?",
+                (workflow_id, workspace_id, project_id),
+            ).fetchone()
+        if row is None:
+            raise FileNotFoundError(workflow_id)
+        return self._state(row)
 
     def register_binding(
         self,
@@ -410,22 +381,22 @@ class SQLiteA2WorkflowStore:
         actor_user_id: str,
     ) -> A2WorkflowState:
         require_opaque_id(actor_user_id, "user")
+        _require_sha256(binding_fingerprint, "binding_fingerprint")
         if not state.blocked or state.current_phase != "LEGACY_BINDING":
             raise ValueError("Article 2 workflow is not waiting for legacy binding")
-        next_phase = config.phases[1]
-        now = _iso(_now())
+        next_phase, now = config.phases[1], _iso(_now())
         with self._connect() as connection:
-            connection.execute(
+            cursor = connection.execute(
                 """
                 UPDATE article2_integrative_workflows
-                SET current_phase = ?, workflow_status = 'ACTIVE',
-                    legacy_binding_state = 'READY', legacy_binding_fingerprint = ?, updated_at = ?
-                WHERE workflow_id = ? AND workspace_id = ? AND project_id = ?
-                  AND current_phase = 'LEGACY_BINDING' AND workflow_status = 'BLOCKED'
+                SET current_phase=?, workflow_status='ACTIVE', legacy_binding_state='READY',
+                    legacy_binding_fingerprint=?, updated_at=?
+                WHERE workflow_id=? AND workspace_id=? AND project_id=?
+                  AND current_phase='LEGACY_BINDING' AND workflow_status='BLOCKED'
                 """,
                 (next_phase, binding_fingerprint, now, state.workflow_id, state.workspace_id, state.project_id),
             )
-            if connection.total_changes != 1:
+            if cursor.rowcount != 1:
                 raise ValueError("Article 2 legacy binding transition failed")
             self._event(
                 connection,
@@ -454,31 +425,20 @@ class SQLiteA2WorkflowStore:
         try:
             index = config.phases.index(state.current_phase)
         except ValueError as exc:
-            raise A2ConfigurationError("current Article 2 phase is outside configured workflow") from exc
-        if index + 1 >= len(config.phases):
-            raise ValueError("Article 2 workflow has no next phase")
-        expected = config.phases[index + 1]
-        if next_phase != expected:
-            raise ValueError(f"Article 2 next phase must be {expected}")
-        new_status = "COMPLETE" if next_phase == "COMPLETE" else "ACTIVE"
-        now = _iso(_now())
+            raise A2ConfigurationError("stored phase is outside configured Article 2 workflow") from exc
+        expected = config.phases[index + 1] if index + 1 < len(config.phases) else None
+        if expected is None or next_phase != expected:
+            raise ValueError(f"Article 2 next phase must be {expected or 'none'}")
+        new_status, now = ("COMPLETE" if next_phase == "COMPLETE" else "ACTIVE"), _iso(_now())
         with self._connect() as connection:
             cursor = connection.execute(
                 """
                 UPDATE article2_integrative_workflows
-                SET current_phase = ?, workflow_status = ?, updated_at = ?
-                WHERE workflow_id = ? AND workspace_id = ? AND project_id = ?
-                  AND current_phase = ? AND workflow_status = 'ACTIVE'
+                SET current_phase=?, workflow_status=?, updated_at=?
+                WHERE workflow_id=? AND workspace_id=? AND project_id=?
+                  AND current_phase=? AND workflow_status='ACTIVE'
                 """,
-                (
-                    next_phase,
-                    new_status,
-                    now,
-                    state.workflow_id,
-                    state.workspace_id,
-                    state.project_id,
-                    state.current_phase,
-                ),
+                (next_phase, new_status, now, state.workflow_id, state.workspace_id, state.project_id, state.current_phase),
             )
             if cursor.rowcount != 1:
                 raise ValueError("Article 2 phase transition failed")
@@ -496,11 +456,7 @@ class SQLiteA2WorkflowStore:
     def events(self, state: A2WorkflowState) -> tuple[dict[str, Any], ...]:
         with self._connect() as connection:
             rows = connection.execute(
-                """
-                SELECT id, event_type, phase, actor_user_id, evidence_sha256, created_at
-                FROM article2_integrative_events
-                WHERE workflow_id = ? ORDER BY id
-                """,
+                "SELECT id,event_type,phase,actor_user_id,evidence_sha256,created_at FROM article2_integrative_events WHERE workflow_id=? ORDER BY id",
                 (state.workflow_id,),
             ).fetchall()
         return tuple(
@@ -509,7 +465,7 @@ class SQLiteA2WorkflowStore:
                 "event_type": str(row["event_type"]),
                 "phase": str(row["phase"]),
                 "actor_user_id": str(row["actor_user_id"]),
-                "evidence_sha256": (str(row["evidence_sha256"]) if row["evidence_sha256"] else None),
+                "evidence_sha256": str(row["evidence_sha256"]) if row["evidence_sha256"] else None,
                 "created_at": str(row["created_at"]),
             }
             for row in rows
@@ -517,7 +473,7 @@ class SQLiteA2WorkflowStore:
 
 
 class A2IntegrativeService:
-    """Article 2 orchestration only; generic scientific operations remain external primitives."""
+    """A2 workflow orchestration only; generic scientific operations remain separate services."""
 
     def __init__(
         self,
@@ -536,14 +492,21 @@ class A2IntegrativeService:
         return load_a2_config(self.repo_root, self.config_path)
 
     @staticmethod
-    def _context(workspace_id: str, project_id: str, project_access_confirmed: bool) -> AuthorizationContext:
+    def _context(workspace_id: str, project_id: str, confirmed: bool) -> AuthorizationContext:
         require_opaque_id(workspace_id, "workspace")
         require_opaque_id(project_id, "project")
-        return AuthorizationContext(
+        return AuthorizationContext(workspace_id=workspace_id, project_id=project_id, project_access_confirmed=confirmed)
+
+    def _state(self, *, workspace_id: str, project_id: str, application_id: str) -> A2WorkflowState:
+        state = self.store.find(
             workspace_id=workspace_id,
             project_id=project_id,
-            project_access_confirmed=project_access_confirmed,
+            application_id=application_id,
+            config_version=self.config().config_version,
         )
+        if state is None:
+            raise FileNotFoundError("Article 2 integrative workflow not bootstrapped")
+        return state
 
     def bootstrap(
         self,
@@ -564,23 +527,6 @@ class A2IntegrativeService:
             actor_user_id=principal.user_id,
         )
 
-    def _state_for_scope(
-        self,
-        *,
-        workspace_id: str,
-        project_id: str,
-        application_id: str,
-    ) -> A2WorkflowState:
-        state = self.store.find(
-            workspace_id=workspace_id,
-            project_id=project_id,
-            application_id=application_id,
-            config_version=self.config().config_version,
-        )
-        if state is None:
-            raise FileNotFoundError("Article 2 integrative workflow not bootstrapped")
-        return state
-
     def status(
         self,
         principal: Principal,
@@ -592,17 +538,12 @@ class A2IntegrativeService:
     ) -> dict[str, Any]:
         context = self._context(workspace_id, project_id, project_access_confirmed)
         self.permissions.require(principal, Permission.APPLICATION_READ, context=context)
-        config = self.config()
-        state = self._state_for_scope(
-            workspace_id=workspace_id,
-            project_id=project_id,
-            application_id=application_id,
-        )
+        config, state = self.config(), self._state(workspace_id=workspace_id, project_id=project_id, application_id=application_id)
         try:
-            phase_index = config.phases.index(state.current_phase)
+            index = config.phases.index(state.current_phase)
         except ValueError as exc:
-            raise A2ConfigurationError("stored Article 2 phase is outside configured workflow") from exc
-        next_phase = config.phases[phase_index + 1] if phase_index + 1 < len(config.phases) else None
+            raise A2ConfigurationError("stored phase is outside configured Article 2 workflow") from exc
+        next_phase = config.phases[index + 1] if index + 1 < len(config.phases) else None
         return {
             "workflow_id": state.workflow_id,
             "assembly_id": config.assembly_id,
@@ -615,9 +556,7 @@ class A2IntegrativeService:
             "legacy_binding_state": state.legacy_binding_state,
             "legacy_binding_fingerprint": state.legacy_binding_fingerprint,
             "can_advance": state.workflow_status == "ACTIVE" and next_phase is not None,
-            "blocked_reason": (
-                "LEGACY_BINDING_REQUIRED" if state.legacy_binding_state != "READY" else None
-            ),
+            "blocked_reason": "LEGACY_BINDING_REQUIRED" if state.legacy_binding_state != "READY" else None,
             "scientific_side_effects": {
                 "search_executed": False,
                 "results_recomputed": False,
@@ -640,19 +579,14 @@ class A2IntegrativeService:
         project_access_confirmed: bool,
         evidence: LegacyBindingEvidence,
     ) -> A2WorkflowState:
-        """Internal migration hook. PR-10 intentionally exposes no HTTP endpoint for this."""
+        """Internal migration hook. PR-10 deliberately exposes no HTTP endpoint for it."""
         context = self._context(workspace_id, project_id, project_access_confirmed)
         self.permissions.require(principal, Permission.APPLICATION_MANAGE, context=context)
         config = self.config()
         if evidence.target_key != config.legacy_target_key or evidence.classification != config.legacy_classification:
             raise A2ConfigurationError("legacy binding evidence does not match Article 2 target contract")
-        state = self._state_for_scope(
-            workspace_id=workspace_id,
-            project_id=project_id,
-            application_id=application_id,
-        )
         return self.store.register_binding(
-            state=state,
+            state=self._state(workspace_id=workspace_id, project_id=project_id, application_id=application_id),
             config=config,
             binding_fingerprint=evidence.fingerprint(),
             actor_user_id=principal.user_id,
@@ -674,18 +608,14 @@ class A2IntegrativeService:
         clean_evidence = str(evidence or "").strip()
         if not clean_evidence:
             raise ValueError("Article 2 phase transition requires evidence")
-        state = self._state_for_scope(
-            workspace_id=workspace_id,
-            project_id=project_id,
-            application_id=application_id,
-        )
+        state = self._state(workspace_id=workspace_id, project_id=project_id, application_id=application_id)
         if state.legacy_binding_state != "READY":
             raise ValueError("LEGACY_BINDING_REQUIRED")
         return self.store.advance(
             state=state,
             config=self.config(),
             next_phase=str(next_phase or "").strip(),
-            evidence_sha256=_sha256_text(clean_evidence),
+            evidence_sha256=_digest(clean_evidence),
             actor_user_id=principal.user_id,
         )
 
@@ -700,9 +630,4 @@ class A2IntegrativeService:
     ) -> tuple[dict[str, Any], ...]:
         context = self._context(workspace_id, project_id, project_access_confirmed)
         self.permissions.require(principal, Permission.APPLICATION_READ, context=context)
-        state = self._state_for_scope(
-            workspace_id=workspace_id,
-            project_id=project_id,
-            application_id=application_id,
-        )
-        return self.store.events(state)
+        return self.store.events(self._state(workspace_id=workspace_id, project_id=project_id, application_id=application_id))
