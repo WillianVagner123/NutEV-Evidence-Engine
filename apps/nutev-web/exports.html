@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Exportações — NutEV Evidence Engine</title>
+  <meta name="description" content="Exportações rastreáveis e trilha de auditoria do projeto atual no NutEV.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./product-ui.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <nav aria-label="Navegação principal"></nav>
+      <div class="sidebar-note">Exportações pertencem ao projeto atual e carregam manifesto, hashes e trilha de auditoria. Abrir esta tela não altera estado científico.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><h1>Exportações</h1><p>Artefatos rastreáveis e integridade da trilha de auditoria do projeto.</p></div><span class="status-pill" id="exportsHealth">carregando…</span></header>
+
+      <section id="exportsContext" class="card product-panel" aria-live="polite">
+        <div class="empty-state"><strong>Carregando exportações…</strong><span>Validando o projeto selecionado.</span></div>
+      </section>
+
+      <section id="auditSummarySection" class="product-panel hidden">
+        <div class="audit-summary">
+          <div class="audit-kpi" id="auditChainKpi"><strong id="auditChainValue">—</strong><span>integridade da cadeia</span></div>
+          <div class="audit-kpi"><strong id="exportCount">—</strong><span>exportações neste projeto</span></div>
+          <div class="audit-kpi"><strong id="auditEventCount">—</strong><span>eventos exibidos</span></div>
+        </div>
+      </section>
+
+      <section id="exportsSection" class="card product-panel hidden">
+        <div class="product-panel-head"><div><span class="home-eyebrow">Artefatos</span><h2>Exportações do projeto</h2><p>Use o manifesto para verificar arquivos, tipos, tamanhos e hashes antes de distribuir um pacote.</p></div><button id="refreshExports" class="ghost" type="button">Atualizar</button></div>
+        <div id="exportList" class="export-list"></div>
+      </section>
+
+      <section id="auditSection" class="card product-panel hidden">
+        <div class="product-panel-head"><div><span class="home-eyebrow">Auditoria</span><h2>Eventos recentes</h2><p>A cadeia é append-only e verificada no backend para o projeto selecionado.</p></div></div>
+        <div id="auditEvents" class="audit-events"></div>
+      </section>
+
+      <section class="card workbench-guardrail">
+        <strong>Sem inferência científica</strong>
+        <p>Exportar ou baixar um artefato não muda inclusão, exclusão, qualidade metodológica, certeza ou decisão científica. Esta tela somente apresenta artefatos e auditoria já registrados.</p>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./product-ui.js"></script>
+  <script type="module" src="./workspace-context.js"></script>
+  <script type="module" src="./exports-page.js"></script>
+</body>
+</html>
