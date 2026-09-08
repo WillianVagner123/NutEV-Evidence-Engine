@@ -28,6 +28,7 @@ class Permission(StrEnum):
     EXTRACT = "project.extract"
     ADJUDICATE = "project.adjudicate"
     EXPORT = "project.export"
+    PROJECT_AUDIT_READ = "project.audit.read"
     PROJECT_DELETE = "project.delete"
 
 
@@ -92,6 +93,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.EXTRACT: _FULL,
         Permission.ADJUDICATE: _FULL,
         Permission.EXPORT: _FULL,
+        Permission.PROJECT_AUDIT_READ: _FULL,
         Permission.PROJECT_DELETE: _FULL,
     },
     WorkspaceRole.WORKSPACE_ADMIN: {
@@ -113,6 +115,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.EXTRACT: _FULL,
         Permission.ADJUDICATE: _FULL,
         Permission.EXPORT: _FULL,
+        Permission.PROJECT_AUDIT_READ: _FULL,
         Permission.PROJECT_DELETE: _POLICY,
     },
     WorkspaceRole.RESEARCHER: {
@@ -132,6 +135,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.EXTRACT: _FULL,
         Permission.ADJUDICATE: _POLICY,
         Permission.EXPORT: _POLICY,
+        Permission.PROJECT_AUDIT_READ: _FULL,
     },
     WorkspaceRole.REVIEWER: {
         Permission.PROJECT_BANK_READ: _ASSIGNED,
@@ -147,6 +151,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.PROJECT_BANK_READ: _FULL,
         Permission.HUMAN_REVIEW_READ: _FULL,
         Permission.EXPORT: _POLICY,
+        Permission.PROJECT_AUDIT_READ: _FULL,
     },
     WorkspaceRole.GUEST_REVIEWER: {
         Permission.HUMAN_REVIEW_READ: _ASSIGNED,
@@ -164,6 +169,7 @@ _PROJECT_SCOPED = {
     Permission.SCREEN,
     Permission.EXTRACT,
     Permission.ADJUDICATE,
+    Permission.PROJECT_AUDIT_READ,
     Permission.PROJECT_DELETE,
 }
 
