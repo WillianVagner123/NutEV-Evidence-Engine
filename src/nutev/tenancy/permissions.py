@@ -13,6 +13,8 @@ class Permission(StrEnum):
     WORKSPACE_TRANSFER_OWNERSHIP = "workspace.ownership.transfer"
     WORKSPACE_DELETE = "workspace.delete"
     PROJECT_CREATE = "project.create"
+    APPLICATION_READ = "application.read"
+    APPLICATION_MANAGE = "application.manage"
     SEARCH_RUN = "search.run"
     SEARCH_HISTORY_READ = "search.history.read"
     EVIDENCE_LIBRARY_READ = "evidence_library.read"
@@ -73,6 +75,8 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.WORKSPACE_TRANSFER_OWNERSHIP: _FULL,
         Permission.WORKSPACE_DELETE: _POLICY,
         Permission.PROJECT_CREATE: _FULL,
+        Permission.APPLICATION_READ: _FULL,
+        Permission.APPLICATION_MANAGE: _FULL,
         Permission.SEARCH_RUN: _FULL,
         Permission.SEARCH_HISTORY_READ: _FULL,
         Permission.EVIDENCE_LIBRARY_READ: _FULL,
@@ -90,6 +94,8 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.WORKSPACE_SETTINGS_MANAGE: _FULL,
         Permission.MEMBERS_MANAGE: _FULL,
         Permission.PROJECT_CREATE: _FULL,
+        Permission.APPLICATION_READ: _FULL,
+        Permission.APPLICATION_MANAGE: _FULL,
         Permission.SEARCH_RUN: _FULL,
         Permission.SEARCH_HISTORY_READ: _FULL,
         Permission.EVIDENCE_LIBRARY_READ: _FULL,
@@ -105,6 +111,8 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
     },
     WorkspaceRole.RESEARCHER: {
         Permission.PROJECT_CREATE: _POLICY,
+        Permission.APPLICATION_READ: _FULL,
+        Permission.APPLICATION_MANAGE: _FULL,
         Permission.SEARCH_RUN: _FULL,
         Permission.SEARCH_HISTORY_READ: _FULL,
         Permission.EVIDENCE_LIBRARY_READ: _FULL,
@@ -123,6 +131,7 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.EXTRACT: _ASSIGNED,
     },
     WorkspaceRole.VIEWER: {
+        Permission.APPLICATION_READ: _FULL,
         Permission.SEARCH_HISTORY_READ: _FULL,
         Permission.EVIDENCE_LIBRARY_READ: _FULL,
         Permission.FULL_TEXT_ACCESS_READ: _FULL,
@@ -136,6 +145,8 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
 }
 
 _PROJECT_SCOPED = {
+    Permission.APPLICATION_READ,
+    Permission.APPLICATION_MANAGE,
     Permission.PROJECT_BANK_READ,
     Permission.SCREEN,
     Permission.EXTRACT,
