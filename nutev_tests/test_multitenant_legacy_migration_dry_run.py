@@ -32,6 +32,7 @@ def _hash(path: Path) -> str:
 
 
 def _mapping(path: Path, rules: list[dict[str, object]]) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps({"schema_version": 1, "rules": rules}), encoding="utf-8")
     return path
 
@@ -84,6 +85,7 @@ def test_reference_only_dry_run_maps_known_a1_and_explicit_a2_without_mutation(t
     assert report["counts"]["by_target"]["doctorate_workspace"] == 1
     assert report["counts"]["by_classification"]["SYSTEM"] == 1
     assert report["counts"]["by_classification"]["UNKNOWN"] == 0
+    assert report["counts"]["symlinks_seen"] == 0
     assert report["blockers"] == []
     assert all(record["source_unchanged"] is True for record in report["records"])
     assert all(record["source_sha256_before"] == record["source_sha256_after"] for record in report["records"])
@@ -171,6 +173,64 @@ def test_report_destination_inside_legacy_root_is_rejected(tmp_path: Path) -> No
         )
 
 
+def test_explicit_mapping_inside_legacy_root_is_rejected(tmp_path: Path) -> None:
+    source = tmp_path / "project_output_reference"
+    _write(source / "agent_context" / "article1" / "SEARCH_STATE.json", "{}")
+    mapping_path = _mapping(
+        source / "control" / "mapping.json",
+        [
+            {
+                "pattern": "agent_context/article1/*",
+                "classification": "ARTICLE1_PRIVATE",
+                "target_key": "article1_project",
+                "evidence": "fixture control mapping",
+            }
+        ],
+    )
+    with pytest.raises(ValueError, match="explicit mapping must be outside"):
+        run_legacy_multitenant_dry_run(
+            plan=build_willian_doctorate_plan(),
+            source_roots=[source],
+            report_path=tmp_path / "manifest.json",
+            explicit_mapping_path=mapping_path,
+        )
+
+
+def test_symlink_is_recorded_not_followed_and_blocks_pass(tmp_path: Path) -> None:
+    source = tmp_path / "project_output_reference"
+    target = tmp_path / "outside-secret.txt"
+    link = source / "agent_context" / "article1" / "external-link.txt"
+    _write(source / "agent_context" / "article1" / "SEARCH_STATE.json", "{}")
+    _write(target, "outside bytes must never be followed")
+    link.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        link.symlink_to(target)
+    except OSError:
+        pytest.skip("symlink creation unavailable on this platform")
+
+    target_before = _hash(target)
+    report = run_legacy_multitenant_dry_run(
+        plan=build_willian_doctorate_plan(),
+        source_roots=[source],
+        report_path=tmp_path / "manifest.json",
+    )
+
+    assert report["status"] == "DRY_RUN_REVIEW_REQUIRED"
+    assert report["counts"]["symlinks_seen"] == 1
+    assert report["symlinks"] == [
+        {
+            "source_root": str(source.resolve()),
+            "relative_path": "agent_context/article1/external-link.txt",
+            "followed": "false",
+            "migration_action": "NO_AUTOMATIC_MIGRATION",
+        }
+    ]
+    assert any(item["code"] == "SYMLINK_NOT_FOLLOWED" for item in report["blockers"])
+    assert report["guardrails"]["symlinks_never_followed_or_auto_migrated"] is True
+    assert _hash(target) == target_before
+    assert all(record["relative_path"] != "agent_context/article1/external-link.txt" for record in report["records"])
+
+
 def test_explicit_mapping_requires_evidence_and_safe_relative_pattern() -> None:
     with pytest.raises(ValueError, match="explicit evidence"):
         MappingRule(
@@ -229,4 +289,5 @@ def test_source_not_materialized_is_explicit_not_false_success(tmp_path: Path) -
     )
     assert report["status"] == "SOURCE_NOT_MATERIALIZED"
     assert report["counts"]["files_seen"] == 0
+    assert report["counts"]["symlinks_seen"] == 0
     assert report["activation_supported"] is False
