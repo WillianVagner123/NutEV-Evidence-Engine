@@ -22,9 +22,17 @@ function nameFor(items,id){return(items||[]).find(item=>item.id===id)?.name||''}
 function applicationLabel(value){return APPLICATION_LABELS[String(value||'')]||String(value||'Aplicação personalizada').replaceAll('_',' ').toLocaleLowerCase('pt-BR')}
 function componentLabel(value){return COMPONENT_LABELS[String(value||'')]||String(value||'').replaceAll('_',' ').toLocaleLowerCase('pt-BR')}
 
+function renderLegacy(){
+  $('#projectHealth').textContent='modo legado'
+  $('#projectState').innerHTML='<div class="empty-state"><strong>Projetos multi-tenant não estão ativos neste runtime</strong><span>O modo legado mantém a experiência local de busca e Workbench. Workspaces, projetos e aplicações de pesquisa ficam disponíveis no modo autenticado.</span></div>'
+  $('#applicationPanel').classList.add('hidden')
+  $('#templatePanel').classList.add('hidden')
+  $('#projectModulesSection').classList.add('hidden')
+}
+
 function renderNoProject(context){
   $('#projectHealth').textContent='projeto necessário'
-  $('#projectState').innerHTML=`<div class="empty-state"><strong>Selecione um projeto</strong><span>Use o seletor de contexto acima para escolher o projeto que deseja abrir. Nenhuma ação privada será executada sem esse contexto.</span></div>`
+  $('#projectState').innerHTML='<div class="empty-state"><strong>Selecione um projeto</strong><span>Use o seletor de contexto acima para escolher o projeto que deseja abrir. Nenhuma ação privada será executada sem esse contexto.</span></div>'
   $('#applicationPanel').classList.add('hidden')
   $('#templatePanel').classList.add('hidden')
   $('#projectModulesSection').classList.add('hidden')
@@ -35,8 +43,8 @@ function renderProjectIdentity(context,application){
   const workspaceName=nameFor(context.workspaces,current.workspace_id)||'Workspace'
   const projectName=nameFor(context.projects,current.project_id)||'Projeto'
   const appLabel=application?applicationLabel(application.application_type):'Aplicação ainda não configurada'
-  $('#projectState').innerHTML=`<div class="product-panel-head"><div class="project-identity"><div class="project-mark" aria-hidden="true">◇</div><div class="project-identity-copy"><strong>${esc(projectName)}</strong><span>${esc(workspaceName)} · ${esc(appLabel)}</span></div></div><span class="project-badge ${application?'':'neutral'}">${application?'Projeto ativo':'Configuração pendente'}</span></div><div class="product-actions"><a class="action-primary" href="/search.html">Buscar evidências</a><a class="action-secondary" href="/evidence-library.html">Abrir biblioteca</a><a class="action-secondary" href="/exports.html">Exportações</a></div>`
-  $('#projectHealth').textContent=application?'contexto pronto':'configuração pendente'
+  $('#projectState').innerHTML=`<div class="product-panel-head"><div class="project-identity"><div class="project-mark" aria-hidden="true">◇</div><div class="project-identity-copy"><strong>${esc(projectName)}</strong><span>${esc(workspaceName)} · ${esc(appLabel)}</span></div></div><span class="project-badge ${application?'':'neutral'}">${application?'Contexto configurado':'Configuração pendente'}</span></div><div class="product-actions"><a class="action-primary" href="/search.html">Buscar evidências</a><a class="action-secondary" href="/evidence-library.html">Abrir biblioteca</a><a class="action-secondary" href="/exports.html">Exportações</a></div>`
+  $('#projectHealth').textContent=application?'contexto configurado':'configuração pendente'
 }
 
 function renderApplication(application,templates){
@@ -101,6 +109,8 @@ async function configureApplication(){
 
 async function init(){
   try{
+    const auth=await jsonFetch('/api/auth/status')
+    if(auth.mode!=='pilot'){renderLegacy();return}
     const context=await jsonFetch('/api/context')
     if(!context.current?.project_id){renderNoProject(context);return}
     const [applicationPayload,templatesPayload]=await Promise.all([jsonFetch('/api/application'),jsonFetch('/api/application/templates')])
