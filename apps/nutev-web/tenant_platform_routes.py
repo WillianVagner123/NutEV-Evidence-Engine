@@ -6,6 +6,7 @@ from article1_d132_api import install_article1_d132_routes
 from tenant_application_api import install_application_routes
 from tenant_export_audit_api import install_export_audit_routes
 from tenant_library_api import install_library_routes
+from tenant_release_guard import install_tenant_release_guard
 
 
 def _article2_enabled() -> bool:
@@ -31,3 +32,6 @@ def install_tenant_platform_routes() -> None:
         from article2_integrative_api import install_article2_integrative_routes
 
         install_article2_integrative_routes()
+
+    # Install last so it can fail closed before any legacy base-handler surface.
+    install_tenant_release_guard()
