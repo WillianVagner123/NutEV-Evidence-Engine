@@ -56,14 +56,13 @@ async function loadHistoryScope(scope){
   const requested=scope==='project'?'project':'workspace';
   const message=$('#historyScopeMessage');if(message)message.textContent='Atualizando histórico…';
   try{
-    const response=await fetch(`/api/searches?limit=50&scope=${requested}`,{cache:'no-store',credentials:'same-origin'});
-    if(!response.ok){
-      if(message)message.textContent=requested==='project'?'Selecione um projeto acessível para ver as buscas desse projeto.':'Não foi possível abrir as buscas deste workspace.';
-      return;
-    }
+    const loader=window.NutEVSearchEvents?.loadHistoryScope;
+    if(typeof loader!=='function')throw new Error('history_event_bus_unavailable');
+    await loader(requested,50);
     if(message)message.textContent='';
-  }catch{
-    if(message)message.textContent='Falha de conexão ao atualizar o histórico.';
+  }catch(error){
+    const status=Number(error?.status||0);
+    if(message)message.textContent=status===409&&requested==='project'?'Selecione um projeto acessível para ver as buscas desse projeto.':'Não foi possível atualizar este histórico agora.';
   }
 }
 
