@@ -10,6 +10,7 @@ const MAX_ABANDONED_JOBS=50;
 let lastResult=null;
 let lastJob=null;
 let lastHistory=[];
+let lastHistoryScope='';
 const abandonedJobs=new Set();
 
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
@@ -85,7 +86,8 @@ function publishResult(result,source){
 }
 function publishHistory(searches,scope=''){
   lastHistory=Array.isArray(searches)?searches:[];
-  emit('nutev:search-history',{searches:lastHistory,scope});
+  lastHistoryScope=String(scope||'');
+  emit('nutev:search-history',{searches:lastHistory,scope:lastHistoryScope});
 }
 function processPayload(payload,{path,method}){
   if(path==='/api/searches'&&method==='GET'&&Array.isArray(payload?.searches)){
@@ -133,10 +135,27 @@ window.fetch=async(...args)=>{
   return response;
 };
 
+async function loadHistoryScope(scope='workspace',limit=50){
+  const requested=scope==='project'?'project':'workspace';
+  const safeLimit=Math.max(1,Math.min(Number(limit)||50,200));
+  const response=await window.fetch(`/api/searches?limit=${safeLimit}&scope=${requested}`,{
+    cache:'no-store',
+    credentials:'same-origin',
+  });
+  if(!response.ok){
+    const error=new Error(`history_http_${response.status}`);
+    error.status=response.status;
+    throw error;
+  }
+  return response;
+}
+
 window.NutEVSearchEvents={
   getLastResult:()=>lastResult,
   getLastJob:()=>lastJob,
   getLastHistory:()=>[...lastHistory],
+  getLastHistoryScope:()=>lastHistoryScope,
+  loadHistoryScope,
   isMonitoringAbandoned:jobId=>abandonedJobs.has(String(jobId||'').trim()),
   abandonJob,
   retryDelays:[...RETRY_DELAYS],
