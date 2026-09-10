@@ -1,64 +1,44 @@
 # NutEV System Closeout Master
 
-Audit date: 2026-09-10 (America/Sao_Paulo). This is an evidence ledger, not a release approval.
+Audit: 2026-09-10, America/Sao_Paulo. Execution PR: #1246, branch `closeout/release-gates-20260910`.
+Baseline main: `0c354e23150f74692cd623007c5acc27a93fe28b`.
+Code candidate before this documentation commit: `c45e302a3a8cdbac3b8721fe6020320aebd9e98f`.
+Overall: **PENDING / NOT RELEASE COMPLETE**. This ledger is not a scientific approval or deployment authorization.
 
-Baseline: `main@0c354e23150f74692cd623007c5acc27a93fe28b` (PR #1245).
-Working branch: `closeout/release-gates-20260910`.
-Overall state: **PENDING / NOT RELEASE COMPLETE**.
+## Boundaries
 
-## Scope and immutable boundaries
+No feature, vocabulary, scoring, scientific-state or historical ownership expansion. Global bibliographic identity stays separate from private project state. UNKNOWN is not migrated. Destructive tests run only in temporary synthetic fixtures; production checks must be non-destructive. No private key, protected full text or production database belongs in this repository.
 
-Freeze feature/vocabulary/scoring expansion. Preserve global bibliographic identity and private workspace/project/search/review state. No scientific search, production migration, historical ownership adoption, PRISMA event, human approval, or production-data mutation is authorized by this ledger. Destructive tests run only on temporary synthetic fixtures. Production smoke must be non-destructive.
+Allowed states: PASS, FAIL, BLOCKED_EXTERNAL, BLOCKED_SCIENTIFIC, NOT_APPLICABLE, PENDING. PASS is scoped to evidence and exact code; any new commit requires fresh candidate CI. A PR success does not establish production success.
 
-Allowed states: PASS, FAIL, BLOCKED_EXTERNAL, BLOCKED_SCIENTIFIC, NOT_APPLICABLE, PENDING. PASS is scoped to the stated execution and SHA, never inferred from a file or PR title. A documentation commit invalidates any claim that the entire new release SHA has already passed CI.
+## Evidence matrix
 
-## Baseline evidence
-
-- Main ref: https://github.com/WillianVagner123/NutEV-Evidence-Engine/commit/0c354e23150f74692cd623007c5acc27a93fe28b
-- CI: https://github.com/WillianVagner123/NutEV-Evidence-Engine/actions/runs/34275597931
-- Chromium: https://github.com/WillianVagner123/NutEV-Evidence-Engine/actions/runs/34275598054
-- Failed deployment, attempt 3: https://github.com/WillianVagner123/NutEV-Evidence-Engine/actions/runs/34275710592
-- Deployment job: https://github.com/WillianVagner123/NutEV-Evidence-Engine/actions/runs/34275710592/job/102252237328
-- CodeQL: https://github.com/WillianVagner123/NutEV-Evidence-Engine/actions/runs/34275598024
-
-## Control matrix
-
-All baseline CI entries below refer only to the baseline SHA above. Post-change verification is PENDING.
-
-| Requirement | State | Evidence / command | Related file | Blocker / owner | Next gate |
+| Requirement | State | Evidence / command | Source | Blocker / owner | Next gate |
 |---|---|---|---|---|---|
-| Revalidate main | PASS | Main branch API returned baseline SHA | AGENTS.md | None | Recheck before promotion |
-| Python 3.12 / 3.13 CI | PASS | CI jobs 102227706267 / 102227706270 succeeded | .github/workflows/ci.yml | Baseline only | Rerun on candidate |
-| Windows smoke | PASS | CI job 102227706318 succeeded | .github/workflows/ci.yml | Baseline only | Rerun on candidate |
-| Blocking Ruff | PASS | CI job 102227706352 succeeded | .github/workflows/ci.yml | Advisory style uses `|| true`; not a style-clean claim | Rerun blocking checks |
-| Provenance typecheck | PASS | CI job 102227705897 succeeded | .github/workflows/ci.yml | Covers three configured files, not whole repository | Preserve scope disclosure |
-| Configured scientific guardrail jobs | PASS | CI job 102227706289 succeeded | .github/workflows/ci.yml | Does not establish human scientific approval | Rerun on candidate |
-| Chromium pre-deploy | PASS | Run 34275598054 succeeded | .github/workflows/predeploy-browser-e2e.yml | Detailed browser coverage audit PENDING | Inspect jobs/artifacts |
-| CodeQL Python | PASS | Check 102227706386 succeeded on baseline SHA | .github/workflows/codeql.yml | Baseline only | Rerun on candidate |
-| Standalone Full Multi-tenant Death Test | PENDING | `python tools/multitenant_death_test.py` | docs/FULL_MULTITENANT_DEATH_TEST.md | Explicit executed report not yet obtained | Inspect and execute hermetically |
-| Security scan / dependency review / release artifact validation | PENDING | Exact-SHA jobs to be inspected | .github/workflows/ | Do not substitute PR-head success for merge SHA | Reconcile execution applicability |
-| Aggregate pre-deploy gate | FAIL | Workflow triggers only after `ci`; no other required-check barrier before SSH; manual dispatch also needs validation | .github/workflows/deploy-hetzner.yml | Release engineering | Add and test fail-closed exact-SHA barrier |
-| SSH configuration | BLOCKED_EXTERNAL | Deployment job failed at Configure SSH before connection | docs/FINAL_MULTITENANT_RELEASE_GATE.md | Repository owner: HETZNER environment secret | Correct valid matching private key outside chat; never weaken validation |
-| Production deploy | BLOCKED_EXTERNAL | Verify SSH / Deploy steps skipped in failed run | .github/workflows/deploy-hetzner.yml | SSH + release gates | Promote only verified SHA |
-| Production auth mode / live SHA / local runtime smoke | PENDING | Not observed in this audit | deploy/hetzner/ | Authenticated runtime access required | Verify pilot and exact SHA |
-| Public HTTPS smoke / version | PENDING | Audit environment could not obtain an HTTP response; not evidence of outage | docs/FINAL_MULTITENANT_RELEASE_GATE.md | Runtime access | Verify edge plus identity; 401 alone is insufficient |
-| A1 scientific authorization | BLOCKED_SCIENTIFIC | Canonical master has PRESS not PASS, GF-10 false, freeze false | ARTICLE1_SEARCH_MASTER.md; config/nutev/article1_search_master_v1.json | Authorized academic reviewers | Record genuine approvals only |
-| D-132 proposal | BLOCKED_SCIENTIFIC | PR #1230 remains draft / proposed | PR #1230 | Advisor and named human verifier | Review proposal without manufacturing approval |
-| A2 historical binding | BLOCKED_EXTERNAL | Runtime inventory and reviewed provenance not available | docs/ARTICLE2_INTEGRATIVE_WORKFLOW.md | Runtime access + reviewed mapping | Read-only inventory; UNKNOWN stays unmigrated |
-| Data reconciliation / backup restoration | PENDING | No production volume inspected or mutated | MULTITENANT_MIGRATION_INVENTORY.md | Runtime access | Hash/count reconciliation and tested recovery |
-| All open PR dispositions | PENDING | Initial inventory contains historical expansions and separate bot updates | docs/OPEN_PR_DISPOSITION.md | Need complete reconciliation and patch review | No blind merge or close |
-| Final acceptance | PENDING | No final RC, deployed identity or completed acceptance pack | docs/FINAL_SYSTEM_ACCEPTANCE.md | Above gates | Independent final review |
+| Baseline main identity | PASS | Branch read returned baseline SHA | CLOSEOUT_BASELINE.md | None | Revalidate before promotion |
+| Baseline Python 3.12/3.13, Windows, blocking Ruff, scoped typing, guardrails | PASS | CI run 34275597931 | .github/workflows/ci.yml | Baseline only | Fresh candidate checks |
+| Baseline Chromium / CodeQL | PASS | Runs 34275598054 / 34275598024 | CLOSEOUT_BASELINE.md | Not full pilot UX proof | Candidate and pilot-specific audit |
+| Local candidate test suite | PASS | `PYTHONPATH=src python -m pytest -q nutev_tests`: 999 passed, Python 3.13.5 | CLOSEOUT_BASELINE.md | Exact source archive plus declared overlays; not production | CI on final candidate |
+| Release verifier and workflow contracts | PASS | 84 targeted tests; 4 YAML files; 14 shell syntax checks | SECURITY_RED_TEAM_CLOSEOUT.md | Real GitHub promotion not executed | Candidate CI and reviewed promotion |
+| Existing hermetic multi-tenant matrix | PASS | 17 checks locally and run 34537074947 on bb2e93e43fab239e77039ae991934cfba13df513 | PRODUCT_DEATH_TEST_REPORT.md | Limited to implemented matrix | Browser/API cases not covered remain pending |
+| Pre-deploy aggregate barrier defect | PENDING | Corrected in candidate code, not main or production | tools/check_release_prerequisites.py | PR #1246 review and exact-SHA checks | Merge only reviewed candidate |
+| SSH configuration | BLOCKED_EXTERNAL | Deploy 34275710592 attempt 3 failed Configure SSH | PRODUCTION_SMOKE_REPORT.md | Owner: HETZNER environment secret | Correct secret securely, never in chat |
+| Production deploy/auth/SHA/edge | BLOCKED_EXTERNAL | No successful candidate deployment or authenticated runtime inspection | PRODUCTION_SMOKE_REPORT.md | SSH + acceptance gates | pilot + internal/public smoke + exact SHA |
+| Full pilot browser journey | PENDING | Baseline Chromium is not all requested cases | PRODUCT_DEATH_TEST_REPORT.md | Authenticated synthetic test fixture | Multi-tab/reload/deep-link revocation matrix |
+| Production integrity / recovery | PENDING | No volume inspected or modified; source archive verified | DATA_INTEGRITY_CLOSEOUT.md; ROLLBACK_RUNBOOK.md | Runtime access and reviewed backups | Read-only reconciliation + restore rehearsal |
+| A1 authorization | BLOCKED_SCIENTIFIC | Repository PRESS/GF-10/freeze gates not approved; D-132 proposal only | ARTICLE1_FORMAL_GATE_STATUS.md | Academic governance and named human verifier | Retrieve canonical approvals; never fabricate |
+| A2 binding | BLOCKED_EXTERNAL | No actual production inventory or validated ownership evidence | ARTICLE2_LEGACY_BINDING_AUDIT.md | Runtime access, reviewed mapping | Inventory then validated binding |
+| Open PR initial classification | PASS | 46 pre-existing IDs inventoried; 4 BLOCKED, 42 FUTURE_BACKLOG | OPEN_PR_DISPOSITION.md | Patch-level disposition still pending | No blind merge or closure |
+| Final acceptance | PENDING | No final accepted deployment | FINAL_SYSTEM_ACCEPTANCE.md | Above blockers | Independent acceptance |
 
-## Priority and execution order
+## Order
 
-1. P0 external: invalid deployment secret. Only the owner should correct `HETZNER_SSH_KEY` in the HETZNER environment, outside chat/logs/Git. Match its public half to the server's authorized key. Do not guess or replace server access automatically.
-2. P0 release control: enforce the documented prerequisites for the exact target SHA before production access, including manual promotion. A green `ci` alone must not promote.
-3. P1: independently verify tenant/privacy/browser coverage, production identity/auth, full data reconciliation and rollback.
-4. P2: preserve A1 academic and A2 provenance gates; pending scientific work does not authorize platform shortcuts.
-5. P3: classify legacy expansion PRs as future work when appropriate; do not change taxonomy/scoring to clean the PR list.
+P0: secure SSH configuration and enforce reviewed release barrier. P1: candidate CI, pilot security/UX, production identity, backup/restore and data reconciliation. P2: A1 academic gates and A2 provenance. P3: legacy PR patch review and documentation alignment. A scientific blocker does not prevent safe platform work, but it cannot be marked PASS to simplify closeout.
 
-Continue isolated code/tests/documentation while external gates are blocked. No production retry solely to repeat an unchanged secret failure.
+## Audit environment
 
-## Environment limitation
+Initial direct GitHub/network DNS failed. Source access was subsequently recovered through the connector's GitHub Actions artifact, not by bypassing authentication. The exact tracked source archive was verified and extracted; local tests then executed. This is an archive with explicit overlays, not a claim of a full git clone or live production access. See CLOSEOUT_BASELINE.md for identity and failure-history details.
 
-The current audit container has Python 3.13.5 and pytest, but no repository checkout, no agent-browser executable, and GitHub DNS resolution failed. GitHub connector reads/writes remain available. Any local test must identify the exact staged files and restricted scope; do not claim full-repository or production execution from it. No background completion is promised.
+## Reports
+
+CLOSEOUT_BASELINE.md; OPEN_PR_DISPOSITION.md; PRODUCT_DEATH_TEST_REPORT.md; DATA_INTEGRITY_CLOSEOUT.md; ARTICLE2_LEGACY_BINDING_AUDIT.md; ARTICLE1_FORMAL_GATE_STATUS.md; SECURITY_RED_TEAM_CLOSEOUT.md; PRODUCTION_SMOKE_REPORT.md; ROLLBACK_RUNBOOK.md; FINAL_SYSTEM_ACCEPTANCE.md. Detailed CI results on newer commits belong in the PR/check URLs, not silently retrofitted into this baseline.
