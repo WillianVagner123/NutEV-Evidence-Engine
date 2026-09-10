@@ -8,35 +8,82 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: hetzner-production
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    name: deploy production
+  release-prerequisites:
+    name: exact-SHA release prerequisites
     if: >-
       ${{ (github.event_name == 'workflow_dispatch' &&
            github.ref == 'refs/heads/main') ||
           (vars.HETZNER_AUTODEPLOY == 'true' &&
            github.event_name == 'workflow_run' &&
            github.event.workflow_run.conclusion == 'success' &&
-           github.event.workflow_run.head_branch == 'main') }}
+           github.event.workflow_run.head_branch == 'main' &&
+           github.event.workflow_run.head_repository.full_name == github.repository) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      target_sha: ${{ steps.verify.outputs.sha }}
+    env:
+      TARGET_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          persist-credentials: false
+      - name: Verify all release prerequisites for current main
+        id: verify
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/check_release_prerequisites.py \
+            --repo "$GITHUB_REPOSITORY" --sha "$TARGET_SHA" \
+            --output release-prerequisites.json --wait-seconds 900
+          printf 'sha=%s\n' "$TARGET_SHA" >> "$GITHUB_OUTPUT"
+      - name: Upload prerequisite evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: release-prerequisites-${{ github.run_id }}-${{ github.run_attempt }}
+          path: release-prerequisites.json
+          if-no-files-found: error
+          retention-days: 14
+
+  deploy:
+    name: deploy production
+    needs: release-prerequisites
+    if: ${{ needs.release-prerequisites.result == 'success' }}
     runs-on: ubuntu-latest
     environment: HETZNER
     timeout-minutes: 30
     env:
-      TARGET_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+      TARGET_SHA: ${{ needs.release-prerequisites.outputs.target_sha }}
       HETZNER_HOST: ${{ vars.HETZNER_HOST }}
       HETZNER_USER: ${{ vars.HETZNER_USER }}
       HETZNER_PORT: ${{ vars.HETZNER_PORT }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
-      HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
       NUTEV_PUBLIC_URL: ${{ vars.NUTEV_PUBLIC_URL }}
 
     steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          persist-credentials: false
+      - name: Revalidate candidate after environment approval and before SSH
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: >-
+          python3 tools/check_release_prerequisites.py
+          --repo "$GITHUB_REPOSITORY" --sha "$TARGET_SHA"
+          --output release-prerequisites-recheck.json
       - name: Validate deployment configuration
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
         shell: bash
         run: |
           set -euo pipefail
@@ -47,6 +94,8 @@ jobs:
           test -n "$HETZNER_SSH_KEY"
 
       - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
         shell: bash
         run: |
           set -euo pipefail
