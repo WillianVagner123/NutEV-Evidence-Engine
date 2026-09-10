@@ -1,0 +1,80 @@
+name: multitenant-release-audit
+
+on:
+  pull_request:
+  push:
+    branches: ["main", "closeout/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  multitenant-death:
+    name: Full multi-tenant death test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: src
+      NUTEV_DISABLE_NETWORK: "1"
+      NUTEV_ENVIRONMENT: test
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Preserve exact source identity for reproducible offline audit
+        run: |
+          mkdir -p closeout_artifacts
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          git archive --format=tar.gz --output=closeout_artifacts/source.tar.gz "$GITHUB_SHA"
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          path = Path("closeout_artifacts/source.tar.gz")
+          Path("closeout_artifacts/source_identity.json").write_text(json.dumps({
+              "repository": os.environ["GITHUB_REPOSITORY"],
+              "sha": os.environ["GITHUB_SHA"],
+              "source_archive_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+              "source": "git archive of tracked files only; no runtime volumes",
+          }, indent=2) + "\n", encoding="utf-8")
+          PY
+      - name: Install isolated test dependencies
+        run: |
+          python -m pip install -r requirements/nutev-ci.txt
+          python -m pip install --no-deps -e .
+      - name: Run hermetic death matrix
+        run: python tools/multitenant_death_test.py --output closeout_artifacts/multitenant-death.json
+      - name: Validate death matrix evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path("closeout_artifacts/multitenant-death.json").read_text())
+          assert report["record_type"] == "NUTEV_FULL_MULTITENANT_DEATH_TEST"
+          assert report["schema_version"] == 1 and report["status"] == "PASS"
+          assert report["tenant_count"] == 2 and report["project_count"] == 2
+          checks = report["checks"]
+          assert checks and report["checks_passed"] == len(checks)
+          assert all(c["status"] == "PASS" for c in checks)
+          assert len({c["check"] for c in checks}) == len(checks)
+          expected = {
+              "no_network_required": True, "temporary_fixture_only": True,
+              "historical_ownership_modified": False, "scientific_search_executed": False,
+              "article1_state_modified": False, "article2_legacy_binding_modified": False,
+              "platform_admin_private_bypass": False,
+          }
+          assert all(report["assertions"].get(k) is v for k, v in expected.items())
+          PY
+      - name: Upload reproducible audit evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: multitenant-closeout-${{ github.sha }}
+          path: closeout_artifacts/
+          if-no-files-found: error
+          retention-days: 14
