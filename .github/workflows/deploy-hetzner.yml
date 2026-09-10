@@ -66,6 +66,7 @@ jobs:
       HETZNER_HOST: ${{ vars.HETZNER_HOST }}
       HETZNER_USER: ${{ vars.HETZNER_USER }}
       HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
       NUTEV_PUBLIC_URL: ${{ vars.NUTEV_PUBLIC_URL }}
 
@@ -135,7 +136,13 @@ jobs:
             exit 1
           fi
           chmod 600 ~/.ssh/id_ed25519.pub
-          ssh-keyscan -p "$PORT" -H "$HETZNER_HOST" >> ~/.ssh/known_hosts
+          # Trusted host pin must be verified out of band; never trust a live scan.
+          test -n "$HETZNER_KNOWN_HOSTS"
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          HOST_LOOKUP="$HETZNER_HOST"
+          if [[ "$PORT" != "22" ]]; then HOST_LOOKUP="[$HETZNER_HOST]:$PORT"; fi
+          ssh-keygen -F "$HOST_LOOKUP" -f ~/.ssh/known_hosts >/dev/null
 
       - name: Verify SSH access
         shell: bash
@@ -143,6 +150,7 @@ jobs:
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
           ssh \
+            -o StrictHostKeyChecking=yes \
             -o BatchMode=yes \
             -o IdentitiesOnly=yes \
             -o ConnectTimeout=15 \
@@ -160,6 +168,7 @@ jobs:
           PUBLIC_URL_Q=$(printf '%q' "${NUTEV_PUBLIC_URL:-https://nutev.mindsperformance.com.br}")
 
           ssh \
+            -o StrictHostKeyChecking=yes \
             -o BatchMode=yes \
             -o IdentitiesOnly=yes \
             -o ConnectTimeout=15 \
@@ -172,7 +181,15 @@ jobs:
           test -d .git
           test -f deploy/hetzner/.env
 
+          # Preserve the previous configuration outside Git before any checkout.
+          test -z "$(git status --porcelain --untracked-files=no)"
           git fetch --prune origin main
+          test "$(git rev-parse origin/main)" = "$TARGET_SHA"
+          umask 077
+          RECOVERY_BASE=/var/lib/nutev-release-recovery
+          mkdir -p "$RECOVERY_BASE"
+          RECOVERY_DIR=$(mktemp -d "$RECOVERY_BASE/${TARGET_SHA}.XXXXXX")
+          cp -a deploy/hetzner "$RECOVERY_DIR/config"
           git checkout -f main
           git reset --hard "$TARGET_SHA"
 
@@ -182,20 +199,50 @@ jobs:
           VERSION="${TARGET_SHA:0:12}"
           COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
 
-          OLD_CONTAINER="$("${COMPOSE[@]}" ps -q nutev 2>/dev/null || true)"
-          if [[ -n "$OLD_CONTAINER" ]]; then
-            OLD_IMAGE_ID="$(docker inspect -f '{{.Image}}' "$OLD_CONTAINER")"
-            docker tag "$OLD_IMAGE_ID" nutev:rollback
-          fi
+          OLD_CONTAINER="$("${COMPOSE[@]}" ps -q nutev 2>/dev/null)"
+          test -n "$OLD_CONTAINER" # Initial installation needs a separately reviewed runbook.
+          OLD_IMAGE_ID="$(docker inspect -f '{{.Image}}' "$OLD_CONTAINER")"
+          docker tag "$OLD_IMAGE_ID" nutev:rollback
+          OLD_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
+          [[ "$OLD_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+          COMPOSE_PROJECT="$(docker inspect -f '{{index .Config.Labels "com.docker.compose.project"}}' "$OLD_CONTAINER")"
+          test -n "$COMPOSE_PROJECT"
+          OUTPUT_VOLUME="$(docker inspect -f '{{range .Mounts}}{{if and (eq .Destination "/app/project_output_reference") (eq .Type "volume")}}{{.Name}}{{end}}{{end}}' "$OLD_CONTAINER")"
+          test -n "$OUTPUT_VOLUME"
+          printf '%s\n' "$OLD_COMMIT" > "$RECOVERY_DIR/previous-sha.txt"
+          printf '%s\n' "$OLD_IMAGE_ID" > "$RECOVERY_DIR/previous-image.txt"
+          OLD_STOPPED=0
+          PROMOTED=0
+          ROLLBACK_DONE=0
 
           rollback() {
-            if docker image inspect nutev:rollback >/dev/null 2>&1; then
-              echo "Deployment gate failed; rolling back previous NutEV image."
-              NUTEV_IMAGE=nutev:rollback "${COMPOSE[@]}" up -d --no-build nutev caddy
-              sleep 5
-              curl -fsS http://127.0.0.1:8765/api/health >/dev/null || true
-            fi
+            if [[ "$ROLLBACK_DONE" = "1" ]]; then return; fi
+            ROLLBACK_DONE=1
+            echo "Deployment failed; restoring the previous image and configuration, not overwriting scientific data."
+            docker tag "$OLD_IMAGE_ID" nutev:rollback
+            NUTEV_IMAGE=nutev:rollback docker compose \
+              --project-name "$COMPOSE_PROJECT" \
+              --env-file "$RECOVERY_DIR/config/.env" \
+              -f "$RECOVERY_DIR/config/compose.yaml" up -d --no-build nutev caddy
+            for _ in $(seq 1 30); do
+              RESTORED_COMMIT=$(curl -fsS --max-time 3 http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))') || RESTORED_COMMIT=''
+              if [[ "$RESTORED_COMMIT" = "$OLD_COMMIT" ]] && curl -fsS --max-time 3 http://127.0.0.1:8765/api/health >/dev/null; then
+                echo "Previous runtime identity restored; release remains FAILED."
+                return 0
+              fi
+              sleep 2
+            done
+            echo "::error::Rollback verification failed; manual recovery required. Protected snapshot preserved." >&2
+            return 1
           }
+          recover_on_error() {
+            trap - ERR
+            if [[ "$PROMOTED" = "1" ]]; then rollback;
+            elif [[ "$OLD_STOPPED" = "1" ]]; then docker start "$OLD_CONTAINER" >/dev/null; fi
+            exit 1
+          }
+          set -E
+          trap recover_on_error ERR
 
           docker build \
             --build-arg NUTEV_BUILD_COMMIT="$TARGET_SHA" \
@@ -251,6 +298,19 @@ jobs:
           cleanup_preflight
           trap - EXIT
 
+          # Quiesce all application writers; source volume is read-only to the snapshotter.
+          docker stop "$OLD_CONTAINER" >/dev/null
+          OLD_STOPPED=1
+          test "$(docker inspect -f '{{.State.Running}}' "$OLD_CONTAINER")" = "false"
+          # Refuse to snapshot if another running container mounts the shared volume.
+          test -z "$(docker ps -q --filter volume="$OUTPUT_VOLUME")"
+          docker run --rm --user 0 --entrypoint python \
+            -v "$OUTPUT_VOLUME:/snapshot-source:ro" \
+            -v "$RECOVERY_DIR:/snapshot-backups" \
+            "$IMAGE" tools/recovery_snapshot.py \
+            --source /snapshot-source --backup /snapshot-backups/volume --quiesced
+          test -s "$RECOVERY_DIR/volume/restore-proof.json"
+          PROMOTED=1
           NUTEV_IMAGE="$IMAGE" "${COMPOSE[@]}" up -d --no-build nutev caddy
 
           production_ok=0

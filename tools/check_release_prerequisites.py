@@ -35,6 +35,7 @@ REQUIRED = {
     },
     ".github/workflows/predeploy-browser-e2e.yml": {
         "Chromium pre-deploy product gate": ("Run real Chromium pre-deploy audit",),
+        "Authenticated pilot browser closeout": ("Run authenticated pilot browser matrix",),
     },
     ".github/workflows/dependency-review.yml": {
         "dependency-review": ("Dependency Review",),
