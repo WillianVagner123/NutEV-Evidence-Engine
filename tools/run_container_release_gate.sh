@@ -59,3 +59,5 @@ docker exec "$APP_ID" python tools/check_runtime_http_surface.py \
 docker exec "$APP_ID" python tools/check_predeploy_runtime_contract.py --json > "$OUT/container-contract.json"
 docker run --rm --network none --user 0 --entrypoint python \
   -e PYTHONPATH=/app/src:/app "$ID-app" tools/container_recovery_fixture.py > "$OUT/container-recovery.json"
+# Exercise the actual workflow's pre-promotion restart and post-failure rollback.
+bash tools/rehearse_release_recovery.sh "$ID-app" "$OUT"

@@ -64,6 +64,7 @@ def validate_runtime_payloads(
     expected_commit: str,
     auth_status: dict[str, Any] | None = None,
     expected_auth_mode: str | None = None,
+    expected_version: str | None = None,
 ) -> list[str]:
     failures: list[str] = []
 
@@ -75,6 +76,9 @@ def validate_runtime_payloads(
         failures.append("version.commit is missing")
     elif actual_commit != expected_commit:
         failures.append(f"version.commit mismatch: expected {expected_commit}, got {actual_commit}")
+
+    if expected_version is not None and str(version.get("version") or "") != expected_version:
+        failures.append("version.version mismatch with expected package version")
 
     rows = providers.get("providers")
     if not isinstance(rows, list):
@@ -131,6 +135,7 @@ def check_runtime_http_surface(
     *,
     timeout: float = 5.0,
     expected_auth_mode: str = "pilot",
+    expected_version: str | None = None,
 ) -> dict[str, Any]:
     health = _get_json(base_url, "/api/health", timeout=timeout)
     version = _get_json(base_url, "/api/version", timeout=timeout)
@@ -166,6 +171,7 @@ def check_runtime_http_surface(
         expected_commit=expected_commit,
         auth_status=auth_status,
         expected_auth_mode=expected_auth_mode,
+        expected_version=expected_version,
     )
     for path, item in page_checks.items():
         if item["status"] != 200:
@@ -187,6 +193,8 @@ def check_runtime_http_surface(
         "base_url": base_url.rstrip("/"),
         "expected_commit": expected_commit,
         "actual_commit": str(version.get("commit") or ""),
+        "actual_version": str(version.get("version") or ""),
+        "expected_version": expected_version,
         "auth_mode": str(auth_status.get("mode") or ""),
         "expected_auth_mode": expected_auth_mode,
         "provider_count": len(providers.get("providers") or []),
@@ -206,9 +214,12 @@ def check_runtime_http_surface(
 
 
 def main() -> int:
+    from nutev.__version__ import __version__
+
     parser = argparse.ArgumentParser(description="Validate the running NutEV release HTTP surface without external provider calls.")
     parser.add_argument("--base-url", required=True)
     parser.add_argument("--expected-commit", required=True)
+    parser.add_argument("--expected-version", default=__version__)
     parser.add_argument("--expected-auth-mode", choices=("legacy", "pilot"), default="pilot")
     parser.add_argument("--timeout", type=float, default=5.0)
     parser.add_argument("--json", action="store_true")
@@ -220,6 +231,7 @@ def main() -> int:
             args.expected_commit,
             timeout=args.timeout,
             expected_auth_mode=args.expected_auth_mode,
+            expected_version=args.expected_version,
         )
     except Exception as exc:
         report = {

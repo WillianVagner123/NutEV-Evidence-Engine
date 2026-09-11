@@ -75,3 +75,12 @@ release manifest. A later commit invalidates a prior candidate's blanket PASS.
 Candidate distributions uploaded as CI artifacts are not GitHub Releases, PyPI
 publications or Zenodo deposits. Retain the final audit outside expiring CI
 storage before publishing, without retaining private test credentials.
+
+## Generic CLI boundary
+
+The new `science-topics` command requires an explicit `--topic-profile`. It no
+longer silently chooses the private A1 profile. The archived v1.0.0 CLI exposed
+only version/help/providers, so this correction does not remove a released
+v1.0.0 command contract. Existing source-checkout scripts using the unreleased
+implicit A1 default must pass their reviewed profile explicitly. No profile
+content or search vocabulary was changed.

@@ -196,7 +196,7 @@ jobs:
           IMAGE="nutev:${TARGET_SHA}"
           BUILD_TIME="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           BUILD_BRANCH="main"
-          VERSION="${TARGET_SHA:0:12}"
+          VERSION="$(python3 -c 'ns={};exec(open("src/nutev/__version__.py", encoding="utf-8").read(), ns);print(ns["__version__"])')"
           COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
 
           OLD_CONTAINER="$("${COMPOSE[@]}" ps -q nutev 2>/dev/null)"
