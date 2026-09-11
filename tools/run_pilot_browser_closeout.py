@@ -27,12 +27,15 @@ def run(output: Path) -> dict:
             page.on('response',lambda res:network.append({'event':'response','url':res.url,'status':res.status}))
             page.on('requestfailed',lambda req:network.append({'event':'failed','url':req.url,'reason':req.failure}))
             return page
-        def authenticate(page,label):
+        def login(page,label):
             user=data['users'][label]
             page.goto(base+'/login.html',wait_until='domcontentloaded')
             expect(page.locator('#loginForm')).to_be_visible()
             page.locator('#loginEmail').fill(user['email']);page.locator('#loginPassword').fill(user['password'])
             page.locator('#loginSubmit').click();page.wait_for_url(base+'/',timeout=10000)
+            return user
+        def authenticate(page,label):
+            user=login(page,label)
             expect(page.locator('#nutevWorkspaceSelect')).to_be_visible()
             with page.expect_navigation(wait_until='domcontentloaded'):
                 page.locator('#nutevWorkspaceSelect').select_option(user['workspace_id'])
@@ -75,11 +78,9 @@ def run(output: Path) -> dict:
             a.locator('#libraryScope').select_option('project')
             expect(a.locator('#libraryEntries')).not_to_contain_text('PRIVATE_A_BROWSER')
             passed('foreign_deep_link_back_and_reload')
-            # Hold a real response from old context; then change server context outside UI.
             pending=[]
             def hold(route):
-                response=route.fetch()
-                pending.append((route,response))
+                response=route.fetch();pending.append((route,response))
             a.route('**/api/library?scope=project&hold=1',hold)
             a.evaluate("void (window.delayedResult=fetch('/api/library?scope=project&hold=1').then(r=>r.json()).then(()=>window.stalePaint=true).catch(()=>false))")
             for _ in range(100):
@@ -87,11 +88,9 @@ def run(output: Path) -> dict:
                 a.wait_for_timeout(50)
             assert pending,'delayed response not intercepted'
             user=data['users']['a']
-            response=contexts[0].request.post(base+'/api/context/select',data={'workspace_id':user['workspace_id'],'project_id':user['projects'][0]})
-            assert response.status==200
+            response=contexts[0].request.post(base+'/api/context/select',data={'workspace_id':user['workspace_id'],'project_id':user['projects'][0]});assert response.status==200
             pending[0][0].fulfill(response=pending[0][1])
-            expect(a.locator('#nutevProjectSelect')).to_have_value(user['projects'][0])
-            assert a.evaluate('window.stalePaint !== true')
+            expect(a.locator('#nutevProjectSelect')).to_have_value(user['projects'][0]);assert a.evaluate('window.stalePaint !== true')
             passed('delayed_response_cannot_paint_after_context_change')
             a.goto(base+'/exports.html',wait_until='domcontentloaded')
             payload={'export_kind':'fixture','artifacts':[{'name':'fixture.txt','media_type':'text/plain','content_text':'PRIVATE_EXPORT_BROWSER'}]}
@@ -102,29 +101,30 @@ def run(output: Path) -> dict:
             assert contexts[1].request.get(base+f'/api/exports/{export_id}/artifacts/fixture.txt').status==404
             assert contexts[0].request.get(base+f'/api/exports/{export_id}/artifacts/fixture.txt').body()==b'PRIVATE_EXPORT_BROWSER'
             passed('export_manifest_download_and_foreign_denial')
-            # Search UI uses real offline engine: explicit provider gaps, never invented results.
-            a.goto(base+'/search.html',wait_until='domcontentloaded')
-            expect(a.locator('#searchBtn')).to_be_enabled()
-            passed('pilot_search_page_loaded')
-            a.set_viewport_size({'width':390,'height':844})
-            expect(a.locator('.mobile-nav-toggle')).to_be_visible();a.locator('.mobile-nav-toggle').click()
-            expect(a.locator('.mobile-nav-toggle')).to_have_attribute('aria-expanded','true')
-            a.screenshot(path=str(output/'search-mobile.png'),full_page=True)
-            assert a.evaluate('document.documentElement.scrollWidth <= innerWidth+1')
-            passed('mobile_menu_and_no_horizontal_overflow')
-            a.goto(base+'/evidence-library.html',wait_until='domcontentloaded')
-            tab.goto(base+'/project.html',wait_until='domcontentloaded')
-            tab.locator('#nutevLogoutButton').click()
-            tab.wait_for_url('**/login.html');a.wait_for_url('**/login.html')
-            passed('logout_invalidates_other_tab')
-            # Server revocation is immediate; visible page is invalidated within client lease.
-            with sqlite3.connect(data['database']) as con:
-                con.execute("UPDATE platform_auth_sessions SET expires_at='2000-01-01T00:00:00+00:00' WHERE user_id=?",(data['users']['b']['user_id'],))
-            b.bring_to_front();b.evaluate("window.dispatchEvent(new Event('focus'))")
-            b.wait_for_url('**/login.html',timeout=10000);passed('session_expiry_clears_visible_private_page')
-            # Unexpected page errors invalidate acceptance, including errors from new guards.
-            assert not diagnostics,diagnostics
-            passed('no_javascript_page_errors')
+            a.goto(base+'/search.html',wait_until='domcontentloaded');expect(a.locator('#searchBtn')).to_be_enabled();passed('pilot_search_page_loaded')
+            a.set_viewport_size({'width':390,'height':844});expect(a.locator('.mobile-nav-toggle')).to_be_visible();a.locator('.mobile-nav-toggle').click();expect(a.locator('.mobile-nav-toggle')).to_have_attribute('aria-expanded','true')
+            a.screenshot(path=str(output/'search-mobile.png'),full_page=True);assert a.evaluate('document.documentElement.scrollWidth <= innerWidth+1');passed('mobile_menu_and_no_horizontal_overflow')
+            a.goto(base+'/evidence-library.html',wait_until='domcontentloaded');tab.goto(base+'/project.html',wait_until='domcontentloaded');tab.locator('#nutevLogoutButton').click();tab.wait_for_url('**/login.html');a.wait_for_url('**/login.html');passed('logout_invalidates_other_tab')
+            with sqlite3.connect(data['database']) as con:con.execute("UPDATE platform_auth_sessions SET expires_at='2000-01-01T00:00:00+00:00' WHERE user_id=?",(data['users']['b']['user_id'],))
+            b.bring_to_front();b.evaluate("window.dispatchEvent(new Event('focus'))");b.wait_for_url('**/login.html',timeout=10000);passed('session_expiry_clears_visible_private_page')
+
+            orphan_context=browser.new_context(viewport={'width':1366,'height':900});orphan_context.route('**/*',lambda route:route.continue_() if route.request.url.startswith(base) else route.abort());contexts.append(orphan_context)
+            orphan=page_in(orphan_context);login(orphan,'orphan')
+            expect(orphan.locator('.context-guidance')).to_contain_text('Acesso ainda não provisionado')
+            expect(orphan.locator('.context-guidance')).to_contain_text('administrador do NutEV')
+            orphan.goto(base+'/project.html',wait_until='domcontentloaded');expect(orphan.locator('#projectState')).to_contain_text('Acesso ainda não provisionado');passed('first_login_without_workspace_explains_next_step')
+
+            onboarding_context=browser.new_context(viewport={'width':1366,'height':900});onboarding_context.route('**/*',lambda route:route.continue_() if route.request.url.startswith(base) else route.abort());contexts.append(onboarding_context)
+            onboarding=page_in(onboarding_context);new_user=login(onboarding,'onboarding')
+            onboarding.locator('#nutevWorkspaceSelect').select_option(new_user['workspace_id']);expect(onboarding.locator('#nutevProjectSelect')).to_be_enabled()
+            onboarding.locator('#nutevProjectSelect').select_option(new_user['projects'][0]);onboarding.wait_for_load_state('domcontentloaded')
+            onboarding.goto(base+'/project.html',wait_until='domcontentloaded')
+            expect(onboarding.locator('#templatePanel')).to_be_visible();expect(onboarding.locator('#templatePanel')).to_contain_text('Escolha como este projeto vai usar o NutEV')
+            expect(onboarding.locator('input[name="applicationTemplate"]')).to_have_count(3)
+            onboarding.locator('input[name="applicationTemplate"][value="GENERIC_EVIDENCE_PROJECT"]').check();onboarding.locator('#configureApplication').click();onboarding.wait_for_load_state('domcontentloaded')
+            expect(onboarding.locator('#projectHealth')).to_have_text('contexto configurado');expect(onboarding.locator('#projectModules')).to_contain_text('Buscar evidências');expect(onboarding.locator('#projectModules')).to_contain_text('Biblioteca');expect(onboarding.locator('#projectModules')).to_contain_text('Exportações');passed('first_project_configuration_has_clear_supported_next_actions')
+
+            assert not diagnostics,diagnostics;passed('no_javascript_page_errors')
         except Exception as exc:
             (output/'pilot-browser.json').write_text(json.dumps({'status':'FAIL','checks':checks,'error':str(exc),'fixture_only':True,'production_contacted':False},indent=2)+'\n')
             for index,context in enumerate(contexts):
@@ -133,14 +133,11 @@ def run(output: Path) -> dict:
                     except Exception:pass
             raise
         finally:
-            (output/'browser-network.json').write_text(json.dumps(network,indent=2)+'\n')
-            (output/'page-errors.json').write_text(json.dumps(diagnostics,indent=2)+'\n')
-            (output/'server.log').write_bytes((root/'server.log').read_bytes())
+            (output/'browser-network.json').write_text(json.dumps(network,indent=2)+'\n');(output/'page-errors.json').write_text(json.dumps(diagnostics,indent=2)+'\n');(output/'server.log').write_bytes((root/'server.log').read_bytes())
             for context in contexts:context.close()
             browser.close()
     report={'status':'PASS','checks':checks,'checks_passed':len(checks),'fixture_only':True,'production_contacted':False,'external_providers_contacted':False}
-    (output/'pilot-browser.json').write_text(json.dumps(report,indent=2)+'\n')
-    return report
+    (output/'pilot-browser.json').write_text(json.dumps(report,indent=2)+'\n');return report
 
 
 def main():
