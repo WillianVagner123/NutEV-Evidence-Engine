@@ -15,8 +15,8 @@
     window.NutEVContext=null;
     if(login)location.replace('/login.html');else location.reload();
   }
-  function announce(){
-    const value=crypto.randomUUID();
+  function announce(signedOut=false){
+    const value=(signedOut?'logout:':'context:')+crypto.randomUUID();
     channel?.postMessage(value);
     try{localStorage.setItem(epochKey,value)}catch{}
   }
@@ -65,7 +65,7 @@
       headers.set('X-NutEV-Project',lease.project_id);
     }
     const response=await nativeFetch(input,{...options,headers,cache:'no-store',credentials:'same-origin'});
-    if(mutation&&response.ok){announce();return response}
+    if(mutation&&response.ok){announce(path==='/api/auth/logout');return response}
     if(response.status===401&&!guest&&!path.startsWith('/api/auth/')){
       invalidate(true);throw new Error('session_expired');
     }
@@ -85,8 +85,8 @@
     if(invalid)throw new Error('stale_response');
     return response;
   };
-  channel?.addEventListener('message',()=>{if(mode==='pilot')invalidate()});
-  window.addEventListener('storage',e=>{if(e.key===epochKey&&mode==='pilot')invalidate()});
+  channel?.addEventListener('message',event=>{if(mode==='pilot')invalidate(String(event.data).startsWith('logout:'))});
+  window.addEventListener('storage',e=>{if(e.key===epochKey&&mode==='pilot')invalidate(String(e.newValue).startsWith('logout:'))});
   window.addEventListener('focus',verifyLease);
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')verifyLease()});
   window.addEventListener('pageshow',e=>{if(e.persisted)invalidate()});
