@@ -32,6 +32,7 @@ jobs:
       HETZNER_USER: ${{ vars.HETZNER_USER }}
       HETZNER_PORT: ${{ vars.HETZNER_PORT }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+      HETZNER_COMPOSE_SERVICES: ${{ vars.HETZNER_COMPOSE_SERVICES }}
       HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
       NUTEV_PUBLIC_URL: ${{ vars.NUTEV_PUBLIC_URL }}
 
@@ -109,6 +110,7 @@ jobs:
           APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
           TARGET_SHA_Q=$(printf '%q' "$TARGET_SHA")
           PUBLIC_URL_Q=$(printf '%q' "${NUTEV_PUBLIC_URL:-https://nutev.mindsperformance.com.br}")
+          COMPOSE_SERVICES_Q=$(printf '%q' "${HETZNER_COMPOSE_SERVICES:-nutev caddy}")
 
           ssh \
             -o BatchMode=yes \
@@ -116,7 +118,7 @@ jobs:
             -o ConnectTimeout=15 \
             -p "$PORT" \
             "$HETZNER_USER@$HETZNER_HOST" \
-            "APP_DIR=$APP_DIR_Q TARGET_SHA=$TARGET_SHA_Q PUBLIC_URL=$PUBLIC_URL_Q bash -s" <<'REMOTE'
+            "APP_DIR=$APP_DIR_Q TARGET_SHA=$TARGET_SHA_Q PUBLIC_URL=$PUBLIC_URL_Q COMPOSE_SERVICES=$COMPOSE_SERVICES_Q bash -s" <<'REMOTE'
           set -euo pipefail
 
           cd "$APP_DIR"
@@ -133,6 +135,23 @@ jobs:
           VERSION="${TARGET_SHA:0:12}"
           COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
 
+          read -r -a RUNTIME_SERVICES <<< "${COMPOSE_SERVICES:-nutev caddy}"
+          if [[ "${#RUNTIME_SERVICES[@]}" -eq 0 ]]; then
+            echo "HETZNER_COMPOSE_SERVICES resolved to an empty service list" >&2
+            exit 1
+          fi
+          for service in "${RUNTIME_SERVICES[@]}"; do
+            [[ "$service" =~ ^[A-Za-z0-9_-]+$ ]] || {
+              echo "Invalid compose service name in HETZNER_COMPOSE_SERVICES: $service" >&2
+              exit 1
+            }
+            "${COMPOSE[@]}" config --services | grep -qx "$service" || {
+              echo "HETZNER_COMPOSE_SERVICES names a service absent from compose.yaml: $service" >&2
+              exit 1
+            }
+          done
+          printf 'runtime_services=%s\n' "${RUNTIME_SERVICES[*]}"
+
           OLD_CONTAINER="$("${COMPOSE[@]}" ps -q nutev 2>/dev/null || true)"
           if [[ -n "$OLD_CONTAINER" ]]; then
             OLD_IMAGE_ID="$(docker inspect -f '{{.Image}}' "$OLD_CONTAINER")"
@@ -142,7 +161,7 @@ jobs:
           rollback() {
             if docker image inspect nutev:rollback >/dev/null 2>&1; then
               echo "Deployment gate failed; rolling back previous NutEV image."
-              NUTEV_IMAGE=nutev:rollback "${COMPOSE[@]}" up -d --no-build nutev caddy
+              NUTEV_IMAGE=nutev:rollback "${COMPOSE[@]}" up -d --no-build "${RUNTIME_SERVICES[@]}"
               sleep 5
               curl -fsS http://127.0.0.1:8765/api/health >/dev/null || true
             fi
@@ -202,7 +221,7 @@ jobs:
           cleanup_preflight
           trap - EXIT
 
-          NUTEV_IMAGE="$IMAGE" "${COMPOSE[@]}" up -d --no-build nutev caddy
+          NUTEV_IMAGE="$IMAGE" "${COMPOSE[@]}" up -d --no-build "${RUNTIME_SERVICES[@]}"
 
           production_ok=0
           for _ in $(seq 1 45); do

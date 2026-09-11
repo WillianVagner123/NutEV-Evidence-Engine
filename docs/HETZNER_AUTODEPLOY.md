@@ -35,7 +35,8 @@ Create an environment named `HETZNER` to match the workflow and configure:
 - `HETZNER_APP_DIR`: absolute repository path on the server;
 - `HETZNER_PORT`: optional SSH port; blank means 22;
 - `HETZNER_AUTODEPLOY`: optional; set to `true` only when every successful `main` CI should deploy automatically;
-- `NUTEV_PUBLIC_URL`: optional public base URL used by the edge smoke; blank defaults to `https://nutev.mindsperformance.com.br`.
+- `NUTEV_PUBLIC_URL`: optional public base URL used by the edge smoke; blank defaults to `https://nutev.mindsperformance.com.br`;
+- `HETZNER_COMPOSE_SERVICES`: optional space-separated Compose services the deploy starts; blank defaults to `nutev caddy`. Set it to `nutev` on hosts where the HTTPS edge is not the Compose `caddy` service (for example a host-level Caddy already bound to ports 80/443). Every name is validated against `docker compose config --services` before any container is replaced.
 
 ### Secret
 
@@ -156,7 +157,7 @@ manual main dispatch OR successful main CI with autodeploy enabled
   -> offline runtime contract in preflight
   -> preflight /api/version == TARGET_SHA
   -> tag previous production image as nutev:rollback
-  -> switch production service to nutev:<sha>
+  -> switch configured production services to nutev:<sha>
   -> production /api/health on 127.0.0.1:8765
   -> offline runtime contract in production + write probe on persistent volume
   -> production /api/version == TARGET_SHA
