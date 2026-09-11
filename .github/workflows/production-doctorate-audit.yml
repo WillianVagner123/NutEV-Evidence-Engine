@@ -1,0 +1,69 @@
+name: production-doctorate-audit
+
+on:
+  workflow_run:
+    workflows: ["deploy-hetzner"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+  HETZNER_USER: ${{ vars.HETZNER_USER }}
+  HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+  HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+  HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+
+jobs:
+  audit:
+    name: read-only doctorate runtime audit
+    if: >-
+      ${{ github.event_name == 'workflow_dispatch' ||
+          (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main') }}
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 10
+    steps:
+      - name: Validate trusted connection configuration
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "$HETZNER_HOST"; test -n "$HETZNER_USER"; test -n "$HETZNER_APP_DIR"
+          test -n "$HETZNER_KNOWN_HOSTS"; test -n "$HETZNER_SSH_KEY"
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 >/dev/null 2>&1
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+      - name: Collect sanitized read-only doctorate state
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q bash -s" <<'REMOTE' > doctorate-runtime.json
+          set -euo pipefail
+          cd "$APP_DIR"
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+            python tools/audit_doctorate_runtime.py --database /app/project_output_reference/platform/auth.sqlite3 \
+            --output-root /app/project_output_reference --json
+          REMOTE
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('doctorate-runtime.json').read_text())
+          assert data['status']=='PASS' and data['read_only'] is True
+          assert data['scientific_state_modified'] is False and data['legacy_binding_performed'] is False
+          print('doctorate audit:',data['article1']['application_count'],'A1 app(s),',data['article2']['application_count'],'A2 app(s)')
+          PY
+      - name: Upload sanitized audit evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: doctorate-runtime-${{ github.run_id }}
+          path: doctorate-runtime.json
+          if-no-files-found: error
+          retention-days: 14

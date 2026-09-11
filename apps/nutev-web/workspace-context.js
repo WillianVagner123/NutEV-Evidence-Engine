@@ -76,6 +76,22 @@ function currentNames(context){
   return{workspace,project}
 }
 
+function onboardingGuidance(workspaces,projects,current){
+  if(!workspaces.length){
+    return '<div class="context-summary context-guidance" role="status"><span class="context-kicker">Primeiro acesso</span><strong>Acesso ainda não provisionado</strong><span>Seu login está funcionando, mas nenhum workspace foi atribuído à sua conta. Solicite ao administrador do NutEV que crie ou libere seu espaço de pesquisa.</span></div>'
+  }
+  if(!current.workspace_id){
+    return '<div class="context-summary context-guidance" role="status"><span class="context-kicker">Próximo passo</span><strong>Escolha um workspace para começar</strong><span>Depois de selecionar o workspace, o NutEV mostrará somente os projetos aos quais sua conta tem acesso.</span></div>'
+  }
+  if(!projects.length){
+    return '<div class="context-summary context-guidance" role="status"><span class="context-kicker">Próximo passo</span><strong>Nenhum projeto disponível neste workspace</strong><span>Seu acesso ao workspace está ativo, mas ainda não existe um projeto disponível para sua conta. Solicite ao administrador ou proprietário do workspace a criação ou liberação do projeto.</span></div>'
+  }
+  if(!current.project_id){
+    return '<div class="context-summary context-guidance" role="status"><span class="context-kicker">Próximo passo</span><strong>Escolha um projeto</strong><span>Busca, biblioteca, revisão e exportação serão executadas no projeto selecionado e permanecerão privadas nesse contexto.</span></div>'
+  }
+  return ''
+}
+
 async function selectContext(workspaceId,projectId){
   await jsonFetch('/api/context/select',{
     method:'POST',
@@ -121,6 +137,7 @@ function renderContextShell(me,context){
       </label>
       ${current.project_id?'<a class="context-project-link" href="/project.html">Abrir projeto</a>':''}
     </div>
+    ${onboardingGuidance(workspaces,projects,current)}
     <div class="context-account">
       <div class="context-account-copy"><strong>${esc(me.user?.display_name||'Usuário')}</strong><span>${membership?esc(roleLabel(membership.role)):'Sessão autenticada'}</span></div>
       <button class="context-logout" id="nutevLogoutButton" type="button">Sair</button>

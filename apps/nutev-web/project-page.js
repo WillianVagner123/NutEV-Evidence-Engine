@@ -31,8 +31,17 @@ function renderLegacy(){
 }
 
 function renderNoProject(context){
+  const workspaces=Array.isArray(context.workspaces)?context.workspaces:[]
+  const projects=Array.isArray(context.projects)?context.projects:[]
+  const current=context.current||{}
   $('#projectHealth').textContent='projeto necessário'
-  $('#projectState').innerHTML='<div class="empty-state"><strong>Selecione um projeto</strong><span>Use o seletor de contexto acima para escolher o projeto que deseja abrir. Nenhuma ação privada será executada sem esse contexto.</span></div>'
+  if(!workspaces.length){
+    $('#projectState').innerHTML='<div class="empty-state"><strong>Acesso ainda não provisionado</strong><span>Seu login está ativo, mas nenhum workspace foi atribuído à sua conta. Um administrador do NutEV precisa criar ou liberar seu espaço de pesquisa antes do primeiro projeto.</span></div>'
+  }else if(current.workspace_id&&!projects.length){
+    $('#projectState').innerHTML='<div class="empty-state"><strong>Nenhum projeto disponível neste workspace</strong><span>Seu acesso ao workspace está ativo. Peça ao proprietário ou administrador que crie ou libere o projeto de pesquisa.</span></div>'
+  }else{
+    $('#projectState').innerHTML='<div class="empty-state"><strong>Selecione um projeto</strong><span>Use o seletor de contexto acima para escolher o projeto. Busca, biblioteca, revisão e exportação só serão executadas depois dessa escolha.</span></div>'
+  }
   $('#applicationPanel').classList.add('hidden')
   $('#templatePanel').classList.add('hidden')
   $('#projectModulesSection').classList.add('hidden')

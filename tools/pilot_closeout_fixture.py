@@ -30,18 +30,20 @@ def seed(root: Path) -> dict:
     auth = SQLiteAuthProvider(database, password_hasher=PasswordHasher(time_cost=1, memory_cost=1024, parallelism=1))
     access = WorkspaceProjectService(SQLiteWorkspaceProjectStore(database))
     data = {'database': str(database), 'registry': str(root/'registry.sqlite'), 'exports': str(root/'exports'), 'users': {}}
-    for label in ('a','b','admin'):
+    for label in ('a','b','admin','orphan','onboarding'):
         password = f'fixture-only {label} long password 456'
         user = auth.provision_user(email=f'{label}@example.invalid', display_name=f'Fixture {label}', password=password,
                                    global_roles={GlobalRole.PLATFORM_ADMIN} if label=='admin' else set())
         info = {'user_id':user.id, 'email':f'{label}@example.invalid','password':password}
-        if label != 'admin':
+        if label not in ('admin','orphan'):
             ws = access.provision_workspace(owner_user_id=user.id,name=f'Workspace {label}',slug=f'workspace-{label}')
             principal=Principal(user_id=user.id,global_roles=frozenset(),workspace_memberships=tuple(access.memberships_for_user(user.id)),session_id=new_opaque_id('session'))
             projects=[]
-            for index in range(2 if label=='a' else 1):
+            count = 2 if label=='a' else 1
+            for index in range(count):
                 project=access.create_project(principal,workspace_id=ws.id,name=f'Project {label}{index}',slug=f'project-{label}{index}')
-                ApplicationService(SQLiteApplicationStore(database),access).configure(principal,workspace_id=ws.id,project_id=project.id,template_id=GENERIC_EVIDENCE_PROJECT)
+                if label != 'onboarding':
+                    ApplicationService(SQLiteApplicationStore(database),access).configure(principal,workspace_id=ws.id,project_id=project.id,template_id=GENERIC_EVIDENCE_PROJECT)
                 projects.append(project.id)
             info.update(workspace_id=ws.id,projects=projects)
         data['users'][label]=info
@@ -62,7 +64,6 @@ def pilot_server():
              'NUTEV_REGISTRY_DB':data['registry'],'NUTEV_EXPORT_ROOT':data['exports'],
              'NUTEV_ENVIRONMENT':'test','NUTEV_DISABLE_NETWORK':'1','NUTEV_SEARCH_FULLTEXT_LIMIT':'0',
              'NUTEV_BUILD_COMMIT':'fixture-only-not-production'}
-        # Patch only test-process output destinations; execute real server and search logic.
         script=f'''import sys\nfrom pathlib import Path\nsys.path.insert(0,{str(ROOT/'apps/nutev-web')!r})\nimport search_adapter, progress_search\nroot=Path({str(root)!r})\nsearch_adapter._output_root=lambda value=None: root\nprogress_search._output_root=lambda value=None: root\nfrom secure_server import main\nsys.argv=['secure_server','--host','127.0.0.1','--port',{str(port)!r}]\nraise SystemExit(main())\n'''
         log=(root/'server.log').open('w')
         process=subprocess.Popen([sys.executable,'-c',script],cwd=ROOT,env=env,stdout=log,stderr=log)
