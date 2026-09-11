@@ -62,6 +62,9 @@ assert 'recover_on_error()' in code and '"$RESTORED_COMMIT" = "$OLD_COMMIT"' in 
 Path(sys.argv[1]).write_text(code)
 PY
 bash -n "$TEMP/functions.sh"
+# Exercise external-proxy recovery: the application is restored while an
+# independently-owned proxy would be left untouched.
+export PROXY_MODE=external
 # Before promotion, the real error trap must restart the original stopped app.
 docker stop "$OLD_CONTAINER" >/dev/null
 export OLD_CONTAINER OLD_IMAGE_ID OLD_COMMIT COMPOSE_PROJECT RECOVERY_DIR
@@ -94,6 +97,7 @@ Path(sys.argv[1]).write_text(json.dumps({
  'prepromotion_restart':True,'injected_failed_image_recovered':True,
  'previous_image_sha_verified':True,'previous_commit':sys.argv[2],
  'saved_configuration_used':True,'synthetic_data_preserved':True,
+ 'external_proxy_preserved_by_mode':True,
  'production_touched':False,'real_caddy_tls_tested':False,
  'scope':'disposable recovery mechanics; not production schema compatibility'
 },indent=2)+'\n')

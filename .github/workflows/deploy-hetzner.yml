@@ -102,18 +102,14 @@ jobs:
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
           install -d -m 700 ~/.ssh
-
           python3 - <<'PY'
           import base64
           import binascii
           import os
           from pathlib import Path
-
-          raw = os.environ["HETZNER_SSH_KEY"].strip()
-          raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+          raw = os.environ["HETZNER_SSH_KEY"].strip().replace("\r\n", "\n").replace("\r", "\n")
           if "\\n" in raw and "\n" not in raw:
               raw = raw.replace("\\n", "\n")
-
           candidate = raw.strip()
           if candidate.startswith("ssh-") or "BEGIN PUBLIC KEY" in candidate:
               raise SystemExit("HETZNER_SSH_KEY contains a public key; the complete private key is required")
@@ -125,18 +121,14 @@ jobs:
                   decoded = ""
               if decoded.startswith("-----BEGIN "):
                   candidate = decoded.replace("\r\n", "\n").replace("\r", "\n")
-
-          candidate = candidate.strip() + "\n"
-          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate, encoding="utf-8")
+          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate.strip() + "\n", encoding="utf-8")
           PY
-
           chmod 600 ~/.ssh/id_ed25519
           if ! ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null; then
-            echo "::error::HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key after raw/literal-newline/base64 normalization. Ensure the HETZNER environment secret contains the complete private key (not .pub), without a passphrase." >&2
+            echo "::error::HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key after normalization." >&2
             exit 1
           fi
           chmod 600 ~/.ssh/id_ed25519.pub
-          # Trusted host pin must be verified out of band; never trust a live scan.
           test -n "$HETZNER_KNOWN_HOSTS"
           printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
@@ -149,16 +141,36 @@ jobs:
         run: |
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
-          ssh \
-            -o StrictHostKeyChecking=yes \
-            -o BatchMode=yes \
-            -o IdentitiesOnly=yes \
-            -o ConnectTimeout=15 \
-            -p "$PORT" \
-            "$HETZNER_USER@$HETZNER_HOST" \
-            'printf "ssh-ok\n"' | grep -qx 'ssh-ok'
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" 'printf "ssh-ok\n"' | grep -qx 'ssh-ok'
+
+      - name: Inspect 80/443 ownership before any service mutation
+        id: proxy
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          PUBLIC_URL="${NUTEV_PUBLIC_URL:-https://nutev.mindsperformance.com.br}"
+          PUBLIC_URL_Q=$(printf '%q' "$PUBLIC_URL")
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "PUBLIC_URL=$PUBLIC_URL_Q bash -s" < tools/remote_proxy_inventory.sh | tee hetzner-proxy-baseline.txt
+          MODE=$(awk -F= '$1=="NUTEV_PROXY_MODE" {print $2}' hetzner-proxy-baseline.txt | tail -n1)
+          [[ "$MODE" = managed || "$MODE" = external ]]
+          printf 'mode=%s\n' "$MODE" >> "$GITHUB_OUTPUT"
+
+      - name: Upload sanitized infrastructure baseline
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: hetzner-proxy-baseline-${{ github.run_id }}-${{ github.run_attempt }}
+          path: hetzner-proxy-baseline.txt
+          if-no-files-found: warn
+          retention-days: 14
 
       - name: Deploy verified commit to Hetzner
+        env:
+          PROXY_MODE: ${{ steps.proxy.outputs.mode }}
         shell: bash
         run: |
           set -euo pipefail
@@ -166,22 +178,37 @@ jobs:
           APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
           TARGET_SHA_Q=$(printf '%q' "$TARGET_SHA")
           PUBLIC_URL_Q=$(printf '%q' "${NUTEV_PUBLIC_URL:-https://nutev.mindsperformance.com.br}")
-
-          ssh \
-            -o StrictHostKeyChecking=yes \
-            -o BatchMode=yes \
-            -o IdentitiesOnly=yes \
-            -o ConnectTimeout=15 \
-            -p "$PORT" \
-            "$HETZNER_USER@$HETZNER_HOST" \
-            "APP_DIR=$APP_DIR_Q TARGET_SHA=$TARGET_SHA_Q PUBLIC_URL=$PUBLIC_URL_Q bash -s" <<'REMOTE'
+          PROXY_MODE_Q=$(printf '%q' "$PROXY_MODE")
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q TARGET_SHA=$TARGET_SHA_Q PUBLIC_URL=$PUBLIC_URL_Q PROXY_MODE=$PROXY_MODE_Q bash -s" <<'REMOTE'
           set -euo pipefail
-
+          [[ "$PROXY_MODE" = managed || "$PROXY_MODE" = external ]]
           cd "$APP_DIR"
           test -d .git
           test -f deploy/hetzner/.env
 
-          # Preserve the previous configuration outside Git before any checkout.
+          public_status() {
+            curl -sS -o /dev/null -w '%{http_code}' --max-time 10 "$1" 2>/dev/null || printf '000'
+          }
+          acceptable_edge_status() {
+            [[ "$1" = "200" || "$1" = "401" ]]
+          }
+
+          # If something already owns 80/443, preserve it. Only continue when it
+          # already routes the NutEV hostname to a reachable endpoint.
+          if [[ "$PROXY_MODE" = external ]]; then
+            echo "Existing listener detected; NutEV will not stop or replace it."
+            BEFORE_HEALTH=$(public_status "$PUBLIC_URL/api/health")
+            BEFORE_ROOT=$(public_status "$PUBLIC_URL/")
+            if ! acceptable_edge_status "$BEFORE_HEALTH" && ! acceptable_edge_status "$BEFORE_ROOT"; then
+              echo "::error::External proxy owns 80/443 but the current NutEV public route is not reachable; configure that proxy explicitly before promotion." >&2
+              exit 1
+            fi
+          else
+            echo "No listener on 80/443; NutEV will manage its own Caddy."
+          fi
+
           test -z "$(git status --porcelain --untracked-files=no)"
           git fetch --prune origin main
           test "$(git rev-parse origin/main)" = "$TARGET_SHA"
@@ -198,9 +225,11 @@ jobs:
           BUILD_BRANCH="main"
           VERSION="$(python3 -c 'ns={};exec(open("src/nutev/__version__.py", encoding="utf-8").read(), ns);print(ns["__version__"])')"
           COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
+          DEPLOY_SERVICES=(nutev)
+          if [[ "$PROXY_MODE" = managed ]]; then DEPLOY_SERVICES+=(caddy); fi
 
           OLD_CONTAINER="$("${COMPOSE[@]}" ps -q nutev 2>/dev/null)"
-          test -n "$OLD_CONTAINER" # Initial installation needs a separately reviewed runbook.
+          test -n "$OLD_CONTAINER"
           OLD_IMAGE_ID="$(docker inspect -f '{{.Image}}' "$OLD_CONTAINER")"
           docker tag "$OLD_IMAGE_ID" nutev:rollback
           OLD_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
@@ -211,6 +240,7 @@ jobs:
           test -n "$OUTPUT_VOLUME"
           printf '%s\n' "$OLD_COMMIT" > "$RECOVERY_DIR/previous-sha.txt"
           printf '%s\n' "$OLD_IMAGE_ID" > "$RECOVERY_DIR/previous-image.txt"
+          printf '%s\n' "$PROXY_MODE" > "$RECOVERY_DIR/proxy-mode.txt"
           OLD_STOPPED=0
           PROMOTED=0
           ROLLBACK_DONE=0
@@ -220,10 +250,12 @@ jobs:
             ROLLBACK_DONE=1
             echo "Deployment failed; restoring the previous image and configuration, not overwriting scientific data."
             docker tag "$OLD_IMAGE_ID" nutev:rollback
+            RESTORE_SERVICES=(nutev)
+            if [[ "$PROXY_MODE" = managed ]]; then RESTORE_SERVICES+=(caddy); fi
             NUTEV_IMAGE=nutev:rollback docker compose \
               --project-name "$COMPOSE_PROJECT" \
               --env-file "$RECOVERY_DIR/config/.env" \
-              -f "$RECOVERY_DIR/config/compose.yaml" up -d --no-build nutev caddy
+              -f "$RECOVERY_DIR/config/compose.yaml" up -d --no-build "${RESTORE_SERVICES[@]}"
             for _ in $(seq 1 30); do
               RESTORED_COMMIT=$(curl -fsS --max-time 3 http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))') || RESTORED_COMMIT=''
               if [[ "$RESTORED_COMMIT" = "$OLD_COMMIT" ]] && curl -fsS --max-time 3 http://127.0.0.1:8765/api/health >/dev/null; then
@@ -249,122 +281,61 @@ jobs:
             --build-arg NUTEV_BUILD_BRANCH="$BUILD_BRANCH" \
             --build-arg NUTEV_BUILD_TIME="$BUILD_TIME" \
             --build-arg NUTEV_VERSION="$VERSION" \
-            -f deploy/hetzner/Dockerfile \
-            -t "$IMAGE" .
+            -f deploy/hetzner/Dockerfile -t "$IMAGE" .
 
           docker rm -f nutev-preflight >/dev/null 2>&1 || true
-          docker run -d \
-            --name nutev-preflight \
-            --env-file deploy/hetzner/.env \
-            -p 127.0.0.1:18765:8765 \
-            "$IMAGE" >/dev/null
-
-          cleanup_preflight() {
-            docker rm -f nutev-preflight >/dev/null 2>&1 || true
-          }
+          docker run -d --name nutev-preflight --env-file deploy/hetzner/.env \
+            -p 127.0.0.1:18765:8765 "$IMAGE" >/dev/null
+          cleanup_preflight() { docker rm -f nutev-preflight >/dev/null 2>&1 || true; }
           trap cleanup_preflight EXIT
-
           preflight_ok=0
           for _ in $(seq 1 30); do
-            if curl -fsS http://127.0.0.1:18765/api/health >/dev/null; then
-              preflight_ok=1
-              break
-            fi
+            if curl -fsS http://127.0.0.1:18765/api/health >/dev/null; then preflight_ok=1; break; fi
             sleep 2
           done
-          if [[ "$preflight_ok" != "1" ]]; then
-            docker logs nutev-preflight || true
-            exit 1
-          fi
-
-          docker exec nutev-preflight \
-            python tools/check_predeploy_runtime_contract.py --json \
-            > /tmp/nutev-runtime-preflight.json
+          if [[ "$preflight_ok" != "1" ]]; then docker logs nutev-preflight || true; exit 1; fi
+          docker exec nutev-preflight python tools/check_predeploy_runtime_contract.py --json > /tmp/nutev-runtime-preflight.json
           cat /tmp/nutev-runtime-preflight.json
-
-          if ! docker exec nutev-preflight \
-            python tools/check_runtime_http_surface.py \
-              --base-url http://127.0.0.1:8765 \
-              --expected-commit "$TARGET_SHA" \
-              --json \
-              > /tmp/nutev-http-preflight.json; then
-            cat /tmp/nutev-http-preflight.json || true
-            exit 1
+          if ! docker exec nutev-preflight python tools/check_runtime_http_surface.py \
+            --base-url http://127.0.0.1:8765 --expected-commit "$TARGET_SHA" --json > /tmp/nutev-http-preflight.json; then
+            cat /tmp/nutev-http-preflight.json || true; exit 1
           fi
           cat /tmp/nutev-http-preflight.json
-
           PREFLIGHT_COMMIT="$(curl -fsS http://127.0.0.1:18765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
           test "$PREFLIGHT_COMMIT" = "$TARGET_SHA"
           cleanup_preflight
           trap - EXIT
 
-          # Quiesce all application writers; source volume is read-only to the snapshotter.
           docker stop "$OLD_CONTAINER" >/dev/null
           OLD_STOPPED=1
           test "$(docker inspect -f '{{.State.Running}}' "$OLD_CONTAINER")" = "false"
-          # Refuse to snapshot if another running container mounts the shared volume.
           test -z "$(docker ps -q --filter volume="$OUTPUT_VOLUME")"
           docker run --rm --user 0 --entrypoint python \
-            -v "$OUTPUT_VOLUME:/snapshot-source:ro" \
-            -v "$RECOVERY_DIR:/snapshot-backups" \
-            "$IMAGE" tools/recovery_snapshot.py \
-            --source /snapshot-source --backup /snapshot-backups/volume --quiesced
+            -v "$OUTPUT_VOLUME:/snapshot-source:ro" -v "$RECOVERY_DIR:/snapshot-backups" \
+            "$IMAGE" tools/recovery_snapshot.py --source /snapshot-source --backup /snapshot-backups/volume --quiesced
           test -s "$RECOVERY_DIR/volume/restore-proof.json"
           PROMOTED=1
-          NUTEV_IMAGE="$IMAGE" "${COMPOSE[@]}" up -d --no-build nutev caddy
+          NUTEV_IMAGE="$IMAGE" "${COMPOSE[@]}" up -d --no-build "${DEPLOY_SERVICES[@]}"
 
           production_ok=0
           for _ in $(seq 1 45); do
-            if curl -fsS http://127.0.0.1:8765/api/health >/dev/null; then
-              production_ok=1
-              break
-            fi
+            if curl -fsS http://127.0.0.1:8765/api/health >/dev/null; then production_ok=1; break; fi
             sleep 2
           done
+          if [[ "$production_ok" != "1" ]]; then "${COMPOSE[@]}" logs --tail=200 nutev || true; rollback; exit 1; fi
 
-          if [[ "$production_ok" != "1" ]]; then
-            "${COMPOSE[@]}" logs --tail=200 nutev || true
-            rollback
-            exit 1
-          fi
-
-          if ! "${COMPOSE[@]}" exec -T nutev \
-            python tools/check_predeploy_runtime_contract.py \
-              --output-root /app/project_output_reference \
-              --write-probe \
-              --json \
-              > /tmp/nutev-runtime-production.json; then
-            cat /tmp/nutev-runtime-production.json || true
-            rollback
-            exit 1
+          if ! "${COMPOSE[@]}" exec -T nutev python tools/check_predeploy_runtime_contract.py \
+            --output-root /app/project_output_reference --write-probe --json > /tmp/nutev-runtime-production.json; then
+            cat /tmp/nutev-runtime-production.json || true; rollback; exit 1
           fi
           cat /tmp/nutev-runtime-production.json
-
-          if ! "${COMPOSE[@]}" exec -T nutev \
-            python tools/check_runtime_http_surface.py \
-              --base-url http://127.0.0.1:8765 \
-              --expected-commit "$TARGET_SHA" \
-              --json \
-              > /tmp/nutev-http-production.json; then
-            cat /tmp/nutev-http-production.json || true
-            rollback
-            exit 1
+          if ! "${COMPOSE[@]}" exec -T nutev python tools/check_runtime_http_surface.py \
+            --base-url http://127.0.0.1:8765 --expected-commit "$TARGET_SHA" --json > /tmp/nutev-http-production.json; then
+            cat /tmp/nutev-http-production.json || true; rollback; exit 1
           fi
           cat /tmp/nutev-http-production.json
-
           DEPLOYED_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
-          if [[ "$DEPLOYED_COMMIT" != "$TARGET_SHA" ]]; then
-            echo "Build identity mismatch: expected $TARGET_SHA, got $DEPLOYED_COMMIT" >&2
-            rollback
-            exit 1
-          fi
-
-          public_status() {
-            curl -sS -o /dev/null -w '%{http_code}' --max-time 10 "$1" || printf '000'
-          }
-          acceptable_edge_status() {
-            [[ "$1" = "200" || "$1" = "401" ]]
-          }
+          if [[ "$DEPLOYED_COMMIT" != "$TARGET_SHA" ]]; then echo "Build identity mismatch" >&2; rollback; exit 1; fi
 
           public_ok=0
           for _ in $(seq 1 30); do
@@ -372,31 +343,19 @@ jobs:
             VERSION_CODE="$(public_status "$PUBLIC_URL/api/version")"
             SEARCH_CODE="$(public_status "$PUBLIC_URL/search.html")"
             ARTICLES_CODE="$(public_status "$PUBLIC_URL/articles.html")"
-
-            if acceptable_edge_status "$HEALTH_CODE" \
-              && acceptable_edge_status "$VERSION_CODE" \
-              && acceptable_edge_status "$SEARCH_CODE" \
-              && acceptable_edge_status "$ARTICLES_CODE"; then
+            if acceptable_edge_status "$HEALTH_CODE" && acceptable_edge_status "$VERSION_CODE" \
+              && acceptable_edge_status "$SEARCH_CODE" && acceptable_edge_status "$ARTICLES_CODE"; then
               if [[ "$VERSION_CODE" = "200" ]]; then
                 PUBLIC_COMMIT="$(curl -fsS --max-time 10 "$PUBLIC_URL/api/version" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
-                [[ "$PUBLIC_COMMIT" = "$TARGET_SHA" ]] || {
-                  echo "Public build identity mismatch: expected $TARGET_SHA, got $PUBLIC_COMMIT" >&2
-                  sleep 2
-                  continue
-                }
+                [[ "$PUBLIC_COMMIT" = "$TARGET_SHA" ]] || { sleep 2; continue; }
               fi
-              public_ok=1
-              break
+              public_ok=1; break
             fi
             sleep 2
           done
-          if [[ "$public_ok" != "1" ]]; then
-            echo "Public HTTPS edge smoke failed for $PUBLIC_URL (expected 200 or Basic-Auth 401 on protected surfaces)." >&2
-            rollback
-            exit 1
-          fi
+          if [[ "$public_ok" != "1" ]]; then echo "Public HTTPS edge smoke failed" >&2; rollback; exit 1; fi
 
-          echo "NutEV deployed successfully at commit $TARGET_SHA"
+          echo "NutEV deployed successfully at commit $TARGET_SHA using proxy mode $PROXY_MODE"
           curl -fsS http://127.0.0.1:8765/api/version
           docker image prune -f --filter "until=168h" >/dev/null 2>&1 || true
           REMOTE
