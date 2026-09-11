@@ -11,7 +11,9 @@
     if(invalid)return;
     invalid=true;
     document.documentElement.style.visibility='hidden';
-    document.body?.replaceChildren();
+    // Retire the document immediately, but keep nodes until navigation tears it
+    // down: pending UI error/finally handlers must not dereference removed nodes.
+    if(document.body)document.body.inert=true;
     window.NutEVContext=null;
     if(login)location.replace('/login.html');else location.reload();
   }

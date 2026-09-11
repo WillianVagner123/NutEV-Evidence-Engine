@@ -16,7 +16,7 @@ Most recent completed seven-workflow validation before the final A1 source-owner
 
 | Requirement | State and scope | Evidence | Remaining gate / owner |
 |---|---|---|---|
-| Full local candidate suite | PASS: 1,044 tests, Python 3.13.5 | `PYTHONPATH=src python -m pytest -q nutev_tests`; full-tests-final.xml, includes final A1 patch | Fresh final-head CI |
+| Full local candidate suite | PASS: 1,045 tests, Python 3.13.5 | `PYTHONPATH=src python -m pytest -q nutev_tests`; full-tests-final.xml, includes final A1 patch | Fresh final-head CI |
 | Exact-SHA promotion barrier | PASS in regression tests; not executed against production | tools/check_release_prerequisites.py; 84 targeted verifier/linkage cases within suite | Final main-SHA verification |
 | Existing reusable tenant/review engine | PASS: 17 hermetic checks | tools/multitenant_death_test.py; multitenant-release-audit | Controlled real-runtime smoke at final stage |
 | Pilot HTTP boundary | PASS: 26 fixture tests | test_pilot_http_closeout.py | Production configuration and live identity |
@@ -33,10 +33,14 @@ Most recent completed seven-workflow validation before the final A1 source-owner
 | Legacy PR disposition | Partial completion, not universal patch approval | OPEN_PR_DISPOSITION.md; #1128 closed unmerged as superseded | Remaining out-of-scope proposals preserved |
 | Final system acceptance | PENDING | FINAL_SYSTEM_ACCEPTANCE.md | Verified main release and real-runtime acceptance |
 
-The 26 HTTP, 8 recovery, 5 A1, 4 operations and targeted release tests are subsets of the 1,044, not extra counts. Browser/core scenario counts are separate executions, not proof of exhaustive coverage or external-provider availability.
+The 26 HTTP, 8 recovery, 5 A1, 4 operations and targeted release tests are subsets of the 1,045, not extra counts. Browser/core scenario counts are separate executions, not proof of exhaustive coverage or external-provider availability.
 
 ## Final operational sequence
 
 Finish code review and final PR tests before touching SSH. Then verify host pin and credential through trusted configuration, inspect real owner mappings/readiness, approve a controlled main promotion, require all checks on that exact main SHA, take and rehearse a quiesced snapshot, deploy and verify pilot/auth/version/internal/HTTPS surfaces. No merge or deploy has been performed by this closeout execution. Scientific approvals remain independent and cannot be replaced by green software tests.
 
 The local browser was blocked by environment policy; it was not bypassed. The real Chromium evidence comes from GitHub Actions using temporary data. Reports contain no private production payload or secrets.
+
+## Document-retirement regression follow-up
+
+On head 94b9d401f88a0a5ca002fd7ccb4d454c54a25974 the eleven functional browser scenarios passed, but the zero-page-error check caught a pending UI callback dereferencing nodes removed during logout. This failed run is preserved, not retried to obtain a lucky green. The client now immediately hides and makes the old document inert while navigation destroys its context; pending callbacks retain their nodes, and stale response bodies/fetches remain rejected. A deterministic Node regression verifies both privacy retirement and callback safety. Full local suite after this fix: 1,045 PASS. Final CI must validate the new head; no earlier success substitutes for it.
