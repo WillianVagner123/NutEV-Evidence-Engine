@@ -41,3 +41,9 @@ Full branch aging/release history/issue census, every TODO/FIXME and skipped-tes
 AGENTS.md; AI_CONTEXT.md; ARTICLE1_SEARCH_MASTER.md and its two JSON control files; ARTICLE1_AGENT_CONTEXT; A2 workflow; migration inventory; full tenant death-test and final release contract; architecture; CI/security/deploy workflows. D-132 verification document is absent from baseline main and was read from PR #1230 head `a460404bcf6b447df6a8d9bc68584dc6af9034cf` as a proposal.
 
 Historical inventory PR-0 is not a current assertion that later identity/A2 modules do not exist. Its runtime-ownership warning remains applicable. AI_CONTEXT and ARTICLE1_AGENT_CONTEXT still contain legacy URL guidance; pilot access must follow FINAL_MULTITENANT_RELEASE_GATE.md, not an assumption of public access.
+
+## Follow-up closeout: SSH deliberately last
+
+2026-09-10 America/Sao_Paulo: new HTTP/browser/recovery evidence supersedes the earlier missing-coverage entries, not the historical counts above. Full final local suite: 1,044 PASS (Python 3.13.5), including the last A1 source-owner correction. Head 5b7970373ef0dc49581ad742838e982c23605767 completed all seven PR workflows; its authenticated Chromium artifact contains 12 PASS scenarios. The next commit adds the final A1 fix and these reports, and requires its own CI verification.
+
+Actual defects fixed include unscoped pilot surfaces, stale tab/response context, concurrent export rendering and trusting an editable A1 application label as source ownership. Recovery now preserves prior configuration and requires a quiesced verified snapshot/isolated restore proof; host identity is explicitly pinned. SSH/server operations were not attempted. The first CI attempt's missing YAML dependency and browser failures are retained in the evidence history.

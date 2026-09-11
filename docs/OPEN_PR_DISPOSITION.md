@@ -4,7 +4,7 @@ Audit date: 2026-09-10. Baseline main: `0c354e23150f74692cd623007c5acc27a93fe28b
 
 46 pre-existing open PRs were enumerated using connected search, including three Dependabot PRs. REST listing with per_page=1 returned #70 on page 46 and an empty page 47. This predates the newly opened closeout PR #1246 (47 total if no concurrent changes).
 
-Classification is preliminary and is NOT patch approval, proof of duplication, or permission to close. No old PR was merged, closed or force-pushed during this audit. Every old head still needs a comparison against current main before a terminal disposition. No item is called SUPERSEDED/CLOSE_SAFE solely because its title looks old.
+Classification is preliminary and is NOT patch approval, proof of duplication, or permission to close. During the initial census no old PR was merged, closed or force-pushed; see the dated follow-up below for the single subsequently verified closure. Every old head still needs a comparison against current main before a terminal disposition. No item is called SUPERSEDED/CLOSE_SAFE solely because its title looks old.
 
 | PR | Disposition | Reason / required next evidence |
 |---|---|---|
@@ -58,3 +58,12 @@ Classification is preliminary and is NOT patch approval, proof of duplication, o
 Totals: BLOCKED 4; FUTURE_BACKLOG 42. Scope classification can change if an actual blocker/security advisory is established. PR source URLs use `https://github.com/WillianVagner123/NutEV-Evidence-Engine/pull/<number>`.
 
 New PR #1246 is the active closeout candidate, not one of the 46 legacy items. Its code can only be integrated after review and required checks. Keeping scientific proposals blocked is intentional, not a reason to fabricate approval or delete work.
+
+## Patch-reviewed follow-up (2026-09-10, America/Sao_Paulo)
+
+- #1128: **SUPERSEDED, closed unmerged**. Its patch was read and compared with current search_adapter.py and test_web_optional_provider_contract.py. Optional web providers, caps and partial/skipped propagation are already implemented; all 5 current provider-contract tests passed. Evidence comment 5627117413 and closure are on #1128. Branch/history preserved.
+- #112: patch read. It imports historical nutev.querypacks modules absent from the current supported source; not a safe direct merge. Reclassify as **FUTURE_BACKLOG**, requiring an explicit port/review if those historical assumptions are still needed. No scientific vocabulary was reintroduced.
+- #73: patch read. It changes the historical src/nutev/pipelines/master_pipeline.py rather than the current supported engine. Reclassify as **FUTURE_BACKLOG**; this is not proof of a current release defect or authorization to reintroduce the old pipeline.
+- #1230 remains **BLOCKED_SCIENTIFIC** as a proposed academic verification contract.
+
+Disposition of the 46 pre-existing items after this review: 1 closed SUPERSEDED (#1128), 1 BLOCKED (#1230), 44 FUTURE_BACKLOG (the prior 42 plus #112/#73). Only the cited patches were inspected individually; this is not a claim that all 44 future diffs were tested or obsolete. Including active #1246 gives 46 open PRs absent concurrent changes.

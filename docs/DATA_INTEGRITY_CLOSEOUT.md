@@ -1,11 +1,19 @@
 # Data integrity closeout
 
-2026-09-10. Production integrity status: **PENDING**. No production volume was inspected, migrated or rewritten in this execution.
+2026-09-10 (America/Sao_Paulo). **Synthetic recovery tests PASS; real production reconciliation BLOCKED_EXTERNAL until the final SSH/runtime stage.**
 
-Verified source custody: archive commit bb2e93e43fab239e77039ae991934cfba13df513 and SHA-256 0851aeeddfe323a6f65c3588da18c4a47b7a9ce46f04ed90fb9db93497349894; outer artifact SHA-256 04a3040f91766e3ba62e7fd3c309a2996e3dd763d87fcff5e279411a6ebbc16b. Tracked source is not the runtime `project_output*` estate. The temporary two-tenant matrix passed, but cannot reconcile production counts.
+No production volume was read, moved, migrated, recalculated or overwritten. Repository source custody must not be confused with the untracked `project_output*` estate. The source artifact for bd65a3 was compared locally: 720 regular files matched before the three documented follow-up changes; later commits require their own source comparison.
 
-Before any ownership activation, capture read-only inventory/manifests and consistent database snapshots. Reconcile global article identity, aliases, searches/hits, placements, grants, review decisions, audit chains and exports independently per project. Check hashes, orphan relations, foreign keys, duplicate associations and rights to full text. Record unknown counts as unknown, not zero.
+## Implemented safeguards
 
-Migration must use reviewed evidence, be idempotent, preserve source artifacts, and maintain a reversible ownership mapping. UNKNOWN and mixed physical containers remain excluded until logically decomposed with evidence. A changed raw hash/ID, lost decision, or foreign tenant association is a release blocker.
+`tools/recovery_snapshot.py` requires the caller to stop writers and refuses an existing/overlapping destination, symlinks and special entries. It compares file sizes/SHA-256 before and after copying, validates the snapshot manifest, then restores into a NEW temporary directory. Byte identity is checked before SQLite integrity/foreign-key checks and per-table row counts on that isolated restored copy. WAL is recovered only in the copy; source data are never opened for database writes.
 
-Acceptance requires before/after manifests and counts, no unexpected scientific changes, validated archive/restore evidence, and an explicit reviewed exception log. None of those production reconciliation outputs has been fabricated here. No raw private query, reviewer decision, protected full text or production database is committed with this report.
+Eight tests cover exact bytes and decision counts, a committed non-checkpointed SQLite WAL, missing quiescence, altered and unexpected files, overwrite/nesting, symlinks and unsafe manifest paths. They are part of the full local 1,044-test suite. No real scientific payload is used.
+
+The deploy workflow requires a stopped old container, no other running container mounting the named output volume, a read-only mount for the snapshotter and a successful isolated restore proof before promotion. Backups/configuration remain on protected server storage, not in Actions artifacts or public Git. Out-of-container workers and sufficient backup/rehearsal disk space still require actual operational verification; a command-line quiescence assertion alone cannot prove this.
+
+## Acceptance after runtime access
+
+Capture read-only manifests and consistent database snapshots. Reconcile article IDs/aliases, searches/hits, placements/grants, decisions, audit chains and exports independently per project. Check raw hashes, orphan relations, foreign keys, duplicate associations and full-text access rights. Counts not observed remain unknown, not zero. Preserve before/after evidence and unexpected-change exceptions.
+
+UNKNOWN and mixed physical containers remain excluded from ownership activation until evidence permits safe logical decomposition. No automatic historical A1/A2 reassignment, ID rewrite or scientific rollback is authorized. A passing fixture restoration proves the algorithm's tested cases, not recovery of the actual production estate.

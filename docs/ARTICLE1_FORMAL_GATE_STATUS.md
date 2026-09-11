@@ -11,3 +11,7 @@ No approval, verifier identity, frozen sample or formal PRISMA event was manufac
 Before formal execution, retrieve canonical academic decisions; distinguish the reviewer-verification gate from the search gate. Complete PRESS B-NORM/C1-C4, sentinel and delta tests, provider syntax/truncation checks and incremental-yield/noise review; record genuine PRESS PASS and explicit GF-10; freeze versioned strings/checksums; only then formal searches and authentic PRISMA events. Those scientific actions were not executed in this code closeout.
 
 Pilot runtime paths remain private. Legacy AI_CONTEXT/ARTICLE1_AGENT_CONTEXT guidance about `/api/articles` does not override FINAL_MULTITENANT_RELEASE_GATE.md: use authorized project-scoped Library/context paths in pilot. No discovery/ranking/retrieval state becomes scientific inclusion by migration.
+
+## Private-source protection follow-up
+
+The static context and D-132 owner/guest adapters now also require server-managed `NUTEV_A1_WORKSPACE_ID` and `NUTEV_A1_PROJECT_ID`, populated ONLY from reviewed real-runtime ownership evidence. Five regression cases passed, including a real HTTP attempt to forge the A1 application configuration from an unrelated project. A writable application name is not source ownership. Missing/malformed/foreign pins fail closed before private source access; memberships and scoped guest tokens remain required. No actual production owner IDs were supplied here. These authorization pins do not constitute methodological approval or activate historical migration.

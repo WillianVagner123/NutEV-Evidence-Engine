@@ -1,5 +1,11 @@
 # NutEV AI Context — shared entrypoint
 
+## Pilot privacy correction (2026-09-10)
+
+The stable A1 context paths are PRIVATE, not public downloads. In authenticated pilot mode they require a current authorized workspace/project, the correct application AND server-managed `NUTEV_A1_WORKSPACE_ID` / `NUTEV_A1_PROJECT_ID` matching reviewed runtime ownership evidence. Missing pins deny access; do not infer them from labels, paths or the current login. D-132 guest access also checks the source owner.
+
+Advice below referring to `/api/articles/{document_id}` describes legacy compatibility only. That unscoped Workbench API is not exposed in pilot; use the authorized Evidence Library `/api/library` and existing scoped adapters. Ranking-blind context is still private. No context endpoint authorizes PRESS, GF-10, freeze or scientific decisions.
+
 This file is the neutral entrypoint for ChatGPT/Codex, Claude and other agents working on NutEV.
 
 ## Read first
