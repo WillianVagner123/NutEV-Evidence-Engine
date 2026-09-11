@@ -43,7 +43,9 @@ REQUIRED = {
     ".github/workflows/release-artifact-validation.yml": {
         "build, twine check, clean wheel install": (
             "Build wheel and sdist", "Install wheel in a clean virtual environment",
+            "Audit public distribution boundaries", "Test installed wheel outside checkout",
         ),
+        "Container build, privacy and recovery": ("Run disposable container release audit",),
     },
     ".github/workflows/multitenant-release-audit.yml": {
         "Full multi-tenant death test": (

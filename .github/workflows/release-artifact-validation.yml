@@ -64,3 +64,44 @@ jobs:
           test "$ACTUAL" = "$EXPECTED"
           .release-venv/bin/nutev --version
           .release-venv/bin/nutev providers
+
+      - name: Audit public distribution boundaries
+        run: |
+          VERSION=$(python -c 'ns={};exec(open("src/nutev/__version__.py").read(),ns);print(ns["__version__"])')
+          python tools/audit_public_package.py --dist dist --version "$VERSION" --output package_audit/distributions.json
+      - name: Test installed wheel outside checkout
+        run: |
+          PYTHON="$(pwd)/.release-venv/bin/python"
+          SMOKE="$(mktemp -d)"
+          cp tools/installed_package_smoke.py "$SMOKE/check.py"
+          cd "$SMOKE"
+          "$PYTHON" -I check.py
+      - name: Upload audited candidate distributions
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: audited-distributions-${{ github.sha }}
+          path: |
+            dist/*.whl
+            dist/*.tar.gz
+            package_audit/distributions.json
+          if-no-files-found: error
+          retention-days: 14
+
+  container-validation:
+    name: Container build, privacy and recovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Run disposable container release audit
+        run: bash tools/run_container_release_gate.sh
+      - name: Upload container audit evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: container-audit-${{ github.sha }}
+          path: package_audit/
+          if-no-files-found: error
+          retention-days: 14

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: >-
-  If you use this software, please cite it using the metadata below.
+  Candidate version metadata. Cite the exact commit until this version is published.
 title: "NutEV Reference Engine: taxonomy-guided reference discovery and ranking for Lifestyle Nutrition"
 abstract: >-
   NutEV Reference Engine is an open-source software tool for multi-source
@@ -11,9 +11,7 @@ abstract: >-
   information-retrieval priority and does not represent scientific
   inclusion/exclusion or a clinical recommendation.
 type: software
-version: "1.0.0"
-date-released: "2026-08-18"
-doi: "10.5281/zenodo.21998607"
+version: "1.1.0"
 license: MIT
 repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
 url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
@@ -40,8 +38,7 @@ authors:
 preferred-citation:
   type: software
   title: "NutEV Reference Engine: taxonomy-guided reference discovery and ranking for Lifestyle Nutrition"
-  version: "1.0.0"
-  doi: "10.5281/zenodo.21998607"
+  version: "1.1.0"
   license: MIT
   repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
   url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"

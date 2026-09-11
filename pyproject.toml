@@ -32,6 +32,7 @@ dev = [
     "ruff>=0.8",
     "mypy>=1.13",
     "types-requests>=2.32",
+    "PyYAML==6.0.3",
 ]
 
 [project.urls]
@@ -55,3 +56,11 @@ markers = [
 [tool.coverage.run]
 source = ["src"]
 branch = true
+
+# The Python distribution is the reusable library/CLI, not a production backup.
+# Full web deployment uses the reviewed source commit and its Dockerfile.
+[tool.pdm.build]
+package-dir = "src"
+includes = ["src/nutev/**/*.py"]
+source-includes = ["LICENSE", "README.md", "NOTICE.md", "CITATION.cff"]
+excludes = ["**/__pycache__/**", "**/*.pyc", "**/.env*", "**/*.sqlite*", "**/*.db", "**/*.pem", "**/*.key", "**/project_output*/**"]
