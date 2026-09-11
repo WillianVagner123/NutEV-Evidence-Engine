@@ -8,3 +8,4 @@ mypy>=1.13
 types-requests>=2.32
 build>=1.2
 twine>=5
+PyYAML==6.0.3

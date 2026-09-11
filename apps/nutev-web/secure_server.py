@@ -11,6 +11,8 @@ import re
 import threading
 import time
 from urllib.parse import parse_qs, unquote, urlparse
+
+from request_boundary import canonical_request_path, same_origin_write, pilot_route_kind
 from uuid import uuid4
 
 from nutev.tenancy import (
@@ -305,6 +307,44 @@ class SecureNutEVHandler(NutEVHandler):
 
     server_version = "NutEVWeb/1.4"
 
+    def _pilot_request_gate(self) -> bool:
+        """Fail closed before legacy dispatch; client context is a constraint, not authority."""
+        if not self._auth_pilot_enabled():
+            return False
+        try:
+            path = canonical_request_path(self.path)
+        except ValueError:
+            self._json({"error": "invalid_request_path"}, HTTPStatus.BAD_REQUEST)
+            return True
+        query = urlparse(self.path).query
+        self.path = path + ("?" + query if query else "")
+        if self.command in {"POST", "PUT", "PATCH", "DELETE"}:
+            if not same_origin_write(self.headers, secure=self._cookie_secure()):
+                self._json({"error": "cross_origin_write_denied"}, HTTPStatus.FORBIDDEN)
+                return True
+        kind = pilot_route_kind(path)
+        if self.command == "HEAD" and path.startswith("/api/"):
+            self._json({"error": "method_not_allowed"}, HTTPStatus.METHOD_NOT_ALLOWED)
+            return True
+        if kind == "blocked":
+            if self._resolve_authenticated_session() is not None:
+                self._json({"error": "legacy_surface_unavailable_in_pilot"}, HTTPStatus.NOT_FOUND)
+            return True
+        if kind == "private_api":
+            return self._tenant_search_session() is None
+        if kind == "article1_context" and self.command == "HEAD":
+            from tenant_release_guard import _article1_context_allowed
+            return not _article1_context_allowed(self)
+        return False
+
+    def do_HEAD(self) -> None:
+        if not self._pilot_request_gate():
+            super().do_HEAD()
+
+    def do_DELETE(self) -> None:
+        if not self._pilot_request_gate():
+            super().do_DELETE()
+
     def _cookie_secure(self) -> bool:
         return (
             self.headers.get("X-Forwarded-Proto", "").lower() == "https"
@@ -343,6 +383,12 @@ class SecureNutEVHandler(NutEVHandler):
             self.send_header("Set-Cookie", "; ".join(flags))
             self._pending_auth_cookie = None
 
+        bound = getattr(self, "_nutev_request_context", None)
+        if bound is not None:
+            for name, value in zip(("User", "Workspace", "Project"), bound):
+                self.send_header("X-NutEV-" + name, value or "")
+        if self._auth_pilot_enabled():
+            self.send_header("Cache-Control", "no-store, private")
         path = urlparse(self.path).path
         if _should_noindex(path):
             self.send_header("X-Robots-Tag", "noindex, nofollow")
@@ -471,6 +517,13 @@ class SecureNutEVHandler(NutEVHandler):
         snapshot = self._context_snapshot(session)
         if snapshot is None:
             return None
+        actual = (session.principal.user_id, snapshot.current.workspace_id or "", snapshot.current.project_id or "")
+        self._nutev_request_context = actual
+        for name, value in zip(("User", "Workspace", "Project"), actual):
+            expected = self.headers.get("X-NutEV-" + name)
+            if expected is not None and expected != value:
+                self._json({"error": "stale_context_reload_required"}, HTTPStatus.CONFLICT)
+                return None
         return session, snapshot
 
     def _tenant_rate_scope(self, session: SessionPrincipal) -> str:
@@ -568,6 +621,8 @@ class SecureNutEVHandler(NutEVHandler):
         self._json(result)
 
     def do_GET(self) -> None:
+        if self._pilot_request_gate():
+            return
         parsed = urlparse(self.path)
         path = parsed.path
         if path == "/api/version":
@@ -615,7 +670,7 @@ class SecureNutEVHandler(NutEVHandler):
             mode = _auth_mode()
             self._json(
                 {
-                    "coordinator_available": self._is_loopback(),
+                    "coordinator_available": mode != "pilot" and self._is_loopback(),
                     "remote_reviewer_available": True,
                     "history_scope": "workspace_project" if mode == "pilot" else "browser_session",
                     "auth_mode": mode,
@@ -710,6 +765,8 @@ class SecureNutEVHandler(NutEVHandler):
         self._json(job, HTTPStatus.ACCEPTED)
 
     def do_POST(self) -> None:
+        if self._pilot_request_gate():
+            return
         path = urlparse(self.path).path
         if path == "/api/auth/login":
             if not self._auth_pilot_enabled():
@@ -759,9 +816,10 @@ class SecureNutEVHandler(NutEVHandler):
             if not self._auth_pilot_enabled():
                 self._auth_not_enabled()
                 return
-            session = self._resolve_authenticated_session()
-            if session is None:
+            resolved = self._tenant_search_session()
+            if resolved is None:
                 return
+            session, _snapshot = resolved
             try:
                 payload = self._read_json()
                 workspace_raw = payload.get("workspace_id")

@@ -3,6 +3,15 @@ const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;'
 
 let contextPayload=null
 let entriesCache=[]
+let contextReady=false
+let libraryLoadGeneration=0
+function setContextReady(value){
+  contextReady=Boolean(value)
+  for(const selector of ['#libraryScope','#saveLibraryPlacement','#refreshLibrary']){
+    const control=$(selector)
+    if(control)control.disabled=!contextReady
+  }
+}
 const STATE_LABELS={not_screened:'Não triado',included:'Incluído',excluded:'Excluído',background:'Contexto / background'}
 
 async function jsonFetch(url,options={}){
@@ -103,20 +112,24 @@ async function loadContext(){
 }
 
 async function loadLibrary(){
+  const generation=++libraryLoadGeneration
+  entriesCache=[]
   const state=$('#libraryStateMessage')
   const root=$('#libraryEntries')
   if(state)state.textContent='Carregando biblioteca…'
   if(root)root.innerHTML=''
-  if(!current().workspace_id){if(state)state.textContent='Selecione um workspace.';return}
+  if(!contextReady||!current().workspace_id){if(state)state.textContent='Selecione um workspace.';return}
   renderContext()
   const scope=scopeValue()
   try{
     const payload=await jsonFetch(`/api/library?scope=${scope}&limit=500`)
+    if(generation!==libraryLoadGeneration)return
     entriesCache=Array.isArray(payload.entries)?payload.entries:[]
     renderEntries()
     $('#libraryHealth').textContent=scope==='project'?'projeto atual':'workspace atual'
     $('#libraryHealth').classList.add('ok')
   }catch(error){
+    if(generation!==libraryLoadGeneration)return
     entriesCache=[]
     if(state)state.textContent=error.status===409?'A base bibliográfica global ainda não está disponível neste ambiente.':error.status===403?'Seu papel não permite ver esta biblioteca.':'Não foi possível carregar a biblioteca.'
     if(root)root.innerHTML=''
@@ -126,6 +139,7 @@ async function loadLibrary(){
 }
 
 async function savePlacement(){
+  if(!contextReady)return
   const status=$('#librarySaveStatus')
   const articleId=String($('#libraryArticleId')?.value||'').trim()
   if(!articleId){if(status)status.textContent='Informe o ID canônico do artigo.';return}
@@ -171,6 +185,7 @@ async function showFullText(articleId,button){
 }
 
 async function init(){
+  setContextReady(false)
   const health=$('#libraryHealth')
   try{
     const auth=await jsonFetch('/api/auth/status')
@@ -180,6 +195,7 @@ async function init(){
       return
     }
     await loadContext()
+    setContextReady(Boolean(current().workspace_id))
     await loadLibrary()
   }catch(error){
     if(error.status===401)return
@@ -188,7 +204,7 @@ async function init(){
   }
 }
 
-$('#libraryScope')?.addEventListener('change',()=>{const url=new URL(location.href);url.searchParams.set('scope',scopeValue());url.searchParams.delete('article');history.replaceState(null,'',url);loadLibrary()})
+$('#libraryScope')?.addEventListener('change',()=>{if(!contextReady)return;const url=new URL(location.href);url.searchParams.set('scope',scopeValue());url.searchParams.delete('article');history.replaceState(null,'',url);loadLibrary()})
 $('#libraryFilter')?.addEventListener('input',renderEntries)
 $('#libraryStateFilter')?.addEventListener('change',renderEntries)
 $('#refreshLibrary')?.addEventListener('click',loadLibrary)

@@ -197,3 +197,11 @@ PUBLIC_VERIFIED = deployed /api/version SHA + edge smoke green
 ```
 
 Only when all three are true may the final multi-tenant rollout be called complete.
+
+## Closeout hardening (2026-09-10)
+
+PR #1246 adds an exact-SHA seven-workflow barrier and revalidation after environment approval, including the separately named authenticated pilot Chromium job. Missing/failed/skipped/foreign/old executions cannot satisfy promotion. The final main SHA must have its own trusted runs; PR checkouts are not deployed evidence.
+
+SSH is the final operational stage per owner instruction. Both readiness and deployment require a separately verified HETZNER_KNOWN_HOSTS pin with strict host checking; private keys remain step-scoped. Before replacing the image, deployment preserves old configuration/image identity and requires a quiesced read-only volume snapshot with successful isolated SQLite/WAL restore proof. Recovery verifies the old version and does not overwrite scientific data. Synthetic tests do not establish actual server recovery.
+
+A1 static and D-132 source access additionally require server-managed workspace/project owner pins based on reviewed runtime evidence. A writable application assembly label alone is insufficient. A2's dark-launch and provenance gate are unchanged. No SSH credential or actual production owner mapping was configured by these code changes.

@@ -153,10 +153,10 @@ def build_parser() -> argparse.ArgumentParser:
         "--relations-manifest",
         "project_output_reference/scientific/relations/RELATIONS_MANIFEST.json",
     )
-    _path_argument(
-        p,
+    p.add_argument(
         "--topic-profile",
-        "config/nutev/topic_profiles/article1_prefreeze_v1.json",
+        required=True,
+        help="Explicit versioned topic profile for this project; no private manuscript default.",
     )
     p.add_argument(
         "--execute-search",

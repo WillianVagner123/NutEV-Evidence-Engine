@@ -3,6 +3,7 @@ from __future__ import annotations
 from http import HTTPStatus
 from urllib.parse import unquote, urlparse
 
+from first_party_source_access import article1_source_owner_allowed
 from nutev.tenancy import SCOPING_REVIEW
 from server import NutEVHandler
 from tenant_application_api import _service as application_service
@@ -37,6 +38,9 @@ def _article1_context_allowed(handler: NutEVHandler) -> bool:
     if resolved is None:
         return False
     principal, workspace_id, project_id = resolved
+    if not article1_source_owner_allowed(workspace_id, project_id):
+        handler._json({"error": "article1_context_not_found"}, HTTPStatus.NOT_FOUND)
+        return False
     try:
         application = application_service().get(
             principal,

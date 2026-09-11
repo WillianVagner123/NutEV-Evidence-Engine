@@ -22,11 +22,13 @@ jobs:
       HETZNER_HOST: ${{ vars.HETZNER_HOST }}
       HETZNER_USER: ${{ vars.HETZNER_USER }}
       HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
-      HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
 
     steps:
       - name: Validate readiness configuration
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
         shell: bash
         run: |
           set -euo pipefail
@@ -37,6 +39,8 @@ jobs:
           test -n "$HETZNER_SSH_KEY"
 
       - name: Configure and validate SSH key
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
         shell: bash
         run: |
           set -euo pipefail
@@ -76,7 +80,13 @@ jobs:
             exit 1
           fi
           chmod 600 ~/.ssh/id_ed25519.pub
-          ssh-keyscan -p "$PORT" -H "$HETZNER_HOST" >> ~/.ssh/known_hosts
+          # Trusted host pin must be verified out of band; never trust a live scan.
+          test -n "$HETZNER_KNOWN_HOSTS"
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          HOST_LOOKUP="$HETZNER_HOST"
+          if [[ "$PORT" != "22" ]]; then HOST_LOOKUP="[$HETZNER_HOST]:$PORT"; fi
+          ssh-keygen -F "$HOST_LOOKUP" -f ~/.ssh/known_hosts >/dev/null
 
       - name: Verify SSH access
         shell: bash
@@ -84,6 +94,7 @@ jobs:
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
           ssh \
+            -o StrictHostKeyChecking=yes \
             -o BatchMode=yes \
             -o IdentitiesOnly=yes \
             -o ConnectTimeout=15 \
@@ -100,6 +111,7 @@ jobs:
           TARGET_SHA_Q=$(printf '%q' "$TARGET_SHA")
 
           ssh \
+            -o StrictHostKeyChecking=yes \
             -o BatchMode=yes \
             -o IdentitiesOnly=yes \
             -o ConnectTimeout=15 \

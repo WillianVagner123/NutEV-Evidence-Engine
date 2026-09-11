@@ -6,6 +6,7 @@ from pathlib import Path
 import threading
 from urllib.parse import quote, urlparse
 
+from first_party_source_access import article1_source_owner_allowed
 from nutev.applications.willian_doctorate_a1 import D132ConfigurationError, D132Service
 from nutev.review import ReviewAccessDenied
 from nutev.tenancy import (
@@ -84,6 +85,9 @@ def _article1_project_context(handler: NutEVHandler):
     if resolved is None:
         return None
     principal, workspace_id, project_id = resolved
+    if not article1_source_owner_allowed(workspace_id, project_id):
+        handler._json({"error": "article1_project_not_found"}, HTTPStatus.NOT_FOUND)
+        return None
     try:
         application = _applications().get(
             principal,
@@ -118,6 +122,12 @@ def _guest_token(handler: NutEVHandler) -> str:
     return str(bearer() if callable(bearer) else "").strip()
 
 
+def _require_guest_source_owner(token: str) -> None:
+    access = _service().engine.access_for_guest(token)
+    if not article1_source_owner_allowed(access.workspace_id, access.project_id):
+        raise ReviewAccessDenied("review_access_denied")
+
+
 def _guest_error(handler: NutEVHandler, exc: Exception) -> None:
     if isinstance(exc, (ReviewAccessDenied, PermissionError)):
         handler._json({"error": "review_access_denied"}, HTTPStatus.UNAUTHORIZED)
@@ -150,6 +160,7 @@ def _guest_get(handler: NutEVHandler, parsed) -> bool:
         handler._json({"error": "review_token_required"}, HTTPStatus.UNAUTHORIZED)
         return True
     try:
+        _require_guest_source_owner(token)
         payload = _service().guest_payload(token)
     except Exception as exc:
         _guest_error(handler, exc)
@@ -276,6 +287,7 @@ def _guest_decision(handler: NutEVHandler) -> bool:
         handler._json({"error": "review_token_required"}, HTTPStatus.UNAUTHORIZED)
         return True
     try:
+        _require_guest_source_owner(token)
         body = handler._read_json()
         payload = _service().save_guest_decision(
             token,
@@ -299,6 +311,7 @@ def _guest_submit(handler: NutEVHandler) -> bool:
         handler._json({"error": "review_token_required"}, HTTPStatus.UNAUTHORIZED)
         return True
     try:
+        _require_guest_source_owner(token)
         payload = _service().submit_guest(token)
     except Exception as exc:
         _guest_error(handler, exc)

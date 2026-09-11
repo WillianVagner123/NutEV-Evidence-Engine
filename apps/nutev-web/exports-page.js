@@ -1,6 +1,7 @@
 const $=selector=>document.querySelector(selector)
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')
 let exportsCache=[]
+let loadGeneration=0
 
 async function jsonFetch(url,options={}){
   const response=await fetch(url,{cache:'no-store',credentials:'same-origin',...options})
@@ -80,6 +81,7 @@ async function showManifest(exportId,button){
   panel.innerHTML='<span class="small-state">Carregando manifesto…</span>'
   try{
     const payload=await jsonFetch(`/api/exports/${encodeURIComponent(exportId)}/manifest`)
+    if(!panel.isConnected)return
     const manifest=payload.manifest||{}
     const artifacts=Array.isArray(manifest.artifacts)?manifest.artifacts:[]
     panel.innerHTML=`<strong>Arquivos verificados</strong>${artifacts.length?`<div class="export-artifacts">${artifacts.map(artifact=>`<a href="/api/exports/${encodeURIComponent(exportId)}/artifacts/${encodeURIComponent(artifact.name)}">${esc(artifact.name)} · ${esc(formatBytes(artifact.size_bytes))}</a>`).join('')}</div>`:'<div class="export-meta">O manifesto não lista artefatos.</div>'}<details class="advanced-id-entry"><summary>Manifesto técnico</summary><code>${esc(JSON.stringify(manifest,null,2))}</code></details>`
@@ -90,13 +92,20 @@ async function showManifest(exportId,button){
 }
 
 async function loadAll(){
+  const generation=++loadGeneration
+  const refresh=$('#refreshExports')
+  refresh.disabled=true
+  document.querySelectorAll('[data-manifest]').forEach(button=>{button.disabled=true})
   $('#exportsHealth').textContent='carregando…'
   try{
     const auth=await jsonFetch('/api/auth/status')
+    if(generation!==loadGeneration)return
     if(auth.mode!=='pilot'){renderLegacy();return}
     const context=await jsonFetch('/api/context')
+    if(generation!==loadGeneration)return
     if(!renderContext(context))return
     const [exportsPayload,auditPayload]=await Promise.all([jsonFetch('/api/exports'),jsonFetch('/api/audit?limit=50')])
+    if(generation!==loadGeneration)return
     exportsCache=Array.isArray(exportsPayload.exports)?exportsPayload.exports:[]
     renderExportCards(exportsCache)
     renderAudit(auditPayload)
@@ -108,9 +117,15 @@ async function loadAll(){
     $('#exportsHealth').classList.toggle('ok',Boolean(auditPayload.chain_valid))
     $('#exportsHealth').classList.toggle('bad',!auditPayload.chain_valid)
   }catch(error){
+    if(generation!==loadGeneration)return
     if(error.status===401)return
     $('#exportsHealth').textContent='indisponível'
     $('#exportsContext').innerHTML=`<div class="empty-state"><strong>Não foi possível carregar exportações</strong><span>${error.status===403?'Seu papel não permite acessar exportações ou auditoria deste projeto.':'O serviço de exportações está temporariamente indisponível.'}</span></div>`
+  }finally{
+    if(generation===loadGeneration){
+      refresh.disabled=false
+      document.querySelectorAll('[data-manifest]').forEach(button=>{button.disabled=false})
+    }
   }
 }
 

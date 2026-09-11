@@ -2,8 +2,9 @@
 
 **Descoberta, normalização, rastreabilidade, deduplicação, classificação e priorização de referências para Nutrição do Estilo de Vida.**
 
-> Stable software release: **v1.0.0**  
-> DOI da versão: **10.5281/zenodo.21998607**  
+> Candidate under audit: **v1.1.0 — not published**
+> Previous archived stable release: **v1.0.0**  
+> DOI somente da versão v1.0.0: **10.5281/zenodo.21998607**  
 > Python: **3.12–3.13**  
 > Licença: **MIT**
 
@@ -46,6 +47,19 @@ Iniciar-NutEV-Windows.bat
      -> tools/run_latin_sources.py
      -> tools/rank_references.py
 ```
+
+## Pacote Python e produto web
+
+A distribuição `nutev-nutmev` contém a biblioteca Python e o CLI. O wheel/sdist
+não contém contas, bancos, buscas privadas, configurações de pesquisa A1/A2 ou
+backups. A interface web, seus scripts e configurações são implantados a partir
+do commit revisado do repositório; não estão incluídos no wheel.
+
+O modo multiusuário é de acesso provisionado, não cadastro público automático.
+Use `docs/PUBLICATION_READINESS.md` para configuração, limitações e critérios de
+aceitação. O modo de compatibilidade `legacy` não é aceito como produção
+multi-tenant final. A1/A2 continuam projetos privados e seus gates científicos
+não são aprovados por uma publicação do software.
 
 ## Instalação e execução
 

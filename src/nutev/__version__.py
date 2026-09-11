@@ -6,4 +6,4 @@ NutEV Reference Engine. Renaming the distribution is a future breaking-change
 decision and must not be done silently in a post-release patch.
 """
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"

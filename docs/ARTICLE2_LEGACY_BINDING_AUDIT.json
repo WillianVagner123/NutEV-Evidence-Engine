@@ -1,0 +1,18 @@
+{
+  "record_type": "NUTEV_CLOSEOUT_BINDING_BLOCKER",
+  "schema_version": 1,
+  "audit_date": "2026-09-10",
+  "source_sha": "0c354e23150f74692cd623007c5acc27a93fe28b",
+  "assembly_id": "WILLIAN_DOCTORATE_A2",
+  "status": "BLOCKED_EXTERNAL",
+  "runtime_inspected": false,
+  "runtime_workflow_status": null,
+  "record_count": null,
+  "manifest_sha256": null,
+  "source_fingerprints": null,
+  "ownership_validation": "NOT_OBSERVED",
+  "is_legacy_binding_evidence": false,
+  "binding_applied": false,
+  "scientific_state_modified": false,
+  "next_gate": "Authorized read-only runtime inventory followed by reviewed ownership evidence"
+}
