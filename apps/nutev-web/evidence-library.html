@@ -27,10 +27,10 @@
       </header>
 
       <section class="card product-panel" id="libraryScopeCard">
-        <div class="product-panel-head"><div><span class="home-eyebrow">Contexto privado</span><h2 id="libraryContextTitle">Sua biblioteca</h2><p id="libraryContext">Carregando workspace e projeto atual…</p></div><button class="ghost" id="refreshLibrary" type="button">Atualizar</button></div>
+        <div class="product-panel-head"><div><span class="home-eyebrow">Contexto privado</span><h2 id="libraryContextTitle">Sua biblioteca</h2><p id="libraryContext">Carregando workspace e projeto atual…</p></div><button class="ghost" id="refreshLibrary" type="button" disabled>Atualizar</button></div>
         <div class="library-toolbar">
           <label>Visualização
-            <select id="libraryScope">
+            <select id="libraryScope" disabled>
               <option value="workspace">Todo o workspace</option>
               <option value="project">Projeto atual</option>
             </select>
@@ -75,7 +75,7 @@
           </div>
           <label>Tags <input id="libraryTags" type="text" autocomplete="off" placeholder="separadas por vírgula"></label>
           <label>Nota privada <textarea id="libraryNotes" rows="3" placeholder="Observação deste workspace/projeto."></textarea></label>
-          <div class="search-actions"><button class="primary" id="saveLibraryPlacement" type="button">Adicionar à biblioteca</button><span id="librarySaveStatus" aria-live="polite"></span></div>
+          <div class="search-actions"><button class="primary" id="saveLibraryPlacement" type="button" disabled>Adicionar à biblioteca</button><span id="librarySaveStatus" aria-live="polite"></span></div>
         </details>
       </section>
 

@@ -44,6 +44,8 @@ def run(output: Path) -> dict:
             page.goto(base+'/evidence-library.html',wait_until='domcontentloaded')
             page.locator('#libraryScope').select_option('project')
             expect(page.locator('#libraryStateMessage')).to_contain_text('Nenhum artigo')
+            expect(page.locator('#libraryHealth')).to_have_text('projeto atual')
+            expect(page.locator('#libraryScope')).to_have_value('project')
         try:
             for _ in range(2):
                 context=browser.new_context(viewport={'width':1366,'height':900})
@@ -57,7 +59,7 @@ def run(output: Path) -> dict:
             b.reload(wait_until='domcontentloaded');b.locator('#libraryScope').select_option('project')
             expect(b.locator('#libraryEntries')).not_to_contain_text('PRIVATE_A_BROWSER');passed('global_identity_private_placement')
             a.locator('[data-fulltext-article]').click()
-            expect(a.locator('[data-fulltext-status]')).not_to_have_text('')
+            expect(a.locator('[data-fulltext-status]')).to_have_text('Nenhum acesso ativo a texto completo neste contexto.')
             passed('fulltext_permission_empty_state')
             a.screenshot(path=str(output/'library-desktop.png'),full_page=True)
             tab=page_in(contexts[0]);tab.goto(base+'/project.html',wait_until='domcontentloaded')
