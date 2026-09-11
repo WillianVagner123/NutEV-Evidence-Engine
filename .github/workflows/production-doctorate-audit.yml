@@ -39,11 +39,15 @@ jobs:
           ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 >/dev/null 2>&1
           printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
+
       - name: Collect sanitized read-only doctorate state
+        id: collect
         run: |
-          set -euo pipefail
+          set -uo pipefail
           PORT="${HETZNER_PORT:-22}"
           APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+
+          set +e
           ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
             "APP_DIR=$APP_DIR_Q bash -s" <<'REMOTE' > doctorate-runtime.json
           set -euo pipefail
@@ -52,15 +56,49 @@ jobs:
             python tools/audit_doctorate_runtime.py --database /app/project_output_reference/platform/auth.sqlite3 \
             --output-root /app/project_output_reference --json
           REMOTE
-          python - <<'PY'
+          AUDIT_EXIT=$?
+          set -e
+
+          if [[ ! -s doctorate-runtime.json ]]; then
+            python - <<'PY'
           import json
           from pathlib import Path
-          data=json.loads(Path('doctorate-runtime.json').read_text())
-          assert data['status']=='PASS' and data['read_only'] is True
-          assert data['scientific_state_modified'] is False and data['legacy_binding_performed'] is False
-          print('doctorate audit:',data['article1']['application_count'],'A1 app(s),',data['article2']['application_count'],'A2 app(s)')
+          Path('doctorate-runtime.json').write_text(json.dumps({
+              'record_type':'NUTEV_WILLIAN_DOCTORATE_RUNTIME_AUDIT',
+              'schema_version':1,
+              'status':'FAIL',
+              'reason':'remote_audit_command_failed_without_report',
+              'read_only':True,
+              'scientific_state_modified':False,
+              'legacy_binding_performed':False,
+              'search_executed':False,
+          },indent=2)+'\n')
           PY
+          fi
+
+          python - "$AUDIT_EXIT" <<'PY'
+          import json
+          from pathlib import Path
+          import sys
+
+          audit_exit=int(sys.argv[1])
+          data=json.loads(Path('doctorate-runtime.json').read_text())
+          assert data.get('record_type')=='NUTEV_WILLIAN_DOCTORATE_RUNTIME_AUDIT'
+          assert data.get('read_only') is True
+          assert data.get('scientific_state_modified') is False
+          assert data.get('legacy_binding_performed') is False
+          assert data.get('search_executed') is False
+          print('doctorate audit status:',data.get('status','UNKNOWN'))
+          if data.get('status')=='PASS':
+              print('doctorate audit:',data['article1']['application_count'],'A1 app(s),',data['article2']['application_count'],'A2 app(s)')
+          else:
+              print('doctorate audit reason:',data.get('reason','unspecified_fail_closed_result'))
+          if audit_exit != 0 or data.get('status') != 'PASS':
+              raise SystemExit(1)
+          PY
+
       - name: Upload sanitized audit evidence
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: doctorate-runtime-${{ github.run_id }}
