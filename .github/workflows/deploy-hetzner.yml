@@ -107,7 +107,8 @@ jobs:
           import binascii
           import os
           from pathlib import Path
-          raw = os.environ["HETZNER_SSH_KEY"].strip().replace("\r\n", "\n").replace("\r", "\n")
+          raw = os.environ["HETZNER_SSH_KEY"].strip()
+          raw = raw.replace("\r\n", "\n").replace("\r", "\n")
           if "\\n" in raw and "\n" not in raw:
               raw = raw.replace("\\n", "\n")
           candidate = raw.strip()
@@ -151,10 +152,10 @@ jobs:
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
           PUBLIC_URL="${NUTEV_PUBLIC_URL:-https://nutev.mindsperformance.com.br}"
-          PUBLIC_URL_Q=$(printf '%q' "$PUBLIC_URL")
+          INSPECT_PUBLIC_URL_Q=$(printf '%q' "$PUBLIC_URL")
           ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
-            "PUBLIC_URL=$PUBLIC_URL_Q bash -s" < tools/remote_proxy_inventory.sh | tee hetzner-proxy-baseline.txt
+            "PUBLIC_URL=$INSPECT_PUBLIC_URL_Q bash -s" < tools/remote_proxy_inventory.sh | tee hetzner-proxy-baseline.txt
           MODE=$(awk -F= '$1=="NUTEV_PROXY_MODE" {print $2}' hetzner-proxy-baseline.txt | tail -n1)
           [[ "$MODE" = managed || "$MODE" = external ]]
           printf 'mode=%s\n' "$MODE" >> "$GITHUB_OUTPUT"
@@ -353,7 +354,11 @@ jobs:
             fi
             sleep 2
           done
-          if [[ "$public_ok" != "1" ]]; then echo "Public HTTPS edge smoke failed" >&2; rollback; exit 1; fi
+          if [[ "$public_ok" != "1" ]]; then
+            echo "Public HTTPS edge smoke failed for $PUBLIC_URL (expected 200 or Basic-Auth 401 on protected surfaces)." >&2
+            rollback
+            exit 1
+          fi
 
           echo "NutEV deployed successfully at commit $TARGET_SHA using proxy mode $PROXY_MODE"
           curl -fsS http://127.0.0.1:8765/api/version
