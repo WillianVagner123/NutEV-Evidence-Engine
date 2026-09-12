@@ -1,59 +1,39 @@
 # POP — Uso do NutEV Reference Engine
 
-**Documento:** Procedimento Operacional Padrão  
 **Produto:** NutEV Reference Engine  
 **Versão estável publicada:** 1.1.0  
 **Plataforma operacional principal:** Windows  
 **Python suportado:** 3.12 ou 3.13  
-**Fluxo atual da `main`:** `SEARCH -> NORMALIZE -> DEDUPLICATE -> TRACEABILITY GATE -> RANK -> EXPORT -> AUDIT`  
-**DOI da versão 1.1.0:** pendente de emissão/verificação pelo Zenodo  
-**DOI histórico da versão 1.0.0:** `10.5281/zenodo.21998607`
+**Fluxo atual:** `SEARCH -> NORMALIZE -> DEDUPLICATE -> TRACEABILITY GATE -> RANK -> EXPORT -> AUDIT`  
+**DOI v1.1.0:** `10.5281/zenodo.22726717`  
+**Zenodo record:** `22726717`  
+**DOI histórico v1.0.0:** `10.5281/zenodo.21998607`
 
 ## 1. Objetivo
 
-Padronizar instalação, atualização, execução, verificação, auditoria e interpretação do NutEV Reference Engine.
+Padronizar instalação, atualização, execução, verificação e interpretação do Reference Engine sem confundir ranking operacional com decisão científica.
 
-O software coleta referências em múltiplas fontes, normaliza metadados, verifica a integridade dos masters de coleta, aplica um gate de rastreabilidade, deduplica, calcula um score explicável e exporta resultados estruturados.
+O Engine coleta referências em múltiplas fontes, normaliza metadados, verifica integridade, aplica rastreabilidade/quarentena, deduplica, calcula prioridade explicável e exporta resultados auditáveis. Ele não deve inventar DOI, PMID, PMCID, URL, título ou outro dado para fazer um registro passar pelos guardrails.
 
-O runtime canônico não usa modelo generativo para inventar referências ou completar metadados ausentes.
+## 2. Identidade de release
 
-O ranking não substitui critérios de elegibilidade, avaliação metodológica, síntese de evidências ou recomendação clínica.
-
-## 2. Escopo e versão
-
-Este POP cobre a branch `main` corrente de:
+A tag `v1.1.0` é imutável e aponta para:
 
 ```text
-WillianVagner123/NutEV-Evidence-Engine
+49588233ad2828b8fcc6140398ab55aedf7c03ef
 ```
 
-A tag `v1.1.0` é o snapshot estável publicado no GitHub e aponta para o commit imutável `49588233ad2828b8fcc6140398ab55aedf7c03ef`. Commits posteriores da `main` não reescrevem essa tag. O arquivamento Zenodo/DOI version-specific da `v1.1.0` permanece pendente até existir um registro real e verificável.
+O GitHub Release e o arquivo Zenodo dessa versão estão publicados. Commits posteriores em `main` mantêm documentação e produto, mas não reescrevem o snapshot da release.
 
-Antes de uma execução auditável, registrar:
+Antes de qualquer execução usada em pesquisa/auditoria, registre:
 
 ```bat
 git rev-parse HEAD
 ```
 
-## 3. Responsabilidade do operador
+## 3. Instalação e atualização
 
-O operador deve:
-
-- usar Python 3.12 ou 3.13;
-- atualizar `main` antes de uma execução corrente;
-- registrar o SHA do repositório;
-- não editar manualmente masters de coleta;
-- não apagar checkpoints por padrão;
-- verificar os códigos finais das três etapas;
-- verificar `AUDIT_MANIFEST.json` e a quarentena;
-- preservar manifests, hashes e outputs quando a execução for usada em pesquisa;
-- tratar o ranking como prioridade de leitura, não como decisão científica automática;
-- nunca preencher DOI/PMID/URL por suposição;
-- não versionar credenciais ou dados privados.
-
-## 4. Primeira instalação
-
-No Prompt de Comando:
+Primeira instalação:
 
 ```bat
 cd %USERPROFILE%
@@ -62,9 +42,7 @@ cd NutEV-Evidence-Engine
 Iniciar-NutEV-Windows.bat
 ```
 
-O launcher cria `.venv` quando necessário, instala o projeto em modo editável e executa o pipeline suportado.
-
-## 5. Atualização antes do uso
+Atualização:
 
 ```bat
 cd %USERPROFILE%\NutEV-Evidence-Engine
@@ -73,49 +51,32 @@ git pull --ff-only origin main
 git rev-parse HEAD
 ```
 
-Se o clone estiver em outro local, use a pasta correspondente.
+O launcher cria `.venv` quando necessário e usa o pipeline suportado pelo repositório.
 
-## 6. Execução padrão
+## 4. Execução padrão
 
 ```bat
 Iniciar-NutEV-Windows.bat
 ```
 
-O fluxo deve mostrar:
-
-```text
-[1/3] COLETA MULTI-FONTE
-[2/3] LILACS/BVS + SCIELO NATIVO
-[3/3] RANKING DE REFERENCIAS
-```
-
-O perfil padrão é `operational`. Para coleta profunda:
+Perfil profundo, quando realmente necessário:
 
 ```bat
 set NUTEV_DEEP_COLLECTION=1
 Iniciar-NutEV-Windows.bat
 ```
 
-Depois, para voltar ao padrão na mesma sessão:
+Depois, para limpar a variável na mesma sessão:
 
 ```bat
 set NUTEV_DEEP_COLLECTION=
 ```
 
-Limites maiores não significam cobertura exaustiva.
+Limites maiores não significam busca exaustiva.
 
-## 7. Critério de sucesso operacional
+## 5. Critério de sucesso operacional
 
-O final esperado é:
-
-```text
-Coleta geral: codigo 0
-LILACS/BVS + SciELO: codigo 0
-Ranking: codigo 0
-SUCESSO: ranking de referencias gerado.
-```
-
-Confirmar a existência de:
+A execução deve terminar sem erro nas etapas de coleta/ranking e gerar, no mínimo:
 
 ```text
 project_output_reference/reference_ranking/TOP_REFERENCIAS.md
@@ -126,190 +87,21 @@ project_output_reference/reference_ranking/AUDIT_MANIFEST.json
 project_output_reference/reference_ranking/latest.json
 ```
 
-Uma execução com registros em quarentena pode terminar com status:
+`COMPLETE_WITH_QUARANTINE` não é necessariamente falha: significa que registros sem rastreabilidade suficiente foram separados do ranking.
+
+## 6. Integridade e rastreabilidade
+
+Masters declarados devem possuir caminho e SHA-256 no manifesto. Divergência de hash deve interromper a execução; não ajuste o manifesto para esconder modificação de input.
+
+A identidade/deduplicação usa o contrato canônico do Engine, com identificadores/URL/título normalizado conforme a implementação vigente. Isso é deduplicação determinística, não prova de equivalência intelectual entre versões/preprints/traduções.
+
+Registros sem origem/rastreabilidade suficiente permanecem em quarentena. Corrija a informação na fonte ou na coleta com evidência verificável; não preencha por suposição.
+
+## 7. Auditoria mínima
+
+Preserve junto com o SHA do Git:
 
 ```text
-COMPLETE_WITH_QUARANTINE
-```
-
-Isso não é sinônimo de falha. Significa que itens sem rastreabilidade suficiente foram separados do ranking.
-
-## 8. Guardrail de integridade — obrigatório
-
-Cada manifesto de coleta que declara um master deve conter:
-
-```text
-master_records_path
-master_records_sha256
-```
-
-Antes de ler o master, o ranker recalcula o SHA-256.
-
-Se o hash real for diferente do hash declarado, a execução deve falhar com mensagem semelhante a:
-
-```text
-Guardrail failure: SHA-256 mismatch ...
-```
-
-Procedimento correto:
-
-1. não editar o manifesto para “fazer bater”;
-2. não alterar o master manualmente;
-3. identificar por que o arquivo mudou;
-4. restaurar o arquivo correspondente ao manifesto ou refazer a coleta;
-5. executar novamente.
-
-O sistema não deve continuar com um input cuja integridade declarada não possa ser comprovada.
-
-## 9. Gate de rastreabilidade
-
-Cada registro recebe uma classe:
-
-| Classe | Critério |
-|---|---|
-| `A_IDENTIFIER` | possui DOI, PMID ou PMCID |
-| `B_TRACEABLE_URL` | possui URL HTTP/HTTPS rastreável |
-| `Q_INCOMPLETE_ORIGIN` | falta provider ou título |
-| `Q_UNTRACEABLE` | sem identificador e sem URL rastreável |
-
-Por padrão, `Q_*` vai para:
-
-```text
-reference_quarantine.jsonl
-```
-
-e não entra no ranking.
-
-Para retirar um item da quarentena, corrija o dado na origem ou na etapa de coleta com evidência verificável. Não invente identificadores.
-
-## 10. Auditoria de um registro
-
-No `reference_ranking.jsonl`/CSV, verificar:
-
-```text
-audit_traceability
-audit_origin_sha256
-audit_source_run_id
-audit_source_master_sha256
-reference_provider
-DOI / PMID / PMCID / URL
-score_breakdown
-matched_terms
-taxonomy_groups
-focus_keyword_hits
-document_type_applied
-```
-
-`audit_origin_sha256` detecta mudança no payload de origem usado pelo engine. Ele não certifica a verdade científica do artigo.
-
-## 11. Auditoria da execução
-
-Abrir:
-
-```text
-project_output_reference/reference_ranking/AUDIT_MANIFEST.json
-```
-
-Confirmar:
-
-```text
-"audit_type": "REFERENCE_RANKING_AUDIT"
-"status": "PASS"
-```
-
-O manifesto contém:
-
-- versão da política de guardrail;
-- política ativa;
-- masters e SHA-256 de entrada;
-- SHA-256 de `reference_mode.json` e taxonomias usadas;
-- contagem de registros recebidos, rastreáveis, em quarentena e únicos ranqueados;
-- SHA-256 dos outputs;
-- assertions de guardrail.
-
-Para uma auditoria reproduzível, preservar esse manifesto junto com o SHA do Git e os manifests de coleta.
-
-## 12. Score e proteção contra inflação
-
-O ranker registra `score_breakdown` para cada referência.
-
-A política atual limita:
-
-```text
-taxonomy_score_cap = 60
-focus_score_cap = 40
-```
-
-Esses caps reduzem inflação decorrente de muitos grupos históricos ou termos redundantes.
-
-Tipos documentais sobrepostos não acumulam bônus. Exemplo: um título contendo `clinical practice guideline` pode gerar hits também para `practice guideline` e `guideline`, mas somente o maior peso é aplicado.
-
-O score continua sendo prioridade de recuperação, não nível de evidência.
-
-## 13. Providers e indisponibilidade
-
-O modo padrão tenta PubMed, Europe PMC, OpenAlex, Crossref, DOAJ, Semantic Scholar, fontes oficiais e as rotas nativas de LILACS/BVS e SciELO.
-
-Google Programmable Search, Brave e SerpAPI dependem de credenciais.
-
-Scopus e Web of Science não são simulados.
-
-HTTP `401`/`403` em BVS/LILACS ou SciELO é registrado como indisponibilidade da rota automatizada; não significa “zero literatura”.
-
-## 14. Variáveis opcionais
-
-O runtime não carrega `.env` automaticamente. Variáveis podem ser definidas na sessão:
-
-```bat
-set NCBI_EMAIL=seu-email@exemplo.com
-set NCBI_API_KEY=...
-set CROSSREF_MAILTO=seu-email@exemplo.com
-set OPENALEX_MAILTO=seu-email@exemplo.com
-set S2_API_KEY=...
-set GOOGLE_API_KEY=...
-set GOOGLE_CSE_ID=...
-set BRAVE_API_KEY=...
-set SERPAPI_API_KEY=...
-```
-
-A ausência de `NCBI_EMAIL`/`ENTREZ_EMAIL` não impede PubMed; o cliente usa ritmo conservador.
-
-## 15. Interrupção e retomada
-
-PubMed mantém checkpoints. Após uma interrupção:
-
-```bat
-Iniciar-NutEV-Windows.bat
-```
-
-Não apague `project_output_reference` ou checkpoints por padrão.
-
-Código `130` normalmente indica interrupção por `Ctrl+C`.
-
-## 16. Deduplicação
-
-A identidade atual segue:
-
-```text
-DOI -> PMID -> URL -> título normalizado
-```
-
-Isso não é deduplicação semântica. Versões paralelas ou registros equivalentes com identificadores diferentes podem permanecer separados.
-
-## 17. Interpretação A/B/C
-
-- posições 1–20: `A_TOP_REFERENCE`;
-- posições 21–100: `B_STRONG_REFERENCE`;
-- demais: `C_DISCOVERY`.
-
-As faixas indicam ordem de leitura. Não indicam qualidade metodológica, certeza da evidência ou recomendação clínica.
-
-## 18. Registro mínimo para pesquisa/auditoria
-
-Preservar pelo menos:
-
-```text
-SHA do Git
 07_logs/collect_everything/latest.json
 07_logs/latin_native/latest.json
 reference_ranking/latest.json
@@ -319,37 +111,55 @@ reference_ranking/reference_ranking.jsonl
 reference_ranking/reference_quarantine.jsonl
 ```
 
-Registrar também data/hora, perfil de coleta, providers indisponíveis/falhos e qualquer intervenção manual documentada.
+No `AUDIT_MANIFEST.json`, confirme status de auditoria, hashes/configurações de entrada e hashes dos outputs.
 
-## 19. Execução histórica validada de 18/08/2026
+Hashes demonstram integridade relativa aos arquivos registrados; não certificam a verdade científica dos metadados externos.
 
-A execução Windows registrada em `VALIDATED_WINDOWS_RUN_2026-08-18.md` teve 8.702 entradas e 115 grupos de taxonomia naquele estado do software.
+## 8. Providers e falhas
 
-Ela é evidência histórica de execução real, não um baseline obrigatório da `main` com os guardrails posteriores.
+O produto consulta somente providers realmente configurados/suportados. Estados `401`/`403`, indisponibilidade, rate limit ou credencial ausente devem ser registrados como falha/indisponibilidade/configuração ausente — nunca como “zero literatura”.
 
-## 20. Mudanças metodológicas
+Scopus e Web of Science não são simulados sem acesso licenciado. Providers opcionais dependem de suas credenciais.
 
-Qualquer alteração que modifique:
+## 9. Interpretação do ranking
 
-- providers ou identidade dos providers;
-- consultas ou limites;
-- regra de identidade/deduplicação;
-- rastreabilidade/quarentena;
-- política de hashes;
-- taxonomia ou caps;
-- pesos ou tipos documentais;
-- outputs ou manifesto de auditoria;
-- interpretação dos scores;
+Score/faixa/rank são **prioridade operacional de leitura**. Não são, isoladamente:
 
-deve atualizar documentação e testes e passar pelo CI antes do merge.
+- qualidade metodológica;
+- elegibilidade científica;
+- risco de viés;
+- certeza da evidência;
+- força de recomendação;
+- decisão clínica.
 
-## 21. Referências internas
+O estado científico geral do produto continua `B — DEMOTE` enquanto não houver benchmark independente suficiente para promover essa conclusão.
 
-- guardrails e auditoria: `AUDITABILITY_AND_GUARDRAILS.md`;
-- arquitetura e pesos: `ARCHITECTURE.md`;
-- providers: `SEARCH_PROVIDERS.md`;
-- limitações: `KNOWN_LIMITATIONS.md`;
-- release atual: `RELEASE_NOTES_1_1_0.md`;
-- release histórica `v1.0.0`: `RELEASE_V1_0_0.md`;
-- checklist de release: `RELEASE_CHECKLIST.md`;
-- DOI/Zenodo: `ZENODO_SETUP.md`.
+## 10. Interrupção, retomada e outputs
+
+Não apague `project_output_reference` ou checkpoints por padrão. Runs concluídos e seus manifests devem ser preservados quando fizerem parte de pesquisa/auditoria.
+
+Código `130` normalmente representa interrupção por `Ctrl+C`; investigue antes de repetir ou remover estado.
+
+Outputs científicos/operacionais não devem ser versionados no repositório público por padrão, especialmente quando contiverem dados privados, material protegido ou estado de projetos.
+
+## 11. Evidência histórica
+
+A execução Windows real de 18/08/2026 continua preservada como evidência histórica em:
+
+[`archive/2026/VALIDATED_WINDOWS_RUN_2026-08-18.md`](archive/2026/VALIDATED_WINDOWS_RUN_2026-08-18.md)
+
+Ela descreve o software/taxonomia daquele momento e **não** é baseline obrigatório da `main` atual.
+
+## 12. Mudanças que exigem atualização de testes/documentação
+
+Qualquer alteração de providers, consultas/limites, identidade/deduplicação, guardrails, taxonomia, pesos, outputs, manifestos ou interpretação científica deve atualizar testes e documentação e passar pelos gates normais antes do merge.
+
+## Referências
+
+- [`ARCHITECTURE.md`](ARCHITECTURE.md)
+- [`AUDITABILITY_AND_GUARDRAILS.md`](AUDITABILITY_AND_GUARDRAILS.md)
+- [`SEARCH_PROVIDERS.md`](SEARCH_PROVIDERS.md)
+- [`KNOWN_LIMITATIONS.md`](KNOWN_LIMITATIONS.md)
+- [`RELEASE_NOTES_1_1_0.md`](RELEASE_NOTES_1_1_0.md)
+- [`ZENODO_SETUP.md`](ZENODO_SETUP.md)
+- [`../validation/SCIENTIFIC_VALIDATION_STATUS.md`](../validation/SCIENTIFIC_VALIDATION_STATUS.md)
