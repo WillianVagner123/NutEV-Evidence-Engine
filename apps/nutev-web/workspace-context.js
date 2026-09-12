@@ -1,5 +1,5 @@
 const state={loading:false,rendered:false}
-const PROTECTED_PILOT_PATHS=new Set(['/search.html','/evidence-library.html','/project.html','/exports.html'])
+const PROTECTED_PILOT_PATHS=new Set(['/search.html','/evidence-library.html','/project.html','/review.html','/exports.html'])
 
 function esc(value){
   return String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')
@@ -40,6 +40,28 @@ function insertAfterTopbar(root){
   if(topbar)topbar.insertAdjacentElement('afterend',root)
   else host.prepend(root)
   return true
+}
+
+function promoteReviewNavigation(){
+  if(location.pathname==='/login.html')return
+  document.querySelectorAll('.sidebar nav,.product-nav').forEach(nav=>{
+    if(nav.querySelector('a[href="/review.html"]'))return
+    const link=document.createElement('a')
+    link.className='nav-item'
+    link.href='/review.html'
+    link.dataset.nutevReviewNav='generic'
+    link.innerHTML='<span class="nav-icon" aria-hidden="true">✓</span><span>Revisão humana</span>'
+    const exportsLink=nav.querySelector('a[href="/exports.html"]')
+    const libraryLink=nav.querySelector('a[href="/evidence-library.html"],a[href="/articles.html"]')
+    const anchor=exportsLink||libraryLink
+    if(anchor)anchor.insertAdjacentElement('afterend',link)
+    else nav.appendChild(link)
+    if(location.pathname==='/review.html'){
+      nav.querySelectorAll('.nav-item.active').forEach(item=>{item.classList.remove('active');item.removeAttribute('aria-current')})
+      link.classList.add('active')
+      link.setAttribute('aria-current','page')
+    }
+  })
 }
 
 function renderSignedOut(){
@@ -167,6 +189,7 @@ function renderContextShell(me,context){
   document.body.dataset.nutevWorkspace=current.workspace_id||''
   document.body.dataset.nutevProject=current.project_id||''
   window.NutEVContext={mode:'pilot',me,context,names}
+  promoteReviewNavigation()
   window.dispatchEvent(new CustomEvent('nutev:context-ready',{detail:window.NutEVContext}))
 }
 
@@ -204,4 +227,5 @@ export async function renderWorkspaceProjectSwitcher(){
   }
 }
 
+window.addEventListener('nutev:runtime-mode',promoteReviewNavigation)
 renderWorkspaceProjectSwitcher()
