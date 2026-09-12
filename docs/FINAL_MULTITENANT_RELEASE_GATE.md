@@ -1,207 +1,109 @@
 # NutEV — Final Multi-tenant Release Gate
 
-Status: PR-13 deployment contract.
+Status: **current production-promotion contract**.
 
-## 1. Purpose
+## Purpose
 
-PR-13 closes the release boundary. It does not change Article 1 or Article 2 scientific state. It makes the production promotion fail closed unless the running image proves the multi-tenant security contract.
+Production promotion is fail-closed and exact-SHA. Software correctness, deployment success and scientific validity are separate gates.
 
-A release is complete only when all of the following are true for the same `main` SHA:
+For a candidate `main` SHA, release prerequisites must be green for that same source identity. A successful historical run, PR checkout or different SHA cannot satisfy the current promotion.
 
-```text
-CI / pytest 3.12 + 3.13 PASS
-Windows smoke PASS
-Ruff + typecheck PASS
-scientific guardrails PASS
-Full Multi-tenant Death Test PASS
-security-scan PASS
-dependency-review PASS
-release-artifact-validation PASS
-CodeQL PASS
-Chromium pre-deploy PASS
-Hetzner deployment PASS
-local production runtime smoke PASS
-public HTTPS edge smoke PASS
-/api/version == deployed SHA
-```
+## Exact-SHA prerequisites
 
-## 2. Required production auth mode
-
-Final multi-tenant production requires:
+The maintained gate verifies the required CI/security/product workflows for the candidate commit, including:
 
 ```text
-NUTEV_AUTH_MODE=pilot
+ci
+security-scan
+dependency-review
+multitenant-release-audit
+release-artifact-validation
+codeql
+predeploy-browser-e2e
 ```
 
-The release runtime smoke now rejects `legacy` mode.
+The combined coverage includes Python 3.12/3.13 tests, Windows smoke, Ruff/typecheck, scientific guardrails, the full multi-tenant death test, distribution/container audits and authenticated Chromium product checks.
 
-This is deliberate. `legacy` remains a compatibility mode for older environments, but it is not accepted as the final multi-tenant release state.
+A required run that is missing, failed, skipped or belongs to another SHA does not satisfy promotion.
 
-## 3. Eleven-provider contract
+## Production runtime contract
 
-The live runtime must expose exactly the canonical provider registry:
-
-```text
-pubmed
-europepmc
-openalex
-crossref
-doaj
-semantic_scholar
-google_pse
-brave
-serpapi
-lilacs_bvs_native
-scielo_native
-```
-
-The smoke verifies registry identity/order and UI labels. It does not query external providers and therefore does not create a scientific search event.
-
-## 4. Private-surface unauthenticated contract
-
-Without a platform session, the local application runtime must fail closed for:
-
-```text
-/api/auth/me                         -> 401
-/api/context                         -> 401
-/api/searches                        -> 401
-/api/articles                        -> 401
-/api/library                         -> 401
-/agent-context/article1/SEARCH_STATE.json -> 401
-/api/article1/d132/review             -> 401 without guest token
-/api/article2/integrative/status      -> 401 when enabled, or 404 while dark-launched
-```
-
-### Legacy Workbench
-
-The current Workbench projection contains mixed global bibliographic identity and scientific projection state. Therefore, in `pilot` mode:
-
-```text
-/api/articles*
-```
-
-is not exposed through the legacy API, even to an authenticated project user. The tenant-safe replacement is the Evidence Library (`/api/library`).
-
-`legacy` mode behavior is preserved for backwards compatibility and is not accepted by the final release smoke.
-
-### Article 1 static context
-
-The persistent Article 1 agent context is private scientific material. In `pilot` mode the static path:
-
-```text
-/agent-context/article1/*
-```
-
-requires:
-
-```text
-authenticated Principal
-+ selected workspace/project
-+ current application template == SCOPING_REVIEW
-+ assembly_id == WILLIAN_DOCTORATE_A1
-```
-
-A wrong project receives not-found semantics; knowing the static path is not authorization.
-
-### Article 2
-
-Article 2 remains a private `INTEGRATIVE_REVIEW` application. Its HTTP routes are dark-launched behind `NUTEV_ARTICLE2_ENABLED`. The release gate accepts 404 while dark-launched because historical ownership binding remains blocked. Enabling the route does not activate legacy binding; unauthenticated access must still return 401.
-
-## 5. Public edge contract
-
-Caddy remains an outer perimeter. Public HTTPS smoke accepts:
-
-```text
-200
-or
-401 Basic Auth
-```
-
-on protected edge surfaces.
-
-If `/api/version` is publicly reachable with HTTP 200, its `commit` must equal the deployment `TARGET_SHA` exactly.
-
-The deeper authentication/tenant checks are executed against the local running container before promotion and again against the production container, so Basic Auth cannot hide an unsafe application runtime behind the edge.
-
-## 6. Current operational blocker (2026-09-08)
-
-The latest automatic deploy for:
-
-```text
-main = 2717bbd42b8fa72da6af8b3d5eec1ae4a778f391
-```
-
-failed before any SSH connection was attempted.
-
-Failure stage:
-
-```text
-Configure SSH
-```
-
-Failure contract:
-
-```text
-HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key
-```
-
-Therefore:
-
-```text
-production was NOT changed
-SSH access was NOT attempted
-container preflight was NOT executed
-public smoke was NOT executed
-```
-
-The GitHub Environment secret must contain the complete **private** SSH key, unencrypted/no passphrase, whose public half is present in the target user's `authorized_keys`.
-
-Do not place the private key in source control, issues, PR comments, logs or chat.
-
-After SSH is corrected, a second configuration gate may still intentionally stop deployment if the server `.env` does not contain:
+Hosted multi-tenant production requires:
 
 ```text
 NUTEV_AUTH_MODE=pilot
 ```
 
-That is a required release condition, not a workaround to bypass.
+`legacy` remains a compatibility/recovery mode in code but is not the accepted hosted production baseline.
 
-## 7. No scientific mutation
+The runtime must expose the canonical provider registry and preserve private-surface fail-closed behavior without a valid platform session/guest credential. Legacy unscoped Workbench access is not treated as tenant-safe project access in pilot mode; project-safe Library/application/review surfaces remain authorization-scoped.
 
-PR-13 does not:
+Article 1 and Article 2 private adapters remain subject to their own owner/provenance/scientific gates. Route availability or deployment does not approve PRESS/GF-10, create PRISMA state or activate historical binding.
+
+## Deployment and recovery
+
+The Hetzner promotion stage must:
+
+1. revalidate release prerequisites for the exact target SHA;
+2. use pinned SSH host identity/strict checking and step-scoped secrets;
+3. preserve enough previous deployment/configuration identity for recovery;
+4. create/verify the required read-only persistent-volume snapshot or equivalent recovery artifact;
+5. prove isolated SQLite/WAL restore readiness before replacing the active image;
+6. deploy the verified target commit;
+7. verify the running application and edge behavior;
+8. prove `/api/version`/runtime source identity equals the intended deployed SHA when that endpoint is available through the tested path.
+
+A failed prerequisite, recovery check, SSH stage, runtime smoke or edge verification leaves promotion failed. The workflow must not weaken a scientific or security gate to make deployment green.
+
+## Public edge and application boundary
+
+Caddy/host controls provide transport/routing and may provide an outer compatibility perimeter. They do not replace application authentication or tenant authorization.
+
+The release gate tests the application runtime directly enough that an outer Basic Auth response cannot hide an unsafe private-surface configuration.
+
+## Post-deploy audit
+
+After a successful production promotion, the maintained read-only doctorate/runtime audit may observe materialized A1/A2 application/workflow state. It is explicitly non-mutating and does not execute a search, create a legacy binding or manufacture scientific approval.
+
+For first-party doctorate workloads, absence of reviewed owner/provenance evidence remains fail-closed even when the platform itself is healthy.
+
+## Release identity versus moving `main`
+
+The immutable software release and the moving production branch are distinct identities:
 
 ```text
-execute a scientific search
-query external providers
-rerank evidence
-change Registry article identity
-rewrite Workbench
-change Article 1 D-132 decisions
-change PRESS / GF-10 / freeze
-activate Article 2 legacy binding
-create PRISMA events
-adopt historical searches
-apply the PR-7 migration planner
+v1.1.0 tag -> 49588233ad2828b8fcc6140398ab55aedf7c03ef
+main       -> may advance through validated post-release fixes/docs/operations
 ```
 
-## 8. Release completion rule
+Advancing `main` does not move or rewrite the `v1.1.0` tag/GitHub Release/Zenodo archive. Any post-release `main` deployment must independently pass the exact-SHA promotion contract.
 
-Do not label the migration or production release complete merely because PR-13 code is merged.
+## Scientific non-effects
 
-Final state is:
+A green production release/deploy does **not** by itself:
 
 ```text
-RELEASE_READY_CODE = all code/CI gates green
-PRODUCTION_DEPLOYED = Hetzner deploy job green
-PUBLIC_VERIFIED = deployed /api/version SHA + edge smoke green
+validate a research question or search strategy
+approve PRESS / GF-10 / query freeze
+include or exclude evidence
+adjudicate Human Review
+activate Article 2 historical binding
+create scientific PRISMA events
+establish certainty, causality or recommendation validity
 ```
 
-Only when all three are true may the final multi-tenant rollout be called complete.
+Those remain explicit scientific/human governance decisions.
 
-## Closeout hardening (2026-09-10)
+## Completion rule
 
-PR #1246 adds an exact-SHA seven-workflow barrier and revalidation after environment approval, including the separately named authenticated pilot Chromium job. Missing/failed/skipped/foreign/old executions cannot satisfy promotion. The final main SHA must have its own trusted runs; PR checkouts are not deployed evidence.
+Operational production closeout for a candidate SHA requires:
 
-SSH is the final operational stage per owner instruction. Both readiness and deployment require a separately verified HETZNER_KNOWN_HOSTS pin with strict host checking; private keys remain step-scoped. Before replacing the image, deployment preserves old configuration/image identity and requires a quiesced read-only volume snapshot with successful isolated SQLite/WAL restore proof. Recovery verifies the old version and does not overwrite scientific data. Synthetic tests do not establish actual server recovery.
+```text
+RELEASE_PREREQUISITES = PASS on exact SHA
+RECOVERY_READINESS     = PASS
+PRODUCTION_DEPLOY      = PASS
+RUNTIME_EDGE_VERIFY    = PASS
+POSTDEPLOY_AUDIT       = PASS when configured for the workload
+```
 
-A1 static and D-132 source access additionally require server-managed workspace/project owner pins based on reviewed runtime evidence. A writable application assembly label alone is insufficient. A2's dark-launch and provenance gate are unchanged. No SSH credential or actual production owner mapping was configured by these code changes.
+Only then should that moving `main` SHA be described as the active validated production source. This contract does not redefine the immutable v1.1.0 release snapshot.

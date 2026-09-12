@@ -4,68 +4,79 @@ Este arquivo define o escopo e as invariantes que agentes automatizados devem pr
 
 ## Produto suportado
 
+O fluxo genérico suportado é:
+
 ```text
-SEARCH -> NORMALIZE -> DEDUPLICATE -> RANK -> EXPORT
+SEARCH -> NORMALIZE -> TRACEABILITY -> DEDUPLICATE -> CLASSIFY -> RANK -> EXPORT -> AUDIT
 ```
 
-O NutEV Reference Engine coleta metadados de referências, preserva identidade de provider, normaliza registros, aplica deduplicação por identidade, cruza taxonomia/focus terms, calcula prioridade de leitura e exporta resultados estruturados.
+O NutEV coleta e organiza referências candidatas. Ranking indica prioridade técnica de leitura; não representa elegibilidade científica, qualidade metodológica, certeza da evidência, força de recomendação ou recomendação clínica.
 
 ## Invariantes não negociáveis
 
-1. Nunca fabricar provider results, contagens, identificadores, URLs, DOIs, PMIDs ou evidência de execução.
+1. Nunca fabricar provider results, contagens, identificadores, URLs, DOIs, PMIDs, afiliações, funding, autoria ou evidência de execução.
 2. Falhas, rate limits, ausência de credenciais e mudanças de interface devem permanecer explícitos.
 3. Scopus e Web of Science nunca devem ser simulados.
-4. Ranking é prioridade de leitura; não é recomendação clínica, elegibilidade científica ou qualidade metodológica.
-5. `source`/`source_provider` deve sobreviver ao fluxo até os outputs.
-6. Queries, limites, taxonomia e pesos devem permanecer versionados e inspecionáveis.
-7. Não descrever a regra atual como deduplicação semântica completa.
-8. Mudanças no scoring devem atualizar testes e `docs/ARCHITECTURE.md`.
-9. Mudanças no comportamento do usuário devem atualizar README/POP/documentação correspondente.
-10. Outputs públicos devem respeitar a allowlist do ranker.
-11. Nunca inventar DOI, ORCID, afiliação, funding, autoria ou resultado de teste.
-12. Não versionar segredos, dados privados ou texto completo protegido sem direito de redistribuição.
+4. `source` / `source_provider` deve sobreviver ao fluxo até os outputs.
+5. Queries, limites, taxonomia, pesos, manifests e hashes relevantes devem permanecer versionados/inspecionáveis.
+6. A identidade atual é determinística (`DOI -> PMID -> URL -> título normalizado`) e não deve ser descrita como deduplicação semântica/work-level completa.
+7. Mudanças de scoring/identidade/taxonomia devem atualizar testes e documentação arquitetural aplicável.
+8. Outputs públicos devem respeitar as allowlists/guardrails do produto.
+9. Nunca versionar segredos, bancos privados, backups ou texto completo sem direito de redistribuição.
+10. Seleção de workspace/projeto não é autorização; identidade e escopo privado são resolvidos no servidor.
+11. `PLATFORM_ADMIN` não é bypass implícito para estado científico privado.
+12. Configuração/deploy de A1/A2 não cria aprovação científica, ownership histórico, PRISMA ou decisões humanas por inferência.
 13. Tags e releases publicadas são imutáveis.
 
 ## Contexto compartilhado para agentes
 
-Para trabalho científico ou operacional no Artigo 1, agentes ChatGPT/Codex, Claude e similares devem usar a mesma fonte de verdade:
+Para qualquer trabalho, comece por:
 
 1. `AI_CONTEXT.md` — ponto de entrada compartilhado;
-2. `ARTICLE1_SEARCH_MASTER.md` — estado humano canônico da busca;
-3. `config/nutev/article1_search_master_v1.json` — estado machine-readable;
-4. quando existir, `project_output_reference/agent_context/article1/CONTEXT_MANIFEST.json` — snapshot vivo de produção.
+2. `README.md` — produto/release/produção atuais;
+3. `docs/README.md` — índice da documentação viva.
 
-O bundle de agentes é somente navegação/contexto. Ele não autoriza PRESS, GF-10, freeze, inclusão/exclusão ou PRISMA e não deve expor full text, Bank rank/score/tier ou machine relevance score/band.
+Para Artigo 1, use também:
 
-## Runtime canônico
+1. `ARTICLE1_SEARCH_MASTER.md`;
+2. `config/nutev/article1_search_master_v1.json`;
+3. quando existir, `project_output_reference/agent_context/article1/CONTEXT_MANIFEST.json` e `SEARCH_STATE.json`.
 
-- `Iniciar-NutEV-Windows.bat`
-- `RODAR_TUDO.cmd`
-- `run_everything_now.cmd`
-- `tools/run_everything_now.py`
-- `tools/run_latin_sources.py`
-- `tools/rank_references.py`
-- `config/reference_search.json`
-- `config/reference_mode.json`
-- `config/keyword_taxonomy*.json`
-- `src/nutev/search/`
+O bundle de agentes é privado e serve para navegação/contexto. Ele não autoriza PRESS, GF-10, freeze, inclusão/exclusão, avaliação de qualidade, recomendação ou PRISMA.
 
-## Outputs canônicos
+Documentos em `docs/archive/` são evidência histórica/proveniência; não substituem contratos vivos de `main`.
 
-- `project_output_reference/reference_ranking/TOP_REFERENCIAS.md`
-- `project_output_reference/reference_ranking/reference_ranking.csv`
-- `project_output_reference/reference_ranking/reference_ranking.jsonl`
-- `project_output_reference/reference_ranking/latest.json`
+## Runtime e configuração canônicos
 
-## Regra de identidade atual
+Entrypoints e configurações principais incluem:
 
 ```text
-DOI -> PMID -> URL -> título normalizado
+Iniciar-NutEV-Windows.bat
+RODAR_TUDO.cmd
+run_everything_now.cmd
+tools/run_everything_now.py
+tools/run_latin_sources.py
+tools/rank_references.py
+config/reference_search.json
+config/reference_mode.json
+config/keyword_taxonomy*.json
+src/nutev/search/
 ```
 
-Quando a identidade coincide, é preferida a versão com texto descritivo mais rico.
+A hospedagem multi-tenant aceita `legacy` como modo de compatibilidade no código, mas a linha de produção v1.1.0 usa `NUTEV_AUTH_MODE=pilot` e passa pelo gate exato de promoção definido em `docs/FINAL_MULTITENANT_RELEASE_GATE.md`.
 
-Registros semanticamente equivalentes com identificadores diferentes podem permanecer separados.
+## Outputs canônicos de ranking
+
+```text
+project_output_reference/reference_ranking/TOP_REFERENCIAS.md
+project_output_reference/reference_ranking/reference_ranking.csv
+project_output_reference/reference_ranking/reference_ranking.jsonl
+project_output_reference/reference_ranking/reference_quarantine.jsonl
+project_output_reference/reference_ranking/AUDIT_MANIFEST.json
+project_output_reference/reference_ranking/latest.json
+```
+
+Outputs de runtime são artefatos operacionais/privados conforme o contexto e não devem ser confundidos com conteúdo apropriado para o pacote público.
 
 ## Workflow de mudança
 
@@ -74,56 +85,54 @@ Para alterações não triviais:
 1. verificar o SHA atual de `main`;
 2. criar branch dedicada;
 3. limitar o diff ao escopo declarado;
-4. adicionar/ajustar testes para mudança de contrato;
-5. atualizar documentação quando houver comportamento público afetado;
-6. obter CI/security/build no SHA candidato;
-7. abrir PR;
-8. não fazer merge com checks necessários falhando;
-9. não mover tags publicadas.
+4. adicionar/ajustar testes quando o contrato muda;
+5. atualizar documentação pública/operacional correspondente;
+6. obter os gates exigidos no mesmo SHA candidato;
+7. abrir/revisar PR;
+8. não fazer merge com gates necessários falhando;
+9. após merge/deploy, diferenciar o SHA móvel de produção do snapshot imutável da release;
+10. nunca mover tags publicadas.
 
-## Mudanças de provider
+## Mudanças de provider/ranking
 
-Exigir:
+Mudanças de provider devem preservar identidade, falha explícita, ausência de fallback silencioso rotulado como outro provider e os controles de acesso aplicáveis.
 
-- identidade preservada;
-- falha explícita;
-- nenhum fallback silencioso rotulado como outro provider;
-- nenhum bypass de controle de acesso;
-- documentação de credenciais/limites/status atualizada.
+Se alterar taxonomia, pesos, focus terms, tipo documental, recência, identidade/deduplicação, tiers ou schema, revisar testes, `docs/ARCHITECTURE.md`, `docs/KNOWN_LIMITATIONS.md` e documentação operacional/README quando houver efeito visível ao usuário.
 
-## Mudanças de ranking
+## Fronteira científica
 
-Se alterar taxonomia, pesos, focus terms, tipo documental, recência, identidade/deduplicação, tiers ou schema:
+Software verde, deploy verde, Windows smoke, hashes e publicação não promovem a validação científica acima do que o protocolo suporta.
 
-- atualizar `docs/ARCHITECTURE.md`;
-- revisar `docs/KNOWN_LIMITATIONS.md`;
-- adicionar regressão em `nutev_tests`;
-- documentar impacto no README/POP quando visível ao operador.
+O estado geral permanece `B — DEMOTE` até evidência de validação científica justificar mudança.
+
+A1 continua dependente de revisão humana e gates acadêmicos reais; A2 continua fail-closed para binding histórico sem proveniência revisada. Nenhum agente deve preencher esses gates por inferência.
 
 ## Release atual
 
-- versão publicada no GitHub: `1.1.0`;
-- tag imutável: `v1.1.0`;
-- release commit: `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
-- GitHub Release: publicada em `2026-09-12`;
-- produção: aceita;
-- Zenodo record da `v1.1.0`: pendente de verificação/publicação;
-- DOI version-specific da `v1.1.0`: ausente até emissão real pelo Zenodo.
+```text
+versão: 1.1.0
+tag imutável: v1.1.0
+release SHA: 49588233ad2828b8fcc6140398ab55aedf7c03ef
+GitHub Release: publicada em 2026-09-12
+Zenodo record: 22726717
+DOI version-specific: 10.5281/zenodo.22726717
+produção: aceita
+```
 
-A `main` pode avançar com documentação e correções pós-release sem alterar o snapshot publicado. Nunca mover ou recriar a tag `v1.1.0` para acompanhar a `main`.
+A `main` pode avançar por correções/documentação pós-release e ser novamente implantada após os gates do novo SHA. Isso não altera o snapshot, tag, GitHub Release ou arquivo Zenodo de `v1.1.0`.
 
 ### Release histórica anterior
 
-- versão: `1.0.0`;
-- tag: `v1.0.0`;
-- release commit: `5728d79b05e618897f01ba93886a17584c9f215f`;
-- Zenodo record: `21998607`;
-- DOI: `10.5281/zenodo.21998607`.
+```text
+versão: 1.0.0
+tag: v1.0.0
+release SHA: 5728d79b05e618897f01ba93886a17584c9f215f
+Zenodo record: 21998607
+DOI: 10.5281/zenodo.21998607
+```
 
-O DOI de `v1.0.0` é histórico e não pode ser reutilizado como DOI da `v1.1.0` ou de qualquer release futura.
+O DOI da v1.0.0 não deve ser reutilizado como DOI da v1.1.0 ou de release futura.
 
 ## Futuras releases
 
-Versão, tag, GitHub Release, `CITATION.cff`, `.zenodo.json`, changelog e release notes devem referir-se à mesma identidade de release.
-
-Um novo DOI version-specific só deve ser registrado depois que o serviço de arquivo realmente o emitir. Nunca reutilizar o DOI de uma versão anterior como DOI de depósito de uma versão futura.
+Versão, tag, GitHub Release, `CITATION.cff`, `.zenodo.json`, changelog e release notes devem se referir à mesma identidade de release. Um DOI version-specific só deve ser registrado depois de realmente emitido/verificado pelo serviço de arquivo.

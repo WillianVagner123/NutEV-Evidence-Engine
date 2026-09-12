@@ -1,284 +1,93 @@
-# Nut Evidence Platform — Tenant Search Isolation
+# NutEV — Tenant Search Isolation Contract
 
-**PR-4 scope:** bind every **new authenticated search** to workspace ownership before the background worker starts, and enforce the same scope on job polling and persisted history.
+Status: **current v1.1.0 hosted-product contract**.
 
-This PR does **not** migrate historical searches. Legacy runs without an explicit row in the new ownership store remain preserved on disk and invisible to authenticated tenant history until the dedicated migration PR.
+## Ownership rule
 
-## Ownership contract
+Every new authenticated search is bound to tenant ownership before its worker starts.
 
-Every new authenticated search job records:
+Private ownership metadata records:
 
 ```text
 workspace_id
 user_id
 project_id?   # nullable for workspace-level searches
 job_id
-search_id?    # bound only after the job persists a completed run
+search_id?    # bound after the canonical run is persisted
 ```
 
-The private platform table is:
+This metadata is separate from the global bibliographic Registry. Bibliographic identity may be global; query/job/history context is private.
+
+## Fail-closed execution
+
+In hosted `NUTEV_AUTH_MODE=pilot` mode, creating a search requires:
 
 ```text
-platform_search_ownership
-```
-
-with:
-
-```text
-job_id PRIMARY KEY
-search_id UNIQUE NULLABLE
-workspace_id
-user_id
-project_id NULLABLE
-created_at
-search_bound_at
-```
-
-This metadata is separate from the Global Evidence Registry. Bibliographic `article_id` remains global; the query/job/history context is private.
-
-## Fail-closed job creation
-
-In `NUTEV_AUTH_MODE=pilot`:
-
-```text
-POST /api/search/jobs
-```
-
-requires:
-
-```text
-valid authenticated session
+valid session
 → Principal
-→ selected workspace context
-→ active workspace membership
-→ optional project access
-→ Permission.SEARCH_RUN
+→ selected active workspace
+→ optional authorized project
+→ search-run permission
+→ tenant ownership persisted
+→ only then background worker starts
 ```
 
-The sequence is deliberately:
+If ownership persistence fails, the worker is not allowed to continue as an unowned tenant search.
 
-```text
-validate query/context
-→ register in-memory job
-→ persist tenant ownership
-→ start background worker
-```
+When the run completes, `job_id → search_id` is bound server-side. A persisted result whose tenant ownership cannot be established is preserved but not exposed through authenticated tenant history.
 
-If ownership persistence fails, the worker thread is not started and the in-memory job is removed.
+## Job and history access
 
-This prevents a search from running first and only later discovering that its owner could not be recorded.
-
-## Search completion
-
-The worker still uses the existing scientific/search implementation and persists the canonical result as before.
-
-A separate server-side watcher binds:
-
-```text
-job_id → search_id
-```
-
-only after the canonical run exists.
-
-If that bind fails, the result remains preserved but is **not exposed in authenticated history**. The system fails closed instead of guessing ownership.
-
-## Job access
+Exact foreign IDs do not bypass authorization.
 
 ```text
 GET /api/search/jobs/<job_id>
-```
-
-In pilot mode:
-
-1. resolves the authenticated Principal;
-2. loads current server-side workspace context;
-3. finds the private ownership record;
-4. requires the current workspace to equal the owner workspace;
-5. revalidates membership/project access;
-6. requires search-history permission;
-7. otherwise returns `404 search_job_not_found`.
-
-Knowing another tenant's exact `job_id` is insufficient.
-
-## Persisted history
-
-Authenticated history supports:
-
-```text
 GET /api/searches?scope=workspace
 GET /api/searches?scope=project
-```
-
-### Workspace scope
-
-Returns only searches explicitly owned by the current selected workspace.
-
-It includes:
-
-- workspace-level searches (`project_id = NULL`);
-- project searches belonging to that workspace.
-
-### Project scope
-
-Requires a selected project and returns only searches with exactly that `project_id`.
-
-### Read permission
-
-PR-4 introduces:
-
-```text
-Permission.SEARCH_HISTORY_READ
-```
-
-Granted to:
-
-```text
-WORKSPACE_OWNER
-WORKSPACE_ADMIN
-RESEARCHER
-VIEWER
-```
-
-Not granted to:
-
-```text
-REVIEWER
-GUEST_REVIEWER
-```
-
-Reviewer access remains assignment-scoped through the future HumanReviewEngine; a reviewer does not gain the complete query/history corpus of a project merely by being assigned scientific review items.
-
-## Persisted run readers
-
-`list_search_runs()` and `load_search_run()` now accept:
-
-```text
-allowed_search_ids
-```
-
-Semantics:
-
-```text
-None        = legacy/internal caller did not request this guard
-empty set   = return/load nothing
-nonempty    = only those pre-authorized IDs
-```
-
-This is a defense-in-depth boundary in addition to HTTP authorization.
-
-## Direct search access
-
-```text
 GET /api/searches/<search_id>
 ```
 
-In pilot mode requires an ownership record and current workspace access. Unknown, historical-unowned and foreign-tenant IDs all resolve to the same external behavior:
+The server revalidates current session, workspace/project context and permission. Foreign, unknown and historical-unowned resources use non-enumerating not-found behavior.
+
+Workspace history is limited to searches explicitly owned by the selected workspace. Project history is limited to the selected project. Switching workspace/project changes the visible set immediately; stale browser context does not keep old tenant history visible.
+
+## Historical searches
+
+Historical ownership is never inferred from:
 
 ```text
-404 search_not_found
+query text
+browser/session hashes
+folder names
+Article 1 / Article 2 labels
+the currently logged-in user
 ```
 
-The API does not reveal whether a foreign ID exists.
+Unowned historical runs remain unowned until a separate reviewed provenance/migration process establishes their custody. Login or project selection does not silently adopt them.
 
-## Current context versus ownership
+## Browser contract
 
-Workspace switching is significant:
+The search/history UI obtains tenant context from authenticated server state. It does not make local browser workspace/project IDs authoritative.
 
-```text
-current workspace A → search A visible
-switch to workspace B → search A no longer visible
-```
+Opening a historical result does not silently rerun its query.
 
-A user who legitimately belongs to both workspaces must switch back to A before accessing A history. This prevents stale-context leakage after workspace switching.
+## Compatibility boundary
 
-Project switching affects the `scope=project` subset. Workspace scope may show all searches owned by that workspace to roles authorized to read workspace search history.
+The code retains legacy browser-session isolation for compatibility/recovery. The accepted hosted production baseline is `NUTEV_AUTH_MODE=pilot`, where workspace/project tenant isolation is the authoritative contract.
 
-## Search UI
+## Security invariants
 
-`search-history-ui.js` exposes:
+The release/death-test contract covers at least:
 
-```text
-Buscas do workspace
-Buscas do projeto
-```
-
-The selector calls the scoped backend endpoint. It does not persist tenant IDs in `localStorage` or `sessionStorage`.
-
-The existing behavior “use the question to prepare a new search” remains unchanged; opening history never silently reruns the old search.
-
-## Legacy compatibility
-
-Default remains:
-
-```text
-NUTEV_AUTH_MODE=legacy
-```
-
-Legacy mode preserves:
-
-- anonymous `nutev_session` browser cookie;
-- `_JOB_OWNERS` in-memory job isolation;
-- `.ownership.json` persisted search mapping;
-- legacy `/api/searches` browser-session history;
-- the existing background ownership watcher.
-
-These mechanisms are compatibility paths only. They do not become platform Workspace ownership.
-
-## Historical runs
-
-PR-4 explicitly forbids:
-
-```text
-NO bulk import of .ownership.json into workspace ownership
-NO assignment based on query text
-NO assignment based on browser hash
-NO assignment based on article1/article2 folder names
-NO assignment based on current logged-in user
-```
-
-Historical ownership waits for the explicit dry-run migration with hashes and manifests.
+- exact foreign `job_id` denied;
+- exact foreign `search_id` denied;
+- foreign searches absent from workspace/project history;
+- workspace-level searches excluded from project-only history;
+- context switch removes the previous tenant's visible history;
+- Viewer may read allowed history but cannot run searches without permission;
+- Reviewer/guest do not receive whole-project search history merely from an assignment;
+- historical unowned runs are not auto-adopted.
 
 ## Scientific boundary
 
-The search engine itself remains the same scientific primitive. PR-4 changes **who owns and may retrieve a run**, not what the query returns or how articles are normalized/ranked.
-
-```text
-NO provider change
-NO ranking change
-NO deduplication change
-NO Registry identity change
-NO Workbench change
-NO screening/extraction change
-NO A1/A2 mutation
-NO PRESS/GF-10 change
-NO PRISMA event
-```
-
-## Death tests
-
-Required and implemented:
-
-```text
-Tenant A runs search A
-Tenant B knows A job_id       → 404
-Tenant B knows A search_id    → 404
-Tenant B workspace history    → no A
-Tenant A project history      → A only when project-scoped
-workspace-only search         → excluded from project history
-A switches workspace          → old workspace search disappears
-historical unowned run        → not adopted automatically
-viewer                        → history read allowed, search run denied
-reviewer                      → whole history denied
-```
-
-## Rollback
-
-1. set/keep `NUTEV_AUTH_MODE=legacy` if operational rollback is needed;
-2. revert PR-4;
-3. leave `platform_search_ownership` unused in the isolated platform DB;
-4. canonical persisted search results and the Global Evidence Registry remain intact;
-5. no scientific-data rollback or search rerun is required.
-
-## Next gate
-
-After PR-4 is fully green, PR-5 may implement the Evidence Library / Global Registry `Placement` boundary. It must not infer private project state from global article identity.
+Search isolation changes **who owns and may retrieve a run**, not what the scientific search primitive means. It does not change provider semantics, ranking/deduplication, Registry identity, screening/extraction decisions, Article 1/Article 2 gates, PRESS/GF-10 or PRISMA by itself.
