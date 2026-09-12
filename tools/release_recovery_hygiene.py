@@ -1,8 +1,10 @@
 """Conservative hygiene for NutEV release-recovery directories.
 
-Only canonical deploy directories that are provably incomplete are removed.
-Complete snapshots and suspicious/corrupt-looking directories are preserved for
-manual review. Scientific output volumes are never touched by this tool.
+Only canonical deploy directories that are provably incomplete and whose target
+SHA belongs to an explicitly approved failed-deploy allowlist are removed.
+Complete snapshots, suspicious/corrupt-looking directories, unknown names and
+symlinks are preserved for manual review. Scientific output volumes are never
+touched by this tool.
 """
 from __future__ import annotations
 
@@ -12,7 +14,8 @@ from pathlib import Path
 import re
 import shutil
 
-RECOVERY_NAME = re.compile(r"^[0-9a-f]{40}\.[A-Za-z0-9_-]{6,}$")
+RECOVERY_NAME = re.compile(r"^([0-9a-f]{40})\.([A-Za-z0-9_-]{6,})$")
+SHA = re.compile(r"^[0-9a-f]{40}$")
 
 
 def _regular_file(path: Path) -> bool:
@@ -44,7 +47,19 @@ def _complete_snapshot(directory: Path) -> bool | None:
     return None
 
 
-def prune_incomplete(base: Path, *, exclude: Path | None = None) -> dict:
+def _validated_allowlist(values: set[str]) -> set[str]:
+    if any(not SHA.fullmatch(value) for value in values):
+        raise ValueError("failed-deploy allowlist contains an invalid SHA")
+    return values
+
+
+def prune_incomplete(
+    base: Path,
+    *,
+    allowed_failed_shas: set[str],
+    exclude: Path | None = None,
+) -> dict:
+    allowed_failed_shas = _validated_allowlist(set(allowed_failed_shas))
     base.mkdir(parents=True, exist_ok=True)
     if base.is_symlink() or not base.is_dir():
         raise ValueError("recovery base must be a real directory")
@@ -56,6 +71,7 @@ def prune_incomplete(base: Path, *, exclude: Path | None = None) -> dict:
     pruned = 0
     preserved_complete = 0
     preserved_suspicious = 0
+    preserved_unapproved = 0
     skipped_unknown = 0
 
     for entry in sorted(base.iterdir(), key=lambda item: item.name):
@@ -68,10 +84,12 @@ def prune_incomplete(base: Path, *, exclude: Path | None = None) -> dict:
             continue
         if excluded is not None and resolved == excluded:
             continue
-        if not RECOVERY_NAME.fullmatch(entry.name):
+        match = RECOVERY_NAME.fullmatch(entry.name)
+        if match is None:
             skipped_unknown += 1
             continue
 
+        target_sha = match.group(1)
         state = _complete_snapshot(entry)
         if state is True:
             preserved_complete += 1
@@ -79,18 +97,23 @@ def prune_incomplete(base: Path, *, exclude: Path | None = None) -> dict:
         if state is None:
             preserved_suspicious += 1
             continue
+        if target_sha not in allowed_failed_shas:
+            preserved_unapproved += 1
+            continue
 
         shutil.rmtree(entry)
         pruned += 1
 
     return {
         "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
-        "schema_version": 1,
+        "schema_version": 2,
         "status": "PASS",
         "pruned_incomplete": pruned,
         "preserved_complete": preserved_complete,
         "preserved_suspicious": preserved_suspicious,
+        "preserved_unapproved": preserved_unapproved,
         "skipped_unknown": skipped_unknown,
+        "approved_failed_sha_count": len(allowed_failed_shas),
         "scientific_data_modified": False,
     }
 
@@ -99,14 +122,19 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", type=Path, required=True)
     parser.add_argument("--exclude", type=Path)
+    parser.add_argument("--allow-sha", action="append", default=[])
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     try:
-        report = prune_incomplete(args.base, exclude=args.exclude)
+        report = prune_incomplete(
+            args.base,
+            allowed_failed_shas=set(args.allow_sha),
+            exclude=args.exclude,
+        )
     except (OSError, ValueError) as exc:
         report = {
             "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
-            "schema_version": 1,
+            "schema_version": 2,
             "status": "FAIL",
             "reason": str(exc),
             "scientific_data_modified": False,
