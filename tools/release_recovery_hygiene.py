@@ -15,7 +15,10 @@ remain. Scientific output volumes are never touched.
 The CLI also reclaims Docker image tags only when they are named ``nutev:<SHA>``,
 the SHA is in the failed-deploy allowlist, and no running or stopped container
 references the image. A final ordinary ``docker image prune`` removes only
-dangling, unused images.
+dangling, unused images. Production may separately opt into ``--prune-builder-cache``;
+that invokes only ``docker builder prune -a -f`` and therefore reclaims unused
+BuildKit/build cache without pruning containers, runtime images, networks or
+volumes.
 """
 from __future__ import annotations
 
@@ -157,8 +160,6 @@ def prune_incomplete(
         removable.sort(key=lambda item: _complete_order(item[0]))
         removal_budget = max(0, len(complete) - retain_complete)
         for entry, _target_sha in removable[:removal_budget]:
-            # Revalidate immediately before deletion so a changed or damaged
-            # directory fails closed instead of being treated as disposable.
             if _complete_snapshot(entry) is not True:
                 raise ValueError("snapshot changed during complete-retention pruning")
             shutil.rmtree(entry)
@@ -231,6 +232,15 @@ def prune_failed_images(
     }
 
 
+def prune_builder_cache(*, runner: Runner = _subprocess_runner) -> dict:
+    """Reclaim only unused Docker build cache; never prune runtime objects."""
+    command = ["docker", "builder", "prune", "-a", "-f"]
+    result = runner(command)
+    if result.returncode != 0:
+        raise RuntimeError("docker builder-cache prune failed")
+    return {"builder_cache_prune": "PASS"}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", type=Path, required=True)
@@ -239,6 +249,7 @@ def main() -> int:
     parser.add_argument("--protect-sha", action="append", default=[])
     parser.add_argument("--prune-complete-sha", action="append", default=[])
     parser.add_argument("--retain-complete", type=int)
+    parser.add_argument("--prune-builder-cache", action="store_true")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     allowed_failed_shas = set(args.allow_sha)
@@ -254,12 +265,18 @@ def main() -> int:
             allowed_complete_prune_shas=allowed_complete_prune_shas,
         )
         images = prune_failed_images(allowed_failed_shas)
+        builder_cache = (
+            prune_builder_cache()
+            if args.prune_builder_cache
+            else {"builder_cache_prune": "SKIPPED"}
+        )
         report = {
             "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
-            "schema_version": 4,
+            "schema_version": 5,
             "status": "PASS",
             **recovery,
             **images,
+            **builder_cache,
             "approved_failed_sha_count": len(allowed_failed_shas),
             "protected_sha_count": len(protected_shas),
             "scientific_data_modified": False,
@@ -267,7 +284,7 @@ def main() -> int:
     except (OSError, ValueError, RuntimeError) as exc:
         report = {
             "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
-            "schema_version": 4,
+            "schema_version": 5,
             "status": "FAIL",
             "reason": str(exc),
             "scientific_data_modified": False,
