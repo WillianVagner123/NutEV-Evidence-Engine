@@ -52,7 +52,7 @@ function renderProjectIdentity(context,application){
   const workspaceName=nameFor(context.workspaces,current.workspace_id)||'Workspace'
   const projectName=nameFor(context.projects,current.project_id)||'Projeto'
   const appLabel=application?applicationLabel(application.application_type):'Aplicação ainda não configurada'
-  $('#projectState').innerHTML=`<div class="product-panel-head"><div class="project-identity"><div class="project-mark" aria-hidden="true">◇</div><div class="project-identity-copy"><strong>${esc(projectName)}</strong><span>${esc(workspaceName)} · ${esc(appLabel)}</span></div></div><span class="project-badge ${application?'':'neutral'}">${application?'Contexto configurado':'Configuração pendente'}</span></div><div class="product-actions"><a class="action-primary" href="/search.html">Buscar evidências</a><a class="action-secondary" href="/evidence-library.html">Abrir biblioteca</a><a class="action-secondary" href="/exports.html">Exportações</a></div>`
+  $('#projectState').innerHTML=`<div class="product-panel-head"><div class="project-identity"><div class="project-mark" aria-hidden="true">◇</div><div class="project-identity-copy"><strong>${esc(projectName)}</strong><span>${esc(workspaceName)} · ${esc(appLabel)}</span></div></div><span class="project-badge ${application?'':'neutral'}">${application?'Contexto configurado':'Configuração pendente'}</span></div><div class="product-actions"><a class="action-primary" href="/search.html">Buscar evidências</a><a class="action-secondary" href="/evidence-library.html">Abrir biblioteca</a><a class="action-secondary" href="/review.html">Revisão humana</a><a class="action-secondary" href="/exports.html">Exportações</a></div>`
   $('#projectHealth').textContent=application?'contexto configurado':'configuração pendente'
 }
 
@@ -85,7 +85,7 @@ function renderModules(application){
     {href:'/evidence-library.html',icon:'▤',title:'Biblioteca',copy:'Organizar documentos globais com estado, tags e notas privadas do projeto.',meta:'Identidade global · contexto privado'},
     {href:'/search.html?view=history',icon:'◷',title:'Minhas buscas',copy:'Reabrir buscas persistidas neste contexto sem executar novamente.',meta:'Histórico isolado por tenant'},
     {href:'/exports.html',icon:'⇩',title:'Exportações',copy:'Ver artefatos do projeto e a integridade da trilha de auditoria.',meta:'Manifesto + cadeia auditável'},
-    {href:'/advanced.html#reviews',icon:'✓',title:'Revisão humana',copy:reviewCopy,meta:'Decisões humanas permanecem explícitas'},
+    {href:'/review.html',icon:'✓',title:'Revisão humana',copy:reviewCopy,meta:'Rounds isolados por aplicação · decisões humanas explícitas'},
     {href:'/advanced.html',icon:'⚙',title:'Laboratório avançado',copy:'Acessar PRESS, QA, síntese e módulos metodológicos quando realmente necessários.',meta:'Fora do fluxo principal'}
   ]
   $('#projectModules').innerHTML=modules.map(item=>`<a class="module-card" href="${item.href}"><span class="module-icon" aria-hidden="true">${item.icon}</span><strong>${esc(item.title)}</strong><span>${esc(item.copy)}</span><div class="module-meta">${esc(item.meta)}</div></a>`).join('')
