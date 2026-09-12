@@ -16,7 +16,7 @@ from nutev.tenancy import (
     require_opaque_id,
 )
 
-from .engine import HumanReviewEngine, ReviewPolicy, ReviewRound
+from .engine import HumanReviewEngine, ReviewPolicy
 
 REVIEW_APPLICATION_BINDING_SCHEMA_VERSION = 1
 
