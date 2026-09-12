@@ -27,12 +27,28 @@ def test_recovery_readiness_never_stops_production_or_removes_volume() -> None:
     assert "scientific_data_modified=false" in block
 
 
-def test_failed_deploy_allowlist_controls_cleanup() -> None:
+def test_deploy_history_controls_all_recovery_cleanup() -> None:
     block = _job_block()
-    assert "deploy-hetzner.yml/runs?status=failure" in block
+    assert "deploy-hetzner.yml/runs?status={status}" in block
+    assert 'load("failure")' in block
+    assert 'load("success")' in block
+    assert "complete-prune-shas.txt" in block
+    assert "keep_success = set(successful[:3])" in block
+    assert "complete_prune = (failed | set(successful[3:])) - keep_success" in block
     assert "--allow-sha" in block
-    assert "sha != current" in block
+    assert "--prune-complete-sha" in block
     assert "release_recovery_hygiene.py" in block
+
+
+def test_complete_snapshot_retention_protects_active_release_and_keeps_three() -> None:
+    block = _job_block()
+    assert "http://127.0.0.1:8765/api/version" in block
+    assert "ACTIVE_SHA" in block
+    assert "--retain-complete 3" in block
+    assert "--protect-sha $ACTIVE_SHA" in block
+    assert '[[ "$sha" != "$ACTIVE_SHA" ]]' in block
+    assert 'report["retain_complete"] == 3' in block
+    assert 'report["preserved_complete"] >= 3' in block
 
 
 def test_capacity_is_checked_before_ci_can_trigger_deploy() -> None:
