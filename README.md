@@ -5,7 +5,9 @@
 > **Versão de software:** 1.1.0  
 > **Estado operacional:** produção aceita  
 > **Estado de publicação:** GitHub Release `v1.1.0` publicada  
-> **Estado de arquivo:** Zenodo/DOI da `v1.1.0` ainda não verificado  
+> **Estado de arquivo:** Zenodo `v1.1.0` arquivado / DOI verificado  
+> **DOI v1.1.0:** `10.5281/zenodo.22726717`  
+> **Zenodo record v1.1.0:** `22726717`  
 > **SHA imutável da release e produção homologada:** `49588233ad2828b8fcc6140398ab55aedf7c03ef`  
 > **Release histórica anterior:** `v1.0.0`  
 > **DOI histórico de v1.0.0:** `10.5281/zenodo.21998607`  
@@ -36,15 +38,21 @@ pelo auditor pós-deploy read-only antes da publicação. A release pública inc
 wheel, sdist, hashes SHA-256, auditoria de distribuição, auditoria de container,
 evidência de pré-requisitos e um manifesto sanitizado de release.
 
+Depois da publicação no GitHub, a integração GitHub↔Zenodo foi habilitada e
+sincronizada. O arquivo público da versão `1.1.0` foi confirmado como Zenodo
+record `22726717`, com DOI version-specific `10.5281/zenodo.22726717`.
+
 Estado de arquivo acadêmico:
 
 - GitHub tag `v1.1.0`: **PUBLICADA**;
 - GitHub Release `v1.1.0`: **PUBLICADA**;
-- Zenodo/arquivo version-specific de `v1.1.0`: **PENDENTE / NÃO VERIFICADO**;
-- DOI version-specific de `v1.1.0`: **AUSENTE ATÉ EMISSÃO REAL**;
+- Zenodo/arquivo version-specific de `v1.1.0`: **PUBLICADO**;
+- Zenodo record de `v1.1.0`: `22726717`;
+- DOI version-specific de `v1.1.0`: `10.5281/zenodo.22726717`;
 - o DOI `10.5281/zenodo.21998607` permanece exclusivo da `v1.0.0`.
 
-Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0`
+Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0`  
+Zenodo: `https://zenodo.org/records/22726717`
 
 Veja `docs/RELEASE_NOTES_1_1_0.md`, `docs/FINAL_SYSTEM_ACCEPTANCE.md` e
 `docs/PUBLICATION_READINESS.md`.
@@ -427,7 +435,8 @@ multi-tenant.
 - SHA: `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
 - GitHub Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0`;
 - publicada em: `2026-09-12`;
-- Zenodo/DOI específico: **ainda não verificado / não registrar até emissão real**.
+- Zenodo record: `https://zenodo.org/records/22726717`;
+- DOI version-specific: `10.5281/zenodo.22726717`.
 
 ### v1.0.0 — histórica
 
@@ -435,6 +444,5 @@ multi-tenant.
 - Zenodo: `https://zenodo.org/records/21998607`;
 - DOI: `10.5281/zenodo.21998607`.
 
-A tag `v1.1.0` é imutável e não deve ser movida para commits posteriores de
-documentação. Um eventual DOI da 1.1.0 deve ser adicionado somente depois de um
-registro de arquivo real ser publicado e verificado.
+A tag `v1.1.0` permanece imutável no SHA publicado. O DOI da 1.1.0 foi registrado
+posteriormente como metadata de arquivo e não move, recria ou altera a tag.
