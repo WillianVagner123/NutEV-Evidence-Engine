@@ -90,6 +90,10 @@ jobs:
         env:
           PYTHONPATH: src:.
         run: python tools/run_onboarding_persistence_browser.py --output browser_e2e_artifacts/pilot/onboarding-persistence
+      - name: Run generic Review browser isolation regression
+        env:
+          PYTHONPATH: src:.
+        run: python tools/run_generic_review_browser.py --output browser_e2e_artifacts/pilot/generic-review
       - name: Upload pilot browser evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
