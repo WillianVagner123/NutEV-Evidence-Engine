@@ -14,6 +14,7 @@ The `2026/` directory contains superseded closeout, smoke, migration and sprint 
 
 - `CLOSEOUT_BASELINE.md` — closeout baseline from an earlier repository state;
 - `DATA_INTEGRITY_CLOSEOUT.md` — historical data-integrity closeout;
+- `MULTITENANT_MIGRATION_INVENTORY.md` — PR-0 inventory captured before the authenticated multi-tenant architecture existed;
 - `PRODUCTION_SMOKE_REPORT.md` — production smoke evidence from an earlier deployment state;
 - `PRODUCT_DEATH_TEST_REPORT.md` — product/tenant death-test report from 2026-09-10, before final production/publication closeout;
 - `REFERENCE_ENGINE_CLEANUP_AUDIT.md` — historical repository-reduction audit;
