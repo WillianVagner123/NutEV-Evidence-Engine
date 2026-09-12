@@ -1,16 +1,35 @@
-# NutEV Reference Engine 1.1.0 — release notes candidate
+# NutEV Reference Engine 1.1.0 — release notes
 
-Status: **production accepted / publication pending**.
+Status: **production accepted / GitHub released / Zenodo archive pending**.
 
-Production-acceptance baseline:
+Immutable GitHub release identity:
+
+```text
+version = 1.1.0
+tag = v1.1.0
+release_sha = 49588233ad2828b8fcc6140398ab55aedf7c03ef
+published_at = 2026-09-12
+```
+
+Production acceptance originally closed on baseline SHA:
 
 ```text
 e40dfd8c48cde824fa6053f9b077157f21bae698
 ```
 
-This document records the software state that completed hosted acceptance. It is
-not a GitHub Release and does not claim a new DOI. The historical v1.0.0 release
-and DOI remain immutable.
+Subsequent release-closeout work was validated again, and the final public GitHub
+release was created from the immutable release SHA shown above. Later documentation
+commits on `main` do not alter that published snapshot.
+
+The historical `v1.0.0` Zenodo DOI remains immutable:
+
+```text
+10.5281/zenodo.21998607
+```
+
+That DOI is **not** the DOI of `v1.1.0` and must not be reused. A version-specific
+`v1.1.0` DOI will be recorded only after a real Zenodo archive record exists and
+has been independently verified.
 
 ## Highlights
 
@@ -45,8 +64,10 @@ Major additions include:
 
 ## Production acceptance
 
-Hosted acceptance completed on the baseline SHA above with:
+Hosted acceptance completed and was reconfirmed through the release-closeout
+pipeline with:
 
+- seven required release workflows on one candidate SHA: PASS;
 - exact-SHA prerequisites: PASS;
 - deployment workflow: PASS;
 - trusted SSH host identity: PASS;
@@ -75,7 +96,7 @@ platform failure.
 
 ## Scientific boundary
 
-Software acceptance does **not** promote scientific validity.
+Software acceptance and GitHub publication do **not** promote scientific validity.
 
 A1 remains dependent on genuine human academic review, PRESS/GF-10/freeze and
 other protocol gates before formal-search/PRISMA claims are allowed. A2 remains
@@ -94,18 +115,31 @@ Google Programmable Search, Brave and SerpAPI remain optional credentialed
 providers. When credentials are absent, production records them as
 `skipped_config`; absence is not reported as a fabricated zero-result search.
 
-## Publication still pending
+## Public release state
 
-Before `v1.1.0` becomes a public release:
+The GitHub release is complete:
 
-1. choose the final publication SHA after documentation closeout;
-2. rerun the required exact-SHA gates on that final SHA;
-3. build and retain the final wheel/sdist and their hashes;
-4. create immutable tag `v1.1.0` on that exact SHA;
-5. create the GitHub Release and attach the intended artifacts/evidence;
-6. let the archive service ingest the real release;
-7. record a version-specific DOI only after it is actually issued;
-8. update citation metadata with the real release date/DOI without moving the
-   published tag.
+1. final publication SHA selected and validated;
+2. required exact-SHA gates passed;
+3. final wheel/sdist built and retained with hashes;
+4. immutable tag `v1.1.0` created at
+   `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
+5. GitHub Release published with audited artifacts/evidence;
+6. post-release documentation reconciled without moving the tag;
+7. production redeploy and read-only post-deploy audit passed again.
 
-Until those steps occur, 1.1.0 is **production accepted but unpublished**.
+## Zenodo archive state
+
+Zenodo remains the only external publication dependency.
+
+The repository metadata is prepared, but the `v1.1.0` archive record and DOI
+must remain unset until the Zenodo service actually creates a public record. The
+canonical operational tracking issue is GitHub issue `#1262`.
+
+Once a real record exists:
+
+1. verify version, creator, license and archived source identity;
+2. capture the actual Zenodo record ID and version-specific DOI;
+3. update citation/archive metadata in a post-release documentation PR;
+4. run the normal repository gates;
+5. merge without moving, deleting or recreating the published `v1.1.0` tag.
