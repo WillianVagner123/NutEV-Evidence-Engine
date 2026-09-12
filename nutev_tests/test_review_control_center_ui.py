@@ -11,32 +11,48 @@ def read(name: str) -> str:
 def test_review_control_center_is_fail_closed() -> None:
     html = read("review.html")
     script = read("review-control.js")
-    assert "FAIL-CLOSED" in html
-    assert "Start formal screening" in html
-    assert "disabled" in html
-    assert "reviewer-level article UI still unavailable" in script
+
+    assert "ResearchApplication" in html
+    assert "Rounds sem binding explícito" in html
+    assert "O Review genérico não importa rounds antigos por inferência" in script
+    assert "review_application_required" in script
+    assert "applicationPayload.application||null" in script
 
 
-def test_review_control_separates_calibration_from_formal_screening() -> None:
+def test_review_control_is_application_scoped_not_article1_reading_workspace() -> None:
     html = read("review.html")
     script = read("review-control.js")
-    assert "Current reading workspace" in html
-    assert "Formal screening readiness" in html
-    assert "calibration/navigation artifacts" in script
-    assert "ARTICLE_SUMMARIES.jsonl" in script
-    assert "SEARCH_STATE.json" in script
+
+    assert "Somente rounds explicitamente vinculados à ResearchApplication ativa" in html
+    assert "workspace, projeto e aplicação" in html
+    assert "jsonFetch('/api/application')" in script
+    assert "jsonFetch('/api/review')" in script
+    assert "/agent-context/article1" not in script
+    assert "/api/article1/" not in script
+    assert "SEARCH_STATE.json" not in script
+    assert "ARTICLE_SUMMARIES.jsonl" not in script
 
 
-def test_review_control_does_not_create_screening_decisions() -> None:
-    html = read("review.html").lower()
-    script = read("review-control.js").lower()
-    assert "screeningdecision" in html
-    assert "fetch('/api" not in script
-    assert "method:'post'" not in script
-    assert "method: 'post'" not in script
-    assert "automatic inclusion" in html
-    assert "proibida" in html
+def test_review_control_requires_explicit_human_decisions_and_never_auto_promotes_science() -> None:
+    html = read("review.html")
+    script = read("review-control.js")
+
+    assert "Seleção científica automática" in html
+    assert "Não existe." in html
+    assert "PRISMA automático" in html
+    assert "Nenhuma decisão humana é criada, inferida ou promovida automaticamente" in html
+    assert "/api/review/decision" in script
+    assert "/api/review/submit" in script
+    assert "method:'POST'" in script
+    assert "saveAssignment" in script
+    assert "submitReview" in script
 
 
-def test_dashboard_exposes_review_control() -> None:
-    assert 'href="/review.html"' in read("advanced.html")
+def test_primary_product_surfaces_expose_generic_review_control() -> None:
+    project = read("project-page.js")
+    context = read("workspace-context.js")
+
+    assert "href:'/review.html'" in project
+    assert "Rounds isolados por aplicação" in project
+    assert "'/review.html'" in context
+    assert "promoteReviewNavigation" in context

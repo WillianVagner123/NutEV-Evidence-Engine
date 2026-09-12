@@ -12,7 +12,7 @@ PUBLIC_API = frozenset({
 })
 TENANT_PREFIXES = (
     "/api/search/jobs", "/api/searches", "/api/library", "/api/application",
-    "/api/exports", "/api/audit", "/api/article2/integrative",
+    "/api/review", "/api/exports", "/api/audit", "/api/article2/integrative",
 )
 A1_CONTEXT_FILES = frozenset({
     "CONTEXT_MANIFEST.json", "SEARCH_STATE.json", "SEARCH_SUMMARY.md", "ARTICLE_SUMMARIES.jsonl",

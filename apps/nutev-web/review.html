@@ -1,30 +1,98 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
-  <title>Review Control Center — NutEV</title>
-  <meta name="description" content="Centro de controle da revisão humana do NutEV, com separação entre leitura de calibração e screening formal.">
-  <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./dashboard.css"><link rel="stylesheet" href="./review-control.css">
+  <script src="/tenant-session.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Revisão humana — NutEV Evidence Engine</title>
+  <meta name="description" content="Revisão humana privada e vinculada à aplicação de pesquisa ativa no NutEV.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./product-ui.css">
+  <link rel="stylesheet" href="./product-polish.css">
+  <link rel="stylesheet" href="./review-control.css">
 </head>
-<body><div class="app-shell">
-  <aside class="sidebar"><div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div><nav>
-    <div class="nav-group-label">Overview</div><a class="nav-item" href="/"><span class="nav-icon">◫</span><span>Dashboard</span></a>
-    <div class="nav-group-label">Evidence</div><a class="nav-item" href="/articles.html"><span class="nav-icon">▤</span><span>Corpus</span></a><a class="nav-item" href="/evidence-map.html"><span class="nav-icon">▦</span><span>Evidence Map</span></a>
-    <div class="nav-group-label">Review</div><a class="nav-item active" href="/review.html"><span class="nav-icon">☑</span><span>Review Control</span></a><a class="nav-item" href="/review-routes.html"><span class="nav-icon">☷</span><span>Review Routes</span></a>
-    <div class="nav-group-label">Strategy</div><a class="nav-item" href="/review-qa.html"><span class="nav-icon">◎</span><span>QA</span></a><a class="nav-item" href="/press-review.html"><span class="nav-icon">▣</span><span>PRESS</span></a>
-  </nav><div class="sidebar-note">O Article 1 ainda está em corpus de discovery/calibração. Esta tela não converte roteamento em screening formal.</div></aside>
-  <main class="main dashboard-main review-control-main">
-    <header class="topbar"><div><h1>Review Control Center</h1><p>Governança da leitura humana e prontidão para screening científico.</p></div><span id="reviewHealth" class="status-pill">carregando…</span></header>
-    <section class="card project-hero"><div><div class="project-eyebrow">HUMAN REVIEW · FAIL-CLOSED</div><h2>Calibration now. Formal screening only after the formal gate.</h2><p class="project-question">O NutEV mantém separadas a leitura humana do corpus operacional e as decisões científicas finais que podem gerar eventos de screening/PRISMA.</p></div></section>
-    <div id="reviewState" class="loading dashboard-state">Carregando estado canônico…</div>
-    <section id="reviewContent" class="hidden">
-      <div id="reviewKpis" class="kpi-grid"></div>
-      <div class="review-control-grid">
-        <section class="card dashboard-card"><div class="panel-head"><div><h2>Current reading workspace</h2><p>Filas rank-blind disponíveis para calibração, exploração e taxonomia.</p></div><a href="/review-routes.html" class="panel-link">Abrir rotas →</a></div><div id="calibrationStatus"></div></section>
-        <section class="card dashboard-card"><div class="panel-head"><div><h2>Formal screening readiness</h2><p>Todos os requisitos precisam estar satisfeitos antes de habilitar decisões de artigo.</p></div></div><div id="screeningGates" class="review-gates"></div></section>
-        <section class="card dashboard-card span-12"><div class="panel-head"><div><h2>Canonical screening contract</h2><p>O fluxo atual importa somente decisões finais já resolvidas após revisão/adjudicação externa.</p></div></div><div class="contract-flow"><span>ReviewerDossier</span><b>→</b><span>human review</span><b>→</b><span>agreement / adjudication</span><b>→</b><span>final ScreeningDecision</span><b>→</b><span>scientific events</span></div><div class="locked-action"><strong id="formalReviewLabel">Formal article screening locked</strong><p id="formalReviewReason"></p><button type="button" disabled>Start formal screening</button></div></section>
-        <section class="card dashboard-card span-12"><div class="panel-head"><div><h2>What is intentionally not available</h2><p>Evita que uma interface bonita ultrapasse o contrato metodológico.</p></div></div><div class="boundary-grid"><div><strong>Reviewer-level votes</strong><span>Não implementados para screening de artigos.</span></div><div><strong>Conflict/adjudication UI</strong><span>Não implementada para artigos.</span></div><div><strong>Automatic inclusion</strong><span>Proibida.</span></div><div><strong>PRISMA from route counts</strong><span>Proibido.</span></div></div></section>
-      </div>
-    </section>
-  </main>
-</div><script type="module" src="./review-control.js"></script></body></html>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <nav aria-label="Navegação principal"></nav>
+      <div class="sidebar-note">Review pertence ao workspace, projeto e aplicação de pesquisa selecionados. Nenhuma decisão humana é criada, inferida ou promovida automaticamente.</div>
+    </aside>
+
+    <main class="main review-control-main">
+      <header class="topbar">
+        <div><h1>Revisão humana</h1><p>Rounds, atribuições e decisões explícitas no contexto metodológico atual.</p></div>
+        <span id="reviewHealth" class="status-pill">carregando contexto…</span>
+      </header>
+
+      <section class="card product-panel" id="reviewContextCard">
+        <div class="product-panel-head">
+          <div><span class="home-eyebrow">Contexto privado</span><h2 id="reviewContextTitle">Aplicação atual</h2><p id="reviewContext">Carregando workspace, projeto e ResearchApplication…</p></div>
+          <a class="ghost action-link" href="/project.html">Ver projeto</a>
+        </div>
+      </section>
+
+      <div id="reviewState" class="workbench-state" role="status" aria-live="polite">Carregando Review…</div>
+
+      <section id="reviewContent" class="hidden">
+        <div id="reviewKpis" class="kpi-grid"></div>
+
+        <div class="review-control-grid">
+          <section class="card product-panel span-12">
+            <div class="product-panel-head">
+              <div><span class="home-eyebrow">Rounds</span><h2>Revisões desta aplicação</h2><p>Somente rounds explicitamente vinculados à ResearchApplication ativa aparecem aqui.</p></div>
+              <button class="ghost" id="refreshReview" type="button">Atualizar</button>
+            </div>
+            <div id="reviewRounds" class="review-round-list"></div>
+          </section>
+
+          <section class="card product-panel" id="createRoundPanel">
+            <div class="product-panel-head"><div><span class="home-eyebrow">Novo round</span><h2>Criar revisão</h2><p>Cria o contêiner de revisão humana; não seleciona itens nem produz decisão científica.</p></div></div>
+            <div class="review-form-grid">
+              <label>Nome do round<input id="reviewRoundName" type="text" maxlength="200" autocomplete="off" placeholder="Ex.: Triagem independente — versão 1"></label>
+              <label>Opções de decisão<input id="reviewDecisionOptions" type="text" autocomplete="off" value="include, exclude, uncertain" aria-describedby="reviewDecisionHelp"><span id="reviewDecisionHelp" class="small-state">Separe por vírgula. O protocolo da aplicação continua soberano.</span></label>
+              <label>Revisores mínimos por item<input id="reviewMinimumReviewers" type="number" min="1" max="20" value="2"></label>
+              <label class="review-checkbox"><input id="reviewReasonRequired" type="checkbox" checked> Exigir justificativa para cada decisão</label>
+            </div>
+            <div class="search-actions"><button class="primary" id="createReviewRound" type="button">Criar round</button><span id="createReviewStatus" aria-live="polite"></span></div>
+          </section>
+
+          <section class="card product-panel" id="reviewBoundaryPanel">
+            <div class="product-panel-head"><div><span class="home-eyebrow">Guardrail</span><h2>O que Review não faz sozinho</h2></div></div>
+            <div class="boundary-grid">
+              <div><strong>Seleção científica automática</strong><span>Não existe.</span></div>
+              <div><strong>PRISMA automático</strong><span>Não é derivado de rótulos sem contrato científico.</span></div>
+              <div><strong>Reaproveitamento entre projetos</strong><span>Rounds não atravessam workspace/projeto/aplicação.</span></div>
+              <div><strong>Rounds legados</strong><span>Rounds sem binding explícito ficam fora desta superfície.</span></div>
+            </div>
+          </section>
+
+          <section class="card product-panel span-12 hidden" id="assignmentPanel">
+            <div class="product-panel-head">
+              <div><span class="home-eyebrow">Minhas atribuições</span><h2 id="assignmentRoundTitle">Round</h2><p id="assignmentRoundMeta"></p></div>
+              <button class="ghost" id="closeAssignments" type="button">Fechar</button>
+            </div>
+            <div id="assignmentState" class="workbench-state">Carregando atribuições…</div>
+            <div id="assignmentList" class="review-assignment-list"></div>
+            <div class="review-submit-bar">
+              <span id="reviewSubmitHint"></span>
+              <button class="primary" id="submitReview" type="button" disabled>Enviar e travar avaliação</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="card workbench-guardrail">
+        <strong>Contrato de isolamento</strong>
+        <p>Esta página nunca infere que um round antigo pertence à aplicação atual. O binding é explícito e server-side. Revisores autenticados recebem somente os itens que lhes foram atribuídos, e o envio final trava suas decisões no HumanReviewEngine.</p>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./product-ui.js"></script>
+  <script type="module" src="./workspace-context.js"></script>
+  <script type="module" src="./review-control.js"></script>
+</body>
+</html>

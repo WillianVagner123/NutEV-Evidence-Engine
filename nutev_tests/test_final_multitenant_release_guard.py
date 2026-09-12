@@ -30,6 +30,7 @@ def test_release_guard_is_installed_after_application_routes() -> None:
     assert guard_pos > source.index("install_library_routes()")
     assert guard_pos > source.index("install_application_routes()")
     assert guard_pos > source.index("install_export_audit_routes()")
+    assert guard_pos > source.index("install_review_routes()")
     assert guard_pos > source.index("install_article1_d132_routes()")
     assert guard_pos > source.index("install_article2_integrative_routes")
 
@@ -41,6 +42,7 @@ def test_final_runtime_smoke_covers_required_private_surfaces() -> None:
         "/api/searches": {401},
         "/api/articles": {401},
         "/api/library": {401},
+        "/api/review": {401},
         "/agent-context/article1/SEARCH_STATE.json": {401},
         "/api/article1/d132/review": {401},
         "/api/article2/integrative/status": {401, 404},

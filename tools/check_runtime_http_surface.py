@@ -28,6 +28,7 @@ EXPECTED_PRIVATE_UNAUTHENTICATED_STATUS: dict[str, frozenset[int]] = {
     "/api/searches": frozenset({401}),
     "/api/articles": frozenset({401}),
     "/api/library": frozenset({401}),
+    "/api/review": frozenset({401}),
     "/agent-context/article1/SEARCH_STATE.json": frozenset({401}),
     "/api/article1/d132/review": frozenset({401}),
     # Article 2 may remain dark-launched (404) until historical binding is proven;
