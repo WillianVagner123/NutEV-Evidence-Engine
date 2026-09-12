@@ -1,14 +1,21 @@
 """Conservative hygiene for NutEV release-recovery state.
 
-Only canonical recovery directories that are provably incomplete and whose target
-SHA belongs to an explicitly approved failed-deploy allowlist are removed.
-Complete snapshots, suspicious/corrupt-looking directories, unknown names and
-symlinks are preserved for manual review.
+Canonical incomplete recovery directories are removed only when their target SHA
+belongs to an explicitly approved failed-deploy allowlist. Complete snapshots,
+suspicious/corrupt-looking directories, unknown names and symlinks are preserved
+by default.
+
+Production may opt into bounded complete-snapshot retention with
+``--retain-complete`` plus one or more ``--prune-complete-sha`` values. Even then,
+a complete snapshot is removable only when its target SHA is explicitly backed by
+trusted deployment history, the snapshot still passes the complete proof, its SHA
+is not protected, and at least the configured number of complete rollback points
+remain. Scientific output volumes are never touched.
 
 The CLI also reclaims Docker image tags only when they are named ``nutev:<SHA>``,
-the SHA is in that same failed-deploy allowlist, and no running or stopped
-container references the image. A final ordinary ``docker image prune`` removes
-only dangling, unused images. Scientific output volumes are never touched.
+the SHA is in the failed-deploy allowlist, and no running or stopped container
+references the image. A final ordinary ``docker image prune`` removes only
+dangling, unused images.
 """
 from __future__ import annotations
 
@@ -54,9 +61,21 @@ def _complete_snapshot(directory: Path) -> bool | None:
     return None
 
 
-def _validated_allowlist(values: set[str]) -> set[str]:
+def _complete_order(directory: Path) -> tuple[int, str]:
+    """Return a deterministic completion order for a proven-complete snapshot."""
+    proof = directory / "volume" / "restore-proof.json"
+    if not _regular_file(proof):
+        raise ValueError("complete snapshot lost its restore proof during retention")
+    try:
+        completed_ns = proof.stat().st_mtime_ns
+    except OSError as exc:
+        raise ValueError("complete snapshot restore proof cannot be stat'ed") from exc
+    return completed_ns, directory.name
+
+
+def _validated_allowlist(values: set[str], *, label: str = "failed-deploy allowlist") -> set[str]:
     if any(not SHA.fullmatch(value) for value in values):
-        raise ValueError("failed-deploy allowlist contains an invalid SHA")
+        raise ValueError(f"{label} contains an invalid SHA")
     return values
 
 
@@ -65,8 +84,23 @@ def prune_incomplete(
     *,
     allowed_failed_shas: set[str],
     exclude: Path | None = None,
+    retain_complete: int | None = None,
+    protected_shas: set[str] | None = None,
+    allowed_complete_prune_shas: set[str] | None = None,
 ) -> dict:
     allowed_failed_shas = _validated_allowlist(set(allowed_failed_shas))
+    protected_shas = _validated_allowlist(
+        set(protected_shas or set()), label="protected snapshot allowlist"
+    )
+    allowed_complete_prune_shas = _validated_allowlist(
+        set(allowed_complete_prune_shas or set()),
+        label="complete-snapshot prune allowlist",
+    )
+    if retain_complete is not None and retain_complete < 1:
+        raise ValueError("retain-complete must be at least 1")
+    if retain_complete is None and allowed_complete_prune_shas:
+        raise ValueError("complete-snapshot prune allowlist requires retain-complete")
+
     base.mkdir(parents=True, exist_ok=True)
     if base.is_symlink() or not base.is_dir():
         raise ValueError("recovery base must be a real directory")
@@ -76,10 +110,11 @@ def prune_incomplete(
         raise ValueError("excluded recovery directory must be inside recovery base")
 
     pruned = 0
-    preserved_complete = 0
+    pruned_complete = 0
     preserved_suspicious = 0
     preserved_unapproved = 0
     skipped_unknown = 0
+    complete: list[tuple[Path, str]] = []
 
     for entry in sorted(base.iterdir(), key=lambda item: item.name):
         if entry.is_symlink() or not entry.is_dir():
@@ -99,7 +134,7 @@ def prune_incomplete(
         target_sha = match.group(1)
         state = _complete_snapshot(entry)
         if state is True:
-            preserved_complete += 1
+            complete.append((entry, target_sha))
             continue
         if state is None:
             preserved_suspicious += 1
@@ -111,9 +146,34 @@ def prune_incomplete(
         shutil.rmtree(entry)
         pruned += 1
 
+    retained_complete = {entry for entry, _sha in complete}
+    if retain_complete is not None and len(complete) > retain_complete:
+        removable = [
+            (entry, target_sha)
+            for entry, target_sha in complete
+            if target_sha in allowed_complete_prune_shas
+            and target_sha not in protected_shas
+        ]
+        removable.sort(key=lambda item: _complete_order(item[0]))
+        removal_budget = max(0, len(complete) - retain_complete)
+        for entry, _target_sha in removable[:removal_budget]:
+            # Revalidate immediately before deletion so a changed or damaged
+            # directory fails closed instead of being treated as disposable.
+            if _complete_snapshot(entry) is not True:
+                raise ValueError("snapshot changed during complete-retention pruning")
+            shutil.rmtree(entry)
+            retained_complete.remove(entry)
+            pruned_complete += 1
+
     return {
         "pruned_incomplete": pruned,
-        "preserved_complete": preserved_complete,
+        "pruned_complete": pruned_complete,
+        "preserved_complete": len(retained_complete),
+        "protected_complete": sum(
+            1 for entry, sha in complete if entry in retained_complete and sha in protected_shas
+        ),
+        "retain_complete": retain_complete,
+        "eligible_complete_prune_sha_count": len(allowed_complete_prune_shas),
         "preserved_suspicious": preserved_suspicious,
         "preserved_unapproved": preserved_unapproved,
         "skipped_unknown": skipped_unknown,
@@ -176,29 +236,38 @@ def main() -> int:
     parser.add_argument("--base", type=Path, required=True)
     parser.add_argument("--exclude", type=Path)
     parser.add_argument("--allow-sha", action="append", default=[])
+    parser.add_argument("--protect-sha", action="append", default=[])
+    parser.add_argument("--prune-complete-sha", action="append", default=[])
+    parser.add_argument("--retain-complete", type=int)
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     allowed_failed_shas = set(args.allow_sha)
+    protected_shas = set(args.protect_sha)
+    allowed_complete_prune_shas = set(args.prune_complete_sha)
     try:
         recovery = prune_incomplete(
             args.base,
             allowed_failed_shas=allowed_failed_shas,
             exclude=args.exclude,
+            retain_complete=args.retain_complete,
+            protected_shas=protected_shas,
+            allowed_complete_prune_shas=allowed_complete_prune_shas,
         )
         images = prune_failed_images(allowed_failed_shas)
         report = {
             "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
-            "schema_version": 3,
+            "schema_version": 4,
             "status": "PASS",
             **recovery,
             **images,
             "approved_failed_sha_count": len(allowed_failed_shas),
+            "protected_sha_count": len(protected_shas),
             "scientific_data_modified": False,
         }
     except (OSError, ValueError, RuntimeError) as exc:
         report = {
             "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
-            "schema_version": 3,
+            "schema_version": 4,
             "status": "FAIL",
             "reason": str(exc),
             "scientific_data_modified": False,

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 from pathlib import Path
 import subprocess
 
@@ -17,6 +18,9 @@ SPEC.loader.exec_module(HYGIENE)
 
 FAILED = "a" * 40
 OTHER = "b" * 40
+THIRD = "c" * 40
+ACTIVE = "d" * 40
+FIFTH = "e" * 40
 
 
 def _recovery(base: Path, sha: str, suffix: str = "abcdef") -> Path:
@@ -25,17 +29,20 @@ def _recovery(base: Path, sha: str, suffix: str = "abcdef") -> Path:
     return path
 
 
-def _complete(path: Path) -> None:
+def _complete(path: Path, *, completed_ns: int | None = None) -> None:
     volume = path / "volume"
     volume.mkdir()
     (volume / "manifest.json").write_text(
         json.dumps({"type": "NUTEV_QUIESCED_SNAPSHOT", "version": 2}),
         encoding="utf-8",
     )
-    (volume / "restore-proof.json").write_text(
+    proof = volume / "restore-proof.json"
+    proof.write_text(
         json.dumps({"status": "PASS", "production_overwritten": False}),
         encoding="utf-8",
     )
+    if completed_ns is not None:
+        os.utime(proof, ns=(completed_ns, completed_ns))
 
 
 class FakeDocker:
@@ -85,15 +92,138 @@ def test_unapproved_incomplete_recovery_is_preserved(tmp_path: Path) -> None:
     assert path.exists()
 
 
-def test_complete_snapshot_is_preserved_even_when_allowlisted(tmp_path: Path) -> None:
+def test_complete_snapshot_is_preserved_by_default_even_when_allowlisted(tmp_path: Path) -> None:
     path = _recovery(tmp_path, FAILED)
     _complete(path)
 
     report = HYGIENE.prune_incomplete(tmp_path, allowed_failed_shas={FAILED})
 
     assert report["preserved_complete"] == 1
+    assert report["pruned_complete"] == 0
     assert report["pruned_incomplete"] == 0
     assert path.exists()
+
+
+def test_complete_retention_never_prunes_without_deploy_history_allowlist(tmp_path: Path) -> None:
+    paths = []
+    for index, sha in enumerate((FAILED, OTHER, THIRD, ACTIVE), start=1):
+        path = _recovery(tmp_path, sha, f"keep{index:02d}")
+        _complete(path, completed_ns=index * 1_000_000_000)
+        paths.append(path)
+
+    report = HYGIENE.prune_incomplete(
+        tmp_path,
+        allowed_failed_shas=set(),
+        retain_complete=3,
+        protected_shas={ACTIVE},
+        allowed_complete_prune_shas=set(),
+    )
+
+    assert report["pruned_complete"] == 0
+    assert report["preserved_complete"] == 4
+    assert all(path.exists() for path in paths)
+
+
+def test_complete_retention_prunes_only_oldest_eligible_and_keeps_three(tmp_path: Path) -> None:
+    snapshots: dict[str, Path] = {}
+    for index, sha in enumerate((FAILED, OTHER, THIRD, ACTIVE), start=1):
+        path = _recovery(tmp_path, sha, f"snap{index:02d}")
+        _complete(path, completed_ns=index * 1_000_000_000)
+        snapshots[sha] = path
+
+    report = HYGIENE.prune_incomplete(
+        tmp_path,
+        allowed_failed_shas=set(),
+        retain_complete=3,
+        protected_shas={ACTIVE},
+        allowed_complete_prune_shas={FAILED, OTHER, THIRD},
+    )
+
+    assert report["pruned_complete"] == 1
+    assert report["preserved_complete"] == 3
+    assert report["protected_complete"] == 1
+    assert not snapshots[FAILED].exists()
+    assert snapshots[OTHER].exists()
+    assert snapshots[THIRD].exists()
+    assert snapshots[ACTIVE].exists()
+
+
+def test_protected_complete_is_never_pruned_even_if_oldest_and_eligible(tmp_path: Path) -> None:
+    snapshots: dict[str, Path] = {}
+    for index, sha in enumerate((ACTIVE, FAILED, OTHER, THIRD), start=1):
+        path = _recovery(tmp_path, sha, f"protect{index:02d}")
+        _complete(path, completed_ns=index * 1_000_000_000)
+        snapshots[sha] = path
+
+    report = HYGIENE.prune_incomplete(
+        tmp_path,
+        allowed_failed_shas=set(),
+        retain_complete=3,
+        protected_shas={ACTIVE},
+        allowed_complete_prune_shas={ACTIVE, FAILED, OTHER, THIRD},
+    )
+
+    assert report["pruned_complete"] == 1
+    assert snapshots[ACTIVE].exists()
+    assert not snapshots[FAILED].exists()
+    assert snapshots[OTHER].exists()
+    assert snapshots[THIRD].exists()
+
+
+def test_complete_retention_never_drops_below_configured_floor(tmp_path: Path) -> None:
+    snapshots = []
+    for index, sha in enumerate((FAILED, OTHER, THIRD, ACTIVE, FIFTH), start=1):
+        path = _recovery(tmp_path, sha, f"floor{index:02d}")
+        _complete(path, completed_ns=index * 1_000_000_000)
+        snapshots.append(path)
+
+    report = HYGIENE.prune_incomplete(
+        tmp_path,
+        allowed_failed_shas=set(),
+        retain_complete=3,
+        protected_shas={ACTIVE},
+        allowed_complete_prune_shas={FAILED, OTHER, THIRD, FIFTH},
+    )
+
+    assert report["pruned_complete"] == 2
+    assert report["preserved_complete"] == 3
+    assert sum(path.exists() for path in snapshots) == 3
+
+
+def test_complete_prune_allowlist_requires_retention_floor(tmp_path: Path) -> None:
+    path = _recovery(tmp_path, FAILED)
+    _complete(path)
+
+    with pytest.raises(ValueError, match="requires retain-complete"):
+        HYGIENE.prune_incomplete(
+            tmp_path,
+            allowed_failed_shas=set(),
+            allowed_complete_prune_shas={FAILED},
+        )
+    assert path.exists()
+
+
+def test_invalid_complete_retention_inputs_fail_closed(tmp_path: Path) -> None:
+    with pytest.raises(ValueError, match="retain-complete"):
+        HYGIENE.prune_incomplete(
+            tmp_path,
+            allowed_failed_shas=set(),
+            retain_complete=0,
+        )
+    with pytest.raises(ValueError, match="complete-snapshot prune allowlist"):
+        HYGIENE.prune_incomplete(
+            tmp_path,
+            allowed_failed_shas=set(),
+            retain_complete=3,
+            allowed_complete_prune_shas={"main"},
+        )
+    with pytest.raises(ValueError, match="protected snapshot allowlist"):
+        HYGIENE.prune_incomplete(
+            tmp_path,
+            allowed_failed_shas=set(),
+            retain_complete=3,
+            protected_shas={"main"},
+        )
 
 
 def test_suspicious_snapshot_is_preserved(tmp_path: Path) -> None:
@@ -103,7 +233,12 @@ def test_suspicious_snapshot_is_preserved(tmp_path: Path) -> None:
     (volume / "manifest.json").write_text("{broken", encoding="utf-8")
     (volume / "restore-proof.json").write_text("{}", encoding="utf-8")
 
-    report = HYGIENE.prune_incomplete(tmp_path, allowed_failed_shas={FAILED})
+    report = HYGIENE.prune_incomplete(
+        tmp_path,
+        allowed_failed_shas={FAILED},
+        retain_complete=3,
+        allowed_complete_prune_shas={FAILED},
+    )
 
     assert report["preserved_suspicious"] == 1
     assert path.exists()
