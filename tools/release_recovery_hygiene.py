@@ -1,10 +1,14 @@
-"""Conservative hygiene for NutEV release-recovery directories.
+"""Conservative hygiene for NutEV release-recovery state.
 
-Only canonical deploy directories that are provably incomplete and whose target
+Only canonical recovery directories that are provably incomplete and whose target
 SHA belongs to an explicitly approved failed-deploy allowlist are removed.
 Complete snapshots, suspicious/corrupt-looking directories, unknown names and
-symlinks are preserved for manual review. Scientific output volumes are never
-touched by this tool.
+symlinks are preserved for manual review.
+
+The CLI also reclaims Docker image tags only when they are named ``nutev:<SHA>``,
+the SHA is in that same failed-deploy allowlist, and no running or stopped
+container references the image. A final ordinary ``docker image prune`` removes
+only dangling, unused images. Scientific output volumes are never touched.
 """
 from __future__ import annotations
 
@@ -13,9 +17,12 @@ import json
 from pathlib import Path
 import re
 import shutil
+import subprocess
+from typing import Callable
 
 RECOVERY_NAME = re.compile(r"^([0-9a-f]{40})\.([A-Za-z0-9_-]{6,})$")
 SHA = re.compile(r"^[0-9a-f]{40}$")
+Runner = Callable[[list[str]], subprocess.CompletedProcess[str]]
 
 
 def _regular_file(path: Path) -> bool:
@@ -105,16 +112,62 @@ def prune_incomplete(
         pruned += 1
 
     return {
-        "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
-        "schema_version": 2,
-        "status": "PASS",
         "pruned_incomplete": pruned,
         "preserved_complete": preserved_complete,
         "preserved_suspicious": preserved_suspicious,
         "preserved_unapproved": preserved_unapproved,
         "skipped_unknown": skipped_unknown,
-        "approved_failed_sha_count": len(allowed_failed_shas),
-        "scientific_data_modified": False,
+    }
+
+
+def _subprocess_runner(command: list[str]) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(command, text=True, capture_output=True, check=False)
+
+
+def prune_failed_images(
+    allowed_failed_shas: set[str],
+    *,
+    runner: Runner = _subprocess_runner,
+) -> dict:
+    """Remove only unused ``nutev:<failed-sha>`` tags and dangling images."""
+    allowed_failed_shas = _validated_allowlist(set(allowed_failed_shas))
+    removed_failed_tags = 0
+    preserved_in_use = 0
+    absent_failed_tags = 0
+
+    for sha in sorted(allowed_failed_shas):
+        image_ref = f"nutev:{sha}"
+        listed = runner(["docker", "image", "ls", "--quiet", "--no-trunc", image_ref])
+        if listed.returncode != 0:
+            raise RuntimeError(f"docker image lookup failed for approved SHA {sha}")
+        image_ids = {line.strip() for line in listed.stdout.splitlines() if line.strip()}
+        if not image_ids:
+            absent_failed_tags += 1
+            continue
+        if len(image_ids) != 1:
+            raise RuntimeError(f"ambiguous docker image identity for approved SHA {sha}")
+
+        containers = runner(["docker", "ps", "-aq", "--filter", f"ancestor={image_ref}"])
+        if containers.returncode != 0:
+            raise RuntimeError(f"docker container lookup failed for approved SHA {sha}")
+        if containers.stdout.strip():
+            preserved_in_use += 1
+            continue
+
+        removed = runner(["docker", "image", "rm", image_ref])
+        if removed.returncode != 0:
+            raise RuntimeError(f"docker image removal failed for approved SHA {sha}")
+        removed_failed_tags += 1
+
+    dangling = runner(["docker", "image", "prune", "-f"])
+    if dangling.returncode != 0:
+        raise RuntimeError("docker dangling-image prune failed")
+
+    return {
+        "removed_failed_image_tags": removed_failed_tags,
+        "preserved_failed_images_in_use": preserved_in_use,
+        "absent_failed_image_tags": absent_failed_tags,
+        "dangling_image_prune": "PASS",
     }
 
 
@@ -125,16 +178,27 @@ def main() -> int:
     parser.add_argument("--allow-sha", action="append", default=[])
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
+    allowed_failed_shas = set(args.allow_sha)
     try:
-        report = prune_incomplete(
+        recovery = prune_incomplete(
             args.base,
-            allowed_failed_shas=set(args.allow_sha),
+            allowed_failed_shas=allowed_failed_shas,
             exclude=args.exclude,
         )
-    except (OSError, ValueError) as exc:
+        images = prune_failed_images(allowed_failed_shas)
         report = {
             "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
-            "schema_version": 2,
+            "schema_version": 3,
+            "status": "PASS",
+            **recovery,
+            **images,
+            "approved_failed_sha_count": len(allowed_failed_shas),
+            "scientific_data_modified": False,
+        }
+    except (OSError, ValueError, RuntimeError) as exc:
+        report = {
+            "record_type": "NUTEV_RELEASE_RECOVERY_HYGIENE",
+            "schema_version": 3,
             "status": "FAIL",
             "reason": str(exc),
             "scientific_data_modified": False,

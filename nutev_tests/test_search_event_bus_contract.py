@@ -71,6 +71,19 @@ def test_retry_remains_fail_safe_and_never_reposts_a_search() -> None:
     assert "robustJobFetch(args,meta.path)" in events
 
 
+def test_new_search_generation_rejects_stale_job_lifecycle_events() -> None:
+    events = read("search-events.js")
+
+    assert "let searchGeneration=0" in events
+    assert "const isSubmission=meta.method==='POST'&&meta.path==='/api/search/jobs'" in events
+    assert "const generation=isSubmission?++searchGeneration:searchGeneration" in events
+    assert "const jobLifecycle=path==='/api/search/jobs'||path.startsWith('/api/search/jobs/')" in events
+    assert "if(jobLifecycle&&generation!==searchGeneration)return" in events
+    assert "processPayload(payload,{...meta,generation})" in events
+    assert "emit('nutev:search-result',{result,source,generation})" in events
+    assert "getGeneration:()=>searchGeneration" in events
+
+
 def test_search_consumers_receive_events_without_own_transport_wrappers() -> None:
     history = read("search-history-ui.js")
     library = read("search-library-ui.js")

@@ -9,6 +9,7 @@ let lastResult=null;
 let lastOutcomeKey='';
 
 function feedbackElement(){return $('#searchFeedback')}
+function currentSearchGeneration(){return Number(window.NutEVSearchEvents?.getGeneration?.()||0)}
 function showFeedback(message,kind='error'){
   const root=feedbackElement();if(!root)return;
   root.className=`search-feedback ${kind}`;
@@ -95,13 +96,15 @@ function coverageOutcome(data){
   return{kind:'bad',title:'A busca não recuperou resultados utilizáveis',detail:'As fontes selecionadas apresentaram indisponibilidade ou lacunas suficientes para impedir um conjunto utilizável.',gaps:[...gaps].map(id=>providerDisplayName(data,id))};
 }
 
-function queueSummaryEnhancement(data){
-  window.setTimeout(()=>enhanceSummary(data),0);
-  window.setTimeout(()=>enhanceSummary(data),80);
+function queueSummaryEnhancement(data,generation=currentSearchGeneration()){
+  const apply=()=>{if(generation===currentSearchGeneration())enhanceSummary(data,generation)};
+  window.setTimeout(apply,0);
+  window.setTimeout(apply,80);
 }
-function enhanceSummary(data){
+function enhanceSummary(data,generation=currentSearchGeneration()){
+  if(generation!==currentSearchGeneration())return;
   const summary=$('#summary');if(!summary||summary.classList.contains('hidden'))return;
-  const key=String(data?.search_id||`${data?.query||''}|${data?.returned_records||0}`);
+  const key=String(data?.search_id||`${data?.query||''}|${data?.search_mode||''}|${data?.returned_records||0}`);
   const outcome=coverageOutcome(data);const auditIdentity=searchAuditIdentity(data);
   const kpiValues=summary.querySelectorAll('.summary-grid .kpi strong');
   if(kpiValues.length>=4)kpiValues[3].textContent=String(summaryGapCount(data));
@@ -139,7 +142,7 @@ function compactCards(){
 }
 
 function prepareSearch(){
-  clearFeedback();
+  clearFeedback();lastResult=null;lastOutcomeKey='';
   const query=$('#question')?.value.trim()||'';
   if(query){const url=new URL(location.href);url.searchParams.set('q',query);url.searchParams.delete('view');history.replaceState(null,'',`${url.pathname}?${url.searchParams.toString()}`)}
 }
@@ -152,12 +155,21 @@ $('#question')?.addEventListener('keydown',event=>{
   }
 });
 
-window.addEventListener('nutev:search-job',event=>{clearFeedback();beginProgress(event.detail?.job||{})});
-window.addEventListener('nutev:search-result',event=>{
-  const result=event.detail?.result;if(!result)return;
-  lastResult=result;finishProgress();queueSummaryEnhancement(result);
+window.addEventListener('nutev:search-job',event=>{
+  const generation=Number(event.detail?.generation??currentSearchGeneration());
+  if(generation!==currentSearchGeneration())return;
+  clearFeedback();beginProgress(event.detail?.job||{});
 });
-window.addEventListener('nutev:search-failed',()=>finishProgress());
+window.addEventListener('nutev:search-result',event=>{
+  const generation=Number(event.detail?.generation??currentSearchGeneration());
+  if(generation!==currentSearchGeneration())return;
+  const result=event.detail?.result;if(!result)return;
+  lastResult=result;finishProgress();queueSummaryEnhancement(result,generation);
+});
+window.addEventListener('nutev:search-failed',event=>{
+  const generation=Number(event.detail?.generation??currentSearchGeneration());
+  if(generation===currentSearchGeneration())finishProgress();
+});
 window.addEventListener('nutev:search-transport-retry',()=>{
   const progress=$('#searchProgress');if(progress&&!progress.classList.contains('hidden')){
     progress.dataset.reconnecting='true';if(lastJob)renderProgress(lastJob);
@@ -173,11 +185,15 @@ const results=$('#results');
 if(results)new MutationObserver(()=>window.requestAnimationFrame(compactCards)).observe(results,{childList:true,subtree:true});
 
 const summary=$('#summary');
-if(summary)new MutationObserver(()=>{if(lastResult&&!summary.classList.contains('hidden')&&lastOutcomeKey!==String(lastResult?.search_id||`${lastResult?.query||''}|${lastResult?.returned_records||0}`))queueSummaryEnhancement(lastResult)}).observe(summary,{childList:true,attributes:true,attributeFilter:['class']});
+if(summary)new MutationObserver(()=>{
+  if(!lastResult||summary.classList.contains('hidden'))return;
+  const key=String(lastResult?.search_id||`${lastResult?.query||''}|${lastResult?.search_mode||''}|${lastResult?.returned_records||0}`);
+  if(lastOutcomeKey!==key)queueSummaryEnhancement(lastResult,currentSearchGeneration());
+}).observe(summary,{childList:true,attributes:true,attributeFilter:['class']});
 
 window.addEventListener('pageshow',()=>{
   compactCards();
   const cached=window.NutEVSearchEvents?.getLastResult?.()||lastResult;
-  if(cached){lastResult=cached;queueSummaryEnhancement(cached)}
+  if(cached){lastResult=cached;queueSummaryEnhancement(cached,currentSearchGeneration())}
 });
 window.NutEVSearchUX={showFeedback,clearFeedback,coverageOutcome,providerGapIds,summaryGapCount,searchAuditIdentity,compactCards,getLastResult:()=>window.NutEVSearchEvents?.getLastResult?.()||lastResult};
