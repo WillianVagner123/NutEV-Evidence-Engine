@@ -102,16 +102,28 @@ Se alterar taxonomia, pesos, focus terms, tipo documental, recência, identidade
 
 ## Release atual
 
-- versão publicada: `1.0.0`;
+- versão publicada no GitHub: `1.1.0`;
+- tag imutável: `v1.1.0`;
+- release commit: `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
+- GitHub Release: publicada em `2026-09-12`;
+- produção: aceita;
+- Zenodo record da `v1.1.0`: pendente de verificação/publicação;
+- DOI version-specific da `v1.1.0`: ausente até emissão real pelo Zenodo.
+
+A `main` pode avançar com documentação e correções pós-release sem alterar o snapshot publicado. Nunca mover ou recriar a tag `v1.1.0` para acompanhar a `main`.
+
+### Release histórica anterior
+
+- versão: `1.0.0`;
 - tag: `v1.0.0`;
 - release commit: `5728d79b05e618897f01ba93886a17584c9f215f`;
 - Zenodo record: `21998607`;
 - DOI: `10.5281/zenodo.21998607`.
 
-A `main` contém correções pós-release e documentação. Isso não altera o snapshot arquivado.
+O DOI de `v1.0.0` é histórico e não pode ser reutilizado como DOI da `v1.1.0` ou de qualquer release futura.
 
 ## Futuras releases
 
 Versão, tag, GitHub Release, `CITATION.cff`, `.zenodo.json`, changelog e release notes devem referir-se à mesma identidade de release.
 
-Um novo DOI version-specific só deve ser registrado depois que o serviço de arquivo realmente o emitir. Nunca reutilizar o DOI de `v1.0.0` como DOI de depósito de uma versão futura.
+Um novo DOI version-specific só deve ser registrado depois que o serviço de arquivo realmente o emitir. Nunca reutilizar o DOI de uma versão anterior como DOI de depósito de uma versão futura.
