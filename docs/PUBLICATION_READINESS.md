@@ -1,6 +1,6 @@
 # Publication readiness: NutEV 1.1.0
 
-Status: **GITHUB RELEASED / ZENODO ARCHIVE PENDING**.
+Status: **GITHUB RELEASED / ZENODO ARCHIVED / DOI VERIFIED**.
 
 Immutable publication SHA:
 
@@ -16,8 +16,16 @@ GitHub Release:
 https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0
 ```
 
-The historical `v1.0.0` DOI remains `10.5281/zenodo.21998607`. It must not be
-reused for `v1.1.0`.
+Zenodo archive:
+
+```text
+record = 22726717
+DOI = 10.5281/zenodo.22726717
+record URL = https://zenodo.org/records/22726717
+```
+
+The historical `v1.0.0` DOI remains `10.5281/zenodo.21998607`. It is not reused
+for `v1.1.0`.
 
 ## Completed publication gates
 
@@ -33,7 +41,10 @@ The exact publication SHA completed:
 - local/public runtime smoke and version identity checks;
 - successful read-only post-deploy doctorate audit;
 - immutable Git tag `v1.1.0` on the exact publication SHA;
-- public GitHub Release with audited release assets and hashes.
+- public GitHub Release with audited release assets and hashes;
+- GitHub↔Zenodo repository integration enabled and synchronized;
+- public Zenodo archive identity confirmed for software version `1.1.0`;
+- version-specific Zenodo DOI `10.5281/zenodo.22726717` recorded.
 
 The release includes:
 
@@ -81,55 +92,49 @@ screening and adjudication where required by its protocol.
 A2 remains fail-closed until real historical provenance supports reviewed
 `LegacyBindingEvidence`.
 
-No CI, deploy, GitHub tag or software release can substitute for those scientific
-records.
+No CI, deploy, GitHub tag, GitHub Release or Zenodo archive can substitute for
+those scientific records.
 
-## Remaining external publication gate
+## Archive publication complete
 
-The only unfinished archive step for the software release is a version-specific
-Zenodo (or equivalent) archival record.
+The public software archive gate for `v1.1.0` is complete.
 
-Current verified state:
+Verified state:
 
 ```text
 GitHub v1.1.0 = RELEASED
-Zenodo v1.1.0 = NOT VERIFIED / PENDING
-DOI v1.1.0 = ABSENT UNTIL REAL ISSUANCE
+Zenodo v1.1.0 = ARCHIVED
+Zenodo record = 22726717
+DOI v1.1.0 = 10.5281/zenodo.22726717
 ```
 
-Public Zenodo search did not show a `NutEV Reference Engine 1.1.0` record after
-the GitHub release. Do not infer a DOI from the historical v1.0.0 record or from
-a concept identifier.
+Authenticated evidence from the repository owner confirmed that
+`WillianVagner123/NutEV-Evidence-Engine` is enabled in the GitHub↔Zenodo
+integration, the repository synchronized successfully, the Zenodo DOI badge is
+`10.5281/zenodo.22726717`, and the corresponding record is software version
+`1.1.0`.
 
-If Zenodo is connected to the GitHub repository, verify that it ingests the
-`v1.1.0` release. If it is not connected, an authenticated Zenodo user must
-create/publish the software deposit using the immutable tagged release and its
-release metadata. Only after the public record exists should the new DOI and
-archive publication date be written into current citation/archive metadata.
+The archive closeout is metadata-only. It does not move, delete, recreate or
+retag the immutable `v1.1.0` Git tag.
 
-## Metadata policy after GitHub release
+## Metadata policy after archive verification
 
-Current operational documentation may state:
-
-- version `1.1.0`;
-- GitHub publication date `2026-09-12`;
-- immutable Git tag `v1.1.0`;
-- immutable release SHA `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
-- GitHub Release URL.
-
-Until the archive exists, citation/archive metadata intentionally keeps these
-fields absent:
+Current citation/archive metadata records:
 
 ```text
-CITATION.cff date-released
-CITATION.cff DOI
-.zenodo.json archive publication date
-.zenodo.json DOI
+version = 1.1.0
+GitHub publication date = 2026-09-12
+Git tag = v1.1.0
+release SHA = 49588233ad2828b8fcc6140398ab55aedf7c03ef
+Zenodo record = 22726717
+DOI = 10.5281/zenodo.22726717
+CITATION.cff date-released = 2026-09-12
+.zenodo.json publication_date = 2026-09-12
 ```
 
-This is enforced by the repository metadata contract. The GitHub release date and
-an eventual Zenodo archive date are related publication events but are not
-silently conflated.
+`CITATION.cff` carries the verified version-specific DOI. `.zenodo.json` keeps the
+archive publication date and records the Zenodo record/DOI in its notes while
+remaining valid GitHub→Zenodo release metadata.
 
 ## Evidence custody
 
@@ -141,7 +146,8 @@ Public release evidence retains:
 - package/container audit evidence;
 - release-prerequisite evidence;
 - sanitized post-deploy scientific boundary;
-- GitHub Release identity.
+- GitHub Release identity;
+- Zenodo record identity and version-specific DOI.
 
 Private SSH material, credentials and private scientific state are not part of
 public release evidence.

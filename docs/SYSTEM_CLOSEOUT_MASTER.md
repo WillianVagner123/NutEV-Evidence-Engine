@@ -9,7 +9,8 @@ version = 1.1.0
 tag = v1.1.0
 sha = 49588233ad2828b8fcc6140398ab55aedf7c03ef
 GitHub Release = PUBLISHED
-Zenodo/DOI = PENDING_EXTERNAL
+Zenodo record = 22726717
+Zenodo DOI = 10.5281/zenodo.22726717
 ```
 
 Overall software state:
@@ -17,7 +18,8 @@ Overall software state:
 ```text
 PRODUCTION ACCEPTED
 GITHUB RELEASED
-ARCHIVE DOI PENDING
+ZENODO ARCHIVED
+PUBLICATION CLOSEOUT COMPLETE
 ```
 
 ## Immutable boundaries
@@ -28,8 +30,8 @@ scientific ownership by inference. Global bibliographic identity is distinct fro
 private search/project/review state. UNKNOWN remains unbound.
 
 Published tags `v1.0.0` and `v1.1.0` are immutable and must not be moved. The
-historical DOI `10.5281/zenodo.21998607` belongs only to `v1.0.0` and must not be
-reused for 1.1.0.
+historical DOI `10.5281/zenodo.21998607` belongs only to `v1.0.0`; the verified
+version-specific DOI for `v1.1.0` is `10.5281/zenodo.22726717`.
 
 PASS always names a SHA, environment and scope. CI, deploy, package publication,
 archive publication and scientific approval are separate gates.
@@ -50,6 +52,8 @@ The exact `v1.1.0` publication SHA completed:
   -> read-only doctorate runtime audit
   -> immutable Git tag
   -> GitHub Release + audited assets
+  -> Zenodo integration sync
+  -> version-specific archive + DOI verification
 ```
 
 The first deployment attempt encountered a transient SSH `Broken pipe` after the
@@ -100,10 +104,10 @@ A2 ResearchApplications = 0
 | Post-deploy doctorate audit | PASS | Read-only; 0 A1/0 A2 |
 | Git tag `v1.1.0` | PUBLISHED | Points exactly to `49588233...` |
 | GitHub Release `v1.1.0` | PUBLISHED | Stable, not draft/prerelease |
+| Zenodo/archive record `v1.1.0` | PUBLISHED | Record `22726717` |
+| DOI `v1.1.0` | VERIFIED | `10.5281/zenodo.22726717` |
 | A1 scientific gates | BLOCKED_SCIENTIFIC | Human/academic evidence required |
 | A2 historical binding | BLOCKED_PROVENANCE / BLOCKED_SCIENTIFIC | Real reviewed provenance required |
-| Zenodo/archive record 1.1.0 | PENDING_EXTERNAL | No verified public record yet |
-| DOI 1.1.0 | PENDING_EXTERNAL | Record only after real issuance |
 
 ## Public release assets
 
@@ -123,37 +127,38 @@ The release controller verified the exact SHA, required workflow runs, successfu
 production deploy, successful post-deploy auditor and artifact identities before
 creating the tag/release.
 
+The GitHub↔Zenodo integration subsequently synchronized the repository and the
+repository owner confirmed the public `1.1.0` archive identity as Zenodo record
+`22726717`, DOI `10.5281/zenodo.22726717`.
+
 ## Scientific separation
 
 A1 and A2 are private consumers of the generic platform, not hidden defaults of
 the Engine.
 
 A1 remains subject to its academic methodology contracts. A2 remains dark/fail-
-closed until provenance is sufficient for reviewed binding. GitHub publication
-does not promote the general scientific validation state, which remains:
+closed until provenance is sufficient for reviewed binding. GitHub/Zenodo
+publication does not promote the general scientific validation state, which
+remains:
 
 ```text
 B — DEMOTE
 ```
 
-## Remaining publication work
+## Publication closeout
 
-The GitHub software publication is complete. The only remaining public software
-archive step is external:
-
-1. verify whether Zenodo GitHub integration ingests `v1.1.0`;
-2. if it does not, publish an authenticated Zenodo software record from the
-   immutable `v1.1.0` release;
-3. verify the public record and its version-specific DOI;
-4. update current citation metadata with that DOI without moving `v1.1.0`.
-
-Until that happens:
+The public software publication is complete:
 
 ```text
 GitHub v1.1.0 = RELEASED
-Zenodo v1.1.0 = PENDING_EXTERNAL
-DOI v1.1.0 = ABSENT
+Zenodo v1.1.0 = ARCHIVED
+Zenodo record = 22726717
+DOI v1.1.0 = 10.5281/zenodo.22726717
 ```
+
+No public software publication gate remains open for `v1.1.0`. Future commits on
+`main` may maintain documentation or software, but they must not move, delete or
+recreate the immutable `v1.1.0` tag.
 
 Use `docs/FINAL_SYSTEM_ACCEPTANCE.md`, `docs/PUBLICATION_READINESS.md`,
 `docs/RELEASE_NOTES_1_1_0.md` and `docs/RELEASE_CHECKLIST.md` together for the
