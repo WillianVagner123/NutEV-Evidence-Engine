@@ -218,7 +218,7 @@ jobs:
           HOST_LOOKUP="$HETZNER_HOST"
           if [[ "$PORT" != "22" ]]; then HOST_LOOKUP="[$HETZNER_HOST]:$PORT"; fi
           ssh-keygen -F "$HOST_LOOKUP" -f ~/.ssh/known_hosts >/dev/null
-      - name: Collect failed deploy SHAs
+      - name: Collect deployment retention allowlists
         env:
           GITHUB_TOKEN: ${{ github.token }}
         shell: bash
@@ -234,39 +234,80 @@ jobs:
           repo = os.environ["GITHUB_REPOSITORY"]
           token = os.environ["GITHUB_TOKEN"]
           current = os.environ["TARGET_SHA"]
-          url = f"https://api.github.com/repos/{repo}/actions/workflows/deploy-hetzner.yml/runs?status=failure&per_page=100"
-          request = Request(url, headers={
-              "Authorization": f"Bearer {token}",
-              "Accept": "application/vnd.github+json",
-              "X-GitHub-Api-Version": "2022-11-28",
-              "User-Agent": "NutEV-recovery-readiness",
-          })
-          with urlopen(request, timeout=20) as response:
-              payload = json.load(response)
-          values = set()
-          for run in payload.get("workflow_runs", []):
-              sha = run.get("head_sha", "")
+          sha_pattern = re.compile(r"[0-9a-f]{40}")
+
+          def load(status):
+              url = f"https://api.github.com/repos/{repo}/actions/workflows/deploy-hetzner.yml/runs?status={status}&per_page=100"
+              request = Request(url, headers={
+                  "Authorization": f"Bearer {token}",
+                  "Accept": "application/vnd.github+json",
+                  "X-GitHub-Api-Version": "2022-11-28",
+                  "User-Agent": "NutEV-recovery-readiness",
+              })
+              with urlopen(request, timeout=20) as response:
+                  return json.load(response).get("workflow_runs", [])
+
+          failed = set()
+          for run in load("failure"):
+              sha = str(run.get("head_sha", ""))
               if (
                   run.get("conclusion") == "failure"
                   and run.get("head_branch") == "main"
-                  and re.fullmatch(r"[0-9a-f]{40}", sha)
+                  and sha_pattern.fullmatch(sha)
                   and sha != current
               ):
-                  values.add(sha)
-          Path("failed-deploy-shas.txt").write_text("".join(f"{sha}\n" for sha in sorted(values)), encoding="utf-8")
-          print(f"failed_deploy_sha_count={len(values)}")
+                  failed.add(sha)
+
+          successful = []
+          seen = set()
+          for run in load("success"):
+              sha = str(run.get("head_sha", ""))
+              if (
+                  run.get("conclusion") == "success"
+                  and run.get("head_branch") == "main"
+                  and sha_pattern.fullmatch(sha)
+                  and sha not in seen
+              ):
+                  seen.add(sha)
+                  successful.append(sha)
+
+          keep_success = set(successful[:3])
+          complete_prune = (failed | set(successful[3:])) - keep_success
+          complete_prune.discard(current)
+
+          Path("failed-deploy-shas.txt").write_text(
+              "".join(f"{sha}\n" for sha in sorted(failed)), encoding="utf-8"
+          )
+          Path("complete-prune-shas.txt").write_text(
+              "".join(f"{sha}\n" for sha in sorted(complete_prune)), encoding="utf-8"
+          )
+          print(f"failed_deploy_sha_count={len(failed)}")
+          print(f"successful_deploy_unique_sha_count={len(successful)}")
+          print(f"protected_recent_success_sha_count={len(keep_success)}")
+          print(f"complete_prune_sha_count={len(complete_prune)}")
           PY
-      - name: Prune only failed incomplete recovery directories
+      - name: Prune allowlisted recovery state with bounded complete retention
         shell: bash
         run: |
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
-          REMOTE_CMD="python3 - --base /var/lib/nutev-release-recovery --json"
+          ACTIVE_SHA="$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "curl -fsS http://127.0.0.1:8765/api/version" \
+            | python3 -c 'import json,sys; print(json.load(sys.stdin)["commit"])')"
+          [[ "$ACTIVE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          REMOTE_CMD="python3 - --base /var/lib/nutev-release-recovery --retain-complete 3 --protect-sha $ACTIVE_SHA --json"
           while IFS= read -r sha; do
             [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
             [[ "$sha" != "$TARGET_SHA" ]]
             REMOTE_CMD+=" --allow-sha $sha"
           done < failed-deploy-shas.txt
+          while IFS= read -r sha; do
+            [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
+            [[ "$sha" != "$TARGET_SHA" ]]
+            [[ "$sha" != "$ACTIVE_SHA" ]]
+            REMOTE_CMD+=" --prune-complete-sha $sha"
+          done < complete-prune-shas.txt
           ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" "$REMOTE_CMD" \
             < tools/release_recovery_hygiene.py | tee recovery-hygiene.json
@@ -274,7 +315,10 @@ jobs:
           import json
           report = json.load(open("recovery-hygiene.json", encoding="utf-8"))
           assert report["status"] == "PASS"
+          assert report["retain_complete"] == 3
           assert report["scientific_data_modified"] is False
+          if report["pruned_complete"]:
+              assert report["preserved_complete"] >= 3
           PY
       - name: Verify snapshot capacity without stopping production
         shell: bash
@@ -325,6 +369,7 @@ jobs:
           name: production-recovery-readiness-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             failed-deploy-shas.txt
+            complete-prune-shas.txt
             recovery-hygiene.json
             recovery-capacity.txt
           if-no-files-found: warn
