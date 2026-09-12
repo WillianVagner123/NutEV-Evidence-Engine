@@ -104,21 +104,32 @@ a concept identifier.
 If Zenodo is connected to the GitHub repository, verify that it ingests the
 `v1.1.0` release. If it is not connected, an authenticated Zenodo user must
 create/publish the software deposit using the immutable tagged release and its
-release metadata. Only after the public record exists should the new DOI be
-written into current citation metadata.
+release metadata. Only after the public record exists should the new DOI and
+archive publication date be written into current citation/archive metadata.
 
 ## Metadata policy after GitHub release
 
-Current metadata may state:
+Current operational documentation may state:
 
 - version `1.1.0`;
-- release date `2026-09-12`;
+- GitHub publication date `2026-09-12`;
 - immutable Git tag `v1.1.0`;
 - immutable release SHA `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
 - GitHub Release URL.
 
-Current metadata must **not** state a `v1.1.0` DOI until a real archive service
-issues and exposes it publicly.
+Until the archive exists, citation/archive metadata intentionally keeps these
+fields absent:
+
+```text
+CITATION.cff date-released
+CITATION.cff DOI
+.zenodo.json archive publication date
+.zenodo.json DOI
+```
+
+This is enforced by the repository metadata contract. The GitHub release date and
+an eventual Zenodo archive date are related publication events but are not
+silently conflated.
 
 ## Evidence custody
 
