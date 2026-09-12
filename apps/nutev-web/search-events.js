@@ -11,6 +11,7 @@ let lastResult=null;
 let lastJob=null;
 let lastHistory=[];
 let lastHistoryScope='';
+let searchGeneration=0;
 const abandonedJobs=new Set();
 
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
@@ -76,42 +77,44 @@ async function robustJobFetch(args,path){
   throw lastError||new Error('Falha de conexão ao acompanhar a busca.');
 }
 
-function publishJob(job,source){
+function publishJob(job,source,generation){
   lastJob=job;
-  emit('nutev:search-job',{job,source});
+  emit('nutev:search-job',{job,source,generation});
 }
-function publishResult(result,source){
+function publishResult(result,source,generation){
   lastResult=result;
-  emit('nutev:search-result',{result,source});
+  emit('nutev:search-result',{result,source,generation});
 }
 function publishHistory(searches,scope=''){
   lastHistory=Array.isArray(searches)?searches:[];
   lastHistoryScope=String(scope||'');
   emit('nutev:search-history',{searches:lastHistory,scope:lastHistoryScope});
 }
-function processPayload(payload,{path,method}){
+function processPayload(payload,{path,method,generation=0}){
   if(path==='/api/searches'&&method==='GET'&&Array.isArray(payload?.searches)){
     publishHistory(payload.searches,payload.scope||'');return;
   }
+  const jobLifecycle=path==='/api/search/jobs'||path.startsWith('/api/search/jobs/');
+  if(jobLifecycle&&generation!==searchGeneration)return;
   if(path==='/api/search/jobs'&&method==='POST'){
     const jobId=String(payload?.job_id||'').trim();
     if(jobId)abandonedJobs.delete(jobId);
-    publishJob(payload,'submission');return;
+    publishJob(payload,'submission',generation);return;
   }
   if(path.startsWith('/api/search/jobs/')){
     const jobId=String(payload?.job_id||jobIdFromPath(path)).trim();
     if(jobId&&abandonedJobs.has(jobId))return;
-    if(payload?.status==='queued'||payload?.status==='running'){publishJob(payload,'poll');return}
-    if(payload?.status==='failed'){lastJob=payload;emit('nutev:search-failed',{job:payload,source:'poll'});return}
+    if(payload?.status==='queued'||payload?.status==='running'){publishJob(payload,'poll',generation);return}
+    if(payload?.status==='failed'){lastJob=payload;emit('nutev:search-failed',{job:payload,source:'poll',generation});return}
     if(payload?.status==='completed'){
       lastJob=payload;
       const result=resultFromPayload(payload);
-      if(result)publishResult(result,'job');
+      if(result)publishResult(result,'job',generation);
       return;
     }
   }
   const result=resultFromPayload(payload);
-  if(result)publishResult(result,path.startsWith('/api/searches/')?'history':'legacy');
+  if(result)publishResult(result,path.startsWith('/api/searches/')?'history':'legacy',generation);
 }
 
 function abandonJob(jobId=lastJob?.job_id){
@@ -126,11 +129,13 @@ function abandonJob(jobId=lastJob?.job_id){
 
 window.fetch=async(...args)=>{
   const meta=requestMeta(args[0],args[1]);
+  const isSubmission=meta.method==='POST'&&meta.path==='/api/search/jobs';
+  const generation=isSubmission?++searchGeneration:searchGeneration;
   const isJobRead=meta.method==='GET'&&meta.path.startsWith('/api/search/jobs/');
   const response=isJobRead?await robustJobFetch(args,meta.path):await nativeFetch(...args);
   const relevant=meta.path==='/api/search'||meta.path==='/api/searches'||meta.path==='/api/search/jobs'||isJobRead||meta.path.startsWith('/api/searches/');
   if(response.ok&&relevant){
-    response.clone().json().then(payload=>processPayload(payload,meta)).catch(()=>{});
+    response.clone().json().then(payload=>processPayload(payload,{...meta,generation})).catch(()=>{});
   }
   return response;
 };
@@ -155,6 +160,7 @@ window.NutEVSearchEvents={
   getLastJob:()=>lastJob,
   getLastHistory:()=>[...lastHistory],
   getLastHistoryScope:()=>lastHistoryScope,
+  getGeneration:()=>searchGeneration,
   loadHistoryScope,
   isMonitoringAbandoned:jobId=>abandonedJobs.has(String(jobId||'').trim()),
   abandonJob,
