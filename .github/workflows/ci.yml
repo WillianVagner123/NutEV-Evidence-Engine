@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   tests:
@@ -152,3 +153,179 @@ jobs:
         run: ruff check src tools nutev_tests --select F,E9
       - name: Ruff advisory style
         run: ruff check src tools nutev_tests || true
+
+  production-recovery-readiness:
+    name: production recovery readiness
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 10
+    env:
+      TARGET_SHA: ${{ github.sha }}
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Validate recovery readiness configuration
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$TARGET_SHA"
+          test -n "$HETZNER_HOST"
+          test -n "$HETZNER_USER"
+          test -n "$HETZNER_APP_DIR"
+          test -n "$HETZNER_SSH_KEY"
+          test -n "$HETZNER_KNOWN_HOSTS"
+      - name: Configure SSH for recovery readiness
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          install -d -m 700 ~/.ssh
+          python3 - <<'PY'
+          import base64
+          import binascii
+          import os
+          from pathlib import Path
+
+          raw = os.environ["HETZNER_SSH_KEY"].strip().replace("\r\n", "\n").replace("\r", "\n")
+          if "\\n" in raw and "\n" not in raw:
+              raw = raw.replace("\\n", "\n")
+          candidate = raw.strip()
+          if candidate.startswith("ssh-") or "BEGIN PUBLIC KEY" in candidate:
+              raise SystemExit("private SSH key required")
+          if not candidate.startswith("-----BEGIN "):
+              try:
+                  candidate = base64.b64decode("".join(candidate.split()), validate=True).decode("utf-8").strip()
+              except (binascii.Error, UnicodeDecodeError, ValueError):
+                  pass
+          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate.strip() + "\n", encoding="utf-8")
+          PY
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null
+          chmod 600 ~/.ssh/id_ed25519.pub
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          HOST_LOOKUP="$HETZNER_HOST"
+          if [[ "$PORT" != "22" ]]; then HOST_LOOKUP="[$HETZNER_HOST]:$PORT"; fi
+          ssh-keygen -F "$HOST_LOOKUP" -f ~/.ssh/known_hosts >/dev/null
+      - name: Collect failed deploy SHAs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import re
+          from urllib.request import Request, urlopen
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          token = os.environ["GITHUB_TOKEN"]
+          current = os.environ["TARGET_SHA"]
+          url = f"https://api.github.com/repos/{repo}/actions/workflows/deploy-hetzner.yml/runs?status=failure&per_page=100"
+          request = Request(url, headers={
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "NutEV-recovery-readiness",
+          })
+          with urlopen(request, timeout=20) as response:
+              payload = json.load(response)
+          values = set()
+          for run in payload.get("workflow_runs", []):
+              sha = run.get("head_sha", "")
+              if (
+                  run.get("conclusion") == "failure"
+                  and run.get("head_branch") == "main"
+                  and re.fullmatch(r"[0-9a-f]{40}", sha)
+                  and sha != current
+              ):
+                  values.add(sha)
+          Path("failed-deploy-shas.txt").write_text("".join(f"{sha}\n" for sha in sorted(values)), encoding="utf-8")
+          print(f"failed_deploy_sha_count={len(values)}")
+          PY
+      - name: Prune only failed incomplete recovery directories
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          REMOTE_CMD="python3 - --base /var/lib/nutev-release-recovery --json"
+          while IFS= read -r sha; do
+            [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
+            [[ "$sha" != "$TARGET_SHA" ]]
+            REMOTE_CMD+=" --allow-sha $sha"
+          done < failed-deploy-shas.txt
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" "$REMOTE_CMD" \
+            < tools/release_recovery_hygiene.py | tee recovery-hygiene.json
+          python3 - <<'PY'
+          import json
+          report = json.load(open("recovery-hygiene.json", encoding="utf-8"))
+          assert report["status"] == "PASS"
+          assert report["scientific_data_modified"] is False
+          PY
+      - name: Verify snapshot capacity without stopping production
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          TARGET_SHA_Q=$(printf '%q' "$TARGET_SHA")
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q TARGET_SHA=$TARGET_SHA_Q bash -s" <<'REMOTE' | tee recovery-capacity.txt
+          set -euo pipefail
+          cd "$APP_DIR"
+          test -d .git
+          ORIGIN_MAIN="$(git ls-remote origin refs/heads/main | awk '{print $1}')"
+          test "$ORIGIN_MAIN" = "$TARGET_SHA"
+          COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
+          OLD_CONTAINER="$("${COMPOSE[@]}" ps -q nutev 2>/dev/null)"
+          test -n "$OLD_CONTAINER"
+          test "$(docker inspect -f '{{.State.Running}}' "$OLD_CONTAINER")" = "true"
+          OUTPUT_VOLUME="$(docker inspect -f '{{range .Mounts}}{{if and (eq .Destination "/app/project_output_reference") (eq .Type "volume")}}{{.Name}}{{end}}{{end}}' "$OLD_CONTAINER")"
+          test -n "$OUTPUT_VOLUME"
+          SOURCE_KB="$(docker exec "$OLD_CONTAINER" sh -c 'du -sk /app/project_output_reference | awk "{print \\$1}"')"
+          [[ "$SOURCE_KB" =~ ^[0-9]+$ ]]
+          mkdir -p /var/lib/nutev-release-recovery
+          FREE_KB="$(df -Pk /var/lib/nutev-release-recovery | awk 'NR==2 {print $4}')"
+          [[ "$FREE_KB" =~ ^[0-9]+$ ]]
+          MARGIN_KB=1048576
+          TEN_PERCENT=$((SOURCE_KB / 10))
+          if (( TEN_PERCENT > MARGIN_KB )); then MARGIN_KB=$TEN_PERCENT; fi
+          REQUIRED_KB=$((SOURCE_KB + MARGIN_KB))
+          echo "source_kb=$SOURCE_KB"
+          echo "free_kb=$FREE_KB"
+          echo "margin_kb=$MARGIN_KB"
+          echo "required_kb=$REQUIRED_KB"
+          echo "production_running=true"
+          echo "scientific_data_modified=false"
+          if (( FREE_KB < REQUIRED_KB )); then
+            echo "insufficient_snapshot_capacity=true" >&2
+            exit 1
+          fi
+          echo "snapshot_capacity=PASS"
+          REMOTE
+      - name: Upload recovery readiness evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: production-recovery-readiness-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            failed-deploy-shas.txt
+            recovery-hygiene.json
+            recovery-capacity.txt
+          if-no-files-found: warn
+          retention-days: 14
