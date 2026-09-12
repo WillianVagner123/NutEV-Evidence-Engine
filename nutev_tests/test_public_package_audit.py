@@ -11,6 +11,8 @@ from tools.audit_public_package import audit_distribution, check_name
 
 VERSION = '1.1.0'
 ROOT = f'nutev_nutmev-{VERSION}'
+DOI = '10.5281/zenodo.22726717'
+RELEASE_DATE = '2026-09-12'
 
 
 def wheel(tmp_path, extra=None, version=VERSION):
@@ -109,11 +111,15 @@ def test_candidate_metadata_and_container_gate_are_synchronized():
     from nutev.__version__ import __version__
     root = Path(__file__).resolve().parents[1]
     assert __version__ == VERSION
-    assert json.loads((root / '.zenodo.json').read_text())['version'] == VERSION
+    zenodo = json.loads((root / '.zenodo.json').read_text())
+    assert zenodo['version'] == VERSION
+    assert zenodo['publication_date'] == RELEASE_DATE
+    assert DOI in zenodo['notes']
     cff = yaml.safe_load((root / 'CITATION.cff').read_text())
     assert cff['version'] == cff['preferred-citation']['version'] == VERSION
-    assert 'doi' not in cff and 'doi' not in cff['preferred-citation']
-    assert 'date-released' not in cff
+    assert cff['doi'] == cff['preferred-citation']['doi'] == DOI
+    assert str(cff['date-released']) == RELEASE_DATE
+    assert str(cff['preferred-citation']['date-released']) == RELEASE_DATE
     build = tomllib.loads((root / 'pyproject.toml').read_text())['tool']['pdm']['build']
     assert build['includes'] == ['src/nutev/**/*.py']
     workflow = (root / '.github/workflows/release-artifact-validation.yml').read_text()
