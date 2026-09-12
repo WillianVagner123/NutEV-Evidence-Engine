@@ -1,6 +1,8 @@
 cff-version: 1.2.0
 message: >-
-  Candidate version metadata. Cite the exact commit until this version is published.
+  Version 1.1.0 is production accepted but not yet published as an immutable
+  release. Cite the exact Git commit until the v1.1.0 release and archive record
+  are created.
 title: "NutEV Reference Engine: taxonomy-guided reference discovery and ranking for Lifestyle Nutrition"
 abstract: >-
   NutEV Reference Engine is an open-source software tool for multi-source
@@ -9,7 +11,9 @@ abstract: >-
   sources with the NutEV keyword taxonomy and configurable focus terms to
   produce a ranked reading/reference queue. Ranking reflects
   information-retrieval priority and does not represent scientific
-  inclusion/exclusion or a clinical recommendation.
+  inclusion/exclusion or a clinical recommendation. Version 1.1.0 also provides
+  a hosted, provisioned multi-tenant runtime with exact-SHA release controls,
+  recovery gates and fail-closed private scientific applications.
 type: software
 version: "1.1.0"
 license: MIT
@@ -35,6 +39,8 @@ authors:
   - given-names: "Willian Vagner Dorneles"
     family-names: "Schneider"
 # ORCID and affiliation are intentionally omitted until independently confirmed.
+# release-date and DOI are intentionally omitted until v1.1.0 is actually
+# published and a version-specific archive identifier is issued.
 preferred-citation:
   type: software
   title: "NutEV Reference Engine: taxonomy-guided reference discovery and ranking for Lifestyle Nutrition"
