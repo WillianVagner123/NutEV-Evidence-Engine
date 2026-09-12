@@ -97,9 +97,9 @@ The local `/validation/` flow remains fail-closed:
 4. build and validate the gold-standard ledger;
 5. compute validation metrics only after the gold gate;
 6. lock the validation decision;
-7. keep the external test sealed until the protocol permits opening it.
+7. keep the **External test** sealed until the protocol permits opening it.
 
-A gold-process PASS means the process artifacts are complete/coherent; it does **not** mean NutEV performance is scientifically superior.
+`external_test` is never released automatically by software readiness, CI success or a validation UI action. A gold-process PASS means the process artifacts are complete/coherent; it does **not** mean NutEV performance is scientifically superior.
 
 ## Documentation
 
