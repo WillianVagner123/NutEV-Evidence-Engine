@@ -1,6 +1,6 @@
 # NutEV Reference Engine 1.1.0 — release notes
 
-Status: **production accepted / GitHub released / Zenodo archive pending**.
+Status: **production accepted / GitHub released / Zenodo archived**.
 
 Immutable GitHub release identity:
 
@@ -9,6 +9,8 @@ version = 1.1.0
 tag = v1.1.0
 release_sha = 49588233ad2828b8fcc6140398ab55aedf7c03ef
 published_at = 2026-09-12
+zenodo_record = 22726717
+doi = 10.5281/zenodo.22726717
 ```
 
 Production acceptance originally closed on baseline SHA:
@@ -27,9 +29,12 @@ The historical `v1.0.0` Zenodo DOI remains immutable:
 10.5281/zenodo.21998607
 ```
 
-That DOI is **not** the DOI of `v1.1.0` and must not be reused. A version-specific
-`v1.1.0` DOI will be recorded only after a real Zenodo archive record exists and
-has been independently verified.
+That DOI is **not** the DOI of `v1.1.0` and is not reused. The verified
+version-specific archive DOI for `v1.1.0` is:
+
+```text
+10.5281/zenodo.22726717
+```
 
 ## Highlights
 
@@ -96,13 +101,14 @@ platform failure.
 
 ## Scientific boundary
 
-Software acceptance and GitHub publication do **not** promote scientific validity.
+Software acceptance and GitHub/Zenodo publication do **not** promote scientific
+validity.
 
 A1 remains dependent on genuine human academic review, PRESS/GF-10/freeze and
 other protocol gates before formal-search/PRISMA claims are allowed. A2 remains
 dependent on reviewed legacy provenance before any `LegacyBindingEvidence` may
-be created. No scientific decision is inferred from CI, deployment or runtime
-availability.
+be created. No scientific decision is inferred from CI, deployment, runtime
+availability or archive publication.
 
 The broader scientific validation status of the Reference Engine also remains
 separate from software release acceptance. Ranking tiers are information-
@@ -117,7 +123,7 @@ providers. When credentials are absent, production records them as
 
 ## Public release state
 
-The GitHub release is complete:
+The software publication is complete:
 
 1. final publication SHA selected and validated;
 2. required exact-SHA gates passed;
@@ -126,20 +132,22 @@ The GitHub release is complete:
    `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
 5. GitHub Release published with audited artifacts/evidence;
 6. post-release documentation reconciled without moving the tag;
-7. production redeploy and read-only post-deploy audit passed again.
+7. production redeploy and read-only post-deploy audit passed again;
+8. GitHub↔Zenodo integration enabled and synchronized;
+9. Zenodo record `22726717` confirmed for software version `1.1.0`;
+10. version-specific DOI `10.5281/zenodo.22726717` recorded.
 
 ## Zenodo archive state
 
-Zenodo remains the only external publication dependency.
+Zenodo archive publication is complete for `v1.1.0`.
 
-The repository metadata is prepared, but the `v1.1.0` archive record and DOI
-must remain unset until the Zenodo service actually creates a public record. The
-canonical operational tracking issue is GitHub issue `#1262`.
+```text
+record = 22726717
+record URL = https://zenodo.org/records/22726717
+DOI = 10.5281/zenodo.22726717
+```
 
-Once a real record exists:
-
-1. verify version, creator, license and archived source identity;
-2. capture the actual Zenodo record ID and version-specific DOI;
-3. update citation/archive metadata in a post-release documentation PR;
-4. run the normal repository gates;
-5. merge without moving, deleting or recreating the published `v1.1.0` tag.
+The archive closeout is a post-release metadata operation. It does not move,
+delete, recreate or retag `v1.1.0`. The canonical operational tracking issue is
+GitHub issue `#1262`, which may close only after the DOI metadata PR passes the
+normal repository gates and merges successfully.
