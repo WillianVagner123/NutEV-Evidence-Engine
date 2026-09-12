@@ -2,11 +2,12 @@
 
 **Documento:** Procedimento Operacional Padrão  
 **Produto:** NutEV Reference Engine  
-**Versão estável publicada:** 1.0.0  
+**Versão estável publicada:** 1.1.0  
 **Plataforma operacional principal:** Windows  
 **Python suportado:** 3.12 ou 3.13  
 **Fluxo atual da `main`:** `SEARCH -> NORMALIZE -> DEDUPLICATE -> TRACEABILITY GATE -> RANK -> EXPORT -> AUDIT`  
-**DOI da versão publicada:** `10.5281/zenodo.21998607`
+**DOI da versão 1.1.0:** pendente de emissão/verificação pelo Zenodo  
+**DOI histórico da versão 1.0.0:** `10.5281/zenodo.21998607`
 
 ## 1. Objetivo
 
@@ -26,7 +27,7 @@ Este POP cobre a branch `main` corrente de:
 WillianVagner123/NutEV-Evidence-Engine
 ```
 
-A tag `v1.0.0` é o snapshot publicado e arquivado. Guardrails adicionados depois da release pertencem à `main` e não reescrevem a tag.
+A tag `v1.1.0` é o snapshot estável publicado no GitHub e aponta para o commit imutável `49588233ad2828b8fcc6140398ab55aedf7c03ef`. Commits posteriores da `main` não reescrevem essa tag. O arquivamento Zenodo/DOI version-specific da `v1.1.0` permanece pendente até existir um registro real e verificável.
 
 Antes de uma execução auditável, registrar:
 
@@ -348,6 +349,7 @@ deve atualizar documentação e testes e passar pelo CI antes do merge.
 - arquitetura e pesos: `ARCHITECTURE.md`;
 - providers: `SEARCH_PROVIDERS.md`;
 - limitações: `KNOWN_LIMITATIONS.md`;
-- release: `RELEASE_V1_0_0.md`;
+- release atual: `RELEASE_NOTES_1_1_0.md`;
+- release histórica `v1.0.0`: `RELEASE_V1_0_0.md`;
 - checklist de release: `RELEASE_CHECKLIST.md`;
 - DOI/Zenodo: `ZENODO_SETUP.md`.

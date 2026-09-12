@@ -30,7 +30,7 @@ Não afirmar:
 - um commit de derivação não verificado;
 - ORCID ou afiliação não confirmados.
 
-A metadata da release v1.0.0 identifica Willian Vagner Dorneles Schneider como criador do NutEV Reference Engine publicado.
+A metadata das releases públicas identifica Willian Vagner Dorneles Schneider como criador do NutEV Reference Engine.
 
 ## Licença
 
@@ -38,7 +38,19 @@ A licença do repositório é MIT, conforme `LICENSE`.
 
 Dependências e serviços externos mantêm seus próprios termos/licenças. URLs retornadas por providers são metadados e não transferem direitos de redistribuição do conteúdo remoto.
 
-## Release publicada
+## Release atual publicada no GitHub
+
+- versão: `1.1.0`;
+- tag imutável: `v1.1.0`;
+- release commit: `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
+- data da GitHub Release: `2026-09-12`;
+- produção: aceita;
+- Zenodo record da `v1.1.0`: pendente de verificação/publicação;
+- DOI version-specific da `v1.1.0`: ausente até emissão real pelo Zenodo.
+
+A `main` pode avançar depois da release. Isso não altera a identidade do snapshot `v1.1.0` nem autoriza mover a tag.
+
+### Release histórica anterior
 
 - versão: `1.0.0`;
 - tag: `v1.0.0`;
@@ -46,7 +58,7 @@ Dependências e serviços externos mantêm seus próprios termos/licenças. URLs
 - Zenodo record: `21998607`;
 - DOI: `10.5281/zenodo.21998607`.
 
-O DOI foi registrado somente depois da criação real do arquivo Zenodo e não alterou a tag já publicada.
+O DOI histórico foi registrado somente depois da criação real do arquivo Zenodo e não alterou a tag já publicada. Ele não pode ser reutilizado como DOI version-specific da `v1.1.0` ou de qualquer versão futura.
 
 ## Gate para futuras releases
 
@@ -61,4 +73,4 @@ Antes de uma nova release pública:
 7. verificar o registro Zenodo;
 8. registrar somente o DOI realmente emitido para a nova versão.
 
-Não reutilizar `10.5281/zenodo.21998607` como DOI version-specific de uma versão futura.
+Não reutilizar DOI version-specific de uma versão anterior em uma nova release.

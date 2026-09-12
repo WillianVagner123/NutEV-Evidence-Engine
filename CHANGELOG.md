@@ -4,6 +4,10 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+Nenhuma mudança pública pós-`v1.1.0` registrada neste changelog até o fechamento documental de 2026-09-12.
+
+## [1.1.0] - 2026-09-12
+
 ### Scientific Workspace v2
 
 - Adicionado `/quality.html` como **Quality Observatory** somente-leitura para saúde operacional, proveniência, retrieval, completude de metadados, mapeamento, providers e estado dos gates, sem representar esses sinais como qualidade metodológica da evidência.
@@ -79,13 +83,15 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 - Documentado o publication manifest, citation bundle, statement candidates, reutilização do coordenador local-only e fronteira `publication preparation != EvidenceClaim acceptance` em `docs/GOVERNED_PUBLICATION_MANIFEST.md`.
 - Documentado o gate humano de EvidenceClaim, atomicidade por EvidenceRecord, integridade referencial e fronteira `claim acceptance != validity/certainty/inclusion` em `docs/EVIDENCE_CLAIM_REVIEW.md`.
 
-### Correções pós-v1.0.0 já presentes na main
+### Correções incorporadas desde v1.0.0
 
 - Perfil de coleta `operational` passou a ser o padrão para a primeira execução, mantendo os limites maiores via `NUTEV_DEEP_COLLECTION=1`.
 - O terminal passou a exibir perfil e limites antes da coleta de rede.
 - HTTP `401`/`403` nas interfaces nativas LILACS/BVS e SciELO passou a ser tratado como estado explícito `unavailable` em vez de falha fatal da rota latino-americana.
 - Uma execução real no Windows foi registrada com status `COMPLETE`, 8.702 entradas no ranking, 115 grupos de taxonomia e TOP 100.
 - DOI real da versão 1.0.0 foi registrado na documentação/citação após a publicação do arquivo Zenodo, sem mover a tag.
+- A release `v1.1.0` foi publicada no GitHub em 12/09/2026 no commit imutável `49588233ad2828b8fcc6140398ab55aedf7c03ef` após os gates de release, deploy e auditoria pós-deploy.
+- O arquivamento Zenodo/DOI da `v1.1.0` permanece externo e fail-closed até existir um registro real; o DOI de `v1.0.0` não é reutilizado.
 
 ## [1.0.0] - 2026-08-18
 
@@ -152,5 +158,6 @@ Essa regra não equivale a deduplicação semântica completa.
 
 O DOI foi incorporado à documentação corrente após a criação real do registro Zenodo; a tag `v1.0.0` permaneceu imutável.
 
-[Unreleased]: https://github.com/WillianVagner123/NutEV-Evidence-Engine/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/WillianVagner123/NutEV-Evidence-Engine/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0
 [1.0.0]: https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.0.0

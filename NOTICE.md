@@ -34,11 +34,23 @@ A árvore atual de `src/nutev/` não depende do runtime removido `src/local_deep
 
 ## Criador e release atual
 
-A metadata da release `v1.0.0` identifica **Willian Vagner Dorneles Schneider** como criador do NutEV Reference Engine.
+A metadata das releases públicas do NutEV Reference Engine identifica **Willian Vagner Dorneles Schneider** como criador do produto.
 
 ORCID e afiliação institucional não são afirmados sem confirmação independente.
 
-Release publicada:
+Release atual publicada no GitHub:
+
+- versão: `1.1.0`;
+- tag imutável: `v1.1.0`;
+- release commit: `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
+- data da GitHub Release: `2026-09-12`;
+- produção: aceita;
+- Zenodo record da `v1.1.0`: pendente de verificação/publicação;
+- DOI version-specific da `v1.1.0`: ausente até emissão real pelo Zenodo.
+
+A tag `v1.1.0` não deve ser movida, apagada ou recriada para acompanhar commits posteriores da `main`.
+
+### Release histórica anterior
 
 - versão: `1.0.0`;
 - tag: `v1.0.0`;
@@ -46,7 +58,7 @@ Release publicada:
 - Zenodo record: `21998607`;
 - DOI: `10.5281/zenodo.21998607`.
 
-O DOI foi adicionado à documentação/citação corrente somente depois da criação real do registro Zenodo. A tag publicada permaneceu imutável.
+O DOI histórico foi adicionado à documentação/citação somente depois da criação real do registro Zenodo. Ele não pode ser reutilizado como DOI da `v1.1.0`.
 
 ## Dependências e serviços externos
 

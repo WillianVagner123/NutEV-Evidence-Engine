@@ -27,7 +27,8 @@ Esta pasta contém a documentação operacional, técnica, de auditoria, taxonom
 
 ## Release, DOI e proveniência
 
-- [`RELEASE_V1_0_0.md`](RELEASE_V1_0_0.md) — identidade e conteúdo da release estável `v1.0.0`.
+- [`RELEASE_NOTES_1_1_0.md`](RELEASE_NOTES_1_1_0.md) — identidade, conteúdo e estado da release estável atual `v1.1.0`.
+- [`RELEASE_V1_0_0.md`](RELEASE_V1_0_0.md) — identidade e conteúdo da release histórica `v1.0.0`.
 - [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md) — checklist para futuras releases.
 - [`ZENODO_SETUP.md`](ZENODO_SETUP.md) — publicação GitHub/Zenodo e regra de DOI.
 - [`PROVENANCE_AND_LICENSE.md`](PROVENANCE_AND_LICENSE.md) — proveniência do código e fronteira de licenciamento.
@@ -140,10 +141,19 @@ Esses números descrevem uma execução observada, não uma promessa de volume o
 
 ## Release publicada
 
+- versão atual publicada no GitHub: `1.1.0`
+- tag imutável: `v1.1.0`
+- release commit: `49588233ad2828b8fcc6140398ab55aedf7c03ef`
+- data da GitHub Release: `2026-09-12`
+- produção: aceita
+- Zenodo/DOI da `v1.1.0`: pendente de registro real e verificação
+
+Release histórica anterior:
+
 - versão: `1.0.0`
 - tag: `v1.0.0`
 - release commit: `5728d79b05e618897f01ba93886a17584c9f215f`
 - Zenodo record: `21998607`
 - DOI: `10.5281/zenodo.21998607`
 
-A `main` pode conter correções pós-release. A tag publicada permanece imutável.
+A `main` pode conter correções pós-release. Tags publicadas permanecem imutáveis, e o DOI histórico de `v1.0.0` não deve ser reutilizado para `v1.1.0`.
