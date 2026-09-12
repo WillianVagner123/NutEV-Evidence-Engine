@@ -1,9 +1,7 @@
 cff-version: 1.2.0
 message: >-
-  NutEV Reference Engine v1.1.0 is published as an immutable GitHub Release.
-  Cite version 1.1.0 and its release commit. Archive release date and a
-  version-specific Zenodo DOI must only be added after a real public archive
-  record is issued and verified.
+  NutEV Reference Engine v1.1.0 is published as an immutable GitHub Release and
+  archived on Zenodo. Cite version 1.1.0 and its version-specific DOI.
 title: "NutEV Reference Engine: taxonomy-guided reference discovery and ranking for Lifestyle Nutrition"
 abstract: >-
   NutEV Reference Engine is an open-source software tool for multi-source
@@ -17,6 +15,8 @@ abstract: >-
   recovery gates and fail-closed private scientific applications.
 type: software
 version: "1.1.0"
+doi: "10.5281/zenodo.22726717"
+date-released: 2026-09-12
 license: MIT
 repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
 url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0"
@@ -40,13 +40,14 @@ authors:
   - given-names: "Willian Vagner Dorneles"
     family-names: "Schneider"
 # ORCID and affiliation are intentionally omitted until independently confirmed.
-# Archive date and DOI are intentionally omitted until a version-specific v1.1.0
-# archive record is actually published and verified. The v1.0.0 DOI must not be
-# reused.
+# DOI 10.5281/zenodo.22726717 is the verified version-specific archive DOI for
+# NutEV Reference Engine v1.1.0. The historical v1.0.0 DOI is not reused.
 preferred-citation:
   type: software
   title: "NutEV Reference Engine: taxonomy-guided reference discovery and ranking for Lifestyle Nutrition"
   version: "1.1.0"
+  doi: "10.5281/zenodo.22726717"
+  date-released: 2026-09-12
   license: MIT
   repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
   url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0"
