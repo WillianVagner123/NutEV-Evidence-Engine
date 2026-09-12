@@ -31,9 +31,11 @@ Software publicado/arquivado e validade científica são gates diferentes.
 ## Produto hospedado e multi-tenant
 
 - [`MULTITENANT_APPLICATION_LAYER.md`](MULTITENANT_APPLICATION_LAYER.md) — ResearchApplications reutilizáveis e escopo por projeto.
-- [`TENANCY_SECURITY_MODEL.md`](TENANCY_SECURITY_MODEL.md) — isolamento e autorização.
-- [`PRODUCT_DEATH_TEST_REPORT.md`](archive/2026/PRODUCT_DEATH_TEST_REPORT.md) — relatório **histórico** do death test de 10/09/2026; não é o estado atual de produção.
-- [`apps/nutev-web/README.md`](../apps/nutev-web/README.md) — diferença entre runtime hospedado e servidor científico/local.
+- [`MULTITENANT_AUTH_SESSION.md`](MULTITENANT_AUTH_SESSION.md) — identidade/sessão e fronteira de autenticação.
+- [`MULTITENANT_WORKSPACE_PROJECT_ACCESS.md`](MULTITENANT_WORKSPACE_PROJECT_ACCESS.md) — autorização por workspace/projeto.
+- [`FINAL_MULTITENANT_RELEASE_GATE.md`](FINAL_MULTITENANT_RELEASE_GATE.md) — barreira de promoção do runtime multi-tenant.
+- [`archive/2026/PRODUCT_DEATH_TEST_REPORT.md`](archive/2026/PRODUCT_DEATH_TEST_REPORT.md) — relatório **histórico** do death test de 10/09/2026; não é o estado atual de produção.
+- [`../apps/nutev-web/README.md`](../apps/nutev-web/README.md) — diferença entre runtime hospedado e servidor científico/local.
 
 A jornada genérica suportada é:
 
