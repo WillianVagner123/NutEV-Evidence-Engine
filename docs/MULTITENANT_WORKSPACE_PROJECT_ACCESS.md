@@ -1,28 +1,24 @@
-# Nut Evidence Platform — Workspace / Project Access
+# NutEV — Workspace / Project Access Contract
 
-**PR-3 scope:** authoritative Workspace Service + Project Service + Permission Service integration and basic server-backed context switchers.
+Status: **current v1.1.0 hosted-product contract**.
 
-This PR does not scope searches yet and does not migrate any historical scientific asset.
-
-## Hierarchy
+## Authorization hierarchy
 
 ```text
 Authenticated User
-  ↓
-Principal
-  ↓
-Workspace membership
-  ↓
-Project access
-  ↓
-Permission Service
+→ Session
+→ Principal
+→ active Workspace membership
+→ Project access
+→ Permission Service
+→ resource-specific authorization
 ```
 
-A `workspace_id` or `project_id` received from the browser is only a target identifier. It is never proof of access.
+A `workspace_id` or `project_id` supplied by the browser is only a target identifier. It is never proof of access.
 
-## Platform tenancy schema
+## Platform tenancy state
 
-The PR extends the existing platform database with access metadata only:
+The platform database keeps tenancy/navigation metadata separate from scientific payloads:
 
 ```text
 platform_tenancy_meta
@@ -32,208 +28,61 @@ platform_projects
 platform_session_contexts
 ```
 
-No scientific payload, query, screening decision, extraction, full text, PRISMA state or manuscript is stored in these tables.
+These tables do not become a second bibliographic registry and do not, by themselves, record screening, extraction, PRISMA, recommendation or manuscript decisions.
 
-### `platform_workspaces`
+`platform_session_contexts` stores the currently selected workspace/project for navigation. **Selection is not authorization**: every private operation revalidates the current membership, project ownership and permission.
 
-```text
-id
-name
-slug
-owner_user_id
-created_at
-status
-```
+## Workspace and project access
 
-### `platform_workspace_memberships`
+`WorkspaceProjectService` is server-authoritative. Session resolution rebuilds the Principal from current membership state, so a removed or suspended membership stops authorizing subsequent requests.
 
-```text
-workspace_id
-user_id
-role
-status
-invited_by
-joined_at
-```
+Project-wide access is available only through authorized workspace roles. Reviewer-style access remains assignment-scoped where the Human Review layer grants it; knowing a project ID never grants the whole project.
 
-### `platform_projects`
-
-```text
-id
-workspace_id
-name
-slug
-description
-project_type
-status
-created_by
-created_at
-updated_at
-```
-
-### `platform_session_contexts`
-
-```text
-session_id
-user_id
-workspace_id
-project_id
-updated_at
-```
-
-This table stores navigation context only. **Selection is not authorization.** Every later private operation must independently re-authorize the target.
-
-## Workspace Service
-
-`WorkspaceProjectService` exposes a server-side membership loader used by `SessionPrincipalService`. Every session resolution therefore reconstructs the Principal from the current membership state.
-
-Consequences:
-
-- a removed/suspended membership stops authorizing access on the next request;
-- the frontend cannot inject memberships into a Principal;
-- cross-workspace IDs fail closed;
-- the workspace owner membership cannot be disabled through the ordinary status mutation primitive.
-
-`provision_workspace()` is deliberately an explicit bootstrap/migration primitive. PR-3 does not publish a self-service workspace creation endpoint and does not auto-create Willian or any named tenant.
-
-## Project Service
-
-Project-wide access is currently available to:
-
-```text
-WORKSPACE_OWNER
-WORKSPACE_ADMIN
-RESEARCHER
-VIEWER
-```
-
-The project still applies Permission Service rules to each operation. A Viewer resolving a project context does not gain screening/extraction permissions.
-
-`REVIEWER` and `GUEST_REVIEWER` do **not** receive automatic access to the whole project. Their future assigned-item access belongs to the HumanReviewEngine/assignment boundary.
-
-For every project target:
-
-```text
-Principal
-  ↓
-active workspace membership
-  ↓
-project exists AND belongs to that workspace
-  ↓
-role has project-wide access or future assignment scope
-  ↓
-Permission Service
-```
-
-Knowing a valid `project_id` from another workspace is insufficient.
+`PLATFORM_ADMIN` remains infrastructure authority, not an implicit reader of private project/scientific state.
 
 ## Context API
 
-Available only in `NUTEV_AUTH_MODE=pilot` with a valid authenticated session:
+In the hosted `NUTEV_AUTH_MODE=pilot` runtime:
 
 ```text
 GET  /api/context
 POST /api/context/select
 ```
 
-`GET /api/context` returns only the workspaces accessible by the current Principal and the projects visible in the selected workspace.
+`GET /api/context` returns only workspaces/projects visible to the authenticated Principal.
 
-`POST /api/context/select` accepts target IDs but validates them server-side. Unknown, malformed, removed, foreign-workspace and foreign-project targets use the same anti-enumeration response:
+`POST /api/context/select` validates the requested target server-side. Unknown, malformed, removed or foreign targets use not-found semantics rather than revealing another tenant's resource.
 
-```text
-404 {"error":"context_not_found"}
-```
+The browser does not persist workspace/project ownership claims in `localStorage` or `sessionStorage`; selection is persisted through the authenticated server session.
 
-No context is accepted from a `user_id` parameter.
+## Product navigation
 
-## Switchers
+Workspace/project switchers are server-backed. Changing context causes subsequent Search, Library, ResearchApplication, Human Review and Export operations to re-resolve authorization against the newly selected context.
 
-Basic switchers are loaded on:
+A context switch never migrates or reassigns historical scientific assets.
 
-```text
-/
-/search.html
-/articles.html
-```
+## Search integration
 
-They use:
+New authenticated searches are tenant-scoped before execution. Search ownership/history is enforced by the search-isolation contract in [`MULTITENANT_SEARCH_ISOLATION.md`](MULTITENANT_SEARCH_ISOLATION.md).
 
-```text
-workspace-context.js
-```
+Historical/unowned runs are not silently adopted because a user selects a workspace/project or happens to be logged in.
 
-The script:
+## Compatibility boundary
 
-- reads context from `/api/context`;
-- persists selection only through `/api/context/select`;
-- does not write workspace/project IDs to `localStorage` or `sessionStorage`;
-- reloads after switching so all components start from the newly server-validated session context;
-- explicitly labels the selection as context rather than permission.
+The code retains `legacy` mode for compatibility/recovery. The accepted hosted production baseline for v1.1.0 is `NUTEV_AUTH_MODE=pilot`; see [`FINAL_MULTITENANT_RELEASE_GATE.md`](FINAL_MULTITENANT_RELEASE_GATE.md).
 
-If auth is `legacy`, there is no authenticated session, or the user has no workspace, the legacy UI remains unchanged.
+## Security invariants
 
-## Relationship to search
+The current test/release contract requires, among other checks:
 
-PR-3 deliberately does **not** change:
-
-```text
-POST /api/search/jobs
-GET  /api/search/jobs/<job_id>
-GET  /api/searches
-GET  /api/searches/<search_id>
-```
-
-Search remains under the prior browser-session compatibility scope until PR-4. This is intentional to avoid partially claiming multi-tenant search isolation before ownership is written into new search jobs/runs.
-
-PR-4 must consume the server-authoritative context/Principal and persist:
-
-```text
-workspace_id
-user_id
-project_id? 
-job_id
-search_id
-```
-
-without migrating historical searches.
-
-## Backwards compatibility
-
-`NUTEV_AUTH_MODE=legacy` remains the default. Tenancy/auth tables are lazy and do not affect normal legacy startup.
-
-No historical browser-session owner is mapped to a User/Workspace by this PR.
-
-## Security properties tested
-
-- tenant A cannot resolve workspace B;
-- tenant A cannot combine workspace A with project B;
-- knowing project ID does not bypass workspace membership;
-- reviewer cannot open the whole project;
-- viewer can resolve read context but cannot gain screening permission;
+- tenant A cannot resolve tenant B's workspace/project using exact IDs;
+- a project must belong to the selected authorized workspace;
 - removed membership stops authorizing new Principals;
-- session Principal reloads memberships on every resolve;
-- context persists across refresh by session;
-- switching workspace clears the selected project;
-- context is cleared when membership disappears;
-- context UI is server-backed and uses no browser storage;
-- PR-3 does not accidentally scope or mutate search jobs before PR-4.
+- selection survives refresh only through server session state;
+- switching workspace clears/invalidate incompatible project context;
+- browser context selection is not treated as permission;
+- infrastructure-admin status alone does not bypass private tenant state.
 
-## Scientific impact
+## Scientific boundary
 
-None.
-
-```text
-NO search execution
-NO search ownership migration
-NO Registry mutation
-NO Workbench mutation
-NO Article 1 mutation
-NO Article 2 mutation
-NO validation decision mutation
-NO PRESS/GF-10 change
-NO PRISMA event
-```
-
-## Rollback
-
-Revert PR-3. New platform tenancy/context tables may remain unused in the isolated platform database. No scientific data rollback is required because the PR does not mutate scientific state.
+Workspace/project selection and authorization do not execute searches, change providers/ranking, mutate Registry identity, alter screening/extraction/review decisions, activate Article 1/Article 2 scientific gates, or create PRISMA events.

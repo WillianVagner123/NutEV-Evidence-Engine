@@ -1,14 +1,12 @@
 # NutEV — Full Multi-tenant Death Test
 
-Status: PR-12 release gate.
+Status: **current hermetic release/security gate**.
 
 ## Objective
 
-Prove, in one hermetic scenario, that two independent tenants can reuse the same NutEV scientific engine and the same global bibliographic identity without sharing private operational or scientific state.
+Prove that independent tenants can reuse the same NutEV Engine and global bibliographic identity without sharing private operational/scientific state.
 
-The gate is intentionally destructive only inside a temporary fixture directory.
-
-It does not connect to production, does not call providers, does not execute scientific searches, and cannot activate historical ownership.
+The scenario is destructive only inside a fresh temporary fixture. It does not connect to production, call external providers, execute formal scientific searches or activate historical ownership.
 
 ## Fixture
 
@@ -27,131 +25,69 @@ Global Evidence Registry
   one shared article_id
 ```
 
-Both projects use the same global document identity. Every private layer must remain independent.
+Both projects reuse the same global document identity while every private layer remains tenant/project scoped.
 
-## Matrix
+## Covered boundaries
 
-The single scenario crosses these boundaries:
+The gate crosses the product's main private boundaries in one scenario:
 
-1. Identity
-   - distinct users;
-   - correct password authenticates;
-   - wrong password fails.
+1. authentication/session identity;
+2. workspace/project context;
+3. search ownership/history;
+4. Evidence Library placement/full-text grants;
+5. ResearchApplication configuration;
+6. Human Review assignments/decisions/locks;
+7. Export and audit custody;
+8. PLATFORM_ADMIN non-bypass of tenant-private state.
 
-2. Workspace / project context
-   - each session selects its own workspace/project;
-   - Tenant A cannot select Tenant B's workspace/project even with exact IDs.
-
-3. Search ownership
-   - distinct job IDs and search IDs;
-   - project history contains only its own search;
-   - exact foreign job/search ID fails closed;
-   - an unowned historical-like search ID is not automatically adopted.
-
-4. Evidence Library
-   - the same global `article_id` is reusable by both tenants;
-   - Placement IDs differ;
-   - private state/tags/notes remain independent;
-   - exact foreign Placement ID fails closed;
-   - full-text grant created by A is invisible to B;
-   - internal cache path is absent from the public grant descriptor.
-
-5. ResearchApplication
-   - A uses `SCOPING_REVIEW`;
-   - B uses `INTEGRATIVE_REVIEW`;
-   - configuration remains private;
-   - exact foreign workspace/project context fails closed.
-
-6. Human Review
-   - independent rounds, reviewers and assignments;
-   - field allowlist hides private payload fields;
-   - exact foreign round ID fails closed;
-   - exact foreign assignment ID fails closed;
-   - submit locks the decision against later mutation.
-
-7. Export / Audit
-   - independent export IDs and application bindings;
-   - project export listing shows only local exports;
-   - exact foreign export ID fails closed;
-   - each project audit chain validates independently.
-
-8. Platform administration
-   - a `PLATFORM_ADMIN` principal with no workspace membership cannot bypass private search, library, application or export boundaries.
+Exact foreign IDs are exercised wherever possible so anti-enumeration is tested against a real existing resource rather than only a random unknown ID.
 
 ## Execution
-
-Hermetic CLI:
 
 ```bash
 python tools/multitenant_death_test.py
 ```
 
-Optional report destination:
+Optional report:
 
 ```bash
 python tools/multitenant_death_test.py --output /tmp/nutev-tenant-death.json
 ```
 
-The CLI always creates its operational data under a fresh `TemporaryDirectory`.
-
-It deliberately has no options for:
-
-```text
-project_output_reference
-production database
-remote host
-SSH
-public URL
-historical source root
-migration apply
-ownership activation
-```
+The tool creates its operational state under a fresh `TemporaryDirectory` and has no production-host, SSH, migration-apply or ownership-activation option.
 
 ## PASS contract
 
-A successful report must contain:
+A successful report identifies:
 
-```json
-{
-  "record_type": "NUTEV_FULL_MULTITENANT_DEATH_TEST",
-  "schema_version": 1,
-  "status": "PASS",
-  "tenant_count": 2,
-  "project_count": 2,
-  "assertions": {
-    "no_network_required": true,
-    "temporary_fixture_only": true,
-    "historical_ownership_modified": false,
-    "scientific_search_executed": false,
-    "article1_state_modified": false,
-    "article2_legacy_binding_modified": false,
-    "platform_admin_private_bypass": false
-  }
-}
+```text
+record_type = NUTEV_FULL_MULTITENANT_DEATH_TEST
+schema_version = 1
+status = PASS
+tenant_count = 2
+project_count = 2
 ```
 
-Every listed death check must independently report `PASS`.
+It also asserts, among other properties:
+
+```text
+no_network_required = true
+temporary_fixture_only = true
+historical_ownership_modified = false
+scientific_search_executed = false
+article1_state_modified = false
+article2_legacy_binding_modified = false
+platform_admin_private_bypass = false
+```
+
+Every required death check must pass independently.
 
 ## Scientific non-impact
 
-This gate does not mutate:
+The hermetic gate does not mutate production Registry/Workbench data, formal Article 1 state, D-132 source/decisions, PRESS/GF-10/query freeze, Article 2 legacy binding, PRISMA, production Human Review decisions or production exports.
 
-```text
-Global Registry production records
-Workbench
-formal Article 1 search state
-D-132 canonical sample
-PRESS / GF-10 / query freeze
-Article 2 legacy binding
-PRISMA
-Human Review production decisions
-production exports
-```
+A PASS proves the tested isolation/security contracts in the disposable scenario. It does not by itself prove that a particular production SHA has been deployed or that a scientific methodology is valid.
 
-The Registry fixture is synthetic and exists only in the temporary test directory.
+## Promotion relationship
 
-## Relation to PR-13
-
-PR-12 is the hermetic release gate. PR-13 still requires a production/public smoke after deployment with the deployed SHA, authentication boundary, provider/search availability, private A1/A2 access and version endpoint verified against the actual runtime.
-
-A PASS here does not prove that the current production host is deployed or reachable.
+The death test is one prerequisite of the exact-SHA production release gate. Production promotion additionally requires the normal CI/security/artifact/browser gates, recovery readiness, successful Hetzner deployment, runtime/edge verification and exact deployed commit identity described in [`FINAL_MULTITENANT_RELEASE_GATE.md`](FINAL_MULTITENANT_RELEASE_GATE.md).
