@@ -2,27 +2,68 @@
 
 **Descoberta, normalização, rastreabilidade, deduplicação, classificação e priorização de referências para Nutrição do Estilo de Vida.**
 
-> Candidate under audit: **v1.1.0 — not published**
-> Previous archived stable release: **v1.0.0**  
-> DOI somente da versão v1.0.0: **10.5281/zenodo.21998607**  
-> Python: **3.12–3.13**  
-> Licença: **MIT**
+> **Versão de software:** 1.1.0  
+> **Estado operacional:** produção aceita  
+> **Estado de publicação:** ainda não publicada como `v1.1.0`  
+> **Baseline de aceitação em produção:** `e40dfd8c48cde824fa6053f9b077157f21bae698`  
+> **Release histórica estável:** `v1.0.0`  
+> **DOI histórico de v1.0.0:** `10.5281/zenodo.21998607`  
+> **Python:** 3.12–3.13  
+> **Licença:** MIT
 
-O **NutEV Reference Engine** é um software de recuperação de informação para encontrar e organizar referências candidatas. Ele coleta registros em múltiplas fontes, normaliza metadados, aplica guardrails de rastreabilidade, deduplica por uma regra canônica de identidade, classifica pela taxonomia NutEV e gera uma fila técnica de leitura.
+O **NutEV Reference Engine** é uma plataforma de recuperação de informação para
+encontrar, organizar e auditar referências candidatas. O Engine coleta registros
+em múltiplas fontes, normaliza metadados, aplica guardrails de rastreabilidade,
+deduplica por identidade canônica, classifica pela taxonomia NutEV e gera filas
+técnicas de leitura e exportação.
 
-O score **não** representa qualidade metodológica, elegibilidade científica, certeza da evidência, força de recomendação ou recomendação clínica.
+O score **não** representa qualidade metodológica, elegibilidade científica,
+certeza da evidência, força de recomendação ou recomendação clínica.
 
-## Estado científico atual
+## Estado atual
 
-O projeto está sob um protocolo explícito de reabilitação/validação científica. O estado atual permanece:
+A versão 1.1.0 concluiu a aceitação operacional hospedada em modo multiusuário
+provisionado. O pipeline de produção exige gates exact-SHA antes do deploy,
+preserva o proxy Caddy já existente no host, mantém recovery com snapshots
+completos e executa auditoria pós-deploy somente leitura.
+
+A publicação pública da versão 1.1.0 ainda está pendente. Isso significa que:
+
+- o software 1.1.0 está aceito em produção;
+- ainda não existe tag/GitHub Release `v1.1.0` canônica;
+- ainda não existe DOI version-specific confirmado para 1.1.0;
+- o DOI de `v1.0.0` não pode ser reutilizado para 1.1.0.
+
+Veja `docs/RELEASE_NOTES_1_1_0.md`, `docs/FINAL_SYSTEM_ACCEPTANCE.md` e
+`docs/PUBLICATION_READINESS.md`.
+
+## Estado científico
+
+Aceitação de software e validade científica são gates diferentes.
+
+O estado de validação científica geral permanece:
 
 ```text
 B — DEMOTE
 ```
 
-Isto significa: o software funciona como utilitário operacional/experimental, mas seu benefício científico incremental sobre baselines e ferramentas existentes **ainda não foi demonstrado**.
+Isto significa que o Engine funciona como software operacional de recuperação e
+priorização, mas seu benefício científico incremental sobre comparadores ainda
+precisa ser demonstrado pelo protocolo de validação em `validation/`.
 
-O protocolo, o status, o gold-standard plan e os ledgers de resultados ficam em `validation/`. Métricas não executadas permanecem marcadas como `NOT_TESTED`; o projeto não preenche resultados por inferência.
+### A1 e A2
+
+A1 e A2 são aplicações científicas privadas que utilizam o Engine; não definem o
+comportamento genérico da plataforma.
+
+- **A1:** permanece dependente de revisão humana real e dos gates acadêmicos
+  aplicáveis, incluindo PRESS/GF-10/freeze antes de qualquer promoção de busca
+  formal/PRISMA.
+- **A2:** permanece fail-closed enquanto a proveniência histórica necessária ao
+  `LegacyBindingEvidence` não for demonstrada e revisada.
+- O auditor pós-deploy de produção é read-only e, no baseline aceito, encontrou
+  zero ResearchApplications A1 e zero A2 materializadas. Nenhum binding, busca ou
+  estado científico foi criado por inferência.
 
 ## Fluxo canônico
 
@@ -48,22 +89,57 @@ Iniciar-NutEV-Windows.bat
      -> tools/rank_references.py
 ```
 
-## Pacote Python e produto web
+## Produto web e multi-tenancy
 
-A distribuição `nutev-nutmev` contém a biblioteca Python e o CLI. O wheel/sdist
-não contém contas, bancos, buscas privadas, configurações de pesquisa A1/A2 ou
-backups. A interface web, seus scripts e configurações são implantados a partir
-do commit revisado do repositório; não estão incluídos no wheel.
+A hospedagem 1.1.0 usa `NUTEV_AUTH_MODE=pilot` e acesso provisionado. Não há
+promessa de cadastro público automático.
 
-O modo multiusuário é de acesso provisionado, não cadastro público automático.
-Use `docs/PUBLICATION_READINESS.md` para configuração, limitações e critérios de
-aceitação. O modo de compatibilidade `legacy` não é aceito como produção
-multi-tenant final. A1/A2 continuam projetos privados e seus gates científicos
-não são aprovados por uma publicação do software.
+A camada hospedada separa:
 
-## Instalação e execução
+```text
+user
+  -> workspace
+     -> project
+        -> ResearchApplication
+           -> private scientific state
+```
 
-Primeira instalação:
+Identidade bibliográfica global pode ser compartilhável, mas projeto, busca,
+revisão, bindings, decisões humanas e outputs privados são escopados ao contexto
+autorizado.
+
+Os testes de release incluem Chromium autenticado, troca de workspace/projeto,
+logout/stale-tab, lifecycle de busca/export e death tests multi-tenant.
+
+## Primeiro uso
+
+Quando uma conta não possui workspace/projeto provisionado, a interface deve
+explicar o bloqueio em vez de apresentar um vazio ambíguo. O fluxo esperado é:
+
+```text
+login
+  -> selecionar workspace
+  -> selecionar projeto
+  -> configurar aplicação/contexto
+  -> busca
+  -> Library
+  -> revisão/exportação
+```
+
+Provisionamento de conta/workspace/projeto é administrativo.
+
+## Pacote Python
+
+A distribuição `nutev-nutmev` contém biblioteca e CLI reutilizáveis. Wheel/sdist
+não devem conter contas, bancos, buscas privadas, configurações científicas A1/A2
+nem backups do servidor.
+
+A interface web e as ferramentas operacionais hospedadas são implantadas a partir
+do commit revisado do repositório; elas não fazem parte do wheel.
+
+## Instalação local
+
+Primeira instalação no Windows:
 
 ```bat
 git clone https://github.com/WillianVagner123/NutEV-Evidence-Engine.git
@@ -81,7 +157,8 @@ git rev-parse HEAD
 Iniciar-NutEV-Windows.bat
 ```
 
-Para auditoria, preserve o SHA mostrado por `git rev-parse HEAD` junto com os manifests e outputs daquela execução.
+Para auditoria, preserve o SHA retornado por `git rev-parse HEAD` junto com os
+manifests e outputs daquela execução.
 
 ## Saídas principais
 
@@ -94,32 +171,34 @@ project_output_reference/reference_ranking/AUDIT_MANIFEST.json
 project_output_reference/reference_ranking/latest.json
 ```
 
-- `TOP_REFERENCIAS.md`: TOP N para priorização de leitura.
-- `reference_ranking.csv`: tabela completa para inspeção/planilha.
-- `reference_ranking.jsonl`: saída estruturada.
-- `reference_quarantine.jsonl`: registros bloqueados pelo gate.
-- `AUDIT_MANIFEST.json`: hashes, política, fontes, contagens e assertions.
+- `TOP_REFERENCIAS.md`: fila TOP N para priorização de leitura;
+- `reference_ranking.csv`: tabela completa para inspeção;
+- `reference_ranking.jsonl`: saída estruturada;
+- `reference_quarantine.jsonl`: itens bloqueados por guardrail;
+- `AUDIT_MANIFEST.json`: hashes, política, fontes, contagens e assertions;
 - `latest.json`: resumo da execução.
 
 ## Guardrails de rastreabilidade
 
 O comportamento padrão é fail-closed.
 
-Um registro precisa de provider, título e uma rota rastreável. As classes são:
+Um registro precisa de provider, título e rota rastreável. Classes principais:
 
 - `A_IDENTIFIER`: DOI, PMID ou PMCID sintaticamente plausível;
 - `B_TRACEABLE_URL`: URL HTTP/HTTPS válida quando não há identificador válido;
 - `Q_INCOMPLETE_ORIGIN`: provider ou título ausente;
-- `Q_INVALID_IDENTIFIER`: identificador presente, porém malformado, sem URL HTTP/HTTPS válida;
-- `Q_UNTRACEABLE`: sem identificador válido e sem URL HTTP/HTTPS válida.
+- `Q_INVALID_IDENTIFIER`: identificador presente porém malformado, sem URL válida;
+- `Q_UNTRACEABLE`: sem identificador válido e sem URL rastreável.
 
-Registros `Q_*` ficam fora do ranking por padrão. O Engine não inventa nem repara identificadores para retirar um item da quarentena.
+Registros `Q_*` ficam fora do ranking por padrão. O Engine não inventa ou repara
+identificadores para remover itens da quarentena.
 
-A validação sintática não prova que um DOI/PMID/PMCID resolve para o documento correto; isso continua sendo uma limitação explícita.
+Validação sintática não prova que um DOI/PMID/PMCID resolve para o documento
+correto; isso permanece uma limitação explícita.
 
 ## Identidade e deduplicação
 
-Coleta e ranking usam o mesmo contrato canônico em `src/nutev/reference_identity.py`:
+Coleta e ranking usam o contrato em `src/nutev/reference_identity.py`:
 
 ```text
 DOI válido
@@ -128,13 +207,13 @@ DOI válido
   -> título normalizado
 ```
 
-A regra é determinística e usada nas duas etapas. Quando duas manifestações têm a mesma identidade, o Engine preserva preferencialmente o registro com texto descritivo mais rico.
+A regra é determinística. Ela não equivale a deduplicação semântica/work-level
+completa; versões, traduções ou manifestações com identificadores distintos ainda
+podem permanecer separadas.
 
-Isto **não** é deduplicação semântica/work-level completa. Republicações, versões, traduções, documentos irmãos ou manifestações com identificadores diferentes ainda podem permanecer separadas.
+## Taxonomia
 
-## Taxonomia canônica
-
-A classificação ativa é controlada por:
+Registry ativo:
 
 ```text
 config/taxonomy_registry.json
@@ -146,7 +225,7 @@ Versão canônica atual:
 2026-08-v2
 ```
 
-As dimensões de classificação são:
+Dimensões principais:
 
 ```text
 domain
@@ -155,36 +234,13 @@ condition
 outcome
 ```
 
-Os arquivos `config/keyword_taxonomy*.json` permanecem como fontes de vocabulário. O registry decide quais caminhos semânticos são canônicos.
-
-`workstreams.*` e `global.document_types.*` não entram no score taxonômico. Um novo caminho semântico não registrado causa `TaxonomyError` em vez de criar silenciosamente uma categoria nova.
-
-Cada referência pode receber:
-
-- `taxonomy_primary`;
-- `taxonomy_secondary`;
-- `taxonomy_groups`;
-- `taxonomy_group_scores`;
-- `taxonomy_primary_rank`;
-- `taxonomy_ranks`.
-
-A taxonomia descreve **sobre o que** o documento trata. Ela não é nível de evidência nem qualidade científica.
+A taxonomia descreve **sobre o que** o documento trata. Não representa nível de
+evidência nem qualidade científica.
 
 ## Ranking
 
-O score atual combina sinais explícitos de:
-
-- correspondência taxonômica;
-- palavras-chave foco;
-- tipo documental textual;
-- provider;
-- identificador primário válido;
-- recência;
-- penalidades por metadados ausentes.
-
-Os caps atuais para taxonomia e focus keywords ficam em `config/reference_mode.json`. Tipos documentais sobrepostos não empilham bônus: apenas o maior peso é aplicado.
-
-O campo `score_breakdown` mostra a contribuição de cada componente.
+O score combina sinais explícitos de taxonomia, focus keywords, tipo documental,
+provider, identificador válido, recência e penalidades de metadados.
 
 Faixas atuais:
 
@@ -192,11 +248,12 @@ Faixas atuais:
 - `B_STRONG_REFERENCE`: posições 21–100;
 - `C_DISCOVERY`: posições seguintes.
 
-Essas faixas significam **prioridade técnica de leitura**, não força científica.
+Essas faixas indicam prioridade técnica de leitura. `score_breakdown` registra a
+contribuição de cada componente.
 
-## Fontes suportadas
+## Providers
 
-O perfil operacional integra, conforme disponibilidade/configuração:
+Conforme disponibilidade/configuração:
 
 - PubMed;
 - Europe PMC;
@@ -208,13 +265,13 @@ O perfil operacional integra, conforme disponibilidade/configuração:
 - LILACS/BVS e SciELO por rota nativa;
 - Google Programmable Search, Brave e SerpAPI quando há credenciais.
 
-Scopus e Web of Science não são simulados. Sem acesso/licença configurada, o Engine registra a indisponibilidade e não fabrica substitutos.
+Providers opcionais sem credencial são registrados como `skipped_config`, não
+como buscas fictícias com zero resultados.
 
-Os limites de coleta são tetos operacionais, não garantia de cobertura exaustiva.
+Scopus e Web of Science não são simulados. Sem acesso/licença configurada, o
+Engine registra a indisponibilidade.
 
 ## Perfil profundo
-
-No CMD:
 
 ```bat
 set NUTEV_DEEP_COLLECTION=1
@@ -227,34 +284,54 @@ Para voltar ao perfil padrão:
 set NUTEV_DEEP_COLLECTION=
 ```
 
-O perfil profundo aumenta limites de coleta, mas não transforma a busca em levantamento exaustivo.
+O perfil profundo aumenta limites de coleta, mas não transforma uma execução em
+busca exaustiva formal.
+
+## Produção, deploy e recovery
+
+O release pipeline hospedado segue, em alto nível:
+
+```text
+required CI/security/browser gates
+  -> exact-SHA release barrier
+  -> recovery readiness
+  -> trusted SSH + 80/443 inventory
+  -> protected snapshot
+  -> bounded restore rehearsal
+  -> deploy
+  -> local/public smoke
+  -> read-only post-deploy audit
+```
+
+A política de recovery preserva três snapshots completos e protege o release
+ativo. Higiene de espaço pode remover apenas artefatos explicitamente seguros,
+como cache Docker de build não utilizado; volumes científicos e snapshots válidos
+não são tratados como cache.
 
 ## Auditoria
 
-Cada execução bem-sucedida de ranking registra:
+Cada execução bem-sucedida de ranking registra política de guardrails, versão da
+taxonomia, hashes de configuração/input/output, contagens e assertions de runtime.
 
-- política de guardrails;
-- versão/modo da taxonomia;
-- hashes das configurações;
-- hashes dos masters de entrada;
-- contagens de rastreáveis e quarentena;
-- hashes dos outputs;
-- assertions do runtime.
+Auditabilidade prova integridade e proveniência do pipeline em relação aos
+manifests. Ela **não prova verdade bibliográfica ou validade científica**.
 
-A auditabilidade prova integridade e proveniência do pipeline em relação aos manifests. Ela **não prova verdade bibliográfica ou validade científica**.
-
-Veja:
+Documentos principais:
 
 - `docs/AUDITABILITY_AND_GUARDRAILS.md`;
 - `docs/ARCHITECTURE.md`;
 - `docs/TAXONOMY.md`;
-- `docs/KNOWN_LIMITATIONS.md`.
+- `docs/KNOWN_LIMITATIONS.md`;
+- `docs/FINAL_SYSTEM_ACCEPTANCE.md`;
+- `docs/PUBLICATION_READINESS.md`;
+- `docs/RELEASE_NOTES_1_1_0.md`.
 
 ## Validação científica
 
-O projeto não deve ser promovido acima de `B — DEMOTE` apenas porque CI, Windows smoke ou hashes passam.
+O projeto não deve ser promovido acima de `B — DEMOTE` apenas porque CI,
+produção, Windows smoke ou hashes passam.
 
-A validação planejada exige, entre outros itens:
+A validação planejada inclui, entre outros itens:
 
 - gold standard independente;
 - comparadores/baselines;
@@ -279,31 +356,16 @@ validation/BENCHMARK_PLAN.md
 validation/SCIENTIFIC_VALIDATION_REPORT.md
 ```
 
-## NutEV Validation (MVP web)
-
-O diretório `apps/nutev-validation/` contém um MVP web separado do runtime do Reference Engine para operacionalizar o gate humano cego da validação científica.
-
-- modo local sem backend, com IndexedDB, retomada e exportação do packet preenchido;
-- modo online preparado para login por magic link via Supabase;
-- RLS separa os avaliadores e impede leitura das decisões do outro assessor durante `assessment`;
-- julgamento `0/1/2` com justificativa, timestamp, progresso, atalhos e "revisar depois";
-- import do `QUESTIONS.csv` e dos packets assessor-safe com verificação de SHA-256 e rejeição de score/rank/taxonomia/origem do sistema;
-- adjudicação somente depois do fechamento da avaliação cega;
-- exportação compatível com `tools/validate_gold_standard.py`;
-- MVP restrito ao split `validation`; o conjunto `external_test` permanece fora da aplicação e selado.
-
-O app **não** altera score, ranking, taxonomia ou runtime e não calcula métricas nem promove o estado científico automaticamente. O modo local funciona sem servidor; o modo online é deployável como frontend estático com backend Supabase. Veja `apps/nutev-validation/LOCAL_MODE.md`, `apps/nutev-validation/README.md` e `apps/nutev-validation/DEPLOYMENT.md`.
-
-## O que este projeto não é
+## O que o NutEV não é
 
 O NutEV Reference Engine não é:
 
 - revisão sistemática/scoping review automática;
-- mecanismo PRISMA;
-- avaliador de risco de viés;
+- mecanismo PRISMA automático;
+- avaliador automático de risco de viés;
 - avaliador automático de qualidade metodológica;
 - sistema de recomendação clínica;
-- substituto de leitura crítica humana;
+- substituto da leitura crítica humana;
 - simulador de bases licenciadas indisponíveis;
 - gerador de referências por IA.
 
@@ -316,11 +378,19 @@ python -m compileall -q src tools nutev_tests
 ruff check src tools nutev_tests --select F,E9
 ```
 
-O CI inclui testes em Python 3.12/3.13, Windows smoke, contrato de guardrails, typecheck, lint/compile, security scan, dependency review, CodeQL e validação de artefatos de release.
+O CI cobre Python 3.12/3.13, Windows smoke, lint/compile, typecheck, guardrails,
+security scan, dependency review, CodeQL, artefatos de release, Chromium e gates
+multi-tenant.
 
-## Release estável
+## Releases
 
-A release `v1.0.0` é histórica e imutável. Desenvolvimento posterior ocorre na `main`; não mova nem recrie essa tag.
+`v1.0.0` é histórica e imutável:
 
-Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.0.0`  
-Zenodo: `https://zenodo.org/records/21998607`
+- GitHub Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.0.0`
+- Zenodo: `https://zenodo.org/records/21998607`
+- DOI: `10.5281/zenodo.21998607`
+
+A versão 1.1.0 está **aceita em produção, mas ainda não publicada**. A tag
+`v1.1.0`, o GitHub Release e um eventual DOI version-specific só devem ser
+registrados depois do fechamento do SHA final de publicação e da emissão real
+pelo serviço de arquivo.
