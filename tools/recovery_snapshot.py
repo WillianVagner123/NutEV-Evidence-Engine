@@ -133,8 +133,9 @@ def database_checks(root: Path, *, read_only: bool = False) -> list:
             header = stream.read(16)
         if header != b"SQLite format 3\x00":
             continue
-        # Full restores may recover WAL on an isolated copy. Space-bounded deploy
-        # rehearsals inspect only the protected snapshot and therefore stay read-only.
+        # Full restores may recover WAL on an isolated copy. Read-only callers
+        # must already be operating on an isolated family because SQLite can
+        # legitimately update shared-memory state while reading a WAL database.
         with _database_connection(path, read_only=read_only) as connection:
             if connection.execute("PRAGMA integrity_check").fetchall() != [("ok",)]:
                 raise ValueError("database integrity failure")
@@ -160,6 +161,52 @@ def database_checks(root: Path, *, read_only: bool = False) -> list:
                     "row_counts": counts,
                 }
             )
+    return checks
+
+
+def _sqlite_bases(root: Path) -> list[Path]:
+    bases = []
+    for path in sorted(root.rglob("*")):
+        if not path.is_file():
+            continue
+        with path.open("rb") as stream:
+            if stream.read(16) == b"SQLite format 3\x00":
+                bases.append(path)
+    return bases
+
+
+def database_checks_isolated_snapshot(root: Path, scratch_parent: Path) -> list:
+    """Check snapshot SQLite state without mutating protected DB/WAL/SHM bytes.
+
+    Large DB and WAL files are hard-linked into a same-filesystem scratch family,
+    so they consume no second payload copy. The small SHM sidecar is copied because
+    SQLite may update shared-memory coordination even for a read-only connection.
+    The scratch family is removed after each database check.
+    """
+    checks = []
+    for database in _sqlite_bases(root):
+        relative = database.relative_to(root)
+        with tempfile.TemporaryDirectory(
+            prefix="nutev-sqlite-proof-", dir=scratch_parent
+        ) as temp:
+            scratch_root = Path(temp)
+            target = scratch_root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            os.link(database, target)
+
+            for suffix in ("-wal", "-journal"):
+                source_sidecar = Path(str(database) + suffix)
+                if source_sidecar.is_file():
+                    os.link(source_sidecar, Path(str(target) + suffix))
+
+            source_shm = Path(str(database) + "-shm")
+            if source_shm.is_file():
+                shutil.copy2(source_shm, Path(str(target) + "-shm"))
+
+            current = database_checks(scratch_root, read_only=True)
+            if len(current) != 1:
+                raise ValueError("isolated database rehearsal mismatch")
+            checks.extend(current)
     return checks
 
 
@@ -252,8 +299,8 @@ def rehearse_restore_space_bounded(
     2) transports every file byte through a bounded write/fsync/read-back spool;
     3) materializes the full directory/file *structure* as zero-byte placeholders
        and restores/verifies numeric ownership and modes;
-    4) runs SQLite integrity/FK/count checks read-only against the snapshot,
-       including any WAL view available beside the database.
+    4) checks SQLite/FK/counts through isolated DB/WAL families, copying only SHM;
+    5) revalidates the protected snapshot after all database checks.
 
     It therefore exercises every byte and every path/metadata entry without
     retaining another full-volume copy on the deployment filesystem.
@@ -271,7 +318,13 @@ def rehearse_restore_space_bounded(
 
     _create_metadata_skeleton(destination, manifest["filesystem"])
     restore_metadata(destination, manifest["filesystem"])
-    databases = database_checks(backup / "files", read_only=True)
+    databases = database_checks_isolated_snapshot(
+        backup / "files", destination.parent
+    )
+    # SQLite is allowed to touch only scratch SHM. Any mutation of the protected
+    # snapshot, including WAL/SHM, is a release-blocking failure.
+    if validate_snapshot(backup) != manifest:
+        raise ValueError("snapshot changed during database rehearsal")
 
     return {
         "status": "PASS",
@@ -283,6 +336,7 @@ def rehearse_restore_space_bounded(
         "production_overwritten": False,
         "filesystem_metadata_verified": True,
         "content_transport_verified": True,
+        "snapshot_revalidated_after_database_checks": True,
         "full_tree_materialized": False,
     }
 
