@@ -1,6 +1,6 @@
 # Final system acceptance — NutEV 1.1.0
 
-**Decision: SOFTWARE PRODUCTION ACCEPTED / GITHUB RELEASED / ZENODO PENDING.**
+**Decision: SOFTWARE PRODUCTION ACCEPTED / GITHUB RELEASED / ZENODO ARCHIVED.**
 
 Immutable release SHA:
 
@@ -16,13 +16,22 @@ v1.1.0
 
 GitHub publication date: **2026-09-12**.
 
+Zenodo archive identity:
+
+```text
+record = 22726717
+DOI = 10.5281/zenodo.22726717
+```
+
 The hosted NutEV 1.1.0 software completed the required exact-SHA gates, recovery
 checks, production deployment and post-deploy read-only audit. The same exact
-commit was then tagged and published as the stable GitHub Release `v1.1.0`.
+commit was then tagged and published as the stable GitHub Release `v1.1.0`, and
+the repository was subsequently synchronized with Zenodo and archived as software
+version `1.1.0`.
 
 This decision accepts and publishes the software. It does **not** promote
-scientific validity, A1 methodology, A2 provenance or a Zenodo DOI that has not
-actually been issued.
+scientific validity, A1 methodology or A2 provenance. Archive publication and DOI
+assignment are software publication evidence, not scientific validation.
 
 ## Accepted production and release evidence
 
@@ -38,7 +47,10 @@ The final release SHA completed:
 - local/public runtime smoke and commit/version identity verification;
 - read-only post-deploy doctorate runtime audit;
 - immutable Git tag `v1.1.0` at the exact deployed SHA;
-- public GitHub Release with audited wheel/sdist and release evidence.
+- public GitHub Release with audited wheel/sdist and release evidence;
+- GitHub↔Zenodo repository integration enabled and synchronized;
+- Zenodo archive record `22726717` verified as software version `1.1.0`;
+- version-specific DOI `10.5281/zenodo.22726717` recorded.
 
 The first deployment attempt ended with a transient SSH `Broken pipe`; it did not
 satisfy the release gate and therefore could not publish. An idempotent rerun of
@@ -83,7 +95,9 @@ Accepted and released:
 - exact-SHA deploy/recovery controls;
 - package/container privacy boundaries;
 - standalone Python/CLI package version 1.1.0;
-- stable GitHub `v1.1.0` source/package release.
+- stable GitHub `v1.1.0` source/package release;
+- public Zenodo archive for software version `1.1.0`;
+- version-specific DOI `10.5281/zenodo.22726717`.
 
 Not implied:
 
@@ -94,8 +108,7 @@ Not implied:
 - human screening/adjudication;
 - methodological quality, risk of bias or certainty assessment;
 - A2 legacy ownership/provenance approval;
-- access to licensed sources not actually configured;
-- a Zenodo DOI for 1.1.0 before a public archive record exists.
+- access to licensed sources not actually configured.
 
 ## A1 and A2
 
@@ -116,7 +129,7 @@ B — DEMOTE
 
 ## Publication identity
 
-Version 1.1.0 is **published on GitHub**.
+Version 1.1.0 is published on GitHub and archived on Zenodo.
 
 Release identity:
 
@@ -125,6 +138,9 @@ version = 1.1.0
 tag = v1.1.0
 sha = 49588233ad2828b8fcc6140398ab55aedf7c03ef
 GitHub Release = https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0
+Zenodo record = 22726717
+Zenodo record URL = https://zenodo.org/records/22726717
+DOI = 10.5281/zenodo.22726717
 ```
 
 The historical `v1.0.0` DOI remains unchanged:
@@ -133,9 +149,8 @@ The historical `v1.0.0` DOI remains unchanged:
 10.5281/zenodo.21998607
 ```
 
-No version-specific DOI is assigned to `v1.1.0` in this document because no
-public Zenodo `v1.1.0` record has been verified. The published Git tag must remain
-immutable even when current documentation later records a real archive DOI.
+The current documentation records the verified `v1.1.0` archive DOI without
+moving or rewriting the immutable published Git tag.
 
 See also:
 
