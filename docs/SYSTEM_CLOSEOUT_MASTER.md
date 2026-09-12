@@ -2,30 +2,23 @@
 
 Audit closeout date: 2026-09-12, America/Sao_Paulo.
 
-Production-acceptance baseline:
+Immutable software release identity:
 
 ```text
-e40dfd8c48cde824fa6053f9b077157f21bae698
+version = 1.1.0
+tag = v1.1.0
+sha = 49588233ad2828b8fcc6140398ab55aedf7c03ef
+GitHub Release = PUBLISHED
+Zenodo/DOI = PENDING_EXTERNAL
 ```
-
-Candidate/publication version: **1.1.0**.
 
 Overall software state:
 
 ```text
 PRODUCTION ACCEPTED
-PUBLICATION PENDING
+GITHUB RELEASED
+ARCHIVE DOI PENDING
 ```
-
-This master separates three identities that must not be conflated:
-
-1. the production-acceptance SHA above;
-2. any later documentation-only SHA created during release closeout;
-3. the future immutable `v1.1.0` publication SHA.
-
-A later documentation commit does not invalidate the historical production
-acceptance evidence, but an immutable release tag must receive its own exact-SHA
-publication gates.
 
 ## Immutable boundaries
 
@@ -34,50 +27,48 @@ approval, A2 `LegacyBindingEvidence` or PRISMA state. Do not reassign historical
 scientific ownership by inference. Global bibliographic identity is distinct from
 private search/project/review state. UNKNOWN remains unbound.
 
-Published tags, including `v1.0.0`, remain immutable. The historical DOI
-`10.5281/zenodo.21998607` belongs to `v1.0.0` and must not be reused as the
-version-specific DOI of 1.1.0.
+Published tags `v1.0.0` and `v1.1.0` are immutable and must not be moved. The
+historical DOI `10.5281/zenodo.21998607` belongs only to `v1.0.0` and must not be
+reused for 1.1.0.
 
-PASS always names a SHA, environment and scope. CI, deploy, package artifacts and
-scientific approval are separate gates.
+PASS always names a SHA, environment and scope. CI, deploy, package publication,
+archive publication and scientific approval are separate gates.
 
-## Production closeout evidence
+## Final release evidence
 
-The hosted 1.1.0 production baseline completed the following sequence:
+The exact `v1.1.0` publication SHA completed:
 
 ```text
-required CI/security/browser workflows
-  -> exact-SHA release barrier
+7/7 required workflows on exact SHA
+  -> exact-SHA release prerequisites
   -> recovery readiness
-  -> trusted SSH and host-key pin
+  -> trusted SSH / host identity
   -> 80/443 ownership inventory
-  -> protected snapshot
-  -> bounded restore rehearsal
-  -> production promotion
-  -> version/public smoke
+  -> protected snapshot / recovery rehearsal
+  -> production deploy
+  -> version and public/private smoke
   -> read-only doctorate runtime audit
+  -> immutable Git tag
+  -> GitHub Release + audited assets
 ```
 
-The existing host-level Caddy proxy remained the owner of 80/443 and was not
-replaced by a project container proxy.
-
-The release pipeline also gained capacity hygiene so that deployment is blocked
-before mutation when there is insufficient space for a protected snapshot.
-Recovery retention preserves three complete snapshots, protects the currently
-served release and can reclaim only explicitly disposable artifacts such as
-unused Docker builder cache.
+The first deployment attempt encountered a transient SSH `Broken pipe` after the
+preflight had passed. The same exact-SHA deployment job was rerun without code or
+gate changes and completed successfully on attempt 2. No release tag was created
+while deployment was failed.
 
 ## Runtime acceptance
 
-The production baseline was accepted with:
+The final release runtime was accepted with:
 
 - semantic package version `1.1.0`;
-- deployed commit identity matching the release target;
+- deployed commit identity `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
 - `NUTEV_AUTH_MODE=pilot`;
 - public web smoke passing;
 - private scientific surfaces fail-closed without authentication;
-- platform schema initialized without inventing users/projects/applications;
-- post-deploy doctorate audit executed successfully and read-only.
+- existing host-level Caddy preserved;
+- platform schema initialized without inventing scientific applications;
+- post-deploy doctorate audit successful and read-only.
 
 The post-deploy audit verified:
 
@@ -86,45 +77,51 @@ read_only = true
 scientific_state_modified = false
 legacy_binding_performed = false
 search_executed = false
+A1 ResearchApplications = 0
+A2 ResearchApplications = 0
 ```
-
-At acceptance time it found zero materialized A1 and zero materialized A2
-ResearchApplications. That preserves scientific fail-closed semantics.
 
 ## Requirement ledger
 
 | Requirement | Final state | Boundary |
 |---|---|---|
-| Core tests, identity, HTTP isolation and scientific guardrails | PASS on production baseline | Technical only |
-| Authentication, stale-tab/logout and browser lifecycle | PASS | Does not prove all UX is optimal |
-| Shared identity and private project/review separation | PASS | Scoped to tested contracts |
-| Exact-SHA release prerequisites | PASS | Must rerun for future publication SHA |
-| Python package boundary | PASS | Wheel/sdist exclude private runtime state |
-| Docker private-data boundary | PASS | No claim of universal PII detection |
-| Snapshot metadata/SQLite/WAL | PASS | ACL/xattr not broadly certified |
-| Recovery rehearsal | PASS | Production-safe bounded rehearsal |
-| Recovery capacity/retention | PASS | Three complete snapshots retained |
-| Existing external Caddy preservation | PASS | Host-level proxy remains external |
-| Production deployment | PASS | Baseline SHA above |
-| Public/runtime acceptance | PASS | Hosted 1.1.0 runtime |
-| Post-deploy doctorate audit | PASS | Read-only; 0 A1/0 A2 materialized |
-| A1 scientific gates | BLOCKED_SCIENTIFIC | Genuine human/PRESS/GF-10/freeze evidence required |
-| A2 legacy binding | BLOCKED_PROVENANCE / BLOCKED_SCIENTIFIC | Reviewed real provenance required |
-| GitHub `v1.1.0` release | PENDING | Must point to final publication SHA |
-| Zenodo/archive record for 1.1.0 | PENDING | DOI only after actual issuance |
+| Core tests, identity, HTTP isolation and guardrails | PASS | Exact release SHA |
+| Authentication/browser lifecycle | PASS | Tested contracts only |
+| Multi-tenant project/review separation | PASS | Exact release SHA |
+| Dependency review | PASS | Exact release SHA |
+| Security scan | PASS | Exact release SHA |
+| CodeQL | PASS | Exact release SHA |
+| Release artifact validation | PASS | Exact release SHA |
+| Python wheel/sdist public boundary | PASS | Audited artifacts attached |
+| Container privacy/recovery | PASS | Audited evidence attached |
+| Recovery capacity/retention | PASS | Production gate |
+| Existing Caddy preservation | PASS | Host-level proxy external |
+| Production deployment | PASS | `49588233...` |
+| Post-deploy doctorate audit | PASS | Read-only; 0 A1/0 A2 |
+| Git tag `v1.1.0` | PUBLISHED | Points exactly to `49588233...` |
+| GitHub Release `v1.1.0` | PUBLISHED | Stable, not draft/prerelease |
+| A1 scientific gates | BLOCKED_SCIENTIFIC | Human/academic evidence required |
+| A2 historical binding | BLOCKED_PROVENANCE / BLOCKED_SCIENTIFIC | Real reviewed provenance required |
+| Zenodo/archive record 1.1.0 | PENDING_EXTERNAL | No verified public record yet |
+| DOI 1.1.0 | PENDING_EXTERNAL | Record only after real issuance |
 
-## User/product closeout
+## Public release assets
 
-The first-use hosted experience now distinguishes missing provisioned context from
-an empty or broken application. A user without workspace/project receives explicit
-guidance instead of a silent blank state. Chromium release coverage includes the
-provisioned onboarding path through project context, search, Library and export.
+The GitHub Release preserves:
 
-A generation guard also prevents stale search executions from overwriting newer
-results in the browser event lifecycle.
+```text
+nutev_nutmev-1.1.0-py3-none-any.whl
+nutev_nutmev-1.1.0.tar.gz
+distributions.json
+SHA256SUMS.txt
+release-evidence.json
+container-audit.zip
+release-prerequisites.zip
+```
 
-These fixes improve usability, but they do not substitute for ongoing product
-research with real users.
+The release controller verified the exact SHA, required workflow runs, successful
+production deploy, successful post-deploy auditor and artifact identities before
+creating the tag/release.
 
 ## Scientific separation
 
@@ -132,23 +129,32 @@ A1 and A2 are private consumers of the generic platform, not hidden defaults of
 the Engine.
 
 A1 remains subject to its academic methodology contracts. A2 remains dark/fail-
-closed until provenance is sufficient for reviewed binding. The software release
-may be accepted/published while either scientific workload remains blocked.
+closed until provenance is sufficient for reviewed binding. GitHub publication
+does not promote the general scientific validation state, which remains:
 
-## Publication closeout
+```text
+B — DEMOTE
+```
 
-The remaining software-release work is publication, not go-live:
+## Remaining publication work
 
-1. merge this documentation closeout through normal PR gates;
-2. designate the exact final publication SHA;
-3. rerun exact-SHA release/build/artifact checks on that SHA;
-4. retain final wheel/sdist hashes;
-5. create immutable tag `v1.1.0` on that SHA;
-6. create GitHub Release using `docs/RELEASE_NOTES_1_1_0.md`;
-7. allow the archive service to ingest the release;
-8. record the real version-specific DOI only after issuance;
-9. update citation metadata without moving the published tag.
+The GitHub software publication is complete. The only remaining public software
+archive step is external:
+
+1. verify whether Zenodo GitHub integration ingests `v1.1.0`;
+2. if it does not, publish an authenticated Zenodo software record from the
+   immutable `v1.1.0` release;
+3. verify the public record and its version-specific DOI;
+4. update current citation metadata with that DOI without moving `v1.1.0`.
+
+Until that happens:
+
+```text
+GitHub v1.1.0 = RELEASED
+Zenodo v1.1.0 = PENDING_EXTERNAL
+DOI v1.1.0 = ABSENT
+```
 
 Use `docs/FINAL_SYSTEM_ACCEPTANCE.md`, `docs/PUBLICATION_READINESS.md`,
 `docs/RELEASE_NOTES_1_1_0.md` and `docs/RELEASE_CHECKLIST.md` together for the
-publication stage.
+release record.
