@@ -8,6 +8,7 @@
   "agent_entrypoint": "AI_CONTEXT.md",
   "query_draft": "config/nutev/article1_query_draft_v1.json",
   "topic_registry": "config/nutev/topic_profiles/article1_prefreeze_v1.json",
+  "reviewer_verification_contract": "config/nutev/article1_reviewer_verification_d132.json",
   "production_search_id": "web_20260830T182743+0000_91bde5be",
   "production_snapshot": {
     "captured_at": "2026-08-30",
@@ -110,6 +111,12 @@
     "prisma_search_event_emitted": false,
     "next_gate": "PRESS review + delta tests + provider-specific syntax validation + explicit GF-10 authorization"
   },
+  "reviewer_verification": {
+    "decision_id": "D-132",
+    "status": "PROPOSED_PENDING_ADVISOR_APPROVAL",
+    "formal_screening_authorized": false,
+    "requires_named_human_verifier": true
+  },
   "runtime_authorities": {
     "deepening_manifest": "project_output_reference/scientific/deepening/<search_id>/tier-A/DEEPENING_MANIFEST.json",
     "review_profile_manifest": "project_output_reference/scientific/review_queue/<search_id>/tier-A/REVIEW_QUEUE_MANIFEST.json",
@@ -124,6 +131,8 @@
     "bank_tier_is_not_quality_or_eligibility": true,
     "review_route_is_not_screening_decision": true,
     "machine_profile_is_not_inclusion_or_exclusion": true,
+    "engine_is_not_human_reviewer": true,
+    "formal_screening_must_remain_false_until_d132_approved_and_human_verifier_named": true,
     "formal_search_must_remain_false_until_freeze": true,
     "do_not_commit_protected_full_text_to_repo": true
   }

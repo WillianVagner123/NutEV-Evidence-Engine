@@ -16,7 +16,9 @@ For Article 1 work, read in this order:
 2. `ARTICLE1_SEARCH_MASTER.md` — current canonical search status.
 3. `config/nutev/article1_search_master_v1.json` — machine-readable search state.
 4. `config/nutev/article1_query_draft_v1.json` — current pre-PRESS route/query draft.
-5. `docs/ARTICLE1_AGENT_CONTEXT.md` — how to use the live agent bundle.
+5. `config/nutev/article1_reviewer_verification_d132.json` — proposed human-verification contract mirrored from Drive; pending advisor approval.
+6. `docs/ARTICLE1_REVIEWER_VERIFICATION_D132.md` — operational workflow and Engine boundaries for D-132.
+7. `docs/ARTICLE1_AGENT_CONTEXT.md` — how to use the live agent bundle.
 
 Claude Code should also read `CLAUDE.md`; it points back to this same source of truth.
 
@@ -49,6 +51,14 @@ Discovery/harvest and Tier A deepening are technically complete, but the formal 
 
 Do not call the discovery corpus a final PRISMA search and do not convert routing/profile signals into inclusion or exclusion decisions.
 
+### Reviewer-verification gate — D-132
+
+The canonical Drive governance now contains D-132 as an **EM REVISÃO** proposal: R1 performs 100% of selection/extraction and a named human verifier audits prospectively defined subsets. The initial candidate fraction is 20%, with all doubt/borderline cases checked and all R1 full-text exclusions verified. The 20% fraction is a project protocol choice, not a JBI-mandated threshold.
+
+D-132 is not scientifically approved merely because it exists in this repository. Formal screening remains blocked until academic approval of D-132 and nominal designation of the human verifier.
+
+NutEV Evidence Engine and AI agents may prepare sampling frames, deterministic samples, verification queues, locators, conflict logs and audit exports. They must never be counted as the human verifier, decide scientific inclusion/exclusion, adjudicate disagreements, overwrite human decisions or emit formal PRISMA counts from discovery/PILOT/staging.
+
 ## Good agent behavior
 
 An agent should:
@@ -58,10 +68,11 @@ An agent should:
 - prefer runtime manifests when checking mutable production counts;
 - expose disagreements or missing files instead of guessing;
 - use the agent bundle as navigation/context, not as evidence adjudication;
-- preserve the formal-search gate until PRESS + GF-10 + freeze are explicitly recorded.
+- preserve the formal-search gate until PRESS + GF-10 + freeze are explicitly recorded;
+- preserve the D-132 human-verification gate until advisor approval and a named human verifier are explicitly recorded.
 
 ## Safe prompt starter
 
 A user can tell an agent:
 
-> Read `AI_CONTEXT.md` and `ARTICLE1_SEARCH_MASTER.md`, then use the Article 1 agent-context bundle. Summarize the current scientific state, cite the search/manifests you rely on, and do not treat discovery/ranking/routing as formal inclusion or PRISMA unless the master says the formal gate has been authorized.
+> Read `AI_CONTEXT.md` and `ARTICLE1_SEARCH_MASTER.md`, then use the Article 1 agent-context bundle. Summarize the current scientific state, cite the search/manifests you rely on, and do not treat discovery/ranking/routing as formal inclusion or PRISMA unless the master says the formal gate has been authorized. Respect the D-132 human-verification gate: automation may prepare audit queues but cannot replace a human verifier or make eligibility decisions.
