@@ -27,5 +27,5 @@
       "name": "Schneider, Willian Vagner Dorneles"
     }
   ],
-  "notes": "Version 1.1.0 is production accepted but not yet published. The historical v1.0.0 archive remains unchanged. No release date or DOI is claimed here for 1.1.0; a version-specific DOI must be issued by the archive service before it is recorded."
+  "notes": "GitHub Release v1.1.0 was published on 2026-09-12 from immutable commit 49588233ad2828b8fcc6140398ab55aedf7c03ef. The historical v1.0.0 archive remains unchanged. Archive publication date and DOI remain intentionally absent until a version-specific public Zenodo record is actually issued and verified; the v1.0.0 DOI must not be reused."
 }

@@ -4,9 +4,10 @@
 
 > **Versão de software:** 1.1.0  
 > **Estado operacional:** produção aceita  
-> **Estado de publicação:** ainda não publicada como `v1.1.0`  
-> **Baseline de aceitação em produção:** `e40dfd8c48cde824fa6053f9b077157f21bae698`  
-> **Release histórica estável:** `v1.0.0`  
+> **Estado de publicação:** GitHub Release `v1.1.0` publicada  
+> **Estado de arquivo:** Zenodo/DOI da `v1.1.0` ainda não verificado  
+> **SHA imutável da release e produção homologada:** `49588233ad2828b8fcc6140398ab55aedf7c03ef`  
+> **Release histórica anterior:** `v1.0.0`  
 > **DOI histórico de v1.0.0:** `10.5281/zenodo.21998607`  
 > **Python:** 3.12–3.13  
 > **Licença:** MIT
@@ -23,23 +24,34 @@ certeza da evidência, força de recomendação ou recomendação clínica.
 ## Estado atual
 
 A versão 1.1.0 concluiu a aceitação operacional hospedada em modo multiusuário
-provisionado. O pipeline de produção exige gates exact-SHA antes do deploy,
-preserva o proxy Caddy já existente no host, mantém recovery com snapshots
-completos e executa auditoria pós-deploy somente leitura.
+provisionado e foi publicada no GitHub como release estável em 12 de setembro de
+2026. A tag imutável `v1.1.0` aponta exatamente para:
 
-A publicação pública da versão 1.1.0 ainda está pendente. Isso significa que:
+```text
+49588233ad2828b8fcc6140398ab55aedf7c03ef
+```
 
-- o software 1.1.0 está aceito em produção;
-- ainda não existe tag/GitHub Release `v1.1.0` canônica;
-- ainda não existe DOI version-specific confirmado para 1.1.0;
-- o DOI de `v1.0.0` não pode ser reutilizado para 1.1.0.
+O mesmo SHA passou pelos sete workflows obrigatórios, pelo deploy de produção e
+pelo auditor pós-deploy read-only antes da publicação. A release pública inclui
+wheel, sdist, hashes SHA-256, auditoria de distribuição, auditoria de container,
+evidência de pré-requisitos e um manifesto sanitizado de release.
+
+Estado de arquivo acadêmico:
+
+- GitHub tag `v1.1.0`: **PUBLICADA**;
+- GitHub Release `v1.1.0`: **PUBLICADA**;
+- Zenodo/arquivo version-specific de `v1.1.0`: **PENDENTE / NÃO VERIFICADO**;
+- DOI version-specific de `v1.1.0`: **AUSENTE ATÉ EMISSÃO REAL**;
+- o DOI `10.5281/zenodo.21998607` permanece exclusivo da `v1.0.0`.
+
+Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0`
 
 Veja `docs/RELEASE_NOTES_1_1_0.md`, `docs/FINAL_SYSTEM_ACCEPTANCE.md` e
 `docs/PUBLICATION_READINESS.md`.
 
 ## Estado científico
 
-Aceitação de software e validade científica são gates diferentes.
+Aceitação/publicação de software e validade científica são gates diferentes.
 
 O estado de validação científica geral permanece:
 
@@ -61,7 +73,7 @@ comportamento genérico da plataforma.
   formal/PRISMA.
 - **A2:** permanece fail-closed enquanto a proveniência histórica necessária ao
   `LegacyBindingEvidence` não for demonstrada e revisada.
-- O auditor pós-deploy de produção é read-only e, no baseline aceito, encontrou
+- O auditor pós-deploy da release 1.1.0 executou em modo read-only e encontrou
   zero ResearchApplications A1 e zero A2 materializadas. Nenhum binding, busca ou
   estado científico foi criado por inferência.
 
@@ -157,8 +169,21 @@ git rev-parse HEAD
 Iniciar-NutEV-Windows.bat
 ```
 
-Para auditoria, preserve o SHA retornado por `git rev-parse HEAD` junto com os
-manifests e outputs daquela execução.
+Para reproduzir especificamente a release publicada:
+
+```bat
+git fetch --tags origin
+git checkout v1.1.0
+git rev-parse HEAD
+```
+
+O SHA esperado para `v1.1.0` é:
+
+```text
+49588233ad2828b8fcc6140398ab55aedf7c03ef
+```
+
+Para auditoria, preserve o SHA junto com os manifests e outputs daquela execução.
 
 ## Saídas principais
 
@@ -303,6 +328,9 @@ required CI/security/browser gates
   -> read-only post-deploy audit
 ```
 
+A release `v1.1.0` foi publicada apenas depois de esse encadeamento passar para o
+SHA exato `49588233ad2828b8fcc6140398ab55aedf7c03ef`.
+
 A política de recovery preserva três snapshots completos e protege o release
 ativo. Higiene de espaço pode remover apenas artefatos explicitamente seguros,
 como cache Docker de build não utilizado; volumes científicos e snapshots válidos
@@ -312,6 +340,15 @@ não são tratados como cache.
 
 Cada execução bem-sucedida de ranking registra política de guardrails, versão da
 taxonomia, hashes de configuração/input/output, contagens e assertions de runtime.
+
+A GitHub Release `v1.1.0` também preserva artefatos específicos de publicação:
+
+- wheel e sdist auditados;
+- `SHA256SUMS.txt`;
+- `distributions.json`;
+- `release-evidence.json`;
+- `container-audit.zip`;
+- `release-prerequisites.zip`.
 
 Auditabilidade prova integridade e proveniência do pipeline em relação aos
 manifests. Ela **não prova verdade bibliográfica ou validade científica**.
@@ -329,7 +366,7 @@ Documentos principais:
 ## Validação científica
 
 O projeto não deve ser promovido acima de `B — DEMOTE` apenas porque CI,
-produção, Windows smoke ou hashes passam.
+produção, Windows smoke, hashes ou publicação de software passam.
 
 A validação planejada inclui, entre outros itens:
 
@@ -384,13 +421,20 @@ multi-tenant.
 
 ## Releases
 
-`v1.0.0` é histórica e imutável:
+### v1.1.0 — release atual
 
-- GitHub Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.0.0`
-- Zenodo: `https://zenodo.org/records/21998607`
-- DOI: `10.5281/zenodo.21998607`
+- GitHub tag: `v1.1.0`;
+- SHA: `49588233ad2828b8fcc6140398ab55aedf7c03ef`;
+- GitHub Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0`;
+- publicada em: `2026-09-12`;
+- Zenodo/DOI específico: **ainda não verificado / não registrar até emissão real**.
 
-A versão 1.1.0 está **aceita em produção, mas ainda não publicada**. A tag
-`v1.1.0`, o GitHub Release e um eventual DOI version-specific só devem ser
-registrados depois do fechamento do SHA final de publicação e da emissão real
-pelo serviço de arquivo.
+### v1.0.0 — histórica
+
+- GitHub Release: `https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.0.0`;
+- Zenodo: `https://zenodo.org/records/21998607`;
+- DOI: `10.5281/zenodo.21998607`.
+
+A tag `v1.1.0` é imutável e não deve ser movida para commits posteriores de
+documentação. Um eventual DOI da 1.1.0 deve ser adicionado somente depois de um
+registro de arquivo real ser publicado e verificado.
