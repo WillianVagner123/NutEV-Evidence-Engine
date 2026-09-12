@@ -1,239 +1,88 @@
-# Nut Evidence Platform — Authentication + Session Pilot
+# NutEV — Multi-tenant Authentication and Session Contract
 
-**PR-2 scope:** explicit Authentication → Session → Principal for a compatibility-safe pilot surface.
+Status: **current v1.1.0 hosted-product contract**.
 
-This layer does **not** migrate search history, Article Registry state, Workbench state, Article 1, Article 2, human review decisions, PRISMA events or any scientific output.
+The original PR-2 implementation note is preserved at [`archive/2026/MULTITENANT_AUTH_SESSION.md`](archive/2026/MULTITENANT_AUTH_SESSION.md). This document describes the supported state of the current product rather than the migration sequence that created it.
 
 ## Runtime modes
 
+The server accepts two compatibility modes:
+
 ```text
-NUTEV_AUTH_MODE=legacy   # default
+NUTEV_AUTH_MODE=legacy
 NUTEV_AUTH_MODE=pilot
 ```
 
-### `legacy`
+The code-level fallback remains `legacy` when the variable is omitted, so accidental configuration changes fail predictably against the compatibility behavior. **The accepted hosted production baseline for v1.1.0 is `NUTEV_AUTH_MODE=pilot`.** The production release gate verifies that mode explicitly.
 
-Current production behavior is preserved:
+`legacy` exists for compatibility/recovery work. It is not the tenant-security baseline used to describe the hosted product.
 
-- Caddy Basic Auth remains the outer compatibility perimeter;
-- existing browser-session isolation for search/history remains unchanged;
-- platform login endpoints return `auth_pilot_disabled`;
-- no platform auth database is opened merely by starting the server.
+## Authentication boundary
 
-### `pilot`
+In `pilot` mode identity is established server-side through the platform authentication/session layer. The browser does not select its own user, workspace, project or application identity by supplying IDs as proof of ownership.
 
-Enables only:
+Core auth endpoints include:
 
 ```text
 POST /api/auth/login
 POST /api/auth/logout
 GET  /api/auth/status
-GET  /api/auth/me     # protected pilot endpoint
+GET  /api/auth/me
 ```
 
-Existing search/scientific endpoints are **not** silently converted to authenticated tenancy in this PR.
+Authenticated product operations resolve a server-side `Principal` and then apply workspace/project/application authorization. Knowing an opaque resource ID or URL is not sufficient authorization.
 
-## Authentication provider
+## Password and session storage
 
-The scientific engine does not know how a password or external identity provider works.
+Local provisioned identities use Argon2 password hashes. Plaintext passwords are not persisted and the provisioning CLI reads passwords interactively rather than accepting them as a command-line argument.
 
-Contract:
+A successful login creates an opaque session token. Persistent session state stores the token's SHA-256 digest rather than the raw token. Expired, revoked, forged or unknown sessions fail closed.
 
-```text
-AuthProvider
-  authenticate(email, password)
-  load_subject(user_id)
-```
+The authenticated browser session uses the `nutev_auth_session` cookie. Production/HTTPS behavior requires the security attributes enforced by the server contract, including `HttpOnly`, `Secure` and `SameSite=Lax`.
 
-Current adapter:
+## Tenant authorization
 
-```text
-SQLiteAuthProvider
-```
-
-A future external IdP can implement the same contract without changing `Principal`, Permission Service, Registry or the scientific primitives.
-
-## Passwords
-
-Local pilot identities use `argon2-cffi` / Argon2 through the maintained library API.
-
-Rules:
-
-- plaintext password is never stored;
-- plaintext password is never returned by API;
-- plaintext password is never accepted by the provisioning CLI as a command-line argument;
-- provisioning reads the password with `getpass`;
-- Argon2 hashes may be transparently rehashed when library parameters evolve;
-- there is no browser `localStorage`/`sessionStorage` credential contract.
-
-## Session model
-
-Successful authentication creates:
-
-```text
-session_id = opaque ses_<uuid>
-session_token = cryptographically random opaque secret
-```
-
-Only this is persisted:
-
-```text
-SHA-256(session_token)
-```
-
-The raw session token exists only in the client cookie and transient server memory while the login response is being produced.
-
-Session state records:
-
-```text
-session_id
-user_id
-token_hash
-created_at
-expires_at
-revoked_at
-last_seen_at
-```
-
-Expired, revoked, forged or unknown tokens fail closed.
-
-If the underlying user becomes suspended/disabled, an otherwise valid session stops producing a Principal and is revoked.
-
-## Cookie
-
-Authenticated session cookie:
-
-```text
-nutev_auth_session
-Path=/
-HttpOnly
-SameSite=Lax
-Secure              # production / HTTPS
-Max-Age=<session ttl>
-```
-
-Default TTL:
-
-```text
-28800 seconds (8 hours)
-```
-
-Allowed range is 60 seconds to 30 days. Invalid runtime configuration fails startup in pilot mode.
-
-The auth cookie is intentionally separate from the existing anonymous:
-
-```text
-nutev_session
-```
-
-used by the legacy public search/history isolation. PR-2 does not reinterpret old browser-session ownership as a platform user.
-
-## Principal resolution
-
-The authenticated session resolves server-side to a `Principal`.
-
-In PR-2:
-
-```text
-user_id
-global_roles
-session_id
-workspace_memberships = ()
-```
-
-Workspace memberships remain empty until the authoritative Workspace/Project Service is introduced in PR-3. They are never accepted from a frontend payload.
-
-The `/api/auth/me` response deliberately does **not** expose:
-
-```text
-password
-password_hash
-session_token
-session_id
-```
-
-It exposes safe identity/profile information and future server-derived membership summaries only.
-
-## Platform admin boundary
-
-A provisioned identity may receive:
-
-```text
-PLATFORM_ADMIN
-```
-
-This is still governed by the PR-1 contract: it grants platform infrastructure authority only and does **not** bypass workspace/project scientific authorization.
-
-## Explicit provisioning
-
-PR-2 does not auto-create Willian or any other account.
-
-An operator may explicitly provision a pilot identity:
-
-```bash
-python tools/provision_nutev_user.py \
-  --email researcher@example.org \
-  --display-name "Researcher"
-```
-
-For infrastructure administration only:
-
-```bash
-python tools/provision_nutev_user.py \
-  --email admin@example.org \
-  --display-name "Infra Admin" \
-  --platform-admin
-```
-
-The command prompts twice for the password. Never put a password in shell history, environment examples, GitHub, logs or a chat message.
-
-In the Hetzner container the default database is the persistent volume path equivalent of:
-
-```text
-/app/project_output_reference/platform/auth.sqlite3
-```
-
-No existing scientific database is merged into this auth database.
-
-## Compatibility perimeter
-
-Caddy Basic Auth is preserved during this migration. It is an outer temporary barrier, not a replacement for platform identity.
-
-The target remains:
+Authentication and authorization are separate gates:
 
 ```text
 Authentication
 → Session
 → Principal
-→ Authorization
+→ Workspace membership
+→ Project access
+→ ResearchApplication / resource-specific authorization
 ```
 
-`localhost == administrator` remains only a legacy operational compatibility mechanism for older scientific coordinator endpoints. PR-2 does not expand it and does not treat it as authenticated platform identity.
+Workspace membership and project access are server-authoritative. Client-supplied ownership claims do not replace those checks.
 
-## Security tests required by this PR
+`PLATFORM_ADMIN` is infrastructure authority and is not an implicit bypass into private scientific state. Scientific/private project access still requires the authorized tenant path or another explicit narrowly scoped mechanism defined by the relevant service.
 
-- bad credentials → 401 with generic response;
-- no session → protected pilot endpoint 401;
-- forged session → 401;
-- expired session → deny;
-- revoked session → deny;
-- suspended user → session invalidated;
-- raw session token absent from SQLite;
-- password absent from SQLite except Argon2 hash;
-- login response contains no session secret;
-- production cookie is `HttpOnly`, `Secure`, `SameSite=Lax`;
-- logout revokes server session and clears cookie;
-- default runtime remains `legacy`.
+## Provisioning
 
-## What remains for later PRs
+There is no promise of public self-registration in v1.1.0. Accounts are provisioned explicitly with the maintained operator tooling, including `tools/provision_nutev_user.py`.
 
-```text
-PR-3 authoritative Workspace/Project access services and switchers
-PR-4 bind search jobs/runs to workspace + optional project
-PR-5 Evidence Library / private placements
-PR-7 historical ownership migration
-PR-8 guest-review session engine
-PR-12 full tenant adversarial death test
-```
+The hosted product's tenant/auth databases live on persistent production storage; they are not merged into the bibliographic Registry or treated as scientific evidence.
 
-No `NUTEV_AUTH_MODE=enforced` exists in this PR. Introducing broad endpoint enforcement before Workspace/Project access is authoritative would create a false sense of tenant security, so unknown modes fail startup instead.
+## Outer proxy perimeter
+
+The Hetzner deployment may retain host/proxy controls such as Caddy for transport/routing and an outer compatibility perimeter. Those controls do not replace application identity, tenant scoping or project authorization.
+
+## Security invariants
+
+The current contract requires, at minimum:
+
+- invalid credentials or invalid sessions fail closed;
+- raw passwords and raw session tokens are not persisted;
+- logout revokes the server-side session;
+- disabled/suspended users cannot keep using an otherwise valid session;
+- tenant/project scope is derived server-side;
+- cross-workspace and cross-project access is denied;
+- infrastructure-admin status alone does not grant private scientific read access;
+- production promotion uses the multi-tenant release/death-test gates rather than relying on documentation assertions.
+
+See also:
+
+- [`MULTITENANT_WORKSPACE_PROJECT_ACCESS.md`](MULTITENANT_WORKSPACE_PROJECT_ACCESS.md)
+- [`MULTITENANT_APPLICATION_LAYER.md`](MULTITENANT_APPLICATION_LAYER.md)
+- [`FINAL_MULTITENANT_RELEASE_GATE.md`](FINAL_MULTITENANT_RELEASE_GATE.md)
+- [`AUDITABILITY_AND_GUARDRAILS.md`](AUDITABILITY_AND_GUARDRAILS.md)

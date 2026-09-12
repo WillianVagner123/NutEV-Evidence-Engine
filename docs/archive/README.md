@@ -20,6 +20,7 @@ The `2026/` directory contains superseded closeout, smoke, migration, sprint and
 - `DATA_INTEGRITY_CLOSEOUT.md` — historical data-integrity closeout;
 - `HUMAN_REVIEW_ENGINE.md` — PR-8 implementation-stage specification, including deployment assumptions that were later superseded;
 - `INTERNAL_OPERATIONS_AUDIT.md` — Sprint 15 operator audit/plan;
+- `MULTITENANT_AUTH_SESSION.md` — PR-2 authentication/session migration note; the live contract remains at `docs/MULTITENANT_AUTH_SESSION.md`;
 - `MULTITENANT_IDENTITY_CONTRACTS.md` — PR-1 contract snapshot from before login/session and production endpoint integration;
 - `MULTITENANT_MIGRATION_INVENTORY.md` — PR-0 inventory captured before the authenticated multi-tenant architecture existed;
 - `PRODUCTION_SMOKE_REPORT.md` — production smoke evidence from an earlier deployment state;
