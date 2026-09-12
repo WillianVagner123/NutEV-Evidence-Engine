@@ -6,15 +6,16 @@ suspicious/corrupt-looking directories, unknown names and symlinks are preserved
 by default.
 
 Production may opt into bounded complete-snapshot retention with
-``--retain-complete``. In that mode only snapshots that already pass the complete
-snapshot proof are eligible, explicitly protected SHAs are never removed, and
-the newest complete snapshots are retained. Scientific output volumes are never
-touched.
+``--retain-complete`` plus one or more ``--prune-complete-sha`` values. Even then,
+a complete snapshot is removable only when its target SHA is explicitly backed by
+trusted deployment history, the snapshot still passes the complete proof, its SHA
+is not protected, and at least the configured number of complete rollback points
+remain. Scientific output volumes are never touched.
 
 The CLI also reclaims Docker image tags only when they are named ``nutev:<SHA>``,
-the SHA is in that same failed-deploy allowlist, and no running or stopped
-container references the image. A final ordinary ``docker image prune`` removes
-only dangling, unused images.
+the SHA is in the failed-deploy allowlist, and no running or stopped container
+references the image. A final ordinary ``docker image prune`` removes only
+dangling, unused images.
 """
 from __future__ import annotations
 
@@ -85,13 +86,20 @@ def prune_incomplete(
     exclude: Path | None = None,
     retain_complete: int | None = None,
     protected_shas: set[str] | None = None,
+    allowed_complete_prune_shas: set[str] | None = None,
 ) -> dict:
     allowed_failed_shas = _validated_allowlist(set(allowed_failed_shas))
     protected_shas = _validated_allowlist(
         set(protected_shas or set()), label="protected snapshot allowlist"
     )
+    allowed_complete_prune_shas = _validated_allowlist(
+        set(allowed_complete_prune_shas or set()),
+        label="complete-snapshot prune allowlist",
+    )
     if retain_complete is not None and retain_complete < 1:
         raise ValueError("retain-complete must be at least 1")
+    if retain_complete is None and allowed_complete_prune_shas:
+        raise ValueError("complete-snapshot prune allowlist requires retain-complete")
 
     base.mkdir(parents=True, exist_ok=True)
     if base.is_symlink() or not base.is_dir():
@@ -138,27 +146,23 @@ def prune_incomplete(
         shutil.rmtree(entry)
         pruned += 1
 
-    retained_complete = set(entry for entry, _sha in complete)
+    retained_complete = {entry for entry, _sha in complete}
     if retain_complete is not None and len(complete) > retain_complete:
-        protected_entries = {
-            entry for entry, target_sha in complete if target_sha in protected_shas
-        }
-        unprotected = [
+        removable = [
             (entry, target_sha)
             for entry, target_sha in complete
-            if entry not in protected_entries
+            if target_sha in allowed_complete_prune_shas
+            and target_sha not in protected_shas
         ]
-        unprotected.sort(key=lambda item: _complete_order(item[0]), reverse=True)
-        keep_unprotected = max(0, retain_complete - len(protected_entries))
-        retained_complete = protected_entries | {
-            entry for entry, _sha in unprotected[:keep_unprotected]
-        }
-        for entry, _target_sha in unprotected[keep_unprotected:]:
+        removable.sort(key=lambda item: _complete_order(item[0]))
+        removal_budget = max(0, len(complete) - retain_complete)
+        for entry, _target_sha in removable[:removal_budget]:
             # Revalidate immediately before deletion so a changed or damaged
             # directory fails closed instead of being treated as disposable.
             if _complete_snapshot(entry) is not True:
                 raise ValueError("snapshot changed during complete-retention pruning")
             shutil.rmtree(entry)
+            retained_complete.remove(entry)
             pruned_complete += 1
 
     return {
@@ -169,6 +173,7 @@ def prune_incomplete(
             1 for entry, sha in complete if entry in retained_complete and sha in protected_shas
         ),
         "retain_complete": retain_complete,
+        "eligible_complete_prune_sha_count": len(allowed_complete_prune_shas),
         "preserved_suspicious": preserved_suspicious,
         "preserved_unapproved": preserved_unapproved,
         "skipped_unknown": skipped_unknown,
@@ -232,11 +237,13 @@ def main() -> int:
     parser.add_argument("--exclude", type=Path)
     parser.add_argument("--allow-sha", action="append", default=[])
     parser.add_argument("--protect-sha", action="append", default=[])
+    parser.add_argument("--prune-complete-sha", action="append", default=[])
     parser.add_argument("--retain-complete", type=int)
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     allowed_failed_shas = set(args.allow_sha)
     protected_shas = set(args.protect_sha)
+    allowed_complete_prune_shas = set(args.prune_complete_sha)
     try:
         recovery = prune_incomplete(
             args.base,
@@ -244,6 +251,7 @@ def main() -> int:
             exclude=args.exclude,
             retain_complete=args.retain_complete,
             protected_shas=protected_shas,
+            allowed_complete_prune_shas=allowed_complete_prune_shas,
         )
         images = prune_failed_images(allowed_failed_shas)
         report = {
