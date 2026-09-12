@@ -349,9 +349,13 @@ def test_builder_cache_prune_failure_fails_closed() -> None:
         HYGIENE.prune_builder_cache(runner=broken)
 
 
-def test_main_recovery_readiness_explicitly_opts_into_builder_cache_prune() -> None:
+def test_bounded_main_recovery_retention_enables_scoped_builder_cache_prune() -> None:
     text = CI_WORKFLOW.read_text(encoding="utf-8")
-    assert "--prune-builder-cache" in text
     assert "--retain-complete 3" in text
+    assert HYGIENE.should_prune_builder_cache(retain_complete=3, explicitly_requested=False)
+    assert HYGIENE.should_prune_builder_cache(retain_complete=None, explicitly_requested=True)
+    assert not HYGIENE.should_prune_builder_cache(
+        retain_complete=None, explicitly_requested=False
+    )
     assert "docker system prune" not in text
     assert "docker volume prune" not in text
