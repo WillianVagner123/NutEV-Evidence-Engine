@@ -297,7 +297,7 @@ jobs:
           test "$(docker inspect -f '{{.State.Running}}' "$OLD_CONTAINER")" = "true"
           OUTPUT_VOLUME="$(docker inspect -f '{{range .Mounts}}{{if and (eq .Destination "/app/project_output_reference") (eq .Type "volume")}}{{.Name}}{{end}}{{end}}' "$OLD_CONTAINER")"
           test -n "$OUTPUT_VOLUME"
-          SOURCE_KB="$(docker exec "$OLD_CONTAINER" sh -c 'du -sk /app/project_output_reference | awk "{print \\$1}"')"
+          SOURCE_KB="$(docker exec "$OLD_CONTAINER" du -sk /app/project_output_reference | cut -f1)"
           [[ "$SOURCE_KB" =~ ^[0-9]+$ ]]
           mkdir -p /var/lib/nutev-release-recovery
           FREE_KB="$(df -Pk /var/lib/nutev-release-recovery | awk 'NR==2 {print $4}')"

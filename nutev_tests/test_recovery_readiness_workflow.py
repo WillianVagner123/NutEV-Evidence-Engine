@@ -37,7 +37,8 @@ def test_failed_deploy_allowlist_controls_cleanup() -> None:
 
 def test_capacity_is_checked_before_ci_can_trigger_deploy() -> None:
     block = _job_block()
-    assert "SOURCE_KB" in block
+    assert 'docker exec "$OLD_CONTAINER" du -sk /app/project_output_reference | cut -f1' in block
+    assert "sh -c 'du -sk /app/project_output_reference" not in block
     assert "FREE_KB" in block
     assert "REQUIRED_KB" in block
     assert "snapshot_capacity=PASS" in block
