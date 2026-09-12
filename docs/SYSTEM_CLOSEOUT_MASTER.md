@@ -1,79 +1,114 @@
 # NutEV System Closeout Master
 
-Audit date: 2026-09-10, America/Sao_Paulo. Active PR #1246:
-`closeout/release-gates-20260910`. Main baseline:
-`0c354e23150f74692cd623007c5acc27a93fe28b`.
+Audit date: 2026-09-12, America/Sao_Paulo.
 
-Candidate version: **1.1.0, UNPUBLISHED**. Overall **NOT RELEASE COMPLETE**.
-SSH, trusted host configuration and actual production acceptance are the final
-operational stage by owner instruction. This master defines scope; immutable
-final execution results are in the exact-SHA PR checkpoint and audit artifacts.
+Production version: **1.1.0**.  
+Production SHA: **`e40dfd8c48cde824fa6053f9b077157f21bae698`**.  
+Operational verdict: **PASS — SITE / SOFTWARE CLOSED**.  
+Publication verdict: **PENDING — GitHub Release / Zenodo not yet verified**.
 
 ## Immutable boundaries
 
-No fabricated counts, provider results, identifiers, human reviews, PRESS/GF-10
-approval, A2 LegacyBindingEvidence or PRISMA. No production data mutation or
-historical reassignment. No scoring/taxonomy/query expansion. Global bibliography
-is distinct from private search/project/review state. UNKNOWN stays unbound.
-Published tags, including v1.0.0, remain unchanged.
+No fabricated counts, provider results, identifiers, human reviews, PRESS/GF-10 approval, A2 LegacyBindingEvidence or PRISMA. No production data mutation or historical reassignment. No scoring/taxonomy/query expansion is implied by release documentation.
 
-PASS always names a SHA, command, environment and test scope. PR head, tested
-synthetic merge, final main, image identity and package hashes are distinct.
-A new commit needs new CI; never transfer an earlier aggregate PASS silently.
+Published tags, including `v1.0.0`, remain unchanged. The future `v1.1.0` tag must point exactly to the homologated production SHA and must not be moved after publication.
 
-## Verified execution history
+PASS always names a SHA, command/environment scope and evidence boundary. Production acceptance does not imply scientific validation.
 
-- Prior 30f641 candidate: 1,045 local tests, original tenant/browser/recovery gates.
-- Publication hardening b6d9b40768afcdd3a43edf49e6becde5398f8e45:
-  1,078 local tests; all seven PR workflows completed successfully.
-- Run 34553357429 built and audited wheel/sdist, installed the wheel outside the
-  source checkout and executed actual Docker context/privacy/runtime/metadata
-  recovery checks. Artifact hashes were verified after download and package
-  inspection was rerun independently in the audit container.
-- Current follow-up local source: **1,083 tests PASS**, Python 3.13.5, no
-  failures/skips. It adds actual workflow rollback fault injection, semantic
-  runtime-version checking and an explicit generic CLI topic-profile requirement.
-  Final remote checks for that follow-up must be read from the PR checkpoint.
+## Final operational evidence
 
-Local evidence preserves failing-before/fixed-after regressions. The five
-filesystem metadata cases failed before the fix; the short-SHA version and
-implicit private A1 topic default also failed their new regressions before fixes.
-Test subsets are not added to full-suite totals. Docker/browser counts are
-separate scenarios, not an exhaustive safety or scientific-validity claim.
+The 1.1.0 production closeout recorded:
+
+- 7/7 workflows green on the same release SHA;
+- Hetzner recovery readiness PASS;
+- snapshot capacity PASS;
+- three complete rollback snapshots retained;
+- active release protected;
+- exact-SHA deployment `#1659` PASS;
+- Caddy edge on ports 80/443 PASS;
+- public `/search.html` and `/articles.html` returning HTTP 200;
+- private unauthenticated surfaces returning HTTP 401 / fail-closed;
+- real backup and restore PASS;
+- 19.466 files verified;
+- 33 SQLite databases verified;
+- `production_overwritten=false`;
+- post-deploy auditor `#99` PASS;
+- final auditor executed rather than remaining skipped;
+- auditor state: `read_only=true`, `scientific_state_modified=false`, `legacy_binding_performed=false`, `search_executed=false`;
+- 0 A1 and 0 A2 applications materialized in production.
+
+The capacity remediation is intentionally bounded: it reclaims only unused Docker build cache while preserving the active release, three complete rollback points, runtime images and the scientific volume.
 
 ## Requirement ledger
 
-| Requirement | Executed scope / state | Evidence / next gate |
+| Requirement | Final state | Evidence / boundary |
 |---|---|---|
-| Core tests, identity, HTTP isolation and scientific guardrails | Local PASS; final-head remote rerun required | 1,083 tests; CI checks on actual candidate |
-| Authentication, two users/tabs, stale responses, export lifecycle | Existing real Chromium matrices; new candidate must rerun | predeploy-browser-e2e, both required jobs |
-| Shared identity and private state/review separation | 17-check hermetic matrix, plus HTTP and A1 regressions | multitenant-release-audit |
-| Exact-SHA release prerequisites | Fail-closed tests and required jobs/steps | check_release_prerequisites.py; not a production approval |
-| Python public package boundary | Actual wheel/sdist audit and isolated install PASS on b6d9b4 | Rebuild and recheck final artifact hashes |
-| Docker private-data exclusion | Five injected canaries excluded, actual image PASS on b6d9b4 | Final container gate |
-| Snapshot metadata/SQLite WAL | Schema 2; bytes, directories, modes, numeric uid/gid tested | 13 local cases plus actual Docker fixture |
-| Real workflow recovery functions | New disposable fault-injection harness | Must execute final container CI; no static-only PASS |
-| Generic engine independence | CLI private A1 default removed; explicit profile regression PASS | No released v1.0.0 CLI contract removed |
-| Release version consistency | Candidate package/CFF/Zenodo 1.1.0, no new DOI/date claim | Runtime checker verifies package version separately from SHA |
-| Repository/PR disposition | #1128 closed only on proven supersession; historical proposals scoped out | OPEN_PR_DISPOSITION.md; no blind merge/close |
-| Real production data/owner bindings | BLOCKED_EXTERNAL | Actual read-only inventory and reconciliation after trusted access |
-| Actual deployment and public acceptance | BLOCKED_EXTERNAL | SSH/host pin, real quiescence/backup, main-SHA gates, pilot/HTTPS smoke |
-| A1 scientific gates | BLOCKED_SCIENTIFIC | Genuine academic verifier/PRESS/GF-10 records |
-| A2 historical binding | BLOCKED_EXTERNAL | Real provenance and reviewed internal binding |
-| Publication | PENDING | No tag/release/deposit until all applicable gates verified |
+| Core tests / CI | PASS | 7/7 workflows on release SHA |
+| Authentication / tenant isolation | PASS | production and browser/release gates |
+| Private unauthenticated surfaces | PASS | 401 / fail-closed |
+| Public site | PASS | `/search.html`, `/articles.html` = 200 |
+| Exact-SHA deploy | PASS | deploy `#1659` |
+| Hetzner readiness | PASS | real host/recovery checks |
+| Backup / restore | PASS | real restore without production overwrite |
+| Recovery retention | PASS | 3 complete snapshots preserved |
+| File integrity | PASS | 19.466 files verified |
+| SQLite integrity | PASS | 33 databases verified |
+| Post-deploy audit | PASS | auditor `#99` |
+| Scientific-state immutability | PASS | no modification detected |
+| A1 materialization | BLOCKED / FAIL-CLOSED | no human academic approval inferred |
+| A2 Legacy Binding | BLOCKED / FAIL-CLOSED | no provenance inferred |
+| GitHub tag/release `v1.1.0` | PENDING | external publication operation not yet verified |
+| Zenodo 1.1.0 record / DOI | PENDING | new archive record must be created and verified |
+| Backlog PR triage | SEPARATE SPRINT | not a production blocker |
 
-## Final stage and limits
+## Production verdict
 
-`docs/PRE_SSH_ACCEPTANCE.md` controls readiness for server work. The source and
-package audits certify stated checks, not unrestricted copyright/redistribution
-of external papers, every historic repo object or every optional scientific UI.
-ACLs/xattrs and production schema compatibility require explicit verification
-when relevant. No new licensed-source access or live scientific search was run.
-The local container cannot run Docker/browser; actual GHA evidence is identified
-as such. No environmental access restriction was bypassed.
+```text
+SITE / SOFTWARE NUTEV 1.1.0 — PRODUCTION: PASS — CLOSED
+```
 
-Use `docs/PUBLICATION_READINESS.md`, `docs/ROLLBACK_RUNBOOK.md`, the exact-SHA PR
-checkpoint and `docs/FINAL_SYSTEM_ACCEPTANCE.md` together. Do not update this
-ledger to PASS merely because the underlying code exists. Final machine-readable
-execution evidence can live outside the source commit, avoiding an endless
-commit-to-record-own-SHA cycle while preserving exact provenance.
+This verdict covers the deployed product and operational recovery posture only.
+
+## Publication verdict
+
+Until tag, GitHub Release and archive record exist and are externally verified:
+
+```text
+PRODUCTION_ACCEPTED / PUBLICATION_PENDING
+```
+
+After verified GitHub publication and verified archive/DOI:
+
+```text
+RELEASED / PUBLISHED
+```
+
+The DOI `10.5281/zenodo.21998607` remains associated with historical `v1.0.0` and must not be assigned to `v1.1.0`.
+
+## Scientific boundary
+
+A1 remains scientific, not technical. PR #1230 is intentionally open/draft while D-132 awaits academic approval and nominal human verifier designation. Formal search/PRESS, freeze, GF-10 and PRISMA remain downstream gates.
+
+A2 remains fail-closed until real historical provenance and reviewed Legacy Binding evidence exist. Production correctly materializes neither A1 nor A2 by inference.
+
+The Engine scientific-validation status remains governed by the files in `validation/`; software go-live does not promote that state.
+
+## Maintenance / backlog
+
+Historical search-expansion and Dependabot PRs are not release blockers. They must be handled in a separate maintenance sprint with explicit disposition:
+
+```text
+MERGE / SUPERSEDED / CLOSE / FUTURE
+```
+
+Do not mix that cleanup into the immutable 1.1.0 production acceptance record.
+
+## Canonical references
+
+- `README.md` — public project status;
+- `docs/releases/v1.1.0-production-closeout.md` — operational closeout;
+- `docs/FINAL_SYSTEM_ACCEPTANCE.md` — final software acceptance;
+- `docs/PUBLICATION_READINESS.md` — remaining release/archive steps;
+- `docs/ROLLBACK_RUNBOOK.md` — recovery contract;
+- `docs/HETZNER_AUTODEPLOY.md` — production deployment contract;
+- `docs/OPEN_PR_DISPOSITION.md` — backlog handling.
