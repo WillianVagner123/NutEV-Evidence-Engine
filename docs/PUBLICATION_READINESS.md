@@ -1,86 +1,96 @@
-# Publication readiness: 1.1.0 candidate
+# Publication readiness — NutEV 1.1.0
 
-Status: **UNPUBLISHED / production acceptance pending**. Prior stable GitHub release
-v1.0.0 was rechecked through the Releases API. Its tag and archived identity are
-unchanged. This document does not claim a new Zenodo deposit or DOI.
+Status operacional: **PRODUCTION_ACCEPTED**.  
+Status de publicação pública: **PENDING**.
+
+A versão 1.1.0 está homologada e ativa em produção no SHA:
+
+```text
+e40dfd8c48cde824fa6053f9b077157f21bae698
+```
+
+O fechamento operacional confirmou os gates de produção, recovery e fail-closed descritos em `docs/releases/v1.1.0-production-closeout.md` e `docs/FINAL_SYSTEM_ACCEPTANCE.md`.
+
+Isso não transforma automaticamente o software em uma versão publicamente arquivada. No momento deste documento, ainda faltam operações externas de publicação:
+
+1. criar a tag imutável `v1.1.0` apontando exatamente para `e40dfd8c48cde824fa6053f9b077157f21bae698`;
+2. criar o GitHub Release `v1.1.0` associado a essa tag;
+3. anexar ou preservar artefatos auditados, release notes e hashes de distribuição;
+4. publicar um novo registro no Zenodo ou repositório equivalente;
+5. registrar o DOI real da versão 1.1.0 somente depois de emitido e verificado;
+6. atualizar metadados finais que dependam desse DOI/data de publicação.
+
+## Release anterior
+
+A release pública estável anterior permanece:
+
+- GitHub Release: `v1.0.0`;
+- Zenodo: `https://zenodo.org/records/21998607`;
+- DOI: `10.5281/zenodo.21998607`.
+
+Esse DOI é específico do arquivo histórico da `v1.0.0` e **não deve ser reutilizado** para `v1.1.0`.
 
 ## Distribution scope
 
-The `nutev-nutmev` wheel and sdist distribute the reusable Python modules and CLI.
-The explicit PDM package allowlist excludes runtime data, accounts, databases,
-private A1/A2 search configurations and server backups. The website and its
-source-checkout tools are deployed from the audited Git commit, not installed by
-the wheel. This distinction is deliberate and must remain in release notes.
+A distribuição `nutev-nutmev` wheel/sdist contém módulos Python reutilizáveis e CLI. Contas, bancos de dados, buscas privadas, configurações científicas privadas A1/A2 e backups não fazem parte da distribuição pública.
 
-The candidate version is 1.1.0: CLI/library distribution identity is retained,
-while authenticated workspaces/projects and release controls are added. Pilot
-mode intentionally blocks unscoped legacy scientific surfaces. Operators
-requiring those surfaces must review migration rather than bypass authorization.
-The old v1.0.0 DOI is not assigned to this candidate; current CFF/Zenodo metadata
-omit a new release date/DOI until there is a real publication record.
+O website usa o checkout auditado do repositório e Docker; ele não é empacotado dentro do wheel.
 
-## Reproducible checks
+## Gates já fechados
 
-- Full tests: `PYTHONPATH=src python -m pytest -q nutev_tests`.
-- Build: `python -m build`; validate wheel/sdist with `python -m twine check dist/*`.
-- Public-file policy: `python tools/audit_public_package.py --dist dist --version 1.1.0 --output package_audit/distributions.json`.
-- Isolated installation: install the wheel in a clean virtual environment, copy
-  `tools/installed_package_smoke.py` outside the checkout and execute it with that
-  interpreter's `-I` mode. Source code cannot shadow the installed package.
-- Container: `bash tools/run_container_release_gate.sh` uses only disposable
-  local Docker resources. It injects five random synthetic private canaries,
-  verifies their exclusion from the Docker build context, builds the actual
-  image, checks pilot HTTP/runtime identity and rehearses restoration with
-  numeric uid/gid 10001. It never accepts a production host or volume argument.
+Para a produção 1.1.0, o fechamento registrou:
 
-Archive policy rejects malformed/duplicate paths, links, unexpected modules or
-metadata, oversized members, private runtime types and selected embedded secret
-markers. It is not a general proof of copyright compliance or absence of all
-personal information. Gitleaks/CodeQL and human review remain separate gates.
+- 7/7 workflows aprovados no mesmo SHA;
+- recovery readiness no Hetzner;
+- capacidade suficiente para snapshots;
+- três snapshots completos preservados;
+- release ativo protegido;
+- deploy exact-SHA `#1659` aprovado;
+- NutEV 1.1.0 em produção;
+- Caddy externo / 80–443 aprovado;
+- `/search.html` e `/articles.html` respondendo `200`;
+- superfícies privadas sem autenticação respondendo `401` / fail-closed;
+- backup/restore real aprovado;
+- 19.466 arquivos verificados;
+- 33 bancos SQLite verificados;
+- `production_overwritten=false`;
+- auditor pós-deploy `#99` aprovado;
+- auditor confirmando `read_only=true`, `scientific_state_modified=false`, `legacy_binding_performed=false`, `search_executed=false`;
+- zero aplicações A1/A2 materializadas em produção, preservando o comportamento fail-closed.
 
-## Hosted installation contract
+## Reproducible package checks
 
-Production requires `NUTEV_AUTH_MODE=pilot`. Accounts/workspaces are provisioned
-administratively through the existing operator tooling; there is no public
-self-service signup promise. The sample server environment now matches pilot
-and leaves A2 dark-launched. A1 owner pins must come from reviewed runtime
-ownership evidence. Do not copy IDs from sample data.
+Os controles de distribuição continuam definidos por:
 
-## Recovery contract
+- `PYTHONPATH=src python -m pytest -q nutev_tests`;
+- `python -m build`;
+- `python -m twine check dist/*`;
+- `python tools/audit_public_package.py --dist dist --version 1.1.0 --output package_audit/distributions.json`;
+- instalação limpa do wheel fora do checkout;
+- `bash tools/run_container_release_gate.sh` para auditoria descartável de imagem, privacidade e recovery.
 
-Snapshot schema 2 inventories regular files AND empty directories, numeric uid/gid
-and mode. Restoration must match that metadata as well as byte hashes, followed
-by SQLite/WAL integrity checks in the restored copy. Schema-1 development
-snapshots lack metadata proof and are rejected instead of silently promoted.
-Creating a fresh quiesced snapshot is the migration path; existing production
-snapshots are not rewritten automatically. Restoring foreign ownership requires
-appropriate OS privileges and must fail when unavailable. ACLs/xattrs are not
-currently certified; an estate depending on them needs additional reviewed
-recovery coverage before promotion. Quiescence of every actual writer and real
-storage capacity remain server-side acceptance checks.
+## Scientific boundary
 
-## Final gates still requiring external evidence
+A publicação do software não fecha os braços científicos.
 
-No public release/tag/deposit is created until the actual candidate, main SHA,
-build artifacts and intended hosted runtime have passed their respective gates.
-SSH setup, trusted host pin, real data/owner inventory, actual backup compatibility,
-controlled deployment and public smoke belong to the final runtime stage.
-A1 methodological approvals and A2 LegacyBindingEvidence remain independent.
-Code tests may pass while those scientific projects remain correctly blocked.
+- A1 continua dependente de aprovação acadêmica humana, verificador humano nominal e gates metodológicos formais.
+- A2 continua dependente de proveniência real e Legacy Binding evidence revisada.
+- O estado científico do Engine continua `B — DEMOTE` até que o protocolo de validação produza evidência observada suficiente para promoção.
 
-## Evidence custody
+Nenhum desses estados pode ser promovido por CI, deploy, release ou DOI.
 
-Test outcomes, commit SHA, synthetic merge SHA, artifacts and hashes belong in the
-release manifest. A later commit invalidates a prior candidate's blanket PASS.
-Candidate distributions uploaded as CI artifacts are not GitHub Releases, PyPI
-publications or Zenodo deposits. Retain the final audit outside expiring CI
-storage before publishing, without retaining private test credentials.
+## Publication decision rule
 
-## Generic CLI boundary
+Use exatamente um dos seguintes estados:
 
-The new `science-topics` command requires an explicit `--topic-profile`. It no
-longer silently chooses the private A1 profile. The archived v1.0.0 CLI exposed
-only version/help/providers, so this correction does not remove a released
-v1.0.0 command contract. Existing source-checkout scripts using the unreleased
-implicit A1 default must pass their reviewed profile explicitly. No profile
-content or search vocabulary was changed.
+```text
+PRODUCTION_ACCEPTED / PUBLICATION_PENDING
+```
+
+enquanto tag/release/arquivo público ainda não existirem; e somente depois de verificação externa completa:
+
+```text
+RELEASED / PUBLISHED
+```
+
+Nunca registre DOI, data de publicação ou URL de release por antecipação.
