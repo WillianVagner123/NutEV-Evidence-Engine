@@ -64,6 +64,18 @@ def test_execution_identity_stays_visible_when_technical_audit_is_collapsed() ->
     assert "searchAuditIdentity" in ux.split("window.NutEVSearchUX={", 1)[1]
 
 
+def test_delayed_summary_enhancements_cannot_overwrite_a_newer_search() -> None:
+    ux = read("search-ux-resilience.js")
+
+    assert "function currentSearchGeneration()" in ux
+    assert "generation===currentSearchGeneration()" in ux
+    assert "if(generation!==currentSearchGeneration())return" in ux
+    assert "lastResult=null;lastOutcomeKey=''" in ux
+    assert "event.detail?.generation" in ux
+    assert "queueSummaryEnhancement(result,generation)" in ux
+    assert "`${data?.query||''}|${data?.search_mode||''}|${data?.returned_records||0}`" in ux
+
+
 def test_technical_audit_is_collapsed_but_audit_errors_are_not_hidden() -> None:
     ux = read("search-ux-resilience.js")
 
