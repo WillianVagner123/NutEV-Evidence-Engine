@@ -5,7 +5,6 @@
   "access_right": "open",
   "license": "MIT",
   "version": "1.1.0",
-  "publication_date": "2026-09-12",
   "keywords": [
     "lifestyle nutrition",
     "lifestyle medicine",
@@ -28,5 +27,5 @@
       "name": "Schneider, Willian Vagner Dorneles"
     }
   ],
-  "notes": "GitHub Release v1.1.0 was published on 2026-09-12 from immutable commit 49588233ad2828b8fcc6140398ab55aedf7c03ef. The historical v1.0.0 archive remains unchanged. No DOI is claimed here for v1.1.0 until a version-specific public Zenodo record is actually issued and verified; the v1.0.0 DOI must not be reused."
+  "notes": "GitHub Release v1.1.0 was published on 2026-09-12 from immutable commit 49588233ad2828b8fcc6140398ab55aedf7c03ef. The historical v1.0.0 archive remains unchanged. Archive publication date and DOI remain intentionally absent until a version-specific public Zenodo record is actually issued and verified; the v1.0.0 DOI must not be reused."
 }
