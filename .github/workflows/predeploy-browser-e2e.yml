@@ -86,6 +86,10 @@ jobs:
         env:
           PYTHONPATH: src:.
         run: python tools/run_pilot_browser_closeout.py --output browser_e2e_artifacts/pilot
+      - name: Run onboarding persistence browser regression
+        env:
+          PYTHONPATH: src:.
+        run: python tools/run_onboarding_persistence_browser.py --output browser_e2e_artifacts/pilot/onboarding-persistence
       - name: Upload pilot browser evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

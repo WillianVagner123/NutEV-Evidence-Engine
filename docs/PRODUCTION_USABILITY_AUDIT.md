@@ -1,31 +1,67 @@
-# Production usability audit — Sprint 15
+# Production usability audit — NutEV 1.1.0
 
-Baseline: NutEV 1.1.0 deployed. This audit evaluates practical task completion separately from security correctness.
+Baseline: stable `v1.1.0`, production accepted, GitHub/Zenodo publication complete. This audit evaluates practical task completion separately from security correctness and scientific validity.
 
-## Initial findings
+## Current findings
 
-### UX-01 — first login with no workspace did not explain the operational next step — P1
+### UX-01 — first login with no workspace — CLOSED
 
-The authenticated context selector could render an empty workspace list while the user had no way to distinguish a broken system from an account awaiting administrative provisioning. Public signup is intentionally unsupported, so the correct fix is guidance, not a signup feature.
+A provisioned identity with zero workspace memberships now receives explicit guidance instead of an ambiguous empty selector:
 
-**Patch:** show `Acesso ainda não provisionado`, confirm that login works and tell the user that an administrator must create/grant the workspace. Project page uses the same distinction.
+- `Acesso ainda não provisionado`;
+- login/session are acknowledged as working;
+- the UI explains that an administrator must grant/create the workspace.
 
-**Regression:** Chromium fixture adds a real authenticated user with zero workspace memberships and requires this guidance.
+The authenticated Chromium fixture requires the same state on the home/context surface and the project page.
 
-### UX-02 — project with no application needs a complete first-project path — P1 test gap
+### UX-02 — first project with zero ResearchApplications — CLOSED BY BROWSER GATE
 
-The project page already exposes three reusable templates and a `Configurar aplicação` action, but the prior browser acceptance skipped this state because all fixture projects were preconfigured.
+The synthetic pilot fixture includes an `onboarding` user with a real workspace/project and **zero applications**. The authenticated Chromium path must:
 
-**Action:** add an onboarding user with a workspace/project but no application; configure `GENERIC_EVIDENCE_PROJECT` through the real UI and require visible next actions for Search, Library and Exports.
+1. log in;
+2. select workspace/project;
+3. open `/project.html`;
+4. see the three supported application templates;
+5. configure `GENERIC_EVIDENCE_PROJECT` through the real UI;
+6. verify visible next actions for **Buscar evidências**, **Biblioteca** and **Exportações**;
+7. reload the project and verify the configured application persists;
+8. log out, log in again, reselect the same context and verify the application and next actions still persist.
 
-### UX-03 — review is not a first-class navigation item — P2 candidate
+The persistence regression is a separate Playwright script executed inside the required `Authenticated pilot browser closeout` job, so a failure blocks the product gate.
 
-`Revisão humana` is reachable from the project module grid but primary navigation places it under `Laboratório avançado`. This may be appropriate for generic projects and wrong for active review templates. Do not redesign yet: measure task confusion in the next moderated/usability pass before promoting it.
+### UX-03 — Review is not first-class navigation — DEFERRED BY SCOPE, NOT SILENTLY PROMOTED
 
-### UX-04 — provisioning is administrative by design — NOT A BUG
+The current `/review.html` surface is still explicitly tied to **Article 1 calibration/formal-screening readiness**. It is not a generic ResearchApplication-scoped review surface. Promoting it into primary navigation for every project would therefore create a false product contract.
 
-There is no self-service account/workspace creation. Documentation states that identities are explicitly provisioned and passwords are never passed on the CLI. The UI must therefore explain waiting/provisioning states clearly rather than advertising a signup flow that does not exist.
+Current decision:
 
-## Next production-use evidence
+- keep generic primary navigation focused on Project, Search, Library, Exports and History;
+- keep specialized review tooling under the advanced/scientific surfaces;
+- promote Review only after a generic, tenant/project/application-scoped review route exists and passes the same isolation/browser gates.
 
-After this patch passes fixture Chromium, run the same mental model with a real non-admin test account in production: login; locate project; identify current context; open Search; open Library; identify Review; export; logout. Capture only synthetic content/screenshots. Do not use A1/A2 private content for public UX artifacts.
+This remains a product opportunity, not a justification to expose Article-1-specific state globally.
+
+### UX-04 — hosted product vs local scientific server — CLOSED DOCUMENTATION GAP
+
+The web documentation now names two distinct runtimes:
+
+- **Hosted product runtime** — authenticated, multi-tenant, production-facing; ordinary users work through workspace/project/application context.
+- **Local scientific/validation runtime** — `apps/nutev-web/server.py`, intended for localhost/LAN scientific coordination and validation; it must not be treated as the public hosted product.
+
+The local-server warning remains fail-closed: do not expose it directly to the public internet.
+
+### UX-05 — repository/product history mixed with live documentation — CLOSED IN DOCUMENTATION CLEANUP
+
+Historical release gates, smoke reports, sprint closeouts and migration dry-runs are moved under `docs/archive/2026/`. Truly transient, superseded documents are deleted. `docs/README.md` now acts as a maintained index of current documentation rather than an inventory of every historical artifact.
+
+## Product-use evidence still worth collecting
+
+A moderated production-use pass with a real non-admin test account remains valuable for measuring confusion rather than correctness:
+
+`login -> context -> project -> application -> search -> library -> review discovery -> export -> logout`
+
+Use only synthetic content/screenshots. Do not use A1/A2 private content in public UX artifacts.
+
+## Scientific boundary
+
+Usability PASS does not change scientific status. The general scientific verdict remains `B — DEMOTE` until independent benchmark evidence supports a different verdict.
