@@ -19,9 +19,14 @@ env:
 jobs:
   audit:
     name: read-only doctorate runtime audit
+    # deploy-hetzner already enforces main, same-repository provenance and exact-SHA
+    # release gates before it can conclude success. Do not re-gate this chained
+    # workflow on workflow_run.head_branch, which is not a reliable discriminator
+    # for every workflow_run chain.
     if: >-
       ${{ github.event_name == 'workflow_dispatch' ||
-          (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main') }}
+          (github.event.workflow_run.conclusion == 'success' &&
+           github.event.workflow_run.head_repository.full_name == github.repository) }}
     runs-on: ubuntu-latest
     environment: HETZNER
     timeout-minutes: 10
