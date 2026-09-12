@@ -35,6 +35,7 @@ from .auth import (
     SQLiteAuthProvider,
     SQLiteSessionStore,
 )
+from .bootstrap import CORE_PLATFORM_TABLES, initialize_platform_database
 from .evidence_library import (
     EVIDENCE_LIBRARY_SCHEMA_VERSION,
     EvidenceLibraryEntry,
@@ -92,6 +93,7 @@ __all__ = [
     "APPLICATION_SCHEMA_VERSION",
     "AUTH_SCHEMA_VERSION",
     "BUILTIN_APPLICATION_TEMPLATES",
+    "CORE_PLATFORM_TABLES",
     "EVIDENCE_LIBRARY_SCHEMA_VERSION",
     "EXPORT_AUDIT_SCHEMA_VERSION",
     "GENERIC_EVIDENCE_PROJECT",
@@ -158,6 +160,7 @@ __all__ = [
     "WorkspaceMembership",
     "WorkspaceProjectService",
     "WorkspaceRole",
+    "initialize_platform_database",
     "new_opaque_id",
     "require_opaque_id",
 ]
