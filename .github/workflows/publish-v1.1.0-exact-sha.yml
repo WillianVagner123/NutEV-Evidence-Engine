@@ -1,0 +1,327 @@
+name: publish-v1.1.0-exact-sha
+
+on:
+  push:
+    branches:
+      - "release/v1.1.0-publish-20260912"
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: publish-v1.1.0-exact-sha
+  cancel-in-progress: false
+
+env:
+  TARGET_SHA: 49588233ad2828b8fcc6140398ab55aedf7c03ef
+  TAG: v1.1.0
+  DEPLOY_RUN_ID: "34699027218"
+  DIST_ARTIFACT_ID: "10299517222"
+  DIST_ARTIFACT_DIGEST: "sha256:ef0ae85960658d551a32337775b48ddc08484037fa08576a5a6c29e92acfd438"
+  CONTAINER_ARTIFACT_ID: "10300290079"
+  CONTAINER_ARTIFACT_DIGEST: "sha256:e1ab6a91aba1a0204671efc919a7b798d1ea9a586ab3965102db6e026a798bf2"
+  PREREQ_ARTIFACT_ID: "10299925723"
+  PREREQ_ARTIFACT_DIGEST: "sha256:f2ae9ac0eb85d47b26a40a187c675af720602141d921b3869eed8ab0bb6d2f94"
+
+jobs:
+  publish:
+    name: verify exact SHA and publish immutable release
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout exact publication SHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify main is still the publication SHA
+        run: |
+          set -euo pipefail
+          MAIN_SHA="$(gh api "repos/$GITHUB_REPOSITORY/branches/main" --jq '.commit.sha')"
+          test "$MAIN_SHA" = "$TARGET_SHA"
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          echo "main and checkout fixed at $TARGET_SHA"
+
+      - name: Verify seven required exact-SHA gates
+        env:
+          REQUIRED_RUNS: >-
+            34698980767
+            34698980724
+            34698980774
+            34698980757
+            34698980799
+            34698980697
+            34698980712
+        run: |
+          set -euo pipefail
+          for RUN_ID in $REQUIRED_RUNS; do
+            RUN_JSON="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID")"
+            python - "$TARGET_SHA" "$RUN_ID" <<'PY' <<<"$RUN_JSON"
+          import json, sys
+          target, run_id = sys.argv[1:3]
+          data = json.load(sys.stdin)
+          assert data['head_sha'] == target, (run_id, data['head_sha'], target)
+          assert data['status'] == 'completed', (run_id, data['status'])
+          assert data['conclusion'] == 'success', (run_id, data['conclusion'])
+          print(f"gate {run_id}: PASS ({data['name']})")
+          PY
+          done
+
+      - name: Require successful exact-SHA production deploy
+        id: deploy
+        run: |
+          set -euo pipefail
+          for _ in $(seq 1 120); do
+            RUN_JSON="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$DEPLOY_RUN_ID")"
+            STATUS="$(python -c 'import json,sys; print(json.load(sys.stdin)["status"])' <<<"$RUN_JSON")"
+            if [ "$STATUS" = "completed" ]; then
+              CONCLUSION="$(python -c 'import json,sys; print(json.load(sys.stdin)["conclusion"])' <<<"$RUN_JSON")"
+              HEAD_SHA="$(python -c 'import json,sys; print(json.load(sys.stdin)["head_sha"])' <<<"$RUN_JSON")"
+              UPDATED_AT="$(python -c 'import json,sys; print(json.load(sys.stdin)["updated_at"])' <<<"$RUN_JSON")"
+              test "$CONCLUSION" = "success"
+              test "$HEAD_SHA" = "$TARGET_SHA"
+              printf 'deploy_updated_at=%s\n' "$UPDATED_AT" >> "$GITHUB_OUTPUT"
+              echo "deploy run $DEPLOY_RUN_ID: PASS"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "deploy did not complete inside the publication gate" >&2
+          exit 1
+
+      - name: Require successful post-deploy doctorate audit
+        id: doctorate
+        env:
+          DEPLOY_UPDATED_AT: ${{ steps.deploy.outputs.deploy_updated_at }}
+        run: |
+          set -euo pipefail
+          AUDIT_RUN_ID=""
+          for _ in $(seq 1 90); do
+            RUNS="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$TARGET_SHA&event=workflow_run&per_page=100")"
+            AUDIT_RUN_ID="$(python - "$DEPLOY_UPDATED_AT" <<'PY' <<<"$RUNS"
+          import json, sys
+          cutoff = sys.argv[1]
+          runs = json.load(sys.stdin).get('workflow_runs', [])
+          ok = [r for r in runs if r.get('name') == 'production-doctorate-audit'
+                and r.get('status') == 'completed'
+                and r.get('conclusion') == 'success'
+                and r.get('created_at','') >= cutoff]
+          ok.sort(key=lambda r: r.get('created_at',''))
+          print(ok[-1]['id'] if ok else '')
+          PY
+            )"
+            if [ -n "$AUDIT_RUN_ID" ]; then
+              break
+            fi
+            sleep 10
+          done
+          test -n "$AUDIT_RUN_ID"
+          echo "audit_run_id=$AUDIT_RUN_ID" >> "$GITHUB_OUTPUT"
+
+          ARTIFACTS="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$AUDIT_RUN_ID/artifacts")"
+          AUDIT_ARTIFACT_ID="$(python <<'PY' <<<"$ARTIFACTS"
+          import json, sys
+          arts=json.load(sys.stdin).get('artifacts',[])
+          vals=[a for a in arts if a.get('name','').startswith('doctorate-runtime-') and not a.get('expired')]
+          assert vals, 'doctorate runtime artifact missing'
+          print(vals[0]['id'])
+          PY
+          )"
+          echo "audit_artifact_id=$AUDIT_ARTIFACT_ID" >> "$GITHUB_OUTPUT"
+          mkdir -p release-work/doctorate
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$AUDIT_ARTIFACT_ID/zip" > release-work/doctorate.zip
+          unzip -q release-work/doctorate.zip -d release-work/doctorate
+          AUDIT_JSON="$(find release-work/doctorate -type f -name 'doctorate-runtime.json' -print -quit)"
+          test -n "$AUDIT_JSON"
+          python - "$AUDIT_JSON" <<'PY'
+          import json, sys
+          from pathlib import Path
+          p=Path(sys.argv[1])
+          data=json.loads(p.read_text())
+          assert data.get('record_type') == 'NUTEV_WILLIAN_DOCTORATE_RUNTIME_AUDIT'
+          assert data.get('status') == 'PASS'
+          assert data.get('read_only') is True
+          assert data.get('scientific_state_modified') is False
+          assert data.get('legacy_binding_performed') is False
+          assert data.get('search_executed') is False
+          assert data['article1']['application_count'] == 0
+          assert data['article2']['application_count'] == 0
+          print('post-deploy doctorate audit: PASS, 0 A1 / 0 A2, read-only')
+          PY
+
+      - name: Verify and download exact audited artifacts
+        run: |
+          set -euo pipefail
+          check_artifact() {
+            ID="$1"; EXPECTED="$2"
+            META="$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ID")"
+            ACTUAL="$(python -c 'import json,sys; print(json.load(sys.stdin).get("digest",""))' <<<"$META")"
+            EXPIRED="$(python -c 'import json,sys; print(str(json.load(sys.stdin).get("expired",True)).lower())' <<<"$META")"
+            HEAD_SHA="$(python -c 'import json,sys; print(json.load(sys.stdin).get("workflow_run",{}).get("head_sha",""))' <<<"$META")"
+            test "$ACTUAL" = "$EXPECTED"
+            test "$EXPIRED" = "false"
+            test "$HEAD_SHA" = "$TARGET_SHA"
+            echo "artifact $ID metadata: PASS"
+          }
+          check_artifact "$DIST_ARTIFACT_ID" "$DIST_ARTIFACT_DIGEST"
+          check_artifact "$CONTAINER_ARTIFACT_ID" "$CONTAINER_ARTIFACT_DIGEST"
+          check_artifact "$PREREQ_ARTIFACT_ID" "$PREREQ_ARTIFACT_DIGEST"
+
+          mkdir -p release-work/dist release-work/container release-work/prereq release-assets
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$DIST_ARTIFACT_ID/zip" > release-work/distributions.zip
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$CONTAINER_ARTIFACT_ID/zip" > release-work/container-audit.zip
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$PREREQ_ARTIFACT_ID/zip" > release-work/release-prerequisites.zip
+          unzip -q release-work/distributions.zip -d release-work/dist
+          unzip -q release-work/container-audit.zip -d release-work/container
+          unzip -q release-work/release-prerequisites.zip -d release-work/prereq
+
+          WHEEL="$(find release-work/dist -type f -name 'nutev_nutmev-1.1.0-*.whl' -print -quit)"
+          SDIST="$(find release-work/dist -type f -name 'nutev_nutmev-1.1.0.tar.gz' -print -quit)"
+          AUDIT="$(find release-work/dist -type f -path '*/package_audit/distributions.json' -print -quit)"
+          test -n "$WHEEL"; test -n "$SDIST"; test -n "$AUDIT"
+          test "$(find release-work/dist -type f -name 'nutev_nutmev-1.1.0-*.whl' | wc -l)" -eq 1
+          test "$(find release-work/dist -type f -name 'nutev_nutmev-1.1.0.tar.gz' | wc -l)" -eq 1
+
+          cp "$WHEEL" release-assets/
+          cp "$SDIST" release-assets/
+          cp "$AUDIT" release-assets/distributions.json
+          cp release-work/container-audit.zip release-assets/container-audit.zip
+          cp release-work/release-prerequisites.zip release-assets/release-prerequisites.zip
+          (cd release-assets && sha256sum nutev_nutmev-1.1.0-* distributions.json container-audit.zip release-prerequisites.zip > SHA256SUMS.txt)
+
+      - name: Build sanitized release evidence and final notes
+        env:
+          AUDIT_RUN_ID: ${{ steps.doctorate.outputs.audit_run_id }}
+          AUDIT_ARTIFACT_ID: ${{ steps.doctorate.outputs.audit_artifact_id }}
+        run: |
+          set -euo pipefail
+          AUDIT_JSON="$(find release-work/doctorate -type f -name 'doctorate-runtime.json' -print -quit)"
+          python - "$AUDIT_JSON" <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          audit=json.loads(Path(sys.argv[1]).read_text())
+          evidence={
+            'record_type':'NUTEV_1_1_0_PUBLIC_RELEASE_EVIDENCE',
+            'schema_version':1,
+            'version':'1.1.0',
+            'tag':os.environ['TAG'],
+            'target_sha':os.environ['TARGET_SHA'],
+            'required_gate_run_ids':[34698980767,34698980724,34698980774,34698980757,34698980799,34698980697,34698980712],
+            'required_gates':'7/7 PASS on exact SHA',
+            'deploy_run_id':int(os.environ['DEPLOY_RUN_ID']),
+            'deploy_status':'PASS',
+            'post_deploy_audit_run_id':int(os.environ['AUDIT_RUN_ID']),
+            'post_deploy_audit_status':'PASS',
+            'scientific_boundary':{
+              'read_only':audit['read_only'],
+              'scientific_state_modified':audit['scientific_state_modified'],
+              'legacy_binding_performed':audit['legacy_binding_performed'],
+              'search_executed':audit['search_executed'],
+              'article1_application_count':audit['article1']['application_count'],
+              'article2_application_count':audit['article2']['application_count'],
+            },
+            'artifacts':{
+              'audited_distributions':{'id':int(os.environ['DIST_ARTIFACT_ID']),'digest':os.environ['DIST_ARTIFACT_DIGEST']},
+              'container_audit':{'id':int(os.environ['CONTAINER_ARTIFACT_ID']),'digest':os.environ['CONTAINER_ARTIFACT_DIGEST']},
+              'release_prerequisites':{'id':int(os.environ['PREREQ_ARTIFACT_ID']),'digest':os.environ['PREREQ_ARTIFACT_DIGEST']},
+              'post_deploy_doctorate_audit':{'id':int(os.environ['AUDIT_ARTIFACT_ID'])},
+            },
+            'scientific_validation_status':'B — DEMOTE',
+            'archive_doi':None,
+            'archive_note':'No DOI is claimed for v1.1.0 until a real archive service issues and verifies one.',
+          }
+          Path('release-assets/release-evidence.json').write_text(json.dumps(evidence,indent=2,ensure_ascii=False)+'\n')
+          PY
+
+          cp docs/RELEASE_NOTES_1_1_0.md release-assets/published-release-notes.md
+          cat >> release-assets/published-release-notes.md <<EOF
+
+## Verified public release identity
+
+This GitHub Release is bound to the final publication commit:
+
+\`$TARGET_SHA\`
+
+Verified publication evidence:
+
+- tag: \`$TAG\`;
+- seven required workflows: **7/7 PASS on the exact SHA**;
+- production deploy run: **#$DEPLOY_RUN_ID — PASS**;
+- post-deploy doctorate audit run: **#$AUDIT_RUN_ID — PASS**;
+- post-deploy scientific boundary: **read-only, 0 A1 and 0 A2 applications, no scientific mutation, no Legacy Binding, no search execution**;
+- wheel/sdist and audit evidence hashes: attached in \`SHA256SUMS.txt\` and \`release-evidence.json\`.
+
+The software release does not promote scientific validation. The Reference Engine remains **B — DEMOTE**, and A1/A2 keep their independent academic/provenance gates.
+
+No DOI is claimed here for v1.1.0. The historical v1.0.0 DOI must not be reused; a version-specific DOI may only be recorded after a real archive record is issued and verified.
+EOF
+
+      - name: Recheck main immediately before immutable tag
+        run: |
+          set -euo pipefail
+          MAIN_SHA="$(gh api "repos/$GITHUB_REPOSITORY/branches/main" --jq '.commit.sha')"
+          test "$MAIN_SHA" = "$TARGET_SHA"
+
+      - name: Create or verify immutable v1.1.0 tag
+        run: |
+          set -euo pipefail
+          if REF="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/tags/$TAG" 2>/dev/null)"; then
+            TYPE="$(python -c 'import json,sys; print(json.load(sys.stdin)["object"]["type"])' <<<"$REF")"
+            SHA="$(python -c 'import json,sys; print(json.load(sys.stdin)["object"]["sha"])' <<<"$REF")"
+            if [ "$TYPE" = "tag" ]; then
+              SHA="$(gh api "repos/$GITHUB_REPOSITORY/git/tags/$SHA" --jq '.object.sha')"
+            fi
+            test "$SHA" = "$TARGET_SHA"
+            echo "$TAG already exists on the correct immutable target"
+          else
+            gh api -X POST "repos/$GITHUB_REPOSITORY/git/refs" -f ref="refs/tags/$TAG" -f sha="$TARGET_SHA" >/dev/null
+            echo "$TAG created on $TARGET_SHA"
+          fi
+
+      - name: Create or refresh GitHub Release and attach audited artifacts
+        run: |
+          set -euo pipefail
+          if gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --title "NutEV Reference Engine v1.1.0" --notes-file release-assets/published-release-notes.md --draft=false --prerelease=false
+          else
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --title "NutEV Reference Engine v1.1.0" --notes-file release-assets/published-release-notes.md
+          fi
+          gh release upload "$TAG" --repo "$GITHUB_REPOSITORY" --clobber \
+            release-assets/nutev_nutmev-1.1.0-*.whl \
+            release-assets/nutev_nutmev-1.1.0.tar.gz \
+            release-assets/distributions.json \
+            release-assets/SHA256SUMS.txt \
+            release-assets/release-evidence.json \
+            release-assets/container-audit.zip \
+            release-assets/release-prerequisites.zip
+
+      - name: Verify public release identity
+        run: |
+          set -euo pipefail
+          REF="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/tags/$TAG")"
+          TYPE="$(python -c 'import json,sys; print(json.load(sys.stdin)["object"]["type"])' <<<"$REF")"
+          SHA="$(python -c 'import json,sys; print(json.load(sys.stdin)["object"]["sha"])' <<<"$REF")"
+          if [ "$TYPE" = "tag" ]; then
+            SHA="$(gh api "repos/$GITHUB_REPOSITORY/git/tags/$SHA" --jq '.object.sha')"
+          fi
+          test "$SHA" = "$TARGET_SHA"
+          RELEASE="$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG")"
+          python - "$TARGET_SHA" <<'PY' <<<"$RELEASE"
+          import json, sys
+          target=sys.argv[1]
+          data=json.load(sys.stdin)
+          assert data['draft'] is False
+          assert data['prerelease'] is False
+          assert data['tag_name']=='v1.1.0'
+          names={a['name'] for a in data.get('assets',[])}
+          required={'distributions.json','SHA256SUMS.txt','release-evidence.json','container-audit.zip','release-prerequisites.zip','nutev_nutmev-1.1.0.tar.gz'}
+          assert required <= names, (required-names)
+          assert any(n.startswith('nutev_nutmev-1.1.0-') and n.endswith('.whl') for n in names)
+          print('GitHub Release v1.1.0: PASS')
+          print(data['html_url'])
+          PY
