@@ -15,6 +15,7 @@ SPEC = importlib.util.spec_from_file_location(
 assert SPEC and SPEC.loader
 HYGIENE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(HYGIENE)
+CI_WORKFLOW = ROOT / ".github" / "workflows" / "ci.yml"
 
 FAILED = "a" * 40
 OTHER = "b" * 40
@@ -321,3 +322,36 @@ def test_docker_lookup_failure_fails_closed() -> None:
 
     with pytest.raises(RuntimeError, match="lookup failed"):
         HYGIENE.prune_failed_images({FAILED}, runner=broken)
+
+
+def test_builder_cache_prune_is_explicit_and_scoped_to_build_cache() -> None:
+    calls: list[list[str]] = []
+
+    def runner(command: list[str]) -> subprocess.CompletedProcess[str]:
+        calls.append(command)
+        return subprocess.CompletedProcess(command, 0, "Total reclaimed space: 256MB\n", "")
+
+    report = HYGIENE.prune_builder_cache(runner=runner)
+
+    assert report == {"builder_cache_prune": "PASS"}
+    assert calls == [["docker", "builder", "prune", "-a", "-f"]]
+    flattened = " ".join(calls[0])
+    assert "system prune" not in flattened
+    assert "volume prune" not in flattened
+    assert "image prune" not in flattened
+
+
+def test_builder_cache_prune_failure_fails_closed() -> None:
+    def broken(command: list[str]) -> subprocess.CompletedProcess[str]:
+        return subprocess.CompletedProcess(command, 1, "", "builder unavailable")
+
+    with pytest.raises(RuntimeError, match="builder-cache prune failed"):
+        HYGIENE.prune_builder_cache(runner=broken)
+
+
+def test_main_recovery_readiness_explicitly_opts_into_builder_cache_prune() -> None:
+    text = CI_WORKFLOW.read_text(encoding="utf-8")
+    assert "--prune-builder-cache" in text
+    assert "--retain-complete 3" in text
+    assert "docker system prune" not in text
+    assert "docker volume prune" not in text
