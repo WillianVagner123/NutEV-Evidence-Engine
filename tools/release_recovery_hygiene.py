@@ -15,10 +15,10 @@ remain. Scientific output volumes are never touched.
 The CLI also reclaims Docker image tags only when they are named ``nutev:<SHA>``,
 the SHA is in the failed-deploy allowlist, and no running or stopped container
 references the image. A final ordinary ``docker image prune`` removes only
-dangling, unused images. Production may separately opt into ``--prune-builder-cache``;
-that invokes only ``docker builder prune -a -f`` and therefore reclaims unused
-BuildKit/build cache without pruning containers, runtime images, networks or
-volumes.
+dangling, unused images. Bounded production retention also reclaims unused Docker
+builder cache; callers outside bounded retention may opt in with
+``--prune-builder-cache``. This invokes only ``docker builder prune -a -f`` and
+never prunes containers, runtime images, networks or volumes.
 """
 from __future__ import annotations
 
@@ -241,6 +241,11 @@ def prune_builder_cache(*, runner: Runner = _subprocess_runner) -> dict:
     return {"builder_cache_prune": "PASS"}
 
 
+def should_prune_builder_cache(*, retain_complete: int | None, explicitly_requested: bool) -> bool:
+    """Bounded production retention is itself an explicit hygiene opt-in."""
+    return explicitly_requested or retain_complete is not None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", type=Path, required=True)
@@ -267,7 +272,10 @@ def main() -> int:
         images = prune_failed_images(allowed_failed_shas)
         builder_cache = (
             prune_builder_cache()
-            if args.prune_builder_cache
+            if should_prune_builder_cache(
+                retain_complete=args.retain_complete,
+                explicitly_requested=args.prune_builder_cache,
+            )
             else {"builder_cache_prune": "SKIPPED"}
         )
         report = {
