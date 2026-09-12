@@ -33,9 +33,10 @@ def test_doctorate_audit_uses_runtime_signature_discovery_not_a_hardcoded_db_pat
     assert "platform database resolution:" in text
 
 
-def test_doctorate_audit_runs_after_successful_same_repository_deploy_without_fragile_branch_regate():
+def test_doctorate_audit_runs_after_successful_deploy_without_fragile_second_hop_regates():
     text = WORKFLOW.read_text(encoding='utf-8')
     assert "github.event.workflow_run.conclusion == 'success'" in text
-    assert "github.event.workflow_run.head_repository.full_name == github.repository" in text
+    assert "github.event.workflow_run.head_repository.full_name == github.repository" not in text
     assert "github.event.workflow_run.head_branch == 'main'" not in text
     assert "github.event_name == 'workflow_dispatch'" in text
+    assert "main/same-repository provenance gate" in text
