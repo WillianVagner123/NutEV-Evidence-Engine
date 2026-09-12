@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: >-
-  Version 1.1.0 is production accepted but not yet published as an immutable
-  release. Cite the exact Git commit until the v1.1.0 release and archive record
-  are created.
+  NutEV Reference Engine v1.1.0 is published as an immutable GitHub Release.
+  Cite version 1.1.0 and its release commit. A version-specific Zenodo DOI must
+  only be added after a real public archive record is issued and verified.
 title: "NutEV Reference Engine: taxonomy-guided reference discovery and ranking for Lifestyle Nutrition"
 abstract: >-
   NutEV Reference Engine is an open-source software tool for multi-source
@@ -16,9 +16,10 @@ abstract: >-
   recovery gates and fail-closed private scientific applications.
 type: software
 version: "1.1.0"
+date-released: 2026-09-12
 license: MIT
 repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
-url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0"
 keywords:
   - lifestyle nutrition
   - lifestyle medicine
@@ -39,15 +40,16 @@ authors:
   - given-names: "Willian Vagner Dorneles"
     family-names: "Schneider"
 # ORCID and affiliation are intentionally omitted until independently confirmed.
-# release-date and DOI are intentionally omitted until v1.1.0 is actually
-# published and a version-specific archive identifier is issued.
+# DOI is intentionally omitted until a version-specific v1.1.0 archive record is
+# actually published and verified. The v1.0.0 DOI must not be reused.
 preferred-citation:
   type: software
   title: "NutEV Reference Engine: taxonomy-guided reference discovery and ranking for Lifestyle Nutrition"
   version: "1.1.0"
+  date-released: 2026-09-12
   license: MIT
   repository-code: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
-  url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine"
+  url: "https://github.com/WillianVagner123/NutEV-Evidence-Engine/releases/tag/v1.1.0"
   year: 2026
   authors:
     - given-names: "Willian Vagner Dorneles"
