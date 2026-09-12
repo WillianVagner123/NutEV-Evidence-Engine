@@ -1,54 +1,87 @@
-# Final system acceptance — 1.1.0 candidate
+# Final system acceptance — NutEV 1.1.0
 
-**Decision: NOT RELEASE COMPLETE / NOT PUBLISHED.**
+**Decision: PRODUCTION PASS / SITE-SOFTWARE CLOSED.**
 
-This release closeout has executed code, package and isolated-runtime audits.
-It has not deployed to the real server or published a new release/DOI. The
-current source is held in PR #1246; final outcomes must be read for its exact
-head and tested merge SHA, not copied from an older green run.
+Production SHA:
 
-## Implemented
+```text
+e40dfd8c48cde824fa6053f9b077157f21bae698
+```
 
-Multi-tenant HTTP and source-ownership boundaries; stale browser/tab/logout
-protection; export race correction; exact-SHA workflow/step enforcement;
-explicit Python and Docker package boundaries; artifact inspection and isolated
-wheel installation; snapshot bytes/directory/mode/uid/gid verification; required
-Docker runtime and workflow-recovery fault injection; consistent semantic package
-version; explicit user-selected profile in the generic topic CLI.
+The NutEV 1.1.0 site/software acceptance is complete for the deployed production system. This document supersedes the prior candidate-state wording that still described real-server deployment and production acceptance as pending.
 
-## Executed evidence
+## Accepted production scope
 
-Full latest local source suite: 1,083 PASS on Python 3.13.5. Earlier publication
-candidate b6d9b4 completed all seven PR workflows. Its wheel/sdist, clean isolated
-install, Docker build/private-canary exclusion, pilot runtime and numeric-owner
-recovery checks passed. Artifacts were downloaded, hash-checked and re-audited.
-The final source change extends the Docker check to execute actual workflow
-recovery functions with an intentionally failing image and requires a fresh CI
-run. The verified final PR comment and audit manifest record those final results.
+The accepted system includes:
 
-These are scoped technical results, not scientific validation, external-provider
-availability, actual-server recovery or a guarantee for all historical modules.
-The repository scientific validation state is not promoted by software tests.
+- authenticated multi-tenant project isolation;
+- stale browser/tab/logout protection;
+- scoped library/review/export services;
+- first-party source-owner checks;
+- fail-closed private surfaces;
+- exact-SHA release controls;
+- explicit Python and Docker package boundaries;
+- snapshot integrity and recovery controls;
+- public HTTPS edge behind Caddy;
+- deployed NutEV 1.1.0 runtime on the Hetzner production host.
 
-## Remaining final operational acceptance
+## Final evidence
 
-Trusted server access and host identity; real configuration and data ownership;
-all-writer quiescence/disk capacity; production backup/schema compatibility;
-controlled merge and exact-main-SHA gates; actual deployment; live pilot and HTTPS
-version/isolation verification; real data reconciliation; final artifact/tag
-publication and archive confirmation. No private key or owner mapping is guessed.
+Final closeout recorded:
 
-A1 human methodology and A2 reviewed legacy provenance remain independent gates.
-They may remain blocked in an otherwise accepted generic platform release, but
-must stay private and must not be described as scientifically completed.
+- 7/7 workflows passing on the same release SHA;
+- Hetzner recovery readiness PASS;
+- snapshot-capacity gate PASS;
+- three complete rollback snapshots preserved;
+- active release protected;
+- exact-SHA deploy `#1659` PASS;
+- NutEV 1.1.0 active in production;
+- external Caddy / ports 80–443 PASS;
+- `/search.html` and `/articles.html` returning 200;
+- private unauthenticated surfaces returning 401 / fail-closed;
+- real backup/restore PASS;
+- 19.466 files verified;
+- 33 SQLite databases verified;
+- `production_overwritten=false`;
+- post-deploy auditor `#99` PASS;
+- final auditor state `read_only=true`;
+- `scientific_state_modified=false`;
+- `legacy_binding_performed=false`;
+- `search_executed=false`;
+- 0 A1 / 0 A2 applications materialized.
+
+The production capacity fix is bounded to unused Docker builder cache and preserves the active release, three full rollback snapshots, runtime images and the scientific volume.
+
+## Acceptance verdict
+
+```text
+SITE / SOFTWARE NUTEV 1.1.0 — PRODUÇÃO: PASS — FECHADO E CONCLUÍDO
+```
+
+## What this acceptance does not claim
+
+This is not a scientific-validation certificate and does not approve or materialize A1/A2.
+
+A1 still requires genuine academic/human gates. A2 still requires reviewed provenance / Legacy Binding evidence. The production auditor finding zero materialized A1/A2 applications is the correct fail-closed behavior.
+
+The NutEV Engine's validation status remains controlled by `validation/` and is not promoted by operational success.
 
 ## Publication identity
 
-Candidate 1.1.0 preserves the package name and the released v1.0.0 CLI contracts.
-The old v1.0.0 tag/DOI remains unchanged. Candidate CFF/Zenodo metadata has no
-fabricated release date or new DOI. CI artifacts are not public releases.
-A GitHub source archive and a Python wheel have different content scopes; their
-audit records must identify the exact distribution being approved.
+Production acceptance and public publication are separate states.
 
-See SYSTEM_CLOSEOUT_MASTER.md, PRE_SSH_ACCEPTANCE.md and PUBLICATION_READINESS.md.
-Final green PR checks do not override the operational requirements above.
+At the time of this document:
+
+```text
+PRODUCTION_ACCEPTED / PUBLICATION_PENDING
+```
+
+The next public-release operation must create an immutable `v1.1.0` tag pointing exactly to the accepted SHA above, followed by a GitHub Release and a new archive deposit. The historical DOI `10.5281/zenodo.21998607` belongs to `v1.0.0` and must not be reused.
+
+Only after the tag, GitHub Release and new archive/DOI are verified may the software publication state become:
+
+```text
+RELEASED / PUBLISHED
+```
+
+See `docs/releases/v1.1.0-production-closeout.md`, `docs/SYSTEM_CLOSEOUT_MASTER.md` and `docs/PUBLICATION_READINESS.md`.
