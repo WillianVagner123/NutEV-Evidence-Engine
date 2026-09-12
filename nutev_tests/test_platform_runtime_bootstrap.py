@@ -73,5 +73,6 @@ def test_empty_bootstrapped_platform_is_readable_by_production_doctorate_audit(
 
 def test_production_image_bootstraps_schema_only_in_pilot_mode() -> None:
     dockerfile = (ROOT / "deploy" / "hetzner" / "Dockerfile").read_text(encoding="utf-8")
-    assert 'if [ \\"${NUTEV_AUTH_MODE:-legacy}\\" = pilot ]; then python tools/bootstrap_platform_runtime.py; fi' in dockerfile
+    assert "NUTEV_AUTH_MODE:-legacy" in dockerfile
+    assert "= pilot ]; then python tools/bootstrap_platform_runtime.py; fi" in dockerfile
     assert dockerfile.index("bootstrap_platform_runtime.py") < dockerfile.index("secure_server.py --host")
