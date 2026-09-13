@@ -87,6 +87,25 @@ The Corpus Explorer hydrates its existing server-side controls from supported UR
 
 A click on a chart remains navigation/filtering only. Counts never become evidence-strength, eligibility or inclusion signals.
 
+## Visual cross-filter layer
+
+The dashboard also exposes a compact visual-exploration surface built from the same verified `ARTICLE_SUMMARIES.jsonl` payload. It adds no new scientific data source and no alternate state model.
+
+The visual layer shows, for the current local filter state:
+
+- selected document count and share of Tier A;
+- provider count;
+- publication-year window;
+- retrieved + partial full-text coverage;
+- an interactive full-text distribution;
+- an interactive provider mix;
+- B-NORM/C-STRUCT route tiles with overlap shown separately;
+- a publication pulse chart.
+
+Clicking these visual controls updates the existing dashboard filters rather than creating a new filter engine. The normal URL-state layer remains authoritative for the view. Clicking the same active value again clears that filter.
+
+All visual controls use native buttons for keyboard interaction, retain numeric labels or accessible text, and collapse responsively on small screens. Percentages are descriptive shares of the current filtered Tier A set; they are not quality, certainty, eligibility or evidence-strength metrics.
+
 ## Scientific guardrails
 
 The UI must preserve these boundaries:
