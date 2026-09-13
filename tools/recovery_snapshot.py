@@ -16,6 +16,7 @@ import shutil
 import sqlite3
 import stat
 import tempfile
+import threading
 from urllib.parse import quote
 
 DEFAULT_REHEARSAL_CHUNK_BYTES = 8 * 1024 * 1024
@@ -386,18 +387,41 @@ def create_snapshot(source: Path, backup: Path, *, quiesced: bool = False) -> di
     }
 
 
+
+def _snapshot_heartbeat(
+    stop: threading.Event, *, interval_seconds: float = 15.0
+) -> None:
+    """Emit path-free progress while a long quiesced snapshot is running."""
+    while not stop.wait(interval_seconds):
+        print(
+            json.dumps(
+                {"event": "snapshot_progress", "status": "RUNNING"},
+                sort_keys=True,
+            ),
+            flush=True,
+        )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--backup", type=Path, required=True)
     parser.add_argument("--quiesced", action="store_true")
     args = parser.parse_args()
-    print(
-        json.dumps(
-            create_snapshot(args.source, args.backup, quiesced=args.quiesced),
-            sort_keys=True,
-        )
+    stop = threading.Event()
+    heartbeat = threading.Thread(
+        target=_snapshot_heartbeat,
+        args=(stop,),
+        daemon=True,
+        name="nutev-snapshot-heartbeat",
     )
+    heartbeat.start()
+    try:
+        result = create_snapshot(args.source, args.backup, quiesced=args.quiesced)
+    finally:
+        stop.set()
+        heartbeat.join(timeout=1.0)
+    print(json.dumps(result, sort_keys=True), flush=True)
     return 0
 
 
