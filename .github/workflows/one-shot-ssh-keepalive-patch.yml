@@ -1,0 +1,56 @@
+name: one-shot-ssh-keepalive-patch
+
+on:
+  push:
+    branches:
+      - fix/hetzner-ssh-keepalive-20260913
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: ${{ github.ref == 'refs/heads/fix/hetzner-ssh-keepalive-20260913' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: fix/hetzner-ssh-keepalive-20260913
+      - name: Apply keepalive hardening and contract test
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          workflow = Path('.github/workflows/deploy-hetzner.yml')
+          text = workflow.read_text(encoding='utf-8')
+          needle = '''          chmod 600 ~/.ssh/known_hosts
+          HOST_LOOKUP="$HETZNER_HOST"
+'''
+          replacement = '''          chmod 600 ~/.ssh/known_hosts
+          cat > ~/.ssh/config <<'EOF'
+          Host *
+            ServerAliveInterval 30
+            ServerAliveCountMax 10
+            TCPKeepAlive yes
+          EOF
+          chmod 600 ~/.ssh/config
+          HOST_LOOKUP="$HETZNER_HOST"
+'''
+          if needle not in text:
+              raise SystemExit('expected SSH configuration anchor not found')
+          if 'ServerAliveInterval 30' in text:
+              raise SystemExit('SSH keepalive already present unexpectedly')
+          workflow.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+
+          test = Path('nutev_tests/test_hetzner_ssh_keepalive.py')
+          test.write_text('''from pathlib import Path\n\n\nROOT = Path(__file__).resolve().parents[1]\nWORKFLOW = ROOT / ".github" / "workflows" / "deploy-hetzner.yml"\n\n\ndef test_long_remote_deploy_has_client_keepalive() -> None:\n    text = WORKFLOW.read_text(encoding="utf-8")\n    configure = text.split("- name: Configure SSH", 1)[1].split("- name: Verify SSH access", 1)[0]\n    assert "ServerAliveInterval 30" in configure\n    assert "ServerAliveCountMax 10" in configure\n    assert "TCPKeepAlive yes" in configure\n    assert "chmod 600 ~/.ssh/config" in configure\n    assert "StrictHostKeyChecking=no" not in text\n''', encoding='utf-8')
+          PY
+          git rm .github/workflows/one-shot-ssh-keepalive-patch.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/workflows/deploy-hetzner.yml nutev_tests/test_hetzner_ssh_keepalive.py
+          git diff --cached --check
+          git commit -m 'fix(deploy): keep long Hetzner SSH sessions alive'
+          git push origin HEAD:fix/hetzner-ssh-keepalive-20260913
