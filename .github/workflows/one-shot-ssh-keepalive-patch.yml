@@ -72,7 +72,6 @@ jobs:
                   '    assert "/" not in output',
                   '    assert "snapshot-source" not in output',
                   '    assert "snapshot-backups" not in output',
-                  '',
               ]) + '\n', encoding='utf-8')
           PY
           git config user.name 'github-actions[bot]'
