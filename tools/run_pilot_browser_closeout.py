@@ -49,6 +49,47 @@ def run(output: Path) -> dict:
             expect(page.locator('#libraryStateMessage')).to_contain_text('Nenhum artigo')
             expect(page.locator('#libraryHealth')).to_have_text('projeto atual')
             expect(page.locator('#libraryScope')).to_have_value('project')
+        def controlled_search_start_failure(page,status,message,*,keyboard=False):
+            calls=[]
+            def fail(route):
+                calls.append({'method':route.request.method,'url':route.request.url})
+                route.fulfill(status=status,content_type='application/json',body=json.dumps({'error':'synthetic_failure','message':message}))
+            page.route('**/api/search/jobs',fail)
+            try:
+                page.locator('#question').fill(f'controlled browser failure {status}')
+                if keyboard:
+                    page.locator('#question').press('Control+Enter')
+                else:
+                    page.locator('#searchBtn').click()
+                expect(page.locator('#searchState')).to_contain_text(message,timeout=10000)
+                expect(page.locator('#searchBtn')).to_be_enabled()
+                expect(page.locator('#globalSearchBtn')).to_be_enabled()
+                assert calls==[{'method':'POST','url':base+'/api/search/jobs'}],calls
+            finally:
+                page.unroute('**/api/search/jobs',fail)
+        def select_only_provider(page,provider_id):
+            details=page.locator('details.advanced')
+            if details.count() and not bool(details.evaluate('el=>el.open')):
+                details.locator('summary').click()
+            boxes=page.locator('#providerGrid input[type=checkbox]')
+            expect(boxes.first).to_be_visible()
+            found=False
+            for index in range(boxes.count()):
+                box=boxes.nth(index);selected=(box.get_attribute('value') or '')==provider_id
+                found=found or selected
+                if selected and not box.is_checked():box.check()
+                elif not selected and box.is_checked():box.uncheck()
+            assert found,f'provider not found: {provider_id}'
+        def assert_mobile_surface(page,label,path):
+            page.goto(base+path,wait_until='domcontentloaded')
+            toggle=page.locator('.mobile-nav-toggle')
+            expect(toggle).to_be_visible(timeout=10000)
+            if toggle.get_attribute('aria-expanded')!='true':toggle.click()
+            expect(toggle).to_have_attribute('aria-expanded','true')
+            overflow=float(page.evaluate('document.documentElement.scrollWidth-innerWidth'))
+            assert overflow<=2.0,f'{label}: mobile horizontal overflow {overflow}px'
+            page.screenshot(path=str(output/f'mobile-{label}.png'),full_page=True)
+            passed(f'mobile_{label}_navigation_and_no_horizontal_overflow')
         try:
             for _ in range(2):
                 context=browser.new_context(viewport={'width':1366,'height':900})
@@ -101,9 +142,36 @@ def run(output: Path) -> dict:
             assert contexts[1].request.get(base+f'/api/exports/{export_id}/artifacts/fixture.txt').status==404
             assert contexts[0].request.get(base+f'/api/exports/{export_id}/artifacts/fixture.txt').body()==b'PRIVATE_EXPORT_BROWSER'
             passed('export_manifest_download_and_foreign_denial')
+
             a.goto(base+'/search.html',wait_until='domcontentloaded');expect(a.locator('#searchBtn')).to_be_enabled();passed('pilot_search_page_loaded')
-            a.set_viewport_size({'width':390,'height':844});expect(a.locator('.mobile-nav-toggle')).to_be_visible();a.locator('.mobile-nav-toggle').click();expect(a.locator('.mobile-nav-toggle')).to_have_attribute('aria-expanded','true')
-            a.screenshot(path=str(output/'search-mobile.png'),full_page=True);assert a.evaluate('document.documentElement.scrollWidth <= innerWidth+1');passed('mobile_menu_and_no_horizontal_overflow')
+            controlled_search_start_failure(a,429,'Limite sintético de busca atingido. Tente novamente em instantes.')
+            expect(a.locator('#searchState')).to_have_attribute('class','error')
+            passed('search_start_429_is_visible_and_does_not_repost')
+            controlled_search_start_failure(a,503,'Busca temporariamente indisponível no teste controlado.',keyboard=True)
+            expect(a.locator('#searchState')).to_have_attribute('class','error')
+            passed('keyboard_ctrl_enter_503_uses_same_fail_safe_surface')
+
+            select_only_provider(a,'pubmed')
+            a.locator('#question').fill('offline provider disabled browser acceptance')
+            a.locator('#searchBtn').click()
+            expect(a.locator('#summary')).to_be_visible(timeout=20000)
+            expect(a.locator('#summary')).to_contain_text('A busca não recuperou resultados utilizáveis',timeout=5000)
+            outcome=a.locator('#summary').inner_text().casefold()
+            assert 'indisponibilidade ou lacunas' in outcome,outcome
+            assert 'cobertura descreve recuperação das fontes, não qualidade, certeza ou elegibilidade da evidência' in outcome,outcome
+            passed('offline_provider_failure_is_not_presented_as_no_evidence')
+
+            a.set_viewport_size({'width':390,'height':844})
+            for label,path in (
+                ('search','/search.html'),
+                ('project','/project.html'),
+                ('library','/evidence-library.html'),
+                ('review','/review.html'),
+                ('exports','/exports.html'),
+            ):
+                assert_mobile_surface(a,label,path)
+            passed('core_mobile_surface_matrix')
+
             a.goto(base+'/evidence-library.html',wait_until='domcontentloaded');tab.goto(base+'/project.html',wait_until='domcontentloaded');tab.locator('#nutevLogoutButton').click();tab.wait_for_url('**/login.html');a.wait_for_url('**/login.html');passed('logout_invalidates_other_tab')
             with sqlite3.connect(data['database']) as con:con.execute("UPDATE platform_auth_sessions SET expires_at='2000-01-01T00:00:00+00:00' WHERE user_id=?",(data['users']['b']['user_id'],))
             b.bring_to_front();b.evaluate("window.dispatchEvent(new Event('focus'))");b.wait_for_url('**/login.html',timeout=10000);passed('session_expiry_clears_visible_private_page')
