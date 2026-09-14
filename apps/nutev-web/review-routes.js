@@ -1,3 +1,5 @@
+import './i18n.js'
+
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const fmt=value=>new Intl.NumberFormat('pt-BR').format(Number(value||0));
