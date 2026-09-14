@@ -1,3 +1,5 @@
+import './i18n.js'
+
 const STATUS_LABELS={
   COMPLETE:'Concluída',
   COMPLETE_WITH_PROVIDER_GAPS:'Concluída, com lacunas em algumas fontes',
