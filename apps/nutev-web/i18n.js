@@ -272,8 +272,111 @@ const PAIRS=[
   ['Documentos primeiro. Síntese depois.','Documents first. Synthesis second.',['Evidence first. Generation second.']]
 ]
 
+// Full-page product copy introduced by the system-first language pass.
+// Keeping it separate makes the conceptual vocabulary above easier to audit.
+const PRODUCT_COPY_PAIRS=[
+  ['Análise de Evidências — NutEV','Evidence Analysis — NutEV',['Scientific Intelligence — NutEV']],
+  ['Consulta de Evidências — NutEV','Evidence Query — NutEV',['Ask NutEV — Grounded Evidence Retrieval']],
+  ['Contexto de Evidências — NutEV','Evidence Context — NutEV',['AI Context — NutEV']],
+  ['Revisão de Síntese — NutEV','Synthesis Review — NutEV',['Human Synthesis Review — NutEV']],
+  ['Resumo de Síntese Verificado — NutEV','Verified Synthesis Summary — NutEV',['Human Synthesis Brief — NutEV']],
+  ['Controle de qualidade','Quality control',['QA']],
+  ['Pergunta','Question'],
+  ['Limpar','Clear'],
+  ['Todos os domínios','All domains'],
+  ['Todos os tipos','All document types'],
+  ['carregando contexto…','loading context…'],
+  ['Faça uma pergunta para iniciar.','Enter a question to begin.'],
+  ['0 selecionados','0 selected'],
+  ['Nenhuma consulta executada.','No query executed.'],
+  ['Gerar pacote','Build packet'],
+  ['Copiar pacote','Copy packet'],
+  ['Avaliação + monitoramento','Assessment + monitoring'],
+  ['Contexto social','Social context'],
+  ['Literacia alimentar','Food literacy'],
+  ['Medicina do Estilo de Vida','Lifestyle Medicine'],
+  ['Consulte o corpus estruturado e veja primeiro os documentos que sustentam cada resultado.','Query the structured corpus and see the supporting documents first.'],
+  ['ARTIGO 1 · CONSULTA VINCULADA ÀS FONTES','ARTICLE 1 · SOURCE-LINKED EVIDENCE QUERY'],
+  ['A consulta usa correspondência determinística sobre o corpus verificado do Artigo 1, explica por que cada documento apareceu e organiza um pacote auditável para análise. Nenhum resultado é promovido automaticamente a evidência científica aceita.','The query uses deterministic matching over the verified Article 1 corpus, explains why each document appeared and organizes an auditable packet for analysis. No result is automatically promoted to accepted scientific evidence.'],
+  ['consulta determinística','deterministic query'],
+  ['Quais documentos normativos tratam de avaliação nutricional e monitoramento?','Which normative documents address nutrition assessment and monitoring?'],
+  ['Quais documentos abordam contexto social da alimentação?','Which documents address the social context of eating?'],
+  ['Quais diretrizes e estruturas abordam literacia alimentar ou competências alimentares?','Which guidelines and frameworks address food literacy or food skills?'],
+  ['Compare documentos B-NORM e C-STRUCT relacionados à Medicina do Estilo de Vida.','Compare B-NORM and C-STRUCT documents related to Lifestyle Medicine.'],
+  ['Carregando os resumos científicos verificados…','Loading verified scientific summaries…'],
+  ['Use documentos selecionados; se nenhum estiver marcado, o sistema usa os melhores resultados da consulta.','Use selected documents; if none are checked, the system uses the best query matches.'],
+  ['O pacote de evidências aparecerá aqui.','The evidence packet will appear here.'],
+  ['O pacote contém metadados e contexto seguro, não texto completo protegido. Para aprofundar um documento, abra o Dossiê Científico no Corpus.','The packet contains metadata and safe context, not protected full text. To inspect a document more deeply, open its Scientific Dossier in the Corpus.'],
+  ['Consulta ≠ inclusão. Correspondência lexical ≠ relevância científica validada. Pertencer a uma rota ≠ elegibilidade. Perfil automatizado ≠ risco de viés ou certeza. Excertos continuam candidatos até revisão humana. A Consulta de Evidências não autoriza PRESS, GF-10, congelamento da consulta, busca formal ou PRISMA.','Query ≠ inclusion. Lexical match ≠ validated scientific relevance. Route membership ≠ eligibility. Automated profile ≠ risk of bias or certainty. Excerpts remain candidates until human review. Evidence Query does not authorize PRESS, GF-10, query freeze, formal search or PRISMA.'],
+  ['Fonte compartilhada e auditável para as operações e integrações do sistema.','Shared and auditable source for system operations and integrations.'],
+  ['CONTEXTO AUDITÁVEL · ARTIGO 1','AUDITABLE CONTEXT · ARTICLE 1'],
+  ['Uma fonte de verdade para o sistema','A single source of truth for the system'],
+  ['Busca, análise e integrações devem usar o mesmo estado de busca, manifesto e resumos estruturados. O sistema não reconstrói estado científico a partir de histórico de conversa nem cria fatos ausentes.','Search, analysis and integrations must use the same search state, manifest and structured summaries. The system does not reconstruct scientific state from conversation history or create missing facts.'],
+  ['Carregando contexto verificado…','Loading verified context…'],
+  ['Arquivos canônicos','Canonical files'],
+  ['Arquivos seguros disponibilizados ao sistema, sem texto completo protegido.','Safe files made available to the system, without protected full text.'],
+  ['Abrir Consulta de Evidências →','Open Evidence Query →'],
+  ['Limite da busca formal','Formal-search boundary'],
+  ['O contexto reflete o estado mestre; não altera nem contorna gates científicos.','The context reflects the master state; it does not alter or bypass scientific gates.'],
+  ['Instruções operacionais para consumir o contexto sem ultrapassar a fronteira científica.','Operational instructions for using the context without crossing the scientific boundary.'],
+  ['Copiar instruções','Copy instructions'],
+  ['Contexto de evidências ≠ adjudicação. Perfil automatizado ≠ inclusão. Pertencer a uma rota ≠ elegibilidade. Excerto ≠ EvidenceClaim aceito. A busca formal continua dependente de PRESS + GF-10 + congelamento da consulta.','Evidence context ≠ adjudication. Automated profile ≠ inclusion. Route membership ≠ eligibility. Excerpt ≠ accepted EvidenceClaim. Formal search remains dependent on PRESS + GF-10 + query freeze.'],
+  ['Síntese por domínio · achados candidatos · filas de comparação humana','Domain synthesis · finding candidates · human comparison queues'],
+  ['SUPORTE À SÍNTESE · SEM CONCLUSÃO AUTOMÁTICA','SYNTHESIS SUPPORT · NO AUTOMATED CONCLUSION'],
+  ['Construindo síntese estrutural sem uso de ranking científico…','Building rank-blind structural synthesis…'],
+  ['Achados candidatos vinculados às fontes','Source-linked finding candidates'],
+  ['Selecione um domínio. O NutEV carrega somente um lote limitado de dossiês, sem texto completo integral.','Select a domain. NutEV loads only a limited batch of dossiers, without complete full text.'],
+  ['O sistema prepara documentos comparáveis; não classifica automaticamente concordância, contradição ou certeza.','The system prepares comparable documents; it does not automatically classify agreement, contradiction or certainty.'],
+  ['Domínios menos representados ou com menos pacotes de resultados são sinais para inspeção — não lacunas de evidência confirmadas.','Less represented domains or domains with fewer result bundles are signals for inspection — not confirmed evidence gaps.'],
+  ['Contagem por domínio ≠ força · rótulo recorrente ≠ consenso · redação diferente ≠ contradição · mapeamento esparso ≠ lacuna de evidência · pacote de resultados ≠ EvidenceClaim aceita · esta página ≠ PRISMA.','Domain count ≠ strength · recurring label ≠ consensus · different wording ≠ contradiction · sparse mapping ≠ evidence gap · result bundle ≠ accepted EvidenceClaim · this page ≠ PRISMA.'],
+  ['Comparabilidade · convergência/divergência · justificativa do revisor','Comparability · convergence/divergence · reviewer rationale'],
+  ['Abrir Resumo','Open Summary'],
+  ['Limpar rascunho','Clear draft'],
+  ['JULGAMENTO HUMANO · RASCUNHO LOCAL · NÃO CANÔNICO','HUMAN JUDGMENT · LOCAL DRAFT · NONCANONICAL'],
+  ['Transformar comparação visual em julgamento rastreável','Turn visual comparison into traceable judgment'],
+  ['Preparando fila humana de síntese…','Preparing human synthesis queue…'],
+  ['Achado âncora','Anchor finding'],
+  ['Fila de adjudicação','Adjudication queue'],
+  ['Registro da revisão','Review record'],
+  ['Limite de interpretação','Interpretation boundary'],
+  ['Referência fixa para a rodada de comparação atual.','Fixed reference for the current comparison round.'],
+  ['Classifique comparabilidade antes de registrar convergência/divergência. Relação sem justificativa não é salva.','Classify comparability before recording convergence/divergence. A relation without rationale is not saved.'],
+  ['Decisões humanas salvas localmente neste navegador. O registro é rascunho, fica vinculado à impressão digital do contexto atual e precisa ser exportado para circular como artefato.','Human decisions saved locally in this browser. The record is a draft, remains bound to the current context fingerprint and must be exported to circulate as an artifact.'],
+  ['Rótulo de relação humana ≠ meta-análise · convergente ≠ certeza · divergente ≠ contradição comprovada · não comparável ≠ exclusão · rascunho ≠ síntese canônica · impressão digital do contexto ≠ validação científica · esta página ≠ PRISMA.','Human relation label ≠ meta-analysis · convergent ≠ certainty · divergent ≠ proven contradiction · not comparable ≠ exclusion · draft ≠ canonical synthesis · context fingerprint ≠ scientific validation · this page ≠ PRISMA.'],
+  ['Artefato de revisão com integridade verificada · visão executiva para apresentação','Integrity-verified review artifact · executive presentation view'],
+  ['Importar revisão','Import review'],
+  ['Exportar resumo','Export summary'],
+  ['aguardando revisão','waiting for review'],
+  ['INTEGRIDADE VERIFICADA · FONTE HUMANA · NÃO REPRESENTA CERTEZA','INTEGRITY VERIFIED · HUMAN SOURCE · NOT CERTAINTY'],
+  ['Visão executiva para artigo e apresentação científica','Executive view for article and scientific presentation'],
+  ['Verificação do artefato de revisão','Review artifact verification'],
+  ['Panorama das relações revisadas','Reviewed relationship landscape'],
+  ['Domínios representados','Domains represented'],
+  ['Perfil de comparabilidade','Comparability profile'],
+  ['Relações revisadas','Reviewed relationships'],
+  ['Limite de apresentação','Presentation boundary'],
+  ['Desfecho','Outcome'],
+  ['Construto / intervenção','Construct / intervention',['Construct / intervenção']],
+  ['Tempo / seguimento','Time / follow-up',['Tempo / follow-up']],
+  ['Não revisado','Unreviewed',['UNREVIEWED']],
+  ['Nenhum domínio pronto para inspeção','No domain ready for inspection',['Nenhum domínio finding-ready']],
+  ['pacote de resultados vinculado à fonte','source-linked result bundle'],
+  ['Literacia alimentar / nutricional','Food / nutrition literacy'],
+  ['Processo de Cuidado em Nutrição','Nutrition Care Process'],
+  ['Posicionamento','Position statement'],
+  ['Estrutura / modelo','Framework / model'],
+  ['Competências / currículo','Competencies / curriculum'],
+  ['Orientação','Guidance']
+]
+
 const EXACT=new Map()
 for(const [pt,en,aliases=[]] of PAIRS){
+  const entry={pt,en}
+  EXACT.set(pt,entry)
+  EXACT.set(en,entry)
+  for(const alias of aliases)EXACT.set(alias,entry)
+}
+for(const [pt,en,aliases=[]] of PRODUCT_COPY_PAIRS){
   const entry={pt,en}
   EXACT.set(pt,entry)
   EXACT.set(en,entry)
@@ -288,11 +391,12 @@ const DYNAMIC_PATTERNS=[
   {pt:/^(\d+)\/([0-9]+) itens com decisão salva$/,en:/^(\d+)\/([0-9]+) items with a saved decision$/,toPt:m=>`${m[1]}/${m[2]} itens com decisão salva`,toEn:m=>`${m[1]}/${m[2]} items with a saved decision`},
   {pt:/^(\d+)\/([0-9]+) revisores enviaram e travaram a própria avaliação$/,en:/^(\d+)\/([0-9]+) reviewers submitted and locked their own assessment$/,toPt:m=>`${m[1]}/${m[2]} revisores enviaram e travaram a própria avaliação`,toEn:m=>`${m[1]}/${m[2]} reviewers submitted and locked their own assessment`},
   {pt:/^(\d+) recuperados \+ parciais$/,en:/^(\d+) retrieved \+ partial$/,toPt:m=>`${m[1]} recuperados + parciais`,toEn:m=>`${m[1]} retrieved + partial`},
-  {pt:/^contexto estruturado ([\d.,]+) caracteres$/,en:/^structured context ([\d.,]+) characters$/,aliases:[/^contexto IA ([\d.,]+) chars$/i],toPt:m=>`contexto estruturado ${m[1]} caracteres`,toEn:m=>`structured context ${m[1]} characters`}
+  {pt:/^contexto estruturado ([\d.,]+) caracteres$/,en:/^structured context ([\d.,]+) characters$/,aliases:[/^contexto IA ([\d.,]+) chars$/i],toPt:m=>`contexto estruturado ${m[1]} caracteres`,toEn:m=>`structured context ${m[1]} characters`},
+  {pt:/^(.+) · pacote de resultados vinculado à fonte$/,en:/^(.+) · source-linked result bundle$/,toPt:m=>`${m[1]} · pacote de resultados vinculado à fonte`,toEn:m=>`${m[1]} · source-linked result bundle`}
 ]
 
 const SKIP_SELECTOR='script,style,code,pre,textarea,[data-raw-enum],[data-i18n-skip],[data-nutev-no-translate],.article-title,[data-article-title],.abstract,[data-abstract],.source-title,[data-source-title],.finding-excerpt,[data-finding-excerpt],blockquote,cite'
-const ATTRIBUTES=['placeholder','title','aria-label','aria-description']
+const ATTRIBUTES=['placeholder','title','aria-label','aria-description','data-question']
 let currentLanguage=DEFAULT_LANGUAGE
 
 function normalizeLanguage(value){
