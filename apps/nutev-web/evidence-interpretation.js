@@ -18,7 +18,13 @@ if(page){
       ['intelligence','Inspect','Scientific Intelligence','/intelligence.html'],
       ['review','Human review','Review Control','/review.html']
     ];
-    return `<div class="ei-rail" aria-label="Evidence interpretation navigation">${stages.map(([key,label,name,href],index)=>`<a class="ei-stage${key===page?' active':''}" href="${href}"${key===page?' aria-current="page"':''}><span class="ei-step">${index+1}</span><span><strong>${esc(label)}</strong><small>${esc(name)}</small></span></a>`).join('<span class="ei-arrow" aria-hidden="true">→</span>')}</div>`;
+    const stageHtml=([key,label,name,href],index)=>{
+      const inner=`<span class="ei-step">${index+1}</span><span><strong>${esc(label)}</strong><small>${esc(name)}</small></span>`;
+      return key===page
+        ?`<span class="ei-stage active" aria-current="page">${inner}</span>`
+        :`<a class="ei-stage" href="${href}">${inner}</a>`;
+    };
+    return `<div class="ei-rail" aria-label="Evidence interpretation navigation">${stages.map(stageHtml).join('<span class="ei-arrow" aria-hidden="true">→</span>')}</div>`;
   }
 
   function mount(){
