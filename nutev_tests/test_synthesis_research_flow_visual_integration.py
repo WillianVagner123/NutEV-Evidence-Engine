@@ -9,16 +9,16 @@ def read(name: str) -> str:
     return (WEB / name).read_text(encoding="utf-8")
 
 
-def test_review_brief_and_ask_wire_shared_research_flow() -> None:
+def test_review_summary_and_query_wire_shared_research_flow() -> None:
     for page in ("synthesis-review.html", "synthesis-brief.html", "ask.html"):
         html = read(page)
         assert 'src="./synthesis-flow.js"' in html
 
     script = read("synthesis-flow.js")
-    assert "Human Synthesis Review" in script
-    assert "Verified Synthesis Brief" in script
-    assert "Ask NutEV" in script
-    assert "Do julgamento humano ao retrieval grounded — sem promoção automática" in script
+    assert "Revisão de Síntese" in script
+    assert "Resumo de Síntese Verificado" in script
+    assert "Consulta de Evidências" in script
+    assert "Da revisão humana à consulta vinculada às fontes — sem promoção automática" in script
     assert "./synthesis-flow.css" in script
 
 
@@ -26,9 +26,9 @@ def test_shared_flow_is_navigation_only_and_does_not_add_scientific_io() -> None
     script = read("synthesis-flow.js")
 
     assert "navigation only" in script
-    assert "Review, Brief e Ask são superfícies distintas" in script
-    assert "Ask NutEV não importa automaticamente decisões do Review nem o Brief" in script
-    assert "canonical synthesis" in script
+    assert "Revisão, Resumo e Consulta são superfícies distintas" in script
+    assert "A Consulta de Evidências não importa automaticamente decisões da Revisão nem do Resumo" in script
+    assert "síntese canônica" in script
     assert "EvidenceClaim" in script
     assert "PRESS" in script
     assert "GF-10" in script
@@ -56,22 +56,22 @@ def test_review_flow_reuses_existing_human_review_controls() -> None:
     assert "#reviewLedger" in script
     assert "#exportReview" in script
     assert "Exportar revisão" in script
-    assert "SHA-256 e context fingerprint serão verificados novamente" in script
+    assert "SHA-256 e a impressão digital do contexto serão verificados novamente" in script
     assert "canonical:false" in script
 
 
-def test_brief_flow_remains_fail_closed_and_does_not_feed_ask() -> None:
+def test_summary_flow_remains_fail_closed_and_does_not_feed_query() -> None:
     script = read("synthesis-flow.js")
 
     assert "#briefHealth" in script
     assert "#verificationGrid" in script
     assert "#exportBrief" in script
-    assert "Importe um Review exportado para executar a verificação fail-closed" in script
-    assert "Nenhum relation label, rationale, SHA do Brief ou decisão humana é enviado ao Ask" in script
-    assert "integrity verified ≠ scientifically validated" in script
+    assert "Importe uma Revisão exportada para executar a verificação com bloqueio por segurança" in script
+    assert "Nenhum rótulo de relação, justificativa, SHA do Resumo ou decisão humana é enviado à Consulta" in script
+    assert "integridade verificada ≠ validado cientificamente" in script
 
 
-def test_ask_flow_is_grounded_retrieval_only() -> None:
+def test_evidence_query_flow_is_deterministic_and_source_linked() -> None:
     script = read("synthesis-flow.js")
     ask = read("ask.js")
 
@@ -80,10 +80,11 @@ def test_ask_flow_is_grounded_retrieval_only() -> None:
     assert "#selectedCount" in script
     assert "#contextPacket" in script
     assert "#buildPacket" in script
-    assert "0 chamadas externas de LLM" in script
-    assert "Ask NutEV não lê o Review nem o Brief" in script
+    assert "Consulta determinística sobre o contexto verificado" in script
+    assert "A Consulta de Evidências não lê a Revisão nem o Resumo" in script
     assert "api.openai.com" not in ask
     assert "api.anthropic.com" not in ask
+    assert "method:'POST'" not in ask.replace(" ", "")
 
 
 def test_synthesis_flow_is_responsive_and_keyboard_native() -> None:
