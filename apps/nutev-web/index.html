@@ -5,29 +5,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>NutEV Evidence Engine — Pesquisa científica rastreável</title>
-  <meta name="description" content="NutEV organiza busca, biblioteca, revisão e exportação científica por workspace e projeto.">
+  <title>NutEV — Sistema de Evidências Científicas</title>
+  <meta name="description" content="NutEV organiza busca, biblioteca, revisão, síntese e exportação científica por espaço de pesquisa e projeto.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./product-ui.css">
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
       <nav aria-label="Navegação principal"></nav>
-      <div class="sidebar-note">Motor científico reutilizável. Cada pesquisador trabalha em seu próprio workspace, projeto e aplicação sem alterar o patrimônio de outro contexto.</div>
+      <div class="sidebar-note">Sistema científico reutilizável. Cada pesquisador trabalha em seu próprio espaço de pesquisa, projeto e aplicação sem alterar o patrimônio de outro contexto.</div>
     </aside>
     <main class="main home-main">
-      <header class="topbar"><div><h1>NutEV Evidence Engine</h1><p>Busca, biblioteca, revisão e rastreabilidade organizadas por projeto.</p></div><span class="status-pill" id="homeRuntimeStatus">carregando contexto…</span></header>
+      <header class="topbar"><div><h1>NutEV — Sistema de Evidências Científicas</h1><p>Busca, biblioteca, revisão, síntese e rastreabilidade organizadas por projeto.</p></div><span class="status-pill" id="homeRuntimeStatus">carregando contexto…</span></header>
 
       <section id="homeWorkspacePanel" class="card product-panel" aria-live="polite">
-        <div class="empty-state"><strong>Carregando seu espaço de pesquisa…</strong><span>Validando sessão, workspace e projeto atual.</span></div>
+        <div class="empty-state"><strong>Carregando seu espaço de pesquisa…</strong><span>Validando sessão, espaço de pesquisa e projeto atual.</span></div>
       </section>
 
       <section class="card home-hero">
-        <div class="home-eyebrow">Nut Evidence Engine</div>
+        <div class="home-eyebrow">Sistema de Evidências Científicas</div>
         <h2>Encontre evidências e mantenha cada projeto científico no contexto certo.</h2>
-        <p>O NutEV consulta múltiplas fontes, normaliza e deduplica registros, preserva proveniência e organiza resultados sem transformar ranking em qualidade, inclusão ou decisão científica.</p>
+        <p>O NutEV consulta múltiplas fontes, normaliza e deduplica registros, preserva proveniência e organiza resultados sem transformar ordem de apresentação em qualidade, inclusão ou decisão científica.</p>
         <form class="home-search" action="/search.html" method="get">
           <input name="q" type="search" autocomplete="off" aria-label="Buscar evidências" placeholder="Ex.: creatina e cognição em idosos">
           <button class="primary" type="submit">Buscar evidências</button>
@@ -36,8 +36,8 @@
 
       <section class="home-grid" aria-label="Áreas principais">
         <a class="card home-action" href="/project.html" data-pilot-only><strong>◇ Projeto</strong><span>Veja a aplicação metodológica e continue o fluxo no contexto selecionado.</span></a>
-        <a class="card home-action" href="/search.html"><strong>⌕ Buscar evidências</strong><span>Consulta múltiplas fontes, deduplica, ranqueia e explica os resultados.</span></a>
-        <a class="card home-action" href="/evidence-library.html" data-library-link><strong>▤ Biblioteca</strong><span>Organize artigos, estados, tags e notas privadas do workspace ou projeto.</span></a>
+        <a class="card home-action" href="/search.html"><strong>⌕ Buscar evidências</strong><span>Consulta múltiplas fontes, deduplica, ordena e explica os resultados.</span></a>
+        <a class="card home-action" href="/evidence-library.html" data-library-link><strong>▤ Biblioteca</strong><span>Organize artigos, estados, etiquetas e notas privadas do espaço de pesquisa ou projeto.</span></a>
         <a class="card home-action" href="/search.html?view=history"><strong>◷ Minhas buscas</strong><span>Reabra buscas persistidas no contexto atual sem executar novamente.</span></a>
       </section>
 
@@ -48,9 +48,9 @@
           <div><strong>Tipo de estudo</strong><span>Classificação documental para organização e leitura; não é qualidade metodológica.</span></div>
           <div><strong>Tema / taxonomia</strong><span>Domínios detectados e sinais que sustentaram o agrupamento.</span></div>
           <div><strong>Por que apareceu</strong><span>Termos da consulta e sinais usados para recuperar e priorizar o registro.</span></div>
-          <div><strong>Ranking NutEV</strong><span>Prioridade operacional de leitura auditável; não é certeza nem recomendação.</span></div>
-          <div><strong>Proveniência</strong><span>Fonte, DOI/PMID, provider, consulta e contexto preservados para auditoria.</span></div>
-          <div><strong>Estado privado</strong><span>Tags, notas e decisões pertencem ao workspace/projeto e não alteram o documento global.</span></div>
+          <div><strong>Ordem de apresentação</strong><span>Prioridade operacional de leitura auditável; não é certeza nem recomendação.</span></div>
+          <div><strong>Proveniência</strong><span>Fonte, DOI/PMID, consulta e contexto preservados para auditoria.</span></div>
+          <div><strong>Estado privado</strong><span>Etiquetas, notas e decisões pertencem ao espaço de pesquisa/projeto e não alteram o documento global.</span></div>
         </div>
       </section>
 
