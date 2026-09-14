@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>PRESS Workspace — NutEV</title>
-  <meta name="description" content="Pacote e registro de revisão PRESS independente para o desenho de busca pré-freeze do Artigo 1.">
+  <title>Revisão PRESS — NutEV</title>
+  <meta name="description" content="Pacote e registro de revisão PRESS independente para o desenho de busca pré-congelamento do Artigo 1.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
   <link rel="stylesheet" href="./exact-strategy.css">
@@ -15,48 +15,32 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
-      <nav>
-        <div class="nav-group-label">Overview</div>
-        <a class="nav-item" href="/"><span class="nav-icon">◫</span><span>Dashboard</span></a>
-        <div class="nav-group-label">Evidence</div>
-        <a class="nav-item" href="/search.html"><span class="nav-icon">⌕</span><span>Search</span></a>
-        <a class="nav-item" href="/articles.html"><span class="nav-icon">▤</span><span>Corpus</span></a>
-        <a class="nav-item" href="/radar.html"><span class="nav-icon">⌁</span><span>Evidence Radar</span></a>
-        <div class="nav-group-label">Strategy</div>
-        <a class="nav-item" href="/review-qa.html"><span class="nav-icon">◎</span><span>QA</span></a>
-        <a class="nav-item active" href="/press-review.html"><span class="nav-icon">▣</span><span>PRESS</span></a>
-        <a class="nav-item" href="/regional-routes.html"><span class="nav-icon">↗</span><span>Regional routes</span></a>
-        <div class="nav-group-label">Validation</div>
-        <a class="nav-item" href="/validation/"><span class="nav-icon">✓</span><span>Scientific validation</span></a>
-        <div class="nav-group-label">System</div>
-        <a class="nav-item" href="/search.html?view=history"><span class="nav-icon">◷</span><span>Search runs</span></a>
-        <a class="nav-item" href="/ai-context.html"><span class="nav-icon">◇</span><span>AI Context</span></a>
-      </nav>
-      <div class="sidebar-note">PRESS é revisão humana independente da estratégia. Mesmo um parecer favorável não autoriza automaticamente GF-10, freeze, busca formal ou PRISMA.</div>
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
+      <nav aria-label="Navegação principal"></nav>
+      <div class="sidebar-note">PRESS é revisão humana independente da estratégia. Mesmo um parecer favorável não autoriza automaticamente GF-10, congelamento, busca formal ou PRISMA.</div>
     </aside>
 
     <main class="main">
       <header class="topbar">
-        <div><h1>PRESS Workspace</h1><p>Revisão independente do desenho B-NORM + C1/C2/C3/C4 antes da autorização GF-10 e do query freeze.</p></div>
+        <div><h1>Revisão PRESS</h1><p>Revisão independente do desenho B-NORM + C1/C2/C3/C4 antes da autorização GF-10 e do congelamento da consulta.</p></div>
         <span class="status-pill" id="pressHealth">carregando…</span>
       </header>
 
       <nav class="strategy-flow" aria-label="Fluxo de revisão da estratégia">
-        <a href="/review-qa.html"><strong>1 · QA</strong><small>Verificar estrutura, sentinelas e comportamento da estratégia.</small></a>
+        <a href="/review-qa.html"><strong>1 · Controle de qualidade</strong><small>Verificar estrutura, sentinelas e comportamento da estratégia.</small></a>
         <span class="active" aria-current="step"><strong>2 · PRESS</strong><small>Submeter a estratégia versionada a revisão humana independente.</small></span>
         <a href="/regional-routes.html"><strong>3 · Rotas regionais</strong><small>Validar LILACS/BVS e SciELO quando a execução exigir interface oficial.</small></a>
       </nav>
 
       <section class="press-layout">
         <div class="card press-card">
-          <div class="section-head"><div><h2>Contexto da revisão</h2><p>Artigo 1 — fechamento científico da estratégia pré-freeze.</p></div></div>
+          <div class="section-head"><div><h2>Contexto da revisão</h2><p>Artigo 1 — fechamento científico da estratégia pré-congelamento.</p></div></div>
           <div class="qa-state"><strong>Pergunta central:</strong> Quais parâmetros nutricionais, competências alimentares e contextos sociais da alimentação são atualmente recomendados, estruturados e utilizados por diretrizes e modelos operacionais para orientar avaliação, aconselhamento, prescrição e monitoramento alimentar aplicáveis à Medicina do Estilo de Vida?</div>
-          <div class="press-warning"><strong>Arquitetura atual:</strong> B-NORM é a rota normativa. C-STRUCT foi decomposta em C1 Care Process, C2 Competency/Literacy, C3 Implementation e C4 Social Context. C4 permanece candidato PRESS-only até decisão humana explícita.</div>
+          <div class="press-warning"><strong>Arquitetura atual:</strong> B-NORM é a rota normativa. C-STRUCT foi decomposta em C1 Processo de Cuidado, C2 Competências/Literacia, C3 Implementação e C4 Contexto Social. C4 permanece candidata somente para PRESS até decisão humana explícita.</div>
         </div>
 
         <div class="card press-card">
-          <div class="section-head"><div><h2>1. Pacote canônico</h2><p>Search Master + query draft atuais, com delta tests e pendências provider-native preservadas sem inventar execução.</p></div><button id="refreshPress" class="ghost" type="button">Atualizar</button></div>
+          <div class="section-head"><div><h2>1. Pacote canônico</h2><p>Estado mestre da busca + rascunho atual da consulta, com testes delta e pendências de fontes preservadas sem inventar execução.</p></div><button id="refreshPress" class="ghost" type="button">Atualizar</button></div>
           <div id="pressProfileState" class="qa-state">Carregando perfil PRESS…</div>
           <div id="pressPackage"></div>
           <div class="press-actions"><button id="downloadPackageBtn" class="ghost" type="button" disabled>Exportar pacote para revisor</button></div>
@@ -74,25 +58,25 @@
         </div>
 
         <div class="card press-card">
-          <div class="section-head"><div><h2>3. Checklist PRESS-alinhado</h2><p>Cada item exige uma conclusão e permite observação livre. O NutEV não decide o mérito no lugar do revisor.</p></div></div>
+          <div class="section-head"><div><h2>3. Lista de verificação alinhada ao PRESS</h2><p>Cada item exige uma conclusão e permite observação livre. O NutEV não decide o mérito no lugar do revisor.</p></div></div>
           <div id="pressChecklist"></div>
         </div>
 
         <div class="card press-card">
-          <div class="section-head"><div><h2>4. Parecer final</h2><p>Alteração material impede PASS e exige revisão dos testes/estratégias afetados.</p></div></div>
+          <div class="section-head"><div><h2>4. Parecer final</h2><p>Alteração material impede aprovação e exige revisão dos testes/estratégias afetados.</p></div></div>
           <div class="press-decision-grid">
             <label>Decisão<select id="pressDecision"><option value="">— selecionar —</option></select></label>
-            <label>Estratégia afetada<select id="affectedStrategy"><option value="NONE">Nenhuma específica / observação geral</option><option value="B-NORM">B-NORM</option><option value="C1-CARE-PROCESS">C1 Care Process</option><option value="C2-COMPETENCY-LITERACY">C2 Competency/Literacy</option><option value="C3-IMPLEMENTATION">C3 Implementation</option><option value="C4-SOCIAL-CONTEXT">C4 Social Context</option><option value="MULTIPLE">Múltiplas rotas</option></select></label>
+            <label>Estratégia afetada<select id="affectedStrategy"><option value="NONE">Nenhuma específica / observação geral</option><option value="B-NORM">B-NORM</option><option value="C1-CARE-PROCESS">C1 Processo de Cuidado</option><option value="C2-COMPETENCY-LITERACY">C2 Competências/Literacia</option><option value="C3-IMPLEMENTATION">C3 Implementação</option><option value="C4-SOCIAL-CONTEXT">C4 Contexto Social</option><option value="MULTIPLE">Múltiplas rotas</option></select></label>
           </div>
           <label>Comentários finais<textarea id="finalComments" rows="6" placeholder="Síntese do parecer, termos ausentes, erros, redundâncias, justificativas e recomendações."></textarea></label>
-          <label>Alterações sugeridas<textarea id="suggestedChanges" rows="6" placeholder="Se houver alteração proposta, descreva exatamente o que deve mudar. Não edite a query aqui."></textarea></label>
+          <label>Alterações sugeridas<textarea id="suggestedChanges" rows="6" placeholder="Se houver alteração proposta, descreva exatamente o que deve mudar. Não edite a consulta aqui."></textarea></label>
           <div class="press-actions"><button id="evaluatePressBtn" class="primary" type="button">Avaliar parecer PRESS</button><button id="downloadReviewBtn" class="ghost" type="button" disabled>Exportar parecer JSON</button></div>
           <div id="pressGate" class="qa-state">Aguardando parecer completo. GF-10 permanece bloqueado até o fechamento dos demais requisitos.</div>
         </div>
       </section>
 
       <div class="strategy-flow-actions">
-        <a class="ghost" href="/review-qa.html">← Etapa anterior: QA</a>
+        <a class="ghost" href="/review-qa.html">← Etapa anterior: controle de qualidade</a>
         <a class="ghost" href="/regional-routes.html">Próxima etapa: rotas regionais →</a>
       </div>
     </main>

@@ -18,6 +18,10 @@ PRIMARY_PRODUCT_SURFACES = (
     "evidence-map.html",
     "radar.html",
     "review.html",
+    "review-routes.html",
+    "review-qa.html",
+    "press-review.html",
+    "regional-routes.html",
     "quality.html",
     "strategy.html",
     "scientific-dashboard.html",
@@ -42,12 +46,8 @@ LEGACY_PRESENTATION_ALLOWLIST = {
     "claim-appraisal.html",
     "evidence-claims.html",
     "evidence-sets.html",
-    "press-review.html",
     "recommendation-candidates.html",
     "recommendation-human-validation.html",
-    "regional-routes.html",
-    "review-qa.html",
-    "review-routes.html",
     "synthesis-governance.html",
     "synthesis-publication.html",
     "synthesis-release.html",
@@ -103,6 +103,9 @@ def test_product_surfaces_use_system_first_names() -> None:
         "Explorador de Evidências",
         "Observatório de Qualidade",
         "Laboratório de Estratégia",
+        "Rotas de Revisão",
+        "Controle de qualidade da estratégia",
+        "Revisão PRESS",
     ):
         assert expected in source
 

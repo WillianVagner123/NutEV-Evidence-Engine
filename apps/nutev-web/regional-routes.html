@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
   <title>NutEV — Rotas regionais</title>
-  <meta name="description" content="Validação pré-freeze assistida das rotas regionais LILACS/BVS e SciELO.">
+  <meta name="description" content="Validação pré-congelamento assistida das rotas regionais LILACS/BVS e SciELO.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./exact-strategy.css">
   <link rel="stylesheet" href="./review-qa.css">
@@ -14,16 +14,9 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
-      <nav>
-        <a class="nav-item" href="/">⌕ <span>Buscar evidências</span></a>
-        <a class="nav-item" href="/?view=history">◷ <span>Minhas buscas</span></a>
-        <a class="nav-item" href="/review-qa.html">◎ <span>QA da estratégia</span></a>
-        <a class="nav-item" href="/press-review.html">▣ <span>PRESS da estratégia</span></a>
-        <a class="nav-item active" href="/regional-routes.html">⌁ <span>Rotas regionais</span></a>
-        <a class="nav-item" href="/validation/">✓ <span>Validação científica</span></a>
-      </nav>
-      <div class="sidebar-note">Validação de rota pré-freeze. Não é busca formal e não alimenta PRISMA.</div>
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
+      <nav aria-label="Navegação principal"></nav>
+      <div class="sidebar-note">Validação de rota pré-congelamento. Não é busca formal e não alimenta PRISMA.</div>
     </aside>
 
     <main class="main">
@@ -33,14 +26,14 @@
       </header>
 
       <nav class="strategy-flow" aria-label="Fluxo de revisão da estratégia">
-        <a href="/review-qa.html"><strong>1 · QA</strong><small>Verificar estrutura, sentinelas e comportamento da estratégia.</small></a>
+        <a href="/review-qa.html"><strong>1 · Controle de qualidade</strong><small>Verificar estrutura, sentinelas e comportamento da estratégia.</small></a>
         <a href="/press-review.html"><strong>2 · PRESS</strong><small>Submeter a estratégia versionada a revisão independente.</small></a>
         <span class="active" aria-current="step"><strong>3 · Rotas regionais</strong><small>Validar LILACS/BVS e SciELO quando a execução exigir interface oficial.</small></span>
       </nav>
 
       <section class="regional-layout">
         <div class="card regional-card">
-          <div class="section-head"><div><h2>1. Perfil pré-freeze</h2><p>O sistema preserva as queries canônicas e exige evidência auditável da execução humana/visual.</p></div><button id="refreshRegional" type="button" class="ghost">Atualizar</button></div>
+          <div class="section-head"><div><h2>1. Perfil pré-congelamento</h2><p>O sistema preserva as consultas canônicas e exige evidência auditável da execução humana/visual.</p></div><button id="refreshRegional" type="button" class="ghost">Atualizar</button></div>
           <div id="regionalProfileState" class="qa-state">Carregando perfil…</div>
           <div id="regionalGuardrail" class="qa-state"></div>
         </div>
@@ -48,7 +41,7 @@
         <section id="regionalRoutes"></section>
 
         <div class="card regional-card">
-          <div class="section-head"><div><h2>3. Avaliar GF-01</h2><p>O NutEV verifica apenas a completude da evidência técnica. O CONTROL CENTER continua sendo a fonte canônica do gate.</p></div></div>
+          <div class="section-head"><div><h2>3. Avaliar GF-01</h2><p>O NutEV verifica apenas a completude da evidência técnica. O centro de controle continua sendo a fonte canônica do gate.</p></div></div>
           <div class="regional-actions">
             <button id="evaluateRegionalBtn" type="button" class="primary">Avaliar rotas</button>
             <button id="downloadRegionalBtn" type="button" class="ghost" disabled>Exportar relatório JSON</button>
