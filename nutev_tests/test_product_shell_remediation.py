@@ -83,23 +83,44 @@ def test_search_and_home_present_research_context_without_hiding_search_core() -
     assert "uso especializado" in advanced
 
 
-def test_glossary_explains_search_terms_without_leaking_hibernated_workflows() -> None:
+def test_glossary_explains_system_terms_with_scientific_boundaries() -> None:
     script = read(WEB / "product-ui.js")
     css = read(WEB / "product-ui.css")
     glossary = script.split("const GLOSSARY=", 1)[1].split("const STRATEGY_FLOW_STORAGE_KEY", 1)[0]
+
     for term in (
+        "Sistema de Evidências Científicas",
         "Busca progressiva",
-        "Provider",
+        "Fonte",
         "Deduplicação",
-        "Ranking",
+        "Ordenação de busca",
         "Proveniência",
-        "Workspace",
+        "Espaço de trabalho",
         "Projeto",
         "Aplicação de pesquisa",
+        "Mapa de Evidências",
+        "Análise de Evidências",
+        "Revisão Humana",
+        "Consulta de Evidências",
+        "Contexto de Evidências",
+        "Pacote de Evidências",
+        "Bloqueio por segurança",
+        "PRESS",
+        "PRISMA",
+        "EvidenceClaim",
     ):
         assert term in glossary
-    for hidden in ("PRESS", "PRISMA", "EvidenceClaim", "EvidenceSet", "Freeze"):
-        assert hidden not in glossary
+
+    # Legacy implementation/English labels must not be the primary Portuguese keys.
+    for legacy_primary in ("['Provider'", "['Ranking'", "['Workspace'", "['AI Context'", "['Ask NutEV'"):
+        assert legacy_primary not in glossary
+
+    assert "Scientific Evidence System" in glossary
+    assert "Source" in glossary
+    assert "Search ranking" in glossary
+    assert "Workspace" in glossary
+    assert "Evidence Query" in glossary
+    assert "Evidence Context" in glossary
     assert "code,pre,script,style,textarea" in script
     assert "glossary-trigger" in css
     assert "glossary-dialog" in css
