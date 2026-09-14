@@ -12,14 +12,19 @@ The NutEV web interface supports a presentation-language preference without chan
 
 ## Runtime coverage
 
-`apps/nutev-web/i18n.js` is bootstrapped from the shared runtime surfaces rather than creating a parallel application shell:
+`apps/nutev-web/i18n.js` is bootstrapped from presentation-layer modules rather than from authentication/session code or a parallel application shell:
 
-- `tenant-session.js` — authenticated product shell and login;
+- `product-ui.js` — shared authenticated product presentation layer;
+- `login.js` — login presentation layer;
 - `scientific-flow.js` — Evidence Map, Scientific Intelligence and Human Review;
 - `operational-cycle.js` — Evidence Radar, Strategy Lab and Quality Observatory;
 - `synthesis-flow.js` — Synthesis Review, Synthesis Brief and Ask NutEV;
 - `dashboard-visual.js` — advanced scientific dashboard;
+- `evidence.js` — Evidence Explorer;
+- `review-routes.js` — Review Routes;
 - `strategy-flow-sync.js` — QA, PRESS and regional-route review surfaces.
+
+`tenant-session.js` intentionally contains **no i18n bootstrap**. Presentation-language loading is kept outside the browser context lease so language choice cannot participate in session/context invalidation or authorization behavior.
 
 The translation observer also handles known UI inserted after page load.
 
