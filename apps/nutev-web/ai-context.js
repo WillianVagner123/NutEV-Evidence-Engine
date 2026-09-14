@@ -1,5 +1,10 @@
 import './i18n.js'
 
+const STATUS_ENDPOINT='/api/agent-context/article1/status';
+const MANIFEST_URL='/agent-context/article1/CONTEXT_MANIFEST.json';
+const SEARCH_STATE_URL='/agent-context/article1/SEARCH_STATE.json';
+const SEARCH_SUMMARY_URL='/agent-context/article1/SEARCH_SUMMARY.md';
+const ARTICLE_SUMMARIES_URL='/agent-context/article1/ARTICLE_SUMMARIES.jsonl';
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const fmt=value=>new Intl.NumberFormat('pt-BR').format(Number(value||0));
@@ -38,10 +43,10 @@ function renderCards(manifest,state){
 function renderFiles(manifest){
   const outputs=manifest.outputs||{};
   const fileRows=[
-    ['SEARCH_SUMMARY.md','/agent-context/article1/SEARCH_SUMMARY.md',outputs.search_summary?.sha256],
-    ['SEARCH_STATE.json','/agent-context/article1/SEARCH_STATE.json',outputs.search_state?.sha256],
-    ['ARTICLE_SUMMARIES.jsonl','/agent-context/article1/ARTICLE_SUMMARIES.jsonl',outputs.article_summaries?.sha256],
-    ['CONTEXT_MANIFEST.json','/agent-context/article1/CONTEXT_MANIFEST.json',null]
+    ['SEARCH_SUMMARY.md',SEARCH_SUMMARY_URL,outputs.search_summary?.sha256],
+    ['SEARCH_STATE.json',SEARCH_STATE_URL,outputs.search_state?.sha256],
+    ['ARTICLE_SUMMARIES.jsonl',ARTICLE_SUMMARIES_URL,outputs.article_summaries?.sha256],
+    ['CONTEXT_MANIFEST.json',MANIFEST_URL,null]
   ];
   $('#contextFiles').innerHTML=fileRows.map(([name,url,sha])=>`<a class="context-file" href="${url}" target="_blank" rel="noopener"><div><strong>${esc(name)}</strong><small>${sha?`SHA-256 ${esc(String(sha).slice(0,18))}…`:ui('manifesto de proveniência','provenance manifest')}</small></div><span>${ui('Abrir','Open')} ↗</span></a>`).join('')
 }
@@ -52,9 +57,9 @@ function renderFormalState(state){
 
 async function init(){
   try{
-    const [health,availability]=await Promise.all([getJson('/api/health'),getJson('/api/agent-context/article1/status')]);
+    const [health,availability]=await Promise.all([getJson('/api/health'),getJson(STATUS_ENDPOINT)]);
     if(!availability.available){renderUnavailable(availability);return}
-    const [manifest,state]=await Promise.all([getJson('/agent-context/article1/CONTEXT_MANIFEST.json'),getJson('/agent-context/article1/SEARCH_STATE.json')]);
+    const [manifest,state]=await Promise.all([getJson(MANIFEST_URL),getJson(SEARCH_STATE_URL)]);
     $('#aiHealth').textContent=health.status==='ok'?ui('contexto disponível','context available'):ui('sistema parcial','system partial');$('#aiHealth').className=`status-pill ${health.status==='ok'?'ok':'bad'}`;
     renderCards(manifest,state);renderFiles(manifest);renderFormalState(state);
     $('#contextState').className='hidden';$('#contextContent').classList.remove('hidden');
