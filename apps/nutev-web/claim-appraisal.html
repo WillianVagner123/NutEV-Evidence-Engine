@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>ClaimEvaluation Appraisal — NutEV</title>
-  <meta name="description" content="Avaliação humana claim-level sem score automático, RoB formal ou certainty automática.">
+  <title>Avaliação de alegação — NutEV</title>
+  <meta name="description" content="Avaliação humana de EvidenceClaim sem escore automático, risco de viés formal ou certeza automática.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
   <link rel="stylesheet" href="./claim-appraisal.css">
@@ -13,21 +13,15 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
-      <nav>
-        <div class="nav-group-label">Overview</div><a class="nav-item" href="/"><span class="nav-icon">◫</span><span>Dashboard</span></a>
-        <div class="nav-group-label">Evidence</div><a class="nav-item" href="/intelligence.html"><span class="nav-icon">◆</span><span>Scientific Intelligence</span></a><a class="nav-item" href="/synthesis-review.html"><span class="nav-icon">◉</span><span>Synthesis Review</span></a><a class="nav-item" href="/synthesis-brief.html"><span class="nav-icon">▰</span><span>Synthesis Brief</span></a>
-        <div class="nav-group-label">Governance</div><a class="nav-item" href="/synthesis-governance.html"><span class="nav-icon">▣</span><span>Synthesis Registry</span></a><a class="nav-item" href="/synthesis-release.html"><span class="nav-icon">⇧</span><span>Governed Release</span></a><a class="nav-item" href="/synthesis-publication.html"><span class="nav-icon">¶</span><span>Publication Manifest</span></a>
-        <div class="nav-group-label">Scientific claims</div><a class="nav-item" href="/evidence-claims.html"><span class="nav-icon">◇</span><span>EvidenceClaim Review</span></a><a class="nav-item active" href="/claim-appraisal.html"><span class="nav-icon">◎</span><span>ClaimEvaluation</span></a><a class="nav-item" href="/evidence-sets.html"><span class="nav-icon">▦</span><span>EvidenceSet Construction</span></a>
-        <div class="nav-group-label">System</div><a class="nav-item" href="/quality.html"><span class="nav-icon">⚙</span><span>Quality Observatory</span></a><a class="nav-item" href="/ai-context.html"><span class="nav-icon">◇</span><span>AI Context</span></a>
-      </nav>
-      <div class="sidebar-note">ClaimEvaluation registra um appraisal humano do claim. Não é RoB 2, ROBINS-I, GRADE, score de qualidade, certainty, EvidenceSet ou recomendação.</div>
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
+      <nav aria-label="Navegação principal"></nav>
+      <div class="sidebar-note">A avaliação registra um julgamento humano sobre a alegação. Não é RoB 2, ROBINS-I, GRADE, escore de qualidade, certeza, EvidenceSet ou recomendação.</div>
     </aside>
 
     <main class="main dashboard-main appraisal-main">
-      <header class="topbar dashboard-topbar"><div><h1>ClaimEvaluation / Scientific Appraisal</h1><p>Accepted claim · six explicit dimensions · no automatic overall grade</p></div><div class="dashboard-actions"><a href="/evidence-claims.html" class="ghost" style="text-decoration:none">EvidenceClaim Review</a><a href="/evidence-sets.html" class="ghost" style="text-decoration:none">EvidenceSet Construction</a><button id="refreshAppraisal" class="ghost" type="button">Atualizar</button><span id="appraisalHealth" class="status-pill">verificando…</span></div></header>
+      <header class="topbar dashboard-topbar"><div><h1>Avaliação científica da alegação</h1><p>Alegação aceita · seis dimensões explícitas · sem nota global automática</p></div><div class="dashboard-actions"><a href="/evidence-claims.html" class="ghost" style="text-decoration:none">Revisão de EvidenceClaim</a><a href="/evidence-sets.html" class="ghost" style="text-decoration:none">Construção de EvidenceSet</a><button id="refreshAppraisal" class="ghost" type="button">Atualizar</button><span id="appraisalHealth" class="status-pill">verificando…</span></div></header>
 
-      <section class="card project-hero"><div><div class="project-eyebrow">HUMAN APPRAISAL · NO AUTOMATIC SCORE · NOT FORMAL RoB/GRADE</div><h2>Avaliar o claim sem transformar julgamento em certainty automática</h2><p class="project-question">Somente EvidenceClaims canônicos aceitos entram nesta camada. Cada avaliação é claim-level, exige justificativa por dimensão e declara qual material foi usado. O sistema não agrega as dimensões em nota, não classifica certainty e não altera o status do EvidenceClaim.</p></div></section>
+      <section class="card project-hero"><div><div class="project-eyebrow">AVALIAÇÃO HUMANA · SEM ESCORE AUTOMÁTICO · NÃO É RoB/GRADE FORMAL</div><h2>Avaliar a alegação sem transformar julgamento em certeza automática</h2><p class="project-question">Somente EvidenceClaims canônicos aceitos entram nesta camada. Cada avaliação é específica da alegação, exige justificativa por dimensão e declara qual material foi usado. O sistema não agrega as dimensões em nota, não classifica certeza e não altera o estado do EvidenceClaim.</p></div></section>
 
       <div id="appraisalState" class="loading dashboard-state">Conectando ao coordenador local…</div>
 
@@ -35,38 +29,39 @@
         <div id="appraisalKpis" class="kpi-grid"></div>
         <div class="dashboard-grid">
           <section class="card dashboard-card span-5">
-            <div class="panel-head"><div><h2>Stage accepted claim</h2><p>Escolha um EvidenceClaim aceito. Staging apenas abre a ficha de appraisal; não cria avaliação científica final.</p></div></div>
-            <label class="appraisal-field"><span>EvidenceClaim</span><select id="appraisalClaim"><option value="">Selecione um claim aceito</option></select></label>
-            <label class="appraisal-field"><span>Staged by</span><input id="appraisalStagedBy" type="text" maxlength="120" placeholder="Nome de quem iniciou a avaliação"></label>
-            <button id="stageAppraisal" type="button" disabled>Stage ClaimEvaluation</button>
-            <div id="stageAppraisalState" class="small-state">Nenhum appraisal staged nesta sessão.</div>
+            <div class="panel-head"><div><h2>Preparar alegação aceita</h2><p>Escolha um EvidenceClaim aceito. A preparação apenas abre a ficha; não cria avaliação científica final.</p></div></div>
+            <label class="appraisal-field"><span>EvidenceClaim</span><select id="appraisalClaim"><option value="">Selecione uma alegação aceita</option></select></label>
+            <label class="appraisal-field"><span>Preparado por</span><input id="appraisalStagedBy" type="text" maxlength="120" placeholder="Nome de quem iniciou a avaliação"></label>
+            <button id="stageAppraisal" type="button" disabled>Preparar ClaimEvaluation</button>
+            <div id="stageAppraisalState" class="small-state">Nenhuma avaliação preparada nesta sessão.</div>
           </section>
 
           <section class="card dashboard-card span-7">
-            <div class="panel-head"><div><h2>Appraisal contract</h2><p>Escala genérica explícita; nenhum instrumento externo é reivindicado.</p></div></div>
+            <div class="panel-head"><div><h2>Contrato da avaliação</h2><p>Escala genérica explícita; nenhum instrumento externo é reivindicado.</p></div></div>
             <div class="appraisal-semantics">
-              <article><strong>6 DIMENSIONS</strong><p>Design appropriateness, internal validity appraisal, directness, precision, applicability e reporting completeness.</p></article>
-              <article><strong>NO AGGREGATION</strong><p>Os julgamentos permanecem separados. O NutEV não calcula média, score, nível de evidência ou certainty.</p></article>
-              <article><strong>ASSESSMENT BASIS</strong><p>O assessor declara se usou full text, abstract, source snapshot, material misto, outro ou informação incerta.</p></article>
-              <article><strong>CLAIM-LEVEL ONLY</strong><p>Uma preocupação neste claim não vira automaticamente julgamento do estudo inteiro.</p></article>
+              <article><strong>SEIS DIMENSÕES</strong><p>Adequação do desenho, validade interna, relação direta, precisão, aplicabilidade e completude do relato.</p></article>
+              <article><strong>SEM AGREGAÇÃO</strong><p>Os julgamentos permanecem separados. O NutEV não calcula média, escore, nível de evidência ou certeza.</p></article>
+              <article><strong>BASE DA AVALIAÇÃO</strong><p>O avaliador declara se usou texto completo, resumo, registro da fonte, material misto, outro ou informação incerta.</p></article>
+              <article><strong>SOMENTE NO NÍVEL DA ALEGAÇÃO</strong><p>Uma preocupação nesta alegação não vira automaticamente julgamento do estudo inteiro.</p></article>
             </div>
           </section>
 
           <section class="card dashboard-card span-12">
-            <div class="panel-head"><div><h2>Appraisal queue</h2><p>Cada ficha mostra o claim aceito e o source-linked result snapshot que sustentou sua aceitação.</p></div><label class="appraisal-filter">Status <select id="appraisalStatusFilter"><option value="ALL">Todos</option><option value="PENDING_APPRAISAL">Pending</option><option value="FINALIZED">Finalized</option></select></label></div>
+            <div class="panel-head"><div><h2>Fila de avaliação</h2><p>Cada ficha mostra a alegação aceita e o registro de resultado vinculado à fonte que sustentou sua aceitação.</p></div><label class="appraisal-filter">Estado <select id="appraisalStatusFilter"><option value="ALL">Todos</option><option value="PENDING_APPRAISAL">Pendente</option><option value="FINALIZED">Finalizada</option></select></label></div>
             <div id="appraisalCandidates" class="appraisal-candidates"></div>
           </section>
 
           <section class="card dashboard-card span-12">
-            <div class="panel-head"><div><h2>Finalized ClaimEvaluations</h2><p>Registros canônicos do appraisal humano — não de certeza científica. Claims finalizados podem ser usados downstream apenas por seleção humana explícita em EvidenceSet Construction.</p></div><a class="panel-link" href="/evidence-sets.html">Construir EvidenceSet →</a></div>
+            <div class="panel-head"><div><h2>ClaimEvaluations finalizadas</h2><p>Registros canônicos da avaliação humana — não de certeza científica. Alegações avaliadas podem seguir apenas por seleção humana explícita para construção de EvidenceSet.</p></div><a class="panel-link" href="/evidence-sets.html">Construir EvidenceSet →</a></div>
             <div id="finalizedAppraisals" class="finalized-appraisals"></div>
           </section>
 
-          <section class="card dashboard-card span-12 appraisal-boundary"><div class="panel-head"><div><h2>Scientific boundary</h2><p>ClaimEvaluation != formal Risk of Bias · internal-validity appraisal != RoB 2/ROBINS-I · dimensions != quality score · favorable != certainty · major concerns != automatic exclusion · ClaimEvaluation != EvidenceSet · ClaimEvaluation != GRADE · ClaimEvaluation != recommendation · ClaimEvaluation != meta-analysis · ClaimEvaluation != PRISMA.</p></div></div></section>
+          <section class="card dashboard-card span-12 appraisal-boundary"><div class="panel-head"><div><h2>Limite científico</h2><p>ClaimEvaluation ≠ risco de viés formal · avaliação de validade interna ≠ RoB 2/ROBINS-I · dimensões ≠ escore de qualidade · avaliação favorável ≠ certeza · preocupações importantes ≠ exclusão automática · ClaimEvaluation ≠ EvidenceSet · ClaimEvaluation ≠ GRADE · ClaimEvaluation ≠ recomendação · ClaimEvaluation ≠ meta-análise · ClaimEvaluation ≠ PRISMA.</p></div></div></section>
         </div>
       </section>
     </main>
   </div>
+  <script type="module" src="./product-ui.js"></script>
   <script type="module" src="./claim-appraisal.js"></script>
 </body>
 </html>

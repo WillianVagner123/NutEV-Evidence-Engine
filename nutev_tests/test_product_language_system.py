@@ -7,51 +7,16 @@ VALIDATION = ROOT / "apps" / "nutev-validation"
 DOC = ROOT / "docs" / "PRODUCT_LANGUAGE_SYSTEM.md"
 
 
-PRIMARY_PRODUCT_SURFACES = (
-    "login.html",
-    "project.html",
-    "exports.html",
-    "search.html",
-    "evidence-library.html",
-    "articles.html",
-    "evidence.html",
-    "evidence-map.html",
-    "radar.html",
-    "review.html",
-    "review-routes.html",
-    "review-qa.html",
-    "press-review.html",
-    "regional-routes.html",
-    "quality.html",
-    "strategy.html",
-    "scientific-dashboard.html",
-    "advanced.html",
-    "ask.html",
+PRIMARY_PRODUCT_SURFACES = tuple(
+    path.name
+    for path in sorted(WEB.glob("*.html"))
+) + (
     "ask.js",
-    "ai-context.html",
     "ai-context.js",
-    "intelligence.html",
-    "intelligence.js",
     "scientific-flow.js",
     "evidence-interpretation.js",
     "synthesis-flow.js",
-    "synthesis-review.html",
-    "synthesis-brief.html",
 )
-
-# Explicit technical debt inventory. Files leave this set as the canonical shell
-# pass reaches each scientific/governance surface. The test prevents new debt from
-# appearing silently outside this reviewed list.
-LEGACY_PRESENTATION_ALLOWLIST = {
-    "claim-appraisal.html",
-    "evidence-claims.html",
-    "evidence-sets.html",
-    "recommendation-candidates.html",
-    "recommendation-human-validation.html",
-    "synthesis-governance.html",
-    "synthesis-publication.html",
-    "synthesis-release.html",
-}
 
 FORBIDDEN_PRODUCT_LABELS = (
     "Evidence Engine",
@@ -83,7 +48,7 @@ def html_legacy_debt() -> dict[str, set[str]]:
             source = path.read_text(encoding="utf-8")
             hits = {label for label in FORBIDDEN_PRODUCT_LABELS if label in source}
             if hits:
-                debt[path.name] = hits
+                debt[str(path.relative_to(ROOT))] = hits
     return debt
 
 
@@ -106,8 +71,18 @@ def test_product_surfaces_use_system_first_names() -> None:
         "Rotas de Revisão",
         "Controle de qualidade da estratégia",
         "Revisão PRESS",
+        "Registro de Governança da Síntese",
+        "Liberação Governada da Síntese",
+        "Manifesto Governado de Publicação",
+        "Candidatos a recomendação",
+        "Validação humana de candidato a recomendação",
     ):
         assert expected in source
+
+
+def test_all_product_html_is_free_of_legacy_or_llm_branding() -> None:
+    debt = html_legacy_debt()
+    assert not debt, f"Legacy product language remains in HTML: {debt}"
 
 
 def test_primary_product_surfaces_do_not_present_legacy_or_llm_branding() -> None:
@@ -116,44 +91,10 @@ def test_primary_product_surfaces_do_not_present_legacy_or_llm_branding() -> Non
         assert forbidden not in source
 
 
-def test_legacy_product_language_is_confined_to_explicit_debt_allowlist() -> None:
-    debt = html_legacy_debt()
-    unexpected = set(debt) - LEGACY_PRESENTATION_ALLOWLIST
-    assert not unexpected, f"Legacy product language escaped allowlist: {sorted(unexpected)}"
-    assert set(debt) <= LEGACY_PRESENTATION_ALLOWLIST
-
-
 def test_validation_entrypoint_uses_system_identity() -> None:
     source = (VALIDATION / "index.html").read_text(encoding="utf-8")
     assert "Sistema de Evidências Científicas" in source
     assert "Evidence Engine" not in source
-
-
-def test_advanced_lab_uses_system_language_for_secondary_navigation() -> None:
-    advanced = read_web("advanced.html")
-
-    for expected in (
-        "Sistema de Evidências Científicas",
-        "Análise de Evidências",
-        "Revisão de Síntese",
-        "Resumo de Síntese",
-        "Consulta de Evidências",
-        "Explorador de Evidências",
-        "Mapa de Evidências",
-        "Radar de Evidências",
-        "Observatório de Qualidade",
-    ):
-        assert expected in advanced
-
-    for forbidden in (
-        "Evidence Engine",
-        "Scientific Intelligence",
-        "Human Synthesis Review",
-        "Synthesis Brief",
-        "Ask NutEV",
-        "Workflow tipo Rayyan",
-    ):
-        assert forbidden not in advanced
 
 
 def test_internal_compatibility_routes_remain_stable() -> None:
@@ -196,7 +137,7 @@ def test_scientific_tokens_remain_canonical() -> None:
         assert canonical in source
 
 
-def test_legacy_product_names_exist_only_as_i18n_compatibility_aliases_or_declared_debt() -> None:
+def test_legacy_product_names_remain_only_as_i18n_compatibility_aliases() -> None:
     i18n = read_web("i18n.js")
 
     for legacy in (
