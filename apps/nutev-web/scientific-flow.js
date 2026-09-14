@@ -13,7 +13,7 @@ const FLOW_PAGE={
 const flowStage=FLOW_PAGE[location.pathname]
 const $flow=selector=>document.querySelector(selector)
 const flowEsc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')
-const flowNumber=value=>Number(String(value??'').replace(/[^0-9.-]/g,''))||0
+const flowNumber=value=>Number(String(value??'').replace(/\D/g,''))||0
 
 function flowHref(stage){
   if(stage.id==='intelligence'&&flowStage==='map'){
