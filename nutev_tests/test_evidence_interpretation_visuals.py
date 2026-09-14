@@ -37,6 +37,14 @@ def test_visual_layer_is_dom_derived_and_does_not_create_a_parallel_data_path() 
     assert "INTERPRETATION WORKFLOW · NAVIGATION ONLY" in script
 
 
+def test_interpretation_rail_keeps_current_surface_non_link() -> None:
+    script = read("evidence-interpretation.js")
+
+    assert '<span class="ei-stage active" aria-current="page">' in script
+    assert '<a class="ei-stage" href="${href}">' in script
+    assert "return key===page" in script
+
+
 def test_evidence_map_visual_delegates_to_existing_domain_filter() -> None:
     script = read("evidence-interpretation.js")
 
