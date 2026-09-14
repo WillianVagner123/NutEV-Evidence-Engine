@@ -66,10 +66,10 @@ def test_i18n_is_ui_only_and_protects_scientific_source_content() -> None:
     assert "data-nutev-no-translate" in read("review-routes.js")
 
 
-def test_bilingual_bootstrap_covers_core_product_and_scientific_flows() -> None:
-    tenant = read("tenant-session.js")
-    assert "languageScript.src='/i18n.js'" in tenant
-    assert "typeof document.createElement==='function'" in tenant
+def test_bilingual_bootstrap_covers_product_ui_without_touching_session_lease() -> None:
+    assert "i18n" not in read("tenant-session.js")
+    assert "import './i18n.js'" in read("product-ui.js")
+    assert "import './i18n.js'" in read("login.js")
 
     for name in (
         "scientific-flow.js",
