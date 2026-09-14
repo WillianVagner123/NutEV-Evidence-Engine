@@ -14,10 +14,11 @@ def read(name: str) -> str:
     return (WEB / name).read_text(encoding="utf-8")
 
 
-def test_human_synthesis_brief_is_fail_closed_and_noncanonical() -> None:
+def test_verified_synthesis_summary_is_fail_closed_and_noncanonical() -> None:
     html = read("synthesis-brief.html")
     script = read("synthesis-brief.js")
 
+    assert "Resumo de Síntese Verificado" in html
     assert "NUTEV_HUMAN_SYNTHESIS_REVIEW_DRAFT_V1" in script
     assert "NUTEV_HUMAN_SYNTHESIS_BRIEF_V1" in script
     assert 'id="reviewFile"' in html
@@ -29,7 +30,7 @@ def test_human_synthesis_brief_is_fail_closed_and_noncanonical() -> None:
     assert "current_context_match:true" in script
     assert "integrity_verification_is_not_scientific_validation:true" in script
     assert "integrity_verification_does_not_prove_authorship_or_authenticity:true" in script
-    assert "SHA-256 ≠ authorship/authenticity" in html
+    assert "SHA-256 ≠ autoria/autenticidade" in html
 
 
 def test_brief_verifies_content_sha_and_strong_context_fingerprint() -> None:
@@ -111,13 +112,13 @@ def test_brief_preserves_source_linked_human_decisions_and_descriptive_semantics
     assert "Contagem não mede força" in html
 
 
-def test_synthesis_chain_exposes_brief_navigation() -> None:
+def test_synthesis_chain_exposes_summary_navigation() -> None:
     assert "/synthesis-brief.html" in read("intelligence.html")
     assert "/synthesis-brief.html" in read("synthesis-review.html")
     assert "/synthesis-brief.html" in read("synthesis-brief.html")
 
 
-def test_workspace_death_test_includes_brief_contract() -> None:
+def test_workspace_death_test_includes_summary_contract() -> None:
     completed = subprocess.run(
         [sys.executable, str(ROOT / "tools" / "audit_scientific_workspace_v2.py"), "--compact"],
         cwd=ROOT,

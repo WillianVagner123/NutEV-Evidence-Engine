@@ -9,13 +9,13 @@ def read(name: str) -> str:
     return (WEB / name).read_text(encoding="utf-8")
 
 
-def test_human_synthesis_review_is_explicitly_human_and_noncanonical() -> None:
+def test_synthesis_review_is_explicitly_human_and_noncanonical() -> None:
     html = read("synthesis-review.html")
     js = read("synthesis-review.js")
 
-    assert "Human Synthesis Review" in html
-    assert "HUMAN JUDGMENT · LOCAL DRAFT · NOT CANONICAL" in html
-    assert "Nenhuma decisão aqui altera screening, PRESS, GF-10, RoB, certainty ou PRISMA." in html
+    assert "Revisão de Síntese" in html
+    assert "JULGAMENTO HUMANO · RASCUNHO LOCAL · NÃO CANÔNICO" in html
+    assert "Nenhuma decisão aqui altera triagem, PRESS, GF-10, risco de viés, certeza ou PRISMA." in html
     assert "NUTEV_HUMAN_SYNTHESIS_REVIEW_DRAFT_V1" in js
     assert "canonical:false" in js
     assert "human_entered:true" in js
@@ -28,7 +28,7 @@ def test_human_synthesis_review_is_explicitly_human_and_noncanonical() -> None:
     assert "formal_search_state_changed:false" in js
 
 
-def test_human_synthesis_review_requires_reviewer_relation_and_rationale() -> None:
+def test_synthesis_review_requires_reviewer_relation_and_rationale() -> None:
     html = read("synthesis-review.html")
     js = read("synthesis-review.js")
 
@@ -42,7 +42,7 @@ def test_human_synthesis_review_requires_reviewer_relation_and_rationale() -> No
         assert f'data-dimension="{dimension}"' in js
 
 
-def test_human_synthesis_review_uses_bounded_source_linked_details() -> None:
+def test_synthesis_review_uses_bounded_source_linked_details() -> None:
     js = read("synthesis-review.js")
 
     assert "DETAIL_BATCH_LIMIT=18" in js
@@ -55,7 +55,7 @@ def test_human_synthesis_review_uses_bounded_source_linked_details() -> None:
     assert "full_text" not in js.casefold()
 
 
-def test_human_synthesis_review_only_persists_browser_draft_and_export() -> None:
+def test_synthesis_review_only_persists_browser_draft_and_export() -> None:
     js = read("synthesis-review.js")
 
     assert "localStorage.getItem" in js
@@ -71,11 +71,12 @@ def test_human_synthesis_review_only_persists_browser_draft_and_export() -> None
     assert "api.anthropic.com" not in js
 
 
-def test_scientific_intelligence_and_dashboard_link_human_review() -> None:
+def test_evidence_analysis_and_advanced_lab_link_synthesis_review() -> None:
     intelligence = read("intelligence.html")
-    dashboard = read("advanced.html")
+    advanced = read("advanced.html")
 
     assert 'href="/synthesis-review.html"' in intelligence
     assert "Abrir revisão humana" in intelligence
-    assert 'href="/synthesis-review.html"' in dashboard
-    assert "Human Synthesis Review" in dashboard
+    assert 'href="/synthesis-review.html"' in advanced
+    assert "Revisão de Síntese" in advanced
+    assert "Human Synthesis Review" not in advanced

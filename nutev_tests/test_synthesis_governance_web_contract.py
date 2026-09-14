@@ -77,6 +77,6 @@ def test_dashboard_links_governance_registry_and_keeps_boundary_explicit() -> No
     dashboard = read("advanced.html")
 
     assert 'href="/synthesis-governance.html"' in dashboard
-    assert "Synthesis Registry" in dashboard
-    assert "Governance Registry" in dashboard
-    assert "governance approval ≠ scientific validation" in dashboard
+    assert "Registro de Síntese" in dashboard
+    assert "Registro de Governança" in dashboard
+    assert "Aprovação de governança ≠ validação científica" in dashboard

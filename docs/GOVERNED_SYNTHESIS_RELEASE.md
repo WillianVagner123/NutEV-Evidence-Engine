@@ -1,15 +1,15 @@
 # Governed Synthesis Release Package
 
-The Governed Synthesis Release Package is the dissemination layer that follows the Human Synthesis Review, Human Synthesis Brief and Synthesis Governance Registry.
+The Governed Synthesis Release Package is the dissemination layer that follows **Revisão de Síntese / Synthesis Review**, **Resumo de Síntese Verificado / Verified Synthesis Summary** and the Synthesis Governance Registry.
 
 Its purpose is narrow: prepare an auditable package for manuscript drafting, defense boards, presentations or other controlled scientific communication **without creating a new scientific inference**.
 
 ## Flow
 
 ```text
-Scientific Intelligence
-  -> Human Synthesis Review
-     -> Human Synthesis Brief
+Análise de Evidências / Evidence Analysis
+  -> Revisão de Síntese / Synthesis Review
+     -> Resumo de Síntese Verificado / Verified Synthesis Summary
         -> Synthesis Governance Registry
            -> Governed Synthesis Release
 ```
@@ -49,11 +49,11 @@ At preparation time the server revalidates:
 6. governance decision is human-entered;
 7. source revalidation was recorded at governance decision time;
 8. no unsupported cryptographic identity-authentication claim is present;
-9. immutable source Brief is reloaded from the governance artifact store;
-10. Brief content SHA-256 is recomputed;
+9. immutable source Summary is reloaded from the governance artifact store;
+10. Summary content SHA-256 is recomputed;
 11. current Article 1 context fingerprint is recomputed;
 12. search id/context version/question remain compatible;
-13. the source Brief still passes all Human Synthesis Brief scientific guardrails.
+13. the source Summary still passes all Verified Synthesis Summary scientific guardrails.
 
 An entry approved under an older materialized Workbench/context therefore fails closed if the context changes before release preparation.
 
@@ -69,7 +69,7 @@ It contains:
 
 - source registry artifact id;
 - governance status and decision provenance;
-- source Brief content SHA-256;
+- source Summary content SHA-256;
 - current context fingerprint;
 - search id and context version;
 - scientific question;
@@ -77,7 +77,7 @@ It contains:
 - governor provenance and rationale;
 - release preparer;
 - explicit dissemination purpose;
-- relationship/domain/comparability summaries already present in the source Brief;
+- relationship/domain/comparability summaries already present in the source Summary;
 - source-linked reviewed decisions;
 - release-specific scientific guardrails;
 - deterministic package content SHA-256.
@@ -188,7 +188,7 @@ The page provides:
 - metadata-only release ledger;
 - visible scientific-boundary language.
 
-The UI does not call external LLM APIs and does not use Bank rank or machine relevance to choose release content.
+The UI does not depend on direct external model APIs and does not use Bank rank or automated relevance to choose release content.
 
 ## Guardrail audits
 
@@ -210,7 +210,7 @@ The release death test fails if future code:
 - creates fake RoB/certainty/meta-analysis/PRISMA state;
 - claims cryptographic identity authentication;
 - leaks full packages into the release ledger;
-- introduces external LLM or operational-ranking dependencies into release preparation.
+- introduces external automated-model or operational-ranking dependencies into release preparation.
 
 CI also runs:
 
@@ -222,7 +222,7 @@ node --check apps/nutev-web/synthesis-release.js
 
 A successful governed release means:
 
-> an approved human-synthesis artifact was revalidated against the current NutEV context and packaged for a declared dissemination purpose with an auditable content hash.
+> an approved human-reviewed synthesis artifact was revalidated against the current NutEV context and packaged for a declared dissemination purpose with an auditable content hash.
 
 It does **not** mean:
 

@@ -17,7 +17,8 @@ def test_three_scientific_surfaces_wire_shared_visual_flow() -> None:
 
     script = read("scientific-flow.js")
     assert "Evidence Map" in script
-    assert "Scientific Intelligence" in script
+    assert "Análise de Evidências" in script
+    assert "Evidence Analysis" in script
     assert "Human Review" in script
     assert "Do mapa à decisão humana, sem atalhos científicos" in script
 
@@ -35,31 +36,31 @@ def test_visual_flow_preserves_scientific_boundaries() -> None:
 
     assert "Nenhum filtro, volume, recorrência ou clique cria elegibilidade" in script
     assert "EvidenceClaim" in script
-    assert "decisão de Review" in script
+    assert "decisão de revisão" in script
     assert "PRISMA" in script
     assert "não é força da evidência" in script
     assert "não é taxa de inclusão nem resultado científico" in script
 
 
-def test_evidence_map_passes_only_navigation_context_to_intelligence() -> None:
+def test_evidence_map_passes_only_navigation_context_to_analysis() -> None:
     script = read("scientific-flow.js")
 
     assert "#mapDomainFilter" in script
     assert "/intelligence.html?domain=" in script
     assert "mapClassFilter" in script
     assert "mapRouteFilter" in script
-    assert "Levar domínio para Intelligence" in script
+    assert "Levar domínio para Análise" in script
     assert "fetch(" not in script
 
 
-def test_intelligence_visual_overview_reuses_existing_domain_selection() -> None:
+def test_evidence_analysis_visual_overview_reuses_existing_domain_selection() -> None:
     script = read("scientific-flow.js")
 
     assert "scientificDomainOverview" in script
     assert "data-flow-domain" in script
     assert "data-select-domain" in script
     assert "dispatchEvent(new Event('change',{bubbles:true}))" in script
-    assert "result bundle materializado" in script
+    assert "pacote de resultados materializado" in script
     assert "CSS.escape" in script
 
 

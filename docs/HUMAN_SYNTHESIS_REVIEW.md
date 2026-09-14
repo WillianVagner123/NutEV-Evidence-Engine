@@ -1,24 +1,28 @@
-# Human Synthesis Review
+# Revisão de Síntese / Synthesis Review
 
-`/synthesis-review.html` turns the comparison queues produced by Scientific Intelligence into explicit, traceable human judgments without changing canonical scientific state.
+> Compatibility note: the historical filename `HUMAN_SYNTHESIS_REVIEW.md` remains stable. The product surface is **Revisão de Síntese / Synthesis Review**.
 
-The page is deliberately a **local draft workspace**. It does not perform formal screening, risk-of-bias assessment, certainty assessment, PRESS review, GF-10 authorization or PRISMA actions.
+`/synthesis-review.html` turns comparison queues produced by **Análise de Evidências / Evidence Analysis** into explicit, traceable human judgments without changing canonical scientific state.
+
+The page is deliberately a **local draft area**. It does not perform formal screening, risk-of-bias assessment, certainty assessment, PRESS review, GF-10 authorization or PRISMA actions.
 
 ## Why this layer exists
 
-The current deterministic `result_bundles` provide source-linked result candidates with structured outcomes, effect measures, confidence intervals, p-values and short result text. They do not provide a validated scientific direction/stance field that can support automatic claims of agreement or contradiction.
+The deterministic `result_bundles` provide source-linked result candidates with structured outcomes, effect measures, confidence intervals, p-values and short result text. They do not provide a validated scientific direction/stance field that can support automatic claims of agreement or contradiction.
 
 For that reason NutEV does not infer convergence/divergence from wording, p-values or repeated outcome labels. A human reviewer must inspect two source-linked findings and record the relationship explicitly.
 
 ## Inputs
 
-The workspace uses the same rank-blind surfaces as Scientific Intelligence:
+The review uses the same rank-blind Evidence Context as Evidence Analysis:
 
 - `agent-context/article1/ARTICLE_SUMMARIES.jsonl`;
 - `agent-context/article1/SEARCH_STATE.json`;
-- lazy `GET /api/articles/{document_id}` detail requests.
+- on-demand `GET /api/articles/{document_id}` detail requests.
 
-The detail batch is capped at 18 finding-ready documents for the selected domain with at most four requests in flight. Only materialized result bundles are used; full text integral is not returned to the page.
+The `agent-context` path is retained for technical compatibility; the product term is **Contexto de Evidências / Evidence Context**.
+
+The detail batch is capped at 18 documents ready for inspection for the selected domain with at most four requests in flight. Only materialized result bundles are used; complete protected full text is not returned to the page.
 
 ## Review dimensions
 
@@ -55,13 +59,13 @@ The labels are intentionally pairwise and local to the reviewed findings:
 - `CONVERGENT` does not mean high certainty or meta-analytic consistency;
 - `DIVERGENT` does not prove scientific contradiction;
 - `NOT_COMPARABLE` is not an exclusion decision;
-- `UNCLEAR` is a valid review outcome and is not silently resolved by machine inference.
+- `UNCLEAR` is a valid review outcome and is not silently resolved by automated inference.
 
 ## Context fingerprint
 
-A stable `search_id` and Agent Context schema version do not by themselves prove that the current Workbench is the same materialization that was reviewed.
+A stable `search_id` and Evidence Context schema version do not by themselves prove that the current Workbench is the same materialization that was reviewed.
 
-The review workspace therefore derives a deterministic context source object from safe `SEARCH_STATE.json` fields:
+The review therefore derives a deterministic context source object from safe `SEARCH_STATE.json` fields:
 
 ```text
 search_id
@@ -70,7 +74,7 @@ question
 workbench database SHA-256
 Article 1 route manifest SHA-256
 review-profile version
-agent article-summary count
+article-summary count
 ```
 
 The SHA-256 of this object is the `context_fingerprint`.
@@ -82,7 +86,7 @@ This is a context-binding mechanism, not a scientific-validation score.
 Draft decisions are stored in browser `localStorage` under a key scoped to:
 
 - Article 1 `search_id`;
-- Agent Context version;
+- Evidence Context version;
 - the first 16 characters of the current `context_fingerprint`.
 
 A Workbench/route/profile rebuild that changes the fingerprint therefore does not silently reopen decisions saved against a previous materialization.
@@ -95,11 +99,13 @@ Changing or clearing browser storage can remove the local draft. Therefore a rev
 
 ## Export artifact
 
-`Exportar revisão` creates:
+`Exportar revisão` creates the compatibility schema:
 
 ```text
 NUTEV_HUMAN_SYNTHESIS_REVIEW_DRAFT_V1
 ```
+
+The identifier remains unchanged because it is a persisted technical contract; the product name is Revisão de Síntese.
 
 The export contains:
 
@@ -115,7 +121,7 @@ The export contains:
 - source snapshots for both findings, including document id, bundle id, source-sentence SHA-256 when available, result text and structured quantitative fields;
 - explicit scientific guardrails.
 
-Immediately before export, the workspace recomputes the context fingerprint from the live `SEARCH_STATE.json`. If it differs from the fingerprint captured when the workspace loaded, the export fails closed.
+Immediately before export, the system recomputes the context fingerprint from the live `SEARCH_STATE.json`. If it differs from the fingerprint captured when the page loaded, the export fails closed.
 
 A deterministic SHA-256 is then computed over the scientific content before `generated_at` is added. The digest is stored as `content_sha256` and included in the filename.
 
@@ -125,7 +131,7 @@ The export remains:
 canonical: false
 ```
 
-Exporting the file does not make the judgments canonical. The downstream Human Synthesis Brief can verify the artifact and present it, but it also remains noncanonical.
+Exporting the file does not make the judgments canonical. The downstream **Resumo de Síntese Verificado / Verified Synthesis Summary** can verify the artifact and present it, but it also remains noncanonical.
 
 ## What the hashes do not establish
 
@@ -146,7 +152,7 @@ There is no cryptographic reviewer-signature layer in this phase.
 
 ## Guardrails
 
-The Human Synthesis Review layer must not:
+The Synthesis Review layer must not:
 
 - infer pairwise relation automatically;
 - save a judgment without reviewer identity;
@@ -160,7 +166,7 @@ The Human Synthesis Review layer must not:
 - assess RoB or certainty;
 - mutate PRESS, GF-10, query-freeze or formal-search state;
 - emit PRISMA events;
-- send data to an external LLM endpoint;
+- depend on a direct external model endpoint for these decisions;
 - POST scientific decisions to the public NutEV web server.
 
 The Scientific Workspace death test and dedicated UI tests enforce these boundaries.

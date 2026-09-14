@@ -2,6 +2,8 @@
 
 The NutEV web interface supports a presentation-language preference without changing scientific state, evidence objects, eligibility, Review decisions or release gates.
 
+The product identity is **Sistema de Evidências Científicas / Scientific Evidence System**. Language names the function of each surface rather than the underlying automation technology.
+
 ## Default and selector
 
 - **Português (Brasil)** is the default language.
@@ -16,21 +18,33 @@ The NutEV web interface supports a presentation-language preference without chan
 
 - `product-ui.js` — shared authenticated product presentation layer;
 - `login.js` — login presentation layer;
-- `scientific-flow.js` — Evidence Map, Scientific Intelligence and Human Review;
+- `scientific-flow.js` — Evidence Map, Evidence Analysis and Human Review;
 - `operational-cycle.js` — Evidence Radar, Strategy Lab and Quality Observatory;
-- `synthesis-flow.js` — Synthesis Review, Synthesis Brief and Ask NutEV;
+- `synthesis-flow.js` — Synthesis Review, Verified Synthesis Summary and Evidence Query;
 - `dashboard-visual.js` — advanced scientific dashboard;
 - `evidence.js` — Evidence Explorer;
 - `review-routes.js` — Review Routes;
-- `strategy-flow-sync.js` — QA, PRESS and regional-route review surfaces.
+- `strategy-flow-sync.js` — quality-control, PRESS and regional-route review surfaces.
 
 `tenant-session.js` intentionally contains **no i18n bootstrap**. Presentation-language loading is kept outside the browser context lease so language choice cannot participate in session/context invalidation or authorization behavior.
 
 The translation observer also handles known UI inserted after page load.
 
+## System-first terminology
+
+The bilingual registry normalizes historical or mixed UI into functional product names. Examples:
+
+- `Scientific Intelligence` → **Análise de Evidências / Evidence Analysis**;
+- `Ask NutEV` → **Consulta de Evidências / Evidence Query**;
+- `AI Context` → **Contexto de Evidências / Evidence Context**;
+- `Human Synthesis Review` → **Revisão de Síntese / Synthesis Review**;
+- `Human Synthesis Brief` → **Resumo de Síntese Verificado / Verified Synthesis Summary**.
+
+Historical labels remain only as compatibility aliases when needed to render old static markup or persisted references. They are not the canonical product names.
+
 ## Portuguese cleanup
 
-The PT-BR registry normalizes mixed legacy UI such as `provider`, `workspace`, `retrieval grounded`, `result bundle`, `finding-ready`, `rank-blind`, `Watch`, `Query freeze`, `full text`, `fail-closed` and similar presentation language into Portuguese equivalents.
+The PT-BR registry also normalizes mixed legacy UI such as `provider`, `workspace`, `retrieval grounded`, `result bundle`, `finding-ready`, `rank-blind`, `Watch`, `Query freeze`, `full text`, `fail-closed` and similar presentation language into Portuguese equivalents.
 
 The registry supports aliases so an old mixed string can be rendered as clean Portuguese by default and as coherent English when EN is selected, without rewriting the underlying scientific object.
 
@@ -45,7 +59,8 @@ Canonical technical identifiers and scientific acronyms remain stable where they
 - PRISMA;
 - B-NORM;
 - C-STRUCT;
-- EvidenceClaim when used as the canonical object name.
+- EvidenceClaim when used as the canonical object name;
+- SHA-256, DOI and PMID.
 
 ## Scientific boundary
 
@@ -54,7 +69,7 @@ The language module:
 - performs no scientific `fetch`;
 - performs no `POST` or backend mutation;
 - creates no Review, eligibility, inclusion, risk-of-bias, certainty, recommendation or PRISMA state;
-- does not alter ranking, provider results, search strategy or evidence artifacts;
+- does not alter ranking, source results, search strategy or evidence artifacts;
 - persists only the local presentation-language preference.
 
 Changing PT/EN therefore changes **copy and accessibility semantics only**. It does not change NutEV scientific interpretation or validation status.
@@ -62,3 +77,5 @@ Changing PT/EN therefore changes **copy and accessibility semantics only**. It d
 ## Maintenance rule
 
 New interface copy should be added to the bilingual registry when a new product surface is introduced. Scientific source text should not be added to the registry merely to make it visually uniform; source language remains part of the evidence/provenance context.
+
+The canonical vocabulary, definitions and technical-compatibility exceptions are maintained in `docs/PRODUCT_LANGUAGE_SYSTEM.md`.

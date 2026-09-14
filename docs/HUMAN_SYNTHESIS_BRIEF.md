@@ -1,37 +1,39 @@
-# Human Synthesis Brief
+# Resumo de Síntese Verificado / Verified Synthesis Summary
 
-The Human Synthesis Brief is the presentation/export layer that follows the Human Synthesis Review.
+> Compatibility note: the historical filename `HUMAN_SYNTHESIS_BRIEF.md` remains stable. The product surface is **Resumo de Síntese Verificado / Verified Synthesis Summary**.
 
-It does **not** generate scientific conclusions from the machine corpus. It only renders a human-review draft after that draft passes local integrity and context checks.
+The Verified Synthesis Summary is the presentation/export layer that follows **Revisão de Síntese / Synthesis Review**.
+
+It does **not** generate scientific conclusions from the automated corpus. It only renders a human-review draft after that draft passes local integrity and context checks.
 
 ## Flow
 
 ```text
-Scientific Intelligence
-  -> Human Synthesis Review
+Análise de Evidências / Evidence Analysis
+  -> Revisão de Síntese / Synthesis Review
      -> exported noncanonical human-review draft
-        -> Human Synthesis Brief
+        -> Resumo de Síntese Verificado / Verified Synthesis Summary
 ```
 
-The source review artifact remains:
+The source review artifact remains the compatibility schema:
 
 ```text
 NUTEV_HUMAN_SYNTHESIS_REVIEW_DRAFT_V1
 canonical: false
 ```
 
-The brief export is:
+The summary export remains the compatibility schema:
 
 ```text
 NUTEV_HUMAN_SYNTHESIS_BRIEF_V1
 canonical: false
 ```
 
-Neither export changes canonical scientific state.
+These identifiers are retained because they are persisted technical contracts. Neither export changes canonical scientific state.
 
 ## Source-review verification
 
-The brief processes the imported JSON entirely in the browser.
+The summary processes the imported JSON entirely in the browser.
 
 Before any reviewed relationship is rendered, the following conditions must all pass:
 
@@ -46,13 +48,13 @@ Before any reviewed relationship is rendered, the following conditions must all 
 9. the deterministic content SHA-256 recomputed by the browser matches `content_sha256`;
 10. the review context fingerprint is internally consistent and matches the current Article 1 context.
 
-Any failure blocks the brief, print and export controls.
+Any failure blocks the summary, print and export controls.
 
 ## Strong context binding
 
 `search_id` and `context_version` alone are insufficient to prove that a human review belongs to the current materialized Workbench.
 
-The Human Synthesis Review therefore now derives a deterministic context source object from safe runtime state:
+The Synthesis Review therefore derives a deterministic context source object from safe runtime state:
 
 ```text
 search_id
@@ -61,7 +63,7 @@ question
 workbench database SHA-256
 Article 1 route manifest SHA-256
 review-profile version
-agent article-summary count
+article-summary count
 ```
 
 The SHA-256 of this object becomes `context_fingerprint`.
@@ -75,7 +77,7 @@ context_source
 context_fingerprint
 ```
 
-The Brief recomputes the fingerprint from the current `SEARCH_STATE.json` and fails closed if the imported review does not match.
+The Verified Synthesis Summary recomputes the fingerprint from the current `SEARCH_STATE.json` and fails closed if the imported review does not match.
 
 ## What SHA-256 means here
 
@@ -101,7 +103,7 @@ context fingerprint match != scientific validation
 
 ## Presentation semantics
 
-After verification, the brief can show:
+After verification, the summary can show:
 
 - number of human pairwise decisions;
 - number of unique source-linked documents represented;
@@ -111,9 +113,7 @@ After verification, the brief can show:
 - reviewer rationale for each pair;
 - source result text plus result-bundle/source-sentence provenance when present.
 
-These are descriptive summaries of a human-review artifact.
-
-They are not pooled statistical estimates.
+These are descriptive summaries of a human-review artifact. They are not pooled statistical estimates.
 
 ## Relationship-count boundary
 
@@ -131,7 +131,7 @@ Pairwise decisions are not statistically independent by definition: a document m
 
 ## Export
 
-`Exportar brief` creates `NUTEV_HUMAN_SYNTHESIS_BRIEF_V1` only after source integrity and current-context matching pass.
+`Exportar resumo` creates `NUTEV_HUMAN_SYNTHESIS_BRIEF_V1` only after source integrity and current-context matching pass.
 
 The exported content includes:
 
@@ -143,9 +143,9 @@ The exported content includes:
 - descriptive relation/domain/comparability counts;
 - the reviewed pairwise decisions;
 - explicit scientific guardrails;
-- a deterministic SHA-256 for the brief content itself.
+- a deterministic SHA-256 for the summary content itself.
 
-The brief remains `canonical: false`.
+The summary remains `canonical: false`.
 
 ## Print / PDF
 
@@ -155,9 +155,9 @@ Print/PDF is a presentation operation only. It does not freeze, approve or publi
 
 ## Explicit non-goals
 
-The Human Synthesis Brief does not:
+The Verified Synthesis Summary does not:
 
-- accept machine result bundles as EvidenceClaims;
+- accept automated result bundles as EvidenceClaims;
 - assess risk of bias;
 - assess certainty;
 - perform meta-analysis;
@@ -167,11 +167,11 @@ The Human Synthesis Brief does not:
 - emit PRISMA events;
 - modify PRESS/GF-10/query-freeze state;
 - authenticate reviewer identity;
-- call an external LLM.
+- depend on a direct external model endpoint.
 
 ## Death-test contract
 
-`tools/audit_scientific_workspace_v2.py` fails if the brief loses any of the following protections:
+`tools/audit_scientific_workspace_v2.py` fails if the summary loses any of the following protections:
 
 - noncanonical semantics;
 - fail-closed verification;
@@ -182,6 +182,6 @@ The Human Synthesis Brief does not:
 - relationship-count/certainty boundary;
 - no scientific-state creation;
 - rank-blind behavior;
-- no external LLM endpoint or scientific POST mutation.
+- no direct external model endpoint or scientific POST mutation.
 
 The CI also runs `node --check apps/nutev-web/synthesis-brief.js`.

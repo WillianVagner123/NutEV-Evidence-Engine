@@ -93,12 +93,12 @@ def run_audit() -> dict[str, Any]:
             and 'method:"POST"' not in source.replace(" ", "")
             for source in read_only_scripts.values()
         ),
-        "Dashboard, Ask, Strategy, Presentation, Quality, Intelligence and Brief are read-only server surfaces.",
+        "Dashboard, Evidence Query, Strategy, Presentation, Quality, Evidence Analysis and Synthesis Summary are read-only server surfaces.",
     )
     check(
-        "Ask NutEV has no direct external LLM endpoint",
+        "Evidence Query has no direct external model endpoint",
         "api.openai.com" not in ask and "api.anthropic.com" not in ask,
-        "Ask NutEV is grounded retrieval/context composition in this phase.",
+        "Evidence Query remains deterministic retrieval/context composition in this phase.",
     )
     check(
         "Snapshot excludes operational ranking fields",
@@ -126,7 +126,7 @@ def run_audit() -> dict[str, Any]:
         "The observatory must not be presented as evidence-quality assessment.",
     )
     check(
-        "Scientific Intelligence remains rank-blind",
+        "Evidence Analysis remains rank-blind",
         all(
             term not in intelligence
             for term in (
@@ -139,30 +139,30 @@ def run_audit() -> dict[str, Any]:
         "Synthesis support must not silently reintroduce Bank or machine ranking semantics.",
     )
     check(
-        "Scientific Intelligence does not automate convergence or evidence gaps",
+        "Evidence Analysis does not automate convergence or evidence gaps",
         "convergence_divergence_requires_human_review:true" in intelligence
         and "recurrence_is_not_consensus:true" in intelligence
         and "sparse_mapping_is_not_evidence_gap:true" in intelligence
-        and "NOT AUTOMATED CONCLUSION" in intelligence_html,
+        and "SUPORTE À SÍNTESE · SEM CONCLUSÃO AUTOMÁTICA" in intelligence_html,
         "Recurring labels and sparse mapping are navigation signals, not scientific conclusions.",
     )
     check(
-        "Scientific Intelligence uses bounded lazy article detail",
+        "Evidence Analysis uses bounded on-demand article detail",
         "FINDING_BATCH_LIMIT=24" in intelligence
         and "DETAIL_CONCURRENCY=4" in intelligence
         and "/api/articles/${encodeURIComponent(documentId)}" in intelligence,
-        "Finding inspection must stay lazy instead of shipping the whole Workbench detail corpus.",
+        "Finding inspection must stay bounded and on-demand instead of shipping the whole Workbench detail corpus.",
     )
     check(
-        "Human Synthesis Review stays a noncanonical local draft",
+        "Synthesis Review stays a noncanonical local draft",
         "NUTEV_HUMAN_SYNTHESIS_REVIEW_DRAFT_V1" in synthesis_review
         and "canonical:false" in synthesis_review
         and "localStorage.setItem" in synthesis_review
-        and "LOCAL DRAFT · NOT CANONICAL" in synthesis_review_html,
+        and "JULGAMENTO HUMANO · RASCUNHO LOCAL · NÃO CANÔNICO" in synthesis_review_html,
         "Browser persistence may preserve a draft, but must never present it as canonical scientific state.",
     )
     check(
-        "Human Synthesis Review cannot auto-adjudicate relations",
+        "Synthesis Review cannot auto-adjudicate relations",
         "automatic_convergence_divergence:false" in synthesis_review
         and "human_entered:true" in synthesis_review
         and all(
@@ -178,13 +178,13 @@ def run_audit() -> dict[str, Any]:
         "Pairwise convergence/divergence labels must originate from explicit human input.",
     )
     check(
-        "Human Synthesis Review requires reviewer and rationale",
+        "Synthesis Review requires reviewer and rationale",
         "Informe o nome do revisor antes de salvar." in synthesis_review
         and "justificativa com pelo menos 20 caracteres" in synthesis_review,
         "Anonymous or rationale-free pairwise judgments must fail closed.",
     )
     check(
-        "Human Synthesis Review uses bounded source-linked details",
+        "Synthesis Review uses bounded source-linked details",
         "DETAIL_BATCH_LIMIT=18" in synthesis_review
         and "DETAIL_CONCURRENCY=4" in synthesis_review
         and "/api/articles/${encodeURIComponent(documentId)}" in synthesis_review
@@ -192,7 +192,7 @@ def run_audit() -> dict[str, Any]:
         "Human review must use a bounded source-linked packet rather than full-corpus detail loading.",
     )
     check(
-        "Human Synthesis Review is bound to a strong context fingerprint",
+        "Synthesis Review is bound to a strong context fingerprint",
         "contextFingerprintSource" in synthesis_review
         and "workbench_database_sha256" in synthesis_review
         and "route_manifest_sha256" in synthesis_review
@@ -202,7 +202,7 @@ def run_audit() -> dict[str, Any]:
         "Saved/exported human judgments must not silently survive a Workbench/context rebuild.",
     )
     check(
-        "Human Synthesis Review cannot POST scientific decisions or call external LLMs",
+        "Synthesis Review cannot POST scientific decisions or call external model endpoints",
         "method:'POST'" not in synthesis_review.replace(" ", "")
         and 'method:"POST"' not in synthesis_review.replace(" ", "")
         and "api.openai.com" not in synthesis_review
@@ -210,7 +210,7 @@ def run_audit() -> dict[str, Any]:
         "Draft decisions remain browser-local/export-only in this phase.",
     )
     check(
-        "Human Synthesis export explicitly refuses downstream scientific state changes",
+        "Synthesis Review export explicitly refuses downstream scientific state changes",
         all(
             token in synthesis_review
             for token in (
@@ -225,15 +225,15 @@ def run_audit() -> dict[str, Any]:
         "Exporting a human comparison draft must not silently create claims, screening, RoB, certainty or PRISMA state.",
     )
     check(
-        "Human Synthesis Brief is noncanonical and fail-closed",
+        "Verified Synthesis Summary is noncanonical and fail-closed",
         "NUTEV_HUMAN_SYNTHESIS_BRIEF_V1" in synthesis_brief
         and "canonical:false" in synthesis_brief
         and "if(!allOk){resetBrief" in synthesis_brief
-        and "INTEGRITY VERIFIED · HUMAN REVIEW SOURCE · NOT CERTAINTY" in synthesis_brief_html,
-        "The executive brief may render only after verification and must remain noncanonical.",
+        and "INTEGRIDADE VERIFICADA · FONTE HUMANA · NÃO REPRESENTA CERTEZA" in synthesis_brief_html,
+        "The summary may render only after verification and must remain noncanonical.",
     )
     check(
-        "Human Synthesis Brief verifies content hash and current context fingerprint",
+        "Verified Synthesis Summary verifies content hash and current context fingerprint",
         "content_sha256" in synthesis_brief
         and "contextFingerprintSource" in synthesis_brief
         and "reviewContextSourceOk" in synthesis_brief
@@ -243,29 +243,29 @@ def run_audit() -> dict[str, Any]:
         "A review file from another content/context state must remain blocked.",
     )
     check(
-        "Human Synthesis Brief validates source human semantics",
+        "Verified Synthesis Summary validates source human semantics",
         "validateReviewGuardrails" in synthesis_brief
         and "validateDecisions" in synthesis_brief
         and "human_entered_relations===true" in synthesis_brief,
         "A structurally arbitrary JSON file must not be accepted as a NutEV human-review artifact.",
     )
     check(
-        "Human Synthesis Brief does not overclaim SHA-256",
+        "Verified Synthesis Summary does not overclaim SHA-256",
         "integrity_verification_does_not_prove_authorship_or_authenticity:true" in synthesis_brief
-        and "SHA-256 ≠ authorship/authenticity" in synthesis_brief_html,
+        and "SHA-256 ≠ autoria/autenticidade" in synthesis_brief_html,
         "Hash verification establishes content consistency, not reviewer identity, authorship or scientific validity.",
     )
     check(
-        "Human Synthesis Brief does not convert counts into evidence strength or certainty",
+        "Verified Synthesis Summary does not convert counts into evidence strength or certainty",
         "relationship_counts_are_not_evidence_strength:true" in synthesis_brief
         and "convergent_is_not_certainty:true" in synthesis_brief
         and "divergent_is_not_proven_contradiction:true" in synthesis_brief
         and "brief_is_not_meta_analysis:true" in synthesis_brief
         and "brief_is_not_prisma:true" in synthesis_brief,
-        "The brief is a descriptive presentation of human judgments, not meta-analysis or certainty assessment.",
+        "The summary is a descriptive presentation of human judgments, not meta-analysis or certainty assessment.",
     )
     check(
-        "Human Synthesis Brief cannot create scientific state",
+        "Verified Synthesis Summary cannot create scientific state",
         all(
             token in synthesis_brief
             for token in (
@@ -275,10 +275,10 @@ def run_audit() -> dict[str, Any]:
                 "formal_search_state_changed:false",
             )
         ),
-        "Brief export must not create EvidenceClaims, RoB, certainty or formal-search state.",
+        "Summary export must not create EvidenceClaims, RoB, certainty or formal-search state.",
     )
     check(
-        "Human Synthesis Brief stays rank-blind and offline from external LLMs",
+        "Verified Synthesis Summary stays rank-blind and offline from external model endpoints",
         all(
             term not in synthesis_brief
             for term in (

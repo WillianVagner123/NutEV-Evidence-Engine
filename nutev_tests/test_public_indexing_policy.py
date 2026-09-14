@@ -93,5 +93,5 @@ def test_secure_server_emits_fail_closed_noindex_header_for_internal_surfaces() 
 def test_advanced_laboratory_has_page_level_noindex_defense() -> None:
     advanced = read("advanced.html")
     assert '<meta name="robots" content="noindex,nofollow">' in advanced
-    assert "Workflow tipo Rayyan / revisão sistemática" in advanced
+    assert "Triagem e revisão sistemática" in advanced
     assert "uso especializado" in advanced

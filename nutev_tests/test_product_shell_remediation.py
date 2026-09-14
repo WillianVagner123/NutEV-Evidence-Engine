@@ -72,14 +72,14 @@ def test_search_and_home_present_research_context_without_hiding_search_core() -
     search = read(WEB / "search.html")
     advanced = read(WEB / "advanced.html")
 
-    assert "Nut Evidence Engine" in home
+    assert "NutEV — Sistema de Evidências Científicas" in home
     assert "Contrato científico visível" in home
     assert 'href="/project.html"' in home
     assert 'href="/evidence-library.html"' in home
     assert "Buscar evidências" in search
     assert "Busca avançada" in search
     assert "Modo revisão científica" not in search
-    assert "Workflow tipo Rayyan / revisão sistemática" in advanced
+    assert "Triagem e revisão sistemática" in advanced
     assert "uso especializado" in advanced
 
 

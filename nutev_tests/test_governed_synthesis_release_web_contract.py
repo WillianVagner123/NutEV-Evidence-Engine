@@ -77,6 +77,6 @@ def test_release_is_linked_from_dashboard_and_registry() -> None:
     release = read("synthesis-release.html")
 
     assert 'href="/synthesis-release.html"' in dashboard
-    assert "Governed Release" in dashboard
+    assert "Liberação Governada" in dashboard
     assert 'href="/synthesis-release.html"' in registry
     assert 'href="/synthesis-governance.html"' in release
