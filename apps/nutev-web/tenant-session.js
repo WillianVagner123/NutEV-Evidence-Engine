@@ -1,7 +1,7 @@
 /* Browser context lease: constraints on server authorization, never credentials. */
 (()=>{
   'use strict';
-  if(!document.querySelector('script[data-nutev-i18n]')){
+  if(typeof document.createElement==='function'&&!document.querySelector('script[data-nutev-i18n]')){
     const languageScript=document.createElement('script');
     languageScript.type='module';
     languageScript.src='/i18n.js';
