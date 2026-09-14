@@ -11,7 +11,7 @@ def test_web_app_exposes_dashboard_search_and_validation_without_csv_ui() -> Non
     advanced = (WEB_ROOT / "advanced.html").read_text(encoding="utf-8")
     search = (WEB_ROOT / "search.html").read_text(encoding="utf-8")
     app = (WEB_ROOT / "app.js").read_text(encoding="utf-8")
-    assert "NutEV Evidence Engine" in index
+    assert "NutEV — Sistema de Evidências Científicas" in index
     assert 'href="/search.html"' in index
     assert "Buscar evidências" in search
     assert "/validation/" in advanced
