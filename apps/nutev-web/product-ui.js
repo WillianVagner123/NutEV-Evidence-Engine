@@ -12,14 +12,32 @@ const STATUS_LABELS={
 }
 
 const GLOSSARY=[
-  ['Busca progressiva','Execução que consulta provedores em etapas e preserva o estado de cada fonte. Uma fonte indisponível não é tratada como zero resultados.'],
-  ['Provider','Fonte externa consultada pelo NutEV, como PubMed, Europe PMC, OpenAlex, Crossref, DOAJ, SciELO ou LILACS/BVS.'],
-  ['Deduplicação','Processo que consolida registros equivalentes vindos de fontes diferentes sem apagar a proveniência de origem.'],
-  ['Ranking','Ordem de apresentação condicionada à consulta, combinando relevância para a busca e prioridade operacional NutEV. Não significa qualidade, certeza ou recomendação.'],
-  ['Proveniência','Rastro que liga um registro à fonte, consulta, versão e contexto em que foi recuperado e processado.'],
-  ['Workspace','Espaço de trabalho que reúne projetos e define a fronteira principal de acesso privado.'],
-  ['Projeto','Contexto de pesquisa dentro de um workspace. Busca, biblioteca, revisão e exportação são autorizadas novamente para esse contexto.'],
-  ['Aplicação de pesquisa','Configuração metodológica do projeto, como revisão de escopo, revisão integrativa ou projeto genérico de evidências.']
+  ['Sistema de Evidências Científicas','O NutEV organiza busca, inspeção, revisão e governança de evidências com rastreabilidade e limites científicos explícitos.','Scientific Evidence System','NutEV organizes evidence search, inspection, review, and governance with traceability and explicit scientific boundaries.'],
+  ['Busca progressiva','Execução que consulta fontes em etapas e preserva o estado de cada fonte. Uma fonte indisponível não é tratada como zero resultados.','Progressive search','A staged search that preserves each source state. An unavailable source is not treated as zero results.'],
+  ['Fonte','Serviço externo consultado pelo sistema, como PubMed, Europe PMC, OpenAlex, Crossref, DOAJ, SciELO ou LILACS/BVS.','Source','An external service queried by the system, such as PubMed, Europe PMC, OpenAlex, Crossref, DOAJ, SciELO, or LILACS/BVS.'],
+  ['Deduplicação','Processo que consolida registros equivalentes vindos de fontes diferentes sem apagar a proveniência de origem.','Deduplication','The process that consolidates equivalent records from different sources without removing origin provenance.'],
+  ['Ordenação de busca','Ordem de apresentação condicionada à consulta e à prioridade operacional. Não significa qualidade, certeza, importância clínica ou recomendação.','Search ranking','Query-conditioned presentation order and operational priority. It does not mean quality, certainty, clinical importance, or recommendation.'],
+  ['Proveniência','Rastro que liga um registro à fonte, consulta, versão e contexto em que foi recuperado e processado.','Provenance','The trace linking a record to the source, query, version, and context in which it was retrieved and processed.'],
+  ['Espaço de trabalho','Fronteira principal de acesso privado que reúne projetos e separa dados entre contextos de trabalho.','Workspace','The main private-access boundary that groups projects and separates data across work contexts.'],
+  ['Projeto','Contexto de pesquisa autorizado dentro de um espaço de trabalho. Busca, biblioteca, revisão e exportação são executadas dentro desse contexto.','Project','An authorized research context inside a workspace. Search, library, review, and export run within that context.'],
+  ['Aplicação de pesquisa','Configuração metodológica explícita do projeto, como revisão de escopo, revisão integrativa ou outro uso científico governado.','Research Application','The project’s explicit methodological configuration, such as a scoping review, integrative review, or another governed scientific use.'],
+  ['Mapa de Evidências','Visualização estrutural do corpus verificado. Mostra distribuição e concentração; não mede força, qualidade ou certeza da evidência.','Evidence Map','A structural view of the verified corpus. It shows distribution and concentration; it does not measure evidence strength, quality, or certainty.'],
+  ['Análise de Evidências','Camada de inspeção que organiza domínios, sinais, documentos e pacotes de resultados. Não toma decisão científica automaticamente.','Evidence Analysis','An inspection layer that organizes domains, signals, documents, and result bundles. It does not make scientific decisions automatically.'],
+  ['Revisão Humana','Etapa em que uma pessoa registra julgamento explícito e rastreável. Decisões humanas permanecem separadas de sinais automatizados.','Human Review','The stage where a person records explicit, traceable judgment. Human decisions remain separate from automated signals.'],
+  ['Revisão de Síntese','Registro humano de comparabilidade, convergência, divergência e justificativa entre achados. Não equivale a meta-análise nem a certeza da evidência.','Synthesis Review','A human record of comparability, convergence, divergence, and rationale across findings. It is not a meta-analysis or evidence-certainty rating.'],
+  ['Consulta de Evidências','Consulta determinística do corpus verificado que mostra documentos de suporte e explica a correspondência. Consulta não significa inclusão.','Evidence Query','A deterministic query over the verified corpus that shows supporting documents and explains matching. A query does not mean inclusion.'],
+  ['Contexto de Evidências','Camada somente leitura com estado, manifesto e resumos estruturados usados pelas operações do sistema. Não cria fatos ausentes nem decisões científicas.','Evidence Context','A read-only layer containing state, manifest, and structured summaries used by system operations. It does not create missing facts or scientific decisions.'],
+  ['Pacote de Evidências','Artefato auditável com pergunta, recorte, documentos de suporte, contexto verificado e regras de análise.','Evidence Packet','An auditable artifact containing the question, slice, supporting documents, verified context, and analysis rules.'],
+  ['Pacote de resultados','Estrutura materializada a partir de um documento para inspeção. Não equivale a uma EvidenceClaim aceita.','Result bundle','A structure materialized from a document for inspection. It is not an accepted EvidenceClaim.'],
+  ['Pronto para inspeção','Indica que existe material estruturado disponível para leitura. Não significa elegibilidade, inclusão, qualidade ou certeza.','Ready for inspection','Indicates that structured material is available for inspection. It does not mean eligibility, inclusion, quality, or certainty.'],
+  ['Texto completo','Conteúdo integral de um documento quando a recuperação e o uso são permitidos e estão disponíveis.','Full text','The complete document content when retrieval and use are permitted and available.'],
+  ['Bloqueio por segurança','Regra em que o sistema impede uma operação quando falta uma verificação necessária para prosseguir com segurança.','Fail-closed safeguard','A rule that blocks an operation when a required verification is missing.'],
+  ['Camada operacional','Classificação de prioridade de processamento do banco. Organiza trabalho; não representa hierarquia de qualidade científica.','Operational tier','A processing-priority classification for the evidence bank. It organizes work; it is not a scientific-quality hierarchy.'],
+  ['Pontuação operacional','Valor usado para organizar a ordem de processamento ou leitura. Não é escore de qualidade da evidência.','Operational score','A value used to organize processing or reading order. It is not an evidence-quality score.'],
+  ['EvidenceClaim','Identificador canônico de uma alegação científica aceita dentro do fluxo governado.','EvidenceClaim','Canonical identifier for a scientific claim accepted within the governed workflow.'],
+  ['PRESS','Método de revisão por pares da estratégia de busca. Aprovação em PRESS não autoriza, sozinha, busca formal, PRISMA ou conclusão científica.','PRESS','Peer review method for search strategies. PRESS approval alone does not authorize formal search, PRISMA reporting, or a scientific conclusion.'],
+  ['GF-10','Gate metodológico do fluxo formal de busca. Permanece independente de outras etapas.','GF-10','A methodological gate in the formal-search workflow. It remains independent from other stages.'],
+  ['PRISMA','Referencial de relato de revisões sistemáticas. Navegação, mapa, consulta ou contagens do sistema não devem ser confundidos com PRISMA.','PRISMA','A reporting framework for systematic reviews. Navigation, mapping, querying, or system counts must not be confused with PRISMA.']
 ]
 
 const STRATEGY_FLOW_STORAGE_KEY='nutev_strategy_flow:article1-scientific-closure-v1'
@@ -30,6 +48,9 @@ let strategyFlowEnabled=false
 function escapeHtml(value){
   return String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')
 }
+
+function productLanguage(){return window.NutEVI18n?.language==='en'?'en':'pt-BR'}
+function localizedGlossaryEntry(entry){return productLanguage()==='en'?[entry[2],entry[3]]:[entry[0],entry[1]]}
 
 function ensureProductStyles(){
   if(document.querySelector('link[data-nutev-product-ui]'))return
@@ -191,10 +212,28 @@ function ensureSkipLink(){
 }
 
 function glossaryRows(filter=''){
-  const normalized=filter.trim().toLocaleLowerCase('pt-BR')
-  const rows=GLOSSARY.filter(([term,definition])=>!normalized||`${term} ${definition}`.toLocaleLowerCase('pt-BR').includes(normalized))
-  if(!rows.length)return '<p class="glossary-empty">Nenhum termo encontrado.</p>'
+  const normalized=filter.trim().toLocaleLowerCase(productLanguage()==='en'?'en':'pt-BR')
+  const rows=GLOSSARY.map(localizedGlossaryEntry).filter(([term,definition])=>!normalized||`${term} ${definition}`.toLocaleLowerCase(productLanguage()==='en'?'en':'pt-BR').includes(normalized))
+  if(!rows.length)return `<p class="glossary-empty">${productLanguage()==='en'?'No terms found.':'Nenhum termo encontrado.'}</p>`
   return rows.map(([term,definition])=>`<div class="glossary-row"><dt>${escapeHtml(term)}</dt><dd>${escapeHtml(definition)}</dd></div>`).join('')
+}
+
+function refreshGlossary(){
+  const dialog=document.querySelector('#nutevGlossaryDialog')
+  if(!dialog)return
+  const english=productLanguage()==='en'
+  const eyebrow=dialog.querySelector('.glossary-eyebrow')
+  const title=dialog.querySelector('h2')
+  const intro=dialog.querySelector('.glossary-head p')
+  const label=dialog.querySelector('.glossary-search')
+  const input=dialog.querySelector('#nutevGlossarySearch')
+  const list=dialog.querySelector('#nutevGlossaryList')
+  if(eyebrow)eyebrow.textContent=english?'How the system works':'Como o sistema funciona'
+  if(title)title.textContent=english?'Scientific Evidence System Glossary':'Glossário do Sistema de Evidências'
+  if(intro)intro.textContent=english?'Definitions of system functions, states, scientific boundaries, and governed artifacts.':'Definições das funções, estados, limites científicos e artefatos governados do sistema.'
+  if(label){const textNode=[...label.childNodes].find(node=>node.nodeType===Node.TEXT_NODE);if(textNode)textNode.nodeValue=english?'Filter terms':'Filtrar termos'}
+  if(input)input.placeholder=english?'E.g.: source, provenance, review, PRESS':'Ex.: fonte, proveniência, revisão, PRESS'
+  if(list)list.innerHTML=glossaryRows(input?.value||'')
 }
 
 function ensureGlossary(){
@@ -209,11 +248,12 @@ function ensureGlossary(){
   const dialog=document.createElement('dialog')
   dialog.id='nutevGlossaryDialog'
   dialog.className='glossary-dialog'
-  dialog.innerHTML=`<div class="glossary-head"><div><span class="glossary-eyebrow">Ajuda de termos</span><h2>Glossário científico</h2><p>Definições da interface para reduzir ambiguidade sem alterar os contratos científicos internos.</p></div><button class="glossary-close" type="button" aria-label="Fechar glossário">×</button></div><label class="glossary-search">Filtrar termos<input id="nutevGlossarySearch" type="search" autocomplete="off" placeholder="Ex.: ranking, workspace, proveniência"></label><dl id="nutevGlossaryList" class="glossary-list">${glossaryRows()}</dl>`
+  dialog.innerHTML=`<div class="glossary-head"><div><span class="glossary-eyebrow"></span><h2></h2><p></p></div><button class="glossary-close" type="button" aria-label="Fechar glossário">×</button></div><label class="glossary-search">Filtrar termos<input id="nutevGlossarySearch" type="search" autocomplete="off"></label><dl id="nutevGlossaryList" class="glossary-list"></dl>`
 
   document.body.append(button,dialog)
+  refreshGlossary()
   const close=()=>{if(typeof dialog.close==='function')dialog.close();else dialog.removeAttribute('open')}
-  button.addEventListener('click',()=>{if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','')})
+  button.addEventListener('click',()=>{refreshGlossary();if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','')})
   dialog.querySelector('.glossary-close')?.addEventListener('click',close)
   dialog.addEventListener('click',event=>{if(event.target===dialog)close()})
   dialog.querySelector('#nutevGlossarySearch')?.addEventListener('input',event=>{
@@ -248,11 +288,11 @@ function flowStatus(key,value={}){
   if(key==='qa'){
     if(status==='TECHNICAL_PASS'){
       const done=Number(value.human_classifications_done||0),total=Number(value.human_classifications_total||0)
-      return{tone:'done',label:total&&done>=total?'QA técnico concluído · amostra classificada':'QA técnico concluído · revisão humana pendente'}
+      return{tone:'done',label:total&&done>=total?'Controle técnico concluído · amostra classificada':'Controle técnico concluído · revisão humana pendente'}
     }
     if(status==='REVIEW_REQUIRED')return{tone:'warn',label:'revisão técnica necessária'}
-    if(status==='READY')return{tone:'ready',label:'run elegível · QA ainda não executado'}
-    if(status==='PENDING_RUN')return{tone:'pending',label:'aguardando run elegível'}
+    if(status==='READY')return{tone:'ready',label:'execução elegível · controle técnico ainda não executado'}
+    if(status==='PENDING_RUN')return{tone:'pending',label:'aguardando execução elegível'}
     return{tone:'pending',label:'ainda não executado'}
   }
   if(key==='press'){
@@ -298,9 +338,9 @@ function decorateStrategyFlow(){
 
 function strategyGuideCopy(){
   const path=location.pathname.replace(/\/+$/,'')||'/'
-  if(path==='/review-qa.html')return 'QA verifica execução, sentinelas e amostras. PASS técnico continua diferente de decisão científica humana.'
-  if(path==='/press-review.html')return 'PRESS exige revisor humano independente. Parecer concluído continua diferente de GF-10, freeze e PRISMA.'
-  if(path==='/regional-routes.html')return 'GF-01 documenta as rotas técnicas regionais. Completar esta etapa não autoriza freeze nem busca formal.'
+  if(path==='/review-qa.html')return 'O controle técnico verifica execução, sentinelas e amostras. Aprovação técnica continua diferente de decisão científica humana.'
+  if(path==='/press-review.html')return 'PRESS exige revisor humano independente. Parecer concluído continua diferente de GF-10, congelamento da consulta e PRISMA.'
+  if(path==='/regional-routes.html')return 'GF-01 documenta as rotas técnicas regionais. Completar esta etapa não autoriza congelamento da consulta nem busca formal.'
   return ''
 }
 
@@ -384,6 +424,7 @@ renderBuildIdentity()
 initRuntimeMode()
 
 window.addEventListener('nutev:strategy-flow-update',()=>decorateStrategyFlow())
+window.addEventListener('nutev:language-change',()=>{refreshGlossary();normalizeNavigation(true)})
 window.addEventListener('storage',event=>{if(strategyFlowEnabled&&event.key===STRATEGY_FLOW_STORAGE_KEY)decorateStrategyFlow()})
 
 const observer=new MutationObserver(mutations=>{
