@@ -1,6 +1,6 @@
 # Quality Observatory + Scientific Workspace Death Test
 
-The Quality Observatory is the system-quality layer of the NutEV Scientific Workspace v2. It makes operational failures, provenance problems and technical incompleteness visible without turning software signals into scientific judgments.
+The Quality Observatory is the system-quality layer of the NutEV **Scientific Evidence System**. It makes operational failures, provenance problems and technical incompleteness visible without turning software signals into scientific judgments.
 
 ## Scope
 
@@ -8,8 +8,8 @@ The Quality Observatory is the system-quality layer of the NutEV Scientific Work
 
 It may report:
 
-- web engine and Article Workbench availability;
-- Agent Context availability and age;
+- web system and Article Workbench availability;
+- Evidence Context availability and age;
 - scientific snapshot identity and source hashes;
 - build commit identity;
 - full-text retrieval status;
@@ -18,7 +18,7 @@ It may report:
 - `unclassified` document form;
 - documents without an operational domain;
 - `unrouted` documents;
-- provider operational states;
+- source operational states;
 - canonical PRESS, GF-10, formal-search and PRISMA-event states.
 
 It does **not** assess methodological quality, risk of bias, certainty, eligibility, inclusion/exclusion, evidence strength or clinical relevance.
@@ -36,6 +36,8 @@ The page is read-only and uses only existing safe surfaces:
 - `/build-info.json`;
 - the browser-side Scientific Snapshot builder.
 
+The `agent-context` path is retained for technical compatibility; the product term is **Evidence Context / Contexto de Evidências**.
+
 No protected full text is loaded into the observatory and no scientific POST action is introduced.
 
 ## Interpretation guardrails
@@ -45,14 +47,14 @@ The observatory deliberately keeps the following distinctions visible:
 - missing DOI or PMID != invalid document;
 - missing operational domain != evidence gap;
 - `unrouted` != excluded;
-- provider failure/unavailability != absence of literature;
+- source failure/unavailability != absence of literature;
 - retrieval/full-text status != eligibility;
 - document count != evidence strength or certainty;
-- machine profile != risk-of-bias assessment;
+- automated profile != risk-of-bias assessment;
 - snapshot != PRISMA;
 - discovery/deepening != formal search.
 
-The page reflects canonical states. It cannot approve PRESS, authorize GF-10, freeze a query, execute formal provider searches or emit PRISMA events.
+The page reflects canonical states. It cannot approve PRESS, authorize GF-10, freeze a query, execute formal source searches or emit PRISMA events.
 
 ## PRESS regression fixed in Phase 9
 
@@ -82,8 +84,8 @@ The audit fails closed if it detects regressions such as:
 - the canonical formal gate being promoted while PRESS/GF-10/freeze remain closed;
 - C4 Social Context being promoted before PRESS approval;
 - POST actions appearing on analytical read-only surfaces;
-- hidden direct OpenAI/Anthropic endpoints in Ask NutEV;
-- Bank rank/score or machine relevance leaking into the scientific snapshot;
+- direct external model endpoints appearing in the deterministic **Consulta de Evidências / Evidence Query** path;
+- Bank rank/score or automated relevance leaking into the scientific snapshot;
 - snapshot semantics being promoted to PRISMA;
 - production corpus totals being hardcoded in analytical JavaScript;
 - frontend functions attempting to authorize GF-10, approve PRESS, freeze a query or emit PRISMA.
