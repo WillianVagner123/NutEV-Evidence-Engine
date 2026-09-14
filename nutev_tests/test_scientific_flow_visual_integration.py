@@ -22,6 +22,14 @@ def test_three_scientific_surfaces_wire_shared_visual_flow() -> None:
     assert "Do mapa à decisão humana, sem atalhos científicos" in script
 
 
+def test_current_flow_stage_is_indicator_not_duplicate_self_link() -> None:
+    script = read("scientific-flow.js")
+
+    assert "stage.id===flowStage" in script
+    assert 'class="scientific-flow-stage active" aria-current="step"' in script
+    assert "document.querySelectorAll('a[data-flow-stage]')" in script
+
+
 def test_visual_flow_preserves_scientific_boundaries() -> None:
     script = read("scientific-flow.js")
 
