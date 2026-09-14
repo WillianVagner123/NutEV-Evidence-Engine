@@ -9,9 +9,9 @@ This permission is intentionally narrow. It does not turn the prior synthesis/go
 The implemented chain is:
 
 ```text
-Scientific Intelligence
-  -> Human Synthesis Review
-  -> Human Synthesis Brief
+Análise de Evidências / Evidence Analysis
+  -> Revisão de Síntese / Synthesis Review
+  -> Resumo de Síntese Verificado / Verified Synthesis Summary
   -> Synthesis Governance Registry
   -> Governed Synthesis Release
   -> Governed Publication Manifest
@@ -20,6 +20,8 @@ Scientific Intelligence
   -> explicit human ACCEPT / REJECT / REVISE
   -> canonical source-level EvidenceClaim (ACCEPT only)
 ```
+
+Historical route/file/schema names remain compatibility contracts where explicitly documented. They are not product branding.
 
 ## Atomicity rule
 
@@ -118,7 +120,7 @@ Therefore a blocked acceptance because of a missing EvidenceRecord does not leav
 
 Staging does not grandfather a candidate forever.
 
-At decision time the service reopens the source Publication Manifest and revalidates the complete chain back through the Governed Release, governance entry, Human Synthesis Brief and current scientific context.
+At decision time the service reopens the source Publication Manifest and revalidates the complete chain back through the Governed Release, governance entry, Verified Synthesis Summary and current scientific context.
 
 If the current context no longer reproduces the source artifact hash, the claim decision fails closed and the candidate must be restaged from a current manifest.
 
@@ -304,9 +306,9 @@ Reviewer names are typed provenance labels.
 
 Fase 16 does not implement cryptographic reviewer identity authentication.
 
-## No external LLM decision
+## No automated model decision
 
-The EvidenceClaim review UI/service does not call an external LLM to formulate or accept the canonical scientific claim.
+The EvidenceClaim review UI/service does not depend on an external model endpoint to formulate or accept the canonical scientific claim.
 
 The reviewer writes the canonical claim statement explicitly.
 
@@ -329,7 +331,7 @@ The death test blocks regressions such as:
 - missing human confirmations;
 - silent RoB/certainty/EvidenceSet/recommendation/PRISMA creation;
 - fake identity authentication;
-- external-LLM scientific claim acceptance.
+- external automated scientific claim acceptance.
 
 ## Scientific boundary
 
