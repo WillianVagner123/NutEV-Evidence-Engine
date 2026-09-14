@@ -1,19 +1,19 @@
 # Synthesis Governance Registry
 
-The Synthesis Governance Registry is the first server-backed governance layer for NutEV human-synthesis artifacts.
+The Synthesis Governance Registry is the first server-backed governance layer for NutEV synthesis artifacts produced through explicit human review.
 
-Its purpose is narrow: preserve an authoritative record of **governance state** for a verified Human Synthesis Brief without turning registry operations into scientific conclusions.
+Its purpose is narrow: preserve an authoritative record of **governance state** for a verified **Resumo de Síntese Verificado / Verified Synthesis Summary** without turning registry operations into scientific conclusions.
 
 ## Flow
 
 ```text
-Scientific Intelligence
-  -> Human Synthesis Review
-     -> Human Synthesis Brief
+Análise de Evidências / Evidence Analysis
+  -> Revisão de Síntese / Synthesis Review
+     -> Resumo de Síntese Verificado / Verified Synthesis Summary
         -> Synthesis Governance Registry
 ```
 
-The source Brief remains:
+The source Summary remains the compatibility schema:
 
 ```text
 NUTEV_HUMAN_SYNTHESIS_BRIEF_V1
@@ -36,7 +36,7 @@ All three routes call the same `_require_loopback()` coordinator guard used by s
 
 A remote browser may load the static governance page, but coordinator API calls return `403`. Therefore public deployment does not expose registry state or mutation controls remotely. The static page is intentionally non-authoritative unless it can reach the loopback-only coordinator.
 
-The default API JSON-body limit remains 256 KiB. Only the governance stage/decision endpoints accept up to 2 MiB because a source-linked Brief can exceed the generic request size.
+The default API JSON-body limit remains 256 KiB. Only the governance stage/decision endpoints accept up to 2 MiB because a source-linked Summary can exceed the generic request size.
 
 ## Persistent storage
 
@@ -50,7 +50,7 @@ project_output_reference/scientific/synthesis_registry/
     brief_<sha-prefix>.json
 ```
 
-The stored artifact is the imported Brief content. Registry listing endpoints return entry metadata only; they do not send the stored Brief body or reviewed-decision payloads back to the browser.
+The stored artifact is the imported Summary content. Registry listing endpoints return entry metadata only; they do not send the stored Summary body or reviewed-decision payloads back to the browser.
 
 Writes use temporary files followed by atomic replacement under an in-process registry lock.
 
@@ -66,11 +66,11 @@ Staging requires:
 - a source `NUTEV_HUMAN_SYNTHESIS_REVIEW_DRAFT_V1`;
 - valid human pairwise decisions;
 - expected scientific guardrails;
-- a correct deterministic Brief `content_sha256`;
+- a correct deterministic Summary `content_sha256`;
 - a `source_context_fingerprint` matching the live Article 1 context;
 - matching search id, context version and question.
 
-The server does **not** trust the browser's previous verification. It independently recomputes the Brief hash and live context fingerprint.
+The server does **not** trust the browser's previous verification. It independently recomputes the Summary hash and live context fingerprint.
 
 Successful import creates:
 
@@ -82,13 +82,13 @@ Staging never calls the governance-decision function and never produces an appro
 
 ## Idempotency
 
-The registry identity is derived from the Brief `content_sha256`:
+The registry identity is derived from the Summary `content_sha256`:
 
 ```text
 brief_<first 24 hex characters>
 ```
 
-Staging the same Brief again returns the existing registry entry rather than creating a duplicate or changing the original `staged_by` record.
+Staging the same Summary again returns the existing registry entry rather than creating a duplicate or changing the original `staged_by` record.
 
 ## Governance decision
 
@@ -108,7 +108,7 @@ REJECTED_BY_GOVERNANCE
 
 Before recording either result the service:
 
-1. reloads the immutable source Brief from the registry artifact store;
+1. reloads the immutable source Summary from the registry artifact store;
 2. recomputes its content hash;
 3. recomputes the current Article 1 context fingerprint;
 4. validates the source human decisions and guardrails again;
@@ -172,7 +172,7 @@ It is not a title/abstract or full-text exclusion decision and must not be count
 `/synthesis-governance.html` provides:
 
 - local-only registry status;
-- Brief file selection;
+- Summary file selection;
 - named staging operator;
 - explicit `STAGED` action;
 - metadata-only ledger;
@@ -202,7 +202,7 @@ The governance death test protects:
 - no claim of cryptographic human identity authentication;
 - no PRISMA/certainty semantics;
 - metadata-only registry listing;
-- no external LLM calls;
+- no direct external-model scientific decision;
 - no Bank/machine ranking semantics.
 
 CI also runs `node --check apps/nutev-web/synthesis-governance.js`.
