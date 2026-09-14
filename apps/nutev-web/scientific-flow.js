@@ -1,3 +1,5 @@
+import './i18n.js'
+
 const FLOW_STAGES=[
   {id:'map',label:'Evidence Map',note:'Estrutura do corpus',href:'/evidence-map.html'},
   {id:'intelligence',label:'Scientific Intelligence',note:'Inspeção de sinais',href:'/intelligence.html'},

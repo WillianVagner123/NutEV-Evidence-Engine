@@ -1,3 +1,5 @@
+import './i18n.js'
+
 const CYCLE_STAGES=[
   {id:'radar',label:'Evidence Radar',note:'Observe coverage, gaps and change',path:'/radar.html'},
   {id:'strategy',label:'Strategy Lab',note:'Prepare pre-PRESS decisions',path:'/strategy.html'},

@@ -1,3 +1,5 @@
+import './i18n.js'
+
 const FLOW_STAGES=[
   {id:'review',label:'Human Synthesis Review',note:'Julgamento humano explícito',path:'/synthesis-review.html'},
   {id:'brief',label:'Verified Synthesis Brief',note:'Integridade + contexto',path:'/synthesis-brief.html'},

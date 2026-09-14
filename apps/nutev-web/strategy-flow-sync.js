@@ -1,3 +1,5 @@
+import './i18n.js'
+
 function flowApi(){return window.NutEVStrategyFlow||null}
 function text(selector){return String(document.querySelector(selector)?.textContent||'').trim()}
 function currentStep(step){return flowApi()?.read?.()?.[step]||{}}
