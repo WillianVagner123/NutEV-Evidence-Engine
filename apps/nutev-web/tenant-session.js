@@ -1,6 +1,13 @@
 /* Browser context lease: constraints on server authorization, never credentials. */
 (()=>{
   'use strict';
+  if(!document.querySelector('script[data-nutev-i18n]')){
+    const languageScript=document.createElement('script');
+    languageScript.type='module';
+    languageScript.src='/i18n.js';
+    languageScript.dataset.nutevI18n='true';
+    document.head.appendChild(languageScript);
+  }
   const nativeFetch=window.fetch.bind(window);
   const epochKey='nutev-context-epoch'; // only a random invalidation signal, no private state
   const publicPaths=new Set(['/api/health','/api/version','/api/providers','/api/capabilities','/api/auth/status']);
