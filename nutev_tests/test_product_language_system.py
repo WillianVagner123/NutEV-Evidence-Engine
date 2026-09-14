@@ -7,6 +7,7 @@ DOC = ROOT / "docs" / "PRODUCT_LANGUAGE_SYSTEM.md"
 
 
 PRESENTATION_FILES = (
+    "advanced.html",
     "ask.html",
     "ask.js",
     "ai-context.html",
@@ -62,6 +63,33 @@ def test_product_surfaces_do_not_present_llm_or_agent_branding() -> None:
         "Scientific Intelligence — NutEV",
     ):
         assert forbidden not in source
+
+
+def test_advanced_lab_uses_system_language_for_secondary_navigation() -> None:
+    advanced = read_web("advanced.html")
+
+    for expected in (
+        "Sistema de Evidências Científicas",
+        "Análise de Evidências",
+        "Revisão de Síntese",
+        "Resumo de Síntese",
+        "Consulta de Evidências",
+        "Explorador de Evidências",
+        "Mapa de Evidências",
+        "Radar de Evidências",
+        "Observatório de Qualidade",
+    ):
+        assert expected in advanced
+
+    for forbidden in (
+        "Evidence Engine",
+        "Scientific Intelligence",
+        "Human Synthesis Review",
+        "Synthesis Brief",
+        "Ask NutEV",
+        "Workflow tipo Rayyan",
+    ):
+        assert forbidden not in advanced
 
 
 def test_internal_compatibility_routes_remain_stable() -> None:
