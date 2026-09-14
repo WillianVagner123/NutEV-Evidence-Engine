@@ -1,3 +1,5 @@
+import './i18n.js'
+
 const VISUAL_FILTER_CONTROLS={route:'filterRoute',source_provider:'filterProvider',year:'filterYear',full_text_status:'filterFullText'};
 const VISUAL_PROVIDER_LABELS={pubmed:'PubMed',europepmc:'Europe PMC',europe_pmc:'Europe PMC',openalex:'OpenAlex',crossref:'Crossref',doaj:'DOAJ',semantic_scholar:'Semantic Scholar',lilacs_bvs:'LILACS / BVS',lilacs_bvs_native:'LILACS / BVS',scielo:'SciELO',scielo_native:'SciELO',scopus:'Scopus',wos:'Web of Science'};
 const VISUAL_FULLTEXT_LABELS={retrieved:'Retrieved',partial:'Partial',unavailable:'Unavailable',not_retrieved:'Not retrieved',not_attempted:'Not attempted',unknown:'Unknown'};
