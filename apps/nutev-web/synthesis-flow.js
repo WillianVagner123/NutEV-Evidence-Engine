@@ -1,9 +1,9 @@
-import './i18n.js'
+import {t} from './i18n.js'
 
 const FLOW_STAGES=[
-  {id:'review',label:'Human Synthesis Review',note:'Julgamento humano explícito',path:'/synthesis-review.html'},
-  {id:'brief',label:'Verified Synthesis Brief',note:'Integridade + contexto',path:'/synthesis-brief.html'},
-  {id:'ask',label:'Ask NutEV',note:'Grounded retrieval',path:'/ask.html'}
+  {id:'review',label:()=>t('Revisão de Síntese','Synthesis Review'),note:()=>t('Julgamento humano explícito','Explicit human judgment'),path:'/synthesis-review.html'},
+  {id:'brief',label:()=>t('Resumo de Síntese Verificado','Verified Synthesis Summary'),note:()=>t('Integridade + contexto','Integrity + context'),path:'/synthesis-brief.html'},
+  {id:'ask',label:()=>t('Consulta de Evidências','Evidence Query'),note:()=>t('Consulta vinculada às fontes','Source-linked evidence query'),path:'/ask.html'}
 ]
 
 const FLOW_PAGE={
@@ -38,7 +38,8 @@ function localButton(label,action,kind=''){
 }
 
 function installRail(){
-  if(!flowStage||$flow('#synthesisResearchFlow'))return
+  if(!flowStage)return
+  document.querySelector('#synthesisResearchFlow')?.remove()
   const header=document.querySelector('main > header, .main > header')
   if(!header)return
   const section=document.createElement('section')
@@ -46,17 +47,17 @@ function installRail(){
   section.className='card synthesis-flow-rail'
   section.innerHTML=`
     <div class="synthesis-flow-head">
-      <div><span class="synthesis-flow-eyebrow">RESEARCH SYNTHESIS WORKSPACE</span><strong>Do julgamento humano ao retrieval grounded — sem promoção automática</strong></div>
-      <span class="synthesis-flow-badge">navigation only</span>
+      <div><span class="synthesis-flow-eyebrow">${t('ESPAÇO DE SÍNTESE DE PESQUISA','RESEARCH SYNTHESIS AREA')}</span><strong>${t('Da revisão humana à consulta vinculada às fontes — sem promoção automática','From human review to source-linked evidence query — without automatic promotion')}</strong></div>
+      <span class="synthesis-flow-badge">${t('somente navegação','navigation only')}</span>
     </div>
-    <div class="synthesis-flow-stages" role="navigation" aria-label="Fluxo de síntese e retrieval">
+    <div class="synthesis-flow-stages" role="navigation" aria-label="${t('Fluxo de síntese e consulta','Synthesis and query flow')}">
       ${FLOW_STAGES.map((stage,index)=>stage.id===flowStage
-        ? `<div class="synthesis-flow-stage active" aria-current="step"><span class="synthesis-flow-index">${index+1}</span><span><strong>${flowEsc(stage.label)}</strong><small>${flowEsc(stage.note)}</small></span></div>`
-        : `<button type="button" class="synthesis-flow-stage" data-synthesis-flow-target="${flowEsc(stage.path)}"><span class="synthesis-flow-index">${index+1}</span><span><strong>${flowEsc(stage.label)}</strong><small>${flowEsc(stage.note)}</small></span></button>`
+        ? `<div class="synthesis-flow-stage active" aria-current="step"><span class="synthesis-flow-index">${index+1}</span><span><strong>${flowEsc(stage.label())}</strong><small>${flowEsc(stage.note())}</small></span></div>`
+        : `<button type="button" class="synthesis-flow-stage" data-synthesis-flow-target="${flowEsc(stage.path)}"><span class="synthesis-flow-index">${index+1}</span><span><strong>${flowEsc(stage.label())}</strong><small>${flowEsc(stage.note())}</small></span></button>`
       ).join('')}
     </div>
     <div class="synthesis-flow-context" id="synthesisFlowContext"></div>
-    <div class="synthesis-flow-guardrail">Review, Brief e Ask são superfícies distintas. Navegar entre elas não cria canonical synthesis, EvidenceClaim, elegibilidade, RoB, certainty, recomendação, PRESS, GF-10 ou PRISMA. Ask NutEV não importa automaticamente decisões do Review nem o Brief.</div>`
+    <div class="synthesis-flow-guardrail">${t('Revisão, Resumo e Consulta são superfícies distintas. Navegar entre elas não cria síntese canônica, EvidenceClaim, elegibilidade, risco de viés, certeza, recomendação, PRESS, GF-10 ou PRISMA. A Consulta de Evidências não importa automaticamente decisões da Revisão nem do Resumo.','Review, Summary, and Query are distinct surfaces. Navigating between them does not create canonical synthesis, an EvidenceClaim, eligibility, risk of bias, certainty, recommendation, PRESS, GF-10, or PRISMA. Evidence Query does not automatically import decisions from Review or Summary.')}</div>`
   header.insertAdjacentElement('afterend',section)
   section.addEventListener('click',handleFlowClick)
 }
@@ -79,22 +80,22 @@ function updateReviewContext(){
   if(flowStage!=='review')return
   const context=$flow('#synthesisFlowContext')
   if(!context)return
-  const reviewer=$flow('#reviewerName')?.value?.trim()||'não identificado'
+  const reviewer=$flow('#reviewerName')?.value?.trim()||t('não identificado','not identified')
   const {done,total}=progressValues()
-  const ledgerCount=document.querySelectorAll('#reviewLedger .ledger-row').length
-  const health=$flow('#reviewHealth')?.textContent?.trim()||'rascunho local'
+  const recordCount=document.querySelectorAll('#reviewLedger .ledger-row').length
+  const health=$flow('#reviewHealth')?.textContent?.trim()||t('rascunho local','local draft')
   context.innerHTML=`
-    <div class="synthesis-flow-context-head"><div><strong>Estado operacional do Review</strong><span>Rascunho local · <code>canonical:false</code> · nenhuma decisão é promovida automaticamente.</span></div><span class="synthesis-flow-status">${flowEsc(health)}</span></div>
+    <div class="synthesis-flow-context-head"><div><strong>${t('Estado operacional da Revisão','Review operational state')}</strong><span>${t('Rascunho local · canonical:false · nenhuma decisão é promovida automaticamente.','Local draft · canonical:false · no decision is promoted automatically.')}</span></div><span class="synthesis-flow-status">${flowEsc(health)}</span></div>
     <div class="synthesis-flow-metrics">
-      ${flowMetric('Revisor',reviewer,reviewer==='não identificado'?'obrigatório antes do export':'identidade declarada; não autenticada')}
-      ${flowMetric('Comparações da âncora',`${done}/${total}`,total?'julgamentos salvos no recorte atual':'aguardando achados')}
-      ${flowMetric('Ledger local',String(ledgerCount),'decisões humanas neste navegador')}
+      ${flowMetric(t('Revisor','Reviewer'),reviewer,reviewer===t('não identificado','not identified')?t('obrigatório antes da exportação','required before export'):t('identidade declarada; não autenticada','declared identity; not authenticated'))}
+      ${flowMetric(t('Comparações da âncora','Anchor comparisons'),`${done}/${total}`,total?t('julgamentos salvos no recorte atual','judgments saved in the current slice'):t('aguardando achados','waiting for findings'))}
+      ${flowMetric(t('Registro local','Local record'),String(recordCount),t('decisões humanas neste navegador','human decisions in this browser'))}
     </div>
     <div class="synthesis-flow-actions">
-      ${localButton('Exportar revisão','export-review')}
-      ${flowButton('Abrir Brief →','/synthesis-brief.html','primary')}
+      ${localButton(t('Exportar revisão','Export review'),'export-review')}
+      ${flowButton(t('Abrir Resumo →','Open Summary →'),'/synthesis-brief.html','primary')}
     </div>
-    <p class="synthesis-flow-note">O Brief não recebe o rascunho por memória ou URL. Para circular o julgamento, exporte o artefato e importe-o no Brief, onde SHA-256 e context fingerprint serão verificados novamente.</p>`
+    <p class="synthesis-flow-note">${t('O Resumo não recebe o rascunho por memória ou URL. Para circular o julgamento, exporte o artefato e importe-o no Resumo, onde SHA-256 e a impressão digital do contexto serão verificados novamente.','The Summary does not receive the draft through memory or URL. To transfer the judgment, export the artifact and import it into the Summary, where SHA-256 and the context fingerprint are verified again.')}</p>`
 }
 
 function installReviewState(){
@@ -122,19 +123,19 @@ function updateBriefContext(){
   const healthNode=$flow('#briefHealth')
   const verified=Boolean(healthNode?.classList.contains('ok'))&&!$flow('#exportBrief')?.disabled
   const {pass,fail}=briefVerificationValues()
-  const decisions=[...document.querySelectorAll('#briefKpis .kpi-card')].find(card=>card.querySelector('span')?.textContent?.trim()==='Human decisions')?.querySelector('strong')?.textContent?.trim()||'—'
+  const decisions=[...document.querySelectorAll('#briefKpis .kpi-card')].find(card=>['decisões humanas','human decisions'].includes(card.querySelector('span')?.textContent?.trim()?.toLocaleLowerCase()))?.querySelector('strong')?.textContent?.trim()||'—'
   context.innerHTML=`
-    <div class="synthesis-flow-context-head"><div><strong>Estado operacional do Brief</strong><span>${verified?'Artefato humano compatível com o contexto atual.':'Importe um Review exportado para executar a verificação fail-closed.'}</span></div><span class="synthesis-flow-status${verified?' ok':''}">${flowEsc(healthNode?.textContent?.trim()||'aguardando revisão')}</span></div>
+    <div class="synthesis-flow-context-head"><div><strong>${t('Estado operacional do Resumo','Summary operational state')}</strong><span>${verified?t('Artefato humano compatível com o contexto atual.','Human artifact compatible with the current context.'):t('Importe uma Revisão exportada para executar a verificação com bloqueio por segurança.','Import an exported Review to run fail-closed verification.')}</span></div><span class="synthesis-flow-status${verified?' ok':''}">${flowEsc(healthNode?.textContent?.trim()||t('aguardando revisão','waiting for review'))}</span></div>
     <div class="synthesis-flow-metrics">
-      ${flowMetric('Verificações',`${pass} pass${fail?` · ${fail} fail`:''}`,verified?'integridade/contexto satisfeitos':'Brief permanece bloqueado até todos os checks passarem')}
-      ${flowMetric('Human decisions',decisions,'descrição do artefato; não é força da evidência')}
-      ${flowMetric('Semântica',verified?'verified + noncanonical':'noncanonical','integrity verified ≠ scientifically validated')}
+      ${flowMetric(t('Verificações','Checks'),`${pass} ${t('aprovadas','pass')}${fail?` · ${fail} ${t('falharam','fail')}`:''}`,verified?t('integridade e contexto satisfeitos','integrity and context satisfied'):t('o Resumo permanece bloqueado até todas as verificações passarem','Summary remains locked until all checks pass'))}
+      ${flowMetric(t('Decisões humanas','Human decisions'),decisions,t('descrição do artefato; não é força da evidência','artifact description; not evidence strength'))}
+      ${flowMetric(t('Semântica','Semantics'),verified?t('verificado + não canônico','verified + noncanonical'):t('não canônico','noncanonical'),t('integridade verificada ≠ validado cientificamente','integrity verified ≠ scientifically validated'))}
     </div>
     <div class="synthesis-flow-actions">
-      ${flowButton('← Voltar ao Review','/synthesis-review.html','secondary')}
-      ${flowButton('Abrir Ask NutEV →','/ask.html','primary')}
+      ${flowButton(t('← Voltar à Revisão','← Back to Review'),'/synthesis-review.html','secondary')}
+      ${flowButton(t('Abrir Consulta de Evidências →','Open Evidence Query →'),'/ask.html','primary')}
     </div>
-    <p class="synthesis-flow-note">Abrir Ask NutEV inicia uma superfície de retrieval separada. Nenhum relation label, rationale, SHA do Brief ou decisão humana é enviado ao Ask como evidência ou filtro científico.</p>`
+    <p class="synthesis-flow-note">${t('Abrir a Consulta de Evidências inicia uma superfície separada. Nenhum rótulo de relação, justificativa, SHA do Resumo ou decisão humana é enviado à Consulta como evidência ou filtro científico.','Opening Evidence Query starts a separate surface. No relation label, rationale, Summary SHA or human decision is sent to the Query as evidence or a scientific filter.')}</p>`
 }
 
 function installBriefState(){
@@ -155,21 +156,21 @@ function updateAskContext(){
   if(!context)return
   const healthNode=$flow('#askHealth')
   const ready=Boolean(healthNode?.classList.contains('ok'))
-  const resultMeta=$flow('#askResultMeta')?.textContent?.trim()||'nenhuma consulta executada'
-  const selected=$flow('#selectedCount')?.textContent?.trim()||'0 selecionados'
+  const resultMeta=$flow('#askResultMeta')?.textContent?.trim()||t('nenhuma consulta executada','no query executed')
+  const selected=$flow('#selectedCount')?.textContent?.trim()||t('0 selecionados','0 selected')
   const packet=askPacketReady()
   context.innerHTML=`
-    <div class="synthesis-flow-context-head"><div><strong>Estado operacional do Ask</strong><span>Retrieval determinístico sobre o contexto seguro do Article 1; 0 chamadas externas de LLM.</span></div><span class="synthesis-flow-status${ready?' ok':''}">${flowEsc(healthNode?.textContent?.trim()||'carregando contexto')}</span></div>
+    <div class="synthesis-flow-context-head"><div><strong>${t('Estado operacional da Consulta','Query operational state')}</strong><span>${t('Consulta determinística sobre o contexto verificado do Artigo 1; não toma decisões científicas.','Deterministic query over the verified Article 1 context; it does not make scientific decisions.')}</span></div><span class="synthesis-flow-status${ready?' ok':''}">${flowEsc(healthNode?.textContent?.trim()||t('carregando contexto','loading context'))}</span></div>
     <div class="synthesis-flow-metrics">
-      ${flowMetric('Contexto',ready?'disponível':'indisponível / carregando','ARTICLE_SUMMARIES rank-blind')}
-      ${flowMetric('Retrieval',resultMeta,'correspondência lexical ≠ relevância científica validada')}
-      ${flowMetric('Seleção',selected,packet?'context packet materializado':'context packet ainda não materializado')}
+      ${flowMetric(t('Contexto','Context'),ready?t('disponível','available'):t('indisponível / carregando','unavailable / loading'),t('resumos estruturados sem uso de ranking científico','structured summaries without scientific ranking'))}
+      ${flowMetric(t('Consulta','Query'),resultMeta,t('correspondência lexical ≠ relevância científica validada','lexical match ≠ validated scientific relevance'))}
+      ${flowMetric(t('Seleção','Selection'),selected,packet?t('pacote de evidências materializado','evidence packet materialized'):t('pacote de evidências ainda não materializado','evidence packet not yet materialized'))}
     </div>
     <div class="synthesis-flow-actions">
-      ${flowButton('← Ver Brief','/synthesis-brief.html','secondary')}
-      ${localButton('Gerar contexto grounded','build-packet','primary')}
+      ${flowButton(t('← Ver Resumo','← View Summary'),'/synthesis-brief.html','secondary')}
+      ${localButton(t('Gerar pacote de evidências','Build evidence packet'),'build-packet','primary')}
     </div>
-    <p class="synthesis-flow-note">Ask NutEV não lê o Review nem o Brief. O pacote grounded usa apenas a pergunta, filtros e documentos selecionados da superfície segura de retrieval.</p>`
+    <p class="synthesis-flow-note">${t('A Consulta de Evidências não lê a Revisão nem o Resumo. O pacote usa apenas a pergunta, os filtros e os documentos selecionados na superfície verificada de consulta.','Evidence Query does not read Review or Summary. The packet uses only the question, filters and documents selected on the verified query surface.')}</p>`
 }
 
 function installAskState(){
@@ -186,13 +187,21 @@ function installAskState(){
   updateAskContext()
 }
 
-function initSynthesisFlow(){
-  if(!flowStage)return
+function renderFlow(){
   installFlowCss()
   installRail()
+  updateReviewContext()
+  updateBriefContext()
+  updateAskContext()
+}
+
+function initSynthesisFlow(){
+  if(!flowStage)return
+  renderFlow()
   installReviewState()
   installBriefState()
   installAskState()
+  window.addEventListener('nutev:language-change',renderFlow)
 }
 
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initSynthesisFlow,{once:true})
