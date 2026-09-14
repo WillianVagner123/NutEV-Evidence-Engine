@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="robots" content="noindex,nofollow">
-  <title>Ask NutEV — Grounded Evidence Retrieval</title>
-  <meta name="description" content="Consulta grounded do corpus seguro do Article 1, com documentos de suporte e prompt auditável para ChatGPT e Claude.">
+  <title>Consulta de Evidências — NutEV</title>
+  <meta name="description" content="Consulta rastreável do corpus verificado do Artigo 1, com documentos de suporte e pacote de evidências auditável.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
   <link rel="stylesheet" href="./ask.css">
@@ -14,37 +14,37 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
       <nav aria-label="Navegação principal"></nav>
-      <div class="sidebar-note">Ask NutEV faz retrieval e monta contexto grounded. Não toma decisão de elegibilidade, RoB, certeza, recomendação ou PRISMA.</div>
+      <div class="sidebar-note">A Consulta de Evidências pesquisa o corpus verificado e monta um pacote rastreável. Não decide elegibilidade, risco de viés, certeza, recomendação ou PRISMA.</div>
     </aside>
 
     <main class="main dashboard-main ask-main">
       <header class="topbar dashboard-topbar">
-        <div><h1>Ask NutEV</h1><p>Faça perguntas ao corpus estruturado e veja primeiro os documentos que sustentam a análise.</p></div>
+        <div><h1>Consulta de Evidências</h1><p>Consulte o corpus estruturado e veja primeiro os documentos que sustentam cada resultado.</p></div>
         <span class="status-pill" id="askHealth">carregando contexto…</span>
       </header>
 
       <section class="card project-hero ask-hero">
         <div>
-          <div class="project-eyebrow">ARTICLE 1 · GROUNDED RETRIEVAL</div>
-          <h2>Evidence first. Generation second.</h2>
-          <p class="project-question">Esta versão não chama um LLM externo. Ela recupera documentos do contexto rank-blind do Article 1, explica a correspondência e monta um pacote auditável para análise posterior em ChatGPT ou Claude.</p>
+          <div class="project-eyebrow">ARTIGO 1 · CONSULTA VINCULADA ÀS FONTES</div>
+          <h2>Documentos primeiro. Síntese depois.</h2>
+          <p class="project-question">A consulta usa correspondência determinística sobre o corpus verificado do Artigo 1, explica por que cada documento apareceu e organiza um pacote auditável para análise. Nenhum resultado é promovido automaticamente a evidência científica aceita.</p>
         </div>
-        <span class="ask-mode">0 external LLM calls</span>
+        <span class="ask-mode">consulta determinística</span>
       </section>
 
       <section class="card ask-query-card">
         <label class="ask-question-label" for="askQuestion">Pergunta</label>
         <div class="ask-query-row">
           <textarea id="askQuestion" rows="3" placeholder="Ex.: Quais documentos normativos tratam simultaneamente de avaliação nutricional e monitoramento?"></textarea>
-          <button id="runAsk" type="button">Buscar evidência</button>
+          <button id="runAsk" type="button">Buscar evidências</button>
         </div>
         <div class="ask-suggestions" aria-label="Perguntas sugeridas">
-          <button type="button" data-question="Quais documentos normativos tratam de avaliação nutricional e monitoramento?">Assessment + monitoring</button>
-          <button type="button" data-question="Quais documentos abordam contexto social da alimentação?">Social context</button>
-          <button type="button" data-question="Quais diretrizes e frameworks abordam food literacy ou competências alimentares?">Food literacy</button>
-          <button type="button" data-question="Compare documentos B-NORM e C-STRUCT relacionados à Lifestyle Medicine.">Lifestyle Medicine</button>
+          <button type="button" data-question="Quais documentos normativos tratam de avaliação nutricional e monitoramento?">Avaliação + monitoramento</button>
+          <button type="button" data-question="Quais documentos abordam contexto social da alimentação?">Contexto social</button>
+          <button type="button" data-question="Quais diretrizes e estruturas abordam literacia alimentar ou competências alimentares?">Literacia alimentar</button>
+          <button type="button" data-question="Compare documentos B-NORM e C-STRUCT relacionados à Medicina do Estilo de Vida.">Medicina do Estilo de Vida</button>
         </div>
         <div class="ask-filters">
           <label>Rota<select id="askRoute"><option value="">Todas</option><option value="B-NORM">B-NORM</option><option value="C-STRUCT">C-STRUCT</option></select></label>
@@ -54,30 +54,30 @@
         </div>
       </section>
 
-      <div id="askState" class="loading dashboard-state">Carregando os resumos científicos seguros…</div>
+      <div id="askState" class="loading dashboard-state">Carregando os resumos científicos verificados…</div>
 
       <section id="askContent" class="hidden ask-workspace">
         <div class="ask-results-column">
           <section class="card dashboard-card">
-            <div class="panel-head"><div><h2>Supporting documents</h2><p id="askResultMeta">Faça uma pergunta para iniciar.</p></div><span id="selectedCount" class="mini-pill">0 selecionados</span></div>
+            <div class="panel-head"><div><h2>Documentos de suporte</h2><p id="askResultMeta">Faça uma pergunta para iniciar.</p></div><span id="selectedCount" class="mini-pill">0 selecionados</span></div>
             <div id="askResults" class="ask-results"><p class="small-state">Nenhuma consulta executada.</p></div>
           </section>
         </div>
 
         <aside class="card dashboard-card ask-context-panel">
-          <div class="panel-head"><div><h2>Grounded context packet</h2><p>Use documentos selecionados; se nenhum estiver marcado, usamos os melhores resultados da consulta.</p></div></div>
+          <div class="panel-head"><div><h2>Pacote de evidências</h2><p>Use documentos selecionados; se nenhum estiver marcado, o sistema usa os melhores resultados da consulta.</p></div></div>
           <div class="ask-context-actions">
-            <button id="buildPacket" type="button">Gerar contexto</button>
-            <button id="copyPacket" class="ghost" type="button">Copiar para ChatGPT / Claude</button>
+            <button id="buildPacket" type="button">Gerar pacote</button>
+            <button id="copyPacket" class="ghost" type="button">Copiar pacote</button>
           </div>
-          <textarea id="contextPacket" class="context-packet" readonly placeholder="O pacote grounded aparecerá aqui."></textarea>
-          <p class="small-state">O pacote contém metadados e contexto seguro, não full text protegido. Para aprofundar um documento, abra o Scientific Dossier no Corpus Explorer.</p>
+          <textarea id="contextPacket" class="context-packet" readonly placeholder="O pacote de evidências aparecerá aqui."></textarea>
+          <p class="small-state">O pacote contém metadados e contexto seguro, não texto completo protegido. Para aprofundar um documento, abra o Dossiê Científico no Corpus.</p>
         </aside>
       </section>
 
       <section class="card workbench-guardrail ask-boundary">
-        <strong>Scientific interpretation boundary</strong>
-        <p>Retrieval ≠ inclusão. Correspondência lexical ≠ relevância científica validada. Route membership ≠ eligibility. Machine profile ≠ RoB/certainty. Evidence excerpts continuam candidatos até revisão humana. Ask NutEV não autoriza PRESS, GF-10, freeze, busca formal ou PRISMA.</p>
+        <strong>Limite de interpretação científica</strong>
+        <p>Consulta ≠ inclusão. Correspondência lexical ≠ relevância científica validada. Pertencer a uma rota ≠ elegibilidade. Perfil automatizado ≠ risco de viés ou certeza. Excertos continuam candidatos até revisão humana. A Consulta de Evidências não autoriza PRESS, GF-10, congelamento da consulta, busca formal ou PRISMA.</p>
       </section>
     </main>
   </div>
