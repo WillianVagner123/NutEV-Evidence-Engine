@@ -16,7 +16,7 @@ def test_evidence_query_uses_safe_rank_blind_context() -> None:
     assert "consulta determinística" in html
     assert "/api/agent-context/article1/status" in js
     assert "ARTICLE_SUMMARIES.jsonl" in js
-    assert "full text protegido" in html
+    assert "texto completo protegido" in html
     assert "machine_relevance_score" not in js
     assert "reference_rank" not in js
     assert "reference_score" not in js
