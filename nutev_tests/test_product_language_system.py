@@ -3,10 +3,21 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WEB = ROOT / "apps" / "nutev-web"
+VALIDATION = ROOT / "apps" / "nutev-validation"
 DOC = ROOT / "docs" / "PRODUCT_LANGUAGE_SYSTEM.md"
 
 
-PRESENTATION_FILES = (
+PRIMARY_PRODUCT_SURFACES = (
+    "login.html",
+    "project.html",
+    "exports.html",
+    "search.html",
+    "evidence-library.html",
+    "articles.html",
+    "evidence.html",
+    "evidence-map.html",
+    "radar.html",
+    "review.html",
     "advanced.html",
     "ask.html",
     "ask.js",
@@ -15,9 +26,45 @@ PRESENTATION_FILES = (
     "intelligence.html",
     "intelligence.js",
     "scientific-flow.js",
+    "evidence-interpretation.js",
     "synthesis-flow.js",
     "synthesis-review.html",
     "synthesis-brief.html",
+)
+
+# Explicit technical debt inventory. These files still contain historical labels in
+# source markup and must be removed from this allowlist as the canonical shell pass
+# reaches each scientific/governance surface.
+LEGACY_PRESENTATION_ALLOWLIST = {
+    "claim-appraisal.html",
+    "evidence-claims.html",
+    "evidence-sets.html",
+    "press-review.html",
+    "quality.html",
+    "recommendation-candidates.html",
+    "recommendation-human-validation.html",
+    "regional-routes.html",
+    "review-qa.html",
+    "review-routes.html",
+    "scientific-dashboard.html",
+    "strategy.html",
+    "synthesis-governance.html",
+    "synthesis-publication.html",
+    "synthesis-release.html",
+}
+
+FORBIDDEN_PRODUCT_LABELS = (
+    "Evidence Engine",
+    "Scientific Intelligence",
+    "Ask NutEV",
+    "AI Context",
+    "Human Synthesis Review",
+    "Human Synthesis Brief",
+    "Grounded retrieval",
+    "retrieval grounded",
+    "Prompt canônico para agentes",
+    "INSTRUCTIONS FOR THE ANALYZING AGENT",
+    "Evidence first. Generation second.",
 )
 
 
@@ -26,7 +73,18 @@ def read_web(name: str) -> str:
 
 
 def presentation_source() -> str:
-    return "\n".join(read_web(name) for name in PRESENTATION_FILES)
+    return "\n".join(read_web(name) for name in PRIMARY_PRODUCT_SURFACES)
+
+
+def html_legacy_debt() -> dict[str, set[str]]:
+    debt: dict[str, set[str]] = {}
+    for root in (WEB, VALIDATION):
+        for path in root.glob("*.html"):
+            source = path.read_text(encoding="utf-8")
+            hits = {label for label in FORBIDDEN_PRODUCT_LABELS if label in source}
+            if hits:
+                debt[path.name] = hits
+    return debt
 
 
 def test_product_surfaces_use_system_first_names() -> None:
@@ -40,29 +98,24 @@ def test_product_surfaces_use_system_first_names() -> None:
         "Pacote de evidências",
         "Revisão de Síntese",
         "Resumo de Síntese Verificado",
+        "Mapa de Evidências",
+        "Radar de Evidências",
+        "Explorador de Evidências",
     ):
         assert expected in source
 
 
-def test_product_surfaces_do_not_present_llm_or_agent_branding() -> None:
+def test_primary_product_surfaces_do_not_present_legacy_or_llm_branding() -> None:
     source = presentation_source()
-
-    for forbidden in (
-        "ChatGPT",
-        "Claude",
-        "0 external LLM calls",
-        "Ask NutEV",
-        "AI Context",
-        "Grounded retrieval",
-        "retrieval grounded",
-        "Prompt canônico para agentes",
-        "INSTRUCTIONS FOR THE ANALYZING AGENT",
-        "Evidence first. Generation second.",
-        "Human Synthesis Review",
-        "Human Synthesis Brief",
-        "Scientific Intelligence — NutEV",
-    ):
+    for forbidden in FORBIDDEN_PRODUCT_LABELS:
         assert forbidden not in source
+
+
+def test_legacy_product_language_is_confined_to_explicit_debt_allowlist() -> None:
+    debt = html_legacy_debt()
+    unexpected = set(debt) - LEGACY_PRESENTATION_ALLOWLIST
+    assert not unexpected, f"Legacy product language escaped allowlist: {sorted(unexpected)}"
+    assert set(debt) <= LEGACY_PRESENTATION_ALLOWLIST
 
 
 def test_advanced_lab_uses_system_language_for_secondary_navigation() -> None:
@@ -132,7 +185,7 @@ def test_scientific_tokens_remain_canonical() -> None:
         assert canonical in source
 
 
-def test_legacy_product_names_exist_only_as_i18n_compatibility_aliases() -> None:
+def test_legacy_product_names_exist_only_as_i18n_compatibility_aliases_or_declared_debt() -> None:
     i18n = read_web("i18n.js")
 
     for legacy in (

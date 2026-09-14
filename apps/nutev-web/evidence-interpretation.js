@@ -14,9 +14,9 @@ if(page){
 
   function rail(){
     const stages=[
-      ['map','Structure','Evidence Map','/evidence-map.html'],
-      ['intelligence','Inspect','Scientific Intelligence','/intelligence.html'],
-      ['review','Human review','Review Control','/review.html']
+      ['map','Estruturar','Mapa de Evidências','/evidence-map.html'],
+      ['intelligence','Inspecionar','Análise de Evidências','/intelligence.html'],
+      ['review','Revisão humana','Controle de Revisão','/review.html']
     ];
     const stageHtml=([key,label,name,href],index)=>{
       const inner=`<span class="ei-step">${index+1}</span><span><strong>${esc(label)}</strong><small>${esc(name)}</small></span>`;
@@ -24,7 +24,7 @@ if(page){
         ?`<span class="ei-stage active" aria-current="page">${inner}</span>`
         :`<a class="ei-stage" href="${href}">${inner}</a>`;
     };
-    return `<div class="ei-rail" aria-label="Evidence interpretation navigation">${stages.map(stageHtml).join('<span class="ei-arrow" aria-hidden="true">→</span>')}</div>`;
+    return `<div class="ei-rail" aria-label="Navegação de interpretação de evidências">${stages.map(stageHtml).join('<span class="ei-arrow" aria-hidden="true">→</span>')}</div>`;
   }
 
   function mount(){
@@ -34,7 +34,7 @@ if(page){
     const section=document.createElement('section');
     section.id='evidenceInterpretationVisuals';
     section.className='card ei-panel';
-    section.innerHTML=`<div class="ei-head"><div><span class="ei-eyebrow">INTERPRETATION WORKFLOW · NAVIGATION ONLY</span><h2>Structure → Inspect → Human review</h2><p>O trilho organiza a leitura entre superfícies. Ele não promove elegibilidade, inclusão, certeza, consenso, EvidenceClaim, recomendação ou PRISMA.</p></div></div>${rail()}<div id="evidenceInterpretationBody" class="ei-body" aria-live="polite"></div>`;
+    section.innerHTML=`<div class="ei-head"><div><span class="ei-eyebrow">FLUXO DE INTERPRETAÇÃO · SOMENTE NAVEGAÇÃO</span><h2>Estruturar → Inspecionar → Revisão humana</h2><p>O trilho organiza a leitura entre superfícies. Ele não promove elegibilidade, inclusão, certeza, consenso, EvidenceClaim, recomendação ou PRISMA.</p></div></div>${rail()}<div id="evidenceInterpretationBody" class="ei-body" aria-live="polite"></div>`;
     anchor.insertAdjacentElement('afterend',section);
   }
 
@@ -56,11 +56,11 @@ if(page){
     const {rows,selected}=mapModel();
     if(!rows.length){body.innerHTML='<div class="ei-empty">Aguardando a matriz estrutural verificada.</div>';return}
     const max=Math.max(1,...rows.map(item=>item.documents));
-    body.innerHTML=`<div class="ei-section-head"><div><strong>Domain concentration navigator</strong><span>Contagens estruturais do mapa atual. Clique para aplicar/remover o filtro de domínio existente.</span></div><span class="ei-boundary-chip">volume ≠ strength</span></div><div class="ei-bars">${rows.map(item=>{
+    body.innerHTML=`<div class="ei-section-head"><div><strong>Navegador de concentração por domínio</strong><span>Contagens estruturais do mapa atual. Clique para aplicar/remover o filtro de domínio existente.</span></div><span class="ei-boundary-chip">volume ≠ força</span></div><div class="ei-bars">${rows.map(item=>{
       const active=item.domain===selected;
       const width=clamp(100*item.documents/max);
-      return `<button type="button" class="ei-bar-button${active?' active':''}" data-ei-map-domain="${esc(item.domain)}" aria-pressed="${active?'true':'false'}"><span class="ei-bar-label"><strong>${esc(item.label)}</strong><small>${item.documents} mapped placements</small></span><span class="ei-track" aria-hidden="true"><i style="--ei-width:${width}%"></i></span></button>`;
-    }).join('')}</div><p class="ei-note">Uma mesma referência pode contribuir para mais de um domínio. Concentração e célula vazia não representam qualidade, certeza, ausência de literatura ou evidence gap.</p>`;
+      return `<button type="button" class="ei-bar-button${active?' active':''}" data-ei-map-domain="${esc(item.domain)}" aria-pressed="${active?'true':'false'}"><span class="ei-bar-label"><strong>${esc(item.label)}</strong><small>${item.documents} documentos mapeados</small></span><span class="ei-track" aria-hidden="true"><i style="--ei-width:${width}%"></i></span></button>`;
+    }).join('')}</div><p class="ei-note">Uma mesma referência pode contribuir para mais de um domínio. Concentração e célula vazia não representam qualidade, certeza, ausência de literatura ou lacuna de evidência.</p>`;
     body.querySelectorAll('[data-ei-map-domain]').forEach(button=>button.addEventListener('click',()=>{
       const control=document.querySelector('#mapDomainFilter');
       if(!control)return;
@@ -83,13 +83,13 @@ if(page){
     const body=document.querySelector('#evidenceInterpretationBody');
     if(!body)return;
     const rows=intelligenceModel();
-    if(!rows.length){body.innerHTML='<div class="ei-empty">Aguardando a síntese estrutural rank-blind.</div>';return}
+    if(!rows.length){body.innerHTML='<div class="ei-empty">Aguardando a síntese estrutural sem uso de ordenação científica.</div>';return}
     const max=Math.max(1,...rows.map(item=>item.documents));
-    body.innerHTML=`<div class="ei-section-head"><div><strong>Domain inspection panorama</strong><span>Documentos mapeados e materialização de result bundles para inspeção.</span></div><span class="ei-boundary-chip">finding-ready ≠ accepted claim</span></div><div class="ei-domain-grid">${rows.map(item=>{
+    body.innerHTML=`<div class="ei-section-head"><div><strong>Panorama de inspeção por domínio</strong><span>Documentos mapeados e materialização de pacotes de resultados para inspeção.</span></div><span class="ei-boundary-chip">pronto para inspeção ≠ alegação aceita</span></div><div class="ei-domain-grid">${rows.map(item=>{
       const documentWidth=clamp(100*item.documents/max);
       const readyWidth=item.documents?clamp(100*item.findingReady/item.documents):0;
-      return `<button type="button" class="ei-domain-button${item.active?' active':''}" data-ei-intelligence-domain="${esc(item.domain)}" aria-pressed="${item.active?'true':'false'}"><span class="ei-domain-top"><strong>${esc(item.label)}</strong><b>${item.documents}</b></span><span class="ei-dual-track"><i class="ei-docs" style="--ei-width:${documentWidth}%"></i><i class="ei-ready" style="--ei-width:${readyWidth}%"></i></span><small>${item.findingReady}/${item.documents} com result bundle materializado</small></button>`;
-    }).join('')}</div><div class="ei-legend"><span><i class="ei-legend-docs"></i> corpus mapeado</span><span><i class="ei-legend-ready"></i> finding-ready dentro do domínio</span></div><p class="ei-note">Finding-ready descreve disponibilidade técnica de result bundle. Não significa força, convergência, certeza, elegibilidade nem EvidenceClaim aceito.</p>`;
+      return `<button type="button" class="ei-domain-button${item.active?' active':''}" data-ei-intelligence-domain="${esc(item.domain)}" aria-pressed="${item.active?'true':'false'}"><span class="ei-domain-top"><strong>${esc(item.label)}</strong><b>${item.documents}</b></span><span class="ei-dual-track"><i class="ei-docs" style="--ei-width:${documentWidth}%"></i><i class="ei-ready" style="--ei-width:${readyWidth}%"></i></span><small>${item.findingReady}/${item.documents} com pacote de resultados materializado</small></button>`;
+    }).join('')}</div><div class="ei-legend"><span><i class="ei-legend-docs"></i> corpus mapeado</span><span><i class="ei-legend-ready"></i> pronto para inspeção no domínio</span></div><p class="ei-note">“Pronto para inspeção” descreve disponibilidade técnica do pacote de resultados. Não significa força, convergência, certeza, elegibilidade nem EvidenceClaim aceito.</p>`;
     body.querySelectorAll('[data-ei-intelligence-domain]').forEach(button=>button.addEventListener('click',()=>{
       const target=[...document.querySelectorAll('[data-select-domain]')].find(node=>node.dataset.selectDomain===button.dataset.eiIntelligenceDomain);
       target?.click();
@@ -98,12 +98,12 @@ if(page){
 
   function reviewModel(){
     return [...document.querySelectorAll('.review-round-card')].map((card,index)=>{
-      const title=card.querySelector('h3')?.textContent?.trim()||`Round ${index+1}`;
+      const title=card.querySelector('h3')?.textContent?.trim()||`Rodada ${index+1}`;
       const progress=card.querySelector('.review-round-head > strong')?.textContent||'';
       const match=progress.match(/(\d+)\s*\/\s*(\d+)/);
       const submitted=match?Number(match[1]):0;
       const reviewers=match?Number(match[2]):0;
-      const status=card.querySelector('.mini-pill')?.textContent?.trim()||'status';
+      const status=card.querySelector('.mini-pill')?.textContent?.trim()||'estado';
       const assigned=Boolean(card.querySelector('.mini-pill.assigned'));
       return {index,title,submitted,reviewers,status,assigned,card};
     });
@@ -125,8 +125,8 @@ if(page){
     const body=document.querySelector('#evidenceInterpretationBody');
     if(!body)return;
     const rows=reviewModel();
-    if(!rows.length){body.innerHTML='<div class="ei-empty">Nenhum round explícito desta ResearchApplication para visualizar. O painel não importa rounds legados nem infere bindings.</div>';return}
-    body.innerHTML=`<div class="ei-section-head"><div><strong>Human submission progress</strong><span>Progresso de envio por round explicitamente vinculado à aplicação atual.</span></div><span class="ei-boundary-chip">submission ≠ scientific outcome</span></div><div class="ei-review-list">${rows.map(item=>{
+    if(!rows.length){body.innerHTML='<div class="ei-empty">Nenhuma rodada explícita desta aplicação de pesquisa para visualizar. O painel não importa rodadas legadas nem infere vínculos.</div>';return}
+    body.innerHTML=`<div class="ei-section-head"><div><strong>Progresso de envio humano</strong><span>Progresso de envio por rodada explicitamente vinculada à aplicação atual.</span></div><span class="ei-boundary-chip">envio ≠ resultado científico</span></div><div class="ei-review-list">${rows.map(item=>{
       const width=item.reviewers?clamp(100*item.submitted/item.reviewers):0;
       return `<button type="button" class="ei-review-round" data-ei-review-index="${item.index}"><span class="ei-review-top"><strong>${esc(item.title)}</strong><span>${esc(item.status)}${item.assigned?' · atribuído a mim':''}</span></span><span class="ei-track" aria-hidden="true"><i style="--ei-width:${width}%"></i></span><small>${item.submitted}/${item.reviewers} revisores enviaram e travaram a própria avaliação</small></button>`;
     }).join('')}</div>${assignmentProgressHtml()}<p class="ei-note">A barra mede somente submissão humana registrada. Ela não calcula inclusão, concordância, adjudicação científica, risco de viés, certeza ou PRISMA.</p>`;

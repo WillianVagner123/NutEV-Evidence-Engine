@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="robots" content="noindex,nofollow">
-  <title>Evidence Explorer — NutEV</title>
-  <meta name="description" content="Exploração do Tier A por domínios operacionais, rotas e tipos documentais.">
+  <title>Explorador de Evidências — NutEV</title>
+  <meta name="description" content="Exploração do Nível A por domínios operacionais, rotas e tipos documentais.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
   <link rel="stylesheet" href="./articles.css">
@@ -15,16 +15,16 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
       <nav aria-label="Navegação principal"></nav>
       <div class="sidebar-note">Domínios e perfis servem para navegação e síntese assistida. Não equivalem a decisão de elegibilidade ou recomendação.</div>
     </aside>
     <main class="main dashboard-main">
-      <header class="topbar"><div><h1>Evidence Explorer</h1><p>Entre no corpus pela pergunta científica, não apenas pela lista de artigos.</p></div><div class="dashboard-actions"><a class="ghost action-link" href="/evidence-map.html">Evidence Map</a><span class="status-pill" id="evidenceHealth">carregando…</span></div></header>
-      <section class="card project-hero"><div><div class="project-eyebrow">DOMAIN-FIRST EXPLORATION · TIER A</div><h2>Parâmetros, competências e contextos operacionais</h2><p class="project-question">Explore como avaliação, aconselhamento, prescrição, monitoramento, food literacy, competências, contexto social e implementação aparecem no corpus aprofundado.</p></div></section>
-      <div id="evidenceState" class="loading dashboard-state">Carregando resumos rank-blind…</div>
+      <header class="topbar"><div><h1>Explorador de Evidências</h1><p>Entre no corpus pela pergunta científica, não apenas pela lista de artigos.</p></div><div class="dashboard-actions"><a class="ghost action-link" href="/evidence-map.html">Mapa de Evidências</a><span class="status-pill" id="evidenceHealth">carregando…</span></div></header>
+      <section class="card project-hero"><div><div class="project-eyebrow">EXPLORAÇÃO POR DOMÍNIO · NÍVEL A</div><h2>Parâmetros, competências e contextos operacionais</h2><p class="project-question">Explore como avaliação, aconselhamento, prescrição, monitoramento, literacia alimentar, competências, contexto social e implementação aparecem no corpus aprofundado.</p></div></section>
+      <div id="evidenceState" class="loading dashboard-state">Carregando resumos sem uso de ordenação científica…</div>
       <section id="evidenceContent" class="evidence-shell hidden">
-        <aside class="card dashboard-card"><div class="panel-head"><div><h2>Operational domains</h2><p>Selecione um domínio para abrir o recorte correspondente.</p></div></div><div id="domainCards" class="domain-card-list"></div></aside>
+        <aside class="card dashboard-card"><div class="panel-head"><div><h2>Domínios operacionais</h2><p>Selecione um domínio para abrir o recorte correspondente.</p></div></div><div id="domainCards" class="domain-card-list"></div></aside>
         <section class="card dashboard-card evidence-detail"><div class="evidence-detail-head"><div><h2 id="domainTitle">Domínio</h2><p id="domainMeta"></p></div><a id="evidenceCorpusLink" class="panel-link" href="/articles.html">Abrir Corpus →</a></div><div id="domainClassMix" class="domain-class-mix"></div><div id="domainArticles"></div><p id="domainNote" class="small-state"></p></section>
       </section>
     </main>
