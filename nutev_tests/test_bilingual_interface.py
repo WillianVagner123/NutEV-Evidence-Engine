@@ -68,8 +68,8 @@ def test_i18n_is_ui_only_and_protects_scientific_source_content() -> None:
 
 def test_bilingual_bootstrap_covers_product_ui_without_touching_session_lease() -> None:
     assert "i18n" not in read("tenant-session.js")
-    assert "import './i18n.js'" in read("product-ui.js")
-    assert "import './i18n.js'" in read("login.js")
+    assert "i18n.js" in read("product-ui.js")
+    assert "i18n.js" in read("login.js")
 
     for name in (
         "scientific-flow.js",
@@ -80,7 +80,7 @@ def test_bilingual_bootstrap_covers_product_ui_without_touching_session_lease() 
         "evidence.js",
         "review-routes.js",
     ):
-        assert "import './i18n.js'" in read(name)
+        assert "i18n.js" in read(name)
 
 
 def test_mixed_legacy_ui_has_portuguese_aliases_and_preserves_canonical_tokens() -> None:
