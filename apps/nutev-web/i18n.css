@@ -1,0 +1,54 @@
+.nutev-language-switch{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:12px 14px 8px;
+  padding:8px 10px;
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:12px;
+  background:rgba(255,255,255,.62);
+  font-size:12px;
+}
+.nutev-language-switch-label{
+  margin-right:auto;
+  color:var(--muted,#64748b);
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.nutev-language-switch button{
+  appearance:none;
+  border:1px solid rgba(15,23,42,.12);
+  border-radius:9px;
+  background:transparent;
+  color:inherit;
+  min-width:38px;
+  padding:6px 8px;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+}
+.nutev-language-switch button[aria-pressed="true"]{
+  background:var(--ink,#0f172a);
+  color:#fff;
+  border-color:var(--ink,#0f172a);
+}
+.nutev-language-switch button:focus-visible{
+  outline:3px solid rgba(14,116,144,.28);
+  outline-offset:2px;
+}
+.login-page>.nutev-language-switch,
+body:not(:has(.sidebar))>.nutev-language-switch{
+  position:fixed;
+  top:14px;
+  right:14px;
+  z-index:50;
+  margin:0;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 8px 30px rgba(15,23,42,.10);
+}
+@media (max-width:700px){
+  .nutev-language-switch{margin:8px 10px}
+  .login-page>.nutev-language-switch,
+  body:not(:has(.sidebar))>.nutev-language-switch{top:8px;right:8px}
+  .nutev-language-switch-label{display:none}
+}
