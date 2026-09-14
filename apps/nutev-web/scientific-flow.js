@@ -40,7 +40,12 @@ function installFlowRail(){
       <span class="scientific-flow-badge">navigation only</span>
     </div>
     <div class="scientific-flow-stages" role="navigation" aria-label="Fluxo científico visual">
-      ${FLOW_STAGES.map((stage,index)=>`<a class="scientific-flow-stage${stage.id===flowStage?' active':''}" data-flow-stage="${stage.id}" href="${flowHref(stage)}" ${stage.id===flowStage?'aria-current="page"':''}><span class="scientific-flow-index">${index+1}</span><span><strong>${flowEsc(stage.label)}</strong><small>${flowEsc(stage.note)}</small></span></a>`).join('')}
+      ${FLOW_STAGES.map((stage,index)=>{
+        const inner=`<span class="scientific-flow-index">${index+1}</span><span><strong>${flowEsc(stage.label)}</strong><small>${flowEsc(stage.note)}</small></span>`
+        return stage.id===flowStage
+          ?`<span class="scientific-flow-stage active" aria-current="step">${inner}</span>`
+          :`<a class="scientific-flow-stage" data-flow-stage="${stage.id}" href="${flowHref(stage)}">${inner}</a>`
+      }).join('')}
     </div>
     <div class="scientific-flow-context" id="scientificFlowContext"></div>
     <div class="scientific-flow-guardrail">Mapa e Intelligence organizam navegação e inspeção. Nenhum filtro, volume, recorrência ou clique cria elegibilidade, inclusão, certeza, EvidenceClaim, decisão de Review ou PRISMA.</div>`
@@ -48,7 +53,7 @@ function installFlowRail(){
 }
 
 function refreshFlowLinks(){
-  document.querySelectorAll('[data-flow-stage]').forEach(link=>{
+  document.querySelectorAll('a[data-flow-stage]').forEach(link=>{
     const stage=FLOW_STAGES.find(item=>item.id===link.dataset.flowStage)
     if(stage)link.href=flowHref(stage)
   })
