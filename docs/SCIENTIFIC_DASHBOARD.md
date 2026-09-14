@@ -1,6 +1,6 @@
 # NutEV Scientific Dashboard
 
-The NutEV web home is a scientific overview, not the search form.
+The NutEV web home is a scientific overview of the **Scientific Evidence System**, not the search form.
 
 ## Information architecture
 
@@ -12,13 +12,19 @@ EVIDENCE
   Search
   Corpus
   Evidence Explorer
+  Evidence Map
+  Evidence Analysis
+  Evidence Query
   Evidence Radar
 
 REVIEW
+  Human Review
   Review Routes (B-NORM / C-STRUCT)
+  Synthesis Review
+  Verified Synthesis Summary
 
 STRATEGY
-  QA
+  Quality control
   PRESS
 
 VALIDATION
@@ -26,10 +32,10 @@ VALIDATION
 
 SYSTEM
   Search runs
-  AI Context
+  Evidence Context
 ```
 
-Legacy operational pages remain available; the redesign is incremental and does not change scientific contracts to simplify UI.
+Historical URLs and internal identifiers remain available for compatibility; the redesign does not change scientific contracts merely to simplify UI.
 
 ## Dashboard data contract
 
@@ -41,6 +47,8 @@ The dashboard does not hardcode production counts. It reads only existing verifi
 - `/agent-context/article1/SEARCH_STATE.json`;
 - `/agent-context/article1/ARTICLE_SUMMARIES.jsonl`;
 - `/agent-context/article1/CONTEXT_MANIFEST.json`.
+
+The `agent-context` route name is a technical compatibility contract. In product language the layer is **Evidence Context / Contexto de Evidências**.
 
 `ARTICLE_SUMMARIES.jsonl` is intentionally Tier-A-sized and rank-blind. The dashboard must never download the full Workbench corpus simply to render charts.
 
@@ -57,7 +65,7 @@ The initial overview includes:
 - document-type bars;
 - operational-domain bars;
 - publication timeline;
-- provider operational state;
+- source operational state;
 - formal-search readiness;
 - provenance/context metadata.
 
@@ -65,12 +73,12 @@ Charts use semantic HTML/CSS and provide numeric labels. No chart is allowed to 
 
 ## Interactive exploration and URL state
 
-The dashboard has a second, read-only analytical layer over the verified Tier A agent context. It can filter the current view by:
+The dashboard has a second, read-only analytical layer over the verified Tier A Evidence Context. It can filter the current view by:
 
 - B-NORM/C-STRUCT route;
 - document class;
 - operational domain;
-- source provider;
+- source;
 - publication year;
 - full-text retrieval status.
 
@@ -78,7 +86,7 @@ These filters affect only the local Tier A visualization and are persisted in th
 
 Drill-down behavior is explicit and limited to target pages that can represent the requested state safely:
 
-- document class and compatible provider/full-text filters -> Corpus Explorer;
+- document class and compatible source/full-text filters -> Corpus Explorer;
 - operational domain -> Evidence Explorer;
 - B-NORM/C-STRUCT -> Review Routes;
 - publication year -> local dashboard filter only until the server-side Corpus API exposes a canonical year filter.
@@ -94,11 +102,11 @@ The dashboard also exposes a compact visual-exploration surface built from the s
 The visual layer shows, for the current local filter state:
 
 - selected document count and share of Tier A;
-- provider count;
+- source count;
 - publication-year window;
 - retrieved + partial full-text coverage;
 - an interactive full-text distribution;
-- an interactive provider mix;
+- an interactive source distribution;
 - B-NORM/C-STRUCT route tiles with overlap shown separately;
 - a publication pulse chart.
 
@@ -114,24 +122,24 @@ The UI must preserve these boundaries:
 - Bank tier/rank/score are operational priority, not quality or eligibility;
 - route membership is not inclusion;
 - full-text retrieval is not eligibility;
-- machine review profile is not risk of bias, certainty or recommendation;
-- provider gap is not absence of literature;
+- automated review profile is not risk of bias, certainty or recommendation;
+- source gap is not absence of literature;
 - PRESS draft is not query approval;
 - the frontend cannot authorize GF-10, freeze a query, execute a formal search or emit a PRISMA event;
-- evidence excerpts/result bundles remain machine/index artifacts until accepted through the appropriate human scientific workflow.
+- evidence excerpts/result bundles remain automated/index artifacts until accepted through the appropriate human scientific workflow.
 
 ## Presentation mode
 
 The dashboard includes a presentation view that collapses the sidebar and enlarges the analytical surface. It changes presentation only and never changes data or methodological state.
 
-## Agent context lifecycle
+## Evidence Context lifecycle
 
-The Hetzner container attempts to rebuild the verified Article 1 agent-context bundle before starting the web service. Failure to refresh the context does not block the web server: analytical pages show a partial/error state instead of using sample data.
+The Hetzner container attempts to rebuild the verified Article 1 Evidence Context bundle before starting the web service. Failure to refresh the context does not block the web server: analytical pages show a partial/error state instead of using sample data.
 
-The persistent context remains under:
+The historical persistent path remains:
 
 ```text
 project_output_reference/agent_context/article1/
 ```
 
-and is exposed through the existing safe static symlink under `/agent-context/article1/`.
+and is exposed through the existing safe static compatibility symlink under `/agent-context/article1/`.
