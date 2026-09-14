@@ -36,8 +36,7 @@
   outline:3px solid rgba(14,116,144,.28);
   outline-offset:2px;
 }
-.login-page>.nutev-language-switch,
-body:not(:has(.sidebar))>.nutev-language-switch{
+.nutev-language-switch-floating{
   position:fixed;
   top:14px;
   right:14px;
@@ -48,7 +47,6 @@ body:not(:has(.sidebar))>.nutev-language-switch{
 }
 @media (max-width:700px){
   .nutev-language-switch{margin:8px 10px}
-  .login-page>.nutev-language-switch,
-  body:not(:has(.sidebar))>.nutev-language-switch{top:8px;right:8px}
+  .nutev-language-switch-floating{top:8px;right:8px;margin:0}
   .nutev-language-switch-label{display:none}
 }
