@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="robots" content="noindex,nofollow">
-  <title>Biblioteca de evidências — NutEV Evidence Engine</title>
-  <meta name="description" content="Biblioteca privada de evidências do workspace ou projeto atual no NutEV.">
+  <title>Biblioteca de evidências — NutEV</title>
+  <meta name="description" content="Biblioteca privada de evidências do espaço de trabalho ou projeto atual no NutEV.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./product-ui.css">
   <link rel="stylesheet" href="./product-polish.css">
@@ -16,22 +16,22 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
       <nav aria-label="Navegação principal"></nav>
       <div class="sidebar-note">O artigo tem uma identidade bibliográfica única no NutEV. Estado de triagem, tags, notas e permissões de texto completo pertencem ao seu contexto privado.</div>
     </aside>
     <main class="main">
       <header class="topbar">
-        <div><h1>Biblioteca de evidências</h1><p>Organize os artigos do workspace ou do projeto sem alterar o registro bibliográfico global.</p></div>
+        <div><h1>Biblioteca de evidências</h1><p>Organize os artigos do espaço de trabalho ou do projeto sem alterar o registro bibliográfico global.</p></div>
         <span class="status-pill" id="libraryHealth">carregando contexto…</span>
       </header>
 
       <section class="card product-panel" id="libraryScopeCard">
-        <div class="product-panel-head"><div><span class="home-eyebrow">Contexto privado</span><h2 id="libraryContextTitle">Sua biblioteca</h2><p id="libraryContext">Carregando workspace e projeto atual…</p></div><button class="ghost" id="refreshLibrary" type="button" disabled>Atualizar</button></div>
+        <div class="product-panel-head"><div><span class="home-eyebrow">Contexto privado</span><h2 id="libraryContextTitle">Sua biblioteca</h2><p id="libraryContext">Carregando espaço de trabalho e projeto atual…</p></div><button class="ghost" id="refreshLibrary" type="button" disabled>Atualizar</button></div>
         <div class="library-toolbar">
           <label>Visualização
             <select id="libraryScope" disabled>
-              <option value="workspace">Todo o workspace</option>
+              <option value="workspace">Todo o espaço de trabalho</option>
               <option value="project">Projeto atual</option>
             </select>
           </label>
@@ -44,7 +44,7 @@
               <option value="not_screened">Não triado</option>
               <option value="included">Incluído</option>
               <option value="excluded">Excluído</option>
-              <option value="background">Contexto / background</option>
+              <option value="background">Contexto</option>
             </select>
           </label>
         </div>
@@ -69,19 +69,19 @@
                 <option value="not_screened">Não triado</option>
                 <option value="included">Incluído</option>
                 <option value="excluded">Excluído</option>
-                <option value="background">Contexto / background</option>
+                <option value="background">Contexto</option>
               </select>
             </label>
           </div>
           <label>Tags <input id="libraryTags" type="text" autocomplete="off" placeholder="separadas por vírgula"></label>
-          <label>Nota privada <textarea id="libraryNotes" rows="3" placeholder="Observação deste workspace/projeto."></textarea></label>
+          <label>Nota privada <textarea id="libraryNotes" rows="3" placeholder="Observação deste espaço de trabalho/projeto."></textarea></label>
           <div class="search-actions"><button class="primary" id="saveLibraryPlacement" type="button" disabled>Adicionar à biblioteca</button><span id="librarySaveStatus" aria-live="polite"></span></div>
         </details>
       </section>
 
       <section class="card workbench-guardrail">
         <strong>O que fica privado</strong>
-        <p>Adicionar um artigo à biblioteca não muda o documento global nem significa inclusão científica. Estado de triagem, tags e notas pertencem ao workspace/projeto. A existência de texto completo no sistema também não autoriza redistribuição; o acesso depende de permissão válida.</p>
+        <p>Adicionar um artigo à biblioteca não muda o documento global nem significa inclusão científica. Estado de triagem, tags e notas pertencem ao espaço de trabalho/projeto. A existência de texto completo no sistema também não autoriza redistribuição; o acesso depende de permissão válida.</p>
       </section>
     </main>
   </div>

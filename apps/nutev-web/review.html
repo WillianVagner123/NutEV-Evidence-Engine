@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="robots" content="noindex,nofollow">
-  <title>Revisão humana — NutEV Evidence Engine</title>
-  <meta name="description" content="Revisão humana privada e vinculada à aplicação de pesquisa ativa no NutEV.">
+  <title>Revisão humana — NutEV</title>
+  <meta name="description" content="Revisão humana privada e vinculada à aplicação de pesquisa ativa no Sistema de Evidências Científicas NutEV.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./product-ui.css">
   <link rel="stylesheet" href="./product-polish.css">
@@ -17,25 +17,25 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
       <nav aria-label="Navegação principal"></nav>
-      <div class="sidebar-note">Review pertence ao workspace, projeto e aplicação de pesquisa selecionados. Nenhuma decisão humana é criada, inferida ou promovida automaticamente.</div>
+      <div class="sidebar-note">A revisão pertence ao espaço de trabalho, projeto e aplicação de pesquisa selecionados. Nenhuma decisão humana é criada, inferida ou promovida automaticamente.</div>
     </aside>
 
     <main class="main review-control-main">
       <header class="topbar">
-        <div><h1>Revisão humana</h1><p>Rounds, atribuições e decisões explícitas no contexto metodológico atual.</p></div>
+        <div><h1>Revisão humana</h1><p>Rodadas, atribuições e decisões explícitas no contexto metodológico atual.</p></div>
         <span id="reviewHealth" class="status-pill">carregando contexto…</span>
       </header>
 
       <section class="card product-panel" id="reviewContextCard">
         <div class="product-panel-head">
-          <div><span class="home-eyebrow">Contexto privado</span><h2 id="reviewContextTitle">Aplicação atual</h2><p id="reviewContext">Carregando workspace, projeto e ResearchApplication…</p></div>
+          <div><span class="home-eyebrow">Contexto privado</span><h2 id="reviewContextTitle">Aplicação atual</h2><p id="reviewContext">Carregando espaço de trabalho, projeto e aplicação de pesquisa…</p></div>
           <a class="ghost action-link" href="/project.html">Ver projeto</a>
         </div>
       </section>
 
-      <div id="reviewState" class="workbench-state" role="status" aria-live="polite">Carregando Review…</div>
+      <div id="reviewState" class="workbench-state" role="status" aria-live="polite">Carregando revisão…</div>
 
       <section id="reviewContent" class="hidden">
         <div id="reviewKpis" class="kpi-grid"></div>
@@ -43,36 +43,36 @@
         <div class="review-control-grid">
           <section class="card product-panel span-12">
             <div class="product-panel-head">
-              <div><span class="home-eyebrow">Rounds</span><h2>Revisões desta aplicação</h2><p>Somente rounds explicitamente vinculados à ResearchApplication ativa aparecem aqui.</p></div>
+              <div><span class="home-eyebrow">Rodadas</span><h2>Revisões desta aplicação</h2><p>Somente rodadas explicitamente vinculadas à aplicação de pesquisa ativa aparecem aqui.</p></div>
               <button class="ghost" id="refreshReview" type="button">Atualizar</button>
             </div>
             <div id="reviewRounds" class="review-round-list"></div>
           </section>
 
           <section class="card product-panel" id="createRoundPanel">
-            <div class="product-panel-head"><div><span class="home-eyebrow">Novo round</span><h2>Criar revisão</h2><p>Cria o contêiner de revisão humana; não seleciona itens nem produz decisão científica.</p></div></div>
+            <div class="product-panel-head"><div><span class="home-eyebrow">Nova rodada</span><h2>Criar revisão</h2><p>Cria o contêiner de revisão humana; não seleciona itens nem produz decisão científica.</p></div></div>
             <div class="review-form-grid">
-              <label>Nome do round<input id="reviewRoundName" type="text" maxlength="200" autocomplete="off" placeholder="Ex.: Triagem independente — versão 1"></label>
-              <label>Opções de decisão<input id="reviewDecisionOptions" type="text" autocomplete="off" value="include, exclude, uncertain" aria-describedby="reviewDecisionHelp"><span id="reviewDecisionHelp" class="small-state">Separe por vírgula. O protocolo da aplicação continua soberano.</span></label>
+              <label>Nome da rodada<input id="reviewRoundName" type="text" maxlength="200" autocomplete="off" placeholder="Ex.: Triagem independente — versão 1"></label>
+              <label>Opções de decisão<input id="reviewDecisionOptions" type="text" autocomplete="off" value="include, exclude, uncertain" aria-describedby="reviewDecisionHelp"><span id="reviewDecisionHelp" class="small-state">Separe por vírgula. Esses valores pertencem ao protocolo configurado; a aplicação continua soberana.</span></label>
               <label>Revisores mínimos por item<input id="reviewMinimumReviewers" type="number" min="1" max="20" value="2"></label>
               <label class="review-checkbox"><input id="reviewReasonRequired" type="checkbox" checked> Exigir justificativa para cada decisão</label>
             </div>
-            <div class="search-actions"><button class="primary" id="createReviewRound" type="button">Criar round</button><span id="createReviewStatus" aria-live="polite"></span></div>
+            <div class="search-actions"><button class="primary" id="createReviewRound" type="button">Criar rodada</button><span id="createReviewStatus" aria-live="polite"></span></div>
           </section>
 
           <section class="card product-panel" id="reviewBoundaryPanel">
-            <div class="product-panel-head"><div><span class="home-eyebrow">Guardrail</span><h2>O que Review não faz sozinho</h2></div></div>
+            <div class="product-panel-head"><div><span class="home-eyebrow">Limites</span><h2>O que a revisão não faz sozinha</h2></div></div>
             <div class="boundary-grid">
               <div><strong>Seleção científica automática</strong><span>Não existe.</span></div>
               <div><strong>PRISMA automático</strong><span>Não é derivado de rótulos sem contrato científico.</span></div>
-              <div><strong>Reaproveitamento entre projetos</strong><span>Rounds não atravessam workspace/projeto/aplicação.</span></div>
-              <div><strong>Rounds legados</strong><span>Rounds sem binding explícito ficam fora desta superfície.</span></div>
+              <div><strong>Reaproveitamento entre projetos</strong><span>Rodadas não atravessam espaço de trabalho, projeto ou aplicação.</span></div>
+              <div><strong>Rodadas legadas</strong><span>Rodadas sem vínculo explícito ficam fora desta superfície.</span></div>
             </div>
           </section>
 
           <section class="card product-panel span-12 hidden" id="assignmentPanel">
             <div class="product-panel-head">
-              <div><span class="home-eyebrow">Minhas atribuições</span><h2 id="assignmentRoundTitle">Round</h2><p id="assignmentRoundMeta"></p></div>
+              <div><span class="home-eyebrow">Minhas atribuições</span><h2 id="assignmentRoundTitle">Rodada</h2><p id="assignmentRoundMeta"></p></div>
               <button class="ghost" id="closeAssignments" type="button">Fechar</button>
             </div>
             <div id="assignmentState" class="workbench-state">Carregando atribuições…</div>
@@ -87,7 +87,7 @@
 
       <section class="card workbench-guardrail">
         <strong>Contrato de isolamento</strong>
-        <p>Esta página nunca infere que um round antigo pertence à aplicação atual. O binding é explícito e server-side. Revisores autenticados recebem somente os itens que lhes foram atribuídos, e o envio final trava suas decisões no HumanReviewEngine.</p>
+        <p>Esta página nunca infere que uma rodada antiga pertence à aplicação atual. O vínculo é explícito e validado no servidor. Revisores autenticados recebem somente os itens que lhes foram atribuídos, e o envio final trava suas decisões no mecanismo de revisão humana do sistema.</p>
       </section>
     </main>
   </div>

@@ -7,7 +7,7 @@ function esc(value) {
 function shell(content) {
   return `<div class="unified-shell">
     <aside class="product-sidebar">
-      <div class="product-brand"><div class="product-brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <div class="product-brand"><div class="product-brand-mark">N</div><div><strong>NutEV</strong><span>Sistema de Evidências Científicas</span></div></div>
       <nav class="product-nav">
         <a href="/">⌕ <span>Buscar evidências</span></a>
         <a href="/?view=history">◷ <span>Minhas buscas</span></a>

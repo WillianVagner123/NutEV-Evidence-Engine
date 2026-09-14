@@ -3,21 +3,33 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WEB = ROOT / "apps" / "nutev-web"
+VALIDATION = ROOT / "apps" / "nutev-validation"
 DOC = ROOT / "docs" / "PRODUCT_LANGUAGE_SYSTEM.md"
 
 
-PRESENTATION_FILES = (
-    "advanced.html",
-    "ask.html",
+PRIMARY_PRODUCT_SURFACES = tuple(
+    path.name
+    for path in sorted(WEB.glob("*.html"))
+) + (
     "ask.js",
-    "ai-context.html",
     "ai-context.js",
-    "intelligence.html",
-    "intelligence.js",
     "scientific-flow.js",
+    "evidence-interpretation.js",
     "synthesis-flow.js",
-    "synthesis-review.html",
-    "synthesis-brief.html",
+)
+
+FORBIDDEN_PRODUCT_LABELS = (
+    "Evidence Engine",
+    "Scientific Intelligence",
+    "Ask NutEV",
+    "AI Context",
+    "Human Synthesis Review",
+    "Human Synthesis Brief",
+    "Grounded retrieval",
+    "retrieval grounded",
+    "Prompt canônico para agentes",
+    "INSTRUCTIONS FOR THE ANALYZING AGENT",
+    "Evidence first. Generation second.",
 )
 
 
@@ -26,7 +38,18 @@ def read_web(name: str) -> str:
 
 
 def presentation_source() -> str:
-    return "\n".join(read_web(name) for name in PRESENTATION_FILES)
+    return "\n".join(read_web(name) for name in PRIMARY_PRODUCT_SURFACES)
+
+
+def html_legacy_debt() -> dict[str, set[str]]:
+    debt: dict[str, set[str]] = {}
+    for root in (WEB, VALIDATION):
+        for path in root.glob("*.html"):
+            source = path.read_text(encoding="utf-8")
+            hits = {label for label in FORBIDDEN_PRODUCT_LABELS if label in source}
+            if hits:
+                debt[str(path.relative_to(ROOT))] = hits
+    return debt
 
 
 def test_product_surfaces_use_system_first_names() -> None:
@@ -40,56 +63,38 @@ def test_product_surfaces_use_system_first_names() -> None:
         "Pacote de evidências",
         "Revisão de Síntese",
         "Resumo de Síntese Verificado",
+        "Mapa de Evidências",
+        "Radar de Evidências",
+        "Explorador de Evidências",
+        "Observatório de Qualidade",
+        "Laboratório de Estratégia",
+        "Rotas de Revisão",
+        "Controle de qualidade da estratégia",
+        "Revisão PRESS",
+        "Registro de Governança da Síntese",
+        "Liberação Governada da Síntese",
+        "Manifesto Governado de Publicação",
+        "Candidatos a recomendação",
+        "Validação humana de candidato a recomendação",
     ):
         assert expected in source
 
 
-def test_product_surfaces_do_not_present_llm_or_agent_branding() -> None:
-    source = presentation_source()
+def test_all_product_html_is_free_of_legacy_or_llm_branding() -> None:
+    debt = html_legacy_debt()
+    assert not debt, f"Legacy product language remains in HTML: {debt}"
 
-    for forbidden in (
-        "ChatGPT",
-        "Claude",
-        "0 external LLM calls",
-        "Ask NutEV",
-        "AI Context",
-        "Grounded retrieval",
-        "retrieval grounded",
-        "Prompt canônico para agentes",
-        "INSTRUCTIONS FOR THE ANALYZING AGENT",
-        "Evidence first. Generation second.",
-        "Human Synthesis Review",
-        "Human Synthesis Brief",
-        "Scientific Intelligence — NutEV",
-    ):
+
+def test_primary_product_surfaces_do_not_present_legacy_or_llm_branding() -> None:
+    source = presentation_source()
+    for forbidden in FORBIDDEN_PRODUCT_LABELS:
         assert forbidden not in source
 
 
-def test_advanced_lab_uses_system_language_for_secondary_navigation() -> None:
-    advanced = read_web("advanced.html")
-
-    for expected in (
-        "Sistema de Evidências Científicas",
-        "Análise de Evidências",
-        "Revisão de Síntese",
-        "Resumo de Síntese",
-        "Consulta de Evidências",
-        "Explorador de Evidências",
-        "Mapa de Evidências",
-        "Radar de Evidências",
-        "Observatório de Qualidade",
-    ):
-        assert expected in advanced
-
-    for forbidden in (
-        "Evidence Engine",
-        "Scientific Intelligence",
-        "Human Synthesis Review",
-        "Synthesis Brief",
-        "Ask NutEV",
-        "Workflow tipo Rayyan",
-    ):
-        assert forbidden not in advanced
+def test_validation_entrypoint_uses_system_identity() -> None:
+    source = (VALIDATION / "index.html").read_text(encoding="utf-8")
+    assert "Sistema de Evidências Científicas" in source
+    assert "Evidence Engine" not in source
 
 
 def test_internal_compatibility_routes_remain_stable() -> None:
@@ -132,7 +137,7 @@ def test_scientific_tokens_remain_canonical() -> None:
         assert canonical in source
 
 
-def test_legacy_product_names_exist_only_as_i18n_compatibility_aliases() -> None:
+def test_legacy_product_names_remain_only_as_i18n_compatibility_aliases() -> None:
     i18n = read_web("i18n.js")
 
     for legacy in (
