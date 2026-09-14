@@ -14,6 +14,7 @@ def test_visual_layer_is_wired_to_all_three_surfaces() -> None:
         assert './evidence-interpretation.js' in read(page)
 
     script = read("evidence-interpretation.js")
+    assert "Estruturar → Inspecionar → Revisão humana" in script
     assert "Structure → Inspect → Human review" in script
     assert "/evidence-map.html" in script
     assert "/intelligence.html" in script
@@ -34,7 +35,8 @@ def test_visual_layer_is_dom_derived_and_does_not_create_a_parallel_data_path() 
         assert forbidden not in script
 
     assert "MutationObserver" in script
-    assert "INTERPRETATION WORKFLOW · NAVIGATION ONLY" in script
+    assert "INTERPRETAÇÃO CIENTÍFICA · SOMENTE NAVEGAÇÃO" in script
+    assert "SCIENTIFIC INTERPRETATION · NAVIGATION ONLY" in script
 
 
 def test_interpretation_rail_keeps_current_surface_non_link() -> None:
@@ -52,8 +54,10 @@ def test_evidence_map_visual_delegates_to_existing_domain_filter() -> None:
     assert ".matrix-cell[data-domain]" in script
     assert "#mapDomainFilter" in script
     assert "dispatchEvent(new Event('change',{bubbles:true}))" in script
+    assert "volume ≠ força" in script
     assert "volume ≠ strength" in script
-    assert "célula vazia não representam qualidade, certeza, ausência de literatura ou evidence gap" in script
+    assert "célula vazia não representam qualidade, certeza, ausência de literatura ou lacuna de evidência" in script
+    assert "empty cells do not represent quality, certainty, absence of literature, or an evidence gap" in script
 
 
 def test_intelligence_visual_delegates_to_existing_domain_selection() -> None:
@@ -62,9 +66,11 @@ def test_intelligence_visual_delegates_to_existing_domain_selection() -> None:
     assert "[data-domain-card]" in script
     assert "[data-select-domain]" in script
     assert "target?.click()" in script
-    assert "finding-ready ≠ accepted claim" in script
-    assert "Finding-ready descreve disponibilidade técnica de result bundle" in script
-    assert "Não significa força, convergência, certeza, elegibilidade nem EvidenceClaim aceito" in script
+    assert "pronto para inspeção ≠ alegação aceita" in script
+    assert "ready for inspection ≠ accepted claim" in script
+    assert "Pronto para inspeção” descreve disponibilidade técnica de um pacote de resultados" in script
+    assert "Ready for inspection” describes technical availability of a result bundle" in script
+    assert "Não significa força, convergência, certeza, elegibilidade nem EvidenceClaim aceita" in script
 
 
 def test_review_visual_reports_submission_progress_without_scientific_inference() -> None:
@@ -74,7 +80,9 @@ def test_review_visual_reports_submission_progress_without_scientific_inference(
     assert ".open-review" in script
     assert ".round-details" in script
     assert "revisores enviaram e travaram a própria avaliação" in script
+    assert "reviewers submitted and locked their own assessment" in script
     assert "A barra mede somente submissão humana registrada" in script
+    assert "The bar measures only recorded human submission" in script
     assert "não calcula inclusão, concordância, adjudicação científica, risco de viés, certeza ou PRISMA" in script
 
     for forbidden in (
