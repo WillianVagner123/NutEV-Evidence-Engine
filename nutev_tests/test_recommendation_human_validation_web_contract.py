@@ -83,4 +83,4 @@ def test_human_validation_is_linked_from_candidate_and_dashboard() -> None:
     dashboard = read("advanced.html")
     assert "/recommendation-human-validation.html" in candidate_html
     assert "/recommendation-human-validation.html" in dashboard
-    assert "HumanValidation ACCEPT ≠ clinical/guideline recommendation/certainty/GRADE" in dashboard
+    assert "Aceite na validação humana ≠ recomendação clínica/de diretriz, certeza ou GRADE" in dashboard
