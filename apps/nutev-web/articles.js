@@ -7,13 +7,13 @@ const fmt=value=>new Intl.NumberFormat('pt-BR').format(Number(value||0));
 const fmtScore=value=>value===null||value===undefined||value===''?'—':Number(value).toLocaleString('pt-BR',{maximumFractionDigits:2});
 
 const kindLabels={objective:'Objetivo',method:'Método / contexto',main_result:'Resultado principal',secondary_result:'Resultado secundário',conclusion:'Conclusão',limitation:'Limitação',disclosure:'Financiamento / conflitos'};
-const domainLabels={nutrition_assessment:'Avaliação nutricional',dietary_counseling:'Aconselhamento alimentar',nutrition_prescription:'Prescrição nutricional',monitoring_follow_up:'Monitoramento / seguimento',food_skills_competencies:'Competências e habilidades alimentares',food_literacy:'Food / nutrition literacy',social_context:'Contexto social da alimentação',food_based_guidance:'Orientação baseada em alimentos',nutrition_care_process:'Nutrition Care Process',lifestyle_medicine:'Medicina do Estilo de Vida',implementation_practice:'Implementação na prática'};
+const domainLabels={nutrition_assessment:'Avaliação nutricional',dietary_counseling:'Aconselhamento alimentar',nutrition_prescription:'Prescrição nutricional',monitoring_follow_up:'Monitoramento / seguimento',food_skills_competencies:'Competências e habilidades alimentares',food_literacy:'Literacia alimentar / nutricional',social_context:'Contexto social da alimentação',food_based_guidance:'Orientação baseada em alimentos',nutrition_care_process:'Processo de Cuidado em Nutrição',lifestyle_medicine:'Medicina do Estilo de Vida',implementation_practice:'Implementação na prática'};
 const providerLabels={pubmed:'PubMed',europepmc:'Europe PMC',openalex:'OpenAlex',crossref:'Crossref',doaj:'DOAJ',semantic_scholar:'Semantic Scholar',lilacs_bvs_native:'LILACS/BVS',scielo_native:'SciELO'};
 const fullTextLabels={retrieved:'Texto completo',partial:'Texto parcial',unavailable:'Sem texto completo',not_attempted:'Ainda não buscado',not_retrieved:'Não recuperado'};
 const relevanceLabels={high:'aderência operacional alta',medium:'aderência operacional média',low:'aderência operacional baixa'};
 
 function tierFromReference(value){const match=String(value||'').match(/^BANK_([ABCD])_PROCESSING_PRIORITY$/);return match?match[1]:''}
-function tierLabel(value){const tier=tierFromReference(value);return tier?`Tier ${tier}`:''}
+function tierLabel(value){const tier=tierFromReference(value);return tier?`Camada ${tier}`:''}
 function classPresentation(raw,canonical=''){
   const canonicalValue=canonical||canonicalDocumentClass(raw);
   const primary=documentClassLabel(canonicalValue);
@@ -53,7 +53,7 @@ function articleRow(article){
   const fullGood=article.full_text_status==='retrieved';
   const ids=[article.doi?`DOI ${article.doi}`:'',article.pmid?`PMID ${article.pmid}`:''].filter(Boolean);
   const tier=tierLabel(article.reference_tier);
-  const priority=[tier,article.reference_rank?`rank #${fmt(article.reference_rank)}`:'',article.reference_score!==null&&article.reference_score!==undefined?`score ${fmtScore(article.reference_score)}`:''].filter(Boolean);
+  const priority=[tier,article.reference_rank?`posição #${fmt(article.reference_rank)}`:'',article.reference_score!==null&&article.reference_score!==undefined?`pontuação operacional ${fmtScore(article.reference_score)}`:''].filter(Boolean);
   const relevance=article.machine_relevance_band?relevanceLabels[article.machine_relevance_band]||article.machine_relevance_band:'';
   const classification=classPresentation(article.document_class,article.canonical_document_class);
   return `<button class="article-row${state.selected===article.document_id?' active':''}" type="button" data-document-id="${esc(article.document_id)}">
@@ -67,11 +67,11 @@ function articleRow(article){
       ${ids.length?`<div class="article-identifiers">${ids.map(id=>`<span>${esc(id)}</span>`).join('')}</div>`:''}
     </div>
     <div class="article-row-side">
-      ${classification.subtype?`<span class="mini-pill" title="Subtipo documental preservado do Workbench">${esc(classification.subtype)}</span>`:''}
+      ${classification.subtype?`<span class="mini-pill" title="Subtipo documental preservado no dossiê">${esc(classification.subtype)}</span>`:''}
       ${priority.map(value=>`<span class="mini-pill">${esc(value)}</span>`).join('')}
       ${relevance?`<span class="mini-pill">${esc(relevance)}</span>`:''}
       <span class="mini-pill ${fullGood?'good':''}">${esc(full)}</span>
-      <span class="mini-pill">contexto IA ${fmt(article.llm_context_chars)} chars</span>
+      <span class="mini-pill">contexto estruturado ${fmt(article.llm_context_chars)} caracteres</span>
     </div>
   </button>`;
 }
@@ -91,10 +91,10 @@ async function loadPage({append=false}={}){
       $('#articleHealth').className='status-pill';
       $('#articleCount').textContent='0';
       $('#workbenchContent').classList.add('hidden');
-      setState(data.message||'Workbench ainda sem índice.','bad');
+      setState(data.message||'Biblioteca de evidências ainda sem índice.','bad');
       return;
     }
-    if(data.status!=='ready')throw new Error(data.message||'Workbench indisponível');
+    if(data.status!=='ready')throw new Error(data.message||'Biblioteca de evidências indisponível');
     const healthParts=['banco'];
     if(data.performance?.server_side_priority_sort)healthParts.push('prioridade');
     if(data.performance?.review_profile_index)healthParts.push('perfil científico');
@@ -122,7 +122,7 @@ async function loadPage({append=false}={}){
 function snapshotHtml(snapshot){
   const entries=Object.entries(snapshot||{}).filter(([,values])=>Array.isArray(values)?values.length:Boolean(values));
   if(!entries.length)return '<p class="provenance">Nenhum campo semântico compacto disponível.</p>';
-  const labels={objective:'Objetivo',population:'População',sample_size:'Amostra',intervention:'Intervenção',exposure:'Exposição',comparator:'Comparador',outcome:'Outcomes',duration:'Duração',follow_up:'Seguimento',limitation:'Limitações'};
+  const labels={objective:'Objetivo',population:'População',sample_size:'Amostra',intervention:'Intervenção',exposure:'Exposição',comparator:'Comparador',outcome:'Desfechos',duration:'Duração',follow_up:'Seguimento',limitation:'Limitações'};
   return `<div class="snapshot-grid">${entries.map(([key,values])=>`<div class="snapshot-item"><strong>${esc(labels[key]||key)}</strong><span>${esc((Array.isArray(values)?values:[values]).join(' · '))}</span></div>`).join('')}</div>`;
 }
 
@@ -131,10 +131,10 @@ function resultHtml(result){
   const outcomes=(result.outcomes||[]).filter(Boolean);
   return `<article class="result-card ${result.result_kind==='main_result'?'main':''}">
     <div class="result-card-head"><strong>${result.result_kind==='main_result'?'Resultado principal':'Resultado secundário'}</strong><span class="mini-pill">candidato</span></div>
-    ${outcomes.length?`<div class="provenance"><strong>Outcome:</strong> ${esc(outcomes.join(' · '))}</div>`:''}
+    ${outcomes.length?`<div class="provenance"><strong>Desfecho:</strong> ${esc(outcomes.join(' · '))}</div>`:''}
     ${numbers.length?`<div class="result-numbers">${numbers.map(value=>`<span class="result-number">${esc(value)}</span>`).join('')}</div>`:''}
     <blockquote class="source-quote">${esc(result.result_text||'')}</blockquote>
-    <div class="provenance"><strong>Texto processado/extraído pelo pipeline.</strong> Não é citação literal da fonte e não é EvidenceClaim validado.</div>
+    <div class="provenance"><strong>Texto processado ou extraído pelo sistema.</strong> Não é citação literal da fonte e não é EvidenceClaim validada.</div>
   </article>`;
 }
 
@@ -145,7 +145,7 @@ function excerptHtml(excerpt){
   return `<article class="quote-card">
     <div class="quote-head"><span class="quote-kind">${esc(kindLabels[excerpt.kind]||excerpt.kind)}</span><span>${esc(location)}</span></div>
     <blockquote class="source-quote">${esc(excerpt.verbatim_excerpt||'')}</blockquote>
-    <div class="provenance"><strong>Fonte (verbatim).</strong> ${esc(ids)}${ids?' · ':''}SHA ${esc(String(excerpt.excerpt_sha256||'').slice(0,12))}…</div>
+    <div class="provenance"><strong>Trecho literal da fonte.</strong> ${esc(ids)}${ids?' · ':''}SHA ${esc(String(excerpt.excerpt_sha256||'').slice(0,12))}…</div>
   </article>`;
 }
 
@@ -159,9 +159,9 @@ function reviewProfileHtml(profile,machine){
     const terms=(matches[domain]||[]).slice(0,6);
     return `<div class="snapshot-item"><strong>${esc(domainLabels[domain]||domain)}</strong><span>${terms.length?esc(terms.join(' · ')):'sinal detectado'}</span></div>`;
   }).join('');
-  return `<div class="detail-chips"><span class="mini-pill">${esc(classification.primary)}</span>${classification.subtype?`<span class="mini-pill">${esc(classification.subtype)}</span>`:''}<span class="mini-pill">${esc(band)}</span><span class="mini-pill">score operacional ${esc(fmtScore(machine?.score))}</span></div>
+  return `<div class="detail-chips"><span class="mini-pill">${esc(classification.primary)}</span>${classification.subtype?`<span class="mini-pill">${esc(classification.subtype)}</span>`:''}<span class="mini-pill">${esc(band)}</span><span class="mini-pill">pontuação operacional ${esc(fmtScore(machine?.score))}</span></div>
     ${domainRows?`<div class="snapshot-grid">${domainRows}</div>`:'<p class="provenance">Nenhum domínio operacional específico detectado pelas regras atuais.</p>'}
-    <p class="provenance">Perfil determinístico para navegação. Não é decisão de elegibilidade, inclusão/exclusão, qualidade, risco de viés, certeza ou recomendação.</p>`;
+    <p class="provenance">Perfil determinístico para navegação. Não é decisão de elegibilidade, inclusão ou exclusão, qualidade, risco de viés, certeza ou recomendação.</p>`;
 }
 
 function detailHtml(data){
@@ -175,7 +175,7 @@ function detailHtml(data){
   const supporting=(data.evidence_excerpts||[]).filter(item=>!['main_result','secondary_result'].includes(item.kind));
   const effectiveClass=data.document_subtype||profile?.primary_document_class||card.document_class;
   const classification=classPresentation(effectiveClass,data.canonical_document_class);
-  const chips=[identity.year,classification.primary,classification.subtype,providerLabels[identity.source_provider]||identity.source_provider,fullTextLabels[card.full_text_status]||card.full_text_status,tierLabel(priority.reference_tier),priority.reference_rank?`rank #${fmt(priority.reference_rank)}`:'',priority.reference_score!==null&&priority.reference_score!==undefined?`score ${fmtScore(priority.reference_score)}`:''].filter(Boolean);
+  const chips=[identity.year,classification.primary,classification.subtype,providerLabels[identity.source_provider]||identity.source_provider,fullTextLabels[card.full_text_status]||card.full_text_status,tierLabel(priority.reference_tier),priority.reference_rank?`posição #${fmt(priority.reference_rank)}`:'',priority.reference_score!==null&&priority.reference_score!==undefined?`pontuação operacional ${fmtScore(priority.reference_score)}`:''].filter(Boolean);
   return `<div class="detail-head">
     <h2 id="articleDetailTitle" tabindex="-1">${esc(identity.title||'Sem título')}</h2>
     <div class="detail-ref">${esc(reference.reference_stub||'Referência incompleta')}</div>
@@ -183,13 +183,13 @@ function detailHtml(data){
   </div>
   <section class="detail-section"><h3>Perfil documental</h3>${reviewProfileHtml(profile,machine)}</section>
   <section class="detail-section"><h3>Visão rápida</h3>${snapshotHtml(card.study_snapshot)}</section>
-  <section class="detail-section"><h3>Principais resultados</h3>${results.length?results.map(resultHtml).join(''):'<p class="provenance">Nenhum ResultBundle materializado para este artigo.</p>'}</section>
+  <section class="detail-section"><h3>Principais resultados</h3>${results.length?results.map(resultHtml).join(''):'<p class="provenance">Nenhum pacote de resultados materializado para este artigo.</p>'}</section>
   <section class="detail-section"><h3>Trechos-chave</h3>${supporting.length?supporting.map(excerptHtml).join(''):'<p class="provenance">Nenhum trecho adicional selecionado.</p>'}</section>
   <section class="detail-section"><h3>Prioridade operacional</h3>
-    <div class="provenance">${esc(tierLabel(priority.reference_tier)||'Tier n/d')} · rank ${esc(priority.reference_rank?`#${fmt(priority.reference_rank)}`:'n/d')} · score ${esc(fmtScore(priority.reference_score))}. Esses valores orientam ordem de leitura/processamento e não são julgamento científico.</div>
+    <div class="provenance">${esc(tierLabel(priority.reference_tier)||'Camada n/d')} · posição ${esc(priority.reference_rank?`#${fmt(priority.reference_rank)}`:'n/d')} · pontuação operacional ${esc(fmtScore(priority.reference_score))}. Esses valores orientam ordem de leitura e processamento; não representam julgamento científico.</div>
   </section>
-  <section class="detail-section"><h3>Proveniência e custo</h3>
-    <div class="provenance">Cache: ${esc(String(card.cache_key||'').slice(0,16))}… · contexto compacto: ${fmt(card.llm_context_chars)} caracteres · chamadas externas de LLM nesta etapa: ${Number(card.token_cost_policy?.external_llm_calls||0)} · texto integral enviado para LLM: ${card.token_cost_policy?.full_text_sent_to_llm?'sim':'não'}.</div>
+  <section class="detail-section"><h3>Proveniência e processamento</h3>
+    <div class="provenance">Registro de cache: ${esc(String(card.cache_key||'').slice(0,16))}… · contexto estruturado: ${fmt(card.llm_context_chars)} caracteres. Esta área mostra metadados e estruturas necessárias à inspeção do documento; detalhes de implementação interna não definem a interpretação científica.</div>
   </section>`;
 }
 
