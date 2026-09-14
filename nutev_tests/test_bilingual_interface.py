@@ -61,6 +61,10 @@ def test_i18n_is_ui_only_and_protects_scientific_source_content() -> None:
     ):
         assert protected in script
 
+    assert "data-article-title" in read("evidence.js")
+    assert "data-article-title" in read("review-routes.js")
+    assert "data-nutev-no-translate" in read("review-routes.js")
+
 
 def test_bilingual_bootstrap_covers_core_product_and_scientific_flows() -> None:
     tenant = read("tenant-session.js")
@@ -72,6 +76,8 @@ def test_bilingual_bootstrap_covers_core_product_and_scientific_flows() -> None:
         "synthesis-flow.js",
         "dashboard-visual.js",
         "strategy-flow-sync.js",
+        "evidence.js",
+        "review-routes.js",
     ):
         assert "import './i18n.js'" in read(name)
 
