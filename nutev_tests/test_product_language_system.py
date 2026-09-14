@@ -18,6 +18,9 @@ PRIMARY_PRODUCT_SURFACES = (
     "evidence-map.html",
     "radar.html",
     "review.html",
+    "quality.html",
+    "strategy.html",
+    "scientific-dashboard.html",
     "advanced.html",
     "ask.html",
     "ask.js",
@@ -32,22 +35,19 @@ PRIMARY_PRODUCT_SURFACES = (
     "synthesis-brief.html",
 )
 
-# Explicit technical debt inventory. These files still contain historical labels in
-# source markup and must be removed from this allowlist as the canonical shell pass
-# reaches each scientific/governance surface.
+# Explicit technical debt inventory. Files leave this set as the canonical shell
+# pass reaches each scientific/governance surface. The test prevents new debt from
+# appearing silently outside this reviewed list.
 LEGACY_PRESENTATION_ALLOWLIST = {
     "claim-appraisal.html",
     "evidence-claims.html",
     "evidence-sets.html",
     "press-review.html",
-    "quality.html",
     "recommendation-candidates.html",
     "recommendation-human-validation.html",
     "regional-routes.html",
     "review-qa.html",
     "review-routes.html",
-    "scientific-dashboard.html",
-    "strategy.html",
     "synthesis-governance.html",
     "synthesis-publication.html",
     "synthesis-release.html",
@@ -101,6 +101,8 @@ def test_product_surfaces_use_system_first_names() -> None:
         "Mapa de Evidências",
         "Radar de Evidências",
         "Explorador de Evidências",
+        "Observatório de Qualidade",
+        "Laboratório de Estratégia",
     ):
         assert expected in source
 
@@ -116,6 +118,12 @@ def test_legacy_product_language_is_confined_to_explicit_debt_allowlist() -> Non
     unexpected = set(debt) - LEGACY_PRESENTATION_ALLOWLIST
     assert not unexpected, f"Legacy product language escaped allowlist: {sorted(unexpected)}"
     assert set(debt) <= LEGACY_PRESENTATION_ALLOWLIST
+
+
+def test_validation_entrypoint_uses_system_identity() -> None:
+    source = (VALIDATION / "index.html").read_text(encoding="utf-8")
+    assert "Sistema de Evidências Científicas" in source
+    assert "Evidence Engine" not in source
 
 
 def test_advanced_lab_uses_system_language_for_secondary_navigation() -> None:
