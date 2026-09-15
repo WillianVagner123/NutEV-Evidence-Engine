@@ -11,16 +11,23 @@ from urllib.parse import parse_qs, quote, urlparse
 
 from nutev.tenancy.access_requests import SQLiteAccessRequestStore
 from nutev.tenancy.models import GlobalRole
+from nutev.tenancy.password_reset import SQLitePasswordResetStore
+from transactional_email import public_origin, send_access_approved_email, send_password_reset_email
 from server import APP_ROOT, NutEVHandler
 
 _SERVICE_LOCK = threading.Lock()
 _SERVICE: SQLiteAccessRequestStore | None = None
+_RESET_SERVICE: SQLitePasswordResetStore | None = None
 _RATE_LOCK = threading.Lock()
 _ACCESS_REQUEST_ATTEMPTS: dict[str, deque[float]] = defaultdict(deque)
 _INVITATION_ATTEMPTS: dict[str, deque[float]] = defaultdict(deque)
+_PASSWORD_RESET_REQUEST_ATTEMPTS: dict[str, deque[float]] = defaultdict(deque)
+_PASSWORD_RESET_CONFIRM_ATTEMPTS: dict[str, deque[float]] = defaultdict(deque)
 _RATE_WINDOW_SECONDS = 10 * 60
 _ACCESS_REQUEST_IP_LIMIT = 5
 _INVITATION_IP_LIMIT = 20
+_PASSWORD_RESET_REQUEST_IP_LIMIT = 5
+_PASSWORD_RESET_CONFIRM_IP_LIMIT = 20
 _ADMIN_PATH_RE = re.compile(r"^/api/admin/access-requests/(?P<request_id>acr_[a-f0-9]{32})/(?P<action>approve|reject)$")
 _INSTALLED = False
 
@@ -38,6 +45,14 @@ def _service() -> SQLiteAccessRequestStore:
         if _SERVICE is None:
             _SERVICE = SQLiteAccessRequestStore(_platform_database())
         return _SERVICE
+
+
+def _reset_service() -> SQLitePasswordResetStore:
+    global _RESET_SERVICE
+    with _SERVICE_LOCK:
+        if _RESET_SERVICE is None:
+            _RESET_SERVICE = SQLitePasswordResetStore(_platform_database())
+        return _RESET_SERVICE
 
 
 def _client_ip(handler: NutEVHandler) -> str:
@@ -95,12 +110,9 @@ def _submit_access_request(handler: NutEVHandler) -> bool:
     except ValueError:
         handler._json({"error": "invalid_access_request"}, HTTPStatus.BAD_REQUEST)
         return True
-
-    # Honeypot: browsers leave this empty. Keep the public response indistinguishable.
     if str(payload.get("website") or "").strip():
         handler._json({"status": "received"}, HTTPStatus.ACCEPTED)
         return True
-
     try:
         _service().submit(
             email=str(payload.get("email") or ""),
@@ -109,23 +121,12 @@ def _submit_access_request(handler: NutEVHandler) -> bool:
             intended_use=str(payload.get("intended_use") or ""),
         )
     except ValueError as exc:
-        handler._json(
-            {"error": "invalid_access_request", "message": str(exc)},
-            HTTPStatus.BAD_REQUEST,
-        )
+        handler._json({"error": "invalid_access_request", "message": str(exc)}, HTTPStatus.BAD_REQUEST)
         return True
     except Exception:
         handler._json({"error": "access_request_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
         return True
-
-    # Do not reveal whether the email already has an account or an open request.
-    handler._json(
-        {
-            "status": "received",
-            "message": "Sua solicitação foi recebida para análise.",
-        },
-        HTTPStatus.ACCEPTED,
-    )
+    handler._json({"status": "received", "message": "Sua solicitação foi recebida para análise."}, HTTPStatus.ACCEPTED)
     return True
 
 
@@ -141,15 +142,12 @@ def _invitation_status(handler: NutEVHandler, parsed) -> bool:
     if request is None:
         handler._json({"valid": False}, HTTPStatus.OK)
         return True
-    handler._json(
-        {
-            "valid": True,
-            "display_name": request.display_name,
-            "email": request.email,
-            "expires_at": request.invitation_expires_at.isoformat() if request.invitation_expires_at else None,
-        },
-        HTTPStatus.OK,
-    )
+    handler._json({
+        "valid": True,
+        "display_name": request.display_name,
+        "email": request.email,
+        "expires_at": request.invitation_expires_at.isoformat() if request.invitation_expires_at else None,
+    }, HTTPStatus.OK)
     return True
 
 
@@ -175,15 +173,82 @@ def _accept_invitation(handler: NutEVHandler) -> bool:
     except Exception:
         handler._json({"error": "access_request_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
         return True
-    handler._json(
-        {
-            "status": "account_created",
-            "email": user.email,
-            "display_name": user.display_name,
-            "login_path": "/login.html",
-        },
-        HTTPStatus.CREATED,
-    )
+    handler._json({"status": "account_created", "email": user.email, "display_name": user.display_name, "login_path": "/login.html"}, HTTPStatus.CREATED)
+    return True
+
+
+def _password_reset_request(handler: NutEVHandler) -> bool:
+    if not _pilot_enabled(handler):
+        return True
+    if not _consume(_PASSWORD_RESET_REQUEST_ATTEMPTS, _client_ip(handler), _PASSWORD_RESET_REQUEST_IP_LIMIT):
+        handler._json({"error": "password_reset_rate_limited"}, HTTPStatus.TOO_MANY_REQUESTS)
+        return True
+    try:
+        payload = handler._read_json()
+        email = str(payload.get("email") or "")
+        ticket = _reset_service().issue(email)
+        if ticket is not None:
+            origin = public_origin()
+            if origin:
+                path = f"/reset-password.html?token={quote(ticket.token, safe='')}"
+                send_password_reset_email(
+                    recipient=ticket.reset.email,
+                    display_name=ticket.reset.display_name,
+                    reset_url=origin + path,
+                )
+    except Exception:
+        # The public response remains deliberately generic to avoid account enumeration.
+        pass
+    handler._json({
+        "status": "received",
+        "message": "Se existir uma conta ativa para este e-mail, enviaremos as instruções de redefinição.",
+    }, HTTPStatus.ACCEPTED)
+    return True
+
+
+def _password_reset_status(handler: NutEVHandler, parsed) -> bool:
+    if not _pilot_enabled(handler):
+        return True
+    token = str((parse_qs(parsed.query).get("token") or [""])[0]).strip()
+    try:
+        reset = _reset_service().inspect(token)
+    except Exception:
+        handler._json({"error": "password_reset_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
+        return True
+    if reset is None:
+        handler._json({"valid": False}, HTTPStatus.OK)
+        return True
+    handler._json({
+        "valid": True,
+        "display_name": reset.display_name,
+        "email": reset.email,
+        "expires_at": reset.expires_at.isoformat(),
+    }, HTTPStatus.OK)
+    return True
+
+
+def _password_reset_confirm(handler: NutEVHandler) -> bool:
+    if not _pilot_enabled(handler):
+        return True
+    if not _consume(_PASSWORD_RESET_CONFIRM_ATTEMPTS, _client_ip(handler), _PASSWORD_RESET_CONFIRM_IP_LIMIT):
+        handler._json({"error": "password_reset_rate_limited"}, HTTPStatus.TOO_MANY_REQUESTS)
+        return True
+    try:
+        payload = handler._read_json()
+        user = _reset_service().consume(
+            str(payload.get("token") or ""),
+            password=str(payload.get("password") or ""),
+        )
+    except KeyError:
+        handler._json({"error": "invalid_or_expired_password_reset"}, HTTPStatus.BAD_REQUEST)
+        return True
+    except ValueError as exc:
+        handler._json({"error": "invalid_password", "message": str(exc)}, HTTPStatus.BAD_REQUEST)
+        return True
+    except Exception:
+        handler._json({"error": "password_reset_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
+        return True
+    handler._json({"status": "password_updated", "email": user.email, "login_path": "/login.html"}, HTTPStatus.OK)
     return True
 
 
@@ -200,13 +265,7 @@ def _admin_list(handler: NutEVHandler, parsed) -> bool:
     except Exception:
         handler._json({"error": "access_request_service_unavailable"}, HTTPStatus.SERVICE_UNAVAILABLE)
         return True
-    handler._json(
-        {
-            "requests": [item.admin_payload() for item in requests],
-            "status": status,
-            "administrator": session.user.display_name,
-        }
-    )
+    handler._json({"requests": [item.admin_payload() for item in requests], "status": status, "administrator": session.user.display_name})
     return True
 
 
@@ -219,22 +278,23 @@ def _admin_decision(handler: NutEVHandler, match: re.Match[str]) -> bool:
     try:
         if action == "approve":
             invitation = _service().approve(request_id, decided_by=session.principal.user_id)
-            handler._json(
-                {
-                    "status": "approved",
-                    "request": invitation.request.admin_payload(),
-                    "invitation_path": f"/set-password.html?token={quote(invitation.token, safe='')}",
-                    "invitation_is_single_display": True,
-                },
-                HTTPStatus.OK,
+            invitation_path = f"/set-password.html?token={quote(invitation.token, safe='')}"
+            origin = public_origin()
+            delivery = send_access_approved_email(
+                recipient=invitation.request.email,
+                display_name=invitation.request.display_name,
+                invitation_url=(origin + invitation_path) if origin else "",
             )
+            handler._json({
+                "status": "approved",
+                "request": invitation.request.admin_payload(),
+                "invitation_path": invitation_path,
+                "invitation_is_single_display": True,
+                "email_delivery": delivery.status,
+            }, HTTPStatus.OK)
             return True
         payload = handler._read_json()
-        request = _service().reject(
-            request_id,
-            decided_by=session.principal.user_id,
-            reason=str(payload.get("reason") or ""),
-        )
+        request = _service().reject(request_id, decided_by=session.principal.user_id, reason=str(payload.get("reason") or ""))
         handler._json({"status": "rejected", "request": request.admin_payload()}, HTTPStatus.OK)
         return True
     except KeyError:
@@ -251,6 +311,8 @@ def _admin_decision(handler: NutEVHandler, match: re.Match[str]) -> bool:
 def _access_get(handler: NutEVHandler, parsed) -> bool:
     if parsed.path == "/api/access-invitations/status":
         return _invitation_status(handler, parsed)
+    if parsed.path == "/api/auth/password-reset/status":
+        return _password_reset_status(handler, parsed)
     if parsed.path == "/api/admin/access-requests":
         return _admin_list(handler, parsed)
     return False
@@ -261,6 +323,10 @@ def _access_post(handler: NutEVHandler, parsed) -> bool:
         return _submit_access_request(handler)
     if parsed.path == "/api/access-invitations/accept":
         return _accept_invitation(handler)
+    if parsed.path == "/api/auth/password-reset/request":
+        return _password_reset_request(handler)
+    if parsed.path == "/api/auth/password-reset/confirm":
+        return _password_reset_confirm(handler)
     match = _ADMIN_PATH_RE.fullmatch(parsed.path)
     if match:
         return _admin_decision(handler, match)
@@ -268,12 +334,11 @@ def _access_post(handler: NutEVHandler, parsed) -> bool:
 
 
 def install_access_request_routes() -> None:
-    """Install governed access-request routes without touching scientific state."""
+    """Install governed access and recovery routes without touching scientific state."""
     global _INSTALLED
     if _INSTALLED:
         return
     _INSTALLED = True
-
     original_get = NutEVHandler.do_GET
     original_post = NutEVHandler.do_POST
 

@@ -14,6 +14,7 @@ ACCESS_FLOW_PREFIXES = (
     "/api/access-requests",
     "/api/access-invitations",
     "/api/admin/access-requests",
+    "/api/auth/password-reset",
 )
 TENANT_PREFIXES = (
     "/api/search/jobs", "/api/searches", "/api/library", "/api/application",
@@ -30,7 +31,6 @@ def canonical_request_path(target: str) -> str:
     if re.search(r"%(?![0-9a-fA-F]{2})", raw):
         raise ValueError("malformed escape")
     path = unquote(raw, errors="strict")
-    # SimpleHTTPRequestHandler also decodes: no second interpretation allowed.
     if unquote(path) != path or re.search(r"%2[fF]|%5[cC]", raw):
         raise ValueError("ambiguous encoded path")
     if not path.startswith("/") or "\\" in path or "//" in path:
@@ -46,15 +46,13 @@ def pilot_route_kind(path: str) -> str:
     if path in PUBLIC_API:
         return "public_api"
     if any(path == prefix or path.startswith(prefix + "/") for prefix in ACCESS_FLOW_PREFIXES):
-        # Public request/invitation routes and platform-admin routes share one installer.
-        # The admin endpoints re-authorize PLATFORM_ADMIN server-side before any data access.
         return "public_api"
     if path == "/api/article1/d132" or path.startswith("/api/article1/d132/"):
-        return "guest_scoped"  # Its existing adapter checks the scoped guest credential.
+        return "guest_scoped"
     if any(path == p or path.startswith(p + "/") for p in TENANT_PREFIXES):
         return "private_api"
     if path.startswith("/api/"):
-        return "blocked"  # Legacy science/workbench/loopback is not tenant authorization.
+        return "blocked"
     if path.startswith("/agent-context/article1/"):
         name = path.removeprefix("/agent-context/article1/")
         return "article1_context" if name in A1_CONTEXT_FILES else "blocked"
@@ -62,7 +60,7 @@ def pilot_route_kind(path: str) -> str:
         return "static"
     parts = PurePosixPath(path).parts
     if any(p.startswith(".") for p in parts) or PurePosixPath(path).suffix not in STATIC_SUFFIXES:
-        return "blocked"  # No directory listing, source, database, manifest or private asset.
+        return "blocked"
     return "static"
 
 
@@ -78,7 +76,6 @@ def same_origin_write(headers, *, secure: bool) -> bool:
             return False
         if parsed.path not in {"", "/"} or parsed.query or parsed.fragment or parsed.username:
             return False
-    # Non-browser clients are allowed, but form content cannot invoke JSON writes.
     content_type = str(headers.get("Content-Type", "")).split(";", 1)[0].strip().lower()
     return content_type == "application/json" or (
         not content_type and str(headers.get("Content-Length", "0")) == "0"
