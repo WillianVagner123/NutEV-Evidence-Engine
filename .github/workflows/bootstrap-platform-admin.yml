@@ -29,8 +29,17 @@ jobs:
       HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
       BOOTSTRAP_ADMIN_EMAIL: wvagners@hotmail.com
+      BOOTSTRAP_ADMIN_DISPLAY_NAME: Willian Vagner
+      BOOTSTRAP_ADMIN_INSTITUTION: NutEV
+      BOOTSTRAP_ADMIN_INTENDED_USE: First platform administrator bootstrap for governed NutEV access.
 
     steps:
+      - name: Checkout bootstrap encryption key
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          persist-credentials: false
+
       - name: Validate trusted connection configuration
         env:
           HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
@@ -42,6 +51,8 @@ jobs:
           test -n "$HETZNER_APP_DIR"
           test -n "$HETZNER_KNOWN_HOSTS"
           test -n "$HETZNER_SSH_KEY"
+          test -s config/bootstrap_invitation_public.pem
+          openssl pkey -pubin -in config/bootstrap_invitation_public.pem -noout
           install -d -m 700 ~/.ssh
           printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
@@ -49,14 +60,16 @@ jobs:
           printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      - name: Ensure platform administrator exists
+      - name: Ensure platform administrator exists or request invitation
+        id: ensure
         shell: bash
         run: |
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
           APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
           ADMIN_EMAIL_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_EMAIL")
-          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+
+          REMOTE_RESULT=$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
             "APP_DIR=$APP_DIR_Q ADMIN_EMAIL=$ADMIN_EMAIL_Q bash -s" <<'REMOTE'
           set -euo pipefail
@@ -93,9 +106,15 @@ jobs:
             python tools/grant_platform_admin.py --email "$ADMIN_EMAIL" 2>&1)
           RC=$?
           set -e
+
+          if [[ "$RC" -eq 4 ]]; then
+            echo "platform_admin_state=INVITATION_REQUIRED changed=false"
+            exit 0
+          fi
+
           printf '%s\n' "$RESULT"
           if [[ "$RC" -ne 0 ]]; then
-            echo "::error::No active PLATFORM_ADMIN exists and the designated existing identity could not be promoted. No user, password, workspace, project, or scientific state was created or changed." >&2
+            echo "First-admin bootstrap failed closed without creating a user, password, workspace, project, or scientific state." >&2
             exit "$RC"
           fi
 
@@ -116,3 +135,53 @@ jobs:
           (( VERIFY_COUNT > 0 ))
           echo "platform_admin_state=READY existing_admin_count=$VERIFY_COUNT changed=true"
           REMOTE
+          )
+
+          printf '%s\n' "$REMOTE_RESULT"
+          if grep -qx 'platform_admin_state=INVITATION_REQUIRED changed=false' <<<"$REMOTE_RESULT"; then
+            printf 'invitation_required=true\n' >> "$GITHUB_OUTPUT"
+          else
+            printf 'invitation_required=false\n' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Issue invitation and encrypt token in transit
+        if: ${{ steps.ensure.outputs.invitation_required == 'true' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          ADMIN_EMAIL_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_EMAIL")
+          DISPLAY_NAME_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_DISPLAY_NAME")
+          INSTITUTION_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_INSTITUTION")
+          INTENDED_USE_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_INTENDED_USE")
+
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q ADMIN_EMAIL=$ADMIN_EMAIL_Q DISPLAY_NAME=$DISPLAY_NAME_Q INSTITUTION=$INSTITUTION_Q INTENDED_USE=$INTENDED_USE_Q bash -s" <<'REMOTE' \
+            | openssl pkeyutl -encrypt -pubin \
+                -inkey config/bootstrap_invitation_public.pem \
+                -pkeyopt rsa_padding_mode:oaep \
+                -pkeyopt rsa_oaep_md:sha256 \
+                -out bootstrap-invitation-token.enc
+          set -euo pipefail
+          cd "$APP_DIR"
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+            python tools/seed_bootstrap_access_invitation.py \
+              --email "$ADMIN_EMAIL" \
+              --display-name "$DISPLAY_NAME" \
+              --institution "$INSTITUTION" \
+              --intended-use "$INTENDED_USE"
+          REMOTE
+
+          test -s bootstrap-invitation-token.enc
+          echo "platform_admin_state=INVITATION_REQUIRED encrypted_token_artifact=true raw_token_logged=false"
+
+      - name: Upload encrypted invitation handoff
+        if: ${{ steps.ensure.outputs.invitation_required == 'true' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: bootstrap-platform-admin-invitation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: bootstrap-invitation-token.enc
+          if-no-files-found: error
+          retention-days: 1
