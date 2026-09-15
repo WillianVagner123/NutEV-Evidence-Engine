@@ -1,11 +1,9 @@
 name: bootstrap-platform-admin
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - tools/grant_platform_admin.py
-      - .github/workflows/bootstrap-platform-admin.yml
+  workflow_run:
+    workflows: ["deploy-hetzner"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -18,6 +16,9 @@ concurrency:
 jobs:
   bootstrap:
     name: ensure first PLATFORM_ADMIN
+    if: >-
+      ${{ github.event_name == 'workflow_dispatch' ||
+          github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     environment: HETZNER
     timeout-minutes: 10
@@ -30,10 +31,6 @@ jobs:
       BOOTSTRAP_ADMIN_EMAIL: wvagners@hotmail.com
 
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
       - name: Validate trusted connection configuration
         env:
           HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
