@@ -78,49 +78,61 @@ jobs:
           CONTAINER=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml ps -q nutev)
           test -n "$CONTAINER"
 
-          ADMIN_COUNT=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
-            python - <<'PY'
-          import json, os, sqlite3
+          IDENTITY_STATE=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+            python - "$ADMIN_EMAIL" <<'PY'
+          import json
+          import os
+          import sqlite3
+          import sys
+
+          email = sys.argv[1].strip().casefold()
           database = os.environ.get('NUTEV_AUTH_DB') or '/app/project_output_reference/platform/auth.sqlite3'
           with sqlite3.connect(database) as connection:
-              rows = connection.execute("SELECT status, global_roles_json FROM platform_auth_users").fetchall()
-          count = 0
-          for status, payload in rows:
-              try:
-                  roles = json.loads(payload or '[]')
-              except json.JSONDecodeError:
-                  continue
-              if status == 'active' and 'PLATFORM_ADMIN' in roles:
-                  count += 1
-          print(count)
+              rows = connection.execute(
+                  "SELECT status, global_roles_json FROM platform_auth_users"
+              ).fetchall()
+              admin_count = 0
+              for status, payload in rows:
+                  try:
+                      roles = json.loads(payload or '[]')
+                  except json.JSONDecodeError:
+                      continue
+                  if status == 'active' and 'PLATFORM_ADMIN' in roles:
+                      admin_count += 1
+              if admin_count > 0:
+                  print(f'READY:{admin_count}')
+                  raise SystemExit(0)
+              row = connection.execute(
+                  "SELECT status FROM platform_auth_users WHERE email = ? COLLATE NOCASE LIMIT 1",
+                  (email,),
+              ).fetchone()
+          if row is None:
+              print('MISSING_USER')
+          elif str(row[0]) == 'active':
+              print('EXISTING_ACTIVE_USER')
+          else:
+              print('EXISTING_INACTIVE_USER')
           PY
           )
 
-          if [[ "$ADMIN_COUNT" =~ ^[0-9]+$ ]] && (( ADMIN_COUNT > 0 )); then
-            echo "platform_admin_state=READY existing_admin_count=$ADMIN_COUNT changed=false"
-            exit 0
-          fi
-
-          set +e
-          RESULT=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
-            python tools/grant_platform_admin.py --email "$ADMIN_EMAIL" 2>&1)
-          RC=$?
-          set -e
-
-          if [[ "$RC" -eq 4 ]]; then
-            echo "platform_admin_state=INVITATION_REQUIRED changed=false"
-            exit 0
-          fi
-
-          printf '%s\n' "$RESULT"
-          if [[ "$RC" -ne 0 ]]; then
-            echo "First-admin bootstrap failed closed without creating a user, password, workspace, project, or scientific state." >&2
-            exit "$RC"
-          fi
-
-          VERIFY_COUNT=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
-            python - <<'PY'
-          import json, os, sqlite3
+          case "$IDENTITY_STATE" in
+            READY:*)
+              ADMIN_COUNT="${IDENTITY_STATE#READY:}"
+              [[ "$ADMIN_COUNT" =~ ^[0-9]+$ ]]
+              (( ADMIN_COUNT > 0 ))
+              echo "platform_admin_state=READY existing_admin_count=$ADMIN_COUNT changed=false"
+              ;;
+            MISSING_USER)
+              echo "platform_admin_state=INVITATION_REQUIRED changed=false"
+              ;;
+            EXISTING_ACTIVE_USER)
+              docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+                python tools/grant_platform_admin.py --email "$ADMIN_EMAIL"
+              VERIFY_COUNT=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+                python - <<'PY'
+          import json
+          import os
+          import sqlite3
           database = os.environ.get('NUTEV_AUTH_DB') or '/app/project_output_reference/platform/auth.sqlite3'
           with sqlite3.connect(database) as connection:
               rows = connection.execute("SELECT status, global_roles_json FROM platform_auth_users").fetchall()
@@ -130,10 +142,20 @@ jobs:
           )
           print(count)
           PY
-          )
-          [[ "$VERIFY_COUNT" =~ ^[0-9]+$ ]]
-          (( VERIFY_COUNT > 0 ))
-          echo "platform_admin_state=READY existing_admin_count=$VERIFY_COUNT changed=true"
+              )
+              [[ "$VERIFY_COUNT" =~ ^[0-9]+$ ]]
+              (( VERIFY_COUNT > 0 ))
+              echo "platform_admin_state=READY existing_admin_count=$VERIFY_COUNT changed=true"
+              ;;
+            EXISTING_INACTIVE_USER)
+              echo "First-admin identity exists but is not active; bootstrap fails closed." >&2
+              exit 5
+              ;;
+            *)
+              echo "Unexpected first-admin identity state; bootstrap fails closed." >&2
+              exit 6
+              ;;
+          esac
           REMOTE
           )
 
