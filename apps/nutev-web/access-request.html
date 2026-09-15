@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR" data-title-pt="Solicitar acesso — NutEV" data-title-en="Request access — NutEV">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <title>Solicitar acesso — NutEV</title>
+  <meta name="description" content="Solicitação governada de acesso ao Sistema de Evidências Científicas NutEV.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./i18n.css">
+  <link rel="stylesheet" href="./access-flow.css">
+</head>
+<body class="access-public-page">
+  <main class="access-public-shell">
+    <section class="access-intro" aria-labelledby="accessIntroTitle">
+      <div class="access-brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span data-pt="Sistema de Evidências Científicas" data-en="Scientific Evidence System">Sistema de Evidências Científicas</span></div></div>
+      <span class="access-eyebrow" data-pt="Acesso governado" data-en="Governed access">Acesso governado</span>
+      <h1 id="accessIntroTitle" data-pt="Solicite uma conta para trabalhar no NutEV." data-en="Request an account to work in NutEV.">Solicite uma conta para trabalhar no NutEV.</h1>
+      <p data-pt="O cadastro não é aberto automaticamente. Cada solicitação é revisada antes da criação da conta, sem conceder acesso científico privado por padrão." data-en="Registration is not automatically open. Each request is reviewed before an account is created, without granting private scientific access by default.">O cadastro não é aberto automaticamente. Cada solicitação é revisada antes da criação da conta, sem conceder acesso científico privado por padrão.</p>
+      <div class="access-principles">
+        <div class="access-principle"><strong data-pt="1. Você solicita" data-en="1. You request">1. Você solicita</strong><span data-pt="Informe quem você é, sua instituição e como pretende usar o sistema." data-en="Tell us who you are, your institution, and how you plan to use the system.">Informe quem você é, sua instituição e como pretende usar o sistema.</span></div>
+        <div class="access-principle"><strong data-pt="2. Um administrador revisa" data-en="2. An administrator reviews">2. Um administrador revisa</strong><span data-pt="A aprovação cria somente um convite de conta; não libera projetos ou dados científicos privados." data-en="Approval creates only an account invitation; it does not unlock projects or private scientific data.">A aprovação cria somente um convite de conta; não libera projetos ou dados científicos privados.</span></div>
+        <div class="access-principle"><strong data-pt="3. Você define sua senha" data-en="3. You set your password">3. Você define sua senha</strong><span data-pt="O convite é temporário e de uso único. A senha é criada por você e armazenada apenas como hash seguro." data-en="The invitation is temporary and single-use. You create the password, which is stored only as a secure hash.">O convite é temporário e de uso único. A senha é criada por você e armazenada apenas como hash seguro.</span></div>
+      </div>
+    </section>
+
+    <section class="access-card" aria-labelledby="accessFormTitle">
+      <span class="access-eyebrow" data-pt="Solicitação" data-en="Request">Solicitação</span>
+      <h1 id="accessFormTitle" data-pt="Solicitar acesso" data-en="Request access">Solicitar acesso</h1>
+      <p data-pt="Preencha os dados abaixo. A resposta pública é deliberadamente genérica para proteger a existência de contas e solicitações anteriores." data-en="Complete the information below. The public response is deliberately generic to protect whether an account or earlier request exists.">Preencha os dados abaixo. A resposta pública é deliberadamente genérica para proteger a existência de contas e solicitações anteriores.</p>
+
+      <form id="accessRequestForm" class="access-form" novalidate>
+        <label><span data-pt="Nome completo" data-en="Full name">Nome completo</span>
+          <input id="accessName" name="display_name" type="text" autocomplete="name" minlength="2" maxlength="120" required>
+        </label>
+        <label><span data-pt="E-mail" data-en="Email">E-mail</span>
+          <input id="accessEmail" name="email" type="email" autocomplete="email" inputmode="email" maxlength="320" required>
+        </label>
+        <label><span data-pt="Instituição / organização" data-en="Institution / organization">Instituição / organização</span>
+          <input id="accessInstitution" name="institution" type="text" autocomplete="organization" minlength="2" maxlength="160" required data-pt-placeholder="Ex.: universidade, clínica, grupo de pesquisa ou independente" data-en-placeholder="E.g. university, clinic, research group, or independent">
+        </label>
+        <label><span data-pt="Como pretende usar o NutEV?" data-en="How do you plan to use NutEV?">Como pretende usar o NutEV?</span>
+          <textarea id="accessUse" name="intended_use" minlength="10" maxlength="1200" required data-pt-placeholder="Descreva brevemente o projeto, tipo de pesquisa ou finalidade científica." data-en-placeholder="Briefly describe the project, research type, or scientific purpose."></textarea>
+          <span class="access-help" data-pt="Não inclua senhas, dados clínicos identificáveis ou informações sensíveis neste campo." data-en="Do not include passwords, identifiable clinical data, or sensitive information in this field.">Não inclua senhas, dados clínicos identificáveis ou informações sensíveis neste campo.</span>
+        </label>
+        <label class="access-honeypot" aria-hidden="true">Website
+          <input id="accessWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+        </label>
+        <button id="accessRequestSubmit" class="access-submit" type="submit" data-pt="Enviar solicitação" data-en="Submit request">Enviar solicitação</button>
+        <div id="accessRequestStatus" class="access-status" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="access-links">
+        <a href="/login.html" data-pt="Já tenho acesso" data-en="I already have access">Já tenho acesso</a>
+        <a href="/" data-pt="Voltar ao início" data-en="Back to home">Voltar ao início</a>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./access-request.js"></script>
+</body>
+</html>

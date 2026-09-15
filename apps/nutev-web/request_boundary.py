@@ -10,6 +10,11 @@ PUBLIC_API = frozenset({
     "/api/auth/status", "/api/auth/login", "/api/auth/logout", "/api/auth/me",
     "/api/context", "/api/context/select", "/api/query/compile",
 })
+ACCESS_FLOW_PREFIXES = (
+    "/api/access-requests",
+    "/api/access-invitations",
+    "/api/admin/access-requests",
+)
 TENANT_PREFIXES = (
     "/api/search/jobs", "/api/searches", "/api/library", "/api/application",
     "/api/review", "/api/exports", "/api/audit", "/api/article2/integrative",
@@ -39,6 +44,10 @@ def canonical_request_path(target: str) -> str:
 
 def pilot_route_kind(path: str) -> str:
     if path in PUBLIC_API:
+        return "public_api"
+    if any(path == prefix or path.startswith(prefix + "/") for prefix in ACCESS_FLOW_PREFIXES):
+        # Public request/invitation routes and platform-admin routes share one installer.
+        # The admin endpoints re-authorize PLATFORM_ADMIN server-side before any data access.
         return "public_api"
     if path == "/api/article1/d132" or path.startswith("/api/article1/d132/"):
         return "guest_scoped"  # Its existing adapter checks the scoped guest credential.

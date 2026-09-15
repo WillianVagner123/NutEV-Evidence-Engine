@@ -59,7 +59,28 @@ Workspace membership and project access are server-authoritative. Client-supplie
 
 ## Provisioning
 
-There is no promise of public self-registration in v1.1.0. Accounts are provisioned explicitly with the maintained operator tooling, including `tools/provision_nutev_user.py`.
+NutEV does **not** provide open self-registration. It supports two governed provisioning paths:
+
+1. operator provisioning with `tools/provision_nutev_user.py`;
+2. a public **request access** form that creates only a pending request.
+
+A public request does not create a platform identity. A server-resolved `PLATFORM_ADMIN` must approve it first. Approval issues a temporary one-time invitation; the invited person then defines their own password. The raw invitation token is not persisted, and the password still passes through the canonical Argon2-backed identity provider.
+
+The access-request endpoints are:
+
+```text
+POST /api/access-requests
+GET  /api/access-invitations/status?token=...
+POST /api/access-invitations/accept
+
+GET  /api/admin/access-requests
+POST /api/admin/access-requests/<request_id>/approve
+POST /api/admin/access-requests/<request_id>/reject
+```
+
+The administrative endpoints authorize `PLATFORM_ADMIN` explicitly. Creating an account through this flow grants no workspace membership, project access, research application or private scientific-data permission by itself.
+
+See [`ACCESS_REQUEST_ONBOARDING.md`](ACCESS_REQUEST_ONBOARDING.md) for the detailed lifecycle and token rules.
 
 The hosted product's tenant/auth databases live on persistent production storage; they are not merged into the bibliographic Registry or treated as scientific evidence.
 
@@ -72,16 +93,18 @@ The Hetzner deployment may retain host/proxy controls such as Caddy for transpor
 The current contract requires, at minimum:
 
 - invalid credentials or invalid sessions fail closed;
-- raw passwords and raw session tokens are not persisted;
+- raw passwords, raw session tokens and raw account-invitation tokens are not persisted;
 - logout revokes the server-side session;
 - disabled/suspended users cannot keep using an otherwise valid session;
 - tenant/project scope is derived server-side;
 - cross-workspace and cross-project access is denied;
 - infrastructure-admin status alone does not grant private scientific read access;
+- access-request approval alone does not grant private scientific read access;
 - production promotion uses the multi-tenant release/death-test gates rather than relying on documentation assertions.
 
 See also:
 
+- [`ACCESS_REQUEST_ONBOARDING.md`](ACCESS_REQUEST_ONBOARDING.md)
 - [`MULTITENANT_WORKSPACE_PROJECT_ACCESS.md`](MULTITENANT_WORKSPACE_PROJECT_ACCESS.md)
 - [`MULTITENANT_APPLICATION_LAYER.md`](MULTITENANT_APPLICATION_LAYER.md)
 - [`FINAL_MULTITENANT_RELEASE_GATE.md`](FINAL_MULTITENANT_RELEASE_GATE.md)

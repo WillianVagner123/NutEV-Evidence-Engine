@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR" data-title-pt="Solicitações de acesso — NutEV" data-title-en="Access requests — NutEV">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <title>Solicitações de acesso — NutEV</title>
+  <meta name="description" content="Administração governada de solicitações de acesso ao NutEV.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./i18n.css">
+  <link rel="stylesheet" href="./access-flow.css">
+</head>
+<body class="access-admin-page">
+  <main class="access-admin-shell">
+    <header class="access-admin-header">
+      <div>
+        <div class="access-brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span data-pt="Sistema de Evidências Científicas" data-en="Scientific Evidence System">Sistema de Evidências Científicas</span></div></div>
+        <span class="access-eyebrow" data-pt="Administração da plataforma" data-en="Platform administration">Administração da plataforma</span>
+        <h1 data-pt="Solicitações de acesso" data-en="Access requests">Solicitações de acesso</h1>
+        <p data-pt="Aprovar uma solicitação cria apenas um convite temporário de conta. Projetos e dados científicos privados continuam exigindo autorização própria." data-en="Approving a request creates only a temporary account invitation. Projects and private scientific data still require their own authorization.">Aprovar uma solicitação cria apenas um convite temporário de conta. Projetos e dados científicos privados continuam exigindo autorização própria.</p>
+      </div>
+      <div class="access-admin-nav">
+        <a href="/" data-pt="Voltar ao NutEV" data-en="Back to NutEV">Voltar ao NutEV</a>
+        <a href="/access-request.html" data-pt="Ver formulário público" data-en="View public form">Ver formulário público</a>
+      </div>
+    </header>
+
+    <section class="access-admin-panel" aria-live="polite">
+      <div class="access-admin-summary">
+        <div><strong id="adminIdentity" data-pt="Validando administrador…" data-en="Validating administrator…">Validando administrador…</strong><div id="adminStatus" class="access-status"></div></div>
+        <div class="admin-filter">
+          <label for="accessStatusFilter" data-pt="Mostrar" data-en="Show">Mostrar</label>
+          <select id="accessStatusFilter" disabled>
+            <option value="pending" data-pt="Pendentes" data-en="Pending">Pendentes</option>
+            <option value="approved" data-pt="Aprovadas / convites ativos" data-en="Approved / active invitations">Aprovadas / convites ativos</option>
+            <option value="accepted" data-pt="Contas criadas" data-en="Accounts created">Contas criadas</option>
+            <option value="rejected" data-pt="Rejeitadas" data-en="Rejected">Rejeitadas</option>
+            <option value="all" data-pt="Todas" data-en="All">Todas</option>
+          </select>
+          <button id="refreshAccessRequests" class="access-action secondary" type="button" disabled data-pt="Atualizar" data-en="Refresh">Atualizar</button>
+        </div>
+      </div>
+
+      <div id="invitationOutput" class="invitation-output">
+        <strong data-pt="Link temporário criado" data-en="Temporary link created">Link temporário criado</strong>
+        <p data-pt="Envie este link somente para a pessoa aprovada. Ele é exibido agora porque o token bruto não fica armazenado no banco." data-en="Send this link only to the approved person. It is shown now because the raw token is not stored in the database.">Envie este link somente para a pessoa aprovada. Ele é exibido agora porque o token bruto não fica armazenado no banco.</p>
+        <code id="invitationLink"></code>
+        <button id="copyInvitationLink" class="access-action secondary" type="button" data-pt="Copiar link" data-en="Copy link">Copiar link</button>
+      </div>
+
+      <div id="accessRequestList" class="access-request-list">
+        <div class="access-empty" data-pt="Carregando solicitações…" data-en="Loading requests…">Carregando solicitações…</div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./access-admin.js"></script>
+</body>
+</html>

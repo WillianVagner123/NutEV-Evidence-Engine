@@ -1,4 +1,4 @@
-import './i18n.js'
+import './access-i18n.js'
 
 const form=document.querySelector('#loginForm')
 const email=document.querySelector('#loginEmail')
