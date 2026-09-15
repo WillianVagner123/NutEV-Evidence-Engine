@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
-"""Seed a one-time access invitation for the first platform administrator.
+"""Issue a canonical one-time access invitation for the first platform admin.
 
-The raw invitation token is deliberately NOT accepted by this command. Operators
-provide only its SHA-256 digest, so the raw token never enters Git, Actions logs,
-or persistent storage. The invited identity still creates its own password through
-the canonical access-invitation flow. This command grants no global role itself.
+The raw invitation token is generated at runtime by the canonical access-request
+store. It is emitted only on stdout so an operator can pipe it directly into an
+encryption process; it is never accepted as a CLI argument and persistence stores
+only its SHA-256 digest. This command grants no global role itself.
 """
 from __future__ import annotations
 
 import argparse
-from datetime import datetime, timedelta, timezone
 import json
 import os
 from pathlib import Path
-import re
 import sqlite3
+import sys
 
-from nutev.tenancy.access_requests import SQLiteAccessRequestStore
+from nutev.tenancy.access_requests import (
+    ACCESS_REQUEST_TOKEN_TTL_SECONDS,
+    SQLiteAccessRequestStore,
+)
 
-_TOKEN_DIGEST_RE = re.compile(r"^[0-9a-f]{64}$")
 _BOOTSTRAP_ACTOR = "operator-bootstrap-first-platform-admin"
-_DEFAULT_TTL_SECONDS = 72 * 60 * 60
 
 
 def _default_database() -> Path:
@@ -30,11 +30,7 @@ def _default_database() -> Path:
     return Path("project_output_reference") / "platform" / "auth.sqlite3"
 
 
-def _iso(value: datetime) -> str:
-    return value.astimezone(timezone.utc).isoformat()
-
-
-def _emit(status: str, *, changed: bool, request_id: str | None = None) -> None:
+def _status(status: str, *, changed: bool, request_id: str | None = None) -> None:
     payload: dict[str, object] = {
         "status": status,
         "changed": changed,
@@ -46,7 +42,7 @@ def _emit(status: str, *, changed: bool, request_id: str | None = None) -> None:
     }
     if request_id:
         payload["request_id"] = request_id
-    print(json.dumps(payload, ensure_ascii=False, sort_keys=True))
+    print(json.dumps(payload, ensure_ascii=False, sort_keys=True), file=sys.stderr)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -55,9 +51,12 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--display-name", required=True)
     parser.add_argument("--institution", required=True)
     parser.add_argument("--intended-use", required=True)
-    parser.add_argument("--token-digest", required=True)
     parser.add_argument("--database", type=Path, default=_default_database())
-    parser.add_argument("--ttl-seconds", type=int, default=_DEFAULT_TTL_SECONDS)
+    parser.add_argument(
+        "--ttl-seconds",
+        type=int,
+        default=ACCESS_REQUEST_TOKEN_TTL_SECONDS,
+    )
     return parser
 
 
@@ -82,54 +81,46 @@ def main(argv: list[str] | None = None) -> int:
     display_name = " ".join(str(args.display_name or "").strip().split())
     institution = " ".join(str(args.institution or "").strip().split())
     intended_use = " ".join(str(args.intended_use or "").strip().split())
-    digest = str(args.token_digest or "").strip().casefold()
     ttl_seconds = int(args.ttl_seconds)
 
     if not email or "@" not in email or len(email) > 320:
-        _emit("invalid_email", changed=False)
+        _status("invalid_email", changed=False)
         return 2
     if len(display_name) < 2 or len(display_name) > 120:
-        _emit("invalid_display_name", changed=False)
+        _status("invalid_display_name", changed=False)
         return 2
     if len(institution) < 2 or len(institution) > 160:
-        _emit("invalid_institution", changed=False)
+        _status("invalid_institution", changed=False)
         return 2
     if len(intended_use) < 10 or len(intended_use) > 1200:
-        _emit("invalid_intended_use", changed=False)
-        return 2
-    if not _TOKEN_DIGEST_RE.fullmatch(digest):
-        _emit("invalid_token_digest", changed=False)
+        _status("invalid_intended_use", changed=False)
         return 2
     if ttl_seconds < 15 * 60 or ttl_seconds > 30 * 24 * 60 * 60:
-        _emit("invalid_ttl", changed=False)
+        _status("invalid_ttl", changed=False)
         return 2
 
     database = Path(args.database).expanduser().resolve()
     if not database.is_file():
-        _emit("database_missing", changed=False)
+        _status("database_missing", changed=False)
         return 3
 
-    # Ensure the access-request schema exists using the canonical store.
     store = SQLiteAccessRequestStore(database)
     store.list(status="all", limit=1)
-
-    now = datetime.now(timezone.utc)
-    expires_at = now + timedelta(seconds=ttl_seconds)
 
     with sqlite3.connect(database, timeout=30) as connection:
         connection.row_factory = sqlite3.Row
         connection.execute("PRAGMA foreign_keys = ON")
 
         if _active_platform_admin_count(connection) > 0:
-            _emit("already_platform_admin", changed=False)
-            return 0
+            _status("already_platform_admin", changed=False)
+            return 10
 
         user = connection.execute(
             "SELECT status FROM platform_auth_users WHERE email = ? COLLATE NOCASE LIMIT 1",
             (email,),
         ).fetchone()
         if user is not None:
-            _emit("existing_user_requires_role_grant", changed=False)
+            _status("existing_user_requires_role_grant", changed=False)
             return 4
 
         row = connection.execute(
@@ -149,42 +140,26 @@ def main(argv: list[str] | None = None) -> int:
             intended_use=intended_use,
         )
         if submitted is None:
-            _emit("request_seed_race", changed=False)
+            _status("request_seed_race", changed=False)
             return 5
         request_id = submitted.id
     else:
         request_id = str(row["id"])
 
-    with sqlite3.connect(database, timeout=30) as connection:
-        connection.execute("PRAGMA foreign_keys = ON")
-        connection.execute("BEGIN IMMEDIATE")
-        cursor = connection.execute(
-            """
-            UPDATE platform_access_requests
-            SET display_name=?, institution=?, intended_use=?, status='approved',
-                decided_at=?, decided_by=?, rejection_reason=NULL,
-                invitation_token_hash=?, invitation_expires_at=?,
-                accepted_at=NULL, accepted_user_id=NULL
-            WHERE id=? AND status IN ('pending','approved')
-            """,
-            (
-                display_name,
-                institution,
-                intended_use,
-                _iso(now),
-                _BOOTSTRAP_ACTOR,
-                digest,
-                _iso(expires_at),
-                request_id,
-            ),
+    try:
+        invitation = store.approve(
+            request_id,
+            decided_by=_BOOTSTRAP_ACTOR,
+            ttl_seconds=ttl_seconds,
         )
-        if cursor.rowcount != 1:
-            connection.rollback()
-            _emit("request_changed_during_seed", changed=False)
-            return 6
-        connection.commit()
+    except (KeyError, ValueError):
+        _status("request_not_approvable", changed=False, request_id=request_id)
+        return 6
 
-    _emit("bootstrap_invitation_seeded", changed=True, request_id=request_id)
+    # IMPORTANT: stdout contains the one-time raw token and nothing else. The
+    # production workflow pipes stdout directly into public-key encryption.
+    print(invitation.token)
+    _status("bootstrap_invitation_seeded", changed=True, request_id=request_id)
     return 0
 
 
