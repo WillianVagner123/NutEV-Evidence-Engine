@@ -27,15 +27,8 @@ def _run(script: str, *args: str) -> subprocess.CompletedProcess[str]:
     )
 
 
-def test_seeded_invitation_keeps_raw_token_out_of_database_and_password_user_owned(
-    tmp_path: Path,
-) -> None:
-    database = tmp_path / "auth.sqlite3"
-    initialize_platform_database(database)
-    raw_token = "bootstrap-test-token-that-is-long-enough-123456789"
-    digest = sha256(raw_token.encode("utf-8")).hexdigest()
-
-    seeded = _run(
+def _seed(database: Path) -> subprocess.CompletedProcess[str]:
+    return _run(
         "seed_bootstrap_access_invitation.py",
         "--database",
         str(database),
@@ -47,15 +40,24 @@ def test_seeded_invitation_keeps_raw_token_out_of_database_and_password_user_own
         "NutEV",
         "--intended-use",
         "First platform administrator bootstrap for governed access.",
-        "--token-digest",
-        digest,
     )
+
+
+def test_seeded_invitation_keeps_raw_token_out_of_database_and_password_user_owned(
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "auth.sqlite3"
+    initialize_platform_database(database)
+
+    seeded = _seed(database)
     assert seeded.returncode == 0, seeded.stderr
-    seeded_payload = json.loads(seeded.stdout)
-    assert seeded_payload["status"] == "bootstrap_invitation_seeded"
-    assert seeded_payload["raw_token_persisted"] is False
-    assert seeded_payload["password_created"] is False
-    assert seeded_payload["platform_admin_granted"] is False
+    raw_token = seeded.stdout.strip()
+    assert len(raw_token) >= 32
+    status = json.loads(seeded.stderr)
+    assert status["status"] == "bootstrap_invitation_seeded"
+    assert status["raw_token_persisted"] is False
+    assert status["password_created"] is False
+    assert status["platform_admin_granted"] is False
 
     store = SQLiteAccessRequestStore(database)
     record = store.inspect_invitation(raw_token)
@@ -70,7 +72,7 @@ def test_seeded_invitation_keeps_raw_token_out_of_database_and_password_user_own
             (record.id,),
         ).fetchone()
     assert persisted is not None
-    assert persisted[0] == digest
+    assert persisted[0] == sha256(raw_token.encode("utf-8")).hexdigest()
     assert persisted[0] != raw_token
 
     password = "the invited person chooses this password"
@@ -99,51 +101,28 @@ def test_seeded_invitation_keeps_raw_token_out_of_database_and_password_user_own
     assert promoted.global_roles == frozenset({GlobalRole.PLATFORM_ADMIN})
 
 
-def test_seed_refuses_invalid_digest_and_existing_user(tmp_path: Path) -> None:
+def test_seed_regenerates_approved_invitation_and_refuses_existing_user(
+    tmp_path: Path,
+) -> None:
     database = tmp_path / "auth.sqlite3"
     initialize_platform_database(database)
 
-    invalid = _run(
-        "seed_bootstrap_access_invitation.py",
-        "--database",
-        str(database),
-        "--email",
-        "admin@example.org",
-        "--display-name",
-        "First Admin",
-        "--institution",
-        "NutEV",
-        "--intended-use",
-        "First platform administrator bootstrap for governed access.",
-        "--token-digest",
-        "not-a-sha256-digest",
-    )
-    assert invalid.returncode == 2
-    assert json.loads(invalid.stdout)["status"] == "invalid_token_digest"
+    first = _seed(database)
+    assert first.returncode == 0, first.stderr
+    first_token = first.stdout.strip()
 
-    provider = SQLiteAuthProvider(database)
-    provider.provision_user(
-        email="admin@example.org",
-        display_name="First Admin",
-        password="a sufficiently long password",
-    )
-    digest = sha256(b"another-long-bootstrap-test-token-123456789").hexdigest()
-    existing = _run(
-        "seed_bootstrap_access_invitation.py",
-        "--database",
-        str(database),
-        "--email",
-        "admin@example.org",
-        "--display-name",
-        "First Admin",
-        "--institution",
-        "NutEV",
-        "--intended-use",
-        "First platform administrator bootstrap for governed access.",
-        "--token-digest",
-        digest,
-    )
+    second = _seed(database)
+    assert second.returncode == 0, second.stderr
+    second_token = second.stdout.strip()
+    assert second_token != first_token
+
+    store = SQLiteAccessRequestStore(database)
+    assert store.inspect_invitation(first_token) is None
+    assert store.inspect_invitation(second_token) is not None
+
+    store.accept_invitation(second_token, password="a sufficiently long password")
+    existing = _seed(database)
     assert existing.returncode == 4
-    payload = json.loads(existing.stdout)
+    payload = json.loads(existing.stderr)
     assert payload["status"] == "existing_user_requires_role_grant"
     assert payload["platform_admin_granted"] is False
