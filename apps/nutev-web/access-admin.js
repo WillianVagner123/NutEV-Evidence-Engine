@@ -151,6 +151,13 @@ window.addEventListener('nutev:language-change',()=>{applyAccessCopy();renderReq
 
 async function init(){
   try{
+    const runtime=await jsonFetch('/api/auth/status')
+    if(runtime.mode!=='pilot'){
+      identity.textContent=accessT('Administração indisponível neste modo','Administration unavailable in this mode')
+      setStatus(accessT('A revisão de solicitações requer o runtime autenticado da plataforma.','Access-request review requires the authenticated platform runtime.'),'error')
+      list.innerHTML=''
+      return
+    }
     const me=await fetch('/api/auth/me',{credentials:'same-origin',cache:'no-store'})
     if(me.status===401){location.replace(`/login.html?next=${encodeURIComponent('/access-admin.html')}`);return}
     const payload=await readJson(me)
