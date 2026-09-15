@@ -101,17 +101,34 @@ jobs:
             exit 0
           fi
 
+          USER_STATE=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+            env BOOTSTRAP_ADMIN_EMAIL="$ADMIN_EMAIL" python - <<'PY'
+          import os, sqlite3
+          database = os.environ.get('NUTEV_AUTH_DB') or '/app/project_output_reference/platform/auth.sqlite3'
+          email = str(os.environ['BOOTSTRAP_ADMIN_EMAIL']).strip().casefold()
+          with sqlite3.connect(database) as connection:
+              row = connection.execute(
+                  "SELECT status FROM platform_auth_users WHERE email = ? COLLATE NOCASE LIMIT 1",
+                  (email,),
+              ).fetchone()
+          print('missing' if row is None else str(row[0]))
+          PY
+          )
+
+          if [[ "$USER_STATE" == "missing" ]]; then
+            echo "platform_admin_state=INVITATION_REQUIRED changed=false"
+            exit 0
+          fi
+          if [[ "$USER_STATE" != "active" ]]; then
+            echo "First-admin identity exists but is not active; refusing role mutation." >&2
+            exit 5
+          fi
+
           set +e
           RESULT=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
             python tools/grant_platform_admin.py --email "$ADMIN_EMAIL" 2>&1)
           RC=$?
           set -e
-
-          if [[ "$RC" -eq 4 ]]; then
-            echo "platform_admin_state=INVITATION_REQUIRED changed=false"
-            exit 0
-          fi
-
           printf '%s\n' "$RESULT"
           if [[ "$RC" -ne 0 ]]; then
             echo "First-admin bootstrap failed closed without creating a user, password, workspace, project, or scientific state." >&2
