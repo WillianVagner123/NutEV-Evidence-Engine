@@ -29,6 +29,10 @@ jobs:
       HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
       BOOTSTRAP_ADMIN_EMAIL: wvagners@hotmail.com
+      BOOTSTRAP_ADMIN_DISPLAY_NAME: Willian Vagner
+      BOOTSTRAP_ADMIN_INSTITUTION: NutEV
+      BOOTSTRAP_ADMIN_INTENDED_USE: First platform administrator bootstrap for governed NutEV access.
+      BOOTSTRAP_INVITATION_TOKEN_DIGEST: 6a4254c7f50557eed8432db206ef86f9c907482e9b5b18759581db10e9dd2787
 
     steps:
       - name: Validate trusted connection configuration
@@ -42,6 +46,7 @@ jobs:
           test -n "$HETZNER_APP_DIR"
           test -n "$HETZNER_KNOWN_HOSTS"
           test -n "$HETZNER_SSH_KEY"
+          test -n "$BOOTSTRAP_INVITATION_TOKEN_DIGEST"
           install -d -m 700 ~/.ssh
           printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
@@ -49,16 +54,20 @@ jobs:
           printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      - name: Ensure platform administrator exists
+      - name: Ensure platform administrator exists or seed invitation
         shell: bash
         run: |
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
           APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
           ADMIN_EMAIL_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_EMAIL")
+          DISPLAY_NAME_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_DISPLAY_NAME")
+          INSTITUTION_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_INSTITUTION")
+          INTENDED_USE_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_INTENDED_USE")
+          TOKEN_DIGEST_Q=$(printf '%q' "$BOOTSTRAP_INVITATION_TOKEN_DIGEST")
           ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
-            "APP_DIR=$APP_DIR_Q ADMIN_EMAIL=$ADMIN_EMAIL_Q bash -s" <<'REMOTE'
+            "APP_DIR=$APP_DIR_Q ADMIN_EMAIL=$ADMIN_EMAIL_Q DISPLAY_NAME=$DISPLAY_NAME_Q INSTITUTION=$INSTITUTION_Q INTENDED_USE=$INTENDED_USE_Q TOKEN_DIGEST=$TOKEN_DIGEST_Q bash -s" <<'REMOTE'
           set -euo pipefail
           cd "$APP_DIR"
           test -f deploy/hetzner/.env
@@ -94,8 +103,22 @@ jobs:
           RC=$?
           set -e
           printf '%s\n' "$RESULT"
+
+          if [[ "$RC" -eq 4 ]]; then
+            SEED_RESULT=$(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+              python tools/seed_bootstrap_access_invitation.py \
+                --email "$ADMIN_EMAIL" \
+                --display-name "$DISPLAY_NAME" \
+                --institution "$INSTITUTION" \
+                --intended-use "$INTENDED_USE" \
+                --token-digest "$TOKEN_DIGEST")
+            printf '%s\n' "$SEED_RESULT"
+            echo "platform_admin_state=INVITATION_REQUIRED changed=false raw_token_logged=false"
+            exit 0
+          fi
+
           if [[ "$RC" -ne 0 ]]; then
-            echo "::error::No active PLATFORM_ADMIN exists and the designated existing identity could not be promoted. No user, password, workspace, project, or scientific state was created or changed." >&2
+            echo "::error::First-admin bootstrap failed closed without creating a user, password, workspace, project, or scientific state." >&2
             exit "$RC"
           fi
 
