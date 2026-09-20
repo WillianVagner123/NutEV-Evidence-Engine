@@ -14,6 +14,15 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 - Registrado explicitamente que membership de supervisão é concessão de acesso e **não** é aprovação do orientador: não cria elegibilidade, qualidade metodológica, risco de viés, certeza, recomendação, PRISMA, PRESS, GF-10 nem congelamento de consulta.
 - Testes adicionados para o conjunto exato de permissões do papel, o gate de policy no export, a exigência de confirmação de acesso ao projeto e o isolamento entre workspaces.
 
+### Provisionamento do acesso do orientador
+
+- Adicionado `tools/grant_workspace_membership.py`, concessão de membership de workspace somente para operador, idempotente e fail-closed, com seleção do workspace por `--workspace-id` ou `--workspace-slug`.
+- A ferramenta nunca cria usuários, senhas, workspaces, projetos, papéis globais ou estado científico; `WORKSPACE_OWNER` não é atribuível e continua exigindo o fluxo explícito de transferência.
+- Trocar o papel de um membership existente exige `--allow-role-change`; sem a flag a operação é recusada sem alterar nada, para que mudança de privilégio nunca ocorra em silêncio.
+- `invited_by` permanece nulo em concessões por CLI: não há Principal autenticado convidando e a ferramenta não personifica um.
+- Adicionado `docs/ACADEMIC_SUPERVISOR_ONBOARDING.md`, runbook do caminho governado completo (solicitação -> aprovação -> convite de uso único -> senha definida pelo próprio orientador -> membership -> login), com códigos de saída e procedimento de revogação.
+- Adicionado teste de contrato ponta a ponta do onboarding: conta recém-criada não enxerga workspace algum antes do membership, a concessão é idempotente, o envelope resultante é somente leitura, suspensão revoga no login seguinte e o isolamento entre workspaces se mantém.
+
 ## [1.1.0] - 2026-09-12
 
 ### Scientific Workspace v2
