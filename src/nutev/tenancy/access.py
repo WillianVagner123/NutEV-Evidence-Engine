@@ -26,6 +26,7 @@ _PROJECT_WIDE_ROLES = {
     WorkspaceRole.WORKSPACE_ADMIN,
     WorkspaceRole.RESEARCHER,
     WorkspaceRole.VIEWER,
+    WorkspaceRole.ACADEMIC_SUPERVISOR,
 }
 
 

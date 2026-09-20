@@ -166,6 +166,12 @@ May read/write the Evidence Library and read/manage full-text access grants in a
 
 May read the Evidence Library and active full-text access descriptors, but may not create/update/delete Placements.
 
+### ACADEMIC_SUPERVISOR
+
+Supervisão acadêmica ("professor orientador"). Lê a Evidence Library e os descritores de full-text access ativos nos contextos autorizados, com a mesma fronteira de leitura do VIEWER. Não cria, atualiza ou remove Placements e não gerencia grants.
+
+A leitura supervisora não é aprovação de orientador: ela não altera elegibilidade, qualidade, risco de viés, certeza, recomendação ou PRISMA de nenhum documento lido.
+
 ### REVIEWER / GUEST_REVIEWER
 
 Do not receive the whole Evidence Library merely because they can later receive assigned review items. Assignment-scoped scientific access remains the HumanReviewEngine boundary.

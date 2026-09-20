@@ -153,6 +153,21 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
         Permission.EXPORT: _POLICY,
         Permission.PROJECT_AUDIT_READ: _FULL,
     },
+    # Academic supervision ("professor orientador"): project-wide read plus audit read.
+    # The role deliberately grants no write, screening, extraction, adjudication, member,
+    # project or workspace authority, and EXPORT stays policy-gated. Supervisory membership
+    # is an access grant only: it never implies eligibility, methodological quality, risk of
+    # bias, certainty, recommendation, PRISMA state or advisor approval of any artifact.
+    WorkspaceRole.ACADEMIC_SUPERVISOR: {
+        Permission.APPLICATION_READ: _FULL,
+        Permission.SEARCH_HISTORY_READ: _FULL,
+        Permission.EVIDENCE_LIBRARY_READ: _FULL,
+        Permission.FULL_TEXT_ACCESS_READ: _FULL,
+        Permission.PROJECT_BANK_READ: _FULL,
+        Permission.HUMAN_REVIEW_READ: _FULL,
+        Permission.EXPORT: _POLICY,
+        Permission.PROJECT_AUDIT_READ: _FULL,
+    },
     WorkspaceRole.GUEST_REVIEWER: {
         Permission.HUMAN_REVIEW_READ: _ASSIGNED,
         Permission.SCREEN: _ASSIGNED,

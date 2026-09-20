@@ -87,6 +87,11 @@ approved access request
 
 Workspace/project onboarding remains a separate server-authoritative step.
 
+For an academic supervisor ("professor orientador"), that separate step is a workspace membership with the
+`ACADEMIC_SUPERVISOR` role, described in [`MULTITENANT_WORKSPACE_PROJECT_ACCESS.md`](MULTITENANT_WORKSPACE_PROJECT_ACCESS.md).
+Approving the access request alone never creates it, and the role grants read/audit access only — never
+adjudication, review management or advisor approval of scientific state.
+
 ## HTTP endpoints
 
 Public / invitation flow:

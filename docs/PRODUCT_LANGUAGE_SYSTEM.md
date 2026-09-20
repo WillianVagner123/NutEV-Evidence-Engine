@@ -28,6 +28,7 @@ O idioma padrão é **Português (Brasil)**. A interface pode ser alternada para
 | Ordenação | **Ordenação de busca** | **Search ranking** | Ordem operacional/relevância da consulta; não representa qualidade, certeza ou recomendação. | score de qualidade, ranking científico |
 | Acesso privado | **Espaço de trabalho** | **Workspace** | Fronteira principal de acesso privado que reúne projetos. | workspace no modo PT |
 | Pesquisa dentro do espaço | **Projeto** | **Project** | Contexto de trabalho científico autorizado dentro de um espaço de trabalho. | project misturado ao PT quando houver rótulo traduzível |
+| Supervisão acadêmica | **Professor orientador** | **Academic supervisor** | Papel de workspace somente leitura, com leitura de auditoria do projeto, para acompanhamento acadêmico. Não executa busca, triagem, extração, adjudicação ou gestão. | orientador como aprovador científico; “revisado pelo orientador” sem revisão humana registrada |
 | Configuração metodológica | **Aplicação de pesquisa** | **Research Application** | Configuração explícita de método/uso vinculada ao projeto. | app genérico quando isso ocultar o significado científico |
 | Segurança operacional | **Bloqueio por segurança** | **Fail-closed** | O sistema bloqueia a operação quando falta evidência/verificação necessária para prosseguir com segurança. | fail-closed sem explicação no modo PT |
 | Texto do artigo | **Texto completo** | **Full text** | Conteúdo integral recuperado quando permitido/disponível. | full text no modo PT |

@@ -4,7 +4,15 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
-Nenhuma mudança pública pós-`v1.1.0` registrada neste changelog até o fechamento documental de 2026-09-12.
+### Papel de supervisão acadêmica
+
+- Adicionado o papel de workspace `ACADEMIC_SUPERVISOR` (**Professor orientador**) à matriz canônica `ROLE_PERMISSIONS`, com acesso somente leitura ao projeto (`APPLICATION_READ`, `SEARCH_HISTORY_READ`, `EVIDENCE_LIBRARY_READ`, `FULL_TEXT_ACCESS_READ`, `PROJECT_BANK_READ`, `HUMAN_REVIEW_READ`) e leitura de auditoria (`PROJECT_AUDIT_READ`); `EXPORT` permanece policy-gated.
+- O papel não recebe escrita, execução de busca, triagem, extração, adjudicação, gestão de revisão humana, gestão de membros, criação ou exclusão de projeto. Conceder supervisão não amplia o que o workspace pode fazer.
+- `ACADEMIC_SUPERVISOR` entrou em `_PROJECT_WIDE_ROLES`, então a resolução de contexto continua exigindo `confirm_project_access` server-side e a fronteira entre workspaces permanece fail-closed.
+- Adicionado o rótulo `Professor orientador` ao seletor de contexto da interface e a entrada correspondente no contrato de linguagem do produto.
+- Documentada a matriz de papéis em `docs/MULTITENANT_WORKSPACE_PROJECT_ACCESS.md`, com `ROLE_PERMISSIONS` explicitado como fonte única de verdade.
+- Registrado explicitamente que membership de supervisão é concessão de acesso e **não** é aprovação do orientador: não cria elegibilidade, qualidade metodológica, risco de viés, certeza, recomendação, PRISMA, PRESS, GF-10 nem congelamento de consulta.
+- Testes adicionados para o conjunto exato de permissões do papel, o gate de policy no export, a exigência de confirmação de acesso ao projeto e o isolamento entre workspaces.
 
 ## [1.1.0] - 2026-09-12
 
