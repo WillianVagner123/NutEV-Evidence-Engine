@@ -1,0 +1,264 @@
+name: provision-supervisor-access
+
+# Operator-triggered workspace membership management for the hosted runtime.
+#
+# This workflow deliberately handles NO credentials. It never creates an account,
+# never sets or resets a password, and never issues an invitation, so it produces
+# no secret that could leak through logs, artifacts or run metadata. The invited
+# person still creates their own account through /access-request.html and
+# /set-password.html; this only attaches an existing account to a workspace.
+#
+# It cannot assign WORKSPACE_OWNER or any global role.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "inspect = read-only listing; grant = attach an existing account to a workspace"
+        required: true
+        default: inspect
+        type: choice
+        options:
+          - inspect
+          - grant
+      email:
+        description: "Account email. Required for grant; optional filter for inspect."
+        required: false
+        type: string
+      workspace_slug:
+        description: "Target workspace slug (see the inspect output). Required for grant."
+        required: false
+        type: string
+      role:
+        description: "Workspace role to grant."
+        required: false
+        default: ACADEMIC_SUPERVISOR
+        type: choice
+        options:
+          - ACADEMIC_SUPERVISOR
+          - VIEWER
+          - REVIEWER
+      allow_role_change:
+        description: "Permit replacing a different existing role on that workspace."
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hetzner-supervisor-access
+  cancel-in-progress: false
+
+jobs:
+  membership:
+    name: workspace membership
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 15
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+      MODE: ${{ inputs.mode }}
+      TARGET_EMAIL: ${{ inputs.email }}
+      TARGET_WORKSPACE: ${{ inputs.workspace_slug }}
+      TARGET_ROLE: ${{ inputs.role }}
+      ALLOW_ROLE_CHANGE: ${{ inputs.allow_role_change }}
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate request before touching the server
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$HETZNER_HOST"
+          test -n "$HETZNER_USER"
+          test -n "$HETZNER_APP_DIR"
+          test -n "$HETZNER_KNOWN_HOSTS"
+          if [[ "$MODE" == "grant" ]]; then
+            if [[ -z "$TARGET_EMAIL" || "$TARGET_EMAIL" != *"@"* ]]; then
+              echo "::error::grant mode requires a valid email" >&2
+              exit 2
+            fi
+            if [[ -z "$TARGET_WORKSPACE" ]]; then
+              echo "::error::grant mode requires workspace_slug; run mode=inspect first to find it" >&2
+              exit 2
+            fi
+          fi
+          echo "mode=$MODE role=$TARGET_ROLE"
+
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          test -n "$HETZNER_SSH_KEY"
+          install -d -m 700 ~/.ssh
+          python3 - <<'PY'
+          import base64
+          import binascii
+          import os
+          from pathlib import Path
+          raw = os.environ["HETZNER_SSH_KEY"].strip()
+          raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+          if "\\n" in raw and "\n" not in raw:
+              raw = raw.replace("\\n", "\n")
+          candidate = raw.strip()
+          if candidate.startswith("ssh-") or "BEGIN PUBLIC KEY" in candidate:
+              raise SystemExit("HETZNER_SSH_KEY contains a public key; the complete private key is required")
+          if not candidate.startswith("-----BEGIN "):
+              compact = "".join(candidate.split())
+              try:
+                  decoded = base64.b64decode(compact, validate=True).decode("utf-8").strip()
+              except (binascii.Error, UnicodeDecodeError, ValueError):
+                  decoded = ""
+              if decoded.startswith("-----BEGIN "):
+                  candidate = decoded.replace("\r\n", "\n").replace("\r", "\n")
+          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate.strip() + "\n", encoding="utf-8")
+          PY
+          chmod 600 ~/.ssh/id_ed25519
+          if ! ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null; then
+            echo "::error::HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key." >&2
+            exit 1
+          fi
+          chmod 600 ~/.ssh/id_ed25519.pub
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          HOST_LOOKUP="$HETZNER_HOST"
+          if [[ "$PORT" != "22" ]]; then HOST_LOOKUP="[$HETZNER_HOST]:$PORT"; fi
+          ssh-keygen -F "$HOST_LOOKUP" -f ~/.ssh/known_hosts >/dev/null
+
+      - name: Verify SSH access
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" 'printf "ssh-ok\n"' | grep -qx 'ssh-ok'
+
+      - name: Inspect workspaces and account state
+        id: inspect
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          EMAIL_Q=$(printf '%q' "${TARGET_EMAIL:-}")
+
+          RESULT=$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q TARGET_EMAIL=$EMAIL_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T \
+            -e TARGET_EMAIL="${TARGET_EMAIL:-}" nutev python - <<'PY'
+          import json, os, sqlite3
+          database = os.environ.get('NUTEV_AUTH_DB') or '/app/project_output_reference/platform/auth.sqlite3'
+          email = str(os.environ.get('TARGET_EMAIL') or '').strip().casefold()
+          out = {'workspaces': [], 'account': None, 'memberships': []}
+          with sqlite3.connect(database) as c:
+              c.row_factory = sqlite3.Row
+              for r in c.execute("SELECT id, name, slug, status FROM platform_workspaces ORDER BY slug"):
+                  out['workspaces'].append(
+                      {'id': r['id'], 'name': r['name'], 'slug': r['slug'], 'status': r['status']}
+                  )
+              if email:
+                  row = c.execute(
+                      "SELECT id, email, display_name, status FROM platform_auth_users "
+                      "WHERE email = ? COLLATE NOCASE",
+                      (email,),
+                  ).fetchone()
+                  if row is not None:
+                      out['account'] = {
+                          'user_id': row['id'],
+                          'email': row['email'],
+                          'display_name': row['display_name'],
+                          'status': row['status'],
+                      }
+                      for m in c.execute(
+                          "SELECT workspace_id, role, status FROM platform_workspace_memberships "
+                          "WHERE user_id = ?",
+                          (row['id'],),
+                      ):
+                          out['memberships'].append(
+                              {'workspace_id': m['workspace_id'], 'role': m['role'], 'status': m['status']}
+                          )
+          print(json.dumps(out, ensure_ascii=False, sort_keys=True))
+          PY
+          REMOTE
+          )
+          printf '%s\n' "$RESULT" > inspect.json
+          {
+            echo "## Estado atual"
+            echo
+            echo '```json'
+            cat inspect.json
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [[ "$MODE" == "grant" ]]; then
+            python3 - <<'PY'
+          import json, os, sys
+          data = json.loads(open('inspect.json', encoding='utf-8').read())
+          if data.get('account') is None:
+              print('::error::No account exists for that email yet. The person must complete '
+                    '/access-request.html, your approval, and /set-password.html first.', file=sys.stderr)
+              raise SystemExit(4)
+          if data['account']['status'] != 'active':
+              print(f"::error::Account status is {data['account']['status']}, not active.", file=sys.stderr)
+              raise SystemExit(5)
+          slugs = {w['slug'] for w in data['workspaces']}
+          wanted = os.environ['TARGET_WORKSPACE']
+          if wanted not in slugs:
+              print(f"::error::workspace_slug '{wanted}' not found. Available: {sorted(slugs)}", file=sys.stderr)
+              raise SystemExit(6)
+          PY
+          fi
+
+      - name: Grant workspace membership
+        if: ${{ inputs.mode == 'grant' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          EMAIL_Q=$(printf '%q' "$TARGET_EMAIL")
+          SLUG_Q=$(printf '%q' "$TARGET_WORKSPACE")
+          ROLE_Q=$(printf '%q' "$TARGET_ROLE")
+          FLAG=""
+          if [[ "$ALLOW_ROLE_CHANGE" == "true" ]]; then FLAG="--allow-role-change"; fi
+          FLAG_Q=$(printf '%q' "$FLAG")
+
+          RESULT=$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q EMAIL=$EMAIL_Q SLUG=$SLUG_Q ROLE=$ROLE_Q FLAG=$FLAG_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          # shellcheck disable=SC2086
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+            python tools/grant_workspace_membership.py \
+              --email "$EMAIL" \
+              --workspace-slug "$SLUG" \
+              --role "$ROLE" \
+              $FLAG
+          REMOTE
+          )
+          printf '%s\n' "$RESULT"
+          {
+            echo "## Resultado da concessão"
+            echo
+            echo '```json'
+            printf '%s\n' "$RESULT"
+            echo '```'
+            echo
+            echo "Nenhuma conta, senha, convite ou papel global foi criado por este workflow."
+          } >> "$GITHUB_STEP_SUMMARY"
