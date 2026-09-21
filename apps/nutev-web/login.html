@@ -24,7 +24,7 @@
     <section class="login-card">
       <h2 id="loginTitle">Entrar no NutEV</h2>
       <p>Use a conta aprovada para sua organização.</p>
-      <form id="loginForm" class="login-form" novalidate>
+      <form id="loginForm" class="login-form" method="post" action="/api/auth/login" novalidate>
         <label for="loginEmail">E-mail
           <input id="loginEmail" name="email" type="email" autocomplete="username" inputmode="email" required autofocus>
         </label>

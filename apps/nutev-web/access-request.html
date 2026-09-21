@@ -31,7 +31,7 @@
       <h1 id="accessFormTitle" data-pt="Solicitar acesso" data-en="Request access">Solicitar acesso</h1>
       <p data-pt="Preencha os dados abaixo. A resposta pública é deliberadamente genérica para proteger a existência de contas e solicitações anteriores." data-en="Complete the information below. The public response is deliberately generic to protect whether an account or earlier request exists.">Preencha os dados abaixo. A resposta pública é deliberadamente genérica para proteger a existência de contas e solicitações anteriores.</p>
 
-      <form id="accessRequestForm" class="access-form" novalidate>
+      <form id="accessRequestForm" class="access-form" method="post" action="/api/access-requests" novalidate>
         <label><span data-pt="Nome completo" data-en="Full name">Nome completo</span>
           <input id="accessName" name="display_name" type="text" autocomplete="name" minlength="2" maxlength="120" required>
         </label>
