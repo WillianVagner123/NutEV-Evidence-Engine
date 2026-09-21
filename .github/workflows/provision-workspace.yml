@@ -1,0 +1,236 @@
+name: provision-workspace
+
+# Operator-triggered creation of the first workspace, and optionally a project,
+# on the hosted runtime.
+#
+# This workflow deliberately handles NO credentials. It never creates an account,
+# never sets or resets a password, and never issues an invitation, so it produces
+# no secret that could leak through logs, artifacts or run metadata. The owner
+# must already exist and be active.
+#
+# It cannot grant a global role, and it refuses to adopt a workspace slug that
+# belongs to another identity.
+
+on:
+  workflow_dispatch:
+    inputs:
+      owner_email:
+        description: "Existing active account that will own the workspace."
+        required: true
+        type: string
+      workspace_name:
+        description: "Human-readable workspace name."
+        required: true
+        type: string
+      workspace_slug:
+        description: "Workspace slug: lowercase letters, digits and hyphens."
+        required: true
+        type: string
+      project_name:
+        description: "Optional project to create inside it. Needs project_slug too."
+        required: false
+        type: string
+      project_slug:
+        description: "Project slug: lowercase letters, digits and hyphens."
+        required: false
+        type: string
+      project_type:
+        description: "Project type recorded on the project."
+        required: false
+        default: generic
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hetzner-supervisor-access
+  cancel-in-progress: false
+
+jobs:
+  workspace:
+    name: workspace provisioning
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 15
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+      OWNER_EMAIL: ${{ inputs.owner_email }}
+      WORKSPACE_NAME: ${{ inputs.workspace_name }}
+      WORKSPACE_SLUG: ${{ inputs.workspace_slug }}
+      PROJECT_NAME: ${{ inputs.project_name }}
+      PROJECT_SLUG: ${{ inputs.project_slug }}
+      PROJECT_TYPE: ${{ inputs.project_type }}
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate request before touching the server
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$HETZNER_HOST"
+          test -n "$HETZNER_USER"
+          test -n "$HETZNER_APP_DIR"
+          test -n "$HETZNER_KNOWN_HOSTS"
+          if [[ -z "$OWNER_EMAIL" || "$OWNER_EMAIL" != *"@"* ]]; then
+            echo "::error::owner_email must be a valid address" >&2
+            exit 2
+          fi
+          if [[ ! "$WORKSPACE_SLUG" =~ ^[a-z0-9-]+$ ]]; then
+            echo "::error::workspace_slug must use lowercase letters, digits and hyphens" >&2
+            exit 2
+          fi
+          if [[ -n "${PROJECT_SLUG:-}" && ! "$PROJECT_SLUG" =~ ^[a-z0-9-]+$ ]]; then
+            echo "::error::project_slug must use lowercase letters, digits and hyphens" >&2
+            exit 2
+          fi
+          if { [[ -n "${PROJECT_NAME:-}" ]] && [[ -z "${PROJECT_SLUG:-}" ]]; } \
+             || { [[ -z "${PROJECT_NAME:-}" ]] && [[ -n "${PROJECT_SLUG:-}" ]]; }; then
+            echo "::error::project_name and project_slug must be supplied together" >&2
+            exit 2
+          fi
+
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          test -n "$HETZNER_SSH_KEY"
+          install -d -m 700 ~/.ssh
+          python3 - <<'PY'
+          import base64
+          import binascii
+          import os
+          from pathlib import Path
+          raw = os.environ["HETZNER_SSH_KEY"].strip()
+          raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+          if "\\n" in raw and "\n" not in raw:
+              raw = raw.replace("\\n", "\n")
+          candidate = raw.strip()
+          if candidate.startswith("ssh-") or "BEGIN PUBLIC KEY" in candidate:
+              raise SystemExit("HETZNER_SSH_KEY contains a public key; the complete private key is required")
+          if not candidate.startswith("-----BEGIN "):
+              compact = "".join(candidate.split())
+              try:
+                  decoded = base64.b64decode(compact, validate=True).decode("utf-8").strip()
+              except (binascii.Error, UnicodeDecodeError, ValueError):
+                  decoded = ""
+              if decoded.startswith("-----BEGIN "):
+                  candidate = decoded.replace("\r\n", "\n").replace("\r", "\n")
+          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate.strip() + "\n", encoding="utf-8")
+          PY
+          chmod 600 ~/.ssh/id_ed25519
+          if ! ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null; then
+            echo "::error::HETZNER_SSH_KEY could not be parsed as an unencrypted private SSH key." >&2
+            exit 1
+          fi
+          chmod 600 ~/.ssh/id_ed25519.pub
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          HOST_LOOKUP="$HETZNER_HOST"
+          if [[ "$PORT" != "22" ]]; then HOST_LOOKUP="[$HETZNER_HOST]:$PORT"; fi
+          ssh-keygen -F "$HOST_LOOKUP" -f ~/.ssh/known_hosts >/dev/null
+
+      - name: Verify SSH access
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" 'printf "ssh-ok\n"' | grep -qx 'ssh-ok'
+
+      - name: Provision workspace and project
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          EMAIL_Q=$(printf '%q' "$OWNER_EMAIL")
+          WS_NAME_Q=$(printf '%q' "$WORKSPACE_NAME")
+          WS_SLUG_Q=$(printf '%q' "$WORKSPACE_SLUG")
+          PR_NAME_Q=$(printf '%q' "${PROJECT_NAME:-}")
+          PR_SLUG_Q=$(printf '%q' "${PROJECT_SLUG:-}")
+          PR_TYPE_Q=$(printf '%q' "${PROJECT_TYPE:-generic}")
+
+          # The tool signals refusals through its exit code and explains them in the
+          # receipt on stdout. Letting errexit kill the step here would discard that
+          # explanation on exactly the failures an operator needs to read, so the
+          # code is captured, the receipt is reported, and only then propagated.
+          set +e
+          RESULT=$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q EMAIL=$EMAIL_Q WS_NAME=$WS_NAME_Q WS_SLUG=$WS_SLUG_Q PR_NAME=$PR_NAME_Q PR_SLUG=$PR_SLUG_Q PR_TYPE=$PR_TYPE_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          ARGS=(--owner-email "$EMAIL" --workspace-name "$WS_NAME" --workspace-slug "$WS_SLUG")
+          if [[ -n "$PR_SLUG" ]]; then
+            ARGS+=(--project-name "$PR_NAME" --project-slug "$PR_SLUG" --project-type "$PR_TYPE")
+          fi
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+            python tools/provision_workspace_project.py "${ARGS[@]}"
+          REMOTE
+          )
+          REMOTE_RC=$?
+          set -e
+          printf '%s\n' "$RESULT" > provision.json
+
+          # The receipt is validated here too: an unreadable reply is not a success,
+          # and this step writes to production, so it must not report one.
+          python3 - <<'PY'
+          import json, os, sys
+
+          raw = open('provision.json', encoding='utf-8').read()
+          try:
+              data = json.loads(raw)
+          except json.JSONDecodeError as exc:
+              print(f"::error::The server did not return a readable receipt: {exc}. "
+                    "Nothing can be concluded about what was created.", file=sys.stderr)
+              raise SystemExit(7)
+
+          report = [
+              f"status: {data.get('status')}",
+              f"changed: {data.get('changed')}",
+          ]
+          workspace = data.get('workspace')
+          if workspace:
+              report.append(
+                  f"workspace: {workspace.get('slug')} | {workspace.get('name')} "
+                  f"| created_now={workspace.get('created_now')}"
+              )
+              report.append(f"workspace_id: {workspace.get('id')}")
+          project = data.get('project')
+          if project:
+              report.append(
+                  f"project: {project.get('slug')} | {project.get('name')} "
+                  f"| created_now={project.get('created_now')}"
+              )
+              report.append(f"project_id: {project.get('id')}")
+          elif data.get('status') in {'provisioned', 'already_present'}:
+              report.append("project: none requested")
+          if data.get('hint'):
+              report.append(f"hint: {data['hint']}")
+          if data.get('accounts_on_platform') is not None:
+              report.append(f"accounts_on_platform: {data['accounts_on_platform']}")
+
+          text = "\n".join(report)
+          print(text)
+
+          summary = os.environ.get('GITHUB_STEP_SUMMARY')
+          if summary:
+              with open(summary, 'a', encoding='utf-8') as handle:
+                  handle.write("## Provisionamento\n\n```\n" + text + "\n```\n")
+          PY
+
+          if [[ "$REMOTE_RC" -ne 0 ]]; then
+            echo "::error::Provisioning refused with exit code $REMOTE_RC; the receipt above says why. Nothing partial was left behind." >&2
+            exit "$REMOTE_RC"
+          fi
