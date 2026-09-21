@@ -4,7 +4,32 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
-Nenhuma mudança pública pós-`v1.1.0` registrada neste changelog até o fechamento documental de 2026-09-12.
+### Papel de supervisão acadêmica
+
+- Adicionado o papel de workspace `ACADEMIC_SUPERVISOR` (**Professor orientador**) à matriz canônica `ROLE_PERMISSIONS`, com acesso somente leitura ao projeto (`APPLICATION_READ`, `SEARCH_HISTORY_READ`, `EVIDENCE_LIBRARY_READ`, `FULL_TEXT_ACCESS_READ`, `PROJECT_BANK_READ`, `HUMAN_REVIEW_READ`) e leitura de auditoria (`PROJECT_AUDIT_READ`); `EXPORT` permanece policy-gated.
+- O papel não recebe escrita, execução de busca, triagem, extração, adjudicação, gestão de revisão humana, gestão de membros, criação ou exclusão de projeto. Conceder supervisão não amplia o que o workspace pode fazer.
+- `ACADEMIC_SUPERVISOR` entrou em `_PROJECT_WIDE_ROLES`, então a resolução de contexto continua exigindo `confirm_project_access` server-side e a fronteira entre workspaces permanece fail-closed.
+- Adicionado o rótulo `Professor orientador` ao seletor de contexto da interface e a entrada correspondente no contrato de linguagem do produto.
+- Documentada a matriz de papéis em `docs/MULTITENANT_WORKSPACE_PROJECT_ACCESS.md`, com `ROLE_PERMISSIONS` explicitado como fonte única de verdade.
+- Registrado explicitamente que membership de supervisão é concessão de acesso e **não** é aprovação do orientador: não cria elegibilidade, qualidade metodológica, risco de viés, certeza, recomendação, PRISMA, PRESS, GF-10 nem congelamento de consulta.
+- Testes adicionados para o conjunto exato de permissões do papel, o gate de policy no export, a exigência de confirmação de acesso ao projeto e o isolamento entre workspaces.
+
+### Provisionamento do acesso do orientador
+
+- Adicionado `tools/grant_workspace_membership.py`, concessão de membership de workspace somente para operador, idempotente e fail-closed, com seleção do workspace por `--workspace-id` ou `--workspace-slug`.
+- A ferramenta nunca cria usuários, senhas, workspaces, projetos, papéis globais ou estado científico; `WORKSPACE_OWNER` não é atribuível e continua exigindo o fluxo explícito de transferência.
+- Trocar o papel de um membership existente exige `--allow-role-change`; sem a flag a operação é recusada sem alterar nada, para que mudança de privilégio nunca ocorra em silêncio.
+- `invited_by` permanece nulo em concessões por CLI: não há Principal autenticado convidando e a ferramenta não personifica um.
+- Adicionado `docs/ACADEMIC_SUPERVISOR_ONBOARDING.md`, runbook do caminho governado completo (solicitação -> aprovação -> convite de uso único -> senha definida pelo próprio orientador -> membership -> login), com códigos de saída e procedimento de revogação.
+- Adicionado teste de contrato ponta a ponta do onboarding: conta recém-criada não enxerga workspace algum antes do membership, a concessão é idempotente, o envelope resultante é somente leitura, suspensão revoga no login seguinte e o isolamento entre workspaces se mantém.
+
+### Homologação provisória de acesso
+
+- Adicionado `tools/seed_homologation_access.py`, que materializa um ambiente descartável de homologação (responsável, workspace, projeto e a conta do orientador já com `ACADEMIC_SUPERVISOR`) para validar o caminho de acesso sem tocar em identidade de produção.
+- O seeder é fail-closed por construção: não tem banco padrão, exige `NUTEV_ENVIRONMENT` não-produtivo (variável ausente conta como produção), recusa o caminho canônico de produção e o valor de `NUTEV_AUTH_DB`, recusa symlink e recusa banco que já contenha identidades.
+- Senhas são geradas com `secrets`, impressas uma única vez em stdout e persistidas apenas como hash Argon2.
+- Documentado o procedimento em `docs/ACADEMIC_SUPERVISOR_ONBOARDING.md`, incluindo as guardas, os códigos de saída e o limite do que a homologação evidencia.
+- Adicionado teste de jornada HTTP real contra servidor pilot vivo: login do orientador, seleção de contexto, projeto visível, `POST /api/search/jobs` negado com 403, e o mesmo endpoint aceito com 202 para um papel que detém `SEARCH_RUN` — provando que o 403 é o papel, não uma rota quebrada.
 
 ## [1.1.0] - 2026-09-12
 

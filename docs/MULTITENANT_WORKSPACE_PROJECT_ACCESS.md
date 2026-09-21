@@ -40,6 +40,38 @@ Project-wide access is available only through authorized workspace roles. Review
 
 `PLATFORM_ADMIN` remains infrastructure authority, not an implicit reader of private project/scientific state.
 
+## Workspace roles
+
+```text
+WORKSPACE_OWNER      full workspace authority, ownership transfer
+WORKSPACE_ADMIN      workspace/member administration, full project work
+RESEARCHER           full project work, conditional project creation/adjudication/export
+VIEWER               project-wide read, policy-gated export
+ACADEMIC_SUPERVISOR  project-wide read plus project audit read, policy-gated export
+REVIEWER             assignment-scoped screening/extraction only
+GUEST_REVIEWER       assignment-scoped screening/extraction only, no project bank read
+```
+
+`ROLE_PERMISSIONS` in `src/nutev/tenancy/permissions.py` is the single source of truth for this matrix; the table above is documentation of it, not a second contract.
+
+### ACADEMIC_SUPERVISOR (professor orientador)
+
+`ACADEMIC_SUPERVISOR` is the read-only academic supervision role. It receives project-wide read access
+(`APPLICATION_READ`, `SEARCH_HISTORY_READ`, `EVIDENCE_LIBRARY_READ`, `FULL_TEXT_ACCESS_READ`,
+`PROJECT_BANK_READ`, `HUMAN_REVIEW_READ`) plus `PROJECT_AUDIT_READ`, with `EXPORT` policy-gated.
+
+It deliberately receives no write, search-execution, screening, extraction, adjudication, human-review
+management, member-management, project-creation or deletion authority. Granting supervision therefore
+never widens what a workspace can do; it only lets a supervisor observe and audit what already exists.
+
+The role is currently permission-equivalent to `VIEWER`. It exists as a distinct role so that academic
+supervision is attributable in membership and audit records and can evolve independently, not because it
+carries extra authority today.
+
+Supervisory membership is an access grant only. It does not constitute advisor approval and must never be
+read as eligibility, methodological quality, risk of bias, certainty, recommendation, PRISMA state, or
+authorization of PRESS, GF-10, query freeze or formal systematic-review search.
+
 ## Context API
 
 In the hosted `NUTEV_AUTH_MODE=pilot` runtime:

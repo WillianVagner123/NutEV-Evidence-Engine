@@ -160,6 +160,10 @@ def test_inactive_membership_has_no_permissions() -> None:
         (WorkspaceRole.REVIEWER, Permission.SEARCH_RUN, False),
         (WorkspaceRole.VIEWER, Permission.SEARCH_RUN, False),
         (WorkspaceRole.GUEST_REVIEWER, Permission.PROJECT_BANK_READ, False),
+        (WorkspaceRole.ACADEMIC_SUPERVISOR, Permission.SEARCH_HISTORY_READ, True),
+        (WorkspaceRole.ACADEMIC_SUPERVISOR, Permission.SEARCH_RUN, False),
+        (WorkspaceRole.ACADEMIC_SUPERVISOR, Permission.MEMBERS_MANAGE, False),
+        (WorkspaceRole.ACADEMIC_SUPERVISOR, Permission.PROJECT_CREATE, False),
         (WorkspaceRole.RESEARCHER, Permission.PROJECT_DELETE, False),
         (WorkspaceRole.WORKSPACE_ADMIN, Permission.WORKSPACE_TRANSFER_OWNERSHIP, False),
         (WorkspaceRole.WORKSPACE_OWNER, Permission.WORKSPACE_TRANSFER_OWNERSHIP, True),
@@ -235,6 +239,101 @@ def test_reviewer_is_assignment_scoped() -> None:
     decision = service.decide(principal, Permission.SCREEN, context=assigned)
     assert decision.allowed
     assert decision.scope is PermissionScope.ASSIGNED
+
+
+def test_academic_supervisor_is_read_only_supervision_plus_audit() -> None:
+    """Professor orientador: project-wide read and audit read, no scientific write authority."""
+
+    from nutev.tenancy import ROLE_PERMISSIONS
+
+    granted = ROLE_PERMISSIONS[WorkspaceRole.ACADEMIC_SUPERVISOR]
+    assert set(granted) == {
+        Permission.APPLICATION_READ,
+        Permission.SEARCH_HISTORY_READ,
+        Permission.EVIDENCE_LIBRARY_READ,
+        Permission.FULL_TEXT_ACCESS_READ,
+        Permission.PROJECT_BANK_READ,
+        Permission.HUMAN_REVIEW_READ,
+        Permission.EXPORT,
+        Permission.PROJECT_AUDIT_READ,
+    }
+
+    principal, workspace_id, project_id = _principal(WorkspaceRole.ACADEMIC_SUPERVISOR)
+    service = PermissionService()
+    confirmed = AuthorizationContext(
+        workspace_id=workspace_id,
+        project_id=project_id,
+        project_access_confirmed=True,
+    )
+
+    for readable in (
+        Permission.APPLICATION_READ,
+        Permission.EVIDENCE_LIBRARY_READ,
+        Permission.FULL_TEXT_ACCESS_READ,
+        Permission.PROJECT_BANK_READ,
+        Permission.HUMAN_REVIEW_READ,
+        Permission.PROJECT_AUDIT_READ,
+    ):
+        decision = service.decide(principal, readable, context=confirmed)
+        assert decision.allowed, readable
+        assert decision.scope is PermissionScope.FULL
+
+    for withheld in (
+        Permission.EVIDENCE_LIBRARY_WRITE,
+        Permission.FULL_TEXT_ACCESS_MANAGE,
+        Permission.APPLICATION_MANAGE,
+        Permission.HUMAN_REVIEW_MANAGE,
+        Permission.SCREEN,
+        Permission.EXTRACT,
+        Permission.ADJUDICATE,
+        Permission.SEARCH_RUN,
+        Permission.PROJECT_CREATE,
+        Permission.PROJECT_DELETE,
+        Permission.MEMBERS_MANAGE,
+        Permission.WORKSPACE_SETTINGS_MANAGE,
+        Permission.WORKSPACE_TRANSFER_OWNERSHIP,
+        Permission.WORKSPACE_DELETE,
+    ):
+        decision = service.decide(principal, withheld, context=confirmed)
+        assert not decision.allowed, withheld
+        assert decision.reason == "role_does_not_grant_permission"
+
+
+def test_academic_supervisor_export_is_policy_gated() -> None:
+    principal, workspace_id, project_id = _principal(WorkspaceRole.ACADEMIC_SUPERVISOR)
+    service = PermissionService()
+    base = AuthorizationContext(
+        workspace_id=workspace_id,
+        project_id=project_id,
+        project_access_confirmed=True,
+    )
+
+    denied = service.decide(principal, Permission.EXPORT, context=base)
+    assert not denied.allowed
+    assert denied.reason == "explicit_policy_grant_required"
+
+    granted = service.decide(
+        principal,
+        Permission.EXPORT,
+        context=AuthorizationContext(
+            workspace_id=workspace_id,
+            project_id=project_id,
+            project_access_confirmed=True,
+            policy_grants=frozenset({Permission.EXPORT}),
+        ),
+    )
+    assert granted.allowed
+
+
+def test_academic_supervisor_read_still_requires_confirmed_project_access() -> None:
+    principal, workspace_id, project_id = _principal(WorkspaceRole.ACADEMIC_SUPERVISOR)
+    decision = PermissionService().decide(
+        principal,
+        Permission.PROJECT_BANK_READ,
+        context=AuthorizationContext(workspace_id=workspace_id, project_id=project_id),
+    )
+    assert not decision.allowed
+    assert decision.reason == "project_access_not_confirmed"
 
 
 def test_guest_reviewer_contract_is_assignment_only_without_implying_account_model() -> None:

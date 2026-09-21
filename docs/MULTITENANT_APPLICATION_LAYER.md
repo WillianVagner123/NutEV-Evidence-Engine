@@ -59,13 +59,14 @@ Application operations are project-scoped and require server-confirmed project a
 Typical role behavior:
 
 ```text
-WORKSPACE_OWNER   read/manage
-WORKSPACE_ADMIN   read/manage
-RESEARCHER        read/manage
-VIEWER            read only
-REVIEWER          no project-wide application access
-GUEST_REVIEWER    no project-wide application access
-PLATFORM_ADMIN    no implicit private-project bypass
+WORKSPACE_OWNER      read/manage
+WORKSPACE_ADMIN      read/manage
+RESEARCHER           read/manage
+VIEWER               read only
+ACADEMIC_SUPERVISOR  read only
+REVIEWER             no project-wide application access
+GUEST_REVIEWER       no project-wide application access
+PLATFORM_ADMIN       no implicit private-project bypass
 ```
 
 ## API

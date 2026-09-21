@@ -85,6 +85,7 @@ function roleLabel(value){
     RESEARCHER:'Pesquisador',
     REVIEWER:'Revisor',
     VIEWER:'Visualizador',
+    ACADEMIC_SUPERVISOR:'Professor orientador',
     GUEST_REVIEWER:'Revisor convidado',
     PLATFORM_ADMIN:'Admin da plataforma'
   }

@@ -189,6 +189,85 @@ def test_viewer_can_resolve_project_context_but_cannot_gain_write_permissions(tm
     assert not permission.can(viewer_principal, Permission.SCREEN, context=ctx)
 
 
+def test_academic_supervisor_resolves_project_context_without_write_or_review_authority(
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "platform.sqlite3"
+    auth = SQLiteAuthProvider(database, password_hasher=_fast_hasher())
+    owner = auth.provision_user(email="owner@example.org", display_name="Owner", password="a long enough owner password")
+    supervisor = auth.provision_user(
+        email="orientador@example.org",
+        display_name="Orientador",
+        password="a long enough supervisor password",
+    )
+    access = WorkspaceProjectService(SQLiteWorkspaceProjectStore(database))
+    workspace = access.provision_workspace(owner_user_id=owner.id, name="Lab", slug="lab")
+    owner_principal = _principal(owner.id, access)
+    project = access.create_project(owner_principal, workspace_id=workspace.id, name="Thesis", slug="thesis")
+    access.add_or_update_member(
+        owner_principal,
+        workspace_id=workspace.id,
+        user_id=supervisor.id,
+        role=WorkspaceRole.ACADEMIC_SUPERVISOR,
+    )
+    supervisor_principal = _principal(supervisor.id, access)
+
+    assert [item.id for item in access.list_projects(supervisor_principal, workspace.id)] == [project.id]
+    ctx = access.authorization_context(
+        supervisor_principal,
+        workspace_id=workspace.id,
+        project_id=project.id,
+    )
+    permission = PermissionService()
+    assert permission.can(supervisor_principal, Permission.PROJECT_BANK_READ, context=ctx)
+    assert permission.can(supervisor_principal, Permission.PROJECT_AUDIT_READ, context=ctx)
+    assert permission.can(supervisor_principal, Permission.HUMAN_REVIEW_READ, context=ctx)
+    assert not permission.can(supervisor_principal, Permission.SCREEN, context=ctx)
+    assert not permission.can(supervisor_principal, Permission.ADJUDICATE, context=ctx)
+    assert not permission.can(supervisor_principal, Permission.EVIDENCE_LIBRARY_WRITE, context=ctx)
+    assert not permission.can(supervisor_principal, Permission.HUMAN_REVIEW_MANAGE, context=ctx)
+
+
+def test_academic_supervisor_membership_does_not_cross_workspace_boundary(tmp_path: Path) -> None:
+    database = tmp_path / "platform.sqlite3"
+    auth = SQLiteAuthProvider(database, password_hasher=_fast_hasher())
+    owner_a = auth.provision_user(email="a@example.org", display_name="Owner A", password="a long enough owner password")
+    owner_b = auth.provision_user(email="b@example.org", display_name="Owner B", password="another long enough password")
+    supervisor = auth.provision_user(
+        email="orientador2@example.org",
+        display_name="Orientador",
+        password="a long enough supervisor password",
+    )
+    access = WorkspaceProjectService(SQLiteWorkspaceProjectStore(database))
+    workspace_a = access.provision_workspace(owner_user_id=owner_a.id, name="Lab A", slug="lab-a")
+    workspace_b = access.provision_workspace(owner_user_id=owner_b.id, name="Lab B", slug="lab-b")
+    owner_b_principal = _principal(owner_b.id, access)
+    foreign_project = access.create_project(
+        owner_b_principal,
+        workspace_id=workspace_b.id,
+        name="Private",
+        slug="private",
+    )
+    access.add_or_update_member(
+        _principal(owner_a.id, access),
+        workspace_id=workspace_a.id,
+        user_id=supervisor.id,
+        role=WorkspaceRole.ACADEMIC_SUPERVISOR,
+    )
+    supervisor_principal = _principal(supervisor.id, access)
+
+    assert not access.confirm_project_access(
+        supervisor_principal,
+        workspace_id=workspace_b.id,
+        project_id=foreign_project.id,
+    )
+    assert not access.confirm_project_access(
+        supervisor_principal,
+        workspace_id=workspace_a.id,
+        project_id=foreign_project.id,
+    )
+
+
 def test_removed_membership_revokes_new_principal_access_immediately(tmp_path: Path) -> None:
     database = tmp_path / "platform.sqlite3"
     auth = SQLiteAuthProvider(database, password_hasher=_fast_hasher())
