@@ -197,32 +197,73 @@ jobs:
           REMOTE
           )
           printf '%s\n' "$RESULT" > inspect.json
-          {
-            echo "## Estado atual"
-            echo
-            echo '```json'
-            cat inspect.json
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
 
-          if [[ "$MODE" == "grant" ]]; then
-            python3 - <<'PY'
+          # The reply is validated in EVERY mode, not only before a grant. An empty
+          # or malformed answer must never be read as "this platform has no
+          # workspaces": that false negative would send an operator to the wrong
+          # conclusion. The readable report goes to the log as well as the step
+          # summary, because the log is where an operator looks first.
+          python3 - <<'PY'
           import json, os, sys
-          data = json.loads(open('inspect.json', encoding='utf-8').read())
-          if data.get('account') is None:
-              print('::error::No account exists for that email yet. The person must complete '
-                    '/access-request.html, your approval, and /set-password.html first.', file=sys.stderr)
-              raise SystemExit(4)
-          if data['account']['status'] != 'active':
-              print(f"::error::Account status is {data['account']['status']}, not active.", file=sys.stderr)
-              raise SystemExit(5)
-          slugs = {w['slug'] for w in data['workspaces']}
-          wanted = os.environ['TARGET_WORKSPACE']
-          if wanted not in slugs:
-              print(f"::error::workspace_slug '{wanted}' not found. Available: {sorted(slugs)}", file=sys.stderr)
-              raise SystemExit(6)
+
+          raw = open('inspect.json', encoding='utf-8').read()
+          try:
+              data = json.loads(raw)
+          except json.JSONDecodeError as exc:
+              print(f"::error::The server did not return readable JSON: {exc}. An unreadable "
+                    "reply is not an empty result; nothing was established about the platform.",
+                    file=sys.stderr)
+              raise SystemExit(7)
+          if not isinstance(data.get('workspaces'), list):
+              print("::error::Reply carries no 'workspaces' list; refusing to interpret it.",
+                    file=sys.stderr)
+              raise SystemExit(7)
+
+          report = ["WORKSPACES:"]
+          for workspace in data['workspaces']:
+              report.append(f"  {workspace['slug']}  |  {workspace['name']}  |  {workspace['status']}")
+          if not data['workspaces']:
+              report.append("  (none) - a workspace must exist before a membership can be granted")
+
+          account = data.get('account')
+          report.append("ACCOUNT:")
+          if account is None:
+              report.append("  no account for the supplied email (or no email was supplied)")
+          else:
+              report.append(f"  {account['email']}  |  {account['display_name']}  |  {account['status']}")
+              memberships = data.get('memberships') or []
+              report.append("  MEMBERSHIPS:")
+              for membership in memberships:
+                  report.append(
+                      f"    {membership['role']}  |  {membership['status']}  |  {membership['workspace_id']}"
+                  )
+              if not memberships:
+                  report.append("    (none)")
+
+          text = "\n".join(report)
+          print(text)
+
+          summary = os.environ.get('GITHUB_STEP_SUMMARY')
+          if summary:
+              with open(summary, 'a', encoding='utf-8') as handle:
+                  handle.write("## Estado atual\n\n```\n" + text + "\n```\n")
+
+          if os.environ.get('MODE') == 'grant':
+              if account is None:
+                  print('::error::No account exists for that email yet. The person must complete '
+                        '/access-request.html, your approval, and /set-password.html first.',
+                        file=sys.stderr)
+                  raise SystemExit(4)
+              if account['status'] != 'active':
+                  print(f"::error::Account status is {account['status']}, not active.", file=sys.stderr)
+                  raise SystemExit(5)
+              slugs = {workspace['slug'] for workspace in data['workspaces']}
+              wanted = os.environ['TARGET_WORKSPACE']
+              if wanted not in slugs:
+                  print(f"::error::workspace_slug '{wanted}' not found. Available: {sorted(slugs)}",
+                        file=sys.stderr)
+                  raise SystemExit(6)
           PY
-          fi
 
       - name: Grant workspace membership
         if: ${{ inputs.mode == 'grant' }}
