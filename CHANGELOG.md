@@ -23,6 +23,14 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 - Adicionado `docs/ACADEMIC_SUPERVISOR_ONBOARDING.md`, runbook do caminho governado completo (solicitação -> aprovação -> convite de uso único -> senha definida pelo próprio orientador -> membership -> login), com códigos de saída e procedimento de revogação.
 - Adicionado teste de contrato ponta a ponta do onboarding: conta recém-criada não enxerga workspace algum antes do membership, a concessão é idempotente, o envelope resultante é somente leitura, suspensão revoga no login seguinte e o isolamento entre workspaces se mantém.
 
+### Homologação provisória de acesso
+
+- Adicionado `tools/seed_homologation_access.py`, que materializa um ambiente descartável de homologação (responsável, workspace, projeto e a conta do orientador já com `ACADEMIC_SUPERVISOR`) para validar o caminho de acesso sem tocar em identidade de produção.
+- O seeder é fail-closed por construção: não tem banco padrão, exige `NUTEV_ENVIRONMENT` não-produtivo (variável ausente conta como produção), recusa o caminho canônico de produção e o valor de `NUTEV_AUTH_DB`, recusa symlink e recusa banco que já contenha identidades.
+- Senhas são geradas com `secrets`, impressas uma única vez em stdout e persistidas apenas como hash Argon2.
+- Documentado o procedimento em `docs/ACADEMIC_SUPERVISOR_ONBOARDING.md`, incluindo as guardas, os códigos de saída e o limite do que a homologação evidencia.
+- Adicionado teste de jornada HTTP real contra servidor pilot vivo: login do orientador, seleção de contexto, projeto visível, `POST /api/search/jobs` negado com 403, e o mesmo endpoint aceito com 202 para um papel que detém `SEARCH_RUN` — provando que o 403 é o papel, não uma rota quebrada.
+
 ## [1.1.0] - 2026-09-12
 
 ### Scientific Workspace v2

@@ -107,6 +107,44 @@ python tools/grant_workspace_membership.py \
 
 Sessões são reconstruídas a cada requisição a partir do estado atual de membership, então a suspensão passa a valer nas requisições seguintes sem precisar de logout manual.
 
+## Homologação provisória
+
+Para validar ou demonstrar o acesso antes de tocar em produção, use o ambiente descartável de homologação.
+
+```bash
+export NUTEV_ENVIRONMENT=homologacao
+python tools/seed_homologation_access.py --database /caminho/descartavel/homologacao.sqlite3
+```
+
+O seeder cria responsável, workspace, projeto e a conta do orientador já com `ACADEMIC_SUPERVISOR`, e imprime as senhas geradas **uma única vez** em stdout. São credenciais descartáveis de um banco descartável; nunca as reutilize em conta de produção.
+
+Suba o servidor apontando para o banco de homologação (o comando exato vem no campo `serve_with` do recibo):
+
+```bash
+NUTEV_AUTH_MODE=pilot NUTEV_ENVIRONMENT=homologacao NUTEV_AUTH_DB=/caminho/descartavel/homologacao.sqlite3 python apps/nutev-web/secure_server.py --host 127.0.0.1 --port 8765
+```
+
+Abra `http://127.0.0.1:8765/login.html` e entre com o e-mail e a senha do orientador do recibo.
+
+### Guardas contra produção
+
+O seeder recusa, sem criar nada:
+
+```text
+2   NUTEV_ENVIRONMENT ausente ou de produção
+    (a variável ausente conta como produção, porque o runtime assume produção por padrão)
+3   caminho canônico de produção, ou o mesmo caminho de NUTEV_AUTH_DB
+4   banco que é symlink
+5   banco que já contém identidades (ele nunca altera identidade existente)
+6   identidade recusada pela política de senha/e-mail
+```
+
+Para recomeçar, apague o arquivo de homologação e rode de novo. O seeder nunca sobrescreve identidades.
+
+### O que a homologação não é
+
+O ambiente é estado de tenancy e navegação. Não cria registro científico, busca, Evidence Library, revisão humana, PRISMA, PRESS ou GF-10, e não é evidência sobre o comportamento de produção — apenas sobre o caminho de acesso exercitado ali.
+
 ## Fronteira científica
 
 Conceder supervisão é concessão de acesso. Não é aprovação do orientador e não cria elegibilidade, qualidade metodológica, risco de viés, certeza, recomendação, PRISMA, PRESS, GF-10 nem congelamento de consulta.
