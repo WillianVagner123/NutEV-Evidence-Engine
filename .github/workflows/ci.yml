@@ -291,11 +291,29 @@ jobs:
         run: |
           set -euo pipefail
           PORT="${HETZNER_PORT:-22}"
-          ACTIVE_SHA="$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
-            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
-            "curl -fsS http://127.0.0.1:8765/api/version" \
-            | python3 -c 'import json,sys; print(json.load(sys.stdin)["commit"])')"
-          [[ "$ACTIVE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          # A deploy triggered by an earlier push restarts the application, so
+          # /api/version can be briefly unreachable while this job runs. Reading it
+          # once made the job fail with an unparseable empty body. Retry within a
+          # bounded window, and still fail closed if it never answers: ACTIVE_SHA
+          # protects the live release from pruning and must never be guessed.
+          ACTIVE_SHA=""
+          for attempt in $(seq 1 24); do
+            if PROBE="$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+                 -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+                 "curl -fsS --max-time 10 http://127.0.0.1:8765/api/version" \
+                 | python3 -c 'import json,sys; print(json.load(sys.stdin)["commit"])' 2>/dev/null)" \
+               && [[ "$PROBE" =~ ^[0-9a-f]{40}$ ]]; then
+              ACTIVE_SHA="$PROBE"
+              break
+            fi
+            echo "attempt ${attempt}/24: /api/version not answering yet; a deploy may be restarting the application"
+            sleep 10
+          done
+          if [[ -z "$ACTIVE_SHA" ]]; then
+            echo "::error::Could not read the active release SHA from /api/version after 24 attempts over ~4 minutes. Refusing to prune recovery state without knowing which release is live." >&2
+            exit 1
+          fi
+          echo "active_release_sha=$ACTIVE_SHA"
           REMOTE_CMD="python3 - --base /var/lib/nutev-release-recovery --retain-complete 3 --protect-sha $ACTIVE_SHA --json"
           while IFS= read -r sha; do
             [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
