@@ -4,6 +4,11 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Primeiro login com workspace provisionado
+
+- Corrigida a home do runtime multiusuário para distinguir conta sem workspace, conta com múltiplos workspaces e conta com exatamente um workspace ainda não selecionado. Nesse último caso, o contexto é selecionado pelo endpoint server-side antes de listar projetos, evitando a falsa mensagem "Nenhum projeto disponível" no primeiro acesso.
+
+
 ### Gestão de membros como superfície de produto
 
 - Adicionados `GET /api/workspace/members`, `POST /api/workspace/members` e `POST /api/workspace/members/status`, expondo as primitivas de membership que antes só existiam para operador em terminal. Os três exigem `MEMBERS_MANAGE` (`WORKSPACE_OWNER` / `WORKSPACE_ADMIN`).
