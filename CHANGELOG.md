@@ -4,6 +4,13 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Binding técnico do Artigo 1 / D-132
+
+- Corrigido `tools/provision_doctorate_article1.py` para garantir, com `--article1-assembly`, tanto `assembly_id=WILLIAN_DOCTORATE_A1` quanto a `d132_config_version` lida da configuração canônica do D-132.
+- O comando agora repara aplicação existente quando essas chaves estão ausentes, preservando a configuração privada já armazenada; valores conflitantes falham fechado em vez de serem sobrescritos.
+- O reparo continua sendo somente configuração de acesso/aplicação: não altera PRESS, GF-10, query freeze, busca formal, PRISMA, D-132 humano nem ownership histórico.
+
+
 ### Primeiro login com workspace provisionado
 
 - Corrigida a home do runtime multiusuário para distinguir conta sem workspace, conta com múltiplos workspaces e conta com exatamente um workspace ainda não selecionado. Nesse último caso, o contexto é selecionado pelo endpoint server-side antes de listar projetos, evitando a falsa mensagem "Nenhum projeto disponível" no primeiro acesso.
