@@ -48,9 +48,13 @@ python tools/provision_doctorate_article1.py \
 ```
 
 O comando cria o workspace, o projeto e a `ResearchApplication` de **Revisão de escopo**
-(`SCOPING_REVIEW`), e devolve um recibo JSON com os identificadores. Ele é idempotente:
-rodar de novo devolve `already_provisioned` e nunca sobrescreve a configuração privada de um
-projeto que já existe.
+(`SCOPING_REVIEW`), e devolve um recibo JSON com os identificadores. Com
+`--article1-assembly`, ele também garante as chaves técnicas canônicas
+`assembly_id=WILLIAN_DOCTORATE_A1` e `d132_config_version=<versão canônica do D-132>`.
+Se a aplicação já existir e uma dessas chaves estiver ausente, o provisionador repara somente
+essas chaves e preserva o restante da configuração privada. Se já existir valor conflitante,
+ele falha fechado em vez de sobrescrever. Depois do reparo, uma nova execução é idempotente e
+devolve `already_provisioned`.
 
 O comando nunca cria usuário, nunca define senha, nunca concede papel global e nunca concede
 acesso a terceiros. O banco padrão vem de `NUTEV_AUTH_DB`.
@@ -67,6 +71,7 @@ acesso a terceiros. O banco padrão vem de `NUTEV_AUTH_DB`.
 7   workspace_owned_by_another_identity
 8   project_refused
 9   application_refused
+10  application_binding_conflict
 ```
 
 ### O passo humano que resta
