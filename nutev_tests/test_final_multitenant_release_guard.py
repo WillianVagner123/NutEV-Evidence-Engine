@@ -32,6 +32,8 @@ def test_release_guard_is_installed_after_application_routes() -> None:
     assert guard_pos > source.index("install_export_audit_routes()")
     assert guard_pos > source.index("install_review_routes()")
     assert guard_pos > source.index("install_article1_d132_routes()")
+    assert guard_pos > source.index("install_article1_state_routes()")
+    assert guard_pos > source.index("install_membership_routes()")
     assert guard_pos > source.index("install_article2_integrative_routes")
 
 
@@ -45,6 +47,8 @@ def test_final_runtime_smoke_covers_required_private_surfaces() -> None:
         "/api/review": {401},
         "/agent-context/article1/SEARCH_STATE.json": {401},
         "/api/article1/d132/review": {401},
+        "/api/workspace/members": {401},
+        "/api/article1/scientific-state": {401},
         "/api/article2/integrative/status": {401, 404},
     }
     assert set(EXPECTED_PRIVATE_UNAUTHENTICATED_STATUS) == set(required)

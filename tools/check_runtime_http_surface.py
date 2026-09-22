@@ -31,6 +31,8 @@ EXPECTED_PRIVATE_UNAUTHENTICATED_STATUS: dict[str, frozenset[int]] = {
     "/api/review": frozenset({401}),
     "/agent-context/article1/SEARCH_STATE.json": frozenset({401}),
     "/api/article1/d132/review": frozenset({401}),
+    "/api/workspace/members": frozenset({401}),
+    "/api/article1/scientific-state": frozenset({401}),
     # Article 2 may remain dark-launched (404) until historical binding is proven;
     # if enabled, the unauthenticated surface must still require a session (401).
     "/api/article2/integrative/status": frozenset({401, 404}),
