@@ -14,6 +14,13 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 - Adicionada a tela `members.html`, acessível a partir da tela do projeto apenas quando o papel carrega `MEMBERS_MANAGE`. O formulário declara `method="post"` e `action` explícita, para que falha de JavaScript não vire submit GET com o e-mail na URL, no histórico e no `Referer`.
 - Adicionado `list_memberships` ao store de tenancy, `list_members` ao `WorkspaceProjectService`, `find_active_subject_by_email` ao provedor de identidade e a constante canônica `ASSIGNABLE_WORKSPACE_ROLES`, da qual `WORKSPACE_OWNER` está deliberadamente ausente.
 
+### Materialização do workspace do doutorado
+
+- Adicionado `tools/provision_doctorate_article1.py`, comando de operador idempotente que cria o workspace, o projeto do Artigo 1 e a `ResearchApplication` de `SCOPING_REVIEW` para uma identidade que já existe, em vez de exigir Python escrito à mão contra o banco de produção.
+- O comando nunca cria usuário, senha, papel global ou membership de terceiros, e nunca sobrescreve a configuração privada de um projeto já existente; re-executar devolve `already_provisioned` sem alterar nada.
+- A marcação `assembly_id` do Artigo 1 é opt-in (`--article1-assembly`) e é configuração, não propriedade: os pins server-managed `NUTEV_A1_WORKSPACE_ID` / `NUTEV_A1_PROJECT_ID` continuam obrigatórios e continuam sendo um passo humano separado, apenas reportado pelo recibo.
+- Recusa fail-closed com código de saída distinto para banco ausente, responsável inexistente ou inativo, e workspace cujo slug já pertence a outra identidade.
+
 ### Estado científico do Artigo 1 na interface
 
 - Adicionado `GET /api/article1/scientific-state`, leitura que deriva Discovery, PRESS, GF-10, congelamento de consulta, busca formal e PRISMA da fonte canônica `config/nutev/article1_search_master_v1.json`.

@@ -31,6 +31,57 @@ Cada seta é um passo distinto. Em especial, **aprovar a solicitação de acesso
 workspace nenhum**: a conta nasce sem workspace, sem projeto e sem dado científico, e isso é o
 comportamento fail-closed esperado.
 
+## Parte 0 — Abrir o workspace pela primeira vez (operador)
+
+Este passo acontece uma única vez, antes de tudo, e só depois de o responsável já ter conta
+ativa pelo fluxo governado de convite.
+
+```bash
+python tools/provision_doctorate_article1.py \
+  --owner-email "responsavel@instituicao.br" \
+  --workspace-name "Doutorado — <nome>" \
+  --workspace-slug "<slug-do-workspace>" \
+  --project-name "Artigo 1" \
+  --project-slug "artigo-1" \
+  --project-type review \
+  --article1-assembly
+```
+
+O comando cria o workspace, o projeto e a `ResearchApplication` de **Revisão de escopo**
+(`SCOPING_REVIEW`), e devolve um recibo JSON com os identificadores. Ele é idempotente:
+rodar de novo devolve `already_provisioned` e nunca sobrescreve a configuração privada de um
+projeto que já existe.
+
+O comando nunca cria usuário, nunca define senha, nunca concede papel global e nunca concede
+acesso a terceiros. O banco padrão vem de `NUTEV_AUTH_DB`.
+
+### Códigos de saída
+
+```text
+0   provisioned | already_provisioned
+2   e-mail malformado
+3   database_missing
+4   owner_not_found     (o responsável ainda não tem conta ativa)
+5   owner_not_active
+6   workspace_refused
+7   workspace_owned_by_another_identity
+8   project_refused
+9   application_refused
+```
+
+### O passo humano que resta
+
+Com os identificadores do recibo, o operador define os pins do Artigo 1 no ambiente:
+
+```text
+NUTEV_A1_WORKSPACE_ID=wsp_...
+NUTEV_A1_PROJECT_ID=prj_...
+```
+
+Esses pins são o que expõe as superfícies do Artigo 1, e devem ser preenchidos **somente a
+partir de evidência revisada de propriedade em runtime**. O comando os informa, mas não os
+define: configurar a aplicação não cria propriedade científica.
+
 ## Parte 1 — O responsável pelo Artigo 1
 
 ### Entrar e escolher o contexto
