@@ -32,6 +32,27 @@ function renderSignedOut(){
   panel.innerHTML='<div class="product-panel-head"><div><span class="home-eyebrow">Seu espaço de pesquisa</span><h2>Entre para acessar workspaces e projetos</h2><p>Busca privada, biblioteca, histórico e exportações são isolados pela sessão autenticada.</p></div></div><div class="product-actions"><a class="action-primary" href="/login.html">Entrar no NutEV</a></div>'
 }
 
+function renderNoWorkspace(me){
+  runtimeStatus.textContent='acesso pendente'
+  panel.innerHTML=`<div class="product-panel-head"><div><span class="home-eyebrow">Olá, ${esc(me.user?.display_name||'pesquisador')}</span><h2>Acesso ainda não provisionado</h2><p>Seu login está funcionando, mas nenhum workspace foi atribuído à sua conta. Solicite ao administrador do NutEV que crie ou libere seu espaço de pesquisa.</p></div></div>`
+}
+
+function renderWorkspaceChooser(me,context){
+  const workspaces=Array.isArray(context.workspaces)?context.workspaces:[]
+  runtimeStatus.textContent='escolha um workspace'
+  panel.innerHTML=`<div class="product-panel-head"><div><span class="home-eyebrow">Olá, ${esc(me.user?.display_name||'pesquisador')}</span><h2>Escolha um workspace</h2><p>Depois de selecionar o workspace, o NutEV mostra somente os projetos aos quais sua conta tem acesso.</p></div><span class="project-badge neutral">${workspaces.length.toLocaleString('pt-BR')} workspace(s)</span></div><div class="module-grid">${workspaces.map(workspace=>`<article class="module-card"><span class="module-icon" aria-hidden="true">◇</span><strong>${esc(workspace.name)}</strong><div class="module-meta"><button class="ghost" type="button" data-open-workspace="${esc(workspace.id)}">Abrir workspace</button></div></article>`).join('')}</div>`
+  panel.querySelectorAll('[data-open-workspace]').forEach(button=>button.addEventListener('click',async()=>{
+    button.disabled=true
+    button.textContent='Abrindo…'
+    try{await selectWorkspace(button.dataset.openWorkspace);location.reload()}catch{button.disabled=false;button.textContent='Abrir workspace'}
+  }))
+}
+
+// Selection is navigation state only; the server revalidates membership on every request.
+async function selectWorkspace(workspaceId){
+  return jsonFetch('/api/context/select',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({workspace_id:workspaceId,project_id:null})})
+}
+
 function renderProjectChooser(me,context){
   const projects=Array.isArray(context.projects)?context.projects:[]
   const current=context.current||{}
@@ -65,6 +86,16 @@ async function init(){
     let me
     try{me=await jsonFetch('/api/auth/me')}catch(error){if(error.status===401){renderSignedOut();return}throw error}
     const context=await jsonFetch('/api/context')
+    const workspaces=Array.isArray(context.workspaces)?context.workspaces:[]
+    if(!context.current?.workspace_id){
+      if(!workspaces.length){renderNoWorkspace(me);return}
+      if(workspaces.length>1){renderWorkspaceChooser(me,context);return}
+      // First login with exactly one authorized workspace: open it so its projects are listed.
+      // Reload afterwards so the tenant-session lease is rebuilt for the new server context.
+      await selectWorkspace(workspaces[0].id)
+      location.reload()
+      return
+    }
     if(!context.current?.project_id){renderProjectChooser(me,context);return}
     let application=null
     try{application=(await jsonFetch('/api/application')).application||null}catch(error){if(error.status!==404)throw error}
