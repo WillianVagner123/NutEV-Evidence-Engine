@@ -92,6 +92,29 @@ Session
 
 The onboarding flow uses these same primitives. Creating/configuring the first project application must persist across refresh and logout/login; that behavior is covered by the authenticated Chromium regression gate.
 
+## Article 1 gate state
+
+The pinned Article 1 project also exposes a read-only gate-state surface:
+
+```text
+GET /api/article1/scientific-state
+```
+
+It requires pilot mode, an authenticated Principal, the server-side project context,
+`APPLICATION_READ` on that project, and the server-managed Article 1 owner pin
+(`NUTEV_A1_WORKSPACE_ID` / `NUTEV_A1_PROJECT_ID`). A project that is not the pinned Article 1
+project gets not-found semantics, so Article 1 state never appears inside another tenant's
+project view.
+
+The response derives Discovery, PRESS, GF-10, query freeze, formal search and PRISMA from the
+canonical master at `config/nutev/article1_search_master_v1.json`, and reports the recorded
+value beside each derived state. A value the endpoint does not recognise derives a closed
+state, so a malformed or future master never reads as an open gate.
+
+The endpoint is a read. It cannot open a gate, it adopts no screening, eligibility or PRISMA
+decision into the project, and the discovery counts it returns are labelled as discovery and
+retrieval counts rather than PRISMA, inclusion or exclusion counts.
+
 ## First-party scientific applications
 
 Article 1 and Article 2 may use specialized private adapters/assemblies on top of the generic platform. Those adapters do not become defaults for unrelated tenants or templates.

@@ -29,6 +29,7 @@ from nutev.tenancy import (
     WorkspaceRole,
     new_opaque_id,
 )
+from nutev.tenancy.access_requests import SQLiteAccessRequestStore
 from nutev.tenancy.models import MembershipStatus
 from nutev.tenancy.permissions import PermissionDenied
 
@@ -560,3 +561,51 @@ def test_assignable_statuses_never_include_invited() -> None:
     spec = (WEB / "tenant_membership_api.py").read_text(encoding="utf-8")
     assert "MembershipStatus.INVITED" not in spec
     assert MembershipStatus.INVITED.value == "invited"
+
+
+@pytest.mark.integration_no_network
+def test_governed_onboarding_then_http_grant_completes_the_supervisor_chain(server) -> None:
+    """Approval creates an account; membership is still a separate, explicit step.
+
+    The operator CLI already covered this chain. This asserts the same boundary when the
+    grant happens through the product surface instead of a terminal.
+    """
+    base_url, seeded = server
+    requests = SQLiteAccessRequestStore(seeded["database"])
+    submitted = requests.submit(
+        email="novo.orientador@example.org",
+        display_name="Prof. Convidado",
+        institution="Universidade",
+        intended_use="Acompanhamento academico.",
+    )
+    assert submitted is not None
+    invitation = requests.approve(submitted.id, decided_by=seeded["owner"].id)
+    password = "senha longa definida pela propria pessoa convidada"
+    requests.accept_invitation(invitation.token, password=password)
+
+    # The account exists and can log in, but approval granted no workspace at all.
+    invited_cookie = _login(base_url, "novo.orientador@example.org", password)
+    status, context = _http(base_url + "/api/context", cookie=invited_cookie)
+    assert status == 200, context
+    assert context["workspaces"] == []
+    assert _select(base_url, invited_cookie, seeded["workspace"].id, seeded["project"].id)[0] != 200
+
+    # The owner grants supervision through the product surface.
+    owner_cookie = _login(base_url, OWNER_EMAIL, OWNER_PASSWORD)
+    _select(base_url, owner_cookie, seeded["workspace"].id, seeded["project"].id)
+    status, granted = _http(
+        base_url + "/api/workspace/members",
+        method="POST",
+        cookie=owner_cookie,
+        payload={"email": "novo.orientador@example.org", "role": "ACADEMIC_SUPERVISOR"},
+    )
+    assert status == 200, granted
+    assert granted["member"]["role"] == "ACADEMIC_SUPERVISOR"
+    assert granted["scientific_approval_created"] is False
+
+    # Now, and only now, the workspace is reachable — with read access only.
+    status, context = _http(base_url + "/api/context", cookie=invited_cookie)
+    assert [workspace["id"] for workspace in context["workspaces"]] == [seeded["workspace"].id]
+    assert _select(base_url, invited_cookie, seeded["workspace"].id, seeded["project"].id)[0] == 200
+    assert _http(base_url + "/api/application", cookie=invited_cookie)[0] == 200
+    assert _http(base_url + "/api/workspace/members", cookie=invited_cookie)[0] == 403
