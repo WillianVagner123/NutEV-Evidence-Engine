@@ -175,6 +175,13 @@ ROLE_PERMISSIONS: dict[WorkspaceRole, dict[Permission, PermissionRule]] = {
     },
 }
 
+# Roles that member administration may assign. WORKSPACE_OWNER is deliberately absent:
+# ownership moves only through the explicit transfer flow, never through member management.
+ASSIGNABLE_WORKSPACE_ROLES: tuple[WorkspaceRole, ...] = tuple(
+    role for role in WorkspaceRole if role is not WorkspaceRole.WORKSPACE_OWNER
+)
+
+
 _PROJECT_SCOPED = {
     Permission.APPLICATION_READ,
     Permission.APPLICATION_MANAGE,

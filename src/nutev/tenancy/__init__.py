@@ -72,6 +72,7 @@ from .models import (
     require_opaque_id,
 )
 from .permissions import (
+    ASSIGNABLE_WORKSPACE_ROLES,
     AuthorizationContext,
     Permission,
     PermissionDecision,
@@ -91,6 +92,7 @@ from .search_scope import (
 
 __all__ = [
     "APPLICATION_SCHEMA_VERSION",
+    "ASSIGNABLE_WORKSPACE_ROLES",
     "AUTH_SCHEMA_VERSION",
     "BUILTIN_APPLICATION_TEMPLATES",
     "CORE_PLATFORM_TABLES",

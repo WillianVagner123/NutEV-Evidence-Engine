@@ -274,6 +274,27 @@ class SQLiteWorkspaceProjectStore:
             ).fetchone()
         return self._membership(row) if row is not None else None
 
+    def list_memberships(self, workspace_id: str) -> tuple[Membership, ...]:
+        """Every membership row of a workspace, including suspended/removed ones.
+
+        Callers must authorize first; this reader deliberately has no Principal.
+        """
+        try:
+            require_opaque_id(workspace_id, "workspace")
+        except ValueError:
+            return ()
+        with self._connect() as connection:
+            rows = connection.execute(
+                """
+                SELECT workspace_id, user_id, role, status, invited_by, joined_at
+                FROM platform_workspace_memberships
+                WHERE workspace_id = ?
+                ORDER BY joined_at IS NULL, joined_at, user_id
+                """,
+                (workspace_id,),
+            ).fetchall()
+        return tuple(self._membership(row) for row in rows)
+
     def list_workspaces_for_user(self, user_id: str) -> tuple[Workspace, ...]:
         require_opaque_id(user_id, "user")
         with self._connect() as connection:
@@ -592,6 +613,15 @@ class WorkspaceProjectService:
         )
         if role is WorkspaceRole.WORKSPACE_OWNER:
             raise ValueError("use explicit ownership transfer flow")
+        workspace = self.store.get_workspace(workspace_id)
+        if workspace is None:
+            raise KeyError(workspace_id)
+        # Assigning WORKSPACE_OWNER is refused above, but demoting the sitting owner is the
+        # same ownership transfer seen from the other side: it would leave the workspace with
+        # an owner_user_id whose membership no longer carries owner authority. Refuse it here
+        # so member administration can never strip ownership implicitly.
+        if workspace.owner_user_id == user_id:
+            raise ValueError("use explicit ownership transfer flow")
         return self.store.upsert_membership(
             workspace_id=workspace_id,
             user_id=user_id,
@@ -599,6 +629,17 @@ class WorkspaceProjectService:
             status=status,
             invited_by=principal.user_id,
         )
+
+    def list_members(self, principal: Principal, workspace_id: str) -> tuple[Membership, ...]:
+        """Membership roster of a workspace, for principals allowed to administer members."""
+        self.permission_service.require(
+            principal,
+            Permission.MEMBERS_MANAGE,
+            context=AuthorizationContext(workspace_id=workspace_id),
+        )
+        if self.store.get_workspace(workspace_id) is None:
+            raise KeyError(workspace_id)
+        return self.store.list_memberships(workspace_id)
 
     def set_member_status(
         self,
