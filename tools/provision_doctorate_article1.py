@@ -23,6 +23,7 @@ import os
 from pathlib import Path
 import sqlite3
 
+from nutev.applications.willian_doctorate_a1 import load_d132_config
 from nutev.tenancy import (
     ApplicationService,
     Principal,
@@ -36,6 +37,7 @@ from nutev.tenancy import (
 # The assembly id the first-party Article 1 adapters look for. On its own it is not ownership:
 # access to the historical material is gated by the server-managed owner pins.
 A1_ASSEMBLY_ID = "WILLIAN_DOCTORATE_A1"
+_REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _default_database() -> Path:
@@ -181,19 +183,30 @@ def main(argv: list[str] | None = None) -> int:
             return 8
 
     application_created = False
+    application_updated = False
     try:
         application = applications.get(principal, workspace_id=workspace.id, project_id=project.id)
     except (PermissionError, ValueError, KeyError):
         application = None
+
+    d132_version = load_d132_config(_REPO_ROOT).config_version if args.article1_assembly else None
+    required_article1_configuration = (
+        {
+            "assembly_id": A1_ASSEMBLY_ID,
+            "d132_config_version": d132_version,
+        }
+        if args.article1_assembly
+        else {}
+    )
+
     if application is None:
-        configuration = {"assembly_id": A1_ASSEMBLY_ID} if args.article1_assembly else {}
         try:
             application = applications.configure(
                 principal,
                 workspace_id=workspace.id,
                 project_id=project.id,
                 template_id=SCOPING_REVIEW,
-                configuration=configuration,
+                configuration=required_article1_configuration,
             )
             application_created = True
         except (PermissionError, ValueError, KeyError) as exc:
@@ -205,9 +218,66 @@ def main(argv: list[str] | None = None) -> int:
                 reason=type(exc).__name__,
             )
             return 9
+    elif args.article1_assembly:
+        descriptor = application.descriptor()
+        configuration = descriptor.get("configuration")
+        if not isinstance(configuration, dict):
+            _emit(
+                "application_binding_conflict",
+                changed=workspace_created or project_created,
+                workspace_id=workspace.id,
+                project_id=project.id,
+                reason="configuration_not_object",
+            )
+            return 10
+
+        conflicts = {
+            key: configuration.get(key)
+            for key, expected in required_article1_configuration.items()
+            if key in configuration and configuration.get(key) != expected
+        }
+        if conflicts:
+            _emit(
+                "application_binding_conflict",
+                changed=workspace_created or project_created,
+                workspace_id=workspace.id,
+                project_id=project.id,
+                conflicting_keys=sorted(conflicts),
+            )
+            return 10
+
+        missing = {
+            key: value
+            for key, value in required_article1_configuration.items()
+            if configuration.get(key) != value
+        }
+        if missing:
+            merged_configuration = dict(configuration)
+            merged_configuration.update(missing)
+            try:
+                application = applications.configure(
+                    principal,
+                    workspace_id=workspace.id,
+                    project_id=project.id,
+                    application_type=str(descriptor.get("application_type") or ""),
+                    template_id=str(descriptor.get("template_id") or "") or None,
+                    template_version=str(descriptor.get("template_version") or "") or None,
+                    config_version=str(descriptor.get("config_version") or "1"),
+                    configuration=merged_configuration,
+                )
+                application_updated = True
+            except (PermissionError, ValueError, KeyError) as exc:
+                _emit(
+                    "application_refused",
+                    changed=workspace_created or project_created,
+                    workspace_id=workspace.id,
+                    project_id=project.id,
+                    reason=type(exc).__name__,
+                )
+                return 9
 
     descriptor = application.descriptor()
-    changed = workspace_created or project_created or application_created
+    changed = workspace_created or project_created or application_created or application_updated
     _emit(
         "provisioned" if changed else "already_provisioned",
         changed=changed,
@@ -221,6 +291,9 @@ def main(argv: list[str] | None = None) -> int:
         application_type=descriptor.get("application_type"),
         template_id=descriptor.get("template_id"),
         application_created=application_created,
+        application_updated=application_updated,
+        article1_assembly_configured=descriptor.get("configuration", {}).get("assembly_id") == A1_ASSEMBLY_ID,
+        d132_config_version=descriptor.get("configuration", {}).get("d132_config_version"),
         # The remaining human steps, stated rather than performed.
         next_steps=[
             "set NUTEV_A1_WORKSPACE_ID and NUTEV_A1_PROJECT_ID to these ids, from reviewed "
