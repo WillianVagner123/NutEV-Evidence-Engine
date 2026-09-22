@@ -93,7 +93,7 @@ function activeNavKey(){
   const params=new URLSearchParams(location.search)
   if(path==='/search.html'&&params.get('view')==='history')return 'history'
   if(path==='/')return 'dashboard'
-  if(path==='/project.html')return 'project'
+  if(path==='/project.html'||path==='/members.html')return 'project'
   if(path==='/search.html')return 'search'
   if(path==='/evidence-library.html'||path==='/articles.html')return 'library'
   if(path==='/exports.html')return 'exports'

@@ -26,6 +26,15 @@
         <div class="empty-state"><strong>Carregando projeto…</strong><span>Validando sessão e contexto atual.</span></div>
       </section>
 
+      <section id="scientificStatePanel" class="card product-panel hidden">
+        <div class="product-panel-head">
+          <div><span class="home-eyebrow">Estado científico</span><h2 id="scientificStateTitle">Artigo 1</h2><p id="scientificStateSummary">Situação atual dos portões metodológicos, lida da fonte canônica do Artigo 1.</p></div>
+          <span class="project-badge neutral" id="scientificStateBadge">—</span>
+        </div>
+        <div id="gateGrid" class="gate-grid" aria-label="Portões metodológicos do Artigo 1"></div>
+        <details class="advanced-id-entry"><summary>Corpus de descoberta e vínculo histórico</summary><div id="scientificStateDetail" class="term-help"></div></details>
+      </section>
+
       <section id="applicationPanel" class="card product-panel hidden">
         <div class="product-panel-head"><div><span class="home-eyebrow">Aplicação de pesquisa</span><h2 id="applicationTitle">—</h2><p id="applicationDescription">—</p></div><span class="project-badge" id="applicationStatus">—</span></div>
         <div id="applicationComponents" class="component-list" aria-label="Componentes da aplicação"></div>
@@ -41,6 +50,11 @@
       <section id="projectModulesSection" class="product-panel hidden">
         <div class="product-panel-head"><div><span class="home-eyebrow">Fluxo do projeto</span><h2>O que você quer fazer agora?</h2><p>As ações abaixo permanecem isoladas no workspace e projeto selecionados.</p></div></div>
         <div id="projectModules" class="module-grid"></div>
+      </section>
+
+      <section id="adminSection" class="product-panel hidden">
+        <div class="product-panel-head"><div><span class="home-eyebrow">Administração</span><h2>Acesso ao workspace</h2><p>Quem pode entrar neste espaço de pesquisa e com qual papel. Conceder acesso não é aprovação científica.</p></div></div>
+        <div class="product-actions"><a class="action-secondary" href="/members.html">Gerenciar membros</a></div>
       </section>
 
       <section class="card workbench-guardrail">

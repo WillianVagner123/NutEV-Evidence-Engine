@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <script src="/tenant-session.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Membros — NutEV Evidence Engine</title>
+  <meta name="description" content="Quem tem acesso ao workspace e com qual papel.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./product-ui.css">
+  <link rel="stylesheet" href="./product-polish.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">N</div><div><strong>NutEV</strong><span>Evidence Engine</span></div></div>
+      <nav aria-label="Navegação principal"></nav>
+      <div class="sidebar-note">Conceder acesso é uma permissão de leitura ou trabalho no workspace. Não é aprovação científica nem decisão metodológica.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div><h1>Membros do workspace</h1><p>Quem tem acesso a este espaço de pesquisa e com qual papel.</p></div>
+        <span class="status-pill" id="membersHealth">carregando…</span>
+      </header>
+
+      <section id="membersState" class="card product-panel" aria-live="polite">
+        <div class="empty-state"><strong>Carregando membros…</strong><span>Validando sessão e contexto atual.</span></div>
+      </section>
+
+      <section id="grantPanel" class="card product-panel hidden">
+        <div class="product-panel-head">
+          <div>
+            <span class="home-eyebrow">Conceder acesso</span>
+            <h2>Adicionar alguém a este workspace</h2>
+            <p>A pessoa precisa já ter uma conta ativa no NutEV. Esta tela concede acesso a quem já entrou pelo fluxo de convite — ela nunca cria conta nem define senha de outra pessoa.</p>
+          </div>
+        </div>
+        <form id="grantForm" class="member-form" method="post" action="/api/workspace/members" autocomplete="off">
+          <label class="member-field">
+            <span>E-mail da pessoa</span>
+            <input id="grantEmail" type="email" name="email" required placeholder="pessoa@instituicao.br" autocomplete="off">
+          </label>
+          <label class="member-field">
+            <span>Papel no workspace</span>
+            <select id="grantRole" name="role" required></select>
+          </label>
+          <p id="roleHelp" class="term-help" aria-live="polite"></p>
+          <div class="product-actions">
+            <button id="grantSubmit" class="action-primary" type="submit">Conceder acesso</button>
+            <span id="grantStatus" class="small-state" aria-live="polite"></span>
+          </div>
+        </form>
+      </section>
+
+      <section id="rosterPanel" class="card product-panel hidden">
+        <div class="product-panel-head">
+          <div><span class="home-eyebrow">Acesso atual</span><h2>Quem pode entrar</h2><p>Suspender remove o acesso já na próxima requisição da pessoa; não é preciso esperar o logout.</p></div>
+        </div>
+        <div id="roster" class="member-list"></div>
+      </section>
+
+      <section class="card workbench-guardrail">
+        <strong>Limite científico</strong>
+        <p>Conceder ou remover acesso é gestão de permissão. Não cria elegibilidade, qualidade metodológica, risco de viés, certeza, recomendação, PRISMA, PRESS, GF-10 nem congelamento de consulta. A propriedade do workspace nunca muda por esta tela.</p>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./product-ui.js"></script>
+  <script type="module" src="./workspace-context.js"></script>
+  <script type="module" src="./members-page.js"></script>
+</body>
+</html>
