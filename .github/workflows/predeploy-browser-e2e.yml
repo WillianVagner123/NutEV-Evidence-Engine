@@ -94,6 +94,10 @@ jobs:
         env:
           PYTHONPATH: src:.
         run: python tools/run_generic_review_browser.py --output browser_e2e_artifacts/pilot/generic-review
+      - name: Run doctorate owner/supervisor two-actor browser regression
+        env:
+          PYTHONPATH: src:.
+        run: python tools/run_doctorate_supervisor_browser.py --output browser_e2e_artifacts/pilot/doctorate-supervisor
       - name: Upload pilot browser evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

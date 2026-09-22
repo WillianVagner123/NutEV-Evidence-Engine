@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -80,8 +81,32 @@ def test_project_hub_consumes_application_layer_without_inventing_scientific_sta
     assert "/evidence-library.html" in script
     assert "/exports.html" in script
     assert "PRISMA" in html
-    assert "discovery" not in script.casefold()
-    assert "formal search" not in script.casefold()
+
+    # The hub now shows the Article 1 gate state, so "does not invent scientific state" is no
+    # longer keyword absence: it means the verdicts are read from the canonical endpoint and
+    # never decided here. The page renders whatever the server derived from the master file.
+    assert "/api/article1/scientific-state" in script
+    assert "state.gates" in script
+    assert "gateStateLabel(gate)" in script
+
+    # No gate verdict may be asserted by the page itself.
+    for invented in (
+        "press_status",
+        "gf10_authorized",
+        "query_freeze_complete",
+        "formal_provider_search_executed",
+        "prisma_search_event_emitted",
+    ):
+        assert invented not in script, f"project hub must not decide {invented} on its own"
+
+    # Discovery counts must stay labelled as discovery, never as PRISMA or inclusion.
+    assert "Não são contagens PRISMA" in script
+    assert "Não é busca formal nem contagem PRISMA" in script
+
+    # The only write the hub performs is configuring the project application. It has no write
+    # against the Article 1 gate surface, so nothing here can open PRESS, GF-10 or the freeze.
+    written_endpoints = set(re.findall(r"jsonFetch\('([^']+)',\{method:'POST'", script))
+    assert written_endpoints == {"/api/application"}
 
 
 def test_exports_surface_is_read_only_from_ui_and_shows_audit_integrity() -> None:
@@ -143,3 +168,59 @@ def test_product_css_has_keyboard_motion_and_mobile_navigation_guards() -> None:
     assert "min-height:42px" in css
     assert ".context-shell" in css
     assert ".login-shell" in css
+
+
+def test_members_page_manages_access_without_creating_identities_or_moving_ownership() -> None:
+    html = text("members.html")
+    script = text("members-page.js")
+
+    assert "/api/workspace/members" in script
+    assert "/api/workspace/members/status" in script
+    assert "ACADEMIC_SUPERVISOR" in script
+    assert "Professor orientador" in script
+
+    # The page states the two boundaries it must never cross.
+    assert "nunca cria conta nem define senha de outra pessoa" in html
+    assert "A propriedade do workspace nunca muda por esta tela." in html
+
+    # WORKSPACE_OWNER is never offered: the role list comes from the server's assignable set.
+    assert "assignable_roles" in script
+    assert "WORKSPACE_OWNER:'Proprietário'" in script  # label only, for display
+    assert "value=\"WORKSPACE_OWNER\"" not in html
+
+    # A role change is never silent.
+    assert "allow_role_change" in script
+    assert "window.confirm" in script
+
+    # Membership management is not scientific approval.
+    assert "não é aprovação científica" in html.casefold()
+
+
+def test_project_hub_renders_only_the_actions_the_role_can_actually_use() -> None:
+    """Forbidden actions are not drawn, rather than drawn and refused with 403 on click."""
+    script = text("project-page.js")
+
+    assert "ROLE_CAPABILITIES" in script
+    assert "const NO_CAPABILITIES" in script
+
+    # An unknown or absent role falls back to no capabilities, not to full ones.
+    assert "ROLE_CAPABILITIES[role]||NO_CAPABILITIES" in script
+
+    # The supervisor's capability row must stay read-only.
+    supervisor = re.search(r"ACADEMIC_SUPERVISOR:\{([^}]*)\}", script)
+    assert supervisor is not None
+    flags = dict(
+        (key.strip(), value.strip() == "true")
+        for key, value in (pair.split(":", 1) for pair in supervisor.group(1).split(","))
+    )
+    assert flags["search"] is False
+    assert flags["libraryWrite"] is False
+    assert flags["review"] is False
+    assert flags["applicationManage"] is False
+    assert flags["membersManage"] is False
+
+    # Member administration is reachable only when the role carries it.
+    assert "if(capabilities.membersManage)$('#adminSection').classList.remove('hidden')" in script
+
+    # And the UI never claims to be the authority.
+    assert "never what is allowed" in script

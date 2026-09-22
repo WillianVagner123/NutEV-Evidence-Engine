@@ -127,6 +127,30 @@ a.module-card:hover{transform:translateY(-2px);border-color:#9fcac1;box-shadow:0
 .component-list{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.7rem}
 .component-chip{display:inline-flex;border:1px solid var(--nutev-line);border-radius:999px;padding:.28rem .48rem;background:#f8fbfa;color:#536a65;font-size:.73rem;font-weight:750}
 
+/* Member administration */
+.member-list{display:grid;gap:.6rem}
+.member-row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) auto;gap:.75rem;align-items:center;border:1px solid var(--nutev-line);border-radius:13px;background:#fff;padding:.8rem .9rem}
+.member-identity{display:grid;min-width:0}
+.member-identity strong{font-size:.94rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.member-identity span{margin-top:.18rem;color:var(--nutev-muted);font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.member-role{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center}
+.member-actions{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end}
+.member-actions button{border:1px solid #bed4cf;background:#fff;color:var(--nutev-green-dark);border-radius:10px;padding:.42rem .62rem;font:inherit;font-size:.8rem;font-weight:800;cursor:pointer}
+.member-actions button:hover:not(:disabled){background:var(--nutev-soft)}
+.member-actions button:disabled{opacity:.45;cursor:default}
+.member-form{display:grid;gap:.7rem;max-width:520px}
+.member-field{display:grid;gap:.25rem}
+.member-field span{font-size:.82rem;font-weight:800;color:#334943}
+.member-field input,.member-field select{border:1px solid var(--nutev-line);border-radius:10px;padding:.55rem .65rem;font:inherit;background:#fff}
+
+/* Article 1 scientific gate state */
+.gate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.gate-card{border:1px solid var(--nutev-line);border-radius:13px;background:#fff;padding:.85rem}
+.gate-card strong{display:block;font-size:.88rem;color:#334943}
+.gate-card .gate-state{display:inline-flex;margin-top:.4rem;border-radius:999px;padding:.28rem .55rem;font-size:.78rem;font-weight:850;border:1px solid var(--nutev-line);background:#f5f7f6;color:#5e6f6b}
+.gate-card.is-open .gate-state{border-color:#b8ddd3;background:#eefbf7;color:#0b6a5e}
+.gate-card .gate-note{display:block;margin-top:.4rem;color:var(--nutev-muted);font-size:.78rem;line-height:1.45}
+
 /* Export and audit surfaces */
 .audit-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-bottom:1rem}
 .audit-kpi{border:1px solid var(--nutev-line);border-radius:13px;background:#fff;padding:.9rem}
@@ -197,6 +221,7 @@ a.module-card:hover{transform:translateY(-2px);border-color:#9fcac1;box-shadow:0
 
 @media(max-width:1180px){
   .module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .template-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:900px){
@@ -225,7 +250,9 @@ a.module-card:hover{transform:translateY(-2px);border-color:#9fcac1;box-shadow:0
   .audit-events .audit-event{grid-template-columns:1fr;gap:.2rem}
 }
 @media(max-width:680px){
-  .module-grid,.template-grid,.audit-summary{grid-template-columns:1fr}
+  .module-grid,.template-grid,.audit-summary,.gate-grid{grid-template-columns:1fr}
+  .member-row{grid-template-columns:1fr}
+  .member-actions{justify-content:flex-start}
   .product-panel-head,.export-head{display:block}
   .product-panel-head .project-badge,.export-head .project-badge{margin-top:.55rem}
   .library-toolbar{display:grid}

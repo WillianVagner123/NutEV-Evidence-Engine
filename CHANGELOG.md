@@ -4,6 +4,42 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Gestão de membros como superfície de produto
+
+- Adicionados `GET /api/workspace/members`, `POST /api/workspace/members` e `POST /api/workspace/members/status`, expondo as primitivas de membership que antes só existiam para operador em terminal. Os três exigem `MEMBERS_MANAGE` (`WORKSPACE_OWNER` / `WORKSPACE_ADMIN`).
+- O workspace alvo vem do contexto autenticado no servidor; `workspace_id` no corpo da requisição nunca é lido, então conhecer um identificador estrangeiro não alcança outro tenant.
+- Conceder acesso exige conta já ativa: a superfície não cria identidade, não define senha e não concede papel global. Quem não concluiu o convite governado é recusado.
+- Corrigida uma falha de propriedade encontrada na auditoria das primitivas: `add_or_update_member` recusava **atribuir** `WORKSPACE_OWNER`, mas não recusava **rebaixar** o proprietário vigente, permitindo que um `WORKSPACE_ADMIN` deixasse o workspace com um `owner_user_id` cujo membership não carregava mais autoridade de proprietário. As duas direções passam a ser recusadas.
+- Alterar o papel de um membership existente exige confirmação explícita, em paralelo ao `--allow-role-change` da CLI de operador.
+- Adicionada a tela `members.html`, acessível a partir da tela do projeto apenas quando o papel carrega `MEMBERS_MANAGE`. O formulário declara `method="post"` e `action` explícita, para que falha de JavaScript não vire submit GET com o e-mail na URL, no histórico e no `Referer`.
+- Adicionado `list_memberships` ao store de tenancy, `list_members` ao `WorkspaceProjectService`, `find_active_subject_by_email` ao provedor de identidade e a constante canônica `ASSIGNABLE_WORKSPACE_ROLES`, da qual `WORKSPACE_OWNER` está deliberadamente ausente.
+
+### Materialização do workspace do doutorado
+
+- Adicionado `tools/provision_doctorate_article1.py`, comando de operador idempotente que cria o workspace, o projeto do Artigo 1 e a `ResearchApplication` de `SCOPING_REVIEW` para uma identidade que já existe, em vez de exigir Python escrito à mão contra o banco de produção.
+- O comando nunca cria usuário, senha, papel global ou membership de terceiros, e nunca sobrescreve a configuração privada de um projeto já existente; re-executar devolve `already_provisioned` sem alterar nada.
+- A marcação `assembly_id` do Artigo 1 é opt-in (`--article1-assembly`) e é configuração, não propriedade: os pins server-managed `NUTEV_A1_WORKSPACE_ID` / `NUTEV_A1_PROJECT_ID` continuam obrigatórios e continuam sendo um passo humano separado, apenas reportado pelo recibo.
+- Recusa fail-closed com código de saída distinto para banco ausente, responsável inexistente ou inativo, e workspace cujo slug já pertence a outra identidade.
+
+### Estado científico do Artigo 1 na interface
+
+- Adicionado `GET /api/article1/scientific-state`, leitura que deriva Discovery, PRESS, GF-10, congelamento de consulta, busca formal e PRISMA da fonte canônica `config/nutev/article1_search_master_v1.json`.
+- Valores não reconhecidos derivam estado **fechado**: um master malformado ou futuro nunca é lido como portão aberto. O endpoint não abre portão algum.
+- A leitura exige `APPLICATION_READ` no projeto e o pin server-managed do Artigo 1; um projeto que não seja o Artigo 1 pinado recebe semântica de não encontrado, então o estado do A1 não vaza para a visão de outro tenant.
+- A tela do projeto passa a exibir esse estado, com as contagens do corpus rotuladas como descoberta e recuperação — não como PRISMA, triagem, inclusão ou exclusão. O vínculo histórico é apresentado como vínculo de acesso, que não adota decisão científica alguma para o projeto.
+
+### Interface consciente de papel
+
+- A tela do projeto e a navegação lateral passam a ser derivadas do papel resolvido pelo servidor. Um orientador não recebe mais "Buscar evidências", "Laboratório avançado", o seletor de template ou a gestão de membros para descobrir a proibição só no 403.
+- A interface não substitui autorização: o servidor continua reautorizando cada requisição, e a regressão de navegador chama os endpoints proibidos com a sessão real do orientador para provar a recusa.
+
+### Testes e documentação do fluxo do doutorado
+
+- Adicionada regressão de navegador com dois atores (`tools/run_doctorate_supervisor_browser.py`): responsável e orientador, incluindo recusas diretas de endpoint, provas cross-tenant com identificadores estrangeiros reais e verificação de que nenhum portão do Artigo 1 é renderizado como aberto. Integrada ao workflow `pilot-closeout`.
+- Adicionado `tools/doctorate_supervisor_fixture.py`, fixture offline e descartável que cria apenas estado de tenancy e navegação — nenhum registro científico, busca, PRISMA, PRESS ou GF-10.
+- Adicionados testes da superfície de membership: recusa de rebaixamento do proprietário, exigência de confirmação para troca de papel, negações do orientador nos endpoints reais, death tests cross-tenant e a cadeia completa solicitação -> aprovação -> senha -> login -> concessão de `ACADEMIC_SUPERVISOR` pela API.
+- Adicionado `docs/DOCTORATE_ARTICLE1_ONBOARDING.md`, guia humano do Artigo 1 para o responsável e para o orientador, incluindo explicitamente que ter acesso ao Artigo 1 não é aprovar PRESS, autorizar GF-10, congelar consultas, aprovar busca formal nem criar PRISMA.
+
 ### Papel de supervisão acadêmica
 
 - Adicionado o papel de workspace `ACADEMIC_SUPERVISOR` (**Professor orientador**) à matriz canônica `ROLE_PERMISSIONS`, com acesso somente leitura ao projeto (`APPLICATION_READ`, `SEARCH_HISTORY_READ`, `EVIDENCE_LIBRARY_READ`, `FULL_TEXT_ACCESS_READ`, `PROJECT_BANK_READ`, `HUMAN_REVIEW_READ`) e leitura de auditoria (`PROJECT_AUDIT_READ`); `EXPORT` permanece policy-gated.

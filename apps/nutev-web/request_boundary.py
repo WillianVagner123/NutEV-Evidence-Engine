@@ -19,6 +19,9 @@ ACCESS_FLOW_PREFIXES = (
 TENANT_PREFIXES = (
     "/api/search/jobs", "/api/searches", "/api/library", "/api/application",
     "/api/review", "/api/exports", "/api/audit", "/api/article2/integrative",
+    # Workspace member administration and the Article 1 gate-state read are authenticated
+    # project/workspace-scoped surfaces, so they fail closed like every other private API.
+    "/api/workspace", "/api/article1/scientific-state",
 )
 A1_CONTEXT_FILES = frozenset({
     "CONTEXT_MANIFEST.json", "SEARCH_STATE.json", "SEARCH_SUMMARY.md", "ARTICLE_SUMMARIES.jsonl",

@@ -72,6 +72,36 @@ Supervisory membership is an access grant only. It does not constitute advisor a
 read as eligibility, methodological quality, risk of bias, certainty, recommendation, PRISMA state, or
 authorization of PRESS, GF-10, query freeze or formal systematic-review search.
 
+## Member administration
+
+Workspace membership is administered through the product surface as well as the operator CLI:
+
+```text
+GET  /api/workspace/members
+POST /api/workspace/members
+POST /api/workspace/members/status
+```
+
+All three require `MEMBERS_MANAGE`, which only `WORKSPACE_OWNER` and `WORKSPACE_ADMIN` hold.
+The target workspace is the one selected in the authenticated server-side session; a
+`workspace_id` in the request body is a target identifier at most and is never read here.
+
+The boundaries the surface enforces:
+
+- granting requires an already-active account, so member administration is not a second
+  account-provisioning path and never creates an identity, sets a password or grants a global role;
+- `WORKSPACE_OWNER` is not assignable, and the sitting owner's role and membership status are
+  not editable, so ownership never moves implicitly in either direction — it moves only through
+  the explicit transfer flow;
+- changing an existing member's role requires an explicit acknowledgement, matching
+  `--allow-role-change` in `tools/grant_workspace_membership.py`;
+- suspension takes effect on the member's next request, because session resolution rebuilds the
+  Principal from current membership state.
+
+Member administration is an access grant. It creates no eligibility, methodological quality,
+risk of bias, certainty, recommendation or PRISMA state, and it approves neither PRESS, GF-10,
+query freeze nor formal systematic-review search.
+
 ## Context API
 
 In the hosted `NUTEV_AUTH_MODE=pilot` runtime:

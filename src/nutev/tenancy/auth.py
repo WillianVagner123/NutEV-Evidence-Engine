@@ -282,6 +282,26 @@ class SQLiteAuthProvider:
             return None
         return self._subject_from_row(row)
 
+    def find_active_subject_by_email(self, email: str) -> AuthenticatedSubject | None:
+        """Resolve an already-provisioned active identity by email.
+
+        Member administration grants access to an existing account; it never creates one and
+        never reveals whether a non-matching address exists, so unknown, malformed, suspended
+        and disabled identities all resolve to ``None``.
+        """
+        try:
+            canonical_email = _normalize_email(email)
+        except ValueError:
+            return None
+        with self._connect() as connection:
+            row = connection.execute(
+                "SELECT * FROM platform_auth_users WHERE email = ? COLLATE NOCASE",
+                (canonical_email,),
+            ).fetchone()
+        if row is None or str(row["status"]) != "active":
+            return None
+        return self._subject_from_row(row)
+
     def set_user_status(self, user_id: str, status: str) -> None:
         require_opaque_id(user_id, "user")
         normalized = str(status or "").strip().casefold()

@@ -4,9 +4,11 @@ import os
 
 from access_request_api import install_access_request_routes
 from article1_d132_api import install_article1_d132_routes
+from article1_state_api import install_article1_state_routes
 from tenant_application_api import install_application_routes
 from tenant_export_audit_api import install_export_audit_routes
 from tenant_library_api import install_library_routes
+from tenant_membership_api import install_membership_routes
 from tenant_release_guard import install_tenant_release_guard
 from tenant_review_api import install_review_routes
 
@@ -23,11 +25,13 @@ def _article2_enabled() -> bool:
 def install_tenant_platform_routes() -> None:
     """Install tenant-platform extensions without coupling them to the scientific Engine."""
     install_access_request_routes()
+    install_membership_routes()
     install_library_routes()
     install_application_routes()
     install_export_audit_routes()
     install_review_routes()
     install_article1_d132_routes()
+    install_article1_state_routes()
 
     # Article 2 remains dark-launched until the historical ownership binding is
     # explicitly validated. Keep even the module import lazy so default runtime
