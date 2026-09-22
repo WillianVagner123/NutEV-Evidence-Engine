@@ -95,7 +95,10 @@ def test_provisioning_creates_the_workspace_project_and_scoping_application(data
     assert payload["scientific_state_modified"] is False
     assert payload["scientific_approval_created"] is False
 
-    # Historical binding is reported as a remaining human step, never performed here.
+    assert payload["article1_assembly_configured"] is True
+    assert payload["d132_config_version"] == "d132-v1"
+
+    # Historical ownership binding is reported as a remaining human step, never performed here.
     assert payload["historical_binding_activated"] is False
     assert any("NUTEV_A1_WORKSPACE_ID" in step for step in payload["next_steps"])
 
@@ -109,7 +112,9 @@ def test_provisioning_creates_the_workspace_project_and_scoping_application(data
     assert payload["membership_granted_to_others"] is False
 
 
-def test_provisioning_is_idempotent_and_never_overwrites_private_configuration(database, capsys) -> None:
+def test_provisioning_repairs_missing_d132_binding_without_overwriting_private_configuration(
+    database, capsys
+) -> None:
     _, first = _run(database, capsys, "--article1-assembly")
 
     store = SQLiteWorkspaceProjectStore(database)
@@ -129,19 +134,70 @@ def test_provisioning_is_idempotent_and_never_overwrites_private_configuration(d
         configuration={"assembly_id": "WILLIAN_DOCTORATE_A1", "operator_note": "private"},
     )
 
-    code, second = _run(database, capsys, "--article1-assembly")
+    code, repaired = _run(database, capsys, "--article1-assembly")
 
     assert code == 0
-    assert second["status"] == "already_provisioned"
-    assert second["changed"] is False
-    assert second["workspace_id"] == first["workspace_id"]
-    assert second["project_id"] == first["project_id"]
+    assert repaired["status"] == "provisioned"
+    assert repaired["changed"] is True
+    assert repaired["application_created"] is False
+    assert repaired["application_updated"] is True
+    assert repaired["workspace_id"] == first["workspace_id"]
+    assert repaired["project_id"] == first["project_id"]
+    assert repaired["d132_config_version"] == "d132-v1"
 
     current = applications.get(
         principal, workspace_id=first["workspace_id"], project_id=first["project_id"]
     )
     configuration = current.descriptor()["configuration"]
-    assert configuration["operator_note"] == "private", "re-running must not overwrite private config"
+    assert configuration["assembly_id"] == "WILLIAN_DOCTORATE_A1"
+    assert configuration["d132_config_version"] == "d132-v1"
+    assert configuration["operator_note"] == "private", "repair must preserve private config"
+
+    code, idempotent = _run(database, capsys, "--article1-assembly")
+    assert code == 0
+    assert idempotent["status"] == "already_provisioned"
+    assert idempotent["changed"] is False
+    assert idempotent["application_updated"] is False
+
+
+def test_provisioning_refuses_conflicting_article1_binding_without_overwrite(database, capsys) -> None:
+    _, first = _run(database, capsys)
+
+    store = SQLiteWorkspaceProjectStore(database)
+    access = WorkspaceProjectService(store)
+    applications = ApplicationService(SQLiteApplicationStore(database), access)
+    owner_id = store.get_workspace(first["workspace_id"]).owner_user_id
+    principal = Principal(
+        user_id=owner_id,
+        workspace_memberships=tuple(access.memberships_for_user(owner_id)),
+        global_roles=frozenset(),
+        session_id=new_opaque_id("session"),
+    )
+    applications.configure(
+        principal,
+        workspace_id=first["workspace_id"],
+        project_id=first["project_id"],
+        template_id=SCOPING_REVIEW,
+        configuration={
+            "assembly_id": "SOME_OTHER_ASSEMBLY",
+            "d132_config_version": "d132-v1",
+            "operator_note": "keep-me",
+        },
+    )
+
+    code, payload = _run(database, capsys, "--article1-assembly")
+
+    assert code == 10
+    assert payload["status"] == "application_binding_conflict"
+    assert payload["changed"] is False
+    assert payload["conflicting_keys"] == ["assembly_id"]
+
+    current = applications.get(
+        principal, workspace_id=first["workspace_id"], project_id=first["project_id"]
+    )
+    configuration = current.descriptor()["configuration"]
+    assert configuration["assembly_id"] == "SOME_OTHER_ASSEMBLY"
+    assert configuration["operator_note"] == "keep-me"
 
 
 def test_the_article1_assembly_tag_is_opt_in(database, capsys) -> None:
