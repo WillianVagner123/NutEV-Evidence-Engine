@@ -43,6 +43,12 @@ const GLOSSARY=[
 const STRATEGY_FLOW_STORAGE_KEY='nutev_strategy_flow:article1-scientific-closure-v1'
 const STRATEGY_FLOW_KEYS=['qa','press','regional']
 let runtimeMode='unknown'
+// Roles that cannot run a search or open the methodological lab. Navigation follows the
+// server-resolved membership role so the sidebar never offers a destination the role cannot
+// use; the server remains the only authority on every request.
+let workspaceRole=''
+const READ_ONLY_WORKSPACE_ROLES=new Set(['VIEWER','ACADEMIC_SUPERVISOR','REVIEWER','GUEST_REVIEWER'])
+const ASSIGNMENT_SCOPED_ROLES=new Set(['REVIEWER','GUEST_REVIEWER'])
 let strategyFlowEnabled=false
 
 function escapeHtml(value){
@@ -73,18 +79,22 @@ function navGroups(){
       {key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado'}
     ]}
   ]
+  const readOnly=READ_ONLY_WORKSPACE_ROLES.has(workspaceRole)
+  const assignmentScoped=ASSIGNMENT_SCOPED_ROLES.has(workspaceRole)
+  const research=[
+    {key:'dashboard',href:'/',icon:'⌂',label:'Início'},
+    {key:'project',href:'/project.html',icon:'◇',label:'Projeto'},
+    readOnly?null:{key:'search',href:'/search.html',icon:'⌕',label:'Buscar evidências'},
+    assignmentScoped?null:{key:'library',href:'/evidence-library.html',icon:'▤',label:'Biblioteca'},
+    assignmentScoped?null:{key:'exports',href:'/exports.html',icon:'⇩',label:'Exportações'}
+  ].filter(Boolean)
+  const activity=[
+    assignmentScoped?null:{key:'history',href:'/search.html?view=history',icon:'◷',label:readOnly?'Histórico de buscas':'Minhas buscas'},
+    readOnly?null:{key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado'}
+  ].filter(Boolean)
   return[
-    {label:'Pesquisa',items:[
-      {key:'dashboard',href:'/',icon:'⌂',label:'Início'},
-      {key:'project',href:'/project.html',icon:'◇',label:'Projeto'},
-      {key:'search',href:'/search.html',icon:'⌕',label:'Buscar evidências'},
-      {key:'library',href:'/evidence-library.html',icon:'▤',label:'Biblioteca'},
-      {key:'exports',href:'/exports.html',icon:'⇩',label:'Exportações'}
-    ]},
-    {label:'Atividade',items:[
-      {key:'history',href:'/search.html?view=history',icon:'◷',label:'Minhas buscas'},
-      {key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado'}
-    ]}
+    {label:'Pesquisa',items:research},
+    ...(activity.length?[{label:'Atividade',items:activity}]:[])
   ]
 }
 
@@ -119,7 +129,7 @@ function canonicalNavHtml(active){
 
 function normalizeNavigation(force=false){
   const active=activeNavKey()
-  const signature=`v4:${runtimeMode}:${active}`
+  const signature=`v5:${runtimeMode}:${workspaceRole}:${active}`
   document.querySelectorAll('.sidebar nav,.product-nav').forEach(nav=>{
     if(!force&&nav.dataset.nutevCanonicalNav===signature)return
     nav.setAttribute('aria-label','Navegação principal')
@@ -392,6 +402,24 @@ function applyProductUi(root=document){
   decorateStrategyFlow()
 }
 
+async function resolveWorkspaceRole(){
+  try{
+    const [meResponse,contextResponse]=await Promise.all([
+      fetch('/api/auth/me',{cache:'no-store',credentials:'same-origin'}),
+      fetch('/api/context',{cache:'no-store',credentials:'same-origin'})
+    ])
+    if(!meResponse.ok||!contextResponse.ok)return ''
+    const me=await meResponse.json()
+    const context=await contextResponse.json()
+    const workspaceId=context?.current?.workspace_id||''
+    if(!workspaceId)return ''
+    const membership=(me?.workspace_memberships||[]).find(item=>item.workspace_id===workspaceId&&item.status==='active')
+    return membership?String(membership.role||''):''
+  }catch{
+    return ''
+  }
+}
+
 async function initRuntimeMode(){
   try{
     const response=await fetch('/api/auth/status',{cache:'no-store',credentials:'same-origin'})
@@ -401,6 +429,7 @@ async function initRuntimeMode(){
   }catch{
     runtimeMode='unknown'
   }
+  if(runtimeMode==='pilot')workspaceRole=await resolveWorkspaceRole()
   strategyFlowEnabled=runtimeMode==='legacy'
   normalizeNavigation(true)
   ensureStrategyFlowGuide()
