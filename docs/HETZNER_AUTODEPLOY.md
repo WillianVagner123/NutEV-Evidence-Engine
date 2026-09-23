@@ -229,3 +229,20 @@ python tools/check_predeploy_runtime_contract.py --output-root project_output_re
 If the live server already has a valid `.env`, keep it. Do not overwrite it during activation.
 
 After this preflight, either keep `HETZNER_AUTODEPLOY` disabled and release with `workflow_dispatch` from `main`, or set it to `true` to enable automatic deployment after successful `main` CI.
+
+
+## Article 1 owner pins
+
+The reviewed Article 1 ownership binding is production runtime configuration, not Git state.
+When present, the server file `/etc/nutev/article1-owner.env` must be owned by root with mode
+`0600` and contain exactly:
+
+```text
+NUTEV_A1_WORKSPACE_ID=<opaque workspace id>
+NUTEV_A1_PROJECT_ID=<opaque project id>
+```
+
+The deployment workflow validates this protected file and atomically synchronizes only these
+two values into `deploy/hetzner/.env` before the recovery snapshot, preflight container and
+production promotion. Invalid, incomplete or extra-key files fail closed. No scientific gate
+is opened by this binding; it only scopes access to the pre-existing Article 1 source.
