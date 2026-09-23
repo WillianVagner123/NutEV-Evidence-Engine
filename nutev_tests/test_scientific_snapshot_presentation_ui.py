@@ -1,4 +1,5 @@
 from pathlib import Path
+from deploy_surface import deploy_surface_text
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,7 +50,7 @@ def test_presentation_v2_has_five_snapshot_backed_screens_and_print_export() -> 
 
 def test_production_image_embeds_verified_target_sha_without_git_directory() -> None:
     dockerfile = read(ROOT / "deploy" / "hetzner" / "Dockerfile")
-    workflow = read(ROOT / ".github" / "workflows" / "deploy-hetzner.yml")
+    workflow = deploy_surface_text()
     dockerignore = read(ROOT / ".dockerignore")
 
     assert "ARG NUTEV_BUILD_COMMIT=unknown" in dockerfile

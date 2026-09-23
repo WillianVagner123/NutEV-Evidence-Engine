@@ -4,6 +4,21 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Integridade de entrega do deploy de produção
+
+- **Corrigido um modo de falha em que um deploy parcialmente executado era reportado como sucesso.** A metade remota do deploy era um heredoc transmitido para `bash -s` pelo canal SSH; quando o canal era perturbado pela reinicialização do contêiner, o `bash` encontrava EOF no meio do script e saía com 0. O `ssh` retornava sucesso e o job ficava verde tendo pulado o contrato de runtime em produção, a asserção `/api/version == TARGET_SHA`, o smoke público HTTPS e o caminho de rollback. Um deploy real fez exatamente isso: o log não contém saída alguma dessas verificações.
+- A metade remota passa a viver em `deploy/hetzner/remote_deploy.sh`, versionada e verificável. O workflow copia o arquivo para o host, confere o SHA-256 lá e só então o executa a partir do disco; uma conexão perdida durante a execução faz o `ssh` sair diferente de zero em vez de zero.
+- O script imprime `NUTEV_REMOTE_DEPLOY_COMPLETE <sha>` como último ato e o workflow **falha o deploy quando essa linha está ausente**, por mais limpa que tenha sido a saída do `ssh`. Execução parcial não volta a passar por sucesso.
+- Nenhuma lógica de deploy mudou: a extração é literal, e todo gate, ordenação e caminho de rollback permanece idêntico.
+
+### Evidência de deploy
+
+- Cada promoção grava seus JSON de verificação em um diretório com escopo de execução no host; o workflow busca esse diretório e o publica como artefato `hetzner-deploy-evidence-<run_id>-<attempt>`, junto com o log da sessão.
+- A coleta roda com `if: always()` e nunca reprova o job, então um deploy revertido preserva a evidência que explica o motivo. Ler o artefato não exige acesso ao host.
+- Adicionados testes de contrato para a integridade de entrega, incluindo verificação de que cada guarda falha quando a proteção correspondente é removida.
+- Testes de contrato do deploy passam a ler a superfície combinada (workflow + script remoto) por meio de `nutev_tests/deploy_surface.py`, de modo que continuam enxergando a lógica que existem para proteger.
+
+
 ### Binding técnico do Artigo 1 / D-132
 
 - Corrigido `tools/provision_doctorate_article1.py` para garantir, com `--article1-assembly`, tanto `assembly_id=WILLIAN_DOCTORATE_A1` quanto a `d132_config_version` lida da configuração canônica do D-132.

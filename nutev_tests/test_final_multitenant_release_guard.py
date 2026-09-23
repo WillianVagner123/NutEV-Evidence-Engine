@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from deploy_surface import deploy_surface_text
+
 from tools.check_runtime_http_surface import EXPECTED_PRIVATE_UNAUTHENTICATED_STATUS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,7 +59,7 @@ def test_final_runtime_smoke_covers_required_private_surfaces() -> None:
 
 
 def test_deploy_executes_runtime_smoke_before_and_after_promotion() -> None:
-    source = DEPLOY.read_text(encoding="utf-8")
+    source = deploy_surface_text()
     assert source.count("python tools/check_runtime_http_surface.py") >= 2
     assert source.count('--expected-commit "$TARGET_SHA"') >= 2
     assert "preflight" in source

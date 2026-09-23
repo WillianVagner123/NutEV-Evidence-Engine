@@ -3,12 +3,13 @@ from pathlib import Path
 import subprocess
 
 from nutev.__version__ import __version__
+from deploy_surface import deploy_surface_text
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_deploy_reads_the_package_version_not_short_sha():
-    text = (ROOT / '.github/workflows/deploy-hetzner.yml').read_text()
+    text = deploy_surface_text()
     line = next(line.strip() for line in text.splitlines() if line.strip().startswith('VERSION='))
     command = 'TARGET_SHA=' + 'a' * 40 + '\n' + line + '\nprintf "%s" "$VERSION"'
     result = subprocess.run(['bash', '-euc', command], cwd=ROOT, capture_output=True, text=True, timeout=10)
@@ -30,7 +31,7 @@ def test_http_release_version_mismatch_cannot_pass():
 
 def test_recovery_harness_executes_actual_workflow_functions():
     script = (ROOT / 'tools/rehearse_release_recovery.sh').read_text()
-    assert "text=Path('.github/workflows/deploy-hetzner.yml').read_text()" in script
+    assert "text=Path('deploy/hetzner/remote_deploy.sh').read_text()" in script
     assert 'recover_on_error' in script and 'rollback; rollback' in script
     assert 'OLD_STOPPED=1; PROMOTED=0' in script
     assert 'raise SystemExit(23)' in script

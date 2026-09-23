@@ -50,14 +50,15 @@ docker exec "$OLD_CONTAINER" python -c 'from pathlib import Path; Path("/app/pro
 RECOVERY_DIR="$TEMP/saved"
 mkdir -p "$RECOVERY_DIR/config"
 cp "$TEMP/.env" "$TEMP/compose.yaml" "$RECOVERY_DIR/config/"
-# Extract the actual workflow functions instead of testing a reimplementation.
+# Extract the actual deploy functions instead of testing a reimplementation. These live in
+# the remote script the workflow ships to the host, so no indentation stripping is needed.
 python3 - "$TEMP/functions.sh" <<'PY'
 from pathlib import Path
-import sys,textwrap
-text=Path('.github/workflows/deploy-hetzner.yml').read_text()
-start=text.index('          rollback() {\n')
-end=text.index('          set -E\n',start)
-code=textwrap.dedent(text[start:end])
+import sys
+text=Path('deploy/hetzner/remote_deploy.sh').read_text()
+start=text.index('rollback() {\n')
+end=text.index('set -E\n',start)
+code=text[start:end]
 assert 'recover_on_error()' in code and '"$RESTORED_COMMIT" = "$OLD_COMMIT"' in code
 Path(sys.argv[1]).write_text(code)
 PY

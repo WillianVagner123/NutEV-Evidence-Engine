@@ -161,8 +161,48 @@ manual main dispatch OR successful main CI with autodeploy enabled
   -> offline runtime contract in production + write probe on persistent volume
   -> production /api/version == TARGET_SHA
   -> public HTTPS edge smoke
+  -> completion sentinel
   -> success
 ```
+
+### Delivery integrity
+
+The remote half of the deploy lives in `deploy/hetzner/remote_deploy.sh`. The workflow copies
+it to the host, verifies its SHA-256 there, and only then executes it from disk.
+
+It used to be a heredoc streamed into `bash -s` over the SSH channel. That made a partially
+delivered script indistinguishable from a successful deploy: when the channel was disturbed
+around the container restart, `bash` reached EOF mid-script and exited 0, so `ssh` returned
+success and the job went green having skipped the production runtime contract, the
+`/api/version == TARGET_SHA` assertion, the public HTTPS edge smoke and the rollback path.
+
+Two properties now prevent that:
+
+- **delivery is verified before execution** — the digest is checked on the host first, and a
+  connection lost during execution makes `ssh` exit non-zero rather than zero;
+- **completion is asserted after it** — the script prints
+  `NUTEV_REMOTE_DEPLOY_COMPLETE <sha>` as its final act, and the workflow fails the deploy
+  when that line is absent from the session log, however cleanly `ssh` returned.
+
+### Deploy evidence
+
+Each promotion writes its verification JSON into a run-scoped directory on the host. The
+workflow fetches that directory after the deploy step and uploads it as the
+`hetzner-deploy-evidence-<run_id>-<attempt>` artifact, together with the session log:
+
+```text
+runtime-preflight.json    offline runtime contract, preflight container
+http-preflight.json       live HTTP surface, preflight container
+runtime-production.json   offline runtime contract + write probe, production
+http-production.json      live HTTP surface, production, pinned to TARGET_SHA
+deployed-version.json     /api/version as production served it
+completion.txt            the completion sentinel
+deploy-session.log        full stdout/stderr of the remote session
+```
+
+Collection runs with `if: always()` and never fails the job, so a rolled-back deploy keeps
+the evidence explaining why. Reading this artifact does not require host access, which the
+runtime smoke inside the deploy does.
 
 ## Public HTTPS edge and Basic Auth
 
