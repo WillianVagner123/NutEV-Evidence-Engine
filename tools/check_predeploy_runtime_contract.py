@@ -20,6 +20,7 @@ if str(SRC_ROOT) not in sys.path:
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from nutev.applications.willian_doctorate_a1 import load_d132_config, load_d132_source
 from query_compiler import compile_query_plan
 from search_adapter import PROVIDER_LABELS, PROVIDER_ORDER
 
@@ -152,6 +153,47 @@ def build_runtime_report(
         checks.append(_check("exact_query_compiler", "PASS", "exact PubMed strategy remains literal and versioned"))
     except Exception as exc:
         checks.append(_check("exact_query_compiler", "FAIL", f"exact query compilation failed: {type(exc).__name__}: {exc}"))
+
+    try:
+        d132_config = load_d132_config(ROOT)
+        d132_source = load_d132_source(ROOT, d132_config)
+        delta_counts: dict[str, int] = {}
+        for row in d132_source.selected_records:
+            delta_id = str(row.get("delta_id") or "")
+            delta_counts[delta_id] = delta_counts.get(delta_id, 0) + 1
+        expected_counts = {"D02": 25, "D03": 25, "D04": 25, "D05": 25}
+        if (
+            d132_config.config_version != "d132-v1"
+            or d132_config.sampling_mode != "MANIFEST_EXACT"
+            or d132_source.source_record_count != 100
+            or d132_source.selected_record_count != 100
+            or delta_counts != expected_counts
+        ):
+            raise ValueError(
+                "unexpected D-132 custody contract: "
+                f"config={d132_config.config_version!r} mode={d132_config.sampling_mode!r} "
+                f"source={d132_source.source_record_count} selected={d132_source.selected_record_count} "
+                f"deltas={delta_counts!r}"
+            )
+        checks.append(
+            _check(
+                "article1_d132_source_custody",
+                "PASS",
+                "canonical blinded D-132 packet is present and hash/count validation passed",
+                config_version=d132_config.config_version,
+                sampling_mode=d132_config.sampling_mode,
+                selected_record_count=d132_source.selected_record_count,
+                delta_counts=delta_counts,
+            )
+        )
+    except Exception as exc:
+        checks.append(
+            _check(
+                "article1_d132_source_custody",
+                "FAIL",
+                f"canonical D-132 source unavailable or invalid: {type(exc).__name__}: {exc}",
+            )
+        )
 
     build_info_path = web_root / "build-info.json"
     if build_info_path.is_file():
