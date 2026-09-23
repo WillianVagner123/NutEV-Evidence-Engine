@@ -31,7 +31,7 @@ def test_http_release_version_mismatch_cannot_pass():
 
 def test_recovery_harness_executes_actual_workflow_functions():
     script = (ROOT / 'tools/rehearse_release_recovery.sh').read_text()
-    assert "text=Path('.github/workflows/deploy-hetzner.yml').read_text()" in script
+    assert "text=Path('deploy/hetzner/remote_deploy.sh').read_text()" in script
     assert 'recover_on_error' in script and 'rollback; rollback' in script
     assert 'OLD_STOPPED=1; PROMOTED=0' in script
     assert 'raise SystemExit(23)' in script
