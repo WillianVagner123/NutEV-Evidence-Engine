@@ -28,7 +28,9 @@ def test_doctorate_audit_still_fails_when_runtime_report_is_not_pass():
 def test_doctorate_audit_uses_runtime_signature_discovery_not_a_hardcoded_db_path():
     text = WORKFLOW.read_text(encoding='utf-8')
     assert "python tools/audit_doctorate_runtime.py" in text
-    assert "--output-root /app/project_output_reference --json" in text
+    assert "--output-root /app/project_output_reference" in text
+    assert "--require-article1-ready" in text
+    assert "--json" in text
     assert "--database /app/project_output_reference/platform/auth.sqlite3" not in text
     assert "platform database resolution:" in text
 
@@ -40,3 +42,9 @@ def test_doctorate_audit_runs_after_successful_deploy_without_fragile_second_hop
     assert "github.event.workflow_run.head_branch == 'main'" not in text
     assert "github.event_name == 'workflow_dispatch'" in text
     assert "main/same-repository provenance gate" in text
+
+
+def test_production_doctorate_audit_reports_article1_readiness_evidence():
+    text = WORKFLOW.read_text(encoding='utf-8')
+    assert "Article 1 runtime ready:" in text
+    assert "Article 1 owner pins:" in text
