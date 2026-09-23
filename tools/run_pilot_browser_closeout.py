@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import sqlite3
 from playwright.sync_api import sync_playwright, expect
+from tools.browser_context_navigation import select_context_option
 from tools.pilot_closeout_fixture import pilot_server
 
 
@@ -37,13 +38,9 @@ def run(output: Path) -> dict:
         def authenticate(page,label):
             user=login(page,label)
             expect(page.locator('#nutevWorkspaceSelect')).to_be_visible()
-            with page.expect_navigation(wait_until='domcontentloaded'):
-                page.locator('#nutevWorkspaceSelect').select_option(user['workspace_id'])
-            expect(page.locator('#nutevWorkspaceSelect')).to_have_value(user['workspace_id'])
+            select_context_option(page,'#nutevWorkspaceSelect',user['workspace_id'])
             expect(page.locator('#nutevProjectSelect')).to_be_enabled()
-            with page.expect_navigation(wait_until='domcontentloaded'):
-                page.locator('#nutevProjectSelect').select_option(user['projects'][0])
-            expect(page.locator('#nutevProjectSelect')).to_have_value(user['projects'][0])
+            select_context_option(page,'#nutevProjectSelect',user['projects'][0])
             page.goto(base+'/evidence-library.html',wait_until='domcontentloaded')
             page.locator('#libraryScope').select_option('project')
             expect(page.locator('#libraryStateMessage')).to_contain_text('Nenhum artigo')
