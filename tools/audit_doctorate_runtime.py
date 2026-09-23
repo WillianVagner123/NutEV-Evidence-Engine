@@ -15,6 +15,8 @@ from urllib.parse import quote
 
 A1 = "WILLIAN_DOCTORATE_A1"
 A2 = "WILLIAN_DOCTORATE_A2"
+EXPECTED_A1_APPLICATION_TYPE = "SCOPING_REVIEW"
+EXPECTED_D132_CONFIG_VERSION = "d132-v1"
 PLATFORM_TABLES = {
     "platform_research_applications",
     "platform_projects",
@@ -99,7 +101,12 @@ def _resolve_platform_database(database: Path, output_root: Path) -> tuple[Path,
     return candidates[0], "DISCOVERED_SIGNATURE_MATCH", len(candidates)
 
 
-def audit(database: Path, output_root: Path) -> dict:
+def audit(
+    database: Path,
+    output_root: Path,
+    *,
+    require_article1_ready: bool = False,
+) -> dict:
     report = {
         "record_type": "NUTEV_WILLIAN_DOCTORATE_RUNTIME_AUDIT",
         "schema_version": 2,
@@ -160,6 +167,11 @@ def audit(database: Path, output_root: Path) -> dict:
                         "_workspace_id": str(row["workspace_id"]),
                         "_project_id": str(row["project_id"]),
                         "_application_id": str(row["application_id"]),
+                        "_d132_config_version": (
+                            str(configuration.get("d132_config_version") or "")
+                            if isinstance(configuration, dict)
+                            else ""
+                        ),
                     }
                 )
 
@@ -182,10 +194,30 @@ def audit(database: Path, output_root: Path) -> dict:
         else:
             pin_state = "AMBIGUOUS_MULTIPLE_APPLICATIONS"
 
+        application_type_ok = (
+            len(a1) == 1
+            and a1[0]["application_type"] == EXPECTED_A1_APPLICATION_TYPE
+        )
+        d132_config_ok = (
+            len(a1) == 1
+            and a1[0]["_d132_config_version"] == EXPECTED_D132_CONFIG_VERSION
+        )
+        article1_ready = (
+            len(a1) == 1
+            and pin_state == "OWNER_PINS_MATCH"
+            and application_type_ok
+            and d132_config_ok
+        )
+
         manifest = output_root / "agent_context" / "article1" / "CONTEXT_MANIFEST.json"
         report["article1"] = {
             "application_count": len(a1),
             "owner_pin_state": pin_state,
+            "runtime_ready": article1_ready,
+            "expected_application_type": EXPECTED_A1_APPLICATION_TYPE,
+            "application_type_matches": application_type_ok,
+            "expected_d132_config_version": EXPECTED_D132_CONFIG_VERSION,
+            "d132_config_version_matches": d132_config_ok,
             "application_scopes": [
                 {k: v for k, v in item.items() if not k.startswith("_")} for item in a1
             ],
@@ -204,6 +236,9 @@ def audit(database: Path, output_root: Path) -> dict:
             },
             "formal_search_authorized": False,
         }
+        if require_article1_ready and not article1_ready:
+            report["status"] = "FAIL"
+            report["reason"] = "article1_runtime_not_ready"
 
         a2 = matches[A2]
         workflows = []
@@ -279,9 +314,21 @@ def main() -> int:
         "--output-root", type=Path, default=Path("project_output_reference")
     )
     parser.add_argument("--json", action="store_true")
+    parser.add_argument(
+        "--require-article1-ready",
+        action="store_true",
+        help=(
+            "Fail closed unless exactly one A1 application is materialized with matching "
+            "server owner pins, SCOPING_REVIEW type and the canonical D-132 config version."
+        ),
+    )
     args = parser.parse_args()
     try:
-        report = audit(args.database, args.output_root)
+        report = audit(
+            args.database,
+            args.output_root,
+            require_article1_ready=args.require_article1_ready,
+        )
     except (OSError, ValueError, sqlite3.Error) as exc:
         report = {
             "record_type": "NUTEV_WILLIAN_DOCTORATE_RUNTIME_AUDIT",
