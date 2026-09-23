@@ -35,3 +35,13 @@ def select_context_option(page, selector: str, value: str, *, timeout: int = 10_
         page.wait_for_load_state("domcontentloaded", timeout=timeout)
 
     expect(page.locator(selector)).to_have_value(value, timeout=timeout)
+
+
+def expect_login_page(page, base: str, *, timeout: int = 10_000) -> None:
+    """Require the final logged-out browser state without coupling to a navigation event.
+
+    Logout can replace/detach the previous document while Playwright's navigation watcher is
+    attached to the superseded frame. Assert the final URL and visible login form instead.
+    """
+    expect(page).to_have_url(base + "/login.html", timeout=timeout)
+    expect(page.locator("#loginForm")).to_be_visible(timeout=timeout)
