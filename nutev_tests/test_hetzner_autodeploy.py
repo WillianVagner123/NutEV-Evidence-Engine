@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from deploy_surface import deploy_surface_text
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEPLOY = ROOT / "deploy" / "hetzner"
@@ -17,7 +19,7 @@ def test_hetzner_compose_preserves_data_and_keeps_backend_private() -> None:
 
 
 def test_autodeploy_is_guarded_by_ci_and_explicit_enable_flag() -> None:
-    workflow = WORKFLOW.read_text(encoding="utf-8")
+    workflow = deploy_surface_text()
     assert 'workflows: ["ci"]' in workflow
     assert "github.event.workflow_run.conclusion == 'success'" in workflow
     assert "github.event.workflow_run.head_branch == 'main'" in workflow
@@ -32,7 +34,7 @@ def test_autodeploy_is_guarded_by_ci_and_explicit_enable_flag() -> None:
 
 
 def test_autodeploy_preflights_and_rolls_back_on_health_failure() -> None:
-    workflow = WORKFLOW.read_text(encoding="utf-8")
+    workflow = deploy_surface_text()
     assert '127.0.0.1:18765:8765' in workflow
     assert 'http://127.0.0.1:18765/api/health' in workflow
     assert 'http://127.0.0.1:8765/api/health' in workflow
@@ -42,7 +44,7 @@ def test_autodeploy_preflights_and_rolls_back_on_health_failure() -> None:
 
 
 def test_autodeploy_requires_runtime_contract_before_and_after_promotion() -> None:
-    workflow = WORKFLOW.read_text(encoding="utf-8")
+    workflow = deploy_surface_text()
     marker = 'python tools/check_predeploy_runtime_contract.py'
 
     assert workflow.count(marker) == 2
@@ -54,7 +56,7 @@ def test_autodeploy_requires_runtime_contract_before_and_after_promotion() -> No
 
 
 def test_autodeploy_requires_live_http_surface_before_and_after_promotion() -> None:
-    workflow = WORKFLOW.read_text(encoding="utf-8")
+    workflow = deploy_surface_text()
     marker = 'python tools/check_runtime_http_surface.py'
 
     assert workflow.count(marker) == 2
@@ -66,7 +68,7 @@ def test_autodeploy_requires_live_http_surface_before_and_after_promotion() -> N
 
 
 def test_autodeploy_requires_public_https_smoke_and_commit_identity_when_visible() -> None:
-    workflow = WORKFLOW.read_text(encoding="utf-8")
+    workflow = deploy_surface_text()
     default_url_lines = [
         line.strip()
         for line in workflow.splitlines()
@@ -86,7 +88,7 @@ def test_autodeploy_requires_public_https_smoke_and_commit_identity_when_visible
 
 
 def test_public_edge_smoke_accepts_basic_auth_challenge_without_weakening_it() -> None:
-    workflow = WORKFLOW.read_text(encoding="utf-8")
+    workflow = deploy_surface_text()
     caddy = (DEPLOY / "Caddyfile").read_text(encoding="utf-8")
 
     assert 'basic_auth {' in caddy
@@ -98,7 +100,7 @@ def test_public_edge_smoke_accepts_basic_auth_challenge_without_weakening_it() -
 
 
 def test_ssh_configuration_rejects_public_key_material_explicitly() -> None:
-    workflow = WORKFLOW.read_text(encoding="utf-8")
+    workflow = deploy_surface_text()
 
     assert 'candidate.startswith("ssh-")' in workflow
     assert 'BEGIN PUBLIC KEY' in workflow
@@ -110,7 +112,7 @@ def test_deploy_files_do_not_embed_secrets() -> None:
     caddy = (DEPLOY / "Caddyfile").read_text(encoding="utf-8")
     assert 'REPLACE_WITH_CADDY_PASSWORD_HASH' in env_example
     assert '{$NUTEV_BASIC_AUTH_HASH}' in caddy
-    assert 'BEGIN OPENSSH PRIVATE KEY' not in WORKFLOW.read_text(encoding="utf-8")
+    assert 'BEGIN OPENSSH PRIVATE KEY' not in deploy_surface_text()
 
 
 def test_optional_public_search_provider_credentials_are_documented_for_production() -> None:

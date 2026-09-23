@@ -1,5 +1,6 @@
 from pathlib import Path
 import subprocess
+from deploy_surface import deploy_surface_text
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,7 +18,7 @@ def test_proxy_inventory_is_read_only_and_reports_mode():
 
 
 def test_deploy_preserves_unknown_proxy_and_selects_services():
-    text = (ROOT / '.github/workflows/deploy-hetzner.yml').read_text()
+    text = deploy_surface_text()
     assert 'Inspect 80/443 ownership before any service mutation' in text
     assert 'PROXY_MODE: ${{ steps.proxy.outputs.mode }}' in text
     assert 'DEPLOY_SERVICES=(nutev)' in text
@@ -30,7 +31,7 @@ def test_deploy_preserves_unknown_proxy_and_selects_services():
 
 
 def test_external_proxy_mode_never_requires_starting_caddy():
-    text = (ROOT / '.github/workflows/deploy-hetzner.yml').read_text()
+    text = deploy_surface_text()
     old = 'up -d --no-build nutev caddy'
     assert old not in text
     assert '"${DEPLOY_SERVICES[@]}"' in text

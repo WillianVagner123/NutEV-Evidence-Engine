@@ -3,12 +3,13 @@ from pathlib import Path
 import subprocess
 
 from nutev.__version__ import __version__
+from deploy_surface import deploy_surface_text
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_deploy_reads_the_package_version_not_short_sha():
-    text = (ROOT / '.github/workflows/deploy-hetzner.yml').read_text()
+    text = deploy_surface_text()
     line = next(line.strip() for line in text.splitlines() if line.strip().startswith('VERSION='))
     command = 'TARGET_SHA=' + 'a' * 40 + '\n' + line + '\nprintf "%s" "$VERSION"'
     result = subprocess.run(['bash', '-euc', command], cwd=ROOT, capture_output=True, text=True, timeout=10)

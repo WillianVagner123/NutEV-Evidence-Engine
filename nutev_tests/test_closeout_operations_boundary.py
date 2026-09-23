@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import yaml
+from deploy_surface import deploy_surface_text
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -16,7 +17,7 @@ def test_host_identity_is_pinned_before_access():
             assert 'HETZNER_SSH_KEY' not in job.get('env',{})
 
 def test_restore_proof_precedes_promotion():
-    text=(ROOT/'.github/workflows/deploy-hetzner.yml').read_text()
+    text=deploy_surface_text()
     assert text.index('docker stop "$OLD_CONTAINER"') < text.index('tools/recovery_snapshot.py')
     assert text.index('tools/recovery_snapshot.py') < text.index('PROMOTED=1')
     assert text.index('restore-proof.json') < text.index('PROMOTED=1')
