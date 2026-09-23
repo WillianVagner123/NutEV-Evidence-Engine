@@ -22,6 +22,19 @@
 !deploy/**
 !docs/
 !docs/**
+# Ship only the canonical blinded D-132 custody packet required by the hosted review service.
+# The broad evidence tree remains excluded; no protected full text or operator output is copied.
+!evidence/
+evidence/**
+!evidence/article1_press/
+evidence/article1_press/**
+!evidence/article1_press/article1_press_20260906T202201Z/
+evidence/article1_press/article1_press_20260906T202201Z/**
+!evidence/article1_press/article1_press_20260906T202201Z/HUMAN_REVIEW_SAMPLE_MANIFEST.json
+!evidence/article1_press/article1_press_20260906T202201Z/HUMAN_REVIEW_SAMPLE_D02.csv
+!evidence/article1_press/article1_press_20260906T202201Z/HUMAN_REVIEW_SAMPLE_D03.csv
+!evidence/article1_press/article1_press_20260906T202201Z/HUMAN_REVIEW_SAMPLE_D04.csv
+!evidence/article1_press/article1_press_20260906T202201Z/HUMAN_REVIEW_SAMPLE_D05.csv
 # Re-apply private/runtime exclusions inside the permitted roots.
 **/.env
 **/.env.*
