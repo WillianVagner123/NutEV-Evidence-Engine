@@ -1,0 +1,115 @@
+name: ops-inspect-d132-runtime-20260923
+
+on:
+  push:
+    branches:
+      - ops/inspect-d132-runtime-20260923
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 10
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+    steps:
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+      - name: Inspect D-132 state read-only
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST"             "APP_DIR=$APP_DIR_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev             python - <<'PY'
+          import json, os, sqlite3
+          from pathlib import Path
+
+          db=Path(os.environ.get("NUTEV_AUTH_DB") or "/app/project_output_reference/platform/auth.sqlite3")
+          wid=os.environ.get("NUTEV_A1_WORKSPACE_ID","")
+          pid=os.environ.get("NUTEV_A1_PROJECT_ID","")
+          out={
+            "owner_pins_present":bool(wid and pid),
+            "round_count":0,
+            "rounds":[],
+            "scientific_state_modified":False,
+          }
+          with sqlite3.connect(f"file:{db}?mode=ro",uri=True) as c:
+              c.row_factory=sqlite3.Row
+              tables={r[0] for r in c.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+              required={"article1_d132_rounds","article1_d132_reviewer_slots","human_review_rounds","human_review_reviewers","human_review_assignments"}
+              out["tables_ready"]=required.issubset(tables)
+              if "article1_d132_rounds" in tables and wid and pid:
+                  rounds=c.execute(
+                      "SELECT round_id,config_version,protocol_id,source_record_count,selected_record_count,"
+                      "sampling_mode,created_at FROM article1_d132_rounds "
+                      "WHERE workspace_id=? AND project_id=? ORDER BY created_at",
+                      (wid,pid),
+                  ).fetchall()
+                  out["round_count"]=len(rounds)
+                  for row in rounds:
+                      rid=str(row["round_id"])
+                      slots={}
+                      if "article1_d132_reviewer_slots" in tables:
+                          for s in c.execute(
+                              "SELECT slot,review_reviewer_id FROM article1_d132_reviewer_slots WHERE round_id=? ORDER BY slot",
+                              (rid,),
+                          ):
+                              reviewer_id=str(s["review_reviewer_id"])
+                              submitted=None
+                              revoked=None
+                              assignment_count=0
+                              decision_count=0
+                              if "human_review_reviewers" in tables:
+                                  rr=c.execute(
+                                      "SELECT submitted_at,revoked_at FROM human_review_reviewers WHERE id=?",
+                                      (reviewer_id,),
+                                  ).fetchone()
+                                  if rr:
+                                      submitted=bool(rr["submitted_at"])
+                                      revoked=bool(rr["revoked_at"])
+                              if "human_review_assignments" in tables:
+                                  assignment_count=c.execute(
+                                      "SELECT COUNT(*) FROM human_review_assignments WHERE reviewer_id=?",
+                                      (reviewer_id,),
+                                  ).fetchone()[0]
+                                  cols={x[1] for x in c.execute("PRAGMA table_info(human_review_assignments)")}
+                                  if "decision_value" in cols:
+                                      decision_count=c.execute(
+                                          "SELECT COUNT(*) FROM human_review_assignments WHERE reviewer_id=? AND decision_value IS NOT NULL",
+                                          (reviewer_id,),
+                                      ).fetchone()[0]
+                              slots[str(s["slot"])]={
+                                  "submitted":submitted,
+                                  "revoked":revoked,
+                                  "assignment_count":assignment_count,
+                                  "decision_count":decision_count,
+                              }
+                      out["rounds"].append({
+                          "config_version":row["config_version"],
+                          "protocol_id":row["protocol_id"],
+                          "source_record_count":row["source_record_count"],
+                          "selected_record_count":row["selected_record_count"],
+                          "sampling_mode":row["sampling_mode"],
+                          "slots":slots,
+                      })
+          print(json.dumps(out,sort_keys=True))
+          PY
+          REMOTE
