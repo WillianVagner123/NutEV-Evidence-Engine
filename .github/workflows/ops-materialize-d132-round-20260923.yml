@@ -1,0 +1,136 @@
+name: ops-materialize-d132-round-20260923
+
+on:
+  push:
+    branches:
+      - ops/materialize-d132-round-20260923
+
+permissions:
+  contents: read
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 10
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+    steps:
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Materialize canonical D-132 round without reviewers
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST"             "APP_DIR=$APP_DIR_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev             python - <<'PY'
+          from __future__ import annotations
+          import json, os, sqlite3
+          from pathlib import Path
+
+          from nutev.applications.willian_doctorate_a1 import D132Service
+          from nutev.tenancy import (
+              Principal,
+              SQLiteWorkspaceProjectStore,
+              WorkspaceProjectService,
+              new_opaque_id,
+          )
+
+          db=Path(os.environ.get("NUTEV_AUTH_DB") or "/app/project_output_reference/platform/auth.sqlite3")
+          wid=os.environ.get("NUTEV_A1_WORKSPACE_ID","")
+          pid=os.environ.get("NUTEV_A1_PROJECT_ID","")
+          if not wid or not pid:
+              raise SystemExit("article1_owner_pins_missing")
+
+          with sqlite3.connect(f"file:{db}?mode=ro",uri=True) as c:
+              c.row_factory=sqlite3.Row
+              app=c.execute(
+                  "SELECT template_id,configuration_json,status FROM platform_research_applications "
+                  "WHERE project_id=? ORDER BY updated_at DESC LIMIT 1",
+                  (pid,),
+              ).fetchone()
+          if app is None or app["status"]!="active" or app["template_id"]!="SCOPING_REVIEW":
+              raise SystemExit("article1_application_not_ready")
+          conf=json.loads(app["configuration_json"] or "{}")
+          if conf.get("assembly_id")!="WILLIAN_DOCTORATE_A1" or conf.get("d132_config_version")!="d132-v1":
+              raise SystemExit("article1_d132_binding_not_ready")
+
+          store=SQLiteWorkspaceProjectStore(db)
+          access=WorkspaceProjectService(store)
+          workspace=store.get_workspace(wid)
+          owner_id=workspace.owner_user_id
+          memberships=tuple(access.memberships_for_user(owner_id))
+          if not any(m.workspace_id==wid and m.active for m in memberships):
+              raise SystemExit("workspace_owner_membership_not_active")
+          principal=Principal(
+              user_id=owner_id,
+              workspace_memberships=memberships,
+              global_roles=frozenset(),
+              session_id=new_opaque_id("session"),
+          )
+
+          service=D132Service(repo_root=Path("/app"),database_path=db)
+          source=service.source()
+          if source.source_record_count!=100 or source.selected_record_count!=100:
+              raise SystemExit("unexpected_d132_source_count")
+          counts={}
+          for row in source.selected_records:
+              counts[row["delta_id"]]=counts.get(row["delta_id"],0)+1
+          if counts!={"D02":25,"D03":25,"D04":25,"D05":25}:
+              raise SystemExit("unexpected_d132_delta_distribution")
+
+          state=service.create_round(
+              principal,
+              workspace_id=wid,
+              project_id=pid,
+              project_access_confirmed=True,
+          )
+          summary=service.summary(
+              principal,
+              workspace_id=wid,
+              project_id=pid,
+              project_access_confirmed=True,
+              round_id=state.round_id,
+          )
+          if summary["reviewer_slots"]:
+              raise SystemExit("reviewer_slots_already_issued")
+          expected_effects={
+              "press_pass":False,
+              "c4_decision":False,
+              "gf10_authorized":False,
+              "query_frozen":False,
+              "formal_search_executed":False,
+              "prisma_created":False,
+          }
+          if summary["scientific_gate_effects"]!=expected_effects:
+              raise SystemExit("unexpected_scientific_gate_effect")
+
+          print(json.dumps({
+              "status":"PASS",
+              "protocol_id":summary["protocol_id"],
+              "sampling_mode":summary["sampling_mode"],
+              "source_record_count":summary["source_record_count"],
+              "selected_record_count":summary["selected_record_count"],
+              "delta_counts":counts,
+              "reviewer_slot_count":len(summary["reviewer_slots"]),
+              "scientific_gate_effects":summary["scientific_gate_effects"],
+              "round_materialized":True,
+          },sort_keys=True))
+          PY
+          REMOTE
