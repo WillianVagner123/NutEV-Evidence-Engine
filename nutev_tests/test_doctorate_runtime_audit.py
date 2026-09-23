@@ -51,7 +51,12 @@ def seed(path: Path):
                     kind,
                     "1.0",
                     "1",
-                    json.dumps({"assembly_id": assembly}),
+                    json.dumps(
+                        {
+                            "assembly_id": assembly,
+                            **({"d132_config_version": "d132-v1"} if assembly == A1 else {}),
+                        }
+                    ),
                     "active",
                     "user_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
                     "2026-01-01",
@@ -94,6 +99,9 @@ def test_read_only_doctorate_audit_reports_without_binding_or_raw_ids(
     assert report["platform_database"]["raw_path_exposed"] is False
     assert report["article1"]["application_count"] == 1
     assert report["article1"]["owner_pin_state"] == "OWNER_PINS_MATCH"
+    assert report["article1"]["runtime_ready"] is True
+    assert report["article1"]["application_type_matches"] is True
+    assert report["article1"]["d132_config_version_matches"] is True
     assert report["article2"]["workflow_count"] == 1
     assert report["article2"]["historical_binding_activated"] is False
     assert (
@@ -121,6 +129,66 @@ def test_missing_a1_pins_are_explicit_not_inferred(tmp_path, monkeypatch):
     assert report["scientific_state_modified"] is False
     assert report["legacy_binding_performed"] is False
 
+
+
+def test_required_a1_readiness_fails_closed_when_owner_pins_are_missing(
+    tmp_path, monkeypatch
+):
+    database = tmp_path / "auth.sqlite3"
+    seed(database)
+    root = _root(tmp_path)
+    monkeypatch.delenv("NUTEV_A1_WORKSPACE_ID", raising=False)
+    monkeypatch.delenv("NUTEV_A1_PROJECT_ID", raising=False)
+
+    report = audit(database, root, require_article1_ready=True)
+
+    assert report["status"] == "FAIL"
+    assert report["reason"] == "article1_runtime_not_ready"
+    assert report["article1"]["owner_pin_state"] == "OWNER_PINS_MISSING"
+    assert report["article1"]["runtime_ready"] is False
+    assert report["scientific_state_modified"] is False
+    assert report["legacy_binding_performed"] is False
+    assert report["search_executed"] is False
+
+
+def test_required_a1_readiness_fails_closed_when_d132_config_is_missing(
+    tmp_path, monkeypatch
+):
+    database = tmp_path / "auth.sqlite3"
+    seed(database)
+    root = _root(tmp_path)
+    _pins(monkeypatch)
+    with sqlite3.connect(database) as con:
+        con.execute(
+            "UPDATE platform_research_applications SET configuration_json=? "
+            "WHERE project_id='project_11111111111111111111111111111111'",
+            (json.dumps({"assembly_id": A1}),),
+        )
+
+    report = audit(database, root, require_article1_ready=True)
+
+    assert report["status"] == "FAIL"
+    assert report["reason"] == "article1_runtime_not_ready"
+    assert report["article1"]["owner_pin_state"] == "OWNER_PINS_MATCH"
+    assert report["article1"]["d132_config_version_matches"] is False
+    assert report["article1"]["runtime_ready"] is False
+    assert report["scientific_state_modified"] is False
+
+
+def test_required_a1_readiness_passes_when_binding_and_config_match(
+    tmp_path, monkeypatch
+):
+    database = tmp_path / "auth.sqlite3"
+    seed(database)
+    root = _root(tmp_path)
+    _pins(monkeypatch)
+
+    report = audit(database, root, require_article1_ready=True)
+
+    assert report["status"] == "PASS"
+    assert report["article1"]["runtime_ready"] is True
+    assert report["article1"]["owner_pin_state"] == "OWNER_PINS_MATCH"
+    assert report["article1"]["d132_config_version_matches"] is True
 
 def test_missing_configured_database_is_discovered_by_platform_table_signature(
     tmp_path, monkeypatch
