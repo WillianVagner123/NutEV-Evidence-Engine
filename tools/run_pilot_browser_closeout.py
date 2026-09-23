@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import sqlite3
 from playwright.sync_api import sync_playwright, expect
+from tools.browser_context_navigation import expect_login_page
 from tools.browser_context_navigation import select_context_option
 from tools.pilot_closeout_fixture import pilot_server
 
@@ -169,7 +170,7 @@ def run(output: Path) -> dict:
                 assert_mobile_surface(a,label,path)
             passed('core_mobile_surface_matrix')
 
-            a.goto(base+'/evidence-library.html',wait_until='domcontentloaded');tab.goto(base+'/project.html',wait_until='domcontentloaded');tab.locator('#nutevLogoutButton').click();tab.wait_for_url('**/login.html');a.wait_for_url('**/login.html');passed('logout_invalidates_other_tab')
+            a.goto(base+'/evidence-library.html',wait_until='domcontentloaded');tab.goto(base+'/project.html',wait_until='domcontentloaded');tab.locator('#nutevLogoutButton').click();expect_login_page(tab,base);expect_login_page(a,base);passed('logout_invalidates_other_tab')
             with sqlite3.connect(data['database']) as con:con.execute("UPDATE platform_auth_sessions SET expires_at='2000-01-01T00:00:00+00:00' WHERE user_id=?",(data['users']['b']['user_id'],))
             b.bring_to_front();b.evaluate("window.dispatchEvent(new Event('focus'))");b.wait_for_url('**/login.html',timeout=10000);passed('session_expiry_clears_visible_private_page')
 
