@@ -97,7 +97,7 @@ jobs:
           "${COMPOSE[@]}" exec -T nutev python - <<'PY'
           import json, os
           from pathlib import Path
-          from first_party_source_access import article1_source_owner_allowed
+          from nutev.tenancy import require_opaque_id
           w="wsp_b04b7be90f8e4c7ba88957c2e15776c8"
           p="prj_046d6070c92c4702a79de018ac1498d0"
           proc={}
@@ -110,7 +110,10 @@ jobs:
           assert os.environ.get("NUTEV_A1_PROJECT_ID")==p
           assert proc.get("NUTEV_A1_WORKSPACE_ID")==w
           assert proc.get("NUTEV_A1_PROJECT_ID")==p
-          assert article1_source_owner_allowed(w,p)
+          require_opaque_id(w,"workspace")
+          require_opaque_id(p,"project")
+          assert os.environ.get("NUTEV_A1_WORKSPACE_ID")==w
+          assert os.environ.get("NUTEV_A1_PROJECT_ID")==p
           print(json.dumps({
               "status":"PASS",
               "env_file_pins_present":True,
