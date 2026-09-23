@@ -1,0 +1,101 @@
+name: ops-reclaim-old-nutev-images-20260923
+
+on:
+  push:
+    branches:
+      - ops/reclaim-old-nutev-images-20260923
+
+permissions:
+  contents: read
+
+jobs:
+  reclaim:
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 10
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+    steps:
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+      - name: Remove only unprotected unused historical NutEV image tags
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          before=$(df -Pk / | awk 'NR==2 {print $4}')
+          echo "free_kb_before=$before"
+
+          declare -A protected_sha=()
+          protected_sha["49588233ad2828b8fcc6140398ab55aedf7c03ef"]=1
+
+          current_container=$(docker ps -q --filter name=hetzner-nutev-1 | head -n1)
+          test -n "$current_container"
+          current_ref=$(docker inspect -f '{{.Config.Image}}' "$current_container")
+          if [[ "$current_ref" =~ ^nutev:([0-9a-f]{40})$ ]]; then
+            protected_sha["${BASH_REMATCH[1]}"]=1
+          fi
+
+          recovery_base=/var/lib/nutev-release-recovery
+          if [[ -d "$recovery_base" ]]; then
+            while IFS= read -r sha; do
+              [[ "$sha" =~ ^[0-9a-f]{40}$ ]] && protected_sha["$sha"]=1
+            done < <(
+              for d in "$recovery_base"/*; do
+                [[ -d "$d" && -s "$d/volume/restore-proof.json" ]] || continue
+                name=$(basename "$d")
+                sha="${name%%.*}"
+                [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || continue
+                printf '%s %s\n' "$(stat -c '%Y' "$d")" "$sha"
+              done | sort -nr | awk 'NR<=3 {print $2}'
+            )
+          fi
+
+          declare -A used_image_id=()
+          while IFS= read -r id; do
+            [[ -n "$id" ]] && used_image_id["$id"]=1
+          done < <(docker ps -aq | xargs -r docker inspect -f '{{.Image}}' | sort -u)
+
+          rollback_id=$(docker image inspect -f '{{.Id}}' nutev:rollback 2>/dev/null || true)
+          [[ -n "$rollback_id" ]] && used_image_id["$rollback_id"]=1
+
+          removed=0
+          skipped_protected=0
+          skipped_used=0
+          while IFS= read -r ref; do
+            [[ "$ref" =~ ^nutev:([0-9a-f]{40})$ ]] || continue
+            sha="${BASH_REMATCH[1]}"
+            if [[ -n "${protected_sha[$sha]:-}" ]]; then
+              skipped_protected=$((skipped_protected+1))
+              continue
+            fi
+            id=$(docker image inspect -f '{{.Id}}' "$ref")
+            if [[ -n "${used_image_id[$id]:-}" ]]; then
+              skipped_used=$((skipped_used+1))
+              continue
+            fi
+            docker image rm "$ref" >/dev/null
+            removed=$((removed+1))
+          done < <(docker image ls --format '{{.Repository}}:{{.Tag}}' | sort -u)
+
+          docker image prune -f >/dev/null
+          after=$(df -Pk / | awk 'NR==2 {print $4}')
+          echo "removed_count=$removed"
+          echo "skipped_protected_count=$skipped_protected"
+          echo "skipped_used_count=$skipped_used"
+          echo "free_kb_after=$after"
+          echo "reclaimed_kb=$((after-before))"
+          echo "scientific_volume_modified=false"
+          REMOTE
