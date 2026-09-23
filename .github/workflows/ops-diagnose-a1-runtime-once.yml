@@ -1,0 +1,133 @@
+name: ops-diagnose-a1-runtime-once
+
+on:
+  push:
+    branches:
+      - ops/diagnose-a1-runtime-20260922
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 10
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+    steps:
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+      - name: Compare env process database and session context
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST"             "APP_DIR=$APP_DIR_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
+          C="$("${COMPOSE[@]}" ps -q nutev)"
+          test -n "$C"
+
+          echo "=== env-file ==="
+          grep '^NUTEV_A1_' deploy/hetzner/.env | sed -E 's/(NUTEV_A1_[A-Z_]+=).*/\1<set>/'
+
+          echo "=== container-config ==="
+          docker inspect "$C" --format '{{range .Config.Env}}{{println .}}{{end}}'             | grep '^NUTEV_A1_'             | sed -E 's/(NUTEV_A1_[A-Z_]+=).*/\1<set>/'
+
+          echo "=== pid1-and-db ==="
+          "${COMPOSE[@]}" exec -T nutev python - <<'PY'
+          import json, os, sqlite3
+          from pathlib import Path
+          from nutev.tenancy import require_opaque_id
+
+          expected_w="wsp_b04b7be90f8e4c7ba88957c2e15776c8"
+          expected_p="prj_046d6070c92c4702a79de018ac1498d0"
+
+          proc={}
+          raw=Path("/proc/1/environ").read_bytes().split(b"\0")
+          for item in raw:
+              if b"=" in item:
+                  k,v=item.split(b"=",1)
+                  if k in {b"NUTEV_A1_WORKSPACE_ID",b"NUTEV_A1_PROJECT_ID"}:
+                      proc[k.decode()]=v.decode(errors="replace")
+
+          env_w=os.environ.get("NUTEV_A1_WORKSPACE_ID","")
+          env_p=os.environ.get("NUTEV_A1_PROJECT_ID","")
+          def valid(v,prefix):
+              try:
+                  require_opaque_id(v,prefix)
+                  return True
+              except Exception:
+                  return False
+
+          db=Path(os.environ.get("NUTEV_AUTH_DB") or "/app/project_output_reference/platform/auth.sqlite3")
+          out={
+              "exec_env_workspace_repr":repr(env_w),
+              "exec_env_project_repr":repr(env_p),
+              "pid1_workspace_repr":repr(proc.get("NUTEV_A1_WORKSPACE_ID","")),
+              "pid1_project_repr":repr(proc.get("NUTEV_A1_PROJECT_ID","")),
+              "exec_workspace_valid":valid(env_w,"workspace"),
+              "exec_project_valid":valid(env_p,"project"),
+              "pid1_matches_exec":proc.get("NUTEV_A1_WORKSPACE_ID")==env_w and proc.get("NUTEV_A1_PROJECT_ID")==env_p,
+              "pins_match_expected":env_w==expected_w and env_p==expected_p,
+          }
+
+          with sqlite3.connect(db) as c:
+              c.row_factory=sqlite3.Row
+              u=c.execute("SELECT id,status FROM platform_auth_users WHERE email=? COLLATE NOCASE",("wvagners@hotmail.com",)).fetchone()
+              w=c.execute("SELECT id,owner_user_id,status FROM platform_workspaces WHERE id=?",(expected_w,)).fetchone()
+              p=c.execute("SELECT id,workspace_id,status FROM platform_projects WHERE id=?",(expected_p,)).fetchone()
+              m=c.execute("SELECT role,status FROM platform_workspace_memberships WHERE workspace_id=? AND user_id=?",(expected_w,u["id"] if u else "",)).fetchone()
+              a=c.execute("SELECT application_type,template_id,configuration_json,status FROM platform_research_applications WHERE project_id=?",(expected_p,)).fetchone()
+              contexts=[]
+              if u:
+                  # Avoid relying on a guessed schema: inspect columns first.
+                  cols=[r[1] for r in c.execute("PRAGMA table_info(platform_session_contexts)").fetchall()]
+                  rows=c.execute("SELECT * FROM platform_session_contexts").fetchall()
+                  for row in rows:
+                      d={cols[i]:row[i] for i in range(len(cols))}
+                      # Only report contexts whose session belongs to Willian when user_id is present,
+                      # otherwise report scoped IDs without exposing tokens.
+                      if "user_id" in d and str(d.get("user_id"))!=str(u["id"]):
+                          continue
+                      contexts.append({k:d.get(k) for k in ("workspace_id","project_id","updated_at","created_at") if k in d})
+
+              conf={}
+              if a:
+                  try: conf=json.loads(a["configuration_json"] or "{}")
+                  except Exception: conf={}
+
+              out.update({
+                  "account_active":bool(u and u["status"]=="active"),
+                  "workspace_active":bool(w and w["status"]=="active"),
+                  "workspace_owned_by_user":bool(u and w and w["owner_user_id"]==u["id"]),
+                  "project_active":bool(p and p["status"]=="active"),
+                  "project_in_workspace":bool(p and p["workspace_id"]==expected_w),
+                  "membership_role":m["role"] if m else None,
+                  "membership_status":m["status"] if m else None,
+                  "application_active":bool(a and a["status"]=="active"),
+                  "application_type":a["application_type"] if a else None,
+                  "template_id":a["template_id"] if a else None,
+                  "assembly_id":conf.get("assembly_id"),
+                  "d132_config_version":conf.get("d132_config_version"),
+                  "session_contexts":contexts[-10:],
+              })
+          print(json.dumps(out,ensure_ascii=False,sort_keys=True))
+          PY
+          REMOTE
