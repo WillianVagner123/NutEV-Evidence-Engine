@@ -20,6 +20,7 @@ from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
 
+from tools.browser_context_navigation import expect_login_page
 from tools.browser_context_navigation import select_context_option
 
 from tools.doctorate_supervisor_fixture import doctorate_server
@@ -58,7 +59,7 @@ def _select_context(page, actor: dict) -> None:
 
 def _logout(page, base: str) -> None:
     page.locator("#nutevLogoutButton").click()
-    page.wait_for_url("**/login.html", timeout=15_000)
+    expect_login_page(page, base, timeout=15_000)
 
 
 def _api(page, base: str, method: str, path: str, payload=None) -> dict:
