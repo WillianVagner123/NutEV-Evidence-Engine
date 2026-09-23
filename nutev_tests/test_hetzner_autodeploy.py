@@ -150,3 +150,24 @@ def test_build_identity_is_image_owned_not_persistent_env_owned() -> None:
     assert 'info.get("build_commit") or os.environ.get("NUTEV_BUILD_COMMIT")' in server
     assert 'info.get("build_branch") or os.environ.get("NUTEV_BUILD_BRANCH")' in server
     assert 'info.get("build_time") or os.environ.get("NUTEV_BUILD_TIME")' in server
+
+
+def test_autodeploy_restores_reviewed_article1_owner_pins_from_protected_runtime_file() -> None:
+    workflow = WORKFLOW.read_text(encoding="utf-8")
+
+    assert 'ARTICLE1_OWNER_ENV=/etc/nutev/article1-owner.env' in workflow
+    assert 'stat -c \'%u\'' in workflow
+    assert 'stat -c \'%a\'' in workflow
+    assert 'Article 1 owner env must contain exactly both owner pins' in workflow
+    assert 'wsp_[0-9a-f]{32}' in workflow
+    assert 'prj_[0-9a-f]{32}' in workflow
+    assert 'Article 1 owner pins synchronized from protected runtime configuration.' in workflow
+
+    sync = workflow.index('ARTICLE1_OWNER_ENV=/etc/nutev/article1-owner.env')
+    recovery = workflow.index('RECOVERY_DIR=$(mktemp')
+    preflight = workflow.index('docker run -d --name nutev-preflight')
+    promotion = workflow.index('NUTEV_IMAGE="$IMAGE" "${COMPOSE[@]}" up -d --no-build')
+
+    assert sync < recovery < preflight < promotion
+    assert 'wsp_b04b7be90f8e4c7ba88957c2e15776c8' not in workflow
+    assert 'prj_046d6070c92c4702a79de018ac1498d0' not in workflow
