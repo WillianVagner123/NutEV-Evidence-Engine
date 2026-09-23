@@ -20,6 +20,8 @@ from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
 
+from tools.browser_context_navigation import select_context_option
+
 from tools.doctorate_supervisor_fixture import doctorate_server
 
 # Actions the supervisor must never be offered on the project hub.
@@ -49,12 +51,9 @@ def _login(page, base: str, actor: dict) -> None:
 
 def _select_context(page, actor: dict) -> None:
     expect(page.locator("#nutevWorkspaceSelect")).to_be_visible()
-    with page.expect_navigation(wait_until="domcontentloaded"):
-        page.locator("#nutevWorkspaceSelect").select_option(actor["workspace_id"])
+    select_context_option(page, "#nutevWorkspaceSelect", actor["workspace_id"])
     expect(page.locator("#nutevProjectSelect")).to_be_enabled()
-    with page.expect_navigation(wait_until="domcontentloaded"):
-        page.locator("#nutevProjectSelect").select_option(actor["project_id"])
-    expect(page.locator("#nutevProjectSelect")).to_have_value(actor["project_id"])
+    select_context_option(page, "#nutevProjectSelect", actor["project_id"])
 
 
 def _logout(page, base: str) -> None:

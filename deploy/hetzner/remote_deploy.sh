@@ -21,6 +21,75 @@ cd "$APP_DIR"
 test -d .git
 test -f deploy/hetzner/.env
 
+# Runtime owner pins live outside the Git checkout so a deployment cannot
+# silently lose the reviewed Article 1 ownership binding. Only these two
+# opaque IDs may be merged, and malformed/incomplete files fail closed.
+ARTICLE1_OWNER_ENV=/etc/nutev/article1-owner.env
+if [[ -f "$ARTICLE1_OWNER_ENV" ]]; then
+  test "$(stat -c '%u' "$ARTICLE1_OWNER_ENV")" = "0"
+  test "$(stat -c '%a' "$ARTICLE1_OWNER_ENV")" = "600"
+  python3 - "$ARTICLE1_OWNER_ENV" deploy/hetzner/.env <<'PY'
+from __future__ import annotations
+
+import os
+from pathlib import Path
+import re
+import sys
+import tempfile
+
+source = Path(sys.argv[1])
+target = Path(sys.argv[2])
+allowed = {"NUTEV_A1_WORKSPACE_ID", "NUTEV_A1_PROJECT_ID"}
+values: dict[str, str] = {}
+
+for raw in source.read_text(encoding="utf-8").splitlines():
+    line = raw.strip()
+    if not line or line.startswith("#"):
+        continue
+    if "=" not in line:
+        raise SystemExit("invalid Article 1 owner env line")
+    key, value = line.split("=", 1)
+    key = key.strip()
+    value = value.strip()
+    if key not in allowed:
+        raise SystemExit("unexpected key in Article 1 owner env")
+    if key in values:
+        raise SystemExit("duplicate key in Article 1 owner env")
+    values[key] = value
+
+if set(values) != allowed:
+    raise SystemExit("Article 1 owner env must contain exactly both owner pins")
+if not re.fullmatch(r"wsp_[0-9a-f]{32}", values["NUTEV_A1_WORKSPACE_ID"]):
+    raise SystemExit("invalid Article 1 workspace pin")
+if not re.fullmatch(r"prj_[0-9a-f]{32}", values["NUTEV_A1_PROJECT_ID"]):
+    raise SystemExit("invalid Article 1 project pin")
+
+text = target.read_text(encoding="utf-8")
+for key, value in values.items():
+    pattern = re.compile(rf"(?m)^{re.escape(key)}=.*$")
+    replacement = f"{key}={value}"
+    text = pattern.sub(replacement, text) if pattern.search(text) else text.rstrip() + "\n" + replacement + "\n"
+
+fd, temp_name = tempfile.mkstemp(prefix=".env.article1.", dir=str(target.parent))
+try:
+    os.write(fd, text.encode("utf-8"))
+    os.close(fd)
+    os.chmod(temp_name, 0o600)
+    os.replace(temp_name, target)
+except Exception:
+    try:
+        os.close(fd)
+    except OSError:
+        pass
+    try:
+        os.unlink(temp_name)
+    except OSError:
+        pass
+    raise
+PY
+  echo "Article 1 owner pins synchronized from protected runtime configuration."
+fi
+
 # Evidence lands in a run-scoped directory on the host so it survives the restart that
 # used to swallow it from the streamed log. The workflow fetches this directory after the
 # deploy step and uploads it, making every promotion carry its own proof.

@@ -8,6 +8,8 @@ from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
 
+from tools.browser_context_navigation import select_context_option
+
 from tools.pilot_closeout_fixture import pilot_server
 
 
@@ -64,11 +66,13 @@ def run(output: Path) -> dict:
             page.locator("#loginSubmit").click()
             page.wait_for_url(base + "/", timeout=10000)
             expect(page.locator("#nutevWorkspaceSelect")).to_be_visible()
-            with page.expect_navigation(wait_until="domcontentloaded"):
-                page.locator("#nutevWorkspaceSelect").select_option(user["workspace_id"])
-            with page.expect_navigation(wait_until="domcontentloaded"):
-                page.locator("#nutevProjectSelect").select_option(user["projects"][project_index])
-            expect(page.locator("#nutevProjectSelect")).to_have_value(user["projects"][project_index])
+            select_context_option(page, "#nutevWorkspaceSelect", user["workspace_id"])
+            expect(page.locator("#nutevProjectSelect")).to_be_enabled()
+            select_context_option(
+                page,
+                "#nutevProjectSelect",
+                user["projects"][project_index],
+            )
 
         try:
             anonymous = new_context()
@@ -100,8 +104,7 @@ def run(output: Path) -> dict:
             passed("generic_review_round_persists_in_application")
 
             user_a = data["users"]["a"]
-            with page_a.expect_navigation(wait_until="domcontentloaded"):
-                page_a.locator("#nutevProjectSelect").select_option(user_a["projects"][1])
+            select_context_option(page_a, "#nutevProjectSelect", user_a["projects"][1])
             page_a.goto(base + "/review.html", wait_until="domcontentloaded")
             expect(page_a.locator("#reviewHealth")).to_have_text("contexto isolado")
             expect(page_a.locator("#reviewRounds")).not_to_contain_text(round_name)
