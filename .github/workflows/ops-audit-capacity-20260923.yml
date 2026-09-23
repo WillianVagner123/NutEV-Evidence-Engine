@@ -1,0 +1,48 @@
+name: ops-audit-capacity-20260923
+
+on:
+  push:
+    branches:
+      - ops/audit-capacity-20260923
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 10
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+    steps:
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$HETZNER_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+      - name: Audit reclaimable disk
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          echo "=== df ==="
+          df -Pk /
+          echo "=== docker-system-df ==="
+          docker system df
+          echo "=== running-images ==="
+          docker ps --format '{{.ID}} {{.Image}} {{.Names}}'
+          echo "=== nutev-images ==="
+          docker image ls --format '{{.Repository}}:{{.Tag}} {{.ID}} {{.Size}} {{.CreatedAt}}'             | grep -E '^(nutev|hetzner-nutev):' | head -n 120 || true
+          echo "=== build-cache ==="
+          docker builder prune --filter until=168h --dry-run 2>/dev/null || true
+          REMOTE
