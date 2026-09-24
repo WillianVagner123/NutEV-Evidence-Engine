@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 import sqlite3
+from urllib.request import Request, urlopen
 
 from nutev.tenancy import SQLiteAuthProvider, SQLiteSessionStore
 from nutev.tenancy.password_reset import SQLitePasswordResetStore
+from tools.pilot_closeout_fixture import pilot_server
 
 
 def test_password_reset_token_is_hash_only_and_single_use(tmp_path: Path) -> None:
@@ -96,3 +99,54 @@ def test_recovery_pages_and_public_boundary_are_present() -> None:
     assert "/api/auth/password-reset/request" in api
     assert "/api/auth/password-reset/confirm" in api
     assert "send_access_approved_email" in api
+
+
+def _post_json(url: str, payload: dict[str, object]) -> tuple[int, dict[str, object]]:
+    request = Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json", "Accept": "application/json"},
+        method="POST",
+    )
+    with urlopen(request, timeout=8) as response:
+        body = json.loads(response.read().decode("utf-8"))
+        return int(response.status), body
+
+
+def test_recovery_static_pages_and_reset_request_return_202_without_smtp(monkeypatch) -> None:
+    monkeypatch.setenv("NUTEV_DOMAIN", "nutev.example.invalid")
+    monkeypatch.delenv("NUTEV_SMTP_HOST", raising=False)
+    monkeypatch.delenv("NUTEV_SMTP_FROM", raising=False)
+    monkeypatch.delenv("NUTEV_SMTP_USERNAME", raising=False)
+    monkeypatch.delenv("NUTEV_SMTP_PASSWORD", raising=False)
+
+    with pilot_server() as (base, data, _root):
+        with urlopen(base + "/forgot-password.html", timeout=8) as response:
+            assert response.status == 200
+        with urlopen(base + "/access-admin.html", timeout=8) as response:
+            assert response.status == 200
+
+        status, body = _post_json(
+            base + "/api/auth/password-reset/request",
+            {"email": data["users"]["admin"]["email"]},
+        )
+        assert status == 202
+        assert body["status"] == "received"
+
+
+def test_password_reset_request_remains_202_when_email_delivery_fails(monkeypatch) -> None:
+    monkeypatch.setenv("NUTEV_DOMAIN", "nutev.example.invalid")
+    monkeypatch.setenv("NUTEV_SMTP_HOST", "127.0.0.1")
+    monkeypatch.setenv("NUTEV_SMTP_PORT", "1")
+    monkeypatch.setenv("NUTEV_SMTP_FROM", "noreply@example.invalid")
+    monkeypatch.delenv("NUTEV_SMTP_USERNAME", raising=False)
+    monkeypatch.delenv("NUTEV_SMTP_PASSWORD", raising=False)
+
+    with pilot_server() as (base, data, _root):
+        status, body = _post_json(
+            base + "/api/auth/password-reset/request",
+            {"email": data["users"]["admin"]["email"]},
+        )
+        assert status == 202
+        assert body["status"] == "received"
+        assert "conta" in str(body["message"]).casefold()
