@@ -115,42 +115,102 @@ def _guard_source(steps: list[dict]) -> str:
     return script.split("python3 - <<'PY'\n", 1)[1].split("\nPY\n", 1)[0]
 
 
-def _run_guard(source: str, payload: dict, workspace: str, tmp_path: Path):
-    (tmp_path / "inspect.json").write_text(json.dumps(payload), encoding="utf-8")
+def _run_guard(
+    source: str,
+    payload,
+    workspace: str,
+    tmp_path: Path,
+    *,
+    mode: str = "grant",
+):
+    body = payload if isinstance(payload, str) else json.dumps(payload)
+    (tmp_path / "inspect.json").write_text(body, encoding="utf-8")
     guard = tmp_path / "guard.py"
     guard.write_text(source, encoding="utf-8")
     return subprocess.run(
         [sys.executable, str(guard)],
         cwd=tmp_path,
-        env={"PATH": "/usr/bin:/bin", "TARGET_WORKSPACE": workspace},
+        env={"PATH": "/usr/bin:/bin", "TARGET_WORKSPACE": workspace, "MODE": mode},
         capture_output=True,
         text=True,
     )
+
+
+def test_an_unreadable_reply_is_never_read_as_an_empty_platform(
+    steps: list[dict],
+    tmp_path: Path,
+) -> None:
+    """The failure that matters: garbage must not look like "no workspaces exist"."""
+
+    source = _guard_source(steps)
+
+    for body in ("", "   ", "curl: (7) Failed to connect", "<html>502</html>"):
+        result = _run_guard(source, body, "lab", tmp_path, mode="inspect")
+        assert result.returncode == 7, f"{body!r} was accepted: {result.stdout}"
+        assert "not an empty result" in result.stderr
+
+    # A well-formed reply that simply lacks the list is refused just the same.
+    result = _run_guard(source, {"account": None}, "lab", tmp_path, mode="inspect")
+    assert result.returncode == 7
+    assert "no 'workspaces' list" in result.stderr
+
+
+def test_inspect_reports_state_to_the_log_without_applying_grant_rules(
+    steps: list[dict],
+    tmp_path: Path,
+) -> None:
+    """inspect is read-only: it must report, not refuse, when an account is absent."""
+
+    payload = {
+        "workspaces": [
+            {"slug": "nutev-doutorado", "name": "NutEV Doutorado", "status": "active"}
+        ],
+        "account": None,
+        "memberships": [],
+    }
+    result = _run_guard(_guard_source(steps), payload, "", tmp_path, mode="inspect")
+
+    assert result.returncode == 0, result.stderr
+    # The operator reads the log, so the slug has to be there and not only in the summary.
+    assert "nutev-doutorado" in result.stdout
+    assert "WORKSPACES:" in result.stdout
+
+
+def test_inspect_says_plainly_when_no_workspace_exists(
+    steps: list[dict],
+    tmp_path: Path,
+) -> None:
+    payload = {"workspaces": [], "account": None, "memberships": []}
+    result = _run_guard(_guard_source(steps), payload, "", tmp_path, mode="inspect")
+
+    assert result.returncode == 0, result.stderr
+    assert "(none)" in result.stdout
+    assert "must exist before a membership can be granted" in result.stdout
 
 
 @pytest.mark.parametrize(
     ("payload", "workspace", "code", "needle"),
     [
         (
-            {"workspaces": [{"slug": "lab"}], "account": None},
+            {"workspaces": [{"slug": "lab", "name": "Lab", "status": "active"}], "account": None},
             "lab",
             4,
             "No account exists",
         ),
         (
-            {"workspaces": [{"slug": "lab"}], "account": {"status": "disabled"}},
+            {"workspaces": [{"slug": "lab", "name": "Lab", "status": "active"}], "account": {"email": "a@b.c", "display_name": "A", "status": "disabled"}},
             "lab",
             5,
             "not active",
         ),
         (
-            {"workspaces": [{"slug": "lab"}], "account": {"status": "active"}},
+            {"workspaces": [{"slug": "lab", "name": "Lab", "status": "active"}], "account": {"email": "a@b.c", "display_name": "A", "status": "active"}},
             "ausente",
             6,
             "not found",
         ),
         (
-            {"workspaces": [{"slug": "lab"}], "account": {"status": "active"}},
+            {"workspaces": [{"slug": "lab", "name": "Lab", "status": "active"}], "account": {"email": "a@b.c", "display_name": "A", "status": "active"}},
             "lab",
             0,
             "",
