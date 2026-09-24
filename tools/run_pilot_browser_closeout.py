@@ -4,7 +4,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import re
 from pathlib import Path
 import sqlite3
 from playwright.sync_api import sync_playwright, expect
@@ -112,7 +111,7 @@ def run(output: Path) -> dict:
             with anonymous.expect_response(lambda response: response.url==base+'/api/auth/password-reset/request') as reset_response:
                 anonymous.locator('#forgotSubmit').click()
             assert reset_response.value.status==202
-            expect(anonymous.locator('#forgotStatus')).to_have_class(re.compile(r'(^|\\s)success(\\s|$)'))
+            assert 'success' in (anonymous.locator('#forgotStatus').get_attribute('class') or '').split()
             expect(anonymous.locator('#forgotStatus')).to_contain_text('Se existir uma conta ativa')
             passed('forgot_password_browser_request_is_generic_202_without_smtp')
 
