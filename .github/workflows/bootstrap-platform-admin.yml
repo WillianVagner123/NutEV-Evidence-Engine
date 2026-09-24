@@ -161,6 +161,68 @@ jobs:
             printf 'invitation_required=false\n' >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Verify bootstrap identity and PLATFORM_ADMIN role
+        if: ${{ steps.ensure.outputs.invitation_required != 'true' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          ADMIN_EMAIL_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_EMAIL")
+
+          set +e
+          VERIFY_RESULT=$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q ADMIN_EMAIL=$ADMIN_EMAIL_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          test -f deploy/hetzner/.env
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+            env BOOTSTRAP_ADMIN_EMAIL="$ADMIN_EMAIL" python - <<'PY'
+          import json
+          import os
+          import sqlite3
+
+          database = os.environ.get('NUTEV_AUTH_DB') or '/app/project_output_reference/platform/auth.sqlite3'
+          email = str(os.environ['BOOTSTRAP_ADMIN_EMAIL']).strip().casefold()
+          with sqlite3.connect(database) as connection:
+              row = connection.execute(
+                  "SELECT status, global_roles_json FROM platform_auth_users "
+                  "WHERE email = ? COLLATE NOCASE LIMIT 1",
+                  (email,),
+              ).fetchone()
+
+          if row is None:
+              print("bootstrap_identity_present=false bootstrap_identity_active=false bootstrap_platform_admin=false")
+              raise SystemExit(6)
+
+          status, payload = row
+          try:
+              roles = json.loads(payload or '[]')
+          except json.JSONDecodeError:
+              roles = []
+          active = str(status) == 'active'
+          admin = 'PLATFORM_ADMIN' in roles
+          print(
+              "bootstrap_identity_present=true "
+              f"bootstrap_identity_active={'true' if active else 'false'} "
+              f"bootstrap_platform_admin={'true' if admin else 'false'}"
+          )
+          if not active:
+              raise SystemExit(7)
+          if not admin:
+              raise SystemExit(8)
+          PY
+          REMOTE
+          )
+          VERIFY_RC=$?
+          set -e
+          printf '%s\n' "$VERIFY_RESULT"
+          if [[ "$VERIFY_RC" -ne 0 ]]; then
+            echo "Bootstrap administrator identity/role verification failed without mutating credentials, memberships, projects, or scientific state." >&2
+            exit "$VERIFY_RC"
+          fi
+
       - name: Issue invitation and encrypt token in transit
         if: ${{ steps.ensure.outputs.invitation_required == 'true' }}
         shell: bash

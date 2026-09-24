@@ -260,6 +260,25 @@ if ! "${COMPOSE[@]}" exec -T nutev sh -lc 'test -f /app/apps/nutev-web/access-ad
   exit 1
 fi
 
+AUTH_EMAIL_RUNTIME="$("${COMPOSE[@]}" exec -T nutev python - <<'PY'
+import sys
+
+sys.path.insert(0, "/app/apps/nutev-web")
+from transactional_email import email_configured, public_origin
+
+origin = public_origin()
+configured = email_configured()
+print(f"PUBLIC_ORIGIN_CONFIGURED={'true' if bool(origin) else 'false'}")
+print(f"PUBLIC_ORIGIN_EFFECTIVE={origin or 'UNCONFIGURED'}")
+print("EMAIL_DELIVERY_CONFIGURED" if configured else "EMAIL_DELIVERY_NOT_CONFIGURED")
+print(
+    "PASSWORD_RESET_DELIVERY_READY="
+    + ("true" if configured and bool(origin) else "false")
+)
+PY
+)"
+printf '%s\n' "$AUTH_EMAIL_RUNTIME" | tee "$EVIDENCE_DIR/auth-email-runtime.txt"
+
 public_ok=0
 for _ in $(seq 1 30); do
   HEALTH_CODE="$(public_status "$PUBLIC_URL/api/health")"
