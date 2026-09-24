@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import sqlite3
 from playwright.sync_api import sync_playwright, expect
@@ -94,6 +95,27 @@ def run(output: Path) -> dict:
                 context.route('**/*',lambda route:route.continue_() if route.request.url.startswith(base) else route.abort())
                 contexts.append(context)
             a=page_in(contexts[0]);b=page_in(contexts[1])
+
+            anonymous_context=browser.new_context(viewport={'width':1366,'height':900})
+            anonymous_context.route('**/*',lambda route:route.continue_() if route.request.url.startswith(base) else route.abort())
+            contexts.append(anonymous_context)
+            anonymous=page_in(anonymous_context)
+            admin_response=anonymous.goto(base+'/access-admin.html',wait_until='domcontentloaded')
+            assert admin_response is not None and admin_response.status==200
+            anonymous.wait_for_url('**/login.html?next=%2Faccess-admin.html',timeout=10000)
+            expect(anonymous.locator('#loginForm')).to_be_visible()
+            passed('access_admin_static_200_then_anonymous_redirect_to_login')
+
+            anonymous.goto(base+'/forgot-password.html',wait_until='domcontentloaded')
+            expect(anonymous.locator('#forgotPasswordForm')).to_be_visible()
+            anonymous.locator('#forgotEmail').fill(data['users']['admin']['email'])
+            with anonymous.expect_response(lambda response: response.url==base+'/api/auth/password-reset/request') as reset_response:
+                anonymous.locator('#forgotSubmit').click()
+            assert reset_response.value.status==202
+            expect(anonymous.locator('#forgotStatus')).to_have_class(re.compile(r'(^|\\s)success(\\s|$)'))
+            expect(anonymous.locator('#forgotStatus')).to_contain_text('Se existir uma conta ativa')
+            passed('forgot_password_browser_request_is_generic_202_without_smtp')
+
             authenticate(a,'a');authenticate(b,'b');passed('two_users_login_workspace_project')
             a.locator('#manualArticleEntry summary').click()
             a.locator('#libraryArticleId').fill(data['article_id']);a.locator('#libraryNotes').fill('PRIVATE_A_BROWSER')
