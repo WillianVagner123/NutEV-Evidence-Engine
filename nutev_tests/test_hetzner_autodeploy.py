@@ -175,3 +175,15 @@ def test_autodeploy_restores_reviewed_article1_owner_pins_from_protected_runtime
     assert sync < recovery < preflight < promotion
     assert 'wsp_b04b7be90f8e4c7ba88957c2e15776c8' not in workflow
     assert 'prj_046d6070c92c4702a79de018ac1498d0' not in workflow
+
+
+def test_autodeploy_records_safe_password_reset_delivery_readiness() -> None:
+    workflow = deploy_surface_text()
+
+    assert "auth-email-runtime.txt" in workflow
+    assert "PUBLIC_ORIGIN_CONFIGURED=" in workflow
+    assert "PUBLIC_ORIGIN_EFFECTIVE=" in workflow
+    assert "EMAIL_DELIVERY_CONFIGURED" in workflow
+    assert "EMAIL_DELIVERY_NOT_CONFIGURED" in workflow
+    assert "PASSWORD_RESET_DELIVERY_READY=" in workflow
+    assert "NUTEV_SMTP_PASSWORD" not in workflow
