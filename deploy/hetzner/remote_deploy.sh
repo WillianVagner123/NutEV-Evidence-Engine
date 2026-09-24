@@ -254,6 +254,12 @@ cat /tmp/nutev-http-production.json
 DEPLOYED_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
 if [[ "$DEPLOYED_COMMIT" != "$TARGET_SHA" ]]; then echo "Build identity mismatch" >&2; rollback; exit 1; fi
 
+if ! "${COMPOSE[@]}" exec -T nutev sh -lc 'test -f /app/apps/nutev-web/access-admin.html && test -f /app/apps/nutev-web/access-admin.js && test -f /app/apps/nutev-web/access-flow.css && test -f /app/apps/nutev-web/access-i18n.js && test -f /app/apps/nutev-web/forgot-password.html && test -f /app/apps/nutev-web/forgot-password.js'; then
+  echo "::error::Auth/access static assets are missing from the production container." >&2
+  rollback
+  exit 1
+fi
+
 public_ok=0
 for _ in $(seq 1 30); do
   HEALTH_CODE="$(public_status "$PUBLIC_URL/api/health")"
@@ -285,6 +291,21 @@ RESET_REQUEST_CODE="$(curl -sS -o /tmp/nutev-password-reset-smoke.json -w '%{htt
   "$PUBLIC_URL/api/auth/password-reset/request" 2>/dev/null || printf '000')"
 if [[ "$RESET_REQUEST_CODE" != "202" ]]; then
   echo "::error::Public password-reset request smoke returned HTTP $RESET_REQUEST_CODE instead of 202." >&2
+  rollback
+  exit 1
+fi
+
+AUTH_STATUS_JSON="$(curl -fsS --max-time 10 "$PUBLIC_URL/api/auth/status")"
+AUTH_MODE="$(printf '%s' "$AUTH_STATUS_JSON" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("mode", ""))')"
+if [[ "$AUTH_MODE" != "pilot" ]]; then
+  echo "::error::Public auth status is not pilot mode." >&2
+  rollback
+  exit 1
+fi
+
+ADMIN_ANON_CODE="$(curl -sS -o /tmp/nutev-admin-anonymous-smoke.json -w '%{http_code}' --max-time 10   "$PUBLIC_URL/api/admin/access-requests?status=pending" 2>/dev/null || printf '000')"
+if [[ "$ADMIN_ANON_CODE" != "401" ]]; then
+  echo "::error::Anonymous admin API smoke returned HTTP $ADMIN_ANON_CODE instead of 401." >&2
   rollback
   exit 1
 fi
