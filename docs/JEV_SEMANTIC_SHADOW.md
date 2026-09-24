@@ -139,3 +139,14 @@ Antes de qualquer hipótese de uso além de shadow, comparar contra classificaç
 
 Até essa validação existir, o shadow permanece experimental e não deve sustentar claims de
 performance científica do NutEV.
+
+
+## Próxima etapa: comparação humana
+
+O shadow não deve ser promovido por percepção subjetiva de que "parece bom". Use
+[JEV_HUMAN_COMPARISON.md](JEV_HUMAN_COMPARISON.md) e
+`tools/jev_compare_validation.py` para criar uma amostra humana independente e medir
+classificação, calibração e associação exploratória com os sinais de prioridade do NutEV.
+
+Mesmo após essa comparação, qualquer claim de validação científica permanece separado e exige
+desenho/critério próprios; o comparador fixa `validation_claim=NOT_ESTABLISHED`.
