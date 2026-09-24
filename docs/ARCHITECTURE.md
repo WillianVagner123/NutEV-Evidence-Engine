@@ -378,3 +378,18 @@ O engine organiza e prioriza referências rastreáveis. Ele não executa, por si
 **Taxonomia descreve sobre o que o documento parece tratar. Ranking descreve prioridade técnica de leitura. Nenhum dos dois é sinônimo de qualidade científica.**
 
 Para auditoria, consulte [`AUDITABILITY_AND_GUARDRAILS.md`](AUDITABILITY_AND_GUARDRAILS.md). Para a taxonomia completa, consulte [`TAXONOMY.md`](TAXONOMY.md).
+
+
+## Optional Jev semantic shadow
+
+`tools/jev_semantic_shadow.py` is an experimental, opt-in derivative reader of the canonical
+`reference_ranking.jsonl`. It is deliberately outside the canonical SEARCH → AUDIT flow and is
+not imported by `tools/rank_references.py`.
+
+Its outputs live under `project_output_reference/jev_semantic_shadow/` and carry
+`ranking_effect=none` and `scientific_effect=none`. The shadow may describe document type,
+topical nutrition relevance, and metadata ambiguity, but it cannot change traceability,
+deduplication, taxonomy, score, rank/tier, inclusion/exclusion, PRISMA, quality/certainty, or
+recommendations.
+
+See [JEV_SEMANTIC_SHADOW.md](JEV_SEMANTIC_SHADOW.md).
