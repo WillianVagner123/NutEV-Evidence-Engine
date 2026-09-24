@@ -274,7 +274,7 @@ for _ in $(seq 1 30); do
   sleep 2
 done
 if [[ "$public_ok" != "1" ]]; then
-  echo "Public HTTPS edge smoke failed for $PUBLIC_URL (auth recovery static pages require HTTP 200)." >&2
+  echo "Public HTTPS edge smoke failed for $PUBLIC_URL (expected 200 or Basic-Auth 401 on protected surfaces; auth recovery static pages require HTTP 200)." >&2
   rollback
   exit 1
 fi
