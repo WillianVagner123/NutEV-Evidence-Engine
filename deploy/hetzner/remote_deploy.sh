@@ -133,6 +133,64 @@ cp -a deploy/hetzner "$RECOVERY_DIR/config"
 git checkout -f main
 git reset --hard "$TARGET_SHA"
 
+python3 - "$PUBLIC_URL" deploy/hetzner/.env <<'PY'
+from __future__ import annotations
+
+import os
+from pathlib import Path
+import re
+import sys
+import tempfile
+from urllib.parse import urlsplit
+
+raw_origin = str(sys.argv[1]).strip().rstrip("/")
+target = Path(sys.argv[2])
+parsed = urlsplit(raw_origin)
+if (
+    parsed.scheme != "https"
+    or not parsed.hostname
+    or parsed.username
+    or parsed.password
+    or parsed.path not in {"", "/"}
+    or parsed.query
+    or parsed.fragment
+):
+    raise SystemExit("invalid trusted public deployment URL")
+
+port = parsed.port
+origin = f"https://{parsed.hostname.lower()}"
+if port not in {None, 443}:
+    origin += f":{port}"
+domain = parsed.hostname.lower()
+
+text = target.read_text(encoding="utf-8")
+for key, value in {
+    "NUTEV_PUBLIC_ORIGIN": origin,
+    "NUTEV_DOMAIN": domain,
+}.items():
+    pattern = re.compile(rf"(?m)^{re.escape(key)}=.*$")
+    replacement = f"{key}={value}"
+    text = pattern.sub(replacement, text) if pattern.search(text) else text.rstrip() + "\n" + replacement + "\n"
+
+fd, temp_name = tempfile.mkstemp(prefix=".env.public-origin.", dir=str(target.parent))
+try:
+    os.write(fd, text.encode("utf-8"))
+    os.close(fd)
+    os.chmod(temp_name, 0o600)
+    os.replace(temp_name, target)
+except Exception:
+    try:
+        os.close(fd)
+    except OSError:
+        pass
+    try:
+        os.unlink(temp_name)
+    except OSError:
+        pass
+    raise
+PY
+echo "Runtime public origin synchronized from trusted deployment URL."
+
 IMAGE="nutev:${TARGET_SHA}"
 BUILD_TIME="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 BUILD_BRANCH="main"
@@ -278,6 +336,13 @@ print(
 PY
 )"
 printf '%s\n' "$AUTH_EMAIL_RUNTIME" | tee "$EVIDENCE_DIR/auth-email-runtime.txt"
+EXPECTED_PUBLIC_ORIGIN="${PUBLIC_URL%/}"
+if ! grep -Fxq "PUBLIC_ORIGIN_CONFIGURED=true" <<<"$AUTH_EMAIL_RUNTIME" \
+  || ! grep -Fxq "PUBLIC_ORIGIN_EFFECTIVE=$EXPECTED_PUBLIC_ORIGIN" <<<"$AUTH_EMAIL_RUNTIME"; then
+  echo "::error::Password-reset public origin does not match the trusted deployment URL." >&2
+  rollback
+  exit 1
+fi
 
 public_ok=0
 for _ in $(seq 1 30); do
