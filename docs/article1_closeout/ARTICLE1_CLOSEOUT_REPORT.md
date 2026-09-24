@@ -24,7 +24,7 @@
 | Owner pins | `OWNER_PINS_MATCH`; sincronizados a partir de configuração protegida |
 | CI | PASS — Python 3.12/3.13, Windows smoke, typecheck, lint, audit guardrail |
 | Browser | PASS — Chromium product gate + Authenticated pilot browser closeout |
-| Security | PASS — CodeQL, secret scan, forbidden/large files, dependency review |
+| Security | PASS — CodeQL, secret scanning, repository file-policy checks and dependency review |
 | Multi-tenant | PASS — Full multi-tenant death test |
 | Release/recovery | PASS — release artifact validation + production recovery readiness |
 | Open PRs | nenhum no momento do runtime closeout |
