@@ -254,14 +254,23 @@ cat /tmp/nutev-http-production.json
 DEPLOYED_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
 if [[ "$DEPLOYED_COMMIT" != "$TARGET_SHA" ]]; then echo "Build identity mismatch" >&2; rollback; exit 1; fi
 
+if ! "${COMPOSE[@]}" exec -T nutev sh -lc 'test -f /app/apps/nutev-web/access-admin.html && test -f /app/apps/nutev-web/access-admin.js && test -f /app/apps/nutev-web/access-flow.css && test -f /app/apps/nutev-web/access-i18n.js && test -f /app/apps/nutev-web/forgot-password.html && test -f /app/apps/nutev-web/forgot-password.js'; then
+  echo "::error::Auth/access static assets are missing from the production container." >&2
+  rollback
+  exit 1
+fi
+
 public_ok=0
 for _ in $(seq 1 30); do
   HEALTH_CODE="$(public_status "$PUBLIC_URL/api/health")"
   VERSION_CODE="$(public_status "$PUBLIC_URL/api/version")"
   SEARCH_CODE="$(public_status "$PUBLIC_URL/search.html")"
   ARTICLES_CODE="$(public_status "$PUBLIC_URL/articles.html")"
+  FORGOT_PASSWORD_CODE="$(public_status "$PUBLIC_URL/forgot-password.html")"
+  ACCESS_ADMIN_CODE="$(public_status "$PUBLIC_URL/access-admin.html")"
   if acceptable_edge_status "$HEALTH_CODE" && acceptable_edge_status "$VERSION_CODE" \
-    && acceptable_edge_status "$SEARCH_CODE" && acceptable_edge_status "$ARTICLES_CODE"; then
+    && acceptable_edge_status "$SEARCH_CODE" && acceptable_edge_status "$ARTICLES_CODE" \
+    && [[ "$FORGOT_PASSWORD_CODE" = "200" ]] && [[ "$ACCESS_ADMIN_CODE" = "200" ]]; then
     if [[ "$VERSION_CODE" = "200" ]]; then
       PUBLIC_COMMIT="$(curl -fsS --max-time 10 "$PUBLIC_URL/api/version" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
       [[ "$PUBLIC_COMMIT" = "$TARGET_SHA" ]] || { sleep 2; continue; }
@@ -271,7 +280,32 @@ for _ in $(seq 1 30); do
   sleep 2
 done
 if [[ "$public_ok" != "1" ]]; then
-  echo "Public HTTPS edge smoke failed for $PUBLIC_URL (expected 200 or Basic-Auth 401 on protected surfaces)." >&2
+  echo "Public HTTPS edge smoke failed for $PUBLIC_URL (expected 200 or Basic-Auth 401 on protected surfaces; auth recovery static pages require HTTP 200)." >&2
+  rollback
+  exit 1
+fi
+
+RESET_REQUEST_CODE="$(curl -sS -o /tmp/nutev-password-reset-smoke.json -w '%{http_code}' --max-time 10 \
+  -X POST -H 'Content-Type: application/json' -H "Origin: $PUBLIC_URL" \
+  --data '{"email":"release-smoke@example.invalid"}' \
+  "$PUBLIC_URL/api/auth/password-reset/request" 2>/dev/null || printf '000')"
+if [[ "$RESET_REQUEST_CODE" != "202" ]]; then
+  echo "::error::Public password-reset request smoke returned HTTP $RESET_REQUEST_CODE instead of 202." >&2
+  rollback
+  exit 1
+fi
+
+AUTH_STATUS_JSON="$(curl -fsS --max-time 10 "$PUBLIC_URL/api/auth/status")"
+AUTH_MODE="$(printf '%s' "$AUTH_STATUS_JSON" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("mode", ""))')"
+if [[ "$AUTH_MODE" != "pilot" ]]; then
+  echo "::error::Public auth status is not pilot mode." >&2
+  rollback
+  exit 1
+fi
+
+ADMIN_ANON_CODE="$(curl -sS -o /tmp/nutev-admin-anonymous-smoke.json -w '%{http_code}' --max-time 10   "$PUBLIC_URL/api/admin/access-requests?status=pending" 2>/dev/null || printf '000')"
+if [[ "$ADMIN_ANON_CODE" != "401" ]]; then
+  echo "::error::Anonymous admin API smoke returned HTTP $ADMIN_ANON_CODE instead of 401." >&2
   rollback
   exit 1
 fi
