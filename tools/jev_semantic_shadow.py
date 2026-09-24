@@ -333,6 +333,7 @@ def run(
             f"Canonical ranking not found: {ranking_path}. Run the deterministic ranker first."
         )
 
+    ranking_sha_before = sha256_file(ranking_path)
     rows = _read_jsonl(ranking_path)
     selected = rows[: config.limit]
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -360,7 +361,7 @@ def run(
         "scientific_effect": "none",
         "canonical_ranking": {
             "path": str(ranking_path),
-            "sha256": sha256_file(ranking_path),
+            "sha256": ranking_sha_before,
             "records_available": len(rows),
             "records_selected": len(selected),
         },
@@ -373,7 +374,7 @@ def run(
         },
         "assertions": {
             "canonical_ranking_not_modified": sha256_file(ranking_path)
-            == sha256_file(ranking_path),
+            == ranking_sha_before,
             "no_eligibility_decision": True,
             "no_prisma_decision": True,
             "no_quality_or_certainty_decision": True,
