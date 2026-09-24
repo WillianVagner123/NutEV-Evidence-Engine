@@ -225,3 +225,16 @@ O protocolo em `validation/` exige, antes de promoção científica do produto:
 - estudo de workload quando aplicável.
 
 Ausência desses dados deve continuar sendo reportada como `NOT_TESTED` ou `INSUFFICIENT_EVIDENCE`, nunca como resultado positivo implícito.
+
+
+## 24. Jev semantic shadow is experimental metadata, not scientific adjudication
+
+An optional Jev/TypeSafe shadow runner may produce probabilistic semantic descriptors from limited
+bibliographic metadata. Those outputs are not part of the canonical ranker and have no authority
+over `reference_score`, rank/tier, eligibility, PRISMA, risk of bias, evidence certainty, or
+recommendations.
+
+Its incremental value, calibration, provider/language bias, stability, and human-workload effect
+remain `NOT_TESTED` until evaluated against an independent human-labelled set. Provider success,
+confidence, or agreement with lexical signals must not be presented as scientific validation of
+NutEV.
