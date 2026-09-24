@@ -187,3 +187,19 @@ def test_autodeploy_records_safe_password_reset_delivery_readiness() -> None:
     assert "EMAIL_DELIVERY_NOT_CONFIGURED" in workflow
     assert "PASSWORD_RESET_DELIVERY_READY=" in workflow
     assert "NUTEV_SMTP_PASSWORD" not in workflow
+
+
+def test_autodeploy_synchronizes_password_reset_origin_from_trusted_public_url() -> None:
+    workflow = deploy_surface_text()
+
+    assert "Runtime public origin synchronized from trusted deployment URL." in workflow
+    assert '"NUTEV_PUBLIC_ORIGIN": origin' in workflow
+    assert '"NUTEV_DOMAIN": domain' in workflow
+    assert 'invalid trusted public deployment URL' in workflow
+    assert 'Password-reset public origin does not match the trusted deployment URL.' in workflow
+    assert 'PUBLIC_ORIGIN_EFFECTIVE=$EXPECTED_PUBLIC_ORIGIN' in workflow
+
+    recovery_snapshot = workflow.index('cp -a deploy/hetzner "$RECOVERY_DIR/config"')
+    origin_sync = workflow.index('Runtime public origin synchronized from trusted deployment URL.')
+    preflight = workflow.index('docker run -d --name nutev-preflight')
+    assert recovery_snapshot < origin_sync < preflight
