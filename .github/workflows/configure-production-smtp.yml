@@ -1,0 +1,466 @@
+name: configure-production-smtp
+
+# Manual operator workflow for the hosted NutEV runtime.
+# It configures transactional SMTP without putting credentials in Git history,
+# workflow inputs, artifacts, or logs. The current application image/SHA is preserved.
+#
+# inspect: read-only runtime status and SMTP connectivity probe.
+# apply: atomically updates only NUTEV_SMTP_* values, recreates only the nutev
+# container, proves the SHA did not change, probes SMTP TLS/auth, and optionally
+# issues a real password-reset link for the existing bootstrap PLATFORM_ADMIN.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "inspect = read-only status; apply = configure SMTP from HETZNER vars/secrets"
+        required: true
+        default: inspect
+        type: choice
+        options:
+          - inspect
+          - apply
+      issue_bootstrap_reset:
+        description: "After a successful apply, issue and send a real one-time reset link to the existing bootstrap admin."
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hetzner-production-smtp
+  cancel-in-progress: false
+
+jobs:
+  smtp:
+    name: production SMTP
+    if: ${ github.ref == 'refs/heads/main' }
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 15
+    env:
+      HETZNER_HOST: ${ vars.HETZNER_HOST }
+      HETZNER_USER: ${ vars.HETZNER_USER }
+      HETZNER_PORT: ${ vars.HETZNER_PORT }
+      HETZNER_KNOWN_HOSTS: ${ vars.HETZNER_KNOWN_HOSTS }
+      HETZNER_APP_DIR: ${ vars.HETZNER_APP_DIR }
+      NUTEV_PUBLIC_URL: ${ vars.NUTEV_PUBLIC_URL }
+      SMTP_HOST: ${ vars.NUTEV_SMTP_HOST }
+      SMTP_PORT: ${ vars.NUTEV_SMTP_PORT }
+      SMTP_USERNAME: ${ vars.NUTEV_SMTP_USERNAME }
+      SMTP_FROM: ${ vars.NUTEV_SMTP_FROM }
+      SMTP_STARTTLS: ${ vars.NUTEV_SMTP_STARTTLS }
+      MODE: ${ inputs.mode }
+      ISSUE_BOOTSTRAP_RESET: ${ inputs.issue_bootstrap_reset }
+      BOOTSTRAP_ADMIN_EMAIL: wvagners@hotmail.com
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate operator request
+        env:
+          SMTP_PASSWORD: ${ secrets.NUTEV_SMTP_PASSWORD }
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$HETZNER_HOST"
+          test -n "$HETZNER_USER"
+          test -n "$HETZNER_APP_DIR"
+          test -n "$HETZNER_KNOWN_HOSTS"
+          test -n "$NUTEV_PUBLIC_URL"
+          [[ "$NUTEV_PUBLIC_URL" == https://* ]]
+          [[ "$MODE" == "inspect" || "$MODE" == "apply" ]]
+
+          if [[ "$MODE" == "apply" ]]; then
+            test -n "$SMTP_HOST"
+            test -n "$SMTP_FROM"
+            SMTP_PORT="${SMTP_PORT:-587}"
+            SMTP_STARTTLS="${SMTP_STARTTLS:-true}"
+            [[ "$SMTP_PORT" =~ ^[0-9]+$ ]]
+            (( SMTP_PORT >= 1 && SMTP_PORT <= 65535 ))
+            [[ "$SMTP_FROM" == *"@"* ]]
+            case "${SMTP_STARTTLS,,}" in
+              true|false|1|0|yes|no) ;;
+              *) echo "::error::NUTEV_SMTP_STARTTLS must be true/false, 1/0, or yes/no." >&2; exit 2 ;;
+            esac
+            if [[ -n "$SMTP_USERNAME" && -z "$SMTP_PASSWORD" ]]; then
+              echo "::error::NUTEV_SMTP_USERNAME is configured but HETZNER secret NUTEV_SMTP_PASSWORD is empty." >&2
+              exit 2
+            fi
+            if [[ -z "$SMTP_USERNAME" && -n "$SMTP_PASSWORD" ]]; then
+              echo "::error::NUTEV_SMTP_PASSWORD is configured but NUTEV_SMTP_USERNAME is empty." >&2
+              exit 2
+            fi
+          fi
+
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${ secrets.HETZNER_SSH_KEY }
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          test -n "$HETZNER_SSH_KEY"
+          install -d -m 700 ~/.ssh
+          python3 - <<'PY'
+          import base64
+          import binascii
+          import os
+          from pathlib import Path
+
+          raw = os.environ["HETZNER_SSH_KEY"].strip()
+          raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+          if "\\n" in raw and "\n" not in raw:
+              raw = raw.replace("\\n", "\n")
+          candidate = raw.strip()
+          if candidate.startswith("ssh-") or "BEGIN PUBLIC KEY" in candidate:
+              raise SystemExit("HETZNER_SSH_KEY contains a public key; the complete private key is required")
+          if not candidate.startswith("-----BEGIN "):
+              compact = "".join(candidate.split())
+              try:
+                  decoded = base64.b64decode(compact, validate=True).decode("utf-8").strip()
+              except (binascii.Error, UnicodeDecodeError, ValueError):
+                  decoded = ""
+              if decoded.startswith("-----BEGIN "):
+                  candidate = decoded.replace("\r\n", "\n").replace("\r", "\n")
+          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate.strip() + "\n", encoding="utf-8")
+          PY
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null
+          chmod 600 ~/.ssh/id_ed25519.pub
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          HOST_LOOKUP="$HETZNER_HOST"
+          if [[ "$PORT" != "22" ]]; then HOST_LOOKUP="[$HETZNER_HOST]:$PORT"; fi
+          ssh-keygen -F "$HOST_LOOKUP" -f ~/.ssh/known_hosts >/dev/null
+
+      - name: Verify SSH access
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" 'printf "ssh-ok\n"' | grep -qx 'ssh-ok'
+
+      - name: Inspect current production SMTP state
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          PUBLIC_URL_Q=$(printf '%q' "${NUTEV_PUBLIC_URL%/}")
+
+          RESULT=$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q PUBLIC_URL=$PUBLIC_URL_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          test -f deploy/hetzner/.env
+          COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
+          CONTAINER="$("${COMPOSE[@]}" ps -q nutev)"
+          test -n "$CONTAINER"
+          printf 'PRODUCTION_COMMIT='
+          curl -fsS http://127.0.0.1:8765/api/version \
+            | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))'
+
+          "${COMPOSE[@]}" exec -T nutev python - <<'PY'
+          import os
+          import smtplib
+          import ssl
+          import sys
+
+          sys.path.insert(0, "/app/apps/nutev-web")
+          from transactional_email import email_configured, public_origin
+
+          configured = email_configured()
+          origin = public_origin()
+          print(f"PUBLIC_ORIGIN_EFFECTIVE={origin or 'UNCONFIGURED'}")
+          print("EMAIL_DELIVERY_CONFIGURED" if configured else "EMAIL_DELIVERY_NOT_CONFIGURED")
+
+          ready = False
+          if configured:
+              host = str(os.environ.get("NUTEV_SMTP_HOST") or "").strip()
+              port = int(str(os.environ.get("NUTEV_SMTP_PORT") or "587").strip())
+              username = str(os.environ.get("NUTEV_SMTP_USERNAME") or "").strip()
+              password = str(os.environ.get("NUTEV_SMTP_PASSWORD") or "")
+              starttls = str(os.environ.get("NUTEV_SMTP_STARTTLS") or "true").strip().casefold() not in {"0", "false", "no"}
+              try:
+                  with smtplib.SMTP(host, port, timeout=15) as client:
+                      client.ehlo()
+                      if starttls:
+                          client.starttls(context=ssl.create_default_context())
+                          client.ehlo()
+                      if username:
+                          client.login(username, password)
+                      code, _ = client.noop()
+                      ready = int(code) < 400
+              except Exception:
+                  ready = False
+          print(f"SMTP_CONNECTIVITY_READY={'true' if ready else 'false'}")
+          print(f"PASSWORD_RESET_DELIVERY_READY={'true' if configured and ready and bool(origin) else 'false'}")
+          PY
+          REMOTE
+          )
+          printf '%s\n' "$RESULT"
+          {
+            echo "## Production SMTP — estado atual"
+            echo
+            echo '~~~text'
+            printf '%s\n' "$RESULT"
+            echo '~~~'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Apply SMTP configuration with rollback
+        if: ${ inputs.mode == 'apply' }
+        env:
+          SMTP_PASSWORD: ${ secrets.NUTEV_SMTP_PASSWORD }
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          trap 'rm -f smtp-config.json' EXIT
+
+          python3 - <<'PY'
+          import base64
+          import json
+          import os
+          from pathlib import Path
+
+          values = {
+              "NUTEV_SMTP_HOST": os.environ["SMTP_HOST"].strip(),
+              "NUTEV_SMTP_PORT": (os.environ.get("SMTP_PORT") or "587").strip(),
+              "NUTEV_SMTP_USERNAME": os.environ.get("SMTP_USERNAME", "").strip(),
+              "NUTEV_SMTP_PASSWORD": os.environ.get("SMTP_PASSWORD", ""),
+              "NUTEV_SMTP_FROM": os.environ["SMTP_FROM"].strip(),
+              "NUTEV_SMTP_STARTTLS": (os.environ.get("SMTP_STARTTLS") or "true").strip(),
+          }
+          for key, value in values.items():
+              if "\n" in value or "\r" in value or "\x00" in value:
+                  raise SystemExit(f"{key} contains an unsupported control character")
+          payload = {
+              key: base64.b64encode(value.encode("utf-8")).decode("ascii")
+              for key, value in values.items()
+          }
+          Path("smtp-config.json").write_text(json.dumps(payload, sort_keys=True), encoding="utf-8")
+          PY
+          chmod 600 smtp-config.json
+
+          PORT="${HETZNER_PORT:-22}"
+          REMOTE_STAGE="$HETZNER_APP_DIR/.smtp-config-$GITHUB_RUN_ID.json"
+          scp -P "$PORT" -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes \
+            smtp-config.json "$HETZNER_USER@$HETZNER_HOST:$REMOTE_STAGE"
+
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          STAGE_Q=$(printf '%q' "$REMOTE_STAGE")
+          PUBLIC_URL_Q=$(printf '%q' "${NUTEV_PUBLIC_URL%/}")
+          ADMIN_EMAIL_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_EMAIL")
+          ISSUE_RESET_Q=$(printf '%q' "$ISSUE_BOOTSTRAP_RESET")
+
+          RESULT=$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q STAGE=$STAGE_Q PUBLIC_URL=$PUBLIC_URL_Q ADMIN_EMAIL=$ADMIN_EMAIL_Q ISSUE_RESET=$ISSUE_RESET_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          test -f deploy/hetzner/.env
+          test -f "$STAGE"
+          chmod 600 "$STAGE"
+
+          COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
+          OLD_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
+          [[ "$OLD_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+          BACKUP="$(mktemp deploy/hetzner/.env.smtp-backup.XXXXXX)"
+          cp deploy/hetzner/.env "$BACKUP"
+          chmod 600 "$BACKUP"
+          MUTATED=0
+
+          finish() {
+            rc=$?
+            trap - EXIT
+            if [[ "$rc" -ne 0 && "$MUTATED" = "1" ]]; then
+              echo "SMTP configuration failed; restoring the previous production environment." >&2
+              cp "$BACKUP" deploy/hetzner/.env
+              chmod 600 deploy/hetzner/.env
+              docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml up -d --no-build nutev >/dev/null || true
+              for _ in $(seq 1 30); do
+                if curl -fsS --max-time 3 http://127.0.0.1:8765/api/health >/dev/null 2>&1; then
+                  RESTORED="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')" || RESTORED=""
+                  [[ "$RESTORED" = "$OLD_COMMIT" ]] && break
+                fi
+                sleep 2
+              done
+            fi
+            rm -f "$STAGE" "$BACKUP"
+            exit "$rc"
+          }
+          trap finish EXIT
+
+          python3 - "$STAGE" deploy/hetzner/.env <<'PY'
+          from __future__ import annotations
+
+          import base64
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import sys
+          import tempfile
+
+          source = Path(sys.argv[1])
+          target = Path(sys.argv[2])
+          encoded = json.loads(source.read_text(encoding="utf-8"))
+          allowed = {
+              "NUTEV_SMTP_HOST",
+              "NUTEV_SMTP_PORT",
+              "NUTEV_SMTP_USERNAME",
+              "NUTEV_SMTP_PASSWORD",
+              "NUTEV_SMTP_FROM",
+              "NUTEV_SMTP_STARTTLS",
+          }
+          if set(encoded) != allowed:
+              raise SystemExit("staged SMTP config has unexpected keys")
+
+          values = {
+              key: base64.b64decode(str(encoded[key]), validate=True).decode("utf-8")
+              for key in allowed
+          }
+          for key, value in values.items():
+              if any(ch in value for ch in ("\n", "\r", "\x00")):
+                  raise SystemExit(f"{key} contains an unsupported control character")
+
+          def dotenv_literal(value: str) -> str:
+              return "'" + value.replace("'", "\\'") + "'"
+
+          text = target.read_text(encoding="utf-8")
+          for key, value in sorted(values.items()):
+              pattern = re.compile(rf"(?m)^{re.escape(key)}=.*$")
+              replacement = f"{key}={dotenv_literal(value)}"
+              text = pattern.sub(replacement, text) if pattern.search(text) else text.rstrip() + "\n" + replacement + "\n"
+
+          fd, temp_name = tempfile.mkstemp(prefix=".env.smtp.", dir=str(target.parent))
+          try:
+              os.write(fd, text.encode("utf-8"))
+              os.close(fd)
+              os.chmod(temp_name, 0o600)
+              os.replace(temp_name, target)
+          except Exception:
+              try:
+                  os.close(fd)
+              except OSError:
+                  pass
+              try:
+                  os.unlink(temp_name)
+              except OSError:
+                  pass
+              raise
+          PY
+          rm -f "$STAGE"
+          MUTATED=1
+
+          "${COMPOSE[@]}" up -d --no-build nutev >/dev/null
+          READY=0
+          for _ in $(seq 1 45); do
+            if curl -fsS --max-time 3 http://127.0.0.1:8765/api/health >/dev/null 2>&1; then
+              READY=1
+              break
+            fi
+            sleep 2
+          done
+          [[ "$READY" = "1" ]]
+
+          NEW_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
+          [[ "$NEW_COMMIT" = "$OLD_COMMIT" ]]
+          echo "PRODUCTION_SHA_PRESERVED=$NEW_COMMIT"
+
+          PROBE="$("${COMPOSE[@]}" exec -T nutev python - <<'PY'
+          import os
+          import smtplib
+          import ssl
+          import sys
+
+          sys.path.insert(0, "/app/apps/nutev-web")
+          from transactional_email import email_configured, public_origin
+
+          if not email_configured():
+              raise SystemExit("SMTP is not configured after apply")
+
+          host = str(os.environ.get("NUTEV_SMTP_HOST") or "").strip()
+          port = int(str(os.environ.get("NUTEV_SMTP_PORT") or "587").strip())
+          username = str(os.environ.get("NUTEV_SMTP_USERNAME") or "").strip()
+          password = str(os.environ.get("NUTEV_SMTP_PASSWORD") or "")
+          starttls = str(os.environ.get("NUTEV_SMTP_STARTTLS") or "true").strip().casefold() not in {"0", "false", "no"}
+
+          with smtplib.SMTP(host, port, timeout=15) as client:
+              client.ehlo()
+              if starttls:
+                  client.starttls(context=ssl.create_default_context())
+                  client.ehlo()
+              if username:
+                  client.login(username, password)
+              code, _ = client.noop()
+              if int(code) >= 400:
+                  raise SystemExit("SMTP server rejected NOOP")
+
+          print("EMAIL_DELIVERY_CONFIGURED")
+          print("SMTP_CONNECTIVITY_READY=true")
+          print("PASSWORD_RESET_DELIVERY_READY=true")
+          print(f"PUBLIC_ORIGIN_EFFECTIVE={public_origin() or 'UNCONFIGURED'}")
+          PY
+          )"
+          printf '%s\n' "$PROBE"
+          grep -Fxq "SMTP_CONNECTIVITY_READY=true" <<<"$PROBE"
+          grep -Fxq "PASSWORD_RESET_DELIVERY_READY=true" <<<"$PROBE"
+          grep -Fxq "PUBLIC_ORIGIN_EFFECTIVE=$PUBLIC_URL" <<<"$PROBE"
+
+          if [[ "$ISSUE_RESET" = "true" ]]; then
+            RESET_RESULT="$("${COMPOSE[@]}" exec -T -e BOOTSTRAP_ADMIN_EMAIL="$ADMIN_EMAIL" nutev python - <<'PY'
+          import os
+          from pathlib import Path
+          import sys
+          from urllib.parse import quote
+
+          sys.path.insert(0, "/app/apps/nutev-web")
+          from transactional_email import public_origin, send_password_reset_email
+          from nutev.tenancy.password_reset import SQLitePasswordResetStore
+
+          database = Path(os.environ.get("NUTEV_AUTH_DB") or "/app/project_output_reference/platform/auth.sqlite3")
+          email = str(os.environ["BOOTSTRAP_ADMIN_EMAIL"]).strip().casefold()
+          ticket = SQLitePasswordResetStore(database).issue(email)
+          if ticket is None:
+              print("BOOTSTRAP_PASSWORD_RESET_DELIVERY=account_not_active")
+              raise SystemExit(4)
+
+          reset_url = public_origin() + "/reset-password.html?token=" + quote(ticket.token, safe="")
+          delivery = send_password_reset_email(
+              recipient=ticket.reset.email,
+              display_name=ticket.reset.display_name,
+              reset_url=reset_url,
+          )
+          print(f"BOOTSTRAP_PASSWORD_RESET_DELIVERY={delivery.status}")
+          if delivery.status != "sent":
+              raise SystemExit(5)
+          PY
+          )"
+            printf '%s\n' "$RESET_RESULT"
+            grep -Fxq "BOOTSTRAP_PASSWORD_RESET_DELIVERY=sent" <<<"$RESET_RESULT"
+          else
+            echo "BOOTSTRAP_PASSWORD_RESET_DELIVERY=not_requested"
+          fi
+
+          echo "SMTP_CONFIGURATION_APPLIED=true"
+          REMOTE
+          )
+
+          printf '%s\n' "$RESULT"
+          {
+            echo "## Production SMTP — aplicação"
+            echo
+            echo '~~~text'
+            printf '%s\n' "$RESULT"
+            echo '~~~'
+            echo
+            echo "A senha SMTP não é exibida, não é salva como artifact e não é recebida por workflow input."
+          } >> "$GITHUB_STEP_SUMMARY"
