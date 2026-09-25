@@ -36,24 +36,24 @@ concurrency:
 jobs:
   smtp:
     name: production SMTP
-    if: ${ github.ref == 'refs/heads/main' }
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     environment: HETZNER
     timeout-minutes: 15
     env:
-      HETZNER_HOST: ${ vars.HETZNER_HOST }
-      HETZNER_USER: ${ vars.HETZNER_USER }
-      HETZNER_PORT: ${ vars.HETZNER_PORT }
-      HETZNER_KNOWN_HOSTS: ${ vars.HETZNER_KNOWN_HOSTS }
-      HETZNER_APP_DIR: ${ vars.HETZNER_APP_DIR }
-      NUTEV_PUBLIC_URL: ${ vars.NUTEV_PUBLIC_URL }
-      SMTP_HOST: ${ vars.NUTEV_SMTP_HOST }
-      SMTP_PORT: ${ vars.NUTEV_SMTP_PORT }
-      SMTP_USERNAME: ${ vars.NUTEV_SMTP_USERNAME }
-      SMTP_FROM: ${ vars.NUTEV_SMTP_FROM }
-      SMTP_STARTTLS: ${ vars.NUTEV_SMTP_STARTTLS }
-      MODE: ${ inputs.mode }
-      ISSUE_BOOTSTRAP_RESET: ${ inputs.issue_bootstrap_reset }
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+      NUTEV_PUBLIC_URL: ${{ vars.NUTEV_PUBLIC_URL }}
+      SMTP_HOST: ${{ vars.NUTEV_SMTP_HOST }}
+      SMTP_PORT: ${{ vars.NUTEV_SMTP_PORT }}
+      SMTP_USERNAME: ${{ vars.NUTEV_SMTP_USERNAME }}
+      SMTP_FROM: ${{ vars.NUTEV_SMTP_FROM }}
+      SMTP_STARTTLS: ${{ vars.NUTEV_SMTP_STARTTLS }}
+      MODE: ${{ inputs.mode }}
+      ISSUE_BOOTSTRAP_RESET: ${{ inputs.issue_bootstrap_reset }}
       BOOTSTRAP_ADMIN_EMAIL: wvagners@hotmail.com
 
     steps:
@@ -63,7 +63,7 @@ jobs:
 
       - name: Validate operator request
         env:
-          SMTP_PASSWORD: ${ secrets.NUTEV_SMTP_PASSWORD }
+          SMTP_PASSWORD: ${{ secrets.NUTEV_SMTP_PASSWORD }}
         shell: bash
         run: |
           set -euo pipefail
@@ -99,7 +99,7 @@ jobs:
 
       - name: Configure SSH
         env:
-          HETZNER_SSH_KEY: ${ secrets.HETZNER_SSH_KEY }
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
         shell: bash
         run: |
           set -euo pipefail
@@ -215,9 +215,9 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Apply SMTP configuration with rollback
-        if: ${ inputs.mode == 'apply' }
+        if: ${{ inputs.mode == 'apply' }}
         env:
-          SMTP_PASSWORD: ${ secrets.NUTEV_SMTP_PASSWORD }
+          SMTP_PASSWORD: ${{ secrets.NUTEV_SMTP_PASSWORD }}
         shell: bash
         run: |
           set -euo pipefail
