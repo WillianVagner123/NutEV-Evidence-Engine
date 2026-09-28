@@ -25,13 +25,6 @@ from tools.browser_context_navigation import select_context_option
 
 from tools.doctorate_supervisor_fixture import doctorate_server
 
-# Actions the supervisor must never be offered on the project hub.
-_FORBIDDEN_UI_TEXT = (
-    "Buscar evidências",
-    "Gerenciar membros",
-    "Configurar aplicação",
-)
-
 # Endpoints the supervisor must be refused even with a valid session cookie.
 _FORBIDDEN_REQUESTS = (
     ("GET", "/api/workspace/members", None),
