@@ -46,7 +46,7 @@ jobs:
       HETZNER_PORT: ${{ vars.HETZNER_PORT }}
       HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
-      NUTEV_PUBLIC_URL: ${{ vars.NUTEV_PUBLIC_URL }}
+      NUTEV_PUBLIC_URL: ${{ vars.NUTEV_PUBLIC_URL || 'https://nutev.mindsperformance.com.br' }}
       SMTP_HOST: ${{ vars.NUTEV_SMTP_HOST }}
       SMTP_PORT: ${{ vars.NUTEV_SMTP_PORT }}
       SMTP_USERNAME: ${{ vars.NUTEV_SMTP_USERNAME }}
