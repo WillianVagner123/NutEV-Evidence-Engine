@@ -72,11 +72,17 @@ def test_apply_is_atomic_rolls_back_and_preserves_production_sha() -> None:
     assert "BACKUP=\"$(mktemp deploy/hetzner/.env.smtp-backup." in body
     assert "SMTP configuration failed; restoring the previous production environment." in body
     assert 'cp "$BACKUP" deploy/hetzner/.env' in body
-    assert "up -d --no-build nutev" in body
+    assert 'OLD_IMAGE_ID="$(docker inspect -f' in body
+    assert 'RUNTIME_IMAGE="nutev:smtp-runtime-${OLD_COMMIT}"' in body
+    assert 'docker tag "$OLD_IMAGE_ID" "$RUNTIME_IMAGE"' in body
+    assert body.count('NUTEV_IMAGE="$RUNTIME_IMAGE" "${COMPOSE[@]}" up -d --no-build nutev') == 2
+    assert '[[ "$NEW_IMAGE_ID" = "$OLD_IMAGE_ID" ]]' in body
+    assert "PRODUCTION_IMAGE_PRESERVED=true" in body
     assert '[[ "$NEW_COMMIT" = "$OLD_COMMIT" ]]' in body
     assert "PRODUCTION_SHA_PRESERVED=" in body
+    assert "SMTP rollback could not prove the previous runtime identity." in body
+    assert 'docker image rm "$RUNTIME_IMAGE"' in body
     assert 'rm -f "$STAGE" "$BACKUP"' in body
-
 
 def test_apply_requires_live_smtp_probe_before_marking_ready() -> None:
     body = WORKFLOW.read_text(encoding="utf-8")
