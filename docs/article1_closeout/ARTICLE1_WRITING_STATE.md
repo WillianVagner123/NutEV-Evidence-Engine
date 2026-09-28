@@ -82,7 +82,7 @@ O comentário "A1 authority clarification" em #1327 definiu o Engine como autori
 | R2 | HUMAN_DECISION_REQUIRED | idem; protocolo exige designação real antes de qualquer concordância |
 | ADJUDICATOR | HUMAN_DECISION_REQUIRED | idem |
 | PRESS REVIEWER | HUMAN_DECISION_REQUIRED | revisor independente não definido |
-| PUBMED NATIVE VALIDATION | PENDING | candidato compilado; sem MeSH; frases truncadas entre aspas exigem checagem de Search Details |
+| PUBMED NATIVE VALIDATION | PENDING | auditoria oficial de sintaxe v0.2 concluída: wildcard em frases é suportado; ainda faltam Search Details nativo, balanço MeSH/free-text e testes de resgate controlado |
 | LILACS/BVS NATIVE VALIDATION | BLOCKED | interface pública HTTP 403 nas tentativas técnicas (D-130); também depende de decisão de incluir a base |
 | SCIELO NATIVE VALIDATION | BLOCKED | idem |
 | SCOPUS NATIVE VALIDATION | EXTERNAL_VALIDATION_REQUIRED | acesso licenciado; simulação proibida |
@@ -101,7 +101,7 @@ GF-01/02/03 foram classificados a partir dos comentários de reconciliação em 
 ## SCIENTIFIC BLOCKERS
 
 1. Revisores (R1, R2, adjudicador, PRESS) não designados — bloqueia D-132 delta review, GF-07, PRESS.
-2. Validação nativa por base não iniciada; LILACS/BVS e SciELO tecnicamente bloqueados; Scopus/WoS exigem acesso licenciado.
+2. PubMed teve auditoria oficial de sintaxe, mas ainda requer Search Details nativo e deltas controlados; LILACS/BVS e SciELO seguem tecnicamente bloqueados; Scopus/WoS exigem acesso licenciado.
 3. Versão final das estratégias e decisão sobre C4 ainda dependem de PRESS/delta review.
 
 ## HUMAN DECISIONS REQUIRED
@@ -116,4 +116,4 @@ GF-01/02/03 foram classificados a partir dos comentários de reconciliação em 
 
 ## NEXT WRITING ACTION
 
-Pergunta/título/objetivo já harmonizados. Próxima ação editorial-científica: fechar a versão pré-PRESS das estratégias, executar revisão PRESS independente e registrar as correções aceitas antes de qualquer freeze.
+Pergunta/título/objetivo já harmonizados. Auditoria técnica PubMed v0.2 preparada em `ARTICLE1_PRESS_TECHNICAL_AUDIT_V02.md`; próxima ação é executar Search Details/deltas controlados e entregar o pacote a um revisor PRESS independente antes de qualquer freeze.

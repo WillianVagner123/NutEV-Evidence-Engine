@@ -1,7 +1,7 @@
 # Article 1 — PRESS Packet v0.1
 
 **Status:** `PREPARED_FOR_HUMAN_PRESS_REVIEW`. **Não** é `PRESS=PASS`.
-Prepared: 2026-09-28, main `a3034e6992ec2061d316aae5e23b9410e23d5c9b`.
+Prepared: 2026-09-28. Canonical question synchronized on main `5adb56ccaf265b57b4085fdb3f960a371601fb58`.
 Candidate package: `tools/build_article1_press_query_package.py` (no network), `package_sha256 = 82834c34c1a25d753263350e1367232621962f350c11880024049be4b5ec7a7c`, draft `article1-query-draft-v1`.
 Canonical PRESS record (unchanged by this packet): `config/nutev/article1_press_review_v1.json` — `status=DRAFT`, `reviewer=null`, P01–P10 `PENDING`.
 
@@ -221,7 +221,7 @@ TS=(nutrition* OR diet* OR food OR eating) AND TS=("social context*" OR "social 
 |---|---|---|
 | Controlled vocabulary | **None.** PubMed strings are `[Title/Abstract]` only; no MeSH, no publication types (e.g. Practice Guideline, Consensus Development Conference); LILACS strings use no DeCS. | P04 — decide whether MeSH/DeCS/Emtree-like layers are required per provider (open decision for Dr. Caio). |
 | PubMed field tags | `[Title/Abstract]` on every term | Normative documents without abstracts are only reachable by title; the manuscript mentions a "rescue branch" for documents without abstracts that is **not** present in the Engine draft. |
-| Truncation inside phrases | `"dietary pattern*"`, `"position statement*"`, `"nutrition care model*"`, etc. | PubMed can emit `quotedphrasesnotfound` warnings for truncated phrases (observed and recorded in D-131 for another version). Needs Search Details check. |
+| Wildcards inside phrases | `"dietary pattern*"`, `"position statement*"`, `"nutrition care model*"`, etc. | Current PubMed Help explicitly supports wildcards in phrase searches, including quoted phrases. This is not a syntax error by itself. However wildcards/field tags disable Automatic Term Mapping, so Search Details and controlled-vocabulary balance still require PRESS review. |
 | Hyphenation | `food-based` unquoted | PubMed tokenisation; D01 technical run found 0 incremental records for `"food based"`. |
 | Scopus | `TITLE-ABS-KEY(...) AND TITLE-ABS-KEY(...)` | Includes author keywords and indexer terms — field asymmetry vs PubMed `[tiab]` (open decision). |
 | Web of Science | `TS=(...) AND TS=(...)` | Topic includes Keywords Plus — asymmetry vs PubMed. |
@@ -254,7 +254,7 @@ These are PubMed hit counts from a development run. They are not screening resul
 
 | PROVIDER | QUERY VERSION | NATIVE SYNTAX | VALIDATION STATUS | WHO VALIDATED | DATE | WARNINGS | NEXT ACTION |
 |---|---|---|---|---|---|---|---|
-| PubMed | article1-query-draft-v1 (compiled) | `[Title/Abstract]`, no MeSH | CANDIDATE_NOT_NATIVE_VALIDATED; delta routes executed technically (06/09) | nobody (technical run only) | — | truncated phrases; no controlled vocabulary; no date limits; no no-abstract rescue | Run Search Details on the chosen version; record warnings, counts, sentinels |
+| PubMed | article1-query-draft-v1 (compiled) | `[Title/Abstract]`, no MeSH | CANDIDATE_NOT_NATIVE_VALIDATED; delta routes executed technically (06/09); official syntax audit v0.2 completed | nobody (technical audit only) | 2026-09-28 | phrase wildcards are supported; field tags/wildcards disable ATM; no controlled vocabulary; no date limits; no no-abstract rescue | Run native Search Details on the chosen version; execute controlled-vocabulary rescue deltas; record warnings, counts, sentinels |
 | LILACS/BVS | article1-query-draft-v1 (compiled) | `tw:` | BLOCKED | nobody | — | public interface HTTP 403 (D-130); English-only terms; no DeCS | Human decision on inclusion; if kept, auditable manual run on the official interface |
 | SciELO | article1-query-draft-v1 (compiled) | untagged | BLOCKED | nobody | — | HTTP 403 (D-130); English-only | Same as LILACS |
 | Scopus | article1-query-draft-v1 (compiled) | `TITLE-ABS-KEY` | EXTERNAL_VALIDATION_REQUIRED | nobody | — | simulation forbidden; field asymmetry | Licensed PILOT via institutional access after PRESS |
@@ -267,8 +267,8 @@ Europe PMC, OpenAlex, Crossref, DOAJ and Semantic Scholar remain discovery/QA so
 1. **P01:** Does the candidate B-NORM + C1–C4 architecture faithfully translate the approved canonical question, especially the transition from recommendation/dietary direction to prescription formats, competencies/repertoires, context/execution conditions, monitoring and continuity of care?
 2. **P02:** Is `B-NORM ∪ C-STRUCT` the right top-level logic, or should C-STRUCT be constrained by a normative/document-type marker to stay within a documentary corpus?
 3. **P02/P09:** C4 requires three blocks (anchor AND social context AND operational marker). Is `model*` / `framework*` / `assessment` an adequate operational marker, given D05's increment of 6,055?
-4. **P03:** Accept truncation inside quoted phrases in PubMed, or expand to explicit variants?
-5. **P04:** Add MeSH (e.g. Nutrition Policy, Diet, Healthy; Guidelines as Topic; Practice Guideline [pt]; Consensus Development Conference [pt]) — to be checked in the MeSH browser? Add DeCS and PT/ES terms for LILACS/SciELO?
+4. **P03:** PubMed supports wildcards inside quoted phrases; does each wildcard phrase behave as intended in Search Details, and is loss of Automatic Term Mapping adequately compensated by explicit free-text/controlled-vocabulary branches?
+5. **P04:** Test a controlled-vocabulary rescue layer before adoption: `Nutrition Policy`[MeSH]; `Diet`/`Diet, Healthy`[MeSH] combined with `Guideline`/`Practice Guideline`/`Consensus Statement` publication types and `Guidelines as Topic`/`Practice Guidelines as Topic`; for C1 test `Nutrition Therapy`[MeSH]. For LILACS/SciELO, decide DeCS + PT/ES terms if those providers remain formal.
 6. **P05:** `counseling`/`counselling` are covered; are `diet*` vs `dietary` and `nutrition*` over-broad as anchors?
 7. **P06:** Encode the date rules (B-NORM no lower limit; C-STRUCT 2000–) in each frozen string.
 8. **P07:** Are KI13 and the social-context sentinels in scope? Which recall target is acceptable before freeze?
