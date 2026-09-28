@@ -54,15 +54,20 @@ def test_press_profile_has_independent_review_checklist() -> None:
 
 def test_canonical_press_record_is_fail_closed_and_human_only() -> None:
     record = json.loads(PRESS_RECORD.read_text(encoding="utf-8"))
-    assert record["status"] == "DRAFT"
+    assert record["status"] == "IN_REVIEW"
     assert record["human_review_required"] is True
-    assert record["reviewer"] is None
-    assert record["press_decision"] is None
+    assert record["reviewer"]["name"] == "Vagner"
+    assert record["reviewer"]["affiliation"] == "UnB"
+    assert record["reviewer"]["independence_attestation"] is True
+    assert record["reviewed_at"] == "2026-09-28T23:01:57.801197Z"
+    assert record["press_decision"] == "ACCEPT"
+    assert all(item["status"] == "COMPLETE" for item in record["review_items"])
     assert record["downstream_gate"]["gate_id"] == "GF-10"
     assert record["downstream_gate"]["authorized"] is False
     assert len(record["delta_tests"]) == 5
-    assert all(item["status"] == "PENDING" for item in record["delta_tests"])
-    assert record["c4_social_context"]["decision"] == "PENDING_HUMAN_DECISION"
+    assert record["delta_tests"][0]["status"] == "COMPLETE"
+    assert all(item["status"] == "PENDING" for item in record["delta_tests"][1:])
+    assert record["c4_social_context"]["decision"] == "ADOPT_C4"
     assert record["guardrails"]["no_automatic_press_pass"] is True
     assert record["guardrails"]["no_automatic_gf10_authorization"] is True
 

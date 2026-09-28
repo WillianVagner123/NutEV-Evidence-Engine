@@ -11,16 +11,15 @@ O produto pode fechar tecnicamente com esta lista aberta. A busca formal não po
 3. decidir se D-132 v1 será mantido apenas como verificação exploratória por causa do viés de recência;
 4. decidir se deve ser especificado D-132b com amostragem aleatória/estratificada;
 5. definir quem valida sintaxe nativa de Scopus e Web of Science;
-6. definir revisor PRESS independente;
-7. definir se PRESS inclui LILACS/BVS e SciELO na revisão nativa;
-8. decidir se o protocolo S1–S6 será regenerado/versionado.
+6. definir se PRESS inclui LILACS/BVS e SciELO na revisão nativa;
+7. decidir se o protocolo S1–S6 será regenerado/versionado.
 
 Nenhuma identidade/e-mail de revisor deve ser inventada pelo sistema.
 
 ## Para discutir com Dr. Caio Reis
 
 1. **Parâmetros nutricionais:** avaliação/extração é suficiente ou a pergunta exige rota própria para diet quality/intake/nutrition status?
-2. **C4:** adotar, revisar, rejeitar ou manter como candidato após análise de precisão.
+2. **C4:** `ADOPT_C4` foi selecionado pelo revisor PRESS; falta fechar D05/validação antes de promoção para a query congelada.
 3. **Eating competence:** pertence ao construto de competências alimentares?
 4. **B-NORM:** trade-off sensibilidade × especificidade, especialmente `standard*`.
 5. **Vocabulário controlado/publication types:** qual papel em cada provider?
@@ -31,7 +30,7 @@ Nenhuma identidade/e-mail de revisor deve ser inventada pelo sistema.
 ## Decisões explicitamente não tomadas
 
 ```text
-PRESS = PASS
+PRESS = PASS  # human ACCEPT exists, but canonical PASS still awaits mandatory delta closure
 GF-10 = AUTHORIZED
 provider query freeze
 FORMAL SEARCH
@@ -43,7 +42,7 @@ risk of bias
 certainty
 recommendation
 question change
-C4 approval
+C4 promotion into frozen/formal query
 ```
 
 ## Registro esperado

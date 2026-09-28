@@ -2,9 +2,9 @@
 
 **Reviewer assigned:** Vagner  
 **Affiliation:** UnB  
-**Review status:** `NOT_STARTED / PENDING_REVIEWER_INPUT`
+**Review status:** `COMPLETED_VIA_GOOGLE_FORMS / ACCEPT / CANONICAL_PASS_PENDING_DELTAS`
 
-This packet is prepared for the independent PRESS reviewer. The authoring team has populated context and evidence only. Reviewer judgments are intentionally blank.
+This packet was the prepared reviewer aid. The authoritative submitted judgments now come from the Google Forms response + P07 clarification, preserved in the canonical repository evidence record. Blank fields below are historical template content and must not be interpreted as missing review.
 
 ## 1. Canonical review question
 

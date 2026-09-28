@@ -1,14 +1,18 @@
 # Article 1 — PRESS Packet v0.1
 
-**Status:** `PREPARED_FOR_HUMAN_PRESS_REVIEW`. **Não** é `PRESS=PASS`.
+**Status:** `HUMAN_PRESS_ACCEPT_RECORDED_DELTA_CLOSURE_PENDING`. **Ainda não é `PRESS=PASS` canônico.**
 Prepared: 2026-09-28. Canonical question synchronized on main `5adb56ccaf265b57b4085fdb3f960a371601fb58`.
 Candidate package: `tools/build_article1_press_query_package.py` (no network), `package_sha256 = 82834c34c1a25d753263350e1367232621962f350c11880024049be4b5ec7a7c`, draft `article1-query-draft-v1`.
-Canonical PRESS record (unchanged by this packet): `config/nutev/article1_press_review_v1.json` — `status=DRAFT`, `reviewer=null`, P01–P10 `PENDING`.
+Canonical PRESS record now contains the independent Vagner/UnB review: final decision `ACCEPT`, P01–P10 complete, P07 explicitly clarified as a non-material observation, and `ADOPT_C4` recorded. The record remains `IN_REVIEW` rather than `PASS` because mandatory D02–D05 human delta/sample closure is still open.
 
 ```text
-PRESS_REVIEWER_ASSIGNED = Vagner
+PRESS_REVIEWER = Vagner
 PRESS_REVIEWER_AFFILIATION = UnB
-PRESS_REVIEW_STATUS = ASSIGNED_PENDING_INDEPENDENCE_ATTESTATION_AND_REVIEW
+PRESS_INDEPENDENCE_ATTESTATION = CONFIRMED
+PRESS_HUMAN_DECISION = ACCEPT
+P07 = NON_MATERIAL_OBSERVATION_BEFORE_FREEZE
+C4 = ADOPT_C4
+CANONICAL_PRESS_PASS = BLOCKED_BY_OPEN_DELTA_REQUIREMENTS
 ```
 
 The reviewer was designated by the owner on 2026-09-28. The canonical PRESS record remains fail-closed until the reviewer personally provides review date, explicit independence attestation, P01–P10 conclusions, final decision, comments and any suggested changes.
@@ -282,3 +286,21 @@ Europe PMC, OpenAlex, Crossref, DOAJ and Semantic Scholar remain discovery/QA so
 ## 10. What this packet does not do
 
 It does not record a reviewer, a PRESS decision, a C4 decision, GF-10 authorization, a query freeze, a formal search, eligibility decisions or PRISMA events.
+
+
+## 11. Human PRESS review outcome — 2026-09-28
+
+Independent reviewer: **Vagner — UnB**.
+
+- independence attestation: confirmed;
+- P01, P02, P03, P05, P06 and P10: adequate;
+- P04: test/add controlled vocabulary if it improves retrieval;
+- P07: improve/close sentinel recovery before freeze; follow-up clarification classifies this as **non-material** and maintains `ACCEPT`;
+- P08: retain optional terms only when they show useful gain;
+- P09: `ADOPT_C4`;
+- final decision: `ACCEPT`.
+
+Canonical evidence:
+`evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json`.
+
+This human opinion is complete. The **canonical PRESS gate remains not-PASS** until mandatory delta/sample closure required by the repository contract is complete. GF-10, freeze, formal search and PRISMA remain closed.
