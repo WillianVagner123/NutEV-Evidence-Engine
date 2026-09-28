@@ -270,3 +270,27 @@ não reproduzido diretamente nesta sessão é a jornada autenticada da conta rea
 Depois disso, o closeout técnico pode ser marcado `PRODUCT CLOSED`; o próximo trabalho passa a ser
 científico/humano: revisão de precisão, known items, validação provider-native e PRESS, sem abrir GF-10
 antes das decisões correspondentes.
+
+## 7. ADDENDUM — Real owner acceptance (2026-09-28)
+
+O item pendente da seção 1.3 foi executado na conta real do proprietário, em produção, no SHA
+`a3034e6992ec2061d316aae5e23b9410e23d5c9b` (main = produção; `/api/version` → 200).
+
+```text
+A1 REAL OWNER ACCEPTANCE          = PASS
+GET /api/article1/scientific-state = HTTP 200
+status observado                  = DISCOVERY_CLOSED_FORMAL_SEARCH_PENDING_PRESS_FREEZE (sem drift)
+workspace / project / application = Doutorado — Willian Vagner / Artigo 1 / SCOPING_REVIEW (active)
+ARTICLE1_PRODUCT_STATUS           = CLOSED
+ARTICLE1_SCIENTIFIC_READY         = false
+```
+
+Evidência detalhada (sem credenciais): comentário "A1 REAL OWNER ACCEPTANCE = PASS" na issue #1327.
+
+Limitações observadas, não bloqueantes para o produto: biblioteca/buscas/rounds/exportações do projeto
+tenant vazios; `/strategy.html` sem dados em modo pilot (`/strategy-data/article1_query_draft_v1.json` → 404);
+`/api/agent-context/article1/status` → 404 `legacy_surface_unavailable_in_pilot`; D-132 sem painel do owner
+(somente API).
+
+Nenhum gate científico foi alterado. Controle editorial do manuscrito: `ARTICLE1_WRITING_STATE.md`;
+pacote PRESS: `ARTICLE1_PRESS_PACKET_V01.md`.
