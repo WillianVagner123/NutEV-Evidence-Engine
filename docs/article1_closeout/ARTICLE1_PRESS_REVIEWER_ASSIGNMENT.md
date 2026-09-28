@@ -1,6 +1,6 @@
 # Article 1 — PRESS Reviewer Assignment
 
-**Status:** `ASSIGNED_PENDING_REVIEW`  
+**Status:** `HUMAN_REVIEW_COMPLETED_ACCEPT_DELTA_CLOSURE_PENDING`  
 **Date assigned:** 2026-09-28  
 **Assigned by:** owner / authoring team
 
@@ -39,3 +39,19 @@ PRISMA = false
 ```
 
 Reviewer assignment alone changes none of these states.
+
+
+## Review completion
+
+On 2026-09-28 Vagner (UnB) submitted the independent PRESS form and a follow-up clarification.
+
+- independence attestation: confirmed;
+- final decision: `ACCEPT`;
+- P07: non-material observation; improve/close sentinels before freeze;
+- C4: `ADOPT_C4`;
+- P01–P10: completed.
+
+Canonical evidence is stored at:
+`evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json`.
+
+The reviewer opinion is complete, but repository contract still blocks canonical `PRESS=PASS` until the mandatory delta-test/sample closure is complete.

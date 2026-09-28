@@ -14,12 +14,12 @@
 | Gate | Estado |
 |---|---|
 | Discovery | concluído |
-| PRESS | pendente; `NOT_YET_RECORDED_AS_PASS` |
+| PRESS | parecer humano `ACCEPT` concluído; canonical `PASS` ainda bloqueado por D02–D05/sentinelas |
 | GF-10 | não autorizado |
 | Query freeze | pendente |
 | Formal provider search | não executada |
 | Formal PRISMA search event | não criado |
-| C4 | `PRESS_ONLY_CANDIDATE_NOT_APPROVED` |
+| C4 | revisor PRESS: `ADOPT_C4`; promoção formal ainda bloqueada por D05/native validation/freeze |
 
 Nenhuma ação de fechamento técnico autoriza alteração desses estados.
 
@@ -111,4 +111,4 @@ Não reconstruir linhas/PMIDs por inferência. Se o desenho for mantido, regener
 
 ## Próximo gate real
 
-O próximo gate científico é completar evidência pré-PRESS com revisão humana e validação por provider. O produto pode ser tecnicamente fechado antes disso; o Artigo 1 não pode ser declarado pronto para busca formal antes de decisão humana de PRESS e autorização GF-10.
+O parecer PRESS humano foi concluído com `ACCEPT`, mas o gate canônico ainda exige fechar D02–D05, sentinelas e validação provider-native antes de registrar `PRESS=PASS`. Depois disso ainda são necessários GF-10 e query freeze antes da busca formal.

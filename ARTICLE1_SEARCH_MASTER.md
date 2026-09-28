@@ -50,9 +50,9 @@ Current subroutes:
 1. `C1-CARE-PROCESS` — Nutrition Care Process, models/pathways of care, MNT, prescription/counseling and professional care structures.
 2. `C2-COMPETENCY-LITERACY` — food/nutrition/culinary literacy, food skills, competencies, food agency and professional competencies.
 3. `C3-IMPLEMENTATION` — implementation/dissemination/quality-improvement and monitoring structures.
-4. `C4-SOCIAL-CONTEXT` — social context/determinants, social and food environment, social support, commensality and family/shared meals **only as a PRESS candidate**.
+4. `C4-SOCIAL-CONTEXT` — social context/determinants, social and food environment, social support, commensality and family/shared meals.
 
-`C4-SOCIAL-CONTEXT` is not yet approved for the formal strategy.
+PRESS reviewer Vagner (UnB) selected `ADOPT_C4` on 2026-09-28. This records the human PRESS recommendation, but C4 remains pre-freeze and is **not yet promoted into a frozen/formal provider query** until D05 human sample review, native validation and downstream gates close.
 
 ## What is deliberately NOT closed
 
@@ -60,7 +60,8 @@ The formal systematic-review search has **not** been executed.
 
 Current gate state:
 
-- PRESS record: not yet PASS;
+- human PRESS review: completed by Vagner (UnB), independent attestation recorded, final decision `ACCEPT`, P07 clarified as non-material;
+- canonical PRESS record: still not PASS because mandatory delta-test/sample closure is incomplete;
 - GF-10: not authorized;
 - provider-specific query freeze: not complete;
 - formal provider search: not executed;
@@ -72,15 +73,14 @@ Therefore no agent, reviewer or manuscript may describe the discovery corpus as 
 
 Before formal execution:
 
-1. PRESS review of B-NORM and C1–C4;
-2. delta tests for PRESS-only terms/routes;
-3. sentinel/known-item recovery check;
-4. provider-specific field/truncation/syntax review;
-5. incremental-yield and noise review;
-6. explicit `PRESS = PASS` record;
-7. explicit GF-10 authorization;
-8. versioned provider-query freeze with checksums;
-9. only then run `FORMAL` searches and create PRISMA search events.
+1. close remaining delta tests / human precision samples D02–D05;
+2. close sentinel/known-item recovery, including the reviewer-requested improvement before freeze;
+3. complete provider-native validation and controlled-vocabulary deltas;
+4. reconcile the 14-versus-16 sentinel set;
+5. incorporate the completed human PRESS opinion into `PRESS = PASS` only when the canonical delta requirements are complete;
+6. explicit GF-10 authorization;
+7. versioned provider-query freeze with checksums;
+8. only then run `FORMAL` searches and create PRISMA search events.
 
 ## Canonical artifacts
 

@@ -2,20 +2,27 @@
   "schema_version": 1,
   "record_type": "NUTEV_ARTICLE1_PRESS_REVIEW",
   "record_version": "article1-press-review-v1",
-  "status": "DRAFT",
+  "status": "IN_REVIEW",
   "scope": "Article 1 formal-search strategy pre-freeze review",
   "source": {
-    "main_commit": "473c5c573dc12a96bbe5a4adb9a259a1567bff40",
+    "main_commit": "d1c892b17e06ed74bfb02aef8b4c272912207351",
     "search_master": "config/nutev/article1_search_master_v1.json",
-    "search_master_git_blob_sha": "d88a04f9519b486e644bddbee3be7430f76be6e2",
+    "search_master_git_blob_sha": "8dbe43cef1bc10a712be0667e3a114c4a9b491a1",
     "query_draft": "config/nutev/article1_query_draft_v1.json",
-    "query_draft_git_blob_sha": "6b7f18e11b0afe596514131b5026269e06812fca"
+    "query_draft_git_blob_sha": "52c7c05f3db4f0689d82f404d6aa3ddf69b7c4d7"
   },
   "question": "Como documentos normativos e estruturantes do cuidado alimentar de adultos formulam recomendações e direção dietética e em que medida as operacionalizam por meio de formas de prescrição, competências e repertórios, contexto, condições de execução, monitoramento e continuidade do cuidado?",
   "human_review_required": true,
-  "reviewer": null,
-  "reviewed_at": null,
-  "press_decision": null,
+  "reviewer": {
+    "name": "Vagner",
+    "affiliation": "UnB",
+    "email": null,
+    "independence_attestation": true,
+    "independence_attestation_text": "Sim, revisei de forma independente e estas respostas são minhas.",
+    "source": "Google Forms"
+  },
+  "reviewed_at": "2026-09-28T23:01:57.801197Z",
+  "press_decision": "ACCEPT",
   "allowed_statuses": [
     "DRAFT",
     "IN_REVIEW",
@@ -27,62 +34,62 @@
     {
       "id": "P01",
       "topic": "research-question translation",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Está adequado"
     },
     {
       "id": "P02",
       "topic": "Boolean and block logic",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Está adequado"
     },
     {
       "id": "P03",
       "topic": "database field syntax and truncation",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Está adequado"
     },
     {
       "id": "P04",
       "topic": "controlled vocabulary and free-text balance",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Sim, vale testar/adicionar se melhorar a recuperação"
     },
     {
       "id": "P05",
       "topic": "spelling and phrase variants",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Está adequado"
     },
     {
       "id": "P06",
       "topic": "limits and filters",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Está adequado"
     },
     {
       "id": "P07",
       "topic": "known-item and sentinel recovery",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Precisa melhorar antes de congelar a busca. Clarificação: observação não material; manter ACCEPT e melhorar/fechar sentinelas antes do freeze."
     },
     {
       "id": "P08",
       "topic": "incremental yield for PRESS-only terms",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Sim, manter apenas os que mostrarem ganho útil"
     },
     {
       "id": "P09",
       "topic": "manual relevance sample of incremental records",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "ADOPT_C4 — manter a rota como está"
     },
     {
       "id": "P10",
       "topic": "cross-database translation fidelity",
-      "status": "PENDING",
-      "comment": null
+      "status": "COMPLETE",
+      "comment": "Está adequado"
     }
   ],
   "delta_tests": [
@@ -90,10 +97,20 @@
       "id": "D01",
       "route": "B-NORM",
       "comparison": "baseline vs + food based orthographic variant",
-      "status": "PENDING",
-      "counts": null,
-      "incremental_sample": null,
-      "manual_precision": null,
+      "status": "COMPLETE",
+      "counts": {
+        "baseline": 138913,
+        "variant": 138913,
+        "incremental": 0
+      },
+      "incremental_sample": {
+        "n": 0,
+        "status": "NOT_APPLICABLE_NO_INCREMENT"
+      },
+      "manual_precision": {
+        "status": "NOT_APPLICABLE_NO_INCREMENT",
+        "interpretation": "No incremental records; reviewer stated optional terms should be retained only when they show useful gain."
+      },
       "human_interpretation_required": true
     },
     {
@@ -101,8 +118,15 @@
       "route": "B-NORM",
       "comparison": "baseline vs + healthy eating",
       "status": "PENDING",
-      "counts": null,
-      "incremental_sample": null,
+      "counts": {
+        "baseline": 138913,
+        "variant": 139576,
+        "incremental": 663
+      },
+      "incremental_sample": {
+        "n": 25,
+        "status": "PERSISTED_PENDING_HUMAN_REVIEW"
+      },
       "manual_precision": null,
       "human_interpretation_required": true
     },
@@ -111,8 +135,15 @@
       "route": "C1-CARE-PROCESS",
       "comparison": "with vs without meal plan*",
       "status": "PENDING",
-      "counts": null,
-      "incremental_sample": null,
+      "counts": {
+        "baseline": 4053,
+        "variant": 4586,
+        "incremental": 533
+      },
+      "incremental_sample": {
+        "n": 25,
+        "status": "PERSISTED_PENDING_HUMAN_REVIEW"
+      },
       "manual_precision": null,
       "human_interpretation_required": true
     },
@@ -121,8 +152,15 @@
       "route": "C3-IMPLEMENTATION",
       "comparison": "standalone yield and precision sample",
       "status": "PENDING",
-      "counts": null,
-      "incremental_sample": null,
+      "counts": {
+        "baseline": null,
+        "variant": 1855,
+        "incremental": 1855
+      },
+      "incremental_sample": {
+        "n": 25,
+        "status": "PERSISTED_PENDING_HUMAN_REVIEW"
+      },
       "manual_precision": null,
       "human_interpretation_required": true
     },
@@ -131,15 +169,22 @@
       "route": "C4-SOCIAL-CONTEXT",
       "comparison": "incremental yield and precision sample",
       "status": "PENDING",
-      "counts": null,
-      "incremental_sample": null,
+      "counts": {
+        "baseline": 143873,
+        "variant": 149928,
+        "incremental": 6055
+      },
+      "incremental_sample": {
+        "n": 25,
+        "status": "PERSISTED_PENDING_HUMAN_REVIEW"
+      },
       "manual_precision": null,
       "human_interpretation_required": true
     }
   ],
   "c4_social_context": {
     "status": "PRESS_ONLY_CANDIDATE_NOT_APPROVED",
-    "decision": "PENDING_HUMAN_DECISION",
+    "decision": "ADOPT_C4",
     "allowed_decisions": [
       "ADOPT_C4",
       "REVISE_C4",
@@ -154,12 +199,14 @@
       "commensality",
       "family meal*",
       "shared meal*"
-    ]
+    ],
+    "reviewer_decision_recorded_at": "2026-09-28T22:54:47.977099Z",
+    "formal_route_promotion_blocked_until": "D05 human sample review + provider-native validation + GF-10 + query freeze"
   },
   "provider_native_validation": {
     "pubmed": {
       "role": "formal_bibliographic_provider",
-      "status": "PENDING_PRESS_AND_NATIVE_VALIDATION",
+      "status": "PENDING_NATIVE_SEARCH_DETAILS_AND_CONTROLLED_VOCABULARY_DELTAS",
       "exact_query": null
     },
     "lilacs_bvs": {
@@ -227,5 +274,8 @@
     "discovery_is_not_formal_search": true,
     "route_is_not_inclusion": true,
     "scopus_web_of_science_must_not_be_simulated": true
-  }
+  },
+  "status_reason": "Human PRESS review completed with ACCEPT and no material revisions; canonical PASS remains blocked until mandatory delta tests and pre-freeze validation requirements are complete.",
+  "press_decision_materiality": "NO_MATERIAL_REVISION_RECORDED",
+  "review_source_evidence": "evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json"
 }

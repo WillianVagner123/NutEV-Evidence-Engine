@@ -17,7 +17,7 @@ GET /api/article1/scientific-state = HTTP 200
 
 ```text
 status                        = DISCOVERY_CLOSED_FORMAL_SEARCH_PENDING_PRESS_FREEZE
-press_status                  = NOT_YET_RECORDED_AS_PASS
+press_status                  = NOT_YET_RECORDED_AS_PASS (human ACCEPT recorded; delta closure pending)
 gf10_authorized               = false
 query_freeze_complete         = false
 formal_provider_search_executed = false
@@ -77,11 +77,11 @@ O comentário "A1 authority clarification" em #1327 definiu o Engine como autori
 
 | Gate | Estado | Evidência |
 |---|---|---|
-| PRESS | PENDING | `article1_press_review_v1.json`: status DRAFT, reviewer null, P01–P10 PENDING |
+| PRESS | PENDING_DELTA_CLOSURE | Vagner — UnB completed independent review; P01–P10 complete, final `ACCEPT`; canonical PASS blocked by D02–D05 human sample closure |
 | R1 | HUMAN_DECISION_REQUIRED | nenhum revisor designado no repo ou no protocolo |
 | R2 | HUMAN_DECISION_REQUIRED | idem; protocolo exige designação real antes de qualquer concordância |
 | ADJUDICATOR | HUMAN_DECISION_REQUIRED | idem |
-| PRESS REVIEWER | ASSIGNED_PENDING_REVIEW | Vagner — UnB; ainda faltam data, declaração explícita de independência e parecer P01–P10 do próprio revisor |
+| PRESS REVIEWER | PASS | Vagner — UnB; independence attestation, date, P01–P10 and final `ACCEPT` recorded in Forms evidence |
 | PUBMED NATIVE VALIDATION | PENDING | auditoria oficial de sintaxe v0.2 concluída: wildcard em frases é suportado; ainda faltam Search Details nativo, balanço MeSH/free-text e testes de resgate controlado |
 | LILACS/BVS NATIVE VALIDATION | BLOCKED | interface pública HTTP 403 nas tentativas técnicas (D-130); também depende de decisão de incluir a base |
 | SCIELO NATIVE VALIDATION | BLOCKED | idem |
@@ -89,7 +89,7 @@ O comentário "A1 authority clarification" em #1327 definiu o Engine como autori
 | WEB OF SCIENCE NATIVE VALIDATION | EXTERNAL_VALIDATION_REQUIRED | acesso licenciado; simulação proibida |
 | GF-01 | PENDING | base operacional: PARTIAL (rota regional técnica não resolvida) — relatado em #1327 |
 | GF-02 | PENDING | reaberto condicionalmente pelo micro-PILOT de sintaxe (D-131) — relatado em #1327 |
-| GF-03 | PENDING | bloqueador ativo na base operacional — relatado em #1327 |
+| GF-03 | HUMAN_REVIEW_COMPLETE_PENDING_CANONICAL_GATE | parecer PRESS humano concluído sem alteração material; canonical PASS depende dos deltas obrigatórios |
 | GF-07 | HUMAN_DECISION_REQUIRED | modelo de revisores (proposta "D-132" do Drive) aguarda aprovação do orientador |
 | GF-10 | PENDING | `gf10_authorized=false`; requer PRESS PASS + deltas + decisão C4 + validação nativa |
 | QUERY FREEZE | PENDING | `query_freeze_complete=false` |
@@ -100,20 +100,20 @@ GF-01/02/03 foram classificados a partir dos comentários de reconciliação em 
 
 ## SCIENTIFIC BLOCKERS
 
-1. PRESS reviewer designado (Vagner — UnB), mas o parecer ainda exige data, declaração de independência, P01–P10 e decisão final do próprio revisor. R1, R2 e adjudicador continuam não designados.
+1. Parecer PRESS humano concluído (`ACCEPT`), porém o contrato canônico ainda exige fechar D02–D05 e os sentinelas antes de registrar `PRESS=PASS`. R1, R2 e adjudicador continuam não designados.
 2. PubMed teve auditoria oficial de sintaxe, mas ainda requer Search Details nativo e deltas controlados; LILACS/BVS e SciELO seguem tecnicamente bloqueados; Scopus/WoS exigem acesso licenciado.
-3. Versão final das estratégias e decisão sobre C4 ainda dependem de PRESS/delta review.
+3. C4 recebeu decisão humana `ADOPT_C4`, mas promoção para query congelada continua bloqueada por D05/native validation/GF-10.
 
 ## HUMAN DECISIONS REQUIRED
 
 1. Lista final de bases formais (incluir ou não LILACS/BVS e SciELO).
 2. Versões de estratégia a submeter ao PRESS (B-NORM + C1–C4 do Engine vs B v0.7 / C v0.5.1 da base operacional).
-3. Designar R1, R2 e adjudicador; para PRESS, Vagner — UnB já foi designado, faltando o parecer independente propriamente dito.
-4. Decisão sobre C4 (ADOPT/REVISE/REJECT) após revisão das amostras.
+3. Designar R1, R2 e adjudicador.
+4. Fechar D02–D05 e harmonizar sentinelas antes do canonical PRESS PASS/GF-10; C4 já recebeu `ADOPT_C4` do revisor PRESS.
 5. D-132 v1 exploratório vs D-132b aleatório/estratificado; renomear um dos dois "D-132".
 6. Harmonizar sentinelas (16 vs 14).
 7. Aceitar/rejeitar/reconciliar as demais sugestões editoriais do Google Doc.
 
 ## NEXT WRITING ACTION
 
-Pergunta/título/objetivo já harmonizados. Auditoria técnica PubMed v0.2 preparada em `ARTICLE1_PRESS_TECHNICAL_AUDIT_V02.md`; próxima ação é executar Search Details/deltas controlados e entregar o pacote a um revisor PRESS independente antes de qualquer freeze.
+Pergunta/título/objetivo harmonizados e parecer PRESS humano concluído. Próxima ação: fechar D02–D05, sentinelas e Search Details/deltas controlados; só então registrar canonical `PRESS=PASS`, avaliar GF-10 e preparar freeze.

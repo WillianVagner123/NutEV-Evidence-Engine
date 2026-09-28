@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "record_type": "NUTEV_ARTICLE1_PRESS_HUMAN_REVIEW_EVIDENCE",
+  "reviewer": {
+    "name": "Vagner",
+    "affiliation": "UnB",
+    "email": null
+  },
+  "review_date": "2026-09-28",
+  "primary_form": {
+    "form_id": "1SDatkCg80BhNu4V0YL22o7LP4CnzrDYR4MCOQI6S3VY",
+    "response_id": "ACYDBNgMOHEgxqy4ZyFYjOt7IvVlmFgKWdN6wzbcgts9RJ9uIJpNHA6wVt5MENzDfVq_ZtA",
+    "submitted_at": "2026-09-28T22:54:47.977099Z"
+  },
+  "clarification_form": {
+    "form_id": "1n6Dp_phkbgEAzGSz1c4uO3fF481e2mjd38PWFM7XzRs",
+    "response_id": "ACYDBNjQyQGBeunKFICF_36yOr27Jtu1ruf9A35dDZEB35Kw_POguKWxc8cZc4Sm0YGgpA0",
+    "submitted_at": "2026-09-28T23:01:57.801197Z"
+  },
+  "independence_attestation": {
+    "confirmed": true,
+    "answer": "Sim, revisei de forma independente e estas respostas são minhas."
+  },
+  "review_items": {
+    "P01": "Está adequado",
+    "P02": "Está adequado",
+    "P03": "Está adequado",
+    "P04": "Sim, vale testar/adicionar se melhorar a recuperação",
+    "P05": "Está adequado",
+    "P06": "Está adequado",
+    "P07": "Precisa melhorar antes de congelar a busca. Clarificação: observação não material; manter ACCEPT e melhorar/fechar sentinelas antes do freeze.",
+    "P08": "Sim, manter apenas os que mostrarem ganho útil",
+    "P09": "ADOPT_C4 — manter a rota como está",
+    "P10": "Está adequado"
+  },
+  "p07_clarification": "Observação não material — mantenho ACCEPT; precisamos apenas melhorar/fechar os sentinelas antes do freeze.",
+  "final_decision": "ACCEPT",
+  "c4_decision": "ADOPT_C4",
+  "final_comments": null,
+  "suggested_changes": null,
+  "interpretation_boundary": {
+    "human_accept_recorded": true,
+    "material_revision_recorded": false,
+    "canonical_press_pass": false,
+    "reason_press_not_pass": "Mandatory delta tests D02-D05 and remaining pre-freeze validation requirements are still open.",
+    "gf10_authorized": false,
+    "query_freeze": false,
+    "formal_search": false,
+    "prisma": false
+  }
+}
