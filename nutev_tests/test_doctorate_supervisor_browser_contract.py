@@ -141,6 +141,13 @@ def test_runner_exercises_both_actors_and_probes_endpoints_directly() -> None:
         assert path in RUNNER
     assert 'assert result["status"] != 200' in RUNNER
 
+    # UI absence waits for the asynchronously resolved supervisor role instead of
+    # sampling a transient unknown-role navigation by global text.
+    assert 'sidebar nav a[href="/search.html"]' in RUNNER
+    assert '#projectState a[href="/search.html"]' in RUNNER
+    assert '#projectModules a[href="/search.html"]' in RUNNER
+    assert "global text query can observe" in RUNNER
+
     # And the gate panel must never be accepted as open.
     assert "no Article 1 gate may render as open" in RUNNER
 
