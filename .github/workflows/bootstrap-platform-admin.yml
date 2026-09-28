@@ -29,6 +29,7 @@ jobs:
       HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
       BOOTSTRAP_ADMIN_EMAIL: wvagners@gmail.com
+      BOOTSTRAP_ADMIN_LEGACY_EMAIL: wvagners@hotmail.com
       BOOTSTRAP_ADMIN_DISPLAY_NAME: Willian Vagner
       BOOTSTRAP_ADMIN_INSTITUTION: NutEV
       BOOTSTRAP_ADMIN_INTENDED_USE: First platform administrator bootstrap for governed NutEV access.
@@ -59,6 +60,36 @@ jobs:
           ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 >/dev/null 2>&1
           printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
+
+      - name: Migrate legacy bootstrap administrator email
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          LEGACY_EMAIL_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_LEGACY_EMAIL")
+          ADMIN_EMAIL_Q=$(printf '%q' "$BOOTSTRAP_ADMIN_EMAIL")
+
+          set +e
+          MIGRATION_RESULT=$(ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q LEGACY_EMAIL=$LEGACY_EMAIL_Q ADMIN_EMAIL=$ADMIN_EMAIL_Q bash -s" <<'REMOTE'
+          set -euo pipefail
+          cd "$APP_DIR"
+          test -f deploy/hetzner/.env
+          docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml exec -T nutev \
+            python tools/migrate_platform_admin_email.py \
+              --from-email "$LEGACY_EMAIL" \
+              --to-email "$ADMIN_EMAIL"
+          REMOTE
+          )
+          MIGRATION_RC=$?
+          set -e
+          printf '%s\n' "$MIGRATION_RESULT"
+          if [[ "$MIGRATION_RC" -ne 0 ]]; then
+            echo "Bootstrap administrator email migration failed closed without changing passwords, memberships, projects, or scientific state." >&2
+            exit "$MIGRATION_RC"
+          fi
 
       - name: Ensure platform administrator exists or request invitation
         id: ensure
