@@ -65,7 +65,9 @@
       "result_bundles": 36648,
       "priority_index": true,
       "review_profile_index": true,
-      "review_profile_tiers": ["A"]
+      "review_profile_tiers": [
+        "A"
+      ]
     },
     "article1_review_routes": {
       "status": "COMPLETE_NAVIGATION_ONLY",
@@ -108,7 +110,18 @@
     "query_freeze_complete": false,
     "formal_provider_search_executed": false,
     "prisma_search_event_emitted": false,
-    "next_gate": "PRESS review + delta tests + provider-specific syntax validation + explicit GF-10 authorization"
+    "next_gate": "Close D02-D05 human precision samples + sentinel harmonization + provider-native validation; then record canonical PRESS PASS, evaluate GF-10, and freeze provider queries.",
+    "human_press_review": {
+      "reviewer": "Vagner",
+      "affiliation": "UnB",
+      "decision": "ACCEPT",
+      "reviewed_at": "2026-09-28T23:01:57.801197Z",
+      "independence_attestation": true,
+      "p07_materiality": "NON_MATERIAL",
+      "c4_decision": "ADOPT_C4",
+      "canonical_pass_recorded": false,
+      "evidence": "evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json"
+    }
   },
   "runtime_authorities": {
     "deepening_manifest": "project_output_reference/scientific/deepening/<search_id>/tier-A/DEEPENING_MANIFEST.json",
