@@ -25,6 +25,15 @@ def test_smtp_workflow_is_manual_main_only_and_hetzner_gated() -> None:
     assert workflow["concurrency"]["cancel-in-progress"] is False
 
 
+
+def test_smtp_workflow_has_canonical_public_url_fallback_for_inspect() -> None:
+    body = WORKFLOW.read_text(encoding="utf-8")
+
+    assert "vars.NUTEV_PUBLIC_URL || 'https://nutev.mindsperformance.com.br'" in body
+    assert 'test -n "$NUTEV_PUBLIC_URL"' in body
+    assert '[[ "$NUTEV_PUBLIC_URL" == https://* ]]' in body
+
+
 def test_smtp_password_is_never_a_workflow_input_or_plaintext_literal() -> None:
     workflow = _workflow()
     triggers = workflow[True] if True in workflow else workflow["on"]
