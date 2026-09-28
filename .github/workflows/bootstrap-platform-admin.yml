@@ -28,7 +28,7 @@ jobs:
       HETZNER_PORT: ${{ vars.HETZNER_PORT }}
       HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
       HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
-      BOOTSTRAP_ADMIN_EMAIL: wvagners@hotmail.com
+      BOOTSTRAP_ADMIN_EMAIL: wvagners@gmail.com
       BOOTSTRAP_ADMIN_DISPLAY_NAME: Willian Vagner
       BOOTSTRAP_ADMIN_INSTITUTION: NutEV
       BOOTSTRAP_ADMIN_INTENDED_USE: First platform administrator bootstrap for governed NutEV access.

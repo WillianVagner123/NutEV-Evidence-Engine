@@ -87,6 +87,8 @@ def test_optional_bootstrap_reset_uses_canonical_store_without_logging_token() -
     assert "SQLitePasswordResetStore(database).issue(email)" in body
     assert "send_password_reset_email(" in body
     assert "BOOTSTRAP_PASSWORD_RESET_DELIVERY=sent" in body
+    assert "BOOTSTRAP_ADMIN_EMAIL: wvagners@gmail.com" in body
+    assert "wvagners@hotmail.com" not in body
     assert "print(ticket.token)" not in body
     assert "echo \"$ticket.token\"" not in body
     assert "password_updated" not in body
