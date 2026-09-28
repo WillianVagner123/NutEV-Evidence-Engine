@@ -48,19 +48,20 @@ Enquanto não houver decisão humana explícita e rastreável:
 
 ```text
 Discovery = concluído
-PRESS = PENDENTE / NÃO PASS
+PRESS reviewer opinion = ACCEPT (Vagner — UnB)
+Canonical PRESS = AINDA NÃO PASS (D02–D05/sentinelas/native validation abertos)
 GF-10 = NÃO AUTORIZADO
 Query freeze = PENDENTE
 Formal provider search = NÃO EXECUTADA
 Formal PRISMA search event = NÃO CRIADO
-C4 = NÃO APROVADO
+C4 reviewer decision = ADOPT_C4; formal promotion ainda bloqueada
 ```
 
 Nenhuma etapa técnica pode mudar isso.
 
 Pergunta canônica:
 
-> Quais parâmetros nutricionais, competências alimentares e contextos sociais da alimentação são atualmente recomendados, estruturados e utilizados por diretrizes e modelos operacionais para orientar avaliação, aconselhamento, prescrição e monitoramento alimentar aplicáveis à Medicina do Estilo de Vida?
+> Como documentos normativos e estruturantes do cuidado alimentar de adultos formulam recomendações e direção dietética e em que medida as operacionalizam por meio de formas de prescrição, competências e repertórios, contexto, condições de execução, monitoramento e continuidade do cuidado?
 
 ---
 
@@ -309,9 +310,9 @@ Termo solto de alto ruído não entra automaticamente.
 
 ## C4 — SOCIAL CONTEXT
 
-C4 continua candidato PRESS não aprovado.
+O revisor PRESS Vagner (UnB) registrou `ADOPT_C4`. A rota, porém, continua pré-freeze: a promoção para query formal depende do fechamento D05, validação nativa, GF-10 e freeze.
 
-A leitura humana deve responder se o grande incremento acrescenta material necessário ou majoritariamente ruído.
+A leitura humana D05 ainda deve quantificar se o grande incremento acrescenta material necessário ou majoritariamente ruído.
 
 Separar ao menos:
 
@@ -397,15 +398,16 @@ Operacionais/metodológicas que exigem decisão:
 - se D-132 atual fica só exploratório;
 - se haverá D-132b;
 - quem valida sintaxe Scopus/WoS;
-- quem será revisor PRESS independente;
 - escopo de bases adicionais para PRESS.
+
+Revisor PRESS já definido e parecer concluído: Vagner — UnB, `ACCEPT` com P07 não material.
 
 ## Para Dr. Caio Reis
 
 Levar apenas decisões acadêmicas:
 
 1. escopo de “parâmetros nutricionais”;
-2. aprovação/rejeição/manutenção de C4;
+2. C4: decisão PRESS `ADOPT_C4` já registrada; discutir apenas se D05/native validation exigirem revisão;
 3. `eating competence` dentro de competências alimentares;
 4. trade-off B-NORM sensibilidade × especificidade;
 5. uso de vocabulário controlado/publication types;
@@ -425,7 +427,7 @@ Só após:
 - known items revisados;
 - sintaxe por provider revisada;
 - decisões humanas registradas;
-- PRESS independente concluído quando definido;
+- PRESS independente concluído (`ACCEPT`, Vagner — UnB);
 - pendências críticas fechadas.
 
 Então preparar uma decisão humana explícita:

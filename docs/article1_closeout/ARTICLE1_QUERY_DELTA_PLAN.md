@@ -6,13 +6,13 @@
 
 | ID | Rota | Comparação | Estado científico |
 |---|---|---|---|
-| D01 | B-NORM | baseline vs + `food based` | revisão humana pendente |
-| D02 | B-NORM | baseline vs + `healthy eating` | revisão humana pendente |
-| D03 | C1 | com vs sem `meal plan*` | revisão humana pendente |
-| D04 | C3 | standalone yield + precision | revisão humana pendente |
-| D05 | C4 | incremento fora das demais rotas | revisão humana pendente |
+| D01 | B-NORM | baseline vs + `food based` | **COMPLETE** — 138.913 vs 138.913; incremento 0; sem sample aplicável |
+| D02 | B-NORM | baseline vs + `healthy eating` | 25 registros persistidos; revisão humana item-a-item pendente |
+| D03 | C1 | com vs sem `meal plan*` | 25 registros persistidos; revisão humana item-a-item pendente |
+| D04 | C3 | standalone yield + precision | 25 registros persistidos; revisão humana item-a-item pendente |
+| D05 | C4 | incremento fora das demais rotas | 25 registros persistidos; revisão humana item-a-item pendente; PRESS recomenda `ADOPT_C4` |
 
-A execução técnica de 06/09 tem fonte persistida e 100 registros D02–D05 no D-132.
+A execução técnica de 06/09 tem fonte persistida e 100 registros D02–D05 no D-132. O parecer PRESS independente de Vagner (UnB) foi `ACCEPT`; P07 foi esclarecido como observação não material, mas exige melhoria/fechamento dos sentinelas antes do freeze. Isso não substitui a revisão Y/N/U dos 100 registros.
 
 ## B. Exploração adicional de 22/09
 

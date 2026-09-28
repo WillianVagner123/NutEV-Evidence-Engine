@@ -6,7 +6,9 @@ This protocol applies only to the PubMed incremental samples from technical run 
 
 Scientific question:
 
-> Quais parâmetros nutricionais, competências alimentares e contextos sociais da alimentação são atualmente recomendados, estruturados e utilizados por diretrizes e modelos operacionais para orientar avaliação, aconselhamento, prescrição e monitoramento alimentar aplicáveis à Medicina do Estilo de Vida?
+> Como documentos normativos e estruturantes do cuidado alimentar de adultos formulam recomendações e direção dietética e em que medida as operacionalizam por meio de formas de prescrição, competências e repertórios, contexto, condições de execução, monitoramento e continuidade do cuidado?
+
+**Question harmonization note (2026-09-28):** the 100-record technical sample was generated on 2026-09-06 under the predecessor question wording. Before any human item-level review, the active review question was harmonized to the Willian/Dr. Caio-approved canonical formulation above. This edit does not resample, reorder, add, remove, or relabel any record; sample custody and hashes remain unchanged.
 
 The durable sample contains 100 records: 25 each from D02 (`healthy eating`), D03 (`meal plan*`), D04 (C3 implementation), and D05 (C4 social context). D01 has no incremental PubMed records and therefore no precision sample.
 
