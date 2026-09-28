@@ -81,7 +81,7 @@ O comentário "A1 authority clarification" em #1327 definiu o Engine como autori
 | R1 | HUMAN_DECISION_REQUIRED | nenhum revisor designado no repo ou no protocolo |
 | R2 | HUMAN_DECISION_REQUIRED | idem; protocolo exige designação real antes de qualquer concordância |
 | ADJUDICATOR | HUMAN_DECISION_REQUIRED | idem |
-| PRESS REVIEWER | HUMAN_DECISION_REQUIRED | revisor independente não definido |
+| PRESS REVIEWER | ASSIGNED_PENDING_REVIEW | Vagner — UnB; ainda faltam data, declaração explícita de independência e parecer P01–P10 do próprio revisor |
 | PUBMED NATIVE VALIDATION | PENDING | auditoria oficial de sintaxe v0.2 concluída: wildcard em frases é suportado; ainda faltam Search Details nativo, balanço MeSH/free-text e testes de resgate controlado |
 | LILACS/BVS NATIVE VALIDATION | BLOCKED | interface pública HTTP 403 nas tentativas técnicas (D-130); também depende de decisão de incluir a base |
 | SCIELO NATIVE VALIDATION | BLOCKED | idem |
@@ -100,7 +100,7 @@ GF-01/02/03 foram classificados a partir dos comentários de reconciliação em 
 
 ## SCIENTIFIC BLOCKERS
 
-1. Revisores (R1, R2, adjudicador, PRESS) não designados — bloqueia D-132 delta review, GF-07, PRESS.
+1. PRESS reviewer designado (Vagner — UnB), mas o parecer ainda exige data, declaração de independência, P01–P10 e decisão final do próprio revisor. R1, R2 e adjudicador continuam não designados.
 2. PubMed teve auditoria oficial de sintaxe, mas ainda requer Search Details nativo e deltas controlados; LILACS/BVS e SciELO seguem tecnicamente bloqueados; Scopus/WoS exigem acesso licenciado.
 3. Versão final das estratégias e decisão sobre C4 ainda dependem de PRESS/delta review.
 
@@ -108,7 +108,7 @@ GF-01/02/03 foram classificados a partir dos comentários de reconciliação em 
 
 1. Lista final de bases formais (incluir ou não LILACS/BVS e SciELO).
 2. Versões de estratégia a submeter ao PRESS (B-NORM + C1–C4 do Engine vs B v0.7 / C v0.5.1 da base operacional).
-3. Designar R1, R2, adjudicador e revisor PRESS independente.
+3. Designar R1, R2 e adjudicador; para PRESS, Vagner — UnB já foi designado, faltando o parecer independente propriamente dito.
 4. Decisão sobre C4 (ADOPT/REVISE/REJECT) após revisão das amostras.
 5. D-132 v1 exploratório vs D-132b aleatório/estratificado; renomear um dos dois "D-132".
 6. Harmonizar sentinelas (16 vs 14).

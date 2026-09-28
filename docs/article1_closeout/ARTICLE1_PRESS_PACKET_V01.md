@@ -6,8 +6,12 @@ Candidate package: `tools/build_article1_press_query_package.py` (no network), `
 Canonical PRESS record (unchanged by this packet): `config/nutev/article1_press_review_v1.json` — `status=DRAFT`, `reviewer=null`, P01–P10 `PENDING`.
 
 ```text
-PRESS_REVIEWER = HUMAN_DECISION_REQUIRED
+PRESS_REVIEWER_ASSIGNED = Vagner
+PRESS_REVIEWER_AFFILIATION = UnB
+PRESS_REVIEW_STATUS = ASSIGNED_PENDING_INDEPENDENCE_ATTESTATION_AND_REVIEW
 ```
+
+The reviewer was designated by the owner on 2026-09-28. The canonical PRESS record remains fail-closed until the reviewer personally provides review date, explicit independence attestation, P01–P10 conclusions, final decision, comments and any suggested changes.
 
 ## 1. Question and objective — read this first
 
