@@ -11,13 +11,11 @@ PRESS_REVIEWER = HUMAN_DECISION_REQUIRED
 
 ## 1. Question and objective — read this first
 
-Three formulations exist and the reviewer cannot judge P01 (question translation) until one is designated canonical:
+The review question has now been harmonised and approved by Willian Vagner and supervisor Prof. Dr. Caio Eduardo G. Reis (2026-09-28):
 
-| Source | Formulation |
-|---|---|
-| Engine Search Master (`article1-search-master-v1`) | Quais parâmetros nutricionais, competências alimentares e contextos sociais da alimentação são atualmente recomendados, estruturados e utilizados por diretrizes e modelos operacionais para orientar avaliação, aconselhamento, prescrição e monitoramento alimentar aplicáveis à Medicina do Estilo de Vida? |
-| Manuscript (Drive, §2.2) | O que guias, recomendações e documentos normativos/estruturantes do cuidado alimentar de adultos recomendam sobre alimentação e direção dietética, e em que medida operacionalizam essas recomendações por meio de orientações sobre forma de prescrição, competências/repertórios, contexto, execução, monitoramento e sustentabilidade? |
-| Protocol v1.2-candidata (Drive, §2) | Como diferentes famílias documentais do cuidado alimentar e nutricional de adultos distribuem e explicitam funções relacionadas à direção dietética, repertórios/competências, condições de execução e implementação longitudinal, e em que medida conectam explicitamente as transições entre direção, ação requerida, condições de execução e acompanhamento/continuidade? |
+> Como documentos normativos e estruturantes do cuidado alimentar de adultos formulam recomendações e direção dietética e em que medida as operacionalizam por meio de formas de prescrição, competências e repertórios, contexto, condições de execução, monitoramento e continuidade do cuidado?
+
+The earlier manuscript, protocol and Engine formulations are retained in version history as provenance, but they no longer compete as active questions. PRESS P01 should now assess whether the candidate strategy faithfully translates this single canonical question.
 
 ## 2. Structure used (PCC)
 
@@ -266,7 +264,7 @@ Europe PMC, OpenAlex, Crossref, DOAJ and Semantic Scholar remain discovery/QA so
 
 ## 9. Specific questions for the PRESS reviewer
 
-1. **P01:** Which question formulation (section 1) should the strategy translate? Does B-NORM + C1–C4 cover "parâmetros nutricionais" (no dedicated route exists)?
+1. **P01:** Does the candidate B-NORM + C1–C4 architecture faithfully translate the approved canonical question, especially the transition from recommendation/dietary direction to prescription formats, competencies/repertoires, context/execution conditions, monitoring and continuity of care?
 2. **P02:** Is `B-NORM ∪ C-STRUCT` the right top-level logic, or should C-STRUCT be constrained by a normative/document-type marker to stay within a documentary corpus?
 3. **P02/P09:** C4 requires three blocks (anchor AND social context AND operational marker). Is `model*` / `framework*` / `assessment` an adequate operational marker, given D05's increment of 6,055?
 4. **P03:** Accept truncation inside quoted phrases in PubMed, or expand to explicit variants?
