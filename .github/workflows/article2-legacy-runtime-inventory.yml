@@ -1,0 +1,195 @@
+name: article2-legacy-runtime-inventory
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: article2-legacy-runtime-inventory
+  cancel-in-progress: false
+
+jobs:
+  inventory:
+    name: read-only Article 2 legacy inventory
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    environment: HETZNER
+    timeout-minutes: 30
+    env:
+      HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+      HETZNER_USER: ${{ vars.HETZNER_USER }}
+      HETZNER_PORT: ${{ vars.HETZNER_PORT }}
+      HETZNER_KNOWN_HOSTS: ${{ vars.HETZNER_KNOWN_HOSTS }}
+      HETZNER_APP_DIR: ${{ vars.HETZNER_APP_DIR }}
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate trusted connection configuration
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$HETZNER_HOST"
+          test -n "$HETZNER_USER"
+          test -n "$HETZNER_APP_DIR"
+          test -n "$HETZNER_KNOWN_HOSTS"
+          test -n "$HETZNER_SSH_KEY"
+
+      - name: Configure SSH
+        env:
+          HETZNER_SSH_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          install -d -m 700 ~/.ssh
+          python3 - <<'PY'
+          import base64
+          import binascii
+          import os
+          from pathlib import Path
+
+          raw = os.environ["HETZNER_SSH_KEY"].strip()
+          raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+          if "\\n" in raw and "\n" not in raw:
+              raw = raw.replace("\\n", "\n")
+          candidate = raw.strip()
+          if candidate.startswith("ssh-") or "BEGIN PUBLIC KEY" in candidate:
+              raise SystemExit("HETZNER_SSH_KEY contains a public key; the private key is required")
+          if not candidate.startswith("-----BEGIN "):
+              compact = "".join(candidate.split())
+              try:
+                  decoded = base64.b64decode(compact, validate=True).decode("utf-8").strip()
+              except (binascii.Error, UnicodeDecodeError, ValueError):
+                  decoded = ""
+              if decoded.startswith("-----BEGIN "):
+                  candidate = decoded.replace("\r\n", "\n").replace("\r", "\n")
+          Path.home().joinpath(".ssh", "id_ed25519").write_text(candidate.strip() + "\n", encoding="utf-8")
+          PY
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keygen -y -P '' -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub 2>/dev/null
+          chmod 600 ~/.ssh/id_ed25519.pub
+          printf '%s\n' "$HETZNER_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          HOST_LOOKUP="$HETZNER_HOST"
+          if [[ "$PORT" != "22" ]]; then HOST_LOOKUP="[$HETZNER_HOST]:$PORT"; fi
+          ssh-keygen -F "$HOST_LOOKUP" -f ~/.ssh/known_hosts >/dev/null
+
+      - name: Verify SSH access
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" 'printf "ssh-ok\n"' | grep -qx 'ssh-ok'
+
+      - name: Collect host and container inventories
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT="${HETZNER_PORT:-22}"
+          REMOTE_STAGE="/tmp/nutev-a2-legacy-inventory-$GITHUB_RUN_ID.py"
+          scp -P "$PORT" -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes \
+            tools/inventory_article2_legacy_runtime.py \
+            "$HETZNER_USER@$HETZNER_HOST:$REMOTE_STAGE"
+
+          APP_DIR_Q=$(printf '%q' "$HETZNER_APP_DIR")
+          STAGE_Q=$(printf '%q' "$REMOTE_STAGE")
+          ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
+            -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" \
+            "APP_DIR=$APP_DIR_Q STAGE=$STAGE_Q bash -s" <<'REMOTE' > article2-legacy-runtime-inventory.json
+          set -euo pipefail
+          chmod 600 "$STAGE"
+          HOST_REPORT="$(mktemp)"
+          CONTAINER_REPORT="$(mktemp)"
+          cleanup() {
+            rm -f "$STAGE" "$HOST_REPORT" "$CONTAINER_REPORT"
+          }
+          trap cleanup EXIT
+
+          APP_PARENT="$(dirname "$APP_DIR")"
+          python3 "$STAGE" --root "$APP_DIR" --root "$APP_PARENT" --max-depth 2 --json > "$HOST_REPORT"
+
+          cd "$APP_DIR"
+          COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
+          "${COMPOSE[@]}" exec -T nutev python - --root /app --max-depth 1 --json \
+            < "$STAGE" > "$CONTAINER_REPORT"
+
+          python3 - "$HOST_REPORT" "$CONTAINER_REPORT" <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import sys
+
+          host = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          container = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
+          basis = {"host": host, "container": container}
+          digest = hashlib.sha256(
+              json.dumps(basis, sort_keys=True, separators=(",", ":")).encode("utf-8")
+          ).hexdigest()
+          report = {
+              "record_type": "NUTEV_ARTICLE2_LEGACY_RUNTIME_INVENTORY_BUNDLE",
+              "schema_version": 1,
+              "status": "PASS" if host.get("status") == container.get("status") == "PASS" else "FAIL",
+              "read_only": True,
+              "scientific_state_modified": False,
+              "legacy_binding_performed": False,
+              "search_executed": False,
+              "ownership_inferred_from_names": False,
+              "binding_status": "NOT_CREATED_REVIEW_REQUIRED",
+              "inventory_bundle_sha256": digest,
+              "host": host,
+              "container": container,
+          }
+          print(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True))
+          PY
+          REMOTE
+
+      - name: Validate fail-closed inventory contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("article2-legacy-runtime-inventory.json").read_text(encoding="utf-8"))
+          assert report["record_type"] == "NUTEV_ARTICLE2_LEGACY_RUNTIME_INVENTORY_BUNDLE"
+          assert report["status"] == "PASS"
+          assert report["read_only"] is True
+          assert report["scientific_state_modified"] is False
+          assert report["legacy_binding_performed"] is False
+          assert report["search_executed"] is False
+          assert report["ownership_inferred_from_names"] is False
+          assert report["binding_status"] == "NOT_CREATED_REVIEW_REQUIRED"
+          for scope in ("host", "container"):
+              sub = report[scope]
+              assert sub["read_only"] is True
+              assert sub["legacy_binding_performed"] is False
+              assert sub["ownership_inferred_from_names"] is False
+              for candidate in sub["candidates"]:
+                  assert candidate["ownership"] == "UNKNOWN_UNTIL_REVIEW"
+                  assert candidate["classification_inferred"] is False
+                  assert candidate["raw_path_exposed"] is False
+                  assert candidate["query_text_exposed"] is False
+                  assert candidate["search_id_exposed"] is False
+          print("ARTICLE2_LEGACY_RUNTIME_INVENTORY_PASS")
+          print("host_candidate_count=", report["host"]["candidate_count"])
+          print("container_candidate_count=", report["container"]["candidate_count"])
+          print("binding_status=", report["binding_status"])
+          PY
+
+      - name: Upload private review inventory
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: article2-legacy-runtime-inventory-${{ github.run_id }}
+          path: article2-legacy-runtime-inventory.json
+          if-no-files-found: error
+          retention-days: 14

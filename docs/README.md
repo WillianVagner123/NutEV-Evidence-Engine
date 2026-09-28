@@ -35,6 +35,7 @@ Software publicado/arquivado e validade científica são gates diferentes.
 - [`MULTITENANT_WORKSPACE_PROJECT_ACCESS.md`](MULTITENANT_WORKSPACE_PROJECT_ACCESS.md) — autorização por workspace/projeto.
 - [`DOCTORATE_ARTICLE1_ONBOARDING.md`](DOCTORATE_ARTICLE1_ONBOARDING.md) — guia humano do Artigo 1: responsável, orientador e gestão de membros.
 - [`ACADEMIC_SUPERVISOR_ONBOARDING.md`](ACADEMIC_SUPERVISOR_ONBOARDING.md) — runbook de operador para a concessão do papel de professor orientador.
+- [`ARTICLE2_LEGACY_RUNTIME_INVENTORY.md`](ARTICLE2_LEGACY_RUNTIME_INVENTORY.md) — inventário read-only de proveniência candidata do Artigo 2; não cria binding nem estado científico.
 - [`FINAL_MULTITENANT_RELEASE_GATE.md`](FINAL_MULTITENANT_RELEASE_GATE.md) — barreira de promoção do runtime multi-tenant.
 - [`archive/2026/PRODUCT_DEATH_TEST_REPORT.md`](archive/2026/PRODUCT_DEATH_TEST_REPORT.md) — relatório **histórico** do death test de 10/09/2026; não é o estado atual de produção.
 - [`../apps/nutev-web/README.md`](../apps/nutev-web/README.md) — diferença entre runtime hospedado e servidor científico/local.
