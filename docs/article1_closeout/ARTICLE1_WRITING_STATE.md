@@ -41,9 +41,9 @@ references  : 29/29 DOIs resolvidos no Crossref; 1º autor, periódico e volume 
 
 | Seção | Estado | Observação |
 |---|---|---|
-| TITLE | REVIEW_NEEDED | Título atual coerente com manuscrito e protocolo; não coincide com a pergunta do Search Master do Engine. Não alterado. Ver "Title audit". |
+| TITLE | READY_FOR_HUMAN_REVIEW | Título PT/EN alinhado à pergunta canônica aprovada em 2026-09-28 e aplicado no manuscrito. |
 | INTRODUCTION | READY_FOR_HUMAN_REVIEW | Já contém problema, lacuna, literatura, distinção recomendação × execução e justificativa. Referências verificadas. Nenhuma frase nova com citação foi adicionada. |
-| OBJECTIVE | DRAFT | Sugerida seção 1.1 com objetivo geral + objetivos específicos (a–g) do protocolo v1.2-candidata; marcada decisão humana sobre a pergunta. |
+| OBJECTIVE | READY_FOR_HUMAN_REVIEW | Objetivo geral alinhado à pergunta canônica aprovada e aplicado no manuscrito/protocolo; objetivos específicos permanecem os do protocolo v1.2-candidata. |
 | METHODS | DRAFT | Sugeridos 2.5.1 (descoberta, arquitetura de rotas, testes delta, sentinelas, PRESS, tradução nativa, freeze) e parágrafo em 2.11 (citação do software, identidade determinística, ranking ≠ elegibilidade, limites do Engine). |
 | RESULTS | BLOCKED_BY_FORMAL_SEARCH | Sugerida 3.1.1 com estrutura R1–R7 marcada `PENDING_FORMAL_EXECUTION` (R8–R10 ainda não inseridos no Doc); nenhum número inserido. |
 | DISCUSSION | BLOCKED_BY_FORMAL_SEARCH | Esqueleto prospectivo já existe (4.1–4.9) e está explicitamente formulado como hipótese. Comparação com a literatura depende dos resultados. |
@@ -54,26 +54,24 @@ references  : 29/29 DOIs resolvidos no Crossref; 1º autor, periódico e volume 
 
 ## TITLE AUDIT
 
-Título atual (PT): *Recomendações e direção alimentar no cuidado de adultos: o que documentos normativos e estruturantes recomendam e quanto operacionalizam essas recomendações — revisão de escopo com análise documental.*
-
-Propostas (não aplicadas; dependem da decisão sobre a pergunta):
+Título canônico alinhado à decisão de 2026-09-28:
 
 - PT: *Da recomendação à execução: como documentos normativos e estruturantes do cuidado alimentar de adultos operacionalizam a direção dietética — revisão de escopo com análise documental*
 - EN: *From recommendation to execution: how normative and structuring documents for adult dietary care operationalize dietary direction — a scoping review with documentary analysis*
 
-Se a formulação do Search Master prevalecer, o título precisará incluir "parâmetros nutricionais, competências alimentares e contextos sociais" e "Medicina do Estilo de Vida".
+Aplicado no manuscrito canônico. A formulação anterior do Search Master fica preservada apenas em histórico/versionamento.
 
 ## SOURCE DRIFT (registrada, não resolvida)
 
 | # | Tema | Manuscrito | Protocolo v1.2-candidata (Drive) | Engine (repo) |
 |---|---|---|---|---|
-| 1 | Pergunta | "o que … recomendam … e em que medida operacionalizam" | "como famílias documentais distribuem e explicitam funções …" | "quais parâmetros nutricionais, competências alimentares e contextos sociais … aplicáveis à Medicina do Estilo de Vida" |
+| 1 | Pergunta | **RESOLVIDA 2026-09-28** — mesma pergunta canônica aprovada | **RESOLVIDA 2026-09-28** — mesma pergunta canônica aprovada | **RESOLVIDA 2026-09-28** — Search Master sincronizado |
 | 2 | Bases formais | PubMed, Scopus, WoS | PubMed, Scopus, WoS | PubMed, LILACS/BVS, SciELO, Scopus, WoS |
 | 3 | Estratégias | "normativa" + "estruturante" | B-NORM-PUBMED v0.4, C-STRUCT-PUBMED v0.3 | B-NORM + C1–C4 (C4 PRESS-only); base operacional cita B v0.7 / C v0.5.1 (D-129–D-131) |
 | 4 | Sentinelas | 16 | 16 (implícito) | 14 known items (KI01–KI14) |
 | 5 | Rótulo D-132 | — | — | amostra de precisão dos testes delta (100 registros); na base operacional D-132 é a proposta de modelo de revisores |
 
-O comentário "A1 authority clarification" em #1327 definiu o Engine como autoridade de **execução da busca** e o Drive D-124–D-132 como proveniência. Isso não resolve a pergunta científica nem a lista de bases do manuscrito/protocolo, que continuam sendo decisões humanas.
+O comentário "A1 authority clarification" em #1327 definiu o Engine como autoridade de **execução da busca** e o Drive D-124–D-132 como proveniência. A divergência da **pergunta** foi resolvida em 2026-09-28 por Willian/Dr. Caio; lista de bases, estratégia final e demais gates continuam decisões separadas.
 
 ## A1 SCIENTIFIC GATE MATRIX (2026-09-28)
 
@@ -102,21 +100,20 @@ GF-01/02/03 foram classificados a partir dos comentários de reconciliação em 
 
 ## SCIENTIFIC BLOCKERS
 
-1. Pergunta de revisão em três formulações (manuscrito × protocolo × Engine) — bloqueia P01 do PRESS.
-2. Revisores (R1, R2, adjudicador, PRESS) não designados — bloqueia D-132 delta review, GF-07, PRESS.
-3. Validação nativa por base não iniciada; LILACS/BVS e SciELO tecnicamente bloqueados; Scopus/WoS exigem acesso licenciado.
+1. Revisores (R1, R2, adjudicador, PRESS) não designados — bloqueia D-132 delta review, GF-07, PRESS.
+2. Validação nativa por base não iniciada; LILACS/BVS e SciELO tecnicamente bloqueados; Scopus/WoS exigem acesso licenciado.
+3. Versão final das estratégias e decisão sobre C4 ainda dependem de PRESS/delta review.
 
 ## HUMAN DECISIONS REQUIRED
 
-1. Qual formulação da pergunta prevalece (e ajustar título/objetivos em conformidade).
-2. Lista final de bases formais (incluir ou não LILACS/BVS e SciELO).
-3. Versões de estratégia a submeter ao PRESS (B-NORM + C1–C4 do Engine vs B v0.7 / C v0.5.1 da base operacional).
-4. Designar R1, R2, adjudicador e revisor PRESS independente.
-5. Decisão sobre C4 (ADOPT/REVISE/REJECT) após revisão das amostras.
-6. D-132 v1 exploratório vs D-132b aleatório/estratificado; renomear um dos dois "D-132".
-7. Harmonizar sentinelas (16 vs 14).
-8. Aceitar/rejeitar as sugestões inseridas no Google Doc.
+1. Lista final de bases formais (incluir ou não LILACS/BVS e SciELO).
+2. Versões de estratégia a submeter ao PRESS (B-NORM + C1–C4 do Engine vs B v0.7 / C v0.5.1 da base operacional).
+3. Designar R1, R2, adjudicador e revisor PRESS independente.
+4. Decisão sobre C4 (ADOPT/REVISE/REJECT) após revisão das amostras.
+5. D-132 v1 exploratório vs D-132b aleatório/estratificado; renomear um dos dois "D-132".
+6. Harmonizar sentinelas (16 vs 14).
+7. Aceitar/rejeitar/reconciliar as demais sugestões editoriais do Google Doc.
 
 ## NEXT WRITING ACTION
 
-Depois que Willian/Dr. Caio decidirem a pergunta canônica: aceitar ou ajustar as sugestões 1.1 e 2.5.1 no Doc e atualizar título e resumo para a mesma formulação.
+Pergunta/título/objetivo já harmonizados. Próxima ação editorial-científica: fechar a versão pré-PRESS das estratégias, executar revisão PRESS independente e registrar as correções aceitas antes de qualquer freeze.
