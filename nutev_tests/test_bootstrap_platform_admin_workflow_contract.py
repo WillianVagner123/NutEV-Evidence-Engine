@@ -15,7 +15,13 @@ def test_bootstrap_workflow_verifies_expected_identity_and_role_without_credenti
     assert "SELECT status, global_roles_json FROM platform_auth_users" in workflow
     assert "WHERE email = ? COLLATE NOCASE LIMIT 1" in workflow
     assert "BOOTSTRAP_ADMIN_EMAIL: wvagners@gmail.com" in workflow
-    assert "wvagners@hotmail.com" not in workflow
+    assert "BOOTSTRAP_ADMIN_LEGACY_EMAIL: wvagners@hotmail.com" in workflow
+    assert workflow.count("wvagners@hotmail.com") == 1
+    assert "Migrate legacy bootstrap administrator email" in workflow
+    assert "python tools/migrate_platform_admin_email.py" in workflow
+    assert '--from-email "$LEGACY_EMAIL"' in workflow
+    assert '--to-email "$ADMIN_EMAIL"' in workflow
+    assert "email migration failed closed" in workflow
     assert "password_hash" not in workflow
     assert "session_token" not in workflow
     assert "Bootstrap administrator identity/role verification failed" in workflow
