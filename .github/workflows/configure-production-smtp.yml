@@ -270,8 +270,14 @@ jobs:
           chmod 600 "$STAGE"
 
           COMPOSE=(docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml)
+          OLD_CONTAINER="$("${COMPOSE[@]}" ps -q nutev)"
+          test -n "$OLD_CONTAINER"
+          OLD_IMAGE_ID="$(docker inspect -f '{{.Image}}' "$OLD_CONTAINER")"
+          [[ "$OLD_IMAGE_ID" =~ ^sha256:[0-9a-f]{64}$ ]]
           OLD_COMMIT="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
           [[ "$OLD_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+          RUNTIME_IMAGE="nutev:smtp-runtime-${OLD_COMMIT}"
+          docker tag "$OLD_IMAGE_ID" "$RUNTIME_IMAGE"
           BACKUP="$(mktemp deploy/hetzner/.env.smtp-backup.XXXXXX)"
           cp deploy/hetzner/.env "$BACKUP"
           chmod 600 "$BACKUP"
@@ -284,15 +290,23 @@ jobs:
               echo "SMTP configuration failed; restoring the previous production environment." >&2
               cp "$BACKUP" deploy/hetzner/.env
               chmod 600 deploy/hetzner/.env
-              docker compose --env-file deploy/hetzner/.env -f deploy/hetzner/compose.yaml up -d --no-build nutev >/dev/null || true
+              NUTEV_IMAGE="$RUNTIME_IMAGE" "${COMPOSE[@]}" up -d --no-build nutev >/dev/null || true
+              RESTORED_OK=0
               for _ in $(seq 1 30); do
                 if curl -fsS --max-time 3 http://127.0.0.1:8765/api/health >/dev/null 2>&1; then
                   RESTORED="$(curl -fsS http://127.0.0.1:8765/api/version | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')" || RESTORED=""
-                  [[ "$RESTORED" = "$OLD_COMMIT" ]] && break
+                  if [[ "$RESTORED" = "$OLD_COMMIT" ]]; then
+                    RESTORED_OK=1
+                    break
+                  fi
                 fi
                 sleep 2
               done
+              if [[ "$RESTORED_OK" != "1" ]]; then
+                echo "::error::SMTP rollback could not prove the previous runtime identity." >&2
+              fi
             fi
+            docker image rm "$RUNTIME_IMAGE" >/dev/null 2>&1 || true
             rm -f "$STAGE" "$BACKUP"
             exit "$rc"
           }
@@ -360,7 +374,12 @@ jobs:
           rm -f "$STAGE"
           MUTATED=1
 
-          "${COMPOSE[@]}" up -d --no-build nutev >/dev/null
+          NUTEV_IMAGE="$RUNTIME_IMAGE" "${COMPOSE[@]}" up -d --no-build nutev >/dev/null
+          NEW_CONTAINER="$("${COMPOSE[@]}" ps -q nutev)"
+          test -n "$NEW_CONTAINER"
+          NEW_IMAGE_ID="$(docker inspect -f '{{.Image}}' "$NEW_CONTAINER")"
+          [[ "$NEW_IMAGE_ID" = "$OLD_IMAGE_ID" ]]
+          echo "PRODUCTION_IMAGE_PRESERVED=true"
           READY=0
           for _ in $(seq 1 45); do
             if curl -fsS --max-time 3 http://127.0.0.1:8765/api/health >/dev/null 2>&1; then
