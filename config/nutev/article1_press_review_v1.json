@@ -225,14 +225,14 @@
       "exact_query": null
     },
     "scopus": {
-      "role": "formal_bibliographic_provider",
-      "status": "PENDING_LICENSED_PROVIDER_VALIDATION",
+      "role": "excluded_unavailable_provider",
+      "status": "NO_ACCESS_NOT_IN_FORMAL_SET",
       "exact_query": null,
       "simulation_forbidden": true
     },
     "web_of_science": {
-      "role": "formal_bibliographic_provider",
-      "status": "PENDING_LICENSED_PROVIDER_VALIDATION",
+      "role": "excluded_unavailable_provider",
+      "status": "NO_ACCESS_NOT_IN_FORMAL_SET",
       "exact_query": null,
       "simulation_forbidden": true
     },
@@ -263,10 +263,9 @@
     "authorization_requires": [
       "PRESS status PASS recorded by a human reviewer",
       "C4 explicitly decided",
-      "final formal provider set recorded",
-      "provider-native syntax validated",
-      "known-item and sentinel testing satisfactory",
-      "cross-database translations reviewed"
+      "final formal provider set recorded as PubMed + LILACS/BVS + SciELO",
+      "provider-native syntax validated for PubMed + LILACS/BVS + SciELO",
+      "known-item and sentinel testing satisfactory"
     ]
   },
   "guardrails": {
