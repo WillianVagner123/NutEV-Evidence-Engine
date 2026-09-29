@@ -37,7 +37,7 @@ Final decisions are:
 
 Any material checklist conclusion or MATERIAL_REVISION final decision produces `RETURN_TO_PILOT`. The query is not edited inside the PRESS screen. A material change requires a new strategy version, documented rationale, and a new PILOT before resubmission to PRESS.
 
-ACCEPT or ACCEPT_MINOR with no material checklist items produces `PRESS_REVIEW_COMPLETE`, which means the external opinion is ready to be incorporated/versioned in the canonical control center. It does not by itself authorize freeze.
+ACCEPT or ACCEPT_MINOR with no material checklist items produces `PRESS_REVIEW_COMPLETE`, which may be incorporated as canonical `PRESS=PASS`. It does not by itself authorize GF-10 or freeze. By the 2026-09-28 pre-formal-search amendment, D01–D05 remain developmental QA and are not a separate mandatory PRESS/freeze gate unless a material PRESS finding explicitly reopens them.
 
 REJECT produces `PRESS_NOT_APPROVED` and GF-03 remains blocking.
 
@@ -45,7 +45,7 @@ REJECT produces `PRESS_NOT_APPROVED` and GF-03 remains blocking.
 
 The exported PRESS result always carries `freeze_authorized: false`.
 
-After an acceptable PRESS review is incorporated, the global freeze still depends on all other active gates. In the current Article 1 state, regional technical routes such as LILACS/BVS and SciELO remain separate freeze dependencies and must not be recoded as zero results when unavailable.
+After an acceptable PRESS review is incorporated, the global freeze still depends on the final provider set, provider-native validation, satisfactory known-item/sentinel recovery, cross-database translation, protocol freeze/registration and GF-10. Regional sources that remain in the final provider set must not be recoded as zero results when unavailable.
 
 ## Audit artifacts
 
