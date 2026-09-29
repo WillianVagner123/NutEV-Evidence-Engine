@@ -1,0 +1,49 @@
+name: article1-native-validation
+
+on:
+  push:
+    branches:
+      - science/a1-native-validation-run
+
+permissions:
+  contents: read
+
+jobs:
+  native-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+      - name: Install project
+        run: python -m pip install -e .
+      - name: Run Article 1 native validation
+        env:
+          NCBI_EMAIL: wvagners@hotmail.com
+        run: |
+          PYTHONPATH=src python tools/run_article1_native_validation.py \
+            --execute \
+            --limit 5 \
+            --output article1-native-validation.json
+      - name: Show validation summary
+        if: always()
+        run: |
+          if [ -f article1-native-validation.json ]; then
+            python - <<'PY'
+          import json
+          p=json.load(open("article1-native-validation.json", encoding="utf-8"))
+          print("status=", p.get("status"))
+          for provider, rec in p.get("providers", {}).items():
+              print(provider)
+              for route, row in rec.get("routes", {}).items():
+                  print(" ", route, row.get("status"), "found=", row.get("total_found"), "returned=", row.get("total_returned"), "error=", row.get("error"))
+          PY
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: article1-native-validation
+          path: article1-native-validation.json
+          if-no-files-found: error
