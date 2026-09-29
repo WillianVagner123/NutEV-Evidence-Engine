@@ -3,7 +3,7 @@
 **Status:** `HUMAN_PRESS_ACCEPT_RECORDED_DELTA_CLOSURE_PENDING`. **Ainda não é `PRESS=PASS` canônico.**
 Prepared: 2026-09-28. Canonical question synchronized on main `5adb56ccaf265b57b4085fdb3f960a371601fb58`.
 Candidate package: `tools/build_article1_press_query_package.py` (no network), `package_sha256 = 82834c34c1a25d753263350e1367232621962f350c11880024049be4b5ec7a7c`, draft `article1-query-draft-v1`.
-Canonical PRESS record now contains the independent Vagner/UnB review: final decision `ACCEPT`, P01–P10 complete, P07 explicitly clarified as a non-material observation, and `ADOPT_C4` recorded. The record remains `IN_REVIEW` rather than `PASS` because mandatory D02–D05 human delta/sample closure is still open.
+Canonical PRESS record contains the independent Vagner/UnB review: final decision `ACCEPT`, P01–P10 complete, P07 explicitly clarified as a non-material observation, and `ADOPT_C4` recorded. By the 2026-09-28 pre-formal-search methodological amendment, D02–D05 are developmental QA rather than an autonomous gate; the canonical record is therefore `PRESS=PASS` while GF-10, provider-native validation, sentinel closure and freeze remain separate.
 
 ```text
 PRESS_REVIEWER = Vagner
@@ -303,4 +303,4 @@ Independent reviewer: **Vagner — UnB**.
 Canonical evidence:
 `evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json`.
 
-This human opinion is complete. The **canonical PRESS gate remains not-PASS** until mandatory delta/sample closure required by the repository contract is complete. GF-10, freeze, formal search and PRISMA remain closed.
+This human opinion is complete and is incorporated as **canonical `PRESS=PASS`**. The 100-record D02–D05 packet remains available for optional developmental QA and does not feed PRISMA. GF-10, freeze, formal search and PRISMA remain closed until their own requirements are met.
