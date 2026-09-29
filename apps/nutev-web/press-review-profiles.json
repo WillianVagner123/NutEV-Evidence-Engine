@@ -11,7 +11,7 @@
       "source_press_record": "config/nutev/article1_press_review_v1.json",
       "gate_status_before_review": "NOT_YET_RECORDED_AS_PASS",
       "reviewer_requirement": "Revisor humano independente; PASS não pode ser produzido automaticamente",
-      "freeze_guardrail": "PRESS PASS, quando humanamente registrado, ainda não autoriza por si só GF-10, freeze, busca formal ou PRISMA. Delta tests, decisão de C4, sintaxe provider-native, known-item/sentinels e tradução entre bases também precisam estar concluídos.",
+      "freeze_guardrail": "PRESS PASS, quando humanamente registrado, ainda não autoriza por si só GF-10, freeze, busca formal ou PRISMA. Após a emenda pré-busca de 2026-09-28, delta tests são QA de desenvolvimento não obrigatório; decisão de C4, sintaxe provider-native, known-item/sentinels, conjunto final de provedores e tradução entre bases permanecem requisitos pré-freeze.",
       "strategies": [
         {
           "strategy_id": "B-NORM",
@@ -86,7 +86,11 @@
           "status": "PRESS_ONLY_CANDIDATE_NOT_APPROVED",
           "pilot_evidence": {
             "decision": "HUMAN_C4_DECISION_REQUIRED",
-            "allowed_decisions": ["ADOPT_C4", "REVISE_C4", "REJECT_C4"]
+            "allowed_decisions": [
+              "ADOPT_C4",
+              "REVISE_C4",
+              "REJECT_C4"
+            ]
           },
           "version_history": [
             "Criada porque a pergunta inclui contextos sociais da alimentação, mas o registry pré-freeze não tinha rota explícita correspondente.",
@@ -97,22 +101,64 @@
         }
       ],
       "checklist": [
-        {"id": "P01", "label": "A tradução da pergunta de pesquisa para os conceitos de busca está coerente com o escopo do Artigo 1."},
-        {"id": "P02", "label": "A lógica Booleana e a separação B-NORM/C1/C2/C3/C4 preservam o desenho pretendido sem OR gigante ou conceito silencioso."},
-        {"id": "P03", "label": "Campos, truncamentos, aspas e sintaxe serão validados especificamente em cada base antes do freeze."},
-        {"id": "P04", "label": "O equilíbrio entre vocabulário controlado e texto livre é adequado e não promove termos apenas por frequência."},
-        {"id": "P05", "label": "Variantes ortográficas e frases candidatas foram submetidas aos delta tests previstos em vez de auto-adicionadas."},
-        {"id": "P06", "label": "Limites/filtros são metodologicamente justificados e não foram escolhidos pós-hoc para melhorar artificialmente a precisão."},
-        {"id": "P07", "label": "Known-item e sentinel recovery foram verificados de modo reproduzível nas strings provider-native candidatas."},
-        {"id": "P08", "label": "O ganho incremental dos termos PRESS-only foi medido e amostrado manualmente."},
-        {"id": "P09", "label": "C4 Social Context recebeu decisão humana explícita ADOPT_C4, REVISE_C4 ou REJECT_C4 após stress test."},
-        {"id": "P10", "label": "A tradução entre PubMed, LILACS/BVS, SciELO, Scopus e Web of Science foi revisada sem simular bases licenciadas."}
+        {
+          "id": "P01",
+          "label": "A tradução da pergunta de pesquisa para os conceitos de busca está coerente com o escopo do Artigo 1."
+        },
+        {
+          "id": "P02",
+          "label": "A lógica Booleana e a separação B-NORM/C1/C2/C3/C4 preservam o desenho pretendido sem OR gigante ou conceito silencioso."
+        },
+        {
+          "id": "P03",
+          "label": "Campos, truncamentos, aspas e sintaxe serão validados especificamente em cada base antes do freeze."
+        },
+        {
+          "id": "P04",
+          "label": "O equilíbrio entre vocabulário controlado e texto livre é adequado e não promove termos apenas por frequência."
+        },
+        {
+          "id": "P05",
+          "label": "Variantes ortográficas e frases candidatas foram submetidas aos delta tests previstos em vez de auto-adicionadas."
+        },
+        {
+          "id": "P06",
+          "label": "Limites/filtros são metodologicamente justificados e não foram escolhidos pós-hoc para melhorar artificialmente a precisão."
+        },
+        {
+          "id": "P07",
+          "label": "Known-item e sentinel recovery foram verificados de modo reproduzível nas strings provider-native candidatas."
+        },
+        {
+          "id": "P08",
+          "label": "O ganho incremental dos termos PRESS-only foi medido e amostrado manualmente."
+        },
+        {
+          "id": "P09",
+          "label": "C4 Social Context recebeu decisão humana explícita ADOPT_C4, REVISE_C4 ou REJECT_C4 após stress test."
+        },
+        {
+          "id": "P10",
+          "label": "A tradução entre PubMed, LILACS/BVS, SciELO, Scopus e Web of Science foi revisada sem simular bases licenciadas."
+        }
       ],
       "decision_options": [
-        {"value": "ACCEPT", "label": "PRESS apto para registro de PASS após confirmação de todos os gates"},
-        {"value": "ACCEPT_MINOR", "label": "Apto com observações não materiais"},
-        {"value": "MATERIAL_REVISION", "label": "Alteração material necessária — revisar e repetir testes"},
-        {"value": "REJECT", "label": "Não aprovar para GF-10/freeze"}
+        {
+          "value": "ACCEPT",
+          "label": "PRESS apto para registro de PASS após confirmação de todos os gates"
+        },
+        {
+          "value": "ACCEPT_MINOR",
+          "label": "Apto com observações não materiais"
+        },
+        {
+          "value": "MATERIAL_REVISION",
+          "label": "Alteração material necessária — revisar e repetir testes"
+        },
+        {
+          "value": "REJECT",
+          "label": "Não aprovar para GF-10/freeze"
+        }
       ]
     }
   ]
