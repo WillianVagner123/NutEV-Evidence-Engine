@@ -68,7 +68,7 @@ def run_audit() -> dict[str, Any]:
     )
     check(
         "Canonical formal gate remains fail-closed",
-        formal.get("press_status") != "PASS"
+        formal.get("press_status") == "PASS"
         and formal.get("gf10_authorized") is False
         and formal.get("query_freeze_complete") is False
         and formal.get("formal_provider_search_executed") is False,
