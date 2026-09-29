@@ -2,7 +2,7 @@
   "schema_version": 1,
   "draft_type": "NUTEV_ARTICLE1_QUERY_DRAFT_FOR_PRESS",
   "draft_version": "article1-query-draft-v1",
-  "status": "PRESS_ACCEPTED_PREFREEZE",
+  "status": "DRAFT_FOR_PRESS",
   "formal_gate": {
     "gate_id": "GF-10",
     "authorized": false,
@@ -237,7 +237,7 @@
           ]
         },
         "C4-SOCIAL-CONTEXT": {
-          "status": "ADOPTED_PREFREEZE",
+          "status": "PRESS_ONLY_CANDIDATE_NOT_APPROVED",
           "logic": "food_nutrition_anchor AND social_eating_context AND operational_marker",
           "anchor": [
             "nutrition*",
@@ -264,7 +264,7 @@
             "counselling",
             "care process"
           ],
-          "reason": "Adopted by the independent PRESS reviewer on 2026-09-28. It remains pre-freeze until provider-native validation, sentinel/known-item closure, GF-10 authorization and query freeze."
+          "reason": "Adopted by the independent PRESS reviewer on 2026-09-28 as the direction to retain, but operational promotion remains blocked until provider-native validation, sentinel/known-item closure, GF-10 authorization and query freeze."
         }
       }
     }
@@ -282,7 +282,7 @@
     "reason": "These are important extraction/screening concepts but are too generic as standalone retrieval terms. They may be used only inside a constrained structural subroute or as post-retrieval coding dimensions."
   },
   "press_plan": {
-    "required_before_freeze": false,
+    "required_before_freeze": true,
     "review_items": [
       "research-question translation",
       "Boolean and block logic",
