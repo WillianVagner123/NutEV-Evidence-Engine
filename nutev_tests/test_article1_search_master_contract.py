@@ -10,12 +10,12 @@ def test_article1_search_master_keeps_formal_gate_closed() -> None:
     master = json.loads(master_path.read_text(encoding="utf-8"))
 
     assert master["master_type"] == "NUTEV_ARTICLE1_SEARCH_MASTER"
-    assert master["status"] == "DISCOVERY_CLOSED_FORMAL_SEARCH_PENDING_PRESS_FREEZE"
+    assert master["status"] == "PRESS_COMPLETE_GF10_PENDING"
     assert master["canonical_human_file"] == "ARTICLE1_SEARCH_MASTER.md"
     assert master["agent_entrypoint"] == "AI_CONTEXT.md"
 
     formal = master["formal_search"]
-    assert formal["press_status"] != "PASS"
+    assert formal["press_status"] == "PASS"
     assert formal["gf10_authorized"] is False
     assert formal["query_freeze_complete"] is False
     assert formal["formal_provider_search_executed"] is False
