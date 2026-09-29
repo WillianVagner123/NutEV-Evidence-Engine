@@ -3,7 +3,7 @@
 **Natureza:** documento de trabalho de fechamento.  
 **Autoridade científica:** `ARTICLE1_SEARCH_MASTER.md` + `config/nutev/article1_search_master_v1.json`.  
 **Autoridade de runtime mutável:** manifests/runtime do NutEV quando materializados.  
-**Não é:** PRISMA, decisão de elegibilidade, PRESS PASS ou freeze.
+**Não é:** PRISMA, decisão de elegibilidade ou freeze.
 
 ## Pergunta
 
@@ -14,12 +14,12 @@
 | Gate | Estado |
 |---|---|
 | Discovery | concluído |
-| PRESS | parecer humano `ACCEPT` concluído; canonical `PASS` ainda bloqueado por D02–D05/sentinelas |
+| PRESS | `PASS` — Vagner (UnB), `ACCEPT`, sem alteração material |
 | GF-10 | não autorizado |
 | Query freeze | pendente |
 | Formal provider search | não executada |
 | Formal PRISMA search event | não criado |
-| C4 | revisor PRESS: `ADOPT_C4`; promoção formal ainda bloqueada por D05/native validation/freeze |
+| C4 | revisor PRESS: `ADOPT_C4`; promoção formal ainda bloqueada por native validation/sentinelas/GF-10/freeze |
 
 Nenhuma ação de fechamento técnico autoriza alteração desses estados.
 
@@ -111,4 +111,4 @@ Não reconstruir linhas/PMIDs por inferência. Se o desenho for mantido, regener
 
 ## Próximo gate real
 
-O parecer PRESS humano foi concluído com `ACCEPT`, mas o gate canônico ainda exige fechar D02–D05, sentinelas e validação provider-native antes de registrar `PRESS=PASS`. Depois disso ainda são necessários GF-10 e query freeze antes da busca formal.
+O parecer PRESS humano foi concluído e incorporado como `PRESS=PASS`. D02–D05 permanecem preservados como QA de desenvolvimento, sem obrigação de dupla revisão antes do freeze. O próximo gate real é fechar o conjunto final de bases, sentinelas/known items, validação provider-native e protocolo freeze/registro; depois avaliar GF-10 e query freeze antes da busca formal.
