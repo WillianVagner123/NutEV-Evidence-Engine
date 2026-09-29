@@ -2,7 +2,7 @@
 
 **Reviewer assigned:** Vagner  
 **Affiliation:** UnB  
-**Review status:** `COMPLETED_VIA_GOOGLE_FORMS / ACCEPT / CANONICAL_PASS_PENDING_DELTAS`
+**Review status:** `COMPLETED_VIA_GOOGLE_FORMS / ACCEPT / CANONICAL_PASS_RECORDED`
 
 This packet was the prepared reviewer aid. The authoritative submitted judgments now come from the Google Forms response + P07 clarification, preserved in the canonical repository evidence record. Blank fields below are historical template content and must not be interpreted as missing review.
 
@@ -144,3 +144,8 @@ ____________________________________________________
 ## 6. Guardrail
 
 Even an acceptable PRESS opinion does **not** by itself authorize GF-10, query freeze, formal search or PRISMA. Delta tests, C4 decision, provider-native syntax validation, sentinel/known-item review and cross-database translation must also be closed.
+
+
+## Methodological amendment note — 2026-09-28
+
+The submitted reviewer judgments are unchanged. The repository gate policy changed prospectively before formal search: D02–D05 precision review is retained as optional developmental QA, not as an autonomous condition for PRESS PASS. The human `ACCEPT` therefore supports canonical `PRESS=PASS`; GF-10/query freeze remain independently blocked by provider-native validation, sentinels/known items and other pre-freeze requirements.

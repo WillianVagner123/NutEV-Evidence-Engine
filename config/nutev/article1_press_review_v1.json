@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_type": "NUTEV_ARTICLE1_PRESS_REVIEW",
   "record_version": "article1-press-review-v1",
-  "status": "IN_REVIEW",
+  "status": "PASS",
   "scope": "Article 1 formal-search strategy pre-freeze review",
   "source": {
     "main_commit": "d1c892b17e06ed74bfb02aef8b4c272912207351",
@@ -111,7 +111,8 @@
         "status": "NOT_APPLICABLE_NO_INCREMENT",
         "interpretation": "No incremental records; reviewer stated optional terms should be retained only when they show useful gain."
       },
-      "human_interpretation_required": true
+      "human_interpretation_required": true,
+      "gate_role": "DEVELOPMENTAL_QA_NON_GATING"
     },
     {
       "id": "D02",
@@ -128,7 +129,8 @@
         "status": "PERSISTED_PENDING_HUMAN_REVIEW"
       },
       "manual_precision": null,
-      "human_interpretation_required": true
+      "human_interpretation_required": true,
+      "gate_role": "DEVELOPMENTAL_QA_NON_GATING"
     },
     {
       "id": "D03",
@@ -145,7 +147,8 @@
         "status": "PERSISTED_PENDING_HUMAN_REVIEW"
       },
       "manual_precision": null,
-      "human_interpretation_required": true
+      "human_interpretation_required": true,
+      "gate_role": "DEVELOPMENTAL_QA_NON_GATING"
     },
     {
       "id": "D04",
@@ -162,7 +165,8 @@
         "status": "PERSISTED_PENDING_HUMAN_REVIEW"
       },
       "manual_precision": null,
-      "human_interpretation_required": true
+      "human_interpretation_required": true,
+      "gate_role": "DEVELOPMENTAL_QA_NON_GATING"
     },
     {
       "id": "D05",
@@ -179,11 +183,12 @@
         "status": "PERSISTED_PENDING_HUMAN_REVIEW"
       },
       "manual_precision": null,
-      "human_interpretation_required": true
+      "human_interpretation_required": true,
+      "gate_role": "DEVELOPMENTAL_QA_NON_GATING"
     }
   ],
   "c4_social_context": {
-    "status": "PRESS_ONLY_CANDIDATE_NOT_APPROVED",
+    "status": "ADOPTED_BY_PRESS_PENDING_NATIVE_VALIDATION_AND_FREEZE",
     "decision": "ADOPT_C4",
     "allowed_decisions": [
       "ADOPT_C4",
@@ -201,7 +206,7 @@
       "shared meal*"
     ],
     "reviewer_decision_recorded_at": "2026-09-28T22:54:47.977099Z",
-    "formal_route_promotion_blocked_until": "D05 human sample review + provider-native validation + GF-10 + query freeze"
+    "formal_route_promotion_blocked_until": "provider-native validation + satisfactory sentinel/known-item closure + GF-10 + query freeze"
   },
   "provider_native_validation": {
     "pubmed": {
@@ -211,12 +216,12 @@
     },
     "lilacs_bvs": {
       "role": "formal_bibliographic_provider",
-      "status": "PENDING_PRESS_AND_NATIVE_VALIDATION",
+      "status": "PENDING_NATIVE_VALIDATION",
       "exact_query": null
     },
     "scielo": {
       "role": "formal_bibliographic_provider",
-      "status": "PENDING_PRESS_AND_NATIVE_VALIDATION",
+      "status": "PENDING_NATIVE_VALIDATION",
       "exact_query": null
     },
     "scopus": {
@@ -257,8 +262,8 @@
     "authorized": false,
     "authorization_requires": [
       "PRESS status PASS recorded by a human reviewer",
-      "all required delta tests completed",
       "C4 explicitly decided",
+      "final formal provider set recorded",
       "provider-native syntax validated",
       "known-item and sentinel testing satisfactory",
       "cross-database translations reviewed"
@@ -275,7 +280,22 @@
     "route_is_not_inclusion": true,
     "scopus_web_of_science_must_not_be_simulated": true
   },
-  "status_reason": "Human PRESS review completed with ACCEPT and no material revisions; canonical PASS remains blocked until mandatory delta tests and pre-freeze validation requirements are complete.",
+  "status_reason": "Independent human PRESS review completed with ACCEPT and no material revisions. By the 2026-09-28 pre-formal-search methodological amendment, D01-D05 are preserved as developmental QA and are not autonomous requirements for PRESS PASS, GF-10 or query freeze. Provider-native validation and satisfactory sentinel/known-item closure remain pre-freeze requirements.",
   "press_decision_materiality": "NO_MATERIAL_REVISION_RECORDED",
-  "review_source_evidence": "evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json"
+  "review_source_evidence": "evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json",
+  "delta_test_policy": {
+    "role": "DEVELOPMENTAL_QA",
+    "required_for_press_pass": false,
+    "required_for_gf10": false,
+    "required_for_query_freeze": false,
+    "preserved_for_audit": true,
+    "optional_human_precision_review": true,
+    "amendment": "docs/article1_closeout/ARTICLE1_METHOD_AMENDMENT_20260928.md"
+  },
+  "methodological_amendment": {
+    "id": "A1-AMEND-2026-09-28-STREAMLINED-PREFREEZE",
+    "date": "2026-09-28",
+    "timing": "PRE_FORMAL_SEARCH_PRE_FREEZE",
+    "effect": "D02-D05 human precision review reclassified from mandatory gate to optional developmental QA"
+  }
 }

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "master_type": "NUTEV_ARTICLE1_SEARCH_MASTER",
   "master_version": "article1-search-master-v1",
-  "status": "DISCOVERY_CLOSED_FORMAL_SEARCH_PENDING_PRESS_FREEZE",
+  "status": "PRESS_COMPLETE_GF10_PENDING",
   "question": "Como documentos normativos e estruturantes do cuidado alimentar de adultos formulam recomendações e direção dietética e em que medida as operacionalizam por meio de formas de prescrição, competências e repertórios, contexto, condições de execução, monitoramento e continuidade do cuidado?",
   "canonical_human_file": "ARTICLE1_SEARCH_MASTER.md",
   "agent_entrypoint": "AI_CONTEXT.md",
@@ -105,12 +105,12 @@
     }
   },
   "formal_search": {
-    "press_status": "NOT_YET_RECORDED_AS_PASS",
+    "press_status": "PASS",
     "gf10_authorized": false,
     "query_freeze_complete": false,
     "formal_provider_search_executed": false,
     "prisma_search_event_emitted": false,
-    "next_gate": "Close D02-D05 human precision samples + sentinel harmonization + provider-native validation; then record canonical PRESS PASS, evaluate GF-10, and freeze provider queries.",
+    "next_gate": "Close final provider set, provider-native validation, sentinel/known-item harmonization and protocol freeze/registration; then evaluate GF-10 and freeze provider queries.",
     "human_press_review": {
       "reviewer": "Vagner",
       "affiliation": "UnB",
@@ -119,8 +119,14 @@
       "independence_attestation": true,
       "p07_materiality": "NON_MATERIAL",
       "c4_decision": "ADOPT_C4",
-      "canonical_pass_recorded": false,
+      "canonical_pass_recorded": true,
       "evidence": "evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json"
+    },
+    "methodological_amendment": {
+      "id": "A1-AMEND-2026-09-28-STREAMLINED-PREFREEZE",
+      "delta_tests": "DEVELOPMENTAL_QA_NON_GATING",
+      "press_pass_recorded": true,
+      "gf10_authorized": false
     }
   },
   "runtime_authorities": {

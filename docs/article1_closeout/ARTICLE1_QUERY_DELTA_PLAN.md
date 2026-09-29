@@ -111,3 +111,10 @@ Parar testes exploratórios quando houver evidência suficiente para o revisor h
 - fidelidade de tradução por provider.
 
 Não otimizar indefinidamente antes de PRESS.
+
+
+## Amendment — 2026-09-28
+
+D01–D05 are retained as **developmental QA**, not as autonomous scientific gates. The technical counts, sampled identities and custody remain preserved. After independent PRESS review returned `ACCEPT` with no material revision, the planned D02–D05 dual human precision review became optional audit work and is no longer required for `PRESS=PASS`, GF-10 or query freeze.
+
+This change occurred before formal search and before protocol/query freeze. Provider-native validation, satisfactory sentinel/known-item closure, final provider selection/translation and formal screening by two independent reviewers remain required.

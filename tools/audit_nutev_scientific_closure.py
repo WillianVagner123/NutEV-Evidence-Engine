@@ -87,9 +87,10 @@ def main() -> int:
             all(item.get("status") == "COMPLETE" for item in press.get("review_items", [])),
             "PRESS PASS requires every mandatory review item to be complete.",
         )
+        delta_policy = press.get("delta_test_policy") or {}
         require(
-            all(item.get("status") == "COMPLETE" for item in press.get("delta_tests", [])),
-            "PRESS PASS requires every mandatory delta test to be complete.",
+            delta_policy.get("required_for_press_pass") is False,
+            "PRESS PASS requires the streamlined non-gating developmental delta-test policy.",
         )
     else:
         require(

@@ -6,20 +6,21 @@ O produto pode fechar tecnicamente com esta lista aberta. A busca formal não po
 
 ### Operação / governança
 
-1. definir os dois revisores independentes da revisão humana;
-2. definir o adjudicador;
-3. decidir se D-132 v1 será mantido apenas como verificação exploratória por causa do viés de recência;
-4. decidir se deve ser especificado D-132b com amostragem aleatória/estratificada;
-5. definir quem valida sintaxe nativa de Scopus e Web of Science;
-6. definir se PRESS inclui LILACS/BVS e SciELO na revisão nativa;
-7. decidir se o protocolo S1–S6 será regenerado/versionado.
+1. definir R1 e R2 para a seleção formal e o adjudicador;
+2. definir o conjunto final de bases formais;
+3. definir quem valida sintaxe nativa de Scopus e Web of Science;
+4. decidir se LILACS/BVS e SciELO permanecem no conjunto formal;
+5. fechar o conjunto de sentinelas/known items (14 vs 16) e o critério satisfatório de recuperação;
+6. congelar/registrar o protocolo antes da busca formal.
+
+D-132 v1 e S1–S6 permanecem materiais de desenvolvimento opcionais; não são mais blockers de PRESS/GF-10/freeze.
 
 Nenhuma identidade/e-mail de revisor deve ser inventada pelo sistema.
 
 ## Para discutir com Dr. Caio Reis
 
 1. **Parâmetros nutricionais:** avaliação/extração é suficiente ou a pergunta exige rota própria para diet quality/intake/nutrition status?
-2. **C4:** `ADOPT_C4` foi selecionado pelo revisor PRESS; falta fechar D05/validação antes de promoção para a query congelada.
+2. **C4:** `ADOPT_C4` foi selecionado pelo revisor PRESS; falta validação provider-native/sentinelas/GF-10 antes de promoção para a query congelada.
 3. **Eating competence:** pertence ao construto de competências alimentares?
 4. **B-NORM:** trade-off sensibilidade × especificidade, especialmente `standard*`.
 5. **Vocabulário controlado/publication types:** qual papel em cada provider?
@@ -30,7 +31,7 @@ Nenhuma identidade/e-mail de revisor deve ser inventada pelo sistema.
 ## Decisões explicitamente não tomadas
 
 ```text
-PRESS = PASS  # human ACCEPT exists, but canonical PASS still awaits mandatory delta closure
+PRESS = PASS  # CLOSED 2026-09-28; human ACCEPT, no material revision
 GF-10 = AUTHORIZED
 provider query freeze
 FORMAL SEARCH

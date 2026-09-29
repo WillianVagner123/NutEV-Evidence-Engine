@@ -74,7 +74,7 @@ def _api(page, base: str, method: str, path: str, payload=None) -> dict:
 
 
 def _expect_gate_panel(page) -> dict:
-    """The gate panel must render the canonical closed state, with no gate shown as open."""
+    """The gate panel must render PRESS as open while downstream scientific gates remain closed."""
     expect(page.locator("#scientificStatePanel")).to_be_visible()
     grid = page.locator("#gateGrid")
     expect(grid).to_contain_text("Discovery")
@@ -86,8 +86,10 @@ def _expect_gate_panel(page) -> dict:
     expect(grid).to_contain_text("Não autorizado")
     expect(grid).to_contain_text("Não executada")
     expect(grid).to_contain_text("Não criado")
-    assert page.locator("#gateGrid .gate-card.is-open").count() == 0, "no Article 1 gate may render as open"
-    return {"open_gates": 0}
+    open_cards = page.locator("#gateGrid .gate-card.is-open")
+    assert open_cards.count() == 1, "only PRESS may render as open before GF-10"
+    expect(open_cards.first).to_contain_text("PRESS")
+    return {"open_gates": 1}
 
 
 def _run_owner(page, base: str, data: dict, checks: list) -> None:
