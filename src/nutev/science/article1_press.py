@@ -11,6 +11,8 @@ FORMAL_PROVIDERS = (
     "pubmed",
     "lilacs_bvs",
     "scielo",
+)
+EXCLUDED_UNAVAILABLE_PROVIDERS = (
     "scopus",
     "web_of_science",
 )
@@ -131,10 +133,6 @@ def _format_block(provider: str, terms: tuple[str, ...]) -> str:
         return "(" + " OR ".join(rendered) + ")"
     rendered = [_plain_term(term) for term in terms]
     inner = " OR ".join(rendered)
-    if provider == "scopus":
-        return f"TITLE-ABS-KEY({inner})"
-    if provider == "web_of_science":
-        return f"TS=({inner})"
     if provider == "scielo":
         return f"({inner})"
     raise Article1PressError(f"Unsupported formal provider: {provider}")
@@ -246,7 +244,7 @@ def build_press_package(draft: dict[str, Any]) -> dict[str, Any]:
         }
         provider_packages[provider] = {
             "status": "CANDIDATE_NOT_NATIVE_VALIDATED",
-            "simulation_forbidden": provider in {"scopus", "web_of_science"},
+            "simulation_forbidden": False,
             "routes": route_queries,
             "delta_tests": build_delta_tests(provider, specs),
         }
@@ -259,6 +257,10 @@ def build_press_package(draft: dict[str, Any]) -> dict[str, Any]:
         "status": "PREFREEZE_CANDIDATE_ONLY",
         "formal_execution_authorized": False,
         "provider_packages": provider_packages,
+        "excluded_unavailable_providers": {
+            provider: "NO_ACCESS_NOT_IN_FORMAL_SET"
+            for provider in EXCLUDED_UNAVAILABLE_PROVIDERS
+        },
         "guardrails": {
             "candidate_is_not_native_validation": True,
             "candidate_is_not_press_pass": True,

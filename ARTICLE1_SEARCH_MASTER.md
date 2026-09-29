@@ -37,9 +37,9 @@ These values describe discovery, retrieval and reviewer-navigation infrastructur
 
 Purpose: retrieve normative nutrition guidance, guidelines, consensus and professional/scientific statements.
 
-Current status: `CANDIDATE_FOR_PRESS`.
+Current status: `PRESS_ACCEPTED_PREFREEZE`.
 
-The candidate provider drafts already documented for Scopus and Web of Science remain in `config/nutev/article1_query_draft_v1.json`.
+The formal provider set is now prospectively limited to **PubMed, LILACS/BVS and SciELO**, the sources available to the project. **Scopus and Web of Science are excluded because the project has no access and must not be simulated.**
 
 ### C-STRUCT
 
@@ -52,7 +52,7 @@ Current subroutes:
 3. `C3-IMPLEMENTATION` — implementation/dissemination/quality-improvement and monitoring structures.
 4. `C4-SOCIAL-CONTEXT` — social context/determinants, social and food environment, social support, commensality and family/shared meals.
 
-PRESS reviewer Vagner (UnB) selected `ADOPT_C4` on 2026-09-28. C4 remains pre-freeze and is **not yet promoted into a frozen/formal provider query** until provider-native validation, satisfactory sentinel/known-item closure, GF-10 and query freeze close.
+PRESS reviewer Vagner (UnB) selected `ADOPT_C4` on 2026-09-28. C4 is therefore **adopted pre-freeze**, but is not yet a frozen/formal provider query until provider-native validation, satisfactory sentinel/known-item closure, GF-10 and query freeze close.
 
 ## What is deliberately NOT closed
 
@@ -73,13 +73,14 @@ Therefore no agent, reviewer or manuscript may describe the discovery corpus as 
 
 Before formal execution:
 
-1. close sentinel/known-item recovery, including the reviewer-requested improvement before freeze;
-2. reconcile the 14-versus-16 sentinel set;
-3. define the final formal provider set and complete provider-native validation / cross-database translation;
-4. freeze/version the protocol and search strings prospectively;
-5. explicit GF-10 authorization;
-6. versioned provider-query freeze with checksums;
-7. only then run `FORMAL` searches from zero and create PRISMA search events.
+1. run provider-native validation for PubMed, LILACS/BVS and SciELO;
+2. close sentinel/known-item recovery and reconcile the 14-versus-16 historical sentinel notation;
+3. freeze/version the protocol and exact search strings prospectively;
+4. explicit GF-10 authorization;
+5. versioned provider-query freeze with checksums;
+6. only then run `FORMAL` searches from zero and create PRISMA search events.
+
+Scopus and Web of Science are not part of the formal provider set because access is unavailable. Their absence is recorded prospectively and they must not be simulated or silently substituted.
 
 D01–D05 remain preserved as developmental QA. Their 100-record D02–D05 precision packet is optional audit material and is **not an autonomous gate** for PRESS PASS, GF-10 or query freeze after the 2026-09-28 pre-formal-search amendment.
 

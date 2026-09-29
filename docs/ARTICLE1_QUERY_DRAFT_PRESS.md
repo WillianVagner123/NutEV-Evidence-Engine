@@ -1,6 +1,6 @@
 # Article 1 query draft for PRESS
 
-Status: `DRAFT_FOR_PRESS`. GF-10 remains closed.
+Status: `PRESS_ACCEPTED_PREFREEZE`. PRESS is complete; GF-10 remains closed.
 
 ## Why this draft exists
 
@@ -33,27 +33,21 @@ C-STRUCT is therefore drafted as a union of independent subroutes:
 
 Generic stage terms such as assessment, counseling, prescription, monitoring and follow-up remain important for extraction and coding, but are not approved as standalone retrieval terms because they are too broad.
 
-## B-NORM candidate syntax already recorded
+## Formal provider set after PRESS
 
-Scopus:
+The prospective formal provider set is now limited to:
 
-```text
-TITLE-ABS-KEY ((nutrition OR diet* OR "food-based" OR "dietary pattern*") AND (guideline* OR guidance OR recommendation* OR consensus OR "position statement*" OR "scientific statement*" OR "professional statement*" OR standard*))
-```
+- PubMed;
+- LILACS/BVS;
+- SciELO.
 
-Web of Science:
-
-```text
-TS=((nutrition OR diet* OR "food-based" OR "dietary pattern*") AND (guideline* OR guidance OR recommendation* OR consensus OR "position statement*" OR "scientific statement*" OR "professional statement*" OR standard*))
-```
-
-These are still candidate strings. This file does not authorize a FORMAL run.
+Scopus and Web of Science are excluded because the project does not have access. They must not be simulated, and their absence must remain explicit in the methods and search provenance. The Engine may compile and validate only the providers in the formal set.
 
 ## PRESS requirements before GF-10
 
-PRESS review must assess translation of the question, block logic, controlled vocabulary/free-text balance, field syntax, truncation, spelling/phrase variants, filters, known-item recovery, incremental yield of optional terms and cross-database translation.
+PRESS review is complete with `ACCEPT`. The remaining pre-freeze work is provider-native validation of PubMed, LILACS/BVS and SciELO, sentinel/known-item closure, prospective versioning and GF-10 authorization.
 
-The planned delta tests are:
+The preserved developmental QA delta tests are:
 
 - B-NORM baseline vs `+ "food based"`;
 - B-NORM baseline vs `+ "healthy eating"`;
@@ -61,7 +55,7 @@ The planned delta tests are:
 - C3 implementation-only incremental yield and manual precision sample;
 - C4 social-context incremental yield and manual precision sample.
 
-No provider-specific string becomes FORMAL until the PRESS record is PASS and GF-10 is explicitly authorized.
+D01–D05 are developmental QA and are not an autonomous gate. No provider-specific string becomes FORMAL until provider-native validation and sentinel/known-item closure are documented, GF-10 is explicitly authorized, and the exact query is version-frozen.
 
 ## Scientific boundary
 
