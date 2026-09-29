@@ -1,6 +1,6 @@
 # Article 1 — PRESS Reviewer Assignment
 
-**Status:** `HUMAN_REVIEW_COMPLETED_ACCEPT_DELTA_CLOSURE_PENDING`  
+**Status:** `PRESS_PASS_RECORDED`  
 **Date assigned:** 2026-09-28  
 **Assigned by:** owner / authoring team
 
@@ -31,7 +31,7 @@ The authoring team must not fill these fields in the reviewer's name.
 ## Gate guardrails
 
 ```text
-PRESS = PENDING
+PRESS = PASS
 GF-10 = false
 QUERY_FREEZE = false
 FORMAL_SEARCH = false
@@ -54,4 +54,4 @@ On 2026-09-28 Vagner (UnB) submitted the independent PRESS form and a follow-up 
 Canonical evidence is stored at:
 `evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json`.
 
-The reviewer opinion is complete, but repository contract still blocks canonical `PRESS=PASS` until the mandatory delta-test/sample closure is complete.
+The reviewer opinion is complete and is incorporated as canonical `PRESS=PASS`. D02–D05 remain preserved as optional developmental QA under the 2026-09-28 pre-formal-search amendment; GF-10 and freeze remain separate.
