@@ -522,7 +522,7 @@ def test_article1_scientific_state_reports_the_canonical_closed_gates(server) ->
 
     gates = {gate["key"]: gate for gate in state["gates"]}
     assert gates["discovery"]["state"] == "COMPLETE"
-    assert gates["press"]["state"] == "PENDING"
+    assert gates["press"]["state"] == "PASS"
     assert gates["gf10"]["state"] == "NOT_AUTHORIZED"
     assert gates["query_freeze"]["state"] == "PENDING"
     assert gates["formal_search"]["state"] == "NOT_EXECUTED"
