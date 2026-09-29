@@ -201,3 +201,10 @@ PRISMA_SEARCH_EVENT_EMITTED     = false
 ```
 
 No state above is promoted by this technical audit.
+
+
+## 10. Post-review amendment — 2026-09-28
+
+This document remains a historical technical pre-review audit. The subsequent independent PRESS review by Vagner (UnB) returned `ACCEPT`, with P07 explicitly clarified as non-material and C4 as `ADOPT_C4`.
+
+A prospective pre-formal-search methodological amendment then reclassified D01–D05 human precision work as developmental QA rather than an autonomous gate. Current authority is the Search Master and canonical PRESS record; provider-native validation and sentinel/known-item closure remain pending before GF-10/freeze.
