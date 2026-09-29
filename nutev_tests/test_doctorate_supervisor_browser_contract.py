@@ -148,8 +148,8 @@ def test_runner_exercises_both_actors_and_probes_endpoints_directly() -> None:
     assert '#projectModules a[href="/search.html"]' in RUNNER
     assert "global text query can observe" in RUNNER
 
-    # And the gate panel must never be accepted as open.
-    assert "no Article 1 gate may render as open" in RUNNER
+    # PRESS is the only gate allowed open before GF-10.
+    assert "only PRESS may render as open before GF-10" in RUNNER
 
 
 def test_two_actor_regression_runs_in_the_pilot_browser_workflow() -> None:
