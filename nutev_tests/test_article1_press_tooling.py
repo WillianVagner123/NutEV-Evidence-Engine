@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from nutev.science.article1_press import (
+    EXCLUDED_UNAVAILABLE_PROVIDERS,
     FORMAL_PROVIDERS,
     ROUTE_ORDER,
     build_delta_tests,
@@ -62,8 +63,12 @@ def test_press_package_is_fail_closed_and_never_native_validates_itself() -> Non
         assert record["status"] == "CANDIDATE_NOT_NATIVE_VALIDATED"
         assert set(record["routes"]) == set(ROUTE_ORDER)
         assert len(record["delta_tests"]) == 5
-    assert package["provider_packages"]["scopus"]["simulation_forbidden"] is True
-    assert package["provider_packages"]["web_of_science"]["simulation_forbidden"] is True
+    assert tuple(package["provider_packages"]) == FORMAL_PROVIDERS
+    assert package["excluded_unavailable_providers"] == {
+        "scopus": "NO_ACCESS_NOT_IN_FORMAL_SET",
+        "web_of_science": "NO_ACCESS_NOT_IN_FORMAL_SET",
+    }
+    assert EXCLUDED_UNAVAILABLE_PROVIDERS == ("scopus", "web_of_science")
 
 
 def test_provider_dialects_remain_explicitly_distinct() -> None:
@@ -71,11 +76,14 @@ def test_provider_dialects_remain_explicitly_distinct() -> None:
     pubmed = compile_route_query("pubmed", specs["B-NORM"])
     bvs = compile_route_query("lilacs_bvs", specs["B-NORM"])
     scielo = compile_route_query("scielo", specs["B-NORM"])
-    scopus = compile_route_query("scopus", specs["B-NORM"])
-    wos = compile_route_query("web_of_science", specs["B-NORM"])
     assert "[Title/Abstract]" in pubmed
     assert "tw:" in bvs
-    assert "TITLE-ABS-KEY(" in scopus
-    assert "TS=(" in wos
     assert "TITLE-ABS-KEY(" not in scielo
     assert "[Title/Abstract]" not in scielo
+    for unavailable in EXCLUDED_UNAVAILABLE_PROVIDERS:
+        try:
+            compile_route_query(unavailable, specs["B-NORM"])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError(f"{unavailable} must not compile as a formal provider")
