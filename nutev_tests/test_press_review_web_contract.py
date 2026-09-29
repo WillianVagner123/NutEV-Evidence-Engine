@@ -54,7 +54,7 @@ def test_press_profile_has_independent_review_checklist() -> None:
 
 def test_canonical_press_record_is_fail_closed_and_human_only() -> None:
     record = json.loads(PRESS_RECORD.read_text(encoding="utf-8"))
-    assert record["status"] == "IN_REVIEW"
+    assert record["status"] == "PASS"
     assert record["human_review_required"] is True
     assert record["reviewer"]["name"] == "Vagner"
     assert record["reviewer"]["affiliation"] == "UnB"
@@ -67,6 +67,9 @@ def test_canonical_press_record_is_fail_closed_and_human_only() -> None:
     assert len(record["delta_tests"]) == 5
     assert record["delta_tests"][0]["status"] == "COMPLETE"
     assert all(item["status"] == "PENDING" for item in record["delta_tests"][1:])
+    assert record["delta_test_policy"]["required_for_press_pass"] is False
+    assert record["delta_test_policy"]["required_for_gf10"] is False
+    assert record["delta_test_policy"]["required_for_query_freeze"] is False
     assert record["c4_social_context"]["decision"] == "ADOPT_C4"
     assert record["guardrails"]["no_automatic_press_pass"] is True
     assert record["guardrails"]["no_automatic_gf10_authorization"] is True
