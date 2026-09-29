@@ -1,6 +1,6 @@
 # Article 1 — Search Master
 
-**Canonical status:** `DISCOVERY_CLOSED_FORMAL_SEARCH_PENDING_PRESS_FREEZE`
+**Canonical status:** `PRESS_COMPLETE_GF10_PENDING`
 
 This is the main human-readable control file for the Article 1 search. For machine-readable state use `config/nutev/article1_search_master_v1.json`. For AI/agent access start at `AI_CONTEXT.md`.
 
@@ -52,7 +52,7 @@ Current subroutes:
 3. `C3-IMPLEMENTATION` — implementation/dissemination/quality-improvement and monitoring structures.
 4. `C4-SOCIAL-CONTEXT` — social context/determinants, social and food environment, social support, commensality and family/shared meals.
 
-PRESS reviewer Vagner (UnB) selected `ADOPT_C4` on 2026-09-28. This records the human PRESS recommendation, but C4 remains pre-freeze and is **not yet promoted into a frozen/formal provider query** until D05 human sample review, native validation and downstream gates close.
+PRESS reviewer Vagner (UnB) selected `ADOPT_C4` on 2026-09-28. C4 remains pre-freeze and is **not yet promoted into a frozen/formal provider query** until provider-native validation, satisfactory sentinel/known-item closure, GF-10 and query freeze close.
 
 ## What is deliberately NOT closed
 
@@ -61,7 +61,7 @@ The formal systematic-review search has **not** been executed.
 Current gate state:
 
 - human PRESS review: completed by Vagner (UnB), independent attestation recorded, final decision `ACCEPT`, P07 clarified as non-material;
-- canonical PRESS record: still not PASS because mandatory delta-test/sample closure is incomplete;
+- canonical PRESS record: `PASS` (human `ACCEPT`, no material revision);
 - GF-10: not authorized;
 - provider-specific query freeze: not complete;
 - formal provider search: not executed;
@@ -73,14 +73,15 @@ Therefore no agent, reviewer or manuscript may describe the discovery corpus as 
 
 Before formal execution:
 
-1. close remaining delta tests / human precision samples D02–D05;
-2. close sentinel/known-item recovery, including the reviewer-requested improvement before freeze;
-3. complete provider-native validation and controlled-vocabulary deltas;
-4. reconcile the 14-versus-16 sentinel set;
-5. incorporate the completed human PRESS opinion into `PRESS = PASS` only when the canonical delta requirements are complete;
-6. explicit GF-10 authorization;
-7. versioned provider-query freeze with checksums;
-8. only then run `FORMAL` searches and create PRISMA search events.
+1. close sentinel/known-item recovery, including the reviewer-requested improvement before freeze;
+2. reconcile the 14-versus-16 sentinel set;
+3. define the final formal provider set and complete provider-native validation / cross-database translation;
+4. freeze/version the protocol and search strings prospectively;
+5. explicit GF-10 authorization;
+6. versioned provider-query freeze with checksums;
+7. only then run `FORMAL` searches from zero and create PRISMA search events.
+
+D01–D05 remain preserved as developmental QA. Their 100-record D02–D05 precision packet is optional audit material and is **not an autonomous gate** for PRESS PASS, GF-10 or query freeze after the 2026-09-28 pre-formal-search amendment.
 
 ## Canonical artifacts
 
