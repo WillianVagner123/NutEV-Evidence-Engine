@@ -142,8 +142,11 @@ def main() -> int:
         ):
             require(token in compiler, f"PRESS compiler guardrail missing: {token}")
         require(
-            '"scopus", "web_of_science"' in compiler,
-            "PRESS compiler must explicitly mark Scopus/Web of Science as non-simulatable.",
+            "EXCLUDED_UNAVAILABLE_PROVIDERS" in compiler
+            and '"scopus"' in compiler
+            and '"web_of_science"' in compiler
+            and '"NO_ACCESS_NOT_IN_FORMAL_SET"' in compiler,
+            "PRESS compiler must explicitly exclude unavailable Scopus/Web of Science from the formal set without simulation.",
         )
     if PRESS_DELTA_RUNNER.is_file():
         runner = read(PRESS_DELTA_RUNNER)
