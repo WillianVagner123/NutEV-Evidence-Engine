@@ -294,3 +294,19 @@ tenant vazios; `/strategy.html` sem dados em modo pilot (`/strategy-data/article
 
 Nenhum gate científico foi alterado. Controle editorial do manuscrito: `ARTICLE1_WRITING_STATE.md`;
 pacote PRESS: `ARTICLE1_PRESS_PACKET_V01.md`.
+
+
+## 8. SCIENTIFIC STATE ADDENDUM — 2026-09-28
+
+This closeout report contains historical snapshots from before the human PRESS decision. Current canonical Article 1 state advanced after that snapshot:
+
+```text
+status = PRESS_COMPLETE_GF10_PENDING
+PRESS = PASS
+GF-10 = false
+query_freeze_complete = false
+formal_provider_search_executed = false
+prisma_search_event_emitted = false
+```
+
+Vagner (UnB) completed independent PRESS review with `ACCEPT`, no material revision, P07 non-material and `ADOPT_C4`. A pre-formal-search methodological amendment reclassified D01–D05 precision review as developmental QA/non-gating. Provider-native validation, sentinel/known-item closure, final provider set, protocol/query freeze and GF-10 remain separate requirements.
