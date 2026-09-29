@@ -90,17 +90,17 @@
   },
   "search_architecture": {
     "B-NORM": {
-      "status": "CANDIDATE_FOR_PRESS",
+      "status": "PRESS_ACCEPTED_PREFREEZE",
       "purpose": "normative guidance, guidelines, consensus and statements"
     },
     "C-STRUCT": {
-      "status": "CANDIDATE_FOR_PRESS",
+      "status": "PRESS_ACCEPTED_PREFREEZE",
       "aggregation": "UNION_AND_DEDUPLICATE_SUBROUTES",
       "subroutes": {
         "C1-CARE-PROCESS": "candidate",
         "C2-COMPETENCY-LITERACY": "candidate",
         "C3-IMPLEMENTATION": "candidate",
-        "C4-SOCIAL-CONTEXT": "PRESS_ONLY_CANDIDATE_NOT_APPROVED"
+        "C4-SOCIAL-CONTEXT": "ADOPTED_PREFREEZE"
       }
     }
   },
@@ -110,7 +110,7 @@
     "query_freeze_complete": false,
     "formal_provider_search_executed": false,
     "prisma_search_event_emitted": false,
-    "next_gate": "Close final provider set, provider-native validation, sentinel/known-item harmonization and protocol freeze/registration; then evaluate GF-10 and freeze provider queries.",
+    "next_gate": "Run provider-native validation on PubMed, LILACS/BVS and SciELO; close sentinel/known-item recovery and protocol freeze/registration; then evaluate GF-10 and freeze provider queries.",
     "human_press_review": {
       "reviewer": "Vagner",
       "affiliation": "UnB",
@@ -126,7 +126,18 @@
       "id": "A1-AMEND-2026-09-28-STREAMLINED-PREFREEZE",
       "delta_tests": "DEVELOPMENTAL_QA_NON_GATING",
       "press_pass_recorded": true,
-      "gf10_authorized": false
+      "gf10_authorized": false,
+      "provider_set": "PUBMED_LILACS_BVS_SCIELO_ONLY",
+      "unavailable_licensed_providers": "SCOPUS_WOS_EXCLUDED_PROSPECTIVELY"
+    },
+    "formal_provider_set": [
+      "pubmed",
+      "lilacs_bvs",
+      "scielo"
+    ],
+    "excluded_unavailable_providers": {
+      "scopus": "NO_ACCESS_NOT_IN_FORMAL_SET",
+      "web_of_science": "NO_ACCESS_NOT_IN_FORMAL_SET"
     }
   },
   "runtime_authorities": {
