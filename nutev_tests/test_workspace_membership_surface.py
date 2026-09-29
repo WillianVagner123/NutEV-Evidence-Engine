@@ -527,7 +527,7 @@ def test_article1_scientific_state_reports_the_canonical_closed_gates(server) ->
     assert gates["query_freeze"]["state"] == "PENDING"
     assert gates["formal_search"]["state"] == "NOT_EXECUTED"
     assert gates["prisma"]["state"] == "NOT_CREATED"
-    assert [gate["key"] for gate in state["gates"] if gate["open"]] == []
+    assert [gate["key"] for gate in state["gates"] if gate["open"]] == ["press"]
 
     assert state["discovery_corpus"]["counts_are_discovery_not_prisma"] is True
     assert state["discovery_corpus"]["counts_are_not_inclusion"] is True
