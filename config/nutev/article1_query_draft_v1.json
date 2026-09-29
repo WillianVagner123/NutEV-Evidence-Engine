@@ -2,11 +2,20 @@
   "schema_version": 1,
   "draft_type": "NUTEV_ARTICLE1_QUERY_DRAFT_FOR_PRESS",
   "draft_version": "article1-query-draft-v1",
-  "status": "DRAFT_FOR_PRESS",
+  "status": "PRESS_ACCEPTED_PREFREEZE",
   "formal_gate": {
     "gate_id": "GF-10",
     "authorized": false,
-    "guardrail": "This draft must not be executed or reported as a formal systematic-review search until PRESS review, provider-specific syntax review, versioning, and explicit freeze authorization are complete."
+    "guardrail": "PRESS is complete. This draft must not be executed or reported as a formal systematic-review search until provider-native validation, sentinel/known-item closure, versioning, explicit GF-10 authorization, and query freeze are complete.",
+    "formal_provider_set": [
+      "pubmed",
+      "lilacs_bvs",
+      "scielo"
+    ],
+    "excluded_unavailable_providers": {
+      "scopus": "NO_ACCESS_NOT_IN_FORMAL_SET",
+      "web_of_science": "NO_ACCESS_NOT_IN_FORMAL_SET"
+    }
   },
   "source": {
     "search_id": "web_20260830T182743+0000_91bde5be",
@@ -107,7 +116,7 @@
   },
   "routes": {
     "B-NORM": {
-      "status": "CANDIDATE_FOR_PRESS",
+      "status": "PRESS_ACCEPTED_PREFREEZE",
       "logic": "nutrition_anchor AND normative_marker",
       "blocks": {
         "nutrition_anchor": [
@@ -126,14 +135,10 @@
           "professional statement*",
           "standard*"
         ]
-      },
-      "known_provider_drafts": {
-        "scopus": "TITLE-ABS-KEY ((nutrition OR diet* OR \"food-based\" OR \"dietary pattern*\") AND (guideline* OR guidance OR recommendation* OR consensus OR \"position statement*\" OR \"scientific statement*\" OR \"professional statement*\" OR standard*))",
-        "web_of_science": "TS=((nutrition OR diet* OR \"food-based\" OR \"dietary pattern*\") AND (guideline* OR guidance OR recommendation* OR consensus OR \"position statement*\" OR \"scientific statement*\" OR \"professional statement*\" OR standard*))"
       }
     },
     "C-STRUCT": {
-      "status": "CANDIDATE_FOR_PRESS",
+      "status": "PRESS_ACCEPTED_PREFREEZE",
       "aggregation": "UNION_AND_DEDUPLICATE_SUBROUTES",
       "subroutes": {
         "C1-CARE-PROCESS": {
@@ -232,7 +237,7 @@
           ]
         },
         "C4-SOCIAL-CONTEXT": {
-          "status": "PRESS_ONLY_CANDIDATE_NOT_APPROVED",
+          "status": "ADOPTED_PREFREEZE",
           "logic": "food_nutrition_anchor AND social_eating_context AND operational_marker",
           "anchor": [
             "nutrition*",
@@ -259,7 +264,7 @@
             "counselling",
             "care process"
           ],
-          "reason": "The research question explicitly includes social eating contexts, but the pre-freeze registry lacks an explicit social-context retrieval subroute. This candidate must be independently stress-tested for noise before adoption."
+          "reason": "Adopted by the independent PRESS reviewer on 2026-09-28. It remains pre-freeze until provider-native validation, sentinel/known-item closure, GF-10 authorization and query freeze."
         }
       }
     }
@@ -277,7 +282,7 @@
     "reason": "These are important extraction/screening concepts but are too generic as standalone retrieval terms. They may be used only inside a constrained structural subroute or as post-retrieval coding dimensions."
   },
   "press_plan": {
-    "required_before_freeze": true,
+    "required_before_freeze": false,
     "review_items": [
       "research-question translation",
       "Boolean and block logic",
@@ -287,8 +292,7 @@
       "limits/filters",
       "known-item and sentinel recovery",
       "incremental yield for PRESS-only terms",
-      "manual relevance sample of incremental records",
-      "cross-database translation fidelity"
+      "manual relevance sample of incremental records"
     ],
     "delta_tests": [
       "B-NORM baseline vs + food based orthographic variant",
@@ -297,7 +301,9 @@
       "C3 implementation route standalone yield and precision sample",
       "C4 social-context route incremental yield and precision sample"
     ],
-    "freeze_rule": "No provider-specific string becomes FORMAL until the PRESS review record is PASS and GF-10 is explicitly authorized."
+    "freeze_rule": "PRESS is PASS. No provider-specific string becomes FORMAL until provider-native validation and sentinel/known-item closure are documented, GF-10 is explicitly authorized, and the exact provider query is version-frozen.",
+    "status": "COMPLETE_ACCEPT",
+    "delta_tests_policy": "DEVELOPMENTAL_QA_NON_GATING"
   },
   "guardrails": {
     "discovery_corpus_does_not_validate_formal_search": true,
