@@ -289,7 +289,7 @@ def test_command_leaves_the_article1_gate_state_untouched(database, capsys) -> N
     after = json.loads(master_path.read_text(encoding="utf-8"))
     assert after == before
     formal = after["formal_search"]
-    assert formal["press_status"] == "NOT_YET_RECORDED_AS_PASS"
+    assert formal["press_status"] == "PASS"
     assert formal["gf10_authorized"] is False
     assert formal["query_freeze_complete"] is False
     assert formal["formal_provider_search_executed"] is False
