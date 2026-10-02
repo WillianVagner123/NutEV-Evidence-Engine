@@ -3,6 +3,7 @@ const esc=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;'
 
 const APPLICATION_LABELS={
   GENERIC_EVIDENCE_PROJECT:'Projeto de evidências',
+  CRITICAL_STRUCTURED_REVIEW:'Revisão crítica estruturada',
   SCOPING_REVIEW:'Revisão de escopo',
   INTEGRATIVE_REVIEW:'Revisão integrativa'
 }
@@ -57,7 +58,7 @@ const GATE_NOTES={
   prisma:'Nenhum evento de busca PRISMA foi emitido.'
 }
 const COMPONENT_LABELS={
-  RESEARCH_QUESTION:'Pergunta de pesquisa',PCC:'PCC',SEARCH:'Busca',NORMALIZE:'Normalização',TRACEABILITY:'Rastreabilidade',DEDUPLICATE:'Deduplicação',DEDUPLICATION:'Deduplicação',ORGANIZE:'Organização',TITLE_ABSTRACT_SCREENING:'Triagem título/resumo',FULL_TEXT:'Texto completo',EXTRACTION:'Extração',HUMAN_VERIFICATION:'Verificação humana',SYNTHESIS:'Síntese',PRISMA_SCR:'PRISMA-ScR'
+  RESEARCH_QUESTION:'Pergunta de pesquisa',PCC:'PCC',SEARCH:'Busca',NORMALIZE:'Normalização',TRACEABILITY:'Rastreabilidade',DEDUPLICATE:'Deduplicação',DEDUPLICATION:'Deduplicação',ORGANIZE:'Organização',SOURCE_SELECTION:'Seleção transparente de fontes',TITLE_ABSTRACT_SCREENING:'Triagem título/resumo',FULL_TEXT:'Texto completo',EXTRACTION:'Extração',CRITICAL_COMPARISON:'Comparação crítica',HUMAN_VERIFICATION:'Verificação humana',SYNTHESIS:'Síntese',CONCEPTUAL_FRAMEWORK:'Arquitetura conceitual',PRISMA_SCR:'PRISMA-ScR'
 }
 
 async function jsonFetch(url,options={}){
@@ -171,7 +172,7 @@ function renderApplication(application,templates){
 
 function renderModules(application,capabilities){
   const appType=String(application?.application_type||'')
-  const reviewCopy=appType==='SCOPING_REVIEW'?'Triagem e verificação humana da revisão de escopo.':appType==='INTEGRATIVE_REVIEW'?'Triagem e verificação humana da revisão integrativa.':'Verificação humana configurável quando o projeto exigir.'
+  const reviewCopy=appType==='SCOPING_REVIEW'?'Triagem e verificação humana da revisão de escopo.':appType==='INTEGRATIVE_REVIEW'?'Triagem e verificação humana da revisão integrativa.':appType==='CRITICAL_STRUCTURED_REVIEW'?'Registro transparente da seleção e análise crítica das fontes.':'Verificação humana configurável quando o projeto exigir.'
   const modules=[
     capabilities.search?{href:'/search.html',icon:'⌕',title:'Buscar evidências',copy:'Consultar múltiplas fontes, normalizar, deduplicar e priorizar resultados.',meta:'SEARCH → NORMALIZE → DEDUPLICATE → RANK'}:null,
     {href:'/evidence-library.html',icon:'▤',title:'Biblioteca',copy:capabilities.libraryWrite?'Organizar documentos globais com estado, tags e notas privadas do projeto.':'Consultar os documentos do projeto, com estado, tags e notas em leitura.',meta:'Identidade global · contexto privado'},
