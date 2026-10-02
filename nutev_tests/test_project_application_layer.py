@@ -98,7 +98,12 @@ def test_builtin_templates_are_small_reusable_and_free_of_private_project_state(
     catalog = ApplicationTemplateCatalog()
     templates = {template.template_id: template for template in catalog.list()}
 
-    assert set(templates) == {\n        CRITICAL_STRUCTURED_REVIEW,\n        GENERIC_EVIDENCE_PROJECT,\n        SCOPING_REVIEW,\n        INTEGRATIVE_REVIEW,\n    }
+    assert set(templates) == {
+        CRITICAL_STRUCTURED_REVIEW,
+        GENERIC_EVIDENCE_PROJECT,
+        SCOPING_REVIEW,
+        INTEGRATIVE_REVIEW,
+    }
     critical = templates[CRITICAL_STRUCTURED_REVIEW]
     assert critical.components == (
         "RESEARCH_QUESTION",
@@ -440,6 +445,7 @@ def test_http_application_context_ignores_foreign_project_id_from_body(tmp_path:
         status, templates, _ = _http(base_url + "/api/application/templates", cookie=cookie_a)
         assert status == 200, templates
         assert {item["template_id"] for item in templates["templates"]} == {
+            CRITICAL_STRUCTURED_REVIEW,
             GENERIC_EVIDENCE_PROJECT,
             SCOPING_REVIEW,
             INTEGRATIVE_REVIEW,
