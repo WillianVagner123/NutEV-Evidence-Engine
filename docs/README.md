@@ -106,3 +106,4 @@ Regra editorial:
 - **transitório supersedido**: é removido do working tree; o Git continua preservando seu histórico.
 
 A execução Windows validada em 18/08/2026, por exemplo, permanece preservada em [`archive/2026/VALIDATED_WINDOWS_RUN_2026-08-18.md`](archive/2026/VALIDATED_WINDOWS_RUN_2026-08-18.md), mas não é baseline obrigatório da versão 1.1.0.
+- `article1_closeout/ARTICLE1_METHOD_TRANSITION_2026-10-01.md` — active Article 1 method transition; legacy scoping-search artifacts remain provenance only.
