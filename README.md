@@ -45,7 +45,11 @@ registro com as mesmas regras do Engine.
   tipo documental e a conta da prioridade de leitura;
 - **Exportação** CSV/JSON com manifesto e leitura local de `reference_ranking.jsonl`/`.csv`.
 
-Publicação: GitHub Pages via `.github/workflows/open-explorer-pages.yml`
+No site hospedado, a busca aberta fica em **`https://nutev.mindsperformance.com.br/aberto/`** e é a página
+inicial para quem não está logado; login só para a busca avançada (biblioteca,
+projetos, histórico e exportações privadas).
+
+Publicação adicional: GitHub Pages via `.github/workflows/open-explorer-pages.yml`
 (`https://willianvagner123.github.io/NutEV-Evidence-Engine/` depois de habilitar
 **Settings → Pages → Source: GitHub Actions**). Uso local: abra
 `apps/nutev-open/index.html`. Contrato e fronteiras:

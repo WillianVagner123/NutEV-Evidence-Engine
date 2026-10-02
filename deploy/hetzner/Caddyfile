@@ -1,7 +1,10 @@
 {$NUTEV_DOMAIN} {
     encode zstd gzip
 
-    basic_auth {
+    # The login-free Open Evidence Explorer (/aberto) is static and public by design;
+    # every other route stays behind Basic Auth and the application login.
+    @protected not path /aberto /aberto/*
+    basic_auth @protected {
         {$NUTEV_BASIC_AUTH_USER} {$NUTEV_BASIC_AUTH_HASH}
     }
 

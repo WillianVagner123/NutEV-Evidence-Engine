@@ -1494,6 +1494,9 @@
   // ------------------------------------------------------------------ init
 
   function init() {
+    // On the hosted NutEV runtime this page lives at /aberto/; only there does the
+    // login-protected advanced search exist on the same site.
+    if (location.pathname.indexOf("/aberto/") === 0) $("advanced-link").hidden = false;
     bindTooltip();
     bindTabs();
     bindFile();

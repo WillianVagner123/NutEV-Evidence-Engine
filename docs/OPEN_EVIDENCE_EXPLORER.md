@@ -116,6 +116,19 @@ python -m http.server 8000 --directory apps/nutev-open
 # http://localhost:8000
 ```
 
+## No site hospedado (Hetzner), sem login
+
+No runtime hospedado (`apps/nutev-web/secure_server.py`), o explorador é servido em **`/aberto/`**, e qualquer pessoa usa sem conta e sem vínculo com workspace:
+
+- `server.py` mapeia `/aberto` para `apps/nutev-open`, confinado a essa pasta;
+- no modo `pilot`, `request_boundary.pilot_route_kind` trata `/aberto` e `/aberto/` como estáticos públicos. Arquivos fora das extensões estáticas (por exemplo `presentation.json`) continuam bloqueados;
+- a CSP de `/aberto/*` permite `connect-src` apenas para as quatro APIs abertas. As demais páginas mantêm `connect-src 'self'`;
+- o visitante anônimo de `/` ou `/index.html` é enviado para `/aberto/` (302). Quem já entrou continua vendo a home normal;
+- o login só é necessário para a **busca avançada**: biblioteca, histórico, projetos, revisão e exportações privadas. O explorador mostra o atalho "Busca avançada (entrar)", e a tela de login e a home mostram "Buscar sem login";
+- no proxy Caddy gerenciado, `basic_auth` vale para todas as rotas exceto `/aberto` e `/aberto/*`. Se a produção usar um proxy externo, a mesma exceção precisa ser configurada nele (o deploy avisa com `::notice::` quando `/aberto/` responde 401).
+
+Testes: `nutev_tests/test_open_explorer_hosting.py` (servidor pilot real, visitante anônimo) e `nutev_tests/test_hetzner_autodeploy.py`.
+
 ## Publicação
 
 `.github/workflows/open-explorer-pages.yml` publica a pasta no GitHub Pages a cada push em `main` que toque o explorador, a configuração canônica ou o código de classificação. O workflow repete `--check` e os testes de paridade antes de publicar e grava o SHA do commit em `build-info.js`.

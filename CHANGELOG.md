@@ -4,6 +4,16 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Busca aberta sem login no site hospedado
+
+- O Explorador Aberto passa a ser servido pelo runtime hospedado em `/aberto/`. Ele é estático, sem estado privado, sem conta e sem vínculo com workspace.
+- No modo `pilot`, `/aberto` e `/aberto/` são rotas estáticas públicas. A CSP desse caminho (e só dele) permite `connect-src` para Europe PMC, PubMed, OpenAlex e Crossref. As demais páginas mantêm `connect-src 'self'`.
+- Visitantes anônimos de `/` e `/index.html` são enviados para `/aberto/`; membros autenticados mantêm a home. Login continua obrigatório para a busca avançada e para toda superfície privada.
+- A home anônima, o caso "sem workspace" e a tela de login ganharam o atalho "Buscar sem login". O explorador hospedado mostra "Busca avançada (entrar)".
+- `deploy/hetzner/Caddyfile`: `basic_auth` com matcher `@protected not path /aberto /aberto/*`. O smoke de deploy verifica `/aberto/` e avisa quando um proxy externo ainda exige Basic Auth nesse caminho.
+- Novo `nutev_tests/test_open_explorer_hosting.py`, com o servidor pilot real e visitante anônimo.
+
+
 ### Busca por pergunta: conceitos, sinônimos e uma string por base
 
 - Auditoria interna de palavras-chave e construção de buscas em `docs/SEARCH_KEYWORD_AUDIT_2026-10.md`: a busca rápida enviava a pergunta crua (inclusive em português) a bases em inglês, sem extração de conceitos, sinônimos, tradução, sintaxe por base ou filtro de período.

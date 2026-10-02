@@ -12,7 +12,13 @@ import threading
 import time
 from urllib.parse import parse_qs, unquote, urlparse
 
-from request_boundary import canonical_request_path, same_origin_write, pilot_route_kind
+from request_boundary import (
+    OPEN_EXPLORER_PREFIX,
+    canonical_request_path,
+    is_open_explorer_path,
+    pilot_route_kind,
+    same_origin_write,
+)
 from uuid import uuid4
 
 from nutev.tenancy import (
@@ -298,6 +304,30 @@ def _agent_context_status() -> dict[str, object]:
     }
 
 
+_DEFAULT_CSP = (
+    "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
+    "img-src 'self' data: https:; connect-src 'self'; font-src 'self'; "
+    "object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests"
+)
+# The login-free Open Evidence Explorer queries open bibliographic APIs straight
+# from the visitor's browser; only that static surface may connect to them.
+OPEN_EXPLORER_CONNECT_SRC = (
+    "https://www.ebi.ac.uk",
+    "https://api.openalex.org",
+    "https://api.crossref.org",
+    "https://eutils.ncbi.nlm.nih.gov",
+)
+_OPEN_EXPLORER_CSP = (
+    "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
+    "connect-src 'self' " + " ".join(OPEN_EXPLORER_CONNECT_SRC) + "; font-src 'self'; "
+    "object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'; upgrade-insecure-requests"
+)
+
+
+def _content_security_policy(path: str) -> str:
+    return _OPEN_EXPLORER_CSP if is_open_explorer_path(path) else _DEFAULT_CSP
+
+
 def _should_noindex(path: str) -> bool:
     return path in NOINDEX_EXACT_PATHS or any(path.startswith(prefix) for prefix in NOINDEX_PATH_PREFIXES)
 
@@ -323,6 +353,14 @@ class SecureNutEVHandler(NutEVHandler):
                 self._json({"error": "cross_origin_write_denied"}, HTTPStatus.FORBIDDEN)
                 return True
         kind = pilot_route_kind(path)
+        if path in {"/", "/index.html"} and self.command in {"GET", "HEAD"} and not self._has_auth_session():
+            # Visitors without an account land on the login-free open search;
+            # login is only needed for the private, advanced workspace.
+            self.send_response(HTTPStatus.FOUND)
+            self.send_header("Location", OPEN_EXPLORER_PREFIX + "/")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return True
         if self.command == "HEAD" and path.startswith("/api/"):
             self._json({"error": "method_not_allowed"}, HTTPStatus.METHOD_NOT_ALLOWED)
             return True
@@ -392,12 +430,7 @@ class SecureNutEVHandler(NutEVHandler):
         path = urlparse(self.path).path
         if _should_noindex(path):
             self.send_header("X-Robots-Tag", "noindex, nofollow")
-        self.send_header(
-            "Content-Security-Policy",
-            "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
-            "img-src 'self' data: https:; connect-src 'self'; font-src 'self'; "
-            "object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests",
-        )
+        self.send_header("Content-Security-Policy", _content_security_policy(path))
         super().end_headers()
 
     def _cookie_value(self, name: str) -> str:
@@ -486,6 +519,16 @@ class SecureNutEVHandler(NutEVHandler):
             },
             HTTPStatus.NOT_FOUND,
         )
+
+    def _has_auth_session(self) -> bool:
+        """Quiet session probe (sends nothing). Unknown/unavailable auth keeps the app page."""
+        token = self._auth_token()
+        if not token:
+            return False
+        try:
+            return _auth_service().resolve(token) is not None
+        except Exception:
+            return True
 
     def _resolve_authenticated_session(self) -> SessionPrincipal | None:
         token = self._auth_token()

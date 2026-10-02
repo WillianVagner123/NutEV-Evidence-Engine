@@ -29,12 +29,12 @@ async function selectProject(workspaceId,projectId,button){
 
 function renderSignedOut(){
   runtimeStatus.textContent='login necessário'
-  panel.innerHTML='<div class="product-panel-head"><div><span class="home-eyebrow">Seu espaço de pesquisa</span><h2>Entre para acessar workspaces e projetos</h2><p>Busca privada, biblioteca, histórico e exportações são isolados pela sessão autenticada.</p></div></div><div class="product-actions"><a class="action-primary" href="/login.html">Entrar no NutEV</a></div>'
+  panel.innerHTML='<div class="product-panel-head"><div><span class="home-eyebrow">Busca aberta, sem login</span><h2>Busque e entenda a qualidade do dado sem criar conta</h2><p>A busca aberta consulta fontes abertas direto do seu navegador e mostra o nível do dado (A/B/Q) e os eixos MEV/NEV. Entre só se precisar da busca avançada: biblioteca, histórico, projetos e exportações privadas.</p></div></div><div class="product-actions"><a class="action-primary" href="/aberto/">Buscar sem login</a><a class="action-secondary" href="/login.html">Entrar para busca avançada</a></div>'
 }
 
 function renderNoWorkspace(me){
   runtimeStatus.textContent='acesso pendente'
-  panel.innerHTML=`<div class="product-panel-head"><div><span class="home-eyebrow">Olá, ${esc(me.user?.display_name||'pesquisador')}</span><h2>Acesso ainda não provisionado</h2><p>Seu login está funcionando, mas nenhum workspace foi atribuído à sua conta. Solicite ao administrador do NutEV que crie ou libere seu espaço de pesquisa.</p></div></div>`
+  panel.innerHTML=`<div class="product-panel-head"><div><span class="home-eyebrow">Olá, ${esc(me.user?.display_name||'pesquisador')}</span><h2>Acesso ainda não provisionado</h2><p>Seu login está funcionando, mas nenhum workspace foi atribuído à sua conta. Solicite ao administrador do NutEV que crie ou libere seu espaço de pesquisa. Enquanto isso, a busca aberta funciona sem vínculo.</p></div></div><div class="product-actions"><a class="action-primary" href="/aberto/">Usar a busca aberta</a></div>`
 }
 
 function renderWorkspaceChooser(me,context){

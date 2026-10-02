@@ -8,6 +8,7 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 WEB = ROOT / "apps" / "nutev-web"
 VALIDATION = ROOT / "apps" / "nutev-validation"
+OPEN_EXPLORER = ROOT / "apps" / "nutev-open"
 _HREF_RE = re.compile(r'href=["\']([^"\']+)["\']')
 
 
@@ -22,6 +23,10 @@ def _internal_target_exists(href: str) -> bool:
         return (WEB / "index.html").is_file()
     if path in {"/validation", "/validation/"}:
         return (VALIDATION / "index.html").is_file()
+    if path == "/aberto" or path.startswith("/aberto/"):
+        # Served from apps/nutev-open by server.py (login-free Open Evidence Explorer).
+        candidate = OPEN_EXPLORER / path[len("/aberto"):].lstrip("/")
+        return (candidate / "index.html").is_file() if candidate.is_dir() else candidate.is_file()
     if path.startswith("/api/"):
         return True
     relative = path.lstrip("/")

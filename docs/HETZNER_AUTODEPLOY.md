@@ -206,7 +206,7 @@ runtime smoke inside the deploy does.
 
 ## Public HTTPS edge and Basic Auth
 
-The Caddy configuration protects the domain with Basic Auth. Therefore an unauthenticated edge probe has two acceptable states only:
+The Caddy configuration protects the domain with Basic Auth, except the login-free Open Evidence Explorer at `/aberto` and `/aberto/*` (static files from `apps/nutev-open`, no private state; see `docs/OPEN_EVIDENCE_EXPLORER.md`). Therefore an unauthenticated edge probe has two acceptable states only:
 
 - HTTP `200`: the route is intentionally accessible without Basic Auth;
 - HTTP `401`: the protected edge is reachable and correctly challenging for authentication.
@@ -216,7 +216,10 @@ The deployment workflow probes:
 - `/api/health`;
 - `/api/version`;
 - `/search.html`;
-- `/articles.html`.
+- `/articles.html`;
+- `/aberto/` (the public explorer; a `401` here means an outer proxy still applies Basic Auth to it and the deploy prints a notice to exempt `/aberto` and `/aberto/*`).
+
+In pilot mode the application itself sends anonymous visitors of `/` and `/index.html` to `/aberto/` (HTTP 302); signed-in members keep the normal home, and every private page and API still requires the application login.
 
 If `/api/version` is accessible with HTTP `200`, its commit must equal `TARGET_SHA`. If Caddy returns `401`, the workflow does not bypass authentication; build identity has already been verified through the local backend before the edge check.
 
