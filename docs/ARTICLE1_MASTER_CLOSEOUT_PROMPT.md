@@ -1,602 +1,321 @@
-# NUT-EV / ARTIGO 1 — PROMPT MASTER DE FECHAMENTO
-
-**Objetivo:** fechar tecnicamente o produto NutEV para o Artigo 1 e levar a revisão até o último ponto cientificamente permitido antes das decisões humanas que abrem PRESS/GF-10/freeze/busca formal/PRISMA.
+# NUT-EV / ARTIGO 1 / QUALIFICAÇÃO — PROMPT MESTRE DE FECHAMENTO
 
-**Pesquisador responsável:** Willian Vagner  
-**Orientador:** Dr. Caio Reis  
-**Workspace esperado:** `Doutorado — Willian Vagner`  
-**Projeto esperado:** `Artigo 1`  
-**ResearchApplication esperada:** `SCOPING_REVIEW`
-
-> Este documento é um prompt operacional e científico. Ele não substitui
-> `ARTICLE1_SEARCH_MASTER.md` nem `config/nutev/article1_search_master_v1.json`.
-> O runtime e os arquivos canônicos vencem qualquer snapshot descrito aqui quando houver divergência.
-
----
-
-## 0. REGRA-MÃE
-
-Trabalhe em uma sequência única:
-
-```text
-PROVAR RUNTIME
-→ FECHAR PRODUTO
-→ PROVAR ACESSO AO A1
-→ MATERIALIZAR FILAS / REVIEW SEM JULGAMENTO
-→ CONSOLIDAR PRESS PREP
-→ PARAR NOS GATES HUMANOS
-→ REGISTRAR HANDOFF FINAL
-```
+> Active method: `CRITICAL_STRUCTURED_REVIEW`. This prompt supersedes the prior scoping-review closeout prompt while preserving its artifacts as history.
 
-Não reconstruir autenticação, tenancy, projetos, ResearchApplication, Review ou deploy se a capacidade já existir.
+PROMPT MESTRE — FECHAMENTO DA QUALIFICAÇÃO, ARTIGO 1 E NUTEV EVIDENCE ENGINE
 
-Não confundir:
-
-- discovery com PRISMA;
-- retrieval com inclusão;
-- rota com elegibilidade;
-- rank/Tier com qualidade;
-- full text disponível com inclusão;
-- ResearchApplication configurada com aprovação científica;
-- acesso do orientador com aprovação metodológica.
-
----
-
-## 1. ESTADO CIENTÍFICO INVARIANTE
-
-Enquanto não houver decisão humana explícita e rastreável:
+Versão de convergência metodológica — decisão do pesquisador em 1º de outubro de 2026
 
-```text
-Discovery = concluído
-PRESS = PENDENTE / NÃO PASS
-GF-10 = NÃO AUTORIZADO
-Query freeze = PENDENTE
-Formal provider search = NÃO EXECUTADA
-Formal PRISMA search event = NÃO CRIADO
-C4 = NÃO APROVADO
-```
+## 1. Missão
 
-Nenhuma etapa técnica pode mudar isso.
+Você está trabalhando no doutorado de Willian Vagner, orientado pelo Dr. Caio Reis. Sua missão é fechar uma única linha científica coerente para a qualificação, reconstruir o Artigo 1 como revisão crítica estruturada, organizar o Google Drive sem perda de proveniência e alinhar o NutEV Evidence Engine ao novo desenho. Execute o trabalho de ponta a ponta, com auditoria, rastreabilidade e separação rigorosa entre estado histórico, material exploratório, documento ativo e resultado científico.
 
-Pergunta canônica:
+Não trate esta tarefa como continuação automática da antiga scoping review. A decisão metodológica atual substitui o desenho anterior do Artigo 1, preservando-o apenas como histórico e fonte de reaproveitamento.
 
-> Quais parâmetros nutricionais, competências alimentares e contextos sociais da alimentação são atualmente recomendados, estruturados e utilizados por diretrizes e modelos operacionais para orientar avaliação, aconselhamento, prescrição e monitoramento alimentar aplicáveis à Medicina do Estilo de Vida?
+## 2. Decisão científica já tomada
 
----
+- O Artigo 1 não será uma scoping review nem uma revisão sistemática.
 
-# ETAPA 1 — FECHAMENTO DO PRODUTO / RUNTIME
+- O Artigo 1 será um artigo teórico-metodológico sustentado por revisão crítica estruturada.
 
-## Entrada
+- Não haverá dupla triagem R1/R2 como requisito do método.
 
-- conta de Willian existente e ativa;
-- workspace/projeto já materializados ou provisionáveis por ferramenta oficial;
-- `SCOPING_REVIEW` ativa;
-- produção em `NUTEV_AUTH_MODE=pilot`.
+- Não usar PRISMA-ScR, não emitir evento PRISMA e não apresentar contagens exploratórias como corpus formal.
 
-## Fazer
+- O Dr. Caio Reis atuará como orientador e crítico metodológico, não como segundo triador obrigatório.
 
-1. verificar `main` exata;
-2. verificar SHA implantado;
-3. confirmar:
-   - conta ativa;
-   - `PLATFORM_ADMIN` quando necessário para operação;
-   - `WORKSPACE_OWNER`;
-   - workspace correto;
-   - projeto correto;
-   - aplicação ativa;
-   - `assembly_id=WILLIAN_DOCTORATE_A1`;
-   - `d132_config_version=d132-v1`;
-4. confirmar owner pins de A1 no processo real:
-   - `NUTEV_A1_WORKSPACE_ID`;
-   - `NUTEV_A1_PROJECT_ID`;
-5. garantir persistência dos pins entre deploys;
-6. fechar flakes de CI em vez de depender de reruns aleatórios;
-7. executar os gates locais/CI necessários;
-8. deploy exact-SHA;
-9. provar produção depois do deploy.
+- O NUT-EV será a contribuição conceitual proposta a partir da comparação crítica entre documentos consolidados e literatura de apoio.
 
-## Saída obrigatória
+- O NutEV Evidence Engine será infraestrutura de descoberta, organização, proveniência, classificação e auditoria; não será o objeto científico do Artigo 1.
 
-```text
-PRODUCT_RUNTIME = PASS
-```
+## 3. Identidade definitiva do Artigo 1
 
-com evidência de:
+### Título de trabalho
 
-- SHA main;
-- SHA produção;
-- health;
-- auth mode;
-- owner pins;
-- aplicação A1;
-- CI;
-- browser gate;
-- multitenant;
-- recovery readiness.
+Da recomendação à execução no cuidado nutricional: revisão crítica estruturada e proposição da arquitetura NUT-EV.
 
-Não avançar com uma tela “aparentemente funcionando” se o runtime ainda divergir.
+### Título em inglês
 
----
+From Recommendation to Enactment in Nutrition Care: A Structured Critical Review and Proposal of the NUT-EV Framework.
 
-# ETAPA 2 — PROVAR AS SUPERFÍCIES DO ARTIGO 1
+### Pergunta
 
-## Fazer
+Como guias alimentares, diretrizes clínicas e modelos profissionais consolidados transformam recomendações alimentares em ações executáveis, monitoráveis e adaptáveis no cuidado nutricional de adultos, e quais lacunas justificam a arquitetura NUT-EV?
 
-Com sessão autenticada de Willian e contexto correto:
+### Objetivo geral
 
-1. `GET /api/article1/scientific-state` → deve retornar 200;
-2. abrir D-132;
-3. abrir Biblioteca;
-4. abrir Human Review;
-5. confirmar acesso às superfícies históricas A1;
-6. confirmar B-NORM;
-7. confirmar C-STRUCT;
-8. confirmar vocabulary audit;
-9. confirmar full-text/retrieval surfaces disponíveis;
-10. registrar qualquer divergência runtime × arquivos estáticos.
+Analisar criticamente como documentos consolidados operacionalizam o cuidado nutricional e, a partir das convergências, divergências e lacunas identificadas, propor a arquitetura NUT-EV.
 
-## Não fazer
+### Objetivos específicos
 
-- não criar dados falsos para preencher tela;
-- não inferir ownership por nomes/path;
-- não ativar histórico sem owner binding inequívoco;
-- não converter contagens históricas em triagem/PRISMA.
+- Comparar como os documentos formulam recomendações alimentares.
 
-## Saída obrigatória
+- Identificar como avaliação, objetivos, planejamento, prescrição e aconselhamento são organizados.
 
-```text
-ARTICLE1_SURFACES = PASS
-```
+- Examinar como o contexto material, social, cultural e comportamental é incorporado.
 
-ou um blocker técnico exato, reproduzível e rastreado.
+- Mapear mecanismos de apoio à execução, monitoramento, adaptação e continuidade.
 
----
+- Distinguir elementos explicitamente descritos nas fontes de interpretações produzidas pelo autor.
 
-# ETAPA 3 — SNAPSHOT CIENTÍFICO DE TRABALHO
+- Comparar os achados com o ABCD-NutEV sem usar o ABCD como filtro de inclusão.
 
-Confirmar, sem promover esses números a PRISMA:
+- Propor a arquitetura NUT-EV e declarar claramente seu estágio de desenvolvimento e suas necessidades futuras de validação.
 
-```text
-Discovery bruto: 41.139
-Únicos: 33.839
-Aceitos estruturalmente: 33.067
-Quarentena estrutural: 772
+## 4. Corpus documental
 
-Tier A: 662
-Retrieved: 504
-Partial: 90
-Not retrieved: 68
-Retrieved + partial: 594/662 = 89,73%
+Construir um corpus primário delimitado, intencional, diversificado e justificável. Não buscar exaustividade universal. Registrar a razão de inclusão e a contribuição conceitual de cada documento.
 
-B-NORM: 85
-C-STRUCT: 316
-União: 351
-Overlap: 50
-Unrouted: 311
+### Núcleo A — Guias alimentares
 
-Vocabulary audit:
-B-NORM: 27 candidatos
-C-STRUCT: 49 candidatos
-```
+- Incluir o Guia Alimentar para a População Brasileira como documento central.
 
-Se o runtime não confirmar algum número, registrar a divergência e manter o valor apenas como snapshot histórico, nunca como runtime atual.
+- Selecionar guias internacionais vigentes que representem diversidade conceitual, regional e operacional.
 
----
+- Priorizar documentos que tratem de contexto, práticas alimentares, implementação ou aplicação profissional.
 
-# ETAPA 4 — HUMAN REVIEW READY, SEM JULGAMENTO
+- Não incluir todos os países apenas porque aparecem no repositório da FAO.
 
-## 4.1 Desenho cego S1–S6
+### Núcleo B — Diretrizes clínicas
 
-Existe um desenho de precisão descrito para 150 registros, 25 por fatia, mas os arquivos S1–S6 não estão canonicamente materializados no runtime/repositório atual. Se esse desenho for mantido, o pacote deve ser regenerado de forma determinística e versionada antes de qualquer julgamento humano:
+- Priorizar obesidade, diabetes tipo 2 e doenças cardiovasculares/hipertensão.
 
-```text
-S1 = B-NORM apenas por standard*
-S2 = B-NORM apenas por recommendation*
-S3 = o que BN-ALT-ti perderia
-S4 = incremento de counsel(l)ing em C1
-S5 = incremento exclusivo de C4 sobre C1–C3
-S6 = incremento de eating competence
-```
+- Incluir apenas diretrizes com processo nutricional substantivo: avaliação, objetivos, planejamento, implementação, monitoramento ou adaptação.
 
-## Fazer
+- Excluir diretrizes que apenas recomendem alimentação saudável sem descrever operacionalização.
 
-- após a regeneração, validar integridade dos 150 registros;
-- confirmar reprodutibilidade/manifesto;
-- garantir cegamento;
-- remover/impedir rank, score, machine relevance e decisão do outro revisor;
-- preparar dois revisores independentes;
-- preparar adjudicação humana posterior;
-- preservar denominadores;
-- documentar cobertura de frame;
-- manter explícito que S3 tem cobertura incompleta do frame (87,2%).
+### Núcleo C — Modelos profissionais
 
-## Não fazer
+- Incluir Nutrition Care Process, modelos de aconselhamento, competências profissionais, cuidado crônico, medicina do estilo de vida e continuidade do cuidado.
 
-Claude/automação NÃO decide Y/N/U e NÃO adjudica.
+- Tratar documentos profissionais como fontes normativas/operacionais, e não como provas automáticas de efetividade.
 
-Pode criar infraestrutura de round, itens, atribuições e estado de pendência somente quando isso não cria uma decisão científica.
+### Núcleo D — Literatura conceitual de apoio
 
----
+- Utilizar adesão, implementação, autogerenciamento, planejamento da ação, tomada de decisão compartilhada, análise funcional, adaptação e carga do tratamento para interpretar lacunas.
 
-# ETAPA 5 — D-132
+- Não transformar esse núcleo em um segundo corpus exaustivo.
 
-Confirmar o contrato:
+Estimativa inicial do corpus primário: 25 a 35 documentos. O número final deve decorrer dos estratos definidos e da contribuição conceitual, nunca de seleção oportunista.
 
-```text
-config = d132-v1
-sample = 100
-D02 = 25
-D03 = 25
-D04 = 25
-D05 = 25
-decisions = Y / N / U
-revisores cegos independentes
-adjudicação humana
-```
+## 5. Critérios de seleção
 
-Limitação a preservar:
+### Incluir
 
-- o D-132 atual é enviesado para recência como estimativa global de precisão;
-- não usar a amostra atual para inferir precisão de todo o incremento.
+- Documentos oficiais ou profissionais reconhecidos.
 
-Preparar duas opções para decisão humana:
+- Versão vigente, salvo uso histórico explicitamente justificado.
 
-```text
-A) manter D-132 como exploratório / recency-biased
-B) especificar D-132b aleatório/estratificado
-```
+- Aplicação a adultos.
 
-Não implementar D-132b sem decisão humana explícita.
+- Descrição relevante de pelo menos uma etapa operacional do cuidado nutricional.
 
----
+- Texto integral verificável.
 
-# ETAPA 6 — PRESS PREP: B-NORM
+### Excluir
 
-Dados de desenvolvimento já observados no PubMed:
+- Ensaios de eficácia de dietas sem descrição do processo de cuidado.
 
-- `standard*` responde por aproximadamente metade do B-NORM atual;
-- há hipótese de ruído por usos genéricos de “standard”;
-- uma alternativa mais específica, BN-ALT-ti, reduziu fortemente o volume e recuperou os known items normativos usados naquele teste;
-- isso NÃO autoriza substituir a rota atual.
+- Estudos que apenas medem adesão.
 
-## Fazer
+- Literatura psicológica genérica sem aplicação alimentar.
 
-Depois da leitura humana S1/S2/S3:
+- Aplicativos ou ferramentas isoladas sem modelo de cuidado.
 
-- estimar precisão por fatia;
-- registrar perdas relevantes;
-- registrar known-item recovery;
-- comparar sensibilidade/especificidade de forma descritiva;
-- separar:
-  - manter;
-  - estreitar;
-  - testar mais;
-  - decisão humana necessária.
+- Documentos exclusivamente pediátricos, escolares, animais ou esportivos.
 
-Nunca declarar “melhor estratégia” sem decisão metodológica humana.
+- Versões duplicadas ou superadas, salvo análise histórica declarada.
 
----
+## 6. Matriz analítica
 
-# ETAPA 7 — PRESS PREP: C1–C4
+Extrair de cada documento: identificação e autoridade institucional; população e contexto; natureza da recomendação; avaliação alimentar, clínica e contextual; definição de objetivos; personalização; planejamento/prescrição; participação do paciente; barreiras e recursos; apoio à execução; profissionais envolvidos; monitoramento; critérios de progresso; adaptação; manutenção; continuidade; instrumentos fornecidos; componentes ABCD-NutEV presentes; elementos externos ao ABCD; relações explicitamente afirmadas pela fonte; inferências interpretativas do autor.
 
-## C1 — CARE PROCESS
+Organizar a síntese funcional em sete movimentos: avaliar pessoa/alimentação/contexto; definir objetivos; formular recomendação; planejar execução; apoiar enactment; monitorar resultados; adaptar e dar continuidade.
 
-Prioridade: incremento de counsel(l)ing e demais termos de care process.
+## 7. Método e rigor
 
-Pergunta operacional:
+- Descrever o estudo honestamente como revisão crítica estruturada.
 
-> O incremento traz estruturas reais de avaliação/aconselhamento/prescrição/monitoramento, ou literatura genérica sem utilidade para a pergunta?
+- Documentar fontes consultadas, termos de busca, datas e processos de citation chasing.
 
-## C2 — COMPETENCY / LITERACY
+- Manter lista de documentos considerados, incluídos como corpus primário, usados como apoio e não utilizados.
 
-Manter separados:
+- Registrar justificativa de inclusão, versão, emissor e função analítica.
 
-- food literacy;
-- nutrition literacy;
-- food skills;
-- culinary skills;
-- food agency;
-- eating competence;
-- professional competence.
+- Não afirmar exaustividade, mapeamento integral ou eliminação de viés de seleção.
 
-Known items perdidos que voltam com termos específicos devem ser tratados como sinal de lacuna, não como autorização automática de inclusão de termo.
+- Aplicar SANRA como auditoria editorial da revisão narrativa.
 
-## C3 — IMPLEMENTATION
+- Separar evidência textual da fonte, interpretação do autor e proposição do modelo.
 
-Distinguir implementação estruturada de uso genérico da palavra `implementation`.
+- Submeter pergunta, corpus e arquitetura à crítica do Dr. Caio antes da versão de banca.
 
-Termo solto de alto ruído não entra automaticamente.
+## 8. Tratamento das buscas anteriores
 
-## C4 — SOCIAL CONTEXT
+- Classificar todas as buscas B-NORM/C1–C4 e N1/A1/A2/A3 como desenvolvimento exploratório histórico.
 
-C4 continua candidato PRESS não aprovado.
+- Classificar as 69.375 ocorrências das sete bases como PILOT_SEARCH — PRE_PRESS — NOT_PRISMA.
 
-A leitura humana deve responder se o grande incremento acrescenta material necessário ou majoritariamente ruído.
+- Não importar todas essas ocorrências para uma triagem formal.
 
-Separar ao menos:
+- Reaproveitar as buscas apenas para localizar documentos relevantes, vocabulário, sentinelas e referências conceituais.
 
-- food environment;
-- social determinants;
-- social support;
-- commensality/eating together;
-- family meals;
-- food culture;
-- food insecurity;
-- policy/monitoring.
+- Preservar strings, exportações, logs, discrepâncias e pareceres PRESS como proveniência histórica.
 
----
+- Não transferir o PRESS da antiga scoping review para o artigo de revisão crítica.
 
-# ETAPA 8 — KNOWN ITEMS
+## 9. Organização do Google Drive
 
-Usar o conjunto atual de 14 sentinelas como ferramenta de desenvolvimento, nunca como prova isolada de validade.
+Preservar o diretório principal do Artigo 1 e reorganizá-lo para a revisão crítica estruturada. Não excluir arquivos. Mover materiais superados para histórico e renomeá-los com status inequívoco.
 
-Dar atenção especial às perdas já identificadas:
+- 00_CANONICO_E_GOVERNANCA: decisão metodológica, prompt mestre, mapa canônico e registro de mudanças.
 
-```text
-KI03 — eating competence
-KI08 — physician/lifestyle medicine competencies
-KI10 — food environments
-KI13 — lifestyle medicine / healthy nutrition sem recuperação por variantes testadas
-```
+- 01_MANUSCRITO: somente o manuscrito ativo e suas fontes de redação imediatas.
 
-Para cada perda:
+- 02_METODO_E_MATRIZ: protocolo operacional da revisão crítica, critérios de seleção, corpus e matriz analítica.
 
-- confirmar metadados;
-- confirmar rota esperada;
-- testar por que perdeu;
-- identificar bloco ausente;
-- registrar custo de recuperação;
-- classificar impacto;
-- deixar decisão final humana.
+- 03_BUSCAS_DE_APOIO_E_PROVENIENCIA: estratégias e buscas usadas para descoberta, sem PRISMA.
 
----
+- 04_CORPUS_E_FONTES_DOCUMENTAIS: guias, diretrizes e modelos organizados pelos núcleos A–C.
 
-# ETAPA 9 — MATRIZ CONCEITUAL
+- 05_EXTRACAO_E_SINTESE: matriz preenchida, comparações e auditoria.
 
-Manter matriz de trabalho sem transformar eixos em achados finais.
+- 06_RESULTADOS_TABELAS_E_FIGURAS: produtos finais do artigo.
 
-Eixos candidatos:
+- 07_REFERENCIAS_E_BASE_TEORICA: literatura conceitual do núcleo D.
 
-1. assessment;
-2. dietary quality;
-3. intake;
-4. dietary pattern;
-5. nutrition status;
-6. food skills;
-7. food literacy;
-8. culinary competence;
-9. counseling;
-10. prescription;
-11. goal setting;
-12. monitoring;
-13. follow-up;
-14. behavior change;
-15. food environment;
-16. social determinants;
-17. social support;
-18. commensality/shared meals;
-19. implementation;
-20. professional competencies;
-21. eating competence, se mantido como construto separado.
+- 90_HISTORICO_E_BACKUPS: protocolos de scoping review, workbooks, PRISMA, PRESS, exportações piloto, backups e documentos superados.
 
-Sempre distinguir:
+A pasta criada em setembro com o título Scoping Review — Recommendation to Enactment deve ser movida integralmente para histórico e renomeada como não vigente. O conteúdo não deve ser apagado.
 
-- relação explícita na fonte;
-- interpretação provisória do time.
+## 10. Fechamento da qualificação
 
----
+- Ler integralmente o texto mestre da qualificação e identificar trechos dependentes da antiga scoping review.
 
-# ETAPA 10 — DECISÕES HUMANAS
+- Criar uma cópia de trabalho antes de alterações extensas.
 
-## Para Willian
+- Atualizar o projeto para apresentar o Artigo 1 como revisão crítica estruturada.
 
-Operacionais/metodológicas que exigem decisão:
+- Distinguir NUT-EV, NUT-EV EXEC e NutEV Evidence Engine.
 
-- quem serão os dois revisores;
-- quem adjudica;
-- se D-132 atual fica só exploratório;
-- se haverá D-132b;
-- quem valida sintaxe Scopus/WoS;
-- quem será revisor PRESS independente;
-- escopo de bases adicionais para PRESS.
+- Apresentar o Engine como infraestrutura técnica, não como resultado científico que valida o modelo.
 
-## Para Dr. Caio Reis
+- Revisar a arquitetura dos quatro artigos e eliminar sobreposições.
 
-Levar apenas decisões acadêmicas:
+- Atualizar cronograma, produtos, riscos e estágio atual.
 
-1. escopo de “parâmetros nutricionais”;
-2. aprovação/rejeição/manutenção de C4;
-3. `eating competence` dentro de competências alimentares;
-4. trade-off B-NORM sensibilidade × especificidade;
-5. uso de vocabulário controlado/publication types;
-6. assimetria de campos entre PubMed/Scopus/WoS;
-7. conjunto de sentinelas;
-8. literatura cinzenta/FBDG/Guia Alimentar.
+- Transferir logs técnicos, buscas extensas, PRESS e auditorias para apêndices.
 
-Não sobrecarregar o orientador com bugs ou operação de servidor.
+- Reduzir redundâncias e produzir uma versão de banca legível, mantendo o texto mestre completo como fonte.
 
----
+- Não fabricar resultados; usar as análises existentes apenas quando sua proveniência estiver demonstrada.
 
-# ETAPA 11 — GATE PRESS
+## 11. Fechamento do manuscrito do Artigo 1
 
-Só após:
+Estruturar o manuscrito em: introdução; problema da recomendação sem execução; objetivo; método; caracterização do corpus; comparação dos guias; comparação das diretrizes; comparação dos modelos profissionais; lacunas; arquitetura NUT-EV; exemplo de aplicação; limitações; agenda de pesquisa; conclusão.
 
-- revisão humana suficiente das fatias;
-- known items revisados;
-- sintaxe por provider revisada;
-- decisões humanas registradas;
-- PRESS independente concluído quando definido;
-- pendências críticas fechadas.
+- Entregar quadro com todos os documentos do corpus.
 
-Então preparar uma decisão humana explícita:
+- Entregar matriz comparativa por função operacional.
 
-```text
-PRESS = PASS ou REVISE
-```
+- Entregar figura recomendação → execução → monitoramento → adaptação.
 
-Claude não atribui PASS sozinho.
+- Entregar quadro de convergências, lacunas e contribuição do NUT-EV.
 
-Se REVISE:
-- voltar às rotas/termos indicados;
-- rerodar apenas os deltas necessários.
+- Entregar seção explícita sobre limites da revisão por pesquisador único.
 
----
+## 12. Alinhamento do NutEV Evidence Engine
 
-# ETAPA 12 — GF-10 / QUERY FREEZE / FORMAL SEARCH
+O produto técnico está funcional, mas o estado científico do Artigo 1 no repositório ainda representa a antiga scoping review. Corrigir essa divergência sem destruir o histórico.
 
-Somente depois de `PRESS = PASS` humano:
+- Criar um registro ativo de método para CRITICAL_STRUCTURED_REVIEW.
 
-1. registrar autorização explícita de GF-10;
-2. congelar queries provider-specific;
-3. versionar;
-4. checksums;
-5. registrar versões de provider/sintaxe;
-6. executar buscas formais;
-7. registrar eventos formais;
-8. só então construir PRISMA formal.
+- Marcar ARTICLE1_SEARCH_MASTER e os artefatos PRESS/PRISMA como programa histórico de busca, não como fonte ativa do método atual.
 
-Discovery anterior permanece discovery.
+- Manter todos os gates antigos fechados ou não aplicáveis; nunca convertê-los em aprovação do novo desenho.
 
----
+- Atualizar AI_CONTEXT, AGENTS, documentação viva e prompt de fechamento.
 
-# ETAPA 13 — FECHAMENTO DE PRODUTO
+- Adicionar suporte explícito ao tipo CRITICAL_STRUCTURED_REVIEW na camada de aplicação somente se a mudança for testada e não quebrar tenants existentes.
 
-Antes de declarar o produto fechado:
+- Permitir classificar fontes como CORPUS_PRIMARY, SUPPORTING_LITERATURE, EXPLORATORY_PILOT ou HISTORICAL.
 
-- nenhum workflow operacional temporário ativo;
-- nenhuma senha/token no Git/log;
-- PRs obsoletos fechados;
-- PRs necessários mergeados;
-- CI reproduzível;
-- browser gate reproduzível;
-- deploy exact-SHA;
-- recovery readiness;
-- production doctorate audit;
-- owner/supervisor isolamento;
-- owner pins persistentes;
-- documentação de bootstrap;
-- documentação de rollback;
-- documentação de A1;
-- estado científico mostrado corretamente;
-- nenhum gate aberto por efeito colateral.
+- Preservar proveniência, identidade, hashes, fontes e razões humanas de seleção.
 
----
+- Não exigir fluxo R1/R2 ou PRISMA para o desenho ativo.
 
-# ETAPA 14 — HANDOFF FINAL
+- Manter triagem humana, PRESS e módulos sistemáticos disponíveis para outros projetos.
 
-Gerar/atualizar, sem sobrescrever canônicos indevidamente:
+- Não alterar tags/releases imutáveis nem afirmar nova validação científica.
 
-```text
-ARTICLE1_CURRENT_STATE.md
-ARTICLE1_PRESS_PREP_V02.md
-ARTICLE1_QUERY_DELTA_PLAN.md
-ARTICLE1_KNOWN_ITEMS.md
-ARTICLE1_CONCEPT_MATRIX_V01.md
-ARTICLE1_PENDING_HUMAN_DECISIONS.md
-ARTICLE1_CLOSEOUT_REPORT.md
-```
+- Executar testes focalizados, auditorias e CI; abrir PR dedicado e não fazer merge se os gates obrigatórios falharem.
 
-O relatório final deve ter:
+## 13. Guardrails
 
-```text
-PRODUCT
-main SHA
-production SHA
-auth mode
-workspace/project/application
-owner binding
-CI/browser/recovery
+- Não apagar documentos ou dados.
 
-ARTICLE 1
-scientific-state endpoint
-corpus/rotas
-D-132
-Human Review
-full text
-known items
-delta tests
-precision samples
+- Não mover arquivos sem confirmar os pais atuais e o destino.
 
-SCIENTIFIC GATES
-Discovery
-PRESS
-GF-10
-freeze
-formal search
-PRISMA
-C4
+- Não reclassificar piloto como resultado formal.
 
-PENDING HUMAN DECISIONS
-Willian
-Dr. Caio Reis
+- Não confundir ranking com qualidade ou elegibilidade.
 
-NEXT ACTION
-uma única próxima ação concreta
-```
+- Não inferir validação do NUT-EV a partir de presença em documentos.
 
----
+- Não inventar referência, DOI, citação, contagem, aprovação, parecer ou decisão do orientador.
 
-# CRITÉRIO DE “PROJETO FECHADO”
+- Não dizer que o Dr. Caio aprovou o novo método até haver registro explícito.
 
-Existem dois fechamentos diferentes.
+- Não criar um segundo Engine ou duplicar o sistema.
 
-## PRODUTO FECHADO
+- Não expandir novamente o escopo para toda a ciência do comportamento alimentar.
 
-Pode ser declarado quando:
+## 14. Sequência obrigatória
 
-```text
-runtime estável
-segurança/isolamento comprovados
-A1 acessível
-Review funcional
-deploy/recovery reproduzíveis
-owner pins persistentes
-documentação operacional suficiente
-nenhum blocker técnico conhecido aberto
-```
+- Fase 1: inventário e backup lógico.
 
-## ARTIGO 1 FORMALMENTE PRONTO PARA BUSCA
+- Fase 2: registro da decisão e organização do Drive.
 
-Só pode ser declarado quando:
+- Fase 3: protocolo operacional e matriz da revisão crítica.
 
-```text
-PRESS humano = PASS
-GF-10 autorizado
-queries congeladas/versionadas
-provider syntax validada
-```
+- Fase 4: corpus-mestre e classificação das fontes.
 
-Esses dois estados não são equivalentes.
+- Fase 5: extração e síntese.
 
----
+- Fase 6: reconstrução do manuscrito.
 
-# REGRA DE EXECUÇÃO AUTÔNOMA
+- Fase 7: atualização e redução da qualificação.
 
-Não parar no primeiro defeito.
+- Fase 8: sincronização do Evidence Engine.
 
-Para cada blocker técnico:
+- Fase 9: auditoria científica, editorial e técnica.
 
-```text
-reproduzir
-→ causa raiz
-→ teste que falha
-→ correção mínima
-→ teste focal
-→ gates
-→ merge
-→ deploy
-→ prova de produção
-→ documentação
-```
+## 15. Entregáveis obrigatórios
 
-Para cada pendência científica:
+- Registro de decisão metodológica do Artigo 1.
 
-```text
-organizar evidência
-→ quantificar
-→ preparar comparação
-→ registrar incerteza
-→ entregar decisão humana
-```
+- Mapa canônico do Drive.
 
-Nunca preencher uma lacuna científica com uma decisão automática.
+- Protocolo operacional da revisão crítica estruturada.
+
+- Lista-mestra e classificação do corpus.
+
+- Matriz analítica.
+
+- Manuscrito do Artigo 1 atualizado.
+
+- Texto da qualificação atualizado e versão enxuta para banca.
+
+- Registro de transição metodológica no repositório.
+
+- PR do Engine com testes e documentação.
+
+- Relatório final com arquivos alterados, decisões, pendências reais e uma única próxima ação.
+
+## 16. Critério de conclusão
+
+O trabalho só estará fechado quando houver uma única identidade do Artigo 1; nenhum documento ativo o chamar de scoping review; corpus e literatura de apoio estiverem separados; buscas antigas estiverem preservadas como piloto/histórico; manuscrito e qualificação estiverem coerentes; o Engine não exibir os gates da antiga scoping review como obrigações do método atual; e toda afirmação científica estiver apoiada por fonte verificável.
+
+## 17. Forma do relatório final
+
+Entregue: resumo executivo; decisões consolidadas; mapa do Drive antes/depois; documentos canônicos; estado do Artigo 1; estado da qualificação; estado do Engine; testes executados; limitações; pendências que dependem de Willian ou Dr. Caio; próxima ação única. Não encerre com lista genérica de possibilidades.
