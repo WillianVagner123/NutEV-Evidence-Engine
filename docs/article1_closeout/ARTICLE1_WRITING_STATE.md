@@ -1,10 +1,10 @@
 # Article 1 — Active writing transition
 
 **Active method:** `CRITICAL_STRUCTURED_REVIEW`  
-**Status:** `OWNER_APPROVED_ADVISOR_CONFIRMATION_PENDING`  
+**Status:** `OWNER_AND_ADVISOR_APPROVED`  
 **Authority:** `config/nutev/article1_method_master_v2.json`
 
-The material below is retained as the editorial/scientific snapshot of the former scoping-review program. It must not be treated as the active Article 1 method, and its PRESS/GF-10/freeze/PRISMA gates do not transfer.
+Advisor confirmation of the active method was recorded by the owner on 2026-10-02. This confirmation does not freeze the final corpus or approve unwritten results.\n\nThe material below is retained as the editorial/scientific snapshot of the former scoping-review program. It must not be treated as the active Article 1 method, and its PRESS/GF-10/freeze/PRISMA gates do not transfer.
 
 ---
 
