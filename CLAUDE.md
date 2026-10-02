@@ -4,7 +4,7 @@ Before changing or analyzing this repository:
 
 1. Read `AGENTS.md`.
 2. Read `AI_CONTEXT.md`.
-3. For Article 1, read `ARTICLE1_SEARCH_MASTER.md` and `config/nutev/article1_search_master_v1.json`.
+3. For Article 1, read `config/nutev/article1_method_master_v2.json` and `docs/article1_closeout/ARTICLE1_METHOD_TRANSITION_2026-10-01.md` first; read the Search Master only as historical scoping-search provenance.
 
 The shared source of truth for ChatGPT/Codex and Claude is `AI_CONTEXT.md`; do not create a separate Claude-only scientific state.
 

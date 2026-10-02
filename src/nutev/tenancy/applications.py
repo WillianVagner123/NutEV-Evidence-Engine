@@ -14,6 +14,7 @@ from .permissions import AuthorizationContext, Permission, PermissionService
 APPLICATION_SCHEMA_VERSION = 1
 
 GENERIC_EVIDENCE_PROJECT = "GENERIC_EVIDENCE_PROJECT"
+CRITICAL_STRUCTURED_REVIEW = "CRITICAL_STRUCTURED_REVIEW"
 SCOPING_REVIEW = "SCOPING_REVIEW"
 INTEGRATIVE_REVIEW = "INTEGRATIVE_REVIEW"
 
@@ -122,6 +123,33 @@ BUILTIN_APPLICATION_TEMPLATES: tuple[ApplicationTemplate, ...] = (
             "SYNTHESIS",
         ),
         defaults_json=_json({"framework": None, "reporting_profile": None}),
+    ),
+    ApplicationTemplate(
+        template_id=CRITICAL_STRUCTURED_REVIEW,
+        version="1.0",
+        name="Structured Critical Review",
+        application_type=CRITICAL_STRUCTURED_REVIEW,
+        description="Transparent critical synthesis for a bounded source corpus and conceptual framework development.",
+        components=(
+            "RESEARCH_QUESTION",
+            "SEARCH",
+            "TRACEABILITY",
+            "ORGANIZE",
+            "SOURCE_SELECTION",
+            "EXTRACTION",
+            "CRITICAL_COMPARISON",
+            "SYNTHESIS",
+            "CONCEPTUAL_FRAMEWORK",
+        ),
+        defaults_json=_json(
+            {
+                "framework": None,
+                "reporting_profile": None,
+                "quality_audit": "SANRA",
+                "dual_independent_screening_required": False,
+                "prisma_applicable": False,
+            }
+        ),
     ),
     ApplicationTemplate(
         template_id=SCOPING_REVIEW,

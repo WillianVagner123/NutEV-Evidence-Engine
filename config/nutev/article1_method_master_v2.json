@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "master_type": "NUTEV_ARTICLE1_METHOD_MASTER",
+  "master_version": "article1-method-master-v2",
+  "status": "OWNER_APPROVED_ADVISOR_CONFIRMATION_PENDING",
+  "active_for_current_article1": true,
+  "study_type": "CRITICAL_STRUCTURED_REVIEW",
+  "title_pt": "Da recomendação à execução no cuidado nutricional: revisão crítica estruturada e proposição da arquitetura NUT-EV",
+  "title_en": "From Recommendation to Enactment in Nutrition Care: A Structured Critical Review and Proposal of the NUT-EV Framework",
+  "question": "Como guias alimentares, diretrizes clínicas e modelos profissionais consolidados transformam recomendações alimentares em ações executáveis, monitoráveis e adaptáveis no cuidado nutricional de adultos, e quais lacunas justificam a arquitetura NUT-EV?",
+  "objective": "Analisar criticamente como documentos consolidados operacionalizam o cuidado nutricional e, a partir das convergências, divergências e lacunas identificadas, propor a arquitetura NUT-EV.",
+  "population": "ADULTS",
+  "corpus": {
+    "selection_model": "BOUNDED_PURPOSIVE_TRANSPARENT",
+    "estimated_primary_documents": "25_TO_35_NOT_A_TARGET_OR_CLAIM",
+    "strata": [
+      "FOOD_BASED_DIETARY_GUIDES",
+      "CLINICAL_NUTRITION_GUIDELINES",
+      "PROFESSIONAL_CARE_MODELS"
+    ],
+    "supporting_literature_role": "CONCEPTUAL_INTERPRETATION_NOT_SECOND_EXHAUSTIVE_CORPUS"
+  },
+  "method": {
+    "single_researcher_selection": true,
+    "dual_independent_screening_required": false,
+    "prisma_scr_applicable": false,
+    "formal_prisma_event_applicable": false,
+    "exhaustive_mapping_claimed": false,
+    "selection_register_required": true,
+    "source_provenance_required": true,
+    "sanra_editorial_audit_planned": true,
+    "supervisor_methodological_review": "PENDING_EXPLICIT_RECORD"
+  },
+  "evidence_roles": [
+    "CORPUS_PRIMARY",
+    "SUPPORTING_LITERATURE",
+    "EXPLORATORY_PILOT",
+    "HISTORICAL"
+  ],
+  "analytic_functions": [
+    "ASSESS_PERSON_DIET_CONTEXT",
+    "DEFINE_GOALS",
+    "FORMULATE_RECOMMENDATION",
+    "PLAN_EXECUTION",
+    "SUPPORT_ENACTMENT",
+    "MONITOR_OUTCOMES",
+    "ADAPT_AND_CONTINUE"
+  ],
+  "abcd_nutev_role": "POST_EXTRACTION_ANALYTIC_CROSSWALK_NOT_ELIGIBILITY_FILTER",
+  "legacy_scoping_program": {
+    "status": "HISTORICAL_SUPERSEDED_NOT_DELETED",
+    "search_master": "config/nutev/article1_search_master_v1.json",
+    "search_architectures": [
+      "B-NORM/C1-C4",
+      "N1/A1/A2/A3"
+    ],
+    "september_interface_total": 69375,
+    "classification": "PILOT_SEARCH_PRE_PRESS_NOT_PRISMA",
+    "press_transferable_to_current_method": false
+  },
+  "engine_role": {
+    "product": "SCIENTIFIC_EVIDENCE_SYSTEM",
+    "permitted": [
+      "DISCOVERY_SUPPORT",
+      "PROVENANCE",
+      "ORGANIZATION",
+      "CLASSIFICATION",
+      "EXTRACTION_SUPPORT",
+      "AUDIT"
+    ],
+    "forbidden_inferences": [
+      "SCIENTIFIC_VALIDATION",
+      "AUTOMATIC_ELIGIBILITY",
+      "AUTOMATIC_MODEL_VALIDATION",
+      "PRISMA_FROM_PILOT"
+    ]
+  },
+  "human_decisions": {
+    "owner": "APPROVED",
+    "advisor": "PENDING_EXPLICIT_CONFIRMATION",
+    "final_corpus": "PENDING",
+    "manuscript_freeze": "PENDING"
+  },
+  "guardrails": {
+    "do_not_delete_legacy_artifacts": true,
+    "do_not_require_r1_r2_for_active_method": true,
+    "do_not_emit_prisma_for_active_method": true,
+    "do_not_claim_exhaustiveness": true,
+    "do_not_use_engine_rank_as_quality_or_eligibility": true,
+    "do_not_claim_nutev_validation": true
+  }
+}

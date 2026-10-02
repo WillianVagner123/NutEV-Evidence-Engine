@@ -1,6 +1,8 @@
-# Article 1 — Search Master
+# Article 1 — Legacy Scoping Search Master
 
-**Canonical status:** `PRESS_COMPLETE_GF10_PENDING`
+> **Historical status:** this file preserves the former scoping-review search program. The active Article 1 method is `CRITICAL_STRUCTURED_REVIEW` and is controlled by `config/nutev/article1_method_master_v2.json`. PRESS, GF-10, query-freeze, formal-search and PRISMA fields below are not obligations or approvals for the active critical review.
+
+**Historical scoping-program status:** `PRESS_COMPLETE_GF10_PENDING`
 
 This is the main human-readable control file for the Article 1 search. For machine-readable state use `config/nutev/article1_search_master_v1.json`. For AI/agent access start at `AI_CONTEXT.md`.
 
