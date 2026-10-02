@@ -18,12 +18,17 @@ For repository/product work:
 
 For Article 1 scientific work also read:
 
-1. `ARTICLE1_SEARCH_MASTER.md` — canonical human-readable A1 search state;
-2. `config/nutev/article1_search_master_v1.json` — machine-readable A1 state;
-3. `config/nutev/article1_query_draft_v1.json` — current pre-PRESS query/route draft;
-4. `docs/ARTICLE1_AGENT_CONTEXT.md` — compatibility filename for the private rank-blind Article 1 Evidence Context bundle contract.
+1. `config/nutev/article1_method_master_v2.json` — active method state;
+2. `docs/article1_closeout/ARTICLE1_METHOD_TRANSITION_2026-10-01.md` — method transition and boundaries;
+3. `ARTICLE1_SEARCH_MASTER.md` and `config/nutev/article1_search_master_v1.json` — historical scoping-search provenance only;
+4. `config/nutev/article1_query_draft_v1.json` — historical pre-freeze search draft;
+5. `docs/ARTICLE1_AGENT_CONTEXT.md` — compatibility filename for the private rank-blind Article 1 Evidence Context bundle contract.
 
 Provider-specific compatibility files may also exist for development tooling. They must not maintain a separate scientific truth from these shared sources.
+
+## Active Article 1 method
+
+The current Article 1 is a `CRITICAL_STRUCTURED_REVIEW`, owner-approved and awaiting an explicit supervisor confirmation record. It does not require dual independent screening or PRISMA-ScR. The former scoping-review search program remains preserved as historical discovery/provenance and its PRESS or gate state is not transferable.
 
 ## Private runtime Evidence Context
 
