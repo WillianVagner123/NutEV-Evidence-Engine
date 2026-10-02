@@ -46,6 +46,10 @@ jobs:
           python -m pip install --no-deps -e .
       - name: Verify fail-closed ranking contract
         run: PYTHONPATH=src python -m pytest -q nutev_tests/test_rank_references.py
+      - name: Verify Open Evidence Explorer rule bundle and Python/JS parity
+        run: |
+          python tools/build_open_explorer_data.py --check
+          PYTHONPATH=src python -m pytest -q nutev_tests/test_open_explorer.py
       - name: Run Scientific Workspace v2 death test
         run: python tools/audit_scientific_workspace_v2.py --compact
       - name: Run Synthesis Governance death test
@@ -147,6 +151,12 @@ jobs:
           node --check apps/nutev-web/recommendation-development.js
           node --check apps/nutev-web/recommendation-adoption.js
           node --check apps/nutev-web/press-review.js
+          node --check apps/nutev-open/app.js
+          node --check apps/nutev-open/core.js
+          node --check apps/nutev-open/sources.js
+          node --check apps/nutev-open/i18n.js
+          node --check apps/nutev-open/build-info.js
+          node --check apps/nutev-open/data/nutev-open-data.js
       - name: Install ruff
         run: python -m pip install ruff
       - name: Ruff blocking errors

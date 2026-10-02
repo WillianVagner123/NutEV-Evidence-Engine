@@ -362,6 +362,10 @@ O CSV inclui os campos de taxonomia/ranking e é a saída tabular para inspeçã
 - hashes dos outputs;
 - assertions de integridade e taxonomia.
 
+## 11.1 Explorador Aberto (navegador)
+
+`apps/nutev-open/` reexecuta, no navegador, o trecho `TRACEABILITY GATE -> DEDUPLICATE -> CLASSIFY -> RANK` sobre registros obtidos de fontes abertas ou de um arquivo local. O pacote de regras `apps/nutev-open/data/nutev-open-data.js` é gerado por `tools/build_open_explorer_data.py` a partir desta mesma configuração, e `nutev_tests/test_open_explorer.py` compara o resultado do JavaScript com `audit_guardrails.py`, `reference_identity.py`, `taxonomy.py`, `rank_references.py` e `search/classification.py`. Mudanças em taxonomia, pesos, identidade ou rastreabilidade exigem regenerar o pacote; o CI falha em caso de drift. Contrato: [`OPEN_EVIDENCE_EXPLORER.md`](OPEN_EVIDENCE_EXPLORER.md).
+
 ## 12. Fronteira científica
 
 O engine organiza e prioriza referências rastreáveis. Ele não executa, por si só:

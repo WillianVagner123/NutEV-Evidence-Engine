@@ -238,3 +238,13 @@ Its incremental value, calibration, provider/language bias, stability, and human
 remain `NOT_TESTED` until evaluated against an independent human-labelled set. Provider success,
 confidence, or agreement with lexical signals must not be presented as scientific validation of
 NutEV.
+
+
+## 25. O Explorador Aberto é uma amostra limitada de fontes abertas
+
+O Explorador Aberto de Evidências (`apps/nutev-open/`) consulta apenas Europe PMC, PubMed, OpenAlex e Crossref, com 25 a 100 registros por fonte, direto do navegador. Ele não é busca exaustiva, busca formal de revisão sistemática nem substituto da execução completa do Reference Engine (LILACS/BVS, SciELO, DOAJ, Semantic Scholar e fontes oficiais ficam fora).
+
+As regras de classificação são as mesmas do Engine e são verificadas por testes de paridade, mas os adaptadores do navegador recebem metadados um pouco mais ricos (resumo do Europe PMC via `resultType=core`, resumo do OpenAlex em ordem de leitura, PMID do OpenAlex). Por isso, o mesmo registro pode receber eixos ou prioridade diferentes do que receberia num lote coletado pelo Engine.
+
+A disponibilidade depende de CORS, limites de requisição e mudanças nas APIs públicas; falhas aparecem por fonte e nunca são preenchidas. O nível do dado A/B/Q descreve rastreabilidade de metadados e não qualidade metodológica, certeza ou recomendação.
+

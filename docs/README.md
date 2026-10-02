@@ -19,6 +19,7 @@ Software publicado/arquivado e validade científica são gates diferentes.
 
 ## Comece por aqui
 
+0. [`OPEN_EVIDENCE_EXPLORER.md`](OPEN_EVIDENCE_EXPLORER.md) — Explorador Aberto de Evidências: busca pública sem login, nível do dado A/B/Q, eixos MEV/NEV e paridade com o Engine.
 1. [`POP_USO_NUTEV_REFERENCE_ENGINE.md`](POP_USO_NUTEV_REFERENCE_ENGINE.md) — instalação/execução Windows, outputs, auditoria e recuperação.
 2. [`ARCHITECTURE.md`](ARCHITECTURE.md) — arquitetura do pipeline e contratos de dados.
 3. [`TAXONOMY.md`](TAXONOMY.md) — taxonomia canônica e governança de termos.
