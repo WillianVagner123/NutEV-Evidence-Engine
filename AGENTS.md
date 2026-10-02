@@ -38,11 +38,12 @@ Para qualquer trabalho, comece por:
 
 Para Artigo 1, use também:
 
-1. `ARTICLE1_SEARCH_MASTER.md`;
-2. `config/nutev/article1_search_master_v1.json`;
-3. quando existir, `project_output_reference/agent_context/article1/CONTEXT_MANIFEST.json` e `SEARCH_STATE.json`.
+1. `config/nutev/article1_method_master_v2.json` — método ativo;
+2. `docs/article1_closeout/ARTICLE1_METHOD_TRANSITION_2026-10-01.md` — decisão e fronteiras;
+3. `ARTICLE1_SEARCH_MASTER.md` e `config/nutev/article1_search_master_v1.json` — programa histórico da antiga scoping review;
+4. quando existir, `project_output_reference/agent_context/article1/CONTEXT_MANIFEST.json` e `SEARCH_STATE.json`.
 
-O bundle de agentes é privado e serve para navegação/contexto. Ele não autoriza PRESS, GF-10, freeze, inclusão/exclusão, avaliação de qualidade, recomendação ou PRISMA.
+O bundle e o Search Master legado servem para navegação/proveniência. Eles não impõem R1/R2, PRESS, GF-10, freeze, busca formal ou PRISMA ao desenho ativo de revisão crítica estruturada.
 
 Documentos em `docs/archive/` são evidência histórica/proveniência; não substituem contratos vivos de `main`.
 
@@ -105,7 +106,7 @@ Software verde, deploy verde, Windows smoke, hashes e publicação não promovem
 
 O estado geral permanece `B — DEMOTE` até evidência de validação científica justificar mudança.
 
-A1 continua dependente de revisão humana e gates acadêmicos reais; A2 continua fail-closed para binding histórico sem proveniência revisada. Nenhum agente deve preencher esses gates por inferência.
+A1 usa revisão crítica estruturada com seleção transparente por um pesquisador; a confirmação metodológica do orientador, o corpus final e o congelamento editorial continuam decisões humanas. Os gates da antiga scoping review são históricos e não se transferem. A2 continua fail-closed para binding histórico sem proveniência revisada. Nenhum agente deve preencher decisões científicas por inferência.
 
 ## Release atual
 
