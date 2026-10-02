@@ -18,6 +18,7 @@ from nutev.tenancy import (
     ApplicationService,
     ApplicationTemplate,
     ApplicationTemplateCatalog,
+    CRITICAL_STRUCTURED_REVIEW,
     GENERIC_EVIDENCE_PROJECT,
     INTEGRATIVE_REVIEW,
     Permission,
@@ -97,11 +98,23 @@ def test_builtin_templates_are_small_reusable_and_free_of_private_project_state(
     catalog = ApplicationTemplateCatalog()
     templates = {template.template_id: template for template in catalog.list()}
 
-    assert set(templates) == {
-        GENERIC_EVIDENCE_PROJECT,
-        SCOPING_REVIEW,
-        INTEGRATIVE_REVIEW,
-    }
+    assert set(templates) == {\n        CRITICAL_STRUCTURED_REVIEW,\n        GENERIC_EVIDENCE_PROJECT,\n        SCOPING_REVIEW,\n        INTEGRATIVE_REVIEW,\n    }
+    critical = templates[CRITICAL_STRUCTURED_REVIEW]
+    assert critical.components == (
+        "RESEARCH_QUESTION",
+        "SEARCH",
+        "TRACEABILITY",
+        "ORGANIZE",
+        "SOURCE_SELECTION",
+        "EXTRACTION",
+        "CRITICAL_COMPARISON",
+        "SYNTHESIS",
+        "CONCEPTUAL_FRAMEWORK",
+    )
+    assert critical.defaults()["quality_audit"] == "SANRA"
+    assert critical.defaults()["dual_independent_screening_required"] is False
+    assert critical.defaults()["prisma_applicable"] is False
+
     scoping = templates[SCOPING_REVIEW]
     assert scoping.components == (
         "PCC",
