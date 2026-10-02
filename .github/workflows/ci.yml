@@ -49,7 +49,7 @@ jobs:
       - name: Verify Open Evidence Explorer rule bundle and Python/JS parity
         run: |
           python tools/build_open_explorer_data.py --check
-          PYTHONPATH=src python -m pytest -q nutev_tests/test_open_explorer.py
+          PYTHONPATH=src python -m pytest -q nutev_tests/test_open_explorer.py nutev_tests/test_question_planner.py
       - name: Run Scientific Workspace v2 death test
         run: python tools/audit_scientific_workspace_v2.py --compact
       - name: Run Synthesis Governance death test
@@ -153,6 +153,7 @@ jobs:
           node --check apps/nutev-web/press-review.js
           node --check apps/nutev-open/app.js
           node --check apps/nutev-open/core.js
+          node --check apps/nutev-open/planner.js
           node --check apps/nutev-open/sources.js
           node --check apps/nutev-open/i18n.js
           node --check apps/nutev-open/build-info.js

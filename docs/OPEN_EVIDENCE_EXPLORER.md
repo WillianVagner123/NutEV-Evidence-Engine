@@ -6,6 +6,7 @@ O Explorador Aberto é a superfície **pública, sem login e sem servidor** do N
 apps/nutev-open/
   index.html                 página única (PT-BR padrão, EN opcional)
   core.js                    port fiel das regras do Engine (rastreabilidade, identidade, taxonomia, prioridade)
+  planner.js                 pergunta -> blocos PICO -> uma string por base (port de question_planner.py)
   sources.js                 acesso às fontes abertas (único arquivo com rede)
   app.js                     interface
   i18n.js                    textos PT/EN
@@ -13,6 +14,25 @@ apps/nutev-open/
   data/nutev-open-data.js    pacote de regras GERADO a partir da configuração canônica
   build-info.js              identidade da publicação (sobrescrito no deploy)
 ```
+
+## Busca por pergunta
+
+A pessoa escreve do jeito dela, em português ou inglês. O planejador determinístico (`src/nutev/search/question_planner.py`, com port em `planner.js`) faz o seguinte:
+
+- reconhece conceitos do vocabulário curado `config/query_vocabulary.json`;
+- separa população, intervenção, comparador, contexto, desfecho, tipo de estudo e termos livres;
+- entende períodos ("desde 2015", "nos últimos 5 anos");
+- monta uma string por base, no formato da base:
+  - PubMed: `[tiab]`/`[pt]`/`[dp]`;
+  - Europe PMC: `TITLE_ABS`/`PUB_YEAR`;
+  - OpenAlex: booleana mais filtros de data;
+  - Crossref: palavras-chave mais filtro de data;
+  - BVS/LILACS: `tw:` com `$`;
+  - SciELO: booleana com `$`.
+
+O painel "Como o NutEV organizou sua busca" mostra tudo e deixa editar: blocos, termos, período, campo, inclusão de termos em português e a própria string de cada base. Depois da busca, ele mostra como o PubMed interpretou a string. BVS/LILACS e SciELO são abertos no site da própria base.
+
+Não há modelo de linguagem e MeSH/DeCS não são inventados. No modo "Ampla", é a própria base que aplica o vocabulário dela. Uma string avançada digitada (operadores, aspas, campos) é enviada literalmente. Auditoria e decisões: [`SEARCH_KEYWORD_AUDIT_2026-10.md`](SEARCH_KEYWORD_AUDIT_2026-10.md).
 
 ## O que a pessoa vê
 
@@ -35,7 +55,8 @@ O **painel de qualidade** cruza os dois eixos pedidos pelo produto: para cada ei
 ## Fluxo
 
 ```text
-SEARCH (navegador -> Europe PMC, PubMed, OpenAlex, Crossref)
+QUESTION PLAN (pergunta -> blocos -> string por base)
+  -> SEARCH (navegador -> Europe PMC, PubMed, OpenAlex, Crossref)
   -> NORMALIZE (sources.js)
   -> TRACEABILITY GATE (A/B/Q)
   -> DEDUPLICATE (DOI -> PMID -> URL; conflitos de identificador forte ficam separados)

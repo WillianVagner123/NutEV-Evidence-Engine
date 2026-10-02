@@ -30,6 +30,12 @@ instalação e sem servidor: o [Explorador Aberto](apps/nutev-open/) consulta
 Europe PMC, PubMed, OpenAlex e Crossref direto do navegador e classifica cada
 registro com as mesmas regras do Engine.
 
+- **Busca por pergunta** — escreva em português ou inglês; o NutEV separa os
+  conceitos (PICO), traduz pelo vocabulário MEV/NEV (`config/query_vocabulary.json`),
+  entende períodos e monta a string de cada base no formato dela (PubMed, Europe PMC,
+  OpenAlex, Crossref, BVS/LILACS, SciELO), tudo visível e editável. Também na CLI:
+  `nutev plan-query "dieta mediterrânea e diabetes tipo 2 desde 2015"`;
+
 - **Nível do dado A/B/Q** — identificador verificável, URL rastreável ou quarentena;
 - **Completude dos metadados** — título, resumo, ano, autores, periódico e identificador;
 - **Eixos MEV/NEV** — pilares da Medicina do Estilo de Vida, padrões alimentares,

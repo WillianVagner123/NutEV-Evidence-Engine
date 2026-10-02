@@ -205,7 +205,63 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--allow-unenriched", action="store_true", help="Compatibility escape hatch for screening without verified enrichment.")
     _path_argument(p, "--decisions-jsonl", "project_output_reference/scientific/screening_decisions_input.jsonl")
     _path_argument(p, "--output-dir", "project_output_reference/scientific/screening")
+
+    p = sub.add_parser(
+        "plan-query",
+        help="Turn a free-text question (PT or EN) into concept blocks and one query string per source.",
+    )
+    p.add_argument("question", help="Question or keywords, e.g. 'dieta mediterrânea e diabetes tipo 2'.")
+    p.add_argument("--field-mode", choices=("title_abstract", "broad"), default="title_abstract")
+    p.add_argument("--include-pt", action="store_true", help="Also send Portuguese synonyms to international sources.")
+    p.add_argument("--literal", action="store_true", help="Interpret Boolean-looking input as a question instead of passing it through.")
+    p.add_argument("--json", action="store_true", help="Print the full plan and compiled queries as JSON.")
+    _path_argument(p, "--config-dir", "config")
     return parser
+
+
+def _run_plan_query(args: argparse.Namespace) -> int:
+    from datetime import datetime
+
+    from nutev.search.question_planner import (
+        QueryVocabularyError,
+        compile_queries,
+        load_query_vocabulary,
+        plan_question,
+    )
+    from nutev.taxonomy import TaxonomyError, load_canonical_taxonomy
+
+    config_dir = Path(args.config_dir)
+    try:
+        vocabulary = load_query_vocabulary(config_dir)
+        taxonomy, _metadata = load_canonical_taxonomy(config_dir)
+    except (QueryVocabularyError, TaxonomyError) as exc:
+        print(f"Query planner failure: {exc}")
+        return 2
+    year = datetime.now().year
+    plan = plan_question(
+        args.question,
+        vocabulary,
+        taxonomy_groups=taxonomy,
+        current_year=year,
+        detect_manual=not args.literal,
+    )
+    compiled = compile_queries(plan, field_mode=args.field_mode, include_pt=args.include_pt, current_year=year)
+    if args.json:
+        return _print({"plan": plan, "queries": compiled})
+    print(f"Pergunta: {plan['question']}")
+    print(f"Modo: {plan['mode']}  |  anos: {plan['year_from'] or '-'} a {plan['year_to'] or '-'}")
+    for block in plan["blocks"]:
+        state = "on " if block["enabled"] else "off"
+        terms = ", ".join(t["text"] for t in block["terms"] if t["lang"] != "pt")
+        print(f"  [{state}] {block['role']:<12} {block['label_pt']}  <- {', '.join(block['matched'])}")
+        print(f"        {terms}")
+    for warning in plan["warnings"]:
+        print(f"  aviso: {warning['code']}")
+    for provider, item in compiled["providers"].items():
+        print(f"\n{provider} ({item['dialect']}):\n  {item['query']}")
+        if item["params"]:
+            print(f"  params: {item['params']}")
+    return 0
 
 
 def _print(result: dict) -> int:
@@ -333,6 +389,8 @@ def main(argv: list[str] | None = None) -> int:
         except ScreeningImportError as exc:
             print(f"Scientific screening import failure: {exc}")
             return 2
+    if args.command == "plan-query":
+        return _run_plan_query(args)
     parser.print_help()
     return 0
 

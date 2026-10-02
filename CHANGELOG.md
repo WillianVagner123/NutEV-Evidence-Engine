@@ -4,6 +4,17 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Busca por pergunta: conceitos, sinônimos e uma string por base
+
+- Auditoria interna de palavras-chave e construção de buscas em `docs/SEARCH_KEYWORD_AUDIT_2026-10.md`: a busca rápida enviava a pergunta crua (inclusive em português) a bases em inglês, sem extração de conceitos, sinônimos, tradução, sintaxe por base ou filtro de período.
+- Adicionado `config/query_vocabulary.json` (113 conceitos de MEV/NEV com gatilhos PT/EN, sinônimos em inglês, termos em português, papel PICO e vínculo com o eixo canônico), validado fail-closed. Não contém MeSH/DeCS: no modo amplo cada base aplica o próprio vocabulário.
+- Adicionado `src/nutev/search/question_planner.py`: pergunta → blocos (população, intervenção, comparador, contexto, desfecho, tipo de estudo, termos livres) e períodos → uma string por base (PubMed `[tiab]/[pt]/[dp]`, Europe PMC `TITLE_ABS/PUB_YEAR`, OpenAlex booleana + filtros de data, Crossref `query.bibliographic` + filtro de data, BVS `tw:` com `$`, SciELO booleana com `$`). Strings avançadas digitadas são preservadas literalmente.
+- Nova CLI `nutev plan-query`.
+- Explorador Aberto: a busca parte da pergunta; o painel "Como o NutEV organizou sua busca" permite ligar/desligar blocos e termos, acrescentar sinônimos, ajustar período e campo, editar e copiar a string de cada base, abrir BVS/LILACS e SciELO no site e ver como o PubMed interpretou a string. A exportação JSON registra o plano e as strings efetivamente enviadas.
+- `planner.js` é verificado contra o Python (`nutev_tests/test_question_planner.py`), inclusive compatibilidade com o modo avançado hospedado via `to_review_strategy`.
+- A busca rápida hospedada não foi alterada.
+
+
 ### Explorador Aberto de Evidências (público, sem login)
 
 - Adicionado `apps/nutev-open/`: página estática, sem login e sem servidor, que consulta Europe PMC, PubMed, OpenAlex e Crossref direto do navegador e mostra, para cada registro, o nível do dado (A — identificador verificável, B — URL rastreável, Q — quarentena), a completude dos metadados, os eixos MEV/NEV, o tipo documental e a conta completa da prioridade técnica de leitura.

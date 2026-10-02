@@ -34,6 +34,12 @@ from nutev.search.document_classes import (  # noqa: E402
     CANONICAL_DOCUMENT_CLASS_LABELS,
     DOCUMENT_CLASS_ONTOLOGY_VERSION,
 )
+from nutev.search.question_planner import (  # noqa: E402
+    PLANNER_VERSION,
+    QUERY_VOCABULARY_FILENAME,
+    load_query_vocabulary,
+    validate_query_vocabulary,
+)
 from nutev.taxonomy import load_canonical_taxonomy, taxonomy_config_paths  # noqa: E402
 
 CONFIG_DIR = ROOT / "config"
@@ -145,7 +151,14 @@ def build_bundle() -> dict[str, Any]:
     if stale:
         raise BundleError("presentation.json labels unknown groups: " + ", ".join(stale))
 
-    source_paths = [CONFIG_DIR / "reference_mode.json", *taxonomy_config_paths(CONFIG_DIR)]
+    query_vocabulary = load_query_vocabulary(CONFIG_DIR)
+    validate_query_vocabulary(query_vocabulary, set(taxonomy))
+
+    source_paths = [
+        CONFIG_DIR / "reference_mode.json",
+        CONFIG_DIR / QUERY_VOCABULARY_FILENAME,
+        *taxonomy_config_paths(CONFIG_DIR),
+    ]
     config_hashes = {_relative(path): _sha256(path) for path in source_paths}
     config_hashes[_relative(PRESENTATION_PATH)] = _sha256(PRESENTATION_PATH)
 
@@ -183,6 +196,8 @@ def build_bundle() -> dict[str, Any]:
             },
         },
         "example_queries": list(presentation.get("example_queries") or []),
+        "planner_version": PLANNER_VERSION,
+        "query_vocabulary": query_vocabulary,
     }
     missing_en = sorted(set(CANONICAL_DOCUMENT_CLASS_LABELS) - set(DOCUMENT_CLASS_LABELS_EN))
     if missing_en:
@@ -197,7 +212,8 @@ def render_bundle(bundle: dict[str, Any]) -> str:
     return (
         "/* GENERATED FILE - do not edit by hand.\n"
         " * Source: config/taxonomy_registry.json, config/keyword_taxonomy*.json,\n"
-        " * config/reference_mode.json, src/nutev/search/classification.py and\n"
+        " * config/reference_mode.json, config/query_vocabulary.json,\n"
+        " * src/nutev/search/classification.py and\n"
         " * apps/nutev-open/presentation.json.\n"
         " * Regenerate with: python tools/build_open_explorer_data.py\n"
         " */\n"

@@ -17,6 +17,7 @@ on:
       - "tools/build_open_explorer_data.py"
       - "tools/rank_references.py"
       - "nutev_tests/test_open_explorer.py"
+      - "nutev_tests/test_question_planner.py"
       - "nutev_tests/fixtures/open_explorer_harness.cjs"
       - ".github/workflows/open-explorer-pages.yml"
   workflow_dispatch:
@@ -47,7 +48,7 @@ jobs:
       - name: Verify rule bundle matches canonical config
         run: python tools/build_open_explorer_data.py --check
       - name: Verify Python/JavaScript parity and public-surface guardrails
-        run: PYTHONPATH=src python -m pytest -q nutev_tests/test_open_explorer.py
+        run: PYTHONPATH=src python -m pytest -q nutev_tests/test_open_explorer.py nutev_tests/test_question_planner.py
       - name: Assemble static site
         run: |
           mkdir -p _site

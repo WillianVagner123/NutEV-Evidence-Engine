@@ -9,6 +9,7 @@ Página pública, sem login e sem servidor, para buscar literatura de Medicina e
 - **Online:** a página é publicada pelo workflow `open-explorer-pages` no GitHub Pages.
 - **Local:** abra `index.html` no Chrome/Edge, ou rode `python -m http.server 8000 --directory apps/nutev-open` e acesse `http://localhost:8000`.
 - **Seus próprios resultados:** aba **Abrir arquivo** aceita `reference_ranking.jsonl`, `reference_ranking.csv`, `reference_quarantine.jsonl` ou um JSON exportado aqui. Tudo é processado no navegador.
+- **Perguntar do seu jeito:** escreva em português ou inglês; o painel "Como o NutEV organizou sua busca" mostra conceitos, sinônimos e a string de cada base, tudo editável.
 - **Compartilhar:** o endereço da página guarda a busca (`#q=...&src=...&n=...`).
 
 ## Arquivos
@@ -16,6 +17,7 @@ Página pública, sem login e sem servidor, para buscar literatura de Medicina e
 | Arquivo | Papel |
 | --- | --- |
 | `core.js` | port fiel das regras do Engine (testado contra o Python) |
+| `planner.js` | pergunta → blocos PICO → uma string por base, no formato de cada base (testado contra `src/nutev/search/question_planner.py`) |
 | `sources.js` | único arquivo com acesso à rede: Europe PMC, PubMed, OpenAlex, Crossref |
 | `app.js` | interface |
 | `i18n.js` | textos PT-BR / EN |

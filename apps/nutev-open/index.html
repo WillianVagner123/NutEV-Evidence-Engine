@@ -46,7 +46,7 @@
 
       <form id="search-form" class="search" role="search" novalidate>
         <label for="q" class="sr-only" data-i18n="search.label">O que você quer buscar?</label>
-        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" maxlength="400" data-i18n-placeholder="search.placeholder">
+        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" maxlength="500" data-i18n-placeholder="search.placeholder">
         <button type="submit" id="search-btn" class="btn btn-primary" data-i18n="search.button">Buscar</button>
       </form>
 
@@ -69,6 +69,13 @@
         <span id="examples" class="chip-row"></span>
       </div>
       <p class="tip" data-i18n="search.tip"></p>
+    </section>
+
+    <section id="strategy" class="strategy" hidden>
+      <details id="strategy-details" open>
+        <summary><span data-i18n="strategy.title">Como o NutEV organizou sua busca</span> <span id="strategy-summary" class="strategy-summary"></span></summary>
+        <div id="strategy-body" class="strategy-body"></div>
+      </details>
     </section>
 
     <section id="status" class="status-panel" aria-live="polite" hidden>
@@ -172,6 +179,9 @@
       <h2 data-i18n="guide.title">Como ler a qualidade do dado</h2>
       <p class="panel-lead" data-i18n="guide.lead"></p>
 
+      <h3 data-i18n="guide.q0">0. Como a busca entende a sua pergunta</h3>
+      <p id="guide-q0-lead"></p>
+
       <h3 data-i18n="guide.q1">1. O registro é rastreável?</h3>
       <p id="guide-q1-lead"></p>
       <div id="guide-levels" class="level-cards"></div>
@@ -232,6 +242,7 @@
   <script src="build-info.js"></script>
   <script src="i18n.js"></script>
   <script src="core.js"></script>
+  <script src="planner.js"></script>
   <script src="sources.js"></script>
   <script src="app.js"></script>
 </body>

@@ -8,6 +8,7 @@ const root = path.resolve(__dirname, "..", "..", "apps", "nutev-open");
 const core = require(path.join(root, "core.js"));
 const sources = require(path.join(root, "sources.js"));
 const data = require(path.join(root, "data", "nutev-open-data.js"));
+const planner = require(path.join(root, "planner.js"));
 
 let input = "";
 process.stdin.setEncoding("utf8");
@@ -56,6 +57,24 @@ process.stdin.on("end", () => {
         crossref: sources.crossrefUrl("diet & health", 25),
       },
     };
+  }
+  if (request.planner) {
+    const spec = request.planner;
+    const taxonomyGroups = planner.taxonomyTermsFromBundle(data);
+    result.planner = spec.questions.map((question) => {
+      const plan = planner.planQuestion(question, data.query_vocabulary, {
+        currentYear: spec.currentYear,
+        taxonomyGroups,
+        detectManual: spec.detectManual !== false,
+      });
+      const compiled = (spec.options || []).map((option) => planner.compileQueries(plan, {
+        currentYear: spec.currentYear,
+        fieldMode: option.fieldMode,
+        includePt: option.includePt,
+      }));
+      return { plan, compiled };
+    });
+    if (spec.encode) result.encoded = spec.encode.map((value) => encodeURIComponent(value));
   }
   process.stdout.write(JSON.stringify(result));
 });

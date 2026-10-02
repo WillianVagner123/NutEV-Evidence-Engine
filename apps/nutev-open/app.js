@@ -12,6 +12,7 @@
   var BUILD = window.NUTEV_OPEN_BUILD || { commit: "local" };
   var Core = window.NutEVOpenCore;
   var Sources = window.NutEVOpenSources;
+  var Planner = window.NutEVOpenPlanner;
   var I18n = window.NutEVOpenI18n;
   var t = I18n.t;
 
@@ -22,8 +23,11 @@
   var FAMILIES = {};
   DATA.taxonomy.groups.forEach(function (group) { GROUPS[group.id] = group; });
   DATA.taxonomy.families.forEach(function (family) { FAMILIES[family.id] = family; });
-  var SOURCE_LABELS = {};
+  var SOURCE_LABELS = { bvs_lilacs: "BVS / LILACS", scielo: "SciELO" };
   Sources.SOURCES.forEach(function (source) { SOURCE_LABELS[source.id] = source.label; });
+  var TAXONOMY_TERMS = Planner.taxonomyTermsFromBundle(DATA);
+  var VOCABULARY = DATA.query_vocabulary;
+  var STRATEGY_PROVIDERS = ["pubmed", "europepmc", "openalex", "crossref", "bvs_lilacs", "scielo"];
 
   var state = {
     query: "",
@@ -38,6 +42,12 @@
     shown: PAGE_SIZE,
     tab: "results",
     token: 0,
+    plan: null,
+    compiled: null,
+    fieldMode: "title_abstract",
+    includePt: false,
+    overrides: {},
+    executed: null,
     filters: emptyFilters()
   };
 
@@ -257,6 +267,7 @@
   }
 
   function renderGuide() {
+    $("guide-q0-lead").textContent = t("guide.q0.lead", { version: VOCABULARY.vocabulary_version, n: VOCABULARY.concepts.length });
     $("guide-q1-lead").textContent = t("guide.q1.lead", { policy: DATA.guardrail_policy_version });
     $("guide-q3-lead").textContent = t("guide.q3.lead", {
       version: DATA.taxonomy_version,
@@ -288,6 +299,7 @@
       [t("guide.prov.policy"), DATA.guardrail_policy_version],
       [t("guide.prov.engine"), DATA.engine_version],
       [t("guide.prov.doctypes"), DATA.document_class_ontology_version],
+      [t("guide.prov.planner"), DATA.planner_version + " · " + VOCABULARY.vocabulary_version + " (" + VOCABULARY.review_status + ")"],
       [t("guide.prov.bundle"), DATA.bundle_sha256],
       [t("guide.prov.build"), BUILD.commit === "local" ? t("guide.prov.local") : BUILD.commit + (BUILD.built_at ? " · " + BUILD.built_at : "")]
     ].forEach(function (pair) {
@@ -375,24 +387,67 @@
     button.textContent = t(active ? "search.searching" : "search.button");
   }
 
-  async function runSearch(rawQuery) {
-    var query = String(rawQuery || "").trim();
-    if (!query) { $("q").focus(); return; }
+  function currentYear() {
+    return new Date().getFullYear();
+  }
+
+  function compilePlan() {
+    state.compiled = Planner.compileQueries(state.plan, {
+      fieldMode: state.fieldMode,
+      includePt: state.includePt,
+      currentYear: currentYear()
+    });
+    return state.compiled;
+  }
+
+  function queryFor(provider) {
+    var compiled = state.compiled.providers[provider];
+    var override = state.overrides[provider];
+    return {
+      query: typeof override === "string" ? override : compiled.query,
+      params: compiled.params || {}
+    };
+  }
+
+  function runSearch(rawQuery, options) {
+    var question = String(rawQuery || "").trim();
+    if (!question) { $("q").focus(); return; }
+    state.plan = Planner.planQuestion(question, VOCABULARY, {
+      currentYear: currentYear(),
+      taxonomyGroups: TAXONOMY_TERMS,
+      detectManual: !(options && options.literal)
+    });
+    state.overrides = {};
+    state.query = question;
+    compilePlan();
+    renderStrategy();
+    executePlan();
+  }
+
+  async function executePlan() {
     var ids = Sources.SOURCES.map(function (s) { return s.id; }).filter(function (id) { return state.sources.has(id); });
     if (!ids.length) { ids = Sources.SOURCES.map(function (s) { return s.id; }); ids.forEach(function (id) { state.sources.add(id); }); renderSourcePicker(); }
+    var queries = {};
+    ids.forEach(function (id) { queries[id] = queryFor(id); });
+    var runnable = ids.filter(function (id) { return String(queries[id].query || "").trim(); });
+    if (!runnable.length) {
+      renderStrategy();
+      $("strategy").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
     var token = state.token + 1;
     state.token = token;
-    state.query = query;
     state.origin = "search";
     state.fileName = "";
     state.limit = Number($("limit").value) || 50;
-    state.statuses = ids.map(function (id) { return { source: id, status: "pending" }; });
+    state.executed = { queries: queries, field_mode: state.fieldMode, include_pt: state.includePt, at: new Date().toISOString() };
+    state.statuses = runnable.map(function (id) { return { source: id, status: "pending" }; });
     setSearching(true);
     renderStatus();
     updateHash();
-    document.title = query + " · NutEV";
+    document.title = state.query + " · NutEV";
 
-    var outcome = await Sources.searchSources(query, ids, state.limit, {
+    var outcome = await Sources.searchSources(queries, runnable, state.limit, {
       DOMParser: window.DOMParser,
       onSource: function (status) {
         if (token !== state.token) return;
@@ -405,7 +460,236 @@
     state.finishedAt = new Date().toISOString();
     loadRows(outcome.rows);
     setSearching(false);
-    $("status").scrollIntoView({ behavior: "smooth", block: "start" });
+    $("strategy").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // ------------------------------------------------------------------ strategy panel
+
+  function roleLabel(role) {
+    var info = VOCABULARY.roles[role] || {};
+    return I18n.lang() === "pt" ? info.label_pt : info.label_en;
+  }
+
+  function blockLabel(block) {
+    return I18n.lang() === "pt" ? block.label_pt : block.label_en;
+  }
+
+  function warningText(warning) {
+    var block = (state.plan.blocks || []).find(function (b) { return b.key === warning.block; });
+    return t("warn." + warning.code, { label: block ? blockLabel(block) : "", count: warning.count || "" });
+  }
+
+  function siteUrlFor(provider, query, params) {
+    var enc = encodeURIComponent;
+    if (!query) return "";
+    if (provider === "pubmed") return "https://pubmed.ncbi.nlm.nih.gov/?term=" + enc(query);
+    if (provider === "europepmc") return "https://europepmc.org/search?query=" + enc(query);
+    if (provider === "openalex") return "https://api.openalex.org/works?search=" + enc(query) + (params && params.filter ? "&filter=" + enc(params.filter) : "");
+    if (provider === "crossref") return "https://api.crossref.org/works?query.bibliographic=" + enc(query) + (params && params.filter ? "&filter=" + enc(params.filter) : "");
+    if (provider === "bvs_lilacs") return "https://pesquisa.bvsalud.org/portal/?lang=pt&q=" + enc(query) + "&" + enc("filter[db_cluster][]") + "=LILACS";
+    if (provider === "scielo") return "https://search.scielo.org/?lang=pt&q=" + enc(query);
+    return "";
+  }
+
+  function copyText(text, button) {
+    var done = function () {
+      var original = button.textContent;
+      button.textContent = t("strategy.copied");
+      setTimeout(function () { button.textContent = original; }, 1500);
+    };
+    try {
+      navigator.clipboard.writeText(text).then(done, function () { window.prompt("", text); });
+    } catch (error) {
+      window.prompt("", text);
+    }
+  }
+
+  function refreshStrategy() {
+    compilePlan();
+    renderStrategy();
+  }
+
+  function blockCard(block) {
+    var toggle = el("input", { type: "checkbox", "aria-label": t("strategy.use") + ": " + blockLabel(block) });
+    toggle.checked = Boolean(block.enabled);
+    toggle.addEventListener("change", function () { block.enabled = toggle.checked; refreshStrategy(); });
+
+    var chips = el("div", { class: "term-chips" }, block.terms.map(function (term) {
+      var on = term.enabled !== false;
+      var regionalOnly = term.lang === "pt" && !state.includePt;
+      return el("button", {
+        type: "button",
+        class: "term-chip" + (on ? "" : " off") + (regionalOnly ? " regional" : ""),
+        "aria-pressed": on ? "true" : "false",
+        "data-tip": (regionalOnly ? t("strategy.ptRegional") + " " : "") + t(on ? "strategy.termOff" : "strategy.termOn"),
+        onclick: function () { term.enabled = on ? false : true; refreshStrategy(); }
+      }, term.lang === "pt" ? el("small", { text: "PT" }) : term.lang === "en" ? el("small", { text: "EN" }) : null, term.text);
+    }));
+
+    var input = el("input", { type: "text", maxlength: "80", placeholder: t("strategy.addTerm"), "aria-label": t("strategy.addTerm") });
+    var addForm = el("form", { class: "add-term" }, input);
+    addForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var value = input.value.replace(/"/g, " ").replace(/\s+/g, " ").trim();
+      if (!value) return;
+      block.terms.push({ text: value, lang: block.role === "free" ? "any" : "en", enabled: true, added: true });
+      refreshStrategy();
+    });
+
+    var role = VOCABULARY.roles[block.role] || {};
+    return el("article", { class: "block-card role-" + block.role + (block.enabled ? "" : " off") },
+      el("header", null,
+        el("span", { class: "role-badge", "data-tip": roleLabel(block.role), text: role.letter || "?" }),
+        el("div", { class: "block-title" },
+          el("strong", { text: blockLabel(block) }),
+          el("small", { text: roleLabel(block.role) })),
+        el("label", { class: "switch" }, toggle, el("span", { text: t("strategy.use") }))),
+      el("p", { class: "matched" }, t("strategy.matched") + " “" + block.matched.join("”, “") + "”",
+        block.taxonomy_groups.length ? el("span", { class: "axis-chip" }, el("small", { text: familyLabel(familyOf(block.taxonomy_groups[0]), true) }), groupLabel(block.taxonomy_groups[0])) : null),
+      chips,
+      addForm);
+  }
+
+  function queryCard(provider) {
+    var compiled = state.compiled.providers[provider];
+    var spec = queryFor(provider);
+    var edited = typeof state.overrides[provider] === "string";
+    var live = Planner.LIVE_PROVIDERS.indexOf(provider) >= 0;
+    var status = state.statuses.find(function (item) { return item.source === provider; });
+    var area = el("textarea", { class: "query-text", rows: "3", spellcheck: "false", "aria-label": sourceLabel(provider) });
+    area.value = spec.query;
+    var link = externalLink(siteUrlFor(provider, spec.query, spec.params), t("strategy.open." + provider), "btn btn-ghost btn-small");
+    area.addEventListener("input", function () {
+      state.overrides[provider] = area.value;
+      var url = siteUrlFor(provider, area.value, spec.params);
+      if (url) link.setAttribute("href", url);
+      card.classList.add("edited");
+    });
+    var copy = el("button", { type: "button", class: "btn btn-ghost btn-small", text: t("strategy.copy") });
+    copy.addEventListener("click", function () { copyText(area.value, copy); });
+    var restore = edited ? el("button", {
+      type: "button",
+      class: "btn btn-ghost btn-small",
+      text: t("strategy.restore"),
+      onclick: function () { delete state.overrides[provider]; renderStrategy(); }
+    }) : null;
+
+    var badge = null;
+    if (live && status) {
+      if (status.status === "ok") badge = el("span", { class: "query-status ok", text: t("strategy.returned", { n: fmtNumber(status.returned) }) + (typeof status.total_found === "number" ? " · " + t("status.total", { total: fmtNumber(status.total_found) }) : "") });
+      else if (status.status === "error") badge = el("span", { class: "query-status error", text: t("status.error") });
+    } else if (!live) {
+      badge = el("span", { class: "query-status link", text: t("strategy.linkOnly") });
+    }
+
+    var notes = (compiled.notes || []).filter(function (note) { return note !== "link_only"; }).map(function (note) {
+      return el("li", { text: t("note." + note) });
+    });
+    var translation = null;
+    if (provider === "pubmed" && status && status.translation && status.translation.query_translation) {
+      var tr = status.translation;
+      var missing = tr.phrases_not_found.concat(tr.fields_not_found);
+      translation = el("details", { class: "translation" },
+        el("summary", { text: t("strategy.translation") }),
+        el("code", { text: tr.query_translation }),
+        missing.length ? el("p", { class: "warn-line", text: t("strategy.notFound", { list: missing.join(", ") }) }) : null,
+        tr.phrases_ignored.length ? el("p", { class: "note", text: t("strategy.ignored", { list: tr.phrases_ignored.join(", ") }) }) : null);
+    }
+
+    var card = el("article", { class: "query-card" + (edited ? " edited" : "") + (live ? "" : " link-only") },
+      el("header", null,
+        el("strong", { text: sourceLabel(provider) }),
+        badge,
+        el("span", { class: "edited-tag", text: t("strategy.edited") })),
+      el("p", { class: "dialect", text: t("dialect." + compiled.dialect) }),
+      area,
+      el("div", { class: "query-actions" }, copy, link, restore),
+      notes.length ? el("ul", { class: "query-notes" }, notes) : null,
+      translation);
+    return card;
+  }
+
+  function renderStrategy() {
+    var section = $("strategy");
+    var body = clear($("strategy-body"));
+    if (!state.plan || state.origin === "file") { section.hidden = true; return; }
+    section.hidden = false;
+    var plan = state.plan;
+    var enabledBlocks = plan.blocks.filter(function (block) { return block.enabled; });
+    var summary = plan.mode === "manual"
+      ? t("strategy.summaryManual")
+      : t("strategy.summary", { n: plan.blocks.filter(function (b) { return b.source === "vocabulary"; }).length, on: enabledBlocks.length });
+    $("strategy-summary").textContent = summary;
+
+    if (plan.mode === "manual") {
+      body.appendChild(el("div", { class: "manual-box" },
+        el("p", { text: t("warn.manual_string") }),
+        el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.interpret"), onclick: function () { runSearch(state.query, { literal: true }); } })));
+    } else {
+      body.appendChild(el("p", { class: "strategy-lead", text: t("strategy.lead", { version: VOCABULARY.vocabulary_version }) }));
+      var warnings = plan.warnings.slice();
+      if (!enabledBlocks.length && plan.blocks.length) warnings.push({ code: "no_enabled_blocks" });
+      if (warnings.length) {
+        body.appendChild(el("ul", { class: "strategy-warnings" }, warnings.map(function (warning) {
+          return el("li", { text: warningText(warning) });
+        })));
+      }
+      body.appendChild(el("div", { class: "block-grid" }, plan.blocks.map(blockCard)));
+      if (enabledBlocks.length) {
+        var logic = el("p", { class: "logic" }, el("strong", { text: t("strategy.logic") + ": " }));
+        enabledBlocks.forEach(function (block, index) {
+          if (index) logic.appendChild(el("span", { class: "op", text: " AND " }));
+          logic.appendChild(el("span", { class: "logic-block role-" + block.role, text: blockLabel(block) }));
+        });
+        body.appendChild(logic);
+      }
+      if (plan.dropped_terms.length) {
+        body.appendChild(el("p", { class: "note", text: t("strategy.dropped", { list: plan.dropped_terms.join(", ") }) }));
+      }
+
+      var fieldGroup = el("div", { class: "field-mode", role: "radiogroup", "aria-label": t("strategy.fieldMode") },
+        el("span", { class: "control-label", text: t("strategy.fieldMode") }),
+        Planner.FIELD_MODES.map(function (mode) {
+          var radio = el("input", { type: "radio", name: "field-mode", value: mode });
+          radio.checked = state.fieldMode === mode;
+          radio.addEventListener("change", function () { state.fieldMode = mode; state.overrides = {}; refreshStrategy(); });
+          return el("label", { class: "radio" }, radio, el("span", { text: t("strategy.field." + mode) }));
+        }));
+      var pt = el("input", { type: "checkbox" });
+      pt.checked = state.includePt;
+      pt.addEventListener("change", function () { state.includePt = pt.checked; state.overrides = {}; refreshStrategy(); });
+      var yearFrom = el("input", { type: "number", min: "1900", max: String(currentYear() + 1), placeholder: "—", "aria-label": t("filters.yearFrom") });
+      var yearTo = el("input", { type: "number", min: "1900", max: String(currentYear() + 1), placeholder: "—", "aria-label": t("filters.yearTo") });
+      if (plan.year_from) yearFrom.value = String(plan.year_from);
+      if (plan.year_to) yearTo.value = String(plan.year_to);
+      var onYears = function () {
+        var from = Number(yearFrom.value);
+        var to = Number(yearTo.value);
+        plan.year_from = from >= 1900 ? from : null;
+        plan.year_to = to >= 1900 ? to : null;
+        state.overrides = {};
+        refreshStrategy();
+      };
+      yearFrom.addEventListener("change", onYears);
+      yearTo.addEventListener("change", onYears);
+      body.appendChild(el("div", { class: "strategy-controls" },
+        fieldGroup,
+        el("label", { class: "check" }, pt, el("span", { text: t("strategy.includePt") })),
+        el("div", { class: "years" }, el("span", { class: "control-label", text: t("strategy.years") }),
+          el("span", { text: t("filters.yearFrom") }), yearFrom, el("span", { text: t("filters.yearTo") }), yearTo)));
+    }
+
+    body.appendChild(el("h3", { text: t("strategy.queries") }));
+    body.appendChild(el("div", { class: "query-grid" }, STRATEGY_PROVIDERS.map(queryCard)));
+    var copyAll = el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.copyAll") });
+    copyAll.addEventListener("click", function () {
+      copyText(STRATEGY_PROVIDERS.map(function (provider) {
+        return sourceLabel(provider) + "\n" + queryFor(provider).query;
+      }).join("\n\n"), copyAll);
+    });
+    body.appendChild(el("div", { class: "strategy-actions" },
+      el("button", { type: "button", class: "btn btn-primary", text: t("strategy.rerun"), onclick: function () { executePlan(); } }),
+      copyAll));
   }
 
   function loadRows(rows) {
@@ -423,6 +707,8 @@
     if (state.query) params.set("q", state.query);
     params.set("src", Array.from(state.sources).join(","));
     params.set("n", String(state.limit));
+    if (state.fieldMode !== "title_abstract") params.set("f", state.fieldMode);
+    if (state.includePt) params.set("pt", "1");
     if (I18n.lang() !== "pt") params.set("lang", I18n.lang());
     try { history.replaceState(null, "", "#" + params.toString()); } catch (error) { location.hash = params.toString(); }
   }
@@ -436,6 +722,8 @@
     }
     var limit = Number(params.get("n"));
     if ([25, 50, 100].indexOf(limit) >= 0) { state.limit = limit; $("limit").value = String(limit); }
+    if (Planner.FIELD_MODES.indexOf(params.get("f")) >= 0) state.fieldMode = params.get("f");
+    state.includePt = params.get("pt") === "1";
     return { query: params.get("q") || "", lang: params.get("lang") || "" };
   }
 
@@ -924,6 +1212,7 @@
     $("count-results").textContent = has ? fmtNumber(state.result.ranked.length) : "";
     $("count-quarantine").textContent = has && state.result.quarantined.length ? fmtNumber(state.result.quarantined.length) : "";
     renderStatus();
+    renderStrategy();
     if (!has) return;
     renderStrip();
     renderFilters();
@@ -979,6 +1268,10 @@
       document_class_ontology_version: DATA.document_class_ontology_version,
       rule_bundle_sha256: DATA.bundle_sha256,
       page_build: BUILD,
+      planner_version: DATA.planner_version,
+      query_vocabulary_version: VOCABULARY.vocabulary_version,
+      query_plan: state.origin === "search" ? state.plan : null,
+      executed_queries: state.origin === "search" ? state.executed : null,
       counts: state.result.stats,
       guardrail: {
         pt: I18n.STRINGS.pt["footer.disclaimer"],

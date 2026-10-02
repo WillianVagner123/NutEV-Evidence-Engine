@@ -135,10 +135,10 @@
     }, query, retrievedAt);
   }
 
-  function europePmcUrl(query, limit) {
-    return "https://www.ebi.ac.uk/europepmc/webservices/rest/search?" + new URLSearchParams({
+  function europePmcUrl(query, limit, params) {
+    return "https://www.ebi.ac.uk/europepmc/webservices/rest/search?" + new URLSearchParams(Object.assign({
       query: query, format: "json", resultType: "core", pageSize: String(limit)
-    }).toString();
+    }, params || {})).toString();
   }
 
   // ------------------------------------------------------------------ OpenAlex
@@ -191,10 +191,10 @@
     }, query, retrievedAt);
   }
 
-  function openAlexUrl(query, limit) {
-    return "https://api.openalex.org/works?" + new URLSearchParams({
+  function openAlexUrl(query, limit, params) {
+    return "https://api.openalex.org/works?" + new URLSearchParams(Object.assign({
       search: query, "per-page": String(limit)
-    }).toString();
+    }, params || {})).toString();
   }
 
   // ------------------------------------------------------------------ Crossref
@@ -245,12 +245,12 @@
     }, query, retrievedAt);
   }
 
-  function crossrefUrl(query, limit) {
-    return "https://api.crossref.org/works?" + new URLSearchParams({
-      query: query,
+  function crossrefUrl(query, limit, params) {
+    return "https://api.crossref.org/works?" + new URLSearchParams(Object.assign({
+      "query.bibliographic": query,
       rows: String(limit),
       select: "DOI,title,abstract,author,container-title,type,URL,link,published-print,published-online,issued"
-    }).toString();
+    }, params || {})).toString();
   }
 
   // ------------------------------------------------------------------ PubMed (E-utilities)
@@ -402,9 +402,10 @@
     throw lastError;
   }
 
-  async function searchEuropePmc(query, limit, options) {
+  async function searchEuropePmc(spec, limit, options) {
+    var query = spec.query;
     var retrievedAt = new Date().toISOString();
-    var data = await request(europePmcUrl(query, limit), options);
+    var data = await request(europePmcUrl(query, limit, spec.params), options);
     var items = ((data || {}).resultList || {}).result || [];
     return {
       total_found: typeof data.hitCount === "number" ? data.hitCount : null,
@@ -412,18 +413,20 @@
     };
   }
 
-  async function searchOpenAlex(query, limit, options) {
+  async function searchOpenAlex(spec, limit, options) {
+    var query = spec.query;
     var retrievedAt = new Date().toISOString();
-    var data = await request(openAlexUrl(query, limit), options);
+    var data = await request(openAlexUrl(query, limit, spec.params), options);
     return {
       total_found: ((data || {}).meta || {}).count ?? null,
       rows: ((data || {}).results || []).map(function (item) { return normalizeOpenAlex(item, query, retrievedAt); })
     };
   }
 
-  async function searchCrossref(query, limit, options) {
+  async function searchCrossref(spec, limit, options) {
+    var query = spec.query;
     var retrievedAt = new Date().toISOString();
-    var data = await request(crossrefUrl(query, limit), options);
+    var data = await request(crossrefUrl(query, limit, spec.params), options);
     var message = (data || {}).message || {};
     return {
       total_found: message["total-results"] ?? null,
@@ -431,13 +434,29 @@
     };
   }
 
-  async function searchPubMed(query, limit, options) {
+  /** PubMed "Search details": how PubMed itself interpreted the string, plus its warnings. */
+  function pubMedTranslation(result) {
+    var errors = result.errorlist || {};
+    var warnings = result.warninglist || {};
+    function list(value) { return Array.isArray(value) ? value.filter(Boolean).map(String) : []; }
+    return {
+      query_translation: clean(result.querytranslation),
+      phrases_not_found: list(errors.phrasesnotfound).concat(list(warnings.quotedphrasesnotfound)),
+      fields_not_found: list(errors.fieldsnotfound),
+      phrases_ignored: list(warnings.phrasesignored),
+      messages: list(warnings.outputmessages)
+    };
+  }
+
+  async function searchPubMed(spec, limit, options) {
+    var query = spec.query;
     var retrievedAt = new Date().toISOString();
-    var search = await request(eutils("esearch.fcgi", { db: "pubmed", term: query, retmode: "json", retmax: String(limit) }), options);
+    var search = await request(eutils("esearch.fcgi", Object.assign({ db: "pubmed", term: query, retmode: "json", retmax: String(limit) }, spec.params || {})), options);
     var result = (search || {}).esearchresult || {};
     var ids = result.idlist || [];
     var notes = [];
-    if (!ids.length) return { total_found: Number(result.count || 0), rows: [], notes: notes };
+    var translation = pubMedTranslation(result);
+    if (!ids.length) return { total_found: Number(result.count || 0), rows: [], notes: notes, translation: translation };
     await sleep(350);
     var summary = await request(eutils("esummary.fcgi", { db: "pubmed", id: ids.join(","), retmode: "json" }), options);
     var abstracts = {};
@@ -453,6 +472,7 @@
     return {
       total_found: Number(result.count || 0),
       notes: notes,
+      translation: translation,
       rows: uids.filter(function (uid) { return docs[uid] && !docs[uid].error; }).map(function (uid) {
         return normalizePubMedSummary(docs[uid], uid, abstracts[uid], query, retrievedAt);
       })
@@ -462,18 +482,25 @@
   var SEARCHERS = { europepmc: searchEuropePmc, openalex: searchOpenAlex, crossref: searchCrossref, pubmed: searchPubMed };
 
   /**
-   * Query the selected sources in parallel. Resolves with one status entry per
-   * source; never rejects because a single source failed.
+   * Query the selected sources in parallel. `queries` is either one string for
+   * every source or { sourceId: { query, params } } with each source's own
+   * syntax (see planner.js). Resolves with one status entry per source; never
+   * rejects because a single source failed.
    */
-  async function searchSources(query, sourceIds, limit, options) {
+  async function searchSources(queries, sourceIds, limit, options) {
     var opts = Object.assign({ fetch: typeof fetch !== "undefined" ? fetch.bind(globalThis) : null }, options || {});
     var jobs = sourceIds.map(async function (id) {
       var started = Date.now();
       try {
-        var result = await SEARCHERS[id](query, limit, opts);
+        var spec = typeof queries === "string" ? { query: queries, params: {} } : (queries[id] || { query: "", params: {} });
+        if (!String(spec.query || "").trim()) throw new SourceError("empty_query", "empty query");
+        var result = await SEARCHERS[id](spec, limit, opts);
         var status = {
           source: id,
           status: "ok",
+          query: spec.query,
+          params: spec.params || {},
+          translation: result.translation || null,
           total_found: result.total_found,
           returned: result.rows.length,
           notes: result.notes || [],
@@ -485,6 +512,7 @@
         var failed = {
           source: id,
           status: "error",
+          query: typeof queries === "string" ? queries : ((queries[id] || {}).query || ""),
           error_kind: error && error.kind ? error.kind : "network_error",
           error: error && error.message ? error.message : String(error),
           http_status: error && error.httpStatus ? error.httpStatus : null,

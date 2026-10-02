@@ -248,3 +248,10 @@ As regras de classificação são as mesmas do Engine e são verificadas por tes
 
 A disponibilidade depende de CORS, limites de requisição e mudanças nas APIs públicas; falhas aparecem por fonte e nunca são preenchidas. O nível do dado A/B/Q descreve rastreabilidade de metadados e não qualidade metodológica, certeza ou recomendação.
 
+
+## 26. O planejador de busca reconhece o que está no vocabulário
+
+O planejador (`src/nutev/search/question_planner.py`) entende a pergunta comparando-a com `config/query_vocabulary.json`, que ainda está em `curated_pending_human_review`. Conceitos fora do vocabulário viram termos livres como digitados. Ambiguidade de linguagem, negação ("sem diabetes") e relações complexas não são interpretadas. Sinônimos curados não garantem recall e não substituem descritores controlados revisados.
+
+A string gerada é ponto de partida editável para busca exploratória. Ela não é estratégia de revisão sistemática validada (PRESS) e não autoriza busca formal ou PRISMA.
+

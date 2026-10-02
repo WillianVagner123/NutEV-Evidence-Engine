@@ -120,11 +120,11 @@
     "outcome.personalized_adherence": "Adherence in personalised nutrition care"
   },
   "example_queries": [
-    "mediterranean diet type 2 diabetes",
-    "lifestyle medicine hypertension",
-    "food literacy cooking intervention",
-    "ultra-processed food obesity",
-    "plant-based diet cardiovascular risk",
-    "produce prescription food insecurity"
+    "A dieta mediterrânea melhora o controle glicêmico no diabetes tipo 2?",
+    "Medicina do Estilo de Vida na hipertensão: ensaios clínicos",
+    "letramento alimentar e oficinas culinárias na atenção primária",
+    "ultraprocessados e obesidade em crianças e adolescentes",
+    "plant-based diet vs mediterranean diet for weight loss",
+    "insegurança alimentar e prescrição de frutas e verduras desde 2015"
   ]
 }
