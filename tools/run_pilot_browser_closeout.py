@@ -207,7 +207,7 @@ def run(output: Path) -> dict:
             onboarding.locator('#nutevProjectSelect').select_option(new_user['projects'][0]);onboarding.wait_for_load_state('domcontentloaded')
             onboarding.goto(base+'/project.html',wait_until='domcontentloaded')
             expect(onboarding.locator('#templatePanel')).to_be_visible();expect(onboarding.locator('#templatePanel')).to_contain_text('Escolha como este projeto vai usar o NutEV')
-            expect(onboarding.locator('input[name="applicationTemplate"]')).to_have_count(3)
+            expect(onboarding.locator('input[name="applicationTemplate"]')).to_have_count(4)
             onboarding.locator('input[name="applicationTemplate"][value="GENERIC_EVIDENCE_PROJECT"]').check();onboarding.locator('#configureApplication').click();onboarding.wait_for_load_state('domcontentloaded')
             expect(onboarding.locator('#projectHealth')).to_have_text('contexto configurado');expect(onboarding.locator('#projectModules')).to_contain_text('Buscar evidências');expect(onboarding.locator('#projectModules')).to_contain_text('Biblioteca');expect(onboarding.locator('#projectModules')).to_contain_text('Exportações');passed('first_project_configuration_has_clear_supported_next_actions')
 
