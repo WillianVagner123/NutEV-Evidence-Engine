@@ -27,6 +27,12 @@ A1_CONTEXT_FILES = frozenset({
     "CONTEXT_MANIFEST.json", "SEARCH_STATE.json", "SEARCH_SUMMARY.md", "ARTICLE_SUMMARIES.jsonl",
 })
 STATIC_SUFFIXES = frozenset({".html", ".css", ".js", ".ico", ".svg", ".png", ".jpg", ".webp", ".woff", ".woff2"})
+# Login-free Open Evidence Explorer (apps/nutev-open): static files only, no private state.
+OPEN_EXPLORER_PREFIX = "/aberto"
+
+
+def is_open_explorer_path(path: str) -> bool:
+    return path == OPEN_EXPLORER_PREFIX or path.startswith(OPEN_EXPLORER_PREFIX + "/")
 
 
 def canonical_request_path(target: str) -> str:
@@ -59,7 +65,7 @@ def pilot_route_kind(path: str) -> str:
     if path.startswith("/agent-context/article1/"):
         name = path.removeprefix("/agent-context/article1/")
         return "article1_context" if name in A1_CONTEXT_FILES else "blocked"
-    if path in {"/", "/index.html", "/login.html", "/validation/"}:
+    if path in {"/", "/index.html", "/login.html", "/validation/", OPEN_EXPLORER_PREFIX, OPEN_EXPLORER_PREFIX + "/"}:
         return "static"
     parts = PurePosixPath(path).parts
     if any(p.startswith(".") for p in parts) or PurePosixPath(path).suffix not in STATIC_SUFFIXES:

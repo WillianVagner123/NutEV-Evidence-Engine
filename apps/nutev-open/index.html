@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://www.ebi.ac.uk https://api.openalex.org https://api.crossref.org https://eutils.ncbi.nlm.nih.gov; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Explorador Aberto de Evidências do NutEV: busque literatura de Medicina e Nutrição do Estilo de Vida e entenda a qualidade do dado (rastreabilidade A/B/Q, completude e eixos MEV/NEV), sem login.">
+  <meta name="color-scheme" content="light dark">
+  <title>NutEV · Explorador Aberto de Evidências</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 23V9h3l8 9.5V9h3v14h-3l-8-9.5V23z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#" id="brand-home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span class="brand-text">
+          <strong data-i18n="brand.title">Explorador Aberto de Evidências</strong>
+          <span data-i18n="brand.subtitle">NutEV · Sistema de Evidências Científicas</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <div class="lang-switch" role="group" data-i18n-aria="lang.label">
+          <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a id="advanced-link" class="gh-link advanced-link" href="/login.html" hidden data-i18n="nav.advanced">Busca avançada (entrar)</a>
+        <a class="gh-link" href="https://github.com/WillianVagner123/NutEV-Evidence-Engine" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h1 data-i18n="hero.title">Busque literatura de Medicina e Nutrição do Estilo de Vida e entenda a qualidade do dado de cada registro.</h1>
+      <p class="hero-lead" data-i18n="hero.lead"></p>
+      <ul class="badges" aria-label="NutEV">
+        <li data-i18n="badge.nologin">Sem login</li>
+        <li data-i18n="badge.open">Código aberto (MIT)</li>
+        <li data-i18n="badge.local">Processado no seu navegador</li>
+        <li data-i18n="badge.deterministic">Regras determinísticas e reproduzíveis</li>
+      </ul>
+
+      <form id="search-form" class="search" role="search" novalidate>
+        <label for="q" class="sr-only" data-i18n="search.label">O que você quer buscar?</label>
+        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" maxlength="500" data-i18n-placeholder="search.placeholder">
+        <button type="submit" id="search-btn" class="btn btn-primary" data-i18n="search.button">Buscar</button>
+      </form>
+
+      <div class="search-options">
+        <fieldset class="source-picker">
+          <legend data-i18n="search.sources">Fontes abertas</legend>
+          <div id="source-picker" class="chip-row"></div>
+        </fieldset>
+        <label class="limit-picker">
+          <span data-i18n="search.limit">Registros por fonte</span>
+          <select id="limit">
+            <option value="25">25</option>
+            <option value="50" selected>50</option>
+            <option value="100">100</option>
+          </select>
+        </label>
+      </div>
+      <div class="examples">
+        <span data-i18n="search.examples">Experimente:</span>
+        <span id="examples" class="chip-row"></span>
+      </div>
+      <p class="tip" data-i18n="search.tip"></p>
+    </section>
+
+    <section id="strategy" class="strategy" hidden>
+      <details id="strategy-details" open>
+        <summary><span data-i18n="strategy.title">Como o NutEV organizou sua busca</span> <span id="strategy-summary" class="strategy-summary"></span></summary>
+        <div id="strategy-body" class="strategy-body"></div>
+      </details>
+    </section>
+
+    <section id="status" class="status-panel" aria-live="polite" hidden>
+      <h2 class="sr-only" data-i18n="status.title">Estado das fontes</h2>
+      <ul id="status-list" class="status-list"></ul>
+    </section>
+
+    <nav class="tabs" role="tablist" aria-label="NutEV">
+      <button type="button" role="tab" id="tab-results" aria-controls="panel-results" aria-selected="true" data-tab="results"><span data-i18n="tabs.results">Resultados</span> <span class="tab-count" id="count-results"></span></button>
+      <button type="button" role="tab" id="tab-quality" aria-controls="panel-quality" aria-selected="false" data-tab="quality"><span data-i18n="tabs.quality">Qualidade do dado (MEV/NEV)</span></button>
+      <button type="button" role="tab" id="tab-quarantine" aria-controls="panel-quarantine" aria-selected="false" data-tab="quarantine"><span data-i18n="tabs.quarantine">Quarentena</span> <span class="tab-count" id="count-quarantine"></span></button>
+      <button type="button" role="tab" id="tab-guide" aria-controls="panel-guide" aria-selected="false" data-tab="guide"><span data-i18n="tabs.guide">Como ler os níveis</span></button>
+      <button type="button" role="tab" id="tab-file" aria-controls="panel-file" aria-selected="false" data-tab="file"><span data-i18n="tabs.file">Abrir arquivo</span></button>
+    </nav>
+
+    <section id="panel-results" class="panel" role="tabpanel" aria-labelledby="tab-results">
+      <div id="results-empty" class="empty-state">
+        <h2 data-i18n="results.emptyTitle">Comece por uma busca</h2>
+        <p data-i18n="results.emptyLead"></p>
+        <ol class="steps">
+          <li><span class="step-n" aria-hidden="true">1</span><span data-i18n="results.step1"></span></li>
+          <li><span class="step-n" aria-hidden="true">2</span><span data-i18n="results.step2"></span></li>
+          <li><span class="step-n" aria-hidden="true">3</span><span data-i18n="results.step3"></span></li>
+        </ol>
+        <div id="empty-levels" class="level-cards compact"></div>
+        <button type="button" class="btn btn-ghost" data-goto="guide" data-i18n="results.guideLink">Como ler os níveis</button>
+      </div>
+
+      <div id="results-view" hidden>
+        <div id="quality-strip" class="quality-strip"></div>
+        <div class="results-layout">
+          <aside class="filters">
+            <details id="filters-details" open>
+              <summary data-i18n="filters.title">Filtros</summary>
+              <div id="filters"></div>
+            </details>
+          </aside>
+          <div class="results-main">
+            <div class="results-toolbar">
+              <p id="results-count" class="results-count"></p>
+              <div class="toolbar-actions">
+                <label class="sort-picker"><span data-i18n="sort.label">Ordenar por</span>
+                  <select id="sort">
+                    <option value="priority" data-i18n="sort.priority">Prioridade NutEV</option>
+                    <option value="recent" data-i18n="sort.recent">Mais recentes</option>
+                    <option value="completeness" data-i18n="sort.completeness">Completude dos metadados</option>
+                    <option value="title" data-i18n="sort.title">Título (A–Z)</option>
+                  </select>
+                </label>
+                <button type="button" id="export-csv" class="btn btn-ghost" data-i18n="export.csv">Baixar CSV</button>
+                <button type="button" id="export-json" class="btn btn-ghost" data-i18n="export.json">Baixar JSON com manifesto</button>
+                <button type="button" id="copy-link" class="btn btn-ghost" data-i18n="export.link">Copiar link desta busca</button>
+              </div>
+            </div>
+            <ol id="results-list" class="results-list"></ol>
+            <button type="button" id="show-more" class="btn btn-ghost show-more" hidden></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="panel-quality" class="panel" role="tabpanel" aria-labelledby="tab-quality" hidden>
+      <h2 data-i18n="quality.title">Qualidade do dado por eixo da MEV e da NEV</h2>
+      <p class="panel-lead" data-i18n="quality.lead"></p>
+      <p id="quality-empty" class="empty-note" data-i18n="quality.empty"></p>
+      <div id="quality-view" hidden>
+        <div id="kpis" class="kpis"></div>
+        <div id="abq-legend" class="abq-legend"></div>
+        <div id="axis-chart" class="axis-chart"></div>
+        <div class="quality-grid">
+          <section class="chart-card">
+            <h3 data-i18n="quality.bySource">Qualidade por fonte</h3>
+            <p class="chart-lead" data-i18n="quality.bySource.lead"></p>
+            <div id="source-chart"></div>
+          </section>
+          <section class="chart-card">
+            <h3 data-i18n="quality.completeness">Completude dos metadados</h3>
+            <p class="chart-lead" data-i18n="quality.completeness.lead"></p>
+            <div id="completeness-chart"></div>
+          </section>
+          <section class="chart-card">
+            <h3 data-i18n="quality.doctypes">Tipo documental (sinal automático)</h3>
+            <div id="doctype-chart"></div>
+          </section>
+          <section class="chart-card">
+            <h3 data-i18n="quality.years">Ano de publicação</h3>
+            <div id="year-chart"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="panel-quarantine" class="panel" role="tabpanel" aria-labelledby="tab-quarantine" hidden>
+      <h2 data-i18n="quarantine.title">Quarentena</h2>
+      <p class="panel-lead" data-i18n="quarantine.lead"></p>
+      <p id="quarantine-empty" class="empty-note" data-i18n="quarantine.empty"></p>
+      <ol id="quarantine-list" class="results-list"></ol>
+    </section>
+
+    <section id="panel-guide" class="panel guide" role="tabpanel" aria-labelledby="tab-guide" hidden>
+      <h2 data-i18n="guide.title">Como ler a qualidade do dado</h2>
+      <p class="panel-lead" data-i18n="guide.lead"></p>
+
+      <h3 data-i18n="guide.q0">0. Como a busca entende a sua pergunta</h3>
+      <p id="guide-q0-lead"></p>
+
+      <h3 data-i18n="guide.q1">1. O registro é rastreável?</h3>
+      <p id="guide-q1-lead"></p>
+      <div id="guide-levels" class="level-cards"></div>
+
+      <h3 data-i18n="guide.q2">2. Os metadados estão completos?</h3>
+      <p data-i18n="guide.q2.lead"></p>
+      <ul id="guide-fields" class="field-list"></ul>
+
+      <h3 data-i18n="guide.q3">3. Sobre o que ele trata na MEV e na NEV?</h3>
+      <p id="guide-q3-lead"></p>
+
+      <h3 data-i18n="guide.q4">4. Que tipo de documento ele parece ser?</h3>
+      <p data-i18n="guide.q4.lead"></p>
+
+      <h3 data-i18n="guide.q5">5. Por que esta ordem?</h3>
+      <p data-i18n="guide.q5.lead"></p>
+
+      <div class="not-box">
+        <h3 data-i18n="guide.not.title">O que este explorador não faz</h3>
+        <ul>
+          <li data-i18n="guide.not.1"></li>
+          <li data-i18n="guide.not.2"></li>
+          <li data-i18n="guide.not.3"></li>
+          <li data-i18n="guide.not.4"></li>
+          <li data-i18n="guide.not.5"></li>
+          <li data-i18n="guide.not.6"></li>
+        </ul>
+      </div>
+
+      <h3 data-i18n="guide.axes">Eixos da taxonomia MEV/NEV</h3>
+      <p data-i18n="guide.axes.lead"></p>
+      <div id="guide-axes" class="guide-axes"></div>
+
+      <h3 data-i18n="guide.provenance">Versões e proveniência</h3>
+      <dl id="guide-provenance" class="provenance"></dl>
+    </section>
+
+    <section id="panel-file" class="panel" role="tabpanel" aria-labelledby="tab-file" hidden>
+      <h2 data-i18n="file.title">Abrir um resultado do NutEV Reference Engine</h2>
+      <p class="panel-lead" data-i18n="file.lead"></p>
+      <label id="dropzone" class="dropzone" for="file-input">
+        <span data-i18n="file.drop">Solte o arquivo aqui ou clique para escolher</span>
+        <input id="file-input" type="file" accept=".jsonl,.json,.csv,.ndjson,application/json,text/csv" class="sr-only">
+      </label>
+      <p id="file-message" class="file-message" role="status"></p>
+      <p class="empty-note" data-i18n="file.privacy"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="guardrail" data-i18n="footer.disclaimer">O nível do dado e a ordenação descrevem rastreabilidade e organização técnica dos metadados. O nível do dado não representa qualidade metodológica, elegibilidade, risco de viés, certeza da evidência, força de recomendação ou recomendação clínica.</p>
+    <p class="footer-meta"><span id="footer-meta"></span> · <a href="https://github.com/WillianVagner123/NutEV-Evidence-Engine" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Código-fonte e regras no GitHub</a></p>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+  <script src="data/nutev-open-data.js"></script>
+  <script src="build-info.js"></script>
+  <script src="i18n.js"></script>
+  <script src="core.js"></script>
+  <script src="planner.js"></script>
+  <script src="sources.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

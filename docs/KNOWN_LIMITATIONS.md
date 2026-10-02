@@ -238,3 +238,20 @@ Its incremental value, calibration, provider/language bias, stability, and human
 remain `NOT_TESTED` until evaluated against an independent human-labelled set. Provider success,
 confidence, or agreement with lexical signals must not be presented as scientific validation of
 NutEV.
+
+
+## 25. O Explorador Aberto é uma amostra limitada de fontes abertas
+
+O Explorador Aberto de Evidências (`apps/nutev-open/`) consulta apenas Europe PMC, PubMed, OpenAlex e Crossref, com 25 a 100 registros por fonte, direto do navegador. Ele não é busca exaustiva, busca formal de revisão sistemática nem substituto da execução completa do Reference Engine (LILACS/BVS, SciELO, DOAJ, Semantic Scholar e fontes oficiais ficam fora).
+
+As regras de classificação são as mesmas do Engine e são verificadas por testes de paridade, mas os adaptadores do navegador recebem metadados um pouco mais ricos (resumo do Europe PMC via `resultType=core`, resumo do OpenAlex em ordem de leitura, PMID do OpenAlex). Por isso, o mesmo registro pode receber eixos ou prioridade diferentes do que receberia num lote coletado pelo Engine.
+
+A disponibilidade depende de CORS, limites de requisição e mudanças nas APIs públicas; falhas aparecem por fonte e nunca são preenchidas. O nível do dado A/B/Q descreve rastreabilidade de metadados e não qualidade metodológica, certeza ou recomendação.
+
+
+## 26. O planejador de busca reconhece o que está no vocabulário
+
+O planejador (`src/nutev/search/question_planner.py`) entende a pergunta comparando-a com `config/query_vocabulary.json`, que ainda está em `curated_pending_human_review`. Conceitos fora do vocabulário viram termos livres como digitados. Ambiguidade de linguagem, negação ("sem diabetes") e relações complexas não são interpretadas. Sinônimos curados não garantem recall e não substituem descritores controlados revisados.
+
+A string gerada é ponto de partida editável para busca exploratória. Ela não é estratégia de revisão sistemática validada (PRESS) e não autoriza busca formal ou PRISMA.
+

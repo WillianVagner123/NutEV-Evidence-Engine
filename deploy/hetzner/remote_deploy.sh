@@ -352,8 +352,10 @@ for _ in $(seq 1 30); do
   ARTICLES_CODE="$(public_status "$PUBLIC_URL/articles.html")"
   FORGOT_PASSWORD_CODE="$(public_status "$PUBLIC_URL/forgot-password.html")"
   ACCESS_ADMIN_CODE="$(public_status "$PUBLIC_URL/access-admin.html")"
+  OPEN_EXPLORER_CODE="$(public_status "$PUBLIC_URL/aberto/")"
   if acceptable_edge_status "$HEALTH_CODE" && acceptable_edge_status "$VERSION_CODE" \
     && acceptable_edge_status "$SEARCH_CODE" && acceptable_edge_status "$ARTICLES_CODE" \
+    && acceptable_edge_status "$OPEN_EXPLORER_CODE" \
     && [[ "$FORGOT_PASSWORD_CODE" = "200" ]] && [[ "$ACCESS_ADMIN_CODE" = "200" ]]; then
     if [[ "$VERSION_CODE" = "200" ]]; then
       PUBLIC_COMMIT="$(curl -fsS --max-time 10 "$PUBLIC_URL/api/version" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit", ""))')"
@@ -363,6 +365,9 @@ for _ in $(seq 1 30); do
   fi
   sleep 2
 done
+if [[ "$public_ok" = "1" && "$OPEN_EXPLORER_CODE" = "401" ]]; then
+  echo "::notice::The login-free Open Evidence Explorer ($PUBLIC_URL/aberto/) is still behind the outer Basic Auth; exempt /aberto and /aberto/* in the edge proxy to make it public."
+fi
 if [[ "$public_ok" != "1" ]]; then
   echo "Public HTTPS edge smoke failed for $PUBLIC_URL (expected 200 or Basic-Auth 401 on protected surfaces; auth recovery static pages require HTTP 200)." >&2
   rollback

@@ -17,6 +17,8 @@ import webbrowser
 APP_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = APP_ROOT.parents[1]
 VALIDATION_ROOT = REPO_ROOT / "apps" / "nutev-validation"
+OPEN_EXPLORER_ROOT = REPO_ROOT / "apps" / "nutev-open"
+OPEN_EXPLORER_PREFIX = "/aberto"
 if str(APP_ROOT) not in sys.path:
     sys.path.insert(0, str(APP_ROOT))
 
@@ -665,6 +667,15 @@ class NutEVHandler(SimpleHTTPRequestHandler):
 
     def translate_path(self, path: str) -> str:
         clean = urlparse(path).path
+        if clean == OPEN_EXPLORER_PREFIX or clean.startswith(OPEN_EXPLORER_PREFIX + "/"):
+            # Return the directory itself for the root so the standard handler
+            # redirects /aberto -> /aberto/ and serves index.html.
+            root = OPEN_EXPLORER_ROOT.resolve()
+            suffix = clean[len(OPEN_EXPLORER_PREFIX):].lstrip("/")
+            target = (root / suffix).resolve() if suffix else root
+            if target != root and root not in target.parents:
+                return str(root / "__outside_open_explorer__")
+            return str(target)
         if clean.startswith("/validation"):
             suffix = clean[len("/validation"):].lstrip("/")
             target = VALIDATION_ROOT / (suffix or "index.html")

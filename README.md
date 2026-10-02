@@ -23,6 +23,42 @@ técnicas de leitura e exportação.
 O score **não** representa qualidade metodológica, elegibilidade científica,
 certeza da evidência, força de recomendação ou recomendação clínica.
 
+## Explorador Aberto de Evidências (sem login)
+
+Qualquer pessoa pode buscar e entender a qualidade do dado sem conta, sem
+instalação e sem servidor: o [Explorador Aberto](apps/nutev-open/) consulta
+Europe PMC, PubMed, OpenAlex e Crossref direto do navegador e classifica cada
+registro com as mesmas regras do Engine.
+
+- **Busca por pergunta** — escreva em português ou inglês; o NutEV separa os
+  conceitos (PICO), traduz pelo vocabulário MEV/NEV (`config/query_vocabulary.json`),
+  entende períodos e monta a string de cada base no formato dela (PubMed, Europe PMC,
+  OpenAlex, Crossref, BVS/LILACS, SciELO), tudo visível e editável. Também na CLI:
+  `nutev plan-query "dieta mediterrânea e diabetes tipo 2 desde 2015"`;
+
+- **Nível do dado A/B/Q** — identificador verificável, URL rastreável ou quarentena;
+- **Completude dos metadados** — título, resumo, ano, autores, periódico e identificador;
+- **Eixos MEV/NEV** — pilares da Medicina do Estilo de Vida, padrões alimentares,
+  composição, culinária/literacia, contexto, condição e desfecho;
+- **Painel de qualidade** — proporção A/B/Q por eixo MEV/NEV, por fonte, por campo e por ano;
+- **Explicação completa por registro** — motivo do nível, termos que classificaram,
+  tipo documental e a conta da prioridade de leitura;
+- **Exportação** CSV/JSON com manifesto e leitura local de `reference_ranking.jsonl`/`.csv`.
+
+No site hospedado, a busca aberta fica em **`https://nutev.mindsperformance.com.br/aberto/`** e é a página
+inicial para quem não está logado; login só para a busca avançada (biblioteca,
+projetos, histórico e exportações privadas).
+
+Publicação adicional: GitHub Pages via `.github/workflows/open-explorer-pages.yml`
+(`https://willianvagner123.github.io/NutEV-Evidence-Engine/` depois de habilitar
+**Settings → Pages → Source: GitHub Actions**). Uso local: abra
+`apps/nutev-open/index.html`. Contrato e fronteiras:
+[`docs/OPEN_EVIDENCE_EXPLORER.md`](docs/OPEN_EVIDENCE_EXPLORER.md).
+
+As regras do navegador são geradas da configuração canônica
+(`python tools/build_open_explorer_data.py`) e verificadas contra o Python por
+testes de paridade no CI.
+
 ## Estado atual
 
 A versão 1.1.0 concluiu a aceitação operacional hospedada em modo multiusuário

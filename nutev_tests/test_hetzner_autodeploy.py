@@ -91,7 +91,10 @@ def test_public_edge_smoke_accepts_basic_auth_challenge_without_weakening_it() -
     workflow = deploy_surface_text()
     caddy = (DEPLOY / "Caddyfile").read_text(encoding="utf-8")
 
-    assert 'basic_auth {' in caddy
+    # Basic Auth still guards every route except the static, login-free Open Evidence Explorer.
+    assert 'basic_auth @protected {' in caddy
+    assert '@protected not path /aberto /aberto/*' in caddy
+    assert caddy.count('basic_auth') == 1 and caddy.count('not path') == 1
     assert 'acceptable_edge_status()' in workflow
     assert '[[ "$1" = "200" || "$1" = "401" ]]' in workflow
     assert 'expected 200 or Basic-Auth 401 on protected surfaces' in workflow

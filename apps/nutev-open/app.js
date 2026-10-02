@@ -1,0 +1,1534 @@
+/*
+ * NutEV Open Evidence Explorer — user interface.
+ *
+ * Read-only, login-free and static. Network access lives only in sources.js;
+ * classification lives only in core.js. Everything rendered from external data
+ * goes through textContent (never innerHTML) and links are limited to http(s).
+ */
+(function () {
+  "use strict";
+
+  var DATA = window.NUTEV_OPEN_DATA;
+  var BUILD = window.NUTEV_OPEN_BUILD || { commit: "local" };
+  var Core = window.NutEVOpenCore;
+  var Sources = window.NutEVOpenSources;
+  var Planner = window.NutEVOpenPlanner;
+  var I18n = window.NutEVOpenI18n;
+  var t = I18n.t;
+
+  var PAGE_SIZE = 30;
+  var MAX_FILE_ROWS = 20000;
+  var LEVELS = ["A", "B", "Q"];
+  var GROUPS = {};
+  var FAMILIES = {};
+  DATA.taxonomy.groups.forEach(function (group) { GROUPS[group.id] = group; });
+  DATA.taxonomy.families.forEach(function (family) { FAMILIES[family.id] = family; });
+  var SOURCE_LABELS = { bvs_lilacs: "BVS / LILACS", scielo: "SciELO" };
+  Sources.SOURCES.forEach(function (source) { SOURCE_LABELS[source.id] = source.label; });
+  var TAXONOMY_TERMS = Planner.taxonomyTermsFromBundle(DATA);
+  var VOCABULARY = DATA.query_vocabulary;
+  var STRATEGY_PROVIDERS = ["pubmed", "europepmc", "openalex", "crossref", "bvs_lilacs", "scielo"];
+
+  var state = {
+    query: "",
+    sources: new Set(Sources.SOURCES.filter(function (s) { return s.defaultOn; }).map(function (s) { return s.id; })),
+    limit: 50,
+    origin: null,
+    fileName: "",
+    statuses: [],
+    result: null,
+    finishedAt: "",
+    sort: "priority",
+    shown: PAGE_SIZE,
+    tab: "results",
+    token: 0,
+    plan: null,
+    compiled: null,
+    fieldMode: "title_abstract",
+    includePt: false,
+    overrides: {},
+    executed: null,
+    filters: emptyFilters()
+  };
+
+  function emptyFilters() {
+    return {
+      levels: new Set(),
+      groups: new Set(),
+      unclassified: false,
+      docClasses: new Set(),
+      sources: new Set(),
+      yearFrom: null,
+      yearTo: null,
+      abstractOnly: false
+    };
+  }
+
+  // ------------------------------------------------------------------ DOM helpers
+
+  function $(id) { return document.getElementById(id); }
+
+  function el(tag, attrs) {
+    var node = document.createElement(tag);
+    if (attrs) {
+      Object.keys(attrs).forEach(function (key) {
+        var value = attrs[key];
+        if (value === null || value === undefined || value === false) return;
+        if (key === "class") node.className = value;
+        else if (key === "text") node.textContent = value;
+        else if (key === "href") {
+          var safe = safeHref(value);
+          if (safe) node.setAttribute("href", safe);
+        } else if (key.slice(0, 2) === "on" && typeof value === "function") node.addEventListener(key.slice(2), value);
+        else node.setAttribute(key, value === true ? "" : String(value));
+      });
+    }
+    for (var i = 2; i < arguments.length; i += 1) append(node, arguments[i]);
+    return node;
+  }
+
+  function append(node, child) {
+    if (child === null || child === undefined || child === false) return;
+    if (Array.isArray(child)) { child.forEach(function (item) { append(node, item); }); return; }
+    node.appendChild(typeof child === "string" || typeof child === "number" ? document.createTextNode(String(child)) : child);
+  }
+
+  function clear(node) {
+    while (node.firstChild) node.removeChild(node.firstChild);
+    return node;
+  }
+
+  function safeHref(value) {
+    var text = String(value || "").trim();
+    return /^https?:\/\/[^\s]+$/i.test(text) ? text : null;
+  }
+
+  function externalLink(href, text, cls) {
+    var safe = safeHref(href);
+    if (!safe) return el("span", { class: cls, text: text });
+    return el("a", { href: safe, class: cls, target: "_blank", rel: "noopener noreferrer", text: text });
+  }
+
+  function pct(part, whole) {
+    return whole ? Math.round((part / whole) * 100) : 0;
+  }
+
+  function fmtNumber(value) {
+    return Number(value || 0).toLocaleString(I18n.lang() === "pt" ? "pt-BR" : "en");
+  }
+
+  function fmtTime(iso) {
+    if (!iso) return "—";
+    var date = new Date(iso);
+    if (isNaN(date.getTime())) return String(iso);
+    return date.toLocaleString(I18n.lang() === "pt" ? "pt-BR" : "en", { dateStyle: "short", timeStyle: "short" });
+  }
+
+  function groupLabel(id) {
+    var group = GROUPS[id];
+    if (!group) return id;
+    return I18n.lang() === "pt" ? group.label_pt : group.label_en;
+  }
+
+  function familyLabel(family, short) {
+    if (!family) return t("family.unclassified");
+    var suffix = I18n.lang() === "pt" ? "_pt" : "_en";
+    return family[(short ? "short" : "label") + suffix];
+  }
+
+  function familyOf(groupId) {
+    var group = GROUPS[groupId];
+    return group ? FAMILIES[group.family] : null;
+  }
+
+  function docClassLabel(id) {
+    var labels = I18n.lang() === "pt" ? DATA.document_classes.labels_pt : DATA.document_classes.labels_en;
+    return labels[id] || id;
+  }
+
+  function sourceLabel(id) {
+    return SOURCE_LABELS[id] || id;
+  }
+
+  function levelOf(row) {
+    return Core.traceabilityLevel(row.audit_traceability);
+  }
+
+  function levelBadge(level) {
+    return el("span", { class: "level-badge level-" + level },
+      el("span", { class: "level-letter", "aria-hidden": "true", text: level }),
+      t("level." + level + ".name"));
+  }
+
+  function reasonsText(reasons) {
+    return (reasons || []).map(function (reason) { return t("reason." + reason); }).join("; ");
+  }
+
+  function works() {
+    return state.result ? state.result.ranked.concat(state.result.quarantined) : [];
+  }
+
+  function abstractPresent(row) {
+    return Boolean(row.metadata_completeness && row.metadata_completeness.fields.abstract);
+  }
+
+  // ------------------------------------------------------------------ tooltip
+
+  var tooltip = null;
+
+  function bindTooltip() {
+    tooltip = $("tooltip");
+    document.addEventListener("mouseover", function (event) {
+      var target = event.target.closest ? event.target.closest("[data-tip]") : null;
+      if (!target) { tooltip.hidden = true; return; }
+      tooltip.textContent = target.getAttribute("data-tip");
+      tooltip.hidden = false;
+    });
+    document.addEventListener("mousemove", function (event) {
+      if (tooltip.hidden) return;
+      var x = Math.min(event.clientX + 14, window.innerWidth - tooltip.offsetWidth - 8);
+      var y = event.clientY + 16;
+      if (y + tooltip.offsetHeight > window.innerHeight - 8) y = event.clientY - tooltip.offsetHeight - 12;
+      tooltip.style.left = Math.max(8, x) + "px";
+      tooltip.style.top = Math.max(8, y) + "px";
+    });
+    document.addEventListener("scroll", function () { tooltip.hidden = true; }, { passive: true });
+  }
+
+  // ------------------------------------------------------------------ A/B/Q bar
+
+  function abqBar(counts, options) {
+    var total = LEVELS.reduce(function (sum, level) { return sum + (counts[level] || 0); }, 0);
+    var bar = el("div", {
+      class: "abq-bar" + (options && options.tall ? " tall" : ""),
+      role: "img",
+      "aria-label": LEVELS.map(function (level) { return level + " " + (counts[level] || 0); }).join(", ")
+    });
+    if (options && typeof options.widthPct === "number") bar.style.width = Math.max(1, options.widthPct) + "%";
+    LEVELS.forEach(function (level) {
+      var count = counts[level] || 0;
+      if (!count) return;
+      var segment = el("span", {
+        class: "abq-seg " + level,
+        "data-tip": t("level." + level + ".name") + ": " + fmtNumber(count) + " (" + pct(count, total) + "%)"
+      });
+      segment.style.flexGrow = String(count);
+      segment.style.flexBasis = "0";
+      bar.appendChild(segment);
+    });
+    return bar;
+  }
+
+  function abqValues(counts) {
+    return LEVELS.map(function (level) { return level + " " + fmtNumber(counts[level] || 0); }).join(" · ");
+  }
+
+  function abqLegend() {
+    return el("div", { class: "abq-legend" }, LEVELS.map(function (level) {
+      return el("span", null, el("i", { class: "abq-key " + level, "aria-hidden": "true" }), t("level." + level + ".name"));
+    }));
+  }
+
+  // ------------------------------------------------------------------ static sections
+
+  function levelCards(container, compact) {
+    clear(container);
+    LEVELS.forEach(function (level) {
+      var code = level === "Q" ? t("level.Q.codes") : t("level." + level + ".code");
+      container.appendChild(el("article", { class: "level-card level-" + level },
+        el("h4", null, levelBadge(level)),
+        el("p", { text: t("level." + level + ".short") }),
+        compact ? null : el("code", { text: code })));
+    });
+  }
+
+  function renderSourcePicker() {
+    var picker = clear($("source-picker"));
+    Sources.SOURCES.forEach(function (source) {
+      var input = el("input", { type: "checkbox", value: source.id, checked: state.sources.has(source.id) });
+      input.checked = state.sources.has(source.id);
+      input.addEventListener("change", function () {
+        if (input.checked) state.sources.add(source.id); else state.sources.delete(source.id);
+      });
+      picker.appendChild(el("label", { class: "chip-toggle" }, input, el("span", { text: source.label })));
+    });
+  }
+
+  function renderExamples() {
+    var box = clear($("examples"));
+    DATA.example_queries.forEach(function (query) {
+      box.appendChild(el("button", {
+        type: "button",
+        class: "chip-button",
+        text: query,
+        onclick: function () { $("q").value = query; runSearch(query); }
+      }));
+    });
+  }
+
+  function renderGuide() {
+    $("guide-q0-lead").textContent = t("guide.q0.lead", { version: VOCABULARY.vocabulary_version, n: VOCABULARY.concepts.length });
+    $("guide-q1-lead").textContent = t("guide.q1.lead", { policy: DATA.guardrail_policy_version });
+    $("guide-q3-lead").textContent = t("guide.q3.lead", {
+      version: DATA.taxonomy_version,
+      groups: DATA.taxonomy.canonical_groups_loaded,
+      terms: fmtNumber(DATA.taxonomy.canonical_terms_total)
+    });
+    levelCards($("guide-levels"), false);
+    levelCards($("empty-levels"), true);
+
+    var fields = clear($("guide-fields"));
+    Core.COMPLETENESS_FIELDS.forEach(function (field) { fields.appendChild(el("li", { text: t("field." + field) })); });
+
+    var axes = clear($("guide-axes"));
+    DATA.taxonomy.families.forEach(function (family) {
+      var groups = DATA.taxonomy.groups.filter(function (group) { return group.family === family.id; });
+      axes.appendChild(el("section", { class: "guide-family" },
+        el("h4", null, el("span", { class: "family-tag", text: familyLabel(family, true) }), familyLabel(family, false)),
+        groups.map(function (group) {
+          return el("details", null,
+            el("summary", null, el("span", { text: groupLabel(group.id) }), el("small", { text: t("guide.axes.terms", { n: group.terms.length }) })),
+            el("code", { class: "axis-id", text: group.id }),
+            el("p", { class: "terms", text: group.terms.join(" · ") }));
+        })));
+    });
+
+    var prov = clear($("guide-provenance"));
+    [
+      [t("guide.prov.taxonomy"), DATA.taxonomy_version],
+      [t("guide.prov.policy"), DATA.guardrail_policy_version],
+      [t("guide.prov.engine"), DATA.engine_version],
+      [t("guide.prov.doctypes"), DATA.document_class_ontology_version],
+      [t("guide.prov.planner"), DATA.planner_version + " · " + VOCABULARY.vocabulary_version + " (" + VOCABULARY.review_status + ")"],
+      [t("guide.prov.bundle"), DATA.bundle_sha256],
+      [t("guide.prov.build"), BUILD.commit === "local" ? t("guide.prov.local") : BUILD.commit + (BUILD.built_at ? " · " + BUILD.built_at : "")]
+    ].forEach(function (pair) {
+      prov.appendChild(el("dt", { text: pair[0] }));
+      prov.appendChild(el("dd", { text: pair[1] }));
+    });
+
+    $("footer-meta").textContent = t("footer.meta", { version: DATA.engine_version });
+  }
+
+  // ------------------------------------------------------------------ tabs
+
+  function selectTab(name, focus) {
+    state.tab = name;
+    document.querySelectorAll(".tabs [role=tab]").forEach(function (tab) {
+      var selected = tab.getAttribute("data-tab") === name;
+      tab.setAttribute("aria-selected", selected ? "true" : "false");
+      tab.tabIndex = selected ? 0 : -1;
+      if (selected && focus) tab.focus();
+    });
+    document.querySelectorAll(".panel").forEach(function (panel) {
+      panel.hidden = panel.id !== "panel-" + name;
+    });
+  }
+
+  function bindTabs() {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".tabs [role=tab]"));
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener("click", function () { selectTab(tab.getAttribute("data-tab")); });
+      tab.addEventListener("keydown", function (event) {
+        var next = null;
+        if (event.key === "ArrowRight") next = tabs[(index + 1) % tabs.length];
+        if (event.key === "ArrowLeft") next = tabs[(index - 1 + tabs.length) % tabs.length];
+        if (next) { event.preventDefault(); selectTab(next.getAttribute("data-tab"), true); }
+      });
+    });
+    document.querySelectorAll("[data-goto]").forEach(function (button) {
+      button.addEventListener("click", function () { selectTab(button.getAttribute("data-goto"), true); });
+    });
+  }
+
+  // ------------------------------------------------------------------ status
+
+  function statusDetail(status) {
+    if (status.status === "pending") return t("status.pending");
+    if (status.status === "ok") {
+      var seconds = ((status.elapsed_ms || 0) / 1000).toLocaleString(I18n.lang() === "pt" ? "pt-BR" : "en", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      var parts = [t("status.ok", { n: fmtNumber(status.returned), s: seconds })];
+      if (typeof status.total_found === "number") parts.push(t("status.total", { total: fmtNumber(status.total_found) }));
+      (status.notes || []).forEach(function (note) { parts.push(t("status.note." + note)); });
+      return parts.join(" · ");
+    }
+    var kind = status.error_kind || "network_error";
+    return t("status.error") + ": " + t("status.error." + kind, { code: status.http_status || "?" });
+  }
+
+  function renderStatus() {
+    var panel = $("status");
+    var list = clear($("status-list"));
+    if (!state.statuses.length) { panel.hidden = true; return; }
+    panel.hidden = false;
+    state.statuses.forEach(function (status) {
+      var label = status.source === "file" ? t("status.file") + ": " + state.fileName : sourceLabel(status.source);
+      var detail = status.source === "file" ? t("file.loaded", { n: fmtNumber(status.returned), name: state.fileName }) : statusDetail(status);
+      list.appendChild(el("li", { class: "status-item", "data-state": status.status },
+        el("span", { class: "status-dot", "aria-hidden": "true" }),
+        el("strong", { text: label }),
+        el("span", { class: "detail", text: detail })));
+    });
+    if (state.origin === "search") {
+      Sources.NOT_QUERIED.forEach(function (item) {
+        list.appendChild(el("li", { class: "status-item", "data-state": "off" },
+          el("span", { class: "status-dot", "aria-hidden": "true" }),
+          el("strong", { text: item.label }),
+          el("span", { class: "detail", text: t(item.reason === "licensed" ? "status.licensed" : "status.engine_only") })));
+      });
+    }
+  }
+
+  // ------------------------------------------------------------------ search
+
+  function setSearching(active) {
+    var button = $("search-btn");
+    button.disabled = active;
+    button.textContent = t(active ? "search.searching" : "search.button");
+  }
+
+  function currentYear() {
+    return new Date().getFullYear();
+  }
+
+  function compilePlan() {
+    state.compiled = Planner.compileQueries(state.plan, {
+      fieldMode: state.fieldMode,
+      includePt: state.includePt,
+      currentYear: currentYear()
+    });
+    return state.compiled;
+  }
+
+  function queryFor(provider) {
+    var compiled = state.compiled.providers[provider];
+    var override = state.overrides[provider];
+    return {
+      query: typeof override === "string" ? override : compiled.query,
+      params: compiled.params || {}
+    };
+  }
+
+  function runSearch(rawQuery, options) {
+    var question = String(rawQuery || "").trim();
+    if (!question) { $("q").focus(); return; }
+    state.plan = Planner.planQuestion(question, VOCABULARY, {
+      currentYear: currentYear(),
+      taxonomyGroups: TAXONOMY_TERMS,
+      detectManual: !(options && options.literal)
+    });
+    state.overrides = {};
+    state.query = question;
+    compilePlan();
+    renderStrategy();
+    executePlan();
+  }
+
+  async function executePlan() {
+    var ids = Sources.SOURCES.map(function (s) { return s.id; }).filter(function (id) { return state.sources.has(id); });
+    if (!ids.length) { ids = Sources.SOURCES.map(function (s) { return s.id; }); ids.forEach(function (id) { state.sources.add(id); }); renderSourcePicker(); }
+    var queries = {};
+    ids.forEach(function (id) { queries[id] = queryFor(id); });
+    var runnable = ids.filter(function (id) { return String(queries[id].query || "").trim(); });
+    if (!runnable.length) {
+      renderStrategy();
+      $("strategy").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    var token = state.token + 1;
+    state.token = token;
+    state.origin = "search";
+    state.fileName = "";
+    state.limit = Number($("limit").value) || 50;
+    state.executed = { queries: queries, field_mode: state.fieldMode, include_pt: state.includePt, at: new Date().toISOString() };
+    state.statuses = runnable.map(function (id) { return { source: id, status: "pending" }; });
+    setSearching(true);
+    renderStatus();
+    updateHash();
+    document.title = state.query + " · NutEV";
+
+    var outcome = await Sources.searchSources(queries, runnable, state.limit, {
+      DOMParser: window.DOMParser,
+      onSource: function (status) {
+        if (token !== state.token) return;
+        state.statuses = state.statuses.map(function (item) { return item.source === status.source ? status : item; });
+        renderStatus();
+      }
+    });
+    if (token !== state.token) return;
+    state.statuses = outcome.statuses;
+    state.finishedAt = new Date().toISOString();
+    loadRows(outcome.rows);
+    setSearching(false);
+    $("strategy").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // ------------------------------------------------------------------ strategy panel
+
+  function roleLabel(role) {
+    var info = VOCABULARY.roles[role] || {};
+    return I18n.lang() === "pt" ? info.label_pt : info.label_en;
+  }
+
+  function blockLabel(block) {
+    return I18n.lang() === "pt" ? block.label_pt : block.label_en;
+  }
+
+  function warningText(warning) {
+    var block = (state.plan.blocks || []).find(function (b) { return b.key === warning.block; });
+    return t("warn." + warning.code, { label: block ? blockLabel(block) : "", count: warning.count || "" });
+  }
+
+  function siteUrlFor(provider, query, params) {
+    var enc = encodeURIComponent;
+    if (!query) return "";
+    if (provider === "pubmed") return "https://pubmed.ncbi.nlm.nih.gov/?term=" + enc(query);
+    if (provider === "europepmc") return "https://europepmc.org/search?query=" + enc(query);
+    if (provider === "openalex") return "https://api.openalex.org/works?search=" + enc(query) + (params && params.filter ? "&filter=" + enc(params.filter) : "");
+    if (provider === "crossref") return "https://api.crossref.org/works?query.bibliographic=" + enc(query) + (params && params.filter ? "&filter=" + enc(params.filter) : "");
+    if (provider === "bvs_lilacs") return "https://pesquisa.bvsalud.org/portal/?lang=pt&q=" + enc(query) + "&" + enc("filter[db_cluster][]") + "=LILACS";
+    if (provider === "scielo") return "https://search.scielo.org/?lang=pt&q=" + enc(query);
+    return "";
+  }
+
+  function copyText(text, button) {
+    var done = function () {
+      var original = button.textContent;
+      button.textContent = t("strategy.copied");
+      setTimeout(function () { button.textContent = original; }, 1500);
+    };
+    try {
+      navigator.clipboard.writeText(text).then(done, function () { window.prompt("", text); });
+    } catch (error) {
+      window.prompt("", text);
+    }
+  }
+
+  function refreshStrategy() {
+    compilePlan();
+    renderStrategy();
+  }
+
+  function blockCard(block) {
+    var toggle = el("input", { type: "checkbox", "aria-label": t("strategy.use") + ": " + blockLabel(block) });
+    toggle.checked = Boolean(block.enabled);
+    toggle.addEventListener("change", function () { block.enabled = toggle.checked; refreshStrategy(); });
+
+    var chips = el("div", { class: "term-chips" }, block.terms.map(function (term) {
+      var on = term.enabled !== false;
+      var regionalOnly = term.lang === "pt" && !state.includePt;
+      return el("button", {
+        type: "button",
+        class: "term-chip" + (on ? "" : " off") + (regionalOnly ? " regional" : ""),
+        "aria-pressed": on ? "true" : "false",
+        "data-tip": (regionalOnly ? t("strategy.ptRegional") + " " : "") + t(on ? "strategy.termOff" : "strategy.termOn"),
+        onclick: function () { term.enabled = on ? false : true; refreshStrategy(); }
+      }, term.lang === "pt" ? el("small", { text: "PT" }) : term.lang === "en" ? el("small", { text: "EN" }) : null, term.text);
+    }));
+
+    var input = el("input", { type: "text", maxlength: "80", placeholder: t("strategy.addTerm"), "aria-label": t("strategy.addTerm") });
+    var addForm = el("form", { class: "add-term" }, input);
+    addForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var value = input.value.replace(/"/g, " ").replace(/\s+/g, " ").trim();
+      if (!value) return;
+      block.terms.push({ text: value, lang: block.role === "free" ? "any" : "en", enabled: true, added: true });
+      refreshStrategy();
+    });
+
+    var role = VOCABULARY.roles[block.role] || {};
+    return el("article", { class: "block-card role-" + block.role + (block.enabled ? "" : " off") },
+      el("header", null,
+        el("span", { class: "role-badge", "data-tip": roleLabel(block.role), text: role.letter || "?" }),
+        el("div", { class: "block-title" },
+          el("strong", { text: blockLabel(block) }),
+          el("small", { text: roleLabel(block.role) })),
+        el("label", { class: "switch" }, toggle, el("span", { text: t("strategy.use") }))),
+      el("p", { class: "matched" }, t("strategy.matched") + " “" + block.matched.join("”, “") + "”",
+        block.taxonomy_groups.length ? el("span", { class: "axis-chip" }, el("small", { text: familyLabel(familyOf(block.taxonomy_groups[0]), true) }), groupLabel(block.taxonomy_groups[0])) : null),
+      chips,
+      addForm);
+  }
+
+  function queryCard(provider) {
+    var compiled = state.compiled.providers[provider];
+    var spec = queryFor(provider);
+    var edited = typeof state.overrides[provider] === "string";
+    var live = Planner.LIVE_PROVIDERS.indexOf(provider) >= 0;
+    var status = state.statuses.find(function (item) { return item.source === provider; });
+    var area = el("textarea", { class: "query-text", rows: "3", spellcheck: "false", "aria-label": sourceLabel(provider) });
+    area.value = spec.query;
+    var link = externalLink(siteUrlFor(provider, spec.query, spec.params), t("strategy.open." + provider), "btn btn-ghost btn-small");
+    area.addEventListener("input", function () {
+      state.overrides[provider] = area.value;
+      var url = siteUrlFor(provider, area.value, spec.params);
+      if (url) link.setAttribute("href", url);
+      card.classList.add("edited");
+    });
+    var copy = el("button", { type: "button", class: "btn btn-ghost btn-small", text: t("strategy.copy") });
+    copy.addEventListener("click", function () { copyText(area.value, copy); });
+    var restore = edited ? el("button", {
+      type: "button",
+      class: "btn btn-ghost btn-small",
+      text: t("strategy.restore"),
+      onclick: function () { delete state.overrides[provider]; renderStrategy(); }
+    }) : null;
+
+    var badge = null;
+    if (live && status) {
+      if (status.status === "ok") badge = el("span", { class: "query-status ok", text: t("strategy.returned", { n: fmtNumber(status.returned) }) + (typeof status.total_found === "number" ? " · " + t("status.total", { total: fmtNumber(status.total_found) }) : "") });
+      else if (status.status === "error") badge = el("span", { class: "query-status error", text: t("status.error") });
+    } else if (!live) {
+      badge = el("span", { class: "query-status link", text: t("strategy.linkOnly") });
+    }
+
+    var notes = (compiled.notes || []).filter(function (note) { return note !== "link_only"; }).map(function (note) {
+      return el("li", { text: t("note." + note) });
+    });
+    var translation = null;
+    if (provider === "pubmed" && status && status.translation && status.translation.query_translation) {
+      var tr = status.translation;
+      var missing = tr.phrases_not_found.concat(tr.fields_not_found);
+      translation = el("details", { class: "translation" },
+        el("summary", { text: t("strategy.translation") }),
+        el("code", { text: tr.query_translation }),
+        missing.length ? el("p", { class: "warn-line", text: t("strategy.notFound", { list: missing.join(", ") }) }) : null,
+        tr.phrases_ignored.length ? el("p", { class: "note", text: t("strategy.ignored", { list: tr.phrases_ignored.join(", ") }) }) : null);
+    }
+
+    var card = el("article", { class: "query-card" + (edited ? " edited" : "") + (live ? "" : " link-only") },
+      el("header", null,
+        el("strong", { text: sourceLabel(provider) }),
+        badge,
+        el("span", { class: "edited-tag", text: t("strategy.edited") })),
+      el("p", { class: "dialect", text: t("dialect." + compiled.dialect) }),
+      area,
+      el("div", { class: "query-actions" }, copy, link, restore),
+      notes.length ? el("ul", { class: "query-notes" }, notes) : null,
+      translation);
+    return card;
+  }
+
+  function renderStrategy() {
+    var section = $("strategy");
+    var body = clear($("strategy-body"));
+    if (!state.plan || state.origin === "file") { section.hidden = true; return; }
+    section.hidden = false;
+    var plan = state.plan;
+    var enabledBlocks = plan.blocks.filter(function (block) { return block.enabled; });
+    var summary = plan.mode === "manual"
+      ? t("strategy.summaryManual")
+      : t("strategy.summary", { n: plan.blocks.filter(function (b) { return b.source === "vocabulary"; }).length, on: enabledBlocks.length });
+    $("strategy-summary").textContent = summary;
+
+    if (plan.mode === "manual") {
+      body.appendChild(el("div", { class: "manual-box" },
+        el("p", { text: t("warn.manual_string") }),
+        el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.interpret"), onclick: function () { runSearch(state.query, { literal: true }); } })));
+    } else {
+      body.appendChild(el("p", { class: "strategy-lead", text: t("strategy.lead", { version: VOCABULARY.vocabulary_version }) }));
+      var warnings = plan.warnings.slice();
+      if (!enabledBlocks.length && plan.blocks.length) warnings.push({ code: "no_enabled_blocks" });
+      if (warnings.length) {
+        body.appendChild(el("ul", { class: "strategy-warnings" }, warnings.map(function (warning) {
+          return el("li", { text: warningText(warning) });
+        })));
+      }
+      body.appendChild(el("div", { class: "block-grid" }, plan.blocks.map(blockCard)));
+      if (enabledBlocks.length) {
+        var logic = el("p", { class: "logic" }, el("strong", { text: t("strategy.logic") + ": " }));
+        enabledBlocks.forEach(function (block, index) {
+          if (index) logic.appendChild(el("span", { class: "op", text: " AND " }));
+          logic.appendChild(el("span", { class: "logic-block role-" + block.role, text: blockLabel(block) }));
+        });
+        body.appendChild(logic);
+      }
+      if (plan.dropped_terms.length) {
+        body.appendChild(el("p", { class: "note", text: t("strategy.dropped", { list: plan.dropped_terms.join(", ") }) }));
+      }
+
+      var fieldGroup = el("div", { class: "field-mode", role: "radiogroup", "aria-label": t("strategy.fieldMode") },
+        el("span", { class: "control-label", text: t("strategy.fieldMode") }),
+        Planner.FIELD_MODES.map(function (mode) {
+          var radio = el("input", { type: "radio", name: "field-mode", value: mode });
+          radio.checked = state.fieldMode === mode;
+          radio.addEventListener("change", function () { state.fieldMode = mode; state.overrides = {}; refreshStrategy(); });
+          return el("label", { class: "radio" }, radio, el("span", { text: t("strategy.field." + mode) }));
+        }));
+      var pt = el("input", { type: "checkbox" });
+      pt.checked = state.includePt;
+      pt.addEventListener("change", function () { state.includePt = pt.checked; state.overrides = {}; refreshStrategy(); });
+      var yearFrom = el("input", { type: "number", min: "1900", max: String(currentYear() + 1), placeholder: "—", "aria-label": t("filters.yearFrom") });
+      var yearTo = el("input", { type: "number", min: "1900", max: String(currentYear() + 1), placeholder: "—", "aria-label": t("filters.yearTo") });
+      if (plan.year_from) yearFrom.value = String(plan.year_from);
+      if (plan.year_to) yearTo.value = String(plan.year_to);
+      var onYears = function () {
+        var from = Number(yearFrom.value);
+        var to = Number(yearTo.value);
+        plan.year_from = from >= 1900 ? from : null;
+        plan.year_to = to >= 1900 ? to : null;
+        state.overrides = {};
+        refreshStrategy();
+      };
+      yearFrom.addEventListener("change", onYears);
+      yearTo.addEventListener("change", onYears);
+      body.appendChild(el("div", { class: "strategy-controls" },
+        fieldGroup,
+        el("label", { class: "check" }, pt, el("span", { text: t("strategy.includePt") })),
+        el("div", { class: "years" }, el("span", { class: "control-label", text: t("strategy.years") }),
+          el("span", { text: t("filters.yearFrom") }), yearFrom, el("span", { text: t("filters.yearTo") }), yearTo)));
+    }
+
+    body.appendChild(el("h3", { text: t("strategy.queries") }));
+    body.appendChild(el("div", { class: "query-grid" }, STRATEGY_PROVIDERS.map(queryCard)));
+    var copyAll = el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.copyAll") });
+    copyAll.addEventListener("click", function () {
+      copyText(STRATEGY_PROVIDERS.map(function (provider) {
+        return sourceLabel(provider) + "\n" + queryFor(provider).query;
+      }).join("\n\n"), copyAll);
+    });
+    body.appendChild(el("div", { class: "strategy-actions" },
+      el("button", { type: "button", class: "btn btn-primary", text: t("strategy.rerun"), onclick: function () { executePlan(); } }),
+      copyAll));
+  }
+
+  function loadRows(rows) {
+    state.result = Core.runPipeline(rows, DATA);
+    state.filters = emptyFilters();
+    state.shown = PAGE_SIZE;
+    renderAll();
+    if (state.tab !== "results" && state.tab !== "quality") selectTab("results");
+  }
+
+  // ------------------------------------------------------------------ hash state
+
+  function updateHash() {
+    var params = new URLSearchParams();
+    if (state.query) params.set("q", state.query);
+    params.set("src", Array.from(state.sources).join(","));
+    params.set("n", String(state.limit));
+    if (state.fieldMode !== "title_abstract") params.set("f", state.fieldMode);
+    if (state.includePt) params.set("pt", "1");
+    if (I18n.lang() !== "pt") params.set("lang", I18n.lang());
+    try { history.replaceState(null, "", "#" + params.toString()); } catch (error) { location.hash = params.toString(); }
+  }
+
+  function readHash() {
+    var params = new URLSearchParams(String(location.hash || "").replace(/^#/, ""));
+    var src = params.get("src");
+    if (src) {
+      var chosen = src.split(",").filter(function (id) { return SOURCE_LABELS[id]; });
+      if (chosen.length) state.sources = new Set(chosen);
+    }
+    var limit = Number(params.get("n"));
+    if ([25, 50, 100].indexOf(limit) >= 0) { state.limit = limit; $("limit").value = String(limit); }
+    if (Planner.FIELD_MODES.indexOf(params.get("f")) >= 0) state.fieldMode = params.get("f");
+    state.includePt = params.get("pt") === "1";
+    return { query: params.get("q") || "", lang: params.get("lang") || "" };
+  }
+
+  // ------------------------------------------------------------------ results: filters
+
+  function facetCounts(rows) {
+    var counts = { levels: {}, groups: {}, unclassified: 0, docClasses: {}, sources: {}, years: [] };
+    rows.forEach(function (row) {
+      var level = levelOf(row);
+      counts.levels[level] = (counts.levels[level] || 0) + 1;
+      var groups = row.taxonomy_groups || [];
+      if (!groups.length) counts.unclassified += 1;
+      groups.forEach(function (group) { counts.groups[group] = (counts.groups[group] || 0) + 1; });
+      var docClass = row.document_classification.document_class;
+      counts.docClasses[docClass] = (counts.docClasses[docClass] || 0) + 1;
+      (row.source_providers || [Core.pyText(row.source_provider || row.source)]).forEach(function (source) {
+        counts.sources[source] = (counts.sources[source] || 0) + 1;
+      });
+      if (row.reference_year) counts.years.push(row.reference_year);
+    });
+    return counts;
+  }
+
+  function checkboxOption(label, count, checked, onChange) {
+    var input = el("input", { type: "checkbox" });
+    input.checked = checked;
+    input.addEventListener("change", function () { onChange(input.checked); });
+    return el("label", { class: "filter-option" }, input, el("span", { text: label }), el("span", { class: "count", text: fmtNumber(count) }));
+  }
+
+  function toggleIn(set, value, on) {
+    if (on) set.add(value); else set.delete(value);
+    state.shown = PAGE_SIZE;
+    renderResults();
+  }
+
+  function renderFilters() {
+    var box = clear($("filters"));
+    var rows = state.result.ranked;
+    var counts = facetCounts(rows);
+    var f = state.filters;
+
+    var levelGroup = el("div", { class: "filter-group" }, el("h3", { text: t("filters.level") }));
+    ["A", "B"].forEach(function (level) {
+      if (!counts.levels[level]) return;
+      levelGroup.appendChild(checkboxOption(t("level." + level + ".name"), counts.levels[level], f.levels.has(level), function (on) { toggleIn(f.levels, level, on); }));
+    });
+    box.appendChild(levelGroup);
+
+    var axisGroup = el("div", { class: "filter-group" }, el("h3", { text: t("filters.axis") }));
+    DATA.taxonomy.families.forEach(function (family) {
+      var present = DATA.taxonomy.groups.filter(function (group) { return group.family === family.id && counts.groups[group.id]; })
+        .sort(function (a, b) { return counts.groups[b.id] - counts.groups[a.id]; });
+      if (!present.length) return;
+      axisGroup.appendChild(el("h4", { text: familyLabel(family, false) }));
+      present.forEach(function (group) {
+        axisGroup.appendChild(checkboxOption(groupLabel(group.id), counts.groups[group.id], f.groups.has(group.id), function (on) { toggleIn(f.groups, group.id, on); }));
+      });
+    });
+    if (counts.unclassified) {
+      axisGroup.appendChild(checkboxOption(t("filters.unclassified"), counts.unclassified, f.unclassified, function (on) {
+        f.unclassified = on; state.shown = PAGE_SIZE; renderResults();
+      }));
+    }
+    box.appendChild(axisGroup);
+
+    var docGroup = el("div", { class: "filter-group" }, el("h3", { text: t("filters.doctype") }));
+    Object.keys(counts.docClasses).sort(function (a, b) { return counts.docClasses[b] - counts.docClasses[a]; }).forEach(function (docClass) {
+      docGroup.appendChild(checkboxOption(docClassLabel(docClass), counts.docClasses[docClass], f.docClasses.has(docClass), function (on) { toggleIn(f.docClasses, docClass, on); }));
+    });
+    box.appendChild(docGroup);
+
+    var sourceGroup = el("div", { class: "filter-group" }, el("h3", { text: t("filters.source") }));
+    Object.keys(counts.sources).sort().forEach(function (source) {
+      sourceGroup.appendChild(checkboxOption(sourceLabel(source), counts.sources[source], f.sources.has(source), function (on) { toggleIn(f.sources, source, on); }));
+    });
+    box.appendChild(sourceGroup);
+
+    if (counts.years.length) {
+      var minYear = Math.min.apply(null, counts.years);
+      var maxYear = Math.max.apply(null, counts.years);
+      var from = el("input", { type: "number", inputmode: "numeric", min: minYear, max: maxYear, placeholder: String(minYear), "aria-label": t("filters.year") + " " + t("filters.yearFrom") });
+      var to = el("input", { type: "number", inputmode: "numeric", min: minYear, max: maxYear, placeholder: String(maxYear), "aria-label": t("filters.year") + " " + t("filters.yearTo") });
+      if (f.yearFrom) from.value = String(f.yearFrom);
+      if (f.yearTo) to.value = String(f.yearTo);
+      var onYear = function () {
+        f.yearFrom = Number(from.value) || null;
+        f.yearTo = Number(to.value) || null;
+        state.shown = PAGE_SIZE;
+        renderResults();
+      };
+      from.addEventListener("change", onYear);
+      to.addEventListener("change", onYear);
+      box.appendChild(el("div", { class: "filter-group" }, el("h3", { text: t("filters.year") }),
+        el("div", { class: "year-range" }, el("span", { text: t("filters.yearFrom") }), from, el("span", { text: t("filters.yearTo") }), to)));
+    }
+
+    var abstractInput = el("input", { type: "checkbox" });
+    abstractInput.checked = f.abstractOnly;
+    abstractInput.addEventListener("change", function () { f.abstractOnly = abstractInput.checked; state.shown = PAGE_SIZE; renderResults(); });
+    box.appendChild(el("div", { class: "filter-group" }, el("label", { class: "filter-option" }, abstractInput, el("span", { text: t("filters.abstract") }))));
+
+    box.appendChild(el("button", {
+      type: "button",
+      class: "btn btn-ghost",
+      text: t("filters.clear"),
+      onclick: function () { state.filters = emptyFilters(); state.shown = PAGE_SIZE; renderFilters(); renderResults(); }
+    }));
+  }
+
+  function passesFilters(row) {
+    var f = state.filters;
+    if (f.levels.size && !f.levels.has(levelOf(row))) return false;
+    if (f.groups.size || f.unclassified) {
+      var groups = row.taxonomy_groups || [];
+      var axisHit = groups.some(function (group) { return f.groups.has(group); }) || (f.unclassified && !groups.length);
+      if (!axisHit) return false;
+    }
+    if (f.docClasses.size && !f.docClasses.has(row.document_classification.document_class)) return false;
+    if (f.sources.size) {
+      var providers = row.source_providers || [Core.pyText(row.source_provider || row.source)];
+      if (!providers.some(function (source) { return f.sources.has(source); })) return false;
+    }
+    if (f.yearFrom && !(row.reference_year && row.reference_year >= f.yearFrom)) return false;
+    if (f.yearTo && !(row.reference_year && row.reference_year <= f.yearTo)) return false;
+    if (f.abstractOnly && !abstractPresent(row)) return false;
+    return true;
+  }
+
+  function sortRows(rows) {
+    var sorted = rows.slice();
+    var byRank = function (a, b) { return a.reference_rank - b.reference_rank; };
+    if (state.sort === "recent") {
+      sorted.sort(function (a, b) { return (Number(b.reference_year || 0) - Number(a.reference_year || 0)) || byRank(a, b); });
+    } else if (state.sort === "completeness") {
+      sorted.sort(function (a, b) { return (b.metadata_completeness.present - a.metadata_completeness.present) || byRank(a, b); });
+    } else if (state.sort === "title") {
+      sorted.sort(function (a, b) { return String(a.title || "").localeCompare(String(b.title || ""), undefined, { sensitivity: "base" }) || byRank(a, b); });
+    } else {
+      sorted.sort(byRank);
+    }
+    return sorted;
+  }
+
+  // ------------------------------------------------------------------ results: cards
+
+  function completenessMeter(row) {
+    var completeness = row.metadata_completeness;
+    var dots = el("span", { class: "meter-dots", "aria-hidden": "true" });
+    Core.COMPLETENESS_FIELDS.forEach(function (field) {
+      dots.appendChild(el("i", { class: completeness.fields[field] ? "on" : null }));
+    });
+    var missing = Core.COMPLETENESS_FIELDS.filter(function (field) { return !completeness.fields[field]; })
+      .map(function (field) { return t("field." + field); });
+    return el("span", {
+      class: "meter",
+      "data-tip": t("completeness.title") + (missing.length ? " — " + missing.join(", ") : "")
+    }, dots, t("completeness.label", { n: completeness.present, total: completeness.total }));
+  }
+
+  function axisChips(row, limit) {
+    var groups = (row.taxonomy_groups || []).slice();
+    if (!groups.length) return null;
+    var primary = row.taxonomy_primary;
+    groups.sort(function (a, b) { return (a === primary ? -1 : 0) - (b === primary ? -1 : 0); });
+    var shown = groups.slice(0, limit || 6);
+    var box = el("div", { class: "axis-chips" }, shown.map(function (group) {
+      var family = familyOf(group);
+      return el("span", {
+        class: "axis-chip" + (group === primary ? " primary" : ""),
+        "data-tip": familyLabel(family, false) + (group === primary ? " · " + t("card.primary") : "")
+      }, el("small", { text: familyLabel(family, true) }), groupLabel(group));
+    }));
+    if (groups.length > shown.length) box.appendChild(el("span", { class: "axis-chip", text: "+" + (groups.length - shown.length) }));
+    return box;
+  }
+
+  function authorsText(authors) {
+    var text = String(authors || "").trim();
+    return text.length > 140 ? text.slice(0, 137).replace(/[;,\s]+\S*$/, "") + " et al." : text;
+  }
+
+  function identifierLinks(row) {
+    var items = [];
+    var doi = Core.normalizeDoi(row.doi);
+    var pmid = Core.normalizePmid(row.pmid);
+    var pmcid = Core.normalizePmcid(row.pmcid);
+    if (doi) items.push(el("span", null, "DOI ", externalLink("https://doi.org/" + doi, doi)));
+    else if (row.doi) items.push(el("span", null, "DOI ", el("code", { text: String(row.doi) })));
+    if (pmid) items.push(el("span", null, "PMID ", externalLink("https://pubmed.ncbi.nlm.nih.gov/" + pmid + "/", pmid)));
+    if (pmcid) items.push(el("span", null, "PMCID ", externalLink("https://pmc.ncbi.nlm.nih.gov/articles/" + pmcid + "/", pmcid)));
+    var providers = row.source_providers || [Core.pyText(row.source_provider || row.source)].filter(Boolean);
+    if (providers.length) {
+      items.push(el("span", null, t("card.sources") + ": ", providers.map(function (provider) {
+        return el("span", { class: "source-tag", text: sourceLabel(provider) });
+      })));
+    }
+    return el("div", { class: "record-ids" }, items);
+  }
+
+  function whyBlock(title, children, wide) {
+    var block = el("div", { class: "why-block" }, el("h4", { text: title }), children);
+    if (wide) block.style.gridColumn = "1 / -1";
+    return block;
+  }
+
+  function buildWhy(row, quarantined) {
+    var level = levelOf(row);
+    var blocks = [];
+    blocks.push(whyBlock(t("card.traceability"), [
+      levelBadge(level),
+      el("p", { text: t("card.traceability.text", { code: row.audit_traceability, reasons: reasonsText(row.audit_reasons) }) }),
+      el("p", { class: "note", text: t("level." + level + ".short") })
+    ]));
+
+    var completeness = row.metadata_completeness;
+    blocks.push(whyBlock(t("completeness.title"), el("ul", { class: "check-list" }, Core.COMPLETENESS_FIELDS.map(function (field) {
+      return el("li", { class: completeness.fields[field] ? "on" : null, text: t("field." + field) });
+    }))));
+
+    var groups = row.taxonomy_groups || [];
+    blocks.push(whyBlock(t("card.taxonomy", { version: DATA.taxonomy_version }), groups.length
+      ? el("ul", null, groups.map(function (group) {
+        var terms = (row.taxonomy_group_terms || {})[group] || [];
+        return el("li", null,
+          el("strong", { text: groupLabel(group) }),
+          group === row.taxonomy_primary ? " (" + t("card.primary") + ")" : "",
+          terms.length ? el("div", { class: "terms", text: t("card.terms") + ": " + terms.join(" · ") }) : null);
+      }))
+      : el("p", { class: "note", text: t("card.unclassified") })));
+
+    var doc = row.document_classification;
+    blocks.push(whyBlock(t("card.doctype"), [
+      el("p", null, el("strong", { text: docClassLabel(doc.document_class) }), " — " + t("card.basis." + doc.basis)),
+      doc.signals.length ? el("p", { class: "terms", text: doc.signals.map(function (s) { return s.field + ": “" + s.value + "”"; }).join(" · ") }) : null,
+      row.article_type ? el("p", { class: "note", text: t("card.raw_type") + ": " + row.article_type }) : null
+    ]));
+
+    if (!quarantined) {
+      var breakdown = row.score_breakdown;
+      var keys = ["taxonomy", "focus_keywords", "document_type", "provider", "identifier", "recency", "penalties"];
+      var table = el("table", { class: "score-table" }, el("tbody", null,
+        keys.map(function (key) {
+          return el("tr", null, el("td", { text: t("score." + key) }), el("td", { text: String(breakdown[key]) }));
+        }),
+        el("tr", { class: "total" }, el("td", { text: "Total" }), el("td", { text: String(row.reference_score) }))));
+      blocks.push(whyBlock(t("card.priority") + " · " + t("card.priority.value", { rank: row.reference_rank, score: row.reference_score }), [
+        table,
+        row.focus_keyword_hits && row.focus_keyword_hits.length ? el("p", { class: "terms", text: row.focus_keyword_hits.join(" · ") }) : null,
+        el("p", { class: "note", text: t("card.priority.note") })
+      ]));
+    }
+
+    var manifestations = row.source_manifestations || [];
+    if (manifestations.length) {
+      blocks.push(whyBlock(t("card.provenance"), el("ul", null, manifestations.map(function (item) {
+        return el("li", { text: t("card.provenance.item", {
+          provider: sourceLabel(item.provider || item.source || "?"),
+          query: item.provider_query || "—",
+          time: fmtTime(item.retrieved_at)
+        }) });
+      }))));
+    }
+
+    var abstract = Core.pyText(row.abstract || row.summary || row.snippet);
+    blocks.push(whyBlock(t("card.abstract"), abstract
+      ? el("p", { class: "abstract", text: abstract })
+      : el("p", { class: "note", text: t("card.noAbstract") }), true));
+
+    return el("div", { class: "why-grid" }, blocks);
+  }
+
+  function recordCard(row, quarantined) {
+    var level = levelOf(row);
+    var doc = row.document_classification;
+    var titleText = Core.pyText(row.title) || "(" + t("reason.missing_title") + ")";
+    var href = Core.normalizeUrl(row.url) ? row.url : (Core.normalizeDoi(row.doi) ? "https://doi.org/" + Core.normalizeDoi(row.doi) : null);
+    var meta = [authorsText(row.authors), Core.pyText(row.journal), row.reference_year || Core.extractYear(row, new Date().getFullYear()) || ""]
+      .filter(function (part) { return part; }).join(" · ");
+
+    var details = el("details", { class: "why" }, el("summary", { text: t("card.why") }));
+    var built = false;
+    details.addEventListener("toggle", function () {
+      if (details.open && !built) { built = true; details.appendChild(buildWhy(row, quarantined)); }
+    });
+
+    return el("li", { class: "record level-" + level },
+      el("div", { class: "record-head" },
+        el("span", { "data-tip": t("level." + level + ".short") }, levelBadge(level)),
+        completenessMeter(row),
+        doc.document_class !== "unclassified" ? el("span", { class: "doctype-tag", "data-tip": t("card.doctype") + " — " + t("card.basis." + doc.basis), text: docClassLabel(doc.document_class) }) : null,
+        quarantined
+          ? el("span", { class: "rank-tag", text: reasonsText(row.audit_reasons) })
+          : el("span", { class: "rank-tag", "data-tip": t("card.priority.note"), text: t("card.priority.value", { rank: row.reference_rank, score: row.reference_score }) })),
+      el("h3", null, href ? externalLink(href, titleText) : titleText),
+      meta ? el("p", { class: "record-meta", text: meta }) : null,
+      identifierLinks(row),
+      axisChips(row, 6),
+      details);
+  }
+
+  function renderResults() {
+    var list = clear($("results-list"));
+    var filtered = sortRows(state.result.ranked.filter(passesFilters));
+    var visible = filtered.slice(0, state.shown);
+    visible.forEach(function (row) { list.appendChild(recordCard(row, false)); });
+    if (!filtered.length) list.appendChild(el("li", { class: "empty-note", text: t("results.none") }));
+    $("results-count").textContent = t("results.count", { shown: fmtNumber(visible.length), n: fmtNumber(filtered.length) });
+    var more = $("show-more");
+    var remaining = filtered.length - visible.length;
+    more.hidden = remaining <= 0;
+    more.textContent = t("results.more", { n: fmtNumber(Math.min(PAGE_SIZE, remaining)) });
+  }
+
+  function renderStrip() {
+    var strip = clear($("quality-strip"));
+    var stats = state.result.stats;
+    var all = works();
+    var withAbstract = all.filter(abstractPresent).length;
+    strip.appendChild(el("h2", { text: t("strip.title") }));
+    strip.appendChild(abqBar(stats.levels, { tall: true }));
+    strip.appendChild(el("div", { class: "abq-legend" }, LEVELS.map(function (level) {
+      return el("span", null, el("i", { class: "abq-key " + level, "aria-hidden": "true" }),
+        t("level." + level + ".name") + ": " + fmtNumber(stats.levels[level]) + " (" + pct(stats.levels[level], stats.works) + "%)");
+    })));
+    strip.appendChild(el("div", { class: "strip-facts" },
+      el("span", { text: t("strip.merged", { n: fmtNumber(stats.duplicates_merged) }) }),
+      el("span", { text: t("strip.classified", { p: pct(stats.classified, stats.works) }) }),
+      el("span", { text: t("strip.abstract", { p: pct(withAbstract, stats.works) }) })));
+  }
+
+  // ------------------------------------------------------------------ quality panel
+
+  function hbarRows(items, max, formatValue) {
+    return items.map(function (item) {
+      var fill = el("div", { class: "hbar-fill", "data-tip": item.label + ": " + formatValue(item) });
+      fill.style.width = (max ? (item.value / max) * 100 : 0) + "%";
+      return el("div", { class: "hbar-row" },
+        el("span", { class: "hbar-label", text: item.label }),
+        el("div", { class: "hbar-track" }, fill),
+        el("span", { class: "hbar-value", text: formatValue(item) }));
+    });
+  }
+
+  function renderQuality() {
+    var stats = state.result.stats;
+    var all = works();
+    var withAbstract = all.filter(abstractPresent).length;
+
+    var kpis = clear($("kpis"));
+    [
+      [t("quality.kpi.retrieved"), fmtNumber(stats.retrieved_rows), ""],
+      [t("quality.kpi.unique"), fmtNumber(stats.unique_ranked), ""],
+      [t("quality.kpi.merged"), fmtNumber(stats.duplicates_merged), ""],
+      [t("quality.kpi.A"), fmtNumber(stats.levels.A), pct(stats.levels.A, stats.works) + "%", "A"],
+      [t("quality.kpi.B"), fmtNumber(stats.levels.B), pct(stats.levels.B, stats.works) + "%", "B"],
+      [t("quality.kpi.Q"), fmtNumber(stats.levels.Q), pct(stats.levels.Q, stats.works) + "%", "Q"],
+      [t("quality.kpi.classified"), pct(stats.classified, stats.works) + "%", fmtNumber(stats.classified)],
+      [t("quality.kpi.abstract"), pct(withAbstract, stats.works) + "%", fmtNumber(withAbstract)]
+    ].forEach(function (kpi) {
+      kpis.appendChild(el("div", { class: "kpi" + (kpi[3] ? " level-" + kpi[3] : "") },
+        el("div", { class: "kpi-value", text: kpi[1] }),
+        el("div", { class: "kpi-label" }, kpi[3] ? el("span", { class: "level-letter", "aria-hidden": "true", text: kpi[3] }) : null, kpi[0]),
+        kpi[2] ? el("div", { class: "kpi-sub", text: kpi[2] }) : null));
+    });
+
+    var legend = $("abq-legend");
+    legend.replaceWith(Object.assign(abqLegend(), { id: "abq-legend" }));
+
+    var chart = clear($("axis-chart"));
+    var byGroup = stats.by_group;
+    var maxWorks = Object.keys(byGroup).reduce(function (max, key) { return Math.max(max, byGroup[key].works); }, 0);
+    var tableRows = [];
+    DATA.taxonomy.families.forEach(function (family) {
+      var entries = Object.keys(byGroup).map(function (key) { return byGroup[key]; })
+        .filter(function (entry) { return entry.family === family.id; })
+        .sort(function (a, b) { return (b.works - a.works) || a.group.localeCompare(b.group); });
+      var block = el("section", { class: "family-block" },
+        el("h3", null, el("span", { class: "family-tag", text: familyLabel(family, true) }), familyLabel(family, false)));
+      if (!entries.length) block.appendChild(el("p", { class: "empty-note", text: t("quality.noAxis") }));
+      entries.forEach(function (entry) {
+        tableRows.push(entry);
+        block.appendChild(el("button", {
+          type: "button",
+          class: "axis-row",
+          onclick: function () {
+            state.filters = emptyFilters();
+            state.filters.groups.add(entry.group);
+            state.shown = PAGE_SIZE;
+            renderFilters();
+            renderResults();
+            selectTab("results", true);
+          }
+        },
+          el("span", { class: "axis-label", text: groupLabel(entry.group) }),
+          el("span", { class: "axis-track" }, abqBar(entry, { widthPct: maxWorks ? (entry.works / maxWorks) * 100 : 0 })),
+          el("span", { class: "axis-values", text: t("quality.works", { n: fmtNumber(entry.works) }) + " · " + abqValues(entry) + " · " + t("quality.withAbstract", { p: pct(entry.with_abstract, entry.works) }) })));
+      });
+      chart.appendChild(block);
+    });
+    chart.appendChild(el("details", { class: "table-toggle" },
+      el("summary", { text: t("quality.table") }),
+      el("table", { class: "data-table" },
+        el("thead", null, el("tr", null,
+          el("th", { text: t("quality.col.axis") }),
+          el("th", { text: "ID" }),
+          el("th", { class: "num", text: t("quality.col.works") }),
+          LEVELS.map(function (level) { return el("th", { class: "num", text: level }); }),
+          el("th", { class: "num", text: t("field.abstract") }))),
+        el("tbody", null, tableRows.map(function (entry) {
+          return el("tr", null,
+            el("td", { text: groupLabel(entry.group) }),
+            el("td", null, el("code", { text: entry.group })),
+            el("td", { class: "num", text: fmtNumber(entry.works) }),
+            LEVELS.map(function (level) { return el("td", { class: "num", text: fmtNumber(entry[level]) }); }),
+            el("td", { class: "num", text: pct(entry.with_abstract, entry.works) + "%" }));
+        })))));
+
+    var sourceChart = clear($("source-chart"));
+    var sources = Object.keys(stats.by_source);
+    var maxRows = sources.reduce(function (max, key) { return Math.max(max, stats.by_source[key].rows); }, 0);
+    sources.sort(function (a, b) { return stats.by_source[b].rows - stats.by_source[a].rows; }).forEach(function (source) {
+      var entry = stats.by_source[source];
+      sourceChart.appendChild(el("div", { class: "hbar-row" },
+        el("span", { class: "hbar-label", text: sourceLabel(source) }),
+        abqBar(entry, { widthPct: maxRows ? (entry.rows / maxRows) * 100 : 0 }),
+        el("span", { class: "hbar-value", text: abqValues(entry) })));
+    });
+
+    var completenessChart = clear($("completeness-chart"));
+    append(completenessChart, hbarRows(Core.COMPLETENESS_FIELDS.map(function (field) {
+      return { label: t("field." + field), value: stats.completeness_fields[field] };
+    }), stats.works, function (item) { return pct(item.value, stats.works) + "% (" + fmtNumber(item.value) + ")"; }));
+
+    var docChart = clear($("doctype-chart"));
+    var docItems = Object.keys(stats.document_classes).map(function (key) {
+      return { label: docClassLabel(key), value: stats.document_classes[key] };
+    }).sort(function (a, b) { return b.value - a.value; });
+    append(docChart, hbarRows(docItems, docItems.length ? docItems[0].value : 0, function (item) { return fmtNumber(item.value); }));
+
+    renderYears(clear($("year-chart")), stats.years);
+  }
+
+  function renderYears(container, years) {
+    var keys = Object.keys(years).map(Number).sort(function (a, b) { return a - b; });
+    if (!keys.length) { container.appendChild(el("p", { class: "empty-note", text: "—" })); return; }
+    var maxYear = keys[keys.length - 1];
+    var minYear = Math.max(keys[0], maxYear - 39);
+    var buckets = [];
+    var earlier = 0;
+    keys.forEach(function (year) { if (year < minYear) earlier += years[year]; });
+    if (earlier) buckets.push({ label: "≤" + (minYear - 1), value: earlier });
+    for (var year = minYear; year <= maxYear; year += 1) buckets.push({ label: String(year), value: years[year] || 0 });
+    var peak = buckets.reduce(function (max, bucket) { return Math.max(max, bucket.value); }, 0);
+    var hist = el("div", { class: "year-hist", role: "img", "aria-label": buckets.filter(function (b) { return b.value; }).map(function (b) { return b.label + ": " + b.value; }).join(", ") });
+    buckets.forEach(function (bucket) {
+      var column = el("span", { class: "year-col", "data-tip": bucket.label + ": " + fmtNumber(bucket.value) });
+      column.style.height = (peak ? (bucket.value / peak) * 100 : 0) + "%";
+      if (!bucket.value) column.style.visibility = "hidden";
+      hist.appendChild(column);
+    });
+    container.appendChild(hist);
+    container.appendChild(el("div", { class: "year-axis" },
+      el("span", { text: buckets[0].label }),
+      el("span", { text: buckets[buckets.length - 1].label })));
+  }
+
+  // ------------------------------------------------------------------ quarantine
+
+  function renderQuarantine() {
+    var list = clear($("quarantine-list"));
+    var rows = state.result.quarantined;
+    $("quarantine-empty").hidden = rows.length > 0;
+    rows.forEach(function (row) { list.appendChild(recordCard(row, true)); });
+  }
+
+  // ------------------------------------------------------------------ render all
+
+  function renderAll() {
+    var has = Boolean(state.result);
+    document.body.classList.toggle("has-results", has);
+    $("results-empty").hidden = has;
+    $("results-view").hidden = !has;
+    $("quality-empty").hidden = has;
+    $("quality-view").hidden = !has;
+    $("count-results").textContent = has ? fmtNumber(state.result.ranked.length) : "";
+    $("count-quarantine").textContent = has && state.result.quarantined.length ? fmtNumber(state.result.quarantined.length) : "";
+    renderStatus();
+    renderStrategy();
+    if (!has) return;
+    renderStrip();
+    renderFilters();
+    renderResults();
+    renderQuality();
+    renderQuarantine();
+  }
+
+  // ------------------------------------------------------------------ export
+
+  var EXPORT_INPUT_FIELDS = ["source", "source_provider", "title", "abstract", "summary", "keywords", "doi", "pmid", "pmcid", "url", "journal", "year", "publication_date", "article_type", "authors", "provider_query", "query", "retrieved_at", "is_open_access", "source_providers", "source_manifestations"];
+
+  function exportRecord(row, quarantined) {
+    var input = {};
+    EXPORT_INPUT_FIELDS.forEach(function (key) { if (row[key] !== undefined && row[key] !== "") input[key] = row[key]; });
+    var nutev = {
+      data_level: levelOf(row),
+      audit_traceability: row.audit_traceability,
+      audit_reasons: row.audit_reasons,
+      audit_quarantined: Boolean(quarantined),
+      metadata_completeness: row.metadata_completeness,
+      taxonomy_primary: row.taxonomy_primary || "",
+      taxonomy_groups: row.taxonomy_groups || [],
+      taxonomy_group_terms: row.taxonomy_group_terms || {},
+      document_classification: row.document_classification
+    };
+    if (!quarantined) {
+      nutev.reference_rank = row.reference_rank;
+      nutev.reference_score = row.reference_score;
+      nutev.score_breakdown = row.score_breakdown;
+      nutev.focus_keyword_hits = row.focus_keyword_hits;
+      nutev.document_type_applied = row.document_type_applied;
+      nutev.taxonomy_ranks = row.taxonomy_ranks;
+      nutev.reference_year = row.reference_year;
+    }
+    return { input: input, nutev: nutev };
+  }
+
+  function manifest() {
+    return {
+      product: "NutEV Open Evidence Explorer",
+      generated_at: new Date().toISOString(),
+      origin: state.origin,
+      query: state.origin === "search" ? state.query : "",
+      file_name: state.origin === "file" ? state.fileName : "",
+      sources_queried: state.origin === "search" ? state.statuses.map(function (s) { return s.source; }) : [],
+      limit_per_source: state.origin === "search" ? state.limit : null,
+      sources_not_queried: Sources.NOT_QUERIED,
+      pipeline: "SEARCH -> NORMALIZE -> TRACEABILITY GATE -> DEDUPLICATE -> CLASSIFY -> RANK -> EXPORT",
+      engine_version: DATA.engine_version,
+      taxonomy_version: DATA.taxonomy_version,
+      guardrail_policy_version: DATA.guardrail_policy_version,
+      document_class_ontology_version: DATA.document_class_ontology_version,
+      rule_bundle_sha256: DATA.bundle_sha256,
+      page_build: BUILD,
+      planner_version: DATA.planner_version,
+      query_vocabulary_version: VOCABULARY.vocabulary_version,
+      query_plan: state.origin === "search" ? state.plan : null,
+      executed_queries: state.origin === "search" ? state.executed : null,
+      counts: state.result.stats,
+      guardrail: {
+        pt: I18n.STRINGS.pt["footer.disclaimer"],
+        en: I18n.STRINGS.en["footer.disclaimer"]
+      }
+    };
+  }
+
+  function download(name, mime, content) {
+    var blob = new Blob([content], { type: mime });
+    var url = URL.createObjectURL(blob);
+    var link = el("a", { download: name });
+    link.href = url;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+  }
+
+  function fileStem() {
+    var base = state.origin === "file" ? state.fileName.replace(/\.[^.]+$/, "") : state.query;
+    var slug = String(base || "nutev").normalize("NFKD").replace(/[^\w]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60).toLowerCase();
+    return "nutev-open-" + (slug || "resultado") + "-" + new Date().toISOString().slice(0, 10);
+  }
+
+  function csvCell(value) {
+    var text;
+    if (value === null || value === undefined) text = "";
+    else if (typeof value === "number") return String(value);
+    else if (Array.isArray(value)) text = value.join("; ");
+    else if (typeof value === "object") text = JSON.stringify(value);
+    else text = String(value);
+    if (/^[=+\-@\t\r]/.test(text)) text = "'" + text;
+    return "\"" + text.replace(/"/g, "\"\"") + "\"";
+  }
+
+  function exportCsv() {
+    var columns = ["reference_rank", "data_level", "audit_traceability", "audit_reasons", "metadata_completeness", "missing_fields", "title", "authors", "journal", "year", "doi", "pmid", "pmcid", "url", "sources", "taxonomy_primary", "taxonomy_primary_label", "taxonomy_groups", "document_class", "document_class_basis", "reference_score", "score_taxonomy", "score_focus_keywords", "score_document_type", "score_provider", "score_identifier", "score_recency", "score_penalties", "provider_query", "retrieved_at", "abstract"];
+    var lines = [columns.join(",")];
+    function line(row, quarantined) {
+      var completeness = row.metadata_completeness;
+      var breakdown = row.score_breakdown || {};
+      var values = {
+        reference_rank: quarantined ? null : row.reference_rank,
+        data_level: levelOf(row),
+        audit_traceability: row.audit_traceability,
+        audit_reasons: row.audit_reasons,
+        metadata_completeness: completeness.present + "/" + completeness.total,
+        missing_fields: Core.COMPLETENESS_FIELDS.filter(function (field) { return !completeness.fields[field]; }),
+        title: row.title,
+        authors: row.authors,
+        journal: row.journal,
+        year: row.reference_year || row.year,
+        doi: row.doi,
+        pmid: row.pmid,
+        pmcid: row.pmcid,
+        url: row.url,
+        sources: row.source_providers || [row.source_provider || row.source],
+        taxonomy_primary: row.taxonomy_primary,
+        taxonomy_primary_label: row.taxonomy_primary ? groupLabel(row.taxonomy_primary) : "",
+        taxonomy_groups: row.taxonomy_groups,
+        document_class: row.document_classification.document_class,
+        document_class_basis: row.document_classification.basis,
+        reference_score: quarantined ? null : row.reference_score,
+        score_taxonomy: breakdown.taxonomy,
+        score_focus_keywords: breakdown.focus_keywords,
+        score_document_type: breakdown.document_type,
+        score_provider: breakdown.provider,
+        score_identifier: breakdown.identifier,
+        score_recency: breakdown.recency,
+        score_penalties: breakdown.penalties,
+        provider_query: row.provider_query || row.query,
+        retrieved_at: row.retrieved_at,
+        abstract: row.abstract || row.summary || row.snippet
+      };
+      lines.push(columns.map(function (column) { return csvCell(values[column]); }).join(","));
+    }
+    state.result.ranked.forEach(function (row) { line(row, false); });
+    state.result.quarantined.forEach(function (row) { line(row, true); });
+    download(fileStem() + ".csv", "text/csv;charset=utf-8", "﻿" + lines.join("\r\n") + "\r\n");
+  }
+
+  function exportJson() {
+    var payload = {
+      manifest: manifest(),
+      source_statuses: state.statuses,
+      records: state.result.ranked.map(function (row) { return exportRecord(row, false); }),
+      quarantine: state.result.quarantined.map(function (row) { return exportRecord(row, true); })
+    };
+    download(fileStem() + ".json", "application/json", JSON.stringify(payload, null, 2));
+  }
+
+  function copyLink() {
+    updateHash();
+    var button = $("copy-link");
+    var done = function () {
+      button.textContent = t("export.copied");
+      setTimeout(function () { button.textContent = t("export.link"); }, 1800);
+    };
+    try {
+      navigator.clipboard.writeText(location.href).then(done, function () { window.prompt(t("export.link"), location.href); });
+    } catch (error) {
+      window.prompt(t("export.link"), location.href);
+    }
+  }
+
+  // ------------------------------------------------------------------ local files
+
+  function parseCsv(text) {
+    var rows = [];
+    var row = [];
+    var field = "";
+    var quoted = false;
+    for (var i = 0; i < text.length; i += 1) {
+      var ch = text[i];
+      if (quoted) {
+        if (ch === "\"") {
+          if (text[i + 1] === "\"") { field += "\""; i += 1; } else quoted = false;
+        } else field += ch;
+      } else if (ch === "\"") quoted = true;
+      else if (ch === ",") { row.push(field); field = ""; }
+      else if (ch === "\n" || ch === "\r") {
+        if (ch === "\r" && text[i + 1] === "\n") i += 1;
+        row.push(field); field = "";
+        if (row.length > 1 || row[0] !== "") rows.push(row);
+        row = [];
+      } else field += ch;
+    }
+    if (field !== "" || row.length) { row.push(field); rows.push(row); }
+    if (!rows.length) return [];
+    var header = rows[0].map(function (name) { return name.replace(/^﻿/, "").trim(); });
+    return rows.slice(1).map(function (cells) {
+      var record = {};
+      header.forEach(function (name, index) { if (name) record[name] = cells[index] === undefined ? "" : cells[index]; });
+      return record;
+    });
+  }
+
+  function fromExport(item) {
+    if (item && typeof item === "object" && item.input && typeof item.input === "object") return item.input;
+    return item;
+  }
+
+  function parseFileText(name, text) {
+    var clean = text.replace(/^﻿/, "");
+    if (/\.csv$/i.test(name)) return parseCsv(clean);
+    var trimmed = clean.trim();
+    if (!trimmed) return [];
+    if (trimmed[0] === "[" || (trimmed[0] === "{" && !/\}\s*\n\s*\{/.test(trimmed))) {
+      try {
+        var parsed = JSON.parse(trimmed);
+        if (Array.isArray(parsed)) return parsed.map(fromExport);
+        if (parsed && typeof parsed === "object") {
+          if (Array.isArray(parsed.records) || Array.isArray(parsed.quarantine)) {
+            return (parsed.records || []).concat(parsed.quarantine || []).map(fromExport);
+          }
+          return [fromExport(parsed)];
+        }
+      } catch (error) {
+        if (trimmed[0] === "[") throw error;
+      }
+    }
+    return trimmed.split(/\r?\n/).filter(function (line) { return line.trim(); }).map(function (line) {
+      return fromExport(JSON.parse(line));
+    });
+  }
+
+  function loadFile(file) {
+    var message = $("file-message");
+    message.classList.remove("error");
+    file.text().then(function (text) {
+      var rows = parseFileText(file.name, text).filter(function (row) { return row && typeof row === "object" && !Array.isArray(row); });
+      if (!rows.length) throw new Error(t("file.empty"));
+      if (rows.length > MAX_FILE_ROWS) rows = rows.slice(0, MAX_FILE_ROWS);
+      state.token += 1;
+      state.origin = "file";
+      state.fileName = file.name;
+      state.query = "";
+      state.statuses = [{ source: "file", status: "ok", returned: rows.length }];
+      message.textContent = t("file.loaded", { n: fmtNumber(rows.length), name: file.name });
+      loadRows(rows);
+      selectTab("quality");
+    }).catch(function (error) {
+      message.classList.add("error");
+      message.textContent = t("file.error", { name: file.name, error: error && error.message ? error.message : String(error) });
+    });
+  }
+
+  function bindFile() {
+    var input = $("file-input");
+    var zone = $("dropzone");
+    input.addEventListener("change", function () { if (input.files && input.files[0]) loadFile(input.files[0]); input.value = ""; });
+    ["dragenter", "dragover"].forEach(function (type) {
+      zone.addEventListener(type, function (event) { event.preventDefault(); zone.classList.add("drag"); });
+    });
+    ["dragleave", "drop"].forEach(function (type) {
+      zone.addEventListener(type, function (event) { event.preventDefault(); zone.classList.remove("drag"); });
+    });
+    zone.addEventListener("drop", function (event) {
+      var file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
+      if (file) loadFile(file);
+    });
+  }
+
+  // ------------------------------------------------------------------ language
+
+  function setLanguage(lang, persist) {
+    I18n.setLang(lang);
+    if (persist) { try { localStorage.setItem("nutev-open-lang", I18n.lang()); } catch (error) { /* storage unavailable */ } }
+    document.querySelectorAll(".lang-switch button").forEach(function (button) {
+      button.setAttribute("aria-pressed", button.getAttribute("data-lang") === I18n.lang() ? "true" : "false");
+    });
+    I18n.apply(document);
+    setSearching($("search-btn").disabled);
+    renderGuide();
+    renderAll();
+    if (state.query) updateHash();
+  }
+
+  // ------------------------------------------------------------------ init
+
+  function init() {
+    // On the hosted NutEV runtime this page lives at /aberto/; only there does the
+    // login-protected advanced search exist on the same site.
+    if (location.pathname.indexOf("/aberto/") === 0) $("advanced-link").hidden = false;
+    bindTooltip();
+    bindTabs();
+    bindFile();
+    var fromHash = readHash();
+    var saved = "";
+    try { saved = localStorage.getItem("nutev-open-lang") || ""; } catch (error) { saved = ""; }
+    renderSourcePicker();
+    renderExamples();
+    setLanguage(fromHash.lang || saved || "pt", false);
+    selectTab("results");
+
+    $("search-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      runSearch($("q").value);
+    });
+    $("limit").addEventListener("change", function () { state.limit = Number($("limit").value) || 50; });
+    $("sort").addEventListener("change", function () { state.sort = $("sort").value; state.shown = PAGE_SIZE; renderResults(); });
+    $("show-more").addEventListener("click", function () { state.shown += PAGE_SIZE; renderResults(); });
+    $("export-csv").addEventListener("click", exportCsv);
+    $("export-json").addEventListener("click", exportJson);
+    $("copy-link").addEventListener("click", copyLink);
+    $("brand-home").addEventListener("click", function (event) { event.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); $("q").focus(); });
+    document.querySelectorAll(".lang-switch button").forEach(function (button) {
+      button.addEventListener("click", function () { setLanguage(button.getAttribute("data-lang"), true); });
+    });
+
+    if (fromHash.query) {
+      $("q").value = fromHash.query;
+      runSearch(fromHash.query);
+    }
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();

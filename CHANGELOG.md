@@ -4,6 +4,38 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Busca aberta sem login no site hospedado
+
+- O Explorador Aberto passa a ser servido pelo runtime hospedado em `/aberto/`. Ele é estático, sem estado privado, sem conta e sem vínculo com workspace.
+- No modo `pilot`, `/aberto` e `/aberto/` são rotas estáticas públicas. A CSP desse caminho (e só dele) permite `connect-src` para Europe PMC, PubMed, OpenAlex e Crossref. As demais páginas mantêm `connect-src 'self'`.
+- Visitantes anônimos de `/` e `/index.html` são enviados para `/aberto/`; membros autenticados mantêm a home. Login continua obrigatório para a busca avançada e para toda superfície privada.
+- A home anônima, o caso "sem workspace" e a tela de login ganharam o atalho "Buscar sem login". O explorador hospedado mostra "Busca avançada (entrar)".
+- `deploy/hetzner/Caddyfile`: `basic_auth` com matcher `@protected not path /aberto /aberto/*`. O smoke de deploy verifica `/aberto/` e avisa quando um proxy externo ainda exige Basic Auth nesse caminho.
+- Novo `nutev_tests/test_open_explorer_hosting.py`, com o servidor pilot real e visitante anônimo.
+
+
+### Busca por pergunta: conceitos, sinônimos e uma string por base
+
+- Auditoria interna de palavras-chave e construção de buscas em `docs/SEARCH_KEYWORD_AUDIT_2026-10.md`: a busca rápida enviava a pergunta crua (inclusive em português) a bases em inglês, sem extração de conceitos, sinônimos, tradução, sintaxe por base ou filtro de período.
+- Adicionado `config/query_vocabulary.json` (113 conceitos de MEV/NEV com gatilhos PT/EN, sinônimos em inglês, termos em português, papel PICO e vínculo com o eixo canônico), validado fail-closed. Não contém MeSH/DeCS: no modo amplo cada base aplica o próprio vocabulário.
+- Adicionado `src/nutev/search/question_planner.py`: pergunta → blocos (população, intervenção, comparador, contexto, desfecho, tipo de estudo, termos livres) e períodos → uma string por base (PubMed `[tiab]/[pt]/[dp]`, Europe PMC `TITLE_ABS/PUB_YEAR`, OpenAlex booleana + filtros de data, Crossref `query.bibliographic` + filtro de data, BVS `tw:` com `$`, SciELO booleana com `$`). Strings avançadas digitadas são preservadas literalmente.
+- Nova CLI `nutev plan-query`.
+- Explorador Aberto: a busca parte da pergunta; o painel "Como o NutEV organizou sua busca" permite ligar/desligar blocos e termos, acrescentar sinônimos, ajustar período e campo, editar e copiar a string de cada base, abrir BVS/LILACS e SciELO no site e ver como o PubMed interpretou a string. A exportação JSON registra o plano e as strings efetivamente enviadas.
+- `planner.js` é verificado contra o Python (`nutev_tests/test_question_planner.py`), inclusive compatibilidade com o modo avançado hospedado via `to_review_strategy`.
+- A busca rápida hospedada não foi alterada.
+
+
+### Explorador Aberto de Evidências (público, sem login)
+
+- Adicionado `apps/nutev-open/`: página estática, sem login e sem servidor, que consulta Europe PMC, PubMed, OpenAlex e Crossref direto do navegador e mostra, para cada registro, o nível do dado (A — identificador verificável, B — URL rastreável, Q — quarentena), a completude dos metadados, os eixos MEV/NEV, o tipo documental e a conta completa da prioridade técnica de leitura.
+- Painel de qualidade do dado por eixo da MEV e da NEV (proporção A/B/Q por eixo), por fonte, por campo de metadado, por tipo documental e por ano; aba de quarentena com o motivo de cada bloqueio; guia de leitura em PT-BR/EN.
+- Exportação CSV/JSON com manifesto (versões, SHA-256 do pacote de regras, fontes consultadas e não consultadas) e leitura local de `reference_ranking.jsonl`, `reference_ranking.csv` e `reference_quarantine.jsonl` sem envio de dados.
+- `tools/build_open_explorer_data.py` gera o pacote de regras do navegador a partir de `config/taxonomy_registry.json`, `config/keyword_taxonomy*.json`, `config/reference_mode.json` e dos padrões de tipo documental; `--check` falha em caso de drift.
+- `nutev_tests/test_open_explorer.py` prova paridade Python ↔ JavaScript (normalização de identificadores, classe de rastreabilidade, identidade, deduplicação, score, ranks por eixo, tipo documental e adaptadores de fonte) e protege a superfície pública (CSP restritiva, sem back-end, sem cookies, sem endpoints de modelos de linguagem).
+- `.github/workflows/open-explorer-pages.yml` publica a página no GitHub Pages a partir de `main`, depois de repetir `--check` e os testes de paridade.
+- Nenhuma regra de ranking, taxonomia, identidade ou rastreabilidade do Engine mudou. Scopus e Web of Science continuam nunca simulados. O estado científico permanece `B — DEMOTE`.
+
+
 ### Integridade de entrega do deploy de produção
 
 - **Corrigido um modo de falha em que um deploy parcialmente executado era reportado como sucesso.** A metade remota do deploy era um heredoc transmitido para `bash -s` pelo canal SSH; quando o canal era perturbado pela reinicialização do contêiner, o `bash` encontrava EOF no meio do script e saía com 0. O `ssh` retornava sucesso e o job ficava verde tendo pulado o contrato de runtime em produção, a asserção `/api/version == TARGET_SHA`, o smoke público HTTPS e o caminho de rollback. Um deploy real fez exatamente isso: o log não contém saída alguma dessas verificações.
