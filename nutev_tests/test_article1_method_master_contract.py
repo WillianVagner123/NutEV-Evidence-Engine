@@ -11,7 +11,7 @@ def test_article1_active_method_is_critical_review_and_legacy_search_is_historic
     assert method["master_type"] == "NUTEV_ARTICLE1_METHOD_MASTER"
     assert method["active_for_current_article1"] is True
     assert method["study_type"] == "CRITICAL_STRUCTURED_REVIEW"
-    assert method["status"] == "OWNER_APPROVED_ADVISOR_CONFIRMATION_PENDING"
+    assert method["status"] == "OWNER_AND_ADVISOR_APPROVED"
 
     design = method["method"]
     assert design["dual_independent_screening_required"] is False
@@ -19,6 +19,9 @@ def test_article1_active_method_is_critical_review_and_legacy_search_is_historic
     assert design["formal_prisma_event_applicable"] is False
     assert design["exhaustive_mapping_claimed"] is False
     assert design["selection_register_required"] is True
+    assert design["supervisor_methodological_review"] == "CONFIRMED"
+    assert method["human_decisions"]["advisor"] == "APPROVED_RECORDED_BY_OWNER"
+    assert method["human_decisions"]["advisor_confirmation_source"] == "OWNER_ATTESTATION"
 
     legacy = method["legacy_scoping_program"]
     assert legacy["status"] == "HISTORICAL_SUPERSEDED_NOT_DELETED"

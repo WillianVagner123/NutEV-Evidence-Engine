@@ -2,7 +2,7 @@
   "schema_version": 1,
   "master_type": "NUTEV_ARTICLE1_METHOD_MASTER",
   "master_version": "article1-method-master-v2",
-  "status": "OWNER_APPROVED_ADVISOR_CONFIRMATION_PENDING",
+  "status": "OWNER_AND_ADVISOR_APPROVED",
   "active_for_current_article1": true,
   "study_type": "CRITICAL_STRUCTURED_REVIEW",
   "title_pt": "Da recomendação à execução no cuidado nutricional: revisão crítica estruturada e proposição da arquitetura NUT-EV",
@@ -29,7 +29,7 @@
     "selection_register_required": true,
     "source_provenance_required": true,
     "sanra_editorial_audit_planned": true,
-    "supervisor_methodological_review": "PENDING_EXPLICIT_RECORD"
+    "supervisor_methodological_review": "CONFIRMED"
   },
   "evidence_roles": [
     "CORPUS_PRIMARY",
@@ -77,7 +77,9 @@
   },
   "human_decisions": {
     "owner": "APPROVED",
-    "advisor": "PENDING_EXPLICIT_CONFIRMATION",
+    "advisor": "APPROVED_RECORDED_BY_OWNER",
+    "advisor_confirmation_recorded_on": "2026-10-02",
+    "advisor_confirmation_source": "OWNER_ATTESTATION",
     "final_corpus": "PENDING",
     "manuscript_freeze": "PENDING"
   },

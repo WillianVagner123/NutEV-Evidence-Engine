@@ -4,7 +4,7 @@
 
 The active Article 1 design is a **structured critical review with a conceptual proposal of the NUT-EV framework**. It is not a scoping, systematic, integrative, or rapid review.
 
-Status: `OWNER_APPROVED_ADVISOR_CONFIRMATION_PENDING`.
+Status: `OWNER_AND_ADVISOR_APPROVED`.
 
 ## Active source of truth
 
@@ -19,7 +19,7 @@ The legacy search master remains immutable provenance for the former scoping-rev
 - The September seven-database total of 69,375 interface hits is pilot/developmental discovery, not a formal corpus and not PRISMA.
 - Prior PRESS decisions apply only to the legacy search program and are not transferable to the current critical review.
 - Selection is performed by one researcher with a transparent source register and explicit limitations.
-- Dr. Caio Reis remains the doctoral supervisor and methodological critic; his explicit confirmation of the transition is still pending.
+- Dr. Caio Reis remains the doctoral supervisor and methodological critic. Willian recorded the advisor’s confirmation of the methodological transition on 2026-10-02; this does not imply approval of the final corpus, results, or manuscript.
 - ABCD-NutEV is a post-extraction analytic crosswalk, never an eligibility filter.
 - The Engine provides discovery support, provenance, organization, extraction support, and audit. It does not validate NUT-EV scientifically.
 

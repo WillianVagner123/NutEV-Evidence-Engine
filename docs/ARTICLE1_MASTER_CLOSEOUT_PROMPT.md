@@ -22,7 +22,7 @@ Não trate esta tarefa como continuação automática da antiga scoping review. 
 
 - Não usar PRISMA-ScR, não emitir evento PRISMA e não apresentar contagens exploratórias como corpus formal.
 
-- O Dr. Caio Reis atuará como orientador e crítico metodológico, não como segundo triador obrigatório.
+- O Dr. Caio Reis atuará como orientador e crítico metodológico, não como segundo triador obrigatório. A validação da transição metodológica foi confirmada pelo pesquisador responsável em 2 de outubro de 2026.
 
 - O NUT-EV será a contribuição conceitual proposta a partir da comparação crítica entre documentos consolidados e literatura de apoio.
 
@@ -148,7 +148,7 @@ Organizar a síntese funcional em sete movimentos: avaliar pessoa/alimentação/
 
 - Separar evidência textual da fonte, interpretação do autor e proposição do modelo.
 
-- Submeter pergunta, corpus e arquitetura à crítica do Dr. Caio antes da versão de banca.
+- A decisão metodológica foi validada com o Dr. Caio. Submeter a ele a matriz consolidada, a qualificação e o manuscrito antes da versão de banca.
 
 ## 8. Tratamento das buscas anteriores
 
@@ -264,7 +264,7 @@ O produto técnico está funcional, mas o estado científico do Artigo 1 no repo
 
 - Não inventar referência, DOI, citação, contagem, aprovação, parecer ou decisão do orientador.
 
-- Não dizer que o Dr. Caio aprovou o novo método até haver registro explícito.
+- Registrar a validação metodológica do Dr. Caio sem ampliá-la para aprovação de resultados, corpus final ou manuscrito ainda não revisados.
 
 - Não criar um segundo Engine ou duplicar o sistema.
 
