@@ -138,8 +138,9 @@
 
   function familyLabel(family, short) {
     if (!family) return t("family.unclassified");
+    if (short) return "";
     var suffix = I18n.lang() === "pt" ? "_pt" : "_en";
-    return family[(short ? "short" : "label") + suffix];
+    return String(family["label" + suffix] || "").replace(/\s*\((?:MEV|NEV|LM|LN)\)/g, "");
   }
 
   function familyOf(groupId) {
@@ -243,11 +244,9 @@
   function levelCards(container, compact) {
     clear(container);
     LEVELS.forEach(function (level) {
-      var code = level === "Q" ? t("level.Q.codes") : t("level." + level + ".code");
       container.appendChild(el("article", { class: "level-card level-" + level },
         el("h4", null, levelBadge(level)),
-        el("p", { text: t("level." + level + ".short") }),
-        compact ? null : el("code", { text: code })));
+        el("p", { text: t("level." + level + ".short") })));
     });
   }
 
@@ -266,7 +265,7 @@
   function renderExamples() {
     var box = clear($("examples"));
     var english = I18n.lang() === "en" && (DATA.example_queries_en || []).length;
-    (english ? DATA.example_queries_en : DATA.example_queries).forEach(function (query) {
+    (english ? DATA.example_queries_en : DATA.example_queries).slice(0, 3).forEach(function (query) {
       box.appendChild(el("button", {
         type: "button",
         class: "chip-button",
@@ -304,26 +303,12 @@
         groups.map(function (group) {
           return el("details", null,
             el("summary", null, el("span", { text: groupLabel(group.id) }), el("small", { text: t("guide.axes.terms", { n: group.terms.length }) })),
-            el("code", { class: "axis-id", text: group.id }),
             el("p", { class: "terms", text: group.terms.join(" · ") }));
         })));
     });
 
-    var prov = clear($("guide-provenance"));
-    [
-      [t("guide.prov.taxonomy"), DATA.taxonomy_version],
-      [t("guide.prov.policy"), DATA.guardrail_policy_version],
-      [t("guide.prov.engine"), DATA.engine_version],
-      [t("guide.prov.doctypes"), DATA.document_class_ontology_version],
-      [t("guide.prov.planner"), DATA.planner_version + " · " + VOCABULARY.vocabulary_version + " (" + reviewStatusLabel(VOCABULARY.review_status) + ")"],
-      [t("guide.prov.bundle"), DATA.bundle_sha256],
-      [t("guide.prov.build"), !BUILD.commit || BUILD.commit === "local" ? t("guide.prov.local") : BUILD.commit + (BUILD.built_at ? " · " + BUILD.built_at : "")]
-    ].forEach(function (pair) {
-      prov.appendChild(el("dt", { text: pair[0] }));
-      prov.appendChild(el("dd", { text: pair[1] }));
-    });
-
-    $("footer-meta").textContent = t("footer.meta", { version: DATA.engine_version });
+    clear($("guide-provenance"));
+    $("footer-meta").textContent = t("footer.meta");
   }
 
   // ------------------------------------------------------------------ tabs
@@ -391,21 +376,23 @@
     if (!state.statuses.length) { panel.hidden = true; return; }
     panel.hidden = false;
     state.statuses.forEach(function (status) {
-      var label = status.source === "file" ? t("status.file") + ": " + state.fileName : sourceLabel(status.source);
-      var detail = status.source === "file" ? t("file.loaded", { n: fmtNumber(status.returned), name: state.fileName }) + originalSearchNote() : statusDetail(status);
-      list.appendChild(el("li", { class: "status-item", "data-state": status.status },
-        el("span", { class: "status-dot", "aria-hidden": "true" }),
-        el("strong", { text: label }),
-        el("span", { class: "detail", text: detail })));
+      var label = status.source === "file" ? t("status.file") : sourceLabel(status.source);
+      if (status.source === "file") {
+        list.appendChild(el("li", { class: "status-item", "data-state": "ok" },
+          el("strong", { text: label }), el("span", { class: "detail", text: fmtNumber(status.returned) })));
+      } else if (status.status === "ok") {
+        var n = typeof status.total_found === "number" ? status.total_found : status.returned;
+        list.appendChild(el("li", { class: "status-item", "data-state": "ok" },
+          el("strong", { text: label }), el("span", { class: "detail", text: fmtNumber(n) })));
+      } else if (status.status === "error") {
+        var detail = statusDetail(status);
+        list.appendChild(el("li", { class: "status-item", "data-state": "error", "data-tip": detail },
+          el("strong", { text: "⚠ " + label }), el("span", { class: "detail", text: t("status.error") })));
+      } else {
+        list.appendChild(el("li", { class: "status-item", "data-state": status.status },
+          el("strong", { text: label }), el("span", { class: "detail", text: t("status.pending") })));
+      }
     });
-    if (state.origin === "search") {
-      Sources.NOT_QUERIED.forEach(function (item) {
-        list.appendChild(el("li", { class: "status-item", "data-state": "off" },
-          el("span", { class: "status-dot", "aria-hidden": "true" }),
-          el("strong", { text: item.label }),
-          el("span", { class: "detail", text: t(item.reason === "licensed" ? "status.licensed" : "status.engine_only") })));
-      });
-    }
     $("status-stale").hidden = !anyStale();
   }
 
@@ -539,8 +526,10 @@
   // ------------------------------------------------------------------ strategy panel
 
   function roleLabel(role) {
-    var info = VOCABULARY.roles[role] || {};
-    return I18n.lang() === "pt" ? info.label_pt : info.label_en;
+    var labels = I18n.lang() === "pt"
+      ? { population: "Quem", intervention: "O quê", comparator: "Comparação", outcome: "Resultado", context: "Contexto", design: "Desenho", free: "Palavra digitada" }
+      : { population: "Who", intervention: "What", comparator: "Comparison", outcome: "Outcome", context: "Context", design: "Design", free: "Typed word" };
+    return labels[role] || role;
   }
 
   function blockLabel(block) {
@@ -651,16 +640,12 @@
       refreshStrategy("add:" + block.key);
     });
 
-    var role = VOCABULARY.roles[block.role] || {};
     return el("article", { class: "block-card role-" + block.role + (block.enabled ? "" : " off") },
       el("header", null,
-        el("span", { class: "role-badge", "data-tip": roleLabel(block.role), text: role.letter || "?" }),
         el("div", { class: "block-title" },
           el("strong", { text: blockLabel(block) }),
           el("small", { text: roleLabel(block.role) })),
-        el("label", { class: "switch" }, toggle, el("span", { text: t("strategy.use") }))),
-      el("p", { class: "matched" }, (block.role === "free" ? t("strategy.typed") : t("strategy.matched")) + " “" + block.matched.join("”, “") + "”",
-        block.taxonomy_groups.length ? el("span", { class: "axis-chip" }, el("small", { text: familyLabel(familyOf(block.taxonomy_groups[0]), true) }), groupLabel(block.taxonomy_groups[0])) : null),
+        el("label", { class: "switch" }, toggle, el("span", { class: "sr-only", text: blockLabel(block) }))),
       chips,
       addForm);
   }
@@ -763,12 +748,10 @@
         el("strong", { text: sourceLabel(provider) }),
         badge,
         el("span", { class: "edited-tag", text: t("strategy.edited") })),
-      el("p", { class: "dialect", text: t("dialect." + compiled.dialect) }),
       area,
       filter ? el("p", { class: "query-filter" }, el("code", { text: filter })) : null,
       el("p", { class: "edited-note", text: t("strategy.editedNote") }),
       el("div", { class: "query-actions" }, copy, link, restore),
-      notes.length ? el("ul", { class: "query-notes" }, notes) : null,
       translation);
     return card;
   }
@@ -835,14 +818,7 @@
         })));
       }
       body.appendChild(el("div", { class: "block-grid" }, plan.blocks.map(blockCard)));
-      if (enabledBlocks.length) {
-        var logic = el("p", { class: "logic" }, el("strong", { text: t("strategy.logic") + ": " }));
-        enabledBlocks.forEach(function (block, index) {
-          if (index) logic.appendChild(el("span", { class: "op", text: " AND " }));
-          logic.appendChild(el("span", { class: "logic-block role-" + block.role, text: blockLabel(block) }));
-        });
-        body.appendChild(logic);
-      }
+      // Boolean logic remains in the compiled queries, not in the primary UI.
       if (plan.dropped_terms.length) {
         body.appendChild(el("p", { class: "note", text: t("strategy.dropped", { list: plan.dropped_terms.join(", ") }) }));
       }
@@ -879,22 +855,29 @@
           el("span", { text: t("filters.yearFrom") }), yearFrom, el("span", { text: t("filters.yearTo") }), yearTo)));
     }
 
-    body.appendChild(el("h3", { text: t("strategy.queries") }));
-    body.appendChild(el("div", { class: "query-grid" }, STRATEGY_PROVIDERS.map(queryCard)));
     var copyAll = el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.copyAll") });
     copyAll.addEventListener("click", function () {
       copyText(STRATEGY_PROVIDERS.map(function (provider) {
         return sourceLabel(provider) + "\n" + queryFor(provider).query;
       }).join("\n\n"), copyAll);
     });
+    body.appendChild(el("details", { class: "queries-details" },
+      el("summary", { text: t("strategy.queries") }),
+      el("div", { class: "query-grid" }, STRATEGY_PROVIDERS.map(queryCard)),
+      el("p", null, copyAll)));
     body.appendChild(el("p", { id: "strategy-stale", class: "stale-note", role: "status", hidden: true, text: t("strategy.stale") }));
     body.appendChild(el("div", { class: "strategy-actions" },
       el("button", { type: "button", class: "btn btn-primary", text: t("strategy.rerun"), onclick: function () { executePlan(); } }),
-      copyAll));
+      el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.close"), onclick: closeStrategy })));
   }
 
   function loadRows(rows) {
     state.result = Core.runPipeline(rows, DATA);
+    if (state.origin === "file" && state.fileManifest && state.fileManifest.counts) {
+      var originalCounts = state.fileManifest.counts;
+      if (typeof originalCounts.retrieved_rows === "number") state.result.stats.retrieved_rows = originalCounts.retrieved_rows;
+      if (typeof originalCounts.duplicates_merged === "number") state.result.stats.duplicates_merged = originalCounts.duplicates_merged;
+    }
     state.filters = emptyFilters();
     state.shown = PAGE_SIZE;
     renderAll();
@@ -1121,6 +1104,20 @@
       text: t("filters.clear"),
       onclick: function () { state.filters = emptyFilters(); state.shown = PAGE_SIZE; renderFilters(); renderResults(); }
     }));
+    updateMobileFilterLabel();
+  }
+
+  function activeFilterCount() {
+    var f = state.filters;
+    return f.levels.size + f.groups.size + f.docClasses.size + f.sources.size +
+      (f.unclassified ? 1 : 0) + (f.yearFrom ? 1 : 0) + (f.yearTo ? 1 : 0) + (f.abstractOnly ? 1 : 0);
+  }
+
+  function updateMobileFilterLabel() {
+    var button = $("mobile-filter-btn");
+    if (!button) return;
+    var n = activeFilterCount();
+    button.textContent = t("filters.mobile") + (n ? " (" + n + ")" : "");
   }
 
   function passesFilters(row) {
@@ -1171,16 +1168,10 @@
 
   function completenessMeter(row) {
     var completeness = row.metadata_completeness;
-    var dots = el("span", { class: "meter-dots", "aria-hidden": "true" });
-    Core.COMPLETENESS_FIELDS.forEach(function (field) {
-      dots.appendChild(el("i", { class: completeness.fields[field] ? "on" : null }));
-    });
     var missing = Core.COMPLETENESS_FIELDS.filter(function (field) { return !completeness.fields[field]; })
       .map(function (field) { return t("field." + field); });
-    return el("span", {
-      class: "meter",
-      "data-tip": t("completeness.title") + (missing.length ? " — " + missing.join(", ") : "")
-    }, dots, t("completeness.label", { n: completeness.present, total: completeness.total }));
+    if (!missing.length) return null;
+    return el("span", { class: "meter", text: t("completeness.label", { fields: missing.join(", ") }) });
   }
 
   function axisChips(row, limit) {
@@ -1188,20 +1179,15 @@
     if (!groups.length) return null;
     var primary = row.taxonomy_primary;
     groups.sort(function (a, b) { return (a === primary ? -1 : 0) - (b === primary ? -1 : 0); });
-    var shown = groups.slice(0, limit || 6);
-    var box = el("div", { class: "axis-chips" }, shown.map(function (group) {
-      var family = familyOf(group);
-      return el("span", {
-        class: "axis-chip" + (group === primary ? " primary" : ""),
-        "data-tip": familyLabel(family, false) + (group === primary ? " · " + t("card.primary") : "")
-      }, el("small", { text: familyLabel(family, true) }), groupLabel(group));
-    }));
-    if (groups.length > shown.length) box.appendChild(el("span", { class: "axis-chip", text: "+" + (groups.length - shown.length) }));
-    return box;
+    var shown = groups.slice(0, limit || 2);
+    return el("span", { class: "axis-topics", text: shown.map(groupLabel).join(", ") });
   }
 
   function authorsText(authors) {
     var text = String(authors || "").trim();
+    if (!text) return "";
+    var parts = text.split(";").map(function (part) { return part.trim(); }).filter(Boolean);
+    if (parts.length > 3) return parts.slice(0, 3).join(", ") + " et al.";
     return text.length > 140 ? text.slice(0, 137).replace(/[;,\s]+\S*$/, "") + " et al." : text;
   }
 
@@ -1209,18 +1195,9 @@
     var items = [];
     var doi = Core.normalizeDoi(row.doi);
     var pmid = Core.normalizePmid(row.pmid);
-    var pmcid = Core.normalizePmcid(row.pmcid);
-    if (doi) items.push(el("span", null, "DOI ", externalLink("https://doi.org/" + doi, doi)));
-    else if (row.doi) items.push(el("span", null, "DOI ", el("code", { text: String(row.doi) })));
-    if (pmid) items.push(el("span", null, "PMID ", externalLink("https://pubmed.ncbi.nlm.nih.gov/" + pmid + "/", pmid)));
-    if (pmcid) items.push(el("span", null, "PMCID ", externalLink("https://pmc.ncbi.nlm.nih.gov/articles/" + pmcid + "/", pmcid)));
-    var providers = row.source_providers || [Core.pyText(row.source_provider || row.source)].filter(Boolean);
-    if (providers.length) {
-      items.push(el("span", null, t("card.sources") + ": ", providers.map(function (provider) {
-        return el("span", { class: "source-tag", text: sourceLabel(provider) });
-      })));
-    }
-    return el("div", { class: "record-ids" }, items);
+    if (doi) items.push(externalLink("https://doi.org/" + doi, "DOI"));
+    if (pmid) items.push(externalLink("https://pubmed.ncbi.nlm.nih.gov/" + pmid + "/", "PMID"));
+    return items.length ? el("span", { class: "record-ids" }, items) : null;
   }
 
   function whyBlock(title, children, wide) {
@@ -1234,32 +1211,22 @@
     var blocks = [];
     blocks.push(whyBlock(t("card.traceability"), [
       levelBadge(level),
-      el("p", { text: t("card.traceability.text", { code: row.audit_traceability, reasons: reasonsText(row.audit_reasons) }) }),
-      el("p", { class: "note", text: t("level." + level + ".short") })
+      el("p", { text: reasonsText(row.audit_reasons) || t("level." + level + ".short") })
     ]));
 
     var completeness = row.metadata_completeness;
-    blocks.push(whyBlock(t("completeness.title"), el("ul", { class: "check-list" }, Core.COMPLETENESS_FIELDS.map(function (field) {
-      return el("li", { class: completeness.fields[field] ? "on" : null, text: t("field." + field) });
-    }))));
+    var missing = Core.COMPLETENESS_FIELDS.filter(function (field) { return !completeness.fields[field]; });
+    blocks.push(whyBlock(t("completeness.title"), missing.length
+      ? el("p", { text: t("completeness.label", { fields: missing.map(function (field) { return t("field." + field); }).join(", ") }) })
+      : el("p", { text: I18n.lang() === "pt" ? "Completos" : "Complete" })));
 
     var groups = row.taxonomy_groups || [];
-    blocks.push(whyBlock(t("card.taxonomy", { version: DATA.taxonomy_version }), groups.length
-      ? el("ul", null, groups.map(function (group) {
-        var terms = (row.taxonomy_group_terms || {})[group] || [];
-        return el("li", null,
-          el("strong", { text: groupLabel(group) }),
-          group === row.taxonomy_primary ? " (" + t("card.primary") + ")" : "",
-          terms.length ? el("div", { class: "terms", text: t("card.terms") + ": " + terms.join(" · ") }) : null);
-      }))
+    blocks.push(whyBlock(t("card.taxonomy"), groups.length
+      ? el("p", { text: groups.slice(0, 6).map(groupLabel).join(", ") })
       : el("p", { class: "note", text: t("card.unclassified") })));
 
     var doc = row.document_classification;
-    blocks.push(whyBlock(t("card.doctype"), [
-      el("p", null, el("strong", { text: docClassLabel(doc.document_class) }), " — " + t("card.basis." + doc.basis)),
-      doc.signals.length ? el("p", { class: "terms", text: doc.signals.map(function (s) { return s.field + ": “" + s.value + "”"; }).join(" · ") }) : null,
-      row.article_type ? el("p", { class: "note", text: t("card.raw_type") + ": " + row.article_type }) : null
-    ]));
+    blocks.push(whyBlock(t("card.doctype"), el("p", { text: docClassLabel(doc.document_class) })));
 
     if (!quarantined) {
       var breakdown = row.score_breakdown;
@@ -1277,15 +1244,10 @@
     }
 
     var manifestations = row.source_manifestations || [];
-    if (manifestations.length) {
-      blocks.push(whyBlock(t("card.provenance"), el("ul", null, manifestations.map(function (item) {
-        return el("li", { text: t("card.provenance.item", {
-          provider: sourceLabel(item.provider || item.source || "?"),
-          query: item.provider_query || "—",
-          time: fmtTime(item.retrieved_at)
-        }) });
-      }))));
-    }
+    var providers = manifestations.map(function (item) { return sourceLabel(item.provider || item.source || "?"); })
+      .filter(function (provider, index, all) { return all.indexOf(provider) === index; });
+    if (!providers.length) providers = (row.source_providers || [row.source_provider || row.source]).filter(Boolean).map(sourceLabel);
+    if (providers.length) blocks.push(whyBlock(t("card.provenance"), el("p", { text: providers.join(", ") })));
 
     var abstract = Core.pyText(row.abstract || row.summary || row.snippet);
     blocks.push(whyBlock(t("card.abstract"), abstract
@@ -1299,7 +1261,9 @@
     var level = levelOf(row);
     var doc = row.document_classification;
     var titleText = Core.pyText(row.title) || "(" + t("reason.missing_title") + ")";
-    var href = Core.normalizeUrl(row.url) ? row.url : (Core.normalizeDoi(row.doi) ? "https://doi.org/" + Core.normalizeDoi(row.doi) : null);
+    var doi = Core.normalizeDoi(row.doi);
+    var pmid = Core.normalizePmid(row.pmid);
+    var href = doi ? "https://doi.org/" + doi : (pmid ? "https://pubmed.ncbi.nlm.nih.gov/" + pmid + "/" : (Core.normalizeUrl(row.url) ? row.url : null));
     var meta = [authorsText(row.authors), Core.pyText(row.journal), row.reference_year || Core.extractYear(row, new Date().getFullYear()) || ""]
       .filter(function (part) { return part; }).join(" · ");
 
@@ -1310,21 +1274,19 @@
     });
 
     return el("li", { class: "record level-" + level },
-      el("div", { class: "record-head" },
-        el("span", { "data-tip": t("level." + level + ".short") }, levelBadge(level)),
-        completenessMeter(row),
-        doc.document_class !== "unclassified" ? el("span", { class: "doctype-tag", "data-tip": t("card.doctype") + " — " + t("card.basis." + doc.basis), text: docClassLabel(doc.document_class) }) : null,
-        quarantined
-          ? el("span", { class: "rank-tag", text: reasonsText(row.audit_reasons) })
-          : el("span", { class: "rank-tag", "data-tip": t("card.priority.note"), text: t("card.priority.value", { rank: row.reference_rank, score: row.reference_score }) })),
       el("h3", null, href ? externalLink(href, titleText) : titleText),
       meta ? el("p", { class: "record-meta", text: meta }) : null,
-      identifierLinks(row),
-      axisChips(row, 6),
-      details);
+      el("div", { class: "record-line" },
+        el("span", { "data-tip": t("level." + level + ".short") }, levelBadge(level)),
+        doc.document_class !== "unclassified" ? el("span", { class: "doctype-tag", text: docClassLabel(doc.document_class) }) : null,
+        completenessMeter(row),
+        identifierLinks(row),
+        axisChips(row, 2),
+        details));
   }
 
   function renderResults() {
+    updateMobileFilterLabel();
     var list = clear($("results-list"));
     var filtered = sortRows(state.result.ranked.filter(passesFilters));
     var visible = filtered.slice(0, state.shown);
@@ -1428,14 +1390,12 @@
       el("table", { class: "data-table" },
         el("thead", null, el("tr", null,
           el("th", { text: t("quality.col.axis") }),
-          el("th", { text: "ID" }),
           el("th", { class: "num", text: t("quality.col.works") }),
           LEVELS.map(function (level) { return el("th", { class: "num", text: level }); }),
           el("th", { class: "num", text: t("field.abstract") }))),
         el("tbody", null, tableRows.map(function (entry) {
           return el("tr", null,
             el("td", { text: groupLabel(entry.group) }),
-            el("td", null, el("code", { text: entry.group })),
             el("td", { class: "num", text: fmtNumber(entry.works) }),
             LEVELS.map(function (level) { return el("td", { class: "num", text: fmtNumber(entry[level]) }); }),
             el("td", { class: "num", text: pct(entry.with_abstract, entry.works) + "%" }));
@@ -1504,6 +1464,17 @@
   function renderAll() {
     var has = Boolean(state.result);
     document.body.classList.toggle("has-results", has);
+    $("search-summary").hidden = !has;
+    if (has) {
+      var okSources = state.statuses.filter(function (s) { return s.status === "ok" && s.source !== "file"; });
+      var elapsed = state.statuses.reduce(function (max, s) { return Math.max(max, Number(s.elapsed_ms || 0)); }, 0);
+      $("search-summary-text").textContent = t("summary.line", {
+        n: fmtNumber(state.result.ranked.length),
+        sources: state.origin === "search" ? okSources.length : 1,
+        seconds: (elapsed / 1000).toLocaleString(I18n.lang() === "pt" ? "pt-BR" : "en", { maximumFractionDigits: 1 })
+      });
+      $("open-strategy").hidden = !(state.plan && state.origin === "search");
+    }
     $("results-empty").hidden = has;
     $("results-view").hidden = !has;
     $("quality-empty").hidden = has;
@@ -1826,6 +1797,39 @@
     if (state.query) updateHash();
   }
 
+  // ------------------------------------------------------------------ drawers & theme
+
+  var strategyReturnFocus = null;
+
+  function openStrategy() {
+    var panel = $("strategy");
+    if (!state.plan || state.origin !== "search") return;
+    strategyReturnFocus = document.activeElement;
+    panel.hidden = false;
+    panel.removeAttribute("inert");
+    panel.setAttribute("aria-hidden", "false");
+    document.body.classList.add("strategy-open");
+    $("strategy-close").focus();
+  }
+
+  function closeStrategy() {
+    var panel = $("strategy");
+    document.body.classList.remove("strategy-open");
+    panel.setAttribute("aria-hidden", "true");
+    panel.setAttribute("inert", "");
+    if (strategyReturnFocus && strategyReturnFocus.focus) strategyReturnFocus.focus();
+  }
+
+  function toggleTheme() {
+    var root = document.documentElement;
+    var current = root.getAttribute("data-theme");
+    var systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var dark = current ? current === "dark" : systemDark;
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("nutev-open-theme", next); } catch (error) {}
+  }
+
   // ------------------------------------------------------------------ init
 
   function init() {
@@ -1838,6 +1842,10 @@
     var fromHash = readHash();
     var saved = "";
     try { saved = localStorage.getItem("nutev-open-lang") || ""; } catch (error) { saved = ""; }
+    try {
+      var savedTheme = localStorage.getItem("nutev-open-theme");
+      if (savedTheme === "light" || savedTheme === "dark") document.documentElement.setAttribute("data-theme", savedTheme);
+    } catch (error) {}
     renderSourcePicker();
     // On narrow screens the filters start closed so the first result is in view.
     if (window.matchMedia && window.matchMedia("(max-width: 860px)").matches) $("filters-details").open = false;
@@ -1854,6 +1862,15 @@
     $("export-csv").addEventListener("click", exportCsv);
     $("export-json").addEventListener("click", exportJson);
     $("copy-link").addEventListener("click", copyLink);
+    $("theme-toggle").addEventListener("click", toggleTheme);
+    $("open-strategy").addEventListener("click", openStrategy);
+    $("strategy-close").addEventListener("click", closeStrategy);
+    $("strategy-scrim").addEventListener("click", closeStrategy);
+    $("mobile-filter-btn").addEventListener("click", function () { document.body.classList.toggle("filters-open"); });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && document.body.classList.contains("strategy-open")) closeStrategy();
+      if (event.key === "Escape" && document.body.classList.contains("filters-open")) document.body.classList.remove("filters-open");
+    });
     $("brand-home").addEventListener("click", function (event) { event.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); $("q").focus(); });
     document.querySelectorAll(".lang-switch button").forEach(function (button) {
       button.addEventListener("click", function () { setLanguage(button.getAttribute("data-lang"), true); });

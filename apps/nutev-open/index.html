@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://www.ebi.ac.uk https://api.openalex.org https://api.crossref.org https://eutils.ncbi.nlm.nih.gov; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Explorador Aberto de Evidências do NutEV: busque literatura de Medicina e Nutrição do Estilo de Vida e entenda a qualidade do dado (rastreabilidade A/B/Q, completude e eixos MEV/NEV), sem login.">
+  <meta name="description" content="NutEV: busca aberta de artigos científicos com verificação de identificadores e metadados.">
   <meta name="color-scheme" content="light dark">
-  <title>NutEV · Explorador Aberto de Evidências</title>
+  <title>NutEV</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 23V9h3l8 9.5V9h3v14h-3l-8-9.5V23z' fill='%23fff'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,8 +28,8 @@
           <button type="button" data-lang="pt" aria-pressed="true">PT</button>
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
-        <a id="advanced-link" class="gh-link advanced-link" href="/login.html" hidden data-i18n-aria="nav.advanced"><span class="label-long" data-i18n="nav.advanced">Busca avançada (entrar)</span><span class="label-short" data-i18n="nav.advancedShort">Entrar</span></a>
-        <a class="gh-link" href="https://github.com/WillianVagner123/NutEV-Evidence-Engine" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button type="button" id="theme-toggle" data-i18n="theme.toggle" data-i18n-aria="theme.toggle">Tema</button>
+        <a id="advanced-link" class="gh-link advanced-link" href="/login.html" hidden data-i18n-aria="nav.advanced"><span class="label-long" data-i18n="nav.advanced">Entrar</span><span class="label-short" data-i18n="nav.advancedShort">Entrar</span></a>
       </div>
     </div>
   </header>
@@ -72,9 +72,16 @@
       <p class="tip" data-i18n="search.tip"></p>
     </section>
 
-    <section id="strategy" class="strategy" hidden>
+    <div id="search-summary" class="search-summary" hidden>
+      <span id="search-summary-text"></span>
+      <button type="button" id="open-strategy" class="btn btn-ghost" data-i18n="strategy.title">Ajustar busca</button>
+    </div>
+
+    <div id="strategy-scrim" class="strategy-scrim"></div>
+    <section id="strategy" class="strategy" role="dialog" aria-modal="true" aria-hidden="true" inert hidden>
+      <button type="button" id="strategy-close" class="strategy-close" data-i18n-aria="strategy.close" aria-label="Fechar">×</button>
       <details id="strategy-details" open>
-        <summary><span data-i18n="strategy.title">Como o NutEV organizou sua busca</span> <span id="strategy-summary" class="strategy-summary"></span></summary>
+        <summary><span data-i18n="strategy.title">Ajustar busca</span> <span id="strategy-summary" class="strategy-summary"></span></summary>
         <div id="strategy-body" class="strategy-body"></div>
       </details>
     </section>
@@ -85,13 +92,6 @@
       <p id="status-stale" class="stale-note" data-i18n="strategy.stale" hidden>A estratégia mudou desde a última busca: os números mostrados são da busca anterior.</p>
     </section>
 
-    <nav class="tabs" role="tablist" aria-label="NutEV">
-      <button type="button" role="tab" id="tab-results" aria-controls="panel-results" aria-selected="true" data-tab="results"><span data-i18n="tabs.results">Resultados</span> <span class="tab-count" id="count-results"></span></button>
-      <button type="button" role="tab" id="tab-quality" aria-controls="panel-quality" aria-selected="false" data-tab="quality"><span data-i18n="tabs.quality">Qualidade do dado (MEV/NEV)</span></button>
-      <button type="button" role="tab" id="tab-quarantine" aria-controls="panel-quarantine" aria-selected="false" data-tab="quarantine"><span data-i18n="tabs.quarantine">Quarentena</span> <span class="tab-count" id="count-quarantine"></span></button>
-      <button type="button" role="tab" id="tab-guide" aria-controls="panel-guide" aria-selected="false" data-tab="guide"><span data-i18n="tabs.guide">Como ler os níveis</span></button>
-      <button type="button" role="tab" id="tab-file" aria-controls="panel-file" aria-selected="false" data-tab="file"><span data-i18n="tabs.file">Abrir arquivo</span></button>
-    </nav>
 
     <section id="panel-results" class="panel" role="tabpanel" aria-labelledby="tab-results">
       <div id="results-empty" class="empty-state">
@@ -117,19 +117,20 @@
           </aside>
           <div class="results-main">
             <div class="results-toolbar">
+              <button type="button" id="mobile-filter-btn" class="btn btn-ghost mobile-filter-btn" data-i18n="filters.mobile">Filtros</button>
               <p id="results-count" class="results-count"></p>
               <div class="toolbar-actions">
                 <label class="sort-picker"><span data-i18n="sort.label">Ordenar por</span>
                   <select id="sort">
-                    <option value="priority" data-i18n="sort.priority">Prioridade NutEV</option>
+                    <option value="priority" data-i18n="sort.priority">Mais relevantes</option>
                     <option value="recent" data-i18n="sort.recent">Mais recentes</option>
-                    <option value="completeness" data-i18n="sort.completeness">Completude dos metadados</option>
+                    <option value="completeness" data-i18n="sort.completeness">Dados mais completos</option>
                     <option value="title" data-i18n="sort.title">Título (A–Z)</option>
                   </select>
                 </label>
                 <button type="button" id="export-csv" class="btn btn-ghost" data-i18n="export.csv">Baixar CSV</button>
-                <button type="button" id="export-json" class="btn btn-ghost" data-i18n="export.json">Baixar JSON com manifesto</button>
-                <button type="button" id="copy-link" class="btn btn-ghost" data-i18n="export.link">Copiar link desta busca</button>
+                <button type="button" id="export-json" class="btn btn-ghost" data-i18n="export.json">Baixar dados (JSON)</button>
+                <button type="button" id="copy-link" class="btn btn-ghost" data-i18n="export.link">Copiar link</button>
               </div>
             </div>
             <ol id="results-list" class="results-list"></ol>
@@ -139,8 +140,16 @@
       </div>
     </section>
 
+    <nav class="tabs" role="tablist" aria-label="NutEV">
+      <button type="button" role="tab" id="tab-results" aria-controls="panel-results" aria-selected="true" data-tab="results"><span data-i18n="tabs.results">Resultados</span> <span class="tab-count" id="count-results"></span></button>
+      <button type="button" role="tab" id="tab-quality" aria-controls="panel-quality" aria-selected="false" data-tab="quality"><span data-i18n="tabs.quality">Qualidade</span></button>
+      <button type="button" role="tab" id="tab-quarantine" aria-controls="panel-quarantine" aria-selected="false" data-tab="quarantine"><span data-i18n="tabs.quarantine">Quarentena</span> <span class="tab-count" id="count-quarantine"></span></button>
+      <button type="button" role="tab" id="tab-guide" aria-controls="panel-guide" aria-selected="false" data-tab="guide"><span data-i18n="tabs.guide">Como ler</span></button>
+      <button type="button" role="tab" id="tab-file" aria-controls="panel-file" aria-selected="false" data-tab="file"><span data-i18n="tabs.file">Abrir arquivo</span></button>
+    </nav>
+
     <section id="panel-quality" class="panel" role="tabpanel" aria-labelledby="tab-quality" hidden>
-      <h2 data-i18n="quality.title">Qualidade do dado por eixo da MEV e da NEV</h2>
+      <h2 data-i18n="quality.title">Qualidade dos dados por tema</h2>
       <p class="panel-lead" data-i18n="quality.lead"></p>
       <p id="quality-empty" class="empty-note" data-i18n="quality.empty"></p>
       <div id="quality-view" hidden>
@@ -192,7 +201,7 @@
       <p data-i18n="guide.q2.lead"></p>
       <ul id="guide-fields" class="field-list"></ul>
 
-      <h3 data-i18n="guide.q3">3. Sobre o que ele trata na MEV e na NEV?</h3>
+      <h3 data-i18n="guide.q3">3. Sobre o que ele trata?</h3>
       <p id="guide-q3-lead"></p>
 
       <h3 data-i18n="guide.q4">4. Que tipo de documento ele parece ser?</h3>
@@ -213,16 +222,15 @@
         </ul>
       </div>
 
-      <h3 data-i18n="guide.axes">Eixos da taxonomia MEV/NEV</h3>
+      <h3 data-i18n="guide.axes">Temas</h3>
       <p data-i18n="guide.axes.lead"></p>
       <div id="guide-axes" class="guide-axes"></div>
 
-      <h3 data-i18n="guide.provenance">Versões e proveniência</h3>
-      <dl id="guide-provenance" class="provenance"></dl>
+      <dl id="guide-provenance" class="provenance" hidden></dl>
     </section>
 
     <section id="panel-file" class="panel" role="tabpanel" aria-labelledby="tab-file" hidden>
-      <h2 data-i18n="file.title">Abrir um resultado do NutEV Reference Engine</h2>
+      <h2 data-i18n="file.title">Abrir um resultado do NutEV</h2>
       <p class="panel-lead" data-i18n="file.lead"></p>
       <label id="dropzone" class="dropzone" for="file-input">
         <span data-i18n="file.drop">Solte o arquivo aqui ou clique para escolher</span>
@@ -235,7 +243,7 @@
 
   <footer class="footer">
     <p class="guardrail" data-i18n="footer.disclaimer">O nível do dado e a ordenação descrevem rastreabilidade e organização técnica dos metadados. O nível do dado não representa qualidade metodológica, elegibilidade, risco de viés, certeza da evidência, força de recomendação ou recomendação clínica.</p>
-    <p class="footer-meta"><span id="footer-meta"></span> · <a href="https://github.com/WillianVagner123/NutEV-Evidence-Engine" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Código-fonte e regras no GitHub</a></p>
+    <div class="footer-meta"><details><summary data-i18n="version.about">Sobre esta versão</summary><span id="footer-meta"></span></details> · <a href="https://github.com/WillianVagner123/NutEV-Evidence-Engine" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Código aberto</a></div>
   </footer>
 
   <div id="tooltip" class="tooltip" role="tooltip" hidden></div>

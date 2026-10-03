@@ -267,3 +267,68 @@ a.module-card:hover{transform:translateY(-2px);border-color:#9fcac1;box-shadow:0
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+
+/* ------------------------------------------------------------------ minimal product overrides */
+:root{
+  --nutev-focus:#0f766e;
+  --nutev-soft:#f3f6f5;
+  --nutev-soft-2:#fafbfb;
+  --nutev-line:#e5e8e7;
+  --nutev-ink:#18201f;
+  --nutev-muted:#697471;
+  --nutev-green:#0f766e;
+  --nutev-green-dark:#0c655e;
+  --nutev-radius:8px;
+  --nutev-shadow:none;
+}
+button,.nav-item,.context-login,.context-project-link{min-height:38px}
+input,select{min-height:38px}
+.sidebar .nav-item,.product-nav .nav-item{
+  color:#41504d;
+  padding:8px 10px;
+  border-radius:8px;
+  font-size:14px;
+}
+.sidebar .nav-item:hover,.sidebar .nav-item.active,.product-nav .nav-item:hover,.product-nav .nav-item.active{
+  background:#eef5f3;color:#0f5f58;
+}
+.sidebar .nav-item.active{box-shadow:none}
+.nav-group-label{color:#8a9491;margin:12px 10px 3px}
+.context-shell{
+  border-radius:8px;
+  background:#fff;
+  box-shadow:none;
+  border-color:var(--nutev-line);
+}
+.context-fields select,.context-project-link,.context-login,.context-logout,.context-retry{
+  border-radius:8px;
+  box-shadow:none;
+}
+.glossary-trigger{border-radius:8px;box-shadow:none}
+.glossary-dialog{border-radius:8px;box-shadow:0 16px 48px rgba(0,0,0,.14)}
+.glossary-eyebrow{background:transparent;padding:0;border-radius:0;color:var(--nutev-muted)}
+.login-page{background:#fafaf9}
+.login-shell{
+  grid-template-columns:minmax(0,.72fr) minmax(360px,.55fr);
+  border-radius:8px;
+  box-shadow:none;
+  border-color:var(--nutev-line);
+}
+.login-brand-panel{
+  background:#fff;color:var(--nutev-ink);
+  border-right:1px solid var(--nutev-line);
+  padding:28px;
+}
+.login-brand .brand-mark{width:36px;height:36px;border-radius:8px;background:var(--nutev-green);color:#fff}
+.login-brand span,.login-promise p,.login-boundary{color:var(--nutev-muted)}
+.login-promise h1{font-size:28px;line-height:1.15}
+.login-card{padding:28px}
+.login-card h2{font-size:20px}
+.login-form input,.login-submit{border-radius:8px}
+.login-submit{font-weight:650}
+.login-home-link{font-weight:600}
+@media(max-width:680px){
+  .login-shell{border-radius:0}
+  .login-brand-panel{min-height:auto;border-right:0;border-bottom:1px solid var(--nutev-line)}
+}

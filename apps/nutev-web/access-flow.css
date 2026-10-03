@@ -80,3 +80,29 @@
   .access-intro,.access-card,.access-admin-panel{padding:20px;border-radius:14px}
   .access-request-head{flex-direction:column}
 }
+
+
+/* ------------------------------------------------------------------ minimal access overrides */
+.access-public-page,.access-admin-page{background:#fafaf9;color:#18201f}
+.access-public-shell{max-width:1040px;gap:20px;padding-top:32px}
+.access-intro,.access-card,.access-admin-panel{
+  border-radius:8px;
+  box-shadow:none;
+  border-color:#e5e8e7;
+}
+.access-intro{padding:28px;top:20px}
+.access-card{padding:24px}
+.access-brand .brand-mark{border-radius:8px;background:#0f766e;color:#fff}
+.access-principle,.invitation-person,.access-request-meta div{
+  border-radius:8px;background:#f3f6f5;
+}
+.access-form input,.access-form textarea,.access-form select,.admin-filter select,.reject-box textarea{
+  border-radius:8px;border-color:#d5dad8;
+}
+.access-submit,.access-action{border-radius:8px;background:#0f766e;font-weight:650}
+.access-action.secondary{background:#fff;border-color:#d5dad8}
+.access-request-card{border-radius:8px;border-color:#e5e8e7}
+.access-status-badge{border-radius:999px}
+@media(max-width:520px){
+  .access-intro,.access-card,.access-admin-panel{padding:16px;border-radius:8px}
+}
