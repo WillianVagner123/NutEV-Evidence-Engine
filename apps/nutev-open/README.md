@@ -6,7 +6,7 @@ Página pública, sem login e sem servidor, para buscar literatura de Medicina e
 
 ## Usar
 
-- **Online:** a página é publicada pelo workflow `open-explorer-pages` no GitHub Pages.
+- **Online:** no site hospedado, em `https://nutev.mindsperformance.com.br/aberto/` (sem login). Uma cópia espelho no GitHub Pages pode ser publicada sob demanda pelo workflow `open-explorer-pages`.
 - **Local:** abra `index.html` no Chrome/Edge, ou rode `python -m http.server 8000 --directory apps/nutev-open` e acesse `http://localhost:8000`.
 - **Seus próprios resultados:** aba **Abrir arquivo** aceita `reference_ranking.jsonl`, `reference_ranking.csv`, `reference_quarantine.jsonl` ou um JSON exportado aqui. Tudo é processado no navegador.
 - **Perguntar do seu jeito:** escreva em português ou inglês; o painel "Como o NutEV organizou sua busca" mostra conceitos, sinônimos e a string de cada base, tudo editável.

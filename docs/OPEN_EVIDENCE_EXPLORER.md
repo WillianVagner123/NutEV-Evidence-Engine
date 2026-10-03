@@ -131,8 +131,10 @@ Testes: `nutev_tests/test_open_explorer_hosting.py` (servidor pilot real, visita
 
 ## Publicação
 
-`.github/workflows/open-explorer-pages.yml` publica a pasta no GitHub Pages a cada push em `main` que toque o explorador, a configuração canônica ou o código de classificação. O workflow repete `--check` e os testes de paridade antes de publicar e grava o SHA do commit em `build-info.js`.
+A cópia principal é a do site hospedado (`/aberto/`), publicada pelo deploy normal da Hetzner. A imagem grava o commit em `apps/nutev-open/build-info.js`, e ele aparece em "Como ler os níveis → Versões e proveniência".
 
-Configuração única no repositório: **Settings → Pages → Build and deployment → Source: GitHub Actions**. Endereço esperado: `https://willianvagner123.github.io/NutEV-Evidence-Engine/`.
+`.github/workflows/open-explorer-pages.yml` publica um espelho opcional no GitHub Pages **sob demanda** (`workflow_dispatch`). O workflow repete `--check` e os testes de paridade antes de publicar e grava o SHA do commit em `build-info.js`. Antes da primeira execução, ative **Settings → Pages → Build and deployment → Source: GitHub Actions**. Endereço do espelho: `https://willianvagner123.github.io/NutEV-Evidence-Engine/`.
+
+Roteiro de verificação da página real (prompt para um agente com navegador): [`qa/OPEN_EXPLORER_LIVE_QA_PROMPT.md`](qa/OPEN_EXPLORER_LIVE_QA_PROMPT.md).
 
 A publicação da página não altera a release imutável `v1.1.0`, o DOI arquivado nem o estado científico (`B — DEMOTE`).

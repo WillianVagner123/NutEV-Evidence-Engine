@@ -301,7 +301,7 @@
       [t("guide.prov.doctypes"), DATA.document_class_ontology_version],
       [t("guide.prov.planner"), DATA.planner_version + " · " + VOCABULARY.vocabulary_version + " (" + VOCABULARY.review_status + ")"],
       [t("guide.prov.bundle"), DATA.bundle_sha256],
-      [t("guide.prov.build"), BUILD.commit === "local" ? t("guide.prov.local") : BUILD.commit + (BUILD.built_at ? " · " + BUILD.built_at : "")]
+      [t("guide.prov.build"), !BUILD.commit || BUILD.commit === "local" ? t("guide.prov.local") : BUILD.commit + (BUILD.built_at ? " · " + BUILD.built_at : "")]
     ].forEach(function (pair) {
       prov.appendChild(el("dt", { text: pair[0] }));
       prov.appendChild(el("dd", { text: pair[1] }));

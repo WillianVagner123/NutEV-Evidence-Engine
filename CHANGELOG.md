@@ -4,6 +4,13 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Explorador Aberto: operação
+
+- O espelho no GitHub Pages (`open-explorer-pages`) passa a rodar só sob demanda (`workflow_dispatch`); a cópia principal é `/aberto/` no site hospedado. Isso evita uma execução falhando a cada push em `main` enquanto o Pages não estiver ativado.
+- A imagem da Hetzner grava o commit do build em `apps/nutev-open/build-info.js`, e a página hospedada passa a mostrar a proveniência real em vez de "cópia local".
+- Adicionado `docs/qa/OPEN_EXPLORER_LIVE_QA_PROMPT.md`: roteiro de verificação da página real (botões, interações, rede, console, mobile, acessibilidade) para um agente com navegador.
+
+
 ### Busca aberta sem login no site hospedado
 
 - O Explorador Aberto passa a ser servido pelo runtime hospedado em `/aberto/`. Ele é estático, sem estado privado, sem conta e sem vínculo com workspace.

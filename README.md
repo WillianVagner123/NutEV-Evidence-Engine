@@ -49,7 +49,7 @@ No site hospedado, a busca aberta fica em **`https://nutev.mindsperformance.com.
 inicial para quem não está logado; login só para a busca avançada (biblioteca,
 projetos, histórico e exportações privadas).
 
-Publicação adicional: GitHub Pages via `.github/workflows/open-explorer-pages.yml`
+Espelho opcional, sob demanda: GitHub Pages via `.github/workflows/open-explorer-pages.yml` (`workflow_dispatch`)
 (`https://willianvagner123.github.io/NutEV-Evidence-Engine/` depois de habilitar
 **Settings → Pages → Source: GitHub Actions**). Uso local: abra
 `apps/nutev-open/index.html`. Contrato e fronteiras:

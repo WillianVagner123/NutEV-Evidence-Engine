@@ -35,6 +35,9 @@ RUN python -m pip install --no-cache-dir . \
     && printf '{"version":"%s","build_commit":"%s","build_branch":"%s","build_time":"%s"}\n' \
         "$NUTEV_VERSION" "$NUTEV_BUILD_COMMIT" "$NUTEV_BUILD_BRANCH" "$NUTEV_BUILD_TIME" \
         > /app/apps/nutev-web/build-info.json \
+    && printf '/* Generated at image build: identity of the hosted Open Evidence Explorer. */\n(function (root) {\n  "use strict";\n  root.NUTEV_OPEN_BUILD = { commit: "%s", built_at: "%s", source: "hosted" };\n})(typeof globalThis !== "undefined" ? globalThis : this);\n' \
+        "$NUTEV_BUILD_COMMIT" "$NUTEV_BUILD_TIME" \
+        > /app/apps/nutev-open/build-info.js \
     && chown -R nutev:nutev /app
 
 USER nutev
