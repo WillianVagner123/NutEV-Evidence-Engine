@@ -244,11 +244,9 @@
   function levelCards(container, compact) {
     clear(container);
     LEVELS.forEach(function (level) {
-      var code = level === "Q" ? t("level.Q.codes") : t("level." + level + ".code");
       container.appendChild(el("article", { class: "level-card level-" + level },
         el("h4", null, levelBadge(level)),
-        el("p", { text: t("level." + level + ".short") }),
-        compact ? null : el("code", { text: code })));
+        el("p", { text: t("level." + level + ".short") })));
     });
   }
 
