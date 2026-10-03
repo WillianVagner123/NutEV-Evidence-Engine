@@ -128,8 +128,9 @@ h3 { font-size: 1.05rem; margin-top: 1.6rem; }
 .lang-switch button[aria-pressed="true"] { background: var(--brand); color: var(--on-brand); }
 .advanced-link[hidden] { display: none !important; }
 [hidden] { display: none !important; }
-/* Sections reached by scrollIntoView or #links stay below the sticky top bar. */
-[id] { scroll-margin-top: 84px; }
+/* Sections and headings reached by scrollIntoView or #links stay below the sticky top bar. */
+[id], h2, h3, h4, summary { scroll-margin-top: 84px; }
+.advanced-link .label-short { display: none; }
 .advanced-link { background: var(--brand-soft); border-color: var(--brand) !important; color: var(--brand-ink) !important; }
 .gh-link { font-size: 0.85rem; font-weight: 600; text-decoration: none; padding: 0.35rem 0.7rem; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink); }
 
@@ -470,6 +471,10 @@ select {
 @media (max-width: 860px) {
   .results-layout { grid-template-columns: 1fr; }
   .filters { position: static; max-height: none; }
+  /* Touch targets: at least ~24-32px for checkboxes, filter rows and record links. */
+  .filter-option { min-height: 32px; align-items: center; }
+  .filter-option input, .check input, .switch input, .radio input { width: 20px; height: 20px; margin-top: 0; }
+  .record-ids a { display: inline-block; padding: 0.3rem 0.15rem; min-height: 28px; }
   .axis-row { grid-template-columns: 1fr auto; }
   .axis-row .axis-track { grid-column: 1 / -1; grid-row: 2; }
 }
@@ -480,7 +485,10 @@ select {
   .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .search { flex-direction: column; }
   .btn-primary { width: 100%; }
-  .gh-link { display: none; }
+  .gh-link:not(.advanced-link) { display: none; }
+  .advanced-link { padding: 0.3rem 0.6rem; }
+  .advanced-link .label-long { display: none; }
+  .advanced-link .label-short { display: inline; }
   .brand-text span { display: none; }
   .hbar-row { grid-template-columns: minmax(90px, 120px) minmax(0, 1fr) auto; }
   .check-list { grid-template-columns: 1fr; }
@@ -587,6 +595,7 @@ select {
 .strategy-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
 .manual-box { background: var(--lvl-b-soft); border-radius: 8px; padding: 0.6rem 0.8rem; font-size: 0.88rem; }
 .manual-box p { margin: 0 0 0.5rem; }
+.manual-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
 @media (max-width: 560px) {
   .query-grid, .block-grid { grid-template-columns: 1fr; }

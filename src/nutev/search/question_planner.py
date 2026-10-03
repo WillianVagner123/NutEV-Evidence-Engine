@@ -573,7 +573,10 @@ def _compile_boolean(blocks: list[Mapping[str, Any]], provider: str, field_mode:
                 if item not in formatted:
                     formatted.append(item)
         if formatted:
-            parts.append("(" + " OR ".join(formatted) + ")")
+            # BVS only reads a parenthesised group inside a field: tw:(a OR b). A bare
+            # group falls back to the whole collection (verified on the live portal).
+            prefix = "tw:" if provider == "bvs_lilacs" else ""
+            parts.append(prefix + "(" + " OR ".join(formatted) + ")")
     return " AND ".join(parts)
 
 
@@ -673,7 +676,7 @@ def compile_queries(
     providers["bvs_lilacs"] = {
         "query": bvs,
         "params": {},
-        "dialect": "bvs_manual" if manual else "bvs_default_index_pt_en",
+        "dialect": "bvs_manual" if manual else "bvs_tw_block_pt_en",
         "site_url": "https://pesquisa.bvsalud.org/portal/?" + _query_string({"lang": "pt", "q": bvs, "filter[db_cluster][]": "LILACS"}) if bvs else "",
         "notes": ["link_only", "years_on_site"] if (year_from or year_to) else ["link_only"],
     }

@@ -220,13 +220,17 @@ def test_unknown_words_are_combined_with_and_not_as_one_phrase():
     assert providers["openalex"]["query"] == "(kefir) AND (kombucha)"
 
 
-def test_bvs_uses_the_default_index_like_scielo():
+def test_bvs_wraps_each_block_in_the_tw_field():
+    # Live QA 2026-10-03: a bare group returned 0 (or the whole collection);
+    # tw:(... OR ...) per block returned 15 LILACS / 468 records.
     plan = _plan(QUESTIONS[0])
     providers = compile_queries(plan, current_year=YEAR)["providers"]
     bvs = providers["bvs_lilacs"]
-    assert "tw:" not in bvs["query"] and '"dieta mediterrânea"' in bvs["query"]
-    assert bvs["query"] == providers["scielo"]["query"]
-    assert bvs["dialect"] == "bvs_default_index_pt_en"
+    blocks = bvs["query"].split(" AND ")
+    assert len(blocks) == 3 and all(block.startswith("tw:(") and block.endswith(")") for block in blocks)
+    assert '"dieta mediterrânea"' in bvs["query"] and "tw:\"" not in bvs["query"]
+    assert bvs["query"].replace("tw:(", "(") == providers["scielo"]["query"]
+    assert bvs["dialect"] == "bvs_tw_block_pt_en"
 
 
 def test_crossref_keeps_synonyms_the_person_added():
@@ -253,8 +257,8 @@ def test_each_source_gets_its_own_syntax():
     assert "[tiab]" not in providers["openalex"]["query"] and "*" not in providers["openalex"]["query"]
     assert " AND " not in providers["crossref"]["query"] and " OR " not in providers["crossref"]["query"]
     bvs = providers["bvs_lilacs"]["query"]
-    assert '"obesidade"' in bvs or "obesidade" in bvs
-    assert "adolescent$" in bvs and "tw:" not in bvs
+    assert "obesidade" in bvs and "adolescent$" in bvs
+    assert bvs.startswith("tw:(") and ") AND tw:(" in bvs
     assert "obesidade" in providers["scielo"]["query"] and "adolescent$" in providers["scielo"]["query"]
     assert providers["bvs_lilacs"]["site_url"].startswith("https://pesquisa.bvsalud.org/portal/?lang=pt&q=")
     assert providers["scielo"]["site_url"].startswith("https://search.scielo.org/?lang=pt&q=")

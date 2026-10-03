@@ -23,8 +23,56 @@ REGRAS
 - Teste em duas telas: desktop (~1366x900) e celular (~390x844). Teste também o modo escuro
   do sistema, se possível.
 - Mantenha as DevTools abertas (Console e Network) durante todo o teste.
+- Mantenha a janela do navegador visível e na frente durante todo o teste. Se a aba ficar
+  oculta ou minimizada, o Chrome congela a página e os prints param de funcionar.
+- Faça o bloco J (celular, teclado e modo escuro) logo depois do bloco B, com os primeiros
+  resultados na tela, para ele não ficar para o fim.
 
-ROTEIRO (para cada item: passos -> esperado -> obtido -> OK/FALHA + evidência)
+PARTE 1 — RETESTE DO QUE JÁ FOI CORRIGIDO
+O QA anterior (03/10/2026) encontrou os problemas abaixo, e eles foram corrigidos. Confirme
+cada um durante o roteiro (o item entre parênteses diz onde) e responda OK/FALHA na tabela
+de reteste do relatório.
+  R1. A página pulava (rolagem de 795 para 260) e perdia o foco a cada controle do painel
+      de estratégia. Agora não pode pular nem perder o foco. (C7b)
+  R2. O link compartilhado não levava a estratégia editada. Agora leva período, sinônimos,
+      blocos/termos desligados e strings editadas. (G3)
+  R3. A edição manual sumia ao mexer em outro controle e o "Restaurar" só aparecia depois
+      de buscar de novo. Agora a edição fica até "Restaurar", que aparece na hora; o JSON
+      exportado traz edited_by_hand e generated_query. (C7, G2)
+  R4. Os números "na fonte" ficavam velhos sem aviso depois de editar a estratégia. Agora
+      aparece "desatualizado" e o aviso "A estratégia mudou desde a última busca". (C7)
+  R5. "kefir kombucha" virava a frase exata e o PubMed dava 0. Agora vira kefir AND
+      kombucha. (H4)
+  R6. A BVS dava 0 resultados. Agora cada bloco vai em tw:(... OR ...), o formato que deu
+      resultados no reteste. Anote os totais no LILACS e na coleção completa. (C9)
+  R7. Um CSV qualquer era aceito e substituía os resultados; JSON inválido dava erro técnico
+      em inglês. Agora o arquivo é recusado com mensagem em português e os resultados
+      ficam. (G4)
+  R8. "a b c" deixava na tela os resultados e o título da busca anterior. Agora limpa. (H5)
+  R9. O Crossref não recebia o sinônimo acrescentado (MedDiet). Agora recebe. (C3)
+  R10. Uma string com [tiab] ia a todas as bases sem aviso. Agora aparece um aviso de que as
+      outras bases não entendem campos do PubMed. (H2)
+  R11. Ajustes menores, confira cada um:
+      - "Título (A–Z)" não começa por títulos com "[" ou "607-P:" (D5);
+      - a dica do gráfico de anos não sai cortada na borda (E2);
+      - "1 bloco em uso" no singular: desligue blocos até sobrar um (C1);
+      - o cabeçalho fixo não cobre o título das seções quando a página rola até elas;
+      - em EN, os exemplos da busca aparecem em inglês (H1);
+      - os cartões do OpenAlex e do Crossref mostram o filtro de data enviado (C6);
+      - a nota do Crossref explica por que o total "na fonte" é tão alto;
+      - "Versões e proveniência" mostra o commit publicado e o vocabulário como "aguardando
+        revisão humana especializada" (F2).
+  R12. O CSV exportado pelo NutEV, reaberto em "Abrir arquivo", mandava tudo para a
+      quarentena ("sem fonte de origem"). Agora volta com as mesmas obras da busca. (G4)
+  R13. O JSON reaberto mostrava 0 duplicatas sem explicar. Agora a mensagem diz quantos
+      registros e duplicatas a busca original tinha. (G4)
+  R14. No celular (~390px): o link de login aparece como "Entrar", os filtros começam
+      fechados e as caixas de seleção e links DOI/PMID têm área de toque maior. (J1)
+  R15. Termos livres aparecem como "termo digitado". Uma string com [tiab] ganha o botão
+      "Tirar os campos do PubMed das outras bases", que limpa as outras strings e permite
+      "Restaurar". (H2, H4)
+
+PARTE 2 — ROTEIRO COMPLETO (para cada item: passos -> esperado -> obtido -> OK/FALHA + evidência)
 
 A. Entrada sem login
   A1. Em janela anônima, abra o site (raiz "/"). Esperado: vai direto para /aberto/,
@@ -49,7 +97,8 @@ B. Busca por pergunta (português)
       palavras ignoradas.
   B4. Em "Strings por base", confira se cada base tem formato próprio:
       PubMed com [tiab]; Europe PMC com TITLE_ABS:; OpenAlex com aspas e OR/AND;
-      Crossref só palavras-chave; BVS e SciELO com frases em português e inglês (sem tw:).
+      Crossref só palavras-chave; BVS com tw:(...) em cada bloco; SciELO com frases em
+      português e inglês.
 
 C. Interações do painel de estratégia
   C1. Desmarque "usar" no bloco Controle glicêmico. Esperado: o bloco fica apagado e some
@@ -73,10 +122,9 @@ C. Interações do painel de estratégia
   C9. Clique "Abrir no PubMed", "Abrir no Europe PMC", "Abrir na BVS (LILACS)" e
       "Abrir no SciELO". Esperado: cada site abre com a busca preenchida. No PubMed,
       compare o total exibido com o "na fonte" do painel; diferenças grandes devem ser anotadas.
-      BVS: anote o total em "LILACS" e na coleção completa. Se der 0, teste no site da BVS
-      três variações e anote o total de cada: (a) a string como veio; (b) a mesma string com
-      tw: antes de cada parêntese, ex.: tw:("diabetes tipo 2" OR "type 2 diabetes"); (c) só o
-      primeiro bloco.
+      BVS: anote o total em "LILACS" e na coleção completa. Com a pergunta do exemplo e sem
+      alterações, o esperado é um número maior que zero (no QA de 03/10, a mesma estratégia
+      com tw:(...) deu 15 no LILACS e 468 na coleção completa).
   C10. Clique "Buscar novamente com esta estratégia". Esperado: nova busca usando as
        alterações (confira a string no Network: requisição esearch.fcgi, parâmetro term).
   C11. Depois da busca, abra "Como o PubMed interpretou a string". Esperado: a tradução do
@@ -159,13 +207,14 @@ J. Celular e acessibilidade
 
 ENTREGA (formato do relatório)
 1. Resumo de 5 linhas: funciona ou não; os 3 problemas mais graves.
-2. Tabela: ID | passo | esperado | obtido | OK/FALHA | evidência.
-3. Bugs: título, severidade (bloqueador / alto / médio / baixo), passos para reproduzir,
-   resultado esperado vs obtido, navegador/tela, print.
-4. Erros de console e de rede, copiados literalmente.
-5. Sugestões de usabilidade (separadas dos bugs), cada uma com o motivo.
-6. Ambiente: navegador e versão, sistema, data/hora, e o commit mostrado em
-   "Como ler os níveis -> Versões e proveniência".
+2. Tabela de reteste R1–R15: ID | OK/FALHA | evidência. Para R6, os totais da BVS.
+3. Tabela: ID | passo | esperado | obtido | OK/FALHA | evidência.
+4. Bugs novos: título, severidade (bloqueador / alto / médio / baixo), passos para
+   reproduzir, resultado esperado vs obtido, navegador/tela, print.
+5. Erros de console e de rede, copiados literalmente.
+6. Sugestões de usabilidade (separadas dos bugs), cada uma com o motivo.
+7. Ambiente: navegador e versão, sistema, data/hora, tamanho real da área da página, e o
+   commit mostrado em "Como ler os níveis -> Versões e proveniência".
 ```
 
 ---

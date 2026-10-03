@@ -29,6 +29,7 @@
   var VOCABULARY = DATA.query_vocabulary;
   var STRATEGY_PROVIDERS = ["pubmed", "europepmc", "openalex", "crossref", "bvs_lilacs", "scielo"];
   var BASE_TITLE = document.title;
+  var EXPLORER_PRODUCT = "NutEV Open Evidence Explorer";
   var MAX_TERM_LENGTH = 80;
   var MAX_LINK_STRING = 4000;
 
@@ -51,6 +52,7 @@
     includePt: false,
     overrides: {},
     literal: false,
+    fileManifest: null,
     executed: null,
     filters: emptyFilters()
   };
@@ -370,6 +372,19 @@
     return t("status.error") + ": " + t("status.error." + kind, { code: status.http_status || "?" });
   }
 
+  // A reopened JSON export holds the unique works only; say what the original
+  // search retrieved so its counts are not mistaken for the file's.
+  function originalSearchNote() {
+    var original = state.origin === "file" && state.fileManifest;
+    var counts = original && original.counts;
+    if (!counts || typeof counts.retrieved_rows !== "number") return "";
+    return " " + t("file.originalSearch", {
+      query: original.query || "—",
+      retrieved: fmtNumber(counts.retrieved_rows),
+      duplicates: fmtNumber(counts.duplicates_merged || 0)
+    });
+  }
+
   function renderStatus() {
     var panel = $("status");
     var list = clear($("status-list"));
@@ -377,7 +392,7 @@
     panel.hidden = false;
     state.statuses.forEach(function (status) {
       var label = status.source === "file" ? t("status.file") + ": " + state.fileName : sourceLabel(status.source);
-      var detail = status.source === "file" ? t("file.loaded", { n: fmtNumber(status.returned), name: state.fileName }) : statusDetail(status);
+      var detail = status.source === "file" ? t("file.loaded", { n: fmtNumber(status.returned), name: state.fileName }) + originalSearchNote() : statusDetail(status);
       list.appendChild(el("li", { class: "status-item", "data-state": status.status },
         el("span", { class: "status-dot", "aria-hidden": "true" }),
         el("strong", { text: label }),
@@ -644,7 +659,7 @@
           el("strong", { text: blockLabel(block) }),
           el("small", { text: roleLabel(block.role) })),
         el("label", { class: "switch" }, toggle, el("span", { text: t("strategy.use") }))),
-      el("p", { class: "matched" }, t("strategy.matched") + " “" + block.matched.join("”, “") + "”",
+      el("p", { class: "matched" }, (block.role === "free" ? t("strategy.typed") : t("strategy.matched")) + " “" + block.matched.join("”, “") + "”",
         block.taxonomy_groups.length ? el("span", { class: "axis-chip" }, el("small", { text: familyLabel(familyOf(block.taxonomy_groups[0]), true) }), groupLabel(block.taxonomy_groups[0])) : null),
       chips,
       addForm);
@@ -758,6 +773,17 @@
     return card;
   }
 
+  // Removes PubMed field tags ([tiab], [mh] ...) from the other sources' strings.
+  // The result is an ordinary hand edit: visible, and undone with "Restaurar".
+  function stripPubmedTags() {
+    STRATEGY_PROVIDERS.forEach(function (provider) {
+      if (provider === "pubmed") return;
+      var text = queryFor(provider).query.replace(/\[[A-Za-z /-]+\]/g, " ").replace(/\s+/g, " ").replace(/\(\s+/g, "(").replace(/\s+\)/g, ")").trim();
+      state.overrides[provider] = text;
+    });
+    refreshStrategy();
+  }
+
   function plural(key, n, params) {
     return t(key + (n === 1 ? ".one" : ".other"), params);
   }
@@ -794,7 +820,11 @@
           }))
           : null,
         el("p", { text: t("warn.manual_string") }),
-        el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.interpret"), onclick: function () { runSearch(state.query, { literal: true }); } })));
+        el("div", { class: "manual-actions" },
+          el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.interpret"), onclick: function () { runSearch(state.query, { literal: true }); } }),
+          plan.warnings.some(function (warning) { return warning.code === "manual_pubmed_tags"; })
+            ? el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.stripTags"), onclick: stripPubmedTags })
+            : null)));
     } else {
       body.appendChild(el("p", { class: "strategy-lead", text: t("strategy.lead", { version: VOCABULARY.vocabulary_version }) }));
       var warnings = plan.warnings.slice();
@@ -1522,7 +1552,7 @@
 
   function manifest() {
     return {
-      product: "NutEV Open Evidence Explorer",
+      product: EXPLORER_PRODUCT,
       generated_at: new Date().toISOString(),
       origin: state.origin,
       query: state.origin === "search" ? state.query : "",
@@ -1684,28 +1714,45 @@
     return item;
   }
 
+  // The explorer's own CSV lists every provider of a work in "sources"
+  // ("europepmc; pubmed") instead of source/source_provider.
+  function fromExplorerCsv(row) {
+    if (row.source || row.source_provider || !row.sources) return row;
+    var providers = String(row.sources).split(";").map(function (item) { return item.trim(); }).filter(Boolean);
+    if (!providers.length) return row;
+    var copy = Object.assign({}, row);
+    copy.source_provider = providers[0];
+    copy.source_providers = providers;
+    return copy;
+  }
+
+  // Returns { rows, manifest }; manifest is set only for this explorer's own JSON export.
   function parseFileText(name, text) {
     var clean = text.replace(/^﻿/, "");
-    if (/\.csv$/i.test(name)) return parseCsv(clean);
+    if (/\.csv$/i.test(name)) return { rows: parseCsv(clean).map(fromExplorerCsv), manifest: null };
     var trimmed = clean.trim();
-    if (!trimmed) return [];
+    if (!trimmed) return { rows: [], manifest: null };
     if (trimmed[0] === "[" || (trimmed[0] === "{" && !/\}\s*\n\s*\{/.test(trimmed))) {
       try {
         var parsed = parseJson(trimmed);
-        if (Array.isArray(parsed)) return parsed.map(fromExport);
+        if (Array.isArray(parsed)) return { rows: parsed.map(fromExport), manifest: null };
         if (parsed && typeof parsed === "object") {
           if (Array.isArray(parsed.records) || Array.isArray(parsed.quarantine)) {
-            return (parsed.records || []).concat(parsed.quarantine || []).map(fromExport);
+            var manifest = parsed.manifest && parsed.manifest.product === EXPLORER_PRODUCT ? parsed.manifest : null;
+            return { rows: (parsed.records || []).concat(parsed.quarantine || []).map(fromExport), manifest: manifest };
           }
-          return [fromExport(parsed)];
+          return { rows: [fromExport(parsed)], manifest: null };
         }
       } catch (error) {
         if (trimmed[0] === "[") throw error;
       }
     }
-    return trimmed.split(/\r?\n/).filter(function (line) { return line.trim(); }).map(function (line) {
-      return fromExport(parseJson(line));
-    });
+    return {
+      rows: trimmed.split(/\r?\n/).filter(function (line) { return line.trim(); }).map(function (line) {
+        return fromExport(parseJson(line));
+      }),
+      manifest: null
+    };
   }
 
   function parseJson(text) {
@@ -1727,7 +1774,8 @@
     var message = $("file-message");
     message.classList.remove("error");
     file.text().then(function (text) {
-      var rows = parseFileText(file.name, text).filter(function (row) { return row && typeof row === "object" && !Array.isArray(row); });
+      var parsed = parseFileText(file.name, text);
+      var rows = parsed.rows.filter(function (row) { return row && typeof row === "object" && !Array.isArray(row); });
       if (!rows.length) throw new Error(t("file.empty"));
       if (!looksBibliographic(rows)) throw new Error(t("file.notRecognised"));
       if (rows.length > MAX_FILE_ROWS) rows = rows.slice(0, MAX_FILE_ROWS);
@@ -1736,7 +1784,8 @@
       state.fileName = file.name;
       state.query = "";
       state.statuses = [{ source: "file", status: "ok", returned: rows.length }];
-      message.textContent = t("file.loaded", { n: fmtNumber(rows.length), name: file.name });
+      state.fileManifest = parsed.manifest;
+      message.textContent = t("file.loaded", { n: fmtNumber(rows.length), name: file.name }) + originalSearchNote();
       loadRows(rows);
       selectTab("quality");
     }).catch(function (error) {
@@ -1790,6 +1839,8 @@
     var saved = "";
     try { saved = localStorage.getItem("nutev-open-lang") || ""; } catch (error) { saved = ""; }
     renderSourcePicker();
+    // On narrow screens the filters start closed so the first result is in view.
+    if (window.matchMedia && window.matchMedia("(max-width: 860px)").matches) $("filters-details").open = false;
     setLanguage(fromHash.lang || saved || "pt", false);
     selectTab("results");
 

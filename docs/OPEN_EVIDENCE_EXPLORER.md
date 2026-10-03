@@ -27,7 +27,7 @@ A pessoa escreve do jeito dela, em português ou inglês. O planejador determin�
   - Europe PMC: `TITLE_ABS`/`PUB_YEAR`;
   - OpenAlex: booleana mais filtros de data;
   - Crossref: palavras-chave mais filtro de data;
-  - BVS/LILACS: índice padrão da BVS, com frases e `$`;
+  - BVS/LILACS: `tw:(... OR ...)` em cada bloco, com frases e `$` (formato verificado no portal da BVS);
   - SciELO: booleana com `$`.
 
 O painel "Como o NutEV organizou sua busca" mostra tudo e deixa editar: blocos, termos, período, campo, inclusão de termos em português e a própria string de cada base. Depois da busca, ele mostra como o PubMed interpretou a string. BVS/LILACS e SciELO são abertos no site da própria base.
@@ -70,7 +70,7 @@ QUESTION PLAN (pergunta -> blocos -> string por base)
   -> EXPORT (CSV / JSON com manifesto)
 ```
 
-Também é possível abrir localmente `reference_ranking.jsonl`, `reference_ranking.csv`, `reference_quarantine.jsonl` ou um JSON exportado pelo próprio explorador. O arquivo é lido apenas no navegador; nada é enviado.
+Também é possível abrir localmente `reference_ranking.jsonl`, `reference_ranking.csv`, `reference_quarantine.jsonl` ou um CSV/JSON exportado pelo próprio explorador. O arquivo é lido apenas no navegador; nada é enviado. Arquivos sem registros bibliográficos (campos como title, doi, pmid ou url) são recusados sem apagar o que está na tela. Um JSON exportado guarda só as obras únicas, então o explorador mostra também quantos registros e duplicatas a busca original tinha.
 
 ## Fonte única de verdade
 
