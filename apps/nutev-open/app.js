@@ -138,8 +138,9 @@
 
   function familyLabel(family, short) {
     if (!family) return t("family.unclassified");
+    if (short) return "";
     var suffix = I18n.lang() === "pt" ? "_pt" : "_en";
-    return family[(short ? "short" : "label") + suffix];
+    return String(family["label" + suffix] || "").replace(/\s*\((?:MEV|NEV|LM|LN)\)/g, "");
   }
 
   function familyOf(groupId) {
@@ -1287,6 +1288,7 @@
   }
 
   function renderResults() {
+    updateMobileFilterLabel();
     var list = clear($("results-list"));
     var filtered = sortRows(state.result.ranked.filter(passesFilters));
     var visible = filtered.slice(0, state.shown);
