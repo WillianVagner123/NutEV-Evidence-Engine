@@ -266,7 +266,7 @@
   function renderExamples() {
     var box = clear($("examples"));
     var english = I18n.lang() === "en" && (DATA.example_queries_en || []).length;
-    (english ? DATA.example_queries_en : DATA.example_queries).forEach(function (query) {
+    (english ? DATA.example_queries_en : DATA.example_queries).slice(0, 3).forEach(function (query) {
       box.appendChild(el("button", {
         type: "button",
         class: "chip-button",
@@ -863,6 +863,11 @@
 
   function loadRows(rows) {
     state.result = Core.runPipeline(rows, DATA);
+    if (state.origin === "file" && state.fileManifest && state.fileManifest.counts) {
+      var originalCounts = state.fileManifest.counts;
+      if (typeof originalCounts.retrieved_rows === "number") state.result.stats.retrieved_rows = originalCounts.retrieved_rows;
+      if (typeof originalCounts.duplicates_merged === "number") state.result.stats.duplicates_merged = originalCounts.duplicates_merged;
+    }
     state.filters = emptyFilters();
     state.shown = PAGE_SIZE;
     renderAll();
@@ -1089,6 +1094,20 @@
       text: t("filters.clear"),
       onclick: function () { state.filters = emptyFilters(); state.shown = PAGE_SIZE; renderFilters(); renderResults(); }
     }));
+    updateMobileFilterLabel();
+  }
+
+  function activeFilterCount() {
+    var f = state.filters;
+    return f.levels.size + f.groups.size + f.docClasses.size + f.sources.size +
+      (f.unclassified ? 1 : 0) + (f.yearFrom ? 1 : 0) + (f.yearTo ? 1 : 0) + (f.abstractOnly ? 1 : 0);
+  }
+
+  function updateMobileFilterLabel() {
+    var button = $("mobile-filter-btn");
+    if (!button) return;
+    var n = activeFilterCount();
+    button.textContent = t("filters.mobile") + (n ? " (" + n + ")" : "");
   }
 
   function passesFilters(row) {
@@ -1434,6 +1453,17 @@
   function renderAll() {
     var has = Boolean(state.result);
     document.body.classList.toggle("has-results", has);
+    $("search-summary").hidden = !has;
+    if (has) {
+      var okSources = state.statuses.filter(function (s) { return s.status === "ok" && s.source !== "file"; });
+      var elapsed = state.statuses.reduce(function (max, s) { return Math.max(max, Number(s.elapsed_ms || 0)); }, 0);
+      $("search-summary-text").textContent = t("summary.line", {
+        n: fmtNumber(state.result.ranked.length),
+        sources: state.origin === "search" ? okSources.length : 1,
+        seconds: (elapsed / 1000).toLocaleString(I18n.lang() === "pt" ? "pt-BR" : "en", { maximumFractionDigits: 1 })
+      });
+      $("open-strategy").hidden = !(state.plan && state.origin === "search");
+    }
     $("results-empty").hidden = has;
     $("results-view").hidden = !has;
     $("quality-empty").hidden = has;
