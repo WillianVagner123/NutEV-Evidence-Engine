@@ -126,5 +126,13 @@
     "ultraprocessados e obesidade em crianças e adolescentes",
     "plant-based diet vs mediterranean diet for weight loss",
     "insegurança alimentar e prescrição de frutas e verduras desde 2015"
+  ],
+  "example_queries_en": [
+    "Does the Mediterranean diet improve glycaemic control in type 2 diabetes?",
+    "Lifestyle medicine in hypertension: clinical trials",
+    "food literacy and culinary skills in primary care",
+    "ultra-processed foods and obesity in children and adolescents",
+    "plant-based diet vs mediterranean diet for weight loss",
+    "food insecurity and fruit and vegetable prescriptions since 2015"
   ]
 }

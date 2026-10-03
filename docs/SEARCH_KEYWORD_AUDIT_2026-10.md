@@ -60,11 +60,13 @@ pergunta (PT ou EN)
 | PubMed | `"termo"[tiab]`, truncamento `palavra*[tiab]`, filtros `[pt]`/`[sb]`, `sort=relevance`; no modo amplo, termos livres para o mapeamento automático | `AAAA:AAAA[dp]` |
 | Europe PMC | `TITLE_ABS:"termo"`; no modo amplo, todos os campos + `synonym=true` | `PUB_YEAR:[AAAA TO AAAA]` |
 | OpenAlex | booleana com frases entre aspas, sem `*` (a base faz radicalização própria) | `filter=from_/to_publication_date` |
-| Crossref | palavras-chave por relevância (a base não aceita booleanos), via `query.bibliographic` | `filter=from-/until-pub-date` |
-| BVS/LILACS | `tw:"termo"` em português e inglês, truncamento `$`; link com filtro LILACS | aplicado no site |
+| Crossref | palavras-chave por relevância (a base não aceita booleanos), via `query.bibliographic`: os dois primeiros termos em inglês de cada bloco e os sinônimos acrescentados, até 14 palavras | `filter=from-/until-pub-date` |
+| BVS/LILACS | índice padrão da BVS (título, resumo e assunto): frases entre aspas em português e inglês, truncamento `$`; link com filtro LILACS. Até 2026-10-03 era `tw:"termo"` em cada termo, que retornou 0 no QA da página real | aplicado no site |
 | SciELO | booleana em português e inglês, truncamento `$` | aplicado no site |
 
-Uma string já escrita com operadores, aspas ou campos (`AND`, `"..."`, `[tiab]`, `TITLE_ABS:`, `tw:`) é tratada como **string avançada** e enviada literalmente; a pessoa pode pedir "interpretar como pergunta".
+Palavras fora do vocabulário viram um bloco livre cada uma, combinadas com AND (como numa busca por palavras-chave), e não uma frase exata.
+
+Uma string já escrita com operadores, aspas ou campos (`AND`, `"..."`, `[tiab]`, `TITLE_ABS:`, `tw:`) é tratada como **string avançada** e enviada literalmente; a pessoa pode pedir "interpretar como pergunta". Se ela usa campos do PubMed (`[tiab]`, `[mh]`), a interface avisa que as outras bases recebem o mesmo texto.
 
 `to_review_strategy(plan)` projeta o plano no esquema `free:` do modo avançado hospedado. Um teste prova que `apps/nutev-web/query_compiler.py` aceita essa saída sem gerar termos controlados.
 

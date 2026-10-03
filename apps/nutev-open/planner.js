@@ -17,7 +17,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function (Core) {
   "use strict";
 
-  var PLANNER_VERSION = "nutev-question-planner-v1";
+  var PLANNER_VERSION = "nutev-question-planner-v2";
   var FIELD_MODES = ["title_abstract", "broad"];
   var LIVE_PROVIDERS = ["europepmc", "pubmed", "openalex", "crossref"];
   var LINK_PROVIDERS = ["bvs_lilacs", "scielo"];
@@ -26,6 +26,7 @@
   var MAX_BLOCKS_WARNING = 5;
   var MAX_CROSSREF_WORDS = 14;
 
+  var PUBMED_TAG_RE = /\[[A-Za-z /-]+\]/;
   var BOOLEAN_RE = /\b(AND|OR|NOT)\b|\[[A-Za-z /-]+\]|"|\b[A-Z_]{2,}:|\b(?:tw|mh|ti|ab|au):/;
   var NUMBER_WORDS = {
     um: 1, uma: 1, dois: 2, duas: 2, tres: 3, quatro: 4, cinco: 5, seis: 6,
@@ -243,6 +244,7 @@
     if (opts.detectManual !== false && looksLikeBoolean(text)) {
       base.mode = "manual";
       base.warnings.push({ code: "manual_string" });
+      if (PUBMED_TAG_RE.test(text)) base.warnings.push({ code: "manual_pubmed_tags" });
       return base;
     }
 
@@ -367,16 +369,20 @@
     });
     taxonomyTerms.sort(function (x, y) { return (y[0].length - x[0].length) || cmp(x[0], y[0]) || cmp(x[1], y[1]); });
 
+    // Unknown words become one block each: the sources then combine them with AND,
+    // as a plain keyword search would, instead of demanding them as one exact phrase.
     runs.forEach(function (run) {
-      var runKey = "free:" + run[1];
-      if (blocks.has(runKey)) return;
-      var hit = taxonomyTerms.find(function (entry) { return (" " + run[1] + " ").indexOf(" " + entry[0] + " ") >= 0; });
-      blocks.set(runKey, {
-        key: runKey, role: "free", concept_ids: [], labels_pt: [run[1]], labels_en: [run[1]], matched: [run[1]],
-        taxonomy_groups: hit ? [hit[1]] : [], enabled: true, terms: [{ text: run[1], lang: "any" }],
-        pubmed_filters: [], source: "free_text", position: run[0], _defaults: [true]
+      run[1].split(" ").forEach(function (word, offset) {
+        var wordKey = "free:" + word;
+        if (blocks.has(wordKey)) return;
+        var hit = taxonomyTerms.find(function (entry) { return entry[0] === word; });
+        blocks.set(wordKey, {
+          key: wordKey, role: "free", concept_ids: [], labels_pt: [word], labels_en: [word], matched: [word],
+          taxonomy_groups: hit ? [hit[1]] : [], enabled: true, terms: [{ text: word, lang: "any" }],
+          pubmed_filters: [], source: "free_text", position: run[0] + offset, _defaults: [true]
+        });
+        order.push(wordKey);
       });
-      order.push(runKey);
     });
 
     var roleOrder = {};
@@ -436,14 +442,10 @@
       if (fieldMode === "title_abstract") return truncated ? "TITLE_ABS:" + cleaned : "TITLE_ABS:\"" + bare + "\"";
       return truncated ? cleaned : "\"" + bare + "\"";
     }
-    if (provider === "openalex" || provider === "scielo") {
-      if (provider === "scielo" && truncated) return cleaned.slice(0, -1) + "$";
+    if (provider === "openalex" || provider === "scielo" || provider === "bvs_lilacs") {
+      if (provider !== "openalex" && truncated) return cleaned.slice(0, -1) + "$";
       var word = rstripStar(cleaned);
       return word.indexOf(" ") >= 0 ? "\"" + word + "\"" : word;
-    }
-    if (provider === "bvs_lilacs") {
-      if (truncated) return "tw:" + cleaned.slice(0, -1) + "$";
-      return "tw:\"" + bare + "\"";
     }
     return bare;
   }
@@ -485,7 +487,8 @@
   function crossrefKeywords(blocks) {
     var words = [];
     blocks.forEach(function (block) {
-      var picked = block.terms.filter(function (t) { return t.lang !== "pt" && t.enabled !== false; }).slice(0, 2).map(function (t) { return t.text; });
+      var usable = block.terms.filter(function (t) { return t.lang !== "pt" && t.enabled !== false; });
+      var picked = usable.slice(0, 2).concat(usable.slice(2).filter(function (t) { return t.added; })).map(function (t) { return t.text; });
       picked.forEach(function (text) {
         rstripStar(clean(text)).split(" ").forEach(function (raw) {
           var word = rstripStar(raw);
@@ -565,7 +568,7 @@
     providers.bvs_lilacs = {
       query: bvs,
       params: {},
-      dialect: manual ? "bvs_manual" : "bvs_tw_pt_en",
+      dialect: manual ? "bvs_manual" : "bvs_default_index_pt_en",
       site_url: bvs ? "https://pesquisa.bvsalud.org/portal/?" + queryString({ lang: "pt", q: bvs, "filter[db_cluster][]": "LILACS" }) : "",
       notes: yearFrom || yearTo ? ["link_only", "years_on_site"] : ["link_only"]
     };

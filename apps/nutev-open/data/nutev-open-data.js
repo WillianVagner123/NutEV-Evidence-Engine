@@ -9,9 +9,9 @@
   "use strict";
   var data = {
  "bundle_schema_version": 1,
- "bundle_sha256": "41898a4da013c7228d566a186ec53625e665b4cccb2a2fcc15ec2ab4605353cf",
+ "bundle_sha256": "39a26ca93483e886f39e79fef484a648cf087eaa25701c85519004c7d3998a25",
  "config_sha256": {
-  "apps/nutev-open/presentation.json": "459d1506ca6eb21d27adf830d28fd0155b214b5a83659348f20665e0621a57cb",
+  "apps/nutev-open/presentation.json": "670b96fc783534a9b0d5929f466c066982f2a97fad2fd53c88c422dae0524a07",
   "config/keyword_taxonomy.json": "42d66e8d6b58b9ff19db99a07087a866958426bb10a4ed512fe02a6d41bf71e2",
   "config/keyword_taxonomy_supplement.json": "bd01f3fd746d9b0358d637510a0a083061987e3a318df4359eedb2f2b82711d3",
   "config/keyword_taxonomy_supplement_2026_06_food_access.json": "371c61c3edd6b2d14249c27dae8077bc0b791d15a135a8c47a0665952f695364",
@@ -143,9 +143,17 @@
   "plant-based diet vs mediterranean diet for weight loss",
   "insegurança alimentar e prescrição de frutas e verduras desde 2015"
  ],
+ "example_queries_en": [
+  "Does the Mediterranean diet improve glycaemic control in type 2 diabetes?",
+  "Lifestyle medicine in hypertension: clinical trials",
+  "food literacy and culinary skills in primary care",
+  "ultra-processed foods and obesity in children and adolescents",
+  "plant-based diet vs mediterranean diet for weight loss",
+  "food insecurity and fruit and vegetable prescriptions since 2015"
+ ],
  "generated_by": "tools/build_open_explorer_data.py",
  "guardrail_policy_version": "2026-08-18.2",
- "planner_version": "nutev-question-planner-v1",
+ "planner_version": "nutev-question-planner-v2",
  "query_vocabulary": {
   "comparator_markers": [
    "versus",

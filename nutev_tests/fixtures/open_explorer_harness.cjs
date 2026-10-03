@@ -76,5 +76,13 @@ process.stdin.on("end", () => {
     });
     if (spec.encode) result.encoded = spec.encode.map((value) => encodeURIComponent(value));
   }
+  if (request.compileEdited) {
+    // Plans edited in the strategy panel (terms switched off, synonyms added).
+    result.compileEdited = request.compileEdited.map((item) => planner.compileQueries(item.plan, {
+      currentYear: item.currentYear,
+      fieldMode: item.fieldMode,
+      includePt: item.includePt,
+    }));
+  }
   process.stdout.write(JSON.stringify(result));
 });

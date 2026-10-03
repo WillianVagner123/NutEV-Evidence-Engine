@@ -27,10 +27,15 @@ A pessoa escreve do jeito dela, em português ou inglês. O planejador determin�
   - Europe PMC: `TITLE_ABS`/`PUB_YEAR`;
   - OpenAlex: booleana mais filtros de data;
   - Crossref: palavras-chave mais filtro de data;
-  - BVS/LILACS: `tw:` com `$`;
+  - BVS/LILACS: índice padrão da BVS, com frases e `$`;
   - SciELO: booleana com `$`.
 
 O painel "Como o NutEV organizou sua busca" mostra tudo e deixa editar: blocos, termos, período, campo, inclusão de termos em português e a própria string de cada base. Depois da busca, ele mostra como o PubMed interpretou a string. BVS/LILACS e SciELO são abertos no site da própria base.
+
+- Palavras fora do vocabulário viram um bloco livre cada uma, combinadas com AND.
+- Uma string editada à mão vale até ser restaurada: mudanças nos blocos, no campo ou no período não a sobrescrevem. O JSON exportado registra `edited_by_hand` e a string gerada.
+- Se a estratégia muda depois da busca, os números na tela aparecem como "desatualizado" até a próxima busca.
+- "Copiar link desta busca" inclui a estratégia executada (parâmetro `s`: blocos e termos ligados/desligados, sinônimos, período e strings editadas). O link é validado antes de ser aplicado.
 
 Não há modelo de linguagem e MeSH/DeCS não são inventados. No modo "Ampla", é a própria base que aplica o vocabulário dela. Uma string avançada digitada (operadores, aspas, campos) é enviada literalmente. Auditoria e decisões: [`SEARCH_KEYWORD_AUDIT_2026-10.md`](SEARCH_KEYWORD_AUDIT_2026-10.md).
 
@@ -131,8 +136,10 @@ Testes: `nutev_tests/test_open_explorer_hosting.py` (servidor pilot real, visita
 
 ## Publicação
 
-`.github/workflows/open-explorer-pages.yml` publica a pasta no GitHub Pages a cada push em `main` que toque o explorador, a configuração canônica ou o código de classificação. O workflow repete `--check` e os testes de paridade antes de publicar e grava o SHA do commit em `build-info.js`.
+A cópia principal é a do site hospedado (`/aberto/`), publicada pelo deploy normal da Hetzner. A imagem grava o commit em `apps/nutev-open/build-info.js`, e ele aparece em "Como ler os níveis → Versões e proveniência".
 
-Configuração única no repositório: **Settings → Pages → Build and deployment → Source: GitHub Actions**. Endereço esperado: `https://willianvagner123.github.io/NutEV-Evidence-Engine/`.
+`.github/workflows/open-explorer-pages.yml` publica um espelho opcional no GitHub Pages **sob demanda** (`workflow_dispatch`). O workflow repete `--check` e os testes de paridade antes de publicar e grava o SHA do commit em `build-info.js`. Antes da primeira execução, ative **Settings → Pages → Build and deployment → Source: GitHub Actions**. Endereço do espelho: `https://willianvagner123.github.io/NutEV-Evidence-Engine/`.
+
+Roteiro de verificação da página real (prompt para um agente com navegador): [`qa/OPEN_EXPLORER_LIVE_QA_PROMPT.md`](qa/OPEN_EXPLORER_LIVE_QA_PROMPT.md).
 
 A publicação da página não altera a release imutável `v1.1.0`, o DOI arquivado nem o estado científico (`B — DEMOTE`).

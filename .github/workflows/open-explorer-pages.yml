@@ -5,21 +5,11 @@ name: open-explorer-pages
 # queries open bibliographic APIs from the visitor's browser and classifies
 # records with the rule bundle generated from the canonical config.
 #
-# One-time setup: Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
+# The primary public copy is served by the hosted runtime at /aberto/ (Hetzner),
+# so this mirror runs only on demand. Before the first run enable
+# Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "apps/nutev-open/**"
-      - "config/**"
-      - "src/nutev/**"
-      - "tools/build_open_explorer_data.py"
-      - "tools/rank_references.py"
-      - "nutev_tests/test_open_explorer.py"
-      - "nutev_tests/test_question_planner.py"
-      - "nutev_tests/fixtures/open_explorer_harness.cjs"
-      - ".github/workflows/open-explorer-pages.yml"
   workflow_dispatch:
 
 permissions:

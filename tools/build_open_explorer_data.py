@@ -196,6 +196,7 @@ def build_bundle() -> dict[str, Any]:
             },
         },
         "example_queries": list(presentation.get("example_queries") or []),
+        "example_queries_en": list(presentation.get("example_queries_en") or []),
         "planner_version": PLANNER_VERSION,
         "query_vocabulary": query_vocabulary,
     }
