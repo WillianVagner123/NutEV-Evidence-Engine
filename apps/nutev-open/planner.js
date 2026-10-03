@@ -479,7 +479,9 @@
           if (formatted.indexOf(item) < 0) formatted.push(item);
         });
       }
-      if (formatted.length) parts.push("(" + formatted.join(" OR ") + ")");
+      // BVS only reads a parenthesised group inside a field: tw:(a OR b). A bare
+      // group falls back to the whole collection (verified on the live portal).
+      if (formatted.length) parts.push((provider === "bvs_lilacs" ? "tw:" : "") + "(" + formatted.join(" OR ") + ")");
     });
     return parts.join(" AND ");
   }
@@ -568,7 +570,7 @@
     providers.bvs_lilacs = {
       query: bvs,
       params: {},
-      dialect: manual ? "bvs_manual" : "bvs_default_index_pt_en",
+      dialect: manual ? "bvs_manual" : "bvs_tw_block_pt_en",
       site_url: bvs ? "https://pesquisa.bvsalud.org/portal/?" + queryString({ lang: "pt", q: bvs, "filter[db_cluster][]": "LILACS" }) : "",
       notes: yearFrom || yearTo ? ["link_only", "years_on_site"] : ["link_only"]
     };

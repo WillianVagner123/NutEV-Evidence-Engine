@@ -61,7 +61,7 @@ pergunta (PT ou EN)
 | Europe PMC | `TITLE_ABS:"termo"`; no modo amplo, todos os campos + `synonym=true` | `PUB_YEAR:[AAAA TO AAAA]` |
 | OpenAlex | booleana com frases entre aspas, sem `*` (a base faz radicalização própria) | `filter=from_/to_publication_date` |
 | Crossref | palavras-chave por relevância (a base não aceita booleanos), via `query.bibliographic`: os dois primeiros termos em inglês de cada bloco e os sinônimos acrescentados, até 14 palavras | `filter=from-/until-pub-date` |
-| BVS/LILACS | índice padrão da BVS (título, resumo e assunto): frases entre aspas em português e inglês, truncamento `$`; link com filtro LILACS. Até 2026-10-03 era `tw:"termo"` em cada termo, que retornou 0 no QA da página real | aplicado no site |
+| BVS/LILACS | cada bloco dentro do campo `tw` (título, resumo e assunto): `tw:("termo" OR ...) AND tw:(...)`, em português e inglês, truncamento `$`; link com filtro LILACS. Verificado no portal em 2026-10-03: `tw:"termo"` em cada termo e a string sem campo deram 0; um grupo sem campo devolveu a coleção inteira; `tw:(...)` por bloco deu 15 no LILACS e 468 na coleção completa | aplicado no site |
 | SciELO | booleana em português e inglês, truncamento `$` | aplicado no site |
 
 Palavras fora do vocabulário viram um bloco livre cada uma, combinadas com AND (como numa busca por palavras-chave), e não uma frase exata.

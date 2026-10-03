@@ -43,8 +43,8 @@ de reteste do relatório.
       aparece "desatualizado" e o aviso "A estratégia mudou desde a última busca". (C7)
   R5. "kefir kombucha" virava a frase exata e o PubMed dava 0. Agora vira kefir AND
       kombucha. (H4)
-  R6. A BVS dava 0 resultados. A string mudou para o índice padrão da BVS (sem tw:). Este é
-      o único ajuste não testado contra a BVS real: anote os totais. (C9)
+  R6. A BVS dava 0 resultados. Agora cada bloco vai em tw:(... OR ...), o formato que deu
+      resultados no reteste. Anote os totais no LILACS e na coleção completa. (C9)
   R7. Um CSV qualquer era aceito e substituía os resultados; JSON inválido dava erro técnico
       em inglês. Agora o arquivo é recusado com mensagem em português e os resultados
       ficam. (G4)
@@ -62,6 +62,15 @@ de reteste do relatório.
       - a nota do Crossref explica por que o total "na fonte" é tão alto;
       - "Versões e proveniência" mostra o commit publicado e o vocabulário como "aguardando
         revisão humana especializada" (F2).
+  R12. O CSV exportado pelo NutEV, reaberto em "Abrir arquivo", mandava tudo para a
+      quarentena ("sem fonte de origem"). Agora volta com as mesmas obras da busca. (G4)
+  R13. O JSON reaberto mostrava 0 duplicatas sem explicar. Agora a mensagem diz quantos
+      registros e duplicatas a busca original tinha. (G4)
+  R14. No celular (~390px): o link de login aparece como "Entrar", os filtros começam
+      fechados e as caixas de seleção e links DOI/PMID têm área de toque maior. (J1)
+  R15. Termos livres aparecem como "termo digitado". Uma string com [tiab] ganha o botão
+      "Tirar os campos do PubMed das outras bases", que limpa as outras strings e permite
+      "Restaurar". (H2, H4)
 
 PARTE 2 — ROTEIRO COMPLETO (para cada item: passos -> esperado -> obtido -> OK/FALHA + evidência)
 
@@ -88,7 +97,8 @@ B. Busca por pergunta (português)
       palavras ignoradas.
   B4. Em "Strings por base", confira se cada base tem formato próprio:
       PubMed com [tiab]; Europe PMC com TITLE_ABS:; OpenAlex com aspas e OR/AND;
-      Crossref só palavras-chave; BVS e SciELO com frases em português e inglês (sem tw:).
+      Crossref só palavras-chave; BVS com tw:(...) em cada bloco; SciELO com frases em
+      português e inglês.
 
 C. Interações do painel de estratégia
   C1. Desmarque "usar" no bloco Controle glicêmico. Esperado: o bloco fica apagado e some
@@ -112,10 +122,9 @@ C. Interações do painel de estratégia
   C9. Clique "Abrir no PubMed", "Abrir no Europe PMC", "Abrir na BVS (LILACS)" e
       "Abrir no SciELO". Esperado: cada site abre com a busca preenchida. No PubMed,
       compare o total exibido com o "na fonte" do painel; diferenças grandes devem ser anotadas.
-      BVS: anote o total em "LILACS" e na coleção completa. Se der 0, teste no site da BVS
-      três variações e anote o total de cada: (a) a string como veio; (b) a mesma string com
-      tw: antes de cada parêntese, ex.: tw:("diabetes tipo 2" OR "type 2 diabetes"); (c) só o
-      primeiro bloco.
+      BVS: anote o total em "LILACS" e na coleção completa. Com a pergunta do exemplo e sem
+      alterações, o esperado é um número maior que zero (no QA de 03/10, a mesma estratégia
+      com tw:(...) deu 15 no LILACS e 468 na coleção completa).
   C10. Clique "Buscar novamente com esta estratégia". Esperado: nova busca usando as
        alterações (confira a string no Network: requisição esearch.fcgi, parâmetro term).
   C11. Depois da busca, abra "Como o PubMed interpretou a string". Esperado: a tradução do
@@ -198,7 +207,7 @@ J. Celular e acessibilidade
 
 ENTREGA (formato do relatório)
 1. Resumo de 5 linhas: funciona ou não; os 3 problemas mais graves.
-2. Tabela de reteste R1–R11: ID | OK/FALHA | evidência. Para R6, os totais da BVS.
+2. Tabela de reteste R1–R15: ID | OK/FALHA | evidência. Para R6, os totais da BVS.
 3. Tabela: ID | passo | esperado | obtido | OK/FALHA | evidência.
 4. Bugs novos: título, severidade (bloqueador / alto / médio / baixo), passos para
    reproduzir, resultado esperado vs obtido, navegador/tela, print.
