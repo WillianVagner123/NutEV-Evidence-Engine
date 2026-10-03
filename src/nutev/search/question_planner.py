@@ -30,7 +30,7 @@ from typing import Any
 
 from nutev.taxonomy import _norm
 
-PLANNER_VERSION = "nutev-question-planner-v1"
+PLANNER_VERSION = "nutev-question-planner-v2"
 QUERY_VOCABULARY_FILENAME = "query_vocabulary.json"
 FIELD_MODES = ("title_abstract", "broad")
 LIVE_PROVIDERS = ("europepmc", "pubmed", "openalex", "crossref")
@@ -40,6 +40,7 @@ MAX_QUESTION_LENGTH = 500
 MAX_BLOCKS_WARNING = 5
 MAX_CROSSREF_WORDS = 14
 
+_PUBMED_TAG_RE = re.compile(r"\[[A-Za-z /-]+\]")
 _BOOLEAN_RE = re.compile(r"\b(AND|OR|NOT)\b|\[[A-Za-z /-]+\]|\"|\b[A-Z_]{2,}:|\b(?:tw|mh|ti|ab|au):")
 _NUMBER_WORDS = {
     "um": 1, "uma": 1, "dois": 2, "duas": 2, "tres": 3, "quatro": 4, "cinco": 5, "seis": 6,
@@ -316,6 +317,8 @@ def plan_question(
     if detect_manual and looks_like_boolean(text):
         base["mode"] = "manual"
         base["warnings"].append({"code": "manual_string"})
+        if _PUBMED_TAG_RE.search(text):
+            base["warnings"].append({"code": "manual_pubmed_tags"})
         return base
 
     tokens = tokens_of(text)
@@ -454,27 +457,30 @@ def plan_question(
         taxonomy_terms.extend((term, group) for term in terms if len(term) >= 4)
     taxonomy_terms.sort(key=lambda item: (-len(item[0]), item[0], item[1]))
 
+    # Unknown words become one block each: the sources then combine them with AND,
+    # as a plain keyword search would, instead of demanding them as one exact phrase.
     for start, run in runs:
-        key = f"free:{run}"
-        if key in blocks:
-            continue
-        group = next((g for term, g in taxonomy_terms if f" {term} " in f" {run} "), None)
-        blocks[key] = {
-            "key": key,
-            "role": "free",
-            "concept_ids": [],
-            "labels_pt": [run],
-            "labels_en": [run],
-            "matched": [run],
-            "taxonomy_groups": [group] if group else [],
-            "enabled": True,
-            "terms": [{"text": run, "lang": "any"}],
-            "pubmed_filters": [],
-            "source": "free_text",
-            "position": start,
-            "_defaults": [True],
-        }
-        order.append(key)
+        for offset, word in enumerate(run.split(" ")):
+            key = f"free:{word}"
+            if key in blocks:
+                continue
+            group = next((g for term, g in taxonomy_terms if term == word), None)
+            blocks[key] = {
+                "key": key,
+                "role": "free",
+                "concept_ids": [],
+                "labels_pt": [word],
+                "labels_en": [word],
+                "matched": [word],
+                "taxonomy_groups": [group] if group else [],
+                "enabled": True,
+                "terms": [{"text": word, "lang": "any"}],
+                "pubmed_filters": [],
+                "source": "free_text",
+                "position": start + offset,
+                "_defaults": [True],
+            }
+            order.append(key)
 
     role_order = {role: int(vocabulary["roles"][role]["order"]) for role in ROLES}
     output: list[dict[str, Any]] = []
@@ -529,15 +535,11 @@ def _format_term(text: str, provider: str, field_mode: str) -> str:
         if field_mode == "title_abstract":
             return f"TITLE_ABS:{cleaned}" if truncated else f'TITLE_ABS:"{bare}"'
         return cleaned if truncated else f'"{bare}"'
-    if provider in {"openalex", "scielo"}:
-        if provider == "scielo" and truncated:
+    if provider in {"openalex", "scielo", "bvs_lilacs"}:
+        if provider != "openalex" and truncated:
             return cleaned[:-1] + "$"
         word = cleaned.rstrip("*")
         return f'"{word}"' if " " in word else word
-    if provider == "bvs_lilacs":
-        if truncated:
-            return f"tw:{cleaned[:-1]}$"
-        return f'tw:"{bare}"'
     return bare
 
 
@@ -576,9 +578,13 @@ def _compile_boolean(blocks: list[Mapping[str, Any]], provider: str, field_mode:
 
 
 def _crossref_keywords(blocks: list[Mapping[str, Any]]) -> str:
+    """Crossref has no Boolean search: the first two non-Portuguese terms of each
+    block plus the synonyms the person added, capped at MAX_CROSSREF_WORDS words."""
+
     words: list[str] = []
     for block in blocks:
-        picked = [t["text"] for t in block["terms"] if t.get("lang") != "pt" and t.get("enabled") is not False][:2]
+        usable = [t for t in block["terms"] if t.get("lang") != "pt" and t.get("enabled") is not False]
+        picked = [t["text"] for t in usable[:2]] + [t["text"] for t in usable[2:] if t.get("added")]
         for text in picked:
             for word in _clean(text).rstrip("*").split(" "):
                 word = word.rstrip("*")
@@ -667,7 +673,7 @@ def compile_queries(
     providers["bvs_lilacs"] = {
         "query": bvs,
         "params": {},
-        "dialect": "bvs_manual" if manual else "bvs_tw_pt_en",
+        "dialect": "bvs_manual" if manual else "bvs_default_index_pt_en",
         "site_url": "https://pesquisa.bvsalud.org/portal/?" + _query_string({"lang": "pt", "q": bvs, "filter[db_cluster][]": "LILACS"}) if bvs else "",
         "notes": ["link_only", "years_on_site"] if (year_from or year_to) else ["link_only"],
     }

@@ -27,10 +27,15 @@ A pessoa escreve do jeito dela, em português ou inglês. O planejador determin�
   - Europe PMC: `TITLE_ABS`/`PUB_YEAR`;
   - OpenAlex: booleana mais filtros de data;
   - Crossref: palavras-chave mais filtro de data;
-  - BVS/LILACS: `tw:` com `$`;
+  - BVS/LILACS: índice padrão da BVS, com frases e `$`;
   - SciELO: booleana com `$`.
 
 O painel "Como o NutEV organizou sua busca" mostra tudo e deixa editar: blocos, termos, período, campo, inclusão de termos em português e a própria string de cada base. Depois da busca, ele mostra como o PubMed interpretou a string. BVS/LILACS e SciELO são abertos no site da própria base.
+
+- Palavras fora do vocabulário viram um bloco livre cada uma, combinadas com AND.
+- Uma string editada à mão vale até ser restaurada: mudanças nos blocos, no campo ou no período não a sobrescrevem. O JSON exportado registra `edited_by_hand` e a string gerada.
+- Se a estratégia muda depois da busca, os números na tela aparecem como "desatualizado" até a próxima busca.
+- "Copiar link desta busca" inclui a estratégia executada (parâmetro `s`: blocos e termos ligados/desligados, sinônimos, período e strings editadas). O link é validado antes de ser aplicado.
 
 Não há modelo de linguagem e MeSH/DeCS não são inventados. No modo "Ampla", é a própria base que aplica o vocabulário dela. Uma string avançada digitada (operadores, aspas, campos) é enviada literalmente. Auditoria e decisões: [`SEARCH_KEYWORD_AUDIT_2026-10.md`](SEARCH_KEYWORD_AUDIT_2026-10.md).
 

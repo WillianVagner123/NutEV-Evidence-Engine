@@ -49,7 +49,7 @@ B. Busca por pergunta (português)
       palavras ignoradas.
   B4. Em "Strings por base", confira se cada base tem formato próprio:
       PubMed com [tiab]; Europe PMC com TITLE_ABS:; OpenAlex com aspas e OR/AND;
-      Crossref só palavras-chave; BVS com tw:; SciELO com termos em português.
+      Crossref só palavras-chave; BVS e SciELO com frases em português e inglês (sem tw:).
 
 C. Interações do painel de estratégia
   C1. Desmarque "usar" no bloco Controle glicêmico. Esperado: o bloco fica apagado e some
@@ -63,12 +63,20 @@ C. Interações do painel de estratégia
       OpenAlex/Europe PMC. Desmarque.
   C6. Preencha o período "de 2015". Esperado: o PubMed ganha (2015:3000[dp]), o Europe PMC
       ganha PUB_YEAR, e OpenAlex/Crossref mostram o filtro de data.
-  C7. Edite à mão a string do PubMed. Esperado: aparece "editada à mão" e o botão
-      "Restaurar"; Restaurar devolve a string gerada.
+  C7. Edite à mão a string do PubMed. Esperado: aparecem na hora "editada à mão", o aviso
+      de que a string não acompanha mais os blocos e o botão "Restaurar". Mude o campo ou o
+      período: a string editada continua. Os números do PubMed passam a "desatualizado" e
+      surge o aviso "A estratégia mudou desde a última busca". Restaurar devolve a string gerada.
+  C7b. Role a página até "Onde procurar" e use cada controle (campo, português, período,
+      "usar" de um bloco, um termo). Esperado: a página não pula e o foco fica no controle.
   C8. Clique "Copiar" e cole num bloco de notas. Esperado: o texto colado é igual ao da caixa.
   C9. Clique "Abrir no PubMed", "Abrir no Europe PMC", "Abrir na BVS (LILACS)" e
       "Abrir no SciELO". Esperado: cada site abre com a busca preenchida. No PubMed,
       compare o total exibido com o "na fonte" do painel; diferenças grandes devem ser anotadas.
+      BVS: anote o total em "LILACS" e na coleção completa. Se der 0, teste no site da BVS
+      três variações e anote o total de cada: (a) a string como veio; (b) a mesma string com
+      tw: antes de cada parêntese, ex.: tw:("diabetes tipo 2" OR "type 2 diabetes"); (c) só o
+      primeiro bloco.
   C10. Clique "Buscar novamente com esta estratégia". Esperado: nova busca usando as
        alterações (confira a string no Network: requisição esearch.fcgi, parâmetro term).
   C11. Depois da busca, abra "Como o PubMed interpretou a string". Esperado: a tradução do
@@ -109,10 +117,13 @@ G. Exportar, compartilhar e reabrir
       as colunas de nível, eixos e pontuação.
   G2. "Baixar JSON com manifesto": confira que tem manifest.query_plan,
       manifest.executed_queries (strings enviadas a cada base) e records.
-  G3. "Copiar link desta busca": abra o link em outra aba. Esperado: refaz a mesma pergunta.
+  G3. Depois de buscar com período, um sinônimo acrescentado e uma string editada, clique
+      "Copiar link desta busca" e abra o link em outra aba. Esperado: refaz a mesma busca, com
+      o mesmo período, o sinônimo e a string editada (confira o term do esearch no Network).
   G4. Aba "Abrir arquivo": carregue o JSON exportado. Esperado: "N registros lidos" e o
-      painel preenchido. Carregue o CSV exportado. Tente um arquivo qualquer (ex.: .txt
-      renomeado). Esperado: mensagem de erro clara, sem travar.
+      painel preenchido. Carregue o CSV exportado. Tente um CSV qualquer (ex.: nome,cidade) e
+      um JSON cortado. Esperado: mensagem de erro clara em português, sem travar, e os
+      resultados que estavam na tela continuam lá.
 
 H. Idioma e casos de borda
   H1. Troque para EN. Esperado: interface, painel de estratégia, avisos e guia em inglês;
@@ -121,11 +132,11 @@ H. Idioma e casos de borda
       avançada" enviada literalmente e o botão "Interpretar como pergunta".
   H3. Busque "plant-based diet vs mediterranean diet for weight loss". Esperado: dieta
       mediterrânea vira Comparador desligado, com aviso.
-  H4. Busque "kefir kombucha". Esperado: termos livres e aviso de que nenhum conceito do
-      vocabulário foi reconhecido.
+  H4. Busque "kefir kombucha". Esperado: dois blocos livres (kefir, kombucha) combinados com
+      AND, aviso de que nenhum conceito do vocabulário foi reconhecido e resultados no PubMed.
   H5. Clique "Buscar" com o campo vazio: esperado nada acontecer além do foco voltar ao campo.
       Busque "a b c": esperado o aviso "Não reconhecemos termos úteis..." no painel de
-      estratégia, sem erro e sem requisições às fontes.
+      estratégia, sem erro, sem requisições às fontes e sem os resultados da busca anterior.
   H6. "ultraprocessados e obesidade em crianças nos últimos 5 anos": esperado o período
       preenchido automaticamente (ano atual menos 5; em 2026, "de 2021").
 

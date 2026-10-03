@@ -10,6 +10,18 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 - A imagem da Hetzner grava o commit do build em `apps/nutev-open/build-info.js`, e a página hospedada passa a mostrar a proveniência real em vez de "cópia local".
 - Adicionado `docs/qa/OPEN_EXPLORER_LIVE_QA_PROMPT.md`: roteiro de verificação da página real (botões, interações, rede, console, mobile, acessibilidade) para um agente com navegador.
 
+### Explorador Aberto: correções do QA da página real (2026-10-03)
+
+- Painel de estratégia: usar qualquer controle não faz mais a página pular nem tira o foco do controle (a página rolava de 795 para 260). O painel é reconstruído mantendo altura, rolagem, foco e cursor; Tab entre os campos de período funciona.
+- "Copiar link desta busca" leva a estratégia executada: blocos e termos ligados/desligados, sinônimos acrescentados, período e strings editadas à mão. Quem abre o link refaz a mesma busca. O conteúdo do link é validado antes de ser aplicado.
+- Strings editadas à mão não são mais descartadas quando outro controle muda; o botão "Restaurar" aparece assim que a edição começa, com um aviso de que a string não acompanha mais os blocos. O JSON exportado registra `edited_by_hand` e a string gerada (`generated_query`).
+- Quando a estratégia muda depois da busca, os números da busca anterior aparecem marcados como "desatualizado", com aviso no painel e no estado das fontes.
+- Planejador `nutev-question-planner-v2`: palavras desconhecidas viram um bloco cada, combinadas com AND (antes "kefir kombucha" virava a frase exata `"kefir kombucha"[tiab]` e o PubMed retornava 0); o Crossref passa a receber os sinônimos acrescentados; uma string avançada com campos do PubMed (`[tiab]`, `[mh]`) avisa que as outras bases recebem o mesmo texto.
+- BVS/LILACS: a string passa a usar o índice padrão da BVS, no mesmo formato que funcionou no SciELO (mesma plataforma), em vez de repetir `tw:` em cada termo; no QA a string antiga retornou 0 resultados. A mudança não pôde ser verificada contra a BVS a partir do ambiente de desenvolvimento e entrou no roteiro de QA.
+- Uma pergunta sem termos úteis ("a b c") limpa os resultados e o título da busca anterior em vez de deixá-los na tela.
+- "Abrir arquivo" recusa arquivos sem registros bibliográficos (campos como title, doi, pmid ou url) e mantém os resultados atuais; JSON inválido gera mensagem em linguagem simples.
+- Menores: "Título (A–Z)" ignora prefixos como "[" e "607-P:"; dicas dos gráficos não saem cortadas na borda; singular/plural ("1 bloco em uso"); seções não ficam sob o cabeçalho fixo; exemplos em inglês na interface EN; filtro de data concreto nos cartões do OpenAlex e do Crossref; nota do Crossref explica o total "na fonte"; estado do vocabulário legível ("aguardando revisão humana especializada").
+
 
 ### Busca aberta sem login no site hospedado
 

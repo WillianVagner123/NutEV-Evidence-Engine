@@ -28,6 +28,9 @@
   var TAXONOMY_TERMS = Planner.taxonomyTermsFromBundle(DATA);
   var VOCABULARY = DATA.query_vocabulary;
   var STRATEGY_PROVIDERS = ["pubmed", "europepmc", "openalex", "crossref", "bvs_lilacs", "scielo"];
+  var BASE_TITLE = document.title;
+  var MAX_TERM_LENGTH = 80;
+  var MAX_LINK_STRING = 4000;
 
   var state = {
     query: "",
@@ -47,6 +50,7 @@
     fieldMode: "title_abstract",
     includePt: false,
     overrides: {},
+    literal: false,
     executed: null,
     filters: emptyFilters()
   };
@@ -186,9 +190,12 @@
     });
     document.addEventListener("mousemove", function (event) {
       if (tooltip.hidden) return;
-      var x = Math.min(event.clientX + 14, window.innerWidth - tooltip.offsetWidth - 8);
+      var width = document.documentElement.clientWidth || window.innerWidth;
+      var height = document.documentElement.clientHeight || window.innerHeight;
+      var x = event.clientX + 14;
+      if (x + tooltip.offsetWidth > width - 8) x = event.clientX - tooltip.offsetWidth - 14;
       var y = event.clientY + 16;
-      if (y + tooltip.offsetHeight > window.innerHeight - 8) y = event.clientY - tooltip.offsetHeight - 12;
+      if (y + tooltip.offsetHeight > height - 8) y = event.clientY - tooltip.offsetHeight - 12;
       tooltip.style.left = Math.max(8, x) + "px";
       tooltip.style.top = Math.max(8, y) + "px";
     });
@@ -256,7 +263,8 @@
 
   function renderExamples() {
     var box = clear($("examples"));
-    DATA.example_queries.forEach(function (query) {
+    var english = I18n.lang() === "en" && (DATA.example_queries_en || []).length;
+    (english ? DATA.example_queries_en : DATA.example_queries).forEach(function (query) {
       box.appendChild(el("button", {
         type: "button",
         class: "chip-button",
@@ -264,6 +272,12 @@
         onclick: function () { $("q").value = query; runSearch(query); }
       }));
     });
+  }
+
+  function reviewStatusLabel(status) {
+    var key = "vocab.status." + status;
+    var label = t(key);
+    return label === key ? String(status) : label;
   }
 
   function renderGuide() {
@@ -299,7 +313,7 @@
       [t("guide.prov.policy"), DATA.guardrail_policy_version],
       [t("guide.prov.engine"), DATA.engine_version],
       [t("guide.prov.doctypes"), DATA.document_class_ontology_version],
-      [t("guide.prov.planner"), DATA.planner_version + " · " + VOCABULARY.vocabulary_version + " (" + VOCABULARY.review_status + ")"],
+      [t("guide.prov.planner"), DATA.planner_version + " · " + VOCABULARY.vocabulary_version + " (" + reviewStatusLabel(VOCABULARY.review_status) + ")"],
       [t("guide.prov.bundle"), DATA.bundle_sha256],
       [t("guide.prov.build"), !BUILD.commit || BUILD.commit === "local" ? t("guide.prov.local") : BUILD.commit + (BUILD.built_at ? " · " + BUILD.built_at : "")]
     ].forEach(function (pair) {
@@ -377,6 +391,7 @@
           el("span", { class: "detail", text: t(item.reason === "licensed" ? "status.licensed" : "status.engine_only") })));
       });
     }
+    $("status-stale").hidden = !anyStale();
   }
 
   // ------------------------------------------------------------------ search
@@ -403,35 +418,62 @@
   function queryFor(provider) {
     var compiled = state.compiled.providers[provider];
     var override = state.overrides[provider];
+    var edited = typeof override === "string";
     return {
-      query: typeof override === "string" ? override : compiled.query,
-      params: compiled.params || {}
+      query: edited ? override : compiled.query,
+      params: compiled.params || {},
+      edited: edited
     };
   }
 
+  function freshPlan(question, literal) {
+    return Planner.planQuestion(question, VOCABULARY, {
+      currentYear: currentYear(),
+      taxonomyGroups: TAXONOMY_TERMS,
+      detectManual: !literal
+    });
+  }
+
+  // options: { literal: interpret a Boolean-looking string as a question,
+  //            strategy: edits restored from a shared link (see strategyDelta) }
   function runSearch(rawQuery, options) {
     var question = String(rawQuery || "").trim();
     if (!question) { $("q").focus(); return; }
-    state.plan = Planner.planQuestion(question, VOCABULARY, {
-      currentYear: currentYear(),
-      taxonomyGroups: TAXONOMY_TERMS,
-      detectManual: !(options && options.literal)
-    });
+    state.literal = Boolean(options && options.literal);
+    state.plan = freshPlan(question, state.literal);
     state.overrides = {};
+    if (options && options.strategy) applyStrategyDelta(state.plan, options.strategy);
     state.query = question;
     compilePlan();
     renderStrategy();
-    executePlan();
+    executePlan({ fresh: true });
   }
 
-  async function executePlan() {
+  // options.fresh: a new question. If it has nothing to search, the previous
+  // question's results are cleared instead of staying on screen under the new one.
+  async function executePlan(options) {
     var ids = Sources.SOURCES.map(function (s) { return s.id; }).filter(function (id) { return state.sources.has(id); });
     if (!ids.length) { ids = Sources.SOURCES.map(function (s) { return s.id; }); ids.forEach(function (id) { state.sources.add(id); }); renderSourcePicker(); }
     var queries = {};
-    ids.forEach(function (id) { queries[id] = queryFor(id); });
+    ids.forEach(function (id) {
+      var spec = queryFor(id);
+      queries[id] = { query: spec.query, params: spec.params };
+    });
     var runnable = ids.filter(function (id) { return String(queries[id].query || "").trim(); });
     if (!runnable.length) {
-      renderStrategy();
+      if (options && options.fresh) {
+        state.token += 1;
+        state.origin = "search";
+        state.fileName = "";
+        state.result = null;
+        state.statuses = [];
+        state.executed = null;
+        setSearching(false);
+        document.title = BASE_TITLE;
+        renderAll();
+      } else {
+        renderStrategy();
+      }
       $("strategy").scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
@@ -440,7 +482,23 @@
     state.origin = "search";
     state.fileName = "";
     state.limit = Number($("limit").value) || 50;
-    state.executed = { queries: queries, field_mode: state.fieldMode, include_pt: state.includePt, at: new Date().toISOString() };
+    var record = {};
+    runnable.forEach(function (id) {
+      var spec = queryFor(id);
+      record[id] = { query: spec.query, params: spec.params };
+      if (spec.edited) {
+        record[id].edited_by_hand = true;
+        record[id].generated_query = state.compiled.providers[id].query;
+      }
+    });
+    state.executed = {
+      queries: record,
+      field_mode: state.fieldMode,
+      include_pt: state.includePt,
+      literal: state.literal,
+      strategy: strategyDelta(),
+      at: new Date().toISOString()
+    };
     state.statuses = runnable.map(function (id) { return { source: id, status: "pending" }; });
     setSearching(true);
     renderStatus();
@@ -504,21 +562,61 @@
     }
   }
 
-  function refreshStrategy() {
+  function refreshStrategy(focusKey) {
     compilePlan();
-    renderStrategy();
+    renderStrategy(focusKey);
+  }
+
+  // The panel is rebuilt on every change. Controls carry a data-fk key so the
+  // control in use keeps focus and stays where it was on screen.
+  function captureStrategyView() {
+    var view = { y: window.scrollY, key: null, top: 0 };
+    var active = document.activeElement;
+    if (active && active !== document.body && $("strategy-body").contains(active) && active.getAttribute("data-fk")) {
+      view.key = active.getAttribute("data-fk");
+      view.top = active.getBoundingClientRect().top;
+      try {
+        if (typeof active.selectionStart === "number") view.selection = [active.selectionStart, active.selectionEnd];
+      } catch (error) { view.selection = null; }
+    }
+    return view;
+  }
+
+  function restoreStrategyView(view, focusKey) {
+    var key = focusKey || view.key;
+    var target = null;
+    if (key) {
+      $("strategy-body").querySelectorAll("[data-fk]").forEach(function (node) {
+        if (!target && node.getAttribute("data-fk") === key) target = node;
+      });
+    }
+    if (target) {
+      target.focus({ preventScroll: true });
+      if (view.key === key && view.selection) {
+        try { target.setSelectionRange(view.selection[0], view.selection[1]); } catch (error) { /* not a text control */ }
+      }
+    }
+    if (target && view.key === key) {
+      // Same control: keep it at the same height on screen (document coordinates,
+      // because the browser may have clamped the scroll while the panel was rebuilt).
+      var docTop = target.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo(window.scrollX, Math.max(0, docTop - view.top));
+    } else {
+      window.scrollTo(window.scrollX, view.y);
+    }
   }
 
   function blockCard(block) {
-    var toggle = el("input", { type: "checkbox", "aria-label": t("strategy.use") + ": " + blockLabel(block) });
+    var toggle = el("input", { type: "checkbox", "data-fk": "use:" + block.key, "aria-label": t("strategy.use") + ": " + blockLabel(block) });
     toggle.checked = Boolean(block.enabled);
     toggle.addEventListener("change", function () { block.enabled = toggle.checked; refreshStrategy(); });
 
-    var chips = el("div", { class: "term-chips" }, block.terms.map(function (term) {
+    var chips = el("div", { class: "term-chips" }, block.terms.map(function (term, index) {
       var on = term.enabled !== false;
       var regionalOnly = term.lang === "pt" && !state.includePt;
       return el("button", {
         type: "button",
+        "data-fk": "term:" + block.key + ":" + index,
         class: "term-chip" + (on ? "" : " off") + (regionalOnly ? " regional" : ""),
         "aria-pressed": on ? "true" : "false",
         "data-tip": (regionalOnly ? t("strategy.ptRegional") + " " : "") + t(on ? "strategy.termOff" : "strategy.termOn"),
@@ -526,14 +624,16 @@
       }, term.lang === "pt" ? el("small", { text: "PT" }) : term.lang === "en" ? el("small", { text: "EN" }) : null, term.text);
     }));
 
-    var input = el("input", { type: "text", maxlength: "80", placeholder: t("strategy.addTerm"), "aria-label": t("strategy.addTerm") });
+    var input = el("input", { type: "text", maxlength: String(MAX_TERM_LENGTH), "data-fk": "add:" + block.key, placeholder: t("strategy.addTerm"), "aria-label": t("strategy.addTerm") + ": " + blockLabel(block) });
     var addForm = el("form", { class: "add-term" }, input);
     addForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      var value = input.value.replace(/"/g, " ").replace(/\s+/g, " ").trim();
+      var value = cleanTerm(input.value);
       if (!value) return;
-      block.terms.push({ text: value, lang: block.role === "free" ? "any" : "en", enabled: true, added: true });
-      refreshStrategy();
+      if (!block.terms.some(function (term) { return term.text === value; })) {
+        block.terms.push({ text: value, lang: block.role === "free" ? "any" : "en", enabled: true, added: true });
+      }
+      refreshStrategy("add:" + block.key);
     });
 
     var role = VOCABULARY.roles[block.role] || {};
@@ -550,37 +650,83 @@
       addForm);
   }
 
+  // True when the source was searched and its string or filters changed since:
+  // the counts on screen then belong to the previous search.
+  function isStale(provider) {
+    if (state.origin !== "search" || !state.executed || !state.compiled) return false;
+    var ran = state.executed.queries[provider];
+    if (!ran) return false;
+    var now = queryFor(provider);
+    return ran.query !== now.query || JSON.stringify(ran.params || {}) !== JSON.stringify(now.params || {});
+  }
+
+  function anyStale() {
+    return Planner.LIVE_PROVIDERS.some(isStale);
+  }
+
+  function badgeFor(provider) {
+    var status = state.statuses.find(function (item) { return item.source === provider; });
+    if (Planner.LIVE_PROVIDERS.indexOf(provider) < 0) return { cls: "link", text: t("strategy.linkOnly") };
+    if (!status) return null;
+    var stale = isStale(provider) ? " · " + t("strategy.staleShort") : "";
+    if (status.status === "ok") {
+      return {
+        cls: "ok" + (stale ? " stale" : ""),
+        text: t("strategy.returned", { n: fmtNumber(status.returned) }) + (typeof status.total_found === "number" ? " · " + t("status.total", { total: fmtNumber(status.total_found) }) : "") + stale
+      };
+    }
+    if (status.status === "error") return { cls: "error" + (stale ? " stale" : ""), text: t("status.error") + stale };
+    return null;
+  }
+
+  function updateStaleMarkers() {
+    var body = $("strategy-body");
+    body.querySelectorAll(".query-card[data-provider]").forEach(function (card) {
+      var badge = card.querySelector(".query-status");
+      var info = badgeFor(card.getAttribute("data-provider"));
+      if (badge && info) { badge.className = "query-status " + info.cls; badge.textContent = info.text; }
+    });
+    var stale = anyStale();
+    var notice = $("strategy-stale");
+    if (notice) notice.hidden = !stale;
+    var statusNote = $("status-stale");
+    if (statusNote) statusNote.hidden = !stale;
+  }
+
+  function filterText(params) {
+    return params && params.filter ? t("strategy.filter", { filter: params.filter }) : "";
+  }
+
   function queryCard(provider) {
     var compiled = state.compiled.providers[provider];
     var spec = queryFor(provider);
-    var edited = typeof state.overrides[provider] === "string";
+    var edited = spec.edited;
     var live = Planner.LIVE_PROVIDERS.indexOf(provider) >= 0;
     var status = state.statuses.find(function (item) { return item.source === provider; });
-    var area = el("textarea", { class: "query-text", rows: "3", spellcheck: "false", "aria-label": sourceLabel(provider) });
+    var area = el("textarea", { class: "query-text", rows: "3", spellcheck: "false", "data-fk": "query:" + provider, "aria-label": sourceLabel(provider) });
     area.value = spec.query;
     var link = externalLink(siteUrlFor(provider, spec.query, spec.params), t("strategy.open." + provider), "btn btn-ghost btn-small");
+    var copy = el("button", { type: "button", class: "btn btn-ghost btn-small", text: t("strategy.copy") });
+    copy.addEventListener("click", function () { copyText(area.value, copy); });
+    var restore = el("button", {
+      type: "button",
+      class: "btn btn-ghost btn-small",
+      "data-fk": "restore:" + provider,
+      text: t("strategy.restore"),
+      hidden: !edited,
+      onclick: function () { delete state.overrides[provider]; renderStrategy("query:" + provider); }
+    });
     area.addEventListener("input", function () {
       state.overrides[provider] = area.value;
       var url = siteUrlFor(provider, area.value, spec.params);
       if (url) link.setAttribute("href", url);
       card.classList.add("edited");
+      restore.hidden = false;
+      updateStaleMarkers();
     });
-    var copy = el("button", { type: "button", class: "btn btn-ghost btn-small", text: t("strategy.copy") });
-    copy.addEventListener("click", function () { copyText(area.value, copy); });
-    var restore = edited ? el("button", {
-      type: "button",
-      class: "btn btn-ghost btn-small",
-      text: t("strategy.restore"),
-      onclick: function () { delete state.overrides[provider]; renderStrategy(); }
-    }) : null;
 
-    var badge = null;
-    if (live && status) {
-      if (status.status === "ok") badge = el("span", { class: "query-status ok", text: t("strategy.returned", { n: fmtNumber(status.returned) }) + (typeof status.total_found === "number" ? " · " + t("status.total", { total: fmtNumber(status.total_found) }) : "") });
-      else if (status.status === "error") badge = el("span", { class: "query-status error", text: t("status.error") });
-    } else if (!live) {
-      badge = el("span", { class: "query-status link", text: t("strategy.linkOnly") });
-    }
+    var info = badgeFor(provider);
+    var badge = info ? el("span", { class: "query-status " + info.cls, text: info.text }) : null;
 
     var notes = (compiled.notes || []).filter(function (note) { return note !== "link_only"; }).map(function (note) {
       return el("li", { text: t("note." + note) });
@@ -596,33 +742,57 @@
         tr.phrases_ignored.length ? el("p", { class: "note", text: t("strategy.ignored", { list: tr.phrases_ignored.join(", ") }) }) : null);
     }
 
-    var card = el("article", { class: "query-card" + (edited ? " edited" : "") + (live ? "" : " link-only") },
+    var filter = filterText(spec.params);
+    var card = el("article", { class: "query-card" + (edited ? " edited" : "") + (live ? "" : " link-only"), "data-provider": provider },
       el("header", null,
         el("strong", { text: sourceLabel(provider) }),
         badge,
         el("span", { class: "edited-tag", text: t("strategy.edited") })),
       el("p", { class: "dialect", text: t("dialect." + compiled.dialect) }),
       area,
+      filter ? el("p", { class: "query-filter" }, el("code", { text: filter })) : null,
+      el("p", { class: "edited-note", text: t("strategy.editedNote") }),
       el("div", { class: "query-actions" }, copy, link, restore),
       notes.length ? el("ul", { class: "query-notes" }, notes) : null,
       translation);
     return card;
   }
 
-  function renderStrategy() {
+  function plural(key, n, params) {
+    return t(key + (n === 1 ? ".one" : ".other"), params);
+  }
+
+  function renderStrategy(focusKey) {
     var section = $("strategy");
-    var body = clear($("strategy-body"));
-    if (!state.plan || state.origin === "file") { section.hidden = true; return; }
+    var view = section.hidden ? null : captureStrategyView();
+    var body = $("strategy-body");
+    // Hold the current height while rebuilding so the page does not shrink and jump.
+    if (view) body.style.minHeight = body.offsetHeight + "px";
+    clear(body);
+    if (!state.plan || state.origin === "file") { body.style.minHeight = ""; section.hidden = true; return; }
     section.hidden = false;
+    buildStrategy(body);
+    updateStaleMarkers();
+    body.style.minHeight = "";
+    if (view) restoreStrategyView(view, focusKey);
+  }
+
+  function buildStrategy(body) {
     var plan = state.plan;
     var enabledBlocks = plan.blocks.filter(function (block) { return block.enabled; });
+    var recognised = plan.blocks.filter(function (b) { return b.source === "vocabulary"; }).length;
     var summary = plan.mode === "manual"
       ? t("strategy.summaryManual")
-      : t("strategy.summary", { n: plan.blocks.filter(function (b) { return b.source === "vocabulary"; }).length, on: enabledBlocks.length });
+      : plural("strategy.concepts", recognised, { n: recognised }) + " · " + plural("strategy.blocksOn", enabledBlocks.length, { on: enabledBlocks.length });
     $("strategy-summary").textContent = summary;
 
     if (plan.mode === "manual") {
       body.appendChild(el("div", { class: "manual-box" },
+        plan.warnings.filter(function (warning) { return warning.code !== "manual_string"; }).length
+          ? el("ul", { class: "strategy-warnings" }, plan.warnings.filter(function (warning) { return warning.code !== "manual_string"; }).map(function (warning) {
+            return el("li", { text: warningText(warning) });
+          }))
+          : null,
         el("p", { text: t("warn.manual_string") }),
         el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.interpret"), onclick: function () { runSearch(state.query, { literal: true }); } })));
     } else {
@@ -650,16 +820,16 @@
       var fieldGroup = el("div", { class: "field-mode", role: "radiogroup", "aria-label": t("strategy.fieldMode") },
         el("span", { class: "control-label", text: t("strategy.fieldMode") }),
         Planner.FIELD_MODES.map(function (mode) {
-          var radio = el("input", { type: "radio", name: "field-mode", value: mode });
+          var radio = el("input", { type: "radio", name: "field-mode", value: mode, "data-fk": "field:" + mode });
           radio.checked = state.fieldMode === mode;
-          radio.addEventListener("change", function () { state.fieldMode = mode; state.overrides = {}; refreshStrategy(); });
+          radio.addEventListener("change", function () { state.fieldMode = mode; refreshStrategy(); });
           return el("label", { class: "radio" }, radio, el("span", { text: t("strategy.field." + mode) }));
         }));
-      var pt = el("input", { type: "checkbox" });
+      var pt = el("input", { type: "checkbox", "data-fk": "include-pt" });
       pt.checked = state.includePt;
-      pt.addEventListener("change", function () { state.includePt = pt.checked; state.overrides = {}; refreshStrategy(); });
-      var yearFrom = el("input", { type: "number", min: "1900", max: String(currentYear() + 1), placeholder: "—", "aria-label": t("filters.yearFrom") });
-      var yearTo = el("input", { type: "number", min: "1900", max: String(currentYear() + 1), placeholder: "—", "aria-label": t("filters.yearTo") });
+      pt.addEventListener("change", function () { state.includePt = pt.checked; refreshStrategy(); });
+      var yearFrom = el("input", { type: "number", min: "1900", max: String(currentYear() + 1), placeholder: "—", "data-fk": "year-from", "aria-label": t("strategy.years") + " " + t("filters.yearFrom") });
+      var yearTo = el("input", { type: "number", min: "1900", max: String(currentYear() + 1), placeholder: "—", "data-fk": "year-to", "aria-label": t("strategy.years") + " " + t("filters.yearTo") });
       if (plan.year_from) yearFrom.value = String(plan.year_from);
       if (plan.year_to) yearTo.value = String(plan.year_to);
       var onYears = function () {
@@ -667,8 +837,8 @@
         var to = Number(yearTo.value);
         plan.year_from = from >= 1900 ? from : null;
         plan.year_to = to >= 1900 ? to : null;
-        state.overrides = {};
-        refreshStrategy();
+        // "change" fires while focus is moving (Tab); rebuild once it has landed.
+        setTimeout(function () { refreshStrategy(); }, 0);
       };
       yearFrom.addEventListener("change", onYears);
       yearTo.addEventListener("change", onYears);
@@ -687,6 +857,7 @@
         return sourceLabel(provider) + "\n" + queryFor(provider).query;
       }).join("\n\n"), copyAll);
     });
+    body.appendChild(el("p", { id: "strategy-stale", class: "stale-note", role: "status", hidden: true, text: t("strategy.stale") }));
     body.appendChild(el("div", { class: "strategy-actions" },
       el("button", { type: "button", class: "btn btn-primary", text: t("strategy.rerun"), onclick: function () { executePlan(); } }),
       copyAll));
@@ -702,13 +873,94 @@
 
   // ------------------------------------------------------------------ hash state
 
+  function cleanTerm(value) {
+    return String(value || "").replace(/"/g, " ").replace(/\s+/g, " ").trim().slice(0, MAX_TERM_LENGTH);
+  }
+
+  function linkYear(value) {
+    var year = Number(value);
+    return Number.isInteger(year) && year >= 1900 && year <= currentYear() + 1 ? year : null;
+  }
+
+  // What the person changed in the strategy panel, relative to the plan the same
+  // question produces on its own: blocks switched on/off (e), terms switched off (x),
+  // synonyms added (a), the period (y) and strings edited by hand (o).
+  function strategyDelta() {
+    var plan = state.plan;
+    var delta = {};
+    if (!plan) return delta;
+    if (plan.mode !== "manual") {
+      var fresh = freshPlan(state.query, state.literal);
+      var defaults = {};
+      fresh.blocks.forEach(function (block) { defaults[block.key] = block.enabled; });
+      var blocks = {};
+      plan.blocks.forEach(function (block) {
+        var entry = {};
+        if (defaults[block.key] !== undefined && block.enabled !== defaults[block.key]) entry.e = block.enabled ? 1 : 0;
+        var off = block.terms.filter(function (term) { return term.enabled === false; }).map(function (term) { return term.text; });
+        var added = block.terms.filter(function (term) { return term.added; }).map(function (term) { return term.text; });
+        if (off.length) entry.x = off;
+        if (added.length) entry.a = added;
+        if (Object.keys(entry).length) blocks[block.key] = entry;
+      });
+      if (Object.keys(blocks).length) delta.b = blocks;
+      if ((plan.year_from || null) !== (fresh.year_from || null) || (plan.year_to || null) !== (fresh.year_to || null)) {
+        delta.y = [plan.year_from || null, plan.year_to || null];
+      }
+    }
+    var edited = {};
+    STRATEGY_PROVIDERS.forEach(function (provider) {
+      if (typeof state.overrides[provider] === "string") edited[provider] = state.overrides[provider];
+    });
+    if (Object.keys(edited).length) delta.o = edited;
+    return delta;
+  }
+
+  // Applies a delta read from a link. Everything is validated: the link is input
+  // from anyone, and unknown blocks, sources or malformed values are ignored.
+  function applyStrategyDelta(plan, delta) {
+    if (!delta || typeof delta !== "object") return;
+    if (plan.mode !== "manual" && delta.b && typeof delta.b === "object") {
+      plan.blocks.forEach(function (block) {
+        var entry = delta.b[block.key];
+        if (!entry || typeof entry !== "object") return;
+        if (entry.e === 0 || entry.e === 1) block.enabled = entry.e === 1;
+        (Array.isArray(entry.a) ? entry.a.slice(0, 20) : []).forEach(function (raw) {
+          var text = cleanTerm(raw);
+          if (text && !block.terms.some(function (term) { return term.text === text; })) {
+            block.terms.push({ text: text, lang: block.role === "free" ? "any" : "en", enabled: true, added: true });
+          }
+        });
+        (Array.isArray(entry.x) ? entry.x.slice(0, 100) : []).forEach(function (raw) {
+          block.terms.forEach(function (term) { if (term.text === String(raw)) term.enabled = false; });
+        });
+      });
+    }
+    if (plan.mode !== "manual" && Array.isArray(delta.y)) {
+      plan.year_from = linkYear(delta.y[0]);
+      plan.year_to = linkYear(delta.y[1]);
+    }
+    if (delta.o && typeof delta.o === "object") {
+      STRATEGY_PROVIDERS.forEach(function (provider) {
+        if (typeof delta.o[provider] === "string") state.overrides[provider] = delta.o[provider].slice(0, MAX_LINK_STRING);
+      });
+    }
+  }
+
+  // The link reproduces the search whose results are on screen: the strategy as it
+  // was executed, not unsaved edits made afterwards.
   function updateHash() {
     var params = new URLSearchParams();
+    var executed = state.origin === "search" ? state.executed : null;
     if (state.query) params.set("q", state.query);
     params.set("src", Array.from(state.sources).join(","));
     params.set("n", String(state.limit));
-    if (state.fieldMode !== "title_abstract") params.set("f", state.fieldMode);
-    if (state.includePt) params.set("pt", "1");
+    var fieldMode = executed ? executed.field_mode : state.fieldMode;
+    var includePt = executed ? executed.include_pt : state.includePt;
+    if (fieldMode !== "title_abstract") params.set("f", fieldMode);
+    if (includePt) params.set("pt", "1");
+    if (executed && executed.literal) params.set("lit", "1");
+    if (executed && executed.strategy && Object.keys(executed.strategy).length) params.set("s", JSON.stringify(executed.strategy));
     if (I18n.lang() !== "pt") params.set("lang", I18n.lang());
     try { history.replaceState(null, "", "#" + params.toString()); } catch (error) { location.hash = params.toString(); }
   }
@@ -724,7 +976,14 @@
     if ([25, 50, 100].indexOf(limit) >= 0) { state.limit = limit; $("limit").value = String(limit); }
     if (Planner.FIELD_MODES.indexOf(params.get("f")) >= 0) state.fieldMode = params.get("f");
     state.includePt = params.get("pt") === "1";
-    return { query: params.get("q") || "", lang: params.get("lang") || "" };
+    var strategy = null;
+    try { strategy = params.get("s") ? JSON.parse(params.get("s")) : null; } catch (error) { strategy = null; }
+    return {
+      query: params.get("q") || "",
+      lang: params.get("lang") || "",
+      literal: params.get("lit") === "1",
+      strategy: strategy
+    };
   }
 
   // ------------------------------------------------------------------ results: filters
@@ -853,6 +1112,16 @@
     return true;
   }
 
+  // Alphabetical order starts at the first letter: leading brackets, digits and
+  // abstract codes ("[Article in Portuguese]", "607-P: ...") are skipped.
+  function titleSortKey(row) {
+    var title = String(row.title || "");
+    var code = title.match(/^\s*\d+[-\w]*\s*:\s*/);
+    if (code) title = title.slice(code[0].length);
+    var key = title.replace(/^[^\p{L}]+/u, "");
+    return key || title;
+  }
+
   function sortRows(rows) {
     var sorted = rows.slice();
     var byRank = function (a, b) { return a.reference_rank - b.reference_rank; };
@@ -861,7 +1130,7 @@
     } else if (state.sort === "completeness") {
       sorted.sort(function (a, b) { return (b.metadata_completeness.present - a.metadata_completeness.present) || byRank(a, b); });
     } else if (state.sort === "title") {
-      sorted.sort(function (a, b) { return String(a.title || "").localeCompare(String(b.title || ""), undefined, { sensitivity: "base" }) || byRank(a, b); });
+      sorted.sort(function (a, b) { return titleSortKey(a).localeCompare(titleSortKey(b), undefined, { sensitivity: "base" }) || byRank(a, b); });
     } else {
       sorted.sort(byRank);
     }
@@ -1422,7 +1691,7 @@
     if (!trimmed) return [];
     if (trimmed[0] === "[" || (trimmed[0] === "{" && !/\}\s*\n\s*\{/.test(trimmed))) {
       try {
-        var parsed = JSON.parse(trimmed);
+        var parsed = parseJson(trimmed);
         if (Array.isArray(parsed)) return parsed.map(fromExport);
         if (parsed && typeof parsed === "object") {
           if (Array.isArray(parsed.records) || Array.isArray(parsed.quarantine)) {
@@ -1435,8 +1704,23 @@
       }
     }
     return trimmed.split(/\r?\n/).filter(function (line) { return line.trim(); }).map(function (line) {
-      return fromExport(JSON.parse(line));
+      return fromExport(parseJson(line));
     });
+  }
+
+  function parseJson(text) {
+    try { return JSON.parse(text); } catch (error) { throw new Error(t("file.invalidJson")); }
+  }
+
+  var RECORD_FIELDS = ["title", "doi", "pmid", "pmcid", "url"];
+
+  // A file is accepted only if its rows look like bibliographic records; anything
+  // else is rejected without touching the results already on screen.
+  function looksBibliographic(rows) {
+    var hits = rows.filter(function (row) {
+      return RECORD_FIELDS.some(function (field) { return String(row[field] || "").trim(); });
+    }).length;
+    return hits > 0 && hits >= Math.ceil(rows.length / 2);
   }
 
   function loadFile(file) {
@@ -1445,6 +1729,7 @@
     file.text().then(function (text) {
       var rows = parseFileText(file.name, text).filter(function (row) { return row && typeof row === "object" && !Array.isArray(row); });
       if (!rows.length) throw new Error(t("file.empty"));
+      if (!looksBibliographic(rows)) throw new Error(t("file.notRecognised"));
       if (rows.length > MAX_FILE_ROWS) rows = rows.slice(0, MAX_FILE_ROWS);
       state.token += 1;
       state.origin = "file";
@@ -1486,6 +1771,7 @@
     });
     I18n.apply(document);
     setSearching($("search-btn").disabled);
+    renderExamples();
     renderGuide();
     renderAll();
     if (state.query) updateHash();
@@ -1504,7 +1790,6 @@
     var saved = "";
     try { saved = localStorage.getItem("nutev-open-lang") || ""; } catch (error) { saved = ""; }
     renderSourcePicker();
-    renderExamples();
     setLanguage(fromHash.lang || saved || "pt", false);
     selectTab("results");
 
@@ -1525,7 +1810,7 @@
 
     if (fromHash.query) {
       $("q").value = fromHash.query;
-      runSearch(fromHash.query);
+      runSearch(fromHash.query, { literal: fromHash.literal, strategy: fromHash.strategy });
     }
   }
 

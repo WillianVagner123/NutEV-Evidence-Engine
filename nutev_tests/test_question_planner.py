@@ -211,6 +211,40 @@ def test_empty_and_noise_questions_are_explicit():
     assert {"code": "no_vocabulary_concepts"} in _plan("kefir kombucha")["warnings"]
 
 
+def test_unknown_words_are_combined_with_and_not_as_one_phrase():
+    plan = _plan("kefir kombucha")
+    assert [(b["role"], b["label_en"]) for b in plan["blocks"]] == [("free", "kefir"), ("free", "kombucha")]
+    providers = compile_queries(plan, current_year=YEAR)["providers"]
+    assert providers["pubmed"]["query"] == '("kefir"[tiab]) AND ("kombucha"[tiab])'
+    assert '"kefir kombucha"' not in providers["europepmc"]["query"]
+    assert providers["openalex"]["query"] == "(kefir) AND (kombucha)"
+
+
+def test_bvs_uses_the_default_index_like_scielo():
+    plan = _plan(QUESTIONS[0])
+    providers = compile_queries(plan, current_year=YEAR)["providers"]
+    bvs = providers["bvs_lilacs"]
+    assert "tw:" not in bvs["query"] and '"dieta mediterrânea"' in bvs["query"]
+    assert bvs["query"] == providers["scielo"]["query"]
+    assert bvs["dialect"] == "bvs_default_index_pt_en"
+
+
+def test_crossref_keeps_synonyms_the_person_added():
+    plan = _plan(QUESTIONS[0])
+    for block in plan["blocks"]:
+        if block["key"].startswith("intervention"):
+            block["terms"].append({"text": "MedDiet", "lang": "en", "enabled": True, "added": True})
+    crossref = compile_queries(plan, current_year=YEAR)["providers"]["crossref"]["query"]
+    assert "MedDiet" in crossref and len(crossref.split(" ")) <= 14
+
+
+def test_manual_string_with_pubmed_fields_warns_about_other_sources():
+    plan = _plan('("mediterranean diet"[tiab]) AND diabetes')
+    assert plan["mode"] == "manual"
+    assert {"code": "manual_pubmed_tags"} in plan["warnings"]
+    assert {"code": "manual_pubmed_tags"} not in _plan('"mediterranean diet" AND diabetes')["warnings"]
+
+
 def test_each_source_gets_its_own_syntax():
     plan = _plan(QUESTIONS[4])
     providers = compile_queries(plan, current_year=YEAR)["providers"]
@@ -218,7 +252,9 @@ def test_each_source_gets_its_own_syntax():
     assert "TITLE_ABS:" in providers["europepmc"]["query"] and "PUB_YEAR:[2010 TO 2020]" in providers["europepmc"]["query"]
     assert "[tiab]" not in providers["openalex"]["query"] and "*" not in providers["openalex"]["query"]
     assert " AND " not in providers["crossref"]["query"] and " OR " not in providers["crossref"]["query"]
-    assert 'tw:"obesidade"' in providers["bvs_lilacs"]["query"] and "tw:adolescent$" in providers["bvs_lilacs"]["query"]
+    bvs = providers["bvs_lilacs"]["query"]
+    assert '"obesidade"' in bvs or "obesidade" in bvs
+    assert "adolescent$" in bvs and "tw:" not in bvs
     assert "obesidade" in providers["scielo"]["query"] and "adolescent$" in providers["scielo"]["query"]
     assert providers["bvs_lilacs"]["site_url"].startswith("https://pesquisa.bvsalud.org/portal/?lang=pt&q=")
     assert providers["scielo"]["site_url"].startswith("https://search.scielo.org/?lang=pt&q=")
@@ -301,6 +337,26 @@ def test_browser_respects_manual_override():
         {"planner": {"questions": [QUESTIONS[20]], "currentYear": YEAR, "options": [], "detectManual": False}}
     )
     assert js["planner"][0]["plan"] == _plan(QUESTIONS[20], detect_manual=False)
+
+
+def test_browser_compiles_edited_plans_like_python():
+    edited = []
+    for question in (QUESTIONS[0], QUESTIONS[1], "kefir kombucha"):
+        plan = _plan(question)
+        first = plan["blocks"][0]
+        first["terms"][0]["enabled"] = False
+        first["terms"].append({"text": "MedDiet", "lang": "en", "enabled": True, "added": True})
+        first["terms"].append({"text": "dieta do mediterraneo", "lang": "pt", "enabled": True, "added": True})
+        plan["year_from"], plan["year_to"] = 2015, 2024
+        for field_mode in ("title_abstract", "broad"):
+            for include_pt in (False, True):
+                edited.append({"plan": plan, "currentYear": YEAR, "fieldMode": field_mode, "includePt": include_pt})
+    js = _run_harness({"compileEdited": edited})
+    for item, compiled in zip(edited, js["compileEdited"], strict=True):
+        expected = compile_queries(
+            item["plan"], field_mode=item["fieldMode"], include_pt=item["includePt"], current_year=YEAR
+        )
+        assert compiled == expected, (item["plan"]["question"], item["fieldMode"], item["includePt"])
 
 
 def test_every_planner_code_has_interface_text_in_both_languages():

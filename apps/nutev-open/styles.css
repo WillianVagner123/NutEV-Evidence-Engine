@@ -127,6 +127,9 @@ h3 { font-size: 1.05rem; margin-top: 1.6rem; }
 }
 .lang-switch button[aria-pressed="true"] { background: var(--brand); color: var(--on-brand); }
 .advanced-link[hidden] { display: none !important; }
+[hidden] { display: none !important; }
+/* Sections reached by scrollIntoView or #links stay below the sticky top bar. */
+[id] { scroll-margin-top: 84px; }
 .advanced-link { background: var(--brand-soft); border-color: var(--brand) !important; color: var(--brand-ink) !important; }
 .gh-link { font-size: 0.85rem; font-weight: 600; text-decoration: none; padding: 0.35rem 0.7rem; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink); }
 
@@ -560,6 +563,15 @@ select {
 .query-status.link { background: var(--surface-2); color: var(--ink-3); }
 .edited-tag { display: none; font-size: 0.72rem; font-weight: 700; color: var(--lvl-b-ink); }
 .query-card.edited .edited-tag { display: inline; }
+.edited-note { display: none; margin: 0.4rem 0 0; font-size: 0.78rem; color: var(--lvl-b-ink); }
+.query-card.edited .edited-note { display: block; }
+.query-status.stale { background: var(--lvl-b-soft); color: var(--lvl-b-ink); }
+.query-filter { margin: 0.35rem 0 0; font-size: 0.78rem; color: var(--ink-3); }
+.query-filter code { white-space: normal; overflow-wrap: anywhere; }
+.stale-note {
+  margin: 0.8rem 0 0; padding: 0.5rem 0.75rem; border-radius: 8px;
+  background: var(--lvl-b-soft); color: var(--lvl-b-ink); font-size: 0.85rem; font-weight: 600;
+}
 .query-card .dialect { font-size: 0.78rem; color: var(--ink-3); margin: 0.25rem 0 0.4rem; }
 .query-text {
   width: 100%; min-height: 4.5rem; resize: vertical; font-family: var(--mono); font-size: 0.76rem; line-height: 1.45;
