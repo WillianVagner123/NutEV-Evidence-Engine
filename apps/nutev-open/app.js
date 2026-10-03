@@ -377,14 +377,23 @@
     if (!state.statuses.length) { panel.hidden = true; return; }
     panel.hidden = false;
     state.statuses.forEach(function (status) {
-      var label = status.source === "file" ? t("status.file") + ": " + state.fileName : sourceLabel(status.source);
-      var detail = status.source === "file" ? t("file.loaded", { n: fmtNumber(status.returned), name: state.fileName }) + originalSearchNote() : statusDetail(status);
-      list.appendChild(el("li", { class: "status-item", "data-state": status.status },
-        el("span", { class: "status-dot", "aria-hidden": "true" }),
-        el("strong", { text: label }),
-        el("span", { class: "detail", text: detail })));
+      var label = status.source === "file" ? t("status.file") : sourceLabel(status.source);
+      if (status.source === "file") {
+        list.appendChild(el("li", { class: "status-item", "data-state": "ok" },
+          el("strong", { text: label }), el("span", { class: "detail", text: fmtNumber(status.returned) })));
+      } else if (status.status === "ok") {
+        var n = typeof status.total_found === "number" ? status.total_found : status.returned;
+        list.appendChild(el("li", { class: "status-item", "data-state": "ok" },
+          el("strong", { text: label }), el("span", { class: "detail", text: fmtNumber(n) })));
+      } else if (status.status === "error") {
+        var detail = statusDetail(status);
+        list.appendChild(el("li", { class: "status-item", "data-state": "error", "data-tip": detail },
+          el("strong", { text: "⚠ " + label }), el("span", { class: "detail", text: t("status.error") })));
+      } else {
+        list.appendChild(el("li", { class: "status-item", "data-state": status.status },
+          el("strong", { text: label }), el("span", { class: "detail", text: t("status.pending") })));
+      }
     });
-    // Keep unavailable/engine-only sources out of the primary result status line.
     $("status-stale").hidden = !anyStale();
   }
 
@@ -847,18 +856,20 @@
           el("span", { text: t("filters.yearFrom") }), yearFrom, el("span", { text: t("filters.yearTo") }), yearTo)));
     }
 
-    body.appendChild(el("h3", { text: t("strategy.queries") }));
-    body.appendChild(el("div", { class: "query-grid" }, STRATEGY_PROVIDERS.map(queryCard)));
     var copyAll = el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.copyAll") });
     copyAll.addEventListener("click", function () {
       copyText(STRATEGY_PROVIDERS.map(function (provider) {
         return sourceLabel(provider) + "\n" + queryFor(provider).query;
       }).join("\n\n"), copyAll);
     });
+    body.appendChild(el("details", { class: "queries-details" },
+      el("summary", { text: t("strategy.queries") }),
+      el("div", { class: "query-grid" }, STRATEGY_PROVIDERS.map(queryCard)),
+      el("p", null, copyAll)));
     body.appendChild(el("p", { id: "strategy-stale", class: "stale-note", role: "status", hidden: true, text: t("strategy.stale") }));
     body.appendChild(el("div", { class: "strategy-actions" },
       el("button", { type: "button", class: "btn btn-primary", text: t("strategy.rerun"), onclick: function () { executePlan(); } }),
-      copyAll));
+      el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.close"), onclick: closeStrategy })));
   }
 
   function loadRows(rows) {
@@ -1786,6 +1797,39 @@
     if (state.query) updateHash();
   }
 
+  // ------------------------------------------------------------------ drawers & theme
+
+  var strategyReturnFocus = null;
+
+  function openStrategy() {
+    var panel = $("strategy");
+    if (!state.plan || state.origin !== "search") return;
+    strategyReturnFocus = document.activeElement;
+    panel.hidden = false;
+    panel.removeAttribute("inert");
+    panel.setAttribute("aria-hidden", "false");
+    document.body.classList.add("strategy-open");
+    $("strategy-close").focus();
+  }
+
+  function closeStrategy() {
+    var panel = $("strategy");
+    document.body.classList.remove("strategy-open");
+    panel.setAttribute("aria-hidden", "true");
+    panel.setAttribute("inert", "");
+    if (strategyReturnFocus && strategyReturnFocus.focus) strategyReturnFocus.focus();
+  }
+
+  function toggleTheme() {
+    var root = document.documentElement;
+    var current = root.getAttribute("data-theme");
+    var systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var dark = current ? current === "dark" : systemDark;
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("nutev-open-theme", next); } catch (error) {}
+  }
+
   // ------------------------------------------------------------------ init
 
   function init() {
@@ -1798,6 +1842,10 @@
     var fromHash = readHash();
     var saved = "";
     try { saved = localStorage.getItem("nutev-open-lang") || ""; } catch (error) { saved = ""; }
+    try {
+      var savedTheme = localStorage.getItem("nutev-open-theme");
+      if (savedTheme === "light" || savedTheme === "dark") document.documentElement.setAttribute("data-theme", savedTheme);
+    } catch (error) {}
     renderSourcePicker();
     // On narrow screens the filters start closed so the first result is in view.
     if (window.matchMedia && window.matchMedia("(max-width: 860px)").matches) $("filters-details").open = false;
@@ -1814,6 +1862,15 @@
     $("export-csv").addEventListener("click", exportCsv);
     $("export-json").addEventListener("click", exportJson);
     $("copy-link").addEventListener("click", copyLink);
+    $("theme-toggle").addEventListener("click", toggleTheme);
+    $("open-strategy").addEventListener("click", openStrategy);
+    $("strategy-close").addEventListener("click", closeStrategy);
+    $("strategy-scrim").addEventListener("click", closeStrategy);
+    $("mobile-filter-btn").addEventListener("click", function () { document.body.classList.toggle("filters-open"); });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && document.body.classList.contains("strategy-open")) closeStrategy();
+      if (event.key === "Escape" && document.body.classList.contains("filters-open")) document.body.classList.remove("filters-open");
+    });
     $("brand-home").addEventListener("click", function (event) { event.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); $("q").focus(); });
     document.querySelectorAll(".lang-switch button").forEach(function (button) {
       button.addEventListener("click", function () { setLanguage(button.getAttribute("data-lang"), true); });
