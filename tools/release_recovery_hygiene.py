@@ -13,12 +13,14 @@ is not protected, and at least the configured number of complete rollback points
 remain. Scientific output volumes are never touched.
 
 The CLI also reclaims Docker image tags only when they are named ``nutev:<SHA>``,
-the SHA is in the failed-deploy allowlist, and no running or stopped container
-references the image. A final ordinary ``docker image prune`` removes only
-dangling, unused images. Bounded production retention also reclaims unused Docker
-builder cache; callers outside bounded retention may opt in with
-``--prune-builder-cache``. This invokes only ``docker builder prune -a -f`` and
-never prunes containers, runtime images, networks or volumes.
+the SHA belongs to an explicit trusted allowlist (failed deploys or historical
+releases already outside the retained-success window), the SHA is not protected,
+and no running or stopped container references the image. A final ordinary
+``docker image prune`` removes only dangling, unused images. Bounded production
+retention also reclaims unused Docker builder cache; callers outside bounded
+retention may opt in with ``--prune-builder-cache``. This invokes only
+``docker builder prune -a -f`` and never prunes containers, runtime images,
+networks or volumes.
 """
 from __future__ import annotations
 
@@ -232,6 +234,69 @@ def prune_failed_images(
     }
 
 
+def prune_historical_images(
+    allowed_image_shas: set[str],
+    *,
+    protected_shas: set[str] | None = None,
+    runner: Runner = _subprocess_runner,
+) -> dict:
+    """Remove only unused allowlisted historical ``nutev:<sha>`` tags.
+
+    The allowlist is derived from trusted deployment history. Protected SHAs
+    (especially the live release) are never removed. A referenced image is also
+    preserved even when its SHA is allowlisted.
+    """
+    allowed_image_shas = _validated_allowlist(
+        set(allowed_image_shas), label="historical-image prune allowlist"
+    )
+    protected_shas = _validated_allowlist(
+        set(protected_shas or set()), label="protected image allowlist"
+    )
+    removed_tags = 0
+    preserved_in_use = 0
+    preserved_protected = 0
+    absent_tags = 0
+
+    for sha in sorted(allowed_image_shas):
+        if sha in protected_shas:
+            preserved_protected += 1
+            continue
+        image_ref = f"nutev:{sha}"
+        listed = runner(["docker", "image", "ls", "--quiet", "--no-trunc", image_ref])
+        if listed.returncode != 0:
+            raise RuntimeError(f"docker image lookup failed for historical SHA {sha}")
+        image_ids = {line.strip() for line in listed.stdout.splitlines() if line.strip()}
+        if not image_ids:
+            absent_tags += 1
+            continue
+        if len(image_ids) != 1:
+            raise RuntimeError(f"ambiguous docker image identity for historical SHA {sha}")
+
+        containers = runner(["docker", "ps", "-aq", "--filter", f"ancestor={image_ref}"])
+        if containers.returncode != 0:
+            raise RuntimeError(f"docker container lookup failed for historical SHA {sha}")
+        if containers.stdout.strip():
+            preserved_in_use += 1
+            continue
+
+        removed = runner(["docker", "image", "rm", image_ref])
+        if removed.returncode != 0:
+            raise RuntimeError(f"docker image removal failed for historical SHA {sha}")
+        removed_tags += 1
+
+    dangling = runner(["docker", "image", "prune", "-f"])
+    if dangling.returncode != 0:
+        raise RuntimeError("docker dangling-image prune failed after historical cleanup")
+
+    return {
+        "removed_historical_image_tags": removed_tags,
+        "preserved_historical_images_in_use": preserved_in_use,
+        "preserved_protected_historical_images": preserved_protected,
+        "absent_historical_image_tags": absent_tags,
+        "historical_dangling_image_prune": "PASS",
+    }
+
+
 def prune_builder_cache(*, runner: Runner = _subprocess_runner) -> dict:
     """Reclaim only unused Docker build cache; never prune runtime objects."""
     command = ["docker", "builder", "prune", "-a", "-f"]
@@ -253,6 +318,7 @@ def main() -> int:
     parser.add_argument("--allow-sha", action="append", default=[])
     parser.add_argument("--protect-sha", action="append", default=[])
     parser.add_argument("--prune-complete-sha", action="append", default=[])
+    parser.add_argument("--prune-image-sha", action="append", default=[])
     parser.add_argument("--retain-complete", type=int)
     parser.add_argument("--prune-builder-cache", action="store_true")
     parser.add_argument("--json", action="store_true")
@@ -260,6 +326,7 @@ def main() -> int:
     allowed_failed_shas = set(args.allow_sha)
     protected_shas = set(args.protect_sha)
     allowed_complete_prune_shas = set(args.prune_complete_sha)
+    allowed_image_prune_shas = set(args.prune_image_sha)
     try:
         recovery = prune_incomplete(
             args.base,
@@ -270,6 +337,10 @@ def main() -> int:
             allowed_complete_prune_shas=allowed_complete_prune_shas,
         )
         images = prune_failed_images(allowed_failed_shas)
+        historical_images = prune_historical_images(
+            allowed_image_prune_shas,
+            protected_shas=protected_shas,
+        )
         builder_cache = (
             prune_builder_cache()
             if should_prune_builder_cache(
@@ -284,6 +355,7 @@ def main() -> int:
             "status": "PASS",
             **recovery,
             **images,
+            **historical_images,
             **builder_cache,
             "approved_failed_sha_count": len(allowed_failed_shas),
             "protected_sha_count": len(protected_shas),
