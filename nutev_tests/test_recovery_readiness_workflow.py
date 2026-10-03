@@ -37,6 +37,7 @@ def test_deploy_history_controls_all_recovery_cleanup() -> None:
     assert "complete_prune = (failed | set(successful[3:])) - keep_success" in block
     assert "--allow-sha" in block
     assert "--prune-complete-sha" in block
+    assert "--prune-image-sha" in block
     assert "release_recovery_hygiene.py" in block
 
 

@@ -324,6 +324,48 @@ def test_docker_lookup_failure_fails_closed() -> None:
         HYGIENE.prune_failed_images({FAILED}, runner=broken)
 
 
+def test_historical_image_prune_removes_only_allowlisted_unused_tag() -> None:
+    historical_ref = f"nutev:{OTHER}"
+    unrelated_ref = f"nutev:{THIRD}"
+    docker = FakeDocker(images={historical_ref, unrelated_ref})
+
+    report = HYGIENE.prune_historical_images({OTHER}, protected_shas={ACTIVE}, runner=docker)
+
+    assert report["removed_historical_image_tags"] == 1
+    assert historical_ref not in docker.images
+    assert unrelated_ref in docker.images
+    assert ["docker", "image", "rm", unrelated_ref] not in docker.calls
+    assert report["historical_dangling_image_prune"] == "PASS"
+
+
+def test_historical_image_prune_preserves_protected_sha() -> None:
+    protected_ref = f"nutev:{ACTIVE}"
+    docker = FakeDocker(images={protected_ref})
+
+    report = HYGIENE.prune_historical_images({ACTIVE}, protected_shas={ACTIVE}, runner=docker)
+
+    assert report["preserved_protected_historical_images"] == 1
+    assert report["removed_historical_image_tags"] == 0
+    assert protected_ref in docker.images
+    assert ["docker", "image", "rm", protected_ref] not in docker.calls
+
+
+def test_historical_image_prune_preserves_container_referenced_image() -> None:
+    historical_ref = f"nutev:{OTHER}"
+    docker = FakeDocker(images={historical_ref}, in_use={historical_ref})
+
+    report = HYGIENE.prune_historical_images({OTHER}, runner=docker)
+
+    assert report["preserved_historical_images_in_use"] == 1
+    assert report["removed_historical_image_tags"] == 0
+    assert historical_ref in docker.images
+
+
+def test_historical_image_prune_rejects_untrusted_sha() -> None:
+    with pytest.raises(ValueError, match="historical-image prune allowlist"):
+        HYGIENE.prune_historical_images({"main"}, runner=FakeDocker(images=set()))
+
+
 def test_builder_cache_prune_is_explicit_and_scoped_to_build_cache() -> None:
     calls: list[list[str]] = []
 

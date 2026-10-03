@@ -109,6 +109,22 @@ Contract states:
 
 The contract does not change Registry identity, ranking, CORE, MEV, PRESS/PRISMA, eligibility or scientific inclusion state.
 
+## Bounded historical Docker image retention
+
+The production recovery-readiness gate also reclaims historical `nutev:<sha>`
+image tags when, and only when, all of the following are true:
+
+- the SHA comes from trusted `deploy-hetzner` workflow history and is already outside
+  the three most recent successful releases retained by policy;
+- the SHA is not the live production release and is not the candidate being promoted;
+- no running or stopped container references that image tag.
+
+This cleanup removes only the explicitly allowlisted tag and then runs ordinary
+dangling-image cleanup. It does not run `docker system prune`, `docker volume prune`,
+container deletion, network deletion or volume mutation. The three complete recovery
+snapshots, the active release and the recent-success retention floor remain unchanged.
+Scientific data volumes are never part of this cleanup.
+
 ## Readiness check before deploy
 
 `.github/workflows/hetzner-readiness.yml` is a manual, `main`-only preflight that uses the same `HETZNER` environment but does **not** deploy or replace containers.

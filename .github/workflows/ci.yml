@@ -335,7 +335,7 @@ jobs:
             [[ "$sha" =~ ^[0-9a-f]{40}$ ]]
             [[ "$sha" != "$TARGET_SHA" ]]
             [[ "$sha" != "$ACTIVE_SHA" ]]
-            REMOTE_CMD+=" --prune-complete-sha $sha"
+            REMOTE_CMD+=" --prune-complete-sha $sha --prune-image-sha $sha"
           done < complete-prune-shas.txt
           ssh -o StrictHostKeyChecking=yes -o BatchMode=yes -o IdentitiesOnly=yes -o ConnectTimeout=15 \
             -p "$PORT" "$HETZNER_USER@$HETZNER_HOST" "$REMOTE_CMD" \
