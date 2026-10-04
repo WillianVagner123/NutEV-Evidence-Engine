@@ -1,16 +1,16 @@
 :root{
-  --dashboard-bg:#f6f7f5;
+  --dashboard-bg:#fafaf9;
   --dashboard-surface:#ffffff;
-  --dashboard-surface-muted:#f0f3f1;
-  --dashboard-border:#e1e6e3;
-  --dashboard-text:#15211e;
-  --dashboard-muted:#687672;
+  --dashboard-surface-muted:#f3f6f5;
+  --dashboard-border:#e5e8e7;
+  --dashboard-text:#18201f;
+  --dashboard-muted:#697471;
   --dashboard-primary:#0f766e;
   --dashboard-success:#16794f;
-  --dashboard-warning:#a16207;
-  --dashboard-danger:#b42318;
+  --dashboard-warning:#806000;
+  --dashboard-danger:#9f3028;
   --dashboard-info:#35659a;
-  --dashboard-radius:18px;
+  --dashboard-radius:8px;
 }
 .dashboard-main{max-width:1680px;padding-bottom:5rem}
 .dashboard-topbar{align-items:center;margin-bottom:1.4rem}
