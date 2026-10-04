@@ -135,26 +135,42 @@ def _all_page_smoke(browser: Any) -> None:
         "\n".join(routes) + "\n",
         encoding="utf-8",
     )
-    critical = set(ROUTES)
+    viewports = (
+        ("desktop", {"width": 1366, "height": 900}),
+        ("mobile", {"width": 390, "height": 844}),
+    )
+    matrix_rows = ["route\tviewport\tstatus\thorizontal_overflow_px"]
     for route in routes:
-        if route in critical:
-            continue
-        context = browser.new_context(viewport={"width": 1366, "height": 768})
-        page = context.new_page()
-        page_errors, console_errors, resource_errors = _diagnostics(page)
-        response = page.goto(BASE_URL + route, wait_until="domcontentloaded", timeout=20_000)
-        _assert(response is not None, f"{route}: navigation returned no response")
-        _assert(response.status < 400, f"{route}: HTTP {response.status}")
-        page.locator("body").wait_for(state="visible", timeout=5_000)
-        page.wait_for_timeout(800)
-        _assert(
-            len(page.locator("body").inner_text().strip()) > 20,
-            f"{route}: suspiciously empty page",
-        )
-        _assert_clean_diagnostics(
-            route, page_errors, console_errors, resource_errors
-        )
-        context.close()
+        for label, viewport in viewports:
+            context = browser.new_context(viewport=viewport)
+            page = context.new_page()
+            page_errors, console_errors, resource_errors = _diagnostics(page)
+            response = page.goto(BASE_URL + route, wait_until="domcontentloaded", timeout=20_000)
+            _assert(response is not None, f"{route} [{label}]: navigation returned no response")
+            _assert(response.status < 400, f"{route} [{label}]: HTTP {response.status}")
+            page.locator("body").wait_for(state="visible", timeout=5_000)
+            page.wait_for_timeout(500)
+            _assert(
+                len(page.locator("body").inner_text().strip()) > 20,
+                f"{route} [{label}]: suspiciously empty page",
+            )
+            overflow = float(page.evaluate(
+                "Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth"
+            ))
+            if label == "mobile":
+                _assert(
+                    overflow <= 2.0,
+                    f"{route} [mobile]: horizontal overflow detected: {overflow}px",
+                )
+            _assert_clean_diagnostics(
+                f"{route} [{label}]", page_errors, console_errors, resource_errors
+            )
+            matrix_rows.append(f"{route}\t{label}\tPASS\t{overflow:.1f}")
+            context.close()
+    (ARTIFACT_DIR / "all-page-viewport-matrix.tsv").write_text(
+        "\n".join(matrix_rows) + "\n",
+        encoding="utf-8",
+    )
 
 
 def _open_provider_controls(page: Page) -> None:
