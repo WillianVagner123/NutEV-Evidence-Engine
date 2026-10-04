@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>ClaimEvaluation Appraisal — NutEV</title>
+  <title>Avaliação de alegações — NutEV</title>
   <meta name="description" content="Avaliação humana claim-level sem score automático, RoB formal ou certainty automática.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
@@ -25,7 +25,7 @@
     </aside>
 
     <main class="main dashboard-main appraisal-main">
-      <header class="topbar dashboard-topbar"><div><h1>ClaimEvaluation / Scientific Appraisal</h1><p>Accepted claim · six explicit dimensions · no automatic overall grade</p></div><div class="dashboard-actions"><a href="/evidence-claims.html" class="ghost" style="text-decoration:none">EvidenceClaim Review</a><a href="/evidence-sets.html" class="ghost" style="text-decoration:none">EvidenceSet Construction</a><button id="refreshAppraisal" class="ghost" type="button">Atualizar</button><span id="appraisalHealth" class="status-pill">verificando…</span></div></header>
+      <header class="topbar dashboard-topbar"><div><h1>Avaliação de alegações</h1><p>Alegação aceita · seis dimensões explícitas · sem nota geral automática</p></div><div class="dashboard-actions"><a href="/evidence-claims.html" class="ghost" style="text-decoration:none">EvidenceClaim Review</a><a href="/evidence-sets.html" class="ghost" style="text-decoration:none">EvidenceSet Construction</a><button id="refreshAppraisal" class="ghost" type="button">Atualizar</button><span id="appraisalHealth" class="status-pill">verificando…</span></div></header>
 
       <section class="card project-hero"><div><div class="project-eyebrow">HUMAN APPRAISAL · NO AUTOMATIC SCORE · NOT FORMAL RoB/GRADE</div><h2>Avaliar o claim sem transformar julgamento em certainty automática</h2><p class="project-question">Somente EvidenceClaims canônicos aceitos entram nesta camada. Cada avaliação é claim-level, exige justificativa por dimensão e declara qual material foi usado. O sistema não agrega as dimensões em nota, não classifica certainty e não altera o status do EvidenceClaim.</p></div></section>
 
@@ -68,5 +68,6 @@
     </main>
   </div>
   <script type="module" src="./claim-appraisal.js"></script>
+  <script type="module" src="./product-ui.js"></script>
 </body>
 </html>
