@@ -15,8 +15,8 @@
 html{scroll-behavior:smooth}
 a,button,input,select,textarea,summary{outline-offset:3px}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid color-mix(in srgb,var(--nutev-focus) 72%,white);box-shadow:0 0 0 2px #fff}
-button,.nav-item,.context-login,.context-project-link{min-height:38px}
-input,select{min-height:38px}
+button,.nav-item,.context-login,.context-project-link{min-height:42px}
+input,select{min-height:42px}
 textarea{min-height:88px}
 .status-pill{font-size:.8rem}
 .skip-link{position:fixed;left:1rem;top:1rem;z-index:1400;transform:translateY(-180%);background:#fff;color:#111;padding:.7rem 1rem;border-radius:.65rem;box-shadow:0 4px 18px rgba(0,0,0,.18);font-weight:800}
