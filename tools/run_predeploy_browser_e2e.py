@@ -140,6 +140,7 @@ def _all_page_smoke(browser: Any) -> None:
         ("mobile", {"width": 390, "height": 844}),
     )
     matrix_rows = ["route\tviewport\tstatus\thorizontal_overflow_px"]
+    overflow_failures: list[str] = []
     for route in routes:
         for label, viewport in viewports:
             context = browser.new_context(viewport=viewport)
@@ -178,18 +179,22 @@ def _all_page_smoke(browser: Any) -> None:
                       .sort((a,b) => Math.max(b.right-window.innerWidth,b.scrollWidth-b.clientWidth) - Math.max(a.right-window.innerWidth,a.scrollWidth-a.clientWidth))
                       .slice(0, 12)"""
                 )
-                _assert(
-                    False,
-                    f"{route} [mobile]: horizontal overflow detected: {overflow}px; offenders={offenders}",
+                overflow_failures.append(
+                    f"{route} [mobile]: horizontal overflow detected: {overflow}px; offenders={offenders}"
                 )
             _assert_clean_diagnostics(
                 f"{route} [{label}]", page_errors, console_errors, resource_errors
             )
-            matrix_rows.append(f"{route}\t{label}\tPASS\t{overflow:.1f}")
+            status = "FAIL" if label == "mobile" and overflow > 2.0 else "PASS"
+            matrix_rows.append(f"{route}\t{label}\t{status}\t{overflow:.1f}")
             context.close()
     (ARTIFACT_DIR / "all-page-viewport-matrix.tsv").write_text(
         "\n".join(matrix_rows) + "\n",
         encoding="utf-8",
+    )
+    _assert(
+        not overflow_failures,
+        "mobile horizontal overflow failures:\n" + "\n".join(overflow_failures),
     )
 
 
