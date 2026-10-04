@@ -57,7 +57,7 @@
     filters: emptyFilters()
   };
 
-  function emptyFilters() {
+  function emptyFilters(allQuestionParts) {
     return {
       levels: new Set(),
       groups: new Set(),
@@ -66,7 +66,10 @@
       sources: new Set(),
       yearFrom: null,
       yearTo: null,
-      abstractOnly: false
+      abstractOnly: false,
+      allQuestionParts: Boolean(allQuestionParts),
+      excludePreprints: false,
+      excludeBookChapters: false
     };
   }
 
@@ -139,6 +142,16 @@
   function familyLabel(family, short) {
     if (!family) return t("family.unclassified");
     if (short) return "";
+    var friendly = {
+      mev_pillars: ["Hábitos e estilo de vida", "Lifestyle habits"],
+      nev_dietary_patterns: ["Padrões alimentares", "Dietary patterns"],
+      nev_nutrition_composition: ["Alimentos e composição", "Foods and composition"],
+      nev_culinary_literacy: ["Habilidades alimentares", "Food skills"],
+      context: ["Contexto", "Context"],
+      condition: ["Condições", "Conditions"],
+      outcome: ["Desfechos", "Outcomes"]
+    };
+    if (friendly[family.id]) return friendly[family.id][I18n.lang() === "pt" ? 0 : 1];
     var suffix = I18n.lang() === "pt" ? "_pt" : "_en";
     return String(family["label" + suffix] || "").replace(/\s*\((?:MEV|NEV|LM|LN)\)/g, "");
   }
