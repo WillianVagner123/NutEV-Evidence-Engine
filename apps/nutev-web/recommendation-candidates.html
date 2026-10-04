@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>RecommendationCandidate Drafting — NutEV</title>
+  <title>Rascunhos de recomendação — NutEV</title>
   <meta name="description" content="Autoria humana de RecommendationCandidates ligados a EvidenceSets finalizados, sem readiness, certainty ou recomendação automática.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
@@ -25,9 +25,9 @@
     </aside>
 
     <main class="main dashboard-main recommendation-main">
-      <header class="topbar dashboard-topbar"><div><h1>RecommendationCandidate Drafting</h1><p>Finalized EvidenceSets · human-authored statement · readiness not_evaluated</p></div><div class="dashboard-actions"><a href="/evidence-sets.html" class="ghost" style="text-decoration:none">EvidenceSets</a><a href="/recommendation-human-validation.html" class="ghost" style="text-decoration:none">HumanValidation</a><button id="refreshRecommendations" class="ghost" type="button">Atualizar</button><span id="recommendationHealth" class="status-pill">verificando…</span></div></header>
+      <header class="topbar dashboard-topbar"><div><h1>Rascunhos de recomendação</h1><p>Conjuntos finalizados · texto escrito por humano · prontidão não avaliada</p></div><div class="dashboard-actions"><a href="/evidence-sets.html" class="ghost" style="text-decoration:none">EvidenceSets</a><a href="/recommendation-human-validation.html" class="ghost" style="text-decoration:none">HumanValidation</a><button id="refreshRecommendations" class="ghost" type="button">Atualizar</button><span id="recommendationHealth" class="status-pill">verificando…</span></div></header>
 
-      <section class="card project-hero"><div><div class="project-eyebrow">HUMAN AUTHORSHIP · NO AUTO-READINESS · CANDIDATE ≠ VALIDATED RECOMMENDATION</div><h2>Escrever uma proposta rastreável sem deixar o sistema decidir o que recomendar</h2><p class="project-question">A Fase 19 recebe apenas EvidenceSets finalizados. O autor seleciona manualmente os sets e escreve o statement do zero. O NutEV não converte membership, quantidade de sets, julgamentos de ClaimEvaluation ou relações anteriores em texto, score, readiness, certainty ou recomendação. Candidates finalizados seguem para HumanValidation explícita sem alteração automática do readiness.</p></div></section>
+      <section class="card project-hero"><div><div class="project-eyebrow">Autoria humana · candidato ainda não validado</div><h2>Escrever uma proposta rastreável sem deixar o sistema decidir o que recomendar</h2><p class="project-question">A Fase 19 recebe apenas EvidenceSets finalizados. O autor seleciona manualmente os sets e escreve o statement do zero. O NutEV não converte membership, quantidade de sets, julgamentos de ClaimEvaluation ou relações anteriores em texto, score, readiness, certainty ou recomendação. Candidates finalizados seguem para HumanValidation explícita sem alteração automática do readiness.</p></div></section>
 
       <div id="recommendationState" class="loading dashboard-state">Conectando ao coordenador local…</div>
 
@@ -77,5 +77,6 @@
     </main>
   </div>
   <script type="module" src="./recommendation-candidates.js"></script>
+  <script type="module" src="./product-ui.js"></script>
 </body>
 </html>
