@@ -1169,7 +1169,8 @@
   function activeFilterCount() {
     var f = state.filters;
     return f.levels.size + f.groups.size + f.docClasses.size + f.sources.size +
-      (f.unclassified ? 1 : 0) + (f.yearFrom ? 1 : 0) + (f.yearTo ? 1 : 0) + (f.abstractOnly ? 1 : 0);
+      (f.unclassified ? 1 : 0) + (f.yearFrom ? 1 : 0) + (f.yearTo ? 1 : 0) + (f.abstractOnly ? 1 : 0) +
+      (f.allQuestionParts ? 1 : 0) + (f.excludePreprints ? 1 : 0) + (f.excludeBookChapters ? 1 : 0);
   }
 
   function updateMobileFilterLabel() {
@@ -1195,6 +1196,9 @@
     if (f.yearFrom && !(row.reference_year && row.reference_year >= f.yearFrom)) return false;
     if (f.yearTo && !(row.reference_year && row.reference_year <= f.yearTo)) return false;
     if (f.abstractOnly && !abstractPresent(row)) return false;
+    if (f.allQuestionParts && row.question_match && row.question_match.total && !row.question_match.all_parts) return false;
+    if (f.excludePreprints && Core.isPreprint(row)) return false;
+    if (f.excludeBookChapters && Core.isBookChapter(row)) return false;
     return true;
   }
 
