@@ -130,8 +130,11 @@ small,.small-state,.meta,.history-meta,.sidebar-note,.topbar p,.kpi span,.provid
 }
 .home-hero h2{font-size:var(--fs-28);max-width:760px;margin:6px 0}
 .home-hero p{line-height:1.55}
-.home-action{transition:none}
-.home-action:hover{transform:none;border-color:#b9cfca}
+.home-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;border-top:1px solid var(--line)}
+.home-action{display:block;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:none}
+.home-action:hover{transform:none;border-color:var(--line);color:var(--brand,#0f766e)}
+.home-action strong{font-weight:650}
+.home-action span{display:block;margin-top:2px}
 .classification-contract div{padding:12px}
 .hibernate-note{box-shadow:none}
 
