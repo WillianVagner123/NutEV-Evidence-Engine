@@ -157,10 +157,30 @@ def _all_page_smoke(browser: Any) -> None:
             overflow = float(page.evaluate(
                 "Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth"
             ))
-            if label == "mobile":
+            if label == "mobile" and overflow > 2.0:
+                offenders = page.evaluate(
+                    """() => Array.from(document.querySelectorAll('body *'))
+                      .map(el => {
+                        const r = el.getBoundingClientRect();
+                        return {
+                          tag: el.tagName.toLowerCase(),
+                          id: el.id || '',
+                          cls: typeof el.className === 'string' ? el.className : '',
+                          left: Math.round(r.left * 10) / 10,
+                          right: Math.round(r.right * 10) / 10,
+                          width: Math.round(r.width * 10) / 10,
+                          scrollWidth: el.scrollWidth,
+                          clientWidth: el.clientWidth,
+                          text: (el.textContent || '').trim().replace(/\\s+/g, ' ').slice(0, 90)
+                        };
+                      })
+                      .filter(x => x.right > window.innerWidth + 2 || x.left < -2 || x.scrollWidth > x.clientWidth + 2)
+                      .sort((a,b) => Math.max(b.right-window.innerWidth,b.scrollWidth-b.clientWidth) - Math.max(a.right-window.innerWidth,a.scrollWidth-a.clientWidth))
+                      .slice(0, 12)"""
+                )
                 _assert(
-                    overflow <= 2.0,
-                    f"{route} [mobile]: horizontal overflow detected: {overflow}px",
+                    False,
+                    f"{route} [mobile]: horizontal overflow detected: {overflow}px; offenders={offenders}",
                 )
             _assert_clean_diagnostics(
                 f"{route} [{label}]", page_errors, console_errors, resource_errors
