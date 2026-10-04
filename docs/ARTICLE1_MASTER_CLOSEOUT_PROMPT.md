@@ -32,15 +32,15 @@ Não trate esta tarefa como continuação automática da antiga scoping review. 
 
 ### Título de trabalho
 
-Da recomendação à execução no cuidado nutricional: revisão crítica estruturada e proposição da arquitetura NUT-EV.
+Da recomendação alimentar ao cuidado nutricional executável: revisão crítica estruturada de guias, diretrizes clínicas e modelos profissionais com proposição da arquitetura NUT-EV.
 
 ### Título em inglês
 
-From Recommendation to Enactment in Nutrition Care: A Structured Critical Review and Proposal of the NUT-EV Framework.
+From Food Recommendations to Executable Nutrition Care: A Structured Critical Review of Dietary Guidelines, Clinical Guidelines, and Professional Models with a Proposal of the NUT-EV Architecture.
 
 ### Pergunta
 
-Como guias alimentares, diretrizes clínicas e modelos profissionais consolidados transformam recomendações alimentares em ações executáveis, monitoráveis e adaptáveis no cuidado nutricional de adultos, e quais lacunas justificam a arquitetura NUT-EV?
+Pergunta principal: Como guias alimentares, diretrizes clínicas e modelos profissionais dirigidos a adultos descrevem e operacionalizam o cuidado alimentar, da recomendação à construção do plano, à execução e à continuidade? Pergunta complementar: Quando outros domínios do estilo de vida aparecem, como os documentos os relacionam textualmente à alimentação, às barreiras, aos apoios, à adaptação ou à continuidade? A análise examina o texto documental e não infere causalidade, eficácia dos pilares ou manutenção observada.
 
 ### Objetivo geral
 
@@ -148,7 +148,7 @@ Organizar a síntese funcional em sete movimentos: avaliar pessoa/alimentação/
 
 - Separar evidência textual da fonte, interpretação do autor e proposição do modelo.
 
-- A decisão metodológica foi validada com o Dr. Caio. Submeter a ele a matriz consolidada, a qualificação e o manuscrito antes da versão de banca.
+- Willian registrou em 2 de outubro de 2026 a confirmação do delineamento metodológico pelo Dr. Caio. Esse registro é uma atestação do pesquisador no projeto, não aprovação do corpus final, dos resultados ou do manuscrito. Submeter a matriz consolidada, a qualificação e o manuscrito ao orientador antes da versão de banca.
 
 ## 8. Tratamento das buscas anteriores
 
