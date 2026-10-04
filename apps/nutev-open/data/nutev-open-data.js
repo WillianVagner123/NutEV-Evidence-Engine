@@ -9,7 +9,7 @@
   "use strict";
   var data = {
  "bundle_schema_version": 1,
- "bundle_sha256": "39a26ca93483e886f39e79fef484a648cf087eaa25701c85519004c7d3998a25",
+ "bundle_sha256": "275a9021531b65f3f7621a2bac621b774abaf488c3ddf9b97b17399fdafcbb9f",
  "config_sha256": {
   "apps/nutev-open/presentation.json": "670b96fc783534a9b0d5929f466c066982f2a97fad2fd53c88c422dae0524a07",
   "config/keyword_taxonomy.json": "42d66e8d6b58b9ff19db99a07087a866958426bb10a4ed512fe02a6d41bf71e2",
@@ -5502,7 +5502,8 @@
    "outcome"
   ]
  },
- "taxonomy_version": "2026-08-v2"
+ "taxonomy_version": "2026-08-v2",
+ "term_match_policy": "nutev-term-match-v2-whole-word-plural"
 };
   if (typeof module === "object" && module.exports) { module.exports = data; }
   root.NUTEV_OPEN_DATA = data;

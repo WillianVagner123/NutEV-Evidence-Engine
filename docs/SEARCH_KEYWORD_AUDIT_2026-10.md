@@ -80,13 +80,16 @@ Uma string já escrita com operadores, aspas ou campos (`AND`, `"..."`, `[tiab]`
 
 | # | Situação após esta entrega |
 | --- | --- |
-| A1, A2, A3 | Resolvidos no Explorador Aberto e na CLI. A busca rápida hospedada continua em modo passthrough: mudar isso altera produção e deve ser decidido explicitamente (ver 3.1). |
+| A1, A2, A3 | Resolvidos no Explorador Aberto e na CLI. Na busca da área logada, o botão "Montar estratégia a partir da pergunta" (`POST /api/query/plan`, `apps/nutev-web/question_interpreter.py`) preenche a busca avançada com os blocos do planejador para revisão; nada é executado sem o clique em "Buscar artigos". A busca rápida continua enviando a pergunta como digitada. |
 | A4 | Contornado no planejador: termos em português vão para BVS/SciELO; às bases internacionais só vão quando a pessoa pede. O teste antigo do compilador hospedado permanece, por ser contrato do modo avançado. |
 | A5 | Não se repete no planejador (truncamento preservado ou convertido por base). `topic_audit` continua como está. |
 | A6 | Resolvido no planejador (`*` → `$` em BVS/SciELO; removido no OpenAlex/Crossref). |
 | A9 | Resolvido no Explorador Aberto (tradução e avisos do PubMed exibidos). |
 | A12 | Resolvido no Explorador Aberto (período por base; Crossref via `query.bibliographic`). |
-| A7, A8, A10, A11 | Abertos (ver 3). |
+| A7 | Resolvido no coletor regional (`tools/run_latin_sources.py`): consulta enviada como escrita (sem `subject:(...)`), idioma de interface configurável (`pt` por padrão) e `pagination: first_page_only` registrado em cada execução. O adaptador da validação nativa do Artigo 1 (`regional_status.py`) não foi alterado. |
+| A8 | Resolvido: o caminho web usa os adaptadores com estado (`status_adapters.py`) para Europe PMC, OpenAlex, Crossref, DOAJ e Semantic Scholar; falha de conector aparece como `failed`, e `empty` passa a significar resposta sem resultados. |
+| A10 | Resolvido: o histórico guarda a estratégia executada (avançada ou exata) e as fontes; "Usar pergunta e estratégia em nova busca" restaura o formulário sem executar. |
+| A11 | Resolvido: correspondência por palavra ou expressão inteira com plural opcional (`TERM_MATCH_POLICY = nutev-term-match-v2-whole-word-plural`) no ranking e no Explorador Aberto, com paridade testada. Ver `docs/ARCHITECTURE.md` §9 e `docs/KNOWN_LIMITATIONS.md` §27. |
 
 ## 3. Recomendações
 
@@ -95,7 +98,9 @@ Uma string já escrita com operadores, aspas ou campos (`AND`, `"..."`, `[tiab]`
 3. **Correspondência por palavra inteira (A11):** avaliar trocar `term in title` por fronteira de palavra na classificação. Isso muda o score, então exige testes, versão de taxonomia e documentação, conforme `AGENTS.md`.
 4. **Fontes regionais (A7):** tornar `lang` configurável, não envolver strings compiladas em `subject:(...)` e registrar quando só a primeira página foi lida.
 5. **Histórico (A10):** salvar e restaurar a estratégia (avançada/exata ou plano) junto com a pergunta.
-6. **Vocabulário:** revisão humana dos 113 conceitos; versão nova a cada mudança de significado; acompanhar as palavras descartadas e os termos livres mais frequentes para decidir novos conceitos.
+6. **Vocabulário:** revisão humana dos 113 conceitos; versão nova a cada mudança de significado; acompanhar as palavras descartadas e os termos livres mais frequentes para decidir novos conceitos. A pré-revisão automática e a planilha para o especialista estão em `docs/review/` (`tools/review_query_vocabulary.py`); a revisão humana em si continua pendente.
+
+Situação das recomendações em 2026-10-04: 1, 2, 3, 4 e 5 aplicadas (ver 2.4); 6 preparada, aguardando o especialista.
 
 ## 4. Limites
 

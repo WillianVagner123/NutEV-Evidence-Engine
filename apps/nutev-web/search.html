@@ -40,6 +40,11 @@
             <label><input type="radio" name="searchMode" value="advanced"><span><strong>Busca avançada</strong><small>PCC/PICO/PECO, MeSH/DeCS e consulta por fonte.</small></span></label>
             <label><input type="radio" name="searchMode" value="exact"><span><strong>Estratégia exata</strong><small>String literal e versionada para usuários avançados.</small></span></label>
           </div>
+          <div class="interpret-row">
+            <button id="interpretQuestionBtn" type="button" class="ghost">Montar estratégia a partir da pergunta</button>
+            <span>Usa o vocabulário curado do NutEV para preencher a busca avançada com blocos e sinônimos. Nada é executado antes de você conferir os blocos e clicar em “Buscar artigos”.</span>
+          </div>
+          <p id="interpretStatus" class="interpret-status" aria-live="polite"></p>
 
           <section id="strategyBuilder" class="strategy-builder hidden">
             <div id="structuredStrategyPanel">

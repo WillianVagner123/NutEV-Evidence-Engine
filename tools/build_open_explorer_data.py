@@ -26,6 +26,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT))
 
 from nutev.__version__ import __version__  # noqa: E402
 from nutev.audit_guardrails import GUARDRAIL_POLICY_VERSION  # noqa: E402
@@ -41,6 +42,7 @@ from nutev.search.question_planner import (  # noqa: E402
     validate_query_vocabulary,
 )
 from nutev.taxonomy import load_canonical_taxonomy, taxonomy_config_paths  # noqa: E402
+from tools.rank_references import TERM_MATCH_POLICY  # noqa: E402
 
 CONFIG_DIR = ROOT / "config"
 APP_DIR = ROOT / "apps" / "nutev-open"
@@ -168,6 +170,7 @@ def build_bundle() -> dict[str, Any]:
         "bundle_schema_version": BUNDLE_SCHEMA_VERSION,
         "generated_by": "tools/build_open_explorer_data.py",
         "engine_version": __version__,
+        "term_match_policy": TERM_MATCH_POLICY,
         "guardrail_policy_version": GUARDRAIL_POLICY_VERSION,
         "taxonomy_version": metadata["taxonomy_version"],
         "document_class_ontology_version": DOCUMENT_CLASS_ONTOLOGY_VERSION,

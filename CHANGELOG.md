@@ -4,6 +4,15 @@ Mudanças públicas relevantes do NutEV Reference Engine são registradas aqui. 
 
 ## [Unreleased]
 
+### Busca: pendências da auditoria de palavras-chave (2026-10-04)
+
+- Busca da área logada: botão "Montar estratégia a partir da pergunta" (`POST /api/query/plan`). O planejador determinístico preenche a busca avançada (PICO) com blocos e sinônimos para revisão; nada é executado até o clique em "Buscar artigos". A busca rápida não muda.
+- Histórico: cada execução guarda a estratégia (avançada ou exata) e as fontes, e "Usar pergunta e estratégia em nova busca" restaura o formulário sem executar.
+- Falha de conector deixa de aparecer como "sem resultados": o caminho web usa os adaptadores com estado para Europe PMC, OpenAlex, Crossref, DOAJ e Semantic Scholar.
+- Ranking e Explorador Aberto: termos de taxonomia, focus keywords e tipo documental casam por palavra inteira com plural opcional (`nutev-term-match-v2-whole-word-plural`), em vez de substring. Evita falsos positivos como `iron` em `environment` e `fat` em `fatigue`. Scores não são diretamente comparáveis com execuções anteriores; a política fica no manifesto.
+- Fontes regionais (`tools/run_latin_sources.py`): consulta enviada sem `subject:(...)`, idioma da interface configurável (`--lang`, padrão `pt`) e registro de que só a primeira página foi lida.
+- Vocabulário de busca: pré-revisão automática e planilha para o especialista em `docs/review/` (`tools/review_query_vocabulary.py`). O vocabulário continua `curated_pending_human_review`.
+
 ### Explorador Aberto: operação
 
 - O espelho no GitHub Pages (`open-explorer-pages`) passa a rodar só sob demanda (`workflow_dispatch`); a cópia principal é `/aberto/` no site hospedado. Isso evita uma execução falhando a cada push em `main` enquanto o Pages não estiver ativado.

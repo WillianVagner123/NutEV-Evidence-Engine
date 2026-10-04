@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 from datetime import datetime
+from functools import lru_cache
 import json
 from pathlib import Path
 import re
@@ -26,6 +27,10 @@ from nutev.taxonomy import (
 )
 
 _SPACE_RE = re.compile(r"\s+")
+# How a taxonomy, focus or document-type term is found in normalized text: as a whole
+# word or phrase, optionally with a plural ending (-s, -es, -y -> -ies). Substring
+# matching (v1) counted "iron" inside "environment" and "fat" inside "fatigue".
+TERM_MATCH_POLICY = "nutev-term-match-v2-whole-word-plural"
 _YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
 _PUBLIC_INPUT_FIELDS = {
     "source",
@@ -87,6 +92,20 @@ def _norm(value: Any) -> str:
     text = "".join(ch for ch in text if not unicodedata.combining(ch))
     text = re.sub(r"[^a-z0-9]+", " ", text)
     return _SPACE_RE.sub(" ", text).strip()
+
+
+@lru_cache(maxsize=None)
+def _term_forms(term: str) -> tuple[str, ...]:
+    forms = [term, term + "s", term + "es"]
+    if term.endswith("y") and len(term) > 2:
+        forms.append(term[:-1] + "ies")
+    return tuple(f" {form} " for form in forms)
+
+
+def _has_term(padded_text: str, term: str) -> bool:
+    """``padded_text`` is normalized text wrapped in single spaces (see ``_norm``)."""
+
+    return bool(term) and any(form in padded_text for form in _term_forms(term))
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -324,6 +343,7 @@ def score_record(
     title = _norm(row.get("title"))
     abstract = _norm(row.get("abstract") or row.get("summary") or row.get("snippet"))
     keywords = _norm(row.get("keywords") or row.get("keyword") or row.get("subjects"))
+    title_text, abstract_text, keyword_text = f" {title} ", f" {abstract} ", f" {keywords} "
     provider = str(row.get("source_provider") or row.get("source") or "")
     matched_terms: list[str] = []
     taxonomy_group_scores: dict[str, float] = {}
@@ -334,11 +354,11 @@ def score_record(
         group_score = 0.0
         for term in terms:
             term_score = 0.0
-            if term in title:
+            if _has_term(title_text, term):
                 term_score += 6.0
-            if term in keywords:
+            if _has_term(keyword_text, term):
                 term_score += 4.0
-            if term in abstract:
+            if _has_term(abstract_text, term):
                 term_score += 2.0
             if term_score:
                 group_score += min(term_score, 8.0)
@@ -368,13 +388,13 @@ def score_record(
         if not term:
             continue
         hit = False
-        if term in title:
+        if _has_term(title_text, term):
             focus_raw += 10.0
             hit = True
-        if term in keywords:
+        if _has_term(keyword_text, term):
             focus_raw += 6.0
             hit = True
-        if term in abstract:
+        if _has_term(abstract_text, term):
             focus_raw += 4.0
             hit = True
         if hit:
@@ -398,7 +418,7 @@ def score_record(
         "framework": 5.0,
         "recommendation": 4.0,
     }
-    type_hits = [term for term in document_terms if term in title]
+    type_hits = [term for term in document_terms if _has_term(title_text, term)]
     document_type_applied = ""
     document_score = 0.0
     if type_hits:
@@ -684,6 +704,7 @@ def run(project_root: Path, config_dir: Path, top_n: int) -> dict[str, Any]:
         "schema_version": 1,
         "audit_type": "REFERENCE_RANKING_AUDIT",
         "guardrail_policy_version": GUARDRAIL_POLICY_VERSION,
+        "term_match_policy": TERM_MATCH_POLICY,
         "created_at": _now(),
         "status": "PASS" if all(item["status"] != "FAIL" for item in assertions) else "FAIL",
         "guardrails": guardrails,
@@ -717,6 +738,7 @@ def run(project_root: Path, config_dir: Path, top_n: int) -> dict[str, Any]:
         "status": status,
         "created_at": _now(),
         "guardrail_policy_version": GUARDRAIL_POLICY_VERSION,
+        "term_match_policy": TERM_MATCH_POLICY,
         "guardrails": guardrails,
         "taxonomy_version": taxonomy_metadata.get("taxonomy_version"),
         "taxonomy_registry_mode": taxonomy_metadata.get("registry_mode"),

@@ -538,12 +538,34 @@
    * merged over the input row (the Python version additionally filters input
    * fields to its public allowlist).
    */
+  // Port of rank_references._term_forms/_has_term (TERM_MATCH_POLICY): a term counts
+  // as a whole word or phrase, optionally plural (-s, -es, -y -> -ies).
+  var TERM_FORMS = Object.create(null);
+  function termForms(term) {
+    var cached = TERM_FORMS[term];
+    if (cached) return cached;
+    var forms = [term, term + "s", term + "es"];
+    if (term.length > 2 && term.charAt(term.length - 1) === "y") forms.push(term.slice(0, -1) + "ies");
+    cached = forms.map(function (form) { return " " + form + " "; });
+    TERM_FORMS[term] = cached;
+    return cached;
+  }
+
+  function hasTerm(paddedText, term) {
+    if (!term) return false;
+    var forms = termForms(term);
+    for (var i = 0; i < forms.length; i += 1) if (paddedText.indexOf(forms[i]) >= 0) return true;
+    return false;
+  }
+
   function scoreRecord(row, data, nowYear) {
     var scoring = data.scoring;
     var tax = scoring.taxonomy;
-    var title = norm(row.title);
-    var abstract = norm(pyOr(row.abstract, row.summary, row.snippet));
-    var keywords = norm(pyOr(row.keywords, row.keyword, row.subjects));
+    var titleNorm = norm(row.title);
+    var abstractNorm = norm(pyOr(row.abstract, row.summary, row.snippet));
+    var title = " " + titleNorm + " ";
+    var abstract = " " + abstractNorm + " ";
+    var keywords = " " + norm(pyOr(row.keywords, row.keyword, row.subjects)) + " ";
     var provider = pyText(pyOr(row.source_provider, row.source));
 
     var matchedTerms = [];
@@ -556,9 +578,9 @@
       for (var i = 0; i < group.terms.length; i += 1) {
         var term = group.terms[i];
         var termScore = 0;
-        if (title.indexOf(term) >= 0) termScore += tax.title;
-        if (keywords.indexOf(term) >= 0) termScore += tax.keywords;
-        if (abstract.indexOf(term) >= 0) termScore += tax.abstract;
+        if (hasTerm(title, term)) termScore += tax.title;
+        if (hasTerm(keywords, term)) termScore += tax.keywords;
+        if (hasTerm(abstract, term)) termScore += tax.abstract;
         if (termScore) {
           groupScore += Math.min(termScore, tax.term_cap);
           hits.push(term);
@@ -583,9 +605,9 @@
       var term = norm(raw);
       if (!term) return;
       var hit = false;
-      if (title.indexOf(term) >= 0) { focusRaw += scoring.focus.title; hit = true; }
-      if (keywords.indexOf(term) >= 0) { focusRaw += scoring.focus.keywords; hit = true; }
-      if (abstract.indexOf(term) >= 0) { focusRaw += scoring.focus.abstract; hit = true; }
+      if (hasTerm(title, term)) { focusRaw += scoring.focus.title; hit = true; }
+      if (hasTerm(keywords, term)) { focusRaw += scoring.focus.keywords; hit = true; }
+      if (hasTerm(abstract, term)) { focusRaw += scoring.focus.abstract; hit = true; }
       if (hit) focusHits.push(raw);
     });
     var focusScore = Math.min(focusRaw, Math.max(0, scoring.focus_score_cap || 0));
@@ -595,7 +617,7 @@
     var documentTypeApplied = "";
     var documentScore = 0;
     weights.forEach(function (pair) {
-      if (title.indexOf(pair[0]) >= 0) {
+      if (hasTerm(title, pair[0])) {
         typeHits.push(pair[0]);
         if (pair[1] > documentScore) {
           documentScore = pair[1];
@@ -618,8 +640,8 @@
       }
     }
     var penalties = 0;
-    if (!title) penalties += scoring.penalties.missing_title;
-    if (!abstract) penalties += scoring.penalties.missing_abstract;
+    if (!titleNorm) penalties += scoring.penalties.missing_title;
+    if (!abstractNorm) penalties += scoring.penalties.missing_abstract;
 
     var score = taxonomyScore + focusScore + documentScore + providerScore + identifierScore + recencyScore + penalties;
     return Object.assign({}, row, {

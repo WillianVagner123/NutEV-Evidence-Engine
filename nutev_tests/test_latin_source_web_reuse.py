@@ -43,3 +43,39 @@ def test_latin_runner_can_select_one_provider_without_touching_the_other(monkeyp
     assert result["records"] == 1
     assert result["failed_providers"] == []
     assert result["unavailable_providers"] == []
+
+
+def test_native_urls_keep_the_query_as_written_and_use_a_chosen_language() -> None:
+    # Audit finding A7: SciELO was always called with lang=en and the query wrapped in
+    # subject:(...), which restricted a compiled Boolean string to one field.
+    latin = _load_latin_module()
+    query = '("dieta mediterrânea" OR "mediterranean diet") AND diabetes'
+    scielo = latin.scielo_search_url(query)
+    assert "subject" not in scielo and "lang=pt" in scielo
+    assert latin.scielo_search_url(query, lang="es").count("lang=es") == 1
+    assert "lang=en" in latin.lilacs_search_url(query, lang="en")
+    try:
+        latin.scielo_search_url(query, lang="fr")
+    except ValueError:
+        pass
+    else:  # pragma: no cover - guard
+        raise AssertionError("unsupported language accepted")
+
+
+def test_runner_records_that_only_the_first_page_was_read(monkeypatch, tmp_path: Path) -> None:
+    latin = _load_latin_module()
+
+    class Response:
+        status_code = 200
+        text = '<a href="https://www.scielo.br/j/example/a/article123/">A sufficiently long synthetic article title for parsing</a>'
+
+        def raise_for_status(self) -> None:
+            return None
+
+    monkeypatch.setattr(latin.requests, "get", lambda *args, **kwargs: Response())
+    result = latin.run(tmp_path, "nutrition", providers=["scielo_native"], lang="es")
+    assert result["interface_language"] == "es"
+    assert result["pagination"] == "first_page_only"
+    provider = result["providers"][0]
+    assert provider["pages_read"] == 1 and provider["pagination"] == "first_page_only"
+    assert "lang=es" in provider["search_url"] and "subject" not in provider["search_url"]

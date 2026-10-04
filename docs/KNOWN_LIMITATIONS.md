@@ -159,6 +159,8 @@ Respostas `401`/`403` ou outras falhas de interface são registradas como indisp
 
 `unavailable` **não significa zero literatura**. Significa que aquela fonte não foi obtida por aquela rota naquela execução.
 
+Mesmo quando a rota responde, só a primeira página de resultados da interface nativa é lida (`pagination: first_page_only`); por isso essas rotas nunca são exaustivas. O adaptador de status usado na validação nativa do Artigo 1 (`src/nutev/search/regional_status.py`) mantém o formato de consulta da sua própria execução registrada.
+
 ## 15. Scopus e Web of Science não são simulados
 
 Sem acesso licenciado/configurado, essas bases não participam da coleta real. O Engine não cria resultados substitutos com esses rótulos.
@@ -254,4 +256,10 @@ A disponibilidade depende de CORS, limites de requisição e mudanças nas APIs 
 O planejador (`src/nutev/search/question_planner.py`) entende a pergunta comparando-a com `config/query_vocabulary.json`, que ainda está em `curated_pending_human_review`. Conceitos fora do vocabulário viram termos livres como digitados. Ambiguidade de linguagem, negação ("sem diabetes") e relações complexas não são interpretadas. Sinônimos curados não garantem recall e não substituem descritores controlados revisados.
 
 A string gerada é ponto de partida editável para busca exploratória. Ela não é estratégia de revisão sistemática validada (PRESS) e não autoriza busca formal ou PRISMA.
+
+Na busca da área logada, "Montar estratégia a partir da pergunta" usa o mesmo planejador só para preencher a busca avançada; a busca rápida continua enviando a pergunta como digitada. Os blocos levam apenas os sinônimos em inglês, e o período identificado na pergunta não é aplicado automaticamente.
+
+## 27. Correspondência de termos por palavra inteira
+
+Desde `nutev-term-match-v2-whole-word-plural`, taxonomia, focus keywords e tipo documental casam por palavra ou expressão inteira, com plural opcional. Isso elimina falsos positivos de substring, mas deixa de casar derivações que não são plural (`sleep` não casa `sleeping`; `diet` não casa `dietary`). Scores e eixos de execuções anteriores, feitas com a v1 (substring), não são diretamente comparáveis; o manifesto de cada execução registra a política usada.
 

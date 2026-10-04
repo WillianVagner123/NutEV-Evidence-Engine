@@ -42,6 +42,8 @@ Responsabilidades:
 - preservar `source_provider`;
 - registrar `401`/`403` como indisponibilidade de automação;
 - não simular conteúdo de provider indisponível;
+- enviar a consulta como escrita, sem envolvê-la em `subject:(...)`, com idioma de interface configurável (`--lang pt|es|en`, padrão `pt`);
+- registrar `pagination: first_page_only`: só a primeira página da interface nativa é lida;
 - gerar `latin_native_records.jsonl` e SHA-256 do master.
 
 ### Guardrails — `src/nutev/audit_guardrails.py`
@@ -259,6 +261,12 @@ Quando duas linhas têm a mesma identidade, o engine prefere a versão com texto
 Isso não é deduplicação semântica completa. Publicações relacionadas com identificadores distintos podem permanecer separadas.
 
 ## 9. Scoring global
+
+### Correspondência de termos
+
+Título, keywords e abstract são normalizados (minúsculas, sem acentos, só letras e números separados por espaço). Um termo de taxonomia, focus keyword ou tipo documental conta quando aparece como **palavra ou expressão inteira**, opcionalmente no plural (`-s`, `-es`, `-y` → `-ies`). A política é `TERM_MATCH_POLICY = nutev-term-match-v2-whole-word-plural` e fica registrada em `AUDIT_MANIFEST.json`, no resumo do ranking e no manifesto do Explorador Aberto.
+
+A versão anterior (v1) usava substring e contava, por exemplo, `iron` dentro de `environment`, `fat` dentro de `fatigue` e `reach` dentro de `research`. Derivações que não são plural (por exemplo, `sleep` → `sleeping`) deixam de casar; isso é aceito em troca da precisão.
 
 ### Taxonomia
 

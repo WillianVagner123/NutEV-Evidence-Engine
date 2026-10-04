@@ -8,7 +8,7 @@ from urllib.parse import unquote, urlsplit
 PUBLIC_API = frozenset({
     "/api/health", "/api/version", "/api/providers", "/api/capabilities",
     "/api/auth/status", "/api/auth/login", "/api/auth/logout", "/api/auth/me",
-    "/api/context", "/api/context/select", "/api/query/compile",
+    "/api/context", "/api/context/select", "/api/query/compile", "/api/query/plan",
 })
 ACCESS_FLOW_PREFIXES = (
     "/api/access-requests",
