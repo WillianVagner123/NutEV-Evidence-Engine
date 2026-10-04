@@ -77,32 +77,32 @@ function ensureProductStyles(){
 
 function navGroups(){
   if(runtimeMode==='legacy')return[
-    {label:ui('Descoberta','Discovery'),items:[
-      {key:'dashboard',href:'/',icon:'⌂',label:ui('Início','Home')},
-      {key:'search',href:'/search.html',icon:'⌕',label:ui('Buscar artigos','Search articles')},
-      {key:'library',href:'/articles.html',icon:'▤',label:ui('Biblioteca','Library')}
+    {label:'Descoberta',label_en:'Discovery',items:[
+      {key:'dashboard',href:'/',icon:'⌂',label:'Início',label_en:'Home'},
+      {key:'search',href:'/search.html',icon:'⌕',label:'Buscar artigos',label_en:'Search articles'},
+      {key:'library',href:'/articles.html',icon:'▤',label:'Biblioteca',label_en:'Library'}
     ]},
-    {label:ui('Sistema','System'),items:[
-      {key:'history',href:'/search.html?view=history',icon:'◷',label:ui('Minhas buscas','My searches')},
-      {key:'advanced',href:'/advanced.html',icon:'⚙',label:ui('Laboratório avançado','Advanced workspace')}
+    {label:'Sistema',label_en:'System',items:[
+      {key:'history',href:'/search.html?view=history',icon:'◷',label:'Minhas buscas',label_en:'My searches'},
+      {key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado',label_en:'Advanced workspace'}
     ]}
   ]
   const readOnly=READ_ONLY_WORKSPACE_ROLES.has(workspaceRole)
   const assignmentScoped=ASSIGNMENT_SCOPED_ROLES.has(workspaceRole)
   const research=[
     {key:'dashboard',href:'/',icon:'⌂',label:ui('Início','Home')},
-    {key:'project',href:'/project.html',icon:'◇',label:ui('Projeto','Project')},
-    readOnly?null:{key:'search',href:'/search.html',icon:'⌕',label:ui('Buscar evidências','Search evidence')},
-    assignmentScoped?null:{key:'library',href:'/evidence-library.html',icon:'▤',label:ui('Biblioteca','Library')},
-    assignmentScoped?null:{key:'exports',href:'/exports.html',icon:'⇩',label:ui('Exportações','Exports')}
+    {key:'project',href:'/project.html',icon:'◇',label:'Projeto',label_en:'Project'},
+    readOnly?null:{key:'search',href:'/search.html',icon:'⌕',label:'Buscar evidências',label_en:'Search evidence'},
+    assignmentScoped?null:{key:'library',href:'/evidence-library.html',icon:'▤',label:'Biblioteca',label_en:'Library'},
+    assignmentScoped?null:{key:'exports',href:'/exports.html',icon:'⇩',label:'Exportações',label_en:'Exports'}
   ].filter(Boolean)
   const activity=[
-    assignmentScoped?null:{key:'history',href:'/search.html?view=history',icon:'◷',label:readOnly?ui('Histórico de buscas','Search history'):ui('Minhas buscas','My searches')},
-    readOnly?null:{key:'advanced',href:'/advanced.html',icon:'⚙',label:ui('Laboratório avançado','Advanced workspace')}
+    assignmentScoped?null:{key:'history',href:'/search.html?view=history',icon:'◷',label:readOnly?'Histórico de buscas':'Minhas buscas',label_en:readOnly?'Search history':'My searches'},
+    readOnly?null:{key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado',label_en:'Advanced workspace'}
   ].filter(Boolean)
   return[
-    {label:ui('Pesquisa','Research'),items:research},
-    ...(activity.length?[{label:ui('Atividade','Activity'),items:activity}]:[])
+    {label:'Pesquisa',label_en:'Research',items:research},
+    ...(activity.length?[{label:'Atividade',label_en:'Activity',items:activity}]:[])
   ]
 }
 
@@ -131,8 +131,8 @@ function activeNavKey(){
 
 function canonicalNavHtml(active){
   return navGroups().map(group=>{
-    const items=group.items.map(item=>`<a class="nav-item${active===item.key?' active':''}" href="${item.href}"${active===item.key?' aria-current="page"':''}><span class="nav-icon" aria-hidden="true">${item.icon}</span><span>${escapeHtml(item.label)}</span></a>`).join('')
-    return `<div class="nav-group-label">${escapeHtml(group.label)}</div>${items}`
+    const items=group.items.map(item=>`<a class="nav-item${active===item.key?' active':''}" href="${item.href}"${active===item.key?' aria-current="page"':''}><span class="nav-icon" aria-hidden="true">${item.icon}</span><span>${escapeHtml(ui(item.label,item.label_en||item.label))}</span></a>`).join('')
+    return `<div class="nav-group-label">${escapeHtml(ui(group.label,group.label_en||group.label))}</div>${items}`
   }).join('')
 }
 
