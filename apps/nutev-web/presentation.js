@@ -15,7 +15,7 @@ function barList(counts,labels={},limit=8){
   const rows=Object.entries(counts||{}).sort((a,b)=>b[1]-a[1]).slice(0,limit);const max=Math.max(1,...rows.map(([,value])=>value));
   return `<div class="presentation-bars">${rows.map(([key,value])=>`<div class="presentation-bar"><div><span>${esc(labels[key]||key)}</span><strong>${fmt(value)}</strong></div><i><b style="width:${100*value/max}%"></b></i></div>`).join('')}</div>`
 }
-function renderFooter(){const short=snapshot.snapshot_id.slice(0,12);const commit=String(snapshot.build_commit||'unknown').slice(0,12);$$('.snapshot-footer').forEach(node=>node.innerHTML=`<span>Snapshot ${esc(short)}</span><span>Build ${esc(commit)}</span><span>${esc(new Date(snapshot.generated_at).toLocaleString('pt-BR'))}</span>`) }
+function renderFooter(){const short=snapshot.snapshot_id.slice(0,12);$('.snapshot-footer').forEach(node=>node.innerHTML=`<span>Snapshot ${esc(short)}</span><span>${esc(new Date(snapshot.generated_at).toLocaleString('pt-BR'))}</span>`) }
 
 function renderQuestion(){
   $('#presentationQuestion').textContent=snapshot.question||'Article 1';const formal=snapshot.formal_search||{};
