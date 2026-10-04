@@ -253,6 +253,9 @@ a.module-card:hover{transform:none;border-color:#9fcac1;box-shadow:none}
   .audit-events .audit-event{grid-template-columns:1fr;gap:.2rem}
 }
 @media(max-width:680px){
+  .strategy-flow{display:grid;grid-template-columns:1fr;overflow:visible}
+  .strategy-flow a,.strategy-flow span{min-width:0;width:100%;max-width:100%}
+  .strategy-flow-state{width:auto;max-width:100%}
   .module-grid,.template-grid,.audit-summary,.gate-grid{grid-template-columns:1fr}
   .member-row{grid-template-columns:1fr}
   .member-actions{justify-content:flex-start}
