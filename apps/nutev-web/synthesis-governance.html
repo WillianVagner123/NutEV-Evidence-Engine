@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Synthesis Governance Registry — NutEV</title>
+  <title>Governança da síntese — NutEV</title>
   <meta name="description" content="Registry local de governance para artefatos de síntese humana do NutEV.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
@@ -25,7 +25,7 @@
     </aside>
 
     <main class="main dashboard-main governance-main">
-      <header class="topbar dashboard-topbar"><div><h1>Synthesis Governance Registry</h1><p>Local-only staging · explicit human governance · immutable source artifact</p></div><div class="dashboard-actions"><a href="/synthesis-release.html" class="ghost" style="text-decoration:none">Governed Release</a><button id="refreshRegistry" class="ghost" type="button">Atualizar</button><span id="registryHealth" class="status-pill">verificando…</span></div></header>
+      <header class="topbar dashboard-topbar"><div><h1>Governança da síntese</h1><p>Registro local · governança humana explícita · artefato-fonte imutável</p></div><div class="dashboard-actions"><a href="/synthesis-release.html" class="ghost" style="text-decoration:none">Governed Release</a><button id="refreshRegistry" class="ghost" type="button">Atualizar</button><span id="registryHealth" class="status-pill">verificando…</span></div></header>
 
       <section class="card project-hero"><div><div class="project-eyebrow">LOCAL-ONLY WRITE SURFACE · GOVERNANCE ≠ SCIENTIFIC VALIDATION</div><h2>Registrar, revisar e decidir sem canonização automática</h2><p class="project-question">Importar um Human Synthesis Brief cria somente um registro `STAGED`. Aprovação ou rejeição exige ação humana explícita, nome e justificativa. A fonte é revalidada contra SHA-256 e contexto no momento da decisão.</p></div></section>
 
@@ -63,5 +63,6 @@
     </main>
   </div>
   <script type="module" src="./synthesis-governance.js"></script>
+  <script type="module" src="./product-ui.js"></script>
 </body>
 </html>
