@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>EvidenceSet Construction — NutEV</title>
+  <title>Conjuntos de evidências — NutEV</title>
   <meta name="description" content="Construção humana de EvidenceSets a partir de claims aceitos e avaliados, sem inferência automática de consenso ou certainty.">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./dashboard.css">
@@ -25,7 +25,7 @@
     </aside>
 
     <main class="main dashboard-main set-main">
-      <header class="topbar dashboard-topbar"><div><h1>EvidenceSet Construction</h1><p>Evaluated claims · human membership · no automatic clustering</p></div><div class="dashboard-actions"><a href="/claim-appraisal.html" class="ghost" style="text-decoration:none">ClaimEvaluation</a><a href="/recommendation-candidates.html" class="ghost" style="text-decoration:none">RecommendationCandidate</a><button id="refreshSets" class="ghost" type="button">Atualizar</button><span id="setsHealth" class="status-pill">verificando…</span></div></header>
+      <header class="topbar dashboard-topbar"><div><h1>Conjuntos de evidências</h1><p>Alegações avaliadas · associação humana · sem agrupamento automático</p></div><div class="dashboard-actions"><a href="/claim-appraisal.html" class="ghost" style="text-decoration:none">ClaimEvaluation</a><a href="/recommendation-candidates.html" class="ghost" style="text-decoration:none">RecommendationCandidate</a><button id="refreshSets" class="ghost" type="button">Atualizar</button><span id="setsHealth" class="status-pill">verificando…</span></div></header>
 
       <section class="card project-hero"><div><div class="project-eyebrow">HUMAN CURATION · MEMBERSHIP ≠ CONSENSUS · NO AUTOMATIC CERTAINTY</div><h2>Agrupar claims avaliados sem transformar agrupamento em conclusão científica</h2><p class="project-question">A Fase 18 permite construir conjuntos rastreáveis de EvidenceClaims já aceitos e com ClaimEvaluation finalizada. Nenhum claim é pré-selecionado. O curador escolhe a membership, declara a lente/foco e justifica cada inclusão antes da finalização. EvidenceSets finalizados podem seguir para autoria humana de RecommendationCandidate, sem gerar recommendation automaticamente.</p></div></section>
 
@@ -75,11 +75,12 @@
             <div id="finalizedSets" class="finalized-sets"></div>
           </section>
 
-          <section class="card dashboard-card span-12 set-boundary"><div class="panel-head"><div><h2>Scientific boundary</h2><p>EvidenceSet membership != agreement · EvidenceSet membership != contradiction · EvidenceSet != certainty/GRADE · EvidenceSet != formal Risk of Bias · EvidenceSet != pooled effect · EvidenceSet != meta-analysis · EvidenceSet != recommendation · EvidenceSet != PRISMA · canonical EvidenceSet record != canonical scientific synthesis · RecommendationCandidate downstream does not mutate EvidenceSet.</p></div></div></section>
+          <section class="card dashboard-card span-12 set-boundary"><div class="panel-head"><div><h2>Limites do conjunto</h2><p>no automatic clustering · EvidenceSet membership != agreement · EvidenceSet membership != contradiction · EvidenceSet != certainty/GRADE · EvidenceSet != formal Risk of Bias · EvidenceSet != pooled effect · EvidenceSet != meta-analysis · EvidenceSet != recommendation · EvidenceSet != PRISMA · canonical EvidenceSet record != canonical scientific synthesis · RecommendationCandidate downstream does not mutate EvidenceSet.</p></div></div></section>
         </div>
       </section>
     </main>
   </div>
   <script type="module" src="./evidence-sets.js"></script>
+  <script type="module" src="./product-ui.js"></script>
 </body>
 </html>

@@ -56,10 +56,18 @@ function escapeHtml(value){
 }
 
 function productLanguage(){return window.NutEVI18n?.language==='en'?'en':'pt-BR'}
+function ui(pt,en){return productLanguage()==='en'?en:pt}
 function localizedGlossaryEntry(entry){return productLanguage()==='en'?[entry[2],entry[3]]:[entry[0],entry[1]]}
 
 function ensureProductStyles(){
-  if(document.querySelector('link[data-nutev-product-ui]'))return
+  const existing=[...document.querySelectorAll('link[rel="stylesheet"]')].find(link=>{
+    try{return new URL(link.href,location.href).pathname.endsWith('/product-ui.css')}catch{return false}
+  })
+  if(existing){
+    existing.dataset.nutevProductUi='true'
+    document.head.appendChild(existing)
+    return
+  }
   const link=document.createElement('link')
   link.rel='stylesheet'
   link.href='/product-ui.css'
@@ -69,32 +77,32 @@ function ensureProductStyles(){
 
 function navGroups(){
   if(runtimeMode==='legacy')return[
-    {label:'Descoberta',items:[
-      {key:'dashboard',href:'/',icon:'⌂',label:'Início'},
-      {key:'search',href:'/search.html',icon:'⌕',label:'Buscar artigos'},
-      {key:'library',href:'/articles.html',icon:'▤',label:'Biblioteca'}
+    {label:'Descoberta',label_en:'Discovery',items:[
+      {key:'dashboard',href:'/',icon:'⌂',label:'Início',label_en:'Home'},
+      {key:'search',href:'/search.html',icon:'⌕',label:'Buscar artigos',label_en:'Search articles'},
+      {key:'library',href:'/articles.html',icon:'▤',label:'Biblioteca',label_en:'Library'}
     ]},
-    {label:'Sistema',items:[
-      {key:'history',href:'/search.html?view=history',icon:'◷',label:'Minhas buscas'},
-      {key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado'}
+    {label:'Sistema',label_en:'System',items:[
+      {key:'history',href:'/search.html?view=history',icon:'◷',label:'Minhas buscas',label_en:'My searches'},
+      {key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado',label_en:'Advanced workspace'}
     ]}
   ]
   const readOnly=READ_ONLY_WORKSPACE_ROLES.has(workspaceRole)
   const assignmentScoped=ASSIGNMENT_SCOPED_ROLES.has(workspaceRole)
   const research=[
-    {key:'dashboard',href:'/',icon:'⌂',label:'Início'},
-    {key:'project',href:'/project.html',icon:'◇',label:'Projeto'},
-    readOnly?null:{key:'search',href:'/search.html',icon:'⌕',label:'Buscar evidências'},
-    assignmentScoped?null:{key:'library',href:'/evidence-library.html',icon:'▤',label:'Biblioteca'},
-    assignmentScoped?null:{key:'exports',href:'/exports.html',icon:'⇩',label:'Exportações'}
+    {key:'dashboard',href:'/',icon:'⌂',label:ui('Início','Home')},
+    {key:'project',href:'/project.html',icon:'◇',label:'Projeto',label_en:'Project'},
+    readOnly?null:{key:'search',href:'/search.html',icon:'⌕',label:'Buscar evidências',label_en:'Search evidence'},
+    assignmentScoped?null:{key:'library',href:'/evidence-library.html',icon:'▤',label:'Biblioteca',label_en:'Library'},
+    assignmentScoped?null:{key:'exports',href:'/exports.html',icon:'⇩',label:'Exportações',label_en:'Exports'}
   ].filter(Boolean)
   const activity=[
-    assignmentScoped?null:{key:'history',href:'/search.html?view=history',icon:'◷',label:readOnly?'Histórico de buscas':'Minhas buscas'},
-    readOnly?null:{key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado'}
+    assignmentScoped?null:{key:'history',href:'/search.html?view=history',icon:'◷',label:readOnly?'Histórico de buscas':'Minhas buscas',label_en:readOnly?'Search history':'My searches'},
+    readOnly?null:{key:'advanced',href:'/advanced.html',icon:'⚙',label:'Laboratório avançado',label_en:'Advanced workspace'}
   ].filter(Boolean)
   return[
-    {label:'Pesquisa',items:research},
-    ...(activity.length?[{label:'Atividade',items:activity}]:[])
+    {label:'Pesquisa',label_en:'Research',items:research},
+    ...(activity.length?[{label:'Atividade',label_en:'Activity',items:activity}]:[])
   ]
 }
 
@@ -110,20 +118,21 @@ function activeNavKey(){
   if(['/evidence.html','/evidence-map.html','/radar.html','/ask.html'].includes(path))return 'advanced'
   if(path==='/advanced.html')return 'advanced'
   if(path.startsWith('/validation')||[
-    '/scientific-dashboard.html','/review.html','/review-routes.html','/review-qa.html',
+    '/scientific-dashboard.html','/review.html','/review-routes.html','/review-d132.html','/review-qa.html',
     '/press-review.html','/regional-routes.html','/quality.html','/strategy.html',
     '/intelligence.html','/synthesis-review.html','/synthesis-brief.html',
     '/synthesis-governance.html','/synthesis-release.html','/synthesis-publication.html',
     '/evidence-claims.html','/claim-appraisal.html','/evidence-sets.html',
-    '/recommendation-candidates.html','/recommendation-human-validation.html'
+    '/recommendation-candidates.html','/recommendation-human-validation.html',
+    '/recommendation-development.html','/recommendation-adoption.html','/presentation.html'
   ].includes(path))return 'advanced'
   return ''
 }
 
 function canonicalNavHtml(active){
   return navGroups().map(group=>{
-    const items=group.items.map(item=>`<a class="nav-item${active===item.key?' active':''}" href="${item.href}"${active===item.key?' aria-current="page"':''}><span class="nav-icon" aria-hidden="true">${item.icon}</span><span>${escapeHtml(item.label)}</span></a>`).join('')
-    return `<div class="nav-group-label">${escapeHtml(group.label)}</div>${items}`
+    const items=group.items.map(item=>`<a class="nav-item${active===item.key?' active':''}" href="${item.href}"${active===item.key?' aria-current="page"':''}><span class="nav-icon" aria-hidden="true">${item.icon}</span><span>${escapeHtml(ui(item.label,item.label_en||item.label))}</span></a>`).join('')
+    return `<div class="nav-group-label">${escapeHtml(ui(group.label,group.label_en||group.label))}</div>${items}`
   }).join('')
 }
 
@@ -149,21 +158,21 @@ function ensureMobileNavToggle(){
   button.className='mobile-nav-toggle'
   button.setAttribute('aria-controls',nav.id)
   button.setAttribute('aria-expanded','false')
-  button.setAttribute('aria-label','Abrir navegação')
-  button.innerHTML='<span aria-hidden="true">☰</span><span class="mobile-nav-label">Menu</span>'
+  button.setAttribute('aria-label',ui('Abrir navegação','Open navigation'))
+  button.innerHTML='<span aria-hidden="true">☰</span><span class="mobile-nav-label">'+ui('Menu','Menu')+'</span>'
   const brand=sidebar.querySelector('.brand')
   if(brand)brand.insertAdjacentElement('afterend',button)
   else sidebar.prepend(button)
   button.addEventListener('click',()=>{
     const open=sidebar.classList.toggle('mobile-nav-open')
     button.setAttribute('aria-expanded',String(open))
-    button.setAttribute('aria-label',open?'Fechar navegação':'Abrir navegação')
+    button.setAttribute('aria-label',open?ui('Fechar navegação','Close navigation'):ui('Abrir navegação','Open navigation'))
   })
   nav.addEventListener('click',event=>{
     if(!event.target.closest('a'))return
     sidebar.classList.remove('mobile-nav-open')
     button.setAttribute('aria-expanded','false')
-    button.setAttribute('aria-label','Abrir navegação')
+    button.setAttribute('aria-label',ui('Abrir navegação','Open navigation'))
   })
 }
 
@@ -252,7 +261,7 @@ function ensureGlossary(){
   button.id='nutevGlossaryButton'
   button.className='glossary-trigger'
   button.type='button'
-  button.textContent='Glossário'
+  button.textContent=ui('Glossário','Glossary')
   button.setAttribute('aria-haspopup','dialog')
 
   const dialog=document.createElement('dialog')
@@ -385,7 +394,14 @@ async function renderBuildIdentity(){
     const commit=String(build.commit||'unknown')
     const shortCommit=commit==='unknown'?commit:commit.slice(0,12)
     const time=build.build_time&&build.build_time!=='unknown'?` · ${build.build_time}`:''
-    footer.textContent=`NutEV · build ${shortCommit}${time}`
+    const details=document.createElement('details')
+    details.className='product-version-details'
+    const summary=document.createElement('summary')
+    summary.textContent=ui('Sobre esta versão','About this version')
+    const meta=document.createElement('span')
+    meta.textContent=`NutEV · build ${shortCommit}${time}`
+    details.append(summary,meta)
+    footer.appendChild(details)
     main.appendChild(footer)
   }catch{}
 }
@@ -453,7 +469,12 @@ renderBuildIdentity()
 initRuntimeMode()
 
 window.addEventListener('nutev:strategy-flow-update',()=>decorateStrategyFlow())
-window.addEventListener('nutev:language-change',()=>{refreshGlossary();normalizeNavigation(true)})
+window.addEventListener('nutev:language-change',()=>{
+  const glossaryButton=document.querySelector('#nutevGlossaryButton')
+  if(glossaryButton)glossaryButton.textContent=ui('Glossário','Glossary')
+  refreshGlossary()
+  normalizeNavigation(true)
+})
 window.addEventListener('storage',event=>{if(strategyFlowEnabled&&event.key===STRATEGY_FLOW_STORAGE_KEY)decorateStrategyFlow()})
 
 const observer=new MutationObserver(mutations=>{

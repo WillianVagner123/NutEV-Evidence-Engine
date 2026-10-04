@@ -135,26 +135,67 @@ def _all_page_smoke(browser: Any) -> None:
         "\n".join(routes) + "\n",
         encoding="utf-8",
     )
-    critical = set(ROUTES)
+    viewports = (
+        ("desktop", {"width": 1366, "height": 900}),
+        ("mobile", {"width": 390, "height": 844}),
+    )
+    matrix_rows = ["route\tviewport\tstatus\thorizontal_overflow_px"]
+    overflow_failures: list[str] = []
     for route in routes:
-        if route in critical:
-            continue
-        context = browser.new_context(viewport={"width": 1366, "height": 768})
-        page = context.new_page()
-        page_errors, console_errors, resource_errors = _diagnostics(page)
-        response = page.goto(BASE_URL + route, wait_until="domcontentloaded", timeout=20_000)
-        _assert(response is not None, f"{route}: navigation returned no response")
-        _assert(response.status < 400, f"{route}: HTTP {response.status}")
-        page.locator("body").wait_for(state="visible", timeout=5_000)
-        page.wait_for_timeout(800)
-        _assert(
-            len(page.locator("body").inner_text().strip()) > 20,
-            f"{route}: suspiciously empty page",
-        )
-        _assert_clean_diagnostics(
-            route, page_errors, console_errors, resource_errors
-        )
-        context.close()
+        for label, viewport in viewports:
+            context = browser.new_context(viewport=viewport)
+            page = context.new_page()
+            page_errors, console_errors, resource_errors = _diagnostics(page)
+            response = page.goto(BASE_URL + route, wait_until="domcontentloaded", timeout=20_000)
+            _assert(response is not None, f"{route} [{label}]: navigation returned no response")
+            _assert(response.status < 400, f"{route} [{label}]: HTTP {response.status}")
+            page.locator("body").wait_for(state="visible", timeout=5_000)
+            page.wait_for_timeout(500)
+            _assert(
+                len(page.locator("body").inner_text().strip()) > 20,
+                f"{route} [{label}]: suspiciously empty page",
+            )
+            overflow = float(page.evaluate(
+                "Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth"
+            ))
+            if label == "mobile" and overflow > 2.0:
+                offenders = page.evaluate(
+                    """() => Array.from(document.querySelectorAll('body *'))
+                      .map(el => {
+                        const r = el.getBoundingClientRect();
+                        return {
+                          tag: el.tagName.toLowerCase(),
+                          id: el.id || '',
+                          cls: typeof el.className === 'string' ? el.className : '',
+                          left: Math.round(r.left * 10) / 10,
+                          right: Math.round(r.right * 10) / 10,
+                          width: Math.round(r.width * 10) / 10,
+                          scrollWidth: el.scrollWidth,
+                          clientWidth: el.clientWidth,
+                          text: (el.textContent || '').trim().replace(/\\s+/g, ' ').slice(0, 90)
+                        };
+                      })
+                      .filter(x => x.right > window.innerWidth + 2 || x.left < -2 || x.scrollWidth > x.clientWidth + 2)
+                      .sort((a,b) => Math.max(b.right-window.innerWidth,b.scrollWidth-b.clientWidth) - Math.max(a.right-window.innerWidth,a.scrollWidth-a.clientWidth))
+                      .slice(0, 12)"""
+                )
+                overflow_failures.append(
+                    f"{route} [mobile]: horizontal overflow detected: {overflow}px; offenders={offenders}"
+                )
+            _assert_clean_diagnostics(
+                f"{route} [{label}]", page_errors, console_errors, resource_errors
+            )
+            status = "FAIL" if label == "mobile" and overflow > 2.0 else "PASS"
+            matrix_rows.append(f"{route}\t{label}\t{status}\t{overflow:.1f}")
+            context.close()
+    (ARTIFACT_DIR / "all-page-viewport-matrix.tsv").write_text(
+        "\n".join(matrix_rows) + "\n",
+        encoding="utf-8",
+    )
+    _assert(
+        not overflow_failures,
+        "mobile horizontal overflow failures:\n" + "\n".join(overflow_failures),
+    )
 
 
 def _open_provider_controls(page: Page) -> None:
