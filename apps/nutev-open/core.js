@@ -479,6 +479,95 @@
     return Array.from(groups.values()).concat(unkeyed);
   }
 
+  function publicationTypeText(row) {
+    return norm(pyOr(row.article_type, row.publication_type, row.type, row.work_type));
+  }
+
+  function isPreprint(row) {
+    var type = publicationTypeText(row);
+    var venue = norm(pyOr(row.journal, row.venue, row.container_title, row.source_name));
+    return type.indexOf("preprint") >= 0 ||
+      venue.indexOf("medrxiv") >= 0 ||
+      venue.indexOf("biorxiv") >= 0 ||
+      venue.indexOf("research square") >= 0 ||
+      venue.indexOf("ssrn") >= 0;
+  }
+
+  function isBookChapter(row) {
+    var type = publicationTypeText(row);
+    return type.indexOf("book chapter") >= 0 ||
+      type.indexOf("book chapter") >= 0 ||
+      type.indexOf("bookchapter") >= 0 ||
+      type.indexOf("chapter") === 0;
+  }
+
+  function firstAuthorKey(row) {
+    var text = norm(row.authors);
+    if (!text) return "";
+    return text.split(/\s*(?:;|,|\band\b|\be\b)\s*/)[0].trim();
+  }
+
+  function preprintTitleKey(row) {
+    var title = norm(row.title)
+      .replace(/\bpreprint\b/g, " ")
+      .replace(/\bversion\s+\d+\b/g, " ")
+      .replace(/\bv\d+\b/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    return title.length >= 32 ? title : "";
+  }
+
+  function mergePreprintPublication(preprint, published) {
+    var merged = Object.assign({}, published);
+    var preAbstract = descriptiveText(preprint);
+    var pubAbstract = descriptiveText(published);
+    if (codePointLength(preAbstract) > codePointLength(pubAbstract)) {
+      if (preprint.abstract) merged.abstract = preprint.abstract;
+      else if (preprint.summary) merged.summary = preprint.summary;
+      else if (preprint.snippet) merged.snippet = preprint.snippet;
+    }
+    merged.preprint_publication_merged = true;
+    return withProvenance(merged, [published, preprint]);
+  }
+
+  function dedupePreprintPublished(rows, nowYear) {
+    var groups = new Map();
+    var output = [];
+    rows.forEach(function (row) {
+      var key = preprintTitleKey(row);
+      if (!key) { output.push(row); return; }
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(row);
+    });
+    groups.forEach(function (items) {
+      if (items.length < 2) { output.push(items[0]); return; }
+      var preprints = items.filter(isPreprint);
+      var published = items.filter(function (row) { return !isPreprint(row); });
+      if (!preprints.length || !published.length) {
+        items.forEach(function (row) { output.push(row); });
+        return;
+      }
+      var used = new Set();
+      published.forEach(function (pub) {
+        var pubAuthor = firstAuthorKey(pub);
+        var pubYear = extractYear(pub, nowYear);
+        var matchIndex = preprints.findIndex(function (pre, index) {
+          if (used.has(index)) return false;
+          var preAuthor = firstAuthorKey(pre);
+          if (pubAuthor && preAuthor && pubAuthor !== preAuthor) return false;
+          var preYear = extractYear(pre, nowYear);
+          if (pubYear && preYear && Math.abs(pubYear - preYear) > 2) return false;
+          return true;
+        });
+        if (matchIndex < 0) { output.push(pub); return; }
+        used.add(matchIndex);
+        output.push(mergePreprintPublication(preprints[matchIndex], pub));
+      });
+      preprints.forEach(function (pre, index) { if (!used.has(index)) output.push(pre); });
+    });
+    return output;
+  }
+
   // ---------------------------------------------------------------- scoring (rank_references.py)
 
   function extractYear(row, nowYear) {
@@ -531,6 +620,124 @@
 
   function documentTypeWeights(data) {
     return data.scoring.document_type_weights;
+  }
+
+  var QUESTION_RANKING_VERSION = "nutev-open-question-ranking-v1";
+  var QUESTION_MISSING_PENALTY = 20;
+  var QUESTION_MAX_SCORE = 50;
+  var TAXONOMY_FINAL_CAP = 30;
+  var DOCUMENT_CLASS_POINTS = {
+    evidence_synthesis: 12,
+    primary_randomized: 12,
+    review: 8,
+    primary_observational: 6,
+    primary_qualitative: 5,
+    guidance: 4,
+    framework_implementation: 2,
+    unclassified: 0
+  };
+
+  function questionRankingPolicy(data) {
+    var scoring = (data && data.scoring) || {};
+    var recencyMax = (scoring.recency || []).reduce(function (best, pair) {
+      return Math.max(best, Number(pair && pair[1] || 0));
+    }, 0);
+    return {
+      version: QUESTION_RANKING_VERSION,
+      components: [
+        { key: "question_answer", label_pt: "Responde à pergunta", max: QUESTION_MAX_SCORE, missing_penalty: QUESTION_MISSING_PENALTY },
+        { key: "taxonomy", label_pt: "Temas NutEV", max: TAXONOMY_FINAL_CAP },
+        { key: "document_type", label_pt: "Formato do estudo", max: 12 },
+        { key: "identifier", label_pt: "Identificador verificável", max: Number(scoring.identifier || 0) },
+        { key: "recency", label_pt: "Recência", max: recencyMax },
+        { key: "penalties", label_pt: "Metadados ausentes", max: 0 },
+        { key: "provider", label_pt: "Fonte", max: 0 },
+        { key: "focus_keywords", label_pt: "Palavras-foco fixas", max: 0 }
+      ],
+      guardrail: "A ordem mede aderência à pergunta e prioridade de leitura. Não avalia qualidade metodológica, risco de viés, certeza ou recomendação."
+    };
+  }
+
+  function cleanQuestionTerm(value) {
+    return norm(value).replace(/\*/g, "").trim();
+  }
+
+  function containsQuestionTerm(text, rawTerm) {
+    var term = cleanQuestionTerm(rawTerm);
+    if (!term) return false;
+    if (String(rawTerm || "").indexOf("*") >= 0 && term.indexOf(" ") < 0) {
+      return text.split(" ").some(function (token) { return token.indexOf(term) === 0; });
+    }
+    return (" " + text + " ").indexOf(" " + term + " ") >= 0;
+  }
+
+  function evaluateQuestionParts(row, parts) {
+    var title = norm(row.title);
+    var abstract = norm(pyOr(row.abstract, row.summary, row.snippet));
+    var evaluated = (parts || []).map(function (part, index) {
+      var terms = (part.terms || []).map(function (term) {
+        return typeof term === "string" ? term : pyText(term && term.text);
+      }).filter(Boolean);
+      var titleHits = terms.filter(function (term) { return containsQuestionTerm(title, term); });
+      var abstractHits = terms.filter(function (term) {
+        return titleHits.indexOf(term) < 0 && containsQuestionTerm(abstract, term);
+      });
+      return {
+        id: pyText(part.id || part.key || ("part_" + (index + 1))),
+        label: pyText(part.label || part.label_pt || part.label_en || ("Parte " + (index + 1))),
+        role: pyText(part.role || ""),
+        terms: terms.slice(0, 30),
+        title_hits: titleHits.slice(0, 8),
+        abstract_hits: abstractHits.slice(0, 8),
+        matched: Boolean(titleHits.length || abstractHits.length)
+      };
+    });
+    var matched = evaluated.filter(function (part) { return part.matched; }).length;
+    return {
+      parts: evaluated,
+      matched: matched,
+      total: evaluated.length,
+      missing: evaluated.filter(function (part) { return !part.matched; }).map(function (part) { return part.label; }),
+      all_parts: Boolean(evaluated.length) && matched === evaluated.length
+    };
+  }
+
+  function questionScore(match) {
+    if (!match || !match.total) return 0;
+    var perPart = QUESTION_MAX_SCORE / match.total;
+    var missing = match.total - match.matched;
+    return round2((match.matched * perPart) - (missing * QUESTION_MISSING_PENALTY));
+  }
+
+  function finalDocumentTypeScore(row, data) {
+    var cls = documentClass(row, data).document_class;
+    return Number(DOCUMENT_CLASS_POINTS[cls] || 0);
+  }
+
+  function applyQuestionConditionedRanking(scored, parts, data) {
+    var legacyBreakdown = Object.assign({}, scored.score_breakdown || {});
+    var match = evaluateQuestionParts(scored, parts);
+    var breakdown = {
+      question_answer: questionScore(match),
+      taxonomy: Math.min(TAXONOMY_FINAL_CAP, Math.max(0, Number(legacyBreakdown.taxonomy || 0))),
+      focus_keywords: 0,
+      document_type: finalDocumentTypeScore(scored, data),
+      provider: 0,
+      identifier: Number(legacyBreakdown.identifier || 0),
+      recency: Number(legacyBreakdown.recency || 0),
+      penalties: Number(legacyBreakdown.penalties || 0)
+    };
+    var finalScore = breakdown.question_answer + breakdown.taxonomy + breakdown.document_type +
+      breakdown.identifier + breakdown.recency + breakdown.penalties;
+    return Object.assign({}, scored, {
+      legacy_reference_score: scored.reference_score,
+      legacy_score_breakdown: legacyBreakdown,
+      nutev_priority_score: scored.reference_score,
+      reference_score: round2(finalScore),
+      score_breakdown: breakdown,
+      question_match: match,
+      ranking_policy_version: QUESTION_RANKING_VERSION
+    });
   }
 
   /**
@@ -751,8 +958,13 @@
     var annotated = rawRows.map(annotateRecord);
     var eligible = annotated.filter(function (row) { return !row.audit_quarantined; });
     var quarantined = annotated.filter(function (row) { return row.audit_quarantined; });
-    var unique = dedupeRecords(eligible);
-    var ranked = sortRanked(unique.map(function (row) { return scoreRecord(row, data, nowYear); }));
+    var exactUnique = dedupeRecords(eligible);
+    var unique = dedupePreprintPublished(exactUnique, nowYear);
+    var questionParts = options && Array.isArray(options.questionParts) ? options.questionParts : [];
+    var ranked = sortRanked(unique.map(function (row) {
+      var scored = scoreRecord(row, data, nowYear);
+      return questionParts.length ? applyQuestionConditionedRanking(scored, questionParts, data) : scored;
+    }));
     ranked.forEach(function (row, index) {
       row.reference_rank = index + 1;
       row.document_classification = documentClass(row, data);
@@ -832,6 +1044,7 @@
       unique_ranked: ranked.length,
       quarantined: quarantined.length,
       duplicates_merged: annotated.length - quarantined.length - ranked.length,
+      preprint_publication_merged: ranked.filter(function (row) { return row.preprint_publication_merged; }).length,
       works: works.length,
       levels: levels,
       classified: classified,
@@ -861,6 +1074,11 @@
     recordTraceability: recordTraceability,
     annotateRecord: annotateRecord,
     dedupeRecords: dedupeRecords,
+    dedupePreprintPublished: dedupePreprintPublished,
+    isPreprint: isPreprint,
+    isBookChapter: isBookChapter,
+    evaluateQuestionParts: evaluateQuestionParts,
+    questionRankingPolicy: questionRankingPolicy,
     extractYear: extractYear,
     scoreRecord: scoreRecord,
     sortRanked: sortRanked,
