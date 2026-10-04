@@ -1030,7 +1030,7 @@
   // ------------------------------------------------------------------ results: filters
 
   function facetCounts(rows) {
-    var counts = { levels: {}, groups: {}, unclassified: 0, docClasses: {}, sources: {}, years: [] };
+    var counts = { levels: {}, groups: {}, unclassified: 0, docClasses: {}, sources: {}, years: [], allQuestionParts: 0, preprints: 0, bookChapters: 0 };
     rows.forEach(function (row) {
       var level = levelOf(row);
       counts.levels[level] = (counts.levels[level] || 0) + 1;
@@ -1043,6 +1043,9 @@
         counts.sources[source] = (counts.sources[source] || 0) + 1;
       });
       if (row.reference_year) counts.years.push(row.reference_year);
+      if (row.question_match && row.question_match.all_parts) counts.allQuestionParts += 1;
+      if (Core.isPreprint(row)) counts.preprints += 1;
+      if (Core.isBookChapter(row)) counts.bookChapters += 1;
     });
     return counts;
   }
@@ -1066,12 +1069,26 @@
     var counts = facetCounts(rows);
     var f = state.filters;
 
-    var levelGroup = el("div", { class: "filter-group" }, el("h3", { text: t("filters.level") }));
-    ["A", "B"].forEach(function (level) {
-      if (!counts.levels[level]) return;
-      levelGroup.appendChild(checkboxOption(t("level." + level + ".name"), counts.levels[level], f.levels.has(level), function (on) { toggleIn(f.levels, level, on); }));
-    });
-    box.appendChild(levelGroup);
+    var questionTotal = rows.length && rows[0].question_match ? Number(rows[0].question_match.total || 0) : 0;
+    if (questionTotal) {
+      var questionGroup = el("div", { class: "filter-group question-filter-group" }, el("h3", { text: t("filters.question") }));
+      questionGroup.appendChild(checkboxOption(
+        t("filters.allQuestionParts"),
+        counts.allQuestionParts,
+        f.allQuestionParts,
+        function (on) { f.allQuestionParts = on; state.shown = PAGE_SIZE; renderResults(); }
+      ));
+      box.appendChild(questionGroup);
+    }
+
+    var levelValues = ["A", "B"].filter(function (level) { return counts.levels[level]; });
+    if (levelValues.length > 1) {
+      var levelGroup = el("div", { class: "filter-group" }, el("h3", { text: t("filters.level") }));
+      levelValues.forEach(function (level) {
+        levelGroup.appendChild(checkboxOption(t("level." + level + ".name"), counts.levels[level], f.levels.has(level), function (on) { toggleIn(f.levels, level, on); }));
+      });
+      box.appendChild(levelGroup);
+    }
 
     var axisGroup = el("div", { class: "filter-group" }, el("h3", { text: t("filters.axis") }));
     DATA.taxonomy.families.forEach(function (family) {
@@ -1124,13 +1141,27 @@
     var abstractInput = el("input", { type: "checkbox" });
     abstractInput.checked = f.abstractOnly;
     abstractInput.addEventListener("change", function () { f.abstractOnly = abstractInput.checked; state.shown = PAGE_SIZE; renderResults(); });
-    box.appendChild(el("div", { class: "filter-group" }, el("label", { class: "filter-option" }, abstractInput, el("span", { text: t("filters.abstract") }))));
+    var cleanupGroup = el("div", { class: "filter-group" }, el("h3", { text: t("filters.cleanup") }),
+      el("label", { class: "filter-option" }, abstractInput, el("span", { text: t("filters.abstract") })));
+    if (counts.preprints) {
+      var preprintInput = el("input", { type: "checkbox" });
+      preprintInput.checked = f.excludePreprints;
+      preprintInput.addEventListener("change", function () { f.excludePreprints = preprintInput.checked; state.shown = PAGE_SIZE; renderResults(); });
+      cleanupGroup.appendChild(el("label", { class: "filter-option" }, preprintInput, el("span", { text: t("filters.excludePreprints") }), el("span", { class: "count", text: fmtNumber(counts.preprints) })));
+    }
+    if (counts.bookChapters) {
+      var chapterInput = el("input", { type: "checkbox" });
+      chapterInput.checked = f.excludeBookChapters;
+      chapterInput.addEventListener("change", function () { f.excludeBookChapters = chapterInput.checked; state.shown = PAGE_SIZE; renderResults(); });
+      cleanupGroup.appendChild(el("label", { class: "filter-option" }, chapterInput, el("span", { text: t("filters.excludeBookChapters") }), el("span", { class: "count", text: fmtNumber(counts.bookChapters) })));
+    }
+    box.appendChild(cleanupGroup);
 
     box.appendChild(el("button", {
       type: "button",
       class: "btn btn-ghost",
       text: t("filters.clear"),
-      onclick: function () { state.filters = emptyFilters(); state.shown = PAGE_SIZE; renderFilters(); renderResults(); }
+      onclick: function () { state.filters = emptyFilters(questionPartsForRanking().length > 0); state.shown = PAGE_SIZE; renderFilters(); renderResults(); }
     }));
     updateMobileFilterLabel();
   }
