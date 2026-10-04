@@ -118,7 +118,7 @@ function activeNavKey(){
   if(['/evidence.html','/evidence-map.html','/radar.html','/ask.html'].includes(path))return 'advanced'
   if(path==='/advanced.html')return 'advanced'
   if(path.startsWith('/validation')||[
-    '/scientific-dashboard.html','/review.html','/review-routes.html','/review-qa.html',
+    '/scientific-dashboard.html','/review.html','/review-routes.html','/review-d132.html','/review-qa.html',
     '/press-review.html','/regional-routes.html','/quality.html','/strategy.html',
     '/intelligence.html','/synthesis-review.html','/synthesis-brief.html',
     '/synthesis-governance.html','/synthesis-release.html','/synthesis-publication.html',
