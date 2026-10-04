@@ -884,14 +884,29 @@
       el("button", { type: "button", class: "btn btn-ghost", text: t("strategy.close"), onclick: closeStrategy })));
   }
 
+  function questionPartsForRanking() {
+    if (state.origin !== "search" || !state.plan || state.plan.mode === "manual") return [];
+    return (state.plan.blocks || []).filter(function (block) {
+      return block.enabled && (block.terms || []).some(function (term) { return term.enabled !== false; });
+    }).map(function (block, index) {
+      return {
+        id: block.key || ("part_" + (index + 1)),
+        label: blockLabel(block),
+        role: block.role || "",
+        terms: (block.terms || []).filter(function (term) { return term.enabled !== false; }).map(function (term) { return term.text; })
+      };
+    });
+  }
+
   function loadRows(rows) {
-    state.result = Core.runPipeline(rows, DATA);
+    var questionParts = questionPartsForRanking();
+    state.result = Core.runPipeline(rows, DATA, { questionParts: questionParts });
     if (state.origin === "file" && state.fileManifest && state.fileManifest.counts) {
       var originalCounts = state.fileManifest.counts;
       if (typeof originalCounts.retrieved_rows === "number") state.result.stats.retrieved_rows = originalCounts.retrieved_rows;
       if (typeof originalCounts.duplicates_merged === "number") state.result.stats.duplicates_merged = originalCounts.duplicates_merged;
     }
-    state.filters = emptyFilters();
+    state.filters = emptyFilters(questionParts.length > 0);
     state.shown = PAGE_SIZE;
     renderAll();
     if (state.tab !== "results" && state.tab !== "quality") selectTab("results");
