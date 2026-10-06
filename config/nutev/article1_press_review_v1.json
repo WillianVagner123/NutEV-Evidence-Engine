@@ -211,18 +211,18 @@
   "provider_native_validation": {
     "pubmed": {
       "role": "formal_bibliographic_provider",
-      "status": "PENDING_NATIVE_SEARCH_DETAILS_AND_CONTROLLED_VOCABULARY_DELTAS",
-      "exact_query": null
+      "status": "TECHNICAL_NATIVE_VALIDATION_COMPLETE_REVIEW_PENDING",
+      "exact_query": "See evidence/article1_native_validation/ARTICLE1_NATIVE_VALIDATION_20260929.json and compiler output by route."
     },
     "lilacs_bvs": {
       "role": "formal_bibliographic_provider",
-      "status": "PENDING_NATIVE_VALIDATION",
-      "exact_query": null
+      "status": "AUTOMATION_BLOCKED_NATIVE_MANUAL_VALIDATION_REQUIRED",
+      "exact_query": "Compiled by tools/run_article1_native_validation.py; native interface returned HTTP 403 to automation."
     },
     "scielo": {
       "role": "formal_bibliographic_provider",
-      "status": "PENDING_NATIVE_VALIDATION",
-      "exact_query": null
+      "status": "AUTOMATION_BLOCKED_NATIVE_MANUAL_VALIDATION_REQUIRED",
+      "exact_query": "Compiled by tools/run_article1_native_validation.py; native interface returned HTTP 403 to automation."
     },
     "scopus": {
       "role": "excluded_unavailable_provider",
@@ -279,7 +279,7 @@
     "route_is_not_inclusion": true,
     "scopus_web_of_science_must_not_be_simulated": true
   },
-  "status_reason": "Independent human PRESS review completed with ACCEPT and no material revisions. By the 2026-09-28 pre-formal-search methodological amendment, D01-D05 are preserved as developmental QA and are not autonomous requirements for PRESS PASS, GF-10 or query freeze. Provider-native validation and satisfactory sentinel/known-item closure remain pre-freeze requirements.",
+  "status_reason": "PRESS remains PASS. PubMed technical native validation completed for all five routes on 2026-09-29. LILACS/BVS and SciELO native interfaces returned HTTP 403 to automated validation and therefore remain pending manual native validation. HTTP 403 is not interpreted as zero results. GF-10 and query freeze remain closed.",
   "press_decision_materiality": "NO_MATERIAL_REVISION_RECORDED",
   "review_source_evidence": "evidence/article1_press/article1_press_20260928T230157Z_vagner/PRESS_HUMAN_REVIEW.json",
   "delta_test_policy": {

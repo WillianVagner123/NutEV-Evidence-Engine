@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "record_type": "NUTEV_ARTICLE1_PROVIDER_NATIVE_VALIDATION_RESULT",
+  "executed_at": "2026-09-29T19:01:40Z",
+  "source_main_sha": "30f6c1e360f436c6ceddb69575dfb9fdfb64c0e4",
+  "workflow_run_id": 36616261357,
+  "workflow_job_id": 109569911229,
+  "artifact_id": 11055680957,
+  "artifact_zip_sha256": "8e1e28af7eb0b3d79eb903826718662bf3996d250e0490500b9b1e296b01cafb",
+  "bounded_limit_per_route": 5,
+  "overall_status": "TECHNICAL_NATIVE_VALIDATION_INCOMPLETE",
+  "providers": {
+    "pubmed": {
+      "status": "TECHNICAL_NATIVE_VALIDATION_COMPLETE",
+      "routes": {
+        "B-NORM": {
+          "status": "completed",
+          "total_found": 139808,
+          "total_returned": 5
+        },
+        "C1-CARE-PROCESS": {
+          "status": "completed",
+          "total_found": 4086,
+          "total_returned": 5
+        },
+        "C2-COMPETENCY-LITERACY": {
+          "status": "completed",
+          "total_found": 1782,
+          "total_returned": 5
+        },
+        "C3-IMPLEMENTATION": {
+          "status": "completed",
+          "total_found": 1875,
+          "total_returned": 5
+        },
+        "C4-SOCIAL-CONTEXT": {
+          "status": "completed",
+          "total_found": 7656,
+          "total_returned": 5
+        }
+      }
+    },
+    "lilacs_bvs": {
+      "status": "AUTOMATION_BLOCKED_NATIVE_MANUAL_VALIDATION_REQUIRED",
+      "error": "HTTP 403: native public search interface does not allow this automated request",
+      "affected_routes": [
+        "B-NORM",
+        "C1-CARE-PROCESS",
+        "C2-COMPETENCY-LITERACY",
+        "C3-IMPLEMENTATION",
+        "C4-SOCIAL-CONTEXT"
+      ]
+    },
+    "scielo": {
+      "status": "AUTOMATION_BLOCKED_NATIVE_MANUAL_VALIDATION_REQUIRED",
+      "error": "HTTP 403: native public search interface does not allow this automated request",
+      "affected_routes": [
+        "B-NORM",
+        "C1-CARE-PROCESS",
+        "C2-COMPETENCY-LITERACY",
+        "C3-IMPLEMENTATION",
+        "C4-SOCIAL-CONTEXT"
+      ]
+    }
+  },
+  "guardrails": {
+    "gf10_authorized": false,
+    "query_freeze_complete": false,
+    "formal_search_performed": false,
+    "prisma_event_emitted": false,
+    "eligibility_decisions_created": false,
+    "http_403_is_not_zero_results": true,
+    "manual_native_validation_required_for_blocked_providers": true
+  }
+}
