@@ -2,17 +2,21 @@
 
 Cole o texto abaixo num agente que controle um **navegador real** (Claude no Chrome, um agente com Playwright/computer use ou uma pessoa testadora). O roteiro testa a página publicada; ele não substitui os testes automatizados do repositório.
 
+Versão do roteiro: 2026-10-04, alinhada à reformulação visual da busca aberta (#1351): o painel de estratégia abre pelo botão "Ajustar busca", e a página não mostra mais o commit (ele fica em `/api/version`).
+
 ---
 
 ```text
 Você é um testador de QA. Avalie a página pública do NutEV em um navegador real,
 clicando nos botões e verificando se cada interação funciona. Seja factual: registre o
 que viu, com evidência (print, texto da tela, mensagem do console ou requisição de rede).
-Não suponha resultados que você não observou.
+Não suponha resultados que você não observou. Os nomes de botões citados abaixo são os
+da versão atual; se algum mudou, use o equivalente e anote a diferença.
 
 ENDEREÇOS
 - Site: https://nutev.mindsperformance.com.br/
 - Busca aberta: https://nutev.mindsperformance.com.br/aberto/
+- Versão publicada: https://nutev.mindsperformance.com.br/api/version (anote o "commit")
 
 REGRAS
 - Não faça login, não crie conta, não peça acesso e não envie formulários de senha.
@@ -20,207 +24,176 @@ REGRAS
 - Faça no máximo 12 buscas no total: as fontes (Europe PMC, PubMed, OpenAlex, Crossref)
   são APIs públicas com limite de uso.
 - Não altere nada fora da página. Downloads (CSV/JSON) podem ser salvos localmente.
-- Teste em duas telas: desktop (~1366x900) e celular (~390x844). Teste também o modo escuro
-  do sistema, se possível.
+- Teste em duas telas: desktop (~1366x900) e celular (~390x844), e no modo escuro.
 - Mantenha as DevTools abertas (Console e Network) durante todo o teste.
 - Mantenha a janela do navegador visível e na frente durante todo o teste. Se a aba ficar
   oculta ou minimizada, o Chrome congela a página e os prints param de funcionar.
-- Faça o bloco J (celular, teclado e modo escuro) logo depois do bloco B, com os primeiros
-  resultados na tela, para ele não ficar para o fim.
+- Faça o bloco J (celular, teclado e modo escuro) logo depois do bloco B.
 
 PARTE 1 — RETESTE DO QUE JÁ FOI CORRIGIDO
-O QA anterior (03/10/2026) encontrou os problemas abaixo, e eles foram corrigidos. Confirme
-cada um durante o roteiro (o item entre parênteses diz onde) e responda OK/FALHA na tabela
-de reteste do relatório.
-  R1. A página pulava (rolagem de 795 para 260) e perdia o foco a cada controle do painel
-      de estratégia. Agora não pode pular nem perder o foco. (C7b)
-  R2. O link compartilhado não levava a estratégia editada. Agora leva período, sinônimos,
-      blocos/termos desligados e strings editadas. (G3)
-  R3. A edição manual sumia ao mexer em outro controle e o "Restaurar" só aparecia depois
-      de buscar de novo. Agora a edição fica até "Restaurar", que aparece na hora; o JSON
-      exportado traz edited_by_hand e generated_query. (C7, G2)
-  R4. Os números "na fonte" ficavam velhos sem aviso depois de editar a estratégia. Agora
-      aparece "desatualizado" e o aviso "A estratégia mudou desde a última busca". (C7)
-  R5. "kefir kombucha" virava a frase exata e o PubMed dava 0. Agora vira kefir AND
-      kombucha. (H4)
-  R6. A BVS dava 0 resultados. Agora cada bloco vai em tw:(... OR ...), o formato que deu
-      resultados no reteste. Anote os totais no LILACS e na coleção completa. (C9)
-  R7. Um CSV qualquer era aceito e substituía os resultados; JSON inválido dava erro técnico
-      em inglês. Agora o arquivo é recusado com mensagem em português e os resultados
-      ficam. (G4)
-  R8. "a b c" deixava na tela os resultados e o título da busca anterior. Agora limpa. (H5)
-  R9. O Crossref não recebia o sinônimo acrescentado (MedDiet). Agora recebe. (C3)
-  R10. Uma string com [tiab] ia a todas as bases sem aviso. Agora aparece um aviso de que as
-      outras bases não entendem campos do PubMed. (H2)
-  R11. Ajustes menores, confira cada um:
-      - "Título (A–Z)" não começa por títulos com "[" ou "607-P:" (D5);
-      - a dica do gráfico de anos não sai cortada na borda (E2);
-      - "1 bloco em uso" no singular: desligue blocos até sobrar um (C1);
-      - o cabeçalho fixo não cobre o título das seções quando a página rola até elas;
-      - em EN, os exemplos da busca aparecem em inglês (H1);
-      - os cartões do OpenAlex e do Crossref mostram o filtro de data enviado (C6);
-      - a nota do Crossref explica por que o total "na fonte" é tão alto;
-      - "Versões e proveniência" mostra o commit publicado e o vocabulário como "aguardando
-        revisão humana especializada" (F2).
-  R12. O CSV exportado pelo NutEV, reaberto em "Abrir arquivo", mandava tudo para a
-      quarentena ("sem fonte de origem"). Agora volta com as mesmas obras da busca. (G4)
-  R13. O JSON reaberto mostrava 0 duplicatas sem explicar. Agora a mensagem diz quantos
-      registros e duplicatas a busca original tinha. (G4)
-  R14. No celular (~390px): o link de login aparece como "Entrar", os filtros começam
-      fechados e as caixas de seleção e links DOI/PMID têm área de toque maior. (J1)
-  R15. Termos livres aparecem como "termo digitado". Uma string com [tiab] ganha o botão
-      "Tirar os campos do PubMed das outras bases", que limpa as outras strings e permite
-      "Restaurar". (H2, H4)
+Confirme cada item durante o roteiro (o item entre parênteses diz onde) e responda
+OK/FALHA na tabela de reteste do relatório.
+  R1. Usar qualquer controle do painel "Ajustar busca" (campo, português, período, ligar
+      bloco, termo, sinônimo) não faz a página nem o painel pularem, e o foco fica no
+      controle. Exceção aceitável: se o painel estiver rolado até o fim e o conteúdo
+      encolher (por exemplo, ao desligar o português), ele sobe só o que encolheu. (C)
+  R2. "Copiar link" leva período, sinônimos, blocos/termos desligados e strings editadas;
+      o link aberto em outra aba refaz a mesma busca. (G3)
+  R3. Uma string editada à mão continua depois de mudar outros controles; "Restaurar"
+      aparece na hora; o JSON baixado traz edited_by_hand e generated_query. (C7, G2)
+  R4. Depois de mudar a estratégia, os números da busca anterior aparecem como
+      "desatualizado", com o aviso "A estratégia mudou desde a última busca". (C7)
+  R5. "kefir kombucha" vira dois blocos (kefir AND kombucha) e o PubMed traz resultados. (H4)
+  R6. "Abrir na BVS (LILACS)" com a pergunta do exemplo traz mais de 0 resultados
+      (cada bloco vai como tw:(... OR ...)). Anote o total no LILACS e na coleção completa. (C9)
+  R7. Um CSV qualquer e um JSON cortado são recusados com mensagem em português, e os
+      resultados que estavam na tela continuam. (G4)
+  R8. "a b c" não consulta as fontes e limpa os resultados e o título da busca anterior. (H5)
+  R9. O Crossref recebe o sinônimo acrescentado (MedDiet). (C3)
+  R10. Uma string com [tiab] mostra o aviso sobre campos do PubMed e o botão
+      "Tirar os campos do PubMed das outras bases". (H2)
+  R11. "Título (A–Z)" não começa por títulos com "[" ou "607-P:"; termos livres aparecem
+      como "Palavra digitada"; em EN os exemplos aparecem em inglês. (D5, H1, H4)
+  R12. O CSV baixado pelo NutEV, reaberto em "Abrir arquivo", volta com as mesmas obras
+      (não vai tudo para a quarentena). (G4)
+  R13. O JSON baixado, reaberto, informa quantos registros e duplicatas a busca original
+      tinha. (G4)
+  R14. No celular: o link "Entrar" aparece, os filtros começam fechados e as caixas de
+      seleção e links DOI/PMID são fáceis de tocar. (J1)
 
-PARTE 2 — ROTEIRO COMPLETO (para cada item: passos -> esperado -> obtido -> OK/FALHA + evidência)
+PARTE 2 — ROTEIRO (para cada item: passos -> esperado -> obtido -> OK/FALHA + evidência)
 
 A. Entrada sem login
   A1. Em janela anônima, abra o site (raiz "/"). Esperado: vai direto para /aberto/,
-      sem janela de usuário/senha do navegador e sem tela de login.
+      sem janela de usuário/senha e sem tela de login.
   A2. Abra /aberto (sem barra). Esperado: redireciona para /aberto/.
-  A3. No topo, clique "Busca avançada (entrar)". Esperado: abre /login.html.
-      Na tela de login, clique "Buscar sem login (busca aberta)". Esperado: volta para /aberto/.
-  A4. Abra anonimamente /search.html e /evidence-library.html. Esperado: pedem login
-      (área privada fechada). Abra /api/library. Esperado: resposta 401.
+  A3. Clique "Entrar". Esperado: abre /login.html. Na tela de login, clique
+      "Buscar sem login (busca aberta)". Esperado: volta para /aberto/.
+  A4. Abra /search.html e /evidence-library.html sem login. Esperado: pedem login.
+      Abra /api/library. Esperado: resposta 401.
+  A5. Abra /api/version. Esperado: JSON com "commit" e "environment": "production".
 
-B. Busca por pergunta (português)
+B. Busca por pergunta
   B1. Clique no exemplo "A dieta mediterrânea melhora o controle glicêmico no diabetes tipo 2?".
-  B2. Esperado em "Estado das fontes": Europe PMC, PubMed, OpenAlex e Crossref, cada um com
-      "N registros em X s" e "N na fonte", OU "falhou" com o motivo (limite HTTP 429, tempo
-      esgotado, falha de rede/CORS, erro HTTP). Também devem aparecer
-      "Scopus / Web of Science: não consultados..." e
-      "LILACS/BVS, SciELO, DOAJ, Semantic Scholar: disponíveis no Reference Engine completo".
-      Anote o tempo de cada fonte. Nenhuma fonte pode ficar "consultando..." para sempre.
-  B3. Painel "Como o NutEV organizou sua busca". Esperado: blocos Diabetes tipo 2
+  B2. Esperado: o total de artigos, o número de bases e o tempo; por base, "N registros em
+      X s" e "N encontrados", ou "falhou" com o motivo (limite 429, tempo esgotado,
+      rede/CORS, erro HTTP). Scopus/Web of Science aparecem como "Disponível em outras
+      fontes"; LILACS/BVS, SciELO, DOAJ e Semantic Scholar como "Disponível na busca
+      completa". Nenhuma fonte pode ficar consultando para sempre.
+  B3. Clique "Ajustar busca". Esperado: painel lateral com os blocos Diabetes tipo 2
       (população), Dieta mediterrânea (intervenção) e Controle glicêmico (desfecho),
-      com termos em inglês e PT; a linha "Lógica" com AND entre os blocos; e a lista de
-      palavras ignoradas.
-  B4. Em "Strings por base", confira se cada base tem formato próprio:
-      PubMed com [tiab]; Europe PMC com TITLE_ABS:; OpenAlex com aspas e OR/AND;
-      Crossref só palavras-chave; BVS com tw:(...) em cada bloco; SciELO com frases em
-      português e inglês.
+      termos em inglês e português e as palavras ignoradas. Esc ou o fundo escuro fecham o
+      painel.
+  B4. Em "Ver consultas enviadas", cada base tem formato próprio: PubMed com [tiab];
+      Europe PMC com TITLE_ABS:; OpenAlex com aspas e OR/AND; Crossref só palavras-chave;
+      BVS com tw:(...) em cada bloco; SciELO com frases em português e inglês.
 
-C. Interações do painel de estratégia
-  C1. Desmarque "usar" no bloco Controle glicêmico. Esperado: o bloco fica apagado e some
-      das strings e da linha "Lógica".
-  C2. Clique num termo (chip) de Dieta mediterrânea. Esperado: o termo fica riscado e sai
-      das strings. Clique de novo para voltar.
-  C3. Digite "MedDiet" em "+ sinônimo" e Enter. Esperado: o chip aparece e entra nas strings.
-  C4. Marque "Ampla". Esperado: a string do PubMed perde o [tiab] e a nota sobre
-      mapeamento automático (MeSH) aparece. Volte para "Título e resumo".
-  C5. Marque "Enviar também os termos em português". Esperado: termos PT entram na string do
-      OpenAlex/Europe PMC. Desmarque.
-  C6. Preencha o período "de 2015". Esperado: o PubMed ganha (2015:3000[dp]), o Europe PMC
-      ganha PUB_YEAR, e OpenAlex/Crossref mostram o filtro de data.
-  C7. Edite à mão a string do PubMed. Esperado: aparecem na hora "editada à mão", o aviso
-      de que a string não acompanha mais os blocos e o botão "Restaurar". Mude o campo ou o
-      período: a string editada continua. Os números do PubMed passam a "desatualizado" e
-      surge o aviso "A estratégia mudou desde a última busca". Restaurar devolve a string gerada.
-  C7b. Role a página até "Onde procurar" e use cada controle (campo, português, período,
-      "usar" de um bloco, um termo). Esperado: a página não pula e o foco fica no controle.
-  C8. Clique "Copiar" e cole num bloco de notas. Esperado: o texto colado é igual ao da caixa.
-  C9. Clique "Abrir no PubMed", "Abrir no Europe PMC", "Abrir na BVS (LILACS)" e
-      "Abrir no SciELO". Esperado: cada site abre com a busca preenchida. No PubMed,
-      compare o total exibido com o "na fonte" do painel; diferenças grandes devem ser anotadas.
-      BVS: anote o total em "LILACS" e na coleção completa. Com a pergunta do exemplo e sem
-      alterações, o esperado é um número maior que zero (no QA de 03/10, a mesma estratégia
-      com tw:(...) deu 15 no LILACS e 468 na coleção completa).
-  C10. Clique "Buscar novamente com esta estratégia". Esperado: nova busca usando as
-       alterações (confira a string no Network: requisição esearch.fcgi, parâmetro term).
-  C11. Depois da busca, abra "Como o PubMed interpretou a string". Esperado: a tradução do
-       PubMed aparece; se houver "O PubMed não encontrou: ...", anote os termos.
+C. Painel "Ajustar busca"
+  C1. Desligue o bloco Controle glicêmico. Esperado: ele sai das consultas.
+  C2. Clique num termo de Dieta mediterrânea: ele fica riscado e sai das consultas.
+      Clique de novo para voltar.
+  C3. Digite "MedDiet" no campo de sinônimo do bloco e Enter. Esperado: o termo entra nas
+      consultas (inclusive no Crossref) e o cursor continua no campo.
+  C4. Marque o campo amplo. Esperado: o PubMed perde o [tiab] e aparece a nota sobre o
+      mapeamento automático (MeSH). Volte para título e resumo.
+  C5. Marque "Enviar também os termos em português". Esperado: termos em português entram
+      no OpenAlex e no Europe PMC. Desmarque.
+  C6. Período "de 2015". Esperado: PubMed com (2015:3000[dp]), Europe PMC com PUB_YEAR, e
+      o filtro de data enviado aparece nos cartões do OpenAlex e do Crossref.
+  C7. Edite à mão a consulta do PubMed. Esperado: "editada à mão", o aviso e "Restaurar"
+      na hora; mudar o campo ou o período não apaga a edição; aparecem "desatualizado" e
+      o aviso de estratégia alterada. "Restaurar" devolve a consulta gerada.
+  C8. "Copiar" uma consulta e colar num bloco de notas: o texto é igual ao da caixa.
+  C9. "Abrir no PubMed", "Abrir no Europe PMC", "Abrir na BVS (LILACS)" e "Abrir no
+      SciELO": cada site abre com a busca preenchida. Compare o total do PubMed com o do
+      painel. Anote os totais da BVS (LILACS e coleção completa).
+  C10. "Buscar de novo". Esperado: nova busca com as alterações (no Network, o parâmetro
+       term da requisição esearch.fcgi).
+  C11. Depois da busca, a interpretação do PubMed aparece; anote termos "não encontrados".
 
 D. Resultados
-  D1. Cada cartão mostra o selo de nível (A, B ou Q), a completude "N/6", o tipo documental
-      (quando houver) e "#posição · pontos".
-  D2. Abra "Por que este nível? Ver a explicação completa" em 3 cartões. Esperado: blocos de
-      Rastreabilidade, Completude, Eixos MEV/NEV (com termos encontrados), Tipo documental,
-      Prioridade (tabela que soma o total), Proveniência e Resumo.
-  D3. Clique o link DOI e o PMID de 3 registros. Esperado: abrem o artigo certo. Se o DOI
-      abrir outro artigo ou der erro, anote (isso é qualidade do dado da fonte).
-  D4. Filtros: marque um nível, um eixo MEV/NEV, um tipo, uma fonte, um intervalo de anos e
-      "Somente com resumo", isoladamente e combinados. Esperado: a contagem
-      "X de Y obras únicas" muda de forma coerente; "Limpar filtros" volta ao total.
-  D5. Ordenação: teste as 4 opções. "Mais recentes" deve ordenar por ano decrescente.
-  D6. Se houver mais de 30 resultados, clique "Mostrar mais". Esperado: carrega mais cartões.
+  D1. Cada artigo mostra o nível (A, B ou Q), o tipo documental quando houver, os links
+      DOI/PMID e os temas MEV/NEV.
+  D2. Abra "Detalhes" em 3 artigos: rastreabilidade, completude, eixos MEV/NEV com os termos
+      encontrados, tipo documental, prioridade (a soma bate com o total) e resumo.
+  D3. Abra o DOI e o PMID de 3 artigos: devem levar ao artigo certo.
+  D4. Filtros (nível, tema, tipo, fonte, anos, "Somente com resumo"), isolados e
+      combinados: a contagem muda de forma coerente; "Limpar filtros" volta ao total.
+  D5. Ordenação: teste todas as opções; "Mais recentes" ordena por ano decrescente;
+      "Título (A–Z)" começa por letras.
+  D6. Com mais resultados que os exibidos, "Mostrar mais" carrega mais artigos.
 
-E. Painel "Qualidade do dado (MEV/NEV)"
-  E1. Os números devem bater: obras únicas + duplicatas unificadas + quarentena =
-      registros recuperados (soma das fontes).
-  E2. Passe o mouse nas barras. Esperado: tooltips com contagem e %.
-  E3. Clique numa linha de eixo (ex.: Padrão mediterrâneo). Esperado: vai para
-      "Resultados" filtrado por esse eixo.
-  E4. Abra "Ver como tabela". Esperado: a tabela tem os mesmos números das barras.
-  E5. Confira os gráficos de qualidade por fonte, completude, tipo documental e ano.
+E. Aba "Qualidade"
+  E1. Os números batem: obras únicas + repetidos removidos + quarentena = registros
+      recuperados.
+  E2. Passe o mouse nas barras: dicas com contagem e %, sem sair cortadas.
+  E3. Clicar num tema leva aos resultados filtrados por ele.
+  E4. A versão em tabela tem os mesmos números das barras.
 
-F. Abas "Quarentena" e "Como ler os níveis"
-  F1. Quarentena: cada item mostra o motivo (ex.: "sem identificador válido nem URL HTTP(S)").
-      Se estiver vazia, deve aparecer a mensagem de vazio.
-  F2. Como ler: as seções 0 a 5 estão legíveis; em "Eixos da taxonomia MEV/NEV" um eixo
-      abre e mostra os termos; "Versões e proveniência" mostra a taxonomia 2026-08-v2, o
-      planejador e o commit da publicação (não "cópia local").
+F. Abas "Quarentena" e "Como ler"
+  F1. Quarentena: cada item mostra o motivo; vazia, mostra a mensagem de vazio.
+  F2. Como ler: as seções estão legíveis e um tema abre e mostra os termos.
 
 G. Exportar, compartilhar e reabrir
-  G1. "Baixar CSV": abra no Excel/Sheets. Esperado: acentos corretos, uma linha por obra e
-      as colunas de nível, eixos e pontuação.
-  G2. "Baixar JSON com manifesto": confira que tem manifest.query_plan,
-      manifest.executed_queries (strings enviadas a cada base) e records.
-  G3. Depois de buscar com período, um sinônimo acrescentado e uma string editada, clique
-      "Copiar link desta busca" e abra o link em outra aba. Esperado: refaz a mesma busca, com
-      o mesmo período, o sinônimo e a string editada (confira o term do esearch no Network).
-  G4. Aba "Abrir arquivo": carregue o JSON exportado. Esperado: "N registros lidos" e o
-      painel preenchido. Carregue o CSV exportado. Tente um CSV qualquer (ex.: nome,cidade) e
-      um JSON cortado. Esperado: mensagem de erro clara em português, sem travar, e os
-      resultados que estavam na tela continuam lá.
+  G1. "Baixar CSV": acentos corretos, uma linha por obra, colunas de nível, eixos e pontuação.
+  G2. "Baixar dados (JSON)": tem manifest.query_plan, manifest.executed_queries (com
+      edited_by_hand quando houver edição), manifest.term_match_policy e records.
+  G3. Depois de buscar com período, um sinônimo e uma consulta editada, "Copiar link" e
+      abrir em outra aba: refaz a mesma busca (confira o term do esearch).
+  G4. "Abrir arquivo": o JSON baixado ("N registros lidos" e a busca original informada);
+      o CSV baixado (mesmas obras da busca); um CSV qualquer (nome,cidade) e um JSON
+      cortado (mensagem em português, resultados mantidos).
 
 H. Idioma e casos de borda
-  H1. Troque para EN. Esperado: interface, painel de estratégia, avisos e guia em inglês;
-      títulos e resumos dos artigos continuam no original. Volte para PT.
-  H2. Busque `("mediterranean diet"[tiab]) AND diabetes`. Esperado: aviso de "string
-      avançada" enviada literalmente e o botão "Interpretar como pergunta".
-  H3. Busque "plant-based diet vs mediterranean diet for weight loss". Esperado: dieta
-      mediterrânea vira Comparador desligado, com aviso.
-  H4. Busque "kefir kombucha". Esperado: dois blocos livres (kefir, kombucha) combinados com
-      AND, aviso de que nenhum conceito do vocabulário foi reconhecido e resultados no PubMed.
-  H5. Clique "Buscar" com o campo vazio: esperado nada acontecer além do foco voltar ao campo.
-      Busque "a b c": esperado o aviso "Não reconhecemos termos úteis..." no painel de
-      estratégia, sem erro, sem requisições às fontes e sem os resultados da busca anterior.
-  H6. "ultraprocessados e obesidade em crianças nos últimos 5 anos": esperado o período
-      preenchido automaticamente (ano atual menos 5; em 2026, "de 2021").
+  H1. Troque para EN: interface, painel, avisos, exemplos e guia em inglês; títulos e
+      resumos dos artigos no original. Volte para PT.
+  H2. Busque ("mediterranean diet"[tiab]) AND diabetes: aviso de string avançada, aviso
+      sobre campos do PubMed e os botões "Interpretar como pergunta" e "Tirar os campos do
+      PubMed das outras bases" (este limpa as outras consultas e permite "Restaurar").
+  H3. "plant-based diet vs mediterranean diet for weight loss": dieta mediterrânea vira
+      comparador desligado, com aviso.
+  H4. "kefir kombucha": dois blocos de "Palavra digitada", aviso de que nenhum conceito do
+      vocabulário foi reconhecido, e resultados no PubMed.
+  H5. "Buscar" com o campo vazio: nada acontece além do foco voltar ao campo. "a b c":
+      aviso de termos não reconhecidos, nenhuma requisição às fontes e nada da busca
+      anterior na tela.
+  H6. "ultraprocessados e obesidade em crianças nos últimos 5 anos": período preenchido
+      com o ano atual menos 5.
 
 I. Técnico (DevTools)
-  I1. Console: liste qualquer erro ou aviso, especialmente "Content Security Policy" e
-      erros de JavaScript. Esperado: nenhum na página /aberto/.
-  I2. Network: a página só deve falar com a própria origem e com www.ebi.ac.uk,
-      eutils.ncbi.nlm.nih.gov, api.openalex.org e api.crossref.org. Anote requisições
-      para outros domínios e respostas 4xx/5xx.
-  I3. Application > Cookies: a busca aberta não deve criar cookie de autenticação.
-  I4. Tempo: quanto tempo da busca até os resultados (desktop e celular).
+  I1. Console: nenhum erro de JavaScript ou de Content Security Policy da página.
+  I2. Network: só a própria origem, www.ebi.ac.uk, eutils.ncbi.nlm.nih.gov,
+      api.openalex.org e api.crossref.org. Anote outros domínios e respostas 4xx/5xx.
+  I3. Cookies: a busca aberta não cria cookie de autenticação.
+  I4. Tempo da busca até os resultados (desktop e celular).
 
-J. Celular e acessibilidade
-  J1. Em ~390px de largura: nada corta nem cria rolagem horizontal; filtros e painéis
-      utilizáveis; botões com tamanho de toque adequado.
-  J2. Só com teclado: Tab percorre os controles, o foco é visível, setas trocam as abas,
-      Enter busca e Enter adiciona sinônimo.
-  J3. Modo escuro: textos legíveis e cores dos níveis A/B/Q distinguíveis, também em tons
-      de cinza (os níveis têm letra, não só cor).
+J. Celular e acessibilidade (logo depois do bloco B)
+  J1. Em ~390px: sem rolagem horizontal; "Entrar" visível; filtros começam fechados;
+      painel "Ajustar busca" ocupa a tela e fecha; alvos de toque com pelo menos 24px.
+  J2. Só com teclado: Tab percorre os controles com foco visível; setas trocam as abas;
+      Enter busca; Enter adiciona sinônimo; Esc fecha o painel.
+  J3. Modo escuro: textos legíveis; níveis A/B/Q distinguíveis também em tons de cinza.
 
 ENTREGA (formato do relatório)
 1. Resumo de 5 linhas: funciona ou não; os 3 problemas mais graves.
-2. Tabela de reteste R1–R15: ID | OK/FALHA | evidência. Para R6, os totais da BVS.
+2. Tabela de reteste R1–R14: ID | OK/FALHA | evidência. Para R6, os totais da BVS.
 3. Tabela: ID | passo | esperado | obtido | OK/FALHA | evidência.
 4. Bugs novos: título, severidade (bloqueador / alto / médio / baixo), passos para
-   reproduzir, resultado esperado vs obtido, navegador/tela, print.
+   reproduzir, esperado vs obtido, navegador/tela, print.
 5. Erros de console e de rede, copiados literalmente.
 6. Sugestões de usabilidade (separadas dos bugs), cada uma com o motivo.
-7. Ambiente: navegador e versão, sistema, data/hora, tamanho real da área da página, e o
-   commit mostrado em "Como ler os níveis -> Versões e proveniência".
+7. Ambiente: navegador e versão, sistema, data/hora, tamanho real da área da página e o
+   commit de /api/version.
 ```
 
 ---
 
+## O que este roteiro não cobre
+
+A busca da área logada (botão "Montar estratégia a partir da pergunta" e "Usar pergunta e estratégia em nova busca" no histórico) exige login, que o testador não deve fazer. Quem tiver conta pode conferir: escrever uma pergunta, clicar no botão, ver a busca avançada preenchida sem nenhuma busca iniciada, buscar e depois restaurar pelo histórico.
+
 ## Como usar o resultado
 
 - Bugs bloqueadores e altos: abra uma issue com o relatório (sem dados pessoais) ou cole o relatório numa sessão de desenvolvimento para correção.
-- Falhas de fonte isoladas (429, tempo esgotado) não são bug da página se aparecem explicitamente no status; elas só viram bug se a página travar, esconder a falha ou mostrar "0 resultados" no lugar de "falhou".
-- Diferenças de contagem entre o painel e o site da base são esperadas em pequena escala (indexação e data da consulta mudam); diferenças grandes merecem investigação da string.
+- Falhas de fonte isoladas (429, tempo esgotado) não são bug da página se aparecem explicitamente; só viram bug se a página travar, esconder a falha ou mostrar "0 resultados" no lugar de "falhou".
+- Diferenças pequenas de contagem entre o painel e o site da base são esperadas (indexação e data mudam); diferenças grandes merecem investigação da consulta.

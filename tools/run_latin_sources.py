@@ -17,6 +17,13 @@ COLLECTION_TYPE = "REFERENCE_COLLECTION"
 USER_AGENT = "NutEV Reference Engine/1.0 (+https://github.com/WillianVagner123/NutEV-Evidence-Engine)"
 _SPACE_RE = re.compile(r"\s+")
 LATIN_PROVIDER_ORDER = ("lilacs_bvs_native", "scielo_native")
+INTERFACE_LANGUAGES = ("pt", "es", "en")
+DEFAULT_LANGUAGE = "pt"
+PAGINATION = "first_page_only"
+PAGINATION_NOTE = (
+    "Only the first results page of the native public interface was read; later pages were "
+    "not requested, so this route is not exhaustive."
+)
 
 
 def _now() -> str:
@@ -78,13 +85,22 @@ class _AnchorParser(HTMLParser):
         self._parts = []
 
 
-def lilacs_search_url(query: str) -> str:
-    params = [("lang", "pt"), ("q", query), ("filter[db_cluster][]", "LILACS")]
+def _interface_language(lang: str) -> str:
+    value = str(lang or DEFAULT_LANGUAGE).strip().lower()
+    if value not in INTERFACE_LANGUAGES:
+        raise ValueError(f"Unsupported interface language: {lang!r} (use one of {', '.join(INTERFACE_LANGUAGES)})")
+    return value
+
+
+def lilacs_search_url(query: str, *, lang: str = DEFAULT_LANGUAGE) -> str:
+    params = [("lang", _interface_language(lang)), ("q", query), ("filter[db_cluster][]", "LILACS")]
     return "https://pesquisa.bvsalud.org/portal/?" + urlencode(params)
 
 
-def scielo_search_url(query: str) -> str:
-    return "https://search.scielo.org/?" + urlencode({"lang": "en", "q": f"subject:({query})"})
+def scielo_search_url(query: str, *, lang: str = DEFAULT_LANGUAGE) -> str:
+    # The query is sent as written. Wrapping it in subject:(...) used to restrict a
+    # compiled Boolean string to one field and change its meaning (audit finding A7).
+    return "https://search.scielo.org/?" + urlencode({"lang": _interface_language(lang), "q": query})
 
 
 def _candidate(provider: str, search_url: str, url: str, title: str, query: str) -> dict[str, Any] | None:
@@ -179,6 +195,9 @@ def _run_provider(provider: str, search_url: str, query: str, run_dir: Path) -> 
             "records_path": str(records_path),
             "records_sha256": records_sha,
             "records": len(rows),
+            "pages_read": 1,
+            "pagination": PAGINATION,
+            "pagination_note": PAGINATION_NOTE,
             "parser_note": "Official search HTML is retained as retrieval evidence; parsed anchors are reference candidates.",
         }
     except Exception as exc:
@@ -194,11 +213,11 @@ def _run_provider(provider: str, search_url: str, query: str, run_dir: Path) -> 
         }
 
 
-def _provider_search_url(provider: str, query: str) -> str:
+def _provider_search_url(provider: str, query: str, lang: str = DEFAULT_LANGUAGE) -> str:
     if provider == "lilacs_bvs_native":
-        return lilacs_search_url(query)
+        return lilacs_search_url(query, lang=lang)
     if provider == "scielo_native":
-        return scielo_search_url(query)
+        return scielo_search_url(query, lang=lang)
     raise ValueError(f"Unsupported Latin provider: {provider}")
 
 
@@ -207,7 +226,9 @@ def run(
     query: str,
     *,
     providers: list[str] | tuple[str, ...] | None = None,
+    lang: str = DEFAULT_LANGUAGE,
 ) -> dict[str, Any]:
+    lang = _interface_language(lang)
     selected = list(dict.fromkeys(providers or LATIN_PROVIDER_ORDER))
     invalid = [provider for provider in selected if provider not in LATIN_PROVIDER_ORDER]
     if invalid:
@@ -219,7 +240,7 @@ def run(
     run_dir = project_root / "14_latin_native" / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
     provider_results = [
-        _run_provider(provider, _provider_search_url(provider, query), query, run_dir)
+        _run_provider(provider, _provider_search_url(provider, query, lang), query, run_dir)
         for provider in selected
     ]
 
@@ -245,6 +266,9 @@ def run(
         "created_at": _now(),
         "query": query,
         "requested_providers": selected,
+        "interface_language": lang,
+        "pagination": PAGINATION,
+        "pagination_note": PAGINATION_NOTE,
         "providers": provider_results,
         "unavailable_providers": unavailable,
         "failed_providers": failed,
@@ -268,8 +292,9 @@ def main() -> int:
         "--query",
         default='(diet OR dietary OR nutrition OR "healthy eating") AND (guideline OR guidance OR recommendation OR consensus OR statement OR standard)',
     )
+    parser.add_argument("--lang", default=DEFAULT_LANGUAGE, choices=INTERFACE_LANGUAGES, help="Interface language of the native search pages.")
     args = parser.parse_args()
-    result = run(Path(args.project_root), args.query)
+    result = run(Path(args.project_root), args.query, lang=args.lang)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if not result["failed_providers"] else 1
 

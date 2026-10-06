@@ -26,6 +26,7 @@ async function init(){
   $('#frameworkSelect').onchange=()=>renderConceptBuilder(true);
   $$('input[name="searchMode"]').forEach(r=>r.onchange=toggleSearchMode);
   $('#compileStrategyBtn').onclick=compileStrategyPreview;
+  $('#interpretQuestionBtn').onclick=interpretQuestion;
   renderConceptBuilder(false);
   toggleSearchMode();
   let engineReady=false;
@@ -57,7 +58,7 @@ function toggleSearchMode(){
 }
 
 function currentConceptValues(){return $$('#conceptBuilder .concept-card').map(card=>({label:card.querySelector('.concept-label')?.value||'',terms:card.querySelector('.concept-terms')?.value||''}))}
-function renderConceptBuilder(preserve){const framework=$('#frameworkSelect')?.value||'PCC';const labels=FRAMEWORKS[framework]||FRAMEWORKS.PCC;const previous=preserve?currentConceptValues():[];$('#conceptBuilder').innerHTML=labels.map((label,index)=>{const old=previous[index]||{};return `<div class="concept-card"><div class="concept-card-head"><span class="concept-index">${index+1}</span><input class="concept-label" value="${esc(old.label||label)}" aria-label="Nome do bloco conceitual"></div><textarea class="concept-terms" rows="5" placeholder="Ex.:\nfree:termo livre\nmesh:Descritor MeSH\ndecs:Descritor DeCS">${esc(old.terms||'')}</textarea></div>`}).join('');$('#strategyPreview').classList.add('hidden');$('#strategyPreview').innerHTML=''}
+function renderConceptBuilder(preserve,values){const framework=$('#frameworkSelect')?.value||'PCC';const labels=FRAMEWORKS[framework]||FRAMEWORKS.PCC;const previous=values||(preserve?currentConceptValues():[]);const count=Math.max(labels.length,previous.length);$('#conceptBuilder').innerHTML=Array.from({length:count},(_,index)=>{const label=labels[index]||`Bloco ${index+1}`;const old=previous[index]||{};return `<div class="concept-card"><div class="concept-card-head"><span class="concept-index">${index+1}</span><input class="concept-label" value="${esc(old.label||label)}" aria-label="Nome do bloco conceitual"></div><textarea class="concept-terms" rows="5" placeholder="Ex.:\nfree:termo livre\nmesh:Descritor MeSH\ndecs:Descritor DeCS">${esc(old.terms||'')}</textarea></div>`}).join('');$('#strategyPreview').classList.add('hidden');$('#strategyPreview').innerHTML=''}
 
 function renderExactQueryBuilder(){
   const root=$('#exactQueryBuilder');if(!root||!state.providers.length)return;
@@ -76,6 +77,60 @@ function buildStrategy(){
     return {mode:'exact',strategy_id:$('#strategyId').value.trim()||'UNVERSIONED',strategy_version:$('#strategyVersion').value.trim()||'UNVERSIONED',run_class:PUBLIC_EXACT_RUN_CLASS,provider_queries};
   }
   const framework=$('#frameworkSelect').value;const concepts=$$('#conceptBuilder .concept-card').map(card=>({label:card.querySelector('.concept-label').value.trim(),terms:card.querySelector('.concept-terms').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean)})).filter(block=>block.terms.length>0);if(!concepts.length)throw new Error('Adicione pelo menos um termo em um bloco da busca avançada.');return {framework,concepts};
+}
+
+function setSearchMode(mode){const radio=document.querySelector(`input[name="searchMode"][value="${mode}"]`);if(radio){radio.checked=true;toggleSearchMode()}}
+
+// Fills the form from a saved or interpreted strategy. It never starts a search:
+// the person reviews the blocks or strings and clicks "Buscar artigos".
+// strategy: {mode:'advanced',framework,concepts:[{label,terms:['free:x',...]}]}
+//         | {mode:'exact',strategy_id,strategy_version,provider_queries:{provider:query}}
+function loadStrategyIntoForm(strategy,options){
+  if(!strategy||typeof strategy!=='object')return false;
+  const providers=Array.isArray(options?.providers)?options.providers.filter(Boolean):[];
+  const selectProviders=wanted=>{if(!wanted.size)return;$$('#providerGrid input').forEach(input=>{input.checked=wanted.has(input.value)})};
+  selectProviders(new Set(providers));
+  if(strategy.mode==='exact'){
+    const queries=strategy.provider_queries&&typeof strategy.provider_queries==='object'?strategy.provider_queries:{};
+    $('#exactQueryBuilder').innerHTML='';
+    state.exactQueries=Object.fromEntries(Object.entries(queries).map(([provider,query])=>[provider,String(query??'')]));
+    if(!providers.length)selectProviders(new Set(Object.keys(state.exactQueries)));
+    $('#strategyId').value=String(strategy.strategy_id||'');$('#strategyVersion').value=String(strategy.strategy_version||'');
+    setSearchMode('exact');
+    return true;
+  }
+  if(strategy.mode==='advanced'||Array.isArray(strategy.concepts)){
+    const framework=String(strategy.framework||'').toUpperCase();
+    $('#frameworkSelect').value=FRAMEWORKS[framework]?framework:'PCC';
+    setSearchMode('advanced');
+    renderConceptBuilder(false,(strategy.concepts||[]).map(concept=>({label:String(concept?.label||''),terms:(concept?.terms||[]).map(term=>typeof term==='string'?term:`${term?.kind||'free'}:${term?.text||''}`).join('\n')})));
+    return true;
+  }
+  setSearchMode('quick');
+  return true;
+}
+window.NutEVStrategyForm={load:loadStrategyIntoForm};
+
+function interpretationSummary(plan){
+  if(plan.plan_mode==='manual')return'Sua pergunta já é uma string avançada (operadores, aspas ou campos). Use “Estratégia exata” para enviá-la literalmente.';
+  if(!plan.strategy)return'Não reconhecemos termos úteis na pergunta. Escreva os termos na busca avançada ou reformule a pergunta.';
+  const used=(plan.blocks||[]).filter(block=>block.enabled);const off=(plan.blocks||[]).filter(block=>!block.enabled);
+  const parts=[`Estratégia montada com ${used.length} bloco${used.length===1?'':'s'} (${used.map(block=>block.label_pt).join(' · ')}) pelo vocabulário NutEV ${plan.vocabulary_version||''}, ainda aguardando revisão humana especializada. Nada foi executado: revise blocos e termos e clique em “Buscar artigos”.`];
+  if(off.length)parts.push(`Ficaram fora (comparador ou amplo demais): ${off.map(block=>block.label_pt).join(', ')}.`);
+  if(plan.year_from||plan.year_to)parts.push(`Período identificado: ${plan.year_from||'…'}–${plan.year_to||'hoje'}. A busca da área logada não aplica datas automaticamente.`);
+  if((plan.warnings||[]).includes('no_vocabulary_concepts'))parts.push('Nenhum conceito do vocabulário foi reconhecido: as palavras entraram como termos livres.');
+  return parts.join(' ');
+}
+
+async function interpretQuestion(){
+  const query=$('#question').value.trim();if(!query)return alert('Digite primeiro o que você quer buscar na literatura.');
+  const btn=$('#interpretQuestionBtn');const status=$('#interpretStatus');btn.disabled=true;status.textContent='Interpretando a pergunta…';
+  try{
+    const res=await fetch('/api/query/plan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query})});const plan=await res.json();
+    if(!res.ok)throw new Error(plan.message||plan.error||'Falha ao interpretar a pergunta');
+    if(plan.strategy)loadStrategyIntoForm({mode:'advanced',...plan.strategy});
+    status.textContent=interpretationSummary(plan);
+  }catch(e){status.textContent=`Falha: ${e.message}`}finally{btn.disabled=false}
 }
 
 async function compileStrategyPreview(){

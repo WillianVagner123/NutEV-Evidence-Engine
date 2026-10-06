@@ -574,7 +574,7 @@
   // The panel is rebuilt on every change. Controls carry a data-fk key so the
   // control in use keeps focus and stays where it was on screen.
   function captureStrategyView() {
-    var view = { y: window.scrollY, key: null, top: 0 };
+    var view = { y: window.scrollY, panelScroll: $("strategy").scrollTop, key: null, top: 0 };
     var active = document.activeElement;
     if (active && active !== document.body && $("strategy-body").contains(active) && active.getAttribute("data-fk")) {
       view.key = active.getAttribute("data-fk");
@@ -600,13 +600,16 @@
         try { target.setSelectionRange(view.selection[0], view.selection[1]); } catch (error) { /* not a text control */ }
       }
     }
+    // The panel may scroll on its own (side drawer) or with the page. Undo any clamp
+    // that happened while it was rebuilt, then keep the control in use at the same
+    // height on screen.
+    var panel = $("strategy");
+    panel.scrollTop = view.panelScroll;
+    window.scrollTo(window.scrollX, view.y);
     if (target && view.key === key) {
-      // Same control: keep it at the same height on screen (document coordinates,
-      // because the browser may have clamped the scroll while the panel was rebuilt).
-      var docTop = target.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo(window.scrollX, Math.max(0, docTop - view.top));
-    } else {
-      window.scrollTo(window.scrollX, view.y);
+      var delta = target.getBoundingClientRect().top - view.top;
+      if (delta && panel.scrollHeight > panel.clientHeight) panel.scrollTop += delta;
+      else if (delta) window.scrollTo(window.scrollX, Math.max(0, window.scrollY + delta));
     }
   }
 
@@ -1533,6 +1536,7 @@
       sources_not_queried: Sources.NOT_QUERIED,
       pipeline: "SEARCH -> NORMALIZE -> TRACEABILITY GATE -> DEDUPLICATE -> CLASSIFY -> RANK -> EXPORT",
       engine_version: DATA.engine_version,
+      term_match_policy: DATA.term_match_policy,
       taxonomy_version: DATA.taxonomy_version,
       guardrail_policy_version: DATA.guardrail_policy_version,
       document_class_ontology_version: DATA.document_class_ontology_version,

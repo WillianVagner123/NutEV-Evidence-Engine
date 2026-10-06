@@ -169,6 +169,16 @@ ROWS: list[dict[str, Any]] = [
         "year": "2010",
     },
     {
+        # Term matching v2: whole word with plural. "iron"/"fat"/"reach" must not match
+        # inside environment/fatigue/research; plurals (fats, guidelines, therapies) must.
+        "source": "openalex",
+        "source_provider": "openalex",
+        "title": "Environmental fatigue research: dietary fats, iron and eggs in clinical practice guidelines",
+        "abstract": "Eggplant intake and nutritional therapies; sleep hygiene in adults with type 2 diabetes.",
+        "doi": "10.3333/term.match.2025",
+        "year": "2025",
+    },
+    {
         "source": "semantic_scholar",
         "source_provider": "Semantic Scholar",
         "title": "Food literacy and culinary skills: a behavior change framework for shared decision making",

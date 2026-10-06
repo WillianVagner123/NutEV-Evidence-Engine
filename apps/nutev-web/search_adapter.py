@@ -20,14 +20,10 @@ from nutev.reference_identity import dedupe_records
 from nutev.registry.ingest import register_search_result
 from nutev.search.brave_optional import search_brave
 from nutev.search.classification import classify_search_record
-from nutev.search.crossref import search_crossref
-from nutev.search.doaj import search_doaj
-from nutev.search.europepmc import search_europepmc
 from nutev.search.google_pse import search_google_pse
-from nutev.search.openalex import search_openalex
 from nutev.search.pubmed import PubMedClient
-from nutev.search.semantic_scholar import search_semantic_scholar
 from nutev.search.serpapi_optional import search_serpapi
+from nutev.search.status_adapters import STATUS_AWARE_DISCOVERY_CLIENTS, get_status_aware_discovery_client
 from nutev.taxonomy import load_canonical_taxonomy
 from tools.rank_references import score_record
 from tools.run_latin_sources import run as run_latin_sources
@@ -135,16 +131,11 @@ def _provider_call(provider: str, query: str, limit: int) -> Callable[[], Any]:
                 "workstream": "interactive_web_search",
             },
         )
-    if provider == "europepmc":
-        return lambda: search_europepmc(query, page_size=min(1000, max(25, limit)), max_results=limit)
-    if provider == "openalex":
-        return lambda: search_openalex(query, per_page=min(200, max(25, limit)), max_results=limit)
-    if provider == "crossref":
-        return lambda: search_crossref(query, rows=min(1000, max(25, limit)), max_results=limit)
-    if provider == "doaj":
-        return lambda: search_doaj(query, page_size=min(100, max(25, limit)), max_results=limit)
-    if provider == "semantic_scholar":
-        return lambda: search_semantic_scholar(query, page_size=min(100, max(25, limit)), max_results=limit)
+    if provider in STATUS_AWARE_DISCOVERY_CLIENTS:
+        # Status-aware adapters report a remote failure as "failed" (or "partial"),
+        # never as an empty result set; the legacy list helpers collapse both into [].
+        client = get_status_aware_discovery_client(provider)
+        return lambda: client.search(query, limit=limit)
     if provider == "google_pse":
         cap = OPTIONAL_WEB_CAPS[provider]
         return lambda: _cap_aware_optional_result(
@@ -318,6 +309,7 @@ def _latin_rows_and_status(
                 "started_at": item.get("started_at"),
                 "finished_at": item.get("finished_at"),
                 "search_url": item.get("search_url"),
+                "pagination": item.get("pagination"),
             }
         )
     return rows, statuses, str(summary.get("summary_path") or "") or None
@@ -482,6 +474,42 @@ def search_evidence(
     return result
 
 
+def _history_strategy(query_plan: object) -> dict[str, Any]:
+    """Compact, form-ready strategy so the history can restore more than the question."""
+
+    plan = query_plan if isinstance(query_plan, dict) else {}
+    mode = plan.get("mode")
+    if mode == "structured_review":
+        return {
+            "mode": "advanced",
+            "framework": plan.get("framework"),
+            "concepts": [
+                {
+                    "label": str(concept.get("label") or ""),
+                    "terms": [
+                        f"{term.get('kind') or 'free'}:{term.get('text') or ''}"
+                        for term in concept.get("terms") or []
+                        if isinstance(term, dict) and term.get("text")
+                    ],
+                }
+                for concept in plan.get("concepts") or []
+                if isinstance(concept, dict)
+            ],
+        }
+    if mode == "exact_review":
+        return {
+            "mode": "exact",
+            "strategy_id": plan.get("strategy_id"),
+            "strategy_version": plan.get("strategy_version"),
+            "provider_queries": {
+                str(provider): str((item or {}).get("query") or "")
+                for provider, item in (plan.get("provider_queries") or {}).items()
+                if isinstance(item, dict)
+            },
+        }
+    return {"mode": "quick"}
+
+
 def list_search_runs(
     *,
     output_root: Path | None = None,
@@ -521,6 +549,12 @@ def list_search_runs(
                 "partial_providers": value.get("partial_providers", []),
                 "skipped_providers": value.get("skipped_providers", []),
                 "non_exhaustive_providers": value.get("non_exhaustive_providers", []),
+                "providers": [
+                    str(item.get("provider"))
+                    for item in value.get("providers") or []
+                    if isinstance(item, dict) and item.get("provider")
+                ],
+                "strategy": _history_strategy(value.get("query_plan")),
             }
         )
     items.sort(key=lambda item: str(item.get("created_at") or ""), reverse=True)

@@ -40,16 +40,21 @@ function clearPreviousSearchPresentation(){
   const state=$('#searchState');if(state){state.className='hidden';state.textContent=''}
   $('#resultFacetWorkspace')?.classList.add('hidden');
 }
-function prepareNewQuickSearch(item){
+function savedStrategyMode(item){const mode=item?.strategy?.mode;return mode==='advanced'||mode==='exact'?mode:'quick'}
+function prepareNewSearch(item){
   const query=String(item?.query||'').trim();if(!query)return;
   switchToSearchWorkspace();
   clearPreviousSearchPresentation();
-  const quick=document.querySelector('input[name="searchMode"][value="quick"]');quick?.click();
+  const mode=savedStrategyMode(item);
+  const loader=window.NutEVStrategyForm?.load;
+  const restored=mode!=='quick'&&typeof loader==='function'&&loader(item.strategy,{providers:item?.providers||[]});
+  if(!restored){const quick=document.querySelector('input[name="searchMode"][value="quick"]');quick?.click()}
   const question=$('#question');
   if(question){question.value=query;question.dispatchEvent(new Event('input',{bubbles:true}))}
   const url=new URL(location.href);url.searchParams.delete('view');url.searchParams.delete('q');history.replaceState(null,'',`${url.pathname}${url.search}${url.hash}`);
   question?.focus();question?.scrollIntoView({behavior:'smooth',block:'center'});
-  window.NutEVSearchUX?.showFeedback?.('Pergunta carregada. Revise fontes e termos; a nova busca só começa quando você clicar em “Buscar artigos”.','warning');
+  const what=restored?(mode==='exact'?'Pergunta e estratégia exata carregadas':'Pergunta e busca avançada carregadas'):'Pergunta carregada';
+  window.NutEVSearchUX?.showFeedback?.(`${what}. Revise fontes e termos; a nova busca só começa quando você clicar em “Buscar artigos”.`,'warning');
 }
 
 async function loadHistoryScope(scope){
@@ -108,9 +113,9 @@ function enrichItem(node,item){
   const oldMeta=node.querySelector('.history-meta');oldMeta?.remove();
   const details=document.createElement('div');details.className='history-card-details';
   const projectLabel=item?.project_id?'<span>Projeto</span>':'<span>Workspace</span>';
-  details.innerHTML=`<div class="history-status-row"><span class="history-status ${status.tone}">${esc(status.label)}</span><span>${esc(dateLabel(item?.created_at))}</span>${projectLabel}</div><div class="history-counts"><span><strong>${Number(item?.unique_records||0).toLocaleString('pt-BR')}</strong> únicas</span><span><strong>${Number(item?.returned_records||0).toLocaleString('pt-BR')}</strong> exibidas</span><span class="${gaps?'has-gaps':''}"><strong>${gaps}</strong> lacuna${gaps===1?'':'s'} de fonte/auditoria</span></div><div class="history-actions"><button type="button" class="ghost" data-prepare-search="${esc(String(item?.search_id||''))}">Usar pergunta em nova busca</button></div>`;
+  details.innerHTML=`<div class="history-status-row"><span class="history-status ${status.tone}">${esc(status.label)}</span><span>${esc(dateLabel(item?.created_at))}</span>${projectLabel}</div><div class="history-counts"><span><strong>${Number(item?.unique_records||0).toLocaleString('pt-BR')}</strong> únicas</span><span><strong>${Number(item?.returned_records||0).toLocaleString('pt-BR')}</strong> exibidas</span><span class="${gaps?'has-gaps':''}"><strong>${gaps}</strong> lacuna${gaps===1?'':'s'} de fonte/auditoria</span></div><div class="history-actions"><button type="button" class="ghost" data-prepare-search="${esc(String(item?.search_id||''))}">${savedStrategyMode(item)==='quick'?'Usar pergunta em nova busca':'Usar pergunta e estratégia em nova busca'}</button></div>`;
   node.appendChild(details);
-  details.querySelector('[data-prepare-search]')?.addEventListener('click',()=>prepareNewQuickSearch(item));
+  details.querySelector('[data-prepare-search]')?.addEventListener('click',()=>prepareNewSearch(item));
 }
 
 function applyFilter(){
@@ -147,4 +152,4 @@ const historyRoot=$('#historyList');
 if(historyRoot)new MutationObserver(scheduleEnhance).observe(historyRoot,{childList:true});
 window.addEventListener('pageshow',()=>{const cached=window.NutEVSearchEvents?.getLastHistory?.()||[];if(cached.length){latestHistory=cached;scheduleEnhance()}});
 
-window.NutEVSearchHistory={prepareNewQuickSearch,statusModel,gapCount,loadHistoryScope};
+window.NutEVSearchHistory={prepareNewSearch,prepareNewQuickSearch:prepareNewSearch,statusModel,gapCount,loadHistoryScope};

@@ -31,6 +31,7 @@ from article_workbench_data import (
 from governed_synthesis_release import prepare_governed_release, release_status
 from progress_search import search_evidence_progressive
 from query_compiler import compile_query_plan
+from question_interpreter import interpret_question
 from radar_data import RadarDataError, load_radar_state
 from search_adapter import (
     PROVIDER_LABELS,
@@ -534,6 +535,14 @@ class NutEVHandler(SimpleHTTPRequestHandler):
                 self._json(compile_query_plan(query, providers, payload.get("strategy")), HTTPStatus.OK)
             except ValueError as exc:
                 self._json({"error": "invalid_query_strategy", "message": str(exc)}, HTTPStatus.BAD_REQUEST)
+            return
+        if path == "/api/query/plan":
+            # Deterministic, offline and stateless: fills the advanced form for review only.
+            try:
+                payload = self._read_json()
+                self._json(interpret_question(payload.get("query")), HTTPStatus.OK)
+            except ValueError as exc:
+                self._json({"error": "invalid_question", "message": str(exc)}, HTTPStatus.BAD_REQUEST)
             return
         if path == "/api/synthesis/releases/prepare":
             if not self._require_loopback():
