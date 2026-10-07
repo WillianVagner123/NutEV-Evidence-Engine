@@ -2,7 +2,7 @@
 
 Cole o texto abaixo num agente que controle um **navegador real** (Claude no Chrome, um agente com Playwright/computer use ou uma pessoa testadora). O roteiro testa a página publicada; ele não substitui os testes automatizados do repositório.
 
-Versão do roteiro: 2026-10-04, alinhada à reformulação visual da busca aberta (#1351): o painel de estratégia abre pelo botão "Ajustar busca", e a página não mostra mais o commit (ele fica em `/api/version`).
+Versão do roteiro: 2026-10-07. Os rótulos foram conferidos contra a versão publicada depois da reformulação visual (#1351, #1354) e das pendências da auditoria de busca (#1355): o painel de estratégia abre pelo botão "Ajustar busca", e a página não mostra mais o commit (ele fica em `/api/version`).
 
 ---
 
@@ -16,7 +16,8 @@ da versão atual; se algum mudou, use o equivalente e anote a diferença.
 ENDEREÇOS
 - Site: https://nutev.mindsperformance.com.br/
 - Busca aberta: https://nutev.mindsperformance.com.br/aberto/
-- Versão publicada: https://nutev.mindsperformance.com.br/api/version (anote o "commit")
+- Versão publicada: https://nutev.mindsperformance.com.br/api/version (anote o "commit";
+  o esperado é 42f47cf95a570651c29426536b119d9cbbbd84f0 ou mais novo)
 
 REGRAS
 - Não faça login, não crie conta, não peça acesso e não envie formulários de senha.
@@ -190,7 +191,11 @@ ENTREGA (formato do relatório)
 
 ## O que este roteiro não cobre
 
-A busca da área logada (botão "Montar estratégia a partir da pergunta" e "Usar pergunta e estratégia em nova busca" no histórico) exige login, que o testador não deve fazer. Quem tiver conta pode conferir: escrever uma pergunta, clicar no botão, ver a busca avançada preenchida sem nenhuma busca iniciada, buscar e depois restaurar pelo histórico.
+A busca da área logada exige login, que o testador não deve fazer. Quem tiver conta confere em `/search.html`:
+
+1. Escrever uma pergunta (por exemplo, a da dieta mediterrânea) e clicar em "Montar estratégia a partir da pergunta". Esperado: a busca avançada vem com os blocos preenchidos e nenhuma busca é iniciada.
+2. Clicar em "Buscar artigos". Esperado: uma fonte com erro aparece como "falhou", não como 0 resultados.
+3. No histórico, clicar em "Usar pergunta e estratégia em nova busca". Esperado: voltam o modo, os blocos e as fontes, sem executar nada.
 
 ## Como usar o resultado
 
