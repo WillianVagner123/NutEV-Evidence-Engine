@@ -456,6 +456,18 @@ def search_evidence_progressive(
     )
     from search_fulltext import configured_full_text_limit, enrich_ranked_results
 
+    # Exploratory searches should not download PDFs or retain extracted OCR by default.
+    # Review-grade runs preserve the existing enrichment setting and provenance.
+    if result.get("search_mode") == "interactive_bounded":
+        result["full_text_enrichment"] = {
+            "enabled": False,
+            "status": "disabled_for_ephemeral_search",
+            "policy": "metadata_first_no_auto_download",
+            "ranking_unchanged": True,
+            "public_payload_contains_full_text": False,
+        }
+        return result
+
     limit = configured_full_text_limit()
     if limit <= 0 or not result.get("results"):
         return result
