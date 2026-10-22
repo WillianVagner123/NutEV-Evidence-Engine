@@ -221,3 +221,30 @@ def test_full_text_ui_is_connected_to_central_search_event_bus() -> None:
     assert "nutev:search-result" in ui
     assert "OCR aplicado" in ui
     assert "não altera o ranking" in ui
+
+
+def test_quick_exploration_does_not_auto_download_or_store_full_text(monkeypatch, tmp_path: Path) -> None:
+    base = {
+        "search_id": "web_quick",
+        "search_mode": "interactive_bounded",
+        "results": _rows(2),
+        "interactive_limitations": [],
+        "status": "COMPLETE",
+    }
+    monkeypatch.setenv("NUTEV_SEARCH_FULLTEXT_LIMIT", "3")
+    monkeypatch.setattr(progress_search, "_search_without_full_text", lambda *_args, **_kwargs: dict(base))
+    monkeypatch.setattr(
+        search_fulltext,
+        "enrich_ranked_results",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("unexpected PDF/OCR download")),
+    )
+    monkeypatch.setattr(
+        progress_search,
+        "_persist_search",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(AssertionError("unexpected second snapshot")),
+    )
+
+    result = progress_search.search_evidence_progressive("nutrition", output_root=tmp_path)
+    assert result["full_text_enrichment"]["status"] == "disabled_for_ephemeral_search"
+    assert result["results"][0]["reference_rank"] == 1
+    assert not list(tmp_path.rglob("*.pdf"))
