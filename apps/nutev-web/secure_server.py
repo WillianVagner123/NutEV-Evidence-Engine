@@ -918,6 +918,61 @@ class SecureNutEVHandler(NutEVHandler):
         super().do_POST()
 
 
+
+def _start_search_retention_worker() -> threading.Event | None:
+    """Automatically prune expired quick-search JSON, never research/scientific state.
+
+    Production can disable this with NUTEV_AUTO_CLEAN_QUICK_SEARCH=0.
+    The worker uses an isolated process and continues serving if cleanup fails.
+    """
+    if os.environ.get("NUTEV_AUTO_CLEAN_QUICK_SEARCH", "1").strip() != "1":
+        return None
+
+    import subprocess
+    import sys
+
+    try:
+        days = max(1, int(os.environ.get("NUTEV_TEMP_SEARCH_RETENTION_DAYS", "2")))
+        hours = max(1, min(24, int(os.environ.get("NUTEV_TEMP_SEARCH_CLEANUP_HOURS", "6"))))
+    except ValueError:
+        print("[nutev] Invalid ephemeral search retention config; cleanup disabled", file=sys.stderr)
+        return None
+
+    stop = threading.Event()
+    repository_root = Path(__file__).resolve().parents[2]
+    command = [
+        sys.executable,
+        str(repository_root / "tools" / "prune_interactive_searches.py"),
+        "--root",
+        str(repository_root / "project_output_reference"),
+        "--days",
+        str(days),
+        "--apply",
+    ]
+
+    def loop() -> None:
+        while not stop.is_set():
+            try:
+                result = subprocess.run(
+                    command,
+                    cwd=repository_root,
+                    capture_output=True,
+                    text=True,
+                    timeout=600,
+                    check=False,
+                )
+                if result.returncode != 0:
+                    print(f"[nutev] quick-search cleanup failed ({result.returncode}): {result.stderr[-500:]}", file=sys.stderr)
+                else:
+                    print("[nutev] quick-search cleanup: " + result.stdout.strip().replace("\n", " ")[:1000], file=sys.stderr)
+            except Exception as exc:
+                print(f"[nutev] quick-search cleanup unavailable: {type(exc).__name__}", file=sys.stderr)
+            stop.wait(hours * 3600)
+
+    threading.Thread(target=loop, name="nutev-quick-search-retention", daemon=True).start()
+    return stop
+
+
 def main() -> int:
     from http.server import ThreadingHTTPServer
     import argparse
@@ -930,12 +985,15 @@ def main() -> int:
     if _auth_mode() == "pilot":
         _auth_session_ttl_seconds()
     server = ThreadingHTTPServer((args.host, args.port), SecureNutEVHandler)
+    cleanup_stop = _start_search_retention_worker()
     print(f"NutEV secure web disponível em http://{args.host}:{args.port}/")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
         pass
     finally:
+        if cleanup_stop is not None:
+            cleanup_stop.set()
         server.server_close()
     return 0
 
