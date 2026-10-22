@@ -1,14 +1,45 @@
-# NUT-EV — buscas exploratórias com retenção curta
+# NUT-EV — Retenção de buscas exploratórias
 
-Objetivo: a pessoa pesquisa, encontra referências e guarda explicitamente o que interessa; não usar o volume persistente como histórico infinito de buscas exploratórias.
+## Resultado do ajuste
+O fluxo de **Busca rápida** (`interactive_bounded`) agora é tratado como efêmero:
+- uma única cópia `15_web_searches/web_*/result.json` fica disponível por **48 horas** (configurável);
+- deixa de produzir a cópia completa adicional `07_logs/web_search/latest.json`;
+- não dispara downloads automáticos de PDF nem OCR; o usuário ainda recebe título, resumo, classificação, identificadores e links dos provedores;
+- um worker inicia com o servidor hospedado e, a cada seis horas, exclui apenas snapshots de buscas rápidas expiradas, não modificadas recentemente;
+- cópias históricas de `latest.json` geradas por buscas rápidas antigas também expiram.
 
-## Controles disponibilizados
-- O Explorador Aberto (/aberto/) já busca diretamente do navegador sem gerar um corpus persistente no servidor.
-- No produto autenticado, resultados de buscas rápidas ainda são persistidos pelo motor e precisam ser tratados como snapshots temporários.
-- `python tools/prune_interactive_searches.py` faz **apenas inventário**.
-- `python tools/prune_interactive_searches.py --days 2 --apply` apaga exclusivamente diretórios `15_web_searches/web_*/result.json` cuja busca declara `interactive_bounded`, expirados há mais de 2 dias. Não remove buscas de revisão, registros globais, decisões ou arquivos do artigo.
-- A limpeza não altera `registry/`, `scientific/`, `agent_context/`, caches de texto completo, volumes Docker ou snapshots. Assim, **não é uma limpeza total**.
-- Colocar em agendamento depois da inspeção do primeiro dry-run, com execução pelo usuário/processo dono do volume. Não executar no deploy ou no startup sem avaliação.
+**O que não desaparece:** metadados bibliográficos globais e seus IDs continuam no Registry porque a biblioteca do workspace ainda precisa de identidade canônica para salvar um artigo escolhido. Isso é pequeno comparado a PDFs, mas não equivale a ausência absoluta de registro no servidor. Para busca totalmente sem gravação no servidor, o Explorador Aberto em `/aberto/` faz a consulta diretamente do navegador.
 
-## Próximo trabalho obrigatório
-Eliminar gravação redundante de `07_logs/web_search/latest.json` para buscas exploratórias, reduzir retenção de runs no catálogo sem perder IDs necessários às Placements e inserir expiração automática em buscas comuns e cache OCR com controle de referências. Auditar volume real antes de remover qualquer arquivo antigo. Nunca aplicar `docker volume prune` ao volume científico.
+## Preservação científica
+A rotina **nunca toca**:
+- `registry/`, `scientific/`, `agent_context/`, estudos A1/A2, placements, decisões, histórico formal, manifests, dados de extração;
+- `16_search_full_text_cache/` (PDFs e textos históricos), ainda sujeito a inventário e decisão separada;
+- Docker volumes, imagens, backups e snapshots de recuperação.
+
+Consultas `exact_review_*`, `structured_review_*` e `global_exhaustive` seguem persistentes e auditáveis. O status científico/PRISMA não é alterado. No login piloto, as buscas continuam vinculadas a workspace/projeto.
+
+## Configuração da hospedagem
+```env
+NUTEV_AUTO_CLEAN_QUICK_SEARCH=1
+NUTEV_TEMP_SEARCH_RETENTION_DAYS=2
+NUTEV_TEMP_SEARCH_CLEANUP_HOURS=6
+```
+
+A limpeza automática ocorre apenas no processo `secure_server.py` enquanto o serviço estiver executando. Pode ser desligada com `NUTEV_AUTO_CLEAN_QUICK_SEARCH=0`. A primeira passagem ocorre no startup, e as próximas ocorrem a cada seis horas.
+
+O comando manual pode gerar só inventário ou executar limpeza:
+```bash
+python tools/prune_interactive_searches.py --root /app/project_output_reference
+python tools/prune_interactive_searches.py --root /app/project_output_reference --days 2 --apply
+```
+
+A limpeza exige correspondência entre ID da pasta, modo declarado e timestamps da busca/arquivo, e recusa symlinks e formatos desconhecidos. Resultado JSON informa contagem e bytes removidos. No cenário de `--apply`, a deleção dos snapshots temporários é irreversível, mas não afeta os registros científicos descritos acima.
+
+## Auditoria do espaço real
+A implementação em GitHub **não demonstra quanto espaço há no servidor**, nem que a PR já foi publicada. Para quantificar, execute no servidor:
+```bash
+docker ps --format 'table {{.Names}}\t{{.Status}}'
+docker exec <CONTÊINER_NUTEV> python tools/nutev_storage_inventory.py --root /app/project_output_reference
+```
+
+Verifique os maiores grupos antes de qualquer redução dos caches históricos de PDF/OCR. Não execute `docker volume prune` nem `docker system prune --volumes` neste ambiente. Backups e decisões científicas não são cache.
