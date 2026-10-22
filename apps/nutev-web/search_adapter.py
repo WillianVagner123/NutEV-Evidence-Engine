@@ -278,7 +278,10 @@ def _persist_search(result: dict[str, Any], output_root: Path) -> None:
     payload["run_dir"] = str(run_dir)
     payload["result_path"] = str(run_dir / "result.json")
     _atomic_json(run_dir / "result.json", payload)
-    _atomic_json(output_root / "07_logs" / "web_search" / "latest.json", payload)
+    # A quick exploration is temporary: avoid a second, permanently retained copy.
+    # Structured/exact/exhaustive searches keep their existing audit snapshot.
+    if result.get("search_mode") != "interactive_bounded":
+        _atomic_json(output_root / "07_logs" / "web_search" / "latest.json", payload)
 
 
 def _latin_rows_and_status(
