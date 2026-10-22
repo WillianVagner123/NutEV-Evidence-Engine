@@ -10,7 +10,6 @@ import argparse
 from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
-import shutil
 
 
 def _expired_quick(payload: object, *, cutoff: datetime, expected_id: str | None = None) -> bool:
@@ -62,15 +61,17 @@ def inventory(root: Path, *, days: int = 2, apply: bool = False) -> dict:
                         or datetime.fromtimestamp(path.stat().st_mtime, timezone.utc) >= cutoff):
                     result["skipped"] += 1
                     continue
-                files = list(folder.rglob("*"))
-                if any(p.is_symlink() for p in files):
-                    result["skipped"] += 1
-                    continue
-                size = sum(p.stat().st_size for p in files if p.is_file())
+                # Delete only the known temporary result file, not arbitrary
+                # extra files that a person or workflow might have placed here.
+                size = path.stat().st_size
                 result["eligible_runs"] += 1
                 result["eligible_bytes"] += size
                 if apply:
-                    shutil.rmtree(folder)
+                    path.unlink()
+                    try:
+                        folder.rmdir()  # Only succeeds if genuinely empty.
+                    except OSError:
+                        pass
                     result["removed_runs"] += 1
                     result["removed_bytes"] += size
             except (OSError, ValueError, KeyError, TypeError) as exc:
