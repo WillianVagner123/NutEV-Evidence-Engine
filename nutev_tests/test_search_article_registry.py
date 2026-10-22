@@ -283,3 +283,20 @@ def test_identity_conflict_is_idempotent_when_search_is_reprocessed(tmp_path: Pa
     replay.pop("registry_summary", None)
     register_search_result(replay, output_root=tmp_path)
     assert _registry(tmp_path).stats().identity_conflicts_open == 1
+
+
+def test_quick_search_writes_only_one_temporary_result_snapshot(tmp_path: Path) -> None:
+    result = _result("web_quick_no_latest", range(0, 1))
+    result["search_mode"] = "interactive_bounded"
+    search_adapter._persist_search(result, tmp_path)
+    assert (tmp_path / "15_web_searches" / "web_quick_no_latest" / "result.json").is_file()
+    assert not (tmp_path / "07_logs" / "web_search" / "latest.json").exists()
+    # A saved project still needs a stable bibliographic article_id.
+    assert result["results"][0]["article_id"].startswith("NUTEV-ART-")
+
+
+def test_review_search_still_writes_audit_latest(tmp_path: Path) -> None:
+    result = _result("web_formal_keep_latest", range(0, 1))
+    result["search_mode"] = "exact_review_bounded"
+    search_adapter._persist_search(result, tmp_path)
+    assert (tmp_path / "07_logs" / "web_search" / "latest.json").is_file()
