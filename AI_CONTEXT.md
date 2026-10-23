@@ -28,7 +28,7 @@ Provider-specific compatibility files may also exist for development tooling. Th
 
 ## Active Article 1 method
 
-The current Article 1 is a `CRITICAL_STRUCTURED_REVIEW`, owner-approved and awaiting an explicit supervisor confirmation record. It does not require dual independent screening or PRISMA-ScR. The former scoping-review search program remains preserved as historical discovery/provenance and its PRESS or gate state is not transferable.
+The current Article 1 is a `CRITICAL_STRUCTURED_REVIEW`, owner-approved. The method master records that Willian reported the advisor’s methodological confirmation on 2026-10-02 (`OWNER_ATTESTATION`); this is not independent Engine verification and does not approve the final corpus, results, or manuscript. The active research question and complementary descriptive question about textual relations between food and other lifestyle domains are defined in `config/nutev/article1_method_master_v2.json`. The corpus, source-level extraction, and manuscript remain pending human review. This method does not require dual independent screening or PRISMA-ScR. The former scoping-review search program remains preserved as historical discovery/provenance and its PRESS or gate state is not transferable.
 
 ## Private runtime Evidence Context
 
